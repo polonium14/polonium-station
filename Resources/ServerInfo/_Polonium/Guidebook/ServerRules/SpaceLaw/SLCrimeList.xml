@@ -8,223 +8,480 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Prawo kosmiczne: Wykaz przestępstw
-  Przestępstwa są uporządkowane według stopnia (wagi) oraz koloru lub przypisanego im kodu literowego. Każde przestępstwo ma unikalny kod numeryczny (§100–§504).
+  # Prawo Kosmiczne: Wykaz przestępstw
+  Kod przestępstwa składa się ze stopnia ciężkości (X__) oraz kategorii (_XX). [bold]Artykuły z tą samą kategorią XX nie podlegają łączeniu[/bold] — uwzględnia się wyłącznie najcięższy zarzut. Kary z różnych kategorii XX sumuje się. Okoliczności oraz wymiar kary: [textlink="Okoliczności" link="SpaceLawModifiers"].
 
-  [bold]Przestępstwa o tym samym kolorze lub kodzie nie mogą być stawiane w zarzutach łącznie.[/bold] Na przykład, jeśli aresztujesz kogoś za morderstwo (§401), nie możesz oskarżyć tej samej osoby o napaść (§300).
-
-  ## Pobieżny wykaz przestępstw
-  <Table Columns="5">
+  ## Skrócony wykaz
+  <Table Columns="6">
     <ColorBox>
-      <Box>
-        I Stopnia
-      </Box>
+      <Box>Kategoria</Box>
     </ColorBox>
     <ColorBox>
-      <Box>
-        II Stopnia
-      </Box>
+      <Box>I</Box>
     </ColorBox>
     <ColorBox>
-      <Box>
-        III Stopnia
-      </Box>
+      <Box>II</Box>
     </ColorBox>
     <ColorBox>
-      <Box>
-        IV Stopnia
-      </Box>
+      <Box>III</Box>
     </ColorBox>
     <ColorBox>
-      <Box>
-        V Stopnia
-      </Box>
+      <Box>IV</Box>
     </ColorBox>
     <ColorBox>
+      <Box>V</Box>
+    </ColorBox>
+    <ColorBox Color="#8ab4d4">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Posiadanie/używanie nielegalnych substancji (§102)\nOstrzeż. - 3:00
+        [color=black]x00 Władza[/color]
       </Box>
     </ColorBox>
-    <ColorBox Color="#ffcc67">
+    <ColorBox Color="#8ab4d4">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Niezastosowanie się do poleceń (§204, L)\nOstrzeż. - 2:00[/color]
+        [color=black]§100 Zakłócanie\nOstrzeż. – 4:00[/color]
       </Box>
     </ColorBox>
-    <ColorBox Color="#ffcc67">
+    <ColorBox Color="#8ab4d4">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Naruszenie zatrzymania (§303, L)\n2:00 - 4:00[/color]
+        [color=black]§200 Nieposłuszeństwo\nOstrzeż. – 7:00[/color]
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#8ab4d4">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Porwanie (§400)\n4:00 - 10:00
+        [color=black]§300 Ucieczka\n4:00 – 9:00[/color]
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#8ab4d4">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Rażące zaniedbanie (§501)\nDegradacja - Perma
+        [color=black]§400 Odmowa osłony\nDo przyjęcia – Perma[/color]
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#8ab4d4">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Okrucieństwo wobec zwierząt (§201)\n2:00 - 5:00
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Ucieczka z aresztu (§308)\n2:00 - 5:00
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Odmowa poddania się osłonie umysłu (§503)\nDo przyjęcia - Perma
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§500 Powstanie\nPerma – Egzekucja[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Narażenie na\nniebezpieczeństwo (§203, M)\n2:00 - 4:00[/color]
+        [color=black]x01 Przemoc[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box/>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§201 Napaść\nOstrzeż. – 5:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Nieumyślne spowodowanie śmierci (§302, M)\n4:00 - 10:00[/color]
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Uniemożliwienie wskrzeszenia (§502)\n15:00 - Perma
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#68cbd0">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Zakłócanie porządku (§100, R)\nOstrzeż. - 2:00[/color]
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#68cbd0">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Zamieszki (§200, R)\n2:00 - 4:00[/color]
+        [color=black]§301 Uszczerbek\n5:00 – 14:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Napaść (§300, M)\nOstrzeż. - 3:00\nPobicie (§301, M)\n1:00 - 3:00\nKumuluje się z różnymi ofiarami[/color]
+        [color=black]§401 Morderstwo\n7:00 – 18:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Morderstwo (§401, M)\n4:00 - 10:00[/color]
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#fd6864">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Masowe morderstwo (§500, M)\nPerma - Perma[/color]
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#dae8fc">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Wandalizm (§104, C)\nOstrzeż. - 2:00[/color]
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#dae8fc">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Uszkodzenie/zniszczenie mienia (§202, C)\n2:00 - 4:00[/color]
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#dae8fc">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Masowe zniszczenie (§305, C)\n10:00 - 15:00[/color]
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Terroryzm (§504)\nPerma - Egzekucja
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Posiadanie sprzętu\nobjętego ograniczeniami (§205)\nOstrzeż. - 5:00
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Posiadanie broni\nobjętej ograniczeniami (§306)\n3:00 - 6:00
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#9698ED">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Wtargnięcie (§103, T)\nOstrzeż. - 2:00[/color]
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#9698ED">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Wtargnięcie na teren zabezpieczony (§307, T)\n3:00 - 8:00[/color]
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§501 Wskrzeszenie\n26:00 – Perma[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#ffce93">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Drobna kradzież (§101, G)\n1:00 - 3:00[/color]
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]x02 Kradzież[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#ffce93">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Wielka kradzież (§304, G)\n3:00 - 6:00[/color]
+        [color=black]§102 Drobna\n2:00 – 5:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffce93">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§202 Kradzież\n4:00 – 9:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffce93">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§302 Wielka\n5:00 – 11:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffce93">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§402 Rozbój\n7:00 – 18:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffce93">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§502 Znaczne\nPerma – Egzek.[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#c9a0dc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]x03 Obrót[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#c9a0dc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§103 Substancje\nOstrzeż. – 5:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#c9a0dc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§203 Sprzęt\nOstrzeż. – 9:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#c9a0dc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§303 Broń\n5:00 – 11:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#c9a0dc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§403 Obrót bronią\n9:00 – 18:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#c9a0dc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§503 Antykorp.\nPerma – Egzek.[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]x04 Mienie[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§104 Wandalizm\nOstrzeż. – 4:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§204 Uszkodzenie\n4:00 – 7:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§304 Masowe niszczenie\n18:00 – 26:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
+      <Box/>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§504 Terroryzm\nPerma – Egzekucja[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#9698ed">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]x05 Teren[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#9698ed">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§105 Wtargnięcie\nOstrzeż. – 4:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
+      <Box/>
+    </ColorBox>
+    <ColorBox Color="#9698ed">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§305 Teren zab.\n5:00 – 14:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box/>
+    </ColorBox>
+    <ColorBox>
+      <Box/>
+    </ColorBox>
+    <ColorBox Color="#7eb87e">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]x06 Zaniedbanie[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box/>
+    </ColorBox>
+    <ColorBox Color="#7eb87e">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§206 Zaniedbanie\n4:00 – 7:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box/>
+    </ColorBox>
+    <ColorBox>
+      <Box/>
+    </ColorBox>
+    <ColorBox Color="#7eb87e">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§506 Rażące zaniedbanie\nDegradacja – Perma[/color]
       </Box>
     </ColorBox>
   </Table>
+
+  # x00 — Władza
+  Kategoria obejmuje porządek publiczny, polecenia organów władzy, areszt, procedurę osłony umysłu oraz powstanie. W ramach tej samej kategorii _XX uwzględnia się wyłącznie najcięższy zarzut.
+
+  ## §100 Zakłócanie porządku
+  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 4:00
+
+  [bold]Opis:[/bold] Zakłócanie porządku publicznego, w tym udział w zamieszkach.
+
+  W szczególności:
+  - publiczna nagość, obelgi, utrudnianie pracy organom władzy, podżeganie;
+  - udział w grupie zakłócającej porządek publiczny.
+
+  [bold]Uwagi:[/bold] Przy drobnych naruszeniach zaleca się ograniczenie kary do ostrzeżenia. Organizator zamieszek ponosi odpowiedzialność za czyny grupy; dodatkowo uwzględnia się zarzuty z kategorii mienia oraz przemocy, jeżeli zostały popełnione. Zbrojne wystąpienie zagrażające prawowitej władzy korporacji kwalifikuje się jako §500.
+
+  ## §200 Nieposłuszeństwo
+  [bold]Stopień:[/bold] II · [bold]Kara:[/bold] Ostrzeżenie – 7:00
+
+  [bold]Opis:[/bold] Opór wobec uzasadnionych poleceń organów władzy albo podczas legalnego zatrzymania.
+
+  W szczególności:
+  - odmowa wykonania legalnego polecenia, nakazu albo uprawnionego przeszukania;
+  - stawianie oporu przy aresztowaniu, zdejmowanie kajdanek, udzielanie pomocy w uniknięciu zatrzymania;
+  - naruszenie regulaminu aresztu, które nie stanowi jeszcze ucieczki.
+
+  [bold]Uwagi:[/bold] Polecenie musi być zgodne z prawem. Ucieczka z celi kwalifikuje się jako §300.
+
+  ## §300 Ucieczka z aresztu
+  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 4:00 – 9:00
+
+  [bold]Opis:[/bold] Wydostanie się z celi lub spod dozoru z zamiarem ucieczki.
+
+  W szczególności:
+  - opuszczenie celi albo strefy aresztu bez zgody;
+  - zniszczenie zewnętrznej ściany lub okna stwarzające możliwość wyjścia;
+  - udzielanie pomocy innemu więźniowi w ucieczce.
+
+  [bold]Uwagi:[/bold] Karę dolicza się do aktualnego wyroku. Wielokrotne próby uzasadniają dożywotni areszt (permabrig). Rozbicie wewnętrznych szyb bez możliwości wyjścia kwalifikuje się jako wandalizm, a nie jako niniejszy artykuł.
+
+  ## §400 Odmowa osłony umysłu
+  [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] Do przyjęcia – Permabrig
+
+  [bold]Opis:[/bold] Odmowa poddania się legalnej procedurze osłony umysłu przy potwierdzonym zagrożeniu praniem mózgu albo kontrolą umysłu.
+
+  [bold]Uwagi:[/bold] Podejrzanego przetrzymuje się do chwili przyjęcia osłony umysłu. Neuroawersja nie zwalnia z obowiązku w sytuacji potwierdzonego zagrożenia. Awaria implantu spowodowana stanem psychicznym może stanowić podstawę do rozważenia egzekucji. Szczegóły: [textlink="Prawo Kosmiczne" link="SpaceLaw"].
+
+  ## §500 Powstanie
+  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Permabrig – Egzekucja
+
+  [bold]Opis:[/bold] Zbrojne wystąpienie grupy osób tworzące realne zagrożenie dla prawowitej władzy korporacji, powstałe żywiołowo lub w wyniku spisku.
+
+  [bold]Uwagi:[/bold] Wystąpienie uznaje się za zbrojne, jeżeli jego uczestnicy posiadają broń palną, broń białą albo narzędzia zdolne do szybkiego wyrządzenia poważnego uszczerbku na zdrowiu. Nieuzbrojone zakłócanie porządku pozostaje przy §100.
+
+  # x01 — Przemoc
+  Wobec tej samej ofiary stosuje się jeden zarzut. Każda kolejna ofiara stanowi osobny zarzut.
+
+  ## §201 Napaść
+  [bold]Stopień:[/bold] II · [bold]Kara:[/bold] Ostrzeżenie – 5:00
+
+  [bold]Opis:[/bold] Groźba użycia siły albo lekkie użycie siły bez zgody.
+
+  W szczególności:
+  - groźba, zastraszanie, usiłowanie uderzenia;
+  - pobicie, lekkie obrażenia, ogłuszenie, krótkotrwałe związanie.
+
+  [bold]Uwagi:[/bold] Niniejszego artykułu nie łączy się z §301 dotyczącym tej samej ofiary. Ciężkie rany, stan krytyczny albo bezprawne przetrzymywanie kwalifikują się jako §301.
+
+  ## §301 Uszczerbek na zdrowiu
+  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 5:00 – 14:00
+
+  [bold]Opis:[/bold] Poważny uszczerbek fizyczny albo psychiczny, w tym wynikający z bezprawnego przetrzymywania.
+
+  W szczególności:
+  - ciężkie obrażenia, rany chirurgiczne, sprowadzenie do stanu krytycznego;
+  - bezprawne ograniczenie wolności, transport albo uwięzienie;
+  - uszczerbek psychiczny wynikający z przetrzymywania, szantażu albo kontroli.
+
+  [bold]Uwagi:[/bold] Śmierć ofiary kwalifikuje się jako §401.
+
+  ## §401 Morderstwo
+  [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] 7:00 – 18:00
+
+  [bold]Opis:[/bold] Pozbawienie życia istoty rozumnej.
+
+  W szczególności:
+  - umyślne zabójstwo (ofiara wymaga wskrzeszenia);
+  - uniemożliwianie wyciągnięcia ze stanu krytycznego, jeżeli ofiara następnie umiera.
+
+  [bold]Uwagi:[/bold] W razie braku zamiaru stosuje się okoliczność „brak zamiaru”. Każda ofiara stanowi osobny zarzut. Trzy lub więcej umyślnych czynów zwykle skutkuje dożywotnim aresztem (permabrig) wskutek zsumowania kar.
+
+  ## §501 Uniemożliwienie wskrzeszenia
+  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] 26:00 – Permabrig
+
+  [bold]Opis:[/bold] Doprowadzenie do stanu, w którym ciała nie można wskrzesić (rozczłonkowanie, wyrzucenie w przestrzeń, ukrycie do czasu rozkładu).
+
+  [bold]Uwagi:[/bold] Zabójstwo bez zniszczenia ciała pozostaje przy §401.
+
+  # x02 — Kradzież
+  Kwalifikacja zależy od rodzaju mienia: wspólne lub działowe, osobiste, rzadkie, mienie znacznej wartości, oraz rozbój. Kategoria podlega łączeniu z wtargnięciem (odmienna kategoria XX). Wykaz mienia znacznej wartości: [textlink="Rejestr" link="SpaceLawHighValue"].
+
+  ## §102 Drobna kradzież
+  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] 2:00 – 5:00
+
+  [bold]Opis:[/bold] Przywłaszczenie mienia wspólnego albo pochodzącego ze strefy, do której sprawca nie posiada dostępu.
+
+  W szczególności:
+  - ekwipunek z działu, do którego sprawca nie należy;
+  - przedmioty deficytowe zabrane z miejsca, w którym są potrzebne;
+  - odmowa zwrotu ekwipunku po zwolnieniu;
+  - przedmioty o niskiej wartości: narzędzia, odzież, instrumenty.
+
+  [bold]Uwagi:[/bold] W drobnych przypadkach zaleca się zwrot mienia oraz ostrzeżenie. Kradzież PDA kwalifikuje się jako §202. Kradzież rzadkiego mienia — jako §302. Kradzież mienia z [textlink="rejestru mienia znacznej wartości" link="SpaceLawHighValue"] — jako §502.
+
+  ## §202 Kradzież
+  [bold]Stopień:[/bold] II · [bold]Kara:[/bold] 4:00 – 9:00
+
+  [bold]Opis:[/bold] Przywłaszczenie albo usiłowanie przywłaszczenia cudzego mienia osobistego.
+
+  W szczególności: PDA, identyfikator, słuchawka, klucz szyfrujący, rzeczy osobiste, gotówka, kod genetyczny, sprzęt rehabilitacyjny.
+
+  [bold]Uwagi:[/bold] Identyfikator kapitana albo kierownika personelu kwalifikuje się jako §502.
+
+  ## §302 Wielka kradzież
+  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 5:00 – 11:00
+
+  [bold]Opis:[/bold] Kradzież rzadkiego albo kluczowego mienia stacji, które nie figuruje w rejestrze mienia znacznej wartości.
+
+  W szczególności: płyty konsol spoza rejestru, mechy, klucze ochrony, piloty działów, identyfikatory kierowników spoza rejestru, kombinezony, plecaki odrzutowe.
+
+  [bold]Uwagi:[/bold] Mienie z [textlink="rejestru mienia znacznej wartości" link="SpaceLawHighValue"] kwalifikuje się jako §502.
+
+  ## §402 Rozbój
+  [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] 7:00 – 18:00
+
+  [bold]Opis:[/bold] Kradzież z użyciem przemocy groźnej dla życia albo z groźbą takiej przemocy.
+
+  [bold]Uwagi:[/bold] [bold]§402 Rozbój[/bold] pochłania zarzuty napaści oraz uszczerbku na zdrowiu wynikające z tego samego zdarzenia. Jeżeli sprawca porzucił mienie i użył siły wyłącznie w celu ucieczki, czyn kwalifikuje się jako kradzież oraz §201 albo §301, a nie jako rozbój.
+
+  ## §502 Kradzież mienia znacznej wartości
+  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Permabrig – Egzekucja
+
+  [bold]Opis:[/bold] Bezprawne przywłaszczenie mienia o szczególnej wartości — nielegalne przejęcie urządzeń, sprzętu lub majątku stacji oraz wahadłowców o charakterze krytycznym lub wyjątkowo cennym.
+
+  W szczególności:
+  - kradzież mienia figurującego w [textlink="rejestrze mienia znacznej wartości" link="SpaceLawHighValue"];
+  - karty ID z dostępem kapitana, kierownika personelu albo o analogicznych uprawnieniach;
+  - kradzież albo uprowadzenie wahadłowców;
+  - głowica nuklearna.
+
+  [bold]Uwagi:[/bold] Mieniem lub sprzętem krytycznym uznaje się elementy, bez których stacja nie jest w stanie funkcjonować. Wykaz: [textlink="Rejestr mienia znacznej wartości" link="SpaceLawHighValue"].
+
+  # x03 — Obrót
+  Przy §103 oraz §203 obrót (sprzedaż) mieści się w tym samym artykule. Przy broni obrót stanowi osobny artykuł (§403). Wyposażenie z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] — posiadanie i obrót — kwalifikuje się jako §503.
+
+  ## §103 Nielegalne substancje
+  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 5:00
+
+  [bold]Opis:[/bold] Posiadanie, produkcja, używanie albo obrót substancjami objętymi ograniczeniami.
+
+  [bold]Uwagi:[/bold] W pierwszej kolejności stosuje się przepisy SPO. Personel chemiczny lub botaniczny wykonujący obowiązki zgodnie z SPO nie podlega temu artykułowi.
+
+  ## §203 Sprzęt ograniczony
+  [bold]Stopień:[/bold] II · [bold]Kara:[/bold] Ostrzeżenie – 9:00
+
+  [bold]Opis:[/bold] Posiadanie albo obrót nieśmiercionośną kontrabandą lub sprzętem poza zakresem kompetencji.
+
+  W szczególności: maski Syndykatu, przerobione PDA spoza rejestru, kamizelki kuloodporne i ogłuszacze bez uprawnień, sprzedaż takiego sprzętu.
+
+  [bold]Uwagi:[/bold] Broń, granaty oraz materiały wybuchowe kwalifikują się jako §303 albo §403. Wpis w [textlink="rejestrze wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] — jako §503. Samo posiadanie narzędzi pochodzących z tuneli konserwacyjnych, bez dowodu kradzieży, nie stanowi podstawy zarzutu.
+
+  ## §303 Posiadanie broni
+  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 5:00 – 11:00
+
+  [bold]Opis:[/bold] Posiadanie broni niezgodnej z prawem albo kontrabandowej (broń palna bez pozwolenia, ostrza, granaty, ładunki wybuchowe, broń Syndykatu spoza rejestru, wybuchowe implanty).
+
+  [bold]Uwagi:[/bold] Sprzedaż kwalifikuje się jako §403. Broń figurująca w [textlink="rejestrze wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] — jako §503.
+
+  ## §403 Obrót bronią
+  [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] 9:00 – 18:00
+
+  [bold]Opis:[/bold] Sprzedaż albo rozdawnictwo broni, części, amunicji, granatów i ładunków wybuchowych — w tym broni wytworzonej samodzielnie.
+
+  [bold]Uwagi:[/bold] Posiadanie bez obrotu pozostaje przy §303. Obrót sprzętem z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] kwalifikuje się jako §503.
+
+  ## §503 Posiadanie wyposażenia antykorporacyjnego
+  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Permabrig – Egzekucja
+
+  [bold]Opis:[/bold] Posiadanie lub obrót podmiotami wpisanymi do [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"], w tym:
+  - urządzenia umożliwiające dostęp do nielegalnych rynków, na których dostępne są środki służące do celów terrorystycznych;
+  - broń jądrowa, biologiczna, strukturalna oraz środki masowego rażenia;
+  - przedmioty magiczne i anomalne, z wyjątkiem wyposażenia dozwolonego dla kapłanów i innych pracowników.
+
+  [bold]Uwagi:[/bold] Wyjątki z rejestru zachowują dotychczasową kwalifikację (§203 albo §303). Kapłan oraz inny personel w zakresie obowiązków wynikających z SPO nie podlega z tytułu dozwolonego wyposażenia. Wykaz: [textlink="Rejestr wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"].
+
+  # x04 — Mienie
+  Okrucieństwo wobec zwierząt kwalifikuje się jako §204.
+
+  ## §104 Wandalizm
+  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 4:00
+
+  [bold]Opis:[/bold] Oszpecenie albo nielegalna ingerencja bez poważnego uszkodzenia (graffiti, przebudowa kosmetyczna, zaśmiecanie).
+
+  [bold]Uwagi:[/bold] Rozbite okno kwalifikuje się jako §204.
+
+  ## §204 Uszkodzenie mienia
+  [bold]Stopień:[/bold] II · [bold]Kara:[/bold] 4:00 – 7:00
+
+  [bold]Opis:[/bold] Celowe uszkodzenie mienia albo złośliwe krzywdzenie zwierząt (z wyłączeniem legalnych testów oraz zwalczania szkodników).
+
+  [bold]Uwagi:[/bold] W przypadku Iana stosuje się ten artykuł, z karą w górnej części przedziału. Sabotaż systemów stacji kwalifikuje się jako §304 albo §504.
+
+  ## §304 Masowe niszczenie
+  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 18:00 – 26:00
+
+  [bold]Opis:[/bold] Rozległe zniszczenie obszaru albo kluczowego systemu (ładunki wybuchowe, sabotaż zasilania, klonowania, atmosfery).
+
+  ## §504 Terroryzm
+  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Permabrig – Egzekucja
+
+  [bold]Opis:[/bold] Działania grożące zniszczeniem statku lub siedliska albo wymuszające decyzje przemocą na masową skalę (samozniszczenie, ładunki wybuchowe jako środek szantażu, branie zakładników, przejęcie kontroli nad statkiem).
+
+  [bold]Uwagi:[/bold] Formalna egzekucja wymaga Nakazu egzekucji. Neutralizacja w terenie na kodach wojennych albo na poziomie IV procedury stosowania siły nie stanowi egzekucji w rozumieniu niniejszego artykułu.
+
+  # x05 — Teren
+
+  ## §105 Wtargnięcie
+  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 4:00
+
+  [bold]Opis:[/bold] Wejście na teren niezabezpieczony bez pozwolenia.
+
+  [bold]Uwagi:[/bold] W drobnych przypadkach wystarczy wyprowadzenie z terenu. Zgoda pracownika danego działu jest wystarczająca; zakaz wydany przez kierownika działu ma pierwszeństwo.
+
+  ## §305 Wtargnięcie na teren zabezpieczony
+  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 5:00 – 14:00
+
+  [bold]Opis:[/bold] Wejście bez pozwolenia na mostek, do biur kierowników, ochrony, zbrojowni, skarbca, telekomunikacji, EVA, serwerowni, jądra SI, atmosferyki, silnika lub kabiny kapitana.
+
+  [bold]Uwagi:[/bold] §105 nie podlega łączeniu z niniejszym artykułem (ta sama kategoria XX). Włamanie z użyciem narzędzi poza zakresem kompetencji stanowi dodatkową podstawę do §203, jeżeli zostały spełnione przesłanki tego artykułu.
+
+  # x06 — Zaniedbanie
+
+  ## §206 Zaniedbanie
+  [bold]Stopień:[/bold] II · [bold]Kara:[/bold] 4:00 – 7:00
+
+  [bold]Opis:[/bold] Niewykonanie obowiązków albo lekkomyślne narażenie osób lub stacji.
+
+  W szczególności:
+  - niewykonanie legalnego rozkazu kierownika własnego działu;
+  - wypadki przy pracy, zaniedbania służbowe, nieuprawnione eksperymenty na sobie, błędy medyczne;
+  - bezczynność, która mogła spowodować uszczerbek na zdrowiu lub szkodę dla stacji;
+  - nieusunięcie osłony umysłu u osoby z neuroawersją po ustąpieniu zagrożenia.
+
+  ## §506 Rażące zaniedbanie
+  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Degradacja – Permabrig
+
+  [bold]Opis:[/bold] Zaniedbanie personelu dowództwa albo skutek w postaci śmierci lub katastrofy stacji.
+
+  [bold]Uwagi:[/bold] Dotyczy przede wszystkim kierowników. Kara administracyjna (degradacja) nakładana jest niezależnie od kary pozbawienia wolności.
 </Document>

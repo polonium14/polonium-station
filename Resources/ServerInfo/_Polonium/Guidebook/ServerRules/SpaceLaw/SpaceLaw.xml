@@ -12,6 +12,31 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   # Prawo Kosmiczne
   Stacja Polonium działa zgodnie z prawem kosmicznym. Wszyscy członkowie załogi, pasażerowie i goście przebywający na stacji powinni znać i przestrzegać tych przepisów (są one dość zdroworozsądkowe, tylko ochrona i kapitan muszą znać szczegóły).
 
+  Dowództwo oraz personel ochrony (w tym osoby awansowane na te stanowiska w trakcie rundy) [bold]mają obowiązek[/bold] stosować niniejsze prawo. Naruszenia należy priorytetyzować według ich wagi oraz zaistniałej sytuacji. Korzystanie z kontrabandy Syndykatu przez ochronę lub dowództwo jest dopuszczalne wyłącznie w sytuacji skrajnego zagrożenia, nie zapobiegawczo.
+
+  Szczegółowe opisy artykułów: [textlink="Lista przestępstw" link="SpaceLawCrimeList"]. Okoliczności oraz wymiar kary: [textlink="Okoliczności" link="SpaceLawModifiers"].
+
+  ## Kategorie (_XX)
+  Każde przestępstwo oznaczone jest kodem §XYZ. [bold]Pierwsza cyfra[/bold] oznacza stopień ciężkości czynu (1 — I … 5 — V). [bold]Dwie ostatnie cyfry (XX)[/bold] określają kategorię przestępstwa. Artykuły z tą samą kategorią XX [bold]nie podlegają łączeniu[/bold] — uwzględnia się wyłącznie najcięższy zarzut. Kary z różnych kategorii XX sumuje się. Oznaczenia kolorystyczne grup nie występują.
+
+  Wyjątek: zarzuty napaści, uszczerbku na zdrowiu, zabójstwa oraz uniemożliwienia reanimacji podlegają sumowaniu, jeśli dotyczą [bold]różnych poszkodowanych[/bold].
+
+  - x00 Władza: §100 Zakłócanie, §200 Nieposłuszeństwo, §300 Ucieczka, §400 Odmowa osłony, §500 Powstanie
+  - x01 Przemoc: §201 Napaść, §301 Uszczerbek, §401 Morderstwo, §501 Uniemożliwienie wskrzeszenia
+  - x02 Kradzież: §102 Drobna, §202 Kradzież, §302 Wielka, §402 Rozbój, §502 Mienie znacznej wartości
+  - x03 Obrót: §103 Substancje, §203 Sprzęt, §303 Broń, §403 Obrót bronią, §503 Wyposażenie antykorporacyjne
+  - x04 Mienie: §104 Wandalizm, §204 Uszkodzenie, §304 Masowe niszczenie, §504 Terroryzm
+  - x05 Teren: §105 Wtargnięcie, §305 Teren zabezpieczony
+  - x06 Zaniedbanie: §206 Zaniedbanie, §506 Rażące zaniedbanie
+
+  Łączny czas powyżej [bold]35 minut[/bold] zdecydowanie zaleca permabrig.
+
+  ## Wrogowie Korporacji i Osoby Niezarejestrowane
+
+  [bold]Wróg Korporacji[/bold] — osoba, która popełniła przestępstwo uderzające bezpośrednio w bezpieczeństwo publiczne oraz dobrostan placówki. Działania te stanowią bezpośrednie zagrożenie dla interesów NanoTrasen. Za wroga korporacji uznaje się każdego, komu udowodniono winę z artykułu krytycznego (stopień V). Ze względu na skrajnie wysokie zagrożenie społeczne wrogowie korporacji podlegają natychmiastowej egzekucji.
+
+  [bold]Osoba Niezarejestrowana[/bold] — jednostka, która nie należy do załogi stacji lub której przynależności nie da się jednoznacznie ustalić. Osoby niezarejestrowane podlegają obowiązkowemu zatrzymaniu oraz przymusowemu przesłuchaniu.
+
   ## Traktowanie więźniów
 
   Więźniowie wciąż mają pewne prawa, które muszą być przestrzegane przez organy ścigania:
@@ -26,8 +51,24 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - Po zakończeniu pobytu w areszcie więźniowie muszą otrzymać przypisane im urządzenia PDA. Wyjątkiem jest sytuacja, w której istnieją solidne dowody na manipulowanie urządzeniem PDA – w takim przypadku urządzenie należy zabezpieczyć i wymienić na nowe.
   - Więźniowie muszą mieć zapewnioną swobodę poruszania się i nie powinni być krępowani kajdankami ani innymi środkami po osadzeniu w areszcie, chyba że istnieje nadmierne zagrożenie dla życia lub zdrowia. Podobnie, wszyscy więźniowie przebywający w areszcie na czas dłuższy lub bezterminowy powinni być przetrzymywani w celach zbiorowych i nie powinni być umieszczani w izolatkach, chyba że stanowią zagrożenie dla życia lub zdrowia.
 
+  Bieg odbywania kary [bold]ulega wstrzymaniu[/bold] na czas konsultacji z prawnikiem oraz na czas trwania procesu sądowego. Nadzorca ma obowiązek to respektować ([textlink="SPO Nadzorcy" link="WardenSOP"]). Prawnik jest zobowiązany pouczyć klienta, że w przypadku wielu zarzutów proces sądowy często trwa dłużej niż sam wyrok ([textlink="SPO Prawnika" link="LegalSOP"]).
+
   ## Uzasadnione podejrzenie
-  [italic]Uzasadnione podejrzenie wobec danej osoby definiuje się jako podejrzenie oparte na bezpośrednim zaobserwowaniu przez funkcjonariusza potencjalnie nielegalnej działalności lub zgłoszeniach dotyczących potencjalnie nielegalnej działalności popełnionej przez tę osobę (nie przez niejasny opis osoby) pochodzących z wiarygodnego źródła lub podejrzeniu opartym na dowodach zebranych i zgłoszonych przez detektywa stacji.[/italic]
+
+  Uzasadnione podejrzenie wobec danej osoby definiuje się jako podejrzenie oparte na bezpośredniej obserwacji przez funkcjonariusza potencjalnie nielegalnej działalności, zgłoszeniach dotyczących potencjalnie nielegalnej działalności popełnionej przez tę osobę (z wyłączeniem ogólnych lub nieprecyzyjnych opisów) pochodzących z wiarygodnego źródła, bądź na podejrzeniu opartym na dowodach zebranych i przekazanych przez detektywa stacji.
+
+  ## Ujęcie i aresztowanie
+  [bold]Ujęcie (zatrzymanie)[/bold] — tymczasowe ograniczenie wolności podejrzanego w celu ustalenia tożsamości, przeprowadzenia przeszukania (jeśli jest dopuszczalne) oraz podjęcia decyzji o dalszych krokach. Osoba ta [bold]nie posiada jeszcze[/bold] statusu formalnego więźnia i może zostać zwolniona bez wyroku.
+
+  [bold]Aresztowanie[/bold] — formalne zatrzymanie, doprowadzenie do sekcji penitencjarnej, przesłuchanie, wydanie wyroku lub osadzenie do czasu procesu.
+
+  Pełna procedura: [textlink="SPO Ochrony" link="SecuritySOP"]. W skrócie:
+
+  Ujęcie: ustalenie podstawy → poinformowanie zatrzymanego (zastosowanie I stopnia środka przymusu bezpośredniego; podczas alarmu czerwonego powód można podać w sekcji penitencjarnej) → ujęcie → weryfikacja tożsamości → przeszukanie (jeśli dopuszczalne) → zebranie materiału dowodowego (detektyw może prowadzić czynności śledcze, maksymalnie 10 minut bez dowodów) → zwolnienie / aresztowanie / przekazanie odpowiednim służbom.
+
+  Aresztowanie: doprowadzenie → przekazanie nadzorcy (lub komendantowi / najstarszemu rangą oficerowi) → pełne przeszukanie → przesłuchanie → wydanie wyroku na podstawie Prawa Kosmicznego oraz Protokołu Przesłuchania → zmiana statusu w kartotece na [bold]Zatrzymany[/bold] → osadzenie bez środków przymusu (o ile nie występuje zagrożenie) → zmiana statusu na [bold]Zwolniony[/bold] po odbyciu kary.
+
+  Komendant nie zmienia wydanego wyroku bez ujawnienia nowych dowodów lub wystąpienia próby ucieczki. Funkcjonariusz dokonujący aresztowania nie może prowadzić przesłuchania tej samej osoby.
 
   ## Przeszukiwania
 
@@ -39,7 +80,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Więzień przebywający w areszcie może zostać poddany zabiegowi usunięcia implantu, o ile jest to uzasadnione. Wszczepianie implantów więźniom jest dozwolone wyłącznie w przypadkach opisanych poniżej. Proces wszczepienia implantu nie powinien wydłużać wyroku skazanego, co oznacza, że nie można przetrzymywać go dłużej w celu wszczepienia implantu, chyba że określono inaczej.
 
-  [bold]Osłony Umysłu[/bold]: Osłony umysłu mogą być stosowane u każdego więźnia, który wyraźnie został poddany praniu mózgu. W przeciwieństwie do standardowego wszczepiania implantów, można przetrzymywać więźnia do momentu wydania mu osłony umysłu, o ile odbywa się to w odpowiednim czasie. Jeśli podejrzany odmówi współpracy lub implant nie będzie działał, można go oskarżyć o odmowę poddania się osłonie umysłu.
+  [bold]Osłony Umysłu[/bold]: Osłony umysłu mogą być stosowane u każdego więźnia, który wyraźnie został poddany praniu mózgu. W przeciwieństwie do standardowego wszczepiania implantów, można przetrzymywać więźnia do momentu wydania mu osłony umysłu, o ile odbywa się to w odpowiednim czasie. Jeśli podejrzany odmówi współpracy lub implant nie będzie działał, można go oskarżyć o [bold]§400 Odmowę osłony umysłu[/bold].
 
   W normalnych okolicznościach członek załogi może odmówić przyjęcia osłony umysłu, jeśli nie jest uwięziony za popełnienie przestępstwa.
 
@@ -54,7 +95,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   [bold]2. Wymóg usunięcia osłon po ustąpieniu zagrożenia:[/bold]
   - Osłony Umysłu [bold]muszą[/bold] zostać usunięte u osób cierpiących na neuroawersję, gdy osoba ta o to poprosi, po tym jak [bold]POTWIERDZONO[/bold], że zagrożenie minęło.
-  - Nieusunięcie osłon po ustąpieniu zagrożenia może stanowić [bold]zaniedbanie medyczne[/bold] w ramach zarzutów [bold]narażenia na niebezpieczeństwo[/bold].
+  - Nieusunięcie osłon po ustąpieniu zagrożenia może stanowić [bold]zaniedbanie medyczne[/bold] w ramach zarzutu [bold]§206 Zaniedbanie[/bold].
 
   # Usuwanie
 
@@ -67,344 +108,22 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   [bold]Pomocnictwo, usiłowanie i zamiar:[/bold] Jeśli ktoś celowo, świadomie i w znacznym stopniu pomaga innej osobie w popełnieniu przestępstwa, może zostać oskarżony o popełnienie odpowiednich przestępstw, np. inżynier, który dostarcza narzędzia osobie, która zamierza włamać się do jakiegoś obiektu. To samo dotyczy wyraźnej i konkretnej próby popełnienia przestępstwa lub osoby, która wykazuje wyraźny zamiar popełnienia przestępstwa, np. członek syndykatu uzbrajający bombę atomową, ale aresztowany przed jej detonacją, może nadal zostać oskarżony o terroryzm. Nie dotyczy to przestępstw, które już zostały wymienione jako próby, np. Napaść.
 
-  [bold]Przestępstwa kumulowalne:[/bold] Przestępstwa uznaje się za „kumulowalne” w tym sensie, że jeśli oskarża się kogoś o popełnienie dwóch lub więcej różnych przestępstw, należy zsumować kary, jakie zostałyby wymierzone za każde z nich.
+  [bold]Kilka zarzutów:[/bold] różne XX dodajesz. W tym samym XX zostaje jeden, najcięższy. Okoliczności i limit 1,5×: [textlink="Okoliczności i liczenie wyroku" link="SpaceLawModifiers"].
 
   [bold]Wpływy zewnętrzne:[/bold] Przestępstwa popełnione pod wpływem kontroli umysłowej innej osoby lub bytu podlegają ułaskawieniu po dokonaniu wyraźnej i skutecznej dekonwersji.
 
-  [bold]Egzekucje:[/bold] Egzekucje mogą być zatwierdzone przez przewodniczącego sędziego po przeprowadzeniu procesu sądowego. Egzekucje mogą być również zatwierdzone przez Centralne Dowodzenie po formalnym zgłoszeniu. Formalna egzekucja wymaga wypełnionego [bold]Nakazu egzekucji[/bold] zgodnie z [textlink="procedurą egzekucji" link="SecuritySOP"]. Nie dotyczy to natychmiastowej neutralizacji w terenie na kodach wojennych ani poziomu IV procedury stosowania siły.
+  [bold]Egzekucje:[/bold] Egzekucje mogą być zatwierdzone przez przewodniczącego sędziego po przeprowadzeniu procesu sądowego. Egzekucje mogą być również zatwierdzone przez Centralne Dowodzenie po formalnym zgłoszeniu. Formalna egzekucja wymaga wypełnionego [bold]Nakazu egzekucji[/bold] zgodnie z [textlink="procedurą egzekucji" link="SecuritySOP"]. Nie dotyczy to natychmiastowej neutralizacji w terenie na kodach wojennych, poziomu IV procedury stosowania siły ani natychmiastowej egzekucji [bold]wroga korporacji[/bold].
 
+  ## Sąd korporacyjny
+  Przewodniczącym rozprawy jest [textlink="Sędzia" link="MagistrateSOP"], a pod jego nieobecność Kapitan. W trakcie alarmu Delta / Gamma / Octarine postępowania sądowego nie wszczyna się. Pełna procedura: [textlink="SPO Prawnika" link="LegalSOP"].
 
-  # Powtarzające się przestępstwa
-  W przypadku przestępstw popełnionych ponownie po odbyciu kary za to samo przestępstwo, do zalecanego maksymalnego wymiaru kary można dodać dodatkowy czas. Ogólne wytyczne są następujące:
+  Pierwsze [bold]10 minut[/bold] rozprawy nie wlicza się w odsiadkę. Potem czas rozprawy idzie w wyrok. Apelacja tylko przy wyroku [bold]co najmniej 30 minut[/bold] albo dożywociu, raz w sprawie.
 
-  ## Drugie przestępstwo
-  [bold]Zalecane zwiększenie:[/bold] Zaleca się zwiększenie wymiaru kary o 1,5 razy wyłącznie za to samo przestępstwo.
+  Werdykt na piśmie, z artykułami PK. Wyrok śmierci: Nakaz egzekucji.
 
-  ## Trzecie przestępstwo
-  [bold]Zalecane zwiększenie:[/bold] Zaleca się zwiększenie wymiaru kary o 2,5 razy wyłącznie za to samo przestępstwo.
+  ## Rejestry kryminalne
+  Po aresztowaniu ustaw status [bold]Zatrzymany[/bold] i wpisz zarzuty oraz czas. Po karze: [bold]Zwolniony[/bold]. Po egzekucji zamknij sprawę. Szczegóły: [textlink="Rejestry kryminalne" link="CriminalRecords"].
 
-  ## Kolejne powtarzające się przestępstwa
-  Jeśli zatrzymany popełnił to samo przestępstwo więcej niż trzy razy w różnych okolicznościach, decyzja o umieszczeniu go w areszcie permamentnym należy do strażnika lub, w przypadku jego nieobecności, do najwyższego rangą członka ochrony.
-
-  [bold]Jeśli czas aresztu jest większy niż 30 minut, zdecydowanie zaleca się areszt permamentny.[/bold]
-
-
-  # Przestępstwa
-
-  Każde przestępstwo ma unikalny kod numeryczny (§100–§504). Pierwsza cyfra oznacza stopień: 1 — I, 2 — II, 3 — III, 4 — IV, 5 — V. Litery w nawiasie (R, G, T, C, M, L) oznaczają grupę kolorystyczną — przestępstwa tej samej grupy nie składają się łącznie.
-
-  # I Stopnia
-
-  W przypadku drobnych przestępstw należy rozwiązać problem, a następnie ostrzec sprawcę, aby nie popełniał tego przestępstwa ponownie. Jeśli mimo to sprawca nadal będzie je popełniał, lepszym rozwiązaniem może być areszt.
-
-  ## Zakłócanie porządku
-
-  [bold]Kod:[/bold] §100 (R)
-
-  [bold]Opis[/bold]: Zakłócanie porządku publicznego.
-
-  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
-  [bold]Zalecana maksymalna kara:[/bold] 2:00
-
-  [bold]Uwagi:[/bold] Czasami określane jako chuligaństwo. Pojemna kategoria obejmująca nieprzyjemnych członków załogi. Obejmuje takie rzeczy, jak publiczna nagość, niepotrzebne obelgi, utrudnianie pracy władzom oraz podżeganie do przestępstw lub przemocy.
-
-  ## Drobna kradzież
-
-  [bold]Kod:[/bold] §101 (G)
-
-  [bold]Opis[/bold]: Zabranie bez zgody innej osoby, organizacji lub własności wspólnej przedmiotów, które nie są niezbędne lub są niedrogie.
-
-  [bold]Zalecana minimalna kara:[/bold] 1:00
-  [bold]Zalecana maksymalna kara:[/bold] 3:00
-
-  [bold]Uwagi:[/bold] Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot. Przedmioty takie jak instrumenty, odzież i narzędzia zaliczają się do drobnych kradzieży. W większości przypadków wystarczy zatrzymać złodzieja, zwrócić skradziony przedmiot i puścić go z ostrzeżeniem.
-
-  ## Posiadanie/używanie nielegalnych substancji
-
-  [bold]Kod:[/bold] §102
-
-  [bold]Opis[/bold]: Produkcja, posiadanie lub nadużywanie substancji lub chemikaliów objętych ograniczeniami.
-
-  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
-  [bold]Zalecana maksymalna kara:[/bold] 3:00
-
-  [bold]Uwagi: Należy postępować zgodnie ze Standardową Procedurą Postępowania. Jeśli w SPP nie ma wzmianki o jakiejkolwiek wątpliwej kwestii, kapitan lub najwyższy rangą dowódca może publicznie nałożyć ograniczenia.[/bold]
-
-  ## Wtargnięcie
-
-  [bold]Kod:[/bold] §103 (T)
-
-  [bold]Opis[/bold]: Wejście na teren niezabezpieczony bez pozwolenia.
-
-  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
-  [bold]Zalecana maksymalna kara:[/bold] 2:00
-
-  [bold]Uwagi:[/bold] Zamiast zatrzymywać sprawców, często lepiej po prostu usunąć ich z terenu.
-
-  ## Wandalizm
-
-  [bold]Kod:[/bold] §104 (C)
-
-  [bold]Opis[/bold]: Celowe oszpecenie lub nielegalna ingerencja w mienie publiczne lub prywatne.
-
-  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
-  [bold]Zalecana maksymalna kara:[/bold] 2:00
-
-  [bold]Uwagi:[/bold] Malowanie graffiti i przebudowa stacji bez pozwolenia od inżynierów są przykładami wandalizmu.
-
-
-  # II Stopnia
-
-  ## Okrucieństwo wobec zwierząt
-
-  [bold]Kod:[/bold] §201
-
-  [bold]Opis[/bold]: Złośliwe zadawanie niepotrzebnego cierpienia lub krzywdy istocie nierozumnej.
-
-  [bold]Zalecana minimalna kara:[/bold] 2:00
-  [bold]Zalecana maksymalna kara:[/bold] 5:00
-
-  [bold]Uwagi:[/bold] Nie obejmuje to legalnych i autoryzowanych testów na zwierzętach i zazwyczaj nie dotyczy szkodników lub stworzeń, które mogą stanowić zagrożenie dla stacji.
-
-  ## Uszkodzenie/zniszczenie mienia
-
-  [bold]Kod:[/bold] §202 (C)
-
-  [bold]Opis[/bold]: Celowe uszkodzenie lub oszpecenie mienia publicznego lub prywatnego lub sprzętu.
-
-  [bold]Zalecana minimalna kara:[/bold] 2:00
-  [bold]Zalecana maksymalna kara:[/bold] 4:00
-
-  [bold]Uwagi:[/bold] Celowe rozbijanie / niszczenie okien, szyb barowych lub innego mienia publicznego lub prywatnego bez zamiaru naprawy (np. w przypadku nielegalnej przebudowy) stanowi uszkodzenie / zniszczenie mienia.
-
-  ## Narażenie na niebezpieczeństwo
-
-  [bold]Kod:[/bold] §203 (M)
-
-  [bold]Opis[/bold]: Lekkomyślne narażanie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działania umyślne lub wynikające z zaniedbania.
-
-  [bold]Zalecana minimalna kara:[/bold] 2:00
-  [bold]Zalecana maksymalna kara:[/bold] 4:00
-
-  [bold]Uwagi:[/bold] Obejmuje wypadki przy pracy, zaniedbania przemysłowe, eksperymenty na sobie, a nawet błędy medyczne.
-
-  ## Niezastosowanie się do poleceń
-
-  [bold]Kod:[/bold] §204 (L)
-
-  [bold]Opis[/bold]: Stawianie oporu wobec uzasadnionych poleceń wydanych przez władze. Obejmuje to nakazy i uprawnione przeszukania.
-
-  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
-  [bold]Zalecana maksymalna kara:[/bold] 2:00
-
-  [bold]Uwagi:[/bold] Polecenie musi być uzasadnione i zgodne z prawem, a dana osoba powinna otrzymać wystarczające ostrzeżenie przed aresztowaniem.
-
-  ## Posiadanie sprzętu objętego ograniczeniami
-
-  [bold]Kod:[/bold] §205
-
-  [bold]Opis[/bold]: Posiadanie lub używanie nieśmiercionośnych przedmiotów lub obiektów, które są objęte ograniczeniami lub są nielegalne.
-
-  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
-  [bold]Zalecana maksymalna kara:[/bold] 5:00
-
-  [bold]Uwagi:[/bold] Dotyczy to głównie kontrabandy syndykatu: EMAG-ów, masek przeciwgazowych syndykatu, krwistoczerwonych kombinezonów, przerobionych PDA lub implantów, jednak czasami może obejmować również przedmioty, których dana osoba nie powinna posiadać, takie jak kamizelki kevlarowe i sprzęt ochrony.
-
-  ## Zamieszki
-
-  [bold]Kod:[/bold] §200 (R)
-
-  [bold]Opis[/bold]: Udział w dużej grupie osób powodującej bezprawne zakłócenie porządku publicznego.
-
-  [bold]Zalecana minimalna kara:[/bold] 2:00
-  [bold]Zalecana maksymalna kara:[/bold] 4:00
-
-  [bold]Uwagi:[/bold] Oczekuje się, że do tego zarzutu zostaną dodane przestępstwa takie jak zniszczenie mienia lub pobicie. Przywódcy zamieszek mogą zostać oskarżeni o wszystkie przestępstwa popełnione pod ich przywództwem.
-
-
-
-  # III Stopnia
-
-  ## Napaść
-
-  [bold]Kod:[/bold] §300 (M)
-
-  [bold]Opis[/bold]: Grożenie komuś użyciem siły fizycznej lub próba jej użycia w celu wywołania strachu przed krzywdą.
-
-  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
-  [bold]Zalecana maksymalna kara:[/bold] 3:00
-
-  [bold]Uwagi:[/bold] Napad to jedynie groźba, a nie akt przemocy. Zarzut ten może być kumulowany w przypadku różnych ofiar.
-
-  ## Pobicie
-
-  [bold]Kod:[/bold] §301 (M)
-
-  [bold]Opis[/bold]: Faktyczne użycie siły fizycznej wobec kogoś bez jego zgody.
-
-  [bold]Zalecana minimalna kara:[/bold] 1:00
-  [bold]Zalecana maksymalna kara:[/bold] 3:00
-
-  [bold]Uwagi:[/bold] Zarzut ten dotyczy faktycznego aktu przemocy fizycznej. Może on być kumulowany z innymi przestępstwami z użyciem przemocy z wieloma ofiarami.
-
-  ## Naruszenie zatrzymania
-
-  [bold]Kod:[/bold] §303 (L)
-
-  [bold]Opis[/bold]: Celowe stawianie oporu i ucieczka przed aresztowaniem lub zatrzymaniem przez upoważniony personel.
-
-  [bold]Zalecana minimalna kara:[/bold] 2:00
-  [bold]Zalecana maksymalna kara:[/bold] 4:00
-
-  [bold]Uwagi:[/bold] Dotyczy to wyłącznie sytuacji, w której dana osoba jest aktywnie aresztowana fizycznie. Obejmuje to osoby zdejmujące kajdanki lub pomagające innym w uniknięciu aresztowania. Ucieczka z aresztu jest odrębnym przestępstwem.
-
-  ## Wielka kradzież
-
-  [bold]Kod:[/bold] §304 (G)
-
-  [bold]Opis[/bold]: Zabranie bez zgody innej osoby lub organizacji ważnego lub nieodzownego mienia.
-
-  [bold]Zalecana minimalna kara:[/bold] 3:00
-  [bold]Zalecana maksymalna kara:[/bold] 6:00
-
-  [bold]Uwagi:[/bold] Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot. Termin ten jest używany głównie w odniesieniu do kradzieży przedmiotów należących do personelu dowodzenia, takich jak piloty do drzwi, kombinezony ochronne, plecaki odrzutowe i niepowtarzalne części maszyn.
-
-  ## Nieumyślne spowodowanie śmierci
-
-  [bold]Kod:[/bold] §302 (M)
-
-  [bold]Opis[/bold]: Przypadkowe pozbawienie życia istoty rozumnej bez zamiaru.
-
-  [bold]Zalecana minimalna kara:[/bold] 4:00
-  [bold]Zalecana maksymalna kara:[/bold] 10:00
-
-  [bold]Uwagi:[/bold] Obejmuje nieumyślne spowodowanie śmierci w obronie własnej oraz śmierć wynikającą z zaniedbania.
-
-  ## Masowe zniszczenie
-
-  [bold]Kod:[/bold] §305 (C)
-
-  [bold]Opis[/bold]: Spowodowanie ogromnych zniszczeń na danym obszarze lub w kluczowym systemie stacji.
-
-  [bold]Zalecana minimalna kara:[/bold] 10:00
-  [bold]Zalecana maksymalna kara:[/bold] 15:00.
-
-  [bold]Uwagi:[/bold] Najczęściej stosowane w przypadku śmiercionośnych zamachów bombowych lub sabotażu kluczowych systemów stacji, takich jak produkcja energii, klonowanie, podstacje czy systemy atmosferyczne.
-
-  ## Posiadanie broni objętej ograniczeniami
-
-  [bold]Kod:[/bold] §306
-
-  [bold]Opis[/bold]: Posiadanie lub używanie broni, która jest niezgodna z prawem lub stanowi kontrabandę.
-
-  [bold]Zalecana minimalna kara:[/bold] 3:00
-  [bold]Zalecana maksymalna kara:[/bold] 6:00
-
-  [bold]Uwagi:[/bold] Wszystko, od broni palnej bez pozwolenia, śmiercionośnych ostrzy, materiałów wybuchowych, broni palnej syndykatu po implanty wybuchowe.
-
-  ## Wtargnięcie na teren zabezpieczony
-
-  [bold]Kod:[/bold] §307 (T)
-
-  [bold]Opis[/bold]: Wejście na teren zabezpieczony bez pozwolenia.
-
-  [bold]Zalecana minimalna kara:[/bold] 3:00
-  [bold]Zalecana maksymalna kara:[/bold] 8:00
-
-  [bold]Uwagi:[/bold] Obejmuje to takie miejsca, jak telekomunikacja, biura dowódców, obszary ochrony, obszary dowodzenia, skarbiec i zbrojownie.
-
-  ## Ucieczka z aresztu
-
-  [bold]Kod:[/bold] §308
-
-  [bold]Opis[/bold]: Wydostanie się z celi lub spod dozoru z zamiarem ucieczki.
-
-  [bold]Zalecana minimalna kara:[/bold] 2:00
-  [bold]Zalecana maksymalna kara:[/bold] 5:00
-
-  [bold]Uwagi:[/bold] Ten czas należy doliczyć do aktualnego czasu odsiadki więźnia. Choć zdarza się to rzadko, kara może zostać podniesiona do aresztu permamentnego, jeśli podejrzany wielokrotnie próbował uciec z aresztu. Obejmuje również osoby pomagające innym w ucieczce.
-
-
-  # IV Stopnia
-
-  ## Porwanie
-
-  [bold]Kod:[/bold] §400
-
-  [bold]Opis[/bold]: Bezprawne ograniczenie wolności, transport, kontrola lub uwięzienie istoty rozumnej wbrew jej woli.
-
-  [bold]Zalecana minimalna kara:[/bold] 4:00
-  [bold]Zalecana maksymalna kara:[/bold] 10:00
-
-  [bold]Uwagi:[/bold] Szeroki zakres czynów, stosowany głównie jako pojęcie zbiorcze w odniesieniu do bezprawnego kontrolowania innej istoty.
-
-  ## Morderstwo
-
-  [bold]Kod:[/bold] §401 (M)
-
-  [bold]Opis[/bold]: Zabicie istoty rozumnej ze złośliwym zamiarem.
-
-  [bold]Zalecana minimalna kara:[/bold] 4:00
-  [bold]Zalecana maksymalna kara:[/bold] 10:00
-
-  [bold]Uwagi:[/bold] Tylko w przypadku śmierci ofiary, która wymaga wskrzeszenia, czyn ten zmienia się z usiłowania morderstwa w morderstwo.
-
-
-
-  # V Stopnia
-
-  ## Masowe morderstwo
-
-  [bold]Kod:[/bold] §500 (M)
-
-  [bold]Opis[/bold]: Zabicie trzech lub więcej istot rozumnych ze złośliwym zamiarem.
-
-  [bold]Zalecana minimalna kara:[/bold] Permamentna
-  [bold]Zalecana maksymalna kara:[/bold] Permamentna
-
-  [bold]Uwagi:[/bold] Ma zastosowanie wyłącznie w przypadku wielokrotnych, umyślnych zabójstw.
-
-  ## Rażące zaniedbanie
-
-  [bold]Kod:[/bold] §501
-
-  [bold]Opis[/bold]: Lekkomyślne narażenie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania jako członek dowództwa.
-
-  [bold]Zalecana minimalna kara:[/bold] Degradacja
-  [bold]Zalecana maksymalna kara:[/bold] Permamentna
-
-  [bold]Uwagi:[/bold] Obejmuje to spowodowanie śmierci jednego lub więcej członków załogi, nie naprawienie / nie złagodzenie poważnych uszkodzeń stacji lub spowodowanie poważnych uszkodzeń stacji. Zarzut ten ma być kierowany do członków dowództwa i może zostać dodany do ich akt osobowych.
-
-  ## Uniemożliwienie wskrzeszenia
-
-  [bold]Kod:[/bold] §502
-
-  [bold]Opis[/bold]: Sprawienie, że ciało jest niemożliwe do wskrzeszenia.
-
-  [bold]Zalecana minimalna kara:[/bold] 15:00
-  [bold]Zalecana maksymalna kara:[/bold] Permamentna
-
-  [bold]Uwagi:[/bold] Obejmuje to rozczłonkowanie, wyrzucenie w przestrzeń kosmiczną, celowe ukrycie ciała prowadzące do jego rozkładu lub inne sposoby uniemożliwiające wskrzeszenia ciała z duszą.
-
-  ## Odmowa poddania się osłonie umysłu
-
-  [bold]Kod:[/bold] §503
-
-  [bold]Opis[/bold]: Odmowa zastosowania się do rozsądnej procedury osłony umysłu.
-
-  [bold]Zalecana minimalna kara:[/bold] Permamentna do czasu akceptacji osłony
-  [bold]Zalecana maksymalna kara:[/bold] Permamentna
-
-  [bold]Uwagi:[/bold] Ma zastosowanie, jeśli podejrzany jest skrajnie niechętny do współpracy lub implant nie działa z powodu zbyt zaawansowanego stanu psychicznego więźnia. Jeśli implant nie działa, zalecana maksymalna kara zostaje podwyższona do przyspieszonej egzekucji. Należy zauważyć, że osoby cierpiące na neuroawersję nie mogą odmówić zastosowania osłony umysłu w przypadku potwierdzonego zagrożenia praniem mózgu lub kontrolą umysłu, ale po ustąpieniu zagrożenia należy usunąć z nich implanty. Odmowa usunięcia osłon umysłu u osób cierpiących na neuroawersję po ustąpieniu zagrożenia może stanowić zaniedbanie medyczne w ramach zarzutu narażenia na niebezpieczeństwo.
-
-  ## Terroryzm
-
-  [bold]Kod:[/bold] §504
-
-  [bold]Opis[/bold]: Podejmowanie złośliwych działań destrukcyjnych, które grożą zniszczeniem lub skutecznie niszczą statek lub siedlisko.
-
-  [bold]Zalecana minimalna kara:[/bold] Permamentna
-  [bold]Zalecana maksymalna kara:[/bold] Egzekucja
-
-  [bold]Uwagi:[/bold] Podsumowując: ekstremalny sabotaż systemów stacji lub uruchomienie systemów samozniszczenia.
+  ## Stosowanie siły
+  Nie idź wyżej niż tabela w [textlink="procedurze stosowania siły" link="UseOfForceSOP"]. Na zielonym / niebieskim współpraca to poziom I, opór i atak to II, crit to III. Na czerwonym start od II. Delta / Gamma: opór i wyżej to IV. Po poziomie III ratujesz, o ile sytuacja pozwala.
 </Document>

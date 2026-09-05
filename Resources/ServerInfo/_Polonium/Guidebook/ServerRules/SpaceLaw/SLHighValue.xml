@@ -1,0 +1,51 @@
+<Document>
+  # Rejestr mienia znacznej wartości
+  Wykaz mienia o szczególnej wartości. Bezprawne przywłaszczenie kwalifikuje się jako [textlink="§502" link="SpaceLawCrimeList"].
+
+  Do rejestru wchodzą przedmioty ze stopniem kontrabandy [color=red]GrandTheft[/color] (w oględzinach: cel kradzieży / wyjątkowa wartość dla Syndykatu) oraz głowica nuklearna. Pod ten sam artykuł podlegają karty ID kapitana i kierownika personelu oraz kradzież albo uprowadzenie wahadłowców — także wtedy, gdy wahadłowiec nie występuje jako osobny wpis poniżej.
+
+  Mieniem lub sprzętem krytycznym uznaje się elementy, bez których stacja nie jest w stanie funkcjonować.
+
+  ## Identyfikatory i autoryzacja
+  <Box>
+    <GuideEntityEmbed Entity="CaptainIDCard" Caption="ID kapitana"/>
+    <GuideEntityEmbed Entity="HoPIDCard" Caption="ID HoP"/>
+    <GuideEntityEmbed Entity="NukeDisk" Caption="Dysk nuklearny"/>
+  </Box>
+
+  ## Ładunki i łączność
+  <Box>
+    <GuideEntityEmbed Entity="NuclearBomb" Caption="Głowica nuklearna"/>
+    <GuideEntityEmbed Entity="CallablePhoneInstrument" Caption="Czerwony telefon"/>
+    <GuideEntityEmbed Entity="CallablePhoneInstrumentCentComm" Caption="Telefon CentComm"/>
+    <GuideEntityEmbed Entity="HandTeleporter" Caption="Teleporter"/>
+  </Box>
+
+  ## Sprzęt kapitana i dowództwa
+  <Box>
+    <GuideEntityEmbed Entity="JetpackCaptain" Caption="Dżetpak kapitana"/>
+    <GuideEntityEmbed Entity="WeaponAntiqueLaser" Caption="Antyczny laser"/>
+    <GuideEntityEmbed Entity="WeaponEnergyMagnum" Caption="Energy magnum"/>
+    <GuideEntityEmbed Entity="Hypospray" Caption="Hypospray"/>
+    <GuideEntityEmbed Entity="HandheldCrewMonitor" Caption="Monitor załogi"/>
+    <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv" Caption="Magboots"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitRd" Caption="Hardsuit RD"/>
+    <GuideEntityEmbed Entity="BoxFolderQmClipboard" Caption="Tablica QM"/>
+    <GuideEntityEmbed Entity="ClothingHandsKnuckleDustersQM" Caption="Kastety QM"/>
+  </Box>
+
+  ## Płytki konsol komunikacyjnych
+  <Box>
+    <GuideEntityEmbed Entity="CargoCommsComputerCircuitboard"/>
+    <GuideEntityEmbed Entity="EngiCommsComputerCircuitboard"/>
+    <GuideEntityEmbed Entity="MedicalCommsComputerCircuitboard"/>
+    <GuideEntityEmbed Entity="ScienceCommsComputerCircuitboard"/>
+    <GuideEntityEmbed Entity="SecurityCommsComputerCircuitboard"/>
+    <GuideEntityEmbed Entity="ServiceCommsComputerCircuitboard"/>
+  </Box>
+
+  ## Pozostałe
+  <Box>
+    <GuideEntityEmbed Entity="FoodMeatCorgi" Caption="Mięso Iana"/>
+  </Box>
+</Document>
