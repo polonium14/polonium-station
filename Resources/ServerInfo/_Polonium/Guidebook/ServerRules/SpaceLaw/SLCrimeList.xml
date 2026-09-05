@@ -111,7 +111,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#ffce93">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§402 Rozbój\n7:00 – 18:00[/color]
+        [color=black]§402 Rozbój\n7:00 – 12:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#ffce93">
@@ -141,7 +141,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#c9a0dc">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§403 Obrót bronią\n9:00 – 18:00[/color]
+        [color=black]§403 Obrót bronią\n9:00 – 15:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#c9a0dc">
@@ -166,7 +166,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#dae8fc">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§304 Masowe niszczenie\n11:00 – 18:00[/color]
+        [color=black]§304 Masowe niszczenie\n7:00 – 14:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -367,7 +367,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Uwagi:[/bold] Mienie z [textlink="rejestru mienia znacznej wartości" link="SpaceLawHighValue"] kwalifikuje się jako §502.
 
   ## §402 Rozbój
-  [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] 7:00 – 18:00
+  [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] 7:00 – 12:00
 
   [bold]Opis:[/bold] Kradzież dokonana z użyciem przemocy stwarzającej zagrożenie dla życia lub z groźbą jej użycia.
 
@@ -430,7 +430,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Uwagi:[/bold] Sprzedaż i dystrybucja kwalifikują się jako §403. Broń z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] — jako §503.
 
   ## §403 Obrót bronią
-  [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] 9:00 – 18:00
+  [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] 9:00 – 15:00
 
   [bold]Opis:[/bold] Sprzedaż lub nieodpłatne rozprowadzanie broni, części broni, amunicji, granatów oraz ładunków wybuchowych — w tym broni wytworzonej samodzielnie.
 
@@ -468,7 +468,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Uwagi:[/bold] W przypadku Iana stosuje się ten artykuł, z karą w górnej granicy przedziału. Sabotaż kluczowych systemów stacji kwalifikuje się jako §304 lub §504.
 
   ## §304 Masowe niszczenie
-  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 11:00 – 18:00
+  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 7:00 – 14:00
 
   [bold]Opis:[/bold] Rozległe zniszczenie obszaru lub kluczowego systemu stacji (użycie ładunków wybuchowych, sabotaż zasilania, sekcji klonowania, systemu atmosferycznego).
 
