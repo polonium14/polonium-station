@@ -10,16 +10,23 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <Document>
   # Prawo Kosmiczne
-  Stacja Polonium działa zgodnie z prawem kosmicznym. Wszyscy członkowie załogi, pasażerowie i goście przebywający na stacji powinni znać i przestrzegać tych przepisów (są one dość zdroworozsądkowe, tylko ochrona i kapitan muszą znać szczegóły).
+  [bold]Prawo Kosmiczne (PK)[/bold] to kompletny zestaw regulacji obowiązujących w korporacji NanoTrasen, do którego przestrzegania zobowiązana jest każda rozumna istota przebywająca na terenie jej obiektów. Wszelkie próby samowolnej modyfikacji, omijania lub ignorowania tych przepisów są surowo zabronione. Wraz z przekroczeniem progu jakiejkolwiek placówki korporacyjnej, akceptacja i stosowanie Prawa Kosmicznego stają się bezwzględnym obowiązkiem.
 
   Dowództwo oraz personel ochrony (w tym osoby awansowane na te stanowiska w trakcie rundy) [bold]mają obowiązek[/bold] stosować niniejsze prawo. Naruszenia należy priorytetyzować według ich wagi oraz zaistniałej sytuacji. Korzystanie z kontrabandy Syndykatu przez ochronę lub dowództwo jest dopuszczalne wyłącznie w sytuacji skrajnego zagrożenia, nie zapobiegawczo.
 
-  Szczegółowe opisy artykułów: [textlink="Lista przestępstw" link="SpaceLawCrimeList"]. Okoliczności oraz wymiar kary: [textlink="Okoliczności" link="SpaceLawModifiers"].
+  Szczegółowe opisy artykułów: [textlink="Lista przestępstw" link="SpaceLawCrimeList"]. Okoliczności oraz wymiar kary: [textlink="Okoliczności" link="SpaceLawModifiers"]. Rejestry: [textlink="mienie znacznej wartości" link="SpaceLawHighValue"] (§502), [textlink="wyposażenie antykorporacyjne" link="SpaceLawAntiCorp"] (§503).
+
+  # Zasady ogólne
+  Oznaczenie artykułów, statusy prawne oraz odesłanie do rejestrów.
 
   ## Kategorie (_XX)
-  Każde przestępstwo oznaczone jest kodem §XYZ. [bold]Pierwsza cyfra[/bold] oznacza stopień ciężkości czynu (1 — I … 5 — V). [bold]Dwie ostatnie cyfry (XX)[/bold] określają kategorię przestępstwa. Artykuły z tą samą kategorią XX [bold]nie podlegają łączeniu[/bold] — uwzględnia się wyłącznie najcięższy zarzut. Kary z różnych kategorii XX sumuje się. Oznaczenia kolorystyczne grup nie występują.
+  Każde przestępstwo oznaczone jest kodem §XYZ. [bold]Pierwsza cyfra[/bold] oznacza stopień ciężkości czynu (1 — I … 5 — V). [bold]Dwie ostatnie cyfry (_XX)[/bold] określają kategorię przestępstwa. Artykuły z tą samą kategorią _XX [bold]nie podlegają łączeniu[/bold] — uwzględnia się wyłącznie najcięższy zarzut. Kary z różnych kategorii _XX sumuje się. Oznaczenia kolorystyczne grup nie występują.
 
   Wyjątek: zarzuty napaści, uszczerbku na zdrowiu, zabójstwa oraz uniemożliwienia reanimacji podlegają sumowaniu, jeśli dotyczą [bold]różnych poszkodowanych[/bold].
+
+  Łączny czas powyżej [bold]35 minut[/bold] zdecydowanie zaleca permabrig.
+
+  Pełne opisy artykułów: [textlink="Lista przestępstw" link="SpaceLawCrimeList"].
 
   - x00 Władza: §100 Zakłócanie, §200 Nieposłuszeństwo, §300 Ucieczka, §400 Odmowa osłony, §500 Powstanie
   - x01 Przemoc: §201 Napaść, §301 Uszczerbek, §401 Morderstwo, §501 Uniemożliwienie wskrzeszenia
@@ -29,27 +36,52 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - x05 Teren: §105 Wtargnięcie, §305 Teren zabezpieczony
   - x06 Zaniedbanie: §206 Zaniedbanie, §506 Rażące zaniedbanie
 
-  Łączny czas powyżej [bold]35 minut[/bold] zdecydowanie zaleca permabrig.
-
   ## Wrogowie Korporacji i Osoby Niezarejestrowane
 
   [bold]Wróg Korporacji[/bold] — osoba, która popełniła przestępstwo uderzające bezpośrednio w bezpieczeństwo publiczne oraz dobrostan placówki. Działania te stanowią bezpośrednie zagrożenie dla interesów NanoTrasen. Za wroga korporacji uznaje się każdego, komu udowodniono winę z artykułu krytycznego (stopień V). Ze względu na skrajnie wysokie zagrożenie społeczne wrogowie korporacji podlegają natychmiastowej egzekucji.
 
   [bold]Osoba Niezarejestrowana[/bold] — jednostka, która nie należy do załogi stacji lub której przynależności nie da się jednoznacznie ustalić. Osoby niezarejestrowane podlegają obowiązkowemu zatrzymaniu oraz przymusowemu przesłuchaniu.
 
+  # Wymiar kary
+  Okoliczności przy zarzucie, łączenie kar oraz wykazy mienia. Pełne reguły liczenia, krok po kroku oraz przykład: [textlink="Okoliczności" link="SpaceLawModifiers"].
+
+  ## Rejestr mienia znacznej wartości
+  Wykaz mienia o szczególnej wartości. Kradzież kwalifikuje się jako [textlink="§502" link="SpaceLawCrimeList"]. Do rejestru wchodzą przedmioty ze stopniem [color=red]GrandTheft[/color] (cel kradzieży) oraz głowica nuklearna. Pod ten artykuł podlegają również karty ID kapitana i kierownika personelu oraz kradzież albo uprowadzenie wahadłowców.
+
+  Mieniem lub sprzętem krytycznym uznaje się elementy, bez których stacja nie jest w stanie funkcjonować.
+
+  Pełny wykaz: [textlink="Rejestr mienia znacznej wartości" link="SpaceLawHighValue"].
+
+  ## Rejestr wyposażenia antykorporacyjnego
+  Posiadanie albo obrót podmiotami z rejestru kwalifikuje się jako [textlink="§503" link="SpaceLawCrimeList"]. Wyjątki z rejestru zachowują dotychczasową kwalifikację ([textlink="§203" link="SpaceLawCrimeList"] albo [textlink="§303" link="SpaceLawCrimeList"]).
+
+  Pełny wykaz oraz wyjątki: [textlink="Rejestr wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"].
+
+  ## Okoliczności i łączenie kar
+  Wyrok nie jest prostą sumą wartości z tabeli. Najpierw uwzględnia się okoliczności dla [bold]każdego zarzutu osobno[/bold], następnie sumuje pozostałe kary, a dopiero na końcu wylicza [bold]ostateczny czas odbywania kary[/bold].
+
+  Prowadzący [textlink="przesłuchanie" link="SecuritySOP"] decyduje, czy dana okoliczność zachodzi. Nadzorca (albo komendant / najstarszy rangą oficer) zatwierdza wyrok w Protokole. Przy drobnych przewinieniach często wystarczy ostrzeżenie oraz pouczenie, że kolejny taki sam czyn w tym samym dziale (_XX) zostanie uznany za recydywę.
+
+  Kary z różnych działów _XX dodaje się do siebie. W ramach jednego działu _XX [bold]uwzględnia się wyłącznie najcięższy zarzut[/bold]. Zsumowana kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego zarzutu. Kara powyżej [bold]35 minut[/bold] oznacza dożywotni areszt (permabrig).
+
+  Recydywa, brak zamiaru, stan wyższej konieczności, czynny żal, współpraca, dobrowolne zgłoszenie się, utrudnianie śledztwa oraz limit 1,5×: [textlink="Okoliczności i wymiar kary" link="SpaceLawModifiers"].
+
+  # Postępowanie
+  Prawa więźniów oraz czynności organów władzy od podejrzenia do osadzenia.
+
   ## Traktowanie więźniów
 
   Więźniowie wciąż mają pewne prawa, które muszą być przestrzegane przez organy ścigania:
 
-  - Więźniom należy zapewnić odpowiednią opiekę medyczną. Powinni oni również mieć zapewnioną pomoc psychiatryczną i duchową, jeśli o to poproszą.
-  - Więźniowie muszą mieć dostęp do sprzętu komunikacyjnego (radia), o ile nie jest on nadużywany.
-  - Więźniom należy zapewnić odzież, żywność, wodę, schronienie i bezpieczeństwo. Jeśli areszt nie jest już bezpieczny, należy przenieść więźniów do innego miejsca.
-  - Więźniowie muszą mieć dostęp do pomocy prawnej podczas przesłuchania przy przestępstwach poziomu III lub wyższym, jeśli o to poproszą i jeśli jest ona dostępna.
-  - Więźniowie nie mogą być skazani przed formalnym przesłuchaniem i przedstawieniem dowodów, chyba że przyznali się do zarzucanych im przestępstw. Szczegóły: [textlink="procedura przesłuchania" link="SecuritySOP"].
-  - Więźniowie mogą mieć do 5 minut sam na sam z adwokatem przed rozpoczęciem przesłuchania w celu omówienia strategii obrony; czas oczekiwania na adwokata wlicza się w ten limit.
-  - Formalne przesłuchanie po aresztowaniu musi zakończyć się wypełnionym [bold]Protokołem Przesłuchania[/bold] z pieczątką Komendanta. Bez ważnego protokołu nie wolno rozpocząć odbywania wyroku. Brak dowodów po 15 minutach od rozpoczęcia przesłuchania — zwolnienie jako niewinny.
-  - Po zakończeniu pobytu w areszcie więźniowie muszą otrzymać przypisane im urządzenia PDA. Wyjątkiem jest sytuacja, w której istnieją solidne dowody na manipulowanie urządzeniem PDA – w takim przypadku urządzenie należy zabezpieczyć i wymienić na nowe.
-  - Więźniowie muszą mieć zapewnioną swobodę poruszania się i nie powinni być krępowani kajdankami ani innymi środkami po osadzeniu w areszcie, chyba że istnieje nadmierne zagrożenie dla życia lub zdrowia. Podobnie, wszyscy więźniowie przebywający w areszcie na czas dłuższy lub bezterminowy powinni być przetrzymywani w celach zbiorowych i nie powinni być umieszczani w izolatkach, chyba że stanowią zagrożenie dla życia lub zdrowia.
+  1. Więźniom należy zapewnić odpowiednią opiekę medyczną. Powinni oni również mieć zapewnioną pomoc psychiatryczną i duchową, jeśli o to poproszą.
+  2. Więźniowie muszą mieć dostęp do sprzętu komunikacyjnego (radia), o ile nie jest on nadużywany.
+  3. Więźniom należy zapewnić odzież, żywność, wodę, schronienie i bezpieczeństwo. Jeśli areszt nie jest już bezpieczny, należy przenieść więźniów do innego miejsca.
+  4. Więźniowie muszą mieć dostęp do pomocy prawnej podczas przesłuchania przy przestępstwach poziomu III lub wyższym, jeśli o to poproszą i jeśli jest ona dostępna.
+  5. Więźniowie nie mogą być skazani przed formalnym przesłuchaniem i przedstawieniem dowodów, chyba że przyznali się do zarzucanych im przestępstw. Szczegóły: [textlink="procedura przesłuchania" link="SecuritySOP"].
+  6. Więźniowie mogą mieć do 5 minut sam na sam z adwokatem przed rozpoczęciem przesłuchania w celu omówienia strategii obrony; czas oczekiwania na adwokata wlicza się w ten limit.
+  7. Formalne przesłuchanie po aresztowaniu musi zakończyć się wypełnionym [bold]Protokołem Przesłuchania[/bold] z pieczątką Komendanta. Bez ważnego protokołu nie wolno rozpocząć odbywania wyroku. Brak dowodów po 15 minutach od rozpoczęcia przesłuchania — zwolnienie jako niewinny.
+  8. Po zakończeniu pobytu w areszcie więźniowie muszą otrzymać przypisane im urządzenia PDA. Wyjątkiem jest sytuacja, w której istnieją solidne dowody na manipulowanie urządzeniem PDA – w takim przypadku urządzenie należy zabezpieczyć i wymienić na nowe.
+  9. Więźniowie muszą mieć zapewnioną swobodę poruszania się i nie powinni być krępowani kajdankami ani innymi środkami po osadzeniu w areszcie, chyba że istnieje nadmierne zagrożenie dla życia lub zdrowia. Podobnie, wszyscy więźniowie przebywający w areszcie na czas dłuższy lub bezterminowy powinni być przetrzymywani w celach zbiorowych i nie powinni być umieszczani w izolatkach, chyba że stanowią zagrożenie dla życia lub zdrowia.
 
   Bieg odbywania kary [bold]ulega wstrzymaniu[/bold] na czas konsultacji z prawnikiem oraz na czas trwania procesu sądowego. Nadzorca ma obowiązek to respektować ([textlink="SPO Nadzorcy" link="WardenSOP"]). Prawnik jest zobowiązany pouczyć klienta, że w przypadku wielu zarzutów proces sądowy często trwa dłużej niż sam wyrok ([textlink="SPO Prawnika" link="LegalSOP"]).
 
@@ -58,72 +90,299 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Uzasadnione podejrzenie wobec danej osoby definiuje się jako podejrzenie oparte na bezpośredniej obserwacji przez funkcjonariusza potencjalnie nielegalnej działalności, zgłoszeniach dotyczących potencjalnie nielegalnej działalności popełnionej przez tę osobę (z wyłączeniem ogólnych lub nieprecyzyjnych opisów) pochodzących z wiarygodnego źródła, bądź na podejrzeniu opartym na dowodach zebranych i przekazanych przez detektywa stacji.
 
   ## Ujęcie i aresztowanie
+  Pełna procedura: [textlink="SPO Ochrony" link="SecuritySOP"]. Poniżej zamieszczono skrót w zakresie wiążącym się z Prawem Kosmicznym.
+
   [bold]Ujęcie (zatrzymanie)[/bold] — tymczasowe ograniczenie wolności podejrzanego w celu ustalenia tożsamości, przeprowadzenia przeszukania (jeśli jest dopuszczalne) oraz podjęcia decyzji o dalszych krokach. Osoba ta [bold]nie posiada jeszcze[/bold] statusu formalnego więźnia i może zostać zwolniona bez wyroku.
 
   [bold]Aresztowanie[/bold] — formalne zatrzymanie, doprowadzenie do sekcji penitencjarnej, przesłuchanie, wydanie wyroku lub osadzenie do czasu procesu.
 
-  Pełna procedura: [textlink="SPO Ochrony" link="SecuritySOP"]. W skrócie:
+  ### Ujęcie
+  1. [bold]Podstawa[/bold] — uzasadnione podejrzenie, bezpośrednia obserwacja, nakaz albo przepisy obowiązujące przy danym kodzie zagrożenia.
+  2. [bold]Poinformowanie[/bold] — funkcjonariusz podaje tożsamość, fakt ujęcia oraz jego przyczynę (I stopień środka przymusu bezpośredniego). Podczas alarmu czerwonego powód można podać w sekcji penitencjarnej.
+  3. [bold]Ujęcie[/bold] — w pierwszej kolejności bez II stopnia. W razie oporu: [textlink="stosowanie siły" link="UseOfForceSOP"].
+  4. [bold]Tożsamość[/bold] — identyfikator, manifest, w razie potrzeby odciski palców lub DNA.
+  5. [bold]Przeszukanie[/bold], jeżeli jest dopuszczalne. Przedmioty zabronione podlegają konfiskacie; przedmioty zgodne z prawem zwraca się przy zwolnieniu.
+  6. [bold]Materiał dowodowy[/bold] — detektyw może prowadzić czynności śledcze podczas ujęcia (wstępne ustalenia, maksymalnie 10 minut bez dowodów). Czynności te nie zastępują przesłuchania po aresztowaniu.
+  7. [bold]Decyzja:[/bold] zwolnienie, aresztowanie albo przekazanie odpowiednim służbom.
 
-  Ujęcie: ustalenie podstawy → poinformowanie zatrzymanego (zastosowanie I stopnia środka przymusu bezpośredniego; podczas alarmu czerwonego powód można podać w sekcji penitencjarnej) → ujęcie → weryfikacja tożsamości → przeszukanie (jeśli dopuszczalne) → zebranie materiału dowodowego (detektyw może prowadzić czynności śledcze, maksymalnie 10 minut bez dowodów) → zwolnienie / aresztowanie / przekazanie odpowiednim służbom.
+  ### Aresztowanie
+  1. Doprowadzenie do sekcji penitencjarnej (kajdanki, jeżeli jest to konieczne).
+  2. Przekazanie nadzorcy; w jego nieobecności — komendantowi albo najstarszemu rangą oficerowi.
+  3. Pełne przeszukanie osobiste: kieszenie, PDA, płaszcz, pas. Nadzorca przeprowadza je wobec każdego nowo przyjętego więźnia.
+  4. Przesłuchanie — obowiązkowe na kodzie zielonym i niebieskim, o ile obsada na to pozwala.
+  5. Wydanie wyroku albo zwolnienie na podstawie Prawa Kosmicznego oraz [bold]Protokołu Przesłuchania[/bold] z pieczątką Komendanta. Wyrok wydaje nadzorca, następnie komendant, następnie najstarszy rangą oficer. Komendant nie zmienia wydanego wyroku bez ujawnienia nowych dowodów lub wystąpienia próby ucieczki.
+  6. Rejestry: status [bold]Zatrzymany[/bold], zarzuty, czas.
+  7. Osadzenie. Środki przymusu zdejmuje się po osadzeniu, o ile nie występuje nadmierne zagrożenie. Należy zapewnić odzież, wodę, żywność, schronienie oraz podstawową opiekę medyczną.
+  8. Nadzorowanie wyroku oraz praw więźnia. Po odbyciu kary: status [bold]Zwolniony[/bold]. W razie śmierci: [textlink="procedura egzekucji" link="SecuritySOP"].
 
-  Aresztowanie: doprowadzenie → przekazanie nadzorcy (lub komendantowi / najstarszemu rangą oficerowi) → pełne przeszukanie → przesłuchanie → wydanie wyroku na podstawie Prawa Kosmicznego oraz Protokołu Przesłuchania → zmiana statusu w kartotece na [bold]Zatrzymany[/bold] → osadzenie bez środków przymusu (o ile nie występuje zagrożenie) → zmiana statusu na [bold]Zwolniony[/bold] po odbyciu kary.
-
-  Komendant nie zmienia wydanego wyroku bez ujawnienia nowych dowodów lub wystąpienia próby ucieczki. Funkcjonariusz dokonujący aresztowania nie może prowadzić przesłuchania tej samej osoby.
+  Funkcjonariusz dokonujący aresztowania nie może prowadzić przesłuchania tej samej osoby.
 
   ## Przeszukiwania
 
   Przeszukanie osobiste polega na zajęciu przedmiotów znajdujących się w plecaku, rękach, płaszczu, pasku, kieszeniach i czapce danej osoby. Jeśli podczas przeszukania zostaną znalezione jakiekolwiek przedmioty zabronione, funkcjonariusz może zdecydować o dalszym przeszukaniu w ramach zatrzymania lub po prostu skonfiskować przedmioty objęte ograniczeniami. Po przeprowadzeniu przeszukania wszystkie przedmioty zgodne z prawem należy zwrócić danej osobie.
 
-  Gdy poziom alarmowy wynosi zielony, przeszukania są dozwolone wyłącznie na podstawie nakazu zatwierdzonego przez Komendanta lub Kapitana. Członek załogi może zgodnie z prawem odmówić poddania się przeszukaniu przeprowadzanemu bez takiego nakazu. Należy zauważyć, że jeśli poziom alarmowy wynosi niebieski lub wyższy, wszystkie przeszukiwania są legalne.
+  - Gdy poziom alarmowy wynosi [bold]zielony[/bold], przeszukania są dozwolone wyłącznie na podstawie nakazu zatwierdzonego przez Komendanta lub Kapitana. Członek załogi może zgodnie z prawem odmówić poddania się przeszukaniu przeprowadzanemu bez takiego nakazu.
+  - Gdy poziom alarmowy wynosi [bold]niebieski[/bold] lub wyższy, wszystkie przeszukiwania są legalne.
+  - Kod fioletowy i żółty stosują te same limity siły co kod zielony i niebieski; do przeszukań i przesłuchań stosuje się aktualny kod z SPO alarmów.
 
-  ## Implantacja
+  ## Przesłuchanie
+  Obowiązkowy etap aresztowania. Służy ustaleniu winy oraz podjęciu decyzji przed wydaniem wyroku. Pełna procedura: [textlink="SPO Ochrony" link="SecuritySOP"].
+
+  ### Obowiązkowość
+  - Na kodzie [bold]zielonym[/bold] i [bold]niebieskim[/bold] — obowiązkowe przy każdym aresztowaniu.
+  - Wyjątek: niewystarczająca obsada ochrony, uniemożliwiająca bezpieczne przeprowadzenie czynności — komendant albo kapitan może zezwolić na uproszczenie.
+  - Na pozostałych kodach — według uznania prowadzącego areszt.
+
+  ### Kto może przesłuchiwać
+  Nadzorca, komendant, inny funkcjonariusz ochrony, kapitan albo prawnik za zgodą nadzorcy lub komendanta.
+
+  [bold]Funkcjonariusz dokonujący aresztowania nie może prowadzić przesłuchania tej samej osoby.[/bold]
+
+  - Przesłuchanie kierownika działu — obecność kapitana jest obowiązkowa.
+  - Przestępstwa stopnia III lub wyższego — prawnik na żądanie, jeżeli jest dostępny.
+  - Brak jakichkolwiek dowodów po [bold]15 minutach[/bold] od rozpoczęcia — zwolnienie jako niewinny.
+  - Przed rozpoczęciem: do [bold]5 minut[/bold] sam na sam z adwokatem. Czas oczekiwania na adwokata wlicza się w ten limit.
+
+  ### Kroki
+  1. Zabezpieczenie pomieszczenia, blankietu protokołu oraz dowodów.
+  2. Wyznaczenie prowadzącego (innego niż funkcjonariusz aresztujący).
+  3. Konsultacja z adwokatem (do 5 minut).
+  4. Rozpoczęcie — godzina, tożsamość prowadzącego, skład osób obecnych w pomieszczeniu.
+  5. Odczytanie zarzutów oraz wskazanie dowodów.
+  6. Stanowisko przesłuchiwanego: przyznanie, zaprzeczenie, odmowa. Stanowisko podlega odnotowaniu.
+  7. Brak dowodów po 15 minutach — zwolnienie. W przeciwnym razie: wyrok, sąd albo zwolnienie.
+  8. Wypełnienie [bold]Protokołu Przesłuchania[/bold], pieczątka Komendanta. Bez protokołu nie rozpoczyna się odbywanie wyroku.
+
+  ### Protokół Przesłuchania
+  Musi zawierać co najmniej: tożsamość i stanowisko przesłuchiwanego, tożsamość i stanowisko prowadzącego, świadków, zebrane dowody, decyzję (wyrok, zwolnienie, sąd, kara śmierci). Należy korzystać z zatwierdzonego formularza.
+
+  ## Rejestry kryminalne
+  Konsola w sekcji ochrony. Odczyt jest dostępny dla każdego; zmiany — wyłącznie z dostępem ochrony. Szczegóły: [textlink="Rejestry kryminalne" link="CriminalRecords"].
+
+  - Po formalnym aresztowaniu: status [bold]Zatrzymany[/bold], zarzuty, czas wyroku.
+  - Po odbyciu kary: [bold]Zwolniony[/bold] — aby skazanego przebywającego na wolności nie traktowano jako uciekiniera.
+  - Po egzekucji: zdjęcie aktywnego statusu więźnia albo zamknięcie sprawy.
+  - W historii należy wpisać czyn oraz wyrok; konsola dopisze czas. Wpisy powstałe wskutek żartów z przywłaszczonym identyfikatorem podlegają usunięciu.
+  - Statusy typu Podejrzany / Poszukiwany wymagają podania powodu.
+
+  ## Implantacja i usuwanie implantów
 
   Więzień przebywający w areszcie może zostać poddany zabiegowi usunięcia implantu, o ile jest to uzasadnione. Wszczepianie implantów więźniom jest dozwolone wyłącznie w przypadkach opisanych poniżej. Proces wszczepienia implantu nie powinien wydłużać wyroku skazanego, co oznacza, że nie można przetrzymywać go dłużej w celu wszczepienia implantu, chyba że określono inaczej.
 
-  [bold]Osłony Umysłu[/bold]: Osłony umysłu mogą być stosowane u każdego więźnia, który wyraźnie został poddany praniu mózgu. W przeciwieństwie do standardowego wszczepiania implantów, można przetrzymywać więźnia do momentu wydania mu osłony umysłu, o ile odbywa się to w odpowiednim czasie. Jeśli podejrzany odmówi współpracy lub implant nie będzie działał, można go oskarżyć o [bold]§400 Odmowę osłony umysłu[/bold].
+  ### Osłony umysłu
+  Osłony umysłu mogą być stosowane u każdego więźnia, który wyraźnie został poddany praniu mózgu. W przeciwieństwie do standardowego wszczepiania implantów, można przetrzymywać więźnia do momentu wydania mu osłony umysłu, o ile odbywa się to w odpowiednim czasie. Jeśli podejrzany odmówi współpracy lub implant nie będzie działał, można go oskarżyć o [bold]§400 Odmowę osłony umysłu[/bold].
 
   W normalnych okolicznościach członek załogi może odmówić przyjęcia osłony umysłu, jeśli nie jest uwięziony za popełnienie przestępstwa.
 
   [bold]Jednakże, gdy istnieje znane zagrożenie dla stacji, polegające na masowym praniu mózgu lub kontroli umysłu, członkowie załogi muszą poddać się osłonie umysłu, jeśli nakazuje to ochrona. Nieprzestrzeganie tego nakazu będzie traktowane jako odmowa poddania się osłonie umysłu.[/bold]
 
-  [bold]Uwagi dotyczące neuroawersji[/bold]: Niektóre osoby cierpią na neuroawersję, czyli neurologiczną wrażliwość na osłony umysłu, która może powodować działania niepożądane, w tym migreny i drgawki. Nie zwalnia to ich z obowiązku stosowania osłon w przypadku potwierdzonego zagrożenia praniem mózgu lub kontrolą umysłu ani nie pozwala na pominięcie innych protokołów dotyczących osłon umysłowych, ale obowiązują w tym przypadku specjalne przepisy:
+  ### Neuroawersja
+  Niektóre osoby cierpią na neuroawersję, czyli neurologiczną wrażliwość na osłony umysłu, która może powodować działania niepożądane, w tym migreny i drgawki. Nie zwalnia to ich z obowiązku stosowania osłon w przypadku potwierdzonego zagrożenia praniem mózgu lub kontrolą umysłu ani nie pozwala na pominięcie innych protokołów dotyczących osłon umysłowych, ale obowiązują w tym przypadku specjalne przepisy.
 
   [bold]1. Obowiązkowy protokół postępowania w przypadkach neuroawersji:[/bold]
 
   - Personel medyczny [bold]musi[/bold] zostać poinformowany przed wszczepieniem implantu osobom, u których stwierdzono neuroawersję.
   - Osoby cierpiące na neuroawersję mogą poprosić o natychmiastowe złagodzenie objawów (Psicodine) podczas stosowania osłony umysłu w trakcie kryzysu.
 
-  [bold]2. Wymóg usunięcia osłon po ustąpieniu zagrożenia:[/bold]
-  - Osłony Umysłu [bold]muszą[/bold] zostać usunięte u osób cierpiących na neuroawersję, gdy osoba ta o to poprosi, po tym jak [bold]POTWIERDZONO[/bold], że zagrożenie minęło.
-  - Nieusunięcie osłon po ustąpieniu zagrożenia może stanowić [bold]zaniedbanie medyczne[/bold] w ramach zarzutu [bold]§206 Zaniedbanie[/bold].
+  [bold]2. Wymóg usunięcia osłon po ustąpieniu zagrożenia:[/bold] Osłony Umysłu [bold]muszą[/bold] zostać usunięte u osób cierpiących na neuroawersję, gdy osoba ta o to poprosi, po tym jak [bold]POTWIERDZONO[/bold], że zagrożenie minęło. Nieusunięcie osłon po ustąpieniu zagrożenia może stanowić [bold]zaniedbanie medyczne[/bold] w ramach zarzutu [bold]§206 Zaniedbanie[/bold].
 
-  # Usuwanie
+  Przy §400: jeżeli implant nie działa z powodu zaawansowanego stanu psychicznego więźnia, zalecana maksymalna kara może zostać podwyższona do przyspieszonej egzekucji.
 
+  ### Usuwanie implantów
   Podejrzany może zostać zmuszony do usunięcia implantu, jeśli istnieją mocne, uzasadnione dowody na to, że został on wszczepiony, np. funkcjonariusz był świadkiem użycia urządzenia do implantacji lub informacje biologiczne zostały znalezione na wyrzuconym wstrzykiwaczu. W przeciwieństwie do procedury implantacji, wyrok więźnia może zostać całkowicie odroczony lub przedłużony do czasu poddania się procedurze, o ile ochrona aktywnie podejmuje próby jej wykonania. Podobnie jak w przypadku implantacji, jeśli więzień wyrazi wyraźną zgodę, usunięcie implantu może nastąpić bez konieczności przedstawiania dowodów.
 
-  ## Wyroki
+  # Orzekanie
+  Wydawanie wyroku, sąd korporacyjny oraz formalna egzekucja.
+
+  ## Wyroki i zasady ogólne
   Wszystkie wyroki są wydawane przede wszystkim przez strażnika, a jeśli strażnik jest niedostępny, obowiązki te przejmuje Komendant Ochrony, a jeśli nie ma Komendanta Ochrony, obowiązki te przejmują członkowie ochrony o najwyższym stopniu.
 
-  Przy nakładaniu kar kieruj się zdrowym rozsądkiem i humanitaryzmem. Nie zawsze należy dążyć do wymierzenia najwyższej kary, nie zawsze trzeba nakładać maksymalny wymiar kary lub zawsze dążyć do degradacji danej osoby. Zawsze należy brać pod uwagę powagę wykroczenia i nakładać kary tylko w takim zakresie, jaki jest niezbędny, aby dana osoba wyciągnęła z niego wnioski.
+  Przy nakładaniu kar należy kierować się zdrowym rozsądkiem i humanitaryzmem. Nie zawsze należy dążyć do wymierzenia najwyższej kary, nie zawsze trzeba nakładać maksymalny wymiar kary lub zawsze dążyć do degradacji danej osoby. Zawsze należy brać pod uwagę powagę wykroczenia i nakładać kary tylko w takim zakresie, jaki jest niezbędny, aby dana osoba wyciągnęła z niego wnioski.
 
-  [bold]Pomocnictwo, usiłowanie i zamiar:[/bold] Jeśli ktoś celowo, świadomie i w znacznym stopniu pomaga innej osobie w popełnieniu przestępstwa, może zostać oskarżony o popełnienie odpowiednich przestępstw, np. inżynier, który dostarcza narzędzia osobie, która zamierza włamać się do jakiegoś obiektu. To samo dotyczy wyraźnej i konkretnej próby popełnienia przestępstwa lub osoby, która wykazuje wyraźny zamiar popełnienia przestępstwa, np. członek syndykatu uzbrajający bombę atomową, ale aresztowany przed jej detonacją, może nadal zostać oskarżony o terroryzm. Nie dotyczy to przestępstw, które już zostały wymienione jako próby, np. Napaść.
-
-  [bold]Kilka zarzutów:[/bold] różne XX dodajesz. W tym samym XX zostaje jeden, najcięższy. Okoliczności i limit 1,5×: [textlink="Okoliczności i liczenie wyroku" link="SpaceLawModifiers"].
-
-  [bold]Wpływy zewnętrzne:[/bold] Przestępstwa popełnione pod wpływem kontroli umysłowej innej osoby lub bytu podlegają ułaskawieniu po dokonaniu wyraźnej i skutecznej dekonwersji.
-
-  [bold]Egzekucje:[/bold] Egzekucje mogą być zatwierdzone przez przewodniczącego sędziego po przeprowadzeniu procesu sądowego. Egzekucje mogą być również zatwierdzone przez Centralne Dowodzenie po formalnym zgłoszeniu. Formalna egzekucja wymaga wypełnionego [bold]Nakazu egzekucji[/bold] zgodnie z [textlink="procedurą egzekucji" link="SecuritySOP"]. Nie dotyczy to natychmiastowej neutralizacji w terenie na kodach wojennych, poziomu IV procedury stosowania siły ani natychmiastowej egzekucji [bold]wroga korporacji[/bold].
+  - [bold]Pomocnictwo, usiłowanie i zamiar:[/bold] Jeśli ktoś celowo, świadomie i w znacznym stopniu pomaga innej osobie w popełnieniu przestępstwa, może zostać oskarżony o popełnienie odpowiednich przestępstw, np. inżynier, który dostarcza narzędzia osobie, która zamierza włamać się do jakiegoś obiektu. To samo dotyczy wyraźnej i konkretnej próby popełnienia przestępstwa lub osoby, która wykazuje wyraźny zamiar popełnienia przestępstwa, np. członek syndykatu uzbrajający bombę atomową, ale aresztowany przed jej detonacją, może nadal zostać oskarżony o terroryzm. Nie dotyczy to przestępstw, które już zostały wymienione jako próby, np. Napaść.
+  - [bold]Kilka zarzutów:[/bold] kary z różnych kategorii _XX sumuje się. W ramach tej samej kategorii _XX uwzględnia się wyłącznie najcięższy zarzut. Okoliczności oraz limit 1,5×: [textlink="łączenie kar" link="SpaceLawModifiers"].
+  - [bold]Wpływy zewnętrzne:[/bold] Przestępstwa popełnione pod wpływem kontroli umysłowej innej osoby lub bytu podlegają ułaskawieniu po dokonaniu wyraźnej i skutecznej dekonwersji.
+  - [bold]Egzekucje:[/bold] Egzekucje mogą być zatwierdzone przez przewodniczącego sędziego po przeprowadzeniu procesu sądowego. Egzekucje mogą być również zatwierdzone przez Centralne Dowodzenie po formalnym zgłoszeniu. Formalna egzekucja wymaga wypełnionego [bold]Nakazu egzekucji[/bold]. Nie dotyczy to natychmiastowej neutralizacji w terenie na kodach wojennych, poziomu IV procedury stosowania siły ani natychmiastowej egzekucji [bold]wroga korporacji[/bold].
 
   ## Sąd korporacyjny
   Przewodniczącym rozprawy jest [textlink="Sędzia" link="MagistrateSOP"], a pod jego nieobecność Kapitan. W trakcie alarmu Delta / Gamma / Octarine postępowania sądowego nie wszczyna się. Pełna procedura: [textlink="SPO Prawnika" link="LegalSOP"].
 
-  Pierwsze [bold]10 minut[/bold] rozprawy nie wlicza się w odsiadkę. Potem czas rozprawy idzie w wyrok. Apelacja tylko przy wyroku [bold]co najmniej 30 minut[/bold] albo dożywociu, raz w sprawie.
+  ### Kiedy proces
+  - Uniewinnienie albo skazanie — sędzia może pozostawić karę albo ją złagodzić.
+  - Dochodzenie w sprawie nadużyć oraz nałożenie środków.
+  - Dowód, że dana osoba ponownie przestrzega przepisów — zwrot skonfiskowanego mienia albo przywrócenie na stanowisko.
 
-  Werdykt na piśmie, z artykułami PK. Wyrok śmierci: Nakaz egzekucji.
+  ### Czas a wyrok
+  Pierwsze [bold]10 minut[/bold] rozprawy nie wlicza się w odbywanie kary. Po tym czasie bieg rozprawy wlicza się w wyrok. Jeżeli licznik spadnie do zera w trakcie rozprawy — skazany odbył karę i podlega zwolnieniu.
 
-  ## Rejestry kryminalne
-  Po aresztowaniu ustaw status [bold]Zatrzymany[/bold] i wpisz zarzuty oraz czas. Po karze: [bold]Zwolniony[/bold]. Po egzekucji zamknij sprawę. Szczegóły: [textlink="Rejestry kryminalne" link="CriminalRecords"].
+  Rozprawę prowadzi się w sali sądowej; gdy jej nie ma albo została zniszczona — w kaplicy, na scenie albo w innym miejscu publicznym.
 
-  ## Stosowanie siły
-  Nie idź wyżej niż tabela w [textlink="procedurze stosowania siły" link="UseOfForceSOP"]. Na zielonym / niebieskim współpraca to poziom I, opór i atak to II, crit to III. Na czerwonym start od II. Delta / Gamma: opór i wyżej to IV. Po poziomie III ratujesz, o ile sytuacja pozwala.
+  ### Dowody
+  [bold]Bezpośrednie:[/bold] ofiara lub przedmiot czynu, narzędzie, łup, zgodne zeznania co najmniej trzech świadków, raport ochrony, zeznania borgów, opinie ekspertów, przyznanie się, odciski palców / DNA / krew, nagrania i zdjęcia.
+
+  [bold]Pośrednie:[/bold] motyw, brak alibi, złe relacje z ofiarą, trudna sytuacja materialna, wcześniejsze kary i skazania, stan po alkoholu lub substancjach odurzających.
+
+  Sędzia może umorzyć postępowanie, gdy brakuje dowodów bezpośrednich, zeznania trzech świadków są sprzeczne, ślady nie potwierdzają udziału, dowody się wykluczają albo oskarżony jest oczywiście niewinny.
+
+  ### Werdykt
+  Ogłoszenie przy stronach, z kwalifikacją (artykuły Prawa Kosmicznego) oraz okolicznościami. Na piśmie, z kopią dla ochrony — wyjątek: kody wojenne, gdy sporządzenie pisma jest niemożliwe. Podważyć może wyłącznie Centralne Dowództwo.
+
+  Wyrok śmierci: [bold]Nakaz egzekucji[/bold], wykonuje ochrona.
+
+  ### Apelacja
+  - Wyłącznie przy wyroku [bold]co najmniej 30 minut[/bold] albo dożywociu.
+  - Raz w sprawie. Druga apelacja z tych samych podstaw podlega odrzuceniu, chyba że ujawniono nowe istotne dowody, wcześniej niedostępne.
+  - Podstawy: nowe dowody, słaba baza dowodowa, potwierdzone fałszerstwo lub fałszywe zeznania.
+
+  ### Obraza sądu
+  Sędzia może usunąć osobę przeszkadzającą (siłą, jeżeli jest to konieczne) i niezwłocznie nałożyć środek karny. Celowe kłamstwo na sali może stanowić osobne naruszenie Prawa Kosmicznego (w zależności od czynu: §100, §200, §206).
+
+  ## Egzekucja
+  Przed formalną egzekucją [bold]zawsze[/bold] wypełnia się [bold]Nakaz egzekucji[/bold]. Nie dotyczy to likwidacji w terenie (poziom IV siły), egzekucji w terenie na kodach wojennych (Delta, Gamma, Octarine) ani natychmiastowej egzekucji [bold]wroga korporacji[/bold]. Pełna procedura: [textlink="SPO Ochrony" link="SecuritySOP"].
+
+  ### Kiedy
+  - Wyrok śmierci w Protokole Przesłuchania albo wyroku sądu.
+  - Wyrok sędziego przewodniczącego po procesie.
+  - Nakaz Centralnego Dowództwa.
+
+  Na kodzie zielonym i niebieskim — proces przed egzekucją, jeżeli skazany o to poprosi. Na pozostałych kodach ceremonię można skrócić, jednak Nakaz nadal jest wymagany.
+
+  ### Warunki — wszystkie naraz
+  1. Podstawa prawna (protokół, sąd albo Centralne Dowództwo).
+  2. Wypełniony Nakaz z pieczęciami.
+  3. Potwierdzona tożsamość (identyfikator, manifest, odciski palców albo DNA).
+  4. Wyrok nieuchylony, niezawieszony i nie zamieniony.
+  5. Bezpieczeństwo — obsada umożliwia kontrolowane wykonanie; przy zagrożeniu stacji należy odroczyć albo skrócić do minimum.
+
+  ### Kto pieczętuje i kto wykonuje
+  Pieczęć: komendant albo kapitan (wyrok ochrony / po procesie); sędzia przewodniczący (po procesie); Centralne Dowództwo. Wykonuje wyznaczony funkcjonariusz ochrony. [bold]Funkcjonariusz aresztujący nie powinien być wykonawcą[/bold], o ile da się tego uniknąć.
+
+  ### Kroki
+  1. Sprawdzenie podstawy oraz posiadanie Nakazu.
+  2. Zebranie pieczęci przed podjęciem dalszych czynności.
+  3. Odczytanie wyroku i Nakazu. Ostatnie słowa; przy stopniu III lub wyższym — prawnik na żądanie.
+  4. Doprowadzenie na miejsce (areszt, strefa egzekucji). Skazany rozbrojony, pod strażą.
+  5. Odczytanie Nakazu na głos w obecności świadków.
+  6. Wykonanie metodą wskazaną w Nakazie.
+  7. Potwierdzenie zgonu, aktualizacja rejestrów, złożenie Nakazu do akt.
+
+  ### Nakaz egzekucji
+  Bez niego formalna egzekucja jest niedozwolona. Minimum: dane skazanego, metoda, artykuły Prawa Kosmicznego, lokalizacja, uzasadnienie. Należy korzystać z zatwierdzonego formularza.
+
+  # Stosowanie siły
+  Skrót z [textlink="procedury stosowania siły" link="UseOfForceSOP"]. Funkcjonariusz nie stosuje stopnia wyższego niż przewiduje tabela. Niższy stopień stosuje się w pierwszej kolejności, o ile pozwala na to czas.
+
+  <Table Columns="5">
+    <ColorBox>
+      <Box>Kod</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>Współpraca</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>Opór / ucieczka</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>Atak</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>Crit</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Margin="2">[color=#8ee99a]Zielony[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#66bb6a">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]I[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ffca28">
+      <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ffca28">
+      <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ef5350">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]III[/color]</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Margin="2">[color=#8ec8ff]Niebieski[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#66bb6a">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]I[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ffca28">
+      <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ffca28">
+      <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ef5350">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]III[/color]</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Margin="2">[color=#ff8a8a]Czerwony[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ffca28">
+      <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ffca28">
+      <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ef5350">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]III[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ef5350">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]III[/color]</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Margin="2">[color=#ffb86b]Oktarynowy[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ffca28">
+      <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ef5350">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]III[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ef5350">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]IV[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ef5350">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]IV[/color]</Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" Margin="2">[color=#ffb86b]Delta / Gamma[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ffca28">
+      <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ef5350">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]IV[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ef5350">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]IV[/color]</Box>
+    </ColorBox>
+    <ColorBox Color="#ef5350">
+      <Box HorizontalAlignment="Center" Margin="2">[color=white]IV[/color]</Box>
+    </ColorBox>
+  </Table>
+
+  Kod fioletowy i żółty stosują te same limity co kod zielony i niebieski. Pozostałe kody — limit z kodu obowiązującego bezpośrednio przed nimi.
+
+  ## Poziomy
+  - [bold]I Werbalny[/bold] — polecenia, radio, eskalacja do przełożonego.
+  - [bold]II Obezwładnienie[/bold] — błyski, pałki, kajdanki, gaz, tasery, inne środki mniej śmiercionośne.
+  - [bold]III Śmiercionośny[/bold] — broń palna, laser na śmierć. Stosuje się, gdy niższe stopnie nie wystarczają. Po interwencji [bold]udziela się pomocy[/bold], o ile sytuacja na to pozwala.
+  - [bold]IV Neutralizacja[/bold] — natychmiastowa likwidacja. Ratunek według uznania.
+
+  ## Zachowanie podejrzanego
+  - [bold]Współpraca[/bold] — wykonuje polecenia albo dobrowolnie się poddaje.
+  - [bold]Opór / ucieczka[/bold] — odmawia wykonania poleceń, stawia opór fizyczny, ucieka, utrudnia czynności.
+  - [bold]Atak[/bold] — przemoc, groźba, usiłowanie zranienia, pojmania albo zabicia.
+  - [bold]Doprowadzenie do stanu krytycznego[/bold] — faktycznie sprowadza kogoś do stanu krytycznego albo zabija.
+
+  ## Wyjątki
+  Stopień III niezależnie od tabeli, gdy: podejrzany posiada broń śmiercionośną i może z niej skorzystać (chyba że jest unieruchomiony lub rozbrojony); pościg w otwartej przestrzeni albo próżni i ignorowanie poleceń; stopień II nie odnosi skutku (egzoszkielet, ciężki pancerz).
+
+  Stopień IV niezależnie od tabeli, gdy: wydano nakaz neutralizacji celu; potwierdzono zagrożenie życia funkcjonariusza albo innych osób.
+
+  Osoba sprowadzona do stanu krytycznego podczas interwencji otrzymuje pomoc i reanimację, chyba że trwa zagrożenie albo wyższy nakaz operacyjny tego zabrania.
 </Document>
