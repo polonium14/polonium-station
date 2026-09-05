@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Samur7
-  changes:
-  - message: Security bio suit now hides tails again.
-    type: Fix
-  id: 9482
-  time: '2026-02-02T16:45:34.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42748
 - author: sowelipililimute
   changes:
   - message: DNA scrambling properly
@@ -4050,3 +4043,10 @@
   id: 9981
   time: '2026-09-03T19:00:07.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/981
+- author: pinkscreen
+  changes:
+  - message: Poprawiono problemy na mapie Saltern!
+    type: Fix
+  id: 9982
+  time: '2026-09-05T13:46:05.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/990
