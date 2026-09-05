@@ -78,7 +78,7 @@
 - type: reaction
   id: AlliesCocktail
   requiredMixerCategories:
-  - Shake
+  - Stir
   reactants:
     Martini:
       amount: 2
@@ -444,7 +444,7 @@
 - type: reaction
   id: DriestMartini
   requiredMixerCategories:
-  - Shake
+  - Stir
   reactants:
     Gin:
       amount: 1
@@ -873,7 +873,7 @@
 - type: reaction
   id: Martini
   requiredMixerCategories:
-  - Shake
+  - Stir
   reactants:
     Gin:
       amount: 2
@@ -1275,7 +1275,7 @@
 - type: reaction
   id: VodkaMartini
   requiredMixerCategories:
-  - Shake
+  - Stir
   reactants:
     Vermouth:
       amount: 1
