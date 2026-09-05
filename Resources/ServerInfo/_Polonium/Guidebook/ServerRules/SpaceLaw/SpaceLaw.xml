@@ -20,7 +20,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Oznaczenie artykułów, statusy prawne oraz odesłanie do rejestrów.
 
   ## Kategorie (_XX)
-  Każde przestępstwo oznaczone jest kodem §XYZ. [bold]Pierwsza cyfra[/bold] oznacza stopień ciężkości czynu (1 — I … 5 — V). [bold]Dwie ostatnie cyfry (_XX)[/bold] określają kategorię przestępstwa. Artykuły z tą samą kategorią _XX [bold]nie podlegają łączeniu[/bold] — uwzględnia się wyłącznie najcięższy zarzut. Kary z różnych kategorii _XX sumuje się. Oznaczenia kolorystyczne grup nie występują.
+  Każde przestępstwo oznaczone jest kodem §XYZ. [bold]Pierwsza cyfra[/bold] oznacza stopień ciężkości czynu (1 — I … 5 — V). [bold]Dwie ostatnie cyfry (_XX)[/bold] określają kategorię przestępstwa. Artykuły z tą samą kategorią _XX [bold]nie podlegają łączeniu[/bold] — uwzględnia się wyłącznie najcięższy zarzut. Kary z różnych kategorii _XX sumuje się.
 
   Wyjątek: zarzuty napaści, uszczerbku na zdrowiu, zabójstwa oraz uniemożliwienia reanimacji podlegają sumowaniu, jeśli dotyczą [bold]różnych poszkodowanych[/bold].
 
@@ -46,7 +46,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Okoliczności przy zarzucie, łączenie kar oraz wykazy mienia. Pełne reguły liczenia, krok po kroku oraz przykład: [textlink="Okoliczności" link="SpaceLawModifiers"].
 
   ## Rejestr mienia znacznej wartości
-  Wykaz mienia o szczególnej wartości. Kradzież kwalifikuje się jako [textlink="§502" link="SpaceLawCrimeList"]. Do rejestru wchodzą przedmioty ze stopniem [color=red]GrandTheft[/color] (cel kradzieży) oraz głowica nuklearna. Pod ten artykuł podlegają również karty ID kapitana i kierownika personelu oraz kradzież albo uprowadzenie wahadłowców.
+  Wykaz mienia o szczególnej wartości. Kradzież kwalifikuje się jako [textlink="§502" link="SpaceLawCrimeList"]. Do rejestru wchodzą przedmioty oznaczone w oględzinach jako cel kradzieży oraz głowica nuklearna. Pod ten artykuł podlegają również karty ID kapitana i kierownika personelu oraz kradzież albo uprowadzenie wahadłowców.
 
   Mieniem lub sprzętem krytycznym uznaje się elementy, bez których stacja nie jest w stanie funkcjonować.
 
@@ -62,9 +62,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Prowadzący [textlink="przesłuchanie" link="SecuritySOP"] decyduje, czy dana okoliczność zachodzi. Nadzorca (albo komendant / najstarszy rangą oficer) zatwierdza wyrok w Protokole. Przy drobnych przewinieniach często wystarczy ostrzeżenie oraz pouczenie, że kolejny taki sam czyn w tym samym dziale (_XX) zostanie uznany za recydywę.
 
-  Kary z różnych działów _XX dodaje się do siebie. W ramach jednego działu _XX [bold]uwzględnia się wyłącznie najcięższy zarzut[/bold]. Zsumowana kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego zarzutu. Limit 1,5× nie obejmuje recydywy ani czynów wskazanych w [textlink="wykazie przestępstw" link="SpaceLawCrimeList"] jako odrębna podstawa dożywotniego aresztu. Kara powyżej [bold]35 minut[/bold] oznacza dożywotni areszt (permabrig).
+  Kary z różnych działów _XX dodaje się do siebie. W ramach jednego działu _XX [bold]uwzględnia się wyłącznie najcięższy zarzut[/bold]. Zsumowana kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego zarzutu. To ograniczenie nie obejmuje recydywy ani czynów wskazanych w [textlink="wykazie przestępstw" link="SpaceLawCrimeList"] jako odrębna podstawa dożywotniego aresztu. Kara powyżej [bold]35 minut[/bold] oznacza dożywotni areszt (permabrig).
 
-  Recydywa, brak zamiaru, stan wyższej konieczności, czynny żal, współpraca, dobrowolne zgłoszenie się, utrudnianie śledztwa oraz limit 1,5×: [textlink="Okoliczności i wymiar kary" link="SpaceLawModifiers"].
+  Recydywa, brak zamiaru, stan wyższej konieczności, czynny żal, współpraca, dobrowolne zgłoszenie się, utrudnianie śledztwa oraz ograniczenie do półtorej wartości: [textlink="Okoliczności i wymiar kary" link="SpaceLawModifiers"].
 
   # Postępowanie
   Prawa więźniów oraz czynności organów władzy od podejrzenia do osadzenia.
@@ -200,7 +200,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Przy nakładaniu kar należy kierować się zdrowym rozsądkiem i humanitaryzmem. Nie zawsze należy dążyć do wymierzenia najwyższej kary, nie zawsze trzeba nakładać maksymalny wymiar kary lub zawsze dążyć do degradacji danej osoby. Zawsze należy brać pod uwagę powagę wykroczenia i nakładać kary tylko w takim zakresie, jaki jest niezbędny, aby dana osoba wyciągnęła z niego wnioski.
 
   - [bold]Pomocnictwo, usiłowanie i zamiar:[/bold] Jeśli ktoś celowo, świadomie i w znacznym stopniu pomaga innej osobie w popełnieniu przestępstwa, może zostać oskarżony o popełnienie odpowiednich przestępstw, np. inżynier, który dostarcza narzędzia osobie, która zamierza włamać się do jakiegoś obiektu. To samo dotyczy wyraźnej i konkretnej próby popełnienia przestępstwa lub osoby, która wykazuje wyraźny zamiar popełnienia przestępstwa, np. członek syndykatu uzbrajający bombę atomową, ale aresztowany przed jej detonacją, może nadal zostać oskarżony o terroryzm. Nie dotyczy to przestępstw, które już zostały wymienione jako próby, np. Napaść.
-  - [bold]Kilka zarzutów:[/bold] kary z różnych kategorii _XX sumuje się. W ramach tej samej kategorii _XX uwzględnia się wyłącznie najcięższy zarzut. Okoliczności oraz limit 1,5×: [textlink="łączenie kar" link="SpaceLawModifiers"].
+  - [bold]Kilka zarzutów:[/bold] kary z różnych kategorii _XX sumuje się. W ramach tej samej kategorii _XX uwzględnia się wyłącznie najcięższy zarzut. Okoliczności oraz ograniczenie do półtorej wartości: [textlink="łączenie kar" link="SpaceLawModifiers"].
   - [bold]Wpływy zewnętrzne:[/bold] Przestępstwa popełnione pod wpływem kontroli umysłowej innej osoby lub bytu podlegają ułaskawieniu po dokonaniu wyraźnej i skutecznej dekonwersji.
   - [bold]Egzekucje:[/bold] Egzekucje mogą być zatwierdzone przez przewodniczącego sędziego po przeprowadzeniu procesu sądowego. Egzekucje mogą być również zatwierdzone przez Centralne Dowodzenie po formalnym zgłoszeniu. Formalna egzekucja wymaga wypełnionego [bold]Nakazu egzekucji[/bold]. Nie dotyczy to natychmiastowej neutralizacji w terenie na kodach wojennych, poziomu IV procedury stosowania siły ani natychmiastowej egzekucji [bold]wroga korporacji[/bold].
 

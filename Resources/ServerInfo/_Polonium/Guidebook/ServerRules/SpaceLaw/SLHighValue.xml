@@ -2,14 +2,14 @@
   # Rejestr mienia znacznej wartości
   Wykaz mienia o szczególnej wartości. Bezprawne przywłaszczenie kwalifikuje się jako [textlink="§502" link="SpaceLawCrimeList"].
 
-  Do rejestru wchodzą przedmioty ze stopniem kontrabandy [color=red]GrandTheft[/color] (w oględzinach: cel kradzieży / wyjątkowa wartość dla Syndykatu) oraz głowica nuklearna. Pod ten sam artykuł podlegają karty ID kapitana i kierownika personelu oraz kradzież albo uprowadzenie wahadłowców — także wtedy, gdy wahadłowiec nie występuje jako osobny wpis poniżej.
+  Do rejestru wchodzą przedmioty oznaczone w oględzinach jako cel kradzieży albo wyjątkowa wartość dla Syndykatu oraz głowica nuklearna. Pod ten sam artykuł podlegają karty ID kapitana i kierownika personelu oraz kradzież albo uprowadzenie wahadłowców — także wtedy, gdy wahadłowiec nie występuje jako osobny wpis poniżej.
 
   Mieniem lub sprzętem krytycznym uznaje się elementy, bez których stacja nie jest w stanie funkcjonować.
 
   ## Identyfikatory i autoryzacja
   <Box>
     <GuideEntityEmbed Entity="CaptainIDCard" Caption="ID kapitana"/>
-    <GuideEntityEmbed Entity="HoPIDCard" Caption="ID HoP"/>
+    <GuideEntityEmbed Entity="HoPIDCard" Caption="ID kierownika personelu"/>
     <GuideEntityEmbed Entity="NukeDisk" Caption="Dysk nuklearny"/>
   </Box>
 
