@@ -1,5 +1,6 @@
 thief-role-greeting-human-deltav =
-    You are criminal scum, a kleptomaniac
-    previously arrested and on parole for petty theft.
-    You need to add more to your collection.
-    Get your fix by any means necessary, steal all the things!
+    Jesteś kryminalną szumowiną, kleptomanem, 
+    wcześniej notowanym i przebywającym na 
+    zwolnieniu warunkowym za drobne kradzieże. 
+    Musisz powiększyć swoją kolekcję. Zaspokój swój głód 
+    za wszelką cenę i ukradnij absolutnie wszystko!

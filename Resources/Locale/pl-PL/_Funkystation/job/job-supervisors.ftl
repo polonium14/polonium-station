@@ -1,1 +1,1 @@
-job-supervisors-ntr = the Nanotrasen Representative
+job-supervisors-ntr = Przedstawiciel Nanotrasen

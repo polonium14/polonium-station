@@ -5,4 +5,4 @@ gas-pressure-regulator-system-examined =
        *[false] closed
     }[/color].
 gas-pressure-regulator-examined-threshold-pressure = The threshold pressure is set at [color=lightblue]{ $threshold } kPa[/color].
-gas-pressure-regulator-examined-flow-rate = The flow rate meter indicates [color=lightblue]{ $flowRate } L/s[/color].
+gas-pressure-regulator-examined-flow-rate = Miernik przepływu wskazuje [color=lightblue]{ $flowRate } L/s[color].

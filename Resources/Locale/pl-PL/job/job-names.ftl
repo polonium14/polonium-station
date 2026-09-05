@@ -46,6 +46,7 @@ job-name-security = Oficer Ochrony
 job-name-serviceworker = Pracownik Obsługi
 job-name-station-ai = SI Stacji
 job-name-technical-assistant = Pomocnik Techniczny
+job-name-tram-driver = Tram Driver
 job-name-visitor = Gość
 job-name-warden = Nadzorca Ochrony
 # unused jobs
@@ -57,6 +58,7 @@ job-name-no-id = Brakuje ID
 job-name-prisoner = Więzień
 job-name-roboticist = Roboticist
 job-name-unknown = Nieznany
+job-name-sus = Sus
 job-name-virologist = Wirusolog
 job-name-zookeeper = Zoolog
 # antagonist jobs
@@ -121,7 +123,3 @@ JobTechnicalAssistant = Pomocnik Techniczny
 JobVisitor = Wizytor
 JobWarden = Nadzorca Ochrony
 job-name-centcomoff = Urzędnik Centralnego Dowództwa
-
-job-name-tram-driver = Tram Driver
-
-job-name-sus = Sus

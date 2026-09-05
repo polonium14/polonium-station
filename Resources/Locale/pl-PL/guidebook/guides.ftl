@@ -144,6 +144,7 @@ guide-entry-thieves = Złodzieje
 guide-entry-wizard = Czarodziej
 guide-entry-xenoborgs = Ksenoborgi
 guide-entry-malfunctioningai = Uszkodzona SI
+guide-entry-changelings = Changelings
 guide-entry-rules = Zasady serwera
 guide-entry-rules-core-only = Zestaw zasad Core Only
 guide-entry-rules-lrp = Standardowy zestaw zasad
@@ -212,5 +213,3 @@ guide-entry-metashield = Metashield
 guide-entry-namingscheme = Schemat Nazewnictwa
 guide-entry-writing = Pisanie
 guide-entry-glossary = Słownik
-
-guide-entry-changelings = Changelings

@@ -49,9 +49,3 @@ preset-no-one-ready = Nie można uruchomić { $presetName }. Nikt nie jest gotow
 game-ticker-player-no-character-for-job-available-when-joining = Podczas próby dołączenia do gry nie było dostępnych żadnych postaci dla wybranego stanowiska { $job }.
 
 latejoin-arrival-announcement-ai = SI stacji "{ $character }" została załadowana i uruchomiona.
-
-game-run-level-PreRoundLobby = Pre-round lobby
-
-game-run-level-InRound = In round
-
-game-run-level-PostRound = Post round
