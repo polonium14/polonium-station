@@ -38,7 +38,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   ## Wrogowie Korporacji i Osoby Niezarejestrowane
 
-  [bold]Wróg Korporacji[/bold] — osoba, która popełniła przestępstwo uderzające bezpośrednio w bezpieczeństwo publiczne oraz dobrostan placówki. Działania te stanowią bezpośrednie zagrożenie dla interesów NanoTrasen. Za wroga korporacji uznaje się każdego, komu udowodniono winę z artykułu krytycznego (stopień V). Ze względu na skrajnie wysokie zagrożenie społeczne wrogowie korporacji podlegają natychmiastowej egzekucji.
+  [bold]Wróg Korporacji[/bold] — osoba, która popełniła przestępstwo uderzające bezpośrednio w bezpieczeństwo publiczne oraz dobrostan placówki. Działania te stanowią bezpośrednie zagrożenie dla interesów NanoTrasen. Za wroga korporacji uznaje się osobę, wobec której orzeczono karę śmierci albo której winę udowodniono z artykułu przewidującego obowiązkową karę śmierci. Ze względu na skrajnie wysokie zagrożenie społeczne wrogowie korporacji podlegają natychmiastowej egzekucji.
 
   [bold]Osoba Niezarejestrowana[/bold] — jednostka, która nie należy do załogi stacji lub której przynależności nie da się jednoznacznie ustalić. Osoby niezarejestrowane podlegają obowiązkowemu zatrzymaniu oraz przymusowemu przesłuchaniu.
 
@@ -62,7 +62,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Prowadzący [textlink="przesłuchanie" link="SecuritySOP"] decyduje, czy dana okoliczność zachodzi. Nadzorca (albo komendant / najstarszy rangą oficer) zatwierdza wyrok w Protokole. Przy drobnych przewinieniach często wystarczy ostrzeżenie oraz pouczenie, że kolejny taki sam czyn w tym samym dziale (_XX) zostanie uznany za recydywę.
 
-  Kary z różnych działów _XX dodaje się do siebie. W ramach jednego działu _XX [bold]uwzględnia się wyłącznie najcięższy zarzut[/bold]. Zsumowana kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego zarzutu. Kara powyżej [bold]35 minut[/bold] oznacza dożywotni areszt (permabrig).
+  Kary z różnych działów _XX dodaje się do siebie. W ramach jednego działu _XX [bold]uwzględnia się wyłącznie najcięższy zarzut[/bold]. Zsumowana kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego zarzutu. Limit 1,5× nie obejmuje recydywy ani czynów wskazanych w [textlink="wykazie przestępstw" link="SpaceLawCrimeList"] jako odrębna podstawa dożywotniego aresztu. Kara powyżej [bold]35 minut[/bold] oznacza dożywotni areszt (permabrig).
 
   Recydywa, brak zamiaru, stan wyższej konieczności, czynny żal, współpraca, dobrowolne zgłoszenie się, utrudnianie śledztwa oraz limit 1,5×: [textlink="Okoliczności i wymiar kary" link="SpaceLawModifiers"].
 
@@ -123,7 +123,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   - Gdy poziom alarmowy wynosi [bold]zielony[/bold], przeszukania są dozwolone wyłącznie na podstawie nakazu zatwierdzonego przez Komendanta lub Kapitana. Członek załogi może zgodnie z prawem odmówić poddania się przeszukaniu przeprowadzanemu bez takiego nakazu.
   - Gdy poziom alarmowy wynosi [bold]niebieski[/bold] lub wyższy, wszystkie przeszukiwania są legalne.
-  - Kod fioletowy i żółty stosują te same limity siły co kod zielony i niebieski; do przeszukań i przesłuchań stosuje się aktualny kod z SPO alarmów.
+  - Kod fioletowy stosuje te same limity siły oraz zasady przeszukań i przesłuchań co kod niebieski. Kod żółty — co kod zielony.
 
   ## Przesłuchanie
   Obowiązkowy etap aresztowania. Służy ustaleniu winy oraz podjęciu decyzji przed wydaniem wyroku. Pełna procedura: [textlink="SPO Ochrony" link="SecuritySOP"].
@@ -195,7 +195,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Wydawanie wyroku, sąd korporacyjny oraz formalna egzekucja.
 
   ## Wyroki i zasady ogólne
-  Wszystkie wyroki są wydawane przede wszystkim przez strażnika, a jeśli strażnik jest niedostępny, obowiązki te przejmuje Komendant Ochrony, a jeśli nie ma Komendanta Ochrony, obowiązki te przejmują członkowie ochrony o najwyższym stopniu.
+  Wszystkie wyroki są wydawane przede wszystkim przez nadzorcę, a jeśli nadzorca jest niedostępny, obowiązki te przejmuje Komendant Ochrony, a jeśli nie ma Komendanta Ochrony, obowiązki te przejmują członkowie ochrony o najwyższym stopniu.
 
   Przy nakładaniu kar należy kierować się zdrowym rozsądkiem i humanitaryzmem. Nie zawsze należy dążyć do wymierzenia najwyższej kary, nie zawsze trzeba nakładać maksymalny wymiar kary lub zawsze dążyć do degradacji danej osoby. Zawsze należy brać pod uwagę powagę wykroczenia i nakładać kary tylko w takim zakresie, jaki jest niezbędny, aby dana osoba wyciągnęła z niego wnioski.
 
@@ -365,7 +365,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
   </Table>
 
-  Kod fioletowy i żółty stosują te same limity co kod zielony i niebieski. Pozostałe kody — limit z kodu obowiązującego bezpośrednio przed nimi.
+  Kod fioletowy stosuje te same limity co kod niebieski. Kod żółty — co kod zielony. Pozostałe kody — limit z kodu obowiązującego bezpośrednio przed nimi.
 
   ## Poziomy
   - [bold]I Werbalny[/bold] — polecenia, radio, eskalacja do przełożonego.

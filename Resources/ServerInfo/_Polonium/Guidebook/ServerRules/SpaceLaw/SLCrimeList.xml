@@ -96,7 +96,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#ffce93">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§102 Drobna\n2:00 – 5:00[/color]
+        [color=black]§102 Drobna\nOstrzeż. – 5:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#ffce93">
@@ -166,7 +166,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#dae8fc">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§304 Masowe niszczenie\n18:00 – 26:00[/color]
+        [color=black]§304 Masowe niszczenie\n11:00 – 18:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -263,7 +263,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - zniszczenie zewnętrznej ściany lub okna stwarzające możliwość wyjścia;
   - udzielanie pomocy innemu więźniowi w ucieczce.
 
-  [bold]Uwagi:[/bold] Karę dolicza się do aktualnego wyroku. Wielokrotne próby uzasadniają dożywotni areszt (permabrig). Rozbicie wewnętrznych szyb bez możliwości wyjścia kwalifikuje się jako wandalizm, a nie jako niniejszy artykuł.
+  [bold]Uwagi:[/bold] Karę dolicza się do aktualnego wyroku. Wielokrotne próby stanowią odrębną podstawę dożywotniego aresztu (permabrig) i nie podlegają limitowi kategorii x00. Rozbicie wewnętrznych szyb bez możliwości wyjścia kwalifikuje się jako wandalizm, a nie jako niniejszy artykuł.
 
   ## §400 Odmowa osłony umysłu
   [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] Do przyjęcia – Permabrig
@@ -314,7 +314,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - umyślne zabójstwo (ofiara wymaga wskrzeszenia);
   - uniemożliwianie wyciągnięcia ze stanu krytycznego, jeżeli ofiara następnie umiera.
 
-  [bold]Uwagi:[/bold] W razie braku zamiaru stosuje się okoliczność „brak zamiaru”. Każda ofiara stanowi osobny zarzut. Trzy lub więcej umyślnych czynów zwykle skutkuje dożywotnim aresztem (permabrig) wskutek zsumowania kar.
+  [bold]Uwagi:[/bold] W razie braku zamiaru stosuje się okoliczność „brak zamiaru”. Każda ofiara stanowi osobny zarzut. Trzy lub więcej umyślnych zabójstw stanowi odrębną podstawę dożywotniego aresztu (permabrig).
 
   ## §501 Uniemożliwienie wskrzeszenia
   [bold]Stopień:[/bold] V · [bold]Kara:[/bold] 26:00 – Permabrig
@@ -327,7 +327,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Kwalifikacja zależy od rodzaju mienia: wspólne lub działowe, osobiste, rzadkie, mienie znacznej wartości, oraz rozbój. Kategoria podlega łączeniu z wtargnięciem (odmienna kategoria XX). Wykaz mienia znacznej wartości: [textlink="Rejestr" link="SpaceLawHighValue"].
 
   ## §102 Drobna kradzież
-  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] 2:00 – 5:00
+  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 5:00
 
   [bold]Opis:[/bold] Przywłaszczenie mienia wspólnego albo pochodzącego ze strefy, do której sprawca nie posiada dostępu.
 
@@ -438,7 +438,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Uwagi:[/bold] W przypadku Iana stosuje się ten artykuł, z karą w górnej części przedziału. Sabotaż systemów stacji kwalifikuje się jako §304 albo §504.
 
   ## §304 Masowe niszczenie
-  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 18:00 – 26:00
+  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 11:00 – 18:00
 
   [bold]Opis:[/bold] Rozległe zniszczenie obszaru albo kluczowego systemu (ładunki wybuchowe, sabotaż zasilania, klonowania, atmosfery).
 

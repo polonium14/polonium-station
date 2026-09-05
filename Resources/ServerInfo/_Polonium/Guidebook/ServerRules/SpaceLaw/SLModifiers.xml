@@ -29,18 +29,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   ## Na całym wyrokowym czasie
   Modyfikatory poniżej nakłada się [bold]po zsumowaniu kary[/bold], na pomniejszoną już wartość. Dwa modyfikatory działające w tę samą stronę nie sumują się do 100% — dają maksymalnie [bold]75%[/bold] redukcji. Ostateczny wynik zaokrągla się w górę do pełnej minuty.
 
-  [bold]Współpraca[/bold] — sprawca wskazał współsprawców lub miejsce ukrycia mienia, a informacje okazały się prawdziwe. Wprowadzenie w błąd wyklucza zastosowanie tej okoliczności: wyrok redukuje się o 1/2 wartości kary z danego artykułu.
+  [bold]Współpraca[/bold] — sprawca wskazał współsprawców lub miejsce ukrycia mienia, a informacje okazały się prawdziwe. Wprowadzenie w błąd wyklucza zastosowanie tej okoliczności: wyrok redukuje się o 1/2 zsumowanej kary po zastosowaniu limitu z sekcji Łączenie kar.
 
-  [bold]Dobrowolne zgłoszenie się[/bold] — sprawca sam zgłosił się i przyznał do winy, zanim podjęto działania pościgowe: wyrok redukuje się o 1/2 wartości kary z danego artykułu.
+  [bold]Dobrowolne zgłoszenie się[/bold] — sprawca sam zgłosił się i przyznał do winy, zanim podjęto działania pościgowe: wyrok redukuje się o 1/2 zsumowanej kary po zastosowaniu limitu z sekcji Łączenie kar.
 
-  [bold]Utrudnianie śledztwa[/bold] — sprawca objęty śledztwem lub przebywający w areszcie nie wykonuje legalnych poleceń ochrony: wyrok zwiększa się o 1/2 wartości kary z danego artykułu.
+  [bold]Utrudnianie śledztwa[/bold] — sprawca objęty śledztwem lub przebywający w areszcie nie wykonuje legalnych poleceń ochrony: wyrok zwiększa się o 1/2 zsumowanej kary po zastosowaniu limitu z sekcji Łączenie kar.
 
   ## Łączenie kar
   [bullet] Kary z różnych działów _XX dodaje się do siebie. W ramach jednego działu XX [bold]uwzględnia się wyłącznie najcięższy zarzut[/bold] po zastosowaniu modyfikatorów.
 
   [bullet] Użycie przemocy (x01) wobec [bold]kolejnej ofiary[/bold] stanowi osobny zarzut, nawet w ramach tego samego działu _XX.
 
-  [bullet] Zsumowana kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego ze znajdujących się w wyroku zarzutów (po uwzględnieniu okoliczności przypisanych do artykułu). Nadmiar czasu podlega odrzuceniu. Dopiero do tej wartości stosuje się ogólne modyfikatory kary.
+  [bullet] Zsumowana kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego ze znajdujących się w wyroku zarzutów (po uwzględnieniu okoliczności przypisanych do artykułu). Nadmiar czasu podlega odrzuceniu. Dopiero do tej wartości stosuje się ogólne modyfikatory kary. Limit 1,5× nie obejmuje recydywy ani czynów, które w wykazie przestępstw stanowią odrębną podstawę dożywotniego aresztu (permabrig).
 
   [bullet] Kara powyżej [bold]35 minut[/bold] oznacza dożywotni areszt (permabrig).
 
@@ -52,7 +52,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   1. Do każdego zarzutu zastosuj odpowiednie okoliczności przypisane do danego artykułu.
   2. W każdym dziale _XX pozostaw tylko jeden, najcięższy zarzut.
   3. Zsumuj kary z różnych działów _XX. Kolejną ofiarę przemocy traktuj jako osobny zarzut.
-  4. Ogranicz sumę kary do maksymalnie [bold]×1,5[/bold] wartości najcięższego pozostałego zarzutu.
+  4. Ogranicz sumę kary do maksymalnie [bold]×1,5[/bold] wartości najcięższego pozostałego zarzutu, z wyjątkiem recydywy oraz czynów stanowiących w wykazie odrębną podstawę permabrig.
   5. Do wyznaczonej wartości zastosuj ogólne modyfikatory kary (dwa modyfikatory w tę samą stronę = 75%).
   6. Zaokrąglij wynik w górę do pełnej minuty.
   7. W przypadku wyroku przekraczającego 35 minut zastosuj dożywotni areszt (permabrig).
@@ -61,7 +61,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Asystent serwisu: uderzył inną osobę, zabrał PDA, w kieszeni posiadał EMAG. Przetransportował poszkodowanego do medyka, oddał PDA i sam zgłosił się do aresztu, zanim rozpoczęto jego poszukiwania.
 
   - §201, naprawienie szkody: ostrzeżenie–5 min → ok. 0–3 min.
-  - §102: 2–5 min.
+  - §102: ostrzeżenie–5 min.
   - §203: 0–9 min.
   - Łącznie maksymalnie 17 min. Najcięższym zarzutem po uwzględnieniu okoliczności jest §203 (9 min). Limit wynosi 9 × 1,5 = 14 min. Wartość 17 min > 14 min → kara zostaje ograniczona do 14 min.
   - Dobrowolne zgłoszenie się −50% → [bold]7 min[/bold].
