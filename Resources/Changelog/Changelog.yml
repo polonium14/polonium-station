@@ -1,25 +1,4 @@
 ﻿Entries:
-- author: Samur7
-  changes:
-  - message: Security bio suit now hides tails again.
-    type: Fix
-  id: 9482
-  time: '2026-02-02T16:45:34.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42748
-- author: sowelipililimute
-  changes:
-  - message: DNA scrambling properly
-    type: Fix
-  id: 9483
-  time: '2026-02-02T23:54:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42757
-- author: sowelipililimute
-  changes:
-  - message: Dragons now heal when eating people again
-    type: Fix
-  id: 9484
-  time: '2026-02-03T00:32:09.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42758
 - author: sowelipililimute
   changes:
   - message: Zombified markings no longer persist between rounds
@@ -4050,3 +4029,24 @@
   id: 9981
   time: '2026-09-03T19:00:07.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/981
+- author: pinkscreen
+  changes:
+  - message: Poprawiono problemy na mapie Saltern!
+    type: Fix
+  id: 9982
+  time: '2026-09-05T13:46:05.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/990
+- author: Nikita
+  changes:
+  - message: Przerobiono prawo kosmiczne i wykaz kontrabandy
+    type: Tweak
+  id: 9983
+  time: '2026-09-05T15:03:16.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/988
+- author: Nikita
+  changes:
+  - message: Poprawiono ikony Nadzorcy i Komendanta
+    type: Fix
+  id: 9984
+  time: '2026-09-05T15:21:16.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/991

@@ -527,6 +527,9 @@
   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
   children:
   - SpaceLawCrimeList
+  - SpaceLawHighValue
+  - SpaceLawAntiCorp
+  - SpaceLawModifiers
 
 - type: guideEntry
   id: RulesOfConduct
@@ -539,6 +542,24 @@
   name: guide-entry-rules-sl-crime-list
   priority: 5
   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
+
+- type: guideEntry
+  id: SpaceLawHighValue
+  name: guide-entry-rules-sl-high-value
+  priority: 5
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/SpaceLaw/SLHighValue.xml"
+
+- type: guideEntry
+  id: SpaceLawAntiCorp
+  name: guide-entry-rules-sl-anti-corp
+  priority: 5
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/SpaceLaw/SLAntiCorporate.xml"
+
+- type: guideEntry
+  id: SpaceLawModifiers
+  name: guide-entry-rules-sl-modifiers
+  priority: 6
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/SpaceLaw/SLModifiers.xml"
 
 - type: guideEntry
   id: BanTypes
