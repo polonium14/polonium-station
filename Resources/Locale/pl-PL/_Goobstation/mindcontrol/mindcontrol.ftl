@@ -1,10 +1,10 @@
-mindcontrol-popup-start = You are mindcontrolled
-mindcontrol-popup-stop = You feel a fog lift from your mind
-mindcontrol-briefing-start = You are mindcontrolled. Obey { $master }
-mindcontrol-briefing-get = YOU ARE MINDCONTROLLED
-mindcontrol-briefing-get-master = Obey { $master }
+mindcontrol-popup-start = Jesteś pod wpływem kontroli umysłu
+mindcontrol-popup-stop = Czujesz, jak mgła znika z twojego umysłu
+mindcontrol-briefing-start = Jesteś pod wpływem kontroli umysłu. Słuchaj { $master }
+mindcontrol-briefing-get = JESTEŚ POD WPŁYWEM KONTROLI UMYSŁU
+mindcontrol-briefing-get-master = Słuchaj { $master }
 
 ## uplink shop
 
-uplink-mindcontrol-implant-name = Mind-Control Implant
-uplink-mindcontrol-implant-desc = When all you need is a friend.
+uplink-mindcontrol-implant-name = Implant kontroli umysłu
+uplink-mindcontrol-implant-desc = Kiedy jedyne, czego potrzebujesz, to przyjaciel.
