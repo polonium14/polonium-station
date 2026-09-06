@@ -66,4 +66,4 @@ trait-italian-desc = Mamma mia! Wygląda na to, że mieszkałeś w kosmo Włosze
 trait-russian-name = Rosyjski akcent
 trait-russian-desc = Suka Blyat!
 trait-species-restricted = Twój gatunek nie może wziąć tej cechy.
-trait-prerequisite-required = Ta cecha wymaga cechy { $prerequisite}.
+trait-prerequisite-required = Ta cecha wymaga cechy { $prerequisite }.

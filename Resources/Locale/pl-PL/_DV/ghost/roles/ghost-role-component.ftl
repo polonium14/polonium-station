@@ -6,7 +6,7 @@ ghost-role-information-recruiter-rules =
     Urządź biuro w tunelach technicznych albo 
     użyj swojego statku jako przenośnego biura rekrutacyjnego! 
     Jesteś tylko rekruterem, więc nie zachowuj się 
-    jak pełnoprawny złoczyńca – żadnego zabijania ludzi.    
+    jak pełnoprawny złoczyńca – żadnego zabijania ludzi.
 ghost-role-information-synthesis-name = Specjalista ds. Syntezy
 ghost-role-information-synthesis-description = Jesteś członkiem Interdyne Pharmaceutics! Dostarczono Ci wszystkie narzędzia do produkcji różnych koktajli medycznych. Ustaw swoje rzemiosło, rozwiń trucizny, i osiągaj zyski.
 ghost-role-information-synthesis-rules =

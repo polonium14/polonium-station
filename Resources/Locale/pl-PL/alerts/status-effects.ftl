@@ -1,7 +1,7 @@
 alerts-adrenaline-name = [color=red]Adrenalina[/color]
 alerts-adrenaline-desc = Jesteś pełen adrenaliny: ból cię nie spowolni.
-alerts-drunk-name = [color=yellow]Drunk[/color]
-alerts-drunk-desc = Recreational poison has made things more difficult for you.
+alerts-drunk-name = [color=yellow]Pijany[/color]
+alerts-drunk-desc = Rekreacyjna trucizna utrudniła ci życie.
 alerts-muted-name = Niemy
 alerts-muted-desc = Straciłeś zdolność mówienia.
 alerts-stunned-name = [color=yellow]Ogłuszony[/color]
