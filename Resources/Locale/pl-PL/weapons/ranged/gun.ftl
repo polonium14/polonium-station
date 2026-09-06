@@ -4,7 +4,7 @@ gun-selector-verb = Zmień na tryb { $mode }
 gun-selected-mode = Wybrano { $mode }
 gun-disabled = Nie możesz używać tej broni!
 gun-set-fire-mode-examine = Ustaw na [color=yellow]{ $mode }[/color].
-gun-set-fire-mode-popup = Zmieniono na { $mode}
+gun-set-fire-mode-popup = Zmieniono na { $mode }
 gun-magazine-whitelist-fail = To się nie zmieści w broni!
 gun-magazine-fired-empty = Nie ma amunicji!
 # SelectiveFire

@@ -1,8 +1,8 @@
-genetics-mutation-activated = You feel different...
-genetics-instability-warning-start = You feel as though something terrible is coming.
-genetics-instability-warning-half = You feel your bones start to bend and crack...
-genetics-instability-warning-10sec = A searing pain rips through your body!
-genetics-instability-cancelled = You begin to feel more normal.
-id-card-job-geneticist = Geneticist
-job-description-geneticist = Research genetic mutations, extract and apply beneficial DNA sequences, and assist Medical with advanced treatments.
-job-supervisors-medical = the Chief Medical Officer and medical staff
+genetics-mutation-activated = Czujesz, że coś się zmieniło...
+genetics-instability-warning-start = Czujesz, jakby coś strasznego nadchodziło.
+genetics-instability-warning-half = Czujesz, że twoje kości zaczynają się zakrzywiać i pękać...
+genetics-instability-warning-10sec = Palący ból przeszywa twoje ciało!
+genetics-instability-cancelled = Zaczynasz czuć się normalniej.
+id-card-job-geneticist = Genetyk
+job-description-geneticist = Bada mutacje genetyczne, znajduje i aplikuje pozytywne sekwencje DNA i wspiera NFZ z zaawansowanymi terapiami.
+job-supervisors-medical = Ordynator i lekarze NFZ
