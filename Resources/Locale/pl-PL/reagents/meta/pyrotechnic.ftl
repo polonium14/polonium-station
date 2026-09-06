@@ -10,9 +10,7 @@ reagent-name-foaming-agent = środek pieniący
 reagent-desc-foaming-agent = Wytwarza pianę potrzebną do produkcji granatów piankowych.
 reagent-name-welding-fuel = paliwo spawalnicze
 reagent-desc-welding-fuel = Używany przez spawarki do spawania.
+reagent-name-xenoborg-oil = xenoborg oil
+reagent-desc-xenoborg-oil = A light oil used to slip and burn organics.
 reagent-name-fluorosurfactant = fluorosurfaktant
 reagent-desc-fluorosurfactant = Perfluorowany kwas sulfonowy, który po zmieszaniu z wodą tworzy pianę.
-
-reagent-name-xenoborg-oil = xenoborg oil
-
-reagent-desc-xenoborg-oil = A light oil used to slip and burn organics.

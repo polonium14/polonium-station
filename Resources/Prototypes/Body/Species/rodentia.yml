@@ -167,7 +167,7 @@
   abstract: true
   components:
   - type: Metabolizer
-    metabolizerTypes: [ Animal ]
+    metabolizerTypes: [ Animal, Rat ] # Polonium:ammonia is respiration, garlic is digestion, both need their type on the organ that actually runs it
 
 - type: entity
   parent: OrganRodentia
@@ -415,13 +415,11 @@
       Damaged: 9
       Destroyed: 0
 
-# Rodentia keep a rat's stomach, so they can stomach things humans cannot.
+# rat stomach so they eat what humans cant, animal too or garlic never hits
 - type: entity
-  parent: [ OrganBaseStomach, OrganRodentiaInternal ]
+  parent: [ OrganBaseStomach, OrganRodentiaInternal, OrganRodentiaMetabolizer ]
   id: OrganRodentiaStomach
   components:
-  - type: Metabolizer
-    metabolizerTypes: [ Rat ]
   - type: OrganIntegrity
     integrityCap: 88
     integrityThresholds:

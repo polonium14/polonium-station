@@ -53,6 +53,7 @@ xenoarch-trigger-tip-ammonia = Amoniak
 xenoarch-trigger-tip-n2o = Podtlenek azotu
 xenoarch-trigger-tip-frezon = Frezon
 xenoarch-trigger-tip-radiation = Promieniowanie
+xenoarch-trigger-tip-microwave = Microwave radiation
 xenoarch-trigger-tip-brute-damage = Obrażenia fizyczne
 xenoarch-trigger-tip-interaction = Interakcja fizyczna
 xenoarch-trigger-tip-wrenching = Dokręcanie
@@ -67,6 +68,17 @@ xenoarch-trigger-tip-blood = Krew
 xenoarch-trigger-tip-throw = Zostanie rzuconym
 xenoarch-trigger-tip-death = Śmierć
 xenoarch-trigger-tip-magnet = Fale magnetyczne
+xenoarch-trigger-tip-money = Bribery
+xenoarch-trigger-tip-knowledge = Knowledge Intake
+xenoarch-trigger-tip-carbs = Carbohydrate Intake
+xenoarch-trigger-tip-meat = Protein Intake
+xenoarch-trigger-tip-produce = Healthy Produce Intake
+xenoarch-trigger-tip-stamp = Bureaucratic Approval
+xenoarch-trigger-tip-shock = Electrical Shock
+xenoarch-trigger-tip-particle = Singularity-Effecting Particles
+xenoarch-trigger-tip-anomparticle = Anomaly-Effecting Particles
+xenoarch-trigger-tip-stamina-damage = Organic Exhaustion
+xenoarch-trigger-tip-laser = High-Intensity photon impacts
 
 ### Description hints
 
@@ -84,27 +96,3 @@ xenoarch-trigger-tip-rolling = Wałkowanie
 xenoarch-trigger-tip-slicing = Cięcie
 xenoarch-trigger-examine-rolling = Zrób z tego pizzę.
 xenoarch-trigger-examine-slicing = Potnij to na kawałki.
-
-xenoarch-trigger-tip-microwave = Microwave radiation
-
-xenoarch-trigger-tip-money = Bribery
-
-xenoarch-trigger-tip-knowledge = Knowledge Intake
-
-xenoarch-trigger-tip-carbs = Carbohydrate Intake
-
-xenoarch-trigger-tip-meat = Protein Intake
-
-xenoarch-trigger-tip-produce = Healthy Produce Intake
-
-xenoarch-trigger-tip-stamp = Bureaucratic Approval
-
-xenoarch-trigger-tip-shock = Electrical Shock
-
-xenoarch-trigger-tip-particle = Singularity-Effecting Particles
-
-xenoarch-trigger-tip-anomparticle = Anomaly-Effecting Particles
-
-xenoarch-trigger-tip-stamina-damage = Organic Exhaustion
-
-xenoarch-trigger-tip-laser = High-Intensity photon impacts

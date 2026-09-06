@@ -1,2 +1,2 @@
-trait-synth-name = Synthetic
-trait-synth-desc = You are a biomechanical construct. You bleed synthblood, utilize an advanced mechanical speech system and sometimes notice ongoing Ion Storms.
+trait-synth-name = Syntetyczny
+trait-synth-desc = Jesteś konstrukcją biomechaniczną. Krwawiłeś syntaminę, używasz zaawansowanego mechanicznego systemu mowy i czasami zauważasz trwającą Burzę Jonową.

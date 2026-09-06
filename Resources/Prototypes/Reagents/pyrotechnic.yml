@@ -236,6 +236,7 @@
   color: "#3d5cff"
   boilingPoint: -84.7 # Acetylene. Close enough.
   meltingPoint: -80.7
+  flammability: 3 # Polonium fix
   friction: 0.4
   tileReactions:
   - !type:FlammableTileReaction {}

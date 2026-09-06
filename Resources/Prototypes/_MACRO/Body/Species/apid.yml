@@ -159,10 +159,10 @@
       Appendix: OrganMothAppendix
       Ears: OrganMothEars
       Lungs: OrganApidLungs
-      Heart: OrganMothHeart
+      Heart: OrganHumanHeart
       Stomach: OrganHumanStomach
-      Liver: OrganMothLiver
-      Kidneys: OrganMothKidneys
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
   - type: HumanoidProfile
     species: Apid
 

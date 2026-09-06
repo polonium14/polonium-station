@@ -1,2 +1,2 @@
 ﻿stain-verb-wring = Wring out clothes
-stain-verb-wring-success = You wring out the cloth, spilling liquid all over the floor.
+stain-verb-wring-success = Wykręcasz ubrania, rozlewając ciecz na podłogę.
