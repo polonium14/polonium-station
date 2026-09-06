@@ -1,0 +1,11 @@
+- type: factionIcon
+  id: VampireFaction
+  isShaded: true
+  priority: 11
+  showTo:
+    components:
+      - ShowAntagIcons
+      - Vampire
+  icon:
+    sprite: /Textures/_Starlight/Vampire/hud_icons.rsi
+    state: hudvampire

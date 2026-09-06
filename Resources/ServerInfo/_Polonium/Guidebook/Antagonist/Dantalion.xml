@@ -1,0 +1,36 @@
+﻿<Document>
+  # Wampir: Dantalion
+
+  <Box>
+    [color=#68993f][italic]„Moc tkwi w krwi. Władza – w decyzjach innych ludzi.[/italic][/color]
+  </Box>
+
+  Dantalion to klasa zajmująca się kontrolą społeczną. Nie musisz być najsilniejszym wojownikiem — Twoim zadaniem jest dopilnowanie, by nikt nie mógł się bronić.
+  Twoimi zasobami są [bold]słudzy[/bold] i [bold]kontrola uwagi[/bold].
+
+  ## Umiejętności (Całkowity próg krwi | Koszt)
+
+  [bold](150 | 150)[/bold] Zniewol:
+   Długotrwałe użycie (około 15 sekund) na humanoidzie.
+   Wykorzystujesz znaczną część swojej mocy by skłonić tych, którzy nie są lojalni wobec nikogo, do lojalności wyłącznie wobec ciebie
+
+  [bold](250 | 30)[/bold] Uspokój:
+   Tymczasowo uspokajasz cel, uniemożliwiając mu wyrządzenie krzywdy.
+
+  [bold](250 | 30)[/bold] Zamiana Podprzestrzenna:
+   Zamieniasz się miejscami z celem.
+
+  [bold](400 | 30)[/bold] Wabik:
+   Pozostawiasz po sobie kruchą kopię która kara atakujących, podczas gdy ty stajesz się niewidzialny.
+   Wykorzystaj to by odwrócić uwagę przeciwników w korytarzach.
+
+  [bold](600 | 100)[/bold] Zmobilizuj Sługusów:
+   Usuwa wszystkie efekty unieruchamiające z twoich pobliskich sługusów.
+
+  [bold](800 | 2.5/s Toggle)[/bold] Więź Krwi:
+   Łączy cię z pobliskimi sługami i rozdziela otrzymane obrażenia.
+
+  [bold](1000 | 70)[/bold] Zbiorowa Histeria:
+   Rzuca potężną iluzję, która sprawia, że wszyscy w pobliżu po krótkim oślepieniu postrzegają innych jako losowo wybrane zwierzęta.
+
+</Document>

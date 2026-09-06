@@ -146,6 +146,11 @@ guide-entry-wizard = Wizard
 guide-entry-xenoborgs = Xenoborgs
 guide-entry-malfunctioningai = Malfunctioning AI
 guide-entry-changelings = Changelings
+guide-entry-vampires = Vampires
+guide-entry-vampire-hemomancer = Hemomancer
+guide-entry-vampire-umbrae = Umbrae
+guide-entry-vampire-dantalion = Dantalion
+guide-entry-vampire-gargantua = Gargantua
 
 guide-entry-rules = Server Rules
 guide-entry-rules-core-only = Core Only Ruleset
