@@ -1,0 +1,402 @@
+Term [en],Term [pl],Description [en],Part of Speech [en],Status [en],Type [en],Note [en],Concept Subject
+Captain,Kapitan,Head of the station.,noun,preferred,full form,,Job
+Cap,Kap,Abbreviation of Captain.,noun,preferred,abbreviation,,Job
+Head of Personnel,Kierownik Personelu,Command; civilian department head.,noun,preferred,full form,,Job
+HoP,KP,Abbreviation of Head of Personnel.,noun,preferred,abbreviation,Not the full title.,Job
+HOP,KP,All-caps HoP (beacons).,noun,preferred,abbreviation,,Job
+Head of Security,Komendant,Command; security department head.,noun,preferred,full form,,Job
+HoS,KD,Abbreviation of Head of Security.,noun,preferred,abbreviation,,Job
+HOS,KD,All-caps HoS (beacons).,noun,preferred,abbreviation,,Job
+Chief Engineer,Główny Inżynier,Command; engineering department head.,noun,preferred,full form,,Job
+CE,GI,Abbreviation of Chief Engineer.,noun,preferred,abbreviation,Not the full title.,Job
+Chief Medical Officer,Ordynator,Command; medical department head.,noun,preferred,full form,,Job
+CMO,OD,Abbreviation of Chief Medical Officer.,noun,preferred,abbreviation,,Job
+Research Director,Kierownik Badań,Command; science department head.,noun,preferred,full form,,Job
+RD,KB,Abbreviation of Research Director.,noun,preferred,abbreviation,Not the full title.,Job
+Quartermaster,Kwatermistrz,Command; cargo department head. ID title.,noun,preferred,full form,,Job
+QM,KM,Abbreviation of Quartermaster.,noun,preferred,abbreviation,Not KW.,Job
+Station Engineer,Inżynier Stacji,Engineering crew.,noun,preferred,full form,,Job
+Engi,Inż,Abbreviation of engineer / engineering.,noun,preferred,abbreviation,,Job
+Atmospheric Technician,Technik Atmosferyki,Engineering; atmospherics.,noun,preferred,full form,Atmos.,Job
+Atmos,Atmos,Short for atmospherics / Atmospheric Technician. Keep.,noun,preferred,abbreviation,,Job
+Technical Assistant,Pomocnik Techniczny,Engineering intern.,noun,preferred,full form,,Job
+Medical Doctor,Doktor Medyczny,Medical crew.,noun,preferred,full form,,Job
+Medical Intern,Stażysta Medyczny,Medical intern.,noun,preferred,full form,,Job
+Chemist,Chemik,Medical; chemistry.,noun,preferred,full form,,Job
+Paramedic,Ratownik,Medical; field response.,noun,preferred,full form,,Job
+Psychologist,Psycholog,Medical / station-specific.,noun,preferred,full form,,Job
+Scientist,Naukowiec,Science crew.,noun,preferred,full form,,Job
+Research Assistant,Asystent Naukowy,Science intern.,noun,preferred,full form,,Job
+Roboticist,Robotyk,Science; robotics.,noun,preferred,full form,,Job
+Security Officer,Oficer Ochrony,Security crew.,noun,preferred,full form,,Job
+Security Cadet,Kadet Ochrony,Security intern.,noun,preferred,full form,,Job
+Warden,Nadzorca Ochrony,Security; brig.,noun,preferred,full form,Not Strażnik.,Job
+Detective,Detektyw,Security; investigations.,noun,preferred,full form,,Job
+Brigmedic,Medyk Więzienny,Security medic.,noun,preferred,full form,,Job
+Cargo Technician,Logistyk,Cargo crew.,noun,preferred,full form,,Job
+Salvage Specialist,Specjalista ds. Odzysku,Cargo; salvage.,noun,preferred,full form,,Job
+Bartender,Barman,Civilian service.,noun,preferred,full form,,Job
+Botanist,Botanik,Civilian; hydroponics.,noun,preferred,full form,,Job
+Chef,Kucharz,Civilian; kitchen.,noun,preferred,full form,,Job
+Janitor,Woźny,Civilian; custodial.,noun,preferred,full form,,Job
+Chaplain,Kapłan,Civilian; chapel.,noun,preferred,full form,,Job
+Lawyer,Prawnik,Civilian; legal.,noun,preferred,full form,,Job
+Librarian,Bibliotekarz,Civilian; library.,noun,preferred,full form,,Job
+Clown,Klaun,Civilian.,noun,preferred,full form,,Job
+Mime,Mim,Civilian.,noun,preferred,full form,,Job
+Musician,Muzyk,Civilian.,noun,preferred,full form,,Job
+Reporter,Dziennikarz,Civilian / station-specific.,noun,preferred,full form,,Job
+Service Worker,Pracownik Obsługi,Civilian service intern.,noun,preferred,full form,,Job
+Passenger,Pasażer,Civilian; no department job.,noun,preferred,full form,Assistant equivalent.,Job
+Visitor,Gość,Latejoin civilian.,noun,preferred,full form,,Job
+Tram Driver,Motorniczy,Station-specific civilian.,noun,preferred,full form,,Job
+Cyborg,Cyborg,Silicon crew.,noun,preferred,full form,Borg / JobBorg.,Job
+Borg,Borg,Short form of Cyborg. Keep in Polish slang.,noun,preferred,abbreviation,,Job
+Station AI,SI Stacji,Silicon; station AI.,noun,preferred,full form,,Job
+AI,SI,Abbreviation of Station AI / artificial intelligence.,noun,preferred,abbreviation,,Job
+pAI,pSI,Personal AI.,noun,preferred,abbreviation,,Job
+Nanotrasen Representative,Przedstawiciel Nanotrasen,Central Command liaison.,noun,preferred,full form,,Job
+NTR,PNT,Abbreviation of Nanotrasen Representative.,noun,preferred,abbreviation,Not the full title.,Job
+Magistrate,Sędzia,Central Command; legal.,noun,preferred,full form,,Job
+Internal Affairs Agent,Agent Spraw Wewnętrznych,Central Command; IAA.,noun,preferred,full form,Not ISW.,Job
+IAA,ASW,Abbreviation of Internal Affairs Agent.,noun,preferred,abbreviation,Not the full title.,Job
+Nanotrasen Career Trainer,Szkoleniowiec Kadr Nanotrasen,Central Command; NCT.,noun,preferred,full form,,Job
+NCT,SKN,Abbreviation of Nanotrasen Career Trainer. Keep.,noun,preferred,abbreviation,,Job
+Blueshield,Niebieska Tarcza,Command bodyguard. Often left untranslated.,noun,admitted,full form,,Job
+Blueshield Officer,"Oficer ""Niebieska Tarcza""",Full job title for Blueshield.,noun,preferred,full form,,Job
+CentComm Official,Urzędnik CD,Central Command visitor.,noun,preferred,full form,,Job
+Central Command Official,Urzędnik Centralnego Dowództwa,Full form of CentComm Official.,noun,preferred,full form,,Job
+CentComm Quarantine Officer,Oficer kwarantanny Centralnego Dowództwa,CBURN.,noun,preferred,full form,,Job
+CBURN,CBURN,CentComm biological response. Keep acronym.,noun,preferred,acronym,,Job
+Death Squad,Szwadron Śmierci,CentComm punishments unit.,noun,preferred,full form,,Job
+DS,SŚ,Abbreviation of Death Squad.,,,,,
+ERT Leader,Lider JSR,Emergency Response Team leader.,noun,preferred,full form,,Job
+ERT Engineer,Inżynier JSR,Emergency Response Team.,noun,preferred,full form,,Job
+ERT Medic,Medyk JSR,Emergency Response Team.,noun,preferred,full form,,Job
+ERT Security,Ochrona JSR,Emergency Response Team.,noun,preferred,full form,,Job
+ERT Janitor,Sprzątacz JSR,Emergency Response Team.,noun,preferred,full form,,Job
+ERT Chaplain,Kapłan JSR,Emergency Response Team.,noun,preferred,full form,,Job
+Prisoner,Więzień,Brig inmate; not a crew job.,noun,preferred,full form,,Job
+Cargo,Logistyka,Department name.,noun,preferred,full form,,Job
+Civilian,Cywilny,Department name.,noun,preferred,full form,,Job
+Command,Dowództwo,Department name.,noun,preferred,full form,,Job
+Engineering,Inżynieryjny,Department name.,noun,preferred,full form,,Job
+Medical,Medyczny,Department name.,noun,preferred,full form,,Job
+Security,Ochrona,Department name. Crew job is Oficer Ochrony.,noun,preferred,full form,,Job
+Science,Badania i Rozwój,Department name.,noun,preferred,full form,,Job
+R&D,B+R,Research and Development.,noun,preferred,abbreviation,,Job
+RND,B+R,Alternate abbreviation of R&D.,noun,preferred,abbreviation,,Job
+Silicon,Silikonowy,Department name.,noun,preferred,full form,,Job
+Central Command,Centralne Dowództwo,Department name.,noun,preferred,full form,,Job
+APC,LKZ,Area Power Controller. Keep acronym.,noun,preferred,acronym,,Engineering
+Area Power Controller,Lokalny Kontroler Zasilania,Full form of APC.,noun,admitted,full form,,Engineering
+SMES,SMES,Superconducting magnetic energy storage.,noun,preferred,acronym,,Engineering
+Superconducting Magnetic Energy Storage,Strefowy Magazyn Energii Superprzewodzącej ,Full form of SMES.,,,,,
+advanced SMES,zaawansowany SMES,Higher-capacity SMES.,noun,preferred,full form,,Engineering
+substation,podstacja,MV power transformer.,noun,preferred,full form,,Engineering
+wallmount substation,naścienna podstacja,Compact substation.,noun,preferred,full form,,Engineering
+HV,WN,High voltage. Abbreviation.,noun,preferred,abbreviation,,Engineering
+MV,ŚN,Medium voltage. Abbreviation.,noun,preferred,abbreviation,,Engineering
+LV,NN,Low voltage. Abbreviation.,noun,preferred,abbreviation,,Engineering
+HV cable coil,zwój kabli WN,High-voltage cable.,noun,preferred,full form,HV = WN.,Engineering
+MV cable coil,zwój kabli ŚN,Medium-voltage cable.,noun,preferred,full form,MV = ŚN.,Engineering
+LV cable coil,zwój kabli NN,Low-voltage / APC cable.,noun,preferred,full form,LV = NN.,Engineering
+P.A.C.M.A.N.-type portable generator,przenośny generator typu P.A.C.M.A.N.,Plasma portable generator.,noun,preferred,full form,PACMAN,Engineering
+S.U.P.E.R.P.A.C.M.A.N.-type portable generator,przenośny generator typu S.U.P.E.R.P.A.C.M.A.N.,Uranium portable generator.,noun,preferred,full form,,Engineering
+J.R.P.A.C.M.A.N.-type portable generator,przenośny generator typu J.R.P.A.C.M.A.N.,Welding-fuel portable generator.,noun,preferred,full form,,Engineering
+PACMAN,PACMAN,Short name for P.A.C.M.A.N. generator. Keep acronym.,noun,preferred,acronym,,Engineering
+AME controller,kontroler SAM,Antimatter engine controller.,noun,preferred,full form,AME = SAM.,Engineering
+AME shielding,obudowa SAM,Antimatter engine shielding.,noun,preferred,full form,,Engineering
+AME,SAM,Antimatter Engine.,noun,preferred,acronym,Polish acronym SAM.,Engineering
+Antimatter Engine,silnik antymaterii,Full form of AME.,noun,preferred,full form,,Engineering
+thermo-electric generator,termo-elektryczny generator,TEG.,noun,preferred,full form,,Engineering
+TEG,TEG,Thermo-electric generator. Keep acronym.,noun,preferred,acronym,,Engineering
+circulator,cyrkulator,TEG gas circulator.,noun,preferred,full form,,Engineering
+RTG,RTG,Radioisotope thermoelectric generator. Keep acronym.,noun,preferred,acronym,,Engineering
+generator,generator,Generic thermoelectric generator.,noun,preferred,full form,,Engineering
+solar panel,panel słoneczny,Solar power.,noun,preferred,full form,,Engineering
+emitter,emiter,Containment / field emitter.,noun,preferred,full form,,Engineering
+containment field generator,generator pola ochronnego,Singularity/tesla containment.,noun,preferred,full form,,Engineering
+containment field,pole ochronne,Energy field between generators.,noun,preferred,full form,,Engineering
+radiation collector,kolektor promieniowania,Singularity power collector.,noun,preferred,full form,,Engineering
+tesla coil,cewka tesli,Tesla power tap.,noun,preferred,full form,,Engineering
+gravity generator,generator grawitacji,Station gravity.,noun,preferred,full form,,Engineering
+PA control computer,komputer sterujący AC,Particle accelerator control.,noun,preferred,full form,,Engineering
+Particle Accelerator,Akcelerator cząstek,Full form of PA.,noun,preferred,full form,,Engineering
+PA,AC,Particle Accelerator. Abbreviation.,noun,preferred,abbreviation,,Engineering
+RCD,USK,Rapid Construction Device.,noun,preferred,acronym,Polish acronym USK.,Engineering
+Rapid Construction Device,urządzenie szybkiej konstrukcji,Full form of RCD.,noun,preferred,full form,In-game name is USK / RCD.,Engineering
+RPD,USR,Rapid Pipe Dispenser.,noun,preferred,acronym,Polish acronym USR.,Engineering
+experimental RCD,eksperymentalny USK,Self-charging RCD.,noun,preferred,full form,,Engineering
+compressed matter,sprasowana materia,RCD ammo.,noun,preferred,full form,,Engineering
+welding tool,spawarka,Welder.,noun,preferred,full form,,Engineering
+industrial welding tool,spawarka przemysłowa,Larger welder.,noun,preferred,full form,,Engineering
+experimental welding tool,eksperymentalna spawarka,Self-fueling welder.,noun,preferred,full form,,Engineering
+emergency welding tool,miniaturowa spawarka,Mini welder. FTL EN says emergency; PL says miniaturowa.,noun,preferred,full form,,Engineering
+wrench,klucz,Engineering tool.,noun,preferred,full form,,Engineering
+screwdriver,śrubokręt,Engineering tool.,noun,preferred,full form,,Engineering
+wirecutter,obcinak,Engineering tool.,noun,preferred,full form,,Engineering
+crowbar,łom,Engineering tool.,noun,preferred,full form,,Engineering
+multitool,multitool,Signalling / pulsing tool.,noun,preferred,full form,Keep EN version.,Engineering
+network configurator,konfigurator sieci,Device linking tool.,noun,preferred,full form,,Engineering
+power drill,wiertarka,Powered drill.,noun,preferred,full form,,Engineering
+jaws of life,szczęki życia,Emergency pry/cut tool.,noun,preferred,phrase,,Engineering
+t-ray scanner,skaner T-promieniowy,Subfloor scanner.,noun,preferred,full form,,Engineering
+omnitool,omnitool,Drone/borg all-in-one tool.,noun,preferred,full form,Keep EN version.,Engineering
+holofan projector,projektor holowentylatorowy,Atmos holofan.,noun,preferred,full form,,Engineering
+holographic sign projector,projektor holograficzny,Holosign projector.,noun,preferred,full form,,Engineering
+air alarm,alarm atmosferyczny,Atmos monitoring alarm.,noun,preferred,full form,,Engineering
+fire alarm,alarm pożarowy,Fire warning.,noun,preferred,full form,,Engineering
+air vent,otwór wentylacyjny,Unary atmos vent.,noun,preferred,full form,,Engineering
+air scrubber,oczyszczacz powietrza,Unary atmos scrubber.,noun,preferred,full form,,Engineering
+passive vent,pasywny otwór wentylacyjny,Unpowered vent.,noun,preferred,full form,,Engineering
+air injector,wtryskiwacz powietrza,Unary injector.,noun,preferred,full form,,Engineering
+gas pump,pompka ciśnieniowa,Binary pressure pump.,noun,preferred,full form,,Engineering
+volumetric gas pump,pompka objętościowa,Binary volume pump.,noun,preferred,full form,,Engineering
+passive gate,zawór pasywny,One-way unpowered valve.,noun,preferred,full form,,Engineering
+manual valve,zawór ręczny,Manual pipe valve.,noun,preferred,full form,,Engineering
+signal valve,zawór sterowany sygnałem,Signal-controlled valve.,noun,preferred,full form,,Engineering
+pneumatic valve,zawór pneumatyczny,Pressure-controlled valve.,noun,preferred,full form,,Engineering
+connector port,port gazowy,Canister/portable atmos port.,noun,preferred,full form,,Engineering
+gas filter,filtr gazu,Trinary filter.,noun,preferred,full form,,Engineering
+gas mixer,mieszalnik gazu,Trinary mixer.,noun,preferred,full form,,Engineering
+gas recycler,recykler gazu,CO2/N2O recycler.,noun,preferred,full form,,Engineering
+radiator,radiator,Pipe heat exchanger.,noun,preferred,full form,,Engineering
+freezer,termomaszyna chłodząca,Atmos freezer. EN UI name is freezer.,noun,preferred,full form,,Engineering
+heater,termomaszyna grzejąca,Atmos heater. EN UI name is heater.,noun,preferred,full form,,Engineering
+thermomachine,termomaszyna,Generic atmos heater/freezer.,noun,preferred,full form,,Engineering
+condenser,kondensator gazu,Gas-to-liquid condenser.,noun,preferred,full form,,Engineering
+portable scrubber,przenośny oczyszczacz powietrza,Portable atmos scrubber.,noun,preferred,full form,,Engineering
+space heater,termomaszyna kosmiczna,Portable temperature unit.,noun,preferred,full form,,Engineering
+gas miner,koparka gazu,Atmos gas miner.,noun,preferred,full form,,Engineering
+inflatable barricade,dmuchana barykada,Engineering inflatable wall.,noun,preferred,full form,,Engineering
+inflatable door,dmuchane drzwi,Engineering inflatable door.,noun,preferred,full form,,Engineering
+autolathe,autotokarka,Basic lathe. Shared with cargo but used by eng.,noun,preferred,full form,,Engineering
+Flatpacker 1001,Pakowacz 1001,Industrial machine packer.,noun,preferred,full form,,Engineering
+recycler,maszyna do recyklingu,Trash/recycler crusher.,noun,preferred,full form,,Engineering
+vending machine,automat sprzedający,Generic vendor.,noun,preferred,full form,,Vendor
+condiment station,automat z przyprawami,Kitchen condiment vendor.,noun,preferred,full form,,Vendor
+liberation station,automat z amunicją,Ammo vendor. EN brand name.,noun,preferred,full form,PL uses descriptive name.,Vendor
+Booze-O-Mat,AlkoMat,Bar alcohol vendor. Keep as brand.,proper noun,preferred,full form,,Vendor
+Bruise-O-Mat,NarąboMat,Syndicate booze vendor.,proper noun,preferred,full form,,Vendor
+PTech,PTech,PDA/cartridge vendor. Keep brand.,proper noun,preferred,full form,,Vendor
+ChefVend,SzefVend,Chef ingredient vendor.,proper noun,preferred,full form,,Vendor
+ShadyCigs Deluxe,ShadyCigs Deluxe,Cigarette vendor. Keep brand.,proper noun,preferred,full form,,Vendor
+ClothesMate,OdzieżoMat,Clothing vendor.,proper noun,preferred,full form,,Vendor
+WinterDrobe,ZimoDrób,Winter clothing vendor.,proper noun,preferred,full form,,Vendor
+Solar's Best Hot Drinks,Najlepsze gorące napoje w Słonecznym,Coffee vendor.,proper noun,preferred,phrase,,Vendor
+Robust Softdrinks,Napoje chłodzące Robust,Cola vendor.,proper noun,preferred,full form,,Vendor
+Space Cola Vendor,automat Space Cola,Cola variant.,noun,preferred,full form,,Vendor
+Space-Up! Vendor,automat Space-Up!,Soda vendor.,noun,preferred,full form,,Vendor
+Star-kist Vendor,automat Star-kist,Soda vendor.,noun,preferred,full form,,Vendor
+Shambler's Juice Vendor,automat Shambler's Juice,Soda vendor.,noun,preferred,full form,,Vendor
+Pwr Game Vendor,automat Pwr Game,Soda vendor.,noun,preferred,full form,,Vendor
+Dr. Gibb Vendor,automat Doktor Gib,Soda vendor.,noun,preferred,full form,,Vendor
+Smite Vendor,automat Smite,Soda vendor.,noun,preferred,full form,,Vendor
+Plasteel Chef's Dinnerware Vendor,NaczynioMat,Kitchenware vendor.,noun,preferred,full form,,Vendor
+MagiVend,CzaroMat,Wizard vendor.,proper noun,preferred,full form,,Vendor
+Discount Dan's,Discount Dan,Discount snack vendor.,proper noun,preferred,full form,,Vendor
+Engi-Vend,InżyMat,Engineering spare parts vendor.,proper noun,preferred,full form,,Vendor
+NanoMed Civilian,NanoMed Cywilny,Civilian chem vendor.,proper noun,preferred,full form,,Vendor
+NanoMed Plus,NanoMed Plus,Medical chem vendor. Keep brand.,proper noun,preferred,full form,,Vendor
+NanoMed,NanoMed,Wall-mounted medical vendor. Keep brand.,proper noun,preferred,full form,,Vendor
+NanoMed band-aid,NanoMed opatrunkowy,Wall-mounted civilian medical vendor.,noun,preferred,full form,,Vendor
+NutriMax,NutriMaks,Hydroponics nutrient vendor.,proper noun,preferred,full form,,Vendor
+SecTech,SecTech,Security equipment vendor. Keep brand.,proper noun,preferred,full form,,Vendor
+MegaSeed Servitor,MegaDystrybutor Nasion,Seed vendor.,noun,preferred,full form,,Vendor
+Getmore Chocolate Corp,Czekolady Getmore sp. z o.o.,Snack vendor.,proper noun,preferred,full form,,Vendor
+Sustenance Vendor,WięźnioMat,Prison food vendor.,noun,preferred,full form,,Vendor
+VODA,BODA,Soviet soda vendor. Cyrillic brand.,proper noun,preferred,full form,Suffix VODA.,Vendor
+AutoDrobe,AutoDeroba,Costume vendor.,proper noun,preferred,full form,,Vendor
+Vendomat,Vendomat,Generic robust equipment vendor. Keep brand.,proper noun,preferred,full form,,Vendor
+Robotech Deluxe,Robotech Deluxe,Robotics vendor. Keep brand.,proper noun,preferred,full form,,Vendor
+YouTool,TyNarzędzie,Tool vendor.,proper noun,preferred,full form,,Vendor
+Good Clean Fun,Czysta Frajda,Games vendor.,proper noun,preferred,phrase,,Vendor
+Mr. Chang,Pan Huang,Chinese food vendor.,proper noun,preferred,full form,,Vendor
+Monkin' Donuts,Monkin' Donuts,Donut vendor. Keep brand.,proper noun,preferred,full form,,Vendor
+HyDrobe,HyDeroba,Botany wardrobe.,proper noun,preferred,full form,,Vendor
+LawDrobe,PrawoDeroba,Lawyer wardrobe.,proper noun,preferred,full form,,Vendor
+SecDrobe,OchroDeroba,Security wardrobe.,proper noun,preferred,full form,,Vendor
+BarDrobe,BarDeroba,Bartender wardrobe.,proper noun,preferred,full form,,Vendor
+PietyVend,BogoMat,Chaplain vendor.,proper noun,preferred,full form,,Vendor
+CargoDrobe,LogiDeroba,Cargo wardrobe.,proper noun,preferred,full form,,Vendor
+MediDrobe,MedyDeroba,Medical wardrobe.,proper noun,preferred,full form,,Vendor
+ChemDrobe,ChemDeroba,Chemistry wardrobe.,proper noun,preferred,full form,,Vendor
+CuraDrobe,BibliDeroba,Librarian wardrobe.,proper noun,preferred,full form,,Vendor
+AtmosDrobe,AtmoDeroba,Atmos wardrobe.,proper noun,preferred,full form,,Vendor
+EngiDrobe,InżyDeroba,Engineering wardrobe.,proper noun,preferred,full form,,Vendor
+ChefDrobe,SzefDeroba,Chef wardrobe.,proper noun,preferred,full form,,Vendor
+DetDrobe,DetyDrób,Detective wardrobe.,proper noun,preferred,full form,,Vendor
+JaniDrobe,WoźnoDrób,Janitor wardrobe.,proper noun,preferred,full form,,Vendor
+SciDrobe,NaukoDrób,Science wardrobe.,proper noun,preferred,full form,,Vendor
+SyndieDrobe,SyndyDrób,Syndicate wardrobe.,proper noun,preferred,full form,,Vendor
+RoboDrobe,RoboDrób,Roboticist wardrobe.,proper noun,preferred,full form,,Vendor
+GeneDrobe,GenDeroba,Genetics wardrobe.,proper noun,preferred,full form,,Vendor
+ViroDrobe,WiruDrób,Virology wardrobe.,proper noun,preferred,full form,,Vendor
+CentDrobe,CentDrób,CentComm wardrobe.,proper noun,preferred,full form,,Vendor
+Happy Honk Dispenser,Happy Honk,Clown meal vendor.,proper noun,preferred,full form,Keep EN version.,Vendor
+Pride-O-Mat,DumoMat,Pride vendor.,proper noun,preferred,full form,,Vendor
+gas tank dispenser,dystrybutor butli gazowych,EVA/eng tank vendor.,noun,preferred,full form,,Vendor
+ChemVend,ChemoMat,Chemistry reagent vendor.,proper noun,preferred,full form,,Vendor
+SyndieJuice,SyndySokoMat,Syndicate ChemVend.,proper noun,preferred,full form,,Vendor
+ChemMaster 4000,ChemMaster 4000,Chem pill/bottle machine. Keep brand.,proper noun,preferred,full form,,Medical
+electrolysis unit,urządzenie do elektrolizy,Chemistry electrolysis.,noun,preferred,full form,,Medical
+tabletop centrifuge,wirówka stołowa,Chemistry centrifuge.,noun,preferred,full form,,Medical
+hotplate,płyta grzejna,Beaker heater.,noun,preferred,full form,,Medical
+reagent grinder,młynek,Chem/kitchen grinder. EN name; PL is młynek.,noun,preferred,full form,,Medical
+industrial reagent grinder,przemysłowy młynek,Industrial chem grinder.,noun,preferred,full form,,Medical
+cloning pod,kapsuła do klonowania,Cloner.,noun,preferred,full form,,Medical
+cloning console computer,konsola klonowania,Cloning control console.,noun,preferred,full form,Also listed as Computer.,Medical
+medical scanner,skaner medyczny,Cloning/body scanner bed.,noun,preferred,full form,,Medical
+cryo pod,kriokomora,Cryo treatment pod.,noun,preferred,full form,,Medical
+vaccinator,szczepioniarka,Vaccine machine.,noun,preferred,full form,,Medical
+Disease Diagnoser Delta Extreme,Diagnozator chorób Delta Extreme,Disease analyzer.,noun,preferred,full form,,Medical
+biomass reclaimer,maszyna do odzyskiwania biomasy,Corpse-to-biomass.,noun,preferred,full form,,Medical
+stasis bed,łóżko stazy,Metabolism-slowing bed. FTL has stasis łóżko.,noun,preferred,full form,Prefer łóżko stazy over stasis łóżko.,Medical
+operating table,stół operacyjny,Surgery table. pl-PL FTL still English.,noun,preferred,full form,,Medical
+morgue,kostnica,Body storage.,noun,preferred,full form,,Medical
+crematorium,krematorium,Body incinerator.,noun,preferred,full form,,Medical
+medical techfab,fabrykator sprzętu medycznego,Med lathe.,noun,preferred,full form,,Medical
+SmartFridge,Inteligentna lodówka,Refrigerated storage. Often in medbay.,noun,preferred,full form,,Medical
+lipid extractor,ekstraktor lipidów,Fat extractor.,noun,preferred,full form,,Medical
+body scanner computer,komputer skanera ciała,Linked scanner console. pl-PL FTL still English.,noun,preferred,full form,,Medical
+protolathe,prototokarka,Science lathe.,noun,preferred,full form,,Science
+circuit imprinter,drukarka płytek,Circuit board printer.,noun,preferred,full form,,Science
+exosuit fabricator,fabrykator egzoszkieletów,Robotics lathe.,noun,preferred,full form,,Science
+biocube fabricator,fabrykator biokostek,Animal cube lathe.,noun,preferred,full form,,Science
+R&D server,serwer badawczo-rozwojowy,Research server.,noun,preferred,full form,,Science
+R&D computer,komputer rozwoju i badań,Research console.,noun,preferred,full form,Also listed as Computer.,Science
+artifact analyzer,analizator artefaktów,Xenoarch analyzer.,noun,preferred,full form,,Science
+artifact crusher,kruszarka artefaktów,Xenoarch crusher.,noun,preferred,full form,,Science
+analysis console,konsola analizy,Artifact analysis console.,noun,preferred,full form,Also listed as Computer.,Science
+anomaly vessel,naczynie anomalne,Anomaly research vessel.,noun,preferred,full form,,Science
+experimental anomaly vessel,eksperymentalne naczynie anomalne,Advanced anomaly vessel.,noun,preferred,full form,,Science
+A.P.E.,M.A.K.A.K.,Anomalous Particle Emitter.,noun,preferred,acronym,Polish acronym M.A.K.A.K.,Science
+anomaly generator,generator anomalii,Spawns anomalies.,noun,preferred,full form,,Science
+anomaly synchronizer,synchronizator anomalii,Anomaly-to-signal device.,noun,preferred,full form,,Science
+tech disk terminal,terminal dysków technologicznych,Prints tech disks.,noun,preferred,full form,,Science
+material silo,silos materiałów,Bluespace material network.,noun,preferred,full form,,Science
+seed extractor,ekstraktor nasion,Botany; extracts seeds.,noun,preferred,full form,,Science
+ore processor,przetwornik rudy,Science/cargo smelter.,noun,preferred,full form,,Science
+industrial ore processor,przemysłowy przetwornik rudy,Bulk smelter.,noun,preferred,full form,,Science
+sheet-meister 2000,arkusz-master 2000,Sheetifier.,noun,preferred,full form,,Science
+cutter machine,maszyna tnąca,Floor tile cutter.,noun,preferred,full form,,Science
+uniform printer,drukarka mundurów,Clothing printer.,noun,preferred,full form,,Science
+biogenerator,biogenerator,Plants to biomass.,noun,preferred,full form,,Science
+security techfab,fabrykator sprzętu ochrony,Sec lathe.,noun,preferred,full form,,Science
+ammo techfab,fabrykator amunicji,Ammo lathe.,noun,preferred,full form,,Science
+atmospheric alerts computer,komputer alarmów atmosferycznych,Atmos/fire alerts.,noun,preferred,full form,,Computer
+atmospheric network monitor,monitor sieci atmosferycznej,Pipe net monitor.,noun,preferred,full form,,Computer
+emergency shuttle console,konsola wahadłowca ewakuacyjnego,Early-launch auth.,noun,preferred,full form,,Computer
+shuttle console,konsola wahadłowca,Generic shuttle helm. One EN FTL entry still untranslated.,noun,preferred,full form,,Computer
+syndicate shuttle console,konsola wahadłowca syndykatu,Nukeop shuttle helm.,noun,preferred,full form,,Computer
+cargo shuttle console,konsola wahadłowca logistycznego,Cargo shuttle helm.,noun,preferred,full form,,Computer
+salvage shuttle console,konsola wahadłowca odzysku,Salvage shuttle helm.,noun,preferred,full form,,Computer
+IFF computer,konsola systemu rozpoznawania,Identify Friend/Foe.,noun,preferred,full form,,Computer
+power monitoring computer,komputer monitorujący zasilanie,Station power map.,noun,preferred,full form,,Computer
+medical records computer,komputer do rejestrów medycznych,Med records.,noun,preferred,full form,,Computer
+criminal records computer,komputer do rejestrów kryminalnych,Sec records.,noun,preferred,full form,,Computer
+station records computer,komputer do rejestrów stacji,General records.,noun,preferred,full form,,Computer
+crew monitoring console,konsola monitorowania załogi,Suit sensors.,noun,preferred,full form,,Computer
+crew monitoring server,serwer monitorowania załogi,Relays suit sensors.,noun,preferred,full form,,Computer
+ID card computer,komputer kart identyfikacyjnych,HoP ID console.,noun,preferred,full form,,Computer
+communications computer,komputer komunikacyjny,Announcements and alerts.,noun,preferred,full form,,Computer
+syndicate communications computer,komputer komunikacyjny syndykatu,Hostile comms.,noun,preferred,full form,,Computer
+wizard communications computer,komputer komunikacyjny czarodzieja,Wizard comms.,noun,preferred,full form,,Computer
+central command communications computer,komputer komunikacyjny centralnego dowództwa,CentComm comms.,noun,preferred,full form,,Computer
+science communications computer,konsola komunikacyjna nauki,Department comms.,noun,preferred,full form,,Computer
+security communications computer,konsola komunikacyjna ochrony,Department comms.,noun,preferred,full form,,Computer
+service communications computer,konsola komunikacyjna serwisu,Department comms.,noun,preferred,full form,,Computer
+cargo communications computer,konsola komunikacyjna zaopatrzenia,Department comms.,noun,preferred,full form,,Computer
+engineering communications computer,konsola komunikacyjna inżynierii,Department comms.,noun,preferred,full form,,Computer
+medical communications computer,konsola komunikacyjna medycyny,Department comms.,noun,preferred,full form,,Computer
+solar control computer,komputer do kontroli paneli słonecznych,Solar array control.,noun,preferred,full form,,Computer
+mass scanner computer,komputer skanera masy,Radar / mass scanner.,noun,preferred,full form,,Computer
+cargo request computer,komputer zamówień logistycznych,Cargo orders.,noun,preferred,full form,,Computer
+engineering request computer,komputer zamówień działu inżynieryjnego,Department orders.,noun,preferred,full form,,Computer
+medical request computer,komputer zamówień działu medycznego,Department orders.,noun,preferred,full form,,Computer
+science request computer,komputer zamówień działu badań,Department orders.,noun,preferred,full form,,Computer
+security request computer,komputer zamówień działu ochrony,Department orders.,noun,preferred,full form,,Computer
+service request computer,komputer zamówień działu obsługi,Department orders.,noun,preferred,full form,,Computer
+cargo bounty computer,komputer nagród logistycznych,Cargo bounties.,noun,preferred,full form,,Computer
+funding allocation computer,komputer do alokacji funduszy,Budget split.,noun,preferred,full form,,Computer
+salvage job board,tablica zleceń odzysku,Salvage jobs. pl-PL FTL still English.,noun,preferred,full form,,Computer
+salvage expeditions computer,komputer ekspedycji ratunkowej,Salvage missions.,noun,preferred,full form,,Computer
+camera monitor,monitor kamer,Wired cameras.,noun,preferred,full form,,Computer
+wireless camera monitor,monitor kamer bezprzewodowych,Wireless cameras.,noun,preferred,full form,,Computer
+xenoborg camera monitor,monitor kamer ksenoborgów,Xenoborg cams. pl-PL FTL still English.,noun,preferred,full form,,Computer
+cargo sale computer,komputer sprzedaży ładunków,Pallet sales.,noun,preferred,full form,,Computer
+news manager console,komputer zarządzania mediami,Station news.,noun,preferred,full form,,Computer
+sensor monitoring computer,komputer monitorowania sensorów,Debug/test console.,noun,admitted,full form,,Computer
+robotics control console,konsola do kontroli robotyki,Borg control.,noun,preferred,full form,,Computer
+xenoborgs control console,konsola kontroli ksenoborgów,Xenoborg control. pl-PL FTL still English.,noun,preferred,full form,,Computer
+AI upload console,konsola do przesyłania SI,AI law upload.,noun,preferred,full form,,Computer
+AI restoration console,konsola przywracania SI,Repair AI. pl-PL FTL still English.,noun,preferred,full form,,Computer
+syndicate delivery computer,komputer dostaw syndykatu,Nukeop bluespace orders. pl-PL FTL still English.,noun,preferred,full form,,Computer
+supermatter monitoring console,konsola monitorująca supermaterię,SM crystal monitor.,noun,preferred,full form,,Computer
+nuclear reactor monitor,monitor reaktora jądrowego,Far Horizons reactor.,noun,preferred,full form,,Computer
+gas turbine monitor,monitor turbiny gazowej,Far Horizons turbine. pl-PL FTL still English.,noun,preferred,full form,,Computer
+telecommunication server,serwer telekomunikacyjny,Radio server.,noun,preferred,full form,,Computer
+holopad,holopad,Holographic call pad. Keep loanword.,noun,preferred,full form,,Computer
+long-range holopad,holopad dalekiego zasięgu,Cross-map holopad.,noun,preferred,full form,,Computer
+long range fax machine,faks dalekiego zasięgu,Station fax.,noun,preferred,full form,,Computer
+arcade,automat do gier,Arcade cabinet.,noun,preferred,full form,,Computer
+space villain arcade,Kosmiczny Złoczyńca,Space Villain cabinet.,noun,preferred,full form,,Computer
+NT block game,NTetrys,Tetris-like arcade.,noun,preferred,full form,,Computer
+Central Command,Centralne Dowództwo,NT authority above the station.,proper noun,preferred,full form,,Faction
+Nanotrasen,Nanotrasen,Corporation that owns the station. Keep name.,proper noun,preferred,full form,Also spelled NanoTrasen in prototypes.,Faction
+NanoTrasen,NanoTrasen,Prototype spelling of Nanotrasen.,proper noun,admitted,full form,Prefer Nanotrasen in running text.,Faction
+NT,NT,Abbreviation of Nanotrasen. Keep.,proper noun,preferred,abbreviation,,Faction
+Syndicate,Syndykat,Antagonist umbrella faction.,proper noun,preferred,full form,,Faction
+The Syndicate,Syndykat,Full faction name.,proper noun,preferred,full form,,Faction
+CentComm,CD,Abbreviation of Central Command.,proper noun,preferred,abbreviation,Beacon: Biuro CD. Prose: Centralne Dowództwo.,Faction
+CentCom,CD,Alternate spelling of CentComm.,proper noun,preferred,abbreviation,,Faction
+Emergency Response Team,Jednostka Szybkiego Reagowania,CentComm response unit.,noun,preferred,full form,ERT = JSR.,Faction
+ERT,JSR,Emergency Response Team.,noun,preferred,acronym,,Faction
+JSR,JSR,Polish acronym of ERT. Keep in Polish.,noun,preferred,acronym,,Faction
+Wizard Federation,Federacja Czarodziejów,Wizard faction.,proper noun,preferred,full form,,Faction
+Spider Clan,Klan Pająka,Space ninja faction.,proper noun,preferred,full form,,Faction
+Cybersun Industries,Cybersun Industries,Syndicate corporation. Keep brand.,proper noun,preferred,full form,,Faction
+Gorlex Marauders,Maruderzy Gorlex,Syndicate military branch.,proper noun,preferred,full form,,Faction
+Donk Corporation,Donk Corporation,Syndicate corporation. Keep brand.,proper noun,preferred,full form,,Faction
+Waffle Corporation,Waffle Corporation,Syndicate corporation. Keep brand.,proper noun,preferred,full form,,Faction
+Interdyne Pharmaceutics,Interdyne Pharmaceutics,Syndicate/pharma corp. Keep brand.,proper noun,admitted,full form,,Faction
+Xeno,Xeno,Alien NPC faction. Often kept.,proper noun,admitted,full form,Salvage: Xenos.,Faction
+Xenos,Xenos,Salvage faction name.,proper noun,admitted,full form,,Faction
+Revolutionary,Rewolucjonista,Rev faction / antag. See Antagonist for roles.,noun,preferred,full form,,Faction
+Blood Cult,Kult Krwi,Nar'Sie cult faction.,proper noun,preferred,full form,,Faction
+Cosmic Cult,Kult Kosmiczny,Delta-V / Polonium cult faction.,proper noun,preferred,full form,,Faction
+Xenoborg,Ksenoborg,Faction and antag silicon.,noun,preferred,full form,,Faction
+Traitor,Agent Syndykatu,Syndicate agent. EN UI says Traitor; PL prefers Agent Syndykatu.,noun,preferred,full form,roles-antag-syndicate-agent-name.,Antagonist
+Syndicate Agent,Agent Syndykatu,Same as Traitor.,noun,preferred,full form,,Antagonist
+Syndicate sleeper agent,Uśpiony agent Syndykatu,Mid-round traitor.,noun,preferred,full form,,Antagonist
+Nuclear operative,Operator nuklearny,Nuke op.,noun,preferred,full form,,Antagonist
+Nuclear operative commander,Dowódca operatorów nuklearnych,Nuke op leader.,noun,preferred,full form,,Antagonist
+Nuclear operative agent,Sanitariusz operatorów nuklearnych,Nuke op medic.,noun,preferred,full form,,Antagonist
+Head Revolutionary,Główny Rewolucjonista,Rev leader.,noun,preferred,full form,,Antagonist
+Revolutionary,Rewolucjonista,Converted revolutionary.,noun,preferred,full form,Same word as faction; context is the role.,Antagonist
+Wizard,Czarodziej,Wizard Federation antag.,noun,preferred,full form,,Antagonist
+Survivor,Ocalały,Wizard gamemode crew role.,noun,preferred,full form,,Antagonist
+Changeling,Changeling,Often left untranslated.,noun,admitted,full form,pl-PL FTL still Changeling. Do not invent Zmiennokształtny unless we decide to.,Antagonist
+Heretic,Heretyk,Goob heretic antag.,noun,preferred,full form,,Antagonist
+Blood Cultist,Kultysta Krwi,Nar'Sie cultist.,noun,preferred,full form,,Antagonist
+Cosmic Cultist,Kultysta Kosmiczny,Cosmic cult antag.,noun,preferred,full form,,Antagonist
+Blob,Blob,Usually kept untranslated.,noun,admitted,full form,,Antagonist
+Space Ninja,Kosmiczny Nindża,Spider Clan antag.,noun,preferred,full form,,Antagonist
+Ninja,Ninja,Short form; job-name-ninja.,noun,admitted,full form,Prefer Kosmiczny Nindża for the antag role.,Antagonist
+Thief,Złodziej,Low-impact antag.,noun,preferred,full form,,Antagonist
+Space Dragon,Smok kosmiczny,Carp dragon antag.,noun,preferred,full form,,Antagonist
+Pirate,Pirat,Pirate antag.,noun,preferred,full form,,Antagonist
+Zombie,Zombie,Zombie antag.,noun,preferred,full form,,Antagonist
+Initial Infected,Początkowy zarażony,Patient zero zombie.,noun,preferred,full form,,Antagonist
+Paradox Clone,Klon z paradoksu,Clone antag.,noun,preferred,full form,,Antagonist
+Subverted silicon,Przejęty robot,Emagged silicon.,noun,preferred,full form,,Antagonist
+Malfunctioning AI,Uszkodzona SI,Malf AI.,noun,preferred,full form,,Antagonist
+Mothership Core,Rdzeń statku-matki,Xenoborg core.,noun,preferred,full form,,Antagonist
+Xenoborg,Ksenoborg,Xenoborg unit.,noun,preferred,full form,,Antagonist
+Syndicate Recruiter,Rekruter Syndykatu,DV recruiter antag.,noun,preferred,full form,,Antagonist
+Synthesis Specialist,Specjalista Syntezy,DV chemist antag.,noun,preferred,full form,,Antagonist
+Solo Antagonist,Samotny antagonista,Generic role type.,noun,preferred,full form,,Antagonist
+Team Antagonist,Antagonista zespołowy,Generic role type.,noun,preferred,full form,,Antagonist
+Free Agent,Wolny agent,Generic role type.,noun,preferred,full form,,Antagonist
+Silicon Antagonist,Robot antagonista,Generic role type.,noun,preferred,full form,,Antagonist
