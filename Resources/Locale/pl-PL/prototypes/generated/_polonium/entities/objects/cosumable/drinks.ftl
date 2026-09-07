@@ -3,5 +3,5 @@ ent-DrinkOranzadaFull = butelka oranżady
     .gender = female
 
 ent-DrinkMocnyFull = Mocny Full
-    .desc = Mocny, pełny smak — taki jak u dziadka w piwnicy, tylko że w kosmosie.
+    .desc = Mocny, pełny smak — taki jak u dziadka, tylko że w kosmosie.
     .gender = male
