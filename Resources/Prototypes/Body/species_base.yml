@@ -141,6 +141,8 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: CanEscapeInventory # Carrying system from nyanotrasen.
+  - type: Carriable # DeltaV
 
 - type: entity
   abstract: true
