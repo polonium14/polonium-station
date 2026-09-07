@@ -10,8 +10,8 @@ jobs:
   hunt:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.get_fails.outputs.matrix }}
-      count: ${{ steps.get_fails.outputs.count }}
+      matrix: ${{ steps.get_fails.outputs.matrix || '[]' }}
+      count: ${{ steps.get_fails.outputs.count || '0' }}
 
     steps:
     - name: Checkout Master

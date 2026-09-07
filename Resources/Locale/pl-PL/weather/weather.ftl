@@ -13,6 +13,6 @@ cmd-weather-hint-map-id = ID Mapy
 cmd-weather-hint-prototype = Prototyp pogody
 cmd-weather-hint-time = Czas trwania w sekundach (pozostaw puste, jeśli ma trwać w nieskończoność)
 cmd-weather-desc = Ustawia pogodę dla bieżącej mapy.
-cmd-weather-help = 
+cmd-weather-help = weather <mapId> <prototype / null>
 cmd-weather-hint = Prototyp pogody
 cmd-weather-null = Czyści ustawioną pogodę

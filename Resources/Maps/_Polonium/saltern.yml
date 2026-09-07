@@ -49181,8 +49181,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 22
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 7086
@@ -49560,8 +49558,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 35
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 10010
@@ -49908,8 +49904,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 22
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 7168
@@ -50238,8 +50232,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 35
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 10060
@@ -63213,9 +63205,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 5.5,-10.5
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: DeviceLinkSink
       invokeCounter: 1
   - uid: 9269
@@ -63224,9 +63213,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 5.5,-11.5
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: DeviceLinkSink
       invokeCounter: 1
   - uid: 9270
@@ -63264,9 +63250,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 5.5,-7.5
-    - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 9625
     components:
     - type: Transform
@@ -63459,9 +63442,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 7.5,-9.5
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: DeviceLinkSource
       linkedPorts:
         9268:
