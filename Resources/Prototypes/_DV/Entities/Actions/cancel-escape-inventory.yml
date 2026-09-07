@@ -1,7 +1,7 @@
 - type: entity
   id: ActionCancelEscape
   name: Stop escaping
-  description: Calm down and sit peacefuly in your carrier's inventory
+  description: Calm down and sit peacefully in your carrier's inventory
   components:
   - type: Action
     useDelay: 2

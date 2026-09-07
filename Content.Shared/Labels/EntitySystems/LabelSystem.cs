@@ -67,7 +67,7 @@ public sealed partial class LabelSystem : EntitySystem
     // TODO - Change signature to `Label(Entity<LabelComponent?> ent, string? text)`
     public void Label(EntityUid uid, string? text, MetaDataComponent? metadata = null, LabelComponent? label = null)
     {
-        if (_tag.HasTag(uid, PreventTag)) // DeltaV - Prevent labelling felinids
+        if (!string.IsNullOrEmpty(text) && _tag.HasTag(uid, PreventTag)) // DeltaV - Prevent labelling felinids
             return;
         label ??= EnsureComp<LabelComponent>(uid);
 
