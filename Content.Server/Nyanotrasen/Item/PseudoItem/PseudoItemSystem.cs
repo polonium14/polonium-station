@@ -10,11 +10,11 @@ using Content.Server.Hands.Systems;
 
 namespace Content.Server.Nyanotrasen.Item.PseudoItem;
 
-public sealed class PseudoItemSystem : SharedPseudoItemSystem
+public sealed partial class PseudoItemSystem : SharedPseudoItemSystem
 {
-    [Dependency] private readonly CarryingSystem _carrying = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly HandsSystem _hands = default!;
+    [Dependency] private CarryingSystem _carrying = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private HandsSystem _hands = default!;
 
     public override void Initialize()
     {

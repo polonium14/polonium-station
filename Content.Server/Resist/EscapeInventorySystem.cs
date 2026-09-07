@@ -20,7 +20,7 @@ public sealed partial class EscapeInventorySystem : EntitySystem
     [Dependency] private SharedContainerSystem _containerSystem = default!;
     [Dependency] private ActionBlockerSystem _actionBlockerSystem = default!;
     [Dependency] private SharedHandsSystem _handsSystem = default!;
-    [Dependency] private readonly SharedActionsSystem _actions = default!; // DeltaV
+    [Dependency] private SharedActionsSystem _actions = default!; // DeltaV
 
     /// <summary>
     /// You can't escape the hands of an entity this many times more massive than you.
