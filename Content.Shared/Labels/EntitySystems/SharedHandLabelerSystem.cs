@@ -18,7 +18,7 @@ public abstract partial class SharedHandLabelerSystem : EntitySystem
     [Dependency] private LabelSystem _labelSystem = default!;
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly TagSystem _tagSystem = default!;
+    [Dependency] private TagSystem _tagSystem = default!;
 
     private const string PreventTag = "PreventLabel";
 

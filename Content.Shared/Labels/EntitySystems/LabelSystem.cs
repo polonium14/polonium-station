@@ -17,7 +17,7 @@ public sealed partial class LabelSystem : EntitySystem
     [Dependency] private NameModifierSystem _nameModifier = default!;
     [Dependency] private ItemSlotsSystem _itemSlots = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly TagSystem _tag = default!; // DeltaV
+    [Dependency] private TagSystem _tag = default!; // DeltaV
 
     public const string ContainerName = "paper_label";
     public static readonly ProtoId<TagPrototype> PreventTag = "PreventLabel"; // DeltaV - no labelling felenids
