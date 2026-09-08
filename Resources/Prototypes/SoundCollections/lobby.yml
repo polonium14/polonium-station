@@ -35,7 +35,7 @@
   files:
     - /Audio/Lobby/thunderdome.ogg
     - /Audio/Lobby/absconditus.ogg
-    - /Audio/Lobby/space_asshole.ogg
+    # /Audio/Lobby/space_asshole.ogg
     # - /Audio/Lobby/the_wizard.ogg
     - /Audio/Lobby/endless_space.ogg
     - /Audio/Lobby/singuloose.ogg
@@ -110,7 +110,7 @@
     # Polonium
     # - /Audio/_Polonium/Music/CzyToKoniec.ogg
     # - /Audio/_Polonium/Music/i_cant_afford_mastering.ogg
-    # - /Audio/_Polonium/Music/gownochrona.ogg
+    - /Audio/_Polonium/Music/gownochrona.ogg
     - /Audio/_Polonium/Music/lightyears.ogg
     - /Audio/_Polonium/Music/tothegreatbeyond.ogg
     - /Audio/_Polonium/Music/bluespace.ogg
