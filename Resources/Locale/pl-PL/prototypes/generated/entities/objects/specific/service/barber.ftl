@@ -1,2 +1,2 @@
-ent-BarberScissors = barber scissors
-    .desc = Is able to reshape the hairstyle of any crew cut to your liking.
+ent-BarberScissors = nożyczki fryzjerskie
+    .desc = Jest w stanie zmienić wygląd fryzury każdego załoganta według twoich upodobań.

@@ -13,9 +13,134 @@
   id: gownochrona
   name: Zintex - Gównochrona
   path:
-    path: "/Audio/Lobby/gownochrona.ogg"
+    path: "/Audio/_Polonium/Music/gownochrona.ogg"
 - type: jukebox
   id: gownochrona_electronic
   name: Zintex - Gównochrona (Wersja Elektroniczna)
   path:
     path: "/Audio/Lobby/gownochrona_electronic.ogg"
+- type: jukebox
+  id: czytokoniec
+  name: Pinkscreen - Czy To Koniec
+  path:
+    path: "/Audio/_Polonium/Music/CzyToKoniec.ogg"
+- type: jukebox
+  id: lightyears
+  name: Stellardrone - Light Years
+  path:
+    path: "/Audio/_Polonium/Music/lightyears.ogg"
+- type: jukebox
+  id: tothegreatbeyond
+  name: Stellardrone - To The Great Beyond
+  path:
+    path: "/Audio/_Polonium/Music/tothegreatbeyond.ogg"
+- type: jukebox
+  id: skubstep
+  name: finket - skubstep
+  path:
+    path: "/Audio/Lobby/skubstep.ogg"
+- type: jukebox
+  id: thefuturesoon
+  name: Jonathan Coulton - The Future Soon
+  path:
+    path: "/Audio/Lobby/the_future_soon.ogg"
+- type: jukebox
+  id: spacershome
+  name: Spacers Home
+  path:
+    path: "/Audio/Lobby/spacers_home.ogg"
+- type: jukebox
+  id: adifferentreality
+  name: Andreas Viklund - A.D.R (Lagoona rmx)
+  path:
+    path: "/Audio/Lobby/a_different_reality_lagoona_remix.xm.ogg"
+- type: jukebox
+  id: autumnalequinox
+  name: lemonade - Autumnal Equinox
+  path:
+    path: "/Audio/Lobby/autumnal_equinox.xm.ogg"
+- type: jukebox
+  id: aggravated
+  name: melcom - MEL -Aggravated Assault
+  path:
+    path: "/Audio/Lobby/aggravated.it.ogg"
+- type: jukebox
+  id: drozerixalone
+  name: Drozerix - Alone
+  path:
+    path: "/Audio/Lobby/drozerix_-_alone.xm.ogg"
+- type: jukebox
+  id: drozerixleisurelyvoice
+  name: Drozerix - Leisurely Voice
+  path:
+    path: "/Audio/Lobby/drozerix_-_leisurely_voice.xm.ogg"
+- type: jukebox
+  id: getitdone
+  name: A-Guy - Get It Done
+  path:
+    path: "/Audio/Lobby/Get_It_Done.ogg"
+- type: jukebox
+  id: hackers
+  name: Karl Casey @ White Bat Audio - Hackers
+  path:
+    path: "/Audio/Lobby/hackers.ogg"
+- type: jukebox
+  id: midoriconundrum
+  name: Midori Mizuno - Conundrum
+  path:
+    path: "/Audio/Lobby/midori_-_conundrum_final.it.ogg"
+- type: jukebox
+  id: patriciataxxonminute
+  name: Patricia Taxxon - Minute
+  path:
+    path: "/Audio/Lobby/Patricia_Taxxon_-_Minute.ogg"
+- type: jukebox
+  id: thestation
+  name: A-Guy - The Station
+  path:
+    path: "/Audio/Lobby/thestation.ogg"
+- type: jukebox
+  id: undefinedtheory
+  name: A-Guy - Undefined Theory
+  path:
+    path: "/Audio/Lobby/Undefined_Theory.ogg"
+- type: jukebox
+  id: chasingcosmicdreams
+  name: Darkrell - Chasing Cosmic Dreams
+  path:
+    path: "/Audio/Lobby/chasing-cosmic-dreams.ogg"
+- type: jukebox
+  id: resistance
+  name: Artifyber - Resistance
+  path:
+    path: "/Audio/Lobby/Resistance.ogg"
+- type: jukebox
+  id: timefracture
+  name: Bad History - Timefracture
+  path:
+    path: "/Audio/Lobby/timefracture.ogg"
+- type: jukebox
+  id: 762treastise
+  name: Haplogynae - 762 Treastise
+  path:
+    path: "/Audio/Lobby/762_treastise.ogg"
+- type: jukebox
+  id: supernovainthecatacombs
+  name: WigWoo1 - Super Nova In The Catacombs
+  path:
+    path: "/Audio/Lobby/Super_Nova_In_The_Catacombs.ogg"
+- type: jukebox
+  id: diresituation
+  name: Rick O'Shea - Dire Situation
+  path:
+    path: "/Audio/Lobby/Dire_Situation.ogg"
+- type: jukebox
+  id: dropzone
+  name: Qwesta - Dropzone
+  path:
+    path: "/Audio/Lobby/Dropzone.ogg"
+- type: jukebox
+  id: shadowinthesilvernebula
+  name: Mendax - Shadow in the Silver Nebula
+  path:
+    path: "/Audio/Lobby/shadowinthesilvernebula.ogg"

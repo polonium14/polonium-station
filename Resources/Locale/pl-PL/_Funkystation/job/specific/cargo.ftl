@@ -1,5 +1,5 @@
 # mail cart
-mailcart-slot-component-slot-name-big = Large Mail Slot
-mailcart-slot-component-slot-name-flat = Flat Mail Slot
-mailcart-slot-component-slot-name-small = Small Mail Slot
-cargocart-slot-component-slot-name-big = Large Box Slot
+mailcart-slot-component-slot-name-big = Miejsce na dużą paczkę
+mailcart-slot-component-slot-name-flat = Miejsce na płaską paczkę
+mailcart-slot-component-slot-name-small = Miejsce na małą paczkę
+cargocart-slot-component-slot-name-big = Miejsce na duże pudło
