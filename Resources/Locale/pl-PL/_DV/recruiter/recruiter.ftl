@@ -1,2 +1,4 @@
-recruiter-round-end-agent-name = Syndicate Recruiter
-recruiter-role-briefing = Conduct interviews, and have candidates sign a contract in blood.
+recruiter-round-end-agent-name = Rekruter Syndykatu
+recruiter-role-briefing =
+    Przeprowadzaj rozmowy kwalifikacyjne i spraw, 
+    by kandydaci podpisali kontrakt krwią.

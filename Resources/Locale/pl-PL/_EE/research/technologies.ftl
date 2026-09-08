@@ -1,1 +1,1 @@
-research-technology-thermal-vision = Thermal vision
+research-technology-thermal-vision = Widzenie termiczne

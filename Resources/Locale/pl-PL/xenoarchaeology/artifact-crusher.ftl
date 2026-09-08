@@ -1,4 +1,4 @@
 artifact-crusher-verb-start-crushing = Rozpocznij miażdżenie
-artifact-crusher-examine-no-autolocks = The machine's autolocks are [color=green]disabled[/color].
-artifact-crusher-examine-autolocks = The machine's autolocks are [color=red]enabled[/color].
-artifact-crusher-autolocks-enable = The machine's locks snap shut!
+artifact-crusher-examine-no-autolocks = Automatyczne blokady maszyny są [color=green]wyłączone[/color].
+artifact-crusher-examine-autolocks = Automatyczne blokady maszyny są [color=red]włączone[/color].
+artifact-crusher-autolocks-enable = Blokady maszyny zatrzaskują się!

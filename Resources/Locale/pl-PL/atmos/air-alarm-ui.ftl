@@ -3,7 +3,7 @@
 
 ## Window
 
-air-alarm-ui-title = Air Alarm
+air-alarm-ui-title = Alarm Atmosferyczny
 air-alarm-ui-access-denied = Brak wystarczających uprawnień!
 air-alarm-ui-window-pressure-label = Ciśnienie
 air-alarm-ui-window-temperature-label = Temperatura
@@ -40,14 +40,14 @@ air-alarm-ui-mode-wide-filtering = Filtrowanie (szerokie)
 air-alarm-ui-mode-fill = Napełnianie
 air-alarm-ui-mode-panic = Tryb paniki
 air-alarm-ui-mode-none = Brak
-air-alarm-ui-pump-direction-siphoning = Siphoning
-air-alarm-ui-pump-direction-scrubbing = Scrubbing
-air-alarm-ui-pump-direction-releasing = Releasing
-air-alarm-ui-pressure-bound-nobound = No Bound
-air-alarm-ui-pressure-bound-internalbound = Internal Bound
-air-alarm-ui-pressure-bound-externalbound = External Bound
-air-alarm-ui-pressure-bound-both = Both
-air-alarm-ui-widget-gas-filters = Gas Filters
+air-alarm-ui-pump-direction-siphoning = Syfonowanie
+air-alarm-ui-pump-direction-scrubbing = Oczyszczanie
+air-alarm-ui-pump-direction-releasing = Wypuszczanie
+air-alarm-ui-pressure-bound-nobound = Brak ograniczenia
+air-alarm-ui-pressure-bound-internalbound = Ograniczenie wewnętrzne
+air-alarm-ui-pressure-bound-externalbound = Ograniczenie zewnętrzne
+air-alarm-ui-pressure-bound-both = Oba ograniczenia
+air-alarm-ui-widget-gas-filters = Filtry gazowe
 
 ## Widgets
 
@@ -71,9 +71,9 @@ air-alarm-ui-vent-internal-bound-label = Granica wewnętrzna
 
 air-alarm-ui-scrubber-pump-direction-label = Kierunek
 air-alarm-ui-scrubber-volume-rate-label = Prędkość (L)
-air-alarm-ui-scrubber-wide-net-label = WideNet
-air-alarm-ui-scrubber-select-all-gases-label = Select all
-air-alarm-ui-scrubber-deselect-all-gases-label = Deselect all
+air-alarm-ui-scrubber-wide-net-label = Szeroka sieć
+air-alarm-ui-scrubber-select-all-gases-label = Zaznacz wszystkie
+air-alarm-ui-scrubber-deselect-all-gases-label = Odznacz wszystkie
 
 ### Thresholds
 

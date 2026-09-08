@@ -1,17 +1,17 @@
 ## Used for date picker
 
-month-1 = January
-month-2 = February
-month-3 = Mars
-month-4 = April
-month-5 = May
-month-6 = June
-month-7 = July
-month-8 = August
-month-9 = September
-month-10 = October
-month-11 = November
-month-12 = December
-datepicker-month = Month
-datepicker-day = Day
-datepicker-year = Year
+month-1 = Styczeń
+month-2 = Luty
+month-3 = Marzec
+month-4 = Kwiecień
+month-5 = Maj
+month-6 = Czerwiec
+month-7 = Lipiec
+month-8 = Sierpień
+month-9 = Wrzesień
+month-10 = Październik
+month-11 = Listopad
+month-12 = Grudzień
+datepicker-month = Miesiąc
+datepicker-day = Dzień
+datepicker-year = Rok

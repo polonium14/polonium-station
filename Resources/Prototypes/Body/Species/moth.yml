@@ -427,7 +427,7 @@
       Destroyed: 0
 
 - type: entity
-  parent: [ OrganBaseHeart, OrganMothInternal, OrganAnimalMetabolizer ]
+  parent: [ OrganBaseHeart, OrganMothInternal, OrganMothMetabolizer ] # Polonium: moth should eat cloth!
   id: OrganMothHeart
   components:
   - type: OrganIntegrity
@@ -455,7 +455,7 @@
       Destroyed: 0
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganMothInternal, OrganAnimalMetabolizer ]
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganMothInternal, OrganMothMetabolizer ] # Polonium: moth should eat cloth!
   id: OrganMothLiver
   components:
   - type: OrganIntegrity

@@ -1,6 +1,6 @@
 ##  VendingMachineComponent
 
-vending-machine-component-try-eject-invalid-item = Invalid item
-vending-machine-component-try-eject-out-of-stock = Out of stock
-vending-machine-component-try-eject-access-denied = Access denied
-vending-machine-component-search-filter = Search...
+vending-machine-component-try-eject-invalid-item = Nieprawidłowy przedmiot
+vending-machine-component-try-eject-out-of-stock = Brak na stanie
+vending-machine-component-try-eject-access-denied = Odmowa dostępu
+vending-machine-component-search-filter = Wyszukaj...

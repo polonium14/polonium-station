@@ -1,1 +1,1 @@
-computer_slot_accessory = accessory slot
+computer_slot_accessory = gniazdo akcesorium

@@ -1,0 +1,70 @@
+<!--
+SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Okoliczności i wymiar kary
+
+  Wyrok nie jest prostą sumą wartości z tabeli. Najpierw uwzględnia się okoliczności dla [bold]każdego zarzutu osobno[/bold], następnie sumuje pozostałe kary, a dopiero na końcu wylicza [bold]ostateczny czas odbywania kary[/bold].
+
+  Prowadzący [textlink="przesłuchanie" link="SecuritySOP"] decyduje, czy dana okoliczność zachodzi. Nadzorca (albo komendant / najstarszy rangą oficer) zatwierdza wyrok w Protokole. Przy drobnych przewinieniach często wystarczy ostrzeżenie oraz pouczenie, że kolejny taki sam czyn w tym samym dziale (_XX) zostanie uznany za recydywę.
+
+  ## Przy zarzucie
+  Te okoliczności odnoszą się do [bold]pojedynczego[/bold] artykułu. Jeśli dany artykuł zostaje wycofany (np. ze względu na łagodniejszy czyn w tym samym dziale _XX lub stan wyższej konieczności), recydywa oraz pozostałe modyfikatory powiązane z tym artykułem również przestają obowiązywać.
+
+  [bold]Recydywa[/bold] — popełnienie tego samego czynu (_XX) po odbyciu kary, a nie w trakcie jednego zdarzenia.
+  [bullet] Pierwszy raz: standardowy wyrok (×1).
+  [bullet] Drugi raz: ×1,5.
+  [bullet] Trzeci raz: ×2,0.
+  [bullet] Czwarty i kolejny raz: dożywotni areszt (permabrig) lub wyrok standardowy — decyzja należy do strażnika lub najwyższego rangą oficera na zmianie.
+
+  [bold]Brak zamiaru[/bold] — po przesłuchaniu ustalono, że sprawca nie dążył do wywołania skutku (śmierci, uszczerbku na zdrowiu, zniszczenia mienia). Wyrok redukuje się o 1/2 wartości kary z danego artykułu.
+
+  [bold]Stan wyższej konieczności[/bold] — sprawca działał w celu ochrony życia własnego, innego bądź w celu ratowania stacji; albo znajdował się w stanie krytycznym i nie podjął żadnych działań. Zarzut zostaje wycofany. Samoobrona oraz wykonanie legalnego rozkazu kwalifikują się pod ten punkt.
+
+  [bold]Czynny żal[/bold] — sprawca dobrowolnie zwrócił mienie, naprawił zniszczenia lub przetransportował poszkodowanego do punktu medycznego: wyrok redukuje się o 1/2 wartości kary z danego artykułu.
+
+  ## Na całym wyrokowym czasie
+  Modyfikatory poniżej nakłada się [bold]po zsumowaniu kary[/bold], na pomniejszoną już wartość. Dwa modyfikatory działające w tę samą stronę nie sumują się do 100% — dają maksymalnie [bold]75%[/bold] redukcji. Ostateczny wynik zaokrągla się w górę do pełnej minuty.
+
+  [bold]Współpraca[/bold] — sprawca wskazał współsprawców lub miejsce ukrycia mienia, a informacje okazały się prawdziwe. Wprowadzenie w błąd wyklucza zastosowanie tej okoliczności: wyrok redukuje się o połowę po zsumowaniu i ograniczeniu kary.
+
+  [bold]Dobrowolne zgłoszenie się[/bold] — sprawca sam zgłosił się i przyznał do winy, zanim podjęto działania pościgowe: wyrok redukuje się o połowę po zsumowaniu i ograniczeniu kary.
+
+  [bold]Utrudnianie śledztwa[/bold] — sprawca objęty śledztwem lub przebywający w areszcie nie wykonuje legalnych poleceń ochrony: wyrok zwiększa się o połowę po zsumowaniu i ograniczeniu kary.
+
+  ## Łączenie kar
+  [bullet] Kary z różnych działów _XX dodaje się do siebie. W ramach jednego działu _XX [bold]uwzględnia się wyłącznie najcięższy zarzut[/bold] po zastosowaniu modyfikatorów.
+
+  [bullet] Użycie przemocy (x01) wobec [bold]kolejnej ofiary[/bold] stanowi osobny zarzut, nawet w ramach tego samego działu _XX.
+
+  [bullet] Recydywa wchodzi do wartości zarzutu przed sumowaniem. Po zsumowaniu kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego pozostałego zarzutu; nadmiar czasu podlega odrzuceniu. Dopiero do tej wartości stosuje się ogólne modyfikatory kary. Jeżeli którykolwiek z pozostałych zarzutów jest recydywą albo stanowi w wykazie przestępstw odrębną podstawę dożywotniego aresztu (permabrig), ograniczenia nie stosuje się do całego wyroku — nie wyłącznie do zwiększenia z recydywy.
+
+  [bullet] Przy karze powyżej [bold]35 minut[/bold] zaleca się orzeczenie dożywotniego aresztu (permabrig).
+
+  [bullet] [bold]§402 Rozbój[/bold] pochłania zarzuty napaści oraz uszczerbku na zdrowiu wynikające z tego samego zdarzenia. Jeśli sprawca porzucił mienie i uderzył wyłącznie w celu ucieczki — czyn kwalifikuje się jako kradzież + §201 lub §301, a nie rozbój.
+
+  [bullet] Jeśli klauzula przy artykule wskazuje, że nie łączy się on z innymi — artykuł ten nie podlega łączeniu.
+
+  ## Krok po kroku
+  1. Do każdego zarzutu zastosuj odpowiednie okoliczności przypisane do danego artykułu.
+  2. W każdym dziale _XX pozostaw tylko jeden, najcięższy zarzut.
+  3. Zsumuj kary z różnych działów _XX. Kolejną ofiarę przemocy traktuj jako osobny zarzut.
+  4. Ogranicz sumę kary do maksymalnie [bold]półtorej wartości[/bold] najcięższego pozostałego zarzutu. Recydywa jest już wliczona w wartość zarzutu. Jeżeli którykolwiek z pozostałych zarzutów jest recydywą albo stanowi w wykazie odrębną podstawę permabrig, tego ograniczenia nie stosuje się do całego wyroku — nie wyłącznie do zwiększenia z recydywy.
+  5. Do wyznaczonej wartości zastosuj ogólne modyfikatory kary (dwa modyfikatory w tę samą stronę = 75%).
+  6. Zaokrąglij wynik w górę do pełnej minuty.
+  7. W przypadku wyroku przekraczającego 35 minut zaleca się orzeczenie dożywotniego aresztu (permabrig).
+
+  ## Przykład
+  Asystent serwisu: uderzył inną osobę, zabrał PDA, w kieszeni posiadał EMAG. Przetransportował poszkodowanego do medyka, oddał PDA i sam zgłosił się do aresztu, zanim rozpoczęto jego poszukiwania.
+
+  - §201, naprawienie szkody: ostrzeżenie–5 min → ok. 0–3 min.
+  - §102: ostrzeżenie–5 min.
+  - §203: 0–9 min.
+  - Łącznie maksymalnie 17 min. Najcięższym zarzutem po uwzględnieniu okoliczności jest §203 (9 min). Półtorej tej wartości to 13,5 min. Wartość 17 min przekracza 13,5 min — kara zostaje ograniczona do 13,5 min.
+  - Dobrowolne zgłoszenie się −50% od 13,5 min → 6,75 min, następnie zaokrąglenie w górę do pełnej minuty → [bold]7 min[/bold].
+
+  Gdyby w tym zdarzeniu wystąpił również zarzut §301 wobec tej samej osoby, §201 zostałby wchłonięty przez kategorię x01 — a wraz z nim wygasłaby recydywa z §201, ponieważ brakowałoby artykułu bazowego, do którego była przypisana.
+</Document>

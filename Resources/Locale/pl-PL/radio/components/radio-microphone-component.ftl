@@ -1,1 +1,1 @@
-radio-microphone-component-examine = The current channel is [color={$color}]{$channel} ({$frequency})[/color].
+radio-microphone-component-examine = Domyślny kanał to [color={ $color }]{ $channel }[/color].

@@ -42,6 +42,7 @@ job-description-musician = Zabawiaj załogę przy pomocy swojego talentu muzyczn
 job-description-passenger = Rozkoszuj się swoim pobytem na stacji bez żadnych obowiązków!
 job-description-reporter = Zabawiaj i informuj załogę przy pomocy swojego wyrazistego reporterstwa, kamer bezprzewodowych, radia i prasy.
 job-description-serviceworker = Naucz się podstaw barmaństwa, gotowania i sadzenia roślin.
+job-description-tram-driver = Drive around a tram from stop to stop.
 # Silicon
 job-description-borg = Pół człowiek, pół maszyna. Wypełniaj swoje prawa, służ załodze, i nachodź zespół rozwoju o ulepszenia.
 job-description-station-ai = Wykonywuj swoje prawa, służ załodze.
@@ -62,5 +63,3 @@ job-description-zookeeper = Wystawiaj radosne ekspozycje słodkich zwierząt i k
 job-description-command-maid = Clean the bridge, command rooms, and everything else that command tells you to.
 job-description-security-clown = Do security's job, but don't forget to do it with your clown spice.
 job-description-party-maker = Throw the biggest party ever at this station!
-
-job-description-tram-driver = Drive around a tram from stop to stop.

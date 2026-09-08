@@ -1,0 +1,58 @@
+<Document>
+  # Rejestr mienia znacznej wartości
+  Wykaz mienia o szczególnej wartości. Bezprawne przywłaszczenie kwalifikuje się jako [textlink="§502" link="SpaceLawCrimeList"].
+
+  Do rejestru wchodzą:
+  - obiekty oznaczone podczas oględzin jako cel kradzieży MZW;
+  - głowica nuklearna;
+  - karty ID kapitana, kierownika personelu lub inne karty o analogicznym poziomie dostępu;
+  - klucze szyfrujące zawierające dostęp do wszystkich kanałów łączności stacji;
+  - Ian.
+
+  Za mienie lub sprzęt o charakterze krytycznym uznaje się elementy, bez których stacja nie jest w stanie prawidłowo funkcjonować.
+
+  ## Identyfikatory i autoryzacja
+  <Box>
+    <GuideEntityEmbed Entity="CaptainIDCard" Caption="ID kapitana"/>
+    <GuideEntityEmbed Entity="HoPIDCard" Caption="ID kierownika personelu"/>
+    <GuideEntityEmbed Entity="NukeDisk" Caption="Dysk nuklearny"/>
+  </Box>
+
+  ## Ładunki i łączność
+  <Box>
+    <GuideEntityEmbed Entity="NuclearBomb" Caption="Głowica nuklearna"/>
+    <GuideEntityEmbed Entity="EncryptionKeyStationMaster" Caption="Klucz stacyjny"/>
+    <GuideEntityEmbed Entity="CallablePhoneInstrument" Caption="Czerwony telefon"/>
+    <GuideEntityEmbed Entity="CallablePhoneInstrumentCentComm" Caption="Telefon CentComm"/>
+    <GuideEntityEmbed Entity="HandTeleporter" Caption="Teleporter"/>
+  </Box>
+
+  ## Sprzęt kapitana i dowództwa
+  <Box>
+    <GuideEntityEmbed Entity="JetpackCaptain" Caption="Dżetpak kapitana"/>
+    <GuideEntityEmbed Entity="WeaponAntiqueLaser" Caption="Antyczny laser"/>
+    <GuideEntityEmbed Entity="WeaponEnergyMagnum" Caption="Energy magnum"/>
+    <GuideEntityEmbed Entity="Hypospray" Caption="Hypospray"/>
+    <GuideEntityEmbed Entity="HandheldCrewMonitor" Caption="Monitor załogi"/>
+    <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv" Caption="Magboots"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitRd" Caption="Hardsuit RD"/>
+    <GuideEntityEmbed Entity="BoxFolderQmClipboard" Caption="Tablica QM"/>
+    <GuideEntityEmbed Entity="ClothingHandsKnuckleDustersQM" Caption="Kastety QM"/>
+  </Box>
+
+  ## Płytki konsol komunikacyjnych
+  <Box>
+    <GuideEntityEmbed Entity="CargoCommsComputerCircuitboard"/>
+    <GuideEntityEmbed Entity="EngiCommsComputerCircuitboard"/>
+    <GuideEntityEmbed Entity="MedicalCommsComputerCircuitboard"/>
+    <GuideEntityEmbed Entity="ScienceCommsComputerCircuitboard"/>
+    <GuideEntityEmbed Entity="SecurityCommsComputerCircuitboard"/>
+    <GuideEntityEmbed Entity="ServiceCommsComputerCircuitboard"/>
+  </Box>
+
+  ## Pozostałe
+  <Box>
+    <GuideEntityEmbed Entity="MobCorgiIan" Caption="Ian"/>
+    <GuideEntityEmbed Entity="FoodMeatCorgi" Caption="Mięso Iana"/>
+  </Box>
+</Document>

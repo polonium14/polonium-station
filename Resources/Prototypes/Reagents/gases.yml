@@ -13,7 +13,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Apid, Thaven, Arachnid ] # fork: Apid/Thaven (Macrocosm); upstream: Arachnid
+          type: [ Human, Animal, Rat, Plant, Apid, Thaven, Arachnid, Moth ]
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:

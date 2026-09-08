@@ -1,6 +1,6 @@
-marking-HumanLongEars = Long Ears Standard
-marking-LongEarsWide = Long Ears Wide
-marking-LongEarsSmall = Long Ears Small
-marking-LongEarsUpwards = Long Ears Upwards
-marking-LongEarsTall = Long Ears Tall
-marking-LongEarsThin = Long Ears Thin
+marking-HumanLongEars = Standardowe długie uszy
+marking-LongEarsWide = Szerokie długie uszy
+marking-LongEarsSmall = Małe długie uszy
+marking-LongEarsUpwards = Długie uszy na sztorc
+marking-LongEarsTall = Wysokie długie uszy
+marking-LongEarsThin = Cienkie długie uszy

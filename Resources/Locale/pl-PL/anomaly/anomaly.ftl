@@ -28,6 +28,7 @@ anomaly-scanner-particle-unstable-unknown = - [color=plum]Typ niestabilny:[/colo
 anomaly-scanner-particle-containment-unknown = - [color=goldenrod]Typ powstrzymujący:[/color] [color=red]BŁĄD[/color]
 anomaly-scanner-particle-transformation-unknown = - [color=#6b75fa]Typ transformacji:[/color] [color=red]BŁĄD[/color]
 anomaly-scanner-pulse-timer = Czas do następnego impulsu: [color=gray]{ $time }[/color]
+anomaly-scanner-doafter-examine = { CAPITALIZE(SUBJECT($user)) } { CONJUGATE-BE($user) } [color=plum]scanning an anomaly[/color].
 anomaly-gorilla-core-slot-name = Rdzeń anomalii
 anomaly-gorilla-charge-none = Nie ma w nim [bold]rdzenia anomalii[/bold].
 anomaly-gorilla-charge-limit =
@@ -90,5 +91,3 @@ anomaly-behavior-fast = [color=crimson]Częstotliwość pulsacji jest znacznie z
 anomaly-behavior-strenght = [color=crimson]Moc pulsacji jest znacznie zwiększona.[/color]
 anomaly-behavior-moving = [color=crimson]Wykryto niestabilność współrzędnych.[/color]
 anomaly-secret-admin = [color=red](ERROR)[/color]
-
-anomaly-scanner-doafter-examine = { CAPITALIZE(SUBJECT($user)) } {CONJUGATE-BE($user)} [color=plum]scanning an anomaly[/color].

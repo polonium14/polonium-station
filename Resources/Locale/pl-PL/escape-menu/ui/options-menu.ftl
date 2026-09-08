@@ -37,6 +37,9 @@ ui-options-restart-sounds = Dźwięki restartu rundy
 ui-options-event-music = Muzyka wydarzeń
 ui-options-admin-sounds = Odtwórz dźwięki administratora
 ui-options-bwoink-sound = Odtwórz dźwięk powiadomienia AHelp
+ui-options-mute-unfocused = Mute audio when unfocused
+ui-options-audio-device = Output device:
+ui-options-audio-device-default = System default
 ui-options-audio-hrtf = Włącz przetwarzanie audio HRTF (wymaga restartu)
 ui-options-volume-label = Głośność
 
@@ -60,6 +63,9 @@ ui-options-fancy-speech = Pokazuj imiona w dymkach wiadomości
 ui-options-fancy-name-background = Dodaj tło imionom w dymkach wiadomości
 ui-options-chat-follow-button = Jako duch, pokaż przycisk śledzenia obok wiadomości na czacie
 ui-options-vsync = VSync
+ui-options-max-fps = Maximum FPS:
+ui-options-max-fps-display-rate = Display Rate
+ui-options-max-fps-tooltip = Maximum framerate the client should run at. Set to 0 for no limit. This has no effect if VSync is enabled.
 ui-options-fullscreen = Pełny ekran
 ui-options-lighting-label = Jakość oświetlenia:
 ui-options-lighting-very-low = Bardzo niska
@@ -416,15 +422,3 @@ ui-options-admin-overlay-ghost-fade-distance = Zasięg zanikania nakładki ducha
 ui-options-admin-overlay-ghost-hide-distance = Zasięg ukrywania nakładki ducha od kursora
 ui-options-admin-strip-overlay-title = Nakładka przeszukiwania
 ui-options-admin-strip-overlay-setting = Domyślnie pokazuj nakładkę przeszukiwania
-
-ui-options-mute-unfocused = Mute audio when unfocused
-
-ui-options-audio-device = Output device:
-
-ui-options-audio-device-default = System default
-
-ui-options-max-fps = Maximum FPS:
-
-ui-options-max-fps-display-rate = Display Rate
-
-ui-options-max-fps-tooltip = Maximum framerate the client should run at. Set to 0 for no limit. This has no effect if VSync is enabled.

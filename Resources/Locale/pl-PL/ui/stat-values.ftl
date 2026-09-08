@@ -1,1 +1,1 @@
-stat-values-ui-title = Melee stats
+stat-values-ui-title = Statystyki walki wręcz

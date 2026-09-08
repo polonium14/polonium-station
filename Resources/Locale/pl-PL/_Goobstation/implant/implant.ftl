@@ -1,1 +1,1 @@
-mindshield-implant-effect-removed = You feel an agonizing pain as your perspective changes and your vision widens near-instantly.
+mindshield-implant-effect-removed = Czujesz przeszywający ból, gdy zmienia się twoja perspektywa, a pole widzenia niemal natychmiast się poszerza.

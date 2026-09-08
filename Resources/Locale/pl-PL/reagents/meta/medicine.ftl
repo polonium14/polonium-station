@@ -37,6 +37,8 @@ reagent-name-phalanximine = falanksymina
 reagent-desc-phalanximine = Zaawansowany środek chemiczny stosowany w leczeniu raka. Powoduje umiarkowane zatrucie popromienne, oparzenia kwasem i wymioty po spożyciu substancji organicznych. Może potencjalnie usunąć śmiertelne geny z roślin.
 reagent-name-polypyrylium-oligomers = polipyrylowe oligomery
 reagent-desc-polypyrylium-oligomers = Fioletowa mieszanina krótkich łańcuchów polielektrolitów, trudna do zsyntetyzowania w laboratorium. Leczy uduszenie i obrażenia. Z czasem zatrzymuje krwawienie.
+reagent-name-romerodone = romerodone
+reagent-desc-romerodone = A byproduct of centrifuging zombie blood, perhaps you could make a cure with this.
 reagent-name-ambuzol = ambuzol
 reagent-desc-ambuzol = Wysoce zaawansowana technologicznie substancja, która jest w stanie zatrzymać rozwój infekcji zombie.
 reagent-name-ambuzol-plus = ambuzol plus
@@ -119,7 +121,3 @@ reagent-name-warfarin = warfarin
 reagent-desc-warfarin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
 reagent-name-osteodine = osteodyna
 reagent-desc-osteodine = Mlecznobiały związek regeneracyjny, który zrasta strzaskane kości. 25 jednostek w krwiobiegu zrasta wszystkie złamania w ciele. Przedawkowanie powoduje mdłości i ból stawów.
-
-reagent-name-romerodone = romerodone
-
-reagent-desc-romerodone = A byproduct of centrifuging zombie blood, perhaps you could make a cure with this.

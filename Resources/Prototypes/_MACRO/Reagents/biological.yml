@@ -54,7 +54,7 @@
           reagent: Ethanol
           min: 15
         - !type:MetabolizerTypeCondition
-          type: [ Dwarf ]
+          type: [ Dwarf, Allulalo ]
           inverted: true
         damage:
           types:
@@ -66,7 +66,7 @@
           reagent: Ethanol
           min: 15
         - !type:MetabolizerTypeCondition
-          type: [ Dwarf ]
+          type: [ Dwarf, Allulalo ]
         damage:
           types:
             Poison: 0.02
@@ -76,7 +76,7 @@
           reagent: Ethanol
           min: 15
         - !type:MetabolizerTypeCondition
-          type: [ Dwarf ]
+          type: [ Dwarf, Allulalo ]
         damage:
           Brute: -0.1
       - !type:Vomit
@@ -87,7 +87,7 @@
           min: 12
         # dwarves immune to vomiting from alcohol
         - !type:MetabolizerTypeCondition
-          type: [ Dwarf ]
+          type: [ Dwarf, Allulalo ]
           inverted: true
       - !type:Drunk
         boozePower: 2

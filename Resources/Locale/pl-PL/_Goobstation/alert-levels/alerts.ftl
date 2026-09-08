@@ -1,4 +1,4 @@
-alerts-stasis-name = [color=cyan]Temporal stasis[/color]
-alerts-stasis-desc = You are placed in temporary stasis. You cannot interact with the world, nor can it interact with you.
-alerts-knocked-down-name = [color=yellow]Knocked down[/color]
-alerts-knocked-down-desc = [color=yellow]Knocked down[/color]! You can't get up.
+alerts-stasis-name = [color=cyan]Tymczasowa staza[/color]
+alerts-stasis-desc = Jesteś umieszczony w tymczasowej stazie. Nie możesz wchodzić w interakcje ze światem, ani świat z tobą.
+alerts-knocked-down-name = [color=yellow]Powalony[/color]
+alerts-knocked-down-desc = [color=yellow]Powalony[/color]! Nie możesz wstać.

@@ -1,2 +1,2 @@
-secret-director-title = Game Directors
-secret-director-description = A story is told. But which one is told? Nobody knows (except the admins).
+secret-director-title = Reżyserzy Gry
+secret-director-description = Historia jest opowiedziana. Tylko która? Nikt nie wie (oprócz adminów)

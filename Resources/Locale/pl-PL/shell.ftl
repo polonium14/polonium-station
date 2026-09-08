@@ -6,13 +6,13 @@
 shell-command-success = Komenda wykonana pomyślnie
 shell-invalid-command = Nieprawidłowa komenda.
 shell-invalid-command-specific = Nieprawidłowa komenda { $commandName }.
-shell-can-only-run-from-pre-round-lobby = You can only run this command while the game is in the pre-round lobby.
-shell-can-only-run-while-round-is-active = You can only run this command while the game is in a round.
+shell-can-only-run-from-pre-round-lobby = Możesz uruchomić to polecenie tylko wtedy, gdy gra jest w lobby przed rozpoczęciem gry.
+shell-can-only-run-while-round-is-active = Możesz uruchomić to polecenie tylko wtedy, gdy gra się już rozpoczęła.
 shell-cannot-run-command-from-server = Nie możesz uruchomić tej komendy z serwera.
 shell-only-players-can-run-this-command = Tylko gracze mogą uruchomić tę komendę.
 shell-must-be-attached-to-entity = Musisz być przypisany do encji, aby uruchomić tę komendę.
 shell-must-have-body = Musisz mieć ciało, aby uruchomić tę komendę.
-shell-unknown-error = An unknown error has occured.
+shell-unknown-error = Wystąpił nieznany błąd.
 
 ## Arguments
 
@@ -36,7 +36,7 @@ shell-invalid-grid-id = Nieprawidłowy identyfikator siatki.
 shell-invalid-map-id = Nieprawidłowy identyfikator mapy.
 shell-invalid-entity-uid = { $uid } nie jest prawidłowym identyfikatorem encji (uid).
 shell-invalid-bool = Nieprawidłowa wartość logiczna.
-shell-invalid-bool-value = Invalid boolean: '{ $value }'
+shell-invalid-bool-value = Nieprawidłowa wartość Boolean: '{ $value }'
 shell-entity-uid-must-be-number = EntityUid musi być liczbą.
 shell-could-not-find-entity = Nie znaleziono encji { $entity }.
 shell-could-not-find-entity-with-uid = Nie znaleziono encji o uid { $uid }.
@@ -51,7 +51,7 @@ shell-argument-number-must-be-between = Argument { $index } musi być liczbą z 
 shell-argument-station-id-invalid = Argument { $index } musi być prawidłowym identyfikatorem stacji!
 shell-argument-map-id-invalid = Argument { $index } musi być prawidłowym identyfikatorem mapy!
 shell-argument-number-invalid = Argument { $index } musi być prawidłową liczbą!
-shell-argument-chat-invalid = Argument { $index } must be a valid chat!
+shell-argument-chat-invalid = Argument { $index } musi być poprawnym czatem!
 # Hints
 shell-argument-username-hint = <nazwa użytkownika>
 shell-argument-username-optional-hint = [nazwa użytkownika]
