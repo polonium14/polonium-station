@@ -1,11 +1,11 @@
 ent-ResearchDisk = dysk punktów badawczych (1000 pkt)
-    .desc = Dysk dla serwera R&D zawierający 1000 punktów.
+    .desc = Dysk dla serwera B+R zawierający 1000 punktów.
 ent-ResearchDisk5000 = dysk punktów badawczych (5000 pkt)
-    .desc = Dysk dla serwera R&D zawierający 5000 punktów.
+    .desc = Dysk dla serwera B+R zawierający 5000 punktów.
 ent-ResearchDisk10000 = dysk punktów badawczych (10000 pkt)
-    .desc = Dysk dla serwera R&D zawierający 10000 punktów.
+    .desc = Dysk dla serwera B+R zawierający 10000 punktów.
 ent-ResearchDiskDebug = dysk punktów badawczych
-    .desc = Dysk dla serwera R&D zawierający wszystkie punkty, jakich możesz potrzebować.
+    .desc = Dysk dla serwera B+R zawierający wszystkie punkty, jakich możesz potrzebować.
     .suffix = DEBUG, NIE MAPOWAĆ
 ent-TechnologyDisk = dysk technologii
     .desc = { ent-BaseItem.desc }

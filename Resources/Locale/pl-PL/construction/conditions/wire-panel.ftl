@@ -1,5 +1,5 @@
 # WirePanel
-construction-examine-condition-wire-panel-open = First, open the maintenance panel.
-construction-examine-condition-wire-panel-close = First, close the maintenance panel.
-construction-step-condition-wire-panel-open = The maintenance panel must be open.
-construction-step-condition-wire-panel-close = The maintenance panel must be closed.
+construction-examine-condition-wire-panel-open = Najpierw otwórz panel konserwacyjny.
+construction-examine-condition-wire-panel-close = Najpierw zamknij panel konserwacyjny.
+construction-step-condition-wire-panel-open = Panel konserwacyjny musi być otwarty.
+construction-step-condition-wire-panel-close = Panel konserwacyjny musi być zamknięty.

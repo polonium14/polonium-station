@@ -1,7 +1,7 @@
 ent-WeaponEnergyTurretStationBase = wieżyczka wartownicza
     .desc = Zaawansowany autonomiczny system obronny przeznaczony do ochrony newralgicznych obszarów przed nieupoważnionym personelem.
 ent-WeaponEnergyTurretAI = { ent-WeaponEnergyTurretStationBase }
-    .suffix = AI, Silikon
+    .suffix = SI, Silikon
     .desc = { ent-WeaponEnergyTurretStationBase.desc }
 ent-WeaponEnergyTurretSecurity = { ent-WeaponEnergyTurretStationBase }
     .suffix = Ochrona

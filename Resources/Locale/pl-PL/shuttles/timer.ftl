@@ -1,11 +1,11 @@
 shuttle-timer-eta = PRZL
 shuttle-timer-etd = ODLT
-shuttle-timer-shuttle-time = ShuttleTime
-shuttle-timer-source-time = SourceTime
-shuttle-timer-dest-time = DestTime
-shuttle-timer-shuttle-map = ShuttleMap
-shuttle-timer-source-map = SourceMap
-shuttle-timer-dest-map = DestMap
+shuttle-timer-shuttle-time = CzasWahadłowca
+shuttle-timer-source-time = ŹródłoCzasu
+shuttle-timer-dest-time = DocelowyCzas
+shuttle-timer-shuttle-map = MapaWahadłowca
+shuttle-timer-source-map = ŻródłoMapy
+shuttle-timer-dest-map = MapaCelu
 shuttle-timer-docked = Zadokowane
 shuttle-timer-bye = PA!
 shuttle-timer-kill = ZABIJ
