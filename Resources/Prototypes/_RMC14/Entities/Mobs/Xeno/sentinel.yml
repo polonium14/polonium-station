@@ -29,7 +29,7 @@
   - type: XenoPlasma
     plasma: 400
     maxPlasma: 400
-    plasmaRegenOnWeeds: 6
+    plasmaRegenOnWeeds: 3
   - type: XenoEvolution
     canEvolveWithoutGranter: true
     max: 200

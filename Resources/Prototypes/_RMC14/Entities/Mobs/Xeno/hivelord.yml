@@ -37,7 +37,7 @@
   - type: XenoPlasma
     plasma: 1000
     maxPlasma: 1000
-    plasmaRegenOnWeeds: 6
+    plasmaRegenOnWeeds: 5.5
   - type: XenoConstruction
     buildDelay: 1
     canUpgrade: true
