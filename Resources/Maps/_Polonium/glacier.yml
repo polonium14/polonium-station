@@ -4317,14 +4317,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -49.48498,7.642147
-- proto: ActionToggleLight
-  entities:
-  - uid: 13915
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 12816
 - proto: AdvMopItem
   entities:
   - uid: 20834
@@ -99130,24 +99122,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -6.5724893,34.569923
-    - type: HandheldLight
-      toggleActionEntity: 13915
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          ent: null
-          showEnts: False
-          occludes: True
-        actions: !type:Container
-          ents:
-          - 13915
-          showEnts: False
-          occludes: True
-    - type: Physics
-      linearDamping: 0
-      canCollide: True
-      angularDamping: 0
-    - type: ActionsContainer
 - proto: LandMineExplosive
   entities:
   - uid: 12817
