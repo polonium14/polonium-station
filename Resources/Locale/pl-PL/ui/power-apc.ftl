@@ -1,4 +1,4 @@
-apc-menu-title = Sterownik zasilania (APC)
+apc-menu-title = Sterownik zasilania (LKZ)
 apc-menu-breaker-label = Główny wyłącznik
 apc-menu-power-label = Obciążenie
 apc-menu-external-label = Zasilanie zewnętrzne

@@ -16,7 +16,7 @@ disposal-eject-verb-get-data-text = Wyjmij zawartość
 ## Errors
 
 disposal-unit-no-hands = Nie masz rąk!
-disposal-unit-is-full = There's no more room inside.
+disposal-unit-is-full = W środku nie ma miejsca.
 # state
 disposal-unit-state-Ready = Gotowy
 # Yes I want it to always say Pressurizing
