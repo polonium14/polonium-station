@@ -9,8 +9,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      500: Critical
-      600: Dead
+      250: Critical
+      350: Dead
   - type: XenoEnvironmentVulnerability
     fire: 1.1
     space: 1.15

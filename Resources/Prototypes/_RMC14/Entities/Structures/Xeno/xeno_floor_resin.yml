@@ -56,6 +56,12 @@
     speedMultiplier: 0.4
   - type: XenoConstructionPlasmaCost
     plasma: 66
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.6
+    sprintSpeedModifier: 0.6
+    ignoreWhitelist:
+      tags:
+      - Xeno
 
 - type: entity
   parent: XenoStickyResin
@@ -69,6 +75,13 @@
     speedMultiplier: 0.55
   - type: TimedDespawn
     lifetime: 20
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.7
+    sprintSpeedModifier: 0.7
+    ignoreWhitelist:
+      tags:
+      - Xeno
+  
 
 - type: entity
   parent: XenoBaseFloorResin
@@ -82,6 +95,9 @@
     speedMultiplier: 1.33
   - type: XenoConstructionPlasmaCost
     plasma: 42
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 1.6
+    sprintSpeedModifier: 1.6
 
 - type: entity
   parent: XenoBaseFloorResin
@@ -98,7 +114,16 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 60
+        damage: 20
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: DamageContacts
+    damage:
+      types:
+        Slash: 1.5
+        Piercing: 5
+    ignoreWhitelist:
+      tags:
+      - Xeno
+

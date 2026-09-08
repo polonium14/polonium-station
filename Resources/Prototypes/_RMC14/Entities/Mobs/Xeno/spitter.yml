@@ -9,8 +9,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      550: Critical
-      650: Dead
+      400: Critical
+      500: Dead
   - type: XenoEnvironmentVulnerability
     fire: 1.1
     space: 1.1
@@ -31,7 +31,7 @@
   - type: XenoPlasma
     plasma: 600
     maxPlasma: 600
-    plasmaRegenOnWeeds: 4
+    plasmaRegenOnWeeds: 6
   - type: XenoEvolution
     max: 500
     evolvesTo:
