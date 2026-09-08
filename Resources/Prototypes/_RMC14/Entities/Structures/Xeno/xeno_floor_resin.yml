@@ -95,9 +95,14 @@
     speedMultiplier: 1.33
   - type: XenoConstructionPlasmaCost
     plasma: 42
-  - type: SpeedModifierContacts
-    walkSpeedModifier: 1.6
-    sprintSpeedModifier: 1.6
+  ##- type: SpeedModifierContacts
+  ##  walkSpeedModifier: 1.6
+  ##  sprintSpeedModifier: 1.6
+  ##  whitelist:
+  ##    tags:
+  ##    - Xeno
+
+  ## ^ Potrzebuje kodu whitelist (czyli tylko te encje które posiadają ten tag, mogą korzystać z prędkości)
 
 - type: entity
   parent: XenoBaseFloorResin
@@ -114,7 +119,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 20
+        damage: 50
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
