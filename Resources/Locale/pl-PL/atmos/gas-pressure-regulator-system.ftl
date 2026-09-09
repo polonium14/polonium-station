@@ -1,4 +1,4 @@
-﻿# Examine Text
+# Examine Text
 gas-pressure-regulator-system-examined =
     Zawór jest [color={ $statusColor }]{ $open ->
         [true] otwarty

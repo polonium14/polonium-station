@@ -1,4 +1,4 @@
-﻿# Popups
+# Popups
 
 network-configurator-device-saved = Urządzenie sieciowe { $device } o adresie { $address } zostało pomyślnie zapisane!
 network-configurator-device-failed = Nie udało się zapisać urządzenia sieciowego { $device }! Nie przypisano adresu!

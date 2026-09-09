@@ -1,4 +1,4 @@
-﻿### Portal verb text
+### Portal verb text
 
 portal-component-ghost-traverse = Przemieść się
 portal-component-no-linked-entities = Nie można przemieścić się duchem przez portal, który nie jest połączony dokładnie z jednym innym portalem

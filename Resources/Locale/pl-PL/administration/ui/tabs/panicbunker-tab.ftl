@@ -1,4 +1,4 @@
-﻿admin-ui-panic-bunker-window-title = Panic Bunker
+admin-ui-panic-bunker-window-title = Panic Bunker
 
 admin-ui-panic-bunker-enabled = Bunkier Paniki włączony
 admin-ui-panic-bunker-disabled = Bunkier Paniki wyłączony

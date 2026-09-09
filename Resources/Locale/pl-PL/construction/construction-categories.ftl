@@ -1,4 +1,4 @@
-﻿construction-category-all = All
+construction-category-all = All
 construction-category-atmospherics = Atmosferyka
 construction-category-furniture = Meble
 construction-category-storage = Magazynowanie 

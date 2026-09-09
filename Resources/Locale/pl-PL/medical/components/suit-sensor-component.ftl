@@ -1,4 +1,4 @@
-﻿## Modes
+## Modes
 
 suit-sensor-mode-off = Wył.
 suit-sensor-mode-binary = Binarne

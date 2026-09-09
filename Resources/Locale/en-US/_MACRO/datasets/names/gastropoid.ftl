@@ -1,4 +1,4 @@
-﻿names-gastropoid-first-1 = Angugna
+names-gastropoid-first-1 = Angugna
 names-gastropoid-first-2 = Esse
 names-gastropoid-first-3 = Heliileh
 names-gastropoid-first-4 = Iyayi
