@@ -1,13 +1,6 @@
 ﻿Entries:
 - author: sowelipililimute
   changes:
-  - message: Zombified markings no longer persist between rounds
-    type: Fix
-  id: 9485
-  time: '2026-02-03T03:28:51.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42756
-- author: sowelipililimute
-  changes:
   - message: Marking colours can now be changed again
     type: Fix
   id: 9486
@@ -4050,3 +4043,11 @@
   id: 9984
   time: '2026-09-05T15:21:16.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/991
+- author: Nikita
+  changes:
+  - message: "Dokonano zmiany w muzyce lobby! Utwory s\u0105 teraz bardziej klimatyczne\
+      \ i zapami\u0119tywane!"
+    type: Tweak
+  id: 9985
+  time: '2026-09-08T12:09:47.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1002
