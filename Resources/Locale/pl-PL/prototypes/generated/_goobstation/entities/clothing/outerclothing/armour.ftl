@@ -1,4 +1,4 @@
-ent-ClothingBlueshieldArmourVest = blueshield's security armour
-    .desc = An armoured vest with the badge of the blueshield
-ent-ClothingBlueshieldArmoredJacket = blueshield's armored jacket
-    .desc = A jacket with sewn-in reinforcement layers.
+ent-ClothingBlueshieldArmourVest = pancerz ochrony oficera "Niebieska Tarcza"
+    .desc = Opancerzona kamizelka z odznaką Niebieskiej Tarczy.
+ent-ClothingBlueshieldArmoredJacket = opancerzona kurtka oficera "Niebieska Tarcza"
+    .desc = Kurtka z wszytymi warstwami wzmocnienia.

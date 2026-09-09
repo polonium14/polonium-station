@@ -1,4 +1,4 @@
-ent-ClothingEyesGlassesRobojar = diagnostics jamjar glasses
-    .desc = These retro glasses remind you of tampering with borgs' laws.
-ent-ClothingEyesGlassesRobo = diagnostics-issue glasses
-    .desc = Upgraded glasses that provide a diagnostics HUD.
+ent-ClothingEyesGlassesRobojar = okulary diagnostyczne typu słoik
+    .desc = Te retro okulary przypominają ci majstrowanie przy prawach borgów.
+ent-ClothingEyesGlassesRobo = okulary diagnostyczne
+    .desc = Ulepszone okulary z HUD-em diagnostycznym.
