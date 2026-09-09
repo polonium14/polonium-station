@@ -1,5 +1,5 @@
-late-join-gui-title = Late Join
-late-join-gui-jobs-amount-in-department-tooltip = Jobs in the { $departmentName } department
-late-join-gui-department-jobs-label = { $departmentName } jobs
-late-join-gui-job-slot-capped = { $jobName } ({ $amount } open)
-late-join-gui-job-slot-uncapped = { $jobName } (∞ open)
+late-join-gui-title = Późne dołączenie
+late-join-gui-jobs-amount-in-department-tooltip = Stanowiska w dziale { $departmentName }
+late-join-gui-department-jobs-label = Stanowiska { $departmentName } 
+late-join-gui-job-slot-capped = { $jobName } ({ $amount } otwarte)
+late-join-gui-job-slot-uncapped = { $jobName } (∞ otwarte)

@@ -76,7 +76,7 @@ xenoarch-trigger-tip-produce = Zdrowe spożycie produktów
 xenoarch-trigger-tip-stamp = Aprobata Biurkracji
 xenoarch-trigger-tip-shock = Wstrząs elektryczny
 xenoarch-trigger-tip-particle = Cząsteczki powodujące efekt osobliwości
-xenoarch-trigger-tip-anomparticle = Cząstki powodujące skutki anomaliowe 
+xenoarch-trigger-tip-anomparticle = Cząstki powodujące skutki anomaliowe
 xenoarch-trigger-tip-stamina-damage = Wyczerpanie organiczne
 xenoarch-trigger-tip-laser = Wpływ fotonu o wysokiej intensywności
 

@@ -1,7 +1,7 @@
 construction-category-all = All
 construction-category-atmospherics = Atmosferyka
 construction-category-furniture = Meble
-construction-category-storage = Magazynowanie 
+construction-category-storage = Magazynowanie
 construction-category-tools = Narzędzia
 construction-category-materials = Materiały
 construction-category-structures = Struktury

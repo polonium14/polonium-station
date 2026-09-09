@@ -9,8 +9,8 @@ species-name-arachnid = Pajęczak
 species-name-moth = Ćma
 species-name-skeleton = Szkielet
 species-name-vox = Voks
-species-name-gingerbread = delicious baked good
-species-name-vulpkanin = Vulpkanin
+species-name-gingerbread = pyszny wypiek
+species-name-vulpkanin = Wulp
 
 ## Misc species things
 
