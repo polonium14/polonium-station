@@ -1,0 +1,30 @@
+- type: polymorph
+  id: VampireSanguinePoolPolymorph
+  configuration:
+    entity: MobVampireSanguinePool
+    forced: true
+    transferDamage: true
+    transferName: true
+    inventory: None
+    revertOnCrit: true
+    revertOnDeath: true
+    effectProto: null
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/_Starlight/Effects/vampire/enter_blood.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/_Starlight/Effects/vampire/exit_blood.ogg
+
+#Vampire
+#- type: polymorph
+#  id: VampireMouse
+#  configuration:
+#    entity: MobMouse
+#    revertOnDeath: true
+#    revertOnCrit: true
+
+#- type: polymorph
+#  id: VampireBat
+#  configuration:
+#    entity: MobBat
+#    revertOnDeath: true
+#    revertOnCrit: true

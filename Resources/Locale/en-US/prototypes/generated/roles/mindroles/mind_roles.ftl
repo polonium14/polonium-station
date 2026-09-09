@@ -68,3 +68,7 @@ ent-MindRoleZombie = Zombie Role
     .desc = { ent-MindRoleGhostRoleTeamAntagonistFlock.desc }
 ent-MindRoleChangeling = Changeling Role
     .desc = { ent-BaseMindRoleAntag.desc }
+ent-MindRoleVampire = Vampire Role
+    .desc = { ent-BaseMindRoleAntag.desc }
+ent-MindRoleThrall = Thrall Role
+    .desc = { ent-BaseMindRoleAntag.desc }

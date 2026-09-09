@@ -49,6 +49,7 @@
   - SpaceNinja
   - Thieves
   - MalfunctioningAI
+  - Vampires
 
 - type: guideEntry
   id: Traitors
@@ -104,3 +105,33 @@
   id: MalfunctioningAI
   name: guide-entry-malfunctioningai
   text: "/ServerInfo/_Polonium/Guidebook/Antagonist/MalfunctioningAI.xml"
+
+- type: guideEntry
+  id: Vampires
+  name: guide-entry-vampires
+  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Vampires.xml"
+  children:
+  - VampiresHemomancer
+  - VampiresUmbrae
+  - VampiresDantalion
+  - VampiresGargantua
+
+- type: guideEntry
+  id: VampiresHemomancer
+  name: guide-entry-vampire-hemomancer
+  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Hemomancer.xml"
+
+- type: guideEntry
+  id: VampiresUmbrae
+  name: guide-entry-vampire-umbrae
+  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Umbrae.xml"
+
+- type: guideEntry
+  id: VampiresDantalion
+  name: guide-entry-vampire-dantalion
+  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Dantalion.xml"
+
+- type: guideEntry
+  id: VampiresGargantua
+  name: guide-entry-vampire-gargantua
+  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Gargantua.xml"

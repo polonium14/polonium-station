@@ -1,6 +1,7 @@
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
+using Content.Server._Starlight.GameTicking.Rules.Components;
 using Content.Server.Zombies;
 using Content.Shared.Administration;
 using Content.Server.Clothing.Systems;
@@ -34,6 +35,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultNinjaRule = "NinjaSpawn";
     // private static readonly EntProtoId DefaultBloodCultRule = "BloodCult"; // funkystation - disabled
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
+    private static readonly EntProtoId DefaultVampireRule = "Vampire";
 
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
@@ -243,5 +245,22 @@ public sealed partial class AdminVerbSystem
         // };
         // args.Verbs.Add(bloodCult);
         // end funkystation
+
+        var vampireName = Loc.GetString("admin-verb-text-make-vampire");
+
+        Verb vampire = new()
+        {
+            Text = vampireName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_Starlight/Interface/Misc/job_icons.rsi"), "Vampire"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<VampireRuleComponent>( targetPlayer, DefaultVampireRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", vampireName, Loc.GetString("admin-verb-make-vampire")),
+        };
+
+        args.Verbs.Add(vampire);
     }
 }

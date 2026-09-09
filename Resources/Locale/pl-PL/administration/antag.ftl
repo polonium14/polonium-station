@@ -24,3 +24,6 @@ admin-verb-text-make-space-ninja = Make Ninja
 admin-verb-text-make-changeling = Zrób Zmianokształtnego
 admin-verb-text-make-bloodcult = Make Blood Cultist
 admin-overlay-antag-classic = ANTAG
+
+admin-verb-make-vampire = Zamień cel w wampira.
+admin-verb-text-make-vampire = Zrób Wampira

@@ -3,6 +3,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
+using Content.Shared._Starlight.Medical.Damage;
 
 namespace Content.Shared.Damage.Systems;
 
@@ -155,6 +156,21 @@ public sealed partial class DamageableSystem
             if (damage.Empty)
                 return damageDone;
         }
+
+        // Starlight start
+        var finalEv = new DamageBeforeApplyEvent
+        {
+            Damage = damage,
+            Origin = origin
+        };
+
+        RaiseLocalEvent(ent, finalEv);
+
+        if (finalEv.Cancelled)
+            return damageDone;
+
+        damage = finalEv.Damage;
+        // Starlight end
 
         if (!ignoreGlobalModifiers)
             damage = ApplyUniversalAllModifiers(damage);

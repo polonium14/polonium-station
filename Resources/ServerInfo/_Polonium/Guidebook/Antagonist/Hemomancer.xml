@@ -1,0 +1,41 @@
+﻿<Document>
+  # Wampir: Hemomancer
+
+  <Box>
+    [color=#990000][italic]„Krew nie jest dowodem – krew jest narzędziem...”[/italic][/color]
+  </Box>
+
+  Hemomancer to klasa zajmująca się kontrolą terenu i magią krwi. Najlepiej sprawdzasz się, gdy:
+  przygotowujesz arenę,
+  zarządzasz odległością,
+  wymuszasz walkę na własnych warunkach.
+
+  ## Umiejętności (Całkowity próg krwi | Koszt)
+
+  [bold](150 | 30)[/bold] Wampirze Szpony
+   Kierujesz magię krwi by stworzyć śmiercionośne wampirze pazury, które wysysają krew i błyskawicznie uderzają.
+
+  [bold](250 | 25)[/bold] Krwawe Macki
+   Po krótkim opóźnieniu uderza w obszar 3×3.
+   Silne spowolnienie + trucizna — idealne do bezpiecznego ugryzienia lub czystej ucieczki.
+
+  [bold](250 | 40)[/bold] Bariera Krwi
+   Umieszcza kilka barier krwi przez które tylko ty możesz przejść.
+   Wykorzystaj je do tworzenia obszarów i odcięć, aby zyskać na czasie.
+
+  [bold](400 | 30)[/bold] Kałuża Krwi
+   Na krótko zamienia cię w kałużę krwi.
+   Świetne do ucieczki, zmiany kąta ataku i przemyknięcia obok przeszkód.
+
+  [bold](600 | 20)[/bold] Zmysł Drapieżnika
+   Pomaga namierzać ofiary/cele. Szczególnie przydatne, gdy stacja jest w stanie zagrożenia.
+
+  [bold](800 | 100)[/bold] Wybuch Krwi
+   Powoduje wybuch krwi w pobliżu, zadając poważne obrażenia każdemu, kto na niej stoi.
+   Broń decydująca o wyniku walki: przygotuj krew wcześniej lub wymuś krwawienie.
+
+  [bold](1000 | 10/2s Toggle)[/bold] Rytuał Posłańców Krwi
+   Aura która powoduje krwawienie osób w pobliżu i regeneruje ciebie.
+   Wymaga pełnej mocy (wysoki poziom krwi ogółem i wystarczająca liczba unikalnych ofiar), w przeciwnym razie nie zostanie aktywowana.
+
+</Document>

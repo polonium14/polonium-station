@@ -11,6 +11,7 @@ admin-verb-make-wizard = Make the target into a Wizard.
 admin-verb-make-space-ninja = Make the target into a Space Ninja.
 admin-verb-make-changeling = Make the target into a Changeling.
 admin-verb-make-bloodcult = Make the target into a Blood Cultist.
+admin-verb-make-vampire = Make the target into a vampire.
 
 
 admin-verb-text-make-traitor = Make Traitor
@@ -25,5 +26,6 @@ admin-verb-text-make-wizard = Make Wizard
 admin-verb-text-make-space-ninja = Make Ninja
 admin-verb-text-make-changeling = Make Changeling (WIP)
 admin-verb-text-make-bloodcult = Make Blood Cultist
+admin-verb-text-make-vampire = Make Vampire
 
 admin-overlay-antag-classic = ANTAG

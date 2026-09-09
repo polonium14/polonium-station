@@ -1,0 +1,37 @@
+﻿<Document>
+  # Wampir: Umbrae
+
+  <Box>
+    [color=#5e154e][italic]"Ciemność to nie brak światła. To brak świadków."[/italic][/color]
+  </Box>
+
+  Umbrae to klasa skupiająca się na skradaniu się i mobilności. Twoje zwycięstwa wynikają z wyboru odpowiedniego miejsca, poziomu oświetlenia i odpowiedniego momentu.
+  Jesteś najsilniejszy tam, gdzie inni czują się niekomfortowo: w ciemności, w chaosie i na krótkim dystansie.
+
+  ## Umiejętności (Całkowity próg krwi | Koszt)
+
+  [bold](150 | Toggle)[/bold] Płaszcz Ciemności
+   Włącza lub wyłącza ukrywanie się w ciemności.
+   Gdy znajdujesz się w ciemności i opcja jest włączona, poruszasz się z większą prędkością.
+
+  [bold](200 | 20)[/bold] Pułapka Cienia
+   Przywołujesz pułapkę na ziemi. Przekroczenie jej oślepi cel i go unieruchomi.
+   Efekty błyskowe mogą ją zniszczyć — umieść ją w ciemności i poza polem widzenia.
+
+  [bold](200 | 20)[/bold] Kotwica Cienia
+   Po pewnym opóźnieniu przywołujesz kotwicę wymiarową.
+   Ponowne rzucenie zaklęcia teleportuje cię z powrotem do kotwicy. Po 2 minutach symulujesz powrót
+
+  [bold](300 | 20)[/bold] Mroczne Przejście
+   Teleportuje cię do wybranego obszaru.
+
+  [bold](400 | 0)[/bold] Gaszenie Świateł
+   Pochłania źródła światła wokół ciebie.
+
+  [bold](800 | 50)[/bold] Walka Cieni
+   Twoje cienie atakują cel, podczas gdy ty pozostajesz w pobliżu.
+
+  [bold](1000 | 5/s Toggle)[/bold] Wieczna Ciemność
+   Po włączeniu tej umiejętności otaczasz obszar wokół siebie ciemnością i powoli obniżasz temperaturę ciała osób znajdujących się w pobliżu.
+
+</Document>
