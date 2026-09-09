@@ -1,5 +1,5 @@
 swap-teleporter-popup-link-create = Utworzono łączenie kwantowe!
-swap-teleporter-popup-link-fail-already =  Łączenie kwantowe nieutworzone! Łączenie już obecne na urządzeniu
+swap-teleporter-popup-link-fail-already = Łączenie kwantowe nieutworzone! Łączenie już obecne na urządzeniu
 swap-teleporter-popup-link-fail-already-other = Łączenie kwantowe nieutworzone! Łączenie już obecne na drugim urządzeniu
 swap-teleporter-popup-link-destroyed = Łączenie kwantowe zniszczone!
 swap-teleporter-popup-teleport-cancel-time = Wciąż się ładuje!

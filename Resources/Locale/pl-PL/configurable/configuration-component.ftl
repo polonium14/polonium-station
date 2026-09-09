@@ -1,4 +1,3 @@
-
 configuration-menu-confirm = Potwierdź
 configuration-menu-device-title = Konfiguracja urządzenia
 

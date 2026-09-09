@@ -1,5 +1,3 @@
-
-
 ### Announcement
 
 earlyleave-cryo-job-unknown = Nieznane

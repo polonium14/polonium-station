@@ -1,4 +1,4 @@
 ## RecyclerComponent
 
-recycler-component-suicide-message-others = { $victim } tries to recycle { $victim }!
-recycler-component-suicide-message = Recyklujesz się sam!
+recycler-component-suicide-message-others = { CAPITALIZE($victim) } próbuje się zrecyklingować!
+recycler-component-suicide-message = Recyklingujesz się!

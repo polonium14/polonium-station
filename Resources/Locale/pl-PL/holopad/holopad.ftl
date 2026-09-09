@@ -13,14 +13,14 @@ holopad-window-call-rejected = Nie można nawiązać połączenia.
 holopad-window-ai-request = Twoja obecność jest żądana przez:
 holopad-window-emergency-broadcast-in-progress = [color=#cf2f2f][bold]Transmisja alarmowa w toku[/bold][/color]
 holopad-window-controls-locked-out = Sterowanie tym urządzeniem zostało ograniczone tylko do:
-holopad-window-controls-unlock-countdown = Odblokuje się automatycznie za: { $countdown}
+holopad-window-controls-unlock-countdown = Odblokuje się automatycznie za: { $countdown }
 # Buttons
 holopad-window-answer-call = Odbierz połączenie
 holopad-window-end-call = Zakończ połączenie
 holopad-window-request-station-ai = Zażądaj SI Stacji
 holopad-window-activate-projector = Aktywuj projektor
 holopad-window-emergency-broadcast = Transmisja alarmowa
-holopad-window-emergency-broadcast-with-countdown = Transmisja alarmowa ({ $countdown})
+holopad-window-emergency-broadcast-with-countdown = Transmisja alarmowa ({ $countdown })
 holopad-window-access-denied = Odmowa dostępu
 # Contact list
 holopad-window-select-contact-from-list = Wybierz kontakt, aby rozpocząć holo-połączenie
