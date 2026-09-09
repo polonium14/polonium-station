@@ -1,4 +1,4 @@
-﻿advertisement-dinnerware-1 = Mm, food stuffs!
+advertisement-dinnerware-1 = Mm, food stuffs!
 advertisement-dinnerware-2 = Jedzenie i akcesoria do jedzenia.
 advertisement-dinnerware-3 = Zgarnij swoje talerze!
 advertisement-dinnerware-4 = Lubisz widelce?

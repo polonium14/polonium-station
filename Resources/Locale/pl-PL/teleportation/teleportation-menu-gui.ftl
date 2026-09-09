@@ -1,4 +1,4 @@
-﻿## Default
+## Default
 teleportation-menu-default-window-title = Menu teleportacji
 teleportation-menu-destination-obstructed = You don't feel like you went anywhere...
 
