@@ -2,8 +2,8 @@ tech-disk-inserted = Wkładasz dyskietkę, rejestrując nową recepturę na serw
 tech-disk-examine-none = Nalepka jest pusta.
 tech-disk-examine = Nalepka ma mały obrazek przedstawiający { $result }.
 tech-disk-examine-more = Jest więcej nadrukowanych obrazków, ale są one zbyt małe do rozpoznania.
-tech-disk-examine-desc = [color=lightGray]A disk for the R&D server containing a [bold]Tier { $tier } { $branch }[/bold] branch research technology.[/color]
-tech-disk-examine-desc-unknown = [color=lightGray]A disk for the R&D server containing research technology.[/color]
+tech-disk-examine-desc = [color=lightGray]Dyskietka dla serwera B+R zawierająca technologię [bold]tieru { $tier }[/bold] z kategorii [bold]{ $branch }.[/bold][/color]
+tech-disk-examine-desc-unknown = [color=lightGray]Dyskietka dla serwera B+R zawierająca technologię.[/color]
 tech-disk-name-format = { $baseName } ({ $technology })
 tech-disk-ui-name = terminal dyskietek technologicznych
 tech-disk-ui-total-label = Jest { $amount } wiedzy na wybranym serwerze

@@ -1,4 +1,4 @@
-ent-ClothingUnderSocksBee = bee socks
-    .desc = Make them loins buzz!
-ent-ClothingUnderSocksCoder = coder socks
-    .desc = It's time to code sisters!!11!
+ent-ClothingUnderSocksBee = skarpetki pszczele
+    .desc = Niech lędźwie bzyczą!
+ent-ClothingUnderSocksCoder = skarpetki kodera
+    .desc = Czas kodować, siostry!!11!

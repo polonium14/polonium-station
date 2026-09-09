@@ -1,4 +1,4 @@
-lathe-menu-title = Menu Tokarki
+lathe-menu-title = Menu Latu
 lathe-menu-queue = Kolejka
 lathe-menu-server-list = Lista serwerów
 lathe-menu-sync = Synchronizuj

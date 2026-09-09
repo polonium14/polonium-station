@@ -1,8 +1,8 @@
 ent-ClothingUniformJumpskirtNanotrasenRepresentative = Przedstawiciel Nanotrasen skirt
     .desc = A black skirt worn by officials.
-ent-ClothingUniformJumpskirtBlueshieldOfficer = blueshield officer jumpskirt
-    .desc = A short-sleeved grey and blue jumpskirt, made out of a sturdy material. Blueshield standard issue.
-ent-ClothingUniformJumpskirtTrainer = NCT Jumpskirt
-    .desc = A jumpskirt issued to Nanotrasen Career Trainers. Fills you with a feeling of pride.
-ent-ClothingUniformSkirtMailCarrier = mail carrier's jumpskirt
-    .desc = Enemy of dogs everywhere.
+ent-ClothingUniformJumpskirtBlueshieldOfficer = kombinezon ze spódnicą oficera "Niebieska Tarcza"
+    .desc = Krótki szaro-niebieski kombinezon ze spódnicą z mocnego materiału. Standard Niebieskiej Tarczy.
+ent-ClothingUniformJumpskirtTrainer = kombinezon SKN ze spódnicą
+    .desc = Kombinezon ze spódnicą wydawany szkoleniowcom kadr Nanotrasen. Napełnia dumą.
+ent-ClothingUniformSkirtMailCarrier = kombinezon ze spódnicą listonosza
+    .desc = Wróg psów na całym świecie.

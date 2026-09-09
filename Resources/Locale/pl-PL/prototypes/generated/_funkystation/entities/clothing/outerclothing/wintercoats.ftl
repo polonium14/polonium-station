@@ -1,9 +1,9 @@
-ent-FuClothingOuterWinterHos = head of security's armored winter coat
-    .desc = A sturdy, luxurious winter coat over a standard Type I armored vest to protect from hypothermic threats and otherwise.
-ent-FuClothingOuterWinterWard = warden's armored winter coat
-    .desc = A sturdy, utilitarian winter coat lined with Type I armor to protect from any brig-bound threats.
-ent-FuClothingOuterWinterSec = security armored winter coat
-    .desc = A sturdy, utalitarian winter coat over a standard Type I armored vest to protect from hypothermic threats and otherwise.
+ent-FuClothingOuterWinterHos = opancerzona kurtka zimowa komendanta
+    .desc = Solidna, luksusowa kurtka zimowa na standardowej kamizelce typu I, chroniąca przed hipotermią i nie tylko.
+ent-FuClothingOuterWinterWard = opancerzona kurtka zimowa nadzorcy ochrony
+    .desc = Solidna, użytkowa kurtka zimowa z wkładką typu I, chroniąca przed zagrożeniami z aresztu.
+ent-FuClothingOuterWinterSec = opancerzona kurtka zimowa ochrony
+    .desc = Solidna, użytkowa kurtka zimowa na standardowej kamizelce typu I, chroniąca przed hipotermią i nie tylko.
 ent-ClothingOuterWinterNTR = płaszcz zimowy przedstawiciela Nanotrasen
     .desc = Elegancki, wygodny, imponujący. Idealny do przechowywania clipboardów i pieczątek — lub broni.
 ent-ClothingOuterWinterIAA = płaszcz zimowy agenta spraw wewnętrznych
