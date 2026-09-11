@@ -1126,7 +1126,7 @@
   - sprite: Objects/Specific/Hydroponics/galaxythistle.rsi
     state: produce
   tags:
-  - Fruit
+  - Flower
 
 - type: foodSequenceElement
   id: GalaxythistleBurger
@@ -1135,7 +1135,7 @@
   - sprite: Objects/Specific/Hydroponics/galaxythistle.rsi
     state: produce
   tags:
-  - Fruit
+  - Flower
 
 # bungo
 
