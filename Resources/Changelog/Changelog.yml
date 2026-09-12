@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: Minemoder
-  changes:
-  - message: The Syndi Law Circuit is now a kit containing the lawboard and and a
-      Syndicate ID.
-    type: Tweak
-  - message: The Syndicate ID now uses the Syndicate icon instead of the blank icon.
-    type: Tweak
-  id: 9487
-  time: '2026-02-03T20:12:55.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42764
 - author: veprolet
   changes:
   - message: Volumetric devices now respect their pressure limits more.
@@ -4051,3 +4041,20 @@
   id: 9986
   time: '2026-09-09T16:23:23.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1011
+- author: Zintex
+  changes:
+  - message: "Poprawki do mapy sparks: matsy do meda, mniej okien, bogatsze maintsy,\
+      \ wi\u0119ksze AME, shuttery do okien mostka"
+    type: Fix
+  - message: "Dodano materia\u0142y do medbayu i wyposa\u017Cenie pomieszcze\u0144\
+      \ technicznych."
+    type: Add
+  - message: "Zmniejszono liczb\u0119 okien oraz powi\u0119kszono AME."
+    type: Tweak
+  - message: Dodano shuttery do okien mostka.
+    type: Tweak
+  - message: "Zmieniono uk\u0142ad i wyposa\u017Cenie mapy Sparks."
+    type: Tweak
+  id: 9987
+  time: '2026-09-12T14:54:26.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1014
