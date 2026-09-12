@@ -17,6 +17,7 @@ using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared.Lock;
+using Content.Shared.Nyanotrasen.Item.PseudoItem; //system that allows pseudo items (like felinids) to fit inside the bags
 using Content.Shared.Materials;
 using Content.Shared.Popups;
 using Content.Shared.Stacks;
@@ -1013,6 +1014,9 @@ public abstract partial class SharedStorageSystem : EntitySystem
         // TODO: Remove OrderBy when this issue is fixed in RT https://github.com/space-wizards/RobustToolbox/issues/6241
         foreach (var entity in entities.ToArray().OrderBy(e => GetNetEntity(e)))
         {
+            if (HasComp<PseudoItemComponent>(entity)) // Nyanotrasen - They dont transfer properly
+                continue;
+
             Insert(target, entity, out _, user: user, targetComp, playSound: false);
         }
         if (user != null

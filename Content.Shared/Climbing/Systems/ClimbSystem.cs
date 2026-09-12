@@ -24,6 +24,7 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
+using Content.Shared._DV.Carrying; // DeltaV
 
 namespace Content.Shared.Climbing.Systems;
 
@@ -153,6 +154,11 @@ public sealed partial class ClimbSystem : VirtualController
         // If already climbing then don't show outlines.
         if (TryComp(args.Dragged, out ClimbingComponent? climbing) && climbing.IsClimbing)
             return;
+
+        // Begin DeltaV Additions - prevent climbing for carried mobs
+        if (HasComp<BeingCarriedComponent>(args.Dragged))
+            return;
+        // End DeltaV Additions
 
         var canVault = args.User == args.Dragged
             ? CanVault(component, args.User, uid, out _)

@@ -1,0 +1,200 @@
+using Content.Shared.Actions;
+using Content.Shared.DoAfter;
+using Content.Shared.Hands;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Item;
+using Content.Shared.Item.PseudoItem;
+using Content.Shared.Popups;
+using Content.Shared.Storage;
+using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Tag;
+using Content.Shared.Verbs;
+using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
+
+namespace Content.Shared.Nyanotrasen.Item.PseudoItem;
+
+public abstract partial class SharedPseudoItemSystem : EntitySystem
+{
+    [Dependency] private SharedStorageSystem _storage = default!;
+    [Dependency] private SharedItemSystem _item = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedContainerSystem _container = default!; // Floofstation
+    [Dependency] private SharedHandsSystem _hands = default!; // Floofstation
+
+    private readonly ProtoId<TagPrototype> _preventTag = "PreventLabel";
+    private readonly EntProtoId _sleepActionId = "ActionSleep"; // The action used for sleeping inside bags. Currently uses the default sleep action (same as beds)
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<PseudoItemComponent, GetVerbsEvent<InnateVerb>>(AddInsertVerb);
+        SubscribeLocalEvent<PseudoItemComponent, EntGotRemovedFromContainerMessage>(OnEntRemoved);
+        SubscribeLocalEvent<PseudoItemComponent, GettingPickedUpAttemptEvent>(OnGettingPickedUpAttempt);
+        SubscribeLocalEvent<PseudoItemComponent, DropAttemptEvent>(OnDropAttempt);
+        SubscribeLocalEvent<PseudoItemComponent, ContainerGettingInsertedAttemptEvent>(OnInsertAttempt);
+        SubscribeLocalEvent<PseudoItemComponent, InteractionAttemptEvent>(OnInteractAttempt);
+        SubscribeLocalEvent<PseudoItemComponent, PseudoItemInsertDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<PseudoItemComponent, AttackAttemptEvent>(OnAttackAttempt);
+    }
+
+    private void AddInsertVerb(EntityUid uid, PseudoItemComponent component, GetVerbsEvent<InnateVerb> args)
+    {
+        if (!args.CanInteract || !args.CanAccess)
+            return;
+
+        if (component.Active)
+            return;
+
+        if (!TryComp<StorageComponent>(args.Target, out var targetStorage))
+            return;
+
+        if (!CheckItemFits((uid, component), (args.Target, targetStorage)))
+            return;
+
+        if (Transform(args.Target).ParentUid == uid)
+            return;
+
+        InnateVerb verb = new()
+        {
+            Act = () =>
+            {
+                TryInsert(args.Target, uid, component, targetStorage);
+            },
+            Text = Loc.GetString("action-name-insert-self"),
+            Priority = 2
+        };
+        args.Verbs.Add(verb);
+    }
+
+    public bool TryInsert(EntityUid storageUid, EntityUid toInsert, PseudoItemComponent component,
+        StorageComponent? storage = null)
+    {
+        if (!Resolve(storageUid, ref storage))
+            return false;
+
+        if (!CheckItemFits((toInsert, component), (storageUid, storage)))
+            return false;
+
+        var itemComp = new ItemComponent
+            { Size = component.Size, Shape = component.Shape, StoredOffset = component.StoredOffset };
+        AddComp(toInsert, itemComp);
+        _item.VisualsChanged(toInsert);
+
+        _tag.TryAddTag(toInsert, _preventTag);
+
+        if (!_storage.Insert(storageUid, toInsert, out _, null, storage))
+        {
+            component.Active = false;
+            RemComp<ItemComponent>(toInsert);
+            return false;
+        }
+
+        // If the storage allows sleeping inside, add the respective action
+        if (HasComp<AllowsSleepInsideComponent>(storageUid))
+            _actions.AddAction(toInsert, ref component.SleepAction, _sleepActionId, toInsert);
+
+        component.Active = true;
+        return true;
+    }
+
+    private void OnEntRemoved(EntityUid uid, PseudoItemComponent component, EntGotRemovedFromContainerMessage args)
+    {
+        if (!component.Active)
+            return;
+
+        RemComp<ItemComponent>(uid);
+        component.Active = false;
+
+        _actions.RemoveAction(uid, component.SleepAction); // Remove sleep action if it was added
+    }
+
+    protected virtual void OnGettingPickedUpAttempt(EntityUid uid, PseudoItemComponent component,
+        GettingPickedUpAttemptEvent args)
+    {
+        args.Cancel(); // Floof - this is a terrible idea. This triggers every time ANY system checks if a pseudo-item can be picked up.
+        // WHY DID YOU DO THAT, NYANOTRASEN???
+
+        // if (args.User == args.Item)
+        //     return;
+        //
+        // _transform.AttachToGridOrMap(uid);
+        // args.Cancel();
+    }
+
+    private void OnDropAttempt(EntityUid uid, PseudoItemComponent component, DropAttemptEvent args)
+    {
+        if (!component.Active)
+            return;
+
+        // Floof - we try to get the containing container and try to drop it into it
+        // If possible, we do it, since a bagged cat probably can put things back into the bag just like they can pick them up.
+        string? failReason = null;
+        if (_hands.GetActiveItem(uid) is { Valid: true, } droppedItem
+            && _container.TryGetContainingContainer(Transform(uid).ParentUid, uid, out var pseudoItemContainer)
+            && TryComp<StorageComponent>(pseudoItemContainer.Owner, out var targetStorage)
+            && _storage.CanInsert(pseudoItemContainer.Owner, droppedItem, out failReason, targetStorage, ignoreStacks: true)
+           )
+            _storage.Insert(pseudoItemContainer.Owner, droppedItem, out _, uid, targetStorage, stackAutomatically: false);
+
+        if (failReason != null)
+            _popupSystem.PopupEntity(Loc.GetString(failReason), uid, uid);
+
+        args.Cancel();
+    }
+
+    private void OnInsertAttempt(EntityUid uid, PseudoItemComponent component,
+        ContainerGettingInsertedAttemptEvent args)
+    {
+        if (!component.Active)
+            return;
+        // This hopefully shouldn't trigger, but this is a failsafe just in case so we dont bluespace them cats
+        args.Cancel();
+    }
+
+    // Prevents moving within the bag :)
+    private void OnInteractAttempt(EntityUid uid, PseudoItemComponent component, InteractionAttemptEvent args)
+    {
+        // Floof - why the fuck.
+        // if (args.Uid == args.Target && component.Active)
+        //     args.Cancelled = true;
+    }
+
+    private void OnDoAfter(EntityUid uid, PseudoItemComponent component, DoAfterEvent args)
+    {
+        if (args.Handled || args.Cancelled || args.Args.Used == null)
+            return;
+
+        args.Handled = TryInsert(args.Args.Used.Value, uid, component);
+    }
+
+    protected void StartInsertDoAfter(EntityUid inserter, EntityUid toInsert, EntityUid storageEntity,
+        PseudoItemComponent? pseudoItem = null)
+    {
+        if (!Resolve(toInsert, ref pseudoItem))
+            return;
+
+        var ev = new PseudoItemInsertDoAfterEvent();
+        var args = new DoAfterArgs(EntityManager, inserter, 5f, ev, toInsert, toInsert, storageEntity)
+        {
+            BreakOnMove = true,
+            NeedHand = true
+        };
+
+        if (_doAfter.TryStartDoAfter(args))
+        {
+            // Show a popup to the person getting picked up
+            _popupSystem.PopupEntity(Loc.GetString("carry-started", ("carrier", inserter)), toInsert, toInsert);
+        }
+    }
+
+    private void OnAttackAttempt(EntityUid uid, PseudoItemComponent component, AttackAttemptEvent args)
+    {
+        if (component.Active)
+            args.Cancel();
+    }
+}

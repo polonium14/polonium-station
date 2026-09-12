@@ -1,0 +1,13 @@
+- type: entity
+  id: ActionCancelEscape
+  name: Stop escaping
+  description: Calm down and sit peacefully in your carrier's inventory
+  components:
+  - type: Action
+    useDelay: 2
+  - type: Sprite
+    sprite: _DV/Actions/escapeinventory.rsi
+    layers:
+    - state: cancel-escape
+  - type: InstantAction
+    event: !type:EscapeInventoryCancelActionEvent

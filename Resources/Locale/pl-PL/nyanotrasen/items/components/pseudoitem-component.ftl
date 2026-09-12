@@ -1,2 +1,2 @@
-action-name-insert-self = Insert yourself
-action-name-insert-other = Insert { $target }
+action-name-insert-self = Wejdź do środka
+action-name-insert-other = Wsadź { $target }

@@ -1,4 +1,4 @@
-carry-verb = Nieść
+carry-verb = Podnieś
 carry-too-heavy = Nie jesteś wystarczająco silny.
 carry-started = { $carrier } próbuje cię podnieść!
 # imp adds below
