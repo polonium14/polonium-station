@@ -1261,3 +1261,23 @@ computerBodyScanner: ComputerBodyScanner
 AirlockRoboticsLocked: AirlockScienceLocked
 AirlockRoboticsGlassLocked: AirlockScienceGlassLocked
 WindoorSecureRoboticsLocked: WindoorScienceLocked
+
+#2026-09-03
+
+# japierdole funky czemu nie dacie łatwiejszego portowania
+# anyways, portuje glacier :steamhappy:
+
+Autoclave: null
+ClothingBackpackFirefighterTank: null
+EmergencyPartyKit: null
+GasThermoMachineAdvancedHeater: null
+LeftFootHuman: null
+LeftHandHuman: null
+NewsDigiBoard: null
+OrganSlimeLungs: null
+RightHandHuman: null
+RightLegSkeleton: null
+SteelCurb: null
+SuitStorageHEVFilled: null
+VendingMachineFitness: null
+VendingMachineWeeb: null
