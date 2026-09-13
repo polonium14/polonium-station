@@ -33285,6 +33285,14 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: ClothingBackpackEngineering
+  entities:
+  - uid: 3717
+    components:
+    - type: Transform
+      parent: 3716
+    - type: Physics
+      canCollide: False
 - proto: ClothingBackpackSatchelCargo
   entities:
   - uid: 3731
@@ -33771,6 +33779,14 @@ entities:
     - type: Transform
       parent: 2
       pos: -12.5,13.5
+- proto: ClothingNeckMantleHOS
+  entities:
+  - uid: 3762
+    components:
+    - type: Transform
+      parent: 3759
+    - type: Physics
+      canCollide: False
 - proto: ClothingNeckScarfStripedLightBlue
   entities:
   - uid: 3831
@@ -33901,6 +33917,14 @@ entities:
     - type: Transform
       parent: 2
       pos: -39.34726,23.459938
+- proto: ClothingOuterCoatDetectiveLoadoutGrey
+  entities:
+  - uid: 3786
+    components:
+    - type: Transform
+      parent: 3782
+    - type: Physics
+      canCollide: False
 - proto: ClothingOuterCoatGentle
   entities:
   - uid: 3843
@@ -34075,6 +34099,15 @@ entities:
     - type: Transform
       parent: 2
       pos: -12.5,-3.3
+- proto: ClothingUniformJumpskirtJanimaid
+  entities:
+  - uid: 3745
+    components:
+    - type: Transform
+      parent: 3742
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: ClothingUniformJumpskirtLawyerBlack
   entities:
   - uid: 3682
@@ -34139,6 +34172,22 @@ entities:
     components:
     - type: Transform
       parent: 3782
+    - type: Physics
+      canCollide: False
+- proto: ClothingUniformJumpskirtHoS
+  entities:
+  - uid: 3861
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: -39.533806,14.347553
+- proto: ClothingUniformJumpsuitHoS
+  entities:
+  - uid: 3763
+    components:
+    - type: Transform
+      parent: 3759
     - type: Physics
       canCollide: False
 - proto: ClothingUniformJumpsuitHoSBlue
