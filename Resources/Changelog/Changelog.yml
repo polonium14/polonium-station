@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: veprolet
-  changes:
-  - message: Volumetric devices now respect their pressure limits more.
-    type: Fix
-  id: 9489
-  time: '2026-02-04T10:43:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35211
 - author: 0-Anon
   changes:
   - message: Adjusted the Mute Toxin chemical reaction recipe to no longer require
@@ -4058,3 +4051,12 @@
   id: 9987
   time: '2026-09-12T14:54:26.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1014
+- author: polonium
+  changes:
+  - message: "Zmieniono zamian\u0119 tekstu na czacie. Skr\xF3t `EZ` nie jest ju\u017C\
+      \ zamieniany na \u201E\u0142atwa wygrana\u201D. Skr\xF3t `ig` jest zamieniany\
+      \ na \u201Echyba\u201D."
+    type: Tweak
+  id: 9988
+  time: '2026-09-14T13:44:10.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1015
