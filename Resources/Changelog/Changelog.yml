@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: 0-Anon
-  changes:
-  - message: Adjusted the Mute Toxin chemical reaction recipe to no longer require
-      uranium.
-    type: Tweak
-  id: 9490
-  time: '2026-02-04T19:24:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42787
 - author: ScholarNZL
   changes:
   - message: Rat King and Rat Servants now have partial shock resistance, preventing
@@ -4060,3 +4052,14 @@
   id: 9988
   time: '2026-09-14T13:44:10.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1015
+- author: Polonium
+  changes:
+  - message: "Dodano granaty Plant-B-Gone przeciwko ro\u015Blinom (nie zabija mi\u0119\
+      sne/klaunie kudzu)."
+    type: Add
+  - message: "Granaty s\u0105 dost\u0119pne w Logistyce za 500 spesos oraz w automacie\
+      \ NutriMax za 1 jednostk\u0119."
+    type: Add
+  id: 9989
+  time: '2026-09-14T13:53:30.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1017
