@@ -74,5 +74,5 @@ emergency-shuttle-ui-remaining = Brakuje: { $remaining }
 map-name-centcomm = Centralne Dowództwo
 map-name-terminal = Port odlotów
 emergency-shuttle-command-round-desc = Zatrzymuje odliczanie rozpoczynane gdy wahadłowiec wyjdzie z hiperprzestrzeni.
-emergency-shuttle-command-dock-desc = Powiadamia wahadłowiec aby zadokował do stacji... jeśli może.
+emergency-shuttle-command-dock-desc = Powiadamia wahadłowiec, aby zadokował do stacji... jeśli może.
 emergency-shuttle-command-launch-desc = Przedwcześnie startuje wchadłowiec ratunkowy, jeśli można.

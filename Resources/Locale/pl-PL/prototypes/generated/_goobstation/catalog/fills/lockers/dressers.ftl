@@ -1,5 +1,5 @@
 ent-DresserBlueshieldOfficerFilled = { ent-Dresser }
-    .suffix = Wypełnione, Blueshield
+    .suffix = Wypełnione, Niebieska Tarcza
     .desc = { ent-Dresser.desc }
 ent-DresserNanorepFilled = { ent-Dresser }
     .suffix = Wypełnione, Nanorep

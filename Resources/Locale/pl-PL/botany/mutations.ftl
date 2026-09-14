@@ -1,8 +1,8 @@
-mutation-plant-kudzu = It is growing unusually fast and thin.
-mutation-plant-ligneous = It is woody and will need a sharp tool to harvest.
-mutation-plant-scream = This plant seems nervous somehow.
-mutation-plant-sentient = It seems to be examining its surroundings.
-mutation-plant-slippery = It is slick to the touch.
-mutation-plant-unviable = It is wilting and sickly.
-mutation-plant-seedless = Its harvested produce is seedless.
-mutation-plant-sampled = It has already been sampled.
+mutation-plant-kudzu = Rośnie niezwykle szybko i cienko.
+mutation-plant-ligneous = Jest drewniane i będzie wymagało ostrego narzędzia do zebrania.
+mutation-plant-scream = Ta roślina wydaje się jakoś nerwowa.
+mutation-plant-sentient = Wygląda, jakby analizowała swoje otoczenie.
+mutation-plant-slippery = Jest śliska w dotyku.
+mutation-plant-unviable = Jest zwiędła i wygląda na chorą.
+mutation-plant-seedless = Jej zbiory są bezziarniste.
+mutation-plant-sampled = Pobrano już z niej próbkę.

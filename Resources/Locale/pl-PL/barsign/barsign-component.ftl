@@ -127,12 +127,12 @@ barsign-prototype-description-maltroach = Pisk!
 
 ## Whiskey Echoes
 
-barsign-prototype-name-whiskeyechoes = Whiskey Echoes
+barsign-prototype-name-whiskeyechoes = Whiskey Moją Żoną
 barsign-prototype-description-whiskeyechoes = Elitarny bar dla elitarnych oper–chwila, to stacja Nanotrasen. Dlaczego ten szyld jest w bazie?
 
 ## EmpBarSign
 
-barsign-prototype-name-empbarsign = glitchy bar sign
+barsign-prototype-name-empbarsign = zglitchowany szyld baru
 barsign-prototype-description-empbarsign = Coś poszło bardzo nie tak.
 
 ## SignOff

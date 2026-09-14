@@ -1,4 +1,4 @@
-ent-ClothingUniformJumpsuitNanotrasenRepresentative = nanotrasen representative suit
+ent-ClothingUniformJumpsuitNanotrasenRepresentative = Przedstawiciel Nanotrasen suit
     .desc = A black suit worn by officials.
 ent-ClothingUniformJumpsuitTrainer = NCT Jumpsuit
     .desc = A jumpsuit issued to Nanotrasen Career Trainers. Fills you with a feeling of pride.

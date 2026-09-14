@@ -17,3 +17,68 @@
   copyright: "Made by C418"
   license: "Custom" # CC-BY-NC-ND 3.0
   source: "https://c418.bandcamp.com/track/i-cant-afford-mastering"
+
+- files: [CzyToKoniec.ogg]
+  license: "CC-BY-4.0"
+  copyright: "Pinkscreen"
+  source: "https://github.com/polonium14/polonium-station/blob/4a4ed428173ec9c874fa4e598156a6e4d0df094e/Resources/Audio/Lobby/CzyToKoniec.ogg"
+
+- files: [gownochrona.ogg]
+  license: "CC-BY-4.0"
+  copyright: "Zintex"
+  source: "https://github.com/Zintex/polonium-station/blob/9d4ed00c6bb63cd99b75a14dce7ef1e14fe6896c/Resources/Audio/Lobby/gownochrona.ogg"
+
+- files: ["lightyears.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Light Years by Stellardrone. Converted from MP3 to OGG."
+  source: "https://stellardrone.bandcamp.com/album/light-years"
+
+- files: ["tothegreatbeyond.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "To The Great Beyond by Stellardrone. Converted from MP3 to OGG."
+  source: "https://stellardrone.bandcamp.com/album/light-years"
+
+- files: ["bluespace.ogg"]
+  license: "Custom"
+  copyright: "Bluespace by Gneiss."
+  source: "https://soundcloud.com/dukegneiss/bluespace?in=dukegneiss/sets/ascention"
+
+- files: ["codebrain.ogg"]
+  license: "Custom"
+  copyright: "Codebrain by Gneiss."
+  source: "https://soundcloud.com/dukegneiss/codebrain?in=dukegneiss/sets/ascention"
+
+- files: ["cyborg_emt.ogg"]
+  license: "Custom"
+  copyright: "Cyborg EMT by Gneiss."
+  source: "https://soundcloud.com/dukegneiss/cyborg-emt?in=dukegneiss/sets/ascention"
+
+- files: ["downtown.ogg"]
+  license: "Custom"
+  copyright: "Downtown by Gneiss."
+  source: "https://soundcloud.com/dukegneiss/downtown?in=dukegneiss/sets/ascention"
+
+- files: ["escape_plan.ogg"]
+  license: "Custom"
+  copyright: "Quantum's Escape Plan by Gneiss."
+  source: "https://soundcloud.com/dukegneiss/quantums-escape-plan?in=dukegneiss/sets/ascention"
+
+- files: ["exploring.ogg"]
+  license: "Custom"
+  copyright: "Exploring by Gneiss."
+  source: "https://soundcloud.com/dukegneiss/exploring?in=dukegneiss/sets/ascention"
+
+- files: ["metropolis.ogg"]
+  license: "Custom"
+  copyright: "Metropolis by Gneiss."
+  source: "https://soundcloud.com/dukegneiss/metropolis?in=dukegneiss/sets/ascention"
+
+- files: ["phoron_industry.ogg"]
+  license: "Custom"
+  copyright: "Phoron Industry by Gneiss."
+  source: "https://soundcloud.com/dukegneiss/phoron-industry?in=dukegneiss/sets/ascention"
+
+- files: ["phoron_leak.ogg"]
+  license: "Custom"
+  copyright: "Phoron Leak by Gneiss."
+  source: "https://soundcloud.com/dukegneiss/phoron-leak?in=dukegneiss/sets/ascention"

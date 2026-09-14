@@ -1,2 +1,2 @@
-ent-CyborgEndoskeleton = cyborg endoskeleton
-    .desc = A frame that cyborgs are built on. Significantly less spooky than expected.
+ent-CyborgEndoskeleton = endoszkielet cyborga
+    .desc = Rama, na której zbudowane są cyborgi. Znacznie mniej straszne niż się spodziewano.

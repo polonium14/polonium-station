@@ -1,6 +1,6 @@
 ent-BaseAPC = APC
     .desc = Terminal kontrolny do zarządzania systemami elektrycznymi danego obszaru.
-ent-APCFrame = konstrukcja APC
+ent-APCFrame = konstrukcja LKZ
     .desc = Terminal kontrolny do zarządzania systemami elektrycznymi danego obszaru. Brakuje mu elektroniki.
 ent-APCConstructed = { ent-BaseAPC }
     .suffix = Otwarte

@@ -1,4 +1,4 @@
-identity-block-examinable-verb-text = Concealment
-identity-block-coverage-text-mouth = This item hides the lower half of the face.
-identity-block-coverage-text-eyes = This item hides the upper half of the face.
-identity-block-coverage-text-full = This item hides the entire face.
+identity-block-examinable-verb-text = Maskowanie
+identity-block-coverage-text-mouth = Ten przedmiot ukrywa dolną połowę twarzy.
+identity-block-coverage-text-eyes = Ten przedmiot ukrywa górną połowę twarzy.
+identity-block-coverage-text-full = Ten przedmiot ukrywa całą twarz.

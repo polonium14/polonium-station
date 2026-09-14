@@ -188,7 +188,7 @@ flavor-complex-false-meat = nie do końca mięso
 flavor-complex-paper = papka papierowa
 flavor-complex-compressed-meat = skompresowane mięso
 flavor-complex-dog-food = psia karma
-flavor-complex-canned-tuna = like canned tuna
+flavor-complex-canned-tuna = jak tuńczyk w puszce
 
 # Drink-specific flavors.
 
@@ -355,7 +355,7 @@ flavor-complex-sax = jazz
 flavor-complex-bottledlightning = piorun w butelce
 flavor-complex-punishment = kara
 flavor-complex-forbidden = zakazane
-flavor-complex-artifact-glue = like crushed artifacts
+flavor-complex-artifact-glue = jak rozgniecione artefakty
 flavor-weh = weh
 flavor-hew = hew
 flavor-complex-bigfoot = koktajl z czarnej porzeczki

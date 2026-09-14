@@ -4,6 +4,7 @@ preserve_hierarchy: true
 
 files:
   - source: /Resources/Locale/en-US/**/*.ftl
+    type: ftl
     ignore:
       - /Resources/Locale/en-US/**/datasets
       - /Resources/Locale/en-US/**/accent

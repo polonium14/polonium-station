@@ -1,4 +1,4 @@
-ent-OreBag = scrap bag
-    .desc = A robust bag for salvage specialists and miners alike to carry large amounts of ore or scrap. Magnetises any nearby raw resources when attached to a belt.
-ent-BorgOreBag = integrated ore bag
+ent-OreBag = torba na rudę
+    .desc = Solidna torba dla specjalistów odzysku i górników do przenoszenia dużych ilości rudy lub złomu. Magzentyzuje pobliskie surowce po przymocowaniu do pasa.
+ent-BorgOreBag = zintegrowana torba na rudę
     .desc = A large ore bag built into the frame of a mining cyborg.

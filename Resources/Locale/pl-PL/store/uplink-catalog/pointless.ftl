@@ -35,6 +35,6 @@ uplink-scarf-syndie-green-desc = Stylowy pasiasty zielony szalik syndykatu. Idea
 uplink-business-card-name = Wizytówka Syndykatu
 uplink-business-card-desc = Wizytówka, którą możesz dać komuś, aby pokazać swoje zaangażowanie w syndykat lub zostawić na miejscu zbrodni, aby wyśmiać detektywa. Możesz kupić nie więcej niż trzy.
 uplink-decoy-kit-name = Zestaw Przynęty
-uplink-decoy-kit-desc = Najnowocześniejsza technologia rozpraszania uwagi prosto z RND. Zawiera pięć realistycznych balonów, cztery granaty przynęty i kilka petard!
+uplink-decoy-kit-desc = Najnowocześniejsza technologia rozpraszania uwagi prosto z B+R. Zawiera pięć realistycznych balonów, cztery granaty przynęty i kilka petard!
 uplink-contraband-lighter-name = Skrzynka z Nielegalnym Zapalniczką
 uplink-contraband-lighter-desc = Tajemnicza skrzynka gwarantująca zawartość zapalniczki z logo syndykatu. Nie wymaga paliwa.

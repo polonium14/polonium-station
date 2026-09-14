@@ -1,5 +1,5 @@
-advertisement-magivend-1 = Rzucaj czary jak należy z MagiVend!
-advertisement-magivend-2 = Bądź swoim własnym Houdinim! Używaj MagiVend!
+advertisement-magivend-1 = Rzucaj czary jak należy z CzaroMatem!
+advertisement-magivend-2 = Bądź swoim własnym Houdinim! Używaj CzaroMatu!
 advertisement-magivend-3 = FJKLFJSD
 advertisement-magivend-4 = AJKFLBJAKL
 advertisement-magivend-5 = >MFW

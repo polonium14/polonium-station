@@ -28,7 +28,7 @@ anomaly-scanner-particle-unstable-unknown = - [color=plum]Typ niestabilny:[/colo
 anomaly-scanner-particle-containment-unknown = - [color=goldenrod]Typ powstrzymujący:[/color] [color=red]BŁĄD[/color]
 anomaly-scanner-particle-transformation-unknown = - [color=#6b75fa]Typ transformacji:[/color] [color=red]BŁĄD[/color]
 anomaly-scanner-pulse-timer = Czas do następnego impulsu: [color=gray]{ $time }[/color]
-anomaly-scanner-doafter-examine = { CAPITALIZE(SUBJECT($user)) } { CONJUGATE-BE($user) } [color=plum]scanning an anomaly[/color].
+anomaly-scanner-doafter-examine = { CAPITALIZE(SUBJECT($user)) } { CONJUGATE-BASIC($user, "skanuje", "skanuje") } [color=plum]anomalię[/color].
 anomaly-gorilla-core-slot-name = Rdzeń anomalii
 anomaly-gorilla-charge-none = Nie ma w nim [bold]rdzenia anomalii[/bold].
 anomaly-gorilla-charge-limit =
@@ -51,7 +51,7 @@ anomaly-sync-examine-connected = Jest [color=darkgreen]podłączona[/color] do a
 anomaly-sync-examine-not-connected = Nie jest [color=darkred]podłączona[/color] do anomalii.
 anomaly-sync-connect-verb-text = Podłącz anomalię
 anomaly-sync-connect-verb-message = Podłącz pobliską anomalię do { $machine }.
-anomaly-sync-disconnect-verb-text = Detach anomaly
+anomaly-sync-disconnect-verb-text = Odłącz anomalię
 anomaly-sync-disconnect-verb-message = Detach the connected anomaly from { $machine }.
 anomaly-generator-ui-title = Generator anomalii
 anomaly-generator-fuel-display = Paliwo:
@@ -90,4 +90,4 @@ anomaly-behavior-inconstancy = [color=crimson]Wykryto nietrwałość. Typy cząs
 anomaly-behavior-fast = [color=crimson]Częstotliwość pulsacji jest znacznie zwiększona.[/color]
 anomaly-behavior-strenght = [color=crimson]Moc pulsacji jest znacznie zwiększona.[/color]
 anomaly-behavior-moving = [color=crimson]Wykryto niestabilność współrzędnych.[/color]
-anomaly-secret-admin = [color=red](ERROR)[/color]
+anomaly-secret-admin = [color=red](BŁĄD)[/color]
