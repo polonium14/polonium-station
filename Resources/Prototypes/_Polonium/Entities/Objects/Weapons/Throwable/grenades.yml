@@ -1,3 +1,28 @@
+- type: entity
+  parent: [SmokeGrenade, BaseCivilianContraband]
+  id: PlantBGoneGrenade
+  name: Plant-B-Gone grenade
+  description: A botanist's emergency kudzu-killer. Releases a cloud of Plant-B-Gone foam that scorches weeds and plant kudzu on contact.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Grenades/plantbgone.rsi
+  - type: SmokeOnTrigger
+    keysIn:
+    - timer
+    duration: 15
+    spreadAmount: 50
+    smokePrototype: Foam
+    solution:
+      reagents:
+      - ReagentId: PlantBGone
+        Quantity: 30
+  - type: Tag
+    tags:
+    - HandGrenade
+    - PlantBGone
+  - type: StaticPrice
+    price: 40
+
 # Polonium - Halon firefighting grenade
 - type: entity
   parent: AirGrenade
