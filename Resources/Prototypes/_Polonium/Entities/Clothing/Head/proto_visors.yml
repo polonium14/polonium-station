@@ -435,7 +435,7 @@
   parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorCaptain
   name: Captain's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version has, space protection and a job identifier build-in.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version has space protection and a built-in job identifier.
   components:
   - type: Sprite
     scale: 0.8, 0.8
