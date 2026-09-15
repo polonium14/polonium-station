@@ -13,6 +13,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: bat
       sprite: Mobs/Animals/bat.rsi
+  - type: Carriable
   - type: Speech
     speechSounds: Squeak
     speechVerb: SmallMob
@@ -216,6 +217,8 @@
     noMovementLayers:
       movement:
         state: chicken-0
+  - type: Carriable # DeltaV
+    freeHandsRequired: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -687,6 +690,8 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: duck-0
     sprite: Mobs/Animals/duck.rsi
+  - type: Carriable # DeltaV
+    freeHandsRequired: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -1013,6 +1018,8 @@
       movement:
         state: crab
   - type: Physics
+  - type: Carriable # DeltaV
+    freeHandsRequired: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -1073,6 +1080,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: goat
       sprite: Mobs/Animals/goat.rsi
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -1402,6 +1410,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: goose
       sprite: Mobs/Animals/goose.rsi
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -1635,6 +1644,7 @@
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -2339,6 +2349,8 @@
       state: slug
       sprite: Mobs/Animals/slug.rsi
   - type: Physics
+  - type: Carriable # DeltaV
+    freeHandsRequired: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -2396,6 +2408,8 @@
       movement:
         state: frog
   - type: Physics
+  - type: Carriable # DeltaV
+    freeHandsRequired: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -2461,6 +2475,8 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: parrot
       sprite: Mobs/Animals/parrot/parrot.rsi
+  - type: Carriable # DeltaV
+    freeHandsRequired: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -2544,6 +2560,7 @@
       state: penguin
       sprite: Mobs/Animals/penguin.rsi
   - type: Physics
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -2680,6 +2697,7 @@
       state: snake
       sprite: Mobs/Animals/snake.rsi
   - type: Physics
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -2724,6 +2742,7 @@
   abstract: true
   components:
   - type: Physics
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -2954,6 +2973,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: possum
   - type: Physics
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -3027,6 +3047,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: raccoon
   - type: Physics
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -3087,6 +3108,7 @@
       movement:
         state: fox
   - type: Physics
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -3166,6 +3188,7 @@
   - type: Speech
     speechVerb: Canine
     speechSounds: Dog
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -3344,6 +3367,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: cat
   - type: Physics
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -3554,6 +3578,8 @@
         Base: kitten_dead
       Dead:
         Base: kitten_dead
+  - type: Carriable # DeltaV
+    freeHandsRequired: 1
   - type: ToolRefinable
     refineResult:
     - id: FoodMeat
@@ -3585,6 +3611,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: sloth
   - type: Physics
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -3639,6 +3666,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: ferret
   - type: Physics
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -3849,6 +3877,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: pig
       sprite: Mobs/Animals/pig.rsi
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -3922,6 +3951,7 @@
       state: nymph
       sprite: Mobs/Animals/nymph.rsi
   - type: Physics
+  - type: Carriable # DeltaV
   - type: Fixtures
     fixtures:
       fix1:
