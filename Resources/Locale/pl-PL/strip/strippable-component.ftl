@@ -18,7 +18,7 @@ strip-all-verb-get-data-text = Rozbierz całego
 
 ## UI
 
-strippable-bound-user-interface-stripping-menu-title = Ekwipunek { CAPITALIZE ($ownerName) }
+strippable-bound-user-interface-stripping-menu-title = Ekwipunek { CAPITALIZE($ownerName) }
 strippable-bound-user-interface-stripping-menu-ensnare-button = Usuń skrępowanie nóg
 strippable-bound-user-interface-stripping-menu-admin-button = Przełącz widok administratora
 strippable-bound-user-interface-stripping-menu-admin-button-tooltip =

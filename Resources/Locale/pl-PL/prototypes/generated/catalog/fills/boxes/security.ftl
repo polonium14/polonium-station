@@ -16,5 +16,5 @@ ent-BoxSunglasses = pudło okularów przeciwsłonecznych
     .desc = Pudło fajnych okularów przeciwsłonecznych odpornych na błyski.
 ent-BoxForensicPad = pudełko z podkładkami kryminalistycznymi
     .desc = Pudełko z podkładkami kryminalistycznymi.
-ent-BoxDetonator = pudło z detonatorami 
+ent-BoxDetonator = pudło z detonatorami
     .desc = Pudło zawierające detonatory wybuchowe.

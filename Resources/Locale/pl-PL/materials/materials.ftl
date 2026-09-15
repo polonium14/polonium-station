@@ -5,19 +5,19 @@ materials-plasma-glass = szkło plazmowe
 materials-reinforced-plasma-glass = wzmocnione szkło plazmowe
 materials-uranium-glass = szkło uranowe
 materials-reinforced-uranium-glass = wzmocnione szkło uranowe
-materials-runed-glass = szkło runowe
+materials-runed-glass = runiczne szkło
 # Metals
 materials-steel = stal
 materials-gold = złoto
 materials-silver = srebro
 materials-plasteel = plastal
-materials-runed-steel = stal runowa
-materials-runed-plasteel = plastal runowy
+materials-runed-steel = runiczna stal
+materials-runed-plasteel = runiczna plastal
 # Other
 materials-biomass = biomasa
 materials-cardboard = tektura
 materials-cloth = tkanina
-materials-durathread = duranić
+materials-durathread = duratkanina
 materials-plasma = plazma
 materials-plastic = plastik
 materials-wood = drewno
