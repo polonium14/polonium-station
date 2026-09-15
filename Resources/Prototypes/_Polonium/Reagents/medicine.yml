@@ -1,7 +1,7 @@
 - type: reagent
   id: Nanobots
   name: reagent-name-nanobots
-  group: Medicine
+  group: Special
   desc: reagent-desc-nanobots
   physicalDesc: reagent-physical-desc-thick-and-grainy
   flavor: medicine
