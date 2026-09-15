@@ -67,11 +67,11 @@ public sealed class TutorialFinaleChoiceEvent : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
-public sealed class TutorialCompletionStatusEvent : EntityEventArgs
+public sealed class TutorialPlayerCompletionEvent : EntityEventArgs
 {
-    public bool Completed { get; }
+    public bool Completed;
 
-    public TutorialCompletionStatusEvent(bool completed)
+    public TutorialPlayerCompletionEvent(bool completed)
     {
         Completed = completed;
     }

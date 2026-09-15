@@ -37,16 +37,16 @@ namespace Content.Server.GameTicking.Rules;
 /// The main station will still spawn, but no one will ever be on it. As such, when this game rule is in use,
 /// the server should be forced to use the 'Empty' map, to avoid spawning a bunch of unnecessary entities and active mobs
 /// </remarks>
-public sealed class SolitarySpawningSystem : GameRuleSystem<SolitarySpawningRuleComponent>
+public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpawningRuleComponent>
 {
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly IServerPreferencesManager _prefs = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly MetaDataSystem _meta = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private IChatManager _chatManager = default!;
+    [Dependency] private IServerPreferencesManager _prefs = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private MetaDataSystem _meta = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
+    [Dependency] private IPlayerManager _player = default!;
 
     // A list of the station entities generated for each player (and the map they are on).
     // Used for respawning players on their own station, and for deleting unused maps.

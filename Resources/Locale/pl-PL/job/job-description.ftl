@@ -63,3 +63,4 @@ job-description-zookeeper = Wystawiaj radosne ekspozycje słodkich zwierząt i k
 job-description-command-maid = Clean the bridge, command rooms, and everything else that command tells you to.
 job-description-security-clown = Do security's job, but don't forget to do it with your clown spice.
 job-description-party-maker = Throw the biggest party ever at this station!
+job-description-trainee = Naucz się, jak radzić sobie w kosmosie.

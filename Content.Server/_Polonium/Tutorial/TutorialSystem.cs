@@ -94,8 +94,16 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
     private void OnPlayerStatus(object? sender, SessionStatusEventArgs ev)
     {
-        if (ev.NewStatus == SessionStatus.Connected)
-            SendCompletionStatus(ev.Session);
+        if (ev.NewStatus != SessionStatus.Connected)
+            return;
+
+        if (_cfg.GetCVar(CCVars.IntroServerMode) != IntroMode.Main)
+            return;
+
+        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
+            return;
+
+        SendCompletionStatus(ev.Session);
     }
 
     private void OnPlayerJoinedLobby(PlayerJoinedLobbyEvent ev)
@@ -119,7 +127,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         if (session.Status == SessionStatus.Disconnected)
             return;
 
-        RaiseNetworkEvent(new TutorialCompletionStatusEvent(completed), session);
+        RaiseNetworkEvent(new TutorialPlayerCompletionEvent(completed), session);
     }
 
     private void OnRestartRequested(TutorialRestartRequestedEvent ev, EntitySessionEventArgs args)
@@ -388,7 +396,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
             await _db.SetTutorialCompletion(session.UserId, duration);
 
             if (session.Status != SessionStatus.Disconnected)
-                RaiseNetworkEvent(new TutorialCompletionStatusEvent(true), session);
+                RaiseNetworkEvent(new TutorialPlayerCompletionEvent(true), session);
         }
         catch (Exception e)
         {

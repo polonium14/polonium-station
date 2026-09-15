@@ -77,7 +77,7 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
         SubscribeLocalEvent<TutorialSessionComponent, ComponentShutdown>(OnSessionShutdown);
         SubscribeLocalEvent<LocalPlayerAttachedEvent>(OnLocalAttached);
         SubscribeNetworkEvent<TutorialRedialEvent>(OnRedial);
-        SubscribeNetworkEvent<TutorialCompletionStatusEvent>(OnCompletionStatus);
+        SubscribeNetworkEvent<TutorialPlayerCompletionEvent>(OnCompletionStatus);
         _state.OnStateChanged += OnStateChanged;
         _input.OnKeyBindingAdded += OnKeybindChanged;
         _input.OnKeyBindingRemoved += OnKeybindChanged;
@@ -121,7 +121,7 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
         }
     }
 
-    private void OnCompletionStatus(TutorialCompletionStatusEvent ev)
+    private void OnCompletionStatus(TutorialPlayerCompletionEvent ev)
     {
         _lobbyTutorial.OnDbCompletion(ev.Completed);
     }

@@ -14,7 +14,7 @@ namespace Content.Client._Polonium.Tutorial;
 /// Construction ghosts never exist on the server, so the current step cannot see them by itself.
 /// This watches the client's ghosts against the step's markers and tells the server when that changes.
 /// </summary>
-public sealed class TutorialConstructionGhostSystem : EntitySystem
+public sealed partial class TutorialConstructionGhostSystem : EntitySystem
 {
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IPrototypeManager _proto = default!;

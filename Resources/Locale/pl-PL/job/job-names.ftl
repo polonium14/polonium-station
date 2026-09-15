@@ -48,6 +48,7 @@ job-name-station-ai = SI Stacji
 job-name-technical-assistant = Pomocnik Techniczny
 job-name-tram-driver = Tram Driver
 job-name-visitor = Gość
+job-name-trainee = Praktykant
 job-name-warden = Nadzorca Ochrony
 # unused jobs
 # these are required for the agent ID job icon tooltips
