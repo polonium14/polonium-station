@@ -1,0 +1,195 @@
+using System.Diagnostics.CodeAnalysis;
+using Content.Shared._Polonium.Tutorial.Actions;
+using Content.Shared._Polonium.Tutorial.Components;
+using Content.Shared._Polonium.Tutorial.Conditions;
+using Content.Shared._Polonium.Tutorial.Prototypes;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
+using Content.Shared.ActionBlocker;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Movement.Events;
+using Content.Shared.Popups;
+using Content.Shared.Prying.Components;
+using Content.Shared.Tag;
+using Content.Shared.Tools.Systems;
+using Content.Shared.Wall;
+using Content.Shared.Wires;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
+
+namespace Content.Shared._Polonium.Tutorial;
+
+public abstract partial class SharedTutorialSystem : EntitySystem
+{
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private TagSystem _tags = default!;
+    [Dependency] private ActionBlockerSystem _blocker = default!;
+
+    private static readonly ProtoId<TagPrototype> StructureTag = "Structure";
+    private static readonly ProtoId<TagPrototype> WindowTag = "Window";
+    private static readonly ProtoId<TagPrototype> WallTag = "Wall";
+
+    private static readonly TimeSpan ProtectPopupCooldown = TimeSpan.FromSeconds(2.5);
+
+    private TimeSpan _nextProtectPopup;
+    private EntityUid _lastProtectTarget;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<TutorialSessionComponent, AttackAttemptEvent>(OnAttackAttempt);
+        SubscribeLocalEvent<DamageableComponent, BeforeDamageChangedEvent>(OnStructureDamage);
+        SubscribeLocalEvent<TutorialFrozenComponent, UpdateCanMoveEvent>(OnFrozenCanMove);
+        SubscribeLocalEvent<TutorialFrozenComponent, ComponentStartup>(OnFrozenChanged);
+        SubscribeLocalEvent<TutorialFrozenComponent, ComponentShutdown>(OnFrozenChanged);
+        SubscribeLocalEvent<TutorialSealedComponent, AttemptChangePanelEvent>(OnSealedPanel);
+        SubscribeLocalEvent<TutorialSealedComponent, BeforePryEvent>(OnSealedPry);
+        SubscribeLocalEvent<TutorialSealedComponent, WeldableAttemptEvent>(OnSealedWeld);
+    }
+
+    private void OnFrozenCanMove(Entity<TutorialFrozenComponent> ent, ref UpdateCanMoveEvent args)
+    {
+        if (ent.Comp.LifeStage > ComponentLifeStage.Running)
+            return;
+
+        args.Cancel();
+    }
+
+    private void OnFrozenChanged<T>(Entity<TutorialFrozenComponent> ent, ref T args)
+    {
+        _blocker.UpdateCanMove(ent.Owner);
+    }
+
+    private void OnSealedPanel(Entity<TutorialSealedComponent> ent, ref AttemptChangePanelEvent args)
+    {
+        args.Cancelled = true;
+    }
+
+    private void OnSealedPry(Entity<TutorialSealedComponent> ent, ref BeforePryEvent args)
+    {
+        args.Cancelled = true;
+    }
+
+    private void OnSealedWeld(Entity<TutorialSealedComponent> ent, ref WeldableAttemptEvent args)
+    {
+        args.Cancel();
+    }
+
+    private void OnAttackAttempt(EntityUid uid, TutorialSessionComponent session, AttackAttemptEvent args)
+    {
+        if (args.Cancelled || args.Disarm || args.Target is not { } target)
+            return;
+
+        if (!TryBlockStructureAttack(uid, session, target))
+            return;
+
+        args.Cancel();
+    }
+
+    private void OnStructureDamage(Entity<DamageableComponent> ent, ref BeforeDamageChangedEvent args)
+    {
+        if (args.Cancelled || args.Origin is not { } origin)
+            return;
+
+        if (!args.Damage.AnyPositive())
+            return;
+
+        if (!TryComp<TutorialSessionComponent>(origin, out var session))
+            return;
+
+        if (!TryBlockStructureAttack(origin, session, ent.Owner))
+            return;
+
+        args.Cancelled = true;
+    }
+
+    protected bool TryBlockStructureAttack(EntityUid user, TutorialSessionComponent session, EntityUid target)
+    {
+        if (!IsProtectedStructure(target))
+            return false;
+
+        if (IsAttackableTarget(session, target))
+            return false;
+
+        PopupProtect(user, target);
+        return true;
+    }
+
+    protected bool IsHullStructure(EntityUid uid)
+    {
+        return HasComp<WallComponent>(uid) || _tags.HasTag(uid, WindowTag);
+    }
+
+    protected void PopupProtect(EntityUid user, EntityUid target)
+    {
+        if (target == _lastProtectTarget && _timing.CurTime < _nextProtectPopup)
+            return;
+
+        _lastProtectTarget = target;
+        _nextProtectPopup = _timing.CurTime + ProtectPopupCooldown;
+        _popup.PopupEntity(Loc.GetString("tutorial-cannot-break-structure"), target, user);
+    }
+
+    private bool IsProtectedStructure(EntityUid uid)
+    {
+        return _tags.HasTag(uid, StructureTag)
+               || _tags.HasTag(uid, WindowTag)
+               || _tags.HasTag(uid, WallTag)
+               || HasComp<WallComponent>(uid);
+    }
+
+    private bool IsAttackableTarget(TutorialSessionComponent session, EntityUid target)
+    {
+        if (!TryComp<TutorialAnchorComponent>(target, out var anchor))
+            return false;
+
+        return TryGetStep(session, out var step) && CompletionAllowsAttack(step, anchor.AnchorId);
+    }
+
+    protected bool TryGetStep(TutorialSessionComponent session, [NotNullWhen(true)] out TutorialStepPrototype? step)
+    {
+        step = null;
+        return session.CurrentStep is { } id && _proto.TryIndex(id, out step);
+    }
+
+    private static bool CompletionAllowsAttack(TutorialStepPrototype step, string anchorId)
+    {
+        foreach (var action in step.OnEnter)
+        {
+            // meteor owns this pane, fists would skip the drill
+            if (action is MeteorWindowAction meteor && meteor.WindowAnchor == anchorId)
+                return false;
+        }
+
+        return Walk(step.Completion);
+
+        bool Walk(TutorialCondition? condition)
+        {
+            return condition switch
+            {
+                AllCondition all => all.Conditions.Exists(Walk),
+                AnyCondition any => any.Conditions.Exists(Walk),
+                AnchorDamagedCondition damaged => damaged.AnchorId == anchorId,
+                MeleeHitAnchorCondition melee => melee.AnchorId == anchorId,
+                _ => false,
+            };
+        }
+    }
+}
+
+/// <summary>Fires after the player spawns on a solitary map. TutorialSystem picks it up.</summary>
+public sealed class TutorialStartRequestedEvent : EntityEventArgs
+{
+    public EntityUid Player { get; }
+    public ProtoId<Prototypes.TutorialFlowPrototype> Flow { get; }
+
+    public TutorialStartRequestedEvent(EntityUid player, ProtoId<Prototypes.TutorialFlowPrototype> flow)
+    {
+        Player = player;
+        Flow = flow;
+    }
+}

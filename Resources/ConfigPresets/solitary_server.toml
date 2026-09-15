@@ -1,0 +1,134 @@
+[log]
+enabled = false
+
+[net]
+tickrate = 30
+port = 1214
+bindto = "::,0.0.0.0"
+max_connections = 200
+pvs_range = 50
+
+[status]
+enabled = true
+# bind = "*:1214"
+# connectaddress = "udp://polonium.ss14.pl:1214"
+
+[game]
+hostname = "[PL]🪐 Polonium Station | Serwer Szkoleniowy"
+lobbyenabled = true
+lobbyduration = 2
+soft_max_players = 50
+role_timer_override = "Zeroed"
+server_full_reconnect_delay = 30
+defaultpreset = "Tutorial"
+disallowlatejoins = true
+map = "Tutorial"
+role_timers = false
+role_whitelist = false
+map_rotation = false
+fallbackenabled = false
+fallbackpreset = "Tutorial"
+role_loadout_timers = false
+station_goal = false
+round_restart_time = 20
+
+[shuttle]
+arrivals = false
+emergency = false
+grid_fill = false
+auto_call_time = 0
+preload_grids = false
+impact.enabled = false
+
+[chat]
+motd = "Serwer szkoleniowy. Po ukończeniu wrócisz na główny serwer."
+
+[server]
+lobby_name = "Stacja Kosmiczna 14"
+
+[whitelist]
+enabled = false
+
+[movement]
+mob_pushing = true
+
+[ghost]
+kill_crit = false
+
+[holidays]
+enabled = false
+
+[control]
+opaque_storage_background = true
+
+[ui]
+uuid_banner_enabled = false
+
+[ic]
+flavor_text = true
+
+[ooc]
+enable_during_round = false
+discord_channel_id = 1409902534243520574
+
+[vote]
+enabled = false
+auto_map_on_round_end = false
+auto_preset_on_round_end = false
+restart_enabled = false
+preset_enabled = false
+map_enabled = false
+
+[admin]
+admins_count_for_max_players = false
+admins_count_in_playercount = true
+bypass_max_players = true
+deadmin_on_join = false
+
+[rules]
+time = 0
+
+[afk]
+automatic_checks = false
+
+[ahelp]
+admin_prefix = false
+
+[hub]
+advertise = false
+tags = "lang:pl,rp:none,region:eu_e"
+server_url = "ss14://polonium.ss14.pl/"
+hub_urls = "https://hub.spacestation14.com/"
+
+[infolinks]
+discord = "http://discord.ss14.pl"
+
+[events]
+enabled = false
+
+[procgen]
+preload = false
+
+[funky]
+looc_budget_enabled = false
+
+[atmos]
+space_wind = false
+
+[intro]
+mode = "Tutorial"
+return_server_con_string = "ss14://127.0.0.1:1212"
+skip_lobby_intro_debug = false
+
+[tutorial]
+debug_start_room = "room16"
+
+[build]
+fork_id = "polonium"
+
+[auth]
+mode = 0
+
+[database]
+engine = "sqlite"
+sqlite_dbpath = "preferences_solitary.db"

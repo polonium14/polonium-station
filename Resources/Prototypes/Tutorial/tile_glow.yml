@@ -1,0 +1,19 @@
+# drawn by TutorialTileHighlightSystem on the tiles a step points at. only ever spawned on the client, and
+- type: entity
+  id: TutorialTileGlow
+  name: tutorial tile marker
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    sprite: _Polonium/Interface/Misc/intro_markers/tile_point.rsi
+    drawdepth: Overlays
+    noRot: true
+    layers:
+    - state: cyan
+      shader: unshaded
+  - type: Tag
+    tags:
+    - HideContextMenu

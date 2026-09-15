@@ -1,0 +1,318 @@
+- type: entity
+  parent: MarkerBase
+  id: TutorialMarker
+  name: tutorial marker
+  suffix: Tutorial
+  components:
+  - type: Sprite
+    state: pink
+
+- type: entity
+  parent: BaseStructure
+  id: TutorialHolopad
+  name: training holopad
+  description: A floor-mounted projector. The facility's training intelligence uses it to be in two places at once.
+  suffix: Tutorial
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        mask:
+        - Impassable
+  - type: TutorialHoloPoint
+  - type: Sprite
+    sprite: Structures/Machines/holopad.rsi
+    drawdepth: HighFloorObjects
+    snapCardinals: true
+    layers:
+    - state: base
+    - map: [ "lights" ]
+      state: blank
+      shader: unshaded
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.TutorialHoloPointVisuals.Active:
+        lights:
+          True: { state: lights_in_call }
+          False: { state: blank }
+  - type: PointLight
+    radius: 2.0
+    energy: 2.0
+    color: "#afe1fe"
+    enabled: false
+  - type: AmbientSound
+    enabled: false
+    volume: -8
+    range: 4
+    sound:
+      path: /Audio/Ambience/Objects/buzzing.ogg
+  - type: InteractionOutline
+
+- type: entity
+  parent: HolopadHologram
+  id: TutorialHoloMentor
+  name: N.A.N.C.I.
+  description: Facility training intelligence. Speaks as if the handbook were a person.
+  suffix: Tutorial
+  components:
+  - type: Transform
+    anchored: false
+  - type: TutorialMentor
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Borg
+    speechBubbleOffset: 0.45
+  - type: HolopadHologram
+    rsiPath: Mobs/Silicon/holograms.rsi
+    rsiState: ai_face
+    shaderName: Hologram
+    color1: "#65b8e2"
+    color2: "#3a6981"
+    alpha: 0.9
+    intensity: 2
+    scrollRate: 0.125
+    offset: 0, 0.45
+
+- type: entity
+  parent: MobAdultSlimesBlue
+  id: TutorialSlime
+  suffix: Tutorial
+  components:
+  - type: HTN
+    rootTask:
+      task: IdleCompound
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: TutorialNpc
+    preventDeath: false
+
+- type: entity
+  parent: Paper
+  id: PaperTutorialContract
+  name: employment contract
+  description: Nanotrasen paperwork. Not for eating.
+  suffix: Tutorial
+  components:
+  - type: TutorialInedible
+  - type: Paper
+    content: paper-tutorial-contract
+    editingDisabled: true
+
+- type: entity
+  parent: GravityGenerator
+  id: TutorialGravityGenerator
+  suffix: Tutorial, Charged
+  components:
+  - type: ApcPowerReceiver
+    needsPower: false
+    powerLoad: 2500
+  - type: PowerCharge
+    idlePower: 50
+    activePower: 2500
+    charge: 1
+    switchedOn: true
+
+- type: entity
+  parent: PuddleTemporary
+  id: PuddleTutorial
+  name: puddle
+  suffix: Tutorial
+  components:
+  - type: Puddle
+    # evaporation is on, but vomit has no evaporation speed so these sit there until mopped.
+    # the mop trades its water into the puddle, and that water then dries up on its own
+    spreadsOnStep: false
+  - type: Solution
+    solution:
+      reagents:
+      # not water - a mop is already soaked in water and refuses to pick more up
+      - ReagentId: Vomit
+        Quantity: 30
+
+# a sealed can swallows every click: OpenableSystem marks the interaction handled so the
+# trainee cannot put it in the disposal unit at all. Hand them one already cracked open.
+- type: entity
+  parent: DrinkColaCan
+  id: DrinkColaCanTutorial
+  suffix: Tutorial
+  components:
+  - type: Openable
+    opened: true
+
+# a sealed bag eats every click: OpenableSystem marks the interaction handled, so nothing pours
+# until the bag is opened. Hand out one that is already open.
+- type: entity
+  parent: ReagentContainerFlour
+  id: ReagentContainerFlourTutorial
+  suffix: Tutorial
+  components:
+  - type: Openable
+    opened: true
+
+# the next three are plain copies. they exist so the flow can name them - the conditions and the
+# drain action match on prototype id, and matching on LargeBeaker would also catch whatever a
+# trainee carried in from another room.
+#
+# transfer amounts stay at stock on purpose. a beaker that pours a measured fifteen only in here
+# teaches a number that is wrong everywhere else. the steps say what one click moves and how many
+# clicks that adds up to, which is the thing a cook actually has to know
+- type: entity
+  parent: LargeBeaker
+  id: LargeBeakerTutorial
+  suffix: Tutorial
+
+- type: entity
+  parent: Bucket
+  id: BucketTutorial
+  suffix: Tutorial
+
+- type: entity
+  parent: ChemistryBottleEZNutrient
+  id: ChemistryBottleEZNutrientTutorial
+  suffix: Tutorial
+
+# every machine the kitchen flow depends on is beyond breaking. a trainee who decides to take a
+# fire axe to the microwave is allowed to try, but they are not allowed to end up in a room where
+# the next instruction can never be finished
+- type: entity
+  parent: Sink
+  id: SinkTutorial
+  suffix: Tutorial
+  components:
+  # a normal sink holds under five hundred units and the kitchen asks for water four separate
+  # times. running it dry halfway through is not a lesson, it is a dead end
+  - type: Solution
+    id: tank
+    solution:
+      maxVol: 100000
+      reagents:
+      - ReagentId: Water
+        Quantity: 100000
+  - type: Destructible
+    thresholds: []
+
+- type: entity
+  parent: KitchenMicrowave
+  id: KitchenMicrowaveTutorial
+  suffix: Tutorial
+  components:
+  - type: Destructible
+    thresholds: []
+
+# stock mk58 spawns with a loaded magazine, and the range is about filling one and putting it in.
+# both slots are spelled out whole so the null sticks whether the slot map merges or replaces
+- type: entity
+  parent: WeaponPistolMk58
+  id: WeaponPistolMk58Tutorial
+  suffix: Tutorial, Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+
+# another plain copy, named so the flow can tell it from anything else lying on the table. it
+# draws the stock five units a click, and the step teaches the transfer verb instead
+- type: entity
+  parent: Syringe
+  id: SyringeTutorial
+  suffix: Tutorial
+
+- type: entity
+  parent: Paper
+  id: PaperTutorialBurgerRecipe
+  name: recipe sheet
+  description: A page torn out of the kitchen folder. Someone circled the cook time twice.
+  suffix: Tutorial
+  components:
+  - type: TutorialInedible
+  - type: Paper
+    content: paper-tutorial-burger
+
+# stock tomatoes take about four minutes from seed to harvest, which is a long time to stand in
+# front of a tray. this one runs on a four second cycle and ripens early, and its temperature and
+# pressure limits are opened wide so a broken window somewhere else never makes it sulk
+- type: entity
+  parent: TomatoPlants
+  id: TomatoPlantsTutorial
+  suffix: Tutorial
+  components:
+  - type: PlantHolder
+    cycleDelay: 4
+  - type: Plant
+    # lifespan is counted in growth cycles, not seconds, so the faster cycle would have burned
+    # through the stock twenty five of them in under two minutes and killed the plant mid-lesson
+    lifespan: 200
+    maturation: 6
+    production: 4
+    yield: 2
+    potency: 10
+  - type: PlantAtmospheric
+    lowHeatTolerance: 0
+    highHeatTolerance: 10000
+    lowPressureTolerance: 0
+    highPressureTolerance: 10000
+
+- type: entity
+  parent: TomatoSeeds
+  id: TomatoSeedsTutorial
+  suffix: Tutorial
+  components:
+  - type: Seed
+    plantId: TomatoPlantsTutorial
+
+# nothing in the flow teaches weeding, pests or flushing toxins, so the tray is not allowed to
+# start complaining about them, and it drinks at a quarter of the usual rate so one watering
+# carries the tomatoes to harvest.
+#
+# the tick rate is the important one. soil gives the plant one unit of each reagent per tick and
+# no more, however much you poured in, so at the stock three seconds a bucketful takes minutes to
+# soak in and the water gauge looks frozen. half a second makes the levels move while you watch.
+- type: entity
+  parent: HydroponicsTrayEmpty
+  id: HydroponicsTrayTutorial
+  suffix: Tutorial, Empty
+  components:
+  - type: PlantTray
+    waterLevel: 0
+    nutritionLevel: 0
+    weedGrowthChance: 0
+    # the plant stays healthy above 10 water and 5 nutrient. a quarter of the stock drain keeps
+    # it well clear of both for the whole growth, so no warning light ever comes back on
+    trayConsumptionMultiplier: 0.5
+    updateDelay: 0.5
+  # the stock soil solution never declares a capacity, and an empty one defaults to holding
+  # nothing at all. spell it out so pouring into it is predictable
+  - type: Solution
+    id: soil
+    solution:
+      maxVol: 100
+  # and let it drink while it is still bare, so watering an empty tray actually moves the gauges
+  # and puts the warning lights out before the seeds go in
+  - type: TutorialSoil
+  - type: Destructible
+    thresholds: []

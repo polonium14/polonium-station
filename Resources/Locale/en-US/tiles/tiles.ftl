@@ -167,9 +167,8 @@ tiles-ironsand-concrete-smooth = smooth ironsand concrete floor
 tiles-ironsand-packed = packed ironsand
 tiles-ironsand-paved = paved ironsand
 
-tiles-hull-invisible = niewidzialna płyta kadłuba
-
-tiles-invisible-floor = niewidzialna płyta podłogowa
+tiles-hull-invisible = invisible hull plating
+tiles-invisible-floor = invisible floor
 
 tiles-exo-viscera = exodermis viscera floor
 tiles-exo-hull = exodermis hull floor

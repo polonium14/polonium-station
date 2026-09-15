@@ -1,17 +1,5 @@
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 12rabbits <53499656+12rabbits@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
-// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
 using System.Linq;
+using Content.Client._Polonium.Tutorial;
 using Content.Client.Gameplay;
 using Content.Client.Guidebook;
 using Content.Client.Guidebook.Controls;
@@ -42,6 +30,7 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
     private const int PlaytimeOpenGuidebook = 60;
 
     private GuidebookWindow? _guideWindow;
+    public bool IsGuidebookOpen => _guideWindow?.IsOpen == true;
     private MenuButton? GuidebookButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.GuidebookButton;
     private ProtoId<GuideEntryPrototype>? _lastEntry;
 
@@ -65,7 +54,7 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
         _guideWindow.OnOpen += OnWindowOpen;
 
         if (state is LobbyState &&
-            _jobRequirements.FetchOverallPlaytime() < TimeSpan.FromMinutes(PlaytimeOpenGuidebook))
+            _jobRequirements.FetchOverallPlaytime() < TimeSpan.FromMinutes(PlaytimeOpenGuidebook) && _configuration.GetCVar(CCVars.IntroServerMode) == IntroMode.Off)
         {
             OpenGuidebook();
             _guideWindow.RecenterWindow(new(0.5f, 0.5f));
@@ -166,6 +155,9 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
     {
         if (GuidebookButton != null)
             GuidebookButton.Pressed = true;
+
+        if (EntityManager.TrySystem<TutorialPresentationSystem>(out var tutorial))
+            tutorial.NotifyGuidebookOpened();
     }
 
     /// <summary>

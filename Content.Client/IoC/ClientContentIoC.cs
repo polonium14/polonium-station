@@ -10,6 +10,7 @@ using Content.Client.Fullscreen;
 using Content.Client.GameTicking.Managers;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
+using Content.Client._Polonium.Tutorial.Lobby;
 using Content.Client.Launcher;
 using Content.Client.Mapping;
 using Content.Client.Parallax.Managers;
@@ -68,6 +69,7 @@ namespace Content.Client.IoC
             collection.Register<ClientFeedbackManager>();
             collection.Register<ISharedFeedbackManager, ClientFeedbackManager>();
             collection.Register<MidiFileCollectionManager>();
+            collection.Register<TutorialManager>();
         }
     }
 }

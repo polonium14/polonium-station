@@ -323,6 +323,72 @@ namespace Content.Client.Lobby.UI
 
             UpdateSpeciesGuidebookIcon();
             IsDirty = false;
+
+            // Polonium intro - lock tabs during guided character setup
+            TabContainer.OnTabChanged += OnTabChanging;
+        }
+
+        // Polonium intro tab locking
+        private int _previousTab;
+        private readonly HashSet<int> _disabledTabs = new();
+
+        public void OpenTab(int tabIndex)
+        {
+            if (_disabledTabs.Contains(tabIndex))
+                _disabledTabs.Remove(tabIndex);
+            TabContainer.CurrentTab = tabIndex;
+        }
+
+        public void DisableTab(int tabIndex)
+        {
+            _disabledTabs.Add(tabIndex);
+
+            if (TabContainer.CurrentTab == tabIndex)
+            {
+                TabContainer.CurrentTab = GetFirstEnabledTab();
+            }
+        }
+
+        public void EnableTab(int tabIndex)
+        {
+            _disabledTabs.Remove(tabIndex);
+        }
+
+        public void DisableAllTabsExcept(int exceptIndex)
+        {
+            for (var i = 0; i < TabContainer.ChildCount; i++)
+            {
+                if (i != exceptIndex)
+                    _disabledTabs.Add(i);
+            }
+
+            TabContainer.CurrentTab = exceptIndex;
+        }
+
+        public void EnableAllTabs()
+        {
+            _disabledTabs.Clear();
+        }
+
+        private void OnTabChanging(int newTab)
+        {
+            if (_disabledTabs.Contains(newTab))
+            {
+                TabContainer.CurrentTab = _previousTab;
+                return;
+            }
+
+            _previousTab = newTab;
+        }
+
+        private int GetFirstEnabledTab()
+        {
+            for (var i = 0; i < TabContainer.ChildCount; i++)
+            {
+                if (!_disabledTabs.Contains(i))
+                    return i;
+            }
+            return 0;
         }
 
         private void SetDirty()
@@ -421,6 +487,7 @@ namespace Content.Client.Lobby.UI
             if (!disposing)
                 return;
 
+            TabContainer.OnTabChanged -= OnTabChanging;
             _loadoutWindow?.Dispose();
             _loadoutWindow = null;
         }
