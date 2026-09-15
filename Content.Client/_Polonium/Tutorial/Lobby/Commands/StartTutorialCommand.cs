@@ -1,5 +1,6 @@
 ﻿using Content.Client.Lobby;
 using Content.Client.Lobby.UI;
+using Content.Shared._Polonium.Tutorial;
 using Content.Shared.Administration;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
@@ -20,6 +21,12 @@ public sealed partial class StartTutorialCommand : LocalizedCommands
         if (args.Length != 0)
         {
             shell.WriteLine(Help);
+            return;
+        }
+
+        if (_tutorial.GetIntroMode() == SharedTutorialSystem.IntroNone)
+        {
+            shell.WriteError(Loc.GetString("cmd-startintro-disabled"));
             return;
         }
 

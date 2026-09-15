@@ -1,7 +1,6 @@
 using System.Linq;
 using Content.Server.Ame.EntitySystems;
 using Content.Server.Explosion.EntitySystems;
-using Content.Server.NPC.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Wires;
 using Content.Shared._Polonium.Tutorial.Actions;
@@ -27,7 +26,6 @@ using Content.Shared.Light.EntitySystems;
 using Content.Shared.Lock;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.NPC;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
@@ -59,7 +57,6 @@ public sealed partial class TutorialActionExecutor : EntitySystem
     [Dependency] private WiresSystem _wiresServer = default!;
     [Dependency] private AmeControllerSystem _ame = default!;
     [Dependency] private MobStateSystem _mobs = default!;
-    [Dependency] private NPCSteeringSystem _steering = default!;
     [Dependency] private TutorialNpcSystem _npcs = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private ExplosionSystem _explosion = default!;
@@ -129,10 +126,6 @@ public sealed partial class TutorialActionExecutor : EntitySystem
                 ClaimNearby(player, claim);
                 break;
 
-            case ApplyDamageAction dmg:
-                ApplyDamage(player, dmg);
-                break;
-
             case MeteorWindowAction meteor:
                 if (instant)
                     BreakWindow(player, meteor.WindowAnchor, meteor.Damage);
@@ -155,10 +148,6 @@ public sealed partial class TutorialActionExecutor : EntitySystem
 
             case SetDisarmProneAction prone:
                 SetDisarmProne(player, prone);
-                break;
-
-            case MoveNpcToAnchorAction move:
-                MoveNpc(player, move, instant);
                 break;
 
             case BonkNpcAction bonk:
@@ -305,7 +294,7 @@ public sealed partial class TutorialActionExecutor : EntitySystem
             return;
         }
 
-        BindSpawned(player, mob, assign, tutorialNpc: true, claim.PreventDeath, claim.MarkDeadPatient, claim.PatientKind, claim.PatientDamageType);
+        BindSpawned(player, mob, assign, tutorialNpc: true, claim.PreventDeath, claim.MarkDeadPatient);
     }
 
     private bool TryPickClaimTarget(EntityUid player, EntityUid at, ClaimNearbyMobAction claim, out EntityUid mob)
@@ -333,8 +322,6 @@ public sealed partial class TutorialActionExecutor : EntitySystem
 
             if (claim.MarkDeadPatient)
                 score *= _mobs.IsDead(uid) ? 0.01f : 8f;
-            else if (!string.IsNullOrWhiteSpace(claim.PatientKind))
-                score *= _mobs.IsDead(uid) ? 8f : 0.01f;
 
             if (score >= bestScore)
                 continue;
@@ -354,7 +341,7 @@ public sealed partial class TutorialActionExecutor : EntitySystem
         return true;
     }
 
-    private void BindSpawned(EntityUid player, EntityUid spawned, string? assignId, bool tutorialNpc, bool preventDeath, bool markDeadPatient = false, string? patientKind = null, string? patientDamageType = null)
+    private void BindSpawned(EntityUid player, EntityUid spawned, string? assignId, bool tutorialNpc, bool preventDeath, bool markDeadPatient = false)
     {
         if (tutorialNpc)
         {
@@ -368,11 +355,6 @@ public sealed partial class TutorialActionExecutor : EntitySystem
             var patient = EnsureComp<TutorialPatientComponent>(spawned);
             patient.SpawnedDead = true;
         }
-        else if (!string.IsNullOrWhiteSpace(patientKind))
-        {
-            var patient = EnsureComp<TutorialPatientComponent>(spawned);
-            patient.DamageType = patientDamageType;
-        }
 
         if (string.IsNullOrWhiteSpace(assignId))
             return;
@@ -384,19 +366,6 @@ public sealed partial class TutorialActionExecutor : EntitySystem
         anchor.AnchorId = assignId;
         Dirty(spawned, anchor);
         session.Anchors[assignId] = spawned;
-    }
-
-    private void ApplyDamage(EntityUid player, ApplyDamageAction dmg)
-    {
-        if (!TryGetAnchor(player, dmg.AnchorId, out var uid))
-            return;
-
-        var spec = new DamageSpecifier
-        {
-            DamageDict = { [dmg.DamageType] = dmg.Amount }
-        };
-
-        _damageable.ChangeDamage(uid, spec, ignoreResistances: true);
     }
 
     private void BreakWindow(EntityUid player, string anchorId, float amount)
@@ -514,26 +483,6 @@ public sealed partial class TutorialActionExecutor : EntitySystem
             else
                 RemComp<DisarmProneComponent>(uid);
         }
-    }
-
-    private void MoveNpc(EntityUid player, MoveNpcToAnchorAction move, bool instant = false)
-    {
-        if (!TryGetAnchor(player, move.NpcAnchorId, out var npc)
-            || !TryGetAnchor(player, move.TargetAnchorId, out var target))
-            return;
-
-        var coords = Transform(target).Coordinates;
-
-        // walking reads far better than blinking. Claimed mobs are plain humans with no AI at
-        // all, so they need waking up before steering will touch them
-        if (move.Walk && !instant)
-        {
-            EnsureComp<ActiveNPCComponent>(npc);
-            _steering.Register(npc, coords);
-            return;
-        }
-
-        _transform.SetCoordinates(npc, coords);
     }
 
     /// <summary>

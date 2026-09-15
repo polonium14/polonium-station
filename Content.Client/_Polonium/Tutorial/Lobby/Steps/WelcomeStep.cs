@@ -4,7 +4,6 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
-using System.Numerics;
 using Content.Client.Resources;
 using Content.Shared._Polonium.Tutorial.Lobby;
 
@@ -33,7 +32,6 @@ public sealed class WelcomeStep : ClientsideNavTutorialStep
         var helloText = new TextureRect
         {
             Texture = ResCache.GetTexture("/Textures/_Polonium/Interface/Misc/intro_markers/Text/greeting_text.png"),
-            //SetSize = new Vector2(256, 96),
             Stretch = TextureRect.StretchMode.Scale,
             HorizontalAlignment = Control.HAlignment.Center,
         };

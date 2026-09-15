@@ -1,10 +1,8 @@
 using System.Linq;
-using Content.Client._Polonium.Tutorial;
 using Content.Client.Gameplay;
 using Content.Client.Guidebook;
 using Content.Client.Guidebook.Controls;
 using Content.Client.Lobby;
-using Content.Client.Players.PlayTimeTracking;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.CCVar;
 using Content.Shared.Guidebook;
@@ -25,9 +23,6 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
     [UISystemDependency] private readonly GuidebookSystem _guidebookSystem = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IConfigurationManager _configuration = default!;
-    [Dependency] private JobRequirementsManager _jobRequirements = default!;
-
-    private const int PlaytimeOpenGuidebook = 60;
 
     private GuidebookWindow? _guideWindow;
     public bool IsGuidebookOpen => _guideWindow?.IsOpen == true;
@@ -52,14 +47,6 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
         _guideWindow = UIManager.CreateWindow<GuidebookWindow>();
         _guideWindow.OnClose += OnWindowClosed;
         _guideWindow.OnOpen += OnWindowOpen;
-
-        if (state is LobbyState &&
-            _jobRequirements.FetchOverallPlaytime() < TimeSpan.FromMinutes(PlaytimeOpenGuidebook) && _configuration.GetCVar(CCVars.IntroServerMode) == IntroMode.Off)
-        {
-            OpenGuidebook();
-            _guideWindow.RecenterWindow(new(0.5f, 0.5f));
-            _guideWindow.SetPositionFirst();
-        }
 
         // setup keybinding
         CommandBinds.Builder
@@ -155,9 +142,6 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
     {
         if (GuidebookButton != null)
             GuidebookButton.Pressed = true;
-
-        if (EntityManager.TrySystem<TutorialPresentationSystem>(out var tutorial))
-            tutorial.NotifyGuidebookOpened();
     }
 
     /// <summary>

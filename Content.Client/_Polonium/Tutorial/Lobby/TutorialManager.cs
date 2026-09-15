@@ -3,6 +3,7 @@ using Content.Client._Polonium.Tutorial.Lobby.UI;
 using Content.Client.Lobby;
 using Content.Client.Lobby.UI;
 using TutorialPresentationSystem = Content.Client._Polonium.Tutorial.TutorialPresentationSystem;
+using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Lobby;
 using Content.Shared.CCVar;
 using Robust.Client;
@@ -29,7 +30,6 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     private LobbyUIController _lobby = default!;
 
     // Public Properties
-    public ClientsideTutorialLobbyStep CurrentStep => ConvertToLegacyStep(ActiveStep);
     public bool IsTutorialActive => _currentStepIndex >= 0;
     public bool IsPaused => _isPaused;
     public bool IsCompleted => Progress.IsCompleted;
@@ -47,10 +47,6 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
             : null;
 
     public TutorialLobbyProgress Progress { get; } = new();
-
-    public int CurrentStepIndex => _currentStepIndex;
-    public bool CanGoBack => _currentStepIndex > 0;
-    public bool CanGoForward => _currentStepIndex < _steps.Count - 1;
 
     public event Action<IClientsideNavTutorialStep>? OnActiveStepChanged;
     public event Action<IClientsideNavTutorialStep>? OnActiveStepSkipped;
@@ -82,15 +78,22 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
     #region Core Methods
 
+    public string GetIntroMode() =>
+        SharedTutorialSystem.ReadIntroMode(_cfg, _sawmill ?? Logger.GetSawmill("tutorial.lobby"));
+
     public void StartTutorial()
     {
-        if (_cfg.GetCVar(CCVars.IntroServerMode) == IntroMode.Tutorial)
+        var mode = GetIntroMode();
+        if (mode == SharedTutorialSystem.IntroNone)
+            return;
+
+        if (mode == SharedTutorialSystem.IntroTutorial)
         {
             _systems.GetEntitySystem<TutorialPresentationSystem>().RequestPracticalJoin();
             return;
         }
 
-        if (_cfg.GetCVar(CCVars.IntroServerMode) == IntroMode.Main
+        if (mode == SharedTutorialSystem.IntroMain
             && !string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
         {
             OpenTrainingHopWindow();
@@ -217,7 +220,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
     public void OpenTrainingHopWindow()
     {
-        if (_cfg.GetCVar(CCVars.IntroServerMode) != IntroMode.Main)
+        if (GetIntroMode() != SharedTutorialSystem.IntroMain)
             return;
 
         if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
@@ -449,12 +452,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
     private bool ShouldOfferTraining()
     {
-#if DEBUG
-        if (!_cfg.GetCVar(CCVars.IntroInDebug))
-            return false;
-#endif
-
-        if (_cfg.GetCVar(CCVars.IntroServerMode) != IntroMode.Main)
+        if (GetIntroMode() != SharedTutorialSystem.IntroMain)
             return false;
 
         if (_cfg.GetCVar(CCVars.IntroDeclined) || _cfg.GetCVar(CCVars.IntroCompleted))
@@ -533,11 +531,6 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
     private void OnLobbyEntered(LobbyGui gui)
     {
-#if DEBUG
-        if (!_cfg.GetCVar(CCVars.IntroInDebug))
-            return;
-#endif
-
         if (gui.LinksBanner.TutorialButton is { } button)
         {
             button.Disabled = false;
@@ -546,7 +539,11 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         // a cancelled or crashed run can leave the editor half locked, always undo that here
         _lobby.ProfileEditor?.EnableAllTabs();
 
-        if (_cfg.GetCVar(CCVars.IntroServerMode) == IntroMode.Tutorial)
+        var mode = GetIntroMode();
+        if (mode == SharedTutorialSystem.IntroNone)
+            return;
+
+        if (mode == SharedTutorialSystem.IntroTutorial)
         {
             _systems.GetEntitySystem<TutorialPresentationSystem>().RequestPracticalJoin();
             return;

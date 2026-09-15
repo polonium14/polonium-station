@@ -1,22 +1,16 @@
 server-info-introduction-button = Samouczek
 
-intro-skip-button = Pomiń samouczek
 intro-character-creation-reopen-message = Zamknąłeś edytor postaci – nic straconego. Kliknij [bold]"{$intro-lobby-overview-character-editor-button}"[/bold] jeszcze raz, a wrócimy dokładnie tam, gdzie skończyliśmy.
-intro-gotcha-button = Zrozumiałem
-intro-lobby-ready-up-button-desc = Wciśnij przycisk dołączenia, gdy będziesz gotowy, aby rozpocząć grę!
 intro-click-to-continue-label = Kliknij tu, aby kontynuować...
 intro-click-any-to-continue-label = Kliknij w dowolnym miejscu, aby kontynuować...
 
 intro-info-complete = Wprowadzenie zakończone! Teraz możesz zacząć swoją przygodę na stacji kosmicznej. Powodzenia!
 intro-begin-error-already-running = Wprowadzenie jest już uruchomione.
 intro-begin-error-outside-lobby = Nie możesz rozpocząć wprowadzenia poza ekranem lobby.
-intro-progress-update-error-invalid-session = Nie można zaktualizować postępu wprowadzenia bez ważnej sesji gracza.
-intro-progress-update-error-invalid-contentdata = Nie można zaktualizować postępu wprowadzenia bez ważnych danych zawartości sesji gracza.
 
 cmd-startintro-help = Rozpoczyna wprowadzenie dla nowych graczy.
 cmd-startintro-not-in-lobby = Musisz być w lobby, aby rozpocząć wprowadzenie.
-
-cmd-cancelintro-help = Anuluje trwające wprowadzenie.
+cmd-startintro-disabled = Wprowadzenie jest wyłączone na tym serwerze.
 
 intro-welcome-message-1 = [bold]Przygotuj się![/bold] Zostałeś właśnie zakwaterowany na pokładzie [color=purple][bold]Stacji Kosmicznej[/bold][/color] i od tej chwili stajesz się częścią przygody, jakiej jeszcze nie doświadczyłeś!
 intro-welcome-message-2 = Tak, nasza gra jest trudna i skomplikowana – [bold]to jej urok![/bold] Pomożemy Ci w Twoich pierwszych krokach do gry!

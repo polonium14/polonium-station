@@ -10,7 +10,6 @@ using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
-using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
@@ -19,7 +18,6 @@ using Content.Shared.Tools.Components;
 using Content.Shared.Wall;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
-using Robust.Shared.Containers;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -41,7 +39,6 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private MobThresholdSystem _thresholds = default!;
     [Dependency] private StandingStateSystem _standing = default!;
-    [Dependency] private SharedContainerSystem _container = default!;
 
     public override void Initialize()
     {
@@ -89,6 +86,9 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
     private void OnStartPractical(TutorialStartPracticalEvent ev, EntitySessionEventArgs args)
     {
+        if (ReadIntroMode() != IntroTutorial)
+            return;
+
         _solitary.TryJoinFromLobby(args.SenderSession);
     }
 
@@ -97,7 +97,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         if (ev.NewStatus != SessionStatus.Connected)
             return;
 
-        if (_cfg.GetCVar(CCVars.IntroServerMode) != IntroMode.Main)
+        if (ReadIntroMode() != IntroMain)
             return;
 
         if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
@@ -108,7 +108,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
     private void OnPlayerJoinedLobby(PlayerJoinedLobbyEvent ev)
     {
-        if (_cfg.GetCVar(CCVars.IntroServerMode) == IntroMode.Tutorial)
+        if (ReadIntroMode() == IntroTutorial)
             _solitary.TryJoinFromLobby(ev.PlayerSession);
     }
 
@@ -132,6 +132,9 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
     private void OnRestartRequested(TutorialRestartRequestedEvent ev, EntitySessionEventArgs args)
     {
+        if (ReadIntroMode() == IntroNone)
+            return;
+
         var session = args.SenderSession;
 
         if (_solitary.TryRestartTutorial(session))
@@ -146,6 +149,9 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
     private void StartFlow(EntityUid player, ProtoId<TutorialFlowPrototype> flowId)
     {
+        if (ReadIntroMode() == IntroNone)
+            return;
+
         if (!_player.TryGetSessionByEntity(player, out _))
             return;
 
@@ -456,41 +462,6 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         return true;
     }
 
-    public bool AreLivingPatientsHealed(EntityUid player)
-    {
-        var any = false;
-        foreach (var (uid, patient) in PatientsOnGrid(player))
-        {
-            if (patient.SpawnedDead)
-                continue;
-
-            if (_mobState.IsDead(uid))
-                continue;
-
-            any = true;
-            if (!IsHealed(uid, patient))
-                return false;
-        }
-
-        return any;
-    }
-
-    public bool AreDeadPatientsContained(EntityUid player)
-    {
-        var any = false;
-        foreach (var (uid, _) in PatientsOnGrid(player))
-        {
-            if (!_mobState.IsDead(uid))
-                continue;
-
-            any = true;
-            if (!_container.IsEntityInContainer(uid))
-                return false;
-        }
-
-        return any;
-    }
-
     private void OnWallUsing(EntityUid uid, WallComponent component, InteractUsingEvent args)
     {
         TryBlockHullUsing(uid, args);
@@ -557,36 +528,5 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
             _actions.Teleport(ent.Owner, nav);
 
         _mentor.Enqueue(ent.Owner, new LocId[] { "tutorial-holopad-quip-death" });
-    }
-
-    private IEnumerable<(EntityUid Uid, TutorialPatientComponent Patient)> PatientsOnGrid(EntityUid player)
-    {
-        if (!TryComp(player, out TransformComponent? xform) || xform.GridUid is not { } grid)
-            yield break;
-
-        var query = EntityQueryEnumerator<TutorialPatientComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var patient, out var px))
-        {
-            if (px.GridUid != grid)
-                continue;
-
-            yield return (uid, patient);
-        }
-    }
-
-    private bool IsHealed(EntityUid uid, TutorialPatientComponent patient)
-    {
-        if (!TryComp<DamageableComponent>(uid, out var dmg))
-            return true;
-
-        var threshold = FixedPoint2.New(patient.HealBelow);
-
-        if (patient.DamageType is { } type)
-        {
-            var pos = _damageable.GetPositiveDamage((uid, dmg));
-            return !pos.DamageDict.TryGetValue(type, out var v) || v <= threshold;
-        }
-
-        return !_damageable.TryGetDamageGreaterThan((uid, dmg), threshold, out _);
     }
 }

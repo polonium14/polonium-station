@@ -16,10 +16,4 @@ public sealed partial class ClaimNearbyMobAction : TutorialAction
 
     [DataField]
     public bool MarkDeadPatient;
-
-    [DataField]
-    public string? PatientKind;
-
-    [DataField]
-    public string? PatientDamageType;
 }

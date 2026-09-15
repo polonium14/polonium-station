@@ -131,7 +131,6 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         SubscribeLocalEvent<DisposalUnitComponent, BeforeDisposalFlushEvent>(OnDisposalFlush);
 
         SubscribeNetworkEvent<TutorialAcknowledgeStepEvent>(OnAcknowledge);
-        SubscribeNetworkEvent<TutorialGuidebookOpenedEvent>(OnGuidebook);
         SubscribeNetworkEvent<TutorialCraftingMenuOpenedEvent>(OnCraftingMenu);
         SubscribeNetworkEvent<TutorialConstructionGhostStateEvent>(OnConstructionGhost);
         SubscribeLocalEvent<TutorialExamineProbeComponent, ExaminedEvent>(OnProbeExamined);
@@ -292,7 +291,6 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         {
             SlipTeleportWatcher => session.Flags.Contains("slipped"),
             FlagWatcher flag => session.Flags.Contains(flag.Flag),
-            AnchorEmptyOrGoneWatcher empty => CheckEmptyOrGone(session, empty.AnchorId),
             AnchorNearWatcher near => CheckAnchorsNear(player, near.AnchorId, near.NearAnchorId, near.Range, near.Away),
             PuddleNearbyWatcher puddle => CheckPuddleNearby(player, puddle),
             AbsorbentSpentWatcher => CheckAbsorbentSpent(player),
@@ -312,17 +310,13 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             AnyReachAnchorsCondition anyReach => anyReach.AnchorIds.Any(id => CheckReach(player, id, anyReach.Range)),
             CrawlingReachCondition crawl => _standing.IsDown(player) && crawl.AnchorIds.Any(id => CheckReach(player, id, crawl.Range)),
             BothHandsAnchorsCondition both => CheckBothHands(player, both.AnchorIds),
-            InteractAnchorCondition interact => session.Flags.Contains($"interact:{interact.AnchorId}"),
             NotCondition not => !Evaluate(player, session, not.Condition),
             SlotContainsAnchorRecursiveCondition slot => CheckSlotContainsRecursive(player, slot),
-            SlotContainsPrototypesCondition slotProtos => CheckSlotPrototypes(player, slotProtos),
             ToolQualitiesCondition tools => CheckToolQualities(player, tools),
             DoorStateAnchorCondition doorState => AnyAnchor(player, doorState.AnchorId,
                 uid => TryComp<DoorComponent>(uid, out var door) && door.State == doorState.State),
             ItemPulledCondition pull => CheckPulling(player, session, pull),
             AnchorsNearCondition near => CheckAnchorsNear(player, near.AnchorId, near.NearAnchorId, near.Range),
-            TutorialPatientsHealedCondition => _tutorial.AreLivingPatientsHealed(player),
-            TutorialDeadPatientsContainedCondition => _tutorial.AreDeadPatientsContained(player),
             ManualAcknowledgeCondition => session.Flags.Contains("ack"),
             InternalsOnCondition => _internals.AreInternalsWorking(player),
             DrainableReagentNearbyCondition reagent => CheckDrainableReagent(player, reagent),
@@ -374,7 +368,6 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             CuffedAnchorCondition cuff => AnyAnchor(player, cuff.AnchorId, uid => TryComp<CuffableComponent>(uid, out var c) && c.CuffedHandCount > 0),
             PaperSignedCondition paper => AnyAnchor(player, paper.AnchorId, IsSigned),
             PoweredAnchorCondition powered => AnyAnchor(player, powered.AnchorId, uid => _power.IsPowered(uid)),
-            PoweredLightStateCondition light => CheckLights(player, light),
             AmeInjectingCondition ame => AnyAnchor(player, ame.AnchorId, uid => _ame.IsInjecting(uid)),
             WearingSlotCondition wear => _inventory.TryGetSlotEntity(player, wear.Slot, out _),
             PuddlesClearedCondition puddles => CheckPuddlesCleared(player, puddles),
@@ -382,11 +375,9 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             HealthAnalyzedCondition scan => session.Flags.Contains($"analyzed:{scan.AnchorId}"),
             MeleeHitAnchorCondition melee => session.Flags.Contains($"melee:{melee.AnchorId}"),
             AnchorDamagedCondition dmg => CheckDamaged(player, session, dmg.AnchorId),
-            FoodPrototypeNearbyCondition food => CheckFoodNearby(player, food),
             DeadAnchorCondition dead => AnyAnchor(player, dead.AnchorId, uid => _mobs.IsDead(uid)),
             AnchorAliveCondition alive => AnyAnchor(player, alive.AnchorId,
                 uid => HasComp<MobStateComponent>(uid) && _mobs.IsAlive(uid)),
-            GuidebookOpenedCondition => session.Flags.Contains("guidebook"),
             CraftingMenuOpenedCondition => session.Flags.Contains("crafting"),
             ConstructionGhostOnAnchorCondition ghost => session.Flags.Contains(
                 ghost.Stray ? $"ghost-stray:{ghost.AnchorId}" : $"ghost:{ghost.AnchorId}"),
@@ -615,15 +606,6 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         return false;
     }
 
-    private void OnGuidebook(TutorialGuidebookOpenedEvent ev, EntitySessionEventArgs args)
-    {
-        if (args.SenderSession.AttachedEntity is not { } player)
-            return;
-
-        SetFlag(player, "guidebook");
-        Notify(player);
-    }
-
     private void OnCameraRotated(TutorialCameraRotatedEvent ev, EntitySessionEventArgs args)
     {
         if (args.SenderSession.AttachedEntity is not { } player)
@@ -831,16 +813,6 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         return !cond.Strict && InventoryHasAnchors(player, cond.AnchorIds);
     }
 
-    private bool CheckSlotPrototypes(EntityUid player, SlotContainsPrototypesCondition cond)
-    {
-        if (cond.Prototypes.Count == 0 || !_inventory.TryGetSlotEntity(player, cond.Slot, out var worn))
-            return false;
-
-        var found = new HashSet<string>();
-        CollectPrototypesRecursive(worn.Value, found);
-        return cond.Prototypes.All(proto => found.Contains(proto.Id));
-    }
-
     private bool CheckToolQualities(EntityUid player, ToolQualitiesCondition cond)
     {
         if (cond.Qualities.Count == 0)
@@ -898,23 +870,6 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             {
                 found.Add(child);
                 CollectEntitiesRecursive(child, found);
-            }
-        }
-    }
-
-    private void CollectPrototypesRecursive(EntityUid uid, HashSet<string> found)
-    {
-        if (!TryComp<ContainerManagerComponent>(uid, out var containers))
-            return;
-
-        foreach (var container in _container.GetAllContainers(uid, containers))
-        {
-            foreach (var child in container.ContainedEntities)
-            {
-                if (MetaData(child).EntityPrototype?.ID is { } id)
-                    found.Add(id);
-
-                CollectPrototypesRecursive(child, found);
             }
         }
     }
@@ -1051,22 +1006,6 @@ public sealed partial class TutorialConditionTracker : EntitySystem
 
             return false;
         });
-    }
-
-    private bool CheckLights(EntityUid player, PoweredLightStateCondition cond)
-    {
-        var any = false;
-        foreach (var uid in AnchorsOnGrid(player, cond.AnchorId))
-        {
-            if (!TryComp<PoweredLightComponent>(uid, out var light))
-                continue;
-
-            any = true;
-            if (light.On != cond.On)
-                return false;
-        }
-
-        return any;
     }
 
     private bool CheckHolding(EntityUid player, string anchorId)
@@ -1539,56 +1478,6 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         return solution.Volume - evaporating <= 0;
     }
 
-    private bool CheckFoodNearby(EntityUid player, FoodPrototypeNearbyCondition cond)
-    {
-        if (EntityOrContentsIsProto(player, cond.Prototype))
-            return true;
-
-        foreach (var held in _hands.EnumerateHeld(player))
-        {
-            if (EntityOrContentsIsProto(held, cond.Prototype))
-                return true;
-        }
-
-        var slots = _inventory.GetSlotEnumerator(player);
-        while (slots.NextItem(out var item))
-        {
-            if (EntityOrContentsIsProto(item, cond.Prototype))
-                return true;
-        }
-
-        if (!TryComp(player, out TransformComponent? xform))
-            return false;
-
-        foreach (var uid in _lookup.GetEntitiesInRange(xform.Coordinates, cond.Range))
-        {
-            if (EntityOrContentsIsProto(uid, cond.Prototype))
-                return true;
-        }
-
-        return false;
-    }
-
-    private bool EntityOrContentsIsProto(EntityUid uid, string proto)
-    {
-        if (MetaData(uid).EntityPrototype?.ID == proto)
-            return true;
-
-        if (!TryComp<ContainerManagerComponent>(uid, out var containers))
-            return false;
-
-        foreach (var container in _container.GetAllContainers(uid, containers))
-        {
-            foreach (var child in container.ContainedEntities)
-            {
-                if (EntityOrContentsIsProto(child, proto))
-                    return true;
-            }
-        }
-
-        return false;
-    }
-
     private bool CheckAnchorsNear(EntityUid player, string a, string b, float range, bool away = false)
     {
         var closest = float.MaxValue;
@@ -1710,7 +1599,6 @@ public sealed partial class TutorialConditionTracker : EntitySystem
     {
         return cond switch
         {
-            FoodPrototypeNearbyCondition => true,
             AmeInjectingCondition => true,
             PoweredAnchorCondition => true,
             AnyCondition any => any.Conditions.Any(NeedsLongSkip),

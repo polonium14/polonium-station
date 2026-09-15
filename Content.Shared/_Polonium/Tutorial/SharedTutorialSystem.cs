@@ -15,6 +15,9 @@ using Content.Shared.Tag;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Wall;
 using Content.Shared.Wires;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
+using Robust.Shared.Log;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -24,6 +27,7 @@ public abstract partial class SharedTutorialSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private TagSystem _tags = default!;
     [Dependency] private ActionBlockerSystem _blocker = default!;
@@ -36,6 +40,28 @@ public abstract partial class SharedTutorialSystem : EntitySystem
 
     private TimeSpan _nextProtectPopup;
     private EntityUid _lastProtectTarget;
+
+    // None turns the whole tutorial off
+    public const string IntroNone = "None";
+    public const string IntroMain = "Main";
+    public const string IntroTutorial = "Tutorial";
+    public const string DefaultIntroMode = IntroNone;
+
+    public string ReadIntroMode() => ReadIntroMode(_cfg, Log);
+
+    public static string ReadIntroMode(IConfigurationManager cfg, ISawmill log)
+    {
+        var raw = (cfg.GetCVar(CCVars.IntroServerMode) ?? string.Empty).Trim();
+        if (string.Equals(raw, IntroNone, StringComparison.OrdinalIgnoreCase))
+            return IntroNone;
+        if (string.Equals(raw, IntroMain, StringComparison.OrdinalIgnoreCase))
+            return IntroMain;
+        if (string.Equals(raw, IntroTutorial, StringComparison.OrdinalIgnoreCase))
+            return IntroTutorial;
+
+        log.Error($"intro.mode is '{raw}', expected None/Main/Tutorial - using {DefaultIntroMode}");
+        return DefaultIntroMode;
+    }
 
     public override void Initialize()
     {

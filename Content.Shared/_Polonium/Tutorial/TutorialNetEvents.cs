@@ -13,11 +13,6 @@ public sealed class TutorialStartPracticalEvent : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
-public sealed class TutorialGuidebookOpenedEvent : EntityEventArgs
-{
-}
-
-[Serializable, NetSerializable]
 public sealed class TutorialCraftingMenuOpenedEvent : EntityEventArgs
 {
 }

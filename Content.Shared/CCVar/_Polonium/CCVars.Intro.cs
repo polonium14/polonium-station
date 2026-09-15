@@ -7,21 +7,6 @@ using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
-/// <summary>
-/// Role of this server in the training flow. Int backing because cvars demand it.
-/// </summary>
-public enum IntroMode : int
-{
-    /// <summary>No lobby offer, no tutorial button. Guidebook may auto-open for new players.</summary>
-    Off = 0,
-
-    /// <summary>Regular station. Offer unfinished players a hop to the training box.</summary>
-    Main = 1,
-
-    /// <summary>This box is the training server. Skip the lobby and start the map tutorial.</summary>
-    Tutorial = 2,
-}
-
 public sealed partial class CCVars
 {
 
@@ -47,16 +32,14 @@ public sealed partial class CCVars
 // ╚═╝░░╚══╝╚═╝░╚═════╝░╚═╝░░░░░╚═╝
 
     /// <summary>
-    /// Off, Main or Tutorial. Main is the regular station. Tutorial is the training box.
+    /// None, Main or Tutorial. Default is None. Main is the regular station. Tutorial is the training box.
     /// </summary>
-    public static readonly CVarDef<IntroMode> IntroServerMode =
-        CVarDef.Create("intro.mode", IntroMode.Main, CVar.SERVER | CVar.REPLICATED);
-
+    public static readonly CVarDef<string> IntroServerMode =
+        CVarDef.Create("intro.mode", "None", CVar.SERVER | CVar.REPLICATED);
+    
     /// <summary>
-    ///   Enables or disables the introduction system in debug mode.
+    /// Skip the lobby introduction.
     /// </summary>
-    public static readonly CVarDef<bool> IntroInDebug = CVarDef.Create("intro.in_debug", true, CVar.SERVER | CVar.REPLICATED);
-
     public static readonly CVarDef<bool> SkipLobbyIntroDebug =
         CVarDef.Create("intro.skip_lobby_intro_debug", false, CVar.SERVER | CVar.REPLICATED);
 

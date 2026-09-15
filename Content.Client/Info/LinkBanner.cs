@@ -2,6 +2,7 @@ using Content.Client._Polonium.Tutorial.Lobby;
 using Content.Client.Changelog;
 using Content.Client.UserInterface.Systems.EscapeMenu;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Lobby;
 using Content.Shared.CCVar;
 using Robust.Client.UserInterface;
@@ -17,6 +18,7 @@ namespace Content.Client.Info
         public Button? TutorialButton { get; }
 
         private readonly IConfigurationManager _cfg;
+        private readonly TutorialManager _tutorial;
 
         private ValueList<(CVarDef<string> cVar, Button button)> _infoLinks;
 
@@ -30,6 +32,7 @@ namespace Content.Client.Info
 
             var uriOpener = IoCManager.Resolve<IUriOpener>();
             _cfg = IoCManager.Resolve<IConfigurationManager>();
+            _tutorial = IoCManager.Resolve<TutorialManager>();
 
             var rulesButton = new Button() {Text = Loc.GetString("server-info-rules-button")};
             rulesButton.OnPressed += args => new RulesAndInfoWindow().Open();
@@ -53,7 +56,6 @@ namespace Content.Client.Info
             changelogButton.OnPressed += args => UserInterfaceManager.GetUIController<ChangelogUIController>().ToggleWindow();
             buttons.AddChild(changelogButton);
 
-            var tutorialManager = IoCManager.Resolve<TutorialManager>();
             TutorialButton = new Button()
             {
                 Text = Loc.GetString("server-info-introduction-button"),
@@ -61,7 +63,7 @@ namespace Content.Client.Info
             };
             TutorialButton.OnPressed += _ =>
             {
-                tutorialManager.OpenTrainingHopWindow();
+                _tutorial.OpenTrainingHopWindow();
             };
             buttons.AddChild(TutorialButton);
 
@@ -98,7 +100,7 @@ namespace Content.Client.Info
             base.ExitedTree();
         }
 
-        private void OnIntroModeChanged(IntroMode _) => UpdateTutorialButton();
+        private void OnIntroModeChanged(string _) => UpdateTutorialButton();
 
         private void OnIntroHopChanged(string _) => UpdateTutorialButton();
 
@@ -109,7 +111,7 @@ namespace Content.Client.Info
 
             // hop leftover from main would otherwise keep this on the training box
             TutorialButton.Visible =
-                _cfg.GetCVar(CCVars.IntroServerMode) == IntroMode.Main
+                _tutorial.GetIntroMode() == SharedTutorialSystem.IntroMain
                 && !string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString));
         }
     }

@@ -103,11 +103,6 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
         RaiseNetworkEvent(new TutorialStartPracticalEvent());
     }
 
-    public void NotifyGuidebookOpened()
-    {
-        RaiseNetworkEvent(new TutorialGuidebookOpenedEvent());
-    }
-
     private void OnRedial(TutorialRedialEvent ev)
     {
         try
@@ -184,7 +179,6 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
     {
         UpdateHint(ent.Comp);
         WatchCamera(ent.Owner, ent.Comp);
-        WatchGuidebook(ent.Comp);
 
         var ui = (ent.Comp.CurrentStep?.Id, ent.Comp.KeybindHint);
         if (ui == _lastUi)
@@ -258,18 +252,6 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
                 && proto.Completion is CameraRotatedCondition cam)
                 _cameraDegrees = cam.Degrees;
         }
-    }
-
-    private void WatchGuidebook(TutorialSessionComponent session)
-    {
-        if (session.CurrentStep is not { } id || !_proto.TryIndex(id, out var proto))
-            return;
-
-        if (proto.Completion is not GuidebookOpenedCondition)
-            return;
-
-        if (_guidebook.IsGuidebookOpen)
-            NotifyGuidebookOpened();
     }
 
     public override void FrameUpdate(float frameTime)
