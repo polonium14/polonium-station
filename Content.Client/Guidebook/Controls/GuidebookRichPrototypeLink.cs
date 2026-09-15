@@ -1,11 +1,11 @@
 using Content.Client._Polonium.RichText;
-using Content.Client.Guidebook.RichText;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Client.UserInterface.ControlExtensions;
+using Content.Client.UserInterface.RichText;
 
 namespace Content.Client.Guidebook.Controls;
 
@@ -30,7 +30,7 @@ public sealed class GuidebookRichPrototypeLink : Control, IPrototypeLinkControl
         DefaultCursorShape = CursorShape.Hand;
 
         using (UrlTag.Allow())
-            _richTextLabel.SetMessage(_message, tagsAllowed: null, TextLinkTag.LinkColor);
+            _richTextLabel.SetMessage(_message, tagsAllowed: null, TextLinkTag.DefaultLinkColor);
     }
 
     public GuidebookRichPrototypeLink() : base()

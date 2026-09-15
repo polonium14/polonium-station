@@ -4,13 +4,16 @@ using Robust.Shared.Maths;
 
 namespace Content.Client._Polonium.RichText;
 
-public sealed class LinkLabel : Label
+[Virtual]
+public class LinkLabel : Label
 {
+    protected virtual bool DrawUnderline => true;
+
     protected override void Draw(DrawingHandleScreen handle)
     {
         base.Draw(handle);
 
-        if (TextMemory.Length == 0)
+        if (!DrawUnderline || TextMemory.Length == 0)
             return;
 
         Font font;

@@ -57,21 +57,6 @@ namespace Content.Shared.Chat
             AudioVolume = audioVolume;
             AllowHyperlinks = allowHyperlinks;
         }
-
-        public ChatMessage(ChatMessage copyFrom)
-        {
-            Channel = copyFrom.Channel;
-            Message = copyFrom.Message;
-            WrappedMessage = copyFrom.WrappedMessage;
-            SenderEntity = copyFrom.SenderEntity;
-            SenderKey = copyFrom.SenderKey;
-            HideChat = copyFrom.HideChat;
-            MessageColorOverride = copyFrom.MessageColorOverride;
-            AudioPath = copyFrom.AudioPath;
-            AudioVolume = copyFrom.AudioVolume;
-            AllowHyperlinks = copyFrom.AllowHyperlinks;
-            Read = copyFrom.Read;
-        }
     }
 
     /// <summary>
