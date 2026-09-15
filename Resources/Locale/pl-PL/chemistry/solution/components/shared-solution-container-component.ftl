@@ -1,8 +1,8 @@
 shared-solution-container-component-on-examine-main-text =
-    Zawiera { INDEFINITE($desc) } [color={ $color }]{ $colorName } { $desc }[/color] { $chemCount ->
-        [1] substancję chemiczną.
-       *[other] mieszaninę chemikaliów.
-    }
+    Zawiera { $chemCount ->
+        [1] substancję chemiczną
+       *[other] mieszaninę chemikaliów
+    } o kolorze [color={ $color }]{ $colorName }[/color]. Wygląda { $desc }.
 examinable-solution-has-recognizable-chemicals = Rozpoznajesz w roztworze { $recognizedString }.
 examinable-solution-recognized = [color={ $color }]{ $chemical }[/color]
 examinable-solution-on-examine-volume = The contained solution is { $fillLevel ->

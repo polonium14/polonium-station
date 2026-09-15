@@ -46,3 +46,42 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+  strip-bom:
+    name: Strip Locale BOM
+    needs: download
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: l10n_master
+          token: ${{ secrets.BOT_TOKEN }}
+      - name: Strip UTF-8 BOM from Locale
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          bom = b"\xef\xbb\xbf"
+          root = Path("Resources/Locale")
+          n = 0
+          for path in root.rglob("*"):
+              if not path.is_file():
+                  continue
+              data = path.read_bytes()
+              if data.startswith(bom):
+                  path.write_bytes(data[len(bom):])
+                  n += 1
+                  print(path.as_posix())
+          print(f"stripped {n} files")
+          PY
+      - name: Commit stripped files
+        run: |
+          git add -- Resources/Locale
+          if git diff --cached --quiet; then
+            echo "No BOM left to strip"
+            exit 0
+          fi
+          git config user.name "Polonium-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Strip UTF-8 BOM from Locale"
+          git push
+

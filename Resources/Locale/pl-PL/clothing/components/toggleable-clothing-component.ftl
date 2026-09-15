@@ -1,5 +1,5 @@
-toggle-clothing-verb-text = Toggle { CAPITALIZE($entity) }
-toggleable-clothing-remove-first = You have to unequip { $entity } first.
-toggle-clothing-verb-default = Toggle Suit Piece
-toggle-clothing-verb-hood = Toggle Hood
-toggle-clothing-verb-helmet = Toggle Helmet
+toggle-clothing-verb-text = Przełącz { CAPITALIZE($entity) }
+toggleable-clothing-remove-first = Najpierw musisz zdjąć { $entity }.
+toggle-clothing-verb-default = Przełącz element kombinezonu
+toggle-clothing-verb-hood = Przełącz kaptur
+toggle-clothing-verb-helmet = Przełącz hełm

@@ -1,4 +1,4 @@
-﻿names-gray-first-1 = Beer Cheese
+names-gray-first-1 = Beer Cheese
 names-gray-first-2 = Boy
 names-gray-first-3 = Bruce Lee
 names-gray-first-4 = Debo

@@ -1,3 +1,5 @@
+ent-PlantBGoneGrenade = Plant-B-Gone grenade
+    .desc = A botanist's emergency kudzu-killer. Releases a cloud of Plant-B-Gone foam that scorches weeds and plant kudzu on contact.
 ent-HalonGrenade = halon grenade
     .desc = An emergency firefighting grenade that floods an area with halon gas, smothering fires by devouring their oxygen. Do not deploy where people still need to breathe.
 ent-PiemageddonGrenadeAdmeme = Piemageddon grenade

@@ -1,7 +1,7 @@
 flatpack-unpack-no-room = Brak miejsca na rozpakowanie!
 flatpack-examine = Użyj [color=yellow]multitoola[/color] aby to rozpakować.
-flatpack-entity-name = Skondensowane { $name } 
-flatpack-entity-description = De kondensuje się do { INDEFINITE($name) } { $name }. 
+flatpack-entity-name = Skondensowane { $name }
+flatpack-entity-description = De kondensuje się do { INDEFINITE($name) } { $name }.
 flatpacker-item-slot-name = Gniazdo płytki maszynowej
 flatpacker-ui-title = Kondensator 1001
 flatpacker-ui-materials-label = Materiały

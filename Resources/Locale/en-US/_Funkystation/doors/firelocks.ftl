@@ -1,4 +1,4 @@
-﻿firelock-bolt-control-window-title = Bolt Override
+firelock-bolt-control-window-title = Bolt Override
 firelock-bolt-control-window-status-locked = BOLTED
 firelock-bolt-control-window-status-unlocked = UNLOCKED
 firelock-bolt-control-window-status-override = OVERRIDE ENGAGED

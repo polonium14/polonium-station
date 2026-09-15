@@ -7,7 +7,7 @@ concurrency:
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 13 * * 0,3,5,6'
+    - cron: '0 9 * * 0,3,5,6'
 
 jobs:
   build:
@@ -93,7 +93,7 @@ jobs:
       run: Tools/actions_changelogs_since_last_run.py
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
     - name: Publish changelog (RSS)
       continue-on-error: true

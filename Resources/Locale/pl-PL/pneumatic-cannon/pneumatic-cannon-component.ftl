@@ -1,10 +1,10 @@
-﻿### Loc for the pneumatic cannon.
+### Loc for the pneumatic cannon.
 
 pneumatic-cannon-component-itemslot-name = Zbiornik na gaz
 
 ## Shown when trying to fire, but no gas
 
-pneumatic-cannon-component-fire-no-gas = { CAPITALIZE (THE($cannon)) } klika, ale żaden gaz się nie ulatnia.
+pneumatic-cannon-component-fire-no-gas = { CAPITALIZE(THE($cannon)) } klika, ale żaden gaz się nie ulatnia.
 
 ## Shown when changing power.
 

@@ -1,2 +1,2 @@
-jetpack-no-station = Can't use jetpacks under gravity
-jetpack-to-grid = The jetpack turns off
+jetpack-no-station = Nie można używać plecaka odrzutowego w warunkach grawitacji.
+jetpack-to-grid =  Plecak odrzutowy wyłącza się.
