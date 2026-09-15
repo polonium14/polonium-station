@@ -1052,6 +1052,38 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
+        public async Task SetTutorialCompletion(NetUserId player, TimeSpan duration)
+        {
+            await using var db = await GetDb();
+
+            var dbPlayer = await db.DbContext.Player.Where(p => p.UserId == player).SingleOrDefaultAsync();
+            if (dbPlayer == null)
+                return;
+
+            // first finish is the one that counts
+            if (dbPlayer.TutorialCompleted)
+                return;
+
+            dbPlayer.TutorialCompleted = true;
+            dbPlayer.TutorialDuration = duration < TimeSpan.Zero ? TimeSpan.Zero : duration;
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<(bool Completed, TimeSpan? Duration)> GetTutorialCompletion(NetUserId player)
+        {
+            await using var db = await GetDb();
+
+            var row = await db.DbContext.Player
+                .Where(p => p.UserId == player)
+                .Select(p => new { p.TutorialCompleted, p.TutorialDuration })
+                .SingleOrDefaultAsync();
+
+            if (row == null)
+                return (false, null);
+
+            return (row.TutorialCompleted, row.TutorialDuration);
+        }
+
         public async Task<bool> GetBlacklistStatusAsync(NetUserId player)
         {
             await using var db = await GetDb();

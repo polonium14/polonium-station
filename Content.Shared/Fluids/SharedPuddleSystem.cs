@@ -133,7 +133,7 @@ public abstract partial class SharedPuddleSystem : EntitySystem
         _deletionQueue.Remove(entity);
         UpdateSlip((entity, entity.Comp), args.Solution.Comp.Solution);
         UpdateSlow(entity, args.Solution.Comp.Solution, entity.Comp);
-        UpdateEvaporation(entity, args.Solution.Comp.Solution);
+        UpdateEvaporation((entity, entity.Comp), args.Solution.Comp.Solution);
         UpdateAppearance((entity, entity.Comp));
     }
 

@@ -257,6 +257,13 @@ namespace Content.Server.Database
 
         #endregion
 
+        #region Tutorial
+
+        Task SetTutorialCompletion(NetUserId player, TimeSpan duration);
+        Task<(bool Completed, TimeSpan? Duration)> GetTutorialCompletion(NetUserId player);
+
+        #endregion
+
         #region Admin Notes
 
         Task<int> AddAdminNote(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, NoteSeverity severity, bool secret, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime);
@@ -825,6 +832,18 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.SetLastReadRules(player, time));
+        }
+
+        public Task SetTutorialCompletion(NetUserId player, TimeSpan duration)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetTutorialCompletion(player, duration));
+        }
+
+        public Task<(bool Completed, TimeSpan? Duration)> GetTutorialCompletion(NetUserId player)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetTutorialCompletion(player));
         }
 
         public Task<int> AddAdminNote(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, NoteSeverity severity, bool secret, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime)

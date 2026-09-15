@@ -1,6 +1,9 @@
+using Content.Client._Polonium.Tutorial.Lobby;
 using Content.Client.Changelog;
 using Content.Client.UserInterface.Systems.EscapeMenu;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._Polonium.Tutorial;
+using Content.Shared._Polonium.Tutorial.Lobby;
 using Content.Shared.CCVar;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -11,7 +14,11 @@ namespace Content.Client.Info
 {
     public sealed class LinkBanner : BoxContainer
     {
+        [Access(typeof(IClientsideNavTutorialStep), typeof(SharedTutorialLobbyManager))]
+        public Button? TutorialButton { get; }
+
         private readonly IConfigurationManager _cfg;
+        private readonly TutorialManager _tutorial;
 
         private ValueList<(CVarDef<string> cVar, Button button)> _infoLinks;
 
@@ -25,6 +32,7 @@ namespace Content.Client.Info
 
             var uriOpener = IoCManager.Resolve<IUriOpener>();
             _cfg = IoCManager.Resolve<IConfigurationManager>();
+            _tutorial = IoCManager.Resolve<TutorialManager>();
 
             var rulesButton = new Button() {Text = Loc.GetString("server-info-rules-button")};
             rulesButton.OnPressed += args => new RulesAndInfoWindow().Open();
@@ -48,6 +56,17 @@ namespace Content.Client.Info
             changelogButton.OnPressed += args => UserInterfaceManager.GetUIController<ChangelogUIController>().ToggleWindow();
             buttons.AddChild(changelogButton);
 
+            TutorialButton = new Button()
+            {
+                Text = Loc.GetString("server-info-introduction-button"),
+                Visible = false,
+            };
+            TutorialButton.OnPressed += _ =>
+            {
+                _tutorial.OpenTrainingHopWindow();
+            };
+            buttons.AddChild(TutorialButton);
+
             void AddInfoButton(string loc, CVarDef<string> cVar)
             {
                 var button = new Button { Text = Loc.GetString(loc) };
@@ -68,6 +87,32 @@ namespace Content.Client.Info
             {
                 link.Visible = _cfg.GetCVar(cVar) != "";
             }
+
+            _cfg.OnValueChanged(CCVars.IntroServerMode, OnIntroModeChanged);
+            _cfg.OnValueChanged(CCVars.IntroSolitaryServerConnectionString, OnIntroHopChanged);
+            UpdateTutorialButton();
+        }
+
+        protected override void ExitedTree()
+        {
+            _cfg.UnsubValueChanged(CCVars.IntroServerMode, OnIntroModeChanged);
+            _cfg.UnsubValueChanged(CCVars.IntroSolitaryServerConnectionString, OnIntroHopChanged);
+            base.ExitedTree();
+        }
+
+        private void OnIntroModeChanged(string _) => UpdateTutorialButton();
+
+        private void OnIntroHopChanged(string _) => UpdateTutorialButton();
+
+        private void UpdateTutorialButton()
+        {
+            if (TutorialButton == null)
+                return;
+
+            // hop leftover from main would otherwise keep this on the training box
+            TutorialButton.Visible =
+                _tutorial.GetIntroMode() == SharedTutorialSystem.IntroMain
+                && !string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString));
         }
     }
 }

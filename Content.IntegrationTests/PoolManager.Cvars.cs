@@ -27,6 +27,7 @@ public static partial class PoolManager
         (CCVars.ProcgenPreload.Name,          "false"),
         (CCVars.GameDummyTicker.Name, "true"),
         (CCVars.GameLobbyEnabled.Name, "false"),
+        (CCVars.IntroServerMode.Name, "None"),
         (CCVars.ConfigPresetDevelopment.Name, "false"),
         (CCVars.AdminLogsEnabled.Name, "false"),
         (CCVars.AutosaveEnabled.Name, "false"),

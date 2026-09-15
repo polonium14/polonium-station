@@ -6,6 +6,7 @@ using Content.Server.Ame.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.NodeContainer;
 using Content.Server.Power.Components;
+using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared.Ame.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
@@ -301,7 +302,30 @@ public sealed partial class AmeControllerSystem : EntitySystem
     {
         if (!TryGetAMENodeGroup(ent, out var group))
             return 0;
+        // Polonium - the tutorial stops at the safe limit, the same one InjectFuel starts overloading past
+        if (HasComp<TutorialAmeLimitComponent>(ent))
+            return group.CoreCount * 2;
+
         return  group.CoreCount * 8;
+    }
+
+    public bool IsInjecting(EntityUid uid, AmeControllerComponent? controller = null)
+    {
+        return Resolve(uid, ref controller, false) && controller.Injecting;
+    }
+
+    // Polonium - only pulls a setting down to two per core, a safe one is left as the trainee set it
+    public void ClampInjectionToSafeLimit(EntityUid uid, AmeControllerComponent? controller = null)
+    {
+        if (!Resolve(uid, ref controller))
+            return;
+
+        if (!TryGetAMENodeGroup(uid, out var group))
+            return;
+
+        var safe = group.CoreCount * 2;
+        if (controller.InjectionAmount > safe)
+            SetInjectionAmount(uid, safe, null, controller);
     }
 
     private void UpdateDisplay(EntityUid uid, int stability, AmeControllerComponent? controller = null, AppearanceComponent? appearance = null)

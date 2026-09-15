@@ -1,26 +1,5 @@
-// SPDX-FileCopyrightText: 2019 DamianX <DamianX@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2019 ZelteHonor <gabrieldionbouchard@gmail.com>
-// SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2021 Antoine Chavasse <zlodo@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 chavonadelal <156101927+chavonadelal@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Brandon Li <48413902+aspiringLich@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
-// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
 using System.Numerics;
+using Content.Client._Polonium.UserInterface; // Polonium
 using Content.Client.Examine;
 using Content.Client.Resources;
 using Content.Client.Stylesheets;
@@ -52,6 +31,16 @@ namespace Content.Client.Wires.UI
         public TextureButton CloseButton { get; set; }
 
         public event Action<int, WiresAction>? OnAction;
+
+        // Polonium - tutorial hooks. The controls get rebuilt on every Populate, the glow wishes survive it
+        public event Action<WiresBoundUserInterfaceState>? Populated;
+        public WiresBoundUserInterfaceState? LastState { get; private set; }
+        private readonly Dictionary<int, WireControl> _wireControls = new();
+        private readonly Dictionary<object, StatusLight> _statusLights = new();
+        private readonly HashSet<int> _glowContacts = new();
+        private readonly HashSet<int> _glowWires = new();
+        private readonly HashSet<object> _glowStatuses = new();
+        // Polonium end
 
         public WiresMenu()
         {
@@ -259,6 +248,7 @@ namespace Content.Client.Wires.UI
             _serialLabel.Text = state.SerialNumber;
 
             _wiresHBox.RemoveAllChildren();
+            _wireControls.Clear(); // Polonium
             var random = new Random(state.WireSeed);
             foreach (var wire in state.WiresList)
             {
@@ -270,6 +260,7 @@ namespace Content.Client.Wires.UI
                     VerticalAlignment = VAlignment.Bottom
                 };
                 _wiresHBox.AddChild(control);
+                _wireControls[wire.Id] = control; // Polonium
 
                 control.WireClicked += () =>
                 {
@@ -283,12 +274,16 @@ namespace Content.Client.Wires.UI
             }
 
             _statusContainer.RemoveAllChildren();
+            _statusLights.Clear(); // Polonium
 
             foreach (var status in state.Statuses)
             {
                 if (status.Value is StatusLightData statusLightData)
                 {
-                    _statusContainer.AddChild(new StatusLight(statusLightData, _resourceCache));
+                    // Polonium - keep the light by its key so the tutorial can make it glow
+                    var light = new StatusLight(statusLightData, _resourceCache);
+                    _statusLights[status.Key] = light;
+                    _statusContainer.AddChild(light);
                 }
                 else
                 {
@@ -298,7 +293,39 @@ namespace Content.Client.Wires.UI
                     });
                 }
             }
+
+            // Polonium
+            LastState = state;
+            ApplyTutorialGlow();
+            Populated?.Invoke(state);
         }
+
+        // Polonium - which contacts, wires and status lights the tutorial wants lit
+        public void SetTutorialGlow(IEnumerable<int> contacts, IEnumerable<int> wires, IEnumerable<object> statuses)
+        {
+            _glowContacts.Clear();
+            _glowContacts.UnionWith(contacts);
+            _glowWires.Clear();
+            _glowWires.UnionWith(wires);
+            _glowStatuses.Clear();
+            _glowStatuses.UnionWith(statuses);
+            ApplyTutorialGlow();
+        }
+
+        private void ApplyTutorialGlow()
+        {
+            foreach (var (id, control) in _wireControls)
+            {
+                control.ContactsGlow = _glowContacts.Contains(id);
+                control.WireGlow = _glowWires.Contains(id);
+            }
+
+            foreach (var (key, light) in _statusLights)
+            {
+                light.Glow = _glowStatuses.Contains(key);
+            }
+        }
+        // Polonium end
 
         protected override DragMode GetDragModeFor(Vector2 relativeMousePos)
         {
@@ -321,6 +348,26 @@ namespace Content.Client.Wires.UI
 
             public event Action? WireClicked;
             public event Action? ContactsClicked;
+
+            // Polonium
+            private readonly GlowTextureRect _contact1;
+            private readonly GlowTextureRect _contact2;
+            private readonly WireRender _wire;
+
+            public bool ContactsGlow
+            {
+                set
+                {
+                    _contact1.Glow = value;
+                    _contact2.Glow = value;
+                }
+            }
+
+            public bool WireGlow
+            {
+                set => _wire.Glow = value;
+            }
+            // Polonium end
 
             public WireControl(WireColor color, WireLetter letter, bool isCut, bool flip, bool mirror, int type,
                 IResourceCache resourceCache)
@@ -351,25 +398,26 @@ namespace Content.Client.Wires.UI
                 LayoutContainer.SetGrowHorizontal(greek, LayoutContainer.GrowDirection.Both);
 
                 var contactTexture = _resourceCache.GetTexture(TextureContact);
-                var contact1 = new TextureRect
+                // Polonium - tinted rather than modulated, a modulate would dye the tutorial glow too
+                var contact1 = _contact1 = new GlowTextureRect
                 {
                     Texture = contactTexture,
-                    Modulate = Color.FromHex("#E1CA76")
+                    Tint = Color.FromHex("#E1CA76")
                 };
 
                 layout.AddChild(contact1);
                 LayoutContainer.SetPosition(contact1, new Vector2(0, 0));
 
-                var contact2 = new TextureRect
+                var contact2 = _contact2 = new GlowTextureRect // Polonium
                 {
                     Texture = contactTexture,
-                    Modulate = Color.FromHex("#E1CA76")
+                    Tint = Color.FromHex("#E1CA76") // Polonium
                 };
 
                 layout.AddChild(contact2);
                 LayoutContainer.SetPosition(contact2, new Vector2(0, 60));
 
-                var wire = new WireRender(color, isCut, flip, mirror, type, _resourceCache);
+                var wire = _wire = new WireRender(color, isCut, flip, mirror, type, _resourceCache); // Polonium
 
                 layout.AddChild(wire);
                 LayoutContainer.SetPosition(wire, new Vector2(2, 16));
@@ -430,6 +478,8 @@ namespace Content.Client.Wires.UI
 
                 private readonly IResourceCache _resourceCache;
 
+                public bool Glow; // Polonium
+
                 public WireRender(WireColor color, bool isCut, bool flip, bool mirror, int type,
                     IResourceCache resourceCache)
                 {
@@ -475,6 +525,12 @@ namespace Content.Client.Wires.UI
 
                     handle.SetTransform(drawTransform);
                     var rect = new UIBox2(l, t, r, b);
+
+                    // Polonium
+                    var glow = Glow ? UiGlow.Strength() : 0f;
+                    if (Glow)
+                        UiGlow.DrawHalo(handle, tex, rect, UIScale, glow);
+
                     if (_isCut)
                     {
                         var copper = Color.Orange;
@@ -483,6 +539,11 @@ namespace Content.Client.Wires.UI
                     }
 
                     handle.DrawTextureRect(tex, rect, colorValue);
+
+                    // Polonium
+                    if (Glow)
+                        UiGlow.DrawFill(handle, tex, rect, glow);
+
                     handle.SetTransform(origHandleT);
                 }
             }
@@ -530,6 +591,15 @@ namespace Content.Client.Wires.UI
                 }
             };
 
+            // Polonium
+            private readonly GlowTextureRect _base;
+
+            public bool Glow
+            {
+                set => _base.Glow = value;
+            }
+            // Polonium end
+
             public StatusLight(StatusLightData data, IResourceCache resourceCache)
             {
                 HorizontalAlignment = HAlignment.Right;
@@ -544,13 +614,14 @@ namespace Content.Client.Wires.UI
                     SetSize = new Vector2(20, 20),
                     Children =
                     {
-                        new TextureRect
+                        // Polonium - tinted instead of self-modulated so the tutorial glow stays white
+                        (_base = new GlowTextureRect
                         {
                             Texture = resourceCache.GetTexture(
                                 "/Textures/Interface/WireHacking/light_off_base.svg.96dpi.png"),
                             Stretch = TextureRect.StretchMode.KeepCentered,
-                            ModulateSelfOverride = dimColor
-                        },
+                            Tint = dimColor
+                        }),
                         (activeLight = new TextureRect
                         {
                             ModulateSelfOverride = data.Color.WithAlpha(0.4f),

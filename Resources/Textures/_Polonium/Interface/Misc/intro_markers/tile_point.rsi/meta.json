@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by BDragon1727 https://bdragon1727.itch.io/basic-pixel-health-bar-and-scroll-bar",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "cyan",
+            "delays": [[0.25, 0.25, 0.25, 0.25]]
+        },
+        {
+            "name": "green",
+            "delays": [[0.25, 0.25, 0.25, 0.25]]
+        },
+        {
+            "name": "orange",
+            "delays": [[0.25, 0.25, 0.25, 0.25]]
+        },
+        {
+            "name": "pink",
+            "delays": [[0.25, 0.25, 0.25, 0.25]]
+        }
+    ]
+}
