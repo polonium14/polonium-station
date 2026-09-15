@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: insoPL, ArtisticRoomba
-  changes:
-  - message: Added functionality to the Optical Thermal Scanner. The eyewear will
-      now overlay tiles with a solid color corresponding to its temperature if it's
-      not room temperature, as well as if a tile is pure vacuum.
-    type: Add
-  id: 9493
-  time: '2026-02-06T10:44:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42613
 - author: AreYouConfused
   changes:
   - message: Vox's tail rings no longer replace the vox's tail and now correctly layer
@@ -4070,3 +4061,10 @@
   id: 9991
   time: '2026-09-15T20:29:34.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1019
+- author: raythoseways
+  changes:
+  - message: "Dodano map\u0119 stacji **Glacier** dla rozgrywek od 30 graczy."
+    type: Add
+  id: 9992
+  time: '2026-09-15T21:04:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/980
