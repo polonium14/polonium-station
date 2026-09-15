@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: ScholarNZL
-  changes:
-  - message: Rat King and Rat Servants now have partial shock resistance, preventing
-      electrified doors from stunning them while still dealing reduced damage.
-    type: Tweak
-  id: 9491
-  time: '2026-02-04T22:13:06.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42569
 - author: ArtisticRoomba
   changes:
   - message: Fixed the Gas Filter not transferring enough mols to the filter outlet.
@@ -4063,3 +4055,14 @@
   id: 9989
   time: '2026-09-14T13:53:30.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1017
+- author: Polonium-bot
+  changes:
+  - message: "Zaktualizowano polskie t\u0142umaczenia nazw przedmiot\xF3w, konstrukcji,\
+      \ p\u0142ytek, materia\u0142\xF3w i narz\u0119dzi."
+    type: Tweak
+  - message: "Poprawiono sk\u0142adni\u0119 placeholder\xF3w oraz zb\u0119dne spacje\
+      \ w komunikatach lokalizacyjnych."
+    type: Fix
+  id: 9990
+  time: '2026-09-15T18:08:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1018
