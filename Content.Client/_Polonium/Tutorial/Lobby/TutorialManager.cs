@@ -39,6 +39,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     private bool _isPaused = false;
     private bool? _dbCompleted;
     private bool _offerOpen;
+    private TutorialHopWindow? _hopWindow;
 
     public IClientsideNavTutorialStep? ActiveStep =>
         _currentStepIndex >= 0 && _currentStepIndex < _steps.Count
@@ -89,10 +90,10 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
             return;
         }
 
-        var training = _cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString);
-        if (!string.IsNullOrEmpty(training))
+        if (_cfg.GetCVar(CCVars.IntroServerMode) == IntroMode.Main
+            && !string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
         {
-            GoToTrainingServer();
+            OpenTrainingHopWindow();
             return;
         }
 
@@ -208,7 +209,30 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         if (completed)
             MarkCompleted();
 
+        if (_hopWindow is { Disposed: false })
+            _hopWindow.SetCompleted(HasCompletedTraining());
+
         TryOfferTraining();
+    }
+
+    public void OpenTrainingHopWindow()
+    {
+        if (_cfg.GetCVar(CCVars.IntroServerMode) != IntroMode.Main)
+            return;
+
+        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
+            return;
+
+        CloseTrainingOffer();
+
+        if (_hopWindow == null || _hopWindow.Disposed)
+        {
+            _hopWindow = new TutorialHopWindow();
+            _hopWindow.OnConfirm += GoToTrainingServer;
+        }
+
+        _hopWindow.SetCompleted(HasCompletedTraining());
+        _hopWindow.OpenCentered();
     }
 
     public void MarkCompleted()
@@ -413,6 +437,16 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
     #region Helpers
 
+    private bool HasCompletedTraining()
+    {
+        return _dbCompleted == true || _cfg.GetCVar(CCVars.IntroCompleted);
+    }
+
+    private void CloseTrainingHopWindow()
+    {
+        _hopWindow?.Close();
+    }
+
     private bool ShouldOfferTraining()
     {
 #if DEBUG
@@ -611,6 +645,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         }
 
         CloseTrainingOffer();
+        CloseTrainingHopWindow();
 
         if (IsTutorialActive)
             PauseTutorial();
@@ -623,6 +658,8 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
         _dbCompleted = null;
         CloseTrainingOffer();
+        CloseTrainingHopWindow();
+        _hopWindow = null;
     }
 
     private void OnStepSkipped(IClientsideNavTutorialStep step)

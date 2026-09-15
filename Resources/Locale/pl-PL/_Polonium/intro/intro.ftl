@@ -29,6 +29,13 @@ intro-training-offer-message-2 = Chcesz przejść szkolenie? Odbywa się na osob
 intro-training-offer-agree = Tak, chcę przejść szkolenie
 intro-training-offer-disagree = Nie, chcę od razu grać
 
+intro-training-hop-title = Samouczek
+intro-training-hop-question = Chcesz przejść na serwer szkoleniowy, żeby odbyć szkolenie?
+intro-training-hop-completed = Już go przeszedłeś.
+intro-training-hop-not-completed = Jeszcze go nie przeszedłeś.
+intro-training-hop-yes = Tak
+intro-training-hop-no = Nie
+
 intro-lobby-overview-message-1 = W tej sekcji znajdują się [bold]informacje o bieżącej rundzie[/bold] i o [bold]Twojej postaci[/bold], a niżej jest [bold]okno czatu[/bold].
 intro-lobby-overview-character-section-message-1 = Spójrzmy na sekcję postaci. Nie przejmuj się tymi ikonkami – to tylko [bold]ustawienia preferowanych ról[/bold], które możesz wybrać przed rozpoczęciem rundy. Za chwilę Ci wszystko wyjaśnimy!
 intro-lobby-overview-character-section-message-2 = Kliknij na [bold]"{$intro-lobby-overview-character-editor-button}"[/bold], aby otworzyć edytor swoich postaci.

@@ -54,10 +54,14 @@ namespace Content.Client.Info
             buttons.AddChild(changelogButton);
 
             var tutorialManager = IoCManager.Resolve<TutorialManager>();
-            TutorialButton = new Button() { Text = Loc.GetString("server-info-introduction-button") };
+            TutorialButton = new Button()
+            {
+                Text = Loc.GetString("server-info-introduction-button"),
+                Visible = false,
+            };
             TutorialButton.OnPressed += _ =>
             {
-                tutorialManager.StartTutorial();
+                tutorialManager.OpenTrainingHopWindow();
             };
             buttons.AddChild(TutorialButton);
 
@@ -82,10 +86,31 @@ namespace Content.Client.Info
                 link.Visible = _cfg.GetCVar(cVar) != "";
             }
 
-            if (TutorialButton != null)
-            {
-                TutorialButton.Visible = _cfg.GetCVar(CCVars.IntroServerMode) != IntroMode.Off;
-            }
+            _cfg.OnValueChanged(CCVars.IntroServerMode, OnIntroModeChanged);
+            _cfg.OnValueChanged(CCVars.IntroSolitaryServerConnectionString, OnIntroHopChanged);
+            UpdateTutorialButton();
+        }
+
+        protected override void ExitedTree()
+        {
+            _cfg.UnsubValueChanged(CCVars.IntroServerMode, OnIntroModeChanged);
+            _cfg.UnsubValueChanged(CCVars.IntroSolitaryServerConnectionString, OnIntroHopChanged);
+            base.ExitedTree();
+        }
+
+        private void OnIntroModeChanged(IntroMode _) => UpdateTutorialButton();
+
+        private void OnIntroHopChanged(string _) => UpdateTutorialButton();
+
+        private void UpdateTutorialButton()
+        {
+            if (TutorialButton == null)
+                return;
+
+            // hop leftover from main would otherwise keep this on the training box
+            TutorialButton.Visible =
+                _cfg.GetCVar(CCVars.IntroServerMode) == IntroMode.Main
+                && !string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString));
         }
     }
 }
