@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ArtisticRoomba
-  changes:
-  - message: Fixed the Gas Filter not transferring enough mols to the filter outlet.
-    type: Fix
-  id: 9492
-  time: '2026-02-05T08:34:11.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42801
 - author: insoPL, ArtisticRoomba
   changes:
   - message: Added functionality to the Optical Thermal Scanner. The eyewear will
@@ -4066,3 +4059,14 @@
   id: 9990
   time: '2026-09-15T18:08:11.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1018
+- author: Nikita
+  changes:
+  - message: Dodano praktyczne szkolenie dla nowych graczy na osobnej stacji symulacyjnej,
+      z prowadzeniem krok po kroku.
+    type: Add
+  - message: "W lobby nowi gracze dostaj\u0105 ofert\u0119 szkolenia, po uko\u0144\
+      czeniu albo odmowie nie s\u0105 o nie dopytywani."
+    type: Add
+  id: 9991
+  time: '2026-09-15T20:29:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1019
