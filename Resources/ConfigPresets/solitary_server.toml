@@ -58,9 +58,6 @@ kill_crit = false
 [holidays]
 enabled = false
 
-[control]
-opaque_storage_background = true
-
 [ui]
 uuid_banner_enabled = false
 

@@ -12,4 +12,3 @@
         - type: StationJobs
           availableJobs:
             Passenger: [ -1, -1 ] #infinite, not counted
-            Trainee: [ 1, 0 ]
