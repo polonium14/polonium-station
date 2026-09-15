@@ -1,4 +1,4 @@
-﻿names-apid-worker-dataset-1 = Worker
+names-apid-worker-dataset-1 = Worker
 
 names-apid-botanist-dataset-1 = Worker
 names-apid-botanist-dataset-2 = Forager

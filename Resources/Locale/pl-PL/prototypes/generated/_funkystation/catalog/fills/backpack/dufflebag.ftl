@@ -1,2 +1,2 @@
-ent-ClothingBackpackDuffelSalvageHelldiver = Diving Hardsuit Bundle
-    .desc = For Nanotrasen!
+ent-ClothingBackpackDuffelSalvageHelldiver = zestaw skafandry do nurkowania
+    .desc = Dla Nanotrasen!

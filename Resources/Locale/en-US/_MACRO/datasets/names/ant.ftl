@@ -1,4 +1,4 @@
-﻿names-ant-first-dataset-1 = Interesting
+names-ant-first-dataset-1 = Interesting
 names-ant-first-dataset-2 = Nice
 names-ant-first-dataset-3 = Kind
 names-ant-first-dataset-4 = Mean

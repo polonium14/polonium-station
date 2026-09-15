@@ -6,6 +6,6 @@ construction-insert-info-examine-name-instrument-percussion = instrument perkusy
 construction-insert-info-examine-name-instrument-string = instrument strunowy
 construction-insert-info-examine-name-instrument-woodwind = instrument dęty drewniany
 construction-insert-info-examine-name-knife = nóż
-construction-insert-info-examine-name-utensil = utensil
+construction-insert-info-examine-name-utensil = sztuciec
 construction-insert-info-examine-name-laser-cannon = broń laserowa o wysokiej mocy
 construction-insert-info-examine-name-power-cell = bateria

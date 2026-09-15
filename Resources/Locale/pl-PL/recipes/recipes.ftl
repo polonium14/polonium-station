@@ -1,2 +1,2 @@
-recipes-secret-door-name = secret door
-recipes-secret-door-desc = A secret door disguised as a wall. The perfect solution for hiding your shady dealings.
+recipes-secret-door-name = tajne drzwi
+recipes-secret-door-desc = Tajne drzwi zamaskowane jako ściana. Idealne rozwiązanie do ukrywania nielegalnych interesów.

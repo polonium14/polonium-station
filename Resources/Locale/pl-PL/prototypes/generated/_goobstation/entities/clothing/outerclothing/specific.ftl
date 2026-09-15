@@ -1,4 +1,4 @@
-ent-SurveillanceWirelessCameraBodyEntertainment = nopro camera
-    .desc = A body mounted camera. It's watching you.
-ent-SurveillanceWirelessCameraBodySecurity = security bodycam
-    .desc = A body mounted camera. It's watching you.
+ent-SurveillanceWirelessCameraBodyEntertainment = kamera nopro
+    .desc = Kamera na ciele. Patrzy na ciebie.
+ent-SurveillanceWirelessCameraBodySecurity = bodycam ochrony
+    .desc = Kamera na ciele. Patrzy na ciebie.

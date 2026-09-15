@@ -32,6 +32,7 @@
     Dropper: 4
     PlantBag: 3
     PlantBGoneSpray: 20
+    PlantBGoneGrenade: 1 # Polonium
     WeedSpray: 20
     PestSpray: 20
     Syringe: 5

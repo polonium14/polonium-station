@@ -1,2 +1,2 @@
-ent-ClothingUniformJumpskirtWhiteCaptain = white captain jumpskirt
-    .desc = White captain jumpsuit skirt symbolizing that your salary clearly exceeds the norm.
+ent-ClothingUniformJumpskirtWhiteCaptain = biały kombinezon kapitana ze spódnicą
+    .desc = Biały kombinezon kapitana ze spódnicą, symbolizujący, że twoja pensja wyraźnie przekracza normę.

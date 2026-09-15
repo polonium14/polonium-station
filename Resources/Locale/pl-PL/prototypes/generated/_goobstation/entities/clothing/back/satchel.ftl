@@ -1,2 +1,2 @@
-ent-ClothingBackpackSatchelBlueshield = blueshield satchel
-    .desc = A very protective satchel, smells like energy gun.
+ent-ClothingBackpackSatchelBlueshield = torba niebieskiej tarczy
+    .desc = Bardzo ochronna torba, pachnie pistoletem energetycznym.

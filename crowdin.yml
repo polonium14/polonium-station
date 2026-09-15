@@ -8,6 +8,8 @@ files:
     ignore:
       - /Resources/Locale/en-US/**/datasets
       - /Resources/Locale/en-US/**/accent
+      - /Resources/Locale/en-US/**/_polonium
+      - /Resources/Locale/en-US/**/_polonium
       - /Resources/Locale/en-US/_Polonium
       - /Resources/Locale/en-US/chat
       - /Resources/Locale/en-US/speech

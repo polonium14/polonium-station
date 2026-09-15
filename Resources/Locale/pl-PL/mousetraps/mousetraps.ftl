@@ -1,2 +1,2 @@
-mousetrap-on-activate = The mousetrap was activated.
-mousetrap-on-deactivate = The mousetrap was deactivated.
+mousetrap-on-activate = Pułapka na myszy została aktywowana.
+mousetrap-on-deactivate = Pułapka na myszy została deaktywowana.

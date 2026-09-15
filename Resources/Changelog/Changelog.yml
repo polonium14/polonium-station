@@ -1,51 +1,4 @@
 ﻿Entries:
-- author: sowelipililimute
-  changes:
-  - message: Zombified markings no longer persist between rounds
-    type: Fix
-  id: 9485
-  time: '2026-02-03T03:28:51.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42756
-- author: sowelipililimute
-  changes:
-  - message: Marking colours can now be changed again
-    type: Fix
-  id: 9486
-  time: '2026-02-03T19:00:17.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42771
-- author: Minemoder
-  changes:
-  - message: The Syndi Law Circuit is now a kit containing the lawboard and and a
-      Syndicate ID.
-    type: Tweak
-  - message: The Syndicate ID now uses the Syndicate icon instead of the blank icon.
-    type: Tweak
-  id: 9487
-  time: '2026-02-03T20:12:55.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42764
-- author: veprolet
-  changes:
-  - message: Volumetric devices now respect their pressure limits more.
-    type: Fix
-  id: 9489
-  time: '2026-02-04T10:43:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35211
-- author: 0-Anon
-  changes:
-  - message: Adjusted the Mute Toxin chemical reaction recipe to no longer require
-      uranium.
-    type: Tweak
-  id: 9490
-  time: '2026-02-04T19:24:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42787
-- author: ScholarNZL
-  changes:
-  - message: Rat King and Rat Servants now have partial shock resistance, preventing
-      electrified doors from stunning them while still dealing reduced damage.
-    type: Tweak
-  id: 9491
-  time: '2026-02-04T22:13:06.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42569
 - author: ArtisticRoomba
   changes:
   - message: Fixed the Gas Filter not transferring enough mols to the filter outlet.
@@ -4050,3 +4003,66 @@
   id: 9984
   time: '2026-09-05T15:21:16.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/991
+- author: Nikita
+  changes:
+  - message: "Dokonano zmiany w muzyce lobby! Utwory s\u0105 teraz bardziej klimatyczne\
+      \ i zapami\u0119tywane!"
+    type: Tweak
+  id: 9985
+  time: '2026-09-08T12:09:47.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1002
+- author: Zintex
+  changes:
+  - message: "Dodano map\u0119 sparksowbars no longer accidentally spawn in microwaves."
+    type: Add
+  id: 9986
+  time: '2026-09-09T16:23:23.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1011
+- author: Zintex
+  changes:
+  - message: "Poprawki do mapy sparks: matsy do meda, mniej okien, bogatsze maintsy,\
+      \ wi\u0119ksze AME, shuttery do okien mostka"
+    type: Fix
+  - message: "Dodano materia\u0142y do medbayu i wyposa\u017Cenie pomieszcze\u0144\
+      \ technicznych."
+    type: Add
+  - message: "Zmniejszono liczb\u0119 okien oraz powi\u0119kszono AME."
+    type: Tweak
+  - message: Dodano shuttery do okien mostka.
+    type: Tweak
+  - message: "Zmieniono uk\u0142ad i wyposa\u017Cenie mapy Sparks."
+    type: Tweak
+  id: 9987
+  time: '2026-09-12T14:54:26.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1014
+- author: polonium
+  changes:
+  - message: "Zmieniono zamian\u0119 tekstu na czacie. Skr\xF3t `EZ` nie jest ju\u017C\
+      \ zamieniany na \u201E\u0142atwa wygrana\u201D. Skr\xF3t `ig` jest zamieniany\
+      \ na \u201Echyba\u201D."
+    type: Tweak
+  id: 9988
+  time: '2026-09-14T13:44:10.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1015
+- author: Polonium
+  changes:
+  - message: "Dodano granaty Plant-B-Gone przeciwko ro\u015Blinom (nie zabija mi\u0119\
+      sne/klaunie kudzu)."
+    type: Add
+  - message: "Granaty s\u0105 dost\u0119pne w Logistyce za 500 spesos oraz w automacie\
+      \ NutriMax za 1 jednostk\u0119."
+    type: Add
+  id: 9989
+  time: '2026-09-14T13:53:30.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1017
+- author: Polonium-bot
+  changes:
+  - message: "Zaktualizowano polskie t\u0142umaczenia nazw przedmiot\xF3w, konstrukcji,\
+      \ p\u0142ytek, materia\u0142\xF3w i narz\u0119dzi."
+    type: Tweak
+  - message: "Poprawiono sk\u0142adni\u0119 placeholder\xF3w oraz zb\u0119dne spacje\
+      \ w komunikatach lokalizacyjnych."
+    type: Fix
+  id: 9990
+  time: '2026-09-15T18:08:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1018

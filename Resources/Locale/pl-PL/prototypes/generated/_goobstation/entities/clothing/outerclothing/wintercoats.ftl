@@ -1,2 +1,2 @@
-ent-ClothingOuterWinterCoatTrainer = NCT's coat
-    .desc = A robust coat issued to Nanotrasen Career Trainers. Great for teaching newbies.
+ent-ClothingOuterWinterCoatTrainer = płaszcz SKN
+    .desc = Solidny płaszcz wydawany szkoleniowcom kadr Nanotrasen. Świetny do uczenia nowicjuszy.

@@ -20,5 +20,5 @@ ent-ActionToggleSpeedBoots = Przełącz buty szybkości
     .desc = Włącza lub wyłącza buty szybkości.
 ent-ClothingShoesBootsMoon = księżycowe buty
     .desc = Specjalne buty antygrawitacyjne opracowane z użyciem unikalnej mieszanki żelu z księżycowych skał. Wysłane z Holandii.
-ent-ClothingShoesBootsJump = jump boots
-    .desc = High-tech boots that give you the incredible ability to JUMP! With these boots you can jump over lava, chasms and weird chemicals on the floor!
+ent-ClothingShoesBootsJump = buty JUMP
+    .desc = Wysokotechnologiczne buty dające niesamowitą zdolność SKAKANIA! Możesz skakać nad lawą, przepaściami i dziwnymi chemikaliami na podłodze!

@@ -1,5 +1,5 @@
-ent-FuClothingBeltSecurityWebbing = security carrier
-    .desc = A specialized webbing designed for security gear.
-ent-FuClothingBeltSecurityWebbingFilled = security carrier
-    .desc = A specialized webbing designed for security gear.
+ent-FuClothingBeltSecurityWebbing = ładownica ochrony
+    .desc = Specjalistyczna ładownica zaprojektowana na sprzęt ochrony.
+ent-FuClothingBeltSecurityWebbingFilled = ładownica ochrony
+    .desc = Specjalistyczna ładownica zaprojektowana na sprzęt ochrony.
     .suffix = Wypełnione
