@@ -171,7 +171,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         if (ReadIntroMode() != IntroMain)
             return;
 
-        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
+        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString)))
             return;
 
         SendCompletionStatus(ev.Session);
@@ -524,7 +524,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
     private void TryRedial(EntityUid player)
     {
-        var address = _cfg.GetCVar(CCVars.IntroReturnServerConnectionString);
+        var address = _cfg.GetCVar(CCVars.TutorialReturnServerConnectionString);
         if (string.IsNullOrWhiteSpace(address))
             return;
 

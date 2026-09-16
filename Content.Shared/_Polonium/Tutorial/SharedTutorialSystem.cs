@@ -55,7 +55,7 @@ public abstract partial class SharedTutorialSystem : EntitySystem
 
     public static string ReadIntroMode(IConfigurationManager cfg, ISawmill log)
     {
-        var raw = (cfg.GetCVar(CCVars.IntroServerMode) ?? string.Empty).Trim();
+        var raw = (cfg.GetCVar(CCVars.TutorialMode) ?? string.Empty).Trim();
         if (string.Equals(raw, IntroNone, StringComparison.OrdinalIgnoreCase))
             return IntroNone;
         if (string.Equals(raw, IntroMain, StringComparison.OrdinalIgnoreCase))
@@ -63,7 +63,7 @@ public abstract partial class SharedTutorialSystem : EntitySystem
         if (string.Equals(raw, IntroTutorial, StringComparison.OrdinalIgnoreCase))
             return IntroTutorial;
 
-        log.Error($"intro.mode is '{raw}', expected None/Main/Tutorial - using {DefaultIntroMode}");
+        log.Error($"tutorial.mode is '{raw}', expected None/Main/Tutorial - using {DefaultIntroMode}");
         return DefaultIntroMode;
     }
 

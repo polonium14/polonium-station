@@ -123,7 +123,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
             return false;
 
         Progress.IsCompleted = false;
-        _currentStepIndex = fromStepIndex ?? (_cfg.GetCVar(CCVars.SkipLobbyIntroDebug) ? _steps.Count - 1 : 0);
+        _currentStepIndex = fromStepIndex ?? (_cfg.GetCVar(CCVars.TutorialSkipLobbyDebug) ? _steps.Count - 1 : 0);
         _isPaused = false;
 
         var ok = ExecuteCurrentStep();
@@ -195,7 +195,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     /// <summary>Player asked to stop. Drop the flow but leave a hint about the lobby button.</summary>
     public void SkipTutorial()
     {
-        _cfg.SetCVar(CCVars.IntroDeclined, true);
+        _cfg.SetCVar(CCVars.TutorialDeclined, true);
         _cfg.SaveToFile();
         Progress.HasDeclined = true;
         CancelTutorial();
@@ -225,7 +225,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         if (GetIntroMode() != SharedTutorialSystem.IntroMain)
             return;
 
-        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
+        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString)))
             return;
 
         CloseTrainingOffer();
@@ -245,10 +245,10 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         _dbCompleted = true;
 
         // the finale bubble calls this on every redraw, and a redial right after has to find it on disk
-        if (_cfg.GetCVar(CCVars.IntroCompleted))
+        if (_cfg.GetCVar(CCVars.TutorialCompleted))
             return;
 
-        _cfg.SetCVar(CCVars.IntroCompleted, true);
+        _cfg.SetCVar(CCVars.TutorialCompleted, true);
         _cfg.SaveToFile();
     }
 
@@ -470,7 +470,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
     private bool HasCompletedTraining()
     {
-        return _dbCompleted == true || _cfg.GetCVar(CCVars.IntroCompleted);
+        return _dbCompleted == true || _cfg.GetCVar(CCVars.TutorialCompleted);
     }
 
     private void CloseTrainingHopWindow()
@@ -495,13 +495,13 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         if (GetIntroMode() != SharedTutorialSystem.IntroMain)
             return false;
 
-        if (_cfg.GetCVar(CCVars.IntroDeclined) || _cfg.GetCVar(CCVars.IntroCompleted))
+        if (_cfg.GetCVar(CCVars.TutorialDeclined) || _cfg.GetCVar(CCVars.TutorialCompleted))
             return false;
 
         if (_dbCompleted == true)
             return false;
 
-        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
+        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString)))
             return false;
 
         return true;
@@ -509,7 +509,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
     private void GoToTrainingServer()
     {
-        var address = _cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString);
+        var address = _cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString);
         if (string.IsNullOrEmpty(address))
             return;
 
