@@ -11,6 +11,7 @@ import os
 import sys
 import urllib.parse
 from pathlib import Path
+from datetime import datetime, timedelta
 from typing import Any, Iterable
 
 import requests
@@ -29,6 +30,9 @@ TRUNCATION_SUFFIX = " [...]"
 
 CHANGELOG_FILE = "Resources/Changelog/Changelog.yml"
 
+MAX_NEW_ENTRIES = 20
+ENTRY_LOOKBACK = timedelta(hours=2)
+
 TYPES_TO_EMOJI = {"Fix": "🐛", "Add": "🆕", "Remove": "❌", "Tweak": "⚒️"}
 
 EXPERIMENTAL_LABEL = "Intent: Experimental"
@@ -42,6 +46,7 @@ def main():
         print("No discord webhook URL found, skipping discord send")
         return
 
+    previous_run = None
     if DEBUG:
         # to debug this script locally, you can use
         # a separate local file as the old changelog
@@ -49,31 +54,42 @@ def main():
     else:
         # when running this normally in a GitHub actions workflow,
         # it will get the old changelog from the GitHub API
-        last_changelog_stream = get_last_changelog()
+        last_changelog_stream, previous_run = get_last_changelog()
 
     last_changelog = yaml.safe_load(last_changelog_stream)
     with open(CHANGELOG_FILE, "r", encoding="utf-8-sig") as f:
         cur_changelog = yaml.safe_load(f)
 
-    diff = diff_changelog(last_changelog, cur_changelog)
-    message_lines = changelog_entries_to_message_lines(diff)
+    diff = list(diff_changelog(last_changelog, cur_changelog))
+    diff = filter_entries_since_previous_run(diff, previous_run)
+    print(f"New changelog entries: {len(diff)}")
+
+    if len(diff) > MAX_NEW_ENTRIES:
+        print(
+            f"Refusing to send {len(diff)} entries (cap {MAX_NEW_ENTRIES}). "
+            "Likely a bad baseline, skipping Discord this run."
+        )
+        return
 
     if DEBUG:
+        message_lines = []
+        for entry in diff:
+            message_lines.extend(changelog_entries_to_message_lines([entry]))
         dump_debug_markdown(message_lines)
         return
 
-    send_message_lines(message_lines)
+    send_entries(diff)
 
 
 def get_most_recent_workflow(
     sess: requests.Session, github_repository: str, github_run: str
 ) -> Any:
     workflow_run = get_current_run(sess, github_repository, github_run)
-    past_runs = get_past_runs(sess, workflow_run)
-    for run in past_runs:
-        return run
+    past_runs = list(get_past_runs(sess, workflow_run))
+    if not past_runs:
+        raise RuntimeError("Could not find a previous successful workflow run")
 
-    raise RuntimeError("Could not find a previous successful workflow run")
+    return max(past_runs, key=lambda run: run["created_at"])
 
 
 def get_current_run(
@@ -88,35 +104,24 @@ def get_current_run(
 
 def get_past_runs(sess: requests.Session, current_run: Any) -> Iterable[Any]:
     """
-    Get all successful workflow runs before our current one.
+    Recent successful runs of this workflow, excluding the current run.
     """
     params = {
         "status": "success",
-        "created": f"<={current_run['created_at']}",
         "per_page": 100,
     }
     url = f"{current_run['workflow_url']}/runs"
 
-    while url:
-        resp = sess.get(url, params=params)
-        resp.raise_for_status()
+    resp = sess.get(url, params=params)
+    resp.raise_for_status()
 
-        for run in resp.json()["workflow_runs"]:
-            # First past successful run that isn't our current run.
-            if run["id"] == current_run["id"]:
-                continue
-
-            yield run
-
-        next_url = resp.links.get("next", {}).get("url")
-        if not next_url:
-            break
-
-        url = next_url
-        params = None
+    for run in resp.json()["workflow_runs"]:
+        if run["id"] == current_run["id"]:
+            continue
+        yield run
 
 
-def get_last_changelog() -> str:
+def get_last_changelog() -> tuple[str, Any]:
     github_repository = os.environ["GITHUB_REPOSITORY"]
     github_run = os.environ["GITHUB_RUN_ID"]
     github_token = os.environ["GITHUB_TOKEN"]
@@ -127,13 +132,50 @@ def get_last_changelog() -> str:
     session.headers["X-GitHub-Api-Version"] = "2022-11-28"
 
     most_recent = get_most_recent_workflow(session, github_repository, github_run)
-    last_sha = most_recent["head_commit"]["id"]
-    print(f"Last successful publish job was {most_recent['id']}: {last_sha}")
+    last_sha = (most_recent.get("head_commit") or {}).get("id") or most_recent.get(
+        "head_sha"
+    )
+    print(
+        f"Last successful publish job was {most_recent['id']} "
+        f"({most_recent.get('created_at')}): {last_sha}"
+    )
     last_changelog_stream = get_last_changelog_by_sha(
         session, last_sha, github_repository
     )
 
-    return last_changelog_stream
+    return last_changelog_stream, most_recent
+
+
+def parse_iso_datetime(value: str) -> datetime:
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
+def filter_entries_since_previous_run(
+    entries: list[ChangelogEntry], previous_run: Any | None
+) -> list[ChangelogEntry]:
+    if previous_run is None or not previous_run.get("created_at"):
+        return entries
+
+    cutoff = parse_iso_datetime(previous_run["created_at"]) - ENTRY_LOOKBACK
+    kept = []
+    for entry in entries:
+        raw_time = entry.get("time")
+        if not raw_time:
+            kept.append(entry)
+            continue
+        if parse_iso_datetime(str(raw_time)) >= cutoff:
+            kept.append(entry)
+    return kept
+
+
+def send_entries(entries: list[ChangelogEntry]):
+    for entry in entries:
+        lines = changelog_entries_to_message_lines([entry])
+        if not lines:
+            continue
+        print(f"Sending changelog entry {entry.get('id')} by {entry.get('author')}")
+        send_message_lines(lines)
+        time.sleep(0.5)
 
 
 def get_last_changelog_by_sha(
