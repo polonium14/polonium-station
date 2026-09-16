@@ -1,9 +1,12 @@
 using Content.Client.CartridgeLoader;
+using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.PDA;
 using JetBrains.Annotations;
+using Robust.Client.Player;
 using Robust.Client.UserInterface;
+using Robust.Shared.IoC;
 
 namespace Content.Client.PDA
 {
@@ -39,6 +42,9 @@ namespace Content.Client.PDA
 
             _menu.EjectIdButton.OnPressed += _ =>
             {
+                if (IsTutorialTrainee())
+                    return;
+
                 SendPredictedMessage(new ItemSlotButtonPressedEvent(PdaComponent.PdaIdSlotId));
             };
 
@@ -100,6 +106,18 @@ namespace Content.Client.PDA
             }
 
             _menu.UpdateState(updateState);
+
+            if (IsTutorialTrainee())
+            {
+                _menu.EjectIdButton.Visible = false;
+                _menu.EjectIdButton.IsActive = false;
+            }
+        }
+
+        private bool IsTutorialTrainee()
+        {
+            var player = IoCManager.Resolve<IPlayerManager>().LocalEntity;
+            return player != null && EntMan.HasComponent<TutorialSessionComponent>(player.Value);
         }
 
         protected override void AttachCartridgeUI(Control cartridgeUIFragment, string? title)

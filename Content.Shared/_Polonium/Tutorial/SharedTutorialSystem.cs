@@ -3,6 +3,7 @@ using Content.Shared._Polonium.Tutorial.Actions;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Conditions;
 using Content.Shared._Polonium.Tutorial.Prototypes;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
@@ -16,6 +17,7 @@ using Content.Shared.Tag;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Wall;
 using Content.Shared.Wires;
+using Content.Shared.PDA;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Log;
@@ -77,6 +79,7 @@ public abstract partial class SharedTutorialSystem : EntitySystem
         SubscribeLocalEvent<TutorialSealedComponent, BeforePryEvent>(OnSealedPry);
         SubscribeLocalEvent<TutorialSealedComponent, WeldableAttemptEvent>(OnSealedWeld);
         SubscribeLocalEvent<TutorialNoDeconstructComponent, UnanchorAttemptEvent>(OnLockedUnanchor);
+        SubscribeLocalEvent<PdaComponent, ItemSlotEjectAttemptEvent>(OnPdaIdEject);
     }
 
     private void OnFrozenCanMove(Entity<TutorialFrozenComponent> ent, ref UpdateCanMoveEvent args)
@@ -111,6 +114,20 @@ public abstract partial class SharedTutorialSystem : EntitySystem
     {
         args.Cancel();
         args.FailMessage = Loc.GetString("tutorial-cannot-break-structure");
+    }
+
+    private void OnPdaIdEject(Entity<PdaComponent> pda, ref ItemSlotEjectAttemptEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        if (args.Slot.ID != PdaComponent.PdaIdSlotId)
+            return;
+
+        if (args.User is not { } user || !HasComp<TutorialSessionComponent>(user))
+            return;
+
+        args.Cancelled = true;
     }
 
     private void OnAttackAttempt(EntityUid uid, TutorialSessionComponent session, AttackAttemptEvent args)
