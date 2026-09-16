@@ -19,6 +19,7 @@ using Content.Shared.Wall;
 using Content.Shared.Wires;
 using Content.Shared.PDA;
 using Content.Shared.CCVar;
+using Content.Shared.Ghost.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Log;
 using Robust.Shared.Prototypes;
@@ -71,6 +72,7 @@ public abstract partial class SharedTutorialSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<TutorialSessionComponent, AttackAttemptEvent>(OnAttackAttempt);
+        SubscribeLocalEvent<TutorialSessionComponent, GhostAttemptEvent>(OnGhostAttempt);
         SubscribeLocalEvent<DamageableComponent, BeforeDamageChangedEvent>(OnStructureDamage);
         SubscribeLocalEvent<TutorialFrozenComponent, UpdateCanMoveEvent>(OnFrozenCanMove);
         SubscribeLocalEvent<TutorialFrozenComponent, ComponentStartup>(OnFrozenChanged);
@@ -128,6 +130,12 @@ public abstract partial class SharedTutorialSystem : EntitySystem
             return;
 
         args.Cancelled = true;
+    }
+
+    private void OnGhostAttempt(Entity<TutorialSessionComponent> ent, ref GhostAttemptEvent args)
+    {
+        args.Cancelled = true;
+        _popup.PopupEntity(Loc.GetString("tutorial-cannot-ghost"), ent, ent);
     }
 
     private void OnAttackAttempt(EntityUid uid, TutorialSessionComponent session, AttackAttemptEvent args)
