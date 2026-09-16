@@ -15,6 +15,7 @@ public sealed partial class TutorialBubble : Control
 {
     public ClickBehaviour ClickAction { get; set; } = ClickBehaviour.CloseBubble;
     public Tippy TippyVariant { get; set; } = Tippy.ClownRegular;
+    public bool FullSize { get; set; }
     public event Action? OnBubbleClosed;
     public BoxContainer ContentContainer => Content;
     public BoxContainer ButtonsContainer => Buttons;
@@ -25,6 +26,12 @@ public sealed partial class TutorialBubble : Control
     [Dependency] private IResourceCache _resCache = default!;
 
     private readonly TutorialUIController _tutorialUi;
+
+    private const float ComicScale = 0.75f;
+    private const int ComicFontSize = 9;
+
+    private bool _comic = true;
+    private bool _comicLaidOut;
 
     public TutorialBubble()
     {
@@ -40,6 +47,8 @@ public sealed partial class TutorialBubble : Control
 
     public void ApplyFunctionalStyle()
     {
+        _comic = false;
+
         OuterLayer.PanelOverride = new StyleBoxFlat
         {
             BackgroundColor = Color.FromHex("#0E1A1FEE"),
@@ -60,6 +69,7 @@ public sealed partial class TutorialBubble : Control
 
     private void ApplyComicStyle()
     {
+        _comic = true;
         var boxTexture = _resCache.GetTexture("/Textures/_Polonium/Interface/Nano/intro_bubble_outer.png");
         OuterLayer.PanelOverride = new StyleBoxTexture
         {
@@ -82,34 +92,39 @@ public sealed partial class TutorialBubble : Control
     /// Default buttons are pale grey and vanish against the light comic bubble, so give the
     /// tutorial its own darker chip with the same blue the rest of the flow uses.
     /// </summary>
-    public static Button MakeButton(string text, bool primary = true)
+    public static Button MakeButton(string text, bool primary = true, bool compact = false)
     {
-        var fill = primary ? Color.FromHex("#2C4F63") : Color.FromHex("#4A4A4A");
-        var hover = primary ? Color.FromHex("#3A6884") : Color.FromHex("#5C5C5C");
+        var fill = compact ? Color.FromHex("#D0D0D0") : primary ? Color.FromHex("#2C4F63") : Color.FromHex("#4A4A4A");
+        var hover = compact ? Color.FromHex("#E4E4E4") : primary ? Color.FromHex("#3A6884") : Color.FromHex("#5C5C5C");
 
         var button = new Button
         {
             Text = text,
             HorizontalAlignment = HAlignment.Center,
-            Margin = new Thickness(0, 6, 0, 0),
-            MinWidth = 190,
+            Margin = new Thickness(0, compact ? 8 : 6, 0, 0),
+            MinWidth = compact ? 0 : 190,
         };
 
         button.AddStyleClass("ButtonSquare");
+        if (compact)
+        {
+            button.AddStyleClass("ButtonSmall");
+            button.ModulateSelfOverride = Color.White;
+        }
 
         var style = new StyleBoxFlat
         {
             BackgroundColor = fill,
-            BorderColor = Color.FromHex("#65B8E2"),
-            BorderThickness = new Thickness(2),
-            ContentMarginLeftOverride = 14f,
-            ContentMarginRightOverride = 14f,
-            ContentMarginTopOverride = 6f,
-            ContentMarginBottomOverride = 6f,
+            BorderColor = compact ? Color.FromHex("#B8B8B8") : Color.FromHex("#65B8E2"),
+            BorderThickness = new Thickness(compact ? 1 : 2),
+            ContentMarginLeftOverride = compact ? 8f : 14f,
+            ContentMarginRightOverride = compact ? 8f : 14f,
+            ContentMarginTopOverride = compact ? 2f : 6f,
+            ContentMarginBottomOverride = compact ? 2f : 6f,
         };
 
         button.StyleBoxOverride = style;
-        button.Label.Modulate = Color.White;
+        button.Label.Modulate = compact ? Color.FromHex("#333333") : Color.White;
 
         button.OnMouseEntered += _ => style.BackgroundColor = hover;
         button.OnMouseExited += _ => style.BackgroundColor = fill;
@@ -184,6 +199,12 @@ public sealed partial class TutorialBubble : Control
             ? _loc.GetString("intro-click-any-to-continue-label")
             : _loc.GetString("intro-click-to-continue-label");
 
+        if (_comic && !FullSize && !_comicLaidOut)
+        {
+            _comicLaidOut = true;
+            ShrinkComicContents();
+        }
+
         if (TippyVariant == Tippy.None)
             return;
 
@@ -195,18 +216,117 @@ public sealed partial class TutorialBubble : Control
             _ => throw new ArgumentOutOfRangeException(),
         };
 
+        var tippyScale = _comic && !FullSize ? ComicScale : 1f;
         var tippyIcon = new TextureRect
         {
             Texture = tippyTexture,
             HorizontalAlignment = HAlignment.Right,
             VerticalAlignment = VAlignment.Bottom,
-            Margin = new Thickness(0, 0, -80, -32),
-            SetSize = new Vector2(96, 96),
+            Margin = new Thickness(0, 0, -80 * tippyScale, -32 * tippyScale),
+            SetSize = new Vector2(96 * tippyScale, 96 * tippyScale),
             Stretch = TextureRect.StretchMode.Scale,
             MouseFilter = MouseFilterMode.Ignore,
         };
 
         OuterLayer.AddChild(tippyIcon);
+    }
+
+    private void ShrinkComicContents()
+    {
+        MaxWidth *= ComicScale;
+        if (BubbleMain.MaxWidth < float.PositiveInfinity)
+            BubbleMain.MaxWidth *= ComicScale;
+
+        if (OuterLayer.PanelOverride is StyleBoxTexture box)
+        {
+            box.TextureScale = new Vector2(ComicScale, ComicScale);
+            if (box.ContentMarginLeftOverride is { } left)
+                box.ContentMarginLeftOverride = left * ComicScale;
+            if (box.ContentMarginTopOverride is { } top)
+                box.ContentMarginTopOverride = top * ComicScale;
+            if (box.ContentMarginRightOverride is { } right)
+                box.ContentMarginRightOverride = right * ComicScale;
+            if (box.ContentMarginBottomOverride is { } bottom)
+                box.ContentMarginBottomOverride = bottom * ComicScale;
+        }
+
+        Content.Margin = ScaleThickness(Content.Margin);
+        Buttons.Margin = ScaleThickness(Buttons.Margin);
+        Content.SeparationOverride = ScaleSep(Content.SeparationOverride);
+        Buttons.SeparationOverride = ScaleSep(Buttons.SeparationOverride);
+
+        var font = _resCache.GetFont("/Fonts/Atkinson/AtkinsonHyperlegibleNext-Regular.ttf", ComicFontSize);
+        ShrinkControl(this, font);
+    }
+
+    private void ShrinkControl(Control control, Font font)
+    {
+        switch (control)
+        {
+            case RichTextLabel rich:
+                WrapComicFont(rich);
+                rich.Margin = ScaleThickness(rich.Margin);
+                break;
+            case Label label when control.Parent is not Button btn || !btn.HasStyleClass("ButtonSmall"):
+                label.FontOverride = font;
+                break;
+            case Button button:
+                if (button.MinWidth > 0)
+                    button.MinWidth *= ComicScale;
+                button.Margin = ScaleThickness(button.Margin);
+                if (button.StyleBoxOverride is StyleBoxFlat flat)
+                    ScaleFlat(flat);
+                break;
+            case TextureRect tex:
+                if (tex.Texture is { } texture)
+                {
+                    var size = tex.SetSize;
+                    if (size == default)
+                        size = new Vector2(texture.Width, texture.Height);
+                    tex.SetSize = size * ComicScale;
+                }
+
+                tex.Margin = ScaleThickness(tex.Margin);
+                break;
+        }
+
+        foreach (var child in control.Children)
+            ShrinkControl(child, font);
+    }
+
+    private static void WrapComicFont(RichTextLabel label)
+    {
+        var text = label.Text;
+        if (string.IsNullOrEmpty(text) || text.StartsWith("[font size=", StringComparison.Ordinal))
+            return;
+
+        label.Text = $"[font size={ComicFontSize}]{text}[/font]";
+    }
+
+    private static void ScaleFlat(StyleBoxFlat flat)
+    {
+        if (flat.ContentMarginLeftOverride is { } left)
+            flat.ContentMarginLeftOverride = left * ComicScale;
+        if (flat.ContentMarginRightOverride is { } right)
+            flat.ContentMarginRightOverride = right * ComicScale;
+        if (flat.ContentMarginTopOverride is { } top)
+            flat.ContentMarginTopOverride = top * ComicScale;
+        if (flat.ContentMarginBottomOverride is { } bottom)
+            flat.ContentMarginBottomOverride = bottom * ComicScale;
+    }
+
+    private static Thickness ScaleThickness(Thickness thickness)
+    {
+        return new Thickness(
+            thickness.Left * ComicScale,
+            thickness.Top * ComicScale,
+            thickness.Right * ComicScale,
+            thickness.Bottom * ComicScale);
+    }
+
+    private static int ScaleSep(int? separation)
+    {
+        return (int)MathF.Round((separation ?? 10) * ComicScale);
     }
 
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)

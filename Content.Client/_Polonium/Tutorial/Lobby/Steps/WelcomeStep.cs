@@ -24,6 +24,7 @@ public sealed class WelcomeStep : ClientsideNavTutorialStep
         {
             ClickAction = TutorialBubble.ClickBehaviour.CloseOverlay,
             TippyVariant = TutorialBubble.Tippy.WavingHand,
+            FullSize = true,
         };
 
         var helloText = new TextureRect

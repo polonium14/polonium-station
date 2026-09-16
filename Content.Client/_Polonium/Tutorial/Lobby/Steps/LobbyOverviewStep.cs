@@ -53,11 +53,14 @@ public sealed class LobbyOverviewStep : ClientsideNavTutorialStep
 
         var bubble = new TutorialBubble(Loc.GetString("intro-lobby-overview-message-1"))
         {
-            ClickAction = TutorialBubble.ClickBehaviour.Ignore,
+            ClickAction = TutorialBubble.ClickBehaviour.CloseOverlay,
             TippyVariant = TutorialBubble.Tippy.ClownRegular,
         };
 
-        var skip = TutorialBubble.MakeButton(Loc.GetString("intro-lobby-skip-button"), primary: false);
+        bubble.ButtonsContainer.Orientation = BoxContainer.LayoutOrientation.Vertical;
+        bubble.ButtonsContainer.Align = BoxContainer.AlignMode.Center;
+
+        var skip = TutorialBubble.MakeButton(Loc.GetString("intro-lobby-skip-button"), primary: false, compact: true);
         skip.OnPressed += _ => Tutorial.SkipLobbyTour();
         bubble.ButtonsContainer.AddChild(skip);
 
