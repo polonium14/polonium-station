@@ -20,7 +20,6 @@ using Content.Shared.Interaction;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Standing;
 using Content.Shared.Tools.Components;
@@ -67,7 +66,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         SubscribeLocalEvent<TutorialSessionComponent, BeforeDamageChangedEvent>(OnPlayerDamage);
         SubscribeLocalEvent<TutorialSessionComponent, MobStateChangedEvent>(OnPlayerMobState);
         SubscribeLocalEvent<TutorialSessionComponent, ConstructionStartAttemptEvent>(OnItemConstruction);
-        SubscribeLocalEvent<SatiationComponent, SatiationUpdateEvent>(OnTraineeSatiation);
+        SubscribeLocalEvent<TutorialSessionComponent, SatiationUpdateEvent>(OnTraineeSatiation);
         SubscribeLocalEvent<TutorialNoDeconstructComponent, ConstructionInteractAttemptEvent>(OnLockedConstruction);
         SubscribeLocalEvent<TutorialNoDeconstructComponent, InteractUsingEvent>(OnLockedCableCut,
             before: [typeof(CableSystem)]);

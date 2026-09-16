@@ -10,15 +10,15 @@ public sealed partial class TutorialSystem
 {
     private static readonly SatiationValue Comfortable = "Okay";
 
-    private void OnTraineeSatiation(Entity<SatiationComponent> ent, ref SatiationUpdateEvent args)
+    private void OnTraineeSatiation(Entity<TutorialSessionComponent> ent, ref SatiationUpdateEvent args)
     {
-        if (!HasComp<TutorialSessionComponent>(ent))
-            return;
-
         if (args.Type != SatiationSystem.Hunger && args.Type != SatiationSystem.Thirst)
             return;
 
-        FloorTraineeSatiation(ent, args.Type);
+        if (!TryComp<SatiationComponent>(ent, out var satiation))
+            return;
+
+        FloorTraineeSatiation((ent.Owner, satiation), args.Type);
     }
 
     private void KeepTraineeComfortable(EntityUid uid)
