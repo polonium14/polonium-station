@@ -11,6 +11,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Interaction;
+using Content.Shared.Ghost.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Standing;
@@ -62,6 +63,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
             before: [typeof(ConstructionSystem)]);
         SubscribeNetworkEvent<TutorialRestartRequestedEvent>(OnRestartRequested);
         SubscribeNetworkEvent<TutorialStartPracticalEvent>(OnStartPractical);
+        SubscribeNetworkEvent<TutorialReturnToLobbyEvent>(OnReturnToLobby);
         SubscribeNetworkEvent<TutorialLobbyFlowEvent>(OnLobbyFlow);
         SubscribeNetworkEvent<TutorialFinaleChoiceEvent>(OnFinaleChoice);
         _player.PlayerStatusChanged += OnPlayerStatus;
@@ -96,6 +98,18 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
         _lobbyTour.Remove(args.SenderSession.UserId);
         _solitary.TryJoinFromLobby(args.SenderSession);
+    }
+
+    private void OnReturnToLobby(TutorialReturnToLobbyEvent ev, EntitySessionEventArgs args)
+    {
+        if (ReadIntroMode() != IntroTutorial)
+            return;
+
+        var session = args.SenderSession;
+        if (session.AttachedEntity is not { } mob || !HasComp<GhostComponent>(mob))
+            return;
+
+        EntityManager.System<GameTicker>().Respawn(session);
     }
 
     private void OnLobbyFlow(TutorialLobbyFlowEvent ev, EntitySessionEventArgs args)

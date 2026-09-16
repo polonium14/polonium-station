@@ -103,6 +103,11 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
         RaiseNetworkEvent(new TutorialStartPracticalEvent());
     }
 
+    public void RequestReturnToLobby()
+    {
+        RaiseNetworkEvent(new TutorialReturnToLobbyEvent());
+    }
+
     public void SetLobbyTourActive(bool active)
     {
         RaiseNetworkEvent(new TutorialLobbyFlowEvent(active));

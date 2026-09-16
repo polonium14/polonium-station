@@ -13,6 +13,11 @@ public sealed class TutorialStartPracticalEvent : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
+public sealed class TutorialReturnToLobbyEvent : EntityEventArgs
+{
+}
+
+[Serializable, NetSerializable]
 public sealed class TutorialLobbyFlowEvent : EntityEventArgs
 {
     public bool Active { get; }

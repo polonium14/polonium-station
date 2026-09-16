@@ -1,4 +1,5 @@
 ghost-gui-return-to-body-button = Powróć do ciała
+ghost-gui-return-to-lobby-button = Powróć do lobby
 ghost-gui-ghost-warp-button = Przenieś Ducha
 ghost-gui-ghost-roles-button = Role Ducha ({ $count })
 ghost-gui-toggle-ghost-visibility-popup-on = Włączono widoczność duchów.
