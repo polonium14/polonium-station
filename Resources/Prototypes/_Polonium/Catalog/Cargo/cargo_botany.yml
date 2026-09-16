@@ -1,9 +1,0 @@
-- type: cargoProduct
-  id: HydroponicsPlantBGoneGrenades
-  icon:
-    sprite: _Polonium/Objects/Weapons/Grenades/plantbgone.rsi
-    state: icon
-  product: CratePlantBGoneGrenades
-  cost: 500
-  category: cargoproduct-category-name-hydroponics
-  group: market

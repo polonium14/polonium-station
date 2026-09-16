@@ -1,5 +1,3 @@
-ent-PlantBGoneGrenade = granat Plant-B-Gone
-    .desc = Zagłada kudzu! Uwalnia chmurę piany Plant-B-Gone, która pali chwasty przy kontakcie.
 ent-HalonGrenade = granat halonowy
     .desc = Awaryjny granat gaśniczy, który zalewa obszar halonem, tłumiąc pożary poprzez pochłanianie tlenu. Nie używać tam, gdzie ludzie jeszcze muszą oddychać.
 ent-PiemageddonGrenadeAdmeme = granat Piemageddon
