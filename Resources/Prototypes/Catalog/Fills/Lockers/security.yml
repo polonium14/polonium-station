@@ -80,7 +80,7 @@
 
 - type: entityTable
   id: FillLockerWardenWeapon
-  type: !type:GroupSelector # polonium addition
+  table: !type:GroupSelector # polonium addition
     children:
     - !type:AllSelector # 10% chance
       children:
