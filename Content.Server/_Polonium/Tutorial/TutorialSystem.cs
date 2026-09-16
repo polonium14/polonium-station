@@ -100,11 +100,11 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
     }
 
     public void ForceStartFlow(EntityUid player, ProtoId<TutorialFlowPrototype> flowId) =>
-        StartFlow(player, flowId);
+        StartFlow(player, flowId, fromBeginning: false);
 
     private void OnStartRequested(TutorialStartRequestedEvent ev)
     {
-        StartFlow(ev.Player, ev.Flow);
+        StartFlow(ev.Player, ev.Flow, ev.FromBeginning);
     }
 
     private void OnStartPractical(TutorialStartPracticalEvent ev, EntitySessionEventArgs args)
@@ -202,17 +202,17 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
         var session = args.SenderSession;
 
-        if (_solitary.TryRestartTutorial(session))
+        if (_solitary.TryRestartTutorial(session, fromBeginning: true))
             return;
 
         // tutorialforcestart / already in a flow on a dirty map - replay in place
         if (session.AttachedEntity is not { } mob || !TryComp<TutorialSessionComponent>(mob, out var tut))
             return;
 
-        StartFlow(mob, tut.Flow);
+        StartFlow(mob, tut.Flow, fromBeginning: true);
     }
 
-    private void StartFlow(EntityUid player, ProtoId<TutorialFlowPrototype> flowId)
+    private void StartFlow(EntityUid player, ProtoId<TutorialFlowPrototype> flowId, bool fromBeginning)
     {
         if (ReadIntroMode() == IntroNone)
             return;
@@ -250,7 +250,11 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         _actions.BoltAllAirlocks(player);
         _actions.PowerAllDevices(player);
 
-        var start = ResolveDebugStartStep(flow, out var startRoom);
+        var start = 0;
+        string? startRoom = null;
+        if (!fromBeginning)
+            start = ResolveDebugStartStep(flow, out startRoom);
+
         if (start > 0)
         {
             FastForwardBefore((player, session), flow, start);

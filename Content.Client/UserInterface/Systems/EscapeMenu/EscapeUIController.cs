@@ -19,7 +19,7 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 namespace Content.Client.UserInterface.Systems.EscapeMenu;
 
 [UsedImplicitly]
-public sealed partial class EscapeUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
+public sealed partial class EscapeUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>, IOnSystemChanged<TutorialPresentationSystem>
 {
     [Dependency] private IClientConsoleHost _console = default!;
     [Dependency] private IUriOpener _uri = default!;
@@ -30,6 +30,7 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
     [Dependency] private GuidebookUIController _guidebook = default!;
     [Dependency] private FeedbackPopupUIController _feedback = null!;
     [Dependency] private ILocalizationManager _loc = default!;
+    [UISystemDependency] private readonly TutorialPresentationSystem? _tutorial;
 
     private Options.UI.EscapeMenu? _escapeWindow;
 
@@ -120,13 +121,11 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
             _guidebook.ToggleGuidebook();
         };
 
-        var introMode = EntityManager.System<SharedTutorialSystem>().ReadIntroMode();
-        _escapeWindow.RestartTutorialButton.Visible =
-            introMode == SharedTutorialSystem.IntroMain || introMode == SharedTutorialSystem.IntroTutorial;
+        UpdateRestartButton();
         _escapeWindow.RestartTutorialButton.OnPressed += _ =>
         {
             CloseEscapeWindow();
-            EntityManager.System<TutorialPresentationSystem>().RequestRestart();
+            _tutorial?.RequestRestart();
         };
 
         // Hide wiki button if we don't have a link for it.
@@ -162,6 +161,26 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
         _escapeWindow.AdminRemarksButton.ToolTip = !seeOwnNotes
             ? _loc.GetString("ui-escape-remarks-button-disabled")
             : null;
+    }
+
+    public void OnSystemLoaded(TutorialPresentationSystem system)
+    {
+        UpdateRestartButton();
+    }
+
+    public void OnSystemUnloaded(TutorialPresentationSystem system)
+    {
+        UpdateRestartButton();
+    }
+
+    private void UpdateRestartButton()
+    {
+        if (_escapeWindow == null)
+            return;
+
+        var mode = _tutorial?.ReadIntroMode();
+        _escapeWindow.RestartTutorialButton.Visible =
+            mode is SharedTutorialSystem.IntroMain or SharedTutorialSystem.IntroTutorial;
     }
 
     private void EscapeButtonOnOnPressed(ButtonEventArgs obj)

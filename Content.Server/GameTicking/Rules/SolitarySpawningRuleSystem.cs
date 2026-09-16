@@ -111,7 +111,7 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         return TryRestartTutorial(session);
     }
 
-    public bool TryRestartTutorial(ICommonSession session)
+    public bool TryRestartTutorial(ICommonSession session, bool fromBeginning = false)
     {
         if (!TryGetActivePrototype(out var proto))
             return false;
@@ -119,12 +119,23 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         var profile = _prefs.GetPreferencesOrNull(session.UserId)?.SelectedCharacter as HumanoidCharacterProfile
                       ?? HumanoidCharacterProfile.Random();
 
-        CleanupStation(session.UserId);
+        var hadOld = _stations.TryGetValue(session.UserId, out var old);
+
+        _awaySince.Remove(session.UserId);
+        
+        _pendingLobbyJoins.Remove(session.UserId);
 
         if (!CreateSolitaryStation(session, profile, proto, out var stationTarget))
             return false;
 
-        SpawnPlayer(session, profile, proto.Job, stationTarget.Value, proto.WelcomeLoc, proto.TutorialFlow);
+        if (_mind.TryGetMind(session.UserId, out var mindId, out var mind))
+            _mind.WipeMind(mindId, mind);
+
+        SpawnPlayer(session, profile, proto.Job, stationTarget.Value, proto.WelcomeLoc, proto.TutorialFlow, fromBeginning);
+
+        if (hadOld)
+            DeleteLoadedStation(old);
+
         return true;
     }
 
@@ -282,7 +293,8 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         ProtoId<JobPrototype> jobId,
         EntityUid station,
         LocId? message,
-        ProtoId<Content.Shared._Polonium.Tutorial.Prototypes.TutorialFlowPrototype>? tutorialFlow)
+        ProtoId<Content.Shared._Polonium.Tutorial.Prototypes.TutorialFlowPrototype>? tutorialFlow,
+        bool fromBeginning = false)
     {
         if (humanoid is null)
         {
@@ -307,7 +319,7 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
 
         // let the tutorial system deal with this, not our problem
         if (tutorialFlow is { } flow)
-            RaiseLocalEvent(new TutorialStartRequestedEvent(mob, flow));
+            RaiseLocalEvent(new TutorialStartRequestedEvent(mob, flow, fromBeginning));
     }
 
     /// <summary>
@@ -460,6 +472,11 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         if (!_stations.Remove(user, out var rec))
             return;
 
+        DeleteLoadedStation(rec);
+    }
+
+    private void DeleteLoadedStation(SolitaryPlayerMap rec)
+    {
         if (_map.MapExists(rec.Map))
             _map.DeleteMap(rec.Map);
 

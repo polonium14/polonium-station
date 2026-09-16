@@ -264,7 +264,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
             return;
 
         const string id = "tutorial-restart-hint";
-        _tutorialUi.PlanOverlay(id, button, Color.FromHex("#65B8E2"), highlightMargin: 4f);
+        _tutorialUi.PlanOverlay(id, button, Color.FromHex("#65B8E2"), highlightMargin: 4f, orphanOnHighlightClick: true);
 
         if (_tutorialUi.ActiveOverlay?.Id != id)
             return;
@@ -288,7 +288,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
         var button = lobby.ReadyButton;
         const string id = "tutorial-practical-later";
-        _tutorialUi.PlanOverlay(id, button, Color.FromHex("#65B8E2"), highlightMargin: 4f);
+        _tutorialUi.PlanOverlay(id, button, Color.FromHex("#65B8E2"), highlightMargin: 4f, orphanOnHighlightClick: true);
 
         if (_tutorialUi.ActiveOverlay?.Id != id)
             return;
@@ -716,6 +716,12 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
         if (IsTutorialActive)
             PauseTutorial();
+
+        // skip-later / restart-hint sit on RootControl. if they survive into gameplay
+        // PlanOverlay just queues the welcome bubble behind them and never draws it
+        if (_tutorialUi.ActiveOverlay is { } leftover
+            && leftover.Id != TutorialPresentationSystem.OverlayId)
+            _tutorialUi.DiscardActive();
     }
 
     private void OnRunLevelChanged(object? sender, RunLevelChangedEventArgs args)

@@ -1,5 +1,6 @@
 using Content.Server.Ghost;
 using Content.Server.Hands.Systems;
+using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Damage.Components;
 using Content.Shared.Database;
@@ -47,6 +48,12 @@ public sealed partial class SuicideSystem : SharedSuicideSystem
     /// </summary>
     public bool Suicide(EntityUid victim)
     {
+        if (HasComp<TutorialSessionComponent>(victim))
+        {
+            _popup.PopupEntity(Loc.GetString("tutorial-cannot-suicide"), victim, victim);
+            return false;
+        }
+
         // Can't suicide if we're already dead
         if (!TryComp<MobStateComponent>(victim, out var mobState) || _mobState.IsDead(victim, mobState))
             return false;

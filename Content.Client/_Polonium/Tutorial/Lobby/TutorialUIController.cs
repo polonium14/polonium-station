@@ -172,6 +172,22 @@ public sealed partial class TutorialUIController : UIController
         _pendingBubbles.Clear();
     }
 
+    public void DiscardActive()
+    {
+        // dont DestroyOverlay, lobby steps treat that as "go next"
+        _pendingOverlays.Clear();
+
+        while (_pendingBubbles.Count > 0)
+            _pendingBubbles.Dequeue().Item1.Orphan();
+
+        if (ActiveOverlay is not { } overlay)
+            return;
+
+        ActiveOverlay = null;
+        ActiveBubble = null;
+        overlay.Orphan();
+    }
+
     public void RequestClose(bool completely)
     {
         if (completely)

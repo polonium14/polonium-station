@@ -95,6 +95,13 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
 
     public void RequestRestart()
     {
+        _lastUi = default;
+        _finaleMusic = false;
+        _cameraStep = null;
+        _cameraInitial = null;
+        _cameraSent = false;
+        ClearBubble();
+        ClearHint();
         RaiseNetworkEvent(new TutorialRestartRequestedEvent());
     }
 
@@ -147,12 +154,22 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
     private void OnStateChanged(StateChangedEventArgs args)
     {
         if (args.NewState is GameplayState)
+        {
             TryShowLocal(force: true);
+            return;
+        }
+
+        ClearBubble();
+        ClearHint();
+        _bubbleScreen = null;
+        _lastUi = default;
     }
 
     private void OnSessionShutdown(Entity<TutorialSessionComponent> ent, ref ComponentShutdown args)
     {
-        if (ent.Owner != _player.LocalEntity)
+        // wipe/delete detaches first, LocalEntity is already null. still drop the hud
+        // or a leftover lobby overlay sits there and eats the next welcome
+        if (_player.LocalEntity is { } local && local != ent.Owner)
             return;
 
         ClearBubble();
@@ -167,11 +184,14 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
 
     private void TryShowLocal(bool force)
     {
+        if (force)
+        {
+            _lastUi = default;
+            DropForeignOverlay();
+        }
+
         if (_player.LocalEntity is not { } uid || !TryComp<TutorialSessionComponent>(uid, out var session))
             return;
-
-        if (force)
-            _lastUi = default;
 
         TryShow((uid, session));
     }
@@ -336,8 +356,8 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
         ProtoId<TutorialStepPrototype> stepId,
         TutorialStepPrototype stepProto)
     {
-        if (_tutorialUi.ActiveOverlay is { Id: OverlayId })
-            _tutorialUi.RequestClose(false);
+        // skip-later leftover has a different id so RequestClose(OverlayId) never saw it
+        _tutorialUi.DiscardActive();
 
         var spotlight = TryGetHudControl(stepProto.HighlightHud);
         var wantsBubble = stepProto.BubbleText != null
@@ -620,10 +640,24 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
         _hint?.SetHint(string.Empty, string.Empty);
     }
 
+    private void DropForeignOverlay()
+    {
+        if (_tutorialUi.ActiveOverlay is { } overlay && overlay.Id != OverlayId)
+            _tutorialUi.DiscardActive();
+    }
+
     private void ClearBubble()
     {
-        if (_tutorialUi.ActiveOverlay is { Id: OverlayId })
-            _tutorialUi.RequestClose(false);
+        if (_tutorialUi.ActiveOverlay is null)
+            return;
+
+        if (_tutorialUi.ActiveOverlay.Id == OverlayId)
+        {
+            _tutorialUi.DiscardActive();
+            return;
+        }
+
+        DropForeignOverlay();
     }
 
     private void OnKeybindChanged(IKeyBinding _)

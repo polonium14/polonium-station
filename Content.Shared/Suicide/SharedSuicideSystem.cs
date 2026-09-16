@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
@@ -19,6 +20,9 @@ public abstract partial class SharedSuicideSystem : EntitySystem
     /// </summary>
     public void ApplyLethalDamage(Entity<DamageableComponent> target, DamageSpecifier damageSpecifier)
     {
+        if (HasComp<TutorialSessionComponent>(target))
+            return;
+
         // Create a new damageSpecifier so that we don't make alterations to the original DamageSpecifier
         // Failing  to do this will permanently change a weapon's damage making it insta-kill people
         var appliedDamageSpecifier = new DamageSpecifier(damageSpecifier);
@@ -49,6 +53,9 @@ public abstract partial class SharedSuicideSystem : EntitySystem
     /// </summary>
     public void ApplyLethalDamage(Entity<DamageableComponent> target, ProtoId<DamageTypePrototype>? damageType)
     {
+        if (HasComp<TutorialSessionComponent>(target))
+            return;
+
         if (!TryComp<MobThresholdsComponent>(target, out var mobThresholds))
             return;
 

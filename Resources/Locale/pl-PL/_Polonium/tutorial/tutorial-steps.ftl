@@ -137,6 +137,7 @@ tutorial-hint-sign = { $click } na teczkę — otwórz. Z długopisem w ręce: {
 tutorial-hint-camera = { $camera } / { $cameraLeft } — obrót widoku, { $cameraReset } — reset
 tutorial-cannot-break-structure = Nie niszcz tego. To nie jest część ćwiczenia.
 tutorial-cannot-ghost = W szkoleniu nie możesz stać się duchem.
+tutorial-cannot-suicide = W szkoleniu nie możesz popełnić samobójstwa.
 
 tutorial-bubble-acknowledge = Zrobione
 tutorial-bubble-guidebook = Poradnik

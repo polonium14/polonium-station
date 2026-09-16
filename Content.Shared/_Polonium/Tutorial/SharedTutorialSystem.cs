@@ -246,10 +246,16 @@ public sealed class TutorialStartRequestedEvent : EntityEventArgs
     public EntityUid Player { get; }
     public ProtoId<Prototypes.TutorialFlowPrototype> Flow { get; }
 
-    public TutorialStartRequestedEvent(EntityUid player, ProtoId<Prototypes.TutorialFlowPrototype> flow)
+    public bool FromBeginning { get; }
+
+    public TutorialStartRequestedEvent(
+        EntityUid player,
+        ProtoId<Prototypes.TutorialFlowPrototype> flow,
+        bool fromBeginning = false)
     {
         Player = player;
         Flow = flow;
+        FromBeginning = fromBeginning;
     }
 }
 
