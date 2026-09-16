@@ -140,7 +140,10 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         }
 
         if (!HasComp<TutorialSessionComponent>(rec.Trainee))
+        {
+            CleanupStation(session.UserId);
             return false;
+        }
 
         RestorePresence(session);
         return true;
@@ -355,6 +358,8 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
 
     public override void Update(float frameTime)
     {
+        base.Update(frameTime);
+
         if (_awaySince.Count == 0)
             return;
 
