@@ -1,4 +1,4 @@
-﻿using Content.Client.Lobby;
+using Content.Client.Lobby;
 using Content.Shared._Polonium.Tutorial.Lobby;
 using Robust.Client.ResourceManagement;
 using Robust.Client.State;
@@ -53,13 +53,21 @@ public sealed class LobbyOverviewStep : ClientsideNavTutorialStep
 
         var bubble = new TutorialBubble(Loc.GetString("intro-lobby-overview-message-1"))
         {
-            ClickAction = TutorialBubble.ClickBehaviour.CloseOverlay,
+            ClickAction = TutorialBubble.ClickBehaviour.Ignore,
             TippyVariant = TutorialBubble.Tippy.ClownRegular,
         };
 
+        var skip = TutorialBubble.MakeButton(Loc.GetString("intro-lobby-skip-button"), primary: false);
+        skip.OnPressed += _ => Tutorial.SkipLobbyTour();
+        bubble.ButtonsContainer.AddChild(skip);
+
         TutorialUi.PlanBubble(bubble, TutorialHighlightOverlay.OverlayControlPosition.CenterLeft, _lobby.RightSide, overlayId: name);
 
-        overlay.InternalOverlayClosedEvent += () => SecondOverlay();
+        overlay.InternalOverlayClosedEvent += () =>
+        {
+            if (Tutorial.IsTutorialActive && Tutorial.ActiveStep?.StepId == StepId)
+                SecondOverlay();
+        };
     }
 
     private void SecondOverlay(bool reentry = false)

@@ -7,10 +7,13 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.GameTicking.Prototypes;
+using Content.Server._Polonium.Tutorial;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.Preferences.Managers;
 using Content.Shared._Polonium.Tutorial;
+using Content.Shared._Polonium.Tutorial.Components;
+using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Rules;
@@ -20,6 +23,8 @@ using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Station.Components;
 using Robust.Server.Player;
+using Robust.Shared.Configuration;
+using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -47,10 +52,11 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
-    // A list of the station entities generated for each player (and the map they are on).
-    // Used for respawning players on their own station, and for deleting unused maps.
-    private readonly Dictionary<ICommonSession, (EntityUid, MapId)> _stations = [];
+    // ICommonSession is a new object after reconnect, so this is the account id
+    private readonly Dictionary<NetUserId, SolitaryPlayerMap> _stations = [];
+    private readonly Dictionary<NetUserId, TimeSpan> _awaySince = [];
     private readonly HashSet<NetUserId> _pendingLobbyJoins = [];
 
     /// <inheritdoc/>
@@ -61,6 +67,14 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         SubscribeLocalEvent<PlayerBeforeSpawnEvent>(OnBeforeSpawn);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
+        SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
+        _player.PlayerStatusChanged += OnPlayerStatus;
+    }
+
+    public override void Shutdown()
+    {
+        _player.PlayerStatusChanged -= OnPlayerStatus;
+        base.Shutdown();
     }
 
     public bool TryJoinFromLobby(ICommonSession session)
@@ -71,6 +85,9 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         var preset = GameTicker.CurrentPreset ?? GameTicker.Preset;
         if (preset?.ID != "Tutorial")
             return false;
+
+        if (TryResumeTutorial(session))
+            return true;
 
         if (GameTicker.RunLevel == GameRunLevel.PreRoundLobby)
         {
@@ -102,20 +119,30 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         var profile = _prefs.GetPreferencesOrNull(session.UserId)?.SelectedCharacter as HumanoidCharacterProfile
                       ?? HumanoidCharacterProfile.Random();
 
-        _mind.WipeMind(session);
-
-        if (_stations.Remove(session, out var stored))
-        {
-            var (station, mapId) = stored;
-            _map.DeleteMap(mapId);
-            if (!Deleted(station))
-                Del(station);
-        }
+        CleanupStation(session.UserId);
 
         if (!CreateSolitaryStation(session, profile, proto, out var stationTarget))
             return false;
 
         SpawnPlayer(session, profile, proto.Job, stationTarget.Value, proto.WelcomeLoc, proto.TutorialFlow);
+        return true;
+    }
+
+    public bool TryResumeTutorial(ICommonSession session)
+    {
+        if (!_stations.TryGetValue(session.UserId, out var rec))
+            return false;
+
+        if (Deleted(rec.Trainee) || !_map.MapExists(rec.Map))
+        {
+            CleanupStation(session.UserId);
+            return false;
+        }
+
+        if (!HasComp<TutorialSessionComponent>(rec.Trainee))
+            return false;
+
+        RestorePresence(session);
         return true;
     }
 
@@ -163,12 +190,13 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
 
             var job = proto.Job;
 
-            if (RequestExistingStation(session, out var stationExist))
+            if (RequestExistingStation(session, out _))
             {
-                Log.Debug($"Existing solitary station found for {session}. Not creating a new map.");
-                SpawnPlayer(session, args.Profile, job, stationExist.Value, null, proto.TutorialFlow);
-                args.Handled = true;
-                break;
+                if (TryResumeTutorial(session))
+                {
+                    args.Handled = true;
+                    break;
+                }
             }
 
             if (!CreateSolitaryStation(session, args.Profile, proto, out var stationTarget))
@@ -235,8 +263,8 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
 
         stationTarget = member.Station;
 
-        //store the newly created station entity and map for this session, for respawn and cleanup purposes
-        _stations[session] = (stationTarget.Value, mapId);
+        // store the box against the account - reconnect needs to find this map again
+        _stations[session.UserId] = new SolitaryPlayerMap(stationTarget.Value, mapId, EntityUid.Invalid);
         return true;
     }
 
@@ -258,6 +286,9 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         }
 
         GameTicker.DoSpawn(session, humanoid, station, jobId, true, out var mob, out _, out var jobName);
+
+        if (_stations.TryGetValue(session.UserId, out var rec))
+            _stations[session.UserId] = rec with { Trainee = mob };
 
         // Latejoin is not a relevant concept for solitary spawns - the station did not even exist beforehand
         // Also, round flow does not exist in the regular sense on a tutorial server
@@ -281,10 +312,16 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
     {
         station = null;
 
-        if (!_stations.TryGetValue(session, out var stored))
+        if (!_stations.TryGetValue(session.UserId, out var stored))
             return false;
 
-        station = stored.Item1;
+        if (Deleted(stored.Station) || !_map.MapExists(stored.Map))
+        {
+            CleanupStation(session.UserId);
+            return false;
+        }
+
+        station = stored.Station;
         return true;
     }
 
@@ -298,21 +335,138 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
             if (GameTicker.UserHasJoinedGame(session))
                 continue;
 
-            TryRestartTutorial(session);
+            if (!TryResumeTutorial(session))
+                TryRestartTutorial(session);
         }
 
         _pendingLobbyJoins.Clear();
+    }
+
+    private void OnPlayerJoinedLobby(PlayerJoinedLobbyEvent ev)
+    {
+        MarkAway(ev.PlayerSession.UserId);
+    }
+
+    private void OnPlayerStatus(object? sender, SessionStatusEventArgs ev)
+    {
+        if (ev.NewStatus == SessionStatus.Disconnected)
+            MarkAway(ev.Session.UserId);
+    }
+
+    public override void Update(float frameTime)
+    {
+        if (_awaySince.Count == 0)
+            return;
+
+        var now = Timing.CurTime;
+        var seconds = _cfg.GetCVar(CCVars.TutorialAwayCleanup);
+        var timeout = seconds > 0f ? TimeSpan.FromSeconds(seconds) : (TimeSpan?)null;
+
+        List<NetUserId>? dump = null;
+        List<NetUserId>? back = null;
+
+        foreach (var (user, since) in _awaySince)
+        {
+            if (timeout is { } limit && now - since >= limit)
+            {
+                (dump ??= new()).Add(user);
+                continue;
+            }
+
+            if (!_player.TryGetSessionById(user, out var session))
+                continue;
+
+            if (!_stations.TryGetValue(user, out var rec))
+                continue;
+
+            if (session.AttachedEntity == rec.Trainee)
+                (back ??= new()).Add(user);
+        }
+
+        if (back != null)
+        {
+            foreach (var user in back)
+            {
+                if (_player.TryGetSessionById(user, out var session))
+                    RestorePresence(session);
+            }
+        }
+
+        if (dump == null)
+            return;
+
+        foreach (var user in dump)
+        {
+            Log.Info($"Tutorial: dumping idle map for {user} after away timeout");
+            CleanupStation(user);
+        }
+    }
+
+    private void RestorePresence(ICommonSession session)
+    {
+        if (!_stations.TryGetValue(session.UserId, out var rec))
+            return;
+
+        if (_awaySince.Remove(session.UserId, out var since)
+            && HasComp<TutorialSessionComponent>(rec.Trainee))
+        {
+            EntityManager.System<TutorialSystem>().ShiftIdleTimers(rec.Trainee, Timing.CurTime - since);
+        }
+
+        if (_map.MapExists(rec.Map) && _map.IsPaused(rec.Map))
+            _map.SetPaused(rec.Map, false);
+
+        if (!HasComp<TutorialSessionComponent>(rec.Trainee))
+            return;
+
+        _mind.ControlMob(session.UserId, rec.Trainee);
+
+        if (!GameTicker.UserHasJoinedGame(session))
+            GameTicker.PlayerJoinGame(session);
+    }
+
+    private void MarkAway(NetUserId user)
+    {
+        if (!_stations.TryGetValue(user, out var rec))
+            return;
+
+        if (Deleted(rec.Trainee) || !_map.MapExists(rec.Map))
+        {
+            CleanupStation(user);
+            return;
+        }
+
+        _awaySince.TryAdd(user, Timing.CurTime);
+
+        if (!_map.IsPaused(rec.Map))
+            _map.SetPaused(rec.Map, true);
+    }
+
+    private void CleanupStation(NetUserId user)
+    {
+        _awaySince.Remove(user);
+        _pendingLobbyJoins.Remove(user);
+
+        if (_mind.TryGetMind(user, out var mindId, out var mind))
+            _mind.WipeMind(mindId, mind);
+
+        if (!_stations.Remove(user, out var rec))
+            return;
+
+        if (_map.MapExists(rec.Map))
+            _map.DeleteMap(rec.Map);
+
+        if (!Deleted(rec.Station))
+            Del(rec.Station);
     }
 
     /// Clear the saved station list, since the maps are being deleted
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent args)
     {
         _stations.Clear();
+        _awaySince.Clear();
         _pendingLobbyJoins.Clear();
     }
 
-    private void MapCleanup()
-    {
-        // TODO map cleanup x minutes after the player left the server, or if they go back to the lobby
-    }
+    private readonly record struct SolitaryPlayerMap(EntityUid Station, MapId Map, EntityUid Trainee);
 }

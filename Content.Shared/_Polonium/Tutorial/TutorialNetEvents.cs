@@ -13,6 +13,17 @@ public sealed class TutorialStartPracticalEvent : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
+public sealed class TutorialLobbyFlowEvent : EntityEventArgs
+{
+    public bool Active { get; }
+
+    public TutorialLobbyFlowEvent(bool active)
+    {
+        Active = active;
+    }
+}
+
+[Serializable, NetSerializable]
 public sealed class TutorialCraftingMenuOpenedEvent : EntityEventArgs
 {
 }

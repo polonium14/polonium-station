@@ -2,11 +2,13 @@
 using Content.Client._Polonium.Tutorial.Lobby.UI;
 using Content.Client.Lobby;
 using Content.Client.Lobby.UI;
+using Content.Client.Resources;
 using TutorialPresentationSystem = Content.Client._Polonium.Tutorial.TutorialPresentationSystem;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Lobby;
 using Content.Shared.CCVar;
 using Robust.Client;
+using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -25,6 +27,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     [Dependency] private IGameController _game = default!;
     [Dependency] private IEntitySystemManager _systems = default!;
     [Dependency] private IBaseClient _client = default!;
+    [Dependency] private IResourceCache _resCache = default!;
     private ISawmill _sawmill = default!;
     private TutorialUIController _tutorialUi = default!;
     private LobbyUIController _lobby = default!;
@@ -39,6 +42,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     private bool _isPaused = false;
     private bool? _dbCompleted;
     private bool _offerOpen;
+    private bool _lobbyTourSent;
     private TutorialHopWindow? _hopWindow;
 
     public IClientsideNavTutorialStep? ActiveStep =>
@@ -89,35 +93,15 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
         if (mode == SharedTutorialSystem.IntroTutorial)
         {
-            _systems.GetEntitySystem<TutorialPresentationSystem>().RequestPracticalJoin();
+            if (IsPaused && IsTutorialActive)
+                ResumeTutorial();
+            else if (!IsTutorialActive)
+                Start(null);
             return;
         }
 
-        if (mode == SharedTutorialSystem.IntroMain
-            && !string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
-        {
+        if (mode == SharedTutorialSystem.IntroMain)
             OpenTrainingHopWindow();
-            return;
-        }
-
-        if (IsTutorialActive)
-        {
-            _sawmill.Error(_loc.GetString("intro-begin-error-already-running"));
-            return;
-        }
-
-        if (_stateMan.CurrentState is not LobbyState)
-        {
-            _sawmill.Error(_loc.GetString("intro-begin-error-outside-lobby"));
-            return;
-        }
-
-        Progress.HasDeclined = false;
-
-        if (IsPaused && IsTutorialActive)
-            ResumeTutorial();
-        else
-            Start(null);
     }
 
     /// <summary>
@@ -125,6 +109,9 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     /// </summary>
     public bool Start(int? fromStepIndex = null)
     {
+        if (GetIntroMode() != SharedTutorialSystem.IntroTutorial)
+            return false;
+
         if (_steps.Count == 0)
             return false;
 
@@ -132,7 +119,9 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         _currentStepIndex = fromStepIndex ?? (_cfg.GetCVar(CCVars.SkipLobbyIntroDebug) ? _steps.Count - 1 : 0);
         _isPaused = false;
 
-        return ExecuteCurrentStep();
+        var ok = ExecuteCurrentStep();
+        NotifyLobbyTour(IsTutorialActive);
+        return ok;
     }
 
     /// <summary>
@@ -204,6 +193,12 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         Progress.HasDeclined = true;
         CancelTutorial();
         ShowRestartHint();
+    }
+
+    public void SkipLobbyTour()
+    {
+        CompleteTutorial();
+        ShowPracticalLaterHint();
     }
 
     public void OnDbCompletion(bool completed)
@@ -279,6 +274,30 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
             overlayId: id);
     }
 
+    public void ShowPracticalLaterHint()
+    {
+        if (_stateMan.CurrentState is not LobbyState { Lobby: { } lobby })
+            return;
+
+        var button = lobby.ReadyButton;
+        const string id = "tutorial-practical-later";
+        _tutorialUi.PlanOverlay(id, button, Color.FromHex("#65B8E2"), highlightMargin: 4f);
+
+        if (_tutorialUi.ActiveOverlay?.Id != id)
+            return;
+
+        _tutorialUi.PlanBubble(
+            new TutorialBubble(_loc.GetString("intro-lobby-skip-later",
+                ("lobby-join-button", button.Text ?? string.Empty)))
+            {
+                ClickAction = TutorialBubble.ClickBehaviour.CloseOverlay,
+                TippyVariant = TutorialBubble.Tippy.ClownPointing,
+            },
+            TutorialHighlightOverlay.OverlayControlPosition.BottomRight,
+            relativeToControl: button,
+            overlayId: id);
+    }
+
     /// <summary>
     /// Moves to the next introduction step.
     /// </summary>
@@ -328,10 +347,11 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         Progress.IsPaused = false;
         Progress.CurrentStepId = string.Empty;
         _isPaused = false;
+        NotifyLobbyTour(false);
         OnTutorialCancelled?.Invoke();
     }
 
-    public void CompleteTutorial() // TODO: może ProceedTutorial — gracz przechodzi dalej na serwer treningowy.
+    public void CompleteTutorial()
     {
         CleanupCurrentStep();
         _currentStepIndex = -1;
@@ -339,6 +359,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         Progress.IsPaused = false;
         Progress.CurrentStepId = string.Empty;
         _isPaused = false;
+        NotifyLobbyTour(false);
         OnTutorialCompleted?.Invoke();
     }
 
@@ -450,6 +471,18 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         _hopWindow?.Close();
     }
 
+    private void NotifyLobbyTour(bool active)
+    {
+        if (_lobbyTourSent == active)
+            return;
+
+        if (!_systems.TryGetEntitySystem(out TutorialPresentationSystem? tutorial))
+            return;
+
+        _lobbyTourSent = active;
+        tutorial.SetLobbyTourActive(active);
+    }
+
     private bool ShouldOfferTraining()
     {
         if (GetIntroMode() != SharedTutorialSystem.IntroMain)
@@ -545,22 +578,19 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
         if (mode == SharedTutorialSystem.IntroTutorial)
         {
-            _systems.GetEntitySystem<TutorialPresentationSystem>().RequestPracticalJoin();
-            return;
-        }
+            if (IsPaused && IsTutorialActive)
+            {
+                ResumeTutorial();
+                return;
+            }
 
-        // a finished or refused run is not offered again, the lobby button is still there
-        if (Progress.IsCompleted || Progress.HasDeclined)
-            return;
-
-        if (IsPaused && IsTutorialActive)
-        {
-            ResumeTutorial();
+            if (!IsTutorialActive && !Progress.IsCompleted)
+                Start(null);
             return;
         }
 
         if (IsTutorialActive)
-            return;
+            CancelTutorial();
 
         TryOfferTraining();
     }
@@ -595,6 +625,13 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
             ClickAction = TutorialBubble.ClickBehaviour.Ignore,
             TippyVariant = TutorialBubble.Tippy.WavingHand,
         };
+
+        bubble.ContentContainer.AddChild(new TextureRect
+        {
+            Texture = _resCache.GetTexture("/Textures/_Polonium/Interface/Misc/intro_markers/Text/greeting_text.png"),
+            Stretch = TextureRect.StretchMode.Scale,
+            HorizontalAlignment = Control.HAlignment.Center,
+        });
 
         var agree = TutorialBubble.MakeButton(_loc.GetString("intro-training-offer-agree"));
         var decline = TutorialBubble.MakeButton(_loc.GetString("intro-training-offer-disagree"), primary: false);
@@ -654,6 +691,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
             return;
 
         _dbCompleted = null;
+        _lobbyTourSent = false;
         CloseTrainingOffer();
         CloseTrainingHopWindow();
         _hopWindow = null;

@@ -1,4 +1,5 @@
 using Content.Server.Administration.Managers;
+using Content.Server._Polonium.Tutorial;
 using Content.Shared.Administration;
 using Content.Shared.GameTicking;
 using Robust.Shared.Console;
@@ -30,6 +31,9 @@ namespace Content.Server.GameTicking.Commands
                 shell.WriteError("Wait until the round starts.");
                 return;
             }
+
+            if (_e.System<TutorialSystem>().TryBlockConsoleJoin(player, shell))
+                return;
 
             var isAdminCommand = args.Length > 0 && args[0].ToLower() == "admin";
 

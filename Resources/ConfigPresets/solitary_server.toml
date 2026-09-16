@@ -21,7 +21,7 @@ soft_max_players = 50
 role_timer_override = "Zeroed"
 server_full_reconnect_delay = 30
 defaultpreset = "Tutorial"
-disallowlatejoins = true
+disallowlatejoins = false
 map = "Tutorial"
 role_timers = false
 role_whitelist = false
@@ -119,6 +119,7 @@ skip_lobby_intro_debug = false
 
 [tutorial]
 debug_start_room = "room16"
+away_cleanup = 1200
 
 [build]
 fork_id = "polonium"

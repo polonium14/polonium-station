@@ -18,7 +18,9 @@ using Content.Shared.Tools.Components;
 using Content.Shared.Wall;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.Console;
 using Robust.Shared.Enums;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -40,6 +42,9 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
     [Dependency] private MobThresholdSystem _thresholds = default!;
     [Dependency] private StandingStateSystem _standing = default!;
 
+    // joingame / ready still dump you on the shared map, so we keep those cmds out while the comic is up
+    private readonly HashSet<NetUserId> _lobbyTour = [];
+
     public override void Initialize()
     {
         base.Initialize();
@@ -57,8 +62,8 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
             before: [typeof(ConstructionSystem)]);
         SubscribeNetworkEvent<TutorialRestartRequestedEvent>(OnRestartRequested);
         SubscribeNetworkEvent<TutorialStartPracticalEvent>(OnStartPractical);
+        SubscribeNetworkEvent<TutorialLobbyFlowEvent>(OnLobbyFlow);
         SubscribeNetworkEvent<TutorialFinaleChoiceEvent>(OnFinaleChoice);
-        SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
         _player.PlayerStatusChanged += OnPlayerStatus;
     }
 
@@ -89,11 +94,47 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         if (ReadIntroMode() != IntroTutorial)
             return;
 
+        _lobbyTour.Remove(args.SenderSession.UserId);
         _solitary.TryJoinFromLobby(args.SenderSession);
+    }
+
+    private void OnLobbyFlow(TutorialLobbyFlowEvent ev, EntitySessionEventArgs args)
+    {
+        if (ev.Active)
+            _lobbyTour.Add(args.SenderSession.UserId);
+        else
+            _lobbyTour.Remove(args.SenderSession.UserId);
+    }
+
+    public bool TryBlockConsoleJoin(ICommonSession player, IConsoleShell shell)
+    {
+        if (!IsConsoleJoinBlocked(player))
+            return false;
+
+        shell.WriteError(Loc.GetString("cmd-tutorial-lobby-join-blocked"));
+        return true;
+    }
+
+    public bool IsConsoleJoinBlocked(ICommonSession player)
+    {
+        var ticker = EntityManager.System<GameTicker>();
+        if (ticker.UserHasJoinedGame(player))
+            return false;
+
+        if (_lobbyTour.Contains(player.UserId))
+            return true;
+
+        return ReadIntroMode() == IntroTutorial;
     }
 
     private void OnPlayerStatus(object? sender, SessionStatusEventArgs ev)
     {
+        if (ev.NewStatus == SessionStatus.Disconnected)
+        {
+            _lobbyTour.Remove(ev.Session.UserId);
+            return;
+        }
+
         if (ev.NewStatus != SessionStatus.Connected)
             return;
 
@@ -104,12 +145,6 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
             return;
 
         SendCompletionStatus(ev.Session);
-    }
-
-    private void OnPlayerJoinedLobby(PlayerJoinedLobbyEvent ev)
-    {
-        if (ReadIntroMode() == IntroTutorial)
-            _solitary.TryJoinFromLobby(ev.PlayerSession);
     }
 
     private async void SendCompletionStatus(ICommonSession session)
@@ -285,6 +320,34 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         // the last step means a player who cannot move and cannot swing, forever
         RemComp<TutorialFrozenComponent>(ent.Owner);
         RemComp<PacifiedComponent>(ent.Owner);
+    }
+
+    // CurTime still moves while the map is paused, so shove every deadline forward by the gap
+    public void ShiftIdleTimers(EntityUid trainee, TimeSpan delta)
+    {
+        if (delta <= TimeSpan.Zero)
+            return;
+
+        if (!TryComp<TutorialSessionComponent>(trainee, out var session))
+            return;
+
+        session.StepStartedAt += delta;
+        if (session.PendingAdvanceAt is { } pending)
+            session.PendingAdvanceAt = pending + delta;
+
+        session.FlowStartedAt += delta;
+
+        if (TryComp<TutorialFrozenComponent>(trainee, out var frozen))
+            frozen.ExpiresAt += delta;
+
+        if (session.MentorUid is not { } mentor
+            || Deleted(mentor)
+            || !TryComp<TutorialMentorComponent>(mentor, out var mentorComp))
+            return;
+
+        mentorComp.NextSpeak += delta;
+        foreach (var line in mentorComp.SpeechQueue)
+            line.GateExpiresAt += delta;
     }
 
     private Dictionary<string, EntityUid> ResolveAnchorsOnGrid(EntityUid player)

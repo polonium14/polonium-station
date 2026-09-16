@@ -166,8 +166,14 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         var query = EntityQueryEnumerator<TutorialSessionComponent>();
         while (query.MoveNext(out var player, out var session))
         {
-            if (session.PendingAdvanceAt is { } at && _timing.CurTime >= at)
-                (due ??= new()).Add(player);
+            if (session.PendingAdvanceAt is not { } at || _timing.CurTime < at)
+                continue;
+
+            // empty body sitting on a satisfied tile must not walk the flow for them
+            if (!_players.TryGetSessionByEntity(player, out _))
+                continue;
+
+            (due ??= new()).Add(player);
         }
 
         if (due == null)
@@ -181,6 +187,9 @@ public sealed partial class TutorialConditionTracker : EntitySystem
     private void ProcessFreeze(EntityUid player)
     {
         if (!TryComp<TutorialSessionComponent>(player, out var session))
+            return;
+
+        if (!_players.TryGetSessionByEntity(player, out _))
             return;
 
         if (!_tutorial.TryGetCurrentStep(session, out _, out var step))
@@ -1529,6 +1538,9 @@ public sealed partial class TutorialConditionTracker : EntitySystem
     private void ProcessStuck(EntityUid player)
     {
         if (!TryComp<TutorialSessionComponent>(player, out var session))
+            return;
+
+        if (!_players.TryGetSessionByEntity(player, out _))
             return;
 
         if (!_tutorial.TryGetCurrentStep(session, out _, out var step))

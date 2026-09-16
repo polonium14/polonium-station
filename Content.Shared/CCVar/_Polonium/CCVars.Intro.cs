@@ -51,6 +51,13 @@ public sealed partial class CCVars
     public static readonly CVarDef<string> TutorialDebugStartRoom =
         CVarDef.Create("tutorial.debug_start_room", string.Empty, CVar.SERVER);
 
+    /// <summary>
+    /// Seconds a trainee's map is kept after they disconnect or go back to the lobby.
+    /// 0 keeps it until they come back or the round restarts.
+    /// </summary>
+    public static readonly CVarDef<float> TutorialAwayCleanup =
+        CVarDef.Create("tutorial.away_cleanup", 1200f, CVar.SERVER);
+
     public static readonly CVarDef<string> IntroSolitaryServerConnectionString =
         CVarDef.Create("intro.solitary_server_con_string", string.Empty, CVar.SERVER | CVar.REPLICATED);
 
