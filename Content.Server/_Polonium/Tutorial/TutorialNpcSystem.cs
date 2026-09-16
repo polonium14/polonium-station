@@ -1,5 +1,7 @@
 using System.Numerics;
 using Content.Server.Chat.Systems;
+using Content.Server.NPC.HTN;
+using Content.Server.NPC.Systems;
 using Content.Server.Physics.Controllers;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared.Climbing.Systems;
@@ -11,6 +13,8 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Nutrition;
+using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.SSDIndicator;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
@@ -46,6 +50,12 @@ public sealed partial class TutorialNpcSystem : EntitySystem
     [Dependency] private ClimbSystem _climb = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
     [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private SatiationSystem _satiation = default!;
+    [Dependency] private NPCSystem _npc = default!;
+
+    private static readonly ProtoId<HTNCompoundPrototype> IdleTask = "IdleCompound";
+    private static readonly ProtoId<HTNCompoundPrototype> RuminantTask = "RuminantCompound";
+    private static readonly ProtoId<HTNCompoundPrototype> RuminantHostileTask = "RuminantHostileCompound";
 
     public override void Initialize()
     {
@@ -163,6 +173,26 @@ public sealed partial class TutorialNpcSystem : EntitySystem
     {
         RemComp<SSDIndicatorComponent>(uid);
         _statusEffects.TryRemoveStatusEffect(uid, SSDIndicatorSystem.StatusEffectSSDSleeping);
+    }
+
+    public void SatiateAndIdle(EntityUid uid)
+    {
+        if (TryComp<SatiationComponent>(uid, out var satiation))
+        {
+            var ent = (uid, satiation);
+            _satiation.SetValue(ent, SatiationSystem.Hunger, "Overfed");
+            _satiation.SetValue(ent, SatiationSystem.Thirst, "Overhydrated");
+        }
+
+        if (!TryComp<HTNComponent>(uid, out var htn))
+            return;
+
+        if (htn.RootTask.Task != RuminantTask && htn.RootTask.Task != RuminantHostileTask)
+            return;
+
+        _npc.SleepNPC(uid, htn);
+        htn.RootTask = new HTNCompoundTask { Task = IdleTask };
+        _npc.WakeNPC(uid, htn);
     }
 
     /// <summary>

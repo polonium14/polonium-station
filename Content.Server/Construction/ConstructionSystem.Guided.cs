@@ -36,6 +36,12 @@ namespace Content.Server.Construction
             if (!args.CanAccess || !args.CanInteract || args.Hands == null)
                 return;
 
+            var attempt = new ConstructionInteractAttemptEvent(args.User);
+            RaiseLocalEvent(uid, ref attempt);
+
+            if (attempt.Cancelled)
+                return;
+
             if (component.TargetNode == component.DeconstructionNode ||
                 component.Node == component.DeconstructionNode)
                 return;

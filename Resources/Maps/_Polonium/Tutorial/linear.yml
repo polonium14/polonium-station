@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/15/2026 07:58:00
-  entityCount: 2472
+  entityCount: 2478
 maps:
 - 596
 grids:
@@ -10667,6 +10667,20 @@ entities:
       pos: 224.19461,-12.25032
     - type: TutorialAnchor
       anchorId: room16_material_glass
+  - uid: 2473
+    components:
+    - type: Transform
+      parent: 1
+      pos: 224.61649,-12.625581
+    - type: TutorialAnchor
+      anchorId: room16_material_glass
+  - uid: 2474
+    components:
+    - type: Transform
+      parent: 1
+      pos: 224.19461,-12.25032
+    - type: TutorialAnchor
+      anchorId: room16_material_glass
 - proto: SheetPlastic
   entities:
   - uid: 1334
@@ -10683,6 +10697,20 @@ entities:
       pos: 223.17899,-12.265956
     - type: TutorialAnchor
       anchorId: room16_material_plastic
+  - uid: 2475
+    components:
+    - type: Transform
+      parent: 1
+      pos: 223.49149,-12.4848585
+    - type: TutorialAnchor
+      anchorId: room16_material_plastic
+  - uid: 2476
+    components:
+    - type: Transform
+      parent: 1
+      pos: 223.17899,-12.265956
+    - type: TutorialAnchor
+      anchorId: room16_material_plastic
 - proto: SheetSteel
   entities:
   - uid: 1344
@@ -10693,6 +10721,20 @@ entities:
     - type: TutorialAnchor
       anchorId: room16_material_steel
   - uid: 1354
+    components:
+    - type: Transform
+      parent: 1
+      pos: 222.55399,-12.469222
+    - type: TutorialAnchor
+      anchorId: room16_material_steel
+  - uid: 2477
+    components:
+    - type: Transform
+      parent: 1
+      pos: 222.24149,-12.265956
+    - type: TutorialAnchor
+      anchorId: room16_material_steel
+  - uid: 2478
     components:
     - type: Transform
       parent: 1

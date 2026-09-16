@@ -10,6 +10,7 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
+using Content.Shared.Construction.Components;
 using Content.Shared.Prying.Components;
 using Content.Shared.Tag;
 using Content.Shared.Tools.Systems;
@@ -75,6 +76,7 @@ public abstract partial class SharedTutorialSystem : EntitySystem
         SubscribeLocalEvent<TutorialSealedComponent, AttemptChangePanelEvent>(OnSealedPanel);
         SubscribeLocalEvent<TutorialSealedComponent, BeforePryEvent>(OnSealedPry);
         SubscribeLocalEvent<TutorialSealedComponent, WeldableAttemptEvent>(OnSealedWeld);
+        SubscribeLocalEvent<TutorialNoDeconstructComponent, UnanchorAttemptEvent>(OnLockedUnanchor);
     }
 
     private void OnFrozenCanMove(Entity<TutorialFrozenComponent> ent, ref UpdateCanMoveEvent args)
@@ -103,6 +105,12 @@ public abstract partial class SharedTutorialSystem : EntitySystem
     private void OnSealedWeld(Entity<TutorialSealedComponent> ent, ref WeldableAttemptEvent args)
     {
         args.Cancel();
+    }
+
+    private void OnLockedUnanchor(Entity<TutorialNoDeconstructComponent> ent, ref UnanchorAttemptEvent args)
+    {
+        args.Cancel();
+        args.FailMessage = Loc.GetString("tutorial-cannot-break-structure");
     }
 
     private void OnAttackAttempt(EntityUid uid, TutorialSessionComponent session, AttackAttemptEvent args)
@@ -217,5 +225,16 @@ public sealed class TutorialStartRequestedEvent : EntityEventArgs
     {
         Player = player;
         Flow = flow;
+    }
+}
+
+/// <summary>Fires after a solitary tutorial map is loaded and initialized.</summary>
+public sealed class TutorialMapCreatedEvent : EntityEventArgs
+{
+    public EntityUid MapUid { get; }
+
+    public TutorialMapCreatedEvent(EntityUid mapUid)
+    {
+        MapUid = mapUid;
     }
 }

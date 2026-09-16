@@ -343,6 +343,15 @@ namespace Content.Server.Construction
                 return false;
             }
 
+            var startAttempt = new ConstructionStartAttemptEvent(constructionPrototype);
+            RaiseLocalEvent(user, ref startAttempt);
+
+            if (startAttempt.Cancelled)
+            {
+                _popup.PopupEntity(Loc.GetString("construction-system-cannot-start"), user, user);
+                return false;
+            }
+
             var startNode = constructionGraph.Nodes[constructionPrototype.StartNode];
             var targetNode = constructionGraph.Nodes[constructionPrototype.TargetNode];
             var pathFind = constructionGraph.Path(startNode.Name, targetNode.Name);

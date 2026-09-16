@@ -280,6 +280,7 @@ tutorial-holopad-r16-cores-a = Silnik nie przyjeżdża w jednym kawałku. W skrz
 tutorial-holopad-r16-cores-b = Flatpack kładzie się tam, gdzie maszyna ma stanąć. Połóż po jednym na każdym z dwunastu znaczników.
 tutorial-holopad-r16-unpack-a = Leżą. Teraz multitool: kliknij nim w paczkę, a rozłoży się w osłonę silnika na tym samym kafelku.
 tutorial-holopad-r16-unpack-b = Rozpakuj wszystkie dwanaście. Środkowe osłony, otoczone ze wszystkich stron, staną się rdzeniami.
+tutorial-holopad-r16-unpack-c = Jeśli się pomylisz, odetnij osłonę spawarką i znowu będzie z niej paczka. Spawarkę weźmiesz z automatu, jeśli jeszcze jej nie masz.
 tutorial-holopad-r16-shield-stray = Ta osłona stanęła obok znacznika i musi zniknąć, bo psuje kształt bloku. Odetnij ją spawarką, a znów będzie z niej paczka. Spawarkę i maskę spawalniczą znajdziesz w EngiVendzie.
 tutorial-holopad-r16-welder-mask = Zanim zapalisz spawarkę, załóż maskę spawalniczą i opuść przyłbicę. Płomień spawarki bez maski oślepia.
 tutorial-holopad-r16-eyes-hurt = Płomień spawarki bez maski pali oczy. Poczekaj chwilę, aż wzrok wróci, i następnym razem opuść przyłbicę.

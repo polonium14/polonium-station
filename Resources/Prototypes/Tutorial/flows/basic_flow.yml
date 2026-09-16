@@ -2872,6 +2872,7 @@
   speak:
   - tutorial-holopad-r16-unpack-a
   - tutorial-holopad-r16-unpack-b
+  - tutorial-holopad-r16-unpack-c
   watchers:
   - !type:ConditionWatcher
     rearm: true

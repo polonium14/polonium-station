@@ -254,9 +254,11 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         var mapName = Loc.GetString("solitary-map-name", ("character", profile.Name));
         var query = GameTicker.LoadGameMap(map, out var mapId, stationName: stationName);
         var newMap = query.First();
-        _meta.SetEntityName(Transform(newMap).ParentUid, mapName);
-
+        var mapUid = Transform(newMap).ParentUid;
+        _meta.SetEntityName(mapUid, mapName);
+        EnsureComp<TutorialMapComponent>(mapUid);
         _map.InitializeMap(mapId);
+        RaiseLocalEvent(new TutorialMapCreatedEvent(mapUid));
 
         if (!TryComp<StationMemberComponent>(newMap, out var member))
         {

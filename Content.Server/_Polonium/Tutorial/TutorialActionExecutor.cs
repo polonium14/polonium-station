@@ -348,6 +348,7 @@ public sealed partial class TutorialActionExecutor : EntitySystem
             var npc = EnsureComp<TutorialNpcComponent>(spawned);
             npc.PreventDeath = preventDeath;
             _npcs.KeepAwake(spawned);
+            _npcs.SatiateAndIdle(spawned);
         }
 
         if (markDeadPatient)

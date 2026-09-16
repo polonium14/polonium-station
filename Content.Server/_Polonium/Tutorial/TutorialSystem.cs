@@ -2,11 +2,16 @@ using Content.Server.Construction;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
+using Content.Server.Ghost.Roles;
+using Content.Server.Ghost.Roles.Components;
+using Content.Server.Power.Components;
+using Content.Server.Power.EntitySystems;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Prototypes;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode.Pacification;
+using Content.Shared.Construction;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
@@ -37,6 +42,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
     [Dependency] private IServerDbManager _db = default!;
     [Dependency] private TutorialActionExecutor _actions = default!;
     [Dependency] private TutorialMentorSystem _mentor = default!;
+    [Dependency] private TutorialNpcSystem _npcs = default!;
     [Dependency] private SolitarySpawningSystem _solitary = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private MobStateSystem _mobState = default!;
@@ -51,9 +57,16 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         base.Initialize();
 
         SubscribeLocalEvent<TutorialStartRequestedEvent>(OnStartRequested);
+        SubscribeLocalEvent<TutorialMapCreatedEvent>(OnMapCreated);
         SubscribeLocalEvent<TutorialSessionComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<TutorialSessionComponent, BeforeDamageChangedEvent>(OnPlayerDamage);
         SubscribeLocalEvent<TutorialSessionComponent, MobStateChangedEvent>(OnPlayerMobState);
+        SubscribeLocalEvent<TutorialSessionComponent, ConstructionStartAttemptEvent>(OnItemConstruction);
+        SubscribeLocalEvent<TutorialNoDeconstructComponent, ConstructionInteractAttemptEvent>(OnLockedConstruction);
+        SubscribeLocalEvent<TutorialNoDeconstructComponent, InteractUsingEvent>(OnLockedCableCut,
+            before: [typeof(CableSystem)]);
+        SubscribeLocalEvent<GhostRoleComponent, ComponentStartup>(OnGhostRoleStartup,
+            after: [typeof(GhostRoleSystem)]);
         // Construction already took that pair
         SubscribeLocalEvent<WallComponent, InteractUsingEvent>(OnWallUsing,
             before: [typeof(ConstructionSystem)]);
