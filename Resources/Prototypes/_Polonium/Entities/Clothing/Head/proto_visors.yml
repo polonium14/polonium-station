@@ -98,7 +98,6 @@
   parent: ClothingHeadProtoVisorBase
   id: ClothingHeadProtoVisorBaseNVG
   abstract: true
-  components:
 
 # Basic Forms
 - type: entity
@@ -354,7 +353,7 @@
   parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorSecurity, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorHOS
   name: HOS's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version has all the gadgets a HOS might want: Space protection and security HUD.
+  description: "Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version has all the gadgets a HOS might want: Space protection and security HUD." # Keep the quotes here because of the colon
   components:
   - type: Sprite
     scale: 0.8, 0.8
