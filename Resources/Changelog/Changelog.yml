@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: 11BelowStudio
-  changes:
-  - message: Chaplains can now choose a custom name. Hallelujah!
-    type: Add
-  id: 9495
-  time: '2026-02-07T01:46:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42819
 - author: InsoPL
   changes:
   - message: Optical Thermal Scanners can now be found in the Engi-Vend.
@@ -4075,3 +4068,11 @@
   id: 9993
   time: '2026-09-16T07:16:34.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1022
+- author: nieznany autor
+  changes:
+  - message: "Usuni\u0119to granaty Plant-B-Gone, ich skrzynki, wpis w katalogu Cargo,\
+      \ asortyment `NutriMaxInventory` oraz powi\u0105zane zasoby tekstur."
+    type: Remove
+  id: 9994
+  time: '2026-09-16T10:37:20.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1024
