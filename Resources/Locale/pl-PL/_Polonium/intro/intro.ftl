@@ -11,12 +11,15 @@ intro-begin-error-outside-lobby = Nie możesz rozpocząć wprowadzenia poza ekra
 cmd-startintro-help = Rozpoczyna wprowadzenie dla nowych graczy.
 cmd-startintro-not-in-lobby = Musisz być w lobby, aby rozpocząć wprowadzenie.
 cmd-startintro-disabled = Wprowadzenie jest wyłączone na tym serwerze.
+cmd-tutorial-lobby-join-blocked = Nie możesz dołączyć do rundy, dopóki trwa wprowadzenie w lobby.
 
 intro-welcome-message-1 = [bold]Przygotuj się![/bold] Zostałeś właśnie zakwaterowany na pokładzie [color=purple][bold]Stacji Kosmicznej[/bold][/color] i od tej chwili stajesz się częścią przygody, jakiej jeszcze nie doświadczyłeś!
 intro-welcome-message-2 = Tak, nasza gra jest trudna i skomplikowana – [bold]to jej urok![/bold] Pomożemy Ci w Twoich pierwszych krokach do gry!
 intro-welcome-begin-agree-button = Tak, poprowadź mnie przez samouczek
 intro-welcome-begin-disagree-button = Nie, chcę zacząć grać od razu
 intro-welcome-reminder-message = Pamiętaj, że zawsze możesz rozpocząć samouczek wprowadzający później, wciskając przycisk [bold]{$server-info-introduction-button}[/bold] na ekranie lobby!
+intro-lobby-skip-button = Pomiń wprowadzenie w lobby
+intro-lobby-skip-later = Praktyczną część odpalisz w każdej chwili przyciskiem [bold]{$lobby-join-button}[/bold] w lobby.
 
 intro-training-offer-message-1 = Wygląda na to, że [bold]jesteś tu pierwszy raz[/bold].
 intro-training-offer-message-2 = Chcesz przejść szkolenie? Odbywa się na osobnej stacji, przygotowanej specjalnie do tego — nauczysz się tam wszystkiego, czego potrzeba, żeby zacząć na stacji.

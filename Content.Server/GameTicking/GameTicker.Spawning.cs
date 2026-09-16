@@ -6,6 +6,7 @@ using Content.Server.Administration.Systems;
 using Content.Server.GameTicking.Events;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
+using Content.Shared._Polonium.Tutorial;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
@@ -437,6 +438,13 @@ namespace Content.Server.GameTicking
         public EntityCoordinates GetObserverSpawnPoint()
         {
             _possiblePositions.Clear();
+            // trainee boxes are personal - observers sit on the shared empty map
+            var pinToDefault = SharedTutorialSystem.ReadIntroMode(_cfg, _sawmill)
+                               == SharedTutorialSystem.IntroTutorial;
+            var defaultMapUid = pinToDefault && _map.MapExists(DefaultMap)
+                ? _map.GetMapOrInvalid(DefaultMap)
+                : (EntityUid?)null;
+
             var spawnPointQuery = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
             while (spawnPointQuery.MoveNext(out var uid, out var point, out var transform))
             {
@@ -448,11 +456,14 @@ namespace Content.Server.GameTicking
                     continue;
                 }
 
+                if (defaultMapUid is { } def && transform.MapUid != def)
+                    continue;
+
                 _possiblePositions.Add(transform.Coordinates);
             }
 
             // Fallback to a random grid.
-            if (_possiblePositions.Count == 0)
+            if (_possiblePositions.Count == 0 && !pinToDefault)
             {
                 var query = AllEntityQuery<MapGridComponent>();
                 while (query.MoveNext(out var uid, out var grid))
@@ -489,6 +500,12 @@ namespace Content.Server.GameTicking
                 var mapUid = _map.GetMapOrInvalid(DefaultMap);
                 if (!TerminatingOrDeleted(mapUid))
                     return new EntityCoordinates(mapUid, Vector2.Zero);
+            }
+
+            if (pinToDefault)
+            {
+                _sawmill.Warning("Found no observer spawn points!");
+                return EntityCoordinates.Invalid;
             }
 
             // Just pick a point at this point I guess.

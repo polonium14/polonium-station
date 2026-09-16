@@ -38,8 +38,7 @@
             "program": "${workspaceFolder}/bin/Content.Server/Content.Server.dll",
             "args": [
                 "--cvar", "config.presets=solitary_server",
-                "--cvar", "config.preset_development=false",
-                "--cvar", "game.lobbyduration=20"
+                "--cvar", "config.preset_development=false"
             ],
             "console": "integratedTerminal",
             "stopAtEntry": false

@@ -6,6 +6,9 @@ using Content.Client.Message;
 using Content.Client.Playtime;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.Voting;
+using Content.Client._Polonium.Tutorial;
+using Content.Client._Polonium.Tutorial.Lobby;
+using Content.Shared._Polonium.Tutorial;
 using Content.Shared.CCVar;
 using Robust.Client;
 using Robust.Client.Console;
@@ -30,6 +33,7 @@ namespace Content.Client.Lobby
         [Dependency] private IVoteManager _voteManager = default!;
         [Dependency] private ClientsidePlaytimeTrackingManager _playtimeTracking = default!;
         [Dependency] private IPrototypeManager _protoMan = default!;
+        [Dependency] private TutorialManager _tutorial = default!;
 
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
@@ -114,11 +118,20 @@ namespace Content.Client.Lobby
                 return;
             }
 
+            if (TryTutorialPracticalJoin())
+                return;
+
             new LateJoinGui().OpenCentered();
         }
 
         private void OnReadyToggled(BaseButton.ButtonToggledEventArgs args)
         {
+            if (TryTutorialPracticalJoin())
+            {
+                Lobby!.ReadyButton.Pressed = false;
+                return;
+            }
+
             SetReady(args.Pressed);
         }
 
@@ -277,7 +290,23 @@ namespace Content.Client.Lobby
                 return;
             }
 
+            if (_tutorial.GetIntroMode() == SharedTutorialSystem.IntroTutorial)
+                return;
+
             _consoleHost.ExecuteCommand($"toggleready {newReady}");
+        }
+
+        // joingame / latejoin land on the empty shared map, this is the solitary door
+        private bool TryTutorialPracticalJoin()
+        {
+            if (_tutorial.GetIntroMode() != SharedTutorialSystem.IntroTutorial)
+                return false;
+
+            if (_tutorial.IsTutorialActive)
+                return true;
+
+            _entityManager.System<TutorialPresentationSystem>().RequestPracticalJoin();
+            return true;
         }
     }
 }
