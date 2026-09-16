@@ -1731,14 +1731,18 @@
   id: TutorialLinearR13Eat
   instruction: tutorial-step-r13-eat
   navigationAnchor: room13_microwave
-  keybindHint: tutorial-hint-eat
+  keybindHint: tutorial-hint-pickup
   stuckSkipSeconds: 300
   speak:
   - tutorial-holopad-r13-eat
-  completion: !type:NotCondition
-    condition: !type:PrototypeNearAnchorCondition
+  completion: !type:AnyCondition
+    conditions:
+    - !type:HoldingPrototypeCondition
       prototype: FoodBurgerSuper
-      range: 10
+    - !type:NotCondition
+      condition: !type:PrototypeNearAnchorCondition
+        prototype: FoodBurgerSuper
+        range: 10
   onComplete:
   - !type:UnlockAnchorAirlockAction
     anchorId: room13_airlock_final

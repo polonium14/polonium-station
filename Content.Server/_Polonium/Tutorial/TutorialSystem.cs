@@ -9,6 +9,7 @@ using Content.Server.Power.EntitySystems;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Prototypes;
+using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Construction;
@@ -19,6 +20,8 @@ using Content.Shared.Interaction;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Standing;
 using Content.Shared.Tools.Components;
 using Content.Shared.Wall;
@@ -48,6 +51,8 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private MobThresholdSystem _thresholds = default!;
     [Dependency] private StandingStateSystem _standing = default!;
+    [Dependency] private SatiationSystem _satiation = default!;
+    [Dependency] private BodySystem _body = default!;
 
     // joingame / ready still dump you on the shared map, so we keep those cmds out while the comic is up
     private readonly HashSet<NetUserId> _lobbyTour = [];
@@ -62,6 +67,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         SubscribeLocalEvent<TutorialSessionComponent, BeforeDamageChangedEvent>(OnPlayerDamage);
         SubscribeLocalEvent<TutorialSessionComponent, MobStateChangedEvent>(OnPlayerMobState);
         SubscribeLocalEvent<TutorialSessionComponent, ConstructionStartAttemptEvent>(OnItemConstruction);
+        SubscribeLocalEvent<SatiationComponent, SatiationUpdateEvent>(OnTraineeSatiation);
         SubscribeLocalEvent<TutorialNoDeconstructComponent, ConstructionInteractAttemptEvent>(OnLockedConstruction);
         SubscribeLocalEvent<TutorialNoDeconstructComponent, InteractUsingEvent>(OnLockedCableCut,
             before: [typeof(CableSystem)]);
@@ -242,6 +248,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         session.Anchors = ResolveAnchorsOnGrid(player);
 
         EnsureComp<PacifiedComponent>(player);
+        KeepTraineeComfortable(player);
 
         _actions.BoltAllAirlocks(player);
         _actions.PowerAllDevices(player);
@@ -453,7 +460,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         _actions.ExecuteAll(ent.Owner, stepProto.OnEnter);
         _mentor.EnqueueStep(
             ent.Owner,
-            stepProto.Speak,
+            ResolveSpeak(ent.Owner, stepProto.Speak),
             stepProto.SpeakAtAnchor,
             stepProto.SpeakAtRange,
             stepProto.SpeakHoldSeconds);

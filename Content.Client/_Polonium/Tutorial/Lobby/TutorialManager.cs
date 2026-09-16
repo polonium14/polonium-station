@@ -3,6 +3,7 @@ using Content.Client._Polonium.Tutorial.Lobby.UI;
 using Content.Client.Lobby;
 using Content.Client.Lobby.UI;
 using Content.Client.Resources;
+using Content.Client.UserInterface.Systems.Info;
 using TutorialPresentationSystem = Content.Client._Polonium.Tutorial.TutorialPresentationSystem;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Lobby;
@@ -31,6 +32,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     private ISawmill _sawmill = default!;
     private TutorialUIController _tutorialUi = default!;
     private LobbyUIController _lobby = default!;
+    private InfoUIController _info = default!;
 
     // Public Properties
     public bool IsTutorialActive => _currentStepIndex >= 0;
@@ -65,6 +67,8 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         _sawmill = Logger.GetSawmill("tutorial.lobby");
         _tutorialUi = _uiMan.GetUIController<TutorialUIController>();
         _lobby = _uiMan.GetUIController<LobbyUIController>();
+        _info = _uiMan.GetUIController<InfoUIController>();
+        _info.RulesPopupChanged += OnRulesPopupChanged;
 
         // Register steps
         RegisterSteps();
@@ -110,6 +114,9 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     public bool Start(int? fromStepIndex = null)
     {
         if (GetIntroMode() != SharedTutorialSystem.IntroTutorial)
+            return false;
+
+        if (_info.IsRulesPopupOpen)
             return false;
 
         if (_steps.Count == 0)
@@ -571,6 +578,31 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
         // a cancelled or crashed run can leave the editor half locked, always undo that here
         _lobby.ProfileEditor?.EnableAllTabs();
+
+        TryBeginLobbyIntro();
+    }
+
+    private void OnRulesPopupChanged()
+    {
+        if (_info.IsRulesPopupOpen)
+        {
+            if (IsTutorialActive && !_isPaused)
+                PauseTutorial();
+
+            CloseTrainingOffer();
+            return;
+        }
+
+        TryBeginLobbyIntro();
+    }
+
+    private void TryBeginLobbyIntro()
+    {
+        if (_info.IsRulesPopupOpen || !_info.RulesReady)
+            return;
+
+        if (_stateMan.CurrentState is not LobbyState)
+            return;
 
         var mode = GetIntroMode();
         if (mode == SharedTutorialSystem.IntroNone)

@@ -23,6 +23,12 @@ public sealed partial class InfoUIController : UIController, IOnStateExited<Game
 
     public ProtoId<GuideEntryPrototype> RulesEntryId = DefaultRuleset;
 
+    public bool IsRulesPopupOpen => _rulesPopup != null;
+
+    public bool RulesReady { get; private set; }
+
+    public event Action? RulesPopupChanged;
+
     protected override string SawmillName => "rules";
 
     public override void Initialize()
@@ -31,6 +37,7 @@ public sealed partial class InfoUIController : UIController, IOnStateExited<Game
 
         _netManager.RegisterNetMessage<RulesAcceptedMessage>();
         _netManager.RegisterNetMessage<SendRulesInformationMessage>(OnRulesInformationMessage);
+        _netManager.Disconnect += OnDisconnect;
 
         _consoleHost.RegisterCommand("fuckrules",
             "",
@@ -44,9 +51,22 @@ public sealed partial class InfoUIController : UIController, IOnStateExited<Game
     private void OnRulesInformationMessage(SendRulesInformationMessage message)
     {
         RulesEntryId = message.CoreRules;
+        RulesReady = true;
 
         if (message.ShouldShowRules)
             ShowRules(message.PopupTime);
+        else
+            RulesPopupChanged?.Invoke();
+    }
+
+    private void OnDisconnect(object? sender, NetDisconnectedArgs args)
+    {
+        RulesReady = false;
+        if (_rulesPopup == null)
+            return;
+
+        _rulesPopup.Orphan();
+        _rulesPopup = null;
     }
 
     public void OnStateExited(GameplayState state)
@@ -72,6 +92,7 @@ public sealed partial class InfoUIController : UIController, IOnStateExited<Game
         _rulesPopup.OnAcceptPressed += OnAcceptPressed;
         UIManager.WindowRoot.AddChild(_rulesPopup);
         LayoutContainer.SetAnchorPreset(_rulesPopup, LayoutContainer.LayoutPreset.Wide);
+        RulesPopupChanged?.Invoke();
     }
 
     private void OnQuitPressed()
@@ -86,6 +107,7 @@ public sealed partial class InfoUIController : UIController, IOnStateExited<Game
 
         _rulesPopup?.Orphan();
         _rulesPopup = null;
+        RulesPopupChanged?.Invoke();
     }
 
     public GuideEntryPrototype GetCoreRuleEntry()

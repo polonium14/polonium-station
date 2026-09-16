@@ -95,6 +95,7 @@ public sealed partial class TutorialUIController : UIController
 
         var overlay = new TutorialHighlightOverlay(id, rootControl, color, isSelfClosingOnClick, ignoreBackgroundClicks, ignoreHighlightClicks);
         overlay.SetPositionLast();
+        KeepBelowWindows(overlay, rootControl);
 
         overlay.InternalOverlayClosedEvent += () =>
         {
@@ -111,6 +112,18 @@ public sealed partial class TutorialUIController : UIController
         NewOverlayEvent?.Invoke();
 
         ProcessPendingBubblesForActiveOverlay();
+    }
+
+    private void KeepBelowWindows(Control overlay, Control rootControl)
+    {
+        if (rootControl != _uiMan.RootControl)
+            return;
+
+        var windows = _uiMan.WindowRoot;
+        if (windows.Parent != rootControl)
+            return;
+
+        overlay.SetPositionInParent(windows.GetPositionInParent());
     }
 
     private void DrawBubble(
