@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: InsoPL
-  changes:
-  - message: Optical Thermal Scanners can now be found in the Engi-Vend.
-    type: Add
-  id: 9496
-  time: '2026-02-07T10:10:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42824
 - author: DIMMoon1
   changes:
   - message: Firelocks now automatically re-close if they have a danger signal and
@@ -4076,3 +4069,13 @@
   id: 9994
   time: '2026-09-16T10:37:20.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1024
+- author: Koilak
+  changes:
+  - message: "Wi\u0119cej broni kt\xF3re mo\u017C\u0119 dosta\u0107 Komendant (z spawnera\
+      \ poza szafk\u0105)"
+    type: Add
+  - message: "Szanse broni kt\xF3re mo\u017Ce dosta\u0107 Nadzorca"
+    type: Tweak
+  id: 9995
+  time: '2026-09-16T15:53:07.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1026
