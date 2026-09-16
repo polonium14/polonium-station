@@ -559,6 +559,7 @@
   - tutorial-holopad-r10-b
   - tutorial-holopad-r10-c
   - tutorial-holopad-r10-d
+  - tutorial-holopad-r10-d-2
   - tutorial-holopad-r10-e
   # closet stays shut on purpose, this is the only place the tutorial teaches opening one
   onEnter:
@@ -590,6 +591,7 @@
   speak:
   - tutorial-holopad-r11-a
   - tutorial-holopad-r11-b
+  - tutorial-holopad-r11-b-2
   completion: !type:SlotContainsAnchorRecursiveCondition
     slot: back
     strict: true
@@ -752,6 +754,7 @@
   speak:
   - tutorial-holopad-r12-doff-a
   - tutorial-holopad-r12-doff-b
+  - tutorial-holopad-r12-doff-b-2
   completion: !type:AllCondition
     conditions:
     - !type:NotCondition
@@ -852,6 +855,7 @@
   - tutorial-holopad-r13-beaker
   - tutorial-holopad-r13-vend-keypad-a
   - tutorial-holopad-r13-vend-keypad-b
+  - tutorial-holopad-r13-vend-keypad-b-2
   completion: !type:HoldingPrototypeCondition
     prototype: LargeBeakerTutorial
 
@@ -887,6 +891,7 @@
       amount: 45
     quip:
     - tutorial-holopad-quip-overpour
+    - tutorial-holopad-quip-overpour-2
   - !type:ConditionWatcher
     once: false
     condition: !type:PrototypeSolutionContainsCondition
@@ -896,6 +901,7 @@
       amount: 75
     quip:
     - tutorial-holopad-quip-overpour-fix
+    - tutorial-holopad-quip-overpour-fix-2
     actions:
     - !type:DrainPrototypeSolutionAction
       prototype: LargeBeakerTutorial
@@ -968,6 +974,7 @@
       amount: 45
     quip:
     - tutorial-holopad-quip-overpour
+    - tutorial-holopad-quip-overpour-2
   - !type:ConditionWatcher
     once: false
     condition: !type:PrototypeSolutionContainsCondition
@@ -977,6 +984,7 @@
       amount: 75
     quip:
     - tutorial-holopad-quip-overpour-fix
+    - tutorial-holopad-quip-overpour-fix-2
     actions:
     - !type:DrainPrototypeSolutionAction
       prototype: LargeBeakerTutorial
@@ -1200,6 +1208,7 @@
       amount: 80
     quip:
     - tutorial-holopad-quip-flooded
+    - tutorial-holopad-quip-flooded-2
     actions:
     - !type:DrainAnchorSolutionAction
       anchorId: room13_tray
@@ -1237,6 +1246,7 @@
       amount: 80
     quip:
     - tutorial-holopad-quip-flooded
+    - tutorial-holopad-quip-flooded-2
     actions:
     - !type:DrainAnchorSolutionAction
       anchorId: room13_tray
@@ -1264,6 +1274,7 @@
   - room13_tray
   speak:
   - tutorial-holopad-r13-soak
+  - tutorial-holopad-r13-soak-2
   completion: !type:PlantTrayLevelsCondition
     anchorId: room13_tray
     water: 25
@@ -1294,6 +1305,7 @@
   speak:
   - tutorial-holopad-r13-tomato
   - tutorial-holopad-r13-tomato-note
+  - tutorial-holopad-r13-tomato-note-2
   completion: !type:PrototypeNearAnchorCondition
     prototype: FoodTomato
     range: 10
@@ -1352,6 +1364,7 @@
   - room13_cow
   speak:
   - tutorial-holopad-r13-cow
+  - tutorial-holopad-r13-cow-2
   onEnter:
   - !type:SetPacifiedAction
     pacified: false
@@ -1451,6 +1464,7 @@
   - room13_table_big
   speak:
   - tutorial-holopad-r13-crack
+  - tutorial-holopad-r13-crack-2
   # dough is quantized, so an overpour leaves water or flour sitting in the beaker. the recipe
   # does not care - the microwave checks "at least", never "exactly" - but the trainee reads the
   # beaker on the way past and should not have to wonder whether the leftovers ruined anything
@@ -1479,6 +1493,7 @@
   - room13_microwave
   speak:
   - tutorial-holopad-r13-load
+  - tutorial-holopad-r13-load-2
   # raw meat turns into a steak at 335K, and the microwave heats its contents on every run
   # whether or not a recipe matched. one impatient five second run and the burger is impossible,
   # so hand out fresh meat instead of leaving them stuck in front of two steaks
@@ -1490,6 +1505,7 @@
       range: 4
     quip:
     - tutorial-holopad-quip-meat-cooked
+    - tutorial-holopad-quip-meat-cooked-2
     actions:
     - !type:SpawnAtAnchorAction
       anchorId: room13_table_big
@@ -1552,6 +1568,7 @@
   - room13_microwave
   speak:
   - tutorial-holopad-r13-burger
+  - tutorial-holopad-r13-burger-2
   watchers:
   # nothing below says a word until the drum has emptied itself, which only happens when a run
   # ends. while the trainee is still loading, a verdict on what is missing is just noise.
@@ -1575,6 +1592,7 @@
         range: 4
     quip:
     - tutorial-holopad-quip-meat-cooked
+    - tutorial-holopad-quip-meat-cooked-2
     actions:
     - !type:SpawnAtAnchorAction
       anchorId: room13_table_big
@@ -1666,6 +1684,7 @@
             range: 4
     quip:
     - tutorial-holopad-quip-solids-short
+    - tutorial-holopad-quip-solids-short-2
   # everything was in there and it still did not work, so the timer is the only thing left
   - !type:ConditionWatcher
     condition: !type:AllCondition
@@ -1719,6 +1738,7 @@
           range: 4
     quip:
     - tutorial-holopad-quip-burger-failed
+    - tutorial-holopad-quip-burger-failed-2
   onComplete:
   - !type:SpeakHolopadAction
     lines:
@@ -1735,6 +1755,7 @@
   stuckSkipSeconds: 300
   speak:
   - tutorial-holopad-r13-eat
+  - tutorial-holopad-r13-eat-2
   completion: !type:AnyCondition
     conditions:
     - !type:HoldingPrototypeCondition
@@ -2219,6 +2240,7 @@
   speak:
   - tutorial-holopad-r15-morgue-a
   - tutorial-holopad-r15-morgue-b
+  - tutorial-holopad-r15-morgue-b-2
   - tutorial-holopad-r15-morgue-c
   onEnter:
   - !type:ClaimNearbyMobAction
@@ -2977,6 +2999,7 @@
   speak:
   - tutorial-holopad-r16-ame-a
   - tutorial-holopad-r16-ame-b
+  - tutorial-holopad-r16-ame-b-2
   completion: !type:AmeInjectingCondition
     anchorId: room16_ame_controller
   onComplete:
@@ -3078,6 +3101,7 @@
   - room16_example_consumer_bulb
   speak:
   - tutorial-holopad-r16-explain-apc-a
+  - tutorial-holopad-r16-explain-apc-a-2
   - tutorial-holopad-r16-explain-apc-b
   completion: !type:MentorFinishedSpeakingCondition
 
@@ -3451,6 +3475,7 @@
     rearm: true
     quip:
     - tutorial-holopad-r16-terminal-wrong
+    - tutorial-holopad-r16-terminal-wrong-2
     condition: !type:PrototypesOnAnchorsCondition
       anchorIds: [ room16_build_cable_terminal ]
       prototypes: [ CableTerminal ]
@@ -3753,13 +3778,19 @@
   speak:
   - tutorial-holopad-r17-b
   - tutorial-holopad-r17-c
+  - tutorial-holopad-r17-c-2
   - tutorial-holopad-r17-d
+  - tutorial-holopad-r17-d-2
   - tutorial-holopad-r17-guide
+  - tutorial-holopad-r17-guide-2
   - tutorial-holopad-r17-crew-a
   - tutorial-holopad-r17-crew-b
+  - tutorial-holopad-r17-crew-b-2
   - tutorial-holopad-r17-crew-c
+  - tutorial-holopad-r17-crew-c-2
   - tutorial-holopad-r17-crew-d
   - tutorial-holopad-r17-crew-e
+  - tutorial-holopad-r17-crew-e-2
   completion: !type:MentorFinishedSpeakingCondition
 
 - type: tutorialStep
@@ -3776,6 +3807,7 @@
   - room17_contract
   speak:
   - tutorial-holopad-r17-e
+  - tutorial-holopad-r17-e-2
   - tutorial-holopad-r17-f
   onEnter:
   - !type:SpawnAtAnchorAction
