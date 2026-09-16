@@ -1,2 +1,2 @@
-tool-quality-axing-name = Axing
-tool-quality-axing-tool-name = Fireaxe
+tool-quality-axing-name = rąbania
+tool-quality-axing-tool-name = topór strażacki

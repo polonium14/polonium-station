@@ -1041,6 +1041,14 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("last_seen_user_name");
 
+                    b.Property<bool>("TutorialCompleted")
+                        .HasColumnType("boolean")
+                        .HasColumnName("tutorial_completed");
+
+                    b.Property<TimeSpan?>("TutorialDuration")
+                        .HasColumnType("interval")
+                        .HasColumnName("tutorial_duration");
+
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid")
                         .HasColumnName("user_id");

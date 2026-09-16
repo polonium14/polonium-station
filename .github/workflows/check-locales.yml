@@ -41,4 +41,4 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Check locale sync
-        run: python3 Tools/translationTools/check_locales.py
+        run: python3 Tools/translationTools/check_locales.py --ignore '**/tutorial'

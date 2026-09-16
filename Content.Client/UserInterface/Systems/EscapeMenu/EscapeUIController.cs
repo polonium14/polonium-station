@@ -1,8 +1,10 @@
 using Content.Client.FeedbackPopup;
 using Content.Client.Gameplay;
+using Content.Client._Polonium.Tutorial;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Client.UserInterface.Systems.Info;
+using Content.Shared._Polonium.Tutorial;
 using Content.Shared.CCVar;
 using JetBrains.Annotations;
 using Robust.Client.Console;
@@ -116,6 +118,15 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
         _escapeWindow.GuidebookButton.OnPressed += _ =>
         {
             _guidebook.ToggleGuidebook();
+        };
+
+        var introMode = EntityManager.System<SharedTutorialSystem>().ReadIntroMode();
+        _escapeWindow.RestartTutorialButton.Visible =
+            introMode == SharedTutorialSystem.IntroMain || introMode == SharedTutorialSystem.IntroTutorial;
+        _escapeWindow.RestartTutorialButton.OnPressed += _ =>
+        {
+            CloseEscapeWindow();
+            EntityManager.System<TutorialPresentationSystem>().RequestRestart();
         };
 
         // Hide wiki button if we don't have a link for it.

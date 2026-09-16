@@ -17,20 +17,26 @@ public abstract partial class SharedPuddleSystem
         Dirty(ent);
     }
 
-    private void UpdateEvaporation(EntityUid uid, Solution solution)
+    private void UpdateEvaporation(Entity<PuddleComponent> ent, Solution solution)
     {
-        if (_evaporationQuery.HasComp(uid))
+        if (!ent.Comp.Evaporates)
+        {
+            RemComp<EvaporationComponent>(ent);
+            return;
+        }
+
+        if (_evaporationQuery.HasComp(ent))
             return;
 
         if (solution.GetTotalPrototypeQuantity(GetEvaporatingReagents(solution)) > FixedPoint2.Zero)
         {
-            var evaporation = AddComp<EvaporationComponent>(uid);
+            var evaporation = AddComp<EvaporationComponent>(ent);
             evaporation.NextTick = _timing.CurTime + EvaporationCooldown;
-            Dirty<EvaporationComponent>((uid, evaporation));
+            Dirty<EvaporationComponent>((ent, evaporation));
             return;
         }
 
-        RemComp<EvaporationComponent>(uid);
+        RemComp<EvaporationComponent>(ent);
     }
 
     private void TickEvaporation()
@@ -39,6 +45,9 @@ public abstract partial class SharedPuddleSystem
         var curTime = _timing.CurTime;
         while (query.MoveNext(out var uid, out var evaporation, out var puddle))
         {
+            if (!puddle.Evaporates)
+                continue;
+
             if (evaporation.NextTick > curTime)
                 continue;
 

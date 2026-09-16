@@ -7,5 +7,5 @@ cmd-set-motd-help = set-motd [wiadomość...]
 cmd-set-motd-hint-head = [wiadomość...]
 cmd-set-motd-hint-cont = [...wiadomość...]
 cmd-set-motd-cleared-motd-message = Usunięto Wiadomość Dnia.
-cmd-set-motd-set-motd-message =  Ustawiono Wiadomość Dnia na "{ $motd }".
+cmd-set-motd-set-motd-message = Ustawiono Wiadomość Dnia na "{ $motd }".
 motd-wrap-message = Wiadomość Dnia: "{ $motd }"

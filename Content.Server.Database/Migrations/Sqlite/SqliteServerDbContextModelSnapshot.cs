@@ -983,6 +983,14 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("last_seen_user_name");
 
+                    b.Property<bool>("TutorialCompleted")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("tutorial_completed");
+
+                    b.Property<TimeSpan?>("TutorialDuration")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("tutorial_duration");
+
                     b.Property<Guid>("UserId")
                         .HasColumnType("TEXT")
                         .HasColumnName("user_id");

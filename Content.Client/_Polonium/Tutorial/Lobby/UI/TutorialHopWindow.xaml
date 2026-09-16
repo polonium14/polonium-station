@@ -1,0 +1,15 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               Title="{Loc 'intro-training-hop-title'}"
+               SetWidth="420"
+               MinWidth="320">
+    <BoxContainer Orientation="Vertical" SeparationOverride="8">
+        <RichTextLabel Name="QuestionLabel" HorizontalExpand="True" />
+        <RichTextLabel Name="StatusLabel" HorizontalExpand="True" />
+        <BoxContainer Orientation="Horizontal">
+            <Button Name="CancelButton" Text="{Loc 'intro-training-hop-no'}" />
+            <Control HorizontalExpand="True" />
+            <Button Name="ConfirmButton" Text="{Loc 'intro-training-hop-yes'}" />
+        </BoxContainer>
+    </BoxContainer>
+</DefaultWindow>

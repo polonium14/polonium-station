@@ -10,6 +10,7 @@ using Robust.Client.State;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -21,6 +22,7 @@ public sealed partial class ContentAudioSystem
     [Dependency] private IBaseClient _client = default!;
     [Dependency] private ClientGameTicker _gameTicker = default!;
     [Dependency] private IResourceCache _resourceCache = default!;
+    [Dependency] private IPrototypeManager _protoMan = default!;
 
     private readonly AudioParams _lobbySoundtrackParams = new(-5f, 1, 0, 0, 0, false, 0f);
     private readonly AudioParams _roundEndSoundEffectParams = new(-5f, 1, 0, 0, 0, false, 0f);
@@ -151,6 +153,24 @@ public sealed partial class ContentAudioSystem
         }
 
         StartLobbyMusic(_lobbyPlaylist);
+    }
+
+    /// <summary>
+    /// Same playlist the lobby uses, but from this client's collection cvar.
+    /// Does nothing if a lobby track is already going.
+    /// </summary>
+    public void StartLobbyMusicFromCollection()
+    {
+        if (_lobbySoundtrackInfo != null)
+            return;
+
+        var id = _configManager.GetCVar(CCVars.LobbyMusicCollection);
+        if (!_protoMan.TryIndex<SoundCollectionPrototype>(id, out var collection))
+            return;
+
+        var playlist = collection.PickFiles.Select(x => x.ToString()).ToArray();
+        _random.Shuffle(playlist);
+        StartLobbyMusic(playlist);
     }
 
     /// <summary>

@@ -10,4 +10,4 @@ pacified-cannot-harm-directly = Nie mogę się zmusić do skrzywdzenia { $entity
 pacified-cannot-harm-indirect = Nie mogę uszkodić { $entity }, to może kogoś skrzywdzić!
 pacified-cannot-fire-gun = Nie mogę wystrzelić { $entity }, to może kogoś skrzywdzić!
 # With bolas and snares:
-pacified-cannot-throw-snare = I can't throw { $projectile }, what if someone trips?!
+pacified-cannot-throw-snare = Nie mogę rzucić { $projectile }, co jeśli ktoś się przewróci?!

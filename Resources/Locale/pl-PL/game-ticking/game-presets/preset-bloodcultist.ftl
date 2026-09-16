@@ -125,7 +125,7 @@ cult-commune-message = Acolyte { $name } (as { $job }): { $message }
 cult-commune-incantation = Y'll tor tz'ul z'nik rar.
 cult-narsie-spawning = Reality breaks down around you.
 cult-win-announcement-shuttle-call =
-    Z powodu komplikacji czasoprzestrzennych stacja została uznana za nieopłacalną do odzysku. Wysłano wahadłowiec transferu załogi. Niewejście na pokład i niepowrót do Centralnego Dowództwa na odprawę zostanie zinterpretowane jako porzucenie kontraktu, a wasze rodziny poniosą kary tak długo, aż te straty zostaną odzyskane.
+    Z powodu komplikacji czasoprzestrzennych stacja została uznana za nieopłacalną do odzysku. Wysłano wahadłowiec transferu załogi. Niewejście na pokład i niepowrót do Centralnego Dowództwa na odprawę zostaną zinterpretowane jako porzucenie kontraktu, a wasze rodziny poniosą kary tak długo, aż te straty zostaną odzyskane.
     ETA: { $time } { $units }.
 cult-win-announcement = Z powodu komplikacji czasoprzestrzennych stacja została uznana za nieopłacalną do odzysku. Niezgłoszenie się do Centralnego Dowództwa na odprawę zostanie zinterpretowane jako porzucenie kontraktu, a wasze rodziny poniosą kary tak długo, aż te straty zostaną odzyskane.
 cult-ghost-role-name = Reawakened Blood Cultist

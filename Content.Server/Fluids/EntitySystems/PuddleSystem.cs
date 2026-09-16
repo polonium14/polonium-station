@@ -72,6 +72,9 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         if (!TryGetPuddle(tile, out var puddleUid) || !_puddleQuery.TryGetComponent(puddleUid, out var puddleComp))
             return;
 
+        if (!puddleComp.SpreadsOnStep)
+            return;
+
         if (!_solutionContainerSystem.ResolveSolution(puddleUid, puddleComp.SolutionName, ref puddleComp.Solution, out var solution))
             return;
 
@@ -254,6 +257,9 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     private void OnPuddleSlip(Entity<PuddleComponent> entity, ref SlipEvent args)
     {
         if (!HasComp<ReactiveComponent>(args.Slipped) || HasComp<SlidingComponent>(args.Slipped))
+            return;
+
+        if (!entity.Comp.SpreadsOnStep)
             return;
 
         if (!_random.Prob(0.5f))

@@ -1,4 +1,5 @@
 ghost-gui-return-to-body-button = Return to body
+ghost-gui-return-to-lobby-button = Return to lobby
 ghost-gui-ghost-warp-button = Ghost Warp
 ghost-gui-ghost-roles-button = Ghost Roles ({$count})
 ghost-gui-toggle-ghost-visibility-popup-on = Enabled visibility of ghosts.

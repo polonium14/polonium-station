@@ -508,6 +508,10 @@ namespace Content.Server.Database
 
         public DateTime? LastReadRules { get; set; }
 
+        public bool TutorialCompleted { get; set; }
+
+        public TimeSpan? TutorialDuration { get; set; }
+
         public List<AdminNote> AdminNotesReceived { get; set; } = null!;
         public List<AdminNote> AdminNotesCreated { get; set; } = null!;
         public List<AdminNote> AdminNotesLastEdited { get; set; } = null!;

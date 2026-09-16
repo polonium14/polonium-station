@@ -15,6 +15,8 @@ public sealed partial class RecipeControl : Control
     private ProtoId<LatheRecipePrototype> _recipeId;
     private LatheSystem _latheSystem;
 
+    public ProtoId<LatheRecipePrototype> RecipeId => _recipeId; // Polonium - the tutorial glows the recipes it asks for
+
     public RecipeControl(LatheSystem latheSystem, LatheRecipePrototype recipe, Func<string> tooltipTextSupplier, bool canProduce, Control displayControl)
     {
         RobustXamlLoader.Load(this);

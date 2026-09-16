@@ -1,4 +1,4 @@
-tiles-steel-floor-smooth = gładka płytka stalowa
-tiles-dark-floor-tech = ciemna płytka technologiczna
+tiles-steel-floor-smooth = gładka stalowa płytka
+tiles-dark-floor-tech = ciemna płytka techniczna
 tiles-dark-floor-mono-textured = ciemna jednolita płytka
-tiles-inflatable-plating = nadmuchana podłoga
+tiles-inflatable-plating = nadmuchiwana podłoga

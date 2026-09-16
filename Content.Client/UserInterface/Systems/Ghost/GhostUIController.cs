@@ -1,7 +1,9 @@
 using Content.Client.Gameplay;
 using Content.Client.Ghost;
+using Content.Client._Polonium.Tutorial;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Ghost.Widgets;
+using Content.Shared._Polonium.Tutorial;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Ghost.Systems;
 using Robust.Client.UserInterface;
@@ -15,6 +17,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     [Dependency] private IEntityNetworkManager _net = default!;
 
     [UISystemDependency] private readonly GhostSystem? _system = default;
+    [UISystemDependency] private readonly TutorialPresentationSystem _tutorial = default!;
 
     private GhostGui? Gui => UIManager.GetActiveUIWidgetOrNull<GhostGui>();
 
@@ -65,7 +68,11 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         }
 
         Gui.Visible = _system?.IsGhost ?? false;
-        Gui.Update(_system?.AvailableGhostRoleCount, _system?.Player?.CanReturnToBody);
+        
+        Gui.Update(
+            _system?.AvailableGhostRoleCount,
+            _system?.Player?.CanReturnToBody,
+            _tutorial.ReadIntroMode() == SharedTutorialSystem.IntroTutorial);
     }
 
     private void OnPlayerRemoved(GhostComponent component)
@@ -137,6 +144,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
 
         Gui.RequestWarpsPressed += RequestWarps;
         Gui.ReturnToBodyPressed += ReturnToBody;
+        Gui.ReturnToLobbyPressed += ReturnToLobby;
         Gui.GhostRolesPressed += GhostRolesPressed;
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
@@ -153,6 +161,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
 
         Gui.RequestWarpsPressed -= RequestWarps;
         Gui.ReturnToBodyPressed -= ReturnToBody;
+        Gui.ReturnToLobbyPressed -= ReturnToLobby;
         Gui.GhostRolesPressed -= GhostRolesPressed;
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
 
@@ -162,6 +171,11 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     private void ReturnToBody()
     {
         _system?.ReturnToBody();
+    }
+
+    private void ReturnToLobby()
+    {
+        _tutorial.RequestReturnToLobby();
     }
 
     private void RequestWarps()

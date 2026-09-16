@@ -1,50 +1,4 @@
 ﻿Entries:
-- author: ScholarNZL
-  changes:
-  - message: Rat King and Rat Servants now have partial shock resistance, preventing
-      electrified doors from stunning them while still dealing reduced damage.
-    type: Tweak
-  id: 9491
-  time: '2026-02-04T22:13:06.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42569
-- author: ArtisticRoomba
-  changes:
-  - message: Fixed the Gas Filter not transferring enough mols to the filter outlet.
-    type: Fix
-  id: 9492
-  time: '2026-02-05T08:34:11.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42801
-- author: insoPL, ArtisticRoomba
-  changes:
-  - message: Added functionality to the Optical Thermal Scanner. The eyewear will
-      now overlay tiles with a solid color corresponding to its temperature if it's
-      not room temperature, as well as if a tile is pure vacuum.
-    type: Add
-  id: 9493
-  time: '2026-02-06T10:44:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42613
-- author: AreYouConfused
-  changes:
-  - message: Vox's tail rings no longer replace the vox's tail and now correctly layer
-      ontop of the tail.
-    type: Fix
-  id: 9494
-  time: '2026-02-06T21:18:22.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42808
-- author: 11BelowStudio
-  changes:
-  - message: Chaplains can now choose a custom name. Hallelujah!
-    type: Add
-  id: 9495
-  time: '2026-02-07T01:46:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42819
-- author: InsoPL
-  changes:
-  - message: Optical Thermal Scanners can now be found in the Engi-Vend.
-    type: Add
-  id: 9496
-  time: '2026-02-07T10:10:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42824
 - author: DIMMoon1
   changes:
   - message: Firelocks now automatically re-close if they have a danger signal and
@@ -4063,3 +4017,65 @@
   id: 9989
   time: '2026-09-14T13:53:30.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1017
+- author: Polonium-bot
+  changes:
+  - message: "Zaktualizowano polskie t\u0142umaczenia nazw przedmiot\xF3w, konstrukcji,\
+      \ p\u0142ytek, materia\u0142\xF3w i narz\u0119dzi."
+    type: Tweak
+  - message: "Poprawiono sk\u0142adni\u0119 placeholder\xF3w oraz zb\u0119dne spacje\
+      \ w komunikatach lokalizacyjnych."
+    type: Fix
+  id: 9990
+  time: '2026-09-15T18:08:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1018
+- author: Nikita
+  changes:
+  - message: Dodano praktyczne szkolenie dla nowych graczy na osobnej stacji symulacyjnej,
+      z prowadzeniem krok po kroku.
+    type: Add
+  - message: "W lobby nowi gracze dostaj\u0105 ofert\u0119 szkolenia, po uko\u0144\
+      czeniu albo odmowie nie s\u0105 o nie dopytywani."
+    type: Add
+  id: 9991
+  time: '2026-09-15T20:29:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1019
+- author: raythoseways
+  changes:
+  - message: "Dodano map\u0119 stacji **Glacier** dla rozgrywek od 30 graczy."
+    type: Add
+  id: 9992
+  time: '2026-09-15T21:04:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/980
+- author: Nikita
+  changes:
+  - message: "Dodano mo\u017Cliwo\u015B\u0107 wznowienia samouczka po ponownym do\u0142\
+      \u0105czeniu gracza."
+    type: Add
+  - message: "Ulepszono przebieg samouczka w lobby i dodano mo\u017Cliwo\u015B\u0107\
+      \ jego pomini\u0119cia."
+    type: Tweak
+  - message: "Zablokowano do\u0142\u0105czanie przez konsol\u0119 podczas intro samouczka."
+    type: Fix
+  - message: Dodano przycisk powrotu do lobby w interfejsie ducha.
+    type: Add
+  id: 9993
+  time: '2026-09-16T07:16:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1022
+- author: nieznany autor
+  changes:
+  - message: "Usuni\u0119to granaty Plant-B-Gone, ich skrzynki, wpis w katalogu Cargo,\
+      \ asortyment `NutriMaxInventory` oraz powi\u0105zane zasoby tekstur."
+    type: Remove
+  id: 9994
+  time: '2026-09-16T10:37:20.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1024
+- author: Koilak
+  changes:
+  - message: "Wi\u0119cej broni kt\xF3re mo\u017C\u0119 dosta\u0107 Komendant (z spawnera\
+      \ poza szafk\u0105)"
+    type: Add
+  - message: "Szanse broni kt\xF3re mo\u017Ce dosta\u0107 Nadzorca"
+    type: Tweak
+  id: 9995
+  time: '2026-09-16T15:53:07.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1026

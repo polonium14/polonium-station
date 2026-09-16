@@ -26,6 +26,17 @@
         Quantity: 10
 
 - type: entity
+  id: PuddleVentCrud
+  parent: PuddleTemporary
+  suffix: Vent Crud
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: VentCrud
+        Quantity: 10
+
+- type: entity
   id: PuddleEgg
   parent: PuddleTemporary
   suffix: Egg

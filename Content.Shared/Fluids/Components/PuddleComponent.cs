@@ -33,5 +33,11 @@ namespace Content.Shared.Fluids.Components
 
         [DataField]
         public bool AffectsSound = true;
+
+        [DataField]
+        public bool Evaporates = true;
+
+        [DataField, Access(Other = AccessPermissions.Read)]
+        public bool SpreadsOnStep = true;
     }
 }

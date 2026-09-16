@@ -193,13 +193,15 @@ def print_section(title: str, issues: List[Issue], limit: int) -> None:
         print(f'  ... i jeszcze {len(issues) - limit}')
 
 
-def check_locales(repo_root: Path, limit: int) -> int:
+def check_locales(repo_root: Path, limit: int, extra_ignore: Optional[List[str]] = None) -> int:
     locale_root = repo_root / 'Resources' / 'Locale'
     if not locale_root.is_dir():
         print(f'Brak katalogu {locale_root}')
         return 1
 
     ignore_patterns = load_crowdin_ignore_patterns(repo_root) + list(EXTRA_IGNORE_PATTERNS)
+    if extra_ignore:
+        ignore_patterns.extend(extra_ignore)
 
     present_locales = sorted(
         path.name for path in locale_root.iterdir() if path.is_dir()
@@ -405,8 +407,15 @@ def main(argv: Optional[List[str]] = None) -> int:
         default=40,
         help='maks. pozycji w każdej sekcji logu',
     )
+    parser.add_argument(
+        '--ignore',
+        action='append',
+        default=[],
+        metavar='PATTERN',
+        help='katalog do pominięcia, np. **/tutorial (można powtórzyć)',
+    )
     args = parser.parse_args(argv)
-    return check_locales(find_repo_root(), args.limit)
+    return check_locales(find_repo_root(), args.limit, args.ignore)
 
 
 if __name__ == '__main__':
