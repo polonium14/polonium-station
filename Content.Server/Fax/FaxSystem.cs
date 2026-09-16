@@ -42,7 +42,7 @@ public sealed partial class FaxSystem : EntitySystem
     [Dependency] private IAdminManager _adminManager = default!;
     [Dependency] private ItemSlotsSystem _itemSlotsSystem = default!;
     [Dependency] private SharedAppearanceSystem _appearanceSystem = default!;
-    [Dependency] private SharedGameTicker _gameTicker = default!;
+    [Dependency] private GameTicker _gameTicker = default!; // Polonium: used for the fax timestamp
     [Dependency] private PopupSystem _popupSystem = default!;
     [Dependency] private DeviceNetworkSystem _deviceNetworkSystem = default!;
     [Dependency] private PaperSystem _paperSystem = default!;

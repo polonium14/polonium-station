@@ -220,8 +220,6 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("alertLevels");
             _prototypeManager.RegisterIgnore("nukeopsRole");
             _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
-            _prototypeManager.RegisterIgnore("codewordGenerator");
-            _prototypeManager.RegisterIgnore("codewordFaction");
             _prototypeManager.RegisterIgnore("stationGoal");
             _prototypeManager.RegisterIgnore("solitarySpawning"); // Project Batfly
 

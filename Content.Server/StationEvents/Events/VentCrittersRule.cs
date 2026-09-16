@@ -16,12 +16,12 @@ public sealed partial class VentCrittersRule : StationEventSystem<VentCrittersRu
     {
         base.Started(uid, component, gameRule, args);
 
-        if (!TryGetRandomStation(out var station))
+        if (!Station.TryGetRandomStation(out var station))
         {
             return;
         }
 
-        var validLocations = StationSystem.GetEntitiesWithComponentOnStation<VentCritterSpawnLocationComponent>(station.Value, true);
+        var validLocations = Station.GetEntitiesWithComponentOnStation<VentCritterSpawnLocationComponent>(station.Value, true);
         if (validLocations.Count == 0)
             return;
 

@@ -21,7 +21,7 @@ public sealed partial class VentClogRule : StationEventSystem<VentClogRuleCompon
     {
         base.Started(uid, component, gameRule, args);
 
-        if (!TryGetRandomStation(out var chosenStation))
+        if (!Station.TryGetRandomStation(out var chosenStation))
             return;
 
         // TODO: "safe random" for chems. Right now this includes admin chemicals.
@@ -29,7 +29,7 @@ public sealed partial class VentClogRule : StationEventSystem<VentClogRuleCompon
             .Where(x => !x.Abstract)
             .Select(x => new ProtoId<ReagentPrototype>(x.ID)).ToList();
 
-        foreach (var ventPump in StationSystem.GetEntitiesWithComponentOnStation<GasVentPumpComponent>(chosenStation.Value, true))
+        foreach (var ventPump in Station.GetEntitiesWithComponentOnStation<GasVentPumpComponent>(chosenStation.Value, true))
         {
             var targetCoords = Transform(ventPump).Coordinates;
             var solution = new Solution();

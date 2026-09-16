@@ -34,7 +34,7 @@ public sealed partial class VentHordeRule : StationEventSystem<VentHordeRuleComp
 
         if (component.ChosenVent is not { } vent)
         {
-            Log.Warning($"Unable to find a valid vent for {args.RuleId}!");
+            Log.Warning($"Unable to find a valid vent for {ToPrettyString(args.Rule)}!");
             ForceEndSelf(uid, gameRule);
             return;
         }
@@ -88,12 +88,12 @@ public sealed partial class VentHordeRule : StationEventSystem<VentHordeRuleComp
     private EntityUid? ChooseVent()
     {
         // Get a station
-        if (!TryGetRandomStation(out var station))
+        if (!Station.TryGetRandomStation(out var station))
         {
             return null;
         }
 
-        var validLocations = StationSystem.GetEntitiesWithComponentOnStation<VentCritterSpawnLocationComponent>(station.Value, true);
+        var validLocations = Station.GetEntitiesWithComponentOnStation<VentCritterSpawnLocationComponent>(station.Value, true);
         validLocations.RemoveWhere(uid => HasComp<VentHordeSpawnerComponent>(uid));
 
         // Pick one at random
