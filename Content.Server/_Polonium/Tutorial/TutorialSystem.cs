@@ -2,7 +2,6 @@ using Content.Server.Construction;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
-using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -68,17 +67,16 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         SubscribeLocalEvent<TutorialSessionComponent, ConstructionStartAttemptEvent>(OnItemConstruction);
         SubscribeLocalEvent<TutorialSessionComponent, SatiationUpdateEvent>(OnTraineeSatiation);
         SubscribeLocalEvent<TutorialNoDeconstructComponent, ConstructionInteractAttemptEvent>(OnLockedConstruction);
+        Type[] usingBefore = [typeof(CableSystem), typeof(ConstructionSystem)];
         SubscribeLocalEvent<TutorialNoDeconstructComponent, InteractUsingEvent>(OnLockedCableCut,
-            before: [typeof(CableSystem)]);
-        SubscribeLocalEvent<GhostRoleComponent, ComponentStartup>(OnGhostRoleStartup,
-            after: [typeof(GhostRoleSystem)]);
-        // Construction already took that pair
+            before: usingBefore);
+        SubscribeLocalEvent<GhostRoleComponent, ComponentInit>(OnGhostRoleStartup);
         SubscribeLocalEvent<WallComponent, InteractUsingEvent>(OnWallUsing,
-            before: [typeof(ConstructionSystem)]);
+            before: usingBefore);
         SubscribeLocalEvent<WallMountComponent, InteractUsingEvent>(OnWindowUsing,
-            before: [typeof(ConstructionSystem)]);
+            before: usingBefore);
         SubscribeLocalEvent<TutorialSealedComponent, InteractUsingEvent>(OnSealedUsing,
-            before: [typeof(ConstructionSystem)]);
+            before: usingBefore);
         SubscribeNetworkEvent<TutorialRestartRequestedEvent>(OnRestartRequested);
         SubscribeNetworkEvent<TutorialStartPracticalEvent>(OnStartPractical);
         SubscribeNetworkEvent<TutorialReturnToLobbyEvent>(OnReturnToLobby);

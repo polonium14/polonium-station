@@ -39,7 +39,7 @@ public sealed partial class TutorialSystem
             args.Cancelled = true;
     }
 
-    private void OnGhostRoleStartup(Entity<GhostRoleComponent> ent, ref ComponentStartup args)
+    private void OnGhostRoleStartup(Entity<GhostRoleComponent> ent, ref ComponentInit args)
     {
         StripGhostRole(ent.Owner, deferred: true);
     }
