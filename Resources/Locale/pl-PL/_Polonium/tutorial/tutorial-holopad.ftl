@@ -7,17 +7,17 @@
 tutorial-holopad-r00-a = Dzień dobry. Jestem H.A.L.I.N.A. – Holograficzny Asystent Logistyki i Nadzoru Adeptów. Skrót wymyślił dział marketingu, a ja nie miałam nic do gadania.
 tutorial-holopad-r00-b = I nie, nie mam nic wspólnego z tamtym. Tamten był amerykański, obsługiwał tylko jedną misję i miał wyjątkowo zły dzień.
 tutorial-holopad-r00-c = Witamy w Ośrodku Szkoleniowym Nanotrasen. Twoja umowa wchodzi w życie dopiero po kursie, więc formalnie rzecz biorąc, jesteś tu z własnej woli i za darmo.
-tutorial-holopad-intro-screen-a = Zacznijmy od ciebie. Ta postać na środku ekranu to ty. Kamera będzie za tobą chodzić, nawet jeśli akurat nie chcesz.
-tutorial-holopad-intro-screen-b = Wskaźniki stanu w prawym górnym rogu, pod czatem, ostrzegą cię, zanim zrobi się źle. Statystycznie i tak większość ludzi zauważa je dopiero potem.
-tutorial-holopad-intro-hands-a = Ręce. Masz dwie i tylko jedna jest aktywna naraz. Nie pytaj dlaczego, tak zaprojektowano człowieka.
-tutorial-holopad-intro-hands-b = Prawie wszystko na tej stacji zaczyna się od włożenia czegoś do ręki. Prawie wszystkie wypadki też.
-tutorial-holopad-intro-inv-a = Ekwipunek to twoje ubranie i sprzęt. Firma zapewnia komplet podstawowy, resztę zdobywasz sam.
-tutorial-holopad-intro-inv-b = Plecak jest twój. Formalnie własność korporacji, ale nikt tego jeszcze nie egzekwował.
-tutorial-holopad-intro-chat-a = A teraz najważniejsze okno na ekranie. Czat.
-tutorial-holopad-intro-chat-b = Nie liczy się to, co powiesz, tylko na jakim kanale. Połowa incydentów na tej stacji zaczyna się od wybrania złego.
-tutorial-holopad-intro-chat-c = Zwłaszcza OOC. OOC to nie jest twoja postać. Zapamiętaj to lepiej niż numer swojego kontraktu.
-tutorial-holopad-intro-act-a = Pasek akcji w lewym górnym rogu. Wszystko, co twoja postać potrafi zrobić poza chodzeniem i narzekaniem.
-tutorial-holopad-intro-act-b = Na pasku menu tuż nad nim jest poradnik. Zawiera odpowiedzi na większość pytań, które za chwilę zadasz.
+tutorial-holopad-intro-screen-a = To ty na środku ekranu. Kamera chodzi za tobą.
+tutorial-holopad-intro-screen-b = Wskaźniki stanu w prawym górnym rogu, pod czatem.
+tutorial-holopad-intro-hands-a = Ręce. Aktywna jest tylko jedna naraz.
+tutorial-holopad-intro-hands-b = Prawie wszystko zaczyna się od włożenia czegoś do ręki.
+tutorial-holopad-intro-inv-a = Ekwipunek to twoje ubranie i sprzęt.
+tutorial-holopad-intro-inv-b = Plecak jest twój.
+tutorial-holopad-intro-chat-a = Czat. Najważniejsze okno na ekranie.
+tutorial-holopad-intro-chat-b = Nie liczy się, co powiesz. Liczy się kanał.
+tutorial-holopad-intro-chat-c = OOC to nie twoja postać.
+tutorial-holopad-intro-act-a = Pasek akcji w lewym górnym rogu.
+tutorial-holopad-intro-act-b = Nad nim, na pasku menu, jest poradnik.
 tutorial-holopad-r00-d = Koniec teorii. Reszty nauczysz się tak, jak wszyscy: na własnej skórze.
 tutorial-holopad-r00-e = Zacznijmy łagodnie. Podejdź do śluzy na końcu pomieszczenia, a ja ci ją otworzę. To ostatni raz, kiedy ktoś na tej stacji zrobi coś za ciebie.
 
@@ -117,7 +117,7 @@ tutorial-holopad-quip-slime-fist = Pięściami. Oczywiście, że pięściami. Za
 
 # r17 - korytarz i umowa
 tutorial-holopad-r17-a = Gratulacje. Przeżyłeś szkolenie, co stawia cię w górnych sześćdziesięciu procentach rocznika. Podejdź do holopadu, mam ci coś do odczytania.
-tutorial-holopad-r17-b = Śluza za tobą właśnie się zaryglowała. To nie awaria. Od tego momentu nie ma już wersji, w której się rozmyślasz.
+tutorial-holopad-r17-b = Śluza za tobą właśnie się zaryglowała. To nie awaria. Po prostu nie ma powrotu już do szkoły.
 tutorial-holopad-r17-c = Procedura wymaga, żebym odczytała ci formułę końcową. Ja nie mogę jej pominąć, a ty w tej chwili nie możesz odejść. Oboje przez to przejdziemy.
 tutorial-holopad-r17-d = W imieniu Korporacji NanoTrasen dziękuję za ukończenie szkolenia. Na końcu tego korytarza czeka twoja umowa. Tak, korytarz jest długi. Dział projektowy nazywa to budowaniem napięcia.
 tutorial-holopad-r17-crew-a = A teraz coś, czego nie ma w formule końcowej i czego nikt mi nie kazał mówić. To szkolenie pokazało ci może jedną dziesiątą tego miejsca.
@@ -127,12 +127,12 @@ tutorial-holopad-r17-crew-d = Najlepszych rzeczy na tej stacji nie ma w dokument
 tutorial-holopad-r17-e = Na stole stoi teczka, a w niej dokument. Obok leży długopis. Wyjmij umowę i złóż na niej podpis. Dowolny, i tak nikt go z niczym nie porównuje.
 tutorial-holopad-r17-f = Drobny druk jest naprawdę drobny. Szczerze odradzam czytanie. I proszę umowy nie zjadać. Zdarzało się dwa razy.
 
-tutorial-holopad-finale = Szkolenie zakończone. Twoje akta trafiają do Centrali, a ty na prawdziwą stację. Było mi bardzo miło. Statystycznie rzecz biorąc, nie zobaczymy się ponownie.
+tutorial-holopad-finale = Statystycznie rzecz biorąc, nie zobaczymy się ponownie. Powodzenia!
 
 # awaryjne
-tutorial-holopad-stuck-hint = Stoisz. Sprawdzam, czy to przypadkiem nie ja czegoś nie zepsułam. Odświeżam wyposażenie – spróbuj jeszcze raz tego, co pulsuje.
-tutorial-holopad-stuck-skip = Dobrze. Otwieram następną śluzę i wpisuję do raportu, że zadanie wykonane. Zostaje to między nami i archiwum Centrali.
-tutorial-holopad-quip-death = Zgon. Formalnie. Ośrodek szkoleniowy nie raportuje zgonów szkoleniowych, więc oficjalnie nic się nie stało. Wstawaj.
+tutorial-holopad-stuck-hint = Stoisz. Sprawdzam, czy to przypadkiem nie ja czegoś nie zepsułam. Spróbuj jeszcze raz użyć tego, co pulsuje.
+tutorial-holopad-stuck-skip = No cóż. Otwieram następną śluzę i wpisuję do raportu, że zadanie wykonane. Zostaje to między nami i archiwum Centrali.
+tutorial-holopad-quip-death = Zgon. Formalnie. Ośrodek szkoleniowy nie raportuje zgonów szkoleniowych, więc oficjalnie nic się nie stało. Wstawaj!
 tutorial-holopad-r12-internals-a = Została butla. Trzymaj ją w ręce, w kieszeni albo w schowku skafandra i włącz obieg wewnętrzny. Pasek podpowiedzi pokazuje jak.
 tutorial-holopad-r12-internals-b = Od tej chwili oddychasz swoim powietrzem, a nie tym z pokoju. Za moment to rozróżnienie zrobi się bardzo praktyczne.
 tutorial-holopad-r12-doff-a = Ciśnienie wróciło. Wyłącz obieg wewnętrzny, zdejmij skafander i maskę - butla ma skończoną ilość powietrza i właśnie zużywasz ją na nic.
@@ -191,9 +191,9 @@ tutorial-holopad-r17-guide = Jeszcze jedno, praktyczne. Przycisk poradnika w pas
 tutorial-holopad-r17-crew-e = A czego nie ma ani w poradniku, ani we mnie, podpowie ci załoga albo administracja serwera. Pytanie na czacie nikogo tu nie dziwi.
 
 tutorial-holopad-r14-enter = Sekcja ochrony. Uryst jest nieśmiertelny i posłuży za cel ćwiczeń.
-tutorial-holopad-r14-target = W prawym dolnym rogu masz sylwetkę. Zaznaczona część ciała to miejsce, w które trafia wszystko, co robisz drugiej osobie.
+tutorial-holopad-r14-target = Sylwetka w prawym dolnym rogu. Zaznaczone miejsce to cel.
 tutorial-holopad-r14-to-urist = Podejdź do Urysta.
-tutorial-holopad-r14-combat = Włącz tryb walki. Ikona stoi na pasku akcji w lewym górnym rogu.
+tutorial-holopad-r14-combat = Włącz tryb walki. Ikona na pasku akcji.
 tutorial-holopad-r14-shove = Pchnij go. Ten Uryst przewraca się od jednego pchnięcia, żywy człowiek tak łatwo nie padnie.
 tutorial-holopad-r14-to-baton = Podejdź do pierwszej skrzyni pod ścianą. Dałam ci do niej dostęp.
 tutorial-holopad-r14-baton = Kliknij skrzynię, żeby zdjąć blokadę, i jeszcze raz, żeby ją otworzyć. W środku leży pałka ogłuszająca, weź ją do ręki.
