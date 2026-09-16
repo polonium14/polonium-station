@@ -5,11 +5,36 @@
   components:
   - type: EntityTableSpawner
     offset: 0.2
-    table: !type:AllSelector
+    table: !type:GroupSelector # Polonium change start
       children:
-      - id: WeaponSubMachineGunWt550
-      - id: MagazinePistolSubMachineGunTopMounted
-      - id: MagazinePistolSubMachineGunTopMounted
+      - !type:AllSelector # 70% chance
+        children:
+        - id: WeaponSubMachineGunWt550
+        - id: MagazinePistolSubMachineGunTopMounted
+        - id: MagazinePistolSubMachineGunTopMounted
+        weight: 70
+      - !type:AllSelector # 10% chance
+        children:
+        - id: WeaponBORSniperGun
+        - id: BorSniperMagazine
+        - id: BorSniperMagazine
+        - id: BorSniperMagazine
+        - id: BorSniperMagazine
+        weight: 10
+      - !type:AllSelector # 10% chance
+        children:
+        - id: PMMMachineGun
+        - id: PMMMachineGunMagazine
+        - id: PMMMachineGunMagazine
+        - id: PMMMachineGunMagazine
+        weight: 10
+      - !type:AllSelector # 10% chance - the non-lethal package
+        children:
+        - id: WeaponTaser
+        - id: WeaponShotgunEnforcerRubber
+        - id: BoxBeanbag
+        weight: 10 # Polonium change end
+
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -24,9 +49,30 @@
   components:
   - type: EntityTableSpawner
     offset: 0.2
-    table: !type:AllSelector
+    table: !type:GroupSelector # polonium change start
       children:
-      - id: WeaponEnergyShotgun
+      - !type:AllSelector # 9% chance
+        children:
+        - id: WeaponShotgunEnforcerRubber
+        - id: BoxBeanbag
+        weight: 9
+      - !type:AllSelector # 10% chance
+        children:
+        - id: WeaponShotgunDoubleBarreledRubber
+        - id: BoxBeanbag
+        - id: Saw
+        weight: 10
+      - id: WeaponEnergyShotgun # 70% chance
+        weight: 70
+      - id: WeaponDisablerSMG # Budget cuts; 10% chance
+        weight: 10
+      - id: GunpetInstrument # VERY Budget "gun"; 0.999% chance
+        weight: 0.999
+      - !type:AllSelector # Specific meme request so only 0.001%
+        children:
+        - id: WeaponShotgunBulldog
+        - id: BoxMagazineShotgunIncendiary
+        weight: 0.001 # Polonium change end
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
