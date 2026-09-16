@@ -8,6 +8,8 @@ using Content.Shared.Light.Components;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Robust.Shared.Random;
+using Content.Server.GameTicking;
+using Content.Server.Station.Systems;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -34,13 +36,13 @@ public sealed partial class SolarFlareRule : StationEventSystem<SolarFlareRuleCo
             comp.AffectedChannels.Add(channel);
         }
 
-        if (!TryGetRandomStation(out var station))
+        if (!Station.TryGetRandomStation(out var station))
             return;
 
-        comp.AffectedLights = StationSystem.GetEntitiesWithComponentOnStation<PoweredLightComponent>(station.Value, true)
+        comp.AffectedLights = Station.GetEntitiesWithComponentOnStation<PoweredLightComponent>(station.Value, true)
             .Select(e => (e.Owner, e.Comp))
             .ToHashSet();
-        comp.AffectedAirlocks = StationSystem.GetEntitiesWithComponentOnStation<AirlockComponent>(station.Value, true)
+        comp.AffectedAirlocks = Station.GetEntitiesWithComponentOnStation<AirlockComponent>(station.Value, true)
             .Select(e => (e.Owner, e.Comp))
             .ToHashSet();
     }
@@ -72,7 +74,7 @@ public sealed partial class SolarFlareRule : StationEventSystem<SolarFlareRuleCo
         var query = EntityQueryEnumerator<SolarFlareRuleComponent, GameRuleComponent>();
         while (query.MoveNext(out var uid, out var flare, out var gameRule))
         {
-            if (!GameTicker.IsGameRuleActive(uid, gameRule))
+            if (!GameTicker.IsGameRuleActive((uid, gameRule)))
                 continue;
 
             if (!flare.AffectedChannels.Contains(args.Channel.ID))

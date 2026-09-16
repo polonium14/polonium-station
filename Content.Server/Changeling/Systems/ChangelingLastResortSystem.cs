@@ -1,4 +1,3 @@
-using Content.Server.Antag;
 using Content.Shared.Administration.Systems;
 using Content.Shared.Antag;
 using Content.Shared.Changeling.Components;

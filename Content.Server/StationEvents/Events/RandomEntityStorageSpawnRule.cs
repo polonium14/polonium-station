@@ -15,13 +15,13 @@ public sealed partial class RandomEntityStorageSpawnRule : StationEventSystem<Ra
     {
         base.Started(uid, comp, gameRule, args);
 
-        if (!TryGetRandomStation(out var station))
+        if (!Station.TryGetRandomStation(out var station))
             return;
 
         var validLockers = new List<(EntityUid, EntityStorageComponent)>();
         var spawn = Spawn(comp.Prototype, MapCoordinates.Nullspace);
 
-        foreach (var (ent, storage) in StationSystem.GetEntitiesWithComponentOnStation<EntityStorageComponent>(station.Value, false))
+        foreach (var (ent, storage) in Station.GetEntitiesWithComponentOnStation<EntityStorageComponent>(station.Value, false))
         {
             if (!_entityStorage.CanInsert(spawn, ent, storage))
                 continue;
