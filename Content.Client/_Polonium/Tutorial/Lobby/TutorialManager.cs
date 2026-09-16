@@ -624,6 +624,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         {
             ClickAction = TutorialBubble.ClickBehaviour.Ignore,
             TippyVariant = TutorialBubble.Tippy.WavingHand,
+            FullSize = true,
         };
 
         bubble.ContentContainer.AddChild(new TextureRect
