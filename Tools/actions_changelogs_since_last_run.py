@@ -231,7 +231,7 @@ def changelog_entries_to_message_lines(entries: Iterable[ChangelogEntry]) -> lis
 
     for contributor_name, group in itertools.groupby(entries, lambda x: x["author"]):
         message_lines.append("\n")
-        message_lines.append(f"**{contributor_name}** Zaktualizował(-a):\n")
+        message_lines.append(f"**{contributor_name}** zaktualizował(-a):\n")
 
         for entry in group:
             url = entry.get("url")
