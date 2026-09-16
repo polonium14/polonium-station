@@ -68,3 +68,5 @@ entity-condition-guidebook-blood-reagent-threshold =
                     *[other] bloodstream has between {NATURALFIXED($min, 2)}u and {NATURALFIXED($max, 2)}u of {$reagent}
                  }
     }
+entity-condition-guidebook-mouth-uncovered-condition =
+    the mob has an uncovered mouth
