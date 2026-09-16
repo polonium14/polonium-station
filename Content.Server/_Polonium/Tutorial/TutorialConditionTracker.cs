@@ -13,6 +13,7 @@ using Content.Shared.Botany.Components;
 using Content.Shared.Botany.Systems;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Body.Systems;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Climbing.Events;
@@ -39,6 +40,8 @@ using Content.Shared.Materials;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.Nutrition;
+using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Paper;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Projectiles;
@@ -125,6 +128,8 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         SubscribeLocalEvent<TutorialAnchorComponent, AttackedEvent>(OnAttacked);
 
         SubscribeLocalEvent<TutorialSessionComponent, StartClimbEvent>(OnStartClimb);
+        SubscribeLocalEvent<TutorialSessionComponent, IngestingEvent>(OnTraineeIngesting,
+            after: [typeof(MessyDrinkerSystem)]);
         SubscribeLocalEvent<SlipperyComponent, SlipEvent>(OnSlip);
 
         SubscribeLocalEvent<ProjectileComponent, ProjectileHitEvent>(OnProjectileHit);
@@ -301,7 +306,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             SlipTeleportWatcher => session.Flags.Contains("slipped"),
             FlagWatcher flag => session.Flags.Contains(flag.Flag),
             AnchorNearWatcher near => CheckAnchorsNear(player, near.AnchorId, near.NearAnchorId, near.Range, near.Away),
-            PuddleNearbyWatcher puddle => CheckPuddleNearby(player, puddle),
+            PuddleNearbyWatcher puddle => CheckPuddleNearby(player, session, puddle),
             AbsorbentSpentWatcher => CheckAbsorbentSpent(player),
             HoldingAnchorWatcher hold => CheckHolding(player, hold.AnchorId),
             ConditionWatcher cond => Evaluate(player, session, cond.Condition),
@@ -393,6 +398,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             ExaminedNearAnchorCondition examinedNear => CheckExaminedNear(player, session, examinedNear),
             MachineFrameCompleteNearAnchorCondition frameDone => CheckFrameComplete(player, frameDone),
             AnchorEmptyOrGoneCondition empty => CheckEmptyOrGone(session, empty.AnchorId),
+            IngestedReagentCondition ingested => session.Flags.Contains(IngestedReagentCondition.Flag(ingested.Reagent)),
             HoldingAnchorCondition hold => CheckHolding(player, hold.AnchorId),
             HoldingPrototypeCondition holdProto => CheckHoldingPrototype(player, holdProto.Prototype),
             PrototypeNearAnchorCondition near => CountPrototype(player, near) >= near.Count,
@@ -1405,8 +1411,21 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         return total;
     }
 
-    private bool CheckPuddleNearby(EntityUid player, PuddleNearbyWatcher watcher)
+    private void OnTraineeIngesting(Entity<TutorialSessionComponent> ent, ref IngestingEvent args)
     {
+        foreach (var reagent in args.Split)
+        {
+            if (reagent.Quantity <= 0)
+                continue;
+
+            ent.Comp.Flags.Add(IngestedReagentCondition.Flag(reagent.Reagent.Prototype));
+        }
+    }
+
+    private bool CheckPuddleNearby(EntityUid player, TutorialSessionComponent session, PuddleNearbyWatcher watcher)
+    {
+        if (watcher.Reagent is { } reagent && session.Flags.Contains(IngestedReagentCondition.Flag(reagent)))
+            return false;
         if (!TryComp(player, out TransformComponent? xform))
             return false;
 
@@ -1421,8 +1440,8 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             if (!_solution.TryGetSolution(uid, puddle.SolutionName, out _, out var solution))
                 continue;
 
-            var volume = watcher.Reagent is { } reagent
-                ? solution.GetTotalPrototypeQuantity(reagent)
+            var volume = watcher.Reagent is { } wanted
+                ? solution.GetTotalPrototypeQuantity(wanted)
                 : solution.Volume;
 
             if (volume.Float() >= floor)

@@ -366,8 +366,8 @@
     minVolume: 8
     quip:
     - tutorial-holopad-quip-tea
-  completion: !type:AnchorEmptyOrGoneCondition
-    anchorId: room4_tea
+  completion: !type:IngestedReagentCondition
+    reagent: GreenTea
 
 - type: tutorialStep
   id: TutorialLinearR04Stand

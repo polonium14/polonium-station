@@ -41,7 +41,7 @@ tutorial-holopad-r04-a = Pomieszczenie czwarte to strefa relaksu. Masz ją w umo
 tutorial-holopad-r04-b = Usiądź na krześle. Naprawdę usiądź. Monitoruję to.
 tutorial-holopad-r04-c = Na podłodze obok krzesła stoi herbata. Ktoś ją tam postawił i już nigdy po nią nie wrócił.
 tutorial-holopad-r04-d = Podnieś ją i wypij. Termin ważności herbaty to pojęcie umowne, a ty i tak nie masz wyboru.
-tutorial-holopad-quip-tea = Wylałeś. Rozumiem. Mnie też nie smakuje. Sprzątanie jest w następnym pomieszczeniu. Zapamiętam to sobie.
+tutorial-holopad-quip-tea = Wylałeś. Pij z podłogi. Kałuża nigdzie nie pójdzie, a drzwi otworzę dopiero, kiedy herbata będzie w tobie.
 tutorial-holopad-r04-e = Przerwa skończona. Wstań z krzesła. Twoje cztery minuty zostały właśnie wykorzystane.
 
 # r05 - obrót kamery i mop
