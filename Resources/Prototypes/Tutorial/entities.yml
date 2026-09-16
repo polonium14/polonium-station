@@ -316,3 +316,33 @@
   - type: TutorialSoil
   - type: Destructible
     thresholds: []
+
+- type: entity
+  parent: BaseMachine
+  id: TutorialJukebox
+  name: jukebox
+  description: A machine capable of playing a wide variety of tunes. Enjoyment not guaranteed.
+  suffix: Tutorial
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/jukebox.rsi
+    state: on
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.45,0.25,0.45"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 200
+  - type: Damageable
+    damageModifierSet: WoodMod
+  - type: Destructible
+    thresholds: []
