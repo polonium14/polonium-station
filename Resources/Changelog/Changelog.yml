@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: AreYouConfused
-  changes:
-  - message: Vox's tail rings no longer replace the vox's tail and now correctly layer
-      ontop of the tail.
-    type: Fix
-  id: 9494
-  time: '2026-02-06T21:18:22.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42808
 - author: 11BelowStudio
   changes:
   - message: Chaplains can now choose a custom name. Hallelujah!
@@ -4068,3 +4060,18 @@
   id: 9992
   time: '2026-09-15T21:04:29.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/980
+- author: Nikita
+  changes:
+  - message: "Dodano mo\u017Cliwo\u015B\u0107 wznowienia samouczka po ponownym do\u0142\
+      \u0105czeniu gracza."
+    type: Add
+  - message: "Ulepszono przebieg samouczka w lobby i dodano mo\u017Cliwo\u015B\u0107\
+      \ jego pomini\u0119cia."
+    type: Tweak
+  - message: "Zablokowano do\u0142\u0105czanie przez konsol\u0119 podczas intro samouczka."
+    type: Fix
+  - message: Dodano przycisk powrotu do lobby w interfejsie ducha.
+    type: Add
+  id: 9993
+  time: '2026-09-16T07:16:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1022
