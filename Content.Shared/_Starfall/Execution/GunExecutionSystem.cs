@@ -152,6 +152,14 @@ public sealed partial class GunExecutionSystem : EntitySystem
 
             return;
         }
+        // Polonium - Prevent exeuction with spent bullets
+        if (takeAmmo.Ammo[0].Shootable is CartridgeAmmoComponent ammocomp && ammocomp.Spent)
+        {
+            _audio.PlayPredicted(ent.Comp.SoundEmpty, weapon, attacker);
+            ShowInternal("gun-execution-empty-self", attacker, victim, weapon);
+            ShowExternal("gun-execution-empty-others", attacker, victim, weapon);
+            return;
+        } // Polonium end
 
         var damageType = GetExecutionDamageType(takeAmmo.Ammo[0]);
 
