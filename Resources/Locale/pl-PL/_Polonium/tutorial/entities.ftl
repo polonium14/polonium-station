@@ -6,3 +6,8 @@ ent-TutorialJukebox = szafa grająca
 
 ent-PaperTutorialBurgerRecipe = kartka z przepisem
     .desc = Strona wyrwana z kuchennego segregatora. Ktoś dwa razy zakreślił czas pieczenia.
+
+ent-WallInvisiblePermanent = niewidzialna ściana
+    .desc = Dalej nie pójdziesz. Ośrodek dba o to, żeby nikt nie zgubił się w kosmosie.
+
+tiles-tutorial-space-barrier = próżnia za barierą

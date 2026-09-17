@@ -346,3 +346,40 @@
     damageModifierSet: WoodMod
   - type: Destructible
     thresholds: []
+
+- type: entity
+  id: WallInvisiblePermanent
+  name: invisible wall
+  suffix: Permanent
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Marker
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: Markers/cross.rsi
+    state: red
+
+- type: tile
+  id: TutorialSpaceBarrier
+  name: tiles-tutorial-space-barrier
+  baseTurf: Space
+  isSubfloor: true
+  isSpace: true
+  indestructible: true
+  weather: false
+  heatCapacity: 10000
