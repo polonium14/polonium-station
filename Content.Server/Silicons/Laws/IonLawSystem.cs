@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Dataset;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Station;
 using Content.Shared.StationRecords;
@@ -35,7 +36,7 @@ public sealed partial class IonLawSystem : EntitySystem
 
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs obj)
     {
-        if (obj.ByType.ContainsKey(typeof(DatasetPrototype)))
+        if (obj.ByType.ContainsKey(typeof(LocalizedDatasetPrototype)))
             BuildSelectors();
     }
 
@@ -44,8 +45,8 @@ public sealed partial class IonLawSystem : EntitySystem
         _selectors.Clear();
 
 
-        DatasetFill DatasetFill(ProtoId<DatasetPrototype> datasetId) => new() { Dataset = datasetId };
-        RandomManifestFill RandomManifestFill(ProtoId<DatasetPrototype> fallback) => new() { FallbackDataset = fallback };
+        DatasetFill DatasetFill(ProtoId<LocalizedDatasetPrototype> datasetId) => new() { Dataset = datasetId };
+        RandomManifestFill RandomManifestFill(ProtoId<LocalizedDatasetPrototype> fallback) => new() { FallbackDataset = fallback };
         ConstantFill ConstantFill(bool val) => new() { BoolValue = val };
 
         AddSelector("ION-NUMBER-BASE", DatasetFill("IonStormNumberBase"));
@@ -254,9 +255,9 @@ public sealed partial class IonLawSystem : EntitySystem
         switch (selector)
         {
             case DatasetFill datasetFill:
-                if (ProtoMan.TryIndex(datasetFill.Dataset, out var dataset) && dataset.Values.Any())
+                if (ProtoMan.TryIndex(datasetFill.Dataset, out LocalizedDatasetPrototype? locDataset) && locDataset.Values.Count > 0)
                 {
-                    return _random.Pick(dataset.Values);
+                    return _random.Pick(locDataset);
                 }
                 _sawmill.Error("Selected DataSet (" + selector + ") was empty or not found");
                 return Loc.GetString("ion-law-error-dataset-empty-or-not-found");
@@ -274,9 +275,9 @@ public sealed partial class IonLawSystem : EntitySystem
                 }
 
                 // Fallback to dataset if no manifest record found or stations are empty
-                if (ProtoMan.TryIndex(randomManifestFill.FallbackDataset, out var fallbackDataset) && fallbackDataset.Values.Any())
+                if (ProtoMan.TryIndex(randomManifestFill.FallbackDataset, out LocalizedDatasetPrototype? fallbackDataset) && fallbackDataset.Values.Count > 0)
                 {
-                    return _random.Pick(fallbackDataset.Values);
+                    return _random.Pick(fallbackDataset);
                 }
                 _sawmill.Error("Fallback DataSet (" + selector + ") was empty or not found");
                 return Loc.GetString("ion-law-error-fallback-dataset-empty-or-not-found");
