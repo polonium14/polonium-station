@@ -142,7 +142,7 @@ tutorial-cannot-break-structure = Nie niszcz tego. To nie jest część ćwiczen
 tutorial-cannot-ghost = W szkoleniu nie możesz stać się duchem.
 tutorial-cannot-suicide = W szkoleniu nie możesz popełnić samobójstwa.
 
-tutorial-bubble-acknowledge = Zrobione
+tutorial-bubble-acknowledge = Zrozumiałem
 tutorial-bubble-guidebook = Poradnik
 tutorial-bubble-exit = Wyjdź
 tutorial-bubble-finale = Gratulacje. Umowa podpisana - od teraz oficjalnie pracujesz dla NanoTrasen. Wiesz już wszystko, czego potrzeba, żeby zacząć grę na stacji.
@@ -214,7 +214,7 @@ tutorial-hint-close = { $escape } albo krzyżyk w rogu - zamknięcie okna
 tutorial-hint-place = { $click } w blat stołu przedmiotem w ręce - odkładasz go tam
 tutorial-hint-fill = { $click } zlewką w zlew - 5 wody na kliknięcie, potrzeba 15. Za dużo? { $rightClick } na zlew ze zlewką w ręce
 tutorial-hint-fill-bucket = { $click } wiadrem w zlew - 120 wody na kliknięcie
-tutorial-hint-microwave-in = { $click } przedmiotem w mikrofalówkę - włożenie, jedno kliknięcie na przedmiot. { $click } pustą ręką - panel
+tutorial-hint-microwave-in = { $click } przedmiotem w mikrofalówkę - włożenie, jedno kliknięcie na przedmiot. { $click } pustą ręką lub { $useWorld } - panel
 tutorial-hint-microwave-run = W panelu wybierz czas i wciśnij Start. "Opróżnij zawartość" wyrzuca wszystko z powrotem
 tutorial-hint-fertilise = { $click } butelką w donicę - 5 nawozu na kliknięcie, w butelce jest 30
 tutorial-hint-eat = { $useHand } - zjedz to, co trzymasz w aktywnej ręce

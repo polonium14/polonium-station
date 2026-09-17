@@ -176,6 +176,33 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     }
 
     /// <summary>
+    /// The tour counts as running but nothing of it is on screen. Put the current step back
+    /// instead of leaving the player with a lobby that silently ignores them.
+    /// </summary>
+    public void EnsureTourVisible()
+    {
+        if (!IsTutorialActive || _info.IsRulesPopupOpen || _stateMan.CurrentState is not LobbyState)
+            return;
+
+        if (_isPaused)
+        {
+            ResumeTutorial();
+            return;
+        }
+
+        if (_tutorialUi.ActiveOverlay != null)
+            return;
+
+        if (!RewindToRunnableStep())
+        {
+            CancelTutorial();
+            return;
+        }
+
+        ActiveStep?.OnReenter();
+    }
+
+    /// <summary>
     /// Walks backwards until a step reports it can run here. Used when the player closed a window
     /// or left the lobby and the step we were on no longer makes sense.
     /// </summary>
@@ -532,6 +559,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     /// </summary>
     private void RegisterSteps()
     {
+        _steps.Add(new BubbleSizeStep());
         _steps.Add(new WelcomeStep());
         _steps.Add(new LobbyOverviewStep());
         _steps.Add(new CharacterCreationStep());
@@ -731,6 +759,11 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
         _dbCompleted = null;
         _lobbyTourSent = false;
+
+        // a new connection is a new run of the tour, bubble size step included
+        if (IsTutorialActive)
+            CancelTutorial();
+        Progress.IsCompleted = false;
         CloseTrainingOffer();
         CloseTrainingHopWindow();
         _hopWindow = null;

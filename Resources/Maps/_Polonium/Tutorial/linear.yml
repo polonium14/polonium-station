@@ -8801,7 +8801,7 @@ entities:
       pos: 168.5,-23.5
     - type: TutorialAnchor
       anchorId: room13_tray
-- proto: JanitorialTrolley
+- proto: JanitorialTrolleyTutorial
   entities:
   - uid: 538
     components:

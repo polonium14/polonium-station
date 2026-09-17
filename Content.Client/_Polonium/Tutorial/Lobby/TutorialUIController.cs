@@ -162,6 +162,29 @@ public sealed partial class TutorialUIController : UIController
         ActiveBubble = bubble;
     }
 
+    /// <summary>Puts a new bubble in place of the one on screen, without closing the overlay.</summary>
+    public void SwapBubble(
+        TutorialBubble bubble,
+        TutorialHighlightOverlay.OverlayControlPosition position,
+        Control? relativeToControl = null,
+        float spacing = 100f)
+    {
+        if (ActiveOverlay is null)
+        {
+            bubble.Orphan();
+            return;
+        }
+
+        if (ActiveBubble is { } old)
+        {
+            old.OnBubbleClosed -= OnBubbleClosed;
+            old.Orphan();
+            ActiveBubble = null;
+        }
+
+        DrawBubble(bubble, position, ActiveOverlay.Id, relativeToControl, spacing);
+    }
+
     public void ClearPendingOverlays()
     {
         _pendingOverlays.Clear();

@@ -654,6 +654,9 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
 
     private void DropForeignOverlay()
     {
+        if (_state.CurrentState is not GameplayState)
+            return;
+
         if (_tutorialUi.ActiveOverlay is { } overlay && overlay.Id != OverlayId)
             _tutorialUi.DiscardActive();
     }

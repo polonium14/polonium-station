@@ -59,3 +59,8 @@ intro-proceed-prompt-agree-later = Jasne, bez pośpiechu! Praktyczną część s
 intro-solitary-server-hopping-message = Chwilka, przenosimy Cię na symulowaną stację kosmiczną...
 intro-proceed-prompt-fallback-message = Wiesz już niemal wszystko! Możesz śmiało dołączyć do gry — załoga z pewnością pomoże Ci postawić pierwsze kroki. W wolnej chwili zajrzyj do naszego poradnika, aby lepiej poznać mechaniki swojej roli. Dobrej zabawy!
 intro-proceed-practical-button = Przejdź do praktyki
+
+intro-bubble-size-title = [bold]Dopasuj rozmiar wskazówek[/bold] do swojego ekranu. Dymek obok pokazuje, jak będą wyglądać - ustaw go tak, żeby dało się go wygodnie czytać i żeby nie zasłaniał za dużo lobby.
+intro-bubble-size-warning = [color=#FFC83D]Uwaga:[/color] ten rozmiar zmienisz ponownie dopiero wtedy, gdy rozpoczniesz samouczek od nowa, wchodząc jeszcze raz na serwer szkoleniowy.
+intro-bubble-size-sample = Tak będą wyglądać wskazówki samouczka. Ten tekst ma mniej więcej tyle znaków, ile zwykła wskazówka w lobby.
+intro-bubble-size-done = Gotowe

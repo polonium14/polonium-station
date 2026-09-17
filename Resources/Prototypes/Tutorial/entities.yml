@@ -121,6 +121,17 @@
     charge: 1
     switchedOn: true
 
+# stock cart has a spill verb and you can drain the tank into a bucket. either one
+# dumps the rinse water and the mop step has nothing left to wring into
+- type: entity
+  parent: JanitorialTrolley
+  id: JanitorialTrolleyTutorial
+  suffix: Tutorial
+  components:
+  - type: TutorialNoPour
+  - type: Spillable
+    canSpillFromHand: false
+
 - type: entity
   parent: PuddleTemporary
   id: PuddleTutorial

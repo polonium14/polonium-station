@@ -74,4 +74,11 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> TutorialCompleted =
         CVarDef.Create("tutorial.completed", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Tutorial bubble size the player picked in the lobby, as a multiplier on the size worked out
+    /// from how much screen there is. Applies to lobby and in-round bubbles alike.
+    /// </summary>
+    public static readonly CVarDef<float> TutorialBubbleScale =
+        CVarDef.Create("tutorial.bubble_scale", 1f, CVar.CLIENTONLY | CVar.ARCHIVE);
 }
