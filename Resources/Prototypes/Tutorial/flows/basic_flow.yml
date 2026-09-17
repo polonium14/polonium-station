@@ -3636,7 +3636,6 @@
     - !type:SpawnAtAnchorAction
       anchorId: room16_autolathe
       prototype: SheetSteel
-      assignAnchorId: room16_spare_steel
       tutorialNpc: false
       preventDeath: false
     condition: !type:AllCondition
