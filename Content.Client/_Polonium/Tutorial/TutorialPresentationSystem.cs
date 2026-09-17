@@ -614,12 +614,17 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
     private void UpdateHint(TutorialSessionComponent session)
     {
         var objective = string.Empty;
+        var details = string.Empty;
         var blocking = false;
 
         if (session.CurrentStep is { } stepId && _proto.TryIndex(stepId, out var stepProto))
         {
             blocking = stepProto.Blocking;
             objective = FormatTutorialLoc(stepProto.Instruction);
+
+            // overlay steps already put this text in their bubble, the rest only have this bar
+            if (stepProto.BubbleText is { } bubbleText && !WantsInstructionOverlay(stepProto))
+                details = FormatTutorialLoc(bubbleText);
         }
 
         var keys = session.KeybindHint is { } id
@@ -633,7 +638,7 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
             return;
         }
 
-        EnsureHint().SetHint(objective, keys);
+        EnsureHint().SetHint(objective, keys, details);
     }
 
     private TutorialControlHint EnsureHint()

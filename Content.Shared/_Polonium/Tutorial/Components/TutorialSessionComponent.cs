@@ -49,6 +49,10 @@ public sealed partial class TutorialSessionComponent : Component
     [DataField, AutoNetworkedField]
     public List<string> HighlightAnchors = new();
 
+    /// <summary>The drill target to shoot at right now. The rest of its row does not glow meanwhile.</summary>
+    [ViewVariables, AutoNetworkedField]
+    public EntityUid? FocusTarget;
+
     [DataField, AutoNetworkedField]
     public LocId? KeybindHint;
 
@@ -79,6 +83,19 @@ public sealed partial class TutorialSessionComponent : Component
 
     [ViewVariables]
     public TimeSpan NextShockQuip;
+
+    /// <summary>Shots aimed at each drill target on the current step.</summary>
+    [ViewVariables]
+    public Dictionary<EntityUid, int> TargetShots = new();
+
+    [ViewVariables]
+    public int DrillShots;
+
+    [ViewVariables]
+    public int DrillHits;
+
+    [ViewVariables]
+    public TimeSpan LastDrillShot;
 
     [ViewVariables]
     public EntityUid? MentorUid;

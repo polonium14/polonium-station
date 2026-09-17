@@ -15,6 +15,7 @@ using Content.Shared.Popups;
 using Content.Shared.Construction.Components;
 using Content.Shared.Prying.Components;
 using Content.Shared.Tag;
+using Content.Shared.Throwing;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Wall;
 using Content.Shared.Wires;
@@ -45,6 +46,7 @@ public abstract partial class SharedTutorialSystem : EntitySystem
     private static readonly ProtoId<TagPrototype> StructureTag = "Structure";
     private static readonly ProtoId<TagPrototype> WindowTag = "Window";
     private static readonly ProtoId<TagPrototype> WallTag = "Wall";
+    private static readonly ProtoId<TagPrototype> SyringeTag = "Syringe";
 
     private static readonly TimeSpan ProtectPopupCooldown = TimeSpan.FromSeconds(2.5);
 
@@ -81,6 +83,7 @@ public abstract partial class SharedTutorialSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<TutorialSessionComponent, AttackAttemptEvent>(OnAttackAttempt);
+        SubscribeLocalEvent<TutorialSessionComponent, ThrowAttemptEvent>(OnTraineeThrow);
         SubscribeLocalEvent<TutorialSessionComponent, GhostAttemptEvent>(OnGhostAttempt);
         SubscribeLocalEvent<DamageableComponent, BeforeDamageChangedEvent>(OnStructureDamage);
         SubscribeLocalEvent<TutorialFrozenComponent, UpdateCanMoveEvent>(OnFrozenCanMove);
@@ -94,6 +97,8 @@ public abstract partial class SharedTutorialSystem : EntitySystem
         SubscribeLocalEvent<PdaComponent, ItemSlotEjectAttemptEvent>(OnPdaIdEject);
         SubscribeLocalEvent<TutorialSessionComponent, IngestionAttemptEvent>(OnTraineeIngest);
         SubscribeLocalEvent<EdibleComponent, AttemptToolRefineEvent>(OnIngredientRefine);
+
+        InitializeMedicine();
     }
 
     private void OnFrozenCanMove(Entity<TutorialFrozenComponent> ent, ref UpdateCanMoveEvent args)
@@ -148,6 +153,17 @@ public abstract partial class SharedTutorialSystem : EntitySystem
             return;
 
         args.Cancelled = true;
+    }
+
+    private void OnTraineeThrow(EntityUid uid, TutorialSessionComponent session, ThrowAttemptEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        if (!_tags.HasTag(args.ItemUid, SyringeTag))
+            return;
+
+        args.Cancel();
     }
 
     private void OnGhostAttempt(Entity<TutorialSessionComponent> ent, ref GhostAttemptEvent args)
@@ -276,6 +292,9 @@ public abstract partial class SharedTutorialSystem : EntitySystem
 
     private static bool CompletionAllowsAttack(TutorialStepPrototype step, string anchorId)
     {
+        if (step.AttackableAnchors.Contains(anchorId))
+            return true;
+
         foreach (var action in step.OnEnter)
         {
             // meteor owns this pane, fists would skip the drill
@@ -293,6 +312,7 @@ public abstract partial class SharedTutorialSystem : EntitySystem
                 AnyCondition any => any.Conditions.Exists(Walk),
                 AnchorDamagedCondition damaged => damaged.AnchorId == anchorId,
                 MeleeHitAnchorCondition melee => melee.AnchorId == anchorId,
+                ShootTargetsCondition shoot => shoot.AnchorId == anchorId,
                 _ => false,
             };
         }

@@ -253,6 +253,17 @@
   id: SyringeTutorial
   suffix: Tutorial
 
+# the patient's dose and not a drop more, so it cannot be poured out, splashed or smashed. the
+# syringe still draws from it the stock way
+- type: entity
+  parent: ChemistryBottleDylovene
+  id: ChemistryBottleDyloveneTutorial
+  suffix: Tutorial
+  components:
+  - type: TutorialMedicine
+  - type: Destructible
+    thresholds: []
+
 - type: entity
   parent: Paper
   id: PaperTutorialBurgerRecipe

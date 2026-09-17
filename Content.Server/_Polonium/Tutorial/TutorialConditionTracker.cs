@@ -149,6 +149,8 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         SubscribeLocalEvent<TutorialExamineProbeComponent, ExaminedEvent>(OnProbeExamined);
         SubscribeNetworkEvent<TutorialCameraRotatedEvent>(OnCameraRotated);
         SubscribeNetworkEvent<TargetChangeEvent>(OnTargetChanged);
+
+        InitializeRange();
     }
 
     public override void Update(float frameTime)
@@ -378,12 +380,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
                 ? AnyAnchor(player, sitter, uid => BuckledTo(uid, buckle.AnchorId))
                 : BuckledTo(player, buckle.AnchorId),
             AnchorAmmoFullCondition ammo => CountFullAmmo(player, ammo.AnchorId) >= ammo.Count,
-            AnchorAmmoEmptyCondition drained => AnyAnchor(player, drained.AnchorId, uid =>
-            {
-                var ev = new GetAmmoCountEvent();
-                RaiseLocalEvent(uid, ref ev);
-                return ev.Capacity > 0 && ev.Count == 0;
-            }),
+            AnchorAmmoEmptyCondition drained => CheckAmmoEmpty(player, drained),
             // the map spawner keeps its anchor next to the mob it spawned and has no damage at all,
             // which would read as fully healed the moment the step starts
             AnchorDamageBelowCondition hurt => AnyAnchor(player, hurt.AnchorId,
@@ -426,7 +423,8 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             MachineFrameCompleteNearAnchorCondition frameDone => CheckFrameComplete(player, frameDone),
             AnchorEmptyOrGoneCondition empty => CheckEmptyOrGone(session, empty.AnchorId),
             IngestedReagentCondition ingested => session.Flags.Contains(IngestedReagentCondition.Flag(ingested.Reagent)),
-            HoldingAnchorCondition hold => CheckHolding(player, hold.AnchorId),
+            HoldingAnchorCondition hold => CheckHolding(player, hold.AnchorId, hold.Wielded),
+            ShootTargetsCondition shoot => CheckShootTargets(player, session, shoot),
             HoldingPrototypeCondition holdProto => CheckHoldingPrototype(player, holdProto.Prototype),
             PrototypeNearAnchorCondition near => CountPrototype(player, near) >= near.Count,
             PrototypesOnAnchorsCondition onAnchors => CheckPrototypesOnAnchors(player, onAnchors),
@@ -501,7 +499,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
 
     private void OnStrapped(Entity<TutorialAnchorComponent> strap, ref StrappedEvent args)
     {
-        // stasis/chair: the buckle might be the npc, flag everyone on this grid
+        // bed/chair: the buckle might be the npc, flag everyone on this grid
         FlagGrid(strap, $"interact:{strap.Comp.AnchorId}");
     }
 
@@ -701,6 +699,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         if (!TryComp<TutorialAnchorComponent>(args.Target, out var anchor))
             return;
 
+        CountDrillHit(shooter, args.Target);
         SetFlag(shooter, $"damaged:{anchor.AnchorId}");
         Notify(shooter);
     }
@@ -1019,6 +1018,20 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         return TryComp<TutorialAnchorComponent>(strap, out var anchor) && anchor.AnchorId == strapAnchorId;
     }
 
+    private bool CheckAmmoEmpty(EntityUid player, AnchorAmmoEmptyCondition drained)
+    {
+        foreach (var uid in AnchorsOnGrid(player, drained.AnchorId))
+        {
+            var ev = new GetAmmoCountEvent();
+            RaiseLocalEvent(uid, ref ev);
+            var empty = ev.Capacity > 0 && ev.Count == 0;
+            if (empty != drained.Every)
+                return empty;
+        }
+
+        return drained.Every;
+    }
+
     private int CountFullAmmo(EntityUid player, string anchorId)
     {
         var full = 0;
@@ -1034,12 +1047,16 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         return full;
     }
 
-    private float DamageOf(EntityUid uid, ProtoId<DamageTypePrototype> type)
+    private float DamageOf(EntityUid uid, ProtoId<DamageTypePrototype>? type)
     {
         if (!TryComp<DamageableComponent>(uid, out var dmg))
             return 0f;
 
-        return _damageable.GetPositiveDamage((uid, dmg)).DamageDict.TryGetValue(type.Id, out var amount)
+        var positive = _damageable.GetPositiveDamage((uid, dmg));
+        if (type is not { } only)
+            return positive.GetTotal().Float();
+
+        return positive.DamageDict.TryGetValue(only.Id, out var amount)
             ? amount.Float()
             : 0f;
     }
@@ -1059,11 +1076,13 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         });
     }
 
-    private bool CheckHolding(EntityUid player, string anchorId)
+    private bool CheckHolding(EntityUid player, string anchorId, bool wielded = false)
     {
         foreach (var held in _hands.EnumerateHeld(player))
         {
-            if (TryComp<TutorialAnchorComponent>(held, out var anchor) && anchor.AnchorId == anchorId)
+            if (TryComp<TutorialAnchorComponent>(held, out var anchor)
+                && anchor.AnchorId == anchorId
+                && (!wielded || IsWielded(held)))
                 return true;
         }
 

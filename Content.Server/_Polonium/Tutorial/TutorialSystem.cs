@@ -81,7 +81,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         Type[] usingBefore = [typeof(CableSystem), typeof(ConstructionSystem)];
         SubscribeLocalEvent<TutorialNoDeconstructComponent, InteractUsingEvent>(OnLockedCableCut,
             before: usingBefore);
-        SubscribeLocalEvent<GhostRoleComponent, ComponentInit>(OnGhostRoleStartup);
+        SubscribeLocalEvent<GhostRoleComponent, ComponentInit>(OnGhostRoleInit);
         SubscribeLocalEvent<WallComponent, InteractUsingEvent>(OnWallUsing,
             before: usingBefore);
         SubscribeLocalEvent<WallMountComponent, InteractUsingEvent>(OnWindowUsing,
@@ -494,6 +494,10 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         ent.Comp.CameraAtStepStart = TryComp<InputMoverComponent>(ent.Owner, out var mover)
             ? mover.TargetRelativeRotation
             : Angle.Zero;
+        ent.Comp.FocusTarget = null;
+        ent.Comp.TargetShots.Clear();
+        ent.Comp.DrillShots = 0;
+        ent.Comp.DrillHits = 0;
         ent.Comp.StepStartedAt = _timing.CurTime;
         ent.Comp.PendingAdvanceAt = null;
         ent.Comp.StuckHinted = false;
@@ -509,6 +513,8 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         }
 
         _actions.ExecuteAll(ent.Owner, stepProto.OnEnter);
+        // otherwise the whole row glows until the first poll picks a target
+        _tracker.PrimeDrill(ent.Owner, ent.Comp, stepProto);
         _mentor.EnqueueStep(
             ent.Owner,
             ResolveSpeak(ent.Owner, stepProto.Speak),

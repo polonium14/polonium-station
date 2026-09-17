@@ -84,9 +84,10 @@
   - TutorialLinearR14ToBaton
   - TutorialLinearR14Baton
   - TutorialLinearR14BatonOn
-  - TutorialLinearR14Stun
   - TutorialLinearR14ToCuffs
   - TutorialLinearR14Cuffs
+  - TutorialLinearR14Stun
+  - TutorialLinearR14Cuff
   - TutorialLinearR14Drag
   - TutorialLinearR14Range
   - TutorialLinearR14Ammo
@@ -111,7 +112,7 @@
   - TutorialLinearR15ToPatient
   - TutorialLinearR15Heal
   - TutorialLinearR15Bonk
-  - TutorialLinearR15Stasis
+  - TutorialLinearR15Bed
   - TutorialLinearR15ToDefib
   - TutorialLinearR15Defib
   - TutorialLinearR15Epi
@@ -2205,11 +2206,12 @@
     anchorId: room14_urist
     prone: false
 
+# in combat mode a click on a crate is a punch and the lock never opens, so it goes off first
 - type: tutorialStep
   id: TutorialLinearR14ToBaton
   instruction: tutorial-step-r14-to-baton
   navigationAnchor: room14_crate_stunbaton
-  keybindHint: tutorial-hint-move
+  keybindHint: tutorial-hint-combat-off
   highlightAnchors:
   - room14_crate_stunbaton
   speak:
@@ -2218,9 +2220,13 @@
   - !type:GrantAccessAction
     tags:
     - TutorialCrateStunbaton
-  completion: !type:ReachAnchorCondition
-    anchorId: room14_crate_stunbaton
-    range: 2
+  completion: !type:AllCondition
+    conditions:
+    - !type:ReachAnchorCondition
+      anchorId: room14_crate_stunbaton
+      range: 2
+    - !type:CombatModeCondition
+      enabled: false
 
 - type: tutorialStep
   id: TutorialLinearR14Baton
@@ -2251,7 +2257,7 @@
 - type: tutorialStep
   id: TutorialLinearR14BatonOn
   instruction: tutorial-step-r14-baton-on
-  navigationAnchor: room14_urist
+  navigationAnchor: room14_crate_cuffs
   keybindHint: tutorial-hint-toggle
   speak:
   - tutorial-holopad-r14-baton-on
@@ -2265,18 +2271,6 @@
     intoStorage: true
   completion: !type:ItemToggledCondition
     anchorId: room14_stunbaton
-
-- type: tutorialStep
-  id: TutorialLinearR14Stun
-  instruction: tutorial-step-r14-stun
-  navigationAnchor: room14_urist
-  keybindHint: tutorial-hint-combat
-  highlightAnchors:
-  - room14_urist
-  speak:
-  - tutorial-holopad-r14-stun
-  completion: !type:EntityStunnedCondition
-    anchorId: room14_urist
 
 - type: tutorialStep
   id: TutorialLinearR14ToCuffs
@@ -2295,15 +2289,16 @@
     anchorId: room14_crate_cuffs
     range: 2
 
+# a real arrest goes in with both at hand: baton in one, cuffs in the other
 - type: tutorialStep
   id: TutorialLinearR14Cuffs
   instruction: tutorial-step-r14-cuffs
-  navigationAnchor: room14_urist
-  keybindHint: tutorial-hint-crate
+  navigationAnchor: room14_crate_cuffs
+  keybindHint: tutorial-hint-cuffs-take
   stuckSkipSeconds: 300
   highlightAnchors:
   - room14_crate_cuffs
-  - room14_urist
+  - room14_cuffs
   speak:
   - tutorial-holopad-r14-cuffs
   onEnter:
@@ -2317,6 +2312,67 @@
   - !type:OpenStorageAction
     anchorId: room14_crate_cuffs
     recoveryOnly: true
+  watchers:
+  - !type:ConditionWatcher
+    condition: !type:HeldCondition
+      seconds: 3
+      condition: !type:AllCondition
+        conditions:
+        - !type:HoldingAnchorCondition
+          anchorId: room14_cuffs
+        - !type:NotCondition
+          condition: !type:HoldingAnchorCondition
+            anchorId: room14_stunbaton
+    quip:
+    - tutorial-holopad-r14-cuffs-baton
+  completion: !type:BothHandsAnchorsCondition
+    anchorIds:
+    - room14_stunbaton
+    - room14_cuffs
+
+- type: tutorialStep
+  id: TutorialLinearR14Stun
+  instruction: tutorial-step-r14-stun
+  navigationAnchor: room14_urist
+  keybindHint: tutorial-hint-stun
+  highlightAnchors:
+  - room14_urist
+  speak:
+  - tutorial-holopad-r14-stun
+  watchers:
+  # a hit that did not drop him came from the cuffs hand or from a baton switched off again
+  - !type:ConditionWatcher
+    condition: !type:AllCondition
+      conditions:
+      - !type:MeleeHitAnchorCondition
+        anchorId: room14_urist
+      - !type:NotCondition
+        condition: !type:EntityStunnedCondition
+          anchorId: room14_urist
+    quip:
+    - tutorial-holopad-r14-stun-miss
+  completion: !type:EntityStunnedCondition
+    anchorId: room14_urist
+
+# cuffs work from combat mode too, their hit starts the cuffing instead of hurting
+- type: tutorialStep
+  id: TutorialLinearR14Cuff
+  instruction: tutorial-step-r14-cuff
+  navigationAnchor: room14_urist
+  keybindHint: tutorial-hint-cuff
+  stuckSkipSeconds: 300
+  highlightAnchors:
+  - room14_urist
+  speak:
+  - tutorial-holopad-r14-cuff
+  onEnter:
+  - !type:SpawnAtAnchorAction
+    anchorId: room14_crate_cuffs
+    prototype: Handcuffs
+    assignAnchorId: room14_cuffs
+    tutorialNpc: false
+    preventDeath: false
+    intoStorage: true
   completion: !type:CuffedAnchorCondition
     anchorId: room14_urist
 
@@ -2381,6 +2437,8 @@
     anchorId: room14_shooting_pistol
     slot: gun_magazine
 
+# one target at a time, and only the aim counts. four each makes twelve shots while a magazine
+# holds ten, so the reload still comes up
 - type: tutorialStep
   id: TutorialLinearR14Gun
   instruction: tutorial-step-r14-gun
@@ -2388,31 +2446,71 @@
   keybindHint: tutorial-hint-shoot
   stuckSkipSeconds: 420
   highlightAnchors:
-  - room14_shooting_target_close
-  - room14_shooting_target_mid
-  - room14_shooting_target_far
+  - room14_shooting_target
   speak:
   - tutorial-holopad-r14-gun
-  completion: !type:AllCondition
-    conditions:
-    - !type:AnchorDamagedCondition
-      anchorId: room14_shooting_target_close
-    - !type:AnchorDamagedCondition
-      anchorId: room14_shooting_target_mid
-    - !type:AnchorDamagedCondition
-      anchorId: room14_shooting_target_far
+  watchers:
+  - !type:FlagWatcher
+    flag: drill-wrong-target
+    quip:
+    - tutorial-holopad-r14-gun-order
+  # dry with targets still waiting. the pause lets the last shot of the drill finish the step first
+  - !type:ConditionWatcher
+    rearm: true
+    condition: !type:HeldCondition
+      seconds: 1.5
+      condition: !type:AnchorAmmoEmptyCondition
+        anchorId: room14_shooting_pistol
+    quip:
+    - tutorial-holopad-r14-gun-reload
+  completion: !type:ShootTargetsCondition
+    anchorId: room14_shooting_target
+    orderFrom: room14_shooting
+    shotsEach: 4
+  onComplete:
+  - !type:ShotScoreAction
+    summary: tutorial-holopad-r14-score
+    verdicts:
+    - minAccuracy: 1
+      line: tutorial-holopad-r14-score-perfect
+    - minAccuracy: 0.7
+      line: tutorial-holopad-r14-score-good
+    - minAccuracy: 0.4
+      line: tutorial-holopad-r14-score-ok
+    - minAccuracy: 0.01
+      line: tutorial-holopad-r14-score-bad
+    - minAccuracy: 0
+      line: tutorial-holopad-r14-score-zero
 
+# the carbine fires one-handed too, just badly. the pistol and spare magazines have to go
+# somewhere first, since the grip takes the second hand
 - type: tutorialStep
   id: TutorialLinearR14Laser
   instruction: tutorial-step-r14-laser
+  bubbleText: tutorial-bubble-r14-laser
   navigationAnchor: room14_shooting_laser
-  keybindHint: tutorial-hint-pickup
+  keybindHint: tutorial-hint-wield
   highlightAnchors:
   - room14_shooting_laser
   speak:
   - tutorial-holopad-r14-laser
+  watchers:
+  - !type:ConditionWatcher
+    condition: !type:HeldCondition
+      seconds: 6
+      condition: !type:AllCondition
+        conditions:
+        - !type:HoldingAnchorCondition
+          anchorId: room14_shooting_laser
+        - !type:NotCondition
+          condition: !type:HoldingAnchorCondition
+            anchorId: room14_shooting_laser
+            wielded: true
+    quip:
+    - tutorial-holopad-r14-laser-wield
   completion: !type:HoldingAnchorCondition
     anchorId: room14_shooting_laser
+    wielded: true
 
 # a recharger means nothing to someone who never watched a cell run out, so the carbine gets shot flat first
 - type: tutorialStep
@@ -2423,24 +2521,34 @@
   keybindHint: tutorial-hint-shoot
   stuckSkipSeconds: 300
   highlightAnchors:
-  - room14_shooting_target_close
-  - room14_shooting_target_mid
-  - room14_shooting_target_far
+  - room14_shooting_target
+  attackableAnchors:
+  - room14_shooting_target
   speak:
   - tutorial-holopad-r14-laser-shoot
   completion: !type:AnchorAmmoEmptyCondition
     anchorId: room14_shooting_laser
 
+# combat mode is still on from the shooting, and there a click with a gun is a shot, not an insert
 - type: tutorialStep
   id: TutorialLinearR14Charge
   instruction: tutorial-step-r14-charge
   bubbleText: tutorial-bubble-r14-charge
   navigationAnchor: room14_shooting_recharger
-  keybindHint: tutorial-hint-click
+  keybindHint: tutorial-hint-charge
   highlightAnchors:
   - room14_shooting_recharger
   speak:
   - tutorial-holopad-r14-charge
+  watchers:
+  - !type:ConditionWatcher
+    condition: !type:AllCondition
+      conditions:
+      - !type:FlagCondition
+        flag: fired-at:room14_shooting_recharger
+      - !type:CombatModeCondition
+    quip:
+    - tutorial-holopad-r14-charge-combat
   completion: !type:ItemSlotFilledCondition
     anchorId: room14_shooting_recharger
     slot: charger_slot
@@ -2477,8 +2585,6 @@
   navigationAnchor: room14_shooting_slime_spawn
   keybindHint: tutorial-hint-shoot
   stuckSkipSeconds: 420
-  highlightAnchors:
-  - room14_slime
   speak:
   - tutorial-holopad-r14-slime
   onEnter:
@@ -2493,6 +2599,25 @@
     flag: melee:room14_slime
     quip:
     - tutorial-holopad-quip-slime-fist
+  # every lethal round spent and the slime still up: another magazine goes into the crate, again
+  # for each one shot dry. the pause covers a round still sitting in the chamber
+  - !type:ConditionWatcher
+    rearm: true
+    condition: !type:HeldCondition
+      seconds: 3
+      condition: !type:AnchorAmmoEmptyCondition
+        anchorId: room14_lethal_mag
+        every: true
+    quip:
+    - tutorial-holopad-r14-slime-resupply
+    actions:
+    - !type:SpawnAtAnchorAction
+      anchorId: room14_crate_lethal_ammo
+      prototype: MagazinePistol
+      assignAnchorId: room14_lethal_mag
+      tutorialNpc: false
+      preventDeath: false
+      intoStorage: true
   completion: !type:AnyCondition
     conditions:
     - !type:DeadAnchorCondition
@@ -2632,6 +2757,7 @@
   speak:
   - tutorial-holopad-r15-scan-a
   - tutorial-holopad-r15-scan-b
+  - tutorial-holopad-r15-scan-hold
   - tutorial-holopad-r15-scan-c
   onEnter:
   - !type:ClaimNearbyMobAction
@@ -2658,7 +2784,9 @@
     condition: !type:UiClosedAnchorCondition
       anchorId: room15_aidkit
 
-# a bruise pack takes 5 blunt per use, so four uses for these 20
+# a bruise pack takes 5 blunt per use, so four uses for these 20. the urist's damage never reaches
+# his limbs (wholeBody on the map spawner), so what the analyzer shows is exactly what is checked
+# here, and nothing closes on its own while the trainee watches
 - type: tutorialStep
   id: TutorialLinearR15Brute
   instruction: tutorial-step-r15-brute
@@ -2674,7 +2802,7 @@
   completion: !type:AnchorDamageBelowCondition
     anchorId: room15_urist
     damageType: Blunt
-    max: 1
+    max: 0
 
 - type: tutorialStep
   id: TutorialLinearR15Burn
@@ -2691,7 +2819,7 @@
   completion: !type:AnchorDamageBelowCondition
     anchorId: room15_urist
     damageType: Heat
-    max: 1
+    max: 0
 
 # the bottle can stay on the table, a syringe draws from anything it can reach
 - type: tutorialStep
@@ -2712,7 +2840,7 @@
   # the end table, which nobody carries off - the syringe anchor would follow the syringe into a hand
   - !type:SpawnAtAnchorAction
     anchorId: room15_urist_bonk_target
-    prototype: ChemistryBottleDylovene
+    prototype: ChemistryBottleDyloveneTutorial
     assignAnchorId: room15_dylovene
     tutorialNpc: false
     preventDeath: false
@@ -2734,7 +2862,8 @@
     anchorId: room15_urist
     range: 2
 
-# dylovene takes a point of poison per metabolism tick, so the step waits for it to come down
+# dylovene takes a point of poison per metabolism tick, so the step waits until all of it is gone
+# rather than finishing the moment the needle goes in. fifteen units clear thirty, he has 25
 - type: tutorialStep
   id: TutorialLinearR15Heal
   instruction: tutorial-step-r15-heal
@@ -2750,7 +2879,7 @@
   completion: !type:AnchorDamageBelowCondition
     anchorId: room15_urist
     damageType: Poison
-    max: 8
+    max: 0
 
 # meant to catch the trainee off guard: nothing here hints at what is coming. the holopad wraps up
 # the treatment while Urist gets up, walks to the table on his own and bonks. TutorialNpcSystem
@@ -2773,16 +2902,17 @@
   completion: !type:DeadAnchorCondition
     anchorId: room15_urist
 
+# a plain bed, not stasis: the rest of the room is treated with him lying on it
 - type: tutorialStep
-  id: TutorialLinearR15Stasis
-  instruction: tutorial-step-r15-stasis
-  bubbleText: tutorial-bubble-r15-stasis
-  navigationAnchor: room15_stasis
-  keybindHint: tutorial-hint-stasis
+  id: TutorialLinearR15Bed
+  instruction: tutorial-step-r15-bed
+  bubbleText: tutorial-bubble-r15-bed
+  navigationAnchor: room15_bed
+  keybindHint: tutorial-hint-bed
   stuckSkipSeconds: 300
   highlightAnchors:
   - room15_urist
-  - room15_stasis
+  - room15_bed
   speak:
   - tutorial-holopad-r15-bonk-c
   - tutorial-holopad-r15-bonk-d
@@ -2792,7 +2922,7 @@
     - !type:DeadAnchorCondition
       anchorId: room15_urist
     - !type:BuckledToAnchorCondition
-      anchorId: room15_stasis
+      anchorId: room15_bed
       entityAnchorId: room15_urist
 
 - type: tutorialStep
@@ -2870,15 +3000,37 @@
   speak:
   - tutorial-holopad-r15-finish-a
   - tutorial-holopad-r15-finish-b
-  # the asphyxiation clears on its own once he breathes, the bonk bruise and a fresh scan do not
+  watchers:
+  # healed and scanned, but somebody took him off the bed on the way
+  - !type:ConditionWatcher
+    rearm: true
+    condition: !type:HeldCondition
+      seconds: 2
+      condition: !type:AllCondition
+        conditions:
+        - !type:AnchorAliveCondition
+          anchorId: room15_urist
+        - !type:AnchorDamageBelowCondition
+          anchorId: room15_urist
+          max: 0
+        - !type:NotCondition
+          condition: !type:BuckledToAnchorCondition
+            anchorId: room15_bed
+            entityAnchorId: room15_urist
+    quip:
+    - tutorial-holopad-r15-finish-bed
+  # the asphyxiation clears on its own once he breathes, the bonk bruise and a fresh scan do not.
+  # every last point has to go, and he has to still be lying on the bed for it
   completion: !type:AllCondition
     conditions:
     - !type:AnchorAliveCondition
       anchorId: room15_urist
     - !type:AnchorDamageBelowCondition
       anchorId: room15_urist
-      damageType: Blunt
-      max: 1
+      max: 0
+    - !type:BuckledToAnchorCondition
+      anchorId: room15_bed
+      entityAnchorId: room15_urist
     - !type:HealthAnalyzedCondition
       anchorId: room15_urist
   onComplete:

@@ -178,6 +178,11 @@ public sealed partial class TutorialActionExecutor : EntitySystem
                 _mentor.DropBriefing(player);
                 break;
 
+            case ShotScoreAction score:
+                if (!instant)
+                    ShotScore(player, score);
+                break;
+
             case RequireGlovesAction gloves:
                 if (TryComp<TutorialSessionComponent>(player, out var gloveSession))
                 {
@@ -379,6 +384,7 @@ public sealed partial class TutorialActionExecutor : EntitySystem
         {
             var patient = EnsureComp<TutorialPatientComponent>(spawned);
             patient.SpawnedDead = true;
+            Dirty(spawned, patient);
         }
 
         if (string.IsNullOrWhiteSpace(assignId))

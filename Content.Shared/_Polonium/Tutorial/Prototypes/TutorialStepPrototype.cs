@@ -104,6 +104,10 @@ public sealed partial class TutorialStepPrototype : IPrototype
     [DataField]
     public List<string> HighlightAnchors = new();
 
+    /// <summary>Anchors the trainee may damage on this step, on top of the ones the completion names.</summary>
+    [DataField]
+    public List<string> AttackableAnchors = new();
+
     [DataField]
     public LocId? KeybindHint;
 

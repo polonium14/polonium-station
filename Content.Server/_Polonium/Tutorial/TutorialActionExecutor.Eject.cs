@@ -20,6 +20,33 @@ public sealed partial class TutorialActionExecutor
             session.Flags.Add(action.Flag);
     }
 
+    private void ShotScore(EntityUid player, ShotScoreAction action)
+    {
+        if (!TryComp<TutorialSessionComponent>(player, out var session) || session.DrillShots <= 0)
+            return;
+
+        var shots = session.DrillShots;
+        // a bullet fired before the drill can still land during it
+        var hits = Math.Min(session.DrillHits, shots);
+        var accuracy = (float) hits / shots;
+
+        var lines = new List<string>
+        {
+            Loc.GetString(action.Summary, ("hits", hits), ("misses", shots - hits), ("shots", shots)),
+        };
+
+        foreach (var verdict in action.Verdicts)
+        {
+            if (accuracy < verdict.MinAccuracy)
+                continue;
+
+            lines.Add(Loc.GetString(verdict.Line));
+            break;
+        }
+
+        _mentor.EnqueueTexts(player, lines);
+    }
+
     private void AnchorMusic(EntityUid player, AnchorMusicAction action, bool instant)
     {
         if (!TryGetAnchor(player, action.AnchorId, out var source))

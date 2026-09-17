@@ -61,13 +61,18 @@ public sealed partial class TutorialMentorSystem : EntitySystem
     /// <summary>Quips, stuck hints, death lines. Said as soon as the queue reaches them.</summary>
     public void Enqueue(EntityUid player, IEnumerable<LocId> lines)
     {
+        EnqueueTexts(player, lines.Select(line => Loc.GetString(line)));
+    }
+
+    /// <summary>Same as <see cref="Enqueue"/>, for lines that were formatted with arguments already.</summary>
+    public void EnqueueTexts(EntityUid player, IEnumerable<string> texts)
+    {
         if (!TryGetMentor(player, out var mentorComp))
             return;
 
         var quips = new List<TutorialSpeechLine>();
-        foreach (var line in lines)
+        foreach (var text in texts)
         {
-            var text = Loc.GetString(line);
             if (!string.IsNullOrWhiteSpace(text))
                 quips.Add(new TutorialSpeechLine { Text = text });
         }

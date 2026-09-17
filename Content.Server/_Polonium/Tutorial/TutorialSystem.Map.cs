@@ -12,6 +12,8 @@ namespace Content.Server._Polonium.Tutorial;
 
 public sealed partial class TutorialSystem
 {
+    private readonly HashSet<EntityUid> _pendingGhostStrips = new();
+
     private void OnMapCreated(TutorialMapCreatedEvent ev)
     {
         PrepareTutorialMap(ev.MapUid);
@@ -43,9 +45,26 @@ public sealed partial class TutorialSystem
             args.Cancelled = true;
     }
 
-    private void OnGhostRoleStartup(Entity<GhostRoleComponent> ent, ref ComponentInit args)
+    // removing anything while the entity is still spawning trips the lifecycle asserts, so it waits a tick
+    private void OnGhostRoleInit(Entity<GhostRoleComponent> ent, ref ComponentInit args)
     {
-        StripGhostRole(ent.Owner, deferred: true);
+        _pendingGhostStrips.Add(ent.Owner);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        if (_pendingGhostStrips.Count == 0)
+            return;
+
+        foreach (var uid in _pendingGhostStrips)
+        {
+            if (!TerminatingOrDeleted(uid))
+                StripGhostRole(uid);
+        }
+
+        _pendingGhostStrips.Clear();
     }
 
     private void PrepareTutorialMap(EntityUid mapUid)
@@ -60,31 +79,20 @@ public sealed partial class TutorialSystem
                 && !(TryComp<TutorialAnchorComponent>(uid, out var anchor) && anchor.AllowDeconstruct))
                 EnsureComp<TutorialNoDeconstructComponent>(uid);
 
-            StripGhostRole(uid, deferred: false);
+            StripGhostRole(uid);
             _npcs.SatiateAndIdle(uid);
         }
     }
 
-    private void StripGhostRole(EntityUid uid, bool deferred)
+    private void StripGhostRole(EntityUid uid)
     {
         if (!IsOnTutorialMap(uid))
             return;
 
-        Strip<GhostRoleRaffleComponent>(uid, deferred);
-        Strip<GhostTakeoverAvailableComponent>(uid, deferred);
-        Strip<GhostRoleMobSpawnerComponent>(uid, deferred);
-        Strip<GhostRoleComponent>(uid, deferred);
-    }
-
-    private void Strip<T>(EntityUid uid, bool deferred) where T : IComponent, new()
-    {
-        if (!HasComp<T>(uid))
-            return;
-
-        if (deferred)
-            RemCompDeferred<T>(uid);
-        else
-            RemComp<T>(uid);
+        RemComp<GhostRoleRaffleComponent>(uid);
+        RemComp<GhostTakeoverAvailableComponent>(uid);
+        RemComp<GhostRoleMobSpawnerComponent>(uid);
+        RemComp<GhostRoleComponent>(uid);
     }
 
     private bool IsOnTutorialMap(EntityUid uid)
