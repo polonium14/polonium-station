@@ -263,9 +263,11 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         // Create the new map and station, and assign them identifiable names
         var stationName = Loc.GetString("solitary-station-name", ("character", profile.Name));
         var mapName = Loc.GetString("solitary-map-name", ("character", profile.Name));
+        
         var query = GameTicker.LoadGameMap(map, out var mapId, stationName: stationName);
         var newMap = query.First();
         var mapUid = Transform(newMap).ParentUid;
+
         _meta.SetEntityName(mapUid, mapName);
         EnsureComp<TutorialMapComponent>(mapUid);
         _map.InitializeMap(mapId);
@@ -274,6 +276,9 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         if (!TryComp<StationMemberComponent>(newMap, out var member))
         {
             Log.Error($"Solitary spawning failed for {session} - Target station not found");
+
+            _map.DeleteMap(mapId);
+
             return false;
         }
 
