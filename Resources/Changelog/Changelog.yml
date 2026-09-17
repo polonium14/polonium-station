@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: 11BelowStudio
-  changes:
-  - message: Closed the legal loophole which technically allowed engineers to open-carry
-      the syndicate fire axe.
-    type: Fix
-  id: 9503
-  time: '2026-02-07T15:30:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42820
 - author: TrixxedHeart
   changes:
   - message: Vox can now wag their tails
@@ -4108,3 +4100,14 @@
   id: 10001
   time: '2026-09-17T17:14:31.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1031
+- author: Nikita
+  changes:
+  - message: "Dodano obs\u0142ug\u0119 link\xF3w Markdown w wiadomo\u015Bciach MOTD\
+      \ i guidebookach."
+    type: Add
+  - message: "Linki s\u0105 klikalne tylko w dozwolonych tre\u015Bciach. Zwyk\u0142\
+      e adresy URL pozostaj\u0105 tekstem."
+    type: Tweak
+  id: 10002
+  time: '2026-09-17T18:23:14.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1033
