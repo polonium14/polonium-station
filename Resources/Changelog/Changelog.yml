@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: PAFFhassoocks
-  changes:
-  - message: The nukie infiltrator ship now starts with a universal pinpointer.
-    type: Tweak
-  id: 9501
-  time: '2026-02-07T13:17:49.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42101
 - author: SlamBamActionman
   changes:
   - message: Stackables items now merge when stopping on/after a conveyor belt.
@@ -4090,3 +4083,24 @@
   id: 9999
   time: '2026-09-17T15:18:42.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1030
+- author: nieznany autor PR
+  changes:
+  - message: "Dodano strony `Medicine` i `MedicinalRecipes` do przewodnik\xF3w medycznych\
+      \ i chempendium."
+    type: Add
+  - message: "Dodano brakuj\u0105ce przewodniki w podr\u0119czniku medycznym."
+    type: Add
+  - message: "Ujednolicono nazwy obra\u017Ce\u0144 z nazwami u\u017Cywanymi przez\
+      \ analizator."
+    type: Tweak
+  - message: "Ograniczono list\u0119 chemikali\xF3w do substancji dost\u0119pnych\
+      \ na pasie lekarza."
+    type: Tweak
+  - message: "Usuni\u0119to stron\u0119 dotycz\u0105c\u0105 chemii oraz wzmianki o\
+      \ RKO."
+    type: Remove
+  - message: "Zaktualizowano informacje o o\u017Cywianiu za pomoc\u0105 defibrylatora."
+    type: Fix
+  id: 10000
+  time: '2026-09-17T17:02:21.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1032
