@@ -9,6 +9,7 @@ using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Conditions;
 using Content.Shared._Polonium.Tutorial.Prototypes;
 using Content.Shared._Polonium.Tutorial.Watchers;
+using Content.Shared._Shitmed.Targeting.Events;
 using Content.Shared.Botany.Components;
 using Content.Shared.Botany.Systems;
 using Content.Shared.Buckle.Components;
@@ -105,6 +106,8 @@ public sealed partial class TutorialConditionTracker : EntitySystem
     /// <summary>Set on the session once the current step completion has been met at least once.</summary>
     private const string SatisfiedFlag = "completion";
 
+    private const string TargetChangedFlag = "target-changed";
+
     // a stuck speech must never hold the player longer than this
     private static readonly TimeSpan MaxFreeze = TimeSpan.FromSeconds(60);
 
@@ -141,6 +144,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         SubscribeNetworkEvent<TutorialConstructionGhostStateEvent>(OnConstructionGhost);
         SubscribeLocalEvent<TutorialExamineProbeComponent, ExaminedEvent>(OnProbeExamined);
         SubscribeNetworkEvent<TutorialCameraRotatedEvent>(OnCameraRotated);
+        SubscribeNetworkEvent<TargetChangeEvent>(OnTargetChanged);
     }
 
     public override void Update(float frameTime)
@@ -240,6 +244,13 @@ public sealed partial class TutorialConditionTracker : EntitySystem
 
         ProcessWatchers(player, session, step);
 
+        // an eject already moved them, the old step has nothing left to decide
+        if (session.JumpTo is { } jump)
+        {
+            _tutorial.JumpToStep((player, session), jump);
+            return;
+        }
+
         if (step.Completion is not { } completion)
             return;
 
@@ -295,6 +306,9 @@ public sealed partial class TutorialConditionTracker : EntitySystem
 
             _mentor.Enqueue(player, watcher.Quip);
             _actions.ExecuteAll(player, watcher.Actions);
+
+            if (session.JumpTo != null)
+                break;
         }
 
         session.Flags.Remove("slipped");
@@ -377,6 +391,10 @@ public sealed partial class TutorialConditionTracker : EntitySystem
                 uid => _container.TryGetContainer(uid, slot.Slot, out var held) && held.ContainedEntities.Count > 0),
             UnbuckledCondition => !TryComp<BuckleComponent>(player, out var buckle) || !buckle.Buckled,
             CameraRotatedCondition => session.Flags.Contains("camera"),
+            FlagCondition flag => session.Flags.Contains(flag.Flag),
+            TargetChangedCondition => session.Flags.Contains(TargetChangedFlag),
+            HeldCondition held => CheckHeld(player, session, held),
+            QuipsSaidCondition => !_mentor.QuipsPending(player),
             // the reset key zeroes this, and a fresh spawn starts at zero too
             CameraAlignedCondition aligned => !TryComp<InputMoverComponent>(player, out var mover)
                 || Math.Abs(Angle.ShortestDistance(Angle.Zero, mover.TargetRelativeRotation).Degrees) <= aligned.Degrees,
@@ -623,6 +641,15 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         }
 
         return false;
+    }
+
+    private void OnTargetChanged(TargetChangeEvent ev, EntitySessionEventArgs args)
+    {
+        if (args.SenderSession.AttachedEntity is not { } player)
+            return;
+
+        SetFlag(player, TargetChangedFlag);
+        Notify(player);
     }
 
     private void OnCameraRotated(TutorialCameraRotatedEvent ev, EntitySessionEventArgs args)
@@ -1415,6 +1442,23 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         return total;
     }
 
+    private bool CheckHeld(EntityUid player, TutorialSessionComponent session, HeldCondition held)
+    {
+        if (!Evaluate(player, session, held.Condition))
+        {
+            session.HeldSince.Remove(held);
+            return false;
+        }
+
+        if (!session.HeldSince.TryGetValue(held, out var since))
+        {
+            since = _timing.CurTime;
+            session.HeldSince[held] = since;
+        }
+
+        return _timing.CurTime - since >= TimeSpan.FromSeconds(held.Seconds);
+    }
+
     private void OnTraineeIngesting(Entity<TutorialSessionComponent> ent, ref IngestingEvent args)
     {
         foreach (var reagent in args.Split)
@@ -1489,7 +1533,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
 
             // the mop leaves plain water behind and that dries up by itself. making the player
             // stand around watching it evaporate is not a lesson, so treat it as already clean
-            if (IsSelfDrying(uid, puddle))
+            if (IsSelfDrying(uid, puddle, cond.IgnoreReagents))
                 continue;
 
             return false;
@@ -1498,7 +1542,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         return true;
     }
 
-    private bool IsSelfDrying(EntityUid uid, PuddleComponent puddle)
+    private bool IsSelfDrying(EntityUid uid, PuddleComponent puddle, List<ProtoId<ReagentPrototype>> ignored)
     {
         if (!_solution.ResolveSolution(uid, puddle.SolutionName, ref puddle.Solution, out var solution))
             return false;
@@ -1507,7 +1551,8 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             return true;
 
         var evaporating = solution.GetTotalPrototypeQuantity(_puddle.GetEvaporatingReagents(solution));
-        return solution.Volume - evaporating <= 0;
+        var skipped = ignored.Count > 0 ? solution.GetTotalPrototypeQuantity(ignored.ToArray()) : 0;
+        return solution.Volume - evaporating - skipped <= 0;
     }
 
     private bool CheckAnchorsNear(EntityUid player, string a, string b, float range, bool away = false)

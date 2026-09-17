@@ -13,6 +13,7 @@
   - TutorialLinearR03
   - TutorialLinearR04Sit
   - TutorialLinearR04Tea
+  - TutorialLinearR04Rest
   - TutorialLinearR04Stand
   - TutorialLinearR05Cam
   - TutorialLinearR05Mop
@@ -333,7 +334,8 @@
   - !type:UnlockAnchorAirlockAction
     anchorId: room4_airlock
 
-# room 4 - break room. sit, drink, get up
+# room 4 - break room. compulsory rest: lounge music, sit, drink, sit some more.
+# getting up pauses the music, staying up or wasting the tea gets them thrown into room 5
 - type: tutorialStep
   id: TutorialLinearR04Sit
   instruction: tutorial-step-r04-sit
@@ -345,6 +347,12 @@
   speak:
   - tutorial-holopad-r04-a
   - tutorial-holopad-r04-b
+  onEnter:
+  - !type:AnchorMusicAction
+    anchorId: room4_jukebox
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_Polonium/Music/lounge.ogg
+    volume: -4
   completion: !type:BuckledToAnchorCondition
     anchorId: room4_chair
 
@@ -360,15 +368,189 @@
   - tutorial-holopad-r04-c
   - tutorial-holopad-r04-d
   watchers:
-  # some species dribble a unit per sip, that is not "you poured it out"
+  # got up: the music stops until they sit back down
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r04-sit-back
+    actions:
+    - !type:AnchorMusicAction
+      anchorId: room4_jukebox
+      mode: Pause
+    condition: !type:AllCondition
+      conditions:
+      - !type:UnbuckledCondition
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: spilled
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: ejecting
+  # back on the chair: the music picks up where it stopped
+  - !type:ConditionWatcher
+    rearm: true
+    actions:
+    - !type:AnchorMusicAction
+      anchorId: room4_jukebox
+      sound: !type:SoundPathSpecifier
+        path: /Audio/_Polonium/Music/lounge.ogg
+      volume: -4
+    condition: !type:BuckledToAnchorCondition
+      anchorId: room4_chair
+  # still up after the warning
+  - !type:ConditionWatcher
+    quip:
+    - tutorial-holopad-r04-disloyal-stand
+    - tutorial-holopad-r04-getout
+    actions:
+    - !type:MuteBriefingAction
+    - !type:SetFlagAction
+      flag: ejecting
+    condition: !type:AllCondition
+      conditions:
+      - !type:HeldCondition
+        seconds: 20
+        condition: !type:UnbuckledCondition
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: spilled
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: ejecting
+  # some species dribble a unit per sip, that is not "you poured it out".
+  # once it is on the floor they may get up to reach it, so the chair rules stand down
   - !type:PuddleNearbyWatcher
     range: 4
     reagent: GreenTea
     minVolume: 8
     quip:
     - tutorial-holopad-quip-tea
-  completion: !type:IngestedReagentCondition
-    reagent: GreenTea
+    actions:
+    - !type:SetFlagAction
+      flag: spilled
+  # drank it off the floor, or would not even do that
+  - !type:ConditionWatcher
+    quip:
+    - tutorial-holopad-r04-disloyal-tea
+    - tutorial-holopad-r04-getout
+    actions:
+    - !type:MuteBriefingAction
+    - !type:SetFlagAction
+      flag: ejecting
+    condition: !type:AllCondition
+      conditions:
+      - !type:FlagCondition
+        flag: spilled
+      - !type:AnyCondition
+        conditions:
+        - !type:IngestedReagentCondition
+          reagent: GreenTea
+        - !type:HeldCondition
+          seconds: 40
+          condition: !type:FlagCondition
+            flag: spilled
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: ejecting
+  # out once she is done saying why
+  - !type:ConditionWatcher
+    actions:
+    - !type:EjectTraineeAction
+      anchorId: room5_getout
+      step: TutorialLinearR05Cam
+    condition: !type:AllCondition
+      conditions:
+      - !type:FlagCondition
+        flag: ejecting
+      - !type:QuipsSaidCondition
+  completion: !type:AllCondition
+    conditions:
+    - !type:IngestedReagentCondition
+      reagent: GreenTea
+    - !type:NotCondition
+      condition: !type:FlagCondition
+        flag: spilled
+    - !type:NotCondition
+      condition: !type:FlagCondition
+        flag: ejecting
+
+# the rest itself. no timer on screen, she just talks until it is over
+- type: tutorialStep
+  id: TutorialLinearR04Rest
+  instruction: tutorial-step-r04-rest
+  navigationAnchor: room4_chair
+  keybindHint: tutorial-hint-sit
+  stuckSkipSeconds: 0
+  speak:
+  - tutorial-holopad-r04-rest-a
+  - tutorial-holopad-r04-rest-b
+  - tutorial-holopad-r04-rest-c
+  - tutorial-holopad-r04-rest-d
+  - tutorial-holopad-r04-rest-e
+  watchers:
+  # got up: the music stops until they sit back down
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r04-sit-back
+    actions:
+    - !type:AnchorMusicAction
+      anchorId: room4_jukebox
+      mode: Pause
+    condition: !type:AllCondition
+      conditions:
+      - !type:UnbuckledCondition
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: ejecting
+  # back on the chair: the music picks up where it stopped
+  - !type:ConditionWatcher
+    rearm: true
+    actions:
+    - !type:AnchorMusicAction
+      anchorId: room4_jukebox
+      sound: !type:SoundPathSpecifier
+        path: /Audio/_Polonium/Music/lounge.ogg
+      volume: -4
+    condition: !type:BuckledToAnchorCondition
+      anchorId: room4_chair
+  # still up after the warning
+  - !type:ConditionWatcher
+    quip:
+    - tutorial-holopad-r04-disloyal-stand
+    - tutorial-holopad-r04-getout
+    actions:
+    - !type:MuteBriefingAction
+    - !type:SetFlagAction
+      flag: ejecting
+    condition: !type:AllCondition
+      conditions:
+      - !type:HeldCondition
+        seconds: 20
+        condition: !type:UnbuckledCondition
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: ejecting
+  # out once she is done saying why
+  - !type:ConditionWatcher
+    actions:
+    - !type:EjectTraineeAction
+      anchorId: room5_getout
+      step: TutorialLinearR05Cam
+    condition: !type:AllCondition
+      conditions:
+      - !type:FlagCondition
+        flag: ejecting
+      - !type:QuipsSaidCondition
+  completion: !type:AllCondition
+    conditions:
+    - !type:HeldCondition
+      seconds: 35
+      condition: !type:BuckledToAnchorCondition
+        anchorId: room4_chair
+    - !type:NotCondition
+      condition: !type:FlagCondition
+        flag: ejecting
 
 - type: tutorialStep
   id: TutorialLinearR04Stand
@@ -392,6 +574,24 @@
   speak:
   - tutorial-holopad-r05-a
   - tutorial-holopad-r05-b
+  watchers:
+  # plenty of trainees mop before they turn the view. a dry mop needs the same advice here
+  - !type:AbsorbentSpentWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-quip-mop-full
+  - !type:ConditionWatcher
+    actions:
+    - !type:AnchorMusicAction
+      anchorId: room4_jukebox
+      mode: Stop
+    condition: !type:AnyCondition
+      conditions:
+      - !type:ReachAnchorCondition
+        anchorId: room5
+        range: 1
+      - !type:ReachAnchorCondition
+        anchorId: room5_getout
   completion: !type:CameraRotatedCondition
     degrees: 80
 
@@ -407,14 +607,18 @@
   - tutorial-holopad-r05-d
   - tutorial-holopad-r05-e
   watchers:
+  # every time it runs dry, not just the first
   - !type:AbsorbentSpentWatcher
-    once: true
+    rearm: true
     quip:
     - tutorial-holopad-quip-mop-full
-  # scoped, otherwise spilled tea back in room 4 keeps this step open
+  # scoped, otherwise a spill somewhere else keeps this step open. the room 4 tea is pinned to the
+  # floor on purpose and still sits inside the range, so it is ignored by name
   completion: !type:PuddlesClearedCondition
     nearAnchorId: room5_wozek
     range: 7
+    ignoreReagents:
+    - GreenTea
 
 # the view stays turned after room 5 unless they put it back, and the reset key is the one worth remembering.
 # already straight means nothing to say, the door just opens
@@ -574,8 +778,12 @@
   - tutorial-holopad-r10-d
   - tutorial-holopad-r10-d-2
   - tutorial-holopad-r10-e
-  # closet stays shut on purpose, this is the only place the tutorial teaches opening one
+  # closet stays shut on purpose, this is the only place the tutorial teaches opening one.
+  # the can is already open and pacifism refuses to throw anything that spills, so the throw she
+  # offers needs the lock off for this room
   onEnter:
+  - !type:SetPacifiedAction
+    pacified: false
   - !type:SpawnAtAnchorAction
     anchorId: room10_closet
     prototype: DrinkColaCanTutorial
@@ -586,6 +794,8 @@
   completion: !type:DisposalFlushedWithAnchorCondition
     disposalAnchorId: room10_disposal
   onComplete:
+  - !type:SetPacifiedAction
+    pacified: true
   - !type:SpeakHolopadAction
     lines:
     - tutorial-holopad-r10-done
@@ -1829,7 +2039,11 @@
   keybindHint: tutorial-hint-target
   speak:
   - tutorial-holopad-r14-target
-  completion: !type:ManualAcknowledgeCondition
+  # the instruction says "pick a part", so picking one has to be enough. the button stays as a fallback
+  completion: !type:AnyCondition
+    conditions:
+    - !type:TargetChangedCondition
+    - !type:ManualAcknowledgeCondition
 
 - type: tutorialStep
   id: TutorialLinearR14ToUrist

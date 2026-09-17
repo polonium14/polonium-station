@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Construction;
 using Content.Server.Database;
 using Content.Server.GameTicking;
@@ -7,6 +8,7 @@ using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
+using Content.Shared._Polonium.Tutorial.Conditions;
 using Content.Shared._Polonium.Tutorial.Prototypes;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
@@ -375,6 +377,9 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
         session.FlowStartedAt += delta;
 
+        foreach (var key in session.HeldSince.Keys.ToList())
+            session.HeldSince[key] += delta;
+
         if (TryComp<TutorialFrozenComponent>(trainee, out var frozen))
             frozen.ExpiresAt += delta;
 
@@ -384,6 +389,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
             return;
 
         mentorComp.NextSpeak += delta;
+        mentorComp.QuipDoneAt += delta;
         foreach (var line in mentorComp.SpeechQueue)
             line.GateExpiresAt += delta;
     }
@@ -412,6 +418,27 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
         Log.Debug($"Tutorial: resolved {result.Count} anchors on grid {grid} for {ToPrettyString(player)}");
         return result;
+    }
+
+    /// <summary>
+    /// Straight to a later step. The steps in between are skipped whole, their OnComplete included,
+    /// so whatever they would have unlocked stays shut.
+    /// </summary>
+    public void JumpToStep(Entity<TutorialSessionComponent> ent, ProtoId<TutorialStepPrototype> stepId)
+    {
+        ent.Comp.JumpTo = null;
+
+        if (!TryGetFlow(ent.Comp, out var flow))
+            return;
+
+        var index = flow.Steps.IndexOf(stepId);
+        if (index < 0)
+        {
+            Log.Error($"Tutorial: jump target '{stepId}' is not in flow '{flow.ID}'");
+            return;
+        }
+
+        EnterStep(ent, index);
     }
 
     private void AdvanceStep(Entity<TutorialSessionComponent> ent)
@@ -456,6 +483,8 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         ent.Comp.KeybindHint = stepProto.KeybindHint;
         ent.Comp.Flags.Clear();
         ent.Comp.FiredWatchers.Clear();
+        ent.Comp.HeldSince.Clear();
+        ent.Comp.JumpTo = null;
         ent.Comp.StepStartedAt = _timing.CurTime;
         ent.Comp.PendingAdvanceAt = null;
         ent.Comp.StuckHinted = false;
@@ -634,9 +663,48 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         _mobState.ChangeMobState(ent.Owner, MobState.Alive);
         _standing.Stand(ent.Owner);
 
-        if (ent.Comp.NavigationAnchor is { } nav)
-            _actions.Teleport(ent.Owner, nav);
+        // back to the start of the room. the navigation anchor is where the step wants them to go,
+        // and landing there on a revive used to finish the step without them
+        if (TryGetCurrentStep(ent.Comp, out _, out var step)
+            && TryGetRoomMarker(step.ID, out var room)
+            && !Reaches(step.Completion, room))
+            _actions.Teleport(ent.Owner, room);
 
         _mentor.Enqueue(ent.Owner, new LocId[] { "tutorial-holopad-quip-death" });
+    }
+
+    private static bool TryGetRoomMarker(string stepId, out string room)
+    {
+        room = string.Empty;
+        const string prefix = "TutorialLinearR";
+        if (!stepId.StartsWith(prefix, StringComparison.Ordinal))
+            return false;
+
+        var digits = 0;
+        while (prefix.Length + digits < stepId.Length && char.IsDigit(stepId[prefix.Length + digits]))
+            digits++;
+
+        // room 0 is the hud briefing and has no marker
+        if (!int.TryParse(stepId.AsSpan(prefix.Length, digits), out var n) || n <= 0)
+            return false;
+
+        room = $"room{n}";
+        return true;
+    }
+
+    /// <summary>Standing on the anchor would count for the step, so do not put them there.</summary>
+    private static bool Reaches(TutorialCondition? condition, string anchorId)
+    {
+        return condition switch
+        {
+            ReachAnchorCondition reach => reach.AnchorId == anchorId,
+            AnyReachAnchorsCondition any => any.AnchorIds.Contains(anchorId),
+            CrawlingReachCondition crawl => crawl.AnchorIds.Contains(anchorId),
+            AnyCondition any => any.Conditions.Any(c => Reaches(c, anchorId)),
+            AllCondition all => all.Conditions.Any(c => Reaches(c, anchorId)),
+            NotCondition not => Reaches(not.Condition, anchorId),
+            HeldCondition held => Reaches(held.Condition, anchorId),
+            _ => false,
+        };
     }
 }

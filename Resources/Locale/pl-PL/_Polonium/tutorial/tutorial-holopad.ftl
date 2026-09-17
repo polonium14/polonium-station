@@ -38,12 +38,21 @@ tutorial-holopad-r03-a = Czasem najkrótsza droga prowadzi przez meble. Wejdź n
 tutorial-holopad-r03-b = Regulamin porządkowy tego zabrania. Problem w tym, że regulamin przegrał tę bitwę mniej więcej dwadzieścia lat temu.
 
 # r04 - strefa relaksu, herbata
-tutorial-holopad-r04-a = Pomieszczenie czwarte to strefa relaksu. Masz ją zagwarantowaną w umowie: cztery minuty dziennie, do wykorzystania jednorazowo.
+tutorial-holopad-r04-a = Pomieszczenie czwarte to strefa relaksu. Odpoczynek masz zapisany w umowie: obowiązkowy, jednorazowy i bez prawa odmowy.
 tutorial-holopad-r04-b = Usiądź na krześle. Naprawdę usiądź. Monitoruję to.
 tutorial-holopad-r04-c = Na podłodze obok krzesła stoi herbata. Ktoś ją tam postawił i już nigdy po nią nie wrócił.
 tutorial-holopad-r04-d = Podnieś ją i wypij. Termin ważności herbaty to pojęcie umowne, a ty i tak nie masz wyboru.
-tutorial-holopad-quip-tea = Herbata jest na podłodze. Wypij ją z kałuży - nigdzie nie odpłynie, a drzwi otworzę dopiero, kiedy herbata będzie w tobie.
-tutorial-holopad-r04-e = Przerwa skończona. Wstań z krzesła. Twoje cztery minuty zostały właśnie wykorzystane.
+tutorial-holopad-quip-tea = Herbata jest na podłodze. Wypij ją z kałuży. Tak, z podłogi. Czekam.
+tutorial-holopad-r04-sit-back = Nikt nie pozwolił ci wstać. Odpoczynek jest obowiązkowy - wracaj na krzesło.
+tutorial-holopad-r04-disloyal-stand = Odmowa obowiązkowego odpoczynku to przejaw nielojalności. Korporacja NanoTrasen nielojalności nie toleruje.
+tutorial-holopad-r04-disloyal-tea = Marnowanie firmowej herbaty to przejaw nielojalności. Korporacja NanoTrasen nielojalności nie toleruje.
+tutorial-holopad-r04-getout = Wypierdalaj.
+tutorial-holopad-r04-rest-a = Doskonale. Teraz odpoczywasz. Siedź i nic nie rób, to polecenie służbowe.
+tutorial-holopad-r04-rest-b = Muzykę w tle wybrał dział kadr. Według badań obniża liczbę skarg o czternaście procent.
+tutorial-holopad-r04-rest-c = Relaks nie wlicza się do czasu pracy. Wlicza się za to do czasu szkolenia, za które nikt ci nie płaci.
+tutorial-holopad-r04-rest-d = Twoje tętno spada do poziomu zgodnego z regulaminem. Gratuluję, to rzadkie osiągnięcie.
+tutorial-holopad-r04-rest-e = Jeszcze chwila. Odpoczynek kończy się wtedy, kiedy ja tak powiem.
+tutorial-holopad-r04-e = Przerwa skończona. Wstań z krzesła. Twój dzisiejszy przydział relaksu został właśnie wykorzystany.
 
 # r05 - obrót kamery i mop
 tutorial-holopad-r05-a = Ten fragment ośrodka zbudowano pod innym kątem. Architekt dostał za to premię i awans.
@@ -51,7 +60,7 @@ tutorial-holopad-r05-b = Obróć widok w prawo, mniej więcej o ćwierć obrotu.
 tutorial-holopad-r05-c = Ktoś tu zwymiotował. Trzy razy, na trzech różnych kaflach, co sugeruje ruch i determinację.
 tutorial-holopad-r05-d = Nie pytam kto. Znam odpowiedź, mam nagranie, a raport złożyłam jeszcze zanim skończył.
 tutorial-holopad-r05-e = Weź mopa z wózka i to wytrzyj. Sprzątanie to druga najczęstsza czynność na tej stacji. Pierwszej nauczysz się później.
-tutorial-holopad-quip-mop-full = Mop nasiąkł i przestał cokolwiek zbierać. Wypłucz go w wiadrze wózka. Tak, to dokładnie ten sam ruch co przed chwilą, tylko w drugą stronę.
+tutorial-holopad-quip-mop-full = Mop nie ma już wody i dalej nie myje - kałuża zostanie brudna, choć wygląda na mniejszą. Wypłucz go: kliknij mopem w wózek, a potem wróć do kałuży.
 tutorial-holopad-r05-reset = Zanim otworzę śluzę: przywróć widok do pierwotnego ustawienia. Służy do tego osobny klawisz i warto go zapamiętać - przyda się za każdym razem, gdy świat za bardzo się przekręci.
 
 # r06 - łom i martwe drzwi

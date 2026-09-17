@@ -162,6 +162,22 @@ public sealed partial class TutorialActionExecutor : EntitySystem
                 DrainPrototypeSolution(player, drainProto);
                 break;
 
+            case SetFlagAction flag:
+                SetFlag(player, flag);
+                break;
+
+            case AnchorMusicAction music:
+                AnchorMusic(player, music, instant);
+                break;
+
+            case EjectTraineeAction eject:
+                Eject(player, eject);
+                break;
+
+            case MuteBriefingAction:
+                _mentor.DropBriefing(player);
+                break;
+
             default:
                 Log.Warning($"Tutorial: no handler for action type {action.GetType().Name}");
                 break;

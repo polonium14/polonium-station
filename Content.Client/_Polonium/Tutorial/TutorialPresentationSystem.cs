@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Client._Polonium.Tutorial.Lobby;
 using Content.Client._Polonium.Tutorial.Lobby.UI;
 using Content.Client._Polonium.Tutorial.UI;
@@ -237,7 +238,7 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
     private static bool WantsInstructionOverlay(TutorialStepPrototype step)
     {
         return step.Blocking
-               || step.Completion is ManualAcknowledgeCondition
+               || HasAcknowledge(step.Completion)
                || step.HighlightHud != TutorialHudTarget.None
                || step.Guidebook is not null;
     }
@@ -362,7 +363,7 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
         var spotlight = TryGetHudControl(stepProto.HighlightHud);
         var wantsBubble = stepProto.BubbleText != null
                           || stepProto.Blocking
-                          || stepProto.Completion is ManualAcknowledgeCondition
+                          || HasAcknowledge(stepProto.Completion)
                           || stepProto.Guidebook is not null;
 
         if (spotlight == null && !wantsBubble)
@@ -422,7 +423,7 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
             if (stepProto.Guidebook is { } guideId)
                 AddGuidebookButton(bubble, guideId);
 
-            if (stepProto.Completion is ManualAcknowledgeCondition)
+            if (HasAcknowledge(stepProto.Completion))
                 AddAcknowledgeButton(bubble, stepId, stepProto.Blocking);
         }
 
@@ -433,6 +434,17 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
                 : BubbleSideFor(stepProto.HighlightHud),
             overlayId: OverlayId,
             spacing: 40f);
+    }
+
+    // the button can sit next to a real condition, e.g. "pick a body part, or just press next"
+    private static bool HasAcknowledge(TutorialCondition? condition)
+    {
+        return condition switch
+        {
+            ManualAcknowledgeCondition => true,
+            AnyCondition any => any.Conditions.Any(HasAcknowledge),
+            _ => false,
+        };
     }
 
     /// <summary>Keep the bubble on the opposite side of whatever is being pointed at.</summary>

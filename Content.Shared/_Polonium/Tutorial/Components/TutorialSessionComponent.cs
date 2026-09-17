@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Polonium.Tutorial.Conditions;
 using Content.Shared._Polonium.Tutorial.Prototypes;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -56,6 +57,14 @@ public sealed partial class TutorialSessionComponent : Component
 
     [ViewVariables]
     public HashSet<int> FiredWatchers = new();
+
+    /// <summary>When each HeldCondition of the current step last turned true. Keyed by the prototype instance.</summary>
+    [ViewVariables]
+    public Dictionary<TutorialCondition, TimeSpan> HeldSince = new(ReferenceEqualityComparer.Instance);
+
+    /// <summary>Set by an eject, the tracker jumps here once it is done with the current pass.</summary>
+    [ViewVariables]
+    public ProtoId<TutorialStepPrototype>? JumpTo;
 
     [ViewVariables]
     public EntityUid? MentorUid;
