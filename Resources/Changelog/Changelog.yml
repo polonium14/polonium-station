@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: MidZik
-  changes:
-  - message: Fixed containment fields dying even when one side still had power.
-    type: Fix
-  id: 9500
-  time: '2026-02-07T12:54:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41006
 - author: PAFFhassoocks
   changes:
   - message: The nukie infiltrator ship now starts with a universal pinpointer.
@@ -4087,3 +4080,13 @@
   id: 9998
   time: '2026-09-17T12:38:14.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1020
+- author: Elperson
+  changes:
+  - message: "Nie mo\u017Cna ju\u017C si\u0119 zastrzeli\u0107 wystrzelon\u0105 amunicj\u0105"
+    type: Fix
+  - message: "Uniemo\u017Cliwiono wykonanie skutecznego samob\xF3jstwa z u\u017Cyciem\
+      \ wystrzelonego naboju."
+    type: Fix
+  id: 9999
+  time: '2026-09-17T15:18:42.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1030
