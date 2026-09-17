@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SlamBamActionman
-  changes:
-  - message: Stackables items now merge when stopping on/after a conveyor belt.
-    type: Add
-  id: 9502
-  time: '2026-02-07T13:34:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42829
 - author: 11BelowStudio
   changes:
   - message: Closed the legal loophole which technically allowed engineers to open-carry
@@ -4104,3 +4097,14 @@
   id: 10000
   time: '2026-09-17T17:02:21.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1032
+- author: Nikita
+  changes:
+  - message: "Przeniesiono 17 dataset\xF3w IonStorm do lokalizacji Fluent."
+    type: Tweak
+  - message: Dodano angielskie i polskie dane IonStorm.
+    type: Add
+  - message: "Zmieniono system praw jonowych na obs\u0142ug\u0119 `LocalizedDatasetPrototype`."
+    type: Tweak
+  id: 10001
+  time: '2026-09-17T17:14:31.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1031
