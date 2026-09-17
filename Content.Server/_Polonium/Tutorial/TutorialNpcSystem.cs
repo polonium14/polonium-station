@@ -15,6 +15,7 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Nutrition.Prototypes;
 using Content.Shared.SSDIndicator;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
@@ -37,6 +38,8 @@ public sealed partial class TutorialNpcSystem : EntitySystem
 
     private const float ArriveDistance = 0.2f;
     private static readonly TimeSpan WalkTimeout = TimeSpan.FromSeconds(15);
+    private static readonly SatiationValue Overfed = "Overfed";
+    private static readonly SatiationValue Overhydrated = "Overhydrated";
 
     // a beat to stop before he climbs - arriving at full speed breaks the climb do-after on move
     private static readonly TimeSpan SettleTime = TimeSpan.FromSeconds(0.6);
@@ -180,8 +183,8 @@ public sealed partial class TutorialNpcSystem : EntitySystem
         if (TryComp<SatiationComponent>(uid, out var satiation))
         {
             var ent = (uid, satiation);
-            _satiation.SetValue(ent, SatiationSystem.Hunger, "Overfed");
-            _satiation.SetValue(ent, SatiationSystem.Thirst, "Overhydrated");
+            _satiation.SetValue(ent, SatiationSystem.Hunger, Overfed);
+            _satiation.SetValue(ent, SatiationSystem.Thirst, Overhydrated);
         }
 
         if (!TryComp<HTNComponent>(uid, out var htn))

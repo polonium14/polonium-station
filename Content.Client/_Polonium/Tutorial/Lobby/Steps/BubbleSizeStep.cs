@@ -14,7 +14,7 @@ namespace Content.Client._Polonium.Tutorial.Lobby.Steps;
 /// First thing in the lobby: the player sizes the tutorial bubbles on their own screen. A sample
 /// sits where the tour will put its bubbles, so they can see what it covers. No way around it.
 /// </summary>
-public sealed class BubbleSizeStep : ClientsideNavTutorialStep
+public sealed partial class BubbleSizeStep : ClientsideNavTutorialStep
 {
     [Dependency] private IConfigurationManager _cfg = default!;
 

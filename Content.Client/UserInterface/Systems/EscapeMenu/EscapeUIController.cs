@@ -30,7 +30,7 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
     [Dependency] private GuidebookUIController _guidebook = default!;
     [Dependency] private FeedbackPopupUIController _feedback = null!;
     [Dependency] private ILocalizationManager _loc = default!;
-    [UISystemDependency] private readonly TutorialPresentationSystem? _tutorial;
+    [UISystemDependency] private readonly TutorialPresentationSystem? _tutorial = default;
 
     private Options.UI.EscapeMenu? _escapeWindow;
 
