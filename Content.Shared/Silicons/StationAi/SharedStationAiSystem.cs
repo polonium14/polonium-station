@@ -1,4 +1,3 @@
-using Content.Shared._Funkystation.FirelockBolt.EntitySystems;
 using Content.Shared.Access.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
@@ -54,7 +53,6 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     [Dependency] private SharedDoorSystem _doors = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedElectrocutionSystem _electrify = default!;
-    [Dependency] private SharedFirelockBoltControlSystem _firelockBolts = default!;
     [Dependency] private SharedEyeSystem _eye = default!;
     [Dependency] protected SharedMapSystem Maps = default!;
     [Dependency] private SharedMindSystem _mind = default!;
