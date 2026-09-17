@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: qwerltaz
-  changes:
-  - message: Ammonia and Nitrous Oxide now do more damage according to the concentration
-      of gas in the atmosphere.
-    type: Tweak
-  id: 9498
-  time: '2026-02-07T10:51:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39591
 - author: SuperGDPWYL
   changes:
   - message: Emitters now alert the Engineering radio channel if they are destroyed,
@@ -4080,3 +4072,16 @@
   id: 9996
   time: '2026-09-16T16:09:33.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1027
+- author: nikitosych
+  changes:
+  - message: "Usuni\u0119to eksperymentalny system sterowania ryglami firelock\xF3\
+      w."
+    type: Remove
+  - message: "Przywr\xF3cono standardow\u0105 obs\u0142ug\u0119 firelock\xF3w."
+    type: Tweak
+  - message: "Wyd\u0142u\u017Cono czasy animacji oraz otwierania i zamykania firelock\xF3\
+      w."
+    type: Tweak
+  id: 9997
+  time: '2026-09-17T10:36:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1029
