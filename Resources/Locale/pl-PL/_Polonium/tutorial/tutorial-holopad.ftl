@@ -211,7 +211,7 @@ tutorial-holopad-r15-epi-b = Epinefryna działa tylko na pacjentów w stanie kry
 tutorial-holopad-r15-epi-c = Porada na przyszłość: nigdy nie przedawkuj. Powyżej dwudziestu jednostek epinefryna szkodzi zamiast pomagać, więc drugiego medipena od razu nie wbijaj. Nawet jeśli bardzo się denerwujesz.
 tutorial-holopad-r15-finish-a = Wyszedł ze stanu krytycznego. Teraz dokończ swoją robotę, a on niech leży na łóżku: guz po starciu ze stołem sam nie zniknie, a opatrunek na stłuczenia wciąż leży w apteczce.
 tutorial-holopad-r15-finish-b = Zbadaj go jeszcze raz analizatorem i trzymaj analizator w ręce. Niedotlenienie zejdzie samo, dopóki Uryst oddycha, więc poczekaj, aż wszystkie obrażenia spadną do zera. Dobry lekarz wypisuje pacjenta dopiero wtedy, gdy na własne oczy widzi, że wszystko jest w porządku.
-tutorial-holopad-r15-finish-bed = Wszystko pięknie, tylko dlaczego pacjent nie leży? Połóż Urysta z powrotem na łóżku, obserwację kończy się w łóżku.
+tutorial-holopad-r15-finish-bed = Wszystko pięknie, tylko dlaczego pacjent nie leży? Połóż Urysta z powrotem na łóżku, obserwację kończymy w łóżku.
 tutorial-holopad-r15-finish-done-a = Pacjent stabilny, opatrzony i zbadany. Uryst zmarł i wrócił do życia w ciągu jednej lekcji, co jest nowym rekordem naszego ośrodka.
 tutorial-holopad-r15-finish-done-b = Medycyna zaliczona. Drzwi są już otwarte, a Uryst zostaje u nas na obserwacji. Oczywiście pod warunkiem, że nie zbliży się do żadnego stołu.
 
