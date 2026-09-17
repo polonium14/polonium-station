@@ -10,7 +10,7 @@ using Robust.Shared.Utility;
 namespace Content.Client._Polonium.RichText;
 
 [UsedImplicitly]
-public sealed class UrlTag : IMarkupTagHandler
+public sealed partial class UrlTag : IMarkupTagHandler
 {
     [Dependency] private IUriOpener _uriOpener = default!;
 
