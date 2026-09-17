@@ -35,7 +35,6 @@ public sealed partial class TutorialBubble : Control
     private const int BaseFontSize = 12;
     private const int MinFontSize = 8;
 
-    private bool _comic = true;
     private bool _scaled;
     private float _scale = 1f;
 
@@ -53,8 +52,6 @@ public sealed partial class TutorialBubble : Control
 
     public void ApplyFunctionalStyle()
     {
-        _comic = false;
-
         OuterLayer.PanelOverride = new StyleBoxFlat
         {
             BackgroundColor = Color.FromHex("#0E1A1FEE"),
@@ -75,7 +72,6 @@ public sealed partial class TutorialBubble : Control
 
     private void ApplyComicStyle()
     {
-        _comic = true;
         var boxTexture = _resCache.GetTexture("/Textures/_Polonium/Interface/Nano/intro_bubble_outer.png");
         OuterLayer.PanelOverride = new StyleBoxTexture
         {
