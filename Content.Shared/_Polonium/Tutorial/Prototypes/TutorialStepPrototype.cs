@@ -104,11 +104,19 @@ public sealed partial class TutorialStepPrototype : IPrototype
     [DataField]
     public List<string> HighlightAnchors = new();
 
+    /// <summary>Anchors the trainee may damage on this step, on top of the ones the completion names.</summary>
+    [DataField]
+    public List<string> AttackableAnchors = new();
+
     [DataField]
     public LocId? KeybindHint;
 
     [DataField]
     public List<TutorialWatcher> Watchers = new();
+
+    /// <summary>Armed on this step on top of <see cref="Watchers"/>, in the order listed.</summary>
+    [DataField]
+    public List<ProtoId<TutorialWatcherSetPrototype>> WatcherSets = new();
 
     /// <summary>
     /// While the wires window of this anchor is open, walk the trainee through cutting its power:
@@ -131,4 +139,25 @@ public sealed partial class TutorialStepPrototype : IPrototype
     // null = pick a default from the completion type. 0 = never skip (finale).
     [DataField]
     public float? StuckSkipSeconds;
+
+    /// <summary>
+    /// Already done on entry - run OnComplete and move on without a word.
+    /// </summary>
+    [DataField]
+    public bool SkipIfSatisfied;
+
+    /// <summary>
+    /// The same, for a step whose completion is too generous to skip on. A completion also has to
+    /// accept the trainee finishing the step the ordinary way, so it often matches things that are
+    /// true the moment the step opens; this says exactly what counts as having done it beforehand.
+    /// </summary>
+    [DataField]
+    public TutorialCondition? SkipIf;
+
+    /// <summary>
+    /// The trainee may eat or drink during this step. Everywhere else ingredients and props stay
+    /// out of their mouth.
+    /// </summary>
+    [DataField]
+    public bool AllowIngestion;
 }

@@ -13,9 +13,11 @@
   - TutorialLinearR03
   - TutorialLinearR04Sit
   - TutorialLinearR04Tea
+  - TutorialLinearR04Rest
   - TutorialLinearR04Stand
   - TutorialLinearR05Cam
   - TutorialLinearR05Mop
+  - TutorialLinearR05CamReset
   - TutorialLinearR06
   - TutorialLinearR07
   - TutorialLinearR08Hands
@@ -82,9 +84,10 @@
   - TutorialLinearR14ToBaton
   - TutorialLinearR14Baton
   - TutorialLinearR14BatonOn
-  - TutorialLinearR14Stun
   - TutorialLinearR14ToCuffs
   - TutorialLinearR14Cuffs
+  - TutorialLinearR14Stun
+  - TutorialLinearR14Cuff
   - TutorialLinearR14Drag
   - TutorialLinearR14Range
   - TutorialLinearR14Ammo
@@ -109,7 +112,7 @@
   - TutorialLinearR15ToPatient
   - TutorialLinearR15Heal
   - TutorialLinearR15Bonk
-  - TutorialLinearR15Stasis
+  - TutorialLinearR15Bed
   - TutorialLinearR15ToDefib
   - TutorialLinearR15Defib
   - TutorialLinearR15Epi
@@ -332,7 +335,8 @@
   - !type:UnlockAnchorAirlockAction
     anchorId: room4_airlock
 
-# room 4 - break room. sit, drink, get up
+# room 4 - break room. compulsory rest: lounge music, sit, drink, sit some more.
+# getting up pauses the music, staying up or wasting the tea gets them thrown into room 5
 - type: tutorialStep
   id: TutorialLinearR04Sit
   instruction: tutorial-step-r04-sit
@@ -344,12 +348,19 @@
   speak:
   - tutorial-holopad-r04-a
   - tutorial-holopad-r04-b
+  onEnter:
+  - !type:AnchorMusicAction
+    anchorId: room4_jukebox
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_Polonium/Music/lounge.ogg
+    volume: -4
   completion: !type:BuckledToAnchorCondition
     anchorId: room4_chair
 
 - type: tutorialStep
   id: TutorialLinearR04Tea
   instruction: tutorial-step-r04-tea
+  allowIngestion: true
   navigationAnchor: room4_tea
   keybindHint: tutorial-hint-drink
   stuckSkipSeconds: 90
@@ -359,15 +370,189 @@
   - tutorial-holopad-r04-c
   - tutorial-holopad-r04-d
   watchers:
-  # some species dribble a unit per sip, that is not "you poured it out"
+  # got up: the music stops until they sit back down
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r04-sit-back
+    actions:
+    - !type:AnchorMusicAction
+      anchorId: room4_jukebox
+      mode: Pause
+    condition: !type:AllCondition
+      conditions:
+      - !type:UnbuckledCondition
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: spilled
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: ejecting
+  # back on the chair: the music picks up where it stopped
+  - !type:ConditionWatcher
+    rearm: true
+    actions:
+    - !type:AnchorMusicAction
+      anchorId: room4_jukebox
+      sound: !type:SoundPathSpecifier
+        path: /Audio/_Polonium/Music/lounge.ogg
+      volume: -4
+    condition: !type:BuckledToAnchorCondition
+      anchorId: room4_chair
+  # still up after the warning
+  - !type:ConditionWatcher
+    quip:
+    - tutorial-holopad-r04-disloyal-stand
+    - tutorial-holopad-r04-getout
+    actions:
+    - !type:MuteBriefingAction
+    - !type:SetFlagAction
+      flag: ejecting
+    condition: !type:AllCondition
+      conditions:
+      - !type:HeldCondition
+        seconds: 20
+        condition: !type:UnbuckledCondition
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: spilled
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: ejecting
+  # some species dribble a unit per sip, that is not "you poured it out".
+  # once it is on the floor they may get up to reach it, so the chair rules stand down
   - !type:PuddleNearbyWatcher
     range: 4
     reagent: GreenTea
     minVolume: 8
     quip:
     - tutorial-holopad-quip-tea
-  completion: !type:AnchorEmptyOrGoneCondition
-    anchorId: room4_tea
+    actions:
+    - !type:SetFlagAction
+      flag: spilled
+  # drank it off the floor, or would not even do that
+  - !type:ConditionWatcher
+    quip:
+    - tutorial-holopad-r04-disloyal-tea
+    - tutorial-holopad-r04-getout
+    actions:
+    - !type:MuteBriefingAction
+    - !type:SetFlagAction
+      flag: ejecting
+    condition: !type:AllCondition
+      conditions:
+      - !type:FlagCondition
+        flag: spilled
+      - !type:AnyCondition
+        conditions:
+        - !type:IngestedReagentCondition
+          reagent: GreenTea
+        - !type:HeldCondition
+          seconds: 40
+          condition: !type:FlagCondition
+            flag: spilled
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: ejecting
+  # out once she is done saying why
+  - !type:ConditionWatcher
+    actions:
+    - !type:EjectTraineeAction
+      anchorId: room5_getout
+      step: TutorialLinearR05Cam
+    condition: !type:AllCondition
+      conditions:
+      - !type:FlagCondition
+        flag: ejecting
+      - !type:QuipsSaidCondition
+  completion: !type:AllCondition
+    conditions:
+    - !type:IngestedReagentCondition
+      reagent: GreenTea
+    - !type:NotCondition
+      condition: !type:FlagCondition
+        flag: spilled
+    - !type:NotCondition
+      condition: !type:FlagCondition
+        flag: ejecting
+
+# the rest itself. no timer on screen, she just talks until it is over
+- type: tutorialStep
+  id: TutorialLinearR04Rest
+  instruction: tutorial-step-r04-rest
+  navigationAnchor: room4_chair
+  keybindHint: tutorial-hint-sit
+  stuckSkipSeconds: 0
+  speak:
+  - tutorial-holopad-r04-rest-a
+  - tutorial-holopad-r04-rest-b
+  - tutorial-holopad-r04-rest-c
+  - tutorial-holopad-r04-rest-d
+  - tutorial-holopad-r04-rest-e
+  watchers:
+  # got up: the music stops until they sit back down
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r04-sit-back
+    actions:
+    - !type:AnchorMusicAction
+      anchorId: room4_jukebox
+      mode: Pause
+    condition: !type:AllCondition
+      conditions:
+      - !type:UnbuckledCondition
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: ejecting
+  # back on the chair: the music picks up where it stopped
+  - !type:ConditionWatcher
+    rearm: true
+    actions:
+    - !type:AnchorMusicAction
+      anchorId: room4_jukebox
+      sound: !type:SoundPathSpecifier
+        path: /Audio/_Polonium/Music/lounge.ogg
+      volume: -4
+    condition: !type:BuckledToAnchorCondition
+      anchorId: room4_chair
+  # still up after the warning
+  - !type:ConditionWatcher
+    quip:
+    - tutorial-holopad-r04-disloyal-stand
+    - tutorial-holopad-r04-getout
+    actions:
+    - !type:MuteBriefingAction
+    - !type:SetFlagAction
+      flag: ejecting
+    condition: !type:AllCondition
+      conditions:
+      - !type:HeldCondition
+        seconds: 20
+        condition: !type:UnbuckledCondition
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: ejecting
+  # out once she is done saying why
+  - !type:ConditionWatcher
+    actions:
+    - !type:EjectTraineeAction
+      anchorId: room5_getout
+      step: TutorialLinearR05Cam
+    condition: !type:AllCondition
+      conditions:
+      - !type:FlagCondition
+        flag: ejecting
+      - !type:QuipsSaidCondition
+  completion: !type:AllCondition
+    conditions:
+    - !type:HeldCondition
+      seconds: 35
+      condition: !type:BuckledToAnchorCondition
+        anchorId: room4_chair
+    - !type:NotCondition
+      condition: !type:FlagCondition
+        flag: ejecting
 
 - type: tutorialStep
   id: TutorialLinearR04Stand
@@ -391,8 +576,42 @@
   speak:
   - tutorial-holopad-r05-a
   - tutorial-holopad-r05-b
+  watchers:
+  # plenty of trainees mop before they turn the view. a dry mop needs the same advice here
+  - !type:AbsorbentSpentWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-quip-mop-full
+  - !type:ConditionWatcher
+    actions:
+    - !type:AnchorMusicAction
+      anchorId: room4_jukebox
+      mode: Stop
+    condition: !type:AnyCondition
+      conditions:
+      - !type:ReachAnchorCondition
+        anchorId: room5
+        range: 1
+      - !type:ReachAnchorCondition
+        anchorId: room5_getout
+  # left, or right twice, is not what was asked. one quip per wrong turn, not one per poll
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r05-cam-wrong
+    condition: !type:AllCondition
+      conditions:
+      - !type:CameraRotatedCondition
+        degrees: 45
+      - !type:NotCondition
+        condition: !type:CameraRotatedCondition
+          degrees: 80
+          maxDegrees: 135
+          direction: Right
   completion: !type:CameraRotatedCondition
     degrees: 80
+    maxDegrees: 135
+    direction: Right
 
 - type: tutorialStep
   id: TutorialLinearR05Mop
@@ -406,14 +625,30 @@
   - tutorial-holopad-r05-d
   - tutorial-holopad-r05-e
   watchers:
+  # every time it runs dry, not just the first
   - !type:AbsorbentSpentWatcher
-    once: true
+    rearm: true
     quip:
     - tutorial-holopad-quip-mop-full
-  # scoped, otherwise spilled tea back in room 4 keeps this step open
+  # scoped, otherwise a spill somewhere else keeps this step open. the room 4 tea is pinned to the
+  # floor on purpose and still sits inside the range, so it is ignored by name
   completion: !type:PuddlesClearedCondition
     nearAnchorId: room5_wozek
     range: 7
+    ignoreReagents:
+    - GreenTea
+
+# the view stays turned after room 5 unless they put it back, and the reset key is the one worth remembering.
+# already straight means nothing to say, the door just opens
+- type: tutorialStep
+  id: TutorialLinearR05CamReset
+  instruction: tutorial-step-r05-cam-reset
+  navigationAnchor: room6_airlock
+  keybindHint: tutorial-hint-camera-reset
+  skipIfSatisfied: true
+  speak:
+  - tutorial-holopad-r05-reset
+  completion: !type:CameraAlignedCondition
   onComplete:
   - !type:UnlockAnchorAirlockAction
     anchorId: room6_airlock
@@ -468,10 +703,20 @@
   speak:
   - tutorial-holopad-r08-a
   - tutorial-holopad-r08-b
-  completion: !type:BothHandsAnchorsCondition
-    anchorIds:
-    - room8_wrench
-    - room8_screwdriver
+  # someone who went straight for the girder has already shown they can use both hands
+  completion: !type:AnyCondition
+    conditions:
+    - !type:BothHandsAnchorsCondition
+      anchorIds:
+      - room8_wrench
+      - room8_screwdriver
+    - !type:AnchorsNearCondition
+      anchorId: room8_girder
+      nearAnchorId: room8_girder_home
+      range: 0.6
+      away: true
+    - !type:ReachAnchorCondition
+      anchorId: room8_girder_pass_success
 
 - type: tutorialStep
   id: TutorialLinearR08Girder
@@ -559,9 +804,14 @@
   - tutorial-holopad-r10-b
   - tutorial-holopad-r10-c
   - tutorial-holopad-r10-d
+  - tutorial-holopad-r10-d-2
   - tutorial-holopad-r10-e
-  # closet stays shut on purpose, this is the only place the tutorial teaches opening one
+  # closet stays shut on purpose, this is the only place the tutorial teaches opening one.
+  # the can is already open and pacifism refuses to throw anything that spills, so the throw she
+  # offers needs the lock off for this room
   onEnter:
+  - !type:SetPacifiedAction
+    pacified: false
   - !type:SpawnAtAnchorAction
     anchorId: room10_closet
     prototype: DrinkColaCanTutorial
@@ -572,6 +822,8 @@
   completion: !type:DisposalFlushedWithAnchorCondition
     disposalAnchorId: room10_disposal
   onComplete:
+  - !type:SetPacifiedAction
+    pacified: true
   - !type:SpeakHolopadAction
     lines:
     - tutorial-holopad-r10-done
@@ -590,6 +842,7 @@
   speak:
   - tutorial-holopad-r11-a
   - tutorial-holopad-r11-b
+  - tutorial-holopad-r11-b-2
   completion: !type:SlotContainsAnchorRecursiveCondition
     slot: back
     strict: true
@@ -752,6 +1005,7 @@
   speak:
   - tutorial-holopad-r12-doff-a
   - tutorial-holopad-r12-doff-b
+  - tutorial-holopad-r12-doff-b-2
   completion: !type:AllCondition
     conditions:
     - !type:NotCondition
@@ -852,6 +1106,7 @@
   - tutorial-holopad-r13-beaker
   - tutorial-holopad-r13-vend-keypad-a
   - tutorial-holopad-r13-vend-keypad-b
+  - tutorial-holopad-r13-vend-keypad-b-2
   completion: !type:HoldingPrototypeCondition
     prototype: LargeBeakerTutorial
 
@@ -887,6 +1142,7 @@
       amount: 45
     quip:
     - tutorial-holopad-quip-overpour
+    - tutorial-holopad-quip-overpour-2
   - !type:ConditionWatcher
     once: false
     condition: !type:PrototypeSolutionContainsCondition
@@ -896,6 +1152,7 @@
       amount: 75
     quip:
     - tutorial-holopad-quip-overpour-fix
+    - tutorial-holopad-quip-overpour-fix-2
     actions:
     - !type:DrainPrototypeSolutionAction
       prototype: LargeBeakerTutorial
@@ -968,6 +1225,7 @@
       amount: 45
     quip:
     - tutorial-holopad-quip-overpour
+    - tutorial-holopad-quip-overpour-2
   - !type:ConditionWatcher
     once: false
     condition: !type:PrototypeSolutionContainsCondition
@@ -977,6 +1235,7 @@
       amount: 75
     quip:
     - tutorial-holopad-quip-overpour-fix
+    - tutorial-holopad-quip-overpour-fix-2
     actions:
     - !type:DrainPrototypeSolutionAction
       prototype: LargeBeakerTutorial
@@ -1200,6 +1459,7 @@
       amount: 80
     quip:
     - tutorial-holopad-quip-flooded
+    - tutorial-holopad-quip-flooded-2
     actions:
     - !type:DrainAnchorSolutionAction
       anchorId: room13_tray
@@ -1237,6 +1497,7 @@
       amount: 80
     quip:
     - tutorial-holopad-quip-flooded
+    - tutorial-holopad-quip-flooded-2
     actions:
     - !type:DrainAnchorSolutionAction
       anchorId: room13_tray
@@ -1264,6 +1525,7 @@
   - room13_tray
   speak:
   - tutorial-holopad-r13-soak
+  - tutorial-holopad-r13-soak-2
   completion: !type:PlantTrayLevelsCondition
     anchorId: room13_tray
     water: 25
@@ -1294,6 +1556,7 @@
   speak:
   - tutorial-holopad-r13-tomato
   - tutorial-holopad-r13-tomato-note
+  - tutorial-holopad-r13-tomato-note-2
   completion: !type:PrototypeNearAnchorCondition
     prototype: FoodTomato
     range: 10
@@ -1347,11 +1610,12 @@
   id: TutorialLinearR13Cow
   instruction: tutorial-step-r13-cow
   navigationAnchor: room13_cow_spawner
-  keybindHint: tutorial-hint-combat
+  keybindHint: tutorial-hint-cow
   highlightAnchors:
   - room13_cow
   speak:
   - tutorial-holopad-r13-cow
+  - tutorial-holopad-r13-cow-2
   onEnter:
   - !type:SetPacifiedAction
     pacified: false
@@ -1451,6 +1715,7 @@
   - room13_table_big
   speak:
   - tutorial-holopad-r13-crack
+  - tutorial-holopad-r13-crack-2
   # dough is quantized, so an overpour leaves water or flour sitting in the beaker. the recipe
   # does not care - the microwave checks "at least", never "exactly" - but the trainee reads the
   # beaker on the way past and should not have to wonder whether the leftovers ruined anything
@@ -1479,6 +1744,7 @@
   - room13_microwave
   speak:
   - tutorial-holopad-r13-load
+  - tutorial-holopad-r13-load-2
   # raw meat turns into a steak at 335K, and the microwave heats its contents on every run
   # whether or not a recipe matched. one impatient five second run and the burger is impossible,
   # so hand out fresh meat instead of leaving them stuck in front of two steaks
@@ -1490,6 +1756,7 @@
       range: 4
     quip:
     - tutorial-holopad-quip-meat-cooked
+    - tutorial-holopad-quip-meat-cooked-2
     actions:
     - !type:SpawnAtAnchorAction
       anchorId: room13_table_big
@@ -1499,6 +1766,42 @@
     - !type:SpawnAtAnchorAction
       anchorId: room13_table_big
       prototype: FoodMeat
+      tutorialNpc: false
+      preventDeath: false
+  # a run without a matching recipe still heats everything inside, and eggs set at 344K. the
+  # recipe wants raw egg, so without this the beaker is useless and the kitchen is a dead end
+  - !type:ConditionWatcher
+    once: false
+    condition: !type:AllCondition
+      conditions:
+      - !type:PrototypeSolutionContainsCondition
+        prototype: LargeBeakerTutorial
+        solution: beaker
+        reagent: EggCooked
+        amount: 1
+      - !type:NotCondition
+        condition: !type:PrototypeNearAnchorCondition
+          prototype: LargeBeakerTutorial
+          anchorId: room13_microwave
+          inside: true
+    quip:
+    - tutorial-holopad-quip-eggs-cooked
+    - tutorial-holopad-quip-eggs-cooked-2
+    actions:
+    - !type:SetFlagAction
+      flag: eggs-cooked
+    - !type:DrainPrototypeSolutionAction
+      prototype: LargeBeakerTutorial
+      solution: beaker
+      reagent: EggCooked
+    - !type:SpawnAtAnchorAction
+      anchorId: room13_table_big
+      prototype: FoodEgg
+      tutorialNpc: false
+      preventDeath: false
+    - !type:SpawnAtAnchorAction
+      anchorId: room13_table_big
+      prototype: FoodEgg
       tutorialNpc: false
       preventDeath: false
   # someone who ran ahead and already cooked it should not be asked to load an empty microwave
@@ -1552,6 +1855,7 @@
   - room13_microwave
   speak:
   - tutorial-holopad-r13-burger
+  - tutorial-holopad-r13-burger-2
   watchers:
   # nothing below says a word until the drum has emptied itself, which only happens when a run
   # ends. while the trainee is still loading, a verdict on what is missing is just noise.
@@ -1575,6 +1879,7 @@
         range: 4
     quip:
     - tutorial-holopad-quip-meat-cooked
+    - tutorial-holopad-quip-meat-cooked-2
     actions:
     - !type:SpawnAtAnchorAction
       anchorId: room13_table_big
@@ -1611,8 +1916,54 @@
           range: 4
           reagent: Egg
           amount: 12
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: eggs-cooked
+      - !type:NotCondition
+        condition: !type:PrototypeSolutionContainsCondition
+          prototype: LargeBeakerTutorial
+          solution: beaker
+          reagent: EggCooked
+          amount: 1
     quip:
     - tutorial-holopad-quip-eggs-short
+  # same as while loading: a failed run sets the eggs.
+  # a run without a matching recipe still heats everything inside, and eggs set at 344K. the
+  # recipe wants raw egg, so without this the beaker is useless and the kitchen is a dead end
+  - !type:ConditionWatcher
+    once: false
+    condition: !type:AllCondition
+      conditions:
+      - !type:PrototypeSolutionContainsCondition
+        prototype: LargeBeakerTutorial
+        solution: beaker
+        reagent: EggCooked
+        amount: 1
+      - !type:NotCondition
+        condition: !type:PrototypeNearAnchorCondition
+          prototype: LargeBeakerTutorial
+          anchorId: room13_microwave
+          inside: true
+    quip:
+    - tutorial-holopad-quip-eggs-cooked
+    - tutorial-holopad-quip-eggs-cooked-2
+    actions:
+    - !type:SetFlagAction
+      flag: eggs-cooked
+    - !type:DrainPrototypeSolutionAction
+      prototype: LargeBeakerTutorial
+      solution: beaker
+      reagent: EggCooked
+    - !type:SpawnAtAnchorAction
+      anchorId: room13_table_big
+      prototype: FoodEgg
+      tutorialNpc: false
+      preventDeath: false
+    - !type:SpawnAtAnchorAction
+      anchorId: room13_table_big
+      prototype: FoodEgg
+      tutorialNpc: false
+      preventDeath: false
   - !type:ConditionWatcher
     condition: !type:AllCondition
       conditions:
@@ -1666,6 +2017,7 @@
             range: 4
     quip:
     - tutorial-holopad-quip-solids-short
+    - tutorial-holopad-quip-solids-short-2
   # everything was in there and it still did not work, so the timer is the only thing left
   - !type:ConditionWatcher
     condition: !type:AllCondition
@@ -1719,6 +2071,7 @@
           range: 4
     quip:
     - tutorial-holopad-quip-burger-failed
+    - tutorial-holopad-quip-burger-failed-2
   onComplete:
   - !type:SpeakHolopadAction
     lines:
@@ -1731,14 +2084,19 @@
   id: TutorialLinearR13Eat
   instruction: tutorial-step-r13-eat
   navigationAnchor: room13_microwave
-  keybindHint: tutorial-hint-eat
+  keybindHint: tutorial-hint-pickup
   stuckSkipSeconds: 300
   speak:
   - tutorial-holopad-r13-eat
-  completion: !type:NotCondition
-    condition: !type:PrototypeNearAnchorCondition
+  - tutorial-holopad-r13-eat-2
+  completion: !type:AnyCondition
+    conditions:
+    - !type:HoldingPrototypeCondition
       prototype: FoodBurgerSuper
-      range: 10
+    - !type:NotCondition
+      condition: !type:PrototypeNearAnchorCondition
+        prototype: FoodBurgerSuper
+        range: 10
   onComplete:
   - !type:UnlockAnchorAirlockAction
     anchorId: room13_airlock_final
@@ -1791,7 +2149,11 @@
   keybindHint: tutorial-hint-target
   speak:
   - tutorial-holopad-r14-target
-  completion: !type:ManualAcknowledgeCondition
+  # the instruction says "pick a part", so picking one has to be enough. the button stays as a fallback
+  completion: !type:AnyCondition
+    conditions:
+    - !type:TargetChangedCondition
+    - !type:ManualAcknowledgeCondition
 
 - type: tutorialStep
   id: TutorialLinearR14ToUrist
@@ -1844,11 +2206,12 @@
     anchorId: room14_urist
     prone: false
 
+# in combat mode a click on a crate is a punch and the lock never opens, so it goes off first
 - type: tutorialStep
   id: TutorialLinearR14ToBaton
   instruction: tutorial-step-r14-to-baton
   navigationAnchor: room14_crate_stunbaton
-  keybindHint: tutorial-hint-move
+  keybindHint: tutorial-hint-combat-off
   highlightAnchors:
   - room14_crate_stunbaton
   speak:
@@ -1857,9 +2220,13 @@
   - !type:GrantAccessAction
     tags:
     - TutorialCrateStunbaton
-  completion: !type:ReachAnchorCondition
-    anchorId: room14_crate_stunbaton
-    range: 2
+  completion: !type:AllCondition
+    conditions:
+    - !type:ReachAnchorCondition
+      anchorId: room14_crate_stunbaton
+      range: 2
+    - !type:CombatModeCondition
+      enabled: false
 
 - type: tutorialStep
   id: TutorialLinearR14Baton
@@ -1890,7 +2257,7 @@
 - type: tutorialStep
   id: TutorialLinearR14BatonOn
   instruction: tutorial-step-r14-baton-on
-  navigationAnchor: room14_urist
+  navigationAnchor: room14_crate_cuffs
   keybindHint: tutorial-hint-toggle
   speak:
   - tutorial-holopad-r14-baton-on
@@ -1904,18 +2271,6 @@
     intoStorage: true
   completion: !type:ItemToggledCondition
     anchorId: room14_stunbaton
-
-- type: tutorialStep
-  id: TutorialLinearR14Stun
-  instruction: tutorial-step-r14-stun
-  navigationAnchor: room14_urist
-  keybindHint: tutorial-hint-combat
-  highlightAnchors:
-  - room14_urist
-  speak:
-  - tutorial-holopad-r14-stun
-  completion: !type:EntityStunnedCondition
-    anchorId: room14_urist
 
 - type: tutorialStep
   id: TutorialLinearR14ToCuffs
@@ -1934,15 +2289,16 @@
     anchorId: room14_crate_cuffs
     range: 2
 
+# a real arrest goes in with both at hand: baton in one, cuffs in the other
 - type: tutorialStep
   id: TutorialLinearR14Cuffs
   instruction: tutorial-step-r14-cuffs
-  navigationAnchor: room14_urist
-  keybindHint: tutorial-hint-crate
+  navigationAnchor: room14_crate_cuffs
+  keybindHint: tutorial-hint-cuffs-take
   stuckSkipSeconds: 300
   highlightAnchors:
   - room14_crate_cuffs
-  - room14_urist
+  - room14_cuffs
   speak:
   - tutorial-holopad-r14-cuffs
   onEnter:
@@ -1956,6 +2312,67 @@
   - !type:OpenStorageAction
     anchorId: room14_crate_cuffs
     recoveryOnly: true
+  watchers:
+  - !type:ConditionWatcher
+    condition: !type:HeldCondition
+      seconds: 3
+      condition: !type:AllCondition
+        conditions:
+        - !type:HoldingAnchorCondition
+          anchorId: room14_cuffs
+        - !type:NotCondition
+          condition: !type:HoldingAnchorCondition
+            anchorId: room14_stunbaton
+    quip:
+    - tutorial-holopad-r14-cuffs-baton
+  completion: !type:BothHandsAnchorsCondition
+    anchorIds:
+    - room14_stunbaton
+    - room14_cuffs
+
+- type: tutorialStep
+  id: TutorialLinearR14Stun
+  instruction: tutorial-step-r14-stun
+  navigationAnchor: room14_urist
+  keybindHint: tutorial-hint-stun
+  highlightAnchors:
+  - room14_urist
+  speak:
+  - tutorial-holopad-r14-stun
+  watchers:
+  # a hit that did not drop him came from the cuffs hand or from a baton switched off again
+  - !type:ConditionWatcher
+    condition: !type:AllCondition
+      conditions:
+      - !type:MeleeHitAnchorCondition
+        anchorId: room14_urist
+      - !type:NotCondition
+        condition: !type:EntityStunnedCondition
+          anchorId: room14_urist
+    quip:
+    - tutorial-holopad-r14-stun-miss
+  completion: !type:EntityStunnedCondition
+    anchorId: room14_urist
+
+# cuffs work from combat mode too, their hit starts the cuffing instead of hurting
+- type: tutorialStep
+  id: TutorialLinearR14Cuff
+  instruction: tutorial-step-r14-cuff
+  navigationAnchor: room14_urist
+  keybindHint: tutorial-hint-cuff
+  stuckSkipSeconds: 300
+  highlightAnchors:
+  - room14_urist
+  speak:
+  - tutorial-holopad-r14-cuff
+  onEnter:
+  - !type:SpawnAtAnchorAction
+    anchorId: room14_crate_cuffs
+    prototype: Handcuffs
+    assignAnchorId: room14_cuffs
+    tutorialNpc: false
+    preventDeath: false
+    intoStorage: true
   completion: !type:CuffedAnchorCondition
     anchorId: room14_urist
 
@@ -1974,6 +2391,14 @@
   completion: !type:BuckledToAnchorCondition
     anchorId: room14_cell_chair
     entityAnchorId: room14_urist
+
+- type: tutorialWatcherSet
+  id: TutorialR14Range
+  watchers:
+  - !type:FlagWatcher
+    flag: fired-at:room14_urist
+    quip:
+    - tutorial-holopad-r14-range-urist
 
 - type: tutorialStep
   id: TutorialLinearR14Range
@@ -2016,10 +2441,13 @@
   - room14_shooting_pistol
   speak:
   - tutorial-holopad-r14-pistol
+  watcherSets: [ TutorialR14Range ]
   completion: !type:ItemSlotFilledCondition
     anchorId: room14_shooting_pistol
     slot: gun_magazine
 
+# one target at a time, and only the aim counts. four each makes twelve shots while a magazine
+# holds ten, so the reload still comes up
 - type: tutorialStep
   id: TutorialLinearR14Gun
   instruction: tutorial-step-r14-gun
@@ -2027,31 +2455,73 @@
   keybindHint: tutorial-hint-shoot
   stuckSkipSeconds: 420
   highlightAnchors:
-  - room14_shooting_target_close
-  - room14_shooting_target_mid
-  - room14_shooting_target_far
+  - room14_shooting_target
   speak:
   - tutorial-holopad-r14-gun
-  completion: !type:AllCondition
-    conditions:
-    - !type:AnchorDamagedCondition
-      anchorId: room14_shooting_target_close
-    - !type:AnchorDamagedCondition
-      anchorId: room14_shooting_target_mid
-    - !type:AnchorDamagedCondition
-      anchorId: room14_shooting_target_far
+  watchers:
+  - !type:FlagWatcher
+    flag: drill-wrong-target
+    quip:
+    - tutorial-holopad-r14-gun-order
+  # dry with targets still waiting. the pause lets the last shot of the drill finish the step first
+  - !type:ConditionWatcher
+    rearm: true
+    condition: !type:HeldCondition
+      seconds: 1.5
+      condition: !type:AnchorAmmoEmptyCondition
+        anchorId: room14_shooting_pistol
+    quip:
+    - tutorial-holopad-r14-gun-reload
+  watcherSets: [ TutorialR14Range ]
+  completion: !type:ShootTargetsCondition
+    anchorId: room14_shooting_target
+    orderFrom: room14_shooting
+    shotsEach: 4
+  onComplete:
+  - !type:ShotScoreAction
+    summary: tutorial-holopad-r14-score
+    verdicts:
+    - minAccuracy: 1
+      line: tutorial-holopad-r14-score-perfect
+    - minAccuracy: 0.7
+      line: tutorial-holopad-r14-score-good
+    - minAccuracy: 0.4
+      line: tutorial-holopad-r14-score-ok
+    - minAccuracy: 0.01
+      line: tutorial-holopad-r14-score-bad
+    - minAccuracy: 0
+      line: tutorial-holopad-r14-score-zero
 
+# the carbine fires one-handed too, just badly. the pistol and spare magazines have to go
+# somewhere first, since the grip takes the second hand
 - type: tutorialStep
   id: TutorialLinearR14Laser
   instruction: tutorial-step-r14-laser
+  bubbleText: tutorial-bubble-r14-laser
   navigationAnchor: room14_shooting_laser
-  keybindHint: tutorial-hint-pickup
+  keybindHint: tutorial-hint-wield
   highlightAnchors:
   - room14_shooting_laser
   speak:
   - tutorial-holopad-r14-laser
+  watchers:
+  - !type:ConditionWatcher
+    condition: !type:HeldCondition
+      seconds: 6
+      condition: !type:AllCondition
+        conditions:
+        - !type:HoldingAnchorCondition
+          anchorId: room14_shooting_laser
+        - !type:NotCondition
+          condition: !type:HoldingAnchorCondition
+            anchorId: room14_shooting_laser
+            wielded: true
+    quip:
+    - tutorial-holopad-r14-laser-wield
+  watcherSets: [ TutorialR14Range ]
   completion: !type:HoldingAnchorCondition
     anchorId: room14_shooting_laser
+    wielded: true
 
 # a recharger means nothing to someone who never watched a cell run out, so the carbine gets shot flat first
 - type: tutorialStep
@@ -2062,24 +2532,36 @@
   keybindHint: tutorial-hint-shoot
   stuckSkipSeconds: 300
   highlightAnchors:
-  - room14_shooting_target_close
-  - room14_shooting_target_mid
-  - room14_shooting_target_far
+  - room14_shooting_target
+  attackableAnchors:
+  - room14_shooting_target
   speak:
   - tutorial-holopad-r14-laser-shoot
+  watcherSets: [ TutorialR14Range ]
   completion: !type:AnchorAmmoEmptyCondition
     anchorId: room14_shooting_laser
 
+# combat mode is still on from the shooting, and there a click with a gun is a shot, not an insert
 - type: tutorialStep
   id: TutorialLinearR14Charge
   instruction: tutorial-step-r14-charge
   bubbleText: tutorial-bubble-r14-charge
   navigationAnchor: room14_shooting_recharger
-  keybindHint: tutorial-hint-click
+  keybindHint: tutorial-hint-charge
   highlightAnchors:
   - room14_shooting_recharger
   speak:
   - tutorial-holopad-r14-charge
+  watchers:
+  - !type:ConditionWatcher
+    condition: !type:AllCondition
+      conditions:
+      - !type:FlagCondition
+        flag: fired-at:room14_shooting_recharger
+      - !type:CombatModeCondition
+    quip:
+    - tutorial-holopad-r14-charge-combat
+  watcherSets: [ TutorialR14Range ]
   completion: !type:ItemSlotFilledCondition
     anchorId: room14_shooting_recharger
     slot: charger_slot
@@ -2107,6 +2589,7 @@
   - !type:OpenStorageAction
     anchorId: room14_crate_lethal_ammo
     recoveryOnly: true
+  watcherSets: [ TutorialR14Range ]
   completion: !type:HoldingAnchorCondition
     anchorId: room14_lethal_mag
 
@@ -2116,8 +2599,6 @@
   navigationAnchor: room14_shooting_slime_spawn
   keybindHint: tutorial-hint-shoot
   stuckSkipSeconds: 420
-  highlightAnchors:
-  - room14_slime
   speak:
   - tutorial-holopad-r14-slime
   onEnter:
@@ -2132,6 +2613,29 @@
     flag: melee:room14_slime
     quip:
     - tutorial-holopad-quip-slime-fist
+  - !type:FlagWatcher
+    flag: fired-at:room14_urist
+    quip:
+    - tutorial-holopad-r14-slime-urist
+  # every lethal round spent and the slime still up: another magazine goes into the crate, again
+  # for each one shot dry. the pause covers a round still sitting in the chamber
+  - !type:ConditionWatcher
+    rearm: true
+    condition: !type:HeldCondition
+      seconds: 3
+      condition: !type:AnchorAmmoEmptyCondition
+        anchorId: room14_lethal_mag
+        every: true
+    quip:
+    - tutorial-holopad-r14-slime-resupply
+    actions:
+    - !type:SpawnAtAnchorAction
+      anchorId: room14_crate_lethal_ammo
+      prototype: MagazinePistol
+      assignAnchorId: room14_lethal_mag
+      tutorialNpc: false
+      preventDeath: false
+      intoStorage: true
   completion: !type:AnyCondition
     conditions:
     - !type:DeadAnchorCondition
@@ -2164,6 +2668,13 @@
     anchorId: room15_urist
     assignAnchorId: room15_urist
     preventDeath: false
+  # he is treated here and nowhere else, the corridors have no beds and no defibrillator
+  - !type:ConfineAnchorAction
+    anchorId: room15_urist
+    doorways:
+    - room15_airlock
+    - room15_airlock_final
+    popup: tutorial-med-stay
   completion: !type:ReachAnchorCondition
     anchorId: room15
 
@@ -2215,6 +2726,7 @@
   speak:
   - tutorial-holopad-r15-morgue-a
   - tutorial-holopad-r15-morgue-b
+  - tutorial-holopad-r15-morgue-b-2
   - tutorial-holopad-r15-morgue-c
   onEnter:
   - !type:ClaimNearbyMobAction
@@ -2270,6 +2782,7 @@
   speak:
   - tutorial-holopad-r15-scan-a
   - tutorial-holopad-r15-scan-b
+  - tutorial-holopad-r15-scan-hold
   - tutorial-holopad-r15-scan-c
   onEnter:
   - !type:ClaimNearbyMobAction
@@ -2296,7 +2809,9 @@
     condition: !type:UiClosedAnchorCondition
       anchorId: room15_aidkit
 
-# a bruise pack takes 5 blunt per use, so four uses for these 20
+# a bruise pack takes 5 blunt per use, so four uses for these 20. the urist's damage never reaches
+# his limbs (wholeBody on the map spawner), so what the analyzer shows is exactly what is checked
+# here, and nothing closes on its own while the trainee watches
 - type: tutorialStep
   id: TutorialLinearR15Brute
   instruction: tutorial-step-r15-brute
@@ -2312,7 +2827,7 @@
   completion: !type:AnchorDamageBelowCondition
     anchorId: room15_urist
     damageType: Blunt
-    max: 1
+    max: 0
 
 - type: tutorialStep
   id: TutorialLinearR15Burn
@@ -2329,7 +2844,7 @@
   completion: !type:AnchorDamageBelowCondition
     anchorId: room15_urist
     damageType: Heat
-    max: 1
+    max: 0
 
 # the bottle can stay on the table, a syringe draws from anything it can reach
 - type: tutorialStep
@@ -2350,7 +2865,7 @@
   # the end table, which nobody carries off - the syringe anchor would follow the syringe into a hand
   - !type:SpawnAtAnchorAction
     anchorId: room15_urist_bonk_target
-    prototype: ChemistryBottleDylovene
+    prototype: ChemistryBottleDyloveneTutorial
     assignAnchorId: room15_dylovene
     tutorialNpc: false
     preventDeath: false
@@ -2372,7 +2887,8 @@
     anchorId: room15_urist
     range: 2
 
-# dylovene takes a point of poison per metabolism tick, so the step waits for it to come down
+# dylovene takes a point of poison per metabolism tick, so the step waits until all of it is gone
+# rather than finishing the moment the needle goes in. fifteen units clear thirty, he has 25
 - type: tutorialStep
   id: TutorialLinearR15Heal
   instruction: tutorial-step-r15-heal
@@ -2388,7 +2904,7 @@
   completion: !type:AnchorDamageBelowCondition
     anchorId: room15_urist
     damageType: Poison
-    max: 8
+    max: 0
 
 # meant to catch the trainee off guard: nothing here hints at what is coming. the holopad wraps up
 # the treatment while Urist gets up, walks to the table on his own and bonks. TutorialNpcSystem
@@ -2411,16 +2927,18 @@
   completion: !type:DeadAnchorCondition
     anchorId: room15_urist
 
+# a plain bed, not stasis: the rest of the room is treated with him lying on it. any bed in the
+# room will do, room15_bed is only where the pointer goes
 - type: tutorialStep
-  id: TutorialLinearR15Stasis
-  instruction: tutorial-step-r15-stasis
-  bubbleText: tutorial-bubble-r15-stasis
-  navigationAnchor: room15_stasis
-  keybindHint: tutorial-hint-stasis
+  id: TutorialLinearR15Bed
+  instruction: tutorial-step-r15-bed
+  bubbleText: tutorial-bubble-r15-bed
+  navigationAnchor: room15_bed
+  keybindHint: tutorial-hint-bed
   stuckSkipSeconds: 300
   highlightAnchors:
   - room15_urist
-  - room15_stasis
+  - room15_bed
   speak:
   - tutorial-holopad-r15-bonk-c
   - tutorial-holopad-r15-bonk-d
@@ -2430,7 +2948,6 @@
     - !type:DeadAnchorCondition
       anchorId: room15_urist
     - !type:BuckledToAnchorCondition
-      anchorId: room15_stasis
       entityAnchorId: room15_urist
 
 - type: tutorialStep
@@ -2493,6 +3010,15 @@
     assignAnchorId: room15_medipen
     tutorialNpc: false
     preventDeath: false
+  watchers:
+  # the crit can finish him before the shot lands. the defibrillator is still in the room and holds
+  # its charge, so this is a setback rather than a dead end - the trainee just has to be told
+  - !type:ConditionWatcher
+    rearm: true
+    condition: !type:DeadAnchorCondition
+      anchorId: room15_urist
+    quip:
+    - tutorial-holopad-r15-epi-again
   # epinephrine only works in crit, so out of crit is exactly the moment it has done its job
   completion: !type:AnchorAliveCondition
     anchorId: room15_urist
@@ -2508,15 +3034,35 @@
   speak:
   - tutorial-holopad-r15-finish-a
   - tutorial-holopad-r15-finish-b
-  # the asphyxiation clears on its own once he breathes, the bonk bruise and a fresh scan do not
+  watchers:
+  # healed and scanned, but somebody took him off the bed on the way
+  - !type:ConditionWatcher
+    rearm: true
+    condition: !type:HeldCondition
+      seconds: 2
+      condition: !type:AllCondition
+        conditions:
+        - !type:AnchorAliveCondition
+          anchorId: room15_urist
+        - !type:AnchorDamageBelowCondition
+          anchorId: room15_urist
+          max: 0
+        - !type:NotCondition
+          condition: !type:BuckledToAnchorCondition
+            entityAnchorId: room15_urist
+    quip:
+    - tutorial-holopad-r15-finish-bed
+  # the asphyxiation clears on its own once he breathes, the bonk bruise and a fresh scan do not.
+  # every last point has to go, and he has to still be lying on the bed for it
   completion: !type:AllCondition
     conditions:
     - !type:AnchorAliveCondition
       anchorId: room15_urist
     - !type:AnchorDamageBelowCondition
       anchorId: room15_urist
-      damageType: Blunt
-      max: 1
+      max: 0
+    - !type:BuckledToAnchorCondition
+      entityAnchorId: room15_urist
     - !type:HealthAnalyzedCondition
       anchorId: room15_urist
   onComplete:
@@ -2573,6 +3119,8 @@
   - tutorial-holopad-r16-gloves
   completion: !type:WearingSlotCondition
     slot: gloves
+  onComplete:
+  - !type:RequireGlovesAction
 
 - type: tutorialStep
   id: TutorialLinearR16Belt
@@ -2872,6 +3420,7 @@
   speak:
   - tutorial-holopad-r16-unpack-a
   - tutorial-holopad-r16-unpack-b
+  - tutorial-holopad-r16-unpack-c
   watchers:
   - !type:ConditionWatcher
     rearm: true
@@ -2972,6 +3521,7 @@
   speak:
   - tutorial-holopad-r16-ame-a
   - tutorial-holopad-r16-ame-b
+  - tutorial-holopad-r16-ame-b-2
   completion: !type:AmeInjectingCondition
     anchorId: room16_ame_controller
   onComplete:
@@ -3073,6 +3623,7 @@
   - room16_example_consumer_bulb
   speak:
   - tutorial-holopad-r16-explain-apc-a
+  - tutorial-holopad-r16-explain-apc-a-2
   - tutorial-holopad-r16-explain-apc-b
   completion: !type:MentorFinishedSpeakingCondition
 
@@ -3088,6 +3639,51 @@
   - tutorial-holopad-r16-build-intro-a
   - tutorial-holopad-r16-build-intro-b
   completion: !type:MentorFinishedSpeakingCondition
+
+# nothing stops a trainee from raising all three machines at once, or in their own order, so the nets
+# that catch a run out of steel or a board in the wrong frame belong to the room and not to whichever
+# step happens to be up
+- type: tutorialWatcherSet
+  id: TutorialR16Build
+  watchers:
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r16-steel-spare
+    actions:
+    - !type:SpawnAtAnchorAction
+      anchorId: room16_autolathe
+      prototype: SheetSteel
+      tutorialNpc: false
+      preventDeath: false
+    condition: !type:AllCondition
+      conditions:
+      - !type:LatheMaterialsLoadedCondition
+        anchorId: room16_autolathe
+        materials: [ Steel ]
+      - !type:NotCondition
+        condition: !type:StackAmountNearCondition
+          stackType: Steel
+          min: 8
+          range: 8
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r16-board-wrong
+    condition: !type:PrototypeNearAnchorCondition
+      prototype: SubstationMachineCircuitboard
+      anchorId: room16_build_smes
+      range: 0.5
+      ignoreCarried: true
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r16-substation-board-wrong
+    condition: !type:PrototypeNearAnchorCondition
+      prototype: SMESMachineCircuitboard
+      anchorId: room15_build_substation
+      range: 0.5
+      ignoreCarried: true
 
 # the SMES is the one machine built with a hand on the shoulder: the crafting menu, the autolathe, then every
 # stage of the frame and the examine text that says what the frame wants next. the terminal, the substation
@@ -3108,6 +3704,10 @@
   speak:
   - tutorial-holopad-r16-craft-menu-a
   - tutorial-holopad-r16-craft-menu-b
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:CraftingMenuOpenedCondition {}
 
 - type: tutorialStep
@@ -3132,6 +3732,10 @@
       recipe: MachineFrame
       stray: true
       strayRange: 1.5
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:ConstructionGhostOnAnchorCondition
@@ -3167,6 +3771,10 @@
       prototypes: [ UnfinishedMachineFrame ]
       stray: true
       strayRange: 1.5
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:PrototypesOnAnchorsCondition
     anchorIds: [ room16_build_smes ]
     prototypes: [ UnfinishedMachineFrame, MachineFrame, SMESBasicEmpty ]
@@ -3188,28 +3796,10 @@
   speak:
   - tutorial-holopad-r16-lathe-load-a
   - tutorial-holopad-r16-lathe-load-b
-  watchers:
-  - !type:ConditionWatcher
-    rearm: true
-    quip:
-    - tutorial-holopad-r16-steel-spare
-    actions:
-    - !type:SpawnAtAnchorAction
-      anchorId: room16_autolathe
-      prototype: SheetSteel
-      assignAnchorId: room16_spare_steel
-      tutorialNpc: false
-      preventDeath: false
-    condition: !type:AllCondition
-      conditions:
-      - !type:LatheMaterialsLoadedCondition
-        anchorId: room16_autolathe
-        materials: [ Steel ]
-      - !type:NotCondition
-        condition: !type:StackAmountNearCondition
-          stackType: Steel
-          min: 8
-          range: 8
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:LatheMaterialsLoadedCondition
     anchorId: room16_autolathe
     materials: [ Steel, Glass, Plastic ]
@@ -3238,6 +3828,10 @@
   speak:
   - tutorial-holopad-r16-lathe-smes-a
   - tutorial-holopad-r16-lathe-smes-b
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:LatheGuideGatheredCondition {}
@@ -3253,6 +3847,10 @@
   speak:
   - tutorial-holopad-r16-frame-examine-a
   - tutorial-holopad-r16-frame-examine-b
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:ExaminedNearAnchorCondition
@@ -3271,6 +3869,10 @@
   stuckSkipSeconds: 300
   speak:
   - tutorial-holopad-r16-frame-anchor
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:PrototypeNearAnchorCondition
@@ -3295,6 +3897,10 @@
   stuckSkipSeconds: 300
   speak:
   - tutorial-holopad-r16-frame-cable
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:PrototypeNearAnchorCondition
@@ -3314,16 +3920,10 @@
   stuckSkipSeconds: 300
   speak:
   - tutorial-holopad-r16-board
-  watchers:
-  - !type:ConditionWatcher
-    rearm: true
-    quip:
-    - tutorial-holopad-r16-board-wrong
-    condition: !type:PrototypeNearAnchorCondition
-      prototype: SubstationMachineCircuitboard
-      anchorId: room16_build_smes
-      range: 0.5
-      ignoreCarried: true
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:PrototypeNearAnchorCondition
@@ -3344,6 +3944,10 @@
   keybindHint: tutorial-hint-examine-frame
   speak:
   - tutorial-holopad-r16-parts-examine
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:ExaminedNearAnchorCondition
@@ -3377,6 +3981,10 @@
   speak:
   - tutorial-holopad-r16-parts-a
   - tutorial-holopad-r16-parts-b
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:MachineFrameCompleteNearAnchorCondition
@@ -3394,6 +4002,10 @@
   stuckSkipSeconds: 300
   speak:
   - tutorial-holopad-r16-smes-screw
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:PrototypeNearAnchorCondition
     prototype: SMESBasicEmpty
     anchorId: room16_build_smes
@@ -3420,6 +4032,11 @@
       count: 10
   speak:
   - tutorial-holopad-r16-terminal-print
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_cable_terminal ]
+    prototypes: [ CableTerminal ]
+    rotation: Match
   completion: !type:AnyCondition
     conditions:
     - !type:LatheGuideGatheredCondition {}
@@ -3446,6 +4063,7 @@
     rearm: true
     quip:
     - tutorial-holopad-r16-terminal-wrong
+    - tutorial-holopad-r16-terminal-wrong-2
     condition: !type:PrototypesOnAnchorsCondition
       anchorIds: [ room16_build_cable_terminal ]
       prototypes: [ CableTerminal ]
@@ -3459,6 +4077,11 @@
       prototypes: [ CableTerminal ]
       stray: true
       strayRange: 1.5
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_cable_terminal ]
+    prototypes: [ CableTerminal ]
+    rotation: Match
   completion: !type:PrototypesOnAnchorsCondition
     anchorIds: [ room16_build_cable_terminal ]
     prototypes: [ CableTerminal ]
@@ -3480,33 +4103,16 @@
   - !type:ConditionWatcher
     rearm: true
     quip:
-    - tutorial-holopad-r16-steel-spare
-    actions:
-    - !type:SpawnAtAnchorAction
-      anchorId: room16_autolathe
-      prototype: SheetSteel
-      assignAnchorId: room16_spare_steel
-      tutorialNpc: false
-      preventDeath: false
-    condition: !type:AllCondition
-      conditions:
-      - !type:LatheMaterialsLoadedCondition
-        anchorId: room16_autolathe
-        materials: [ Steel ]
-      - !type:NotCondition
-        condition: !type:StackAmountNearCondition
-          stackType: Steel
-          min: 5
-          range: 8
-  - !type:ConditionWatcher
-    rearm: true
-    quip:
     - tutorial-holopad-r16-frame-misplaced
     condition: !type:PrototypesOnAnchorsCondition
       anchorIds: [ room15_build_substation ]
       prototypes: [ UnfinishedMachineFrame ]
       stray: true
       strayRange: 1.5
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room15_build_substation ]
+    prototypes: [ SubstationBasicEmpty ]
   completion: !type:PrototypesOnAnchorsCondition
     anchorIds: [ room15_build_substation ]
     prototypes: [ UnfinishedMachineFrame, MachineFrame, SubstationBasicEmpty ]
@@ -3534,6 +4140,10 @@
     - recipe: CableStack
   speak:
   - tutorial-holopad-r16-substation-print
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room15_build_substation ]
+    prototypes: [ SubstationBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:LatheGuideGatheredCondition {}
@@ -3564,16 +4174,10 @@
   speak:
   - tutorial-holopad-r16-substation-a
   - tutorial-holopad-r16-substation-b
-  watchers:
-  - !type:ConditionWatcher
-    rearm: true
-    quip:
-    - tutorial-holopad-r16-substation-board-wrong
-    condition: !type:PrototypeNearAnchorCondition
-      prototype: SMESMachineCircuitboard
-      anchorId: room15_build_substation
-      range: 0.5
-      ignoreCarried: true
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room15_build_substation ]
+    prototypes: [ SubstationBasicEmpty ]
   completion: !type:PrototypesOnAnchorsCondition
     anchorIds: [ room15_build_substation ]
     prototypes: [ SubstationBasicEmpty ]
@@ -3594,6 +4198,10 @@
     - recipe: APCElectronics
   speak:
   - tutorial-holopad-r16-apc-print
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room15_build_apc ]
+    prototypes: [ APCConstructed ]
   completion: !type:AnyCondition
     conditions:
     - !type:LatheGuideGatheredCondition {}
@@ -3618,33 +4226,16 @@
   - !type:ConditionWatcher
     rearm: true
     quip:
-    - tutorial-holopad-r16-steel-spare
-    actions:
-    - !type:SpawnAtAnchorAction
-      anchorId: room16_autolathe
-      prototype: SheetSteel
-      assignAnchorId: room16_spare_steel
-      tutorialNpc: false
-      preventDeath: false
-    condition: !type:AllCondition
-      conditions:
-      - !type:LatheMaterialsLoadedCondition
-        anchorId: room16_autolathe
-        materials: [ Steel ]
-      - !type:NotCondition
-        condition: !type:StackAmountNearCondition
-          stackType: Steel
-          min: 3
-          range: 8
-  - !type:ConditionWatcher
-    rearm: true
-    quip:
     - tutorial-holopad-r16-apc-misplaced
     condition: !type:PrototypesOnAnchorsCondition
       anchorIds: [ room15_build_apc ]
       prototypes: [ APCFrame, APCConstructed ]
       stray: true
       strayRange: 2
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room15_build_apc ]
+    prototypes: [ APCConstructed ]
   completion: !type:PrototypesOnAnchorsCondition
     anchorIds: [ room15_build_apc ]
     prototypes: [ APCConstructed ]
@@ -3671,6 +4262,9 @@
       count: 3
   speak:
   - tutorial-holopad-r16-cables
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PoweredAnchorCondition
+    anchorId: room15_build_bulb
   completion: !type:AnyCondition
     conditions:
     - !type:LatheGuideGatheredCondition {}
@@ -3707,6 +4301,7 @@
   speak:
   - tutorial-holopad-r16-power-a
   - tutorial-holopad-r16-power-b
+  watcherSets: [ TutorialR16Build ]
   completion: !type:PoweredAnchorCondition
     anchorId: room15_build_bulb
   onComplete:
@@ -3722,6 +4317,9 @@
   instruction: tutorial-step-r17-walk
   navigationAnchor: room17_bolt_airlock
   speakAtAnchor: room17
+  onEnter:
+  - !type:RequireGlovesAction
+    required: false
   speak:
   - tutorial-holopad-r17-a
   completion: !type:ReachAnchorCondition
@@ -3748,13 +4346,19 @@
   speak:
   - tutorial-holopad-r17-b
   - tutorial-holopad-r17-c
+  - tutorial-holopad-r17-c-2
   - tutorial-holopad-r17-d
+  - tutorial-holopad-r17-d-2
   - tutorial-holopad-r17-guide
+  - tutorial-holopad-r17-guide-2
   - tutorial-holopad-r17-crew-a
   - tutorial-holopad-r17-crew-b
+  - tutorial-holopad-r17-crew-b-2
   - tutorial-holopad-r17-crew-c
+  - tutorial-holopad-r17-crew-c-2
   - tutorial-holopad-r17-crew-d
   - tutorial-holopad-r17-crew-e
+  - tutorial-holopad-r17-crew-e-2
   completion: !type:MentorFinishedSpeakingCondition
 
 - type: tutorialStep
@@ -3771,6 +4375,7 @@
   - room17_contract
   speak:
   - tutorial-holopad-r17-e
+  - tutorial-holopad-r17-e-2
   - tutorial-holopad-r17-f
   onEnter:
   - !type:SpawnAtAnchorAction

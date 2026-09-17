@@ -112,13 +112,11 @@ looc_budget_enabled = false
 [atmos]
 space_wind = false
 
-[intro]
+[tutorial]
 mode = "Tutorial"
 return_server_con_string = "ss14://127.0.0.1:1212"
-skip_lobby_intro_debug = false
-
-[tutorial]
-debug_start_room = "room16"
+skip_lobby_debug = false
+debug_start_room = "room15"
 away_cleanup = 1200
 
 [build]

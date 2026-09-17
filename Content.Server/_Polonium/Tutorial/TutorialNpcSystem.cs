@@ -1,16 +1,25 @@
 using System.Numerics;
 using Content.Server.Chat.Systems;
+using Content.Server.NPC.HTN;
+using Content.Server.NPC.Systems;
 using Content.Server.Physics.Controllers;
 using Content.Shared._Polonium.Tutorial.Components;
+using Content.Shared.Buckle;
 using Content.Shared.Climbing.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
+using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Nutrition;
+using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Nutrition.Prototypes;
 using Content.Shared.SSDIndicator;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
@@ -31,8 +40,14 @@ public sealed partial class TutorialNpcSystem : EntitySystem
     // and little enough that one medipen of epinephrine lifts him out of crit
     private const float LethalMargin = 5f;
 
+    /// <summary>Asphyxiation a second, on top of what his lungs manage on their own.</summary>
+    private const float CatchBreathRate = 5f;
+
     private const float ArriveDistance = 0.2f;
     private static readonly TimeSpan WalkTimeout = TimeSpan.FromSeconds(15);
+    private static readonly ProtoId<DamageTypePrototype> Asphyxiation = "Asphyxiation";
+    private static readonly SatiationValue Overfed = "Overfed";
+    private static readonly SatiationValue Overhydrated = "Overhydrated";
 
     // a beat to stop before he climbs - arriving at full speed breaks the climb do-after on move
     private static readonly TimeSpan SettleTime = TimeSpan.FromSeconds(0.6);
@@ -46,6 +61,15 @@ public sealed partial class TutorialNpcSystem : EntitySystem
     [Dependency] private ClimbSystem _climb = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
     [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private SatiationSystem _satiation = default!;
+    [Dependency] private NPCSystem _npc = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private SharedBuckleSystem _buckle = default!;
+    [Dependency] private PullingSystem _pulling = default!;
+
+    private static readonly ProtoId<HTNCompoundPrototype> IdleTask = "IdleCompound";
+    private static readonly ProtoId<HTNCompoundPrototype> RuminantTask = "RuminantCompound";
+    private static readonly ProtoId<HTNCompoundPrototype> RuminantHostileTask = "RuminantHostileCompound";
 
     public override void Initialize()
     {
@@ -58,6 +82,8 @@ public sealed partial class TutorialNpcSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
+        CatchBreath(frameTime);
+
         var now = _timing.CurTime;
         var query = EntityQueryEnumerator<TutorialNpcBonkComponent>();
         while (query.MoveNext(out var uid, out var bonk))
@@ -75,6 +101,8 @@ public sealed partial class TutorialNpcSystem : EntitySystem
                     if (now < bonk.NextAt)
                         break;
 
+                    // a trainee who tucked him into a bed would otherwise keep him strapped there
+                    _buckle.Unbuckle(uid, null);
                     bonk.Target = BesideTable(uid, bonk.Table);
                     bonk.Stage = TutorialBonkStage.Walking;
                     bonk.NextAt = now + WalkTimeout;
@@ -111,6 +139,29 @@ public sealed partial class TutorialNpcSystem : EntitySystem
     }
 
     /// <summary>
+    /// Stock lungs wash out one point of asphyxiation every two seconds. A patient dragged back from
+    /// the far side of the death threshold carries over a hundred of it, and waiting that off is many
+    /// minutes of standing around. Once he is out of crit and breathing on his own it goes ten times
+    /// faster - while he is still under, the clock runs at the stock rate and he can be lost again.
+    /// </summary>
+    private void CatchBreath(float frameTime)
+    {
+        var heal = new DamageSpecifier();
+        var query = EntityQueryEnumerator<TutorialNpcComponent, DamageableComponent>();
+        while (query.MoveNext(out var uid, out _, out var damageable))
+        {
+            if (!_mobState.IsAlive(uid))
+                continue;
+
+            if (_damageable.GetPositiveDamage((uid, damageable)).DamageDict.GetValueOrDefault(Asphyxiation) <= 0)
+                continue;
+
+            heal.DamageDict[Asphyxiation] = -CatchBreathRate * frameTime;
+            _damageable.ChangeDamage(uid, heal, ignoreResistances: true);
+        }
+    }
+
+    /// <summary>
     /// Steps him along on his own legs, the same way NPC steering does: movement input every tick,
     /// no pathfinding. The table is a few tiles off across open floor, and pathfinding on the tutorial
     /// grid never produced a path for him.
@@ -133,6 +184,15 @@ public sealed partial class TutorialNpcSystem : EntitySystem
 
     private void SetWalk(EntityUid uid, Vector2 worldDirection)
     {
+        // walking off breaks a grip, the same as it does for anyone who steps away on their own.
+        // he drives the mover directly, so the stock move input never gets to do it for him
+        if (worldDirection != Vector2.Zero
+            && TryComp<PullableComponent>(uid, out var pullable)
+            && pullable.BeingPulled)
+        {
+            _pulling.TryStopPull(uid, pullable, uid);
+        }
+
         if (!TryComp<InputMoverComponent>(uid, out var mover))
             return;
 
@@ -163,6 +223,26 @@ public sealed partial class TutorialNpcSystem : EntitySystem
     {
         RemComp<SSDIndicatorComponent>(uid);
         _statusEffects.TryRemoveStatusEffect(uid, SSDIndicatorSystem.StatusEffectSSDSleeping);
+    }
+
+    public void SatiateAndIdle(EntityUid uid)
+    {
+        if (TryComp<SatiationComponent>(uid, out var satiation))
+        {
+            var ent = (uid, satiation);
+            _satiation.SetValue(ent, SatiationSystem.Hunger, Overfed);
+            _satiation.SetValue(ent, SatiationSystem.Thirst, Overhydrated);
+        }
+
+        if (!TryComp<HTNComponent>(uid, out var htn))
+            return;
+
+        if (htn.RootTask.Task != RuminantTask && htn.RootTask.Task != RuminantHostileTask)
+            return;
+
+        _npc.SleepNPC(uid, htn);
+        htn.RootTask = new HTNCompoundTask { Task = IdleTask };
+        _npc.WakeNPC(uid, htn);
     }
 
     /// <summary>

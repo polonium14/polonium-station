@@ -61,13 +61,18 @@ public sealed partial class TutorialMentorSystem : EntitySystem
     /// <summary>Quips, stuck hints, death lines. Said as soon as the queue reaches them.</summary>
     public void Enqueue(EntityUid player, IEnumerable<LocId> lines)
     {
+        EnqueueTexts(player, lines.Select(line => Loc.GetString(line)));
+    }
+
+    /// <summary>Same as <see cref="Enqueue"/>, for lines that were formatted with arguments already.</summary>
+    public void EnqueueTexts(EntityUid player, IEnumerable<string> texts)
+    {
         if (!TryGetMentor(player, out var mentorComp))
             return;
 
         var quips = new List<TutorialSpeechLine>();
-        foreach (var line in lines)
+        foreach (var text in texts)
         {
-            var text = Loc.GetString(line);
             if (!string.IsNullOrWhiteSpace(text))
                 quips.Add(new TutorialSpeechLine { Text = text });
         }
@@ -111,6 +116,12 @@ public sealed partial class TutorialMentorSystem : EntitySystem
 
         foreach (var line in lines)
             QueueLine(mentorComp, Loc.GetString(line), gateAnchor, gateRange, gateHoldSeconds, fromStep: true);
+    }
+
+    public void DropBriefing(EntityUid player)
+    {
+        if (TryGetMentor(player, out var mentorComp))
+            DropPendingBriefing(mentorComp);
     }
 
     public void EnqueueRaw(EntityUid player, string text)
@@ -292,6 +303,8 @@ public sealed partial class TutorialMentorSystem : EntitySystem
         // a stuck hint arriving while the briefing is still gated must not arm it
         if (line.FromStep)
             session.Flags.Add(SpokeFlag);
+        else
+            mentorComp.QuipDoneAt = mentorComp.NextSpeak;
 
         Speak(mentor, line.Text);
     }
@@ -306,6 +319,18 @@ public sealed partial class TutorialMentorSystem : EntitySystem
             return false;
 
         return mentorComp.SpeechQueue.Count > 0 || _timing.CurTime < mentorComp.NextSpeak;
+    }
+
+    /// <summary>A reaction line is still queued, or the last one said is still being read.</summary>
+    public bool QuipsPending(EntityUid player)
+    {
+        if (!TryComp<TutorialSessionComponent>(player, out var session))
+            return false;
+
+        if (session.MentorUid is not { } mentor || !TryComp<TutorialMentorComponent>(mentor, out var mentorComp))
+            return false;
+
+        return mentorComp.SpeechQueue.Any(l => !l.FromStep) || _timing.CurTime < mentorComp.QuipDoneAt;
     }
 
     private static TimeSpan GapAfter(string text)

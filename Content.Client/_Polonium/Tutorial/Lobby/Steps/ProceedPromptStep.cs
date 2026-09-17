@@ -22,9 +22,9 @@ public sealed partial class ProceedPromptStep : ClientsideNavTutorialStep
 
     public override bool Execute()
     {
-        if (!string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
+        if (!string.IsNullOrEmpty(_cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString)))
             PromptOverlay();
-        else if (!string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroReturnServerConnectionString)))
+        else if (!string.IsNullOrEmpty(_cfg.GetCVar(CCVars.TutorialReturnServerConnectionString)))
             PracticalOverlay();
         else
             FallbackOverlay();
@@ -148,7 +148,7 @@ public sealed partial class ProceedPromptStep : ClientsideNavTutorialStep
     {
         Tutorial.CompleteTutorial(); // TODO: na tym momencie wprowadzenie do lobby się normalnie kończy, należy zapisać w bazie, że gracz doszedł do tego momentu
 
-        _game.Redial(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString),
+        _game.Redial(_cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString),
             Loc.GetString("intro-solitary-server-hopping-message"));
     }
 }

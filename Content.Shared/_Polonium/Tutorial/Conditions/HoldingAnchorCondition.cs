@@ -5,4 +5,8 @@ public sealed partial class HoldingAnchorCondition : TutorialCondition
 {
     [DataField(required: true)]
     public string AnchorId = string.Empty;
+
+    /// <summary>Only counts when gripped with both hands.</summary>
+    [DataField]
+    public bool Wielded;
 }

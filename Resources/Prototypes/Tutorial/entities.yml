@@ -121,6 +121,18 @@
     charge: 1
     switchedOn: true
 
+# stock cart has a spill verb and you can drain the tank into a bucket. either one
+# dumps the rinse water and the mop step has nothing left to wring into
+- type: entity
+  parent: JanitorialTrolley
+  id: JanitorialTrolleyTutorial
+  suffix: Tutorial
+  components:
+  - type: TutorialNoPour
+  - type: Spillable
+    canSpillFromHand: false
+  - type: !Remove DrainableSolution
+
 - type: entity
   parent: PuddleTemporary
   id: PuddleTutorial
@@ -242,6 +254,25 @@
   id: SyringeTutorial
   suffix: Tutorial
 
+# it cannot be poured out, splashed or smashed, and the whole bottle is still under the twenty
+# units that make dylovene turn on its patient - emptying it into him is a waste, never an overdose.
+# the syringe holds fifteen of it, which clears twice the poison he carries
+- type: entity
+  parent: ChemistryBottleDylovene
+  id: ChemistryBottleDyloveneTutorial
+  suffix: Tutorial
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Dylovene
+        Quantity: 19
+  - type: TutorialMedicine
+  - type: Destructible
+    thresholds: []
+  - type: !Remove DrainableSolution
+  - type: !Remove Spillable
+
 - type: entity
   parent: Paper
   id: PaperTutorialBurgerRecipe
@@ -316,3 +347,101 @@
   - type: TutorialSoil
   - type: Destructible
     thresholds: []
+
+- type: entity
+  parent: BaseMachine
+  id: TutorialJukebox
+  name: jukebox
+  description: A machine capable of playing a wide variety of tunes. Enjoyment not guaranteed.
+  suffix: Tutorial
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/jukebox.rsi
+    state: on
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.45,0.25,0.45"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 200
+  - type: Damageable
+    damageModifierSet: WoodMod
+  - type: Destructible
+    thresholds: []
+
+# mime wall, just without the timed despawn. no sprite = actually invisible
+- type: entity
+  id: WallInvisiblePermanent
+  name: invisible wall
+  suffix: Permanent
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Wall
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+
+# the only defibrillator in the room. it never runs flat, its cell stays where it is, and the shock
+# carries no damage of its own - a patient who is already just past dead must not be pushed further
+- type: entity
+  parent: Defibrillator
+  id: DefibrillatorTutorial
+  suffix: Tutorial
+  components:
+  - type: Defibrillator
+    zapDamage: 0
+  - type: PowerCellDraw
+    useCharge: 0
+    drawRate: 0
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+        locked: true
+  - type: Destructible
+    thresholds: []
+
+- type: entity
+  parent: DefibrillatorCabinet
+  id: DefibrillatorCabinetTutorial
+  suffix: Tutorial
+  components:
+  - type: ContainerFill
+    containers:
+      ItemCabinet:
+      - DefibrillatorTutorial
+  - type: Destructible
+    thresholds: []
+
+- type: tile
+  id: TutorialSpaceBarrier
+  name: tiles-tutorial-space-barrier
+  sprite: /Textures/_Polonium/Tiles/invisible.png
+  baseTurf: Space
+  isSubfloor: true
+  isSpace: true
+  indestructible: true
+  weather: false
+  heatCapacity: 10000

@@ -109,10 +109,12 @@ public sealed partial class AmeControllerSystem : EntitySystem
                 if (TryComp<PowerSupplierComponent>(uid, out var powerOutlet))
                     powerOutlet.MaxSupply = powerOutput;
 
-                fuelContainer.FuelAmount -= availableInject;
+                if (!HasComp<TutorialAmeLimitComponent>(uid))
+                {
+                    fuelContainer.FuelAmount -= availableInject;
 
-                // Dirty for the sake of the AME fuel examine not mispredicting
-                Dirty(controller.FuelSlot.Item.Value, fuelContainer);
+                    Dirty(controller.FuelSlot.Item.Value, fuelContainer);
+                }
 
                 // only play audio if we actually had an injection
                 if (availableInject > 0)

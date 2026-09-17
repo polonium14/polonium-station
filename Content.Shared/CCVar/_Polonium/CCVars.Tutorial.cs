@@ -34,14 +34,14 @@ public sealed partial class CCVars
     /// <summary>
     /// None, Main or Tutorial. Default is None. Main is the regular station. Tutorial is the training box.
     /// </summary>
-    public static readonly CVarDef<string> IntroServerMode =
-        CVarDef.Create("intro.mode", "None", CVar.SERVER | CVar.REPLICATED);
-    
+    public static readonly CVarDef<string> TutorialMode =
+        CVarDef.Create("tutorial.mode", "None", CVar.SERVER | CVar.REPLICATED);
+
     /// <summary>
     /// Skip the lobby introduction.
     /// </summary>
-    public static readonly CVarDef<bool> SkipLobbyIntroDebug =
-        CVarDef.Create("intro.skip_lobby_intro_debug", false, CVar.SERVER | CVar.REPLICATED);
+    public static readonly CVarDef<bool> TutorialSkipLobbyDebug =
+        CVarDef.Create("tutorial.skip_lobby_debug", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// Jump the practical tutorial to this room marker on start. Empty is off.
@@ -58,20 +58,27 @@ public sealed partial class CCVars
     public static readonly CVarDef<float> TutorialAwayCleanup =
         CVarDef.Create("tutorial.away_cleanup", 1200f, CVar.SERVER);
 
-    public static readonly CVarDef<string> IntroSolitaryServerConnectionString =
-        CVarDef.Create("intro.solitary_server_con_string", string.Empty, CVar.SERVER | CVar.REPLICATED);
+    public static readonly CVarDef<string> TutorialSolitaryServerConnectionString =
+        CVarDef.Create("tutorial.solitary_server_con_string", string.Empty, CVar.SERVER | CVar.REPLICATED);
 
-    public static readonly CVarDef<string> IntroReturnServerConnectionString =
-        CVarDef.Create("intro.return_server_con_string", string.Empty, CVar.SERVER | CVar.REPLICATED);
+    public static readonly CVarDef<string> TutorialReturnServerConnectionString =
+        CVarDef.Create("tutorial.return_server_con_string", string.Empty, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>Player said no to the lobby training offer. Do not ask again on this client.</summary>
-    public static readonly CVarDef<bool> IntroDeclined =
-        CVarDef.Create("intro.declined", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+    public static readonly CVarDef<bool> TutorialDeclined =
+        CVarDef.Create("tutorial.declined", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// Client-side copy of a finished run. The db is the source of truth, this just covers a
     /// hop back to a main box that does not share that db.
     /// </summary>
-    public static readonly CVarDef<bool> IntroCompleted =
-        CVarDef.Create("intro.completed", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+    public static readonly CVarDef<bool> TutorialCompleted =
+        CVarDef.Create("tutorial.completed", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Tutorial bubble size the player picked in the lobby, as a multiplier on the size worked out
+    /// from how much screen there is. Applies to lobby and in-round bubbles alike.
+    /// </summary>
+    public static readonly CVarDef<float> TutorialBubbleScale =
+        CVarDef.Create("tutorial.bubble_scale", 1f, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

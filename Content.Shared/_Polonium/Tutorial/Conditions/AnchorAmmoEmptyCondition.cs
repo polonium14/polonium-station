@@ -5,4 +5,11 @@ public sealed partial class AnchorAmmoEmptyCondition : TutorialCondition
 {
     [DataField(required: true)]
     public string AnchorId = string.Empty;
+
+    /// <summary>
+    /// Every anchor with this id is dry, not just one. Also true once none of them are left,
+    /// a magazine thrown away is as good as an empty one.
+    /// </summary>
+    [DataField]
+    public bool Every;
 }

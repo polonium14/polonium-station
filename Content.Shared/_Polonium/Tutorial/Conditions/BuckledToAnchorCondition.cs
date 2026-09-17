@@ -2,8 +2,9 @@ namespace Content.Shared._Polonium.Tutorial.Conditions;
 
 public sealed partial class BuckledToAnchorCondition : TutorialCondition
 {
-    [DataField(required: true)]
-    public string AnchorId = string.Empty;
+    /// <summary>What they sit or lie on. Null means anything a body lies down on, any bed will do.</summary>
+    [DataField]
+    public string? AnchorId;
 
     /// <summary>Who has to be sitting there. Null means the trainee.</summary>
     [DataField]

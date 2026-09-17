@@ -65,6 +65,11 @@ public sealed partial class TutorialHighlightSystem : EntitySystem
 
         _wanted.Clear();
 
+        // a shooting drill lights one target at a time, the rest of the row waits its turn
+        string? focusRow = null;
+        if (session.FocusTarget is { } focus && TryComp<TutorialAnchorComponent>(focus, out var focusAnchor))
+            focusRow = focusAnchor.AnchorId;
+
         var query = EntityQueryEnumerator<TutorialAnchorComponent, SpriteComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var anchor, out _, out var ax))
         {
@@ -72,6 +77,9 @@ public sealed partial class TutorialHighlightSystem : EntitySystem
                 continue;
 
             if (!session.HighlightAnchors.Contains(anchor.AnchorId))
+                continue;
+
+            if (anchor.AnchorId == focusRow && uid != session.FocusTarget)
                 continue;
 
             // pink crosses and other mapping helpers stay invisible

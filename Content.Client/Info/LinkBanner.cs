@@ -88,21 +88,21 @@ namespace Content.Client.Info
                 link.Visible = _cfg.GetCVar(cVar) != "";
             }
 
-            _cfg.OnValueChanged(CCVars.IntroServerMode, OnIntroModeChanged);
-            _cfg.OnValueChanged(CCVars.IntroSolitaryServerConnectionString, OnIntroHopChanged);
+            _cfg.OnValueChanged(CCVars.TutorialMode, OnTutorialModeChanged);
+            _cfg.OnValueChanged(CCVars.TutorialSolitaryServerConnectionString, OnTutorialHopChanged);
             UpdateTutorialButton();
         }
 
         protected override void ExitedTree()
         {
-            _cfg.UnsubValueChanged(CCVars.IntroServerMode, OnIntroModeChanged);
-            _cfg.UnsubValueChanged(CCVars.IntroSolitaryServerConnectionString, OnIntroHopChanged);
+            _cfg.UnsubValueChanged(CCVars.TutorialMode, OnTutorialModeChanged);
+            _cfg.UnsubValueChanged(CCVars.TutorialSolitaryServerConnectionString, OnTutorialHopChanged);
             base.ExitedTree();
         }
 
-        private void OnIntroModeChanged(string _) => UpdateTutorialButton();
+        private void OnTutorialModeChanged(string _) => UpdateTutorialButton();
 
-        private void OnIntroHopChanged(string _) => UpdateTutorialButton();
+        private void OnTutorialHopChanged(string _) => UpdateTutorialButton();
 
         private void UpdateTutorialButton()
         {
@@ -112,7 +112,7 @@ namespace Content.Client.Info
             // hop leftover from main would otherwise keep this on the training box
             TutorialButton.Visible =
                 _tutorial.GetIntroMode() == SharedTutorialSystem.IntroMain
-                && !string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString));
+                && !string.IsNullOrEmpty(_cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString));
         }
     }
 }

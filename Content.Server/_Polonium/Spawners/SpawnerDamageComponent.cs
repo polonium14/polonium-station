@@ -11,6 +11,13 @@ public sealed partial class SpawnerDamageComponent : Component
 {
     [DataField(required: true)]
     public DamageSpecifier Damage = new();
+
+    /// <summary>
+    /// Keeps the damage on the mob as a whole instead of splitting it across limbs. Nothing then
+    /// closes on its own, and a heal always lands on the same number the analyzer shows.
+    /// </summary>
+    [DataField]
+    public bool WholeBody;
 }
 
 /// <summary>

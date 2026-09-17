@@ -1,21 +1,32 @@
+using System.Linq;
 using Content.Server.Construction;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
+using Content.Server.Ghost.Roles.Components;
+using Content.Server.Power.Components;
+using Content.Server.Power.EntitySystems;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
+using Content.Shared._Polonium.Tutorial.Conditions;
 using Content.Shared._Polonium.Tutorial.Prototypes;
+using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode.Pacification;
+using Content.Shared.Construction;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Electrocution;
+using Content.Shared.Movement.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Standing;
 using Content.Shared.Tools.Components;
+using Content.Shared.Tools.Systems;
 using Content.Shared.Wall;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -37,11 +48,19 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
     [Dependency] private IServerDbManager _db = default!;
     [Dependency] private TutorialActionExecutor _actions = default!;
     [Dependency] private TutorialMentorSystem _mentor = default!;
+    [Dependency] private TutorialNpcSystem _npcs = default!;
+    [Dependency] private TutorialConditionTracker _tracker = default!;
     [Dependency] private SolitarySpawningSystem _solitary = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private MobThresholdSystem _thresholds = default!;
     [Dependency] private StandingStateSystem _standing = default!;
+    [Dependency] private SatiationSystem _satiation = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private SharedToolSystem _tool = default!;
+
+    private const string ShockDamage = "Shock";
+    private static readonly TimeSpan ShockQuipCooldown = TimeSpan.FromSeconds(20);
 
     // joingame / ready still dump you on the shared map, so we keep those cmds out while the comic is up
     private readonly HashSet<NetUserId> _lobbyTour = [];
@@ -51,16 +70,24 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         base.Initialize();
 
         SubscribeLocalEvent<TutorialStartRequestedEvent>(OnStartRequested);
+        SubscribeLocalEvent<TutorialMapCreatedEvent>(OnMapCreated);
         SubscribeLocalEvent<TutorialSessionComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<TutorialSessionComponent, BeforeDamageChangedEvent>(OnPlayerDamage);
         SubscribeLocalEvent<TutorialSessionComponent, MobStateChangedEvent>(OnPlayerMobState);
-        // Construction already took that pair
+        SubscribeLocalEvent<TutorialSessionComponent, ElectrocutedEvent>(OnTraineeShocked);
+        SubscribeLocalEvent<TutorialSessionComponent, ConstructionStartAttemptEvent>(OnItemConstruction);
+        SubscribeLocalEvent<TutorialSessionComponent, SatiationUpdateEvent>(OnTraineeSatiation);
+        SubscribeLocalEvent<TutorialNoDeconstructComponent, ConstructionInteractAttemptEvent>(OnLockedConstruction);
+        Type[] usingBefore = [typeof(CableSystem), typeof(ConstructionSystem)];
+        SubscribeLocalEvent<TutorialNoDeconstructComponent, InteractUsingEvent>(OnLockedCableCut,
+            before: usingBefore);
+        SubscribeLocalEvent<GhostRoleComponent, ComponentInit>(OnGhostRoleInit);
         SubscribeLocalEvent<WallComponent, InteractUsingEvent>(OnWallUsing,
-            before: [typeof(ConstructionSystem)]);
+            before: usingBefore);
         SubscribeLocalEvent<WallMountComponent, InteractUsingEvent>(OnWindowUsing,
-            before: [typeof(ConstructionSystem)]);
+            before: usingBefore);
         SubscribeLocalEvent<TutorialSealedComponent, InteractUsingEvent>(OnSealedUsing,
-            before: [typeof(ConstructionSystem)]);
+            before: usingBefore);
         SubscribeNetworkEvent<TutorialRestartRequestedEvent>(OnRestartRequested);
         SubscribeNetworkEvent<TutorialStartPracticalEvent>(OnStartPractical);
         SubscribeNetworkEvent<TutorialReturnToLobbyEvent>(OnReturnToLobby);
@@ -84,11 +111,11 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
     }
 
     public void ForceStartFlow(EntityUid player, ProtoId<TutorialFlowPrototype> flowId) =>
-        StartFlow(player, flowId);
+        StartFlow(player, flowId, fromBeginning: false);
 
     private void OnStartRequested(TutorialStartRequestedEvent ev)
     {
-        StartFlow(ev.Player, ev.Flow);
+        StartFlow(ev.Player, ev.Flow, ev.FromBeginning);
     }
 
     private void OnStartPractical(TutorialStartPracticalEvent ev, EntitySessionEventArgs args)
@@ -155,7 +182,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         if (ReadIntroMode() != IntroMain)
             return;
 
-        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
+        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString)))
             return;
 
         SendCompletionStatus(ev.Session);
@@ -186,17 +213,17 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
         var session = args.SenderSession;
 
-        if (_solitary.TryRestartTutorial(session))
+        if (_solitary.TryRestartTutorial(session, fromBeginning: true))
             return;
 
         // tutorialforcestart / already in a flow on a dirty map - replay in place
         if (session.AttachedEntity is not { } mob || !TryComp<TutorialSessionComponent>(mob, out var tut))
             return;
 
-        StartFlow(mob, tut.Flow);
+        StartFlow(mob, tut.Flow, fromBeginning: true);
     }
 
-    private void StartFlow(EntityUid player, ProtoId<TutorialFlowPrototype> flowId)
+    private void StartFlow(EntityUid player, ProtoId<TutorialFlowPrototype> flowId, bool fromBeginning)
     {
         if (ReadIntroMode() == IntroNone)
             return;
@@ -229,11 +256,16 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         session.Anchors = ResolveAnchorsOnGrid(player);
 
         EnsureComp<PacifiedComponent>(player);
+        KeepTraineeComfortable(player);
 
         _actions.BoltAllAirlocks(player);
         _actions.PowerAllDevices(player);
 
-        var start = ResolveDebugStartStep(flow, out var startRoom);
+        var start = 0;
+        string? startRoom = null;
+        if (!fromBeginning)
+            start = ResolveDebugStartStep(flow, out startRoom);
+
         if (start > 0)
         {
             FastForwardBefore((player, session), flow, start);
@@ -351,6 +383,9 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
         session.FlowStartedAt += delta;
 
+        foreach (var key in session.HeldSince.Keys.ToList())
+            session.HeldSince[key] += delta;
+
         if (TryComp<TutorialFrozenComponent>(trainee, out var frozen))
             frozen.ExpiresAt += delta;
 
@@ -360,6 +395,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
             return;
 
         mentorComp.NextSpeak += delta;
+        mentorComp.QuipDoneAt += delta;
         foreach (var line in mentorComp.SpeechQueue)
             line.GateExpiresAt += delta;
     }
@@ -388,6 +424,27 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
         Log.Debug($"Tutorial: resolved {result.Count} anchors on grid {grid} for {ToPrettyString(player)}");
         return result;
+    }
+
+    /// <summary>
+    /// Straight to a later step. The steps in between are skipped whole, their OnComplete included,
+    /// so whatever they would have unlocked stays shut.
+    /// </summary>
+    public void JumpToStep(Entity<TutorialSessionComponent> ent, ProtoId<TutorialStepPrototype> stepId)
+    {
+        ent.Comp.JumpTo = null;
+
+        if (!TryGetFlow(ent.Comp, out var flow))
+            return;
+
+        var index = flow.Steps.IndexOf(stepId);
+        if (index < 0)
+        {
+            Log.Error($"Tutorial: jump target '{stepId}' is not in flow '{flow.ID}'");
+            return;
+        }
+
+        EnterStep(ent, index);
     }
 
     private void AdvanceStep(Entity<TutorialSessionComponent> ent)
@@ -432,15 +489,34 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         ent.Comp.KeybindHint = stepProto.KeybindHint;
         ent.Comp.Flags.Clear();
         ent.Comp.FiredWatchers.Clear();
+        ent.Comp.HeldSince.Clear();
+        ent.Comp.JumpTo = null;
+        ent.Comp.CameraAtStepStart = TryComp<InputMoverComponent>(ent.Owner, out var mover)
+            ? mover.TargetRelativeRotation
+            : Angle.Zero;
+        ent.Comp.FocusTarget = null;
+        ent.Comp.TargetShots.Clear();
+        ent.Comp.DrillShots = 0;
+        ent.Comp.DrillHits = 0;
         ent.Comp.StepStartedAt = _timing.CurTime;
         ent.Comp.PendingAdvanceAt = null;
         ent.Comp.StuckHinted = false;
         Dirty(ent);
 
+        // nothing to teach if they already did it, and the mentor must not ask for it anyway
+        var skipIf = stepProto.SkipIf ?? (stepProto.SkipIfSatisfied ? stepProto.Completion : null);
+        if (skipIf is { } skip && _tracker.Evaluate(ent.Owner, ent.Comp, skip))
+        {
+            AdvanceStep(ent);
+            return;
+        }
+
         _actions.ExecuteAll(ent.Owner, stepProto.OnEnter);
+        // otherwise the whole row glows until the first poll picks a target
+        _tracker.PrimeDrill(ent.Owner, ent.Comp, stepProto);
         _mentor.EnqueueStep(
             ent.Owner,
-            stepProto.Speak,
+            ResolveSpeak(ent.Owner, stepProto.Speak),
             stepProto.SpeakAtAnchor,
             stepProto.SpeakAtRange,
             stepProto.SpeakHoldSeconds);
@@ -503,7 +579,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
 
     private void TryRedial(EntityUid player)
     {
-        var address = _cfg.GetCVar(CCVars.IntroReturnServerConnectionString);
+        var address = _cfg.GetCVar(CCVars.TutorialReturnServerConnectionString);
         if (string.IsNullOrWhiteSpace(address))
             return;
 
@@ -580,6 +656,13 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         if (!args.Damage.AnyPositive())
             return;
 
+        // the jolt, the stun and the popup all still happen, only the burn is left out
+        if (IsShockOnly(args.Damage))
+        {
+            args.Cancelled = true;
+            return;
+        }
+
         if (!_thresholds.TryGetThresholdForState(ent.Owner, MobState.Critical, out var critAt) || critAt is null)
             return;
 
@@ -592,6 +675,32 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         args.Cancelled = true;
     }
 
+    private static bool IsShockOnly(DamageSpecifier damage)
+    {
+        var any = false;
+        foreach (var (type, amount) in damage.DamageDict)
+        {
+            if (amount <= 0)
+                continue;
+
+            if (type != ShockDamage)
+                return false;
+
+            any = true;
+        }
+
+        return any;
+    }
+
+    private void OnTraineeShocked(Entity<TutorialSessionComponent> ent, ref ElectrocutedEvent args)
+    {
+        if (!ent.Comp.RequireInsulatedGloves || _timing.CurTime < ent.Comp.NextShockQuip)
+            return;
+
+        ent.Comp.NextShockQuip = _timing.CurTime + ShockQuipCooldown;
+        _mentor.Enqueue(ent.Owner, new LocId[] { "tutorial-holopad-r16-shocked" });
+    }
+
     private void OnPlayerMobState(Entity<TutorialSessionComponent> ent, ref MobStateChangedEvent args)
     {
         if (args.NewMobState is MobState.Alive or MobState.Invalid)
@@ -601,9 +710,48 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         _mobState.ChangeMobState(ent.Owner, MobState.Alive);
         _standing.Stand(ent.Owner);
 
-        if (ent.Comp.NavigationAnchor is { } nav)
-            _actions.Teleport(ent.Owner, nav);
+        // back to the start of the room. the navigation anchor is where the step wants them to go,
+        // and landing there on a revive used to finish the step without them
+        if (TryGetCurrentStep(ent.Comp, out _, out var step)
+            && TryGetRoomMarker(step.ID, out var room)
+            && !Reaches(step.Completion, room))
+            _actions.Teleport(ent.Owner, room);
 
         _mentor.Enqueue(ent.Owner, new LocId[] { "tutorial-holopad-quip-death" });
+    }
+
+    private static bool TryGetRoomMarker(string stepId, out string room)
+    {
+        room = string.Empty;
+        const string prefix = "TutorialLinearR";
+        if (!stepId.StartsWith(prefix, StringComparison.Ordinal))
+            return false;
+
+        var digits = 0;
+        while (prefix.Length + digits < stepId.Length && char.IsDigit(stepId[prefix.Length + digits]))
+            digits++;
+
+        // room 0 is the hud briefing and has no marker
+        if (!int.TryParse(stepId.AsSpan(prefix.Length, digits), out var n) || n <= 0)
+            return false;
+
+        room = $"room{n}";
+        return true;
+    }
+
+    /// <summary>Standing on the anchor would count for the step, so do not put them there.</summary>
+    private static bool Reaches(TutorialCondition? condition, string anchorId)
+    {
+        return condition switch
+        {
+            ReachAnchorCondition reach => reach.AnchorId == anchorId,
+            AnyReachAnchorsCondition any => any.AnchorIds.Contains(anchorId),
+            CrawlingReachCondition crawl => crawl.AnchorIds.Contains(anchorId),
+            AnyCondition any => any.Conditions.Any(c => Reaches(c, anchorId)),
+            AllCondition all => all.Conditions.Any(c => Reaches(c, anchorId)),
+            NotCondition not => Reaches(not.Condition, anchorId),
+            HeldCondition held => Reaches(held.Condition, anchorId),
+            _ => false,
+        };
     }
 }

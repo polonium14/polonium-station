@@ -58,6 +58,18 @@ namespace Content.Server.Construction
             if (!Resolve(uid, ref construction))
                 return HandleResult.False;
 
+            EntityUid? user = ev switch
+            {
+                InteractUsingEvent interact => interact.User,
+                ConstructionInteractDoAfterEvent interactDoAfter => interactDoAfter.User,
+                _ => null,
+            };
+
+            var attempt = new ConstructionInteractAttemptEvent(user, ShowPopup: !validation);
+            RaiseLocalEvent(uid, ref attempt);
+            if (attempt.Cancelled)
+                return HandleResult.False;
+
             // If the state machine is in an invalid state (not on a valid node) we can't do anything, ever.
             if (GetCurrentNode(uid, construction) is not {} node)
             {

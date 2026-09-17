@@ -133,4 +133,11 @@ public abstract partial class SharedPuddleSystem
         }
         return evaporatingSpeeds;
     }
+
+    protected void FreezePuddle(Entity<PuddleComponent> ent)
+    {
+        ent.Comp.SpreadsOnStep = false;
+        ent.Comp.Evaporates = false;
+        RemCompDeferred<EvaporationComponent>(ent);
+    }
 }

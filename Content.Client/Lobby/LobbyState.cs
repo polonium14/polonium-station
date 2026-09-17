@@ -303,7 +303,10 @@ namespace Content.Client.Lobby
                 return false;
 
             if (_tutorial.IsTutorialActive)
+            {
+                _tutorial.EnsureTourVisible();
                 return true;
+            }
 
             _entityManager.System<TutorialPresentationSystem>().RequestPracticalJoin();
             return true;

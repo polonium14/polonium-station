@@ -95,6 +95,7 @@ public sealed partial class TutorialUIController : UIController
 
         var overlay = new TutorialHighlightOverlay(id, rootControl, color, isSelfClosingOnClick, ignoreBackgroundClicks, ignoreHighlightClicks);
         overlay.SetPositionLast();
+        KeepBelowWindows(overlay, rootControl);
 
         overlay.InternalOverlayClosedEvent += () =>
         {
@@ -111,6 +112,18 @@ public sealed partial class TutorialUIController : UIController
         NewOverlayEvent?.Invoke();
 
         ProcessPendingBubblesForActiveOverlay();
+    }
+
+    private void KeepBelowWindows(Control overlay, Control rootControl)
+    {
+        if (rootControl != _uiMan.RootControl)
+            return;
+
+        var windows = _uiMan.WindowRoot;
+        if (windows.Parent != rootControl)
+            return;
+
+        overlay.SetPositionInParent(windows.GetPositionInParent());
     }
 
     private void DrawBubble(
@@ -149,6 +162,29 @@ public sealed partial class TutorialUIController : UIController
         ActiveBubble = bubble;
     }
 
+    /// <summary>Puts a new bubble in place of the one on screen, without closing the overlay.</summary>
+    public void SwapBubble(
+        TutorialBubble bubble,
+        TutorialHighlightOverlay.OverlayControlPosition position,
+        Control? relativeToControl = null,
+        float spacing = 100f)
+    {
+        if (ActiveOverlay is null)
+        {
+            bubble.Orphan();
+            return;
+        }
+
+        if (ActiveBubble is { } old)
+        {
+            old.OnBubbleClosed -= OnBubbleClosed;
+            old.Orphan();
+            ActiveBubble = null;
+        }
+
+        DrawBubble(bubble, position, ActiveOverlay.Id, relativeToControl, spacing);
+    }
+
     public void ClearPendingOverlays()
     {
         _pendingOverlays.Clear();
@@ -157,6 +193,22 @@ public sealed partial class TutorialUIController : UIController
     public void ClearPendingBubbles()
     {
         _pendingBubbles.Clear();
+    }
+
+    public void DiscardActive()
+    {
+        // dont DestroyOverlay, lobby steps treat that as "go next"
+        _pendingOverlays.Clear();
+
+        while (_pendingBubbles.Count > 0)
+            _pendingBubbles.Dequeue().Item1.Orphan();
+
+        if (ActiveOverlay is not { } overlay)
+            return;
+
+        ActiveOverlay = null;
+        ActiveBubble = null;
+        overlay.Orphan();
     }
 
     public void RequestClose(bool completely)

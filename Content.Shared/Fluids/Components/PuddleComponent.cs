@@ -37,7 +37,7 @@ namespace Content.Shared.Fluids.Components
         [DataField]
         public bool Evaporates = true;
 
-        [DataField, Access(Other = AccessPermissions.Read)]
+        [DataField, Access(typeof(SharedPuddleSystem), Other = AccessPermissions.Read)]
         public bool SpreadsOnStep = true;
     }
 }

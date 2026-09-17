@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Client._Polonium.Tutorial.Lobby;
 using Content.Client._Polonium.Tutorial.Lobby.UI;
 using Content.Client._Polonium.Tutorial.UI;
@@ -95,6 +96,13 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
 
     public void RequestRestart()
     {
+        _lastUi = default;
+        _finaleMusic = false;
+        _cameraStep = null;
+        _cameraInitial = null;
+        _cameraSent = false;
+        ClearBubble();
+        ClearHint();
         RaiseNetworkEvent(new TutorialRestartRequestedEvent());
     }
 
@@ -147,12 +155,22 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
     private void OnStateChanged(StateChangedEventArgs args)
     {
         if (args.NewState is GameplayState)
+        {
             TryShowLocal(force: true);
+            return;
+        }
+
+        ClearBubble();
+        ClearHint();
+        _bubbleScreen = null;
+        _lastUi = default;
     }
 
     private void OnSessionShutdown(Entity<TutorialSessionComponent> ent, ref ComponentShutdown args)
     {
-        if (ent.Owner != _player.LocalEntity)
+        // wipe/delete detaches first, LocalEntity is already null. still drop the hud
+        // or a leftover lobby overlay sits there and eats the next welcome
+        if (_player.LocalEntity is { } local && local != ent.Owner)
             return;
 
         ClearBubble();
@@ -167,11 +185,14 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
 
     private void TryShowLocal(bool force)
     {
+        if (force)
+        {
+            _lastUi = default;
+            DropForeignOverlay();
+        }
+
         if (_player.LocalEntity is not { } uid || !TryComp<TutorialSessionComponent>(uid, out var session))
             return;
-
-        if (force)
-            _lastUi = default;
 
         TryShow((uid, session));
     }
@@ -217,7 +238,7 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
     private static bool WantsInstructionOverlay(TutorialStepPrototype step)
     {
         return step.Blocking
-               || step.Completion is ManualAcknowledgeCondition
+               || HasAcknowledge(step.Completion)
                || step.HighlightHud != TutorialHudTarget.None
                || step.Guidebook is not null;
     }
@@ -336,13 +357,13 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
         ProtoId<TutorialStepPrototype> stepId,
         TutorialStepPrototype stepProto)
     {
-        if (_tutorialUi.ActiveOverlay is { Id: OverlayId })
-            _tutorialUi.RequestClose(false);
+        // skip-later leftover has a different id so RequestClose(OverlayId) never saw it
+        _tutorialUi.DiscardActive();
 
         var spotlight = TryGetHudControl(stepProto.HighlightHud);
         var wantsBubble = stepProto.BubbleText != null
                           || stepProto.Blocking
-                          || stepProto.Completion is ManualAcknowledgeCondition
+                          || HasAcknowledge(stepProto.Completion)
                           || stepProto.Guidebook is not null;
 
         if (spotlight == null && !wantsBubble)
@@ -402,7 +423,7 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
             if (stepProto.Guidebook is { } guideId)
                 AddGuidebookButton(bubble, guideId);
 
-            if (stepProto.Completion is ManualAcknowledgeCondition)
+            if (HasAcknowledge(stepProto.Completion))
                 AddAcknowledgeButton(bubble, stepId, stepProto.Blocking);
         }
 
@@ -413,6 +434,17 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
                 : BubbleSideFor(stepProto.HighlightHud),
             overlayId: OverlayId,
             spacing: 40f);
+    }
+
+    // the button can sit next to a real condition, e.g. "pick a body part, or just press next"
+    private static bool HasAcknowledge(TutorialCondition? condition)
+    {
+        return condition switch
+        {
+            ManualAcknowledgeCondition => true,
+            AnyCondition any => any.Conditions.Any(HasAcknowledge),
+            _ => false,
+        };
     }
 
     /// <summary>Keep the bubble on the opposite side of whatever is being pointed at.</summary>
@@ -582,12 +614,17 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
     private void UpdateHint(TutorialSessionComponent session)
     {
         var objective = string.Empty;
+        var details = string.Empty;
         var blocking = false;
 
         if (session.CurrentStep is { } stepId && _proto.TryIndex(stepId, out var stepProto))
         {
             blocking = stepProto.Blocking;
             objective = FormatTutorialLoc(stepProto.Instruction);
+
+            // overlay steps already put this text in their bubble, the rest only have this bar
+            if (stepProto.BubbleText is { } bubbleText && !WantsInstructionOverlay(stepProto))
+                details = FormatTutorialLoc(bubbleText);
         }
 
         var keys = session.KeybindHint is { } id
@@ -601,7 +638,7 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
             return;
         }
 
-        EnsureHint().SetHint(objective, keys);
+        EnsureHint().SetHint(objective, keys, details);
     }
 
     private TutorialControlHint EnsureHint()
@@ -620,10 +657,27 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
         _hint?.SetHint(string.Empty, string.Empty);
     }
 
+    private void DropForeignOverlay()
+    {
+        if (_state.CurrentState is not GameplayState)
+            return;
+
+        if (_tutorialUi.ActiveOverlay is { } overlay && overlay.Id != OverlayId)
+            _tutorialUi.DiscardActive();
+    }
+
     private void ClearBubble()
     {
-        if (_tutorialUi.ActiveOverlay is { Id: OverlayId })
-            _tutorialUi.RequestClose(false);
+        if (_tutorialUi.ActiveOverlay is null)
+            return;
+
+        if (_tutorialUi.ActiveOverlay.Id == OverlayId)
+        {
+            _tutorialUi.DiscardActive();
+            return;
+        }
+
+        DropForeignOverlay();
     }
 
     private void OnKeybindChanged(IKeyBinding _)
@@ -695,6 +749,7 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
             ("verb-categories-eject", _loc.GetString("verb-categories-eject")),
             ("examine-verb", _loc.GetString("examine-verb-name")),
             ("climb-verb", _loc.GetString("comp-climbable-verb-climb")),
+            ("execution-verb", _loc.GetString("execution-verb-name")),
             ("guide-radio", _loc.GetString("guide-entry-radio")),
             ("channel-local", _loc.GetString("hud-chatbox-select-channel-Local")),
             ("channel-whisper", _loc.GetString("hud-chatbox-select-channel-Whisper")),

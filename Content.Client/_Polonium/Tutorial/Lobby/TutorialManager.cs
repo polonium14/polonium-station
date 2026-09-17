@@ -3,6 +3,7 @@ using Content.Client._Polonium.Tutorial.Lobby.UI;
 using Content.Client.Lobby;
 using Content.Client.Lobby.UI;
 using Content.Client.Resources;
+using Content.Client.UserInterface.Systems.Info;
 using TutorialPresentationSystem = Content.Client._Polonium.Tutorial.TutorialPresentationSystem;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Lobby;
@@ -31,6 +32,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     private ISawmill _sawmill = default!;
     private TutorialUIController _tutorialUi = default!;
     private LobbyUIController _lobby = default!;
+    private InfoUIController _info = default!;
 
     // Public Properties
     public bool IsTutorialActive => _currentStepIndex >= 0;
@@ -65,6 +67,8 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         _sawmill = Logger.GetSawmill("tutorial.lobby");
         _tutorialUi = _uiMan.GetUIController<TutorialUIController>();
         _lobby = _uiMan.GetUIController<LobbyUIController>();
+        _info = _uiMan.GetUIController<InfoUIController>();
+        _info.RulesPopupChanged += OnRulesPopupChanged;
 
         // Register steps
         RegisterSteps();
@@ -112,11 +116,14 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         if (GetIntroMode() != SharedTutorialSystem.IntroTutorial)
             return false;
 
+        if (_info.IsRulesPopupOpen)
+            return false;
+
         if (_steps.Count == 0)
             return false;
 
         Progress.IsCompleted = false;
-        _currentStepIndex = fromStepIndex ?? (_cfg.GetCVar(CCVars.SkipLobbyIntroDebug) ? _steps.Count - 1 : 0);
+        _currentStepIndex = fromStepIndex ?? (_cfg.GetCVar(CCVars.TutorialSkipLobbyDebug) ? _steps.Count - 1 : 0);
         _isPaused = false;
 
         var ok = ExecuteCurrentStep();
@@ -169,6 +176,33 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     }
 
     /// <summary>
+    /// The tour counts as running but nothing of it is on screen. Put the current step back
+    /// instead of leaving the player with a lobby that silently ignores them.
+    /// </summary>
+    public void EnsureTourVisible()
+    {
+        if (!IsTutorialActive || _info.IsRulesPopupOpen || _stateMan.CurrentState is not LobbyState)
+            return;
+
+        if (_isPaused)
+        {
+            ResumeTutorial();
+            return;
+        }
+
+        if (_tutorialUi.ActiveOverlay != null)
+            return;
+
+        if (!RewindToRunnableStep())
+        {
+            CancelTutorial();
+            return;
+        }
+
+        ActiveStep?.OnReenter();
+    }
+
+    /// <summary>
     /// Walks backwards until a step reports it can run here. Used when the player closed a window
     /// or left the lobby and the step we were on no longer makes sense.
     /// </summary>
@@ -188,7 +222,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     /// <summary>Player asked to stop. Drop the flow but leave a hint about the lobby button.</summary>
     public void SkipTutorial()
     {
-        _cfg.SetCVar(CCVars.IntroDeclined, true);
+        _cfg.SetCVar(CCVars.TutorialDeclined, true);
         _cfg.SaveToFile();
         Progress.HasDeclined = true;
         CancelTutorial();
@@ -218,7 +252,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         if (GetIntroMode() != SharedTutorialSystem.IntroMain)
             return;
 
-        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
+        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString)))
             return;
 
         CloseTrainingOffer();
@@ -238,10 +272,10 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         _dbCompleted = true;
 
         // the finale bubble calls this on every redraw, and a redial right after has to find it on disk
-        if (_cfg.GetCVar(CCVars.IntroCompleted))
+        if (_cfg.GetCVar(CCVars.TutorialCompleted))
             return;
 
-        _cfg.SetCVar(CCVars.IntroCompleted, true);
+        _cfg.SetCVar(CCVars.TutorialCompleted, true);
         _cfg.SaveToFile();
     }
 
@@ -257,7 +291,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
             return;
 
         const string id = "tutorial-restart-hint";
-        _tutorialUi.PlanOverlay(id, button, Color.FromHex("#65B8E2"), highlightMargin: 4f);
+        _tutorialUi.PlanOverlay(id, button, Color.FromHex("#65B8E2"), highlightMargin: 4f, orphanOnHighlightClick: true);
 
         if (_tutorialUi.ActiveOverlay?.Id != id)
             return;
@@ -281,7 +315,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
         var button = lobby.ReadyButton;
         const string id = "tutorial-practical-later";
-        _tutorialUi.PlanOverlay(id, button, Color.FromHex("#65B8E2"), highlightMargin: 4f);
+        _tutorialUi.PlanOverlay(id, button, Color.FromHex("#65B8E2"), highlightMargin: 4f, orphanOnHighlightClick: true);
 
         if (_tutorialUi.ActiveOverlay?.Id != id)
             return;
@@ -463,7 +497,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
     private bool HasCompletedTraining()
     {
-        return _dbCompleted == true || _cfg.GetCVar(CCVars.IntroCompleted);
+        return _dbCompleted == true || _cfg.GetCVar(CCVars.TutorialCompleted);
     }
 
     private void CloseTrainingHopWindow()
@@ -488,13 +522,13 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
         if (GetIntroMode() != SharedTutorialSystem.IntroMain)
             return false;
 
-        if (_cfg.GetCVar(CCVars.IntroDeclined) || _cfg.GetCVar(CCVars.IntroCompleted))
+        if (_cfg.GetCVar(CCVars.TutorialDeclined) || _cfg.GetCVar(CCVars.TutorialCompleted))
             return false;
 
         if (_dbCompleted == true)
             return false;
 
-        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString)))
+        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString)))
             return false;
 
         return true;
@@ -502,7 +536,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
     private void GoToTrainingServer()
     {
-        var address = _cfg.GetCVar(CCVars.IntroSolitaryServerConnectionString);
+        var address = _cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString);
         if (string.IsNullOrEmpty(address))
             return;
 
@@ -525,6 +559,7 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
     /// </summary>
     private void RegisterSteps()
     {
+        _steps.Add(new BubbleSizeStep());
         _steps.Add(new WelcomeStep());
         _steps.Add(new LobbyOverviewStep());
         _steps.Add(new CharacterCreationStep());
@@ -571,6 +606,31 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
         // a cancelled or crashed run can leave the editor half locked, always undo that here
         _lobby.ProfileEditor?.EnableAllTabs();
+
+        TryBeginLobbyIntro();
+    }
+
+    private void OnRulesPopupChanged()
+    {
+        if (_info.IsRulesPopupOpen)
+        {
+            if (IsTutorialActive && !_isPaused)
+                PauseTutorial();
+
+            CloseTrainingOffer();
+            return;
+        }
+
+        TryBeginLobbyIntro();
+    }
+
+    private void TryBeginLobbyIntro()
+    {
+        if (_info.IsRulesPopupOpen || !_info.RulesReady)
+            return;
+
+        if (_stateMan.CurrentState is not LobbyState)
+            return;
 
         var mode = GetIntroMode();
         if (mode == SharedTutorialSystem.IntroNone)
@@ -684,6 +744,12 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
         if (IsTutorialActive)
             PauseTutorial();
+
+        // skip-later / restart-hint sit on RootControl. if they survive into gameplay
+        // PlanOverlay just queues the welcome bubble behind them and never draws it
+        if (_tutorialUi.ActiveOverlay is { } leftover
+            && leftover.Id != TutorialPresentationSystem.OverlayId)
+            _tutorialUi.DiscardActive();
     }
 
     private void OnRunLevelChanged(object? sender, RunLevelChangedEventArgs args)
@@ -693,6 +759,11 @@ public sealed partial class TutorialManager : SharedTutorialLobbyManager
 
         _dbCompleted = null;
         _lobbyTourSent = false;
+
+        // a new connection is a new run of the tour, bubble size step included
+        if (IsTutorialActive)
+            CancelTutorial();
+        Progress.IsCompleted = false;
         CloseTrainingOffer();
         CloseTrainingHopWindow();
         _hopWindow = null;

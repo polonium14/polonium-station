@@ -3,6 +3,7 @@ using System.Numerics;
 using Content.Client.Lobby;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
+using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Whitelist;
 using Robust.Client.GameObjects;
@@ -62,6 +63,12 @@ namespace Content.Client.Construction.UI
                 if (!value)
                     _constructionView.Close();
             }
+        }
+
+        private bool InTutorial()
+        {
+            return _playerManager.LocalEntity is { } uid
+                   && _entManager.HasComponent<TutorialSessionComponent>(uid);
         }
 
         /// <summary>
@@ -187,6 +194,9 @@ namespace Content.Client.Construction.UI
                 if (recipe.Hide)
                     continue;
 
+                if (recipe.Type == ConstructionType.Item && InTutorial())
+                    continue;
+
                 if (_playerManager.LocalSession == null
                     || _playerManager.LocalEntity == null
                     || _whitelistSystem.IsWhitelistFail(recipe.EntityWhitelist, _playerManager.LocalEntity.Value))
@@ -296,6 +306,12 @@ namespace Content.Client.Construction.UI
 
                 if (_selected.Type == ConstructionType.Item)
                 {
+                    if (InTutorial())
+                    {
+                        _constructionView.BuildButtonPressed = false;
+                        return;
+                    }
+
                     _constructionSystem.TryStartItemConstruction(_selected.ID);
                     _constructionView.BuildButtonPressed = false;
                     return;
