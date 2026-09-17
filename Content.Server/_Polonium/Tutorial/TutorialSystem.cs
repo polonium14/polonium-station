@@ -22,6 +22,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Standing;
 using Content.Shared.Tools.Components;
+using Content.Shared.Tools.Systems;
 using Content.Shared.Wall;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -44,6 +45,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
     [Dependency] private TutorialActionExecutor _actions = default!;
     [Dependency] private TutorialMentorSystem _mentor = default!;
     [Dependency] private TutorialNpcSystem _npcs = default!;
+    [Dependency] private TutorialConditionTracker _tracker = default!;
     [Dependency] private SolitarySpawningSystem _solitary = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private MobStateSystem _mobState = default!;
@@ -51,6 +53,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
     [Dependency] private StandingStateSystem _standing = default!;
     [Dependency] private SatiationSystem _satiation = default!;
     [Dependency] private BodySystem _body = default!;
+    [Dependency] private SharedToolSystem _tool = default!;
 
     // joingame / ready still dump you on the shared map, so we keep those cmds out while the comic is up
     private readonly HashSet<NetUserId> _lobbyTour = [];
@@ -457,6 +460,15 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         ent.Comp.PendingAdvanceAt = null;
         ent.Comp.StuckHinted = false;
         Dirty(ent);
+
+        // nothing to teach if they already did it, and the mentor must not ask for it anyway
+        if (stepProto.SkipIfSatisfied
+            && stepProto.Completion is { } completion
+            && _tracker.Evaluate(ent.Owner, ent.Comp, completion))
+        {
+            AdvanceStep(ent);
+            return;
+        }
 
         _actions.ExecuteAll(ent.Owner, stepProto.OnEnter);
         _mentor.EnqueueStep(

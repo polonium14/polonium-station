@@ -39,6 +39,7 @@ using Content.Shared.Light.Components;
 using Content.Shared.Materials;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.EntitySystems;
@@ -376,6 +377,9 @@ public sealed partial class TutorialConditionTracker : EntitySystem
                 uid => _container.TryGetContainer(uid, slot.Slot, out var held) && held.ContainedEntities.Count > 0),
             UnbuckledCondition => !TryComp<BuckleComponent>(player, out var buckle) || !buckle.Buckled,
             CameraRotatedCondition => session.Flags.Contains("camera"),
+            // the reset key zeroes this, and a fresh spawn starts at zero too
+            CameraAlignedCondition aligned => !TryComp<InputMoverComponent>(player, out var mover)
+                || Math.Abs(Angle.ShortestDistance(Angle.Zero, mover.TargetRelativeRotation).Degrees) <= aligned.Degrees,
             ExaminedAnchorCondition exam => session.Flags.Contains($"examined:{exam.AnchorId}"),
             ItemToggledCondition toggle => CheckToggled(player, toggle),
             EntityStunnedCondition stun => AnyAnchor(player, stun.AnchorId, uid => HasComp<StunnedComponent>(uid) || HasComp<KnockedDownComponent>(uid)),

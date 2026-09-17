@@ -6045,6 +6045,7 @@ entities:
       pos: 92.5,-11.5
     - type: TutorialAnchor
       anchorId: room8_girder
+      allowDeconstruct: true
 - proto: Grille
   entities:
   - uid: 2

@@ -26,7 +26,11 @@ public sealed partial class TutorialSystem
 
     private void OnLockedCableCut(Entity<TutorialNoDeconstructComponent> ent, ref InteractUsingEvent args)
     {
-        if (args.Handled || !HasComp<CableComponent>(ent))
+        // only the cutters, a coil clicked on a cable still has to reach the placer
+        if (args.Handled
+            || !TryComp<CableComponent>(ent, out var cable)
+            || cable.CuttingQuality is not { } quality
+            || !_tool.HasQuality(args.Used, quality.Id))
             return;
 
         args.Handled = true;
@@ -52,7 +56,8 @@ public sealed partial class TutorialSystem
             if (xform.MapUid != mapUid)
                 continue;
 
-            if (HasComp<ConstructionComponent>(uid) || HasComp<CableComponent>(uid))
+            if ((HasComp<ConstructionComponent>(uid) || HasComp<CableComponent>(uid))
+                && !(TryComp<TutorialAnchorComponent>(uid, out var anchor) && anchor.AllowDeconstruct))
                 EnsureComp<TutorialNoDeconstructComponent>(uid);
 
             StripGhostRole(uid, deferred: false);

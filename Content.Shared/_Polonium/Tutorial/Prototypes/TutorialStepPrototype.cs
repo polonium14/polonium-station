@@ -131,4 +131,10 @@ public sealed partial class TutorialStepPrototype : IPrototype
     // null = pick a default from the completion type. 0 = never skip (finale).
     [DataField]
     public float? StuckSkipSeconds;
+
+    /// <summary>
+    /// Already done on entry - run OnComplete and move on without a word.
+    /// </summary>
+    [DataField]
+    public bool SkipIfSatisfied;
 }

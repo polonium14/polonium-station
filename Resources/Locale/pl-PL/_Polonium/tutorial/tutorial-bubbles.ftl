@@ -39,7 +39,7 @@ tutorial-bubble-intro-chat =
     {"["}color=#FFC83D][bold]{ $channel-whisper }[/bold][/color] — słyszą Cię wyłącznie osoby stojące tuż obok. Ściany całkowicie blokują szept.
     {"["}color=#FFC83D][bold]{ $channel-radio }[/bold][/color] — komunikacja radiowa przez słuchawkę na kanale działowym. Wiadomość zaczynasz kropką lub dwukropkiem ze skrótem kanału, np. [color=#FFC83D][bold].e[/bold][/color] dla inżynierii (pełną listę skrótów znajdziesz w poradniku w dziale "{ $guide-radio }").
     {"["}color=#FFC83D][bold]{ $channel-emote }[/bold][/color] — służy do opisywania czynności wykonywanych przez postać.
-    {"["}color=#FFC83D][bold]{ $channel-ooc } i { $channel-looc }[/bold][/color] — rozmowa poza postacią (OOC), dotycząca samej gry. Kanały te są bezwzględnie wyłączone z rozgrywki i przekazywania informacji fabularnych.
+    {"["}color=#FFC83D][bold]{ $channel-ooc } i { $channel-looc }[/bold][/color] — rozmowa poza postacią, o samej grze. Nie wolno ich używać do rozgrywki ani do przekazywania rzeczy, których postać nie wie.
 
     Kanał wybierzesz z listy obok pola wpisywania (domyślnie: "{ $default-chat-channel }") lub klawiszem { $switch-channel-key }.
 

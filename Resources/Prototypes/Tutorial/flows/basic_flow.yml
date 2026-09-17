@@ -16,6 +16,7 @@
   - TutorialLinearR04Stand
   - TutorialLinearR05Cam
   - TutorialLinearR05Mop
+  - TutorialLinearR05CamReset
   - TutorialLinearR06
   - TutorialLinearR07
   - TutorialLinearR08Hands
@@ -414,6 +415,18 @@
   completion: !type:PuddlesClearedCondition
     nearAnchorId: room5_wozek
     range: 7
+
+# the view stays turned after room 5 unless they put it back, and the reset key is the one worth remembering.
+# already straight means nothing to say, the door just opens
+- type: tutorialStep
+  id: TutorialLinearR05CamReset
+  instruction: tutorial-step-r05-cam-reset
+  navigationAnchor: room6_airlock
+  keybindHint: tutorial-hint-camera-reset
+  skipIfSatisfied: true
+  speak:
+  - tutorial-holopad-r05-reset
+  completion: !type:CameraAlignedCondition
   onComplete:
   - !type:UnlockAnchorAirlockAction
     anchorId: room6_airlock
