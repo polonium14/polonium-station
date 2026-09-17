@@ -137,4 +137,11 @@ public sealed partial class TutorialStepPrototype : IPrototype
     /// </summary>
     [DataField]
     public bool SkipIfSatisfied;
+
+    /// <summary>
+    /// The trainee may eat or drink during this step. Everywhere else ingredients and props stay
+    /// out of their mouth.
+    /// </summary>
+    [DataField]
+    public bool AllowIngestion;
 }

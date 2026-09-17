@@ -21,6 +21,10 @@ using Content.Shared.Wires;
 using Content.Shared.PDA;
 using Content.Shared.CCVar;
 using Content.Shared.Ghost.Systems;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Nutrition;
+using Content.Shared.Nutrition.Components;
+using Robust.Shared.Containers;
 using Robust.Shared.Configuration;
 using Robust.Shared.Log;
 using Robust.Shared.Prototypes;
@@ -36,12 +40,16 @@ public abstract partial class SharedTutorialSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private TagSystem _tags = default!;
     [Dependency] private ActionBlockerSystem _blocker = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
 
     private static readonly ProtoId<TagPrototype> StructureTag = "Structure";
     private static readonly ProtoId<TagPrototype> WindowTag = "Window";
     private static readonly ProtoId<TagPrototype> WallTag = "Wall";
 
     private static readonly TimeSpan ProtectPopupCooldown = TimeSpan.FromSeconds(2.5);
+
+    // the only things the kitchen wants cut: dough into slices, the cheese wheel into slices
+    private static readonly HashSet<EntProtoId> SliceableIngredients = new() { "FoodDough", "FoodCheese" };
 
     private TimeSpan _nextProtectPopup;
     private EntityUid _lastProtectTarget;
@@ -84,6 +92,8 @@ public abstract partial class SharedTutorialSystem : EntitySystem
         SubscribeLocalEvent<TutorialNoDeconstructComponent, UnanchorAttemptEvent>(OnLockedUnanchor);
         SubscribeLocalEvent<TutorialNoPourComponent, ComponentInit>(OnNoPourInit);
         SubscribeLocalEvent<PdaComponent, ItemSlotEjectAttemptEvent>(OnPdaIdEject);
+        SubscribeLocalEvent<TutorialSessionComponent, IngestionAttemptEvent>(OnTraineeIngest);
+        SubscribeLocalEvent<EdibleComponent, AttemptToolRefineEvent>(OnIngredientRefine);
     }
 
     private void OnFrozenCanMove(Entity<TutorialFrozenComponent> ent, ref UpdateCanMoveEvent args)
@@ -151,12 +161,18 @@ public abstract partial class SharedTutorialSystem : EntitySystem
         if (args.Cancelled || args.Disarm || args.Target is not { } target)
             return;
 
-        if (!TryBlockStructureAttack(uid, session, target))
+        if (HasComp<MobStateComponent>(target) || !HasComp<DamageableComponent>(target))
             return;
 
+        if (IsAttackableTarget(session, target))
+            return;
+
+        PopupProtect(uid, target);
         args.Cancel();
     }
 
+    // a trainee breaks nothing. walls and windows were covered before, tables, machines and loose
+    // items were not, and a knife swung at the cow took out the table and the microwave window
     private void OnStructureDamage(Entity<DamageableComponent> ent, ref BeforeDamageChangedEvent args)
     {
         if (args.Cancelled || args.Origin is not { } origin)
@@ -168,10 +184,40 @@ public abstract partial class SharedTutorialSystem : EntitySystem
         if (!TryComp<TutorialSessionComponent>(origin, out var session))
             return;
 
-        if (!TryBlockStructureAttack(origin, session, ent.Owner))
+        // people and animals are fair game, the steps decide who should be hit
+        if (HasComp<MobStateComponent>(ent) || IsAttackableTarget(session, ent.Owner))
+            return;
+
+        PopupProtect(origin, ent.Owner);
+        args.Cancelled = true;
+    }
+
+    private void OnTraineeIngest(Entity<TutorialSessionComponent> ent, ref IngestionAttemptEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        if (TryGetStep(ent.Comp, out var step) && step.AllowIngestion)
             return;
 
         args.Cancelled = true;
+        PopupProtectMessage(ent.Owner, ent.Owner, "tutorial-cannot-eat");
+    }
+
+    private void OnIngredientRefine(Entity<EdibleComponent> ent, ref AttemptToolRefineEvent args)
+    {
+        if (args.IsCancelled)
+            return;
+
+        // the knife is in the trainee's hand, so the container holding it says who is cutting
+        if (!_container.TryGetContainingContainer((args.Using, null, null), out var holder)
+            || !HasComp<TutorialSessionComponent>(holder.Owner))
+            return;
+
+        if (MetaData(ent).EntityPrototype?.ID is { } id && SliceableIngredients.Contains(id))
+            return;
+
+        args = args with { IsCancelled = true, BlockCause = Loc.GetString("tutorial-cannot-slice") };
     }
 
     protected bool TryBlockStructureAttack(EntityUid user, TutorialSessionComponent session, EntityUid target)
@@ -193,12 +239,17 @@ public abstract partial class SharedTutorialSystem : EntitySystem
 
     protected void PopupProtect(EntityUid user, EntityUid target)
     {
+        PopupProtectMessage(user, target, "tutorial-cannot-break-structure");
+    }
+
+    private void PopupProtectMessage(EntityUid user, EntityUid target, LocId message)
+    {
         if (target == _lastProtectTarget && _timing.CurTime < _nextProtectPopup)
             return;
 
         _lastProtectTarget = target;
         _nextProtectPopup = _timing.CurTime + ProtectPopupCooldown;
-        _popup.PopupEntity(Loc.GetString("tutorial-cannot-break-structure"), target, user);
+        _popup.PopupEntity(Loc.GetString(message), target, user);
     }
 
     private bool IsProtectedStructure(EntityUid uid)

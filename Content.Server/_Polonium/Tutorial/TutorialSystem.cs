@@ -17,6 +17,8 @@ using Content.Shared.Construction;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Electrocution;
+using Content.Shared.Movement.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Mobs;
@@ -57,6 +59,9 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
     [Dependency] private BodySystem _body = default!;
     [Dependency] private SharedToolSystem _tool = default!;
 
+    private const string ShockDamage = "Shock";
+    private static readonly TimeSpan ShockQuipCooldown = TimeSpan.FromSeconds(20);
+
     // joingame / ready still dump you on the shared map, so we keep those cmds out while the comic is up
     private readonly HashSet<NetUserId> _lobbyTour = [];
 
@@ -69,6 +74,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         SubscribeLocalEvent<TutorialSessionComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<TutorialSessionComponent, BeforeDamageChangedEvent>(OnPlayerDamage);
         SubscribeLocalEvent<TutorialSessionComponent, MobStateChangedEvent>(OnPlayerMobState);
+        SubscribeLocalEvent<TutorialSessionComponent, ElectrocutedEvent>(OnTraineeShocked);
         SubscribeLocalEvent<TutorialSessionComponent, ConstructionStartAttemptEvent>(OnItemConstruction);
         SubscribeLocalEvent<TutorialSessionComponent, SatiationUpdateEvent>(OnTraineeSatiation);
         SubscribeLocalEvent<TutorialNoDeconstructComponent, ConstructionInteractAttemptEvent>(OnLockedConstruction);
@@ -485,6 +491,9 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         ent.Comp.FiredWatchers.Clear();
         ent.Comp.HeldSince.Clear();
         ent.Comp.JumpTo = null;
+        ent.Comp.CameraAtStepStart = TryComp<InputMoverComponent>(ent.Owner, out var mover)
+            ? mover.TargetRelativeRotation
+            : Angle.Zero;
         ent.Comp.StepStartedAt = _timing.CurTime;
         ent.Comp.PendingAdvanceAt = null;
         ent.Comp.StuckHinted = false;
@@ -642,6 +651,13 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         if (!args.Damage.AnyPositive())
             return;
 
+        // the jolt, the stun and the popup all still happen, only the burn is left out
+        if (IsShockOnly(args.Damage))
+        {
+            args.Cancelled = true;
+            return;
+        }
+
         if (!_thresholds.TryGetThresholdForState(ent.Owner, MobState.Critical, out var critAt) || critAt is null)
             return;
 
@@ -652,6 +668,32 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
             return;
 
         args.Cancelled = true;
+    }
+
+    private static bool IsShockOnly(DamageSpecifier damage)
+    {
+        var any = false;
+        foreach (var (type, amount) in damage.DamageDict)
+        {
+            if (amount <= 0)
+                continue;
+
+            if (type != ShockDamage)
+                return false;
+
+            any = true;
+        }
+
+        return any;
+    }
+
+    private void OnTraineeShocked(Entity<TutorialSessionComponent> ent, ref ElectrocutedEvent args)
+    {
+        if (!ent.Comp.RequireInsulatedGloves || _timing.CurTime < ent.Comp.NextShockQuip)
+            return;
+
+        ent.Comp.NextShockQuip = _timing.CurTime + ShockQuipCooldown;
+        _mentor.Enqueue(ent.Owner, new LocId[] { "tutorial-holopad-r16-shocked" });
     }
 
     private void OnPlayerMobState(Entity<TutorialSessionComponent> ent, ref MobStateChangedEvent args)

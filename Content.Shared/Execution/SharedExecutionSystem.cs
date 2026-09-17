@@ -117,8 +117,9 @@ public sealed partial class SharedExecutionSystem : EntitySystem
         if (victim != attacker && _actionBlocker.CanInteract(victim, null))
             return false;
 
-        // trainees get a revive, suicide verbs just look like a skip
-        if (HasComp<TutorialSessionComponent>(attacker) || HasComp<TutorialSessionComponent>(victim))
+        // trainees get a revive, so a trainee on the receiving end just looks like a skip.
+        // a trainee finishing off the kitchen cow is fine
+        if (HasComp<TutorialSessionComponent>(victim))
             return false;
 
         return true;

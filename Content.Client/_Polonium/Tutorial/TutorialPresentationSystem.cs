@@ -744,6 +744,7 @@ public sealed partial class TutorialPresentationSystem : SharedTutorialSystem
             ("verb-categories-eject", _loc.GetString("verb-categories-eject")),
             ("examine-verb", _loc.GetString("examine-verb-name")),
             ("climb-verb", _loc.GetString("comp-climbable-verb-climb")),
+            ("execution-verb", _loc.GetString("execution-verb-name")),
             ("guide-radio", _loc.GetString("guide-entry-radio")),
             ("channel-local", _loc.GetString("hud-chatbox-select-channel-Local")),
             ("channel-whisper", _loc.GetString("hud-chatbox-select-channel-Whisper")),

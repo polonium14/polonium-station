@@ -27,6 +27,7 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Disposal.Components;
 using Content.Shared.Disposal.Unit;
 using Content.Shared.Doors.Components;
+using Content.Shared.Electrocution;
 using Content.Shared.Examine;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Fluids;
@@ -112,7 +113,10 @@ public sealed partial class TutorialConditionTracker : EntitySystem
     private static readonly TimeSpan MaxFreeze = TimeSpan.FromSeconds(60);
 
     // never-skip steps still get their props put back, they just do not advance on their own
-    private static readonly TimeSpan NeverSkipRecoverAfter = TimeSpan.FromSeconds(120);
+    private static readonly TimeSpan NeverSkipRecoverAfter = TimeSpan.FromSeconds(240);
+
+    // everything used to time out twice as fast as trainees actually need
+    private const float SkipTimeScale = 2f;
 
     private TimeSpan _nextPoll;
 
@@ -162,6 +166,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             Notify(player);
             ProcessFreeze(player);
             ProcessStuck(player);
+            ProcessGloves(player);
         }
     }
 
@@ -345,7 +350,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             DoorStateAnchorCondition doorState => AnyAnchor(player, doorState.AnchorId,
                 uid => TryComp<DoorComponent>(uid, out var door) && door.State == doorState.State),
             ItemPulledCondition pull => CheckPulling(player, session, pull),
-            AnchorsNearCondition near => CheckAnchorsNear(player, near.AnchorId, near.NearAnchorId, near.Range),
+            AnchorsNearCondition near => CheckAnchorsNear(player, near.AnchorId, near.NearAnchorId, near.Range, near.Away),
             ManualAcknowledgeCondition => session.Flags.Contains("ack"),
             InternalsOnCondition => _internals.AreInternalsWorking(player),
             DrainableReagentNearbyCondition reagent => CheckDrainableReagent(player, reagent),
@@ -390,7 +395,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             ItemSlotFilledCondition slot => AnyAnchor(player, slot.AnchorId,
                 uid => _container.TryGetContainer(uid, slot.Slot, out var held) && held.ContainedEntities.Count > 0),
             UnbuckledCondition => !TryComp<BuckleComponent>(player, out var buckle) || !buckle.Buckled,
-            CameraRotatedCondition => session.Flags.Contains("camera"),
+            CameraRotatedCondition rotated => CheckCameraRotated(player, session, rotated),
             FlagCondition flag => session.Flags.Contains(flag.Flag),
             TargetChangedCondition => session.Flags.Contains(TargetChangedFlag),
             HeldCondition held => CheckHeld(player, session, held),
@@ -1442,6 +1447,52 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         return total;
     }
 
+    // the server moves the view on the input command too, so this needs no word from the client
+    private bool CheckCameraRotated(EntityUid player, TutorialSessionComponent session, CameraRotatedCondition cond)
+    {
+        if (!TryComp<InputMoverComponent>(player, out var mover))
+            return false;
+
+        // rotate-right adds a negative quarter turn
+        var delta = Angle.ShortestDistance(session.CameraAtStepStart, mover.TargetRelativeRotation).Degrees;
+        var size = Math.Abs(delta);
+        if (size < cond.Degrees - 0.5 || size > cond.MaxDegrees + 0.5)
+            return false;
+
+        return cond.Direction switch
+        {
+            TutorialRotation.Right => delta < 0,
+            TutorialRotation.Left => delta > 0,
+            _ => true,
+        };
+    }
+
+    private static readonly LocId GlovesOffLine = "tutorial-holopad-r16-gloves-off";
+
+    private void ProcessGloves(EntityUid player)
+    {
+        if (!TryComp<TutorialSessionComponent>(player, out var session) || !session.RequireInsulatedGloves)
+            return;
+
+        if (WearsInsulatedGloves(player))
+        {
+            session.GlovesWarned = false;
+            return;
+        }
+
+        if (session.GlovesWarned)
+            return;
+
+        session.GlovesWarned = true;
+        _mentor.Enqueue(player, new[] { GlovesOffLine });
+    }
+
+    public bool WearsInsulatedGloves(EntityUid player)
+    {
+        return _inventory.TryGetSlotEntity(player, "gloves", out var gloves)
+               && HasComp<InsulatedComponent>(gloves);
+    }
+
     private bool CheckHeld(EntityUid player, TutorialSessionComponent session, HeldCondition held)
     {
         if (!Evaluate(player, session, held.Condition))
@@ -1670,9 +1721,9 @@ public sealed partial class TutorialConditionTracker : EntitySystem
     private static float GetSkipSeconds(TutorialStepPrototype step)
     {
         if (step.StuckSkipSeconds is { } explicitSkip)
-            return explicitSkip;
+            return explicitSkip * SkipTimeScale;
 
-        return NeedsLongSkip(step.Completion) ? 300f : 180f;
+        return (NeedsLongSkip(step.Completion) ? 300f : 180f) * SkipTimeScale;
     }
 
     private static bool NeedsLongSkip(TutorialCondition? cond)

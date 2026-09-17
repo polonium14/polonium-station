@@ -57,6 +57,7 @@ tutorial-holopad-r04-e = Przerwa skończona. Wstań z krzesła. Twój dzisiejszy
 # r05 - obrót kamery i mop
 tutorial-holopad-r05-a = Ten fragment ośrodka zbudowano pod innym kątem. Architekt dostał za to premię i awans.
 tutorial-holopad-r05-b = Obróć widok w prawo, mniej więcej o ćwierć obrotu. Świat nie musi być prosty, wystarczy, że ty jesteś.
+tutorial-holopad-r05-cam-wrong = To nie ta strona. W prawo, o ćwierć obrotu. Jeśli widok się pomieszał, przywróć go i spróbuj jeszcze raz.
 tutorial-holopad-r05-c = Ktoś tu zwymiotował. Trzy razy, na trzech różnych kaflach, co sugeruje ruch i determinację.
 tutorial-holopad-r05-d = Nie pytam kto. Znam odpowiedź, mam nagranie, a raport złożyłam jeszcze zanim skończył.
 tutorial-holopad-r05-e = Weź mopa z wózka i to wytrzyj. Sprzątanie to druga najczęstsza czynność na tej stacji. Pierwszej nauczysz się później.
@@ -201,6 +202,8 @@ tutorial-holopad-r15-finish-done-b = Medycyna zaliczona. Drzwi są już otwarte,
 # r16 - inżynieria
 tutorial-holopad-r16-enter = Inżynieria. Najpierw ubranie, potem silnik, na koniec prąd.
 tutorial-holopad-r16-gloves = Załóż żółte rękawice izolacyjne, zanim dotkniesz czegokolwiek z kablem.
+tutorial-holopad-r16-gloves-off = Rękawice izolacyjne zdjęte. To naruszenie BHP: jeden dotyk przewodu pod napięciem i kończy się urazem. Załóż je z powrotem.
+tutorial-holopad-r16-shocked = Ostrzegałam. Rękawice izolacyjne nie są ozdobą.
 tutorial-holopad-r16-belt = Załóż pas narzędziowy. Narzędzia w pasie nie zajmują rąk.
 tutorial-holopad-r16-to-vend = Podejdź do automatu z narzędziami.
 tutorial-holopad-r16-tools = Śrubokręt, przecinaki, multitool, łom i klucz - wszystko do pasa.
@@ -376,6 +379,8 @@ tutorial-holopad-quip-overpour-fix-2 = Odlewam nadmiar, zostawiam piętnaście.
 tutorial-holopad-quip-burger-failed = Wszystko było w środku, więc zawinił czas. Musi być dwadzieścia pięć.
 tutorial-holopad-quip-burger-failed-2 = Nadmiaru się nie bój, mikrofalówka patrzy tylko, czy czegoś nie brakuje.
 tutorial-holopad-quip-eggs-short = Zabrakło jajek. Liczy się to, co jest w zlewce: dwanaście jednostek, czyli dwa rozbite jajka.
+tutorial-holopad-quip-eggs-cooked = Jajka ścięły się w zlewce. Mikrofalówka grzeje wszystko, co ma w środku, nawet kiedy nie znajdzie przepisu.
+tutorial-holopad-quip-eggs-cooked-2 = Ścięte jajka poszły do zlewu, a na dużym stole leżą dwa świeże. Rozbij je do zlewki i załaduj wszystko jeszcze raz.
 tutorial-holopad-quip-solids-short = Czegoś brakowało w środku.
 tutorial-holopad-quip-solids-short-2 = Bułka, dwa mięsa, plaster sera, dwa pomidory, sól i pieprz - wszystko naraz.
 tutorial-holopad-r13-burger-done = Wyszedł. Dokładnie taki, jak chciał przepis.

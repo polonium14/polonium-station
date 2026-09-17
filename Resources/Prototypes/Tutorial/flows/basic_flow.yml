@@ -359,6 +359,7 @@
 - type: tutorialStep
   id: TutorialLinearR04Tea
   instruction: tutorial-step-r04-tea
+  allowIngestion: true
   navigationAnchor: room4_tea
   keybindHint: tutorial-hint-drink
   stuckSkipSeconds: 90
@@ -592,8 +593,24 @@
         range: 1
       - !type:ReachAnchorCondition
         anchorId: room5_getout
+  # left, or right twice, is not what was asked. one quip per wrong turn, not one per poll
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r05-cam-wrong
+    condition: !type:AllCondition
+      conditions:
+      - !type:CameraRotatedCondition
+        degrees: 45
+      - !type:NotCondition
+        condition: !type:CameraRotatedCondition
+          degrees: 80
+          maxDegrees: 135
+          direction: Right
   completion: !type:CameraRotatedCondition
     degrees: 80
+    maxDegrees: 135
+    direction: Right
 
 - type: tutorialStep
   id: TutorialLinearR05Mop
@@ -685,10 +702,20 @@
   speak:
   - tutorial-holopad-r08-a
   - tutorial-holopad-r08-b
-  completion: !type:BothHandsAnchorsCondition
-    anchorIds:
-    - room8_wrench
-    - room8_screwdriver
+  # someone who went straight for the girder has already shown they can use both hands
+  completion: !type:AnyCondition
+    conditions:
+    - !type:BothHandsAnchorsCondition
+      anchorIds:
+      - room8_wrench
+      - room8_screwdriver
+    - !type:AnchorsNearCondition
+      anchorId: room8_girder
+      nearAnchorId: room8_girder_home
+      range: 0.6
+      away: true
+    - !type:ReachAnchorCondition
+      anchorId: room8_girder_pass_success
 
 - type: tutorialStep
   id: TutorialLinearR08Girder
@@ -1582,7 +1609,7 @@
   id: TutorialLinearR13Cow
   instruction: tutorial-step-r13-cow
   navigationAnchor: room13_cow_spawner
-  keybindHint: tutorial-hint-combat
+  keybindHint: tutorial-hint-cow
   highlightAnchors:
   - room13_cow
   speak:
@@ -1740,6 +1767,42 @@
       prototype: FoodMeat
       tutorialNpc: false
       preventDeath: false
+  # a run without a matching recipe still heats everything inside, and eggs set at 344K. the
+  # recipe wants raw egg, so without this the beaker is useless and the kitchen is a dead end
+  - !type:ConditionWatcher
+    once: false
+    condition: !type:AllCondition
+      conditions:
+      - !type:PrototypeSolutionContainsCondition
+        prototype: LargeBeakerTutorial
+        solution: beaker
+        reagent: EggCooked
+        amount: 1
+      - !type:NotCondition
+        condition: !type:PrototypeNearAnchorCondition
+          prototype: LargeBeakerTutorial
+          anchorId: room13_microwave
+          inside: true
+    quip:
+    - tutorial-holopad-quip-eggs-cooked
+    - tutorial-holopad-quip-eggs-cooked-2
+    actions:
+    - !type:SetFlagAction
+      flag: eggs-cooked
+    - !type:DrainPrototypeSolutionAction
+      prototype: LargeBeakerTutorial
+      solution: beaker
+      reagent: EggCooked
+    - !type:SpawnAtAnchorAction
+      anchorId: room13_table_big
+      prototype: FoodEgg
+      tutorialNpc: false
+      preventDeath: false
+    - !type:SpawnAtAnchorAction
+      anchorId: room13_table_big
+      prototype: FoodEgg
+      tutorialNpc: false
+      preventDeath: false
   # someone who ran ahead and already cooked it should not be asked to load an empty microwave
   completion: !type:AnyCondition
     conditions:
@@ -1852,8 +1915,54 @@
           range: 4
           reagent: Egg
           amount: 12
+      - !type:NotCondition
+        condition: !type:FlagCondition
+          flag: eggs-cooked
+      - !type:NotCondition
+        condition: !type:PrototypeSolutionContainsCondition
+          prototype: LargeBeakerTutorial
+          solution: beaker
+          reagent: EggCooked
+          amount: 1
     quip:
     - tutorial-holopad-quip-eggs-short
+  # same as while loading: a failed run sets the eggs.
+  # a run without a matching recipe still heats everything inside, and eggs set at 344K. the
+  # recipe wants raw egg, so without this the beaker is useless and the kitchen is a dead end
+  - !type:ConditionWatcher
+    once: false
+    condition: !type:AllCondition
+      conditions:
+      - !type:PrototypeSolutionContainsCondition
+        prototype: LargeBeakerTutorial
+        solution: beaker
+        reagent: EggCooked
+        amount: 1
+      - !type:NotCondition
+        condition: !type:PrototypeNearAnchorCondition
+          prototype: LargeBeakerTutorial
+          anchorId: room13_microwave
+          inside: true
+    quip:
+    - tutorial-holopad-quip-eggs-cooked
+    - tutorial-holopad-quip-eggs-cooked-2
+    actions:
+    - !type:SetFlagAction
+      flag: eggs-cooked
+    - !type:DrainPrototypeSolutionAction
+      prototype: LargeBeakerTutorial
+      solution: beaker
+      reagent: EggCooked
+    - !type:SpawnAtAnchorAction
+      anchorId: room13_table_big
+      prototype: FoodEgg
+      tutorialNpc: false
+      preventDeath: false
+    - !type:SpawnAtAnchorAction
+      anchorId: room13_table_big
+      prototype: FoodEgg
+      tutorialNpc: false
+      preventDeath: false
   - !type:ConditionWatcher
     condition: !type:AllCondition
       conditions:
@@ -2826,6 +2935,8 @@
   - tutorial-holopad-r16-gloves
   completion: !type:WearingSlotCondition
     slot: gloves
+  onComplete:
+  - !type:RequireGlovesAction
 
 - type: tutorialStep
   id: TutorialLinearR16Belt
@@ -3979,6 +4090,9 @@
   instruction: tutorial-step-r17-walk
   navigationAnchor: room17_bolt_airlock
   speakAtAnchor: room17
+  onEnter:
+  - !type:RequireGlovesAction
+    required: false
   speak:
   - tutorial-holopad-r17-a
   completion: !type:ReachAnchorCondition

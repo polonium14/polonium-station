@@ -66,6 +66,20 @@ public sealed partial class TutorialSessionComponent : Component
     [ViewVariables]
     public ProtoId<TutorialStepPrototype>? JumpTo;
 
+    /// <summary>Where the view pointed when the current step began.</summary>
+    [ViewVariables]
+    public Angle CameraAtStepStart;
+
+    [ViewVariables]
+    public bool RequireInsulatedGloves;
+
+    /// <summary>Gloves-off warning already given for the current bare-handed stretch.</summary>
+    [ViewVariables]
+    public bool GlovesWarned;
+
+    [ViewVariables]
+    public TimeSpan NextShockQuip;
+
     [ViewVariables]
     public EntityUid? MentorUid;
 }

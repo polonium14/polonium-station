@@ -178,6 +178,14 @@ public sealed partial class TutorialActionExecutor : EntitySystem
                 _mentor.DropBriefing(player);
                 break;
 
+            case RequireGlovesAction gloves:
+                if (TryComp<TutorialSessionComponent>(player, out var gloveSession))
+                {
+                    gloveSession.RequireInsulatedGloves = gloves.Required;
+                    gloveSession.GlovesWarned = false;
+                }
+                break;
+
             default:
                 Log.Warning($"Tutorial: no handler for action type {action.GetType().Name}");
                 break;

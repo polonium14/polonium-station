@@ -116,7 +116,7 @@ space_wind = false
 mode = "Tutorial"
 return_server_con_string = "ss14://127.0.0.1:1212"
 skip_lobby_debug = false
-debug_start_room = ""
+debug_start_room = "room14"
 away_cleanup = 1200
 
 [build]

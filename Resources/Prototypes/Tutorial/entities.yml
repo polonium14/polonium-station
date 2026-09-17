@@ -358,6 +358,7 @@
   - type: Destructible
     thresholds: []
 
+# mime wall, just without the timed despawn. no sprite = actually invisible
 - type: entity
   id: WallInvisiblePermanent
   name: invisible wall
@@ -367,6 +368,7 @@
   components:
   - type: Transform
     anchored: true
+  - type: Wall
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -379,15 +381,11 @@
         - FullTileMask
         layer:
         - WallLayer
-  - type: Marker
-  - type: Sprite
-    drawdepth: Overdoors
-    sprite: Markers/cross.rsi
-    state: red
 
 - type: tile
   id: TutorialSpaceBarrier
   name: tiles-tutorial-space-barrier
+  sprite: /Textures/_Polonium/Tiles/invisible.png
   baseTurf: Space
   isSubfloor: true
   isSpace: true
