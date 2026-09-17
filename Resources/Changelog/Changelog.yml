@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: SuperGDPWYL
-  changes:
-  - message: Emitters now alert the Engineering radio channel if they are destroyed,
-      deconstructed, lose power or are unlocked, when powered.
-    type: Add
-  id: 9499
-  time: '2026-02-07T12:02:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39513
 - author: MidZik
   changes:
   - message: Fixed containment fields dying even when one side still had power.
@@ -4085,3 +4077,13 @@
   id: 9997
   time: '2026-09-17T10:36:46.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1029
+- author: Koilak
+  changes:
+  - message: "Poprawiono opisy wizjer\xF3w cybernetycznych"
+    type: Tweak
+  - message: "S\u0142abe leczenie dla nosicieli wizjer\xF3w cybernetycznych po przez\
+      \ wstrzykiwanie nanobot\xF3w (chemikalium)."
+    type: Add
+  id: 9998
+  time: '2026-09-17T12:38:14.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1020
