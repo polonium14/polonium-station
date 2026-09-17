@@ -95,6 +95,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
     [Dependency] private TutorialEyeRecoverySystem _eyes = default!;
     [Dependency] private TutorialItemCountSystem _itemCount = default!;
     [Dependency] private SharedMaterialStorageSystem _materials = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     private static readonly TimeSpan PollingInterval = TimeSpan.FromMilliseconds(250);
     // a short beat so the trainee sees the action land before the instruction changes
@@ -291,9 +292,10 @@ public sealed partial class TutorialConditionTracker : EntitySystem
 
     private void ProcessWatchers(EntityUid player, TutorialSessionComponent session, TutorialStepPrototype step)
     {
-        for (var i = 0; i < step.Watchers.Count; i++)
+        var watchers = EffectiveWatchers(step);
+        for (var i = 0; i < watchers.Count; i++)
         {
-            var watcher = step.Watchers[i];
+            var watcher = watchers[i];
             if (watcher.Once && session.FiredWatchers.Contains(i))
             {
                 if (watcher.Rearm && !CheckWatcher(player, session, watcher))
@@ -576,12 +578,31 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         Notify(player);
     }
 
-    private static bool StepWatchesGhost(TutorialStepPrototype step, string anchorId)
+    /// <summary>
+    /// The step's own watchers first, then what its sets add. Indices stay put for as long as the step
+    /// does, which is all <see cref="TutorialSessionComponent.FiredWatchers"/> needs of them.
+    /// </summary>
+    private List<TutorialWatcher> EffectiveWatchers(TutorialStepPrototype step)
+    {
+        if (step.WatcherSets.Count == 0)
+            return step.Watchers;
+
+        var all = new List<TutorialWatcher>(step.Watchers);
+        foreach (var id in step.WatcherSets)
+        {
+            if (_proto.TryIndex(id, out var set))
+                all.AddRange(set.Watchers);
+        }
+
+        return all;
+    }
+
+    private bool StepWatchesGhost(TutorialStepPrototype step, string anchorId)
     {
         if (WatchesGhost(step.Completion, anchorId))
             return true;
 
-        return step.Watchers.Any(w => w is ConditionWatcher cond && WatchesGhost(cond.Condition, anchorId));
+        return EffectiveWatchers(step).Any(w => w is ConditionWatcher cond && WatchesGhost(cond.Condition, anchorId));
     }
 
     private static bool WatchesGhost(TutorialCondition? condition, string anchorId)
@@ -1010,10 +1031,13 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         return any && volume <= 0.01f;
     }
 
-    private bool BuckledTo(EntityUid who, string strapAnchorId)
+    private bool BuckledTo(EntityUid who, string? strapAnchorId)
     {
         if (!TryComp<BuckleComponent>(who, out var buckle) || !buckle.Buckled || buckle.BuckledTo is not { } strap)
             return false;
+
+        if (strapAnchorId is null)
+            return TryComp<StrapComponent>(strap, out var lying) && lying.Position == StrapPosition.Down;
 
         return TryComp<TutorialAnchorComponent>(strap, out var anchor) && anchor.AnchorId == strapAnchorId;
     }

@@ -4,7 +4,7 @@ meta:
   engineVersion: 289.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/17/2026 10:16:50
+  time: 09/17/2026 19:19:17
   entityCount: 3256
 maps:
 - 596
@@ -1808,7 +1808,7 @@ entities:
     - type: Transform
       parent: 357
     - type: EmitSoundOnCollide
-      nextSound: -53675.5524534
+      nextSound: -53761.0605136
     - type: Physics
       canCollide: False
 - proto: BoxFolderCentComEmpty
@@ -3587,7 +3587,7 @@ entities:
     - type: Stack
       count: 5
     - type: EmitSoundOnCollide
-      nextSound: -53675.5524534
+      nextSound: -53761.0605136
     - type: Physics
       canCollide: False
 - proto: CableHVUncuttable
@@ -4268,41 +4268,47 @@ entities:
             10: 48,-2
             11: 49,-2
         - node:
-            id: SpaceStationSign2
+            id: StacjaKosmicznaSign1
             color: '#FFFFFFFF'
-            angle: 4.71238898038469 rad
+            angle: -1.5707963267948966 rad
           decals:
-            216: 58,-1
+            12: 58,-1
         - node:
-            id: SpaceStationSign3
+            id: StacjaKosmicznaSign2
             color: '#FFFFFFFF'
-            angle: 4.71238898038469 rad
+            angle: -1.5707963267948966 rad
           decals:
-            217: 58,-2
+            13: 58,-2
         - node:
-            id: SpaceStationSign4
+            id: StacjaKosmicznaSign3
             color: '#FFFFFFFF'
-            angle: 4.71238898038469 rad
+            angle: -1.5707963267948966 rad
           decals:
-            218: 58,-3
+            14: 58,-3
         - node:
-            id: SpaceStationSign5
+            id: StacjaKosmicznaSign4
             color: '#FFFFFFFF'
-            angle: 4.71238898038469 rad
+            angle: -1.5707963267948966 rad
           decals:
-            219: 58,-4
+            15: 58,-4
         - node:
-            id: SpaceStationSign6
+            id: StacjaKosmicznaSign5
             color: '#FFFFFFFF'
-            angle: 4.71238898038469 rad
+            angle: -1.5707963267948966 rad
           decals:
-            220: 58,-5
+            16: 58,-5
         - node:
-            id: SpaceStationSign7
+            id: StacjaKosmicznaSign6
             color: '#FFFFFFFF'
-            angle: 4.71238898038469 rad
+            angle: -1.5707963267948966 rad
           decals:
-            221: 58,-6
+            17: 58,-6
+        - node:
+            id: StacjaKosmicznaSign7
+            color: '#FFFFFFFF'
+            angle: -1.5707963267948966 rad
+          decals:
+            18: 58,-7
         - node:
             id: WarnFullGreyscale
             color: '#FED83DFF'
@@ -4661,12 +4667,6 @@ entities:
             14: 53,2
             15: 54,2
             16: 54,3
-        - node:
-            id: SpaceStationSign1
-            color: '#FFFFFFFF'
-            angle: 4.71238898038469 rad
-          decals:
-            215: 58,0
         - node:
             id: WarnFullGreyscale
             color: '#FED83DFF'
@@ -5972,7 +5972,7 @@ entities:
     - type: Transform
       parent: 1
       pos: 70.5,-10.5
-- proto: DefibrillatorCabinetFilled
+- proto: DefibrillatorCabinetTutorial
   entities:
   - uid: 1195
     components:
@@ -6036,7 +6036,7 @@ entities:
       accessListsOriginal:
       - - Chemistry
     - type: EmitSoundOnCollide
-      nextSound: -53675.5524534
+      nextSound: -53761.0605136
     - type: Physics
       canCollide: False
 - proto: DoorElectronicsEngineering
@@ -6050,7 +6050,7 @@ entities:
       accessListsOriginal:
       - - Engineering
     - type: EmitSoundOnCollide
-      nextSound: -53675.5524534
+      nextSound: -53761.0605136
     - type: Physics
       canCollide: False
 - proto: DrinkGreenTea
@@ -11303,7 +11303,7 @@ entities:
     - type: TutorialAnchor
       anchorId: room15_urist
     - type: SpawnerDamage
-      wholeBody: true
+      wholeBody: True
       damage:
         types:
           Poison: 25

@@ -2650,6 +2650,13 @@
     anchorId: room15_urist
     assignAnchorId: room15_urist
     preventDeath: false
+  # he is treated here and nowhere else, the corridors have no beds and no defibrillator
+  - !type:ConfineAnchorAction
+    anchorId: room15_urist
+    doorways:
+    - room15_airlock
+    - room15_airlock_final
+    popup: tutorial-med-stay
   completion: !type:ReachAnchorCondition
     anchorId: room15
 
@@ -2902,7 +2909,8 @@
   completion: !type:DeadAnchorCondition
     anchorId: room15_urist
 
-# a plain bed, not stasis: the rest of the room is treated with him lying on it
+# a plain bed, not stasis: the rest of the room is treated with him lying on it. any bed in the
+# room will do, room15_bed is only where the pointer goes
 - type: tutorialStep
   id: TutorialLinearR15Bed
   instruction: tutorial-step-r15-bed
@@ -2922,7 +2930,6 @@
     - !type:DeadAnchorCondition
       anchorId: room15_urist
     - !type:BuckledToAnchorCondition
-      anchorId: room15_bed
       entityAnchorId: room15_urist
 
 - type: tutorialStep
@@ -2985,6 +2992,15 @@
     assignAnchorId: room15_medipen
     tutorialNpc: false
     preventDeath: false
+  watchers:
+  # the crit can finish him before the shot lands. the defibrillator is still in the room and holds
+  # its charge, so this is a setback rather than a dead end - the trainee just has to be told
+  - !type:ConditionWatcher
+    rearm: true
+    condition: !type:DeadAnchorCondition
+      anchorId: room15_urist
+    quip:
+    - tutorial-holopad-r15-epi-again
   # epinephrine only works in crit, so out of crit is exactly the moment it has done its job
   completion: !type:AnchorAliveCondition
     anchorId: room15_urist
@@ -3015,7 +3031,6 @@
           max: 0
         - !type:NotCondition
           condition: !type:BuckledToAnchorCondition
-            anchorId: room15_bed
             entityAnchorId: room15_urist
     quip:
     - tutorial-holopad-r15-finish-bed
@@ -3029,7 +3044,6 @@
       anchorId: room15_urist
       max: 0
     - !type:BuckledToAnchorCondition
-      anchorId: room15_bed
       entityAnchorId: room15_urist
     - !type:HealthAnalyzedCondition
       anchorId: room15_urist
@@ -3608,6 +3622,52 @@
   - tutorial-holopad-r16-build-intro-b
   completion: !type:MentorFinishedSpeakingCondition
 
+# nothing stops a trainee from raising all three machines at once, or in their own order, so the nets
+# that catch a run out of steel or a board in the wrong frame belong to the room and not to whichever
+# step happens to be up
+- type: tutorialWatcherSet
+  id: TutorialR16Build
+  watchers:
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r16-steel-spare
+    actions:
+    - !type:SpawnAtAnchorAction
+      anchorId: room16_autolathe
+      prototype: SheetSteel
+      assignAnchorId: room16_spare_steel
+      tutorialNpc: false
+      preventDeath: false
+    condition: !type:AllCondition
+      conditions:
+      - !type:LatheMaterialsLoadedCondition
+        anchorId: room16_autolathe
+        materials: [ Steel ]
+      - !type:NotCondition
+        condition: !type:StackAmountNearCondition
+          stackType: Steel
+          min: 8
+          range: 8
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r16-board-wrong
+    condition: !type:PrototypeNearAnchorCondition
+      prototype: SubstationMachineCircuitboard
+      anchorId: room16_build_smes
+      range: 0.5
+      ignoreCarried: true
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r16-substation-board-wrong
+    condition: !type:PrototypeNearAnchorCondition
+      prototype: SMESMachineCircuitboard
+      anchorId: room15_build_substation
+      range: 0.5
+      ignoreCarried: true
+
 # the SMES is the one machine built with a hand on the shoulder: the crafting menu, the autolathe, then every
 # stage of the frame and the examine text that says what the frame wants next. the terminal, the substation
 # and the APC come after, with less and less help.
@@ -3627,6 +3687,10 @@
   speak:
   - tutorial-holopad-r16-craft-menu-a
   - tutorial-holopad-r16-craft-menu-b
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:CraftingMenuOpenedCondition {}
 
 - type: tutorialStep
@@ -3651,6 +3715,10 @@
       recipe: MachineFrame
       stray: true
       strayRange: 1.5
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:ConstructionGhostOnAnchorCondition
@@ -3686,6 +3754,10 @@
       prototypes: [ UnfinishedMachineFrame ]
       stray: true
       strayRange: 1.5
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:PrototypesOnAnchorsCondition
     anchorIds: [ room16_build_smes ]
     prototypes: [ UnfinishedMachineFrame, MachineFrame, SMESBasicEmpty ]
@@ -3707,28 +3779,10 @@
   speak:
   - tutorial-holopad-r16-lathe-load-a
   - tutorial-holopad-r16-lathe-load-b
-  watchers:
-  - !type:ConditionWatcher
-    rearm: true
-    quip:
-    - tutorial-holopad-r16-steel-spare
-    actions:
-    - !type:SpawnAtAnchorAction
-      anchorId: room16_autolathe
-      prototype: SheetSteel
-      assignAnchorId: room16_spare_steel
-      tutorialNpc: false
-      preventDeath: false
-    condition: !type:AllCondition
-      conditions:
-      - !type:LatheMaterialsLoadedCondition
-        anchorId: room16_autolathe
-        materials: [ Steel ]
-      - !type:NotCondition
-        condition: !type:StackAmountNearCondition
-          stackType: Steel
-          min: 8
-          range: 8
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:LatheMaterialsLoadedCondition
     anchorId: room16_autolathe
     materials: [ Steel, Glass, Plastic ]
@@ -3757,6 +3811,10 @@
   speak:
   - tutorial-holopad-r16-lathe-smes-a
   - tutorial-holopad-r16-lathe-smes-b
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:LatheGuideGatheredCondition {}
@@ -3772,6 +3830,10 @@
   speak:
   - tutorial-holopad-r16-frame-examine-a
   - tutorial-holopad-r16-frame-examine-b
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:ExaminedNearAnchorCondition
@@ -3790,6 +3852,10 @@
   stuckSkipSeconds: 300
   speak:
   - tutorial-holopad-r16-frame-anchor
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:PrototypeNearAnchorCondition
@@ -3814,6 +3880,10 @@
   stuckSkipSeconds: 300
   speak:
   - tutorial-holopad-r16-frame-cable
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:PrototypeNearAnchorCondition
@@ -3833,16 +3903,10 @@
   stuckSkipSeconds: 300
   speak:
   - tutorial-holopad-r16-board
-  watchers:
-  - !type:ConditionWatcher
-    rearm: true
-    quip:
-    - tutorial-holopad-r16-board-wrong
-    condition: !type:PrototypeNearAnchorCondition
-      prototype: SubstationMachineCircuitboard
-      anchorId: room16_build_smes
-      range: 0.5
-      ignoreCarried: true
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:PrototypeNearAnchorCondition
@@ -3863,6 +3927,10 @@
   keybindHint: tutorial-hint-examine-frame
   speak:
   - tutorial-holopad-r16-parts-examine
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:ExaminedNearAnchorCondition
@@ -3896,6 +3964,10 @@
   speak:
   - tutorial-holopad-r16-parts-a
   - tutorial-holopad-r16-parts-b
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:MachineFrameCompleteNearAnchorCondition
@@ -3913,6 +3985,10 @@
   stuckSkipSeconds: 300
   speak:
   - tutorial-holopad-r16-smes-screw
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_smes ]
+    prototypes: [ SMESBasicEmpty ]
   completion: !type:PrototypeNearAnchorCondition
     prototype: SMESBasicEmpty
     anchorId: room16_build_smes
@@ -3939,6 +4015,11 @@
       count: 10
   speak:
   - tutorial-holopad-r16-terminal-print
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_cable_terminal ]
+    prototypes: [ CableTerminal ]
+    rotation: Match
   completion: !type:AnyCondition
     conditions:
     - !type:LatheGuideGatheredCondition {}
@@ -3979,6 +4060,11 @@
       prototypes: [ CableTerminal ]
       stray: true
       strayRange: 1.5
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room16_build_cable_terminal ]
+    prototypes: [ CableTerminal ]
+    rotation: Match
   completion: !type:PrototypesOnAnchorsCondition
     anchorIds: [ room16_build_cable_terminal ]
     prototypes: [ CableTerminal ]
@@ -4000,33 +4086,16 @@
   - !type:ConditionWatcher
     rearm: true
     quip:
-    - tutorial-holopad-r16-steel-spare
-    actions:
-    - !type:SpawnAtAnchorAction
-      anchorId: room16_autolathe
-      prototype: SheetSteel
-      assignAnchorId: room16_spare_steel
-      tutorialNpc: false
-      preventDeath: false
-    condition: !type:AllCondition
-      conditions:
-      - !type:LatheMaterialsLoadedCondition
-        anchorId: room16_autolathe
-        materials: [ Steel ]
-      - !type:NotCondition
-        condition: !type:StackAmountNearCondition
-          stackType: Steel
-          min: 5
-          range: 8
-  - !type:ConditionWatcher
-    rearm: true
-    quip:
     - tutorial-holopad-r16-frame-misplaced
     condition: !type:PrototypesOnAnchorsCondition
       anchorIds: [ room15_build_substation ]
       prototypes: [ UnfinishedMachineFrame ]
       stray: true
       strayRange: 1.5
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room15_build_substation ]
+    prototypes: [ SubstationBasicEmpty ]
   completion: !type:PrototypesOnAnchorsCondition
     anchorIds: [ room15_build_substation ]
     prototypes: [ UnfinishedMachineFrame, MachineFrame, SubstationBasicEmpty ]
@@ -4054,6 +4123,10 @@
     - recipe: CableStack
   speak:
   - tutorial-holopad-r16-substation-print
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room15_build_substation ]
+    prototypes: [ SubstationBasicEmpty ]
   completion: !type:AnyCondition
     conditions:
     - !type:LatheGuideGatheredCondition {}
@@ -4084,16 +4157,10 @@
   speak:
   - tutorial-holopad-r16-substation-a
   - tutorial-holopad-r16-substation-b
-  watchers:
-  - !type:ConditionWatcher
-    rearm: true
-    quip:
-    - tutorial-holopad-r16-substation-board-wrong
-    condition: !type:PrototypeNearAnchorCondition
-      prototype: SMESMachineCircuitboard
-      anchorId: room15_build_substation
-      range: 0.5
-      ignoreCarried: true
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room15_build_substation ]
+    prototypes: [ SubstationBasicEmpty ]
   completion: !type:PrototypesOnAnchorsCondition
     anchorIds: [ room15_build_substation ]
     prototypes: [ SubstationBasicEmpty ]
@@ -4114,6 +4181,10 @@
     - recipe: APCElectronics
   speak:
   - tutorial-holopad-r16-apc-print
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room15_build_apc ]
+    prototypes: [ APCConstructed ]
   completion: !type:AnyCondition
     conditions:
     - !type:LatheGuideGatheredCondition {}
@@ -4138,33 +4209,16 @@
   - !type:ConditionWatcher
     rearm: true
     quip:
-    - tutorial-holopad-r16-steel-spare
-    actions:
-    - !type:SpawnAtAnchorAction
-      anchorId: room16_autolathe
-      prototype: SheetSteel
-      assignAnchorId: room16_spare_steel
-      tutorialNpc: false
-      preventDeath: false
-    condition: !type:AllCondition
-      conditions:
-      - !type:LatheMaterialsLoadedCondition
-        anchorId: room16_autolathe
-        materials: [ Steel ]
-      - !type:NotCondition
-        condition: !type:StackAmountNearCondition
-          stackType: Steel
-          min: 3
-          range: 8
-  - !type:ConditionWatcher
-    rearm: true
-    quip:
     - tutorial-holopad-r16-apc-misplaced
     condition: !type:PrototypesOnAnchorsCondition
       anchorIds: [ room15_build_apc ]
       prototypes: [ APCFrame, APCConstructed ]
       stray: true
       strayRange: 2
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PrototypesOnAnchorsCondition
+    anchorIds: [ room15_build_apc ]
+    prototypes: [ APCConstructed ]
   completion: !type:PrototypesOnAnchorsCondition
     anchorIds: [ room15_build_apc ]
     prototypes: [ APCConstructed ]
@@ -4191,6 +4245,9 @@
       count: 3
   speak:
   - tutorial-holopad-r16-cables
+  watcherSets: [ TutorialR16Build ]
+  skipIf: !type:PoweredAnchorCondition
+    anchorId: room15_build_bulb
   completion: !type:AnyCondition
     conditions:
     - !type:LatheGuideGatheredCondition {}
@@ -4227,6 +4284,7 @@
   speak:
   - tutorial-holopad-r16-power-a
   - tutorial-holopad-r16-power-b
+  watcherSets: [ TutorialR16Build ]
   completion: !type:PoweredAnchorCondition
     anchorId: room15_build_bulb
   onComplete:

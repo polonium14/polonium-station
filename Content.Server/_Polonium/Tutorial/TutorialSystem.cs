@@ -504,9 +504,8 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         Dirty(ent);
 
         // nothing to teach if they already did it, and the mentor must not ask for it anyway
-        if (stepProto.SkipIfSatisfied
-            && stepProto.Completion is { } completion
-            && _tracker.Evaluate(ent.Owner, ent.Comp, completion))
+        var skipIf = stepProto.SkipIf ?? (stepProto.SkipIfSatisfied ? stepProto.Completion : null);
+        if (skipIf is { } skip && _tracker.Evaluate(ent.Owner, ent.Comp, skip))
         {
             AdvanceStep(ent);
             return;

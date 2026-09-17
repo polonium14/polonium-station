@@ -7,6 +7,7 @@ using Content.Shared._Polonium.Tutorial.Actions;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Prototypes;
 using Content.Shared.Access;
+using Content.Shared.Atmos.Rotting;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration.Components;
@@ -58,6 +59,7 @@ public sealed partial class TutorialActionExecutor : EntitySystem
     [Dependency] private AmeControllerSystem _ame = default!;
     [Dependency] private MobStateSystem _mobs = default!;
     [Dependency] private TutorialNpcSystem _npcs = default!;
+    [Dependency] private TutorialConfinementSystem _confinement = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private ExplosionSystem _explosion = default!;
     [Dependency] private SharedSolutionContainerSystem _solution = default!;
@@ -148,6 +150,10 @@ public sealed partial class TutorialActionExecutor : EntitySystem
 
             case SetDisarmProneAction prone:
                 SetDisarmProne(player, prone);
+                break;
+
+            case ConfineAnchorAction confine:
+                Confine(player, confine);
                 break;
 
             case BonkNpcAction bonk:
@@ -269,6 +275,9 @@ public sealed partial class TutorialActionExecutor : EntitySystem
                 case ClaimNearbyMobAction claim:
                     ClaimNearby(player, claim);
                     break;
+                case ConfineAnchorAction confine:
+                    Confine(player, confine);
+                    break;
                 case SpawnAtAnchorAction spawn:
                     SpawnAt(player, spawn);
                     break;
@@ -378,6 +387,11 @@ public sealed partial class TutorialActionExecutor : EntitySystem
             npc.PreventDeath = preventDeath;
             _npcs.KeepAwake(spawned);
             _npcs.SatiateAndIdle(spawned);
+
+            // a patient meant to be brought back must not start decomposing while the trainee reads
+            // the holopad - a rotten body refuses the defibrillator for good
+            if (!markDeadPatient)
+                RemComp<PerishableComponent>(spawned);
         }
 
         if (markDeadPatient)
@@ -513,6 +527,21 @@ public sealed partial class TutorialActionExecutor : EntitySystem
                 EnsureComp<DisarmProneComponent>(uid);
             else
                 RemComp<DisarmProneComponent>(uid);
+        }
+    }
+
+    private void Confine(EntityUid player, ConfineAnchorAction confine)
+    {
+        var doorways = new List<EntityUid>();
+        foreach (var id in confine.Doorways)
+        {
+            doorways.AddRange(AnchorsNamed(player, id));
+        }
+
+        // the map spawner shares the patient's anchor and stays put anyway
+        foreach (var uid in AnchorsNamed(player, confine.AnchorId).Where(HasComp<MobStateComponent>))
+        {
+            _confinement.Confine(uid, doorways, confine.Popup);
         }
     }
 

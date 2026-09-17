@@ -46,7 +46,7 @@ tutorial-step-r13-flour = Weź z automatu worek mąki i miej go w ręce.
 tutorial-step-r13-bun = W panelu ustaw 5 sekund i wciśnij Start.
 tutorial-step-r13-meat = Kliknij nożem w martwą krowę. Wypadnie 5 kawałków mięsa, potrzebujesz 2.
 tutorial-step-r13-tomato = Poczekaj na dojrzenie i kliknij w donicę pustą ręką. Zbierzesz 2 pomidory.
-tutorial-step-r15-to-corpse = Podejdź do zwłok leżących na podłodze.
+tutorial-step-r15-to-corpse = Podejdź do zwłok leżących na łóżku.
 tutorial-step-r15-morgue = Zaciągnij zwłoki do kostnicy: otwórz ją, połóż ciało na wysuniętej szufladzie i zamknij.
 tutorial-step-r15-kit = Otwórz apteczkę - w ręce albo prosto na stole.
 tutorial-step-r15-brute = Weź z apteczki opatrunek na stłuczenia i klikaj nim w Urysta, aż obrażenia obuchowe spadną do zera.
@@ -153,6 +153,7 @@ tutorial-med-corpse = Temu inżynierowi nic już nie pomoże. Leki zostaw dla Ur
 tutorial-med-dead = Martwy organizm nie przerobi leku. Najpierw przywróć pacjenta do życia.
 tutorial-med-empty = Nie ma tu nic do wstrzyknięcia. Strzykawkę najpierw napełnij z butelki.
 tutorial-med-container = Nie przelewaj leku gdzie popadnie, Uryst potrzebuje każdej kropli.
+tutorial-med-stay = Urysta leczysz w gabinecie. Tu są łóżka, leki i defibrylator, na korytarzu nie ma nic.
 tutorial-cannot-suicide = W szkoleniu nie możesz popełnić samobójstwa.
 
 tutorial-bubble-acknowledge = Zrozumiałem

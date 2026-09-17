@@ -254,13 +254,19 @@
   id: SyringeTutorial
   suffix: Tutorial
 
-# the patient's dose and not a drop more, so it cannot be poured out, splashed or smashed. the
-# syringe still draws from it the stock way
+# it cannot be poured out, splashed or smashed, and the whole bottle is still under the twenty
+# units that make dylovene turn on its patient - emptying it into him is a waste, never an overdose.
+# the syringe holds fifteen of it, which clears twice the poison he carries
 - type: entity
   parent: ChemistryBottleDylovene
   id: ChemistryBottleDyloveneTutorial
   suffix: Tutorial
   components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Dylovene
+        Quantity: 19
   - type: TutorialMedicine
   - type: Destructible
     thresholds: []
@@ -395,6 +401,39 @@
         - FullTileMask
         layer:
         - WallLayer
+
+# the only defibrillator in the room. it never runs flat, its cell stays where it is, and the shock
+# carries no damage of its own - a patient who is already just past dead must not be pushed further
+- type: entity
+  parent: Defibrillator
+  id: DefibrillatorTutorial
+  suffix: Tutorial
+  components:
+  - type: Defibrillator
+    zapDamage: 0
+  - type: PowerCellDraw
+    useCharge: 0
+    drawRate: 0
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+        locked: true
+  - type: Destructible
+    thresholds: []
+
+- type: entity
+  parent: DefibrillatorCabinet
+  id: DefibrillatorCabinetTutorial
+  suffix: Tutorial
+  components:
+  - type: ContainerFill
+    containers:
+      ItemCabinet:
+      - DefibrillatorTutorial
+  - type: Destructible
+    thresholds: []
 
 - type: tile
   id: TutorialSpaceBarrier
