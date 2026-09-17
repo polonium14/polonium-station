@@ -3,7 +3,6 @@ using Content.Shared._Polonium.Tutorial.Actions;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Conditions;
 using Content.Shared._Polonium.Tutorial.Prototypes;
-using Content.Shared.Chemistry.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -93,7 +92,6 @@ public abstract partial class SharedTutorialSystem : EntitySystem
         SubscribeLocalEvent<TutorialSealedComponent, BeforePryEvent>(OnSealedPry);
         SubscribeLocalEvent<TutorialSealedComponent, WeldableAttemptEvent>(OnSealedWeld);
         SubscribeLocalEvent<TutorialNoDeconstructComponent, UnanchorAttemptEvent>(OnLockedUnanchor);
-        SubscribeLocalEvent<TutorialNoPourComponent, ComponentInit>(OnNoPourInit);
         SubscribeLocalEvent<PdaComponent, ItemSlotEjectAttemptEvent>(OnPdaIdEject);
         SubscribeLocalEvent<TutorialSessionComponent, IngestionAttemptEvent>(OnTraineeIngest);
         SubscribeLocalEvent<EdibleComponent, AttemptToolRefineEvent>(OnIngredientRefine);
@@ -133,12 +131,6 @@ public abstract partial class SharedTutorialSystem : EntitySystem
     {
         args.Cancel();
         args.FailMessage = Loc.GetString("tutorial-cannot-break-structure");
-    }
-
-    private void OnNoPourInit(Entity<TutorialNoPourComponent> ent, ref ComponentInit args)
-    {
-        // drainable is how you empty a tank into a beaker or a sink. mop rinse uses refillable.
-        RemComp<DrainableSolutionComponent>(ent.Owner);
     }
 
     private void OnPdaIdEject(Entity<PdaComponent> pda, ref ItemSlotEjectAttemptEvent args)

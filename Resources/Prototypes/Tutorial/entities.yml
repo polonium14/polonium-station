@@ -131,6 +131,7 @@
   - type: TutorialNoPour
   - type: Spillable
     canSpillFromHand: false
+  - !Remove type: DrainableSolution
 
 - type: entity
   parent: PuddleTemporary
@@ -263,6 +264,8 @@
   - type: TutorialMedicine
   - type: Destructible
     thresholds: []
+  - !Remove type: DrainableSolution
+  - !Remove type: Spillable
 
 - type: entity
   parent: Paper

@@ -4,7 +4,6 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Events;
-using Content.Shared.Fluids.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Medical;
 using Content.Shared.Medical.Healing;
@@ -23,18 +22,10 @@ public abstract partial class SharedTutorialSystem
 
     private void InitializeMedicine()
     {
-        SubscribeLocalEvent<TutorialMedicineComponent, ComponentInit>(OnMedicineInit);
         // the injector and healing systems own the item-side events, so these listen on the trainee
         SubscribeLocalEvent<TutorialSessionComponent, UserInteractUsingEvent>(OnTraineeUseOn);
         SubscribeLocalEvent<TutorialSessionComponent, SelfBeforeInjectEvent>(OnTraineeInject);
         SubscribeLocalEvent<TutorialSessionComponent, HealingDoAfterEvent>(OnTraineeHealed, before: [typeof(HealingSystem)]);
-    }
-
-    private void OnMedicineInit(Entity<TutorialMedicineComponent> ent, ref ComponentInit args)
-    {
-        // a syringe draws through drawable, pouring and splashing go through these two
-        RemComp<DrainableSolutionComponent>(ent.Owner);
-        RemComp<SpillableComponent>(ent.Owner);
     }
 
     // runs before the item gets its turn, so a refusal here stops the do-after from ever starting
