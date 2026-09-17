@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: TrixxedHeart
-  changes:
-  - message: Vox can now wag their tails
-    type: Add
-  id: 9504
-  time: '2026-02-08T01:38:54.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40925
 - author: Liem161
   changes:
   - message: Added sprites for holding practice disabler in both hands.
@@ -4111,3 +4104,17 @@
   id: 10002
   time: '2026-09-17T18:23:14.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1033
+- author: nikitosych
+  changes:
+  - message: "Rozszerzono tutorial o nowe \u0107wiczenia, warunki, akcje, komunikaty\
+      \ i elementy mapy."
+    type: Add
+  - message: "Zaktualizowano przebieg tutorialu, interakcje, interfejs, lokalizacj\u0119\
+      \ oraz skalowanie dymk\xF3w."
+    type: Tweak
+  - message: "Zablokowano niedozwolone dzia\u0142ania kursanta, w tym walk\u0119,\
+      \ destrukcj\u0119, samob\xF3jstwo i dost\u0119p do przestrzeni."
+    type: Fix
+  id: 10003
+  time: '2026-09-17T19:58:31.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1025
