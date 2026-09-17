@@ -287,7 +287,12 @@
       color: "#58abcc"
   - type: GuideHelp
     guides:
-    - Medical
+    - MedicalDoctor
+    - Cloning
+    - Cryogenics
+    - Medicalpatches
+    - AdvancedBrute
+    - Medicine
 
 - type: entity
   id: BookHowToSurvive
@@ -328,6 +333,7 @@
     guides:
     - Chemicals
     - Chemist
+    - MedicinalRecipes
 
 - type: entity
   id: BookAILawCompendium
