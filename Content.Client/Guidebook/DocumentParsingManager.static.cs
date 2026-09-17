@@ -9,6 +9,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Client._Polonium.RichText;
 using Content.Client.Guidebook.Controls;
 using Pidgin;
 using Robust.Client.UserInterface;
@@ -92,7 +93,10 @@ public sealed partial class DocumentParsingManager
                     }
 
                     msg.Pop();
-                    rt.SetMessage(msg, tagsAllowed: null);
+
+                    using (UrlTag.Allow())
+                        rt.SetMessage(msg, tagsAllowed: null);
+
                     return rt;
                 },
                 TextParser)
