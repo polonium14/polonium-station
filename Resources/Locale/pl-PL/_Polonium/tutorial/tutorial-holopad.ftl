@@ -144,6 +144,7 @@ tutorial-holopad-r14-ammo = Zacznij od amunicji, bo magazynek i pudełko zajmą 
 tutorial-holopad-r14-gun = Strzelaj po kolei do tarczy, którą podświetlę, po cztery razy w każdą. Trafiać nie musisz, ale i tak wszystko liczę. Kiedy magazynek się skończy, wymień go na pełny.
 tutorial-holopad-r14-gun-order = Po kolei. Najpierw ta podświetlona, pozostałe poczekają.
 tutorial-holopad-r14-gun-reload = Magazynek pusty, a tarcze jeszcze czekają. Weź pełny magazynek do wolnej ręki i od razu kliknij nim pistolet, pustego nie wyjmuj. Pełny wskoczy na jego miejsce, a pusty zostanie ci w ręce.
+tutorial-holopad-r14-range-urist = Nie do Urysta. Tarcze wiszą naprzeciwko i to one są tu do strzelania.
 tutorial-holopad-r14-score = Wyniki z tarcz: trafienia - { $hits }, pudła - { $misses }.
 tutorial-holopad-r14-score-perfect = Ani jednego pudła. Sprawdzę jeszcze, czy tarcze nie są magnetyczne.
 tutorial-holopad-r14-score-good = Porządnie. Syndykat właśnie dopisał kogoś do listy osób, których lepiej unikać.
@@ -156,9 +157,10 @@ tutorial-holopad-r14-laser-shoot = Wystrzelaj baterię w tarcze, do ostatniego s
 tutorial-holopad-r14-charge = Pusty. Wyłącz tryb walki, bo w nim kliknięcie bronią to strzał, i włóż karabin do ładowarki na ścianie. Naładuje się sam.
 tutorial-holopad-r14-charge-combat = Tryb walki wciąż jest włączony, więc karabin próbuje strzelać, zamiast wejść do ładowarki. Wyłącz go i kliknij ładowarkę jeszcze raz.
 tutorial-holopad-r14-lethal-mag = Dałam ci dostęp do ostatniej skrzyni. W środku jest magazynek bojowy, weź go.
-tutorial-holopad-r14-slime = Za chwilę pojawi się slajm. Weź pistolet, włóż do niego magazynek bojowy, włącz tryb walki i zastrzel go.
-tutorial-holopad-quip-slime-fist = Pięściami. Oczywiście, że pięściami. Zaliczam i nie komentuję.
-tutorial-holopad-r14-slime-resupply = Bojowe się skończyły, a slajm dalej skacze. Dołożyłam do skrzyni jeszcze jeden magazynek bojowy, weź go i przeładuj.
+tutorial-holopad-r14-slime = O nie! Pojawił się zupełnie niezaplanowany szlam! Weź pistolet, włóż magazynek bojowy, włącz tryb walki i go zastrzel.
+tutorial-holopad-quip-slime-fist = Pięściami. Oczywiście, że pięściami! Zaliczam i nie komentuję.
+tutorial-holopad-r14-slime-resupply = Bojowe się skończyły, a szlam dalej skacze. Dołożyłam do skrzyni jeszcze jeden magazynek bojowy, weź go i przeładuj.
+tutorial-holopad-r14-slime-urist = Nie do Urysta, idioto! Do szlama strzelaj, do SZLAMA!
 
 # r15 - medycyna
 tutorial-holopad-r15-enter-a = Medycyna. Najczystsze pomieszczenie w ośrodku, głównie dlatego, że sprzątacze boją się tu wchodzić.

@@ -2392,6 +2392,14 @@
     anchorId: room14_cell_chair
     entityAnchorId: room14_urist
 
+- type: tutorialWatcherSet
+  id: TutorialR14Range
+  watchers:
+  - !type:FlagWatcher
+    flag: fired-at:room14_urist
+    quip:
+    - tutorial-holopad-r14-range-urist
+
 - type: tutorialStep
   id: TutorialLinearR14Range
   instruction: tutorial-step-r14-range
@@ -2433,6 +2441,7 @@
   - room14_shooting_pistol
   speak:
   - tutorial-holopad-r14-pistol
+  watcherSets: [ TutorialR14Range ]
   completion: !type:ItemSlotFilledCondition
     anchorId: room14_shooting_pistol
     slot: gun_magazine
@@ -2463,6 +2472,7 @@
         anchorId: room14_shooting_pistol
     quip:
     - tutorial-holopad-r14-gun-reload
+  watcherSets: [ TutorialR14Range ]
   completion: !type:ShootTargetsCondition
     anchorId: room14_shooting_target
     orderFrom: room14_shooting
@@ -2508,6 +2518,7 @@
             wielded: true
     quip:
     - tutorial-holopad-r14-laser-wield
+  watcherSets: [ TutorialR14Range ]
   completion: !type:HoldingAnchorCondition
     anchorId: room14_shooting_laser
     wielded: true
@@ -2526,6 +2537,7 @@
   - room14_shooting_target
   speak:
   - tutorial-holopad-r14-laser-shoot
+  watcherSets: [ TutorialR14Range ]
   completion: !type:AnchorAmmoEmptyCondition
     anchorId: room14_shooting_laser
 
@@ -2549,6 +2561,7 @@
       - !type:CombatModeCondition
     quip:
     - tutorial-holopad-r14-charge-combat
+  watcherSets: [ TutorialR14Range ]
   completion: !type:ItemSlotFilledCondition
     anchorId: room14_shooting_recharger
     slot: charger_slot
@@ -2576,6 +2589,7 @@
   - !type:OpenStorageAction
     anchorId: room14_crate_lethal_ammo
     recoveryOnly: true
+  watcherSets: [ TutorialR14Range ]
   completion: !type:HoldingAnchorCondition
     anchorId: room14_lethal_mag
 
@@ -2599,6 +2613,10 @@
     flag: melee:room14_slime
     quip:
     - tutorial-holopad-quip-slime-fist
+  - !type:FlagWatcher
+    flag: fired-at:room14_urist
+    quip:
+    - tutorial-holopad-r14-slime-urist
   # every lethal round spent and the slime still up: another magazine goes into the crate, again
   # for each one shot dry. the pause covers a round still sitting in the chamber
   - !type:ConditionWatcher
