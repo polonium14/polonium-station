@@ -1,3 +1,5 @@
+using Content.Client.Guidebook.RichText;
+using Content.Client.Guidebook.Richtext;
 using Content.Client.UserInterface.RichText;
 using Robust.Client.UserInterface.RichText;
 
@@ -30,5 +32,22 @@ public static class UserFormattableTags
     [
         ..BaseAllowedTags,
         typeof(ScrambleTag)
+    ];
+
+    public static readonly Type[] WithoutUrl =
+    [
+        typeof(BoldItalicTag),
+        typeof(BoldTag),
+        typeof(BulletTag),
+        typeof(ColorTag),
+        typeof(CommandLinkTag),
+        typeof(FontTag),
+        typeof(HeadingTag),
+        typeof(ItalicTag),
+        typeof(KeyBindTag),
+        typeof(MonoTag),
+        typeof(ProtodataTag),
+        typeof(ScrambleTag),
+        typeof(TextLinkTag),
     ];
 }

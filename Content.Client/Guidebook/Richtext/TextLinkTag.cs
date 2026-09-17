@@ -1,11 +1,11 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Client._Polonium.RichText;
+using Content.Client.UserInterface.ControlExtensions;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
-using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Input;
 using Robust.Shared.Utility;
-using Content.Client.UserInterface.ControlExtensions;
 
 namespace Content.Client.Guidebook.RichText;
 
@@ -27,7 +27,7 @@ public sealed class TextLinkTag : IMarkupTagHandler
             return false;
         }
 
-        var label = new Label();
+        var label = new LinkLabel();
         label.Text = text;
 
         label.MouseFilter = Control.MouseFilterMode.Stop;
