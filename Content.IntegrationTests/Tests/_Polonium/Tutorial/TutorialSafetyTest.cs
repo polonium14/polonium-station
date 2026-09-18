@@ -22,6 +22,7 @@ public sealed class TutorialSafetyTest : GameTest
     private const string Wall = "WallSolid";
     private const string Trainee = "MobHuman";
     private const string Slime = "TutorialSlime";
+    private static readonly ProtoId<DamageTypePrototype> BluntDamage = "Blunt";
 
     [Test]
     public async Task TraineeCannotDamageAStructure()
@@ -185,6 +186,6 @@ public sealed class TutorialSafetyTest : GameTest
 
     private static DamageSpecifier Blunt(IPrototypeManager proto, int amount)
     {
-        return new DamageSpecifier(proto.Index<DamageTypePrototype>("Blunt"), FixedPoint2.New(amount));
+        return new DamageSpecifier(proto.Index(BluntDamage), FixedPoint2.New(amount));
     }
 }

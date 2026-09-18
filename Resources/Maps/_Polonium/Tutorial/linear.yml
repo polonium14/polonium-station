@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/17/2026 19:19:17
-  entityCount: 3256
+  entityCount: 3255
 maps:
 - 596
 grids:
@@ -11645,22 +11645,16 @@ entities:
     - type: Transform
       parent: 1
       pos: 167.5,-15.5
-    - type: TutorialAnchor
-      anchorId: room13_table_with_microwave
   - uid: 973
     components:
     - type: Transform
       parent: 1
       pos: 168.5,-15.5
-    - type: TutorialAnchor
-      anchorId: room13_table_with_microwave
   - uid: 974
     components:
     - type: Transform
       parent: 1
       pos: 169.5,-15.5
-    - type: TutorialAnchor
-      anchorId: room13_table_with_microwave
   - uid: 977
     components:
     - type: Transform
@@ -12222,14 +12216,6 @@ entities:
       pos: 232.5,-17.5
     - type: TutorialAnchor
       anchorId: room17
-  - uid: 834
-    components:
-    - type: Transform
-      parent: 1
-      rot: 1.5707963267948966 rad
-      pos: 91.5,-11.5
-    - type: TutorialAnchor
-      anchorId: room8_girder_drag_target_fallback
   - uid: 1109
     components:
     - type: Transform
