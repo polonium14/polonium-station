@@ -1,65 +1,47 @@
-using System.Linq;
 using Content.Server.Construction;
 using Content.Server.Database;
-using Content.Server.GameTicking;
-using Content.Server.GameTicking.Rules;
 using Content.Server.Ghost.Roles.Components;
-using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
-using Content.Shared._Polonium.Tutorial.Conditions;
 using Content.Shared._Polonium.Tutorial.Prototypes;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Construction;
-using Content.Shared.Damage;
-using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Electrocution;
-using Content.Shared.Movement.Components;
 using Content.Shared.Interaction;
-using Content.Shared.Ghost.Components;
 using Content.Shared.Mobs;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.EntitySystems;
-using Content.Shared.Standing;
-using Content.Shared.Tools.Components;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Wall;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
-using Robust.Shared.Enums;
 using Robust.Shared.Network;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Polonium.Tutorial;
 
+/// <summary>
+/// Owns a run from start to finish: which flow a trainee is on, when it begins and what
+/// happens when it ends or the player walks away from it.
+/// </summary>
 public sealed partial class TutorialSystem : SharedTutorialSystem
 {
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IServerDbManager _db = default!;
     [Dependency] private TutorialActionExecutor _actions = default!;
     [Dependency] private TutorialMentorSystem _mentor = default!;
     [Dependency] private TutorialNpcSystem _npcs = default!;
-    [Dependency] private TutorialConditionTracker _tracker = default!;
-    [Dependency] private SolitarySpawningSystem _solitary = default!;
-    [Dependency] private DamageableSystem _damageable = default!;
-    [Dependency] private MobStateSystem _mobState = default!;
-    [Dependency] private MobThresholdSystem _thresholds = default!;
-    [Dependency] private StandingStateSystem _standing = default!;
     [Dependency] private SatiationSystem _satiation = default!;
     [Dependency] private BodySystem _body = default!;
     [Dependency] private SharedToolSystem _tool = default!;
 
-    private const string ShockDamage = "Shock";
     private static readonly TimeSpan ShockQuipCooldown = TimeSpan.FromSeconds(20);
 
     // joingame / ready still dump you on the shared map, so we keep those cmds out while the comic is up
@@ -100,127 +82,6 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
     {
         _player.PlayerStatusChanged -= OnPlayerStatus;
         base.Shutdown();
-    }
-
-    public void ForceAdvance(Entity<TutorialSessionComponent?> player)
-    {
-        if (!Resolve(player, ref player.Comp, false))
-            return;
-
-        AdvanceStep((player.Owner, player.Comp));
-    }
-
-    public void ForceStartFlow(EntityUid player, ProtoId<TutorialFlowPrototype> flowId) =>
-        StartFlow(player, flowId, fromBeginning: false);
-
-    private void OnStartRequested(TutorialStartRequestedEvent ev)
-    {
-        StartFlow(ev.Player, ev.Flow, ev.FromBeginning);
-    }
-
-    private void OnStartPractical(TutorialStartPracticalEvent ev, EntitySessionEventArgs args)
-    {
-        if (ReadIntroMode() != IntroTutorial)
-            return;
-
-        _lobbyTour.Remove(args.SenderSession.UserId);
-        _solitary.TryJoinFromLobby(args.SenderSession);
-    }
-
-    private void OnReturnToLobby(TutorialReturnToLobbyEvent ev, EntitySessionEventArgs args)
-    {
-        if (ReadIntroMode() != IntroTutorial)
-            return;
-
-        var session = args.SenderSession;
-        if (session.AttachedEntity is not { } mob || !HasComp<GhostComponent>(mob))
-            return;
-
-        EntityManager.System<GameTicker>().Respawn(session);
-    }
-
-    private void OnLobbyFlow(TutorialLobbyFlowEvent ev, EntitySessionEventArgs args)
-    {
-        if (ev.Active)
-            _lobbyTour.Add(args.SenderSession.UserId);
-        else
-            _lobbyTour.Remove(args.SenderSession.UserId);
-    }
-
-    public bool TryBlockConsoleJoin(ICommonSession player, IConsoleShell shell)
-    {
-        if (!IsConsoleJoinBlocked(player))
-            return false;
-
-        shell.WriteError(Loc.GetString("cmd-tutorial-lobby-join-blocked"));
-        return true;
-    }
-
-    public bool IsConsoleJoinBlocked(ICommonSession player)
-    {
-        var ticker = EntityManager.System<GameTicker>();
-        if (ticker.UserHasJoinedGame(player))
-            return false;
-
-        if (_lobbyTour.Contains(player.UserId))
-            return true;
-
-        return ReadIntroMode() == IntroTutorial;
-    }
-
-    private void OnPlayerStatus(object? sender, SessionStatusEventArgs ev)
-    {
-        if (ev.NewStatus == SessionStatus.Disconnected)
-        {
-            _lobbyTour.Remove(ev.Session.UserId);
-            return;
-        }
-
-        if (ev.NewStatus != SessionStatus.Connected)
-            return;
-
-        if (ReadIntroMode() != IntroMain)
-            return;
-
-        if (string.IsNullOrEmpty(_cfg.GetCVar(CCVars.TutorialSolitaryServerConnectionString)))
-            return;
-
-        SendCompletionStatus(ev.Session);
-    }
-
-    private async void SendCompletionStatus(ICommonSession session)
-    {
-        var completed = false;
-        try
-        {
-            (completed, _) = await _db.GetTutorialCompletion(session.UserId);
-        }
-        catch (Exception e)
-        {
-            Log.Error($"Tutorial: failed to read completion for {session.UserId}: {e}");
-        }
-
-        if (session.Status == SessionStatus.Disconnected)
-            return;
-
-        RaiseNetworkEvent(new TutorialPlayerCompletionEvent(completed), session);
-    }
-
-    private void OnRestartRequested(TutorialRestartRequestedEvent ev, EntitySessionEventArgs args)
-    {
-        if (ReadIntroMode() == IntroNone)
-            return;
-
-        var session = args.SenderSession;
-
-        if (_solitary.TryRestartTutorial(session, fromBeginning: true))
-            return;
-
-        // tutorialforcestart / already in a flow on a dirty map - replay in place
-        if (session.AttachedEntity is not { } mob || !TryComp<TutorialSessionComponent>(mob, out var tut))
-            return;
-
-        StartFlow(mob, tut.Flow, fromBeginning: true);
     }
 
     private void StartFlow(EntityUid player, ProtoId<TutorialFlowPrototype> flowId, bool fromBeginning)
@@ -276,88 +137,6 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         EnterStep((player, session), start);
     }
 
-    private int ResolveDebugStartStep(TutorialFlowPrototype flow, out string? roomId)
-    {
-        roomId = null;
-        var raw = _cfg.GetCVar(CCVars.TutorialDebugStartRoom);
-        if (!TryNormalizeRoomId(raw, out var room))
-        {
-            if (!string.IsNullOrWhiteSpace(raw))
-                Log.Warning($"Tutorial: debug_start_room '{raw}' is not a room marker, starting from the beginning");
-
-            return 0;
-        }
-
-        // room0 is the hud briefing, no marker on the map
-        if (room == "room0")
-            return 0;
-
-        var index = FindRoomStepIndex(flow, room);
-        if (index < 0)
-        {
-            Log.Warning($"Tutorial: no step for '{room}', starting from the beginning");
-            return 0;
-        }
-
-        roomId = room;
-        Log.Info($"Tutorial: debug start at {room} (step '{flow.Steps[index]}', index {index})");
-        return index;
-    }
-
-    private static bool TryNormalizeRoomId(string raw, out string roomId)
-    {
-        roomId = string.Empty;
-        var s = raw.Trim();
-        if (s.Length == 0)
-            return false;
-
-        if (s.StartsWith("room", StringComparison.OrdinalIgnoreCase))
-            s = s[4..];
-        else if (s.Length >= 2 && (s[0] is 'r' or 'R') && char.IsDigit(s[1]))
-            s = s[1..];
-
-        s = s.Trim();
-        if (!int.TryParse(s, out var n) || n < 0)
-            return false;
-
-        roomId = $"room{n}";
-        return true;
-    }
-
-    private int FindRoomStepIndex(TutorialFlowPrototype flow, string roomId)
-    {
-        for (var i = 0; i < flow.Steps.Count; i++)
-        {
-            if (_proto.TryIndex(flow.Steps[i], out var step) && step.SpeakAtAnchor == roomId)
-                return i;
-        }
-
-        if (!int.TryParse(roomId.AsSpan("room".Length), out var n))
-            return -1;
-
-        var prefix = $"TutorialLinearR{n:D2}";
-        for (var i = 0; i < flow.Steps.Count; i++)
-        {
-            if (flow.Steps[i].Id.StartsWith(prefix, StringComparison.Ordinal))
-                return i;
-        }
-
-        return -1;
-    }
-
-    private void FastForwardBefore(Entity<TutorialSessionComponent> ent, TutorialFlowPrototype flow, int startIndex)
-    {
-        for (var i = 0; i < startIndex; i++)
-        {
-            if (!_proto.TryIndex(flow.Steps[i], out var step))
-                continue;
-
-            // no speech, no meteor countdown, no walking npcs - just the world state this room needs
-            _actions.ExecuteAll(ent.Owner, step.OnEnter, instant: true);
-            _actions.ExecuteAll(ent.Owner, step.OnComplete, instant: true);
-        }
-    }
-
     private void OnShutdown(Entity<TutorialSessionComponent> ent, ref ComponentShutdown args)
     {
         _mentor.Cleanup(ent.Comp);
@@ -366,201 +145,6 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         // the last step means a player who cannot move and cannot swing, forever
         RemComp<TutorialFrozenComponent>(ent.Owner);
         RemComp<PacifiedComponent>(ent.Owner);
-    }
-
-    // CurTime still moves while the map is paused, so shove every deadline forward by the gap
-    public void ShiftIdleTimers(EntityUid trainee, TimeSpan delta)
-    {
-        if (delta <= TimeSpan.Zero)
-            return;
-
-        if (!TryComp<TutorialSessionComponent>(trainee, out var session))
-            return;
-
-        session.StepStartedAt += delta;
-        if (session.PendingAdvanceAt is { } pending)
-            session.PendingAdvanceAt = pending + delta;
-
-        session.FlowStartedAt += delta;
-
-        foreach (var key in session.HeldSince.Keys.ToList())
-            session.HeldSince[key] += delta;
-
-        if (TryComp<TutorialFrozenComponent>(trainee, out var frozen))
-            frozen.ExpiresAt += delta;
-
-        if (session.MentorUid is not { } mentor
-            || Deleted(mentor)
-            || !TryComp<TutorialMentorComponent>(mentor, out var mentorComp))
-            return;
-
-        mentorComp.NextSpeak += delta;
-        mentorComp.QuipDoneAt += delta;
-        foreach (var line in mentorComp.SpeechQueue)
-            line.GateExpiresAt += delta;
-    }
-
-    private Dictionary<string, EntityUid> ResolveAnchorsOnGrid(EntityUid player)
-    {
-        var result = new Dictionary<string, EntityUid>();
-
-        if (!TryComp(player, out TransformComponent? xform) || xform.GridUid is not { } grid)
-        {
-            Log.Warning($"Tutorial: player {ToPrettyString(player)} has no grid — anchors won't be resolved");
-            return result;
-        }
-
-        var query = EntityQueryEnumerator<TutorialAnchorComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var anchor, out var anchorXform))
-        {
-            if (anchorXform.GridUid != grid)
-                continue;
-
-            if (string.IsNullOrWhiteSpace(anchor.AnchorId))
-                continue;
-
-            result.TryAdd(anchor.AnchorId, uid);
-        }
-
-        Log.Debug($"Tutorial: resolved {result.Count} anchors on grid {grid} for {ToPrettyString(player)}");
-        return result;
-    }
-
-    /// <summary>
-    /// Straight to a later step. The steps in between are skipped whole, their OnComplete included,
-    /// so whatever they would have unlocked stays shut.
-    /// </summary>
-    public void JumpToStep(Entity<TutorialSessionComponent> ent, ProtoId<TutorialStepPrototype> stepId)
-    {
-        ent.Comp.JumpTo = null;
-
-        if (!TryGetFlow(ent.Comp, out var flow))
-            return;
-
-        var index = flow.Steps.IndexOf(stepId);
-        if (index < 0)
-        {
-            Log.Error($"Tutorial: jump target '{stepId}' is not in flow '{flow.ID}'");
-            return;
-        }
-
-        EnterStep(ent, index);
-    }
-
-    private void AdvanceStep(Entity<TutorialSessionComponent> ent)
-    {
-        if (TryGetCurrentStep(ent.Comp, out _, out var currentProto))
-            _actions.ExecuteAll(ent.Owner, currentProto.OnComplete);
-
-        var next = ent.Comp.CurrentStepIndex + 1;
-
-        if (TryGetFlow(ent.Comp, out var flow) && next >= flow.Steps.Count)
-        {
-            CompleteFlow(ent, redial: true);
-            return;
-        }
-
-        EnterStep(ent, next);
-    }
-
-    private void EnterStep(Entity<TutorialSessionComponent> ent, int index)
-    {
-        if (!TryGetFlow(ent.Comp, out var flow))
-            return;
-
-        if (index < 0 || index >= flow.Steps.Count)
-        {
-            CompleteFlow(ent);
-            return;
-        }
-
-        var stepId = flow.Steps[index];
-        if (!_proto.TryIndex(stepId, out var stepProto))
-        {
-            Log.Error($"Tutorial: step prototype '{stepId}' not found, aborting flow");
-            CompleteFlow(ent);
-            return;
-        }
-
-        ent.Comp.CurrentStepIndex = index;
-        ent.Comp.CurrentStep = stepId;
-        ent.Comp.NavigationAnchor = stepProto.NavigationAnchor;
-        ent.Comp.HighlightAnchors = new List<string>(stepProto.HighlightAnchors);
-        ent.Comp.KeybindHint = stepProto.KeybindHint;
-        ent.Comp.Flags.Clear();
-        ent.Comp.FiredWatchers.Clear();
-        ent.Comp.HeldSince.Clear();
-        ent.Comp.JumpTo = null;
-        ent.Comp.CameraAtStepStart = TryComp<InputMoverComponent>(ent.Owner, out var mover)
-            ? mover.TargetRelativeRotation
-            : Angle.Zero;
-        ent.Comp.FocusTarget = null;
-        ent.Comp.TargetShots.Clear();
-        ent.Comp.DrillShots = 0;
-        ent.Comp.DrillHits = 0;
-        ent.Comp.StepStartedAt = _timing.CurTime;
-        ent.Comp.PendingAdvanceAt = null;
-        ent.Comp.StuckHinted = false;
-        Dirty(ent);
-
-        // nothing to teach if they already did it, and the mentor must not ask for it anyway
-        var skipIf = stepProto.SkipIf ?? (stepProto.SkipIfSatisfied ? stepProto.Completion : null);
-        if (skipIf is { } skip && _tracker.Evaluate(ent.Owner, ent.Comp, skip))
-        {
-            AdvanceStep(ent);
-            return;
-        }
-
-        _actions.ExecuteAll(ent.Owner, stepProto.OnEnter);
-        // otherwise the whole row glows until the first poll picks a target
-        _tracker.PrimeDrill(ent.Owner, ent.Comp, stepProto);
-        _mentor.EnqueueStep(
-            ent.Owner,
-            ResolveSpeak(ent.Owner, stepProto.Speak),
-            stepProto.SpeakAtAnchor,
-            stepProto.SpeakAtRange,
-            stepProto.SpeakHoldSeconds);
-
-        if (stepProto.Finale)
-            OnEnteredFinale(ent);
-
-        Log.Debug($"Tutorial: {ToPrettyString(ent.Owner)} entered step '{stepId}' ({index + 1}/{flow.Steps.Count})");
-    }
-
-    private void OnEnteredFinale(Entity<TutorialSessionComponent> ent)
-    {
-        // the music is started by the client when the finale bubble shows, a server playlist here would cut it
-        if (_player.TryGetSessionByEntity(ent.Owner, out var sess))
-            RecordTutorialCompletion(sess, DateTime.UtcNow - ent.Comp.FlowStartedAt);
-    }
-
-    private void OnFinaleChoice(TutorialFinaleChoiceEvent ev, EntitySessionEventArgs args)
-    {
-        if (args.SenderSession.AttachedEntity is not { } player)
-            return;
-
-        if (!TryComp<TutorialSessionComponent>(player, out var session))
-            return;
-
-        if (!TryGetCurrentStep(session, out _, out var proto) || !proto.Finale)
-            return;
-
-        CompleteFlow((player, session), redial: ev.JoinServer);
-    }
-
-    private async void RecordTutorialCompletion(ICommonSession session, TimeSpan duration)
-    {
-        try
-        {
-            await _db.SetTutorialCompletion(session.UserId, duration);
-
-            if (session.Status != SessionStatus.Disconnected)
-                RaiseNetworkEvent(new TutorialPlayerCompletionEvent(true), session);
-        }
-        catch (Exception e)
-        {
-            Log.Error($"Tutorial: failed to save completion for {session.UserId}: {e}");
-        }
     }
 
     private void CompleteFlow(Entity<TutorialSessionComponent> ent, bool redial = false)
@@ -613,145 +197,5 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         stepId = id;
         proto = result;
         return true;
-    }
-
-    private void OnWallUsing(EntityUid uid, WallComponent component, InteractUsingEvent args)
-    {
-        TryBlockHullUsing(uid, args);
-    }
-
-    private void OnWindowUsing(EntityUid uid, WallMountComponent component, InteractUsingEvent args)
-    {
-        TryBlockHullUsing(uid, args);
-    }
-
-    private void OnSealedUsing(Entity<TutorialSealedComponent> ent, ref InteractUsingEvent args)
-    {
-        args.Handled = true;
-    }
-
-    private void TryBlockHullUsing(EntityUid uid, InteractUsingEvent args)
-    {
-        if (args.Handled)
-            return;
-
-        if (!TryComp<TutorialSessionComponent>(args.User, out var session))
-            return;
-
-        if (!IsHullStructure(uid))
-            return;
-
-        // a cable coil clicks the wall to occupy that tile, it is not taking the wall apart
-        if (!HasComp<ToolComponent>(args.Used))
-            return;
-
-        if (!TryBlockStructureAttack(args.User, session, uid))
-            return;
-
-        args.Handled = true;
-    }
-
-    private void OnPlayerDamage(Entity<TutorialSessionComponent> ent, ref BeforeDamageChangedEvent args)
-    {
-        if (!args.Damage.AnyPositive())
-            return;
-
-        // the jolt, the stun and the popup all still happen, only the burn is left out
-        if (IsShockOnly(args.Damage))
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        if (!_thresholds.TryGetThresholdForState(ent.Owner, MobState.Critical, out var critAt) || critAt is null)
-            return;
-
-        if (!TryComp<DamageableComponent>(ent.Owner, out var dmg))
-            return;
-
-        if (_damageable.GetPositiveDamage((ent.Owner, dmg)).GetTotal() + args.Damage.GetTotal() < critAt.Value)
-            return;
-
-        args.Cancelled = true;
-    }
-
-    private static bool IsShockOnly(DamageSpecifier damage)
-    {
-        var any = false;
-        foreach (var (type, amount) in damage.DamageDict)
-        {
-            if (amount <= 0)
-                continue;
-
-            if (type != ShockDamage)
-                return false;
-
-            any = true;
-        }
-
-        return any;
-    }
-
-    private void OnTraineeShocked(Entity<TutorialSessionComponent> ent, ref ElectrocutedEvent args)
-    {
-        if (!ent.Comp.RequireInsulatedGloves || _timing.CurTime < ent.Comp.NextShockQuip)
-            return;
-
-        ent.Comp.NextShockQuip = _timing.CurTime + ShockQuipCooldown;
-        _mentor.Enqueue(ent.Owner, new LocId[] { "tutorial-holopad-r16-shocked" });
-    }
-
-    private void OnPlayerMobState(Entity<TutorialSessionComponent> ent, ref MobStateChangedEvent args)
-    {
-        if (args.NewMobState is MobState.Alive or MobState.Invalid)
-            return;
-
-        _damageable.ClearAllDamage(ent.Owner);
-        _mobState.ChangeMobState(ent.Owner, MobState.Alive);
-        _standing.Stand(ent.Owner);
-
-        // back to the start of the room. the navigation anchor is where the step wants them to go,
-        // and landing there on a revive used to finish the step without them
-        if (TryGetCurrentStep(ent.Comp, out _, out var step)
-            && TryGetRoomMarker(step.ID, out var room)
-            && !Reaches(step.Completion, room))
-            _actions.Teleport(ent.Owner, room);
-
-        _mentor.Enqueue(ent.Owner, new LocId[] { "tutorial-holopad-quip-death" });
-    }
-
-    private static bool TryGetRoomMarker(string stepId, out string room)
-    {
-        room = string.Empty;
-        const string prefix = "TutorialLinearR";
-        if (!stepId.StartsWith(prefix, StringComparison.Ordinal))
-            return false;
-
-        var digits = 0;
-        while (prefix.Length + digits < stepId.Length && char.IsDigit(stepId[prefix.Length + digits]))
-            digits++;
-
-        // room 0 is the hud briefing and has no marker
-        if (!int.TryParse(stepId.AsSpan(prefix.Length, digits), out var n) || n <= 0)
-            return false;
-
-        room = $"room{n}";
-        return true;
-    }
-
-    /// <summary>Standing on the anchor would count for the step, so do not put them there.</summary>
-    private static bool Reaches(TutorialCondition? condition, string anchorId)
-    {
-        return condition switch
-        {
-            ReachAnchorCondition reach => reach.AnchorId == anchorId,
-            AnyReachAnchorsCondition any => any.AnchorIds.Contains(anchorId),
-            CrawlingReachCondition crawl => crawl.AnchorIds.Contains(anchorId),
-            AnyCondition any => any.Conditions.Any(c => Reaches(c, anchorId)),
-            AllCondition all => all.Conditions.Any(c => Reaches(c, anchorId)),
-            NotCondition not => Reaches(not.Condition, anchorId),
-            HeldCondition held => Reaches(held.Condition, anchorId),
-            _ => false,
-        };
     }
 }
