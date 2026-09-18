@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Liem161
-  changes:
-  - message: Added sprites for holding practice disabler in both hands.
-    type: Add
-  id: 9505
-  time: '2026-02-08T03:41:21.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42838
 - author: salarua
   changes:
   - message: Warfarin is now named heparin.
@@ -4118,3 +4111,14 @@
   id: 10003
   time: '2026-09-17T19:58:31.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1025
+- author: Polonium-bot
+  changes:
+  - message: "Zaktualizowano polskie t\u0142umaczenia interfejsu i komunikat\xF3w\
+      \ gry."
+    type: Tweak
+  - message: "Uzupe\u0142niono brakuj\u0105ce t\u0142umaczenia oraz poprawiono formatowanie\
+      \ parametr\xF3w."
+    type: Fix
+  id: 10004
+  time: '2026-09-18T10:38:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1028
