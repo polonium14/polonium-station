@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: salarua
-  changes:
-  - message: Warfarin is now named heparin.
-    type: Fix
-  id: 9506
-  time: '2026-02-08T04:38:09.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42847
 - author: TriviaSolari
   changes:
   - message: RCDs can once again be used to construct hull tiles in space without
@@ -4122,3 +4115,19 @@
   id: 10004
   time: '2026-09-18T10:38:29.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1028
+- author: Nikita
+  changes:
+  - message: "Zrefaktoryzowano system samouczka lobby i dodano ofert\u0119 szkoleniow\u0105\
+      ."
+    type: Add
+  - message: "Dodano prezentacj\u0119 krok\xF3w samouczka, nak\u0142adk\u0119 HUD\
+      \ oraz podpowiedzi klawiszy."
+    type: Add
+  - message: Dodano zabezpieczenia sesji szkoleniowej.
+    type: Add
+  - message: "Dodano testy integracyjne struktury, kotwic, lokalizacji, przebiegu\
+      \ i bezpiecze\u0144stwa samouczka."
+    type: Add
+  id: 10005
+  time: '2026-09-18T11:24:20.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1034
