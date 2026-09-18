@@ -105,12 +105,20 @@ public sealed partial class TutorialConditionTracker
         if (!TryComp(origin, out TransformComponent? xform) || xform.GridUid is not { } grid)
             return;
 
+        List<EntityUid>? players = null;
+
         var query = EntityQueryEnumerator<TutorialSessionComponent, TransformComponent>();
         while (query.MoveNext(out var player, out _, out var px))
         {
-            if (px.GridUid != grid)
-                continue;
+            if (px.GridUid == grid)
+                (players ??= new()).Add(player);
+        }
 
+        if (players == null)
+            return;
+
+        foreach (var player in players)
+        {
             SetFlag(player, flag, activity);
             Notify(player);
         }
@@ -219,8 +227,16 @@ public sealed partial class TutorialConditionTracker
         if (string.IsNullOrWhiteSpace(anchorId))
             return;
 
+        List<EntityUid>? players = null;
+
         var query = EntityQueryEnumerator<TutorialSessionComponent>();
         while (query.MoveNext(out var player, out _))
+            (players ??= new()).Add(player);
+
+        if (players == null)
+            return;
+
+        foreach (var player in players)
             Notify(player);
     }
 
@@ -288,10 +304,19 @@ public sealed partial class TutorialConditionTracker
             return;
 
         var contents = _disposal.GetContainedEntities((unit.Owner, unit.Comp));
+        List<EntityUid>? players = null;
+
         var query = EntityQueryEnumerator<TutorialSessionComponent>();
-        while (query.MoveNext(out var player, out var session))
+        while (query.MoveNext(out var player, out _))
+            (players ??= new()).Add(player);
+
+        if (players == null)
+            return;
+
+        foreach (var player in players)
         {
-            if (!_tutorial.TryGetCurrentStep(session, out _, out var step))
+            if (!TryComp<TutorialSessionComponent>(player, out var session)
+                || !_tutorial.TryGetCurrentStep(session, out _, out var step))
                 continue;
 
             MarkFlushFlags(player, session, step.Completion, unitAnchor.AnchorId, contents);
