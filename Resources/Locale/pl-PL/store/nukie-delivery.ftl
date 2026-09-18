@@ -1,4 +1,4 @@
-nukie-delivery-medicine-bundle-name = Corpsman Medicine Bundle
+nukie-delivery-medicine-bundle-name = Zestaw Sanitariusza Polowego
 nukie-delivery-medicine-bundle-desc =
-    Contains jugs of basic medicine that are essential for any Nuclear Operation:
-    Bicaridine, Puncturase, Dermaline, Dylovene, Hyronalin, Saline, Dexalin Plus and Tranexamic Acid.
+    Zawiera fiolki podstawowych medykamentów niezbędnych do każdej Operacji Nuklearnej:
+    Biarydynę, Punkturazę, Dermalinę, Dylowen, Hyronalinę, Sól fizjologiczną, Deksalinę plus oraz Kwas Traneksamowy.

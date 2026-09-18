@@ -1,6 +1,6 @@
-ent-Bonesetter = bone setter
-    .desc = Used for setting bones back into place.
-ent-BoneGel = bottle of bone gel
-    .desc = A container for bone gel that often needs to be refilled from a specialized machine.
-ent-MedicalStitches = medical stitches
-    .desc = A fine, curved needle with a length of absorbable polyglycolide suture thread.
+ent-Bonesetter = nastawiacz kości
+    .desc = Służy do nastawiania kości na miejsce.
+ent-BoneGel = butelka żelu kostnego
+    .desc = Pojemnik na żel kostny, który często trzeba uzupełniać w specjalistycznej maszynie.
+ent-MedicalStitches = szwy medyczne
+    .desc = Cienka, wygięta igła z odcinkiem wchłanialnej nici szewnej z poliglikolidu.

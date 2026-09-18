@@ -84,10 +84,10 @@ ui-options-hud-theme = Motyw HUD:
 ui-options-hud-theme-default = Domyślny
 ui-options-hud-theme-plasmafire = Plasmafire
 ui-options-hud-theme-slimecore = Slimecore
-ui-options-hud-theme-clockwork = Clockwork
+ui-options-hud-theme-clockwork = Zegarmistrz
 ui-options-hud-theme-retro = Retro
-ui-options-hud-theme-minimalist = Minimalist
-ui-options-hud-theme-ashen = Ashen
+ui-options-hud-theme-minimalist = Minimalizm
+ui-options-hud-theme-ashen = Popielny
 ui-options-hud-layout-default = Domyślny
 ui-options-hud-layout-separated = Podzielony
 ui-options-vp-stretch = Rozciągnij widok, aby dopasować go do okna gry
@@ -112,7 +112,7 @@ ui-options-ambient-occlusion = Pokaż ambient occlusion
 ui-options-fps-counter = Pokaż licznik FPS
 ui-options-vp-width = Szerokość widoku:
 ui-options-hud-layout = Układ HUD:
-ui-options-sharpness = Sharpness:
+ui-options-sharpness = Ostrość:
 
 ## Controls menu
 
