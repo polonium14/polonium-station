@@ -73,8 +73,7 @@ public sealed class TutorialSafetyTest : GameTest
 
     /// <summary>
     /// Room cast with <c>preventDeath</c> has to survive anything, including a magazine emptied into
-    /// it, and has to still be alive a while later once bleeding and a crit have had their go: a
-    /// corpse in the middle of a lesson leaves the step with nothing left to teach.
+    /// it, and stay alive afterwards - not just not-dead. Crit still bleeds out on its own.
     /// </summary>
     [Test]
     public async Task ProtectedCastSurvivesLethalDamage()
@@ -103,16 +102,16 @@ public sealed class TutorialSafetyTest : GameTest
             for (var shot = 0; shot < 20; shot++)
                 damageable.TryChangeDamage(urist, Blunt(proto, 100), ignoreResistances: true);
 
-            Assert.That(mobs.IsDead(urist), Is.False, "a protected tutorial NPC died on the spot");
+            Assert.That(mobs.IsAlive(urist), Is.True, "a protected tutorial NPC left alive after the hits");
         });
 
-        // ten seconds of whatever a body in crit does to itself
+        // ten seconds of whatever a body in crit would do to itself
         await Server.WaitRunTicks(300);
 
         await Server.WaitAssertion(() =>
         {
-            Assert.That(mobs.IsDead(urist), Is.False,
-                "a protected tutorial NPC survived the hits and then died on its own afterwards");
+            Assert.That(mobs.IsAlive(urist), Is.True,
+                "a protected tutorial NPC survived the hits and then dropped into crit or died on its own");
         });
     }
 

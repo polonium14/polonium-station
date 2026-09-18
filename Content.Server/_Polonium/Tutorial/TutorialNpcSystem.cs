@@ -289,13 +289,16 @@ public sealed partial class TutorialNpcSystem : EntitySystem
         if (!args.Damage.AnyPositive())
             return;
 
-        if (!_thresholds.TryGetThresholdForState(ent, MobState.Dead, out var deadAt) || deadAt is null)
-            return;
+        if (!_thresholds.TryGetThresholdForState(ent, MobState.Critical, out var stopAt) || stopAt is null)
+        {
+            if (!_thresholds.TryGetThresholdForState(ent, MobState.Dead, out stopAt) || stopAt is null)
+                return;
+        }
 
         if (!TryComp<DamageableComponent>(ent.Owner, out var dmg))
             return;
 
-        if (_damageable.GetPositiveDamage((ent.Owner, dmg)).GetTotal() + args.Damage.GetTotal() < deadAt.Value)
+        if (_damageable.GetPositiveDamage((ent.Owner, dmg)).GetTotal() + args.Damage.GetTotal() < stopAt.Value)
             return;
 
         args.Cancelled = true;
