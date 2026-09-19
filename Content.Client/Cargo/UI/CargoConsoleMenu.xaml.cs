@@ -238,11 +238,7 @@ namespace Content.Client.Cargo.UI
 
                     Stride =
                     {
-                        PanelOverride = new StyleBoxFlat
-                        {
-                            BackgroundColor = account.Color,
-                            ContentMarginBottomOverride = 2,
-                        },
+                        ColorOverride = account.Color
                     },
 
                     Icon = { Texture = _spriteSystem.Frame0(product) },
