@@ -7,6 +7,8 @@ using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Paper;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
+using Content.Shared.Tag; // DeltaV
+using Robust.Shared.Prototypes; // DeltaV
 
 namespace Content.Shared.Labels.EntitySystems;
 
@@ -15,8 +17,10 @@ public sealed partial class LabelSystem : EntitySystem
     [Dependency] private NameModifierSystem _nameModifier = default!;
     [Dependency] private ItemSlotsSystem _itemSlots = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private TagSystem _tag = default!; // DeltaV
 
     public const string ContainerName = "paper_label";
+    public static readonly ProtoId<TagPrototype> PreventTag = "PreventLabel"; // DeltaV - no labelling felenids
 
     public override void Initialize()
     {
@@ -63,6 +67,10 @@ public sealed partial class LabelSystem : EntitySystem
     // TODO - Change signature to `Label(Entity<LabelComponent?> ent, string? text)`
     public void Label(EntityUid uid, string? text, MetaDataComponent? metadata = null, LabelComponent? label = null)
     {
+        if (!string.IsNullOrEmpty(text) && _tag.HasTag(uid, PreventTag)) // DeltaV - Prevent labelling felinids
+            return;
+        label ??= EnsureComp<LabelComponent>(uid);
+
         // If setting the label to be blank, just remove the label.
         if (string.IsNullOrEmpty(text))
         {
