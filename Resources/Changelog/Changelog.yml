@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: TriviaSolari
-  changes:
-  - message: RCDs can once again be used to construct hull tiles in space without
-      requiring lattices first
-    type: Fix
-  id: 9507
-  time: '2026-02-09T01:12:17.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42740
 - author: TytosB
   changes:
   - message: 'added new station: Serpentcrest. along with accompanying evac and cargo
@@ -4131,3 +4123,14 @@
   id: 10005
   time: '2026-09-18T11:24:20.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1034
+- author: Polonium-bot
+  changes:
+  - message: "Zaktualizowano polskie t\u0142umaczenia interfejsu, komunikat\xF3w,\
+      \ nazw przedmiot\xF3w i opis\xF3w umiej\u0119tno\u015Bci."
+    type: Tweak
+  - message: "Uzupe\u0142niono brakuj\u0105ce t\u0142umaczenia oraz poprawiono formatowanie\
+      \ wybranych komunikat\xF3w."
+    type: Fix
+  id: 10006
+  time: '2026-09-19T06:45:40.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1035
