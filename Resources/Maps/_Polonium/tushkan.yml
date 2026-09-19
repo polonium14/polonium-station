@@ -2571,15 +2571,10 @@ entities:
   entities:
   - uid: 141
     components:
-    - type: MetaData
-      name: док сб
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -29.5,33.5
-    - type: GridFill
-      path: /Maps/Corvax/Shuttles/security_lowpop.yml
-      addComponents: []
   - uid: 142
     components:
     - type: Transform
@@ -4791,17 +4786,17 @@ entities:
   - uid: 546
     components:
     - type: MetaData
-      name: Джордж Оруэлл "1984"
+      name: George Orwell "1984"
     - type: Transform
       parent: 2
       pos: -18.121847,20.563967
     - type: Paper
       content: >2
-           [head=2] Джордж Оруэлл [/head]
+           [head=2] George Orwell [/head]
 
                                               [head=1] 1984  [/head]
 
-                                             (краткий пересказ)
+                                             (krótkie podsumowanie)
         [head=3] Часть первая [/head]
 
 
@@ -33035,9 +33030,6 @@ entities:
   entities:
   - uid: 668
     components:
-    - type: MetaData
-      name: настенный шкаф
-      desc: Шкаф, полный разных вещей.
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
@@ -33381,8 +33373,8 @@ entities:
   - uid: 3780
     components:
     - type: MetaData
-      name: барменский берет
-      desc: Время смешивать напитки и вершить судьбы!
+      name: Beret Barmana
+      desc: Czas mieszać drinki i kształtować losy!
     - type: Transform
       parent: 2
       pos: 10.5,20.45
@@ -33462,31 +33454,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -41.515625,18.9
-    - type: GroupExamine
-      group:
-      - title: null
-        icon: /Textures/Interface/examine-star.png
-        hoverMessage: ""
-        entries:
-        - priority: 0
-          message: >-
-            Обеспечивает следующую защиту:
-
-            - [color=yellow]Ударный[/color] урон снижается на [color=lightblue]10%[/color].
-
-            - [color=yellow]Режущий[/color] урон снижается на [color=lightblue]10%[/color].
-
-            - [color=yellow]Колющий[/color] урон снижается на [color=lightblue]10%[/color].
-
-            - [color=yellow]Высокотемпературный[/color] урон снижается на [color=lightblue]10%[/color].
-          component: Armor
-        contextText: verb-examine-group-other
-        components:
-        - Armor
-        - ClothingSpeedModifier
-    - type: Item
-      inhandVisuals: {}
-      heldPrefix: off
 - proto: ClothingHeadHelmetRiot
   entities:
   - uid: 3798
@@ -33676,35 +33643,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -41.5,18.5
-    - type: GroupExamine
-      group:
-      - title: null
-        icon: /Textures/Interface/examine-star.png
-        hoverMessage: ""
-        entries:
-        - priority: 0
-          message: Понижает вашу скорость на [color=yellow]10%[/color].
-          component: ClothingSpeedModifier
-        - priority: 0
-          message: >-
-            Обеспечивает следующую защиту:
-
-            - [color=yellow]Ударный[/color] урон снижается на [color=lightblue]80%[/color].
-
-            - [color=yellow]Режущий[/color] урон снижается на [color=lightblue]80%[/color].
-
-            - [color=yellow]Колющий[/color] урон снижается на [color=lightblue]80%[/color].
-
-            - [color=yellow]Высокотемпературный[/color] урон снижается на [color=lightblue]50%[/color].
-
-            - [color=yellow]Радиационный[/color] урон снижается на [color=lightblue]100%[/color].
-
-            - [color=yellow]Кислотный[/color] урон снижается на [color=lightblue]25%[/color].
-          component: Armor
-        contextText: verb-examine-group-other
-        components:
-        - Armor
-        - ClothingSpeedModifier
 - proto: ClothingOuterArmorRiot
   entities:
   - uid: 3840
@@ -33712,35 +33650,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -39.62475,23.453331
-    - type: GroupExamine
-      group:
-      - title: null
-        icon: /Textures/Interface/examine-star.png
-        hoverMessage: ""
-        entries:
-        - priority: 0
-          message: Понижает вашу скорость на [color=yellow]10%[/color].
-          component: ClothingSpeedModifier
-        - priority: 0
-          message: >-
-            Обеспечивает следующую защиту:
-
-            - [color=yellow]Ударный[/color] урон снижается на [color=lightblue]60%[/color].
-
-            - [color=yellow]Режущий[/color] урон снижается на [color=lightblue]60%[/color].
-
-            - [color=yellow]Колющий[/color] урон снижается на [color=lightblue]30%[/color].
-
-            - [color=yellow]Высокотемпературный[/color] урон снижается на [color=lightblue]10%[/color].
-
-            - [color=yellow]Кислотный[/color] урон снижается на [color=lightblue]10%[/color].
-
-            - [color=orange]Взрывной[/color] урон снижается на [color=lightblue]10%[/color].
-          component: Armor
-        contextText: verb-examine-group-other
-        components:
-        - Armor
-        - ClothingSpeedModifier
   - uid: 3841
     components:
     - type: Transform
@@ -33955,7 +33864,7 @@ entities:
   - uid: 3682
     components:
     - type: MetaData
-      name: чёрная юбка-костюм
+      name: czarny kostium ze spódnicą
     - type: Transform
       parent: 3678
     - type: Physics
@@ -33971,7 +33880,7 @@ entities:
   - uid: 3683
     components:
     - type: MetaData
-      name: красная юбка-костюм
+      name: czerwony kostium ze spódnicą
     - type: Transform
       parent: 3678
     - type: Physics
@@ -34151,7 +34060,7 @@ entities:
   - uid: 3684
     components:
     - type: MetaData
-      name: чёрный костюм
+      name: czarny garnitur
     - type: Transform
       parent: 3678
     - type: Physics
@@ -35340,9 +35249,9 @@ entities:
       parent: 2
       pos: 31.5,-7.5
     - type: NavMapBeacon
-      text: Игровая комната
+      text: Pokój Zabaw
     - type: WarpPoint
-      location: Игровая комната
+      location: Pokój Zabaw
       follow: True
   - uid: 4089
     components:
@@ -35350,18 +35259,18 @@ entities:
       parent: 2
       pos: 0.5,-15.5
     - type: NavMapBeacon
-      text: Сауна
+      text: Sauna
     - type: WarpPoint
-      location: Сауна
+      location: Sauna
   - uid: 4090
     components:
     - type: Transform
       parent: 2
       pos: 0.5,11.5
     - type: NavMapBeacon
-      text: Главный зал
+      text: Sala Główna
     - type: WarpPoint
-      location: Главный зал
+      location: Sala Główna
 - proto: DefaultStationBeaconAICore
   entities:
   - uid: 4091
@@ -35536,9 +35445,9 @@ entities:
       parent: 2
       pos: -4.5,-28.5
     - type: NavMapBeacon
-      text: Генератор гравитации
+      text: Generator grawitacji
     - type: WarpPoint
-      location: Генератор гравитации
+      location: Generator grawitacji
 - proto: DefaultStationBeaconEscapePod
   entities:
   - uid: 4115
@@ -35620,9 +35529,9 @@ entities:
       parent: 2
       pos: -29.5,-0.5
     - type: NavMapBeacon
-      text: Психолог
+      text: Psycholog
     - type: WarpPoint
-      location: Психолог
+      location: Psycholog
 - proto: DefaultStationBeaconMorgue
   entities:
   - uid: 4127
@@ -39128,8 +39037,8 @@ entities:
   - uid: 4728
     components:
     - type: MetaData
-      name: массажное масло
-      desc: Для массажа и не только.
+      name: olejek do masażu
+      desc: Do masażu i nie tylko.
     - type: Transform
       parent: 2
       pos: 0.68512446,-16.08833
@@ -39840,43 +39749,43 @@ entities:
       parent: 2
       pos: 3.5,35.5
     - type: FaxMachine
-      name: Глава Персонала
+      name: Kierownik Personelu
   - uid: 4842
     components:
     - type: Transform
       parent: 2
       pos: -6.5,37.5
     - type: FaxMachine
-      name: Командование
+      name: Dowództwo
   - uid: 4843
     components:
     - type: Transform
       parent: 2
       pos: 29.5,22.5
     - type: FaxMachine
-      name: Квартирмейстер
-      destinationAddress: Кабинет квартирмейстера
+      name: Kwatermistrz
+      destinationAddress: Kwatermistrz
   - uid: 4844
     components:
     - type: Transform
       parent: 2
       pos: -13.5,13.5
     - type: FaxMachine
-      name: Главный врач
+      name: Ordynator
   - uid: 4845
     components:
     - type: Transform
       parent: 2
       pos: 20.5,10.5
     - type: FaxMachine
-      name: Научный Руководитель
+      name: Kierownik Badań
   - uid: 4846
     components:
     - type: Transform
       parent: 2
       pos: 21.5,-16.5
     - type: FaxMachine
-      name: Библиотека
+      name: Biblioteka
   - uid: 4847
     components:
     - type: Transform
@@ -39890,7 +39799,7 @@ entities:
       parent: 2
       pos: -34.5,15.5
     - type: FaxMachine
-      name: Кабинет Главы Службы Безопасности
+      name: Komendant
   - uid: 4849
     components:
     - type: Transform
@@ -39898,33 +39807,27 @@ entities:
       pos: 31.5,-1.5
     - type: FaxMachine
       name: ?y█∎Nc@⅓e
-- proto: FaxMachineCaptain
-  entities:
   - uid: 4850
     components:
-    - type: MetaData
-      name: факс дальнего действия
     - type: Transform
       parent: 2
       pos: -4.5,-35.5
     - type: FaxMachine
-      name: Старший Инженер
+      name: Główny Inżynier
+  - uid: 4852
+    components:
+    - type: Transform
+      parent: 2
+      pos: 26.5,-15.5
+    - type: FaxMachine
+      name: ASW
+- proto: FaxMachineCaptain
+  entities:
   - uid: 4851
     components:
     - type: Transform
       parent: 2
       pos: -5.5,32.5
-    - type: FaxMachine
-      name: Капитан
-  - uid: 4852
-    components:
-    - type: MetaData
-      name: факс дальнего действия
-    - type: Transform
-      parent: 2
-      pos: 26.5,-15.5
-    - type: FaxMachine
-      name: АВД
 - proto: FenceMetalBroken
   entities:
   - uid: 4853
@@ -41959,7 +41862,7 @@ entities:
   - uid: 5097
     components:
     - type: MetaData
-      name: легендарная сосиска в тесте
+      name: legendarna kiełbasa w cieście
     - type: Transform
       parent: 2
       pos: -5.6037197,17.588964
@@ -42025,7 +41928,7 @@ entities:
   - uid: 5100
     components:
     - type: MetaData
-      name: мясо Пун-Пуна
+      name: Mięso Pun-Puna
     - type: Transform
       parent: 2
       pos: 15.395237,9.623449
@@ -57241,7 +57144,7 @@ entities:
   - uid: 3803
     components:
     - type: MetaData
-      name: сейф с пирогомётом
+      name: sejf z wyrzutnią ciast
     - type: Transform
       parent: 2
       pos: -29.5,-14.5
@@ -57731,8 +57634,6 @@ entities:
   entities:
   - uid: 7060
     components:
-    - type: MetaData
-      name: жёсткий косяк
     - type: Transform
       parent: 2
       rot: 0.22689280275926285 rad
@@ -58182,7 +58083,7 @@ entities:
   - uid: 7119
     components:
     - type: MetaData
-      desc: Эта кнопка переключает гермозатворы камеры смешивания.
+      desc: Ten przycisk przełącza uszczelnienia komory mieszającej.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -58203,7 +58104,7 @@ entities:
   - uid: 7120
     components:
     - type: MetaData
-      desc: Эта кнопка переключает ставни на стойке.
+      desc: Ten przycisk włącza i wyłącza żaluzje na stojaku.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -58230,7 +58131,7 @@ entities:
   - uid: 7121
     components:
     - type: MetaData
-      desc: Эта кнопка переключает ставни.
+      desc: Ten przycisk przełącza okiennice.
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -58248,7 +58149,7 @@ entities:
   - uid: 7122
     components:
     - type: MetaData
-      desc: Эта кнопка переключает ставни на окнах.
+      desc: Ten przycisk włącza i wyłącza rolety w oknach.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -58266,7 +58167,7 @@ entities:
   - uid: 7123
     components:
     - type: MetaData
-      desc: Эта кнопка переключает ставни.
+      desc: Ten przycisk przełącza okiennice.
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -58321,7 +58222,7 @@ entities:
   - uid: 7124
     components:
     - type: MetaData
-      desc: Эта кнопка переключает орудия.
+      desc: Ten przycisk zmienia broń.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -58336,7 +58237,7 @@ entities:
   - uid: 7125
     components:
     - type: MetaData
-      desc: Эта кнопка переключает удерживание шлюза.
+      desc: Ten przycisk przełącza przytrzymanie bramki.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -58354,7 +58255,7 @@ entities:
   - uid: 7126
     components:
     - type: MetaData
-      desc: Эта кнопка болтирует шлюз.
+      desc: Ten przycisk blokuje bramę.
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
@@ -58369,7 +58270,7 @@ entities:
   - uid: 7127
     components:
     - type: MetaData
-      desc: Эта кнопка переключает свет в допросной.
+      desc: Ten przycisk włącza światło w pokoju przesłuchań.
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -59889,14 +59790,14 @@ entities:
   - uid: 7247
     components:
     - type: MetaData
-      name: веник
+      name: miotła
     - type: Transform
       parent: 2
       pos: -2.3368542,-18.388792
   - uid: 7248
     components:
     - type: MetaData
-      name: веник
+      name: miotła
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -59904,7 +59805,7 @@ entities:
   - uid: 7249
     components:
     - type: MetaData
-      name: веник
+      name: miotła
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
@@ -59946,7 +59847,7 @@ entities:
   - uid: 7256
     components:
     - type: MetaData
-      name: канистра оксида азота с кислородом
+      name: kanister z tlenkiem azotu i tlenem
     - type: Transform
       parent: 2
       pos: -18.5,-2.5
@@ -59976,8 +59877,8 @@ entities:
   - uid: 7258
     components:
     - type: MetaData
-      name: разделочная доска
-      desc: Старательно делает вид, что её сердечку не больно от твоих ударов ножом.
+      name: deska do krojenia
+      desc: Ona starannie udaje, że jej serce nie boli od twoich pchnięć nożem.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -60182,7 +60083,7 @@ entities:
     - type: Transform
       parent: 3803
     - type: Paper
-      content: "\n\n\n\n\n\n  \n\n\n\n\n                  \n                              [head=1]МОЛОДЦОМ!![/head]\n\n\n\n\n\n"
+      content: "\n\n\n\n\n\n  \n\n\n\n\n                  \n                              [head=1]DOBRZE ZROBIONY!![/head]\n\n\n\n\n\n"
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -60378,7 +60279,7 @@ entities:
 
 
 
-        [head=2]КАК ЖЕ МЕНЯ ЗАЕБАЛА ЭТА ОРУЩАЯ ОБЕЗЬЯНА![/hed]
+        [head=2]JESTEM TAK WYRUCHANY PRZEZ TĄ WRZĄCZĄCĄ MAŁPĘ![/hed]
 
 
 
@@ -60409,9 +60310,9 @@ entities:
       pos: 0.5,41.5
     - type: Paper
       content: >+
-        Для перевода шаттла в режим пилотирования отключите станционный якорь в инженерном отделе.
+        Aby przełączyć wahadłowiec w tryb pilotażowy, należy wyłączyć kotwicę stacji w dziale inżynieryjnym..
 
-        Не забудьте пристыковать СБ шаттл.
+        Nie zapomnij zadokować wahadłowców.
 
   - uid: 7315
     components:
@@ -60421,7 +60322,7 @@ entities:
       pos: -39.72386,9.780606
     - type: Paper
       content: >
-        Активировать при облаве
+        Aktywuj podczas rajdu
   - uid: 7316
     components:
     - type: Transform
@@ -60489,7 +60390,7 @@ entities:
   - uid: 7329
     components:
     - type: MetaData
-      name: упаковка от пончиков
+      name: opakowanie po pączkach
     - type: Transform
       parent: 2
       pos: -15.44548,-14.5178
@@ -66035,7 +65936,7 @@ entities:
   - uid: 8237
     components:
     - type: MetaData
-      desc: Эта кнопка переключает ставни на окнах.
+      desc: Ten przycisk włącza i wyłącza rolety w oknach.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -66054,7 +65955,7 @@ entities:
   - uid: 8238
     components:
     - type: MetaData
-      desc: Эта кнопка переключает ставни.
+      desc: Ten przycisk przełącza okiennice.
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -66075,7 +65976,7 @@ entities:
   - uid: 8239
     components:
     - type: MetaData
-      desc: Эта кнопка переключает ставни.
+      desc: Ten przycisk przełącza okiennice.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -66091,7 +65992,7 @@ entities:
   - uid: 8240
     components:
     - type: MetaData
-      desc: Эта кнопка переключает болты шлюза.
+      desc: Ten przycisk przełącza zasuwy śluzy powietrznej.
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -66104,7 +66005,7 @@ entities:
   - uid: 8241
     components:
     - type: MetaData
-      desc: Эта кнопка переключает болты шлюза.
+      desc: Ten przycisk przełącza zasuwy śluzy powietrznej.
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -66117,7 +66018,7 @@ entities:
   - uid: 8242
     components:
     - type: MetaData
-      desc: Эта кнопка переключает болты шлюза.
+      desc: Ten przycisk przełącza zasuwy śluzy powietrznej.
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -66130,7 +66031,7 @@ entities:
   - uid: 8243
     components:
     - type: MetaData
-      desc: Эта кнопка переключает свет.
+      desc: Ten przycisk włącza światło.
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
@@ -66152,7 +66053,7 @@ entities:
   - uid: 8244
     components:
     - type: MetaData
-      desc: Эта кнопка переключает тонированное окно.
+      desc: Ten przycisk przełącza przyciemnianie okna.
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -66160,7 +66061,7 @@ entities:
   - uid: 8245
     components:
     - type: MetaData
-      desc: Эта кнопка переключает ставни на окнах.
+      desc: Ten przycisk włącza i wyłącza rolety w oknach.
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -66176,7 +66077,7 @@ entities:
   - uid: 8246
     components:
     - type: MetaData
-      desc: Эта кнопка переключает болты шлюза.
+      desc: Ten przycisk przełącza zasuwy śluzy powietrznej.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -66189,7 +66090,7 @@ entities:
   - uid: 8247
     components:
     - type: MetaData
-      desc: Эта кнопка переключает гермозатворы первой камеры ксено-археологии.
+      desc: Ten przycisk przełącza pieczęcie pierwszej komnaty ksenoarcheologicznej.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -66208,7 +66109,7 @@ entities:
   - uid: 8248
     components:
     - type: MetaData
-      desc: Эта кнопка переключает гермозатворы второй камеры ксено-археологии.
+      desc: Ten przycisk przełącza hermetyczne zamknięcia drugiej komory ksenoarcheologicznej.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -66238,7 +66139,7 @@ entities:
   - uid: 8250
     components:
     - type: MetaData
-      desc: Эта кнопка переключает болты шлюза.
+      desc: Ten przycisk przełącza zasuwy śluzy powietrznej.
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -66251,7 +66152,7 @@ entities:
   - uid: 8251
     components:
     - type: MetaData
-      desc: Эта кнопка переключает болты шлюза.
+      desc: Ten przycisk przełącza zasuwy śluzy powietrznej.
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -66264,7 +66165,7 @@ entities:
   - uid: 8252
     components:
     - type: MetaData
-      desc: Это кнопка вызова уборщика.
+      desc: To jest przycisk umożliwiający wezwanie sprzątaczki.
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
@@ -66272,7 +66173,7 @@ entities:
   - uid: 8253
     components:
     - type: MetaData
-      desc: Эта кнопка переключает внешние ставни.
+      desc: Ten przycisk przełącza zewnętrzne okiennice.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -66288,7 +66189,7 @@ entities:
   - uid: 8254
     components:
     - type: MetaData
-      desc: Эта кнопка переключает внутренние ставни.
+      desc: Ten przycisk przełącza wewnętrzne okiennice.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -66304,7 +66205,7 @@ entities:
   - uid: 8255
     components:
     - type: MetaData
-      desc: Эта кнопка переключает ставни.
+      desc: Ten przycisk przełącza okiennice.
     - type: Transform
       parent: 2
       pos: 9.5,-3.5
@@ -66322,7 +66223,7 @@ entities:
   - uid: 8256
     components:
     - type: MetaData
-      desc: Это кнопка вызова уборщика.
+      desc: To jest przycisk umożliwiający wezwanie sprzątaczki.
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
@@ -66330,14 +66231,14 @@ entities:
   - uid: 8257
     components:
     - type: MetaData
-      desc: Это кнопка вызова уборщика.
+      desc: To jest przycisk umożliwiający wezwanie sprzątaczki.
     - type: Transform
       parent: 2
       pos: 21.5,21.5
   - uid: 8258
     components:
     - type: MetaData
-      desc: Это кнопка вызова уборщика.
+      desc: To jest przycisk umożliwiający wezwanie sprzątaczki.
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
@@ -66345,7 +66246,7 @@ entities:
   - uid: 8259
     components:
     - type: MetaData
-      desc: Это кнопка вызова уборщика.
+      desc: To jest przycisk umożliwiający wezwanie sprzątaczki.
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
@@ -66353,21 +66254,21 @@ entities:
   - uid: 8260
     components:
     - type: MetaData
-      desc: Это кнопка вызова уборщика.
+      desc: To jest przycisk umożliwiający wezwanie sprzątaczki.
     - type: Transform
       parent: 2
       pos: -9.5,-13.5
   - uid: 8261
     components:
     - type: MetaData
-      desc: Это кнопка вызова уборщика.
+      desc: To jest przycisk umożliwiający wezwanie sprzątaczki.
     - type: Transform
       parent: 2
       pos: 10.5,-13.5
   - uid: 8262
     components:
     - type: MetaData
-      desc: Эта кнопка переключает гермозатвор.
+      desc: Ten przycisk przełącza hermetyczne uszczelnienie.
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -66397,7 +66298,7 @@ entities:
   - uid: 8264
     components:
     - type: MetaData
-      name: залупка
+      name: kutas
     - type: Transform
       parent: 2
       pos: 18.5,-3.5
@@ -67215,56 +67116,56 @@ entities:
   - uid: 8392
     components:
     - type: MetaData
-      name: СМЭС EVA
+      name: SMES EVA
     - type: Transform
       parent: 2
       pos: 15.5,31.5
   - uid: 8393
     components:
     - type: MetaData
-      name: СМЭС Командование
+      name: SMES Dowództwa
     - type: Transform
       parent: 2
       pos: 9.5,35.5
   - uid: 8394
     components:
     - type: MetaData
-      name: СМЭС Служба Безопасности
+      name: SMES Ochrony
     - type: Transform
       parent: 2
       pos: -8.5,35.5
   - uid: 8395
     components:
     - type: MetaData
-      name: СМЭС Центр
+      name: SMES Centralny
     - type: Transform
       parent: 2
       pos: 10.5,25.5
   - uid: 8396
     components:
     - type: MetaData
-      name: СМЭС Снабжение, Храм
+      name: SMES Zaopatrzenie, Kaplica
     - type: Transform
       parent: 2
       pos: 34.5,34.5
   - uid: 8397
     components:
     - type: MetaData
-      name: СМЭС Научный отдел
+      name: SMES Dział Naukowy
     - type: Transform
       parent: 2
       pos: 13.5,10.5
   - uid: 8398
     components:
     - type: MetaData
-      name: СМЭС Медбей
+      name: SMES Medyczny
     - type: Transform
       parent: 2
       pos: -31.5,13.5
   - uid: 8399
     components:
     - type: MetaData
-      name: СМЭС Прибытие
+      name: SMES Przyloty
     - type: Transform
       parent: 2
       pos: -26.5,-2.5
@@ -67318,8 +67219,6 @@ entities:
   entities:
   - uid: 8403
     components:
-    - type: MetaData
-      name: самая обычная стена
     - type: Transform
       parent: 2
       pos: 15.5,11.5
@@ -67921,7 +67820,7 @@ entities:
   - uid: 8500
     components:
     - type: MetaData
-      name: напольная полка
+      name: półka podłogowa
     - type: Transform
       parent: 2
       pos: -12.5,-23.5
@@ -67930,21 +67829,21 @@ entities:
   - uid: 8501
     components:
     - type: MetaData
-      name: стойка
+      name: półka
     - type: Transform
       parent: 2
       pos: -3.5,17.5
   - uid: 8502
     components:
     - type: MetaData
-      name: стойка
+      name: półka
     - type: Transform
       parent: 2
       pos: -2.5,17.5
   - uid: 8503
     components:
     - type: MetaData
-      name: стойка
+      name: półka
     - type: Transform
       parent: 2
       pos: -5.5,17.5
@@ -68324,21 +68223,21 @@ entities:
   - uid: 8548
     components:
     - type: MetaData
-      name: подстанция Командование
+      name: Podstacja Dowodzenia
     - type: Transform
       parent: 2
       pos: 9.5,36.5
   - uid: 8549
     components:
     - type: MetaData
-      name: подстанция Служба Безопасности
+      name: Podstacja Ochrony
     - type: Transform
       parent: 2
       pos: -8.5,36.5
   - uid: 8550
     components:
     - type: MetaData
-      name: подстанция Центр
+      name: Podstacja Centralna
     - type: Transform
       parent: 2
       pos: 9.5,25.5
@@ -68350,63 +68249,63 @@ entities:
   - uid: 8552
     components:
     - type: MetaData
-      name: подстанция EVA
+      name: Podstacja EVA
     - type: Transform
       parent: 2
       pos: 15.5,32.5
   - uid: 8553
     components:
     - type: MetaData
-      name: подстанция Снабжение, Храм
+      name: Podstacja Zaopatrzenie, Kaplica
     - type: Transform
       parent: 2
       pos: 34.5,35.5
   - uid: 8554
     components:
     - type: MetaData
-      name: подстанция Инженерный
+      name: Podstacja Inżynierii
     - type: Transform
       parent: 2
       pos: -13.5,-27.5
   - uid: 8555
     components:
     - type: MetaData
-      name: подстанция Телекоммуникации
+      name: Podstacja Telekomunikacji
     - type: Transform
       parent: 2
       pos: -13.5,-37.5
   - uid: 8556
     components:
     - type: MetaData
-      name: подстанция Научный отдел
+      name: Podstacja Działu Naukowego
     - type: Transform
       parent: 2
       pos: 13.5,9.5
   - uid: 8557
     components:
     - type: MetaData
-      name: подстанция Медбей
+      name: Podstacja Medyczna
     - type: Transform
       parent: 2
       pos: -31.5,14.5
   - uid: 8558
     components:
     - type: MetaData
-      name: подстанция Прибытие
+      name: Podstacja Przylotów
     - type: Transform
       parent: 2
       pos: -25.5,-2.5
   - uid: 8559
     components:
     - type: MetaData
-      name: подстанция Атмос
+      name: Podstacja Atmosferyki
     - type: Transform
       parent: 2
       pos: 5.5,-23.5
   - uid: 8560
     components:
     - type: MetaData
-      name: подстанция ЦИИ
+      name: Podstacja ASW
     - type: Transform
       parent: 2
       pos: -17.5,-41.5
@@ -68613,7 +68512,7 @@ entities:
       pos: 2.5,41.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Мостик
+      id: Mostek
       setupAvailableNetworks:
       - SurveillanceCameraCommand
   - uid: 8592
@@ -68623,7 +68522,7 @@ entities:
       pos: 9.5,38.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Восточное орудие
+      id: Armata wschodnia
       setupAvailableNetworks:
       - SurveillanceCameraCommand
   - uid: 8594
@@ -68634,7 +68533,7 @@ entities:
       pos: -21.5,-40.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Якорь
+      id: Kotwica
       setupAvailableNetworks:
       - SurveillanceCameraCommand
   - uid: 8595
@@ -68645,7 +68544,7 @@ entities:
       pos: 5.5,-2.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Хранилище
+      id: Skarbiec
       setupAvailableNetworks:
       - SurveillanceCameraCommand
   - uid: 8596
@@ -68655,7 +68554,7 @@ entities:
       pos: 28.5,-19.5
     - type: SurveillanceCamera
       nameSet: True
-      id: АВД
+      id: ASW
       setupAvailableNetworks:
       - SurveillanceCameraCommand
   - uid: 8597
@@ -68665,7 +68564,7 @@ entities:
       pos: -4.5,37.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Мостик — Запад
+      id: Mostek — Zachód
       setupAvailableNetworks:
       - SurveillanceCameraCommand
   - uid: 10946
@@ -68676,7 +68575,7 @@ entities:
       pos: 3.5,35.5
     - type: SurveillanceCamera
       nameSet: True
-      id: ГП
+      id: Ordynator
       setupAvailableNetworks:
       - SurveillanceCameraCommand
   - uid: 10949
@@ -68687,7 +68586,7 @@ entities:
       pos: -6.5,34.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Капитан
+      id: Kapitan
       setupAvailableNetworks:
       - SurveillanceCameraCommand
 - proto: SurveillanceCameraEngineering
@@ -68699,7 +68598,7 @@ entities:
       pos: -12.5,-15.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Стойка
+      id: Recepcja
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8599
@@ -68709,7 +68608,7 @@ entities:
       pos: -11.5,-21.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Холл
+      id: Hol
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8600
@@ -68720,7 +68619,7 @@ entities:
       pos: -6.5,-28.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Генератор гравитации
+      id: Generator grawitacji
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8601
@@ -68731,7 +68630,7 @@ entities:
       pos: -15.5,-27.5
     - type: SurveillanceCamera
       nameSet: True
-      id: ДАМ
+      id: SAM
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8602
@@ -68742,7 +68641,7 @@ entities:
       pos: -12.5,-36.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Коммуникации — 2
+      id: Komunikacja — 2
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8603
@@ -68753,7 +68652,7 @@ entities:
       pos: 2.5,-24.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Атмос
+      id: Atmosferyka
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8604
@@ -68763,7 +68662,7 @@ entities:
       pos: 14.5,-16.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Атмос стойка
+      id: Atmosferyka Recepcja
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8605
@@ -68774,7 +68673,7 @@ entities:
       pos: -8.5,-30.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Коридор к верфи
+      id: Korytarz do doków
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8606
@@ -68785,7 +68684,7 @@ entities:
       pos: 16.5,-27.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Камера смешивания
+      id: Komora mieszania
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8607
@@ -68796,7 +68695,7 @@ entities:
       pos: -17.5,-39.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Вход ЦИИ
+      id: Wejście ЦИИ
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8608
@@ -68807,7 +68706,7 @@ entities:
       pos: -22.5,-36.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Коммуникации — 1
+      id: Komunikacja — 1
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8609
@@ -68818,7 +68717,7 @@ entities:
       pos: -2.5,-33.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Скафандры
+      id: Skafandry kosmiczne
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
 - proto: SurveillanceCameraGeneral
@@ -68831,7 +68730,7 @@ entities:
       pos: -32.5,-7.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Прибытие — 2
+      id: Przyloty — 2
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8611
@@ -68842,7 +68741,7 @@ entities:
       pos: -31.5,-16.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Прибытие — 1
+      id: Przyloty — 1
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8612
@@ -68852,7 +68751,7 @@ entities:
       pos: 1.5,-9.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Юг — 3
+      id: Południe — 3
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8613
@@ -68863,7 +68762,7 @@ entities:
       pos: 10.5,29.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Север
+      id: Północ
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8614
@@ -68874,7 +68773,7 @@ entities:
       pos: 32.5,-11.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Отбытие — 1
+      id: Odloty — 1
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8615
@@ -68884,7 +68783,7 @@ entities:
       pos: -1.5,5.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Центр — 1
+      id: Centrum — 1
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8616
@@ -68895,7 +68794,7 @@ entities:
       pos: -24.5,-12.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Дорматории
+      id: Kajuty
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8617
@@ -68905,7 +68804,7 @@ entities:
       pos: 21.5,31.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Храм
+      id: Kaplica
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8618
@@ -68914,7 +68813,7 @@ entities:
       parent: 2
       pos: -10.5,-9.5
     - type: SurveillanceCamera
-      id: Юг — 2
+      id: Południe — 2
   - uid: 8619
     components:
     - type: Transform
@@ -68923,7 +68822,7 @@ entities:
       pos: -20.5,-7.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Юг — 1
+      id: Południe — 1
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8620
@@ -68933,7 +68832,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 21.5,-7.5
     - type: SurveillanceCamera
-      id: Юг — 4
+      id: Południe — 4
   - uid: 8621
     components:
     - type: Transform
@@ -68942,7 +68841,7 @@ entities:
       pos: 32.5,-19.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Отбытие — 2
+      id: Wyloty — 2
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8622
@@ -68952,7 +68851,7 @@ entities:
       pos: -2.5,-0.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Около медбей
+      id: Okolice medycznego
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8623
@@ -68963,7 +68862,7 @@ entities:
       pos: 7.5,12.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Центр — 2
+      id: Centrum — 2
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8624
@@ -68974,7 +68873,7 @@ entities:
       pos: 21.5,26.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Около снабжение
+      id: Okolice zaopatrzenia
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8625
@@ -68984,7 +68883,7 @@ entities:
       pos: -1.5,27.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Около мостик
+      id: Okolice mostka
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8626
@@ -68995,7 +68894,7 @@ entities:
       pos: -24.5,-23.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Мастерская
+      id: Warsztat
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8627
@@ -69005,7 +68904,7 @@ entities:
       pos: 20.5,-19.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Библиотека
+      id: Biblioteka
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
   - uid: 8628
@@ -69016,7 +68915,7 @@ entities:
       pos: -9.5,29.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Коридор Север
+      id: Korytarz Północny
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
 - proto: SurveillanceCameraMedical
@@ -69029,7 +68928,7 @@ entities:
       pos: -19.5,5.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Северный коридор
+      id: Korytarz Północny
       setupAvailableNetworks:
       - SurveillanceCameraMedical
   - uid: 8630
@@ -69040,7 +68939,7 @@ entities:
       pos: -17.5,1.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Холл
+      id: Hala
       setupAvailableNetworks:
       - SurveillanceCameraMedical
   - uid: 8631
@@ -69051,7 +68950,7 @@ entities:
       pos: -15.5,4.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Палаты
+      id: Kancelaria
       setupAvailableNetworks:
       - SurveillanceCameraMedical
   - uid: 8632
@@ -69062,7 +68961,7 @@ entities:
       pos: -21.5,14.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Криосон
+      id: Kriosen
       setupAvailableNetworks:
       - SurveillanceCameraMedical
   - uid: 8633
@@ -69073,7 +68972,7 @@ entities:
       pos: -5.5,-2.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Химия
+      id: Chemia
       setupAvailableNetworks:
       - SurveillanceCameraMedical
   - uid: 8634
@@ -69084,7 +68983,7 @@ entities:
       pos: -30.5,1.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Психолог
+      id: Psycholog
       setupAvailableNetworks:
       - SurveillanceCameraMedical
   - uid: 8635
@@ -69095,7 +68994,7 @@ entities:
       pos: -28.5,6.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Криогенетика
+      id: Kriogenetyka
       setupAvailableNetworks:
       - SurveillanceCameraMedical
   - uid: 8636
@@ -69106,7 +69005,7 @@ entities:
       pos: -19.5,13.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Северный коридор - 2
+      id: Korytarz Północny - 2
       setupAvailableNetworks:
       - SurveillanceCameraMedical
 - proto: SurveillanceCameraRouterCircuitboard
@@ -69186,7 +69085,7 @@ entities:
       pos: 22.5,-0.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Холл
+      id: Hala
       setupAvailableNetworks:
       - SurveillanceCameraScience
   - uid: 8648
@@ -69197,7 +69096,7 @@ entities:
       pos: 9.5,-2.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Мастерская
+      id: Warsztat
       setupAvailableNetworks:
       - SurveillanceCameraScience
   - uid: 8649
@@ -69208,7 +69107,7 @@ entities:
       pos: 14.5,-3.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Робототехника
+      id: Robotyka
       setupAvailableNetworks:
       - SurveillanceCameraScience
   - uid: 8650
@@ -69219,7 +69118,7 @@ entities:
       pos: 30.5,6.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Ксено-археология
+      id: Kseno-archeologia
       setupAvailableNetworks:
       - SurveillanceCameraScience
   - uid: 8651
@@ -69229,7 +69128,7 @@ entities:
       pos: -10.5,38.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Западное орудие
+      id: Broń zachodnia
       setupAvailableNetworks:
       - SurveillanceCameraScience
   - uid: 8652
@@ -69240,7 +69139,7 @@ entities:
       pos: 12.5,4.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Аномалистика
+      id: Anomalistyka
       setupAvailableNetworks:
       - SurveillanceCameraScience
   - uid: 8653
@@ -69264,7 +69163,7 @@ entities:
       pos: -19.5,23.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Холл
+      id: Hala
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
   - uid: 8655
@@ -69275,7 +69174,7 @@ entities:
       pos: -38.5,26.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Стойка
+      id: Recepcja
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
   - uid: 8656
@@ -69286,7 +69185,7 @@ entities:
       pos: -40.5,23.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Оружейная
+      id: Zbrojownia
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
   - uid: 8657
@@ -69297,7 +69196,7 @@ entities:
       pos: -23.5,30.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Камеры
+      id: Kamery
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
   - uid: 8658
@@ -69307,7 +69206,7 @@ entities:
       pos: -24.5,32.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Верфь
+      id: Doki
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
   - uid: 8659
@@ -69318,7 +69217,7 @@ entities:
       pos: -14.5,33.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Пермабриг
+      id: Cela Wspólna
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
   - uid: 8660
@@ -69329,7 +69228,7 @@ entities:
       pos: -35.5,20.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Около ГСБ
+      id: Okolice Ochrony
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
 - proto: SurveillanceCameraService
@@ -69342,7 +69241,7 @@ entities:
       pos: 3.5,20.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Бар
+      id: Bar
       setupAvailableNetworks:
       - SurveillanceCameraService
   - uid: 8662
@@ -69353,7 +69252,7 @@ entities:
       pos: -3.5,20.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Кухня
+      id: Kuchnia
       setupAvailableNetworks:
       - SurveillanceCameraService
   - uid: 8663
@@ -69364,7 +69263,7 @@ entities:
       pos: -9.5,23.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Гидропоника
+      id: Hydroponika
       setupAvailableNetworks:
       - SurveillanceCameraService
   - uid: 8664
@@ -69375,7 +69274,7 @@ entities:
       pos: -4.5,-11.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Раздевалка
+      id: Szatnia
       setupAvailableNetworks:
       - SurveillanceCameraService
   - uid: 8665
@@ -69386,7 +69285,7 @@ entities:
       pos: 6.5,25.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Коморка уборщика
+      id: Komórka Woźnego
       setupAvailableNetworks:
       - SurveillanceCameraService
 - proto: SurveillanceCameraSupply
@@ -69398,7 +69297,7 @@ entities:
       pos: 28.5,17.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Зал
+      id: Sala
       setupAvailableNetworks:
       - SurveillanceCameraSupply
   - uid: 8667
@@ -69409,7 +69308,7 @@ entities:
       pos: 29.5,15.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Верфь
+      id: Doki
       setupAvailableNetworks:
       - SurveillanceCameraSupply
   - uid: 8668
@@ -69420,7 +69319,7 @@ entities:
       pos: 33.5,23.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Утилизаторы
+      id: Odzysk
       setupAvailableNetworks:
       - SurveillanceCameraSupply
   - uid: 8669
@@ -69431,7 +69330,7 @@ entities:
       pos: 34.5,29.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Карго — верфь
+      id: Zaopatrzenie — Doki
       setupAvailableNetworks:
       - SurveillanceCameraSupply
 - proto: SurveillanceCameraWirelessRouterEntertainment
@@ -69454,8 +69353,8 @@ entities:
   - uid: 8672
     components:
     - type: MetaData
-      name: использованный шприц
-      desc: Вам лучше не задумываться о предыстории...
+      name: używana strzykawka
+      desc: Lepiej nie myśleć o jej historii...
     - type: Transform
       parent: 2
       rot: -1.5707963267948966 rad
@@ -71375,22 +71274,16 @@ entities:
   entities:
   - uid: 8997
     components:
-    - type: MetaData
-      name: имплантер "Трекер"
     - type: Transform
       parent: 2
       pos: -25.5,31.5
   - uid: 8998
     components:
-    - type: MetaData
-      name: имплантер "Трекер"
     - type: Transform
       parent: 2
       pos: -25.5,31.625
   - uid: 8999
     components:
-    - type: MetaData
-      name: имплантер "Трекер"
     - type: Transform
       parent: 2
       pos: -25.5,31.75
@@ -80619,8 +80512,8 @@ entities:
   - uid: 10743
     components:
     - type: MetaData
-      name: 'знак "внимание: Водяного пара"'
-      desc: ВНИМАНИЕ! Труба для транспортировки водяного пара. Перед работой убедитесь, что поток газа через неё отключён.
+      name: 'Znak ostrzegawczy: Para wodna'
+      desc: UWAGA! To jest rura parowa. Przed przystąpieniem do pracy upewnij się, że przepływ gazu jest zamknięty.
     - type: Transform
       parent: 2
       pos: 9.5,-34.5
