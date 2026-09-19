@@ -21,6 +21,7 @@
 # SPDX-FileCopyrightText: 2025 Spessmann <156740760+Spessmann@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 compilatron <40789662+jbox144@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Damian Zielińsi <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
 # SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 TytosB <54259736+TytosB@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
@@ -43,6 +44,7 @@
   - Gax
   - Glacier
   - Sparks
+  - Tushkan
   # - Amber
   # - Eden
   # - roid_outpost
