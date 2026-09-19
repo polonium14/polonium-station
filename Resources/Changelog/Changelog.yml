@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: TytosB
-  changes:
-  - message: 'added new station: Serpentcrest. along with accompanying evac and cargo
-      shuttles'
-    type: Add
-  id: 9508
-  time: '2026-02-09T07:05:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/38991
 - author: mdrkrg
   changes:
   - message: APC sprites now shows the correct state on round start.
@@ -4134,3 +4126,14 @@
   id: 10006
   time: '2026-09-19T06:45:40.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1035
+- author: Zintex
+  changes:
+  - message: "Dodano now\u0105 map\u0119 Tushkan"
+    type: Add
+  - message: "Dodano map\u0119 Tushkan do puli map."
+    type: Add
+  - message: "Skonfigurowano map\u0119 dla maksymalnie 25 graczy."
+    type: Tweak
+  id: 10007
+  time: '2026-09-19T15:13:44.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1036
