@@ -39792,7 +39792,7 @@ entities:
       parent: 2
       pos: -32.5,28.5
     - type: FaxMachine
-      name: Смотритель
+      name: Nadzorca Ochrony
   - uid: 4848
     components:
     - type: Transform
@@ -39820,7 +39820,7 @@ entities:
       parent: 2
       pos: 26.5,-15.5
     - type: FaxMachine
-      name: ASW
+      name: Prawnik
 - proto: FaxMachineCaptain
   entities:
   - uid: 4851
@@ -68305,7 +68305,7 @@ entities:
   - uid: 8560
     components:
     - type: MetaData
-      name: Podstacja ASW
+      name: Podstacja SI
     - type: Transform
       parent: 2
       pos: -17.5,-41.5
@@ -68554,7 +68554,7 @@ entities:
       pos: 28.5,-19.5
     - type: SurveillanceCamera
       nameSet: True
-      id: ASW
+      id: Prawnik
       setupAvailableNetworks:
       - SurveillanceCameraCommand
   - uid: 8597
@@ -68695,7 +68695,7 @@ entities:
       pos: -17.5,-39.5
     - type: SurveillanceCamera
       nameSet: True
-      id: Wejście ЦИИ
+      id: Wysyłanie SI
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
   - uid: 8608
@@ -69150,7 +69150,7 @@ entities:
       pos: 9.5,1.5
     - type: SurveillanceCamera
       nameSet: True
-      id: НИО — Вход
+      id: Nauka - Wejście
       setupAvailableNetworks:
       - SurveillanceCameraScience
 - proto: SurveillanceCameraSecurity
