@@ -24,6 +24,7 @@
 using Content.Client._Polonium.Chat; // Polonium: chat stacking
 using Content.Client._Polonium.RichText;
 using Content.Client.RichText;
+using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.RichText;
 using Content.Client.UserInterface.Systems.Chat.Controls;
 using Content.Shared.Chat;
@@ -126,6 +127,20 @@ public partial class ChatBox : UIWidget, IEntityLinkClickHandler
         foreach (var message in _controller.History)
         {
             OnMessageAdded(message.Item2);
+        }
+    }
+
+    /// <summary>
+    /// Calls update function on every child <see cref="TextLinkLabel"/> in the ChatBox's OutputPanel "Contents"
+    /// </summary>
+    public void UpdateTextLinkLabelProperties(SharedChatSystem _sharedChatSys)
+    {
+        foreach (var contentsChild in Contents.Children)
+        {
+            if (contentsChild is TextLinkLabel textLinkLabel)
+            {
+                textLinkLabel.UpdateLabelProperties(_sharedChatSys);
+            }
         }
     }
 
