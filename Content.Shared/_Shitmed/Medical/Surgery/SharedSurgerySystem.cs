@@ -163,7 +163,9 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
     private void OnTargetDoAfter(Entity<SurgeryTargetComponent> ent, ref SurgeryDoAfterEvent args)
     {
-        if (!_timing.IsFirstTimePredicted)
+        // Replicated DoAfters also finish during client prediction. Only the server may
+        // apply surgery effects or report failure; the client's trauma state can lag behind.
+        if (_net.IsClient || !_timing.IsFirstTimePredicted)
             return;
 
         if (args.Cancelled)

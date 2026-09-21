@@ -465,7 +465,7 @@ public abstract partial class SharedSurgerySystem
             if (trauma.Comp.TraumaTarget is { } target
                 && bodyComp.Organs.ContainedEntities.Contains(target)
                 && TryComp<OrganIntegrityComponent>(target, out var integrity)
-                && integrity.IntegrityModifiers.Any(m => m.Key.Item2 == trauma.Owner && m.Value > 0))
+                && trauma.Comp.HasTreatableOrganDamage)
                 yield return (trauma, (target, integrity));
         }
     }

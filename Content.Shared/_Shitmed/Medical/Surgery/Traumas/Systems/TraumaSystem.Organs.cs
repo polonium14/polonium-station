@@ -220,6 +220,19 @@ public partial class TraumaSystem
 
     private void UpdateOrganIntegrity(EntityUid uid, OrganIntegrityComponent organ)
     {
+        foreach (var modifiers in organ.IntegrityModifiers.GroupBy(modifier => modifier.Key.Item2))
+        {
+            if (!TryComp<TraumaComponent>(modifiers.Key, out var trauma))
+                continue;
+
+            var treatable = modifiers.Any(modifier => modifier.Value > FixedPoint2.Zero);
+            if (trauma.HasTreatableOrganDamage == treatable)
+                continue;
+
+            trauma.HasTreatableOrganDamage = treatable;
+            Dirty(modifiers.Key, trauma);
+        }
+
         var oldIntegrity = organ.OrganIntegrity;
 
         // An empty modifier set means all damage has been treated, including the final modifier.
