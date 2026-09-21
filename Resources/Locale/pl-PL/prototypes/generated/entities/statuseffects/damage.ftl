@@ -1,4 +1,4 @@
 ent-StatusEffectDamageModifierBase = { ent-StatusEffectBase }
-    .desc = Status effect for modifying incoming sources of damage. You shouldn't be seeing this.
-ent-StatusEffectRadiationProtection = radiation protection
+    .desc = Efekt statusowy modyfikujący źródła otrzymywanych obrażeń. Nie powinieneś tego widzieć.
+ent-StatusEffectRadiationProtection = ochrona przed promieniowaniem
     .desc = { ent-StatusEffectDamageModifierBase.desc }

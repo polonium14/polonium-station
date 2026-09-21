@@ -1,2 +1,2 @@
 ent-MagazineFoamBox = skrzynia amunicji (pianka)
-    .desc = Box containing a 100-round belt of linked... foam darts?
+    .desc = Pudełko zawierające pasek na 100 sztuk połączonych… piankowych strzałek?

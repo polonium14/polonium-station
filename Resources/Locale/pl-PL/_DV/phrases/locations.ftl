@@ -1,4 +1,4 @@
-phrase-location-ats = ATS
+phrase-location-ats = ASH
 phrase-location-shipyard = Stocznia
 phrase-location-boxing-ring = Ring bojowy
 phrase-location-outpost = Obozowisko

@@ -1,4 +1,4 @@
-ent-BaseAPC = APC
+ent-BaseAPC = LKZ
     .desc = Terminal kontrolny do zarządzania systemami elektrycznymi danego obszaru.
 ent-APCFrame = konstrukcja LKZ
     .desc = Terminal kontrolny do zarządzania systemami elektrycznymi danego obszaru. Brakuje mu elektroniki.

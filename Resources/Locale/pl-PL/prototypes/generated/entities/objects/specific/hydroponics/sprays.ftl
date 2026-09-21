@@ -1,4 +1,4 @@
-ent-PlantBGoneSpray = Plant-B-Gone
+ent-PlantBGoneSpray = Chwastobójca
     .desc = Zabija te uciążliwe chwasty!
     .suffix = Pełny
 ent-WeedSpray = środek chwastobójczy

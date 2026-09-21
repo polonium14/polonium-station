@@ -1,6 +1,6 @@
 ent-RandomAnomalySpawner = spawner losowej anomalii
     .desc = { ent-MarkerBase.desc }
-ent-RandomRockAnomalySpawner = random rock anomaly spawner
+ent-RandomRockAnomalySpawner = spawner losowy skalny anomalia
     .desc = { ent-MarkerBase.desc }
-ent-RandomAnomalyInjectorSpawner = random anomaly injector spawner
+ent-RandomAnomalyInjectorSpawner = spawner losowy anomalia wstrzykiwacz
     .desc = { ent-MarkerBase.desc }

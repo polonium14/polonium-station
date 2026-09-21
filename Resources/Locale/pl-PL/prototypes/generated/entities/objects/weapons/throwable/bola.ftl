@@ -1,2 +1,2 @@
 ent-Bola = bola
-    .desc = Linked together with some spare cuffs and metal.
+    .desc = Połączone ze sobą za pomocą kilku zapasowych mankietów i elementów metalowych.

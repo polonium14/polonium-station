@@ -1,4 +1,4 @@
-ent-BaseLighter = basic lighter
+ent-BaseLighter = zwykła zapalniczka
     .desc = { ent-SolutionWelder.desc }
 ent-SolutionLighter = { ent-SolutionWelder }
     .desc = { ent-SolutionWelder.desc }
@@ -24,7 +24,7 @@ ent-NanotrasenFlippo = Flippo Nanotrasen
     .desc = Granatowa luksusowa Flippo, zwykle wręczana lojalnym szefom zamiast podwyżki. Zasilana płynną plazmą.
 ent-CentCommFlippo = pozłacana Flippo CD
     .desc = Ozdobna ramka Flippo z jadeitowym reliefem i złoceniami, zawierająca dyszę zasilaną bluespace. Zatrzask zabezpiecza miniaturowy czytnik dostępu reagujący wyłącznie na urzędników CD. Najlepsza zapalniczka znana ludzkości.
-    .suffix = DO NOT MAP
+    .suffix = NIE TWORZYĆ MAPY
 ent-SpiderclanFlippo = zapalniczka Spider-Clan
     .desc = Zaawansowana zapalniczka strumieniowa, zaprojektowana do działania nawet w głębokiej przestrzeni. Działa na małej mikrofuzyjnej cele.
 ent-WaffleCoFlippo = Flippo Waffle Co.

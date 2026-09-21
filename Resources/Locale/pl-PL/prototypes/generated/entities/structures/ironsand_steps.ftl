@@ -1,6 +1,6 @@
-ent-IronsandStep = ironsand step
-    .desc = Takes your ironsand up a level.
-ent-IronsandStepConvexCorner = ironsand step convex corner
+ent-IronsandStep = stopień z piasku żelaznego
+    .desc = To sprawi, że Twoja gra żelazkami wejdzie na wyższy poziom.
+ent-IronsandStepConvexCorner = żelazny piasek, stopień, wypukły narożnik
     .desc = { ent-IronsandStep.desc }
-ent-IronsandStepConcaveCorner = ironsand step concave corner
+ent-IronsandStepConcaveCorner = żelazny piasek, stopniowe wklęsłe wykończenie narożnika
     .desc = { ent-IronsandStep.desc }

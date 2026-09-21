@@ -1,5 +1,5 @@
 ent-BaseCrowbar = łom
-    .desc = A multipurpose tool used for many tasks, such as prying doors or bludgeoning interdimensional invaders.
+    .desc = Narzędzie wielofunkcyjne, które można wykorzystać do wielu zadań, takich jak wyważanie drzwi czy obezwładnianie międzywymiarowych najeźdźców.
 ent-Crowbar = { ent-BaseCrowbar }
     .desc = { ent-BaseCrowbar.desc }
 ent-CrowbarRed = { ent-BaseCrowbar }

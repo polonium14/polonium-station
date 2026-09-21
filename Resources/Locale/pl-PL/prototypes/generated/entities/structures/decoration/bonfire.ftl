@@ -1,8 +1,8 @@
 ent-BaseBonfire = { ent-BaseStructure }
     .desc = { ent-BaseStructure.desc }
-ent-Bonfire = bonfire
-    .desc = What can be better than a late evening under the sky with guitar and friends?
-ent-BonfireStake = bonfire with stake
-    .desc = A sinister bonfire with a stake for... ceremonial purposes. Best not to ask.
-ent-LegionnaireBonfire = legionnaire bonfire
-    .desc = There, in the land of lava and ash, place to to cook marshmallow and potato.
+ent-Bonfire = ognisko
+    .desc = Czy może być coś lepszego niż późny wieczór pod gołym niebem z gitarą i przyjaciółmi?
+ent-BonfireStake = ognisko z palem
+    .desc = Złowrogie ognisko z palem służącym… celom ceremonialnym. Lepiej nie pytać.
+ent-LegionnaireBonfire = ognisko legionistów
+    .desc = Tam, w krainie lawy i popiołu, można upiec pianki marshmallow i ziemniaki.

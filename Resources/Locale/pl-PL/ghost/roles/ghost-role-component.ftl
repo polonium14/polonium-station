@@ -311,3 +311,5 @@ ghost-role-information-celedon-name = Celedon, Animal Lab Rescue
 ghost-role-information-celedon-description = Follow and obey the zookeeper. They must gain your trust first though, you still remember the experiments from the genetics lab on Europa.
 roles-ghost-cryopod-sleeper-name = old cryogenics pod sleeper
 roles-ghost-cryopod-sleeper-objective = Work as a team with your fellow survivors aboard a ruined, ancient space station.
+ghost-role-information-space-changeling-description = An adult changeling headslug, eager to assimilate crew members and ready to hide within the station. This headslug is especially frail and needs to find a dead body to assume a humanoid appearance.
+ghost-role-information-space-changeling-name = Elder Headslug

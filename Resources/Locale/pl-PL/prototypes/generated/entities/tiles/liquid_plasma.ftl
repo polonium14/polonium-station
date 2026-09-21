@@ -1,2 +1,2 @@
-ent-FloorLiquidPlasmaEntity = liquid plasma
-    .desc = Sweet, expensive nectar. Don't consume.
+ent-FloorLiquidPlasmaEntity = ciekła plazma
+    .desc = Słodki, drogi nektar. Nie spożywać.

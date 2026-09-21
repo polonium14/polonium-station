@@ -22,6 +22,6 @@ ent-SpawnMobCobraSalvage = spawner kosmicznych kobr (odzysk)
 ent-SalvageFleshSpawner = spawner nienormalnego mięsa (odzysk)
     .suffix = 100
     .desc = { ent-MarkerBase.desc }
-ent-SalvageLivingLightSpawner = Salvage Living Light Spawner
+ent-SalvageLivingLightSpawner = spawner odzysk Living światło
     .suffix = 100
     .desc = { ent-MarkerBase.desc }

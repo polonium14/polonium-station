@@ -52,3 +52,13 @@ device-net-id-atmos-devices = Atmos Devices
 device-net-id-reserved = Reserved
 # Unknown
 device-address-unknown = ????-????
+device-address-prefix-camera = CAM-
+device-address-prefix-camera-monitor = SCM-
+# Servers and routers
+device-address-prefix-camera-router = CMR-
+device-address-prefix-camera-router-wireless = CMW-
+device-address-prefix-crew-monitor = MCM-
+device-address-prefix-crew-monitoring-server = CMS-
+device-frequency-prototype-name-arrivals-shuttle-timer = Arrivals Timer
+device-frequency-prototype-name-shuttle-timer = Evac Shuttle Timer
+device-frequency-prototype-name-surveillance-camera = Cameras

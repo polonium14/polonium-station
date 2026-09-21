@@ -1,4 +1,4 @@
-ent-BaseStructureWall = basewall
+ent-BaseStructureWall = ściana fundamentowa
     .desc = Trzyma powietrze w środku a tiderów na zewnątrz.
 ent-BaseWall = { ent-BaseStructureWall }
     .desc = { ent-BaseStructureWall.desc }
@@ -114,7 +114,7 @@ ent-WallChromiteCobblebrick = ściana z chromitowej kostki brukowej
     .desc = { ent-WallCobblebrick.desc }
 ent-WallAndesiteCobblebrick = ściana z andezytowej kostki brukowej
     .desc = { ent-WallCobblebrick.desc }
-ent-WallIronsandCobblebrick = ironsand brick wall
-    .desc = The pale, rounded shapes that make up this wall look strikingly different from the iron sands they were allegedly made from.
+ent-WallIronsandCobblebrick = ściana z cegły i piasku żelaznego
+    .desc = Jasne, zaokrąglone kształty tworzące tę ścianę różnią się uderzająco od piasków żelaznych, z których rzekomo zostały wykonane.
 ent-Cardwall = ściana z kartonu
     .desc = cięcia budżetowe uderzają mocniej niż ta ściana wytrzyma.

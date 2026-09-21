@@ -1,6 +1,6 @@
 ent-AdminObserver = admin obserwator
     .desc = { ent-MobObserverBase.desc }
-    .gender = male
+    .gender = mężczyzna
 ent-BaseAGhostAction = { ent-BaseAction }
     .desc = { ent-BaseAction.desc }
 ent-ActionAGhostShowSolar = Interfejs kontroli zasilania słonecznego

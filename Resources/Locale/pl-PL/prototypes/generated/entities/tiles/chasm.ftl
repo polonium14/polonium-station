@@ -1,11 +1,11 @@
-ent-FloorChasmEntity = chasm
-    .desc = You can't even see the bottom.
+ent-FloorChasmEntity = otchłań
+    .desc = Nawet nie widać dna.
 ent-FloorChromiteChasm = { ent-FloorChasmEntity }
-    .suffix = Chromite
+    .suffix = Chromit
     .desc = { ent-FloorChasmEntity.desc }
 ent-FloorDesertChasm = { ent-FloorChasmEntity }
-    .suffix = Desert
+    .suffix = Pustynia
     .desc = { ent-FloorChasmEntity.desc }
 ent-FloorSnowChasm = { ent-FloorChasmEntity }
-    .suffix = Snow
+    .suffix = Śnieg
     .desc = { ent-FloorChasmEntity.desc }
