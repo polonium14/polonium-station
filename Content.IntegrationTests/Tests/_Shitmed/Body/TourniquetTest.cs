@@ -438,5 +438,21 @@ public sealed class TourniquetTest : GameTest
             Assert.That(ev.Handled, Is.False);
         });
     }
+    [Test]
+    public async Task DeletingAppliedTourniquetRestoresBleedingAndSensation()
+    {
+        var (self, arm, hand, coords, entMan, wounds) = await Setup();
+        var item = await ApplyTourniquet(self, coords, entMan);
+        await Server.WaitAssertion(() =>
+        {
+            entMan.DeleteEntity(item);
+            foreach (var organ in new[] { arm, hand })
+            {
+                Assert.That(entMan.HasComponent<TourniquetedComponent>(organ), Is.False);
+                Assert.That(AnyWoundHasModifier(entMan, wounds, organ, "TourniquetPresent"), Is.False);
+                Assert.That(entMan.GetComponent<NerveComponent>(organ).PainFeelingModifiers.ContainsKey((item, "Tourniquet")), Is.False);
+            }
+        });
+    }
 
 }

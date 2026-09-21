@@ -40,6 +40,7 @@ public sealed partial class TourniquetSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<TourniquetComponent, UseInHandEvent>(OnTourniquetUse);
+        SubscribeLocalEvent<TourniquetComponent, EntityTerminatingEvent>(OnTourniquetTerminating);
         SubscribeLocalEvent<TourniquetComponent, AfterInteractEvent>(OnTourniquetAfterInteract);
 
         SubscribeLocalEvent<BodyComponent, TourniquetDoAfterEvent>(OnBodyDoAfter);
@@ -228,6 +229,19 @@ public sealed partial class TourniquetSystem : EntitySystem
 
         _bloodstream.TryRemoveBleedModifier(organ, "TourniquetPresent", force: true);
         RemComp<TourniquetedComponent>(organ);
+    }
+
+    private void OnTourniquetTerminating(Entity<TourniquetComponent> ent, ref EntityTerminatingEvent args)
+    {
+        var query = EntityQueryEnumerator<TourniquetedComponent, OrganComponent>();
+        while (query.MoveNext(out var organ, out var tourniqueted, out var organComp))
+        {
+            if (tourniqueted.TourniquetEntity != ent.Owner || TerminatingOrDeleted(organ)
+                || organComp.Body is { } body && TerminatingOrDeleted(body))
+                continue;
+
+            RemoveTourniquetEffects(ent.Owner, organ);
+        }
     }
 
     private void OnTourniquetedOrganRemoved(Entity<TourniquetedComponent> ent, ref OrganGotRemovedEvent args)
