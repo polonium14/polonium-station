@@ -672,9 +672,6 @@ public abstract partial class SharedSurgerySystem
         var ev = new SurgeryDoAfterEvent(surgeryId, stepId, toolUsed);
         var duration = GetSurgeryDuration(step, user, body, speed);
 
-        if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
-            duration = duration / surgerySpeedMod.SpeedModifier;
-
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
         {
             BreakOnMove = true,
