@@ -326,6 +326,13 @@ public abstract partial class SharedSurgerySystem
             || !_container.Insert(args.Tool, body.Organs))
             return;
 
+        if (HasComp<ChildOrganComponent>(args.Tool))
+        {
+            _organRelations.Orphan(args.Tool);
+            if (HasComp<ParentOrganComponent>(args.Part))
+                _organRelations.Relate(args.Part, args.Tool);
+        }
+
         EnsureComp<OrganReattachedComponent>(args.Tool);
 
         ApplyStepDamageChange(args);
@@ -375,7 +382,11 @@ public abstract partial class SharedSurgerySystem
             || !LimbTargetMap.TryGetOrganByCategory(EntityManager, body, organComp.Category, out var organUid))
             return;
 
-        _container.Remove(organUid, body.Organs, force: true);
+        if (!_container.Remove(organUid, body.Organs, force: true))
+            return;
+
+        if (HasComp<ChildOrganComponent>(organUid))
+            _organRelations.Orphan(organUid);
         _hands.TryPickupAnyHand(args.User, organUid);
     }
 
