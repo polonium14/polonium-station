@@ -31,8 +31,8 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         base.Initialize();
 
         SubscribeLocalEvent<SurgeryTargetComponent, SurgeryStepDamageEvent>(OnSurgeryStepDamage);
-        // You might be wondering "why aren't we using StepEvent for these two?" reason being that StepEvent fires off regardless of success on the previous functions
-        // so this would heal entities even if you had a used or incorrect organ.
+        // Step handlers dispatch damage effects after their validation succeeds, so failed
+        // organ insertion or attachment cannot grant healing.
         SubscribeLocalEvent<SurgeryDamageChangeEffectComponent, SurgeryStepDamageChangeEvent>(OnSurgeryDamageChange);
         SubscribeLocalEvent<SurgerySpecialDamageChangeEffectComponent, SurgeryStepDamageChangeEvent>(OnUnimplementedSpecialDamageChange);
         SubscribeLocalEvent<SurgeryStepEmoteEffectComponent, SurgeryStepEvent>(OnStepScreamComplete);

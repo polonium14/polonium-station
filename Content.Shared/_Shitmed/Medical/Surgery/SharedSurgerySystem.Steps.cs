@@ -75,6 +75,16 @@ public abstract partial class SharedSurgerySystem
 
         ApplyComponentChanges(args, ent.Comp);
         HandleSanitization(args);
+
+        // These organ steps dispatch effects after their own validation succeeds.
+        if (!HasComp<SurgeryAddOrganStepComponent>(ent) && !HasComp<SurgeryAffixOrganStepComponent>(ent))
+            ApplyStepDamageChange(args);
+    }
+
+    private void ApplyStepDamageChange(SurgeryStepEvent args)
+    {
+        var ev = new SurgeryStepDamageChangeEvent(args.User, args.Body, args.Part, args.Step);
+        RaiseLocalEvent(args.Step, ref ev);
     }
 
     private void ApplyComponentChanges(SurgeryStepEvent args, SurgeryStepComponent comp)
@@ -282,8 +292,7 @@ public abstract partial class SharedSurgerySystem
 
         EnsureComp<OrganReattachedComponent>(args.Tool);
 
-        var ev = new SurgeryStepDamageChangeEvent(args.User, args.Body, args.Part, ent);
-        RaiseLocalEvent(ent, ref ev);
+        ApplyStepDamageChange(args);
     }
 
     private bool AddOrganComplete(EntityUid body, EntityUid part, EntityUid surgery)
@@ -307,6 +316,7 @@ public abstract partial class SharedSurgerySystem
             return;
 
         RemComp<OrganReattachedComponent>(organUid);
+        ApplyStepDamageChange(args);
     }
 
     private bool AffixOrganComplete(EntityUid body, EntityUid surgery)
