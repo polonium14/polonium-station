@@ -10,3 +10,9 @@ reagent-effect-condition-guidebook-is-blood-cultist = { $invert ->
     }
 
 unholy-blood-holywater-reaction = The unholy blood violently reacts with the holy water, purging itself!
+
+reagent-effect-guidebook-juggernaut-blood-corruption =
+    { $chance ->
+        [1] Corrupts
+        *[other] corrupt
+    } blood into unholy blood upon contact with a juggernaut

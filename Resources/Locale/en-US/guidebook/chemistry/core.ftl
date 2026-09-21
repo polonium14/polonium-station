@@ -34,4 +34,13 @@ guidebook-reagent-recipes-mix-info = {$minTemp ->
         }
 }
 
-guidebook-reagent-effects-metabolism-group-rate = [bold]{ $group }[/bold] [color=gray]({ $rate } jednostek na sekundę)[/color]
+guidebook-reagent-effects-metabolism-group-rate = [bold]{ $group }[/bold] [color=gray]({ $rate } units per second)[/color]
+
+guidebook-nested-effect-description =
+    {$chance ->
+        [1] { $effect }
+        *[other] Has a { NATURALPERCENT($chance, 2) } chance to { $effect }
+    }{ $conditionCount ->
+        [0] .
+        *[other] {" "}when { $conditions }.
+    }

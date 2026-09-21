@@ -23,3 +23,7 @@ ui-bql-results-delete = Delete
 ui-bql-results-delete-confirm = Confirm?
 ui-bql-results-pin = Pin
 ui-bql-results-unpin = Unpin
+
+ui-bql-results-tp = TP
+ui-bql-results-tp-tooltip = Teleport to entity
+ui-bql-results-vv-tooltip = View entity variables

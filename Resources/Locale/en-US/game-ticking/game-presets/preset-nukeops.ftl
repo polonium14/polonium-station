@@ -34,3 +34,13 @@ nukeops-no-one-ready = No players readied up! Can't start Nukeops.
 nukeops-role-commander = Commander
 nukeops-role-agent = Agent
 nukeops-role-operator = Operator
+
+nukeops-disk-carried-by = {" "}carried by [color=White]{$name}[/color], [color=orange]{$job}[/color], {$location} { $user ->
+    [unknown] { "" }
+    *[other] ([color=gray]{$user}[/color])
+}
+nukeops-disk-location-title = Final location of Disk:
+storage-hierarchy-list = { $items-left ->
+  [0] { $existing-text } { $item },
+  *[other] { $existing-text } { $item }, in
+}

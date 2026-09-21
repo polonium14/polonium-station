@@ -7,7 +7,12 @@ on:
       - 'Resources/Locale/**'
       - 'crowdin.yml'
       - 'Tools/translationTools/check_locales.py'
+      - 'Tools/translationTools/check_code_locale_keys.py'
       - '.github/workflows/check-locales.yml'
+      - 'Content.Client/**'
+      - 'Content.Server/**'
+      - 'Content.Shared/**'
+      - 'Content.Replay/**'
   merge_group:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
@@ -15,7 +20,12 @@ on:
       - 'Resources/Locale/**'
       - 'crowdin.yml'
       - 'Tools/translationTools/check_locales.py'
+      - 'Tools/translationTools/check_code_locale_keys.py'
       - '.github/workflows/check-locales.yml'
+      - 'Content.Client/**'
+      - 'Content.Server/**'
+      - 'Content.Shared/**'
+      - 'Content.Replay/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.ref }}
@@ -40,5 +50,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          submodules: true
       - name: Check locale sync
-        run: python3 Tools/translationTools/check_locales.py --ignore '**/tutorial'
+        run: python3 Tools/translationTools/check_locales.py --ignore '**/tutorial' --ignore '**/datasets'
+      - name: Check non-existent locale keys
+        run: python3 Tools/translationTools/check_code_locale_keys.py
