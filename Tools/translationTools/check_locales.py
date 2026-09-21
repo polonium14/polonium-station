@@ -181,6 +181,12 @@ def gh_error(issue: Issue) -> None:
     )
 
 
+def gh_warning(issue: Issue) -> None:
+    print(
+        f'::warning file={issue.path},line={issue.line},title={issue.kind}::{issue.message}'
+    )
+
+
 def print_section(title: str, issues: List[Issue], limit: int) -> None:
     print(f'\n{title} ({len(issues)}):')
     if not issues:
@@ -308,16 +314,16 @@ def check_locales(repo_root: Path, limit: int, extra_ignore: Optional[List[str]]
     pl_keys = per_locale_keys['pl-PL']
     for name in sorted(set(en_keys) - set(pl_keys)):
         path, line = en_keys[name][0]
-        issues['unpaired_key'].append(Issue(
-            'unpaired-key',
+        issues['unpaired_en'].append(Issue(
+            'missing-translation',
             path,
             f'Klucz "{name}" istnieje tylko w en-US',
             line,
         ))
     for name in sorted(set(pl_keys) - set(en_keys)):
         path, line = pl_keys[name][0]
-        issues['unpaired_key'].append(Issue(
-            'unpaired-key',
+        issues['unpaired_pl'].append(Issue(
+            'missing-source',
             path,
             f'Klucz "{name}" istnieje tylko w pl-PL',
             line,
@@ -330,8 +336,8 @@ def check_locales(repo_root: Path, limit: int, extra_ignore: Optional[List[str]]
         for name in sorted(set(en_names) - set(pl_names)):
             if name not in pl_keys:
                 continue
-            issues['unpaired_key'].append(Issue(
-                'unpaired-key',
+            issues['misplaced_key'].append(Issue(
+                'misplaced-key',
                 repo_rel(per_locale_files['en-US'][rel], repo_root),
                 f'Klucz "{name}" jest w en-US tutaj, a w pl-PL siedzi w innym pliku',
                 en_names[name],
@@ -339,22 +345,25 @@ def check_locales(repo_root: Path, limit: int, extra_ignore: Optional[List[str]]
         for name in sorted(set(pl_names) - set(en_names)):
             if name not in en_keys:
                 continue
-            issues['unpaired_key'].append(Issue(
-                'unpaired-key',
+            issues['misplaced_key'].append(Issue(
+                'misplaced-key',
                 repo_rel(per_locale_files['pl-PL'][rel], repo_root),
                 f'Klucz "{name}" jest w pl-PL tutaj, a w en-US siedzi w innym pliku',
                 pl_names[name],
             ))
 
-    order = (
+    error_order = (
         ('orphan_locale', 'Osierocone locale'),
         ('empty', 'Puste pliki / puste klucze'),
         ('duplicate', 'Duplikaty kluczy'),
         ('unpaired_file', 'Pliki bez pary en-US/pl-PL'),
-        ('unpaired_key', 'Klucze bez pary en-US/pl-PL'),
+        ('unpaired_pl', 'Klucze tylko w pl-PL (brak źródła en-US)'),
+        ('misplaced_key', 'Klucze w różnych plikach en-US/pl-PL'),
+    )
+    warn_order = (
+        ('unpaired_en', 'Klucze tylko w en-US (brak tłumaczenia)'),
     )
 
-    total = 0
     print('=== Locale check (en-US <-> pl-PL) ===')
     print(f'Repo: {repo_root}')
     print(f'Locale na dysku: {", ".join(present_locales) or "(brak)"}')
@@ -367,19 +376,29 @@ def check_locales(repo_root: Path, limit: int, extra_ignore: Optional[List[str]]
     print(f'Ignore ({CROWDIN_YML} + skrypt): {", ".join(ignore_patterns)}')
     print()
 
-    for kind, title in order:
+    error_count = 0
+    for kind, title in error_order:
         bucket = issues[kind]
-        total += len(bucket)
+        error_count += len(bucket)
+        print_section(title, bucket, limit)
+
+    warn_count = 0
+    for kind, title in warn_order:
+        bucket = issues[kind]
+        warn_count += len(bucket)
         print_section(title, bucket, limit)
 
     print('\nPodsumowanie:')
-    for kind, title in order:
+    for kind, title in error_order:
         print(f'  {title}: {len(issues[kind])}')
-    print(f'  RAZEM: {total}')
+    for kind, title in warn_order:
+        print(f'  {title}: {len(issues[kind])} (ostrzeżenie)')
+    print(f'  BŁĘDY: {error_count}')
+    print(f'  OSTRZEŻENIA: {warn_count}')
 
     emitted = 0
     if os.environ.get('GITHUB_ACTIONS'):
-        for kind, _title in order:
+        for kind, _title in error_order:
             for issue in issues[kind]:
                 if emitted >= MAX_ANNOTATIONS:
                     break
@@ -387,19 +406,32 @@ def check_locales(repo_root: Path, limit: int, extra_ignore: Optional[List[str]]
                 emitted += 1
             if emitted >= MAX_ANNOTATIONS:
                 break
+        if emitted < MAX_ANNOTATIONS:
+            for kind, _title in warn_order:
+                for issue in issues[kind]:
+                    if emitted >= MAX_ANNOTATIONS:
+                        break
+                    gh_warning(issue)
+                    emitted += 1
+                if emitted >= MAX_ANNOTATIONS:
+                    break
+        total = error_count + warn_count
         if total > MAX_ANNOTATIONS:
             print(f'::warning::Pokazano {MAX_ANNOTATIONS} z {total} problemów. Reszta w logu powyżej.')
 
-    if total:
+    if error_count:
         print('\nLocale check FAILED')
         return 1
+    if warn_count:
+        print('\nLocale check OK (są ostrzeżenia o brakujących tłumaczeniach)')
+        return 0
     print('\nLocale check OK')
     return 0
 
 
 def main(argv: Optional[List[str]] = None) -> int:
     parser = argparse.ArgumentParser(
-        description='Sprawdza synchronizację locale en-US/pl-PL (puste, duplikaty, osierocone).',
+        description='Sprawdza synchronizację locale en-US/pl-PL (puste, duplikaty, osierocone). Brak tłumaczenia to ostrzeżenie, brak źródła en-US to błąd.',
     )
     parser.add_argument(
         '--limit',

@@ -19,5 +19,5 @@ public sealed partial class DisarmEntityEffectSystem : EntityEffectSystem<MetaDa
 /// <inheritdoc cref="EntityEffect"/>
 public sealed partial class Disarm : EntityEffectBase<Disarm>
 {
-    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys) => Loc.GetString("entity-effect-guidebook-disarm", ("chance", Probability));
+    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys) => Loc.GetString("entity-effect-disarm", ("chance", Probability));
 }
