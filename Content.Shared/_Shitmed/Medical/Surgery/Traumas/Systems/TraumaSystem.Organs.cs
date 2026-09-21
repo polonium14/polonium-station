@@ -207,7 +207,10 @@ public partial class TraumaSystem
         if (!organ.IntegrityModifiers.Remove((identifier, effectOwner)))
             return false;
 
-        if (TryComp<TraumaComponent>(effectOwner, out var traumaComp))
+        // A single trauma can own several named modifiers. Keep its wound and treatment
+        // handle alive until the last positive modifier belonging to it is gone.
+        if (TryComp<TraumaComponent>(effectOwner, out var traumaComp)
+            && !organ.IntegrityModifiers.Any(modifier => modifier.Key.Item2 == effectOwner && modifier.Value > FixedPoint2.Zero))
             RemoveTrauma((effectOwner, traumaComp));
 
         UpdateOrganIntegrity(uid, organ);
