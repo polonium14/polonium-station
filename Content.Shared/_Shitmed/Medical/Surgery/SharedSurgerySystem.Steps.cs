@@ -469,18 +469,19 @@ public abstract partial class SharedSurgerySystem
         var healAmount = ent.Comp.Amount;
         foreach (var woundEnt in _wounds.GetWoundableWounds(args.Part))
         {
-            if (!TryComp<BleedInflicterComponent>(woundEnt, out var bleeds))
+            if (!TryComp<BleedInflicterComponent>(woundEnt, out var bleeds) || !bleeds.IsBleeding)
                 continue;
 
-            if (healAmount - bleeds.Scaling > 0)
+            if (healAmount <= FixedPoint2.Zero)
+                break;
+
+            if (bleeds.Scaling <= healAmount)
             {
-                healAmount -= bleeds.Scaling;
-
-                bleeds.BleedingAmountRaw = 0;
-                bleeds.Scaling = 0;
-
-                bleeds.IsBleeding = false; // Won't bleed as long as it's not reopened
-
+                healAmount -= FixedPoint2.Max(bleeds.Scaling, FixedPoint2.Zero);
+                bleeds.BleedingAmountRaw = FixedPoint2.Zero;
+                bleeds.Scaling = FixedPoint2.Zero;
+                bleeds.ScalingLimit = BleedInflicterComponent.DefaultScalingLimit;
+                bleeds.IsBleeding = false;
                 Dirty(woundEnt, bleeds);
             }
             else
@@ -490,6 +491,8 @@ public abstract partial class SharedSurgerySystem
                 break;
             }
         }
+
+        _wounds.RecomputeWoundableBleeds(args.Part);
     }
 
     private bool BleedsTreatmentComplete(EntityUid part)

@@ -131,4 +131,43 @@ public sealed class ClampBleedersBudgetTest : GameTest
                 "The second wound should only have absorbed the REMAINING 1 point of the shared 2-point budget (5 - 1 = 4), not the full nominal amount again (which would wrongly read 3).");
         });
     }
+    [TestCase(2, 0)]
+    [TestCase(3, 1)]
+    public async Task ClampSkipsInactiveWoundsAndUpdatesBleedingImmediately(int scaling, int remaining)
+    {
+        var map = await Pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+        await Server.WaitAssertion(() =>
+        {
+            var organ = SEntMan.SpawnEntity("ClampBleedersBudgetTestOrgan", coords);
+            var containers = SEntMan.System<SharedContainerSystem>();
+            var woundContainer = containers.GetContainer(organ, WoundableComponent.WoundContainerId);
+            var inactive = SEntMan.SpawnEntity(null, coords);
+            SEntMan.AddComponent<WoundComponent>(inactive);
+            SEntMan.AddComponent<BleedInflicterComponent>(inactive).Scaling = FixedPoint2.New(20);
+            containers.Insert(inactive, woundContainer);
+            var active = SEntMan.SpawnEntity(null, coords);
+            SEntMan.AddComponent<WoundComponent>(active);
+            var bleed = SEntMan.AddComponent<BleedInflicterComponent>(active);
+            bleed.Scaling = FixedPoint2.New(scaling);
+            bleed.ScalingLimit = FixedPoint2.New(10);
+            bleed.BleedingAmountRaw = FixedPoint2.New(4);
+            bleed.IsBleeding = true;
+            containers.Insert(active, woundContainer);
+            var wounds = SEntMan.System<Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems.WoundSystem>();
+            wounds.RecomputeWoundableBleeds(organ);
+            var step = SEntMan.SpawnEntity("SurgeryStepClampBleeders", coords);
+            var ev = new SurgeryStepEvent(organ, organ, organ, step, step, step);
+            SEntMan.EventBus.RaiseLocalEvent(step, ref ev);
+            Assert.That(bleed.Scaling, Is.EqualTo(FixedPoint2.New(remaining)));
+            Assert.That(bleed.IsBleeding, Is.EqualTo(remaining > 0));
+            Assert.That(SEntMan.GetComponent<WoundableComponent>(organ).Bleeds, Is.EqualTo(FixedPoint2.New(4 * remaining)));
+            if (remaining == 0)
+            {
+                Assert.That(bleed.BleedingAmountRaw, Is.EqualTo(FixedPoint2.Zero));
+                Assert.That(bleed.ScalingLimit, Is.EqualTo(BleedInflicterComponent.DefaultScalingLimit));
+            }
+        });
+    }
+
 }
