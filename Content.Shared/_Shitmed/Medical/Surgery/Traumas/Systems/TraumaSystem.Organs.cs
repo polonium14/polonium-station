@@ -87,9 +87,7 @@ public partial class TraumaSystem
         if (args.Organ.Comp.Body is not { } bodyUid || args.NewSeverity < args.OldSeverity)
             return;
 
-        var organCategory = args.Organ.Comp.Category?.Id ?? "organ";
-
-        _popup.PopupClient(Loc.GetString($"popup-trauma-OrganDamage-{args.NewSeverity.ToString()}", ("part", organCategory)),
+        _popup.PopupClient(Loc.GetString($"popup-trauma-OrganDamage-{args.NewSeverity.ToString()}", ("part", args.Organ.Owner)),
             bodyUid,
             bodyUid,
             PopupType.SmallCaution);
