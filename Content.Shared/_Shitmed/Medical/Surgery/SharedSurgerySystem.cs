@@ -406,6 +406,9 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             return false;
 
         TryComp<OrganComponent>(targetPart, out var targetOrgan);
+        if (targetPart != body && targetOrgan?.Body != body)
+            return false;
+
         var ev = new SurgeryValidEvent(body, targetPart, Category: targetOrgan?.Category);
         if (_timing.IsFirstTimePredicted)
         {
