@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: mdrkrg
-  changes:
-  - message: APC sprites now shows the correct state on round start.
-    type: Fix
-  id: 9509
-  time: '2026-02-09T13:14:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42852
 - author: ScarKy0
   changes:
   - message: Vulpkanin now have a yawn sound.
@@ -4137,3 +4130,17 @@
   id: 10007
   time: '2026-09-19T15:13:44.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1036
+- author: nikitosych
+  changes:
+  - message: "Dodano sprawdzanie brakuj\u0105cych kluczy lokalizacji w kodzie C# i\
+      \ XAML."
+    type: Fix
+  - message: "Poprawiono istniej\u0105ce klucze lokalizacji."
+    type: Fix
+  - message: "Dodano brakuj\u0105ce wpisy lokalizacji en-US."
+    type: Add
+  - message: "Rozdzielono b\u0142\u0119dy i ostrze\u017Cenia w `check_locales.py`."
+    type: Tweak
+  id: 10008
+  time: '2026-09-21T09:32:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1041
