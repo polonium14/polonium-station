@@ -19,6 +19,7 @@ using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Shitmed.Medical.Tourniquet;
 
@@ -65,7 +66,7 @@ public sealed partial class TourniquetSystem : EntitySystem
     private bool TryTourniquet(EntityUid target, EntityUid user, EntityUid tourniquetEnt, TourniquetComponent tourniquet)
     {
         if (!TryComp<TargetingComponent>(user, out var targeting)
-            || !HasComp<BodyComponent>(target)
+            || !TryComp<BodyComponent>(target, out var body)
             || !HasComp<ConsciousnessComponent>(target))
             return false;
 
@@ -77,6 +78,9 @@ public sealed partial class TourniquetSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("cant-put-tourniquet-here"), target, PopupType.MediumCaution);
             return false;
         }
+
+        if (!TryGetAvailableOrgan((target, body), category, user, out _))
+            return false;
 
         _popup.PopupEntity(Loc.GetString("puts-on-a-tourniquet", ("user", user), ("part", GetPartName(category))), target, PopupType.Medium);
         _audio.PlayPvs(tourniquet.TourniquetPutOnSound, target, AudioParams.Default.WithVariation(0.125f).WithVolume(1f));
@@ -160,12 +164,8 @@ public sealed partial class TourniquetSystem : EntitySystem
             return;
         }
 
-        if (ent.Comp.Organs is null
-            || !LimbTargetMap.TryGetOrganByCategory(EntityManager, ent.Comp, args.Category, out var organ))
-        {
-            _popup.PopupEntity(Loc.GetString("missing-body-part"), ent, args.User, PopupType.MediumCaution);
+        if (!TryGetAvailableOrgan(ent, args.Category, args.User, out var organ))
             return;
-        }
 
         if (!_container.Insert(args.Used.Value, container))
         {
@@ -183,6 +183,33 @@ public sealed partial class TourniquetSystem : EntitySystem
 
         tourniquet.OrganTourniqueted = organ;
         args.Handled = true;
+    }
+
+    private bool TryGetAvailableOrgan(Entity<BodyComponent> body, ProtoId<OrganCategoryPrototype> category,
+        EntityUid user, out EntityUid organ)
+    {
+        organ = default;
+        if (body.Comp.Organs is null || !LimbTargetMap.TryGetOrganByCategory(EntityManager, body.Comp, category, out organ))
+        {
+            _popup.PopupEntity(Loc.GetString("missing-body-part"), body, user, PopupType.MediumCaution);
+            return false;
+        }
+
+        var occupied = HasComp<TourniquetedComponent>(organ);
+        foreach (var childCategory in LimbTargetMap.GetCascadeChildren(category))
+        {
+            if (LimbTargetMap.TryGetOrganByCategory(EntityManager, body.Comp, childCategory, out var child)
+                && HasComp<TourniquetedComponent>(child))
+                occupied = true;
+        }
+
+        // The bleed and sensation modifiers have one owner per organ. Never overwrite
+        // another tourniquet through an overlapping arm/hand or leg/foot application.
+        if (!occupied)
+            return true;
+
+        _popup.PopupEntity(Loc.GetString("already-tourniqueted"), body, user, PopupType.MediumCaution);
+        return false;
     }
 
     private void ApplyTourniquetEffects(EntityUid tourniquetEnt, EntityUid organ)

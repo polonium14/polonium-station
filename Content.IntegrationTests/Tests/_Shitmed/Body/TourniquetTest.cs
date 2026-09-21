@@ -415,4 +415,28 @@ public sealed class TourniquetTest : GameTest
                 "A wound created AFTER the tourniquet was applied should still get the bleed-block modifier, not just the wounds that existed at application time.");
         });
     }
+    [TestCase(true)]
+    [TestCase(false)]
+    public async Task OverlappingTourniquetCannotOverwriteExistingProtection(bool armFirst)
+    {
+        var (self, arm, hand, coords, entMan, wounds) = await Setup();
+        await Server.WaitAssertion(() =>
+        {
+            var first = entMan.SpawnEntity("Tourniquet", coords);
+            var firstEvent = new TourniquetDoAfterEvent(armFirst ? "ArmLeft" : "HandLeft");
+            firstEvent.DoAfter = new Content.Shared.DoAfter.DoAfter(0,
+                new DoAfterArgs(entMan, self, TimeSpan.Zero, firstEvent, self, self, first), TimeSpan.Zero);
+            entMan.EventBus.RaiseLocalEvent(self, firstEvent);
+            Assert.That(firstEvent.Handled, Is.True);
+            var second = entMan.SpawnEntity("Tourniquet", coords);
+            var ev = new TourniquetDoAfterEvent(armFirst ? "HandLeft" : "ArmLeft");
+            ev.DoAfter = new Content.Shared.DoAfter.DoAfter(0,
+                new DoAfterArgs(entMan, self, TimeSpan.Zero, ev, self, self, second), TimeSpan.Zero);
+            entMan.EventBus.RaiseLocalEvent(self, ev);
+            Assert.That(entMan.GetComponent<TourniquetedComponent>(hand).TourniquetEntity, Is.EqualTo(first));
+            Assert.That(entMan.GetComponent<TourniquetComponent>(second).OrganTourniqueted, Is.Null);
+            Assert.That(ev.Handled, Is.False);
+        });
+    }
+
 }
