@@ -167,16 +167,18 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
         if (args.Cancelled)
         {
+            // Treatment can remove the condition that made a surgery valid. Completion must
+            // therefore be checked independently, including when another surgeon finished it.
             var alreadyComplete = args.Target is { } cancelledPart
-                && IsSurgeryValid(ent, cancelledPart, args.Surgery, args.Step, args.User, out var cancelledSurgery, out _, out _)
+                && !TerminatingOrDeleted(cancelledPart)
+                && GetSingleton(args.Surgery) is { } cancelledSurgery
                 && IsStepComplete(ent, cancelledPart, args.Step, cancelledSurgery);
 
-            if (!alreadyComplete)
-            {
-                Log.Warning($"Surgery step {args.Step} of {args.Surgery} on {ToPrettyString(ent)} was cancelled for {ToPrettyString(args.User)}.");
-                _popup.PopupClient(Loc.GetString("surgery-error-step-interrupted"), args.User, args.User, PopupType.SmallCaution);
-            }
+            if (alreadyComplete)
+                return;
 
+            Log.Warning($"Surgery step {args.Step} of {args.Surgery} on {ToPrettyString(ent)} was cancelled for {ToPrettyString(args.User)}.");
+            _popup.PopupClient(Loc.GetString("surgery-error-step-interrupted"), args.User, args.User, PopupType.SmallCaution);
             RaiseStepFailed(args.User, ent, args.Surgery, args.Step);
             return;
         }
@@ -206,12 +208,13 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             return;
         }
 
-        var complete = IsStepComplete(ent, part, args.Step, surgery);
-
-        args.Repeat = HasComp<SurgeryRepeatableStepComponent>(step) && !complete;
         var ev = new SurgeryStepEvent(args.User, ent, part, tool, surgery, step);
         RaiseLocalEvent(step, ref ev);
         RaiseLocalEvent(args.User, ref ev);
+
+        // The effect above may have finished treatment and removed the surgery's prerequisite.
+        args.Repeat = HasComp<SurgeryRepeatableStepComponent>(step)
+            && !IsStepComplete(ent, part, args.Step, surgery);
 
         // consume the tool if it's something like using LV cable as stitches
         if (args.ToolUsed)
