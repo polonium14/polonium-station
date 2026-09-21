@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: TytosB
-  changes:
-  - message: adjusted several rooms and added missing items on map serpentcrest. increased
-      min pop to 50.
-    type: Tweak
-  id: 9511
-  time: '2026-02-09T20:34:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42863
 - author: SeaWyrm
   changes:
   - message: Horizonal and vertical steel slat floor tiles, as well as their dark
@@ -4151,3 +4143,11 @@
   id: 10009
   time: '2026-09-21T12:36:26.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1040
+- author: Nikita
+  changes:
+  - message: "Przywr\xF3cono poziomy dost\u0119pu `Reporter` i `Robotics` w konsoli\
+      \ HOPa."
+    type: Tweak
+  id: 10010
+  time: '2026-09-21T18:46:21.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1044
