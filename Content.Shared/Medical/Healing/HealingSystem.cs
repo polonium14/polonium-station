@@ -312,7 +312,7 @@ public sealed partial class HealingSystem : EntitySystem
     private bool HasDamage(Entity<HealingComponent> healing, Entity<DamageableComponent> target, EntityUid user)
     {
         var healingDict = healing.Comp.Damage.DamageDict;
-        var hasOrgan = TryResolveTargetedOrgan(user, target.Owner, out var organ, out _);
+        var hasOrgan = TryResolveTargetedOrgan(user, target.Owner, out var organ, out var woundable);
         if (!hasOrgan && RequiresTargetedOrgan(user, target.Owner))
             return false;
 
@@ -339,6 +339,9 @@ public sealed partial class HealingSystem : EntitySystem
             }
         }
 
+        if (hasOrgan && healing.Comp.BloodlossModifier < 0 && woundable!.Bleeds > FixedPoint2.Zero)
+            return true;
+
         if (TryComp<BloodstreamComponent>(target, out var bloodstream))
         {
             // Is ent missing blood that we can restore?
@@ -350,7 +353,7 @@ public sealed partial class HealingSystem : EntitySystem
             }
 
             // Is ent bleeding and can we stop it?
-            if (healing.Comp.BloodlossModifier < 0 && bloodstream.BleedAmount > 0)
+            if (!hasOrgan && healing.Comp.BloodlossModifier < 0 && bloodstream.BleedAmount > 0)
             {
                 return true;
             }
