@@ -79,7 +79,13 @@ public sealed class WoundableVisualsAppearanceTest : GameTest
         await server.WaitAssertion(() =>
         {
             Assert.That(sAppearance.TryGetData<WoundVisualizerGroupData>(torsoOrgan, WoundableVisualizerKeys.Wounds, out var afterHeal), Is.True);
-            Assert.That(afterHeal.GroupList, Is.Empty, "Fully healing the wound should remove it from the appearance data's wound list.");
+            // A hit may also induce trauma. Healing the flesh retains its wound as a
+            // zero-severity scar until the trauma is treated, so an empty list is not
+            // guaranteed. Appearance must match the remaining entities without any active wound.
+            var remaining = sWound.GetWoundableWounds(torsoOrgan).ToArray();
+            Assert.That(afterHeal.GroupList, Is.EquivalentTo(remaining.Select(w => sEntMan.GetNetEntity(w.Owner))));
+            Assert.That(remaining.All(w => w.Comp.IsScar && w.Comp.WoundSeverityPoint == FixedPoint2.Zero), Is.True);
+            Assert.That(sWound.GetWoundableSeverityPoint(torsoOrgan), Is.EqualTo(FixedPoint2.Zero));
         });
     }
 }
