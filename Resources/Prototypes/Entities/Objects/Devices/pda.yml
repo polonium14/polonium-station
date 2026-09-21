@@ -510,7 +510,7 @@
         components:
         - IdCard
     penSlot:
-      startingItem: Pen
+      startingItem: CrayonMime
       priority: -1
       whitelist:
         tags:
