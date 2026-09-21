@@ -186,7 +186,8 @@ public abstract partial class SharedSurgerySystem
 
     private bool TendWoundsComplete(SurgeryTendWoundsEffectComponent comp, EntityUid part)
     {
-        return !_wounds.HasDamageOfGroup(part, comp.MainGroup) && _wounds.GetGroupDamage(part, comp.MainGroup) <= 0;
+        return _wounds.GetWoundableSeverityPoint(part, damageGroup: comp.MainGroup, healable: true) <= 0
+            && _wounds.GetGroupDamage(part, comp.MainGroup) <= 0;
     }
 
     private void OnAddPartStep(Entity<SurgeryAddPartStepComponent> ent, ref SurgeryStepEvent args)

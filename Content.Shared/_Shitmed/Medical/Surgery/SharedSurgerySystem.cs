@@ -259,7 +259,8 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         // doc comment) still needs a surgery to clear it, or it sits stuck forever.
         var rawDamage = point > 0 ? FixedPoint2.Zero : _wounds.GetGroupDamage(args.Part, ent.Comp.DamageGroup);
 
-        if (point <= 0 && rawDamage <= 0)
+        // Tending must remain valid after healing so the surgeon can seal the incision.
+        if (point <= 0 && rawDamage <= 0 && !HasComp<IncisionOpenComponent>(args.Part))
             args.Cancelled = true;
     }
 
