@@ -155,6 +155,9 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         var worldRot = _transform.GetWorldRotation(uid);
         if (physics != null && physics.LinearVelocity.LengthSquared() > 0.01f)
             worldRot = physics.LinearVelocity.ToWorldAngle();
+        else if (TryComp(uid, out PredictedProjectileServerComponent? predicted) &&
+                 predicted.ImpactDirection.LengthSquared() > 0.01f)
+            worldRot = predicted.ImpactDirection.ToWorldAngle();
 
         if (TryComp<ProjectileComponent>(uid, out var projectileComp))
             worldRot += projectileComp.Angle;
