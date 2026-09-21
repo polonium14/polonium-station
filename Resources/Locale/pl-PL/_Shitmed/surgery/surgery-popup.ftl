@@ -54,3 +54,5 @@ surgery-popup-step-SurgeryStepInsertStomach = { $user } wkłada żołądek do { 
 surgery-popup-step-SurgeryStepSealOrganWound = { $user } uszczelnia rany na { $part } { $target }.
 surgery-popup-step-SurgeryStepLobotomize = { $user } lobotomizuje { $target }!
 surgery-popup-step-SurgeryStepMendBrainTissue = { $user } regeneruje tkankę mózgową na { $part } { $target }.
+
+surgery-error-wrong-organ = Ten organ lub część ciała nie pasuje do tej operacji.

@@ -52,9 +52,11 @@ public abstract partial class SharedSurgerySystem
 
         SubscribeLocalEvent<SurgeryTendWoundsEffectComponent, SurgeryStepEvent>(OnTendWoundsStep);
         SubscribeLocalEvent<SurgeryAddPartStepComponent, SurgeryStepEvent>(OnAddPartStep);
+        SubscribeLocalEvent<SurgeryAddPartStepComponent, SurgeryCanPerformStepEvent>(OnInsertPartCanPerform);
         SubscribeLocalEvent<SurgeryAffixPartStepComponent, SurgeryStepEvent>(OnAffixPartStep);
         SubscribeLocalEvent<SurgeryRemovePartStepComponent, SurgeryStepEvent>(OnRemovePartStep);
         SubscribeLocalEvent<SurgeryAddOrganStepComponent, SurgeryStepEvent>(OnAddOrganStep);
+        SubscribeLocalEvent<SurgeryAddOrganStepComponent, SurgeryCanPerformStepEvent>(OnInsertOrganCanPerform);
         SubscribeLocalEvent<SurgeryRemoveOrganStepComponent, SurgeryStepEvent>(OnRemoveOrganStep);
         SubscribeLocalEvent<SurgeryAffixOrganStepComponent, SurgeryStepEvent>(OnAffixOrganStep);
         SubscribeLocalEvent<SurgeryTraumaTreatmentStepComponent, SurgeryStepEvent>(OnTraumaTreatmentStep);
@@ -217,6 +219,27 @@ public abstract partial class SharedSurgerySystem
 
         if (toolOrgan.Category?.Id is "LegLeft" or "LegRight" or "FootLeft" or "FootRight" or "ArmLeft" or "ArmRight")
             _trauma.RefreshLimbMovementSpeed(args.Body);
+    }
+
+    private void OnInsertPartCanPerform(Entity<SurgeryAddPartStepComponent> ent, ref SurgeryCanPerformStepEvent args)
+    {
+        if (TryComp<SurgeryPartRemovedConditionComponent>(args.Surgery, out var condition))
+            CheckInsertedCategory(condition.Category, ref args);
+    }
+
+    private void OnInsertOrganCanPerform(Entity<SurgeryAddOrganStepComponent> ent, ref SurgeryCanPerformStepEvent args)
+    {
+        if (TryComp<SurgeryOrganConditionComponent>(args.Surgery, out var condition))
+            CheckInsertedCategory(condition.Category, ref args);
+    }
+
+    private void CheckInsertedCategory(ProtoId<OrganCategoryPrototype> category, ref SurgeryCanPerformStepEvent args)
+    {
+        if (args.IsInvalid || (_organQuery.TryComp(args.Tool, out var organ) && organ.Category == category))
+            return;
+
+        args.Invalid = StepInvalidReason.ToolInvalid;
+        args.Popup = Loc.GetString("surgery-error-wrong-organ");
     }
 
     private EntityUid ResolveAffixPartTarget(EntityUid body, EntityUid part, EntityUid surgery)
@@ -648,7 +671,7 @@ public abstract partial class SharedSurgerySystem
         }
 
         var tool = _hands.GetActiveItemOrSelf(user);
-        if (!CanPerformStep(user, body, part, step, tool, true, out _, out error, out var data))
+        if (!CanPerformStep(user, body, part, step, tool, true, out _, out error, out var data, surgery))
             return false;
 
         var toolComp = _toolQuery.CompOrNull(tool);
@@ -805,7 +828,8 @@ public abstract partial class SharedSurgerySystem
         bool doPopup,
         out string? popup,
         out StepInvalidReason reason,
-        out ISurgeryToolComponent? data)
+        out ISurgeryToolComponent? data,
+        EntityUid? surgery = null)
     {
         data = null;
 
@@ -822,7 +846,7 @@ public abstract partial class SharedSurgerySystem
             _ => SlotFlags.NONE,
         };
 
-        var check = new SurgeryCanPerformStepEvent(user, body, tool, slot);
+        var check = new SurgeryCanPerformStepEvent(user, body, tool, slot, Surgery: surgery);
         RaiseLocalEvent(step, ref check);
         if (check.IsValid) // if the step doesn't stop it check the body after
             RaiseLocalEvent(body, ref check);
@@ -840,15 +864,15 @@ public abstract partial class SharedSurgerySystem
         return false;
     }
 
-    private bool CanPerformStep(EntityUid user, EntityUid body, EntityUid part, EntityUid step, EntityUid tool, bool doPopup)
+    private bool CanPerformStep(EntityUid user, EntityUid body, EntityUid part, EntityUid step, EntityUid tool, bool doPopup, EntityUid? surgery = null)
     {
-        return CanPerformStep(user, body, part, step, tool, doPopup, out _, out _, out _);
+        return CanPerformStep(user, body, part, step, tool, doPopup, out _, out _, out _, surgery);
     }
 
-    public bool CanPerformStepWithHeld(EntityUid user, EntityUid body, EntityUid part, EntityUid step, bool doPopup, out string? popup)
+    public bool CanPerformStepWithHeld(EntityUid user, EntityUid body, EntityUid part, EntityUid step, bool doPopup, out string? popup, EntityUid? surgery = null)
     {
         var tool = _hands.GetActiveItemOrSelf(user);
-        return CanPerformStep(user, body, part, step, tool, doPopup, out popup, out _, out _);
+        return CanPerformStep(user, body, part, step, tool, doPopup, out popup, out _, out _, surgery);
     }
 
     /// <summary>

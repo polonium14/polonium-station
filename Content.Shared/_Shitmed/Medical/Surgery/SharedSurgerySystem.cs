@@ -202,7 +202,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             return;
         }
 
-        if (!CanPerformStep(args.User, ent, part, step, tool, true))
+        if (!CanPerformStep(args.User, ent, part, step, tool, true, surgery))
         {
             Log.Warning($"{ToPrettyString(args.User)} tried to complete a surgery step without the right tool in hand.");
             return;
