@@ -543,16 +543,16 @@ entity-effect-guidebook-add-reagent-to-bloodstream =
 entity-effect-disarm =
     { $chance ->
         [1] Disarms
-        *[other] disarms
+        *[other] disarm
     } the entity
 
 entity-effect-guidebook-plant-change-trait =
     { $chance ->
         [1] { $change ->
-            [Add] adds {$trait} to
-            [Remove] removes {$trait} from
-            [Toggle] toggles {$trait} on
-            *[other] changes {$trait} on
+            [Add] Adds {$trait} to
+            [Remove] Removes {$trait} from
+            [Toggle] Toggles {$trait} on
+            *[other] Changes {$trait} on
         }
         *[other] { $change ->
             [Add] add {$trait} to

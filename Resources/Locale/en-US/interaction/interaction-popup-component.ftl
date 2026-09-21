@@ -113,5 +113,5 @@ petting-failure-mail-teleporter = You reach out to pet {THE($target)}, but {SUBJ
 
 petting-failure-elder-headslug = You try to pet {THE($target)}, but {SUBJECT($target)} almost bites you!
 petting-failure-headslug = You try to pet {THE($target)}, but your hand sinks in {POSS-ADJ($target)} flesh.
-petting-success-elder-headslug = You pet {THE($target)} {POSS-ADJ($target)} pulsating skin.
+petting-success-elder-headslug = You pet {THE($target)} on {POSS-ADJ($target)} pulsating skin.
 petting-success-headslug = You pet {THE($target)} on {POSS-ADJ($target)} oozy surface.
