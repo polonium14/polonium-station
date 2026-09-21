@@ -58,6 +58,7 @@
   - type: Sprite
     sprite: Objects/Fun/capgun.rsi
     layers:
+    - state: capbullet
   - type: Projectile
     deleteOnCollide: true
     onlyCollideWhenShot: true # not sure if this is right, but this resolves issues with cap bullets not being able to hit anything on client
