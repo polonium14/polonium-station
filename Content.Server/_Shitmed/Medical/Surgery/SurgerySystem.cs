@@ -94,9 +94,6 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         if (!HasComp<OrganComponent>(part))
             return;
 
-        if (HasComp<WoundableComponent>(part))
-            _wounds.TryHaltAllBleeding(part, force: true);
-
         var scaled = damage * partMultiplier;
 
         if (!affectAll)
