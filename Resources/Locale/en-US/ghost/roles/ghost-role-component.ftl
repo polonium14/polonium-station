@@ -102,6 +102,8 @@ ghost-role-information-rat-king-description = You are the Rat King, your interes
 ghost-role-information-sentient-carp-name = Sentient Carp
 ghost-role-information-sentient-carp-description = Help the dragon flood the station with carps!
 
+ghost-role-information-sentient-sharkminnow-name = Sentient Sharkminnow
+
 ghost-role-information-willow-name = Willow the Kangaroo
 ghost-role-information-willow-description = You're a kangaroo named Willow! Willow likes to box.
 
