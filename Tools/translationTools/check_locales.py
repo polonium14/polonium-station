@@ -241,8 +241,9 @@ def check_locales(repo_root: Path, limit: int, extra_ignore: Optional[List[str]]
         per_locale_keys[locale] = keys
         per_file_keyset[locale] = file_keyset
         if not root.is_dir():
-            issues['unpaired_file'].append(Issue(
-                'unpaired-file',
+            bucket = 'unpaired_pl_file' if locale == 'en-US' else 'unpaired_en_file'
+            issues[bucket].append(Issue(
+                'missing-source-file' if locale == 'en-US' else 'missing-translation-file',
                 repo_rel(locale_root, repo_root),
                 f'Brak katalogu locale {locale}',
             ))
@@ -298,14 +299,14 @@ def check_locales(repo_root: Path, limit: int, extra_ignore: Optional[List[str]]
     pl_files = set(per_locale_files['pl-PL'])
 
     for rel in sorted(en_files - pl_files):
-        issues['unpaired_file'].append(Issue(
-            'unpaired-file',
+        issues['unpaired_en_file'].append(Issue(
+            'missing-translation-file',
             repo_rel(per_locale_files['en-US'][rel], repo_root),
             'Plik nie ma odpowiednika w pl-PL',
         ))
     for rel in sorted(pl_files - en_files):
-        issues['unpaired_file'].append(Issue(
-            'unpaired-file',
+        issues['unpaired_pl_file'].append(Issue(
+            'missing-source-file',
             repo_rel(per_locale_files['pl-PL'][rel], repo_root),
             'Plik nie ma odpowiednika w en-US',
         ))
@@ -356,11 +357,12 @@ def check_locales(repo_root: Path, limit: int, extra_ignore: Optional[List[str]]
         ('orphan_locale', 'Osierocone locale'),
         ('empty', 'Puste pliki / puste klucze'),
         ('duplicate', 'Duplikaty kluczy'),
-        ('unpaired_file', 'Pliki bez pary en-US/pl-PL'),
+        ('unpaired_pl_file', 'Pliki tylko w pl-PL (brak źródła en-US)'),
         ('unpaired_pl', 'Klucze tylko w pl-PL (brak źródła en-US)'),
         ('misplaced_key', 'Klucze w różnych plikach en-US/pl-PL'),
     )
     warn_order = (
+        ('unpaired_en_file', 'Pliki tylko w en-US (brak tłumaczenia)'),
         ('unpaired_en', 'Klucze tylko w en-US (brak tłumaczenia)'),
     )
 
