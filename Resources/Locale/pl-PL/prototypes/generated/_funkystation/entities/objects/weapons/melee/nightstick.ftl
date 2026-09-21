@@ -1,2 +1,2 @@
-ent-Nightstick = nightstick
-    .desc = A collapsible baton designed to beat troublemakers into submission.
+ent-Nightstick = Pałka teleskopowa
+    .desc = Pałka teleskopowa zaprojektowana po to by wbić kryminalistom prawo do głowy.

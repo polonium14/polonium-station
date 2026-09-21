@@ -1,4 +1,4 @@
-ent-SpawnPointHeadOfSecurityWeapon = head of security weapon spawner
+ent-SpawnPointHeadOfSecurityWeapon = Komendant ds. generowania broni w systemie ochrony
     .desc = { ent-MarkerBase.desc }
-ent-SpawnPointWardenWeapon = warden weapon spawner
+ent-SpawnPointWardenWeapon = generator broni Nadzorcza Ochrony
     .desc = { ent-MarkerBase.desc }

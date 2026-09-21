@@ -2,5 +2,5 @@ ent-RedDirectionalArrowIndicator = { "" }
     .desc = { "" }
 ent-BlueDirectionalArrowIndicator = { "" }
     .desc = { "" }
-ent-RedDirectionPointer = red direction pointer
-    .desc = Holographic arrow that points the way
+ent-RedDirectionPointer = czerwona strzałka wskazująca kierunek
+    .desc = Holograficzna strzałka wskazująca drogę

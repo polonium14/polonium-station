@@ -94,5 +94,5 @@ ent-StationAiFixerComputer = konsola przywracania SI
     .desc = Używane do naprawy uszkodzonych sztucznych inteligencji.
 ent-ComputerNukieDelivery = komputer dostawy syndykatu
     .desc =
-        A computer that can bluespace in certain equipment for Nuclear Operations. 
-        The circuitboard is integrated into the frame and can't be recovered if deconstructed.
+        Komputer umożliwiający korzystanie z funkcji „bluespace” w niektórych urządzeniach przeznaczonych do operacji jądrowych. 
+        Płytka drukowana jest zintegrowana z obudową i nie można jej odzyskać w przypadku demontażu urządzenia.

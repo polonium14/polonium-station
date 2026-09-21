@@ -4,5 +4,5 @@ ent-Firelock = { ent-BaseFirelock }
     .desc = { ent-BaseFirelock.desc }
 ent-FirelockGlass = szklana śluza przeciwpożarowa
     .desc = { ent-Firelock.desc }
-ent-FirelockEdge = firelock
+ent-FirelockEdge = broń czarnoprochowa
     .desc = { ent-Firelock.desc }

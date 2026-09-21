@@ -1,6 +1,6 @@
-ent-WarpPoint = warp point
+ent-WarpPoint = punkt teleportacji
     .desc = { ent-MarkerBase.desc }
-ent-WarpPointBeacon = warp point (beacon)
+ent-WarpPointBeacon = punkt teleportacyjny (sygnał nawigacyjny)
     .desc = { ent-WarpPoint.desc }
-ent-TeleportScrollWarpPoint = teleport scroll warp point
+ent-TeleportScrollWarpPoint = zwój teleportacyjny, punkt teleportacyjny
     .desc = { ent-MarkerBase.desc }

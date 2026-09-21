@@ -1,2 +1,2 @@
-ent-DonkpocketBoxSpawner = Donkpocket Box Spawner
+ent-DonkpocketBoxSpawner = Generator skrzynek Donkpocket
     .desc = { ent-MarkerBase.desc }

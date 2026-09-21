@@ -1,5 +1,5 @@
 # Spells
-spellbook-fireball-name = Fireball
+spellbook-fireball-name = Kula ognia
 spellbook-fireball-desc = Get most crew exploding with rage when they see this fireball heading toward them! Upgradeable.
 spellbook-blink-name = Blink
 spellbook-blink-desc = Don't blink or you'll miss yourself teleporting away.
@@ -11,7 +11,7 @@ spellbook-force-wall-name = Force Wall
 spellbook-force-wall-desc = Make three walls of pure force that you can pass through, but others can't.
 spellbook-repulse-name = Repulse
 spellbook-repulse-desc = Tell people to GITTAH`WEIGH and push 'em away from you.
-spellbook-smoke-name = Smoke
+spellbook-smoke-name = Dym
 spellbook-smoke-desc = Summons a cloud of smoke, it's pretty obvious.
 spellbook-polymorph-spider-name = Spider Polymorph
 spellbook-polymorph-spider-desc = Transforms you into a spider, man!
@@ -33,7 +33,7 @@ spellbook-slip-name = Slippery Slope
 spellbook-slip-desc = Learn the ancient ways of the Woźny and curse your target to be slippery. Requires Wizard Robe & Hat.
 spellbook-item-recall-name = Item Recall
 spellbook-item-recall-description = Mark a held item and summon it back at any time with just a snap of your fingers!
-spellbook-guardian-deck-name = Tarot Deck
+spellbook-guardian-deck-name = Talia Tarota
 spellbook-guardian-deck-description = A bizarre deck of card that grants you a spectral guardian when used.
 
 # Equipment

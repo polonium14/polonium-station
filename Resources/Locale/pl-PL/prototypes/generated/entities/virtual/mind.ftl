@@ -1,2 +1,2 @@
-ent-MindBase = mind
+ent-MindBase = umysł
     .desc = { "" }

@@ -1,6 +1,6 @@
 ent-BaseMagazineGrenade = nabój granatowy
     .desc = { ent-BaseItem.desc }
-ent-MagazineGrenadeEmpty = grenade cartridge
+ent-MagazineGrenadeEmpty = nabój do granatu
     .desc = { ent-BaseMagazineGrenade.desc }
 ent-MagazineGrenadeFrag = nabój granatowy odłamkowy
     .desc = { ent-BaseMagazineGrenade.desc }

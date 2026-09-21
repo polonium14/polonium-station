@@ -1,2 +1,2 @@
-ent-BedsheetSpawner = Random Sheet Spawner
+ent-BedsheetSpawner = spawner losowy prześcieradło
     .desc = { ent-MarkerBase.desc }

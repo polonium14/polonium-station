@@ -1,7 +1,7 @@
 ent-AnomalyScanner = skaner anomalii
     .desc = Ręczny skaner stworzony do zbierania informacji o różnych anomaliach.
-ent-AnomalyScannerAdmin = admin anomaly scanner
-    .desc = A hand-held scanner built to collect information on various anomalous objects. This one seems to have a few extra features.
+ent-AnomalyScannerAdmin = narzędzie do wykrywania anomalii admin
+    .desc = Ręczny skaner przeznaczony do gromadzenia informacji o różnych nietypowych obiektach. Ten egzemplarz wydaje się mieć kilka dodatkowych funkcji.
     .suffix = Admin
 ent-AnomalyLocatorUnpowered = lokalizator anomalii
     .desc = Urządzenie zaprojektowane do pomocy w lokalizowaniu anomalii. Sprawdziłeś górników gazu?

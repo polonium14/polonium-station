@@ -15,6 +15,6 @@ ent-FoodTacoBeefSupreme = taco supreme z wołowiną
 ent-FoodTacoChickenSupreme = taco supreme z kurczakiem
     .desc = Jak zwykłe taco z kurczakiem, ale supreme!
 ent-FoodTacoDragon = draco
-    .desc = A dragon taco, which is technically also a fish taco.
+    .desc = Taco ze smoczym mięsem, które technicznie rzecz biorąc jest również taco z rybą.
 ent-FoodMealSoftTaco = miękkie taco
     .desc = Weź kęsa!

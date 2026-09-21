@@ -1,2 +1,2 @@
-ent-LidSalami = salami lid
-    .desc = Ain't gon' fit, won't fit.
+ent-LidSalami = pokrywka do salami
+    .desc = Nie zmieści się, nie będzie pasować.

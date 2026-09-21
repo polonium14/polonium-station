@@ -48,3 +48,6 @@ changeling-fake-mindshield-disabled = Przestajemy emitować fałszywe fale osło
 changeling-not-enough-chemicals = Nie mamy wystarczającej ilości chemikaliów.
 # other
 changeling-paused-map-name = Mapa przechowywania tożsamości changelinga
+changeling-devour-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } { CONJUGATE-BE($user) } tearing into the flesh of { $target }![/color]
+changeling-devour-doafter-windup = [color=red]{ CAPITALIZE(POSS-ADJ($user)) } face is splitting open, preparing to feast![/color]
+changeling-transform-doafter = [color=red]The surface of { POSS-ADJ($user) } skin is melting, taking another shape.[/color]

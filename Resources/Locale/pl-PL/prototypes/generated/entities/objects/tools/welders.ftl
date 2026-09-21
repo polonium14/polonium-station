@@ -20,5 +20,5 @@ ent-SolutionToolWelderMiniEmergency = { ent-SolutionWelder }
     .desc = { ent-SolutionWelder.desc }
 ent-SolutionToolWelderMini = { ent-SolutionWelder }
     .desc = { ent-SolutionWelder.desc }
-ent-RefuelingWelder = refueling welding tool
-    .desc = A slow welder that can refuel itself over time.
+ent-RefuelingWelder = spawarka z zasilaniem paliwem
+    .desc = Powolny spawacz, który z czasem potrafi sam się uzupełniać.

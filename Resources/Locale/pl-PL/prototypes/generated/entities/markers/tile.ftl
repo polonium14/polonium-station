@@ -1,6 +1,6 @@
-ent-RoofMarker = Roof
-    .suffix = Enabled
+ent-RoofMarker = Dach
+    .suffix = Włączone
     .desc = { ent-MarkerBase.desc }
-ent-NoRoofMarker = Roof
-    .suffix = Disabled
+ent-NoRoofMarker = Dach
+    .suffix = Niepełnosprawni
     .desc = { ent-MarkerBase.desc }

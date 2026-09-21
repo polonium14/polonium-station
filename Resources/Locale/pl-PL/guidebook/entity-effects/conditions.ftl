@@ -84,3 +84,14 @@ entity-condition-guidebook-internals =
         [true] using internals
        *[false] breathing atmospheric air
     }
+entity-condition-guidebook-mouth-uncovered-condition = the mob has an uncovered mouth
+entity-condition-guidebook-unknown-reagent = unknown reagent in bloodstream
+entity-condition-guidebook-blood-reagent-threshold =
+    { $max ->
+        [2147483648] bloodstream has at least { NATURALFIXED($min, 2) }u of { $reagent }
+       *[other]
+            { $min ->
+                [0] bloodstream has at most { NATURALFIXED($max, 2) }u of { $reagent }
+               *[other] bloodstream has between { NATURALFIXED($min, 2) }u and { NATURALFIXED($max, 2) }u of { $reagent }
+            }
+    }

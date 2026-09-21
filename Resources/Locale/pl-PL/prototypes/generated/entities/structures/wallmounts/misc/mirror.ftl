@@ -1,5 +1,5 @@
-ent-Mirror = mirror
-    .desc = Mirror mirror on the wall , who's the most robust of them all?
+ent-Mirror = lustro
+    .desc = Lustro, lustro na ścianie, kto jest najsilniejszy ze wszystkich?
 ent-MirrorModern = { ent-Mirror }
-    .suffix = rectangle
+    .suffix = prostokąt
     .desc = { ent-Mirror.desc }

@@ -1,5 +1,5 @@
-ent-BaseWindoorAssembly = windoor assembly
-    .desc = It opens, it closes, and you can see through it!
+ent-BaseWindoorAssembly = zespół okna Windoor
+    .desc = Otwiera się, zamyka się i można przez nią zobaczyć!
 ent-WindoorAssembly = { ent-BaseWindoorAssembly }
     .desc = { ent-BaseWindoorAssembly.desc }
 ent-WindoorAssemblySecure = konstrukcja bezpiecznego okna przesuwnego

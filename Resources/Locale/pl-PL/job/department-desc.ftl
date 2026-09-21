@@ -9,3 +9,4 @@ department-Science-description = Badaj artefakty i anomalie aby wynaleźć nowe 
 department-Silicon-description = Przestrzegaj swoich praw i służ załodze.
 department-Specific-description = Prace dostępne tylko na niektórych stacjach.
 department-Ghostrole-description = Wszystkie straszydła tu mieszkają.
+department-Service-description = Attend to the crew's basic physical and psychological needs.
