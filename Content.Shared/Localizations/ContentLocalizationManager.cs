@@ -56,7 +56,7 @@ namespace Content.Shared.Localizations
             _loc.SetCulture(culture);
 
             _loc.LoadCulture(cultureEn);
-            _loc.SetFallbackCluture(cultureEn);
+            _loc.SetFallbackCulture(cultureEn);
 
             // Polonium: the fork runs pl-PL as primary with en-US fallback, so every content
             // Fluent function must be registered for BOTH cultures. en-US fallback strings
