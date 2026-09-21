@@ -6,8 +6,8 @@ surgery-tool-match-replace = Get a new match!
 surgery-tool-examinable-verb-text = Surgery Tool
 surgery-tool-examinable-verb-message = Examine the uses of this tool in surgeries.
 surgery-tool-header = This can be used in surgeries as:
-surgery-tool-unlimited = - {$tool} at [color={$color}]{$speed}x[/color] speed
-surgery-tool-used = - {$tool} at [color={$color}]{$speed}x[/color] speed, [color=red]then gets used up[/color]
+surgery-tool-unlimited = - {LOC($tool)} at [color={$color}]{$speed}x[/color] speed
+surgery-tool-used = - {LOC($tool)} at [color={$color}]{$speed}x[/color] speed, [color=red]then gets used up[/color]
 
 surgery-tool-name-bone-gel = bone gel
 surgery-tool-name-bone-saw = a bone saw

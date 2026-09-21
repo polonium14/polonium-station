@@ -3,7 +3,8 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Tools;
 public interface ISurgeryToolComponent
 {
     /// <summary>
-    ///     Localization key for the tool name.
+    ///     Localization key for the tool name. Pass it to the surrounding message so
+    ///     its translation can resolve the name with the appropriate grammatical case.
     /// </summary>
     public string ToolName { get; }
 

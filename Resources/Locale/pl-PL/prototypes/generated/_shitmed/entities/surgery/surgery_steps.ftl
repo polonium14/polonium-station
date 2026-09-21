@@ -1,6 +1,6 @@
 ent-SurgeryStepBase = { "" }
     .desc = { "" }
-ent-SurgeryStepOpenIncisionScalpel = Natnij skalpelem
+ent-SurgeryStepOpenIncisionScalpel = Natnij { LOC("surgery-tool-name-scalpel", przypadek: "narzednik") }
     .desc = { ent-SurgeryStepBase.desc }
 ent-SurgeryStepClampBleeders = Zaciśnij naczynia krwionośne
     .desc = { ent-SurgeryStepBase.desc }
