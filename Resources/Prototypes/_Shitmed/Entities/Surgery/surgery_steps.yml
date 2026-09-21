@@ -98,7 +98,7 @@
     tool:
     - type: Scalpel
     add:
-    - type: BodyPartSawed
+    - type: SeveredSkinRemoved
     duration: 4
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
@@ -138,7 +138,7 @@
     tool:
     - type: BoneSaw
     add:
-    - type: BonesOpen
+    - type: BoneLeftoversRemoved
     duration: 5
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
@@ -456,6 +456,7 @@
     - type: BoneSaw
     remove:
     # We remove these components to force people to go through all the steps again lol, otherwise you can just keep chopping.
+    - type: BodyPartSawed
     - type: SkinRetracted
     - type: BleedersClamped
     - type: InternalBleedersClamped
@@ -573,6 +574,9 @@
     - type: Stitches
     remove:
     - type: IncisionOpen
+    - type: SkinRetracted
+    - type: SeveredSkinRemoved
+    - type: BoneLeftoversRemoved
     duration: 8
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/stitches.rsi
