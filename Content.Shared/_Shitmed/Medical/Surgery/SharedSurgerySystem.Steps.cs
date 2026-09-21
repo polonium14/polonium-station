@@ -350,18 +350,28 @@ public abstract partial class SharedSurgerySystem
         switch (ent.Comp.TraumaType)
         {
             case TraumaType.OrganDamage:
-                if (!TryComp<BodyComponent>(args.Body, out var body) || body.Organs is null)
+                if (!TryComp<BodyComponent>(args.Body, out var body) || body.Organs is null
+                    || !_trauma.TryGetWoundableTrauma(args.Part, out var organTraumas, TraumaType.OrganDamage))
                     break;
 
-                foreach (var organUid in body.Organs.ContainedEntities.ToList())
+                foreach (var trauma in organTraumas)
                 {
-                    if (!TryComp<OrganIntegrityComponent>(organUid, out var organIntegrity))
+                    if (trauma.Comp.TraumaTarget is not { } organUid
+                        || !body.Organs.ContainedEntities.Contains(organUid)
+                        || !TryComp<OrganIntegrityComponent>(organUid, out var organIntegrity))
                         continue;
 
                     foreach (var modifier in organIntegrity.IntegrityModifiers.ToList())
                     {
-                        var delta = healAmount - modifier.Value;
-                        if (delta > 0)
+                        // Only treat damage belonging to this part's trauma. Other parts can
+                        // damage the same organ, and non-trauma modifiers are not surgical wounds.
+                        if (modifier.Key.Item2 != trauma.Owner || modifier.Value <= 0)
+                            continue;
+
+                        if (healAmount <= 0)
+                            return;
+
+                        if (modifier.Value <= healAmount)
                         {
                             healAmount -= modifier.Value;
                             _trauma.TryRemoveOrganDamageModifier(
@@ -378,7 +388,8 @@ public abstract partial class SharedSurgerySystem
                                 modifier.Key.Item2,
                                 modifier.Key.Item1,
                                 organIntegrity);
-                            break;
+                            // The remaining budget was spent on this modifier, not per organ.
+                            return;
                         }
                     }
                 }
