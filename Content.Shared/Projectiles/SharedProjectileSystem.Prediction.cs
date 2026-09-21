@@ -40,7 +40,10 @@ public abstract partial class SharedProjectileSystem
 
     private void OnStartCollide(EntityUid uid, ProjectileComponent component, ref StartCollideEvent args)
     {
-        if (_net.IsClient && _guns.GunPrediction && HasComp<PredictedProjectileClientComponent>(uid))
+        // client twin handles the hit visuals. embedding the server arrow here sticks it
+        // at whatever angle the contact just spun it to, then the real state snaps it straight
+        if (_net.IsClient && _guns.GunPrediction &&
+            (HasComp<PredictedProjectileClientComponent>(uid) || HasComp<PredictedProjectileServerComponent>(uid)))
             return;
 
         if (args.OurFixtureId != ProjectileFixture || !args.OtherFixture.Hard
@@ -180,6 +183,10 @@ public abstract partial class SharedProjectileSystem
                 predictedComp.Distance = distance;
 
             Dirty(uid, predictedComp);
+        }
+        else if (component.ProjectileSpent && !component.DeleteOnCollide)
+        {
+            RemCompDeferred<PredictedProjectileServerComponent>(uid);
         }
     }
 

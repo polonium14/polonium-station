@@ -32,6 +32,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
+using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
@@ -141,11 +142,33 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
     private void EmbedAttach(EntityUid uid, EntityUid target, EntityUid? user, EmbeddableProjectileComponent component)
     {
+        if (HasComp<PredictedProjectileClientComponent>(uid))
+            return;
+
+        // client already stuck it here so if we ended up further along the shot pull back
+        // otherwise the shooter sees it creep forward when the real dart shows up
+        PullBackToClientImpact(uid);
+
         TryComp<PhysicsComponent>(uid, out var physics);
-        _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
-        _physics.SetBodyType(uid, BodyType.Static, body: physics);
+
+        // the hit can spin the body before we stick it. keep the angle it was actually flying at
+        var worldRot = _transform.GetWorldRotation(uid);
+        if (physics != null && physics.LinearVelocity.LengthSquared() > 0.01f)
+            worldRot = physics.LinearVelocity.ToWorldAngle();
+
+        if (TryComp<ProjectileComponent>(uid, out var projectileComp))
+            worldRot += projectileComp.Angle;
+
+        if (physics != null)
+        {
+            _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
+            _physics.SetAngularVelocity(uid, 0f, body: physics);
+            _physics.SetBodyType(uid, BodyType.Static, body: physics);
+        }
+
         var xform = Transform(uid);
         _transform.SetParent(uid, xform, target);
+        _transform.SetLocalRotation(uid, worldRot - _transform.GetWorldRotation(target));
 
         if (component.Offset != Vector2.Zero)
         {
@@ -161,12 +184,54 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         RaiseLocalEvent(uid, ref ev);
         Dirty(uid, component);
 
+        RemCompDeferred<PredictedProjectileServerComponent>(uid);
+
         EnsureComp<EmbeddedContainerComponent>(target, out var embeddedContainer);
 
         //Assert that this entity not embed
         DebugTools.AssertEqual(embeddedContainer.EmbeddedObjects.Contains(uid), false);
 
         embeddedContainer.EmbeddedObjects.Add(uid);
+    }
+
+    // predicting client already parked the shot - if we stopped further down the same line, scoot back
+    public void PullBackToClientImpact(EntityUid uid)
+    {
+        // one physics step at the default gun speed is about this far, past that its a different shot
+        const float maxPull = 1.5f;
+
+        if (!TryComp(uid, out PredictedProjectileServerComponent? predicted) ||
+            predicted.ClientImpact is not { } impact)
+            return;
+
+        if (TryComp(uid, out ProjectileComponent? projectile) && projectile.DeleteOnCollide)
+            return;
+
+        var mapCoords = _transform.GetMapCoordinates(uid);
+        if (mapCoords.MapId != impact.MapId)
+            return;
+
+        var dir = Vector2.Zero;
+        if (TryComp(uid, out PhysicsComponent? physics) &&
+            physics.LinearVelocity.LengthSquared() > 0.01f)
+        {
+            dir = Vector2.Normalize(physics.LinearVelocity);
+        }
+        else
+        {
+            dir = predicted.ImpactDirection;
+        }
+
+        if (dir.LengthSquared() < 0.01f)
+            return;
+
+        var delta = mapCoords.Position - impact.Position;
+        var along = Vector2.Dot(delta, dir);
+        // ahead of where the client stopped, and not so far that this is a different hit
+        if (along <= 0.001f || delta.LengthSquared() > maxPull * maxPull)
+            return;
+
+        _transform.SetWorldPosition(uid, impact.Position);
     }
 
     public void EmbedDetach(EntityUid uid, EmbeddableProjectileComponent? component, EntityUid? user = null)

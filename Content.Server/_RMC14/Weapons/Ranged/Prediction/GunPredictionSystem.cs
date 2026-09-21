@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Numerics;
 using Content.Server._RMC14.Movement;
 using Content.Server.Movement.Components;
 using Content.Shared._RMC14.CCVar;
@@ -103,6 +104,17 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
 
     private void OnPredictedProjectileHit(PredictedProjectileHitEvent ev, EntitySessionEventArgs args)
     {
+        if (_predicted.TryGetValue((args.SenderSession.UserId, ev.Projectile), out var projectile) &&
+            _predictedProjectileServerQuery.TryComp(projectile, out var predicted))
+        {
+            predicted.ClientImpact = ev.Impact;
+            if (_physicsQuery.TryComp(projectile, out var physics) &&
+                physics.LinearVelocity.LengthSquared() > 0.01f)
+            {
+                predicted.ImpactDirection = Vector2.Normalize(physics.LinearVelocity);
+            }
+        }
+
         _predictedHits.Add((ev, args.SenderSession));
     }
 
@@ -194,6 +206,9 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
     {
         if (!_predicted.TryGetValue((player.UserId, ev.Projectile), out var projectile))
             return;
+
+        // hit might already be stuck in the wall from this tick's physics
+        _projectile.PullBackToClientImpact(projectile);
 
         if (!_predictedProjectileServerQuery.TryComp(projectile, out var predictedProjectile) ||
             predictedProjectile.Hit)
