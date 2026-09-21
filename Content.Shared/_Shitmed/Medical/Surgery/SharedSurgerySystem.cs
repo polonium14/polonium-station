@@ -43,6 +43,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private OrganRelationSystem _organRelations = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private InventorySystem _inventory = default!;

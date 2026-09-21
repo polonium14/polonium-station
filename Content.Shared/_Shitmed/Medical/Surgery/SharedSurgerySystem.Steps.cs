@@ -212,6 +212,19 @@ public abstract partial class SharedSurgerySystem
             || !_container.Insert(args.Tool, body.Organs))
             return;
 
+        if (HasComp<ChildOrganComponent>(args.Tool))
+        {
+            _organRelations.Orphan(args.Tool);
+            if (HasComp<ParentOrganComponent>(args.Part))
+                _organRelations.Relate(args.Part, args.Tool);
+        }
+        if (_container.TryGetContainer(args.Tool, DismemberedPartComponent.ContainerId, out var contents))
+        {
+            foreach (var child in contents.ContainedEntities.ToArray())
+                _container.Insert(child, body.Organs, force: true);
+            RemComp<DismemberedPartComponent>(args.Tool);
+        }
+
         if (HasComp<WoundableComponent>(args.Tool))
             _wounds.RecomputeWoundableSeverity(args.Tool);
 
