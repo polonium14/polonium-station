@@ -371,7 +371,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
         // not inverted = cancel if no trauma present
         // inverted = cancel if trauma present
-        if (_trauma.HasWoundableTrauma(args.Part, ent.Comp.TraumaType) == ent.Comp.Inverted)
+        if (HasTreatableTrauma(args.Body, args.Part, ent.Comp.TraumaType) == ent.Comp.Inverted)
             args.Cancelled = true;
     }
 

@@ -360,17 +360,9 @@ public abstract partial class SharedSurgerySystem
         switch (ent.Comp.TraumaType)
         {
             case TraumaType.OrganDamage:
-                if (!TryComp<BodyComponent>(args.Body, out var body) || body.Organs is null
-                    || !_trauma.TryGetWoundableTrauma(args.Part, out var organTraumas, TraumaType.OrganDamage))
-                    break;
-
-                foreach (var trauma in organTraumas)
+                foreach (var (trauma, organ) in GetTreatableOrganTraumas(args.Body, args.Part))
                 {
-                    if (trauma.Comp.TraumaTarget is not { } organUid
-                        || !body.Organs.ContainedEntities.Contains(organUid)
-                        || !TryComp<OrganIntegrityComponent>(organUid, out var organIntegrity))
-                        continue;
-
+                    var (organUid, organIntegrity) = organ;
                     foreach (var modifier in organIntegrity.IntegrityModifiers.ToList())
                     {
                         // Only treat damage belonging to this part's trauma. Other parts can
@@ -426,9 +418,27 @@ public abstract partial class SharedSurgerySystem
         }
     }
 
-    private bool TraumaTreatmentComplete(SurgeryTraumaTreatmentStepComponent comp, EntityUid part)
+    private IEnumerable<(Entity<TraumaComponent> Trauma, Entity<OrganIntegrityComponent> Organ)> GetTreatableOrganTraumas(EntityUid body, EntityUid part)
     {
-        return !_trauma.HasWoundableTrauma(part, comp.TraumaType);
+        if (!TryComp<BodyComponent>(body, out var bodyComp) || bodyComp.Organs is null
+            || !_trauma.TryGetWoundableTrauma(part, out var traumas, TraumaType.OrganDamage))
+            yield break;
+
+        foreach (var trauma in traumas)
+        {
+            if (trauma.Comp.TraumaTarget is { } target
+                && bodyComp.Organs.ContainedEntities.Contains(target)
+                && TryComp<OrganIntegrityComponent>(target, out var integrity)
+                && integrity.IntegrityModifiers.Any(m => m.Key.Item2 == trauma.Owner && m.Value > 0))
+                yield return (trauma, (target, integrity));
+        }
+    }
+
+    private bool HasTreatableTrauma(EntityUid body, EntityUid part, TraumaType type)
+    {
+        return type == TraumaType.OrganDamage
+            ? GetTreatableOrganTraumas(body, part).Any()
+            : _trauma.HasWoundableTrauma(part, type);
     }
 
     private void OnBleedsTreatmentStep(Entity<SurgeryBleedsTreatmentStepComponent> ent, ref SurgeryStepEvent args)
@@ -899,7 +909,7 @@ public abstract partial class SharedSurgerySystem
             return false;
 
         if (TryComp<SurgeryTraumaTreatmentStepComponent>(stepEnt, out var traumaComp)
-            && !TraumaTreatmentComplete(traumaComp, part))
+            && HasTreatableTrauma(body, part, traumaComp.TraumaType))
             return false;
 
         if (HasComp<SurgeryBleedsTreatmentStepComponent>(stepEnt)

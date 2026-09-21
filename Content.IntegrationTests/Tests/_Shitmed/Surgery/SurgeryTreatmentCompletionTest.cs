@@ -36,6 +36,7 @@ public sealed class SurgeryTreatmentCompletionTest : GameTest
     [TestCase(true, 1)]
     [TestCase(false, 2)]
     [TestCase(true, 2)]
+    [TestCase(true, 3)]
     public async Task TreatmentOnlyReportsActualInterruptions(bool organTreatment, int completionMode)
     {
         var map = await Pair.CreateTestMap();
@@ -107,6 +108,11 @@ public sealed class SurgeryTreatmentCompletionTest : GameTest
                 var doAfter = SEntMan.GetComponent<DoAfterComponent>(user).DoAfters.Values.Single();
                 SEntMan.System<SharedDoAfterSystem>().Cancel(user, doAfter.Index);
             }
+            else if (completionMode == 3)
+            {
+                // The target organ leaves the patient while treatment is in progress.
+                containers.Remove(heart, organs);
+            }
         });
 
         // Production treatment takes seven seconds per pass, and 35 damage needs three passes.
@@ -116,7 +122,7 @@ public sealed class SurgeryTreatmentCompletionTest : GameTest
         {
             Assert.That(failures.Count(user), Is.EqualTo(completionMode == 2 ? 1 : 0));
             Assert.That(completions.Count(user), Is.EqualTo(completionMode == 0 ? 3 : 0));
-            Assert.That(traumas.HasWoundableTrauma(torso, type), Is.EqualTo(completionMode == 2));
+            Assert.That(traumas.HasWoundableTrauma(torso, type), Is.EqualTo(completionMode is 2 or 3));
             Assert.That(SEntMan.GetComponent<DoAfterComponent>(user).DoAfters.Values
                 .Any(d => !d.Completed && !d.Cancelled), Is.False);
         });
