@@ -34,4 +34,3 @@ zombie-round-end-survivor-count = {$count ->
 }
 zombie-round-end-user-was-survivor = - [color=White]{$name}[/color] ([color=gray]{$username}[/color]) survived the outbreak.
 
-zombie-start-announcement = Potwierdzono zagrożenie biologiczne poziomu 7 na pokładzie stacji. Cały personel jest zobowiązany do podjęcia działań mających na celu powstrzymanie kontaminacji.

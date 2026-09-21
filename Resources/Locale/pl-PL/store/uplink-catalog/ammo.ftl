@@ -18,7 +18,3 @@ uplink-sniper-ammo-name = Pudełko z amunicją (.60 antymateriałowe)
 uplink-sniper-ammo-desc = Pudełko zawierające 10 nabojów do karabinu snajperskiego Hristov.
 uplink-ammo-bundle-name = Zestaw Amunicji
 uplink-ammo-bundle-desc = Przeładowanie! Zawiera 4 magazynki do C-20r, 4 bębny do Bulldog i 2 skrzynki amunicji do L6 SAW.
-uplink-ammo-blast-desc = A spare blast grenade for your China Lake grenade launcher.
-uplink-ammo-blast-name = Blast Grenade
-uplink-ammo-frag-desc = A spare frag grenade for your China Lake grenade launcher.
-uplink-ammo-frag-name = Frag Grenade

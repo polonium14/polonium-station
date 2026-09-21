@@ -10,6 +10,4 @@ residue-red = red
 residue-grey = grey
 residue-brown = brown
 
-residue-powdered = proszowy
 
-residue-white = biały

@@ -11,4 +11,3 @@ ui-escape-restart-tutorial = Od nowa
 ui-escape-feedback = Opinie
 ui-escape-remarks = Uwagi administratora
 ui-escape-remarks-button-disabled = Ta funkcjonalność została wyłączona przez serwer.
-ui-escape-bug-report = Report Bugs

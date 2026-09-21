@@ -7,5 +7,3 @@ residue-blue = niebieski
 residue-red = czerwony
 residue-grey = szary
 residue-brown = brązowy
-residue-powdered = proszowy
-residue-white = biały

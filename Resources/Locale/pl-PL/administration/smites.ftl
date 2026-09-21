@@ -149,7 +149,3 @@ admin-trick-pause-map-description = Pauzuje wybraną mapę. Uwaga: nie całkowic
 admin-trick-snap-joints-description = Usuwa wszystkie fizyczne połączenia obiektu. Niestety nie łamie każdej kości w ich ciele.
 admin-trick-minigun-fire-description = Sprawia, że wskazana broń strzela jak minigun (bardzo szybko).
 admin-trick-set-bullet-amount-description = Ustawia ilość niewystrzelonych pocisków w broni.
-admin-smite-terminate-description = Tworzy rolę ducha Terminatora z celem zabicia ich.
-admin-smite-ghostkick-reason = Connection timed out.
-admin-smite-heartattack-description = Immediately kills them with asphyxiation damage.
-admin-smite-heartattack-name = Heart Attack

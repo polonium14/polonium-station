@@ -123,4 +123,3 @@ JobStationEngineer = Inżynier Stacji
 JobTechnicalAssistant = Pomocnik Techniczny
 JobVisitor = Wizytor
 JobWarden = Nadzorca Ochrony
-job-name-centcomoff = Urzędnik Centralnego Dowództwa

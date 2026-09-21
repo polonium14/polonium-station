@@ -8,4 +8,3 @@ entity-category-name-status-effects = Status Effects
 entity-category-name-xeno-artifact-effects = Xeno Artifact Effects
 
 entity-category-suffix-donotmap = DO NOT MAP
-entity-category-name-xeno-artifact-triggers = Xeno Artifact triggers

@@ -49,11 +49,6 @@ admin-verbs-snap-joints = Snap Joints
 admin-verbs-make-minigun = Make Minigun
 admin-verbs-set-bullet-amount = Set Bullet Amount
 
-# Toggles verbs
-admin-verbs-bolt = Bolt
-admin-verbs-unbolt = Unbolt
-admin-verbs-emergency-access-on = Emergency Access On
-admin-verbs-emergency-access-off = Emergency Access Off
 
 # Dialogs verbs
 admin-verbs-dialog-adjust-stack-amount = Amount (max {$max})

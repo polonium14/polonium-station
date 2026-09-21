@@ -29,5 +29,3 @@ changeling-catalog-voice-mindshield-name = Fałszywa Osłona Umysłu
 changeling-catalog-voice-mindshield-desc = Modyfikuj swoje fale mózgowe, aby skopiować fale wytwarzane przez osłonę umysłu Nanotrasen, dzięki czemu dla członków Działu Ochrony będziesz wyglądać na chronionego implantem. Może być przełączany.
 changeling-catalog-night-vision-name = Noktowizja
 changeling-catalog-night-vision-desc = Modyfikujesz fotoreceptory i wyostrzasz zmysły, by widzieć w całkowitej ciemności.
-changeling-catalog-armblade-sting-desc = Causes the target to spontaneously grow a dulled armblade after a lengthy delay. Instant with increased duration when used on corpses. Can be used on self.
-changeling-catalog-armblade-sting-name = Armblade Sting

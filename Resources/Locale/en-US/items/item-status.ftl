@@ -23,9 +23,6 @@ tank-status-state = State: {$state}
 # Magazine Status
 magazine-status-rounds = Rounds: [color=yellow]{$current}/{$max}[/color]
 
-# Guardian Status
-guardian-status-used = [color=red]Used[/color]
-guardian-status-ready = [color=green]Ready[/color]
 
 # Anomaly Status
 anomaly-status-infinite = [color=gold]Infinite charges[/color]
@@ -33,4 +30,3 @@ anomaly-status-charges = [color=orange]{$charges} charges[/color]
 
 # Timer Trigger Status
 timer-trigger-status-delay = Set Delay: [color=white]{$delay}s[/color]
-timer-trigger-status-delay-unknown = Set Delay: [color=gray]???[/color]

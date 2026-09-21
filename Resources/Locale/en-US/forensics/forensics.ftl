@@ -30,4 +30,3 @@ forensics-cleaning-others = {CAPITALIZE($user)} begins cleaning the evidence off
 
 forensics-cleaning-cannot-clean = There is nothing cleanable on {THE($target)}!
 
-forensic-pad-gloves = { CAPITALIZE($target) } is wearing gloves.

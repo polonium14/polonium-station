@@ -1,5 +1,3 @@
-hud-chatbox-looc-budget-spent = You have spent your LOOC message budget of { $count } messages. You can no longer speak in LOOC for the remainder of the round.
-hud-chatbox-looc-budget-refilled = Your LOOC budget has been set to { $count } messages.
 cmd-looc-budget-desc = Set a user's LOOC message budget.
 cmd-looc-budget-help = looc_budget <user | all> <budget> <refill budget> <inform user>
 cmd-looc-budget-1 = <user | all>

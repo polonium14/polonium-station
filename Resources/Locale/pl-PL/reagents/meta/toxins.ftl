@@ -61,6 +61,3 @@ reagent-desc-hemorrhinol = A toxin that causes severe damage to blood vessels, c
 reagent-name-hivarol = hivarol
 reagent-desc-hivarol = A toxin that attacks specific types of cells in the body, damaging hivemind communication and causing severe pain if one is present.
 reagent-name-phosphoric-acid = phosphoric acid
-reagent-desc-phosphoric-acid = An acidic chemical often used in agriculture. Keep away from your eyes.
-reagent-desc-hardlight-toxin = A highly advanced toxin which inundates a victim's nervous system with ionizing radiation when metabolized.
-reagent-name-hardlight-toxin = hardlight toxin

@@ -11,8 +11,5 @@ department-Specific = Station specific
 
 department-Unknown = Unknown
 
-department-CentralCommandSpecial = Centralne Dowództwo (specjalne)
 
-department-Ghostrole = Widmowy
 
-department-Service = Service

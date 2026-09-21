@@ -9,6 +9,3 @@ department-Science = Badań i Rozwoju
 department-Silicon = Silikonowy
 department-Specific = Specyficzny dla stacji
 department-Unknown = Nieznany
-department-CentralCommandSpecial = Centralne Dowództwo (specjalne)
-department-Ghostrole = Widmowy
-department-Service = Service

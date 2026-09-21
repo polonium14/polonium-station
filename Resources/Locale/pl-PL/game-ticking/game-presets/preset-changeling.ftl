@@ -8,8 +8,3 @@ changeling-briefing =
     Możesz wykorzystać i przyjąć tożsamości tych, których pożerasz, aby uniknąć tragicznego losu.
 objective-issuer-changeling = [color=#FA2A55]Umysł-Kolektywny[/color]
 changeling-round-end-agent-name = zmiennokształtny
-space-changeling-role-greeting =
-    You are a changeling, a highly intelligent predator.
-    After drifting frozen in space for decades, you find yourself near a space station filled to the brim with juicy crew members.
-    You are hungry and will not make it long without sustenance...
-    Kill. Consume. Hide. Survive.

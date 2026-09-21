@@ -35,6 +35,3 @@ ui-bql-results-delete = Usuń
 ui-bql-results-delete-confirm = Potwierdź?
 ui-bql-results-pin = Przypnij
 ui-bql-results-unpin = Odepnij
-ui-bql-results-tp = TP
-ui-bql-results-tp-tooltip = Teleport to entity
-ui-bql-results-vv-tooltip = View entity variables

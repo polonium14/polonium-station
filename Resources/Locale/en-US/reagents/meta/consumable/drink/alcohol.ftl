@@ -357,13 +357,9 @@ reagent-desc-zombiecocktail = It gets in your head. Your he-eyeh-ead.
 reagent-name-bacchus-blessing = bacchus's blessing
 reagent-desc-bacchus-blessing = You didn't think it was possible for a liquid to be so utterly revolting. Are you sure about this...?
 
-reagent-name-bigfoot = wielka stopa
 
-reagent-desc-bigfoot = Według Klubu Kryptozoologicznego Eta Scorpii, to ulubiony napój legendarnego kryptydy-małpoluda, Wielkiej Stopy. Według prawdziwych naukowców, Wielka Stopa nie miałaby składników potrzebnych do przygotowania tego koktajlu.
 
-reagent-name-kira-special = Kira special
 
-reagent-desc-kira-special = Niech żyje facet, którego wszyscy mylili z dziewczyną. Baka!
 
 reagent-name-black-japan = Black Japan
 

@@ -1,1 +1,0 @@
-materials-bscrystal = kryształ bluespace

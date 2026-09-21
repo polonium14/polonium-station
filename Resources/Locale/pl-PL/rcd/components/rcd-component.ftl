@@ -43,4 +43,3 @@ rcd-component-sensorsmonitors = Czujniki i monitory
 rcd-component-deconstruct = demontaż
 rcd-component-floor-steel = stalowa płytka
 rcd-component-plating = pokrycie korpusu
-rcd-component-cannot-build-identical-entity = That already exists there!

@@ -105,7 +105,3 @@ petting-success-tesla = You pet { $target }, violating the laws of nature and ph
 petting-failure-tesla = You reach out towards { $target }, but { SUBJECT($target) } { CONJUGATE-BASIC($target, "zap", "zaps") } your hand away.
 petting-success-mail-teleporter = Głaszczesz { $target } po sumiennej, zimnej obudowie.
 petting-failure-mail-teleporter = Wyciągasz rękę, by pogłaskać { $target }, ale jest zajęty sortowaniem poczty!
-petting-failure-elder-headslug = You try to pet { THE($target) }, but { SUBJECT($target) } almost bites you!
-petting-failure-headslug = You try to pet { THE($target) }, but your hand sinks in { POSS-ADJ($target) } flesh.
-petting-success-elder-headslug = You pet { THE($target) } on { POSS-ADJ($target) } pulsating skin.
-petting-success-headslug = You pet { THE($target) } on { POSS-ADJ($target) } oozy surface.

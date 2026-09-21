@@ -1,10 +1,4 @@
 markings-search = Szukaj
--markings-selection =
-    { $selectable ->
-        [0] You have no markings remaining.
-        [one] You can select one more marking.
-       *[other] You can select { $selectable } more markings.
-    }
 markings-limits = { $required ->
     [true] { $count ->
         [-1] Select at least one marking.
@@ -22,9 +16,6 @@ markings-limits = { $required ->
 markings-reorder = Reorder markings
 humanoid-marking-modifier-respect-limits = Respect limits
 humanoid-marking-modifier-respect-group-sex = Respect group & sex restrictions
-humanoid-marking-modifier-base-layers = Base layers
-humanoid-marking-modifier-enable = Enable
-humanoid-marking-modifier-prototype-id = Prototype id:
 
 # Categories
 
@@ -63,33 +54,12 @@ markings-layer-RFoot = Right Foot
 markings-layer-LFoot = Left Foot
 markings-layer-Overlay = Overlay
 markings-layer-TailOverlay = Overlay
-markings-used = Użyte cechy
-markings-unused = Niewykorzystane cechy
-markings-add = Dodaj cechę
-markings-remove = Usuń cechę
-markings-rank-up = Wyżej
-markings-rank-down = Niżej
 marking-points-remaining = Pozostało Cech: [{ $current }/{ $max }]
 marking-used = { $marking-name }
 marking-used-forced = { $marking-name } (Wymuszone)
 marking-slot-add = Dodaj
 marking-slot-remove = Usuń
 marking-slot = Miejsce { $number }
-# Categories
-markings-category-Special = Specjalne
 marking-forced-colors = Ta cecha ma wymuszone kolory i nie można jej dostosować.
 marking-select-to-customize = Wybierz cechę z prawego panelu, aby dostosować jej kolory.
 marking-customize-colors = Kolorowanie
-markings-category-Hair = Włosy
-markings-category-FacialHair = Zarost
-markings-category-Head = Głowa
-markings-category-HeadTop = Głowa (góra)
-markings-category-HeadSide = Głowa (bok)
-markings-category-Snout = Pysk
-markings-category-UndergarmentTop = Bielizna (góra)
-markings-category-UndergarmentBottom = Bielizna (dół)
-markings-category-Chest = Klatka piersiowa
-markings-category-Arms = Ramiona
-markings-category-Legs = Nogi
-markings-category-Tail = Ogon
-markings-category-Overlay = Nakładka

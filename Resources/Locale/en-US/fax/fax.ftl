@@ -19,7 +19,6 @@ fax-machine-ui-refresh-button = Refresh
 fax-machine-ui-no-peers = No Peers
 fax-machine-ui-to = To:
 fax-machine-ui-from = From:
-fax-machine-ui-paper = Paper:
 fax-machine-ui-paper-inserted = Paper in tray
 fax-machine-ui-paper-not-inserted = No paper
 

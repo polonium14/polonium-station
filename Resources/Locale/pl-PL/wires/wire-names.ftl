@@ -31,7 +31,6 @@ wires-board-name-medicalscanner = SkanerMedyczny
 wires-board-name-reclaimer = Zgarniacz
 wires-board-name-recharger = Ładowarka
 wires-board-name-minigravitygenerator = MiniGeneratorGrawitacji
-wires-board-name-dawinstrument = DawInstrument
 wires-board-name-airlock = SterowanieŚluzą
 wires-board-name-firelock = SterowanieBlokadąPożaru
 wires-board-name-windoor = Sterowanie drzwiami przesuwnymi

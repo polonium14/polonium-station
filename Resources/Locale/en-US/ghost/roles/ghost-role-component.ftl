@@ -65,7 +65,6 @@ ghost-role-information-hamlet-description = Lives in the station bridge, has a b
 ghost-role-information-slimes-name = Slime
 ghost-role-information-slimes-description = An ordinary slime with no special needs or interests. You are friendly to others.
 
-ghost-role-information-angry-slimes-name = Slime
 ghost-role-information-angry-slimes-description = Everyone around you irritates your instincts, destroy them!
 ghost-role-information-angry-slimes-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all other angry slimes.
 
@@ -98,11 +97,7 @@ ghost-role-information-rat-king-name = Rat King
 
 ghost-role-information-rat-king-description = You are the Rat King, your interests are food, food, and more food. Fight against the station for food. Did I say food interests you?
 
-ghost-role-information-rat-servant-name = Rat Servant
-ghost-role-information-rat-servant-description = You are a Rat Servant. You must follow your king's orders.
 
-ghost-role-information-salvage-carp-name = Space Carp on Salvage Wreck
-ghost-role-information-salvage-carp-description = Defend the loot inside the salvage wreck!
 
 ghost-role-information-sentient-carp-name = Sentient Carp
 ghost-role-information-sentient-carp-description = Help the dragon flood the station with carps!
@@ -122,8 +117,6 @@ ghost-role-information-mimebot-description = A Mimebot, act like a mime but don'
 ghost-role-information-supplybot-name = SupplyBot
 ghost-role-information-supplybot-description = Deliver goods around the station.
 
-ghost-role-information-space-bear-name = Space Bear
-ghost-role-information-space-bear-description = Your tummy rumbles, and these people look really yummy... What a feast!
 
 # Still exists as a commented out reference for Tropico. Keeping it around. -TsjipTsjip, 2024-06-20
 ghost-role-information-tropico-name = Tropico
@@ -205,7 +198,6 @@ ghost-role-information-cburn-agent-description = A highly trained CentComm agent
 ghost-role-information-centcom-official-name = CentComm Official
 ghost-role-information-centcom-official-description = Perform CentComm related duties such as inspect the station, jotting down performance reviews for heads of staff, and managing the fax machine.
 
-ghost-role-information-nukeop-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all other nuclear operatives. Covert syndicate agents are not guaranteed to help you.
 
 ghost-role-information-loneop-name = Lone Operative
 ghost-role-information-loneop-description = You are a lone nuclear operative. Destroy the station!
@@ -237,8 +229,6 @@ ghost-role-information-space-ninja-description = Use stealth and deception to sa
 ghost-role-information-paradox-clone-name = Paradox Clone
 ghost-role-information-paradox-clone-description = A freak space-time anomaly has teleported you into another reality! Now you have to find your counterpart and kill and replace them.
 
-ghost-role-information-syndicate-reinforcement-name = Syndicate Agent
-ghost-role-information-syndicate-reinforcement-description = Someone needs reinforcements. You, the first person the syndicate could find, will help them.
 ghost-role-information-syndicate-reinforcement-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with the agent who summoned you.
 
 ghost-role-information-syndicate-reinforcement-medic-name = Syndicate Medic
@@ -317,13 +307,7 @@ ghost-role-information-lost-challenge-commander-rules = You are not hostile to t
 
 ghost-role-information-lost-challenge-cargo-technican-name = Cargo Chauffeur
 ghost-role-information-lost-challenge-cargo-technican-description = You are a cargo technician who was granted shore leave with one of your commanding officers.
-ghost-role-information-lost-challenge-cargo-technican-rules = You are not hostile to the station, do what you must to ensure your own survival.
-                                     You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-                                     You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-                                     You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
-ghost-role-information-disaster-victim-name = Disaster Victim
-ghost-role-information-disaster-victim-description = You were rescued in an escape pod from another station that suffered a terrible fate. Perhaps you will be found and rescued.
 
 ghost-role-information-syndie-disaster-victim-name = Syndicate Disaster Victim
 ghost-role-information-syndie-disaster-victim-description = You're a regular passenger from a syndicate station. Unfortunately, an evacuation pod has thrown you into an enemy sector...
@@ -368,57 +352,15 @@ ghost-role-information-wizard-desc = YER A WIZARD! Show the station what your ma
 ghost-role-information-emotional-support-scurret-name = Emotional Support Scurret
 ghost-role-information-emotional-support-scurret-description = Support the crew, be adorable, say "wa" a lot.
 
-# funkystation
-ghost-role-information-big-familiar-rules =
-    You are a [color=#6495ed][bold]Familiar[/bold][/color]. Serve the interests of your master, whatever those may be. You should generally not seek to harm the station and its crew.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
-# funkystation
-ghost-role-information-skeleton-rules =
-    You are a [color=yellow][bold]Skeleton[/bold][/color]. You are a former member of crew and are considered crew.
-    Be as silly as possible.
-    You are free to self antag as long as it's funny.
-    Keep crew harm to a minimum.
 
-# funkystation
-ghost-role-information-neanderthal-rules =
-    You are a [color=yellow][bold]Neanderthal[/bold][/color]. You are freshly thawed out of a block of ice and have no idea where you are.
-    While your existence may be tolerated by the crew and Central Command, you are free to act as an antagonist or a non antagonist.
-    Though you are more beast than man, you should still generally follow escalation rules, as others will have to do with you.
-    You are not allowed to remember any knowledge about life or how to use objects beyond the absolute basics, such as how to swing a stick.
-    You do not understand the languages of others, nor do you possess the ability to communicate with others beyond grunting and gesturing.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-    You are [color=red]NOT[/color] allowed to cause mass station destruction, such as releasing the singularity from containment.
 
-ghost-role-information-shiva-name = Shiva the Spider
 
-ghost-role-information-shiva-description = Head Of Security's most trusted pet. First defender of the station.
 
-ghost-role-information-shiva-rules =
-    You are [bold]Shiva the Spider[/bold]. The Head of Security's highly trained and most trusted pet.
-    You are part of security, and as such are held to higher standards.
-    Be a good spider and dont hinder the crew. Use your fangs only when it is needed.
 
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
-# funkystation
-ghost-role-information-neanderthal-description = You are a freshly unfrozen neanderthal. You have no idea what is going on, where this is, what anything is, or who anyone else is.
 
-# funkystation
-ghost-role-information-neanderthal-name = Unfrozen Neanderthal
 
-# funkystation
-ghost-role-information-celedon-name = Celedon, Animal Lab Rescue
 
-ghost-role-information-celedon-description = Follow and obey the zookeeper. They must gain your trust first though, you still remember the experiments from the genetics lab on Europa.
 
-roles-ghost-cryopod-sleeper-name = old cryogenics pod sleeper
 
-roles-ghost-cryopod-sleeper-objective = Work as a team with your fellow survivors aboard a ruined, ancient space station.
-
-ghost-role-information-space-changeling-description = An adult changeling headslug, eager to assimilate crew members and ready to hide within the station. This headslug is especially frail and needs to find a dead body to assume a humanoid appearance.
-ghost-role-information-space-changeling-name = Elder Headslug
