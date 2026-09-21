@@ -543,5 +543,33 @@ entity-effect-guidebook-add-reagent-to-bloodstream =
 entity-effect-disarm =
     { $chance ->
         [1] Disarms
-        *[other] disarms
+        *[other] disarm
     } the entity
+
+entity-effect-guidebook-plant-change-trait =
+    { $chance ->
+        [1] { $change ->
+            [Add] Adds {$trait} to
+            [Remove] Removes {$trait} from
+            [Toggle] Toggles {$trait} on
+            *[other] Changes {$trait} on
+        }
+        *[other] { $change ->
+            [Add] add {$trait} to
+            [Remove] remove {$trait} from
+            [Toggle] toggle {$trait} on
+            *[other] change {$trait} on
+        }
+    } the plant
+
+entity-effect-guidebook-bleed-unholy-blood =
+    { $chance ->
+        [1] Converts
+        *[other] convert
+    } bleeding blood into unholy blood
+
+entity-effect-guidebook-de-cultify =
+    { $chance ->
+        [1] Reduces
+        *[other] reduce
+    } cult corruption by {$amount}

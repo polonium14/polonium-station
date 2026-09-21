@@ -42,3 +42,6 @@ changeling-catalog-voice-mindshield-desc = Modify your neuron's natural waves to
 
 changeling-catalog-night-vision-name = Night Vision
 changeling-catalog-night-vision-desc = You modify your photoreceptors and heighten your senses as to become able to see in complete darkness.
+
+changeling-catalog-armblade-sting-desc = Causes the target to spontaneously grow a dulled armblade after a lengthy delay. Instant with increased duration when used on corpses. Can be used on self.
+changeling-catalog-armblade-sting-name = Armblade Sting

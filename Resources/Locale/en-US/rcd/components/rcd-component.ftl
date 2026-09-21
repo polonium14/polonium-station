@@ -51,3 +51,5 @@ rcd-component-sensorsmonitors = Sensors & Monitors
 rcd-component-deconstruct = deconstruct
 rcd-component-floor-steel = steel tile
 rcd-component-plating = hull plate
+
+rcd-component-cannot-build-identical-entity = That already exists there!

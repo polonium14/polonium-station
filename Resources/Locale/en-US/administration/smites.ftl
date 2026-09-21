@@ -151,3 +151,6 @@ admin-trick-minigun-fire-description = Makes the targetted gun fire like a minig
 admin-trick-set-bullet-amount-description = Quickly set the amount of unspawned bullets in a gun.
 
 admin-smite-terminate-description = Tworzy rolę ducha Terminatora z celem zabicia ich.
+admin-smite-ghostkick-reason = Connection timed out.
+admin-smite-heartattack-description = Immediately kills them with asphyxiation damage.
+admin-smite-heartattack-name = Heart Attack

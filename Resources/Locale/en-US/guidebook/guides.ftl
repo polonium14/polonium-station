@@ -218,3 +218,6 @@ guide-entry-metashield = Metashield
 guide-entry-namingscheme = Naming Scheme
 guide-entry-writing = Writing
 guide-entry-glossary = Glossary
+
+guide-entry-deltapressure = Delta Pressure
+guide-entry-xenoarchaeologyunlockingnodes = Unlocking Nodes
