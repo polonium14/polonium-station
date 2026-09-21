@@ -234,7 +234,7 @@ public abstract partial class SharedSurgerySystem
         var target = ResolveAffixPartTarget(args.Body, args.Part, args.Surgery);
 
         if (HasComp<WoundableComponent>(target))
-            _wounds.TryHealWoundsOnWoundable(target, FixedPoint2.New(12), out _);
+            _wounds.TryHealWoundsAndDamage(target, FixedPoint2.New(12), out _);
 
         RemComp<BodyPartReattachedComponent>(target);
     }

@@ -23,21 +23,34 @@ public sealed partial class WoundSystem
         if (ent.Comp.CanHealBleeds)
             TryHealBleedingWounds(ent, ent.Comp.BleedingTreatmentAbility, out _, ent.Comp, perWound: true);
 
-        if (ent.Comp.CanHealDamage
-            && TryHealWoundsOnWoundable(ent, ent.Comp.HealAbility, out _, out var healedByType, ent.Comp)
-            && !healedByType.Empty)
-        {
-            var negated = -healedByType;
+        if (ent.Comp.CanHealDamage)
+            TryHealWoundsAndDamage(ent, ent.Comp.HealAbility, out _, ent.Comp);
+    }
 
-            // The wound severity above is already healed - suppress OnDamageDealt's own
-            // negative-delta reaction to this follow-up call so HealWoundsCore doesn't run a
-            // second time on the same wounds (see _suppressWoundInduction's own doc comment).
-            // The mob's own DamageableComponent follows automatically via
-            // BodyDamageBridgeSystem's organ->mob sync - no separate mirror write needed here.
+    /// <summary>
+    /// Heals wound severity and the matching raw damage together, without healing wounds twice.
+    /// BodyDamageBridgeSystem mirrors the resulting organ damage change onto its body.
+    /// </summary>
+    public bool TryHealWoundsAndDamage(EntityUid woundable, FixedPoint2 healAmount, out FixedPoint2 healed, WoundableComponent? component = null)
+    {
+        healed = FixedPoint2.Zero;
+        if (!_net.IsServer
+            || !TryHealWoundsOnWoundable(woundable, healAmount, out healed, out var healedByType, component))
+            return false;
+
+        var wasSuppressed = _suppressWoundInduction;
+        try
+        {
+            // Severity was already reduced above; this damage update must not heal it again.
             _suppressWoundInduction = true;
-            _damageable.TryChangeDamage(ent.Owner, negated, ignoreResistances: true, interruptsDoAfters: false, origin: null);
-            _suppressWoundInduction = false;
+            _damageable.TryChangeDamage(woundable, -healedByType, ignoreResistances: true, interruptsDoAfters: false, origin: null);
         }
+        finally
+        {
+            _suppressWoundInduction = wasSuppressed;
+        }
+
+        return true;
     }
 
     public bool TryHaltAllBleeding(EntityUid woundable, WoundableComponent? component = null, bool force = false)
