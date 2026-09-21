@@ -65,10 +65,12 @@ public sealed partial class IdCardConsoleComponent : Component
         "Janitor",
         "Kitchen",
         "Lawyer",
+        "Reporter", // funkystation
         "Maintenance",
         "Medical",
         "Quartermaster",
         "Research",
+        "Robotics", // goobstation
         "ResearchDirector",
         "Salvage",
         "Security",
