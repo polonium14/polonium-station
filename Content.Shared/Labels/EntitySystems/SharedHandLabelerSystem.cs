@@ -7,6 +7,7 @@ using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
+using Content.Shared.Tag;
 
 namespace Content.Shared.Labels.EntitySystems;
 
@@ -17,6 +18,9 @@ public abstract partial class SharedHandLabelerSystem : EntitySystem
     [Dependency] private LabelSystem _labelSystem = default!;
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private TagSystem _tagSystem = default!;
+
+    private const string PreventTag = "PreventLabel";
 
     public override void Initialize()
     {
@@ -64,6 +68,11 @@ public abstract partial class SharedHandLabelerSystem : EntitySystem
             RemoveLabelFrom(ent, user, target);
             return;
         }
+
+        // Begin DeltaV additions - Prevent labels on certain items
+        if (_tagSystem.HasTag(target, PreventTag))
+            return;
+        // End DeltaV additions - Prevent labels on certain items
 
         _labelSystem.Label(target, ent.Comp.AssignedLabel);
 

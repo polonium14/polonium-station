@@ -38,6 +38,7 @@
     tags:
     - WhitelistChameleon
     - Backpack
+  - type: AllowsSleepInside # DeltaV - enable sleeping inside bags
 
 - type: entity
   parent: ClothingBackpack

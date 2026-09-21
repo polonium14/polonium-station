@@ -137,6 +137,11 @@
     emoteSounds: MaleRodentia
   - type: TypingIndicator
     proto: rodentia
+  - type: PseudoItem
+    storedOffset: -10,0
+    shape:
+    - 0, 0, 3, 2
+    - 0, 2, 5, 4
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/pierce.ogg
