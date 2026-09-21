@@ -8,6 +8,7 @@ using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Systems;
@@ -39,6 +40,46 @@ public sealed partial class BodyDamageBridgeSystem : EntitySystem
         // SetDamage-style direct writes and fires after TotalDamage/DamagePerGroup are
         // already recomputed on the organ.
         SubscribeLocalEvent<WoundableComponent, DamageChangedEvent>(OnOrganDamageChanged);
+        SubscribeLocalEvent<BodyComponent, OrganInsertedIntoEvent>(OnOrganInserted);
+        SubscribeLocalEvent<BodyComponent, OrganRemovedFromEvent>(OnOrganRemoved);
+    }
+
+    private void OnOrganInserted(Entity<BodyComponent> ent, ref OrganInsertedIntoEvent args)
+    {
+        TransferOrganDamage(ent, args.Organ, removing: false);
+    }
+
+    private void OnOrganRemoved(Entity<BodyComponent> ent, ref OrganRemovedFromEvent args)
+    {
+        TransferOrganDamage(ent, args.Organ, removing: true);
+    }
+
+    private void TransferOrganDamage(EntityUid body, EntityUid organ, bool removing)
+    {
+        if (!_net.IsServer || TerminatingOrDeleted(body) || TerminatingOrDeleted(organ)
+            || !HasComp<WoundableComponent>(organ)
+            || !TryComp<DamageableComponent>(organ, out var damageable))
+            return;
+
+        // A transplant brings its existing damage with it. Otherwise later healing would
+        // subtract damage that was never credited to the recipient in the first place.
+        var damage = _damageable.GetPositiveDamage((organ, damageable));
+        if (damage.Empty)
+            return;
+
+        var wasSuppressed = HasComp<SkipDamageBridgeComponent>(body);
+        if (!wasSuppressed)
+            AddComp<SkipDamageBridgeComponent>(body);
+        try
+        {
+            _damageable.TryChangeDamage(body, removing ? -damage : damage,
+                ignoreResistances: true, interruptsDoAfters: false);
+        }
+        finally
+        {
+            if (!wasSuppressed)
+                RemComp<SkipDamageBridgeComponent>(body);
+        }
     }
 
     private void OnDamageDealt(Entity<BodyComponent> ent, ref DamageDealtEvent args)
