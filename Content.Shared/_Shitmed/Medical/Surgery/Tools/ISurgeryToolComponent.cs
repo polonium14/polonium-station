@@ -2,6 +2,9 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Tools;
 
 public interface ISurgeryToolComponent
 {
+    /// <summary>
+    ///     Localization key for the tool name.
+    /// </summary>
     public string ToolName { get; }
 
     /// <summary>
