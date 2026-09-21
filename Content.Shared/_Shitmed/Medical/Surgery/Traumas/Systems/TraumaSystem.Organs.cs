@@ -2,6 +2,8 @@ using System.Linq;
 using Content.Shared._Shitmed.CCVar;
 using Content.Shared._Shitmed.Medical.Surgery.Pain;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Body;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
@@ -141,6 +143,51 @@ public partial class TraumaSystem
     #endregion
 
     #region Public API
+
+    /// <summary>
+    /// Moves an inserted organ's trauma records onto its recipient without transferring the
+    /// donor's flesh wounds. Keeping the trauma entities preserves their damage modifier keys.
+    /// </summary>
+    public void RehomeOrganTraumas(EntityUid organ, EntityUid part)
+    {
+        if (!_net.IsServer || !TryComp<OrganIntegrityComponent>(organ, out var integrity)
+            || !HasComp<WoundableComponent>(part))
+            return;
+
+        Entity<WoundComponent>? scar = null;
+        foreach (var owner in integrity.IntegrityModifiers.Keys.Select(key => key.Item2).Distinct().ToArray())
+        {
+            if (!TryComp<TraumaComponent>(owner, out var trauma)
+                || trauma.TraumaType != TraumaType.OrganDamage
+                || trauma.TraumaTarget != organ
+                || trauma.HoldingWoundable == part
+                || !_container.TryGetContainingContainer(owner, out var oldContainer))
+                continue;
+
+            if (scar == null)
+            {
+                if (!_wound.TryCreateWound(part, "WoundBlunt", FixedPoint2.Zero, out scar, bypassMinimumSeverity: true)
+                    || scar == null)
+                    return;
+
+                scar.Value.Comp.IsScar = true;
+                scar.Value.Comp.WoundSeverity = WoundSeverity.Healed;
+                Dirty(scar.Value);
+            }
+
+            var destination = Comp<TraumaInflicterComponent>(scar.Value).TraumaContainer!;
+            if (!_container.Insert(owner, destination))
+                continue;
+
+            trauma.HoldingWoundable = part;
+            Dirty(owner, trauma);
+            _wound.TryRemoveHealedTraumaWound(oldContainer.Owner);
+        }
+
+        if (scar is { } retained)
+            _wound.TryRemoveHealedTraumaWound(retained);
+    }
+
     public bool TryCreateOrganDamageModifier(EntityUid uid,
         FixedPoint2 severity,
         EntityUid effectOwner,

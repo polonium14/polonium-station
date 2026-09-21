@@ -28,6 +28,57 @@ namespace Content.IntegrationTests.Tests._Shitmed.Surgery;
 public sealed class DismembermentSurgeryProgressTest : GameTest
 {
     [Test]
+    public async Task AbortedAmputationCanBeSealedWithoutRemovingTheLimb()
+    {
+        var map = await Pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+        EntityUid body = default, part = default, user = default;
+        var surgery = SEntMan.System<SurgerySystem>();
+        await Server.WaitAssertion(() =>
+        {
+            body = SEntMan.SpawnEntity("TendWoundsStepTestVictim", coords);
+            part = SEntMan.SpawnEntity("TendWoundsStepTestArmOrgan", coords);
+            SEntMan.GetComponent<SurgeryTargetComponent>(body).SepsisImmune = true;
+            var containers = SEntMan.System<SharedContainerSystem>();
+            containers.Insert(part, containers.GetContainer(body, BodyComponent.ContainerID));
+            user = SEntMan.SpawnEntity(null, coords);
+            SEntMan.AddComponent<HandsComponent>(user);
+            SEntMan.AddComponent<DoAfterComponent>(user);
+            SEntMan.AddComponent<BoneSawComponent>(user);
+            SEntMan.AddComponent<BoneGelComponent>(user);
+            SEntMan.AddComponent<CauteryComponent>(user);
+            SEntMan.System<SharedHandsSystem>().AddHand(user, "right", HandLocation.Right);
+            SEntMan.AddComponent<IncisionOpenComponent>(part);
+            SEntMan.AddComponent<SkinRetractedComponent>(part);
+            Assert.That(surgery.TryDoSurgeryStep(body, part, user,
+                "SurgeryRemovePart", "SurgeryStepSawFeature", out var error), Is.True, error.ToString());
+        });
+        await Pair.RunSeconds(5);
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.HasComponent<BodyPartSawedComponent>(part), Is.True);
+            var closure = surgery.GetSingleton("SurgeryCloseIncision")!.Value;
+            Assert.That(surgery.IsStepComplete(body, part, "SurgeryStepSealBones", closure), Is.False,
+                "Closing an aborted amputation must require sealing the sawed bone.");
+            Assert.That(surgery.TryDoSurgeryStep(body, part, user,
+                "SurgeryCloseIncision", "SurgeryStepSealBones", out var error), Is.True, error.ToString());
+        });
+        await Pair.RunSeconds(3);
+        await Server.WaitAssertion(() => Assert.That(surgery.TryDoSurgeryStep(body, part, user,
+            "SurgeryCloseIncision", "SurgeryStepCloseIncision", out var error), Is.True, error.ToString()));
+        await Pair.RunSeconds(3);
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.GetComponent<OrganComponent>(part).Body, Is.EqualTo(body));
+            Assert.That(surgery.HasUnfinishedSurgerySteps(part), Is.False,
+                "A closed limb must not keep the unfinished-surgery bleeding penalty active.");
+            Assert.That(surgery.IsStepComplete(body, part, "SurgeryStepSawFeature",
+                surgery.GetSingleton("SurgeryRemovePart")!.Value), Is.False,
+                "A later amputation must start with sawing again.");
+        });
+    }
+
+    [Test]
     public async Task ANewDismembermentMustRequireFreshDeadSkinRemoval()
     {
         var map = await Pair.CreateTestMap();

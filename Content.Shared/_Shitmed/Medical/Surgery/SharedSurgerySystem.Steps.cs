@@ -333,6 +333,7 @@ public abstract partial class SharedSurgerySystem
                 _organRelations.Relate(args.Part, args.Tool);
         }
 
+        _trauma.RehomeOrganTraumas(args.Tool, args.Part);
         EnsureComp<OrganReattachedComponent>(args.Tool);
 
         ApplyStepDamageChange(args);
