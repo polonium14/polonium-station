@@ -3,6 +3,7 @@ using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Pain.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Pain.Systems;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Targeting;
@@ -58,10 +59,11 @@ public sealed partial class TourniquetSystem : EntitySystem
 
     private void OnWoundAddedToTourniquetedOrgan(Entity<WoundComponent> ent, ref WoundAddedEvent args)
     {
-        if (!HasComp<TourniquetedComponent>(args.Component.HoldingWoundable))
+        if (!HasComp<TourniquetedComponent>(args.Component.HoldingWoundable)
+            || !TryComp<BleedInflicterComponent>(ent, out var bleeds))
             return;
 
-        _bloodstream.TryAddBleedModifier(ent.Owner, "TourniquetPresent", 100, false, comp: null);
+        _bloodstream.TryAddBleedModifier(ent.Owner, "TourniquetPresent", 100, false, comp: bleeds);
     }
 
     private bool TryTourniquet(EntityUid target, EntityUid user, EntityUid tourniquetEnt, TourniquetComponent tourniquet)
@@ -218,7 +220,8 @@ public sealed partial class TourniquetSystem : EntitySystem
         if (HasComp<NerveComponent>(organ))
             _pain.TryAddPainFeelsModifier(tourniquetEnt, "Tourniquet", organ, -10f);
 
-        _bloodstream.TryAddBleedModifier(organ, "TourniquetPresent", 100, false, force: true);
+        if (TryComp<WoundableComponent>(organ, out var woundable))
+            _bloodstream.TryAddBleedModifier(organ, "TourniquetPresent", 100, false, force: true, woundableComp: woundable);
         EnsureComp<TourniquetedComponent>(organ).TourniquetEntity = tourniquetEnt;
     }
 
@@ -227,7 +230,8 @@ public sealed partial class TourniquetSystem : EntitySystem
         if (HasComp<NerveComponent>(organ))
             _pain.TryRemovePainFeelsModifier(tourniquetEnt, "Tourniquet", organ);
 
-        _bloodstream.TryRemoveBleedModifier(organ, "TourniquetPresent", force: true);
+        if (TryComp<WoundableComponent>(organ, out var woundable))
+            _bloodstream.TryRemoveBleedModifier(organ, "TourniquetPresent", force: true, woundable: woundable);
         RemComp<TourniquetedComponent>(organ);
     }
 
