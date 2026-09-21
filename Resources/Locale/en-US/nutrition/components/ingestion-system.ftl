@@ -25,6 +25,10 @@ ingestion-verb-drink = Drink
 
 # Edible Component
 
+-edible-satiated = { $satiated ->
+    [true] {" "}You don't feel like you could { $verb } any more.
+  *[false] {""}
+}
 
 edible-nom = Nom. {$flavors}{ -edible-satiated(satiated: $satiated, verb: "eat") }
 edible-nom-other = Nom.

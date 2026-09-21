@@ -11,7 +11,7 @@ comp-crew-medal-round-end-result =
     }
 comp-crew-medal-round-end-list =
     - [color=white]{ $recipient }[/color] otrzymał [color=white]{ $medal }[/color] za
-    { " }{ $reason }
+    { " " }{ $reason }
 
 # UI
 
