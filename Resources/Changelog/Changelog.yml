@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ScarKy0
-  changes:
-  - message: Vulpkanin now have a yawn sound.
-    type: Add
-  id: 9510
-  time: '2026-02-09T15:32:39.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42768
 - author: TytosB
   changes:
   - message: adjusted several rooms and added missing items on map serpentcrest. increased
@@ -4144,3 +4137,17 @@
   id: 10008
   time: '2026-09-21T09:32:46.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1041
+- author: Polonium-bot
+  changes:
+  - message: "Zaktualizowano polsk\u0105 lokalizacj\u0119 w komunikatach interfejsu,\
+      \ przedmiot\xF3w, stworze\u0144 i system\xF3w."
+    type: Tweak
+  - message: "Dodano polskie formy liczby dla licznik\xF3w przedmiot\xF3w, amunicji\
+      \ i stos\xF3w."
+    type: Tweak
+  - message: "Poprawiono t\u0142umaczenia nazw, opis\xF3w oraz komunikat\xF3w konsol\
+      \ i komponent\xF3w."
+    type: Fix
+  id: 10009
+  time: '2026-09-21T12:36:26.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1040
