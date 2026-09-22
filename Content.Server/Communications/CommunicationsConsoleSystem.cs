@@ -36,7 +36,6 @@ using Content.Shared.DeviceNetwork.Systems;
 using Content.Server.Popups;
 using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Systems;
-using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.AlertLevel;
@@ -51,7 +50,6 @@ using Content.Shared.Station.Systems;
 using Content.Shared.Screens;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server.Communications
 {
@@ -242,9 +240,7 @@ namespace Content.Server.Communications
             if (message.Actor is { Valid: true } mob)
             {
                 if (!CanAnnounce((uid, comp)))
-                {
                     return;
-                }
 
                 if (!CanUse(mob, uid))
                 {
@@ -265,21 +261,18 @@ namespace Content.Server.Communications
             Loc.TryGetString(comp.Title, out var title);
             title ??= comp.Title;
 
-            if (comp.AnnounceSentBy)
-                msg += "\n" + Loc.GetString("comms-console-announcement-sent-by") + " " + author;
+            var signature = comp.AnnounceSentBy ? author : null;
+            var scope = comp.Global ? "global" : "station";
 
             if (comp.Global)
-            {
-                _chatSystem.DispatchGlobalAnnouncement(msg, title, announcementSound: comp.Sound, colorOverride: comp.Color);
+                _chatSystem.DispatchGlobalAnnouncement(msg, title, announcementSound: comp.Sound, colorOverride: comp.Color, signature: signature);
+            else
+                _chatSystem.DispatchStationAnnouncement(uid, msg, title, announcementSound: comp.Sound, colorOverride: comp.Color, signature: signature);
 
-                _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following global announcement: {msg}");
-                return;
-            }
-
-            _chatSystem.DispatchStationAnnouncement(uid, msg, title, announcementSound: comp.Sound, colorOverride: comp.Color);
-
-            _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following station announcement: {msg}");
-
+            if (signature != null)
+                _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following {scope} announcement as {signature}: {msg}");
+            else
+                _adminLogger.Add(LogType.Chat, LogImpact.Low, $"{ToPrettyString(message.Actor):player} has sent the following {scope} announcement: {msg}");
         }
 
         private void OnBroadcastMessage(EntityUid uid, CommunicationsConsoleComponent component, CommunicationsConsoleBroadcastMessage message)
