@@ -189,7 +189,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             scheduler.Comp.IgnoreTimings,
             scheduler.Comp.IgnoreTimings ? int.MaxValue : players, // Polonium
             scheduler.Comp.IgnoreTimings ? TimeSpan.MaxValue : null,
-            1f / GetRamping(scheduler));
+            1f / GetRamping(scheduler)).Events.Select(e => e.Item1).ToHashSet(); // Polonium
 
         // POLONIUM START
         if (scheduler.Comp.GhostAntagRules is { } ghostAntags && CanStartGhostAntag(scheduler, players))

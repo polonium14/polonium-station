@@ -17,7 +17,7 @@ public sealed partial class SecretPlusSystem
     private void AddTableEvents(
         Entity<SecretPlusComponent> scheduler,
         EntityTableSelector table,
-        Dictionary<EntityPrototype, StationEventComponent> available,
+        HashSet<EntityPrototype> available,
         int players,
         bool ghostAntag)
     {
@@ -37,7 +37,7 @@ public sealed partial class SecretPlusSystem
                 continue;
 
             var row = overrides.GetValueOrDefault(id);
-            if (row == null ? !available.ContainsKey(proto) : !CanRunRow(scheduler, proto, stationEvent, row, players))
+            if (row == null ? !available.Contains(proto) : !CanRunRow(scheduler, proto, stationEvent, row, players))
                 continue;
 
             scheduler.Comp.SelectedEvents.Add(new SelectedEvent(proto, gameRule, stationEvent, ghostAntag, row?.ChaosScore, row?.EventWeight));
