@@ -179,7 +179,7 @@
 
 - type: marking
   id: MothFireflyOverlay
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Moth ]
   forcedColoring: false
   sprites:
