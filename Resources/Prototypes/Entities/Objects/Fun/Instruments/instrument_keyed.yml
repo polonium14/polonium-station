@@ -18,6 +18,7 @@
     instrumentList:
       swappable-instrument-style-electro: {62: 0} #i needed generic sounding synth presets, sue me
       swappable-instrument-style-bubbles: {63: 0}
+      swappable-instrument-style-square: {80: 0}
   - type: Sprite
     sprite: Objects/Fun/Instruments/h_synthesizer.rsi
   - type: StaticPrice
