@@ -697,10 +697,12 @@ public sealed partial class ChatUIController : UIController
 
             var otherPos = _transform?.GetMapCoordinates(ent) ?? MapCoordinates.Nullspace;
 
-            if (occluded && !_examine.InRangeUnOccluded(
-                    playerPos,
-                    otherPos, 0f,
-                    (ent, player), predicate))
+            var distance = (otherPos.Position - playerPos.Position).Length();
+
+            if (occluded && 
+                distance > ExamineSystem.MaxRaycastRange ||
+                !_examine.InRangeUnOccluded(playerPos, otherPos, 0f, (ent, player), predicate)
+                )
             {
                 SetBubbles(bubs, false);
                 continue;
