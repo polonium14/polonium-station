@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: TiniestShark
-  changes:
-  - message: Added the ability for Vulps to wag their tails.
-    type: Add
-  id: 9515
-  time: '2026-02-10T22:26:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42843
 - author: magnnusson
   changes:
   - message: Intercoms can now be constructed on walls.
@@ -4154,3 +4147,17 @@
   id: 10013
   time: '2026-09-22T14:37:07.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1049
+- author: nikitosych
+  changes:
+  - message: Naprawiono oznaczenia gatunku Voks.
+    type: Fix
+  - message: Przypisano oznaczenia ogona do warstwy `TailOverlay`.
+    type: Fix
+  - message: "Dodano obs\u0142ug\u0119 ikon dla warstwy `TailOverlay`."
+    type: Tweak
+  - message: "Dodano opcjonaln\u0105 warstw\u0119 `TailOverlay` dla gatunk\xF3w Moth\
+      \ i Thaven."
+    type: Tweak
+  id: 10014
+  time: '2026-09-22T19:09:56.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1050
