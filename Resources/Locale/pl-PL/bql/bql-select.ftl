@@ -3,7 +3,7 @@ cmd-bql_select-help =
     Usage: bql_select <bql query>
     The opened window allows you to teleport to or view variables the resulting entities.
 cmd-bql_select-err-server-shell = Cannot be executed from server shell
-cmd-bql_select-err-rest = Ostrzeżenie: nieużywana część po zapytaniu BQL: "{ $rest}"
+cmd-bql_select-err-rest = Ostrzeżenie: nieużywana część po zapytaniu BQL: "{ $rest }"
 ui-bql-results-title = Wyniki BQL
 ui-bql-results-vv = VV
 ui-bql-results-status =

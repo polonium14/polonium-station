@@ -6,7 +6,7 @@ stack-brass = mosiądz
 stack-plastic = plastik
 stack-silver = srebro
 stack-gold = złoto
-stack-reinforced-glass = wzmocnione szkło 
+stack-reinforced-glass = wzmocnione szkło
 stack-plasma-glass = szkło plazmowe
 stack-uranium = uran
 stack-uranium-glass = szkło uranowe
@@ -65,7 +65,7 @@ stack-rods =
     { $amount ->
         [1] pręt
         [few] pręty
-        *[many] prętów
+       *[many] prętów
     }
 stack-meat-sheet =
     { $amount ->
@@ -148,14 +148,14 @@ stack-rough-diamond = nieoszlifowany diament
 stack-iron-ore = ruda żelaza
 stack-plasma-ore = ruda plazmy
 stack-silver-ore = ruda srebra
-stack-space-quartz = kosmiczny kwarc 
+stack-space-quartz = kosmiczny kwarc
 stack-uranium-ore = ruda uranu
 stack-bananium-ore = ruda bananium
 stack-coal = węgiel
 stack-salt = sól
 stack-salvageticket = Bilet Złomiarza
-stack-inflatable-wall = nadmuchiwana ściana 
-stack-inflatable-door = nadmuchiwane drzwi 
+stack-inflatable-wall = nadmuchiwana ściana
+stack-inflatable-door = nadmuchiwane drzwi
 stack-ointment = maść
 stack-aloe-cream = krem aloesowy
 stack-gauze = gaza
