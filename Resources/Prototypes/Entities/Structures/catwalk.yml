@@ -1,5 +1,5 @@
 - type: entity
-  parent: StructureHealthFurniture
+  parent: [ BaseStructure, StructureHealthFurniture ]
   id: Catwalk
   name: catwalk
   description: A catwalk for easier EVA maneuvering and cable placement.
@@ -16,8 +16,6 @@
   - type: Icon
     sprite: Structures/catwalk.rsi
     state: catwalk_preview
-  - type: Transform
-    anchored: true
   - type: IconSmooth
     key: catwalk
     states:
@@ -53,3 +51,16 @@
     cost: 20 # Funkystation
     delay: 2
     fx: EffectRCDDeconstruct2
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 5
+        mask:
+        - LowImpassable
+        layer:
+        - DoorPassable
