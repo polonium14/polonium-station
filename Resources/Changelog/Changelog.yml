@@ -1,28 +1,4 @@
 ﻿Entries:
-- author: SeaWyrm
-  changes:
-  - message: Horizonal and vertical steel slat floor tiles, as well as their dark
-      and white variants, can now be created with a Cutter lathe.
-    type: Add
-  id: 9512
-  time: '2026-02-10T01:48:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/37832
-- author: ArtisticRoomba
-  changes:
-  - message: Fixed filters not transferring heat energy from the inlet to the filter
-      outlet while still transferring physical gas.
-    type: Fix
-  id: 9513
-  time: '2026-02-10T10:26:03.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42876
-- author: 11BelowStudio
-  changes:
-  - message: Regular bots are now repaired gradually (short incremental doafters)
-      instead of via one long doafter, for parity with borgs.
-    type: Tweak
-  id: 9514
-  time: '2026-02-10T17:15:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42878
 - author: TiniestShark
   changes:
   - message: Added the ability for Vulps to wag their tails.
@@ -4151,3 +4127,30 @@
   id: 10010
   time: '2026-09-21T18:46:21.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1044
+- author: maciejwalendziuk
+  changes:
+  - message: "Usuni\u0119to zakodowan\u0105 na sta\u0142e warto\u015B\u0107 z testu\
+      \ `LocalizedIdentifier`."
+    type: Fix
+  - message: Test pobiera oczekiwany tekst przez `ILocalizationManager`.
+    type: Fix
+  id: 10011
+  time: '2026-09-22T14:37:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1039
+- author: Polonium-bot
+  changes:
+  - message: "Poprawiono formatowanie polskich komunikat\xF3w lokalizacyjnych."
+    type: Fix
+  id: 10012
+  time: '2026-09-22T14:37:32.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1048
+- author: nikitosych
+  changes:
+  - message: "Ukrywanie b\u0105belk\xF3w rozmowy poza zasi\u0119giem gracza."
+    type: Fix
+  - message: "Ograniczenie kosztownych test\xF3w widoczno\u015Bci na podstawie odleg\u0142\
+      o\u015Bci."
+    type: Tweak
+  id: 10013
+  time: '2026-09-22T14:37:07.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1049
