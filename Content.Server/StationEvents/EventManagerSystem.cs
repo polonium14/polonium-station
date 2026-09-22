@@ -1,16 +1,18 @@
+using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared._Goobstation.CCVar;
 using Content.Server.GameTicking;
 using Content.Server.RoundEnd;
 using Content.Server.StationEvents.Components;
 using Content.Shared.CCVar;
+using Content.Shared.EntityTable;
+using Content.Shared.EntityTable.EntitySelectors;
+using Content.Shared.GameTicking.Components;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Shared.EntityTable.EntitySelectors;
-using Content.Shared.EntityTable;
-using Content.Shared.GameTicking.Components;
 
 namespace Content.Server.StationEvents;
 
@@ -62,7 +64,7 @@ public sealed partial class EventManagerSystem : EntitySystem
         // This picks the event. Arguably we should be doing this with GetSpawns but that would be a massive amount of YAML slop.
         // Or you'd need a new table prototype which inherits from EntityTables with its own logic for events.
         // It's a ton of effort that only results in Events being able to use GroupSelectors so not worth it unless you're insane.
-        if (FindEvent(limitedEvents) is not { } randomLimitedEvent)
+        if (FindEvent(limitedEvents.Value) is not { } randomLimitedEvent)
         {
             Log.Warning("The selected random event is null!");
             return;
@@ -99,10 +101,10 @@ public sealed partial class EventManagerSystem : EntitySystem
         return ListLimitedEvents(selectedEvents, currentTime, playerCount);
     }
 
-    /// <inheritdoc cref="TryBuildLimitedEvents(IEnumerable{EntProtoId},out Dictionary{EntityPrototype,StationEventComponent},TimeSpan?,int?)"/>
+    /// <inheritdoc cref="TryBuildLimitedEvents(IEnumerable{EntProtoId},out EventTable?,TimeSpan?,int?)"/>
     public bool TryBuildLimitedEvents(
         EntityTableSelector limitedEventsTable,
-        out Dictionary<EntityPrototype, StationEventComponent> limitedEvents,
+        [NotNullWhen(true)] out EventTable? limitedEvents,
         TimeSpan? currentTime = null,
         int? playerCount = null)
     {
@@ -170,7 +172,7 @@ public sealed partial class EventManagerSystem : EntitySystem
         // playerCount does a lock so we'll just keep the variable here
         currentTime ??= _gameTicker.RoundDuration();
 
-        var totalWeight = 0f;
+        var totalWeight = 0d;
 
         foreach (var (eventId, prob) in selectedEvents)
         {
@@ -212,11 +214,12 @@ public sealed partial class EventManagerSystem : EntitySystem
     /// <returns>Returns true if the provided EntProtoId list has at least one prototype with a StationEventComp that can successfully run!</returns>
     public bool TryBuildLimitedEvents(
         IEnumerable<EntProtoId> selectedEvents,
-        out Dictionary<EntityPrototype, StationEventComponent> limitedEvents,
+        [NotNullWhen(true)] out EventTable? limitedEvents,
         TimeSpan? currentTime = null,
         int? playerCount = null)
     {
-        limitedEvents = new Dictionary<EntityPrototype, StationEventComponent>();
+        var events = new List<(EntityPrototype, float)>();
+        var weight = 0d;
 
         playerCount ??= _playerManager.PlayerCount + PlayerCountBias;
 
@@ -225,17 +228,11 @@ public sealed partial class EventManagerSystem : EntitySystem
 
         foreach (var eventid in selectedEvents)
         {
-            if (_gameTicker.IsIgnored(eventid))
-                continue;
-
             if (!ProtoMan.Resolve(eventid, out var eventproto))
             {
                 Log.Warning("An event ID has no prototype index!");
                 continue;
             }
-
-            if (limitedEvents.ContainsKey(eventproto)) // This stops it from dying if you add duplicate entries in a fucked table
-                continue;
 
             if (eventproto.Abstract)
                 continue;
@@ -246,12 +243,17 @@ public sealed partial class EventManagerSystem : EntitySystem
             if (!CanRun(eventproto, stationEvent, playerCount.Value, currentTime.Value))
                 continue;
 
-            limitedEvents.Add(eventproto, stationEvent);
+            events.Add((eventproto, stationEvent.Weight));
+            weight += stationEvent.Weight;
         }
 
-        if (!limitedEvents.Any())
+        if (!events.Any())
+        {
+            limitedEvents = null;
             return false;
+        }
 
+        limitedEvents = new EventTable(events.AsReadOnly(), weight);
         return true;
     }
 
@@ -261,7 +263,7 @@ public sealed partial class EventManagerSystem : EntitySystem
     public string? PickRandomEvent()
     {
         var availableEvents = AvailableEvents();
-        Log.Info($"Picking from {availableEvents.Count} total available events");
+        Log.Info($"Picking from {availableEvents.Events.Count()} total available events");
         return FindEvent(availableEvents);
     }
 
@@ -269,28 +271,22 @@ public sealed partial class EventManagerSystem : EntitySystem
     /// Pick a random event from the available events at this time, also considering their weightings.
     /// </summary>
     /// <returns></returns>
-    public string? FindEvent(Dictionary<EntityPrototype, StationEventComponent> availableEvents)
+    // TODO: Make this private :V
+    public string? FindEvent(EventTable events)
     {
-        if (availableEvents.Count == 0)
+        if (events.Weight <= 0)
         {
             Log.Warning("No events were available to run!");
             return null;
         }
 
-        var sumOfWeights = 0.0f;
+        var target = _random.NextDouble(0, events.Weight);
 
-        foreach (var stationEvent in availableEvents.Values)
+        foreach (var (proto, weight) in events.Events)
         {
-            sumOfWeights += stationEvent.Weight;
-        }
+            target -= weight;
 
-        sumOfWeights = _random.NextFloat(sumOfWeights);
-
-        foreach (var (proto, stationEvent) in availableEvents)
-        {
-            sumOfWeights -= stationEvent.Weight;
-
-            if (sumOfWeights <= 0.0f)
+            if (target <= 0)
             {
                 return proto.ID;
             }
@@ -306,7 +302,7 @@ public sealed partial class EventManagerSystem : EntitySystem
     /// <param name="playerCountOverride">Override for player count, if using this to simulate events rather than in an actual round.</param>
     /// <param name="currentTimeOverride">Override for round time, if using this to simulate events rather than in an actual round.</param>
     /// <returns></returns>
-    public Dictionary<EntityPrototype, StationEventComponent> AvailableEvents(
+    public EventTable AvailableEvents(
         bool ignoreEarliestStart = false,
         int? playerCountOverride = null,
         TimeSpan? currentTimeOverride = null,
@@ -318,17 +314,19 @@ public sealed partial class EventManagerSystem : EntitySystem
             ? _gameTicker.RoundDuration()
             : TimeSpan.Zero);
 
-        var result = new Dictionary<EntityPrototype, StationEventComponent>();
+        var result = new List<(EntityPrototype, float)>();
+        var weight = 0d;
 
         foreach (var (proto, stationEvent) in AllEvents())
         {
             if (CanRun(proto, stationEvent, playerCount, currentTime, reoccurrenceMult))
             {
-                result.Add(proto, stationEvent);
+                weight += stationEvent.Weight;
+                result.Add((proto, stationEvent.Weight));
             }
         }
 
-        return result;
+        return new EventTable(result.AsReadOnly(), weight);
     }
 
     /// <summary>
@@ -360,7 +358,6 @@ public sealed partial class EventManagerSystem : EntitySystem
         return allEvents;
     }
 
-    // TODO: WRITE A TEST TO ENSURE THAT IF A EVENT HAS MAX OCCURRENCES, THAT IT WILL PROPERLY CANCEL ONLY WHEN THEY'RE HIT
     public bool CanRun(EntityPrototype prototype, StationEventComponent stationEvent, int playerCount, TimeSpan currentTime,
         float reoccurrenceMult = 1f, int? minimumPlayers = null, int? earliestStart = null, int? reoccurrenceDelay = null) // Polonium
     {
@@ -374,27 +371,48 @@ public sealed partial class EventManagerSystem : EntitySystem
         if (currentTime != TimeSpan.Zero && currentTime.TotalMinutes < (earliestStart ?? stationEvent.EarliestStart) / EventSpeedup) // Polonium
             return false;
 
+        if (_gameTicker.IsIgnored(prototype))
+            return false;
+
         // Slightly slower if we don't care about MaxOccurrences, but that's not a huge issue in the context of the event scheduler.
         var count = 0;
         var lastRun = TimeSpan.Zero;
         var ruleQuery = EntityQueryEnumerator<GameRuleComponent, MetaDataComponent>();
-        while (ruleQuery.MoveNext(out var rule, out var meta))
+        while (ruleQuery.MoveNext(out var uid, out var rule, out var meta))
         {
-            if (meta.EntityPrototype?.Name != prototype.ID)
+            if (meta.EntityPrototype?.ID != prototype.ID)
                 continue;
 
             count++;
-            if (lastRun < rule.ActivatedAt)
+            if (!_gameTicker.IsGameRuleAdded((uid, rule)))
+            {
+                // Rule hasn't started yet so run as if it starts right now!
+                lastRun = currentTime;
+            }
+            else if (lastRun < rule.ActivatedAt)
                 lastRun = rule.ActivatedAt;
         }
 
-        if (stationEvent.MaxOccurrences.HasValue && count >= stationEvent.MaxOccurrences.Value)
+        if (stationEvent.MaxOccurrences is { } maxOccurrences && count >= maxOccurrences)
             return false;
 
-        if (lastRun != TimeSpan.Zero && currentTime.TotalMinutes <
+        if (count > 0 && currentTime.TotalMinutes <
             (reoccurrenceDelay ?? stationEvent.ReoccurrenceDelay) * reoccurrenceMult / EventSpeedup + lastRun.TotalMinutes) // Polonium
             return false;
 
         return !_roundEnd.IsRoundEndRequested() || stationEvent.OccursDuringRoundEnd || _roundEnd.CanCallOrRecall();
     }
+}
+
+/// <summary>
+/// A simple struct which stores a table of events with given weights, and the total weight of the events.
+/// It's recommended to randomize this table before use.
+/// </summary>
+/// <param name="events">Array of events this table has, along with their weights.</param>
+/// <param name="weight">Total Weight of the events.</param>
+public readonly struct EventTable(ReadOnlyCollection<(EntityPrototype, float)> events, double weight)
+{
+    public readonly ReadOnlyCollection<(EntityPrototype, float)> Events = events;
+
+    public readonly double Weight = weight;
 }
