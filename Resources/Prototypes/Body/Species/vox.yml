@@ -271,6 +271,9 @@
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Tail
+    dependentHidingLayers:
+      enum.HumanoidVisualLayers.Tail:
+      - enum.HumanoidVisualLayers.TailOverlay
   - type: Damageable
   - type: Injurable
     damageContainer: Biological
