@@ -1,6 +1,6 @@
 # interaction
-comp-crew-medal-inspection-text = Przyznano { $recipient } za { $reason}.
-comp-crew-medal-award-text = { $recipient } otrzymał { $medal}.
+comp-crew-medal-inspection-text = Przyznano { $recipient } za { $reason }.
+comp-crew-medal-award-text = { $recipient } otrzymał { $medal }.
 
 # round end screen
 

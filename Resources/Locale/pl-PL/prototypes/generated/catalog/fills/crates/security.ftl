@@ -13,4 +13,4 @@ ent-CrateSecurityTrackingMindshieldImplants = skrzynia z implantami
 ent-CrateSecNonlethalThrowables = Skrzynka z nieśmiercionośną bronią do rzucania
     .desc =
         Zawiera po pudle granatów hukowych, kolczastych, łzawiących oraz 4 bole.
-        Wymaga dostępu Ochrony by otworzyć. 
+        Wymaga dostępu Ochrony by otworzyć.

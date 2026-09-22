@@ -1,9 +1,9 @@
 # Components
 spray-painter-ammo-on-examine =
     { $charges ->
-        [one] Zawiera {$charges} ładunek.
-        [few] Zawiera {$charges} ładunki.
-       *[many] Zawiera {$charges} ładunków.
+        [one] Zawiera { $charges } ładunek.
+        [few] Zawiera { $charges } ładunki.
+       *[many] Zawiera { $charges } ładunków.
     }
 spray-painter-ammo-after-interact-full = Pistolet lakierniczy jest pełny!
 spray-painter-ammo-after-interact-refilled = Napełniasz pistolet lakierniczy.

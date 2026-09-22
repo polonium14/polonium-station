@@ -16,6 +16,6 @@ loadouts-count-items-in-group =
     { $item } i { $count } { $count ->
         [1] inny przedmiot
         [few] inne przedmioty
-       *[many] innych przedmiotów 
+       *[many] innych przedmiotów
     }
 loadouts-points-restriction = Niewystarczająca liczba punktów
