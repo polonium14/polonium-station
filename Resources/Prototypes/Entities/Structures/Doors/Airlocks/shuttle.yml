@@ -10,7 +10,6 @@
     ports:
       - DoorStatus
       - DoorBoltStatus # Polonium: keep the bolt output from the base airlock
-      - DockStatus
   - type: Fixtures
     fixtures:
       fix1:
