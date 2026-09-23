@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: magnnusson
-  changes:
-  - message: Intercoms can now be constructed on walls.
-    type: Fix
-  id: 9516
-  time: '2026-02-11T20:01:44.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42821
 - author: Minemoder
   changes:
   - message: The sneeze emote has been readded.
@@ -4161,3 +4154,11 @@
   id: 10014
   time: '2026-09-22T19:09:56.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1050
+- author: Nikita
+  changes:
+  - message: "Brigmed teraz poprawnie wy\u015Bwietla si\u0119 w monitoringach za\u0142\
+      ogi"
+    type: Fix
+  id: 10015
+  time: '2026-09-23T08:20:45.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1051
