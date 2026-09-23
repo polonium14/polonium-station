@@ -260,6 +260,8 @@
     - type: IncisionOpen
     - type: BodyPartReattached
     - type: InternalBleedersClamped
+    - type: SeveredSkinRemoved
+    - type: BoneLeftoversRemoved
     duration: 2
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
