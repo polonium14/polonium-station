@@ -21,12 +21,15 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests._Shitmed.Surgery;
 
 [TestFixture]
 public sealed class TransplantDamageAccountingTest : GameTest
 {
+    private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
+
     [Test]
     public async Task SealingDonorLimbMustNotEraseRecipientsOtherDamage()
     {
@@ -42,7 +45,7 @@ public sealed class TransplantDamageAccountingTest : GameTest
             containers.Insert(torso, containers.GetContainer(recipient, BodyComponent.ContainerID));
             var damage = SEntMan.System<DamageableSystem>();
             var wounds = SEntMan.System<WoundSystem>();
-            var blunt = new DamageSpecifier(SProtoMan.Index<DamageTypePrototype>("Blunt"), FixedPoint2.New(8));
+            var blunt = new DamageSpecifier(SProtoMan.Index(BluntDamageType), FixedPoint2.New(8));
             damage.TryChangeDamage(torso, blunt);
             damage.TryChangeDamage(arm, blunt);
             Assert.That(wounds.GetTypeDamage(recipient, "Blunt"), Is.EqualTo(FixedPoint2.New(8)));
@@ -77,7 +80,7 @@ public sealed class TransplantDamageAccountingTest : GameTest
             containers.Insert(torso, organs);
             containers.Insert(arm, organs);
             var damage = SEntMan.System<DamageableSystem>();
-            var blunt = new DamageSpecifier(SProtoMan.Index<DamageTypePrototype>("Blunt"), FixedPoint2.New(8));
+            var blunt = new DamageSpecifier(SProtoMan.Index(BluntDamageType), FixedPoint2.New(8));
             damage.TryChangeDamage(torso, blunt);
             damage.TryChangeDamage(arm, blunt);
             Assert.That(damage.GetTotalDamage(body), Is.EqualTo(FixedPoint2.New(16)));

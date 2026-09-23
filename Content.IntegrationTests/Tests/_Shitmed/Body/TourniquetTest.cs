@@ -34,6 +34,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 public sealed class TourniquetTest : GameTest
 {
     private static readonly ProtoId<DamageTypePrototype> PiercingDamageType = "Piercing";
+    private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
 
     [TestPrototypes]
     private const string Prototypes = @"
@@ -496,7 +497,7 @@ public sealed class TourniquetTest : GameTest
         await Server.WaitAssertion(() =>
         {
             SEntMan.System<DamageableSystem>().TryChangeDamage(arm,
-                new DamageSpecifier(SProtoMan.Index<DamageTypePrototype>("Blunt"), FixedPoint2.New(5)));
+                new DamageSpecifier(SProtoMan.Index(BluntDamageType), FixedPoint2.New(5)));
             Assert.That(SEntMan.HasComponent<TourniquetedComponent>(arm), Is.True);
         });
     }

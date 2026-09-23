@@ -27,12 +27,15 @@ using Content.Shared.Stacks;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests._Shitmed.Body;
 
 [TestFixture]
 public sealed class MissingLimbTopicalTest : GameTest
 {
+    private static readonly ProtoId<DamageTypePrototype> HeatDamageType = "Heat";
+
     [Test]
     public async Task TargetingMissingArmDoesNotStartHealingTorso()
     {
@@ -46,7 +49,7 @@ public sealed class MissingLimbTopicalTest : GameTest
             var containers = SEntMan.System<SharedContainerSystem>();
             containers.Insert(torso, containers.GetContainer(patient, BodyComponent.ContainerID));
             SEntMan.System<DamageableSystem>().TryChangeDamage(torso,
-                new DamageSpecifier(SProtoMan.Index<DamageTypePrototype>("Heat"), FixedPoint2.New(10)));
+                new DamageSpecifier(SProtoMan.Index(HeatDamageType), FixedPoint2.New(10)));
             SEntMan.GetComponent<TargetingComponent>(patient).Target = TargetBodyPart.LeftArm;
             var item = SEntMan.SpawnEntity("HealBurnGateTestItem", coords);
             var ev = new AfterInteractEvent(patient, item, patient, SEntMan.GetComponent<TransformComponent>(patient).Coordinates, true);
@@ -67,7 +70,7 @@ public sealed class MissingLimbTopicalTest : GameTest
             var containers = SEntMan.System<SharedContainerSystem>();
             containers.Insert(torso, containers.GetContainer(patient, BodyComponent.ContainerID));
             var damage = SEntMan.System<DamageableSystem>();
-            damage.TryChangeDamage(torso, new DamageSpecifier(SProtoMan.Index<DamageTypePrototype>("Heat"), FixedPoint2.New(10)));
+            damage.TryChangeDamage(torso, new DamageSpecifier(SProtoMan.Index(HeatDamageType), FixedPoint2.New(10)));
             SEntMan.GetComponent<TargetingComponent>(patient).Target = TargetBodyPart.LeftArm;
             var item = SEntMan.SpawnEntity("HealBurnGateTestItem", coords);
             var ev = new HealingDoAfterEvent();
