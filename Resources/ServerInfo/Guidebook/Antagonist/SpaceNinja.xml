@@ -1,84 +1,84 @@
 <Document>
-  # Kosmiczny Ninja
-  
+  # Space Ninja
+
   <Box>
-    [color=#999999][italic]"Pająk nocy, cichy jest mój ugryzek."[/italic][/color]
+    [color=#999999][italic]"Spider of the night, silent is my bite."[/italic][/color]
   </Box>
 
-  Jesteś elitarnym najemnikiem, którego [color=#66FF00]Klan Pająka[/color] wysłał, by sieć zniszczeń rozlała się po całej stacji. Jesteś wyposażony tak, by działać cicho, ale skutecznie.
+  You are an elite mercenary that [color=#66FF00]The Spider Clan[/color] has sent to wreak all kinds of havoc on the station. You are equipped to keep it silent-but-deadly.
 
-  Niezależnie od tego, czy wdasz się w krwawą jatkę, czy pozostaniesz z dala od kłopotów, twoja dyscyplina nauczyła cię, że [italic]twoje cele muszą być przynajmniej podjęte[/italic]. Dla honoru!
+  Whether you get bloody or stay out of trouble, your discipline has taught you that [italic]your objectives must be at least attempted[/italic]. For honor!
 
-  ## Standardowe wyposażenie
-  Na początku zostajesz wszczepiony z [color=cyan]rozpuszczalnikiem pośmiertnym[/color], dzięki czemu, jeśli zostaniesz pojmany lub zabity w akcji, cały twój cenny sprzęt pozostanie poza rękami wroga.
+  ## Standard Equipment
+  You begin implanted with a [color=cyan]death acidifier[/color], so if you are captured or KIA all your precious equipment is kept out of enemy hands.
 
-  Twoja torba jest pełna [bold]narzędzi[/bold] i [bold]pudełka przetrwania[/bold]. Nosisz też [color=cyan]jetpack[/color] oraz [color=cyan]wykrywacz[/color], który doprowadzi cię do stacji.
+  Your bag is full of [bold]tools[/bold] and a [bold]survival box[/bold]. You also carry a [color=cyan]jetpack[/color] and a [color=cyan]pinpointer[/color] that will lead you to the station.
 
   <Box>
     <GuideEntityEmbed Entity="JetpackBlack"/>
     <GuideEntityEmbed Entity="PinpointerStation"/>
   </Box>
-  
-  ## Twój strój
-  
+
+  ## Your Suit
+
   <Box>
     <GuideEntityEmbed Entity="ClothingEyesVisorNinja" Caption="your visor"/>
     <GuideEntityEmbed Entity="ClothingOuterSuitSpaceNinja" Caption="your suit"/>
     <GuideEntityEmbed Entity="ClothingShoesSpaceNinja" Caption="your boots"/>
   </Box>
 
-  Twoja jedyna najważniejsza rzecz to [color=cyan]twój strój[/color], bez którego żadne z twoich zdolności nie będą działać.
-  Twój strój wymaga energii do działania, która jest dostarczana przez jego [bold]wewnętrzną baterię[/bold]. Może ona być zastąpiona, a [italic]baterie o wysokiej pojemności[/italic] oznaczają [italic]bardzo efektywnego ninję[/italic].
+  Your single most important item is [color=cyan]your suit[/color], without it none of your abilities would work.
+  Your suit requires power to function, which is supplied by its [bold]internal battery[/bold]. It can be replaced, and [italic]high capacity batteries[/italic] mean a [italic]highly effective ninja[/italic].
 
-  [bold]Możesz naładować swoją wewnętrzną baterię bezpośrednio[/bold] za pomocą [color=cyan]swoich rękawic[/color]. Możesz sprawdzić aktualny poziom ładunku, badając strój lub sprawdzając przydatne powiadomienie o baterii na swoim ekranie.
+  [bold]You can recharge your internal battery directly[/bold] by using [color=cyan]your gloves[/color]. You can see the current charge by examining the suit or checking the nifty battery alert on your screen.
 
-  Twój strój zawiera również [color=cyan]specjalne buty[/color], które utrzymują cię zwinnego, wyprostowanego i przyziemionego bez zużywania energii. Masz też ochronę przed błyskiem dzięki [color=cyan]wizjerowi[/color].
+  Your outfit also includes [color=cyan]special boots[/color] that keep you agile, upright and grounded without using energy. You've also got flash protection thanks to your [color=cyan]visor[/color].
 
-  ## Rękawice ninja
+  ## Ninja Gloves
 
   <Box>
-    <GuideEntityEmbed Entity="ClothingHandsGlovesSpaceNinja" Caption="twoje rękawice"/>
+    <GuideEntityEmbed Entity="ClothingHandsGlovesSpaceNinja" Caption="your gloves"/>
   </Box>
 
-  [color=#66FF00]To jest twój chleb i masło.[/color] Zostały wykonane z [bold]izolowanych nanomaszyn[/bold], by umożliwiać ci płynne wdzieranie się do stref ograniczonego dostępu bez zostawiania odcisków palców.
+  [color=#66FF00]These bad boys are your bread and butter.[/color] They are made from [bold]insulated nanomachines[/bold] to allow you to gracefully break into restricted areas without leaving behind fingerprints.
 
-  Masz akcję do przełączania rękawic. Gdy rękawice są włączone, pozwalają ci używać [bold]specjalnych zdolności[/bold], które są uruchamiane przez interakcję z obiektami pustą ręką i z wyłączonym trybem walki.
+  You have an action to toggle gloves. When the gloves are turned on, they allow you to use [bold]special abilities[/bold], which are triggered by interacting with things with an empty hand and with combat mode disabled.
 
-  Twoje zdolności rękawic obejmują:
-  - Emagowanie drzwi i śluz.
-  - Odprowadzanie energii z [bold]transformatorów[/bold], takich jak APC, podstacji lub SMES-y (wyższe napięcie transformatorów pozwala na bardziej wydajne odprowadzanie energii).
-  - Wkładanie ładunku elektrycznego w istotę, ogłuszając ją i lekko ją raniąc.
-  - Manipulowanie [bold]sprzętem stacji[/bold] w celu wykonania [color=#66FF00]celów[/color].
+  Your glove abilities include:
+  - Emagging doors and airlocks.
+  - Draining power from [bold]transformers[/bold] such as APCs, substations, or SMESes (higher voltage transformers drain more efficiently).
+  - Applying an electrical shock to a mob, stunning and slightly damaging them.
+  - Tampering with [bold]station equipment[/bold] to complete [color=#66FF00]objectives[/color].
 
-  ## Katana Energetyczna
+  ## Energy Katana
 
   <Box>
     <GuideEntityEmbed Entity="EnergyKatana"/>
   </Box>
 
-  [bold]Przysięgłeś mieczowi i odmawiasz używania broni palnej.[/bold] Na szczęście masz całkiem niezły miecz.
+  [bold]You have sworn yourself to the sword and refuse to use firearms.[/bold] Luckily, you've got a pretty cool sword.
 
-  Twoja [color=cyan]katana energetyczna[/color] zadaje sporo obrażeń i może zostać [bold]przywołana z dowolnego miejsca[/bold] kosztem energii z kombinezonu. Im dalej jest od ciebie, tym więcej energii potrzeba do jej przywołania.
+  Your [color=cyan]energy katana[/color] hurts plenty and can be [bold]recalled at will[/bold] at the cost of suit power. The farther away it is from you, the more energy required to recall it.
 
-  Trzymając ją w dłoni możesz także [color=cyan]teleportować[/color] się w dowolne miejsce, które widzisz, [bold]również przez okna[/bold]. Ładunki potrzebne do tego regenerują się powoli, więc trzymaj jeden lub dwa zapasowe na wypadek szybkiej ucieczki.
+  While in hand you may also [color=cyan]teleport[/color] to anywhere that you can see, [bold]including through windows[/bold]. The charges required to do this regenerate slowly, so keep a charge or two spare in case you need a quick getaway.
 
-  ## Ładunek Klanu Pająka
-  
+  ## Spider Clan Charge
+
   <Box>
     <GuideEntityEmbed Entity="SpiderCharge"/>
   </Box>
-  
-  To jest [color=cyan]zmodyfikowana bomba C-4[/color], która znajduje się w twojej kieszeni. Tworzy duży wybuch, ale [bold]musi zostać uzbrojona w obszarze celu[/bold], ponieważ jest jednym z twoich zadań.
 
-  Nie da się jej aktywować ręcznie, więc po prostu podłóż ją na ścianie w pobliżu wyznaczonego celu. Wybieraj rozsądnie, bo po podłożeniu nie da się jej odpiąć.
+  This is a [color=cyan]modified C-4 explosive[/color] which can be found in your pocket. Creates a large explosion but [bold]must be armed in your target area[/bold] as it is one of your objectives.
 
-  ## Cele
+  It can't be activated manually, so simply plant it on a wall near your assigned target. Choose wisely, it can't be unstuck once planted.
 
-  - Pobierz \[9-13\] węzły badawcze: Użyj rękawic na serwerze badawczym z liczbą odblokowanych technologii. Może być konieczne odblokowanie technologii samodzielnie, jeśli nie ma ich wystarczająco dużo do skradzenia.
-  - Włam się do \[15-40\] drzwi na stacji: Użyj rękawic, aby zdemagnetyzować odpowiednią liczbę drzwi.
-  - Detonuj ładunek klanu pająka: Umieść ładunek klanu pająka w wyznaczonym miejscu i patrz, jak wybucha!
-  - Wezwij [textlink="zagrożenie" link="MinorAntagonists"]: Użyj rękawic przy konsoli komunikacji.
-  - Ustaw wszystkich na listę poszukiwanych: Użyj rękawic przy konsoli rejestrów kryminalnych.
-  - Przeżyj: Nie umieraj.
+  ## Objectives
+
+  - Download \[9-13\] research nodes: Use your gloves on an R&D server with a number of unlocked technologies. You may have to unlock technologies yourself if there aren't enough to steal already.
+  - Doorjack \[15-40\] doors on the station: Use your gloves to emag a number of doors.
+  - Detonate the spider clan charge: Plant your spider clan charge at the specified location and watch it go boom!
+  - Call in a [textlink="threat" link="MinorAntagonists"]: Use your gloves on a communications console.
+  - Set everyone to wanted: Use your gloves on a criminal records console.
+  - Survive: Don't die.
 
 </Document>
