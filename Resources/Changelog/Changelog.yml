@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Minemoder
-  changes:
-  - message: The sneeze emote has been readded.
-    type: Add
-  id: 9517
-  time: '2026-02-11T22:01:36.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41479
 - author: bnuuy
   changes:
   - message: Cleaning evidence off a person no longer reveals their true identity.
@@ -4162,3 +4155,10 @@
   id: 10015
   time: '2026-09-23T08:20:45.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1051
+- author: Nikita
+  changes:
+  - message: "Zmieniono tekstury firelock\xF3w."
+    type: Tweak
+  id: 10016
+  time: '2026-09-23T09:23:10.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1053
