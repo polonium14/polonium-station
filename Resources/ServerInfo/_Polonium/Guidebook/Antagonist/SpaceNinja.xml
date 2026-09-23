@@ -22,9 +22,9 @@
   ## Twój strój
 
   <Box>
-    <GuideEntityEmbed Entity="ClothingEyesVisorNinja" Caption="your visor"/>
-    <GuideEntityEmbed Entity="ClothingOuterSuitSpaceNinja" Caption="your suit"/>
-    <GuideEntityEmbed Entity="ClothingShoesSpaceNinja" Caption="your boots"/>
+    <GuideEntityEmbed Entity="ClothingEyesVisorNinja" Caption="twoja przyłbica"/>
+    <GuideEntityEmbed Entity="ClothingOuterSuitSpaceNinja" Caption="twój kombinezon"/>
+    <GuideEntityEmbed Entity="ClothingShoesSpaceNinja" Caption="twoje buty"/>
   </Box>
 
   Twoja jedyna najważniejsza rzecz to [color=cyan]twój strój[/color], bez którego żadne z twoich zdolności nie będą działać.
