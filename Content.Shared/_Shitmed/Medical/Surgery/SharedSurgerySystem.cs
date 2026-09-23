@@ -43,6 +43,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private OrganRelationSystem _organRelations = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private InventorySystem _inventory = default!;
@@ -162,21 +163,25 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
     private void OnTargetDoAfter(Entity<SurgeryTargetComponent> ent, ref SurgeryDoAfterEvent args)
     {
-        if (!_timing.IsFirstTimePredicted)
+        // Replicated DoAfters also finish during client prediction. Only the server may
+        // apply surgery effects or report failure; the client's trauma state can lag behind.
+        if (_net.IsClient || !_timing.IsFirstTimePredicted)
             return;
 
         if (args.Cancelled)
         {
+            // Treatment can remove the condition that made a surgery valid. Completion must
+            // therefore be checked independently, including when another surgeon finished it.
             var alreadyComplete = args.Target is { } cancelledPart
-                && IsSurgeryValid(ent, cancelledPart, args.Surgery, args.Step, args.User, out var cancelledSurgery, out _, out _)
+                && !TerminatingOrDeleted(cancelledPart)
+                && GetSingleton(args.Surgery) is { } cancelledSurgery
                 && IsStepComplete(ent, cancelledPart, args.Step, cancelledSurgery);
 
-            if (!alreadyComplete)
-            {
-                Log.Warning($"Surgery step {args.Step} of {args.Surgery} on {ToPrettyString(ent)} was cancelled for {ToPrettyString(args.User)}.");
-                _popup.PopupClient(Loc.GetString("surgery-error-step-interrupted"), args.User, args.User, PopupType.SmallCaution);
-            }
+            if (alreadyComplete)
+                return;
 
+            Log.Warning($"Surgery step {args.Step} of {args.Surgery} on {ToPrettyString(ent)} was cancelled for {ToPrettyString(args.User)}.");
+            _popup.PopupClient(Loc.GetString("surgery-error-step-interrupted"), args.User, args.User, PopupType.SmallCaution);
             RaiseStepFailed(args.User, ent, args.Surgery, args.Step);
             return;
         }
@@ -200,18 +205,19 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             return;
         }
 
-        if (!CanPerformStep(args.User, ent, part, step, tool, true))
+        if (!CanPerformStep(args.User, ent, part, step, tool, true, surgery))
         {
             Log.Warning($"{ToPrettyString(args.User)} tried to complete a surgery step without the right tool in hand.");
             return;
         }
 
-        var complete = IsStepComplete(ent, part, args.Step, surgery);
-
-        args.Repeat = HasComp<SurgeryRepeatableStepComponent>(step) && !complete;
         var ev = new SurgeryStepEvent(args.User, ent, part, tool, surgery, step);
         RaiseLocalEvent(step, ref ev);
         RaiseLocalEvent(args.User, ref ev);
+
+        // The effect above may have finished treatment and removed the surgery's prerequisite.
+        args.Repeat = HasComp<SurgeryRepeatableStepComponent>(step)
+            && !IsStepComplete(ent, part, args.Step, surgery);
 
         // consume the tool if it's something like using LV cable as stitches
         if (args.ToolUsed)
@@ -259,7 +265,8 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         // doc comment) still needs a surgery to clear it, or it sits stuck forever.
         var rawDamage = point > 0 ? FixedPoint2.Zero : _wounds.GetGroupDamage(args.Part, ent.Comp.DamageGroup);
 
-        if (point <= 0 && rawDamage <= 0)
+        // Tending must remain valid after healing so the surgeon can seal the incision.
+        if (point <= 0 && rawDamage <= 0 && !HasComp<IncisionOpenComponent>(args.Part))
             args.Cancelled = true;
     }
 
@@ -367,7 +374,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
         // not inverted = cancel if no trauma present
         // inverted = cancel if trauma present
-        if (_trauma.HasWoundableTrauma(args.Part, ent.Comp.TraumaType) == ent.Comp.Inverted)
+        if (HasTreatableTrauma(args.Body, args.Part, ent.Comp.TraumaType) == ent.Comp.Inverted)
             args.Cancelled = true;
     }
 
@@ -402,6 +409,9 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             return false;
 
         TryComp<OrganComponent>(targetPart, out var targetOrgan);
+        if (targetPart != body && targetOrgan?.Body != body)
+            return false;
+
         var ev = new SurgeryValidEvent(body, targetPart, Category: targetOrgan?.Category);
         if (_timing.IsFirstTimePredicted)
         {

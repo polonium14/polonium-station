@@ -33,7 +33,6 @@ public sealed partial class BloodstreamSystem
     {
         SubscribeLocalEvent<BleedInflicterComponent, WoundSeverityPointChangedEvent>(OnBleedInflicterSeverityUpdate);
         SubscribeLocalEvent<BleedRemoverComponent, WoundSeverityPointChangedEvent>(OnBleedRemoverSeverityUpdate);
-        SubscribeLocalEvent<BleedInflicterComponent, WoundHealAttemptEvent>(OnWoundHealAttempt);
         SubscribeLocalEvent<BleedInflicterComponent, WoundAddedEvent>(OnWoundAdded);
     }
 
@@ -281,15 +280,6 @@ public sealed partial class BloodstreamSystem
         Dirty(uid, component);
     }
 
-    private void OnWoundHealAttempt(EntityUid uid, BleedInflicterComponent component, ref WoundHealAttemptEvent args)
-    {
-        if (args.IgnoreBlockers)
-            return;
-
-        if (component.IsBleeding || component.BleedingAmountRaw > 0)
-            args.Cancelled = true;
-    }
-
     private void OnBleedInflicterSeverityUpdate(EntityUid uid,
         BleedInflicterComponent component,
         ref WoundSeverityPointChangedEvent args)
@@ -306,8 +296,6 @@ public sealed partial class BloodstreamSystem
             // Healed back under the gate that would have started the bleed in the first place -
             // OnWoundAdded and the growth path below both refuse to bleed there, so leaving a
             // proportional trickle here is the only way a sub-threshold wound bleeds at all.
-            // It also traps the wound: OnWoundHealAttempt blocks passive healing while
-            // IsBleeding, so the residual would keep the wound from ever closing on its own.
             if (args.NewSeverity < component.SeverityThreshold)
             {
                 component.BleedingAmountRaw = FixedPoint2.Zero;

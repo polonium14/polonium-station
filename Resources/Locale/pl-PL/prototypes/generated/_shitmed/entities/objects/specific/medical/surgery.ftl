@@ -3,4 +3,4 @@ ent-Bonesetter = nastawiacz kości
 ent-BoneGel = butelka żelu kostnego
     .desc = Pojemnik na żel kostny, który często trzeba uzupełniać w specjalistycznej maszynie.
 ent-MedicalStitches = szwy medyczne
-    .desc = Cienka, wygięta igła z odcinkiem wchłanialnej nici szewnej z poliglikolidu.
+    .desc = Cienka, wygięta igła z zapasem wchłanialnych nici chirurgicznych z poliglikolidu.

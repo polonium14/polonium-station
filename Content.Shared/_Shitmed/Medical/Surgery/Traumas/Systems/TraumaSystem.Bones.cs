@@ -45,7 +45,7 @@ public partial class TraumaSystem
         if (!TryComp<OrganComponent>(bone.Comp.BoneWoundable.Value, out var organ) || organ.Body is not { } body)
             return;
 
-        var part = organ.Category?.Id ?? "part";
+        var part = bone.Comp.BoneWoundable.Value;
 
         _popup.PopupClient(Loc.GetString($"popup-trauma-BoneDamage-{args.NewSeverity.ToString()}", ("part", part)),
             body,

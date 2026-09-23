@@ -389,7 +389,7 @@ public sealed class TraumaBoneBreakTest : GameTest
     }
 
     [Test]
-    public async Task BrokenBoneBlocksWoundHealing()
+    public async Task BrokenBoneDoesNotBlockWoundHealing()
     {
         var pair = Pair;
         var server = pair.Server;
@@ -460,8 +460,75 @@ public sealed class TraumaBoneBreakTest : GameTest
         await server.WaitAssertion(() =>
         {
             var woundable = sEntMan.GetComponent<WoundableComponent>(organ);
-            Assert.That(woundable.WoundableIntegrity, Is.EqualTo(severityBeforeHeal),
-                "Woundable healed despite a Broken bone - WoundHealAttemptEvent's blocker isn't firing.");
+            Assert.That(woundable.WoundableIntegrity, Is.GreaterThan(severityBeforeHeal),
+                "Broken bones no longer block healing - the wound should heal despite the Broken bone.");
+
+            var boneEnt = woundable.Bone!.ContainedEntities.First();
+            Assert.That(sEntMan.GetComponent<BoneComponent>(boneEnt).BoneSeverity, Is.EqualTo(BoneSeverity.Broken),
+                "The bone itself should still be Broken - healing the flesh wound must not mend the bone (only surgery does).");
+        });
+    }
+
+    [Test]
+    public async Task BleedingDoesNotBlockWoundHealing()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+
+        var sEntMan = server.ResolveDependency<IEntityManager>();
+        var sDamageable = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<DamageableSystem>();
+        var sWound = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<WoundSystem>();
+        var sProtoMan = server.ResolveDependency<IPrototypeManager>();
+        var map = await pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+
+        EntityUid attacker = default;
+        EntityUid victim = default;
+        EntityUid organ = default;
+        EntityUid brain = default;
+
+        await server.WaitPost(() =>
+        {
+            attacker = sEntMan.SpawnEntity("BoneBreakTestAttacker", coords);
+            victim = sEntMan.SpawnEntity("BoneBreakTestVictim", coords);
+            brain = sEntMan.SpawnEntity("BoneBreakTestBrainOrgan", coords);
+            organ = sEntMan.SpawnEntity("BoneBreakTestTorsoOrgan", coords);
+
+            var container = sEntMan.System<SharedContainerSystem>();
+            var organsContainer = container.GetContainer(victim, BodyComponent.ContainerID);
+            container.Insert(brain, organsContainer);
+            container.Insert(organ, organsContainer);
+        });
+
+        await pair.RunTicksSync(5);
+
+        await server.WaitPost(() =>
+        {
+            var proto = sProtoMan.Index(PiercingDamageType);
+            // WoundPiercing's BleedInflicter has severityThreshold: 9 - a 20-severity hit bleeds.
+            sDamageable.TryChangeDamage(organ, new DamageSpecifier(proto, FixedPoint2.New(20)), ignoreResistances: true, origin: attacker);
+        });
+
+        await pair.RunTicksSync(20);
+
+        FixedPoint2 integrityBeforeHeal = default;
+        await server.WaitAssertion(() =>
+        {
+            var woundableComp = sEntMan.GetComponent<WoundableComponent>(organ);
+            Assert.That(woundableComp.Bleeds, Is.GreaterThan(FixedPoint2.Zero), "Setup didn't actually leave the wound bleeding.");
+            integrityBeforeHeal = woundableComp.WoundableIntegrity;
+        });
+
+        await server.WaitPost(() =>
+        {
+            sWound.TryHealWoundsOnWoundable(organ, FixedPoint2.New(100), out _);
+        });
+
+        await server.WaitAssertion(() =>
+        {
+            var woundableComp = sEntMan.GetComponent<WoundableComponent>(organ);
+            Assert.That(woundableComp.WoundableIntegrity, Is.GreaterThan(integrityBeforeHeal),
+                "Bleeding no longer blocks healing - a bleeding wound should heal.");
         });
     }
 
@@ -659,7 +726,7 @@ public sealed class TraumaBoneBreakTest : GameTest
     }
 
     [Test]
-    public async Task BrokenBoneBlocksTopicalHealing()
+    public async Task BrokenBoneDoesNotBlockTopicalHealing()
     {
         var pair = Pair;
         var server = pair.Server;
@@ -705,7 +772,7 @@ public sealed class TraumaBoneBreakTest : GameTest
         await pair.RunTicksSync(5);
 
         // Drive the bone straight to Broken deterministically - same setup as
-        // BrokenBoneBlocksWoundHealing above.
+        // BrokenBoneDoesNotBlockWoundHealing above.
         await server.WaitAssertion(() =>
         {
             var woundableComp = sEntMan.GetComponent<WoundableComponent>(organ);
@@ -745,8 +812,13 @@ public sealed class TraumaBoneBreakTest : GameTest
 #pragma warning disable CS0618
             var mobDamageAfterHeal = sDamageable.GetTotalDamage(victim);
 #pragma warning restore CS0618
-            Assert.That(mobDamageAfterHeal, Is.EqualTo(mobDamageBeforeHeal),
-                "Topical healing reduced brute damage on the mob despite a Broken bone on the targeted limb - HealingSystem isn't respecting TraumaSystem.TraumasBlockingHealing.");
+            Assert.That(mobDamageAfterHeal, Is.LessThan(mobDamageBeforeHeal),
+                "Broken bones no longer block healing - topical healing should reduce brute damage despite the Broken bone.");
+
+            var woundableComp = sEntMan.GetComponent<WoundableComponent>(organ);
+            var boneEnt = woundableComp.Bone!.ContainedEntities.First();
+            Assert.That(sEntMan.GetComponent<BoneComponent>(boneEnt).BoneSeverity, Is.EqualTo(BoneSeverity.Broken),
+                "The bone itself should still be Broken - a brutepack heals the flesh, only surgery mends the bone.");
         });
     }
 
@@ -973,7 +1045,7 @@ public sealed class TraumaBoneBreakTest : GameTest
     /// only about the severity gate in HasAssociatedTrauma, not about how organ damage accrues).
     /// </summary>
     [Test]
-    public async Task OnlyDestroyedOrganDamageBlocksHealing()
+    public async Task OnlyDestroyedOrganDamageIsShownAsSevereTrauma()
     {
         var pair = Pair;
         var server = pair.Server;
@@ -1033,12 +1105,12 @@ public sealed class TraumaBoneBreakTest : GameTest
             brainIntegrity.OrganSeverity = OrganSeverity.Damaged;
 
             Assert.That(sTrauma.HasWoundableTrauma(organWoundable, TraumaType.OrganDamage, woundableComp, showAll: false), Is.False,
-                "A merely Damaged organ (not Destroyed) shouldn't count as a blocking trauma - it should still be topically healable.");
+                "A merely Damaged organ should be excluded from severe-trauma queries.");
 
             brainIntegrity.OrganSeverity = OrganSeverity.Destroyed;
 
             Assert.That(sTrauma.HasWoundableTrauma(organWoundable, TraumaType.OrganDamage, woundableComp, showAll: false), Is.True,
-                "A Destroyed organ should count as a blocking trauma, same as a Broken bone does.");
+                "A Destroyed organ should be included in severe-trauma queries.");
         });
     }
 }
