@@ -17,7 +17,7 @@
           emergencyShuttlePath: /Maps/Shuttles/emergency_rod.yml
         - type: StationJobs
           availableJobs:
-            # TOTAL: 53 job slots + 1 late-join only
+            # TOTAL: 54 job slots
             # Command (7)
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
