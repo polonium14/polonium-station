@@ -1,2 +1,2 @@
 ent-CartridgeAntiMateriel = nabój (.60 przeciwmateriałowy)
-    .desc = A high-power cartridge used by high-precision rifles.
+    .desc = Nabój o dużej mocy, stosowany w karabinach wysokoprecyzyjnych.

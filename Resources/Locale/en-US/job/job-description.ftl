@@ -64,19 +64,12 @@ job-description-ertmedic = Ensure that the station's crew have their injuries tr
 job-description-ertsecurity = Ensure that any threats to the station are eliminated.
 job-description-visitor = Enjoy your visit to the station!
 
-job-description-boxer = Wywalcz swoją drogę na szczyt! Wyzwij kierownika personelu i zostań aresztowany gdy wygrasz.
 
 job-description-brigmedic = Walcz na tyłach departamentu ochrony, o życia swoich towarzyszy! Jesteś pierwszą i ostatnią nadzieją swojego zespołu. Niech cię Hippokrates błogosławi.
 
-job-description-centcomoff = Zachowuj się jak ambasador najnowszej stacji w flocie Nanotrasen.
 
-job-description-zookeeper = Wystawiaj radosne ekspozycje słodkich zwierząt i kosmicznych karpi.
 
-# event-restricted jobs
-job-description-command-maid = Clean the bridge, command rooms, and everything else that command tells you to.
 
-job-description-security-clown = Do security's job, but don't forget to do it with your clown spice.
 
-job-description-party-maker = Throw the biggest party ever at this station!
 
 job-description-trainee = Learn how to thrive in space.

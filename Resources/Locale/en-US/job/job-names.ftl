@@ -128,4 +128,3 @@ JobTechnicalAssistant = Technical Assistant
 JobVisitor = Visitor
 JobWarden = Warden
 
-job-name-centcomoff = Urzędnik Centralnego Dowództwa

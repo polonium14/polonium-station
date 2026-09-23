@@ -1,10 +1,10 @@
 ent-BaseCartridgeLightRifle = nabój (.30 karabinowe)
     .desc = { ent-BaseCartridge.desc }
 ent-CartridgeLightRifle = nabój (.30 karabinowe)
-    .desc = A classic intermediate cartridge used by many combat rifles and LMGs. Standard kinetic ammunition is common and useful in most situations.
+    .desc = Klasyczny nabój pośredni stosowany w wielu karabinach bojowych i lekkich karabinach maszynowych. Standardowa amunicja kinetyczna jest powszechnie stosowana i przydatna w większości sytuacji.
 ent-CartridgeLightRiflePractice = nabój (.30 karabinowe treningowe)
-    .desc = A classic intermediate cartridge used by many combat rifles and LMGs. Practice ammunition fires a chalk projectile that stings a little, but otherwise causes no lasting damage.
+    .desc = Klasyczny nabój średniej mocy, stosowany w wielu karabinach bojowych i lekkich karabinach maszynowych. Amunicja treningowa wystrzeliwuje kredowy pocisk, który powoduje lekkie ukłucie, ale poza tym nie wyrządza żadnych trwałych uszkodzeń.
 ent-CartridgeLightRifleIncendiary = nabój (.30 karabinowe zapalające)
-    .desc = A classic intermediate cartridge used by many combat rifles and LMGs. Incendiary ammunition contains a self-igniting compound that sets targets ablaze.
+    .desc = Klasyczny nabój średniego kalibru stosowany w wielu karabinach bojowych i lekkich karabinach maszynowych. Amunicja zapalająca zawiera samozapalający się związek chemiczny, który podpala cele.
 ent-CartridgeLightRifleUranium = nabój (.30 karabinowe uranowe)
-    .desc = A classic intermediate cartridge used by many combat rifles and LMGs. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating targets from the inside.
+    .desc = Klasyczny nabój średniego kalibru stosowany w wielu karabinach bojowych i lekkich karabinach maszynowych. W amunicji uranowej rdzeń pocisku wykonany z ołowiu zastąpiono materiałem rozszczepialnym, co powoduje napromieniowanie celów od wewnątrz.

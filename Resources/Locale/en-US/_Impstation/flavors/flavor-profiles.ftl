@@ -7,7 +7,6 @@ flavor-complex-shimmeringblood = sweet and slightly creamy
 flavor-complex-feverdream = like you're losing your mind
 
 
-flavor-complex-entropy = like your tastebuds are unravelling
 
 flavor-complex-soju = like juice
 
@@ -57,7 +56,6 @@ flavor-complex-medical = like medical access
 flavor-complex-mime = like mime access
 flavor-complex-musician = like musician access
 flavor-complex-nuclearoperative = like nuclear operative access
-flavor-complex-quartermaster = like quartermaster access
 flavor-complex-reporter = like reporter access
 flavor-complex-research = like research access
 flavor-complex-researchdirector = like research director access

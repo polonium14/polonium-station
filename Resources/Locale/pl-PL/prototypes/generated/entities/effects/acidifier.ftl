@@ -1,2 +1,2 @@
-ent-Acidifier = acid
-    .desc = Melts you into a puddle of yuck!
+ent-Acidifier = kwas
+    .desc = Rozpływa cię w kałużę obrzydliwości!

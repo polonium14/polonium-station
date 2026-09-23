@@ -15,4 +15,3 @@ job-supervisors-hire = komukolwiek kto cię zatrudnił
 job-supervisors-everyone = absolutnie wszystkim
 job-supervisors-nobody = nobody
 job-supervisors-central-commanders = urzędnikom centralnego dowództwa
-job-supervisors-command = dowództwu stacji

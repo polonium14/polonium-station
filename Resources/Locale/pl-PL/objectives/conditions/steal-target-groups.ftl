@@ -64,6 +64,4 @@ steal-target-groups-animal-morty = Morty
 steal-target-groups-animal-renault = Renolt
 steal-target-groups-animal-shiva = Śiwa
 steal-target-groups-animal-tropico = Tropiko
-steal-target-groups-weapon-energy-shot-gun = strzelba energetyczna
 steal-target-groups-salvage-shuttle-console-circuitboard = płyta konsolowa wahadhłowca odzyskowego
-steal-target-groups-clothing-eyes-hud-beer = gogle piwne

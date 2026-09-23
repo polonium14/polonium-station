@@ -1,27 +1,27 @@
 ### Secret stash component. Stuff like potted plants, comfy chair cushions, etc...
 
 comp-secret-stash-action-hide-success = You hide { $item } in the { $stashname }.
-comp-secret-stash-action-hide-container-not-empty = There's already something in here!?
+comp-secret-stash-action-hide-container-not-empty = Tu jest już coś!?
 comp-secret-stash-action-hide-item-too-big = { CAPITALIZE($item) } is too big to fit in the { $stashname }.
-comp-secret-stash-action-get-item-found-something = There was something inside the { $stashname }!
-comp-secret-stash-on-examine-found-hidden-item = There is something hidden inside the { $stashname }!
-comp-secret-stash-on-destroyed-popup = Something falls out of the the { $stashname }!
+comp-secret-stash-action-get-item-found-something = Coś było wewnątrz schowka { $stashname }!
+comp-secret-stash-on-examine-found-hidden-item = Jest coś ukrytego wewnątrz schowka { $stashname }!
+comp-secret-stash-on-destroyed-popup = Coś wypada ze schowka { $stashname }!
 
 ### Verbs
 
-comp-secret-stash-verb-insert-into-stash = Stash item
-comp-secret-stash-verb-insert-message-item-already-inside = There is already an item inside the { $stashname }.
+comp-secret-stash-verb-insert-into-stash = Schowaj przedmiot
+comp-secret-stash-verb-insert-message-item-already-inside = W schowku { $stashname } znajduje się już jakiś przedmiot.
 comp-secret-stash-verb-insert-message-no-item = Hide { $item } in the { $stashname }.
-comp-secret-stash-verb-take-out-item = Grab item
-comp-secret-stash-verb-take-out-message-something = Take the contents of the { $stashname } out.
-comp-secret-stash-verb-take-out-message-nothing = There is nothing inside the { $stashname }.
-comp-secret-stash-verb-close = Close
-comp-secret-stash-verb-cant-close = You can't close the { $stashname } with that.
-comp-secret-stash-verb-open = Open
+comp-secret-stash-verb-take-out-item = Chwyć przedmiot
+comp-secret-stash-verb-take-out-message-something = Wyjmij zawartość schowka { $stashname }.
+comp-secret-stash-verb-take-out-message-nothing = Nic nie ma w schowku { $stashname }.
+comp-secret-stash-verb-close = Zamknij
+comp-secret-stash-verb-cant-close = Nie możesz tym zamknąć schowka { $stashname }.
+comp-secret-stash-verb-open = Otwórz
 
 ### Stash names
 
-secret-stash-plant = plant
-secret-stash-toilet = toilet cistern
-secret-stash-plushie = plushie
-secret-stash-cake = cake
+secret-stash-plant = Roślina
+secret-stash-toilet = Spłuczka
+secret-stash-plushie = Pluszak
+secret-stash-cake = Ciasto

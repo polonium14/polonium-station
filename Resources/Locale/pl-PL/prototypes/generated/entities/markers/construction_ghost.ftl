@@ -1,2 +1,2 @@
-ent-constructionghost = construction ghost
+ent-constructionghost = duch budowlany
     .desc = { "" }

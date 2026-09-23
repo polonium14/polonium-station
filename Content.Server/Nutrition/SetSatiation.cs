@@ -61,7 +61,7 @@ public sealed partial class SetSatiation : LocalizedEntityCommands
             var typeName = _proto.TryIndex(type, out var t) ? t.Name : $"\"{type}\"";
             shell.WriteLine(Loc.GetString(
                 "shell-target-entity-does-not-have-message",
-                ("missing", Loc.GetString("cmd-nutrition-setsatiation-need", ("satiation", typeName)))
+                ("missing", Loc.GetString("cmd-nutrition-satiation-need", ("satiation", typeName)))
             ));
             return;
         }

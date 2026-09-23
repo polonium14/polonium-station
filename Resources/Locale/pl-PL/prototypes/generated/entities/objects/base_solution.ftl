@@ -1,6 +1,6 @@
-ent-Solution = solution
+ent-Solution = rozwiązanie
     .desc = { "" }
-ent-SolutionCryo = solution
+ent-SolutionCryo = rozwiązanie
     .desc = { "" }
 ent-SolutionBeaker = { ent-Solution }
     .desc = { ent-Solution.desc }

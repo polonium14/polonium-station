@@ -1,21 +1,3 @@
--create-3rd-person =
-    { $chance ->
-        [1] Creates
-        *[other] create
-    }
-
--cause-3rd-person =
-    { $chance ->
-        [1] Causes
-        *[other] cause
-    }
-
--satiate-3rd-person =
-    { $chance ->
-        [1] Satiates
-        *[other] satiate
-    }
-
 entity-effect-guidebook-spawn-entity =
     { $chance ->
         [1] Creates
@@ -55,17 +37,7 @@ entity-effect-guidebook-flash =
         *[other] cause
     } a blinding flash
 
-entity-effect-guidebook-foam-area =
-    { $chance ->
-        [1] Creates
-        *[other] create
-    } large quantities of foam
 
-entity-effect-guidebook-smoke-area =
-    { $chance ->
-        [1] Creates
-        *[other] create
-    } large quantities of smoke
 
 entity-effect-guidebook-satiate =
     { $chance ->
@@ -228,21 +200,6 @@ entity-effect-guidebook-adjust-reagent-reagent =
         *[-1] from
     } the solution
 
-entity-effect-guidebook-adjust-reagent-group =
-    { $chance ->
-        [1] { $deltasign ->
-                [1] Adds
-                *[-1] Removes
-            }
-        *[other]
-            { $deltasign ->
-                [1] add
-                *[-1] remove
-            }
-    } {NATURALFIXED($amount, 2)}u of reagents in the group {$group} { $deltasign ->
-            [1] to
-            *[-1] from
-        } the solution
 
 entity-effect-guidebook-adjust-temperature =
     { $chance ->
@@ -260,17 +217,7 @@ entity-effect-guidebook-adjust-temperature =
             *[-1] from
         } the body it's in
 
-entity-effect-guidebook-chem-cause-disease =
-    { $chance ->
-        [1] Causes
-        *[other] cause
-    } the disease { $disease }
 
-entity-effect-guidebook-chem-cause-random-disease =
-    { $chance ->
-        [1] Causes
-        *[other] cause
-    } the diseases { $diseases }
 
 entity-effect-guidebook-jittering =
     { $chance ->
@@ -284,11 +231,6 @@ entity-effect-guidebook-clean-bloodstream =
         *[other] cleanse
     } the bloodstream of other chemicals
 
-entity-effect-guidebook-cure-disease =
-    { $chance ->
-        [1] Cures
-        *[other] cure
-    } diseases
 
 entity-effect-guidebook-eye-damage =
     { $chance ->
@@ -543,5 +485,18 @@ entity-effect-guidebook-add-reagent-to-bloodstream =
 entity-effect-disarm =
     { $chance ->
         [1] Disarms
-        *[other] disarms
+        *[other] disarm
     } the entity
+
+
+entity-effect-guidebook-bleed-unholy-blood =
+    { $chance ->
+        [1] Converts
+        *[other] convert
+    } bleeding blood into unholy blood
+
+entity-effect-guidebook-de-cultify =
+    { $chance ->
+        [1] Reduces
+        *[other] reduce
+    } cult corruption by {$amount}

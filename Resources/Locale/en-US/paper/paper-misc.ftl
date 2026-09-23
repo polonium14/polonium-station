@@ -1,8 +1,3 @@
-book-text-plasma-trap = Heheheheh, no way in hell they're going to get at our stash NOW, is there?
-      I rigged the area where our stuff's at to be a toasty thousand K.
-      You know how to drain it when we need it out.
-       - J.
-
 book-text-holoparasite-info = Thanks for choosing our holoparasite package!
       At cybersun, we pride ourselves on cutting-edge military and industrial technology, and greatly appreciate your contribution to our establishment!
       Guardians are helpful and intelligent beings which nest within your body, completely immune to common hazards such as pressure, temperature and even bullets!

@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Numerics;
 using Content.Server._RMC14.Movement;
 using Content.Server.Movement.Components;
 using Content.Shared._RMC14.CCVar;
@@ -134,10 +135,19 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
     private bool Collides(
         Entity<PredictedProjectileServerComponent, PhysicsComponent> projectile,
         Entity<LagCompensationComponent, FixturesComponent, PhysicsComponent, TransformComponent> other,
-        MapCoordinates? clientCoordinates)
+        MapCoordinates? clientCoordinates,
+        MapCoordinates? reportedImpact = null)
     {
         var projectileCoordinates = _transform.GetMapCoordinates(projectile);
         var projectilePosition = projectileCoordinates.Position;
+        
+        if (reportedImpact is { } impact)
+        {
+            if (impact.MapId != projectileCoordinates.MapId)
+                return false;
+
+            projectilePosition = impact.Position;
+        }
 
         MapCoordinates lowestCoordinate = default;
         var otherCoordinates = EntityCoordinates.Invalid;
@@ -185,6 +195,9 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         if (bounds.Contains(projectilePosition))
             return true;
 
+        if (reportedImpact != null)
+            return false;
+
         var projectileVelocity = _physics.GetLinearVelocity(projectile, projectile.Comp2.LocalCenter);
         projectilePosition = projectileCoordinates.Position + projectileVelocity / _timing.TickRate / 1.5f;
         return bounds.Contains(projectilePosition);
@@ -192,6 +205,9 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
 
     private void ProcessPredictedHit(PredictedProjectileHitEvent ev, ICommonSession player)
     {
+        if (ev.Hit.Count == 0)
+            return;
+
         if (!_predicted.TryGetValue((player.UserId, ev.Projectile), out var projectile))
             return;
 
@@ -210,7 +226,6 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             return;
         }
 
-        predictedProjectile.Hit = true;
         foreach (var (netEnt, clientPos) in ev.Hit)
         {
             if (GetEntity(netEnt) is not { Valid: true } hit)
@@ -227,7 +242,8 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             if (!Collides(
                     (projectile, predictedProjectile, projectilePhysics),
                     (hit, otherLagComp, otherFixtures, otherPhysics, otherTransform),
-                    clientPos))
+                    clientPos,
+                    ev.Impact))
             {
                 if (_logHits)
                     Log.Info("missed");
@@ -238,6 +254,13 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             if (_logHits)
                 Log.Info("hit");
 
+            predictedProjectile.ClientImpact = ev.Impact;
+            if (projectilePhysics.LinearVelocity.LengthSquared() > 0.01f)
+                predictedProjectile.ImpactDirection = Vector2.Normalize(projectilePhysics.LinearVelocity);
+
+            _projectile.PullBackToClientImpact(projectile);
+            predictedProjectile.Hit = true;
+            
             _projectile.ProjectileCollide((projectile, projectileComp, projectilePhysics), hit, true);
         }
     }

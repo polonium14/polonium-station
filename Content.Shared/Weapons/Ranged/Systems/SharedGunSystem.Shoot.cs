@@ -349,6 +349,13 @@ public abstract partial class SharedGunSystem
             if (HasComp<GunIgnorePredictionComponent>(gun))
                 return;
 
+            if (!HasComp<ProjectileComponent>(projectile))
+            {
+                if (predictedIndex < predictedProjectiles.Count)
+                    predictedIndex++;
+                return;
+            }
+
             if (predictedIndex >= predictedProjectiles.Count)
                 return;
 

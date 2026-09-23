@@ -24,7 +24,5 @@ reagent-name-vomit = wymiociny
 reagent-desc-vomit = Widzisz parę kawałków czyjegoś posiłku w nich.
 reagent-name-grey-matter = szara materia
 reagent-desc-grey-matter = Sok myśli, rzecz która wypływa z twoich uszu.
-reagent-name-sanguine-perniculate = szkarłatny pernikulat
-reagent-desc-sanguine-perniculate = Ciemnoczerwona krew, która zdaje się wić w maleficznym, złowrogim ruchu. Dotknięcie jej budzi uczucie niepokoju.
 reagent-name-living-tissue = living tissue
 reagent-desc-living-tissue = A mix of visceral matter from an alien species. You can feel it staring at you.

@@ -1,4 +1,4 @@
-ent-TableBase = table
-    .desc = A square piece of metal standing on four metal legs.
-ent-CounterBase = counter
+ent-TableBase = tabela
+    .desc = Kwadratowy kawałek metalu stojący na czterech metalowych nóżkach.
+ent-CounterBase = licznik
     .desc = { ent-TableBase.desc }

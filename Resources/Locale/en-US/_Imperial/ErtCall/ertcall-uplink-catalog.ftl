@@ -285,13 +285,11 @@ ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-desc = Magazine for the PMM machine
 ert-uplink-ErtCallUplinkWeaponBORGunMagazine-name = BOR Magazine
 ert-uplink-ErtCallUplinkWeaponBORGunMagazine-desc = Ammunition for BOR sniper rifle.
 
-ert-uplink-ErtCallUplinkWeaponLaserCellMG-name = EM72 Ashstorm
 ert-uplink-ErtCallUplinkWeaponLaserCellMG-desc = Directed-energy light machine gun. Uses rechargeable military power cells.
 
 ert-uplink-ErtCallUplinkMilitaryPowerCellMG-name = EM72 Ashstorm battery cell
 ert-uplink-ErtCallUplinkMilitaryPowerCellMG-desc = High-capacity power cell for the EM72 Ashstorm.
 
-ert-uplink-ErtCallUplinkWeaponRifleXlr556-name = VFD XLR-556 ICWS
 ert-uplink-ErtCallUplinkWeaponRifleXlr556-desc = High-rate 5.56 assault rifle with burst fire.
 
 ert-uplink-ErtCallUplinkWeaponRifleAsakimAutopulser-name = Kunisa-pattern plasma autopulser
@@ -303,13 +301,11 @@ ert-uplink-ErtCallUplinkUllmanWeaponPulsePistol-desc = Compact Ullman directed-p
 ert-uplink-ErtCallUplinkUllmanWeaponPulseSniper-name = U.I. DP-40 pulse sniper rifle
 ert-uplink-ErtCallUplinkUllmanWeaponPulseSniper-desc = Long-range Ullman pulse sniper with heavy hitscan shots.
 
-ert-uplink-ErtCallUplinkWeaponSubMachineGunVectorNtsfHclm-name = NTSF-HCLM-45
 ert-uplink-ErtCallUplinkWeaponSubMachineGunVectorNtsfHclm-desc = Heavy .45 magnum SMG from the corporate war era.
 
 ert-uplink-ErtCallUplinkMagazineMagnumSubMachineGun-name = .45 magnum SMG magazine
 ert-uplink-ErtCallUplinkMagazineMagnumSubMachineGun-desc = Magazine for the NTSF-HCLM-45 and compatible weapons.
 
-ert-uplink-ErtCallUplinkWeaponPistolHawk4-name = LWC Orzeł-4 I.S
 ert-uplink-ErtCallUplinkWeaponPistolHawk4-desc = Heavy LWC sidearm with self-fabricating armor-piercing rounds and integrated suppressor.
 
 ert-uplink-ErtCallUplinkSecurityHardsuit-name = ERT security's hardsuit

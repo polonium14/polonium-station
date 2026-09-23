@@ -1,5 +1,3 @@
-admin-ui-baby-jail-window-title = Baby Jail
-
 admin-ui-baby-jail-enabled = Baby Jail Enabled
 admin-ui-baby-jail-disabled = Baby Jail Disabled
 admin-ui-baby-jail-tooltip = The baby jail restricts players from joining if their account is too old or they do have too much overall playtime on this server.

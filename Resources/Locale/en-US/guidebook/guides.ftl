@@ -200,8 +200,6 @@ guide-entry-rules-s6 = S6
 guide-entry-rules-s7 = S7
 guide-entry-rules-s8 = S8
 guide-entry-rules-s9 = S9
-guide-entry-rules-mrp-m0 = Zasady MRP
-guide-entry-rules-m1 = M1
 guide-entry-rules-s10 = S10
 guide-entry-rules-space-law = Space Law
 guide-entry-rules-sl-crime-list = Crime List
@@ -218,3 +216,4 @@ guide-entry-metashield = Metashield
 guide-entry-namingscheme = Naming Scheme
 guide-entry-writing = Writing
 guide-entry-glossary = Glossary
+

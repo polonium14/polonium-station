@@ -8,4 +8,3 @@ department-Security-description = Utrzymuj porządek prawny na stacji.
 department-Science-description = Badaj artefakty i anomalie aby wynaleźć nowe wyposażenie dla stacji.
 department-Silicon-description = Przestrzegaj swoich praw i służ załodze.
 department-Specific-description = Prace dostępne tylko na niektórych stacjach.
-department-Ghostrole-description = Wszystkie straszydła tu mieszkają.

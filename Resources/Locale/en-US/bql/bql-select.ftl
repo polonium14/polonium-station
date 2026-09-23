@@ -23,3 +23,4 @@ ui-bql-results-delete = Delete
 ui-bql-results-delete-confirm = Confirm?
 ui-bql-results-pin = Pin
 ui-bql-results-unpin = Unpin
+

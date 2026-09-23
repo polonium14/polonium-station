@@ -1,8 +1,8 @@
-ent-AITimedSpawner = AI Timed Spawner
+ent-AITimedSpawner = spawner SI okresowy
     .desc = { ent-MarkerBase.desc }
-ent-XenoAITimedSpawner = Xeno AI Timed Spawner
+ent-XenoAITimedSpawner = spawner kseno SI okresowy
     .desc = { ent-MarkerBase.desc }
-ent-MouseTimedSpawner = Mouse Timed Spawner
+ent-MouseTimedSpawner = spawner mysz okresowy
     .desc = { ent-MarkerBase.desc }
-ent-CockroachTimedSpawner = Cockroach Timed Spawner
+ent-CockroachTimedSpawner = spawner karaluch okresowy
     .desc = { ent-MouseTimedSpawner.desc }

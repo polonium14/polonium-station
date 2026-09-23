@@ -1,32 +1,33 @@
-stack-steel = steel
+stack-steel = stal
 stack-bananium = bananium
-stack-glass = glass
-stack-plasteel = plasteel
-stack-brass = brass
-stack-plastic = plastic
-stack-silver = silver
-stack-gold = gold
-stack-reinforced-glass = reinforced glass
-stack-plasma-glass = plasma glass
-stack-uranium = uranium
-stack-uranium-glass = uranium glass
-stack-clockwork-glass = clockwork glass
-stack-reinforced-plasma-glass = reinforced plasma glass
-stack-reinforced-uranium-glass = reinforced uranium glass
+stack-glass = szkło
+stack-plasteel = plastal
+stack-brass = mosiądz
+stack-plastic = plastik
+stack-silver = srebro
+stack-gold = złoto
+stack-reinforced-glass = wzmocnione szkło
+stack-plasma-glass = szkło plazmowe
+stack-uranium = uran
+stack-uranium-glass = szkło uranowe
+stack-clockwork-glass = szkło zegarowe
+stack-reinforced-plasma-glass = wzmocnione szkło plazmowe
+stack-reinforced-uranium-glass = wzmocnione szkło uranowe
 stack-runed-glass = runiczne szkło
 stack-runed-steel = runiczna stal
 stack-runed-plasteel = runiczna plastal
-stack-gunpowder = gunpowder
-stack-cardboard = cardboard
+stack-gunpowder = proch strzelniczy
+stack-cardboard = karton
 stack-bones =
     { $amount ->
-        [1] bone
-       *[other] bones
+        [1] kość
+       *[other] kości
     }
 stack-cloth =
     { $amount ->
-        [1] cloth
-       *[other] cloths
+        [one] tkanina
+        [few] tkaniny
+       *[many] tkanin
     }
 stack-lv-cable =
     { $amount ->
@@ -45,13 +46,15 @@ stack-hv-cable =
     }
 stack-explosive-cord =
     { $amount ->
-        [1] explosive cord
-       *[other] explosive cords
+        [one] linka wybuchowa
+        [few] linki wybuchowe
+       *[many] linek wybuchowych
     }
 stack-wood-plank =
     { $amount ->
-        [1] wood plank
-       *[other] wood planks
+        [one] drewniana deska
+        [few] drewniane deski
+       *[many] drewnianych desek
     }
 stack-durathread =
     { $amount ->
@@ -60,13 +63,15 @@ stack-durathread =
     }
 stack-rods =
     { $amount ->
-        [1] rod
-       *[other] rods
+        [1] pręt
+        [few] pręty
+       *[many] prętów
     }
 stack-meat-sheet =
     { $amount ->
-        [1] meat sheet
-       *[other] meat sheets
+        [one] arkusz mięsa
+        [few] arkusze mięsa
+       *[many] arkuszy mięsa
     }
 stack-space-carp-tooth =
     { $amount ->
@@ -80,8 +85,9 @@ stack-paper =
     }
 stack-diamond =
     { $amount ->
-        [1] diamond
-       *[other] diamonds
+        [one] diament
+        [few] diamenty
+       *[many] diamentów
     }
 stack-silk =
     { $amount ->
@@ -90,13 +96,14 @@ stack-silk =
     }
 stack-cotton =
     { $amount ->
-        [1] cotton
-       *[other] cottons
+        [1] bawełna
+       *[other] bawełny
     }
 stack-artifact-fragment =
-    artifact { $amount ->
-        [1] fragment
-       *[other] fragments
+    { $amount ->
+        [one] fragment artefaktu
+        [few] fragmenty artefaktu
+       *[many] fragmentów artefaktu
     }
 stack-xenoborg-crystal =
     { $amount ->
@@ -105,61 +112,64 @@ stack-xenoborg-crystal =
     }
 stack-conveyor-belt =
     { $amount ->
-        [1] conveyor belt
-       *[other] conveyor belts
+        [one] przenośnik taśmowy
+        [few] przenośniki taśmowe
+       *[many] przenośników taśmowych
     }
 # best materials
-stack-ground-tobacco = ground tobacco
-stack-ground-cannabis = ground cannabis
-stack-ground-rainbow-cannabis = ground rainbow cannabis
-stack-dried-tobacco-leaves = dried tobacco leaves
-stack-dried-cannabis-leaves = dried cannabis leaves
-stack-dried-rainbow-cannabis-leaves = dried rainbow cannabis leaves
+stack-ground-tobacco = tytoń
+stack-ground-cannabis = marihuana
+stack-ground-rainbow-cannabis = marihuana tęczowa
+stack-dried-tobacco-leaves = liście suszonego tytoniu
+stack-dried-cannabis-leaves = suszone liście marihuany
+stack-dried-rainbow-cannabis-leaves = suszone liście tęczowej marihuany
 stack-cigarette-filter =
-    cigarette { $amount ->
-        [1] filter
-       *[other] filters
+    { $amount ->
+        [one] filtr do papierosa
+        [few] filtry do papierosów
+       *[many] filtrów do papierosów
     }
 stack-rolling-paper =
-    rolling { $amount ->
-        [1] paper
-       *[other] papers
+    { $amount ->
+        [one] bletka
+        [few] bletki
+       *[many] bletek
     }
-stack-fulton = fulton
-stack-credit = speso
-stack-plasma = plasma
-stack-biomass = biomass
-stack-pyrotton = pyrotton
-stack-sharkminnow-tooth = sharkminnow tooth
-stack-goliath-hide = goliath hide
-stack-telecrystal = telecrystal
-stack-gold-ore = gold ore
-stack-rough-diamond = rough diamond
-stack-iron-ore = iron ore
-stack-plasma-ore = plasma ore
-stack-silver-ore = silver ore
-stack-space-quartz = space quartz
-stack-uranium-ore = uranium ore
-stack-bananium-ore = bananium ore
-stack-coal = coal
-stack-salt = salt
+stack-fulton = balon logistyczny
+stack-credit = spesos
+stack-plasma = plazma
+stack-biomass = biomasa
+stack-pyrotton = piroton
+stack-sharkminnow-tooth = ząb kosmicznego rekina
+stack-goliath-hide = skóra goliata
+stack-telecrystal = telekryształ
+stack-gold-ore = ruda złota
+stack-rough-diamond = nieoszlifowany diament
+stack-iron-ore = ruda żelaza
+stack-plasma-ore = ruda plazmy
+stack-silver-ore = ruda srebra
+stack-space-quartz = kosmiczny kwarc
+stack-uranium-ore = ruda uranu
+stack-bananium-ore = ruda bananium
+stack-coal = węgiel
+stack-salt = sól
 stack-salvageticket = Bilet Złomiarza
-stack-inflatable-wall = inflatable wall
-stack-inflatable-door = inflatable door
-stack-ointment = ointment
-stack-aloe-cream = aloe cream
-stack-gauze = gauze
-stack-brutepack = brutepack
-stack-bloodpack = bloodpack
-stack-medicated-suture = medicated-suture
-stack-regenerative-mesh = regenerative-mesh
+stack-inflatable-wall = nadmuchiwana ściana
+stack-inflatable-door = nadmuchiwane drzwi
+stack-ointment = maść
+stack-aloe-cream = krem aloesowy
+stack-gauze = gaza
+stack-brutepack = plastry
+stack-bloodpack = pakiet krwi
+stack-medicated-suture = szwy
+stack-regenerative-mesh = siatka regeneracyjna
 stack-capacitor = kondensator
-stack-micro-manipulator = modular machine part
+stack-micro-manipulator = modułowa część maszyny
 stack-matter-bin = pojemnik na materię
-stack-pancake = pancake
-stack-blueberry-pancake = blueberry pancake
-stack-chocolate-chip-pancake = chocolate chip pancake
-stack-pizza-box = pizza box
+stack-pancake = naleśnik
+stack-blueberry-pancake = jagodowy naleśnik
+stack-chocolate-chip-pancake = czekoladowy naleśnik
+stack-pizza-box = pudełko pizzy
 stack-dark-tile = ciemna płytka
 stack-dark-steel-diagonal-mini-tile = ciemna stalowa ukośna mini płytka
 stack-dark-steel-diagonal-tile = ciemna stalowa ukośna płytka
@@ -167,8 +177,8 @@ stack-dark-steel-herringbone = ciemna stalowa jodełka
 stack-dark-steel-horizontal-slats-tile-bordered = ciemna stalowa pozioma płytka listwowa z obramowaniem
 stack-dark-steel-mini-tile = ciemna stalowa mini płytka
 stack-dark-steel-mono-tile = ciemna stalowa płyta mono
-stack-dark-steel-pavement = dark steel pavement
-stack-dark-steel-vertical-pavement = dark steel vertical pavement
+stack-dark-steel-pavement = nawierzchnia z ciemnej stali
+stack-dark-steel-vertical-pavement = pionowa nawierzchnia z ciemnej stali
 stack-dark-steel-vertical-slats-tile-bordered = ciemna stalowa pionowa płytka listwowa z obramowaniem
 stack-dark-steel-slats-tile-continuous = ciemna stalowa ciągła płytka listwowa
 stack-offset-dark-steel-tile = ciemna przesunięta stalowa płytka
@@ -179,8 +189,8 @@ stack-steel-herringbone = stalowa jodełka
 stack-steel-horizontal-slats-tile-bordered = stalowa pozioma płytka listwowa z obramowaniem
 stack-steel-mini-tile = stalowa mini płytka
 stack-steel-mono-tile = stalowa płyta mono
-stack-steel-pavement = steel pavement
-stack-steel-vertical-pavement = steel vertical pavement
+stack-steel-pavement = nawierzchnia stalowa
+stack-steel-vertical-pavement = pionowa nawierzchnia stalowa
 stack-steel-vertical-slats-tile-bordered = stalowa pionowa płytka listwowa z obramowaniem
 stack-steel-slats-tile-continuous = stalowa ciągła płytka listwowa
 stack-white-tile = biała płytka
@@ -191,8 +201,8 @@ stack-white-steel-herringbone = biała stalowa jodełka
 stack-white-steel-horizontal-slats-tile-bordered = biała stalowa pozioma płytka listwowa z obramowaniem
 stack-white-steel-mini-tile = biała stalowa mini płytka
 stack-white-steel-mono-tile = biała stalowa płyta mono
-stack-white-steel-pavement = white steel pavement
-stack-white-steel-vertical-pavement = white steel vertical pavement
+stack-white-steel-pavement = biała nawierzchnia stalowa
+stack-white-steel-vertical-pavement = biała pionowa nawierzchnia stalowa
 stack-white-steel-vertical-slats-tile-bordered = biała stalowa pionowa płytka listwowa z obramowaniem
 stack-white-steel-slats-tile-continuous = biała stalowa ciągła płytka listwowa
 stack-steel-dark-checker-tile = ciemna stalowa płytka w szachownicę
@@ -206,11 +216,11 @@ stack-techmaint-floor = podłoga tuneli tech.
 stack-techmaint-floor-dark = ciemna podłoga tuneli tech.
 stack-freezer-tile = płytka zamrażarki
 stack-showroom-tile = płytka sali wystawowej
-stack-green-circuit-floor = green-circuit floor
+stack-green-circuit-floor = podłoga z zielonego obwodu
 stack-gold-floor = złota podłoga
 stack-mono-tile = płytka mono
-stack-filled-brass-plate = filled brass plate
-stack-smooth-brass-plate = smooth brass plate
+stack-filled-brass-plate = wypełniona mosiężna płytka
+stack-smooth-brass-plate = gładka mosiężna płytka
 stack-linoleum-floor = podłoga z linoleum
 stack-hydro-tile = płytka hydro
 stack-lime-tile = limonkowa płytka
@@ -255,10 +265,10 @@ stack-concrete-mono-tile = betonowa płyta
 stack-concrete-smooth = gładki beton
 stack-gray-concrete-tile = szara betonowa płytka
 stack-gray-concrete-mono-tile = szara betonowa płyta
-stack-gray-concrete-smooth = gray concrete smooth
+stack-gray-concrete-smooth = gładki szary beton
 stack-old-concrete-tile = stara betonowa płytka
 stack-old-concrete-mono-tile = stara betonowa płyta
-stack-old-concrete-smooth = old concrete smooth
+stack-old-concrete-smooth = stary gładki beton
 stack-ironsand-concrete-tile = żelazopiaszczysta betonowa płytka
 stack-ironsand-concrete-mono-tile = jednolita betonowa płytka z żelaznego piasku
 stack-ironsand-concrete-smooth = gładki beton z żelaznego piasku
@@ -269,7 +279,7 @@ stack-grass-jungle-floor-tile = płytka trawy dżungli
 stack-snow-floor-tile = płytka śniegu
 stack-wood-patter-floor = podłoga z wzorem drewna
 stack-flesh-floor = mięsista podłoga
-stack-steel-maint-floor = steel maint floor
+stack-steel-maint-floor = stalowa podłoga techniczna
 stack-grating-maint-floor = kratownica techniczna
 stack-web-tile = pajęczynowa podłoga
 stack-astro-grass-floor = astro-trawa
@@ -280,15 +290,15 @@ stack-jungle-astro-grass-floor = astro-trawa dżungli
 stack-astro-ice-floor = astro-lód
 stack-astro-snow-floor = astro-śnieg
 stack-large-wood-floor = duża drewniana podłoga
-stack-red-circuit-floor = red-circuit floor
-stack-asteroid-astro-sand-floor = asteroid astro-sand floor
-stack-desert-astro-sand-floor = desert astro-sand floor
-stack-white-marble-floor = white marble floor
-stack-white-marble-mono-floor = white marble mono floor
-stack-dark-marble-floor = dark marble floor
-stack-dark-marble-mono-floor = dark marble mono floor
+stack-red-circuit-floor = podłoga z czerwonego obwodu
+stack-asteroid-astro-sand-floor = podłoga z piasku asteroidowego
+stack-desert-astro-sand-floor = podłoga z pustynnego astro-piasku
+stack-white-marble-floor = podłoga z białego marmuru
+stack-white-marble-mono-floor = podłoga z białego marmuru w jednym kolorze
+stack-dark-marble-floor = podłoga z ciemnego marmuru
+stack-dark-marble-mono-floor = podłoga z ciemnego marmuru w jednym kolorze
 stack-plasma-marble-floor = plazmarmurowa podłoga
-stack-uranium-marble-floor = uranium marble floor
+stack-uranium-marble-floor = podłoga z marmuru uranowego
 stack-astro-ironsand-floor = astro-żelazopiasek
 stack-astro-ironsand-floor-borderless = bezkrawędziowy astro-żelazopiasek
 stack-blue-space-cube = kostka blue space

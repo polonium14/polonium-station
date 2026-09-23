@@ -37,5 +37,4 @@ station-event-random-sentience-flavor-organic = organiczny
 station-event-random-sentience-flavor-primate = naczelny
 station-event-random-sentience-flavor-kobold = kobold
 station-event-random-sentience-flavor-inanimate = nieożywiony
-station-event-random-sentience-flavor-corgi = corgi
 station-event-random-sentience-flavor-slime = szlam

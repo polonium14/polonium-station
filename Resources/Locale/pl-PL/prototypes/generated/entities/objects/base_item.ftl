@@ -1,8 +1,8 @@
-ent-BaseItem = item
+ent-BaseItem = pozycja
     .desc = { "" }
 ent-BaseItemDestructible = { "" }
     .desc = { "" }
-ent-BaseStorageItem = storage item
+ent-BaseStorageItem = pozycja magazynowa
     .desc = { ent-BaseItem.desc }
 ent-BaseBagOpenClose = { "" }
     .desc = { "" }

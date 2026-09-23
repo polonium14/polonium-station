@@ -1,6 +1,6 @@
-ent-TrashBag = trash bag
+ent-TrashBag = worek na śmieci
     .desc = { ent-BaseStorageItem.desc }
-ent-TrashBagHolding = trash bag of holding
-    .desc = A trash bag that opens into a localized pocket of bluespace.
-ent-BorgTrashBag = internal trash bag
-    .desc = An upgraded trash bag with a larger internal volume, installed directly into a custodial cyborg.
+ent-TrashBagHolding = worek na śmieci z magicznym pojemnikiem
+    .desc = Worek na śmieci, który po otwarciu tworzy niewielką przestrzeń niebieską.
+ent-BorgTrashBag = wewnętrzny worek na śmieci
+    .desc = Ulepszona torba na śmieci o większej pojemności, montowana bezpośrednio w Cyborgu sprzątającym.

@@ -17,4 +17,3 @@ job-supervisors-nobody = nobody
 
 job-supervisors-central-commanders = urzędnikom centralnego dowództwa
 
-job-supervisors-command = dowództwu stacji

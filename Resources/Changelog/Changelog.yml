@@ -1,64 +1,4 @@
 ﻿Entries:
-- author: mdrkrg
-  changes:
-  - message: APC sprites now shows the correct state on round start.
-    type: Fix
-  id: 9509
-  time: '2026-02-09T13:14:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42852
-- author: ScarKy0
-  changes:
-  - message: Vulpkanin now have a yawn sound.
-    type: Add
-  id: 9510
-  time: '2026-02-09T15:32:39.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42768
-- author: TytosB
-  changes:
-  - message: adjusted several rooms and added missing items on map serpentcrest. increased
-      min pop to 50.
-    type: Tweak
-  id: 9511
-  time: '2026-02-09T20:34:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42863
-- author: SeaWyrm
-  changes:
-  - message: Horizonal and vertical steel slat floor tiles, as well as their dark
-      and white variants, can now be created with a Cutter lathe.
-    type: Add
-  id: 9512
-  time: '2026-02-10T01:48:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/37832
-- author: ArtisticRoomba
-  changes:
-  - message: Fixed filters not transferring heat energy from the inlet to the filter
-      outlet while still transferring physical gas.
-    type: Fix
-  id: 9513
-  time: '2026-02-10T10:26:03.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42876
-- author: 11BelowStudio
-  changes:
-  - message: Regular bots are now repaired gradually (short incremental doafters)
-      instead of via one long doafter, for parity with borgs.
-    type: Tweak
-  id: 9514
-  time: '2026-02-10T17:15:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42878
-- author: TiniestShark
-  changes:
-  - message: Added the ability for Vulps to wag their tails.
-    type: Add
-  id: 9515
-  time: '2026-02-10T22:26:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42843
-- author: magnnusson
-  changes:
-  - message: Intercoms can now be constructed on walls.
-    type: Fix
-  id: 9516
-  time: '2026-02-11T20:01:44.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42821
 - author: Minemoder
   changes:
   - message: The sneeze emote has been readded.
@@ -4137,3 +4077,88 @@
   id: 10007
   time: '2026-09-19T15:13:44.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1036
+- author: nikitosych
+  changes:
+  - message: "Dodano sprawdzanie brakuj\u0105cych kluczy lokalizacji w kodzie C# i\
+      \ XAML."
+    type: Fix
+  - message: "Poprawiono istniej\u0105ce klucze lokalizacji."
+    type: Fix
+  - message: "Dodano brakuj\u0105ce wpisy lokalizacji en-US."
+    type: Add
+  - message: "Rozdzielono b\u0142\u0119dy i ostrze\u017Cenia w `check_locales.py`."
+    type: Tweak
+  id: 10008
+  time: '2026-09-21T09:32:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1041
+- author: Polonium-bot
+  changes:
+  - message: "Zaktualizowano polsk\u0105 lokalizacj\u0119 w komunikatach interfejsu,\
+      \ przedmiot\xF3w, stworze\u0144 i system\xF3w."
+    type: Tweak
+  - message: "Dodano polskie formy liczby dla licznik\xF3w przedmiot\xF3w, amunicji\
+      \ i stos\xF3w."
+    type: Tweak
+  - message: "Poprawiono t\u0142umaczenia nazw, opis\xF3w oraz komunikat\xF3w konsol\
+      \ i komponent\xF3w."
+    type: Fix
+  id: 10009
+  time: '2026-09-21T12:36:26.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1040
+- author: Nikita
+  changes:
+  - message: "Przywr\xF3cono poziomy dost\u0119pu `Reporter` i `Robotics` w konsoli\
+      \ HOPa."
+    type: Tweak
+  id: 10010
+  time: '2026-09-21T18:46:21.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1044
+- author: maciejwalendziuk
+  changes:
+  - message: "Usuni\u0119to zakodowan\u0105 na sta\u0142e warto\u015B\u0107 z testu\
+      \ `LocalizedIdentifier`."
+    type: Fix
+  - message: Test pobiera oczekiwany tekst przez `ILocalizationManager`.
+    type: Fix
+  id: 10011
+  time: '2026-09-22T14:37:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1039
+- author: Polonium-bot
+  changes:
+  - message: "Poprawiono formatowanie polskich komunikat\xF3w lokalizacyjnych."
+    type: Fix
+  id: 10012
+  time: '2026-09-22T14:37:32.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1048
+- author: nikitosych
+  changes:
+  - message: "Ukrywanie b\u0105belk\xF3w rozmowy poza zasi\u0119giem gracza."
+    type: Fix
+  - message: "Ograniczenie kosztownych test\xF3w widoczno\u015Bci na podstawie odleg\u0142\
+      o\u015Bci."
+    type: Tweak
+  id: 10013
+  time: '2026-09-22T14:37:07.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1049
+- author: nikitosych
+  changes:
+  - message: Naprawiono oznaczenia gatunku Voks.
+    type: Fix
+  - message: Przypisano oznaczenia ogona do warstwy `TailOverlay`.
+    type: Fix
+  - message: "Dodano obs\u0142ug\u0119 ikon dla warstwy `TailOverlay`."
+    type: Tweak
+  - message: "Dodano opcjonaln\u0105 warstw\u0119 `TailOverlay` dla gatunk\xF3w Moth\
+      \ i Thaven."
+    type: Tweak
+  id: 10014
+  time: '2026-09-22T19:09:56.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1050
+- author: Nikita
+  changes:
+  - message: "Brigmed teraz poprawnie wy\u015Bwietla si\u0119 w monitoringach za\u0142\
+      ogi"
+    type: Fix
+  id: 10015
+  time: '2026-09-23T08:20:45.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1051

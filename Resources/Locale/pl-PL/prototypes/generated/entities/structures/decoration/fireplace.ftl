@@ -1,2 +1,2 @@
-ent-Fireplace = fireplace
-    .desc = A place that has fire. Cozy!
+ent-Fireplace = kominek
+    .desc = Miejsce, w którym płonie ogień. Jakie to przytulne!

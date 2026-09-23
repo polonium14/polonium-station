@@ -1,2 +1,2 @@
 ent-SurgeryKit = zestaw chirurgiczny
-    .desc = Prosty, profesjonalny zestaw na podstawowe narzędzia potrzebne do operacji.
+    .desc = Podstawowy, profesjonalny zestaw. Zawiera podstawowe rzeczy potrzebne do operowania.

@@ -1,2 +1,2 @@
-ent-FloorWaterEntity = water
-    .desc = A real thirst quencher.
+ent-FloorWaterEntity = woda
+    .desc = Prawdziwy pogromca pragnienia.

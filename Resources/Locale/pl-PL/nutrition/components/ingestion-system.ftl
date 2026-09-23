@@ -27,7 +27,13 @@ ingestion-verb-drink = Drink
 
 -edible-satiated =
     { $satiated ->
-        [true] { " " }You don't feel like you could { $verb } any more.
+        [true]
+            { " " }{ $verb ->
+                [eat] Nie masz już ochoty jeść.
+                [drink] Nie masz już ochoty pić.
+                [swallow] Nie masz już ochoty połykać.
+               *[other] Nie masz już ochoty na więcej.
+            }
        *[false] { "" }
     }
 edible-nom = Nom. {$flavors}{ -edible-satiated(satiated: $satiated, verb: "eat") }
@@ -35,7 +41,6 @@ edible-nom-other = Nom.
 edible-slurp = Slurp. {$flavors}{ -edible-satiated(satiated: $satiated, verb: "drink") }
 edible-slurp-other = Slurp.
 edible-swallow = You swallow { THE($food) }.{ -edible-satiated(satiated: $satiated, verb: "swallow") }
-edible-gulp = Gulp. { $flavors }
 edible-gulp-other = Gulp.
 edible-has-used-storage = You cannot { $verb } { THE($food) } with an item stored inside.
 

@@ -1,10 +1,10 @@
 ent-BaseDeskBell = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-EmptyDeskBell = unfinished desk bell
-    .desc = An empty bell missing its noise maker.
+ent-EmptyDeskBell = niedokończony dzwonek na biurko
+    .desc = Pusty dzwonek, w którym brakuje elementu wydającego dźwięk.
 ent-DeskBell = dzwonek na biurko
     .desc = Kamień węgielny każdej pracy w obsłudze klienta. Odczuwasz nieustanną chęć dzwonienia nim.
-ent-DeskBuzzer = desk buzzer
-    .desc = An advanced customer service tool. You feel an unending urge to buzz it.
-ent-DeskHorn = desk horn
-    .desc = The cornerstone of any clown business. You feel an unending urge to honk it.
+ent-DeskBuzzer = brzęczyk biurkowy
+    .desc = Zaawansowane narzędzie do obsługi klienta. Czujesz nieustanną potrzebę, by z niego skorzystać.
+ent-DeskHorn = klakson biurkowy
+    .desc = Podstawa każdej działalności klauna. Czujesz nieustanną potrzebę, by w to honkować.

@@ -14,5 +14,5 @@ ent-FireExtinguisherMini = kieszonkowa gaśnica
     .desc = Lekki i kompaktowy model gaśnicy w ramie z włókna szklanego. Mieści mniej wody niż jej większy brat.
 ent-SolutionFireExtinguisherMini = { ent-SolutionSpray }
     .desc = { ent-SolutionSpray.desc }
-ent-SelfRechargingFireExtinguisher = self-recharging fire extinguisher
+ent-SelfRechargingFireExtinguisher = gaśnica samonapełniająca się
     .desc = It extinguishes fires. it slowly refills with water.
