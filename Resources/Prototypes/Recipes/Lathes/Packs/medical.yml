@@ -50,6 +50,7 @@
   - IVDripFlatpack
   - IVBag
   - BoneGel
+  - VehicleWheelchairFolded
 
 - type: latheRecipePack
   id: RollerBedsStatic
