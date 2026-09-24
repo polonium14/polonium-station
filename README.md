@@ -8,13 +8,20 @@ To jest polska wersja gry, oparta na repozytorium [Funky Station](https://github
 
 Aby zapobiec forkom RobustToolbox, klient i serwer ładują paczkę "Content". Ta paczka zawiera wszystko, co potrzebne do gry na jednym konkretnym serwerze.
 
-Jeśli chcesz hostować lub tworzyć zawartość dla SS14, to właśnie to repozytorium jest ci potrzebne. Zawiera zarówno RobustToolbox, jak i paczkę content do rozwoju nowych paczek zawartości.
+Jeśli chcesz hostować lub tworzyć zawartość dla SS14, to właśnie to repozytorium jest ci potrzebne. Zawiera zarówno RobustToolbox, jak i paczkę content do rozwoju nowych paczek zawartości
 
 ## Linki
 
 <div align="center">
 
 [Strona WWW](https://ss14.pl/) | [Discord](https://discord.ss14.pl/) | [Wiki](https://wiki.ss14.pl/) | [Pobierz grę](https://ss14.pl/#download)
+
+
+Polski serwer:
+
+<a href="https://ss14.info/servers/polonium-1" target="_blank" rel="noopener">
+  <img src="https://ss14.info/badge/135.png?size=md&amp;theme=light" width="116" height="28" alt="[PL]🪐 Polonium | 🎓 Mamy TUTORIAL z gry! | 🤍❤️ Polskie Community — Online | 0/50">
+</a>
 
 </div>
 
