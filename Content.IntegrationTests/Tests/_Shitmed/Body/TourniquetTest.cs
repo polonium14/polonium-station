@@ -34,6 +34,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 public sealed class TourniquetTest : GameTest
 {
     private static readonly ProtoId<DamageTypePrototype> PiercingDamageType = "Piercing";
+    private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
 
     [TestPrototypes]
     private const string Prototypes = @"
@@ -347,6 +348,9 @@ public sealed class TourniquetTest : GameTest
             user = sEntMan.SpawnEntity("TourniquetTestBystander", coords);
             bodylessTarget = sEntMan.SpawnEntity("TourniquetTestBodylessTarget", coords);
             validTarget = sEntMan.SpawnEntity("TourniquetTestSelf", coords);
+            var arm = sEntMan.SpawnEntity("TourniquetTestArm", coords);
+            var containers = sEntMan.System<SharedContainerSystem>();
+            containers.Insert(arm, containers.GetContainer(validTarget, BodyComponent.ContainerID));
             tourniquetItem = sEntMan.SpawnEntity("Tourniquet", coords);
 
             sEntMan.GetComponent<TargetingComponent>(user).Target = TargetBodyPart.LeftArm;
@@ -415,4 +419,87 @@ public sealed class TourniquetTest : GameTest
                 "A wound created AFTER the tourniquet was applied should still get the bleed-block modifier, not just the wounds that existed at application time.");
         });
     }
+    [TestCase(true)]
+    [TestCase(false)]
+    public async Task OverlappingTourniquetCannotOverwriteExistingProtection(bool armFirst)
+    {
+        var (self, arm, hand, coords, entMan, wounds) = await Setup();
+        await Server.WaitAssertion(() =>
+        {
+            var first = entMan.SpawnEntity("Tourniquet", coords);
+            var firstEvent = new TourniquetDoAfterEvent(armFirst ? "ArmLeft" : "HandLeft");
+            firstEvent.DoAfter = new Content.Shared.DoAfter.DoAfter(0,
+                new DoAfterArgs(entMan, self, TimeSpan.Zero, firstEvent, self, self, first), TimeSpan.Zero);
+            entMan.EventBus.RaiseLocalEvent(self, firstEvent);
+            Assert.That(firstEvent.Handled, Is.True);
+            var second = entMan.SpawnEntity("Tourniquet", coords);
+            var ev = new TourniquetDoAfterEvent(armFirst ? "HandLeft" : "ArmLeft");
+            ev.DoAfter = new Content.Shared.DoAfter.DoAfter(0,
+                new DoAfterArgs(entMan, self, TimeSpan.Zero, ev, self, self, second), TimeSpan.Zero);
+            entMan.EventBus.RaiseLocalEvent(self, ev);
+            Assert.That(entMan.GetComponent<TourniquetedComponent>(hand).TourniquetEntity, Is.EqualTo(first));
+            Assert.That(entMan.GetComponent<TourniquetComponent>(second).OrganTourniqueted, Is.Null);
+            Assert.That(ev.Handled, Is.False);
+        });
+    }
+    [Test]
+    public async Task DeletingAppliedTourniquetRestoresBleedingAndSensation()
+    {
+        var (self, arm, hand, coords, entMan, wounds) = await Setup();
+        var item = await ApplyTourniquet(self, coords, entMan);
+        await Server.WaitAssertion(() =>
+        {
+            entMan.DeleteEntity(item);
+            foreach (var organ in new[] { arm, hand })
+            {
+                Assert.That(entMan.HasComponent<TourniquetedComponent>(organ), Is.False);
+                Assert.That(AnyWoundHasModifier(entMan, wounds, organ, "TourniquetPresent"), Is.False);
+                Assert.That(entMan.GetComponent<NerveComponent>(organ).PainFeelingModifiers.ContainsKey((item, "Tourniquet")), Is.False);
+            }
+        });
+    }
+
+    [Test]
+    public async Task TourniquetSupportsHumanHandsWithoutWoundableComponents()
+    {
+        var map = await Pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+        try
+        {
+            await Server.WaitAssertion(() =>
+            {
+                var patient = SEntMan.SpawnEntity("MobHuman", coords);
+                var item = SEntMan.SpawnEntity("Tourniquet", coords);
+                var body = SEntMan.GetComponent<BodyComponent>(patient);
+                Assert.That(Content.Shared._Shitmed.Body.LimbTargetMap.TryGetOrganByCategory(SEntMan, body, "HandLeft", out var hand), Is.True);
+                Assert.That(SEntMan.HasComponent<WoundableComponent>(hand), Is.False);
+                var ev = new TourniquetDoAfterEvent("ArmLeft");
+                ev.DoAfter = new Content.Shared.DoAfter.DoAfter(0,
+                    new DoAfterArgs(SEntMan, patient, TimeSpan.Zero, ev, patient, patient, item), TimeSpan.Zero);
+                SEntMan.EventBus.RaiseLocalEvent(patient, ev);
+                Assert.That(ev.Handled, Is.True);
+                SEntMan.DeleteEntity(item);
+                Assert.That(SEntMan.HasComponent<TourniquetedComponent>(hand), Is.False);
+            });
+        }
+        catch (Exception e)
+        {
+            TestContext.Out.WriteLine(e);
+            throw;
+        }
+    }
+
+    [Test]
+    public async Task NonBleedingWoundUnderTourniquetDoesNotRequireABleedInflicter()
+    {
+        var (self, arm, hand, coords, entMan, wounds) = await Setup();
+        await ApplyTourniquet(self, coords, entMan);
+        await Server.WaitAssertion(() =>
+        {
+            SEntMan.System<DamageableSystem>().TryChangeDamage(arm,
+                new DamageSpecifier(SProtoMan.Index(BluntDamageType), FixedPoint2.New(5)));
+            Assert.That(SEntMan.HasComponent<TourniquetedComponent>(arm), Is.True);
+        });
+    }
+
 }

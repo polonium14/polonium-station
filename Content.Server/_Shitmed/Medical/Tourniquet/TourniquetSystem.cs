@@ -3,6 +3,7 @@ using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Pain.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Pain.Systems;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Targeting;
@@ -19,6 +20,7 @@ using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Shitmed.Medical.Tourniquet;
 
@@ -39,6 +41,7 @@ public sealed partial class TourniquetSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<TourniquetComponent, UseInHandEvent>(OnTourniquetUse);
+        SubscribeLocalEvent<TourniquetComponent, EntityTerminatingEvent>(OnTourniquetTerminating);
         SubscribeLocalEvent<TourniquetComponent, AfterInteractEvent>(OnTourniquetAfterInteract);
 
         SubscribeLocalEvent<BodyComponent, TourniquetDoAfterEvent>(OnBodyDoAfter);
@@ -56,16 +59,17 @@ public sealed partial class TourniquetSystem : EntitySystem
 
     private void OnWoundAddedToTourniquetedOrgan(Entity<WoundComponent> ent, ref WoundAddedEvent args)
     {
-        if (!HasComp<TourniquetedComponent>(args.Component.HoldingWoundable))
+        if (!HasComp<TourniquetedComponent>(args.Component.HoldingWoundable)
+            || !TryComp<BleedInflicterComponent>(ent, out var bleeds))
             return;
 
-        _bloodstream.TryAddBleedModifier(ent.Owner, "TourniquetPresent", 100, false, comp: null);
+        _bloodstream.TryAddBleedModifier(ent.Owner, "TourniquetPresent", 100, false, comp: bleeds);
     }
 
     private bool TryTourniquet(EntityUid target, EntityUid user, EntityUid tourniquetEnt, TourniquetComponent tourniquet)
     {
         if (!TryComp<TargetingComponent>(user, out var targeting)
-            || !HasComp<BodyComponent>(target)
+            || !TryComp<BodyComponent>(target, out var body)
             || !HasComp<ConsciousnessComponent>(target))
             return false;
 
@@ -77,6 +81,9 @@ public sealed partial class TourniquetSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("cant-put-tourniquet-here"), target, PopupType.MediumCaution);
             return false;
         }
+
+        if (!TryGetAvailableOrgan((target, body), category, user, out _))
+            return false;
 
         _popup.PopupEntity(Loc.GetString("puts-on-a-tourniquet", ("user", user), ("part", GetPartName(category))), target, PopupType.Medium);
         _audio.PlayPvs(tourniquet.TourniquetPutOnSound, target, AudioParams.Default.WithVariation(0.125f).WithVolume(1f));
@@ -160,12 +167,8 @@ public sealed partial class TourniquetSystem : EntitySystem
             return;
         }
 
-        if (ent.Comp.Organs is null
-            || !LimbTargetMap.TryGetOrganByCategory(EntityManager, ent.Comp, args.Category, out var organ))
-        {
-            _popup.PopupEntity(Loc.GetString("missing-body-part"), ent, args.User, PopupType.MediumCaution);
+        if (!TryGetAvailableOrgan(ent, args.Category, args.User, out var organ))
             return;
-        }
 
         if (!_container.Insert(args.Used.Value, container))
         {
@@ -185,12 +188,40 @@ public sealed partial class TourniquetSystem : EntitySystem
         args.Handled = true;
     }
 
+    private bool TryGetAvailableOrgan(Entity<BodyComponent> body, ProtoId<OrganCategoryPrototype> category,
+        EntityUid user, out EntityUid organ)
+    {
+        organ = default;
+        if (body.Comp.Organs is null || !LimbTargetMap.TryGetOrganByCategory(EntityManager, body.Comp, category, out organ))
+        {
+            _popup.PopupEntity(Loc.GetString("missing-body-part"), body, user, PopupType.MediumCaution);
+            return false;
+        }
+
+        var occupied = HasComp<TourniquetedComponent>(organ);
+        foreach (var childCategory in LimbTargetMap.GetCascadeChildren(category))
+        {
+            if (LimbTargetMap.TryGetOrganByCategory(EntityManager, body.Comp, childCategory, out var child)
+                && HasComp<TourniquetedComponent>(child))
+                occupied = true;
+        }
+
+        // The bleed and sensation modifiers have one owner per organ. Never overwrite
+        // another tourniquet through an overlapping arm/hand or leg/foot application.
+        if (!occupied)
+            return true;
+
+        _popup.PopupEntity(Loc.GetString("already-tourniqueted"), body, user, PopupType.MediumCaution);
+        return false;
+    }
+
     private void ApplyTourniquetEffects(EntityUid tourniquetEnt, EntityUid organ)
     {
         if (HasComp<NerveComponent>(organ))
             _pain.TryAddPainFeelsModifier(tourniquetEnt, "Tourniquet", organ, -10f);
 
-        _bloodstream.TryAddBleedModifier(organ, "TourniquetPresent", 100, false, force: true);
+        if (TryComp<WoundableComponent>(organ, out var woundable))
+            _bloodstream.TryAddBleedModifier(organ, "TourniquetPresent", 100, false, force: true, woundableComp: woundable);
         EnsureComp<TourniquetedComponent>(organ).TourniquetEntity = tourniquetEnt;
     }
 
@@ -199,8 +230,22 @@ public sealed partial class TourniquetSystem : EntitySystem
         if (HasComp<NerveComponent>(organ))
             _pain.TryRemovePainFeelsModifier(tourniquetEnt, "Tourniquet", organ);
 
-        _bloodstream.TryRemoveBleedModifier(organ, "TourniquetPresent", force: true);
+        if (TryComp<WoundableComponent>(organ, out var woundable))
+            _bloodstream.TryRemoveBleedModifier(organ, "TourniquetPresent", force: true, woundable: woundable);
         RemComp<TourniquetedComponent>(organ);
+    }
+
+    private void OnTourniquetTerminating(Entity<TourniquetComponent> ent, ref EntityTerminatingEvent args)
+    {
+        var query = EntityQueryEnumerator<TourniquetedComponent, OrganComponent>();
+        while (query.MoveNext(out var organ, out var tourniqueted, out var organComp))
+        {
+            if (tourniqueted.TourniquetEntity != ent.Owner || TerminatingOrDeleted(organ)
+                || organComp.Body is { } body && TerminatingOrDeleted(body))
+                continue;
+
+            RemoveTourniquetEffects(ent.Owner, organ);
+        }
     }
 
     private void OnTourniquetedOrganRemoved(Entity<TourniquetedComponent> ent, ref OrganGotRemovedEvent args)

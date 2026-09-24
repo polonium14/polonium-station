@@ -194,13 +194,21 @@ public sealed partial class WoundSystem
     }
 
     /// <summary>
-    /// Removes a fully-healed wound from its woundable's Wounds container and deletes it,
-    /// after notifying subscribers (Pain, Traumas) via WoundRemovedEvent.
+    /// Removes wound pain once healed. Retains a scar while it owns traumas so bone and
+    /// organ treatment can still find them after the flesh has healed.
     /// </summary>
     private void RemoveWound(EntityUid wound, WoundComponent component)
     {
         var evt = new WoundRemovedEvent(wound, component);
         RaiseLocalEvent(wound, ref evt);
+
+        if (_trauma.GetAllWoundTraumas(wound).Any())
+        {
+            component.IsScar = true;
+            Dirty(wound, component);
+            UpdateWoundableAppearance(component.HoldingWoundable);
+            return;
+        }
 
         if (TryComp<WoundableComponent>(component.HoldingWoundable, out var woundable) && woundable.Wounds is not null)
         {
@@ -217,6 +225,23 @@ public sealed partial class WoundSystem
         }
 
         PredictedQueueDel(wound);
+    }
+
+    /// <summary>
+    /// Releases a healed wound retained solely to hold traumas after the last trauma is treated.
+    /// </summary>
+    public void TryRemoveHealedTraumaWound(EntityUid wound)
+    {
+        if (!_net.IsServer
+            || TerminatingOrDeleted(wound)
+            || !TryComp<WoundComponent>(wound, out var component)
+            || TerminatingOrDeleted(component.HoldingWoundable)
+            || !component.IsScar
+            || component.WoundSeverity != WoundSeverity.Healed
+            || _trauma.GetAllWoundTraumas(wound).Any())
+            return;
+
+        RemoveWound(wound, component);
     }
 
     private void CheckWoundableSeverityThresholds(EntityUid woundable, WoundableComponent? component = null)

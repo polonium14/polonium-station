@@ -138,7 +138,7 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp))
             return;
 
-        if (!_powerCell.TryUseActivatableCharge(ent.Owner, user: user))
+        if (!CanZap(ent, target, user))
             return;
 
         var selfEvent = new SelfBeforeDefibrillatorZapsEvent(user, ent.Owner, target);
@@ -156,6 +156,11 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
         target = targetEvent.DefibTarget;
 
         if (targetEvent.Cancelled || !CanZap(ent, target, user))
+            return;
+
+        // Validate both redirection/cancellation hooks before spending power. Rechecking
+        // charge after payment would reject the final usable shock in the battery.
+        if (!_powerCell.TryUseActivatableCharge(ent.Owner, user: user))
             return;
 
         if (TryComp<UseDelayComponent>(ent, out var useDelay))

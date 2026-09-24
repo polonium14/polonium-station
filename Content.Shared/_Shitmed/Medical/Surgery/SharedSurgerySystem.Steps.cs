@@ -52,9 +52,11 @@ public abstract partial class SharedSurgerySystem
 
         SubscribeLocalEvent<SurgeryTendWoundsEffectComponent, SurgeryStepEvent>(OnTendWoundsStep);
         SubscribeLocalEvent<SurgeryAddPartStepComponent, SurgeryStepEvent>(OnAddPartStep);
+        SubscribeLocalEvent<SurgeryAddPartStepComponent, SurgeryCanPerformStepEvent>(OnInsertPartCanPerform);
         SubscribeLocalEvent<SurgeryAffixPartStepComponent, SurgeryStepEvent>(OnAffixPartStep);
         SubscribeLocalEvent<SurgeryRemovePartStepComponent, SurgeryStepEvent>(OnRemovePartStep);
         SubscribeLocalEvent<SurgeryAddOrganStepComponent, SurgeryStepEvent>(OnAddOrganStep);
+        SubscribeLocalEvent<SurgeryAddOrganStepComponent, SurgeryCanPerformStepEvent>(OnInsertOrganCanPerform);
         SubscribeLocalEvent<SurgeryRemoveOrganStepComponent, SurgeryStepEvent>(OnRemoveOrganStep);
         SubscribeLocalEvent<SurgeryAffixOrganStepComponent, SurgeryStepEvent>(OnAffixOrganStep);
         SubscribeLocalEvent<SurgeryTraumaTreatmentStepComponent, SurgeryStepEvent>(OnTraumaTreatmentStep);
@@ -75,6 +77,16 @@ public abstract partial class SharedSurgerySystem
 
         ApplyComponentChanges(args, ent.Comp);
         HandleSanitization(args);
+
+        // These organ steps dispatch effects after their own validation succeeds.
+        if (!HasComp<SurgeryAddOrganStepComponent>(ent) && !HasComp<SurgeryAffixOrganStepComponent>(ent))
+            ApplyStepDamageChange(args);
+    }
+
+    private void ApplyStepDamageChange(SurgeryStepEvent args)
+    {
+        var ev = new SurgeryStepDamageChangeEvent(args.User, args.Body, args.Part, args.Step);
+        RaiseLocalEvent(args.Step, ref ev);
     }
 
     private void ApplyComponentChanges(SurgeryStepEvent args, SurgeryStepComponent comp)
@@ -131,7 +143,7 @@ public abstract partial class SharedSurgerySystem
             args.Invalid = StepInvalidReason.MissingTool;
 
             if (reg.Component is ISurgeryToolComponent required)
-                args.Popup = $"You need {required.ToolName} to perform this step!";
+                args.Popup = Loc.GetString("surgery-error-missing-tool", ("tool", required.ToolName));
             else
                 Log.Error($"Surgery step {ToPrettyString(ent)} wants bad component {reg.Component} which isn't a ISurgeryTool");
 
@@ -186,7 +198,8 @@ public abstract partial class SharedSurgerySystem
 
     private bool TendWoundsComplete(SurgeryTendWoundsEffectComponent comp, EntityUid part)
     {
-        return !_wounds.HasDamageOfGroup(part, comp.MainGroup) && _wounds.GetGroupDamage(part, comp.MainGroup) <= 0;
+        return _wounds.GetWoundableSeverityPoint(part, damageGroup: comp.MainGroup, healable: true) <= 0
+            && _wounds.GetGroupDamage(part, comp.MainGroup) <= 0;
     }
 
     private void OnAddPartStep(Entity<SurgeryAddPartStepComponent> ent, ref SurgeryStepEvent args)
@@ -199,6 +212,19 @@ public abstract partial class SharedSurgerySystem
             || !_container.Insert(args.Tool, body.Organs))
             return;
 
+        if (HasComp<ChildOrganComponent>(args.Tool))
+        {
+            _organRelations.Orphan(args.Tool);
+            if (HasComp<ParentOrganComponent>(args.Part))
+                _organRelations.Relate(args.Part, args.Tool);
+        }
+        if (_container.TryGetContainer(args.Tool, DismemberedPartComponent.ContainerId, out var contents))
+        {
+            foreach (var child in contents.ContainedEntities.ToArray())
+                _container.Insert(child, body.Organs, force: true);
+            RemComp<DismemberedPartComponent>(args.Tool);
+        }
+
         if (HasComp<WoundableComponent>(args.Tool))
             _wounds.RecomputeWoundableSeverity(args.Tool);
 
@@ -206,6 +232,27 @@ public abstract partial class SharedSurgerySystem
 
         if (toolOrgan.Category?.Id is "LegLeft" or "LegRight" or "FootLeft" or "FootRight" or "ArmLeft" or "ArmRight")
             _trauma.RefreshLimbMovementSpeed(args.Body);
+    }
+
+    private void OnInsertPartCanPerform(Entity<SurgeryAddPartStepComponent> ent, ref SurgeryCanPerformStepEvent args)
+    {
+        if (TryComp<SurgeryPartRemovedConditionComponent>(args.Surgery, out var condition))
+            CheckInsertedCategory(condition.Category, ref args);
+    }
+
+    private void OnInsertOrganCanPerform(Entity<SurgeryAddOrganStepComponent> ent, ref SurgeryCanPerformStepEvent args)
+    {
+        if (TryComp<SurgeryOrganConditionComponent>(args.Surgery, out var condition))
+            CheckInsertedCategory(condition.Category, ref args);
+    }
+
+    private void CheckInsertedCategory(ProtoId<OrganCategoryPrototype> category, ref SurgeryCanPerformStepEvent args)
+    {
+        if (args.IsInvalid || (_organQuery.TryComp(args.Tool, out var organ) && organ.Category == category))
+            return;
+
+        args.Invalid = StepInvalidReason.ToolInvalid;
+        args.Popup = Loc.GetString("surgery-error-wrong-organ");
     }
 
     private EntityUid ResolveAffixPartTarget(EntityUid body, EntityUid part, EntityUid surgery)
@@ -223,7 +270,7 @@ public abstract partial class SharedSurgerySystem
         var target = ResolveAffixPartTarget(args.Body, args.Part, args.Surgery);
 
         if (HasComp<WoundableComponent>(target))
-            _wounds.TryHealWoundsOnWoundable(target, FixedPoint2.New(12), out _);
+            _wounds.TryHealWoundsAndDamage(target, FixedPoint2.New(12), out _);
 
         RemComp<BodyPartReattachedComponent>(target);
     }
@@ -279,10 +326,17 @@ public abstract partial class SharedSurgerySystem
             || !_container.Insert(args.Tool, body.Organs))
             return;
 
+        if (HasComp<ChildOrganComponent>(args.Tool))
+        {
+            _organRelations.Orphan(args.Tool);
+            if (HasComp<ParentOrganComponent>(args.Part))
+                _organRelations.Relate(args.Part, args.Tool);
+        }
+
+        _trauma.RehomeOrganTraumas(args.Tool, args.Part);
         EnsureComp<OrganReattachedComponent>(args.Tool);
 
-        var ev = new SurgeryStepDamageChangeEvent(args.User, args.Body, args.Part, ent);
-        RaiseLocalEvent(ent, ref ev);
+        ApplyStepDamageChange(args);
     }
 
     private bool AddOrganComplete(EntityUid body, EntityUid part, EntityUid surgery)
@@ -306,6 +360,7 @@ public abstract partial class SharedSurgerySystem
             return;
 
         RemComp<OrganReattachedComponent>(organUid);
+        ApplyStepDamageChange(args);
     }
 
     private bool AffixOrganComplete(EntityUid body, EntityUid surgery)
@@ -328,7 +383,11 @@ public abstract partial class SharedSurgerySystem
             || !LimbTargetMap.TryGetOrganByCategory(EntityManager, body, organComp.Category, out var organUid))
             return;
 
-        _container.Remove(organUid, body.Organs, force: true);
+        if (!_container.Remove(organUid, body.Organs, force: true))
+            return;
+
+        if (HasComp<ChildOrganComponent>(organUid))
+            _organRelations.Orphan(organUid);
         _hands.TryPickupAnyHand(args.User, organUid);
     }
 
@@ -349,18 +408,20 @@ public abstract partial class SharedSurgerySystem
         switch (ent.Comp.TraumaType)
         {
             case TraumaType.OrganDamage:
-                if (!TryComp<BodyComponent>(args.Body, out var body) || body.Organs is null)
-                    break;
-
-                foreach (var organUid in body.Organs.ContainedEntities.ToList())
+                foreach (var (trauma, organ) in GetTreatableOrganTraumas(args.Body, args.Part))
                 {
-                    if (!TryComp<OrganIntegrityComponent>(organUid, out var organIntegrity))
-                        continue;
-
+                    var (organUid, organIntegrity) = organ;
                     foreach (var modifier in organIntegrity.IntegrityModifiers.ToList())
                     {
-                        var delta = healAmount - modifier.Value;
-                        if (delta > 0)
+                        // Only treat damage belonging to this part's trauma. Other parts can
+                        // damage the same organ, and non-trauma modifiers are not surgical wounds.
+                        if (modifier.Key.Item2 != trauma.Owner || modifier.Value <= 0)
+                            continue;
+
+                        if (healAmount <= 0)
+                            return;
+
+                        if (modifier.Value <= healAmount)
                         {
                             healAmount -= modifier.Value;
                             _trauma.TryRemoveOrganDamageModifier(
@@ -377,7 +438,8 @@ public abstract partial class SharedSurgerySystem
                                 modifier.Key.Item2,
                                 modifier.Key.Item1,
                                 organIntegrity);
-                            break;
+                            // The remaining budget was spent on this modifier, not per organ.
+                            return;
                         }
                     }
                 }
@@ -404,9 +466,27 @@ public abstract partial class SharedSurgerySystem
         }
     }
 
-    private bool TraumaTreatmentComplete(SurgeryTraumaTreatmentStepComponent comp, EntityUid part)
+    private IEnumerable<(Entity<TraumaComponent> Trauma, Entity<OrganIntegrityComponent> Organ)> GetTreatableOrganTraumas(EntityUid body, EntityUid part)
     {
-        return !_trauma.HasWoundableTrauma(part, comp.TraumaType);
+        if (!TryComp<BodyComponent>(body, out var bodyComp) || bodyComp.Organs is null
+            || !_trauma.TryGetWoundableTrauma(part, out var traumas, TraumaType.OrganDamage))
+            yield break;
+
+        foreach (var trauma in traumas)
+        {
+            if (trauma.Comp.TraumaTarget is { } target
+                && bodyComp.Organs.ContainedEntities.Contains(target)
+                && TryComp<OrganIntegrityComponent>(target, out var integrity)
+                && trauma.Comp.HasTreatableOrganDamage)
+                yield return (trauma, (target, integrity));
+        }
+    }
+
+    private bool HasTreatableTrauma(EntityUid body, EntityUid part, TraumaType type)
+    {
+        return type == TraumaType.OrganDamage
+            ? GetTreatableOrganTraumas(body, part).Any()
+            : _trauma.HasWoundableTrauma(part, type);
     }
 
     private void OnBleedsTreatmentStep(Entity<SurgeryBleedsTreatmentStepComponent> ent, ref SurgeryStepEvent args)
@@ -414,18 +494,19 @@ public abstract partial class SharedSurgerySystem
         var healAmount = ent.Comp.Amount;
         foreach (var woundEnt in _wounds.GetWoundableWounds(args.Part))
         {
-            if (!TryComp<BleedInflicterComponent>(woundEnt, out var bleeds))
+            if (!TryComp<BleedInflicterComponent>(woundEnt, out var bleeds) || !bleeds.IsBleeding)
                 continue;
 
-            if (healAmount - bleeds.Scaling > 0)
+            if (healAmount <= FixedPoint2.Zero)
+                break;
+
+            if (bleeds.Scaling <= healAmount)
             {
-                healAmount -= bleeds.Scaling;
-
-                bleeds.BleedingAmountRaw = 0;
-                bleeds.Scaling = 0;
-
-                bleeds.IsBleeding = false; // Won't bleed as long as it's not reopened
-
+                healAmount -= FixedPoint2.Max(bleeds.Scaling, FixedPoint2.Zero);
+                bleeds.BleedingAmountRaw = FixedPoint2.Zero;
+                bleeds.Scaling = FixedPoint2.Zero;
+                bleeds.ScalingLimit = BleedInflicterComponent.DefaultScalingLimit;
+                bleeds.IsBleeding = false;
                 Dirty(woundEnt, bleeds);
             }
             else
@@ -435,6 +516,8 @@ public abstract partial class SharedSurgerySystem
                 break;
             }
         }
+
+        _wounds.RecomputeWoundableBleeds(args.Part);
     }
 
     private bool BleedsTreatmentComplete(EntityUid part)
@@ -616,7 +699,7 @@ public abstract partial class SharedSurgerySystem
         }
 
         var tool = _hands.GetActiveItemOrSelf(user);
-        if (!CanPerformStep(user, body, part, step, tool, true, out _, out error, out var data))
+        if (!CanPerformStep(user, body, part, step, tool, true, out _, out error, out var data, surgery))
             return false;
 
         var toolComp = _toolQuery.CompOrNull(tool);
@@ -639,9 +722,6 @@ public abstract partial class SharedSurgerySystem
         var toolUsed = data?.Used ?? false; // if no tool is being used you can't consume it
         var ev = new SurgeryDoAfterEvent(surgeryId, stepId, toolUsed);
         var duration = GetSurgeryDuration(step, user, body, speed);
-
-        if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
-            duration = duration / surgerySpeedMod.SpeedModifier;
 
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
         {
@@ -776,7 +856,8 @@ public abstract partial class SharedSurgerySystem
         bool doPopup,
         out string? popup,
         out StepInvalidReason reason,
-        out ISurgeryToolComponent? data)
+        out ISurgeryToolComponent? data,
+        EntityUid? surgery = null)
     {
         data = null;
 
@@ -793,7 +874,7 @@ public abstract partial class SharedSurgerySystem
             _ => SlotFlags.NONE,
         };
 
-        var check = new SurgeryCanPerformStepEvent(user, body, tool, slot);
+        var check = new SurgeryCanPerformStepEvent(user, body, tool, slot, Surgery: surgery);
         RaiseLocalEvent(step, ref check);
         if (check.IsValid) // if the step doesn't stop it check the body after
             RaiseLocalEvent(body, ref check);
@@ -811,15 +892,15 @@ public abstract partial class SharedSurgerySystem
         return false;
     }
 
-    private bool CanPerformStep(EntityUid user, EntityUid body, EntityUid part, EntityUid step, EntityUid tool, bool doPopup)
+    private bool CanPerformStep(EntityUid user, EntityUid body, EntityUid part, EntityUid step, EntityUid tool, bool doPopup, EntityUid? surgery = null)
     {
-        return CanPerformStep(user, body, part, step, tool, doPopup, out _, out _, out _);
+        return CanPerformStep(user, body, part, step, tool, doPopup, out _, out _, out _, surgery);
     }
 
-    public bool CanPerformStepWithHeld(EntityUid user, EntityUid body, EntityUid part, EntityUid step, bool doPopup, out string? popup)
+    public bool CanPerformStepWithHeld(EntityUid user, EntityUid body, EntityUid part, EntityUid step, bool doPopup, out string? popup, EntityUid? surgery = null)
     {
         var tool = _hands.GetActiveItemOrSelf(user);
-        return CanPerformStep(user, body, part, step, tool, doPopup, out popup, out _, out _);
+        return CanPerformStep(user, body, part, step, tool, doPopup, out popup, out _, out _, surgery);
     }
 
     /// <summary>
@@ -877,7 +958,7 @@ public abstract partial class SharedSurgerySystem
             return false;
 
         if (TryComp<SurgeryTraumaTreatmentStepComponent>(stepEnt, out var traumaComp)
-            && !TraumaTreatmentComplete(traumaComp, part))
+            && HasTreatableTrauma(body, part, traumaComp.TraumaType))
             return false;
 
         if (HasComp<SurgeryBleedsTreatmentStepComponent>(stepEnt)

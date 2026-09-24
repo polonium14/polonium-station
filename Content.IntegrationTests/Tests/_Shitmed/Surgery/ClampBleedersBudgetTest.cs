@@ -56,79 +56,79 @@ public sealed class ClampBleedersBudgetTest : GameTest
     [Test]
     public async Task ClampBleedersOnlySpendsItsBudgetOnceAcrossMultipleWounds()
     {
-        var pair = Pair;
-        var server = pair.Server;
-
-        var sEntMan = server.ResolveDependency<IEntityManager>();
-        var map = await pair.CreateTestMap();
+        var map = await Pair.CreateTestMap();
         var coords = new MapCoordinates(Vector2.Zero, map.MapId);
-
-        EntityUid organ = default;
-        EntityUid wound1 = default;
-        EntityUid wound2 = default;
-        EntityUid stepEnt = default;
-
-        await server.WaitPost(() =>
+        await Server.WaitAssertion(() =>
         {
-            organ = sEntMan.SpawnEntity("ClampBleedersBudgetTestOrgan", coords);
-        });
-
-        await pair.RunTicksSync(5);
-
-        await server.WaitPost(() =>
-        {
-            var woundable = sEntMan.GetComponent<WoundableComponent>(organ);
-            var container = sEntMan.System<SharedContainerSystem>();
-
-            // Two synthetic wounds inserted directly into the organ's own Wounds container -
-            // GetWoundableWounds requires WoundComponent to recognize a container entry as a
-            // wound at all (defaults are fine, only its presence matters here); OnBleedsTreatmentStep
-            // itself only cares about BleedInflicterComponent, not the rest of Wound's real
-            // prototype/severity machinery.
-            wound1 = sEntMan.SpawnEntity(null, coords);
-            sEntMan.AddComponent<WoundComponent>(wound1);
-            var bleeds1 = sEntMan.AddComponent<BleedInflicterComponent>(wound1);
+            var organ = SEntMan.SpawnEntity("ClampBleedersBudgetTestOrgan", coords);
+            var container = SEntMan.System<SharedContainerSystem>();
+            var woundContainer = container.GetContainer(organ, WoundableComponent.WoundContainerId);
+            var wound1 = SEntMan.SpawnEntity(null, coords);
+            SEntMan.AddComponent<WoundComponent>(wound1);
+            var bleeds1 = SEntMan.AddComponent<BleedInflicterComponent>(wound1);
             bleeds1.Scaling = FixedPoint2.New(1);
+            bleeds1.BleedingAmountRaw = FixedPoint2.New(1);
             bleeds1.IsBleeding = true;
+            container.Insert(wound1, woundContainer);
 
-            wound2 = sEntMan.SpawnEntity(null, coords);
-            sEntMan.AddComponent<WoundComponent>(wound2);
-            var bleeds2 = sEntMan.AddComponent<BleedInflicterComponent>(wound2);
+            var wound2 = SEntMan.SpawnEntity(null, coords);
+            SEntMan.AddComponent<WoundComponent>(wound2);
+            var bleeds2 = SEntMan.AddComponent<BleedInflicterComponent>(wound2);
             bleeds2.Scaling = FixedPoint2.New(5);
+            bleeds2.BleedingAmountRaw = FixedPoint2.New(1);
             bleeds2.IsBleeding = true;
+            container.Insert(wound2, woundContainer);
 
-            container.Insert(wound1, woundable.Wounds!);
-            container.Insert(wound2, woundable.Wounds!);
-
-            stepEnt = sEntMan.SpawnEntity("SurgeryStepClampBleeders", coords);
-        });
-
-        await pair.RunTicksSync(5);
-
-        // amount: 2 (SurgeryStepClampBleeders's own prototype value). Budget spend order:
-        // wound1 (Scaling 1) fully cured first, consuming 1 of the 2-point budget: 1 left.
-        // wound2 (Scaling 5) only gets that remaining 1 point: 5 - 1 = 4, still bleeding.
-        await server.WaitPost(() =>
-        {
-            var ev = new SurgeryStepEvent(organ, organ, organ, stepEnt, stepEnt, stepEnt);
-            sEntMan.EventBus.RaiseLocalEvent(stepEnt, ref ev);
-        });
-
-        await pair.RunTicksSync(5);
-
-        await server.WaitAssertion(() =>
-        {
-            var bleeds1 = sEntMan.GetComponent<BleedInflicterComponent>(wound1);
-            var bleeds2 = sEntMan.GetComponent<BleedInflicterComponent>(wound2);
-
-            Assert.That(bleeds1.Scaling, Is.EqualTo(FixedPoint2.Zero), "The first wound (Scaling 1, fully within budget) should be fully cured.");
-            Assert.That(bleeds1.IsBleeding, Is.False, "The first wound should have stopped bleeding.");
-
-            // This is the core regression check: the old bug re-applied the full nominal budget
-            // to every wound independently (this would read 3 here, 5 - 2), instead of only the
-            // remaining share of one shared budget (5 - 1 = 4).
+            // Check the step immediately so passive healing cannot alter the budget result.
+            var step = SEntMan.SpawnEntity("SurgeryStepClampBleeders", coords);
+            var ev = new SurgeryStepEvent(organ, organ, organ, step, step, step);
+            SEntMan.EventBus.RaiseLocalEvent(step, ref ev);
+            Assert.That(bleeds1.Scaling, Is.EqualTo(FixedPoint2.Zero));
+            Assert.That(bleeds1.IsBleeding, Is.False);
             Assert.That(bleeds2.Scaling, Is.EqualTo(FixedPoint2.New(4)),
-                "The second wound should only have absorbed the REMAINING 1 point of the shared 2-point budget (5 - 1 = 4), not the full nominal amount again (which would wrongly read 3).");
+                "The second wound receives only the remaining point from the shared budget.");
+            Assert.That(bleeds2.IsBleeding, Is.True);
+            Assert.That(SEntMan.GetComponent<WoundableComponent>(organ).Bleeds, Is.EqualTo(FixedPoint2.New(4)));
         });
     }
+
+    [TestCase(2, 0)]
+    [TestCase(3, 1)]
+    public async Task ClampSkipsInactiveWoundsAndUpdatesBleedingImmediately(int scaling, int remaining)
+    {
+        var map = await Pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+        await Server.WaitAssertion(() =>
+        {
+            var organ = SEntMan.SpawnEntity("ClampBleedersBudgetTestOrgan", coords);
+            var containers = SEntMan.System<SharedContainerSystem>();
+            var woundContainer = containers.GetContainer(organ, WoundableComponent.WoundContainerId);
+            var inactive = SEntMan.SpawnEntity(null, coords);
+            SEntMan.AddComponent<WoundComponent>(inactive);
+            SEntMan.AddComponent<BleedInflicterComponent>(inactive).Scaling = FixedPoint2.New(20);
+            containers.Insert(inactive, woundContainer);
+            var active = SEntMan.SpawnEntity(null, coords);
+            SEntMan.AddComponent<WoundComponent>(active);
+            var bleed = SEntMan.AddComponent<BleedInflicterComponent>(active);
+            bleed.Scaling = FixedPoint2.New(scaling);
+            bleed.ScalingLimit = FixedPoint2.New(10);
+            bleed.BleedingAmountRaw = FixedPoint2.New(4);
+            bleed.IsBleeding = true;
+            containers.Insert(active, woundContainer);
+            var wounds = SEntMan.System<Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems.WoundSystem>();
+            wounds.RecomputeWoundableBleeds(organ);
+            var step = SEntMan.SpawnEntity("SurgeryStepClampBleeders", coords);
+            var ev = new SurgeryStepEvent(organ, organ, organ, step, step, step);
+            SEntMan.EventBus.RaiseLocalEvent(step, ref ev);
+            Assert.That(bleed.Scaling, Is.EqualTo(FixedPoint2.New(remaining)));
+            Assert.That(bleed.IsBleeding, Is.EqualTo(remaining > 0));
+            Assert.That(SEntMan.GetComponent<WoundableComponent>(organ).Bleeds, Is.EqualTo(FixedPoint2.New(4 * remaining)));
+            if (remaining == 0)
+            {
+                Assert.That(bleed.BleedingAmountRaw, Is.EqualTo(FixedPoint2.Zero));
+                Assert.That(bleed.ScalingLimit, Is.EqualTo(BleedInflicterComponent.DefaultScalingLimit));
+            }
+        });
+    }
+
 }

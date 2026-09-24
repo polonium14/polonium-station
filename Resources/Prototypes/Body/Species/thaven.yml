@@ -46,6 +46,9 @@
     enum.HumanoidVisualLayers.Tail:
       limit: 1
       required: false
+    enum.HumanoidVisualLayers.TailOverlay:
+      limit: 1
+      required: false
     enum.HumanoidVisualLayers.Special:
       limit: 6
       required: false
