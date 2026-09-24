@@ -316,7 +316,7 @@
   suffix: EVA, Locked
   components:
   - type: AccessReader
-    access: [["HeadOfPersonnel"]]
+    access: [["Command"], ["External"]]
 
 - type: entity
   parent: DoorElectronics
