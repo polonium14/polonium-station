@@ -88,7 +88,7 @@ public sealed partial class BloodCultistComponent : Component
 	/// </summary>
 	[DataField] public List<EntityUid> Targets = new List<EntityUid>();
 
-	public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "BloodCultFaction";
+	public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "BloodCultFaction";
 /*
     #region Prototypes
 

@@ -42,10 +42,10 @@ public sealed partial class ReplicatorModulesComponent : Component
     /// Shown to the hive over a replicator that has no class yet.
     /// </summary>
     [DataField]
-    public ProtoId<FactionIconPrototype> Icon = "ReplicatorHiveUnclassed";
+    public ProtoId<StatusIconPrototype> Icon = "ReplicatorHiveUnclassed";
 
     [DataField]
-    public ProtoId<FactionIconPrototype> QueenIcon = "ReplicatorHiveQueen";
+    public ProtoId<StatusIconPrototype> QueenIcon = "ReplicatorHiveQueen";
 }
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]

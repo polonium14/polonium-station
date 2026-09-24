@@ -67,7 +67,7 @@ public sealed partial class XenoInfectedComponent : Component
     public EntityUid? Embryo;
 
     [DataField]
-    public List<ProtoId<FactionIconPrototype>> StageIcons = new()
+    public List<ProtoId<StatusIconPrototype>> StageIcons = new()
     {
         "XenoInfectedIcon0",
         "XenoInfectedIcon1",
