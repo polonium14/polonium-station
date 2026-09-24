@@ -1,13 +1,6 @@
 ﻿Entries:
 - author: ScarKy0
   changes:
-  - message: Vulpkanins now have sulfur-based blood and unique organ sprites.
-    type: Add
-  id: 9523
-  time: '2026-02-14T23:49:21.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42722
-- author: ScarKy0
-  changes:
   - message: Paradox clones now correctly copy the voice and pronouns of the original.
     type: Fix
   id: 9524
@@ -4160,3 +4153,13 @@
   id: 10019
   time: '2026-09-23T12:15:32.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1021
+- author: Nem
+  changes:
+  - message: Teleport actions on rotated grids arrive on-target.
+    type: Fix
+  - message: "Naprawiono obliczanie celu teleportacji na obr\xF3conych mapach. Teleportacja\
+      \ uwzgl\u0119dnia teraz rotacj\u0119 celu."
+    type: Fix
+  id: 10020
+  time: '2026-09-24T14:46:05.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1057
