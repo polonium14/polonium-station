@@ -22,3 +22,7 @@ store-ui-default-refund-text = Zwrot
 store-ui-default-search-text = Szukaj
 
 store-listing-locked = Locked
+
+store-generator-examine = { CAPITALIZE(SUBJECT($entity)) } contains [color=yellow]{$amount} {$currency}[/color].
+store-generator-collect-empty-popup = There is nothing to collect.
+store-generator-collect-popup = You gather {$amount} {$currency} from {THE($entity)}.
