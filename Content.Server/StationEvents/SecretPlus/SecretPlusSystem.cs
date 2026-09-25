@@ -243,8 +243,8 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
         LogMessage($"Trying to run roundstart rules, total player count: {count}", false);
 
-        var weights = weightList.Weights.ToDictionary();
-        var primaryWeights = primaryWeightList.Weights.ToDictionary();
+        var weights = weightList.Weights.Where(entry => CanRunWithPlayerCount(entry.Key)).ToDictionary();
+        var primaryWeights = primaryWeightList.Weights.Where(entry => CanRunWithPlayerCount(entry.Key)).ToDictionary();
         const int maxIters = 50;
         var i = 0;
         var origChaos = scheduler.Comp.ChaosScore;
@@ -252,7 +252,11 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         {
             i++;
 
-            var pick = _random.Pick(i == 1 ? primaryWeights : weights);
+            var candidates = i == 1 && primaryWeights.Count > 0 ? primaryWeights : weights;
+            if (candidates.Count == 0)
+                break;
+
+            var pick = _random.Pick(candidates);
 
             GameRuleComponent? ruleComp = null;
             if (!_prototypeManager.TryIndex(pick, out var entProto)
@@ -284,6 +288,13 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         }
 
         return;
+
+        bool CanRunWithPlayerCount(string ruleId)
+        {
+            return _prototypeManager.TryIndex<EntityPrototype>(ruleId, out var proto)
+                && proto.TryGetComponent<GameRuleComponent>(out var rule, _factory)
+                && rule.MinPlayers <= count;
+        }
 
         void IndexAndStartGameMode(string pick, EntityPrototype? pickProto, GameRuleComponent? ruleComp)
         {
