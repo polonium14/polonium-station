@@ -79,7 +79,7 @@ public sealed partial class NewLifeRuleSystem : EntitySystem
     {
         var session = args.SenderSession;
 
-        if (!Enabled || _ticker.RunLevel != GameRunLevel.InRound)
+        if (!Enabled || _ticker.RunLevel != GameRunLevel.InRound || !_ticker.LobbyEnabled)
             return;
 
         if (session.AttachedEntity is not { } ghost || !TryComp<NewLifeComponent>(ghost, out var comp))
@@ -97,8 +97,6 @@ public sealed partial class NewLifeRuleSystem : EntitySystem
         if (max > 0 && used >= max)
             return;
 
-        _usedLives[session.UserId] = used + 1;
-
         var characterName = _mind.TryGetMind(session, out _, out var mind) ? mind.CharacterName : null;
         if (!string.IsNullOrWhiteSpace(characterName))
         {
@@ -114,6 +112,8 @@ public sealed partial class NewLifeRuleSystem : EntitySystem
 
         // lands in the lobby through PlayerJoinLobby, which sends the previous characters over
         _ticker.Respawn(session);
+
+        _usedLives[session.UserId] = used + 1;
     }
 
     private void OnPlayerJoinedLobby(PlayerJoinedLobbyEvent ev)
