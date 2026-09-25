@@ -13,26 +13,26 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobFelinid" Caption=""/>
   </Box>
 
-  Felinids are a mutation of humans, sporting their signature ears and tail from your favourite japanese cartoons.
+  Felinidy to mutacja ludzi, z charakterystycznymi uszami i ogonem znanymi z japońskich kreskówek.
 
-  ## Diet
+  ## Dieta
 
-  Felinids share evolutionary roots with cats, and so they cannot metabolize Theobromine or Allicin. Be careful
-  when eating chocolate, onions, or garlic, and avoid coffee and tea! Despite their dietary restrictions, they get
-  thirsty 20% faster than other species.
+  Felinidy mają wspólne korzenie ewolucyjne z kotami, więc nie metabolizują teobrominy ani allicyny. Uważaj
+  na czekoladę, cebulę i czosnek oraz unikaj kawy i herbaty! Mimo tych ograniczeń
+  pragną o 20% szybciej niż inne gatunki.
 
-  ## Claws
+  ## Pazury
 
-  Felinids have razor sharp claws, so their unarmed attacks deal [color=#ffb86b]Slashing[/color] and [color=#ffb86b]Piercing[/color] damage.
+  Felinidy mają ostre jak brzytwa pazury, więc ataki bez broni zadają obrażenia [color=#ffb86b]cięte[/color] i [color=#ffb86b]kłute[/color].
 
-  ## Padded Feet
+  ## Miękkie łapy
 
-  Felinids take less damage from falling and high-speed impacts, and can creep around silently when they're not wearing
-  shoes, but are prone to being stunned quicker and have 25% less stamina than other species.
+  Felinidy dostają mniejsze obrażenia od upadków i uderzeń z dużą prędkością, a bez butów skradają się bezgłośnie,
+  ale łatwiej je ogłuszyć i mają o 25% mniej wytrzymałości niż inne gatunki.
 
-  ## Damage
+  ## Obrażenia
 
-  Felinids take 15% more [color=#ffb86b]Blunt[/color], [color=#ffb86b]Slashing[/color] and [color=#ffb86b]Piercing[/color] damage,
-  and take 30% more [color=cornflowerblue]Cold[/color] damage than other species.
+  Felinidy dostają o 15% więcej obrażeń [color=#ffb86b]obuchowych[/color], [color=#ffb86b]ciętych[/color] i [color=#ffb86b]kłutych[/color]
+  oraz o 30% więcej obrażeń [color=cornflowerblue]odmrożeniowych[/color] niż inne gatunki.
 
 </Document>

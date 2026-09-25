@@ -6,43 +6,43 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Arachnids
+  # Pajęczaki
 
   <Box>
     <GuideEntityEmbed Entity="MobArachnid" Caption=""/>
   </Box>
 
-  Arachnids are an eight-legged species of sentient giant spider.
+  Pajęczaki to ośmionożny gatunek rozumnych, olbrzymich pająków.
 
-  ## Arachnid Physiology
+  ## Fizjologia pajęczaków
 
-  Thanks to their additional arms and legs, Arachnids have two additional Pocket slots in their inventory.
-  They suffocate 50% faster and recover from it 50% slower, and their Blue Blood can't be metabolised from Iron, being
-  based on Copper instead.
+  Dzięki dodatkowym rękom i nogom pajęczaki mają w ekwipunku dwa dodatkowe sloty kieszeni.
+  Duszą się o 50% szybciej i dochodzą do siebie o 50% wolniej, a ich niebieskiej krwi nie da się zmetabolizować z żelaza.
+  Opiera się na miedzi.
 
-  ## Diet
+  ## Dieta
 
-  Arachnids share evolutionary roots with spiders, and so they cannot metabolize Theobromine or Allicin. Be careful
-  when eating chocolate, onions, or garlic, and avoid coffee and tea! Despite their dietary restrictions, they can eat
-  raw meat without any ill effects.
+  Pajęczaki mają wspólne korzenie ewolucyjne z pająkami, więc nie metabolizują teobrominy ani allicyny. Uważaj
+  na czekoladę, cebulę i czosnek oraz unikaj kawy i herbaty! Mimo tych ograniczeń surowe mięso jedzą
+  bez złych skutków.
 
-  ## Pincers
+  ## Szczypce
 
-  Arachnids' sharp legs and pincers cause them to deal [color=#ffb86b]Piercing[/color] damage with their unarmed attacks.
+  Ostre nogi i szczypce sprawiają, że ataki bez broni zadają obrażenia [color=#ffb86b]kłute[/color].
 
-  ## Sericulture
+  ## Przędzenie jedwabiu
   <Box>
     <GuideEntityEmbed Entity="MaterialWebSilk" Caption=""/>
     <GuideEntityEmbed Entity="ClothingUniformJumpskirtWeb" Caption=""/>
     <GuideEntityEmbed Entity="WebShield" Caption=""/>
     <GuideEntityEmbed Entity="WallWeb" Caption=""/>
   </Box>
-  Arachnids can create Websilk at the cost of getting more hungry. They (and only they) can craft bundles of websilk
-  into various items from clothing, shields, and medicine to entire walls and furniture.
+  Pajęczaki potrafią wytwarzać jedwab kosztem większego głodu. Tylko one mogą przerabiać wiązki jedwabiu
+  na różne przedmioty, od ubrań, tarcz i leków po całe ściany i meble.
 
-  ## Arachnid Naming Conventions
+  ## Imiona pajęczaków
 
-  Arachnids typically have latin sounding names.
+  Pajęczaki zwykle mają imiona brzmiące łacińsko.
 
   [bullet] Envia Radiatus
 

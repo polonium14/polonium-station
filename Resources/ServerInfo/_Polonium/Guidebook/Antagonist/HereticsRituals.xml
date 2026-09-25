@@ -1,42 +1,42 @@
 <Document>
-  #Rituals & Sacrifices
+  # Rytuały i ofiary
 
   <Box>
     <GuideEntityEmbed Entity="HereticRuneRitual" Caption=""/>
   </Box>
-  ## Transmutation is Key
-  Eventually, you'll need to start using proper magics. To draw a transmutation rune, you'll need a writing tool, such as a pen or crayon.
+  ## Transmutacja to klucz
+  W końcu trzeba sięgnąć po prawdziwą magię. Żeby narysować runę transmutacji, potrzebujesz przyrządu do pisania, na przykład długopisu albo kredki.
 
-  [color=#ff8a8a][bold]To start drawing a rune[/bold][/color], activate [color=#8ee99a]Mansus Grasp[/color] in your offhand and click on the floor with your writing tool.
-  These runes are highly noticeable and take up a 3x3 area.
+  [color=#ff8a8a][bold]Żeby zacząć rysować runę[/bold][/color], włącz [color=#8ee99a]Chwyt Mansusu[/color] w drugiej ręce i kliknij podłogę przyrządem do pisania.
+  Takie runy mocno rzucają się w oczy i zajmują pole 3x3.
 
-  [color=#ff8a8a][bold]To remove a rune[/bold][/color], use your pen on it with an activated [color=#8ee99a]Mansus Grasp[/color] in your off-hand.
-  You can also freely use other Heretics' runes.
+  [color=#ff8a8a][bold]Żeby usunąć runę[/bold][/color], użyj na niej długopisu, mając w drugiej ręce włączony [color=#8ee99a]Chwyt Mansusu[/color].
+  Możesz też swobodnie korzystać z run innych Heretyków.
 
-  [color=#ff8a8a][bold]To choose a ritual[/bold][/color], simply click the rune with your empty hand and select one from the radial menu.
+  [color=#ff8a8a][bold]Żeby wybrać rytuał[/bold][/color], kliknij runę pustą ręką i wybierz pozycję z menu kołowego.
 
-  [color=#ff8a8a][bold]To start the ritual[/bold][/color], use your [color=#8ee99a]Mansus Grasp[/color] on the rune once you've made a selection.
-  You can always see your chosen ritual by [bold]inspecting[/bold] the rune.
+  [color=#ff8a8a][bold]Żeby rozpocząć rytuał[/bold][/color], użyj [color=#8ee99a]Chwytu Mansusu[/color] na runie, gdy już coś wybierzesz.
+  Wybrany rytuał zawsze zobaczysz, [bold]badając[/bold] runę.
 
-  Transmutation Rituals allow you to create powerful artifacts, demonic monsters, and many useful tools that will help you progress towards ultimate power.
+  Rytuały transmutacji pozwalają tworzyć potężne artefakty, demoniczne potwory i wiele przydatnych narzędzi, które przybliżają cię do ostatecznej mocy.
 
-  ## Sacrifices
-  Now it's time for you to grow some balls and start sacrificing your beloved coworkers for points.
+  ## Ofiary
+  Czas zebrać się w sobie i zacząć składać w ofierze współpracowników za punkty.
 
-  The Mansus desires only a select few Heathens (non-heretics) at any moment.
+  Mansus w danej chwili pragnie tylko wybranych pogan, czyli osób niebędących Heretykami.
 
-  You can reroll your targets by invoking the [color=#ffe566]Relentless Heartbeat[/color] ritual.
+  Cele możesz wylosować od nowa rytuałem [color=#ffe566]Nieustanne bicie serca[/color].
 
-  At the start of the round you will be assigned a number of sacrifice targets. [bold]You will only be able to sacrifice these targets.[/bold]
-  - One target will be a Head of Staff. Heads of staff are worth an additional point!
-  - One target will be a member of security.
-  - One target will be a member of your department.
-  - Other targets will be completely random crewmembers.
+  Na początku rundy dostajesz pewną liczbę celów do ofiary. [bold]Złożyć w ofierze możesz tylko te osoby.[/bold]
+  - Jeden cel będzie członkiem dowództwa. Członkowie dowództwa są warci dodatkowy punkt!
+  - Jeden cel będzie z ochrony.
+  - Jeden cel będzie z twojego działu.
+  - Pozostałe cele to zupełnie losowi członkowie załogi.
 
-  Follow your [color=#ff8a8a]Living Heart[/color] to your target of choice and incapacitate them through any means necessary.
+  Idź za [color=#ff8a8a]Żywym sercem[/color] do wybranego celu i obezwładnij go wszelkimi sposobami.
 
-  If your target's in critical condition or dead, they're ready to sacrifice.
+  Jeśli cel jest w stanie krytycznym albo martwy, nadaje się do ofiary.
 
-  Drag them over a transmutation rune and invoke the [color=#ffe566]Heartbeat of the Mansus[/color] ritual to sacrifice them.
+  Przeciągnij go na runę transmutacji i odpraw rytuał [color=#ffe566]Bicie serca Mansusu[/color], żeby go złożyć w ofierze.
 
 </Document>

@@ -7,47 +7,47 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Rodentia
+  # Gryzonie
 
   <Box>
     <GuideEntityEmbed Entity="MobRodentiaDummy" Caption=""/>
   </Box>
 
-  Rodentia are a race of humanoid beings resembling rodents. Resourceful, evasive, sneaky, but fragile.
+  Gryzonie to rasa humanoidów przypominających gryzonie. Zaradne, wymykające się, skryte, ale kruche.
 
-  ## Diet
+  ## Dieta
 
-  Rodentia share evolutionary roots with rodents, and so they cannot metabolize Theobromine or Allicin. Be careful
-  when eating chocolate, onions, or garlic, and avoid coffee and tea! Despite their dietary restrictions, they get
-  hungry 33% faster than other species.
+  Gryzonie mają wspólne korzenie ewolucyjne z gryzoniami, więc nie metabolizują teobrominy ani allicyny. Uważaj
+  na czekoladę, cebulę i czosnek oraz unikaj kawy i herbaty! Mimo tych ograniczeń
+  głodnieją o 33% szybciej niż inne gatunki.
 
-  ## Claws
+  ## Pazury
 
-  Rodentia have dull claws, which do a mixture of [color=#ffb86b]Blunt[/color] and [color=#ffb86b]Slashing[/color] damage.
+  Gryzonie mają tępe pazury, które zadają mieszankę obrażeń [color=#ffb86b]obuchowych[/color] i [color=#ffb86b]ciętych[/color].
 
-  ## Sticky Fingers
+  ## Lepkie łapki
 
-  Rodentia can rummage in disposal units, potentially finding food and other useful trinkets! Unfortunately, their
-  feet also have a tendency to get painfully caught in mousetraps, even if they're wearing shoes.
+  Gryzonie potrafią grzebać w blokach utylizacyjnych i czasem znajdują jedzenie oraz inne przydatne drobiazgi! Niestety
+  ich stopy mają też skłonność boleśnie wpadać w pułapki na myszy, nawet w butach.
 
-  ## Cheek Storage
+  ## Schowek w policzkach
 
-  Rodentia can store small items in their cheeks. Having items in their mouth makes their speech unintelligible, and
-  they will drop all items in their mouth if attacked, stunned, or shoved.
+  Gryzonie mogą chować drobne przedmioty w policzkach. Przedmioty w pysku robią z ich mowy bełkot, a
+  upuszczą wszystko, co mają w pysku, gdy zostaną zaatakowane, ogłuszone albo popchnięte.
 
-  ## Damage
+  ## Obrażenia
 
-  Due to being smaller and more fragile than other species, Rodentia take 30% more [color=#ffb86b]Blunt[/color] damage, and
-  15% more [color=#ffb86b]Slashing[/color] and [color=#ffb86b]Piercing[/color] damage.
+  Przez mniejszą i kruchszą budowę niż u innych gatunków gryzonie dostają o 30% więcej obrażeń [color=#ffb86b]obuchowych[/color]
+  oraz o 15% więcej obrażeń [color=#ffb86b]ciętych[/color] i [color=#ffb86b]kłutych[/color].
 
-  ## Rodentia Naming Conventions
+  ## Imiona gryzoni
 
-  Rodentia typically have names structured by a descriptor followed by a pet sounding first name.
+  Gryzonie zwykle mają imiona złożone z określenia i pieszczotliwego imienia.
 
-  [bullet] Short-legged Noodle
+  [bullet] Krótkonogi Klusek
 
-  [bullet] Long-tail Chitters
+  [bullet] Długoogony Popisk
 
-  [bullet] Squeaky Cheesetail
+  [bullet] Piszczący Serogonek
 
 </Document>

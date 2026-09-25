@@ -1,70 +1,70 @@
 <Document>
-  # Path of Ash
-  The Path of Ash revolves around fire, mobility, and crowd control. It grants multiple tools that are very forgiving for a new Heretic, including a short range jaunt that works while handcuffed and a mask that slowly saps nearby Heathens of sanity and soul, and is highly recommended for first-timers.
+  # Ścieżka popiołu
+  Ścieżka popiołu kręci się wokół ognia, mobilności i kontroli tłumu. Daje kilka narzędzi wyrozumiałych dla nowego Heretyka, w tym krótki skok, który działa nawet w kajdankach, oraz maskę, która powoli wysysa z pobliskich pogan rozsądek i duszę. Polecana na pierwszy raz.
 
-  While its abilities may not be the strongest until later in the round, they are very easy to get the ball rolling with and difficult to stop. Ascending gives you the power to burn down the station in a living tornado of flame.
+  Jej umiejętności nie są najsilniejsze aż do późnej fazy rundy, ale łatwo nimi rozkręcić grę i trudno je zatrzymać. Wniebowstąpienie daje moc spalenia stacji w żywej trąbie ognia.
 
-  ## Nightwatcher's Secret
+  ## Sekret Nocnego Strażnika
   <Box>
     <GuideEntityEmbed Entity="HereticBladeAsh" Caption=""/>
   </Box>
-  Opens up the Path of Ash to you.
+  Otwiera ci Ścieżkę popiołu.
 
-  Allows you to transmute a welding tool and a knife into an Ashen Blade.
+  Pozwala przemienić spawarkę i nóż w popielne ostrze.
 
-  ## Grasp of Ash
+  ## Chwyt popiołu
   <Box>
     <GuideEntityEmbed Entity="TouchSpellMansus" Caption=""/>
   </Box>
-  Your Mansus Grasp will burn the eyes of the victim, damaging them and blurring their vision.
+  Chwyt Mansusu wypala ofierze oczy, rani je i zamazuje jej wzrok.
 
-  ## Ashen Shift
-  Grants you Ashen Passage, a spell that lets you phase out of reality and traverse a short distance, passing though any walls.
+  ## Popielne przesunięcie
+  Daje Popielne przejście, czar, który pozwala wyjść z rzeczywistości i przebyć krótki dystans, przechodząc przez dowolne ściany.
 
-  Upon returning to reality, you will emit a distinct sound. Additionally, your body will ignite, dealing minor damage.
+  Po powrocie do rzeczywistości wydasz wyraźny dźwięk. Dodatkowo ciało stanie w ogniu i dostaniesz drobne obrażenia.
 
-  ## Mark of Ash
+  ## Znak popiołu
   <Box>
     <GuideEntityEmbed Entity="HereticBladeAsh" Caption=""/>
   </Box>
-  Your Mansus Grasp now applies the Mark of Ash. The mark is triggered from an attack with your Ashen Blade.
+  Chwyt Mansusu nakłada teraz Znak popiołu. Znak wyzwala atak popielnym ostrzem.
 
-  When triggered, the victim takes additional stamina and burn damage, and the mark is transferred to a nearby heathen.
+  Po wyzwoleniu ofiara dostaje dodatkowe obrażenia wytrzymałości i oparzenia, a znak przeskakuje na pobliskiego poganina.
 
-  ## Volcanic Blast
-  Grants you Volcanic Blast, a spell that fires a ball of flames to the nearest Heathen.
+  ## Wybuch wulkaniczny
+  Daje Wybuch wulkaniczny, czar, który ciska kulą ognia w najbliższego poganina.
 
-  On successful hit, the fireball divides into multiple smaller fireballs targeting other nearby targets.
+  Po trafieniu kula dzieli się na kilka mniejszych, które celują w inne pobliskie osoby.
 
-  ## Mask of Madness
+  ## Maska szaleństwa
   <Box>
     <GuideEntityEmbed Entity="ClothingMaskMadHeretic" Caption=""/>
   </Box>
-  Allows you to transmute any mask, four candles, a stun baton, and a liver to create a Mask of Madness.
+  Pozwala przemienić dowolną maskę, cztery świece, pałkę ogłuszającą i wątrobę w Maskę szaleństwa.
 
-  The mask instills fear into heathens who witness it, causing stamina damage, hallucinations, and insanity.
+  Maska budzi strach u pogan, którzy ją zobaczą. Zadaje obrażenia wytrzymałości, halucynacje i obłęd.
 
-  It can also be forced onto a heathen, to make them unable to take it off...
+  Można ją też siłą nałożyć poganinowi, tak że nie będzie w stanie jej zdjąć...
 
-  ## Fiery Blade
+  ## Ogniste ostrze
   <Box>
     <GuideEntityEmbed Entity="HereticBladeAsh" Caption=""/>
   </Box>
-  Your blade now lights enemies ablaze on attack.
+  Ostrze podpala teraz wrogów przy ataku.
 
-  ## Grasp of Ash
-  Grants you Nightwatcher's Rebirth, a spell that extinguishes you and burns all nearby heathens who are currently on fire, healing you for every victim afflicted.
-  
-  If any victims afflicted are in critical condition, they will instantly die.
+  ## Odrodzenie Nocnego Strażnika
+  Daje Odrodzenie Nocnego Strażnika, czar, który gasi ciebie i spala wszystkich pobliskich pogan, którzy akurat płoną. Za każdą taką ofiarę się leczysz.
 
-  ## Ashlord's Rite
-  The ascension ritual of the Path of Ash.
+  Jeśli któraś z ofiar jest w stanie krytycznym, umiera natychmiast.
 
-  Bring 3 burning or husked corpses to a transmutation rune to complete the ritual.
+  ## Rytuał Pana Popiołów
+  Rytuał wniebowstąpienia Ścieżki popiołu.
 
-  When completed, you become a harbinger of flames, gaining two abilities.
+  Przynieś na runę transmutacji 3 płonące zwłoki albo łupiny, żeby dokończyć rytuał.
 
-  Cascade, which causes a massive, growing ring of fire around you, and Oath of Flame, causing you to passively create a ring of flames as you walk.
+  Po ukończeniu stajesz się zwiastunem płomieni i dostajesz dwie umiejętności.
 
-  You will also become immune to flames, space, and similar environmental hazards.
+  Kaskada tworzy wokół ciebie ogromny, rosnący pierścień ognia, a Przysięga płomienia sprawia, że idąc pasywnie zostawiasz za sobą pierścień ognia.
+
+  Stajesz się też odporny na płomienie, kosmos i podobne zagrożenia środowiska.
 </Document>

@@ -9,33 +9,33 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Gingerbread
+  # Ludzie pierniki
 
   <Box>
     <GuideEntityEmbed Entity="MobGingerbread" Caption=""/>
   </Box>
 
-  Gingerbreads are a species of sentient confectionary, with sugar for blood and cookies for flesh.
+  Ludzie pierniki to gatunek rozumnych słodyczy, z cukrem zamiast krwi i ciasteczkami zamiast ciała.
 
-  ## Cookie Biology
+  ## Ciasteczkowa biologia
 
-  Thanks to their anomalous sugar-based biology, Gingerbreads have sugar instead of blood, and can restore blood by
-  eating candies and other sugary foods. Their organs are made of candy, and they don't need to eat or drink. They also take 30% less [color=#ff8a8a]Heat[/color] damage, 20% less [color=cornflowerblue]Shock[/color] damage and are immune to cold weather damage!
-  However, others might be tempted to butcher or eat their corpses for a source of delicious, sugary delight...
+  Dzięki anomalnej, cukrowej biologii ludzie pierniki mają cukier zamiast krwi i odnawiają ją,
+  jedząc cukierki oraz inne słodkie jedzenie. Ich organy są z cukierków i nie muszą jeść ani pić. Dostają też o 30% mniej obrażeń [color=#ff8a8a]oparzeniowych[/color], o 20% mniej obrażeń [color=cornflowerblue]porażeniowych[/color] i są odporne na obrażenia od zimnej pogody!
+  Inni mogą jednak ulec pokusie, żeby zarżnąć albo zjeść ich zwłoki jako źródło słodkiej przyjemności...
 
-  ## Damage
+  ## Obrażenia
 
-  Gingerbreads take more brute damage than other species in the form of 30% more [color=#ffb86b]Blunt[/color] damage and 20% more [color=#ffb86b]Slash[/color] and [color=#ffb86b]Piercing[/color] damage, as they're more fragile and more likely to crumble.
-  They are also injured when splashed with water, taking [color=#ffb86b]Blunt[/color] damage becoming soggy and limp.
+  Ludzie pierniki dostają więcej obrażeń fizycznych niż inne gatunki: o 30% więcej obrażeń [color=#ffb86b]obuchowych[/color] oraz o 20% więcej obrażeń [color=#ffb86b]ciętych[/color] i [color=#ffb86b]kłutych[/color], bo są kruchsze i łatwiej się kruszą.
+  Rani je też oblanie wodą. Dostają wtedy obrażenia [color=#ffb86b]obuchowe[/color], rozmakaają i wiotczeją.
 
-  ## Gingerbread Naming Conventions
+  ## Imiona ludzi pierników
 
-  Gingerbread typically have food or baking themed names.
+  Ludzie pierniki zwykle mają imiona związane z jedzeniem albo pieczeniem.
 
-  [bullet] Sugarbottoms
+  [bullet] Cukrowy Spód
 
-  [bullet] Gumdrop Gus
+  [bullet] Guzik Żelkowy
 
-  [bullet] Johnny Dough
+  [bullet] Janek Ciasto
 
 </Document>

@@ -1,26 +1,26 @@
 <Document>
- #Spells & Foci
+ # Czary i ogniska
 
 <Box>
   <GuideEntityEmbed Entity="CodexCicatrix" Caption=""/>
 </Box>
 
-  ## We Love Casting Spells
-  Spells are your main form of weaponry, movement, and general utility.
-  
-  You will only start with one spell, the [color=#8ee99a]Mansus Grasp[/color]. Use your knowledge store to get more.
-  
-  Spells can be activated using the action buttons. Many will require you to click on a target as well.
+  ## Rzucanie czarów
+  Czary to twoja główna broń, ruch i narzędzia ogólnego użytku.
 
-  ## Focus is Necessary
-  To cast more advanced spells, you must focus by equipping a [color=#ffb86b]Magic Focus[/color].
-  
-  Your Codex Cicatrix will function as a focus when it is open and in your hand.
-  
-  You can acquire an Amber Focus using the eponymous ritual. It will act as a focus when worn around your neck.
-  
-  Some more powerful heretical equipment also functions as a focus - namely, the Ominous Armor from the Armorer's Ritual (when the hood is flipped up).
-  
-  [color=#ffe566]Ascension[/color] disables the need for a focus.
+  Na start masz tylko jeden czar, [color=#8ee99a]Chwyt Mansusu[/color]. Kolejne bierzesz ze sklepu wiedzy.
+
+  Czary włącza się przyciskami akcji. Wiele z nich wymaga jeszcze kliknięcia celu.
+
+  ## Ognisko jest konieczne
+  Żeby rzucać bardziej zaawansowane czary, musisz się skupić, zakładając [color=#ffb86b]magiczne ognisko[/color].
+
+  Kodeks Cicatrix działa jako ognisko, gdy jest otwarty i trzymasz go w ręce.
+
+  Bursztynowe ognisko zdobywasz rytuałem o tej samej nazwie. Działa jako ognisko, gdy nosisz je na szyi.
+
+  Część potężniejszego heretyckiego ekwipunku też działa jako ognisko, przede wszystkim mroczna zbroja z Rytuału zbrojmistrza, gdy kaptur jest podniesiony.
+
+  [color=#ffe566]Wniebowstąpienie[/color] zdejmuje potrzebę ogniska.
 
 </Document>
