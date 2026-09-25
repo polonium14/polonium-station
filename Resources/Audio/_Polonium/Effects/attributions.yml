@@ -7,3 +7,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from Imperial Space (license is unknown)"
   source: "https://github.com/imperial-space/SS14-public/commit/6d1e2d0d35fc8080ac842c9d6c4697317130cd39"
+
+- files: ["pop.ogg"]
+  license: "Custom"
+  copyright: "Taken from myinstants.com, uploaded by Gfox"
+  source: "https://www.myinstants.com/en/instant/pop-sfx-75405/"

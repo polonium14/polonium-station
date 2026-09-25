@@ -8,6 +8,8 @@ using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
+// TODO Move all Polonium-specific CCVars to this namespace
+
 public sealed partial class CCVars
 {
     /// <summary>
@@ -33,4 +35,16 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> CentCommCallDeclineWhenNoAdmins =
         CVarDef.Create("game.centcomm_call_decline_when_no_admins", false, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Arrow above players under <see cref="NewPlayerThreshold"/>.
+    /// </summary>
+    public static readonly CVarDef<bool> NewPlayerMarkerEnabled =
+        CVarDef.Create("admin.new_player_marker", false, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
+
+    /// <summary>
+    /// Admin alert when a player under <see cref="NewPlayerThreshold"/> connects.
+    /// </summary>
+    public static readonly CVarDef<bool> NewPlayerAlertEnabled =
+        CVarDef.Create("admin.new_player_alert", false, CVar.ARCHIVE | CVar.SERVERONLY);
 }
