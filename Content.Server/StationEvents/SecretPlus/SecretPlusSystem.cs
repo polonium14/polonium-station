@@ -88,7 +88,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
     protected override void Added(EntityUid uid, SecretPlusComponent scheduler, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
-        var totalPlayers = GetTotalPlayerCount(_playerManager.Sessions);
+        var totalPlayers = GetRoundstartPlayerCount();
         scheduler.ChaosScore =
             -_random.NextFloat(scheduler.MinStartingChaos * totalPlayers, scheduler.MaxStartingChaos * totalPlayers) *
             _roundstartChaosScoreMultiplier;
@@ -209,7 +209,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         var primaryWeightList = _prototypeManager.Index(scheduler.Comp.PrimaryAntagsWeightTable);
         var weightList = _prototypeManager.Index(scheduler.Comp.RoundStartAntagsWeightTable);
 
-        var count = GetTotalPlayerCount(_playerManager.Sessions);
+        var count = GetRoundstartPlayerCount();
 
         LogMessage($"Trying to run roundstart rules, total player count: {count}", false);
 
@@ -229,7 +229,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
                 || !entProto.TryGetComponent<GameRuleComponent>(out ruleComp, _factory))
                 continue;
 
-            var chaosScore = GetChaosScore(entProto, ruleComp);
+            var chaosScore = GetChaosScore(entProto, ruleComp, count);
 
             if (chaosScore == null)
             {
@@ -272,6 +272,11 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
     {
         var ruleUid = _ticker.AddGameRule(rule);
 
+        // Roundstart antags are optional: losing ready players during map loading
+        // should end the affected rule, rather than cancel the entire preset.
+        if (players != null)
+            Comp<GameRuleComponent>(ruleUid).CancelPresetOnTooFewPlayers = false;
+
         scheduler.Comp.ChaosScore += GetChaosScore(ruleUid, players)!.Value;
 
         if (players != null && TryComp<AntagSelectionComponent>(ruleUid, out var selection))
@@ -288,6 +293,13 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
         if (doStart)
             _ticker.StartGameRule(ruleUid);
+    }
+
+    private int GetRoundstartPlayerCount()
+    {
+        return _ticker.RunLevel == GameRunLevel.PreRoundLobby
+            ? _ticker.ReadyPlayerCount()
+            : GetTotalPlayerCount(_playerManager.Sessions);
     }
 
     private PlayerCount CountActivePlayers()
