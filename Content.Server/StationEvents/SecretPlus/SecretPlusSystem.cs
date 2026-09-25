@@ -88,7 +88,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
     protected override void Added(EntityUid uid, SecretPlusComponent scheduler, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
-        var totalPlayers = GetRoundstartPlayerCount();
+        var totalPlayers = GetTotalPlayerCount(_playerManager.Sessions);
         scheduler.ChaosScore =
             -_random.NextFloat(scheduler.MinStartingChaos * totalPlayers, scheduler.MaxStartingChaos * totalPlayers) *
             _roundstartChaosScoreMultiplier;
@@ -209,7 +209,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         var primaryWeightList = _prototypeManager.Index(scheduler.Comp.PrimaryAntagsWeightTable);
         var weightList = _prototypeManager.Index(scheduler.Comp.RoundStartAntagsWeightTable);
 
-        var count = GetRoundstartPlayerCount();
+        var count = GetTotalPlayerCount(_playerManager.Sessions);
 
         LogMessage($"Trying to run roundstart rules, total player count: {count}", false);
 
@@ -229,7 +229,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
                 || !entProto.TryGetComponent<GameRuleComponent>(out ruleComp, _factory))
                 continue;
 
-            var chaosScore = GetChaosScore(entProto, ruleComp, count);
+            var chaosScore = GetChaosScore(entProto, ruleComp);
 
             if (chaosScore == null)
             {
@@ -293,13 +293,6 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
         if (doStart)
             _ticker.StartGameRule(ruleUid);
-    }
-
-    private int GetRoundstartPlayerCount()
-    {
-        return _ticker.RunLevel == GameRunLevel.PreRoundLobby
-            ? _ticker.ReadyPlayerCount()
-            : GetTotalPlayerCount(_playerManager.Sessions);
     }
 
     private PlayerCount CountActivePlayers()
