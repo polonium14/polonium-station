@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Le-Arctic-Fox
-  changes:
-  - message: Changed viper magazine to high capacity in the basic operative bundle
-    type: Fix
-  id: 9526
-  time: '2026-02-15T11:16:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42927
 - author: ScarKy0
   changes:
   - message: Drinking blood as non-animal species makes you sick again.
@@ -4165,3 +4158,21 @@
   id: 10022
   time: '2026-09-25T07:13:41.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1058
+- author: Nikita
+  changes:
+  - message: "Wszystkie wykroczenia 1XX s\u0105 karane od ostrze\u017Cenia do 5 minut"
+    type: Tweak
+  - message: 501 teraz jest karane od 18 minut do permabrigu
+    type: Tweak
+  - message: "502 oraz 503 s\u0105 karane od 20 minut do permabrigu"
+    type: Tweak
+  - message: "Zmieniono kary za wykroczenia z grupy 1XX na zakres od ostrze\u017C\
+      enia do 5 minut."
+    type: Tweak
+  - message: "Ustalono kar\u0119 za wykroczenie 501 na zakres od 18 minut do permabrigu."
+    type: Tweak
+  - message: Ustalono kary za wykroczenia 502 i 503 na zakres od 20 minut do permabrigu.
+    type: Tweak
+  id: 10023
+  time: '2026-09-25T07:34:10.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1062
