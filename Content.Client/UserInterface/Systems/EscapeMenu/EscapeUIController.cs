@@ -180,7 +180,7 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
 
         var mode = _tutorial?.ReadIntroMode();
         _escapeWindow.RestartTutorialButton.Visible =
-            mode is SharedTutorialSystem.IntroMain or SharedTutorialSystem.IntroTutorial;
+            mode == SharedTutorialSystem.IntroTutorial;
     }
 
     private void EscapeButtonOnOnPressed(ButtonEventArgs obj)
