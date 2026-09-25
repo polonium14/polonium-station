@@ -5,6 +5,7 @@
 
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
+using Content.Shared.Administration.Systems;
 using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared.Body;
@@ -82,8 +83,9 @@ public sealed class UnfinishedSurgeryBleedingPenaltyTest : GameTest
   - type: Strap
 ";
 
-    [Test]
-    public async Task UnbuckleFromBedWithUnfinishedSurgeryStartsBleeding()
+    [TestCase(false)]
+    [TestCase(true)]
+    public async Task UnbuckleFromBedWithUnfinishedSurgeryStartsBleeding(bool rejuvenate)
     {
         var pair = Pair;
         var server = pair.Server;
@@ -140,7 +142,50 @@ public sealed class UnfinishedSurgeryBleedingPenaltyTest : GameTest
         });
 
         // Close the incision - surgery is finished, penalty should stop and remove itself.
-        await server.WaitPost(() => sEntMan.RemoveComponent<IncisionOpenComponent>(arm));
+        await server.WaitAssertion(() =>
+        {
+            if (!rejuvenate)
+            {
+                sEntMan.RemoveComponent<IncisionOpenComponent>(arm);
+                return;
+            }
+
+            // Rejuvenation must clear every unfinished step, including on organs that
+            // do not support wounds, and remove the active penalty immediately.
+            sEntMan.AddComponent<SkinRetractedComponent>(arm);
+            sEntMan.AddComponent<BleedersClampedComponent>(arm);
+            sEntMan.AddComponent<InternalBleedersClampedComponent>(arm);
+            sEntMan.AddComponent<BonesOpenComponent>(arm);
+            sEntMan.AddComponent<BonesSawedComponent>(arm);
+            sEntMan.AddComponent<BodyPartSawedComponent>(arm);
+            sEntMan.AddComponent<SeveredSkinRemovedComponent>(arm);
+            sEntMan.AddComponent<BoneLeftoversRemovedComponent>(arm);
+            sEntMan.AddComponent<BodyPartReattachedComponent>(arm);
+            sEntMan.AddComponent<OrganReattachedComponent>(arm);
+            sEntMan.AddComponent<LobotomizedComponent>(arm);
+            sEntMan.AddComponent<PartsRemovedComponent>(arm);
+            var organ = sEntMan.SpawnEntity(null, coords);
+            sEntMan.AddComponent<OrganComponent>(organ);
+            var container = sEntMan.System<SharedContainerSystem>();
+            Assert.That(container.Insert(organ, container.GetContainer(mob, BodyComponent.ContainerID)), Is.True);
+            sEntMan.AddComponent<IncisionOpenComponent>(organ);
+
+            sEntMan.System<RejuvenateSystem>().PerformRejuvenate(mob);
+            Assert.That(sEntMan.System<SharedSurgerySystem>().HasUnfinishedSurgerySteps(arm), Is.False);
+            Assert.That(sEntMan.System<SharedSurgerySystem>().HasUnfinishedSurgerySteps(organ), Is.False);
+            Assert.That(sEntMan.HasComponent<LobotomizedComponent>(arm), Is.False);
+            Assert.That(sEntMan.HasComponent<PartsRemovedComponent>(arm), Is.False);
+            Assert.That(sEntMan.HasComponent<UnfinishedSurgeryPenaltyComponent>(mob), Is.False);
+            Assert.That(sEntMan.GetComponent<BloodstreamComponent>(mob).BleedAmount, Is.Zero);
+
+            var strapEnt = new Entity<StrapComponent>(bed, sEntMan.GetComponent<StrapComponent>(bed));
+            var buckleEnt = new Entity<BuckleComponent>(mob, sEntMan.GetComponent<BuckleComponent>(mob));
+            var ev = new UnbuckledEvent(strapEnt, buckleEnt);
+            sEntMan.EventBus.RaiseLocalEvent(mob, ref ev);
+            Assert.That(sEntMan.HasComponent<UnfinishedSurgeryPenaltyComponent>(mob), Is.False,
+                "Getting up after rejuvenation must not restart surgery bleeding.");
+            sEntMan.System<RejuvenateSystem>().PerformRejuvenate(mob);
+        });
 
         await pair.RunTicksSync((int) (15 / pair.Server.Timing.TickPeriod.TotalSeconds));
 

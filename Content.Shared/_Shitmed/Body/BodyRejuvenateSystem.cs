@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
@@ -20,6 +21,7 @@ public sealed partial class BodyRejuvenateSystem : EntitySystem
     [Dependency] private TraumaSystem _trauma = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedSurgerySystem _surgery = default!;
 
     public override void Initialize()
     {
@@ -41,6 +43,8 @@ public sealed partial class BodyRejuvenateSystem : EntitySystem
         // so iterating the live Organs container here isn't safe.
         foreach (var organ in component.Organs.ContainedEntities.ToList())
         {
+            _surgery.ResetSurgery(organ);
+
             if (HasComp<DamageableComponent>(organ))
             {
 #pragma warning disable CS0618
