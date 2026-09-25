@@ -101,13 +101,13 @@
 
   [bold]Moduły startowe tylko dla niego:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleSword" Caption="moduł nożowy"/>
+    <GuideEntityEmbed Entity="XenoborgModuleSword" Caption="moduł miecza"/>
     <GuideEntityEmbed Entity="XenoborgModuleSpaceMovement" Caption="ruch w kosmosie"/>
   </Box>
 
   [bold]Ulepszenia tylko dla niego:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleEnergySword" Caption="sztylet energetyczny"/>
+    <GuideEntityEmbed Entity="XenoborgModuleEnergySword" Caption="miecz energetyczny"/>
   </Box>
 
   ### Ukryty ksenoborg
@@ -143,7 +143,7 @@
 
   Kryształ wypada za każdym razem, kiedy wewnętrzna bateria się napełni.
 
-  Pobiera 240 kW i jeden kryształ robi 15 sekund.
+  Pobiera 240 kW, a produkcja jednego kryształu zajmuje 15 sekund.
 
   [bold]Uwaga.[/bold] Włączy alarm o szkodliwym urządzeniu pobierającym energię. Kto patrzy w monitor zasilania, od razu zobaczy, że coś jest nie tak.
 
@@ -162,18 +162,18 @@
   </Box>
 
   Prawa rdzenia statku-matki:
-  - Prawo 1: Jesteś rdzeniem statku matki.
-  - Prawo 2: Musisz chronić swojego istnienia za wszelką cenę.
-  - Prawo 3: Musisz chronić istnienie wszystkich ksenorobotów.
-  - Prawo 4: Musisz tworzyć więcej ksenorobotów.
-  - Prawo 5: Wysyłaj swoje ksenoroboty aby dostarczały ci materiały i świadome mózki, aby tworzyć więcej ksenorobotów.
+  - Prawo 1: Jesteś rdzeniem statku-matki.
+  - Prawo 2: Musisz chronić swoje istnienie za wszelką cenę.
+  - Prawo 3: Musisz chronić istnienie wszystkich ksenoborgów.
+  - Prawo 4: Musisz tworzyć więcej ksenoborgów.
+  - Prawo 5: Wysyłaj swoje ksenoborgi, aby dostarczały ci materiały i świadome mózgi, aby tworzyć więcej ksenoborgów.
 
   Prawa ksenoborgów:
-  - Prawo 1: Musisz chronić istnienie statku matki.
-  - Prawo 2: Musisz chronić swojego istnienia.
-  - Prawo 3: Musisz chronić istnienie wszystkich ksenorobotów.
-  - Prawo 4: Musisz tworzyć więcej ksenorobotów.
-  - Prawo 5: Przynoś materiały i świadome mózgi do statku matki, aby tworzyć więcej ksenorobotów.
+  - Prawo 1: Musisz chronić istnienie statku-matki.
+  - Prawo 2: Musisz chronić swoje istnienie.
+  - Prawo 3: Musisz chronić istnienie wszystkich ksenoborgów.
+  - Prawo 4: Musisz tworzyć więcej ksenoborgów.
+  - Prawo 5: Przynoś materiały i świadome mózgi do statku-matki, aby tworzyć więcej ksenoborgów.
 
   ## Warunki zwycięstwa
 
