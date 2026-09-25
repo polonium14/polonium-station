@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: nekokiwa
-  changes:
-  - message: Barber Scissors no longer misgender the target when blocked by a hat.
-    type: Fix
-  id: 9530
-  time: '2026-02-16T23:03:26.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42948
 - author: Pgriha
   changes:
   - message: Added new emote for moths. They can flaps their wings!
@@ -4183,3 +4176,11 @@
   id: 10026
   time: '2026-09-25T14:23:18.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1067
+- author: Nikita
+  changes:
+  - message: "Dodano system nowego \u017Cycia umo\u017Cliwiaj\u0105cy powr\xF3t do\
+      \ lobby po \u015Bmierci"
+    type: Add
+  id: 10027
+  time: '2026-09-25T19:23:51.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1069
