@@ -38,7 +38,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#8ab4d4">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§100 Zakłócanie\nOstrzeż. – 4:00[/color]
+        [color=black]§100 Zakłócanie\nOstrzeż. – 5:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#8ab4d4">
@@ -86,7 +86,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§501 Uniem. wskrzeszenia\n26:00 – Perma[/color]
+        [color=black]§501 Uniem. wskrzeszenia\n18:00 – Perma[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#ffce93">
@@ -116,7 +116,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#ffce93">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§502 Znaczne\nPerma – Egzek.[/color]
+        [color=black]§502 Znaczne\n20:00 – Perma[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#c9a0dc">
@@ -146,7 +146,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#c9a0dc">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§503 Antykorp.\nPerma – Egzek.[/color]
+        [color=black]§503 Antykorp.\n20:00 – Perma[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#dae8fc">
@@ -156,7 +156,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#dae8fc">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§104 Wandalizm\nOstrzeż. – 4:00[/color]
+        [color=black]§104 Wandalizm\nOstrzeż. – 5:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#dae8fc">
@@ -184,7 +184,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#9698ed">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§105 Wtargnięcie\nOstrzeż. – 4:00[/color]
+        [color=black]§105 Wtargnięcie\nOstrzeż. – 5:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -231,7 +231,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Kategoria obejmuje naruszenia porządku publicznego, niewykonanie poleceń organów władzy, naruszenia zasad aresztu, procedurę osłony umysłu oraz bunt. W ramach tej samej kategorii _XX uwzględnia się wyłącznie najcięższy zarzut.
 
   ## §100 Zakłócanie porządku
-  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 4:00
+  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 5:00
 
   [bold]Opis:[/bold] Zakłócanie porządku publicznego, w tym udział w zamieszkach.
 
@@ -322,7 +322,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Uwagi:[/bold] W razie braku zamiaru stosuje się okoliczność „brak zamiaru”. Każda kolejna ofiara stanowi osobny zarzut. Trzy lub więcej umyślnych zabójstw stanowi odrębną podstawę dożywotniego aresztu (permabrig).
 
   ## §501 Uniemożliwienie reanimacji
-  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] 26:00 – Permabrig
+  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] 18:00 – Permabrig
 
   [bold]Opis:[/bold] Doprowadzenie ciała do stanu uniemożliwiającego ponowne przywrócenie do życia (rozczłonkowanie, wyrzucenie w przestrzeń kosmiczną, ukrycie do czasu rozkładu).
 
@@ -378,7 +378,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Uwagi:[/bold] [bold]§402 Rozbój[/bold] pochłania zarzuty napaści oraz uszczerbku na zdrowiu wynikające z tego samego zdarzenia. Jeżeli sprawca porzucił mienie i użył siły wyłącznie w celu ucieczki, czyn kwalifikuje się jako kradzież oraz §201 lub §301, a nie jako rozbój.
 
   ## §502 Kradzież mienia znacznej wartości
-  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Permabrig – Egzekucja
+  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] 20:00 – Permabrig
 
   [bold]Opis:[/bold] Bezprawne przywłaszczenie lub zniszczenie mienia o szczególnej wartości — nielegalne przejęcie urządzeń, sprzętu lub majątku stacji oraz wahadłowców o charakterze krytycznym lub wyjątkowo cennym.
 
@@ -437,7 +437,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Uwagi:[/bold] Samo posiadanie bez prowadzenia obrotu podlega pod §303. Obrót sprzętem z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] kwalifikuje się jako §503.
 
   ## §503 Posiadanie wyposażenia antykorporacyjnego
-  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Permabrig – Egzekucja
+  [bold]Stopień:[/bold] V · [bold]Kara:[/bold] 20:00 – Permabrig
 
   [bold]Opis:[/bold] Posiadanie lub obrót przedmiotami wpisanymi do [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"], w tym:
   - urządzenia umożliwiające dostęp do nielegalnych rynków, na których oferowane są środki służące do celów terrorystycznych;
@@ -450,7 +450,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Znęcanie się nad zwierzętami kwalifikuje się jako §204.
 
   ## §104 Wandalizm
-  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 4:00
+  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 5:00
 
   [bold]Opis:[/bold] Oszpecenie lub nielegalna ingerencja w mienie bez wyrządzenia poważnych uszkodzeń (graffiti, nieuprawniona przebudowa estetyczna, zaśmiecanie).
 
@@ -485,7 +485,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Przebywanie w strefie bez uprawnień. Kategoria podlega łączeniu z kradzieżą (odmienna kategoria _XX). Włamanie z użyciem specjalistycznych narzędzi poza zakresem uprawnień stanowi dodatkową podstawę do postawienia zarzutu z §203, jeżeli zostały spełnione jego przesłanki.
 
   ## §105 Wtargnięcie
-  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 4:00
+  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 5:00
 
   [bold]Opis:[/bold] Wejście na teren niezabezpieczony bez stosownego zezwolenia.
 
