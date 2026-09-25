@@ -80,6 +80,8 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
     {
         base.Initialize();
 
+        SubscribeLocalEvent<RoundStartAttemptEvent>(OnRoundStartAttempt, before: new[] { typeof(GameTicker) });
+
         _sawmill = _log.GetSawmill("secret_plus");
 
         Subs.CVar(_cfg, GoobCVars.MinimumTimeUntilFirstEvent, value => _minimumTimeUntilFirstEvent = value, true);
@@ -107,6 +109,34 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             SetupEvents((uid, scheduler), CountActivePlayers());
     }
 
+    private void OnRoundStartAttempt(RoundStartAttemptEvent args)
+    {
+        if (args.Forced || args.Cancelled)
+            return;
+
+        var query = EntityQueryEnumerator<SecretPlusComponent>();
+        while (query.MoveNext(out var uid, out var scheduler))
+        {
+            if (!_ticker.IsGameRuleAdded(uid))
+                continue;
+
+            foreach (var ruleUid in scheduler.RoundstartRules)
+            {
+                if (!TryComp<GameRuleComponent>(ruleUid, out var rule)
+                    || rule.CancelPresetOnTooFewPlayers
+                    || args.Players.Length >= rule.MinPlayers
+                    || !_ticker.EndGameRule(ruleUid, rule))
+                    continue;
+
+                _chat.SendAdminAnnouncement(Loc.GetString("secretplus-rule-skipped-not-enough-ready-players",
+                    ("ruleName", ToPrettyString(ruleUid)),
+                    ("minimumPlayers", rule.MinPlayers),
+                    ("readyPlayersCount", args.Players.Length)));
+                LogMessage($"Skipped rule '{ToPrettyString(ruleUid)}': requires {rule.MinPlayers} players, but only {args.Players.Length} are ready. The preset was not cancelled by this rule.", false);
+            }
+        }
+    }
+
     private void SetupEvents(Entity<SecretPlusComponent> scheduler, PlayerCount count, SelectedGameRulesComponent? selectedRules = null)
     {
         scheduler.Comp.SelectedEvents.Clear();
@@ -121,8 +151,8 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
     {
         foreach (var proto in _ticker.GetAllGameRulePrototypes())
         {
-            if (!proto.TryGetComponent<GameRuleComponent>(out var gameRule, _factory)
-                || !proto.TryGetComponent<StationEventComponent>(out var stationEvent, _factory))
+            if (!proto.TryComp<GameRuleComponent>(out var gameRule, _factory)
+                || !proto.TryComp<StationEventComponent>(out var stationEvent, _factory))
                 continue;
 
             if (scheduler.Comp.DisallowedEvents.Contains(stationEvent.EventType)
@@ -152,7 +182,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         {
             var proto = entry.Key;
             var stationEvent = entry.Value;
-            if (!proto.TryGetComponent<GameRuleComponent>(out var gameRule, _factory))
+            if (!proto.TryComp<GameRuleComponent>(out var gameRule, _factory))
                 continue;
 
             if (scheduler.Comp.DisallowedEvents.Contains(stationEvent.EventType))
@@ -210,11 +240,14 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         var weightList = _prototypeManager.Index(scheduler.Comp.RoundStartAntagsWeightTable);
 
         var count = GetTotalPlayerCount(_playerManager.Sessions);
+        var eligiblePlayers = _ticker.RunLevel == GameRunLevel.PreRoundLobby
+            ? _ticker.ReadyPlayerCount()
+            : count;
 
         LogMessage($"Trying to run roundstart rules, total player count: {count}", false);
 
-        var weights = weightList.Weights.ToDictionary();
-        var primaryWeights = primaryWeightList.Weights.ToDictionary();
+        var weights = weightList.Weights.Where(entry => CanRunWithPlayerCount(entry.Key)).ToDictionary();
+        var primaryWeights = primaryWeightList.Weights.Where(entry => CanRunWithPlayerCount(entry.Key)).ToDictionary();
         const int maxIters = 50;
         var i = 0;
         var origChaos = scheduler.Comp.ChaosScore;
@@ -222,11 +255,15 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         {
             i++;
 
-            var pick = _random.Pick(i == 1 ? primaryWeights : weights);
+            var candidates = i == 1 && primaryWeights.Count > 0 ? primaryWeights : weights;
+            if (candidates.Count == 0)
+                break;
+
+            var pick = _random.Pick(candidates);
 
             GameRuleComponent? ruleComp = null;
             if (!_prototypeManager.TryIndex(pick, out var entProto)
-                || !entProto.TryGetComponent<GameRuleComponent>(out ruleComp, _factory))
+                || !entProto.TryComp<GameRuleComponent>(out ruleComp, _factory))
                 continue;
 
             var chaosScore = GetChaosScore(entProto, ruleComp);
@@ -255,11 +292,18 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
         return;
 
+        bool CanRunWithPlayerCount(string ruleId)
+        {
+            return _prototypeManager.TryIndex<EntityPrototype>(ruleId, out var proto)
+                && proto.TryComp<GameRuleComponent>(out var rule, _factory)
+                && rule.MinPlayers <= eligiblePlayers;
+        }
+
         void IndexAndStartGameMode(string pick, EntityPrototype? pickProto, GameRuleComponent? ruleComp)
         {
             if (pickProto == null
                 || ruleComp == null
-                || ruleComp.MinPlayers > count)
+                || ruleComp.MinPlayers > eligiblePlayers)
                 return;
 
             var effPlayers = (int)MathF.Round(count * scheduler.Comp.ChaosScore / origChaos);
@@ -271,6 +315,14 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
     private void StartRule(Entity<SecretPlusComponent> scheduler, string rule, bool doStart = true, int? players = null)
     {
         var ruleUid = _ticker.AddGameRule(rule);
+
+        // Roundstart antags are optional: losing ready players during map loading
+        // should end the affected rule, rather than cancel the entire preset.
+        if (players != null)
+        {
+            Comp<GameRuleComponent>(ruleUid).CancelPresetOnTooFewPlayers = false;
+            scheduler.Comp.RoundstartRules.Add(ruleUid);
+        }
 
         scheduler.Comp.ChaosScore += GetChaosScore(ruleUid, players)!.Value;
 
@@ -327,10 +379,10 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
     public float? GetChaosScore(EntityPrototype ruleProto, GameRuleComponent? ruleComp, int? players = null)
     {
-        if (ruleComp == null && !ruleProto.TryGetComponent<GameRuleComponent>(out ruleComp, _factory))
+        if (ruleComp == null && !ruleProto.TryComp<GameRuleComponent>(out ruleComp, _factory))
             return null;
 
-        if (ruleProto.TryGetComponent<AntagSelectionComponent>(out var selection, _factory))
+        if (ruleProto.TryComp<AntagSelectionComponent>(out var selection, _factory))
         {
             var score = GetAntagChaosScore(selection, players);
             if (score != null)

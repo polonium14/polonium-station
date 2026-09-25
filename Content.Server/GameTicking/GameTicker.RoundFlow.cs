@@ -153,7 +153,14 @@ namespace Content.Server.GameTicking
         private void LoadMaps()
         {
             if (_map.MapExists(DefaultMap))
+            //POLONIUM START
+            {
+                if (CurrentPreset == null)
+                    AddGamePresetRules();
+
                 return;
+            }
+            //POLONIUM END
 
             AddGamePresetRules();
 
