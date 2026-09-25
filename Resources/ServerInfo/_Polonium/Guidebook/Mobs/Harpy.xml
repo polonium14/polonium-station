@@ -9,37 +9,37 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Harpy
+  # Harpie
 
   <Box>
     <GuideEntityEmbed Entity="MobHarpy" Caption=""/>
   </Box>
 
-  Harpies are an avian human mutation, sprouting feathered wings and ruffled tails.
+  Harpie to ptasia mutacja ludzi, z pierzastymi skrzydłami i nastroszonym ogonem.
 
-  ## Claws And Beaks
+  ## Pazury i dzioby
 
-  Harpies' talons and beaks are pointed and sharp, and their unarmed attacks deal [color=#ffb86b]Piercing[/color] damage. Unfortunately,
-  their digitigrade legs and sharp talons mean they cannot comfortably wear any footwear.
+  Szpony i dzioby harpii są spiczaste i ostre, a ataki bez broni zadają obrażenia [color=#ffb86b]kłute[/color]. Niestety
+  przez szponiaste nogi, które nie są stopami, nie noszą wygodnie żadnego obuwia.
 
-  ## Singing Voice
+  ## Śpiew
 
-  Harpies are capable of singing out a tune on the spot with their voice, allowing for you to play music with any
-  instrument wherever you are, as long as you aren't muffled!
+  Harpie potrafią od razu zaśpiewać melodię własnym głosem, więc możesz grać muzykę dowolnym
+  instrumentem, gdziekolwiek jesteś, o ile nikt ci nie tłumi głosu!
 
-  ## Natural Flight
+  ## Naturalny lot
 
-  Harpies can fly with their wings to increase their movement speed dramatically, at the cost of heavy stamina drain
-  and a temporary inability to use their hands. Their wings also give them better acceleration if there is no gravity
-  on the station, but they still can't move without equipment when floating out in space. Finally, Harpies cannot
-  set off landmines or cut their feet on shards of glass!
+  Harpie latają na skrzydłach i mocno przyspieszają, kosztem dużego zużycia wytrzymałości
+  i chwilowej niemożności używania rąk. Skrzydła dają im też lepsze przyspieszenie, gdy na stacji nie ma grawitacji,
+  ale w kosmosie nadal nie poruszają się bez sprzętu. Harpie nie
+  uruchamiają też min lądowych i nie kaleczą stóp o odłamki szkła!
 
-  ## Sensitive Lungs
-  Harpies have sensitive lungs. This causes them to breathe [color=#7eb8ff]3 times faster[/color] than other species
-  and gasp when there is 0.2 combined mols of either miasma or CO2 in the air.
+  ## Wrażliwe płuca
+  Harpie mają wrażliwe płuca. Przez to oddychają [color=#7eb8ff]3 razy szybciej[/color] niż inne gatunki
+  i zaczynają sapać, gdy w powietrzu jest łącznie 0,2 mola amoniaku albo dwutlenku węgla.
 
-  ## Damage
-  Harpies take 15% more [color=#ffb86b]Blunt[/color], [color=#ffb86b]Slashing[/color] and [color=#ffb86b]Piercing[/color] damage due to
-  their hollow bones and avian physiology.
+  ## Obrażenia
+  Harpie dostają o 15% więcej obrażeń [color=#ffb86b]obuchowych[/color], [color=#ffb86b]ciętych[/color] i [color=#ffb86b]kłutych[/color] przez
+  puste kości i ptasią fizjologię.
 
 </Document>

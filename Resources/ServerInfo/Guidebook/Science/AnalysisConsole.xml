@@ -1,22 +1,22 @@
 <Document>
-  # Analysis Console
+  # Konsola analityczna
 
-  The Analysis Console is a device used to interface with artifacts. It can be used to check nodes, their triggers and effects, and extract points.
+  Konsola analityczna służy do pracy z artefaktami. Sprawdzisz na niej węzły, ich wyzwalacze i efekty, a potem wyciągniesz punkty.
 
   <Box>
-    <GuideEntityEmbed Entity="ComputerAnalysisConsole" Caption="Analysis Console"/>
+    <GuideEntityEmbed Entity="ComputerAnalysisConsole" Caption="Konsola analityczna"/>
   </Box>
 
-  The console displays detailed information about each node in the artifact’s tree structure. This includes:
-  - [bold]ID:[/bold] Unique identifier for use with the Node Scanner.
-  - [bold]Class:[/bold] The layer name, nodes on the same layer share it.
+  Konsola pokazuje szczegóły każdego węzła w drzewie artefaktu:
+  - [bold]ID:[/bold] unikalny identyfikator do skanera węzłów.
+  - [bold]Klasa:[/bold] nazwa warstwy. Węzły z tej samej warstwy mają ją wspólną.
   - [bold]Status:[/bold]
-  - [italic][color=red]Locked[/color][/italic] by default.
-  - [italic][color=plum]Active[/color][/italic] when first triggered.
-  - [italic][color=lime]Unlocked[/color][/italic] if a deeper node is reached (prevents manual activations).
-  - [bold]Durability:[/bold] Number of manual activations available.
-  - [bold]Effect:[/bold] What happens when the node activates or is manually triggered.
-  - [bold]Triggers:[/bold] Required actions to unlock the node.
-  - [bold]Server:[/bold] Choose the research server where extracted points are sent.
-  - [bold]Extract Points:[/bold] Extracts points from nodes unlocked since the last extraction.
+  - [italic][color=red]Zablokowany[/color][/italic] domyślnie.
+  - [italic][color=plum]Aktywny[/color][/italic] po pierwszym wyzwoleniu.
+  - [italic][color=lime]Odblokowany[/color][/italic], kiedy dojdziesz do głębszego węzła (nie da się go wtedy odpalać ręcznie).
+  - [bold]Wytrzymałość:[/bold] ile zostało ręcznych aktywacji.
+  - [bold]Efekt:[/bold] co się dzieje, kiedy węzeł się aktywuje albo odpalisz go ręcznie.
+  - [bold]Wyzwalacze:[/bold] co trzeba zrobić, żeby odblokować węzeł.
+  - [bold]Serwer:[/bold] serwer badań, na który pójdą wyciągnięte punkty.
+  - [bold]Wyodrębnij punkty:[/bold] wyodrębnia punkty z węzłów odblokowanych od ostatniego wyciągania.
 </Document>

@@ -7,18 +7,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  ## Malign Rifts
+  ## Złowrogie Rozdarcia
   <Box>
     <GuideEntityEmbed Entity="CosmicMalignRift" Caption=""/>
     <GuideEntityEmbed Entity="MachineAPE" Caption=""/>
   </Box>
-  As your cult progresses, [color=#7ee8f0]Malign Rifts[/color] will begin to spawn throughout the surrounding environment. These rifts in realspace bleed unstable astral power, and should be located as soon as possible!
+  Wraz z postępem kultu w okolicy zaczynają pojawiać się [color=#7ee8f0]Złowrogie Rozdarcia[/color]. Te szczeliny w realnej przestrzeni broczą niestabilną astralną mocą i trzeba je znaleźć jak najszybciej!
 
-  Malign Rifts can be expunged by an [color=Yellow]A.P.E[/color] set to [bold]Λ-stabilizer particles[/bold].
+  Złowrogie Rozdarcia usuwa [color=Yellow]M.A.K.A.K.[/color] ustawiony na [bold]cząstki stabilizujące Λ[/bold].
 
-  Cultists may stealthily [color=#7ee8f0]absorb[/color] a Malign Rift by interacting with it.
+  Kultysta może po cichu [color=#7ee8f0]wchłonąć[/color] Złowrogie Rozdarcie, wchodząc z nim w interakcję.
 
-  Successful absorbtion of a Malign Rift will [bold]permanently[/bold] empower the cultist doing so, increasing the strength of all the [color=#7ee8f0]Influences[/color] they possess, and doubling the [color=#7ee8f0]Entropy[/color] they gain from siphoning crewmembers. Empowered cultists also no longer need to breathe, and are immune to the vaccuum of space. Empowered cultists also gain the [color=#7ee8f0]Null Fragmentation[/color] influence, which can be used to convert a Cyborg into an [color=#7ee8f0]Entropic Colossus[/color], or to corrupt the station AI's laws.
+  Udane wchłonięcie [bold]na stałe[/bold] wzmacnia tego kultystę: wszystkie jego [color=#7ee8f0]wpływy[/color] stają się silniejsze, a [color=#7ee8f0]entropia[/color] z wysysania załogi podwaja się. Wzmocniony kultysta nie musi też oddychać i jest odporny na próżnię kosmosu. Dostaje wpływ [color=#7ee8f0]Zerowa fragmentacja[/color], którym można przemienić Cyborga w [color=#7ee8f0]Entropicznego Kolosa[/color] albo zepsuć prawa SI stacji.
 
 
 </Document>

@@ -7,21 +7,21 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Deconversion
+  # Dekonwersja
   <Box>
     <GuideEntityEmbed Entity="CosmicDeconversionJail" Caption=""/>
   </Box>
 
-  When mounting an effort to thwart the [color=#7ee8f0]Cosmic Cult[/color], there are several methods the crew might employ to ensure their survival and safety. One of these methods is [color=Yellow]Deconversion[/color].
-  Crew that are suspected of malign infection can be subjected to the [color=Yellow]Containment Oubliette[/color], which is a scientific device capable of expunging most forms of anomalous influence.
+  Gdy załoga próbuje powstrzymać [color=#7ee8f0]Kult Kosmiczny[/color], ma kilka sposobów, żeby przeżyć i się zabezpieczyć. Jednym z nich jest [color=Yellow]dekonwersja[/color].
+  Osoby podejrzane o złowrogą infekcję można zamknąć w [color=Yellow]komorze odosobnienia[/color], urządzeniu naukowym zdolnym wypędzić większość form anomalnego wpływu.
 
-  ## Suppression Methods
+  ## Sposoby tłumienia
   <Box>
     <GuideEntityEmbed Entity="MindShieldImplanter" Caption=""/>
   </Box>
 
-  Deconversion is but one method for dealing with an encroaching cult. Crew aboard the station may alternatively wish to invest in [color=Green]Mindshield[/color] implanters.
+  Dekonwersja to tylko jeden sposób na zbliżający się kult. Załoga może też zainwestować w implantatory [color=Green]tarczy umysłu[/color].
 
-  These state-of-the-art devices can prevent outside influences from brainwashing crewmembers, providing a powerful utility against the cult's influence.
+  Te nowoczesne urządzenia chronią członków załogi przed praniem mózgu przez obce wpływy i mocno ograniczają zasięg kultu.
 
 </Document>

@@ -5,46 +5,43 @@ SPDX-License-Identifier: LicenseRef-CosmicCult
 -->
 
 <Document>
-  # Entropic Colossus
+  # Entropiczny Kolos
 
   <Box>
-    [color=#c8c8c8][italic]"Neither ill will, nor impassioned desire. Neither malice, nor cruelty. Nothing."[/italic][/color]
+    [color=#c8c8c8][italic]"Ani zła wola, ani namiętne pragnienie. Ani złośliwość, ani okrucieństwo. Nic."[/italic][/color]
   </Box>
   <Box>
-    [color=#c8c8c8][italic]"Just an end."[/italic][/color]
+    [color=#c8c8c8][italic]"Tylko koniec."[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="MobCosmicColossus" Caption=""/>
   </Box>
 
-  You are an Entropic Colossus, a towering monstrosity of malign plating and dendritic infestation. Your purpose is the same as that of the [color=#7ee8f0]Cosmic Cult[/color]: The end of all things.
+  Jesteś Entropicznym Kolosem, ogromną bestią ze złowrogiego pancerza, porośniętą rozgałęzionym nalotem. Twój cel jest taki sam jak [color=#7ee8f0]Kultu Kosmicznego[/color]: koniec wszystkiego.
 
-  Some Colossi are remnants. Perhaps survivors of a conflict borne of The Unknown's influence, or the product of some strange bluespace anomaly. These Colossi drift across the distal black of space until their energies deplete... Or until they impact civilization.
+  Niektóre Kolosy to pozostałości. Ocalali z konfliktu zrodzonego pod wpływem Nieznajomego albo wytwór dziwnej anomalii bluespace. Dryfują przez odległą czerń kosmosu, aż wyczerpie się ich energia... albo aż wpadną na cywilizację.
 
-  ## Influences
+  ## Wpływy
 
-  Entropic Colossi are posessed of powerful [color=#7ee8f0]Malign Influences[/color], with which a capable colossus may lay waste to its enemies.
+  Entropiczne Kolosy mają potężne [color=#7ee8f0]złowrogie wpływy[/color], którymi sprawny kolos może zrównać wrogów z ziemią.
 
-  - [color=#7ee8f0][bold]Entropic Sunder:[/bold][/color] Warp to the target location and unleash a cascading detonation of malign energy. Careful - this will hurt allied cultists!
-  - [color=#7ee8f0][bold]Colossal Ingress:[/bold][/color] Use your colossal strength to force open a doorway. Even securely bolted doorways will be torn open by your titanic power.
-  - [color=#7ee8f0][bold]Slumber Shell:[/bold][/color] Slumber your body for a period of time to regenerate integrity. Must be done on stable ground. This will restore you for exactly half the damage you've taken.
+  - [color=#7ee8f0][bold]Entropiczne rozdarcie:[/bold][/color] Przenieś się w wybrane miejsce i uwolnij kaskadową detonację złowrogiej energii. Ostrożnie, to rani także sprzymierzonych kultystów!
+  - [color=#7ee8f0][bold]Kolosalne wtargnięcie:[/bold][/color] Kolosalną siłą wyważ drzwi. Nawet solidnie zaryglowane przejście pęknie pod twoją mocą.
+  - [color=#7ee8f0][bold]Uśpiona skorupa:[/bold][/color] Uśpij ciało na jakiś czas, żeby odzyskać integralność. Musisz stać na stabilnym podłożu. Odzyskasz dokładnie połowę przyjętych obrażeń.
 
-  Colossi that have encountered the station by happenstance also have this influence:
-  - [color=#7ee8f0][bold]Colossal Ingress:[/bold][/color] Use your colossal strength to force open a doorway. Even securely bolted doorways will be torn open by your titanic power.
+  ## Cele
 
-  ## Objectives
+  Kolosy, które trafiły na stację przypadkiem:
+  - [color=#7ee8f0][bold]Przetrwanie[/bold][/color] — wspólnie wyssajcie z załogi określoną ilość entropii. Im więcej jej zbierzecie, tym mocniej wzmocnicie Monument!
+  - [color=#7ee8f0][bold]Wezwanie[/bold][/color] — przyzwij Kukłę entropii we wskazanym miejscu na stacji.
 
-  Colossi that have encountered the station by happenstance:
-  - [color=#7ee8f0][bold]Persist[/bold][/color]  - Collectively siphon a certain amount of Entropy from the crew. The more entropy you siphon, the more you can empower the Monument!
-  - [color=#7ee8f0][bold]Beckon[/bold][/color] - Call forth an Effigy of Entropy at a designated location aboard the station.
+  Kolosy stworzone z Cyborgów przez Kult Kosmiczny:
+  - [color=#7ee8f0][bold]Sprowadzenie końca[/bold][/color] — dokończcie ostatni rytuał, wezwijcie Nieznajomego i zniszczcie stację.
 
-  Colossi created from Cyborgs by the Cosmic Cult:
-  - [color=#7ee8f0][bold]Usher In The End[/bold][/color] - Complete the final ritual to beckon the Unknown and destroy the station.
-
-  ## Effigy of Entropy
+  ## Kukła entropii
   <Box>
     <GuideEntityEmbed Entity="CosmicEffigy" Caption=""/>
   </Box>
-  Some Colossi may call forth an [color=#7ee8f0]Effigy of Entropy[/color]. The effigy is a dangerously unstable malign anomaly, and should be dealt with by the Science department immediately!
+  Niektóre Kolosy mogą przyzwać [color=#7ee8f0]Kukłę entropii[/color]. To niebezpiecznie niestabilna, złowroga anomalia i dział badań powinien zająć się nią natychmiast!
 
 </Document>

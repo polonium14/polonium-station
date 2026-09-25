@@ -16,47 +16,46 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
 
 
-  Diona are an alien species of sentient plants, with a wide and varied evolutionary history and countless ancestors in
-  common vegetation, trees, flowers, etc.
+  Diony to obcy gatunek rozumnych roślin, z szeroką i zróżnicowaną historią ewolucji oraz niezliczonymi przodkami
+  wśród zwykłej roślinności, drzew, kwiatów i tak dalej.
 
-  ## Diona Physiology
+  ## Fizjologia dion
   <Box>
     <GuideEntityEmbed Entity="FloraTree" Caption=""/>
   </Box>
-  Diona blood is a sort of sap excreted by their wooden flesh, and it can't be metabolized from Iron. Furthermore,
-  being plants, Weed Killer can poison a Diona, whereas Robust Harvest can heal them in moderation. Overdosing on
-  Robust Harvest will cause a Diona to grow out of control, turning into an immobile tree. Cutting down the tree will
-  restore the Diona to their usual state.
+  Krew diony to sok wydzielany przez drewniane ciało i nie da się jej zmetabolizować z żelaza. Herbicydy zatruwają diony, a urodzajnik w umiarkowanej dawce je leczy. Przedawkowanie
+  urodzajnika sprawia, że diona rośnie bez kontroli i zamienia się w nieruchome drzewo. Ścięcie drzewa
+  przywraca dionę do zwykłego stanu.
 
-  Having no real "feet", Diona cannot wear shoes. Fortunately, they are not slowed by Kudzu.
+  Diony nie mają prawdziwych stóp, więc nie noszą butów. Kudzu ich nie spowalnia.
 
-  Diona also tend to get hungry and thirsty significantly slower than other species, and asphyxiate half as fast.
+  Głodnieją i odczuwają pragnienie wyraźnie wolniej niż inne gatunki, a duszą się o połowę wolniej.
 
-  ## Diona Nymphs
+  ## Nimfy dion
   <Box>
     <GuideEntityEmbed Entity="MobDionaNymph" Caption=""/>
     <GuideEntityEmbed Entity="MobDionaNymph" Caption=""/>
     <GuideEntityEmbed Entity="MobDionaNymph" Caption=""/>
   </Box>
-  After death, a Diona can voluntarily destroy their own body, releasing their "internal organs" as three Nymphs,
-  with the player taking control of the Brain Nymph.
-  It can talk but has no hands or inventory, and can't do much.
+  Po śmierci diona może dobrowolnie zniszczyć własne ciało i wypuścić „organy wewnętrzne” jako trzy nimfy.
+  Gracz przejmuje wtedy nimfę mózgu.
+  Umie mówić, ale nie ma rąk ani ekwipunku i niewiele może zrobić.
 
-  After 10 minutes, a Nymph can reform into a whole Diona. This will be a new randomised body with a random name,
-  and there will be little to no evidence beyond their word about who they were before.
+  Po 10 minutach nimfa może złożyć się z powrotem w całą dionę. To będzie nowe, losowe ciało z losowym imieniem
+  i poza jej słowem prawie nie zostanie śladu, kim była wcześniej.
 
-  ## Damage
-  Diona take 30% less [color=#ffb86b]Blunt[/color] damage and 20% less [color=#ffb86b]Slashing[/color] damage, but 50% more [color=#ff8a8a]Heat[/color] damage,
-  20% more [color=#ff8a8a]Shock[/color] damage, and they can easily catch on fire when receiving enough Heat damage.
+  ## Obrażenia
+  Diony dostają o 30% mniej obrażeń [color=#ffb86b]obuchowych[/color] i o 20% mniej obrażeń [color=#ffb86b]ciętych[/color], ale o 50% więcej obrażeń [color=#ff8a8a]oparzeniowych[/color],
+  o 20% więcej obrażeń [color=#ff8a8a]porażeniowych[/color] i łatwo zajmują się ogniem, gdy dostaną dość oparzeń.
 
-  ## Diona Naming Conventions
+  ## Imiona dion
 
-  Diona typically have nature themed, Noun of Noun style names.
+  Diony zwykle mają imiona związane z naturą, w stylu „rzeczownik czegoś”.
 
-  [bullet] The Blossom of Bravery
+  [bullet] Kwiat Odwagi
 
-  [bullet] The Elder of Nobility
+  [bullet] Starszy Szlachetności
 
-  [bullet] The Canyon of Balance
+  [bullet] Kanion Równowagi
 
 </Document>

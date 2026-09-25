@@ -7,40 +7,40 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
- # The Monument
+ # Monument
   <Box>
     <GuideEntityEmbed Entity="MonumentCosmicCult1" Caption=""/>
     <GuideEntityEmbed Entity="MonumentCosmicCult2" Caption=""/>
     <GuideEntityEmbed Entity="MonumentCosmicCult3" Caption=""/>
   </Box>
 
-  Before you set about your goals, The Monument must be [italic][color=#7ee8f0]Beckoned[/color][/italic] by your cult leader. When first built, the Monument is invisible, intangible, and effectively imperceptible to any non-cultist. Once empowered, the Monument will become both visible and tangible to all individuals aboard the station.
+  Zanim zabierzecie się za cele, przywódca kultu musi [italic][color=#7ee8f0]przyzwać[/color][/italic] Monument. Tuż po wzniesieniu jest niewidzialny, niematerialny i w praktyce niewyczuwalny dla osób spoza kultu. Po wzmocnieniu staje się widoczny i namacalny dla wszystkich na stacji.
 
-  It is for this reason that the Monument is best hidden from prying eyes, and in a relatively defendable location.
+  Dlatego najlepiej ukryć go przed ciekawskimi i postawić w miejscu, którego da się bronić.
 
-  Entropy may be infused into the Monument to empower it. As you infuse the Monument with entropy, the cult will collectively gain access to more [color=#7ee8f0][bold]Influences[/bold][/color] and [color=#7ee8f0][bold]Glyphs[/bold][/color], which can be attained by interacting with the Monument.
+  Do Monumentu można wlewać entropię, żeby go wzmacniać. Wraz z kolejnymi porcjami kult wspólnie zyskuje dostęp do nowych [color=#7ee8f0][bold]wpływów[/bold][/color] i [color=#7ee8f0][bold]glifów[/bold][/color], które bierze się przez interakcję z Monumentem.
 
-  Cultists can interact with the Monument to purchase additional [color=#7ee8f0][bold]Influences[/bold][/color]. Entropy stored in the monument for the sake of purchasing is [italic]per person,[/italic] so one cultist purchasing an ability will not spend any entropy collected by other cultists.
+  Kultysta może kupić przy Monumencie dodatkowe [color=#7ee8f0][bold]wpływy[/bold][/color]. Entropia odłożona na zakupy jest [italic]osobna dla każdej osoby[/italic], więc zakup jednego kultysty nie wydaje entropii zebranej przez pozostałych.
 
-  [textlink="For more on Influences, click here." link="CosmicCultInfluences"]
+  [textlink="Więcej o wpływach." link="CosmicCultInfluences"]
 
-  ## Beckoning the Unknown
+  ## Przyzywanie Nieznajomego
   <Box>
     <GuideEntityEmbed Entity="PlushieCosmicCult" Caption=""/>
   </Box>
 
-  Should you succeed in fully empowering the Monument to the third stage, it will hunger for one last threshold of entropy - fuel to feed the final curtain call. Once enough entropy has been infused, the empowered Monument will glow, signalling that it can now be used to [color=#7ee8f0][bold]Beckon[/bold][/color] the Unknown. Any cultist may do so by interacting with the Monument.
+  Jeśli doprowadziecie Monument do trzeciego etapu, zapragnie jeszcze jednego progu entropii, paliwa na ostatnie zejście ze sceny. Gdy wlejecie dość, wzmocniony Monument zacznie świecić. To znak, że można nim [color=#7ee8f0][bold]wezwać[/bold][/color] Nieznajomego. Może to zrobić dowolny kultysta, wchodząc w interakcję z Monumentem.
 
-  Once the Monument is ready to activate, cultists [bold]must[/bold] activate it in order to regain access the Monument's store and glyphs - the end [bold]cannot[/bold] be forestalled.
+  Gdy Monument jest gotowy do aktywacji, kultyści [bold]muszą[/bold] go uruchomić, żeby odzyskać dostęp do sklepu i glifów. Końca [bold]nie da się[/bold] odłożyć.
 
-  Be prepared to defend the Monument during the Beckoning, as just one waylaid action from a single disruptive soul will bring this ritual to a sudden, unceremonious halt.
+  Przygotujcie się do obrony Monumentu podczas wezwania. Jedno przerwane działanie jednej wrogiej duszy gwałtownie i bez ceremonii zatrzyma rytuał.
 
-  Converting additional crewmembers using a [color=#7ee8f0]Glyph of Truth[/color] while the Beckoning is active will accelerate its speed, bringing the cult closer to total victory.
+  Nawracanie kolejnych osób [color=#7ee8f0]Glifem Prawdy[/color] w trakcie wezwania przyspiesza rytuał i przybliża kult do pełnego zwycięstwa.
 
-  ## Glyphs
-  Glyphs may be [color=#7ee8f0]Scribed[/color] by interacting with the Monument. You may also [color=#7ee8f0]Unscribe[/color] an unused Glyph in a similar manner at The Monument.
+  ## Glify
+  Glify można [color=#7ee8f0]wyryć[/color] przy Monumencie. Nieużyty glif można tam też [color=#7ee8f0]zetrzeć[/color].
 
-  Be aware that activating a Glyph will sap the health of all cultists aiding in the Glyph's activation!
+  Aktywacja glifu wysysa zdrowie wszystkich kultystów, którzy pomagają go odprawić!
 
   <Box>
     <GuideEntityEmbed Entity="CosmicGlyphKnowledge" Caption=""/>
@@ -52,10 +52,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="CosmicGlyphCessation" Caption=""/>
     <GuideEntityEmbed Entity="CosmicGlyphTruth" Caption=""/>
   </Box>
-  - [bold]Glyph of Knowledge[/bold] allows a non-cultist brought upon it to be [color=#7ee8f0]converted[/color] into a fellow cosmic cultist! Chaplains and individuals with a mindshield cannot be converted using this glyph.
-  - [bold]Glyph of Projection[/bold] will allow the cultist using it to temporarily escape their body as a free-floating and imperceptible [color=#7ee8f0]Astral Form[/color], allowing the cultist to spy on unsuspecting crewmembers.
-  - [bold]Glyph of Warding[/bold] transmutes any spacesuit - hard or soft - into the cosmic cult's special [color=#7ee8f0]Entropic Armor[/color].
-  - [bold]Glyph of Blades[/bold] randomly transmutes any sharp object into one of the cosmic cult's [color=#7ee8f0]Unique Weapons[/color].
-  - [bold]Glyph of Cessation[/bold] transmutes a portable atmospherics scrubber into an unanchored [color=#7ee8f0]Vacuous Spire[/color].
-  - [bold]Glyph of Truth[/bold] allows any non-cultist brought upon it to be [color=#7ee8f0]converted[/color] into a fellow cosmic cultist, even if they are a chaplain or protected by a mindshield.
+  - [bold]Glif Wiedzy[/bold] [color=#7ee8f0]nawraca[/color] osobę spoza kultu postawioną na nim w kultystę kosmicznego! Kapłana ani osoby z tarczą umysłu tym glifem nie nawrócisz.
+  - [bold]Glif Projekcji[/bold] pozwala kultyście na chwilę opuścić ciało jako swobodna, niewyczuwalna [color=#7ee8f0]astralna postać[/color] i podglądać niczego niepodejrzewającą załogę.
+  - [bold]Glif Osłony[/bold] przemienia dowolny skafander, twardy albo miękki, w specjalną [color=#7ee8f0]entropiczną zbroję[/color] kultu.
+  - [bold]Glif Ostrzy[/bold] losowo przemienia dowolny ostry przedmiot w jedną z [color=#7ee8f0]unikalnych broni[/color] kultu.
+  - [bold]Glif Ustania[/bold] przemienia przenośny oczyszczacz powietrza w niezakotwiczoną [color=#7ee8f0]jałową iglicę[/color].
+  - [bold]Glif Prawdy[/bold] [color=#7ee8f0]nawraca[/color] dowolną osobę spoza kultu postawioną na nim, także kapłana i osobę chronioną tarczą umysłu.
 </Document>

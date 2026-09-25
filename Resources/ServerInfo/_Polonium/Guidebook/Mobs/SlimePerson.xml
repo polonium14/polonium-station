@@ -12,50 +12,50 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Slime People
+  # Szlamoludy
 
   <Box>
     <GuideEntityEmbed Entity="MobSlimePerson" Caption=""/>
   </Box>
 
-  Slime People are sentient blobs of non-newtonian fluid and organs who breathe nitrogen.
+  Szlamoludy to rozumne bryły płynu nienewtonowskiego i organów, które oddychają azotem.
 
-  ## Slime Core
+  ## Rdzeń szlamu
   <Box>
     <GuideEntityEmbed Entity="SentientSlimeCore" Caption=""/>
   </Box>
-  Among many other physiological differences, Slime People's organs are compressed into a single "core" located in
-  their stomach region, acting as the brain, heart, eyes, stomach, kidneys, and liver. This core can process up to six
-  reagents instead of the usual three.
+  Wśród wielu innych różnic fizjologicznych organy szlamoluda są ściśnięte w jeden „rdzeń” w
+  okolicy brzucha. Pełni rolę mózgu, serca, oczu, żołądka, nerek i wątroby. Ten rdzeń przerabia do sześciu
+  odczynników zamiast zwykłych trzech.
 
-  ## Breathing
+  ## Oddychanie
 
-  Slime People breathe nitrogen instead of oxygen, which is abundant in the station air, but harder to find compressed
-  into gas tanks. They exhale nitrous oxide and are unaffected by it.
-  Furthermore, Slime People asphyxiate five times slower than humans, making the rarity of nitrogen tanks less of a
-  severe threat to their survivability in an emergency.
+  Szlamoludy oddychają azotem zamiast tlenu. Azotu jest pod dostatkiem w powietrzu stacji, ale trudniej znaleźć go sprężonego
+  w butlach. Wydychają podtlenek azotu i on im nie szkodzi.
+  Duszą się też pięć razy wolniej niż ludzie, więc rzadkość butli z azotem mniej
+  zagraża im w nagłym wypadku.
 
-  ## Slime Storage
+  ## Schowek w szlamie
 
-  Slime People have an [bold]internal 2x3 storage inventory[/bold] inside of their slime membrane. Anyone can see
-  what's inside and take it out of them without asking, and thrown items can sometimes get stuck inside, so be careful.
+  Szlamoludy mają [bold]wewnętrzny schowek 2x3[/bold] w błonie szlamu. Każdy widzi,
+  co jest w środku, i może to wyjąć bez pytania, a rzucone przedmioty czasem wpadają do środka, więc uważaj.
 
-  ## Slime Healing
+  ## Leczenie szlamu
 
-  Slime People have a very slight accelerated regeneration compared to other humanoids, their slime coagulating at
-  twice the rate of other species' and below 65 damage. This healing factor coincidentally also makes their slime a
-  debatably nutritious source of food for other species.
+  Szlamoludy regenerują się odrobinę szybciej niż inne humanoidy. Ich szlam krzepnie
+  dwa razy szybciej niż u innych gatunków i poniżej 65 obrażeń. Ta regeneracja sprawia też, że ich szlam jest
+  dyskusyjnie pożywnym jedzeniem dla innych gatunków.
 
-  ## Damage
+  ## Obrażenia
 
-  Due to their non-newtonian biology, Slime People take 40% reduced [color=#ffb86b]Blunt[/color] damage and 20% reduced [color=#8ee99a]Poison[/color],
-  as well as 80% reduced [color=mediumpurple]Cellular[/color]. However, they also take 50% more [color=cornflowerblue]Cold[/color] damage,
-  20% more [color=#ffb86b]Piercing[/color] damage, and 20% more [color=#ffb86b]Slashing[/color] damage. They suffer from barotrauma
-  9% faster than other species, and they also become injured when splashed with water, as some of their slime is washed away.
+  Przez nienewtonowską biologię szlamoludy dostają o 40% mniej obrażeń [color=#ffb86b]obuchowych[/color] i o 20% mniej [color=#8ee99a]zatrucia[/color],
+  a także o 80% mniej obrażeń [color=mediumpurple]komórkowych[/color]. Dostają jednak o 50% więcej obrażeń [color=cornflowerblue]odmrożeniowych[/color],
+  o 20% więcej obrażeń [color=#ffb86b]kłutych[/color] i o 20% więcej obrażeń [color=#ffb86b]ciętych[/color]. Uraz ciśnieniowy
+  narasta u nich o 9% szybciej niż u innych gatunków, a oblanie wodą je rani, bo część szlamu zostaje zmyta.
 
-  ## Slime Naming Conventions
+  ## Imiona szlamoludów
 
-  Slimes typically have names that are onomatopoeic, "liquidy", or references their slime.
+  Szlamoludy zwykle mają imiona dźwiękonaśladowcze, „płynne” albo nawiązujące do szlamu.
 
   [bullet] Glub Green
 

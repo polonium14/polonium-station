@@ -1,9 +1,9 @@
 guide-entry-heretics = Heretycy
-guide-entry-heretics-paths = Paths
-guide-entry-heretics-knowledge = Knowledge Points
-guide-entry-heretics-rituals = Rituals & Sacrifices
-guide-entry-heretics-spells = Czary i Foci
-guide-entry-heretics-ash = Path of Ash
-guide-entry-heretics-flesh = Path of Flesh
-guide-entry-heretics-void = Path of Void
-guide-entry-heretics-side = Side Knowledge
+guide-entry-heretics-paths = Ścieżki
+guide-entry-heretics-knowledge = Punkty wiedzy
+guide-entry-heretics-rituals = Rytuały i ofiary
+guide-entry-heretics-spells = Czary i ogniska
+guide-entry-heretics-ash = Ścieżka popiołu
+guide-entry-heretics-flesh = Ścieżka ciała
+guide-entry-heretics-void = Ścieżka pustki
+guide-entry-heretics-side = Wiedza poboczna

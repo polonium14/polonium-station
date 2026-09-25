@@ -1,79 +1,79 @@
 <Document>
-  # Path of Flesh
-  The Path of Flesh focuses on summoning player-controlled minions and demons to do your bidding. Heretics on this path gain almost no offensive or defensive abilities, and rely heavily on stockpiling corpses and organs to complete rituals.
+  # Ścieżka ciała
+  Ścieżka ciała skupia się na przyzywaniu sług i demonów sterowanych przez graczy, którzy wykonują twoje polecenia. Heretycy na tej ścieżce prawie nie dostają umiejętności ofensywnych ani defensywnych i mocno polegają na gromadzeniu zwłok oraz organów do rytuałów.
 
-  Despite this, it offers many fun and powerful tools to those who can make it to the end, making it a difficult (but satisfying) path overall for inexperienced Heretics. Ascending allows you to shed your human form and become something much greater. 
+  Mimo to daje dużo zabawnych i potężnych narzędzi tym, którzy dotrą do końca. Dla niedoświadczonych Heretyków to trudna, ale satysfakcjonująca ścieżka. Wniebowstąpienie pozwala zrzucić ludzką postać i stać się czymś znacznie większym.
 
-  ## Principle of Hunger
+  ## Zasada głodu
   <Box>
     <GuideEntityEmbed Entity="HereticBladeFlesh" Caption=""/>
   </Box>
-  Opens up the Path of Flesh to you.
+  Otwiera ci Ścieżkę ciała.
 
-  Allows you to transmute a knife and a pool of blood into a Bloody Blade.
+  Pozwala przemienić nóż i kałużę krwi w krwawe ostrze.
 
-  ## Grasp of Flesh
+  ## Chwyt ciała
   <Box>
     <GuideEntityEmbed Entity="TouchSpellMansus" Caption=""/>
   </Box>
-  Your Mansus Grasp gains the ability to create a ghoul out of corpse with a soul.
+  Chwyt Mansusu potrafi stworzyć gula ze zwłok, w których jest dusza.
 
-  Ghouls have only 50 health and look like husks to the heathens' eyes, but can use Bloody Blades effectively.
+  Gule mają tylko 50 zdrowia i w oczach pogan wyglądają jak łupiny, ale dobrze władają krwawym ostrzem.
 
-  ## Imperfect Ritual
+  ## Niedoskonały rytuał
   <Box>
     <GuideEntityEmbed Entity="FoodPoppy" Caption=""/>
   </Box>
-  Allows you to transmute a corpse and a poppy to create a Voiceless Dead.
+  Pozwala przemienić zwłoki i mak w Niemego zmarłego.
 
-  The corpse does not need to have a soul.
+  Zwłoki nie muszą mieć duszy.
 
-  Voiceless Dead are mute ghouls and only have 100 health, but can use Bloody Blades effectively.
+  Niemi zmarli to nieme gule. Mają tylko 100 zdrowia, ale dobrze władają krwawym ostrzem.
 
-  ## Mark of Flesh
+  ## Znak ciała
   <Box>
     <GuideEntityEmbed Entity="TouchSpellMansus" Caption=""/>
   </Box>
-  Your Mansus Grasp now applies the Mark of Flesh. The mark is triggered from an attack with your Bloody Blade.
+  Chwyt Mansusu nakłada teraz Znak ciała. Znak wyzwala atak krwawym ostrzem.
 
-  When triggered, the victim violently spills all it's blood on the ground.
+  Po wyzwoleniu ofiara gwałtownie wylewa całą krew na ziemię.
 
-  ## Knitting of Flesh
+  ## Splot ciała
   <Box>
     <GuideEntityEmbed Entity="OrganHumanHeart" Caption=""/>
   </Box>
-  Grants you the spell Knit Flesh. This spell allows you to disable a random one of your target's organs or senses.
+  Daje czar Splot ciała. Tym czarem wyłączasz losowy organ albo zmysł celu.
 
-  This spell also allows you to heal your minions and summons, or restore failing organs to acceptable status.
+  Tym samym czarem leczysz sługi i przyzwane istoty albo przywracasz zawodzące organy do znośnego stanu.
 
-  ## Raw Ritual
+  ## Surowy rytuał
   <Box>
     <GuideEntityEmbed Entity="MobGhoulProphet" Caption=""/>
   </Box>
-  Allows you to transmute a pair of eyes, a stomach, and a pool of blood to create a Raw Prophet.
+  Pozwala przemienić parę oczu, żołądek i kałużę krwi w Surowego proroka.
 
-  Raw Prophets have a long range jaunt and the ability to link minds to communicate with ease, but are very fragile and weak in combat.
+  Surowi prorocy mają skok dalekiego zasięgu i potrafią łączyć umysły, żeby łatwo się porozumiewać, ale są bardzo krusi i słabi w walce.
 
-  ## Bleeding Steel
+  ## Krwawiąca stal
   <Box>
     <GuideEntityEmbed Entity="HereticBladeFlesh" Caption=""/>
   </Box>
-  Your Bloody Blade now causes enemies to bleed heavily on attack.
+  Krwawe ostrze sprawia teraz, że wrogowie mocno krwawią przy ataku.
 
-  ## Lonely Ritual
+  ## Samotny rytuał
   <Box>
     <GuideEntityEmbed Entity="MobGhoulStalker" Caption=""/>
   </Box>
-  Allows you to transmute a heart, a stomach, lungs and a pen to create a Stalker.
+  Pozwala przemienić serce, żołądek, płuca i długopis w Prześladowcę.
 
-  Stalkers can jaunt, release EMPs, and are strong in combat.
+  Prześladowcy potrafią skakać, wypuszczać impulsy EMP i są silni w walce.
 
-  ## Priest’s Final Hymn
-  The ascension ritual of the Path of Flesh. Bring 4 corpses to a transmutation rune to complete the ritual.
+  ## Ostatni hymn kapłana
+  Rytuał wniebowstąpienia Ścieżki ciała. Przynieś na runę transmutacji 4 zwłoki, żeby dokończyć rytuał.
 
-  When completed, you gain the ability to shed your human form and become the Lord of the Night, a supremely powerful creature.
+  Po ukończeniu możesz zrzucić ludzką postać i stać się Władcą Nocy, istotą o ogromnej mocy.
 
-  Just the act of transforming causes nearby heathens great fear and trauma.
+  Sama przemiana budzi w pobliskich poganach wielki strach i traumę.
 
-  While in the Lord of the Night form, you can consume the living to heal.
+  W postaci Władcy Nocy możesz pożerać żywych, żeby się leczyć.
 </Document>
