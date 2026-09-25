@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Steel
-  changes:
-  - message: Jetpacks now turn off when another jetpack is activated.
-    type: Fix
-  id: 9529
-  time: '2026-02-16T22:03:05.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42689
 - author: nekokiwa
   changes:
   - message: Barber Scissors no longer misgender the target when blocked by a hat.
@@ -4174,3 +4167,19 @@
   id: 10025
   time: '2026-09-25T09:59:00.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1066
+- author: haze
+  changes:
+  - message: "Naprawiono b\u0142\u0105d startu rundy w trybie Secret+"
+    type: Fix
+  - message: "Pomijaj regu\u0142y startowe SecretPlus, gdy liczba gotowych graczy\
+      \ jest ni\u017Csza od wymaganego minimum."
+    type: Fix
+  - message: "Uwzgl\u0119dniaj wymagania dotycz\u0105ce liczby graczy przy wyborze\
+      \ antagonist\xF3w startowych."
+    type: Fix
+  - message: "Przywracaj regu\u0142y presetu, gdy istnieje mapa domy\u015Blna, a `CurrentPreset`\
+      \ ma warto\u015B\u0107 `null`."
+    type: Fix
+  id: 10026
+  time: '2026-09-25T14:23:18.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1067
