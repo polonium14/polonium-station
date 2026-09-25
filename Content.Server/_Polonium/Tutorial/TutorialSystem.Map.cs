@@ -80,6 +80,7 @@ public sealed partial class TutorialSystem
                 EnsureComp<TutorialNoDeconstructComponent>(uid);
 
             StripGhostRole(uid);
+            _npcs.StopRot(uid);
             _npcs.SatiateAndIdle(uid);
         }
     }

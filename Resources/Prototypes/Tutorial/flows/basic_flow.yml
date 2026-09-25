@@ -2667,7 +2667,6 @@
   - !type:ClaimNearbyMobAction
     anchorId: room15_urist
     assignAnchorId: room15_urist
-    preventDeath: false
   # he is treated here and nowhere else, the corridors have no beds and no defibrillator
   - !type:ConfineAnchorAction
     anchorId: room15_urist
@@ -2788,7 +2787,6 @@
   - !type:ClaimNearbyMobAction
     anchorId: room15_urist
     assignAnchorId: room15_urist
-    preventDeath: false
   completion: !type:HealthAnalyzedCondition
     anchorId: room15_urist
 
@@ -2869,10 +2867,18 @@
     assignAnchorId: room15_dylovene
     tutorialNpc: false
     preventDeath: false
-  completion: !type:AnchorSolutionContainsCondition
-    anchorId: room15_syringe
-    reagent: Dylovene
-    amount: 15
+  # whoever jumps ahead and empties a part-filled syringe into him leaves the bottle short of another
+  # fifteen, and the bottle is all there is. the poison going away counts just as much as the draw
+  completion: !type:AnyCondition
+    conditions:
+    - !type:AnchorSolutionContainsCondition
+      anchorId: room15_syringe
+      reagent: Dylovene
+      amount: 15
+    - !type:AnchorDamageBelowCondition
+      anchorId: room15_urist
+      damageType: Poison
+      max: 0
 
 - type: tutorialStep
   id: TutorialLinearR15ToPatient
