@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Synthestra
-  changes:
-  - message: Thieves' "Steal the HUDs" objective can now be completed with the thieving
-      beacon
-    type: Fix
-  id: 9528
-  time: '2026-02-16T20:43:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42945
 - author: Steel
   changes:
   - message: Jetpacks now turn off when another jetpack is activated.
@@ -4174,3 +4166,11 @@
   id: 10024
   time: '2026-09-25T08:10:20.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1063
+- author: Haze
+  changes:
+  - message: "Rejuvenacja usuwa niedoko\u0144czone etapy operacji oraz kar\u0119 i\
+      \ krwawienie zwi\u0105zane z niedoko\u0144czon\u0105 operacj\u0105."
+    type: Fix
+  id: 10025
+  time: '2026-09-25T09:59:00.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1066
