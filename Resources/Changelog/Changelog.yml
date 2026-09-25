@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: ScarKy0
-  changes:
-  - message: Paradox clones now correctly copy the voice and pronouns of the original.
-    type: Fix
-  id: 9524
-  time: '2026-02-15T01:24:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42923
-- author: TriviaSolari
-  changes:
-  - message: Station AI is now able to read loose papers and envelopes.
-    type: Tweak
-  id: 9525
-  time: '2026-02-15T10:59:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42926
 - author: Le-Arctic-Fox
   changes:
   - message: Changed viper magazine to high capacity in the basic operative bundle
@@ -4163,3 +4149,19 @@
   id: 10020
   time: '2026-09-24T14:46:05.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1057
+- author: Polonium-bot
+  changes:
+  - message: "Dodano polskie odmiany nazw 12 narz\u0119dzi chirurgicznych. Forma nazwy\
+      \ zale\u017Cy od warto\u015Bci `$przypadek`."
+    type: Tweak
+  id: 10021
+  time: '2026-09-25T07:14:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1056
+- author: nieznany autor
+  changes:
+  - message: Ukryto przycisk ponownego uruchomienia samouczka w trybie `IntroMain`.
+      Przycisk jest widoczny tylko w trybie `IntroTutorial`.
+    type: Fix
+  id: 10022
+  time: '2026-09-25T07:13:41.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1058
