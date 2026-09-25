@@ -240,6 +240,9 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         var weightList = _prototypeManager.Index(scheduler.Comp.RoundStartAntagsWeightTable);
 
         var count = GetTotalPlayerCount(_playerManager.Sessions);
+        var eligiblePlayers = _ticker.RunLevel == GameRunLevel.PreRoundLobby
+            ? _ticker.ReadyPlayerCount()
+            : count;
 
         LogMessage($"Trying to run roundstart rules, total player count: {count}", false);
 
@@ -293,14 +296,14 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         {
             return _prototypeManager.TryIndex<EntityPrototype>(ruleId, out var proto)
                 && proto.TryComp<GameRuleComponent>(out var rule, _factory)
-                && rule.MinPlayers <= count;
+                && rule.MinPlayers <= eligiblePlayers;
         }
 
         void IndexAndStartGameMode(string pick, EntityPrototype? pickProto, GameRuleComponent? ruleComp)
         {
             if (pickProto == null
                 || ruleComp == null
-                || ruleComp.MinPlayers > count)
+                || ruleComp.MinPlayers > eligiblePlayers)
                 return;
 
             var effPlayers = (int)MathF.Round(count * scheduler.Comp.ChaosScore / origChaos);
