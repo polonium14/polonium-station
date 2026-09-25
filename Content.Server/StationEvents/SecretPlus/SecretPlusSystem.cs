@@ -151,8 +151,8 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
     {
         foreach (var proto in _ticker.GetAllGameRulePrototypes())
         {
-            if (!proto.TryGetComponent<GameRuleComponent>(out var gameRule, _factory)
-                || !proto.TryGetComponent<StationEventComponent>(out var stationEvent, _factory))
+            if (!proto.TryComp<GameRuleComponent>(out var gameRule, _factory)
+                || !proto.TryComp<StationEventComponent>(out var stationEvent, _factory))
                 continue;
 
             if (scheduler.Comp.DisallowedEvents.Contains(stationEvent.EventType)
@@ -182,7 +182,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         {
             var proto = entry.Key;
             var stationEvent = entry.Value;
-            if (!proto.TryGetComponent<GameRuleComponent>(out var gameRule, _factory))
+            if (!proto.TryComp<GameRuleComponent>(out var gameRule, _factory))
                 continue;
 
             if (scheduler.Comp.DisallowedEvents.Contains(stationEvent.EventType))
@@ -260,7 +260,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
             GameRuleComponent? ruleComp = null;
             if (!_prototypeManager.TryIndex(pick, out var entProto)
-                || !entProto.TryGetComponent<GameRuleComponent>(out ruleComp, _factory))
+                || !entProto.TryComp<GameRuleComponent>(out ruleComp, _factory))
                 continue;
 
             var chaosScore = GetChaosScore(entProto, ruleComp);
@@ -292,7 +292,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         bool CanRunWithPlayerCount(string ruleId)
         {
             return _prototypeManager.TryIndex<EntityPrototype>(ruleId, out var proto)
-                && proto.TryGetComponent<GameRuleComponent>(out var rule, _factory)
+                && proto.TryComp<GameRuleComponent>(out var rule, _factory)
                 && rule.MinPlayers <= count;
         }
 
@@ -376,10 +376,10 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
     public float? GetChaosScore(EntityPrototype ruleProto, GameRuleComponent? ruleComp, int? players = null)
     {
-        if (ruleComp == null && !ruleProto.TryGetComponent<GameRuleComponent>(out ruleComp, _factory))
+        if (ruleComp == null && !ruleProto.TryComp<GameRuleComponent>(out ruleComp, _factory))
             return null;
 
-        if (ruleProto.TryGetComponent<AntagSelectionComponent>(out var selection, _factory))
+        if (ruleProto.TryComp<AntagSelectionComponent>(out var selection, _factory))
         {
             var score = GetAntagChaosScore(selection, players);
             if (score != null)
