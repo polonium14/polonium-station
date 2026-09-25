@@ -85,6 +85,12 @@ public sealed partial class SecretPlusComponent : Component
     [ViewVariables]
     public List<SelectedEvent> SelectedEvents = new();
 
+    /// <summary>
+    /// Rules selected by this scheduler whose player requirements are checked at round start.
+    /// </summary>
+    [ViewVariables]
+    public List<EntityUid> RoundstartRules = new();
+
     [DataField]
     public ProtoId<WeightedRandomPrototype> PrimaryAntagsWeightTable = "SecretPlusPrimary";
 

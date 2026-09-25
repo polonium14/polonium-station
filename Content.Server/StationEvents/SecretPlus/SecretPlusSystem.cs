@@ -80,6 +80,8 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
     {
         base.Initialize();
 
+        SubscribeLocalEvent<RoundStartAttemptEvent>(OnRoundStartAttempt, before: new[] { typeof(GameTicker) });
+
         _sawmill = _log.GetSawmill("secret_plus");
 
         Subs.CVar(_cfg, GoobCVars.MinimumTimeUntilFirstEvent, value => _minimumTimeUntilFirstEvent = value, true);
@@ -105,6 +107,34 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             SetupEvents((uid, scheduler), CountActivePlayers(), selectedRules);
         else
             SetupEvents((uid, scheduler), CountActivePlayers());
+    }
+
+    private void OnRoundStartAttempt(RoundStartAttemptEvent args)
+    {
+        if (args.Forced || args.Cancelled)
+            return;
+
+        var query = EntityQueryEnumerator<SecretPlusComponent>();
+        while (query.MoveNext(out var uid, out var scheduler))
+        {
+            if (!_ticker.IsGameRuleAdded(uid))
+                continue;
+
+            foreach (var ruleUid in scheduler.RoundstartRules)
+            {
+                if (!TryComp<GameRuleComponent>(ruleUid, out var rule)
+                    || rule.CancelPresetOnTooFewPlayers
+                    || args.Players.Length >= rule.MinPlayers
+                    || !_ticker.EndGameRule(ruleUid, rule))
+                    continue;
+
+                _chat.SendAdminAnnouncement(Loc.GetString("secretplus-rule-skipped-not-enough-ready-players",
+                    ("ruleName", ToPrettyString(ruleUid)),
+                    ("minimumPlayers", rule.MinPlayers),
+                    ("readyPlayersCount", args.Players.Length)));
+                LogMessage($"Skipped rule '{ToPrettyString(ruleUid)}': requires {rule.MinPlayers} players, but only {args.Players.Length} are ready. The preset was not cancelled by this rule.", false);
+            }
+        }
     }
 
     private void SetupEvents(Entity<SecretPlusComponent> scheduler, PlayerCount count, SelectedGameRulesComponent? selectedRules = null)
@@ -275,7 +305,10 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         // Roundstart antags are optional: losing ready players during map loading
         // should end the affected rule, rather than cancel the entire preset.
         if (players != null)
+        {
             Comp<GameRuleComponent>(ruleUid).CancelPresetOnTooFewPlayers = false;
+            scheduler.Comp.RoundstartRules.Add(ruleUid);
+        }
 
         scheduler.Comp.ChaosScore += GetChaosScore(ruleUid, players)!.Value;
 
