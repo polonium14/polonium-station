@@ -3,11 +3,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.CCVar;
 using Content.Shared.Players.PlayTimeTracking;
 using Robust.Server.Player;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
@@ -17,10 +20,12 @@ namespace Content.Server._Polonium.Administration.Systems;
 
 public sealed partial class NewPlayerAlertSystem : EntitySystem
 {
+    [Dependency] private IAdminManager _admins = default!;
     [Dependency] private IChatManager _chat = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IPlayerManager _players = default!;
     [Dependency] private PlayTimeTrackingManager _playTime = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     private readonly HashSet<NetUserId> _seen = new();
     private int _threshold;
@@ -40,7 +45,7 @@ public sealed partial class NewPlayerAlertSystem : EntitySystem
     public override void Shutdown()
     {
         base.Shutdown();
-        
+
         _playTime.SessionPlayTimeUpdated -= OnPlayTimeUpdated;
         _players.PlayerStatusChanged -= OnPlayerStatus;
     }
@@ -70,5 +75,10 @@ public sealed partial class NewPlayerAlertSystem : EntitySystem
             ("name", session.Name),
             ("hours", (int) overall.TotalHours),
             ("minutes", overall.Minutes)));
+
+        _audio.PlayGlobal("/Audio/_Polonium/Effects/pop.ogg",
+            Filter.Empty().AddPlayers(_admins.ActiveAdmins),
+            false,
+            AudioParams.Default.WithVolume(-5f));
     }
 }
