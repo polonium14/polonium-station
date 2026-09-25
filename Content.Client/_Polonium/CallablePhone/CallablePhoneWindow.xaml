@@ -61,7 +61,7 @@ SPDX-License-Identifier: MIT
 
         <BoxContainer Orientation="Vertical">
             <PanelContainer StyleClasses="LowDivider" />
-            <Label Text="{Loc 'callable-phone-window-footer'}" StyleClasses="WindowFooterText" Margin="10 2 10 5" HorizontalAlignment="Center"/>
+            <Label Text="{Loc 'callable-phone-window-footer'}" StyleClasses="WindowFooterText" Margin="10 2 10 5" HorizontalAlignment="Left"/>
         </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>
