@@ -1,0 +1,71 @@
+- type: entity
+  id: TankBattle
+  name: Jednostka Oczyszczenia
+  description: Ciezki pojazd bojowy. Naprawia sie spawaczem.
+  components:
+  - type: Sprite
+    noRot: false
+    drawdepth: Mobs
+    sprite: Objects/Vehicles/tank.rsi
+    scale: 0.11, 0.11
+    layers:
+    - state: base
+      map: [ "enum.TankVisualLayers.Hull" ]
+      rotation: 180
+    - state: turret
+      map: [ "enum.TankVisualLayers.Turret" ]
+      rotation: 90
+      offset: 0, -0.55
+  - type: Icon
+    sprite: Objects/Vehicles/tank.rsi
+    state: icon
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.9,-1.5,0.9,1.5"
+        density: 1200
+        hard: true
+        mask:
+        - Impassable
+        - HighImpassable
+        - LowImpassable
+        layer:
+        - LargeMobLayer
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Vehicle
+    requiresHands: false
+    canAttack: true
+    transferDamage: false
+  - type: ContainerVehicle
+    containerId: tank-pilot-slot
+  - type: ContainerVehicleEntry
+    entryDelay: 1.5
+    exitDelay: 1.5
+  - type: ContainerContainer
+    containers:
+      tank-pilot-slot: !type:ContainerSlot
+        showEnts: false
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.0
+    baseSprintSpeed: 2.8
+  - type: InputMover
+  - type: MobMover
+  - type: GravityAffected
+  - type: Appearance
+  - type: InteractionOutline
+  - type: Clickable
+  - type: TankTurret
+    aimOffset: 90
+    rotateSpeed: 5.0
+    turretAngle: 90
+    mainProjectile: BulletRocket
+    mgProjectile: BulletLightRifle
+    mainFireRate: 19
+    mgFireRate: 0.12
+    mgBurstDuration: 11
+    mgReloadTime: 5
