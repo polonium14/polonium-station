@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Pgriha
-  changes:
-  - message: Added new emote for moths. They can flaps their wings!
-    type: Add
-  id: 9531
-  time: '2026-02-18T00:04:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42912
 - author: pcaessayrs
   changes:
   - message: Added Emp interaction with bar sign
@@ -4184,3 +4177,13 @@
   id: 10027
   time: '2026-09-25T19:23:51.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1069
+- author: Polonium-bot
+  changes:
+  - message: "Dodano polskie komunikaty o pomijaniu regu\u0142 SecretPlus przy niewystarczaj\u0105\
+      cej liczbie gotowych graczy."
+    type: Add
+  - message: "Dodano polskie teksty interfejsu nowego \u017Cycia dla duch\xF3w."
+    type: Add
+  id: 10028
+  time: '2026-09-26T10:03:12.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1071
