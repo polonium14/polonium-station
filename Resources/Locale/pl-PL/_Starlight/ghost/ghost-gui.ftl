@@ -1,3 +1,8 @@
+ghost-gui-new-life-button = Nowe życie
+ghost-new-life-window-title = Nowe życie (Zostało { $remainingLives } na { $maxLives } żyć)
+ghost-new-life-unavailable = utracono
+ghost-new-life-command-description = Otwiera okno nowego życia
+ghost-new-life-command-not-client-error = Możesz otworzyć UI nowego życia wyłącznie na kliencie.
 ghost-gui-ghost-theme-button = Motywy Ducha
 ghost-gui-ghost-theme-window-title = Motywy Ducha
 ghost-gui-choose-theme = Wybierz Motyw
