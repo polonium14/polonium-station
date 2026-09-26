@@ -8,5 +8,4 @@ secretplus-admeme-title = Sekret+ Chaos
 secretplus-admeme-description = Jeśli coś może się wydarzyć, to się wydarzy.
 survivalplus-title = Przetrwanie+
 survivalplus-description = Zaczyna się dość spokojnie. Ale kończy się nie do końca tak samo.
-
 secretplus-rule-skipped-not-enough-ready-players = SecretPlus: Pominięto regułę { $ruleName }: wymaganych jest { $minimumPlayers } graczy, ale gotowych jest tylko { $readyPlayersCount }. Ta reguła nie anuluje startu rundy.
