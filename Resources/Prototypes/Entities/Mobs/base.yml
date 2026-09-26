@@ -154,6 +154,7 @@
   - type: StoreDamageTakenOnMind
   - type: Deathgasp
   - type: HealthExaminable
+  - type: Patdownable
     examinableTypes:
     - Blunt
     - Slash
