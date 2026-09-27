@@ -54,6 +54,13 @@
           - !type:PlayerCountCondition
             min: 10
             max: 20
+        - id: Xenoborgs
+          weight: 5
+          conditions:
+          - !type:HasBudgetCondition
+          - !type:MaxRuleOccurenceCondition
+          - !type:PlayerCountCondition
+            min: 35
       # Roundstart Minor Rules
       - !type:GroupSelector
         conditions:
@@ -70,6 +77,7 @@
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
+
       # Midround rules
       - !type:GroupSelector
         conditions:
@@ -105,6 +113,15 @@
             max: 2
           - !type:RoundDurationCondition
             min: 600 # 10 minutes
+        - id: SpaceChangelingSpawn
+          weight: 25
+          conditions:
+          - !type:HasBudgetCondition
+          - !type:MaxRuleOccurenceCondition
+          - !type:PlayerCountCondition
+            min: 15
+          - !type:RoundDurationCondition
+            min: 1200 # 20 minutes
         - id: ZombieOutbreak
           weight: 2.5
           conditions:
@@ -123,3 +140,13 @@
             min: 20
           - !type:RoundDurationCondition
             min: 2100 # 35 minutes
+        - id: WizardSpawn
+          weight: 4
+          conditions:
+          - !type:HasBudgetCondition
+          - !type:MaxRuleOccurenceCondition
+          - !type:PlayerCountCondition
+            min: 20
+          - !type:RoundDurationCondition
+            min: 2100 # 35 minutes
+
