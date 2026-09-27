@@ -15,7 +15,6 @@ namespace Content.Shared.Botany.Systems;
 
 public sealed partial class BotanySystem : EntitySystem
 {
-    [Dependency] private IComponentFactory _componentFactory = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private MetaDataSystem _metaData = default!;
     [Dependency] private PlantSystem _plant = default!;
@@ -87,7 +86,7 @@ public sealed partial class BotanySystem : EntitySystem
         if (!ProtoMan.TryIndex(plantProtoId.Value, out var proto))
             return false;
 
-        return proto.TryComp(out plant, _componentFactory);
+        return proto.TryComp(out plant, Factory);
     }
 
     /// <summary>
