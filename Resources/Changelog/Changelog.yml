@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: pcaessayrs
-  changes:
-  - message: Added Emp interaction with bar sign
-    type: Add
-  id: 9532
-  time: '2026-02-18T00:27:56.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42950
 - author: Minemoder, ScarKy0
   changes:
   - message: Diona, Vox and Vulpkanins now have unique sneeze sounds.
@@ -4187,3 +4180,11 @@
   id: 10028
   time: '2026-09-26T10:03:12.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1071
+- author: nikitosych
+  changes:
+  - message: "Naprawiono mo\u017Cliwo\u015B\u0107 uk\u0142adania kabli i rur na trawie\
+      \ na mapie Terra."
+    type: Fix
+  id: 10029
+  time: '2026-09-28T10:53:28.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1073
