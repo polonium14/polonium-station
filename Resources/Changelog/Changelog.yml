@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: PicklOH
-  changes:
-  - message: Fixed Det coat armor values
-    type: Fix
-  id: 9534
-  time: '2026-02-18T20:06:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42969
 - author: robinthegirlthing
   changes:
   - message: The basic operative bundle now contains an esword, instead of a viper
@@ -4197,3 +4190,19 @@
   id: 10030
   time: '2026-09-28T13:00:50.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1074
+- author: nikitosych
+  changes:
+  - message: "Nuki s\u0105 dost\u0119pni od 15 gotowych graczy. Przy 15-20 graczach\
+      \ pojawia si\u0119 jeden samotny operatyw z 30 TC (+40 TC za wypowiedzenie wojny),\
+      \ a od 21 graczy pe\u0142na dru\u017Cyna licz\u0105ca od 2 do 5 os\xF3b, zale\u017C\
+      nie od liczby graczy."
+    type: Tweak
+  - message: Samotny operatyw po wypowiedzeniu wojny czeka na przylot 11 minut zamiast
+      15.
+    type: Tweak
+  - message: "Wahad\u0142owiec samotnego operatywa nie mo\u017Ce odlecie\u0107 przed\
+      \ up\u0142ywem czasu oczekiwania po wypowiedzeniu wojny."
+    type: Fix
+  id: 10031
+  time: '2026-09-28T19:18:58.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1076
