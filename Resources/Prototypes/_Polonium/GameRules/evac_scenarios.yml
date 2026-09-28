@@ -49,32 +49,32 @@
     - start: 24
       minInterval: 5
       maxInterval: 7
-      meteors:
+      meteors: # 3
         MeteorSpaceDust: 2
         MeteorSmall: 1
     - start: 60
       minInterval: 3
       maxInterval: 4.5
-      meteors:
-        MeteorSpaceDust: 1
+      meteors: # 6
+        MeteorSpaceDust: 2
         MeteorSmall: 3
         MeteorMedium: 0.5
-    - start: 96
-      minInterval: 2.5
+    - start: 96 # 7
+      minInterval: 1.75
       maxInterval: 3.5
       minPerWave: 1
       maxPerWave: 2
       meteors:
-        MeteorSmall: 3
-        MeteorMedium: 2
+        MeteorSmall: 4
+        MeteorMedium: 2.5
         MeteorLarge: 0.2
-    - start: 150
+    - start: 150 # 10
       minInterval: 1
       maxInterval: 3
       minPerWave: 1
       maxPerWave: 2
       meteors:
-        MeteorSmall: 4
+        MeteorSmall: 5.5
         MeteorMedium: 4
         MeteorLarge: 0.5
   - type: EvacCrashLanding
