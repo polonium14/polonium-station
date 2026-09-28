@@ -816,7 +816,7 @@ namespace Content.Server.GameTicking
             }
         }
 
-        public bool DelayStart(TimeSpan time)
+        public bool DelayStart(TimeSpan time, bool announce = true) // POLONIUM: announce
         {
             if (_runLevel != GameRunLevel.PreRoundLobby)
             {
@@ -827,7 +827,8 @@ namespace Content.Server.GameTicking
 
             RaiseNetworkEvent(new TickerLobbyCountdownEvent(_roundStartTime, Paused));
 
-            _chatManager.DispatchServerAnnouncement(Loc.GetString("game-ticker-delay-start", ("seconds", time.TotalSeconds)));
+            if (announce) // POLONIUM
+                _chatManager.DispatchServerAnnouncement(Loc.GetString("game-ticker-delay-start", ("seconds", time.TotalSeconds)));
 
             return true;
         }

@@ -90,7 +90,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
     protected override void Added(EntityUid uid, SecretPlusComponent scheduler, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
-        var totalPlayers = GetTotalPlayerCount(_playerManager.Sessions);
+        var totalPlayers = GetEligiblePlayerCount();
         scheduler.ChaosScore =
             -_random.NextFloat(scheduler.MinStartingChaos * totalPlayers, scheduler.MaxStartingChaos * totalPlayers) *
             _roundstartChaosScoreMultiplier;
@@ -171,7 +171,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
         var available = _event.AvailableEvents(
             scheduler.Comp.IgnoreTimings,
-            scheduler.Comp.IgnoreTimings ? int.MaxValue : null,
+            scheduler.Comp.IgnoreTimings ? int.MaxValue : count.Players,
             scheduler.Comp.IgnoreTimings ? TimeSpan.MaxValue : null,
             1f / GetRamping(scheduler));
 
@@ -239,12 +239,9 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         var primaryWeightList = _prototypeManager.Index(scheduler.Comp.PrimaryAntagsWeightTable);
         var weightList = _prototypeManager.Index(scheduler.Comp.RoundStartAntagsWeightTable);
 
-        var count = GetTotalPlayerCount(_playerManager.Sessions);
-        var eligiblePlayers = _ticker.RunLevel == GameRunLevel.PreRoundLobby
-            ? _ticker.ReadyPlayerCount()
-            : count;
+        var eligiblePlayers = GetEligiblePlayerCount();
 
-        LogMessage($"Trying to run roundstart rules, total player count: {count}", false);
+        LogMessage($"Trying to run roundstart rules, eligible player count: {eligiblePlayers}", false);
 
         var weights = weightList.Weights.Where(entry => CanRunWithPlayerCount(entry.Key)).ToDictionary();
         var primaryWeights = primaryWeightList.Weights.Where(entry => CanRunWithPlayerCount(entry.Key)).ToDictionary();
@@ -266,7 +263,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
                 || !entProto.TryComp<GameRuleComponent>(out ruleComp, _factory))
                 continue;
 
-            var chaosScore = GetChaosScore(entProto, ruleComp);
+            var chaosScore = GetChaosScore(entProto, ruleComp, eligiblePlayers);
 
             if (chaosScore == null)
             {
@@ -274,17 +271,15 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
                 continue;
             }
 
+            if (!scheduler.Comp.IgnoreIncompatible)
+                weights.Remove(pick);
+
             var pickProb = -scheduler.Comp.ChaosScore / chaosScore.Value;
             if (i == 1)
                 pickProb *= scheduler.Comp.PrimaryAntagChaosBias;
             pickProb = MathF.Min(1f, pickProb);
-            if (!_random.Prob(pickProb))
-                continue;
-
-            if (!scheduler.Comp.IgnoreIncompatible)
-                weights.Remove(pick);
-
-            IndexAndStartGameMode(pick, entProto, ruleComp);
+            if (_random.Prob(pickProb))
+                IndexAndStartGameMode(pick, entProto, ruleComp);
 
             if (weights.Count == 0)
                 return;
@@ -306,7 +301,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
                 || ruleComp.MinPlayers > eligiblePlayers)
                 return;
 
-            var effPlayers = (int)MathF.Round(count * scheduler.Comp.ChaosScore / origChaos);
+            var effPlayers = (int)MathF.Round(eligiblePlayers * scheduler.Comp.ChaosScore / origChaos);
             LogMessage($"Roundstart rule chosen: {pick} with score {GetChaosScore(pickProto, ruleComp, effPlayers)}");
             StartRule(scheduler, pick, false, effPlayers);
         }
@@ -424,6 +419,14 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         }
 
         return count + _event.PlayerCountBias;
+    }
+
+    public int GetEligiblePlayerCount()
+    {
+        if (_ticker.RunLevel == GameRunLevel.PreRoundLobby)
+            return _ticker.ReadyPlayerCount() + _event.PlayerCountBias;
+
+        return GetTotalPlayerCount(_playerManager.Sessions);
     }
 
     public float GetRamping(Entity<SecretPlusComponent> scheduler)

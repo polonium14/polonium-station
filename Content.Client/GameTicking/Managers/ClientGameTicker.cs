@@ -12,6 +12,7 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio;
 using Content.Shared.GameTicking.Prototypes;
+using Content.Shared._Polonium.GameTicking; // POLONIUM
 
 namespace Content.Client.GameTicking.Managers
 {
@@ -35,6 +36,13 @@ namespace Content.Client.GameTicking.Managers
         [ViewVariables] public string? ServerInfoBlob { get; private set; }
         [ViewVariables] public TimeSpan StartTime { get; private set; }
         [ViewVariables] public new bool Paused { get; private set; }
+
+        // POLONIUM
+        /// <summary>
+        /// Ready players and everyone in the lobby, or null before the server sent them.
+        /// </summary>
+        [ViewVariables] public (int Ready, int Total)? LobbyReadyCount { get; private set; }
+        public event Action? LobbyReadyCountUpdated;
 
         public override IReadOnlyList<(TimeSpan, string)> AllPreviousGameRules => new List<(TimeSpan, string)>();
 
@@ -61,6 +69,7 @@ namespace Content.Client.GameTicking.Managers
             SubscribeNetworkEvent<RequestWindowAttentionEvent>(OnAttentionRequest);
             SubscribeNetworkEvent<TickerLateJoinStatusEvent>(LateJoinStatus);
             SubscribeNetworkEvent<TickerJobsAvailableEvent>(UpdateJobsAvailable);
+            SubscribeNetworkEvent<LobbyReadyCountEvent>(OnLobbyReadyCount); // POLONIUM
 
             _admin.AdminStatusUpdated += OnAdminUpdated;
             OnAdminUpdated();
@@ -117,8 +126,16 @@ namespace Content.Client.GameTicking.Managers
             LobbyJobsAvailableUpdated?.Invoke(JobsAvailable);
         }
 
+        // POLONIUM
+        private void OnLobbyReadyCount(LobbyReadyCountEvent message)
+        {
+            LobbyReadyCount = (message.Ready, message.Total);
+            LobbyReadyCountUpdated?.Invoke();
+        }
+
         private void JoinLobby(TickerJoinLobbyEvent message)
         {
+            LobbyReadyCount = null; // polonium
             _stateManager.RequestStateChange<LobbyState>();
         }
 
