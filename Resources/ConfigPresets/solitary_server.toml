@@ -31,6 +31,9 @@ fallbackpreset = "Tutorial"
 role_loadout_timers = false
 station_goal = false
 round_restart_time = 20
+lobby_ready_reminder_enabled = false
+lobby_ready_count_on_button = false
+lobby_extend_enabled = false
 
 [shuttle]
 arrivals = false

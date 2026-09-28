@@ -30,6 +30,18 @@ namespace Content.Server.GameTicking
         [ViewVariables]
         private bool _roundStartCountdownHasNotStartedYetDueToNoPlayers;
 
+        // POLONIUM START
+        /// <summary>
+        /// The game time the lobby countdown ends and the round starts at.
+        /// </summary>
+        public TimeSpan LobbyCountdownEnd => _roundStartTime;
+
+        /// <summary>
+        /// False while the lobby waits for the first player to connect before starting the countdown.
+        /// </summary>
+        public bool LobbyCountdownRunning => !_roundStartCountdownHasNotStartedYetDueToNoPlayers;
+        // POLONIUM END
+
         /// <summary>
         /// The game status of a players user Id. May contain disconnected players
         /// </summary>
