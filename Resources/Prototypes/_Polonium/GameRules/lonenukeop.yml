@@ -6,6 +6,8 @@
   - type: GameRule
     minPlayers: 15
     chaosScore: 400
+  - type: GameRuleMaxPlayers
+    maxPlayers: 20
   - type: DynamicRuleCost
     cost: 500
   - type: LoadMapRule
@@ -14,6 +16,9 @@
     roundEndBehavior: Nothing
     warDeclarationMinOps: 1
     canEnableWarOps: true
+    warTcAmountPerNukie: 40
+    warNukieArriveDelay: 660 # 11 min
+    loadedGridsAreShuttle: true
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
     antags:

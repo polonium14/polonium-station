@@ -157,7 +157,7 @@
   id: Nukeops
   components:
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 21
   - type: LoadMapRule
     mapPath: /Maps/Nonstations/nukieplanet.yml
   - type: AntagSelection
@@ -172,7 +172,7 @@
       proto: NukeopsOperative
       chaosScore: 300
       range:
-        min: 1
+        min: 0 # POLONIUM: cmd and medic alone wben <30 players
         max: 3
   - type: DynamicRuleCost
     cost: 200

@@ -71,6 +71,14 @@ public sealed partial class NukeopsRuleComponent : Component
     [DataField]
     public TimeSpan WarNukieArriveDelay = TimeSpan.FromMinutes(15);
 
+    // POLONIUM
+    /// <summary>
+    ///     Makes the grids this rule loads count as the nukie shuttle, for rules without an outpost.
+    ///     The shuttle then cannot leave before the war arrival delay ends and leaving blocks the declaration.
+    /// </summary>
+    [DataField]
+    public bool LoadedGridsAreShuttle;
+
     /// <summary>
     ///     Time crew can't call emergency shuttle after war declaration.
     /// </summary>
