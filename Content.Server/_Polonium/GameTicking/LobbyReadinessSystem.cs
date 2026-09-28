@@ -35,6 +35,7 @@ public sealed partial class LobbyReadinessSystem : EntitySystem
 
     private int _lobbyRoundId = -1;
     private int _extensions;
+    private bool _extendChecked;
     private double? _lastSecondsLeft;
     private (int Ready, int Total) _lastCount = (-1, -1);
 
@@ -91,6 +92,7 @@ public sealed partial class LobbyReadinessSystem : EntitySystem
         {
             _lobbyRoundId = _ticker.RoundId;
             _extensions = 0;
+            _extendChecked = false;
             _lastSecondsLeft = null;
             _lastCount = (-1, -1);
         }
@@ -102,7 +104,7 @@ public sealed partial class LobbyReadinessSystem : EntitySystem
             RaiseNetworkEvent(new LobbyReadyCountEvent(count.Ready, count.Total));
         }
 
-        if (_ticker.Paused || !_ticker.LobbyCountdownRunning)
+        if (_ticker.Paused || !_ticker.LobbyCountdownRunning || _ticker.LobbyCountdownEnd == TimeSpan.Zero)
         {
             _lastSecondsLeft = null;
             return;
@@ -112,7 +114,18 @@ public sealed partial class LobbyReadinessSystem : EntitySystem
         var lastSecondsLeft = _lastSecondsLeft;
         _lastSecondsLeft = secondsLeft;
 
-        // Only act when a threshold is crossed, so a lobby that starts below it does not fire.
+        var preload = _ticker.RoundPreloadTime.TotalSeconds;
+
+        if (secondsLeft > preload)
+        {
+            _extendChecked = false;
+        }
+        else if (!_extendChecked)
+        {
+            _extendChecked = true;
+            TryExtendCountdown(count.Ready, count.Total);
+        }
+
         if (lastSecondsLeft is not { } last)
             return;
 
@@ -127,10 +140,6 @@ public sealed partial class LobbyReadinessSystem : EntitySystem
                 break;
             }
         }
-
-        var preload = _ticker.RoundPreloadTime.TotalSeconds;
-        if (last > preload && secondsLeft <= preload)
-            TryExtendCountdown(count.Ready, count.Total);
     }
 
     private (int Ready, int Total) CountLobbyPlayers()

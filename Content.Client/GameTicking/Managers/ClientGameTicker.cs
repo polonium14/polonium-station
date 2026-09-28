@@ -135,6 +135,7 @@ namespace Content.Client.GameTicking.Managers
 
         private void JoinLobby(TickerJoinLobbyEvent message)
         {
+            LobbyReadyCount = null; // polonium
             _stateManager.RequestStateChange<LobbyState>();
         }
 
