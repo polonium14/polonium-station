@@ -308,8 +308,12 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             if (!ProtoMan.Resolve(antag.Proto, out var proto))
                 continue;
 
-            // We do it this way in case our resolve fails.
-            roles.Add((gameRule, proto, active, GetTargetAntagCount(antag, playerCount, ref runningCount)));
+            // POLONIUM: a selector may want no antags at this player count, an empty slot would never be filled up
+            var count = GetTargetAntagCount(antag, playerCount, ref runningCount);
+
+            if (count > 0)
+                roles.Add((gameRule, proto, active, count));
+            // POLONIUM END
         }
     }
 
@@ -327,8 +331,12 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             if (!ProtoMan.Resolve(antag.Proto, out var definition))
                 continue;
 
-            // We do it this way in case our resolve fails.
-            antags.Add((definition, GetTargetAntagCount(antag, playerCount, ref runningCount)));
+            // POLONIUM: skip selectors that want no antags at this player count
+            var count = GetTargetAntagCount(antag, playerCount, ref runningCount);
+
+            if (count > 0)
+                antags.Add((definition, count));
+            // POLONIUM END
         }
 
         return antags;

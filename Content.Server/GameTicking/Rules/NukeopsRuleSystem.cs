@@ -375,6 +375,15 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
 
     private void OnRuleLoadedGrids(Entity<NukeopsRuleComponent> ent, ref RuleLoadedGridsEvent args)
     {
+        // POLONIUM
+        if (ent.Comp.LoadedGridsAreShuttle)
+        {
+            foreach (var grid in args.Grids)
+            {
+                EnsureComp<NukeOpsShuttleComponent>(grid);
+            }
+        }
+
         // Check each nukie shuttle
         var query = EntityQueryEnumerator<NukeOpsShuttleComponent>();
         while (query.MoveNext(out var uid, out var shuttle))
@@ -482,16 +491,17 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
 
     private void DistributeExtraTc(Entity<NukeopsRuleComponent> nukieRule)
     {
+        // POLONIUM
+        if (CompOrNull<RuleGridsComponent>(nukieRule)?.Map is not { } ruleMap)
+            return;
+
         var enumerator = EntityQueryEnumerator<StoreComponent>();
         while (enumerator.MoveNext(out var uid, out var component))
         {
             if (!_tag.HasTag(uid, NukeOpsUplinkTagPrototype))
                 continue;
 
-            if (GetOutpost(nukieRule.Owner) is not { } outpost)
-                continue;
-
-            if (Transform(uid).MapID != Transform(outpost).MapID) // Will receive bonus TC only on their start outpost
+            if (Transform(uid).MapID != ruleMap) // Will receive bonus TC only on their start outpost
                 continue;
 
             _store.TryAddCurrency(new() { { TelecrystalCurrencyPrototype, nukieRule.Comp.WarTcAmountPerNukie } }, uid, component);

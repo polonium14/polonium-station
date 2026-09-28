@@ -1,6 +1,8 @@
 - type: startingGear
   id: SyndicateLoneOperativeGearFullRoundStart
   parent: SyndicateLoneOperativeGearFull
+  equipment:
+    pocket2: BaseUplinkRadio30TCLoneOps
   storage:
     back:
     - NukeOpsDeclarationOfWar

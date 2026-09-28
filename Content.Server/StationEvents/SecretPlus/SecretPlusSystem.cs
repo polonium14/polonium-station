@@ -32,6 +32,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Ghost.Components;
+using Content.Shared._Polonium.GameTicking; // POLONIUM
 
 namespace Content.Server.StationEvents.SecretPlus;
 
@@ -291,7 +292,9 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         {
             return _prototypeManager.TryIndex<EntityPrototype>(ruleId, out var proto)
                 && proto.TryComp<GameRuleComponent>(out var rule, _factory)
-                && rule.MinPlayers <= eligiblePlayers;
+                && rule.MinPlayers <= eligiblePlayers
+                && (!proto.TryComp<GameRuleMaxPlayersComponent>(out var max, _factory) // POLONIUM
+                    || max.MaxPlayers >= eligiblePlayers);
         }
 
         void IndexAndStartGameMode(string pick, EntityPrototype? pickProto, GameRuleComponent? ruleComp)
