@@ -1,0 +1,55 @@
+- type: entity
+  parent: MobXeno
+  id: MobXenoNoGhost
+  suffix: NPC
+  components:
+  - type: GhostRole
+    prob: 0
+
+- type: entity
+  parent: MobXenoRunner
+  id: MobXenoRunnerNoGhost
+  suffix: NPC
+  components:
+  - type: GhostRole
+    prob: 0
+
+- type: entity
+  parent: MobXenoDrone
+  id: MobXenoDroneNoGhost
+  suffix: NPC
+  components:
+  - type: GhostRole
+    prob: 0
+
+- type: entity
+  parent: MobXenoSpitter
+  id: MobXenoSpitterNoGhost
+  suffix: NPC
+  components:
+  - type: GhostRole
+    prob: 0
+
+- type: entity
+  parent: MobXenoRavager
+  id: MobXenoRavagerNoGhost
+  suffix: NPC
+  components:
+  - type: GhostRole
+    prob: 0
+
+- type: entity
+  parent: MobXenoPraetorian
+  id: MobXenoPraetorianNoGhost
+  suffix: NPC
+  components:
+  - type: GhostRole
+    prob: 0
+
+- type: entity
+  parent: MobGiantSpiderAngry
+  id: MobGiantSpiderAngryNoGhost
+  suffix: NPC
+  components:
+  - type: GhostRole
+    prob: 0

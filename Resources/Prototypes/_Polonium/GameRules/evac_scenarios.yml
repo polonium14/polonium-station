@@ -1,0 +1,127 @@
+# Scenariusze lotów ewakuacyjnych: GameRules zaczynają obowiązywać w momencie, gdy prom ratunkowy opuszcza stację i kieruje się do centrali.
+# Komponent EvacScenario określa prawdopodobieństwo wystąpienia danego scenariusza oraz cechy wspólne dla wszystkich scenariuszy (czas trwania lotu, muzyka, komunikaty),
+# natomiast pozostałe komponenty określają, co faktycznie się dzieje. Scenariusz rozpoczyna się po upływie opóźnienia startDelay od momentu skoku
+# w nadprzestrzeń, wtedy właśnie rozpoczyna się odtwarzanie muzyki, a wszystkie kolejne momenty są liczone od tego momentu.
+# Administratorzy mogą sprawdzać scenariusze za pomocą polecenia "evacscenario".
+
+- type: entity
+  parent: BaseGameRule
+  id: EvacScenarioPlanetCrash
+  components:
+  - type: EvacScenario
+    chance: 0.01
+    ruleChances:
+    - rules:
+      - RampingStationEventScheduler
+      - KesslerSyndromeScheduler
+      - SecretPlusRampingMid
+      - SecretPlusAdmeme
+      chance: 0.35
+    startDelay: 21 # rozgrzewka >:)
+    flightDuration: 240 # after the start, so the whole flight takes 4:21
+    # Everything below follows the track
+    music:
+      path: /Audio/_Polonium/Music/eeh.ogg
+    announcements:
+    - time: 15
+      shuttleOnly: true
+      sender: evac-scenario-sender-shuttle
+      message: evac-scenario-planet-crash-asteroids
+      sound: /Audio/_Polonium/Announcements/Shuttle/asteroid_ev_announce.ogg
+      color: "#FF4500"
+    - time: 110
+      shuttleOnly: true
+      sender: evac-scenario-sender-shuttle
+      message: evac-scenario-planet-crash-breach
+      color: "#FFA500"
+    - time: 175
+      shuttleOnly: true
+      sender: evac-scenario-sender-shuttle
+      message: evac-scenario-planet-crash-brace
+      sound: /Audio/Announcements/attention.ogg
+      color: "#FF0000"
+    - time: 200
+      message: evac-scenario-planet-crash-lost
+      sound: /Audio/_Polonium/Announcements/centcomm_announce.ogg
+  - type: EvacMeteorShower
+    stopTime: 184
+    phases:
+    - start: 24
+      minInterval: 5
+      maxInterval: 7
+      meteors:
+        MeteorSpaceDust: 2
+        MeteorSmall: 1
+    - start: 60
+      minInterval: 3
+      maxInterval: 4.5
+      meteors:
+        MeteorSpaceDust: 1
+        MeteorSmall: 3
+        MeteorMedium: 0.5
+    - start: 96
+      minInterval: 2.5
+      maxInterval: 3.5
+      minPerWave: 1
+      maxPerWave: 2
+      meteors:
+        MeteorSmall: 3
+        MeteorMedium: 2
+        MeteorLarge: 0.2
+    - start: 150
+      minInterval: 1
+      maxInterval: 3
+      minPerWave: 1
+      maxPerWave: 2
+      meteors:
+        MeteorSmall: 4
+        MeteorMedium: 4
+        MeteorLarge: 0.5
+  - type: EvacCrashLanding
+    crashTime: 190
+    mobWaves:
+    - delay: 1
+      perPassenger: 0.25
+      min: 3
+      max: 10
+    - delay: 12
+      perPassenger: 0.2
+      min: 2
+      max: 8
+    - delay: 25
+      perPassenger: 0.2
+      min: 2
+      max: 8
+    planets:
+    - name: evac-scenario-planet-lava
+      biome: Lava
+      light: "#A34931"
+      mobs:
+        MobGoliath: 3
+        MobWatcherMagmawing: 2
+        MobWatcherLavaland: 2
+        MobBasilisk: 2
+        MobHivelord: 1
+    - name: evac-scenario-planet-snow
+      biome: Snow
+      light: "#9FB2D6"
+      mobs:
+        MobWatcherIcewing: 3
+        MobGoliath: 2
+        MobBasilisk: 2
+    - name: evac-scenario-planet-jungle
+      biome: Grasslands
+      light: "#C9B26F"
+      mobs:
+        MobXenoNoGhost: 3
+        MobXenoRunnerNoGhost: 3
+        MobXenoDroneNoGhost: 2
+        MobXenoSpitterNoGhost: 2
+        MobXenoRavagerNoGhost: 1
+        MobXenoPraetorianNoGhost: 0.5
+    - name: evac-scenario-planet-desert
+      biome: LowDesert
+      light: "#E6CB8B"
+      mobs:
+        MobGiantSpiderAngryNoGhost: 3
+        MobBasilisk: 1
