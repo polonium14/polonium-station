@@ -14,7 +14,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseUniquePet, MobCorgi, BaseSlicingRefinable ]
+  parent: [ BaseUniquePet, MobCorgi, BaseSlicingRefinableButchering ]
   id: MobCorgiIanBase # Polonium: restructured to include Ian in contraband
   components:
   - type: Sprite
@@ -77,7 +77,7 @@
     allowedDepartments: [ Command ]
 
 - type: entity
-  parent: [ MobCorgiIanBase, BaseSlicingRefinable ]
+  parent: [ MobCorgiIanBase, BaseSlicingRefinableButchering ]
   id: MobCorgiIanOld
   name: Old Ian
   description: Still the favorite pet corgi. Love his wheels.
@@ -168,7 +168,7 @@
   - type: SpeakOnException
 
 - type: entity
-  parent: [ MobCorgiPuppy, BaseSlicingRefinable ]
+  parent: [ MobCorgiPuppy, BaseSlicingRefinableButchering ]
   id: MobCorgiIanPup
   name: Puppy Ian
   description: Favourite puppy corgi. Awww.
@@ -280,7 +280,7 @@
     - VimPilot
 
 - type: entity
-  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinable , BaseMobDestructible ]
+  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinableButchering , BaseMobDestructible ]
   id: MobBingus
   name: Bingus
   description: Bingus my beloved...
@@ -337,7 +337,7 @@
     stealGroup: AnimalNamedCat
 
 - type: entity
-  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinable , BaseMobDestructible ]
+  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinableButchering , BaseMobDestructible ]
   id: MobMcGriff
   name: McGriff
   description: This dog can tell something smells around here, and that something is CRIME!
@@ -413,7 +413,7 @@
   - type: MessyDrinker
 
 - type: entity
-  parent: [ BaseUniquePet, MobSloth, BaseSlicingRefinable ]
+  parent: [ BaseUniquePet, MobSloth, BaseSlicingRefinableButchering ]
   id: MobPaperwork
   name: Paperwork
   description: Took up a new job sorting books in the library after he got transferred from Space Station 13. He seems to be just as slow at this.
@@ -447,7 +447,7 @@
       gender: male
 
 - type: entity
-  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinable , BaseMobDestructible ]
+  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinableButchering , BaseMobDestructible ]
   id: MobWalter
   name: Walter
   description: He likes chems and treats. Walter.
@@ -620,7 +620,7 @@
     - VimPilot
 
 - type: entity
-  parent: [ BaseUniquePet, MobFox, BaseSlicingRefinable ]
+  parent: [ BaseUniquePet, MobFox, BaseSlicingRefinableButchering ]
   id: MobFoxRenault
   name: Renault
   description: The captain's trustworthy fox.
@@ -650,7 +650,7 @@
     stealGroup: AnimalRenault
 
 - type: entity
-  parent: [ BaseUniquePet, MobHamster, BaseSlicingRefinable ]
+  parent: [ BaseUniquePet, MobHamster, BaseSlicingRefinableButchering ]
   id: MobHamsterHamlet
   name: Hamlet
   description: A grumpy, cute and fluffy hamster.
@@ -818,7 +818,7 @@
     prototypes: [ BoxingKangarooGear ]
 
 - type: entity
-  parent: [ BaseUniquePet, MobAdultSlimes, StripableInventoryBase, BaseSlicingRefinable ]
+  parent: [ BaseUniquePet, MobAdultSlimes, StripableInventoryBase, BaseSlicingRefinableButchering ]
   id: MobSlimesPet
   name: Smile
   description: This masterpiece has gone through thousands of experiments. But it is the sweetest creature in the world. Smile Slime!
