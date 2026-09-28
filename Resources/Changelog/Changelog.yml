@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Minemoder, ScarKy0
-  changes:
-  - message: Diona, Vox and Vulpkanins now have unique sneeze sounds.
-    type: Add
-  id: 9533
-  time: '2026-02-18T02:02:44.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42929
 - author: PicklOH
   changes:
   - message: Fixed Det coat armor values
@@ -4188,3 +4181,19 @@
   id: 10029
   time: '2026-09-28T10:53:28.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1073
+- author: haze
+  changes:
+  - message: "\u0104"
+    type: Remove
+  - message: "\u0104."
+    type: Remove
+  - message: "Zaktualizowano wywo\u0142ania `PredictedSpawn` w systemach, aby korzysta\u0142\
+      y z metody dost\u0119pnej bezpo\u015Brednio w systemie."
+    type: Fix
+  - message: "Poprawiono wywo\u0142anie `SetFallbackCulture` w `ContentLocalizationManager`."
+    type: Fix
+  - message: "Zaktualizowano podmodu\u0142 `RobustToolbox`."
+    type: Tweak
+  id: 10030
+  time: '2026-09-28T13:00:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1074
