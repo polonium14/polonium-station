@@ -54,6 +54,18 @@ public sealed partial class EvacMeteorShowerSystem : GameRuleSystem<EvacMeteorSh
         component.Phases.Sort((a, b) => a.Start.CompareTo(b.Start));
     }
 
+    protected override void Ended(EntityUid uid, EvacMeteorShowerComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
+    {
+        base.Ended(uid, component, gameRule, args);
+
+        foreach (var meteor in component.Meteors)
+        {
+            QueueDel(meteor);
+        }
+
+        component.Meteors.Clear();
+    }
+
     protected override void ActiveTick(EntityUid uid, EvacMeteorShowerComponent component, GameRuleComponent gameRule, float frameTime)
     {
         base.ActiveTick(uid, component, gameRule, frameTime);
@@ -79,6 +91,7 @@ public sealed partial class EvacMeteorShowerSystem : GameRuleSystem<EvacMeteorSh
         }
 
         component.NextWave = Timing.CurTime + phase.MinInterval + (phase.MaxInterval - phase.MinInterval) * RobustRandom.NextDouble();
+        component.Meteors.RemoveWhere(meteor => TerminatingOrDeleted(meteor));
 
         foreach (var shuttle in _scenario.GetShuttles(scenario))
         {
@@ -150,6 +163,7 @@ public sealed partial class EvacMeteorShowerSystem : GameRuleSystem<EvacMeteorSh
                 continue;
 
             var uid = Spawn(meteor, new MapCoordinates(spawnPos, xform.MapID));
+            component.Meteors.Add(uid);
             _physics.SetLinearVelocity(uid, shuttleVelocity - direction * component.Speed);
             _physics.SetAngularVelocity(uid, RobustRandom.NextFloat(-2f, 2f));
 

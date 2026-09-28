@@ -154,6 +154,7 @@ public sealed partial class EvacScenarioCommand : LocalizedEntityCommands
         // Hands back an invalid uid rather than null when there is none.
         if (_emergency.GetShuttle() is not { Valid: true } shuttle)
         {
+            _scenario.ClearForcedScenario();
             shell.WriteError(Loc.GetString("cmd-evacscenario-no-shuttle"));
             return;
         }

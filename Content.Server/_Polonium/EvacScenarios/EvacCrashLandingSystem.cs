@@ -81,13 +81,19 @@ public sealed partial class EvacCrashLandingSystem : GameRuleSystem<EvacCrashLan
         base.Ended(uid, component, gameRule, args);
 
         // Called off before the crash, so fly to CentComm after all.
+        var stillHeading = false;
         foreach (var shuttle in component.Diverted)
         {
             if (component.Landed.Contains(shuttle)
                 || !TryComp<FTLComponent>(shuttle, out var ftl)
-                || ftl.State is not (FTLState.Starting or FTLState.Travelling or FTLState.Arriving)
-                || FindCentcomm() is not { } centcomm)
+                || ftl.State is not (FTLState.Starting or FTLState.Travelling or FTLState.Arriving))
             {
+                continue;
+            }
+
+            if (FindCentcomm() is not { } centcomm)
+            {
+                stillHeading = true;
                 continue;
             }
 
@@ -95,7 +101,7 @@ public sealed partial class EvacCrashLandingSystem : GameRuleSystem<EvacCrashLan
             Dirty(shuttle, ftl);
         }
 
-        if (component.Landed.Count == 0 && component.Planet is { } planet)
+        if (component.Landed.Count == 0 && !stillHeading && component.Planet is { } planet)
         {
             QueueDel(planet);
             component.Planet = null;

@@ -55,6 +55,9 @@ public sealed partial class EvacMeteorShowerComponent : Component
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
     public TimeSpan? NextWave;
+
+    [DataField]
+    public HashSet<EntityUid> Meteors = new();
 }
 
 [DataDefinition]
