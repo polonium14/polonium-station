@@ -1,3 +1,3 @@
-ent-WizardTeleportScroll = teleport scroll
-    .suffix = Wizard
+ent-WizardTeleportScroll = zwój teleportacji
+    .suffix = Czarodziej
     .desc = { ent-BaseItem.desc }

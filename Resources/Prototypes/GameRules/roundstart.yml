@@ -315,7 +315,7 @@
   id: Wizard
   components:
   - type: GameRule
-    minPlayers: 10
+    minPlayers: 21 # POLONIUM: 10-20 players get WizardLowpop
     chaosScore: 2000
   - type: DynamicRuleCost
     cost: 150

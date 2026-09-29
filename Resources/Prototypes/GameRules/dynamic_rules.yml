@@ -45,7 +45,15 @@
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:PlayerCountCondition
+            min: 21
+        - id: WizardLowpop
+          weight: 5
+          conditions:
+          - !type:HasBudgetCondition
+          - !type:MaxRuleOccurenceCondition
+          - !type:PlayerCountCondition
             min: 10
+            max: 20
       # Roundstart Minor Rules
       - !type:GroupSelector
         conditions:

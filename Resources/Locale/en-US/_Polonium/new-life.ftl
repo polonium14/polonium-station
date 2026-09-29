@@ -1,3 +1,9 @@
+ghost-gui-new-life-button = New life
+ghost-new-life-window-title = New life ({ $remainingLives } of { $maxLives } lives remaining)
+ghost-new-life-unavailable = exhausted
+ghost-new-life-command-description = Opens the new life window
+ghost-new-life-command-not-client-error = You can only open the new life UI on the client.
+
 ghost-gui-new-life-button-countdown = Return to lobby ({ $time })
 
 new-life-window-title = New life

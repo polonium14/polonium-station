@@ -31,6 +31,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultChangelingRule = "Changeling";
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
     private static readonly EntProtoId DefaultWizardRule = "Wizard";
+    private static readonly EntProtoId LowpopWizardRule = "WizardLowpop"; // POLONIUM
     private static readonly EntProtoId DefaultNinjaRule = "NinjaSpawn";
     // private static readonly EntProtoId DefaultBloodCultRule = "BloodCult"; // funkystation - disabled
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
@@ -208,6 +209,22 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", wizardName, Loc.GetString("admin-verb-make-wizard")),
         };
         args.Verbs.Add(wizard);
+
+        // POLONIUM: weaker wizard with the lowpop grimoire
+        var lowpopWizardName = Loc.GetString("admin-verb-text-make-wizard-lowpop");
+        Verb lowpopWizard = new()
+        {
+            Text = lowpopWizardName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_Funkystation/Interface/Misc/job_icons.rsi"), "Wizard"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<WizardRoleComponent>(targetPlayer, LowpopWizardRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", lowpopWizardName, Loc.GetString("admin-verb-make-wizard-lowpop")),
+        };
+        args.Verbs.Add(lowpopWizard);
 
         var ninjaName = Loc.GetString("admin-verb-text-make-space-ninja");
         Verb ninja = new()

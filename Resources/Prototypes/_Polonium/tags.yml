@@ -25,5 +25,8 @@
 - type: Tag
   id: WeaponVisMPSPistolMagazine
 
-- type: Tag 
+- type: Tag
   id: TacticalIgniter
+
+- type: Tag
+  id: SpellbookLowpop # Store blacklist: spellbook_catalog.yml
