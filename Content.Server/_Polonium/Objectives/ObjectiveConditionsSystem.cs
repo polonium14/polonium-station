@@ -1,4 +1,5 @@
 using Content.Server.Objectives.Systems;
+using Content.Server.Station.Components;
 using Content.Shared.AlertLevel;
 using Content.Shared.Inventory;
 using Content.Shared.Mind;
@@ -25,6 +26,7 @@ public sealed partial class ObjectiveConditionsSystem : EntitySystem
         SubscribeLocalEvent<MindWhitelistCountConditionComponent, ObjectiveGetProgressEvent>(OnMindCountProgress);
         SubscribeLocalEvent<EntityCountConditionComponent, ObjectiveGetProgressEvent>(OnEntityCountProgress);
         SubscribeLocalEvent<AlertLevelReachedConditionComponent, ObjectiveGetProgressEvent>(OnAlertLevelProgress);
+        SubscribeLocalEvent<AlertLevelReachedConditionComponent, ObjectiveAssignedEvent>(OnAlertAssigned);
         SubscribeLocalEvent<WearingWhitelistConditionComponent, ObjectiveGetProgressEvent>(OnWearingProgress);
 
         SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
@@ -79,14 +81,31 @@ public sealed partial class ObjectiveConditionsSystem : EntitySystem
         args.Progress = IsWearing(args.Mind, ent.Comp) ? 1f : 0f;
     }
 
+    private void OnAlertAssigned(Entity<AlertLevelReachedConditionComponent> ent, ref ObjectiveAssignedEvent args)
+    {
+        ent.Comp.Station = StationFor(args.Mind);
+    }
+
     private void OnAlertLevelChanged(ref AlertLevelChangedEvent args)
     {
         var query = AllEntityQuery<AlertLevelReachedConditionComponent>();
         while (query.MoveNext(out var comp))
         {
-            if (comp.Levels.Contains(args.AlertLevel))
+            if (comp.Station == args.Station && comp.Levels.Contains(args.AlertLevel))
                 comp.Reached = true;
         }
+    }
+
+    private EntityUid? StationFor(MindComponent mind)
+    {
+        if (mind.OwnedEntity is { } body
+            && _station.GetOwningStation(body) is { } owned
+            && HasComp<AlertLevelComponent>(owned))
+            return owned;
+
+        var query = EntityQueryEnumerator<StationEventEligibleComponent, AlertLevelComponent>();
+
+        return query.MoveNext(out var uid, out _, out _) ? uid : null;
     }
 
     private bool BodyPasses(MindComponent mind, EntityWhitelist whitelist, bool requireAlive)

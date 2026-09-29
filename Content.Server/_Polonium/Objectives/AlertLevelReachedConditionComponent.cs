@@ -14,4 +14,8 @@ public sealed partial class AlertLevelReachedConditionComponent : Component
 
     [DataField]
     public bool Reached;
+
+    // station this objective is watching
+    [DataField]
+    public EntityUid? Station;
 }
