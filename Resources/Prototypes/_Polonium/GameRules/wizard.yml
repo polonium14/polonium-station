@@ -1,0 +1,17 @@
+# Lowpop wizard
+- type: entity
+  parent: [ BaseWizardRule, BaseRoundstartAntagRule ]
+  id: WizardLowpop
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 10
+    chaosScore: 900
+  - type: GameRuleMaxPlayers
+    maxPlayers: 20
+  - type: DynamicRuleCost
+    cost: 100
+  - type: AntagSelection
+    antags:
+    - !type:FixedAntagCount
+      proto: WizardLowpop

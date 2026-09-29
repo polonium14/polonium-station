@@ -1,0 +1,11 @@
+- type: entity
+  parent: WizardsGrimoire
+  id: WizardsGrimoireLowpop
+  suffix: Wizard, lowpop
+  components:
+  - type: Store
+    balance:
+      WizCoin: 7
+  - type: Tag
+    tags:
+    - SpellbookLowpop
