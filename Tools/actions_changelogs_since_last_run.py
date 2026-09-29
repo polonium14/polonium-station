@@ -30,7 +30,6 @@ TRUNCATION_SUFFIX = " [...]"
 
 CHANGELOG_FILE = "Resources/Changelog/Changelog.yml"
 
-MAX_NEW_ENTRIES = 20
 ENTRY_LOOKBACK = timedelta(hours=2)
 
 TYPES_TO_EMOJI = {"Fix": "🐛", "Add": "🆕", "Remove": "❌", "Tweak": "⚒️"}
@@ -64,13 +63,6 @@ def main():
     diff = filter_entries_since_previous_run(diff, previous_run)
     print(f"New changelog entries: {len(diff)}")
 
-    if len(diff) > MAX_NEW_ENTRIES:
-        print(
-            f"Refusing to send {len(diff)} entries (cap {MAX_NEW_ENTRIES}). "
-            "Likely a bad baseline, skipping Discord this run."
-        )
-        return
-
     if DEBUG:
         message_lines = []
         for entry in diff:
@@ -85,11 +77,10 @@ def get_most_recent_workflow(
     sess: requests.Session, github_repository: str, github_run: str
 ) -> Any:
     workflow_run = get_current_run(sess, github_repository, github_run)
-    past_runs = list(get_past_runs(sess, workflow_run))
-    if not past_runs:
-        raise RuntimeError("Could not find a previous successful workflow run")
+    for run in get_past_runs(sess, workflow_run):
+        return run
 
-    return max(past_runs, key=lambda run: run["created_at"])
+    raise RuntimeError("Could not find a previous successful workflow run")
 
 
 def get_current_run(
@@ -112,13 +103,23 @@ def get_past_runs(sess: requests.Session, current_run: Any) -> Iterable[Any]:
     }
     url = f"{current_run['workflow_url']}/runs"
 
-    resp = sess.get(url, params=params)
-    resp.raise_for_status()
+    while url:
+        resp = sess.get(url, params=params)
+        resp.raise_for_status()
 
-    for run in resp.json()["workflow_runs"]:
-        if run["id"] == current_run["id"]:
-            continue
-        yield run
+        for run in resp.json()["workflow_runs"]:
+            if run["id"] == current_run["id"]:
+                continue
+            if run["created_at"] > current_run["created_at"]:
+                continue
+            if run.get("head_branch") != current_run.get("head_branch"):
+                continue
+            if run.get("status") != "completed" or run.get("conclusion") != "success":
+                continue
+            yield run
+
+        url = resp.links.get("next", {}).get("url")
+        params = None
 
 
 def get_last_changelog() -> tuple[str, Any]:
