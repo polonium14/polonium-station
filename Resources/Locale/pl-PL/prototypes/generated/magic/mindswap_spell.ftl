@@ -1,2 +1,2 @@
-ent-ActionMindSwap = Mind Swap
-    .desc = Exchange bodies with another person!
+ent-ActionMindSwap = Zamiana umysłów
+    .desc = Zamień się ciałami z inną osobą!

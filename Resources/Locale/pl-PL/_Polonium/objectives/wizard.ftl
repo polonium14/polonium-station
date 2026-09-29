@@ -1,10 +1,10 @@
 wizard-objective-kill-title = Zgładź { $targetName }, { $job }.
-wizard-objective-cluwne-title = Rzuć klątwę Cluwne'a na { $targetName }, { $job }.
+wizard-objective-cluwne-title = Rzuć Klątwę cluwne na { $targetName }, { $job }.
 wizard-objective-polymorph-title = Zamień { $targetName }, { $job }, w zwierzę.
 wizard-objective-chosen-one-title = Wybraniec Federacji: chroń { $targetName }, { $job }, do końca zmiany.
 
 wizard-objective-cluwne-count-title =
-    Rzuć klątwę Cluwne'a na { $count } { $count ->
+    Rzuć Klątwę cluwne na { $count } { $count ->
         [one] osobę
         [few] osoby
        *[many] osób
@@ -16,7 +16,7 @@ wizard-objective-polymorph-count-title =
        *[many] osób
     }.
 wizard-objective-slippery-count-title =
-    Rzuć Slippery Slope na { $count } { $count ->
+    Rzuć zaklęcie „Śliska sprawa” na { $count } { $count ->
         [one] osobę
         [few] osoby
        *[many] osób
