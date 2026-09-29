@@ -43,7 +43,7 @@ steal-target-groups-clothing-neck-goldmedal = złoty medal załoganta
 steal-target-groups-clothing-neck-clownmedal = medal błazna
 steal-target-groups-wanted-list-cartridge = karta listy poszukiwanych
 steal-target-groups-belt-ce = chief engineer's toolbelt
-steal-target-groups-captain-sword = captain's sabre
+steal-target-groups-captain-sword = szabla kapitana
 # Thief structures
 steal-target-groups-teg = część TEG
 steal-target-groups-freezer-heater = termomaszyna chłodząca lub termomaszyna grzejąca

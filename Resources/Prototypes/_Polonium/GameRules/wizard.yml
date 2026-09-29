@@ -15,3 +15,18 @@
     antags:
     - !type:FixedAntagCount
       proto: WizardLowpop
+  - type: AntagObjectives
+    objectives: []
+  - type: AntagRandomObjectives
+    sets:
+    - groups: WizardLowpopObjectiveSetVictim
+      maxPicks: 1
+    - groups: WizardLowpopObjectiveSetTreasure
+      maxPicks: 1
+    - groups: WizardLowpopObjectiveSetSpectacle
+      maxPicks: 1
+    - groups: WizardLowpopObjectiveSetExtra
+      maxPicks: 1
+    - groups: WizardLowpopObjectiveSetFinale
+      maxPicks: 1
+    maxDifficulty: 5
