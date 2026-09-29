@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made for Polonium Station by nikitosych from the replicator wall, fabricator and holowall sprites, the convert icon also uses the solid wall sprite by rye-rice (GitHub) and 20nypercent, modified by AftrLite (GitHub)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "convert"
+        },
+        {
+            "name": "build_wall"
+        },
+        {
+            "name": "build_fabricator"
+        },
+        {
+            "name": "holowall"
+        }
+    ]
+}

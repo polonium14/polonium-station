@@ -5,6 +5,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Impstation.SpawnedFromTracker;
+using Content.Shared._Polonium.Replicator; // POLONIUM
 using Content.Shared.Actions;
 using Content.Shared.Construction.Components;
 using Content.Shared.Hands.Components;
@@ -44,6 +45,8 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
     [Dependency] private SharedStunSystem _stun = default!;
     [Dependency] private StepTriggerSystem _stepTrigger = default!;
     [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private ReplicatorHiveSystem _hive = default!; // POLONIUM
+    [Dependency] private ReplicatorSheetHandSystem _sheetHand = default!; // POLONIUM
 
     public override void Initialize()
     {
@@ -60,6 +63,10 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
         if (HasComp<ReplicatorNestFallingComponent>(args.Tripper))
             return;
 
+        // POLONIUM
+        if (!_hive.CanDigest(args.Tripper))
+            return;
+
         var isReplicator = HasComp<ReplicatorComponent>(args.Tripper);
 
         if (TryComp<MobStateComponent>(args.Tripper, out var mobState) && isReplicator && _mobState.IsDead(args.Tripper))
@@ -74,9 +81,16 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
         StartFalling(ent, args.Tripper);
     }
 
-    private void StartFalling(Entity<ReplicatorNestComponent> ent, EntityUid tripper, bool playSound = true)
+    // POLONIUM
+    public void StartDive(Entity<ReplicatorNestComponent> ent, EntityUid diver)
     {
-        HandlePoints(ent, tripper);
+        StartFalling(ent, diver, handlePoints: false);
+    }
+
+    private void StartFalling(Entity<ReplicatorNestComponent> ent, EntityUid tripper, bool playSound = true, bool handlePoints = true) // POLONIUM: handlePoints
+    {
+        if (handlePoints) // POLONIUM
+            HandlePoints(ent, tripper);
 
         if (TryComp<PullableComponent>(tripper, out var pullable) && pullable.BeingPulled)
             _pulling.TryStopPull(tripper, pullable);
@@ -94,6 +108,17 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
     {
         if (_whitelist.IsWhitelistPass(ent.Comp.Blacklist, tripper))
             return;
+
+        // POLONIUM: replisteel only refunds the budget, or printed sheets could be fed back to grow the nest
+        TryComp<ReplicatorHiveComponent>(ent, out var hive);
+        if (hive != null && _hive.GetStoredBudget((ent, hive), tripper) is > 0 and var refund)
+        {
+            _hive.AddBudget((ent, hive), refund);
+            return;
+        }
+
+        var pointsBefore = ent.Comp.TotalPoints;
+        // POLONIUM end
 
         ent.Comp.TotalPoints++;
         ent.Comp.SpawningProgress++;
@@ -132,6 +157,16 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
             }
         }
 
+        // POLONIUM
+        if (hive != null)
+        {
+            var points = ent.Comp.TotalPoints - pointsBefore;
+            if (HasComp<ReplicatorComponent>(tripper))
+                points += hive.DeadReplicatorPoints;
+
+            _hive.AddPoints((ent, hive), points);
+        }
+
         if (ent.Comp.TotalPoints >= ent.Comp.NextUpgradeAt)
         {
             ent.Comp.CurrentLevel++;
@@ -151,14 +186,13 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
             ent.Comp.NextUpgradeAt += ent.Comp.CurrentLevel >= ent.Comp.EndgameLevel
                 ? ent.Comp.UpgradeAt * ent.Comp.EndgameLevel
                 : ent.Comp.UpgradeAt * ent.Comp.CurrentLevel;
-            UpgradeAll(ent);
+
+            // POLONIUM: replaces UpgradeAll
+            var levelUp = new ReplicatorNestLevelUpEvent(ent.Comp.CurrentLevel);
+            RaiseLocalEvent(ent, ref levelUp);
         }
 
-        if (ent.Comp.SpawningProgress >= ent.Comp.NextSpawnAt)
-        {
-            SpawnNew(ent);
-            ent.Comp.NextSpawnAt += ent.Comp.SpawnNewAt;
-        }
+        // POLONIUM: removed SpawnNew
 
         Dirty(ent);
     }
@@ -213,14 +247,7 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
         if (!Exists(upgradedUid))
             return;
 
-        var replicatorOmnitool = Spawn("OmnitoolUnremoveable");
-        var replicatorWelder = Spawn("WelderExperimentalUnremoveable");
-        _handsSystem.AddHand(upgradedUid, "Middle Tool Slot", HandLocation.Middle);
-        _handsSystem.AddHand(upgradedUid, "Right Tool Slot", HandLocation.Right);
-        _handsSystem.TrySetActiveHand(upgradedUid, "Right Tool Slot");
-        _handsSystem.TryPickupAnyHand(upgradedUid, replicatorOmnitool);
-        _handsSystem.TrySetActiveHand(upgradedUid, "Middle Tool Slot");
-        _handsSystem.TryPickupAnyHand(upgradedUid, replicatorWelder);
+        GiveTierLoadout(upgradedUid, 2); // POLONIUM
     }
 
     public void OnUpgrade3(Entity<ReplicatorComponent> ent, ref ReplicatorUpgrade3ActionEvent args)
@@ -237,32 +264,63 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
         if (!Exists(upgradedUid))
             return;
 
-        var replicatorArm = Spawn("ReplicatorT3Weapon");
-        _handsSystem.AddHand(upgradedUid, "Arm", HandLocation.Middle);
-        _handsSystem.TryPickupAnyHand(upgradedUid, replicatorArm);
+        GiveTierLoadout(upgradedUid, 3); // POLONIUM
     }
 
-    public EntityUid UpgradeReplicator(Entity<ReplicatorComponent> ent, int desiredLevel)
+    // POLONIUM
+    public void GiveTierLoadout(EntityUid uid, int tier)
+    {
+        switch (tier)
+        {
+            case 2:
+                var replicatorOmnitool = Spawn("OmnitoolUnremoveable");
+                var replicatorWelder = Spawn("WelderExperimentalUnremoveable");
+                _handsSystem.AddHand(uid, "Middle Tool Slot", HandLocation.Middle);
+                _handsSystem.AddHand(uid, "Right Tool Slot", HandLocation.Right);
+                _handsSystem.TrySetActiveHand(uid, "Right Tool Slot");
+                _handsSystem.TryPickupAnyHand(uid, replicatorOmnitool);
+                _handsSystem.TrySetActiveHand(uid, "Middle Tool Slot");
+                _handsSystem.TryPickupAnyHand(uid, replicatorWelder);
+                break;
+            case 3:
+                var replicatorArm = Spawn("ReplicatorT3Weapon");
+                _handsSystem.AddHand(uid, "Arm", HandLocation.Middle);
+                _handsSystem.TryPickupAnyHand(uid, replicatorArm);
+                break;
+        }
+    }
+
+    public EntityUid UpgradeReplicator(Entity<ReplicatorComponent> ent, int desiredLevel, EntityCoordinates? coordinates = null) // POLONIUM: coordinates
     {
         var oldUid = ent.Owner;
         var xform = Transform(oldUid);
 
-        var nextStage = desiredLevel == 2
-            ? ent.Comp.Level2Id
-            : ent.Comp.Level3Id;
+        // POLONIUM
+        var nextStage = desiredLevel switch
+        {
+            1 => ent.Comp.Level1Id,
+            2 => ent.Comp.Level2Id,
+            _ => ent.Comp.Level3Id,
+        };
 
-        var upgraded = Spawn(nextStage, xform.Coordinates);
+        var upgraded = Spawn(nextStage, coordinates ?? xform.Coordinates); // POLONIUM
 
         var upgradedComp = EnsureComp<ReplicatorComponent>(upgraded);
         upgradedComp.RelatedReplicators = ent.Comp.RelatedReplicators;
         upgradedComp.TargetUpgradeStage = ent.Comp.TargetUpgradeStage;
 
-        if (ent.Comp.MyNest != null)
+        // POLONIUM
+        upgradedComp.MyNest = ent.Comp.MyNest;
+        upgradedComp.Queen |= ent.Comp.Queen;
+        upgradedComp.HasSpawnedNest = ent.Comp.HasSpawnedNest;
+
+        if (ent.Comp.MyNest is { } myNest && TryComp<ReplicatorNestComponent>(myNest, out var nestComp)) // POLONIUM
         {
-            var nestComp = EnsureComp<ReplicatorNestComponent>((EntityUid) ent.Comp.MyNest);
             nestComp.SpawnedMinions.Remove(oldUid);
             nestComp.SpawnedMinions.Add(upgraded);
         }
+
+        _sheetHand.TransferSheets(oldUid, upgraded); // POLONIUM
 
         if (_mind.TryGetMind(oldUid, out var mind, out _))
             _mind.TransferTo(mind, upgraded);
@@ -282,6 +340,10 @@ public sealed partial class ReplicatorSpawnNestActionEvent : InstantActionEvent;
 public sealed partial class ReplicatorUpgrade2ActionEvent : InstantActionEvent;
 
 public sealed partial class ReplicatorUpgrade3ActionEvent : InstantActionEvent;
+
+// POLONIUM
+[ByRefEvent]
+public readonly record struct ReplicatorNestLevelUpEvent(int Level);
 
 [ByRefEvent]
 public sealed partial class ReplicatorNestEmbiggenedEvent(Entity<ReplicatorNestComponent> ent) : EntityEventArgs

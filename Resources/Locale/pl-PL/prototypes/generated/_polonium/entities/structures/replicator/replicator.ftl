@@ -1,0 +1,14 @@
+ent-WallReplicator = ściana replikatorów
+    .desc = Ściana stacji przejęta przez nanity. Trzyma lepiej niż stal, którą kiedyś była.
+ent-WallReplicatorReinforced = wzmocniona ściana replikatorów
+    .desc = Wzmocniona ściana stacji przejęta przez nanity. Trzyma lepiej niż plastal, którą kiedyś była.
+ent-ReplicatorHolowall = holościana replikatorów
+    .desc = Siatka z twardego światła utkana przez replikatory. Zatrzymuje powietrze i przepuszcza wszystko.
+ent-ReplicatorFabricator = fabrykator replikatorów
+    .desc = Kuźnia nanitów, która składa nowe korpusy replikatorów z replistali roju.
+ent-EffectReplicatorBase = { "" }
+    .desc = { "" }
+ent-EffectReplicatorConvert = { ent-EffectReplicatorBase }
+    .desc = { ent-EffectReplicatorBase.desc }
+ent-EffectReplicatorBuild = { ent-EffectReplicatorBase }
+    .desc = { ent-EffectReplicatorBase.desc }

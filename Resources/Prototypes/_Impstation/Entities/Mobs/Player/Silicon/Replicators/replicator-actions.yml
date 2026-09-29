@@ -58,7 +58,7 @@
   parent: BaseAction
   id: ActionReplicatorTeleportPrey
   name: Hive Recall
-  description: Channel nanites to pull an incapacitated target to a random spot 8-10 tiles away on this grid.
+  description: Channel nanites to throw an incapacitated target 8-10 tiles away from you and far from any nest. The target can't be recalled again for 25 seconds. # POLONIUM
   components:
   - type: Action
     itemIconStyle: NoItem

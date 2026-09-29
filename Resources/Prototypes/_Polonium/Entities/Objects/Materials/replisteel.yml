@@ -1,0 +1,71 @@
+- type: material
+  id: Replisteel
+  stackEntity: SheetReplisteel1
+  name: materials-replisteel
+  icon: { sprite: _Polonium/Objects/Materials/replisteel.rsi, state: replisteel }
+  color: "#6d6587"
+  price: 0
+
+- type: stack
+  parent: BaseSheetStack
+  id: Replisteel
+  name: stack-replisteel
+  icon: { sprite: /Textures/_Polonium/Objects/Materials/replisteel.rsi, state: replisteel }
+  spawn: SheetReplisteel1
+
+- type: entity
+  parent: BaseSheet
+  id: SheetReplisteel
+  name: replisteel
+  suffix: Full
+  description: Steel reworked by nanites. The plates never stop crawling.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Materials/replisteel.rsi
+    state: replisteel_3
+    layers:
+    - state: replisteel_3
+      map: ["base"]
+  - type: Item
+    sprite: _Polonium/Objects/Materials/replisteel.rsi
+    heldPrefix: replisteel
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Replisteel: 100
+  - type: Stack
+    stackType: Replisteel
+    baseLayer: base
+    layerStates:
+    - replisteel
+    - replisteel_2
+    - replisteel_3
+  - type: Tag
+    tags:
+    - Sheet
+    - Metal
+    - Replisteel
+  - type: Damageable
+    damageModifierSet: Metallic
+
+- type: entity
+  parent: SheetReplisteel
+  id: SheetReplisteel10
+  suffix: 10
+  components:
+  - type: Sprite
+    state: replisteel
+  - type: Stack
+    stackType: Replisteel
+    count: 10
+
+- type: entity
+  parent: SheetReplisteel
+  id: SheetReplisteel1
+  suffix: Single
+  components:
+  - type: Sprite
+    state: replisteel
+  - type: Stack
+    stackType: Replisteel
+    count: 1

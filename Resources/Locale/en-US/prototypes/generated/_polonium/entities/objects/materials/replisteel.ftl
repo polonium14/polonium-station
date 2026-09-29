@@ -1,0 +1,9 @@
+ent-SheetReplisteel = replisteel
+    .suffix = Full
+    .desc = Steel reworked by nanites. The plates never stop crawling.
+ent-SheetReplisteel10 = { ent-SheetReplisteel }
+    .suffix = 10
+    .desc = { ent-SheetReplisteel.desc }
+ent-SheetReplisteel1 = { ent-SheetReplisteel }
+    .suffix = Single
+    .desc = { ent-SheetReplisteel.desc }

@@ -86,3 +86,35 @@
         Slash: -1
         Piercing: -1
   - type: AntiRottingContainer
+  # POLONIUM
+  - type: ReplicatorHive
+    rebuilds:
+    - tier: 1
+      name: replicator-rebuild-tier1
+      icon: { sprite: _Impstation/Mobs/Replicator/replicator.rsi, state: icon }
+    - tier: 2
+      cost: 400
+      minNestLevel: 2
+      name: replicator-rebuild-tier2
+      icon: /Textures/_Impstation/Interface/Actions/replicator_level2.png
+    - tier: 3
+      cost: 800
+      minNestLevel: 3
+      name: replicator-rebuild-tier3
+      icon: /Textures/_Impstation/Interface/Actions/replicator_level3.png
+  - type: MaterialStorage
+    materialWhiteList:
+    - Replisteel
+    canEjectStoredMaterials: false
+    ignoreColor: true
+  - type: Lathe
+    staticPacks:
+    - ReplicatorNest
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+    requiresComplex: false
+    requireActiveHand: false
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface

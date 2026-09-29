@@ -30,3 +30,9 @@
 
 - type: Tag
   id: SpellbookLowpop # Store blacklist: spellbook_catalog.yml
+
+- type: Tag
+  id: ReplicatorStructure
+
+- type: Tag
+  id: Replisteel

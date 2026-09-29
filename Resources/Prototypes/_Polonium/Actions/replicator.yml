@@ -1,0 +1,98 @@
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorConvert
+  name: Convert
+  description: Nanites take over the wall or the floor you point at. Walls cost a pinch of replisteel, floors are free.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0.5
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: convert
+      map: ["enum.ActionVisuals.Icon"]
+  - type: TargetAction
+    range: 2
+    checkCanAccess: false
+    repeat: true
+  - type: WorldTargetAction
+    event: !type:ReplicatorConvertActionEvent
+      wall: WallReplicator
+      reinforcedWall: WallReplicatorReinforced
+      tile: FloorReplicator
+      wallCost: 5
+      effect: EffectReplicatorConvert
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorBuildWall
+  name: Build wall
+  description: Raise a replicator wall on a free tile. Costs half a sheet of replisteel.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 1
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: build_wall
+      map: ["enum.ActionVisuals.Icon"]
+  - type: TargetAction
+    range: 2
+    checkCanAccess: false
+    repeat: true
+  - type: WorldTargetAction
+    event: !type:ReplicatorBuildActionEvent
+      prototype: WallReplicator
+      cost: 50
+      delay: 3
+      effect: EffectReplicatorBuild
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorBuildFabricator
+  name: Build fabricator
+  description: Build a fabricator that assembles new replicator shells. Costs four sheets of replisteel.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 2
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: build_fabricator
+      map: ["enum.ActionVisuals.Icon"]
+  - type: TargetAction
+    range: 2
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:ReplicatorBuildActionEvent
+      prototype: ReplicatorFabricator
+      cost: 400
+      delay: 12
+      effect: EffectReplicatorBuild
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorHolowall
+  name: Project holowall
+  description: Weave a holowall that keeps the air in but lets everyone through. It fades after three minutes. Costs a pinch of replisteel.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0.5
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: holowall
+      map: ["enum.ActionVisuals.Icon"]
+  - type: TargetAction
+    range: 3
+    checkCanAccess: false
+    repeat: true
+  - type: WorldTargetAction
+    event: !type:ReplicatorBuildActionEvent
+      prototype: ReplicatorHolowall
+      cost: 5
+      solid: false

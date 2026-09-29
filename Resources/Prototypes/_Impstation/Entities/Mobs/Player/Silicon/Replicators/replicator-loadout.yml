@@ -17,16 +17,14 @@
   - type: Gun
     soundGunshot: /Audio/_Impstation/Weapons/Guns/Gunshots/stunprojector.ogg
     soundEmpty: null
-  - type: UseDelayOnShoot
-  - type: UseDelay
-    delay: 3
+    fireRate: 2 # POLONIUM
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 3
+    rechargeCooldown: 2 # POLONIUM
     rechargeSound: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
   - type: BasicEntityAmmoProvider
-    proto: BulletDisabler
-    capacity: 1
-    count: 1
+    proto: BulletReplicatorDisabler # POLONIUM
+    capacity: 3 # POLONIUM
+    count: 3 # POLONIUM
   - type: Unremoveable
 
 - type: startingGear
@@ -61,10 +59,9 @@
     animation: WeaponArcSlash
     damage:
       types:
-        Blunt: 25
-        Structural: 30
+        Structural: 30 # POLONIUM: no Blunt
   - type: StaminaDamageOnHit
-    damage: 5
+    damage: 15 # POLONIUM
   - type: Unremoveable
   - type: Prying
     pryPowered: true
