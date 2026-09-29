@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: robinthegirlthing
-  changes:
-  - message: The basic operative bundle now contains an esword, instead of a viper
-      magazine and agent ID card.
-    type: Tweak
-  id: 9535
-  time: '2026-02-18T21:10:25.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42930
 - author: Samuka
   changes:
   - message: Added more xenoborg names!
@@ -4206,3 +4198,26 @@
   id: 10031
   time: '2026-09-28T19:18:58.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1076
+- author: Nikita
+  changes:
+  - message: "Dodano Czarodzieja lowpop, kt\xF3ry pojawia si\u0119 przy 10-20 graczach.\
+      \ Ma mniejsz\u0105 ksi\u0119g\u0119 zakl\u0119\u0107 (bez Kary boskiej, Postaci\
+      \ pr\u0119ta, Talii Tarota, Zamiany umys\u0142\xF3w, Przywo\u0142ania Broni\
+      \ i Przywo\u0142ania Magii)."
+    type: Add
+  - message: "Czarodziej lowpop dostaje 5 losowych cel\xF3w z du\u017Cej puli: ofiary,\
+      \ skarby i chowa\u0144ce, magiczne widowiska oraz fina\u0142 zmiany."
+    type: Add
+  - message: "Zwyk\u0142y Czarodziej pojawia si\u0119 od 21 graczy."
+    type: Tweak
+  - message: "Zakl\u0119cia czarodzieja zosta\u0142y przet\u0142umaczone na polski."
+    type: Tweak
+  - message: "Deszcz meteor\xF3w w scenariuszu ewakuacji z katastrof\u0105 planetarn\u0105\
+      \ jest g\u0119stszy w p\xF3\u017Aniejszych fazach."
+    type: Tweak
+  - message: "Poprawiono b\u0142\u0119dne t\u0142umaczenia r\xF3\u017Cd\u017Cki szafki,\
+      \ talii stra\u017Cnika i ksi\u0105g zakl\u0119\u0107."
+    type: Fix
+  id: 10032
+  time: '2026-09-29T09:18:00.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1078
