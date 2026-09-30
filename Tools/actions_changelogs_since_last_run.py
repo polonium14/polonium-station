@@ -98,7 +98,6 @@ def get_past_runs(sess: requests.Session, current_run: Any) -> Iterable[Any]:
     Recent successful runs of this workflow, excluding the current run.
     """
     params = {
-        "status": "success",
         "per_page": 100,
     }
     url = f"{current_run['workflow_url']}/runs"
