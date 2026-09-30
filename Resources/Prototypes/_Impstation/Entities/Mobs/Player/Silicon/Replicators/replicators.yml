@@ -144,6 +144,7 @@
     needsHands: false
   - type: Hands
     showInHands: false
+    activeHandId: stun_ray # POLONIUM
     hands:
       stun_ray:
         location: Left
@@ -155,8 +156,8 @@
           tags:
           - Replisteel
     sortedHands:
-    - stun_ray
     - replisteel # POLONIUM
+    - stun_ray
   - type: ReplicatorSheetHand # POLONIUM
   - type: Prying
     pryPowered: true

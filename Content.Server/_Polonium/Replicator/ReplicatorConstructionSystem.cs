@@ -25,7 +25,7 @@ public sealed partial class ReplicatorConstructionSystem : EntitySystem
 
     private const float MobSearchHalfSize = 0.45f;
 
-    private static readonly SoundSpecifier ConvertSound = new SoundPathSpecifier("/Audio/Items/deconstruct.ogg");
+    private static readonly SoundSpecifier ConvertSound = new SoundPathSpecifier("/Audio/_Polonium/Effects/Replicators/convert.ogg");
 
     [Dependency] private ITileDefinitionManager _tileDefinitions = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
@@ -162,7 +162,7 @@ public sealed partial class ReplicatorConstructionSystem : EntitySystem
         if (args.Effect is { } effect)
             Spawn(effect, location);
 
-        _audio.PlayPvs(ConvertSound, location, AudioParams.Default.WithVolume(-6f).WithVariation(0.15f));
+        _audio.PlayPvs(ConvertSound, location, AudioParams.Default.WithVolume(-4f).WithVariation(0.1f));
     }
 
     private EntityUid? FindWall(Entity<MapGridComponent> grid, Vector2i indices)
