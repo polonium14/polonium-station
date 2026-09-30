@@ -43,6 +43,13 @@
   - type: Appearance
   - type: ReplacementAccent
     accent: silicon
+  - type: Speech # POLONIUM
+    speechVerb: Robotic
+    speechSounds: Xenoborg
+  - type: Vocal # POLONIUM
+    emoteSounds: UnisexSiliconXenoborg
+    wilhelmProbability: 0
+  - type: Emoting # POLONIUM
   - type: ActionGrant
     actions:
     - ActionViewLaws
@@ -67,6 +74,7 @@
       - DoorBumpOpener
       - CanPilot
       - VimPilot
+      - SiliconEmotes # POLONIUM
   - type: MobState
     allowedStates:
       - Alive
