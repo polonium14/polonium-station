@@ -60,6 +60,8 @@
     - ActionReplicatorHolowall # POLONIUM
   - type: ReplicatorBuilder # POLONIUM
   - type: ReplicatorTow # POLONIUM
+  - type: NameIdentifier # POLONIUM
+    group: Replicator
   - type: CombatMode
   - type: Actions
   - type: ProtectedFromStepTriggers

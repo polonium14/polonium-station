@@ -4,7 +4,7 @@ replicator-hand-replisteel-empty = Replisteel
 tiles-replicator-floor = replicator floor
 
 alerts-replicator-recall-immune-name = Nanite trace
-alerts-replicator-recall-immune-desc = Nanites still cling to you after a Hive Recall. Replicators can't recall you again until the trace fades.
+alerts-replicator-recall-immune-desc = Nanites still cling to you after a Hive Recall. Replicators can't teleport you away again until the trace fades.
 
 replicator-construction-fail-no-floor = There is no floor to work on here.
 replicator-construction-fail-already-ours = This already belongs to the hive.
@@ -50,3 +50,5 @@ replicator-hive-examine = The hive holds [color=violet]{ $budget } { $budget ->
 
 replicator-teleport-prey-fail-immune = Nanites still cling to that target, it can't be recalled yet.
 replicator-on-structure-attack-fail = You cannot harm what the hive has built.
+
+name-identifier-format-replicator = RL-{ $number }

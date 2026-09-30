@@ -18,6 +18,8 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
+using Content.Shared.NameIdentifier; // Polonium
+using Content.Shared.NameModifier.EntitySystems; // Polonium
 using Content.Shared.Popups;
 using Content.Shared.StepTrigger.Components;
 using Content.Shared.StepTrigger.Systems;
@@ -47,6 +49,7 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private ReplicatorHiveSystem _hive = default!; // POLONIUM
     [Dependency] private ReplicatorSheetHandSystem _sheetHand = default!; // POLONIUM
+    [Dependency] private NameModifierSystem _nameModifier = default!; // PPolonium
 
     public override void Initialize()
     {
@@ -319,11 +322,27 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
         }
 
         _sheetHand.TransferSheets(oldUid, upgraded); // POLONIUM
+        TransferIdentifier(oldUid, upgraded); // Polonium
 
         if (_mind.TryGetMind(oldUid, out var mind, out _))
             _mind.TransferTo(mind, upgraded);
 
         return upgraded;
+    }
+
+    // POLONIUM
+    private void TransferIdentifier(EntityUid from, EntityUid to)
+    {
+        if (!TryComp<NameIdentifierComponent>(from, out var fromId) || !TryComp<NameIdentifierComponent>(to, out var toId))
+            return;
+
+        // Swapped rather than copied, so the deleted replicator returns the spare identifier to the pool.
+        (fromId.Identifier, toId.Identifier) = (toId.Identifier, fromId.Identifier);
+        (fromId.FullIdentifier, toId.FullIdentifier) = (toId.FullIdentifier, fromId.FullIdentifier);
+        Dirty(from, fromId);
+        Dirty(to, toId);
+        _nameModifier.RefreshNameModifiers(from);
+        _nameModifier.RefreshNameModifiers(to);
     }
 
     protected void Embiggen(Entity<ReplicatorNestComponent> ent)

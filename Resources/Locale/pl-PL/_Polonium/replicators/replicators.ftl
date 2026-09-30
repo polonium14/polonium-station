@@ -4,7 +4,7 @@ replicator-hand-replisteel-empty = Replistal
 tiles-replicator-floor = podłoga replikatorów
 
 alerts-replicator-recall-immune-name = Ślad nanitów
-alerts-replicator-recall-immune-desc = Po Przywołaniu Roju wciąż oblepiają cię nanity. Replikatory nie mogą cię ponownie przywołać, dopóki ślad nie zniknie.
+alerts-replicator-recall-immune-desc = Po Przywołaniu Roju wciąż oblepiają cię nanity. Replikatory nie mogą cię ponownie teleportować, dopóki ślad nie zniknie.
 
 replicator-construction-fail-no-floor = Nie ma tu podłogi, na której dałoby się pracować.
 replicator-construction-fail-already-ours = To już należy do roju.
@@ -60,3 +60,5 @@ replicator-hive-examine = Rój ma [color=violet]{ $budget } { $budget ->
 
 replicator-teleport-prey-fail-immune = Ten cel wciąż oblepiają nanity, nie da się go jeszcze przywołać.
 replicator-on-structure-attack-fail = Nie możesz niszczyć tego, co zbudował rój.
+
+name-identifier-format-replicator = RL-{ $number }
