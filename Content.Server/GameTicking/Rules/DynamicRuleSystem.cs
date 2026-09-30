@@ -22,7 +22,9 @@ public sealed partial class DynamicRuleSystem : GameRuleSystem<DynamicRuleCompon
     {
         base.Added(uid, component, gameRule, args);
 
-        component.Budget = _random.Next(component.StartingBudgetMin, component.StartingBudgetMax);;
+        var blend = _random.NextFloat(0, 1);
+        component.Budget = MathHelper.Lerp(component.StartingBudgetMin, component.StartingBudgetMax, blend);
+        component.BudgetPerSecond = MathHelper.Lerp(component.MinBudgetPerSecond, component.MaxBudgetPerSecond, blend);
         component.NextRuleTime = Timing.CurTime + _random.Next(component.MinRuleInterval, component.MaxRuleInterval);
     }
 
