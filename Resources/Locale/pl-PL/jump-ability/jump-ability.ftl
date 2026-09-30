@@ -1,1 +1,1 @@
-jump-ability-failure = You cannot jump right now.
+jump-ability-failure = Nie możesz teraz skoczyć.

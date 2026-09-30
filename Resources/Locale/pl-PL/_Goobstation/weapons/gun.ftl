@@ -1,5 +1,5 @@
 # EnergyGunComponent
-energygun-examine-fire-mode = Set to { $mode } bolt.
+energygun-examine-fire-mode = Ustawiono tryb: { $mode }
 # Hardlight Bow
-ammo-selector-examine-mode = Current mode: { $mode }
-mode-select-verb-text = Select firing mode
+ammo-selector-examine-mode = Aktualny tryb: { $mode }
+mode-select-verb-text = Wybierz tryb strzelania

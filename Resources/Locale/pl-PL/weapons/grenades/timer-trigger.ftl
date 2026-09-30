@@ -12,13 +12,13 @@ verb-trigger-timer-set-current =
     } (obecnie)
 verb-trigger-timer-cycle = Przełącz czas odliczania
 examine-trigger-timer =
-    Zegar ustawiony na { $time } { $time ->
+    Zapalnik ustawiony na { $time } { $time ->
         [one] sekundę
         [few] sekundy
        *[many] sekund
     }.
 popup-trigger-timer-set =
-    Zegar ustawiony na { $time } { $time ->
+    Zapalnik ustawiony na { $time } { $time ->
         [one] sekundę
         [few] sekundy
        *[many] sekund

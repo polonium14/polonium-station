@@ -1,5 +1,3 @@
-## Entity
-
 seed-component-description = Wygląda na to, że możesz wyhodować [color=yellow]{ $seedName }[/color] z tych nasion.
 seed-component-has-variety-tag = Oznaczone jako odmiana [color=lightgray]nr { $seedUid }[/color].
 seed-component-plant-yield-text = Plon rośliny:    [color=lightblue]{ $seedYield }[/color]

@@ -19,9 +19,9 @@ entity-heater-switched-setting = Switched to { -entity-heater-setting-name(setti
 
 -entity-heater-setting-color =
     { $setting ->
-        [off] gray
-        [low] yellow
-        [medium] orange
-        [high] red
-       *[other] purple
+        [off] szary
+        [low] żółty
+        [medium] pomarańczowy
+        [high] czerwony
+       *[other] fioletowy
     }

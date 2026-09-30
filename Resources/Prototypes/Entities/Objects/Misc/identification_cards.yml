@@ -73,7 +73,7 @@
     stealGroup: CaptainIDCard
 
 - type: entity
-  parent: IDCardStandard
+  parent: [IDCardStandard, BaseGrandTheftContraband]
   id: HoPIDCard
   name: head of personnel ID card
   components:
@@ -91,6 +91,12 @@
     heldPrefix: silver
   - type: PresetIdCard
     job: HeadOfPersonnel
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+    - WhitelistChameleonIdCard
+    - HighRiskItem
 
 - type: entity
   parent: IDCardStandard

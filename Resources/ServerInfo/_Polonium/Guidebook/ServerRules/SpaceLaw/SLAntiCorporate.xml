@@ -1,0 +1,33 @@
+<Document>
+  # Rejestr wyposażenia antykorporacyjnego
+  Wykaz sprzętu, którego posiadanie albo obrót kwalifikuje się jako [textlink="§503" link="SpaceLawCrimeList"].
+
+  Do rejestru wchodzi sprzęt Syndykatu, sprzęt wysoce nielegalny, sprzęt magiczny oraz artefakty kultu krwi — z wyjątkami o charakterze cywilnym, kosmetycznym albo o niskim stopniu zagrożenia. Te wyjątki zachowują dotychczasową kwalifikację ([textlink="§203" link="SpaceLawCrimeList"] albo [textlink="§303" link="SpaceLawCrimeList"]).
+
+  ## Przykłady
+  <Box>
+    <GuideEntityEmbed Entity="Emag" Caption="EMAG"/>
+    <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Uplink"/>
+    <GuideEntityEmbed Entity="WeaponSubMachineGunC20r" Caption="C-20r"/>
+    <GuideEntityEmbed Entity="SyndicateBomb" Caption="Bomba Syndykatu"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndie" Caption="Hardsuit Syndykatu"/>
+    <GuideEntityEmbed Entity="WeaponWandFireball" Caption="Różdżka"/>
+    <GuideEntityEmbed Entity="CultDaggerStraight" Caption="Sztylet kultu"/>
+    <GuideEntityEmbed Entity="CloakingDevice" Caption="Maskowanie"/>
+  </Box>
+
+  ## Wyjątki (dotychczasowa kwalifikacja)
+  Nie wchodzą do rejestru, między innymi:
+  - odzież cywilna i mundurowa Syndykatu (kombinezony, spódnice, piżamy, szaliki, płaszcze, ręczniki, pościel, kapelusze, garnitur, mundur operacyjny);
+  - PDA Syndykatu i analogiczne oraz PDA ninja;
+  - zapalniczki, zapałki, długopis Cybersun, wizytówka, flaga, mydło, necronomicon, posiłek Robust Nukie;
+  - puste torby i dżetpak, skrzynka narzędziowa, kabura, puste skrzynie na broń, PAI, zestawy medyczne / przynęt / EVA / piżamowy;
+  - żmija, kobra, haszpap, sztylet energetyczny, mini kusza, laska z ostrzem, noże do rzucania;
+  - maska przeciwgazowa, kocie uszy, croissant, combat medipen, mikrofala Donk Co.;
+  - szaty i kapelusze czarodziejów oraz pasy;
+  - gaśnica samodoładowująca oraz spawarka z podajnikiem.
+
+  Kapłan oraz inny personel w zakresie obowiązków wynikających z SPO nie podlega §503 z tytułu wyposażenia dozwolonego na stanowisku.
+</Document>

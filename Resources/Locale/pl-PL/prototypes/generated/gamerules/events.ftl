@@ -76,5 +76,5 @@ ent-DerelictMiningCyborgSpawn = { ent-BaseDerelictCyborgSpawn }
     .desc = { ent-BaseDerelictCyborgSpawn.desc }
 ent-DerelictSyndicateAssaultCyborgSpawn = { ent-BaseDerelictCyborgSpawn }
     .desc = { ent-BaseDerelictCyborgSpawn.desc }
-ent-UtilityLineRupture = Utility Line Rupture
+ent-UtilityLineRupture = Rozerwanie Linii Przesyłowej
     .desc = { ent-BaseStationEvent.desc }

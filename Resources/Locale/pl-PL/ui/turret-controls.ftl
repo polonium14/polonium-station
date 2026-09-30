@@ -20,7 +20,7 @@ turret-controls-window-stun = Ogłuszanie
 turret-controls-window-lethal = Śmiertelne
 turret-controls-window-ignore = Ignoruj
 turret-controls-window-target = Cel
-turret-controls-window-access-group-label = { $prefix } { $label }
+turret-controls-window-access-group-label = { $prefix } ({ $label })
 turret-controls-window-all-checkbox = Wszystkie
 # Flavor
 turret-controls-window-footer = Nieautoryzowany personel powinien upewnić się, że zabezpieczenia są nieaktywne przed przystąpieniem do działania

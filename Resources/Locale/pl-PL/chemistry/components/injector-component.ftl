@@ -1,58 +1,58 @@
 ## UI
 
 injector-volume-transfer-label =
-    Volume: [color=white]{ $currentVolume }/{ $totalVolume }u[/color]
-    Mode: [color=white]{ $modeString }[/color] ([color=white]{ $transferVolume }u[/color])
+    Objętość: [color=white]{ $currentVolume }/{ $totalVolume }u[/color]
+    Tryb: [color=white]{ $modeString }[/color] ([color=white]{ $transferVolume }u[/color])
 injector-volume-label =
     Objętość: [color=white]{ $currentVolume }/{ $totalVolume }[/color]
     Tryb: [color=white]{ $modeString }[/color]
-injector-toggle-verb-text = Toggle Injector Mode
+injector-toggle-verb-text = Przełącz tryb wtrysku
 
 ## Entity
 
-injector-component-inject-mode-name = inject
-injector-component-draw-mode-name = draw
-injector-component-dynamic-mode-name = dynamic
-injector-component-mode-changed-text = Now { $mode }
+injector-component-inject-mode-name = wstrzyknij
+injector-component-draw-mode-name = pobierz
+injector-component-dynamic-mode-name = dynamiczny
+injector-component-mode-changed-text = Obecnie { $mode}
 injector-component-transfer-success-message = Przenosisz { $amount }u do { $target }.
-injector-component-transfer-success-message-self = You transfer { $amount }u into yourself.
+injector-component-transfer-success-message-self = Przenosisz { $amount }u do siebie.
 injector-component-inject-success-message = Wstrzykujesz { $amount }u do { $target }!
-injector-component-inject-success-message-self = You inject { $amount }u into yourself!
+injector-component-inject-success-message-self = Wstrzykujesz { $amount }u w siebie!
 injector-component-draw-success-message = Pobierasz { $amount }u z { $target }.
-injector-component-draw-success-message-self = You draw { $amount }u from yourself.
+injector-component-draw-success-message-self = Pobierasz { $amount }u z siebie.
 
 ## Fail Messages
 
 injector-component-target-already-full-message = { CAPITALIZE($target) } jest już pełny!
-injector-component-target-already-full-message-self = You are already full!
+injector-component-target-already-full-message-self = Jesteś już pełny!
 injector-component-target-is-empty-message = { CAPITALIZE($target) } jest pusty!
-injector-component-target-is-empty-message-self = You are empty!
+injector-component-target-is-empty-message-self = Jesteś pusty!
 injector-component-cannot-toggle-draw-message = Za pełno, by pobierać!
 injector-component-cannot-toggle-inject-message = Nic do wstrzyknięcia!
-injector-component-cannot-toggle-dynamic-message = Can't toggle dynamic!
-injector-component-empty-message = { CAPITALIZE(THE($injector)) } is empty!
-injector-component-blocked-user = Protective gear blocked your injection!
-injector-component-blocked-other = { CAPITALIZE(THE(POSS-ADJ($target))) } armor blocked { THE($user) }'s injection!
+injector-component-cannot-toggle-dynamic-message = Nie można przełączyć na tryb dynamiczny!
+injector-component-empty-message = { CAPITALIZE(THE($injector)) } jest pusty!
+injector-component-blocked-user = Ekwipunek ochronny zablokował twoje wstrzyknięcie!
+injector-component-blocked-other = Zbroja { CAPITALIZE(THE(POSS-ADJ($target))) } zablokowała wstrzyknięcie od { THE($user) }!
 injector-component-cannot-transfer-message = Nie możesz przenieść do { $target }!
-injector-component-cannot-transfer-message-self = You aren't able to transfer into yourself!
+injector-component-cannot-transfer-message-self = Nie możesz przenieść do siebie!
 injector-component-cannot-inject-message = Nie możesz wstrzyknąć do { $target }!
-injector-component-cannot-inject-message-self = You aren't able to inject into yourself!
+injector-component-cannot-inject-message-self = Nie możesz wstrzyknąć w siebie!
 injector-component-cannot-draw-message = Nie możesz pobrać z { $target }!
-injector-component-cannot-draw-message-self = You aren't able to draw from yourself!
-injector-component-ignore-mobs = This injector can only interact with containers!
+injector-component-cannot-draw-message-self = Nie możesz pobrać z siebie!
+injector-component-ignore-mobs = Ten wstrzykiwacz może wchodzić w interakcje tylko z pojemnikami!
 
 ## mob-inject doafter messages
 
-injector-component-needle-injecting-user = You start injecting the needle.
-injector-component-needle-injecting-target = { CAPITALIZE(THE($user)) } is trying to inject a needle into you!
-injector-component-needle-drawing-user = You start drawing the needle.
-injector-component-needle-drawing-target = { CAPITALIZE(THE($user)) } is trying to use a needle to draw from you!
-injector-component-spray-injecting-user = You start preparing the spray nozzle.
-injector-component-spray-injecting-target = { CAPITALIZE(THE($user)) } is trying to place a spray nozzle onto you!
+injector-component-needle-injecting-user = Zaczynasz wykonywać zastrzyk.
+injector-component-needle-injecting-target = { CAPITALIZE(THE($user)) } próbuje wykonać na tobie zastrzyk!
+injector-component-needle-drawing-user = Zaczynasz wykonywać pobranie.
+injector-component-needle-drawing-target = { CAPITALIZE(THE($user)) } próbuje pobrać z ciebie!
+injector-component-spray-injecting-user = Zaczynasz przygotowywać dyszę aerozolową.
+injector-component-spray-injecting-target = { CAPITALIZE(THE($user)) } próbuje umieścić dyszę aerozolową na tobie!
 
 ## Target Popup Success messages
 
-injector-component-feel-prick-message = You feel a tiny prick!
+injector-component-feel-prick-message = Czujesz drobne ukłucie!
 injector-draw-text = Pobierz
 injector-inject-text = Wstrzyknij
 injector-invalid-injector-toggle-mode = Nieprawidłowy

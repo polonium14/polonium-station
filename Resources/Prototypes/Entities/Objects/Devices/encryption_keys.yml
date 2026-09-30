@@ -83,6 +83,9 @@
     layers:
     - state: crypt_gold
     - state: cap_label
+  - type: Contraband
+    severity: GrandTheft
+    allowedDepartments: [ CentralCommand, Command ]
 
 - type: entity
   parent: [ EncryptionKey, BaseCommandContraband ]

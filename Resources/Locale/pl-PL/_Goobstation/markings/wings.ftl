@@ -1,2 +1,2 @@
-markings-category-Wings = Wings
-marking-WingsRobotic = Robotic Wings
+markings-category-Wings = Skrzydła
+marking-WingsRobotic = Robotyczne Skrzydła

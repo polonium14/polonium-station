@@ -56,6 +56,14 @@ entity-effect-guidebook-smoke-area =
         [1] Creates
        *[other] create
     } large quantities of smoke
+entity-effect-guidebook-satiate =
+    { $chance ->
+        [1] Satiates
+       *[other] satiate
+    } { $relative ->
+        [1] { $type } averagely
+       *[other] { $type } at { NATURALFIXED($relative, 3) }x the average rate
+    }
 entity-effect-guidebook-health-change =
     { $chance ->
         [1]
@@ -477,6 +485,16 @@ entity-effect-guidebook-plant-seeds-remove =
         [1] Removes the
        *[other] remove the
     } seeds of the plant
+entity-effect-guidebook-plant-mutate-exude-gasses =
+    { $chance ->
+        [1] Mutates
+       *[other] mutate
+    } the plant to exude gases between { $minValue } and { $maxValue } moles
+entity-effect-guidebook-plant-mutate-consume-gasses =
+    { $chance ->
+        [1] Mutates
+       *[other] mutate
+    } the plant to consume gases between { $minValue } and { $maxValue } moles
 entity-effect-guidebook-plant-mutate-chemicals =
     { $chance ->
         [1] Mutates
@@ -492,24 +510,3 @@ entity-effect-disarm =
         [1] Disarms
        *[other] disarms
     } the entity
-
-entity-effect-guidebook-satiate =
-    { $chance ->
-        [1] Satiates
-        *[other] satiate
-    } { $relative ->
-        [1] {$type} averagely
-        *[other] {$type} at {NATURALFIXED($relative, 3)}x the average rate
-    }
-
-entity-effect-guidebook-plant-mutate-exude-gasses =
-    { $chance ->
-        [1] Mutates
-        *[other] mutate
-    } the plant to exude gases between {$minValue} and {$maxValue} moles
-
-entity-effect-guidebook-plant-mutate-consume-gasses =
-    { $chance ->
-        [1] Mutates
-        *[other] mutate
-    } the plant to consume gases between {$minValue} and {$maxValue} moles

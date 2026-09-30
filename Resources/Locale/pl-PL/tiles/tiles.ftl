@@ -98,6 +98,9 @@ tiles-gold-tile = złota płytka
 tiles-silver-tile = srebrna płytka
 tiles-glass-floor = szklana podłoga
 tiles-reinforced-glass-floor = wzmocniona szklana podłoga
+tiles-uranium-glass-floor = uranium glass floor
+tiles-plasma-glass-floor = plasma glass floor
+tiles-plastitanium-glass-floor = plastitanium glass floor
 tiles-metal-foam = podłoga z metalowej pianki
 tiles-green-circuit-floor = zielona podłoga obwodowa
 tiles-blue-circuit-floor = niebieska podłoga obwodowa
@@ -151,7 +154,9 @@ tiles-astro-ironsand-borderless = borderless astro-ironsand
 tiles-desert-astro-sand = desert astro-sand
 tiles-wood-large = duże drewno
 tiles-white-marble = white marble tile
+tiles-white-marble-mono = white marble mono tile
 tiles-dark-marble = dark marble tile
+tiles-dark-marble-mono = dark marble mono tile
 tiles-plasma-marble = plasmarble tile
 tiles-uranium-marble = uranium marble tile
 tiles-ironsand-plating = ironsand plating
@@ -163,33 +168,13 @@ tiles-ironsand-packed = packed ironsand
 tiles-ironsand-paved = paved ironsand
 tiles-hull-invisible = niewidzialna płyta kadłuba
 tiles-invisible-floor = niewidzialna płyta podłogowa
-
-tiles-uranium-glass-floor = uranium glass floor
-
-tiles-plasma-glass-floor = plasma glass floor
-
-tiles-plastitanium-glass-floor = plastitanium glass floor
-
-tiles-white-marble-mono = white marble mono tile
-
-tiles-dark-marble-mono = dark marble mono tile
-
 tiles-exo-viscera = exodermis viscera floor
-
 tiles-exo-hull = exodermis hull floor
-
 tiles-exo-techmaint = exodermis techmaint floor
-
 tiles-exo-horizontal = exodermis horizontal floor
-
 tiles-exo-vertical = exodermis vertical floor
-
 tiles-exo-corner-ne = exodermis NE corner floor
-
 tiles-exo-corner-nw = exodermis NW corner floor
-
 tiles-exo-corner-se = exodermis SE corner floor
-
 tiles-exo-corner-sw = exodermis SW corner floor
-
 tiles-exo-borg = mechadermis floor

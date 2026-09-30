@@ -9,7 +9,7 @@ deployable-turret-component-is-broken = Wieżyczka jest mocno uszkodzona i potrz
 deployable-turret-component-cannot-access-wires = Nie dosięgasz panelu konserwacyjnego gdy wieżyczka jest aktywna
 # Turret notification for station AI
 station-ai-turret-component-name = { $name } ({ $address })
-station-ai-turret-component-is-attacking-warning = { CAPITALIZE($source) } has engaged a hostile target.
+station-ai-turret-component-is-attacking-warning = { CAPITALIZE($source) } nawiązał kontakt z wrogim celem.
 # Turret notification for station AI
 station-ai-turret-is-attacking-warning =
     { CAPITALIZE($source) } { GENDER($source) ->

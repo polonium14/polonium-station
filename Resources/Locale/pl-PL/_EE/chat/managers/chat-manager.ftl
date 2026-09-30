@@ -1,2 +1,2 @@
-chat-speech-verb-name-supermatter = Supermatter
-chat-speech-verb-supermatter = states
+chat-speech-verb-name-supermatter = Supermateria
+chat-speech-verb-supermatter = stany

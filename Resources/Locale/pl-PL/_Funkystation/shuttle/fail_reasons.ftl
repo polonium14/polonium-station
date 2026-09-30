@@ -1,1 +1,1 @@
-shuttle-dock-fail-revs = Central Command has received reports of unusual activity on the station. The shuttle has been returned to base as a precaution, and will not be usable until the situation has been resolved.
+shuttle-dock-fail-revs = Centralne Dowództwo otrzymało raporty o niecodziennej aktywności na stacji. Wahadłowiec został cofnięty do bazy jako środek ostrożności i nie będzie dostępny, dopóki sytuacja nie zostanie rozwiązana.

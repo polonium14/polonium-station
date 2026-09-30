@@ -1,5 +1,5 @@
-lathe-menu-connected-to-silo-message = Connected to silo.
-signal-port-name-material-silo = Material silo
-signal-port-description-material-silo = Bluespace storage for station materials
-signal-port-name-material-silo-utilizer = Silo utilizer
-signal-port-description-material-silo-utilizer = Utilizer for station material silo
+lathe-menu-connected-to-silo-message = Połączono z silosem.
+signal-port-name-material-silo = Silos materiałów
+signal-port-description-material-silo = Magazyn bluespace do zasobów stacji
+signal-port-name-material-silo-utilizer = Odbiornik silosa
+signal-port-description-material-silo-utilizer = Urządzenie korzystające z silosa materiałów stacji

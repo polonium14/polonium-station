@@ -1,6 +1,6 @@
-afk-system-afk-warning = You have been marked AFK. Confirm you are still there within { $seconds } seconds or you will be disconnected.
-afk-system-kick-reason = Disconnected for being AFK.
-afk-confirm-window-title = AFK Check
-afk-confirm-window-prompt = You have been marked AFK.
-afk-confirm-window-seconds = Time remaining: { $seconds }s
-afk-confirm-window-confirm = I'm here
+afk-system-afk-warning = Zostałeś oznaczony jako AFK. Potwierdź, że nadal tam jesteś w ciągu { $seconds } sekund. W innym przypadku zostaniesz rozłączony.
+afk-system-kick-reason = Rozłączono za bycie AFK.
+afk-confirm-window-title = Kontrola AFK
+afk-confirm-window-prompt = Zostałeś oznaczony jako AFK.
+afk-confirm-window-seconds = Pozostały czas: { $seconds } sekund
+afk-confirm-window-confirm = Jestem tutaj

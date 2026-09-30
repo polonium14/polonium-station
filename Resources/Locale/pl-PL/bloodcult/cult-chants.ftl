@@ -16,5 +16,5 @@ cult-chant-11 = Thoth heqa
 cult-chant-12 = Bastet sekhem
 cult-chant-13 = Heru neb!
 cult-chant-14 = Ra hotep ankh
-cult-chant-15 = Draw blood for Nar'Sie!
+cult-chant-15 = Przelewaj krew dla Nar'Sie!
 cult-chant-16 = Sekhem ba ka

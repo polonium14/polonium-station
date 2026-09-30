@@ -31,6 +31,7 @@ materials-coal = węgiel
 materials-diamond = diament
 materials-gunpowder = proch strzelniczy
 materials-cotton = bawełna
+materials-xenoborg-crystal = xenoborg crystal
 # Ores
 materials-raw-iron = ruda żelaza
 materials-raw-quartz = ruda kwarcu
@@ -41,5 +42,3 @@ materials-raw-uranium = surowy uran
 materials-raw-bananium = surowy banan
 materials-raw-salt = surowa sól
 materials-raw-diamond = surowy diament
-
-materials-xenoborg-crystal = xenoborg crystal

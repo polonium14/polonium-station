@@ -1,5 +1,5 @@
-ui-options-particles-label = Particle Quality:
-ui-options-particles-off = Off
-ui-options-particles-low = Low
-ui-options-particles-medium = Medium
-ui-options-particles-high = High
+ui-options-particles-label = Jakość cząsteczek:
+ui-options-particles-off = Wyłączony
+ui-options-particles-low = Niska
+ui-options-particles-medium = Średnia
+ui-options-particles-high = Wysoka

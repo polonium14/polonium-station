@@ -1,5 +1,5 @@
 # Armor
-uplink-night-vision-name = Night vision goggles
-uplink-night-vision-desc = They allow you to see in the dark, all while looking like normal sunglasses!
-uplink-thermal-vision-name = Thermal vision goggles
-uplink-thermal-vision-desc = They allow you to see living creatures regardless of obstacles, all while looking like normal sunglasses!
+uplink-night-vision-name = Gogle noktowizyjne
+uplink-night-vision-desc = Pozwalają ci widzieć w ciemności, podczas gdy wyglądają jak normalne okulary przeciwsłoneczne!
+uplink-thermal-vision-name = Gogle widzenia termicznego
+uplink-thermal-vision-desc = Pozwalają ci widzieć żywe stworzenia, niezależnie od przeszkód, podczas gdy wyglądają jak normalne okulary przeciwsłoneczne!

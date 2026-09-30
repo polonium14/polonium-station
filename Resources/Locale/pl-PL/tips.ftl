@@ -175,5 +175,4 @@ tips-dataset-172 = Changelings potrafią podszywać się pod każdego członka z
 tips-dataset-173 = Jako Technik Atmosferyki, możesz użyć zamrażarek do schładzania tlenu lub azotu, aby przechować więcej moli gazu przy tym samym ciśnieniu. Pozwala to obniżyć ciśnienie wyjściowe z butli, dzięki czemu będziesz z niej oddychać dłużej.
 tips-dataset-174 = Możesz tworzyć prowizoryczny pancerz i broń z wyposażenia powszechnie znajdowanego w utrzymaniu. Choć są bardzo wolne i trudne w użyciu, zwykle lepsze niż nic.
 tips-dataset-175 = Długopis Cybersun i długopis Centralnego Dowództwa mogą pisać po dokumentach już podbitych lub podpisanych. Są też niezwykle skuteczne w walce.
-
 tips-dataset-176 = Lottery crates can very rarely contain The Throngler.

@@ -76,9 +76,7 @@ alerts-stealthy-name = Kieszonkowiec
 alerts-stealthy-desc = Czy aktualnie dokonujesz kieszonkowania. Kliknij, aby przełączyć.
 alerts-prying-name = Podważanie
 alerts-prying-desc = Masz wrodzoną możliwość podważania drzwi używając alternatywnej interakcji.
-alerts-cocooned-name = [color=yellow]Cocooned[/color]
-alerts-cocooned-desc = You're [color=yellow]wrapped in a cocoon[/color] and can't move or use your hands.
-
-alerts-changeling-chemicals-name = Chemicals
-
-alerts-changeling-chemicals-desc = The chemicals stored within our glands. We use them for many of our abilities to function. They regenerate over time.
+alerts-cocooned-name = [color=yellow]Zakokonowany[/color]
+alerts-cocooned-desc = Jesteś [color=yellow]owinięty w kokon[/color] i nie możesz poruszać się ani używać rąk.
+alerts-changeling-chemicals-name = Chemikalia
+alerts-changeling-chemicals-desc = Chemikalia przechowywane w naszych gruczołach. Są wymagane do funkcjonowania wielu naszych umiejętności. Regenerują się z upływem czasu.

@@ -37,6 +37,7 @@ alert-level-gamma-announcement =
     Wszyscy cywile powinni natychmiast udać się do najbliższego przełożonego w celu udania się do bezpiecznej lokalizacji.
 alert-level-gamma-instructions = Udaj się do najbliższego przełożonego w celu udania się do bezpiecznej lokalizacji.
 alert-level-delta = Delta
+alert-level-delta-nuke-announcement = Stacja jest obecnie zagrożona nieuchronnym zniszczeniem. Członkowie załogi powinni słuchać szefów personelu w celu uzyskania większej ilości informacji.
 alert-level-delta-instructions = Zaleca się słuchać poleceń dowództwa w celu uzyskania informacji.
 alert-level-epsilon = Epsilon
 alert-level-epsilon-announcement =
@@ -49,5 +50,3 @@ alert-level-cyan-announcement =
     Zaleca się zachowanie dystansu i unikanie wszelkiej interakcji.
     Wszelkie działania silikonów należy niezwłocznie zgłaszać personelu ochrony.
 alert-level-cyan-instructions = Unikaj kontaktu z cyborgami i zgłaszaj wszelkie podejrzane działania personelowi ochrony.
-
-alert-level-delta-nuke-announcement = The station is currently under threat of imminent destruction. Crewmembers are advised to listen to heads of staff for more information.

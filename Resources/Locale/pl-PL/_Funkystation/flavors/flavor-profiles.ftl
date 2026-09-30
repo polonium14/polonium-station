@@ -1,62 +1,62 @@
 ## Foodstuff
 
-flavor-complex-shrimp = like shrimp
-flavor-complex-barratry = like Barratry United
+flavor-complex-shrimp = jak krewetki
+flavor-complex-barratry = jak Arka Gdynia
 
 ## non-alcoholic drinks
 
-flavor-complex-eggnog = like egg and nog
-flavor-complex-peggnog = like nothing you've ever tasted before
+flavor-complex-eggnog = jak ajer i jak koniak
+flavor-complex-peggnog = jak coś, czego jeszcze nigdy nie spróbowałeś/aś
 
 ## alcohols
 
-flavor-complex-amaretto = like fruity and nutty sweetness
-flavor-complex-applejack = like an honest day's work at the orchard
-flavor-complex-bitters = like Spiced alcohol
-flavor-complex-creme-de-cacao = slick and aromatic with a hint of chocolate swirling in a bite of alcohol
-flavor-complex-creme-de-menthe = minty, cool, and invigorating, like a splash of cold streamwater
-flavor-complex-chutzpah = like you're falling far below rock bottom
-flavor-complex-fernet = like utter bitterness
-flavor-complex-margherita-drink = like you're sipping a pizza on a beach
-flavor-complex-spiked-eggnog = like alcoholic egg and alcoholic nog
-flavor-complex-pineapple-margherita = like pineapples on pizza
-flavor-complex-hakka-mate = like bubbly yerba mate
-flavor-complex-melon-soda = like fizzy melon
-flavor-complex-navy-rum = like a life on the waves
-flavor-complex-rice-beer = like mild carbonated malt
-flavor-complex-shochu = like stiff rice wine
-flavor-complex-triple-sec = warm and flowery with an orange taste which recalls the ocean air and summer wind of the caribbean
-flavor-complex-24-volt-energy = like sour pear-flavoured battery acid
-flavor-complex-voltaic-yellow-wine = like static, with a hint of sweetness
-flavor-complex-alexander = like bitter, creamy cacao
-flavor-complex-amaretto-alexander = like sweet, creamy cacao
-flavor-complex-amaretto-sour = like lemony, almond-flavoured foamy eggs
-flavor-complex-amaterasu = like godly sunlight
-flavor-complex-triple-citrus = like extreme sourness
-flavor-complex-banzai-ti = like an asian twist on a liquor cabinet
-flavor-complex-root-mint-brew = like a walk in a verdant, mystical forest
-flavor-complex-between-the-sheets = like a damn good nap
-flavor-complex-bitters-and-soda = like mild aromatics
-flavor-complex-blank-paper = like bubbling possibility
-flavor-complex-blue-blazer = like scorching hot sweet whiskey, with hints of fire
-flavor-complex-bosozoku = like going 100 kilometres down Japan National Route 4 on a modified motorcycle
-flavor-complex-branca-menta = like the most bitter mint you've ever tasted
-flavor-complex-bug-spray = like the pain of ten thousand slain mosquitos
-flavor-complex-crevice-spike = like a bitter MIND-SPIKE with a sour aftertaste
-flavor-complex-fringe-weaver = like ethylic alcohol with a hint of sugar
-flavor-complex-four-bit = like plugging into cyberspace
-flavor-complex-maui-sunrise = like a warm sunrise over the Pacific
-flavor-complex-quadruple-sec = like robusting those who might threaten the station, as well as clowns.
-flavor-complex-nekomimosa = like MELON
-flavor-complex-red-city-am = like breakfast in a glass
-flavor-complex-sentai-quencha = like ultimate space-ninja power
-flavor-complex-utility-pole = like a howling storm filling the air with electricity
-flavor-complex-wizz-fizz = like spectral blade, improved spectral blade, and a magic missile so devastating you'll regret ever crossing paths with this fizzy drink
-flavor-complex-admiralty = like haughty arrogance
-flavor-complex-long-john-silver = like piracy on the coast of the Bahamas
-flavor-complex-long-haul = like companionship
-flavor-complex-tropical-storm = like heavy rain and fierce winds crashing against a shoreline in the tropics
+flavor-complex-amaretto = jak owocowo orzechowa słodkość
+flavor-complex-applejack = jak dzień ciężkiej pracy w sadzie
+flavor-complex-bitters = jak doprawiony alkohol
+flavor-complex-creme-de-cacao = gładko i aromatycznie z nutą czekolady wkręconej w kęs z alkoholem
+flavor-complex-creme-de-menthe = miętowo, chłodno i ożywiająco, jak oblanie się chłodną wodą rzeczną
+flavor-complex-chutzpah = jak mniej niż zero
+flavor-complex-fernet = jak czysta goryczka
+flavor-complex-margherita-drink = jak popijanie pizzy na plaży
+flavor-complex-spiked-eggnog = jak alkoholiczny ajer i jak alkoholiczny koniak
+flavor-complex-pineapple-margherita = jak ananasy na pizzy
+flavor-complex-hakka-mate = jak gazowana yerba mate
+flavor-complex-melon-soda = jak gazowany melon
+flavor-complex-navy-rum = jak życie na falach
+flavor-complex-rice-beer = jak lekki, gazowany słód
+flavor-complex-shochu = jak mocne wino ryżowe
+flavor-complex-triple-sec = cieple i florystycznie z nutą pomarańczy, która przypomina o oceanicznym powietrzu i wakacyjnym wietrze na Karaibach
+flavor-complex-24-volt-energy = jak kwaśny, gruszkowy kwas z baterii
+flavor-complex-voltaic-yellow-wine = jak szum telewizora, z nutą słodkości
+flavor-complex-alexander = jak gorzkie, kremowe kakao
+flavor-complex-amaretto-alexander = jak słodkie, kremowe kakao
+flavor-complex-amaretto-sour = jak cytrynowo-migdałowe pieniste jajka
+flavor-complex-amaterasu = jak boskie oświecenie
+flavor-complex-triple-citrus = jak ekstremalna kwaśność
+flavor-complex-banzai-ti = jak azjatycka interpretacja szafki z alkoholem
+flavor-complex-root-mint-brew = jak spacer w szmaragdowym, mistycznym lesie
+flavor-complex-between-the-sheets = jak zajebista drzemka
+flavor-complex-bitters-and-soda = jak łagodne aromaty przypraw
+flavor-complex-blank-paper = jak bąbelkowy potencjał
+flavor-complex-blue-blazer = jak piekielnie ostro słodkie whisky, z nutami ognia
+flavor-complex-bosozoku = jak pędzenie 100 kilometrów na Narodowej Japońskiej Trasie 4 na zmodyfikowanym motocyklu
+flavor-complex-branca-menta = jak najbardziej gorzka mięta świata
+flavor-complex-bug-spray = jak cierpienie dziesięciu tysięcy zabitych komarów
+flavor-complex-crevice-spike = jak gorzki MIND-SPIKE z kwaśnym posmakiem
+flavor-complex-fringe-weaver = jak alkohol etylowy z nutą cukru
+flavor-complex-four-bit = jak podłączanie się do cyberprzestrzeni
+flavor-complex-maui-sunrise = jak ciepły wschód słońca nad pacyfikiem
+flavor-complex-quadruple-sec = jak robustowanie tych, którzy mogą zagrozić stacji... oraz klaunów
+flavor-complex-nekomimosa = jak MELON
+flavor-complex-red-city-am = jak śniadanie w szklance
+flavor-complex-sentai-quencha = jak najpotężniejsza moc kosmicznego ninja
+flavor-complex-utility-pole = jak wyjący wiatr napełniający powietrze elektrycznością
+flavor-complex-wizz-fizz = jak spektralne ostrze, improwizowane spektralne ostrze, i magiczny pocisk tak dewastujący, że pożałujesz kiedykolwiek stawania przeciwko temu gazowanemu napojowi
+flavor-complex-admiralty = jak wyniosła arogancja
+flavor-complex-long-john-silver = jak piractwo na brzegach Bahamów
+flavor-complex-long-haul = jak towarzystwo
+flavor-complex-tropical-storm = jak ciężki deszcz i silne wiatry uderzające w brzeg wyspy na tropikach
 
 ## base
 
-flavor-base-fresh = fresh
+flavor-base-fresh = świeżo

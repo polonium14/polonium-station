@@ -1,1 +1,1 @@
-agent-id-card-current-number = NanoChat Number
+agent-id-card-current-number = Numer NanoChat

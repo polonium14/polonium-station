@@ -43,6 +43,7 @@ research-technology-dual-wielding-technology = Technologia podwójnego trzymania
 research-technology-basic-robotics = Podstawowa robotyka
 research-technology-basic-anomalous-research = Podstawowe badania anomalii
 research-technology-basic-xenoarcheology = Podstawowa kseno archeologia
+research-technology-telesci = TeleSci
 research-technology-alternative-research = Zaawansowane badania
 research-technology-magnets-tech = Lokalny magnetyzm
 research-technology-advanced-parts = Zaawansowane części
@@ -80,5 +81,3 @@ research-technology-portable-fission = Portable Fission
 research-technology-homebrewed-implants = Homebrewed Implants
 research-technology-shuttle-salvage-weapons = Technologia Wyrzutni Odzyskowych
 research-technology-shuttle-salvage-equipment = Technologia Sprzętu Promów Odzyskowychresearch-technology-night-vision = Noktowizja
-
-research-technology-telesci = TeleSci

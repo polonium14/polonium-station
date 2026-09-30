@@ -1,2 +1,2 @@
-cd-aghost-toggle-interaction = Toggle Interaction
-cd-aghost-toggle-interaction-desc = Toggles your ability to interact with the world.
+cd-aghost-toggle-interaction = Przełącz Interakcję
+cd-aghost-toggle-interaction-desc = Przełącza Twoją zdolność do interakcji ze światem.
