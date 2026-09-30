@@ -1,0 +1,6 @@
+- type: nameIdentifierGroup
+  id: Replicator
+  format: name-identifier-format-replicator
+  fullName: true
+  minValue: 100
+  maxValue: 999

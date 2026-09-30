@@ -1,0 +1,11 @@
+- type: latheRecipe
+  id: SheetReplisteel
+  result: SheetReplisteel1
+  completetime: 1
+  materials:
+    Replisteel: 100
+
+- type: latheRecipePack
+  id: ReplicatorNest
+  recipes:
+  - SheetReplisteel

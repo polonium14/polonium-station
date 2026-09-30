@@ -1,0 +1,42 @@
+- type: entity
+  parent: BulletDisabler
+  id: BulletReplicatorDisabler
+  categories: [ HideSpawnMenu ]
+  name: replicator disabler bolt
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser
+      shader: unshaded
+      color: "#e84fc2"
+  - type: StaminaDamageOnCollide
+    damage: 22
+
+- type: entity
+  parent: ReplicatorStunRay
+  id: ReplicatorStunRayTier2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Gun
+    fireRate: 1.5
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2.5
+  - type: BasicEntityAmmoProvider
+    proto: BulletReplicatorDisabler
+    capacity: 4
+    count: 4
+
+- type: entity
+  parent: ReplicatorStunRay
+  id: ReplicatorStunRayTier3
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Gun
+    fireRate: 1
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 3
+  - type: BasicEntityAmmoProvider
+    proto: BulletReplicatorDisabler
+    capacity: 6
+    count: 6

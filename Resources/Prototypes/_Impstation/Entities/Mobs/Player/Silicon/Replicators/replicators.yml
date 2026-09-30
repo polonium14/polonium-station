@@ -43,10 +43,25 @@
   - type: Appearance
   - type: ReplacementAccent
     accent: silicon
+  - type: Speech # POLONIUM
+    speechVerb: Robotic
+    speechSounds: Xenoborg
+  - type: Vocal # POLONIUM
+    emoteSounds: UnisexSiliconXenoborg
+    wilhelmProbability: 0
+  - type: Emoting # POLONIUM
   - type: ActionGrant
     actions:
     - ActionViewLaws
     - ActionReplicatorTeleportPrey
+    - ActionReplicatorConvert # POLONIUM
+    - ActionReplicatorBuildWall # POLONIUM
+    - ActionReplicatorBuildFabricator # POLONIUM
+    - ActionReplicatorHolowall # POLONIUM
+  - type: ReplicatorBuilder # POLONIUM
+  - type: ReplicatorTow # POLONIUM
+  - type: NameIdentifier # POLONIUM
+    group: Replicator
   - type: CombatMode
   - type: Actions
   - type: ProtectedFromStepTriggers
@@ -61,6 +76,7 @@
       - DoorBumpOpener
       - CanPilot
       - VimPilot
+      - SiliconEmotes # POLONIUM
   - type: MobState
     allowedStates:
       - Alive
@@ -102,7 +118,7 @@
     animation: WeaponArcSlash
     damage:
       types:
-        Slash: 7
+        Structural: 7 # POLONIUM: no Slash
   - type: StaminaDamageOnHit
     damage: 10
   - type: MovementSpeedModifier
@@ -123,6 +139,10 @@
         Slash: -0.5
         Piercing: -0.5
         Heat: -0.5
+  - type: Barotrauma # POLONIUM
+    damage:
+      types:
+        Blunt: 0.19
   - type: ThermalVision
     lightRadius: 7
   - type: FlashImmunity
@@ -130,11 +150,21 @@
     needsHands: false
   - type: Hands
     showInHands: false
+    activeHandId: stun_ray # POLONIUM
     hands:
       stun_ray:
         location: Left
+      replisteel: # POLONIUM
+        location: Right
+        emptyLabel: replicator-hand-replisteel-empty
+        emptyRepresentative: SheetReplisteel1
+        whitelist:
+          tags:
+          - Replisteel
     sortedHands:
+    - replisteel # POLONIUM
     - stun_ray
+  - type: ReplicatorSheetHand # POLONIUM
   - type: Prying
     pryPowered: true
     force: true
@@ -172,9 +202,11 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2 # same as slime
     baseSprintSpeed: 4
-    weightlessFriction: 1
-    weightlessFrictionNoInput: 2
-    weightlessAcceleration: 1.8
+    baseWeightlessFriction: 5 # POLONIUM: weightless* fields get overwritten on MapInit
+    baseWeightlessAcceleration: 1.8 # POLONIUM
+  - type: ReplicatorTow # POLONIUM
+    pulledFrictionModifier: 0.1
+    weightlessAccelerationModifier: 3.5
   - type: NoSlip
   - type: Sprite
     drawdepth: SmallMobs
@@ -210,6 +242,9 @@
     damage: 10
   - type: Replicator
     upgradeStage: 1
+    stunRayProto: ReplicatorStunRayTier2 # POLONIUM
+  - type: ReplicatorBuilder # POLONIUM
+    buildTimeMultiplier: 0.6
   - type: MovementSpeedModifier
     baseWalkSpeed: 2 # same as slime
     baseSprintSpeed: 4
@@ -251,6 +286,9 @@
   components:
   - type: Replicator
     upgradeStage: 2
+    stunRayProto: ReplicatorStunRayTier3 # POLONIUM
+  - type: ReplicatorBuilder # POLONIUM
+    buildTimeMultiplier: 1.4
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.6 # these fellas are the tanks, they rely on the smaller guys stunning things for them.
     baseSprintSpeed: 4

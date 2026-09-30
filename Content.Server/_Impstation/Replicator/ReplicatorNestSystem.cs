@@ -7,6 +7,7 @@
 using Content.Server.GameTicking;
 using Content.Server.Pinpointer;
 using Content.Shared._Impstation.Replicator;
+using Content.Shared._Polonium.Replicator; // POLONIUM
 using Content.Shared.Actions;
 using Content.Shared.Destructible;
 using Content.Shared.Mind.Components;
@@ -32,6 +33,9 @@ public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedStunSystem _stun = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private ReplicatorHiveSystem _hive = default!; // POLONIUM
+
+    private readonly List<EntityUid> _protectedInside = new(); // POLONIUM
 
     public override void Initialize()
     {
@@ -55,9 +59,57 @@ public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
             if (_timing.CurTime < falling.NextDeletionTime)
                 continue;
 
+            // POLONIUM
+            if (!HasComp<ReplicatorRebuildingComponent>(uid))
+            {
+                Digest(falling.FallingTarget, uid);
+                continue;
+            }
+
             _containerSystem.Insert(uid, falling.FallingTarget.Comp.Hole);
             EnsureComp<StunnedComponent>(uid);
             RemCompDeferred(uid, falling);
+        }
+    }
+
+    // POLONIUM
+    private void Digest(Entity<ReplicatorNestComponent> nest, EntityUid uid)
+    {
+        if (TerminatingOrDeleted(nest.Owner))
+        {
+            RemCompDeferred<ReplicatorNestFallingComponent>(uid);
+            return;
+        }
+
+        HandlePoints(nest, uid);
+
+        _protectedInside.Clear();
+        FindProtected(uid, _protectedInside);
+
+        foreach (var saved in _protectedInside)
+        {
+            _containerSystem.TryRemoveFromContainer(saved, force: true);
+            _transform.DropNextTo(saved, nest.Owner);
+        }
+
+        QueueDel(uid);
+    }
+
+    // POLONIUM
+    private void FindProtected(EntityUid uid, List<EntityUid> found)
+    {
+        if (!TryComp<ContainerManagerComponent>(uid, out var manager))
+            return;
+
+        foreach (var container in _containerSystem.GetAllContainers(uid, manager))
+        {
+            foreach (var contained in container.ContainedEntities)
+            {
+                if (_hive.IsProtected(contained))
+                    found.Add(contained);
+                else
+                    FindProtected(contained, found);
+            }
         }
     }
 

@@ -1,0 +1,254 @@
+- type: entity
+  parent: BaseWall
+  id: WallReplicator
+  name: replicator wall
+  description: A station wall taken over by nanites. It holds better than the steel it used to be.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Replicator/wall.rsi
+  - type: Icon
+    sprite: _Polonium/Structures/Replicator/wall.rsi
+    state: full
+  - type: IconSmooth
+    key: walls
+    base: repli
+  - type: Tag
+    tags:
+    - ReplicatorStructure
+  - type: Damageable
+    damageModifierSet: SteelStaticMod
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 375
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+          params:
+            volume: -4
+      - !type:SpawnEntitiesBehavior
+        offset: 0
+        spawn:
+          Girder:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: ReplicatorWall
+    node: wall
+  - type: RCDDeconstructable
+    cost: 6
+    delay: 8
+    fx: EffectRCDDeconstruct8
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  parent: WallReplicator
+  id: WallReplicatorReinforced
+  name: reinforced replicator wall
+  description: A reinforced station wall taken over by nanites. It holds better than the plasteel it used to be.
+  components:
+  - type: Icon
+    state: rfull
+  - type: IconSmooth
+    key: walls
+    base: rrepli
+  - type: Damageable
+    damageModifierSet: PlasteelStaticMod
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 525
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+          params:
+            volume: -4
+      - !type:SpawnEntitiesBehavior
+        offset: 0
+        spawn:
+          ReinforcedGirder:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: ReplicatorWall
+    node: reinforcedWall
+  - type: RadiationBlocker
+    resistance: 5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 2000
+
+- type: entity
+  parent: BaseHoloSign
+  id: ReplicatorHolowall
+  name: replicator holowall
+  description: A lattice of hard light woven by replicators. It keeps the air in and lets anything walk through.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Replicator/holowall.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+  - type: TimedDespawn
+    lifetime: 180
+  - type: Airtight
+    noAirWhenFullyAirBlocked: false
+  - type: Tag
+    tags:
+    - ReplicatorStructure
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseStructure
+  id: ReplicatorFabricator
+  name: replicator fabricator
+  description: A nanite forge that assembles new replicator shells out of the hive's replisteel.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Replicator/fabricator.rsi
+    drawdepth: Mobs
+    layers:
+    - state: base
+      map: ["base"]
+    - state: idle
+      map: ["enum.ReplicatorFabricatorVisuals.State"]
+      shader: unshaded
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ReplicatorFabricatorVisuals.State:
+        enum.ReplicatorFabricatorVisuals.State:
+          Idle: { state: idle }
+          Working: { state: working }
+          Ready: { state: ready }
+  - type: ReplicatorFabricator
+    shellCost: 200
+    productionTime: 30
+    finishSound:
+      path: /Audio/Machines/ding.ogg
+  - type: InteractionOutline
+  - type: PointLight
+    radius: 1.6
+    energy: 1.2
+    color: "#d70aa0"
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Structure
+    - ReplicatorStructure
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  id: EffectReplicatorBase
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_nanites.rsi
+    snapCardinals: true
+    noRot: true
+    drawdepth: Effects
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  parent: EffectReplicatorBase
+  id: EffectReplicatorConvert
+  components:
+  - type: Sprite
+    layers:
+    - state: convert
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.6
+
+- type: entity
+  parent: EffectReplicatorBase
+  id: EffectReplicatorBuild
+  components:
+  - type: Sprite
+    layers:
+    - state: build
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 60
+
+- type: constructionGraph
+  id: ReplicatorWall
+  start: start
+  graph:
+  - node: start
+  - node: wall
+    entity: WallReplicator
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: Girder
+        amount: 1
+      - !type:DeleteEntity {}
+      steps:
+      - tool: Welding
+        doAfter: 12
+  - node: reinforcedWall
+    entity: WallReplicatorReinforced
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: ReinforcedGirder
+        amount: 1
+      - !type:DeleteEntity {}
+      steps:
+      - tool: Welding
+        doAfter: 20

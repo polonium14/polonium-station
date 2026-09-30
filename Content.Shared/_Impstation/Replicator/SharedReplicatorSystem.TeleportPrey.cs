@@ -1,3 +1,4 @@
+using Content.Shared._Polonium.Replicator;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.Mobs.Components;
@@ -8,6 +9,7 @@ using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.Teleportation.Systems;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Impstation.Replicator;
@@ -21,6 +23,10 @@ public abstract partial class SharedReplicatorSystem
     [Dependency] private SharedStunSystem _stun = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private ReplicatorRecallImmunitySystem _recallImmunity = default!;
+
+    private readonly HashSet<Entity<ReplicatorNestComponent>> _nearbyNests = new();
 
     private void InitializeTeleportPrey()
     {
@@ -50,6 +56,12 @@ public abstract partial class SharedReplicatorSystem
         if (!HasComp<StunnedComponent>(target) && !HasComp<KnockedDownComponent>(target))
         {
             FailTeleportPrey(ent, "replicator-teleport-prey-fail-not-incapacitated");
+            return;
+        }
+
+        if (_recallImmunity.IsImmune(target))
+        {
+            FailTeleportPrey(ent, "replicator-teleport-prey-fail-immune");
             return;
         }
 
@@ -107,20 +119,23 @@ public abstract partial class SharedReplicatorSystem
             return;
         }
 
+        if (_recallImmunity.IsImmune(target))
+        {
+            FailTeleportPrey(ent, "replicator-teleport-prey-fail-immune");
+            return;
+        }
+
         if (TryComp<PullableComponent>(target, out var pullable) && pullable.BeingPulled)
             _pulling.TryStopPull(target, pullable);
 
-        if (!_randomGridTeleport.TryTeleportEntity(
-                target,
-                Transform(ent).Coordinates,
-                ent.Comp.TeleportPreyRadiusMin,
-                ent.Comp.TeleportPreyRadiusMax))
+        if (!TryTeleportAway(ent, target))
         {
             FailTeleportPrey(ent, "replicator-teleport-prey-fail-no-space");
             return;
         }
 
         _stun.TryAddParalyzeDuration(target, ent.Comp.TeleportPreyParalyzeDuration, visualized: true);
+        _recallImmunity.Apply(target, ent.Comp.TeleportPreyImmunityDuration);
 
         _audio.PlayPvs(ent.Comp.TeleportPreySound, target);
 
@@ -131,6 +146,32 @@ public abstract partial class SharedReplicatorSystem
     private void FailTeleportPrey(Entity<ReplicatorComponent> ent, string message)
     {
         _popup.PopupClient(Loc.GetString(message), ent, ent);
+    }
+
+    private bool TryTeleportAway(Entity<ReplicatorComponent> ent, EntityUid target)
+    {
+        var origin = Transform(ent).Coordinates;
+        var min = ent.Comp.TeleportPreyRadiusMin;
+        var max = ent.Comp.TeleportPreyRadiusMax;
+
+        while (true)
+        {
+            if (_randomGridTeleport.TryTeleportEntity(target, origin, min, max, filter: coords => FarFromNests(ent, coords)))
+                return true;
+
+            if (max >= ent.Comp.TeleportPreyMaxRange || ent.Comp.TeleportPreyRangeStep <= 0)
+                return false;
+
+            min = max;
+            max = MathF.Min(max + ent.Comp.TeleportPreyRangeStep, ent.Comp.TeleportPreyMaxRange);
+        }
+    }
+
+    private bool FarFromNests(Entity<ReplicatorComponent> ent, EntityCoordinates coords)
+    {
+        _nearbyNests.Clear();
+        _lookup.GetEntitiesInRange(_transform.ToMapCoordinates(coords), ent.Comp.TeleportPreyNestClearance, _nearbyNests);
+        return _nearbyNests.Count == 0;
     }
 }
 

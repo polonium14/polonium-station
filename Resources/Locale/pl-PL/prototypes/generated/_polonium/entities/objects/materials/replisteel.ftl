@@ -1,0 +1,9 @@
+ent-SheetReplisteel = replistal
+    .suffix = Pełny
+    .desc = Stal przerobiona przez nanity. Płyty nigdy nie przestają pełzać.
+ent-SheetReplisteel10 = { ent-SheetReplisteel }
+    .suffix = 10
+    .desc = { ent-SheetReplisteel.desc }
+ent-SheetReplisteel1 = { ent-SheetReplisteel }
+    .suffix = Pojedyncza
+    .desc = { ent-SheetReplisteel.desc }

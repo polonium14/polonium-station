@@ -1,0 +1,14 @@
+ent-WallReplicator = replicator wall
+    .desc = A station wall taken over by nanites. It holds better than the steel it used to be.
+ent-WallReplicatorReinforced = reinforced replicator wall
+    .desc = A reinforced station wall taken over by nanites. It holds better than the plasteel it used to be.
+ent-ReplicatorHolowall = replicator holowall
+    .desc = A lattice of hard light woven by replicators. It keeps the air in and lets anything walk through.
+ent-ReplicatorFabricator = replicator fabricator
+    .desc = A nanite forge that assembles new replicator shells out of the hive's replisteel.
+ent-EffectReplicatorBase = { "" }
+    .desc = { "" }
+ent-EffectReplicatorConvert = { ent-EffectReplicatorBase }
+    .desc = { ent-EffectReplicatorBase.desc }
+ent-EffectReplicatorBuild = { ent-EffectReplicatorBase }
+    .desc = { ent-EffectReplicatorBase.desc }
