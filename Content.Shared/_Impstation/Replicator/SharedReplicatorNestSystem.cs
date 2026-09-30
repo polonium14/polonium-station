@@ -84,13 +84,11 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
     // POLONIUM
     public void StartDive(Entity<ReplicatorNestComponent> ent, EntityUid diver)
     {
-        StartFalling(ent, diver, handlePoints: false);
+        StartFalling(ent, diver);
     }
 
-    private void StartFalling(Entity<ReplicatorNestComponent> ent, EntityUid tripper, bool playSound = true, bool handlePoints = true) // POLONIUM: handlePoints
+    private void StartFalling(Entity<ReplicatorNestComponent> ent, EntityUid tripper, bool playSound = true)
     {
-        if (handlePoints) // POLONIUM
-            HandlePoints(ent, tripper);
 
         if (TryComp<PullableComponent>(tripper, out var pullable) && pullable.BeingPulled)
             _pulling.TryStopPull(tripper, pullable);
@@ -104,7 +102,7 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
             _audio.PlayPvs(ent.Comp.FallingSound, tripper);
     }
 
-    private void HandlePoints(Entity<ReplicatorNestComponent> ent, EntityUid tripper)
+    protected void HandlePoints(Entity<ReplicatorNestComponent> ent, EntityUid tripper)
     {
         if (_whitelist.IsWhitelistPass(ent.Comp.Blacklist, tripper))
             return;

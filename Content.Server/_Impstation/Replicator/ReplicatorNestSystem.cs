@@ -73,15 +73,23 @@ public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
     }
 
     // POLONIUM
-    private void Digest(EntityUid nest, EntityUid uid)
+    private void Digest(Entity<ReplicatorNestComponent> nest, EntityUid uid)
     {
+        if (TerminatingOrDeleted(nest.Owner))
+        {
+            RemCompDeferred<ReplicatorNestFallingComponent>(uid);
+            return;
+        }
+
+        HandlePoints(nest, uid);
+
         _protectedInside.Clear();
         FindProtected(uid, _protectedInside);
 
         foreach (var saved in _protectedInside)
         {
             _containerSystem.TryRemoveFromContainer(saved, force: true);
-            _transform.DropNextTo(saved, nest);
+            _transform.DropNextTo(saved, nest.Owner);
         }
 
         QueueDel(uid);
