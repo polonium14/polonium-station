@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Samuka
-  changes:
-  - message: Added more xenoborg names!
-    type: Add
-  id: 9537
-  time: '2026-02-21T23:54:26.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42984
 - author: lyxcaster
   changes:
   - message: Made glasses actually correct short-sighted vision!
@@ -4221,3 +4214,25 @@
   id: 10032
   time: '2026-09-29T09:18:00.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1078
+- author: Nikita
+  changes:
+  - message: "Replikatorzy zbieraj\u0105 replistal do bud\u017Cetu roju w gnie\u017A\
+      dzie. Za ten bud\u017Cet buduj\u0105 \u015Bciany, holo\u015Bciany i fabrykatory\
+      \ oraz przejmuj\u0105 \u015Bciany i pod\u0142ogi stacji."
+    type: Add
+  - message: "Nowi replikatorzy powstaj\u0105 w fabrykatorze, limit roju zale\u017C\
+      y od liczby graczy."
+    type: Add
+  - message: "Replikatory mog\u0105 przebudowa\u0107 si\u0119 w gnie\u017Adzie na\
+      \ wybrany poziom."
+    type: Add
+  - message: "Przywo\u0142anie roju og\u0142usza kr\xF3cej, odrzuca cel z dala od\
+      \ gniazd i daje mu 25 s odporno\u015Bci."
+    type: Tweak
+  - message: "Promie\u0144 og\u0142uszaj\u0105cy replikator\xF3w dzia\u0142a na \u0142\
+      adunki. Replikatory w walce wr\u0119cz niszcz\u0105 struktury zamiast rani\u0107\
+      ."
+    type: Tweak
+  id: 10033
+  time: '2026-09-30T14:59:45.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1079
