@@ -6,7 +6,7 @@ alerts-vampire-blood-desc = Pokazuje ile krwi wypiłeś. Wyciągnij kły i klikn
 alerts-vampire-fed-name = Nasycenie Krwią
 alerts-vampire-fed-desc = Twój aktualny poziom nasycenia krwią. Pij krew, aby się nasycić.
 
-roles-antag-vamire-name = Wampir
+roles-antag-vampire-name = Wampir
 roles-antag-vampire-description = Żeruj na załodze. Wyciągnij kły i wypij ich krew.
 
 roles-antag-thrall-name = Sługa
@@ -176,6 +176,7 @@ vampire-demonic-grasp-pull = Szpon ciągnie cię w stronę wampira!
 
 vampire-charge-start = Pędzisz do przodu z niepowstrzymaną siłą!
 vampire-charge-impact = Uderzasz w {CAPITALIZE(THE($target))} z miażdżącą siłą!
+vampire-legs-ensnared = Nie możesz szarżować, jesteś spętany!
 
 
 vampire-blood-swell-cancel-shoot = Twoje palce nie mieszczą się w osłonie spustu!!

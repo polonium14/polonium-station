@@ -9,6 +9,7 @@ using Content.Shared._Starlight.Antags.Vampires.Systems;
 using Content.Shared.Actions;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Damage.Prototypes;
@@ -78,8 +79,8 @@ public sealed partial class GargantuaSystem : EntitySystem
 
         SubscribeLocalEvent<GargantuaComponent, StartCollideEvent>(OnChargeCollide);
 
-        SubscribeLocalEvent<ActiveBloodSwellComponent, StatusEffectRelayedEvent<BeforeDamageChangedEvent>>(OnBloodSwellIncomingDamage);
-        SubscribeLocalEvent<ActiveBloodSwellComponent, StatusEffectRelayedEvent<BeforeStaminaDamageEvent>>(OnBloodSwellStaminaDamage);
+        SubscribeLocalEvent<ActiveBloodSwellComponent, StatusEffectRelayedEvent<DamageModifyEvent>>(OnBloodSwellIncomingDamage);
+        SubscribeLocalEvent<StaminaComponent, BeforeStaminaDamageEvent>(OnBloodSwellStaminaDamage);
 
         SubscribeLocalEvent<GargantuaComponent, VampireBloodDrankEvent>(OnBloodDrank);
         SubscribeLocalEvent<TransformComponent, PriedEvent>(OnDoorPried);
@@ -146,7 +147,7 @@ public sealed partial class GargantuaSystem : EntitySystem
 
     #region Blood Swell
 
-    private void OnBloodSwellIncomingDamage(EntityUid uid, ActiveBloodSwellComponent active, ref StatusEffectRelayedEvent<BeforeDamageChangedEvent> args)
+    private void OnBloodSwellIncomingDamage(EntityUid uid, ActiveBloodSwellComponent active, ref StatusEffectRelayedEvent<DamageModifyEvent> args)
     {
         foreach (var entry in args.Args.Damage.DamageDict.ToArray())
         {
@@ -160,11 +161,15 @@ public sealed partial class GargantuaSystem : EntitySystem
         }
     }
 
-    private void OnBloodSwellStaminaDamage(EntityUid uid, ActiveBloodSwellComponent active, ref StatusEffectRelayedEvent<BeforeStaminaDamageEvent> args)
+    private void OnBloodSwellStaminaDamage(EntityUid uid, StaminaComponent active, ref BeforeStaminaDamageEvent args)
     {
-        var ev = args.Args;
-        ev.Value *= active.StaminaDamageMultiplier;
-        args.Args = ev;
+        if (!_statusEffects.TryEffectsWithComp<ActiveBloodSwellComponent>(uid, out var effects))
+            return;
+
+        foreach (var effect in effects)
+        {
+            args.Value *= effect.Comp1.StaminaDamageMultiplier;
+        }
     }
 
     private void OnStatusEffectApplied(EntityUid effectUid, StatusEffectComponent effect, ref StatusEffectAppliedEvent args)

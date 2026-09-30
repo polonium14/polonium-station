@@ -6,7 +6,7 @@ alerts-vampire-blood-desc = Shows how much blood you've drunk. Extend your fangs
 alerts-vampire-fed-name = Blood Fullness
 alerts-vampire-fed-desc = Your current blood fullness. Drink blood to stay fed.
 
-roles-antag-vamire-name = Vampire
+roles-antag-vampire-name = Vampire
 roles-antag-vampire-description = Feed on the crew. Extend your fangs and drink their blood.
 
 roles-antag-thrall-name = Thrall
@@ -176,6 +176,7 @@ vampire-demonic-grasp-pull = The claw drags you toward the vampire!
 
 vampire-charge-start = You barrel forward with unstoppable force!
 vampire-charge-impact = You crash into {CAPITALIZE(THE($target))} with devastating force!
+vampire-legs-ensnared = Cannot charge, you are ensnared!
 
 
 vampire-blood-swell-cancel-shoot = Your fingers don`t fit in the trigger guard!!

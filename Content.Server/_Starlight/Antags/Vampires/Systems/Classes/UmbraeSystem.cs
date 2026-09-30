@@ -413,6 +413,10 @@ public sealed partial class UmbraeSystem : EntitySystem
             var remaining = temp.Temperature - targetTemp;
             var drop = Math.Min(tempDrop, remaining);
 
+            if (drop <= 0f || temp.Temperature <= targetTemp)
+                continue;
+            _temperatureSystem.ChangeHeat((ent, temp), -drop * temp.HeatCapacity, ignoreHeatResistance: true);
+
         }
     }
 

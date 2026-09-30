@@ -598,7 +598,7 @@ public sealed partial class VampireSystem : EntitySystem
     private int GetActionBloodThreshold(EntProtoId actionId)
     {
         if (_proto.TryIndex<EntityPrototype>(actionId, out var proto) &&
-            proto.TryGetComponent<VampireActionComponent>(out var vac, _componentFactory))
+            proto.TryComp<VampireActionComponent>(out var vac, _componentFactory))
             return vac.BloodToUnlock;
         return 0;
     }
@@ -817,7 +817,7 @@ public sealed partial class VampireSystem : EntitySystem
     {
         var target = _number.GetTarget(uid);
         if (args.Mind.OwnedEntity != null && TryComp<VampireComponent>(args.Mind.OwnedEntity.Value, out var vampComp))
-            args.Progress = target > 0 ? MathF.Min(vampComp.TotalBlood / target, 1f) : 1f;
+            args.Progress = target > 0 ? MathF.Min((float)vampComp.TotalBlood / target, 1f) : 1f;
         else
             args.Progress = 0f;
     }

@@ -39,13 +39,6 @@ public sealed partial class VampireRuleSystem : GameRuleSystem<VampireRuleCompon
         if (!_mind.TryGetMind(target, out var mindId, out var mind))
             return false;
 
-        // Roundstart chaplains shouldnt be vampires.
-        if (HasComp<BibleUserComponent>(target))
-        {
-            _role.MindRemoveRole((mindId, mind), "MindRoleVampire");
-            return false;
-        }
-
         var meta = MetaData(target);
         var name = meta?.EntityName ?? "Unknown";
         var briefing = Loc.GetString("vampire-role-greeting", ("name", name));

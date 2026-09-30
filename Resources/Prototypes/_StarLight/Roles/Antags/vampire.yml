@@ -14,9 +14,11 @@
   id: Vampire
   prefRoles:
   - Vampire
-
   mindRoles:
   - MindRoleVampire
+  blacklist:
+    components:
+    - BibleUser
 
 - type: antag
   id: Thrall
