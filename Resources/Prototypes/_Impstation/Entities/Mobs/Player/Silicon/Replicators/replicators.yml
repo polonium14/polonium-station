@@ -137,6 +137,10 @@
         Slash: -0.5
         Piercing: -0.5
         Heat: -0.5
+  - type: Barotrauma # POLONIUM
+    damage:
+      types:
+        Blunt: 0.19
   - type: ThermalVision
     lightRadius: 7
   - type: FlashImmunity

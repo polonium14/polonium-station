@@ -162,7 +162,7 @@ public sealed partial class ReplicatorConstructionSystem : EntitySystem
         if (args.Effect is { } effect)
             Spawn(effect, location);
 
-        _audio.PlayPvs(ConvertSound, location, AudioParams.Default.WithVolume(-4f).WithVariation(0.1f));
+        _audio.PlayPvs(ConvertSound, location, AudioParams.Default.WithVolume(-7f).WithVariation(0.1f));
     }
 
     private EntityUid? FindWall(Entity<MapGridComponent> grid, Vector2i indices)
