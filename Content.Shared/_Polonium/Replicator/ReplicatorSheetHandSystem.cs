@@ -16,10 +16,10 @@ public sealed partial class ReplicatorSheetHandSystem : EntitySystem
         SubscribeLocalEvent<ReplicatorSheetHandComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
-    // The other hands always hold tools, so the empty sheet hand would otherwise unlock unarmed attacks and disarms.
+    // The other hands always hold tools, so the empty sheet hand would otherwise unlock unarmed disarms.
     private void OnAttackAttempt(Entity<ReplicatorSheetHandComponent> ent, ref AttackAttemptEvent args)
     {
-        if (args.Weapon?.Owner == ent.Owner)
+        if (args.Disarm && args.Weapon?.Owner == ent.Owner)
             args.Cancel();
     }
 
