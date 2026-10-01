@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: lyxcaster
-  changes:
-  - message: Made glasses actually correct short-sighted vision!
-    type: Tweak
-  id: 9538
-  time: '2026-02-22T00:07:34.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42990
 - author: SlamBamActionman
   changes:
   - message: Added unlockable press hat and press vest for the Reporter job.
@@ -4236,3 +4229,19 @@
   id: 10033
   time: '2026-09-30T14:59:45.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1079
+- author: nikitosych
+  changes:
+  - message: "Dodano skanowanie kodu C# w poszukiwaniu kluczy lokalizacyjnych oraz\
+      \ sprawdzanie odwo\u0142a\u0144 do wpis\xF3w i atrybut\xF3w w plikach Fluent."
+    type: Add
+  - message: "Dodano obs\u0142ug\u0119 ostrze\u017Ce\u0144 o brakuj\u0105cych lokalizacjach\
+      \ w testach integracyjnych klienta i serwera."
+    type: Add
+  - message: "Przywr\xF3cono brakuj\u0105ce klucze i t\u0142umaczenia en-US oraz pl-PL."
+    type: Fix
+  - message: "Zmieniono kolejno\u015B\u0107 inicjalizacji system\xF3w papieru i poprawiono\
+      \ obs\u0142ug\u0119 brakuj\u0105cych kluczy lokalizacyjnych."
+    type: Tweak
+  id: 10034
+  time: '2026-10-01T08:06:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1081
