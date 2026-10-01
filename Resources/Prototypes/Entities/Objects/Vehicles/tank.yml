@@ -1,7 +1,7 @@
 - type: entity
   id: TankBattle
   name: Jednostka Oczyszczenia
-  description: Ciezki pojazd bojowy. Naprawia sie spawaczem.
+  description: Ciezki pojazd bojowy.
   components:
   - type: Sprite
     noRot: false
@@ -34,9 +34,21 @@
         - HighImpassable
         - LowImpassable
         layer:
-        - LargeMobLayer
+        - MobLayer
   - type: Damageable
     damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Vehicle
     requiresHands: false
     canAttack: true
