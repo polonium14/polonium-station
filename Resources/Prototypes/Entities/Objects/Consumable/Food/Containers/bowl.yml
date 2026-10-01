@@ -62,6 +62,7 @@
         acts: [ "Destruction" ]
   - type: Tag
     tags:
+    - Dinnerware
     - Trash
 
 - type: entity

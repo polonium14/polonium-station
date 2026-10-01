@@ -74,6 +74,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -100,6 +101,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -171,6 +173,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Vegetable
   - type: Item
     inhandVisuals:
@@ -209,8 +212,9 @@
   - type: Tag
     tags:
     - Cake
-    - Vegetable
+    - FinishedMeal
     - Slice
+    - Vegetable
   - type: Item
     inhandVisuals:
       left:
@@ -241,6 +245,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Meat
   - type: Item
     inhandVisuals:
@@ -266,6 +271,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Meat
     - Slice
   - type: Item
@@ -343,6 +349,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -368,6 +375,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -400,6 +408,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -425,6 +434,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -457,6 +467,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -482,6 +493,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -528,6 +540,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     heldPrefix: lemoon
@@ -560,6 +573,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -661,6 +675,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -687,6 +702,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -717,6 +733,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Meat
   - type: Item
     inhandVisuals:
@@ -742,6 +759,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Meat
     - Slice
   - type: Item
@@ -782,6 +800,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -814,6 +833,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -843,6 +863,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -863,6 +884,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
@@ -1090,8 +1112,9 @@
   - type: Tag
     tags:
     - VimPilot
-    - DoorBumpOpener
     - Cake
+    - DoorBumpOpener
+    - FinishedMeal
   - type: CanEscapeInventory
     baseResistTime: 2
   - type: Puller
@@ -1170,6 +1193,7 @@
     energy: 2.5
   - type: Tag
     tags:
+    - FinishedMeal
     - Slice
   - type: FoodSequenceElement
     entries:
@@ -1194,6 +1218,7 @@
     tags:
     - Cake
     - ClothMade
+    - FinishedMeal
   - type: Solution
     solution:
       reagents:
@@ -1220,6 +1245,7 @@
     tags:
     - Cake
     - ClothMade
+    - FinishedMeal
     - Slice
   - type: Solution
     solution:
@@ -1270,6 +1296,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
   - type: Item
     inhandVisuals:
@@ -1311,6 +1338,7 @@
   - type: Tag
     tags:
     - Cake
+    - FinishedMeal
     - Fruit
     - Slice
   - type: Item
