@@ -109,22 +109,27 @@ public sealed class StationJobsTest : GameTest
 
 - type: job
   id: TAssistant
+  name: job-name-passenger
   playTimeTracker: PlayTimeDummyAssistant
 
 - type: job
   id: TMime
+  name: job-name-mime
   playTimeTracker: PlayTimeDummyMime
 
 - type: job
   id: TClown
+  name: job-name-clown
   playTimeTracker: PlayTimeDummyClown
 
 - type: job
   id: TCaptain
+  name: job-name-captain
   playTimeTracker: PlayTimeDummyCaptain
 
 - type: job
   id: TChaplain
+  name: job-name-chaplain
   playTimeTracker: PlayTimeDummyChaplain
 ";
 
