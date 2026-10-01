@@ -1,5 +1,5 @@
-using Content.Client.Changelog;
 using Content.Client.Credits;
+using Content.Client.Info.UUID;
 using Content.Shared.CCVar;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -33,6 +33,8 @@ namespace Content.Client.Info
             var creditsButton = new Button {Text = Loc.GetString("server-info-credits-button")};
             creditsButton.OnPressed += args => new CreditsWindow().Open();
             buttons.AddChild(creditsButton);
+
+            buttons.AddChild(new UUIDControl());
         }
     }
 }
