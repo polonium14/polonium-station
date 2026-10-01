@@ -541,6 +541,12 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             return true;
         }
 
+        if (IsStuckResidue(solution) && solution.Volume < StuckResidueVolume)
+        {
+            puddleUid = EntityUid.Invalid;
+            return false;
+        }
+
         var coords = _map.GridTileToLocal(gridId, mapGrid, tileRef.GridIndices);
         puddleUid = Spawn("Puddle", coords);
         EnsureComp<PuddleComponent>(puddleUid);
