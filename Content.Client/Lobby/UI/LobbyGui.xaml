@@ -8,8 +8,7 @@
     xmlns:style="clr-namespace:Content.Client.Stylesheets"
     xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:info="clr-namespace:Content.Client.Info"
-    xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets"
-    xmlns:uuid="clr-namespace:Content.Client.Info.UUID">
+    xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets">
     <!-- Background -->
     <TextureRect Access="Public" VerticalExpand="True" HorizontalExpand="True" Name="Background"
                  Stretch="KeepAspectCovered" />
@@ -60,7 +59,6 @@
                                 <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Left" />
                             </BoxContainer>
                         </PanelContainer>
-                        <uuid:UUIDControl Name="UUIDControl"/>
                     </BoxContainer>
                 </Control>
                 <!-- Character setup state -->
