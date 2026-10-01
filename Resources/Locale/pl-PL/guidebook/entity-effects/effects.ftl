@@ -98,22 +98,22 @@ entity-effect-guidebook-status-effect =
             { $chance ->
                 [1] Causes
                *[other] cause
-            } { LOC($key) } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } without accumulation
+            } { $key } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } without accumulation
         [add]
             { $chance ->
                 [1] Causes
                *[other] cause
-            } { LOC($key) } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } with accumulation
+            } { $key } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } with accumulation
         [set]
             { $chance ->
                 [1] Causes
                *[other] cause
-            } { LOC($key) } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } without accumulation
+            } { $key } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } without accumulation
        *[remove]
             { $chance ->
                 [1] Removes
                *[other] remove
-            } { NATURALFIXED($time, 3) } { MANY("second", $time) } of { LOC($key) }
+            } { NATURALFIXED($time, 3) } { MANY("second", $time) } of { $key }
     } { $delay ->
         [0] immediately
        *[other] after a { NATURALFIXED($delay, 3) } second delay
@@ -124,22 +124,22 @@ entity-effect-guidebook-status-effect-indef =
             { $chance ->
                 [1] Causes
                *[other] cause
-            } permanent { LOC($key) }
+            } permanent { $key }
         [add]
             { $chance ->
                 [1] Causes
                *[other] cause
-            } permanent { LOC($key) }
+            } permanent { $key }
         [set]
             { $chance ->
                 [1] Causes
                *[other] cause
-            } permanent { LOC($key) }
+            } permanent { $key }
        *[remove]
             { $chance ->
                 [1] Removes
                *[other] remove
-            } { LOC($key) }
+            } { $key }
     } { $delay ->
         [0] immediately
        *[other] after a { NATURALFIXED($delay, 3) } second delay

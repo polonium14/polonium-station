@@ -174,7 +174,7 @@ public abstract partial class SharedRoleSystem : EntitySystem
         var message = new RoleAddedEvent(mindId, mind, update, silent);
         RaiseLocalEvent(mindId, message, true);
 
-        var name = Loc.GetString(protoEnt.Name);
+        var name = protoEnt.Name;
         if (mind.OwnedEntity is not null)
         {
             _adminLogger.Add(LogType.Mind,

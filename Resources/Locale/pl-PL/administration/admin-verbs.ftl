@@ -47,6 +47,10 @@ admin-verbs-pause-map = Pause Map
 admin-verbs-snap-joints = Snap Joints
 admin-verbs-make-minigun = Make Minigun
 admin-verbs-set-bullet-amount = Set Bullet Amount
+admin-verbs-bolt = Zarygluj
+admin-verbs-unbolt = Odrygluj
+admin-verbs-emergency-access-on = Włącz dostęp awaryjny
+admin-verbs-emergency-access-off = Wyłącz dostęp awaryjny
 # Dialogs verbs
 admin-verbs-dialog-adjust-stack-amount = Amount (max { $max })
 admin-verbs-dialog-rename-title = Rename

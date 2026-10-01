@@ -1,3 +1,4 @@
+borg-module-fit = Ten moduł pasuje do: { $types }.
 borg-type-all = [color=white]any cyborg[/color]
 borg-type-salvage = [color= #d6b328]salvage cyborgs[/color]
 borg-type-engineer = [color= #ff9900]engineer cyborgs[/color]

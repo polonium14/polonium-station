@@ -1,4 +1,9 @@
 markings-search = Search
+-markings-selection = { $selectable ->
+    [0] You have no markings remaining.
+    [one] You can select one more marking.
+   *[other] You can select { $selectable } more markings.
+}
 markings-limits = { $required ->
     [true] { $count ->
         [-1] Select at least one marking.

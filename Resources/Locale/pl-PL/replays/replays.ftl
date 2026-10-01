@@ -1,6 +1,11 @@
 # Loading Screen
 
 replay-loading = Loading ({ $cur }/{ $total })
+replay-loading-reading = Odczytywanie plików
+replay-loading-processing = Przetwarzanie plików
+replay-loading-spawning = Tworzenie encji
+replay-loading-initializing = Inicjalizowanie encji
+replay-loading-starting = Uruchamianie encji
 replay-loading-failed =
     Failed to load replay. Error:
     { $reason }
