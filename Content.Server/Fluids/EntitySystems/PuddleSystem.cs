@@ -540,7 +540,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             puddleUid = ent.Value;
             return true;
         }
-Ц
+
         if (IsStuckResidue(solution) && solution.Volume < StuckResidueVolume)
         {
             puddleUid = EntityUid.Invalid;
