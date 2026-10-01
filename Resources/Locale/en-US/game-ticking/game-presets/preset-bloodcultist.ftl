@@ -116,6 +116,9 @@ cult-blood-progress = [italic]{ $isComplete ->
 }[/italic]
 
 cult-blood-progress-tear-veil = [italic]Next objective: Perform the Tear Veil ritual at {$location1}, {$location2}, or {$location3} with {$required} cultists.[/italic]
+cult-blood-progress-final-summon = [italic]Next objective: Find the reality rift and perform the final summoning ritual with 9 cultists.[/italic]
+cult-blood-progress-final-summon-pending = [italic]Next objective: Await the manifestation of the blood rift.[/italic]
+cult-blood-progress-final-summon-ready = [italic]Next objective: Chant the final summoning ritual to bring Nar'Sie into this reality![/italic]
 cult-blood-progress-final-summon-location = [italic]Final summoning site: [bold][color=#FF3333]{$location}[/color][/bold].[/italic]
 
 cult-narsie-sacrifice-accept = "I accept your sacrifice."
@@ -124,6 +127,7 @@ cult-ascend-1 = The veil weakens as your cult grows, and your eyes begin to glow
 cult-ascend-2 = The veil weakens as your cult grows, and you are unable to hide your true nature!
 
 cult-deconverted = You suddenly de-convert, and no longer consider yourself a cultist!
+cult-break-control = You look bewildered as Nar'Sie's influence is shattered! You don't remember any of your time in the cult.
 cult-deconverted-memory-loss = You lose the last several hours of your memories.
 
 cult-evac-called-announcement = Unusual dimensional disturbances have faded, evac called while centcom investigates this dimensional anomaly. ETA: {$time} {$units}

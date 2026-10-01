@@ -743,13 +743,14 @@ public abstract partial class SharedSurgerySystem
         var userName = Identity.Entity(user, EntityManager);
         var targetName = Identity.Entity(body, EntityManager);
 
-        var locName = $"surgery-popup-procedure-{surgeryId}-step-{stepId}";
-        var locResult = Loc.GetString(locName,
-            ("user", userName), ("target", targetName), ("part", part));
 
-        if (locResult == locName)
+        // proper loc extraction
+        if (!Loc.TryGetString($"surgery-popup-procedure-{surgeryId}-step-{stepId}", out var locResult,
+                ("user", userName), ("target", targetName), ("part", part)))
+        {
             locResult = Loc.GetString($"surgery-popup-step-{stepId}",
                 ("user", userName), ("target", targetName), ("part", part));
+        }
 
         _popup.PopupPredicted(locResult, user, user);
         return true;

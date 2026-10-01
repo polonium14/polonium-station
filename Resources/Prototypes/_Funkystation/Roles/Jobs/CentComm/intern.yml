@@ -1,6 +1,6 @@
 - type: job
   id: CentralCommandIntern
-  name: Central Command Intern
+  name: job-name-cci
   description: ghost-role-information-centcom-intern-description
   playTimeTracker: JobCentralCommandIntern
   setPreference: false

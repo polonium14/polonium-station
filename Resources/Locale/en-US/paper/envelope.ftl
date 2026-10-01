@@ -1,3 +1,5 @@
+envelope-verb-seal = Seal
+envelope-verb-tear = Tear
 envelope-letter-slot = Letter
 
 envelope-sealed-examine = [color=gray]{CAPITALIZE(THE($envelope))} is sealed.[/color]

@@ -1,4 +1,11 @@
 markings-search = Szukaj
+-markings-selection =
+    { $selectable ->
+        [0] Nie możesz już wybrać żadnych oznaczeń.
+        [one] Możesz wybrać jeszcze jedno oznaczenie.
+        [few] Możesz wybrać jeszcze { $selectable } oznaczenia.
+       *[other] Możesz wybrać jeszcze { $selectable } oznaczeń.
+    }
 markings-limits = { $required ->
     [true] { $count ->
         [-1] Select at least one marking.

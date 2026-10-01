@@ -81,11 +81,15 @@ cult-blood-progress = [italic]{ $isComplete ->
        *[false] Spill { $bloodNeeded }u of blood or convert more people for Nar'Sie's { $nextPhase }
     }[/italic]
 cult-blood-progress-tear-veil = [italic]Next objective: Perform the Tear Veil ritual at { $location1 }, { $location2 }, or { $location3 } with { $required } cultists.[/italic]
+cult-blood-progress-final-summon = [italic]Następny cel: znajdź szczelinę rzeczywistości i odpraw ostateczny rytuał przywołania z 9 kultystami.[/italic]
+cult-blood-progress-final-summon-pending = [italic]Następny cel: zaczekaj, aż krwawa szczelina się zmaterializuje.[/italic]
+cult-blood-progress-final-summon-ready = [italic]Następny cel: odśpiewaj ostateczny rytuał przywołania, aby sprowadzić Nar'Sie do tej rzeczywistości![/italic]
 cult-blood-progress-final-summon-location = [italic]Final summoning site: [bold][color=#FF3333]{ $location }[/color][/bold].[/italic]
 cult-narsie-sacrifice-accept = "I accept your sacrifice."
 cult-ascend-1 = The veil weakens as your cult grows, and your eyes begin to glow...
 cult-ascend-2 = The veil weakens as your cult grows, and you are unable to hide your true nature!
 cult-deconverted = You suddenly de-convert, and no longer consider yourself a cultist!
+cult-break-control = Rozglądasz się oszołomiony, gdy wpływ Nar'Sie zostaje złamany! Nie pamiętasz niczego z czasu spędzonego w kulcie.
 cult-deconverted-memory-loss = You lose the last several hours of your memories.
 cult-evac-called-announcement = Nietypowe zaburzenia wymiarowe ustąpiły. Wezwano ewakuację, podczas gdy Centralne Dowództwo bada tę anomalię wymiarową. ETA: { $time } { $units }
 cult-evac-sender-announcement = Centralne Dowództwo
