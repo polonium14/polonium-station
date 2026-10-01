@@ -64,7 +64,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalIan
+    stealGroup:
+    - AnimalIan
 
 - type: entity
   parent: MobCorgiIanBase
@@ -183,7 +184,8 @@
       amount: 2
     - id: MaterialHideCorgi
   - type: StealTarget
-    stealGroup: AnimalIan
+    stealGroup:
+    - AnimalIan
   - type: Contraband
     severity: GrandTheft
     allowedDepartments: [ Command ]
@@ -209,7 +211,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalNamedCat
+    stealGroup:
+    - AnimalNamedCat
   - type: SpeakOnException
     speechCooldown: 3m
     chanceSpeakNoAccent: 0.01
@@ -235,7 +238,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalNamedCat
+    stealGroup:
+    - AnimalNamedCat
 
 - type: entity
   parent: [ BaseUniquePet, MobCatCaracal ]
@@ -262,7 +266,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalNamedCat
+    stealGroup:
+    - AnimalNamedCat
 
 - type: entity
   parent: [ BaseUniquePet, MobFerret ]
@@ -334,7 +339,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalNamedCat
+    stealGroup:
+    - AnimalNamedCat
 
 - type: entity
   parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinableButchering , BaseMobDestructible ]
@@ -409,7 +415,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalMcGriff
+    stealGroup:
+    - AnimalMcGriff
   - type: MessyDrinker
 
 - type: entity
@@ -503,7 +510,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalWalter
+    stealGroup:
+    - AnimalWalter
   - type: Speech
     speechVerb: Canine
     speechSounds: Dog
@@ -531,7 +539,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalMorty
+    stealGroup:
+    - AnimalMorty
 
 - type: entity
   parent: MobPossumMorty
@@ -647,7 +656,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalRenault
+    stealGroup:
+    - AnimalRenault
 
 - type: entity
   parent: [ BaseUniquePet, MobHamster, BaseSlicingRefinableButchering ]
@@ -784,7 +794,8 @@
     - DoorBumpOpener
     - FootstepSound
   - type: StealTarget
-    stealGroup: AnimalShiva
+    stealGroup:
+    - AnimalShiva
 
 - type: entity
   parent: [ BaseUniquePet, MobKangaroo ]
@@ -993,7 +1004,8 @@
       gender: male
 #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
-    stealGroup: AnimalTropico
+    stealGroup:
+    - AnimalTropico
 
 - type: entity
   parent: [ BaseUniquePet, MobParrotBase ]
