@@ -153,8 +153,10 @@
   - WeaponBORSniperGun
   - WeaponVisMPSPistol
 
+
 - type: latheRecipePack
   id: SecurityDisablers
   recipes:
   - WeaponDisabler
+  - WeaponTaser # Polonium addition
   - WeaponDisablerSMG
