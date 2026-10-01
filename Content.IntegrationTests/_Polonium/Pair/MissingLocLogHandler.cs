@@ -1,6 +1,8 @@
 #nullable enable
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Robust.Shared.Log;
 using Serilog.Events;
 
@@ -11,8 +13,15 @@ namespace Content.IntegrationTests._Polonium.Pair;
 /// </summary>
 public sealed class MissingLocLogHandler(ISawmill failures, bool reportLive, Func<string?, bool> ignore) : ILogHandler
 {
+    private static readonly Regex KeyRegex = new("^-?[A-Za-z][A-Za-z0-9_]*-[A-Za-z0-9_-]*$", RegexOptions.Compiled);
+
     private readonly List<string> _startup = new();
     private bool _armed;
+
+    public static bool IsKey([NotNullWhen(true)] string? messageId)
+    {
+        return messageId != null && KeyRegex.IsMatch(messageId);
+    }
 
     public static bool IsMissingLoc(LogEvent message)
     {

@@ -89,13 +89,14 @@ def should_check(key: str) -> bool:
 def skip_char_literal(text: str, i: int) -> int:
     n = len(text)
     i += 1
-    if i < n and text[i] == '\\':
-        i += 2
-    else:
-        i += 1
-    if i < n and text[i] == "'":
-        i += 1
-    return i
+    while i < n and text[i] != '\n':
+        if text[i] == '\\':
+            i += 2
+        elif text[i] == "'":
+            return i + 1
+        else:
+            i += 1
+    return min(i, n)
 
 
 def read_string(text: str, i: int) -> Optional[Tuple[int, str]]:
@@ -508,7 +509,16 @@ def parse_params(params: str) -> List[Tuple[str, str]]:
     result: List[Tuple[str, str]] = []
     if not params.strip():
         return result
+    fragments: List[str] = []
+    open_angles = 0
     for raw in split_top(params, ','):
+        if open_angles > 0:
+            fragments[-1] += ',' + raw
+        else:
+            fragments.append(raw)
+        head = PARAM_ATTR_RE.sub('', raw).split('=', 1)[0]
+        open_angles += head.count('<') - head.count('>')
+    for raw in fragments:
         param = PARAM_ATTR_RE.sub('', raw)
         param = param.split('=', 1)[0]
         words = param.split()

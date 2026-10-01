@@ -46,8 +46,11 @@ public sealed partial class TestPair : RobustIntegrationTest.TestPair
         // POLONIUM
         Client.ResolveDependency<ILogManager>().GetSawmill("loc").Level = LogLevel.Warning;
         Server.ResolveDependency<ILogManager>().GetSawmill("loc").Level = LogLevel.Warning;
+
         ClientLogHandler.JudgeLog += (_, message) =>
-            MissingLocLogHandler.IsMissingLoc(message) && IsTestLocKey(MissingLocLogHandler.MessageId(message));
+            MissingLocLogHandler.IsMissingLoc(message)
+            && IsIgnoredLocKey(MissingLocLogHandler.MessageId(message));
+
         _clientLocHandler?.Arm();
         _serverLocHandler?.Arm();
 
@@ -148,15 +151,15 @@ public sealed partial class TestPair : RobustIntegrationTest.TestPair
     private MissingLocLogHandler AddMissingLocHandler(bool reportLive)
     {
         var logMan = IoCManager.Resolve<ILogManager>();
-        var handler = new MissingLocLogHandler(logMan.GetSawmill("loc_missing"), reportLive, IsTestLocKey);
+        var handler = new MissingLocLogHandler(logMan.GetSawmill("loc_missing"), reportLive, IsIgnoredLocKey);
 
         logMan.GetSawmill("loc").AddHandler(handler);
 
         return handler;
     }
 
-    private bool IsTestLocKey(string? messageId)
+    private bool IsIgnoredLocKey(string? messageId)
     {
-        return messageId != null && messageId.Split('-').Any(IsTestEntityPrototype);
+        return !MissingLocLogHandler.IsKey(messageId) || messageId.Split('-').Any(IsTestEntityPrototype);
     }
 }
