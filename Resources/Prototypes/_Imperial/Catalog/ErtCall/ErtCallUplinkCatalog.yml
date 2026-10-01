@@ -967,8 +967,8 @@
 
 - type: listing
   id: ErtCallUplinkWeaponTaser
-  name: ert-uplink-ErtCallUplinkWeaponTaser-name
-  description: ert-uplink-ErtCallUplinkWeaponTaser-desc
+  name: ert-uplink-ErtCallUplinkWeaponTaserSuper-name
+  description: ert-uplink-ErtCallUplinkWeaponTaserSuper-desc
   productEntity: WeaponTaserSuper # Polonium change: The buffed version for the all mighty DS
   cost:
     BlueSpaceCube: 20
