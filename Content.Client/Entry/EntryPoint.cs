@@ -108,6 +108,9 @@ using Content.Client.Replay;
 using Content.Client.Screenshot;
 using Content.Client.Singularity;
 using Content.Client.Stylesheets;
+using Content.Client.Stylesheets.Fonts;
+using Robust.Client.ResourceManagement;
+using Robust.Client.UserInterface.RichText;
 using Content.Client.UserInterface;
 using Content.Client.Viewport;
 using Content.Client.Voting;
@@ -167,6 +170,8 @@ namespace Content.Client.Entry
         [Dependency] private ClientsidePlaytimeTrackingManager _clientsidePlaytimeManager = default!;
         [Dependency] private TutorialManager _tutorialManager = default!;
         [Dependency] private ClientFeedbackManager _feedbackManager = null!;
+        [Dependency] private IResourceCache _resourceCache = default!; // Polonium
+        [Dependency] private FontTagHijackHolder _fontTagHijack = default!; // Polonium
 
         public override void PreInit()
         {
@@ -245,6 +250,7 @@ namespace Content.Client.Entry
             base.PostInit();
 
             _stylesheetManager.Initialize();
+            PoloniumFonts.HijackFontTags(_resourceCache, _prototypeManager, _fontTagHijack); // Polonium
 
             // Setup key contexts
             ContentContexts.SetupContexts(_inputManager.Contexts);
