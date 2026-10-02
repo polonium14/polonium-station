@@ -36179,7 +36179,7 @@ entities:
     - type: Transform
       parent: 2
       pos: -8.5,-4.5
-- proto: WeaponDisabler
+- proto: WeaponTaser
   entities:
   - uid: 1623
     components:
