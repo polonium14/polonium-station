@@ -30,7 +30,10 @@ public sealed class LobbyOverviewStep : ClientsideNavTutorialStep
 
     public override bool CanExecute()
     {
-        return StateMan.CurrentState is LobbyState;
+        // the character panel is the whole subject of this step. behind an open editor or a
+        // collapsed sidebar there is nothing to point at and nothing the player could click
+        return StateMan.CurrentState is LobbyState { Lobby: { } lobby }
+               && lobby.CharacterPreview is { VisibleInTree: true };
     }
 
     /// <summary>
@@ -102,13 +105,20 @@ public sealed class LobbyOverviewStep : ClientsideNavTutorialStep
 
         TutorialUi.PlanBubble(bubble, TutorialHighlightOverlay.OverlayControlPosition.CenterLeft, cp, overlayId: second);
 
-        cp.CharacterSetupButton.OnPressed -= SetupPressed;
-        cp.CharacterSetupButton.OnPressed += SetupPressed;
+        _lobby.CharacterSetupStateSwitched -= OnSetupOpened;
+        _lobby.CharacterSetupStateSwitched += OnSetupOpened;
     }
 
-    private void SetupPressed(BaseButton.ButtonEventArgs _)
+    /// <summary>
+    /// However they got the editor open, this step is done. Hooking the button instead used to
+    /// strand anyone whose editor was already up - the button it waits for is behind that window.
+    /// </summary>
+    private void OnSetupOpened(bool entered, LobbyGui.LobbyGuiState state)
     {
-        _lobby.CharacterPreview.CharacterSetupButton.OnPressed -= SetupPressed;
+        if (!entered)
+            return;
+
+        _lobby.CharacterSetupStateSwitched -= OnSetupOpened;
         Tutorial.NextStep();
     }
 
@@ -116,9 +126,7 @@ public sealed class LobbyOverviewStep : ClientsideNavTutorialStep
     {
         base.Cleanup();
 
-        if (_lobby?.CharacterPreview?.CharacterSetupButton is { } button)
-        {
-            button.OnPressed -= SetupPressed;
-        }
+        if (_lobby is not null)
+            _lobby.CharacterSetupStateSwitched -= OnSetupOpened;
     }
 }

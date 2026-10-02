@@ -188,6 +188,9 @@ public sealed partial class TutorialConditionTracker : EntitySystem
             return;
         }
 
+        if (_mentor.LastSpokeAt(player) is { } spoke && spoke + MaxFreeze > frozen.ExpiresAt)
+            frozen.ExpiresAt = spoke + MaxFreeze;
+
         // a step that holds on purpose lets go through its own completion, only a stuck speech times out
         if (!held && _timing.CurTime >= frozen.ExpiresAt)
             RemComp<TutorialFrozenComponent>(player);

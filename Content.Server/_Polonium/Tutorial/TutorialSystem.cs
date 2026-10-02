@@ -5,6 +5,7 @@ using Content.Server.Power.EntitySystems;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Prototypes;
+using Content.Shared.Atmos.Rotting;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode.Pacification;
@@ -64,6 +65,7 @@ public sealed partial class TutorialSystem : SharedTutorialSystem
         SubscribeLocalEvent<TutorialNoDeconstructComponent, InteractUsingEvent>(OnLockedCableCut,
             before: usingBefore);
         SubscribeLocalEvent<GhostRoleComponent, ComponentInit>(OnGhostRoleInit);
+        SubscribeLocalEvent<PerishableComponent, ComponentStartup>(OnPerishableStartup);
         SubscribeLocalEvent<WallComponent, InteractUsingEvent>(OnWallUsing,
             before: usingBefore);
         SubscribeLocalEvent<WallMountComponent, InteractUsingEvent>(OnWindowUsing,
