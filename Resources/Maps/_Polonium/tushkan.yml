@@ -80771,7 +80771,7 @@ entities:
     - type: Transform
       parent: 2
       pos: -34.5,28.5
-- proto: WeaponDisabler
+- proto: WeaponTaser
   entities:
   - uid: 10770
     components:
