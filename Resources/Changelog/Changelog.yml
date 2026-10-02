@@ -1,22 +1,4 @@
 ﻿Entries:
-- author: ScarKy0
-  changes:
-  - message: Cyborgs can now pry unpowered doors without the need for a crowbar.
-    type: Add
-  - message: Entities that can pry things innately (zombies, spiders, etc) now have
-      an alert telling them so.
-    type: Add
-  id: 9544
-  time: '2026-02-25T23:33:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41812
-- author: SlamBamActionman
-  changes:
-  - message: Tweaked German, Scottish (previously Dwarfish) and Southern accents to
-      not outright replace words.
-    type: Tweak
-  id: 9545
-  time: '2026-02-26T17:45:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43030
 - author: OrbitSystem07
   changes:
   - message: The uplink now properly states the capacity of the hypodart.
@@ -4268,3 +4250,18 @@
   id: 10039
   time: '2026-10-02T15:47:05.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1086
+- author: Nikita
+  changes:
+  - message: "Cyrylica i inne znaki specjalne teraz wy\u015Bwietlaj\u0105 si\u0119\
+      \ prawid\u0142owo na czacie."
+    type: Fix
+  id: 10040
+  time: '2026-10-02T19:27:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1089
+- author: Koilak
+  changes:
+  - message: Zmieniono mapowane `WeaponDisabler` na `WeaponTaser` na mapach Polonium.
+    type: Fix
+  id: 10041
+  time: '2026-10-02T19:28:13.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1088
