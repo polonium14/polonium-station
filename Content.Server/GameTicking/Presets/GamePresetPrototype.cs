@@ -1,4 +1,5 @@
 using Content.Server.Maps;
+using Content.Shared._Polonium.GameTicking;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.GameTicking.Presets
@@ -39,5 +40,13 @@ namespace Content.Server.GameTicking.Presets
         /// </summary>
         [DataField("supportedMaps")]
         public ProtoId<GameMapPoolPrototype>? MapPool;
+
+        // POLONIUM START
+        /// <summary>
+        /// Round moods this preset belongs to and its weight in each one. Secret picks from these.
+        /// </summary>
+        [DataField]
+        public Dictionary<ProtoId<RoundMoodPrototype>, float> Moods = new();
+        // POLONIUM END
     }
 }

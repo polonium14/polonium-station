@@ -36,7 +36,7 @@ namespace Content.Server.GameTicking
 
         private void GetStatusResponse(JsonNode jObject)
         {
-            var preset = CurrentPreset ?? Preset;
+            var preset = HidePreset(CurrentPreset ?? Preset);
 
             // This method is raised from another thread, so this better be thread safe!
             lock (_statusShellLock)

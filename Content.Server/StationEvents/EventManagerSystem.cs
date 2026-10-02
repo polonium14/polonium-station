@@ -381,7 +381,7 @@ public sealed partial class EventManagerSystem : EntitySystem
     }
 
     public bool CanRun(EntityPrototype prototype, StationEventComponent stationEvent, int playerCount, TimeSpan currentTime,
-        float reoccurrenceMult = 1f)
+        float reoccurrenceMult = 1f, int? minimumPlayers = null, int? earliestStart = null, int? reoccurrenceDelay = null) // Polonium
     {
         if (GameTicker.IsGameRuleActive(prototype.ID))
             return false;
@@ -391,19 +391,19 @@ public sealed partial class EventManagerSystem : EntitySystem
             return false;
         }
 
-        if (playerCount < stationEvent.MinimumPlayers)
+        if (playerCount < (minimumPlayers ?? stationEvent.MinimumPlayers)) // Polonium
         {
             return false;
         }
 
-        if (currentTime != TimeSpan.Zero && currentTime.TotalMinutes < stationEvent.EarliestStart / EventSpeedup)
+        if (currentTime != TimeSpan.Zero && currentTime.TotalMinutes < (earliestStart ?? stationEvent.EarliestStart) / EventSpeedup) // Polonium
         {
             return false;
         }
 
         var lastRun = TimeSinceLastEvent(prototype);
         if (lastRun != TimeSpan.Zero && currentTime.TotalMinutes <
-            stationEvent.ReoccurrenceDelay * reoccurrenceMult / EventSpeedup + lastRun.TotalMinutes)
+            (reoccurrenceDelay ?? stationEvent.ReoccurrenceDelay) * reoccurrenceMult / EventSpeedup + lastRun.TotalMinutes) // Polonium
         {
             return false;
         }

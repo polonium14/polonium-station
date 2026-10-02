@@ -97,6 +97,13 @@ namespace Content.Server.Voting.Managers
                     CreateRestartVote(initiator);
                     break;
                 case StandardVoteType.Preset:
+                    // POLONIUM START
+                    if (_cfg.GetCVar(CCVars.VotePresetMood))
+                    {
+                        timeoutVote = TryCreateMoodVote(initiator);
+                        break;
+                    }
+                    // POLONIUM END
                     CreatePresetVote(initiator);
                     break;
                 case StandardVoteType.Map:
@@ -264,7 +271,8 @@ namespace Content.Server.Voting.Managers
                 VoteType = StandardVoteType.Preset,
                 Duration = alone
                     ? TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerAlone))
-                    : TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerPreset))
+                    : TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerPreset)),
+                DisplayVotes = !_cfg.GetCVar(CCVars.GamePresetHidden), // Polonium
             };
 
             if (alone)
@@ -302,7 +310,7 @@ namespace Content.Server.Voting.Managers
                 }
                 _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Preset vote finished: {picked}");
                 var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
-                ticker.SetGamePreset(picked);
+                ticker.SetGamePreset(picked, resetDelay: 1); // Polonium
             };
         }
 

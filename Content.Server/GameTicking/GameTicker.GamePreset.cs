@@ -36,6 +36,22 @@ public sealed partial class GameTicker
     /// </summary>
     public int? ResetCountdown;
 
+    // POLONIUM START
+    private static readonly ProtoId<GamePresetPrototype> HiddenPresetCover = "Secret";
+
+    /// <summary>
+    /// What players get to see instead of the real preset.
+    /// </summary>
+    [return: NotNullIfNotNull(nameof(preset))]
+    public GamePresetPrototype? HidePreset(GamePresetPrototype? preset)
+    {
+        if (preset != null && _cfg.GetCVar(CCVars.GamePresetHidden) && ProtoMan.TryIndex(HiddenPresetCover, out var cover))
+            return cover;
+
+        return preset;
+    }
+    // POLONIUM END
+
     private bool StartPreset(ICommonSession[] origReadyPlayers, bool force)
     {
         _sawmill.Info($"Attempting to start preset '{CurrentPreset?.ID}'");
@@ -46,11 +62,12 @@ public sealed partial class GameTicker
             return true;
 
         var presetTitle = CurrentPreset != null ? Loc.GetString(CurrentPreset.ModeTitle) : string.Empty;
+        var shownTitle = CurrentPreset != null ? Loc.GetString(HidePreset(CurrentPreset).ModeTitle) : string.Empty; // Polonium
 
         void FailedPresetRestart()
         {
             SendServerMessage(Loc.GetString("game-ticker-start-round-cannot-start-game-mode-restart",
-                ("failedGameMode", presetTitle)));
+                ("failedGameMode", shownTitle)));
             RestartRound();
             DelayStart(TimeSpan.FromSeconds(PresetFailedCooldownIncrease));
         }

@@ -54,7 +54,7 @@ namespace Content.Server.GameTicking
 
         private string GetInfoText()
         {
-            var preset = CurrentPreset ?? Preset;
+            var preset = HidePreset(CurrentPreset ?? Preset);
             if (preset == null)
             {
                 return string.Empty;

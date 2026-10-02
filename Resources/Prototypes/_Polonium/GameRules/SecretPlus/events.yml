@@ -1,0 +1,49 @@
+# Kopie standardowych zdarzeń dla planisty SecretPlus.
+# Cenę chaosu, wagę i progi ustawia się zwykle wierszem EventSelector w event_tables.yml i kopia nie jest wtedy potrzebna.
+# Kopię robimy tylko wtedy, gdy trzeba zmienić coś, czego wiersz nie umie (typ zdarzenia), albo gdy w tym samym
+# drzewie tabel jest też standardowa wersja zdarzenia. Czego tu nie ma, to przychodzi od rodzica.
+#
+#   weight             względna szansa zdarzenia (domyślnie 10)
+#   chaosScore         cena w chaosie
+#   minimumPlayers     wymagana liczba połączonych graczy (domyślnie 0)
+#   earliestStart      najwcześniejsza minuta rundy (domyślnie 5)
+#   reoccurrenceDelay  po ilu minutach zdarzenie może się powtórzyć (domyślnie 30)
+#   eventType          typ zdarzenia. Planista pomija typy wypisane w disallowedEvents
+
+# Tabela robocza drabinki oraz Admeme
+- type: entity
+  parent: GreytideVirus
+  id: GreytideVirusSecretPlus
+  components:
+  - type: StationEvent
+    minimumPlayers: 15
+    weight: 4
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 200
+
+# Antagoniści z ról duchów (pełna tabela) oraz Admeme
+- type: entity
+  parent: ReplicatorSpawn
+  id: ReplicatorSpawnSecretPlus
+  components:
+  - type: StationEvent
+    eventType: HostilesSpawn
+    weight: 4
+    minimumPlayers: 15
+    earliestStart: 25
+    reoccurrenceDelay: 45
+  - type: GameRule
+    chaosScore: 650
+
+# Tylko SurvivalPlus.
+- type: entity
+  parent: ZombieOutbreak
+  id: ZombieOutbreakSurvivalPlus
+  components:
+  - type: StationEvent
+    minimumPlayers: 25
+    weight: 2.5
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 700
