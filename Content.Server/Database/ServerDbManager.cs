@@ -264,6 +264,24 @@ namespace Content.Server.Database
 
         #endregion
 
+        #region Survey
+
+        Task SetSurveyResponse(SurveyResponse response);
+        Task<List<SurveyResponse>> GetSurveyResponses(int roundId);
+        Task<List<SurveyResponse>> GetSurveyResponses(DateTime from, DateTime to);
+
+        /// <summary>
+        /// Marks the survey digest of the period that starts at <paramref name="start"/> as posted.
+        /// </summary>
+        /// <returns>False if it was marked already.</returns>
+        Task<bool> AddSurveyDigest(DateTime start, int days);
+        Task RemoveSurveyDigest(DateTime start, int days);
+
+        Task AddSurveyComment(SurveyComment comment);
+        Task<List<SurveyComment>> GetSurveyComments(DateTime from, DateTime to);
+
+        #endregion
+
         #region Admin Notes
 
         Task<int> AddAdminNote(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, NoteSeverity severity, bool secret, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime);
@@ -844,6 +862,48 @@ namespace Content.Server.Database
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetTutorialCompletion(player));
+        }
+
+        public Task SetSurveyResponse(SurveyResponse response)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetSurveyResponse(response));
+        }
+
+        public Task<List<SurveyResponse>> GetSurveyResponses(int roundId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetSurveyResponses(roundId));
+        }
+
+        public Task<List<SurveyResponse>> GetSurveyResponses(DateTime from, DateTime to)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetSurveyResponses(from, to));
+        }
+
+        public Task<bool> AddSurveyDigest(DateTime start, int days)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddSurveyDigest(start, days));
+        }
+
+        public Task RemoveSurveyDigest(DateTime start, int days)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.RemoveSurveyDigest(start, days));
+        }
+
+        public Task AddSurveyComment(SurveyComment comment)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddSurveyComment(comment));
+        }
+
+        public Task<List<SurveyComment>> GetSurveyComments(DateTime from, DateTime to)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetSurveyComments(from, to));
         }
 
         public Task<int> AddAdminNote(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, NoteSeverity severity, bool secret, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime)

@@ -51,6 +51,9 @@ namespace Content.Server.Database
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
         public DbSet<CustomVoteLog> CustomVoteLog { get; set; } = null!;
         public DbSet<CustomVoteLogOption> CustomVoteLogOption { get; set; } = null!;
+        public DbSet<SurveyResponse> SurveyResponse { get; set; } = null!; // Polonium
+        public DbSet<SurveyDigest> SurveyDigest { get; set; } = null!; // Polonium
+        public DbSet<SurveyComment> SurveyComment { get; set; } = null!; // Polonium
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -296,6 +299,36 @@ namespace Content.Server.Database
                 .OwnsOne(p => p.HWId)
                 .Property(p => p.Type)
                 .HasDefaultValue(HwidType.Legacy);
+
+            // POLONIUM START
+            modelBuilder.Entity<SurveyResponse>()
+                .HasOne(response => response.Player)
+                .WithMany()
+                .HasForeignKey(response => response.PlayerUserId)
+                .HasPrincipalKey(player => player.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<SurveyResponse>()
+                .HasIndex(response => new { response.RoundId, response.PlayerUserId, response.Question })
+                .IsUnique();
+
+            modelBuilder.Entity<SurveyResponse>()
+                .HasIndex(response => response.Time);
+
+            modelBuilder.Entity<SurveyDigest>()
+                .HasIndex(digest => new { digest.Start, digest.Days })
+                .IsUnique();
+
+            modelBuilder.Entity<SurveyComment>()
+                .HasOne(comment => comment.Player)
+                .WithMany()
+                .HasForeignKey(comment => comment.PlayerUserId)
+                .HasPrincipalKey(player => player.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<SurveyComment>()
+                .HasIndex(comment => comment.Time);
+            // POLONIUM END
 
             ModelBan.OnModelCreating(modelBuilder);
             ModelCustomVoteLog.OnModelCreating(modelBuilder);
@@ -809,6 +842,75 @@ namespace Content.Server.Database
 
         public byte[] Data { get; set; } = default!;
     }
+
+    // POLONIUM START
+    [Table("survey_response")]
+    public sealed class SurveyResponse
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        [ForeignKey("Round")] public int RoundId { get; set; }
+        public Round? Round { get; set; }
+
+        public Guid PlayerUserId { get; set; }
+        public Player? Player { get; set; }
+
+        public string Question { get; set; } = string.Empty;
+        public int Value { get; set; }
+        public DateTime Time { get; set; }
+
+        public string Preset { get; set; } = string.Empty;
+        public TimeSpan RoundDuration { get; set; }
+        public int PlayerCount { get; set; }
+
+        /// <summary>
+        /// How many of the round's players were gone when it ended. Null for answers stored before this was recorded.
+        /// </summary>
+        public int? LeftCount { get; set; }
+
+        public string? Job { get; set; }
+        public string? Antag { get; set; }
+        public bool Dead { get; set; }
+        public TimeSpan TimeInRound { get; set; }
+        public TimeSpan Playtime { get; set; }
+    }
+
+    /// <summary>
+    /// Marks a period whose survey digest has been posted, so that it is posted only once.
+    /// </summary>
+    [Table("survey_digest")]
+    public sealed class SurveyDigest
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        public DateTime Start { get; set; }
+        public int Days { get; set; }
+        public DateTime Time { get; set; }
+    }
+
+    [Table("survey_comment")]
+    public sealed class SurveyComment
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        [ForeignKey("Round")] public int RoundId { get; set; }
+        public Round? Round { get; set; }
+
+        public Guid PlayerUserId { get; set; }
+        public Player? Player { get; set; }
+
+        public string Topic { get; set; } = string.Empty;
+        public string Text { get; set; } = string.Empty;
+        public DateTime Time { get; set; }
+
+        public string Preset { get; set; } = string.Empty;
+        public string? Job { get; set; }
+        public string? Antag { get; set; }
+    }
+    // POLONIUM END
 
     // Note: this interface isn't used by the game, but it *is* used by SS14.Admin.
     // Don't remove! Or face the consequences!

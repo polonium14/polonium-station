@@ -16,6 +16,7 @@ public sealed partial class RoundMoodSystem : EntitySystem
     [Dependency] private IPrototypeManager _proto = default!;
 
     private readonly Dictionary<ProtoId<RoundMoodPrototype>, int> _votes = new();
+    private readonly Dictionary<ProtoId<RoundMoodPrototype>, int> _roundVotes = new();
 
     public override void Initialize()
     {
@@ -58,7 +59,21 @@ public sealed partial class RoundMoodSystem : EntitySystem
 
     private void OnRoundStarted(RoundStartedEvent ev)
     {
+        _roundVotes.Clear();
+        foreach (var (mood, count) in _votes)
+        {
+            _roundVotes[mood] = count;
+        }
+
         _votes.Clear();
+    }
+
+    public List<(RoundMoodPrototype Mood, int Votes)> GetRoundVotes()
+    {
+        return GetMoods()
+            .Where(mood => _roundVotes.GetValueOrDefault(mood.ID) > 0)
+            .Select(mood => (mood, _roundVotes[mood.ID]))
+            .ToList();
     }
 
     public int GetVotes(ProtoId<RoundMoodPrototype> mood)

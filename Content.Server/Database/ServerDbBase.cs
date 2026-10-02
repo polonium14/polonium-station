@@ -1084,6 +1084,105 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return (row.TutorialCompleted, row.TutorialDuration);
         }
 
+        private readonly SemaphoreSlim _surveyResponseLock = new(1, 1);
+
+        public async Task SetSurveyResponse(SurveyResponse response)
+        {
+            await _surveyResponseLock.WaitAsync();
+
+            try
+            {
+                await using var db = await GetDb();
+
+                var existing = await db.DbContext.SurveyResponse.SingleOrDefaultAsync(r =>
+                    r.RoundId == response.RoundId &&
+                    r.PlayerUserId == response.PlayerUserId &&
+                    r.Question == response.Question);
+
+                if (existing == null)
+                {
+                    db.DbContext.SurveyResponse.Add(response);
+                }
+                else if (response.Time >= existing.Time)
+                {
+                    existing.Value = response.Value;
+                    existing.Time = response.Time;
+                }
+
+                await db.DbContext.SaveChangesAsync();
+            }
+            finally
+            {
+                _surveyResponseLock.Release();
+            }
+        }
+
+        public async Task<List<SurveyResponse>> GetSurveyResponses(int roundId)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.SurveyResponse
+                .Where(r => r.RoundId == roundId)
+                .ToListAsync();
+        }
+
+        public async Task<List<SurveyResponse>> GetSurveyResponses(DateTime from, DateTime to)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.SurveyResponse
+                .Where(r => r.Time >= from && r.Time < to)
+                .ToListAsync();
+        }
+
+        public async Task<bool> AddSurveyDigest(DateTime start, int days)
+        {
+            await using var db = await GetDb();
+
+            if (await db.DbContext.SurveyDigest.AnyAsync(d => d.Start == start && d.Days == days))
+                return false;
+
+            db.DbContext.SurveyDigest.Add(new SurveyDigest { Start = start, Days = days, Time = DateTime.UtcNow });
+
+            try
+            {
+                await db.DbContext.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                // Preventing the race conditions
+                return false;
+            }
+
+            return true;
+        }
+
+        public async Task RemoveSurveyDigest(DateTime start, int days)
+        {
+            await using var db = await GetDb();
+
+            await db.DbContext.SurveyDigest
+                .Where(d => d.Start == start && d.Days == days)
+                .ExecuteDeleteAsync();
+        }
+
+        public async Task AddSurveyComment(SurveyComment comment)
+        {
+            await using var db = await GetDb();
+
+            db.DbContext.SurveyComment.Add(comment);
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<List<SurveyComment>> GetSurveyComments(DateTime from, DateTime to)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.SurveyComment
+                .Where(c => c.Time >= from && c.Time < to)
+                .ToListAsync();
+        }
+
         public async Task<bool> GetBlacklistStatusAsync(NetUserId player)
         {
             await using var db = await GetDb();

@@ -10,6 +10,8 @@
     Standard: 8
     Hot: 20
     Madness: 30
+  surveyTargets:
+    RoundPace: 4
   rules:
   - SecretPlusHigh
   - BasicRoundstartVariation
