@@ -93,7 +93,7 @@ public sealed class RoundSurveyCommentBox : BoxContainer
 
     private void ShowLength()
     {
-        var length = Rope.CalcTotalLength(_text.TextRope);
+        var length = Rope.Collapse(_text.TextRope).Trim().Length;
 
         _status.Text = Loc.GetString("round-survey-comment-length",
             ("length", length.ToString()),

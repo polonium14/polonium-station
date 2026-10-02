@@ -4,7 +4,6 @@
   low: round-survey-answer-bad
   high: round-survey-answer-great
   always: true
-  minTimeInRound: 0 # TYMCZASOWE: tylko do sprawdzenia UI, usunąć przed commitem
   order: 0
 
 - type: roundSurveyQuestion
@@ -14,7 +13,6 @@
   high: round-survey-answer-chaotic
   target: 3
   always: true
-  minTimeInRound: 0 # TYMCZASOWE: tylko do sprawdzenia UI, usunąć przed commitem
   order: 1
 
 - type: roundSurveyQuestion
@@ -43,7 +41,6 @@
   low: round-survey-answer-not-at-all
   high: round-survey-answer-very
   audience: Crew
-  minTimeInRound: 0 # TYMCZASOWE: tylko do sprawdzenia UI, usunąć przed commitem
   order: 4
 
 - type: roundSurveyQuestion
