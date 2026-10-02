@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: ketufaispikinut
-  changes:
-  - message: Changed the EMP Implanter's uplink icon so it is less easily confused
-      with the Scram Implanter's.
-    type: Tweak
-  id: 9541
-  time: '2026-02-23T01:24:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42998
 - author: DaturoDewitt
   changes:
   - message: Lizards can laugh again!
@@ -4252,3 +4244,25 @@
   id: 10036
   time: '2026-10-01T18:08:13.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1084
+- author: Nikita
+  changes:
+  - message: "Dodano preset Sekret+ Wysoki z gwarantowanym trybem dru\u017Cynowym,\
+      \ dost\u0119pny od 15 graczy."
+    type: Add
+  - message: "Dodano g\u0142osowanie na nastr\xF3j nast\u0119pnej rundy oraz ukrywanie\
+      \ wybranego trybu. Obie opcje s\u0105 domy\u015Blnie wy\u0142\u0105czone."
+    type: Add
+  - message: "Sekret losuje teraz tryb wed\u0142ug nastroju rundy."
+    type: Tweak
+  - message: "Przebalansowano presety Sekret+: rzadsze tryby dru\u017Cynowe, mniej\
+      \ zdarze\u0144 i limit antagonist\xF3w z r\xF3l duch\xF3w."
+    type: Tweak
+  - message: "W najspokojniejszym presecie Sekret+ mog\u0105 pojawi\u0107 si\u0119\
+      \ ukryci antagoni\u015Bci."
+    type: Tweak
+  - message: "Przy du\u017Cej liczbie graczy zdarzenia w presetach Sekret+ przychodz\u0105\
+      \ cz\u0119\u015Bciej."
+    type: Tweak
+  id: 10037
+  time: '2026-10-02T09:10:48.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1085
