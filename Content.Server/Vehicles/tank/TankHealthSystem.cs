@@ -1,11 +1,11 @@
 using System.Linq;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
-using Content.Shared.Explosion.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Vehicles;
+using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -14,6 +14,9 @@ using Robust.Shared.Physics.Events;
 
 namespace Content.Server.Vehicles;
 
+/// <summary>
+/// Pancerz → kadłub. Jeden raz na pocisk (bez ×3 i bez „dziur” z boków).
+/// </summary>
 public sealed partial class TankHealthSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
@@ -22,105 +25,76 @@ public sealed partial class TankHealthSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     private readonly HashSet<EntityUid> _applying = new();
-
-    private static readonly HashSet<string> ValidDamageTypes = new()
-    {
-        "Blunt",
-        "Slash",
-        "Piercing",
-        "Heat",
-        "Structural",
-        "Caustic",
-    };
+    private readonly HashSet<EntityUid> _handledProj = new();
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<TankTurretComponent, StartCollideEvent>(OnStartCollide);
         SubscribeLocalEvent<TankTurretComponent, AttackedEvent>(OnAttacked);
-        SubscribeLocalEvent<TankTurretComponent, DamageChangedEvent>(OnDamageChanged);
     }
 
-    private static float SumRealDamage(DamageSpecifier? spec)
+    private static float SumDamage(DamageSpecifier? spec)
     {
         if (spec == null)
             return 0f;
 
         float total = 0f;
-        foreach (var (type, val) in spec.DamageDict)
+        foreach (var val in spec.DamageDict.Values)
         {
-            if (!ValidDamageTypes.Contains(type))
-                continue;
-            if (val <= 0)
-                continue;
-            total += (float)val;
+            if (val > 0)
+                total += (float)val;
         }
         return total;
     }
 
     private void OnStartCollide(EntityUid uid, TankTurretComponent component, ref StartCollideEvent args)
     {
-        if (!TryComp(args.OtherEntity, out ProjectileComponent? proj))
+        var other = args.OtherEntity;
+
+        if (!TryComp(other, out ProjectileComponent? proj))
             return;
 
+        // Własne pociski — zero
         if (proj.Shooter == uid || proj.Weapon == uid)
             return;
 
-        var amount = SumRealDamage(proj.Damage);
-
-        if (HasComp<ExplosiveComponent>(args.OtherEntity))
-        {
-            var boom = 0f;
-            if (TryComp(args.OtherEntity, out ExplosiveComponent? explosive))
-            {
-                boom = explosive.TotalIntensity;
-                if (boom < 1f)
-                    boom = explosive.MaxIntensity;
-            }
-
-            if (boom < 1f)
-                boom = 100f;
-
-            amount += boom;
-        }
-        else
-        {
-            amount *= 0.4f;
-        }
-
-        if (amount < 0.5f)
+        // Ten sam pocisk tylko raz (StartCollide bywa kilka razy)
+        if (!_handledProj.Add(other))
             return;
 
+        var amount = SumDamage(proj.Damage);
+        if (amount <= 0f)
+            return;
+
+        // Zdejmij dmg z pocisku, żeby silnik gry nie doliczył drugi raz
+        proj.Damage = new DamageSpecifier();
+        Dirty(other, proj);
+
         ApplyTankDamage(uid, component, amount);
+        QueueDel(other);
     }
 
     private void OnAttacked(EntityUid uid, TankTurretComponent component, AttackedEvent args)
     {
-        var amount = SumRealDamage(args.BonusDamage) * 0.5f;
-        if (amount < 0.5f)
+        var amount = SumDamage(args.BonusDamage);
+
+        if (TryComp(args.Used, out MeleeWeaponComponent? melee))
+        {
+            var weaponDmg = SumDamage(melee.Damage);
+            if (weaponDmg > amount)
+                amount = weaponDmg;
+        }
+
+        if (amount <= 0f)
             return;
 
         ApplyTankDamage(uid, component, amount);
     }
 
-    private void OnDamageChanged(EntityUid uid, TankTurretComponent component, DamageChangedEvent args)
-    {
-        if (_applying.Contains(uid))
-            return;
-
-        if (!args.DamageIncreased || args.DamageDelta == null)
-            return;
-
-        var delta = SumRealDamage(args.DamageDelta);
-        if (delta < 0.5f)
-            return;
-
-        ApplyTankDamage(uid, component, delta);
-    }
-
     private void ApplyTankDamage(EntityUid uid, TankTurretComponent component, float amount)
     {
-        if (amount < 0.5f)
+        if (amount <= 0f)
             return;
 
         if (!_applying.Add(uid))
@@ -128,18 +102,41 @@ public sealed partial class TankHealthSystem : EntitySystem
 
         try
         {
-            component.AccumulatedDamage += amount;
+            var left = amount;
+
+            if (!component.ArmorDestroyed && component.ArmorDamage < component.MaxArmor)
+            {
+                var room = component.MaxArmor - component.ArmorDamage;
+                var toArmor = MathF.Min(left, room);
+                component.ArmorDamage += toArmor;
+                left -= toArmor;
+
+                if (component.ArmorDamage >= component.MaxArmor)
+                {
+                    component.ArmorDestroyed = true;
+                    component.ArmorDamage = component.MaxArmor;
+                    _popup.PopupEntity("Pancerz zniszczony! Nie da sie go naprawic.", uid);
+                }
+            }
+
+            if (left > 0f)
+                component.HullDamage += left;
+
             Dirty(uid, component);
 
-            var dmg = new DamageSpecifier
-            {
-                DamageDict = { ["Blunt"] = amount }
-            };
-            _damageable.TryChangeDamage(uid, dmg, true);
+            // Czerwony flash — mały Blunt tylko pod UI, nasza logika liczy Armor/Hull
+            var flash = new DamageSpecifier { DamageDict = { ["Blunt"] = 0.01 } };
+            _damageable.TryChangeDamage(uid, flash, true);
 
-            _popup.PopupEntity($"Czolg: {component.AccumulatedDamage:0}/{component.MaxDamage:0} (+{amount:0})", uid);
+            var armorTxt = component.ArmorDestroyed
+                ? "Pancerz: ZNISZCZONY"
+                : $"Pancerz: {component.ArmorDamage:0}/{component.MaxArmor:0}";
 
-            if (component.AccumulatedDamage < component.MaxDamage)
+            _popup.PopupEntity(
+                $"{armorTxt} | Kadlub: {component.HullDamage:0}/{component.MaxHull:0} (+{amount:0})",
+                uid);
+
+            if (component.HullDamage < component.MaxHull)
                 return;
 
             EjectAll(uid);

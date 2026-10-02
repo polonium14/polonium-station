@@ -1,99 +1,51 @@
-using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
+using System.Numerics;
 using Content.Shared.Movement.Components;
 using Content.Shared.Popups;
+using Content.Shared.Projectiles;
 using Content.Shared.Vehicles;
-using Content.Shared.Weapons.Ranged.Systems;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using System.Numerics;
 
 namespace Content.Server.Vehicles;
 
+/// <summary>
+/// F = działo, R = KM.
+/// Spawn: pozycja czołgu + ToWorldVec(kąt) * dystans (prosto z lufy, bez boku).
+/// </summary>
 public sealed partial class TankShootSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedGunSystem _gun = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
-    private readonly Dictionary<EntityUid, (Vector2 Pos, TimeSpan Time)> _lastPos = new();
-    private readonly Dictionary<EntityUid, TimeSpan> _nextPopup = new();
+    private const float BulletSpeed = 30f;
+
+    /// <summary>Odległość spawnu od środka wzdłuż lufy (działo).</summary>
+    private const float MainSpawnDist = 2.4f;
+
+    /// <summary>Odległość spawnu od środka wzdłuż lufy (KM).</summary>
+    private const float MgSpawnDist = 1.8f;
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeNetworkEvent<TankShootEvent>(OnShoot);
+        SubscribeNetworkEvent<TankShootEvent>(OnShootRequest);
     }
 
-    public override void Update(float frameTime)
+    private void OnShootRequest(TankShootEvent msg, EntitySessionEventArgs args)
     {
-        base.Update(frameTime);
-
-        var now = _timing.CurTime;
-        var query = EntityQueryEnumerator<TankTurretComponent, TransformComponent>();
-
-        while (query.MoveNext(out var uid, out var turret, out var xform))
-        {
-            _lastPos[uid] = (_xform.GetWorldPosition(xform), now);
-
-            var dirty = false;
-            if (turret.MainReloading && now >= turret.NextMainFire)
-            {
-                turret.MainReloading = false;
-                dirty = true;
-            }
-            if (turret.MgReloading && now >= turret.MgReloadEnd)
-            {
-                turret.MgReloading = false;
-                dirty = true;
-            }
-            if (dirty)
-                Dirty(uid, turret);
-        }
-
-        var toRemove = new List<EntityUid>();
-        foreach (var uid in _lastPos.Keys)
-        {
-            if (!Exists(uid))
-                toRemove.Add(uid);
-        }
-        foreach (var uid in toRemove)
-            _lastPos.Remove(uid);
-
-        toRemove.Clear();
-        foreach (var uid in _nextPopup.Keys)
-        {
-            if (!Exists(uid))
-                toRemove.Add(uid);
-        }
-        foreach (var uid in toRemove)
-            _nextPopup.Remove(uid);
-    }
-
-    private void TryPopup(EntityUid tank, EntityUid player, string msg, TimeSpan now)
-    {
-        if (_nextPopup.TryGetValue(player, out var next) && now < next)
+        var player = args.SenderSession.AttachedEntity;
+        if (player == null)
             return;
 
-        _popup.PopupEntity(msg, tank, player);
-        _nextPopup[player] = now + TimeSpan.FromSeconds(1);
-    }
-
-    private void OnShoot(TankShootEvent args, EntitySessionEventArgs session)
-    {
-        if (session.SenderSession.AttachedEntity is not { } player)
-            return;
-
-        if (TryComp(player, out MobStateComponent? playerMob) &&
-            playerMob.CurrentState != MobState.Alive)
-            return;
-
-        if (!TryComp(player, out RelayInputMoverComponent? relay))
+        if (!TryComp(player.Value, out RelayInputMoverComponent? relay))
             return;
 
         var tank = relay.RelayEntity;
@@ -106,103 +58,134 @@ public sealed partial class TankShootSystem : EntitySystem
         if (!TryComp(tank, out TransformComponent? xform))
             return;
 
-        var now = _timing.CurTime;
-        var aimAngle = args.AimAngle;
-        turret.TurretAngle = aimAngle;
+        turret.TurretAngle = msg.AimAngle;
+        Dirty(tank, turret);
 
-        if (args.IsMain)
+        var now = _timing.CurTime;
+
+        if (msg.MachineGun)
+            TryFireMg(tank, turret, xform, player.Value, now, msg.AimAngle, msg.WorldPosition);
+        else
+            TryFireMain(tank, turret, xform, player.Value, now, msg.AimAngle, msg.WorldPosition);
+    }
+
+    private void TryFireMain(
+        EntityUid tank,
+        TankTurretComponent turret,
+        TransformComponent xform,
+        EntityUid player,
+        TimeSpan now,
+        Angle aim,
+        Vector2 worldPos)
+    {
+        if (now < turret.NextMainFire)
         {
-            if (now < turret.NextMainFire)
+            TryPopupCd(tank, turret, player, now, $"Dzialo: {(turret.NextMainFire - now).TotalSeconds:0.0}s");
+            return;
+        }
+
+        SpawnBullet(tank, xform, aim, worldPos, turret.MainProjectile, MainSpawnDist);
+        turret.NextMainFire = now + TimeSpan.FromSeconds(turret.MainFireRate);
+        Dirty(tank, turret);
+
+        if (turret.SoundMain != null)
+            _audio.PlayPvs(turret.SoundMain, tank);
+    }
+
+    private void TryFireMg(
+        EntityUid tank,
+        TankTurretComponent turret,
+        TransformComponent xform,
+        EntityUid player,
+        TimeSpan now,
+        Angle aim,
+        Vector2 worldPos)
+    {
+        if (turret.MgReloading)
+        {
+            if (now < turret.MgReloadEnd)
             {
-                var left = (turret.NextMainFire - now).TotalSeconds;
-                TryPopup(tank, player, $"Dzialo: {left:0.0}s", now);
+                TryPopupCd(tank, turret, player, now, $"KM przeladowanie: {(turret.MgReloadEnd - now).TotalSeconds:0.0}s");
                 return;
             }
 
-            FireProjectile(tank, xform, turret.MainProjectile, aimAngle, args.WorldPosition, 2.2f);
-            turret.NextMainFire = now + TimeSpan.FromSeconds(turret.MainFireRate);
-            turret.MainReloading = true;
-            Dirty(tank, turret);
-            return;
-        }
-
-        if (turret.MgReloading && now < turret.MgReloadEnd)
-        {
-            var left = (turret.MgReloadEnd - now).TotalSeconds;
-            TryPopup(tank, player, $"KM: przeladowanie {left:0.0}s", now);
-            return;
-        }
-
-        if (turret.MgReloading && now >= turret.MgReloadEnd)
-        {
             turret.MgReloading = false;
-            turret.MgBurstEnd = TimeSpan.Zero;
+            turret.MgBurstEnd = now + TimeSpan.FromSeconds(turret.MgBurstDuration);
+        }
+
+        if (now >= turret.MgBurstEnd && turret.MgBurstEnd != TimeSpan.Zero)
+        {
+            turret.MgReloading = true;
+            turret.MgReloadEnd = now + TimeSpan.FromSeconds(turret.MgReloadTime);
+            Dirty(tank, turret);
+            TryPopupCd(tank, turret, player, now, "KM: przeladowanie");
+            return;
         }
 
         if (turret.MgBurstEnd == TimeSpan.Zero)
             turret.MgBurstEnd = now + TimeSpan.FromSeconds(turret.MgBurstDuration);
 
-        if (now >= turret.MgBurstEnd)
-        {
-            turret.MgReloading = true;
-            turret.MgReloadEnd = now + TimeSpan.FromSeconds(turret.MgReloadTime);
-            turret.MgBurstEnd = TimeSpan.Zero;
-            Dirty(tank, turret);
-            TryPopup(tank, player, $"KM: przeladowanie {turret.MgReloadTime:0}s", now);
-            return;
-        }
-
         if (now < turret.NextMgFire)
             return;
 
-        FireProjectile(tank, xform, turret.MgProjectile, aimAngle, args.WorldPosition, 1.3f);
+        SpawnBullet(tank, xform, aim, worldPos, turret.MgProjectile, MgSpawnDist);
         turret.NextMgFire = now + TimeSpan.FromSeconds(turret.MgFireRate);
         Dirty(tank, turret);
+
+        if (turret.SoundMg != null)
+            _audio.PlayPvs(turret.SoundMg, tank);
     }
 
-    private Vector2 GetTankVelocity(EntityUid tankUid, Vector2 currentPos)
+    private void TryPopupCd(EntityUid tank, TankTurretComponent turret, EntityUid player, TimeSpan now, string text)
     {
-        var physVel = _physics.GetMapLinearVelocity(tankUid);
-        if (physVel.LengthSquared() > 0.01f)
-            return physVel;
-
-        var now = _timing.CurTime;
-        if (_lastPos.TryGetValue(tankUid, out var last))
-        {
-            var dt = (float)(now - last.Time).TotalSeconds;
-            if (dt > 0.001f && dt < 0.5f)
-                return (currentPos - last.Pos) / dt;
-        }
-
-        return Vector2.Zero;
-    }
-
-    private void FireProjectile(
-        EntityUid tankUid,
-        TransformComponent xform,
-        EntProtoId protoId,
-        Angle angle,
-        Vector2 clientPos,
-        float spawnDistance)
-    {
-        if (!_proto.TryIndex(protoId, out _))
+        if (now < turret.NextCdPopup)
             return;
 
+        turret.NextCdPopup = now + TimeSpan.FromSeconds(1.0);
+        Dirty(tank, turret);
+        _popup.PopupEntity(text, tank, player);
+    }
+
+    /// <summary>
+    /// Jak w starej działającej wersji:
+    /// kierunek = AimAngle.ToWorldVec(), spawn = pozycja + kierunek * dystans.
+    /// </summary>
+    private void SpawnBullet(
+        EntityUid tank,
+        TransformComponent xform,
+        Angle angle,
+        Vector2 worldPos,
+        EntProtoId proto,
+        float spawnDistance)
+    {
+        if (!_proto.TryIndex(proto, out _))
+            return;
+
+        // WAŻNE: ToWorldVec, nie ToVec — inaczej kąt idzie bokiem
         var dir = angle.ToWorldVec();
         if (dir.LengthSquared() < 0.0001f)
             return;
 
         dir = dir.Normalized();
 
-        var tankVel = GetTankVelocity(tankUid, clientPos);
-        var spawnPos = clientPos + dir * spawnDistance + tankVel * 0.05f;
-        var mapId = xform.MapID;
+        // Serwerowa pozycja czołgu (bardziej pewna niż sama wiadomość klienta)
+        var center = _xform.GetWorldPosition(xform);
+        var spawnPos = center + dir * spawnDistance;
 
-        if (mapId == MapId.Nullspace)
+        if (xform.MapID == MapId.Nullspace)
             return;
 
-        var projectile = Spawn(protoId, new MapCoordinates(spawnPos, mapId));
-        _xform.SetWorldRotation(projectile, angle);
-        _gun.ShootProjectile(projectile, dir, tankVel, tankUid, tankUid, 55f);
+        var bullet = Spawn(proto, new MapCoordinates(spawnPos, xform.MapID));
+        _xform.SetWorldRotation(bullet, angle);
+
+        if (TryComp(bullet, out ProjectileComponent? proj))
+        {
+            proj.Shooter = tank;
+            proj.Weapon = tank;
+            Dirty(bullet, proj);
+        }
+
+        if (TryComp(bullet, out PhysicsComponent? phys))
+            _physics.SetLinearVelocity(bullet, dir * BulletSpeed, body: phys);
     }
 }

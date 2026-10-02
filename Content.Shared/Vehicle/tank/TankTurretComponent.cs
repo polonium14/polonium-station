@@ -1,3 +1,4 @@
+using System.Numerics;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -5,16 +6,22 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Vehicles;
 
+/// <summary>
+/// Wieża: celowanie, strzały, pancerz, kadłub.
+/// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class TankTurretComponent : Component
 {
+    /// <summary>Kąt wieży = kierunek do myszy (strzał).</summary>
     [DataField, AutoNetworkedField]
     public Angle TurretAngle;
 
-    [DataField, AutoNetworkedField]
+    /// <summary>Offset tylko pod grafikę lufy. Nie wpływa na kierunek pocisku.</summary>
+    [DataField]
     public float AimOffset = 90f;
 
-    [DataField, AutoNetworkedField]
+    /// <summary>Szybkość obrotu wieży.</summary>
+    [DataField]
     public float RotateSpeed = 5f;
 
     [DataField, AutoNetworkedField]
@@ -53,11 +60,15 @@ public sealed partial class TankTurretComponent : Component
     [DataField, AutoNetworkedField]
     public bool MainReloading;
 
-    [DataField, AutoNetworkedField]
-    public float AccumulatedDamage;
+    /// <summary>Limit spamu popup o CD (co 1 s).</summary>
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
+    public TimeSpan NextCdPopup = TimeSpan.Zero;
 
     [DataField]
-    public float MaxDamage = 200f;
+    public Vector2 MuzzleLocalOffset = new(0f, 2.2f);
+
+    [DataField]
+    public Vector2 MgMuzzleLocalOffset = new(0f, 1.7f);
 
     [DataField]
     public SoundSpecifier? SoundMain;
@@ -65,6 +76,21 @@ public sealed partial class TankTurretComponent : Component
     [DataField]
     public SoundSpecifier? SoundMg;
 
-    [DataField]
-    public SoundSpecifier? SoundEngine;
+    [DataField, AutoNetworkedField]
+    public float MaxArmor = 200f;
+
+    [DataField, AutoNetworkedField]
+    public float ArmorDamage;
+
+    [DataField, AutoNetworkedField]
+    public bool ArmorDestroyed;
+
+    [DataField, AutoNetworkedField]
+    public float MaxHull = 400f;
+
+    [DataField, AutoNetworkedField]
+    public float HullDamage;
+
+    [DataField, AutoNetworkedField]
+    public bool PanelsOpen;
 }
