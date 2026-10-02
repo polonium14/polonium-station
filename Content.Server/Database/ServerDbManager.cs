@@ -277,6 +277,9 @@ namespace Content.Server.Database
         Task<bool> AddSurveyDigest(DateTime start, int days);
         Task RemoveSurveyDigest(DateTime start, int days);
 
+        Task AddSurveyComment(SurveyComment comment);
+        Task<List<SurveyComment>> GetSurveyComments(DateTime from, DateTime to);
+
         #endregion
 
         #region Admin Notes
@@ -889,6 +892,18 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.RemoveSurveyDigest(start, days));
+        }
+
+        public Task AddSurveyComment(SurveyComment comment)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddSurveyComment(comment));
+        }
+
+        public Task<List<SurveyComment>> GetSurveyComments(DateTime from, DateTime to)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetSurveyComments(from, to));
         }
 
         public Task<int> AddAdminNote(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, NoteSeverity severity, bool secret, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime)

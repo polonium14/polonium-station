@@ -16,7 +16,7 @@ using NpgsqlTypes;
 namespace Content.Server.Database.Migrations.Postgres
 {
     [DbContext(typeof(PostgresServerDbContext))]
-    [Migration("20261002120739_RoundSurvey")]
+    [Migration("20261002151522_RoundSurvey")]
     partial class RoundSurvey
     {
         /// <inheritdoc />
@@ -1414,6 +1414,63 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("server_ban_hit", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.SurveyComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("survey_comment_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Antag")
+                        .HasColumnType("text")
+                        .HasColumnName("antag");
+
+                    b.Property<string>("Job")
+                        .HasColumnType("text")
+                        .HasColumnName("job");
+
+                    b.Property<Guid>("PlayerUserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("player_user_id");
+
+                    b.Property<string>("Preset")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("preset");
+
+                    b.Property<int>("RoundId")
+                        .HasColumnType("integer")
+                        .HasColumnName("round_id");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("text");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("time");
+
+                    b.Property<string>("Topic")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("topic");
+
+                    b.HasKey("Id")
+                        .HasName("PK_survey_comment");
+
+                    b.HasIndex("PlayerUserId");
+
+                    b.HasIndex("RoundId")
+                        .HasDatabaseName("IX_survey_comment_round_id");
+
+                    b.HasIndex("Time");
+
+                    b.ToTable("survey_comment", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.SurveyDigest", b =>
                 {
                     b.Property<int>("Id")
@@ -2190,6 +2247,28 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Ban");
 
                     b.Navigation("Connection");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.SurveyComment", b =>
+                {
+                    b.HasOne("Content.Server.Database.Player", "Player")
+                        .WithMany()
+                        .HasForeignKey("PlayerUserId")
+                        .HasPrincipalKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_survey_comment_player_player_id");
+
+                    b.HasOne("Content.Server.Database.Round", "Round")
+                        .WithMany()
+                        .HasForeignKey("RoundId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_survey_comment_round_round_id");
+
+                    b.Navigation("Player");
+
+                    b.Navigation("Round");
                 });
 
             modelBuilder.Entity("Content.Server.Database.SurveyResponse", b =>

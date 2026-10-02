@@ -13,6 +13,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
     public RoundSurveyOfferEvent? Offer { get; private set; }
 
     public event Action? OfferReceived;
+    public event Action<bool>? CommentResult;
 
     private TimeSpan? _closesAt;
 
@@ -22,6 +23,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
 
         SubscribeNetworkEvent<RoundSurveyOfferEvent>(OnOffer);
         SubscribeNetworkEvent<RoundSurveyDeadlineEvent>(OnDeadline);
+        SubscribeNetworkEvent<RoundSurveyCommentResultEvent>(OnCommentResult);
     }
 
     public override void Shutdown()
@@ -83,5 +85,18 @@ public sealed partial class RoundSurveySystem : EntitySystem
     {
         if (IsOpen(roundId))
             RaiseNetworkEvent(new RoundSurveyAnswerEvent(roundId, question, value));
+    }
+
+    private void OnCommentResult(RoundSurveyCommentResultEvent ev)
+    {
+        CommentResult?.Invoke(ev.Accepted);
+    }
+
+    /// <summary>
+    /// Sends a comment, <see cref="CommentResult"/> tells whether the server took it.
+    /// </summary>
+    public void Comment(int? roundId, ProtoId<RoundSurveyTopicPrototype> topic, string text)
+    {
+        RaiseNetworkEvent(new RoundSurveyCommentEvent(roundId, topic, text));
     }
 }

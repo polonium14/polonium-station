@@ -78,7 +78,7 @@ public sealed partial class RoundEndSummaryUIController : UIController,
         _surveyWindow = new DefaultWindow
         {
             Title = Loc.GetString("round-survey-tab-title"),
-            MinSize = new Vector2(520, 360),
+            MinSize = new Vector2(520, 620),
         };
 
         _surveyWindow.Contents.AddChild(_surveyTab);

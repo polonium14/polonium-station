@@ -5,10 +5,10 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     /// <summary>
-    /// Offer players a short optional survey when the round ends.
+    /// Offer players a short optional survey when the round ends and let them write comments about the game.
     /// </summary>
     public static readonly CVarDef<bool> SurveyEnabled =
-        CVarDef.Create("survey.enabled", false, CVar.SERVERONLY);
+        CVarDef.Create("survey.enabled", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// The survey of a round stays open through the lobby and for this many seconds after the next round has started.
@@ -24,7 +24,8 @@ public sealed partial class CCVars
         CVarDef.Create("discord.survey_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
     /// <summary>
-    /// URL of the Discord webhook which will receive each player's own answers, one message per player and round.
+    /// URL of the Discord webhook which will receive each player's own answers and comments, one message per player and round.
+    /// A comment written outside of a survey gets a message of its own.
     /// The messages name the player, so keep the channel staff-only. If left empty, disables the webhook.
     /// </summary>
     public static readonly CVarDef<string> DiscordSurveyResponsesWebhook =

@@ -1166,6 +1166,23 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 .ExecuteDeleteAsync();
         }
 
+        public async Task AddSurveyComment(SurveyComment comment)
+        {
+            await using var db = await GetDb();
+
+            db.DbContext.SurveyComment.Add(comment);
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<List<SurveyComment>> GetSurveyComments(DateTime from, DateTime to)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.SurveyComment
+                .Where(c => c.Time >= from && c.Time < to)
+                .ToListAsync();
+        }
+
         public async Task<bool> GetBlacklistStatusAsync(NetUserId player)
         {
             await using var db = await GetDb();

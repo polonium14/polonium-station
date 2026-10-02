@@ -63,3 +63,38 @@ public sealed class RoundSurveyAnswerEvent : EntityEventArgs
         Value = value;
     }
 }
+
+[Serializable, NetSerializable]
+public sealed class RoundSurveyCommentEvent : EntityEventArgs
+{
+    public const int MaxLength = 500;
+
+    /// <summary>
+    /// The round whose survey the comment was written in. Null if it was written outside of a survey.
+    /// </summary>
+    public int? RoundId;
+
+    public ProtoId<RoundSurveyTopicPrototype> Topic;
+    public string Text;
+
+    public RoundSurveyCommentEvent(int? roundId, ProtoId<RoundSurveyTopicPrototype> topic, string text)
+    {
+        RoundId = roundId;
+        Topic = topic;
+        Text = text;
+    }
+}
+
+/// <summary>
+/// Tells the player whether the comment they have just sent was taken.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class RoundSurveyCommentResultEvent : EntityEventArgs
+{
+    public bool Accepted;
+
+    public RoundSurveyCommentResultEvent(bool accepted)
+    {
+        Accepted = accepted;
+    }
+}

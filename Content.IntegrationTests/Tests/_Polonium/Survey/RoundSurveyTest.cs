@@ -33,6 +33,81 @@ public sealed class RoundSurveyTest : GameTest
   minTimeInRound: 0
   order: 100
 
+- type: roundSurveyQuestion
+  id: SurveyTestExpired
+  text: round-survey-question-pace
+  low: round-survey-answer-calm
+  high: round-survey-answer-chaotic
+  always: true
+  minTimeInRound: 0
+  until: 2020-01-01
+  order: 101
+
+- type: roundSurveyQuestion
+  id: SurveyTestFuture
+  text: round-survey-question-pace
+  low: round-survey-answer-calm
+  high: round-survey-answer-chaotic
+  always: true
+  minTimeInRound: 0
+  from: 2099-01-01
+  order: 102
+
+- type: roundSurveyQuestion
+  id: SurveyTestCaptains
+  text: round-survey-question-pace
+  low: round-survey-answer-calm
+  high: round-survey-answer-chaotic
+  always: true
+  minTimeInRound: 0
+  from: 2020-01-01
+  until: 2099-12-31
+  jobs: [ Captain ]
+  order: 103
+
+- type: roundSurveyQuestion
+  id: SurveyTestEngineering
+  text: round-survey-question-pace
+  low: round-survey-answer-calm
+  high: round-survey-answer-chaotic
+  always: true
+  minTimeInRound: 0
+  departments: [ Engineering ]
+  order: 104
+
+- type: roundSurveyQuestion
+  id: SurveyTestTraitors
+  text: round-survey-question-pace
+  low: round-survey-answer-calm
+  high: round-survey-answer-chaotic
+  always: true
+  minTimeInRound: 0
+  antags: [ Traitor ]
+  order: 105
+
+- type: roundSurveyQuestion
+  id: SurveyTestYesNo
+  text: round-survey-question-memorable
+  low: round-survey-answer-no
+  high: round-survey-answer-yes
+  yesNo: true
+  always: true
+  minTimeInRound: 0
+  ruleWhitelist:
+    tags: [ SurveyTestYesNo ]
+  order: 106
+
+- type: Tag
+  id: SurveyTestYesNo
+
+- type: entity
+  id: SurveyTestYesNoRule
+  parent: BaseGameRule
+  categories: [ GameRules ]
+  components:
+  - type: Tag
+    tags: [ SurveyTestYesNo ]
+
 - type: roundMood
   id: SurveyTestMood
   name: ui-vote-mood-hot
@@ -65,6 +140,13 @@ public sealed class RoundSurveyTest : GameTest
     private const string AntagStrength = "AntagStrength";
     private const string OwnAntagStrength = "OwnAntagStrength";
     private const string DepartmentNeeded = "DepartmentNeeded";
+    private const string TestCaptains = "SurveyTestCaptains";
+    private const string TestEngineering = "SurveyTestEngineering";
+    private const string TestTraitors = "SurveyTestTraitors";
+    private const string TestYesNo = "SurveyTestYesNo";
+    private const string TestYesNoRule = "SurveyTestYesNoRule";
+    private const string BugTopic = "Bug";
+    private const string OtherTopic = "Other";
     private const float CloseDelay = 3f;
 
     public override PoolSettings PoolSettings => new()
@@ -94,6 +176,16 @@ public sealed class RoundSurveyTest : GameTest
 
                     if (question.Target != null)
                         Assert.That(question.Target, Is.InRange(RoundSurveyQuestionPrototype.MinAnswer, RoundSurveyQuestionPrototype.MaxAnswer), question.ID);
+
+                    Assert.That(question.YesNo && question.Target != null, Is.False, $"{question.ID} is a yes or no question with a target");
+                    Assert.That(question.Cooldown, Is.GreaterThanOrEqualTo(0), question.ID);
+                }
+
+                var topics = server.ProtoMan.EnumeratePrototypes<RoundSurveyTopicPrototype>().ToList();
+                Assert.That(topics, Is.Not.Empty);
+                foreach (var topic in topics)
+                {
+                    Assert.That(loc.HasString(topic.Name), $"{topic.ID} has no name");
                 }
 
                 foreach (var preset in server.ProtoMan.EnumeratePrototypes<GamePresetPrototype>())
@@ -143,6 +235,209 @@ public sealed class RoundSurveyTest : GameTest
                     Assert.That(survey.PickQuestions(newcomer, true).Select(question => question.Id), Is.EqualTo(new[] { TestQuestion }));
                 }
             });
+        });
+    }
+
+    [Test]
+    public async Task QuestionsFollowDatesAndRoles()
+    {
+        var server = Pair.Server;
+        var survey = server.System<ServerSurveySystem>();
+
+        await server.WaitAssertion(() =>
+        {
+            // Too new to the round for the stock questions, which leaves the test ones.
+            var passenger = new RoundSurveyRespondent("Passenger", null, false, TimeSpan.FromSeconds(1), TimeSpan.Zero);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(survey.PickQuestions(passenger, false).Select(question => question.Id),
+                    Is.EqualTo(new[] { TestQuestion }), "Asked a question outside of its dates or roles");
+                Assert.That(survey.PickQuestions(passenger with { Job = "Captain" }, false).Select(question => question.Id),
+                    Is.EqualTo(new[] { TestQuestion, TestCaptains }));
+                Assert.That(survey.PickQuestions(passenger with { Job = "StationEngineer" }, false).Select(question => question.Id),
+                    Is.EqualTo(new[] { TestQuestion, TestEngineering }));
+                Assert.That(survey.PickQuestions(passenger with { Antag = "Traitor" }, false).Select(question => question.Id),
+                    Is.EqualTo(new[] { TestQuestion, TestTraitors }));
+            });
+        });
+    }
+
+    [Test]
+    public async Task DrawnQuestionsRest()
+    {
+        var server = Pair.Server;
+        var survey = server.System<ServerSurveySystem>();
+
+        await server.WaitAssertion(() =>
+        {
+            var user = new NetUserId(Guid.NewGuid());
+            var crew = new RoundSurveyRespondent("Passenger", null, false, TimeSpan.FromMinutes(30), TimeSpan.Zero);
+
+            var first = survey.PickQuestions(crew, true, user);
+            var drawn = first.Select(question => question.Id).Single(id => id != Rating && id != Pace);
+            survey.Remember(user, first);
+
+            for (var i = 0; i < 50; i++)
+            {
+                var asked = survey.PickQuestions(crew, true, user).Select(question => question.Id).ToList();
+                Assert.That(asked, Has.Count.EqualTo(ServerSurveySystem.MaxQuestions));
+                Assert.That(asked, Does.Not.Contain(drawn), "Drew the same question in two surveys in a row");
+            }
+
+            survey.Remember(user, survey.PickQuestions(crew, true, user));
+
+            var back = false;
+            for (var i = 0; i < 200 && !back; i++)
+            {
+                back = survey.PickQuestions(crew, true, user).Any(question => question.Id == drawn);
+            }
+
+            Assert.That(back, "A question never came back after its rest");
+        });
+    }
+
+    [Test]
+    public async Task YesNoQuestionsAndComments()
+    {
+        var server = Pair.Server;
+        var client = Pair.Client;
+        var survey = server.System<ServerSurveySystem>();
+        var digests = server.System<RoundSurveyDigestSystem>();
+        var db = server.ResolveDependency<IServerDbManager>();
+        var loc = server.ResolveDependency<ILocalizationManager>();
+
+        server.CfgMan.SetCVar(CCVars.SurveyEnabled, true);
+
+        var started = DateTime.UtcNow;
+        await StartRound();
+        await Pair.WaitCommand($"addgamerule {TestYesNoRule}");
+        await Pair.WaitCommand("endround");
+        await Pair.RunTicksSync(10);
+
+        var user = Pair.Player!.UserId;
+        var roundId = server.System<GameTicker>().RoundId;
+        var clientSurvey = client.System<ClientSurveySystem>();
+
+        var memorable = string.Empty;
+        var yes = string.Empty;
+        var bug = string.Empty;
+        var other = string.Empty;
+        var commentsSection = string.Empty;
+
+        await server.WaitAssertion(() =>
+        {
+            memorable = loc.GetString("round-survey-question-memorable");
+            yes = loc.GetString("round-survey-answer-yes");
+            bug = loc.GetString("round-survey-topic-bug");
+            other = loc.GetString("round-survey-topic-other");
+            commentsSection = loc.GetString("round-survey-digest-comments");
+
+            Assert.That(survey.GetOffered(user).Select(question => question.Id), Is.EqualTo(new[] { TestQuestion, TestYesNo }));
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(survey.TryAnswer(Pair.Player!, roundId, TestYesNo, 3), Is.False, "Accepted the middle of the scale as a yes or no");
+                Assert.That(survey.TryAnswer(Pair.Player!, roundId, TestYesNo, RoundSurveyQuestionPrototype.MaxAnswer), Is.True);
+            });
+
+            var summary = survey.GetSummary()!.Value.Embeds![0].Fields.Single(field => field.Name == memorable);
+            var response = survey.GetResponse(user)!.Value.Embeds![0].Fields.Single(field => field.Name == memorable);
+            Assert.Multiple(() =>
+            {
+                Assert.That(summary.Value,
+                    Is.EqualTo(loc.GetString("round-survey-discord-yes-no", ("answer", yes), ("share", "100"), ("yes", "1"), ("count", "1"))));
+                Assert.That(response.Value, Is.EqualTo($"**{yes}**"));
+            });
+        });
+
+        await WaitForAnswer(roundId, RoundSurveyQuestionPrototype.MaxAnswer);
+
+        await client.WaitAssertion(() =>
+        {
+            var ui = client.ResolveDependency<IUserInterfaceManager>();
+            Assert.That(HasControl<RoundSurveyCommentBox>(ui.WindowRoot), "The survey has no place to write a comment");
+        });
+
+        var results = new List<bool>();
+        clientSurvey.CommentResult += results.Add;
+        await client.WaitPost(() => clientSurvey.Comment(roundId, BugTopic, "  The airlock ate me  "));
+        await Pair.RunTicksSync(10);
+        Assert.That(results, Is.EqualTo(new[] { true }));
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.That(survey.TryComment(Pair.Player!, null, BugTopic, "   "), Is.False, "Accepted an empty comment");
+                Assert.That(survey.TryComment(Pair.Player!, null, BugTopic, new string('x', RoundSurveyCommentEvent.MaxLength + 1)), Is.False,
+                    "Accepted a comment that is too long");
+                Assert.That(survey.TryComment(Pair.Player!, null, "SurveyTestNoSuchTopic", "Text"), Is.False, "Accepted an unknown topic");
+
+                Assert.That(survey.TryComment(Pair.Player!, null, OtherTopic, "Second"), Is.True);
+                Assert.That(survey.TryComment(Pair.Player!, roundId, OtherTopic, "Third"), Is.True);
+                Assert.That(survey.TryComment(Pair.Player!, null, OtherTopic, "Fourth"), Is.False, "Accepted more comments than a round allows");
+            });
+
+            // Comments written in the survey go along with the player's answers, the others get a message of their own.
+            var fields = survey.GetResponse(user)!.Value.Embeds![0].Fields;
+            var inSurvey = fields.Select(field => field.Value).ToList();
+            Assert.Multiple(() =>
+            {
+                Assert.That(fields.Single(field => field.Value == "The airlock ate me").Name,
+                    Is.EqualTo(loc.GetString("round-survey-discord-comment-field", ("topic", bug))));
+                Assert.That(inSurvey, Does.Contain("Third"));
+                Assert.That(inSurvey, Does.Not.Contain("Second"));
+            });
+        });
+
+        var until = DateTime.UtcNow.AddDays(1);
+        var comments = new List<SurveyComment>();
+        for (var i = 0; i < 20 && comments.Count < ServerSurveySystem.MaxCommentsPerRound; i++)
+        {
+            await Pair.RunTicksSync(5);
+            comments = await db.GetSurveyComments(started, until);
+        }
+
+        Assert.That(comments, Has.Count.EqualTo(ServerSurveySystem.MaxCommentsPerRound));
+
+        var first = comments.Single(comment => comment.Topic == BugTopic);
+        Assert.Multiple(() =>
+        {
+            Assert.That(first.Text, Is.EqualTo("The airlock ate me"));
+            Assert.That(first.RoundId, Is.EqualTo(roundId));
+            Assert.That(first.PlayerUserId, Is.EqualTo(user.UserId));
+            Assert.That(first.Preset, Is.EqualTo(TestPreset));
+            Assert.That(first.Job, Is.Not.Null);
+        });
+
+        await server.WaitAssertion(() =>
+        {
+            var embed = survey.BuildComment(first, "Tester").Embeds![0];
+            Assert.Multiple(() =>
+            {
+                Assert.That(embed.Title, Is.EqualTo("Tester"));
+                Assert.That(embed.Description, Does.Contain(first.Text).And.Contain(bug).And.Contain(TestPreset));
+            });
+        });
+
+        var digest = await digests.GetDigest(started, until);
+        Assert.That(digest, Is.Not.Null);
+
+        var answers = digest!.Sections.Single(section => section.Name == memorable).Table;
+        var topics = digest.Sections.Single(section => section.Name == commentsSection).Table;
+        Assert.Multiple(() =>
+        {
+            Assert.That(answers.Split('\n')[0], Does.EndWith(yes));
+            Assert.That(Row(answers, TestPreset), Is.EqualTo(new[] { "1", "100%" }));
+            Assert.That(Row(topics, other), Is.EqualTo(new[] { "2" }));
+            Assert.That(Row(topics, bug), Is.EqualTo(new[] { "1" }));
+        });
+
+        server.CfgMan.SetCVar(CCVars.SurveyEnabled, false);
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(survey.TryComment(Pair.Player!, null, OtherTopic, "Text"), Is.False, "Accepted a comment with the survey switched off");
         });
     }
 
@@ -459,7 +754,7 @@ public sealed class RoundSurveyTest : GameTest
 
         await server.WaitAssertion(() =>
         {
-            var digest = digests.BuildDigest(responses, from, from.AddDays(7))!;
+            var digest = digests.BuildDigest(responses, [], from, from.AddDays(7))!;
             var medium = loc.GetString("round-survey-digest-players-range", ("min", "15"), ("max", "29"));
             var large = loc.GetString("round-survey-digest-players-from", ("min", "45"));
 
@@ -494,9 +789,9 @@ public sealed class RoundSurveyTest : GameTest
                 Assert.That(embed.Fields[1].Value, Does.StartWith("```").And.EndWith("```"));
             });
 
-            Assert.That(digests.BuildDigest(responses, from, from.AddDays(1))!.Title,
+            Assert.That(digests.BuildDigest(responses, [], from, from.AddDays(1))!.Title,
                 Is.EqualTo(loc.GetString("round-survey-digest-title-day", ("day", "21.09"))));
-            Assert.That(digests.BuildDigest([], from, from.AddDays(7)), Is.Null);
+            Assert.That(digests.BuildDigest([], [], from, from.AddDays(7)), Is.Null);
         });
     }
 
@@ -637,6 +932,11 @@ public sealed class RoundSurveyTest : GameTest
 
     private static bool HasSurveyTab(Control control)
     {
-        return control is RoundSurveyTab || control.Children.Any(HasSurveyTab);
+        return HasControl<RoundSurveyTab>(control);
+    }
+
+    private static bool HasControl<T>(Control control) where T : Control
+    {
+        return control is T || control.Children.Any(HasControl<T>);
     }
 }

@@ -3,6 +3,7 @@ using Content.Client.Stylesheets;
 using Content.Shared._Polonium.Survey;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Client._Polonium.Survey;
@@ -54,24 +55,31 @@ public sealed class RoundSurveyTab : BoxContainer
             var group = new ButtonGroup();
             for (var value = RoundSurveyQuestionPrototype.MinAnswer; value <= RoundSurveyQuestionPrototype.MaxAnswer; value++)
             {
+                var low = value == RoundSurveyQuestionPrototype.MinAnswer;
+                var high = value == RoundSurveyQuestionPrototype.MaxAnswer;
+                if (question.YesNo && !low && !high)
+                    continue;
+
                 var answer = value;
                 var button = new Button
                 {
-                    Text = value.ToString(),
+                    Text = question.YesNo ? Loc.GetString(high ? question.High : question.Low) : value.ToString(),
                     Group = group,
-                    MinSize = new Vector2(48, 0),
+                    MinSize = new Vector2(question.YesNo ? 96 : 48, 0),
                 };
 
-                button.AddStyleClass(value switch
-                {
-                    RoundSurveyQuestionPrototype.MinAnswer => StyleClass.ButtonOpenRight,
-                    RoundSurveyQuestionPrototype.MaxAnswer => StyleClass.ButtonOpenLeft,
-                    _ => StyleClass.ButtonOpenBoth,
-                });
+                button.AddStyleClass(low ? StyleClass.ButtonOpenRight : high ? StyleClass.ButtonOpenLeft : StyleClass.ButtonOpenBoth);
 
                 button.OnPressed += _ => _survey.Answer(_roundId, question.ID, answer);
                 buttons.AddChild(button);
                 _answers.Add(button);
+            }
+
+            if (question.YesNo)
+            {
+                buttons.HorizontalAlignment = HAlignment.Left;
+                list.AddChild(buttons);
+                continue;
             }
 
             var ends = new BoxContainer
@@ -107,6 +115,19 @@ public sealed class RoundSurveyTab : BoxContainer
             scale.AddChild(buttons);
             scale.AddChild(ends);
             list.AddChild(scale);
+        }
+
+        var comment = new RoundSurveyCommentBox(survey, IoCManager.Resolve<IPrototypeManager>(), _roundId);
+        if (comment.Visible)
+        {
+            list.AddChild(new Label
+            {
+                Text = Loc.GetString("round-survey-comment-heading"),
+                StyleClasses = { StyleClass.LabelHeading },
+                Margin = new Thickness(0, 16, 0, 4),
+            });
+
+            list.AddChild(comment);
         }
 
         var scroll = new ScrollContainer

@@ -1334,6 +1334,61 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("server_ban_hit", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.SurveyComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("survey_comment_id");
+
+                    b.Property<string>("Antag")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("antag");
+
+                    b.Property<string>("Job")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("job");
+
+                    b.Property<Guid>("PlayerUserId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("player_user_id");
+
+                    b.Property<string>("Preset")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("preset");
+
+                    b.Property<int>("RoundId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("round_id");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("text");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("time");
+
+                    b.Property<string>("Topic")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("topic");
+
+                    b.HasKey("Id")
+                        .HasName("PK_survey_comment");
+
+                    b.HasIndex("PlayerUserId");
+
+                    b.HasIndex("RoundId")
+                        .HasDatabaseName("IX_survey_comment_round_id");
+
+                    b.HasIndex("Time");
+
+                    b.ToTable("survey_comment", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.SurveyDigest", b =>
                 {
                     b.Property<int>("Id")
@@ -2100,6 +2155,28 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Ban");
 
                     b.Navigation("Connection");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.SurveyComment", b =>
+                {
+                    b.HasOne("Content.Server.Database.Player", "Player")
+                        .WithMany()
+                        .HasForeignKey("PlayerUserId")
+                        .HasPrincipalKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_survey_comment_player_player_id");
+
+                    b.HasOne("Content.Server.Database.Round", "Round")
+                        .WithMany()
+                        .HasForeignKey("RoundId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_survey_comment_round_round_id");
+
+                    b.Navigation("Player");
+
+                    b.Navigation("Round");
                 });
 
             modelBuilder.Entity("Content.Server.Database.SurveyResponse", b =>

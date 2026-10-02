@@ -1,3 +1,4 @@
+using Content.Shared.Roles;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
@@ -38,8 +39,40 @@ public sealed partial class RoundSurveyQuestionPrototype : IPrototype
     [DataField]
     public float? Target;
 
+    /// <summary>
+    /// Only the two ends of the scale can be picked: <see cref="Low"/> is stored as <see cref="MinAnswer"/>
+    /// and <see cref="High"/> as <see cref="MaxAnswer"/>.
+    /// </summary>
+    [DataField]
+    public bool YesNo;
+
     [DataField]
     public RoundSurveyAudience Audience = RoundSurveyAudience.Everyone;
+
+    /// <summary>
+    /// If any of <see cref="Jobs"/>, <see cref="Departments"/> and <see cref="Antags"/> is set,
+    /// the question is only for players who fit at least one of them.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<JobPrototype>>? Jobs;
+
+    [DataField]
+    public List<ProtoId<DepartmentPrototype>>? Departments;
+
+    [DataField]
+    public List<ProtoId<AntagPrototype>>? Antags;
+
+    /// <summary>
+    /// First day the question is asked, by UTC. If null, it is asked from the start.
+    /// </summary>
+    [DataField]
+    public DateTime? From;
+
+    /// <summary>
+    /// Last day the question is asked, by UTC. If null, it is asked forever.
+    /// </summary>
+    [DataField]
+    public DateTime? Until;
 
     /// <summary>
     /// Asked every round. Other questions share the slots that are left, picked by <see cref="Weight"/>.
@@ -49,6 +82,13 @@ public sealed partial class RoundSurveyQuestionPrototype : IPrototype
 
     [DataField]
     public float Weight = 1f;
+
+    /// <summary>
+    /// A player who got this question does not get it again in this many of their next surveys.
+    /// Does not apply to questions that are <see cref="Always"/> asked.
+    /// </summary>
+    [DataField]
+    public int Cooldown = 1;
 
     /// <summary>
     /// How long the player must have been in the round to get this question.

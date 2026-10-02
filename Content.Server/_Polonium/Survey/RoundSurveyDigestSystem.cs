@@ -25,6 +25,7 @@ public sealed partial class RoundSurveyDigestSystem : EntitySystem
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IServerDbManager _db = default!;
     [Dependency] private DiscordWebhook _discord = default!;
+    [Dependency] private RoundSurveySystem _survey = default!;
 
     public const int MaxDays = 365;
 
@@ -152,7 +153,9 @@ public sealed partial class RoundSurveyDigestSystem : EntitySystem
 
     public async Task<RoundSurveyDigest?> GetDigest(DateTime from, DateTime to)
     {
-        return BuildDigest(await _db.GetSurveyResponses(from, to), from, to);
+        var responses = await _db.GetSurveyResponses(from, to);
+        var comments = await _db.GetSurveyComments(from, to);
+        return BuildDigest(responses, comments, from, to);
     }
 
     /// <summary>
@@ -182,16 +185,16 @@ public sealed partial class RoundSurveyDigestSystem : EntitySystem
         return true;
     }
 
-    public RoundSurveyDigest? BuildDigest(List<SurveyResponse> responses, DateTime from, DateTime to)
+    public RoundSurveyDigest? BuildDigest(List<SurveyResponse> responses, List<SurveyComment> comments, DateTime from, DateTime to)
     {
-        if (responses.Count == 0)
+        if (responses.Count == 0 && comments.Count == 0)
             return null;
 
         var groups = GetGroups(responses);
-        var sections = new List<RoundSurveyDigestSection>
-        {
-            new(Loc.GetString("round-survey-digest-rounds"), DescribeRounds(groups)),
-        };
+        var sections = new List<RoundSurveyDigestSection>();
+
+        if (responses.Count > 0)
+            sections.Add(new RoundSurveyDigestSection(Loc.GetString("round-survey-digest-rounds"), DescribeRounds(groups)));
 
         var asked = responses.Select(response => response.Question).ToHashSet();
         var questions = _proto.EnumeratePrototypes<RoundSurveyQuestionPrototype>()
@@ -201,13 +204,11 @@ public sealed partial class RoundSurveyDigestSystem : EntitySystem
 
         foreach (var question in questions)
         {
-            var name = Loc.GetString("round-survey-discord-question",
-                ("text", Loc.GetString(question.Text)),
-                ("low", Loc.GetString(question.Low)),
-                ("high", Loc.GetString(question.High)));
-
-            sections.Add(new RoundSurveyDigestSection(name, DescribeAnswers(groups, question)));
+            sections.Add(new RoundSurveyDigestSection(_survey.DescribeQuestion(question), DescribeAnswers(groups, question)));
         }
+
+        if (comments.Count > 0)
+            sections.Add(new RoundSurveyDigestSection(Loc.GetString("round-survey-digest-comments"), DescribeComments(comments)));
 
         var first = Day(from);
         var last = Day(to.AddTicks(-1));
@@ -308,10 +309,18 @@ public sealed partial class RoundSurveyDigestSystem : EntitySystem
         {
             Loc.GetString("round-survey-digest-column-group"),
             Loc.GetString("round-survey-digest-column-people"),
-            Loc.GetString("round-survey-digest-column-average"),
-            $"{RoundSurveyQuestionPrototype.MinAnswer}–{LowAnswer}",
-            $"{HighAnswer}–{RoundSurveyQuestionPrototype.MaxAnswer}",
         };
+
+        if (question.YesNo)
+        {
+            header.Add(Loc.GetString(question.High));
+        }
+        else
+        {
+            header.Add(Loc.GetString("round-survey-digest-column-average"));
+            header.Add($"{RoundSurveyQuestionPrototype.MinAnswer}–{LowAnswer}");
+            header.Add($"{HighAnswer}–{RoundSurveyQuestionPrototype.MaxAnswer}");
+        }
 
         if (question.Target != null)
             header.Add(Loc.GetString("round-survey-digest-column-offset"));
@@ -332,10 +341,18 @@ public sealed partial class RoundSurveyDigestSystem : EntitySystem
             {
                 group.Label,
                 score.People.ToString(),
-                score.Average.ToString("0.0", CultureInfo.InvariantCulture),
-                Percent(score.Low),
-                Percent(score.High),
             };
+
+            if (question.YesNo)
+            {
+                row.Add(Percent(score.High));
+            }
+            else
+            {
+                row.Add(score.Average.ToString("0.0", CultureInfo.InvariantCulture));
+                row.Add(Percent(score.Low));
+                row.Add(Percent(score.High));
+            }
 
             if (question.Target != null)
                 row.Add(score.Offset.ToString("+0.0;-0.0;0.0", CultureInfo.InvariantCulture));
@@ -344,6 +361,27 @@ public sealed partial class RoundSurveyDigestSystem : EntitySystem
         }
 
         return Table(header.ToArray(), rows);
+    }
+
+    private string DescribeComments(List<SurveyComment> comments)
+    {
+        var rows = comments
+            .GroupBy(comment => comment.Topic)
+            .Select(topic => (Name: GetTopicName(topic.Key), Count: topic.Count()))
+            .OrderByDescending(topic => topic.Count)
+            .ThenBy(topic => topic.Name)
+            .Select(topic => new[] { Cut(topic.Name), topic.Count.ToString() })
+            .ToList<string[]?>();
+
+        return Table([
+            Loc.GetString("round-survey-digest-column-topic"),
+            Loc.GetString("round-survey-digest-column-comments"),
+        ], rows);
+    }
+
+    private string GetTopicName(string id)
+    {
+        return _proto.TryIndex<RoundSurveyTopicPrototype>(id, out var topic) ? Loc.GetString(topic.Name) : id;
     }
 
     private Score? GetScore(IEnumerable<SurveyResponse> answers, RoundSurveyQuestionPrototype question)

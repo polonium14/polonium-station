@@ -53,6 +53,7 @@ namespace Content.Server.Database
         public DbSet<CustomVoteLogOption> CustomVoteLogOption { get; set; } = null!;
         public DbSet<SurveyResponse> SurveyResponse { get; set; } = null!; // Polonium
         public DbSet<SurveyDigest> SurveyDigest { get; set; } = null!; // Polonium
+        public DbSet<SurveyComment> SurveyComment { get; set; } = null!; // Polonium
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -317,6 +318,16 @@ namespace Content.Server.Database
             modelBuilder.Entity<SurveyDigest>()
                 .HasIndex(digest => new { digest.Start, digest.Days })
                 .IsUnique();
+
+            modelBuilder.Entity<SurveyComment>()
+                .HasOne(comment => comment.Player)
+                .WithMany()
+                .HasForeignKey(comment => comment.PlayerUserId)
+                .HasPrincipalKey(player => player.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<SurveyComment>()
+                .HasIndex(comment => comment.Time);
             // POLONIUM END
 
             ModelBan.OnModelCreating(modelBuilder);
@@ -877,6 +888,27 @@ namespace Content.Server.Database
         public DateTime Start { get; set; }
         public int Days { get; set; }
         public DateTime Time { get; set; }
+    }
+
+    [Table("survey_comment")]
+    public sealed class SurveyComment
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        [ForeignKey("Round")] public int RoundId { get; set; }
+        public Round? Round { get; set; }
+
+        public Guid PlayerUserId { get; set; }
+        public Player? Player { get; set; }
+
+        public string Topic { get; set; } = string.Empty;
+        public string Text { get; set; } = string.Empty;
+        public DateTime Time { get; set; }
+
+        public string Preset { get; set; } = string.Empty;
+        public string? Job { get; set; }
+        public string? Antag { get; set; }
     }
     // POLONIUM END
 

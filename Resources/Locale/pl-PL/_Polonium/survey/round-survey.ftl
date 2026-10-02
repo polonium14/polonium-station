@@ -30,6 +30,26 @@ round-survey-question-length = Jak oceniasz długość rundy?
 round-survey-answer-too-short = Za krótka
 round-survey-answer-too-long = Za długa
 
+round-survey-question-memorable = Czy w tej rundzie wydarzyło się coś, co zapamiętasz?
+round-survey-answer-no = Nie
+round-survey-answer-yes = Tak
+
+round-survey-comment-heading = Chcesz coś dodać?
+round-survey-comment-window-title = Opinia o grze
+round-survey-comment-placeholder = Wybierz temat i napisz kilka słów...
+round-survey-comment-send = Wyślij
+round-survey-comment-length = { $length } / { $max }
+round-survey-comment-sent = Dziękujemy, komentarz wysłany.
+round-survey-comment-rejected = Komentarz nie został przyjęty. Być może limit komentarzy w tej rundzie jest już wyczerpany.
+ui-escape-survey-comment = Napisz opinię
+
+round-survey-topic-antags = Antagoniści
+round-survey-topic-events = Wydarzenia
+round-survey-topic-department = Mój dział
+round-survey-topic-map = Mapa
+round-survey-topic-bug = Błąd
+round-survey-topic-other = Inne
+
 round-survey-discord-title = Ankieta: runda #{ $round }
 round-survey-discord-round = Tryb **{ $preset }** · czas { $duration } · grało { $players } · wyszło przed końcem { $left }
 round-survey-discord-responses = Ankietę dostało { $offered } · odpowiedziało { $answered }
@@ -38,6 +58,7 @@ round-survey-discord-question = { $text } (1 – { $low }, 5 – { $high })
 round-survey-discord-result = średnia **{ $average }** · odpowiedzi: { $count }
 round-survey-discord-target = cel { $target } ({ $offset })
 round-survey-discord-empty = brak odpowiedzi
+round-survey-discord-yes-no = { $answer }: **{ $share }%** ({ $yes } z { $count })
 
 round-survey-discord-respondent =
     Runda #{ $round } · tryb **{ $preset }**
@@ -46,6 +67,13 @@ round-survey-discord-respondent =
 round-survey-discord-no-role = brak
 round-survey-discord-alive = postać przeżyła
 round-survey-discord-dead = postać zginęła
+
+round-survey-discord-comment-field = Komentarz: { $topic }
+round-survey-discord-comment =
+    Runda #{ $round } · tryb **{ $preset }** · rola: { $role }
+    Temat: **{ $topic }**
+
+    { $text }
 
 round-survey-digest-title = Ankieta: { $from } – { $to }
 round-survey-digest-title-day = Ankieta: { $day }
@@ -63,3 +91,6 @@ round-survey-digest-column-left = wyszło
 round-survey-digest-column-people = osób
 round-survey-digest-column-average = średnia
 round-survey-digest-column-offset = od celu
+round-survey-digest-comments = Komentarze
+round-survey-digest-column-topic = temat
+round-survey-digest-column-comments = komentarze

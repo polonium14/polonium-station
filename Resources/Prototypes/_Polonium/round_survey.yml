@@ -4,6 +4,7 @@
   low: round-survey-answer-bad
   high: round-survey-answer-great
   always: true
+  minTimeInRound: 0 # TYMCZASOWE: tylko do sprawdzenia UI, usunąć przed commitem
   order: 0
 
 - type: roundSurveyQuestion
@@ -13,6 +14,7 @@
   high: round-survey-answer-chaotic
   target: 3
   always: true
+  minTimeInRound: 0 # TYMCZASOWE: tylko do sprawdzenia UI, usunąć przed commitem
   order: 1
 
 - type: roundSurveyQuestion
@@ -41,6 +43,7 @@
   low: round-survey-answer-not-at-all
   high: round-survey-answer-very
   audience: Crew
+  minTimeInRound: 0 # TYMCZASOWE: tylko do sprawdzenia UI, usunąć przed commitem
   order: 4
 
 - type: roundSurveyQuestion
@@ -50,6 +53,44 @@
   high: round-survey-answer-too-long
   target: 3
   minTimeInRound: 1200
+  order: 5
+
+- type: roundSurveyQuestion
+  id: MemorableMoment
+  text: round-survey-question-memorable
+  low: round-survey-answer-no
+  high: round-survey-answer-yes
+  yesNo: true
+  order: 6
+
+- type: roundSurveyTopic
+  id: Antags
+  name: round-survey-topic-antags
+  order: 0
+
+- type: roundSurveyTopic
+  id: Events
+  name: round-survey-topic-events
+  order: 1
+
+- type: roundSurveyTopic
+  id: Department
+  name: round-survey-topic-department
+  order: 2
+
+- type: roundSurveyTopic
+  id: Map
+  name: round-survey-topic-map
+  order: 3
+
+- type: roundSurveyTopic
+  id: Bug
+  name: round-survey-topic-bug
+  order: 4
+
+- type: roundSurveyTopic
+  id: Other
+  name: round-survey-topic-other
   order: 5
 
 - type: roundSurveyPlayerGroup

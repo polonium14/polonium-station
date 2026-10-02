@@ -1,5 +1,6 @@
 using Content.Client.FeedbackPopup;
 using Content.Client.Gameplay;
+using Content.Client._Polonium.Survey;
 using Content.Client._Polonium.Tutorial;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
@@ -30,6 +31,7 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
     [Dependency] private GuidebookUIController _guidebook = default!;
     [Dependency] private FeedbackPopupUIController _feedback = null!;
     [Dependency] private ILocalizationManager _loc = default!;
+    [Dependency] private RoundSurveyCommentUIController _surveyComment = default!; // Polonium
     [UISystemDependency] private readonly TutorialPresentationSystem? _tutorial = default;
 
     private Options.UI.EscapeMenu? _escapeWindow;
@@ -74,6 +76,16 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
             CloseEscapeWindow();
             _feedback.ToggleWindow();
         };
+
+        // POLONIUM START
+        _escapeWindow.SurveyCommentButton.OnPressed += _ =>
+        {
+            CloseEscapeWindow();
+            _surveyComment.ToggleWindow();
+        };
+
+        _cfg.OnValueChanged(CCVars.SurveyEnabled, OnSurveyEnabledChanged, true);
+        // POLONIUM END
 
         _escapeWindow.ChangelogButton.OnPressed += _ =>
         {
@@ -142,6 +154,7 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
     public void OnStateExited(GameplayState state)
     {
         _cfg.UnsubValueChanged(CCVars.SeeOwnNotes, OnSeeOwnNotesChanged);
+        _cfg.UnsubValueChanged(CCVars.SurveyEnabled, OnSurveyEnabledChanged); // Polonium
 
         if (_escapeWindow != null)
         {
@@ -162,6 +175,14 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
             ? _loc.GetString("ui-escape-remarks-button-disabled")
             : null;
     }
+
+    // POLONIUM START
+    private void OnSurveyEnabledChanged(bool enabled)
+    {
+        if (_escapeWindow != null)
+            _escapeWindow.SurveyCommentButton.Visible = enabled;
+    }
+    // POLONIUM END
 
     public void OnSystemLoaded(TutorialPresentationSystem system)
     {

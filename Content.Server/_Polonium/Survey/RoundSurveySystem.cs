@@ -62,6 +62,8 @@ public sealed partial class RoundSurveySystem : EntitySystem
     private static readonly TimeSpan ResponseRetryDelay = TimeSpan.FromSeconds(5);
 
     private readonly Dictionary<NetUserId, TimeSpan> _joined = new();
+    private readonly Dictionary<NetUserId, int> _surveys = new();
+    private readonly Dictionary<(NetUserId User, string Question), int> _drawn = new();
     private readonly List<Survey> _closing = new();
     private WebhookIdentifier? _webhook;
     private WebhookIdentifier? _responsesWebhook;
@@ -80,6 +82,8 @@ public sealed partial class RoundSurveySystem : EntitySystem
         Subs.CVar(_cfg, CCVars.SurveyEnabled, OnEnabledChanged);
         Subs.CVar(_cfg, CCVars.DiscordSurveyWebhook, OnWebhookChanged, true);
         Subs.CVar(_cfg, CCVars.DiscordSurveyResponsesWebhook, OnResponsesWebhookChanged, true);
+
+        InitializeComments();
 
         _player.PlayerStatusChanged += OnPlayerStatusChanged;
     }
@@ -163,6 +167,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
         _joined.Clear();
+        _comments.Clear();
     }
 
     private void OnRoundStarted(RoundStartedEvent ev)
@@ -224,9 +229,11 @@ public sealed partial class RoundSurveySystem : EntitySystem
                 survey.Left++;
 
             var who = players.GetValueOrDefault(user) with { TimeInRound = _timing.CurTime - joinedAt };
-            var questions = PickQuestions(who, antags);
+            var questions = PickQuestions(who, antags, user);
             if (questions.Count == 0)
                 continue;
+
+            Remember(user, questions);
 
             var name = _player.TryGetPlayerData(user, out var data) ? data.UserName : user.ToString();
             var respondent = new Respondent(name, who, questions);
@@ -288,8 +295,9 @@ public sealed partial class RoundSurveySystem : EntitySystem
 
     /// <summary>
     /// Questions to ask this player: the ones marked as always asked, the rest drawn by weight.
+    /// If the player is named, the questions drawn for them lately are left out.
     /// </summary>
-    public List<ProtoId<RoundSurveyQuestionPrototype>> PickQuestions(RoundSurveyRespondent who, bool antags)
+    public List<ProtoId<RoundSurveyQuestionPrototype>> PickQuestions(RoundSurveyRespondent who, bool antags, NetUserId? user = null)
     {
         var picked = new List<RoundSurveyQuestionPrototype>();
         var pool = new Dictionary<RoundSurveyQuestionPrototype, float>();
@@ -301,7 +309,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
 
             if (question.Always)
                 picked.Add(question);
-            else if (question.Weight > 0f)
+            else if (question.Weight > 0f && !IsResting(question, user))
                 pool.Add(question, question.Weight);
         }
 
@@ -316,9 +324,35 @@ public sealed partial class RoundSurveySystem : EntitySystem
         return InOrder(picked).Select(question => new ProtoId<RoundSurveyQuestionPrototype>(question.ID)).ToList();
     }
 
+    /// <summary>
+    /// Notes the questions a player has got, so that the drawn ones are not repeated right away.
+    /// </summary>
+    public void Remember(NetUserId user, List<ProtoId<RoundSurveyQuestionPrototype>> questions)
+    {
+        var number = _surveys.GetValueOrDefault(user) + 1;
+        _surveys[user] = number;
+
+        foreach (var id in questions)
+        {
+            if (_proto.TryIndex(id, out var question) && !question.Always)
+                _drawn[(user, id.Id)] = number;
+        }
+    }
+
+    private bool IsResting(RoundSurveyQuestionPrototype question, NetUserId? user)
+    {
+        return user != null
+               && _drawn.TryGetValue((user.Value, question.ID), out var last)
+               && _surveys.GetValueOrDefault(user.Value) - last < question.Cooldown;
+    }
+
     private bool CanAsk(RoundSurveyQuestionPrototype question, RoundSurveyRespondent who, bool antags)
     {
         if (who.TimeInRound < question.MinTimeInRound || question.NeedsAntags && !antags)
+            return false;
+
+        var today = DateTime.UtcNow.Date;
+        if (question.From?.Date > today || question.Until?.Date < today)
             return false;
 
         switch (question.Audience)
@@ -328,7 +362,33 @@ public sealed partial class RoundSurveySystem : EntitySystem
                 return false;
         }
 
+        if (!HasFittingRole(question, who))
+            return false;
+
         return question.RuleWhitelist == null || _ticker.IsGameRuleAdded(question.RuleWhitelist);
+    }
+
+    private bool HasFittingRole(RoundSurveyQuestionPrototype question, RoundSurveyRespondent who)
+    {
+        if (question.Jobs == null && question.Departments == null && question.Antags == null)
+            return true;
+
+        if (who.Antag != null && question.Antags?.Contains(who.Antag) == true)
+            return true;
+
+        if (who.Job == null)
+            return false;
+
+        if (question.Jobs?.Contains(who.Job) == true)
+            return true;
+
+        foreach (var id in question.Departments ?? [])
+        {
+            if (_proto.TryIndex(id, out var department) && department.Roles.Contains(who.Job))
+                return true;
+        }
+
+        return false;
     }
 
     private static IEnumerable<RoundSurveyQuestionPrototype> InOrder(IEnumerable<RoundSurveyQuestionPrototype> questions)
@@ -353,6 +413,12 @@ public sealed partial class RoundSurveySystem : EntitySystem
             return false;
 
         if (!survey.Respondents.TryGetValue(session.UserId, out var respondent) || !respondent.Questions.Contains(question))
+            return false;
+
+        if (!_proto.TryIndex(question, out var asked))
+            return false;
+
+        if (asked.YesNo && value is not (RoundSurveyQuestionPrototype.MinAnswer or RoundSurveyQuestionPrototype.MaxAnswer))
             return false;
 
         if (respondent.Answers.TryGetValue(question, out var old) && old == value)
@@ -535,13 +601,6 @@ public sealed partial class RoundSurveySystem : EntitySystem
     private WebhookPayload BuildResponse(Survey survey, Respondent respondent)
     {
         var who = respondent.Who;
-        var roles = new List<string>();
-
-        if (who.Job != null && _proto.TryIndex<JobPrototype>(who.Job, out var job))
-            roles.Add(job.LocalizedName);
-
-        if (who.Antag != null && _proto.TryIndex<AntagPrototype>(who.Antag, out var antag))
-            roles.Add(Loc.GetString(antag.Name));
 
         var fields = new List<WebhookEmbedField>();
         foreach (var id in respondent.Questions)
@@ -553,8 +612,18 @@ public sealed partial class RoundSurveySystem : EntitySystem
             {
                 Name = DescribeQuestion(question),
                 Value = respondent.Answers.TryGetValue(id, out var value)
-                    ? $"**{value}**"
+                    ? $"**{DescribeAnswer(question, value)}**"
                     : Loc.GetString("round-survey-discord-empty"),
+                Inline = false,
+            });
+        }
+
+        foreach (var comment in respondent.Comments)
+        {
+            fields.Add(new WebhookEmbedField
+            {
+                Name = Loc.GetString("round-survey-discord-comment-field", ("topic", DescribeTopic(comment.Topic))),
+                Value = comment.Text,
                 Inline = false,
             });
         }
@@ -569,7 +638,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
                     Description = Loc.GetString("round-survey-discord-respondent",
                         ("round", survey.RoundId.ToString()),
                         ("preset", survey.Preset?.ID ?? "?"),
-                        ("role", roles.Count == 0 ? Loc.GetString("round-survey-discord-no-role") : string.Join(" / ", roles)),
+                        ("role", DescribeRole(who.Job, who.Antag)),
                         ("fate", Loc.GetString(who.Dead ? "round-survey-discord-dead" : "round-survey-discord-alive")),
                         ("time", Clock(who.TimeInRound)),
                         ("playtime", ((int) who.Playtime.TotalHours).ToString())),
@@ -581,12 +650,36 @@ public sealed partial class RoundSurveySystem : EntitySystem
         };
     }
 
-    private string DescribeQuestion(RoundSurveyQuestionPrototype question)
+    public string DescribeQuestion(RoundSurveyQuestionPrototype question)
     {
+        if (question.YesNo)
+            return Loc.GetString(question.Text);
+
         return Loc.GetString("round-survey-discord-question",
             ("text", Loc.GetString(question.Text)),
             ("low", Loc.GetString(question.Low)),
             ("high", Loc.GetString(question.High)));
+    }
+
+    private string DescribeAnswer(RoundSurveyQuestionPrototype question, int value)
+    {
+        if (!question.YesNo)
+            return value.ToString();
+
+        return Loc.GetString(value == RoundSurveyQuestionPrototype.MaxAnswer ? question.High : question.Low);
+    }
+
+    private string DescribeRole(string? jobId, string? antagId)
+    {
+        var roles = new List<string>();
+
+        if (jobId != null && _proto.TryIndex<JobPrototype>(jobId, out var job))
+            roles.Add(job.LocalizedName);
+
+        if (antagId != null && _proto.TryIndex<AntagPrototype>(antagId, out var antag))
+            roles.Add(Loc.GetString(antag.Name));
+
+        return roles.Count == 0 ? Loc.GetString("round-survey-discord-no-role") : string.Join(" / ", roles);
     }
 
     private static string Clock(TimeSpan time)
@@ -632,7 +725,9 @@ public sealed partial class RoundSurveySystem : EntitySystem
             fields.Add(new WebhookEmbedField
             {
                 Name = DescribeQuestion(question),
-                Value = DescribeAnswers(counts, GetTarget(survey.Preset, question)),
+                Value = question.YesNo
+                    ? DescribeYesNo(question, counts)
+                    : DescribeAnswers(counts, GetTarget(survey.Preset, question)),
                 Inline = false,
             });
         }
@@ -686,6 +781,20 @@ public sealed partial class RoundSurveySystem : EntitySystem
         return text.ToString();
     }
 
+    private string DescribeYesNo(RoundSurveyQuestionPrototype question, int[] counts)
+    {
+        var total = counts.Sum();
+        if (total == 0)
+            return Loc.GetString("round-survey-discord-empty");
+
+        var yes = counts[^1];
+        return Loc.GetString("round-survey-discord-yes-no",
+            ("answer", Loc.GetString(question.High)),
+            ("share", ((int) MathF.Round(yes * 100f / total)).ToString()),
+            ("yes", yes.ToString()),
+            ("count", total.ToString()));
+    }
+
     private static string Number(float value)
     {
         return value.ToString("0.0", CultureInfo.InvariantCulture);
@@ -722,6 +831,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
         public RoundSurveyRespondent Who = who;
         public readonly List<ProtoId<RoundSurveyQuestionPrototype>> Questions = questions;
         public readonly Dictionary<ProtoId<RoundSurveyQuestionPrototype>, int> Answers = new();
+        public readonly List<SurveyComment> Comments = new();
         public int Changes;
         public bool Offered;
 

@@ -39,7 +39,7 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
         IoCManager.InjectDependencies(this);
         _playersInfo = info;
 
-        MinSize = SetSize = new Vector2(720, 580);
+        MinSize = SetSize = new Vector2(720, 680); // Polonium
 
         Title = Loc.GetString("round-end-summary-window-title");
 
