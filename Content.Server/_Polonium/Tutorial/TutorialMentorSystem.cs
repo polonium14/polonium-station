@@ -155,6 +155,31 @@ public sealed partial class TutorialMentorSystem : EntitySystem
             mentorComp.NextSpeak = Later(mentorComp.NextSpeak, _timing.CurTime + ShortGap);
     }
 
+    /// <summary>
+    /// Last line said, projection off. Nothing in the run brings her back after this - the walk to
+    /// the contract is meant to be the first quiet minute the trainee gets.
+    /// </summary>
+    public void Retire(EntityUid player)
+    {
+        if (!TryComp<TutorialSessionComponent>(player, out var session))
+            return;
+
+        session.MentorRetired = true;
+        Cleanup(session);
+    }
+
+    /// <summary>When she last got a line out, for as long as the projection is still up.</summary>
+    public TimeSpan? LastSpokeAt(EntityUid player)
+    {
+        if (!TryComp<TutorialSessionComponent>(player, out var session))
+            return null;
+
+        if (session.MentorUid is not { } mentor || !TryComp<TutorialMentorComponent>(mentor, out var mentorComp))
+            return null;
+
+        return mentorComp.LastSpokeAt;
+    }
+
     public void Cleanup(TutorialSessionComponent session)
     {
         if (session.MentorUid is { } mentor && TryComp<TutorialMentorComponent>(mentor, out var comp))
@@ -216,6 +241,9 @@ public sealed partial class TutorialMentorSystem : EntitySystem
 
     private void EnsureMentor(EntityUid player, TutorialSessionComponent session, TransformComponent xform)
     {
+        if (session.MentorRetired)
+            return;
+
         if (session.MentorUid is { } existing && !Deleted(existing))
             return;
 
@@ -298,6 +326,7 @@ public sealed partial class TutorialMentorSystem : EntitySystem
 
         var line = mentorComp.SpeechQueue.Dequeue();
         mentorComp.NextSpeak = _timing.CurTime + GapAfter(line.Text);
+        mentorComp.LastSpokeAt = _timing.CurTime;
 
         // freeze steps need to know she got past the anchor gate and actually started.
         // a stuck hint arriving while the briefing is still gated must not arm it

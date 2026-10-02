@@ -3,6 +3,7 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Server.Power.Components;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
+using Content.Shared.Atmos.Rotting;
 using Content.Shared.Construction;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Ghost.Roles.Components;
@@ -13,6 +14,7 @@ namespace Content.Server._Polonium.Tutorial;
 public sealed partial class TutorialSystem
 {
     private readonly HashSet<EntityUid> _pendingGhostStrips = new();
+    private readonly HashSet<EntityUid> _pendingRotStrips = new();
 
     private void OnMapCreated(TutorialMapCreatedEvent ev)
     {
@@ -51,12 +53,18 @@ public sealed partial class TutorialSystem
         _pendingGhostStrips.Add(ent.Owner);
     }
 
+    /// <summary>
+    /// Raw meat turns in five minutes and the kitchen lesson runs longer than that, so a trainee
+    /// who reads the recipe twice used to find the cutlet rotten. Nothing made here ages either.
+    /// </summary>
+    private void OnPerishableStartup(Entity<PerishableComponent> ent, ref ComponentStartup args)
+    {
+        _pendingRotStrips.Add(ent.Owner);
+    }
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-
-        if (_pendingGhostStrips.Count == 0)
-            return;
 
         foreach (var uid in _pendingGhostStrips)
         {
@@ -65,6 +73,15 @@ public sealed partial class TutorialSystem
         }
 
         _pendingGhostStrips.Clear();
+
+        foreach (var uid in _pendingRotStrips)
+        {
+            // the map it sits on is only settled a tick later, hence the wait
+            if (!TerminatingOrDeleted(uid) && IsOnTutorialMap(uid))
+                _npcs.StopRot(uid);
+        }
+
+        _pendingRotStrips.Clear();
     }
 
     private void PrepareTutorialMap(EntityUid mapUid)

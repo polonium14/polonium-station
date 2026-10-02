@@ -18,6 +18,9 @@ public sealed partial class TutorialMentorComponent : Component
     /// <summary>End of the reading gap after the last reaction line she said.</summary>
     [ViewVariables]
     public TimeSpan QuipDoneAt;
+
+    [ViewVariables]
+    public TimeSpan LastSpokeAt;
 }
 
 /// <summary>
