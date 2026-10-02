@@ -77,6 +77,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
         SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
         SubscribeNetworkEvent<RoundSurveyAnswerEvent>(OnAnswer);
 
+        Subs.CVar(_cfg, CCVars.SurveyEnabled, OnEnabledChanged);
         Subs.CVar(_cfg, CCVars.DiscordSurveyWebhook, OnWebhookChanged, true);
         Subs.CVar(_cfg, CCVars.DiscordSurveyResponsesWebhook, OnResponsesWebhookChanged, true);
 
@@ -107,6 +108,12 @@ public sealed partial class RoundSurveySystem : EntitySystem
             if (IsDelivered(_closing[i]))
                 _closing.RemoveAt(i);
         }
+    }
+
+    private void OnEnabledChanged(bool enabled)
+    {
+        if (!enabled && _survey != null)
+            Close(_survey);
     }
 
     private void OnWebhookChanged(string url)
@@ -381,6 +388,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
                 Preset = survey.Preset?.ID ?? string.Empty,
                 RoundDuration = survey.Duration,
                 PlayerCount = survey.Players,
+                LeftCount = survey.Left,
                 Job = who.Job,
                 Antag = who.Antag,
                 Dead = who.Dead,

@@ -46,3 +46,20 @@ round-survey-discord-respondent =
 round-survey-discord-no-role = brak
 round-survey-discord-alive = postać przeżyła
 round-survey-discord-dead = postać zginęła
+
+round-survey-digest-title = Ankieta: { $from } – { $to }
+round-survey-digest-title-day = Ankieta: { $day }
+round-survey-digest-summary =
+    Rundy z odpowiedziami: { $rounds } · odpowiadający: { $people } · odpowiedzi: { $answers }
+    Każdy gracz liczy się raz: najpierw średnia jego własnych odpowiedzi, potem średnia między graczami. „Wyszło” to udział graczy, których nie było już na końcu rundy.
+round-survey-digest-rounds = Rundy
+round-survey-digest-other = inne
+round-survey-digest-players-range = { $min }–{ $max } graczy
+round-survey-digest-players-from = { $min }+ graczy
+round-survey-digest-column-group = tryb / online
+round-survey-digest-column-rounds = rundy
+round-survey-digest-column-players = graczy
+round-survey-digest-column-left = wyszło
+round-survey-digest-column-people = osób
+round-survey-digest-column-average = średnia
+round-survey-digest-column-offset = od celu

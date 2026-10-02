@@ -105,6 +105,10 @@ public sealed class RoundSurveyTest : GameTest
                         Assert.That(target, Is.InRange(RoundSurveyQuestionPrototype.MinAnswer, RoundSurveyQuestionPrototype.MaxAnswer), preset.ID);
                     }
                 }
+
+                var sizes = server.ProtoMan.EnumeratePrototypes<RoundSurveyPlayerGroupPrototype>().Select(size => size.Min).ToList();
+                Assert.That(sizes, Is.Unique);
+                Assert.That(sizes, Is.All.GreaterThanOrEqualTo(0));
             });
         });
     }
@@ -386,7 +390,7 @@ public sealed class RoundSurveyTest : GameTest
 
         var user = Pair.Player!.UserId;
         var roundId = server.System<GameTicker>().RoundId;
-        var now = DateTime.UtcNow;
+        var now = DateTime.UtcNow.AddMinutes(-1);
 
         SurveyResponse Answer(int value, int second)
         {
@@ -415,6 +419,157 @@ public sealed class RoundSurveyTest : GameTest
             Assert.That(rows[0].Value, Is.EqualTo(5));
             Assert.That(rows[0].Time, Is.EqualTo(now.AddSeconds(4)));
         });
+    }
+
+    [Test]
+    public async Task DigestCountsEachPlayerOnce()
+    {
+        var server = Pair.Server;
+        var digests = server.System<RoundSurveyDigestSystem>();
+        var loc = server.ResolveDependency<ILocalizationManager>();
+
+        var from = new DateTime(2026, 9, 21, 0, 0, 0, DateTimeKind.Utc);
+        var regular = Guid.NewGuid();
+        var guest = Guid.NewGuid();
+        var stranger = Guid.NewGuid();
+
+        SurveyResponse Answer(int round, Guid player, int value, string preset = TestPreset, int players = 20, int? left = 5)
+        {
+            return new SurveyResponse
+            {
+                RoundId = round,
+                PlayerUserId = player,
+                Question = TestQuestion,
+                Value = value,
+                Time = from.AddDays(1),
+                Preset = preset,
+                PlayerCount = players,
+                LeftCount = left,
+            };
+        }
+
+        var responses = new List<SurveyResponse>
+        {
+            Answer(1, regular, 5),
+            Answer(2, regular, 5),
+            Answer(3, regular, 5),
+            Answer(1, guest, 1),
+            Answer(4, stranger, 3, string.Empty, 50, null),
+        };
+
+        await server.WaitAssertion(() =>
+        {
+            var digest = digests.BuildDigest(responses, from, from.AddDays(7))!;
+            var medium = loc.GetString("round-survey-digest-players-range", ("min", "15"), ("max", "29"));
+            var large = loc.GetString("round-survey-digest-players-from", ("min", "45"));
+
+            Assert.That(digest.Sections, Has.Count.EqualTo(2));
+            var rounds = digest.Sections[0].Table;
+            var answers = digest.Sections[1].Table;
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(digest.Title, Does.Contain("21.09").And.Contain("27.09"));
+                Assert.That(digest.Summary,
+                    Is.EqualTo(loc.GetString("round-survey-digest-summary", ("rounds", "4"), ("people", "3"), ("answers", "5"))));
+
+                Assert.That(Row(rounds, TestPreset), Is.EqualTo(new[] { "3", "20", "25%" }));
+                Assert.That(Row(rounds, "—"), Is.EqualTo(new[] { "1", "50", "—" }));
+                Assert.That(Row(rounds, medium), Is.EqualTo(new[] { "3", "20", "25%" }));
+                Assert.That(Row(rounds, large), Is.EqualTo(new[] { "1", "50", "—" }));
+
+                Assert.That(Row(answers, TestPreset), Is.EqualTo(new[] { "2", "3.0", "50%", "50%", "-1.0" }));
+                Assert.That(Row(answers, "—"), Is.EqualTo(new[] { "1", "3.0", "0%", "0%", "0.0" }));
+                Assert.That(Row(answers, medium), Is.EqualTo(new[] { "2", "3.0", "50%", "50%", "-1.0" }));
+            });
+
+            var payloads = digests.GetPayloads(digest);
+            Assert.That(payloads, Has.Count.EqualTo(1));
+
+            var embed = payloads[0].Embeds![0];
+            Assert.Multiple(() =>
+            {
+                Assert.That(embed.Description, Is.EqualTo(digest.Summary));
+                Assert.That(embed.Fields, Has.Count.EqualTo(2));
+                Assert.That(embed.Fields[1].Value, Does.StartWith("```").And.EndWith("```"));
+            });
+
+            Assert.That(digests.BuildDigest(responses, from, from.AddDays(1))!.Title,
+                Is.EqualTo(loc.GetString("round-survey-digest-title-day", ("day", "21.09"))));
+            Assert.That(digests.BuildDigest([], from, from.AddDays(7)), Is.Null);
+        });
+    }
+
+    [Test]
+    public async Task DigestIsMarkedOncePerPeriod()
+    {
+        var db = Pair.Server.ResolveDependency<IServerDbManager>();
+        var monday = new DateTime(2026, 9, 28, 0, 0, 0, DateTimeKind.Utc);
+        var wednesday = new DateTime(2026, 9, 30, 12, 0, 0, DateTimeKind.Utc);
+
+        Assert.Multiple(() =>
+        {
+            Assert.That(RoundSurveyDigestSystem.GetPeriodStart(monday, 7), Is.EqualTo(monday));
+            Assert.That(RoundSurveyDigestSystem.GetPeriodStart(wednesday, 7), Is.EqualTo(monday));
+            Assert.That(RoundSurveyDigestSystem.GetPeriodStart(monday.AddDays(7).AddMinutes(-1), 7), Is.EqualTo(monday));
+            Assert.That(RoundSurveyDigestSystem.GetPeriodStart(monday.AddDays(7), 7), Is.EqualTo(monday.AddDays(7)));
+            Assert.That(RoundSurveyDigestSystem.GetPeriodStart(wednesday, 1), Is.EqualTo(monday.AddDays(2)));
+            Assert.That(RoundSurveyDigestSystem.GetPeriodStart(wednesday, 30), Is.InRange(wednesday.AddDays(-30), wednesday));
+
+            Assert.That(RoundSurveyDigestSystem.ParsePeriods("1, 7,30,7,x,0,"), Is.EqualTo(new[] { 1, 7, 30 }));
+            Assert.That(RoundSurveyDigestSystem.ParsePeriods(string.Empty), Is.Empty);
+        });
+
+        Assert.That(await db.AddSurveyDigest(monday, 7), Is.True);
+        Assert.That(await db.AddSurveyDigest(monday, 7), Is.False);
+        Assert.That(await db.AddSurveyDigest(monday, 1), Is.True);
+        Assert.That(await db.AddSurveyDigest(monday.AddDays(7), 7), Is.True);
+
+        await db.RemoveSurveyDigest(monday, 7);
+        Assert.That(await db.AddSurveyDigest(monday, 7), Is.True);
+        Assert.That(await db.AddSurveyDigest(monday, 1), Is.False);
+    }
+
+    [Test]
+    public async Task DigestCoversPlayedRounds()
+    {
+        var server = Pair.Server;
+        var client = Pair.Client;
+        var digests = server.System<RoundSurveyDigestSystem>();
+
+        server.CfgMan.SetCVar(CCVars.SurveyEnabled, true);
+
+        // The pair may come with answers from other tests, so only this round is looked at
+        var started = DateTime.UtcNow;
+        await PlayRound();
+
+        var roundId = server.System<GameTicker>().RoundId;
+        var clientSurvey = client.System<ClientSurveySystem>();
+        await client.WaitPost(() => clientSurvey.Answer(roundId, TestQuestion, 4));
+
+        var rows = await WaitForAnswer(roundId, 4);
+        Assert.That(rows[0].LeftCount, Is.EqualTo(0));
+
+        var now = DateTime.UtcNow;
+        var digest = await digests.GetDigest(started, now.AddDays(1));
+
+        Assert.That(digest, Is.Not.Null);
+        Assert.Multiple(() =>
+        {
+            Assert.That(Row(digest!.Sections[0].Table, TestPreset), Is.EqualTo(new[] { "1", "1", "0%" }));
+            Assert.That(Row(digest.Sections[1].Table, TestPreset), Is.EqualTo(new[] { "1", "4.0", "0%", "100%", "0.0" }));
+        });
+
+        Assert.That(await digests.GetDigest(now.AddDays(-3), now.AddDays(-2)), Is.Null);
+
+        // There is no digest channel in tests
+        Assert.That(await digests.Post(digest!), Is.False);
+    }
+
+    private static string[] Row(string table, string label)
+    {
+        var row = table.Split('\n').Single(line => line.StartsWith(label + " "));
+        return row[label.Length..].Split(' ', StringSplitOptions.RemoveEmptyEntries);
     }
 
     private async Task Disconnect()

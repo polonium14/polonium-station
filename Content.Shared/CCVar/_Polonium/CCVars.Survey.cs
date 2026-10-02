@@ -29,4 +29,17 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordSurveyResponsesWebhook =
         CVarDef.Create("discord.survey_responses_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// Lengths in days of the periods a survey digest is posted for, separated by commas:
+    /// "7" gives a weekly digest, "1,7,30" a daily, a weekly and a monthly one.
+    /// </summary>
+    public static readonly CVarDef<string> SurveyDigestDays =
+        CVarDef.Create("survey.digest_days", "7", CVar.SERVERONLY);
+
+    /// <summary>
+    /// URL of the Discord webhook which will receive the survey digests. Disabled when empty
+    /// </summary>
+    public static readonly CVarDef<string> DiscordSurveyDigestWebhook =
+        CVarDef.Create("discord.survey_digest_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }

@@ -1334,6 +1334,34 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("server_ban_hit", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.SurveyDigest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("survey_digest_id");
+
+                    b.Property<int>("Days")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("days");
+
+                    b.Property<DateTime>("Start")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("start");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("time");
+
+                    b.HasKey("Id")
+                        .HasName("PK_survey_digest");
+
+                    b.HasIndex("Start", "Days")
+                        .IsUnique();
+
+                    b.ToTable("survey_digest", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.SurveyResponse", b =>
                 {
                     b.Property<int>("Id")
@@ -1352,6 +1380,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<string>("Job")
                         .HasColumnType("TEXT")
                         .HasColumnName("job");
+
+                    b.Property<int?>("LeftCount")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("left_count");
 
                     b.Property<int>("PlayerCount")
                         .HasColumnType("INTEGER")
@@ -1399,6 +1431,8 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasName("PK_survey_response");
 
                     b.HasIndex("PlayerUserId");
+
+                    b.HasIndex("Time");
 
                     b.HasIndex("RoundId", "PlayerUserId", "Question")
                         .IsUnique();

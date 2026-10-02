@@ -46,3 +46,20 @@ round-survey-discord-respondent =
 round-survey-discord-no-role = none
 round-survey-discord-alive = character survived
 round-survey-discord-dead = character died
+
+round-survey-digest-title = Survey: { $from } – { $to }
+round-survey-digest-title-day = Survey: { $day }
+round-survey-digest-summary =
+    Rounds with answers: { $rounds } · respondents: { $people } · answers: { $answers }
+    Every player counts once: their own answers are averaged first, then the players. "Left" is the share of players who were gone when the round ended.
+round-survey-digest-rounds = Rounds
+round-survey-digest-other = other
+round-survey-digest-players-range = { $min }–{ $max } players
+round-survey-digest-players-from = { $min }+ players
+round-survey-digest-column-group = preset / size
+round-survey-digest-column-rounds = rounds
+round-survey-digest-column-players = players
+round-survey-digest-column-left = left
+round-survey-digest-column-people = people
+round-survey-digest-column-average = average
+round-survey-digest-column-offset = off target

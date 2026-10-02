@@ -1126,6 +1126,46 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 .ToListAsync();
         }
 
+        public async Task<List<SurveyResponse>> GetSurveyResponses(DateTime from, DateTime to)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.SurveyResponse
+                .Where(r => r.Time >= from && r.Time < to)
+                .ToListAsync();
+        }
+
+        public async Task<bool> AddSurveyDigest(DateTime start, int days)
+        {
+            await using var db = await GetDb();
+
+            if (await db.DbContext.SurveyDigest.AnyAsync(d => d.Start == start && d.Days == days))
+                return false;
+
+            db.DbContext.SurveyDigest.Add(new SurveyDigest { Start = start, Days = days, Time = DateTime.UtcNow });
+
+            try
+            {
+                await db.DbContext.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                // Preventing the race conditions
+                return false;
+            }
+
+            return true;
+        }
+
+        public async Task RemoveSurveyDigest(DateTime start, int days)
+        {
+            await using var db = await GetDb();
+
+            await db.DbContext.SurveyDigest
+                .Where(d => d.Start == start && d.Days == days)
+                .ExecuteDeleteAsync();
+        }
+
         public async Task<bool> GetBlacklistStatusAsync(NetUserId player)
         {
             await using var db = await GetDb();

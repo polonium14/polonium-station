@@ -52,6 +52,7 @@ namespace Content.Server.Database
         public DbSet<CustomVoteLog> CustomVoteLog { get; set; } = null!;
         public DbSet<CustomVoteLogOption> CustomVoteLogOption { get; set; } = null!;
         public DbSet<SurveyResponse> SurveyResponse { get; set; } = null!; // Polonium
+        public DbSet<SurveyDigest> SurveyDigest { get; set; } = null!; // Polonium
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -308,6 +309,13 @@ namespace Content.Server.Database
 
             modelBuilder.Entity<SurveyResponse>()
                 .HasIndex(response => new { response.RoundId, response.PlayerUserId, response.Question })
+                .IsUnique();
+
+            modelBuilder.Entity<SurveyResponse>()
+                .HasIndex(response => response.Time);
+
+            modelBuilder.Entity<SurveyDigest>()
+                .HasIndex(digest => new { digest.Start, digest.Days })
                 .IsUnique();
             // POLONIUM END
 
@@ -845,11 +853,30 @@ namespace Content.Server.Database
         public TimeSpan RoundDuration { get; set; }
         public int PlayerCount { get; set; }
 
+        /// <summary>
+        /// How many of the round's players were gone when it ended. Null for answers stored before this was recorded.
+        /// </summary>
+        public int? LeftCount { get; set; }
+
         public string? Job { get; set; }
         public string? Antag { get; set; }
         public bool Dead { get; set; }
         public TimeSpan TimeInRound { get; set; }
         public TimeSpan Playtime { get; set; }
+    }
+
+    /// <summary>
+    /// Marks a period whose survey digest has been posted, so that it is posted only once.
+    /// </summary>
+    [Table("survey_digest")]
+    public sealed class SurveyDigest
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        public DateTime Start { get; set; }
+        public int Days { get; set; }
+        public DateTime Time { get; set; }
     }
     // POLONIUM END
 

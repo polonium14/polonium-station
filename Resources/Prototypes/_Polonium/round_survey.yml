@@ -51,3 +51,19 @@
   target: 3
   minTimeInRound: 1200
   order: 5
+
+- type: roundSurveyPlayerGroup
+  id: RoundSurveyPlayers0
+  min: 0
+
+- type: roundSurveyPlayerGroup
+  id: RoundSurveyPlayers15
+  min: 15
+
+- type: roundSurveyPlayerGroup
+  id: RoundSurveyPlayers30
+  min: 30
+
+- type: roundSurveyPlayerGroup
+  id: RoundSurveyPlayers45
+  min: 45

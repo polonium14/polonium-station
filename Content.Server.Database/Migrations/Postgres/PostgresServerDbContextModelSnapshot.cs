@@ -1411,6 +1411,36 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("server_ban_hit", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.SurveyDigest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("survey_digest_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Days")
+                        .HasColumnType("integer")
+                        .HasColumnName("days");
+
+                    b.Property<DateTime>("Start")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("start");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("time");
+
+                    b.HasKey("Id")
+                        .HasName("PK_survey_digest");
+
+                    b.HasIndex("Start", "Days")
+                        .IsUnique();
+
+                    b.ToTable("survey_digest", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.SurveyResponse", b =>
                 {
                     b.Property<int>("Id")
@@ -1431,6 +1461,10 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<string>("Job")
                         .HasColumnType("text")
                         .HasColumnName("job");
+
+                    b.Property<int?>("LeftCount")
+                        .HasColumnType("integer")
+                        .HasColumnName("left_count");
 
                     b.Property<int>("PlayerCount")
                         .HasColumnType("integer")
@@ -1478,6 +1512,8 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasName("PK_survey_response");
 
                     b.HasIndex("PlayerUserId");
+
+                    b.HasIndex("Time");
 
                     b.HasIndex("RoundId", "PlayerUserId", "Question")
                         .IsUnique();
