@@ -36,7 +36,8 @@ namespace Content.Server.GameTicking
 
         private void GetStatusResponse(JsonNode jObject)
         {
-            var preset = CurrentPreset ?? Preset;
+            var preset = HidePreset(CurrentPreset ?? Preset);
+            var decoy = ShownDecoy; // Polonium
 
             // This method is raised from another thread, so this better be thread safe!
             lock (_statusShellLock)
@@ -51,7 +52,7 @@ namespace Content.Server.GameTicking
                 jObject["panic_bunker"] = _cfg.GetCVar(CCVars.PanicBunkerEnabled);
                 jObject["run_level"] = (int) _runLevel;
                 if (preset != null)
-                    jObject["preset"] = (Decoy == null) ? Loc.GetString(preset.ModeTitle) : Loc.GetString(Decoy.ModeTitle);
+                    jObject["preset"] = (decoy == null) ? Loc.GetString(preset.ModeTitle) : Loc.GetString(decoy.ModeTitle); // Polonium
                 if (_runLevel >= GameRunLevel.InRound)
                 {
                     jObject["round_start_time"] = _roundStartDateTime.ToString("o");

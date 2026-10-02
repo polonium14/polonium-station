@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseNukeopsRule
-  id: LoneNukeopsRoundStart
+  id: NukeopsLowpop
   categories: [ HideSpawnMenu ]
   components:
   - type: GameRule

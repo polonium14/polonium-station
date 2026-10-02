@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server._Polonium.GameTicking;
 using Content.Server.Administration.Logs;
 using Content.Server.GameTicking.Presets;
 using Content.Server.GameTicking.Rules.Components;
@@ -19,6 +20,7 @@ public sealed partial class SecretRuleSystem : GameRuleSystem<SecretRuleComponen
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private IConfigurationManager _configurationManager = default!;
     [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private RoundMoodSystem _mood = default!; // Polonium
 
     private string _ruleCompName = default!;
 
@@ -33,7 +35,7 @@ public sealed partial class SecretRuleSystem : GameRuleSystem<SecretRuleComponen
         base.Added(uid, component, gameRule, args);
         var weights = component.WeightTable ?? _configurationManager.GetCVar(CCVars.SecretWeightPrototype);
 
-        if (!TryPickPreset(weights, out var preset))
+        if (!TryPickPreset(weights, out var preset, component.UseMoods)) // Polonium
         {
             Log.Error($"{ToPrettyString(uid)} failed to pick any preset. Removing rule.");
             Del(uid);
@@ -72,10 +74,14 @@ public sealed partial class SecretRuleSystem : GameRuleSystem<SecretRuleComponen
         }
     }
 
-    private bool TryPickPreset(ProtoId<WeightedRandomPrototype> weights, [NotNullWhen(true)] out GamePresetPrototype? preset)
+    private bool TryPickPreset(ProtoId<WeightedRandomPrototype> weights, [NotNullWhen(true)] out GamePresetPrototype? preset, bool useMoods = false) // Polonium
     {
-        var options = ProtoMan.Index(weights).Weights.ShallowClone();
         var players = GameTicker.ReadyPlayerCount();
+        // POLONIUM START
+        var options = useMoods
+            ? _mood.GetWeights(option => CanPick(option, players) && (option.MaxPlayers == null || players <= option.MaxPlayers))
+            : ProtoMan.Index(weights).Weights.ShallowClone();
+        // POLONIUM END
 
         GamePresetPrototype? selectedPreset = null;
         var sum = options.Values.Sum();

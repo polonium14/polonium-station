@@ -13,6 +13,10 @@
   name: secretplus-low-title
   description: secretplus-low-description
   showInVote: true
+  moods: # Polonium
+    Calm: 45
+    Standard: 24
+    Hot: 8
   rules:
   - SecretPlusLow
   - BasicRoundstartVariation
@@ -26,6 +30,10 @@
   name: secretplus-mid-title
   description: secretplus-mid-description
   showInVote: true
+  moods: # Polonium
+    Calm: 30
+    Standard: 30
+    Hot: 20
   rules:
   - SecretPlusMid
   - BasicRoundstartVariation
@@ -38,6 +46,10 @@
   name: secretplus-midhigh-title
   description: secretplus-midhigh-description
   showInVote: true
+  moods: # Polonium
+    Calm: 5
+    Standard: 18
+    Hot: 30
   rules:
   - SecretPlusMidHigh
   - BasicRoundstartVariation
@@ -50,6 +62,9 @@
   name: survivalplus-title
   description: survivalplus-description
   showInVote: true
+  moods: # Polonium
+    Hot: 16
+    Madness: 20
   rules:
   - SecretPlusRampingMid
   - BasicRoundstartVariation
@@ -59,7 +74,6 @@
   alias:
   - secretplusadmeme
   - secretplusevil
-  - secretplushigh
   - chaos
   name: secretplus-admeme-title
   description: secretplus-admeme-description

@@ -1,0 +1,15 @@
+- type: gamePreset
+  id: SecretPlusHigh
+  alias:
+  - secretplushigh
+  name: secretplus-high-title
+  description: secretplus-high-description
+  showInVote: true
+  minPlayers: 15
+  moods:
+    Standard: 8
+    Hot: 20
+    Madness: 30
+  rules:
+  - SecretPlusHigh
+  - BasicRoundstartVariation

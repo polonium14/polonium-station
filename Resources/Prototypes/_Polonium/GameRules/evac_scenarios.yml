@@ -16,7 +16,7 @@
       - KesslerSyndromeScheduler
       - SecretPlusRampingMid
       - SecretPlusAdmeme
-      chance: 0.35
+      chance: 0.175
     startDelay: 21 # rozgrzewka >:)
     flightDuration: 240 # after the start, so the whole flight takes 4:21
     # Everything below follows the track

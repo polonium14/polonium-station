@@ -1,0 +1,306 @@
+# Tabele zdarzeń drabinki SecretPlus, czyli co dany preset może wylosować.
+#
+# Jak losowane jest zdarzenie
+#   Raz na interwał (patrz schedulers.yml) planista zbiera z tabeli presetu wszystkie zdarzenia, które mogą się
+#   teraz odbyć, i losuje jedno z nich. Szansa zdarzenia to jego skorygowana waga podzielona przez sumę
+#   skorygowanych wag wszystkiego, co jest w tej chwili dostępne.
+#   skorygowana waga = waga / (1 + |log1.8(cena / niewydany chaos)|), cena = koszt^1.1 + 70.
+#   Czyli zdarzenie z ceną bliską niewydanemu chaosowi ma pełną wagę, a przy różnicy 1,8 raza już tylko połowę.
+#   Prezenty mają ujemny koszt, więc wygrywają, kiedy chaos jest przekroczony albo bliski zera.
+#
+# Wiersze tabeli
+#   - id: X                  zwykły wiersz, zdarzenie z wartościami ze swojego prototypu
+#   - !type:EventSelector    wiersz, który podmienia wartości zdarzenia, ale tylko dla planisty SecretPlus.
+#     id: X                  Czego nie podasz, to zostaje z prototypu. Inne planisty widzą tu zwykły wiersz
+#   Planista pomija zdarzenia bez kosztu chaosu, dlatego standardowe zdarzenie bez chaosScore dostaje go w wierszu.
+#   Jeśli to samo zdarzenie siedzi w drzewie tabel presetu kilka razy, liczy się pierwszy wylosowany wiersz EventSelector.
+#
+# Liczby w komentarzach to wartości, które faktycznie obowiązują w danej tabeli. Są z wiersza, a jak wiersz czegoś
+# nie podaje, to z prototypu zdarzenia. Obok nazwa pola, które je ustawia
+#   waga      względna szansa: eventWeight w wierszu, StationEvent.weight w prototypie
+#   koszt     cena w chaosie: chaosScore w wierszu, GameRule.chaosScore w prototypie
+#   gracze    minimalna liczba połączonych graczy: minimumPlayers
+#   od        najwcześniejsza minuta rundy: earliestStart
+#   ponownie  po ilu minutach zdarzenie może się powtórzyć: reoccurrenceDelay
+#
+# "prob" przy wpisie jest rzucane przy każdym losowaniu. Wpis trafia do puli tylko wtedy, gdy rzut się uda.
+#
+# Sumy wag, kiedy wszystko jest dostępne (bazowa szansa zdarzenia = waga / suma):
+#   Low      104, plus wpisy z "prob", jeśli ich rzut się uda
+#   Mid      152
+#   MidHigh  188
+#   High     190
+#   Antagoniści z ról duchów dokładają 18,5 (tabela łagodna) albo 40,6 (pełna), dopóki jest dla nich miejsce.
+
+# ====================================================================================================
+# Klocki: zdarzenia pogrupowane według tego, jak bardzo szkodzą stacji
+# ====================================================================================================
+
+# Spokojne: drobne utrudnienia, szkodniki i prezenty. Nic tutaj nie niszczy stacji.
+# Używane przez: Low, Mid, MidHigh, High.
+# Suma wag: 104
+- type: entityTable
+  id: SecretPlusCalmEventsTable
+  table: !type:AllSelector
+    children:
+    - id: BluespaceArtifact               # waga 8    koszt 40    gracze 0   od  5 min   ponownie po 30 min
+    - id: BluespaceLocker                 # waga 2    koszt 40    gracze 0   od  1 min   ponownie po 5 min
+    - id: BreakerFlip                     # waga 7    koszt 60    gracze 15  od  5 min   ponownie po 30 min
+    - id: BureaucraticError               # waga 3    koszt 50    gracze 25  od  5 min   ponownie po 30 min
+    - id: ClericalError                   # waga 5    koszt 30    gracze 15  od  5 min   ponownie po 30 min
+    - id: ClosetSkeleton                  # waga 5    koszt 60    gracze 10  od  5 min   ponownie po 30 min
+    - id: CockroachMigration              # waga 6   koszt 20    gracze 0   od  5 min   ponownie po 30 min
+    - !type:EventSelector                 # waga 5    koszt -60   gracze 10  od 25 min   ponownie po 30 min
+      id: GiftsEngineering
+      chaosScore: -60
+      earliestStart: 25
+    - !type:EventSelector
+      id: GiftsJanitor                    # waga 4    koszt -40   gracze 12  od 20 min   ponownie po 30 min
+      eventWeight: 4
+      chaosScore: -40
+      minimumPlayers: 12
+    - !type:EventSelector
+      id: GiftsMedical                    # waga 6    koszt -80   gracze 12  od 20 min   ponownie po 30 min
+      eventWeight: 6
+      chaosScore: -80
+      minimumPlayers: 12
+    - !type:EventSelector
+      id: GiftsPizzaPartySmall            # waga 5    koszt -40   gracze 0   od 20 min   ponownie po 30 min
+      chaosScore: -40
+    - !type:EventSelector
+      id: GiftsSpacingSupplies            # waga 4    koszt -60   gracze 12  od 15 min   ponownie po 30 min
+      chaosScore: -60
+      minimumPlayers: 12
+      earliestStart: 15
+    - id: MassHallucinations              # waga 7    koszt 30    gracze 0   od  5 min   ponownie po 30 min
+    - id: MouseMigration                  # waga 6    koszt 20    gracze 0   od 15 min   ponownie po 30 min
+    - id: PowerGridCheck                  # waga 5    koszt 80    gracze 0   od  5 min   ponownie po 30 min
+    - !type:EventSelector
+      id: RandomCritterHorde              # waga 6    koszt 20    gracze 0   od 15 min   ponownie po 15 min
+      chaosScore: 20
+    - id: RandomSentience                 # waga 6    koszt 20    gracze 0   od  5 min   raz na rundę
+    - id: SnailMigrationLowPop            # waga 6    koszt 20    gracze 0   od  5 min   ponownie po 30 min
+    - id: SolarFlare                      # waga 8    koszt 60    gracze 0   od  5 min   ponownie po 30 min
+
+# Robocze: zdarzenia, które dają działom coś do naprawienia.
+# Używane przez: Mid, MidHigh, High.
+# MiniDragonMigration daje rolę ducha, która jest samotnym antagonistą, ale do ghostAntagLimit się nie wlicza.
+# Suma wag: 48
+- type: entityTable
+  id: SecretPlusWorkEventsTable
+  table: !type:AllSelector
+    children:
+    - id: AnomalySpawn              # waga 8    koszt 70    gracze 0   od  5 min   ponownie po 30 min
+    - id: GasLeak                   # waga 8    koszt 80    gracze 0   od  5 min   ponownie po 30 min
+    - id: GreytideVirusSecretPlus   # waga 4    koszt 200   gracze 15  od  5 min   ponownie po 20 min
+    - id: IonStorm                  # waga 8    koszt 150   gracze 0   od  5 min   ponownie po 20 min
+    - id: KudzuGrowth               # waga 7    koszt 80    gracze 15  od 15 min   ponownie po 30 min
+    - id: MiniDragonMigration       # waga 3    koszt 25    gracze 1   od 15 min   ponownie po 30 min
+    - !type:EventSelector
+      id: SpaceDustMinor            # waga 5    koszt 30    gracze 0   od 10 min   ponownie po 20 min
+      eventWeight: 5
+      chaosScore: 30
+      earliestStart: 10
+      reoccurrenceDelay: 20
+    - id: VentClog                  # waga 5    koszt 70    gracze 15  od 15 min   ponownie po 30 min
+
+# Robocze dla Low: cztery zdarzenia, z czego trzy mają własne progi graczy.
+# Kudzu zostaje ze standardowym progiem, takim samym jak w tabeli roboczej.
+# Używane przez: Low, z "prob" (patrz SecretPlusTable).
+# Suma wag: 31
+- type: entityTable
+  id: SecretPlusLowWorkEventsTable
+  table: !type:AllSelector
+    children:
+    - !type:EventSelector            # waga 8    koszt 70    gracze 10  od  5 min   ponownie po 30 min
+      id: AnomalySpawn
+      minimumPlayers: 10
+    - !type:EventSelector
+      id: GasLeak                    # waga 8    koszt 80    gracze 7   od  5 min   ponownie po 30 min
+      minimumPlayers: 7
+    - !type:EventSelector
+      id: IonStorm                   # waga 8    koszt 150   gracze 6   od  5 min   ponownie po 20 min
+      minimumPlayers: 6
+    - id: KudzuGrowth                # waga 7    koszt 80    gracze 15  od 15 min   ponownie po 30 min
+
+# Niszczące: wrogie moby, rozszczelnienia i meteory.
+# Używane przez: MidHigh i High, a Low z "prob" (patrz SecretPlusTable).
+# Suma wag: 33
+- type: entityTable
+  id: SecretPlusDestructiveEventsTable
+  table: !type:AllSelector
+    children:
+    - id: CowiekMaupaSpawn              # waga 5    koszt 250   gracze 5   od 20 min   ponownie po 25 min
+    - !type:EventSelector               # waga 4    koszt 300   gracze 10  od 20 min   ponownie po 40 min
+      id: MeteorSwarmSmall
+      eventWeight: 4
+      chaosScore: 300
+      minimumPlayers: 10
+      earliestStart: 20
+      reoccurrenceDelay: 40
+    - !type:EventSelector               # waga 5    koszt 180   gracze 15  od 20 min   ponownie po 30 min
+      id: SlimesSpawnHorde
+      chaosScore: 180
+    - !type:EventSelector               # waga 5    koszt 180   gracze 15  od 20 min   ponownie po 30 min
+      id: SnakeSpawnHorde
+      chaosScore: 180
+    - !type:EventSelector               # waga 4    koszt 60    gracze 0   od 12 min   ponownie po 20 min
+      id: SpaceDustMajor
+      eventWeight: 4
+      chaosScore: 60
+      reoccurrenceDelay: 20
+    - !type:EventSelector               # waga 5    koszt 250   gracze 15  od 20 min   ponownie po 30 min
+      id: SpiderSpawnHorde
+      chaosScore: 250
+    - !type:EventSelector               # waga 5    koszt 150   gracze 0   od 15 min   raz na rundę
+      id: UtilityLineRupture
+      eventWeight: 5
+      chaosScore: 150
+
+# ====================================================================================================
+# Antagoniści z ról duchów: ich liczbę ogranicza ghostAntagLimit planisty
+# ====================================================================================================
+
+# Łagodni antagoniści z ról duchów.
+# Używane przez: Low (z "prob"), Mid.
+# Suma wag: 18,5
+- type: entityTable
+  id: SecretPlusGhostAntagsSoftTable
+  table: !type:AllSelector
+    children:
+    - id: KingRatMigration   # waga 6    koszt 25    gracze 30  od 15 min   ponownie po 30 min
+    - id: ParadoxCloneSpawn  # waga 5    koszt 80    gracze 15  od 20 min   raz na rundę
+    - id: RevenantSpawn      # waga 7.5  koszt 450   gracze 20  od 45 min   ponownie po 30 min
+
+# Wszyscy antagoniści z ról duchów, czyli łagodni plus ci poniżej.
+# Używane przez: MidHigh, High.
+# Suma wag: 22,1 bez tabeli łagodnej, razem z nią 40,6
+- type: entityTable
+  id: SecretPlusGhostAntagsTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: SecretPlusGhostAntagsSoftTable
+    - id: DragonSpawn                # waga 6.5  koszt 600   gracze 20  od 40 min   raz na rundę
+    - id: LoneOpsSpawn               # waga 5.5  koszt 700   gracze 20  od 35 min   raz na rundę
+    - id: NinjaSpawn                 # waga 6    koszt 300   gracze 30  od 30 min   raz na rundę
+    - id: ReplicatorSpawnSecretPlus  # waga 4    koszt 650   gracze 15  od 25 min   ponownie po 45 min
+    - id: UnknownShuttleInstigator   # waga 0.1  koszt 900   gracze 0   od  5 min   raz na rundę
+
+# ====================================================================================================
+# Tabele presetów, złożone z klocków powyżej
+# ====================================================================================================
+
+# Low: cały czas spokojne zdarzenia i po trochu wszystkiego innego.
+# Z symulacji przy 20 graczach wychodzi mniej więcej jedno niszczące zdarzenie na cztery rundy,
+# każde robocze zdarzenie Low w 9-13% rund, mały pył kosmiczny w 14% rund
+# i mini smok w około 17% rund (w pozostałych presetach 20-24%).
+# Wiersz SpaceDustMinor ma te same wartości co w tabeli roboczej. Jak zmieniasz jeden, zmień też drugi.
+- type: entityTable
+  id: SecretPlusTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: SecretPlusCalmEventsTable
+    - !type:NestedSelector
+      tableId: SecretPlusLowWorkEventsTable
+      prob: 0.2
+    - !type:NestedSelector
+      tableId: SecretPlusDestructiveEventsTable
+      prob: 0.15
+    - !type:EventSelector           # waga 5    koszt 30    gracze 0   od 10 min   ponownie po 20 min
+      id: SpaceDustMinor
+      eventWeight: 5
+      chaosScore: 30
+      earliestStart: 10
+      reoccurrenceDelay: 20
+      prob: 0.3
+    - id: MiniDragonMigration       # waga 3    koszt 25    gracze 1   od 15 min   ponownie po 30 min
+      prob: 0.6
+
+# Mid: zdarzenia spokojne i robocze, z małą szansą na niszczące.
+- type: entityTable
+  id: SecretPlusMidTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: SecretPlusCalmEventsTable
+    - !type:NestedSelector
+      tableId: SecretPlusWorkEventsTable
+    - !type:NestedSelector
+      tableId: SecretPlusDestructiveEventsTable
+      prob: 0.2
+
+# MidHigh: zdarzenia spokojne i robocze, niszczące w części losowań, oraz średni rój meteorów.
+- type: entityTable
+  id: SecretPlusMidHighTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: SecretPlusCalmEventsTable
+    - !type:NestedSelector
+      tableId: SecretPlusWorkEventsTable
+    - !type:NestedSelector
+      tableId: SecretPlusDestructiveEventsTable
+      prob: 0.6
+    - !type:EventSelector              # waga 3    koszt 500   gracze 17  od 30 min   ponownie po 60 min
+      id: MeteorSwarmMedium
+      eventWeight: 3
+      chaosScore: 500
+      minimumPlayers: 17
+      earliestStart: 30
+      reoccurrenceDelay: 60
+
+# High: zdarzenia spokojne, robocze i niszczące bez ograniczeń oraz średni i duży rój meteorów.
+# Wiersz MeteorSwarmMedium jest taki sam jak w MidHigh. Jak zmieniasz jeden, zmień też drugi.
+- type: entityTable
+  id: SecretPlusHighTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: SecretPlusCalmEventsTable
+    - !type:NestedSelector
+      tableId: SecretPlusWorkEventsTable
+    - !type:NestedSelector
+      tableId: SecretPlusDestructiveEventsTable
+    - !type:EventSelector              # waga 3    koszt 500   gracze 17  od 30 min   ponownie po 60 min
+      id: MeteorSwarmMedium
+      eventWeight: 3
+      chaosScore: 500
+      minimumPlayers: 17
+      earliestStart: 30
+      reoccurrenceDelay: 60
+    - !type:EventSelector              # waga 2    koszt 800   gracze 25  od 40 min   ponownie po 60 min
+      id: MeteorSwarmLarge
+      eventWeight: 2
+      chaosScore: 800
+      earliestStart: 40
+      reoccurrenceDelay: 60
+
+# ====================================================================================================
+# Presety spoza drabinki
+# ====================================================================================================
+
+# SurvivalPlus: standardowe tabele zdarzeń. Planista pomija zdarzenia bez kosztu chaosu.
+- type: entityTable
+  id: SecretPlusSurvivalTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: SpaceTrafficControlTable
+    - !type:NestedSelector
+      tableId: BasicGameRulesTable
+    - id: ZombieOutbreakSurvivalPlus
+
+# Admeme: tylko dla adminów, Sekret tego nie losuje.
+- type: entityTable
+  id: SecretPlusAdmemeTable
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: SpaceTrafficControlTable
+    - !type:NestedSelector
+      tableId: BasicGameRulesTable
+    - id: CowiekMaupaSpawn
+    - id: ReplicatorSpawnSecretPlus
+    - id: GreytideVirusSecretPlus
