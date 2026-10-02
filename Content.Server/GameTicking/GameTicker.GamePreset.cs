@@ -50,6 +50,8 @@ public sealed partial class GameTicker
 
         return preset;
     }
+
+    private GamePresetPrototype? ShownDecoy => _cfg.GetCVar(CCVars.GamePresetHidden) ? null : Decoy;
     // POLONIUM END
 
     private bool StartPreset(ICommonSession[] origReadyPlayers, bool force)

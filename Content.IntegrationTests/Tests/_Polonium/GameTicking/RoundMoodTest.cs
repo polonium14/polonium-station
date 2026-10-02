@@ -330,4 +330,36 @@ public sealed class RoundMoodTest : GameTest
 
         Assert.That(clientTicker.ServerInfoBlob, Does.Contain(extendedTitle));
     }
+
+    [Test]
+    public async Task HiddenPresetBeatsDecoy()
+    {
+        var server = Pair.Server;
+        var client = Pair.Client;
+        var clientTicker = client.System<ClientGameTicker>();
+
+        var secretTitle = string.Empty;
+        var extendedTitle = string.Empty;
+        await server.WaitPost(() =>
+        {
+            var loc = server.ResolveDependency<ILocalizationManager>();
+            secretTitle = loc.GetString(server.ProtoMan.Index<GamePresetPrototype>(SecretPreset).ModeTitle.Value);
+            extendedTitle = loc.GetString(server.ProtoMan.Index<GamePresetPrototype>(ExtendedPreset).ModeTitle.Value);
+        });
+
+        server.CfgMan.SetCVar(CCVars.GamePresetHidden, true);
+        await Pair.WaitCommand($"setgamepreset {SoloPreset} 1 {ExtendedPreset}");
+        await Pair.RunTicksSync(10);
+
+        Assert.Multiple(() =>
+        {
+            Assert.That(clientTicker.ServerInfoBlob, Does.Contain(secretTitle));
+            Assert.That(clientTicker.ServerInfoBlob, Does.Not.Contain(extendedTitle));
+        });
+
+        server.CfgMan.SetCVar(CCVars.GamePresetHidden, false);
+        await Pair.RunTicksSync(10);
+
+        Assert.That(clientTicker.ServerInfoBlob, Does.Contain(extendedTitle));
+    }
 }

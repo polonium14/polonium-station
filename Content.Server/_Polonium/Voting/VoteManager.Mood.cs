@@ -47,7 +47,7 @@ public sealed partial class VoteManager
             Duration = alone
                 ? TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerAlone))
                 : TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerPreset)),
-            DisplayVotes = !_cfg.GetCVar(CCVars.GamePresetHidden),
+            DisplayVotes = false,
         };
 
         foreach (var mood in moods)
