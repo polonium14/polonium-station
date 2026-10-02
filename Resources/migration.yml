@@ -1300,3 +1300,9 @@ WallMalign: WallSolid
 WallMalignIndestructible: WallSolid
 WallMalignIndestructibleNoOcclusion: WallSolid
 MalignWindow: Window
+
+# 2026-10-01
+ClothingHeadHatWizard: ClothingHeadHatWizardBlue
+ClothingOuterWizard: ClothingOuterWizardBlue
+ClothingHeadHatRedwizard: ClothingHeadHatWizardRed
+ClothingHeadHatVioletwizard: ClothingHeadHatWizardViolet
