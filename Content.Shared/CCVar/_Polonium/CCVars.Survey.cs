@@ -17,6 +17,12 @@ public sealed partial class CCVars
         CVarDef.Create("survey.close_delay", 120f, CVar.SERVERONLY);
 
     /// <summary>
+    /// How many rounds this client has had the survey tab highlighted in. The highlight stops after a few.
+    /// </summary>
+    public static readonly CVarDef<int> SurveyTabHighlights =
+        CVarDef.Create("survey.tab_highlights", 0, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
     /// URL of the Discord webhook which will receive the survey summary of each round.
     /// The summary names the real preset, so keep the channel staff-only. If left empty, disables the webhook.
     /// </summary>
