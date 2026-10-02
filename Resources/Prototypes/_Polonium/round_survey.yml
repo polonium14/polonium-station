@@ -1,0 +1,53 @@
+- type: roundSurveyQuestion
+  id: RoundRating
+  text: round-survey-question-rating
+  low: round-survey-answer-bad
+  high: round-survey-answer-great
+  always: true
+  order: 0
+
+- type: roundSurveyQuestion
+  id: RoundPace
+  text: round-survey-question-pace
+  low: round-survey-answer-calm
+  high: round-survey-answer-chaotic
+  target: 3
+  always: true
+  order: 1
+
+- type: roundSurveyQuestion
+  id: AntagStrength
+  text: round-survey-question-antags
+  low: round-survey-answer-too-weak
+  high: round-survey-answer-too-strong
+  target: 3
+  audience: Crew
+  needsAntags: true
+  order: 2
+
+- type: roundSurveyQuestion
+  id: OwnAntagStrength
+  text: round-survey-question-own-antag
+  low: round-survey-answer-own-too-weak
+  high: round-survey-answer-own-too-strong
+  target: 3
+  audience: Antag
+  weight: 3
+  order: 3
+
+- type: roundSurveyQuestion
+  id: DepartmentNeeded
+  text: round-survey-question-department
+  low: round-survey-answer-not-at-all
+  high: round-survey-answer-very
+  audience: Crew
+  order: 4
+
+- type: roundSurveyQuestion
+  id: RoundLength
+  text: round-survey-question-length
+  low: round-survey-answer-too-short
+  high: round-survey-answer-too-long
+  target: 3
+  minTimeInRound: 1200
+  order: 5

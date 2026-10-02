@@ -1,5 +1,6 @@
 using Content.Server.Maps;
 using Content.Shared._Polonium.GameTicking;
+using Content.Shared._Polonium.Survey;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.GameTicking.Presets
@@ -47,6 +48,12 @@ namespace Content.Server.GameTicking.Presets
         /// </summary>
         [DataField]
         public Dictionary<ProtoId<RoundMoodPrototype>, float> Moods = new();
+
+        /// <summary>
+        /// The answers this preset aims for in two-sided survey questions, replacing the question's own target.
+        /// </summary>
+        [DataField]
+        public Dictionary<ProtoId<RoundSurveyQuestionPrototype>, float> SurveyTargets = new();
         // POLONIUM END
     }
 }

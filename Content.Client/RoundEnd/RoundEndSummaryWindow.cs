@@ -53,12 +53,22 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
         var roundEndTabs = new TabContainer();
         roundEndTabs.AddChild(MakeRoundEndSummaryTab(gm, roundEnd, roundTimeSpan, roundId));
         roundEndTabs.AddChild(MakePlayerManifestTab());
+        _tabs = roundEndTabs; // Polonium
 
         ContentsContainer.AddChild(roundEndTabs);
 
         OpenCenteredRight();
         MoveToFront();
     }
+
+    // POLONIUM START
+    private readonly TabContainer _tabs;
+
+    public void AddTab(Control tab)
+    {
+        _tabs.AddChild(tab);
+    }
+    // POLONIUM END
 
     private static BoxContainer MakeRoundEndSummaryTab(string gamemode, string roundEnd, TimeSpan roundDuration, int roundId)
     {

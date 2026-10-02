@@ -1,3 +1,4 @@
+using Content.Server.GameTicking.Presets;
 using Content.Shared.Random;
 using Robust.Shared.Prototypes;
 
@@ -24,5 +25,8 @@ public sealed partial class SecretRuleComponent : Component
     /// </summary>
     [DataField]
     public bool UseMoods;
+
+    [DataField]
+    public ProtoId<GamePresetPrototype>? SelectedPreset;
     // POLONIUM END
 }

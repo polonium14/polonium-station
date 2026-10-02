@@ -1084,6 +1084,37 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return (row.TutorialCompleted, row.TutorialDuration);
         }
 
+        public async Task SetSurveyResponse(SurveyResponse response)
+        {
+            await using var db = await GetDb();
+
+            var existing = await db.DbContext.SurveyResponse.SingleOrDefaultAsync(r =>
+                r.RoundId == response.RoundId &&
+                r.PlayerUserId == response.PlayerUserId &&
+                r.Question == response.Question);
+
+            if (existing == null)
+            {
+                db.DbContext.SurveyResponse.Add(response);
+            }
+            else
+            {
+                existing.Value = response.Value;
+                existing.Time = response.Time;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<List<SurveyResponse>> GetSurveyResponses(int roundId)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.SurveyResponse
+                .Where(r => r.RoundId == roundId)
+                .ToListAsync();
+        }
+
         public async Task<bool> GetBlacklistStatusAsync(NetUserId player)
         {
             await using var db = await GetDb();

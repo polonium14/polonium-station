@@ -17,6 +17,8 @@
     Calm: 45
     Standard: 24
     Hot: 8
+  surveyTargets: # Polonium
+    RoundPace: 2
   rules:
   - SecretPlusLow
   - BasicRoundstartVariation
@@ -50,6 +52,8 @@
     Calm: 5
     Standard: 18
     Hot: 30
+  surveyTargets: # Polonium
+    RoundPace: 3.5
   rules:
   - SecretPlusMidHigh
   - BasicRoundstartVariation

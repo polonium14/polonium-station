@@ -264,6 +264,13 @@ namespace Content.Server.Database
 
         #endregion
 
+        #region Survey
+
+        Task SetSurveyResponse(SurveyResponse response);
+        Task<List<SurveyResponse>> GetSurveyResponses(int roundId);
+
+        #endregion
+
         #region Admin Notes
 
         Task<int> AddAdminNote(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, NoteSeverity severity, bool secret, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime);
@@ -844,6 +851,18 @@ namespace Content.Server.Database
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetTutorialCompletion(player));
+        }
+
+        public Task SetSurveyResponse(SurveyResponse response)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetSurveyResponse(response));
+        }
+
+        public Task<List<SurveyResponse>> GetSurveyResponses(int roundId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetSurveyResponses(roundId));
         }
 
         public Task<int> AddAdminNote(int? roundId, Guid player, TimeSpan playtimeAtNote, string message, NoteSeverity severity, bool secret, Guid createdBy, DateTimeOffset createdAt, DateTimeOffset? expiryTime)

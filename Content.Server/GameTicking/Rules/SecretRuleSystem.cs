@@ -42,6 +42,7 @@ public sealed partial class SecretRuleSystem : GameRuleSystem<SecretRuleComponen
             return;
         }
 
+        component.SelectedPreset = preset.ID; // Polonium
         Log.Info($"Selected {preset.ID} as the secret preset.");
         _adminLogger.Add(LogType.EventStarted, $"Selected {preset.ID} as the secret preset.");
 
