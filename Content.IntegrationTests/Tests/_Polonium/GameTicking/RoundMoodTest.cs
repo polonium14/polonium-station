@@ -343,8 +343,8 @@ public sealed class RoundMoodTest : GameTest
         await server.WaitPost(() =>
         {
             var loc = server.ResolveDependency<ILocalizationManager>();
-            secretTitle = loc.GetString(server.ProtoMan.Index<GamePresetPrototype>(SecretPreset).ModeTitle.Value);
-            extendedTitle = loc.GetString(server.ProtoMan.Index<GamePresetPrototype>(ExtendedPreset).ModeTitle.Value);
+            secretTitle = loc.GetString(server.ProtoMan.Index<GamePresetPrototype>(SecretPreset).ModeTitle);
+            extendedTitle = loc.GetString(server.ProtoMan.Index<GamePresetPrototype>(ExtendedPreset).ModeTitle);
         });
 
         server.CfgMan.SetCVar(CCVars.GamePresetHidden, true);
