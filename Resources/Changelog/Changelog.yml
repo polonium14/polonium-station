@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: DaturoDewitt
-  changes:
-  - message: Lizards can laugh again!
-    type: Add
-  id: 9542
-  time: '2026-02-23T23:07:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42915
 - author: TiniestShark
   changes:
   - message: Removed the majority of unique corgi sprites.
@@ -4266,3 +4259,11 @@
   id: 10037
   time: '2026-10-02T09:10:48.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1085
+- author: Polonium-bot
+  changes:
+  - message: "Zaktualizowano polskie t\u0142umaczenia komunikat\xF3w, interfejsu i\
+      \ opis\xF3w w kilku obszarach gry."
+    type: Tweak
+  id: 10038
+  time: '2026-10-02T15:20:41.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1080
