@@ -1,6 +1,6 @@
 ent-BaseParadoxCloneObjective = { ent-BaseObjective }
     .desc = { ent-BaseObjective.desc }
 ent-ParadoxCloneLivingObjective = Escape to CD alive and unrestrained.
-    .desc = Return to your old life.
-ent-ParadoxCloneKillObjective = Fix the space-time paradox.
-    .desc = Replace your original to fix the paradox. Remember, your mission is to blend in, do not kill anyone else unless you have to!
+    .desc = Powróć do swojego dawnego życia.
+ent-ParadoxCloneKillObjective = Rozwiąż paradoks czasoprzestrzenny.
+    .desc = Zastąp swój oryginał, aby naprawić paradoks. Pamiętaj, że twoja misja polega na tym, by się wtopić. Nie zabijaj nikogo innego no, chyba że musisz!
