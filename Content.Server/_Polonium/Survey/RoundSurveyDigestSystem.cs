@@ -108,12 +108,24 @@ public sealed partial class RoundSurveyDigestSystem : EntitySystem
         {
             foreach (var (start, days) in due)
             {
-                if (await _db.AddSurveyDigest(start, days)
-                    && await GetDigest(start, start.AddDays(days)) is { } digest
-                    && !await Post(digest))
+                if (await _db.AddSurveyDigest(start, days))
                 {
-                    await _db.RemoveSurveyDigest(start, days);
-                    continue;
+                    RoundSurveyDigest? digest;
+                    try
+                    {
+                        digest = await GetDigest(start, start.AddDays(days));
+                    }
+                    catch
+                    {
+                        await _db.RemoveSurveyDigest(start, days);
+                        throw;
+                    }
+
+                    if (digest != null && !await Post(digest))
+                    {
+                        await _db.RemoveSurveyDigest(start, days);
+                        continue;
+                    }
                 }
 
                 _reported[days] = start;
