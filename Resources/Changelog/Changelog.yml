@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: TiniestShark
-  changes:
-  - message: Removed the majority of unique corgi sprites.
-    type: Remove
-  id: 9543
-  time: '2026-02-25T01:34:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42696
 - author: ScarKy0
   changes:
   - message: Cyborgs can now pry unpowered doors without the need for a crowbar.
@@ -4267,3 +4260,11 @@
   id: 10038
   time: '2026-10-02T15:20:41.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1080
+- author: Nikita
+  changes:
+  - message: "Dodano ankiet\u0119 po rundzie. Gracze mog\u0105 ocenia\u0107 przebieg\
+      \ rundy i przesy\u0142a\u0107 komentarze."
+    type: Add
+  id: 10039
+  time: '2026-10-02T15:47:05.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1086
