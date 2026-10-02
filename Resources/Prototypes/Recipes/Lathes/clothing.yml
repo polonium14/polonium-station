@@ -522,6 +522,11 @@
   id: ClothingUniformJumpskirtQMTurtleneck
   result: ClothingUniformJumpskirtQMTurtleneck
 
+- type: latheRecipe
+  parent: BaseCommandJumpsuitRecipe
+  id: ClothingUniformJumpskirtQMFormalDress
+  result: ClothingUniformJumpskirtQMFormalDress
+
 ## RD
 
 - type: latheRecipe
