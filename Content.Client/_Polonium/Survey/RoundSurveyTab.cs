@@ -46,17 +46,10 @@ public sealed class RoundSurveyTab : BoxContainer
                 Margin = new Thickness(0, 16, 0, 4),
             });
 
-            var scale = new BoxContainer
+            var buttons = new BoxContainer
             {
                 Orientation = LayoutOrientation.Horizontal,
             };
-
-            scale.AddChild(new Label
-            {
-                Text = Loc.GetString(question.Low),
-                StyleClasses = { StyleClass.LabelSubText },
-                Margin = new Thickness(0, 0, 8, 0),
-            });
 
             var group = new ButtonGroup();
             for (var value = RoundSurveyQuestionPrototype.MinAnswer; value <= RoundSurveyQuestionPrototype.MaxAnswer; value++)
@@ -66,21 +59,53 @@ public sealed class RoundSurveyTab : BoxContainer
                 {
                     Text = value.ToString(),
                     Group = group,
-                    MinSize = new Vector2(44, 0),
+                    MinSize = new Vector2(48, 0),
                 };
 
+                button.AddStyleClass(value switch
+                {
+                    RoundSurveyQuestionPrototype.MinAnswer => StyleClass.ButtonOpenRight,
+                    RoundSurveyQuestionPrototype.MaxAnswer => StyleClass.ButtonOpenLeft,
+                    _ => StyleClass.ButtonOpenBoth,
+                });
+
                 button.OnPressed += _ => _survey.Answer(_roundId, question.ID, answer);
-                scale.AddChild(button);
+                buttons.AddChild(button);
                 _answers.Add(button);
             }
 
-            scale.AddChild(new Label
+            var ends = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Horizontal,
+                Margin = new Thickness(0, 2, 0, 0),
+            };
+
+            ends.AddChild(new Label
+            {
+                Text = Loc.GetString(question.Low),
+                StyleClasses = { StyleClass.LabelSubText },
+            });
+
+            ends.AddChild(new Control
+            {
+                HorizontalExpand = true,
+                MinSize = new Vector2(16, 0),
+            });
+
+            ends.AddChild(new Label
             {
                 Text = Loc.GetString(question.High),
                 StyleClasses = { StyleClass.LabelSubText },
-                Margin = new Thickness(8, 0, 0, 0),
             });
 
+            var scale = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Vertical,
+                HorizontalAlignment = HAlignment.Left,
+            };
+
+            scale.AddChild(buttons);
+            scale.AddChild(ends);
             list.AddChild(scale);
         }
 
