@@ -79,6 +79,15 @@ public sealed partial class RoundSurveySystem : EntitySystem
 
         Subs.CVar(_cfg, CCVars.DiscordSurveyWebhook, OnWebhookChanged, true);
         Subs.CVar(_cfg, CCVars.DiscordSurveyResponsesWebhook, OnResponsesWebhookChanged, true);
+
+        _player.PlayerStatusChanged += OnPlayerStatusChanged;
+    }
+
+    public override void Shutdown()
+    {
+        base.Shutdown();
+
+        _player.PlayerStatusChanged -= OnPlayerStatusChanged;
     }
 
     public override void Update(float frameTime)
@@ -124,6 +133,26 @@ public sealed partial class RoundSurveySystem : EntitySystem
         _joined.TryAdd(ev.Player.UserId, _timing.CurTime);
     }
 
+    private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs args)
+    {
+        if (args.NewStatus != SessionStatus.InGame || _survey is not { } survey)
+            return;
+
+        if (survey.Respondents.TryGetValue(args.Session.UserId, out var respondent))
+            Offer(survey, respondent, args.Session);
+    }
+
+    private void Offer(Survey survey, Respondent respondent, ICommonSession session)
+    {
+        respondent.Offered = true;
+        respondent.Name = session.Name;
+
+        RaiseNetworkEvent(new RoundSurveyOfferEvent(survey.RoundId, respondent.Questions, survey.ExpectedStart, survey.CloseDelay), session);
+
+        if (survey.ClosesAt is { } closesAt)
+            RaiseNetworkEvent(new RoundSurveyDeadlineEvent(survey.RoundId, closesAt), session);
+    }
+
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
         _joined.Clear();
@@ -167,9 +196,6 @@ public sealed partial class RoundSurveySystem : EntitySystem
         if (_survey != null)
             Close(_survey);
 
-        var closeDelay = TimeSpan.FromSeconds(Math.Max(_cfg.GetCVar(CCVars.SurveyCloseDelay), 0f));
-        var expectedStart = _timing.CurTime + TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.RoundRestartTime)) + _ticker.LobbyDuration;
-
         var survey = new Survey
         {
             RoundId = ev.RoundId,
@@ -177,32 +203,40 @@ public sealed partial class RoundSurveySystem : EntitySystem
             Duration = ev.RoundDuration,
             Players = _joined.Count,
             Moods = string.Join(" · ", _mood.GetRoundVotes().Select(vote => $"{Loc.GetString(vote.Mood.Name)} {vote.Votes}")),
-            CloseDelay = closeDelay,
+            ExpectedStart = _timing.CurTime + TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.RoundRestartTime)) + _ticker.LobbyDuration,
+            CloseDelay = TimeSpan.FromSeconds(Math.Max(_cfg.GetCVar(CCVars.SurveyCloseDelay), 0f)),
         };
 
         var players = DescribePlayers();
         var antags = players.Values.Any(player => player.Antag != null);
         foreach (var (user, joinedAt) in _joined)
         {
-            if (!_player.TryGetSessionById(user, out var session) || session.Status != SessionStatus.InGame)
-            {
+            // Those who left stay on the list, the survey reaches them if they come back while it is open.
+            var session = _player.TryGetSessionById(user, out var found) && found.Status == SessionStatus.InGame ? found : null;
+            if (session == null)
                 survey.Left++;
-                continue;
-            }
 
             var who = players.GetValueOrDefault(user) with { TimeInRound = _timing.CurTime - joinedAt };
-            if (_playTime.TryGetTrackerTime(session, PlayTimeTrackingShared.TrackerOverall, out var playtime))
-                who.Playtime = playtime.Value;
-
             var questions = PickQuestions(who, antags);
             if (questions.Count == 0)
                 continue;
 
-            survey.Respondents[user] = new Respondent(session.Name, who, questions);
-            RaiseNetworkEvent(new RoundSurveyOfferEvent(ev.RoundId, questions, expectedStart, closeDelay), session);
+            var name = _player.TryGetPlayerData(user, out var data) ? data.UserName : user.ToString();
+            var respondent = new Respondent(name, who, questions);
+            survey.Respondents[user] = respondent;
+
+            if (session != null)
+                Offer(survey, respondent, session);
         }
 
         _survey = survey;
+    }
+
+    private TimeSpan GetPlaytime(ICommonSession session)
+    {
+        return _playTime.TryGetTrackerTime(session, PlayTimeTrackingShared.TrackerOverall, out var playtime)
+            ? playtime.Value
+            : TimeSpan.Zero;
     }
 
     private GamePresetPrototype? GetPlayedPreset()
@@ -319,6 +353,9 @@ public sealed partial class RoundSurveySystem : EntitySystem
 
         if (respondent.Changes >= respondent.Questions.Count * MaxChangesPerQuestion)
             return false;
+
+        if (respondent.Who.Playtime == TimeSpan.Zero)
+            respondent.Who = respondent.Who with { Playtime = GetPlaytime(session) };
 
         respondent.Changes++;
         respondent.Answers[question] = value;
@@ -466,7 +503,9 @@ public sealed partial class RoundSurveySystem : EntitySystem
         }
         catch (Exception e)
         {
+            respondent.Dirty = true;
             survey.ResponseFailures++;
+            survey.NextResponse = _timing.RealTime + ResponseRetryDelay;
             Log.Error($"Error while sending a round survey response to Discord: {e}");
         }
         finally
@@ -556,7 +595,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
             ("players", survey.Players.ToString()),
             ("left", survey.Left.ToString())));
         description.Append(Loc.GetString("round-survey-discord-responses",
-            ("offered", survey.Respondents.Count.ToString()),
+            ("offered", survey.Respondents.Values.Count(respondent => respondent.Offered).ToString()),
             ("answered", survey.Respondents.Values.Count(respondent => respondent.Answers.Count > 0).ToString())));
 
         if (survey.Moods != string.Empty)
@@ -651,6 +690,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
         public required TimeSpan Duration;
         public required int Players;
         public required string Moods;
+        public required TimeSpan ExpectedStart;
         public required TimeSpan CloseDelay;
         public TimeSpan? ClosesAt;
         public int Left;
@@ -670,11 +710,12 @@ public sealed partial class RoundSurveySystem : EntitySystem
 
     private sealed class Respondent(string name, RoundSurveyRespondent who, List<ProtoId<RoundSurveyQuestionPrototype>> questions)
     {
-        public readonly string Name = name;
-        public readonly RoundSurveyRespondent Who = who;
+        public string Name = name;
+        public RoundSurveyRespondent Who = who;
         public readonly List<ProtoId<RoundSurveyQuestionPrototype>> Questions = questions;
         public readonly Dictionary<ProtoId<RoundSurveyQuestionPrototype>, int> Answers = new();
         public int Changes;
+        public bool Offered;
 
         public ulong MessageId;
         public TimeSpan ChangedAt;

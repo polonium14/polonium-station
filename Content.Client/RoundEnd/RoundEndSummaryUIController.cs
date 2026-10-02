@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Client._Polonium.Survey;
 using Content.Client.GameTicking.Managers;
 using Content.Shared._Polonium.Survey;
@@ -6,6 +7,7 @@ using Content.Shared.Input;
 using JetBrains.Annotations;
 using Robust.Client.Input;
 using Robust.Client.UserInterface.Controllers;
+using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -24,26 +26,35 @@ public sealed partial class RoundEndSummaryUIController : UIController,
 
     // POLONIUM START
     private RoundSurveySystem? _survey;
-    private RoundEndSummaryWindow? _surveyWindow;
+    private RoundSurveyTab? _surveyTab;
+    private DefaultWindow? _surveyWindow;
 
     public void OnSystemLoaded(RoundSurveySystem system)
     {
         _survey = system;
-        system.OfferReceived += AddSurveyTab;
+        system.OfferReceived += ShowSurvey;
     }
 
     public void OnSystemUnloaded(RoundSurveySystem system)
     {
-        system.OfferReceived -= AddSurveyTab;
+        system.OfferReceived -= ShowSurvey;
         _survey = null;
+        RemoveSurvey();
     }
 
-    private void AddSurveyTab()
+    private void RemoveSurvey()
     {
-        if (_window == null || _survey?.Offer is not { } offer)
-            return;
+        _surveyTab?.Orphan();
+        _surveyTab = null;
+        _surveyWindow?.Close();
+        _surveyWindow = null;
+    }
 
-        if (offer.RoundId != _window.RoundId || _window == _surveyWindow)
+    private void ShowSurvey()
+    {
+        RemoveSurvey();
+
+        if (_survey?.Offer is not { } offer)
             return;
 
         var questions = new List<RoundSurveyQuestionPrototype>();
@@ -56,8 +67,22 @@ public sealed partial class RoundEndSummaryUIController : UIController,
         if (questions.Count == 0)
             return;
 
-        _surveyWindow = _window;
-        _window.AddTab(new RoundSurveyTab(offer, questions, _survey));
+        _surveyTab = new RoundSurveyTab(offer, questions, _survey);
+        if (_window?.RoundId == offer.RoundId)
+        {
+            _window.AddTab(_surveyTab);
+            return;
+        }
+
+        // Those who reconnect do not get the round end window again.
+        _surveyWindow = new DefaultWindow
+        {
+            Title = Loc.GetString("round-survey-tab-title"),
+            MinSize = new Vector2(520, 360),
+        };
+
+        _surveyWindow.Contents.AddChild(_surveyTab);
+        _surveyWindow.OpenCentered();
     }
     // POLONIUM END
 
@@ -85,7 +110,10 @@ public sealed partial class RoundEndSummaryUIController : UIController,
 
         _window = new RoundEndSummaryWindow(message.GamemodeTitle, message.RoundEndText,
             message.RoundDuration, message.RoundId, message.AllPlayersEndInfo);
-        AddSurveyTab(); // Polonium
+        // POLONIUM START
+        if (_survey?.Offer?.RoundId == message.RoundId)
+            ShowSurvey();
+        // POLONIUM END
     }
 
     public void OnSystemLoaded(ClientGameTicker system)

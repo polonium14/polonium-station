@@ -1084,26 +1084,37 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return (row.TutorialCompleted, row.TutorialDuration);
         }
 
+        private readonly SemaphoreSlim _surveyResponseLock = new(1, 1);
+
         public async Task SetSurveyResponse(SurveyResponse response)
         {
-            await using var db = await GetDb();
+            await _surveyResponseLock.WaitAsync();
 
-            var existing = await db.DbContext.SurveyResponse.SingleOrDefaultAsync(r =>
-                r.RoundId == response.RoundId &&
-                r.PlayerUserId == response.PlayerUserId &&
-                r.Question == response.Question);
-
-            if (existing == null)
+            try
             {
-                db.DbContext.SurveyResponse.Add(response);
-            }
-            else
-            {
-                existing.Value = response.Value;
-                existing.Time = response.Time;
-            }
+                await using var db = await GetDb();
 
-            await db.DbContext.SaveChangesAsync();
+                var existing = await db.DbContext.SurveyResponse.SingleOrDefaultAsync(r =>
+                    r.RoundId == response.RoundId &&
+                    r.PlayerUserId == response.PlayerUserId &&
+                    r.Question == response.Question);
+
+                if (existing == null)
+                {
+                    db.DbContext.SurveyResponse.Add(response);
+                }
+                else if (response.Time >= existing.Time)
+                {
+                    existing.Value = response.Value;
+                    existing.Time = response.Time;
+                }
+
+                await db.DbContext.SaveChangesAsync();
+            }
+            finally
+            {
+                _surveyResponseLock.Release();
+            }
         }
 
         public async Task<List<SurveyResponse>> GetSurveyResponses(int roundId)

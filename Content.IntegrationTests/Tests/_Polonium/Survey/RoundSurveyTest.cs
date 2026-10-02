@@ -12,7 +12,9 @@ using Content.Shared._Polonium.Survey;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Robust.Client.UserInterface;
+using Robust.Shared.Enums;
 using Robust.Shared.Localization;
+using Robust.Shared.Network;
 using ClientSurveySystem = Content.Client._Polonium.Survey.RoundSurveySystem;
 using ServerSurveySystem = Content.Server._Polonium.Survey.RoundSurveySystem;
 
@@ -281,6 +283,161 @@ public sealed class RoundSurveyTest : GameTest
         });
 
         Assert.That(clientSurvey.IsOpen(roundId), Is.False);
+    }
+
+    [Test]
+    public async Task SurveyReachesThoseWhoComeBack()
+    {
+        var server = Pair.Server;
+        var client = Pair.Client;
+        var ticker = server.System<GameTicker>();
+        var survey = server.System<ServerSurveySystem>();
+        var loc = server.ResolveDependency<ILocalizationManager>();
+
+        server.CfgMan.SetCVar(CCVars.SurveyEnabled, true);
+        server.CfgMan.SetCVar(CCVars.SurveyCloseDelay, 60f);
+
+        await StartRound();
+
+        var user = Pair.Player!.UserId;
+        var name = Pair.Player!.Name;
+
+        await Disconnect();
+        await Pair.WaitCommand("endround");
+        await Pair.RunTicksSync(10);
+
+        var roundId = ticker.RoundId;
+        await server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.That(ticker.RunLevel, Is.EqualTo(GameRunLevel.PostRound));
+                Assert.That(survey.GetOffered(user).Select(question => question.Id), Is.EqualTo(new[] { TestQuestion }));
+                Assert.That(survey.GetSummary()!.Value.Embeds![0].Description,
+                    Does.Contain(loc.GetString("round-survey-discord-responses", ("offered", "0"), ("answered", "0"))));
+            });
+        });
+
+        var clientSurvey = await Connect(name);
+
+        Assert.Multiple(() =>
+        {
+            Assert.That(Pair.Player!.UserId, Is.EqualTo(user));
+            Assert.That(clientSurvey.Offer?.RoundId, Is.EqualTo(roundId));
+            Assert.That(clientSurvey.Offer?.Questions.Select(question => question.Id), Is.EqualTo(new[] { TestQuestion }));
+        });
+
+        // There is no round end window to put the survey in.
+        await client.WaitAssertion(() =>
+        {
+            var ui = client.ResolveDependency<IUserInterfaceManager>();
+            Assert.That(HasSurveyTab(ui.WindowRoot), "The survey was not shown after reconnecting");
+        });
+
+        await client.WaitPost(() => clientSurvey.Answer(roundId, TestQuestion, 4));
+        var rows = await WaitForAnswer(roundId, 4);
+        Assert.That(rows[0].PlayerUserId, Is.EqualTo(user.UserId));
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(survey.GetSummary()!.Value.Embeds![0].Description,
+                Does.Contain(loc.GetString("round-survey-discord-responses", ("offered", "1"), ("answered", "1"))));
+        });
+
+        await Pair.WaitCommand("restartroundnow");
+        await Pair.RunTicksSync(10);
+        await StartRound();
+
+        // Coming back after the clock has started brings the deadline along.
+        await Disconnect();
+        clientSurvey = await Connect(name);
+
+        await client.WaitAssertion(() =>
+        {
+            var left = clientSurvey.GetTimeLeft(roundId, out var exact);
+            Assert.Multiple(() =>
+            {
+                Assert.That(clientSurvey.Offer?.Questions.Select(question => question.Id), Is.EqualTo(new[] { TestQuestion }));
+                Assert.That(exact, Is.True);
+                Assert.That(left, Is.GreaterThan(TimeSpan.Zero));
+            });
+        });
+
+        await Disconnect();
+        clientSurvey = await Connect("SurveyStranger");
+
+        Assert.Multiple(() =>
+        {
+            Assert.That(Pair.Player!.UserId, Is.Not.EqualTo(user));
+            Assert.That(survey.GetOffered(Pair.Player!.UserId), Is.Empty);
+            Assert.That(clientSurvey.Offer, Is.Null, "Offered the survey to a player who was not in the round");
+        });
+    }
+
+    [Test]
+    public async Task LatestAnswerIsKept()
+    {
+        var server = Pair.Server;
+        var db = server.ResolveDependency<IServerDbManager>();
+
+        server.CfgMan.SetCVar(CCVars.SurveyEnabled, true);
+
+        await PlayRound();
+
+        var user = Pair.Player!.UserId;
+        var roundId = server.System<GameTicker>().RoundId;
+        var now = DateTime.UtcNow;
+
+        SurveyResponse Answer(int value, int second)
+        {
+            return new SurveyResponse
+            {
+                RoundId = roundId,
+                PlayerUserId = user,
+                Question = TestQuestion,
+                Value = value,
+                Time = now.AddSeconds(second),
+                Preset = TestPreset,
+            };
+        }
+
+        // The writes are started together and the newest answer is not the last of them.
+        await Task.WhenAll(
+            db.SetSurveyResponse(Answer(1, 1)),
+            db.SetSurveyResponse(Answer(5, 4)),
+            db.SetSurveyResponse(Answer(2, 2)),
+            db.SetSurveyResponse(Answer(3, 3)));
+
+        var rows = await db.GetSurveyResponses(roundId);
+        Assert.That(rows, Has.Count.EqualTo(1));
+        Assert.Multiple(() =>
+        {
+            Assert.That(rows[0].Value, Is.EqualTo(5));
+            Assert.That(rows[0].Time, Is.EqualTo(now.AddSeconds(4)));
+        });
+    }
+
+    private async Task Disconnect()
+    {
+        var net = Pair.Client.ResolveDependency<IClientNetManager>();
+
+        await Pair.Client.WaitPost(() => net.ClientDisconnect("Survey test"));
+        await Pair.RunTicksSync(5);
+        Assert.That(Pair.Server.PlayerMan.Sessions, Is.Empty);
+    }
+
+    private async Task<ClientSurveySystem> Connect(string name)
+    {
+        var net = Pair.Client.ResolveDependency<IClientNetManager>();
+
+        await Pair.Client.WaitIdleAsync();
+        Pair.Client.SetConnectTarget(Pair.Server);
+        await Pair.Client.WaitPost(() => net.ClientConnect(null!, 0, name));
+        await Pair.RunTicksSync(10);
+        Assert.That(Pair.Player?.Status, Is.EqualTo(SessionStatus.InGame));
+
+        // The client builds its systems anew for every connection.
+        return Pair.Client.System<ClientSurveySystem>();
     }
 
     private async Task<List<SurveyResponse>> WaitForAnswer(int roundId, int value)
