@@ -1,2 +1,2 @@
-ent-BagelTheaterRoomMarker = Bagel Theater interior marker
+ent-BagelTheaterRoomMarker = Znacznik Teatru stacji Bagel
     .desc = { ent-BaseRoomMarker.desc }

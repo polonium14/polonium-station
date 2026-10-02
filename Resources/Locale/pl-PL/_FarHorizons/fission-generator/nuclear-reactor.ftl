@@ -4,7 +4,7 @@ reactor-smoke-start = { $owner } zaczyna dymić!
 reactor-smoke-stop = { $owner } przestaje dymić.
 reactor-fire-start = { $owner } zaczyna się palić!
 reactor-fire-stop = { $owner } przestaje się palić.
-reactor-unanchor-melted = You cannot unanchor the nuclear reactor, it's melted into the hull!
+reactor-unanchor-melted = Nie możesz odkotwiczyć reaktora jądrowego, wtopił się w kadłub!
 reactor-unanchor-warning = Nie możesz odmocować reaktora jądrowego, gdy nie jest pusty lub ma temperaturę powyżej 80 stopni!
 reactor-anchor-warning = Nieprawidłowa pozycja mocowania.
 
@@ -32,7 +32,7 @@ comp-nuclear-reactor-ui-view-change = Zmień Widok
 comp-nuclear-reactor-ui-view-temp = Widok Temperatury
 comp-nuclear-reactor-ui-view-neutron = Widok Neutronów
 comp-nuclear-reactor-ui-view-target = Widok Celu
-comp-nuclear-reactor-ui-view-fuel = Fuel View
+comp-nuclear-reactor-ui-view-fuel = Podgląd prętów 
 comp-nuclear-reactor-ui-status-panel = Status Reaktora
 comp-nuclear-reactor-ui-reactor-temp = Temperatura
 comp-nuclear-reactor-ui-reactor-rads = Promieniowanie

@@ -1,1 +1,1 @@
-suicide-prevented = You tried to suicide, but only your spirit escapes.
+suicide-prevented = Próbowałeś popełnić samobójstwo, ale uciekła tylko twoja dusza.

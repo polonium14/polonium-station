@@ -6,6 +6,6 @@ lock-comp-has-user-access-fail = Access denied
 lock-comp-generic-fail = { CAPITALIZE(SUBJECT($target)) } { CONJUGATE-BE($target) } locked.
 
 ## ToggleLockVerb
+
 toggle-lock-verb-unlock = Odblokuj
 toggle-lock-verb-lock = Zablokuj
-
