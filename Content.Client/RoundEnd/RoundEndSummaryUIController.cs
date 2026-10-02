@@ -2,12 +2,14 @@ using System.Numerics;
 using Content.Client._Polonium.Survey;
 using Content.Client.GameTicking.Managers;
 using Content.Shared._Polonium.Survey;
+using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Input;
 using JetBrains.Annotations;
 using Robust.Client.Input;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.CustomControls;
+using Robust.Shared.Configuration;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -21,13 +23,17 @@ public sealed partial class RoundEndSummaryUIController : UIController,
 {
     [Dependency] private IInputManager _input = default!;
     [Dependency] private IPrototypeManager _proto = default!; // Polonium
+    [Dependency] private IConfigurationManager _cfg = default!; // Polonium
 
     private RoundEndSummaryWindow? _window;
 
     // POLONIUM START
+    private const int MaxTabHighlights = 3;
+
     private RoundSurveySystem? _survey;
     private RoundSurveyTab? _surveyTab;
     private DefaultWindow? _surveyWindow;
+    private int? _highlightedRound;
 
     public void OnSystemLoaded(RoundSurveySystem system)
     {
@@ -70,7 +76,7 @@ public sealed partial class RoundEndSummaryUIController : UIController,
         _surveyTab = new RoundSurveyTab(offer, questions, _survey);
         if (_window?.RoundId == offer.RoundId)
         {
-            _window.AddTab(_surveyTab);
+            _window.AddTab(_surveyTab, TryHighlight(offer.RoundId));
             return;
         }
 
@@ -83,6 +89,21 @@ public sealed partial class RoundEndSummaryUIController : UIController,
 
         _surveyWindow.Contents.AddChild(_surveyTab);
         _surveyWindow.OpenCentered();
+    }
+
+    private bool TryHighlight(int roundId)
+    {
+        if (_highlightedRound == roundId)
+            return false;
+
+        var shown = _cfg.GetCVar(CCVars.SurveyTabHighlights);
+        if (shown >= MaxTabHighlights)
+            return false;
+
+        _highlightedRound = roundId;
+        _cfg.SetCVar(CCVars.SurveyTabHighlights, shown + 1);
+        _cfg.SaveToFile();
+        return true;
     }
     // POLONIUM END
 

@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client._Polonium.UserInterface;
 using Content.Client.Message;
 using RoundEndPlayerInfo = Content.Shared.GameTicking.RoundEndMessageEvent.RoundEndPlayerInfo;
 using Robust.Client.UserInterface;
@@ -50,7 +51,7 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
         // Also, good for serious info.
 
         RoundId = roundId;
-        var roundEndTabs = new TabContainer();
+        var roundEndTabs = new GlowTabContainer(); // Polonium
         roundEndTabs.AddChild(MakeRoundEndSummaryTab(gm, roundEnd, roundTimeSpan, roundId));
         roundEndTabs.AddChild(MakePlayerManifestTab());
         _tabs = roundEndTabs; // Polonium
@@ -62,11 +63,14 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
     }
 
     // POLONIUM START
-    private readonly TabContainer _tabs;
+    private readonly GlowTabContainer _tabs;
 
-    public void AddTab(Control tab)
+    public void AddTab(Control tab, bool glow = false)
     {
         _tabs.AddChild(tab);
+
+        if (glow)
+            _tabs.GlowTab = tab;
     }
     // POLONIUM END
 

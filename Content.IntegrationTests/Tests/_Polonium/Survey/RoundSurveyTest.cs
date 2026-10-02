@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Content.Client._Polonium.Survey;
+using Content.Client._Polonium.UserInterface;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.GameTicking;
 using Content.Server._Polonium.Survey;
@@ -585,6 +586,54 @@ public sealed class RoundSurveyTest : GameTest
     }
 
     [Test]
+    public async Task SurveyTabIsHighlightedAFewTimes()
+    {
+        var server = Pair.Server;
+        var client = Pair.Client;
+
+        server.CfgMan.SetCVar(CCVars.SurveyEnabled, true);
+        await client.WaitPost(() => client.CfgMan.SetCVar(CCVars.SurveyTabHighlights, 2));
+
+        await PlayRound();
+
+        await client.WaitAssertion(() =>
+        {
+            var tab = Find<RoundSurveyTab>(client.ResolveDependency<IUserInterfaceManager>().WindowRoot);
+            var tabs = tab?.Parent as GlowTabContainer;
+
+            Assert.That(tabs, Is.Not.Null, "The round end window got no survey tab");
+            Assert.Multiple(() =>
+            {
+                Assert.That(tabs!.GlowTab, Is.SameAs(tab), "The survey tab is not highlighted");
+                Assert.That(client.CfgMan.GetCVar(CCVars.SurveyTabHighlights), Is.EqualTo(3));
+            });
+
+            tabs!.CurrentTab = 1;
+            Assert.That(tabs.GlowTab, Is.SameAs(tab), "Another tab ended the highlight");
+
+            tabs.CurrentTab = tab!.GetPositionInParent();
+            Assert.That(tabs.GlowTab, Is.Null, "Opening the survey tab did not end the highlight");
+        });
+
+        await Pair.WaitCommand("restartroundnow");
+        await Pair.RunTicksSync(10);
+        await PlayRound();
+
+        await client.WaitAssertion(() =>
+        {
+            var tab = Find<RoundSurveyTab>(client.ResolveDependency<IUserInterfaceManager>().WindowRoot);
+            var tabs = tab?.Parent as GlowTabContainer;
+
+            Assert.That(tabs, Is.Not.Null, "The round end window got no survey tab");
+            Assert.Multiple(() =>
+            {
+                Assert.That(tabs!.GlowTab, Is.Null, "The survey tab is highlighted for the fourth time");
+                Assert.That(client.CfgMan.GetCVar(CCVars.SurveyTabHighlights), Is.EqualTo(3));
+            });
+        });
+    }
+
+    [Test]
     public async Task SurveyReachesThoseWhoComeBack()
     {
         var server = Pair.Server;
@@ -937,6 +986,20 @@ public sealed class RoundSurveyTest : GameTest
 
     private static bool HasControl<T>(Control control) where T : Control
     {
-        return control is T || control.Children.Any(HasControl<T>);
+        return Find<T>(control) != null;
+    }
+
+    private static T? Find<T>(Control control) where T : Control
+    {
+        if (control is T found)
+            return found;
+
+        foreach (var child in control.Children)
+        {
+            if (Find<T>(child) is { } hit)
+                return hit;
+        }
+
+        return null;
     }
 }
