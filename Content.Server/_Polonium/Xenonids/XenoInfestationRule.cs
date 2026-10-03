@@ -17,14 +17,8 @@ public sealed partial class XenoInfestationRule : StationEventSystem<XenoInfesta
     {
         base.Started(uid, component, gameRule, args);
 
-        if (!Station.TryGetRandomStation(out var station))
-        {
-            EndSilently(uid, gameRule);
-            return;
-        }
-
         var locations = new List<EntityCoordinates>();
-        foreach (var vent in Station.GetEntitiesWithComponentOnStation<VentCritterSpawnLocationComponent>(station.Value, true))
+        foreach (var vent in Station.GetEntitiesWithComponentOnStation<VentCritterSpawnLocationComponent>(true))
         {
             locations.Add(Transform(vent).Coordinates);
         }

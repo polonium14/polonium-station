@@ -311,19 +311,34 @@ public sealed partial class ServerStationSystem : Shared.Station.Systems.Station
     }
 
     /// <summary>
-    /// Get entities with <see cref="TComponent"/> on the station's largest grid.
-    /// Other grids that belong to the station, like the trade station, are skipped.
+    /// Get entities with <see cref="TComponent"/> on a random event-eligible station's largest grid.
     /// </summary>
-    /// <param name="station">The station to search for the entities.</param>
     /// <param name="onlyAnchored">Whether to only get anchored entities.
     /// Good check for air vents, bad for containers like crates.</param>
     /// <returns>All matching entities.</returns>
-    public HashSet<Entity<TComponent>> GetEntitiesWithComponentOnStation<TComponent>(EntityUid station, bool onlyAnchored)
+    public HashSet<Entity<TComponent>> GetEntitiesWithComponentOnStation<TComponent>(bool onlyAnchored)
+        where TComponent : IComponent
+    {
+        return GetEntitiesWithComponentOnStation<TComponent>(onlyAnchored, out _);
+    }
+
+    /// <param name="station">The station picked to search for the entities.</param>
+    /// <inheritdoc cref="GetEntitiesWithComponentOnStation{TComponent}(bool)" />
+    public HashSet<Entity<TComponent>> GetEntitiesWithComponentOnStation<TComponent>(bool onlyAnchored,
+        out Entity<StationDataComponent>? station)
         where TComponent : IComponent
     {
         HashSet<Entity<TComponent>> entities = [];
 
-        var grid = GetLargestGrid(station);
+        if (!TryGetRandomStation<StationEventEligibleComponent>(out var eligibleStation))
+        {
+            station = null;
+            return entities;
+        }
+
+        station = (eligibleStation.Value.Owner, eligibleStation.Value.Comp1);
+
+        var grid = GetLargestGrid(station.Value.Owner);
         if (grid is null)
             return entities;
 

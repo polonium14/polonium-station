@@ -7,26 +7,29 @@ using Robust.Shared.Random;
 
 namespace Content.Server.StationEvents.Events;
 
+/// <summary>
+/// Handler for events that spawn an entity inside of another random entity with <see cref="EntityStorageComponent"/>.
+/// </summary>
+/// <seealso cref="RandomEntityStorageSpawnRuleComponent"/>
 public sealed partial class RandomEntityStorageSpawnRule : StationEventSystem<RandomEntityStorageSpawnRuleComponent>
 {
     [Dependency] private EntityStorageSystem _entityStorage = default!;
 
-    protected override void Started(EntityUid uid, RandomEntityStorageSpawnRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    protected override void Started(Entity<RandomEntityStorageSpawnRuleComponent, GameRuleComponent> ent, ref GameRuleStartedEvent args)
     {
-        base.Started(uid, comp, gameRule, args);
+        base.Started(ent, ref args);
 
-        if (!Station.TryGetRandomStation(out var station))
-            return;
+        var spawnRule = ent.Comp1;
 
-        var validLockers = new List<(EntityUid, EntityStorageComponent)>();
-        var spawn = Spawn(comp.Prototype, MapCoordinates.Nullspace);
+        var validLockers = new List<Entity<EntityStorageComponent>>();
+        var spawn = Spawn(spawnRule.Prototype, MapCoordinates.Nullspace);
 
-        foreach (var (ent, storage) in Station.GetEntitiesWithComponentOnStation<EntityStorageComponent>(station.Value, false))
+        foreach (var storageEnt in Station.GetEntitiesWithComponentOnStation<EntityStorageComponent>(false))
         {
-            if (!_entityStorage.CanInsert(spawn, ent, storage))
+            if (!_entityStorage.CanInsert(spawn, storageEnt, storageEnt.Comp))
                 continue;
 
-            validLockers.Add((ent, storage));
+            validLockers.Add(storageEnt);
         }
 
         if (validLockers.Count == 0)
@@ -35,15 +38,15 @@ public sealed partial class RandomEntityStorageSpawnRule : StationEventSystem<Ra
             return;
         }
 
-        var (locker, storageComp) = RobustRandom.Pick(validLockers);
-        if (!_entityStorage.Insert(spawn, locker, storageComp))
+        var locker = RobustRandom.Pick(validLockers);
+        if (!_entityStorage.Insert(spawn, locker, locker.Comp))
         {
             Del(spawn);
         }
-        else if (comp.FirstOpenStorageSound != null)
+        else if (spawnRule.FirstOpenStorageSound != null) // Polonium: sound on the first open of the storage
         {
-            storageComp.FirstOpenSound = comp.FirstOpenStorageSound;
-            Dirty(locker, storageComp);
+            locker.Comp.FirstOpenSound = spawnRule.FirstOpenStorageSound;
+            Dirty(locker);
         }
     }
 }

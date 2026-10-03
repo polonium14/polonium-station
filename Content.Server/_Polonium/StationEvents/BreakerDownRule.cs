@@ -28,10 +28,7 @@ public sealed partial class BreakerDownRule : StationEventSystem<BreakerDownRule
     {
         base.Started(uid, component, gameRule, args);
 
-        if (!Station.TryGetRandomStation(out var chosenStation))
-            return;
-
-        foreach (var (apcUid, apc) in Station.GetEntitiesWithComponentOnStation<ApcComponent>(chosenStation.Value, true))
+        foreach (var (apcUid, apc) in Station.GetEntitiesWithComponentOnStation<ApcComponent>(true))
         {
             if (!apc.MainBreakerEnabled)
                 continue;
