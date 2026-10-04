@@ -72,7 +72,7 @@
   - type: Sprite
     state: sticky_weak
   - type: XenoStickyResin
-    speedMultiplier: 0.55
+    speedMultiplier: 0.7
   - type: TimedDespawn
     lifetime: 20
   - type: SpeedModifierContacts
@@ -92,15 +92,15 @@
   - type: Sprite
     state: fast
   - type: XenoStickyResin
-    speedMultiplier: 1.33
+    speedMultiplier: 1.6
   - type: XenoConstructionPlasmaCost
     plasma: 42
   - type: SpeedModifierContacts
     walkSpeedModifier: 1.6
     sprintSpeedModifier: 1.6
-    whitelist:
+    ignoreWhitelist:
       components:
-      - Xeno
+      - MobStateActions # in case of xenos getting this component, make sure that replacement component is within all other entities but xenos.
 
 
 - type: entity
@@ -130,10 +130,5 @@
     ignoreWhitelist:
       components:
       - Xeno
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Razorium
-        Quantity: 2
     
 
