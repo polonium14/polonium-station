@@ -127,12 +127,13 @@
       types:
         Slash: 1.5
         Piercing: 5
+    ignoreWhitelist:
+      components:
+      - Xeno
   - type: Solution
     solution:
       reagents:
       - ReagentId: Razorium
         Quantity: 2
-    ignoreWhitelist:
-      components:
-      - Xeno
+    
 
