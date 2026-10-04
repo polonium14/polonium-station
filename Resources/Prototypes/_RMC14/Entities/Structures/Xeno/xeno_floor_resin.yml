@@ -34,7 +34,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 45
+        damage: 15
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -60,7 +60,7 @@
     walkSpeedModifier: 0.6
     sprintSpeedModifier: 0.6
     ignoreWhitelist:
-      tags:
+      components:
       - Xeno
 
 - type: entity
@@ -79,7 +79,7 @@
     walkSpeedModifier: 0.7
     sprintSpeedModifier: 0.7
     ignoreWhitelist:
-      tags:
+      components:
       - Xeno
   
 
@@ -95,14 +95,13 @@
     speedMultiplier: 1.33
   - type: XenoConstructionPlasmaCost
     plasma: 42
-  ##- type: SpeedModifierContacts
-  ##  walkSpeedModifier: 1.6
-  ##  sprintSpeedModifier: 1.6
-  ##  whitelist:
-  ##    tags:
-  ##    - Xeno
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 1.6
+    sprintSpeedModifier: 1.6
+    whitelist:
+      components:
+      - Xeno
 
-  ## ^ Potrzebuje kodu whitelist (czyli tylko te encje które posiadają ten tag, mogą korzystać z prędkości)
 
 - type: entity
   parent: XenoBaseFloorResin
@@ -119,7 +118,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 30
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -128,7 +127,12 @@
       types:
         Slash: 1.5
         Piercing: 5
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Razorium
+        Quantity: 2
     ignoreWhitelist:
-      tags:
+      components:
       - Xeno
 

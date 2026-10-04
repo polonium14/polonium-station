@@ -143,7 +143,6 @@
   - type: Tag
     tags:
     - DoorBumpOpener
-    - Xeno
   - type: MeleeWeapon
     altDisarm: false
     angle: 0
