@@ -151,6 +151,13 @@
       - Rag # Funky End
       - LightReplacer
       - CleanerGrenade
+      - Screwdriver
+      - Crowbar
+      - Powerdrill
+      components:
+      - TrayScanner
+      - SprayPainter
+      - SprayPainterAmmo
   - type: ItemMapper
     sprite: *BeltOverlay
     mapLayers:
@@ -280,6 +287,26 @@
     sprite: Clothing/Belt/emt.rsi
   - type: Clothing
     sprite: Clothing/Belt/emt.rsi
+  - type: Storage
+    whitelist:
+      tags:
+      - Bottle
+      - Brutepack
+      - Bloodpack
+      - Gauze
+      - Ointment
+      - Tourniquet
+      - CigPack
+      - PillCanister
+      - Radio
+      - DiscreteHealthAnalyzer
+      - SurgeryTool
+      - Dropper
+      components:
+      - Injector
+      - Pill
+      - Prying
+      - SpraySafety
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -297,7 +324,6 @@
       - PlantAnalyzer # Polonium: analyzer #740; PlantSampleTaker tag removed upstream
       - BotanyShovel
       - BotanyHatchet
-      - PlantBGone
       - Bottle
       - Syringe
       - CigPack
@@ -308,6 +334,7 @@
       - Seed
       - Smokable
       - HandLabeler
+      - Spray
   - type: ItemMapper
     sprite: _Funkystation/Clothing/Belt/belt_overlay.rsi
     mapLayers:
