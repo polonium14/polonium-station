@@ -22,7 +22,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.GameTicking;
 using Content.Server.Shuttles.Systems;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.GameTicking.Components;
@@ -40,7 +39,6 @@ using Content.Shared._DV.CustomObjectiveSummary;
 using Content.Shared._Funkystation.CCVars;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
-using Content.Shared.Prototypes;
 using Content.Shared.Roles.Jobs;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -243,7 +241,7 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
                 }
             }
 
-            var successRate = totalObjectives > 0 ? (float) completedObjectives / totalObjectives : 0f;
+            var successRate = totalObjectives > 0 ? (float)completedObjectives / totalObjectives : 0f;
 
             // Begin DeltaV Additions - custom objective response.
             if (_cfg.GetCVar(CCVars_Funky.PinktextEnabled)
@@ -379,7 +377,7 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
     private void CreateCompletions()
     {
         _objectives = ProtoMan.EnumeratePrototypes<EntityPrototype>()
-            .Where(p => p.HasComponent<ObjectiveComponent>())
+            .Where(p => p.HasComp<ObjectiveComponent>(EntityManager.ComponentFactory))
             .Select(p => p.ID)
             .Order();
     }
