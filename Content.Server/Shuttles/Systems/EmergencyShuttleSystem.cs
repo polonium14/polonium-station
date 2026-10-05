@@ -57,6 +57,7 @@ using Content.Shared._DV.CustomObjectiveSummary;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Events;
 using Content.Shared.Localizations;
+using Content.Shared.Pinpointer;
 using Content.Shared.RoundEnd;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Events;
