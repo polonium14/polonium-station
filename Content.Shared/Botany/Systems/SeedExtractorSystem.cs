@@ -46,7 +46,7 @@ public sealed partial class SeedExtractorSystem : EntitySystem
             args.User,
             PopupType.Medium);
 
-        PredictedQueueDel(args.Used);
+        QueueDel(args.Used);
         args.Handled = true;
 
 

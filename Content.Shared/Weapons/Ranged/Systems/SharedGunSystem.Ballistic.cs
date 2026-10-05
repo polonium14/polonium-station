@@ -441,7 +441,7 @@ public abstract partial class SharedGunSystem
             var insertSucceeded = TryBallisticInsert(entity, ammoEntity, null, suppressInsertionSound: true);
             if (!insertSucceeded)
             {
-                PredictedQueueDel(ammoEntity);
+                QueueDel(ammoEntity);
                 Log.Error(
                     $"Failed to insert ammo {ammoEntity} into non-full {entity}. This is a configuration error. Is the {nameof(BallisticAmmoSelfRefillerComponent)}'s {nameof(BallisticAmmoSelfRefillerComponent.AmmoProto)} incorrect for the {nameof(BallisticAmmoProviderComponent)}'s {nameof(BallisticAmmoProviderComponent.Whitelist)}?");
             }
