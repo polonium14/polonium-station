@@ -1,3 +1,5 @@
+# Hairs
+
 - type: marking
   parent: [ VulpBaseMarking ]
   id: VulpHairAdhara
@@ -209,6 +211,7 @@
       state: spike
 
 # Facial Hairs
+
 - type: marking
   parent: [ VulpBaseMarking ]
   id: VulpFacialHairRuff
