@@ -8,31 +8,7 @@
     },
     "states": [
         {
-            "name": "capacitor"
-        },
-        {
-            "name": "hdd1"
-        },
-        {
-            "name": "hdd2"
-        },
-        {
-            "name": "matter_bin"
-        },
-        {
             "name": "micro_mani"
-        },
-        {
-            "name": "rom1"
-        },
-        {
-            "name": "rom2"
-        },
-        {
-            "name": "romos1"
-        },
-        {
-            "name": "romos2"
         },
         {
             "name": "scan_module",
@@ -45,6 +21,12 @@
                     0.1
                 ]
             ]
+        },
+        {
+            "name": "capacitor"
+        },
+        {
+            "name": "matter_bin"
         }
     ]
 }

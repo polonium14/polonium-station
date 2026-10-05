@@ -8,37 +8,6 @@
     },
     "states": [
         {
-            "name": "beacon",
-            "delays": [
-                [
-                    1.8,
-                    0.1
-                ]
-            ]
-        },
-        {
-            "name": "signaller"
-        },
-        {
-            "name": "signaller-inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "signaller-inhand-left",
-            "directions": 4
-        },
-        {
-            "name": "radio"
-        },
-        {
-            "name": "radio-inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "radio-inhand-left",
-            "directions": 4
-        },
-        {
             "name": "walkietalkie"
         },
         {
@@ -80,6 +49,17 @@
         },
         {
             "name": "old-radio-borg-assault"
+        },
+        {
+            "name": "radio"
+        },
+        {
+            "name": "radio-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "radio-inhand-left",
+            "directions": 4
         }
     ]
 }
