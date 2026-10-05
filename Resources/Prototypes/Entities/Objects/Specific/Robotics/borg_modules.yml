@@ -1299,11 +1299,12 @@
           - Dinnerware
           - DonkPocket
           - Donut
+          - FoodSnack
+          - FinishedMeal
           - Pie
           - Pizza
           - Soup
-          - FoodSnack
-          - FinishedMeal
+          - Taco
         blacklist:
           tags:
           - Ingredient
@@ -1319,6 +1320,7 @@
           - FitsInDispenser
           tags:
           - Dinnerware
+          - Cookware
     - hand:
         emptyLabel: borg-slot-ingredients-empty
         emptyRepresentative: BorgModuleRawIngredientPlaceholder
@@ -1330,6 +1332,7 @@
           - Meat
           - Packet
           - Raw
+          - Taco
           - Vegetable
           - WrappedCube
           components:
@@ -1338,7 +1341,6 @@
         blacklist:
           tags:
           - ChiliBowl
-          - Cooked
           - Cookware
           - Dinnerware
           - Donut
