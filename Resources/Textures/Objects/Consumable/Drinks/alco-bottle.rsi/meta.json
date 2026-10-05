@@ -8,12 +8,6 @@
     },
     "states": [
         {
-            "name": "icon_blue"
-        },
-        {
-            "name": "icon_red"
-        },
-        {
             "name": "icon_open"
         },
         {
@@ -68,6 +62,9 @@
         {
             "name": "inhand-right-fill-3",
             "directions": 4
+        },
+        {
+            "name": "icon_red"
         }
     ]
 }
