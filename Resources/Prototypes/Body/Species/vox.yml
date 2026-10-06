@@ -168,7 +168,7 @@
   - type: Speech
     speechVerb: Vox
     speechSounds: Vox
-    allowedEmotes: ['Click', 'Chitter', 'Coo']
+    allowedEmotes: ['Click', 'Chitter', 'Coo', 'Hiss', 'Caw']
   - type: TypingIndicator
     proto: vox
   - type: CreamPied

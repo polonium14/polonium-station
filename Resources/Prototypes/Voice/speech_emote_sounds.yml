@@ -278,6 +278,8 @@
     Hiss:
       path: /Audio/_MACRO/Voice/Vox/voxhiss.ogg
     # Macrocosm end
+    Caw:
+      path: /Audio/Voice/Vox/vox_caw.ogg
   params:
     variation: 0.125
     # TODO: We need vox sounds for the other emotes
