@@ -326,6 +326,9 @@
       Normal: 34
       Damaged: 8
       Destroyed: 0
+  - type: Appearance
+  - type: EyeBlinking
+    eyelidsSprite: /Textures/Mobs/Species/Arachnid/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTongue, OrganArachnidInternal ]

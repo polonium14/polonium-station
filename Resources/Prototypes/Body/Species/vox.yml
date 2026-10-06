@@ -435,6 +435,9 @@
       Normal: 24
       Damaged: 4
       Destroyed: 0
+  - type: EyeBlinking
+    eyelidsSprite: /Textures/Mobs/Species/Vox/parts.rsi
+  - type: Appearance
 
 - type: entity
   parent: [ OrganBaseTongue, OrganVoxInternal ]

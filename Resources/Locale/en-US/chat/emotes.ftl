@@ -46,6 +46,7 @@ chat-emote-name-growl = Growl
 chat-emote-name-flap = Flap Wings
 chat-emote-name-yap = Yap
 chat-emote-name-gekker = Gekker
+chat-emote-name-blink = Blink
 
 # Message
 chat-emote-msg-scream = screams!
@@ -96,3 +97,4 @@ chat-emote-msg-growl = growls.
 chat-emote-msg-flap = flaps {POSS-ADJ($entity)} wings.
 chat-emote-msg-yap = yaps.
 chat-emote-msg-gekker = gekkers.
+chat-emote-msg-blink = blinks.
