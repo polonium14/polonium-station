@@ -132,3 +132,9 @@
   background: /Textures/LobbyScreens/jerzy.png
   title: lobby-state-background-jerzy-title
   artist: lobby-state-background-jerzy-artist
+
+- type: lobbyBackground
+  id: DrunkardsRedux
+  background: /Textures/LobbyScreens/DrunkardsSpreeRedux.png
+  title: lobby-state-background-drunkardsspreeredux-title
+  artist: lobby-state-background-drunkardsspreeredux-artist
