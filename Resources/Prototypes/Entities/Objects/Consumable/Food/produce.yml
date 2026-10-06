@@ -942,7 +942,7 @@
   - type: FoodSequenceElement
     entries:
       Skewer: TomatoSkewer
-      Burger: Tomato
+      Burger: TomatoBurger
       Taco: Tomato
 
 - type: entity
@@ -991,7 +991,7 @@
     - Vegetable
   - type: FoodSequenceElement
     entries:
-      Burger: BlueTomato
+      Burger: BlueTomatoBurger
       Taco: BlueTomato
 
 - type: entity
@@ -1039,7 +1039,7 @@
   - type: FoodSequenceElement
     entries:
       Skewer: TomatoSkewer
-      Burger: BloodTomato
+      Burger: BloodTomatoBurger
       Taco: BloodTomato
 
 - type: entity
@@ -1320,6 +1320,10 @@
     tags:
     - Vegetable
     - Mushroom
+  - type: FoodSequenceElement
+    entries:
+      Burger: ChanterelleBurger
+      Taco: Chanterelle
 
 # Slices
 
@@ -1457,7 +1461,7 @@
   - type: FoodSequenceElement
     entries:
       Taco: ChiliPepper
-      Burger: ChiliPepper
+      Burger: ChiliPepperBurger
       Skewer: ChiliPepperSkewer
 
 - type: entity
@@ -1488,7 +1492,7 @@
   - type: FoodSequenceElement
     entries:
       Taco: ChillyPepper
-      Burger: ChillyPepper
+      Burger: ChillyPepperBurger
       Skewer: ChillyPepperSkewer
 
 - type: entity
