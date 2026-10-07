@@ -16,6 +16,8 @@
       - ModSuitModule
   - type: ModuleContainerAddOnInteract
   - type: ModuleContainerPower
+  - type: ParticleEmitter
+    effectPrototype: JetpackEffect
   - type: PowerCellDraw
     enabled: false
   - type: PowerCellSlot

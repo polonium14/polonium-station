@@ -34,7 +34,7 @@ public sealed partial class JetpackModuleSystem : EntitySystem
             return;
 
         EnsureComp<JetpackComponent>(args.Container, out var jetpack);
-        _jetpack.SetEnabled(args.Container, jetpack, true, args.User);
+        _jetpack.SetEnabled((args.Container, jetpack), true, args.User);
     }
 
     private void OnDisabled(Entity<JetpackModuleComponent> ent, ref ModuleDisabledEvent args)
@@ -43,7 +43,7 @@ public sealed partial class JetpackModuleSystem : EntitySystem
             return;
 
         // Without the component the suit has no jetpack action of its own, so it only flies through the module.
-        _jetpack.SetEnabled(args.Container, jetpack, false, args.User);
+        _jetpack.SetEnabled((args.Container, jetpack), false, args.User);
 
         if (_net.IsServer && jetpack.ToggleActionEntity is { } action)
             QueueDel(action);
