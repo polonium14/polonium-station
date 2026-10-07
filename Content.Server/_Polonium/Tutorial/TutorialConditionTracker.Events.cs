@@ -14,6 +14,7 @@ using Content.Shared.Disposal.Unit;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Medical.HealthAnalyzer;
 using Content.Shared.Nutrition;
 using Content.Shared.Projectiles;
 using Content.Shared.Slippery;

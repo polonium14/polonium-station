@@ -1,55 +1,5 @@
-// SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
-// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 nmajask <nmajask@gmail.com>
-// SPDX-FileCopyrightText: 2024 ArchRBX <5040911+ArchRBX@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Milon <plmilonpl@gmail.com>
-// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
-// SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
-// SPDX-FileCopyrightText: 2024 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Hannah Giovanna Dawson <karakkaraz@gmail.com>
-// SPDX-FileCopyrightText: 2025 Minemoder5000 <minemoder50000@gmail.com>
-// SPDX-FileCopyrightText: 2025 Nikovnik <116634167+nkokic@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 Princess Cheeseballs <66055347+Princess-Cheeseballs@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Vasilis The Pikachu <vasilis@pikachu.systems>
-// SPDX-FileCopyrightText: 2025 Zachary Higgs <compgeek223@gmail.com>
-// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 Fruitsalad <949631+Fruitsalad@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2026 Vanessa <908648+ShepardToTheStars@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
-// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
+﻿using System.Linq;
 using Content.Server._Shitmed.PartStatus;
-using Content.Server.BaseAnalyzer;
-using Content.Server.Body.Systems;
-using Content.Server.Medical.Components;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Medical.Surgery;
@@ -61,32 +11,25 @@ using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Damage.Components;
-using Content.Shared.IdentityManagement;
-using Content.Shared.Interaction;
-using Content.Shared.Interaction.Events;
-using Content.Shared.Item.ItemToggle;
-using Content.Shared.Item.ItemToggle.Components;
+using Content.Shared.Medical.HealthAnalyzer;
 using Content.Shared.MedicalScanner;
-using Content.Shared.Mobs.Components;
-using Content.Shared.Popups;
 using Content.Shared.Temperature.Components;
 using Content.Shared.Traits.Assorted;
 using Robust.Server.GameObjects;
-using Robust.Shared.Audio.Systems;
-using Robust.Shared.Containers;
-using Robust.Shared.Timing;
-
 using Robust.Shared.Prototypes;
-using Content.Shared.Body.Systems;
-namespace Content.Server.Medical;
 
-public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnalyzerComponent, HealthAnalyzerDoAfterEvent>
+namespace Content.Server.Medical.HealthAnalyzer;
+
+/// <inheritdoc/>
+public sealed partial class ServerHealthAnalyzerSystem : HealthAnalyzerSystem
 {
-    [Dependency] private ItemToggleSystem _toggle = default!;
+    [Dependency] private EntityQuery<TemperatureComponent> _temperatureQuery;
+
+    // Polonium start: Shitmed readout
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private UserInterfaceSystem _uiSystem = default!;
     [Dependency] private BloodstreamSystem _bloodstreamSystem = default!;
@@ -94,81 +37,31 @@ public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnal
     [Dependency] private WoundSystem _woundSystem = default!;
     [Dependency] private TraumaSystem _traumaSystem = default!;
     [Dependency] private SharedSurgerySystem _surgerySystem = default!;
+    // Polonium end
 
-    public override void Initialize()
+    public override HealthAnalyzerUiState GetHealthAnalyzerUiState(EntityUid? target, bool scanMode)
     {
-        base.Initialize();
+        var state = base.GetHealthAnalyzerUiState(target, scanMode);
 
-        Subs.BuiEvents<HealthAnalyzerComponent>(HealthAnalyzerUiKey.Key, subs =>
-        {
-            subs.Event<HealthAnalyzerModeSelectedMessage>(OnModeSelected);
-            subs.Event<HealthAnalyzerPartSelectedMessage>(OnPartSelected);
-        });
+        if (_temperatureQuery.TryComp(target, out var temp))
+            state.Temperature = temp.Temperature;
+
+        // Polonium: Shitmed part statuses
+        if (target is { } entity && TryComp<BodyComponent>(entity, out var bodyComp) && bodyComp.Organs is not null)
+            state.PartStatuses = _partStatus.GetPartStatusDescriptions(entity);
+
+        return state;
     }
 
-    protected override void HandleOutOfScanRange(Entity<HealthAnalyzerComponent> analyzer, EntityUid target)
+    // Polonium start: Shitmed readout
+    protected override void UpdateUi(Entity<HealthAnalyzerComponent> analyzer)
     {
-        PauseAnalyzingEntity(analyzer, target);
-    }
-
-    protected override void HandleInScanRange(Entity<HealthAnalyzerComponent> analyzer, EntityUid target)
-    {
-        analyzer.Comp.IsAnalyzerActive = true;
-        UpdateScannedUser(analyzer, target, true, analyzer.Comp.CurrentBodyPart);
-    }
-
-    public override void BeginAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target, EntityUid? part = null)
-    {
-        healthAnalyzer.Comp.ScannedEntity = target;
-        healthAnalyzer.Comp.CurrentBodyPart = part;
-
-        _toggle.TryActivate(healthAnalyzer.Owner);
-
-        UpdateScannedUser(healthAnalyzer, target, true, part);
-    }
-
-    private void PauseAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target)
-    {
-        if (!healthAnalyzer.Comp.IsAnalyzerActive)
-            return;
-
-        UpdateScannedUser(healthAnalyzer, target, false, healthAnalyzer.Comp.CurrentBodyPart);
-        healthAnalyzer.Comp.IsAnalyzerActive = false;
-    }
-
-    private void OnModeSelected(Entity<HealthAnalyzerComponent> ent, ref HealthAnalyzerModeSelectedMessage args)
-    {
-        ent.Comp.CurrentMode = args.Mode;
-        ent.Comp.CurrentBodyPart = null;
-
-        if (ent.Comp.ScannedEntity is { } target)
-            UpdateScannedUser(ent, target, ent.Comp.IsAnalyzerActive, null);
-    }
-
-    private void OnPartSelected(Entity<HealthAnalyzerComponent> ent, ref HealthAnalyzerPartSelectedMessage args)
-    {
-        if (ent.Comp.ScannedEntity is not { } target)
-            return;
-
-        ent.Comp.CurrentMode = HealthAnalyzerMode.Body;
-
-        EntityUid? part = null;
-        if (args.BodyPart is { } bodyPart
-            && LimbTargetMap.TryGetCategory(bodyPart, out var category)
-            && TryComp<BodyComponent>(target, out var body)
-            && LimbTargetMap.TryGetOrganByCategory(EntityManager, body, category, out var organ))
-            part = organ;
-
-        ent.Comp.CurrentBodyPart = part;
-        UpdateScannedUser(ent, target, ent.Comp.IsAnalyzerActive, part);
-    }
-
-    public override void UpdateScannedUser(EntityUid healthAnalyzer, EntityUid target, bool scanMode, EntityUid? part = null)
-    {
-        if (!TryComp<HealthAnalyzerComponent>(healthAnalyzer, out var analyzerComp))
-            return;
-
-        SendAnalyzerUiState(healthAnalyzer, HealthAnalyzerUiKey.Key, target, analyzerComp.CurrentMode, part, scanMode);
+        SendAnalyzerUiState(analyzer,
+            HealthAnalyzerUiKey.Key,
+            analyzer.Comp.ScannedEntity,
+            analyzer.Comp.CurrentMode,
+            analyzer.Comp.CurrentBodyPart,
+            analyzer.Comp.IsAnalyzerActive);
     }
 
     public void SendAnalyzerUiState(EntityUid uiEntity, Enum uiKey, EntityUid? target, HealthAnalyzerMode mode, EntityUid? part, bool scanMode)
@@ -430,61 +323,5 @@ public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnal
 
         return solutions;
     }
-
-    public HealthAnalyzerUiState GetHealthAnalyzerUiState(EntityUid? target)
-    {
-        if (!target.HasValue || !HasComp<DamageableComponent>(target))
-            return new HealthAnalyzerUiState();
-
-        var entity = target.Value;
-        var bodyTemperature = float.NaN;
-
-        if (TryComp<TemperatureComponent>(entity, out var temp))
-            bodyTemperature = temp.Temperature;
-
-        var bloodAmount = float.NaN;
-        var bleeding = false;
-        var unrevivable = false;
-
-        if (TryComp<BloodstreamComponent>(entity, out var bloodstream) &&
-            _solutionContainerSystem.ResolveSolution(entity, bloodstream.BloodSolutionName,
-                ref bloodstream.BloodSolution, out _))
-        {
-            bloodAmount = _bloodstreamSystem.GetBloodLevel(entity);
-            bleeding = bloodstream.BleedAmount > 0;
-        }
-
-        if (TryComp<UnrevivableComponent>(entity, out var unrevivableComp) && unrevivableComp.Analyzable)
-            unrevivable = true;
-
-        Dictionary<TargetBodyPart, string>? partStatuses = null;
-        if (TryComp<BodyComponent>(entity, out var bodyComp) && bodyComp.Organs is not null)
-            partStatuses = _partStatus.GetPartStatusDescriptions(entity);
-
-        return new HealthAnalyzerUiState(
-            GetNetEntity(entity),
-            bodyTemperature,
-            bloodAmount,
-            null,
-            bleeding,
-            unrevivable,
-            partStatuses
-        );
-    }
-
-    protected override Enum GetUiKey()
-    {
-        return HealthAnalyzerUiKey.Key;
-    }
-
-    protected override bool ScanTargetPopupMessage(Entity<HealthAnalyzerComponent> uid, AfterInteractEvent args, [NotNullWhen(true)] out string? message)
-    {
-        message = Loc.GetString("health-analyzer-popup-scan-target", ("user", Identity.Entity(args.User, EntityManager)));
-        return true;
-    }
-
-    protected override bool ValidScanTarget(EntityUid? target)
-    {
-        return HasComp<MobStateComponent>(target) && HasComp<BodyComponent>(target);
-    }
+    // Polonium end
 }

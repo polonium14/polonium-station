@@ -1,7 +1,7 @@
 using System.Numerics;
 using System.Reflection;
 using Content.IntegrationTests.Fixtures;
-using Content.Server.Medical;
+using Content.Shared.Medical.HealthAnalyzer;
 using NUnit.Framework;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
