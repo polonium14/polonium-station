@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: OrbitSystem07
-  changes:
-  - message: The uplink now properly states the capacity of the hypodart.
-    type: Fix
-  id: 9546
-  time: '2026-02-26T19:00:11.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43035
 - author: DinnerCalzone
   changes:
   - message: Techfabs now play an animation while building something.
@@ -4265,3 +4258,26 @@
   id: 10041
   time: '2026-10-02T19:28:13.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1088
+- author: Nikita
+  changes:
+  - message: "Nowy skr\xF3t radio dla Dow\xF3dztwa to \"d\""
+    type: Tweak
+  - message: "Nowy skr\xF3t radio dla In\u017Cynierii to \"i\""
+    type: Tweak
+  - message: "Bie\u017C\u0105cy skr\xF3t radio dla Medycznego to \"m\""
+    type: Tweak
+  - message: "Bie\u017C\u0105cy skr\xF3t radio dla B+R to \"n\""
+    type: Tweak
+  - message: "Nowy skr\xF3t radio dla Ochrony to \"o\""
+    type: Tweak
+  - message: "Nowy skr\xF3t radio dla Serwisu to \"s\""
+    type: Tweak
+  - message: "Nowy skr\xF3t radio dla Logistyki to \"l\""
+    type: Tweak
+  - message: "Nowy skr\xF3t radio dla CD to \"c\""
+    type: Tweak
+  - message: "Reszta skr\xF3t\xF3w pozosta\u0142a bez zmian"
+    type: Tweak
+  id: 10042
+  time: '2026-10-08T09:26:56.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1094
