@@ -24,7 +24,7 @@ using System.Linq;
 using Content.Shared._FarHorizons.Materials.Systems;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.DeviceLinking.Events;
-using Content.Server.DeviceLinking.Systems;
+using Content.Shared.DeviceLinking.Systems;
 using Content.Shared.Construction.Components;
 using Content.Shared.Popups;
 using Content.Server.Popups;
@@ -38,6 +38,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Server.Radiation.Systems;
 using Content.Shared.Atmos.Components;
 using Content.Shared.AlertLevel;
+using Content.Shared.DeviceLinking.Payloads;
 
 namespace Content.Server._FarHorizons.Power.Generation.FissionGenerator;
 
@@ -98,7 +99,7 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
         // Signal events
         SubscribeLocalEvent<NuclearReactorComponent, SignalReceivedEvent>(OnSignalReceived);
         SubscribeLocalEvent<NuclearReactorComponent, SignalReceivedEvent<LogicStatePayload>>(OnLogicSignalReceived); // Polonium
-        SubscribeLocalEvent<NuclearReactorComponent, PortDisconnectedEvent>(OnPortDisconnected);
+        SubscribeLocalEvent<NuclearReactorComponent, SinkPortDisconnectedEvent>(OnPortDisconnected);
 
         // Anchor events
         SubscribeLocalEvent<NuclearReactorComponent, AnchorStateChangedEvent>(OnAnchorChanged);
@@ -858,7 +859,7 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
         _adminLog.Add(LogType.Action, $"{ToPrettyString(trigger):trigger} set control rod insertion of {ToPrettyString(uid):target} to {logtext}");
     }
 
-    private void OnPortDisconnected(EntityUid uid, NuclearReactorComponent comp, ref PortDisconnectedEvent args)
+    private void OnPortDisconnected(EntityUid uid, NuclearReactorComponent comp, ref SinkPortDisconnectedEvent args)
     {
         if (args.Port == comp.ControlRodInsertPort)
             comp.InsertPortState = SignalState.Low;

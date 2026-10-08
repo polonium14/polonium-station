@@ -18,14 +18,14 @@ public sealed class RoboticsConsoleState : BoundUserInterfaceState
     /// <summary>
     /// Map of device network addresses to cyborg data.
     /// </summary>
-    public Dictionary<string, CyborgControlData> Cyborgs;
+    public Dictionary<LocDeviceAddress, CyborgControlData> Cyborgs;
 
     /// <summary>
     /// If the UI will have the buttons to disable and destroy.
     /// </summary>
     public bool AllowBorgControl;
 
-    public RoboticsConsoleState(Dictionary<string, CyborgControlData> cyborgs, bool allowBorgControl)
+    public RoboticsConsoleState(Dictionary<LocDeviceAddress, CyborgControlData> cyborgs, bool allowBorgControl)
     {
         Cyborgs = cyborgs;
         AllowBorgControl = allowBorgControl;
@@ -38,9 +38,9 @@ public sealed class RoboticsConsoleState : BoundUserInterfaceState
 [Serializable, NetSerializable]
 public sealed class RoboticsConsoleDisableMessage : BoundUserInterfaceMessage
 {
-    public readonly string Address;
+    public readonly DeviceAddress Address;
 
-    public RoboticsConsoleDisableMessage(string address)
+    public RoboticsConsoleDisableMessage(DeviceAddress address)
     {
         Address = address;
     }
@@ -52,9 +52,9 @@ public sealed class RoboticsConsoleDisableMessage : BoundUserInterfaceMessage
 [Serializable, NetSerializable]
 public sealed class RoboticsConsoleDestroyMessage : BoundUserInterfaceMessage
 {
-    public readonly string Address;
+    public readonly DeviceAddress Address;
 
-    public RoboticsConsoleDestroyMessage(string address)
+    public RoboticsConsoleDestroyMessage(DeviceAddress address)
     {
         Address = address;
     }

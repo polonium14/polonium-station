@@ -1,4 +1,4 @@
-using Content.Server.DeviceLinking.Systems;
+using Content.Shared.DeviceLinking.Systems;
 using Content.Server.Medical.Components;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.HealthAnalyzer;
@@ -8,6 +8,7 @@ using Content.Shared.DeviceLinking;
 using Content.Shared.MedicalScanner;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
+using Content.Shared.DeviceLinking.Components;
 
 namespace Content.Server.Medical;
 
