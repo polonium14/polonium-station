@@ -29,9 +29,15 @@ public sealed partial class ChameleonProjectorSystem : SharedChameleonProjectorS
     private void OnHandleState(Entity<ChameleonDisguiseComponent> ent, ref AfterAutoHandleStateEvent args)
     {
         CopyComp<SpriteComponent>(ent);
-        // Polonium: runtime post-shaders (target/interaction outline) have no prototype and crash sprite init
         if (_spriteQuery.TryComp(ent, out var sprite))
+        {
+            // Polonium: sprite layers are no longer serialized, so CopyComp leaves the disguise invisible
+            if (_spriteQuery.TryComp(ent.Comp.SourceEntity, out var sourceSprite))
+                _sprite.CopySprite((ent.Comp.SourceEntity, sourceSprite), (ent, sprite));
+
+            // Polonium: runtime post-shaders (target/interaction outline) have no prototype and crash sprite init
             _sprite.ClearPostShaders(sprite);
+        }
         CopyComp<GenericVisualizerComponent>(ent);
         CopyComp<SolutionContainerVisualsComponent>(ent);
         CopyComp<BurnStateVisualsComponent>(ent);
