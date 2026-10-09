@@ -182,9 +182,15 @@
     sprite: _Funkystation/Clothing/Head/Hardsuits/salvage.rsi
     layers:
     - state: icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
   - type: Clothing
     sprite: _Funkystation/Clothing/Head/Hardsuits/salvage.rsi
     clothingVisuals: {} # RSI uses the default off-/on-equipped-HELMET states, not the base's equipped-head
+  - type: ToggleableVisuals
+    clothingVisuals: {}
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
@@ -444,9 +450,15 @@
     sprite: _Funkystation/Clothing/Head/Hardsuits/luxury.rsi
     layers:
     - state: icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
   - type: Clothing
     sprite: _Funkystation/Clothing/Head/Hardsuits/luxury.rsi
     clothingVisuals: {} # RSI uses the default off-/on-equipped-HELMET states, not the base's equipped-head
+  - type: ToggleableVisuals
+    clothingVisuals: {}
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
