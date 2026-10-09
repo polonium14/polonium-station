@@ -1,0 +1,29 @@
+# Port z NSV13 (/datum/reagent/toxin/morphvenom). Wstrzykiwany przez morpha z zasadzki.
+# Zamiast staminy z oryginału jest spowolnienie, a zamiast dezorientacji tęczowe widzenie.
+- type: reagent
+  id: MorphVenom
+  name: reagent-name-morph-venom
+  group: Toxins
+  desc: reagent-desc-morph-venom
+  flavor: salty
+  color: "#3cff00"
+  physicalDesc: reagent-physical-desc-exotic-smelling
+  metabolisms:
+    Bloodstream:
+      metabolismRate: 0.25
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 0.6
+        sprintSpeedModifier: 0.6
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMuted
+        type: Update
+        time: 3
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        type: Update
+        time: 5

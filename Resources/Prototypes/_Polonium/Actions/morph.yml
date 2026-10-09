@@ -1,0 +1,84 @@
+- type: entity
+  parent: BaseAction
+  id: ActionMorphDisguise
+  name: Assume form
+  description: Twist your body into a copy of a nearby object.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    priority: -10
+  - type: Sprite
+    sprite: Objects/Devices/chameleon_projector.rsi
+    layers:
+    - state: icon
+  - type: TargetAction
+    checkCanAccess: false
+    range: 10
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:MorphDisguiseActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionMorphReveal
+  name: Restore form
+  description: Collapse back into your true form.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    priority: -11
+  - type: Sprite
+    sprite: _Polonium/Mobs/morph.rsi
+    layers:
+    - state: alive
+  - type: InstantAction
+    event: !type:MorphRevealActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionMorphStomach
+  name: Stomach contents
+  description: Spit out, prepare to throw or digest what you have eaten.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    priority: -12
+  - type: Sprite
+    sprite: Interface/Actions/devour.rsi
+    layers:
+    - state: icon-on
+  - type: InstantAction
+    event: !type:MorphStomachActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionMorphSpit
+  name: Spit
+  description: Spit the prepared stomach content at a location.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    priority: -13
+  - type: Sprite
+    layers:
+    - texture: Interface/VerbIcons/eject.svg.192dpi.png
+  - type: TargetAction
+    checkCanAccess: false
+    range: 10
+  - type: WorldTargetAction
+    event: !type:MorphSpitActionEvent
+
+# Devour smoka, ale tylko trupy, nieprzytomni i przedmioty.
+- type: entity
+  parent: ActionDevour
+  id: ActionMorphDevour
+  name: Devour
+  description: Swallow a dead or dying creature, or an item.
+  components:
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+      - Item
+    event: !type:DevourActionEvent
