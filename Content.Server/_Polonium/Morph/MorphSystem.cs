@@ -1,14 +1,19 @@
 using Content.Server.Administration.Logs;
+using Content.Server.Objectives.Systems;
 using Content.Shared._Polonium.Morph;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Devour.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
+using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Polymorph.Components;
 using Content.Shared.Polymorph.Systems;
 using Content.Shared.Popups;
@@ -22,15 +27,18 @@ namespace Content.Server._Polonium.Morph;
 public sealed partial class MorphSystem : SharedMorphSystem
 {
     [Dependency] private IAdminLogManager _adminLog = default!;
+    [Dependency] private CounterConditionSystem _counterCondition = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
     [Dependency] private InventorySystem _inventory = default!;
     [Dependency] private MobThresholdSystem _threshold = default!;
+    [Dependency] private MovementSpeedModifierSystem _movement = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedChameleonProjectorSystem _chameleon = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedUserInterfaceSystem _ui = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
@@ -46,6 +54,8 @@ public sealed partial class MorphSystem : SharedMorphSystem
         SubscribeLocalEvent<MorphComponent, MorphDigestDoAfterEvent>(OnDigestDoAfter);
         SubscribeLocalEvent<MorphComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<MorphComponent, EntityTerminatingEvent>(OnTerminating);
+        SubscribeLocalEvent<MorphComponent, EntInsertedIntoContainerMessage>(OnEntInserted);
+        SubscribeLocalEvent<MorphComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
     }
 
     private void OnDisguiseAction(Entity<MorphComponent> ent, ref MorphDisguiseActionEvent args)
@@ -70,7 +80,24 @@ public sealed partial class MorphSystem : SharedMorphSystem
         }
 
         args.Handled = true;
+        DisguiseAs(ent, (projector, proj), target, false);
+    }
 
+    private void TryAssumeForm(Entity<MorphComponent> ent, EntityUid body)
+    {
+        if (!HasComp<HumanoidProfileComponent>(body) || !CanChangeForm(ent))
+            return;
+
+        if (ent.Comp.Projector is not { } projector
+            || !TryComp<ChameleonProjectorComponent>(projector, out var proj))
+            return;
+
+        // the body stays in the stomach as the source of the look
+        DisguiseAs(ent, (projector, proj), body, true);
+    }
+
+    private void DisguiseAs(Entity<MorphComponent> ent, Entity<ChameleonProjectorComponent> projector, EntityUid target, bool humanoid)
+    {
         _popup.PopupEntity(
             Loc.GetString("morph-disguise-self", ("target", target)),
             Loc.GetString("morph-disguise-others", ("morph", ent.Owner), ("target", target)),
@@ -78,9 +105,11 @@ public sealed partial class MorphSystem : SharedMorphSystem
             ent,
             PopupType.MediumCaution);
 
-        _chameleon.Disguise((projector, proj), ent, target);
+        _chameleon.Disguise(projector, ent, target);
+        ent.Comp.HumanoidForm = humanoid ? target : null;
         ent.Comp.NextDisguise = Timing.CurTime + ent.Comp.DisguiseCooldown;
         Dirty(ent);
+        _movement.RefreshMovementSpeedModifiers(ent.Owner);
     }
 
     private void OnRevealAction(Entity<MorphComponent> ent, ref MorphRevealActionEvent args)
@@ -164,6 +193,10 @@ public sealed partial class MorphSystem : SharedMorphSystem
 
             case MorphStomachAction.Digest:
                 StartDigest(ent, target.Value);
+                break;
+
+            case MorphStomachAction.AssumeForm:
+                TryAssumeForm(ent, target.Value);
                 break;
         }
 
@@ -259,6 +292,34 @@ public sealed partial class MorphSystem : SharedMorphSystem
     {
         // reveal before children get deleted, otherwise the projector deletes the already deleting disguise
         if (ent.Comp.Disguised)
+            _chameleon.TryReveal(ent.Owner);
+    }
+
+    private void OnEntInserted(Entity<MorphComponent> ent, ref EntInsertedIntoContainerMessage args)
+    {
+        if (args.Container.ID != DevourerComponent.StomachContainerId)
+            return;
+
+        var victim = args.Entity;
+        if (!HasComp<HumanoidProfileComponent>(victim)
+            || !TryComp<MindContainerComponent>(victim, out var victimMind)
+            || !victimMind.HasMind
+            || !ent.Comp.CountedVictims.Add(victim))
+            return;
+
+        if (!_mind.TryGetMind(ent, out var mindId, out var mind))
+            return;
+
+        foreach (var objective in _mind.EnumerateObjectives<MorphDevourConditionComponent>((mindId, mind)))
+        {
+            _counterCondition.IncreaseCount(objective);
+        }
+    }
+
+    private void OnEntRemoved(Entity<MorphComponent> ent, ref EntRemovedFromContainerMessage args)
+    {
+        // the copied body is gone, so is its look
+        if (args.Container.ID == DevourerComponent.StomachContainerId && args.Entity == ent.Comp.HumanoidForm)
             _chameleon.TryReveal(ent.Owner);
     }
 

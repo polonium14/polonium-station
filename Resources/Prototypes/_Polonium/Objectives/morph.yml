@@ -1,0 +1,42 @@
+- type: objectiveIssuer
+  id: Morph
+  name: objective-issuer-morph
+
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseMorphObjective
+  components:
+  - type: Objective
+    # cele są stałe, trudność nie ma znaczenia
+    difficulty: 1
+    issuer: Morph
+  - type: RoleRequirement
+    roles:
+    - MorphRole
+
+- type: entity
+  parent: [BaseMorphObjective, BaseCounterObjective]
+  id: MorphDevourObjective
+  components:
+  - type: Objective
+    icon:
+      sprite: Interface/Actions/devour.rsi
+      state: icon
+  - type: NumberObjective
+    min: 2
+    max: 4
+    title: objective-morph-devour-title
+    description: objective-morph-devour-description
+  - type: MorphDevourCondition
+
+- type: entity
+  parent: [BaseMorphObjective, BaseSurviveObjective]
+  id: MorphSurviveObjective
+  name: Survive
+  description: Stay alive until the end of the shift.
+  components:
+  - type: Objective
+    icon:
+      sprite: _Polonium/Mobs/morph.rsi
+      state: alive

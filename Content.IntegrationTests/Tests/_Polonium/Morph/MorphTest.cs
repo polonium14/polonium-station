@@ -1,9 +1,17 @@
 using System.Linq;
 using Content.IntegrationTests.Tests.Interaction;
+using Content.Server._Polonium.Morph;
+using Content.Server.Objectives.Components;
 using Content.Shared._Polonium.Morph;
+using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
+using Content.Shared.Devour.Components;
+using Content.Shared.Mind;
+using Content.Shared.Movement.Components;
 using Content.Shared.Polymorph.Components;
+using Content.Shared.Roles;
 using Robust.Client.GameObjects;
+using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
 
 namespace Content.IntegrationTests.Tests._Polonium.Morph;
@@ -45,6 +53,88 @@ public sealed class MorphTest : InteractionTest
             Assert.That(sprite.Visible, "Disguise sprite is not visible.");
             Assert.That(layers.Any(l => l.Visible && l.ActualRsi != null), "Disguise sprite has no visible layers.");
         });
+    }
+
+    [Test]
+    public async Task MorphCannotSpeak()
+    {
+        await Server.WaitAssertion(() =>
+        {
+            var blocker = SEntMan.System<ActionBlockerSystem>();
+            Assert.That(blocker.CanSpeak(SPlayer), Is.False, "Morph can speak.");
+        });
+    }
+
+    [Test]
+    public async Task AssumeDevouredForm()
+    {
+        var body = await SpawnTarget("MobHuman");
+        var sBody = ToServer(body);
+
+        await Server.WaitPost(() =>
+        {
+            var container = SEntMan.System<SharedContainerSystem>();
+            var stomach = container.EnsureContainer<Container>(SPlayer, DevourerComponent.StomachContainerId);
+            container.Insert(sBody, stomach);
+            SEntMan.EventBus.RaiseLocalEvent(SPlayer, new MorphStomachSelectMessage(body, MorphStomachAction.AssumeForm));
+        });
+        await RunTicks(15);
+
+        var morph = SEntMan.GetComponent<MorphComponent>(SPlayer);
+        Assert.That(morph.HumanoidForm, Is.EqualTo(sBody), "Morph did not take the devoured form.");
+        Assert.That(SEntMan.HasComponent<ChameleonDisguisedComponent>(SPlayer));
+        Assert.That(SEntMan.GetComponent<MovementSpeedModifierComponent>(SPlayer).WalkSpeedModifier, Is.EqualTo(1f).Within(0.01f),
+            "Humanoid form should not get the disguise speed bonus.");
+
+        await Client.WaitAssertion(() =>
+        {
+            var disguise = CEntMan.GetComponent<ChameleonDisguisedComponent>(CPlayer).Disguise;
+            var sprite = CEntMan.GetComponent<SpriteComponent>(disguise);
+            Assert.That(sprite.AllLayers.Any(l => l.Visible && l.ActualRsi != null), "Humanoid disguise is invisible.");
+            Assert.That(sprite.Rotation.Theta, Is.EqualTo(0).Within(0.01), "Humanoid disguise is lying down.");
+        });
+
+        // the form is gone once the body leaves the stomach
+        await Server.WaitPost(() =>
+            SEntMan.EventBus.RaiseLocalEvent(SPlayer, new MorphStomachSelectMessage(body, MorphStomachAction.Drop)));
+        await RunTicks(15);
+
+        Assert.That(SEntMan.HasComponent<ChameleonDisguisedComponent>(SPlayer), Is.False, "Morph kept the form of a spat out body.");
+        Assert.That(morph.HumanoidForm, Is.Null);
+    }
+
+    [Test]
+    public async Task DevourObjectiveCountsCrewOnce()
+    {
+        var body = await SpawnTarget("MobHuman");
+        var sBody = ToServer(body);
+        var mindSys = SEntMan.System<SharedMindSystem>();
+        EntityUid objective = default;
+
+        await Server.WaitPost(() =>
+        {
+            // separate morph, the test player only visits its own
+            var morphUid = SEntMan.SpawnEntity("MobMorph", SEntMan.GetCoordinates(PlayerCoords));
+            var morphMind = mindSys.CreateMind(null, "morph");
+            mindSys.TransferTo(morphMind, morphUid, createGhost: false);
+            var (mindId, mind) = morphMind;
+            SEntMan.System<SharedRoleSystem>().MindAddRole(mindId, "MindRoleMorph", mind, silent: true);
+            Assert.That(mindSys.TryAddObjective(mindId, mind, "MorphDevourObjective"), "Could not give the devour objective.");
+            objective = mindSys.EnumerateObjectives<MorphDevourConditionComponent>((mindId, mind)).Single();
+
+            var victimMind = mindSys.CreateMind(null, "victim");
+            mindSys.TransferTo(victimMind, sBody, createGhost: false);
+
+            var container = SEntMan.System<SharedContainerSystem>();
+            var stomach = container.EnsureContainer<Container>(morphUid, DevourerComponent.StomachContainerId);
+            container.Insert(sBody, stomach);
+            container.Remove(sBody, stomach);
+            container.Insert(sBody, stomach);
+        });
+        await RunTicks(5);
+
+        Assert.That(SEntMan.GetComponent<CounterConditionComponent>(objective).Count, Is.EqualTo(1),
+            "Devouring the same crewmember twice should count once.");
     }
 
     [Test]

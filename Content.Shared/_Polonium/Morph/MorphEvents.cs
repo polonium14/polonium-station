@@ -50,6 +50,11 @@ public enum MorphStomachAction : byte
     /// Destroy the entity, healing the morph if it was alive.
     /// </summary>
     Digest,
+
+    /// <summary>
+    /// Take on the look of a devoured humanoid.
+    /// </summary>
+    AssumeForm,
 }
 
 /// <summary>

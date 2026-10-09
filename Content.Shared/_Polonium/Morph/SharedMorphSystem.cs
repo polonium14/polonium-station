@@ -8,6 +8,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Polymorph.Components;
 using Content.Shared.Polymorph.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Speech;
 using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Containers;
@@ -40,6 +41,7 @@ public abstract partial class SharedMorphSystem : EntitySystem
         SubscribeLocalEvent<MorphComponent, GetMeleeDamageEvent>(OnGetMeleeDamage);
         SubscribeLocalEvent<MorphComponent, DevourActionEvent>(OnDevourAttempt, before: [typeof(DevourSystem)]);
         SubscribeLocalEvent<MorphComponent, MorphStomachActionEvent>(OnStomachAction);
+        SubscribeLocalEvent<MorphComponent, SpeakAttemptEvent>(OnSpeakAttempt);
 
         SubscribeLocalEvent<ChameleonDisguisedComponent, ComponentInit>(OnDisguisedInit);
         SubscribeLocalEvent<ChameleonDisguisedComponent, ComponentRemove>(OnDisguisedRemove);
@@ -78,7 +80,8 @@ public abstract partial class SharedMorphSystem : EntitySystem
 
     private void OnRefreshSpeed(Entity<MorphComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
     {
-        if (ent.Comp.Disguised)
+        // humanoid forms stay as slow as the morph itself
+        if (ent.Comp.Disguised && ent.Comp.HumanoidForm == null)
             args.ModifySpeed(ent.Comp.DisguisedSpeedModifier);
     }
 
@@ -107,6 +110,11 @@ public abstract partial class SharedMorphSystem : EntitySystem
             _ui.OpenUi(ent.Owner, MorphStomachUiKey.Key, args.Performer);
     }
 
+    private void OnSpeakAttempt(Entity<MorphComponent> ent, ref SpeakAttemptEvent args)
+    {
+        args.Cancel();
+    }
+
     private void OnDisguisedInit(Entity<ChameleonDisguisedComponent> ent, ref ComponentInit args)
     {
         if (!TryComp<MorphComponent>(ent, out var morph))
@@ -122,6 +130,7 @@ public abstract partial class SharedMorphSystem : EntitySystem
             return;
 
         morph.Disguised = false;
+        morph.HumanoidForm = null;
         // also covers reveals that didn't go through the morph, like being shoved into a locker
         morph.NextDisguise = Timing.CurTime + morph.DisguiseCooldown;
         Dirty(ent.Owner, morph);
@@ -150,7 +159,12 @@ public abstract partial class SharedMorphSystem : EntitySystem
 
     private void OnDisguiseExamined(Entity<MorphDisguiseComponent> ent, ref ExaminedEvent args)
     {
-        if (args.IsInDetailsRange)
+        if (!TryComp<ChameleonDisguiseComponent>(ent, out var disguise)
+            || !TryComp<MorphComponent>(disguise.User, out var morph))
+            return;
+
+        // a copied crewmember always looks off, objects only up close
+        if (morph.HumanoidForm != null || args.IsInDetailsRange)
             args.PushMarkup(Loc.GetString("morph-disguise-examine"), -1);
     }
 }

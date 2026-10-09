@@ -1,6 +1,7 @@
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Polonium.Morph;
 using Content.Shared.Devour.Components;
+using Content.Shared.Humanoid;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Shared.Containers;
@@ -46,6 +47,9 @@ public sealed partial class MorphStomachBoundUserInterface(EntityUid owner, Enum
                 CreateOption(target, MorphStomachAction.PrepareThrow, "/Textures/Interface/VerbIcons/eject.svg.192dpi.png", "morph-stomach-throw"),
                 CreateOption(target, MorphStomachAction.Digest, "/Textures/Interface/VerbIcons/delete.svg.192dpi.png", "morph-stomach-digest"),
             };
+
+            if (EntMan.HasComponent<HumanoidProfileComponent>(contained))
+                options.Add(CreateOption(target, MorphStomachAction.AssumeForm, "/Textures/Interface/VerbIcons/refresh.svg.192dpi.png", "morph-stomach-assume"));
 
             var tooltip = morph?.PreparedThrow == contained
                 ? Loc.GetString("morph-stomach-entity-prepared", ("entity", contained))

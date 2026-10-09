@@ -1,6 +1,7 @@
 using Content.Client.Effects;
 using Content.Client.Smoking;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Polymorph.Components;
 using Content.Shared.Polymorph.Systems;
 using Robust.Client.GameObjects;
@@ -33,7 +34,13 @@ public sealed partial class ChameleonProjectorSystem : SharedChameleonProjectorS
         {
             // Polonium: sprite layers are no longer serialized, so CopyComp leaves the disguise invisible
             if (_spriteQuery.TryComp(ent.Comp.SourceEntity, out var sourceSprite))
+            {
                 _sprite.CopySprite((ent.Comp.SourceEntity, sourceSprite), (ent, sprite));
+
+                // Polonium: mobs (morph forms of devoured bodies) are copied lying down, stand them up
+                if (HasComp<MobStateComponent>(ent.Comp.SourceEntity))
+                    _sprite.SetRotation((ent, sprite), Angle.Zero);
+            }
 
             // Polonium: runtime post-shaders (target/interaction outline) have no prototype and crash sprite init
             _sprite.ClearPostShaders(sprite);

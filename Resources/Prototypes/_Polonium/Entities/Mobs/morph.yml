@@ -8,12 +8,11 @@
   - type: GhostRole
     makeSentient: true
     allowMovement: true
-    allowSpeech: true
     name: ghost-role-information-morph-name
     description: ghost-role-information-morph-description
     rules: ghost-role-information-antagonist-rules
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
+    - MindRoleMorph
     raffle:
       settings: default
   - type: GhostTakeoverAvailable

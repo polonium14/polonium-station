@@ -126,6 +126,19 @@ public sealed partial class MorphComponent : Component
     public SoundSpecifier DigestMobSound = new SoundPathSpecifier("/Audio/Effects/Fluids/splat.ogg");
 
     /// <summary>
+    /// Devoured humanoid whose look the morph currently copies, if any.
+    /// The form is dropped once the body leaves the stomach.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntityUid? HumanoidForm;
+
+    /// <summary>
+    /// Crew already counted for the devour objective, so spitting and re-eating doesn't count twice.
+    /// </summary>
+    [ViewVariables]
+    public HashSet<EntityUid> CountedVictims = new();
+
+    /// <summary>
     /// Mirrors whether the morph has a <see cref="Content.Shared.Polymorph.Components.ChameleonDisguisedComponent"/>.
     /// </summary>
     [ViewVariables]

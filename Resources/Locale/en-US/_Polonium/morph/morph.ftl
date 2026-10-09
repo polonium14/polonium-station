@@ -1,5 +1,13 @@
 ghost-role-information-morph-name = Morph
-ghost-role-information-morph-description = You are a morph, an abomination of science created primarily with changeling cells. You may take the form of nearby objects, which will alert any nearby observers. While disguised you move faster but deal less damage, and anyone examining you up close will note an uncanny wrongness. Eat items and dead or unconscious creatures, digesting creatures restores your health. Whoever touches you while disguised will be bitten and poisoned.
+ghost-role-information-morph-description = You are a morph, an abomination of science created primarily with changeling cells. You may take the form of nearby objects, which will alert any nearby observers. While disguised you move faster but deal less damage, and anyone examining you up close will note an uncanny wrongness. Eat items and dead or unconscious creatures, digesting creatures restores your health. Whoever touches you while disguised will be bitten and poisoned. You can also take the form of a devoured crewmember while their body is in your stomach, but you cannot speak.
+
+roles-antag-morph-name = Morph
+roles-antag-morph-objective = Devour the crew and survive until the end of the shift.
+role-subtype-morph = Morph
+morph-round-end-agent-name = morph
+objective-issuer-morph = [color=#3cff00]Hunger[/color]
+objective-morph-devour-title = Devour {$count} crewmembers.
+objective-morph-devour-description = Swallow {$count} members of the crew. Each person only counts once.
 
 morph-devour-disguised = You can not eat anything while you are disguised!
 morph-disguise-invalid = You can't assume that form.
@@ -28,6 +36,7 @@ morph-stomach-entity-prepared = {CAPITALIZE($entity)} (prepared to spit)
 morph-stomach-drop = Spit out
 morph-stomach-throw = Prepare to spit
 morph-stomach-digest = Digest
+morph-stomach-assume = Assume form
 
 reagent-name-morph-venom = morph venom
 reagent-desc-morph-venom = Deadly venom of a shapeshifting creature.

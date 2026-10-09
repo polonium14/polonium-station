@@ -41,17 +41,27 @@
 
 # Morph z NSV13: waga 2 i raz na rundę jak w oryginale.
 - type: entity
-  parent: BaseGameRule
+  parent: BaseAntagGhostRoleRule
   id: MorphSpawn
   components:
   - type: StationEvent
     weight: 2
-    duration: 1
+    duration: null
     maxOccurrences: 1
     occursDuringRoundEnd: false
     earliestStart: 20
     eventType: HostilesSpawn
   - type: GameRule
     chaosScore: 250
-  - type: RandomSpawnRule
+  - type: AntagRandomSpawn
+  - type: AntagSpawner
     prototype: MobMorph
+  - type: AntagObjectives
+    objectives:
+    - MorphDevourObjective
+    - MorphSurviveObjective
+  - type: AntagSelection
+    agentName: morph-round-end-agent-name
+    antags:
+    - !type:FixedAntagCount
+      proto: Morph
