@@ -187,3 +187,4 @@ chat-speech-verb-wawa-3 = declares
 chat-speech-verb-wawa-4 = ponders
 
 chat-speech-verb-name-vulpkanin = Vulpkanin
+chat-speech-verb-name-horror = Horror
