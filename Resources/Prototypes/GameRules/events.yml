@@ -94,6 +94,7 @@
     - id: ClosetSkeleton
     - id: KingRatMigration
     - id: RevenantSpawn
+    - id: MorphSpawn # Polonium
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 

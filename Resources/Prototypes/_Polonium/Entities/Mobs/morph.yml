@@ -1,0 +1,130 @@
+# Port morpha z NSV13 (code/modules/antagonists/morph).
+- type: entity
+  parent: [ SimpleSpaceMobBase, BaseSlicingRefinable, MobNightVision ]
+  id: MobMorph
+  name: morph
+  description: A revolting, pulsating pile of flesh.
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowMovement: true
+    allowSpeech: true
+    name: ghost-role-information-morph-name
+    description: ghost-role-information-morph-description
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+    - MindRoleGhostRoleSoloAntagonist
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: InputMover
+  - type: MobMover
+  - type: Speech
+    speechVerb: Slime
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Polonium/Mobs/morph.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 100
+        mask:
+        - SmallMobMask # przechodzi przez stoły, jak PASSTABLE w oryginale
+        layer:
+        - MobLayer
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      100: 0.7
+      125: 0.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/_RMC14/Xeno/blobattack.ogg
+    damage:
+      types:
+        Blunt: 10
+        Slash: 10
+  - type: Devourer
+    devourAction: ActionMorphDevour
+    devourTime: 3
+    structureDevourTime: 1
+    soundStructureDevour: null
+    soundDevour:
+      path: /Audio/Effects/Fluids/splat.ogg
+    healRate: 0
+    whitelist:
+      components:
+      - MobState
+      - Item
+    stomachStorageWhitelist:
+      components:
+      - MobState
+      - Item
+  - type: Morph
+    digestBlacklist:
+      tags:
+      - HighRiskItem
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMeat
+      amount: 2
+
+# Atrapa tworzona przez ukryty projektor morpha.
+- type: entity
+  parent: ChameleonDisguise
+  id: MorphDisguise
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MorphDisguise
+
+# Projektor kameleona schowany w morphie. Listy jak w zwykłym projektorze.
+- type: entity
+  id: MorphChameleonProjector
+  name: morph chameleon cells
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ChameleonProjector
+    whitelist:
+      components:
+      - Anchorable
+      - Item
+      tags:
+      - Bot
+    blacklist:
+      components:
+      - ChameleonDisguise
+      - Door
+      - MindContainer
+      - Pda
+      - SubFloorHide
+      - Wall
+      tags:
+      - Catwalk
+      - Window
+    disguiseProto: MorphDisguise
