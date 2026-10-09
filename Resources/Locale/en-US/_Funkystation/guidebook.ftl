@@ -80,6 +80,8 @@ guide-entry-scientist-sop = SPO Naukowca i A.N.
 
 guide-entry-roboticist-sop = SPO Robotyka
 
+guide-entry-synthetics-sop = Jednostki syntetyczne
+
 guide-entry-reactions = Reakcje
 
 guide-entry-cmo-sop = SPO Dyrektora Medycznego

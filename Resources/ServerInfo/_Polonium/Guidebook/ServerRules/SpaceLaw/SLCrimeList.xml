@@ -192,7 +192,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#9698ed">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§305 Teren zab.\n5:00 – 14:00[/color]
+        [color=black]§305 Teren zab.\n5:00 – 10:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -203,15 +203,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#7eb87e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]x06 Zaniedbanie[/color]
+        [color=black]x06 Nadużycia[/color]
       </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box/>
     </ColorBox>
     <ColorBox Color="#7eb87e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§206 Zaniedbanie\n4:00 – 7:00[/color]
+        [color=black]§106 Oszustwo\nOstrzeż. – 5:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#7eb87e">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]§206 Zaniedbanie\nOstrzeż. – 7:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -362,9 +364,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   [bold]Opis:[/bold] Kradzież rzadkiego lub kluczowego mienia stacji, które nie figuruje w rejestrze mienia znacznej wartości.
 
-  W szczególności: płyty konsol spoza rejestru, mechy, klucze dostępu ochrony, piloty działowe, identyfikatory kierowników spoza rejestru, kombinezony ciśnieniowe, plecaki odrzutowe.
+  W szczególności: płyty konsol spoza rejestru, mechy, klucze dostępu ochrony, piloty działowe, identyfikatory kierowników spoza rejestru, pieczęcie Kierowników Działów, kombinezony ciśnieniowe, plecaki odrzutowe.
 
-  [bold]Uwagi:[/bold] Mienie z [textlink="rejestru mienia znacznej wartości" link="SpaceLawHighValue"] kwalifikuje się jako §502.
+  [bold]Uwagi:[/bold] Mienie z [textlink="rejestru mienia znacznej wartości" link="SpaceLawHighValue"] kwalifikuje się jako §502. Dotyczy to także pieczęci Kapitana i pieczęci Centralnego Dowództwa.
 
   ## §402 Rozbój
   [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] 7:00 – 12:00
@@ -386,6 +388,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - kradzież mienia figurującego w [textlink="rejestrze mienia znacznej wartości" link="SpaceLawHighValue"];
   - karty ID z dostępem kapitana, kierownika personelu lub o analogicznych uprawnieniach;
   - klucze szyfrujące zawierające dostęp do wszystkich kanałów łączności stacji;
+  - pieczęć Kapitana oraz pieczęć Centralnego Dowództwa;
   - kradzież lub uprowadzenie wahadłowców;
   - głowica nuklearna;
   - Ian.
@@ -470,14 +473,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   ## §304 Masowe niszczenie
   [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 7:00 – 14:00
 
-  [bold]Opis:[/bold] Rozległe zniszczenie obszaru lub kluczowego systemu stacji (użycie ładunków wybuchowych, sabotaż zasilania, sekcji klonowania, systemu atmosferycznego).
+  [bold]Opis:[/bold] Rozległe zniszczenie obszaru lub sabotaż kluczowego systemu stacji.
 
-  [bold]Uwagi:[/bold] Celowe niszczenie całej placówki/siedliska lub doprowadzenie do samozniszczenia kwalifikuje się jako §504.
+  W szczególności:
+  - użycie ładunków wybuchowych, sabotaż zasilania, sekcji klonowania albo systemu atmosferycznego,
+  - zmiana praw SI Stacji albo Cyborga bez Dekretu dowódczego Kapitana, a także wgranie praw innych niż zatwierdzone.
+
+  [bold]Uwagi:[/bold] Celowe niszczenie całej placówki lub doprowadzenie do samozniszczenia kwalifikuje się jako §504. Tak samo kwalifikuje się zmiana praw, po której jednostka ma krzywdzić załogę albo oddać stację wrogowi. Legalną zmianę praw opisuje strona [textlink="Jednostki syntetyczne" link="SyntheticsSOP"].
 
   ## §504 Terroryzm
   [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Permabrig – Egzekucja
 
-  [bold]Opis:[/bold] Działania grożące zniszczeniem statku lub placówki bądź wymuszające decyzje za pomocą przemocy na masową skalę (inicjacja procedury samozniszczenia, użycie ładunków wybuchowych w celu szantażu, branie zakładników, przejęcie kontroli nad statkiem).
+  [bold]Opis:[/bold] Działania grożące zniszczeniem statku lub placówki bądź wymuszające decyzje za pomocą przemocy na masową skalę (inicjacja procedury samozniszczenia, użycie ładunków wybuchowych w celu szantażu, branie zakładników, przejęcie kontroli nad statkiem, zmiana praw SI tak, by krzywdziła załogę albo oddała stację wrogowi).
 
   [bold]Uwagi:[/bold] Przeprowadzenie formalnej egzekucji wymaga wydania Nakazu egzekucji. Eliminacja w terenie podczas stanów wyjątkowych (kody wojenne) lub na IV poziomie stosowania siły nie stanowi egzekucji w rozumieniu niniejszego artykułu.
 
@@ -494,7 +501,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Uwagi:[/bold] W drobnych przypadkach wystarczy nakaz opuszczenia terenu lub odprowadzenie. Zgoda pracownika danego działu jest wystarczająca; zakaz wydany przez kierownika działu ma jednak charakter nadrzędny.
 
   ## §305 Wtargnięcie na teren zabezpieczony
-  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 5:00 – 14:00
+  [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 5:00 – 10:00
 
   [bold]Opis:[/bold] Wejście bez zezwolenia na mostek, do biur kierownictwa, stref ochrony, zbrojowni, skarbca, serwerowni telekomunikacji, magazynu EVA, jądra SI, sekcji atmosferycznej, maszynowni lub kajuty kapitana.
 
@@ -506,20 +513,40 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   [bold]Uwagi:[/bold] §105 nie podlega łączeniu z niniejszym artykułem (ta sama kategoria _XX).
 
-  # x06 — Zaniedbanie
-  Kategoria obejmuje zaniechanie obowiązków służbowych oraz lekkomyślne narażenie osób lub stacji na niebezpieczeństwo. Rażące zaniedbanie dotyczy kadry dowódczej oraz sytuacji skutkujących śmiercią bądź katastrofą stacji.
+  # x06 — Nadużycia i zaniedbania
+  Kategoria obejmuje oszustwo, nadużycie uprawnień oraz zaniedbanie obowiązków służbowych. Rażące zaniedbanie dotyczy kadry dowódczej oraz sytuacji zakończonych śmiercią albo katastrofą stacji.
 
-  ## §206 Zaniedbanie
-  [bold]Stopień:[/bold] II · [bold]Kara:[/bold] 4:00 – 7:00
+  ## §106 Oszustwo
+  [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 5:00
 
-  [bold]Opis:[/bold] Naruszenie obowiązków służbowych, które stwarza zagrożenie dla zdrowia osób lub bezpieczeństwa stacji.
+  [bold]Opis:[/bold] Wprowadzenie w błąd w celu uzyskania korzyści, dostępu albo decyzji, do której sprawca nie ma prawa.
 
   W szczególności:
-  - wypadki przy pracy wynikające z zaniedbania, nieuprawnione eksperymenty medyczne/naukowe na sobie, błędy w sztuce lekarskiej;
-  - zaniechanie działania, które mogło doprowadzić do uszczerbku na zdrowiu lub szkód w mieniu stacji;
+  - podrobienie dokumentu, podpisu albo pieczęci,
+  - wyłudzenie cudzego podpisu lub pieczęci podstępem,
+  - podawanie się za inną osobę albo za osobę na innym stanowisku,
+  - uzyskanie dostępu, przedmiotu albo pieniędzy na podstawie fałszywych danych,
+  - przyjęcie albo wręczenie korzyści za decyzję służbową.
+
+  [bold]Uwagi:[/bold] Dokument uzyskany oszustwem jest nieważny. Czyny popełnione dzięki oszustwu, na przykład kradzież albo wtargnięcie, dolicza się osobno z właściwych artykułów. Kradzież samej pieczęci kwalifikuje się jako §302 albo §502.
+
+  ## §206 Zaniedbanie i nadużycie uprawnień
+  [bold]Stopień:[/bold] II · [bold]Kara:[/bold] Ostrzeżenie – 7:00
+
+  [bold]Opis:[/bold] Naruszenie obowiązków służbowych, które stwarza zagrożenie dla zdrowia osób lub bezpieczeństwa stacji, albo użycie uprawnień służbowych wbrew prawu.
+
+  Zaniedbanie, w szczególności:
+  - wypadki przy pracy wynikające z zaniedbania, nieuprawnione eksperymenty medyczne lub naukowe na sobie, błędy w sztuce lekarskiej,
+  - zaniechanie działania, które mogło doprowadzić do uszczerbku na zdrowiu lub szkód w mieniu stacji,
   - nieusunięcie osłony umysłu u osoby cierpiącej na neuroawersję po ustąpieniu zagrożenia.
 
-  [bold]Uwagi:[/bold] Sama odmowa wykonania polecenia, bez stwarzania zagrożenia, kwalifikuje się jako §200.
+  Nadużycie uprawnień, w szczególności:
+  - przeszukanie albo zatrzymanie bez podstawy, a także przetrzymywanie po upływie wyroku,
+  - użycie siły wyższej, niż dopuszcza [textlink="tabela stosowania siły" link="UseOfForceSOP"],
+  - wyrok świadomie niezgodny z Prawem Kosmicznym,
+  - nadanie dostępu lub stanowiska albo wydanie sprzętu z pominięciem wymaganej procedury.
+
+  [bold]Uwagi:[/bold] Sama odmowa wykonania polecenia, bez stwarzania zagrożenia, kwalifikuje się jako §200. Okoliczności „brak zamiaru” nie stosuje się do tego artykułu. Jeżeli nadużycie skończyło się uszczerbkiem na zdrowiu albo śmiercią, dolicza się zarzut z kategorii x01. Zaniedbanie albo nadużycie ze skutkiem ciężkim kwalifikuje się jako §506.
 
   ## §506 Rażące zaniedbanie
   [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Degradacja – Permabrig
@@ -527,9 +554,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Opis:[/bold] Poważne zaniedbanie ze strony kadry dowódczej lub zaniechanie skutkujące śmiercią członków załogi bądź katastrofą stacji.
 
   W szczególności:
-  - śmierć członków załogi lub poważne uszkodzenie stacji wynikające z zaniechania kierownika;
-  - nieudzielenie pomocy osobie w stanie krytycznym lub niewezwanie służb medycznych mimo istnienia takiego obowiązku i możliwości;
+  - śmierć członków załogi lub poważne uszkodzenie stacji wynikające z zaniechania kierownika,
+  - nieudzielenie pomocy osobie w stanie krytycznym lub niewezwanie służb medycznych mimo istnienia takiego obowiązku i możliwości,
   - przekroczenie uprawnień służbowych ze skutkiem ciężkim.
 
-  [bold]Uwagi:[/bold] Dotyczy przede wszystkim kierowników działów. Kara dyscyplinarna (degradacja) orzekana jest niezależnie od kary pozbawienia wolności.
+  [bold]Uwagi:[/bold] Dotyczy przede wszystkim kierowników działów. Kara dyscyplinarna (degradacja) orzekana jest niezależnie od kary pozbawienia wolności. Okoliczności „brak zamiaru” nie stosuje się do tego artykułu. Skazany z tego artykułu nie otrzymuje statusu Wroga Korporacji.
 </Document>

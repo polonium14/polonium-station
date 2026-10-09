@@ -34,7 +34,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="BorgChassisEngineer" Caption="Inżynieryjny"/>
     <GuideEntityEmbed Entity="BorgChassisMining" Caption="Odzyskowy"/>
     <GuideEntityEmbed Entity="BorgChassisJanitor" Caption="Woźny"/>
-    <GuideEntityEmbed Entity="BorgChassisService" Caption="Usługowy"/>
+    <GuideEntityEmbed Entity="BorgChassisService" Caption="Serwisowy"/>
     <GuideEntityEmbed Entity="BorgChassisMedical" Caption="Medyczny"/>
   </Box>
   <Box>

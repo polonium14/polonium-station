@@ -14,6 +14,6 @@ cargoproduct-category-name-materials = Materiały
 cargoproduct-category-name-medical = Medyczne
 cargoproduct-category-name-science = Rozwój
 cargoproduct-category-name-security = Bezpieczeństwo
-cargoproduct-category-name-service = Obsługa
+cargoproduct-category-name-service = Serwis
 cargoproduct-category-name-space = Kosmos
 cargoproduct-category-name-shuttle = Wahadłowce

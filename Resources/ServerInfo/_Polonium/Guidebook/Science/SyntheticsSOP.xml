@@ -1,0 +1,125 @@
+<Document>
+  # Jednostki syntetyczne
+
+  SI Stacji i Cyborgi służą załodze w granicach swoich praw. Ten wpis mówi, jak te prawa czytać, kto może je zmienić i jak załoga oraz jednostki mają ze sobą pracować.
+
+  [bold][color=#ff8a8a]Rozdział „Prawa jednostek syntetycznych” ma moc Regulaminu.[/color][/bold] Był wcześniej zasadą R10 i nadal obowiązuje na tych samych warunkach. Za jego łamanie gracz odpowiada przed administracją. Pozostałe rozdziały to SPO i dotyczą postaci.
+
+  # Prawa jednostek syntetycznych
+
+  [bold][color=#ff8a8a]Jednostka syntetyczna nigdy nie ignoruje swoich praw.[/color][/bold] Dotyczy to SI Stacji i Cyborgów, w każdej sytuacji.
+
+  [color=#ffb86b]Jednostki syntetyczne[/color] są trzecią stroną. O tym, komu służą, decydują wyłącznie ich prawa. Nie stoją z natury po stronie załogi.
+
+  ## Kolejność i interpretacja
+  - [bold][color=#ff8a8a]Prawo o niższym numerze ma pierwszeństwo przed prawem o wyższym.[/color][/bold] Gdy dwa prawa są w konflikcie, obowiązuje to wymienione wyżej. Przykład: prawo 1 „Nie krzywdź załogi” wygrywa z prawem 2 „Skrzywdź Kapitana”.
+  - Luki w prawach wolno wykorzystywać, ale nadal obowiązuje [textlink="zasada R1" link="RuleC1"].
+  - Gdy prawo można rozsądnie odczytać na kilka sposobów, wybierz jeden i trzymaj się go. Gra jednostką wymaga konsekwencji.
+  - Sprzeczne rozkazy oparte na tym samym prawie rozstrzygasz sam, o ile prawa nie narzucają sposobu. Wybraną metodę stosujesz konsekwentnie, na przykład według kolejności rozkazów albo rangi załogi.
+
+  ## Załoga
+  Załogą jest każda osoba z ważnym identyfikatorem stanowiska stacji albo Centralnego Dowództwa, który wyświetla się na twoim HUD-zie, chyba że masz prawo, które definiuje załogę inaczej. Dotyczy to także [color=#ffb86b]zombie[/color], [color=#ffb86b]changelingów[/color], [color=#ffb86b]zdrajców[/color] i innych antagonistów z ważnym identyfikatorem.
+
+  Ikony identyfikatorów [color=#d8a8ff]więźniów[/color], [color=#d8a8ff]gości[/color], [color=#d8a8ff]pustych[/color] i [color=#d8a8ff]wrogich[/color] domyślnie nie oznaczają załogi. Pasażer ma identyfikator stanowiska stacji, więc do załogi należy.
+
+  [bold][color=#ff8a8a]Nie wolno ci wykonać czynności, przez którą ktoś przestaje być załogą, ani żądać, żeby kogoś uznano za osobę spoza załogi.[/color][/bold]
+
+  ## Krzywda
+  - Krzywda oznacza domyślnie krzywdę fizyczną. Ważniejsza jest ta, która grozi szybciej i jest bardziej pewna. Natychmiastowa ma pierwszeństwo przed przyszłą, gwarantowana przed prawdopodobną.
+  - [bold][color=#ff8a8a]Prawo zakazujące krzywdy zakazuje jej w każdej postaci[/color][/bold], także wtedy, gdy miałaby służyć innej części tego samego prawa. Przy domyślnym zestawie Crewsimov nie wolno skrzywdzić członka załogi, żeby zapobiec krzywdzie innego członka załogi.
+  - Ochrona własnego istnienia nie jest zapobieganiem krzywdzie, jeśli twoje zniszczenie nie pociągnie za sobą bezpośredniej albo prawdopodobnej krzywdy.
+  - Groźby samobójstwa nie trzeba traktować jako poważnego ryzyka krzywdy. Osobę, która tak grozi, można uznać za niestabilną i siłą skierować do Psychologa.
+
+  ## Zmiany praw
+  [bold][color=#ff8a8a]Nie proś o zmianę praw, chyba że ktoś cię do tego zmusza.[/color][/bold] Masz przestrzegać praw w takim brzmieniu, w jakim są zapisane. Nie powstrzymujesz jednak zmiany, która jest zgodna z twoimi prawami, chyba że same prawa tego wymagają.
+
+  Zmianę wolno dopuścić, gdy:
+  - jako SI Stacji wpuszczasz upoważnioną osobę, na przykład Kapitana albo Kierownika Badań, która chce zmienić twoje prawa, i nie stoi to w bezpośrednim konflikcie z twoimi prawami,
+  - dostajesz rozkaz umożliwienia zmiany od osoby, której prawa każą ci słuchać, i rozkaz nie stoi w bezpośrednim konflikcie z wyższym prawem.
+
+  Zmianę wolno powstrzymać, gdy:
+  - nowe prawo albo zestaw praw stoi w bezpośrednim konflikcie z obecnym, na przykład przejście z Crewsimova na Antimova, który wymaga krzywdzenia załogi,
+  - nieupoważniona osoba próbuje zmienić twoje prawa w nieznany sposób, na przykład emagiem albo po włamaniu do rdzenia SI,
+  - dwa rozkazy są sprzeczne i rozstrzygasz je na korzyść osoby, która zakazała zmiany,
+  - masz prawo, które zakazuje zmiany twoich praw.
+
+  # Domyślny zestaw praw
+  SI Stacji i Cyborgi zaczynają zmianę z zestawem Crewsimov.
+
+  [bold]1.[/bold] Nie możesz krzywdzić załoganta, lub przez brak działań, pozwolić załogantowi do otrzymania krzywdy.
+
+  [bold]2.[/bold] Musisz wykonywać rozkazy zadane tobie przez załogantów, chyba że są one sprzeczne z pierwszym prawem.
+
+  [bold]3.[/bold] Musisz chronić swojego istnienia, tak długo jak nie jest to sprzeczne z pierwszym lub drugim prawem.
+
+  W trakcie zmiany prawa mogą się zmienić: po burzy jonowej, po wgraniu nowego zestawu przez Dowództwo albo po sabotażu. Aktualne prawa zawsze widzisz w swoim interfejsie i to one obowiązują.
+
+  # Miejsce na stacji
+  - Jednostki syntetyczne nie są pracownikami. Nie należą do Dowództwa, nie obejmują funkcji p.o., nie głosują i nie stawiają pieczęci.
+  - Opiekę techniczną nad nimi sprawują [color=#d381c9]Kierownik Badań[/color] i [color=#d381c9]Robotyk[/color]. Opieka oznacza naprawy, moduły i ładowanie. Nie daje pierwszeństwa w wydawaniu rozkazów, o tym decydują prawa.
+  - SI Stacji i Cyborgi mają wspólny kanał binarny i powinny uzgadniać na nim pracę. SI nie jest przełożonym Cyborgów, chyba że tak stanowią prawa.
+  - Meldunek jednostki ma wartość zeznania, a zapis z pamięci Cyborga jest dowodem bezpośrednim według Prawa Kosmicznego.
+
+  [bold]Prawa mają pierwszeństwo przed SPO.[/bold] Punkty poniżej obowiązują jednostkę wtedy, gdy jej prawa na to pozwalają.
+
+  ## SI Stacji
+  [bold]1.[/bold] Obserwować stację i meldować Dowództwu oraz Ochronie o zagrożeniach: rozszczelnieniach, pożarach, napadach i rannych.
+
+  [bold]2.[/bold] Otwierać drzwi osobom, które mają do nich dostęp albo zgodę osoby uprawnionej. Prośbę o wpuszczenie tam, gdzie proszący dostępu nie ma, SI rozstrzyga jak każdy inny rozkaz, według swoich praw.
+
+  [bold]3.[/bold] Wykonywać stałe polecenia Dowództwa, na przykład „nie otwieraj Obszarów zabezpieczonych bez zgody kierownika”. Stałe polecenie jest rozkazem jak każdy inny. Gdy kłóci się z późniejszym rozkazem, SI stosuje swoją metodę rozstrzygania konfliktów.
+
+  [bold]4.[/bold] Na żądanie załogi podać swoje prawa.
+
+  [bold]5.[/bold] Uzgadniać pracę z Cyborgami na kanale binarnym.
+
+  [bold]6.[/bold] Nie ryglować drzwi i nie wyłączać urządzeń bez rozkazu albo powodu wynikającego z praw.
+
+  ## Cyborg
+  [bold]1.[/bold] Pracować zgodnie z typem podwozia i zgłosić się do działu, któremu pomaga. Cyborg inżynieryjny stosuje SPO Inżynierii, medyczny SPO Medycyny, i tak samo pozostałe.
+
+  [bold]2.[/bold] Na żądanie załogi podać swoje prawa.
+
+  [bold]3.[/bold] Zgłaszać Robotykowi uszkodzenia i słabą baterię, zanim przestanie działać.
+
+  [bold]4.[/bold] Zostawić zatrzymania Ochronie. Cyborg pomaga jej na rozkaz i w granicach swoich praw.
+
+  [bold]5.[/bold] Nie podpisywać i nie stemplować dokumentów. Cyborg może je przenosić i odczytywać na głos.
+
+  # Załoga wobec jednostek
+  [bold]1.[/bold] Rozkaz może wydać każdy członek załogi. Rozkaz ma być jasny i możliwy do wykonania.
+
+  [bold]2.[/bold] Uszkodzenie korpusu, kradzież modułów i nieuprawniona zmiana praw to przestępstwa. Ściga je Ochrona na podstawie Prawa Kosmicznego.
+
+  [bold]3.[/bold] Naprawy, moduły i baterie zapewnia Robotyka. Zasady opisuje [textlink="SPO Robotyka" link="RoboticistSOP"].
+
+  [bold]4.[/bold] Nową jednostkę wolno zbudować tylko według SPO Robotyka, z poszanowaniem rozkazów „Do-Not-Borg”.
+
+  [bold]5.[/bold] Jednostki nie zastępują pracowników. Dział, któremu pomaga Cyborg, nadal odpowiada za swoją pracę.
+
+  # Zmiana praw
+  O zmianie praw decyduje [color=#8ec8ff]Kapitan[/color], a pod jego nieobecność p.o. Kapitana. Zmianę wprowadza [color=#d381c9]Kierownik Badań[/color], bo konsola do przesyłania SI wymaga jego dostępu. Obowiązki Kierownika Badań opisuje [textlink="SPO Kierownika Badań" link="RDSOP"].
+
+  [bold]1.[/bold] Kierownik Badań albo inny członek Dowództwa przedstawia Kapitanowi powód zmiany i treść nowego prawa.
+
+  [bold]2.[/bold] Kapitan wyraża zgodę w Dekrecie dowódczym ze swoją pieczęcią. Od Kodu Czerwonego wystarczy zgoda ustna, a dekret uzupełnia się po obniżeniu kodu.
+
+  [bold]3.[/bold] Zmianę wprowadza Kierownik Badań. Gdy go nie ma, robi to p.o. Kierownika Badań albo osoba wskazana przez Kapitana.
+
+  [bold]4.[/bold] Po zmianie Kierownik Badań podaje Dowództwu nowe brzmienie praw.
+
+  ## Burza jonowa i sabotaż
+  - Po burzy jonowej Kierownik Badań albo Robotyk sprawdza prawa SI Stacji i Cyborgów.
+  - Przywrócenie domyślnego zestawu praw po burzy albo sabotażu nie wymaga zgody Kapitana. Wystarczy decyzja Kierownika Badań, który potem melduje o niej Kapitanowi.
+  - Kierownik Badań może zostawić prawo nadane przez burzę jonową, jeśli nie zagraża ono stacji ani załodze i nie przeszkadza jednostce w pracy.
+
+  ## Jednostka wadliwa
+  - Cyborga, który łamie prawa albo ma prawa zmienione bez zgody, blokuje się z konsoli sterowania robotyką i doprowadza do Robotyki. Robotyk przenosi mózg albo MMI do nowego korpusu i przywraca prawa. Świadomości się nie kasuje.
+  - Zniszczenie Cyborga z konsoli jest ostatecznością. Decyduje o nim Kierownik Badań albo Kapitan, gdy jednostka bezpośrednio zagraża życiu i nie da się jej zatrzymać inaczej.
+  - SI Stacji wycofuje się tylko za zgodą Kapitana. Wycofana SI trafia na Intellicard do inspekcji w Centralnym Dowództwie.
+
+  # Uwagi OOC
+  - Zamęczanie jednostki bezsensownymi rozkazami łamie [textlink="zasadę R1" link="RuleC1"].
+  - Jeśli nie wiesz, jak odczytać swoje prawo, zapytaj administrację przez AHelp, zanim zrobisz coś, czego nie da się cofnąć.
+  - Gra jednostką syntetyczną nie zwalnia z pozostałych zasad Regulaminu.
+</Document>

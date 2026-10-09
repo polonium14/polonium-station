@@ -24,15 +24,31 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Wyjątek: zarzuty napaści, uszczerbku na zdrowiu, zabójstwa oraz uniemożliwienia reanimacji podlegają sumowaniu, jeśli dotyczą [bold]różnych poszkodowanych[/bold].
 
-  W przypadku łącznego czasu kary przekraczającego [bold]35 minut[/bold] zaleca się orzeczenie dożywotniego aresztu (permabrig).
+  Zarzuty za kolejnych poszkodowanych dolicza się w całości, ponad ograniczenie opisane w dziale [textlink="Łączenie kar" link="SpaceLawModifiers"].
+
+  W przypadku łącznego czasu kary przekraczającego [bold]30 minut[/bold] zaleca się orzeczenie dożywotniego aresztu (permabrig).
 
   Pełne opisy artykułów: [textlink="Lista przestępstw" link="SpaceLawCrimeList"]. Rejestry: [textlink="mienie znacznej wartości" link="SpaceLawHighValue"] (§502), [textlink="wyposażenie antykorporacyjne" link="SpaceLawAntiCorp"] (§503).
 
+  ## Kogo chroni Prawo Kosmiczne
+
+  Prawo Kosmiczne chroni załogę, pasażerów i gości stacji. Chroni także tych z nich, którzy okazali się agentami wrogiej organizacji. Takiej osobie przysługują prawa więźnia, przesłuchanie i wyrok na tych samych zasadach co każdemu.
+
+  Ochrony prawa nie mają napastnicy z zewnątrz: operatorzy nuklearni, piraci, ninja, magowie oraz wrogie formy życia. Wobec nich Ochrona działa według [textlink="procedury stosowania siły" link="UseOfForceSOP"] i nie musi prowadzić postępowania. Napastnik, który się poddał i został rozbrojony, jest traktowany jak Osoba Niezarejestrowana.
+
   ## Wrogowie Korporacji i Osoby Niezarejestrowane
 
-  [bold]Wróg Korporacji[/bold] — osoba, która popełniła przestępstwo uderzające bezpośrednio w bezpieczeństwo publiczne oraz dobrostan placówki. Działania te stanowią bezpośrednie zagrożenie dla interesów NanoTrasen. Za wroga korporacji uznaje się osobę, której winę udowodniono na podstawie artykułu przewidującego obligatoryjną karę śmierci. Ze względu na skrajnie wysokie zagrożenie społeczne wrogowie korporacji podlegają natychmiastowej egzekucji.
+  [bold]Wróg Korporacji[/bold] to osoba, której udowodniono winę z artykułu §500, §501, §502, §503 lub §504, albo pracę dla wrogiej organizacji, na przykład Syndykatu lub kultu. Uczestnik rewolucji nie jest Wrogiem Korporacji. Po dekonwersji stosuje się do niego zasadę o wpływach zewnętrznych z działu „Wyroki i zasady ogólne”.
 
-  [bold]Osoba Niezarejestrowana[/bold] — jednostka, która nie należy do załogi stacji lub której przynależności nie da się jednoznacznie ustalić. Osoby niezarejestrowane podlegają obowiązkowemu zatrzymaniu oraz przymusowemu przesłuchaniu.
+  Pracę dla wrogiej organizacji potwierdza przyznanie się, wyposażenie z [textlink="rejestru antykorporacyjnego" link="SpaceLawAntiCorp"] użyte przeciwko stacji albo dowody zebrane w śledztwie. Status nadaje osoba wydająca wyrok. Wpisuje go do Protokołu Przesłuchania, a w kartotece ustawia status [bold]Wróg[/bold].
+
+  Status nie zmienia wymiaru kary. Wróg Korporacji odbywa wyrok przewidziany w artykułach, z których został skazany. Dodatkowo:
+  - traci stanowisko i dostępy,
+  - po odbyciu kary czasowej pozostaje pod dozorem Ochrony do końca zmiany, czyli nie wraca na stanowisko i stawia się na każde wezwanie,
+  - na koniec zmiany zostaje przekazany Centralnemu Dowództwu,
+  - może zostać stracony wyłącznie na podstawie Nakazu egzekucji, tak jak każdy skazany.
+
+  [bold]Osoba Niezarejestrowana[/bold] to jednostka, która nie należy do załogi stacji lub której przynależności nie da się jednoznacznie ustalić. Osoby niezarejestrowane podlegają obowiązkowemu zatrzymaniu oraz przymusowemu przesłuchaniu.
 
   # Wymiar kary
   Okoliczności przy zarzucie, zasady łączenia kar oraz wykaz mienia znacznej wartości. Pełne reguły liczenia, krok po kroku oraz przykład: [textlink="Okoliczności" link="SpaceLawModifiers"].
@@ -43,6 +59,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - głowica nuklearna;
   - karty ID kapitana, kierownika personelu lub inne karty o analogicznym poziomie dostępu;
   - klucze szyfrujące zawierające dostęp do wszystkich kanałów łączności stacji;
+  - pieczęć Kapitana oraz pieczęć Centralnego Dowództwa;
   - Ian.
 
   Za mienie lub sprzęt o charakterze krytycznym uznaje się elementy, bez których stacja nie jest w stanie prawidłowo funkcjonować.
@@ -59,7 +76,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Prowadzący [textlink="przesłuchanie" link="SecuritySOP"] decyduje, czy dana okoliczność zachodzi. Nadzorca (albo komendant / najstarszy rangą oficer) zatwierdza wyrok w Protokole. Przy drobnych przewinieniach często wystarczy ostrzeżenie oraz pouczenie, że kolejny taki sam czyn w tym samym dziale (_XX) zostanie uznany za recydywę.
 
-  Kary z różnych działów _XX dodaje się do siebie. W ramach jednego działu _XX [bold]uwzględnia się wyłącznie najcięższy zarzut[/bold]. Recydywa wchodzi do wartości zarzutu przed sumowaniem. Po zsumowaniu kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego zarzutu. Jeżeli którykolwiek z pozostałych zarzutów jest recydywą albo stanowi w [textlink="wykazie przestępstw" link="SpaceLawCrimeList"] odrębną podstawę dożywotniego aresztu, ograniczenia nie stosuje się do całego wyroku. Przy karze powyżej [bold]35 minut[/bold] zaleca się orzeczenie dożywotniego aresztu (permabrig).
+  Kary z różnych działów _XX dodaje się do siebie. W ramach jednego działu _XX [bold]uwzględnia się wyłącznie najcięższy zarzut[/bold]. Recydywa wchodzi do wartości zarzutu przed sumowaniem. Po zsumowaniu zarzutów z różnych działów kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego z nich. Jeżeli którykolwiek z zarzutów jest recydywą albo stanowi w [textlink="wykazie przestępstw" link="SpaceLawCrimeList"] odrębną podstawę dożywotniego aresztu, ograniczenia nie stosuje się do całego wyroku. Zarzuty za kolejne ofiary przemocy dolicza się w całości po zastosowaniu ograniczenia. Przy karze powyżej [bold]30 minut[/bold] zaleca się orzeczenie dożywotniego aresztu (permabrig).
 
   Recydywa, brak zamiaru, stan wyższej konieczności, czynny żal, współpraca, dobrowolne zgłoszenie się, utrudnianie śledztwa oraz ograniczenie do półtorej wartości: [textlink="Okoliczności i wymiar kary" link="SpaceLawModifiers"].
 
@@ -76,15 +93,38 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   4. Więźniowie mają prawo do pomocy prawnej podczas przesłuchania dotyczącego przestępstw stopnia III lub wyższego, jeśli o nią wnioskują i jest ona w danym momencie dostępna.
   5. Więźniowie nie mogą zostać skazani przed przeprowadzeniem formalnego przesłuchania i przedstawieniem dowodów, chyba że dobrowolnie przyznali się do winy. Szczegóły: [textlink="procedura przesłuchania" link="SecuritySOP"].
   6. Więźniowie mają prawo do 5 minut poufnej konsultacji z obrońcą/prawnikiem przed rozpoczęciem przesłuchania; czas oczekiwania na przybycie prawnika wlicza się w ten limit.
-  7. Formalne przesłuchanie po aresztowaniu musi zakończyć się sporządzeniem [bold]Protokołu Przesłuchania[/bold] opatrzonego pieczęcią Komendanta. Bez ważnego protokołu nie wolno rozpocząć odbywania kary. W przypadku braku dowodów po upływie 15 minut od rozpoczęcia przesłuchania, podejrzanego należy natychmiast zwolnić.
+  7. Formalne przesłuchanie zakończone wyrokiem dokumentuje [bold]Protokół Przesłuchania[/bold]. Wyrok obowiązuje od chwili ogłoszenia, a protokół sporządza się w ciągu 15 minut. Pieczęć stawia Komendant, pod jego nieobecność Nadzorca, a gdy nie ma obu, Kapitan. W przypadku braku dowodów po upływie 15 minut od rozpoczęcia przesłuchania, podejrzanego należy natychmiast zwolnić.
   8. Po odbyciu kary więźniowie muszą otrzymać zdeponowane PDA. Wyjątkiem jest sytuacja, w której istnieją uzasadnione dowody na modyfikację urządzenia — w takim przypadku PDA należy zabezpieczyć i wydać czysty egzemplarz zastępczy.
   9. Więźniowie przebywający w celach muszą mieć zapewnioną swobodę ruchu — po osadzeniu należy zdjąć środki przymusu (kajdanki), chyba że występuje bezpośrednie zagrożenie dla życia lub zdrowia. Osadzeni na dłuższy czas lub bezterminowo powinni przebywać w celach zbiorczych; umieszczanie w izolatkach jest dopuszczalne wyłącznie w przypadku stwarzania zagrożenia.
 
   Bieg odbywania kary [bold]ulega wstrzymaniu[/bold] na czas konsultacji z prawnikiem oraz na pierwsze 10 minut rozprawy. Po tym czasie licznik biegnie dalej (zobacz „Czas a wyrok”). Nadzorca ma obowiązek to respektować ([textlink="SPO Nadzorcy" link="WardenSOP"]). Prawnik jest zobowiązany pouczyć klienta, że w przypadku wielu zarzutów proces sądowy często trwa dłużej niż sam wyrok ([textlink="SPO Prawnika" link="LegalSOP"]).
 
+  ## Naruszenia w areszcie
+
+  Czyny popełnione podczas odbywania kary kwalifikuje się z artykułów kategorii x00 i x04. Przy karze czasowej dolicza się je do pozostałego czasu. Przy permabrig stosuje się środki porządkowe.
+
+  - [bold]Wandalizm w celi.[/bold] Rozbite lampy, meble albo wewnętrzne szyby, które nie otwierają drogi wyjścia. Kara czasowa: §104 doliczony do wyroku. Permabrig: ostrzeżenie, przy powtórce izolatka.
+  - [bold]Naruszenie regulaminu aresztu.[/bold] Majstrowanie przy drzwiach, odmowa wykonania poleceń, próba wyjścia, która nie otworzyła drogi ucieczki. Kara czasowa: §200 doliczony do wyroku. Permabrig: izolatka, przy powtórce środki przymusu.
+  - [bold]Ucieczka.[/bold] Opuszczenie celi lub strefy aresztu albo zniszczenie zewnętrznej ściany lub okna. Kara czasowa: §300 doliczony do wyroku, a kolejna ucieczka jest podstawą permabrig. Permabrig: siła zgodna z [textlink="tabelą stosowania siły" link="UseOfForceSOP"], a po ujęciu izolatka.
+
+  Atak na funkcjonariusza albo innego więźnia dolicza się osobno z kategorii x01. Ucieczka z permabrig nie zastępuje Nakazu egzekucji.
+
+  ## Zwolnienie warunkowe
+
+  Nadzorca albo Komendant może zwolnić więźnia przed końcem kary czasowej. Zwolnienie warunkowe jest możliwe, gdy spełnione są wszystkie warunki:
+  - więzień odbył co najmniej połowę wyroku,
+  - nie popełnił naruszeń w areszcie,
+  - nie został skazany z artykułu stopnia V i nie ma statusu Wroga Korporacji.
+
+  Zwalniający ustala warunki i wpisuje je do kartoteki ze statusem [bold]Warunkowo zwolniony[/bold]. Typowe warunki to zakaz wstępu do wskazanego działu, zakaz zbliżania się do poszkodowanego albo praca na rzecz stacji.
+
+  Złamanie warunków albo nowe przestępstwo oznacza powrót do celi na pozostałą część wyroku. Nowy czyn z tej samej kategorii liczy się jako recydywa. W tej samej sprawie zwolnienia warunkowego nie udziela się drugi raz.
+
   ## Uzasadnione podejrzenie
 
   Uzasadnione podejrzenie wobec danej osoby definiuje się jako podejrzenie oparte na bezpośredniej obserwacji przez funkcjonariusza potencjalnie nielegalnej działalności, zgłoszeniach dotyczących potencjalnie nielegalnej działalności popełnionej przez tę osobę (z wyłączeniem ogólnych lub nieprecyzyjnych opisów) pochodzących z wiarygodnego źródła, bądź na podejrzeniu opartym na dowodach zebranych i przekazanych przez detektywa stacji.
+
+  Uzasadnione podejrzenie wystarcza do ujęcia. Do przeszukania na Kodzie Zielonym potrzeba więcej: zobacz „Przeszukiwania”.
 
   ## Ujęcie i aresztowanie
   Pełna procedura: [textlink="SPO Ochrony" link="SecuritySOP"]. Poniżej zamieszczono skrót w zakresie wiążącym się z Prawem Kosmicznym.
@@ -107,7 +147,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   2. Przekazanie nadzorcy; pod jego nieobecność — komendantowi lub najstarszemu rangą oficerowi.
   3. Pełne przeszukanie osobiste: kieszenie, PDA, płaszcz, pas. Nadzorca przeprowadza je wobec każdego nowo przyjętego więźnia.
   4. Przesłuchanie — obowiązkowe podczas stanu zagrożenia zielonego i niebieskiego, o ile obsada kadrowa na to pozwala.
-  5. Wydanie wyroku lub zwolnienie na podstawie Prawa Kosmicznego oraz [bold]Protokołu Przesłuchania[/bold] opatrzonego pieczęcią Komendanta. Wyrok wydaje nadzorca, w dalszej kolejności komendant, a następnie najstarszy rangą oficer. Komendant nie zmienia wydanego wyroku bez ujawnienia nowych dowodów lub wystąpienia próby ucieczki.
+  5. Wydanie wyroku lub zwolnienie na podstawie Prawa Kosmicznego i ustaleń z przesłuchania. Wyrok obowiązuje od chwili ogłoszenia. Wyrok wydaje nadzorca, w dalszej kolejności komendant, a następnie najstarszy rangą oficer. Komendant nie zmienia wydanego wyroku bez ujawnienia nowych dowodów lub wystąpienia próby ucieczki.
   6. Rejestry: ustawienie statusu [bold]Zatrzymany[/bold], wpisanie zarzutów oraz czasu kary.
   7. Osadzenie. Środki przymusu bezpośredniego zdejmuje się po zamknięciu w celi, o ile nie występuje bezpośrednie zagrożenie. Należy zapewnić odzież, wodę, żywność, schronienie oraz opiekę medyczną.
   8. Nadzorowanie odbywania kary oraz praw więźnia. Po odbyciu wyroku: zmiana statusu na [bold]Zwolniony[/bold]. W razie śmierci: [textlink="procedura egzekucji" link="SecuritySOP"].
@@ -118,9 +158,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Przeszukanie osobiste polega na zajęciu przedmiotów znajdujących się w plecaku, dłoniach, odzieży wierzchniej, pasie, kieszeniach oraz nakryciu głowy danej osoby. W przypadku ujawnienia przedmiotów zabronionych, funkcjonariusz może zdecydować o pogłębionym przeszukaniu w ramach zatrzymania lub skonfiskować przedmioty objęte ograniczeniami. Po zakończeniu czynności wszystkie przedmioty posiadane legalnie należy zwrócić zatrzymanemu.
 
-  - Podczas alarmu [bold]zielonego[/bold] przeszukania są dopuszczalne wyłącznie na podstawie nakazu zatwierdzonego przez Komendanta lub Kapitana. Członek załogi może zgodnie z prawem odmówić poddania się przeszukaniu bez takiego nakazu.
-  - Podczas alarmu [bold]niebieskiego[/bold] lub wyższego wszystkie przeszukania są legalne.
-  - Kod fioletowy stosuje te same limity siły oraz zasady przeszukań i przesłuchań co kod niebieski. Kod żółty — co kod zielony.
+  - Na [bold]Kodzie Zielonym[/bold] przeszukanie osoby jest legalne w dwóch przypadkach: na podstawie nakazu z pieczęcią Komendanta lub Kapitana albo wtedy, gdy funkcjonariusz przyłapał osobę na gorącym uczynku. W pozostałych sytuacjach członek załogi może odmówić przeszukania.
+  - Od [bold]Kodu Niebieskiego[/bold] w górę przeszukanie osoby nie wymaga nakazu ani przyłapania na gorącym uczynku.
+  - Kod Fioletowy stosuje te same limity siły oraz zasady przeszukań i przesłuchań co Kod Niebieski. Kod Żółty stosuje zasady Kodu Zielonego.
+
+  [bold]Przeszukanie bez nakazu na Kodzie Zielonym.[/bold] Funkcjonariusz najpierw mówi, jakie przestępstwo widział, i wpisuje powód do kartoteki. Szuka tylko tego, co wiąże się z tym czynem. Zaleca się obecność świadka: drugiego funkcjonariusza albo osoby niezwiązanej ze sprawą. Gdy świadka nie było, a przeszukany kwestionuje podstawę, spór rozstrzyga Komendant. Przeszukanie bez podstawy kwalifikuje się jako §206.
 
   ## Przesłuchanie
   Obowiązkowy etap procedury aresztowania. Służy ustaleniu stanu faktycznego oraz podjęciu decyzji o wyroku. Pełna procedura: [textlink="SPO Ochrony" link="SecuritySOP"].
@@ -148,7 +190,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   5. Odczytanie zarzutów oraz przedstawienie dowodów.
   6. Wysłuchanie stanowiska przesłuchiwanego (przyznanie się, zaprzeczenie, odmowa składania wyjaśnień) i jego odnotowanie.
   7. Brak dowodów po 15 minutach — zwolnienie. W przeciwnym razie: wydanie wyroku, skierowanie sprawy do sądu lub zwolnienie.
-  8. Sporządzenie [bold]Protokołu Przesłuchania[/bold] i opatrzenie go pieczęcią Komendanta. Bez protokołu nie wolno rozpocząć odbywania kary.
+  8. Sporządzenie [bold]Protokołu Przesłuchania[/bold] w ciągu 15 minut od wyroku i opatrzenie go pieczęcią Komendanta, a pod jego nieobecność Nadzorcy albo Kapitana. Na Kodzie Czerwonym protokół uzupełnia się po obniżeniu kodu. Brak protokołu nie wstrzymuje kary.
 
   ### Protokół Przesłuchania
   Musi zawierać co najmniej: dane i stanowisko przesłuchiwanego, dane i stanowisko prowadzącego, wykaz świadków, zebrane dowody, wyznaczoną decyzję (wyrok, zwolnienie, skierowanie do sądu, kara śmierci). Wymagane jest korzystanie z zatwierdzonego formularza.
@@ -181,7 +223,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - Personel medyczny [bold]musi[/bold] zostać poinformowany przed zaaplikowaniem implantu osobie ze stwierdzoną neuroawersją.
   - Osoby z neuroawersją mają prawo żądać natychmiastowego podania środków łagodzących objawy (Psicodine) podczas stosowania osłony umysłu w trakcie kryzysu.
 
-  [bold]2. Wymóg usunięcia osłon po ustąpieniu zagrożenia:[/bold] Osłony umysłu [bold]muszą[/bold] zostać usunięte u osób cierpiących na neuroawersję na ich wniosek, gdy [bold]POTWIERDZONO[/bold], że zagrożenie minęło. Zaniechanie usunięcia implantu po ustąpieniu zagrożenia stanowi błąd w sztuce medycznej i kwalifikuje się jako [bold]§206 Zaniedbanie[/bold].
+  [bold]2. Wymóg usunięcia osłon po ustąpieniu zagrożenia:[/bold] Osłony umysłu [bold]muszą[/bold] zostać usunięte u osób cierpiących na neuroawersję na ich wniosek, gdy [bold]POTWIERDZONO[/bold], że zagrożenie minęło. Zaniechanie usunięcia implantu po ustąpieniu zagrożenia stanowi błąd w sztuce medycznej i kwalifikuje się jako [bold]§206[/bold].
 
   Przy §400: jeżeli implant nie działa z powodu zaburzeń psychicznych więźnia, orzeka się karę w górnej granicy artykułu, to jest dożywotni areszt (permabrig).
 
@@ -199,7 +241,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - [bold]Pomocnictwo, usiłowanie i zamiar:[/bold] Osoba, która świadomie i w znacznym stopniu pomaga innej w popełnieniu przestępstwa, odpowiada jak współsprawca (np. inżynier dostarczający narzędzia do włamania). To samo dotyczy bezpośredniego usiłowania lub wyraźnego zamiaru popełnienia czynu (np. członek Syndykatu uzbrajający głowicę nuklearną odpowiada za terroryzm, nawet jeśli został zatrzymany przed detonacją). Zasady tej nie stosuje się do artykułów, które z definicji obejmują usiłowanie lub groźbę (np. §201 Napaść).
   - [bold]Wiele zarzutów:[/bold] kary z różnych kategorii _XX sumuje się. W ramach tej samej kategorii _XX uwzględnia się wyłącznie najcięższy zarzut. Modyfikatory oraz ograniczenie do półtorej wartości najcięższego zarzutu: [textlink="łączenie kar" link="SpaceLawModifiers"].
   - [bold]Wpływy zewnętrzne:[/bold] Przestępstwa popełnione pod wpływem kontroli umysłu lub przymusu ze strony innej istoty podlegają ułaskawieniu po przeprowadzeniu skutecznej dekonwersji/odwrócenia efektu.
-  - [bold]Egzekucje:[/bold] Orzeczenie kary śmierci w Protokole Przesłuchania, nawet zatwierdzone przez nadzorcę, nie wystarcza do formalnej egzekucji. Wymagane jest dodatkowe zatwierdzenie przez sędziego przewodniczącego po przeprowadzeniu procesu sądowego albo przez Centralne Dowództwo na podstawie oficjalnego zgłoszenia. Formalna egzekucja wymaga sporządzenia [bold]Nakazu egzekucji[/bold]. Wymóg ten nie dotyczy natychmiastowej eliminacji w terenie podczas stanów wojennych, stosowania IV poziomu siły ani egzekucji [bold]wroga korporacji[/bold].
+  - [bold]Jednostki syntetyczne:[/bold] Za czyny SI Stacji albo Cyborga wykonane według bezprawnie zmienionych praw odpowiada osoba, która te prawa zmieniła. Jednostka wraca do służby po przywróceniu praw.
+  - [bold]Egzekucje:[/bold] Kara śmierci orzeczona w Protokole Przesłuchania albo w werdykcie sądu nie wystarcza do egzekucji. Potrzebny jest [bold]Nakaz egzekucji[/bold] zatwierdzony zgodnie z działem „Egzekucja”. Wymóg ten nie dotyczy eliminacji w terenie podczas stanów wojennych ani stosowania IV poziomu siły. Dotyczy natomiast Wrogów Korporacji.
 
   ## Sąd korporacyjny
   Przewodniczącym rozprawy jest [textlink="Sędzia" link="MagistrateSOP"], a pod jego nieobecność Kapitan. W trakcie alarmu Delta / Gamma / Octarine postępowania sądowego nie wszczyna się. Pełna procedura: [textlink="SPO Prawnika" link="LegalSOP"].
@@ -235,24 +278,25 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Sędzia ma prawo usunąć z sali rozpraw osobę zakłócającą przebieg postępowania (z użyciem środków przymusu, jeśli to konieczne) i nałożyć natychmiastowy środek karny. Składanie fałszywych zeznań przed sądem stanowi osobne przestępstwo (w zależności od charakteru czynu: §100, §200, §206).
 
   ## Egzekucja
-  Przed przeprowadzeniem formalnej egzekucji [bold]zawsze[/bold] wymagane jest sporządzenie [bold]Nakazu egzekucji[/bold]. Wymóg ten nie dotyczy eliminacji w terenie (IV poziom stosowania siły), egzekucji w terenie podczas stanów wojennych (Delta, Gamma, Octarine) ani natychmiastowej egzekucji [bold]wroga korporacji[/bold]. Pełna procedura: [textlink="SPO Ochrony" link="SecuritySOP"].
+  Przed przeprowadzeniem formalnej egzekucji [bold]zawsze[/bold] wymagane jest sporządzenie [bold]Nakazu egzekucji[/bold]. Wymóg ten nie dotyczy eliminacji w terenie (IV poziom stosowania siły) ani egzekucji w terenie podczas stanów wojennych (Delta, Gamma, Octarine). Status Wroga Korporacji nie zwalnia z tego wymogu. Pełna procedura: [textlink="SPO Ochrony" link="SecuritySOP"].
 
   ### Kiedy
-  - Orzeczenie kary śmierci w Protokole Przesłuchania lub w werdykcie sądu.
-  - Wyrok sędziego przewodniczącego po przeprowadzeniu rozprawy.
+  - Kara śmierci orzeczona w Protokole Przesłuchania albo w werdykcie sądu z artykułu, który ją przewiduje.
   - Bezpośredni nakaz wydany przez Centralne Dowództwo.
 
-  Podczas alarmu zielonego i niebieskiego skazany ma prawo do procesu przed wykonaniem egzekucji, jeśli o to wystąpi. W pozostałych stanach zagrożenia procedurę można skrócić, jednak sporządzenie Nakazu pozostaje obowiązkowe.
+  Na Kodzie Zielonym i Niebieskim skazany ma prawo do procesu przed wykonaniem egzekucji, jeśli o to wystąpi. Na pozostałych kodach procedurę można skrócić, jednak sporządzenie Nakazu pozostaje obowiązkowe.
 
   ### Warunki — wymagane łącznie
   1. Istnienie podstawy prawnej (protokół przesłuchania, wyrok sądu lub nakaz Centralnego Dowództwa).
-  2. Poprawnie wypełniony i opieczętowany Nakaz egzekucji.
+  2. Poprawnie wypełniony Nakaz egzekucji z pieczęcią osoby uprawnionej.
   3. Potwierdzona tożsamość skazanego (karta ID, manifest załogi, odciski palców lub profil DNA).
   4. Prawomocność wyroku (wyrok nie został uchylony, zawieszony ani złagodzony).
-  5. Warunki bezpieczeństwa umożliwiające kontrolowane przeprowadzenie zabiegu; w przypadku bezpośredniego zagrożenia dla stacji procedurę należy odroczyć lub skrócić do niezbędnego minimum.
+  5. Warunki bezpieczeństwa umożliwiające kontrolowane przeprowadzenie zabiegu. W przypadku bezpośredniego zagrożenia dla stacji procedurę należy odroczyć lub skrócić do niezbędnego minimum.
 
-  ### Kto pieczętuje i kto wykonuje
-  Pieczęć na nakazie składają: Komendant Ochrony lub Kapitan (w przypadku wyroku wydanego przez ochronę lub po procesie), Sędzia przewodniczący (po procesie) bądź Centralne Dowództwo. Wykonanie wyroku powierza się wyznaczonemu funkcjonariuszowi. [bold]Funkcjonariusz dokonujący aresztowania nie powinien być wykonawcą egzekucji[/bold], o ile obsada kadrowa na to pozwala.
+  ### Kto zatwierdza i kto wykonuje
+  Nakaz egzekucji pieczętuje [bold]Kapitan[/bold] albo p.o. Kapitana. Gdy stacja nie ma Kapitana albo jego obowiązki pełni Komendant, o egzekucji decyduje większość obecnych Kierowników Działów, a pieczęć stawia jeden z nich. Zamiast Kapitana nakaz może zatwierdzić [textlink="Magistrat" link="MagistrateSOP"] po procesie albo Centralne Dowództwo. Komendant nie zatwierdza egzekucji samodzielnie.
+
+  Wykonanie wyroku powierza się wyznaczonemu funkcjonariuszowi. [bold]Funkcjonariusz dokonujący aresztowania nie powinien być wykonawcą egzekucji[/bold], o ile obsada kadrowa na to pozwala.
 
   ### Kroki
   1. Weryfikacja podstawy prawnej oraz obecności Nakazu egzekucji.
