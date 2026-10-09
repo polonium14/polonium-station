@@ -93,7 +93,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   4. Więźniowie mają prawo do pomocy prawnej podczas przesłuchania dotyczącego przestępstw stopnia III lub wyższego, jeśli o nią wnioskują i jest ona w danym momencie dostępna.
   5. Więźniowie nie mogą zostać skazani przed przeprowadzeniem formalnego przesłuchania i przedstawieniem dowodów, chyba że dobrowolnie przyznali się do winy. Szczegóły: [textlink="procedura przesłuchania" link="SecuritySOP"].
   6. Więźniowie mają prawo do 5 minut poufnej konsultacji z obrońcą/prawnikiem przed rozpoczęciem przesłuchania; czas oczekiwania na przybycie prawnika wlicza się w ten limit.
-  7. Formalne przesłuchanie zakończone wyrokiem dokumentuje [bold]Protokół Przesłuchania[/bold]. Wyrok obowiązuje od chwili ogłoszenia, a protokół sporządza się w ciągu 15 minut. Pieczęć stawia Komendant, pod jego nieobecność Nadzorca, a gdy nie ma obu, Kapitan. W przypadku braku dowodów po upływie 15 minut od rozpoczęcia przesłuchania, podejrzanego należy natychmiast zwolnić.
+  7. Formalne przesłuchanie zakończone wyrokiem dokumentuje [bold]Protokół Przesłuchania[/bold]. Wyrok obowiązuje od chwili ogłoszenia, a protokół sporządza się w ciągu 15 minut. Na Kodzie Czerwonym protokół uzupełnia się po obniżeniu kodu, a na kodach Gamma, Delta i Octarine nie sporządza się go wcale. Pieczęć stawia Komendant, pod jego nieobecność Nadzorca, a gdy nie ma obu, Kapitan. W przypadku braku dowodów po upływie 15 minut od rozpoczęcia przesłuchania, podejrzanego należy natychmiast zwolnić.
   8. Po odbyciu kary więźniowie muszą otrzymać zdeponowane PDA. Wyjątkiem jest sytuacja, w której istnieją uzasadnione dowody na modyfikację urządzenia — w takim przypadku PDA należy zabezpieczyć i wydać czysty egzemplarz zastępczy.
   9. Więźniowie przebywający w celach muszą mieć zapewnioną swobodę ruchu — po osadzeniu należy zdjąć środki przymusu (kajdanki), chyba że występuje bezpośrednie zagrożenie dla życia lub zdrowia. Osadzeni na dłuższy czas lub bezterminowo powinni przebywać w celach zbiorczych; umieszczanie w izolatkach jest dopuszczalne wyłącznie w przypadku stwarzania zagrożenia.
 
@@ -190,7 +190,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   5. Odczytanie zarzutów oraz przedstawienie dowodów.
   6. Wysłuchanie stanowiska przesłuchiwanego (przyznanie się, zaprzeczenie, odmowa składania wyjaśnień) i jego odnotowanie.
   7. Brak dowodów po 15 minutach — zwolnienie. W przeciwnym razie: wydanie wyroku, skierowanie sprawy do sądu lub zwolnienie.
-  8. Sporządzenie [bold]Protokołu Przesłuchania[/bold] w ciągu 15 minut od wyroku i opatrzenie go pieczęcią Komendanta, a pod jego nieobecność Nadzorcy albo Kapitana. Na Kodzie Czerwonym protokół uzupełnia się po obniżeniu kodu. Brak protokołu nie wstrzymuje kary.
+  8. Sporządzenie [bold]Protokołu Przesłuchania[/bold] w ciągu 15 minut od wyroku i opatrzenie go pieczęcią Komendanta, a pod jego nieobecność Nadzorcy albo Kapitana. Na Kodzie Czerwonym protokół uzupełnia się po obniżeniu kodu, a na kodach Gamma, Delta i Octarine nie sporządza się go wcale. Brak protokołu nie wstrzymuje kary.
 
   ### Protokół Przesłuchania
   Musi zawierać co najmniej: dane i stanowisko przesłuchiwanego, dane i stanowisko prowadzącego, wykaz świadków, zebrane dowody, wyznaczoną decyzję (wyrok, zwolnienie, skierowanie do sądu, kara śmierci). Wymagane jest korzystanie z zatwierdzonego formularza.
