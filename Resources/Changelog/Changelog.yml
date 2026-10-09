@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: TriviaSolari
-  changes:
-  - message: Holosign projectors and dragon rifts no longer place signs at strange
-      angles.
-    type: Fix
-  id: 9548
-  time: '2026-02-27T00:08:28.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42909
 - author: sowelipililimute
   changes:
   - message: Underlying technical work for future medical improvements have resulted
@@ -4291,3 +4283,17 @@
   id: 10043
   time: '2026-10-09T11:03:20.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1096
+- author: Nikita
+  changes:
+  - message: "Po niskiej ocenie rundy ankieta pyta, co przeszkodzi\u0142o w lepszej\
+      \ grze."
+    type: Add
+  - message: "Dodano pytanie uzupe\u0142niaj\u0105ce do ankiety po rundzie dla ocen\
+      \ od 1 do 3. Gracze mog\u0105 wybra\u0107 powody niskiej oceny."
+    type: Add
+  - message: "Dodano zapis i walidacj\u0119 wybranych powod\xF3w. Powody pojawiaj\u0105\
+      \ si\u0119 w odpowiedziach Discord oraz w podsumowaniach ankiety."
+    type: Add
+  id: 10044
+  time: '2026-10-09T11:48:58.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1097
