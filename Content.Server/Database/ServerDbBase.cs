@@ -1106,6 +1106,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 else if (response.Time >= existing.Time)
                 {
                     existing.Value = response.Value;
+                    existing.Reasons = response.Reasons;
                     existing.Time = response.Time;
                 }
 

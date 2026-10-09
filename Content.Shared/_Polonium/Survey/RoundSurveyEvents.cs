@@ -64,6 +64,27 @@ public sealed class RoundSurveyAnswerEvent : EntityEventArgs
     }
 }
 
+/// <summary>
+/// Everything the player has ticked under the answer they gave to a question.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class RoundSurveyReasonsEvent : EntityEventArgs
+{
+    public int RoundId;
+    public ProtoId<RoundSurveyQuestionPrototype> Question;
+    public List<ProtoId<RoundSurveyReasonPrototype>> Reasons;
+
+    public RoundSurveyReasonsEvent(
+        int roundId,
+        ProtoId<RoundSurveyQuestionPrototype> question,
+        List<ProtoId<RoundSurveyReasonPrototype>> reasons)
+    {
+        RoundId = roundId;
+        Question = question;
+        Reasons = reasons;
+    }
+}
+
 [Serializable, NetSerializable]
 public sealed class RoundSurveyCommentEvent : EntityEventArgs
 {
