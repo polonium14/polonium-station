@@ -57,7 +57,7 @@ Stosuj po podjęciu decyzji o formalnym osadzeniu podejrzanego. Osoba aresztowan
 
 [bold]4. Przeprowadź przesłuchanie.[/bold] Postępuj według [textlink="procedury przesłuchania" link="SecuritySOP"] (obowiązkowej na [color=#8ee99a]Kodzie Zielonym[/color] i [color=#8ec8ff]Kodzie Niebieskim[/color], o ile pozwala na to obsada Ochrony).
 
-[bold]5. Wymierz wyrok lub zwolnij.[/bold] Decyzję podejmij na podstawie [textlink="Prawa Kosmicznego" link="SpaceLaw"] oraz [bold]Protokołu Przesłuchania[/bold] z pieczątką [color=#8ec8ff]Komendanta[/color]. Wyrok wydaje nadzorca; w jego nieobecności komendant lub najstarszy stopniem oficer. Komendant nie może zmieniać wydanego wyroku bez nowych dowodów lub próby ucieczki więźnia.
+[bold]5. Wymierz wyrok lub zwolnij.[/bold] Decyzję podejmij na podstawie [textlink="Prawa Kosmicznego" link="SpaceLaw"] i ustaleń z przesłuchania. Wyrok obowiązuje od chwili ogłoszenia. Wyrok wydaje nadzorca; w jego nieobecności komendant lub najstarszy stopniem oficer. Komendant nie może zmieniać wydanego wyroku bez nowych dowodów lub próby ucieczki więźnia.
 
 [bold]6. Zaktualizuj rejestry.[/bold] Ustaw status [bold]Zatrzymany[/bold] w [textlink="rejestrach kryminalnych" link="CriminalRecords"] i wpisz zarzuty wraz z czasem wyroku.
 
@@ -109,11 +109,11 @@ Przesłuchanie może prowadzić:
 
 [bold]7. Oceń wynik.[/bold] Jeśli brak dowodów po 15 minutach — zwolnij jako niewinnego. W przeciwnym razie przygotuj decyzję: wyrok, skierowanie do procesu sądowego ([textlink="SPO Prawne" link="LegalSOP"]) lub zwolnienie.
 
-[bold]8. Sporządź protokół.[/bold] Wypełnij Protokół Przesłuchania i opatrz go pieczątką Komendanta. Bez ważnego protokołu nie wolno rozpocząć odbywania wyroku.
+[bold]8. Sporządź protokół.[/bold] Wypełnij Protokół Przesłuchania w ciągu 15 minut od ogłoszenia wyroku. Pieczęć stawia [color=#8ec8ff]Komendant[/color], pod jego nieobecność Nadzorca, a gdy nie ma obu, Kapitan. Na [color=#ff8a8a]Kodzie Czerwonym[/color] protokół uzupełnia się po obniżeniu kodu, a na kodach Gamma, Delta i Octarine nie sporządza się go wcale. Spóźniony albo brakujący protokół jest naruszeniem SPO, ale nie unieważnia wyroku.
 
 ### Protokół Przesłuchania
 
-Wynikiem każdego przesłuchania musi być wypełniony dokument [bold]Protokół Przesłuchania[/bold] z pieczątką [color=#8ec8ff]Komendanta[/color]. Protokół powinien zawierać co najmniej:
+Przesłuchanie zakończone wyrokiem dokumentuje [bold]Protokół Przesłuchania[/bold] z pieczęcią [color=#8ec8ff]Komendanta[/color], Nadzorcy albo Kapitana. Protokół powinien zawierać co najmniej:
 - tożsamość i stanowiskoprzesłuchiwanego;
 - tożsamość i stanowisko przeprowadzającego przesłuchanie;
 - obecni świadkowie;
@@ -150,11 +150,7 @@ Egzekucji [bold]nie wolno[/bold] przeprowadzić, dopóki nie są spełnione [bol
 
 ### Kto może zatwierdzić i przeprowadzić
 
-[bold]Nakaz egzekucji[/bold] opatruje pieczęcią:
-- [color=#8ec8ff]Komendant[/color] lub [color=#8ec8ff]Kapitan[/color] — egzekucja na podstawie wyroku Ochrony lub po procesie sądowym;
-- sędzia przewodniczący ([textlink="Sędzia" link="MagistrateSOP"] lub [color=#8ec8ff]Kapitan[/color]) — egzekucja po procesie sądowym;
-- przedstawiciel Centralnego Dowództwa — egzekucja na podstawie nakazu CD.
-- inne jednostki Centralnego Dowództwa.
+[bold]Nakaz egzekucji[/bold] pieczętuje [color=#8ec8ff]Kapitan[/color] albo p.o. Kapitana. Gdy stacja nie ma Kapitana albo jego obowiązki pełni Komendant, o egzekucji decyduje większość obecnych Kierowników Działów, a pieczęć stawia jeden z nich. Zamiast Kapitana nakaz może zatwierdzić [textlink="Magistrat" link="MagistrateSOP"] po procesie albo Centralne Dowództwo. Komendant nie zatwierdza egzekucji samodzielnie.
 
 Egzekucję przeprowadza wyznaczony funkcjonariusz [color=#ff8a8a]Ochrony[/color]. [bold]Funkcjonariusz, który aresztował skazanego, nie powinien być wykonawcą egzekucji[/bold], o ile to możliwe.
 

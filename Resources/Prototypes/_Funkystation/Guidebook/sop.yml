@@ -260,6 +260,7 @@
   - RDSOP
   - ScientistSOP
   - RoboticistSOP
+  - SyntheticsSOP
 
 - type: guideEntry
   id: RDSOP
@@ -275,6 +276,11 @@
   id: RoboticistSOP
   name: guide-entry-roboticist-sop
   text: "/ServerInfo/_Polonium/Guidebook/Science/RoboticistSOP.xml"
+
+- type: guideEntry
+  id: SyntheticsSOP
+  name: guide-entry-synthetics-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Science/SyntheticsSOP.xml"
 
 # MED
 

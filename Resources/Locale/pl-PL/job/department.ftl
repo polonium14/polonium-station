@@ -1,5 +1,5 @@
 department-Cargo = Logistyki
-department-Civilian = Cywilny
+department-Civilian = Serwisowy
 department-Command = Dowództwo
 department-CentralCommand = Centralne Dowództwo
 department-Engineering = Inżynieryjny

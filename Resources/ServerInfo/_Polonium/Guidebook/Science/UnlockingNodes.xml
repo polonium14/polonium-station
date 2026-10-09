@@ -1,0 +1,52 @@
+<Document>
+  # Odblokowywanie węzłów
+  <Box>
+    <GuideEntityEmbed Entity="ComplexXenoArtifact" Caption=""/>
+    <GuideEntityEmbed Entity="ComplexXenoArtifactItem" Caption=""/>
+  </Box>
+
+  Żeby odblokować węzeł artefaktu:
+  - Wybierz węzeł na [bold]konsoli analizy[/bold] i sprawdź jego wyzwalacze oraz efekt.
+  - Wykonaj [bold]wyzwalacze[/bold] z listy. Część wymaga pracy przy samym artefakcie, innym wystarczy odpowiednie otoczenie albo coś, co wydarzy się w pobliżu.
+  - Po pierwszym trafionym wyzwalaczu artefakt odpowiada komunikatem [italic]„Zaczyna zmieniać się w dziwny sposób...”[/italic]. [bold]Skaner węzłów[/bold] pokaże wtedy, które węzły właśnie się odblokowują.
+
+  Po pierwszym wyzwalaczu artefakt wchodzi w stan odblokowywania. W tym czasie musisz wykonać pozostałe wyzwalacze. Okno trwa na początku kilka sekund i wydłuża się z każdym kolejnym trafionym wyzwalaczem.
+
+  Jeśli trafisz wszystkie, artefakt odpali efekt i pokaże komunikat [italic]„Spowalnia się, wyraźnie odmieniony.”[/italic], a węzeł dostanie na konsoli status [bold][color=plum]Aktywny[/color][/bold].
+
+  Jeśli próba się nie uda, zobaczysz [italic]„Spowalnia się, po czym bez efektu zatrzymuje się.”[/italic] Po każdej próbie artefakt potrzebuje kilku sekund przerwy, zanim przyjmie następną.
+
+  Kolejność wyzwalaczy [bold]nie ma znaczenia[/bold]. Liczy się to, żeby w jednej próbie nie trafić wyzwalacza obcego węzła, bo wtedy wybrany węzeł się nie odblokuje. Zacznij od wyzwalacza, który ma tylko twój węzeł, i uważaj na te, które odpalają się same, na przykład od temperatury albo ciśnienia w komorze.
+
+  <GuideReagentEmbed Reagent="Artifexium"/>
+
+  Artifeksium dostaniesz z fragmentów artefaktów. Włóż je do młynka i wybierz wyciskanie. Polany nim artefakt w stanie odblokowywania zalicza jeden brakujący wyzwalacz.
+
+  ## Aktywne węzły
+  Odblokowany węzeł jest aktywny. W każdym drzewie aktywne są tylko najwyższe odblokowane węzły. Kiedy odblokujesz węzeł wyżej, ten pod nim zmienia status na [bold][color=lime]Odblokowany[/color][/bold] i przestaje się odpalać.
+
+  Artefakt ma zwykle kilka drzew. Każde działa osobno, więc aktywne węzły z różnych drzew odpalają się razem.
+
+  [bold]Ręczna aktywacja odpala wszystkie aktywne węzły naraz i zużywa po jednym punkcie ich wytrzymałości.[/bold]
+
+  <GuideReagentEmbed Reagent="ArtifactGlue"/>
+
+  ## Wyzwalacze
+  Przykłady:
+  - dokładne obejrzenie artefaktu
+  - gra na instrumencie w pobliżu
+  - uderzenie albo rzucenie artefaktem
+  - gaz w komorze (plazma, tryt i inne)
+  - zmiana ciśnienia albo temperatury
+  - narzędzia (śrubokręt, multitool, łom, klucz)
+  - oblanie substancją (krew, woda, amoniak i inne)
+  - czyjaś śmierć w pobliżu
+
+  ## Efekty
+  Efekty bywają:
+  - [color=green]niegroźne:[/color] rośliny, zwierzęta, złom
+  - [color=#00ccff]przydatne:[/color] ładowanie baterii, materiały, pieniądze
+  - [color=red]groźne:[/color] anomalie, promieniowanie, eksplozje, wroga fauna
+
+  Konsola pokazuje efekt węzła, zanim go odblokujesz. Groźne węzły odblokowuj tylko w zamkniętej komorze testowej.
+</Document>

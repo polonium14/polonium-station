@@ -8,11 +8,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <Document>
 # SPO Kierownika Personelu
 
-Kierownik Personelu kieruje [textlink="działem Obsługi" link="ServiceSOP"], odpowiada za karty identyfikacyjne, stanowiska i dostępy oraz wspiera załogę w sprawach administracyjnych. Pełni funkcję prawej ręki [color=#8ec8ff]Kapitana[/color] w kwestiach kadrowych.
+Kierownik Personelu kieruje [textlink="działem Serwisowym" link="ServiceSOP"], odpowiada za karty identyfikacyjne, stanowiska i dostępy oraz wspiera załogę w sprawach administracyjnych. Pełni funkcję prawej ręki [color=#8ec8ff]Kapitana[/color] w kwestiach kadrowych.
 
 ## Obowiązki
 
-[bold]1.[/bold] Organizować pracę [textlink="działu Obsługi" link="ServiceSOP"], kontrolować wykonywanie obowiązków przez jego pracowników oraz dbać o należytą jakość świadczonych usług;
+[bold]1.[/bold] Organizować pracę [textlink="działu Serwisowego" link="ServiceSOP"], kontrolować wykonywanie obowiązków przez jego pracowników oraz dbać o należytą jakość świadczonych usług;
 
 [bold]2.[/bold] Kontrolować legalność stanowisk i poziomów dostępu personelu stacji;
 
@@ -37,11 +37,11 @@ Kierownik Personelu kieruje [textlink="działem Obsługi" link="ServiceSOP"], od
 
 ## Uprawnienia
 
-[bold]1.[/bold] W razie potrzeby wykonywać pracę pracowników [textlink="działu Obsługi" link="ServiceSOP"] w granicach własnych możliwości;
+[bold]1.[/bold] W razie potrzeby wykonywać pracę pracowników [textlink="działu Serwisowego" link="ServiceSOP"] w granicach własnych możliwości;
 
 [bold]2.[/bold] Reprezentować pasażerów i członków załogi jako obrońca — zgodnie z [textlink="SPO Prawnymi" link="LegalSOP"];
 
-[bold]3.[/bold] W czasie wolnym od obowiązków biurowych ćwiczyć umiejętności [textlink="działu Obsługi" link="ServiceSOP"];
+[bold]3.[/bold] W czasie wolnym od obowiązków biurowych ćwiczyć umiejętności [textlink="działu Serwisowego" link="ServiceSOP"];
 
 [bold]4.[/bold] W godzinach pracy korzystać z zapasowej karty Kierownika Personelu w konsoli ID; po zakończeniu pracy zwrócić ją na miejsce;
 
@@ -49,7 +49,7 @@ Kierownik Personelu kieruje [textlink="działem Obsługi" link="ServiceSOP"], od
 
 [bold]6.[/bold] W dowolnym kodzie zagrożenia nosić przy sobie i używać: paralizator (disabler/stunner) oraz latarki błyskowej — wyłącznie do samoobrony;
 
-[bold]7.[/bold] Zwolnić pracownika z [textlink="działu Obsługi" link="ServiceSOP"] samodzielnie, z zachowaniem [textlink="Prawa Kosmicznego" link="SpaceLaw"] i ogólnych SPO;
+[bold]7.[/bold] Zwolnić pracownika z [textlink="działu Serwisowego" link="ServiceSOP"] samodzielnie, z zachowaniem [textlink="Prawa Kosmicznego" link="SpaceLaw"] i ogólnych SPO;
 
 [bold]8.[/bold] Zwolnić pracownika z innego departamentu wyłącznie za zgodą [color=#8ec8ff]Kapitana[/color], potwierdzoną pieczęcią Kapitana na właściwym dokumencie;
 
