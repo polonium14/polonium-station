@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: DinnerCalzone
-  changes:
-  - message: Techfabs now play an animation while building something.
-    type: Add
-  id: 9547
-  time: '2026-02-26T20:58:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42962
 - author: TriviaSolari
   changes:
   - message: Holosign projectors and dragon rifts no longer place signs at strange
@@ -4281,3 +4274,20 @@
   id: 10042
   time: '2026-10-08T09:26:56.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1094
+- author: nikitosych
+  changes:
+  - message: "Dodano poradniki dotycz\u0105ce praw jednostek syntetycznych i odblokowywania\
+      \ w\u0119z\u0142\xF3w artefakt\xF3w."
+    type: Add
+  - message: "Zaktualizowano zasady stacji i Prawo Kosmiczne, w tym procedury przes\u0142\
+      ucha\u0144, egzekucji, przeszuka\u0144 oraz wymierzania kar."
+    type: Tweak
+  - message: "Zmieniono numeracj\u0119 zasad podstawowych i usuni\u0119to osobn\u0105\
+      \ zasad\u0119 o prawach silikon\xF3w."
+    type: Tweak
+  - message: "Ujednolicono polskie nazewnictwo dzia\u0142u Serwisu i powi\u0105zanych\
+      \ r\xF3l."
+    type: Tweak
+  id: 10043
+  time: '2026-10-09T11:03:20.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1096
