@@ -36,7 +36,7 @@ public sealed partial class AnomalySpawnRule : StationEventSystem<AnomalySpawnRu
         if (grid is null)
             return;
 
-        var amountToSpawn = 1;
+        var amountToSpawn = component.AmountToSpawn.Next(RobustRandom);
         for (var i = 0; i < amountToSpawn; i++)
         {
             _anomaly.SpawnOnRandomGridLocation(grid.Value, component.AnomalySpawnerPrototype);

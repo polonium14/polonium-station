@@ -34,10 +34,10 @@ public sealed partial class VentClogRule : StationEventSystem<VentClogRuleCompon
             var targetCoords = Transform(ventPump).Coordinates;
             var solution = new Solution();
 
-            if (!RobustRandom.Prob(0.33f))
+            if (!RobustRandom.Prob(component.VentClogChance))
                 continue;
 
-            var pickAny = RobustRandom.Prob(0.05f);
+            var pickAny = RobustRandom.Prob(component.AnyReagentChance);
             var reagent = RobustRandom.Pick(pickAny ? allReagents : component.SafeishVentChemicals);
 
             var weak = component.WeakReagents.Contains(reagent);

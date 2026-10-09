@@ -22,7 +22,7 @@ public sealed partial class BluespaceArtifactRule : StationEventSystem<Bluespace
     {
         base.Started(uid, component, gameRule, args);
 
-        var amountToSpawn = 1;
+        var amountToSpawn = component.AmountToSpawn.Next(RobustRandom);
         for (var i = 0; i < amountToSpawn; i++)
         {
             if (!Station.TryFindRandomTile(out _, out _, out _, out var coords))

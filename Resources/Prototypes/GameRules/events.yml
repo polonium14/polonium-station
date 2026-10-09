@@ -214,22 +214,24 @@
   - type: BluespaceLockerRule
 
 - type: entity
-  id: BreakerFlip
   parent: BaseGameRule
+  id: BreakerFlip
   components:
   - type: StationEvent
     weight: 7
     duration: 1
     minimumPlayers: 15
     eventType: Maintenance
+    startAudio:
+      path: /Audio/Announcements/announce.ogg
   - type: GameRule
     chaosScore: 60
   - type: BreakerFlipRule
 
 
 - type: entity
-  id: BureaucraticError
   parent: BaseGameRule
+  id: BureaucraticError
   components:
   - type: StationEvent
     startAnnouncement: station-event-bureaucratic-error-announcement
