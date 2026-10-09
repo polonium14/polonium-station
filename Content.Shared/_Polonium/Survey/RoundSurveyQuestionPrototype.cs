@@ -113,6 +113,23 @@ public sealed partial class RoundSurveyQuestionPrototype : IPrototype
     /// </summary>
     [DataField]
     public int Order;
+
+    /// <summary>
+    /// Reasons to ask for after certain answers. Their ranges must not overlap.
+    /// </summary>
+    [DataField]
+    public List<RoundSurveyFollowUp> FollowUps = new();
+
+    public RoundSurveyFollowUp? GetFollowUp(int value)
+    {
+        foreach (var followUp in FollowUps)
+        {
+            if (value >= followUp.From && value <= followUp.To)
+                return followUp;
+        }
+
+        return null;
+    }
 }
 
 public enum RoundSurveyAudience : byte

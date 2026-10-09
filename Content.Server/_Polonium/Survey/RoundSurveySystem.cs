@@ -53,6 +53,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
     public const int MaxQuestions = 3;
 
     private const int MaxChangesPerQuestion = 5;
+    private const int MaxReasonChangesPerQuestion = 20;
     private const int MaxResponseFailures = 3;
     private const int SummaryColor = 0x4F8FD1;
     private const string Bars = "▁▂▃▄▅▆▇█";
@@ -78,6 +79,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
         SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
         SubscribeNetworkEvent<RoundSurveyAnswerEvent>(OnAnswer);
+        SubscribeNetworkEvent<RoundSurveyReasonsEvent>(OnReasons);
 
         Subs.CVar(_cfg, CCVars.SurveyEnabled, OnEnabledChanged);
         Subs.CVar(_cfg, CCVars.DiscordSurveyWebhook, OnWebhookChanged, true);
@@ -430,18 +432,71 @@ public sealed partial class RoundSurveySystem : EntitySystem
         if (respondent.Who.Playtime == TimeSpan.Zero)
             respondent.Who = respondent.Who with { Playtime = GetPlaytime(session) };
 
+        // The reasons were given for another kind of answer.
+        if (asked.GetFollowUp(value) != asked.GetFollowUp(old))
+            respondent.Reasons.Remove(question);
+
         respondent.Changes++;
         respondent.Answers[question] = value;
         respondent.Dirty = true;
         respondent.ChangedAt = _timing.RealTime;
         survey.Dirty = true;
 
-        Save(survey, session.UserId, respondent.Who, question, value);
+        Save(survey, session.UserId, respondent, question);
         return true;
     }
 
-    private async void Save(Survey survey, NetUserId user, RoundSurveyRespondent who, string question, int value)
+    private void OnReasons(RoundSurveyReasonsEvent ev, EntitySessionEventArgs args)
     {
+        TrySetReasons(args.SenderSession, ev.RoundId, ev.Question, ev.Reasons);
+    }
+
+    /// <summary>
+    /// Records what the player ticked under an answer, if that answer has a follow-up offering all of it.
+    /// </summary>
+    public bool TrySetReasons(
+        ICommonSession session,
+        int roundId,
+        ProtoId<RoundSurveyQuestionPrototype> question,
+        List<ProtoId<RoundSurveyReasonPrototype>>? reasons)
+    {
+        if (reasons == null || _survey is not { } survey || survey.RoundId != roundId)
+            return false;
+
+        if (!survey.Respondents.TryGetValue(session.UserId, out var respondent) || !respondent.Answers.TryGetValue(question, out var value))
+            return false;
+
+        if (!_proto.TryIndex(question, out var asked) || asked.GetFollowUp(value) is not { } followUp)
+            return false;
+
+        if (reasons.Count > followUp.Reasons.Count)
+            return false;
+
+        var picked = followUp.Reasons.Where(reasons.Contains).ToList();
+        if (picked.Count != reasons.Count)
+            return false;
+
+        var old = respondent.Reasons.GetValueOrDefault(question) ?? [];
+        if (old.SequenceEqual(picked))
+            return true;
+
+        if (respondent.ReasonChanges >= respondent.Questions.Count * MaxReasonChangesPerQuestion)
+            return false;
+
+        respondent.ReasonChanges++;
+        respondent.Reasons[question] = picked;
+        respondent.Dirty = true;
+        respondent.ChangedAt = _timing.RealTime;
+        survey.Dirty = true;
+
+        Save(survey, session.UserId, respondent, question);
+        return true;
+    }
+
+    private async void Save(Survey survey, NetUserId user, Respondent respondent, ProtoId<RoundSurveyQuestionPrototype> question)
+    {
+        var who = respondent.Who;
+
         try
         {
             await _db.SetSurveyResponse(new SurveyResponse
@@ -449,7 +504,8 @@ public sealed partial class RoundSurveySystem : EntitySystem
                 RoundId = survey.RoundId,
                 PlayerUserId = user,
                 Question = question,
-                Value = value,
+                Value = respondent.Answers[question],
+                Reasons = string.Join(',', (respondent.Reasons.GetValueOrDefault(question) ?? []).Select(reason => reason.Id)),
                 Time = DateTime.UtcNow,
                 Preset = survey.Preset?.ID ?? string.Empty,
                 RoundDuration = survey.Duration,
@@ -608,12 +664,17 @@ public sealed partial class RoundSurveySystem : EntitySystem
             if (!_proto.TryIndex(id, out var question))
                 continue;
 
+            var answer = respondent.Answers.TryGetValue(id, out var value)
+                ? $"**{DescribeAnswer(question, value)}**"
+                : Loc.GetString("round-survey-discord-empty");
+
+            if (respondent.Reasons.TryGetValue(id, out var reasons) && reasons.Count > 0)
+                answer += "\n" + string.Join(", ", reasons.Select(reason => DescribeReason(reason)));
+
             fields.Add(new WebhookEmbedField
             {
                 Name = DescribeQuestion(question),
-                Value = respondent.Answers.TryGetValue(id, out var value)
-                    ? $"**{DescribeAnswer(question, value)}**"
-                    : Loc.GetString("round-survey-discord-empty"),
+                Value = answer,
                 Inline = false,
             });
         }
@@ -667,6 +728,11 @@ public sealed partial class RoundSurveySystem : EntitySystem
             return value.ToString();
 
         return Loc.GetString(value == RoundSurveyQuestionPrototype.MaxAnswer ? question.High : question.Low);
+    }
+
+    public string DescribeReason(string id)
+    {
+        return _proto.TryIndex<RoundSurveyReasonPrototype>(id, out var reason) ? Loc.GetString(reason.Name) : id;
     }
 
     private string DescribeRole(string? jobId, string? antagId)
@@ -725,9 +791,9 @@ public sealed partial class RoundSurveySystem : EntitySystem
             fields.Add(new WebhookEmbedField
             {
                 Name = DescribeQuestion(question),
-                Value = question.YesNo
+                Value = (question.YesNo
                     ? DescribeYesNo(question, counts)
-                    : DescribeAnswers(counts, GetTarget(survey.Preset, question)),
+                    : DescribeAnswers(counts, GetTarget(survey.Preset, question))) + DescribeReasons(survey, question),
                 Inline = false,
             });
         }
@@ -776,6 +842,40 @@ public sealed partial class RoundSurveySystem : EntitySystem
             text.Append(Loc.GetString("round-survey-discord-target",
                 ("target", Number(target.Value)),
                 ("offset", (average - target.Value).ToString("+0.0;-0.0;0.0", CultureInfo.InvariantCulture))));
+        }
+
+        return text.ToString();
+    }
+
+    private string DescribeReasons(Survey survey, RoundSurveyQuestionPrototype question)
+    {
+        var text = new StringBuilder();
+        foreach (var followUp in question.FollowUps)
+        {
+            var counts = new Dictionary<ProtoId<RoundSurveyReasonPrototype>, int>();
+            foreach (var respondent in survey.Respondents.Values)
+            {
+                if (!respondent.Answers.TryGetValue(question.ID, out var value) || question.GetFollowUp(value) != followUp)
+                    continue;
+
+                foreach (var reason in respondent.Reasons.GetValueOrDefault(question.ID) ?? [])
+                {
+                    counts[reason] = counts.GetValueOrDefault(reason) + 1;
+                }
+            }
+
+            if (counts.Count == 0)
+                continue;
+
+            var picked = followUp.Reasons
+                .Where(counts.ContainsKey)
+                .OrderByDescending(reason => counts[reason])
+                .Select(reason => $"{DescribeReason(reason)} {counts[reason]}");
+
+            text.Append('\n');
+            text.Append(Loc.GetString("round-survey-discord-reasons",
+                ("text", Loc.GetString(followUp.Text)),
+                ("reasons", string.Join(" · ", picked))));
         }
 
         return text.ToString();
@@ -831,8 +931,10 @@ public sealed partial class RoundSurveySystem : EntitySystem
         public RoundSurveyRespondent Who = who;
         public readonly List<ProtoId<RoundSurveyQuestionPrototype>> Questions = questions;
         public readonly Dictionary<ProtoId<RoundSurveyQuestionPrototype>, int> Answers = new();
+        public readonly Dictionary<ProtoId<RoundSurveyQuestionPrototype>, List<ProtoId<RoundSurveyReasonPrototype>>> Reasons = new();
         public readonly List<SurveyComment> Comments = new();
         public int Changes;
+        public int ReasonChanges;
         public bool Offered;
 
         public ulong MessageId;
