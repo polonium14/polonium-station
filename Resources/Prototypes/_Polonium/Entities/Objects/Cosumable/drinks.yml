@@ -13,3 +13,23 @@
   - type: Sprite
     sprite: _Polonium/Objects/Cosumable/Food/Drinks/Oranzada.rsi
   - type: Sealable
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkMocnyFull
+  name: Mocny Full
+  description: Mocny, pełny smak — taki jak u dziadka, tylko że w kosmosie.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Beer
+        Quantity: 40
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/Drinks/MocnyFull.rsi
+  - type: Item
+    sprite: _Polonium/Objects/Cosumable/Food/Drinks/MocnyFull.rsi
+  - type: Tag
+    tags:
+    - Beer
+    - DrinkCan
