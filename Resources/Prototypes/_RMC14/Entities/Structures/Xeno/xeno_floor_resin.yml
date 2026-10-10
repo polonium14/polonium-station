@@ -34,7 +34,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 45
+        damage: 15
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -56,6 +56,12 @@
     speedMultiplier: 0.4
   - type: XenoConstructionPlasmaCost
     plasma: 66
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.6
+    sprintSpeedModifier: 0.6
+    ignoreWhitelist:
+      components:
+      - Xeno
 
 - type: entity
   parent: XenoStickyResin
@@ -66,9 +72,16 @@
   - type: Sprite
     state: sticky_weak
   - type: XenoStickyResin
-    speedMultiplier: 0.55
+    speedMultiplier: 0.7
   - type: TimedDespawn
     lifetime: 20
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.7
+    sprintSpeedModifier: 0.7
+    ignoreWhitelist:
+      components:
+      - Xeno
+  
 
 - type: entity
   parent: XenoBaseFloorResin
@@ -79,9 +92,16 @@
   - type: Sprite
     state: fast
   - type: XenoStickyResin
-    speedMultiplier: 1.33
+    speedMultiplier: 1.6
   - type: XenoConstructionPlasmaCost
     plasma: 42
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 1.6
+    sprintSpeedModifier: 1.6
+    ignoreWhitelist:
+      components:
+      - MobStateActions # in case of xenos getting this component, make sure that replacement component is within all other entities but xenos.
+
 
 - type: entity
   parent: XenoBaseFloorResin
@@ -98,7 +118,17 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 60
+        damage: 30
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: DamageContacts
+    damage:
+      types:
+        Slash: 1.5
+        Piercing: 5
+    ignoreWhitelist:
+      components:
+      - Xeno
+    
+
