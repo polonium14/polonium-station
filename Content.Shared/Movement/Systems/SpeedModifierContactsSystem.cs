@@ -95,6 +95,21 @@ public sealed partial class SpeedModifierContactsSystem : EntitySystem
 
             if (TryComp<SpeedModifierContactsComponent>(ent, out var slowContactsComponent))
             {
+                //First we check if there is any NORMAL whitelist. If there is none declared in the component, it should proceed normally.
+                if (slowContactsComponent.Whitelist != null)
+                {
+                    // and here we check the whitelist
+                    if (!_whitelistSystem.IsWhitelistPass(slowContactsComponent.Whitelist, uid))
+                    {
+                        walkSpeed += slowContactsComponent.WalkSpeedModifier;
+                        sprintSpeed += slowContactsComponent.SprintSpeedModifier;
+                        speedModified = true;
+                        return;
+                    }
+                }
+
+                // ^ this is where the normal whitelist ends.
+                
                 if (_whitelistSystem.IsWhitelistPass(slowContactsComponent.IgnoreWhitelist, uid))
                     continue;
 
