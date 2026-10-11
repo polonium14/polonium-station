@@ -106,10 +106,7 @@ public sealed partial class SpeedModifierContactsSystem : EntitySystem
                 //We check here if there is any NORMAL whitelist. If there is none declared in the component, it should proceed normally
                 if (!(slowContactsComponent.Whitelist == null || _whitelistSystem.IsWhitelistPass(slowContactsComponent.Whitelist, uid)))
                 {
-                    walkSpeed += slowContactsComponent.WalkSpeedModifier;
-                    sprintSpeed += slowContactsComponent.SprintSpeedModifier;
-                    speedModified = true;
-                    break;
+                    continue;
                 }
 
                 walkSpeed += slowContactsComponent.WalkSpeedModifier;
