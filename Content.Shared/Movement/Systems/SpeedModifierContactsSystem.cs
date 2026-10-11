@@ -95,7 +95,16 @@ public sealed partial class SpeedModifierContactsSystem : EntitySystem
 
             if (TryComp<SpeedModifierContactsComponent>(ent, out var slowContactsComponent))
             {
-                //First we check if there is any NORMAL whitelist. If there is none declared in the component, it should proceed normally.
+                
+                
+                if (_whitelistSystem.IsWhitelistPass(slowContactsComponent.IgnoreWhitelist, uid))
+                    continue;
+
+                // Entities that are airborne should not be affected by contact slowdowns that are specified to not affect airborne entities.
+                if (isAirborne && !slowContactsComponent.AffectAirborne)
+                    continue;
+
+                //We check here if there is any NORMAL whitelist. If there is none declared in the component, it should proceed normally
                 if (slowContactsComponent.Whitelist != null)
                 {
                     // and here we check the whitelist
@@ -106,16 +115,8 @@ public sealed partial class SpeedModifierContactsSystem : EntitySystem
                         speedModified = true;
                         return;
                     }
+                    return;
                 }
-
-                // ^ this is where the normal whitelist ends.
-                
-                if (_whitelistSystem.IsWhitelistPass(slowContactsComponent.IgnoreWhitelist, uid))
-                    continue;
-
-                // Entities that are airborne should not be affected by contact slowdowns that are specified to not affect airborne entities.
-                if (isAirborne && !slowContactsComponent.AffectAirborne)
-                    continue;
 
                 walkSpeed += slowContactsComponent.WalkSpeedModifier;
                 sprintSpeed += slowContactsComponent.SprintSpeedModifier;
