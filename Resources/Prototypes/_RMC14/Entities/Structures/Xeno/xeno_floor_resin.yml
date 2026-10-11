@@ -100,7 +100,7 @@
     sprintSpeedModifier: 1.6
     ignoreWhitelist:
       components:
-      - MobStateActions # in case of xenos getting this component, make sure that replacement component is within all other entities but xenos.
+      - NotXeno
 
 
 - type: entity

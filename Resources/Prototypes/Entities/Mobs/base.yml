@@ -102,6 +102,7 @@
     active: False
   - type: AnimatedEmotes # Goobstation - animated emotes
   - type: Sprinter
+  - type: NotXeno
 
 # The progenitor. This should only container the most basic components possible.
 # Only put things on here if every mob *must* have it. This includes ghosts.
