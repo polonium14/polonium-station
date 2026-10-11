@@ -233,7 +233,7 @@ ghost-role-information-paradox-clone-description = A freak space-time anomaly ha
 
 ghost-role-information-syndicate-reinforcement-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with the agent who summoned you.
 
-ghost-role-information-syndicate-reinforcement-medic-name = Syndicate Medic
+ghost-role-information-syndicate-reinforcement-medic-name = Syndicate Combat Medic
 ghost-role-information-syndicate-reinforcement-medic-description = Someone needs reinforcements. Your task is to keep the agent who called you alive.
 
 ghost-role-information-syndicate-reinforcement-spy-name = Syndicate Spy
