@@ -503,7 +503,7 @@
     pocket1: RCD
     pocket2: RCDAmmo
   inhand:
-  - trayScanner
+  - TRayScanner
   - CableApcStack
 
 - type: startingGear

@@ -167,7 +167,7 @@
       prob: 0.6
     - id: FlashlightLantern
       prob: 0.2
-    - id: trayScanner
+    - id: TRayScanner
       prob: 0.2
     - id: ClothingHandsGlovesColorYellowBudget
       prob: 0.1

@@ -11,7 +11,7 @@ public sealed partial class ToggleTrayScannerEvent : InstantActionEvent
 }
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class TrayScannerComponent : Component
+public sealed partial class TRayScannerComponent : Component
 {
     /// <summary>
     ///     Whether the scanner is currently on.
