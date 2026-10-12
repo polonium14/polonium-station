@@ -1,0 +1,13 @@
+# Amarena z NSV13 (Aquila, aq33/NSV13#29).
+- type: reagent
+  id: Amarena
+  name: reagent-name-amarena
+  parent: BaseAlcohol
+  desc: reagent-desc-amarena
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: cherry
+  color: "#800101"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Polonium/Objects/Cosumable/Drinks/amarenaglass.rsi
+    state: icon

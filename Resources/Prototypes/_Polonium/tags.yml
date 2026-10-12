@@ -36,3 +36,10 @@
 
 - type: Tag
   id: Replisteel
+
+# Polonium: czerwony i biały kombinezon jako składniki polskiego sztandaru i godeł z NSV13.
+- type: Tag
+  id: JumpsuitColorRed
+
+- type: Tag
+  id: JumpsuitColorWhite

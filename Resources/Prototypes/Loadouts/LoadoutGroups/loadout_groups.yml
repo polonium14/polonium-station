@@ -54,6 +54,30 @@
   - TowelColorWhite
   - CardBoxBlack
   - CardBoxNanotrasen
+  # Polonium: polskie przedmioty z loadoutu NSV13
+  - PolishShoppingBagBiedronka
+  - PolishShoppingBagLidl
+  - PolishSandals
+  - LoadoutClothingUniformJumpsuitPolish
+  - LoadoutClothingUniformJumpsuitPolishAlt1
+  - LoadoutClothingUniformJumpsuitPolishAlt2
+  - LoadoutClothingUniformJumpsuitPolishAlt3
+  - LoadoutClothingUniformJumpsuitPolishAlt4
+  - LoadoutClothingUniformJumpsuitPolishAlt5
+  - LoadoutClothingUniformJumpsuitPolishAlt6
+  - LoadoutClothingUniformJumpsuitPolishAlt7
+  - LoadoutClothingUniformJumpsuitPolishAlt8
+  - LoadoutClothingUniformJumpsuitPolishWhite
+  - LoadoutClothingUniformJumpsuitPolishILovePL
+  - LoadoutClothingUniformJumpsuitPolishMiniWhite
+  - LoadoutClothingUniformJumpsuitPolishStripe
+  - LoadoutClothingUniformJumpsuitPolishOtuaBlack
+  - LoadoutClothingUniformJumpsuitPolishOtuaWhite
+  - LoadoutUniformShortsPolishPatternH
+  - LoadoutUniformShortsPolishPatternV
+  - LoadoutUniformShortsPolishPatternStripes
+  - LoadoutUniformShortsPolishMankini
+  - LoadoutClothingShoesPolishKneeSocks
 
 - type: loadoutGroup
   id: AssistiveItems

@@ -1,0 +1,16 @@
+ent-ClothingUniformJumpsuitPolishWhite = biała koszulka
+    .desc = Zwykła biała koszulka.
+ent-ClothingUniformJumpsuitPolishILovePL = koszulka I Love PL
+    .desc = Czarna koszulka z wyznaniem miłości do Polski.
+ent-ClothingUniformJumpsuitPolishMiniWhite = biała koszulka PL
+    .desc = Biała koszulka z małym napisem PL.
+ent-ClothingUniformJumpsuitPolishStripe = koszulka z flagą na pasku
+    .desc = Czarna koszulka z biało-czerwonym paskiem.
+ent-ClothingUniformJumpsuitPolishOtuaBlack = czarna koszulka OTUA
+    .desc = Czarna koszulka OTUA.
+ent-ClothingUniformJumpsuitPolishOtuaWhite = biała koszulka OTUA
+    .desc = Biała koszulka OTUA.
+ent-UniformShortsPolishMankini = polskie mankini
+    .desc = Patriotyzm przy minimalnym zakryciu.
+ent-ClothingShoesPolishKneeSocks = zakolanówki biało-czerwone
+    .desc = Zakolanówki w barwach narodowych.

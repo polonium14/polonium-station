@@ -1,0 +1,38 @@
+# Polskie przedmioty z NSV13 (Aquila, aq33/NSV13#304) - receptury z tamtejszego menu craftingu i stosu desek.
+- type: construction
+  parent: BaseItemMisc
+  id: PolishBanner
+  graph: PolishBanner
+  targetNode: banner
+
+- type: construction
+  parent: BaseItemMisc
+  id: PolishCrossWooden
+  graph: PolishCrossWooden
+  targetNode: cross
+
+- type: construction
+  parent: BaseItemMisc
+  id: PolishCrossGolden
+  graph: PolishCrossGolden
+  targetNode: cross
+
+- type: construction
+  parent: BaseItemMisc
+  id: PolishEmblemWooden
+  graph: PolishEmblemWooden
+  targetNode: emblem
+
+- type: construction
+  parent: BaseItemMisc
+  id: PolishEmblemBlack
+  graph: PolishEmblemBlack
+  targetNode: emblem
+
+- type: construction
+  parent: BaseFurniture
+  id: PolishCrucifix
+  graph: PolishCrucifix
+  targetNode: crucifix
+  conditions:
+  - !type:TileNotBlocked

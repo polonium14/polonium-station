@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Sprite by Reprimann, taken from aq33/NSV13 (aq33/NSV13#304) at commit b340c8bf15",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "mostek",
+      "directions": 4
+    },
+    {
+      "name": "zaopatrzenie",
+      "directions": 4
+    },
+    {
+      "name": "inzynieria",
+      "directions": 4
+    },
+    {
+      "name": "ewakuacja",
+      "directions": 4
+    },
+    {
+      "name": "szpital",
+      "directions": 4
+    },
+    {
+      "name": "nauka",
+      "directions": 4
+    },
+    {
+      "name": "ochrona",
+      "directions": 4
+    },
+    {
+      "name": "artyleria",
+      "directions": 4
+    }
+  ]
+}

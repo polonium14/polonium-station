@@ -1,0 +1,1035 @@
+# Polski zestaw plakatów z NSV13 (Aquila, aquila/code/game/objects/effects/contraband.dm).
+# W NSV13 podmieniał wszystkie plakaty - tutaj to osobne plakaty dorzucone do losowych spawnerów.
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandFreeTonto
+  name: "Deus Ex Machina"
+  description: "Plakat promujący absurdalny pogląd, że żyjemy w symulacji. Cóż za kretyństwo..."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_1
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandAtmosiaIndependence
+  name: "Maciuś"
+  description: "Grafika przedstawiająca niegroźnego grzybka. Urocze!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_2
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandFunPolice
+  name: "Fun Police"
+  description: "Plakat wymierzony przeciwko siłom ochrony na stacji."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_3
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandLustyXenomorph
+  name: "Elfy Userotha"
+  description: "Bluźnierczy plakat upamiętniający harem niejakiego Userotha."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_4
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandSyndicateRecruitment
+  name: "Syndykat Rekrutuje"
+  description: "Zwiedzaj galaktykę! Poznawaj nowych ludzi! Zastrzel ich!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_5
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandClown
+  name: "Klaun"
+  description: "Honk."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_6
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandSmoke
+  name: "Karm raka!"
+  description: "Plakat promujące niezdrowe metody radzenia sobie z kosmicznym stresem."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_7
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandGreyTide
+  name: "Szara Fala"
+  description: "Buntowniczy plakat symbolizujący jedność asystentów."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_8
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandMissingGloves
+  name: "Zaginęły: Rękawice"
+  description: "Plakat odnoszący się do cięć budżetowych korporacji prowadzących do ograniczenia dostępności rękawic izolujących."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_9
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandHackingGuide
+  name: "Poradnik hakowania"
+  description: "Plakat opisujący zasadę działania oraz metody hakowania standardowej śluzy NanoTrasenu. Wygląda na to, że jest nieaktualny."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_10
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandRipBadger
+  name: "Płak"
+  description: "Ten kotek jest taki smutny!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_11
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandAmbrosiaVulgaris
+  name: "Ambrosia Vulgaris"
+  description: "Wow, ten plakat jest totalnie tubularny ziom."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_12
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandDonutCorp
+  name: "Papaj Corp."
+  description: "Plakat reklamujący wadowicki specjał znany w całej galaktyce."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_13
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandEat
+  name: "ŻRYJ."
+  description: "JEDZ, TAK, NIE PRZESTAWAJ."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_14
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandTools
+  name: "Narzędzia"
+  description: "Plakat reklamujący narzędzia. Faktycznie dobrze je mieć."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_15
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandPower
+  name: "Moc"
+  description: "Plakat przedstawiający osobliwość grawitacyjną. Wydgląda na to, że jest w niej klaun."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_16
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandSpaceCube
+  name: "Kosmokostka"
+  description: "Bóg jest sześcianem i stworzył wszechświat na swój obraz i podobieństwo."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_17
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandCommunistState
+  name: "Góra lodowa"
+  description: "Grafika góry lodowej. Wygląda na to, że ma to być alegoria do jakichś 'głębokich' sekretów."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_18
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandLamarr
+  name: "Lamarr"
+  description: "Plakat przedstawiający 'zwierzątko' Dyrektora Naukowego."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_19
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandKss13
+  name: "Papaj nie żyje"
+  description: "Przykre przypomnienie jednego z najczarniejszych momentów historii."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_22
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandRebelsUnite
+  name: "CCCP"
+  description: "Plakat przedstawiający najgorszy koszmar każdego kosmopolaka."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_23
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandC20r
+  name: "C-20r"
+  description: "Plakat promujący karabinek Scarborough Arms C-20r."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_24
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandHaveAPuff
+  name: "Jaraj blanta"
+  description: "Ziom, słuchaj, jestem, jakby... Słuchasz mnie?"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_25
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandRevolver
+  name: "Rewolwer"
+  description: "Wyrewolwerowany rewolwerowiec wyrewolwerował wyrewolwerowanego rewolwerowca."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_26
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandDDayPromo
+  name: "D-Day Promo"
+  description: "Plakat promocyjny jakiegoś rapera."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_27
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandSyndicatePistol
+  name: "Stenchkin"
+  description: "Plakat określający pistolet syndykatu jako 'broń z klasą'."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_28
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandEnergySwords
+  name: "E-Miecze"
+  description: "Wszystkie kolory brutalnego morderstwa."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_29
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandRedRum
+  name: "PRAWuH"
+  description: "Plakat piętnujący problem alkoholizmu wśród sił ochrony."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_30
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandCc64kAd
+  name: "CC 64K Ad"
+  description: "Najnowszy komputer przenośny od Comrade Computing, z aż 64kB ramu!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_31
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandPunchShit
+  name: "Napierdalaj"
+  description: "Wszczynaj bójki bez powodu, jak prawdziwy polak patriota!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_32
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandTheGriffin
+  name: "Człowiek-Gryf"
+  description: "Człowiek-Gryf rozkazuje Ci być najgorszym ścierwem. Zgodzisz się?"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_33
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandLizard
+  name: "Bry"
+  description: "Ten sprośny plakat przedstawia jaszczura gotowego do ucieczki."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_34
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandFreeDrone
+  name: "Syndron"
+  description: "Plakat przestrzegający przed dronami syndykatu kanibalizującymi inne drony."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_35
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandBustyBackdoorXenoBabes6
+  name: "Cycate Xenomorfy Z Sąsiedztwa 6"
+  description: "Same naturalne Xeno-Mamuśki!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_36
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandRobustSoftdrinks
+  name: "Robustne Napitki"
+  description: "Robustne Napitki: Bardziej robustne niż skrzynka narzędziowa w łeb!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_37
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandShamblersJuice
+  name: "OOC3"
+  description: "Plakat przedstawiający logo sekty znanej jako 'OOC3'."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_38
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandPwrGame
+  name: "Pwr Game"
+  description: "MOC której pragną prawdziwi GRACZE! Program partnerski z Sałatką Vlada."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_39
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandSunKist
+  name: "Sun-kist"
+  description: "Napij się gwiazd!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_40
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandSpaceCola
+  name: "Kosmo-Cola"
+  description: "Zwyczajna Cola... W KOSMOSIE!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_41
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandSpaceUp
+  name: "Space-Up!"
+  description: "Wyssany w próżnię intensywnością SMAKU!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_42
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandKudzu
+  name: "Kudzu"
+  description: "Plakat filmu o kosmicznych pnączach? Co za bzdura."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_43
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandMaskedMen
+  name: "Dynamic"
+  description: "Plakat podpisany 'Dynamic' przedstawiający mężczyznę trzymającego w robotycznej dłoni papierosa, z wytatuowaną uśmiechniętą buźką na boku czaszki."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_44
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandFreeKey
+  name: "Darmowy klucz kodujący syndykatu"
+  description: "Plakat o agentach syndykatu, którym nigdy dość."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_46
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandBountyhunters
+  name: "Łowcy Nagród"
+  description: "Plakat promujący usługi łowców nagród."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_47
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishContrabandOmnissiah
+  name: "Omnisjasz"
+  description: "Plakat promujący tostery firmy 'Omnisjasz'."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_50
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitHereForYourSafety
+  name: "Oddaj głos!"
+  description: "Zdecyduj zanim zdecydują za Ciebie!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_1
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNanotrasenLogo
+  name: "Logo NanoTrasenu"
+  description: "Plakat przedstawiający logo NanoTrasenu."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_2
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitCleanliness
+  name: "Pij mleko"
+  description: "Będziesz wielki."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_3
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitHelpOthers
+  name: "500+"
+  description: "Plakat odwołujący się do programu premii dla pracowników wdrażających nowozatrudnionych do pracy."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_4
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitBuild
+  name: "BUDOWA"
+  description: "Plakat pochwalny dla zespołu inżynieryjnego."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_5
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitBlessThisSpess
+  name: "Drontopia"
+  description: "Plakat promujący użycie dronów naprawczych."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_6
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitScience
+  name: "WIARA"
+  description: "Nadzieja i naiwność."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_7
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitIan
+  name: "Ian"
+  description: "Woof."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_8
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitObey
+  name: "ZOMO!"
+  description: "Plakat subtelnie zachęcający do nieprzeszkadzania służbom ochrony w wykonywaniu ich obowiązków."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_9
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitWalk
+  name: "Idź"
+  description: "Plakat zachęcający do chodzenia zamiast biegania."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_10
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitLoveIan
+  name: "Tul"
+  description: "Ian jest przyjacielem, nie jedzeniem."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_12
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitSpaceCops
+  name: "Kosmo-pały"
+  description: "Plakat promujący kosmotelewizyjny serial pod tytułem 'Kosmo-Pały'."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_13
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitUeNo
+  name: "Ue No."
+  description: "Głupie chińskie kosmobajki."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_14
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitGetYourLegs
+  name: "Miej DUPĘ"
+  description: "DUPA: Duma, Ułożenie, Patriotyzm oraz Autorytet."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_15
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitDoNotQuestion
+  name: "Pijesz mleko?"
+  description: "Powinieneś. Robi dobrze na kości."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_16
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitWorkForAFuture
+  name: "Płać lub płacz!"
+  description: "Drobnym druczkiem dopisana jest informacja o tym, że łzy nie są akceptowalną walutą."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_17
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitSoftCapPopArt
+  name: "Chick Good Inc."
+  description: "Don't stop, get it, get it; Be proud your captains in it; Steady, watch me navigate; Ha HA ha HA"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_18
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitSafetyInternals
+  name: "Tlen: życie"
+  description: "Plakat instruktażowy dotyczący użycia masek w rzadkich przypadkach, gdy atmosfera na stacji jest niezdatna do życia."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_19
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitSafetyEyeProtection
+  name: "Chroń oczy!"
+  description: "Plakat przypominający o środkach ochrony oczu."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_20
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitSafetyReport
+  name: "Melduj"
+  description: "Donos jest najwyższą formą odpowiedzialności obywatelskiej."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_21
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitReportCrimes
+  name: "Dzwoń pod 997"
+  description: "Przedawniony plakat zachęcający do informowania ochrony o wszelkich nieprawidłowościach."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_22
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitIonRifle
+  name: "Działko jonowe"
+  description: "Plakat przedstawiający działko jonowe."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_23
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitFoamForceAd
+  name: "Reklama PiankoBroni"
+  description: "PiankoBroń! Piankuj albo zostań zpiankowany!!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_24
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitCohibaRobustoAd
+  name: "Reklama Cohiba Robusto"
+  description: "Cohiba Robusto - klasyczne cygaro dla klasycznych ludzi."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_25
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitAnniversaryVintageReprint
+  name: "NAUKA!"
+  description: "Plakat pochwalny dla zespołu naukowego."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_26
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitFruitBowl
+  name: "Martwa Natura"
+  description: "Daje do myślenia."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_27
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitPdaAd
+  name: "Reklama PDA"
+  description: "Plakat reklamujący najnowsze PDA NanoTrasenu."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_28
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitEnlist
+  name: "Chroń i służ."
+  description: "Plakat przedstawiający elitarnego komandosa NanoTrasenu."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_29
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNanomichiAd
+  name: "Reklama Nanomichi"
+  description: "Reklama promująca kasety firmy Nanomichi."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_30
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitTwelveGauge
+  name: "Kaliber 12"
+  description: "Plakat promujący amunicję do strzelb."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_31
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitHighClassMartini
+  name: "Martini"
+  description: "Wstrząśnięte, nie zmieszane."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_32
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitTheOwl
+  name: "Człowiek-Sowa"
+  description: "Człowiek-Sowa zrobiłby wszystko co w jego mocy dla dobra stacji. A Ty?"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_33
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNoErp
+  name: "Daj Seks Mi"
+  description: "Plakat drwiący z tych, którzy nie mogą powstrzymać się ciągotom ciała na stacji kosmicznej."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_34
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitWtfIsCo2
+  name: "OOC3 nie istnieje"
+  description: "Plakat mający rozwiać wątpliwości załogi na temat 'OOC3'."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_35
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitPRAWO
+  name: "PRAWO"
+  description: "Plakat przypominający załodze oraz służbom ochrony o ważności Kosmicznego Prawa."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_45
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitHoPline
+  name: "Hopline Miami"
+  description: "Plakat zachęcający asystentów do zgłoszenia się do Głowy Personelu o pracę."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_46
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitKredki
+  name: "Kredki"
+  description: "Plakat promujące kolorowe kredki znajdujące się na stacjach NanoTrasenu dla zwiększenia morale. Nie zawierają toksycznych substancji!"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_47
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitPRACA
+  name: "PRACA PRACA"
+  description: "Coś trzeba zrobić?"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_48
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNfzSor
+  name: "SOR"
+  description: "Plakat oznaczający Szpitalny Oddział Ratunkowy"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_49
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNfzPijMleko
+  name: "NFZ - Pij mleko!"
+  description: "Plakat promujący szeroko zakrojoną akcję <Pij Mleko!>"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_50
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNfzKoronawirus
+  name: "NFZ - UWAGA, KORONAWIRUS!"
+  description: "Plakat ostrzegający przed koronawirusem łudząco przypominającym wschodzące słońce."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_51
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNfzKrwiodawstwo
+  name: "Punkt Krwiodawstwa"
+  description: "Plakat oznaczający Punkt Krwiodawstwa"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_52
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNfzMyjRece
+  name: "MYJ RĘCE!"
+  description: "Plakat przypominający o konieczności mycia rąk, brudasie."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_53
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNfzInfolinia
+  name: "Infolinia NFZ"
+  description: "Plakat reklamujący Infolinię NFZ - dziwnym trafem nie zawiera numeru telefonu."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_54
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNfzRakPiersi
+  name: "Uważaj na raka piersi!"
+  description: "Plakat NFZ z symbolem różowej wstążki - międzynarodowym symbolem oznaczającym walkę z rakiem piersi."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_55
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNfzPoz
+  name: "POZ+"
+  description: "Plakat reklamujący pionierski system opieki zdrowotnej organizacji opieki koordynowanej."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_56
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNfzLeki75
+  name: "Darmowe leki 75+"
+  description: "Plakat informujący pacjentów o darmowych lekach dla osób w wieku powyżej 75 lat."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_57
+
+- type: entity
+  parent: PosterBase
+  id: PosterPolishLegitNfzEwus
+  name: "eWUŚ"
+  description: "Plakat informujący o wdrożeniu systemu eWUŚ - Elektronicznej Weryfikacja Uprawnień Świadczeniobiorców. Chyba jesteś ubezpieczony, prawda?"
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_legit_58
+
+- type: entityTable
+  id: PolishContrabandPosterTable
+  table: !type:GroupSelector
+    children:
+    - id: PosterPolishContrabandFreeTonto
+    - id: PosterPolishContrabandAtmosiaIndependence
+    - id: PosterPolishContrabandFunPolice
+    - id: PosterPolishContrabandLustyXenomorph
+    - id: PosterPolishContrabandSyndicateRecruitment
+    - id: PosterPolishContrabandClown
+    - id: PosterPolishContrabandSmoke
+    - id: PosterPolishContrabandGreyTide
+    - id: PosterPolishContrabandMissingGloves
+    - id: PosterPolishContrabandHackingGuide
+    - id: PosterPolishContrabandRipBadger
+    - id: PosterPolishContrabandAmbrosiaVulgaris
+    - id: PosterPolishContrabandDonutCorp
+    - id: PosterPolishContrabandEat
+    - id: PosterPolishContrabandTools
+    - id: PosterPolishContrabandPower
+    - id: PosterPolishContrabandSpaceCube
+    - id: PosterPolishContrabandCommunistState
+    - id: PosterPolishContrabandLamarr
+    - id: PosterPolishContrabandKss13
+    - id: PosterPolishContrabandRebelsUnite
+    - id: PosterPolishContrabandC20r
+    - id: PosterPolishContrabandHaveAPuff
+    - id: PosterPolishContrabandRevolver
+    - id: PosterPolishContrabandDDayPromo
+    - id: PosterPolishContrabandSyndicatePistol
+    - id: PosterPolishContrabandEnergySwords
+    - id: PosterPolishContrabandRedRum
+    - id: PosterPolishContrabandCc64kAd
+    - id: PosterPolishContrabandPunchShit
+    - id: PosterPolishContrabandTheGriffin
+    - id: PosterPolishContrabandLizard
+    - id: PosterPolishContrabandFreeDrone
+    - id: PosterPolishContrabandBustyBackdoorXenoBabes6
+    - id: PosterPolishContrabandRobustSoftdrinks
+    - id: PosterPolishContrabandShamblersJuice
+    - id: PosterPolishContrabandPwrGame
+    - id: PosterPolishContrabandSunKist
+    - id: PosterPolishContrabandSpaceCola
+    - id: PosterPolishContrabandSpaceUp
+    - id: PosterPolishContrabandKudzu
+    - id: PosterPolishContrabandMaskedMen
+    - id: PosterPolishContrabandFreeKey
+    - id: PosterPolishContrabandBountyhunters
+    - id: PosterPolishContrabandOmnissiah
+
+- type: entityTable
+  id: PolishLegitPosterTable
+  table: !type:GroupSelector
+    children:
+    - id: PosterPolishLegitHereForYourSafety
+    - id: PosterPolishLegitNanotrasenLogo
+    - id: PosterPolishLegitCleanliness
+    - id: PosterPolishLegitHelpOthers
+    - id: PosterPolishLegitBuild
+    - id: PosterPolishLegitBlessThisSpess
+    - id: PosterPolishLegitScience
+    - id: PosterPolishLegitIan
+    - id: PosterPolishLegitObey
+    - id: PosterPolishLegitWalk
+    - id: PosterPolishLegitLoveIan
+    - id: PosterPolishLegitSpaceCops
+    - id: PosterPolishLegitUeNo
+    - id: PosterPolishLegitGetYourLegs
+    - id: PosterPolishLegitDoNotQuestion
+    - id: PosterPolishLegitWorkForAFuture
+    - id: PosterPolishLegitSoftCapPopArt
+    - id: PosterPolishLegitSafetyInternals
+    - id: PosterPolishLegitSafetyEyeProtection
+    - id: PosterPolishLegitSafetyReport
+    - id: PosterPolishLegitReportCrimes
+    - id: PosterPolishLegitIonRifle
+    - id: PosterPolishLegitFoamForceAd
+    - id: PosterPolishLegitCohibaRobustoAd
+    - id: PosterPolishLegitAnniversaryVintageReprint
+    - id: PosterPolishLegitFruitBowl
+    - id: PosterPolishLegitPdaAd
+    - id: PosterPolishLegitEnlist
+    - id: PosterPolishLegitNanomichiAd
+    - id: PosterPolishLegitTwelveGauge
+    - id: PosterPolishLegitHighClassMartini
+    - id: PosterPolishLegitTheOwl
+    - id: PosterPolishLegitNoErp
+    - id: PosterPolishLegitWtfIsCo2
+    - id: PosterPolishLegitPRAWO
+    - id: PosterPolishLegitHoPline
+    - id: PosterPolishLegitKredki
+    - id: PosterPolishLegitPRACA
+    - id: PosterPolishLegitNfzSor
+    - id: PosterPolishLegitNfzPijMleko
+    - id: PosterPolishLegitNfzKoronawirus
+    - id: PosterPolishLegitNfzKrwiodawstwo
+    - id: PosterPolishLegitNfzMyjRece
+    - id: PosterPolishLegitNfzInfolinia
+    - id: PosterPolishLegitNfzRakPiersi
+    - id: PosterPolishLegitNfzPoz
+    - id: PosterPolishLegitNfzLeki75
+    - id: PosterPolishLegitNfzEwus

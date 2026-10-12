@@ -1,0 +1,235 @@
+# Polskie struktury z NSV13 (Aquila, aq33/NSV13#304, sprite'y: Reprimann).
+
+# Flagi
+
+- type: entity
+  parent: BaseFlag
+  id: PolishFlagAnchor
+  name: white-red flag with an anchor
+  description: The flag used by Polish spaceships, conforming to the pattern in Annex 6 to the 'Nanotrasen Military Unit Designation Act'.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/flagi_polskie.rsi
+    state: kotwica
+
+- type: entity
+  parent: BaseFlag
+  id: PolishFlag
+  name: flag of Poland
+  description: The flag used by Poles, conforming to the pattern in Annex 3 to the 'Nanotrasen National Minorities Rights Act'.
+  components:
+  - type: Sprite
+    # Flaga ma 64x32 i zajmuje dwa pola, tak jak w NSV13: od pola, na którym stoi, w prawo.
+    sprite: _Polonium/Structures/Wallmounts/flagi_polskie_szerokie.rsi
+    state: polska
+    offset: 0.5,0
+
+- type: entity
+  parent: PolishFlag
+  id: PolishFlagEagle
+  name: white-red flag with an eagle
+  description: The flag customarily used by Poles, not conforming to the pattern in Annex 3 to the 'Nanotrasen National Minorities Rights Act'.
+  components:
+  - type: Sprite
+    state: orzel
+
+# Tabliczki kierunkowe po polsku
+
+- type: entity
+  abstract: true
+  parent: BaseSignDirectional
+  id: BasePolishSignDirectional
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/tabliczki_kierunkowe.rsi
+
+- type: entity
+  parent: BasePolishSignDirectional
+  id: SignDirectionalPolishBridge
+  name: bridge plaque
+  description: A plaque pointing the way to the bridge.
+  components:
+  - type: Sprite
+    state: mostek
+
+- type: entity
+  parent: BasePolishSignDirectional
+  id: SignDirectionalPolishSupply
+  name: supply plaque
+  description: A plaque pointing the way to the cargo bay and supply department.
+  components:
+  - type: Sprite
+    state: zaopatrzenie
+
+- type: entity
+  parent: BasePolishSignDirectional
+  id: SignDirectionalPolishEngineering
+  name: engineering plaque
+  description: A plaque pointing the way to the engineering department.
+  components:
+  - type: Sprite
+    state: inzynieria
+
+- type: entity
+  parent: BasePolishSignDirectional
+  id: SignDirectionalPolishEvac
+  name: evacuation plaque
+  description: A plaque pointing the evacuation route.
+  components:
+  - type: Sprite
+    state: ewakuacja
+
+- type: entity
+  parent: BasePolishSignDirectional
+  id: SignDirectionalPolishMedical
+  name: medbay plaque
+  description: A plaque pointing the way to the medbay.
+  components:
+  - type: Sprite
+    state: szpital
+
+- type: entity
+  parent: BasePolishSignDirectional
+  id: SignDirectionalPolishScience
+  name: science plaque
+  description: A plaque pointing the way to the science department.
+  components:
+  - type: Sprite
+    state: nauka
+
+- type: entity
+  parent: BasePolishSignDirectional
+  id: SignDirectionalPolishSecurity
+  name: security plaque
+  description: A plaque pointing the way to the security department.
+  components:
+  - type: Sprite
+    state: ochrona
+
+- type: entity
+  parent: BasePolishSignDirectional
+  id: SignDirectionalPolishMunitions
+  name: munitions plaque
+  description: A plaque pointing the way to the munitions bay.
+  components:
+  - type: Sprite
+    state: artyleria
+
+# Duży krzyż
+
+- type: entity
+  parent: BaseStructure
+  id: PolishCrucifix
+  name: cross
+  description: Degenerates like you should be crucified.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Furniture/krzyz.rsi
+    state: krzyz
+    offset: 0,0.5
+    drawdepth: Overdoors
+  - type: InteractionOutline
+  - type: Strap
+    position: Stand
+    buckleOffset: 0,0.6
+  - type: Crucifix
+    damage:
+      types:
+        Piercing: 30
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 5
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: PolishCrucifix
+    node: crucifix
+
+# Maluch
+
+- type: entity
+  id: VehicleMaluch
+  name: maluch
+  description: Mind your head.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Vehicles/maluch.rsi
+    state: icon
+    noRot: true
+    drawdepth: Mobs
+  - type: Clickable
+  - type: InteractionOutline
+  - type: InputMover
+  - type: Pullable
+  - type: GravityAffected
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 1000
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MovementSpeedModifier
+    weightlessModifier: 0
+    acceleration: 2
+    friction: 2
+    frictionNoInput: 6
+    baseWalkSpeed: 5
+    baseSprintSpeed: 5
+  - type: Vehicle
+    transferDamage: false
+  - type: ContainerVehicle
+    containerId: maluch_seats
+  - type: ContainerVehicleEntry
+    entryDelay: 2
+    exitDelay: 2
+  - type: PassengerVehicle
+    containerId: maluch_seats
+    maxOccupants: 5
+    engineSound:
+      path: /Audio/_Polonium/Vehicles/carrev.ogg
+  - type: ContainerContainer
+    containers:
+      maluch_seats: !type:Container
+  - type: Damageable
+    damageModifierSet: SteelMod
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 5
+            max: 10
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  - type: StaticPrice
+    price: 2000

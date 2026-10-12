@@ -1,0 +1,20 @@
+# Polskie zamówienia z NSV13 (Aquila).
+- type: cargoProduct
+  id: FoodKremowki
+  icon:
+    sprite: _Polonium/Objects/Cosumable/Food/Baked/pie.rsi
+    state: kremowka
+  product: CrateFoodKremowki
+  cost: 2137
+  category: cargoproduct-category-name-food
+  group: market
+
+- type: cargoProduct
+  id: FunMaluch
+  icon:
+    sprite: _Polonium/Objects/Vehicles/maluch.rsi
+    state: icon
+  product: VehicleMaluch
+  cost: 69000
+  category: cargoproduct-category-name-fun
+  group: market

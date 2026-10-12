@@ -17,3 +17,36 @@
     sprite: _Polonium/Structures/Wallmounts/Barsigns/szkodnik.rsi
     state: szkodnik
   description: barsign-prototype-description-szkodnik
+
+# Szyldy barowe z NSV13 (Aquila, aquila/code/game/objects/structures/barsigns.dm)
+- type: barSign
+  id: PodPapugami
+  name: barsign-prototype-name-podpapugami
+  icon:
+    sprite: _Polonium/Structures/Wallmounts/Barsigns/polskie.rsi
+    state: podpapugami
+  description: barsign-prototype-description-podpapugami
+
+- type: barSign
+  id: WadoVice
+  name: barsign-prototype-name-wadovice
+  icon:
+    sprite: _Polonium/Structures/Wallmounts/Barsigns/polskie.rsi
+    state: wadovice
+  description: barsign-prototype-description-wadovice
+
+- type: barSign
+  id: AlkoHole
+  name: barsign-prototype-name-alkohole
+  icon:
+    sprite: _Polonium/Structures/Wallmounts/Barsigns/polskie.rsi
+    state: alkohole
+  description: barsign-prototype-description-alkohole
+
+- type: barSign
+  id: BaranieRanczo
+  name: barsign-prototype-name-ranczo
+  icon:
+    sprite: _Polonium/Structures/Wallmounts/Barsigns/polskie.rsi
+    state: ranczo
+  description: barsign-prototype-description-ranczo
