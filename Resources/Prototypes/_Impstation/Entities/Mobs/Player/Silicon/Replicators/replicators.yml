@@ -36,6 +36,10 @@
       state: combat_level1
       shader: unshaded
       visible: false
+    - map: ["enum.ReplicatorVisuals.Thrust"] # POLONIUM
+      sprite: _Polonium/Mobs/Replicator/thrust.rsi
+      state: alive_thrust
+      shader: unshaded
   - type: UserInterface
     interfaces:
       enum.SiliconLawsUiKey.Key:
@@ -50,13 +54,19 @@
     emoteSounds: UnisexSiliconXenoborg
     wilhelmProbability: 0
   - type: Emoting # POLONIUM
+  - type: IntrinsicRadioTransmitter # POLONIUM
+    channels:
+    - ReplicatorHive
+  - type: ActiveRadio # POLONIUM
+    channels:
+    - ReplicatorHive
   - type: ActionGrant
     actions:
     - ActionViewLaws
     - ActionReplicatorTeleportPrey
-    - ActionReplicatorConvert # POLONIUM
+    - ActionReplicatorConvertFloor # POLONIUM
+    - ActionReplicatorConvertWall # POLONIUM
     - ActionReplicatorBuildWall # POLONIUM
-    - ActionReplicatorBuildFabricator # POLONIUM
     - ActionReplicatorHolowall # POLONIUM
   - type: ReplicatorBuilder # POLONIUM
   - type: ReplicatorTow # POLONIUM
@@ -96,9 +106,12 @@
         acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          SheetPlasteel1:
+          SheetReplisteel1: # POLONIUM
             min: 1
-            max: 6
+            max: 1
+          ReplicatorNaniteSample: # POLONIUM
+            min: 1
+            max: 1
   - type: StatusEffects
     allowed:
     - Stun
@@ -115,7 +128,7 @@
       path: "/Audio/Items/wirecutter.ogg"
     angle: 0
     wideAnimationRotation: 0
-    animation: WeaponArcSlash
+    animation: WeaponArcReplicatorCrescent # POLONIUM
     damage:
       types:
         Structural: 7 # POLONIUM: no Slash
@@ -161,6 +174,7 @@
         whitelist:
           tags:
           - Replisteel
+          - ReplicatorColossusPart # POLONIUM
     sortedHands:
     - replisteel # POLONIUM
     - stun_ray
@@ -207,6 +221,10 @@
   - type: ReplicatorTow # POLONIUM
     pulledFrictionModifier: 0.1
     weightlessAccelerationModifier: 3.5
+  - type: ReplicatorModules # POLONIUM
+  - type: ReplicatorEmpVulnerable # POLONIUM
+  - type: StatusIcon # POLONIUM
+    bounds: -0.5,-0.5,0.5,0.5
   - type: NoSlip
   - type: Sprite
     drawdepth: SmallMobs
@@ -218,6 +236,10 @@
       state: combat_level1
       shader: unshaded
       visible: false
+    - map: ["enum.ReplicatorVisuals.Thrust"] # POLONIUM
+      sprite: _Polonium/Mobs/Replicator/thrust.rsi
+      state: alive_thrust
+      shader: unshaded
   - type: Fixtures
     fixtures:
       fix1:
@@ -261,6 +283,10 @@
       state: combat_level2
       shader: unshaded
       visible: false
+    - map: ["enum.ReplicatorVisuals.Thrust"] # POLONIUM
+      sprite: _Polonium/Mobs/Replicator/thrust.rsi
+      state: alive_level2_thrust
+      shader: unshaded
   - type: NoSlip
   - type: DamageStateVisuals
     states:
@@ -302,6 +328,10 @@
       state: combat_level3
       shader: unshaded
       visible: false
+    - map: ["enum.ReplicatorVisuals.Thrust"] # POLONIUM
+      sprite: _Polonium/Mobs/Replicator/thrust.rsi
+      state: alive_level3_thrust
+      shader: unshaded
   - type: DamageStateVisuals
     states:
       Alive:

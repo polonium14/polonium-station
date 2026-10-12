@@ -1,0 +1,15 @@
+- type: damageModifierSet
+  id: ReplicatorColossus
+  coefficients:
+    Blunt: 0.6
+    Slash: 0.5
+    Piercing: 0.6
+    Heat: 0.7
+    Cold: 0.5
+    Caustic: 0.5
+    Shock: 1.2
+  flatReductions:
+    Blunt: 2
+    Slash: 2
+    Piercing: 2
+    Heat: 3

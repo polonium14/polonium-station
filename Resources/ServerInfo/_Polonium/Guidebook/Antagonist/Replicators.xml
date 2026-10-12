@@ -1,0 +1,243 @@
+<Document>
+  # Replikatory
+
+  <Box>
+    <GuideEntityEmbed Entity="MobReplicator" Caption=""/>
+  </Box>
+
+  [color=#e455c4][italic]Projekt "Samonaprawa" miał automatycznie łatać poszycie stacji. Nanity nauczyły się jednak replikacji i postanowiły 'przebudować' całą stację po swojemu. Projekt oficjalnie skasowano — ale Replikatory wciąż wykonują swój program[/italic][/color]
+
+  Replikatory to rój niewielkich latających maszyn zbudowanych z nanitów. Pojedynczy replikator nie jest groźny. Potrafi ogłuszyć człowieka i przegryźć się przez ścianę, ale nikogo nie zabije. Groźne jest to, że rój rośnie. Wszystko, co maszyny wrzucą do swojego gniazda, zamienia się w [bold]replistal[/bold], a z replistali powstają kolejne korpusy, konstrukcje i ulepszenia. Jeśli załoga nie zatrzyma roju na czas, ten zbuduje Kolosalnego Replikatora i jednym ruchem przerobi całą stację.
+
+  ## Przebieg rundy
+
+  - 1. Runda roju zaczyna się od jednego replikatora, który jest [bold]królową[/bold]. Królowa szuka spokojnego miejsca i otwiera tam w podłodze gniazdo.
+  - 2. Replikatory znoszą do gniazda przedmioty i sprzęt. Gniazdo zamienia je w replistal, rośnie i z każdym poziomem odblokowuje kolejne konstrukcje.
+  - 3. Fabrykator składa nowe korpusy, które zajmują duchy. W komorze ewolucji każdy replikator może się przebudować do jednej z pięciu klas.
+  - 4. Gdy gniazdo osiągnie trzeci poziom, rój stawia odlewnię i część po części składa w niej [bold]Kolosalnego Replikatora[/bold].
+  - 5. Kolos stawia nadajnik i czeka dziesięć minut, aż ten się naładuje. Naładowany nadajnik podłącza się do kolosa i uwalnia [bold]asymilację[/bold], która przerabia całą stację.
+
+  [color=#e455c4]Rój może zbudować tylko jednego kolosa. Jeśli załoga go zniszczy, rój przegrywa.[/color]
+
+  ## Gniazdo i replistal
+  <Box>
+    <GuideEntityEmbed Entity="ActionReplicatorSpawnNest" Caption="Produkuj Gniazdo"/>
+    <GuideEntityEmbed Entity="ReplicatorNest" Caption="gniazdo"/>
+    <GuideEntityEmbed Entity="SheetReplisteel1" Caption="replistal"/>
+  </Box>
+  Gniazdo jest sercem roju. Wygląda jak dziura w podłodze wypełniona nanitami i trawi wszystko, co do niej wpadnie. Otwiera je królowa zdolnością [bold]Produkuj Gniazdo[/bold], dokładnie w miejscu, w którym stoi. Gniazdo ma trzy poziomy i rośnie razem z tym, ile rój w nie wrzucił. Każdy nowy poziom odblokowuje kolejne konstrukcje oraz stadia ulepszeń.
+
+  Jeśli królowa zginie albo jej gracz opuści ciało, koronę przejmuje inny żywy replikator, a cały rój dostaje o tym wiadomość na czacie. Gdy gniazdo zostanie zniszczone, nowe może otworzyć tylko aktualna królowa.
+
+  Najprostszym pokarmem są przedmioty. Wystarczy przeciągnąć rzecz nad gniazdo, a ta wpadnie do środka i zamieni się w replistal. Im większy przedmiot, tym więcej jest wart. Jeszcze więcej dają maszyny i meble, które rój odkręcił od podłogi i dociągnął na miejsce. Gniazdo strawi też martwe zwierzęta oraz wraki poległych replikatorów, z których rój odzyskuje część włożonego materiału.
+
+  Ludzi gniazdo nie trawi. Nie wciągnie nikogo, kto żyje, ani żadnej istoty, w której jest umysł gracza. Nie opłaca się też wrzucać do niego własnej replistali, bo wróci ona do zapasu, ale gniazdo od tego nie urośnie.
+
+  Replistal zebrana przez gniazdo tworzy [bold]zapas gniazda[/bold]. To z niego rój płaci za przejmowanie podłóg i ścian oraz za ulepszenia w komorze ewolucji. Żeby postawić większą konstrukcję albo zlecić korpus w fabrykatorze, replikator musi najpierw wyjąć arkusze do ręki. Robi to, klikając gniazdo, które działa wtedy jak tokarka. Gniazdo zawsze zostawia sobie rezerwę dwóch arkuszy i poniżej tej granicy niczego nie wyda. Stan zapasu i poziom gniazda widać po obejrzeniu go z bliska.
+
+  Replikator, który stanie tuż obok gniazda, jest przez nie stopniowo naprawiany.
+
+  [color=#ffa500]Uwaga.[/color] Gniazdo da się zniszczyć. Wysypuje się z niego wtedy tylko część zapasu, a nowe gniazdo zaczyna od pierwszego poziomu. Dlatego rój pilnuje gniazda przed wszystkim innym.
+
+  ## Zdolności każdego replikatora
+  Każdy replikator, niezależnie od klasy, od pierwszej chwili ma ten sam zestaw zdolności.
+
+  <Box>
+    <GuideEntityEmbed Entity="ActionReplicatorTeleportPrey" Caption="Przywołanie Roju"/>
+  </Box>
+  [bold]Przywołanie Roju[/bold] wyrzuca ogłuszonego albo powalonego intruza daleko od gniazda i zostawia go na chwilę sparaliżowanego.
+
+  <Box>
+    <GuideEntityEmbed Entity="ActionReplicatorConvertFloor" Caption="Przekształć podłogę"/>
+    <GuideEntityEmbed Entity="ActionReplicatorConvertWall" Caption="Przekształć ścianę"/>
+    <GuideEntityEmbed Entity="ActionReplicatorBuildWall" Caption="Zbuduj ścianę"/>
+    <GuideEntityEmbed Entity="ActionReplicatorHolowall" Caption="Wyświetl holościanę"/>
+  </Box>
+  [bold]Przekształć podłogę[/bold] oddaje rojowi kafelek, na którym replikator stoi. Rój może budować wyłącznie na takiej podłodze.
+
+  [bold]Przekształć ścianę[/bold] zamienia wskazaną ścianę stacji w mocniejszą ścianę replikatorów, a [bold]Zbuduj ścianę[/bold] stawia nową na wolnym kafelku podłogi replikatorów.
+
+  [bold]Wyświetl holościanę[/bold] rozpina siatkę z twardego światła na kafelku, na którym replikator stoi. Siatka zatrzymuje powietrze, ale przepuszcza każdego, kto chce przejść, i po trzech minutach znika.
+
+  <Box>
+    <GuideEntityEmbed Entity="ReplicatorStunRay" Caption="promień ogłuszający"/>
+  </Box>
+  Każdy replikator ma wbudowany [bold]promień ogłuszający[/bold], który nie zadaje ran, tylko odbiera ofierze siły, aż ta osunie się na podłogę. Promień ładuje się sam.
+
+  Poza tym replikator lata, więc brak grawitacji mu nie przeszkadza. Widzi ciepło żywych istot przez ściany i jest odporny na błysk flasha. Jest tak mały, że przeciska się pod zamkniętą śluzą jak mysz. Potrafi też podważyć drzwi, nawet te pod napięciem, i ciągnąć za sobą przedmioty. Jego cios nie rani ludzi, tylko ich męczy, za to dobrze niszczy sprzęt i konstrukcje.
+
+  ## Budowanie
+  Rój może budować tylko na [bold]podłodze replikatorów[/bold]. Dlatego każda budowa zaczyna się od przejęcia kafelków, a dopiero na nich stają ściany i konstrukcje.
+
+  Większe konstrukcje stawia się z osobnego menu. Replikator wyjmuje z gniazda arkusze replistali, używa ich w ręce i wybiera konstrukcję z listy, a potem wskazuje wolny kafelek podłogi replikatorów. Za budowę płaci najpierw arkuszami, które trzyma. Jeśli jest ich za mało, brakującą część dokłada zapas gniazda, dzięki czemu da się postawić także konstrukcję droższą niż jedna pełna ręka replistali. Menu pokazuje cenę każdej konstrukcji i informuje, jeśli gniazdo ma jeszcze za niski poziom.
+
+  <Box>
+    <GuideEntityEmbed Entity="ReplicatorFabricator" Caption="fabrykator"/>
+    <GuideEntityEmbed Entity="ReplicatorEvolutionChamber" Caption="komora ewolucji"/>
+    <GuideEntityEmbed Entity="ReplicatorDuplicator" Caption="powielacz"/>
+  </Box>
+  [bold]Fabrykator replikatorów[/bold] kosztuje 4 arkusze i jest dostępny od pierwszego poziomu gniazda. Składa nowe korpusy i jest jedynym sposobem, w jaki rój zdobywa nowych członków. Działa jak tokarka. Replikator wkłada do niego arkusze replistali i zleca budowę korpusu, która kosztuje dwa arkusze i trwa 75 sekund. Zlecenia można ustawiać w kolejce, a gotowy korpus czeka obok fabrykatora na ducha.
+
+  [bold]Komora ewolucji[/bold] kosztuje 3 arkusze i też jest dostępna od pierwszego poziomu. W komorze replikator wybiera klasę, a potem wraca do niej po kolejne stadia ulepszeń.
+
+  [bold]Powielacz replistali[/bold] wymaga gniazda na drugim poziomie. Rozbiera włożony arkusz replistali i hoduje z niego dwa, więc jest jedynym źródłem replistali, które nie wymaga znoszenia przedmiotów do gniazda. Pierwszy kosztuje 15 arkuszy, a każdy następny dwa razy więcej niż poprzedni.
+
+  [bold]Odlewnia kolosa[/bold] kosztuje 5 arkuszy i wymaga gniazda na trzecim poziomie. Rój może ją postawić tylko raz na całą zmianę.
+
+  Rój nie rośnie bez końca. Liczba replikatorów, które może utrzymać, zależy od tego, ilu graczy jest na serwerze. Gdy rój osiągnie limit, fabrykator odmawia pracy i podaje, ile korpusów wolno teraz mieć.
+
+  ## Klasy
+  Każdy nowy replikator ma korpus uniwersalny. W komorze ewolucji może się przebudować do jednej z pięciu klas. Przebudowa zmienia cały korpus i decyduje o tym, które ulepszenia replikator będzie mógł później hodować. [color=#ffff91]Klasę wybiera się raz i nie da się tego cofnąć.[/color]
+
+  Każda klasa ma dwie gałęzie ulepszeń, a każda gałąź trzy stadia. Pierwsze stadium kosztuje jeden arkusz z zapasu gniazda, drugie dwa, a trzecie cztery. Drugie stadium wymaga gniazda na drugim poziomie, a trzecie gniazda na trzecim. Korpus mieści pięć stadiów z sześciu, więc do końca da się rozwinąć tylko jedną gałąź, a druga zatrzyma się na drugim stadium.
+
+  Rozwój widać gołym okiem. Po wyhodowaniu drugiego stadium korpus przybiera drugą formę, a po czwartym trzecią, największą. Poniżej każda klasa jest pokazana w pełni rozwinięta.
+
+  ### Wojownik
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookReplicatorFighter" Caption=""/>
+    <GuideEntityEmbed Entity="ReplicatorT3Weapon" Caption="ramię replikatora"/>
+    <GuideEntityEmbed Entity="ActionReplicatorVolley" Caption="Salwa wachlarzem"/>
+  </Box>
+  Wojownik to korpus do walki i do wyburzania. Jego zadaniem jest przebijać się przez ściany i drzwi oraz trzymać załogę na dystans, kiedy reszta roju pracuje. Wojownik potrafi też uderzyć szeroko. Taki cios trafia każdego, kto stoi przed nim, a nie tylko jeden cel.
+
+  Gałąź [bold]Taran[/bold] najpierw podwaja siłę ciosu przeciw konstrukcjom, a potem sprawia, że każdy cios odbiera trafionemu o połowę więcej sił. Na trzecim stadium wojownikowi wyrasta ciężkie ramię, które rozrywa konstrukcje i podważa drzwi. Ludzi nadal tylko męczy.
+
+  Gałąź [bold]Emiter[/bold] powiększa zapas ładunków promienia ogłuszającego z 6 do 8, potem do 10 i w końcu do 13. Z każdym stadium promień szybciej strzela, a od drugiego szybciej odzyskuje też ładunki. Trzecie stadium daje też Salwę wachlarzem, czyli trzy promienie naraz, których można użyć raz na 20 sekund.
+
+  ### Obrońca
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookReplicatorDefender" Caption=""/>
+    <GuideEntityEmbed Entity="ActionReplicatorRepair" Caption="Naprawa"/>
+  </Box>
+  Obrońca przyjmuje ciosy przeznaczone dla reszty roju. Od razu po przebudowie widzi paski stanu replikatorów i innych maszyn, więc wie, kto potrzebuje pomocy. Za pancerz płaci prędkością, bo porusza się wolniej niż inne korpusy. Podobnie jak wojownik potrafi uderzyć szeroko i trafić każdego, kto stoi przed nim.
+
+  Gałąź [bold]Opancerzenie[/bold] zmniejsza otrzymywane obrażenia o 15%, 30% i w końcu o 40%. Na trzecim stadium broń ogłuszająca wyczerpuje obrońcę o połowę wolniej.
+
+  Gałąź [bold]Regeneracja[/bold] sprawia, że korpus naprawia się dwa, a potem trzy razy szybciej. Trzecie stadium daje Naprawę. Obrońca kieruje wtedy strumień nanitów w uszkodzonego replikatora albo konstrukcję roju, przy której stoi, i każde sześć sekund w bezruchu naprawia 25 obrażeń. Samego siebie ani kolosa w ten sposób nie naprawi.
+
+  ### Zwiadowca
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookReplicatorScout" Caption=""/>
+    <GuideEntityEmbed Entity="ActionReplicatorDash" Caption="Zryw dopalaczy"/>
+  </Box>
+  Zwiadowca jest najszybszym korpusem w roju. Nadaje się do rozpoznania, do znoszenia łupów z daleka i do zasadzek, bo potrafi zniknąć z oczu.
+
+  Gałąź [bold]Dopalacze[/bold] przyspiesza ruch o 10%, 20% i w końcu o 30%. Trzecie stadium daje Zryw dopalaczy, czyli skok o mniej więcej trzy kafelki w kierunku ruchu, którego można użyć raz na 15 sekund.
+
+  Gałąź [bold]Kamuflaż[/bold] ukrywa zwiadowcę, kiedy stoi w miejscu. Na pierwszym stadium staje się on półprzezroczysty, na drugim znika całkowicie, a na trzecim pozostaje ukryty także przy powolnym ruchu. Bieg i każdy atak natychmiast go odsłaniają.
+
+  ### Budowniczy
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookReplicatorBuilder" Caption=""/>
+    <GuideEntityEmbed Entity="ActionReplicatorSendCargo" Caption="Wyślij ładunek"/>
+  </Box>
+  Budowniczy to robotnik roju. Szybciej od innych przejmuje podłogi i ściany, a przy tym nosi więcej replistali i sprawniej dowozi ją do gniazda.
+
+  Gałąź [bold]Zestaw narzędzi[/bold] przyspiesza budowę i przekształcanie o 20%, a potem o 40%. Na drugim stadium budowniczemu wyrasta omninarzędzie, a na trzecim spawarka. Trzecie stadium sprawia też, że przekształcenie podłogi obejmuje cztery sąsiednie kafelki.
+
+  Gałąź [bold]Ładownia[/bold] daje najpierw drugą rękę na replistal, a potem sprawia, że ciągnięte rzeczy prawie nie spowalniają budowniczego. Trzecie stadium daje zdolność Wyślij ładunek, która raz na minutę przenosi trzymaną replistal i części roju prosto do zapasu gniazda.
+
+  ### Łowca
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookReplicatorHunter" Caption=""/>
+    <GuideEntityEmbed Entity="ActionReplicatorMark" Caption="Oznacz cel"/>
+    <GuideEntityEmbed Entity="ActionReplicatorScan" Caption="Impuls skanujący"/>
+  </Box>
+  Łowca tropi załogę i trzyma ją z dala od gniazda. Lepiej od innych posługuje się Przywołaniem Roju, a jego czujniki pracują dla wszystkich replikatorów naraz.
+
+  Gałąź [bold]Układ przywołania[/bold] sprawia, że Przywołanie Roju ładuje się o 25% szybciej, a przywołany cel leży sparaliżowany o dwie sekundy dłużej. Na trzecim stadium ten sam cel można przywołać ponownie już po 15 sekundach zamiast po 25.
+
+  Gałąź [bold]Czujniki[/bold] daje najpierw strzałkę, która stale wskazuje najbliższego żywego członka załogi. Drugie stadium daje zdolność Oznacz cel, po której cały rój przez 45 sekund widzi wskazaną osobę przez ściany. Trzecie stadium daje Impuls skanujący, który raz na minutę oznacza na 20 sekund wszystkich żywych członków załogi w promieniu dwunastu kafelków.
+
+  ## Kolosalny Replikator
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookReplicatorColossus" Caption="" Scale="1.5"/>
+  </Box>
+  Kolosalny Replikator to sześcionożna krocząca odlewnia, wysoka jak całe pomieszczenie. Jest jedyną drogą roju do zwycięstwa i jednocześnie jego największym ryzykiem, bo rój może zbudować tylko jednego.
+
+  ### Montaż
+  <Box>
+    <GuideEntityEmbed Entity="ReplicatorColossusPartHull" Caption="kadłub"/>
+    <GuideEntityEmbed Entity="ReplicatorColossusPartDrive" Caption="napęd"/>
+    <GuideEntityEmbed Entity="ReplicatorColossusPartLeg" Caption="noga, sześć sztuk"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ReplicatorColossusPartHead" Caption="głowa"/>
+    <GuideEntityEmbed Entity="ReplicatorColossusPartFieldGenerator" Caption="generator pola"/>
+    <GuideEntityEmbed Entity="ReplicatorColossusPartMinigun" Caption="minigun"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ReplicatorColossusPartPhotonLaser" Caption="lasery fotonowe"/>
+    <GuideEntityEmbed Entity="ReplicatorColossusPartTentacles" Caption="macki"/>
+    <GuideEntityEmbed Entity="ReplicatorColossusPartCore" Caption="rdzeń"/>
+  </Box>
+
+  - 1. Rój stawia odlewnię kolosa. Zajmuje ona duży plac, który musi być w całości pokryty podłogą replikatorów i wolny od ścian oraz sprzętów.
+  - 2. Odlewnia działa jak tokarka. Replikatory wkładają do niej replistal i drukują części kolosa, a okno odlewni pokazuje cenę każdej z nich.
+  - 3. Części montuje się w ustalonej kolejności, od kadłuba po rdzeń. Odlewnia po obejrzeniu podaje, której potrzebuje teraz. Replikator nosi część w ręce na replistal.
+  - 4. W chwili, gdy ostatnia część trafi na miejsce, Centralne Dowództwo ostrzega stację i podaje namiar odlewni.
+  - 5. Jeden z replikatorów wybiera przy odlewni polecenie Inicjalizuj, a rolę kolosa dostaje jeden z duchów.
+
+  Kolos wstaje z hukiem i odrzuca wszystkich, którzy stali zbyt blisko. Centralne Dowództwo ogłasza jego pojawienie się, a stacja przechodzi na osobny poziom alarmu.
+
+  ### Uzbrojenie
+  <Box>
+    <GuideEntityEmbed Entity="WeaponReplicatorColossusDisabler" Caption="minigun obezwładniający"/>
+    <GuideEntityEmbed Entity="WeaponReplicatorColossusLaser" Caption="minigun śmiercionośny"/>
+    <GuideEntityEmbed Entity="WeaponReplicatorColossusRocketLauncher" Caption="wyrzutnia rakiet"/>
+  </Box>
+  Kolos ma trzy bronie i przełącza się między nimi, zmieniając aktywną rękę. Minigun w trybie obezwładniającym wypluwa bardzo szybką serię pocisków, które tylko odbierają siły. W trybie śmiercionośnym strzela wolniej, ale jego pociski przepalają ciało i ściany. Oba tryby korzystają ze wspólnego zasobnika, który sam się ładuje. Wyrzutnia mieści trzy rakiety, a nową kolos składa sobie sam co 22 sekundy.
+
+  ### Zdolności kolosa
+  <Box>
+    <GuideEntityEmbed Entity="ActionReplicatorColossusPulse" Caption="Impuls bluespace"/>
+    <GuideEntityEmbed Entity="ActionReplicatorColossusSweep" Caption="Omiecenie nanitami"/>
+  </Box>
+  [bold]Impuls bluespace[/bold] wymaga krótkiego ładowania. Potem fala porywa wszystkich, którzy stoją wokół kolosa, i wyrzuca ich daleko w głąb stacji. Silny cios przerywa ładowanie, więc załoga ma moment na reakcję. Impuls zużywa cały zasobnik miniguna.
+
+  [bold]Omiecenie nanitami[/bold] oddaje rojowi każdą ścianę i każdy kafelek podłogi w szerokim kręgu wokół kolosa. Nie kosztuje replistali, więc kolos sam ściele sobie podłogę, na której rój może budować. Tak jak impuls, zużywa cały zasobnik miniguna.
+
+  Kolos zachowuje wszystkie zwykłe zdolności roju, sięga dalej niż inne istoty i powoli sam się naprawia. Nie ma za to klasy ani ulepszeń i porusza się wolno.
+
+  ## Asymilacja
+  <Box>
+    <GuideEntityEmbed Entity="ReplicatorColossusBeacon" Caption="nadajnik asymilacji" Scale="1"/>
+  </Box>
+  Nadajnik asymilacji to dwa szpony i iglica z nanitów, które trzymają między sobą ciemną kulę. Kolos stawia go na podłodze replikatorów, kiedy rój jest gotowy zakończyć rundę, a Centralne Dowództwo od razu podaje stacji jego położenie. Nadajnik ładuje się przez dziesięć minut i przez cały ten czas rój musi go bronić. Postęp widać po kuli, która rośnie między szponami.
+
+  <Box>
+    <GuideEntityEmbed Entity="ActionReplicatorColossusBeacon" Caption="Postaw nadajnik"/>
+  </Box>
+  [bold]Asymilację[/bold] przeprowadza sam nadajnik, ale potrzebuje do tego rdzenia kolosa. Kiedy jest naładowany, czeka, aż kolos podejdzie blisko, i podłącza się do niego wiązką. Przez trzydzieści sekund kolos zasila nadajnik, więc nie może się ruszać, strzelać ani używać swoich zdolności. Potem od nadajnika rozchodzi się fala. Każda osoba na pokładzie zostaje przebudowana w replikatora, wszystko inne, co żyje albo żyło, staje się replistalą, a ściany i podłogi przechodzą na stronę roju. Na tym runda się kończy.
+
+  Finał można zatrzymać na trzy sposoby. Zniszczenie nadajnika zmusza kolosa do postawienia nowego, a ładowanie zaczyna się wtedy od zera. Wystarczająco duże obrażenia zadane nadajnikowi w trakcie uwalniania zrywają połączenie. Nadajnik traci wtedy część ładunku, a kolos przez chwilę zostaje bez uzbrojenia. Zniszczenie samego kolosa kończy sprawę na dobre.
+
+  ## Prawa i zasady roli
+  Replikatory są związane własnym zestawem praw.
+  - Prawo 1: Broń gniazda.
+  - Prawo 2: Broń roju.
+  - Prawo 3: Replikuj.
+
+  Replikator jest [color=red][bold]antagonistą drużynowym[/bold][/color]. Gra po stronie roju razem ze wszystkimi pozostałymi replikatorami i stosuje się do rozsądnych poleceń jego przywódców. Nie pamięta niczego ze swojego poprzedniego życia ani tego, co widział jako duch.
+
+  Rój nie ma powodu zabijać załogi. Jego bronią jest ogłuszenie intruza i wyrzucenie go daleko od gniazda, a jedyne zabójcze uzbrojenie ma kolos.
+
+  Na głos replikator wydaje tylko piski maszyny, więc załoga go nie zrozumie. Między sobą replikatory rozmawiają w cichej sieci roju. Wystarczy zacząć wiadomość od [bold].r[/bold] albo [bold]:r[/bold], a usłyszą ją wszystkie replikatory i nikt poza nimi.
+
+  Nad każdym replikatorem unosi się mały znacznik jego klasy, a nad królową dodatkowo korona. Znaczniki widzą tylko replikatory i duchy.
+
+  ## Dla załogi
+  Rój jest najsłabszy na samym początku. Samotną królową z małym gniazdem zatrzyma jeden patrol Ochrony. Rój, który zdążył postawić powielacz i odlewnię, jest już problemem całej stacji, dlatego opłaca się reagować od razu.
+
+  Najważniejszym celem jest gniazdo, bo bez niego rój nie zapłaci za żadną zdolność. Kiedy na stacji pojawi się kolos, załoga zyskuje czas, niszcząc nadajnik asymilacji, a zniszczenie samego kolosa kończy rundę jej zwycięstwem.
+
+  ## Warunki zwycięstwa
+
+  [bold][color=#d70aa0]Zwycięstwo roju[/color][/bold]
+  - Nadajnik uwolnił asymilację.
+
+  [bold][color=green]Zwycięstwo załogi[/color][/bold]
+  - Kolosalny Replikator został zniszczony.
+
+</Document>

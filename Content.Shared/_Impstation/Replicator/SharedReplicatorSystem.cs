@@ -41,10 +41,10 @@ public abstract partial class SharedReplicatorSystem : EntitySystem
 
     private void OnMapInit(Entity<ReplicatorComponent> ent, ref MapInitEvent args)
     {
-        if (_net.IsClient)
+        if (_net.IsClient || ent.Comp.StunRayProto is not { } stunRayProto)
             return;
 
-        var stunRay = Spawn(ent.Comp.StunRayProto, Transform(ent).Coordinates);
+        var stunRay = Spawn(stunRayProto, Transform(ent).Coordinates);
         _hands.TryPickup(ent, stunRay, ent.Comp.StunRayHandId, checkActionBlocker: false);
     }
 
@@ -75,8 +75,11 @@ public abstract partial class SharedReplicatorSystem : EntitySystem
     // POLONIUM: CanAttack is also checked without a swing, e.g. for the execution verb in the context menu
     private void AttackFailPopup(Entity<ReplicatorComponent> ent, AttackAttemptEvent args, string message)
     {
-        if (args.Weapon != null)
-            _popup.PopupEntity(Loc.GetString(message), ent, ent, PopupType.MediumCaution);
+        if (args.Weapon == null || !_timing.IsFirstTimePredicted || _timing.CurTime < ent.Comp.NextAttackFailPopup)
+            return;
+
+        ent.Comp.NextAttackFailPopup = _timing.CurTime + ent.Comp.AttackFailPopupCooldown;
+        _popup.PopupClient(Loc.GetString(message), ent, ent, PopupType.MediumCaution);
     }
 
     private void OnCombatToggle(Entity<ReplicatorComponent> ent, ref ToggleCombatActionEvent args)

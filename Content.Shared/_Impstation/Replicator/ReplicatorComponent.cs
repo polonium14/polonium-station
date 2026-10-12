@@ -14,13 +14,13 @@ using Content.Shared.Teleportation.Systems;
 
 namespace Content.Shared._Impstation.Replicator;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState] // POLONIUM: state
 public sealed partial class ReplicatorComponent : Component
 {
     /// <summary>
     /// If a replicator is Queen, it will spawn a nest when it spawns.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // POLONIUM: networked, the crown passes on
     public bool Queen;
 
     /// <summary>
@@ -66,7 +66,7 @@ public sealed partial class ReplicatorComponent : Component
     public EntProtoId SpawnNewNestAction = "ActionReplicatorSpawnNest";
 
     [DataField]
-    public EntProtoId StunRayProto = "ReplicatorStunRay";
+    public EntProtoId? StunRayProto = "ReplicatorStunRay";
 
     [DataField]
     public string StunRayHandId = "stun_ray";
@@ -92,6 +92,12 @@ public sealed partial class ReplicatorComponent : Component
 
     [DataField]
     public float TeleportPreyMaxRange = 16f;
+
+    [DataField]
+    public TimeSpan AttackFailPopupCooldown = TimeSpan.FromSeconds(2);
+
+    [ViewVariables]
+    public TimeSpan NextAttackFailPopup;
     // POLONIUM end
 
     [DataField]
@@ -108,10 +114,21 @@ public sealed partial class ReplicatorComponent : Component
 
     // prevent adding additional nest action if someone ghosts out and re-attaches
     public bool HasSpawnedNest;
+
+    // POLONIUM
+    [ViewVariables]
+    public EntityUid? NestAction;
+
+    /// <summary>
+    /// How long a queen whose player has disconnected keeps the crown.
+    /// </summary>
+    [DataField]
+    public TimeSpan QueenAbsenceGrace = TimeSpan.FromMinutes(3);
 }
 
 [Serializable, NetSerializable]
 public enum ReplicatorVisuals : byte
 {
-    Combat
+    Combat,
+    Thrust // POLONIUM
 }

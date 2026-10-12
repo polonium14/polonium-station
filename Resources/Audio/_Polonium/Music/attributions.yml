@@ -87,3 +87,8 @@
   license: "Custom"
   copyright: "Girl from Pelatuma by Que Nos Paso."
   source: "https://www.youtube.com/watch?v=jj0ChLVTpaA"
+
+- files: ["boss_fight_one.ogg"]
+  license: "Custom"
+  copyright: "Boss Fight One by bouncyrunner on Pixabay. Converted from MP3 to OGG."
+  source: "https://pixabay.com/music/upbeat-boss-fight-one-400508/"

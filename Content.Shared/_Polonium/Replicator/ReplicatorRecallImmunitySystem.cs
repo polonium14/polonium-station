@@ -1,4 +1,5 @@
 using Content.Shared.Alert;
+using Content.Shared.Inventory;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
@@ -9,6 +10,7 @@ public sealed partial class ReplicatorRecallImmunitySystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private AlertsSystem _alerts = default!;
+    [Dependency] private InventorySystem _inventory = default!;
 
     public override void Initialize()
     {
@@ -35,6 +37,20 @@ public sealed partial class ReplicatorRecallImmunitySystem : EntitySystem
     public bool IsImmune(EntityUid uid)
     {
         return TryComp<ReplicatorRecallImmuneComponent>(uid, out var immune) && _timing.CurTime < immune.EndTime;
+    }
+
+    public bool IsWarded(EntityUid uid)
+    {
+        if (!_inventory.TryGetContainerSlotEnumerator(uid, out var slots, SlotFlags.WITHOUT_POCKET))
+            return false;
+
+        while (slots.NextItem(out var item))
+        {
+            if (HasComp<ReplicatorWardComponent>(item))
+                return true;
+        }
+
+        return false;
     }
 
     public void Apply(EntityUid uid, TimeSpan duration)

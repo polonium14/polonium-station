@@ -1,0 +1,74 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Netguardian Prime taken from tgstation at https://github.com/tgstation/tgstation/pull/79522 (via Frontier Station), scaled down and recoloured for Polonium Station by nikitosych",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "defender1",
+            "directions": 4
+        },
+        {
+            "name": "defender1_combat",
+            "directions": 4
+        },
+        {
+            "name": "defender1_dead"
+        },
+        {
+            "name": "defender2",
+            "directions": 4
+        },
+        {
+            "name": "defender2_combat",
+            "directions": 4
+        },
+        {
+            "name": "defender2_dead"
+        },
+        {
+            "name": "defender3",
+            "directions": 4
+        },
+        {
+            "name": "defender3_combat",
+            "directions": 4
+        },
+        {
+            "name": "defender3_dead"
+        },
+        {
+            "name": "defender1_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "defender2_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "defender3_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        }
+    ]
+}

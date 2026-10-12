@@ -1,0 +1,232 @@
+- type: replicatorModule
+  id: Thrusters
+  name: replicator-module-thrusters-name
+  stages:
+  - description: replicator-module-thrusters-1
+    cost: 100
+    speedMultiplier: 1.1
+  - description: replicator-module-thrusters-2
+    cost: 200
+    minNestLevel: 2
+    speedMultiplier: 1.2
+  - description: replicator-module-thrusters-3
+    cost: 400
+    minNestLevel: 3
+    speedMultiplier: 1.3
+    actions: [ ActionReplicatorDash ]
+
+- type: replicatorModule
+  id: Cloak
+  name: replicator-module-cloak-name
+  stages:
+  - description: replicator-module-cloak-1
+    cost: 100
+    components:
+    - type: Stealth
+      minVisibility: 0.1
+      lastVisibility: 1
+      enabledOnDeath: false
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.4
+      movementVisibilityRate: 0.3
+  - description: replicator-module-cloak-2
+    cost: 200
+    minNestLevel: 2
+    components:
+    - type: Stealth
+      minVisibility: -1
+      lastVisibility: 1
+      enabledOnDeath: false
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.4
+      movementVisibilityRate: 0.3
+  - description: replicator-module-cloak-3
+    cost: 400
+    minNestLevel: 3
+    components:
+    - type: Stealth
+      minVisibility: -1
+      lastVisibility: 1
+      enabledOnDeath: false
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.4
+      movementVisibilityRate: 0
+    - type: ReplicatorSprintReveal
+      visibilityRate: 0.6
+
+- type: replicatorModule
+  id: Plating
+  name: replicator-module-plating-name
+  stages:
+  - description: replicator-module-plating-1
+    cost: 100
+    damageCoefficient: 0.85
+  - description: replicator-module-plating-2
+    cost: 200
+    minNestLevel: 2
+    damageCoefficient: 0.7
+  - description: replicator-module-plating-3
+    cost: 400
+    minNestLevel: 3
+    damageCoefficient: 0.6
+    components:
+    - type: StaminaResistance
+      damageCoefficient: 0.5
+      worn: false
+
+- type: replicatorModule
+  id: Emitter
+  name: replicator-module-emitter-name
+  stages:
+  - description: replicator-module-emitter-1
+    cost: 100
+    fireRateMultiplier: 1.2
+    gunCapacityBonus: 2
+  - description: replicator-module-emitter-2
+    cost: 200
+    minNestLevel: 2
+    fireRateMultiplier: 1.4
+    gunCapacityBonus: 4
+    gunRechargeMultiplier: 0.85
+  - description: replicator-module-emitter-3
+    cost: 400
+    minNestLevel: 3
+    fireRateMultiplier: 1.5
+    gunCapacityBonus: 7
+    gunRechargeMultiplier: 0.7
+    actions: [ ActionReplicatorVolley ]
+
+- type: replicatorModule
+  id: Ram
+  name: replicator-module-ram-name
+  stages:
+  - description: replicator-module-ram-1
+    cost: 100
+    meleeBonus:
+      types:
+        Structural: 8
+  - description: replicator-module-ram-2
+    cost: 200
+    minNestLevel: 2
+    meleeBonus:
+      types:
+        Structural: 8
+    components:
+    - type: StaminaDamageOnHit
+      damage: 30
+      sound: /Audio/Weapons/egloves.ogg
+  - description: replicator-module-ram-3
+    cost: 400
+    minNestLevel: 3
+    meleeBonus:
+      types:
+        Structural: 8
+    items: [ ReplicatorT3Weapon ]
+
+- type: replicatorModule
+  id: Toolkit
+  name: replicator-module-toolkit-name
+  stages:
+  - description: replicator-module-toolkit-1
+    cost: 100
+    buildTimeMultiplier: 0.8
+  - description: replicator-module-toolkit-2
+    cost: 200
+    minNestLevel: 2
+    buildTimeMultiplier: 0.6
+    items: [ OmnitoolUnremoveable ]
+  - description: replicator-module-toolkit-3
+    cost: 400
+    minNestLevel: 3
+    buildTimeMultiplier: 0.6
+    floorSpread: true
+    items: [ WelderExperimentalUnremoveable ]
+
+- type: replicatorModule
+  id: Regeneration
+  name: replicator-module-regeneration-name
+  stages:
+  - description: replicator-module-regeneration-1
+    cost: 100
+    components:
+    - type: PassiveDamage
+      allowedStates:
+      - Alive
+      damage:
+        types:
+          Blunt: -1
+          Slash: -1
+          Piercing: -1
+          Heat: -1
+  - description: replicator-module-regeneration-2
+    cost: 200
+    minNestLevel: 2
+    components:
+    - type: PassiveDamage
+      allowedStates:
+      - Alive
+      damage:
+        types:
+          Blunt: -1.5
+          Slash: -1.5
+          Piercing: -1.5
+          Heat: -1.5
+  - description: replicator-module-regeneration-3
+    cost: 400
+    minNestLevel: 3
+    actions: [ ActionReplicatorRepair ]
+
+- type: replicatorModule
+  id: Capture
+  name: replicator-module-capture-name
+  stages:
+  - description: replicator-module-capture-1
+    cost: 100
+    teleportDelayMultiplier: 0.75
+  - description: replicator-module-capture-2
+    cost: 200
+    minNestLevel: 2
+    teleportDelayMultiplier: 0.75
+    teleportParalyzeBonus: 2
+  - description: replicator-module-capture-3
+    cost: 400
+    minNestLevel: 3
+    teleportDelayMultiplier: 0.75
+    teleportParalyzeBonus: 2
+    teleportImmunityMultiplier: 0.6
+
+- type: replicatorModule
+  id: Cargo
+  name: replicator-module-cargo-name
+  stages:
+  - description: replicator-module-cargo-1
+    cost: 100
+    sheetHands: 1
+  - description: replicator-module-cargo-2
+    cost: 200
+    minNestLevel: 2
+    towFrictionMultiplier: 0.2
+    towAccelerationMultiplier: 1.5
+  - description: replicator-module-cargo-3
+    cost: 400
+    minNestLevel: 3
+    towFrictionMultiplier: 0.2
+    towAccelerationMultiplier: 1.5
+    actions: [ ActionReplicatorSendCargo ]
+
+- type: replicatorModule
+  id: Sensors
+  name: replicator-module-sensors-name
+  stages:
+  - description: replicator-module-sensors-1
+    cost: 100
+    components:
+    - type: ReplicatorTracker
+  - description: replicator-module-sensors-2
+    cost: 200
+    minNestLevel: 2
+    actions: [ ActionReplicatorMark ]
+  - description: replicator-module-sensors-3
+    cost: 400
+    minNestLevel: 3
+    actions: [ ActionReplicatorScan ]

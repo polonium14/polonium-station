@@ -134,11 +134,10 @@
   parent: BaseStructure
   id: ReplicatorFabricator
   name: replicator fabricator
-  description: A nanite forge that assembles new replicator shells out of the hive's replisteel.
+  description: A nanite forge that assembles new replicator shells out of replisteel.
   components:
   - type: Sprite
     sprite: _Polonium/Structures/Replicator/fabricator.rsi
-    drawdepth: Mobs
     layers:
     - state: base
       map: ["base"]
@@ -154,10 +153,23 @@
           Working: { state: working }
           Ready: { state: ready }
   - type: ReplicatorFabricator
-    shellCost: 200
-    productionTime: 30
     finishSound:
       path: /Audio/Machines/ding.ogg
+  - type: Lathe
+    staticPacks:
+    - ReplicatorFabricator
+  - type: MaterialStorage
+    materialWhiteList:
+    - Replisteel
+    ignoreColor: true
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+    requiresComplex: false
+    requireActiveHand: false
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
   - type: InteractionOutline
   - type: PointLight
     radius: 1.6
@@ -172,6 +184,115 @@
     - trigger:
         !type:DamageTrigger
         damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Structure
+    - ReplicatorStructure
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  parent: BaseStructure
+  id: ReplicatorDuplicator
+  name: replisteel duplicator
+  description: A vat of nanites that takes a sheet of replisteel apart and grows two out of it.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Replicator/duplicator.rsi
+    layers:
+    - state: base
+    - state: idle
+      map: ["enum.LatheVisualLayers.IsRunning"]
+      shader: unshaded
+  - type: Appearance
+  - type: ReplicatorDuplicator
+  - type: Lathe
+    idleState: idle
+    runningState: working
+    staticPacks:
+    - ReplicatorDuplicator
+  - type: MaterialStorage
+    materialWhiteList:
+    - Replisteel
+    ignoreColor: true
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+    requiresComplex: false
+    requireActiveHand: false
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
+  - type: InteractionOutline
+  - type: PointLight
+    radius: 1.6
+    energy: 1.2
+    color: "#e88859"
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Structure
+    - ReplicatorStructure
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  parent: BaseStructure
+  id: ReplicatorEvolutionChamber
+  name: evolution chamber
+  description: A cradle of probing nanite arms. A replicator that settles into it is rebuilt for one role and then grown further, stage by stage.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Replicator/chamber.rsi
+    layers:
+    - state: base
+    - state: idle
+      shader: unshaded
+  - type: ReplicatorEvolutionChamber
+    installSound:
+      path: /Audio/Items/rped.ogg
+  - type: ActivatableUI
+    key: enum.ReplicatorEvolutionUiKey.Key
+    requiresComplex: false
+    requireActiveHand: false
+  - type: UserInterface
+    interfaces:
+      enum.ReplicatorEvolutionUiKey.Key:
+        type: ReplicatorEvolutionBoundUserInterface
+  - type: InteractionOutline
+  - type: PointLight
+    radius: 1.6
+    energy: 1.2
+    color: "#8800a3"
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -223,6 +344,36 @@
   - type: TimedDespawn
     lifetime: 60
 
+- type: entity
+  parent: EffectReplicatorBase
+  id: EffectReplicatorRepair
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    snapCardinals: false
+    layers:
+    - state: repair
+      shader: unshaded
+  - type: PointLight
+    radius: 1.4
+    energy: 1.2
+    color: "#5cff8a"
+  - type: TimedDespawn
+    lifetime: 300
+
+- type: entity
+  parent: EffectReplicatorBase
+  id: EffectReplicatorScan
+  components:
+  - type: Sprite
+    scale: 3, 3
+    layers:
+    - state: scan
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.6
+
 - type: constructionGraph
   id: ReplicatorWall
   start: start
@@ -239,7 +390,7 @@
       - !type:DeleteEntity {}
       steps:
       - tool: Welding
-        doAfter: 12
+        doAfter: 70.125
   - node: reinforcedWall
     entity: WallReplicatorReinforced
     edges:
@@ -251,4 +402,4 @@
       - !type:DeleteEntity {}
       steps:
       - tool: Welding
-        doAfter: 20
+        doAfter: 129.73125

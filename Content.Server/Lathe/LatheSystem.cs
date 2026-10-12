@@ -9,6 +9,7 @@ using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Stack;
+using Content.Shared._Polonium.Lathe; // POLONIUM
 using Content.Shared.Atmos;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -503,6 +504,13 @@ namespace Content.Server.Lathe
         {
             if (ProtoMan.TryIndex(args.ID, out LatheRecipePrototype? recipe))
             {
+                // POLONIUM
+                var attempt = new LatheQueueAttemptEvent(args.Actor, recipe, args.Quantity);
+                RaiseLocalEvent(uid, ref attempt);
+                if (attempt.Cancelled)
+                    return;
+                // POLONIUM end
+
                 if (TryAddToQueue(uid, recipe, args.Quantity, component))
                 {
                     _adminLogger.Add(LogType.Action,
