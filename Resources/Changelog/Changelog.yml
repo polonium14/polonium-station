@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: kontakt
-  changes:
-  - message: Throwing croissants no longer have a throwing knife in-hand sprite.
-    type: Fix
-  id: 9552
-  time: '2026-02-28T14:37:26.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43066
 - author: ScarKy0
   changes:
   - message: Makeshift Juicers now correctly craft in your hands instead of being
@@ -4273,3 +4266,10 @@
   id: 10046
   time: '2026-10-12T17:17:24.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1100
+- author: Nikita
+  changes:
+  - message: "Ogromna aktualizacja replikator\xF3w"
+    type: Add
+  id: 10047
+  time: '2026-10-12T17:21:42.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1103
