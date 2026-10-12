@@ -8,9 +8,9 @@
     itemIconStyle: BigAction
     priority: -10
   - type: Sprite
-    sprite: Objects/Devices/chameleon_projector.rsi
+    sprite: _Polonium/Interface/Actions/morph.rsi
     layers:
-    - state: icon
+    - state: mimic
   - type: TargetAction
     checkCanAccess: false
     range: 10
@@ -28,9 +28,9 @@
     itemIconStyle: BigAction
     priority: -11
   - type: Sprite
-    sprite: _Polonium/Mobs/morph.rsi
+    sprite: _Polonium/Interface/Actions/morph.rsi
     layers:
-    - state: alive
+    - state: reveal
   - type: InstantAction
     event: !type:MorphRevealActionEvent
 
@@ -44,9 +44,9 @@
     itemIconStyle: BigAction
     priority: -12
   - type: Sprite
-    sprite: Interface/Actions/devour.rsi
+    sprite: _Polonium/Interface/Actions/morph.rsi
     layers:
-    - state: icon-on
+    - state: stomach
   - type: InstantAction
     event: !type:MorphStomachActionEvent
 
@@ -75,6 +75,10 @@
   name: Devour
   description: Swallow a dead or dying creature, or an item.
   components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/morph.rsi
+    layers:
+    - state: devour
   - type: EntityTargetAction
     canTargetSelf: false
     whitelist:

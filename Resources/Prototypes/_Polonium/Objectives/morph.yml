@@ -21,8 +21,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Interface/Actions/devour.rsi
-      state: icon
+      sprite: _Polonium/Interface/Actions/morph.rsi
+      state: devour
   - type: NumberObjective
     min: 2
     max: 4
