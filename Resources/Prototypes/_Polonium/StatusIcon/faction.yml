@@ -1,0 +1,69 @@
+- type: factionIcon
+  abstract: true
+  id: ReplicatorHiveIcon
+  priority: 11
+  hideOnStealth: false
+  visibleToGhosts: true
+  locationPreference: Left
+  showTo:
+    components:
+    - ShowAntagIcons
+    - Replicator
+
+- type: factionIcon
+  parent: ReplicatorHiveIcon
+  id: ReplicatorHiveUnclassed
+  icon:
+    sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
+    state: Unclassed
+
+- type: factionIcon
+  parent: ReplicatorHiveIcon
+  id: ReplicatorHiveFighter
+  icon:
+    sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
+    state: Fighter
+
+- type: factionIcon
+  parent: ReplicatorHiveIcon
+  id: ReplicatorHiveDefender
+  icon:
+    sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
+    state: Defender
+
+- type: factionIcon
+  parent: ReplicatorHiveIcon
+  id: ReplicatorHiveScout
+  icon:
+    sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
+    state: Scout
+
+- type: factionIcon
+  parent: ReplicatorHiveIcon
+  id: ReplicatorHiveBuilder
+  icon:
+    sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
+    state: Builder
+
+- type: factionIcon
+  parent: ReplicatorHiveIcon
+  id: ReplicatorHiveHunter
+  icon:
+    sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
+    state: Hunter
+
+- type: factionIcon
+  parent: ReplicatorHiveIcon
+  id: ReplicatorHiveQueen
+  locationPreference: Right
+  icon:
+    sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
+    state: Queen
+
+- type: factionIcon
+  parent: ReplicatorHiveIcon
+  id: ReplicatorHiveColossus
+  offsetHorizontal: 24
+  icon:
+    sprite: /Textures/_Polonium/Interface/Misc/replicator_colossus_icon.rsi
+    state: Colossus

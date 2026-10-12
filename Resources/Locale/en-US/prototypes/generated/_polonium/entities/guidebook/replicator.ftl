@@ -1,0 +1,14 @@
+ent-BaseGuidebookReplicator = { "" }
+    .desc = { "" }
+ent-GuidebookReplicatorFighter = fighter replicator
+    .desc = { ent-BaseGuidebookReplicator.desc }
+ent-GuidebookReplicatorDefender = defender replicator
+    .desc = { ent-BaseGuidebookReplicator.desc }
+ent-GuidebookReplicatorScout = scout replicator
+    .desc = { ent-BaseGuidebookReplicator.desc }
+ent-GuidebookReplicatorBuilder = builder replicator
+    .desc = { ent-BaseGuidebookReplicator.desc }
+ent-GuidebookReplicatorHunter = hunter replicator
+    .desc = { ent-BaseGuidebookReplicator.desc }
+ent-GuidebookReplicatorColossus = Colossal Replicator
+    .desc = { ent-BaseGuidebookReplicator.desc }

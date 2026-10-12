@@ -1,0 +1,6 @@
+- type: soundCollection
+  id: ReplicatorColossusScreams
+  files:
+  - /Audio/_Polonium/Voice/Replicator/colossus_scream.ogg
+  - /Audio/_Polonium/Voice/Replicator/colossus_scream2.ogg
+  - /Audio/_Polonium/Voice/Replicator/colossus_scream3.ogg

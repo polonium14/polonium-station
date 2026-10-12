@@ -168,6 +168,17 @@
   - type: LayerChangeOnWeld
     unWeldedLayer: AirlockLayer
     weldedLayer: WallLayer
+  - type: Fixtures # POLONIUM: upstream fix, small mobs squeeze under airlocks again
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
   - type: DoorSignalControl
   - type: DeviceNetwork
     deviceNetId: Wireless

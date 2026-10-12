@@ -145,6 +145,7 @@ guide-entry-space-ninja = Space Ninja
 guide-entry-thieves = Thieves
 guide-entry-wizard = Wizard
 guide-entry-xenoborgs = Xenoborgs
+guide-entry-replicators = Replicators
 guide-entry-malfunctioningai = Malfunctioning AI
 guide-entry-changelings = Changelings
 

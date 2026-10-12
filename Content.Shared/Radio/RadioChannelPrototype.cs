@@ -44,4 +44,11 @@ public sealed partial class RadioChannelPrototype : IPrototype
     /// </summary>
     [DataField]
     public bool LongRange;
+
+    // POLONIUM
+    /// <summary>
+    /// Whether intrinsic transmitters send on this channel without saying anything aloud, accents included.
+    /// </summary>
+    [DataField]
+    public bool Silent;
 }

@@ -1,12 +1,32 @@
 - type: entity
   parent: BaseAction
-  id: ActionReplicatorConvert
-  name: Convert
-  description: Nanites take over the wall or the floor you point at. Walls cost a pinch of replisteel, floors are free.
+  id: ActionReplicatorConvertFloor
+  name: Convert floor
+  description: Nanites take over the floor right under you. Costs a tenth of a sheet from the nest's stock. The hive can build only on floor like this.
   components:
   - type: Action
     itemIconStyle: NoItem
     useDelay: 0.5
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: convert_floor
+      map: ["enum.ActionVisuals.Icon"]
+  - type: InstantAction
+    event: !type:ReplicatorConvertFloorActionEvent
+      tile: FloorReplicator
+      cost: 10
+      effect: EffectReplicatorConvert
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorConvertWall
+  name: Convert wall
+  description: Nanites take over the wall you point at. Costs a fifth of a sheet from the nest's stock.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0.75
   - type: Sprite
     sprite: _Polonium/Interface/Actions/replicator.rsi
     layers:
@@ -17,18 +37,17 @@
     checkCanAccess: false
     repeat: true
   - type: WorldTargetAction
-    event: !type:ReplicatorConvertActionEvent
+    event: !type:ReplicatorConvertWallActionEvent
       wall: WallReplicator
       reinforcedWall: WallReplicatorReinforced
-      tile: FloorReplicator
-      wallCost: 5
+      cost: 20
       effect: EffectReplicatorConvert
 
 - type: entity
   parent: BaseAction
   id: ActionReplicatorBuildWall
   name: Build wall
-  description: Raise a replicator wall on a free tile. Costs half a sheet of replisteel.
+  description: Raise a replicator wall on a free tile of replicator floor. Costs half a sheet from the nest's stock.
   components:
   - type: Action
     itemIconStyle: NoItem
@@ -51,33 +70,9 @@
 
 - type: entity
   parent: BaseAction
-  id: ActionReplicatorBuildFabricator
-  name: Build fabricator
-  description: Build a fabricator that assembles new replicator shells. Costs four sheets of replisteel.
-  components:
-  - type: Action
-    itemIconStyle: NoItem
-    useDelay: 2
-  - type: Sprite
-    sprite: _Polonium/Interface/Actions/replicator.rsi
-    layers:
-    - state: build_fabricator
-      map: ["enum.ActionVisuals.Icon"]
-  - type: TargetAction
-    range: 2
-    checkCanAccess: false
-  - type: WorldTargetAction
-    event: !type:ReplicatorBuildActionEvent
-      prototype: ReplicatorFabricator
-      cost: 400
-      delay: 12
-      effect: EffectReplicatorBuild
-
-- type: entity
-  parent: BaseAction
   id: ActionReplicatorHolowall
   name: Project holowall
-  description: Weave a holowall that keeps the air in but lets everyone through. It fades after three minutes. Costs a pinch of replisteel.
+  description: Weave a holowall right where you stand. It keeps the air in but lets everyone through, and fades after three minutes. Costs a pinch of replisteel from the nest's stock.
   components:
   - type: Action
     itemIconStyle: NoItem
@@ -87,12 +82,217 @@
     layers:
     - state: holowall
       map: ["enum.ActionVisuals.Icon"]
-  - type: TargetAction
-    range: 3
-    checkCanAccess: false
-    repeat: true
-  - type: WorldTargetAction
-    event: !type:ReplicatorBuildActionEvent
+  - type: InstantAction
+    event: !type:ReplicatorHolowallActionEvent
       prototype: ReplicatorHolowall
       cost: 5
-      solid: false
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorColossusPulse
+  name: Bluespace pulse
+  description: Charge the field generator, then fling everyone around you far across the station. A heavy blow breaks the charge. The pulse burns through the whole minigun reserve.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 40
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator_colossus.rsi
+    layers:
+    - state: pulse
+      map: ["enum.ActionVisuals.Icon"]
+  - type: InstantAction
+    event: !type:ReplicatorColossusPulseActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorColossusSweep
+  name: Nanite sweep
+  description: Sweep the photon lasers around you, turning every wall and floor in a wide circle over to the hive. The sweep burns through the whole minigun reserve.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 30
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator_colossus.rsi
+    layers:
+    - state: sweep
+      map: ["enum.ActionVisuals.Icon"]
+  - type: InstantAction
+    event: !type:ReplicatorColossusSweepActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorColossusBeacon
+  name: Raise assimilation beacon
+  description: Raise the beacon that calls the whole swarm down on the station. It needs replicator floor, and ten minutes to charge. Once charged, it latches onto you as soon as you come close and releases the assimilation thirty seconds later. Until then you can neither move nor fire. If it falls, you can raise another, but the charge starts over.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 10
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator_colossus.rsi
+    layers:
+    - state: beacon
+      map: ["enum.ActionVisuals.Icon"]
+  - type: TargetAction
+    range: 5
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:ReplicatorColossusBeaconActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorDash
+  name: Thruster burst
+  description: Fire the thrusters and lunge about three tiles the way you are moving.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 15
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: dash
+      map: ["enum.ActionVisuals.Icon"]
+  - type: InstantAction
+    event: !type:ReplicatorDashActionEvent
+      speed: 15
+      sound:
+        path: /Audio/Magic/Cults/ClockCult/steam_whoosh.ogg
+        params:
+          volume: -6
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorVolley
+  name: Fan volley
+  description: Loose three stun rays at once in a fan towards the point you pick.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 20
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: volley
+      map: ["enum.ActionVisuals.Icon"]
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:ReplicatorVolleyActionEvent
+      projectile: BulletReplicatorDisabler
+      count: 3
+      spread: 24
+      sound:
+        path: /Audio/_Impstation/Weapons/Guns/Gunshots/stunprojector.ogg
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorRepair
+  name: Mend
+  description: Stream nanites into a damaged replicator or hive structure next to you. Six seconds of holding still mend 25 damage, and the stream keeps going until the job is done.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 1
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: repair
+      map: ["enum.ActionVisuals.Icon"]
+  - type: TargetAction
+    range: 2
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:ReplicatorRepairActionEvent
+      delay: 6
+      heal: 25
+      range: 2
+      effect: EffectReplicatorRepair
+      beam:
+        sprite: _Polonium/Effects/replicator_nanites.rsi
+        state: repair_beam
+      sound:
+        path: /Audio/Items/rped.ogg
+        params:
+          volume: -6
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorSendCargo
+  name: Send cargo
+  description: Send the replisteel and hive parts you are holding straight into the nest's stock.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 60
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: send_cargo
+      map: ["enum.ActionVisuals.Icon"]
+  - type: InstantAction
+    event: !type:ReplicatorSendCargoActionEvent
+      effect: EffectReplicatorConvert
+      sound:
+        path: /Audio/_Polonium/Effects/Replicators/teleport.ogg
+        params:
+          volume: -6
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorMark
+  name: Mark target
+  description: Tag a living target. For 45 seconds every replicator sees it through walls and is pointed towards it.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 20
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: mark
+      map: ["enum.ActionVisuals.Icon"]
+  - type: TargetAction
+    range: 12
+    checkCanAccess: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    blacklist:
+      components:
+      - Replicator
+    canTargetSelf: false
+    event: !type:ReplicatorMarkActionEvent
+      duration: 45
+      sound:
+        path: /Audio/Effects/Shuttle/radar_ping.ogg
+        params:
+          volume: -4
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorScan
+  name: Scan pulse
+  description: Sweep twelve tiles around you and tag every living crew member there for the whole hive for 20 seconds.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 60
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: scan
+      map: ["enum.ActionVisuals.Icon"]
+  - type: InstantAction
+    event: !type:ReplicatorScanActionEvent
+      range: 12
+      duration: 20
+      effect: EffectReplicatorScan
+      sound:
+        path: /Audio/Machines/sonar-ping.ogg
+        params:
+          volume: -4

@@ -1,7 +1,7 @@
 law-replicator-1 = Broń gniazda.
-law-replicator-2 = Broń ulu.
+law-replicator-2 = Broń roju.
 law-replicator-3 = Replikuj.
-laws-owner-replicatorhive = ul Replikatorów
+laws-owner-replicatorhive = rój Replikatorów
 replicator-on-replicator-attack-fail = Nie możesz skrzywdzić swoich bliskich.
 replicator-on-nest-attack-fail = Nie możesz skrzywdzić gniazda.
 replicator-nest-end-of-round =

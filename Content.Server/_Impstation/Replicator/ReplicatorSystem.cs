@@ -3,17 +3,17 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Polonium.Replicator; // POLONIUM
 using Content.Shared.Ghost;
 using Content.Shared._Impstation.Replicator;
 using Content.Shared._Impstation.SpawnedFromTracker;
-using Content.Shared.Actions;
 using Content.Shared.Mind.Components;
 
 namespace Content.Server._Impstation.Replicator;
 
 public sealed partial class ReplicatorSystem : SharedReplicatorSystem
 {
-    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private ReplicatorQueenSystem _queen = default!; // POLONIUM
 
     public override void Initialize()
     {
@@ -25,11 +25,7 @@ public sealed partial class ReplicatorSystem : SharedReplicatorSystem
 
     private void OnMindAdded(Entity<ReplicatorComponent> ent, ref MindAddedMessage args)
     {
-        if (ent.Comp.HasSpawnedNest || !ent.Comp.Queen)
-            return;
-
-        _actions.AddAction(ent, ent.Comp.SpawnNewNestAction);
-        ent.Comp.HasSpawnedNest = true;
+        _queen.RefreshNestAction(ent); // POLONIUM
     }
 
     private void OnGhostRoleSpawnerUsed(Entity<ReplicatorComponent> ent, ref GhostRoleSpawnerUsedEvent args)

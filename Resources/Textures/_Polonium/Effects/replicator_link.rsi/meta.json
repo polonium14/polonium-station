@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Made for Polonium Station by nikitosych",
+    "size": {
+        "x": 16,
+        "y": 96
+    },
+    "states": [
+        {
+            "name": "beam",
+            "delays": [
+                [
+                    0.06,
+                    0.06,
+                    0.06,
+                    0.06,
+                    0.06,
+                    0.06,
+                    0.06,
+                    0.06
+                ]
+            ]
+        }
+    ]
+}

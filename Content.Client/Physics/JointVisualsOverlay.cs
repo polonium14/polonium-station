@@ -3,6 +3,8 @@ using Content.Shared.Physics;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
+using Robust.Shared.Graphics.RSI; // POLONIUM
+using Robust.Shared.Timing; // POLONIUM
 
 namespace Content.Client.Physics;
 
@@ -14,6 +16,7 @@ public sealed class JointVisualsOverlay : Overlay
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
     private IEntityManager _entManager;
+    private readonly IGameTiming _timing = IoCManager.Resolve<IGameTiming>(); // POLONIUM
 
     public JointVisualsOverlay(IEntityManager entManager)
     {
@@ -44,7 +47,7 @@ public sealed class JointVisualsOverlay : Overlay
             if (xform.MapID != otherXform.MapID)
                 continue;
 
-            var texture = spriteSystem.Frame0(visuals.Sprite);
+            var texture = GetFrame(spriteSystem.RsiStateLike(visuals.Sprite)); // POLONIUM: animated lines
             var width = texture.Width / (float)EyeManager.PixelsPerMeter;
 
             var coordsA = xform.Coordinates;
@@ -69,4 +72,31 @@ public sealed class JointVisualsOverlay : Overlay
             worldHandle.DrawTextureRect(texture, rotate);
         }
     }
+
+    // POLONIUM start
+    private Texture GetFrame(IRsiStateLike state)
+    {
+        if (!state.IsAnimated)
+            return state.Default;
+
+        var total = 0f;
+        for (var i = 0; i < state.AnimationFrameCount; i++)
+        {
+            total += state.GetDelay(i);
+        }
+
+        if (total <= 0f)
+            return state.Default;
+
+        var time = (float) (_timing.RealTime.TotalSeconds % total);
+        for (var i = 0; i < state.AnimationFrameCount; i++)
+        {
+            time -= state.GetDelay(i);
+            if (time <= 0f)
+                return state.GetFrame(RsiDirection.South, i);
+        }
+
+        return state.Default;
+    }
+    // POLONIUM end
 }

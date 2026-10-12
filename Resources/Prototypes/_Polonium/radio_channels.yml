@@ -1,0 +1,8 @@
+- type: radioChannel
+  id: ReplicatorHive
+  name: chat-radio-replicator-hive
+  keycode: 'r'
+  frequency: 207.7
+  color: "#e455c4"
+  longRange: true
+  silent: true
