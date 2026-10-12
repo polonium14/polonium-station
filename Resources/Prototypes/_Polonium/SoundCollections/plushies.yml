@@ -1,0 +1,14 @@
+- type: soundCollection
+  id: TomaszPatrena
+  files:
+    - /Audio/Voice/Human/malescream_1.ogg
+    - /Audio/Voice/Human/malescream_2.ogg
+    - /Audio/Voice/Human/malescream_3.ogg
+    - /Audio/Voice/Human/malescream_4.ogg
+    - /Audio/Voice/Human/malescream_5.ogg
+    - /Audio/Voice/Human/malescream_6.ogg
+    - /Audio/Voice/Felinid/cat_scream2.ogg
+    - /Audio/Voice/Felinid/cat_scream3.ogg
+    - /Audio/Voice/Felinid/cat_meow1.ogg
+    - /Audio/Voice/Felinid/cat_meow2.ogg
+    - /Audio/Voice/Felinid/cat_meow3.ogg
