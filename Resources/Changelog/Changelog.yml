@@ -1,19 +1,4 @@
 ﻿Entries:
-- author: ScarKy0
-  changes:
-  - message: Makeshift Juicers now correctly craft in your hands instead of being
-      a construction ghost.
-    type: Fix
-  id: 9553
-  time: '2026-02-28T14:54:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43075
-- author: kento_da_neko
-  changes:
-  - message: The xenoborg gun now has a unique sprite
-    type: Add
-  id: 9554
-  time: '2026-02-28T15:21:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43013
 - author: Velken
   changes:
   - message: Fixed door remotes working on fences, curtains and other entities they
@@ -4273,3 +4258,18 @@
   id: 10047
   time: '2026-10-12T17:21:42.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1103
+- author: Saver310
+  changes:
+  - message: "Dodano pluszaka op\u0119tanego oficera ochrony!"
+    type: Add
+  id: 10048
+  time: '2026-10-12T19:12:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1102
+- author: Yaket
+  changes:
+  - message: "Dodano dost\u0119p do pokoju i narz\u0119dzi chemika dla medyka wi\u0119\
+      ziennego w przypadku szkieletowej za\u0142ogi"
+    type: Tweak
+  id: 10049
+  time: '2026-10-12T19:13:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1101
