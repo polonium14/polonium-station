@@ -30,6 +30,8 @@
   - Cryogenics
   - GenpopEnter
   - GenpopLeave
+  extendedAccess:
+  - Chemistry #Polonium
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
