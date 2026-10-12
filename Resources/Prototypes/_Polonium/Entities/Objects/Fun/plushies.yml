@@ -26,9 +26,10 @@
     requiresSpecialDigestion: true
     useSound:
       path: /Audio/Items/Toys/weh.ogg
+  - type: UseDelay
+    delay: 1.0
   - type: MeleeWeapon
-    wideAnimationRotation: 180
-    attackRate: 15
+    attackRate: 1
     soundHit:
       path: /Audio/Items/Toys/weh.ogg
 
@@ -95,3 +96,7 @@
     - Stir
   - type: Clothing
     sprite: _Polonium/Objects/Fun/Plushies/deathshead.rsi
+  - type: UseDelay
+    delay: 1.0
+  - type: MeleeWeapon
+    attackRate: 1
