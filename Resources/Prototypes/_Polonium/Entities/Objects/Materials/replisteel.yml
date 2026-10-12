@@ -47,6 +47,11 @@
     - Replisteel
   - type: Damageable
     damageModifierSet: Metallic
+  - type: ReplicatorBuildMenu
+  - type: UserInterface
+    interfaces:
+      enum.ReplicatorBuildUiKey.Key:
+        type: ReplicatorBuildMenuBoundUserInterface
 
 - type: entity
   parent: SheetReplisteel

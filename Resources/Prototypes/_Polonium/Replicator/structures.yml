@@ -1,0 +1,31 @@
+- type: replicatorStructure
+  id: Fabricator
+  entity: ReplicatorFabricator
+  cost: 4
+  delay: 12
+  order: 1
+
+- type: replicatorStructure
+  id: EvolutionChamber
+  entity: ReplicatorEvolutionChamber
+  cost: 3
+  delay: 12
+  order: 2
+
+- type: replicatorStructure
+  id: Duplicator
+  entity: ReplicatorDuplicator
+  cost: 15
+  costGrowth: 2
+  minNestLevel: 2
+  delay: 20
+  order: 3
+
+- type: replicatorStructure
+  id: ColossusFoundry
+  entity: ReplicatorColossusFoundry
+  cost: 5
+  minNestLevel: 3
+  delay: 20
+  range: 4
+  order: 4

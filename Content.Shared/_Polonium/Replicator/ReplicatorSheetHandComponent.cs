@@ -5,4 +5,7 @@ public sealed partial class ReplicatorSheetHandComponent : Component
 {
     [DataField]
     public string HandId = "replisteel";
+
+    [DataField]
+    public List<string> ExtraHands = new();
 }

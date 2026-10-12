@@ -36,3 +36,34 @@
   texturePath: /Textures/Effects/fire.rsi
   fireStates: 3
   temperature: 800
+
+- type: explosion
+  id: ReplicatorColossus
+  damagePerIntensity:
+    types:
+      Heat: 5
+      Blunt: 5
+      Piercing: 5
+  tileBreakChance: [ 0 ]
+  tileBreakIntensity: [ 0 ]
+  lightColor: "#d7300a"
+  fireColor: "#ff4a2e"
+  texturePath: /Textures/Effects/fire_greyscale.rsi
+  fireStates: 3
+
+- type: explosion
+  id: ReplicatorColossusRocket
+  damagePerIntensity:
+    types:
+      Heat: 3
+      Blunt: 3
+      Piercing: 3
+  fireColor: Transparent
+  flash: false
+  tileBreakChance: [ 0, 0.5, 1 ]
+  tileBreakIntensity: [ 0, 10, 30 ]
+  tileBreakRerollReduction: 20
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 3
+  temperature: 800

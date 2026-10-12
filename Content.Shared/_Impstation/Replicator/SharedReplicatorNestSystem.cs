@@ -84,12 +84,6 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
         StartFalling(ent, args.Tripper);
     }
 
-    // POLONIUM
-    public void StartDive(Entity<ReplicatorNestComponent> ent, EntityUid diver)
-    {
-        StartFalling(ent, diver);
-    }
-
     private void StartFalling(Entity<ReplicatorNestComponent> ent, EntityUid tripper, bool playSound = true)
     {
 
@@ -313,6 +307,7 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
         // POLONIUM
         upgradedComp.MyNest = ent.Comp.MyNest;
         upgradedComp.Queen |= ent.Comp.Queen;
+        ent.Comp.Queen = false;
         upgradedComp.HasSpawnedNest = ent.Comp.HasSpawnedNest;
 
         if (ent.Comp.MyNest is { } myNest && TryComp<ReplicatorNestComponent>(myNest, out var nestComp)) // POLONIUM

@@ -2,3 +2,39 @@
   license: "Custom"
   copyright: "Made by floraphonic on Pixabay, modified by nikitosych (github)"
   source: "https://pixabay.com/sound-effects/film-special-effects-scifi-anime-whoosh-40-205027/"
+- files: ["colossus_step.ogg"]
+  license: "Custom"
+  copyright: "Made by AudioPapkin on Pixabay, modified by nikitosych (github)"
+  source: "https://pixabay.com/sound-effects/film-special-effects-big-robot-footstep-015-445103/"
+- files: ["colossus_pulse_charge.ogg"]
+  license: "Custom"
+  copyright: "Made by Yodguard on Pixabay, layered with Power Charge by Sojan (Freesound) via freesound_community on Pixabay (https://pixabay.com/sound-effects/film-special-effects-power-charge-6798/), modified by nikitosych (github)"
+  source: "https://pixabay.com/sound-effects/film-special-effects-energy-charge-2-482499/"
+- files: ["colossus_pulse.ogg"]
+  license: "CC-BY-NC-4.0"
+  copyright: "Massive Laser (more bass) by SilverIllusionist on Freesound, modified by nikitosych (github)"
+  source: "https://freesound.org/people/SilverIllusionist/sounds/743008/"
+- files: ["colossus_sweep.ogg"]
+  license: "Custom"
+  copyright: "Made by Daleonfire (Freesound) via freesound_community on Pixabay, modified by nikitosych (github)"
+  source: "https://pixabay.com/sound-effects/film-special-effects-space-laser-38082/"
+- files: ["beacon_hum.ogg", "beacon_hum_ready.ogg", "beacon_stage.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Synthesised for Polonium Station by nikitosych (github)"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Effects/Replicators"
+- files: ["beacon_deploy.ogg"]
+  license: "Custom"
+  copyright: "Robot mechanism by AudioPapkin on Pixabay, layered with a synthesised drone, modified by nikitosych (github)"
+  source: "https://pixabay.com/sound-effects/sound-design-elements-robot-mechanism-053-556664/"
+- files: ["beacon_ready.ogg"]
+  license: "Custom"
+  copyright: "Robot mechanism by AudioPapkin on Pixabay, layered with a synthesised drone, modified by nikitosych (github)"
+  source: "https://pixabay.com/sound-effects/sound-design-elements-robot-mechanism-060-570944/"
+- files: ["beacon_destroyed.ogg"]
+  license: "Custom"
+  copyright: "Robot mechanism by AudioPapkin on Pixabay, layered with a synthesised drone, modified by nikitosych (github)"
+  source: "https://pixabay.com/sound-effects/sound-design-elements-robot-mechanism-016-344704/"
+- files: ["assimilation_charge.ogg", "assimilation_wave.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Synthesised for Polonium Station by nikitosych (github)"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Effects/Replicators"
