@@ -66,6 +66,7 @@
 using Robust.Shared.Network;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Polonium.Interaction; // POLONIUM
 using Content.Shared._RMC14.Movement;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
@@ -143,6 +144,7 @@ namespace Content.Shared.Interaction
 
         [Dependency] private EntityQuery<IgnoreUIRangeComponent> _ignoreUiRangeQuery = default!;
         [Dependency] private EntityQuery<FixturesComponent> _fixtureQuery = default!;
+        [Dependency] private EntityQuery<ExtendedReachComponent> _extendedReachQuery = default!; // POLONIUM
         [Dependency] private EntityQuery<ItemComponent> _itemQuery = default!;
         [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!;
         [Dependency] private EntityQuery<HandsComponent> _handsQuery = default!;
@@ -834,6 +836,11 @@ namespace Content.Shared.Interaction
             bool popup = false,
             bool overlapCheck = true)
         {
+            // POLONIUM
+            if (range > 0f && _extendedReachQuery.TryComp(origin, out var reach))
+                range += reach.Bonus;
+            // POLONIUM end
+
             if (_net.IsServer &&
                 Resolve(other, ref other.Comp, false) &&
                 !_transform.InRange(otherCoordinates, other.Comp.Coordinates, 0.01f))
@@ -1069,6 +1076,11 @@ namespace Content.Shared.Interaction
             Ignored? predicate = null,
             bool popup = false)
         {
+            // POLONIUM
+            if (range > 0f && _extendedReachQuery.TryComp(origin, out var reach))
+                range += reach.Bonus;
+            // POLONIUM end
+
             Ignored combinedPredicate = e => e == origin || (predicate?.Invoke(e) ?? false);
             var originPosition = _transform.GetMapCoordinates(origin);
             var inRange = InRangeUnobstructed(originPosition, other, range, collisionMask, combinedPredicate, ShouldCheckAccess(origin));

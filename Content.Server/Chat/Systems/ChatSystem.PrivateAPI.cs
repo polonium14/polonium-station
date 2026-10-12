@@ -3,6 +3,7 @@ using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Radio;
+using Content.Shared.Radio.Components; // POLONIUM
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
@@ -101,6 +102,19 @@ public sealed partial class ChatSystem
     {
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
+
+        // POLONIUM: a silent channel is never said aloud, so no accent or eavesdropper touches the message
+        if (channel is { Silent: true }
+            && TryComp<IntrinsicRadioTransmitterComponent>(source, out var transmitter)
+            && transmitter.Channels.Contains(channel.ID))
+        {
+            var silent = FormattedMessage.RemoveMarkupOrThrow(originalMessage);
+            if (silent.Length > 0)
+                RaiseLocalEvent(source, new EntitySpokeEvent(source, silent, channel, null));
+
+            return;
+        }
+        // POLONIUM end
 
         var message = TransformSpeech(source, FormattedMessage.RemoveMarkupOrThrow(originalMessage));
         if (message.Length == 0)

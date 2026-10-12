@@ -1,0 +1,47 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Made for Polonium Station by nikitosych",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "hull",
+            "directions": 1
+        },
+        {
+            "name": "drive",
+            "directions": 1
+        },
+        {
+            "name": "leg",
+            "directions": 1
+        },
+        {
+            "name": "head",
+            "directions": 1
+        },
+        {
+            "name": "field_generator",
+            "directions": 1
+        },
+        {
+            "name": "minigun",
+            "directions": 1
+        },
+        {
+            "name": "photon_laser",
+            "directions": 1
+        },
+        {
+            "name": "tentacles",
+            "directions": 1
+        },
+        {
+            "name": "core",
+            "directions": 1
+        }
+    ]
+}

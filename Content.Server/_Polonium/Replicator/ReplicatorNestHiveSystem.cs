@@ -1,6 +1,8 @@
 using Content.Server.Materials;
 using Content.Shared._Impstation.Replicator;
+using Content.Shared._Polonium.Lathe;
 using Content.Shared._Polonium.Replicator;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Destructible;
 using Content.Shared.Examine;
 using Content.Shared.Lathe;
@@ -9,8 +11,8 @@ using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.Popups;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.UserInterface;
-using Content.Shared.Verbs;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Polonium.Replicator;
@@ -18,22 +20,25 @@ namespace Content.Server._Polonium.Replicator;
 public sealed partial class ReplicatorNestHiveSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private ReplicatorHiveSystem _hive = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private MaterialStorageSystem _materialStorage = default!;
     [Dependency] private MobStateSystem _mobState = default!;
-    [Dependency] private SharedReplicatorNestSystem _nest = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
+
+    private readonly HashSet<Entity<ReplicatorComponent>> _replicators = new();
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ReplicatorHiveComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
         SubscribeLocalEvent<ReplicatorHiveComponent, ReplicatorNestLevelUpEvent>(OnLevelUp);
         SubscribeLocalEvent<ReplicatorHiveComponent, DestructionEventArgs>(OnDestroyed);
         SubscribeLocalEvent<ReplicatorHiveComponent, ActivatableUIOpenAttemptEvent>(OnUiOpenAttempt);
         SubscribeLocalEvent<ReplicatorHiveComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<ReplicatorHiveComponent, LatheQueueAttemptEvent>(OnQueueAttempt);
         SubscribeLocalEvent<ReplicatorHiveComponent, LatheGetResultEvent>(OnLatheResult);
         SubscribeLocalEvent<ReplicatorHiveComponent, StepTriggerAttemptEvent>(OnStepTriggerAttempt);
 
@@ -45,54 +50,26 @@ public sealed partial class ReplicatorNestHiveSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<ReplicatorRebuildingComponent, ReplicatorComponent>();
-        while (query.MoveNext(out var uid, out var rebuilding, out var replicator))
+        var now = _timing.CurTime;
+        var query = EntityQueryEnumerator<ReplicatorHiveComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var hive, out var xform))
         {
-            // Not in the nest's container until the fall ends.
-            if (HasComp<ReplicatorNestFallingComponent>(uid))
+            if (now < hive.NextHeal)
                 continue;
 
-            if (!IsInside(uid, rebuilding.Nest))
+            hive.NextHeal = now + hive.HealInterval;
+
+            _replicators.Clear();
+            _lookup.GetEntitiesInRange(xform.Coordinates, hive.HealRange, _replicators);
+            foreach (var replicator in _replicators)
             {
-                RemCompDeferred(uid, rebuilding);
-                _popup.PopupEntity(Loc.GetString("replicator-rebuild-interrupted"), uid, uid, PopupType.MediumCaution);
-                continue;
+                if (replicator.Comp.MyNest == uid
+                    && !HasComp<ReplicatorColossusComponent>(replicator)
+                    && _mobState.IsAlive(replicator))
+                {
+                    _damageable.TryChangeDamage(replicator.Owner, hive.Heal, true, false);
+                }
             }
-
-            if (_timing.CurTime >= rebuilding.FinishTime)
-                FinishRebuild((uid, replicator), rebuilding);
-        }
-    }
-
-    private void OnGetVerbs(Entity<ReplicatorHiveComponent> ent, ref GetVerbsEvent<Verb> args)
-    {
-        if (!args.CanAccess || !args.CanInteract
-            || !TryComp<ReplicatorComponent>(args.User, out var replicator)
-            || replicator.MyNest != ent.Owner
-            || HasComp<ReplicatorRebuildingComponent>(args.User)
-            || !TryComp<ReplicatorNestComponent>(ent, out var nest))
-            return;
-
-        var user = args.User;
-        var currentTier = replicator.UpgradeStage + 1;
-
-        foreach (var option in ent.Comp.Rebuilds)
-        {
-            var verb = new Verb
-            {
-                Text = Loc.GetString(option.Name, ("cost", ReplicatorHiveSystem.ToSheets(option.Cost))),
-                Icon = option.Icon,
-                Priority = -option.Tier,
-                Act = () => TryStartRebuild((ent.Owner, ent.Comp, nest), user, option),
-            };
-
-            if (GetRebuildBlocker(ent, nest, option, currentTier) is { } blocker)
-            {
-                verb.Disabled = true;
-                verb.Message = blocker;
-            }
-
-            args.Verbs.Add(verb);
         }
     }
 
@@ -102,16 +79,16 @@ public sealed partial class ReplicatorNestHiveSystem : EntitySystem
             return;
 
         var unlocked = new List<string>();
-        foreach (var option in ent.Comp.Rebuilds)
+        foreach (var structure in _prototype.EnumeratePrototypes<ReplicatorStructurePrototype>())
         {
-            if (option.MinNestLevel == args.Level)
-                unlocked.Add(Loc.GetString(option.Name, ("cost", ReplicatorHiveSystem.ToSheets(option.Cost))));
+            if (structure.MinNestLevel == args.Level)
+                unlocked.Add(_prototype.Index(structure.Entity).Name);
         }
 
         if (unlocked.Count == 0)
             return;
 
-        var message = Loc.GetString("replicator-hive-unlocked", ("level", args.Level), ("classes", string.Join(", ", unlocked)));
+        var message = Loc.GetString("replicator-hive-unlocked", ("level", args.Level), ("structures", string.Join(", ", unlocked)));
         foreach (var minion in nest.SpawnedMinions)
         {
             if (!TerminatingOrDeleted(minion) && _mobState.IsAlive(minion))
@@ -139,63 +116,20 @@ public sealed partial class ReplicatorNestHiveSystem : EntitySystem
 
         args.PushMarkup(Loc.GetString("replicator-hive-examine",
             ("budget", ReplicatorHiveSystem.ToSheets(_hive.GetBudget(ent))),
+            ("reserve", ReplicatorHiveSystem.ToSheets(ent.Comp.WithdrawReserve)),
             ("level", nest.CurrentLevel)));
     }
 
-    private string? GetRebuildBlocker(Entity<ReplicatorHiveComponent> hive, ReplicatorNestComponent nest,
-        ReplicatorRebuildOption option, int currentTier)
+    private void OnQueueAttempt(Entity<ReplicatorHiveComponent> ent, ref LatheQueueAttemptEvent args)
     {
-        if (option.Tier == currentTier)
-            return Loc.GetString("replicator-rebuild-fail-same");
-
-        if (nest.CurrentLevel < option.MinNestLevel)
-            return Loc.GetString("replicator-rebuild-fail-level", ("level", option.MinNestLevel));
-
-        if (!_hive.CanAfford(hive, option.Cost))
-            return Loc.GetString("replicator-construction-fail-budget", ("cost", ReplicatorHiveSystem.ToSheets(option.Cost)));
-
-        return null;
-    }
-
-    private void TryStartRebuild(Entity<ReplicatorHiveComponent, ReplicatorNestComponent> hive, EntityUid user,
-        ReplicatorRebuildOption option)
-    {
-        if (!TryComp<ReplicatorComponent>(user, out var replicator)
-            || replicator.MyNest != hive.Owner
-            || HasComp<ReplicatorRebuildingComponent>(user)
-            || !_mobState.IsAlive(user))
+        if (!args.Recipe.Materials.TryGetValue(ent.Comp.Material, out var perItem)
+            || _hive.GetBudget(ent) - perItem * args.Quantity >= ent.Comp.WithdrawReserve)
             return;
 
-        if (GetRebuildBlocker(hive, hive.Comp2, option, replicator.UpgradeStage + 1) is { } blocker)
-        {
-            _popup.PopupEntity(blocker, user, user, PopupType.SmallCaution);
-            return;
-        }
-
-        if (!_hive.TrySpend(hive, option.Cost))
-            return;
-
-        var rebuilding = EnsureComp<ReplicatorRebuildingComponent>(user);
-        rebuilding.Nest = hive;
-        rebuilding.Tier = option.Tier;
-        rebuilding.FinishTime = _timing.CurTime + hive.Comp1.RebuildTime;
-
-        _nest.StartDive((hive.Owner, hive.Comp2), user);
-        _popup.PopupEntity(Loc.GetString("replicator-rebuild-started"), user, user, PopupType.Medium);
-    }
-
-    private void FinishRebuild(Entity<ReplicatorComponent> ent, ReplicatorRebuildingComponent rebuilding)
-    {
-        var nest = rebuilding.Nest;
-        var tier = rebuilding.Tier;
-        RemComp(ent, rebuilding);
-
-        _container.TryRemoveFromContainer(ent.Owner, force: true);
-        var rebuilt = _nest.UpgradeReplicator(ent, tier, Transform(nest).Coordinates);
-        _nest.GiveTierLoadout(rebuilt, tier);
-        QueueDel(ent);
-
-        _popup.PopupEntity(Loc.GetString("replicator-rebuild-finished"), rebuilt, rebuilt, PopupType.Medium);
+        args.Cancelled = true;
+        _popup.PopupEntity(Loc.GetString("replicator-hive-withdraw-reserve",
+                ("reserve", ReplicatorHiveSystem.ToSheets(ent.Comp.WithdrawReserve))),
+            ent, args.Actor, PopupType.SmallCaution);
     }
 
     // Printed sheets spawn on top of the nest and would fall straight back in.
@@ -218,12 +152,5 @@ public sealed partial class ReplicatorNestHiveSystem : EntitySystem
     private void OnPrintPulled(Entity<ReplicatorNestPrintComponent> ent, ref PullStartedMessage args)
     {
         RemCompDeferred(ent, ent.Comp);
-    }
-
-    private bool IsInside(EntityUid uid, EntityUid nest)
-    {
-        return !TerminatingOrDeleted(nest)
-               && _container.TryGetContainingContainer(uid, out var container)
-               && container.Owner == nest;
     }
 }

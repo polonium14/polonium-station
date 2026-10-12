@@ -18,3 +18,13 @@
   license: "CC0-1.0"
   copyright: "Made by michorvath on Freesound, Modified by Nikitosych (github)"
   source: "https://freesound.org/people/michorvath/sounds/427592/"
+
+- files: ["colossus_minigun_lethal.ogg"]
+  license: "Custom"
+  copyright: "Made by DRAGON-STUDIO on Pixabay, layered with laser shot gun by Derrickmckinnon on Pixabay (https://pixabay.com/sound-effects/film-special-effects-laser-shot-gun-243079/), modified by nikitosych (github)"
+  source: "https://pixabay.com/sound-effects/gunshot-372470/"
+
+- files: ["colossus_minigun_nonlethal.ogg"]
+  license: "Custom"
+  copyright: "Made by DRAGON-STUDIO on Pixabay, layered with Sci-Fi SFX (8) by 47313572 on Pixabay (https://pixabay.com/sound-effects/film-special-effects-sci-fi-sfx-8-350836/), modified by nikitosych (github)"
+  source: "https://pixabay.com/sound-effects/gunshot-372470/"

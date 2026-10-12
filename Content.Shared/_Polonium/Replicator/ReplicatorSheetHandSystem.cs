@@ -25,8 +25,14 @@ public sealed partial class ReplicatorSheetHandSystem : EntitySystem
 
     private void OnMobStateChanged(Entity<ReplicatorSheetHandComponent> ent, ref MobStateChangedEvent args)
     {
-        if (args.NewMobState == MobState.Dead)
-            _hands.TryDrop(ent.Owner, ent.Comp.HandId, checkActionBlocker: false);
+        if (args.NewMobState != MobState.Dead)
+            return;
+
+        _hands.TryDrop(ent.Owner, ent.Comp.HandId, checkActionBlocker: false);
+        foreach (var hand in ent.Comp.ExtraHands)
+        {
+            _hands.TryDrop(ent.Owner, hand, checkActionBlocker: false);
+        }
     }
 
     public void TransferSheets(EntityUid from, EntityUid to)

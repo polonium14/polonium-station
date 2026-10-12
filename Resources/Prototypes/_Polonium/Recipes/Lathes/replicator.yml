@@ -9,3 +9,122 @@
   id: ReplicatorNest
   recipes:
   - SheetReplisteel
+
+- type: latheRecipe
+  id: ReplicatorColossusPartHull
+  result: ReplicatorColossusPartHull
+  completetime: 20
+  materials:
+    Replisteel: 800
+
+- type: latheRecipe
+  id: ReplicatorColossusPartDrive
+  result: ReplicatorColossusPartDrive
+  completetime: 12
+  materials:
+    Replisteel: 400
+
+- type: latheRecipe
+  id: ReplicatorColossusPartLeg
+  result: ReplicatorColossusPartLeg
+  completetime: 6
+  materials:
+    Replisteel: 160
+
+- type: latheRecipe
+  id: ReplicatorColossusPartHead
+  result: ReplicatorColossusPartHead
+  completetime: 12
+  materials:
+    Replisteel: 400
+
+- type: latheRecipe
+  id: ReplicatorColossusPartFieldGenerator
+  result: ReplicatorColossusPartFieldGenerator
+  completetime: 15
+  materials:
+    Replisteel: 500
+
+- type: latheRecipe
+  id: ReplicatorColossusPartMinigun
+  result: ReplicatorColossusPartMinigun
+  completetime: 15
+  materials:
+    Replisteel: 500
+
+- type: latheRecipe
+  id: ReplicatorColossusPartPhotonLaser
+  result: ReplicatorColossusPartPhotonLaser
+  completetime: 15
+  materials:
+    Replisteel: 500
+
+- type: latheRecipe
+  id: ReplicatorColossusPartTentacles
+  result: ReplicatorColossusPartTentacles
+  completetime: 10
+  materials:
+    Replisteel: 300
+
+- type: latheRecipe
+  id: ReplicatorColossusPartCore
+  result: ReplicatorColossusPartCore
+  completetime: 30
+  materials:
+    Replisteel: 800
+
+- type: latheRecipePack
+  id: ReplicatorColossusParts
+  recipes:
+  - ReplicatorColossusPartHull
+  - ReplicatorColossusPartDrive
+  - ReplicatorColossusPartLeg
+  - ReplicatorColossusPartHead
+  - ReplicatorColossusPartFieldGenerator
+  - ReplicatorColossusPartMinigun
+  - ReplicatorColossusPartPhotonLaser
+  - ReplicatorColossusPartTentacles
+  - ReplicatorColossusPartCore
+
+- type: latheRecipe
+  id: ReplisteelDuplicate
+  name: replicator-duplicator-recipe-name
+  description: replicator-duplicator-recipe-desc
+  result: SheetReplisteel1
+  completetime: 15
+  applyMaterialDiscount: false
+  materials:
+    Replisteel: 100
+
+- type: latheRecipePack
+  id: ReplicatorDuplicator
+  recipes:
+  - ReplisteelDuplicate
+
+- type: latheRecipe
+  id: ReplicatorShell
+  name: replicator-fabricator-recipe-name
+  description: replicator-fabricator-recipe-desc
+  result: SpawnPointGhostReplicator
+  completetime: 75
+  applyMaterialDiscount: false
+  materials:
+    Replisteel: 200
+
+- type: latheRecipePack
+  id: ReplicatorFabricator
+  recipes:
+  - ReplicatorShell
+
+- type: latheRecipe
+  id: ClothingOuterArmorNaniteWard
+  result: ClothingOuterArmorNaniteWard
+  completetime: 5
+  materials:
+    Steel: 500
+    Plasma: 200
+
+- type: latheRecipePack
+  id: ReplicatorCountermeasures
+  recipes:
+  - ClothingOuterArmorNaniteWard

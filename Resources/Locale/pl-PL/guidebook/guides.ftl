@@ -144,6 +144,7 @@ guide-entry-space-ninja = Kosmiczny ninja
 guide-entry-thieves = Złodzieje
 guide-entry-wizard = Czarodziej
 guide-entry-xenoborgs = Ksenoborgi
+guide-entry-replicators = Replikatory
 guide-entry-malfunctioningai = Uszkodzona SI
 guide-entry-changelings = Changelings
 guide-entry-rules = Zasady serwera

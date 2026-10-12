@@ -46,6 +46,7 @@ public enum StationEventMusicType : byte
     Nuke,
     BloodCult,
     EvacScenario, // Polonium
+    ReplicatorBeacon, // Polonium
 }
 
 /// <summary>

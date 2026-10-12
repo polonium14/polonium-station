@@ -1,0 +1,25 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Made for Polonium Station by nikitosych",
+    "size": {
+        "x": 352,
+        "y": 352
+    },
+    "states": [
+        {
+            "name": "shockwave",
+            "directions": 1,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "pulse",
+            "directions": 1,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+            ]
+        }
+    ]
+}

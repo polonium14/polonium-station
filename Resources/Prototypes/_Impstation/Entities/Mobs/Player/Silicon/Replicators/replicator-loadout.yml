@@ -23,8 +23,9 @@
     rechargeSound: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
   - type: BasicEntityAmmoProvider
     proto: BulletReplicatorDisabler # POLONIUM
-    capacity: 3 # POLONIUM
-    count: 3 # POLONIUM
+    capacity: 6 # POLONIUM
+    count: 6 # POLONIUM
+  - type: AmmoCounter # POLONIUM
   - type: Unremoveable
 
 - type: startingGear

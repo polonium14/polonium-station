@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Made for Polonium Station by nikitosych from the replicator wall, fabricator and holowall sprites, the convert icon also uses the solid wall sprite by rye-rice (GitHub) and 20nypercent, modified by AftrLite (GitHub)",
+    "copyright": "Made for Polonium Station by nikitosych from the replicator wall, fabricator and holowall sprites, the convert icon also uses the solid wall sprite by rye-rice (GitHub) and 20nypercent, modified by AftrLite (GitHub), the dash icon uses the replicator sprite by AftrLite (GitHub)",
     "size": {
         "x": 32,
         "y": 32
@@ -18,6 +18,30 @@
         },
         {
             "name": "holowall"
+        },
+        {
+            "name": "convert_floor"
+        },
+        {
+            "name": "modules"
+        },
+        {
+            "name": "dash"
+        },
+        {
+            "name": "volley"
+        },
+        {
+            "name": "repair"
+        },
+        {
+            "name": "send_cargo"
+        },
+        {
+            "name": "mark"
+        },
+        {
+            "name": "scan"
         }
     ]
 }
