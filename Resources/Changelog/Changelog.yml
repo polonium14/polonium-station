@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: pcaessayrs
-  changes:
-  - message: Fixed bar sign UI not closing correctly
-    type: Fix
-  id: 9550
-  time: '2026-02-27T16:02:04.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42960
 - author: kontakt
   changes:
   - message: Throwing croissants no longer have a throwing knife in-hand sprite.
@@ -4267,3 +4260,16 @@
   id: 10045
   time: '2026-10-09T14:57:50.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1098
+- author: Saver310
+  changes:
+  - message: "Ustawiono czas u\u017Cycia metapluszak\xF3w na 1 sekund\u0119."
+    type: Tweak
+  - message: "Ustawiono szybko\u015B\u0107 ataku metapluszak\xF3w na 1 atak na sekund\u0119\
+      ."
+    type: Tweak
+  - message: "Zmieniono pierwsz\u0105 liter\u0119 nazwy pluszaka Itan-Kio na ma\u0142\
+      \u0105."
+    type: Tweak
+  id: 10046
+  time: '2026-10-12T17:17:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1100
