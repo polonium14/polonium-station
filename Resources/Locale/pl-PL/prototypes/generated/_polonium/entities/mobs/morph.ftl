@@ -1,6 +1,6 @@
-ent-MobMorph = morf
+ent-MobMorph = morph
     .desc = Obrzydliwa, pulsująca kupa mięsa.
 ent-MorphDisguise = { ent-ChameleonDisguise }
     .desc = { ent-ChameleonDisguise.desc }
-ent-MorphChameleonProjector = kameleonowe komórki morfa
+ent-MorphChameleonProjector = kameleonowe komórki morpha
     .desc = { "" }
