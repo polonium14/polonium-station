@@ -1,3 +1,7 @@
 ent-XenoEgg = jajo ksenomorfa
-    .desc = Duże cętkowane jajo. Wykluje się z niego larwa, gdy będzie gotowe.
+    .desc = Duże cętkowane jajo.
     .gender = neuter
+ent-XenoEggGrown = { ent-XenoEgg }
+    .desc = { ent-XenoEgg.desc }
+    .gender = neuter
+    .suffix = dojrzałe

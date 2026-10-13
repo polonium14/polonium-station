@@ -1,0 +1,47 @@
+using Content.Server.Administration.Logs;
+using Content.Server.StationEvents.Components;
+using Content.Server.StationEvents.Events;
+using Content.Shared.Database;
+using Content.Shared.GameTicking.Components;
+using Content.Shared.Station.Components;
+using Robust.Shared.Map;
+using Robust.Shared.Random;
+
+namespace Content.Server._Polonium.Xenonids;
+
+public sealed partial class XenoInfestationRule : StationEventSystem<XenoInfestationRuleComponent>
+{
+    [Dependency] private IAdminLogManager _adminLog = default!;
+
+    protected override void Started(EntityUid uid, XenoInfestationRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    {
+        base.Started(uid, component, gameRule, args);
+
+        if (!TryGetRandomStation(out var station))
+            return;
+
+        var locations = new List<EntityCoordinates>();
+        var query = EntityQueryEnumerator<VentCritterSpawnLocationComponent, TransformComponent>();
+        while (query.MoveNext(out _, out _, out var xform))
+        {
+            if (xform.Anchored && CompOrNull<StationMemberComponent>(xform.GridUid)?.Station == station)
+                locations.Add(xform.Coordinates);
+        }
+
+        if (locations.Count == 0)
+        {
+            Log.Warning($"No vents to spawn xeno larvae for {ToPrettyString(uid)}");
+            ForceEndSelf(uid, gameRule);
+            return;
+        }
+
+        var coords = RobustRandom.Pick(locations);
+        var count = RobustRandom.Next(component.MinLarvae, component.MaxLarvae + 1);
+        for (var i = 0; i < count; i++)
+        {
+            Spawn(component.Larva, coords);
+        }
+
+        _adminLog.Add(LogType.EventStarted, LogImpact.High, $"Xeno infestation spawned {count} larvae at {coords}");
+    }
+}

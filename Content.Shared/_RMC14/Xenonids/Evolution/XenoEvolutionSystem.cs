@@ -352,7 +352,8 @@ public sealed partial class XenoEvolutionSystem : EntitySystem
                 if (evolution.Max <= FixedPoint2.Zero)
                     continue;
 
-                if (!hasLivingQueen)
+                // Polonium: larwa rośnie sama, jak w NSV13. Bez tego ul nie ma jak wystartować bez Królowej.
+                if (!hasLivingQueen && evolution.RequiresGranter)
                 {
                     evolution.LastPointsAt = time;
                     continue;
@@ -380,9 +381,15 @@ public sealed partial class XenoEvolutionSystem : EntitySystem
                 if (elapsed <= TimeSpan.Zero)
                     continue;
 
+                // Polonium: przy 30 tickach na sekundę przyrost z jednego ticku (np. 0,1 pkt/s * 1/30 s)
+                // jest mniejszy niż 0,01 i FixedPoint2 obcinał go do zera, więc ewolucja stała w miejscu.
+                // Czekamy, aż uzbiera się choć jedna setna punktu.
+                var gained = evolution.PointsPerSecond.Double() * _evolutionPointsRate * elapsed.TotalSeconds;
+                if (gained < 0.01)
+                    continue;
+
                 evolution.LastPointsAt = time;
-                evolution.Points = FixedPoint2.Min(evolution.Max,
-                    evolution.Points + evolution.PointsPerSecond * _evolutionPointsRate * elapsed.TotalSeconds);
+                evolution.Points = FixedPoint2.Min(evolution.Max, evolution.Points + gained);
                 Dirty(uid, evolution);
             }
         }

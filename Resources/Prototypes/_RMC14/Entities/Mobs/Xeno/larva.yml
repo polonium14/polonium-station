@@ -37,7 +37,7 @@
     canEvolveWithoutGranter: true
     requiresGranter: false
     max: 60
-    pointsPerSecond: 0.5
+    pointsPerSecond: 1.25 # Polonium: ok. 4 min do T1, jak larwa w NSV13
     evolvesTo:
     - CMXenoDrone
     - CMXenoRunner
