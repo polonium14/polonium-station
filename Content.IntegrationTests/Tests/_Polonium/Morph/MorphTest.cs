@@ -10,6 +10,7 @@ using Content.Shared.Mind;
 using Content.Shared.Movement.Components;
 using Content.Shared.Polymorph.Components;
 using Content.Shared.Roles;
+using Content.Shared.Storage;
 using Robust.Client.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
@@ -135,6 +136,35 @@ public sealed class MorphTest : InteractionTest
 
         Assert.That(SEntMan.GetComponent<CounterConditionComponent>(objective).Count, Is.EqualTo(1),
             "Devouring the same crewmember twice should count once.");
+    }
+
+    [Test]
+    public async Task DigestingBagKeepsContents()
+    {
+        var bag = await SpawnTarget("ClothingBackpack");
+        var sBag = ToServer(bag);
+        EntityUid disk = default;
+
+        await Server.WaitPost(() =>
+        {
+            var container = SEntMan.System<SharedContainerSystem>();
+            disk = SEntMan.SpawnEntity("NukeDisk", SEntMan.GetCoordinates(PlayerCoords));
+            Assert.That(container.Insert(disk, container.GetContainer(sBag, StorageComponent.ContainerId)));
+
+            var stomach = container.EnsureContainer<Container>(SPlayer, DevourerComponent.StomachContainerId);
+            container.Insert(sBag, stomach);
+            SEntMan.EventBus.RaiseLocalEvent(SPlayer, new MorphStomachSelectMessage(bag, MorphStomachAction.Digest));
+        });
+        await RunTicks(5);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.Deleted(sBag), "The bag was not digested.");
+            Assert.That(SEntMan.Deleted(disk), Is.False, "Digesting the bag destroyed the disk inside it.");
+            var container = SEntMan.System<SharedContainerSystem>();
+            Assert.That(container.TryGetContainingContainer(disk, out var holder) && holder.ID == DevourerComponent.StomachContainerId,
+                "The disk did not end up in the stomach.");
+        });
     }
 
     [Test]

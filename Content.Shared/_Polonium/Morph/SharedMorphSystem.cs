@@ -31,6 +31,7 @@ public abstract partial class SharedMorphSystem : EntitySystem
 
     private const string StomachBuiXmlGeneratedName = "MorphStomachBoundUserInterface";
 
+    /// <inheritdoc/>
     public override void Initialize()
     {
         base.Initialize();
@@ -50,6 +51,9 @@ public abstract partial class SharedMorphSystem : EntitySystem
         SubscribeLocalEvent<MorphDisguiseComponent, ExaminedEvent>(OnDisguiseExamined);
     }
 
+    /// <summary>
+    /// Grants the morph actions, sets up the stomach menu and spawns the hidden chameleon projector.
+    /// </summary>
     private void OnMapInit(Entity<MorphComponent> ent, ref MapInitEvent args)
     {
         _actions.AddAction(ent, ref ent.Comp.DisguiseActionEntity, ent.Comp.DisguiseAction);
@@ -70,6 +74,9 @@ public abstract partial class SharedMorphSystem : EntitySystem
         Dirty(ent);
     }
 
+    /// <summary>
+    /// Removes the morph actions.
+    /// </summary>
     private void OnShutdown(Entity<MorphComponent> ent, ref ComponentShutdown args)
     {
         _actions.RemoveAction(ent.Owner, ent.Comp.DisguiseActionEntity);
@@ -78,6 +85,9 @@ public abstract partial class SharedMorphSystem : EntitySystem
         _actions.RemoveAction(ent.Owner, ent.Comp.SpitActionEntity);
     }
 
+    /// <summary>
+    /// Speeds the morph up while disguised as an object.
+    /// </summary>
     private void OnRefreshSpeed(Entity<MorphComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
     {
         // humanoid forms stay as slow as the morph itself
@@ -85,12 +95,18 @@ public abstract partial class SharedMorphSystem : EntitySystem
             args.ModifySpeed(ent.Comp.DisguisedSpeedModifier);
     }
 
+    /// <summary>
+    /// Weakens the morph's attacks while disguised.
+    /// </summary>
     private void OnGetMeleeDamage(Entity<MorphComponent> ent, ref GetMeleeDamageEvent args)
     {
         if (ent.Comp.Disguised)
             args.Damage *= ent.Comp.DisguisedDamageMultiplier;
     }
 
+    /// <summary>
+    /// Stops the morph from eating while disguised.
+    /// </summary>
     private void OnDevourAttempt(Entity<MorphComponent> ent, ref DevourActionEvent args)
     {
         if (args.Handled || !ent.Comp.Disguised)
@@ -100,6 +116,9 @@ public abstract partial class SharedMorphSystem : EntitySystem
         _popup.PopupClient(Loc.GetString("morph-devour-disguised"), ent, ent);
     }
 
+    /// <summary>
+    /// Opens the stomach radial menu.
+    /// </summary>
     private void OnStomachAction(Entity<MorphComponent> ent, ref MorphStomachActionEvent args)
     {
         if (args.Handled)
@@ -110,11 +129,17 @@ public abstract partial class SharedMorphSystem : EntitySystem
             _ui.OpenUi(ent.Owner, MorphStomachUiKey.Key, args.Performer);
     }
 
+    /// <summary>
+    /// Morphs cannot speak.
+    /// </summary>
     private void OnSpeakAttempt(Entity<MorphComponent> ent, ref SpeakAttemptEvent args)
     {
         args.Cancel();
     }
 
+    /// <summary>
+    /// Tracks the morph becoming disguised and refreshes its speed.
+    /// </summary>
     private void OnDisguisedInit(Entity<ChameleonDisguisedComponent> ent, ref ComponentInit args)
     {
         if (!TryComp<MorphComponent>(ent, out var morph))
@@ -124,6 +149,9 @@ public abstract partial class SharedMorphSystem : EntitySystem
         _movement.RefreshMovementSpeedModifiers(ent.Owner);
     }
 
+    /// <summary>
+    /// Tracks the morph losing its disguise, however that happened, and starts the form cooldown.
+    /// </summary>
     private void OnDisguisedRemove(Entity<ChameleonDisguisedComponent> ent, ref ComponentRemove args)
     {
         if (!TryComp<MorphComponent>(ent, out var morph))
@@ -137,6 +165,9 @@ public abstract partial class SharedMorphSystem : EntitySystem
         _movement.RefreshMovementSpeedModifiers(ent.Owner);
     }
 
+    /// <summary>
+    /// Knocks down and poisons whoever touches the disguised morph.
+    /// </summary>
     private void OnAmbush(Entity<MorphDisguiseComponent> ent, ref InteractHandEvent args)
     {
         if (!TryComp<ChameleonDisguiseComponent>(ent, out var disguise)
@@ -157,6 +188,9 @@ public abstract partial class SharedMorphSystem : EntitySystem
         // the chameleon projector system reveals the morph after this
     }
 
+    /// <summary>
+    /// Hints that the disguise is off: always for crew forms, only up close for objects.
+    /// </summary>
     private void OnDisguiseExamined(Entity<MorphDisguiseComponent> ent, ref ExaminedEvent args)
     {
         if (!TryComp<ChameleonDisguiseComponent>(ent, out var disguise)

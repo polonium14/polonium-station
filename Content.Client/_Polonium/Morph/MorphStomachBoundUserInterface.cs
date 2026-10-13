@@ -17,6 +17,7 @@ public sealed partial class MorphStomachBoundUserInterface(EntityUid owner, Enum
 {
     private SimpleRadialMenu? _menu;
 
+    /// <inheritdoc/>
     protected override void Open()
     {
         base.Open();
@@ -26,6 +27,7 @@ public sealed partial class MorphStomachBoundUserInterface(EntityUid owner, Enum
         _menu.OpenOverMouseScreenPosition();
     }
 
+    /// <inheritdoc/>
     public override void Update()
     {
         if (_menu == null)
@@ -65,6 +67,9 @@ public sealed partial class MorphStomachBoundUserInterface(EntityUid owner, Enum
         _menu.SetButtons(buttons);
     }
 
+    /// <summary>
+    /// Creates a radial button sending the given stomach action for the target.
+    /// </summary>
     private RadialMenuActionOption<NetEntity> CreateOption(NetEntity target, MorphStomachAction action, string icon, string tooltip)
     {
         return new RadialMenuActionOption<NetEntity>(t => SendMessage(new MorphStomachSelectMessage(t, action)), target)

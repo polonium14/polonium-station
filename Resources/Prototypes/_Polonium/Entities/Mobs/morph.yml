@@ -16,6 +16,9 @@
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
+  - type: GuideHelp
+    guides:
+    - MinorAntagonists
   - type: NpcFactionMember
     factions:
     - SimpleHostile

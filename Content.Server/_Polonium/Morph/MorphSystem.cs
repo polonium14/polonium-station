@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Objectives.Systems;
 using Content.Shared._Polonium.Morph;
@@ -43,6 +44,7 @@ public sealed partial class MorphSystem : SharedMorphSystem
     [Dependency] private SharedUserInterfaceSystem _ui = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
 
+    /// <inheritdoc/>
     public override void Initialize()
     {
         base.Initialize();
@@ -58,6 +60,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
         SubscribeLocalEvent<MorphComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
     }
 
+    /// <summary>
+    /// Disguises the morph as the targeted object.
+    /// </summary>
     private void OnDisguiseAction(Entity<MorphComponent> ent, ref MorphDisguiseActionEvent args)
     {
         if (args.Handled)
@@ -83,6 +88,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
         DisguiseAs(ent, (projector, proj), target, false);
     }
 
+    /// <summary>
+    /// Disguises the morph as a devoured humanoid that is still in its stomach.
+    /// </summary>
     private void TryAssumeForm(Entity<MorphComponent> ent, EntityUid body)
     {
         if (!HasComp<HumanoidProfileComponent>(body) || !CanChangeForm(ent))
@@ -96,6 +104,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
         DisguiseAs(ent, (projector, proj), body, true);
     }
 
+    /// <summary>
+    /// Disguises the morph through its projector and starts the form cooldown.
+    /// </summary>
     private void DisguiseAs(Entity<MorphComponent> ent, Entity<ChameleonProjectorComponent> projector, EntityUid target, bool humanoid)
     {
         _popup.PopupEntity(
@@ -112,6 +123,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
         _movement.RefreshMovementSpeedModifiers(ent.Owner);
     }
 
+    /// <summary>
+    /// Returns the morph to its true form.
+    /// </summary>
     private void OnRevealAction(Entity<MorphComponent> ent, ref MorphRevealActionEvent args)
     {
         if (args.Handled)
@@ -137,6 +151,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
             PopupType.MediumCaution);
     }
 
+    /// <summary>
+    /// Checks the form cooldown, telling the morph if it is not over yet.
+    /// </summary>
     private bool CanChangeForm(Entity<MorphComponent> ent)
     {
         if (Timing.CurTime >= ent.Comp.NextDisguise)
@@ -146,6 +163,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
         return false;
     }
 
+    /// <summary>
+    /// Throws the prepared stomach content at the target location.
+    /// </summary>
     private void OnSpitAction(Entity<MorphComponent> ent, ref MorphSpitActionEvent args)
     {
         if (args.Handled)
@@ -170,6 +190,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
         Dirty(ent);
     }
 
+    /// <summary>
+    /// Handles an option picked for a stomach entity in the radial menu.
+    /// </summary>
     private void OnStomachSelect(Entity<MorphComponent> ent, ref MorphStomachSelectMessage args)
     {
         if (!TryGetEntity(args.Target, out var target) || !IsInStomach(ent, target.Value))
@@ -203,6 +226,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
         Dirty(ent);
     }
 
+    /// <summary>
+    /// Digests an item right away, or starts digesting a mob.
+    /// </summary>
     private void StartDigest(Entity<MorphComponent> ent, EntityUid target)
     {
         if (HasComp<MobStateComponent>(target))
@@ -216,7 +242,7 @@ public sealed partial class MorphSystem : SharedMorphSystem
             return;
         }
 
-        if (_whitelist.IsWhitelistPass(ent.Comp.DigestBlacklist, target))
+        if (_whitelist.IsWhitelistPass(ent.Comp.DigestBlacklist, target) || !TryEmptyIntoStomach(ent, target))
         {
             _popup.PopupEntity(Loc.GetString("morph-digest-fail", ("target", target)), ent, ent);
             return;
@@ -230,6 +256,32 @@ public sealed partial class MorphSystem : SharedMorphSystem
         QueueDel(target);
     }
 
+    /// <summary>
+    /// Moves everything stored inside the target into the stomach, so digesting a bag doesn't destroy its contents.
+    /// Nested containers move along with their holder and get emptied when that one is digested.
+    /// </summary>
+    /// <returns>False if something couldn't be moved and the target must not be deleted.</returns>
+    private bool TryEmptyIntoStomach(Entity<MorphComponent> ent, EntityUid target)
+    {
+        if (!_container.TryGetContainer(ent, DevourerComponent.StomachContainerId, out var stomach))
+            return false;
+
+        var emptied = true;
+        foreach (var container in _container.GetAllContainers(target))
+        {
+            foreach (var contained in container.ContainedEntities.ToArray())
+            {
+                if (!_container.Insert(contained, stomach))
+                    emptied = false;
+            }
+        }
+
+        return emptied;
+    }
+
+    /// <summary>
+    /// Finishes digesting a mob: drops its gear, heals the morph and leaves ash behind.
+    /// </summary>
     private void OnDigestDoAfter(Entity<MorphComponent> ent, ref MorphDigestDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled || args.Target is not { } target || !IsInStomach(ent, target))
@@ -268,6 +320,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
         QueueDel(target);
     }
 
+    /// <summary>
+    /// On death the morph drops its disguise and spits out its stomach.
+    /// </summary>
     private void OnMobStateChanged(Entity<MorphComponent> ent, ref MobStateChangedEvent args)
     {
         if (args.NewMobState != MobState.Dead)
@@ -288,6 +343,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
         Dirty(ent);
     }
 
+    /// <summary>
+    /// Reveals the morph before deletion, so the projector doesn't delete an already deleting disguise.
+    /// </summary>
     private void OnTerminating(Entity<MorphComponent> ent, ref EntityTerminatingEvent args)
     {
         // reveal before children get deleted, otherwise the projector deletes the already deleting disguise
@@ -295,6 +353,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
             _chameleon.TryReveal(ent.Owner);
     }
 
+    /// <summary>
+    /// Counts newly devoured crew towards the devour objective, each person once.
+    /// </summary>
     private void OnEntInserted(Entity<MorphComponent> ent, ref EntInsertedIntoContainerMessage args)
     {
         if (args.Container.ID != DevourerComponent.StomachContainerId)
@@ -316,6 +377,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
         }
     }
 
+    /// <summary>
+    /// Drops a crew form once its body leaves the stomach.
+    /// </summary>
     private void OnEntRemoved(Entity<MorphComponent> ent, ref EntRemovedFromContainerMessage args)
     {
         // the copied body is gone, so is its look
@@ -323,6 +387,9 @@ public sealed partial class MorphSystem : SharedMorphSystem
             _chameleon.TryReveal(ent.Owner);
     }
 
+    /// <summary>
+    /// Whether the target is inside this morph's stomach.
+    /// </summary>
     private bool IsInStomach(EntityUid morph, EntityUid target)
     {
         return _container.TryGetContainingContainer(target, out var container)
