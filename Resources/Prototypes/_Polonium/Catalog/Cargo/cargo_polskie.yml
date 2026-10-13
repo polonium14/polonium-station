@@ -5,7 +5,7 @@
     sprite: _Polonium/Objects/Cosumable/Food/Baked/pie.rsi
     state: kremowka
   product: CrateFoodKremowki
-  cost: 2137
+  cost: 3141 # tyle co nagroda BountyPie - mniej daje arbitraż (w NSV13 było 2137)
   category: cargoproduct-category-name-food
   group: market
 
