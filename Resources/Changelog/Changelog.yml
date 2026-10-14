@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Velken
-  changes:
-  - message: Fixed door remotes working on fences, curtains and other entities they
-      shouldn't work on.
-    type: Fix
-  id: 9555
-  time: '2026-02-28T20:30:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43063
 - author: IProduceWidgets
   changes:
   - message: C4 no longer sticks to Revenants.
@@ -4273,3 +4265,11 @@
   id: 10049
   time: '2026-10-12T19:13:38.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1101
+- author: Zintex
+  changes:
+  - message: 'Mapa Terra: zlew i szafka w chemii, poprawa drzwi do zbrojowni, dodane
+      holopady na stacji'
+    type: Tweak
+  id: 10050
+  time: '2026-10-14T11:55:06.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1107
