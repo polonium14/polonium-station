@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: Hitlinemoss
-  changes:
-  - message: The rollerskates and clown mask/shoes cargo bounties have been removed.
-    type: Remove
-  - message: The pancakes cargo bounty now requires half as many pancakes, but rewards
-      half as many spesos.
-    type: Tweak
-  id: 9557
-  time: '2026-02-28T22:04:55.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42899
 - author: slarticodefast
   changes:
   - message: Fixed damage mispredicting.
@@ -4274,3 +4264,16 @@
   id: 10051
   time: '2026-10-15T20:29:57.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1109
+- author: Zintex
+  changes:
+  - message: "Zmiany na Deathstar: brakujace spawny roli i szafki, dok przylot\xF3\
+      w, pralka, dost\u0119pno\u015B\u0107 generatora grawitacji, inteligentna lod\xF3\
+      wka dla meda, wi\u0119cej apteczek w medzie, wi\u0119cej instrument\xF3w, szafa\
+      \ graj\u0105ca"
+    type: Tweak
+  - message: "Poprawa b\u0142\u0119d\xF3w mapowania deathstar: usuni\u0119cie mapowania\
+      \ ATS, zamiana dok\xF3w syndykatu na w\u0142a\u015Bciwe"
+    type: Fix
+  id: 10052
+  time: '2026-10-15T23:12:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1110
