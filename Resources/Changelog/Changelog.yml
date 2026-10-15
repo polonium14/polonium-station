@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: IProduceWidgets
-  changes:
-  - message: C4 no longer sticks to Revenants.
-    type: Tweak
-  id: 9556
-  time: '2026-02-28T21:38:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42889
 - author: Hitlinemoss
   changes:
   - message: The rollerskates and clown mask/shoes cargo bounties have been removed.
@@ -4273,3 +4266,11 @@
   id: 10050
   time: '2026-10-14T11:55:06.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1107
+- author: Zintex
+  changes:
+  - message: "Dodano 2 JSR wahad\u0142owce medyczno-ochronne (du\u017Cy i ma\u0142\
+      y medsec)"
+    type: Add
+  id: 10051
+  time: '2026-10-15T20:29:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1109
