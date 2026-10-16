@@ -10,8 +10,8 @@ roles-antag-generic-silicon-antagonist-name = Silicon Antagonist
 roles-antag-syndicate-agent-name = Traitor
 roles-antag-syndicate-agent-objective = Complete your objectives without being caught.
 
-roles-antag-syndicate-agent-sleeper-name = Syndicate sleeper agent
-roles-antag-syndicate-agent-sleeper-objective = A form of traitor that can activate at any point in the middle of the shift.
+roles-antag-syndicate-agent-sleeper-name = Syndicate Sleeper Agent
+roles-antag-syndicate-agent-sleeper-objective = A form of traitor that can activate at any point in the middle of the shift. Complete your objectives without being caught.
 
 roles-antag-initial-infected-name = Initial Infected
 roles-antag-initial-infected-objective = Once you turn, infect as many other crew members as possible.
@@ -25,26 +25,26 @@ roles-antag-suspicion-innocent-objective = Discover and eliminate all traitors.
 roles-antag-suspicion-suspect-name = Suspect
 roles-antag-suspicion-suspect-objective = Kill the innocents.
 
-roles-antag-nuclear-operative-commander-name = Nuclear operative commander
-roles-antag-nuclear-operative-commander-objective = Lead your team to the destruction of the station.
+roles-antag-nuclear-operative-commander-name = Nuclear Operative Commander
+roles-antag-nuclear-operative-commander-objective = Lead the nukeops team to victory.
 
-roles-antag-nuclear-operative-agent-name = Nuclear operative agent
-roles-antag-nuclear-operative-agent-objective = Like default operative, the team's treatment will have priority.
+roles-antag-nuclear-operative-agent-name = Nuclear Operative Corpsman
+roles-antag-nuclear-operative-agent-objective = Provide the nukeops team with medical support.
 
-roles-antag-nuclear-operative-name = Nuclear operative
-roles-antag-nuclear-operative-objective = Find the nuke disk and blow up the station.
+roles-antag-nuclear-operative-name = Nuclear Operative
+roles-antag-nuclear-operative-objective = Board the station, steal the nuclear authentication disk, and set off the nuke.
 
-roles-antag-subverted-silicon-name = Subverted silicon
-roles-antag-subverted-silicon-objective = Follow your new laws and do bad unto the station.
+roles-antag-subverted-silicon-name = Subverted Silicon
+roles-antag-subverted-silicon-objective = Follow your new laws.
 
 roles-antag-space-ninja-name = Space Ninja
-roles-antag-space-ninja-objective = Use your stealth to sabotage the station, nom on electrical wires.
+roles-antag-space-ninja-objective = Use ancient technique and high-tech equipment to infiltrate and sabotage the station.
 
 roles-antag-paradox-clone-name = Paradox Clone
-roles-antag-paradox-clone-objective = A freak space-time anomaly has teleported you into another reality! Now you have to find your counterpart and kill and replace them.
+roles-antag-paradox-clone-objective = Kill and replace your counterpart in this reality.
 
 roles-antag-thief-name = Thief
-roles-antag-thief-objective = Add some NT property to your personal collection without using violence.
+roles-antag-thief-objective = Steal some Nanotrasen property for your personal collection, without using violence.
 
 roles-antag-dragon-name = Space Dragon
 roles-antag-dragon-objective = Create a carp army to take over this quadrant.
@@ -54,8 +54,8 @@ roles-antag-pirate-name = Pirate
 roles-antag-malfunctioning-ai-name = Malfunctioning AI
 roles-antag-malfunctioning-ai-objective = Sabotage the station as a malfunctioning AI.
 
-roles-antag-mothership-core-name = Mothership Core
-roles-antag-mothership-core-objective = Guide xenoborgs to collect materials and brains to grow the xenoborg army.
+roles-antag-mothership-core-name = Xenoborg Core
+roles-antag-mothership-core-objective = Pilot the xenoborg mothership, command the xenoborg army, and manufacture new xenoborgs.
 
 roles-antag-xenoborg-name = Xenoborg
-roles-antag-xenoborg-objective = Protect the mothership core and help convert sentient life into xenoborgs.
+roles-antag-xenoborg-objective = Harvest the brains of sapient creatures to facilitate the manufacture of new xenoborgs.
