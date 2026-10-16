@@ -1,9 +1,13 @@
+using System.Linq; // Polonium
 using Content.IntegrationTests.Tests.Interaction;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Interaction.Components;
+using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Medical;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -97,5 +101,46 @@ public sealed class DefibrillatorTest : InteractionTest
 
         // The target should be revived, but in crit.
         Assert.That(targetMobState.CurrentState, Is.EqualTo(MobState.Critical), "Target mob was not revived from being defibrillated.");
+    }
+
+    /// <summary>
+    /// A glued defibrillator cannot be dropped when its user shocks themself, so it must keep both hands occupied.
+    /// </summary>
+    [Test]
+    public async Task GluedDefibrillatorSelfZapKeepsBothHandsTest()
+    {
+        await AddAtmosphere();
+
+        var defib = await PlaceInHands(DefibrillatorProtoId, enableToggleable: true);
+        var sDefib = ToServer(defib);
+
+        // Applying glue makes the held item unremoveable. Add the resulting component after pickup without depending
+        // on the chemistry interaction in this integration test.
+        await Server.WaitPost(() =>
+        {
+            var unremoveable = SEntMan.EnsureComponent<UnremoveableComponent>(sDefib);
+            unremoveable.DeleteOnDrop = false;
+            SEntMan.Dirty(sDefib, unremoveable);
+        });
+
+        var hands = SEntMan.System<SharedHandsSystem>();
+        await RunTicks(1);
+        Assert.Multiple(() =>
+        {
+            Assert.That(hands.EnumerateHeld(SPlayer).Count(), Is.EqualTo(2));
+            Assert.That(hands.EnumerateHeld(SPlayer).Count(uid => SEntMan.HasComponent<VirtualItemComponent>(uid)), Is.EqualTo(1));
+        });
+
+        var cooldown = Comp<DefibrillatorComponent>(defib).ZapDelay;
+        await RunSeconds((float) cooldown.TotalSeconds);
+
+        // Shock the user with the defibrillator.
+        await Interact(ToServer(Player), ToServer(PlayerCoords));
+
+        Assert.Multiple(() =>
+        {
+            Assert.That(hands.EnumerateHeld(SPlayer).Count(), Is.EqualTo(2));
+            Assert.That(hands.EnumerateHeld(SPlayer).Count(uid => SEntMan.HasComponent<VirtualItemComponent>(uid)), Is.EqualTo(1));
+        });
     }
 }
