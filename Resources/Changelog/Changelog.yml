@@ -4293,26 +4293,6 @@
     type: Fix
   - message: "Zwi\u0119kszono progi \u015Bmierci replikator\xF3w. Warto\u015B\u0107\
       \ zale\u017Cy od klasy i ro\u015Bnie wraz z kolejnymi formami."
-    type: Tweak
-  - message: "Replikatory otwieraj\u0105 interfejsy tylko struktur oznaczonych tagiem\
-      \ `ReplicatorStructure` lub zawieraj\u0105cych `ReplicatorHive`."
-    type: Tweak
-  - message: "Holo\u015Bciana replikatora znika po 7,5 minuty."
-    type: Tweak
-  - message: "Skr\xF3cono czas wytwarzania receptury `ReplisteelDuplicate` z 15 do\
-      \ 13,5 sekundy. Usuni\u0119to z replikator\xF3w komponent krwiobiegu oraz zwi\u0105\
-      zane z nim pozosta\u0142o\u015Bci."
-    type: Tweak
-  - message: "Zmniejszono rozmiar i pr\xF3g \u015Bmierci Kolosalnego Replikatora."
-    type: Tweak
-  - message: "Eksplozja g\u0142owicy nuklearnej niszczy Kolosalnego Replikatora."
-    type: Fix
-  - message: "B\u0142ysk wylotowy Kolosalnego Replikatora pojawia si\u0119 przy lufie,\
-      \ a nie na \u015Brodku kad\u0142uba."
-    type: Fix
-  - message: "Dodano po\u015Bwiat\u0119 gniazda replikator\xF3w, kt\xF3ra zmienia\
-      \ si\u0119 wraz z jego poziomem."
-    type: Add
   id: 10053
   time: '2026-10-17T11:58:27.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1111
