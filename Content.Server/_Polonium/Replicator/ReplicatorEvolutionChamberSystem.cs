@@ -3,7 +3,7 @@ using Content.Shared._Impstation.Replicator;
 using Content.Shared._Polonium.Replicator;
 using Content.Shared.Actions;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.Destructible.Triggers;
+using Content.Shared.Destructible.Thresholds.Triggers;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
