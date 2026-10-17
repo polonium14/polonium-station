@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Velken
-  changes:
-  - message: Fixed door remote not working on high security doors and windoors
-    type: Fix
-  id: 9562
-  time: '2026-03-01T23:28:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43094
 - author: UpAndLeaves
   changes:
   - message: Added storage:query and inventory:query commands
@@ -4307,3 +4300,26 @@
   id: 10056
   time: '2026-10-17T14:52:41.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1104
+- author: Nikita
+  changes:
+  - message: "Dodano atak prawym przyciskiem dla Kolosalnego Replikatora, kt\xF3ry\
+      \ zadaje 90 obra\u017Ce\u0144 strukturalnych"
+    type: Add
+  - message: "Budowniczy III replikator mo\u017Ce stawi\u0107 wzmocnione \u015Bciany\
+      \ za pomoc\u0105 nowej umiej\u0119tno\u015Bci"
+    type: Add
+  - message: "Zwi\u0119kszono zdrowie gniazda, wzrasta te\u017C wraz z poziomem"
+    type: Tweak
+  - message: "Zmniejszono zdrowie wszystkich replikator\xF3w o 15%"
+    type: Tweak
+  - message: Zmniejszono zdrowie Kolosalnego Replikatora o 20%
+    type: Tweak
+  - message: "Szybkostrzelno\u015B\u0107 trybu \u015Bmertelnego miniguna Kolosalnego\
+      \ Replikatora zosta\u0142a zmniejszona o 15%"
+    type: Tweak
+  - message: "Poprawiono zdrowie replikator\xF3w. Teraz nie psuj\u0105 si\u0119 od\
+      \ 30% dmg."
+    type: Fix
+  id: 10057
+  time: '2026-10-17T23:55:32.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1113
