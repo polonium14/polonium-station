@@ -1,15 +1,4 @@
 ﻿Entries:
-- author: SirWarock
-  changes:
-  - message: Added a nitrogen tank to the mining hardsuit crate!
-    type: Tweak
-  - message: Added internals to the luxury mining hardsuit crate!
-    type: Tweak
-  - message: Fixed the mining hardsuit helmet name and the mining hardsuit crate name!
-    type: Fix
-  id: 9561
-  time: '2026-03-01T18:31:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43072
 - author: Velken
   changes:
   - message: Fixed door remote not working on high security doors and windoors
@@ -4298,3 +4287,23 @@
   id: 10055
   time: '2026-10-17T12:39:38.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1108
+- author: Joker66613
+  changes:
+  - message: "Dodano polskie jedzenie i napoje z Aquili: go\u0142\u0105bki, \u017C\
+      urek, ptasie mleczko, Amarena, Mocny Full, Tymbark i Helena, a w cargo skrzyni\u0119\
+      \ krem\xF3wek."
+    type: Add
+  - message: "Dodano polskie flagi, sztandar, krzy\u017Ce i god\u0142a wieszane na\
+      \ \u015Bcianie oraz du\u017Cy krzy\u017C."
+    type: Add
+  - message: "Dodano 93 polskie plakaty, polskie tabliczki kierunkowe, szachownic\u0119\
+      \ lotnicz\u0105 i nowe szyldy barowe."
+    type: Add
+  - message: "Dodano Malucha, reklam\xF3wki, sanda\u0142y ze skarpetkami, str\xF3\
+      j Kapitana Bomby i brakuj\u0105ce wzory polskiej bielizny w bibelotach."
+    type: Add
+  - message: "Dodano nied\u017Awiedzia Wojtka i Kurwinoxy."
+    type: Add
+  id: 10056
+  time: '2026-10-17T14:52:41.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1104
