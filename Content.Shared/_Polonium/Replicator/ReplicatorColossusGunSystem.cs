@@ -16,6 +16,8 @@ namespace Content.Shared._Polonium.Replicator;
 
 public sealed partial class ReplicatorColossusGunSystem : EntitySystem
 {
+    private const float WallClearance = 0.15f;
+
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedGunSystem _gun = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
@@ -78,14 +80,14 @@ public sealed partial class ReplicatorColossusGunSystem : EntitySystem
 
     private void OnAttemptShoot(Entity<ReplicatorColossusGunComponent> ent, ref AttemptShootEvent args)
     {
-        if (!args.Cancelled && TryGetMuzzleOffset(ent, args.User, out var offset))
+        if (!args.Cancelled && TryGetMuzzleOffset(ent, args.User, out var offset, clampToWalls: true))
             args.FromCoordinates = _transform.ToCoordinates(_transform.GetMapCoordinates(args.User).Offset(offset));
     }
 
     private void OnBeforeMuzzleFlash(Entity<ReplicatorColossusGunComponent> ent, ref RMCBeforeMuzzleFlashEvent args)
     {
         var holder = Transform(ent).ParentUid;
-        if (TryGetMuzzleOffset(ent, holder, out var offset))
+        if (TryGetMuzzleOffset(ent, holder, out var offset, clampToWalls: false))
             args.Offset = (-_transform.GetWorldRotation(holder)).RotateVec(offset);
     }
 
@@ -118,7 +120,7 @@ public sealed partial class ReplicatorColossusGunSystem : EntitySystem
         }
     }
 
-    private bool TryGetMuzzleOffset(Entity<ReplicatorColossusGunComponent> ent, EntityUid holder, out Vector2 offset)
+    private bool TryGetMuzzleOffset(Entity<ReplicatorColossusGunComponent> ent, EntityUid holder, out Vector2 offset, bool clampToWalls)
     {
         offset = default;
         var view = TryComp<InputMoverComponent>(holder, out var mover) ? _mover.GetParentGridAngle(mover) : Angle.Zero;
@@ -130,9 +132,21 @@ public sealed partial class ReplicatorColossusGunSystem : EntitySystem
         if (offset == Vector2.Zero)
             return false;
 
+        if (!clampToWalls)
+            return true;
+
         var origin = _transform.GetMapCoordinates(holder);
         var length = offset.Length();
         var ray = new CollisionRay(origin.Position, offset / length, (int) CollisionGroup.HighImpassable);
-        return !_physics.IntersectRay(origin.MapId, ray, length, holder, returnOnFirstHit: true).Any();
+        var hits = _physics.IntersectRay(origin.MapId, ray, length, holder, returnOnFirstHit: false).ToList();
+        if (hits.Count == 0)
+            return true;
+
+        var free = hits.Min(hit => hit.Distance) - WallClearance;
+        if (free <= 0f)
+            return false;
+
+        offset *= free / length;
+        return true;
     }
 }

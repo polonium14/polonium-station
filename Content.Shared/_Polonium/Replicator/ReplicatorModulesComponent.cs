@@ -20,6 +20,12 @@ public sealed partial class ReplicatorModulesComponent : Component
     public int MaxStages = 5;
 
     /// <summary>
+    /// How much more blunt damage than the form's health it takes to break the shell apart.
+    /// </summary>
+    [DataField]
+    public float HullBreakMultiplier = 1.3f;
+
+    /// <summary>
     /// Shown to the hive over a replicator that has no class yet.
     /// </summary>
     [DataField]

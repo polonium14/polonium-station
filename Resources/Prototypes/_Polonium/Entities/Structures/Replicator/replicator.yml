@@ -115,7 +115,7 @@
           !type:PhysShapeAabb
             bounds: "-0.5,-0.5,0.5,0.5"
   - type: TimedDespawn
-    lifetime: 180
+    lifetime: 450
   - type: Airtight
     noAirWhenFullyAirBlocked: false
   - type: Tag

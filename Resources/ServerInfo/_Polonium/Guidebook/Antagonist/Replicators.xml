@@ -57,7 +57,7 @@
 
   [bold]Przekształć ścianę[/bold] zamienia wskazaną ścianę stacji w mocniejszą ścianę replikatorów, a [bold]Zbuduj ścianę[/bold] stawia nową na wolnym kafelku podłogi replikatorów.
 
-  [bold]Wyświetl holościanę[/bold] rozpina siatkę z twardego światła na kafelku, na którym replikator stoi. Siatka zatrzymuje powietrze, ale przepuszcza każdego, kto chce przejść, i po trzech minutach znika.
+  [bold]Wyświetl holościanę[/bold] rozpina siatkę z twardego światła na kafelku, na którym replikator stoi. Siatka zatrzymuje powietrze, ale przepuszcza każdego, kto chce przejść, i po którymś czasie znika.
 
   <Box>
     <GuideEntityEmbed Entity="ReplicatorStunRay" Caption="promień ogłuszający"/>
