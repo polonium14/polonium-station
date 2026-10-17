@@ -103,7 +103,7 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterPolishContrabandRebelsUnite
+  id: PosterPolishContrabandCCCP
   name: "CCCP"
   description: "Plakat przedstawiający najgorszy koszmar każdego kosmopolaka."
   components:
@@ -130,16 +130,6 @@
   - type: Sprite
     sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
     state: pl_contraband_27
-
-- type: entity
-  parent: PosterBase
-  id: PosterPolishContrabandEnergySwords
-  name: "E-Miecze"
-  description: "Wszystkie kolory brutalnego morderstwa."
-  components:
-  - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
-    state: pl_contraband_29
 
 - type: entity
   parent: PosterBase
@@ -655,10 +645,9 @@
     - id: PosterPolishContrabandEat
     - id: PosterPolishContrabandCommunistState
     - id: PosterPolishContrabandKss13
-    - id: PosterPolishContrabandRebelsUnite
+    - id: PosterPolishContrabandCCCP
     - id: PosterPolishContrabandHaveAPuff
     - id: PosterPolishContrabandDDayPromo
-    - id: PosterPolishContrabandEnergySwords
     - id: PosterPolishContrabandRedRum
     - id: PosterPolishContrabandCc64kAd
     - id: PosterPolishContrabandPunchShit
