@@ -2,11 +2,13 @@ using Content.Server.Chat.Systems;
 using Content.Shared._Polonium.Polish;
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
+using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
@@ -18,10 +20,11 @@ namespace Content.Server._Polonium.Polish;
 /// <summary>
 /// Krzyżowanie: przybicie ciągniętej ofiary, bolesne zejście z krzyża i blokada zwykłego przypinania.
 /// </summary>
-public sealed partial class CrucifixSystem : EntitySystem
+public sealed partial class CrucifixSystem : SharedCrucifixSystem
 {
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private PullingSystem _pulling = default!;
     [Dependency] private SharedBuckleSystem _buckle = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
@@ -32,28 +35,9 @@ public sealed partial class CrucifixSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CrucifixComponent, StrapAttemptEvent>(OnStrapAttempt);
-        SubscribeLocalEvent<CrucifixComponent, UnstrapAttemptEvent>(OnUnstrapAttempt);
         SubscribeLocalEvent<CrucifixComponent, InteractHandEvent>(OnInteractHand);
         SubscribeLocalEvent<CrucifixComponent, CrucifyDoAfterEvent>(OnCrucifyDoAfter);
         SubscribeLocalEvent<CrucifixComponent, CrucifixFreeDoAfterEvent>(OnFreeDoAfter);
-    }
-
-    private void OnStrapAttempt(Entity<CrucifixComponent> ent, ref StrapAttemptEvent args)
-    {
-        // Na krzyż nie da się po prostu usiąść ani nikogo przeciągnąć - tylko przez przybicie.
-        if (!ent.Comp.Bypass)
-            args.Cancelled = true;
-    }
-
-    private void OnUnstrapAttempt(Entity<CrucifixComponent> ent, ref UnstrapAttemptEvent args)
-    {
-        if (args.User is not { } user)
-            return;
-
-        args.Cancelled = true;
-        if (args.Popup)
-            TryStartFreeing(ent, user, args.Buckle);
     }
 
     private void OnInteractHand(Entity<CrucifixComponent> ent, ref InteractHandEvent args)
@@ -78,6 +62,12 @@ public sealed partial class CrucifixSystem : EntitySystem
 
         args.Handled = true;
 
+        if (!IsHelpless(victim))
+        {
+            _popup.PopupEntity(Loc.GetString("crucifix-not-restrained", ("victim", Identity.Entity(victim, EntityManager))), victim, user);
+            return;
+        }
+
         var doAfter = new DoAfterArgs(EntityManager, user, ent.Comp.CrucifyDelay, new CrucifyDoAfterEvent(), ent, target: victim, used: ent)
         {
             BreakOnMove = true,
@@ -95,7 +85,7 @@ public sealed partial class CrucifixSystem : EntitySystem
         if (!TryComp<StrapComponent>(ent, out var strap) || strap.BuckledEntities.Count > 0)
             return;
 
-        if (!TryComp<PullerComponent>(args.User, out var puller) || puller.Pulling != victim || !CanBeCrucified(victim))
+        if (!TryComp<PullerComponent>(args.User, out var puller) || puller.Pulling != victim || !CanBeCrucified(victim) || !IsHelpless(victim))
             return;
 
         args.Handled = true;
@@ -116,11 +106,11 @@ public sealed partial class CrucifixSystem : EntitySystem
             victim,
             victim,
             PopupType.LargeCaution);
-        _chat.TryEmoteWithChat(victim, ent.Comp.ScreamEmote, ignoreActionBlocker: true);
+        Scream(ent, victim);
         _damageable.TryChangeDamage(victim, ent.Comp.Damage, origin: args.User);
     }
 
-    private void TryStartFreeing(Entity<CrucifixComponent> ent, EntityUid user, EntityUid victim)
+    protected override void TryStartFreeing(Entity<CrucifixComponent> ent, EntityUid user, EntityUid victim)
     {
         var self = user == victim;
         var doAfter = new DoAfterArgs(EntityManager, user, self ? ent.Comp.FreeSelfDelay : ent.Comp.FreeOtherDelay, new CrucifixFreeDoAfterEvent(), ent, target: victim, used: ent)
@@ -173,8 +163,14 @@ public sealed partial class CrucifixSystem : EntitySystem
         _damageable.TryChangeDamage(victim, ent.Comp.Damage);
         _buckle.Unbuckle((victim, buckle), args.User);
         _popup.PopupEntity(Loc.GetString("crucifix-fall", ("victim", Identity.Entity(victim, EntityManager)), ("crucifix", ent.Owner)), victim, PopupType.MediumCaution);
-        _chat.TryEmoteWithChat(victim, ent.Comp.ScreamEmote, ignoreActionBlocker: true);
+        Scream(ent, victim);
         _stun.TryAddParalyzeDuration(victim, ent.Comp.FallParalyze);
+    }
+
+    private void Scream(Entity<CrucifixComponent> ent, EntityUid victim)
+    {
+        if (_mobState.IsAlive(victim))
+            _chat.TryEmoteWithChat(victim, ent.Comp.ScreamEmote, ignoreActionBlocker: true);
     }
 
     private bool CanBeCrucified(EntityUid victim)
@@ -182,5 +178,11 @@ public sealed partial class CrucifixSystem : EntitySystem
         return HasComp<MobStateComponent>(victim)
                && HasComp<BuckleComponent>(victim)
                && !HasComp<BorgChassisComponent>(victim);
+    }
+
+    private bool IsHelpless(EntityUid victim)
+    {
+        return !_mobState.IsAlive(victim)
+               || TryComp<CuffableComponent>(victim, out var cuffable) && !cuffable.CanStillInteract;
     }
 }

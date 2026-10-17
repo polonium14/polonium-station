@@ -1,5 +1,5 @@
 # Kapitan Bomba z NSV13 (Aquila, aq33/NSV13#304, sprite'y: Reprimann).
-# Sam antagonista nie był portowany do NSV13 - strój jest w szafce kapitana, a pełny zestaw z blasterem tylko dla adminów.
+# Sam antagonista nie był portowany do NSV13 - strój jest w CaptainDrobe, a pełny zestaw z blasterem tylko dla adminów.
 
 - type: entity
   parent: ClothingHeadEVAHelmetBase
@@ -13,14 +13,6 @@
     sprite: _Polonium/Clothing/Hats/kapitanbomba.rsi
   - type: Item
     sprite: _Polonium/Clothing/Hats/kapitanbomba.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
-        Heat: 0.8
-        Shock: 0.8
 
 - type: entity
   parent: ClothingOuterEVASuitBase

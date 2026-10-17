@@ -53,10 +53,6 @@
         max: 15
     - id: PlushieLizardJobCaptain
       prob: 0.02
-    # Polonium: strój Kapitana Bomby z NSV13
-    - id: ClothingHeadHelmetKapitanBomba
-    - id: ClothingOuterSuitKapitanBomba
-    - id: ClothingShoesKapitanBomba
 
 # No laser table + Laser table
 - type: entityTable

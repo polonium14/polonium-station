@@ -9,7 +9,9 @@ inspiring-banner-warcry-polish = ZA OJCZYZNĘ!
 wall-hanging-hung = You hang {THE($item)} on the wall.
 wall-hanging-taken-down = You take {THE($item)} down from the wall.
 wall-hanging-examine = You can take {THE($item)} down from the wall by hand.
+wall-hanging-occupied = Something is already hanging on this wall.
 
+crucifix-not-restrained = {CAPITALIZE(THE($victim))} is struggling too much - they need to be restrained first.
 crucifix-crucified-victim = {CAPITALIZE(THE($user))} crucifies you!
 crucifix-crucified-others = {CAPITALIZE(THE($user))} crucifies {THE($victim)}!
 crucifix-free-self = You struggle to break free, tearing your wounds open! (stay still for two minutes)

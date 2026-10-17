@@ -66,7 +66,7 @@ public sealed partial class InspiringBannerSystem : EntitySystem
         _audio.PlayPvs(ent.Comp.FlourishSound, ent);
 
         if (ent.Comp.Warcry is { } warcry)
-            _chat.TrySendInGameICMessage(user, Loc.GetString(warcry), InGameICChatType.Speak, false, ignoreActionBlocker: true);
+            _chat.TrySendInGameICMessage(user, Loc.GetString(warcry), InGameICChatType.Speak, false);
 
         foreach (var (group, amount) in ent.Comp.Heal)
         {

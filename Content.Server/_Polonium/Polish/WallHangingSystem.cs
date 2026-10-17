@@ -16,7 +16,10 @@ public sealed partial class WallHangingSystem : EntitySystem
 {
     private static readonly ProtoId<TagPrototype> WallTag = "Wall";
 
+    private const float OccupiedRange = 0.4f;
+
     [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private TagSystem _tag = default!;
 
@@ -37,7 +40,14 @@ public sealed partial class WallHangingSystem : EntitySystem
 
         args.Handled = true;
 
-        var decor = Spawn(comp.Structure, Transform(wall).Coordinates);
+        var coordinates = Transform(wall).Coordinates;
+        if (_lookup.GetEntitiesInRange<WallHangingComponent>(coordinates, OccupiedRange).Count > 0)
+        {
+            _popup.PopupEntity(Loc.GetString("wall-hanging-occupied"), args.User, args.User);
+            return;
+        }
+
+        var decor = Spawn(comp.Structure, coordinates);
         _popup.PopupEntity(Loc.GetString("wall-hanging-hung", ("item", decor)), args.User, args.User);
         QueueDel(uid);
     }

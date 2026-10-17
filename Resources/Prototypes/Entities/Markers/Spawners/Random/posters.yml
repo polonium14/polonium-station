@@ -68,10 +68,10 @@
     - id: PosterContrabandExoChomp
     - id: PosterContrabandLustyExomorph
     - id: PosterContrabandAzOgonkiem
-    # Polonium: polski zestaw plakatów z NSV13, waga = liczba plakatów, żeby każdy był tak samo częsty jak reszta
+    # Polonium: polski zestaw plakatów z NSV13, mała waga, żeby nie wypierał reszty
     - !type:NestedSelector
       tableId: PolishContrabandPosterTable
-      weight: 45
+      weight: 12
 
 - type: entityTable
   id: LegitPosterTable
@@ -132,7 +132,7 @@
     # Polonium: polski zestaw plakatów z NSV13
     - !type:NestedSelector
       tableId: PolishLegitPosterTable
-      weight: 48
+      weight: 12
 
 - type: entity
   parent: MarkerBase
