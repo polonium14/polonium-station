@@ -91,7 +91,7 @@
   name: replicator-duplicator-recipe-name
   description: replicator-duplicator-recipe-desc
   result: SheetReplisteel1
-  completetime: 15
+  completetime: 13.5
   applyMaterialDiscount: false
   materials:
     Replisteel: 100

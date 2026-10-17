@@ -72,7 +72,7 @@
   parent: BaseAction
   id: ActionReplicatorHolowall
   name: Project holowall
-  description: Weave a holowall right where you stand. It keeps the air in but lets everyone through, and fades after three minutes. Costs a pinch of replisteel from the nest's stock.
+  description: Weave a holowall right where you stand. It keeps the air in but lets everyone through, and fades after seven and a half minutes. Costs a pinch of replisteel from the nest's stock.
   components:
   - type: Action
     itemIconStyle: NoItem

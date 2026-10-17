@@ -13,11 +13,11 @@
     launchEffect: EffectReplicatorColossusShockwave
     launchLight: EffectReplicatorColossusLaunchLight
   - type: StatusIcon
-    bounds: -1,-3,1,3
+    bounds: -1,-2.6,1,2.6
   - type: ReplicatorColossusGait
     sprite: _Polonium/Mobs/Replicator/colossus.rsi
     strafeSprite: _Polonium/Mobs/Replicator/colossus_strafe.rsi
-    tilesPerLoop: 2
+    tilesPerLoop: 1.72
     stepSound:
       path: /Audio/_Polonium/Effects/Replicators/colossus_step.ogg
       params:
@@ -87,7 +87,7 @@
   - type: Sprite
     drawdepth: Mobs
     noRot: true
-    offset: 0,1.09375
+    offset: 0,1
     layers:
     - map: [ "enum.ReplicatorColossusVisualLayers.Body" ]
       sprite: _Polonium/Mobs/Replicator/colossus.rsi
@@ -100,12 +100,12 @@
     - map: [ "enum.ReplicatorColossusVisualLayers.Launch" ]
       sprite: _Polonium/Mobs/Replicator/colossus_launch.rsi
       state: launch
-      offset: 0,1.03125
+      offset: 0,1.125
       visible: false
     - map: [ "enum.ReplicatorColossusVisualLayers.LaunchGlow" ]
       sprite: _Polonium/Mobs/Replicator/colossus_launch.rsi
       state: glow
-      offset: 0,1.03125
+      offset: 0,1.125
       shader: unshaded
       visible: false
   - type: Icon
@@ -115,13 +115,13 @@
     radius: 3.5
     energy: 1.6
     color: "#d7300a"
-    offset: 0,1.1
+    offset: 0,0.95
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 1.45
+          radius: 1.305
         density: 400
         mask:
         - MobMask
@@ -137,7 +137,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      2625: Dead
+      2360: Dead
   - type: Damageable
     damageModifierSet: ReplicatorColossus
   - type: ExplosionResistance

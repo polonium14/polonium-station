@@ -1,7 +1,7 @@
 ent-ActionReplicatorBuildWall = Build wall
     .desc = Raise a replicator wall on a free tile of replicator floor. Costs half a sheet from the nest's stock.
 ent-ActionReplicatorHolowall = Project holowall
-    .desc = Weave a holowall right where you stand. It keeps the air in but lets everyone through, and fades after three minutes. Costs a pinch of replisteel from the nest's stock.
+    .desc = Weave a holowall right where you stand. It keeps the air in but lets everyone through, and fades after seven and a half minutes. Costs a pinch of replisteel from the nest's stock.
 ent-ActionReplicatorColossusPulse = Bluespace pulse
     .desc = Charge the field generator, then fling everyone around you far across the station. A heavy blow breaks the charge. The pulse burns through the whole minigun reserve.
 ent-ActionReplicatorColossusSweep = Nanite sweep
