@@ -9,6 +9,8 @@ namespace Content.Client.Wires.UI
         [ViewVariables]
         private WiresMenu? _menu;
 
+        public WiresMenu? Menu => _menu; // Polonium - the tutorial guides the trainee through this window
+
         public WiresBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
         }

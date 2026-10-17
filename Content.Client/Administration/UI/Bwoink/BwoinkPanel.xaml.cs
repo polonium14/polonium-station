@@ -11,7 +11,7 @@ namespace Content.Client.Administration.UI.Bwoink
     [GenerateTypedNameReferences]
     public sealed partial class BwoinkPanel : BoxContainer
     {
-        private static readonly Type[] AllowedTags = new Type[]
+        internal static readonly Type[] AllowedTags =
         {
             typeof(CommandLinkTag),
             typeof(BoldItalicTag),

@@ -21,6 +21,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Client._Polonium.RichText;
+using Content.Client.RichText;
 using Content.Client.UserInterface.Systems.Chat.Controls;
 using Content.Shared.Chat;
 using Content.Shared.Input;
@@ -91,7 +93,7 @@ public partial class ChatBox : UIWidget
 
         var color = msg.MessageColorOverride ?? msg.Channel.TextColor();
 
-        AddLine(msg.WrappedMessage, color);
+        AddLine(msg.WrappedMessage, color, allowUrl: msg.AllowHyperlinks);
     }
 
     private void OnHighlightsUpdated(string highlights)
@@ -141,13 +143,21 @@ public partial class ChatBox : UIWidget
         _controller.UpdateHighlights(highlighs);
     }
 
-    public void AddLine(string message, Color color)
+    public void AddLine(string message, Color color, bool allowUrl = false)
     {
         var formatted = new FormattedMessage(3);
         formatted.PushColor(color);
         formatted.AddMarkupOrThrow(message);
         formatted.Pop();
-        Contents.AddMessage(formatted, tagsAllowed: null);
+
+        if (allowUrl)
+        {
+            using (UrlTag.Allow())
+                Contents.AddMessage(formatted, tagsAllowed: null);
+            return;
+        }
+
+        Contents.AddMessage(formatted, UserFormattableTags.WithoutUrl);
     }
 
     public void Focus(ChatSelectChannel? channel = null)

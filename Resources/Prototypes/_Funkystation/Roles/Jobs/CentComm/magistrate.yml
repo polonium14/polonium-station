@@ -12,8 +12,8 @@
 
 - type: job
   id: Magistrate
-  name: Magistrate
-  description: "Serve directly under CentComm. As the stations central legal authority, you authorize executions, extended detentions, warrants, etc."
+  name: job-name-magistrate
+  description: job-description-magistrate
   playTimeTracker: JobMagistrate
   setPreference: false
   requirements:

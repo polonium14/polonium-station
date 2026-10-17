@@ -1,2 +1,2 @@
-ent-LootSpawnerEncryptionKey = random encryption key spawner
+ent-LootSpawnerEncryptionKey = generator losowych kluczy szyfrujących
     .desc = { ent-MarkerBase.desc }

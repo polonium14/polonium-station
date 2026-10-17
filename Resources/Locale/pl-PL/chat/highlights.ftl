@@ -1,6 +1,6 @@
 # Command
 highlights-captain = Kapitan, "Kap", Mostek, Dowództwo
-highlights-head-of-personnel = Kierownik Personelu, "KP", Obsługa, Mostek, Dowództwo
+highlights-head-of-personnel = Kierownik Personelu, "KP", Serwis, Obsługa, Mostek, Dowództwo
 highlights-chief-engineer = Główny Inżynier, "GI", Inżynieria, Inżynier, "Inż", Mostek, Dowództwo
 highlights-chief-medical-officer = Ordynator, "OM", Medbay, Medycyna, "Med", Mostek, Dowództwo
 highlights-head-of-security = Komendant, "KO", Zbrojownia, Ochrona, "Sec", Mostek, Dowództwo
@@ -33,18 +33,18 @@ highlights-scientist = Naukowiec, B+R, Nauka, "Sci"
 highlights-research-assistant = Asystent Naukowy, B+R, Nauka, "Sci"
 
 # Civilian
-highlights-bartender = Barman, "Bar", Obsługa, "Serv"
-highlights-botanist = Botanik, Hydroponika, Obsługa, "Serv"
-highlights-chaplain = Kapłan, Kaplica, Obsługa, "Serv"
-highlights-chef = Kucharz, Kuchnia, Obsługa, "Serv"
-highlights-clown = Klaun, Teatr, Obsługa, "Serv"
-highlights-janitor = Woźny, Sprzątacz, "Jani", Obsługa, "Serv"
-highlights-lawyer = Prawnik, Adwokat, Obsługa, "Serv"
-highlights-librarian = Bibliotekarz, Biblioteka, Obsługa, "Serv"
-highlights-mime = Mim, Teatr, Obsługa, "Serv"
-highlights-musician = Muzyk, Teatr, Obsługa, "Serv"
+highlights-bartender = Barman, "Bar", Serwis, Obsługa, "Serv"
+highlights-botanist = Botanik, Hydroponika, Serwis, Obsługa, "Serv"
+highlights-chaplain = Kapłan, Kaplica, Serwis, Obsługa, "Serv"
+highlights-chef = Kucharz, Kuchnia, Serwis, Obsługa, "Serv"
+highlights-clown = Klaun, Teatr, Serwis, Obsługa, "Serv"
+highlights-janitor = Woźny, Sprzątacz, "Jani", Serwis, Obsługa, "Serv"
+highlights-lawyer = Prawnik, Adwokat, Serwis, Obsługa, "Serv"
+highlights-librarian = Bibliotekarz, Biblioteka, Serwis, Obsługa, "Serv"
+highlights-mime = Mim, Teatr, Serwis, Obsługa, "Serv"
+highlights-musician = Muzyk, Teatr, Serwis, Obsługa, "Serv"
 highlights-passenger = Pasażer, Greytider, Graytider, "Tider", "Tide"
-highlights-service-worker = Pracownik Obsługi, Obsługa, "Serv"
+highlights-service-worker = Pracownik Serwisu, Serwis, Obsługa, "Serv"
 
 # Station-specific
 highlights-reporter = Dziennikarz, Redakcja, Wiadomości

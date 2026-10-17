@@ -1,0 +1,263 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Made for Polonium Station by nikitosych",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "fighter1",
+            "directions": 4
+        },
+        {
+            "name": "fighter1_combat",
+            "directions": 4
+        },
+        {
+            "name": "fighter1_dead"
+        },
+        {
+            "name": "fighter2",
+            "directions": 4
+        },
+        {
+            "name": "fighter2_combat",
+            "directions": 4
+        },
+        {
+            "name": "fighter2_dead"
+        },
+        {
+            "name": "fighter3",
+            "directions": 4
+        },
+        {
+            "name": "fighter3_combat",
+            "directions": 4
+        },
+        {
+            "name": "fighter3_dead"
+        },
+        {
+            "name": "scout1",
+            "directions": 4
+        },
+        {
+            "name": "scout1_combat",
+            "directions": 4
+        },
+        {
+            "name": "scout1_dead"
+        },
+        {
+            "name": "scout2",
+            "directions": 4
+        },
+        {
+            "name": "scout2_combat",
+            "directions": 4
+        },
+        {
+            "name": "scout2_dead"
+        },
+        {
+            "name": "scout3",
+            "directions": 4
+        },
+        {
+            "name": "scout3_combat",
+            "directions": 4
+        },
+        {
+            "name": "scout3_dead"
+        },
+        {
+            "name": "builder1",
+            "directions": 4
+        },
+        {
+            "name": "builder1_combat",
+            "directions": 4
+        },
+        {
+            "name": "builder1_dead"
+        },
+        {
+            "name": "builder2",
+            "directions": 4
+        },
+        {
+            "name": "builder2_combat",
+            "directions": 4
+        },
+        {
+            "name": "builder2_dead"
+        },
+        {
+            "name": "builder3",
+            "directions": 4
+        },
+        {
+            "name": "builder3_combat",
+            "directions": 4
+        },
+        {
+            "name": "builder3_dead"
+        },
+        {
+            "name": "hunter1",
+            "directions": 4
+        },
+        {
+            "name": "hunter1_combat",
+            "directions": 4
+        },
+        {
+            "name": "hunter1_dead"
+        },
+        {
+            "name": "hunter2",
+            "directions": 4
+        },
+        {
+            "name": "hunter2_combat",
+            "directions": 4
+        },
+        {
+            "name": "hunter2_dead"
+        },
+        {
+            "name": "hunter3",
+            "directions": 4
+        },
+        {
+            "name": "hunter3_combat",
+            "directions": 4
+        },
+        {
+            "name": "hunter3_dead"
+        },
+        {
+            "name": "fighter1_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "fighter2_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "fighter3_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "scout1_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "scout2_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "scout3_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "builder1_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "builder2_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "builder3_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "hunter1_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "hunter2_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "hunter3_thrust",
+            "directions": 4,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1],
+                [0.1, 0.1, 0.1, 0.1]
+            ]
+        }
+    ]
+}

@@ -1,7 +1,7 @@
-ent-WeaponEnergyTurretStationMachineCircuitboardBase = sentry turret machine board
-    .desc = A machine printed circuit board for a sentry turret.
+ent-WeaponEnergyTurretStationMachineCircuitboardBase = płytka drukowana wieżyczki strażniczej
+    .desc = Maszynowo wykonana płytka drukowana do wieżyczki strażniczej.
 ent-WeaponEnergyTurretAIMachineCircuitboard = { ent-WeaponEnergyTurretStationMachineCircuitboardBase }
-    .suffix = AI, Silicon
+    .suffix = SI, krzem
     .desc = { ent-WeaponEnergyTurretStationMachineCircuitboardBase.desc }
 ent-WeaponEnergyTurretSecurityMachineCircuitboard = { ent-WeaponEnergyTurretStationMachineCircuitboardBase }
     .suffix = Ochrona

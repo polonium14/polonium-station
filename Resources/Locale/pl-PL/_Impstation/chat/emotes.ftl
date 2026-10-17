@@ -1,4 +1,4 @@
 # Names
-chat-emote-name-blink = Blink
+chat-emote-name-blink = Mignięcie
 # Message
-chat-emote-msg-blink = blinks
+chat-emote-msg-blink = miga

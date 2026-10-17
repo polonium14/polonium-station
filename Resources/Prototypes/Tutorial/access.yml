@@ -1,0 +1,27 @@
+# one level per crate, handed out by the step that needs that crate, so a trainee cannot empty
+# the whole armoury on the way in. nobody ever gets TutorialSealed - it keeps the crates and
+# lockers the flow never uses shut
+
+- type: accessLevel
+  id: TutorialCrateStunbaton
+  canAddToIdCard: false
+
+- type: accessLevel
+  id: TutorialCrateCuffs
+  canAddToIdCard: false
+
+- type: accessLevel
+  id: TutorialCrateLethalAmmo
+  canAddToIdCard: false
+
+- type: accessLevel
+  id: TutorialCrateAmeCores
+  canAddToIdCard: false
+
+- type: accessLevel
+  id: TutorialCrateAmeFuel
+  canAddToIdCard: false
+
+- type: accessLevel
+  id: TutorialSealed
+  canAddToIdCard: false

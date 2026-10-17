@@ -9,6 +9,4 @@ add-uplink-command-error-2 = Failed to add uplink to the player
 add-uplink-command-success-pda = Uplink added to player PDA with code {$code}
 add-uplink-command-success-implant = Uplink added to player as an implant
 
-add-uplink-command-description = Creates uplink on selected item and link it to users account
 
-add-uplink-command-help = Usage: adduplink [username] [item-id]

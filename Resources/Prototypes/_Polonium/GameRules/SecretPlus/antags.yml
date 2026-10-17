@@ -1,0 +1,129 @@
+# Antagoniści startowi presetów SecretPlus.
+#
+# Jak losowani są antagoniści na start rundy
+#   Planista dostaje budżet chaosu: Random(minStartingChaos, maxStartingChaos) za każdego gotowego gracza.
+#   Pierwsza reguła idzie z tabeli głównej, następne z uzupełniającej, dopóki starcza budżetu.
+#   Reguła wchodzi do losowania tylko wtedy, gdy jest dla niej dość gotowych graczy. Wagi reszty są wtedy
+#   normalizowane, więc procenty obok wag zgadzają się tylko wtedy, gdy dostępna jest cała tabela.
+#
+# Reguły, ich cena i ilu gotowych graczy potrzebują:
+#   Traitor                 150 za osobę   od 5 graczy
+#   ThiefSecretPlus          80 za osobę   od 12 graczy
+#   ChangelingSecretPlus    200 za osobę   od 20 graczy
+#   WizardLowpop            900            10-20 graczy
+#   NukeopsLowpop           400            15-20 graczy
+#   Revolutionary          1000            od 15 graczy
+#   Zombie                 1000            od 20 graczy
+#   Nukeops                 300 za osobę   od 21 graczy
+#   Wizard                 2000            od 21 graczy
+#   Xenoborgs               800            od 30 graczy
+
+# ====================================================================================================
+# Tabele główne: główny antagonista rundy
+# ====================================================================================================
+
+# Low: tylko ukryci antagoniści.
+- type: weightedRandom
+  id: SecretPlusHidden
+  weights:
+    Traitor: 0.55               # 55%
+    ThiefSecretPlus: 0.30       # 30%
+    ChangelingSecretPlus: 0.15  # 15%
+
+# Mid: głównie ukryci antagoniści, tryb głośny w mniej więcej jednej trzeciej rund.
+- type: weightedRandom
+  id: SecretPlusPrimaryMid
+  weights:
+    Traitor: 0.38                # 38%
+    ChangelingSecretPlus: 0.14   # 14%
+    Revolutionary: 0.12          # 12%
+    Nukeops: 0.10                # 10%
+    NukeopsLowpop: 0.08          #  8%
+    Wizard: 0.05                 #  5%
+    WizardLowpop: 0.05           #  5%
+    Zombie: 0.04                 #  4%
+    Xenoborgs: 0.04              #  4%
+
+# MidHigh: ci sami antagoniści co w Mid. Tabela jest osobna, żeby dało się stroić oba presety niezależnie.
+- type: weightedRandom
+  id: SecretPlusPrimaryMidHigh
+  weights:
+    Traitor: 0.38                # 38%
+    ChangelingSecretPlus: 0.14   # 14%
+    Revolutionary: 0.12          # 12%
+    Nukeops: 0.10                # 10%
+    NukeopsLowpop: 0.08          #  8%
+    Wizard: 0.05                 #  5%
+    WizardLowpop: 0.05           #  5%
+    Zombie: 0.04                 #  4%
+    Xenoborgs: 0.04              #  4%
+
+# High: zawsze tryb głośny.
+- type: weightedRandom
+  id: SecretPlusPrimaryHigh
+  weights:
+    Revolutionary: 0.22          # 22%
+    Nukeops: 0.20                # 20%
+    NukeopsLowpop: 0.16          # 16%
+    WizardLowpop: 0.12           # 12%
+    Xenoborgs: 0.12              # 12%
+    Wizard: 0.10                 # 10%
+    Zombie: 0.08                 #  8%
+
+# Admeme. Ta sama tabela dla głównego antagonisty i dla reszty budżetu.
+- type: weightedRandom
+  id: SecretPlusChaos
+  weights:
+    ThiefSecretPlus: 0.10
+    Traitor: 0.25
+    Changeling: 0.10
+    Nukeops: 0.08
+    Revolutionary: 0.08
+    Wizard: 0.05
+    WizardLowpop: 0.02
+    Xenoborgs: 0.08
+    Zombie: 0.05
+    NukeopsLowpop: 0.05
+
+# ====================================================================================================
+# Tabela uzupełniająca: na co wydawana jest reszta budżetu po głównym antagoniście
+# ====================================================================================================
+
+# Mid, MidHigh, High. Tylko ukryci antagoniści, więc drugi tryb głośny nigdy stąd nie przyjdzie.
+- type: weightedRandom
+  id: SecretPlusSupport
+  weights:
+    ThiefSecretPlus: 0.40       # 40%
+    Traitor: 0.35               # 35%
+    ChangelingSecretPlus: 0.25  # 25%
+
+# ====================================================================================================
+# Reguły antagonistów przygotowane dla SecretPlus
+# ====================================================================================================
+
+# Złodzieje z ceną chaosu i progiem graczy.
+- type: entity
+  parent: Thief
+  id: ThiefSecretPlus
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 12
+  - type: AntagSelection
+    antags:
+    - !type:LinearAntagCount
+      proto: Thief
+      playerRatio: 20
+      chaosScore: 80
+      range:
+        min: 1
+        max: 2
+
+# Changeling, do którego mogą jeszcze dołączyć spóźnieni gracze (patrz lateAntagsFrom w schedulers.yml).
+- type: entity
+  parent: Changeling
+  id: ChangelingSecretPlus
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AntagSelection
+    lateJoinAdditional: true

@@ -1,2 +1,2 @@
-ent-VirtualBeamEntityController = BEAM ENTITY YOU SHOULD NOT SEE THIS
+ent-VirtualBeamEntityController = ENCJA PROMIENIA — NIE POWINIENEŚ TEGO WIDZIEĆ
     .desc = { "" }

@@ -1,2 +1,2 @@
-ent-ClothingNeckMantleBlueshield = blueshield officer mantle
-    .desc = A comfortable and protective mantle for qualify bodyguards.
+ent-ClothingNeckMantleBlueshield = mantolet oficera "Niebieska Tarcza"
+    .desc = Wygodny i ochronny mantolet dla kwalifikowanych ochroniarzy.

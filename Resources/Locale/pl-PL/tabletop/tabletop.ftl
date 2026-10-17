@@ -1,4 +1,5 @@
-﻿## TabletopGameComponent
+## TabletopGameComponent
+
 tabletop-verb-play-game = Zagraj
 tabletop-verb-dump-pieces = Zrzuć pionki
 tabletop-default-board-name = Gra planszowa
@@ -16,7 +17,7 @@ tabletop-parchis-board-name = Chińczyk
 
 ## Backgammon
 
-tabletop-backgammon-board-name = Backgammon
+tabletop-backgammon-board-name = Tryktrak
 
 ## Checkers
 

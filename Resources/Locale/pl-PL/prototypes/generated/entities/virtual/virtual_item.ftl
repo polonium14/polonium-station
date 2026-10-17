@@ -1,2 +1,2 @@
-ent-VirtualItem = VIRTUAL ITEM YOU SHOULD NOT SEE THIS
+ent-VirtualItem = WIRTUALNY PRZEDMIOT — NIE POWINIENEŚ TEGO WIDZIEĆ
     .desc = { "" }

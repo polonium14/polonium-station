@@ -59,12 +59,12 @@ public sealed partial class DatasetFill : IonLawSelector
     /// The dataset to pick values from.
     /// </summary>
     [DataField]
-    public ProtoId<DatasetPrototype> Dataset { get; set; }
+    public ProtoId<LocalizedDatasetPrototype> Dataset { get; set; }
 }
 
 /// <summary>
 /// Selects a random name from the station's crew manifest.
-/// If it fails to find one, picks an entry from IonStormCrew Dataset Prototype.
+/// If it fails to find one, picks an entry from IonStormCrew.
 /// </summary>
 public sealed partial class RandomManifestFill : IonLawSelector
 {
@@ -72,7 +72,7 @@ public sealed partial class RandomManifestFill : IonLawSelector
     /// The dataset to use if no crew manifest is found. NOT OPTIONAL!
     /// </summary>
     [DataField]
-    public ProtoId<DatasetPrototype> FallbackDataset { get; set; }
+    public ProtoId<LocalizedDatasetPrototype> FallbackDataset { get; set; }
 }
 
 /// <summary>

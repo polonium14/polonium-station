@@ -34,12 +34,13 @@ Zanim przejdziemy dalej, warto omówić rodzaje obrażeń oraz sposoby ich lecze
 Ważna uwaga: większość leków ma próg przedawkowania, którego przekroczenie spowoduje uszkodzenie zdrowia pacjenta. Substancje chemiczne w postaci tabletek wymagają czasu na metabolizm; jeśli chcesz, aby lek zadziałał szybko, użyj strzykawki.
 
   - Obrażenia fizyczne: Bicaridyna lub opatrunki na stłuczenia
-  - Oparzenia: Dermalina lub maść
-  - Toksyny (trucizny): Dylovene
-  - Toksyny (promieniowanie): Hyronalina lub Arythrazyna
-  - Niedotlenienie: Wykonanie RKO, Deksalin lub Inaprowalina
-  - Utrata krwi: Deksalin (zbadaj pacjenta; jeśli jest blady, nadal potrzebuje krwi lub żelaza)
-  - Krwawienie: kwas traneksamowy i rolki gazy <!-- (krwawienie można również zatamować kauteryzacją za pomocą obrażeń z oparzeń). -->
+  - Obrażenia oparzeniowe (oparzenie, porażenie, odmrożenie): Dermalina lub maść
+  - Chemiczne: Maść
+  - Zatrucie: Dylowen
+  - Promieniowanie: Hyronalina
+  - Niedotlenienie: Deksalina lub Epinefryna
+  - Utrata krwi: Deksalina lub Sól fizjologiczna
+  - Krwawienie: Rolki gazy lub kauteryzacja (przyżeganie ran)
 
 Wiele stacji posiada zapasy apteczek w magazynach, a wszyscy medycy mają pewien sprzęt w swoim pasie startowym.
 
@@ -64,7 +65,7 @@ Zbadaj pacjenta i zanotuj najważniejsze szczegóły: Czy pacjent żyje? Czy krw
 
 Jeśli pacjent żyje, udziel mu pomocy najlepiej, jak potrafisz. Pacjenci znajdują się w stanie krytycznym przy 100 punktach obrażeń, a umierają przy 200. Pamiętaj o tym, wybierając sposób postępowania. Do stabilizacji stanu pacjentów często stosuje się zastrzyki ratunkowe i epinefrynę.
 
-Jeśli to możliwe, przypiąć pacjenta do łóżka medycznego; jeśli potrzebujesz czasu na udzielenie pomocy, przypnij go zamiast tego do łóżka stazy. Pamiętaj jednak, że podczas stazy metabolizm (a co za tym idzie, działanie substancji leczniczych) spowalnia do minimum – aby lek był skuteczny, pacjenta trzeba z niego zdjąć. (Jednak transfuzja krwi, maści i opatrunki działają normalnie.)
+Jeśli to możliwe, przypnij pacjenta do łóżka medycznego; jeśli potrzebujesz czasu na udzielenie pomocy, przypnij go zamiast tego do łóżka stazy. Pamiętaj jednak, że podczas stazy metabolizm (a co za tym idzie, działanie substancji leczniczych) spowalnia do minimum – aby lek był skuteczny, pacjenta trzeba z niego zdjąć. (Jednak transfuzja krwi, maści i opatrunki działają normalnie).
 <Box>
 <GuideEntityEmbed Entity="MedicalBed"/>
 <GuideEntityEmbed Entity="StasisBed"/>
@@ -79,7 +80,7 @@ Nie da się uratować wszystkich – czasami śmierć jest nieunikniona. W zale�
 3. Jeśli ciało ma duszę i nie jest w stanie rozkładu, można je ożywić. Jeśli nie masz wystarczająco dużo czasu na ożywienie kogoś, rozważ umieszczenie ciała w tacy kostnicy, ponieważ zbyt długie zwlekanie spowoduje jego rozkład.
 
 ## Ożywianie
-Pacjenta z obrażeniami poniżej 200 na torsie oraz głowie można ożywić, wystarczy wykonać RKO (klikając prawym na pacjenta) aby przywrócić tętno i zapodać leki albo użyć defibrylatora aby zmniejszyć asfiksje. martwi pacjenci nie metabolizują płynnych lekarstw, jednak opatrunki i maście dalej działają, użyj ich aby zbić obrażenia poniżej 200 by móc wykonać RKO z powodzeniem
+Pacjenta z obrażeniami poniżej 200 (nie licząc niedotlenienia) na torsie oraz głowie można ożywić — wystarczy użyć defibrylatora i podać leki. Martwi pacjenci nie metabolizują lekarstw, jednak opatrunki i maści dalej działają. Użyj ich, aby zbić obrażenia poniżej 200 i móc skutecznie użyć defibrylatora.
 <Box>
 <GuideEntityEmbed Entity="Brutepack"/>
 <GuideEntityEmbed Entity="Defibrillator"/>

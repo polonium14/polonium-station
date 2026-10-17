@@ -352,6 +352,22 @@
   itemDrop: FloorTileItemSteel #probably should not be normally obtainable, but the game shits itself and dies when you try to put null here
 
 - type: tile
+  id: FloorInvisible
+  parent: BaseStationTile
+  name: tiles-invisible-floor
+  indestructible: true
+  itemDrop: FloorTileItemSteel
+
+- type: tile
+  id: FloorHullInvisible
+  parent: BaseStationTile
+  name: tiles-hull-invisible
+  footstepSounds:
+    collection: FootstepHull
+  indestructible: true
+  itemDrop: FloorTileItemSteel
+
+- type: tile
   id: FloorReinforcedHardened
   parent: BaseStationTile
   name: tiles-super-reinforced-floor

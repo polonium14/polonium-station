@@ -1,2 +1,2 @@
-ent-ClothingOuterHardsuitBlueshield = blueshield hardsuit
-    .desc = A hardsuit for the captains personal bodyguard.
+ent-ClothingOuterHardsuitBlueshield = skafander niebieskiej tarczy
+    .desc = Skafander dla osobistego ochroniarza kapitana.

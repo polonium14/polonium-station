@@ -1,2 +1,2 @@
-ent-ClothingBackpackBlueshield = blueshield backpack
-    .desc = A very protective backpack, smells like energy gun.
+ent-ClothingBackpackBlueshield = plecak niebieskiej tarczy
+    .desc = Bardzo ochronny plecak, pachnie pistoletem energetycznym.

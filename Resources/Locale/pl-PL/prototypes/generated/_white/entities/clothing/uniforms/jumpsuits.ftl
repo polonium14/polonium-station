@@ -1,6 +1,6 @@
-ent-ClothingUniformJumpsuitWhiteCaptain = white captain jumpsuit
-    .desc = Captain white jumpsuit symbolizes that your salary is clearly above the norm.
-ent-ClothingUniformJumpsuitSheriff = sheriff jumpsuit
-    .desc = Jumpsuit showing your status is how terrible... the great ruler.
-ent-ClothingUniformJumpsuitCommandCaptain = captain command jumpsuit
-    .desc = Black suit with gold shoulder straps.
+ent-ClothingUniformJumpsuitWhiteCaptain = biały kombinezon kapitana
+    .desc = Biały kombinezon kapitana symbolizuje, że twoja pensja jest wyraźnie powyżej normy.
+ent-ClothingUniformJumpsuitSheriff = kombinezon szeryfa
+    .desc = Kombinezon pokazujący twój status: jak straszny... wielki władca.
+ent-ClothingUniformJumpsuitCommandCaptain = kombinezon dowódczy kapitana
+    .desc = Czarny garnitur ze złotymi naramiennikami.

@@ -1,10 +1,12 @@
 using Content.Server._Funkystation.ReagentFires.Systems;
 using Content.Server.Fluids.Components;
 using Content.Server.Spreader;
+using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reaction;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.Effects;
 using Content.Shared.FixedPoint;
@@ -22,6 +24,7 @@ using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server.Fluids.EntitySystems;
@@ -45,6 +48,9 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     [Dependency] private EntityQuery<PuddleComponent> _puddleQuery = default!;
     [Dependency] private EntityQuery<EvaporationSparkleComponent> _evaporationSparklesQuery = default!;
     [Dependency] private EntityQuery<FootprintComponent> _footprintQuery = default!;
+    [Dependency] private EntityQuery<TutorialMapComponent> _tutorialMapQuery = default!;
+
+    private static readonly ProtoId<ReagentPrototype> GreenTeaReagent = "GreenTea";
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -72,6 +78,9 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         if (!TryGetPuddle(tile, out var puddleUid) || !_puddleQuery.TryGetComponent(puddleUid, out var puddleComp))
             return;
 
+        if (!puddleComp.SpreadsOnStep)
+            return;
+
         if (!_solutionContainerSystem.ResolveSolution(puddleUid, puddleComp.SolutionName, ref puddleComp.Solution, out var solution))
             return;
 
@@ -92,6 +101,11 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     // TODO: This can be predicted once https://github.com/space-wizards/RobustToolbox/pull/5849 is merged
     private void OnPuddleSpread(Entity<PuddleComponent> entity, ref SpreadNeighborsEvent args)
     {
+        if (!entity.Comp.SpreadsOnStep)
+        {
+            RemCompDeferred<ActiveEdgeSpreaderComponent>(entity);
+            return;
+        }
         // Overflow is the source of the overflowing liquid. This contains the excess fluid above overflow limit (20u)
         var overflow = GetOverflowSolution(entity.Owner, entity.Comp);
 
@@ -254,6 +268,9 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     private void OnPuddleSlip(Entity<PuddleComponent> entity, ref SlipEvent args)
     {
         if (!HasComp<ReactiveComponent>(args.Slipped) || HasComp<SlidingComponent>(args.Slipped))
+            return;
+
+        if (!entity.Comp.SpreadsOnStep)
             return;
 
         if (!_random.Prob(0.5f))
@@ -524,6 +541,12 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             return true;
         }
 
+        if (IsStuckResidue(solution) && solution.Volume < StuckResidueVolume)
+        {
+            puddleUid = EntityUid.Invalid;
+            return false;
+        }
+
         var coords = _map.GridTileToLocal(gridId, mapGrid, tileRef.GridIndices);
         puddleUid = Spawn("Puddle", coords);
         EnsureComp<PuddleComponent>(puddleUid);
@@ -565,6 +588,26 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     {
         base.OnSolutionUpdate(entity, ref args);
         _fireSystem.UpdateFire(entity);
+        TryPinTutorialTea(entity);
+    }
+
+    private void TryPinTutorialTea(Entity<PuddleComponent> ent)
+    {
+        if (!ent.Comp.SpreadsOnStep && !ent.Comp.Evaporates)
+            return;
+
+        var map = Transform(ent).MapUid;
+        if (map is not { } mapUid || !_tutorialMapQuery.HasComp(mapUid))
+            return;
+
+        if (!_solutionContainerSystem.ResolveSolution(ent.Owner, ent.Comp.SolutionName, ref ent.Comp.Solution, out var solution))
+            return;
+
+        if (solution.GetTotalPrototypeQuantity(GreenTeaReagent) < 1)
+            return;
+
+        FreezePuddle(ent);
+        RemCompDeferred<ActiveEdgeSpreaderComponent>(ent);
     }
     // Funky edit end
 }

@@ -81,8 +81,6 @@
     - SurgeryStepRemoveSeveredSkin
     - SurgeryStepRemoveLeftoverBones
     - SurgeryStepSealDismembermentWound
-  - type: SurgeryBleedsPresentCondition
-    inverted: true
   - type: SurgeryTraumaPresentCondition
     trauma: Dismemberment
 
@@ -171,8 +169,6 @@
     - SurgeryStepSawBones
     - SurgeryStepClampInternalBleeders
     - SurgeryStepMendBones
-  - type: SurgeryBleedsPresentCondition
-    inverted: true
   - type: SurgeryTraumaPresentCondition
     trauma: BoneDamage
 
@@ -186,8 +182,6 @@
     steps:
     - SurgeryStepClampInternalBleeders
     - SurgeryStepHealOrgans
-  - type: SurgeryBleedsPresentCondition
-    inverted: true
   - type: SurgeryTraumaPresentCondition
     trauma: OrganDamage
 

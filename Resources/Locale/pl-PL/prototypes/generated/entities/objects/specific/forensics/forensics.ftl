@@ -1,2 +1,2 @@
-ent-ForensicPad = forensic pad
-    .desc = A forensic pad for collecting fingerprints or fibers.
+ent-ForensicPad = podkładka kryminalistyczna
+    .desc = Wkładka kryminalistyczna do pobierania odcisków palców lub włókien.

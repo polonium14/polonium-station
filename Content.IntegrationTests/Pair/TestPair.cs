@@ -1,7 +1,9 @@
 #nullable enable
 using System.Collections.Generic;
+using System.Linq;
 using Content.Client.IoC;
 using Content.Client.Parallax.Managers;
+using Content.IntegrationTests._Polonium.Pair;
 using Content.IntegrationTests.Tests.Destructible;
 using Content.IntegrationTests.Tests.DeviceNetwork;
 using Content.Server.GameTicking;
@@ -23,6 +25,10 @@ public sealed partial class TestPair : RobustIntegrationTest.TestPair
 {
     private List<NetUserId> _modifiedProfiles = new();
 
+    // POLONIUM
+    private MissingLocLogHandler? _clientLocHandler;
+    private MissingLocLogHandler? _serverLocHandler;
+
     public ContentPlayerData? PlayerData => Player?.Data.ContentData();
 
     protected override async Task Initialize()
@@ -36,6 +42,17 @@ public sealed partial class TestPair : RobustIntegrationTest.TestPair
             if (e.System is SharedMapSystem map)
                 map.Log.Level = LogLevel.Warning;
         };
+
+        // POLONIUM
+        Client.ResolveDependency<ILogManager>().GetSawmill("loc").Level = LogLevel.Warning;
+        Server.ResolveDependency<ILogManager>().GetSawmill("loc").Level = LogLevel.Warning;
+
+        ClientLogHandler.JudgeLog += (_, message) =>
+            MissingLocLogHandler.IsMissingLoc(message)
+            && IsIgnoredLocKey(MissingLocLogHandler.MessageId(message));
+
+        _clientLocHandler?.Arm();
+        _serverLocHandler?.Arm();
 
         var settings = (PoolSettings)Settings;
         if (!settings.DummyTicker)
@@ -99,6 +116,9 @@ public sealed partial class TestPair : RobustIntegrationTest.TestPair
                 {
                     ClientBeforeIoC = () => IoCManager.Register<IParallaxManager, DummyParallaxManager>(true)
                 });
+
+            // Polonium
+            _clientLocHandler = AddMissingLocHandler(reportLive: false);
         };
         return opts;
     }
@@ -121,7 +141,25 @@ public sealed partial class TestPair : RobustIntegrationTest.TestPair
             var entSysMan = IoCManager.Resolve<IEntitySystemManager>();
             entSysMan.LoadExtraSystemType<DeviceNetworkTestSystem>();
             entSysMan.LoadExtraSystemType<TestDestructibleListenerSystem>();
+
+            _serverLocHandler = AddMissingLocHandler(reportLive: true); // Polonium
         };
         return opts;
+    }
+
+    // POLONIUM
+    private MissingLocLogHandler AddMissingLocHandler(bool reportLive)
+    {
+        var logMan = IoCManager.Resolve<ILogManager>();
+        var handler = new MissingLocLogHandler(logMan.GetSawmill("loc_missing"), reportLive, IsIgnoredLocKey);
+
+        logMan.GetSawmill("loc").AddHandler(handler);
+
+        return handler;
+    }
+
+    private bool IsIgnoredLocKey(string? messageId)
+    {
+        return !MissingLocLogHandler.IsKey(messageId) || messageId.Split('-').Any(IsTestEntityPrototype);
     }
 }

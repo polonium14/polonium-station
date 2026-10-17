@@ -20,7 +20,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 public partial class TraumaSystem
 {
     private const string TraumaContainerId = "Traumas";
-    public static readonly TraumaType[] TraumasBlockingHealing = { TraumaType.BoneDamage, TraumaType.OrganDamage, TraumaType.Dismemberment };
+    public static readonly TraumaType[] TraumasBlockingHealing = { TraumaType.Dismemberment };
 
     private void InitProcess()
     {
@@ -616,6 +616,8 @@ public partial class TraumaSystem
 
         if (_net.IsServer)
             QueueDel(trauma);
+
+        _wound.TryRemoveHealedTraumaWound(inflicterWound.Owner);
     }
 
     #endregion

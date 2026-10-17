@@ -1,5 +1,5 @@
-ent-ChemDispenserEmpty = chemical dispenser
-    .desc = An industrial grade chemical dispenser.
+ent-ChemDispenserEmpty = dozownik środków chemicznych
+    .desc = Dozownik środków chemicznych klasy przemysłowej.
     .suffix = Puste
 ent-ChemDispenser = { ent-ChemDispenserEmpty }
     .suffix = Wypełnione

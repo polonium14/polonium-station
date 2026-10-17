@@ -16,13 +16,12 @@
     slots:
     - Snout
   - type: PointLight # the glow is subtle. It's just enough to make the mantle visible in pitch black lighting, but won't help you see much.
-    radius: 1.45
+    radius: 3
     energy: 1
-    offset: 0,0.2
     color: "#CCFFCC" # light green, bc thats the colour used by original mantles
     containerOccluded: true # this makes the mantle illuminate itself.
-#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
-    maskAutoRotate: true
+    lightMask: ConeSingle
+    autoRot: true
   - type: Clothing
     equipDelay: 1 #Just for the equip delay
     unequipDelay: 3 # So you get annoyed at it when you need to put on a spacesuit in a hurry >:3
@@ -36,15 +35,18 @@
     stealGroup: ClothingEyesHuds # It goes on the head...but why not?
   - type: IdentityBlocker
   - type: IngestionBlocker
-  - type: TriggerOnGotEquipped
+  - type: TriggerOnGotEquipped # Here starts the mess of components used to give visors unique features.
     keyOut: ProtoVisorEquipped
+    slotFlags: HEAD
+  - type: TriggerOnGotUnequipped
+    keyOut: ProtoVisorUnequipped
     slotFlags: HEAD
   - type: AddComponentsOnTrigger
     targetUser: true
     keysIn:
     - ProtoVisorEquipped
     components:
-    - type: PermanentBlindness
+    - type: PermanentBlindness # Gives blindness
       blindness: 5
   - type: DamageOnTrigger
     targetUser: true
@@ -53,14 +55,34 @@
     damage:
       types:
         Blunt: 10
-  - type: StunOnTrigger # deafault 1 secound
+  - type: StunOnTrigger # default 1 secound stun on equip - technicly I belive it can be used to dodge a stun baton stun if timed perfectly but its sucha niche use if you pull it off its a reward for skill.
     keysIn:
     - ProtoVisorEquipped
     targetUser: true
-  - type: KnockdownOnTrigger # deafault 1 secound
+  - type: KnockdownOnTrigger # default 1 secound stun on equip - technicly I belive it can be used to dodge a stun baton stun if timed perfectly but its sucha niche use if you pull it off its a reward for skill.
     keysIn:
     - ProtoVisorEquipped
     targetUser: true
+  - type: ToggleComponentsOnTrigger # Gives the mob components to keep steady 0.5u supply of Nanobots. Change the healing values of them if you want to balance this.
+    keysIn:
+    - ProtoVisorEquipped
+    - ProtoVisorUnequipped
+    targetUser: true
+    componentsAdded: false
+    components:
+    - type: RepeatingTrigger
+      delay: 1
+      nextTrigger: 1
+      keyOut: ProtoVisorInjectTime
+    - type: AddSolutionOnTrigger
+      targetUser: false
+      keysIn: 
+      - ProtoVisorInjectTime
+      solution: bloodstream
+      addedSolution:
+        reagents:
+        - ReagentId: Nanobots
+          Quantity: 0.5
 
 - type: entity
   parent: ClothingHeadProtoVisorBase
@@ -76,39 +98,13 @@
   parent: ClothingHeadProtoVisorBase
   id: ClothingHeadProtoVisorBaseNVG
   abstract: true
-  components:
-#  - type: NightVision # Disabled untill NVG on head fixed
-#    relayOverlay: true
-#    enabled: false
-#    action: ActionToggleNightVision
-#    overlayColor: "#030303FF"
-#    lightingColor: "#505050FF"
-#    noiseAmount: 15
-#    noiseMultiplier: 3
-  - type: PointLight # Untill NVGs on head get fixed
-    radius: 6 # range of a normal flashight, which is still better becasue it actually iluminates stuff
-    energy: 2
-    offset: 0,0.2
-    falloff: 10 # so it iluminates decently at the source but barely helps at the edges
-    color: "#225522" # Very dark green for those of the masks that should have NVGs
-    containerOccluded: true 
-#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
-    maskAutoRotate: true
-  - type: ItemTogglePointLight
-  - type: ItemToggle # Cant make it into an action on a hot bar without giving it HandheldLight component, but than it requires a cell to be togglable, got to love this code. Its not a bug, its a feature!
-    activated: true
-    onUse: false
-    soundActivate:
-      path: /Audio/Items/flashlight_on.ogg
-    soundDeactivate:
-      path: /Audio/Items/flashlight_off.ogg
 
 # Basic Forms
 - type: entity
   parent: ClothingHeadProtoVisorBase
   id: ClothingHeadProtoVisorBasic
   name: Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. The most common, simplest model.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. The most common, simplest model.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -125,7 +121,7 @@
   parent: [ClothingHeadProtoVisorBase, ClothingHeadProtoVisorBaseSpaceProof]
   id: ClothingHeadProtoVisorSpaceProof # Here basicly just for if Admin wants to spawn it.
   name: Space Proof Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with additional seals to make it space proof.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version comes with additional seals to make it space proof.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -144,7 +140,7 @@
   parent: [ClothingHeadProtoVisorBase, ClothingHeadProtoVisorBaseSpaceProof, BaseEngineeringContraband]
   id: ClothingHeadProtoVisorEngi
   name: Engineer's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 seconds of continuous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 seconds of continuous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -175,7 +171,7 @@
   parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorEngi, BaseCommandContraband]
   id: ClothingHeadProtoVisorCE
   name: CE's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, comes with environment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, although of very poor quality.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version is space proof, comes with environment thermal sensors and allows you to weld without limits.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -198,7 +194,7 @@
   parent: [ClothingHeadProtoVisorBase, BaseMedicalContraband]
   id: ClothingHeadProtoVisorMedical
   name: Doctors's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has a built in health HUD display.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version has a built in health HUD display.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -218,7 +214,7 @@
   parent: [ClothingHeadProtoVisorMedical, ClothingHeadProtoVisorBaseSpaceProof]
   id: ClothingHeadProtoVisorParamed
   name: Paramedic's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version not only comes with a health HUD but also space protection.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version not only comes with a health HUD but also space protection.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -237,7 +233,7 @@
   parent: [ClothingHeadProtoVisorMedical]
   id: ClothingHeadProtoVisorChem
   name: Chemist's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version, in addition to the health HUD, comes with a chemical scanner.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version, in addition to the health HUD, comes with a chemical scanner.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -256,7 +252,7 @@
   parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorMedical, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorCMO
   name: CMO's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD and as a bonus it also has NVG sensors, even if they are terrible at their job.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -278,7 +274,7 @@
   parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorRD
   name: RD's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has space protection and poor quality NVGs.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version has space protection and thats about it.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -298,7 +294,7 @@
   parent: [ClothingHeadProtoVisorBasic, BaseCivilianContraband]
   id: ClothingHeadProtoVisorService
   name: Service Worker's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with basic nourishmentand thirst analysis for organic beings.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version comes with basic nourishment and thirst analysis for organic beings.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -321,7 +317,7 @@
   parent: [ClothingHeadProtoVisorBase, BaseSecurityContraband]
   id: ClothingHeadProtoVisorSecurity
   name: Officer's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with fancy displays for catching criminals.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version comes with fancy displays for catching criminals.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -343,7 +339,7 @@
   parent: [ClothingHeadProtoVisorMedical, ClothingHeadProtoVisorSecurity]
   id: ClothingHeadProtoVisorBrigmedic
   name: Brigmedic's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version, alongside fancy anti-criminal HUD has a health HUD. Perfect for knowing who to not heal.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version, alongside fancy anti-criminal HUD has a health HUD. Perfect for knowing who to not heal.
   components:
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -357,7 +353,7 @@
   parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorSecurity, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorHOS
   name: HOS's Cybernetic Visor
-  description: "Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has all the gadgets a HOS might want: that being, Space protection, security HUDs AND some very poorly working NVG sensors."
+  description: "Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version has all the gadgets a HOS might want: Space protection and security HUD." # Keep the quotes here because of the colon
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -379,7 +375,7 @@
   parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCargoContraband]
   id: ClothingHeadProtoVisorSalvage
   name: Salvager's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with space protection, now go die for cargonia!
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version comes with space protection, now go die for cargonia!
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -398,7 +394,7 @@
   parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorQM
   name: QM's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, although you may have bigger problems.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version has space protection for not dying when ATS explodes, although then you may have bigger problems.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -419,7 +415,7 @@
   parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorHOP
   name: HOP's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with space protection, poor quality NVG sensors and job identification display.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version comes with space protection and job identification display.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -438,7 +434,7 @@
   parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorCaptain
   name: Captain's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has, space protection, job identifier and some TERRIBLE NVGs.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version has, space protection and a job identifier build-in.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -460,7 +456,7 @@
   parent: [ClothingHeadProtoVisorBasic, BaseCentcommContraband] # NTR doesnt get a space proof visor MUHAHAHA!
   id: ClothingHeadProtoVisorNTR
   name: NTR's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is a proof CC is being cheap on you. It only has some broken NVGs, not to mention the space proofing broke and just got removed.
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version is a proof CC is being cheap on you. It has nothing, even the lights of standard models barely work here.
   components:
   - type: Sprite
     scale: 0.8, 0.8
@@ -473,40 +469,21 @@
       - state: helmet-centralcommand
       - state: eyes-centralcommand
         shader: unshaded
-#  - type: NightVision # Disabled until NVG on head fixed
-#    relayOverlay: true
-#    enabled: false
-#    action: ActionToggleNightVision
-#    overlayColor: "#000000FF"
-#    lightingColor: "#00000000"
-#    noiseAmount: 5
-#    noiseMultiplier: 1
-#    prioritized: true # Even worse than what other heads get bc "Broken" - Pure black
-  - type: PointLight # delete once NVGs get fixed
-    radius: 1.5
-    energy: 0.5
-    offset: 0,0.2
-    falloff: 10 
-    color: "#003300" # beacause "broken"
-    containerOccluded: true 
-#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
-    maskAutoRotate: true
-  - type: ItemTogglePointLight
-  - type: ItemToggle # Cant make it into an action on a hot bar without giving it HandheldLight component, but than it requires a cell to be togglable, got to love this code. Its not a bug, its a feature!
-    activated: true
-    onUse: false
-    soundActivate:
-      path: /Audio/Items/flashlight_on.ogg
-    soundDeactivate:
-      path: /Audio/Items/flashlight_off.ogg
   - type: ShowJobIcons
+  - type: PointLight # overwrite so the light is worse (1.5 instead of 3)
+    radius: 1.5
+    energy: 1
+    color: "#CCFFCC"
+    containerOccluded: true
+    lightMask: ConeSingle
+    autoRot: true
 
 # The Evil CC corporate version
 - type: entity
   parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCentcommContraband] 
   id: ClothingHeadProtoVisorCentCom
   name: Central Command's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with EVERYTHING you would ever want. NOW WE ARE TALKING BABY!
+  description: Highly specialized equipment used for providing additional data about the environment (or so they advertise) and causing the user permanent vision problems. This version comes with EVERYTHING you would ever want. NOW WE ARE TALKING BABY!
   suffix: DO NOT MAP
   components:
   - type: Sprite
@@ -543,34 +520,8 @@
 #      path: /Audio/Items/flashlight_off.ogg
 #  - type: GoggleShader
 #    shader: Goggles
-#    color: '#5AB43CCC'
+#    color: '#5AB43CCC'lightMask
 #    enabled: false
   - type: ThermalSight
   - type: SolutionScanner
   - type: EyeProtection
-#  - type: NightVision # Disabled until NVG on head fixed
-#    relayOverlay: true
-#    enabled: false
-#    action: ActionToggleNightVision
-#    overlayColor: "#CCFFCCFF"
-#    lightingColor: "#CCFFCCFF"
-#    noiseAmount: 5
-#    noiseMultiplier: 1
-#    prioritized: true # Only visor without black NVG
-  - type: PointLight # Delete once NVGs get fixed
-    radius: 8 # bigger range - same of a seclight
-    energy: 3 # slightly more energy
-    offset: 0,0.2
-    falloff: 5 # smaller falloff
-    color: "#CCFFCC" # Only well working flashlight among all the visors
-    containerOccluded: true 
-#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
-    maskAutoRotate: true
-  - type: ItemTogglePointLight 
-  - type: ItemToggle # Cant make it into an action on a hot bar without giving it HandheldLight component, but than it requires a cell to be togglable, got to love this code. Its not a bug, its a feature!
-    activated: true
-    onUse: false
-    soundActivate:
-      path: /Audio/Items/flashlight_on.ogg
-    soundDeactivate:
-      path: /Audio/Items/flashlight_off.ogg

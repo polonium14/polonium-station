@@ -1,304 +1,314 @@
-stack-steel = steel
+stack-steel = stal
 stack-bananium = bananium
-stack-glass = glass
-stack-plasteel = plasteel
-stack-brass = brass
-stack-plastic = plastic
-stack-silver = silver
-stack-gold = gold
-stack-reinforced-glass = reinforced glass
-stack-plasma-glass = plasma glass
-stack-uranium = uranium
-stack-uranium-glass = uranium glass
-stack-clockwork-glass = clockwork glass
-stack-reinforced-plasma-glass = reinforced plasma glass
-stack-reinforced-uranium-glass = reinforced uranium glass
-stack-runed-glass = runed glass
-stack-runed-steel = runed steel
-stack-runed-plasteel = runed plasteel
-stack-gunpowder = gunpowder
-stack-cardboard = cardboard
+stack-glass = szkło
+stack-plasteel = plastal
+stack-brass = mosiądz
+stack-plastic = plastik
+stack-silver = srebro
+stack-gold = złoto
+stack-reinforced-glass = wzmocnione szkło
+stack-plasma-glass = szkło plazmowe
+stack-uranium = uran
+stack-uranium-glass = szkło uranowe
+stack-clockwork-glass = szkło zegarowe
+stack-reinforced-plasma-glass = wzmocnione szkło plazmowe
+stack-reinforced-uranium-glass = wzmocnione szkło uranowe
+stack-runed-glass = runiczne szkło
+stack-runed-steel = runiczna stal
+stack-runed-plasteel = runiczna plastal
+stack-gunpowder = proch strzelniczy
+stack-cardboard = karton
 stack-bones =
     { $amount ->
-        [1] bone
-       *[other] bones
+        [1] kość
+       *[other] kości
     }
 stack-cloth =
     { $amount ->
-        [1] cloth
-       *[other] cloths
+        [one] tkanina
+        [few] tkaniny
+       *[many] tkanin
     }
 stack-lv-cable =
     { $amount ->
-        [1] lv cable
-       *[other] lv cables
+        [1] zwój kabla NN
+       *[other] zwoje kabli NN
     }
 stack-mv-cable =
     { $amount ->
-        [1] mv cable
-       *[other] mv cables
+        [1] zwój kabla ŚN
+       *[other] zwoje kabli ŚN
     }
 stack-hv-cable =
     { $amount ->
-        [1] hv cable
-       *[other] hv cables
+        [1] zwój kabla WN
+       *[other] zwoje kabli WN
     }
 stack-explosive-cord =
     { $amount ->
-        [1] explosive cord
-       *[other] explosive cords
+        [one] linka wybuchowa
+        [few] linki wybuchowe
+       *[many] linek wybuchowych
     }
 stack-wood-plank =
     { $amount ->
-        [1] wood plank
-       *[other] wood planks
+        [one] drewniana deska
+        [few] drewniane deski
+       *[many] drewnianych desek
     }
 stack-durathread =
     { $amount ->
-        [1] durathread
-       *[other] durathreads
+        [1] duratkanina
+       *[other] duratkaniny
     }
 stack-rods =
     { $amount ->
-        [1] rod
-       *[other] rods
+        [1] pręt
+        [few] pręty
+       *[many] prętów
     }
 stack-meat-sheet =
     { $amount ->
-        [1] meat sheet
-       *[other] meat sheets
+        [one] arkusz mięsa
+        [few] arkusze mięsa
+       *[many] arkuszy mięsa
     }
 stack-space-carp-tooth =
-    space carp { $amount ->
-        [1] tooth
-       *[other] teeth
+    { $amount ->
+        [1] ząb karpia kosmicznego
+       *[other] zęby karpia kosmicznego
     }
 stack-paper =
     { $amount ->
-        [1] paper
-       *[other] papers
+        [1] papier
+       *[other] papiery
     }
 stack-diamond =
     { $amount ->
-        [1] diamond
-       *[other] diamonds
+        [one] diament
+        [few] diamenty
+       *[many] diamentów
     }
 stack-silk =
     { $amount ->
-        [1] silk
-       *[other] silks
+        [1] jedwab
+       *[other] jedwab
     }
 stack-cotton =
     { $amount ->
-        [1] cotton
-       *[other] cottons
+        [1] bawełna
+       *[other] bawełny
     }
 stack-artifact-fragment =
-    artifact { $amount ->
-        [1] fragment
-       *[other] fragments
+    { $amount ->
+        [one] fragment artefaktu
+        [few] fragmenty artefaktu
+       *[many] fragmentów artefaktu
     }
 stack-xenoborg-crystal =
-    xenoborg { $amount ->
-        [1] crystal
-       *[other] crystals
+    { $amount ->
+        [1] kryształ ksenoborga
+       *[other] kryształy ksenoborga
     }
 stack-conveyor-belt =
     { $amount ->
-        [1] conveyor belt
-       *[other] conveyor belts
+        [one] przenośnik taśmowy
+        [few] przenośniki taśmowe
+       *[many] przenośników taśmowych
     }
 # best materials
-stack-ground-tobacco = ground tobacco
-stack-ground-cannabis = ground cannabis
-stack-ground-rainbow-cannabis = ground rainbow cannabis
-stack-dried-tobacco-leaves = dried tobacco leaves
-stack-dried-cannabis-leaves = dried cannabis leaves
-stack-dried-rainbow-cannabis-leaves = dried rainbow cannabis leaves
+stack-ground-tobacco = tytoń
+stack-ground-cannabis = marihuana
+stack-ground-rainbow-cannabis = marihuana tęczowa
+stack-dried-tobacco-leaves = liście suszonego tytoniu
+stack-dried-cannabis-leaves = suszone liście marihuany
+stack-dried-rainbow-cannabis-leaves = suszone liście tęczowej marihuany
 stack-cigarette-filter =
-    cigarette { $amount ->
-        [1] filter
-       *[other] filters
+    { $amount ->
+        [one] filtr do papierosa
+        [few] filtry do papierosów
+       *[many] filtrów do papierosów
     }
 stack-rolling-paper =
-    rolling { $amount ->
-        [1] paper
-       *[other] papers
+    { $amount ->
+        [one] bletka
+        [few] bletki
+       *[many] bletek
     }
-stack-fulton = fulton
-stack-credit = speso
-stack-plasma = plasma
-stack-biomass = biomass
-stack-pyrotton = pyrotton
-stack-sharkminnow-tooth = sharkminnow tooth
-stack-goliath-hide = goliath hide
-stack-telecrystal = telecrystal
-stack-gold-ore = gold ore
-stack-rough-diamond = rough diamond
-stack-iron-ore = iron ore
-stack-plasma-ore = plasma ore
-stack-silver-ore = silver ore
-stack-space-quartz = space quartz
-stack-uranium-ore = uranium ore
-stack-bananium-ore = bananium ore
-stack-coal = coal
-stack-salt = salt
+stack-fulton = balon logistyczny
+stack-credit = spesos
+stack-plasma = plazma
+stack-biomass = biomasa
+stack-pyrotton = piroton
+stack-sharkminnow-tooth = ząb kosmicznego rekina
+stack-goliath-hide = skóra goliata
+stack-telecrystal = telekryształ
+stack-gold-ore = ruda złota
+stack-rough-diamond = nieoszlifowany diament
+stack-iron-ore = ruda żelaza
+stack-plasma-ore = ruda plazmy
+stack-silver-ore = ruda srebra
+stack-space-quartz = kosmiczny kwarc
+stack-uranium-ore = ruda uranu
+stack-bananium-ore = ruda bananium
+stack-coal = węgiel
+stack-salt = sól
 stack-salvageticket = Bilet Złomiarza
-stack-inflatable-wall = inflatable wall
-stack-inflatable-door = inflatable door
-stack-ointment = ointment
-stack-aloe-cream = aloe cream
-stack-gauze = gauze
-stack-brutepack = brutepack
-stack-bloodpack = bloodpack
-stack-medicated-suture = medicated-suture
-stack-regenerative-mesh = regenerative-mesh
+stack-inflatable-wall = nadmuchiwana ściana
+stack-inflatable-door = nadmuchiwane drzwi
+stack-ointment = maść
+stack-aloe-cream = krem aloesowy
+stack-gauze = gaza
+stack-brutepack = plastry
+stack-bloodpack = pakiet krwi
+stack-medicated-suture = szwy
+stack-regenerative-mesh = siatka regeneracyjna
 stack-capacitor = kondensator
-stack-micro-manipulator = modular machine part
+stack-micro-manipulator = modułowa część maszyny
 stack-matter-bin = pojemnik na materię
-stack-pancake = pancake
-stack-blueberry-pancake = blueberry pancake
-stack-chocolate-chip-pancake = chocolate chip pancake
-stack-pizza-box = pizza box
-stack-dark-tile = dark tile
-stack-dark-steel-diagonal-mini-tile = dark steel diagonal mini tile
-stack-dark-steel-diagonal-tile = dark steel diagonal tile
-stack-dark-steel-herringbone = dark steel herringbone
-stack-dark-steel-horizontal-slats-tile-bordered = dark steel bordered horizontal slat tile
-stack-dark-steel-mini-tile = dark steel mini tile
-stack-dark-steel-mono-tile = dark steel mono tile
-stack-dark-steel-pavement = dark steel pavement
-stack-dark-steel-vertical-pavement = dark steel vertical pavement
-stack-dark-steel-vertical-slats-tile-bordered = dark steel bordered vertical slat tile
-stack-dark-steel-slats-tile-continuous = dark steel continuous slat tile
-stack-offset-dark-steel-tile = offset dark steel tile
-stack-offset-steel-tile = offset steel tile
-stack-steel-diagonal-mini-tile = steel diagonal mini tile
-stack-steel-diagonal-tile = steel diagonal tile
-stack-steel-herringbone = steel herringbone
-stack-steel-horizontal-slats-tile-bordered = steel bordered horizontal slat tile
-stack-steel-mini-tile = steel mini tile
-stack-steel-mono-tile = steel mono tile
-stack-steel-pavement = steel pavement
-stack-steel-vertical-pavement = steel vertical pavement
-stack-steel-vertical-slats-tile-bordered = steel bordered vertical slat tile
-stack-steel-slats-tile-continuous = steel continuous slat tile
-stack-white-tile = white tile
-stack-offset-white-steel-tile = offset white steel tile
-stack-white-steel-diagonal-mini-tile = white steel diagonal mini tile
-stack-white-steel-diagonal-tile = white steel diagonal tile
-stack-white-steel-herringbone = white steel herringbone
-stack-white-steel-horizontal-slats-tile-bordered = white steel bordered horizontal slat tile
-stack-white-steel-mini-tile = white steel mini tile
-stack-white-steel-mono-tile = white steel mono tile
-stack-white-steel-pavement = white steel pavement
-stack-white-steel-vertical-pavement = white steel vertical pavement
-stack-white-steel-vertical-slats-tile-bordered = white steel bordered vertical slat tile
-stack-white-steel-slats-tile-continuous = white steel continuous slat tile
-stack-steel-dark-checker-tile = steel dark checker tile
-stack-steel-light-checker-tile = steel light checker tile
-stack-steel-tile = steel tile
-stack-plastic-tile = plastic tile
-stack-plastic-dark-tile = dark plastic tile
-stack-plastic-white-tile = white plastic tile
-stack-wood-floor = wood floor
-stack-techmaint-floor = techmaint floor
-stack-techmaint-floor-dark = dark techmaint floor
-stack-freezer-tile = freezer tile
-stack-showroom-tile = showroom tile
-stack-green-circuit-floor = green-circuit floor
-stack-gold-floor = gold floor
-stack-mono-tile = mono tile
-stack-filled-brass-plate = filled brass plate
-stack-smooth-brass-plate = smooth brass plate
-stack-linoleum-floor = linoleum floor
-stack-hydro-tile = hydro tile
-stack-lime-tile = lime tile
-stack-dirty-tile = dirty tile
-stack-white-shuttle-tile = white shuttle tile
-stack-blue-shuttle-tile = blue shuttle tile
-stack-orange-shuttle-tile = orange shuttle tile
-stack-purple-shuttle-tile = purple shuttle tile
-stack-red-shuttle-tile = red shuttle tile
-stack-grey-shuttle-tile = grey shuttle tile
-stack-black-shuttle-tile = black shuttle tile
-stack-eighties-floor-tile = eighties floor tile
-stack-blue-arcade-tile = blue arcade tile
-stack-red-arcade-tile = red arcade tile
-stack-red-carpet-tile = red carpet tile
-stack-black-carpet-tile = black carpet tile
-stack-blue-carpet-tile = blue carpet tile
-stack-green-carpet-tile = green carpet tile
-stack-orange-carpet-tile = orange carpet tile
-stack-skyblue-carpet-tile = skyblue carpet tile
-stack-purple-carpet-tile = purple carpet tile
-stack-pink-carpet-tile = pink carpet tile
-stack-cyan-carpet-tile = cyan carpet tile
-stack-white-carpet-tile = white carpet tile
-stack-clown-carpet-tile = clown carpet tile
-stack-office-carpet-tile = office carpet tile
-stack-boxing-ring-tile = boxing ring tile
-stack-gym-floor-tile = gym floor tile
-stack-elevator-shaft-tile = elevator shaft tile
-stack-rock-vault-tile = rock vault tile
-stack-blue-floor-tile = blue floor tile
-stack-mining-floor-tile = mining floor tile
-stack-dark-mining-floor-tile = dark mining floor tile
-stack-light-mining-floor-tile = light mining floor tile
-stack-item-bar-floor-tile = item bar floor tile
-stack-clown-floor-tile = clown floor tile
-stack-mime-floor-tile = mime floor tile
-stack-kitchen-floor-tile = kitchen floor tile
-stack-laundry-floor-tile = laundry floor tile
-stack-concrete-tile = concrete tile
-stack-concrete-mono-tile = concrete mono tile
-stack-concrete-smooth = concrete smooth
-stack-gray-concrete-tile = gray concrete tile
-stack-gray-concrete-mono-tile = gray concrete mono tile
-stack-gray-concrete-smooth = gray concrete smooth
-stack-old-concrete-tile = old concrete tile
-stack-old-concrete-mono-tile = old concrete mono tile
-stack-old-concrete-smooth = old concrete smooth
-stack-ironsand-concrete-tile = ironsand concrete tile
-stack-ironsand-concrete-mono-tile = ironsand concrete mono tile
-stack-ironsand-concrete-smooth = ironsand concrete smooth
-stack-silver-floor-tile = silver floor tile
-stack-bcircuit-floor-tile = bcircuit floor tile
-stack-grass-floor-tile = grass floor tile
-stack-grass-jungle-floor-tile = grass jungle floor tile
-stack-snow-floor-tile = snow floor tile
-stack-wood-patter-floor = wood pattern floor
-stack-flesh-floor = flesh floor
-stack-steel-maint-floor = steel maint floor
-stack-grating-maint-floor = grating maint floor
-stack-web-tile = web tile
-stack-astro-grass-floor = astro-grass floor
-stack-dark-astro-grass-floor = dark astro-grass floor
-stack-light-astro-grass-floor = light astro-grass floor
-stack-mowed-astro-grass-floor = mowed astro-grass floor
-stack-jungle-astro-grass-floor = jungle astro-grass floor
-stack-astro-ice-floor = astro-ice floor
-stack-astro-snow-floor = astro-snow floor
-stack-large-wood-floor = large wood floor
-stack-red-circuit-floor = red-circuit floor
-stack-asteroid-astro-sand-floor = asteroid astro-sand floor
-stack-desert-astro-sand-floor = desert astro-sand floor
-stack-white-marble-floor = white marble floor
-stack-white-marble-mono-floor = white marble mono floor
-stack-dark-marble-floor = dark marble floor
-stack-dark-marble-mono-floor = dark marble mono floor
-stack-plasma-marble-floor = plasmarble floor
-stack-uranium-marble-floor = uranium marble floor
-stack-astro-ironsand-floor = astro-ironsand floor
-stack-astro-ironsand-floor-borderless = borderless astro-ironsand floor
+stack-pancake = naleśnik
+stack-blueberry-pancake = jagodowy naleśnik
+stack-chocolate-chip-pancake = czekoladowy naleśnik
+stack-pizza-box = pudełko pizzy
+stack-dark-tile = ciemna płytka
+stack-dark-steel-diagonal-mini-tile = ciemna stalowa ukośna mini płytka
+stack-dark-steel-diagonal-tile = ciemna stalowa ukośna płytka
+stack-dark-steel-herringbone = ciemna stalowa jodełka
+stack-dark-steel-horizontal-slats-tile-bordered = ciemna stalowa pozioma płytka listwowa z obramowaniem
+stack-dark-steel-mini-tile = ciemna stalowa mini płytka
+stack-dark-steel-mono-tile = ciemna stalowa płyta mono
+stack-dark-steel-pavement = nawierzchnia z ciemnej stali
+stack-dark-steel-vertical-pavement = pionowa nawierzchnia z ciemnej stali
+stack-dark-steel-vertical-slats-tile-bordered = ciemna stalowa pionowa płytka listwowa z obramowaniem
+stack-dark-steel-slats-tile-continuous = ciemna stalowa ciągła płytka listwowa
+stack-offset-dark-steel-tile = ciemna przesunięta stalowa płytka
+stack-offset-steel-tile = przesunięta stalowa płytka
+stack-steel-diagonal-mini-tile = stalowa ukośna mini płytka
+stack-steel-diagonal-tile = stalowa ukośna płytka
+stack-steel-herringbone = stalowa jodełka
+stack-steel-horizontal-slats-tile-bordered = stalowa pozioma płytka listwowa z obramowaniem
+stack-steel-mini-tile = stalowa mini płytka
+stack-steel-mono-tile = stalowa płyta mono
+stack-steel-pavement = nawierzchnia stalowa
+stack-steel-vertical-pavement = pionowa nawierzchnia stalowa
+stack-steel-vertical-slats-tile-bordered = stalowa pionowa płytka listwowa z obramowaniem
+stack-steel-slats-tile-continuous = stalowa ciągła płytka listwowa
+stack-white-tile = biała płytka
+stack-offset-white-steel-tile = przesunięta biała stalowa płytka
+stack-white-steel-diagonal-mini-tile = biała stalowa ukośna mini płytka
+stack-white-steel-diagonal-tile = biała stalowa ukośna płytka
+stack-white-steel-herringbone = biała stalowa jodełka
+stack-white-steel-horizontal-slats-tile-bordered = biała stalowa pozioma płytka listwowa z obramowaniem
+stack-white-steel-mini-tile = biała stalowa mini płytka
+stack-white-steel-mono-tile = biała stalowa płyta mono
+stack-white-steel-pavement = biała nawierzchnia stalowa
+stack-white-steel-vertical-pavement = biała pionowa nawierzchnia stalowa
+stack-white-steel-vertical-slats-tile-bordered = biała stalowa pionowa płytka listwowa z obramowaniem
+stack-white-steel-slats-tile-continuous = biała stalowa ciągła płytka listwowa
+stack-steel-dark-checker-tile = ciemna stalowa płytka w szachownicę
+stack-steel-light-checker-tile = jasna stalowa płytka w szachownicę
+stack-steel-tile = stalowa płytka
+stack-plastic-tile = plastikowa płytka
+stack-plastic-dark-tile = ciemna plastikowa płytka
+stack-plastic-white-tile = biała plastikowa płytka
+stack-wood-floor = drewniana podłoga
+stack-techmaint-floor = podłoga tuneli tech.
+stack-techmaint-floor-dark = ciemna podłoga tuneli tech.
+stack-freezer-tile = płytka zamrażarki
+stack-showroom-tile = płytka sali wystawowej
+stack-green-circuit-floor = podłoga z zielonego obwodu
+stack-gold-floor = złota podłoga
+stack-mono-tile = płytka mono
+stack-filled-brass-plate = wypełniona mosiężna płytka
+stack-smooth-brass-plate = gładka mosiężna płytka
+stack-linoleum-floor = podłoga z linoleum
+stack-hydro-tile = płytka hydro
+stack-lime-tile = limonkowa płytka
+stack-dirty-tile = brudna płytka
+stack-white-shuttle-tile = biała podłoga shuttle
+stack-blue-shuttle-tile = niebieska podłoga shuttle
+stack-orange-shuttle-tile = pomarańczowa podłoga shuttle
+stack-purple-shuttle-tile = fioletowa podłoga shuttle
+stack-red-shuttle-tile = czerwona podłoga shuttle
+stack-grey-shuttle-tile = szara podłoga shuttle
+stack-black-shuttle-tile = czarna podłoga shuttle
+stack-eighties-floor-tile = podłoga lat osiemdziesiątych
+stack-blue-arcade-tile = niebieska podłoga salonu gier
+stack-red-arcade-tile = czerwona podłoga salonu gier
+stack-red-carpet-tile = czerwony dywan
+stack-black-carpet-tile = czarny dywan
+stack-blue-carpet-tile = niebieski dywan
+stack-green-carpet-tile = zielony dywan
+stack-orange-carpet-tile = pomarańczowy dywan
+stack-skyblue-carpet-tile = błękitny dywan
+stack-purple-carpet-tile = fioletowy dywan
+stack-pink-carpet-tile = różowy dywan
+stack-cyan-carpet-tile = cyjanowy dywan
+stack-white-carpet-tile = biały dywan
+stack-clown-carpet-tile = dywan klauna
+stack-office-carpet-tile = dywan biurowy
+stack-boxing-ring-tile = podłoga ringu bokserskiego
+stack-gym-floor-tile = podłoga siłowni
+stack-elevator-shaft-tile = płytka szybu windy
+stack-rock-vault-tile = kamienna płytka skarbca
+stack-blue-floor-tile = błękitna płytka
+stack-mining-floor-tile = górnicza płytka
+stack-dark-mining-floor-tile = ciemna górnicza płytka
+stack-light-mining-floor-tile = jasna górnicza płytka
+stack-item-bar-floor-tile = płytka baru
+stack-clown-floor-tile = płytka klauna
+stack-mime-floor-tile = płytka mima
+stack-kitchen-floor-tile = płytka kuchenna
+stack-laundry-floor-tile = płytka pralni
+stack-concrete-tile = betonowa płytka
+stack-concrete-mono-tile = betonowa płyta
+stack-concrete-smooth = gładki beton
+stack-gray-concrete-tile = szara betonowa płytka
+stack-gray-concrete-mono-tile = szara betonowa płyta
+stack-gray-concrete-smooth = gładki szary beton
+stack-old-concrete-tile = stara betonowa płytka
+stack-old-concrete-mono-tile = stara betonowa płyta
+stack-old-concrete-smooth = stary gładki beton
+stack-ironsand-concrete-tile = żelazopiaszczysta betonowa płytka
+stack-ironsand-concrete-mono-tile = jednolita betonowa płytka z żelaznego piasku
+stack-ironsand-concrete-smooth = gładki beton z żelaznego piasku
+stack-silver-floor-tile = srebrna płytka
+stack-bcircuit-floor-tile = płytka błękitnych obwodów
+stack-grass-floor-tile = płytka trawy
+stack-grass-jungle-floor-tile = płytka trawy dżungli
+stack-snow-floor-tile = płytka śniegu
+stack-wood-patter-floor = podłoga z wzorem drewna
+stack-flesh-floor = mięsista podłoga
+stack-steel-maint-floor = stalowa podłoga techniczna
+stack-grating-maint-floor = kratownica techniczna
+stack-web-tile = pajęczynowa podłoga
+stack-astro-grass-floor = astro-trawa
+stack-dark-astro-grass-floor = ciemna astro-trawa
+stack-light-astro-grass-floor = jasna astro-trawa
+stack-mowed-astro-grass-floor = skoszona astro-trawa
+stack-jungle-astro-grass-floor = astro-trawa dżungli
+stack-astro-ice-floor = astro-lód
+stack-astro-snow-floor = astro-śnieg
+stack-large-wood-floor = duża drewniana podłoga
+stack-red-circuit-floor = podłoga z czerwonego obwodu
+stack-asteroid-astro-sand-floor = podłoga z piasku asteroidowego
+stack-desert-astro-sand-floor = podłoga z pustynnego astro-piasku
+stack-white-marble-floor = podłoga z białego marmuru
+stack-white-marble-mono-floor = podłoga z białego marmuru w jednym kolorze
+stack-dark-marble-floor = podłoga z ciemnego marmuru
+stack-dark-marble-mono-floor = podłoga z ciemnego marmuru w jednym kolorze
+stack-plasma-marble-floor = plazmarmurowa podłoga
+stack-uranium-marble-floor = podłoga z marmuru uranowego
+stack-astro-ironsand-floor = astro-żelazopiasek
+stack-astro-ironsand-floor-borderless = bezkrawędziowy astro-żelazopiasek
 stack-blue-space-cube = kostka blue space
-stack-exo-hull-floor = exodermis hull floor
-stack-exo-viscera-floor = exodermis viscera floor
-stack-exo-techmaint-floor = exodermis techmaint floor
-stack-exo-horizontal-floor = exodermis horizontal floor
-stack-exo-vertical-floor = exodermis vertical floor
-stack-exo-corner-ne-floor = exodermis NE corner floor
-stack-exo-corner-nw-floor = exodermis NW corner floor
-stack-exo-corner-se-floor = exodermis SE corner floor
-stack-exo-corner-sw-floor = exodermis SW corner floor
-stack-exo-borg-floor = mechadermis floor
+stack-exo-hull-floor = egzodermiczna podłoga
+stack-exo-viscera-floor = egzodermiczna organiczna podłoga
+stack-exo-techmaint-floor = egzodermiczna podłoga techniczna
+stack-exo-horizontal-floor = egzodermiczna pozioma podłoga
+stack-exo-vertical-floor = egzodermiczna pionowa podłoga
+stack-exo-corner-ne-floor = egzodermiczna narożna podłoga, północny wschód
+stack-exo-corner-nw-floor = egzodermiczna narożna podłoga, północny zachód
+stack-exo-corner-se-floor = egzodermiczna narożna podłoga, południowy wschód
+stack-exo-corner-sw-floor = egzodermiczna narożna podłoga, południowy zachód
+stack-exo-borg-floor = mechadermiczna podłoga

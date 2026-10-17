@@ -1,4 +1,4 @@
-﻿vending-machine-keypad-sold-out = WYPRZEDANE
+vending-machine-keypad-sold-out = WYPRZEDANE
 vending-machine-keypad-clear = CLR
 vending-machine-keypad-enter = ENT
 vending-machine-keypad-dispense = WYDAJ

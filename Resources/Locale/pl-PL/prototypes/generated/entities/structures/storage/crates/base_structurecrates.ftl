@@ -1,9 +1,9 @@
-ent-BaseCrate = crate
-    .desc = A large container for items.
+ent-BaseCrate = skrzynia
+    .desc = Duży pojemnik na przedmioty.
 ent-CrateGeneric = { ent-BaseCrate }
     .desc = { ent-BaseCrate.desc }
 ent-CrateBaseWeldable = { ent-CrateGeneric }
     .desc = { ent-CrateGeneric.desc }
 ent-CrateBaseSecure = { ent-CrateBaseWeldable }
-    .suffix = Secure
+    .suffix = Ochrona
     .desc = { ent-CrateBaseWeldable.desc }

@@ -1,2 +1,2 @@
-ent-ClothingOuterCoatCaptain = captain jacket
-    .desc = Captain formal jacket, inlaid with gold.
+ent-ClothingOuterCoatCaptain = kurtka kapitana
+    .desc = Galowa kurtka kapitana, inkrustowana złotem.

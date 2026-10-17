@@ -67,8 +67,8 @@ public sealed class PlantAnalyzerLocalizationHelper
     public static string BooleanToLocalizedStrings(bool choice, IPrototypeManager protMan)
     {
         if (choice == true)
-            return Loc.GetString("plant-analyzer-produce-yes");
+            return Loc.GetString("plant-analyzer-component-yes");
         else
-            return Loc.GetString("plant-analyzer-produce-no");
+            return Loc.GetString("plant-analyzer-component-no");
     }
 }

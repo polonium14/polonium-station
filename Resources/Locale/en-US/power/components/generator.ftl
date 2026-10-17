@@ -1,4 +1,4 @@
-﻿generator-clogged = {CAPITALIZE(THE($generator))} shuts off abruptly!
+generator-clogged = {CAPITALIZE(THE($generator))} shuts off abruptly!
 
 portable-generator-verb-start = Start generator
 portable-generator-verb-start-msg-unreliable = Start the generator. This may take a few tries.
@@ -12,6 +12,8 @@ portable-generator-ui-title = Portable Generator
 portable-generator-ui-status-stopped = Stopped:
 portable-generator-ui-status-starting = Starting:
 portable-generator-ui-status-running = Running:
+portable-generator-ui-power-switch = Status:
+portable-generator-ui-switch = Output:
 portable-generator-ui-start = Start
 portable-generator-ui-stop = Stop
 portable-generator-ui-target-power-label = Target Power (kW):

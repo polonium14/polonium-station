@@ -6,17 +6,16 @@
 
 using Content.Server.GameTicking;
 using Content.Server.Pinpointer;
+using Content.Server._Polonium.Replicator; // POLONIUM
 using Content.Shared._Impstation.Replicator;
-using Content.Shared.Actions;
+using Content.Shared._Polonium.Replicator; // POLONIUM
 using Content.Shared.Destructible;
-using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Stunnable;
 using Robust.Shared.Containers;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Impstation.Replicator;
@@ -24,14 +23,16 @@ namespace Content.Server._Impstation.Replicator;
 public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
 {
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedContainerSystem _containerSystem = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private NavMapSystem _navMap = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedStunSystem _stun = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private ReplicatorHiveSystem _hive = default!; // POLONIUM
+    [Dependency] private ReplicatorQueenSystem _queen = default!; // POLONIUM
+
+    private readonly List<EntityUid> _protectedInside = new(); // POLONIUM
 
     public override void Initialize()
     {
@@ -55,9 +56,48 @@ public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
             if (_timing.CurTime < falling.NextDeletionTime)
                 continue;
 
-            _containerSystem.Insert(uid, falling.FallingTarget.Comp.Hole);
-            EnsureComp<StunnedComponent>(uid);
-            RemCompDeferred(uid, falling);
+            Digest(falling.FallingTarget, uid); // POLONIUM
+        }
+    }
+
+    // POLONIUM
+    private void Digest(Entity<ReplicatorNestComponent> nest, EntityUid uid)
+    {
+        if (TerminatingOrDeleted(nest.Owner))
+        {
+            RemCompDeferred<ReplicatorNestFallingComponent>(uid);
+            return;
+        }
+
+        HandlePoints(nest, uid);
+
+        _protectedInside.Clear();
+        FindProtected(uid, _protectedInside);
+
+        foreach (var saved in _protectedInside)
+        {
+            _containerSystem.TryRemoveFromContainer(saved, force: true);
+            _transform.DropNextTo(saved, nest.Owner);
+        }
+
+        QueueDel(uid);
+    }
+
+    // POLONIUM
+    private void FindProtected(EntityUid uid, List<EntityUid> found)
+    {
+        if (!TryComp<ContainerManagerComponent>(uid, out var manager))
+            return;
+
+        foreach (var container in _containerSystem.GetAllContainers(uid, manager))
+        {
+            foreach (var contained in container.ContainedEntities)
+            {
+                if (_hive.IsProtected(contained))
+                    found.Add(contained);
+                else
+                    FindProtected(contained, found);
+            }
         }
     }
 
@@ -116,37 +156,18 @@ public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
                 RemCompDeferred<ReplicatorNestFallingComponent>(uid);
         }
 
-        EntityUid? queen = null;
-        HashSet<Entity<ReplicatorComponent>> livingReplicators = [];
         foreach (var replicator in ent.Comp.SpawnedMinions)
         {
-            if (!TryComp<ReplicatorComponent>(replicator, out var replicatorComp))
+            if (!HasComp<ReplicatorComponent>(replicator))
                 continue;
 
             if (!_mobState.IsAlive(replicator))
                 continue;
 
-            if (replicatorComp.Queen)
-                queen = replicator;
-
-            livingReplicators.Add((replicator, replicatorComp));
             _popup.PopupEntity(Loc.GetString("replicator-nest-destroyed"), replicator, replicator);
         }
 
-        if (livingReplicators.Count == 0)
-            return;
-
-        if (queen == null)
-            queen = _random.Pick(livingReplicators);
-
-        var queenComp = EnsureComp<ReplicatorComponent>(queen.Value);
-        queenComp.Queen = true;
-        queenComp.RelatedReplicators = livingReplicators;
-
-        if (!TryComp<MindContainerComponent>(queen, out var mindContainer) || mindContainer.Mind == null)
-            return;
-
-        _actions.AddAction(queen.Value, ent.Comp.SpawnNewNestAction);
+        _queen.UpdateHive(ent, nestLost: true); // POLONIUM: the queen and her nest action are picked there
     }
 
     private void OnRoundEndTextAppend(RoundEndTextAppendEvent args)

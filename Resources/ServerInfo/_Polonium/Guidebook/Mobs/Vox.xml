@@ -10,45 +10,45 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Vox
+  # Voks
 
   <Box>
     <GuideEntityEmbed Entity="MobVox" Caption=""/>
   </Box>
 
-  [color=#ffa500]Warning! This species is not recommended for new players due to their fatal allergy to oxygen![/color]
+  [color=#ffa500]Uwaga! Ten gatunek nie jest polecany nowym graczom przez śmiertelną alergię na tlen![/color]
 
-  Vox are an alien species evolutionarily related to equally alien nitrogen-breathing birds.
+  Voksy to obcy gatunek, ewolucyjnie spokrewniony z równie obcymi ptakami oddychającymi azotem.
 
-  ## Vox Lungs
+  ## Płuca voksów
 
-  Vox breathe nitrogen, and [color=#ffa500] oxygen is toxic to them.[/color]
-  Unfortunately, space stations tend to be full of oxygen, so Vox must use an internal nitrogen supply at almost all
-  times to avoid fatal exposure.
+  Voksy oddychają azotem, a [color=#ffa500]tlen jest dla nich toksyczny.[/color]
+  Niestety stacje kosmiczne zwykle są pełne tlenu, więc Voksy prawie cały czas muszą korzystać z wewnętrznej butli z azotem,
+  żeby uniknąć śmiertelnej ekspozycji.
 
-  Vox always spawn wearing working nitrogen internals equipment.
-  A spare breathing mask and an emergency nitrogen canister is provided in their survival box.
+  Voksy zawsze pojawiają się w działającym sprzęcie do oddychania azotem.
+  Zapasowa maska oddechowa i awaryjna butla z azotem są w ich zestawie przetrwania.
 
-  ## Vox Stomachs
+  ## Żołądki voksów
 
-  In addition to regular foods, Vox can also eat various snack packaging, banana peels, eggshells, and raw meat with
-  barely any ill effects. They also like to drink welding fuel.
+  Oprócz zwykłego jedzenia Voksy jedzą też różne opakowania przekąsek, skórki bananów, skorupki jaj i surowe mięso
+  prawie bez złych skutków. Lubią też pić paliwo spawalnicze.
 
-  ## Vox Livers
+  ## Wątroby voksów
 
-  Vox [color=#7eb8ff]slowly recover from low levels of Poison damage[/color] on their own, so long as they are careful
-  not to exceed 20 Poison damage. This allows them to endure breathing station air for up to thirty seconds at a time
-  without lasting damage, letting them quickly eat, drink, take oral medication, and so on.
-  A thirty second oxygen exposure takes them two minutes to recover from.
-  If their health does not seem to improve within a minute of oxygen exposure, they should seek medical attention.
+  Voksy [color=#7eb8ff]same powoli schodzą z niskiego zatrucia[/color], o ile nie
+  przekroczą 20 obrażeń zatrucia. Dzięki temu wytrzymują oddychanie powietrzem stacji do trzydziestu sekund naraz
+  bez trwałych skutków i mogą szybko zjeść, wypić, wziąć lek doustny i tak dalej.
+  Trzydzieści sekund ekspozycji na tlen wymaga dwóch minut dochodzenia do siebie.
+  Jeśli zdrowie nie poprawia się w ciągu minuty od ekspozycji na tlen, trzeba szukać pomocy medycznej.
 
-  ## Claws
+  ## Pazury
 
-  Vox have sharp claws, and deal [color=#ffb86b]Slashing[/color] damage with their unarmed attack.
+  Voksy mają ostre pazury i atakiem bez broni zadają obrażenia [color=#ffb86b]cięte[/color].
 
-  ## Vox Naming Conventions
+  ## Imiona voksów
 
-  Vox typically have one word names comprised of random syllables and repeating patterns.
+  Voksy zwykle mają jednowyrazowe imiona z losowych sylab i powtarzających się wzorów.
 
   [bullet] Hirikachi
 

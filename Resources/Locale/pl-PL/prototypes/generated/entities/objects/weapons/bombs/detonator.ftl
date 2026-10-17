@@ -1,4 +1,4 @@
-ent-EmptyDetonator = detonator cap
-    .desc = A detonator cap. Requires a trigger and wire.
-ent-WiredDetonator = detonator cap
-    .desc = A detonator cap.
+ent-EmptyDetonator = kapiszon zapalający
+    .desc = Kap. Wymaga spustu i przewodu.
+ent-WiredDetonator = kapiszon zapalający
+    .desc = Kapiszon.

@@ -5,5 +5,3 @@ osay-command-arg-type = type
 osay-command-arg-message = message
 osay-command-error-args = Invalid number of arguments
 osay-command-error-euid = { $arg } is not a valid entity uid.
-osay-command-description = Forces another entity to try to send a message
-osay-command-help-text = Usage: { $command } <uid> <type> <message>

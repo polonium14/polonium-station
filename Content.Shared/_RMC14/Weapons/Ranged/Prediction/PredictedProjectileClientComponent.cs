@@ -11,4 +11,7 @@ public sealed partial class PredictedProjectileClientComponent : Component
 
     [DataField]
     public EntityCoordinates? Coordinates;
+
+    // hit target waiting until physics is done so we send where the foam dart actually FUCKING STOPPED
+    public EntityUid? PendingImpactTarget;
 }

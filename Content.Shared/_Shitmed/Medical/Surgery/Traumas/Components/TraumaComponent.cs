@@ -27,6 +27,13 @@ public sealed partial class TraumaComponent : Component
     public EntityUid? TraumaTarget;
 
     /// <summary>
+    /// Whether this trauma owns a positive organ damage modifier. The modifier dictionary
+    /// is server-only, but surgery availability and step display also run on the client.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    public bool HasTreatableOrganDamage;
+
+    /// <summary>
     /// Purely exists for delimb traumas, to know which limb-organ category was lost.
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]

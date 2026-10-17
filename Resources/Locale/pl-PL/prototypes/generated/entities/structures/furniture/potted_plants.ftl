@@ -1,5 +1,5 @@
-ent-PottedPlantBase = potted plant
-    .desc = A little bit of nature contained in a pot.
+ent-PottedPlantBase = roślina doniczkowa
+    .desc = Odrobina natury zamknięta w doniczce.
 ent-PottedPlant0 = { ent-PottedPlantBase }
     .desc = { ent-PottedPlantBase.desc }
 ent-PottedPlant1 = { ent-PottedPlantBase }
@@ -18,10 +18,10 @@ ent-PottedPlant7 = { ent-PottedPlantBase }
     .desc = { ent-PottedPlantBase.desc }
 ent-PottedPlant8 = { ent-PottedPlantBase }
     .desc = { ent-PottedPlantBase.desc }
-ent-PottedPlantBioluminscent = bioluminescent potted plant
-    .desc = It produces light!
+ent-PottedPlantBioluminscent = bioluminescencyjna roślina doniczkowa
+    .desc = To świeci!
 ent-PottedPlant10 = { ent-PottedPlantBase }
-    .desc = A pretty piece of nature contained in a pot.
+    .desc = Piękny fragment natury zamknięty w doniczce.
 ent-PottedPlant11 = { ent-PottedPlantBase }
     .desc = { ent-PottedPlantBase.desc }
 ent-PottedPlant12 = { ent-PottedPlantBase }
@@ -50,14 +50,14 @@ ent-PottedPlant23 = { ent-PottedPlantBase }
     .desc = { ent-PottedPlantBase.desc }
 ent-PottedPlant24 = { ent-PottedPlantBase }
     .desc = { ent-PottedPlantBase.desc }
-ent-PottedPlantRD = RD's potted plant
+ent-PottedPlantRD = Roślina doniczkowa KB-a
     .desc =
-        A gift from the botanical staff, presented after the RD's reassignment. There's a tag on it that says "Y'all come back now, y'hear?"
-        It doesn't look very healthy...
+        Prezent od pracowników ogrodu botanicznego, wręczony po przeniesieniu KB. Jest na nim przywieszka z napisem: „Wpadajcie jeszcze kiedyś, słyszycie?”.
+        Nie wygląda zbyt zdrowo...
 ent-PottedPlant26 = { ent-PottedPlantBase }
-    .desc = Is it just me, or is it blinking?
-ent-PottedPlant27 = plastic potted plant
-    .desc = A fake, cheap looking, plastic tree. Perfect for people who kill every plant they touch.
+    .desc = Czy to tylko moje wrażenie, czy to naprawdę miga?
+ent-PottedPlant27 = roślina w doniczce z plastiku
+    .desc = Sztuczna, tandetnie wyglądająca, plastikowa choinka. Idealna dla osób, które zabijają każdą roślinę, której tylko dotkną.
 ent-PottedPlant28 = { ent-PottedPlant27 }
     .desc = { ent-PottedPlant27.desc }
 ent-PottedPlant29 = { ent-PottedPlant27 }

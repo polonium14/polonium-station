@@ -3,7 +3,6 @@ admin-player-actions-logs = Player logs
 admin-player-actions-notes = Notes
 admin-player-actions-kick = Kick
 admin-player-actions-ban = Ban
-admin-player-actions-ahelp = AHelp
 admin-player-actions-respawn = Respawn To Lobby
 admin-player-actions-respawn-message = Return the player to the lobby, allowing them to respawn as a new character at will.
 admin-player-actions-spawn = Spawn here
@@ -17,4 +16,3 @@ admin-player-actions-follow = Follow
 admin-player-actions-check-afk = Check AFK
 admin-player-actions-confirm = Are you sure?
 
-admin-player-actions-bans = Lista banów

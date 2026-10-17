@@ -94,6 +94,7 @@ using Content.Client.GameTicking.Managers;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
 using Content.Client.Input;
+using Content.Client._Polonium.Tutorial.Lobby;
 using Content.Client.IoC;
 using Content.Client.Launcher;
 using Content.Client.Lobby;
@@ -107,6 +108,9 @@ using Content.Client.Replay;
 using Content.Client.Screenshot;
 using Content.Client.Singularity;
 using Content.Client.Stylesheets;
+using Content.Client.Stylesheets.Fonts;
+using Robust.Client.ResourceManagement;
+using Robust.Client.UserInterface.RichText;
 using Content.Client.UserInterface;
 using Content.Client.Viewport;
 using Content.Client.Voting;
@@ -164,7 +168,10 @@ namespace Content.Client.Entry
         [Dependency] private TitleWindowManager _titleWindowManager = default!;
         [Dependency] private IEntitySystemManager _entitySystemManager = default!;
         [Dependency] private ClientsidePlaytimeTrackingManager _clientsidePlaytimeManager = default!;
+        [Dependency] private TutorialManager _tutorialManager = default!;
         [Dependency] private ClientFeedbackManager _feedbackManager = null!;
+        [Dependency] private IResourceCache _resourceCache = default!; // Polonium
+        [Dependency] private FontTagHijackHolder _fontTagHijack = default!; // Polonium
 
         public override void PreInit()
         {
@@ -216,6 +223,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("codewordGenerator");
             _prototypeManager.RegisterIgnore("codewordFaction");
             _prototypeManager.RegisterIgnore("stationGoal");
+            _prototypeManager.RegisterIgnore("solitarySpawning"); // Project Batfly
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();
@@ -242,6 +250,7 @@ namespace Content.Client.Entry
             base.PostInit();
 
             _stylesheetManager.Initialize();
+            PoloniumFonts.HijackFontTags(_resourceCache, _prototypeManager, _fontTagHijack); // Polonium
 
             // Setup key contexts
             ContentContexts.SetupContexts(_inputManager.Contexts);
@@ -260,6 +269,7 @@ namespace Content.Client.Entry
             _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
             _documentParsingManager.Initialize();
             _titleWindowManager.Initialize();
+            _tutorialManager.Initialize();
             _feedbackManager.Initialize();
 
             _baseClient.RunLevelChanged += (_, args) =>

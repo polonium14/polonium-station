@@ -1,3 +1,4 @@
+using Content.Server._Polonium.Tutorial;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 
@@ -23,6 +24,9 @@ public sealed partial class ToggleReadyCommand : LocalizedEntityCommands
             shell.WriteError(Loc.GetString("shell-only-players-can-run-this-command"));
             return;
         }
+
+        if (EntityManager.System<TutorialSystem>().TryBlockConsoleJoin(player, shell))
+            return;
 
         if (_gameTicker.RunLevel != GameRunLevel.PreRoundLobby)
         {

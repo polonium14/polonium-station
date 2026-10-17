@@ -1,10 +1,10 @@
 ent-BaseCartridgeRifle = nabój (.20 karabinowe)
     .desc = { ent-BaseCartridge.desc }
 ent-CartridgeRifle = nabój (.20 karabinowe)
-    .desc = A modern intermediate cartridge for combat rifles. Standard kinetic ammunition is common and useful in most situations.
+    .desc = Nowoczesny nabój pośredni do karabinów bojowych. Standardowa amunicja kinetyczna jest powszechnie stosowana i przydatna w większości sytuacji.
 ent-CartridgeRiflePractice = nabój (.20 karabinowe treningowe)
-    .desc = A modern intermediate cartridge for combat rifles. Practice ammunition fires a chalk projectile that stings a little, but otherwise causes no lasting damage.
+    .desc = Nowoczesny nabój pośredni do karabinów bojowych. Amunicja treningowa wystrzeliwuje kredowy pocisk, który powoduje lekkie ukłucie, ale poza tym nie wyrządza żadnych trwałych uszkodzeń.
 ent-CartridgeRifleIncendiary = nabój (.20 karabinowe zapalające)
-    .desc = A modern intermediate cartridge for combat rifles. Incendiary ammunition contains a self-igniting compound that sets targets ablaze.
+    .desc = Nowoczesny nabój pośredni do karabinów bojowych. Amunicja zapalająca zawiera samopaliącą się mieszankę, która podpala cele.
 ent-CartridgeRifleUranium = nabój (.20 karabinowe uranowe)
-    .desc = A modern intermediate cartridge for combat rifles. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating targets from the inside.
+    .desc = Nowoczesny nabój pośredni do karabinów bojowych. Amunicja uranowa zastępuje ołówowy rdzeń pocisku materiałem rozszczepialnym, napromieniowując cele od wewnątrz.

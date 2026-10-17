@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client._Polonium.UserInterface;
 using Content.Client.Message;
 using RoundEndPlayerInfo = Content.Shared.GameTicking.RoundEndMessageEvent.RoundEndPlayerInfo;
 using Robust.Client.UserInterface;
@@ -39,7 +40,7 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
         IoCManager.InjectDependencies(this);
         _playersInfo = info;
 
-        MinSize = SetSize = new Vector2(720, 580);
+        MinSize = SetSize = new Vector2(720, 680); // Polonium
 
         Title = Loc.GetString("round-end-summary-window-title");
 
@@ -50,15 +51,28 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
         // Also, good for serious info.
 
         RoundId = roundId;
-        var roundEndTabs = new TabContainer();
+        var roundEndTabs = new GlowTabContainer(); // Polonium
         roundEndTabs.AddChild(MakeRoundEndSummaryTab(gm, roundEnd, roundTimeSpan, roundId));
         roundEndTabs.AddChild(MakePlayerManifestTab());
+        _tabs = roundEndTabs; // Polonium
 
         ContentsContainer.AddChild(roundEndTabs);
 
         OpenCenteredRight();
         MoveToFront();
     }
+
+    // POLONIUM START
+    private readonly GlowTabContainer _tabs;
+
+    public void AddTab(Control tab, bool glow = false)
+    {
+        _tabs.AddChild(tab);
+
+        if (glow)
+            _tabs.GlowTab = tab;
+    }
+    // POLONIUM END
 
     private static BoxContainer MakeRoundEndSummaryTab(string gamemode, string roundEnd, TimeSpan roundDuration, int roundId)
     {

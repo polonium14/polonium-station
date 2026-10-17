@@ -2,6 +2,8 @@ using System.Linq;
 using Content.Shared._Shitmed.CCVar;
 using Content.Shared._Shitmed.Medical.Surgery.Pain;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Body;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
@@ -87,9 +89,7 @@ public partial class TraumaSystem
         if (args.Organ.Comp.Body is not { } bodyUid || args.NewSeverity < args.OldSeverity)
             return;
 
-        var organCategory = args.Organ.Comp.Category?.Id ?? "organ";
-
-        _popup.PopupClient(Loc.GetString($"popup-trauma-OrganDamage-{args.NewSeverity.ToString()}", ("part", organCategory)),
+        _popup.PopupClient(Loc.GetString($"popup-trauma-OrganDamage-{args.NewSeverity.ToString()}", ("part", args.Organ.Owner)),
             bodyUid,
             bodyUid,
             PopupType.SmallCaution);
@@ -143,6 +143,51 @@ public partial class TraumaSystem
     #endregion
 
     #region Public API
+
+    /// <summary>
+    /// Moves an inserted organ's trauma records onto its recipient without transferring the
+    /// donor's flesh wounds. Keeping the trauma entities preserves their damage modifier keys.
+    /// </summary>
+    public void RehomeOrganTraumas(EntityUid organ, EntityUid part)
+    {
+        if (!_net.IsServer || !TryComp<OrganIntegrityComponent>(organ, out var integrity)
+            || !HasComp<WoundableComponent>(part))
+            return;
+
+        Entity<WoundComponent>? scar = null;
+        foreach (var owner in integrity.IntegrityModifiers.Keys.Select(key => key.Item2).Distinct().ToArray())
+        {
+            if (!TryComp<TraumaComponent>(owner, out var trauma)
+                || trauma.TraumaType != TraumaType.OrganDamage
+                || trauma.TraumaTarget != organ
+                || trauma.HoldingWoundable == part
+                || !_container.TryGetContainingContainer(owner, out var oldContainer))
+                continue;
+
+            if (scar == null)
+            {
+                if (!_wound.TryCreateWound(part, "WoundBlunt", FixedPoint2.Zero, out scar, bypassMinimumSeverity: true)
+                    || scar == null)
+                    return;
+
+                scar.Value.Comp.IsScar = true;
+                scar.Value.Comp.WoundSeverity = WoundSeverity.Healed;
+                Dirty(scar.Value);
+            }
+
+            var destination = Comp<TraumaInflicterComponent>(scar.Value).TraumaContainer!;
+            if (!_container.Insert(owner, destination))
+                continue;
+
+            trauma.HoldingWoundable = part;
+            Dirty(owner, trauma);
+            _wound.TryRemoveHealedTraumaWound(oldContainer.Owner);
+        }
+
+        if (scar is { } retained)
+            _wound.TryRemoveHealedTraumaWound(retained);
+    }
+
     public bool TryCreateOrganDamageModifier(EntityUid uid,
         FixedPoint2 severity,
         EntityUid effectOwner,
@@ -207,7 +252,10 @@ public partial class TraumaSystem
         if (!organ.IntegrityModifiers.Remove((identifier, effectOwner)))
             return false;
 
-        if (TryComp<TraumaComponent>(effectOwner, out var traumaComp))
+        // A single trauma can own several named modifiers. Keep its wound and treatment
+        // handle alive until the last positive modifier belonging to it is gone.
+        if (TryComp<TraumaComponent>(effectOwner, out var traumaComp)
+            && !organ.IntegrityModifiers.Any(modifier => modifier.Key.Item2 == effectOwner && modifier.Value > FixedPoint2.Zero))
             RemoveTrauma((effectOwner, traumaComp));
 
         UpdateOrganIntegrity(uid, organ);
@@ -220,27 +268,38 @@ public partial class TraumaSystem
 
     private void UpdateOrganIntegrity(EntityUid uid, OrganIntegrityComponent organ)
     {
+        foreach (var modifiers in organ.IntegrityModifiers.GroupBy(modifier => modifier.Key.Item2))
+        {
+            if (!TryComp<TraumaComponent>(modifiers.Key, out var trauma))
+                continue;
+
+            var treatable = modifiers.Any(modifier => modifier.Value > FixedPoint2.Zero);
+            if (trauma.HasTreatableOrganDamage == treatable)
+                continue;
+
+            trauma.HasTreatableOrganDamage = treatable;
+            Dirty(modifiers.Key, trauma);
+        }
+
         var oldIntegrity = organ.OrganIntegrity;
 
-        if (organ.IntegrityModifiers.Count > 0)
-        {
-            var totalDamage = organ.IntegrityModifiers.Aggregate(FixedPoint2.Zero, (current, modifier) => current + modifier.Value);
+        // An empty modifier set means all damage has been treated, including the final modifier.
+        var totalDamage = organ.IntegrityModifiers.Aggregate(FixedPoint2.Zero, (current, modifier) => current + modifier.Value);
 
-            var floor = FixedPoint2.Zero;
-            if (TryComp<OrganComponent>(uid, out var organComp)
-                && organComp.Category == "Brain"
-                && organ.IntegrityThresholds.TryGetValue(OrganSeverity.Damaged, out var damagedThreshold))
-                floor = damagedThreshold;
+        var floor = FixedPoint2.Zero;
+        if (TryComp<OrganComponent>(uid, out var organComp)
+            && organComp.Category == "Brain"
+            && organ.IntegrityThresholds.TryGetValue(OrganSeverity.Damaged, out var damagedThreshold))
+            floor = damagedThreshold;
 
-            organ.OrganIntegrity = FixedPoint2.Clamp(organ.IntegrityCap - totalDamage, floor, organ.IntegrityCap);
-        }
+        organ.OrganIntegrity = FixedPoint2.Clamp(organ.IntegrityCap - totalDamage, floor, organ.IntegrityCap);
 
         if (oldIntegrity != organ.OrganIntegrity)
         {
             var ev = new OrganIntegrityChangedEvent(oldIntegrity, organ.OrganIntegrity);
             RaiseLocalEvent(uid, ref ev);
 
-            if (TryComp<OrganComponent>(uid, out var organComp) && organComp.Body is { } body)
+            if (TryComp<OrganComponent>(uid, out organComp) && organComp.Body is { } body)
             {
                 var ev1 = new OrganIntegrityChangedEventOnWoundable((uid, organComp), oldIntegrity, organ.OrganIntegrity);
                 RaiseLocalEvent(body, ref ev1);

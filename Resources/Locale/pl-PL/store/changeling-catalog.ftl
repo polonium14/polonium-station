@@ -17,15 +17,15 @@ changeling-catalog-lethal-sting-desc = Powoduje bardzo powolne obrażenia u celu
 changeling-catalog-hallucinogenic-sting-name = Ukąszenie Halucynogenne
 changeling-catalog-hallucinogenic-sting-desc = Powoduje u celu odurzenie i trudności z mówieniem. Wprowadza zamęt w załodze. Można użyć na sobie.
 changeling-catalog-screech-name = Wrzeszcz [TYMCZASOWE]
-changeling-catalog-screech-desc = We let out a powerful screech that disarms people who hear it without adequate ear protection. THIS ACTION WILL BE MOVED TO THE HORROR FORM WHEN IT IS IMPLEMENTED.
-changeling-catalog-mute-sting-name = Mute Sting
-changeling-catalog-mute-sting-desc = Causes the target to be incapable of speech. Imperceptible until the target tries to speak. Can be used on self.
+changeling-catalog-screech-desc = Wyzwalamy z siebie potężny wrzask, który rozbraja każdego w zasięgu bez odpowiedniej ochrony słuchu. TA AKCJA ZOSTANIE PRZENIESIONA DO FORMY HORRORU, KIEDY ZOSTANIE ZAIMPLEMENTOWANA.
+changeling-catalog-mute-sting-name = Żądło odbierające mowę
+changeling-catalog-mute-sting-desc = Powoduje niezdolność do mówienia. Niezauważalny do czasu, gdy cel będzie próbował mówić. Może być używany samodzielnie.
 changeling-catalog-last-resort-name = Ostatnia Deska Ratunku
 changeling-catalog-last-resort-desc =
     Rozbij obecne ciało i uciekaj jako słaby ślimak-głowa. Jeśli zainfekujesz ludzkie zwłoki, możesz wrócić do pełnego ciała changelinga.
     
     Uwaga! To resetuje twój postęp jako changeling, usuwając zakupy ze sklepu i wchłonięte tożsamości!
-changeling-catalog-voice-mindshield-name = Fake Mindshield
-changeling-catalog-voice-mindshield-desc = Modify your neuron's natural waves to copy those produced by Nanotrasen mindshield implants, making you look mindshielded to security members. Can be toggled.
+changeling-catalog-voice-mindshield-name = Fałszywa Osłona Umysłu
+changeling-catalog-voice-mindshield-desc = Modyfikuj swoje fale mózgowe, aby skopiować fale wytwarzane przez osłonę umysłu Nanotrasen, dzięki czemu dla członków Działu Ochrony będziesz wyglądać na chronionego implantem. Może być przełączany.
 changeling-catalog-night-vision-name = Noktowizja
 changeling-catalog-night-vision-desc = Modyfikujesz fotoreceptory i wyostrzasz zmysły, by widzieć w całkowitej ciemności.

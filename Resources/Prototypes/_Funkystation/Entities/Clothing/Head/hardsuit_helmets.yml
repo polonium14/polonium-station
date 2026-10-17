@@ -12,8 +12,14 @@
     sprite: _Goobstation/Clothing/Head/Helmets/helldiver.rsi
     layers: # Polonium: this rsi has no icon-unshaded/light-overlay states, so drop the inherited light layers
     - state: icon
+    - state: icon-flash
+      visible: false
+      shader: unshaded
+      map: [ "light" ]
   - type: Clothing
     sprite: _Goobstation/Clothing/Head/Helmets/helldiver.rsi
+    clothingVisuals: {}
+  - type: ToggleableVisuals
     clothingVisuals: {}
   - type: PressureProtection
     highPressureMultiplier: 0.525

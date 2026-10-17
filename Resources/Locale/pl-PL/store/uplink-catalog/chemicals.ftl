@@ -1,6 +1,6 @@
 # Chemicals
 
-uplink-hypopen-name = Hypopen
+uplink-hypopen-name = Hipopen
 uplink-hypopen-desc = Chemiczny hypospray ukryty jako długopis, zdolny do natychmiastowego wstrzyknięcia do 10u reagentów. Zaczyna pusty.
 uplink-hypodart-name = Hyporzutka
 uplink-hypodart-desc = Pozornie niepozorna strzałka z powiększonym zbiornikiem na chemikalia. Może przechowywać do 7u reagentów w sobie i natychmiast wstrzyknąć je po trafieniu w cel. Zaczyna pusta.
@@ -14,9 +14,9 @@ uplink-combat-medkit-name = Zestaw Medyczny do Walki
 uplink-combat-medkit-desc = Medkit stworzony do leczenia obrażeń bojowych.
 uplink-combat-medipen-name = Medipen Bojowy
 uplink-combat-medipen-desc = Jednorazowy medipen zawierający chemikalia, które regenerują większość rodzajów obrażeń.
-uplink-stimpack-name = Hyperzine Injector
+uplink-stimpack-name = Wstrzykiwacz Hiperzyny
 uplink-stimpack-desc = Legendarny chemikalium produkowane przez Donk Co. dla Syndykatu. Wstrzyknięcie go zwiększa prędkość biegu i pozwala szybciej odzyskać przytomność po ogłuszeniu przez 30 sekund.
-uplink-stimkit-name = Hyperzine Injector Kit
+uplink-stimkit-name = Zestaw do wstrzykiwania Hiperzyny
 uplink-stimkit-desc = Medkit zawierający 6 mikroinjektorów hyperzyny, z których każdy wstrzykuje wystarczającą ilość hyperzyny, aby działała przez 15 sekund.
 uplink-cigarettes-name = Paczka Papierosów Syndykatu
 uplink-cigarettes-desc = Elitarne papierosy dla elitarnych agentów. Nasycone lekarstwem na wypadek, gdybyś potrzebował czegoś więcej niż tylko uspokojenia nerwów.

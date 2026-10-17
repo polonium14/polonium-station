@@ -1,5 +1,6 @@
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
+using Content.Shared._Polonium.Motd;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Robust.Shared.Console;
@@ -36,8 +37,8 @@ public sealed partial class MOTDSystem : EntitySystem
         if (string.IsNullOrEmpty(_messageOfTheDay))
             return;
 
-        var wrappedMessage = Loc.GetString("motd-wrap-message", ("motd", _messageOfTheDay));
-        _chatManager.ChatMessageToAll(ChatChannel.Server, _messageOfTheDay, wrappedMessage, source: EntityUid.Invalid, hideChat: false, recordReplay: true);
+        var wrappedMessage = WrapMotd();
+        _chatManager.ChatMessageToAll(ChatChannel.Server, _messageOfTheDay, wrappedMessage, source: EntityUid.Invalid, hideChat: false, recordReplay: true, allowHyperlinks: true);
     }
 
     /// <summary>
@@ -48,8 +49,8 @@ public sealed partial class MOTDSystem : EntitySystem
         if (string.IsNullOrEmpty(_messageOfTheDay))
             return;
 
-        var wrappedMessage = Loc.GetString("motd-wrap-message", ("motd", _messageOfTheDay));
-        _chatManager.ChatMessageToOne(ChatChannel.Server, _messageOfTheDay, wrappedMessage, source: EntityUid.Invalid, hideChat: false, client: player.Channel);
+        var wrappedMessage = WrapMotd();
+        _chatManager.ChatMessageToOne(ChatChannel.Server, _messageOfTheDay, wrappedMessage, source: EntityUid.Invalid, hideChat: false, client: player.Channel, allowHyperlinks: true);
     }
 
     /// <summary>
@@ -63,10 +64,14 @@ public sealed partial class MOTDSystem : EntitySystem
         if (string.IsNullOrEmpty(_messageOfTheDay))
             return;
 
-        var wrappedMessage = Loc.GetString("motd-wrap-message", ("motd", _messageOfTheDay));
-        shell.WriteLine(wrappedMessage);
+        shell.WriteLine(Loc.GetString("motd-wrap-message", ("motd", _messageOfTheDay)));
         if (shell.Player is { } player)
-            _chatManager.ChatMessageToOne(ChatChannel.Server, _messageOfTheDay, wrappedMessage, source: EntityUid.Invalid, hideChat: false, client: player.Channel);
+            _chatManager.ChatMessageToOne(ChatChannel.Server, _messageOfTheDay, WrapMotd(), source: EntityUid.Invalid, hideChat: false, client: player.Channel, allowHyperlinks: true);
+    }
+
+    private string WrapMotd()
+    {
+        return Loc.GetString("motd-wrap-message", ("motd", MotdHyperlinkMarkup.ApplyForChat(_messageOfTheDay)));
     }
 
     #region Event Handlers

@@ -1,9 +1,9 @@
 ent-MobDebugCounter = licznik debugowania
     .desc = Potrafi liczyć
-    .suffix = AI, DEBUG
+    .suffix = SI, DEBUG
 ent-MobDebugRandomCounter = randomowy licznik debugowania
     .desc = Potrafi losować
-    .suffix = AI, DEBUG
+    .suffix = SI, DEBUG
 ent-MobDebugRandomLess = debugowy mniej
     .desc = Potrafi zmniejszać
-    .suffix = AI, DEBUG
+    .suffix = SI, DEBUG

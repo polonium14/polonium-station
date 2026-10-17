@@ -1,0 +1,30 @@
+name: Locale BOM Check
+
+on:
+  push:
+    branches: [ master, staging, stable ]
+    paths:
+      - 'Resources/Locale/**'
+      - 'Tools/check_locale_bom.py'
+      - '.github/workflows/check-locale-bom.yml'
+  merge_group:
+  pull_request:
+    types: [ opened, reopened, synchronize, ready_for_review ]
+    paths:
+      - 'Resources/Locale/**'
+      - 'Tools/check_locale_bom.py'
+      - '.github/workflows/check-locale-bom.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'merge_group' }}
+
+jobs:
+  locale-bom-check:
+    name: Locale BOM Check
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check Locale files for UTF-8 BOM
+        run: python3 Tools/check_locale_bom.py

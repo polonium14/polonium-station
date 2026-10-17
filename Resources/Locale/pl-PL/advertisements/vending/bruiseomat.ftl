@@ -1,4 +1,4 @@
-﻿advertisement-bruiseomat-1 = I VOTE WAROPS!!!
+advertisement-bruiseomat-1 = I VOTE WAROPS!!!
 advertisement-bruiseomat-2 = Kto ma TC?
 advertisement-bruiseomat-3 = Ktoś kupił EMAGa?
 advertisement-bruiseomat-4 = Chcę wrócić na swoją stację...
@@ -11,7 +11,7 @@ advertisement-bruiseomat-10 = Mówią, że oko za oko uczyni świat ślepym. Spr
 advertisement-bruiseomat-11 = Pragnę krwi!
 advertisement-bruiseomat-12 = Napij się przed misją!
 advertisement-bruiseomat-13 = Serio? Znowu przenieśli mnie do miasta kadetów?
-advertisement-bruiseomat-14 = Grubszy niż przeciętny Booze-O-Mat!
+advertisement-bruiseomat-14 = Ostrzejszy niż przeciętny AlkoMat!
 advertisement-bruiseomat-15 = Operacja będzie trwała dopóki się nie poprawicie.
 thankyou-bruiseomat-1 = Powodzenia, frajerze! Przyda ci się!
 thankyou-bruiseomat-2 = Pokaż im styl Gorlexa!

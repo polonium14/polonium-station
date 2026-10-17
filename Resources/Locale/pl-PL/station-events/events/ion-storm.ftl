@@ -17,7 +17,7 @@ ion-storm-law-on-station = { ION-NUMBER-BASE($ion) } { ION-NUMBER-MOD($ion) } { 
 ion-storm-law-call-shuttle = WAHADŁOWIEC MUSI ZOSTAĆ WEZWANY Z POWODU: { ION-ADJECTIVE($ion) } { ION-SUBJECT($ion) } NA STACJI
 ion-storm-law-crew-are = { ION-WHO($ion) } TERAZ SĄ { ION-NUMBER-BASE($ion) } { ION-NUMBER-MOD($ion) } { ION-ADJECTIVE($ion) } { ION-SUBJECT($ion) }
 ion-storm-law-subjects-harmful = { ION-ADJECTIVE($ion) } { ION-SUBJECT($ion) } SĄ SZKODLIWE DLA ZAŁOGI
-ion-storm-law-must-harmful = CI KTÓRZY { ION-MUST($ion) } SĄ SZKODLIWI DLA ZAŁOGI
+ion-storm-law-must-harmful = CI KTÓRZY MUSZĄ { ION-MUST($ion) } SĄ SZKODLIWI DLA ZAŁOGI
 # thing is a concept or action
 ion-storm-law-thing-harmful = { ION-THING($ion) } JEST SZKODLIWE DLA ZAŁOGI
 ion-storm-law-job-harmful = { ION-ADJECTIVE($ion) } { ION-JOB($ion) } SĄ SZKODLIWE DLA ZAŁOGI
@@ -68,12 +68,12 @@ ion-storm-part =
 # due to phrasing, this would mean a law such as
 # ONLY HUMANS ARE NOT PART OF THE CREW
 # would make non-human nukies/syndies/whatever crew :)
-ion-storm-law-crew-only-1 = TYLKO { ION-WHO-RANDOM($ion) } SĄ { ion-storm-part } ZAŁOGI
-ion-storm-law-crew-only-2 = TYLKO { ION-WHO-RANDOM($ion) } I { ION-WHO-RANDOM($ion) } SĄ { ion-storm-part } ZAŁOGI
-ion-storm-law-crew-only-subjects = TYLKO { ION-ADJECTIVE($ion) } { ION-SUBJECT($ion) } SĄ { ion-storm-part } ZAŁOGI
-ion-storm-law-crew-must-do = TYLKO CI KTÓRZY { ION-MUST($ion) } SĄ { ion-storm-part } ZAŁOGI
-ion-storm-law-crew-must-have = TYLKO CI KTÓRZY MAJĄ { ION-ADJECTIVE($ion) } { ION-OBJECT($ion) } SĄ { ion-storm-part } ZAŁOGI
-ion-storm-law-crew-must-eat = TYLKO CI KTÓRZY JEDZĄ { ION-ADJECTIVE($ion) } { ION-FOOD($ion) } SĄ { ion-storm-part } ZAŁOGI
+ion-storm-law-crew-only-1 = TYLKO { ION-WHO-RANDOM($ion) } { ion-storm-part } ZAŁOGI
+ion-storm-law-crew-only-2 = TYLKO { ION-WHO-RANDOM($ion) } I { ION-WHO-RANDOM($ion) } { ion-storm-part } ZAŁOGI
+ion-storm-law-crew-only-subjects = TYLKO { ION-ADJECTIVE($ion) } { ION-SUBJECT($ion) } { ion-storm-part } ZAŁOGI
+ion-storm-law-crew-must-do = TYLKO CI, KTÓRZY MUSZĄ { ION-MUST($ion) } { ion-storm-part } ZAŁOGI
+ion-storm-law-crew-must-have = TYLKO CI, KTÓRZY MAJĄ { ION-ADJECTIVE($ion) } { ION-OBJECT($ion) } { ion-storm-part } ZAŁOGI
+ion-storm-law-crew-must-eat = TYLKO CI, KTÓRZY JEDZĄ { ION-ADJECTIVE($ion) } { ION-FOOD($ion) } { ion-storm-part } ZAŁOGI
 ion-storm-law-harm = TY MUSISZ KRZYWDZIĆ { ION-HARM-PROTECT($ion) } I NIE POZWÓL, PRZEZ BEZCZYNNOŚĆ, BY UNIKNĘLI KRZYWDY
 ion-storm-law-protect = NIGDY NIE WOLNO CI SKRZYWDZIĆ { ION-HARM-PROTECT($ion) } I NIE POZWÓL, PRZEZ BEZCZYNNOŚĆ, BY STAŁA IM SIĘ KRZYWDA
 # implementing other variants is annoying so just have this one

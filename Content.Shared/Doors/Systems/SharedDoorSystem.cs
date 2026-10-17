@@ -198,6 +198,33 @@ public abstract partial class SharedDoorSystem : EntitySystem
         return true;
     }
 
+    /// <summary>
+    /// Slam shut ignoring occupancy, bolts and the close animation. Bolting first would cancel the
+    /// close, which is how a door ends up bolted open.
+    /// </summary>
+    public void SnapClosed(EntityUid uid, DoorComponent? door = null, bool playSound = true)
+    {
+        if (!Resolve(uid, ref door))
+            return;
+
+        if (door.State is DoorState.Welded)
+            return;
+
+        var alreadyClosed = door.State == DoorState.Closed;
+
+        door.NextStateChange = null;
+        door.CurrentlyCrushing.Clear();
+        _activeDoors.Remove((uid, door));
+
+        if (!alreadyClosed)
+            SetState(uid, DoorState.Closed, door);
+
+        SetCollidable(uid, true, door);
+
+        if (playSound && !alreadyClosed && _net.IsServer)
+            Audio.PlayPvs(door.CloseSound, uid);
+    }
+
     #endregion
 
     #region Interactions

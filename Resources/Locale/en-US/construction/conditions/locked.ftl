@@ -3,3 +3,5 @@ construction-examine-condition-unlock = First, [color=limegreen]unlock[/color] i
 construction-examine-condition-lock = First, [color=red]lock[/color] it.
 construction-step-condition-unlock = It must be unlocked.
 construction-step-condition-lock = It must be locked.
+construction-step-condition-wire-panel-unlock = It must be unlocked.
+construction-step-condition-wire-panel-lock = It must be locked.

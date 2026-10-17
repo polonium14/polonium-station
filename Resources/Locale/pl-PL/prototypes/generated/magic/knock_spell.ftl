@@ -1,2 +1,2 @@
-ent-ActionKnock = Knock
-    .desc = This spell opens nearby doors.
+ent-ActionKnock = Puk-puk
+    .desc = To zaklęcie otwiera pobliskie drzwi.

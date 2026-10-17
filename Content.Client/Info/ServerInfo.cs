@@ -1,5 +1,6 @@
 using Content.Client.Changelog;
 using Content.Client.Credits;
+using Content.Client.RichText;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.IoC;
@@ -24,7 +25,7 @@ namespace Content.Client.Info
         }
         public void SetInfoBlob(string markup)
         {
-            _richTextLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(markup), tagsAllowed: null);
+            _richTextLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(markup), UserFormattableTags.WithoutUrl);
         }
     }
 }

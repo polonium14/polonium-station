@@ -1,2 +1,2 @@
-ent-Ashtray = ashtray
-    .desc = Proven by scientists to improve the smoking experience by 37%!
+ent-Ashtray = popielniczka
+    .desc = Udowodnione, że poprawia doświadczenia z palenia o 37%!

@@ -4,5 +4,5 @@ ent-ChangelingStatusEffectBase = { "" }
     .desc = { "" }
 ent-TraitStatusEffectHemophilia = { ent-BloodstreamStatusEffectBase }
     .desc = { ent-BloodstreamStatusEffectBase.desc }
-ent-TraitStatusEffectPainNumbness = pain numbness
+ent-TraitStatusEffectPainNumbness = ból, drętwienie
     .desc = { ent-PainNumbnessStatusEffectBase.desc }

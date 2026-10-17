@@ -1,3 +1,4 @@
+using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared.Atmos.Rotting;
 using Content.Shared.Chat;
 using Content.Shared.Damage.Systems;
@@ -137,7 +138,7 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp))
             return;
 
-        if (!_powerCell.TryUseActivatableCharge(ent.Owner, user: user))
+        if (!CanZap(ent, target, user))
             return;
 
         var selfEvent = new SelfBeforeDefibrillatorZapsEvent(user, ent.Owner, target);
@@ -155,6 +156,11 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
         target = targetEvent.DefibTarget;
 
         if (targetEvent.Cancelled || !CanZap(ent, target, user))
+            return;
+
+        // Validate both redirection/cancellation hooks before spending power. Rechecking
+        // charge after payment would reject the final usable shock in the battery.
+        if (!_powerCell.TryUseActivatableCharge(ent.Owner, user: user))
             return;
 
         if (TryComp<UseDelayComponent>(ent, out var useDelay))
@@ -188,14 +194,20 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
 
     private bool TryRevive(Entity<DefibrillatorComponent> ent, EntityUid user, EntityUid target, bool isOriginal)
     {
+        // Polonium - the shock also runs through whatever holds the patient, a bed or the hand pulling
+        // him, and those are not worth a verdict. neither is a tutorial patient, who has no mind by design
+        var announce = isOriginal && !HasComp<TutorialNpcComponent>(target);
+
         bool failedRevive = true;
         if (_rotting.IsRotten(target))
         {
-            _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("defibrillator-rotten"), InGameICChatType.Speak, true);
+            if (announce)
+                _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("defibrillator-rotten"), InGameICChatType.Speak, true);
         }
         else if (TryComp<UnrevivableComponent>(target, out var unrevivable))
         {
-            _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString(unrevivable.ReasonMessage), InGameICChatType.Speak, true);
+            if (announce)
+                _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString(unrevivable.ReasonMessage), InGameICChatType.Speak, true);
         }
         else
         {
@@ -219,7 +231,7 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
                 if (mindComp.CurrentEntity != target)
                     OpenReturnToBodyEui((mindUid, mindComp), playerSession);
             }
-            else
+            else if (announce)
             {
                 if (HasComp<MindContainerComponent>(target))
                     _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("defibrillator-no-mind"), InGameICChatType.Speak, true); //target can host a mind but doesn't

@@ -1,2 +1,2 @@
-ent-MapText = map text
+ent-MapText = tekst mapy
     .desc = { ent-MarkerBase.desc }

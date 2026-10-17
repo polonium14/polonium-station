@@ -1,5 +1,5 @@
-ent-APCElectronics = elektronika APC
-    .desc = Układ elektroniczny używany do konstrukcji APC.
+ent-APCElectronics = elektronika LKZ
+    .desc = Układ elektroniczny używany do konstrukcji LKZ.
 ent-WallmountSubstationElectronics = elektronika podstacji ściennej
     .desc = Układ elektroniczny używany do konstrukcji podstacji ściennej.
 ent-WallmountGeneratorElectronics = elektronika generatora ściennego

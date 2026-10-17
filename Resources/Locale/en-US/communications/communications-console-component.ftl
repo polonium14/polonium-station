@@ -3,7 +3,6 @@
 comms-console-menu-title = Communications Console
 comms-console-menu-announcement-placeholder = Announcement text...
 comms-console-menu-broadcast-placeholder = Broadcast text...
-comms-console-menu-broadcast-bottom-placeholder = Screen bottom line (max 32 characters)
 comms-console-menu-announcement-button = Announce over radio
 comms-console-menu-announcement-button-tooltip = Send your message as a station-wide radio announcement.
 comms-console-menu-broadcast-button = Display on screens

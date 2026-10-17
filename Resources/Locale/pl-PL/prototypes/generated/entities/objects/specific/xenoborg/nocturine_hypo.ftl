@@ -1,2 +1,2 @@
-ent-NocturineHypo = nocturine hypo
-    .desc = A self-refilling injector for rapid administration of nocturine to victms.
+ent-NocturineHypo = hipoglikemia nokturyna
+    .desc = Samonapełniający się wstrzykiwacz do szybkiego podawania nokturyny ofiarom.

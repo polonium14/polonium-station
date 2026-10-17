@@ -25,6 +25,7 @@
   sprite: /Textures/Tiles/Grass/grass.png
   variants: 6
   baseTurf: FloorDirt
+  isSubfloor: true # Polonium: lost upstream in #44857 - without it cables and pipes can't be laid on grass (Terra map)
   footstepSounds:
     collection: FootstepGrass
   itemDrop: FloorTileItemGrass

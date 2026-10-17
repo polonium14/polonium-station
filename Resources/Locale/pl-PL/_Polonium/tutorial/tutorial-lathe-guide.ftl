@@ -1,0 +1,20 @@
+# karta obok okna autolatu, sala 16
+tutorial-lathe-guide-title = Autolat
+tutorial-lathe-guide-goal = Części na: { $machine }
+tutorial-lathe-guide-step-load = 1. Wrzuć surowce
+tutorial-lathe-guide-step-load-body = Kliknij paczką blach w autolat. Szkło, plastik i jedna paczka stali wystarczą na całą gałąź.
+tutorial-lathe-guide-step-order = 2. Zamów części
+tutorial-lathe-guide-step-order-body = Świecące przepisy to to, czego jeszcze brakuje. Gdy potrzeba kilku sztuk, wpisz ilość w pole pod listą, zanim klikniesz przepis.
+tutorial-lathe-guide-step-take = 3. Zabierz wydruki
+tutorial-lathe-guide-step-take-body = Gotowe części wypadają przy autolacie. Podnieś je, zanim pójdziesz budować.
+tutorial-lathe-guide-status-load = Autolat jest pusty. Wrzuć do niego blachy ze stołu.
+tutorial-lathe-guide-status-order = Zamów świecące przepisy. Lista pod spodem liczy to, co masz przy sobie, co leży przy autolacie i co już siedzi w ramie.
+tutorial-lathe-guide-status-done = Wszystko gotowe. Zabierz części, jeśli jeszcze leżą przy autolacie.
+tutorial-lathe-guide-item-missing = • { $name }: { $have } z { $need }
+tutorial-lathe-guide-item-done = ✓ { $name }: { $have } z { $need }
+tutorial-lathe-guide-need-materials = Za mało surowca na „{ $name }”. Wrzuć więcej blach.
+tutorial-lathe-guide-machine-smes = SMES
+tutorial-lathe-guide-machine-terminal = terminal kablowy
+tutorial-lathe-guide-machine-substation = podstację
+tutorial-lathe-guide-machine-apc = APC
+tutorial-lathe-guide-machine-cables = kable

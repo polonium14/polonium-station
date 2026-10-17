@@ -24,6 +24,10 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  - !type:StoreWhitelistCondition # POLONIUM
+    blacklist:
+      tags:
+      - SpellbookLowpop
 
 - type: listing
   id: SpellbookSmite
@@ -37,6 +41,10 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  - !type:StoreWhitelistCondition # POLONIUM
+    blacklist:
+      tags:
+      - SpellbookLowpop
 
 - type: listing
   id: SpellbookCluwne
@@ -76,6 +84,10 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  - !type:StoreWhitelistCondition # POLONIUM
+    blacklist:
+      tags:
+      - SpellbookLowpop
 
 # Defensive
 - type: listing
@@ -210,6 +222,10 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  - !type:StoreWhitelistCondition # POLONIUM
+    blacklist:
+      tags:
+      - SpellbookLowpop
 
 # Equipment
 - type: listing
@@ -316,6 +332,10 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  - !type:StoreWhitelistCondition # POLONIUM
+    blacklist:
+      tags:
+      - SpellbookLowpop
   disableRefund: true
 
 - type: listing
@@ -330,6 +350,10 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+  - !type:StoreWhitelistCondition # POLONIUM
+    blacklist:
+      tags:
+      - SpellbookLowpop
   disableRefund: true
 
 # Upgrades

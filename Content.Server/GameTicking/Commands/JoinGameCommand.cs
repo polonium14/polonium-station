@@ -1,4 +1,5 @@
 using Content.Server.Administration.Managers;
+using Content.Server._Polonium.Tutorial;
 using Content.Server.Station.Systems;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
@@ -56,6 +57,9 @@ namespace Content.Server.GameTicking.Commands
                 shell.WriteError($"{player.Name} is not in the lobby. This incident will be reported.");
                 return;
             }
+
+            if (_entManager.System<TutorialSystem>().TryBlockConsoleJoin(player, shell))
+                return;
 
             if (ticker.RunLevel == GameRunLevel.PreRoundLobby)
             {

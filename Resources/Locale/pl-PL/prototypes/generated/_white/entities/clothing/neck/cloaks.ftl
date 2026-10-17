@@ -1,8 +1,8 @@
-ent-ClothingNeckCaptainWide = captain wide overcoat
-    .desc = Wide captain's greatcoat. It doesn't seem to fit you, but it will do as a cape on your shoulders.
-ent-ClothingNeckWhiteMantleCaptain = white captain mantle
-    .desc = Captain mantle, with white down.
-ent-ClothingNeckCloakRoyalCaptain = royal captain cloak
-    .desc = The king in the palace, the king in the palace.
-ent-ClothingNeckCloakSyndicateAdmiral = Syndicate Admiral cloak
-    .desc = Red cloak sewn with a gold cloth.
+ent-ClothingNeckCaptainWide = szeroki płaszcz kapitana
+    .desc = Szeroki płaszcz kapitana. Zdaje się, że nie jest na ciebie, ale jako peleryna na ramionach zda egzamin.
+ent-ClothingNeckWhiteMantleCaptain = biały mantolet kapitana
+    .desc = Mantolet kapitana, z białym puchem.
+ent-ClothingNeckCloakRoyalCaptain = peleryna królewskiego kapitana
+    .desc = Król w pałacu, król w pałacu.
+ent-ClothingNeckCloakSyndicateAdmiral = peleryna admirała syndykatu
+    .desc = Czerwona peleryna przeszyta złotą tkaniną.

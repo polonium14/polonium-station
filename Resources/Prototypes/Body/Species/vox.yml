@@ -60,7 +60,7 @@
       required: true
       default: [ VoxTail ]
     enum.HumanoidVisualLayers.TailOverlay:
-      limit: 1
+      limit: 4
       required: false
     enum.HumanoidVisualLayers.UndergarmentTop:
       limit: 1
@@ -271,6 +271,9 @@
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Tail
+    dependentHidingLayers:
+      enum.HumanoidVisualLayers.Tail:
+      - enum.HumanoidVisualLayers.TailOverlay
   - type: Damageable
   - type: Injurable
     damageContainer: Biological

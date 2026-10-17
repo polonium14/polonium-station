@@ -31,7 +31,6 @@ wires-board-name-medicalscanner = MedicalScanner
 wires-board-name-reclaimer = Reclaimer
 wires-board-name-recharger = Recharger
 wires-board-name-minigravitygenerator = MiniGravityGenerator
-wires-board-name-dawinstrument = DawInstrument
 wires-board-name-airlock = Airlock Control
 wires-board-name-firelock = Firelock Control
 wires-board-name-windoor = Windoor Control

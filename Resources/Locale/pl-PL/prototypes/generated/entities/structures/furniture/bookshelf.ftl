@@ -1,2 +1,2 @@
-ent-Bookshelf = bookshelf
-    .desc = Mostly filled with books.
+ent-Bookshelf = regał
+    .desc = W większości wypełnione książkami.

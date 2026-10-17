@@ -3,21 +3,21 @@ materials-glass = szkło
 materials-reinforced-glass = wzmocnione szkło
 materials-plasma-glass = szkło plazmowe
 materials-reinforced-plasma-glass = wzmocnione szkło plazmowe
-materials-uranium-glass = uranium glass
-materials-reinforced-uranium-glass = reinforced uranium glass
-materials-runed-glass = runed glass
+materials-uranium-glass = szkło uranowe
+materials-reinforced-uranium-glass = wzmocnione szkło uranowe
+materials-runed-glass = runiczne szkło
 # Metals
 materials-steel = stal
 materials-gold = złoto
 materials-silver = srebro
 materials-plasteel = plastal
-materials-runed-steel = runed steel
-materials-runed-plasteel = runed plasteel
+materials-runed-steel = runiczna stal
+materials-runed-plasteel = runiczna plastal
 # Other
 materials-biomass = biomasa
 materials-cardboard = tektura
 materials-cloth = tkanina
-materials-durathread = duranić
+materials-durathread = duratkanina
 materials-plasma = plazma
 materials-plastic = plastik
 materials-wood = drewno
@@ -31,7 +31,7 @@ materials-coal = węgiel
 materials-diamond = diament
 materials-gunpowder = proch strzelniczy
 materials-cotton = bawełna
-materials-xenoborg-crystal = xenoborg crystal
+materials-xenoborg-crystal = kryształ ksenoborga
 # Ores
 materials-raw-iron = ruda żelaza
 materials-raw-quartz = ruda kwarcu

@@ -1,0 +1,34 @@
+﻿<controls:TutorialBubble
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Polonium.Tutorial.Lobby.UI"
+    MinHeight="0"
+    MaxWidth="400">
+    <PanelContainer
+        Name="OuterLayer"
+        StyleClasses="BubbleOuter"
+        VerticalExpand="True">
+        <BoxContainer Orientation="Vertical" VerticalExpand="True">
+            <BoxContainer
+                Name="Content"
+                Margin="0,0,0,15"
+                HorizontalAlignment="Center"
+                Orientation="Horizontal"
+                SeparationOverride="10" />
+            <BoxContainer
+                Name="BubbleMain"
+                MaxWidth="345"
+                HorizontalAlignment="Center"
+                Orientation="Vertical" />
+            <RichTextLabel
+                Name="AnyKeyText"
+                Margin="0,5,5,0"
+                HorizontalAlignment="Right" />
+            <BoxContainer
+                Name="Buttons"
+                Margin="0,0,0,15"
+                HorizontalAlignment="Center"
+                Orientation="Horizontal"
+                SeparationOverride="10" />
+        </BoxContainer>
+    </PanelContainer>
+</controls:TutorialBubble>

@@ -48,6 +48,7 @@ job-name-station-ai = Station AI
 job-name-technical-assistant = Technical Assistant
 job-name-tram-driver = Tram Driver
 job-name-visitor = Visitor
+job-name-trainee = Tutorial Participant
 job-name-warden = Warden
 
 # unused jobs
@@ -127,4 +128,3 @@ JobTechnicalAssistant = Technical Assistant
 JobVisitor = Visitor
 JobWarden = Warden
 
-job-name-centcomoff = Urzędnik Centralnego Dowództwa

@@ -1,3 +1,3 @@
-ent-ClothingNeckChameleon = striped red scarf
-    .desc = A stylish striped red scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
-    .suffix = Chameleon
+ent-ClothingNeckChameleon = czerwony szalik striped
+    .desc = Stylowy czerwony szalik w paski. Idealny zimowy dodatek dla osób z wyczuciem mody i tych, którzy nie znoszą zimnego podmuchu na karku.
+    .suffix = Kameleon

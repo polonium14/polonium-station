@@ -7,6 +7,7 @@
   - głowica nuklearna;
   - karty ID kapitana, kierownika personelu lub inne karty o analogicznym poziomie dostępu;
   - klucze szyfrujące zawierające dostęp do wszystkich kanałów łączności stacji;
+  - pieczęć Kapitana oraz pieczęć Centralnego Dowództwa;
   - Ian.
 
   Za mienie lub sprzęt o charakterze krytycznym uznaje się elementy, bez których stacja nie jest w stanie prawidłowo funkcjonować.
@@ -16,6 +17,8 @@
     <GuideEntityEmbed Entity="CaptainIDCard" Caption="ID kapitana"/>
     <GuideEntityEmbed Entity="HoPIDCard" Caption="ID kierownika personelu"/>
     <GuideEntityEmbed Entity="NukeDisk" Caption="Dysk nuklearny"/>
+    <GuideEntityEmbed Entity="RubberStampCaptain" Caption="Pieczęć Kapitana"/>
+    <GuideEntityEmbed Entity="RubberStampCentcom" Caption="Pieczęć CD"/>
   </Box>
 
   ## Ładunki i łączność

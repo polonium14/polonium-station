@@ -153,12 +153,10 @@ public sealed class HealingRateTest : GameTest
     }
 
     /// <summary>
-    /// A bleeding wound (brutepack has no bloodlossModifier, so it never stops the bleed first)
-    /// must not have the mob's/organ's raw damage reduced at all - matches BrokenBoneBlocksTopicalHealing's
-    /// existing coverage for the woundable-level blockers, but for the per-wound bleed blocker instead.
+    /// Healing a bleeding wound must reduce wound, organ, and mob damage by the same amount.
     /// </summary>
     [Test]
-    public async Task BleedingWoundBlocksTheHealAndTheMobDoesNotMove()
+    public async Task BleedingWoundHealingKeepsDamageInSync()
     {
         var (attacker, victim, organ, coords, sEntMan, sDamageable, sWound) = await Setup();
 
@@ -182,12 +180,10 @@ public sealed class HealingRateTest : GameTest
 #pragma warning restore CS0618
             var woundAfter = SumWoundSeverity(sEntMan, sWound, organ);
 
-            Assert.That(mobAfter, Is.EqualTo(mobBefore),
-                "A bandage with no bloodloss modifier shouldn't be able to touch a bleeding wound's damage on the mob at all - the wound is blocked, so nothing should have healed.");
-            Assert.That(organAfter, Is.EqualTo(organBefore),
-                "Same as the mob check, but on the organ's own raw DamageableComponent (read by WoundSystem.Queries.cs's GetDamageableStatesOnBody for the UI doll).");
-            Assert.That(woundAfter, Is.EqualTo(woundBefore),
-                "The wound itself should be completely untouched while it's still bleeding.");
+            var woundHealed = woundBefore - woundAfter;
+            Assert.That(woundHealed, Is.GreaterThan(FixedPoint2.Zero), "Bleeding must not block healing.");
+            Assert.That(organBefore - organAfter, Is.EqualTo(woundHealed));
+            Assert.That(mobBefore - mobAfter, Is.EqualTo(woundHealed));
         });
     }
 

@@ -1,8 +1,8 @@
-ent-AlwaysPoweredStrobeLight = strobe
-    .desc = UH?! Sorry, all I can hear is WEE-OOO-WEE-OOO!
-    .suffix = Always powered
-ent-PoweredStrobeLightEmpty = strobe
-    .desc = UH?! Sorry, all I can hear is WEE-OOO-WEE-OOO!
+ent-AlwaysPoweredStrobeLight = stroboskop
+    .desc = CO?! Przepraszam, ale słyszę tylko „WEE-OOO-WEE-OOO”!
+    .suffix = Zawsze zasilane
+ent-PoweredStrobeLightEmpty = stroboskop
+    .desc = CO?! Przepraszam, ale słyszę tylko „WEE-OOO-WEE-OOO”!
     .suffix = Puste
 ent-PoweredStrobeLightPolice = { ent-PoweredStrobeLightEmpty }
     .suffix = Puste, police

@@ -1,10 +1,10 @@
 ent-BaseMobJaunt = wypad
     .desc = Pozostają tu drobne ślady humanoida.
     .suffix = Ulotne
-    .gender = male
+    .gender = mężczyzna
 ent-EtherealJaunt = wypad
     .suffix = Czarodziej
     .desc = { ent-BaseMobJaunt.desc }
-    .gender = male
-ent-DesynchronizedPocket = desynchronized pocket
-    .desc = A pocket in spacetime, keeping the user a fraction of a second in the future.
+    .gender = mężczyzna
+ent-DesynchronizedPocket = kieszeń z rozregulowanym synchronizatorem
+    .desc = Kieszeń w czasoprzestrzeni, która przenosi użytkownika o ułamek sekundy w przyszłość.

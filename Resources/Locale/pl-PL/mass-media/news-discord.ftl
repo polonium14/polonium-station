@@ -1,2 +1,2 @@
-news-discord-footer = Server: { $server } | Round: #{ $round } | Author: { $author } | Time: { $time }
-news-discord-unknown-author = Unknown
+news-discord-footer = Serwer: { $server } | Runda: #{ $round } | Autor: { $author } | Czas: { $time }
+news-discord-unknown-author = Nieznany

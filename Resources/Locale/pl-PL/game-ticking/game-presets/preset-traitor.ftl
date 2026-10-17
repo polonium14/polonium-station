@@ -45,7 +45,3 @@ traitor-role-codewords-short =
     { $codewords }.
 traitor-role-uplink-code-short = Twój kod uplinku to { $code }. Ustaw go jako dzwonek w swoim PDA, aby uzyskać dostęp do uplinku.
 traitor-role-uplink-implant-short = Twój uplink został wszczepiony. Uzyskaj do niego dostęp z paska skrótów.
-traitor-role-moreinfo = Znajdź więcej informacji o swojej roli w menu postaci.
-traitor-role-nouplink = Nie masz uplinku Syndykatu. Wykorzystaj to.
-traitor-role-allegiances = Twoje przynależności:
-traitor-role-notes = Notatki od twojego pracodawcy:

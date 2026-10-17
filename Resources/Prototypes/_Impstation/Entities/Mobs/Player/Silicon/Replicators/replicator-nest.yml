@@ -86,3 +86,44 @@
         Slash: -1
         Piercing: -1
   - type: AntiRottingContainer
+  # POLONIUM
+  - type: PointLight
+    netsync: false
+    enabled: false
+    radius: 3
+    energy: 0.8
+    color: "#c45cff"
+  - type: ReplicatorNestGlow
+    color: "#c45cff"
+    levels:
+    - level: 2
+      radius: 3
+      energy: 0.8
+    - level: 3
+      radius: 6
+      energy: 1.6
+  - type: ReplicatorHive
+    withdrawReserve: 200
+    heal:
+      types:
+        Blunt: -2
+        Slash: -2
+        Piercing: -2
+        Heat: -2
+        Shock: -2
+  - type: MaterialStorage
+    materialWhiteList:
+    - Replisteel
+    canEjectStoredMaterials: false
+    ignoreColor: true
+  - type: Lathe
+    staticPacks:
+    - ReplicatorNest
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+    requiresComplex: false
+    requireActiveHand: false
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface

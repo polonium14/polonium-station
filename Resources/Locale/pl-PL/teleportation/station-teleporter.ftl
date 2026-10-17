@@ -1,26 +1,26 @@
-teleporter-console-slot-name = Disk
-teleporter-console-chip-record = Coordinates saved!
-teleporter-console-chip-examine-recorded = [color=#f5b942]Recorded coordinates: { $portal }[/color]
-teleporter-console-chip-examine-null = [color=#f5b942]Recorded coordinates: None[/color]
+teleporter-console-slot-name = Dysk
+teleporter-console-chip-record = Współrzędne zapisane!
+teleporter-console-chip-examine-recorded = [color=#f5b942]Zarejestrowane współrzędne: { $portal }[/color]
+teleporter-console-chip-examine-null = [color=#f5b942]Zapisane współrzędne: Brak[/color]
 
 # UI
 
-teleporter-console-user-interface-title = Teleporter control console
-teleporter-console-user-interface-locate = Locate
-teleporter-console-user-interface-start-connection = Start connection
-teleporter-console-user-interface-cut-connection = Cut connection
-teleporter-console-user-interface-no-power = Unpowered
-teleporter-console-user-interface-no-teleporters = No teleporters
-teleporter-console-user-interface-unknown-station = Unknown station
-teleporter-console-user-interface-flavor-left = Manufacturer company takes no legal responsibility in cases of gate instability or resonance cascade.
+teleporter-console-user-interface-title = Konsola sterowania teleportera
+teleporter-console-user-interface-locate = Zlokalizuj
+teleporter-console-user-interface-start-connection = Rozpocznij połączenie
+teleporter-console-user-interface-cut-connection = Zerwij połączenie
+teleporter-console-user-interface-no-power = Niezasilony
+teleporter-console-user-interface-no-teleporters = Brak teleporterów
+teleporter-console-user-interface-unknown-station = Nieznana stacja
+teleporter-console-user-interface-flavor-left = Producent nie ponosi odpowiedzialności prawnej w przypadku niestabilności bramy lub kaskady rezonansowej.
 teleporter-console-user-interface-flavor-right = v0.666
-teleporter-name-unknown = Unlabeled location
-teleporter-name-rd-first = RD Portable portal red
-teleporter-name-rd-second = RD Portable portal blue
-teleporter-name-center = Teleport hangar
-teleporter-name-salvage = Salvage
-teleporter-name-medical = Medical
-teleporter-name-engineering = Engineering
-teleporter-name-security = Security
-teleporter-name-science = Science
-teleporter-name-cargo = Cargo
+teleporter-name-unknown = Nieoznaczona lokalizacja
+teleporter-name-rd-first = Portatywny portal KB (czerwony)
+teleporter-name-rd-second = Portatywny portal KB (niebieski)
+teleporter-name-center = Hangar teleportacyjny
+teleporter-name-salvage = Odzysk
+teleporter-name-medical = Medyczny
+teleporter-name-engineering = Inżynieria
+teleporter-name-security = Dział Ochrony
+teleporter-name-science = Dział Badań i Rozwoju
+teleporter-name-cargo = Ładownia

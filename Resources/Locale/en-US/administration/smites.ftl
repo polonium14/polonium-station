@@ -150,4 +150,3 @@ admin-trick-snap-joints-description = Remove all physics joints from an object. 
 admin-trick-minigun-fire-description = Makes the targetted gun fire like a minigun (very fast).
 admin-trick-set-bullet-amount-description = Quickly set the amount of unspawned bullets in a gun.
 
-admin-smite-terminate-description = Tworzy rolę ducha Terminatora z celem zabicia ich.

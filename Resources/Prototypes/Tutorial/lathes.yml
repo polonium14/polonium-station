@@ -1,0 +1,26 @@
+# the room 16 autolathe prints only what the power branch needs, so its list stays short enough to read
+
+- type: latheRecipePack
+  id: TutorialPowerBranchStatic
+  recipes:
+  - SMESMachineCircuitboard
+  - SubstationMachineCircuitboard
+  - APCElectronics
+  - MicroManipulatorStockPart
+  - PowerCellSmall
+  - CableStack
+  - CableMVStack
+  - CableHVStack
+
+- type: entity
+  parent: Autolathe
+  id: AutolatheTutorial
+  suffix: Tutorial
+  components:
+  - type: Lathe
+    staticPacks:
+    - TutorialPowerBranchStatic
+  - type: EmagLatheRecipes
+    emagStaticPacks: []
+  - type: Destructible
+    thresholds: []

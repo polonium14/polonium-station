@@ -1,6 +1,6 @@
-ent-ClothingBeltChampion = championship belt
-    .desc = Proves to the world that you are the strongest!
-ent-ClothingBeltSuspendersRed = red suspenders
-    .desc = For holding your pants up.
-ent-ClothingBeltSuspendersBlack = black suspenders
+ent-ClothingBeltChampion = pas mistrzowski
+    .desc = Udowadnia światu, że jesteś najsilniejszy!
+ent-ClothingBeltSuspendersRed = czerwone szelki
+    .desc = Żeby spodnie nie spadały.
+ent-ClothingBeltSuspendersBlack = czarne szelki
     .desc = { ent-ClothingBeltSuspendersRed.desc }

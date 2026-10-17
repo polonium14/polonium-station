@@ -1,2 +1,2 @@
-ent-FirelockFrame = firelock frame
-    .desc = That is a firelock frame.
+ent-FirelockFrame = rama broni palnej
+    .desc = To jest ramka do broni palnej.

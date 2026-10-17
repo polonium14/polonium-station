@@ -10,6 +10,9 @@ namespace Content.Client.Lathe.UI
     {
         [ViewVariables]
         private LatheMenu? _menu;
+
+        public LatheMenu? Menu => _menu; // Polonium - the tutorial lathe guide sits beside this window
+
         public LatheBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
         }

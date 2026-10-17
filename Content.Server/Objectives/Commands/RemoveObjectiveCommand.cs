@@ -25,13 +25,13 @@ namespace Content.Server.Objectives.Commands
 
             if (!_players.TryGetSessionByUsername(args[0], out var session))
             {
-                shell.WriteError(Loc.GetString("cmd-rmojective-player-not-found"));
+                shell.WriteError(Loc.GetString("cmd-rmobjective-player-not-found"));
                 return;
             }
 
             if (!_mind.TryGetMind(session, out var mindId, out var mind))
             {
-                shell.WriteError(Loc.GetString("cmd-rmojective-mind-not-found"));
+                shell.WriteError(Loc.GetString("cmd-rmobjective-mind-not-found"));
                 return;
             }
 

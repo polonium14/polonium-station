@@ -1,2 +1,2 @@
-ent-PortableRecharger = portable recharger
-    .desc = High-tech recharger adapted for portability.
+ent-PortableRecharger = przenośna ładowarka
+    .desc = Zaawansowana technologicznie ładowarka zaprojektowana z myślą o przenośności.

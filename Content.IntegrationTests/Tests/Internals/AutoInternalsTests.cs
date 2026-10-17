@@ -69,6 +69,7 @@ public sealed class AutoInternalsTests : GameTest
 
 - type: job
   id: TestInternalsDummy
+  name: job-name-passenger
   playTimeTracker: PlayTimeInternalsDummy
   startingGear: InternalsDummyGear
 

@@ -22,3 +22,11 @@
   description: Placeholder tutaj
   minSeverity: 0
   maxSeverity: 7
+
+- type: alert
+  id: ReplicatorRecallImmune
+  icons:
+  - sprite: /Textures/_Polonium/Interface/Alerts/replicator_trace.rsi
+    state: icon
+  name: alerts-replicator-recall-immune-name
+  description: alerts-replicator-recall-immune-desc

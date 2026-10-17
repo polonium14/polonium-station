@@ -5,6 +5,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# VIS and its magazines
+
 - type: latheRecipe
   parent: BaseWeaponRecipe
   id: WeaponVisMPSPistol
@@ -51,6 +53,8 @@
     Steel: 25
     Plastic: 120
 
+# PMMM and its magazines
+
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
   id: PMMMachineGunMagazineEmpty
@@ -88,6 +92,17 @@
     Steel: 25
     Plastic: 120
     Uranium: 122
+
+# BOR and its magazines
+
+- type: latheRecipe
+  parent: BaseWeaponRecipe
+  id: WeaponBORSniperGun
+  result: WeaponBORSniperGun
+  materials:
+    Steel: 5000
+    Plastic: 2500
+    Glass: 700
 
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
@@ -127,6 +142,8 @@
     Plastic: 100
     Uranium: 125
 
+# Glauberyt
+
 - type: latheRecipe
   parent: BaseWeaponRecipe
   id: WeaponSubMachineGunGlauberyt
@@ -135,11 +152,13 @@
     Steel: 3000
     Plastic: 1500
 
+# Taser
+
 - type: latheRecipe
-  parent: BaseWeaponRecipe
-  id: WeaponBORSniperGun
-  result: WeaponBORSniperGun
+  parent: BaseWeaponRecipeSidearm
+  id: WeaponTaser
+  result: WeaponTaser
   materials:
-    Steel: 5000
-    Plastic: 2500
-    Glass: 700
+    Steel: 100
+    Glass: 300
+    Plastic: 300

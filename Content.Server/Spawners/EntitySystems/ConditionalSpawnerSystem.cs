@@ -1,3 +1,4 @@
+using Content.Server._Polonium.Spawners; // Polonium
 using Content.Server.GameTicking;
 using Content.Server.Spawners.Components;
 using Content.Server.Stack;
@@ -97,7 +98,9 @@ public sealed partial class ConditionalSpawnerSystem : EntitySystem
         var rotation = _xform.GetWorldRotation(xform);
 
         var toSpawn = _robustRandom.Pick(component.Prototypes);
-        Spawn(toSpawn, coords, rotation: rotation);
+        var spawned = Spawn(toSpawn, coords, rotation: rotation); // Polonium
+        var ev = new SpawnerSpawnedEvent(spawned); // Polonium
+        RaiseLocalEvent(uid, ref ev); // Polonium
     }
 
     private void Spawn(EntityUid uid, RandomSpawnerComponent component)
@@ -113,7 +116,9 @@ public sealed partial class ConditionalSpawnerSystem : EntitySystem
         var coordinates = GetRandomOffset(coords, component.Offset);
         var rotation = _xform.GetWorldRotation(xform);
 
-        Spawn(_robustRandom.Pick(component.Prototypes), coordinates, rotation: rotation);
+        var spawned = Spawn(_robustRandom.Pick(component.Prototypes), coordinates, rotation: rotation); // Polonium
+        var ev = new SpawnerSpawnedEvent(spawned); // Polonium
+        RaiseLocalEvent(uid, ref ev); // Polonium
     }
 
     private void Spawn(Entity<EntityTableSpawnerComponent> ent)

@@ -1,7 +1,7 @@
 ent-MobHivebot = hivebot
-    .desc = Agitating, mechanized pests.
+    .desc = Niepokojące, zmechanizowane szkodniki.
 ent-MobHivebotRanged = hivebot
-    .desc = Agitating, mechanized pests. This one has a gun.
-    .suffix = Ranged
-ent-MobHivebotStrong = strong hivebot
-    .desc = Agitating, mechanized pests. This one looks much stronger then normal.
+    .desc = Niepokojące, zmechanizowane szkodniki. Ten ma broń.
+    .suffix = Walka na odległość
+ent-MobHivebotStrong = potężny hivebot
+    .desc = Niepokojące, zmechanizowane szkodniki. Ten wygląda na znacznie silniejszego niż zwykle.

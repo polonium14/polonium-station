@@ -1,5 +1,3 @@
-using Content.Shared._Funkystation.FirelockBolt.Components;
-using Content.Shared._Funkystation.FirelockBolt.EntitySystems;
 using Content.Shared.Access.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
@@ -29,7 +27,6 @@ public abstract partial class SharedDoorRemoteSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private TagSystem _tagSystem = default!;
-    [Dependency] private SharedFirelockBoltControlSystem _firelockBolts = default!;
     [Dependency] protected IGameTiming Timing = default!;
 
 
@@ -74,15 +71,6 @@ public abstract partial class SharedDoorRemoteSystem : EntitySystem
             return;
         }
 
-        // Remote control is blocked while lever override is on
-        if (TryComp<FirelockBoltControlComponent>(args.Target, out var firelockBolts)
-            && !_firelockBolts.CanRemoteControl((args.Target.Value, firelockBolts), out var overrideReason)
-            && overrideReason != null)
-        {
-            _popup.PopupEntity(Loc.GetString(overrideReason), args.User, args.User);
-            return;
-        }
-
         var accessTarget = args.Used;
         // This covers the accesses the REMOTE has, and is not effected by the user's ID card.
         if (entity.Comp.IncludeUserAccess) // Allows some door remotes to inherit the user's access.
@@ -121,30 +109,10 @@ public abstract partial class SharedDoorRemoteSystem : EntitySystem
                 {
                     if (!boltsComp.BoltWireCut)
                     {
-                        var willBolt = !boltsComp.BoltsDown;
-
-                        if (firelockBolts != null)
-                        {
-                            if (!_firelockBolts.TrySetBoltsFromRemote(
-                                    (args.Target.Value, firelockBolts),
-                                    willBolt,
-                                    out var failReason,
-                                    args.User,
-                                    predicted: true))
-                            {
-                                if (failReason != null)
-                                    _popup.PopupEntity(Loc.GetString(failReason), args.User, args.User);
-                                break;
-                            }
-                        }
-                        else
-                        {
-                            _doorSystem.SetBoltsDown((args.Target.Value, boltsComp), willBolt, user: args.User, predicted: true);
-                        }
-
+                        _doorSystem.SetBoltsDown((args.Target.Value, boltsComp), !boltsComp.BoltsDown, user: args.User, predicted: true);
                         _adminLogger.Add(LogType.Action,
                             LogImpact.Medium,
-                            $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)} to {(willBolt ? "" : "un")}bolt it");
+                            $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)} to {(boltsComp.BoltsDown ? "" : "un")}bolt it");
                     }
                 }
 

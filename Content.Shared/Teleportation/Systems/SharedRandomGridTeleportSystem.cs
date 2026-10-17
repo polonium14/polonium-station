@@ -31,7 +31,8 @@ public sealed partial class SharedRandomGridTeleportSystem : EntitySystem
         float maxDistance = DefaultMaxDistance,
         CollisionGroup mask = CollisionGroup.MobMask,
         EntityUid? restrictGrid = null,
-        int tries = 40)
+        int tries = 40,
+        Func<EntityCoordinates, bool>? filter = null)
     {
         destination = default;
 
@@ -60,7 +61,11 @@ public sealed partial class SharedRandomGridTeleportSystem : EntitySystem
                 || _turf.IsTileBlocked(tileRef.Value, mask))
                 continue;
 
-            destination = candidate.AlignWithClosestGridTile(entityManager: EntityManager);
+            var aligned = candidate.AlignWithClosestGridTile(entityManager: EntityManager);
+            if (filter != null && !filter(aligned))
+                continue;
+
+            destination = aligned;
             return true;
         }
 
@@ -75,13 +80,14 @@ public sealed partial class SharedRandomGridTeleportSystem : EntitySystem
         EntityCoordinates origin,
         float minDistance = DefaultMinDistance,
         float maxDistance = DefaultMaxDistance,
-        CollisionGroup? mask = null)
+        CollisionGroup? mask = null,
+        Func<EntityCoordinates, bool>? filter = null)
     {
         mask ??= TryComp<PhysicsComponent>(entity, out var physics)
             ? (CollisionGroup) physics.CollisionMask
             : CollisionGroup.MobMask;
 
-        if (!TryFindRandomCoordinates(origin, out var destination, minDistance, maxDistance, mask.Value))
+        if (!TryFindRandomCoordinates(origin, out var destination, minDistance, maxDistance, mask.Value, filter: filter))
             return false;
 
         _transform.SetCoordinates(entity, destination);

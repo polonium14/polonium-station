@@ -1,2 +1,2 @@
-ent-NoticeBoard = notice board
-    .desc = Is there a job for a witcher?
+ent-NoticeBoard = tablica ogłoszeń
+    .desc = Czy jest tu praca dla wiedźmina?

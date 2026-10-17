@@ -1,2 +1,2 @@
-ent-DecoratedFirTree = decorated fir tree
-    .desc = A very festive tree for a very festive holiday.
+ent-DecoratedFirTree = udekorowana choinka
+    .desc = Bardzo uroczyste drzewko na bardzo uroczyste święta.

@@ -179,7 +179,7 @@
 
 - type: marking
   id: MothFireflyOverlay
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Moth ]
   forcedColoring: false
   sprites:
@@ -289,7 +289,7 @@
 
 - type: marking
   id: VoxTailStripes
-  bodyPart: Chest
+  bodyPart: TailOverlay
   groupWhitelist: [ Vox ]
   forcedColoring: false
   sprites:
@@ -364,7 +364,7 @@
 
 - type: marking
   id: VoxFootSpines
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Vox ]
   forcedColoring: false
   sprites:
@@ -448,7 +448,7 @@
 
 - type: marking
   id: VoxTailBell
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Vox ]
   forcedColoring: false
   sprites:
@@ -468,7 +468,7 @@
 
 - type: marking
   id: VoxTailLantern
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Vox ]
   forcedColoring: false
   sprites:
@@ -477,7 +477,7 @@
 
 - type: marking
   id: VoxTailSingleStripe
-  bodyPart: Chest
+  bodyPart: TailOverlay
   groupWhitelist: [ Vox ]
   forcedColoring: false
   sprites:
@@ -486,7 +486,7 @@
 
 - type: marking
   id: VoxTailSmallPlume
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Vox ]
   forcedColoring: false
   sprites:
@@ -495,7 +495,7 @@
 
 - type: marking
   id: VoxTailSpines
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Vox ]
   forcedColoring: false
   sprites:
@@ -540,7 +540,7 @@
 
 - type: marking
   id: VoxChains
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Vox ]
   forcedColoring: false
   sprites:
@@ -549,7 +549,7 @@
 
 - type: marking
   id: VoxSunAndMoon
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Vox ]
   forcedColoring: false
   sprites:

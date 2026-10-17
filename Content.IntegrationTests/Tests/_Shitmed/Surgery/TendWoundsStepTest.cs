@@ -3,11 +3,18 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery;
+using Content.Shared._Shitmed.Medical.Surgery.Conditions;
+using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared.Body;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
@@ -97,6 +104,56 @@ public sealed class TendWoundsStepTest : GameTest
 ";
 
     private static readonly ProtoId<DamageTypePrototype> HeatDamageType = "Heat";
+
+    [TestCase("Blunt", "SurgeryTendWoundsBrute", "SurgeryStepRepairBruteTissue", false)]
+    [TestCase("Heat", "SurgeryTendWoundsBurn", "SurgeryStepRepairBurnTissue", false)]
+    [TestCase("Blunt", "SurgeryTendWoundsBrute", "SurgeryStepRepairBruteTissue", true)]
+    public async Task FinishedTendingStillAllowsSealing(string damageType, string surgeryId, string repairId, bool blocked)
+    {
+        var map = await Pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+        await Server.WaitAssertion(() =>
+        {
+            var body = SEntMan.SpawnEntity("TendWoundsStepTestVictim", coords);
+            var torso = SEntMan.SpawnEntity("TendWoundsStepTestTorsoOrgan", coords);
+            var cautery = SEntMan.SpawnEntity("Cautery", coords);
+            var containers = SEntMan.System<SharedContainerSystem>();
+            containers.Insert(torso, containers.GetContainer(body, BodyComponent.ContainerID));
+            var surgery = SEntMan.System<SurgerySystem>();
+            var damage = SEntMan.System<DamageableSystem>();
+            var wounds = SEntMan.System<WoundSystem>();
+            var proto = SProtoMan.Index<DamageTypePrototype>(damageType);
+            damage.TryChangeDamage(torso, new DamageSpecifier(proto, FixedPoint2.New(5)), ignoreResistances: true);
+            SEntMan.AddComponent<IncisionOpenComponent>(torso);
+
+            if (blocked)
+            {
+                var wound = wounds.GetWoundableWounds(torso).Single();
+                var woundable = SEntMan.GetComponent<WoundableComponent>(torso);
+                var inflicter = SEntMan.GetComponent<TraumaInflicterComponent>(wound);
+                SEntMan.System<TraumaSystem>().AddTrauma(torso, (torso, woundable), (wound, inflicter),
+                    TraumaType.Dismemberment, FixedPoint2.New(5));
+            }
+
+            // Damage can disappear during surgery, including while a dismemberment wound
+            // still requires its own treatment. Neither case should trap the incision open.
+            damage.TryChangeDamage(torso, new DamageSpecifier(proto, FixedPoint2.New(-5)), ignoreResistances: true);
+            var surgeryEnt = surgery.GetSingleton(surgeryId)!.Value;
+            var valid = new SurgeryValidEvent(body, torso, Category: "Torso");
+            SEntMan.EventBus.RaiseLocalEvent(surgeryEnt, ref valid);
+            Assert.That(valid.Cancelled, Is.False);
+            Assert.That(surgery.IsStepComplete(body, torso, repairId, surgeryEnt), Is.True);
+            Assert.That(surgery.GetNextStep(body, torso, surgeryEnt, body)!.Value.Step, Is.EqualTo(2));
+
+            var seal = surgery.GetSingleton("SurgeryStepSealTendWound")!.Value;
+            var ev = new SurgeryStepEvent(body, body, torso, cautery, surgeryEnt, seal);
+            SEntMan.EventBus.RaiseLocalEvent(seal, ref ev);
+            Assert.That(SEntMan.HasComponent<IncisionOpenComponent>(torso), Is.False);
+            valid = new SurgeryValidEvent(body, torso, Category: "Torso");
+            SEntMan.EventBus.RaiseLocalEvent(surgeryEnt, ref valid);
+            Assert.That(valid.Cancelled, Is.True, "A finished incision must not keep offering a no-op tend surgery.");
+        });
+    }
 
     [Test]
     public async Task RepairBruteTissueStepHealsWithoutThrowing()

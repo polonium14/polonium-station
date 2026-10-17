@@ -1,0 +1,119 @@
+- type: replicatorClass
+  id: Fighter
+  name: replicator-class-fighter-name
+  description: replicator-class-fighter-desc
+  sprite: _Polonium/Mobs/Replicator/classes.rsi
+  order: 1
+  icon: ReplicatorHiveFighter
+  modules: [ Ram, Emitter ]
+  speedMultiplier: 0.85
+  components:
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+      path: "/Audio/Items/wirecutter.ogg"
+    angle: 90
+    animation: WeaponArcReplicatorWedge
+    wideAnimation: WeaponArcReplicatorWedgeFan
+    damage:
+      types:
+        Structural: 7
+  forms:
+  - state: fighter1
+    health: 145
+  - state: fighter2
+    stages: 2
+    health: 165
+  - state: fighter3
+    stages: 4
+    health: 185
+
+- type: replicatorClass
+  id: Defender
+  name: replicator-class-defender-name
+  description: replicator-class-defender-desc
+  sprite: _Polonium/Mobs/Replicator/defender.rsi
+  order: 2
+  icon: ReplicatorHiveDefender
+  speedMultiplier: 0.7
+  modules: [ Plating, Regeneration ]
+  components:
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+      path: "/Audio/Items/wirecutter.ogg"
+    angle: 90
+    animation: WeaponArcReplicatorHex
+    wideAnimation: WeaponArcReplicatorHexArc
+    damage:
+      types:
+        Structural: 7
+  forms:
+  - state: defender1
+    health: 160
+  - state: defender2
+    stages: 2
+    health: 185
+  - state: defender3
+    stages: 4
+    health: 210
+
+- type: replicatorClass
+  id: Scout
+  name: replicator-class-scout-name
+  description: replicator-class-scout-desc
+  sprite: _Polonium/Mobs/Replicator/classes.rsi
+  order: 3
+  icon: ReplicatorHiveScout
+  modules: [ Thrusters, Cloak ]
+  speedMultiplier: 1.1
+  forms:
+  - state: scout1
+    health: 125
+  - state: scout2
+    stages: 2
+    health: 140
+  - state: scout3
+    stages: 4
+    health: 155
+
+- type: replicatorClass
+  id: Builder
+  name: replicator-class-builder-name
+  description: replicator-class-builder-desc
+  sprite: _Polonium/Mobs/Replicator/classes.rsi
+  order: 4
+  icon: ReplicatorHiveBuilder
+  modules: [ Toolkit, Cargo ]
+  speedMultiplier: 0.65
+  forms:
+  - state: builder1
+    health: 125
+  - state: builder2
+    stages: 2
+    health: 140
+  - state: builder3
+    stages: 4
+    health: 155
+
+- type: replicatorClass
+  id: Hunter
+  name: replicator-class-hunter-name
+  description: replicator-class-hunter-desc
+  sprite: _Polonium/Mobs/Replicator/classes.rsi
+  order: 5
+  icon: ReplicatorHiveHunter
+  modules: [ Capture, Sensors ]
+  speedMultiplier: 0.95
+  forms:
+  - state: hunter1
+    health: 135
+  - state: hunter2
+    stages: 2
+    health: 155
+  - state: hunter3
+    stages: 4
+    health: 175

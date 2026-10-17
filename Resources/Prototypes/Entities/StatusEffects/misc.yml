@@ -173,7 +173,6 @@
   - type: StatusEffect
     whitelist:
       components:
-      - MobState
       - Blindable
-      requireAll: true
+      - BorgChassis # Polonium fix: borgs are now flashable
   - type: FlashedStatusEffect

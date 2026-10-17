@@ -183,12 +183,9 @@ public sealed class BarotraumaUnhealableDamageTest : GameTest
             organAfterTopical = sDamageable.GetTotalDamage(torso);
 #pragma warning restore CS0618
 
-            Assert.That(mobAfterTopical, Is.GreaterThan(mobBeforeTopical - FixedPoint2.New(1)),
-                "a) TOPICAL: correctly blocked - the torso still has active BoneDamage trauma, and TraumasBlockingHealing " +
-                "refuses topical healing on a broken limb even once bleeding stops, until it's surgically mended. " +
-                "This documents current intentional gating, not a regression guard - if that gate is ever intentionally " +
-                "relaxed, update this assertion rather than treating the failure as a break.");
-            Assert.That(organAfterTopical, Is.GreaterThan(organBeforeTopical - FixedPoint2.New(1)));
+            Assert.That(mobAfterTopical, Is.LessThan(mobBeforeTopical),
+                "Broken bones must not block topical healing of barotrauma wounds.");
+            Assert.That(organAfterTopical, Is.LessThan(organBeforeTopical));
         });
 
         // b) Chem
@@ -215,7 +212,7 @@ public sealed class BarotraumaUnhealableDamageTest : GameTest
 
             Assert.That(mobAfterChem, Is.LessThan(mobBeforeChem),
                 "b) CHEM: the same raw TryChangeDamage call a healing reagent effect makes should reduce the mob's damage - " +
-                "chem bypasses organ/trauma checks entirely, so it heals regardless of the topical block above.");
+                "chemical healing must also reduce the remaining damage.");
         });
 
         // c) Surgery

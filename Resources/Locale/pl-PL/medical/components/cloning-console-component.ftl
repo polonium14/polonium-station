@@ -2,10 +2,10 @@
 
 cloning-console-window-title = Konsola klonowania
 cloning-console-window-clone-button-text = Klonuj
-cloning-console-window-scanner-id = ID: [color=white]{ $scannerOccupantName }[/color]
-cloning-console-window-pod-id = ID: [color=white]{ $podOccupantName }[/color]
+cloning-console-window-scanner-id = Identyfikator: [color=white]{ $scannerOccupantName }[/color]
+cloning-console-window-pod-id = Identyfikator: [color=white]{ $podOccupantName }[/color]
 cloning-console-window-no-patient-data-text = Brak danych pacjentia
-cloning-console-window-id-blank = ID:
+cloning-console-window-id-blank = Identyfikator:
 cloning-console-window-scanner-details-label = Stan skanera genetycznego
 cloning-console-window-pod-details-label = Stan komory klonującej
 cloning-console-window-no-scanner-detected-label = Podłącz skaner genetyczny przy pomocy multimetru lub korfiguratora sieci.

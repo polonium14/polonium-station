@@ -14,33 +14,31 @@ ghost-role-information-cleanbot-rules =
 ghost-role-information-medibot-name = Medibot
 ghost-role-information-medibot-description = Najlepszy przyjaciel lekarza.
 ghost-role-information-medibot-rules =
-    You are [bold]Medibot[/bold], a premium unit designed by Nanotrasen for automatisation of basic first aid!
-    Under no circumstance should you abandon your Hippocratic Oath, meaning DON'T KNOWINGLY IGNORE PATIENTS, no matter their affiliation.
-    Outside that, however, you are free to choose who to talk nicely or rudely to. You are not under Crewsimov, and don't need to follow anyone's orders.
+    Jesteś [bold]Medibotem[/bold], jednostką premium stworzoną przez Nanotrasen w celu automatyzacji pierwszej pomocy!
+    W żadnym wypadku nie powinieneś porzucić przysięgi Hipokratesa, co oznacza: NIE IGNORUJ PACJENTÓW, nieważne po jakiej stronie.
+    Poza tym możesz samodzielnie wybrać swoich przyjaciół i wrogów. Nie jesteś pod Crewsimovem, więc nie musisz się stosować do rozkazów.
     
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Nie pamiętasz swojego poprzedniego życia i nie pamiętasz niczego, czego dowiedziałeś się jako duch.
+    Możesz pamiętać wiedzę ogólną o grze, czyli jak gotować, jak używać obiektów itp.
+    Całkowicie [color=red]NIE[/color] możesz pamiętać ani mówić o imieniu, wyglądzie itp. swojej poprzedniej postaci.
 ghost-role-information-mini-dragon-name = Mini Smok
-ghost-role-information-mini-dragon-description = A small dragon-like creature that likes to create hoards.
+ghost-role-information-mini-dragon-description = Małe, smokopodobne stworzenie lubiące gromadzić wartościowe rzeczy w zakamarkach.
 ghost-role-information-mini-dragon-rules =
-    You are a Mini Dragon. You want to gather things, make a hoard and protect it.
-    You are [color=red]not[/color] directly hostile to the crew unless they threaten or harm you and your hoard, but outside of that you are free to choose how to talk and act.
+    Jesteś Mini Smokiem. Chcesz zbierać rzeczy, chować je w swojej kryjówce i ich bronić. [color=red]Nie[/color] jesteś otwarcie agresywnym stworzeniem wobec załogi, dopóki nie zaczną ci grozić lub krzywdzić cię i twoją kryjówkę. Poza tym możesz decydować, jak się z nimi komunikować i zachowywać.
     
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-ghost-role-information-mini-dragon-friendly-name = Domesticated Mini Dragon
-ghost-role-information-mini-dragon-friendly-description = A small dragon-like creature that likes to create hoards. This one seems to have been domesticated!
+    Nie pamiętasz swojego poprzedniego życia i nie pamiętasz niczego, czego dowiedziałeś się jako duch.
+    Możesz pamiętać wiedzę ogólną o grze, czyli jak gotować, jak używać obiektów itp.
+    Całkowicie [color=red]NIE[/color] możesz pamiętać ani mówić o imieniu, wyglądzie itp. swojej poprzedniej postaci.
+ghost-role-information-mini-dragon-friendly-name = Udomowiony Mini Smok
+ghost-role-information-mini-dragon-friendly-description = Małe, smokopodobne stworzenie lubiące gromadzić wartościowe rzeczy w zakamarkach. To zostało udomowione!
 ghost-role-information-mini-dragon-friendly-rules =
-    You are a Domesticated Mini Dragon. Help the crew gather wealth!
-    You are [color=red]not[/color] hostile to crew-aligned crewmembers.
+    Jesteś Udomowionym Mini Smokiem. Pomóż załodze zbierać bogactwa! [color=red]Nie[/color] jesteś agresywny wobec osób stojących po stronie stacji.
     
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-ghost-role-information-horrific-necktie-name = Horrific Necktie
-ghost-role-information-horrific-necktie-description = A horribly garish necktie which, through the power of Disco, drinking, and divorce, has gained the ability to speak!
+    Nie pamiętasz swojego poprzedniego życia i nie pamiętasz niczego, czego dowiedziałeś się jako duch.
+    Możesz pamiętać wiedzę ogólną o grze, czyli jak gotować, jak używać obiektów itp.
+    Całkowicie [color=red]NIE[/color] możesz pamiętać ani mówić o imieniu, wyglądzie itp. swojej poprzedniej postaci.
+ghost-role-information-horrific-necktie-name = Przerażający Krawat
+ghost-role-information-horrific-necktie-description = Strasznie krzykliwy krawat, który dzięki mocy Disco, chlania i rozwodów, zdobył moc mówienia!
 ghost-role-information-meowl-name = Meowl
 ghost-role-information-meowl-description = Wysoce inwazyjny drapieżnik. Jedyna przyczyna szybkiego zmniejszenia liczby nastrojów.
 ghost-role-information-haunted-sword-name = Nawiedzony miecz

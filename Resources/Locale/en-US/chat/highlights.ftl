@@ -55,3 +55,5 @@ highlights-personal-ai = Personal AI, "pAI"
 highlights-cyborg = Cyborg, Silicon, Borg, Robotics, "Robot"
 highlights-borg = Cyborg, Silicon, Borg, Robotics, "Robot"
 highlights-station-ai = Station AI, Silicon, "AI", "sAI"
+
+highlights-stationai = Station AI, Silicon, "AI", "sAI"

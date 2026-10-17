@@ -9,5 +9,5 @@ stethoscope-delta-steady = Jest stabilny.
 stethoscope-delta-improving = Robi się coraz lepiej.
 stethoscope-delta-worsening = Robi się coraz gorzej.
 stethoscope-combined-status = { $absolute } { $delta }
-stethoscope-dead = You hear nothing.
-stethoscope-sacrificed = You hear static.
+stethoscope-dead = Nic nie słyszysz.
+stethoscope-sacrificed = Słyszysz szum.

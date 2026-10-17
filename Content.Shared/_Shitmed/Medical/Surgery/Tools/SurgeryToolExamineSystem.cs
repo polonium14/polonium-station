@@ -54,6 +54,7 @@ public sealed partial class SurgeryToolExamineSystem : EntitySystem
         };
         var key = "surgery-tool-" + (comp.Used == true ? "used" : "unlimited");
         var speed = comp.Speed.ToString("N2"); // 2 decimal places to not get trolled by float
+        // Let the surrounding translation choose the grammatical form of the tool name.
         msg.PushMarkup(Loc.GetString(key, ("tool", comp.ToolName), ("speed", speed), ("color", color)));
     }
 }

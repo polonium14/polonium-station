@@ -1,4 +1,4 @@
-﻿accent-gray-words-1 = the
+accent-gray-words-1 = the
 accent-gray-words-replace-1 = thusd
 
 accent-gray-words-2 = we

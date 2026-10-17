@@ -63,7 +63,7 @@ plant-analyzer-potency-ludicrous = Niedorzeczna
 plant-analyzer-potency-immeasurable = [italic]Nieobliczalna[/italic]
 plant-analyzer-potency-perfect = [color=yellow][bold]Perfekcyjna[/bold][/color]
 plant-analyzer-print = Drukuj
-plant-analyzer-printout-missing = N/A
+plant-analyzer-printout-missing = N/D
 plant-analyzer-printout = [color=#9FED58][head=2]Raport Analizatora Roślin[/head][/color]{ $nl }──────────────────────────────{ $nl }[bullet/] Gatunek: { $seedName }{ $nl }{ $indent }[bullet/] Zdatne: { $viable ->
         [Yes] [color=green]Tak[/color]
         [No] [color=red]Nie[/color]

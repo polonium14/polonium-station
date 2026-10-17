@@ -2,7 +2,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
 using System.Numerics;
 using Content.Client.Projectiles;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
@@ -55,6 +54,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
 
         SubscribeLocalEvent<PredictedProjectileServerComponent, ComponentAdd>(OnServerProjectileAdd);
         SubscribeLocalEvent<PredictedProjectileServerComponent, ComponentStartup>(OnServerProjectileStartup);
+        SubscribeLocalEvent<PredictedProjectileServerComponent, ComponentRemove>(OnServerProjectileRemove);
 
         UpdatesBefore.Add(typeof(TransformSystem));
     }
@@ -71,10 +71,36 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
     private void OnAfterSolve(ref PhysicsUpdateAfterSolveEvent ev)
     {
         if (_timing.IsFirstTimePredicted)
+        {
+            var pending = EntityQueryEnumerator<PredictedProjectileClientComponent>();
+            while (pending.MoveNext(out var uid, out var predicted))
+            {
+                if (predicted.PendingImpactTarget is not { } target)
+                    continue;
+
+                predicted.PendingImpactTarget = null;
+                if (!Exists(target))
+                    continue;
+
+                var hit = new HashSet<(NetEntity, MapCoordinates)>
+                {
+                    (GetNetEntity(target), _transform.GetMapCoordinates(target)),
+                };
+                RaiseNetworkEvent(new PredictedProjectileHitEvent(uid.Id, hit, _transform.GetMapCoordinates(uid)));
+            }
+
             return;
+        }
+
         var query = EntityQueryEnumerator<PredictedProjectileClientComponent>();
         while (query.MoveNext(out var uid, out var predicted))
         {
+            if (predicted.Hit)
+            {
+                predicted.Coordinates = null;
+                continue;
+            }
+
             if (predicted.Coordinates is { } coordinates)
                 _transform.SetCoordinates(uid, coordinates);
 
@@ -119,11 +145,8 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             return;
         }
 
-        var netEnt = GetNetEntity(args.OtherEntity);
-        var pos = _transform.GetMapCoordinates(args.OtherEntity);
-        var hit = new HashSet<(NetEntity, MapCoordinates)> { (netEnt, pos) };
-        var ev = new PredictedProjectileHitEvent(ent.Owner.Id, hit);
-        RaiseNetworkEvent(ev);
+        // send the hit after the solve, the contact position is still short of where the body ends up
+        ent.Comp.PendingImpactTarget = args.OtherEntity;
 
         // Process hit effects but do NOT delete the projectile here (predicted: true). Deleting a
         // client-side predicted projectile mid-flight leaves stale physics contacts that crash the
@@ -143,12 +166,23 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         HideServerProjectile(ent);
     }
 
+    private void OnServerProjectileRemove(Entity<PredictedProjectileServerComponent> ent, ref ComponentRemove args)
+    {
+        if (ent.Comp.ClientEnt != _player.LocalEntity)
+        {
+            ShowSprite(ent);
+            return;
+        }
+
+        TryDeleteClientTwin(ent.Comp.ClientId);
+        ShowSprite(ent);
+    }
+
     private void HideServerProjectile(Entity<PredictedProjectileServerComponent> ent)
     {
         if (!GunPrediction || !_gameState.IsPredictionEnabled)
             return;
 
-        // Never hide our own client-side prediction entity.
         if (IsClientSide(ent) || _predictedClientQuery.HasComp(ent))
             return;
 
@@ -158,8 +192,14 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         if (_ignorePredictionHideQuery.HasComp(ent))
             return;
 
-        if (_spriteQuery.TryComp(ent, out var sprite))
-            _sprite.SetVisible((ent, sprite), false);
+        if (TryComp(ent, out ProjectileComponent? projectile) &&
+            projectile.ProjectileSpent &&
+            !projectile.DeleteOnCollide)
+        {
+            return;
+        }
+
+        HideSprite(ent);
     }
 
     public override void Update(float frameTime)
@@ -181,6 +221,18 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             if (_ignorePredictionHideQuery.HasComp(serverUid))
                 continue;
 
+            if (!TryComp(serverUid, out ProjectileComponent? projectile))
+            {
+                _sprite.SetVisible((serverUid, serverSprite), true);
+                continue;
+            }
+
+            if (projectile.ProjectileSpent && !projectile.DeleteOnCollide)
+            {
+                _sprite.SetVisible((serverUid, serverSprite), true);
+                continue;
+            }
+
             _sprite.SetVisible((serverUid, serverSprite), false);
         }
 
@@ -190,11 +242,14 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         {
             if (predicted.Hit)
             {
-                // The projectile already registered a hit. Cleanly remove it from the physics contact
-                // graph (SetCanCollide false destroys its contacts on both sides) before deleting, so the
-                // engine's ResetContacts never dereferences a stale contact for a deleted entity.
-                _physics.SetCanCollide(uid, false, body: physics);
-                QueueDel(uid);
+                if (IsClientSide(uid))
+                {
+                    // hold the twin at the impact pose until the server arrow is shown
+                    _physics.SetCanCollide(uid, false, body: physics);
+                    continue;
+                }
+
+                RemComp<PredictedProjectileClientComponent>(uid);
                 continue;
             }
 
@@ -245,7 +300,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
                 (GetNetEntity(target), _transform.GetMapCoordinates(target)),
             };
 
-            var ev = new PredictedProjectileHitEvent(uid.Id, hit);
+            var ev = new PredictedProjectileHitEvent(uid.Id, hit, _transform.GetMapCoordinates(uid));
             RaiseNetworkEvent(ev);
 
             _projectile.ProjectileCollide((uid, projectile, physics), target, predicted: true);
@@ -253,7 +308,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         }
 
         // Keep the shooter's authoritative projectile hidden after a predicted hit.
-        // Only hide when past the impact distance — never force-visible (that re-shows the lagging
+        // Only hide when past the impact distance - never force-visible (that re-shows the lagging
         // server bullet as a second shot).
         var predictedQuery = EntityQueryEnumerator<PredictedProjectileHitComponent, SpriteComponent, TransformComponent>();
         while (predictedQuery.MoveNext(out var uid, out var hit, out var sprite, out var xform))
@@ -271,18 +326,43 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         }
     }
 
+    private void TryDeleteClientTwin(int clientId)
+    {
+        var twin = new EntityUid(clientId);
+
+        if (!Exists(twin) || !IsClientSide(twin) || !_predictedClientQuery.HasComp(twin))
+            return;
+
+        HideSprite(twin);
+
+        if (TryComp(twin, out PhysicsComponent? physics))
+            _physics.SetCanCollide(twin, false, body: physics);
+
+        QueueDel(twin);
+    }
+
+    private void HideSprite(EntityUid uid)
+    {
+        if (_spriteQuery.TryComp(uid, out var sprite))
+            _sprite.SetVisible((uid, sprite), false);
+    }
+
+    private void ShowSprite(EntityUid uid)
+    {
+        if (_spriteQuery.TryComp(uid, out var sprite))
+            _sprite.SetVisible((uid, sprite), true);
+    }
+
     private void MarkClientHit(EntityUid uid, PredictedProjectileClientComponent predicted, PhysicsComponent physics)
     {
         if (predicted.Hit)
             return;
 
-        // Freeze and hide the predicted projectile at the impact point. Actual deletion happens next
-        // tick in Update after its physics contacts are torn down, to avoid a mid-flight delete crash.
         predicted.Hit = true;
-        _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
 
-        if (_spriteQuery.TryComp(uid, out var sprite))
-            _sprite.SetVisible((uid, sprite), false);
+        _physics.SetAngularVelocity(uid, 0f, body: physics);
+        _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
+        _physics.SetCanCollide(uid, false, body: physics);
     }
 
     public override void FrameUpdate(float frameTime)

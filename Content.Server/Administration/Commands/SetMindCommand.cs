@@ -47,7 +47,7 @@ namespace Content.Server.Administration.Commands
 
             if (!EntityManager.HasComponent<MindContainerComponent>(eUid))
             {
-                shell.WriteLine(Loc.GetString("cmd-setmind-target-has-no-mind-message"));
+                shell.WriteLine(Loc.GetString("cmd-setmind-command-target-has-no-mind-message"));
                 return;
             }
 
@@ -61,7 +61,7 @@ namespace Content.Server.Administration.Commands
             var playerCData = session.ContentData();
             if (playerCData == null)
             {
-                shell.WriteLine(Loc.GetString("cmd-setmind-target-has-no-content-data-message"));
+                shell.WriteLine(Loc.GetString("cmd-setmind-command-target-has-no-content-data-message"));
                 return;
             }
 

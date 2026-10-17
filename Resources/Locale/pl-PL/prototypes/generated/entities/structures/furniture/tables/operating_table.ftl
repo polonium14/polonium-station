@@ -1,2 +1,2 @@
-ent-OperatingTable = operating table
-    .desc = Used for advanced medical procedures.
+ent-OperatingTable = stół operacyjny
+    .desc = Used for advanced Medyczny procedures.

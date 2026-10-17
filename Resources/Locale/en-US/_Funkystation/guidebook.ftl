@@ -18,7 +18,6 @@ guide-entry-cargo-sop = SPO Logistyki
 
 guide-entry-science-sop = SPO Badań i Rozwoju
 
-guide-entry-eoc-sop = Wrogowie Korporacji
 
 guide-entry-alert-sop = Kody zagrożenia
 
@@ -34,7 +33,6 @@ guide-entry-order-of-succession = Kolejność przejmowania obowiązków
 
 guide-entry-alertlevel-red = Kod Czerwony
 
-guide-entry-generalcommand-sop = SPO Dowództwa Generalnego
 
 guide-entry-captain-sop = SPO Kapitana
 
@@ -82,6 +80,8 @@ guide-entry-scientist-sop = SPO Naukowca i A.N.
 
 guide-entry-roboticist-sop = SPO Robotyka
 
+guide-entry-synthetics-sop = Jednostki syntetyczne
+
 guide-entry-reactions = Reakcje
 
 guide-entry-cmo-sop = SPO Dyrektora Medycznego
@@ -94,13 +94,11 @@ guide-entry-paramedic-sop = SPO Ratownika Medycznego
 
 guide-entry-psychologist-sop = SPO Psychologa
 
-guide-entry-blood-cult = Kult Krwi
 
 guide-entry-ce-sop = SPO Głównego Inżyniera
 
 guide-entry-stationengineer-sop = SPO Inżyniera Stacji
 
-guide-entry-atmospheric-sop = SPO Technika Atmosferycznego
 
 guide-entry-training-manual-security = Podręcznik Szkoleniowy Ochrony
 

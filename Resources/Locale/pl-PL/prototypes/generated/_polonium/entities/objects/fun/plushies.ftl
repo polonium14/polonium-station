@@ -1,7 +1,9 @@
-ent-PlushieItanKio = Pluszak Itan-Kio
-    .desc = Pluszowa reprezentacja bardzo (nie)kompetentnego technika atmosferyki
-ent-ItanKioGoBoom = Pluszak Itan-Kio
-    .desc = Instrukcja obsługi: Przykręć jego ogon i rzuć w ofiarę twojego wyboru
+ent-PlushieItanKio = pluszak Itan-Kio
+    .desc = Pluszowa reprezentacja bardzo (nie)kompetentnego technika atmosferyki.
+ent-ItanKioGoBoom = pluszak Itan-Kio
+    .desc = Instrukcja obsługi: Przykręć jego ogon i rzuć w ofiarę twojego wyboru.
     .suffix = BOMBA, NIE MAPOWAĆ
 ent-PlushieMothDeathshead = pluszak Asa Trupiogłowego
     .desc = Puszysty pluszak przypominający pewnego barmana ćmę. Widnieje na nim mały napis "Nie dawać whiskey po północy".
+ent-PlushieHumanTomasz = pluszak opętanego oficera ochrony
+    .desc = Pluszak przypominającego pewnego oficera ochrony, który padł ofiarą klątwy kocich uszu. Chwila, czy to krew?

@@ -1,8 +1,8 @@
-ent-ChameleonProjectorNoBattery = chameleon projector
-    .desc = Holoparasite technology used to create a hard-light replica of any object around you. Disguise is destroyed when picked up or deactivated.
+ent-ChameleonProjectorNoBattery = projektor kameleonowy
+    .desc = Technologia holopasożytów służy do tworzenia repliki dowolnego obiektu w otoczeniu z twardego światła. Kamuflaż ulega zniszczeniu po podniesieniu lub wyłączeniu.
 ent-ChameleonProjector = projektor maskujący
     .desc = Technologia holopasożytowa używana do tworzenia repliki twardego światła dowolnego obiektu wokół ciebie. Kamuflaż zostaje zniszczony po podniesieniu lub dezaktywacji.
-    .suffix = Battery
+    .suffix = Akumulator
 ent-ChameleonDisguise = Urist McKleiner
     .desc = { "" }
 ent-ActionDisguiseNoRot = Przełącz obrót

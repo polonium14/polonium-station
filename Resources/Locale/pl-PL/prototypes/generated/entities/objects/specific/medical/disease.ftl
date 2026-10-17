@@ -1,6 +1,6 @@
-ent-DiseaseSwab = sterile swab
-    .desc = Used for taking and transferring samples. Sterile until open. Single use only.
-ent-BoxMouthSwab = sterile swab dispenser
-    .desc = Dispenses 30 sterile swabs, extremely useful for botany.
-ent-Vaccine = vaccine
-    .desc = Prevents people who DON'T already have a disease from catching it.
+ent-DiseaseSwab = jałowa wymazówka
+    .desc = Do pobierania i przenoszenia próbek. Jałowa do otwarcia. Jednorazowa.
+ent-BoxMouthSwab = dozownik jałowych wymazówek
+    .desc = Wydaje 30 jałowych wymazówek. Nieocenione w botanice.
+ent-Vaccine = szczepionka
+    .desc = Chroni przed zakażeniem osoby, które JESZCZE nie są chore.

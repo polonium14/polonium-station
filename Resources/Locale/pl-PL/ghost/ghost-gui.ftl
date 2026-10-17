@@ -1,4 +1,5 @@
 ghost-gui-return-to-body-button = Powróć do ciała
+ghost-gui-return-to-lobby-button = Powróć do lobby
 ghost-gui-ghost-warp-button = Przenieś Ducha
 ghost-gui-ghost-roles-button = Role Ducha ({ $count })
 ghost-gui-toggle-ghost-visibility-popup-on = Włączono widoczność duchów.
@@ -38,8 +39,3 @@ ghost-roles-window-no-roles-available-label = Brak dostępnych ról ducha.
 ghost-roles-window-rules-footer = Przycisk zostanie odblokowany za { $time } sekund (opóźnienie istnieje, aby upewnić się że zasady zostały przeczytane).
 ghost-return-to-body-title = Powróć do ciała
 ghost-return-to-body-text = Twoja postać jest wskrzeszana! Czy chcesz powrócić do jej ciała?
-# begin Funkystation
-ghost-gui-toggle-self-ghost-visibility-popup-on = Enabled visibility of your ghost.
-ghost-gui-toggle-self-ghost-visibility-popup-off = Disabled visibility of your ghost.
-ghost-gui-toggle-other-ghosts-visibility-popup-on = Enabled visibility of other ghosts.
-ghost-gui-toggle-other-ghosts-visibility-popup-off = Disabled visibility of other ghosts.

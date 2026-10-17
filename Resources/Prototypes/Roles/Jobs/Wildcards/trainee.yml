@@ -1,0 +1,20 @@
+- type: job
+  id: Trainee
+  name: job-name-trainee
+  description: job-description-trainee
+  playTimeTracker: JobTrainee
+  setPreference: false
+  startingGear: TraineeGear
+  icon: "JobIconUnknown"
+  supervisors: job-supervisors-nobody
+  access:
+  - Maintenance
+
+- type: startingGear
+  id: TraineeGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorOrange
+    back: ClothingBackpack
+    shoes: ClothingShoesColorWhite
+    # carries the built in flashlight the lantern step talks about, and a pen for the contract
+    id: PassengerPDA

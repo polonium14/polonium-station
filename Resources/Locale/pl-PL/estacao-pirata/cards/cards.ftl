@@ -17,15 +17,13 @@ card-stack-examine =
         [one] There is { $count } card in this stack.
        *[other] There are { $count } cards in this stack.
     }
-cards-stackquantitychange-added = Card was added (Total cards: { $quantity })
-cards-stackquantitychange-removed = Card was removed (Total cards: { $quantity })
-cards-stackquantitychange-joined = Stack was merged (Total cards: { $quantity })
-cards-stackquantitychange-split = Stack was split (Total cards: { $quantity })
-cards-stackquantitychange-unknown = Stack count changed (Total cards: { $quantity })
+cards-stackquantitychange-added = Dodano kartę (łącznie kart: { $quantity })
+cards-stackquantitychange-removed = Usunięto kartę (łącznie kart: { $quantity })
+cards-stackquantitychange-joined = Połączono stosy (łącznie kart: { $quantity })
+cards-stackquantitychange-split = Rozdzielono stos (łącznie kart: { $quantity })
+cards-stackquantitychange-unknown = Zmieniła się liczba kart w stosie (łącznie kart: { $quantity })
 cards-verb-convert-to-deck = Convert to deck
 cards-verb-split = Split in half
-card-base-name = card
-card-deck-name = deck of cards
 card-sc-2-clubs = 2 of clubs
 card-sc-3-clubs = 3 of clubs
 card-sc-4-clubs = 4 of clubs

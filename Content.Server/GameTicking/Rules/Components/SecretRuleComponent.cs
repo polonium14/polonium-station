@@ -1,3 +1,4 @@
+using Content.Server.GameTicking.Presets;
 using Content.Shared.Random;
 using Robust.Shared.Prototypes;
 
@@ -17,4 +18,15 @@ public sealed partial class SecretRuleComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<WeightedRandomPrototype>? WeightTable;
+
+    // POLONIUM START
+    /// <summary>
+    /// Pick the preset by round moods and ignore the weight table.
+    /// </summary>
+    [DataField]
+    public bool UseMoods;
+
+    [DataField]
+    public ProtoId<GamePresetPrototype>? SelectedPreset;
+    // POLONIUM END
 }

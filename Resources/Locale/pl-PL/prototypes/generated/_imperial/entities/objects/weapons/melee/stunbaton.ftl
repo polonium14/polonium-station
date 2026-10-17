@@ -1,2 +1,2 @@
-ent-AdvancedStunbaton = stun baton
-    .desc = A stun baton for incapacitating people with. Actively harming with this is considered bad tone.
+ent-AdvancedStunbaton = Pałka ogłuszająca
+    .desc = Pałka ogłuszająca przeznaczona do obezwładniania ludzi. Celowe krzywdzenie jest uznawane za niesmaczne.

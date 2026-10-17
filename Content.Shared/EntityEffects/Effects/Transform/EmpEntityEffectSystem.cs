@@ -50,7 +50,7 @@ public sealed partial class Emp : EntityEffectBase<Emp>
     public TimeSpan Duration = TimeSpan.FromSeconds(15);
 
     public override string EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => Loc.GetString("entity-effect-guidebook-emp-reaction-effect", ("chance", Probability));
+        => Loc.GetString("entity-effect-guidebook-emp", ("chance", Probability));
 
     public override LogImpact? Impact => LogImpact.Medium;
 }

@@ -556,7 +556,7 @@ public sealed partial class InjectorSystem : EntitySystem
     {
         if (!_solutionContainer.ResolveSolution(injector.Owner, injector.Comp.SolutionName, ref injector.Comp.Solution, out var solution) || solution.AvailableVolume == 0)
         {
-            _popup.PopupEntity("injector-component-cannot-toggle-draw-message", user, user);
+            _popup.PopupEntity(Loc.GetString("injector-component-cannot-toggle-draw-message"), user, user);
             return false;
         }
 

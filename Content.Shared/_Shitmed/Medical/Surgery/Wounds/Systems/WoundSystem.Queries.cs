@@ -330,7 +330,7 @@ public sealed partial class WoundSystem
         if (!bypassMinimumSeverity && severity < minorThreshold)
             return false;
 
-        var wound = EntityManager.PredictedSpawn(woundProtoId);
+        var wound = PredictedSpawn(woundProtoId);
         var woundComp = Comp<WoundComponent>(wound);
 
         woundComp.DamageGroup = GetDamageGroupByType(woundComp.DamageType)?.ID;

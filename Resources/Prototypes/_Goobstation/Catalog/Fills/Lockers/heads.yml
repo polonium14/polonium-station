@@ -15,8 +15,7 @@
   table: !type:AllSelector
     children:
     - id: BoxFolderCentCom
-#    - id: WeaponDisabler # Funky
-    - id: WeaponDisabler
+    - id: WeaponTaser
     - id: BriefcaseBrownFilled
     - id: BookSpaceLaw
     - id: BedsheetCentcom
@@ -42,7 +41,7 @@
   id: LockerFillBlueshieldOfficer
   table: !type:AllSelector
     children:
-    - id: WeaponDisabler
+    - id: WeaponTaser
     - id: ClothingHeadHelmetSwat
     - id: Flash
     - id: FlashlightSeclite

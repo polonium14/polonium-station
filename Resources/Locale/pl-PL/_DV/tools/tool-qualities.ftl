@@ -1,2 +1,2 @@
-tool-quality-censer-name = Censer
-tool-quality-censer-tool-name = Censer
+tool-quality-censer-name = kadzielnica
+tool-quality-censer-tool-name = kadzielnica

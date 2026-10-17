@@ -1,2 +1,2 @@
-store-sales-amount = { $amount }% off!
-store-sales-over = The sale is over!
+store-sales-amount = { $amount } taniej!
+store-sales-over = Promocja zakończyła się!

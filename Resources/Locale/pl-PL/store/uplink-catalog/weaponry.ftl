@@ -2,15 +2,15 @@
 
 uplink-pistol-viper-name = Żmija
 uplink-pistol-viper-desc = Mały, łatwy do ukrycia, ale nieco słaby pistolet. Wyposażony w całkowicie automatyczny mechanizm spustowy. Wykorzystuje magazynki pistoletowe (kaliber .35 auto).
-uplink-pistol-cobra-name = Cobra
+uplink-pistol-cobra-name = Kobra
 uplink-pistol-cobra-desc = Solidny, wytrzymały pistolet operacyjny z wbudowanym tłumikiem. Używa magazynków pistoletowych (.25 bezłuskowy).
-uplink-rifle-mosin-name = Kardashev-Mosin
+uplink-rifle-mosin-name = Karabin Mosina
 uplink-rifle-mosin-desc = Karabin powtarzalny, który widział wiele wojen. Nie nowoczesny według żadnego standardu, ręcznie ładowany, z okropnym odrzutem, ale tani.
 uplink-esword-name = Miecz Energetyczny
 uplink-esword-desc = Bardzo niebezpieczny miecz energetyczny, który może odbijać strzały. Może być przechowywany w kieszeniach po wyłączeniu. Wydaje dużo hałasu podczas użycia lub włączenia.
 uplink-edagger-name = Sztylet Energetyczny
 uplink-edagger-desc = Mały miecz energetyczny wygodnie ukryty w formie długopisu.
-uplink-energycrossbow-name = Mini Energy Crossbow
+uplink-energycrossbow-name = Miniaturowa kusza energetyczna
 uplink-energycrossbow-desc = Ulubiona broń boczna operatora, który woli, żeby ofiary nie były w ruchu. Strzela regenerującymi się trującymi strzałami, które natychmiast powalają na ziemię.
 uplink-knives-kit-name = Zestaw Noży do Rzucania
 uplink-knives-kit-desc = Zestaw 4 noży do rzucania z logo syndykatu, idealnych do wbijania w ciała ofiar.
@@ -30,7 +30,7 @@ uplink-c20r-name = C-20r
 uplink-c20r-desc = Stary, niezawodny: Klasyczny pistolet maszynowy C-20r.
 uplink-c20r-bundle-name = Zestaw C-20r
 uplink-c20r-bundle-desc = Stary, niezawodny: Klasyczny pistolet maszynowy C-20r, w zestawie z trzema magazynkami.
-uplink-bulldog-name = Bulldog
+uplink-bulldog-name = Buldog
 uplink-bulldog-desc = Zwinny i groźny: Zawiera popularną strzelbę Bulldog.
 uplink-bulldog-bundle-name = Zestaw Bulldog
 uplink-bulldog-bundle-desc = Zwinny i groźny: Zawiera popularną strzelbę Bulldog, bębenek z pociskami przeciwpancernymi 12g i cztery bębinki z amunicją buckshot 12g.

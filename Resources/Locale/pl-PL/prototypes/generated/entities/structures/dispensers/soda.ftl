@@ -1,5 +1,5 @@
-ent-SodaDispenserEmpty = soda dispenser
-    .desc = A beverage dispenser with a selection of soda and several other common beverages. Has a single fill slot for containers.
+ent-SodaDispenserEmpty = dozownik napojów gazowanych
+    .desc = Dozownik napojów z wyborem napojów gazowanych i kilku innych popularnych napojów. Posiada jedno gniazdo do napełniania pojemników.
     .suffix = Puste
 ent-SodaDispenser = { ent-SodaDispenserEmpty }
     .suffix = Wypełnione

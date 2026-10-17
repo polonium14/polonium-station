@@ -1,0 +1,165 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseReplicatorColossusPart
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Replicator/colossus_parts.rsi
+  - type: Item
+    size: Large
+  - type: Tag
+    tags:
+    - ReplicatorColossusPart
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  parent: BaseReplicatorColossusPart
+  id: ReplicatorColossusPartHull
+  name: colossus hull
+  description: The armoured belly of a Colossal Replicator. Every other part is bolted onto it.
+  components:
+  - type: Sprite
+    state: hull
+  - type: Item
+    size: Huge
+  - type: PhysicalComposition
+    materialComposition:
+      Replisteel: 800
+
+- type: entity
+  parent: BaseReplicatorColossusPart
+  id: ReplicatorColossusPartDrive
+  name: colossus drive
+  description: A nanite-wound actuator block that turns the hull's power into the stride of six legs.
+  components:
+  - type: Sprite
+    state: drive
+  - type: PhysicalComposition
+    materialComposition:
+      Replisteel: 400
+
+- type: entity
+  parent: BaseReplicatorColossusPart
+  id: ReplicatorColossusPartLeg
+  name: colossus leg
+  description: A jointed leg as tall as a person, tipped with a claw that grips the deck plating.
+  components:
+  - type: Sprite
+    state: leg
+  - type: PhysicalComposition
+    materialComposition:
+      Replisteel: 160
+
+- type: entity
+  parent: BaseReplicatorColossusPart
+  id: ReplicatorColossusPartHead
+  name: colossus head
+  description: A flat sensor dish with a dark visor. It still tracks movement even with nothing to power it.
+  components:
+  - type: Sprite
+    state: head
+  - type: PhysicalComposition
+    materialComposition:
+      Replisteel: 400
+
+- type: entity
+  parent: BaseReplicatorColossusPart
+  id: ReplicatorColossusPartFieldGenerator
+  name: colossus field generator
+  description: A bluespace coil that bends space around the colossus and throws intruders far away.
+  components:
+  - type: Sprite
+    state: field_generator
+  - type: PhysicalComposition
+    materialComposition:
+      Replisteel: 500
+
+- type: entity
+  parent: BaseReplicatorColossusPart
+  id: ReplicatorColossusPartMinigun
+  name: colossus photon minigun
+  description: A rotary emitter that spits out bolts of light faster than the eye can follow.
+  components:
+  - type: Sprite
+    state: minigun
+  - type: PhysicalComposition
+    materialComposition:
+      Replisteel: 500
+
+- type: entity
+  parent: BaseReplicatorColossusPart
+  id: ReplicatorColossusPartPhotonLaser
+  name: colossus photon lasers
+  description: Shoulder-mounted laser pods that sweep nanites across walls and floors.
+  components:
+  - type: Sprite
+    state: photon_laser
+  - type: PhysicalComposition
+    materialComposition:
+      Replisteel: 500
+
+- type: entity
+  parent: BaseReplicatorColossusPart
+  id: ReplicatorColossusPartTentacles
+  name: colossus tentacles
+  description: A bundle of segmented cables that trail behind the colossus and feed matter into it.
+  components:
+  - type: Sprite
+    state: tentacles
+  - type: PhysicalComposition
+    materialComposition:
+      Replisteel: 300
+
+- type: entity
+  parent: BaseReplicatorColossusPart
+  id: ReplicatorColossusPartCore
+  name: colossus core
+  description: A caged crystal of seething magenta light. Once it is seated in the hull, the colossus only needs a mind.
+  components:
+  - type: Sprite
+    layers:
+    - state: core
+      shader: unshaded
+  - type: Item
+    size: Normal
+  - type: PointLight
+    radius: 1.5
+    energy: 1.5
+    color: "#d70aa0"
+  - type: PhysicalComposition
+    materialComposition:
+      Replisteel: 800
+
+- type: entity
+  parent: BaseItem
+  id: ReplicatorColossusCoreSalvage
+  name: burnt-out colossus core
+  description: The core of a Colossal Replicator, cut out of its wreck. The nanites in it are dead, but the lattice they left behind still shows how they tracked their prey.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Replicator/colossus_parts.rsi
+    state: core
+  - type: Item
+    size: Normal
+  - type: ReplicatorColossusCore
+    unlocks: ReplicatorCountermeasures
+    studySound:
+      path: /Audio/Machines/scan_finish.ogg
+  - type: StaticPrice
+    price: 2000

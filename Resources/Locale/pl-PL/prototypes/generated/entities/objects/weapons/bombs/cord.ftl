@@ -1,5 +1,5 @@
-ent-CableDetStack = explosive cord
-    .desc = Explosive cord for removing whatever is in your way.
+ent-CableDetStack = latawica
+    .desc = Sznur wybuchowy do usuwania wszystkiego, co stoi ci na drodze.
     .suffix = Pełne
 ent-CableDetStack10 = { ent-CableDetStack }
     .suffix = 10

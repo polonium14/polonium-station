@@ -1,63 +1,63 @@
 <Document>
-  # Path of Void
-  The Path of Void focuses on stealth, silence and the freezing cold. While the path offers very little utility early on, they quickly gain the ability to silence and freeze their victims, opening the window to silently ambush targets with no other items or chemicals required.
+  # Ścieżka pustki
+  Ścieżka pustki skupia się na skradaniu, ciszy i mrozie. Na początku daje bardzo mało narzędzi, ale szybko pozwala uciszać i zamrażać ofiary. Otwiera to okno na ciche zasadzki bez innych przedmiotów i chemikaliów.
 
-  It also offers full immunity to freezing temperatures, an invisible armored cloak (with pockets!), and later a targeted blink that damages anything nearby.
+  Daje też pełną odporność na mróz, niewidzialny opancerzony płaszcz (z kieszeniami!) i później celowany błysk, który rani wszystko w pobliżu.
 
-  The path has access to many strong transmuted items, but requires smart use to realize their full potential, making it moderately difficult but a good beginner choice. Ascending silences those around you and makes you the eye of a deadly blizzard.
+  Ścieżka ma dostęp do wielu mocnych przemienionych przedmiotów, ale żeby wycisnąć z nich pełnię, trzeba ich używać z głową. Jest średnio trudna i dobrym wyborem na początek. Wniebowstąpienie ucisza otoczenie i robi z ciebie oko zabójczej zamieci.
 
-  ## Glimmer of Winter
+  ## Blask zimy
   <Box>
     <GuideEntityEmbed Entity="HereticBladeVoid" Caption=""/>
   </Box>
-  Opens up the Path of Void to you.
+  Otwiera ci Ścieżkę pustki.
 
-  Allows you to transmute a knife in sub-zero temperatures into a Void Blade.
+  Pozwala przemienić nóż w temperaturze poniżej zera w ostrze pustki.
 
-  ## Grasp of Void
+  ## Chwyt pustki
   <Box>
     <GuideEntityEmbed Entity="TouchSpellMansus" Caption=""/>
   </Box>
-  Your Mansus Grasp will temporarily mute and chill the victim.
+  Chwyt Mansusu na chwilę ucisza ofiarę i ją wychładza.
 
-  ## Aristocrat's Way
-  Grants you immunity to cold temperatures, and removes your need to breathe.
+  ## Droga arystokraty
+  Daje odporność na zimno i znosi potrzebę oddychania.
 
-  You can still take damage due to a lack of pressure.
+  Nadal możesz dostać obrażenia od braku ciśnienia.
 
-  ## Mark of Void
+  ## Znak pustki
   <Box>
     <GuideEntityEmbed Entity="TouchSpellMansus" Caption=""/>
   </Box>
-  Your Mansus Grasp now applies the Mark of Void. The mark is triggered from an attack with your Void Blade.
+  Chwyt Mansusu nakłada teraz Znak pustki. Znak wyzwala atak ostrzem pustki.
 
-  When triggered, further silences the victim and swiftly lowers the temperature of their body and the air around them.
+  Po wyzwoleniu jeszcze mocniej ucisza ofiarę i szybko obniża temperaturę jej ciała oraz powietrza wokół.
 
-  ## Void Blast
-  Grants you Void Blast, a spell that shoots out a freezing blast in a cone in front of you, freezing the ground and any victims within.
+  ## Podmuch pustki
+  Daje Podmuch pustki, czar, który strzela mrożącym podmuchem w stożku przed tobą. Zamraża ziemię i wszystkich w zasięgu.
 
-  ## Void Phase
-  Grants you Void Phase, a long range targeted teleport spell.
+  ## Faza pustki
+  Daje Fazę pustki, czar dalekiego, celowanego teleportu.
 
-  Additionally stuns heathens around your original and target destination.
+  Dodatkowo ogłusza pogan wokół miejsca startu i celu.
 
-  ## Seeking Blade
+  ## Szukające ostrze
   <Box>
     <GuideEntityEmbed Entity="HereticBladeVoid" Caption=""/>
   </Box>
-  Your blade freezes enemies. Additionally, when a target is marked, activate the Void Blade in your hand to teleport right next to them without breaking the blade.
+  Ostrze zamraża wrogów. Dodatkowo, gdy cel jest naznaczony, włącz ostrze pustki w ręce, żeby teleportować się tuż obok niego bez niszczenia ostrza.
 
-  ## Void Pull
-  Grants you Void Pull, a spell that pulls all nearby heathens towards you, stunning them briefly.
+  ## Przyciąganie pustki
+  Daje Przyciąganie pustki, czar, który przyciąga wszystkich pobliskich pogan do ciebie i na chwilę ich ogłusza.
 
-  ## Waltz at the End of Time
-  The ascension ritual of the Path of Void.
+  ## Walc u kresu czasu
+  Rytuał wniebowstąpienia Ścieżki pustki.
 
-  Bring 3 corpses to a transmutation rune in sub-zero temperatures to complete the ritual.
+  Przynieś na runę transmutacji 3 zwłoki w temperaturze poniżej zera, żeby dokończyć rytuał.
 
-  When completed, grants you Aristocrat's Blessing.
+  Po ukończeniu dostajesz Błogosławieństwo arystokraty.
 
-  Everything around you will be turned into snow and the air will constantly be frozen. Those nearby will be silenced and frozen even quicker.
+  Wszystko wokół ciebie zamienia się w śnieg, a powietrze jest stale zamrożone. Pobliscy są uciszani i zamarzają jeszcze szybciej.
 
-  Additionally, you will become immune to the effects of space.
+  Dodatkowo stajesz się odporny na skutki przebywania w kosmosie.
 </Document>

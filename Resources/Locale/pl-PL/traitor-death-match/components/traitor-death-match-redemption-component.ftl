@@ -1,4 +1,4 @@
-traitor-death-match-redemption-component-interact-using-main-message = Maszyna bzyczy i wyświetla: { $secondMessage}
+traitor-death-match-redemption-component-interact-using-main-message = Maszyna bzyczy i wyświetla: { $secondMessage }
 traitor-death-match-redemption-component-interact-using-no-mind-message = "UWIERZYTELNIANIE NIEUDANE (0045)"
 traitor-death-match-redemption-component-interact-using-no-user-mind-message = "UWIERZYTELNIANIE NIEUDANE (0052)"
 traitor-death-match-redemption-component-interact-using-no-pda-message = "PODANE PDA NIE JEST PDA (0058)"

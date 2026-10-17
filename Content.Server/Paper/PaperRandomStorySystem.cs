@@ -12,7 +12,7 @@ public sealed partial class PaperRandomStorySystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PaperRandomStoryComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<PaperRandomStoryComponent, MapInitEvent>(OnMapInit, after: [typeof(PaperSystem)]);
     }
 
     private void OnMapInit(Entity<PaperRandomStoryComponent> paperStory, ref MapInitEvent ev)

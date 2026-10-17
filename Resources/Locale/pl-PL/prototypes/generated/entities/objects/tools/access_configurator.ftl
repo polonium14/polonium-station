@@ -3,5 +3,5 @@ ent-AccessConfigurator = konfigurator dostępu
 ent-AccessConfiguratorUniversal = uniwersalny konfigurator dostępu
     .desc = Zmodyfikowany konfigurator dostępu używany tylko przez mitycznego Administratora.
     .suffix = Admin
-ent-AccessConfiguratorXenoborg = xenoborg access configurator
-    .desc = A modified access configurator used by the xenoborgs.
+ent-AccessConfiguratorXenoborg = konfigurator dostępu do Ksenoborga
+    .desc = Zmodyfikowany konfigurator dostępu używany przez ksenoborgów.

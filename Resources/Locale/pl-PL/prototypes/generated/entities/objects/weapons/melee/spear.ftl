@@ -8,5 +8,5 @@ ent-SpearUranium = uranowa włócznia
     .desc = Włócznia z końcówką z uranowego odłamka.
 ent-SpearBone = kościana włócznia
     .desc = Włócznia wykonana z kości.
-ent-SpearSharkMinnow = sharkminnow tooth spear
-    .desc = A spear with a sharkminnow tooth as a tip.
+ent-SpearSharkMinnow = włócznia z zębem ryby z rodziny rekinowatych
+    .desc = Włócznia z zębem ryby z rodziny rekinowatych jako ostrzem.

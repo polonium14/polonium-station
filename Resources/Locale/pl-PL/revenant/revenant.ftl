@@ -10,10 +10,3 @@ revenant-soul-yield-average = { CAPITALIZE($target) } has an average soul.
 revenant-soul-yield-low = { CAPITALIZE($target) } has a below average soul.
 revenant-soul-begin-harvest = { CAPITALIZE($target) } suddenly rises slightly into the air, { POSS-ADJ($target) } skin turning an ashy gray.
 revenant-soul-finish-harvest = { CAPITALIZE($target) } slumps onto the ground!
-# UI
-revenant-user-interface-title = Ability Shop
-revenant-user-interface-essence-amount = [color=plum]{ $amount }[/color] Stolen Essence
-revenant-user-interface-cost = { $price } Essence
-# imp begin
-revenant-revealed-default = { CAPITALIZE($revealer) } weakens your ethereal cloak!
-revenant-revealed-salt = The salt puddle weakens your ethereal cloak!

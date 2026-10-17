@@ -1,0 +1,22 @@
+- type: entity
+  parent: BaseItem
+  id: TutorialAnchorLabeler
+  name: tutorial anchor labeler
+  description: Debug glue for TutorialAnchor. Click an entity to stamp the typed id, leave it blank to peel one off.
+  suffix: DEBUG
+  categories: [ Debug ]
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/hand_labeler.rsi
+    state: hand_labeler
+  - type: Item
+    sprite: Objects/Tools/hand_labeler.rsi
+    storedRotation: -90
+  - type: ActivatableUI
+    key: enum.TutorialAnchorLabelerUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.TutorialAnchorLabelerUiKey.Key:
+        type: TutorialAnchorLabelerBoundUserInterface
+  - type: TutorialAnchorLabeler

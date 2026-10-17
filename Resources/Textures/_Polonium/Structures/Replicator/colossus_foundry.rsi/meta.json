@@ -1,0 +1,92 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Made for Polonium Station by nikitosych",
+    "size": {
+        "x": 128,
+        "y": 128
+    },
+    "states": [
+        {
+            "name": "stage0",
+            "directions": 1
+        },
+        {
+            "name": "stage1",
+            "directions": 1
+        },
+        {
+            "name": "stage2",
+            "directions": 1
+        },
+        {
+            "name": "stage3",
+            "directions": 1
+        },
+        {
+            "name": "stage4",
+            "directions": 1
+        },
+        {
+            "name": "stage5",
+            "directions": 1
+        },
+        {
+            "name": "stage6",
+            "directions": 1
+        },
+        {
+            "name": "stage7",
+            "directions": 1
+        },
+        {
+            "name": "stage8",
+            "directions": 1
+        },
+        {
+            "name": "stage9",
+            "directions": 1
+        },
+        {
+            "name": "stage10",
+            "directions": 1
+        },
+        {
+            "name": "stage11",
+            "directions": 1
+        },
+        {
+            "name": "stage12",
+            "directions": 1
+        },
+        {
+            "name": "stage13",
+            "directions": 1
+        },
+        {
+            "name": "stage14",
+            "directions": 1
+        },
+        {
+            "name": "working",
+            "directions": 1,
+            "delays": [
+                [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+            ]
+        },
+        {
+            "name": "complete",
+            "directions": 1,
+            "delays": [
+                [0.25, 0.25, 0.25, 0.25]
+            ]
+        },
+        {
+            "name": "awaiting",
+            "directions": 1,
+            "delays": [
+                [0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15]
+            ]
+        }
+    ]
+}

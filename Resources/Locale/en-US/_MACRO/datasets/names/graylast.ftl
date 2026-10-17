@@ -1,4 +1,4 @@
-﻿names-gray-last-1 = " "
+names-gray-last-1 = " "
 names-gray-last-2 = And Drive
 names-gray-last-3 = Bairdii
 names-gray-last-4 = Barathium

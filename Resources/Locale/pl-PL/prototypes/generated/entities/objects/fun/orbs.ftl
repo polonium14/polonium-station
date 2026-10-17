@@ -1,11 +1,11 @@
-ent-SingularityToy = singuloth-brand toy
-    .desc = Mass-produced by a sadistic corporate conglomerate!
+ent-SingularityToy = zabawka marki Singuloth
+    .desc = Produkowane masowo przez sadystyczny konglomerat korporacyjny!
 ent-TeslaToy = Teddy Tesla
-    .desc = The favorite toy of the great engineer Nikola Tesla.
+    .desc = Ulubiona zabawka wielkiego inżyniera Nikoli Tesli.
 ent-PonderingOrb = kula kontemplacji
     .desc = To dopiero potężna sprawa, stary… Naprawdę potężna.
 ent-PonderingOrbWizard = kula kontemplacji
     .desc = To dopiero potężna sprawa, stary… Naprawdę potężna. W magiczny sposób łączy się z siecią kamer stacji.
-    .suffix = Wizard
-ent-Magic9Ball = magic 9 ball
-    .desc = An endless source of wisdom... Now with a speaker included!
+    .suffix = Czarodziej
+ent-Magic9Ball = magiczna 9-ka
+    .desc = Niekończące się źródło mądrości… Teraz w zestawie z głośnikiem!

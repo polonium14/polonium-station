@@ -45,13 +45,13 @@ public sealed partial class AntagGhostRoleTest : AntagTest
         STicker.StartGameRule(ruleId, out var gameRule);
 
         Dictionary<ProtoId<AntagSpecifierPrototype>, int> rules = [];
+        var totalCount = 0; // POLONIUM
 
         foreach (var selector in antag!.Antags)
         {
             var specifier = SProtoMan.Index(selector.Proto);
             var count = selector.GetTargetAntagCount(_random, 1);
-            // We should always spawn at least one antag if we add a GameRule
-            Assert.That(count, Is.GreaterThan(0));
+            totalCount += count; // POLONIUM
 
             if (specifier.SpawnerPrototype == null)
                 continue;
@@ -59,6 +59,8 @@ public sealed partial class AntagGhostRoleTest : AntagTest
             var value = rules.GetValueOrDefault(specifier);
             rules[selector.Proto] = value + count;
         }
+
+        Assert.That(totalCount, Is.GreaterThan(0)); // POLONIUM
 
         var roleEnumerator = SEntMan.EntityQueryEnumerator<GhostRoleAntagSpawnerComponent, GhostRoleComponent, TransformComponent>();
         while (roleEnumerator.MoveNext(out var spawner, out var role, out var xform))

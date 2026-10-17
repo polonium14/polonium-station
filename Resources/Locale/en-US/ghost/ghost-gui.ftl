@@ -1,4 +1,5 @@
 ghost-gui-return-to-body-button = Return to body
+ghost-gui-return-to-lobby-button = Return to lobby
 ghost-gui-ghost-warp-button = Ghost Warp
 ghost-gui-ghost-roles-button = Ghost Roles ({$count})
 ghost-gui-toggle-ghost-visibility-popup-on = Enabled visibility of ghosts.
@@ -43,11 +44,6 @@ ghost-roles-window-rules-footer = The button will enable after {$time} seconds (
 ghost-return-to-body-title = Return to Body
 ghost-return-to-body-text = You are being revived! Return to your body?
 
-# begin Funkystation
-ghost-gui-toggle-self-ghost-visibility-popup-on = Enabled visibility of your ghost.
 
-ghost-gui-toggle-self-ghost-visibility-popup-off = Disabled visibility of your ghost.
 
-ghost-gui-toggle-other-ghosts-visibility-popup-on = Enabled visibility of other ghosts.
 
-ghost-gui-toggle-other-ghosts-visibility-popup-off = Disabled visibility of other ghosts.

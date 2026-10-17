@@ -43,7 +43,7 @@ steal-target-groups-clothing-neck-goldmedal = złoty medal załoganta
 steal-target-groups-clothing-neck-clownmedal = medal błazna
 steal-target-groups-wanted-list-cartridge = karta listy poszukiwanych
 steal-target-groups-belt-ce = chief engineer's toolbelt
-steal-target-groups-captain-sword = captain's sabre
+steal-target-groups-captain-sword = szabla kapitana
 # Thief structures
 steal-target-groups-teg = część TEG
 steal-target-groups-freezer-heater = termomaszyna chłodząca lub termomaszyna grzejąca
@@ -64,6 +64,4 @@ steal-target-groups-animal-morty = Morty
 steal-target-groups-animal-renault = Renolt
 steal-target-groups-animal-shiva = Śiwa
 steal-target-groups-animal-tropico = Tropiko
-steal-target-groups-weapon-energy-shot-gun = strzelba energetyczna
 steal-target-groups-salvage-shuttle-console-circuitboard = płyta konsolowa wahadhłowca odzyskowego
-steal-target-groups-clothing-eyes-hud-beer = gogle piwne

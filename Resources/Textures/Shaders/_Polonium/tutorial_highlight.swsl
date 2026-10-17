@@ -1,0 +1,36 @@
+// tutorial glow - white pulsing fill on top of the sprite plus a soft halo around it
+// no light_mode unshaded here, we lift lightSample instead so it also reads in a dark room
+
+uniform highp vec4 glow_color;
+uniform highp float glow_speed;
+uniform highp float glow_min;
+uniform highp float glow_max;
+uniform highp float glow_width;
+
+void fragment() {
+	highp vec4 col = zTexture(UV);
+
+	highp float pulse = (sin(TIME * glow_speed) + 1.0) * 0.5;
+	highp float glow = mix(glow_min, glow_max, pulse) * glow_color.a;
+
+	// widest alpha in the neighbourhood, same trick outline.swsl uses
+	highp vec2 ps = TEXTURE_PIXEL_SIZE;
+	highp float maxa = col.a;
+	maxa = max(maxa, texture2D(TEXTURE, UV + vec2(0.0, -glow_width) * ps).a);
+	maxa = max(maxa, texture2D(TEXTURE, UV + vec2(0.0, glow_width) * ps).a);
+	maxa = max(maxa, texture2D(TEXTURE, UV + vec2(-glow_width, 0.0) * ps).a);
+	maxa = max(maxa, texture2D(TEXTURE, UV + vec2(glow_width, 0.0) * ps).a);
+	maxa = max(maxa, texture2D(TEXTURE, UV + vec2(-glow_width, -glow_width) * ps).a);
+	maxa = max(maxa, texture2D(TEXTURE, UV + vec2(glow_width, -glow_width) * ps).a);
+	maxa = max(maxa, texture2D(TEXTURE, UV + vec2(-glow_width, glow_width) * ps).a);
+	maxa = max(maxa, texture2D(TEXTURE, UV + vec2(glow_width, glow_width) * ps).a);
+
+	highp float haloAlpha = max(maxa - col.a, 0.0) * glow;
+	highp vec4 halo = vec4(glow_color.rgb * haloAlpha, haloAlpha);
+
+	// zTexture gives premultiplied alpha, keep the fill premultiplied too
+	highp vec4 body = vec4(mix(col.rgb, glow_color.rgb * col.a, glow), col.a);
+
+	COLOR = mix(halo, body, step(0.01, col.a));
+	lightSample = mix(lightSample, vec3(1.0), glow);
+}

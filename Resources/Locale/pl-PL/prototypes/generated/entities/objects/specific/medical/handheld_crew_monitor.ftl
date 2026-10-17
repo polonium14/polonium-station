@@ -1,5 +1,5 @@
-ent-HandheldCrewMonitor = handheld crew monitor
-    .desc = A hand-held crew monitor displaying the status of suit sensors.
+ent-HandheldCrewMonitor = ręczny monitor załogi
+    .desc = Ręczny monitor załogi pokazujący stan czujników kombinezonu.
 ent-HandheldCrewMonitorEmpty = { ent-HandheldCrewMonitor }
     .suffix = Puste
     .desc = { ent-HandheldCrewMonitor.desc }

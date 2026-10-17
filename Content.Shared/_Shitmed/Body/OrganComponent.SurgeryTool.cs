@@ -14,7 +14,7 @@ namespace Content.Shared.Body;
 /// </summary>
 public sealed partial class OrganComponent : ISurgeryToolComponent
 {
-    public string ToolName => "an organ";
+    public string ToolName => "surgery-tool-name-organ";
 
     [DataField]
     public bool? Used { get; set; }

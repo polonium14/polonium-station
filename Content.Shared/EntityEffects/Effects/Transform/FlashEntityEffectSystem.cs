@@ -77,5 +77,5 @@ public sealed partial class Flash : EntityEffectBase<Flash>
     public SoundSpecifier? Sound = new SoundPathSpecifier("/Audio/Weapons/flash.ogg");
 
     public override string EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => Loc.GetString("entity-effect-guidebook-flash-reaction-effect", ("chance", Probability));
+        => Loc.GetString("entity-effect-guidebook-flash", ("chance", Probability));
 }

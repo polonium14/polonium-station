@@ -77,6 +77,7 @@ namespace Content.Server.GameTicking
             Subs.CVar(_cfg, CCVars.RoundStartFailShutdownCount, value => RoundStartFailShutdownCount = value, true);
 #endif
             Subs.CVar(_cfg, CCVars.GameTickerIgnoredPresets, value => _ignoredRules = value.Split(","));
+            Subs.CVar(_cfg, CCVars.GamePresetHidden, _ => UpdateInfoText()); // Polonium
         }
     }
 }

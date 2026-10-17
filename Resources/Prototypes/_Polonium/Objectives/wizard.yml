@@ -1,0 +1,637 @@
+# Victims
+
+- type: entity
+  abstract: true
+  parent: BaseWizardObjective
+  id: BaseWizardTargetObjective
+  components:
+  - type: TargetObjective
+  - type: PickRandomPerson
+    conditions:
+    - !type:ObjectiveTargetCondition
+      inverted: true
+      whitelist:
+        components:
+        - TargetObjective
+
+- type: entity
+  abstract: true
+  parent: [ BaseWizardTargetObjective, BaseKillObjective ]
+  id: BaseWizardKillObjective
+  components:
+  - type: Objective
+    unique: true
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: gib
+  - type: TargetObjective
+    title: wizard-objective-kill-title
+  - type: KillPersonCondition
+    requireDead: true
+
+- type: entity
+  parent: BaseWizardKillObjective
+  id: WizardKillHeadObjective
+  description: This head of staff dared to mock the Federation. Let the whole station see how unbelievers end up.
+  components:
+  - type: PickRandomPerson
+    conditions:
+    - !type:BodyWhitelistCondition
+      whitelist:
+        components:
+        - CommandStaff
+
+- type: entity
+  parent: BaseWizardKillObjective
+  id: WizardKillChaplainObjective
+  description: The station's chaplain preaches that magic is heresy. Show them what prayers are worth against true power.
+  components:
+  - type: PickRandomPerson
+    conditions:
+    - !type:JobCondition
+      jobs: [ Chaplain ]
+
+- type: entity
+  parent: BaseWizardKillObjective
+  id: WizardKillSecurityObjective
+  description: This station's security has locked up more than one apprentice of the Federation. Time to settle the score.
+  components:
+  - type: PickRandomPerson
+    conditions:
+    - !type:JobCondition
+      jobs: [ HeadOfSecurity, Warden, SecurityOfficer, Detective ]
+
+- type: entity
+  parent: BaseWizardKillObjective
+  id: WizardKillScientistObjective
+  description: This person is trying to reduce magic to formulas and charts. The Federation does not like anyone prying into its secrets.
+  components:
+  - type: PickRandomPerson
+    conditions:
+    - !type:JobCondition
+      jobs: [ ResearchDirector, Scientist ]
+
+- type: entity
+  abstract: true
+  parent: BaseWizardKillObjective
+  id: BaseWizardMaroonObjective
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: blink
+  - type: TargetObjective
+    title: objective-condition-maroon-person-title
+  - type: KillPersonCondition
+    requireDead: false
+    requireMaroon: true
+
+- type: entity
+  parent: BaseWizardMaroonObjective
+  id: WizardMaroonCaptainObjective
+  description: The Federation has its own plans for the captain. Whether they live or not, they must not return to CentComm.
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Head/Hats/captain.rsi
+      state: icon
+  - type: PickRandomPerson
+    conditions:
+    - !type:JobCondition
+      jobs: [ Captain ]
+
+- type: entity
+  parent: BaseWizardMaroonObjective
+  id: WizardMaroonRandomObjective
+  description: This person has seen too much. They must not tell the tale at CentComm.
+
+- type: entity
+  abstract: true
+  parent: BaseWizardTargetObjective
+  id: BaseWizardCluwneObjective
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Mask/cluwne.rsi
+      state: icon
+  - type: TargetObjective
+    title: wizard-objective-cluwne-title
+  - type: TargetWhitelistCondition
+    whitelist:
+      components:
+      - Cluwne
+
+- type: entity
+  parent: BaseWizardCluwneObjective
+  id: WizardCluwneTargetObjective
+  description: Someone has to become the laughingstock of the station. Cast Cluwne's Curse and make sure the victim lasts until the end of the shift, a dead cluwne makes nobody laugh.
+
+- type: entity
+  parent: BaseWizardCluwneObjective
+  id: WizardCluwneHeadObjective
+  description: Nothing teaches humility like a red nose. Curse this head of staff with Cluwne's Curse and let them keep commanding until the end of the shift.
+  components:
+  - type: PickRandomPerson
+    conditions:
+    - !type:BodyWhitelistCondition
+      whitelist:
+        components:
+        - CommandStaff
+
+- type: entity
+  parent: BaseWizardCluwneObjective
+  id: WizardCluwneClownObjective
+  description: The station's clown parodies wizards at every show. Show them what a real joke looks like with Cluwne's Curse. They must last until the end of the shift.
+  components:
+  - type: PickRandomPerson
+    conditions:
+    - !type:JobCondition
+      jobs: [ Clown ]
+
+- type: entity
+  abstract: true
+  parent: BaseWizardTargetObjective
+  id: BaseWizardPolymorphObjective
+  components:
+  - type: Objective
+    icon:
+      sprite: Mobs/Aliens/Carps/magic.rsi
+      state: icon
+  - type: TargetObjective
+    title: wizard-objective-polymorph-title
+  - type: TargetWhitelistCondition
+    whitelist:
+      components:
+      - PolymorphedEntity
+
+- type: entity
+  parent: BaseWizardPolymorphObjective
+  id: WizardPolymorphTargetObjective
+  description: This person would do better with fins. Turn them into an animal with the wand of carp polymorph and make sure they last until the end of the shift in that form.
+
+- type: entity
+  parent: BaseWizardPolymorphObjective
+  id: WizardPolymorphHeadObjective
+  description: Someone who loves giving orders this much can try giving them by gurgling. Turn this head of staff into an animal with the wand of carp polymorph and keep them that way until the end of the shift.
+  components:
+  - type: PickRandomPerson
+    conditions:
+    - !type:BodyWhitelistCondition
+      whitelist:
+        components:
+        - CommandStaff
+
+# Spectacle
+
+- type: entity
+  parent: [ BaseWizardTargetObjective, BaseKeepAliveObjective ]
+  id: WizardChosenOneObjective
+  description: The Federation has chosen this person as a future apprentice, though they don't know it yet. They must survive the shift.
+  components:
+  - type: Objective
+    unique: true
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: shield
+  - type: TargetObjective
+    title: wizard-objective-chosen-one-title
+  - type: PickRandomPerson
+    conditions:
+    - !type:AntagonistCondition
+      inverted: true
+
+- type: entity
+  parent: BaseWizardObjective
+  id: WizardCluwneCountObjective
+  description: The Federation loves a good circus. Everyone cursed with Cluwne's Curse must still be alive at the end of the shift.
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Mask/cluwne.rsi
+      state: icon
+  - type: NumberObjective
+    min: 2
+    max: 3
+    title: wizard-objective-cluwne-count-title
+  - type: MindWhitelistCountCondition
+    whitelist:
+      components:
+      - Cluwne
+
+- type: entity
+  parent: BaseWizardObjective
+  id: WizardPolymorphCountObjective
+  description: The station needs a menagerie. Everyone hit by the wand of carp polymorph must last until the end of the shift in animal form.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Guns/Basic/wands.rsi
+      state: poly
+  - type: NumberObjective
+    min: 2
+    max: 3
+    title: wizard-objective-polymorph-count-title
+  - type: MindWhitelistCountCondition
+    whitelist:
+      components:
+      - PolymorphedEntity
+
+- type: entity
+  parent: BaseWizardObjective
+  id: WizardSlipperyCountObjective
+  description: Nothing livens up a station like a crew tripping over each other. The victims must still be alive at the end of the shift.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Specific/Janitorial/soap.rsi
+      state: omega-4
+  - type: NumberObjective
+    min: 3
+    max: 4
+    title: wizard-objective-slippery-count-title
+  - type: MindWhitelistCountCondition
+    whitelist:
+      components:
+      - Slippery
+
+- type: entity
+  parent: BaseWizardObjective
+  id: WizardAnimateCountObjective
+  description: Chairs, lockers, vending machines, anything can gain a will of its own with the staff of animation. They must still be roaming the station at the end of the shift.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Guns/Basic/staves.rsi
+      state: animation
+  - type: NumberObjective
+    min: 3
+    max: 5
+    title: wizard-objective-animate-count-title
+  - type: EntityCountCondition
+    component: Animate
+
+- type: entity
+  parent: BaseWizardObjective
+  id: WizardDoorCountObjective
+  description: Nanotrasen architecture is dreadfully dull. Show them what a station decorated by a wizard looks like, using the wand of entrance. The doors must still stand at the end of the shift.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Guns/Basic/wands.rsi
+      state: door
+  - type: NumberObjective
+    min: 5
+    max: 8
+    title: wizard-objective-door-count-title
+  - type: EntityCountCondition
+    component: PolymorphedEntity
+    whitelist:
+      components:
+      - Door
+
+- type: entity
+  parent: BaseWizardObjective
+  id: WizardRedAlertObjective
+  name: Force the station into Red Alert.
+  description: Let them know the Federation is here. Command has to declare at least Red Alert.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Fun/Instruments/otherinstruments.rsi
+      state: red_phone
+  - type: AlertLevelReachedCondition
+    levels: [ Red, Gamma, Epsilon ]
+
+# Treasures
+
+- type: entity
+  abstract: true
+  parent: [ BaseWizardObjective, BaseStealObjective ]
+  id: BaseWizardStealObjective
+  components:
+  - type: StealCondition
+    objectiveText: wizard-objective-steal-title
+    objectiveNoOwnerText: wizard-objective-steal-title
+    descriptionMultiplyText: wizard-objective-steal-multiply-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealXenoArtifactObjective
+  components:
+  - type: StealCondition
+    stealGroup: XenoArtifact
+    descriptionText: wizard-objective-steal-xeno-artifact-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealBibleObjective
+  components:
+  - type: StealCondition
+    stealGroup: Bible
+    descriptionText: wizard-objective-steal-bible-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealCaptainSwordObjective
+  components:
+  - type: StealCondition
+    stealGroup: CaptainSword
+    descriptionText: wizard-objective-steal-captain-sword-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealHandTeleporterObjective
+  components:
+  - type: StealCondition
+    stealGroup: HandTeleporter
+    descriptionText: wizard-objective-steal-hand-teleporter-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealAntiqueLaserObjective
+  components:
+  - type: StealCondition
+    stealGroup: WeaponAntiqueLaser
+    descriptionText: wizard-objective-steal-antique-laser-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealPlantRDObjective
+  components:
+  - type: StealCondition
+    stealGroup: PlantRD
+    descriptionText: wizard-objective-steal-plant-rd-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealAltarObjective
+  components:
+  - type: StealCondition
+    stealGroup: AltarNanotrasen
+    descriptionText: wizard-objective-steal-altar-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealBoozeDispenserObjective
+  components:
+  - type: StealCondition
+    stealGroup: BoozeDispenser
+    descriptionText: wizard-objective-steal-booze-dispenser-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealChemDispenserObjective
+  components:
+  - type: StealCondition
+    stealGroup: ChemDispenser
+    descriptionText: wizard-objective-steal-chem-dispenser-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealGoldMedalObjective
+  components:
+  - type: StealCondition
+    stealGroup: ClothingNeckGoldmedal
+    descriptionText: wizard-objective-steal-gold-medal-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealWardenHatObjective
+  components:
+  - type: StealCondition
+    stealGroup: ClothingHeadHatWarden
+    descriptionText: wizard-objective-steal-warden-hat-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealDetectiveLighterObjective
+  components:
+  - type: StealCondition
+    stealGroup: FlippoEngravedLighter
+    descriptionText: wizard-objective-steal-detective-lighter-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealHeadCloaksObjective
+  components:
+  - type: StealCondition
+    stealGroup: HeadCloak
+    minCollectionSize: 2
+    maxCollectionSize: 4
+    descriptionText: wizard-objective-steal-head-cloak-description
+    descriptionMultiplyText: wizard-objective-steal-head-cloaks-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealStampsObjective
+  components:
+  - type: StealCondition
+    stealGroup: Stamp
+    minCollectionSize: 3
+    maxCollectionSize: 5
+    descriptionText: wizard-objective-steal-stamp-description
+    descriptionMultiplyText: wizard-objective-steal-stamps-description
+
+- type: entity
+  parent: BaseWizardStealObjective
+  id: WizardStealTechDisksObjective
+  components:
+  - type: StealCondition
+    stealGroup: TechnologyDisk
+    verifyMapExistence: false
+    minCollectionSize: 3
+    maxCollectionSize: 5
+    descriptionText: wizard-objective-steal-tech-disk-description
+    descriptionMultiplyText: wizard-objective-steal-tech-disks-description
+
+- type: entity
+  abstract: true
+  parent: BaseWizardStealObjective
+  id: BaseWizardFamiliarObjective
+  components:
+  - type: StealCondition
+    checkAlive: true
+    objectiveText: wizard-objective-familiar-title
+    objectiveNoOwnerText: wizard-objective-familiar-title
+    descriptionText: wizard-objective-familiar-description
+
+- type: entity
+  parent: BaseWizardFamiliarObjective
+  id: WizardFamiliarIanObjective
+  components:
+  - type: StealCondition
+    stealGroup: AnimalIan
+
+- type: entity
+  parent: BaseWizardFamiliarObjective
+  id: WizardFamiliarCatObjective
+  components:
+  - type: StealCondition
+    stealGroup: AnimalNamedCat
+
+- type: entity
+  parent: BaseWizardFamiliarObjective
+  id: WizardFamiliarMcGriffObjective
+  components:
+  - type: StealCondition
+    stealGroup: AnimalMcGriff
+
+- type: entity
+  parent: BaseWizardFamiliarObjective
+  id: WizardFamiliarWalterObjective
+  components:
+  - type: StealCondition
+    stealGroup: AnimalWalter
+
+- type: entity
+  parent: BaseWizardFamiliarObjective
+  id: WizardFamiliarMortyObjective
+  components:
+  - type: StealCondition
+    stealGroup: AnimalMorty
+
+- type: entity
+  parent: BaseWizardFamiliarObjective
+  id: WizardFamiliarRenaultObjective
+  components:
+  - type: StealCondition
+    stealGroup: AnimalRenault
+
+- type: entity
+  parent: BaseWizardFamiliarObjective
+  id: WizardFamiliarShivaObjective
+  components:
+  - type: StealCondition
+    stealGroup: AnimalShiva
+
+- type: entity
+  parent: BaseWizardFamiliarObjective
+  id: WizardFamiliarTropicoObjective
+  components:
+  - type: StealCondition
+    stealGroup: AnimalTropico
+
+# Finale
+
+- type: entity
+  parent: [ BaseWizardObjective, BaseLivingObjective ]
+  id: WizardEscapeShuttleObjective
+  name: Escape to CentComm on the evacuation shuttle, uncuffed.
+  description: The Federation has someone on the inside at CentComm. Show up on the evacuation shuttle and don't get cuffed.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Furniture/chairs.rsi
+      state: shuttle
+  - type: EscapeShuttleCondition
+
+- type: entity
+  parent: BaseWizardObjective
+  id: WizardRobesObjective
+  name: Last until the end of the shift in a wizard's hat and robe.
+  description: A true wizard doesn't hide who they are. At the end of the shift you must be alive and wearing a magic hat and robe.
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Head/Hats/wizardhat.rsi
+      state: icon
+  - type: WearingWhitelistCondition
+    slots: [ head, outerClothing ]
+    whitelist:
+      components:
+      - WizardClothes
+
+# Pools, one objective from each set
+
+- type: weightedRandom
+  id: WizardObjectiveGroupVictim
+  weights:
+    WizardKillHeadObjective: 0.75
+    WizardKillChaplainObjective: 0.75
+    WizardKillSecurityObjective: 0.75
+    WizardKillScientistObjective: 0.75
+    WizardMaroonCaptainObjective: 0.75
+    WizardMaroonRandomObjective: 0.75
+    WizardCluwneTargetObjective: 1
+    WizardCluwneHeadObjective: 0.5
+    WizardCluwneClownObjective: 0.5
+    WizardPolymorphTargetObjective: 1
+    WizardPolymorphHeadObjective: 0.5
+
+- type: weightedRandom
+  id: WizardObjectiveGroupSpectacle
+  weights:
+    WizardChosenOneObjective: 1
+    WizardCluwneCountObjective: 1
+    WizardPolymorphCountObjective: 1
+    WizardSlipperyCountObjective: 1
+    WizardAnimateCountObjective: 1
+    WizardDoorCountObjective: 1
+    WizardRedAlertObjective: 1
+
+- type: weightedRandom
+  id: WizardObjectiveGroupTreasure
+  weights:
+    WizardStealXenoArtifactObjective: 1
+    WizardStealBibleObjective: 1
+    WizardStealCaptainSwordObjective: 1
+    WizardStealHandTeleporterObjective: 1
+    WizardStealAntiqueLaserObjective: 1
+    WizardStealPlantRDObjective: 1
+    WizardStealAltarObjective: 1
+    WizardStealBoozeDispenserObjective: 1
+    WizardStealChemDispenserObjective: 1
+    WizardStealGoldMedalObjective: 1
+    WizardStealWardenHatObjective: 1
+    WizardStealDetectiveLighterObjective: 1
+    WizardStealHeadCloaksObjective: 1
+    WizardStealStampsObjective: 1
+    WizardStealTechDisksObjective: 1
+
+- type: weightedRandom
+  id: WizardObjectiveGroupFamiliar
+  weights:
+    WizardFamiliarIanObjective: 1
+    WizardFamiliarCatObjective: 1
+    WizardFamiliarMcGriffObjective: 1
+    WizardFamiliarWalterObjective: 1
+    WizardFamiliarMortyObjective: 1
+    WizardFamiliarRenaultObjective: 1
+    WizardFamiliarShivaObjective: 1
+    WizardFamiliarTropicoObjective: 1
+
+- type: weightedRandom
+  id: WizardObjectiveGroupFinale
+  weights:
+    WizardSurviveObjective: 1
+    WizardEscapeShuttleObjective: 1
+    WizardRobesObjective: 1
+
+- type: weightedRandom
+  id: WizardLowpopObjectiveSetVictim
+  weights:
+    WizardObjectiveGroupVictim: 1
+
+- type: weightedRandom
+  id: WizardLowpopObjectiveSetTreasure
+  weights:
+    WizardObjectiveGroupTreasure: 3
+    WizardObjectiveGroupFamiliar: 1
+
+- type: weightedRandom
+  id: WizardLowpopObjectiveSetSpectacle
+  weights:
+    WizardObjectiveGroupSpectacle: 1
+
+- type: weightedRandom
+  id: WizardLowpopObjectiveSetExtra
+  weights:
+    WizardObjectiveGroupVictim: 1
+    WizardObjectiveGroupTreasure: 1
+    WizardObjectiveGroupFamiliar: 0.5
+    WizardObjectiveGroupSpectacle: 1
+
+- type: weightedRandom
+  id: WizardLowpopObjectiveSetFinale
+  weights:
+    WizardObjectiveGroupFinale: 1

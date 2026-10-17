@@ -1,7 +1,7 @@
-ghost-role-information-plutonium-rod-name = Plutonium Fuel Rod
-ghost-role-information-plutonium-rod-description = Does not want to become power.
+ghost-role-information-plutonium-rod-name = Plutonowy pręt paliwowy
+ghost-role-information-plutonium-rod-description = Nie chce stać się energią.
 ghost-role-information-plutonium-rod-rules =
-    You are a [color={ role-type-free-agent-color }][bold]{ ghost-role-information-plutonium-rod-name }[/bold][/color]. Your one goal is not to be put into the nuclear reactor or centrifuge, because if you are, you [color=red]die[/color].
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You [color=red]don't[/color] remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Jesteś [color={ role-type-free-agent-color }][bold]{ ghost-role-information-plutonium-rod-name }[/bold][/color]. Twoim jedynym celem jest nie dać się włożyć do reaktora jądrowego ani wirówki, ponieważ jeśli tam trafisz, [color=red]giniesz[/color].
+    Nie pamiętasz niczego ze swojego poprzedniego życia ani niczego, czego dowiedziałeś się jako duch.
+    Ponadto [color=red]nie[/color] pamiętasz ogólnej wiedzy o grze, takiej jak gotowanie czy używanie przedmiotów.
+    Kategorycznie [color=red]NIE[/color] wolno Ci pamiętać np. imienia, wyglądu itp. Twojej poprzedniej postaci.

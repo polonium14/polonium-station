@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Funkystation.Footprints;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
@@ -17,20 +18,26 @@ public abstract partial class SharedPuddleSystem
         Dirty(ent);
     }
 
-    private void UpdateEvaporation(EntityUid uid, Solution solution)
+    private void UpdateEvaporation(Entity<PuddleComponent> ent, Solution solution)
     {
-        if (_evaporationQuery.HasComp(uid))
+        if (!ent.Comp.Evaporates)
+        {
+            RemComp<EvaporationComponent>(ent);
+            return;
+        }
+
+        if (_evaporationQuery.HasComp(ent))
             return;
 
         if (solution.GetTotalPrototypeQuantity(GetEvaporatingReagents(solution)) > FixedPoint2.Zero)
         {
-            var evaporation = AddComp<EvaporationComponent>(uid);
+            var evaporation = AddComp<EvaporationComponent>(ent);
             evaporation.NextTick = _timing.CurTime + EvaporationCooldown;
-            Dirty<EvaporationComponent>((uid, evaporation));
+            Dirty<EvaporationComponent>((ent, evaporation));
             return;
         }
 
-        RemComp<EvaporationComponent>(uid);
+        RemComp<EvaporationComponent>(ent);
     }
 
     private void TickEvaporation()
@@ -39,6 +46,9 @@ public abstract partial class SharedPuddleSystem
         var curTime = _timing.CurTime;
         while (query.MoveNext(out var uid, out var evaporation, out var puddle))
         {
+            if (!puddle.Evaporates)
+                continue;
+
             if (evaporation.NextTick > curTime)
                 continue;
 
@@ -109,6 +119,41 @@ public abstract partial class SharedPuddleSystem
     }
 
     /// <summary>
+    /// Mop bails out when the whole puddle is already absorber. Nothing to wipe
+    /// </summary>
+    public bool CanBeMopped(Solution solution)
+    {
+        if (solution.Volume <= FixedPoint2.Zero)
+            return false;
+
+        var absorbent = solution.GetTotalPrototypeQuantity(GetAbsorbentReagents(solution));
+        return absorbent < solution.Volume;
+    }
+
+    /// <summary>
+    /// Wont dry and a mop wont take it. Prints of this just sit there
+    /// </summary>
+    public bool IsStuckResidue(Solution solution)
+    {
+        if (solution.Volume <= FixedPoint2.Zero)
+            return false;
+
+        return !CanBeMopped(solution) && !CanFullyEvaporate(solution);
+    }
+
+    private bool ShouldDiscardPuddle(EntityUid uid, Solution solution)
+    {
+        if (!IsStuckResidue(solution))
+            return false;
+
+        // a print you cant wipe shouldnt be there at all
+        if (HasComp<FootprintComponent>(uid))
+            return true;
+
+        return solution.Volume < StuckResidueVolume;
+    }
+
+    /// <summary>
     /// Gets a mapping of evaporating speed of the reagents within a solution.
     /// The speed at which a solution evaporates is the average of the speed of all evaporating reagents in it.
     /// </summary>
@@ -123,5 +168,12 @@ public abstract partial class SharedPuddleSystem
             }
         }
         return evaporatingSpeeds;
+    }
+
+    protected void FreezePuddle(Entity<PuddleComponent> ent)
+    {
+        ent.Comp.SpreadsOnStep = false;
+        ent.Comp.Evaporates = false;
+        RemCompDeferred<EvaporationComponent>(ent);
     }
 }

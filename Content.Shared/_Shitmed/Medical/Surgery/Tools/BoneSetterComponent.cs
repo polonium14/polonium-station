@@ -5,7 +5,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Tools;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class BoneSetterComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => "a bone setter";
+    public string ToolName => "surgery-tool-name-bone-setter";
     [DataField]
     public bool? Used { get; set; } = null;
     [DataField]

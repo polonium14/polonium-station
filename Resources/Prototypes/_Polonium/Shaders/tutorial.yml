@@ -1,0 +1,11 @@
+# defaults are the strong variant, the tutorial system re-parametrizes its own instances
+- type: shader
+  id: PoloniumTutorialHighlight
+  kind: source
+  path: "/Textures/Shaders/_Polonium/tutorial_highlight.swsl"
+  params:
+    glow_color: "#FFFFFFFF"
+    glow_speed: 3.4
+    glow_min: 0.18
+    glow_max: 0.65
+    glow_width: 1.5

@@ -1,6 +1,6 @@
 ent-BaseVehicleStrap = { "" }
     .desc = { "" }
-ent-VehicleWheelchair = wheelchair
-    .desc = A chair with big wheels. It looks like you can move in these on your own.
+ent-VehicleWheelchair = wózek inwalidzki
+    .desc = Krzesło z dużymi kółkami. Wygląda na to, że można się na nim poruszać samodzielnie.
 ent-VehicleJanicart = janicart
-    .desc = The janitor's trusty steed.
+    .desc = Niezawodny wierzchowiec woźnego.

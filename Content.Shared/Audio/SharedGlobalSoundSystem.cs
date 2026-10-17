@@ -44,7 +44,9 @@ public sealed class GameGlobalSoundEvent : GlobalSoundEvent
 public enum StationEventMusicType : byte
 {
     Nuke,
-    BloodCult
+    BloodCult,
+    EvacScenario, // Polonium
+    ReplicatorBeacon, // Polonium
 }
 
 /// <summary>

@@ -1,3 +1,3 @@
-ent-HandheldHealthAnalyzer = health analyzer
-    .desc = A hand-held body scanner capable of distinguishing vital signs of the subject.
-    .suffix = Powered
+ent-HandheldHealthAnalyzer = analizator zdrowia
+    .desc = Ręczny skaner ciała, który odczytuje parametry życiowe pacjenta.
+    .suffix = Zasilany

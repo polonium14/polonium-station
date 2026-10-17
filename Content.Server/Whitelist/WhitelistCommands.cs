@@ -137,7 +137,7 @@ public sealed partial class KickNonWhitelistedCommand : LocalizedCommands
             // We let this one query the whitelist to be 100% certain it's kicking out non-whitelisted players +
             // it's mostly adding/removing whitelists that needs to go through the cache.
             if (!await _dbManager.GetWhitelistStatusAsync(session.UserId))
-                _netManager.DisconnectChannel(session.Channel, Loc.GetString("whitelist-not-whitelisted"));
+                _netManager.DisconnectChannel(session.Channel, Loc.GetString("whitelist-manual"));
         }
     }
 }

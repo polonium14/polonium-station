@@ -60,12 +60,3 @@ rev-deconverted-text =
     
     Nie jesteś już rewolucjonistą, więc zachowuj się przyzwoicie.
 rev-deconverted-confirm = Potwierdź
-rev-lieutenant-greeting =
-    You are a Revolutionary Lieutenant.
-    You are able to see your comrades, but are unable to convert anyone.
-    Lead your department and co-ordinate with your fellow revolutionaries and head revolutionaries.
-    Viva la revolución!
-rev-total-victory = All of Command and Head Revs survived, with all of Command being converted.
-rev-headrev-must-return = The Revolution is leaderless. We must return to the station within a minute!
-rev-headrev-returned = A Head Revolutionary has returned to the station, the Revolution continues!
-rev-headrev-abandoned = You have disgraced the revolution by abandoning your station. The Revolution is over.

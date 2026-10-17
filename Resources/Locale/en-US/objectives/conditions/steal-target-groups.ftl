@@ -71,8 +71,6 @@ steal-target-groups-animal-renault = Renault
 steal-target-groups-animal-shiva = Shiva
 steal-target-groups-animal-tropico = Tropico
 
-steal-target-groups-weapon-energy-shot-gun = strzelba energetyczna
 
 steal-target-groups-salvage-shuttle-console-circuitboard = płyta konsolowa wahadhłowca odzyskowego
 
-steal-target-groups-clothing-eyes-hud-beer = gogle piwne

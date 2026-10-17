@@ -1,2 +1,2 @@
 ent-SpeedLoaderLightRifle = speed loader (.30 karabinowe)
-    .desc = 5-round 'stripper clip' for quickly reloading the Kardashev-Mosin. Intended to hold general-purpose kinetic ammunition.
+    .desc = 5-nabojowy „klips do przeładowania” służący do szybkiego przeładowywania karabinu Kardashev-Mosin. Przeznaczony do przechowywania amunicji kinetycznej ogólnego zastosowania.

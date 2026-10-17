@@ -390,6 +390,11 @@ namespace Content.Server.Voting.Managers
             // Still allow vote if availbable one is different from current one
             if (voteType == StandardVoteType.Preset)
             {
+                // POLONIUM START
+                if (_cfg.GetCVar(CCVars.VotePresetMood))
+                    return CanCallMoodVote() && !_voteTimeout.TryGetValue(initiator.UserId, out timeSpan);
+                // POLONIUM END
+
                 var presets = GetGamePresets();
                 if (presets.Count == 1 && presets.Select(x => x.Key).Single() == _entityManager.System<GameTicker>().Preset?.ID)
                     return false;

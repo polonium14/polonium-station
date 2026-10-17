@@ -33,7 +33,7 @@ public sealed class ChameleonJobLoadoutTest : InteractionTest
         // Only add stuff that actually has clothing! We don't want stuff like AI or borgs.
         foreach (var job in alljobs)
         {
-            if (!IsProbablyRoundStartJob(job) || JobBlacklist.Contains(job.ID))
+            if (!job.SetPreference || !IsProbablyRoundStartJob(job) || JobBlacklist.Contains(job.ID))
                 continue;
 
             validJobs.Add(job.ID, 0);

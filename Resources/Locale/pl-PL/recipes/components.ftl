@@ -1,8 +1,8 @@
-construction-graph-component-any-computer-circuit-board = any computer circuit board
-construction-graph-component-door-electronics-circuit-board = door electronics circuit board
-construction-graph-component-flash = flash
-construction-graph-component-second-flash = second flash
-construction-graph-component-power-cell = power cell
-construction-graph-component-apc-electronics = APC electronics
-construction-graph-component-payload-trigger = trigger
-construction-graph-component-borg-brain = MMI or positronic brain
+construction-graph-component-any-computer-circuit-board = dowolna płytka komputera
+construction-graph-component-door-electronics-circuit-board = płytka elektroniki śluzy
+construction-graph-component-flash = błysk
+construction-graph-component-second-flash = drugi błysk
+construction-graph-component-power-cell = bateria
+construction-graph-component-apc-electronics = elektronika LKZ
+construction-graph-component-payload-trigger = wyzwalacz
+construction-graph-component-borg-brain = MMI lub mózg pozytronowy

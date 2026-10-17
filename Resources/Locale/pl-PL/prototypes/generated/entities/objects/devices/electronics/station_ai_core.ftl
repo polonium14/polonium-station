@@ -1,2 +1,2 @@
-ent-StationAiCoreElectronics = station AI core electronics
-    .desc = An electronics board used in station AI cores.
+ent-StationAiCoreElectronics = elektronika rdzenia SI Stacji
+    .desc = Płytka elektroniczna stosowana w rdzeniach SI Stacji.

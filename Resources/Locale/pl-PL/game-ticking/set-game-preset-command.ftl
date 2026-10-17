@@ -8,4 +8,3 @@ set-game-preset-preset-error = Nie można znaleźć trybu gry „{ $preset }”
 set-game-preset-decoy-error = Jeśli podano trzeci argument, musi on być prawidłowym trybem gry. Nie można znaleźć trybu gry „{ $preset }”
 set-game-preset-preset-set-finite = Ustawiono tryb gry na „{ $preset }” na następne { $rounds } rund(y).
 set-game-preset-preset-set-finite-with-decoy = Ustawiono tryb gry na „{ $preset }” na następne { $rounds } rund(y), pokazując w lobby „{ $decoy }”.
-set-game-preset-preset-set = Set game preset to "{ $preset }"

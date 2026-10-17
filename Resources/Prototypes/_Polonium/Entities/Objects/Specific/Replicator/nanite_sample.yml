@@ -1,0 +1,11 @@
+- type: entity
+  parent: ResearchDisk
+  id: ReplicatorNaniteSample
+  name: nanite lattice sample
+  description: A shard of a replicator shell with the lattice inside it still whole. A research server can take it apart for 1000 points.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Replicator/nanite_sample.rsi
+    state: icon
+  - type: ResearchDisk
+    points: 1000

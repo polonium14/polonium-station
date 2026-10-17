@@ -1,3 +1,4 @@
+using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage.Components;
@@ -116,7 +117,11 @@ public sealed partial class SharedExecutionSystem : EntitySystem
         if (victim != attacker && _actionBlocker.CanInteract(victim, null))
             return false;
 
-        // All checks passed
+        // trainees get a revive, so a trainee on the receiving end just looks like a skip.
+        // a trainee finishing off the kitchen cow is fine
+        if (HasComp<TutorialSessionComponent>(victim))
+            return false;
+
         return true;
     }
 

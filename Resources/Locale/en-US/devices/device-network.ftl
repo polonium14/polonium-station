@@ -15,7 +15,6 @@ device-frequency-prototype-name-xenoborg = Xenoborg
 device-frequency-prototype-name-mothership = Mothership
 
 ## camera frequencies
-device-frequency-prototype-name-surveillance-camera-test = Subnet Test
 device-frequency-prototype-name-surveillance-camera-engineering = Engineering Cameras
 device-frequency-prototype-name-surveillance-camera-security = Security Cameras
 device-frequency-prototype-name-surveillance-camera-science = Science Cameras
@@ -47,13 +46,17 @@ device-address-prefix-sensor-monitor = MON-
 
 device-address-examine-message = The device's address is {$address}.
 
-# Device net ID names
-device-net-id-private = Private
-device-net-id-wired = Wired
-device-net-id-wireless = Wireless
-device-net-id-apc = Apc
-device-net-id-atmos-devices = Atmos Devices
-device-net-id-reserved = Reserved
 
 # Unknown
 device-address-unknown = ????-????
+device-address-prefix-camera = CAM-
+device-address-prefix-camera-monitor = SCM-
+
+# Servers and routers
+device-address-prefix-camera-router = CMR-
+device-address-prefix-camera-router-wireless = CMW-
+device-address-prefix-crew-monitor = MCM-
+device-address-prefix-crew-monitoring-server = CMS-
+device-frequency-prototype-name-arrivals-shuttle-timer = Arrivals Timer
+device-frequency-prototype-name-shuttle-timer = Evac Shuttle Timer
+device-frequency-prototype-name-surveillance-camera = Cameras

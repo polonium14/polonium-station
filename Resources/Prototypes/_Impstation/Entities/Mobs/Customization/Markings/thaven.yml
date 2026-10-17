@@ -149,7 +149,7 @@
 
 - type: marking
   id: ThavenTailEelOverlay
-  bodyPart: Tail
+  bodyPart: TailOverlay
   groupWhitelist: [ Thaven ]
   coloring:
     default:

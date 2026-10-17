@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared._Funkystation.Footprints;
 using Content.Shared.Chemistry.Components;
@@ -140,6 +140,9 @@ public sealed partial class FootprintSystem : EntitySystem
         if (!TryGetAnchoredPuddle(gridUid, grid, tile, out var puddleUid, out var puddle))
             return false;
 
+        if (!puddle.SpreadsOnStep)
+            return true;
+
         if (!_solutionContainer.TryGetSolution(puddleUid, PuddleTargetSolution, out var puddleSolution, out _))
             return false;
 
@@ -165,6 +168,9 @@ public sealed partial class FootprintSystem : EntitySystem
 
         var transferAmount = CalculateTransferVolume(component, ownerSolution.Value, isStanding);
         if (transferAmount < component.MinPrintVolume)
+            return;
+
+        if (_puddle.IsStuckResidue(ownerSolution.Value.Comp.Solution))
             return;
 
         if (!TryGetAnchoredFootprint(gridUid, grid, tile, out var printUid, out var printComp))

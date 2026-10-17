@@ -1,0 +1,48 @@
+- type: decal
+  id: StacjaKosmicznaSign1
+  tags: ["station"]
+  sprite:
+    sprite: _Polonium/Tiles/ss14sign.rsi
+    state: ss14sign1
+
+- type: decal
+  id: StacjaKosmicznaSign2
+  tags: ["station"]
+  sprite:
+    sprite: _Polonium/Tiles/ss14sign.rsi
+    state: ss14sign2
+
+- type: decal
+  id: StacjaKosmicznaSign3
+  tags: ["station"]
+  sprite:
+    sprite: _Polonium/Tiles/ss14sign.rsi
+    state: ss14sign3
+
+- type: decal
+  id: StacjaKosmicznaSign4
+  tags: ["station"]
+  sprite:
+    sprite: _Polonium/Tiles/ss14sign.rsi
+    state: ss14sign4
+
+- type: decal
+  id: StacjaKosmicznaSign5
+  tags: ["station"]
+  sprite:
+    sprite: _Polonium/Tiles/ss14sign.rsi
+    state: ss14sign5
+
+- type: decal
+  id: StacjaKosmicznaSign6
+  tags: ["station"]
+  sprite:
+    sprite: _Polonium/Tiles/ss14sign.rsi
+    state: ss14sign6
+
+- type: decal
+  id: StacjaKosmicznaSign7
+  tags: ["station"]
+  sprite:
+    sprite: _Polonium/Tiles/ss14sign.rsi
+    state: ss14sign7

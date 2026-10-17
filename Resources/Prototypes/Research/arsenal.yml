@@ -62,6 +62,9 @@
   - MagazineShotgunBeanbag
   - BoxShellTranquilizer
   - BoxBeanbag
+  - WeaponDisabler # Polonium addition
+  - WeaponTaser # Polonium addition
+  - WeaponDisablerSMG # Polonium addition
 
 - type: technology
   id: UraniumMunitions

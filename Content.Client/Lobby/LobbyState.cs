@@ -6,6 +6,9 @@ using Content.Client.Message;
 using Content.Client.Playtime;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.Voting;
+using Content.Client._Polonium.Tutorial;
+using Content.Client._Polonium.Tutorial.Lobby;
+using Content.Shared._Polonium.Tutorial;
 using Content.Shared.CCVar;
 using Robust.Client;
 using Robust.Client.Console;
@@ -30,6 +33,7 @@ namespace Content.Client.Lobby
         [Dependency] private IVoteManager _voteManager = default!;
         [Dependency] private ClientsidePlaytimeTrackingManager _playtimeTracking = default!;
         [Dependency] private IPrototypeManager _protoMan = default!;
+        [Dependency] private TutorialManager _tutorial = default!;
 
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
@@ -75,6 +79,8 @@ namespace Content.Client.Lobby
             _gameTicker.InfoBlobUpdated += UpdateLobbyUi;
             _gameTicker.LobbyStatusUpdated += LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated += LobbyLateJoinStatusUpdated;
+            _gameTicker.LobbyReadyCountUpdated += UpdateReadyButtonText; // POLONIUM
+            _cfg.OnValueChanged(CCVars.LobbyReadyCountOnButton, OnReadyCountCVarChanged); // POLONIUM
         }
 
         protected override void Shutdown()
@@ -84,6 +90,8 @@ namespace Content.Client.Lobby
             _gameTicker.InfoBlobUpdated -= UpdateLobbyUi;
             _gameTicker.LobbyStatusUpdated -= LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated -= LobbyLateJoinStatusUpdated;
+            _gameTicker.LobbyReadyCountUpdated -= UpdateReadyButtonText; // POLONIUM
+            _cfg.UnsubValueChanged(CCVars.LobbyReadyCountOnButton, OnReadyCountCVarChanged); // POLONIUM
             _contentAudioSystem.LobbySoundtrackChanged -= UpdateLobbySoundtrackInfo;
 
             _voteManager.ClearPopupContainer();
@@ -114,11 +122,20 @@ namespace Content.Client.Lobby
                 return;
             }
 
+            if (TryTutorialPracticalJoin())
+                return;
+
             new LateJoinGui().OpenCentered();
         }
 
         private void OnReadyToggled(BaseButton.ButtonToggledEventArgs args)
         {
+            if (TryTutorialPracticalJoin())
+            {
+                Lobby!.ReadyButton.Pressed = false;
+                return;
+            }
+
             SetReady(args.Pressed);
         }
 
@@ -189,7 +206,7 @@ namespace Content.Client.Lobby
             {
                 Lobby!.StartTime.Text = string.Empty;
                 Lobby!.ReadyButton.Pressed = _gameTicker.AreWeReady;
-                Lobby!.ReadyButton.Text = Loc.GetString(Lobby!.ReadyButton.Pressed ? "lobby-state-player-status-ready": "lobby-state-player-status-not-ready");
+                UpdateReadyButtonText(); // POLONIUM
                 Lobby!.ReadyButton.ToggleMode = true;
                 Lobby!.ReadyButton.Disabled = false;
                 Lobby!.ObserveButton.Disabled = true;
@@ -220,6 +237,28 @@ namespace Content.Client.Lobby
             else
                 Lobby!.PlaytimeComment.Visible = false;
         }
+
+        // POLONIUM START
+        private void OnReadyCountCVarChanged(bool _)
+        {
+            UpdateReadyButtonText();
+        }
+
+        private void UpdateReadyButtonText()
+        {
+            if (Lobby == null || _gameTicker.IsGameStarted)
+                return;
+
+            var status = Loc.GetString(_gameTicker.AreWeReady
+                ? "lobby-state-player-status-ready"
+                : "lobby-state-player-status-not-ready");
+
+            if (_cfg.GetCVar(CCVars.LobbyReadyCountOnButton) && _gameTicker.LobbyReadyCount is { } count)
+                status = Loc.GetString("lobby-state-ready-button-count", ("status", status), ("ready", count.Ready), ("total", count.Total));
+
+            Lobby.ReadyButton.Text = status;
+        }
+        // POLONIUM END
 
         private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)
         {
@@ -277,7 +316,26 @@ namespace Content.Client.Lobby
                 return;
             }
 
+            if (_tutorial.GetIntroMode() == SharedTutorialSystem.IntroTutorial)
+                return;
+
             _consoleHost.ExecuteCommand($"toggleready {newReady}");
+        }
+
+        // joingame / latejoin land on the empty shared map, this is the solitary door
+        private bool TryTutorialPracticalJoin()
+        {
+            if (_tutorial.GetIntroMode() != SharedTutorialSystem.IntroTutorial)
+                return false;
+
+            if (_tutorial.IsTutorialActive)
+            {
+                _tutorial.EnsureTourVisible();
+                return true;
+            }
+
+            _entityManager.System<TutorialPresentationSystem>().RequestPracticalJoin();
+            return true;
         }
     }
 }

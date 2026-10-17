@@ -1,6 +1,3 @@
-signal-port-name-autoclose = Autoclose
-signal-port-description-autoclose = Toggles whether the device should automatically close.
-
 signal-port-name-toggle = Toggle
 signal-port-description-toggle = Toggles the state of a device.
 
@@ -43,7 +40,6 @@ signal-port-description-pressurize = Causes the device to starts releasing air u
 signal-port-name-depressurize = Depressurize
 signal-port-description-depressurize = Causes the device to starts siphoning air until some target pressure is reached.
 
-signal-port-name-pod-sender = Cloning pod
 signal-port-description-pod-sender = Cloning pod signal sender
 
 signal-port-name-pod-receiver = Cloning pod
@@ -99,9 +95,7 @@ signal-port-description-logic-enable = Only loads the input signal into the memo
 signal-port-name-logic-random-input = Input Signal
 signal-port-description-logic-random-input = Receives any signal to trigger a random output.
 
-signal-port-name-trigger = Trigger
 
-signal-port-description-trigger = Triggers some mechanism on the device.
 
 
 

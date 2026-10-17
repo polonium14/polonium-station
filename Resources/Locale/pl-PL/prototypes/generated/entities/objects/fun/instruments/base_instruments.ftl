@@ -1,6 +1,6 @@
 ent-BaseHandheldInstrument = { ent-BaseItem }
-    .desc = That's an instrument.
-ent-BasePlaceableInstrument = baseinstrument
+    .desc = To jest instrument.
+ent-BasePlaceableInstrument = instrument bazowy
     .desc = { ent-BaseStructureDynamic.desc }
-ent-BasePlaceableInstrumentRotatable = baseinstrumentrotatable
+ent-BasePlaceableInstrumentRotatable = instrument podstawowy obrotowy
     .desc = { ent-BasePlaceableInstrument.desc }

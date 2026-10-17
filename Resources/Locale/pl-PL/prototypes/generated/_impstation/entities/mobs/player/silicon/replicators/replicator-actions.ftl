@@ -5,6 +5,6 @@ ent-ActionReplicatorUpgrade2 = Ulepszenie (Poziom 2)
 ent-ActionReplicatorUpgrade3 = Ulepszenie (Poziom 3)
     .desc = Zbierz nanity. Stań się silniejszy.
 ent-ActionReplicatorTeleportPrey = Przywołanie Roju
-    .desc = Skieruj nanity, aby przyciągnąć unieruchomiony cel w losowe miejsce 8–10 kafelków dalej na tym gridzie.
+    .desc = Skieruj nanity, aby wyrzucić unieruchomiony cel 8–10 kafelków od siebie i z dala od każdego gniazda. Cel nie może zostać ponownie przywołany przez 25 sekund.
 ent-ToggleThermalVision = Przełącz wizję termiczną
     .desc = Przełącza wizję termiczną.

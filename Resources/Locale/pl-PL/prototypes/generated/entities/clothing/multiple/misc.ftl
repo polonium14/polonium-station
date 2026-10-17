@@ -1,2 +1,2 @@
-ent-ClothingMultipleHeadphones = headphones
-    .desc = Quality headphones from Drunk Masters, with good sound insulation.
+ent-ClothingMultipleHeadphones = słuchawki
+    .desc = Jakościowe słuchawki Drunk Masters, z dobrą izolacją dźwięku.

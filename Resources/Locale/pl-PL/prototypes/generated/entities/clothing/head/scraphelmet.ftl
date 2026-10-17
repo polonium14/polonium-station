@@ -1,8 +1,8 @@
-ent-WiredBucketBase = wired bucket
-    .desc = A bucket with attached wiring to better serve as a chinstrap.
-ent-SlicedBucketBase = sliced bucket
-    .desc = A bucket with a vision slit cut into the side.
-ent-SteelBucketBase = steel bucket
-    .desc = A bucket that's had steel welded onto it's exterior. It requires better shaping before it can be worn comfortably.
-ent-ClothingHeadHelmetScrap = scrap helmet
-    .desc = A cobbled-together helmet made from cabling, steel, and a bucket.
+ent-WiredBucketBase = wiadro z okablowaniem
+    .desc = Wiadro z okablowaniem, by lepiej służyło jako pasek pod brodę.
+ent-SlicedBucketBase = przecięte wiadro
+    .desc = Wiadro z wyciętą szczeliną widzenia z boku.
+ent-SteelBucketBase = stalowe wiadro
+    .desc = Wiadro ze stalą przyspawaną na zewnątrz. Wymaga lepszego ukształtowania, zanim da się je wygodnie nosić.
+ent-ClothingHeadHelmetScrap = hełm ze złomu
+    .desc = Zlepiony hełm z kabli, stali i wiadra.

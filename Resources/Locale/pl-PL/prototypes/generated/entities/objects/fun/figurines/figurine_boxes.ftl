@@ -1,10 +1,10 @@
-ent-MysteryFigureBoxTrash = unfolded cardboard box
-    .desc = A small, unfolded cardboard toy box.
-ent-MysteryFigureBox = mystery spacemen minifigure box
-    .desc = A box containing a mystery minifigure. The side of the box depicts a few blacked-out 'rare' figures, including one with a large, non-humanoid shilouette.
-ent-MysteryLighterBox = Novelty lighter mystery box
-    .desc = A box of discontinued promotional lighters, many of which have since been declared "contraband".
+ent-MysteryFigureBoxTrash = rozłożone pudełko z tektury
+    .desc = Małe, rozłożone pudełko z tektury na zabawki.
+ent-MysteryFigureBox = pudełko z minifigurkami tajemniczych kosmitów
+    .desc = Pudełko zawierające tajemniczą minifigurkę. Na boku pudełka widnieje kilka zamazanych „rzadkich” figurek, w tym jedna o dużej, niehumanoidalnej sylwetce.
+ent-MysteryLighterBox = Pudełko-niespodzianka z nowatorską zapalniczką
+    .desc = Pudełko wycofanych z produkcji zapalniczek promocyjnych, z których wiele zostało od tego czasu uznanych za „kontrabandę”.
     .suffix = Wypełnione
 ent-UplinkLighterBox = { ent-MysteryLighterBox }
-    .suffix = Uplink
+    .suffix = Łącze w górę
     .desc = { ent-MysteryLighterBox.desc }

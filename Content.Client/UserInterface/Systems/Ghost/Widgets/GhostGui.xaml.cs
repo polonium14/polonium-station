@@ -13,7 +13,9 @@ public sealed partial class GhostGui : UIWidget
 
     public event Action? RequestWarpsPressed;
     public event Action? ReturnToBodyPressed;
+    public event Action? ReturnToLobbyPressed;
     public event Action? GhostRolesPressed;
+    public event Action? NewLifePressed;
     private int _prevNumberRoles;
 
     public GhostGui()
@@ -26,6 +28,8 @@ public sealed partial class GhostGui : UIWidget
 
         GhostWarpButton.OnPressed += _ => RequestWarpsPressed?.Invoke();
         ReturnToBodyButton.OnPressed += _ => ReturnToBodyPressed?.Invoke();
+        ReturnToLobbyButton.OnPressed += _ => ReturnToLobbyPressed?.Invoke();
+        NewLifeButton.OnPressed += _ => NewLifePressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleClass.Negative);
     }
@@ -36,9 +40,10 @@ public sealed partial class GhostGui : UIWidget
         Visible = false;
     }
 
-    public void Update(int? roles, bool? canReturnToBody)
+    public void Update(int? roles, bool? canReturnToBody, bool canReturnToLobby = false)
     {
         ReturnToBodyButton.Disabled = !canReturnToBody ?? true;
+        ReturnToLobbyButton.Visible = canReturnToLobby;
 
         if (roles != null)
         {
@@ -53,6 +58,21 @@ public sealed partial class GhostGui : UIWidget
         }
 
         TargetWindow.Populate();
+    }
+
+    /// <summary>
+    /// Polonium: new life return to the lobby, counting down until it opens.
+    /// </summary>
+    public void UpdateNewLife(bool visible, TimeSpan remaining)
+    {
+        NewLifeButton.Visible = visible;
+        if (!visible)
+            return;
+
+        NewLifeButton.Disabled = remaining > TimeSpan.Zero;
+        NewLifeButton.Text = remaining > TimeSpan.Zero
+            ? Loc.GetString("ghost-gui-new-life-button-countdown", ("time", $"{(int) remaining.TotalMinutes}:{remaining.Seconds:D2}"))
+            : Loc.GetString("ghost-gui-return-to-lobby-button");
     }
 
     protected override void Dispose(bool disposing)

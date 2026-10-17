@@ -1,6 +1,6 @@
 ## UI
 
-door-remote-toggle-eletrify-text = Toggle overcharge
+door-remote-toggle-eletrify-text = Przełącz przeciążenie
 door-remote-open-close-text = Otwieranie, zamykanie drzwi
 door-remote-toggle-bolt-text = Przełączanie bolcy
 door-remote-emergency-access-text = Przełączanie awaryjnego dostępu

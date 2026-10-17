@@ -7,30 +7,30 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Vulpkanin
+  # Wulpy
   <Box>
     <GuideEntityEmbed Entity="MobVulpkanin" Caption=""/>
   </Box>
 
-  Vulpkanin are fox-human hybrids, sporting distinct ears and tails.
+  Wulpy to hybrydy lisa i człowieka, z wyraźnymi uszami i ogonem.
 
-  ## Diet
+  ## Dieta
 
-  Vulpkanin share evolutionary roots with foxes, and so they cannot metabolize Theobromine or Allicin. Be careful
-  when eating chocolate, onions, or garlic, and avoid coffee and tea!
+  Wulpy mają wspólne korzenie ewolucyjne z lisami, więc nie metabolizują teobrominy ani allicyny. Uważaj
+  na czekoladę, cebulę i czosnek oraz unikaj kawy i herbaty!
 
-  ## Claws
+  ## Pazury
 
-  Vulpkanin have dull claws, which do a mixture of [color=#ffb86b]Blunt[/color] and [color=#ffb86b]Slashing[/color] damage.
+  Wulpy mają tępe pazury, które zadają mieszankę obrażeń [color=#ffb86b]obuchowych[/color] i [color=#ffb86b]ciętych[/color].
 
-  ## Fur
+  ## Futro
 
-  Vulpkanin fur provides some slight insulation against [color=#ff8a8a]hot[/color] and [color=cornflowerblue]cold[/color] environments, but not enough to protect against a
-  raging fire or the vacuum of space.
+  Futro wulpów daje lekką izolację przed środowiskiem [color=#ff8a8a]gorącym[/color] i [color=cornflowerblue]zimnym[/color], ale nie wystarcza przeciw
+  szalejącemu pożarowi ani próżni kosmosu.
 
-  ## Vulpkanin Naming Conventions
+  ## Imiona wulpów
 
-  Vulpkanin have similar names to the humanoid species, but are typically more guttural and harsh.
+  Wulpy mają imiona podobne do innych humanoidów, ale zwykle bardziej gardłowe i szorstkie.
 
   [bullet] Hugo Meissner
 

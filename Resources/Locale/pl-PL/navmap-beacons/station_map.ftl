@@ -1,19 +1,19 @@
-station-map-window-title = Station map
-station-map-user-interface-flavor-left = Don't panic
+station-map-window-title = Mapa stacji
+station-map-user-interface-flavor-left = Bez paniki
 station-map-user-interface-flavor-right = v1.42
-station-map-filter-placeholder = Search by name
-station-map-unknown-station = Unknown station
-nav-beacon-window-title = Station Beacon
-nav-beacon-toggle-visible = Visible
-nav-beacon-toggle-invisible = Invisible
-nav-beacon-text-label = Label:
-nav-beacon-button-apply = Apply
+station-map-filter-placeholder = Szukaj po nazwie
+station-map-unknown-station = Nieznana stacja
+nav-beacon-window-title = Nawigator stacji
+nav-beacon-toggle-visible = Widoczny
+nav-beacon-toggle-invisible = Niewidoczny
+nav-beacon-text-label = Etykieta:
+nav-beacon-button-apply = Zastosuj
 nav-beacon-examine-text =
-    It is [color={ $enabled ->
-        [true] forestgreen]on
-       *[false] crimson]off
-    }[/color] and the display reads [color={ $color }]"{ $label }"[/color]
-nav-beacon-pos-no-beacons = in the middle of nowhere
-nav-beacon-pos-format = [color={ $color }]near { $marker }[/color]
-nav-beacon-pos-format-direction = [color={ $color }]{ $modifier }{ $direction } of { $marker }[/color]
-nav-beacon-pos-format-direction-mod-far = far { "" }
+    Jest [color={ $enabled ->
+        [true] forestgreen]włączony
+       *[false] crimson]wyłączony
+    }[/color], a na wyświetlaczu widnieje [color={ $color }]"{ $label }"[/color]
+nav-beacon-pos-no-beacons = pośrodku niczego
+nav-beacon-pos-format = [color={ $color }]w pobliżu punktu { $marker }[/color]
+nav-beacon-pos-format-direction = [color={ $color }]{ $modifier }na { $direction } od punktu { $marker }[/color]
+nav-beacon-pos-format-direction-mod-far = daleko { "" }

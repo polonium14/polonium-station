@@ -40,7 +40,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                 HorizontalAlignment="Right"
                 Margin="5,0"
                 Name="SupermatterStatusLabel"
-                Text="{Loc 'supermatter-console-window-error-status'}" />
+                Text="{Loc 'supermatter-console-window-status-error'}" />
         </BoxContainer>
     </Button>
 

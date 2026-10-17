@@ -1,3 +1,4 @@
+using Content.Client._Polonium.RichText;
 using Content.Client.Guidebook.RichText;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -28,7 +29,8 @@ public sealed class GuidebookRichPrototypeLink : Control, IPrototypeLinkControl
 
         DefaultCursorShape = CursorShape.Hand;
 
-        _richTextLabel.SetMessage(_message, null, TextLinkTag.LinkColor);
+        using (UrlTag.Allow())
+            _richTextLabel.SetMessage(_message, tagsAllowed: null, TextLinkTag.LinkColor);
     }
 
     public GuidebookRichPrototypeLink() : base()
@@ -42,7 +44,8 @@ public sealed class GuidebookRichPrototypeLink : Control, IPrototypeLinkControl
     public void SetMessage(FormattedMessage message)
     {
         _message = message;
-        _richTextLabel.SetMessage(_message, tagsAllowed: null);
+        using (UrlTag.Allow())
+            _richTextLabel.SetMessage(_message, tagsAllowed: null);
     }
 
     public IPrototype? LinkedPrototype { get; set; }

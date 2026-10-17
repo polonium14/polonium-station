@@ -1,4 +1,4 @@
-﻿decal-placer-window-title = Decal Placer
+decal-placer-window-title = Decal Placer
 decal-placer-window-use-color = Niestandardowy Kolor
 decal-placer-window-rotation = Rotacja
 decal-placer-window-zindex = Rysowanie głębokości

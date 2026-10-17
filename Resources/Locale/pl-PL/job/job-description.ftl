@@ -42,7 +42,7 @@ job-description-musician = Zabawiaj załogę przy pomocy swojego talentu muzyczn
 job-description-passenger = Rozkoszuj się swoim pobytem na stacji bez żadnych obowiązków!
 job-description-reporter = Zabawiaj i informuj załogę przy pomocy swojego wyrazistego reporterstwa, kamer bezprzewodowych, radia i prasy.
 job-description-serviceworker = Naucz się podstaw barmaństwa, gotowania i sadzenia roślin.
-job-description-tram-driver = Drive around a tram from stop to stop.
+job-description-tram-driver = Jedź tramwajem od przystanku do przystanku.
 # Silicon
 job-description-borg = Pół człowiek, pół maszyna. Wypełniaj swoje prawa, służ załodze, i nachodź zespół rozwoju o ulepszenia.
 job-description-station-ai = Wykonywuj swoje prawa, służ załodze.
@@ -55,11 +55,5 @@ job-description-ertleader = Prowadź JSR podczas rozwiązywania problemów z zag
 job-description-ertmedic = Upewniaj się że załoga stacji jest trzymana przy życiu i zdrowiu.
 job-description-ertsecurity = Upewniaj się że aktywne zagrożenia dla stacji zostaną zneutralizowane.
 job-description-visitor = Rozkoszuj się swoją wizytą na stacji.
-job-description-boxer = Wywalcz swoją drogę na szczyt! Wyzwij kierownika personelu i zostań aresztowany gdy wygrasz.
 job-description-brigmedic = Walcz na tyłach departamentu ochrony, o życia swoich towarzyszy! Jesteś pierwszą i ostatnią nadzieją swojego zespołu. Niech cię Hippokrates błogosławi.
-job-description-centcomoff = Zachowuj się jak ambasador najnowszej stacji w flocie Nanotrasen.
-job-description-zookeeper = Wystawiaj radosne ekspozycje słodkich zwierząt i kosmicznych karpi.
-# event-restricted jobs
-job-description-command-maid = Clean the bridge, command rooms, and everything else that command tells you to.
-job-description-security-clown = Do security's job, but don't forget to do it with your clown spice.
-job-description-party-maker = Throw the biggest party ever at this station!
+job-description-trainee = Naucz się, jak radzić sobie w kosmosie.

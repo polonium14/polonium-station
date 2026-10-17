@@ -1,6 +1,6 @@
-ent-StorageTankIndestructible = storage tank
-    .desc = A liquids storage tank.
-ent-StorageTank = storage tank
-    .desc = A liquids storage tank.
+ent-StorageTankIndestructible = zbiornik magazynowy
+    .desc = Zbiornik do przechowywania cieczy.
+ent-StorageTank = zbiornik magazynowy
+    .desc = Zbiornik do przechowywania cieczy.
 ent-StorageTankBig = { ent-SolutionTank }
     .desc = { ent-SolutionTank.desc }

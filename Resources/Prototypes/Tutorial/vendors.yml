@@ -1,0 +1,96 @@
+# only what the flow actually uses. rest of the catalog stays off the floor.
+#
+# counts are deliberately generous. a trainee who throws the knife down the disposal, spills the
+# beaker or feeds the seeds to the cow has to be able to walk back and take another one, or the
+# kitchen turns into a dead end halfway through.
+
+- type: vendingMachineInventory
+  id: TutorialChefvendInventory
+  startingInventory:
+    ReagentContainerFlourTutorial: 8
+    FoodCondimentPacketSalt: 8
+    FoodCondimentPacketPepper: 8
+    FoodContainerEgg: 5
+    FoodCheese: 5
+
+- type: vendingMachineInventory
+  id: TutorialDinnerwareInventory
+  startingInventory:
+    KitchenKnife: 5
+    LargeBeakerTutorial: 5
+
+- type: vendingMachineInventory
+  id: TutorialNutriInventory
+  startingInventory:
+    TomatoSeedsTutorial: 8
+    ChemistryBottleEZNutrientTutorial: 6
+    BucketTutorial: 4
+
+- type: vendingMachineInventory
+  id: TutorialEngivendInventory
+  startingInventory:
+    ClothingHandsGlovesColorYellow: 2
+    Multitool: 2
+    Screwdriver: 2
+    Wirecutter: 2
+    Crowbar: 2
+    Wrench: 2
+    # a shield unpacked off its marker in the engine room comes off with a welder, and the welder
+    # blinds anyone without a mask
+    Welder: 2
+    ClothingHeadHatWelding: 2
+
+- type: entity
+  parent: VendingMachineChefvend
+  id: VendingMachineChefvendTutorial
+  suffix: Tutorial
+  components:
+  - type: VendingMachine
+    pack: TutorialChefvendInventory
+    initialStockQuality: 1
+  - type: Destructible
+    thresholds: []
+
+- type: entity
+  parent: VendingMachineDinnerware
+  id: VendingMachineDinnerwareTutorial
+  suffix: Tutorial
+  components:
+  - type: VendingMachine
+    pack: TutorialDinnerwareInventory
+    initialStockQuality: 1
+  - type: Destructible
+    thresholds: []
+
+- type: entity
+  parent: VendingMachineNutri
+  id: VendingMachineNutriTutorial
+  suffix: Tutorial
+  components:
+  - type: VendingMachine
+    pack: TutorialNutriInventory
+    initialStockQuality: 1
+  - type: Destructible
+    thresholds: []
+
+- type: entity
+  parent: VendingMachineEngivend
+  id: VendingMachineEngivendTutorial
+  suffix: Tutorial
+  components:
+  - type: VendingMachine
+    pack: TutorialEngivendInventory
+    initialStockQuality: 1
+  - type: Destructible
+    thresholds: []
+
+- type: entity
+  parent: VendingMachineEngiDrobe
+  id: VendingMachineEngiDrobeTutorial
+  suffix: Tutorial
+  components:
+  - type: VendingMachine
+    pack: EmptyVendingMachineInventory
+    initialStockQuality: 1
+  - type: Destructible
+    thresholds: []

@@ -1,2 +1,2 @@
-ent-GrilleSpawner = Random Grille Spawner
+ent-GrilleSpawner = Generator losowych kratek
     .desc = { ent-MarkerBase.desc }

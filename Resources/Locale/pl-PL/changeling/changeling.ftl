@@ -1,5 +1,5 @@
 # antag selection
-roles-antag-changeling-name = Changeling
+roles-antag-changeling-name = Zmiennokształtny
 roles-antag-changeling-objective = Inteligentny drapieżnik, który przejmuje tożsamości swoich ofiar.
 # devour
 changeling-devour-attempt-failed-cannot-devour = Nie możemy tego pożreć!
@@ -42,9 +42,9 @@ changeling-takeover-success-self = Pomyślnie zainfekowaliśmy ciało i przyjęl
 # stings
 changeling-sting-success = Cicho ukąsiliśmy { THE($target) }!
 # mindshield
-changeling-fake-mindshield-enabled = We emit fake mindshield waves.
-changeling-fake-mindshield-disabled = We stop emitting fake mindshield waves.
+changeling-fake-mindshield-enabled = Emiutjemy fałszywą osłonę umysłu.
+changeling-fake-mindshield-disabled = Przestajemy emitować fałszywe fale osłony umysłu.
 # chemicals
-changeling-not-enough-chemicals = We don't have enough Chemicals.
+changeling-not-enough-chemicals = Nie mamy wystarczającej ilości chemikaliów.
 # other
 changeling-paused-map-name = Mapa przechowywania tożsamości changelinga

@@ -1,1 +1,1 @@
-construction-recipe-closet-freezer = closet freezer
+construction-recipe-closet-freezer = zamrażarka szafkowa

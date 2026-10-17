@@ -1,5 +1,5 @@
 department-Cargo = Logistyki
-department-Civilian = Cywilny
+department-Civilian = Serwisowy
 department-Command = Dowództwo
 department-CentralCommand = Centralne Dowództwo
 department-Engineering = Inżynieryjny
@@ -9,5 +9,3 @@ department-Science = Badań i Rozwoju
 department-Silicon = Silikonowy
 department-Specific = Specyficzny dla stacji
 department-Unknown = Nieznany
-department-CentralCommandSpecial = Centralne Dowództwo (specjalne)
-department-Ghostrole = Widmowy

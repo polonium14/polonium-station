@@ -5,7 +5,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Tools;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class RetractorComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => "a retractor";
+    public string ToolName => "surgery-tool-name-retractor";
     [DataField]
     public bool? Used { get; set; } = null;
     [DataField]

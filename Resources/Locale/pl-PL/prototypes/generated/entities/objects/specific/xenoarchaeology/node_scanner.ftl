@@ -1,2 +1,2 @@
-ent-NodeScanner = node scanner
-    .desc = The archeologist's friend, able to identify the node of an artifact with only a single scan.
+ent-NodeScanner = skaner węzłów
+    .desc = Przyjaciel archeologa, potrafiący zidentyfikować węzeł artefaktu na podstawie zaledwie jednego skanu.

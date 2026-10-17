@@ -20,13 +20,29 @@
         density: 20
         mask:
         - ItemMask
-        restitution: 0.3
+        restitution: 0
         friction: 0.2
+      projectile:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.05,-0.15,0.05,0.25"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
   - type: Tag
     tags:
     - BulletFoam
     - Trash
+  - type: Physics
+    bodyType: Dynamic
+    fixedRotation: true
   - type: Ammo
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Blunt: 0
   - type: EmbeddableProjectile
     removalTime: .2
   - type: ThrowingAngle
@@ -45,6 +61,7 @@
     - state: capbullet
   - type: Projectile
     deleteOnCollide: true
+    onlyCollideWhenShot: true # not sure if this is right, but this resolves issues with cap bullets not being able to hit anything on client
     damage:
       types:
-        Piercing: 0
+        Blunt: 0

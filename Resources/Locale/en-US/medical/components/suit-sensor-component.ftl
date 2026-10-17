@@ -1,4 +1,4 @@
-﻿## Modes
+## Modes
 
 suit-sensor-mode-off = Off
 suit-sensor-mode-binary = Binary
@@ -6,11 +6,11 @@ suit-sensor-mode-vitals = Vitals
 suit-sensor-mode-cords = Coordinates
 
 ## Descriptions
-
 suit-sensor-description-off = Nothing is reported to the station.
 suit-sensor-description-binary = Wearer death is reported to the station.
 suit-sensor-description-vitals = General wearer health status is reported to the station.
 suit-sensor-description-cords = Wearer health status and position are reported to the station.
+
 
 ## Popups
 

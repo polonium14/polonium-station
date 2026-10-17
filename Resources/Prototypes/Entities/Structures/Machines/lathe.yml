@@ -379,6 +379,7 @@
     - SecurityExplosives
     - SecurityEquipment
     - SecurityWeapons
+    - SecurityDisablers
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -563,6 +564,7 @@
     - SecurityExplosives
     - SecurityAmmo
     - SecurityWeapons
+    - SecurityDisablers # Polonium addition
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SyndicateAmmoStatic

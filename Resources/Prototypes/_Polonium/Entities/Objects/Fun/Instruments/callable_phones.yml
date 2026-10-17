@@ -258,6 +258,7 @@
   id: TelephoneHandsetRed
   name: red phone handset
   description: The handset for a wired telephone.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Polonium/Objects/Fun/Instruments/telephone_handset.rsi

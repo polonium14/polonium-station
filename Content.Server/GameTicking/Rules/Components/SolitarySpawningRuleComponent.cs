@@ -1,0 +1,27 @@
+// SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+using Content.Server.GameTicking.Prototypes;
+using Robust.Shared.Prototypes;
+
+namespace Content.Shared.GameTicking.Rules;
+
+/// <summary>
+/// When this game rule is active, each player joining the round will spawn on their own solitary map.
+/// </summary>
+[RegisterComponent]
+public sealed partial class SolitarySpawningRuleComponent : Component
+{
+    /// <summary>
+    /// The list of spawn profiles available. The lobby can be configured to allow the player to pick one of the options.
+    /// If no player choice is made (or possible), the first prototoype will be chosen.
+    /// </summary>
+    [DataField(required: true)]
+    public List<ProtoId<SolitarySpawningPrototype>> Prototypes;
+
+    //TODO blacklist/whitelist for which player is covered by this rule
+    // Possible use cases: a solitary spawning rule that sends blacklisted players to the moon
+}

@@ -1,2 +1,2 @@
-ent-FleshBlocker = flesh clump
-    .desc = An annoying clump of flesh.
+ent-FleshBlocker = grudka tkanki
+    .desc = Irytująca bryła mięsa.
