@@ -32,6 +32,7 @@ replicator-teleport-prey-fail-immune = Ten cel wciąż oblepiają nanity, nie da
 replicator-on-structure-attack-fail = Nie możesz niszczyć tego, co zbudował rój.
 
 name-identifier-format-replicator = RL-{ $number }
+name-identifier-format-replicator-colossus = KL-{ $number }
 
 replicator-colossus-pulse-target = Fala bluespace'u porywa cię daleko stąd!
 

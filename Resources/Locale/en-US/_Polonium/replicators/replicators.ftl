@@ -30,6 +30,7 @@ replicator-teleport-prey-fail-immune = Nanites still cling to that target, it ca
 replicator-on-structure-attack-fail = You cannot harm what the hive has built.
 
 name-identifier-format-replicator = RL-{ $number }
+name-identifier-format-replicator-colossus = KL-{ $number }
 
 replicator-colossus-pulse-target = A wave of bluespace tears you away!
 
