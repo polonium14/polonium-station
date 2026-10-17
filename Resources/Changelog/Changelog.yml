@@ -1,65 +1,4 @@
 ﻿Entries:
-- author: ScarKy0
-  changes:
-  - message: Makeshift Juicers now correctly craft in your hands instead of being
-      a construction ghost.
-    type: Fix
-  id: 9553
-  time: '2026-02-28T14:54:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43075
-- author: kento_da_neko
-  changes:
-  - message: The xenoborg gun now has a unique sprite
-    type: Add
-  id: 9554
-  time: '2026-02-28T15:21:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43013
-- author: Velken
-  changes:
-  - message: Fixed door remotes working on fences, curtains and other entities they
-      shouldn't work on.
-    type: Fix
-  id: 9555
-  time: '2026-02-28T20:30:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43063
-- author: IProduceWidgets
-  changes:
-  - message: C4 no longer sticks to Revenants.
-    type: Tweak
-  id: 9556
-  time: '2026-02-28T21:38:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42889
-- author: Hitlinemoss
-  changes:
-  - message: The rollerskates and clown mask/shoes cargo bounties have been removed.
-    type: Remove
-  - message: The pancakes cargo bounty now requires half as many pancakes, but rewards
-      half as many spesos.
-    type: Tweak
-  id: 9557
-  time: '2026-02-28T22:04:55.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42899
-- author: slarticodefast
-  changes:
-  - message: Fixed damage mispredicting.
-    type: Fix
-  id: 9558
-  time: '2026-03-01T00:06:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43080
-- author: slarticodefast
-  changes:
-  - message: Fixed topicals.
-    type: Fix
-  id: 9559
-  time: '2026-03-01T14:41:29.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43087
-- author: AffleWaffle
-  changes:
-  - message: APCs take 2 seconds to build instead of instantly appearing.
-    type: Tweak
-  id: 9560
-  time: '2026-03-01T17:58:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43089
 - author: SirWarock
   changes:
   - message: Added a nitrogen tank to the mining hardsuit crate!
@@ -4273,3 +4212,89 @@
   id: 10047
   time: '2026-10-12T17:21:42.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1103
+- author: Saver310
+  changes:
+  - message: "Dodano pluszaka op\u0119tanego oficera ochrony!"
+    type: Add
+  id: 10048
+  time: '2026-10-12T19:12:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1102
+- author: Yaket
+  changes:
+  - message: "Dodano dost\u0119p do pokoju i narz\u0119dzi chemika dla medyka wi\u0119\
+      ziennego w przypadku szkieletowej za\u0142ogi"
+    type: Tweak
+  id: 10049
+  time: '2026-10-12T19:13:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1101
+- author: Zintex
+  changes:
+  - message: 'Mapa Terra: zlew i szafka w chemii, poprawa drzwi do zbrojowni, dodane
+      holopady na stacji'
+    type: Tweak
+  id: 10050
+  time: '2026-10-14T11:55:06.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1107
+- author: Zintex
+  changes:
+  - message: "Dodano 2 JSR wahad\u0142owce medyczno-ochronne (du\u017Cy i ma\u0142\
+      y medsec)"
+    type: Add
+  id: 10051
+  time: '2026-10-15T20:29:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1109
+- author: Zintex
+  changes:
+  - message: "Zmiany na Deathstar: brakujace spawny roli i szafki, dok przylot\xF3\
+      w, pralka, dost\u0119pno\u015B\u0107 generatora grawitacji, inteligentna lod\xF3\
+      wka dla meda, wi\u0119cej apteczek w medzie, wi\u0119cej instrument\xF3w, szafa\
+      \ graj\u0105ca"
+    type: Tweak
+  - message: "Poprawa b\u0142\u0119d\xF3w mapowania deathstar: usuni\u0119cie mapowania\
+      \ ATS, zamiana dok\xF3w syndykatu na w\u0142a\u015Bciwe"
+    type: Fix
+  id: 10052
+  time: '2026-10-15T23:12:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1110
+- author: Nikita
+  changes:
+  - message: "Replikatory s\u0105 wytrzymalsze. Wytrzyma\u0142o\u015B\u0107 zale\u017C\
+      y od klasy i ro\u015Bnie z ka\u017Cd\u0105 form\u0105."
+    type: Tweak
+  - message: "Replikatory otwieraj\u0105 ju\u017C tylko interfejsy maszyn roju."
+    type: Tweak
+  - message: "Holo\u015Bciana replikator\xF3w znika po siedmiu i p\xF3\u0142 minuty."
+    type: Tweak
+  - message: Powielacz replistali pracuje szybciej.
+    type: Tweak
+  - message: "W replikatorach nie ma ju\u017C oleju."
+    type: Remove
+  - message: "Kolosalny Replikator jest mniejszy i ma nieco mniej wytrzyma\u0142o\u015B\
+      ci."
+    type: Tweak
+  - message: "Wybuch g\u0142owicy nuklearnej niszczy Kolosalnego Replikatora"
+    type: Fix
+  - message: "B\u0142ysk wystrza\u0142u Kolosalnego Replikatora pojawia si\u0119 na\
+      \ lufie, a nie na \u015Brodku kad\u0142uba."
+    type: Fix
+  - message: "Zwi\u0119kszono progi \u015Bmierci replikator\xF3w. Warto\u015B\u0107\
+      \ zale\u017Cy od klasy i ro\u015Bnie wraz z kolejnymi formami."
+  id: 10053
+  time: '2026-10-17T11:58:27.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1111
+- author: pinkscreen i Nikita
+  changes:
+  - message: Dodano Mocnego Fulla.
+    type: Add
+  - message: Dodano bekanie.
+    type: Add
+  id: 10054
+  time: '2026-10-17T12:34:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1000
+- author: GibMeclay
+  changes:
+  - message: "Dostosowano akcent francuski do j\u0119zyka polskiego"
+    type: Tweak
+  id: 10055
+  time: '2026-10-17T12:39:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1108

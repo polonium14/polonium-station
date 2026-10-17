@@ -5,3 +5,5 @@ ent-ItanKioGoBoom = Itan-Kio plushie
     .suffix = BOMB, DO NOT MAP
 ent-PlushieMothDeathshead = deathshead moth plushie
     .desc = A fluffy plushie resembling a certain moth bartender. A small inscription reads "Don't serve whiskey after midnight".
+ent-PlushieHumanTomasz = possessed secoff plushie
+    .desc = A plushie resembling a certain security officer who got cursed with cat ears. Wait, is this blood?

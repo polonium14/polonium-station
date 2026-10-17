@@ -1,7 +1,7 @@
 ent-ActionReplicatorBuildWall = Zbuduj ścianę
     .desc = Wznieś ścianę replikatorów na wolnym kafelku podłogi replikatorów. Kosztuje pół arkusza z zapasu gniazda.
 ent-ActionReplicatorHolowall = Wyświetl holościanę
-    .desc = Utkaj holościanę w miejscu, w którym stoisz. Zatrzymuje powietrze, ale przepuszcza wszystkich, i znika po trzech minutach. Kosztuje szczyptę replistali z zapasu gniazda.
+    .desc = Utkaj holościanę w miejscu, w którym stoisz. Zatrzymuje powietrze, ale przepuszcza wszystkich, i znika po siedmiu i pół minuty. Kosztuje szczyptę replistali z zapasu gniazda.
 ent-ActionReplicatorColossusPulse = Impuls bluespace
     .desc = Naładuj generator pola, a potem odrzuć wszystkich wokół siebie daleko w głąb stacji. Silny cios przerywa ładowanie. Impuls zużywa cały zasobnik miniguna.
 ent-ActionReplicatorColossusSweep = Omiecenie nanitami

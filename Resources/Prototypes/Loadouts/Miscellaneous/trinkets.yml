@@ -64,6 +64,13 @@
   groupBy: "toys"
 
 - type: loadout
+  id: PlushieHumanTomasz
+  storage:
+    back:
+    - PlushieHumanTomasz
+  groupBy: "toys"
+
+- type: loadout
   id: ThreeCandles
   dummyEntity: LoadoutDummyCandles
   storage:

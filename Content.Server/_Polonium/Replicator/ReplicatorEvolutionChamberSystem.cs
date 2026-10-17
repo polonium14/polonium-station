@@ -1,9 +1,13 @@
+using Content.Server.Destructible;
 using Content.Shared._Impstation.Replicator;
 using Content.Shared._Polonium.Replicator;
 using Content.Shared.Actions;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.Destructible.Thresholds.Triggers;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
@@ -17,6 +21,8 @@ namespace Content.Server._Polonium.Replicator;
 
 public sealed partial class ReplicatorEvolutionChamberSystem : EntitySystem
 {
+    private static readonly ProtoId<DamageTypePrototype> HullDamageType = "Blunt";
+
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
@@ -25,6 +31,7 @@ public sealed partial class ReplicatorEvolutionChamberSystem : EntitySystem
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private ReplicatorHiveSystem _hive = default!;
     [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private MobThresholdSystem _mobThreshold = default!;
     [Dependency] private ReplicatorModuleSystem _modules = default!;
     [Dependency] private MovementSpeedModifierSystem _movementSpeed = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
@@ -133,6 +140,25 @@ public sealed partial class ReplicatorEvolutionChamberSystem : EntitySystem
         Dirty(ent);
         EntityManager.AddComponents(ent, prototype.Components);
         _movementSpeed.RefreshMovementSpeedModifiers(ent.Owner);
+        UpdateHealth(ent);
+    }
+
+    private void UpdateHealth(Entity<ReplicatorModulesComponent> ent)
+    {
+        if (!_modules.TryGetClass(ent.AsNullable(), out var prototype)
+            || prototype.GetForm(_modules.GetTotalStages(ent.Comp)) is not { Health: { } health })
+            return;
+
+        _mobThreshold.SetMobStateThreshold(ent, health, MobState.Dead);
+
+        if (!TryComp<DestructibleComponent>(ent, out var destructible))
+            return;
+
+        foreach (var threshold in destructible.Thresholds)
+        {
+            if (threshold.Trigger is DamageTypeTrigger trigger && trigger.DamageType == HullDamageType)
+                trigger.Damage = health * ent.Comp.HullBreakMultiplier;
+        }
     }
 
     private string? GetBlocker(Entity<ReplicatorModulesComponent> user, ReplicatorModulePrototype module)
@@ -261,6 +287,7 @@ public sealed partial class ReplicatorEvolutionChamberSystem : EntitySystem
 
         _movementSpeed.RefreshMovementSpeedModifiers(ent.Owner);
         _movementSpeed.RefreshWeightlessModifiers(ent.Owner);
+        UpdateHealth(ent);
     }
 
     private void BoostAmmo(Entity<ReplicatorGunBoostComponent> gun, int capacityBonus, float rechargeMultiplier)

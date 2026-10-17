@@ -107,7 +107,7 @@
     state: dead
     drawdepth: Objects
     noRot: true
-    offset: 0,1.09375
+    offset: 0,1
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -182,7 +182,7 @@
       state: beam
     linkBeamOffset: 0,1.15625
     releaseEffect: EffectReplicatorColossusAssimilationCharge
-    releaseEffectOffset: 0,1.8
+    releaseEffectOffset: 0,1.55
     releaseSound:
       path: /Audio/_Polonium/Effects/Replicators/assimilation_charge.ogg
     deploySound:
