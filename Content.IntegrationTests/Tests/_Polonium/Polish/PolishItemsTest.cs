@@ -3,9 +3,12 @@ using Content.IntegrationTests.Tests.Interaction;
 using Content.Server._Polonium.Polish;
 using Content.Shared._Polonium.Polish;
 using Content.Shared.Buckle;
+using Content.Shared.Buckle.Components;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Cuffs;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Vehicle.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
@@ -125,6 +128,80 @@ public sealed class PolishItemsTest : InteractionTest
         });
 
         Assert.That(buckled, Is.False, "Anyone could just climb onto the cross");
+        await Server.WaitPost(() => SEntMan.DeleteEntity(victim));
+    }
+}
+
+[TestOf(typeof(CrucifixSystem))]
+public sealed class PolishCrucifixTest : InteractionTest
+{
+    protected override string PlayerPrototype => "MobHuman";
+
+    private async Task<(EntityUid Crucifix, EntityUid Victim)> SetUp(bool cuffed, bool pull)
+    {
+        var crucifix = await SpawnTarget("PolishCrucifix");
+        var cuffs = Server.System<SharedCuffableSystem>();
+        var pulling = Server.System<PullingSystem>();
+
+        EntityUid victim = default;
+        await Server.WaitPost(() =>
+        {
+            victim = SEntMan.SpawnEntity("MobHuman", SEntMan.GetCoordinates(TargetCoords));
+            if (cuffed)
+            {
+                var cuff = SEntMan.SpawnEntity("Handcuffs", SEntMan.GetCoordinates(TargetCoords));
+                Assert.That(cuffs.TryAddNewCuffs(victim, SPlayer, cuff), "The victim could not be cuffed");
+            }
+
+            if (pull)
+                Assert.That(pulling.TryStartPull(SPlayer, victim), "The victim could not be pulled");
+        });
+        await RunTicks(5);
+        return (SEntMan.GetEntity(crucifix), victim);
+    }
+
+    private EntityUid? BuckledTo(EntityUid victim)
+    {
+        return SEntMan.GetComponent<BuckleComponent>(victim).BuckledTo;
+    }
+
+    [Test]
+    public async Task DraggedCuffedVictimIsCrucified()
+    {
+        var (crucifix, victim) = await SetUp(true, false);
+
+        await DragDrop(SEntMan.GetNetEntity(victim), SEntMan.GetNetEntity(crucifix));
+        await RunSeconds(14);
+
+        Assert.That(BuckledTo(victim), Is.EqualTo(crucifix), "Dragging the cuffed victim onto the cross did nothing");
+        await Server.WaitPost(() => SEntMan.DeleteEntity(victim));
+    }
+
+    [Test]
+    public async Task PulledCuffedVictimIsCrucifiedWithFreeHand()
+    {
+        Pair.ClientLogHandler.JudgeLog += (sawmill, log) => sawmill == "system.joint" && log.RenderMessage().Contains("pull-joint");
+        var (crucifix, victim) = await SetUp(true, true);
+
+        Assert.That(HandSys.TryGetEmptyHand((SPlayer, Hands), out var emptyHand), "No free hand left");
+
+        await Server.WaitPost(() => HandSys.TrySetActiveHand((SPlayer, Hands), emptyHand));
+        await Interact(awaitDoAfters: false);
+        await RunSeconds(14);
+
+        Assert.That(BuckledTo(victim), Is.EqualTo(crucifix), "Clicking the cross while pulling the victim did nothing");
+        await Server.WaitPost(() => SEntMan.DeleteEntity(victim));
+    }
+
+    [Test]
+    public async Task FreeVictimIsNotCrucified()
+    {
+        var (crucifix, victim) = await SetUp(false, false);
+
+        await DragDrop(SEntMan.GetNetEntity(victim), SEntMan.GetNetEntity(crucifix));
+        await RunSeconds(14);
+
+        Assert.That(BuckledTo(victim), Is.Null, "A free victim should not be nailed to the cross");
         await Server.WaitPost(() => SEntMan.DeleteEntity(victim));
     }
 }

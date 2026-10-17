@@ -9,8 +9,9 @@ namespace Content.Shared._Polonium.Polish;
 
 /// <summary>
 /// Duży krzyż, do którego można przybić ciągniętą ofiarę. Port <c>/obj/structure/kitchenspike/crucifix</c> z NSV13.
-/// Zwykłe przypinanie (przeciąganie, klik) jest zablokowane: na krzyż trafia się tylko przez <see cref="CrucifyDelay"/>,
-/// a zejście trwa <see cref="FreeOtherDelay"/> (ktoś inny) albo <see cref="FreeSelfDelay"/> (samemu).
+/// Zwykłe przypinanie jest zablokowane: bezbronną ofiarę (w kajdankach albo nieprzytomną) przeciąga się na krzyż
+/// lub klika krzyż, ciągnąc ją, a przybicie trwa <see cref="CrucifyDelay"/>.
+/// Zejście trwa <see cref="FreeOtherDelay"/> (ktoś inny) albo <see cref="FreeSelfDelay"/> (samemu).
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 public sealed partial class CrucifixComponent : Component

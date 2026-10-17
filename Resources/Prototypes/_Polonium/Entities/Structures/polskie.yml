@@ -45,11 +45,12 @@
     sprite: _Polonium/Structures/Furniture/krzyz.rsi
     state: krzyz
     offset: 0,0.5
-    drawdepth: Overdoors
+    drawdepth: BelowMobs
   - type: InteractionOutline
   - type: Strap
     position: Stand
     buckleOffset: 0,0.6
+    modifyBuckleDrawDepth: false
   - type: Crucifix
     damage:
       types:

@@ -1,3 +1,4 @@
+using Content.Server.Buckle.Systems;
 using Content.Server.Chat.Systems;
 using Content.Shared._Polonium.Polish;
 using Content.Shared.Buckle;
@@ -5,6 +6,7 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
+using Content.Shared.DragDrop;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
@@ -35,7 +37,8 @@ public sealed partial class CrucifixSystem : SharedCrucifixSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CrucifixComponent, InteractHandEvent>(OnInteractHand);
+        SubscribeLocalEvent<CrucifixComponent, InteractHandEvent>(OnInteractHand, before: [typeof(BuckleSystem)]);
+        SubscribeLocalEvent<CrucifixComponent, DragDropTargetEvent>(OnDragDropTarget);
         SubscribeLocalEvent<CrucifixComponent, CrucifyDoAfterEvent>(OnCrucifyDoAfter);
         SubscribeLocalEvent<CrucifixComponent, CrucifixFreeDoAfterEvent>(OnFreeDoAfter);
     }
@@ -57,15 +60,29 @@ public sealed partial class CrucifixSystem : SharedCrucifixSystem
             return;
         }
 
-        if (!TryComp<PullerComponent>(user, out var puller) || puller.Pulling is not { } victim || !CanBeCrucified(victim))
+        if (!TryComp<PullerComponent>(user, out var puller) || puller.Pulling is not { } victim)
             return;
 
-        args.Handled = true;
+        args.Handled = TryStartCrucifying(ent, user, victim);
+    }
+
+    private void OnDragDropTarget(Entity<CrucifixComponent> ent, ref DragDropTargetEvent args)
+    {
+        if (args.Handled || args.Dragged == args.User)
+            return;
+
+        args.Handled = TryStartCrucifying(ent, args.User, args.Dragged);
+    }
+
+    private bool TryStartCrucifying(Entity<CrucifixComponent> ent, EntityUid user, EntityUid victim)
+    {
+        if (!TryComp<StrapComponent>(ent, out var strap) || strap.BuckledEntities.Count > 0 || !CanBeCrucified(victim))
+            return false;
 
         if (!IsHelpless(victim))
         {
             _popup.PopupEntity(Loc.GetString("crucifix-not-restrained", ("victim", Identity.Entity(victim, EntityManager))), victim, user);
-            return;
+            return true;
         }
 
         var doAfter = new DoAfterArgs(EntityManager, user, ent.Comp.CrucifyDelay, new CrucifyDoAfterEvent(), ent, target: victim, used: ent)
@@ -74,7 +91,7 @@ public sealed partial class CrucifixSystem : SharedCrucifixSystem
             BreakOnDamage = true,
             NeedHand = true,
         };
-        _doAfter.TryStartDoAfter(doAfter);
+        return _doAfter.TryStartDoAfter(doAfter);
     }
 
     private void OnCrucifyDoAfter(Entity<CrucifixComponent> ent, ref CrucifyDoAfterEvent args)
@@ -85,13 +102,10 @@ public sealed partial class CrucifixSystem : SharedCrucifixSystem
         if (!TryComp<StrapComponent>(ent, out var strap) || strap.BuckledEntities.Count > 0)
             return;
 
-        if (!TryComp<PullerComponent>(args.User, out var puller) || puller.Pulling != victim || !CanBeCrucified(victim) || !IsHelpless(victim))
+        if (!CanBeCrucified(victim) || !IsHelpless(victim))
             return;
 
         args.Handled = true;
-
-        if (TryComp<PullableComponent>(victim, out var pullable))
-            _pulling.TryStopPull(victim, pullable, args.User);
 
         ent.Comp.Bypass = true;
         var buckled = _buckle.TryBuckle(victim, args.User, ent, popup: false);
@@ -99,6 +113,9 @@ public sealed partial class CrucifixSystem : SharedCrucifixSystem
 
         if (!buckled)
             return;
+
+        if (TryComp<PullableComponent>(victim, out var pullable))
+            _pulling.TryStopPull(victim, pullable, args.User);
 
         _popup.PopupEntity(
             Loc.GetString("crucifix-crucified-victim", ("user", Identity.Entity(args.User, EntityManager))),
