@@ -247,16 +247,6 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterContrabandRebelsUnite
-  name: "Rebels Unite"
-  description: "A poster urging the viewer to rebel against Nanotrasen."
-  components:
-  - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
-    state: poster23_contraband
-
-- type: entity
-  parent: PosterBase
   id: PosterContrabandC20r
   name: "C-20r"
   description: "A poster advertising the Scarborough Arms C-20r."
@@ -300,16 +290,6 @@
   components:
   - type: Sprite
     state: poster28_contraband
-
-- type: entity
-  parent: PosterBase
-  id: PosterContrabandEnergySwords
-  name: "Energy Swords"
-  description: "All the colors of the bloody murder rainbow."
-  components:
-  - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
-    state: poster29_contraband
 
 - type: entity
   parent: PosterBase
