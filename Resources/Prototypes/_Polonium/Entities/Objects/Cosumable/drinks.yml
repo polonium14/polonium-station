@@ -23,7 +23,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Beer
+      - ReagentId: MocnyFull
         Quantity: 40
   - type: Sprite
     sprite: _Polonium/Objects/Cosumable/Food/Drinks/MocnyFull.rsi

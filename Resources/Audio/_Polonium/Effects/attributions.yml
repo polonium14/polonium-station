@@ -7,3 +7,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from Imperial Space (license is unknown)"
   source: "https://github.com/imperial-space/SS14-public/commit/6d1e2d0d35fc8080ac842c9d6c4697317130cd39"
+
+- files: ["burp.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Burp, Male, Short, A.wav by InspectorJ, converted to mono OGG, sped up by 20% and trimmed of silence"
+  source: "https://freesound.org/people/InspectorJ/sounds/428137/"
