@@ -1,0 +1,10 @@
+ent-ActionMorphDisguise = Przybierz kształt
+    .desc = Wykręć swoje ciało w kopię pobliskiego przedmiotu.
+ent-ActionMorphReveal = Wróć do formy
+    .desc = Zapadnij się z powrotem w swoją prawdziwą postać.
+ent-ActionMorphStomach = Zawartość żołądka
+    .desc = Wypluj, przygotuj do wyplucia albo straw to, co zjadłeś.
+ent-ActionMorphSpit = Plucie
+    .desc = Wypluj przygotowaną zawartość żołądka we wskazane miejsce.
+ent-ActionMorphDevour = Pożryj
+    .desc = Połknij martwe lub umierające stworzenie albo przedmiot.

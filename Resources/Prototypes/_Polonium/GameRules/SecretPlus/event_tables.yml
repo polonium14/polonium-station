@@ -30,7 +30,7 @@
 #   Mid      152
 #   MidHigh  188
 #   High     190
-#   Antagoniści z ról duchów dokładają 18,5 (tabela łagodna) albo 40,6 (pełna), dopóki jest dla nich miejsce.
+#   Antagoniści z ról duchów dokładają 20,5 (tabela łagodna) albo 42,6 (pełna), dopóki jest dla nich miejsce.
 
 # ====================================================================================================
 # Klocki: zdarzenia pogrupowane według tego, jak bardzo szkodzą stacji
@@ -163,7 +163,7 @@
 
 # Łagodni antagoniści z ról duchów.
 # Używane przez: Low (z "prob"), Mid.
-# Suma wag: 18,5
+# Suma wag: 20,5
 - type: entityTable
   id: SecretPlusGhostAntagsSoftTable
   table: !type:AllSelector
@@ -171,10 +171,11 @@
     - id: KingRatMigration   # waga 6    koszt 25    gracze 30  od 15 min   ponownie po 30 min
     - id: ParadoxCloneSpawn  # waga 5    koszt 80    gracze 15  od 20 min   raz na rundę
     - id: RevenantSpawn      # waga 7.5  koszt 450   gracze 20  od 45 min   ponownie po 30 min
+    - id: MorphSpawn         # waga 2    koszt 250   gracze 0   od 20 min   raz na rundę
 
 # Wszyscy antagoniści z ról duchów, czyli łagodni plus ci poniżej.
 # Używane przez: MidHigh, High.
-# Suma wag: 22,1 bez tabeli łagodnej, razem z nią 40,6
+# Suma wag: 22,1 bez tabeli łagodnej, razem z nią 42,6
 - type: entityTable
   id: SecretPlusGhostAntagsTable
   table: !type:AllSelector
