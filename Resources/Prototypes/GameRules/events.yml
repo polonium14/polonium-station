@@ -108,6 +108,7 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
+    - id: XenoInfestation # Polonium
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 

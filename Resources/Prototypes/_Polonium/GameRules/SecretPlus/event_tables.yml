@@ -174,7 +174,7 @@
 
 # Wszyscy antagoniści z ról duchów, czyli łagodni plus ci poniżej.
 # Używane przez: MidHigh, High.
-# Suma wag: 22,1 bez tabeli łagodnej, razem z nią 40,6
+# Suma wag: 27,1 bez tabeli łagodnej, razem z nią 45,6
 - type: entityTable
   id: SecretPlusGhostAntagsTable
   table: !type:AllSelector
@@ -185,6 +185,7 @@
     - id: LoneOpsSpawn               # waga 5.5  koszt 700   gracze 20  od 35 min   raz na rundę
     - id: NinjaSpawn                 # waga 6    koszt 300   gracze 30  od 30 min   raz na rundę
     - id: ReplicatorSpawnSecretPlus  # waga 4    koszt 650   gracze 15  od 25 min   ponownie po 45 min
+    - id: XenoInfestation            # waga 5    koszt 500   gracze 15  od 20 min   raz na rundę
     - id: UnknownShuttleInstigator   # waga 0.1  koszt 900   gracze 0   od  5 min   raz na rundę
 
 # ====================================================================================================

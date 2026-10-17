@@ -1,0 +1,47 @@
+- type: organCategory
+  id: XenoEmbryo
+
+# Embrion jest organem, żeby dało się go wyciąć zwykłą operacją Shitmed.
+- type: entity
+  parent: OrganBaseOrganic
+  id: XenoEmbryo
+  name: alien embryo
+  description: A small, pulsating creature curled up in a sac of mucus.
+  components:
+  - type: Organ
+    category: XenoEmbryo
+  - type: Sprite
+    sprite: _Polonium/Objects/Xeno/embryo.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: XenoEmbryo
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - acid
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SulfuricAcid
+        Quantity: 10
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 5
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveXenoEmbryo
+  name: Remove Alien Embryo
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: XenoEmbryo
+
+- type: soundCollection
+  id: XenoChestburst
+  files:
+  - /Audio/_RMC14/Xeno/alien_chestburst.ogg
+  - /Audio/_RMC14/Xeno/alien_chestburst2.ogg
