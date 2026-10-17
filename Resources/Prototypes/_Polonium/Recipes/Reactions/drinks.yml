@@ -1,0 +1,12 @@
+# Amarena z NSV13: etanol, woda i galaretka wiśniowa. W SS14 nie ma galaretki wiśniowej, więc sok wiśniowy.
+- type: reaction
+  id: Amarena
+  reactants:
+    Ethanol:
+      amount: 1
+    Water:
+      amount: 2
+    JuiceCherry:
+      amount: 2
+  products:
+    Amarena: 5

@@ -1,0 +1,12 @@
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateFoodKremowki
+  name: cream cake crate
+  description: A crate full of cream cakes straight from the bakery in Wadowice.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: FoodPieKremowka
+          amount: 5

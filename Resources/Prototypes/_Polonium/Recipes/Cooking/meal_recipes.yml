@@ -60,3 +60,44 @@
     FoodDoughCottonRope: 4
     Paper: 1
 
+
+# Polskie jedzenie z NSV13 (tgstation/tgstation#65848 i CM-SS13)
+- type: microwaveMealRecipe
+  id: RecipeGolabki
+  name: stuffed cabbage recipe
+  result: FoodGolabki
+  time: 10
+  group: Savory
+  solids:
+    FoodMeatCutlet: 2
+    FoodRiceBoiled: 1
+    FoodCabbage: 1
+    FoodTomato: 1
+
+- type: microwaveMealRecipe
+  id: RecipeZurek
+  name: zurek recipe
+  result: FoodSoupZurek
+  time: 10
+  group: Soup
+  reagents:
+    Water: 10
+    Flour: 5
+  solids:
+    FoodBowlBig: 1
+    FoodEggBoiled: 1
+    FoodMeatCutlet: 1
+    FoodCarrot: 1
+    FoodOnion: 1
+
+- type: microwaveMealRecipe
+  id: RecipePtasieMleczko
+  name: bird's milk recipe
+  result: FoodSnackPtasieMleczko
+  time: 5
+  group: Dessert
+  reagents:
+    Cream: 5
+    Sugar: 5
+  solids:
+    FoodSnackChocolateBar: 1

@@ -1,0 +1,13 @@
+ent-ClothingHeadHelmetKapitanBomba = cosmo-helmet
+    .desc = The cosmic helmet of the Captain of the Space Ship Orzeł 1.
+ent-ClothingOuterSuitKapitanBomba = cosmo-suit
+    .desc = The cosmic suit of the Captain of the Space Ship Orzeł 1.
+ent-ClothingShoesKapitanBomba = cosmo-boots
+    .desc = Captain Bomba's cosmic boots, he polished them himself.
+ent-MagazineLightRifleBoxBlaster = blaster ammo
+    .desc = Miraculously not drunk away, but no wonder - who would trade 6mm for a bottle.
+ent-WeaponLightMachineGunBlaster = Captain Bomba's blaster
+    .desc = Hands off, you dumb dicks.
+ent-KapitanBombaIDCard = Captain Bomba's ID card
+    .suffix = Admeme
+    .desc = { ent-IDCardStandard.desc }

@@ -1,0 +1,134 @@
+- type: constructionGraph
+  id: PolishBanner
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: banner
+      steps:
+      - material: MetalRod
+        amount: 2
+        doAfter: 2
+      - tag: JumpsuitColorRed
+        name: construction-graph-tag-red-jumpsuit
+        icon:
+          sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+          state: icon
+        doAfter: 1
+      - tag: JumpsuitColorWhite
+        name: construction-graph-tag-white-jumpsuit
+        icon:
+          sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+          state: icon
+        doAfter: 1
+  - node: banner
+    entity: PolishBannerMundane
+
+- type: constructionGraph
+  id: PolishCrossWooden
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cross
+      steps:
+      - material: WoodPlank
+        amount: 2
+        doAfter: 1
+  - node: cross
+    entity: PolishCrossWooden
+
+- type: constructionGraph
+  id: PolishCrossGolden
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cross
+      steps:
+      - material: Gold
+        amount: 1
+        doAfter: 1
+      - material: WoodPlank
+        amount: 2
+        doAfter: 1
+  - node: cross
+    entity: PolishCrossGolden
+
+- type: constructionGraph
+  id: PolishEmblemWooden
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: emblem
+      steps:
+      - material: WoodPlank
+        amount: 4
+        doAfter: 1
+      - tag: JumpsuitColorRed
+        name: construction-graph-tag-red-jumpsuit
+        icon:
+          sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+          state: icon
+        doAfter: 0.5
+      - tag: JumpsuitColorWhite
+        name: construction-graph-tag-white-jumpsuit
+        icon:
+          sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+          state: icon
+        doAfter: 0.5
+  - node: emblem
+    entity: PolishEmblemWooden
+
+- type: constructionGraph
+  id: PolishEmblemBlack
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: emblem
+      steps:
+      - material: WoodPlank
+        amount: 4
+        doAfter: 1
+      - tag: JumpsuitColorRed
+        name: construction-graph-tag-red-jumpsuit
+        icon:
+          sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+          state: icon
+        doAfter: 0.5
+      - tag: JumpsuitColorWhite
+        name: construction-graph-tag-white-jumpsuit
+        icon:
+          sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+          state: icon
+        doAfter: 0.5
+  - node: emblem
+    entity: PolishEmblemBlack
+
+- type: constructionGraph
+  id: PolishCrucifix
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: crucifix
+      steps:
+      - material: WoodPlank
+        amount: 10
+        doAfter: 4
+  - node: crucifix
+    entity: PolishCrucifix
+    edges:
+    - to: start
+      conditions:
+      - !type:StrapEmpty
+      steps:
+      - tool: Anchoring
+        doAfter: 2
+      completed:
+      - !type:SpawnPrototype
+        prototype: MaterialWoodPlank1
+        amount: 5
+      - !type:DeleteEntity
