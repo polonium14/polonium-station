@@ -229,7 +229,7 @@
   - type: Sprite
     state: laser
   - type: Gun
-    fireRate: 5.6
+    fireRate: 4.76
     soundGunshot:
       path: /Audio/_Polonium/Weapons/Guns/colossus_minigun_lethal.ogg
       params:
