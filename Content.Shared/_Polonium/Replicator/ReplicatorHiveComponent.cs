@@ -49,4 +49,25 @@ public sealed partial class ReplicatorHiveComponent : Component
 
     [DataField]
     public int MaxReplicators = 12;
+
+    /// <summary>
+    /// The nest's destruction threshold is multiplied by this on every level it gains, up to its endgame level.
+    /// </summary>
+    [DataField]
+    public float HealthGrowth = 1.4f;
+
+    [DataField]
+    public TimeSpan QueenRespawnDelay = TimeSpan.FromMinutes(3);
+
+    [DataField]
+    public EntProtoId QueenSpawner = "SpawnPointGhostReplicatorQueen";
+
+    [DataField]
+    public TimeSpan QueenCheckInterval = TimeSpan.FromSeconds(5);
+
+    [ViewVariables]
+    public TimeSpan NextQueenCheck;
+
+    [ViewVariables]
+    public TimeSpan? QueenDueAt;
 }

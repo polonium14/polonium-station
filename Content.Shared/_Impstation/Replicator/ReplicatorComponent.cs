@@ -85,13 +85,26 @@ public sealed partial class ReplicatorComponent : Component
     public TimeSpan TeleportPreyImmunityDuration = TimeSpan.FromSeconds(25);
 
     [DataField]
-    public float TeleportPreyNestClearance = 12f;
+    public float TeleportPreyNestClearance = 18f;
 
     [DataField]
     public float TeleportPreyRangeStep = 2f;
 
     [DataField]
-    public float TeleportPreyMaxRange = 16f;
+    public float TeleportPreyMaxRange = 28f;
+
+    /// <summary>
+    /// The longest side of a grid, in tiles, from which the teleport distances apply in full.
+    /// On smaller grids the nest clearance and the rings shrink with it.
+    /// </summary>
+    [DataField]
+    public float TeleportPreyFullGridSize = 80f;
+
+    /// <summary>
+    /// How far the distances shrink at most on a small grid, as a fraction of the full ones.
+    /// </summary>
+    [DataField]
+    public float TeleportPreyMinScale = 0.4f;
 
     [DataField]
     public TimeSpan AttackFailPopupCooldown = TimeSpan.FromSeconds(2);

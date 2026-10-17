@@ -33,6 +33,12 @@ public sealed partial class ReplicatorModulesComponent : Component
     public float OverkillMultiplier = 2f;
 
     /// <summary>
+    /// The time it takes to pry a door open is multiplied by this for every installed stage.
+    /// </summary>
+    [DataField]
+    public float PryTimePerStage = 0.85f;
+
+    /// <summary>
     /// Shown to the hive over a replicator that has no class yet.
     /// </summary>
     [DataField]
