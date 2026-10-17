@@ -5,6 +5,7 @@ using Content.Shared.Actions;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Destructible.Thresholds.Triggers;
 using Content.Shared.DoAfter;
+using Content.Shared.FixedPoint;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs;
@@ -41,12 +42,19 @@ public sealed partial class ReplicatorEvolutionChamberSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<ReplicatorModulesComponent, MapInitEvent>(OnModulesMapInit);
         SubscribeLocalEvent<ReplicatorEvolutionChamberComponent, ActivatableUIOpenAttemptEvent>(OnUiOpenAttempt);
         SubscribeLocalEvent<ReplicatorEvolutionChamberComponent, BeforeActivatableUIOpenEvent>(OnBeforeUiOpen);
         SubscribeLocalEvent<ReplicatorEvolutionChamberComponent, ReplicatorEvolutionSpecializeMessage>(OnSpecializeMessage);
         SubscribeLocalEvent<ReplicatorEvolutionChamberComponent, ReplicatorSpecializeDoAfterEvent>(OnSpecializeDoAfter);
         SubscribeLocalEvent<ReplicatorEvolutionChamberComponent, ReplicatorEvolutionGrowMessage>(OnGrowMessage);
         SubscribeLocalEvent<ReplicatorEvolutionChamberComponent, ReplicatorModuleInstallDoAfterEvent>(OnInstallDoAfter);
+    }
+
+    private void OnModulesMapInit(Entity<ReplicatorModulesComponent> ent, ref MapInitEvent args)
+    {
+        if (_mobThreshold.TryGetThresholdForState(ent, MobState.Dead, out var deadAt))
+            UpdateDestruction(ent, deadAt.Value);
     }
 
     private void OnUiOpenAttempt(Entity<ReplicatorEvolutionChamberComponent> ent, ref ActivatableUIOpenAttemptEvent args)
@@ -150,14 +158,25 @@ public sealed partial class ReplicatorEvolutionChamberSystem : EntitySystem
             return;
 
         _mobThreshold.SetMobStateThreshold(ent, health, MobState.Dead);
+        UpdateDestruction(ent, health);
+    }
 
+    private void UpdateDestruction(Entity<ReplicatorModulesComponent> ent, FixedPoint2 health)
+    {
         if (!TryComp<DestructibleComponent>(ent, out var destructible))
             return;
 
         foreach (var threshold in destructible.Thresholds)
         {
-            if (threshold.Trigger is DamageTypeTrigger trigger && trigger.DamageType == HullDamageType)
-                trigger.Damage = health * ent.Comp.HullBreakMultiplier;
+            switch (threshold.Trigger)
+            {
+                case DamageTypeTrigger trigger when trigger.DamageType == HullDamageType:
+                    trigger.Damage = health * ent.Comp.HullBreakMultiplier;
+                    break;
+                case DamageTrigger trigger:
+                    trigger.Damage = health * ent.Comp.OverkillMultiplier;
+                    break;
+            }
         }
     }
 
