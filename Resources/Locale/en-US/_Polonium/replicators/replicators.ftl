@@ -61,6 +61,8 @@ alert-level-delta-colossus-announcement = A Colossal Replicator is loose aboard 
 ghost-role-information-replicator-colossus-name = Colossal Replicator
 ghost-role-information-replicator-colossus-desc = The hive's crowning work. Stride across the station, remake it for the hive and crush whoever stands in the way.
 
+replicator-construction-fail-reinforce-foreign = That is not a hive wall.
+replicator-construction-fail-reinforce-done = That wall is already reinforced.
 replicator-construction-fail-no-wall = There is no wall to take over there.
 replicator-construction-fail-not-hive-floor = The hive builds only on replicator floor.
 replicator-build-selected = Selected: { $structure }. Point at replicator floor with the replisteel in hand.
@@ -141,7 +143,7 @@ replicator-module-ram-3 = You grow a heavy arm: wide swings that tear through st
 replicator-module-toolkit-name = Toolkit
 replicator-module-toolkit-1 = You build and convert 20% faster.
 replicator-module-toolkit-2 = You build and convert 40% faster and grow an omnitool.
-replicator-module-toolkit-3 = You grow a welder, and converting the floor under you also takes the four tiles next to it.
+replicator-module-toolkit-3 = You grow a welder, converting the floor under you also takes the four tiles next to it, and you can reinforce the hive's walls.
 replicator-module-regeneration-name = Regeneration
 replicator-module-regeneration-1 = You mend yourself twice as fast.
 replicator-module-regeneration-2 = You mend yourself three times as fast.
