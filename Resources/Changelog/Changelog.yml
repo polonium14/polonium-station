@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: slarticodefast
-  changes:
-  - message: Fixed topicals.
-    type: Fix
-  id: 9559
-  time: '2026-03-01T14:41:29.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43087
 - author: AffleWaffle
   changes:
   - message: APCs take 2 seconds to build instead of instantly appearing.
@@ -4296,3 +4289,12 @@
   id: 10053
   time: '2026-10-17T11:58:27.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1111
+- author: pinkscreen i Nikita
+  changes:
+  - message: Dodano Mocnego Fulla.
+    type: Add
+  - message: Dodano bekanie.
+    type: Add
+  id: 10054
+  time: '2026-10-17T12:34:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1000
