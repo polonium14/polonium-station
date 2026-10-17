@@ -18,7 +18,10 @@ public sealed partial class XenoInfestationRule : StationEventSystem<XenoInfesta
         base.Started(uid, component, gameRule, args);
 
         if (!TryGetRandomStation(out var station))
+        {
+            EndSilently(uid, gameRule);
             return;
+        }
 
         var locations = new List<EntityCoordinates>();
         var query = EntityQueryEnumerator<VentCritterSpawnLocationComponent, TransformComponent>();
@@ -31,7 +34,7 @@ public sealed partial class XenoInfestationRule : StationEventSystem<XenoInfesta
         if (locations.Count == 0)
         {
             Log.Warning($"No vents to spawn xeno larvae for {ToPrettyString(uid)}");
-            ForceEndSelf(uid, gameRule);
+            EndSilently(uid, gameRule);
             return;
         }
 
@@ -43,5 +46,19 @@ public sealed partial class XenoInfestationRule : StationEventSystem<XenoInfesta
         }
 
         _adminLog.Add(LogType.EventStarted, LogImpact.High, $"Xeno infestation spawned {count} larvae at {coords}");
+    }
+
+    /// <summary>
+    /// Bez larw nie ma czego ogłaszać, więc kończymy bez komunikatu końcowego.
+    /// </summary>
+    private void EndSilently(EntityUid uid, GameRuleComponent gameRule)
+    {
+        if (TryComp<StationEventComponent>(uid, out var stationEvent))
+        {
+            stationEvent.EndAnnouncement = null;
+            stationEvent.EndAudio = null;
+        }
+
+        ForceEndSelf(uid, gameRule);
     }
 }

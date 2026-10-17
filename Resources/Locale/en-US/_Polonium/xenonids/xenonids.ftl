@@ -18,7 +18,7 @@ xeno-facehugger-die = { CAPITALIZE(THE($hugger)) } curls up into a ball!
 ## Embryo
 
 xeno-embryo-symptom-throat = Your throat feels sore.
-xeno-embryo-symptom-mucus = Mucous runs down the back of your throat.
+xeno-embryo-symptom-mucus = Mucus runs down the back of your throat.
 xeno-embryo-symptom-muscles = Your muscles ache.
 xeno-embryo-symptom-stomach = Your stomach hurts.
 xeno-embryo-symptom-tearing = You feel something tearing its way out of your stomach!
