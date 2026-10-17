@@ -7,6 +7,8 @@
   components:
   - type: Replicator
     stunRayProto: null
+  - type: NameIdentifier
+    group: ReplicatorColossus
   - type: ReplicatorColossus
     launchSound:
       path: /Audio/_Polonium/Effects/Replicators/colossus_init.ogg
@@ -137,7 +139,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      2360: Dead
+      1888: Dead
   - type: Damageable
     damageModifierSet: ReplicatorColossus
   - type: ExplosionResistance

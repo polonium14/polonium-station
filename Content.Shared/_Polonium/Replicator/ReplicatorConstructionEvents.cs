@@ -46,6 +46,27 @@ public sealed partial class ReplicatorConvertWallActionEvent : WorldTargetAction
     public EntProtoId? Effect;
 }
 
+public sealed partial class ReplicatorReinforceWallActionEvent : WorldTargetActionEvent
+{
+    [DataField]
+    public TimeSpan Delay = TimeSpan.FromSeconds(8);
+
+    [DataField]
+    public int Cost = 300;
+
+    /// <summary>
+    /// Only walls of this prototype can be reinforced.
+    /// </summary>
+    [DataField(required: true)]
+    public EntProtoId Wall;
+
+    [DataField(required: true)]
+    public EntProtoId ReinforcedWall;
+
+    [DataField]
+    public EntProtoId? Effect;
+}
+
 public sealed partial class ReplicatorBuildActionEvent : WorldTargetActionEvent
 {
     [DataField(required: true)]
@@ -99,6 +120,40 @@ public sealed partial class ReplicatorConvertFloorDoAfterEvent : DoAfterEvent
     {
         Location = location;
         Tile = tile;
+        Cost = cost;
+        Effect = effect;
+    }
+
+    public override DoAfterEvent Clone() => this;
+}
+
+[Serializable, NetSerializable]
+public sealed partial class ReplicatorReinforceDoAfterEvent : DoAfterEvent
+{
+    [DataField]
+    public NetCoordinates Location;
+
+    [DataField]
+    public NetEntity Wall;
+
+    [DataField]
+    public EntProtoId Replacement;
+
+    [DataField]
+    public int Cost;
+
+    [DataField]
+    public EntProtoId? Effect;
+
+    private ReplicatorReinforceDoAfterEvent()
+    {
+    }
+
+    public ReplicatorReinforceDoAfterEvent(NetCoordinates location, NetEntity wall, EntProtoId replacement, int cost, EntProtoId? effect)
+    {
+        Location = location;
+        Wall = wall;
+        Replacement = replacement;
         Cost = cost;
         Effect = effect;
     }

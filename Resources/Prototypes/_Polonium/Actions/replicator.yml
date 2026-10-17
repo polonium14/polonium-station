@@ -45,6 +45,32 @@
 
 - type: entity
   parent: BaseAction
+  id: ActionReplicatorReinforceWall
+  name: Reinforce wall
+  description: Nanites thicken a replicator wall you point at into a reinforced one. It costs three sheets from the nest's stock.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 1
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/replicator.rsi
+    layers:
+    - state: convert
+      map: ["enum.ActionVisuals.Icon"]
+  - type: TargetAction
+    range: 2
+    checkCanAccess: false
+    repeat: true
+  - type: WorldTargetAction
+    event: !type:ReplicatorReinforceWallActionEvent
+      wall: WallReplicator
+      reinforcedWall: WallReplicatorReinforced
+      cost: 300
+      delay: 8
+      effect: EffectReplicatorConvert
+
+- type: entity
+  parent: BaseAction
   id: ActionReplicatorBuildWall
   name: Build wall
   description: Raise a replicator wall on a free tile of replicator floor. Costs half a sheet from the nest's stock.

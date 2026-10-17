@@ -37,7 +37,7 @@
 
   Replikator, który stanie tuż obok gniazda, jest przez nie stopniowo naprawiany.
 
-  [color=#ffa500]Uwaga.[/color] Gniazdo da się zniszczyć. Wysypuje się z niego wtedy tylko część zapasu, a nowe gniazdo zaczyna od pierwszego poziomu. Dlatego rój pilnuje gniazda przed wszystkim innym.
+  [color=#ffa500]Uwaga.[/color] Gniazdo da się zniszczyć. Wysypuje się z niego wtedy tylko część zapasu, a nowe gniazdo zaczyna od pierwszego poziomu. Dlatego rój pilnuje gniazda przed wszystkim innym. Z każdym poziomem gniazdo jest trwalsze. Jeśli zginie cały rój, ale samo gniazdo przetrwa, po kilku minutach wydaje ono na świat nową królową, którą może objąć duch.
 
   ## Zdolności każdego replikatora
   Każdy replikator, niezależnie od klasy, od pierwszej chwili ma ten sam zestaw zdolności.
@@ -57,7 +57,7 @@
 
   [bold]Przekształć ścianę[/bold] zamienia wskazaną ścianę stacji w mocniejszą ścianę replikatorów, a [bold]Zbuduj ścianę[/bold] stawia nową na wolnym kafelku podłogi replikatorów.
 
-  [bold]Wyświetl holościanę[/bold] rozpina siatkę z twardego światła na kafelku, na którym replikator stoi. Siatka zatrzymuje powietrze, ale przepuszcza każdego, kto chce przejść, i po którymś czasie znika.
+  [bold]Wyświetl holościanę[/bold] rozpina siatkę z twardego światła na kafelku, na którym replikator stoi. Siatka zatrzymuje powietrze, ale przepuszcza każdego, kto chce przejść, i po siedmiu i pół minuty znika.
 
   <Box>
     <GuideEntityEmbed Entity="ReplicatorStunRay" Caption="promień ogłuszający"/>
@@ -87,7 +87,7 @@
   Rój nie rośnie bez końca. Liczba replikatorów, które może utrzymać, zależy od tego, ilu graczy jest na serwerze. Gdy rój osiągnie limit, fabrykator odmawia pracy i podaje, ile korpusów wolno teraz mieć.
 
   ## Klasy
-  Każdy nowy replikator ma korpus uniwersalny. W komorze ewolucji może się przebudować do jednej z pięciu klas. Przebudowa zmienia cały korpus i decyduje o tym, które ulepszenia replikator będzie mógł później hodować. [color=#ffff91]Klasę wybiera się raz i nie da się tego cofnąć.[/color]
+  Każdy nowy replikator ma korpus uniwersalny. W komorze ewolucji może się przebudować do jednej z pięciu klas. Przebudowa zmienia cały korpus i decyduje o tym, które ulepszenia replikator będzie mógł później hodować. [color=#ffff91]Klasę wybiera się raz i nie da się tego cofnąć.[/color] Każdy etap ulepszeń przyspiesza też wyważanie drzwi.
 
   Każda klasa ma dwie gałęzie ulepszeń, a każda gałąź trzy stadia. Pierwsze stadium kosztuje jeden arkusz z zapasu gniazda, drugie dwa, a trzecie cztery. Drugie stadium wymaga gniazda na drugim poziomie, a trzecie gniazda na trzecim. Korpus mieści pięć stadiów z sześciu, więc do końca da się rozwinąć tylko jedną gałąź, a druga zatrzyma się na drugim stadium.
 
@@ -134,7 +134,7 @@
   </Box>
   Budowniczy to robotnik roju. Szybciej od innych przejmuje podłogi i ściany, a przy tym nosi więcej replistali i sprawniej dowozi ją do gniazda.
 
-  Gałąź [bold]Zestaw narzędzi[/bold] przyspiesza budowę i przekształcanie o 20%, a potem o 40%. Na drugim stadium budowniczemu wyrasta omninarzędzie, a na trzecim spawarka. Trzecie stadium sprawia też, że przekształcenie podłogi obejmuje cztery sąsiednie kafelki.
+  Gałąź [bold]Zestaw narzędzi[/bold] przyspiesza budowę i przekształcanie o 20%, a potem o 40%. Na drugim stadium budowniczemu wyrasta omninarzędzie, a na trzecim spawarka. Trzecie stadium sprawia też, że przekształcenie podłogi obejmuje cztery sąsiednie kafelki, i daje zdolność [bold]Wzmocnij ścianę[/bold]: nanity pogrubiają ścianę replikatorów w ciągu ośmiu sekund do wzmocnionej, co kosztuje trzy arkusze z zapasu gniazda.
 
   Gałąź [bold]Ładownia[/bold] daje najpierw drugą rękę na replistal, a potem sprawia, że ciągnięte rzeczy prawie nie spowalniają budowniczego. Trzecie stadium daje zdolność Wyślij ładunek, która raz na minutę przenosi trzymaną replistal i części roju prosto do zapasu gniazda.
 
@@ -187,7 +187,7 @@
     <GuideEntityEmbed Entity="WeaponReplicatorColossusLaser" Caption="minigun śmiercionośny"/>
     <GuideEntityEmbed Entity="WeaponReplicatorColossusRocketLauncher" Caption="wyrzutnia rakiet"/>
   </Box>
-  Kolos ma trzy bronie i przełącza się między nimi, zmieniając aktywną rękę. Minigun w trybie obezwładniającym wypluwa bardzo szybką serię pocisków, które tylko odbierają siły. W trybie śmiercionośnym strzela wolniej, ale jego pociski przepalają ciało i ściany. Oba tryby korzystają ze wspólnego zasobnika, który sam się ładuje. Wyrzutnia mieści trzy rakiety, a nową kolos składa sobie sam co 22 sekundy.
+  Kolos ma trzy bronie i przełącza się między nimi, zmieniając aktywną rękę. Minigun w trybie obezwładniającym wypluwa bardzo szybką serię pocisków, które tylko odbierają siły. W trybie śmiercionośnym strzela wolniej, ale jego pociski przepalają ciało i ściany. Oba tryby korzystają ze wspólnego zasobnika, który sam się ładuje. Wyrzutnia mieści trzy rakiety, a nową kolos składa sobie sam co 22 sekundy. Prawy przycisk myszy uruchamia osobny, szeroki zamach kolosa, który kruszy ściany, drzwi i sprzęt, ale nie rani ludzi.
 
   ### Zdolności kolosa
   <Box>

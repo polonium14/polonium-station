@@ -141,6 +141,7 @@
     buildTimeMultiplier: 0.6
     floorSpread: true
     items: [ WelderExperimentalUnremoveable ]
+    actions: [ ActionReplicatorReinforceWall ]
 
 - type: replicatorModule
   id: Regeneration

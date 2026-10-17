@@ -100,13 +100,13 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      125: Dead # POLONIUM: 75, classes raise it per form
+      106: Dead # POLONIUM: 75, classes set it per form
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTypeTrigger
         damageType: Blunt
-        damage: 162.5 # POLONIUM: 100
+        damage: 137.8 # POLONIUM: 100
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]

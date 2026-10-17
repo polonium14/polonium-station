@@ -10,6 +10,7 @@ using Content.Shared.Stunnable;
 using Content.Shared.Teleportation.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Impstation.Replicator;
@@ -165,26 +166,41 @@ public abstract partial class SharedReplicatorSystem
     public bool TryTeleportAway(Entity<ReplicatorComponent> ent, EntityUid target)
     {
         var origin = Transform(ent).Coordinates;
-        var min = ent.Comp.TeleportPreyRadiusMin;
-        var max = ent.Comp.TeleportPreyRadiusMax;
+        var scale = GetTeleportScale(ent);
+        var clearance = ent.Comp.TeleportPreyNestClearance * scale;
+        var maxRange = ent.Comp.TeleportPreyMaxRange * scale;
+        var step = ent.Comp.TeleportPreyRangeStep * scale;
+        var min = ent.Comp.TeleportPreyRadiusMin * scale;
+        var max = MathF.Min(ent.Comp.TeleportPreyRadiusMax * scale, maxRange);
 
         while (true)
         {
-            if (_randomGridTeleport.TryTeleportEntity(target, origin, min, max, filter: coords => FarFromNests(ent, coords)))
+            if (_randomGridTeleport.TryTeleportEntity(target, origin, min, max, filter: coords => FarFromNests(coords, clearance)))
                 return true;
 
-            if (max >= ent.Comp.TeleportPreyMaxRange || ent.Comp.TeleportPreyRangeStep <= 0)
+            if (max >= maxRange || step <= 0)
                 return false;
 
             min = max;
-            max = MathF.Min(max + ent.Comp.TeleportPreyRangeStep, ent.Comp.TeleportPreyMaxRange);
+            max = MathF.Min(max + step, maxRange);
         }
     }
 
-    private bool FarFromNests(Entity<ReplicatorComponent> ent, EntityCoordinates coords)
+    private float GetTeleportScale(Entity<ReplicatorComponent> ent)
+    {
+        if (ent.Comp.TeleportPreyFullGridSize <= 0
+            || Transform(ent).GridUid is not { } grid
+            || !TryComp<MapGridComponent>(grid, out var gridComp))
+            return 1f;
+
+        var bounds = gridComp.LocalAABB;
+        return Math.Clamp(MathF.Max(bounds.Width, bounds.Height) / ent.Comp.TeleportPreyFullGridSize, ent.Comp.TeleportPreyMinScale, 1f);
+    }
+
+    private bool FarFromNests(EntityCoordinates coords, float clearance)
     {
         _nearbyNests.Clear();
-        _lookup.GetEntitiesInRange(_transform.ToMapCoordinates(coords), ent.Comp.TeleportPreyNestClearance, _nearbyNests);
+        _lookup.GetEntitiesInRange(_transform.ToMapCoordinates(coords), clearance, _nearbyNests);
         return _nearbyNests.Count == 0;
     }
 }

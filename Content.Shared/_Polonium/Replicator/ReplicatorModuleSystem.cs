@@ -3,6 +3,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Prying.Components;
 using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Weapons.Melee.Events;
@@ -29,6 +30,7 @@ public sealed partial class ReplicatorModuleSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<ReplicatorModulesComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshSpeed);
+        SubscribeLocalEvent<ReplicatorModulesComponent, GetPryTimeModifierEvent>(OnGetPryTime);
         SubscribeLocalEvent<ReplicatorModulesComponent, DamageModifyEvent>(OnDamageModify);
         SubscribeLocalEvent<ReplicatorModulesComponent, GetMeleeDamageEvent>(OnGetMeleeDamage);
         SubscribeLocalEvent<ReplicatorModulesComponent, MeleeAttackEvent>(OnMeleeAttack);
@@ -155,6 +157,11 @@ public sealed partial class ReplicatorModuleSystem : EntitySystem
         }
 
         return result;
+    }
+
+    private void OnGetPryTime(Entity<ReplicatorModulesComponent> ent, ref GetPryTimeModifierEvent args)
+    {
+        args.PryTimeModifier *= MathF.Pow(ent.Comp.PryTimePerStage, GetTotalStages(ent.Comp));
     }
 
     private void OnRefreshSpeed(Entity<ReplicatorModulesComponent> ent, ref RefreshMovementSpeedModifiersEvent args)

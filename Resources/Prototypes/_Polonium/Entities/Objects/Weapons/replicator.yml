@@ -161,19 +161,16 @@
     resetOnHandSelected: false
     soundHit:
       collection: MetalThud
-    angle: 60
+    angle: 120
     range: 3
     attackRate: 0.8
-    animation: WeaponArcSmash
+    wideAnimation: WeaponArcReplicatorColossusSlam
     wideAnimationRotation: 0
     damage:
       types:
-        Blunt: 25
-        Structural: 60
+        Structural: 90
   - type: AltFireMelee
-    attackType: Light
-  - type: StaminaDamageOnHit
-    damage: 10
+    attackType: Heavy
 
 - type: entity
   abstract: true
@@ -232,7 +229,7 @@
   - type: Sprite
     state: laser
   - type: Gun
-    fireRate: 5.6
+    fireRate: 4.76
     soundGunshot:
       path: /Audio/_Polonium/Weapons/Guns/colossus_minigun_lethal.ogg
       params:
@@ -409,6 +406,19 @@
       shader: unshaded
   - type: TimedDespawn
     lifetime: 0.359
+
+- type: entity
+  parent: WeaponArcReplicatorBase
+  id: WeaponArcReplicatorColossusSlam
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_colossus_slam.rsi # this looks bad asf
+    layers:
+    - state: slam
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.529
 
 - type: entity
   parent: WeaponArcReplicatorBase

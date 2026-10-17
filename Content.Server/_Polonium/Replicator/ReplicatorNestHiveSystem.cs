@@ -1,9 +1,12 @@
+using Content.Server.Destructible;
 using Content.Server.Materials;
 using Content.Shared._Impstation.Replicator;
+using Content.Shared._Impstation.SpawnedFromTracker;
 using Content.Shared._Polonium.Lathe;
 using Content.Shared._Polonium.Replicator;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Destructible;
+using Content.Shared.Destructible.Thresholds.Triggers;
 using Content.Shared.Examine;
 using Content.Shared.Lathe;
 using Content.Shared.Mobs.Systems;
@@ -54,6 +57,12 @@ public sealed partial class ReplicatorNestHiveSystem : EntitySystem
         var query = EntityQueryEnumerator<ReplicatorHiveComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var hive, out var xform))
         {
+            if (now >= hive.NextQueenCheck)
+            {
+                hive.NextQueenCheck = now + hive.QueenCheckInterval;
+                UpdateQueenRespawn((uid, hive), now);
+            }
+
             if (now < hive.NextHeal)
                 continue;
 
@@ -73,10 +82,59 @@ public sealed partial class ReplicatorNestHiveSystem : EntitySystem
         }
     }
 
+    private void UpdateQueenRespawn(Entity<ReplicatorHiveComponent> ent, TimeSpan now)
+    {
+        if (!TryComp<ReplicatorNestComponent>(ent, out var nest))
+            return;
+
+        if (!IsAbandoned(ent.Owner, nest))
+        {
+            ent.Comp.QueenDueAt = null;
+            return;
+        }
+
+        ent.Comp.QueenDueAt ??= now + ent.Comp.QueenRespawnDelay;
+        if (now < ent.Comp.QueenDueAt)
+            return;
+
+        ent.Comp.QueenDueAt = null;
+
+        var spawner = Spawn(ent.Comp.QueenSpawner, Transform(ent).Coordinates);
+        EnsureComp<SpawnedFromTrackerComponent>(spawner).SpawnedFrom = ent;
+        nest.UnclaimedSpawners.Add(spawner);
+    }
+
+    private bool IsAbandoned(EntityUid nestUid, ReplicatorNestComponent nest)
+    {
+        foreach (var spawner in nest.UnclaimedSpawners)
+        {
+            if (!TerminatingOrDeleted(spawner))
+                return false;
+        }
+
+        var query = EntityQueryEnumerator<ReplicatorComponent>();
+        while (query.MoveNext(out var uid, out var replicator))
+        {
+            if (replicator.MyNest == nestUid && !TerminatingOrDeleted(uid) && !_mobState.IsDead(uid))
+                return false;
+        }
+
+        return true;
+    }
+
     private void OnLevelUp(Entity<ReplicatorHiveComponent> ent, ref ReplicatorNestLevelUpEvent args)
     {
         if (!TryComp<ReplicatorNestComponent>(ent, out var nest))
             return;
+
+        if (args.Level <= nest.EndgameLevel && TryComp<DestructibleComponent>(ent, out var destructible))
+        {
+            foreach (var threshold in destructible.Thresholds)
+            {
+                if (threshold.Trigger is DamageTrigger trigger)
+                    trigger.Damage *= ent.Comp.HealthGrowth;
+            }
+        }
 
         var unlocked = new List<string>();
         foreach (var structure in _prototype.EnumeratePrototypes<ReplicatorStructurePrototype>())
