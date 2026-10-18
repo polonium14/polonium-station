@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: UpAndLeaves
-  changes:
-  - message: Added storage:query and inventory:query commands
-    type: Add
-  id: 9563
-  time: '2026-03-03T18:09:44.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40813
 - author: ProPeperos
   changes:
   - message: Hyper Autolathe now needs 4 manipulators instead of 3
@@ -4323,3 +4316,21 @@
   id: 10057
   time: '2026-10-17T23:55:32.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1113
+- author: Saver310
+  changes:
+  - message: Dodano "Drunkards' Spree Redux"
+    type: Add
+  - message: "Usuni\u0119to \"Drunkards' Spree\""
+    type: Remove
+  - message: "Zast\u0105piono t\u0142o lobby \u201EDrunkards' Spree\u201D zremasterowan\u0105\
+      \ wersj\u0105 \u201EDrunkards' Spree Redux\u201D."
+    type: Tweak
+  - message: "Usuni\u0119to oryginaln\u0105 grafik\u0119 \u201EDrunkards' Spree\u201D\
+      ."
+    type: Remove
+  - message: "Dodano grafiki lobby \u201EPewna \u015Amier\u0107\u201D i \u201EObiad\
+      \ Jerzego\u201D."
+    type: Add
+  id: 10058
+  time: '2026-10-18T09:04:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1116
