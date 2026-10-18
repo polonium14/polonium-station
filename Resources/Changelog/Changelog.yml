@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ProPeperos
-  changes:
-  - message: Hyper Autolathe now needs 4 manipulators instead of 3
-    type: Tweak
-  id: 9564
-  time: '2026-03-04T05:08:50.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43109
 - author: neomoth
   changes:
   - message: Multi-directional eldritch horror Tippy is no more.
@@ -4334,3 +4327,18 @@
   id: 10058
   time: '2026-10-18T09:04:02.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1116
+- author: oxtailime
+  changes:
+  - message: "Naprawiono dzia\u0142anie \u017Cywicy pod\u0142ogowej Xeno. Zmieniono\
+      \ progi obra\u017Ce\u0144 \u017Cywicy i efekty spowolnienia oraz przyspieszenia\
+      \ dla Xeno."
+    type: Fix
+  - message: "Zmieniono progi obra\u017Ce\u0144 dla kilku typ\xF3w Xeno, aby odr\xF3\
+      \u017Cni\u0107 wytrzyma\u0142o\u015B\u0107 drona od wojownika."
+    type: Tweak
+  - message: "Obni\u017Cono pr\xF3g zniszczenia wie\u017Cyczki Xeno do 50 obra\u017C\
+      e\u0144."
+    type: Tweak
+  id: 10059
+  time: '2026-10-18T10:29:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1004
