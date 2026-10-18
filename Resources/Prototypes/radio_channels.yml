@@ -8,7 +8,7 @@
 - type: radioChannel
   id: CentCom
   name: chat-radio-centcom
-  keycode: 'y'
+  keycode: 'c'
   frequency: 133.7
   color: "#2681a5"
   longRange: true
@@ -16,14 +16,14 @@
 - type: radioChannel
   id: Command
   name: chat-radio-command
-  keycode: 'c'
+  keycode: 'd'
   frequency: 135.3
   color: "#fcdf03"
 
 - type: radioChannel
   id: Engineering
   name: chat-radio-engineering
-  keycode: 'e'
+  keycode: 'i'
   frequency: 135.7
   color: "#ff733c"
 
@@ -44,21 +44,21 @@
 - type: radioChannel
   id: Security
   name: chat-radio-security
-  keycode: 's'
+  keycode: 'o'
   frequency: 135.9
   color: "#ff4242"
 
 - type: radioChannel
   id: Service
   name: chat-radio-service
-  keycode: 'v'
+  keycode: 's'
   frequency: 134.9
   color: "#539c00"
 
 - type: radioChannel
   id: Supply
   name: chat-radio-supply
-  keycode: 'u'
+  keycode: 'l'
   frequency: 134.7
   color: "#b48b57"
 

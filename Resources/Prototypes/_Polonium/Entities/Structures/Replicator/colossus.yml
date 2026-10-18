@@ -1,0 +1,395 @@
+- type: entity
+  parent: BaseStructure
+  id: ReplicatorColossusFoundry
+  name: colossus foundry
+  description: A cradle of nanite scaffolding. Piece by piece, the hive assembles something enormous inside it.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Replicator/colossus_foundry.rsi
+    drawdepth: Mobs
+    noRot: true
+    offset: 0,0.5
+    layers:
+    - state: stage0
+      map: [ "enum.ReplicatorColossusFoundryVisualLayers.Stage" ]
+    - state: working
+      map: [ "enum.ReplicatorColossusFoundryVisualLayers.Status" ]
+      shader: unshaded
+      visible: false
+  - type: Appearance
+  - type: ReplicatorColossusFoundry
+    parts:
+    - ReplicatorColossusPartHull
+    - ReplicatorColossusPartDrive
+    - ReplicatorColossusPartLeg
+    - ReplicatorColossusPartLeg
+    - ReplicatorColossusPartLeg
+    - ReplicatorColossusPartLeg
+    - ReplicatorColossusPartLeg
+    - ReplicatorColossusPartLeg
+    - ReplicatorColossusPartHead
+    - ReplicatorColossusPartFieldGenerator
+    - ReplicatorColossusPartMinigun
+    - ReplicatorColossusPartPhotonLaser
+    - ReplicatorColossusPartTentacles
+    - ReplicatorColossusPartCore
+    insertSound:
+      path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+    initializeSound:
+      path: /Audio/_Polonium/Effects/Replicators/colossus_pulse_charge.ogg
+  - type: Lathe
+    staticPacks:
+    - ReplicatorColossusParts
+  - type: MaterialStorage
+    materialWhiteList:
+    - Replisteel
+    ignoreColor: true
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+    requiresComplex: false
+    requireActiveHand: false
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.45,-1.45,1.45,1.45"
+        density: 1000
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: InteractionOutline
+  - type: PointLight
+    radius: 2.5
+    energy: 1.2
+    color: "#d7300a"
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetReplisteel1:
+            min: 2
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Structure
+    - ReplicatorStructure
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  id: ReplicatorColossusWreck
+  name: colossus wreck
+  description: The burnt-out shell of a Colossal Replicator. A welder could cut it open for its replisteel and its core.
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Polonium/Mobs/Replicator/colossus.rsi
+    state: dead
+    drawdepth: Objects
+    noRot: true
+    offset: 0,1
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.3
+        density: 1000
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Construction
+    graph: ReplicatorColossusWreck
+    node: wreck
+  - type: ReplicatorColossusWreck
+  - type: Tag
+    tags:
+    - Structure
+  - type: StaticPrice
+    price: 500
+
+- type: constructionGraph
+  id: ReplicatorColossusWreck
+  start: start
+  graph:
+  - node: start
+  - node: wreck
+    entity: ReplicatorColossusWreck
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetReplisteel1
+        amount: 10
+      - !type:SpawnPrototype
+        prototype: ReplicatorColossusCoreSalvage
+        amount: 1
+      - !type:DeleteEntity {}
+      steps:
+      - tool: Welding
+        doAfter: 30
+
+- type: entity
+  parent: BaseStructure
+  id: ReplicatorColossusBeacon
+  name: assimilation beacon
+  description: Two talons and a spire of nanites cradle a dark sphere that swells by the minute. When it is done calling, it latches onto its colossus, and the swarm answers everywhere at once.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Replicator/beacon.rsi
+    drawdepth: Mobs
+    noRot: true
+    offset: 0,1.84375
+    layers:
+    - state: base
+    - state: orb_0
+      map: ["enum.ReplicatorColossusBeaconVisualLayers.Orb"]
+      shader: unshaded
+    - state: claws
+      map: ["enum.ReplicatorColossusBeaconVisualLayers.Claws"]
+    - state: lights
+      map: ["enum.ReplicatorColossusBeaconVisualLayers.Lights"]
+      shader: unshaded
+  - type: Appearance
+  - type: ReplicatorColossusBeacon
+    warnings: [ 300, 60 ]
+    wave: ReplicatorAssimilationWave
+    linkBeam:
+      sprite: _Polonium/Effects/replicator_link.rsi
+      state: beam
+    linkBeamOffset: 0,1.15625
+    releaseEffect: EffectReplicatorColossusAssimilationCharge
+    releaseEffectOffset: 0,1.55
+    releaseSound:
+      path: /Audio/_Polonium/Effects/Replicators/assimilation_charge.ogg
+    deploySound:
+      path: /Audio/_Polonium/Effects/Replicators/beacon_deploy.ogg
+    stageSound:
+      path: /Audio/_Polonium/Effects/Replicators/beacon_stage.ogg
+    readySound:
+      path: /Audio/_Polonium/Effects/Replicators/beacon_ready.ogg
+    readyAmbience:
+      path: /Audio/_Polonium/Effects/Replicators/beacon_hum_ready.ogg
+    music:
+      path: /Audio/_Polonium/Music/boss_fight_one.ogg
+      params:
+        volume: -3
+    musicLead: 232
+  - type: AmbientSound
+    volume: -4
+    range: 8
+    sound:
+      path: /Audio/_Polonium/Effects/Replicators/beacon_hum.ogg
+  - type: InteractionOutline
+  - type: PointLight
+    radius: 4
+    energy: 2
+    color: "#d70aa0"
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Polonium/Effects/Replicators/beacon_destroyed.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetReplisteel1:
+            min: 2
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Structure
+    - ReplicatorStructure
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  id: ReplicatorAssimilationWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ReplicatorAssimilationWave
+    wall: WallReplicator
+    reinforcedWall: WallReplicatorReinforced
+    tile: FloorReplicator
+    convertEffect: EffectReplicatorConvert
+    convertSound:
+      path: /Audio/_Polonium/Effects/Replicators/convert.ogg
+      params:
+        volume: -6
+        variation: 0.1
+    replicator: MobReplicator
+    remains: SheetReplisteel1
+    sound:
+      path: /Audio/_Polonium/Effects/Replicators/assimilation_wave.ogg
+
+- type: entity
+  parent: EffectReplicatorBase
+  id: EffectReplicatorColossusBase
+  abstract: true
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_colossus.rsi
+    snapCardinals: false
+    drawdepth: Effects
+
+- type: entity
+  parent: EffectReplicatorColossusBase
+  id: EffectReplicatorColossusShockwave
+  components:
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_colossus_burst.rsi
+    layers:
+    - state: shockwave
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.9
+  - type: PointLight
+    radius: 8
+    energy: 4
+    color: "#d7300a"
+
+- type: entity
+  id: EffectReplicatorColossusLaunchLight
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    radius: 7
+    energy: 3
+    color: "#d0105a"
+    offset: 0,1.6
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: launch
+      maxDuration: 3
+      startValue: 0.5
+      endValue: 7
+      enabled: true
+    - !type:RandomizeBehaviour
+      id: launch
+      minDuration: 0.15
+      maxDuration: 0.35
+      startValue: 2.2
+      endValue: 3.4
+      property: Energy
+      isLooped: true
+      enabled: true
+  - type: TimedDespawn
+    lifetime: 16.5
+
+- type: entity
+  parent: EffectReplicatorColossusBase
+  id: EffectReplicatorColossusPulseCharge
+  components:
+  - type: Sprite
+    offset: 0,1.8
+    layers:
+    - state: pulse_charge
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 3
+  - type: PointLight
+    radius: 4
+    energy: 2
+    color: "#8800a3"
+
+- type: entity
+  parent: EffectReplicatorColossusBase
+  id: EffectReplicatorColossusPulse
+  components:
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_colossus_burst.rsi
+    layers:
+    - state: pulse
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.7
+
+- type: entity
+  parent: EffectReplicatorColossusBase
+  id: EffectReplicatorColossusArrival
+  components:
+  - type: Sprite
+    layers:
+    - state: arrival
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.6
+
+- type: entity
+  parent: EffectReplicatorColossusBase
+  id: EffectReplicatorColossusSweep
+  components:
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_colossus_sweep.rsi
+    noRot: false
+    layers:
+    - state: sweep
+      shader: unshaded
+  - type: ReplicatorColossusSweepEffect
+  - type: TimedDespawn
+    lifetime: 1.6
+  - type: PointLight
+    radius: 6.5
+    energy: 1.5
+    color: "#d7300a"
+
+- type: entity
+  parent: EffectReplicatorColossusBase
+  id: EffectReplicatorColossusAssimilationCharge
+  components:
+  - type: Sprite
+    offset: 0,1.8
+    scale: 1.8, 1.8
+    layers:
+    - state: pulse_charge
+      shader: unshaded
+  - type: PointLight
+    radius: 6
+    energy: 3
+    color: "#ffb030"
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: charge
+      maxDuration: 30
+      startValue: 2
+      endValue: 12
+      enabled: true

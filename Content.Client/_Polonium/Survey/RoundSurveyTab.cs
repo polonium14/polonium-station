@@ -14,7 +14,7 @@ public sealed class RoundSurveyTab : BoxContainer
     private readonly int _roundId;
     private readonly TimeSpan _closeDelay;
     private readonly RichTextLabel _status = new();
-    private readonly List<Button> _answers = new();
+    private readonly List<BaseButton> _answers = new();
     private string _statusText = string.Empty;
 
     public RoundSurveyTab(RoundSurveyOfferEvent offer, IEnumerable<RoundSurveyQuestionPrototype> questions, RoundSurveySystem survey)
@@ -38,8 +38,19 @@ public sealed class RoundSurveyTab : BoxContainer
         _status.Margin = new Thickness(0, 8, 0, 0);
         list.AddChild(_status);
 
+        var proto = IoCManager.Resolve<IPrototypeManager>();
+
         foreach (var question in questions)
         {
+            var followUps = new List<RoundSurveyFollowUpBox>();
+            foreach (var followUp in question.FollowUps)
+            {
+                var box = new RoundSurveyFollowUpBox(followUp, proto);
+                box.Changed += () => _survey.SetReasons(_roundId, question.ID, box.Picked);
+                followUps.Add(box);
+                _answers.AddRange(box.Options);
+            }
+
             list.AddChild(new Label
             {
                 Text = Loc.GetString(question.Text),
@@ -70,7 +81,12 @@ public sealed class RoundSurveyTab : BoxContainer
 
                 button.AddStyleClass(low ? StyleClass.ButtonOpenRight : high ? StyleClass.ButtonOpenLeft : StyleClass.ButtonOpenBoth);
 
-                button.OnPressed += _ => _survey.Answer(_roundId, question.ID, answer);
+                button.OnPressed += _ =>
+                {
+                    _survey.Answer(_roundId, question.ID, answer);
+                    ShowFollowUp(followUps, question.GetFollowUp(answer));
+                };
+
                 buttons.AddChild(button);
                 _answers.Add(button);
             }
@@ -79,6 +95,7 @@ public sealed class RoundSurveyTab : BoxContainer
             {
                 buttons.HorizontalAlignment = HAlignment.Left;
                 list.AddChild(buttons);
+                AddFollowUps(list, followUps);
                 continue;
             }
 
@@ -115,9 +132,10 @@ public sealed class RoundSurveyTab : BoxContainer
             scale.AddChild(buttons);
             scale.AddChild(ends);
             list.AddChild(scale);
+            AddFollowUps(list, followUps);
         }
 
-        var comment = new RoundSurveyCommentBox(survey, IoCManager.Resolve<IPrototypeManager>(), _roundId);
+        var comment = new RoundSurveyCommentBox(survey, proto, _roundId);
         if (comment.Visible)
         {
             list.AddChild(new Label
@@ -140,6 +158,27 @@ public sealed class RoundSurveyTab : BoxContainer
         AddChild(scroll);
 
         UpdateStatus();
+    }
+
+    private static void AddFollowUps(BoxContainer list, List<RoundSurveyFollowUpBox> followUps)
+    {
+        foreach (var box in followUps)
+        {
+            list.AddChild(box);
+        }
+    }
+
+    // The server drops the reasons too once the answer calls for another follow-up.
+    private static void ShowFollowUp(List<RoundSurveyFollowUpBox> followUps, RoundSurveyFollowUp? shown)
+    {
+        foreach (var box in followUps)
+        {
+            if (box.Visible == (box.FollowUp == shown))
+                continue;
+
+            box.Visible = box.FollowUp == shown;
+            box.Clear();
+        }
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

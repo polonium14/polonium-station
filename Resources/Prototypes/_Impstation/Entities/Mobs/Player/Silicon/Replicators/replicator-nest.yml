@@ -20,6 +20,10 @@
       - Cartridge
       - CartridgeMagnum
       - Trash
+    fallingSound: # POLONIUM
+      path: /Audio/Effects/falling.ogg
+      params:
+        maxDistance: 10
   - type: StepTrigger
     requiredTriggeredSpeed: 0
     intersectRatio: 0.4
@@ -61,13 +65,15 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 300 # POLONIUM: 100, grows with the nest level (see ReplicatorHive healthGrowth)
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/Weapons/Guns/Gunshots/rocket_launcher.ogg # TODO: Probably replace this.
+      params: # POLONIUM
+        maxDistance: 10
   - type: RequireProjectileTarget
   - type: SolutionContainerManager
     solutions:
@@ -87,21 +93,30 @@
         Piercing: -1
   - type: AntiRottingContainer
   # POLONIUM
+  - type: PointLight
+    netsync: false
+    enabled: false
+    radius: 3
+    energy: 0.8
+    color: "#c45cff"
+  - type: ReplicatorNestGlow
+    color: "#c45cff"
+    levels:
+    - level: 2
+      radius: 3
+      energy: 0.8
+    - level: 3
+      radius: 6
+      energy: 1.6
   - type: ReplicatorHive
-    rebuilds:
-    - tier: 1
-      name: replicator-rebuild-tier1
-      icon: { sprite: _Impstation/Mobs/Replicator/replicator.rsi, state: icon }
-    - tier: 2
-      cost: 400
-      minNestLevel: 2
-      name: replicator-rebuild-tier2
-      icon: /Textures/_Impstation/Interface/Actions/replicator_level2.png
-    - tier: 3
-      cost: 800
-      minNestLevel: 3
-      name: replicator-rebuild-tier3
-      icon: /Textures/_Impstation/Interface/Actions/replicator_level3.png
+    withdrawReserve: 200
+    heal:
+      types:
+        Blunt: -2
+        Slash: -2
+        Piercing: -2
+        Heat: -2
+        Shock: -2
   - type: MaterialStorage
     materialWhiteList:
     - Replisteel

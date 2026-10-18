@@ -1,0 +1,63 @@
+- type: entity
+  abstract: true
+  id: BaseGuidebookReplicator
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Replicator/classes.rsi
+    noRot: true
+
+- type: entity
+  parent: BaseGuidebookReplicator
+  id: GuidebookReplicatorFighter
+  name: fighter replicator
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: fighter3
+
+- type: entity
+  parent: BaseGuidebookReplicator
+  id: GuidebookReplicatorDefender
+  name: defender replicator
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Replicator/defender.rsi
+    state: defender3
+
+- type: entity
+  parent: BaseGuidebookReplicator
+  id: GuidebookReplicatorScout
+  name: scout replicator
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: scout3
+
+- type: entity
+  parent: BaseGuidebookReplicator
+  id: GuidebookReplicatorBuilder
+  name: builder replicator
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: builder3
+
+- type: entity
+  parent: BaseGuidebookReplicator
+  id: GuidebookReplicatorHunter
+  name: hunter replicator
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: hunter3
+
+- type: entity
+  parent: BaseGuidebookReplicator
+  id: GuidebookReplicatorColossus
+  name: Colossal Replicator
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Replicator/colossus.rsi
+    state: idle

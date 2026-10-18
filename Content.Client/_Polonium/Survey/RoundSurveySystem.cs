@@ -87,6 +87,12 @@ public sealed partial class RoundSurveySystem : EntitySystem
             RaiseNetworkEvent(new RoundSurveyAnswerEvent(roundId, question, value));
     }
 
+    public void SetReasons(int roundId, ProtoId<RoundSurveyQuestionPrototype> question, List<ProtoId<RoundSurveyReasonPrototype>> reasons)
+    {
+        if (IsOpen(roundId))
+            RaiseNetworkEvent(new RoundSurveyReasonsEvent(roundId, question, reasons));
+    }
+
     private void OnCommentResult(RoundSurveyCommentResultEvent ev)
     {
         CommentResult?.Invoke(ev.Accepted);

@@ -1,0 +1,13 @@
+- type: entity
+  parent: [ ClothingOuterBaseMedium, AllowSuitStorageClothing ]
+  id: ClothingOuterArmorNaniteWard
+  name: nanite ward vest
+  description: A vest laced with the dead lattice of a colossus core. Replicators cannot get a lock on whoever wears it, and their blows and stun rays barely get through it.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/OuterClothing/Armor/nanite_ward.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/OuterClothing/Armor/nanite_ward.rsi
+  - type: ReplicatorWard
+    damageCoefficient: 0.2
+    staminaCoefficient: 0.3

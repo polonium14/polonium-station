@@ -1,5 +1,7 @@
-# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Damian Zielińsi <zientasek.pl@gmail.com>
 # SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -79,6 +81,11 @@
   desc: "Mały statek. 1 lider, 2 bojowników."
 
 - type: ertCall
+  id: ERT-Small-Med-Sec
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Med-Sec.yml"
+  desc: "Niewielki statek ze zbrojownią i szpitalem. 1 lider, 2 bojowników, 3 medyków."
+
+- type: ertCall
   id: ERT-Small-Jani
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Jani.yml"
   desc: "Mały statek. 3 woźnych."
@@ -107,3 +114,8 @@
   id: ERT-Large-Eng
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTkonstrukcyjnyMPKS.yml"
   desc: "Duży statek inżynieryjny z magazynem materiałów i komponentów, wytwarzarkami, oraz kanistrami powietrza i wszelkimi generatorami prądu zdolny naprawić każdą usterkę, 1 lider 5 inżynierów."
+
+- type: ertCall
+  id: ERT-Large-Med-Sec
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Large-Med-Sec.yml"
+  desc: "Duży statek ze szpitalem i celami więziennymi. 1 lider 4 bojowników, 5 medyków."

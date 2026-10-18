@@ -1,0 +1,70 @@
+# Polskie napoje z NSV13 (Aquila, aq33/NSV13#29).
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkMocnyFullCan
+  name: mocny full
+  description: The best in the whole cosmos.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Beer
+        Quantity: 30
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Drinks/mocnyfull.rsi
+  - type: Item
+    sprite: _Polonium/Objects/Cosumable/Drinks/mocnyfull.rsi
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkHelenkaCan
+  name: Helena apple-strawberry
+  description: Tastes like the allotment garden.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: JuiceApple
+        Quantity: 30
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Drinks/helenka.rsi
+  - type: Item
+    sprite: _Polonium/Objects/Cosumable/Drinks/helenka.rsi
+
+- type: entity
+  parent: DrinkBottleGlassSmallBaseFull
+  id: DrinkTymbarkBottle
+  name: Tymbark apple-mint
+  description: Tastes like summer holidays.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: JuiceApple
+        Quantity: 50
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Drinks/tymbark.rsi
+  - type: Item
+    sprite: _Polonium/Objects/Cosumable/Drinks/tymbark.rsi
+
+- type: entity
+  parent: DrinkBottleGlassBaseFull
+  id: DrinkAmarenaBottleFull
+  name: Amarena bottle
+  description: Cheery cherry, pour the Amarena in.
+  components:
+  - type: Solution
+    solution:
+      maxVol: 70
+      reagents:
+      - ReagentId: Amarena
+        Quantity: 70
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Drinks/amarena.rsi
+  - type: Item
+    sprite: _Polonium/Objects/Cosumable/Drinks/amarena.rsi
+  - type: Tag
+    tags:
+    - Wine
+    - DrinkBottle

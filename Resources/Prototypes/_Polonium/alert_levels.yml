@@ -1,0 +1,7 @@
+- type: alertLevel
+  parent: BaseDelta
+  id: DeltaColossus
+  announcement: alert-level-delta-colossus-announcement
+  sound: /Audio/_Polonium/Announcements/AlertLevels/delta.ogg
+  color: DarkRed
+  emergencyLightColor: "#d7300a"

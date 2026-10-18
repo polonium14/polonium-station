@@ -1,0 +1,33 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Made for Polonium Station by nikitosych",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "build_foundry",
+            "directions": 1
+        },
+        {
+            "name": "pulse",
+            "directions": 1
+        },
+        {
+            "name": "sweep",
+            "directions": 1
+        },
+        {
+            "name": "initialize",
+            "directions": 1
+        },
+        {
+            "name": "beacon"
+        },
+        {
+            "name": "assimilate"
+        }
+    ]
+}

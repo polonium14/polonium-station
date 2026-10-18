@@ -1,0 +1,90 @@
+# Brakujące wzory polskiej bielizny z NSV13 (Aquila, aq33/NSV13#304, sprite'y: Reprimann).
+# Pozostałe wzory z Aquili są już w jumpsuits.yml i shorts.yml.
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishWhite
+  name: white t-shirt
+  description: A plain white t-shirt.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-biala.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-biala.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishILovePL
+  name: I Love PL t-shirt
+  description: A black t-shirt declaring love for Poland.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-ilovepl.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-ilovepl.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishMiniWhite
+  name: white PL t-shirt
+  description: A white t-shirt with a small PL sign.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-pl-mini.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-pl-mini.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishStripe
+  name: flag stripe t-shirt
+  description: A black t-shirt with a white-red stripe.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga-pasek.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga-pasek.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishOtuaBlack
+  name: black OTUA t-shirt
+  description: A black OTUA t-shirt.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-otua-czarna.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-otua-czarna.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishOtuaWhite
+  name: white OTUA t-shirt
+  description: A white OTUA t-shirt.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-otua-biala.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-otua-biala.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformShortsPolishMankini
+  name: Polish mankini
+  description: Patriotism with minimal coverage.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shorts/mankini-polskie.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Shorts/mankini-polskie.rsi
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesPolishKneeSocks
+  name: white-red knee socks
+  description: Knee socks in the national colours.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Under/Socks/zakolanuwki.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Under/Socks/zakolanuwki.rsi

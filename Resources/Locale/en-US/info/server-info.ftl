@@ -7,3 +7,4 @@ server-info-forum-button = Forum
 server-info-telegram-button = Telegram
 server-info-report-button = Report Bugs
 server-info-credits-button = Credits
+server-info-uuid-button = Show UUID

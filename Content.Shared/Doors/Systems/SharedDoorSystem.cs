@@ -242,6 +242,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
     private void OnPryTimeModifier(EntityUid uid, DoorComponent door, ref GetPryTimeModifierEvent args)
     {
         args.BaseTime = door.PryTime;
+        RaiseLocalEvent(args.User, ref args); // POLONIUM: lets the one who pries change the time
     }
 
     private void OnBeforePry(EntityUid uid, DoorComponent door, ref BeforePryEvent args)

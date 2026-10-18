@@ -33,6 +33,27 @@ public sealed class RoundSurveyTest : GameTest
   target: 3
   minTimeInRound: 0
   order: 100
+  followUps:
+  - text: round-survey-follow-up-rating
+    from: 1
+    to: 2
+    reasons: [ SurveyTestAntags, SurveyTestBugs ]
+  - text: round-survey-question-length
+    from: 5
+    to: 5
+    reasons: [ SurveyTestOther ]
+
+- type: roundSurveyReason
+  id: SurveyTestAntags
+  name: round-survey-reason-antags
+
+- type: roundSurveyReason
+  id: SurveyTestBugs
+  name: round-survey-reason-bugs
+
+- type: roundSurveyReason
+  id: SurveyTestOther
+  name: round-survey-reason-other
 
 - type: roundSurveyQuestion
   id: SurveyTestExpired
@@ -146,6 +167,9 @@ public sealed class RoundSurveyTest : GameTest
     private const string TestTraitors = "SurveyTestTraitors";
     private const string TestYesNo = "SurveyTestYesNo";
     private const string TestYesNoRule = "SurveyTestYesNoRule";
+    private const string AntagsReason = "SurveyTestAntags";
+    private const string BugsReason = "SurveyTestBugs";
+    private const string OtherReason = "SurveyTestOther";
     private const string BugTopic = "Bug";
     private const string OtherTopic = "Other";
     private const float CloseDelay = 3f;
@@ -180,6 +204,26 @@ public sealed class RoundSurveyTest : GameTest
 
                     Assert.That(question.YesNo && question.Target != null, Is.False, $"{question.ID} is a yes or no question with a target");
                     Assert.That(question.Cooldown, Is.GreaterThanOrEqualTo(0), question.ID);
+
+                    foreach (var followUp in question.FollowUps)
+                    {
+                        Assert.That(loc.HasString(followUp.Text), $"{question.ID} has a follow-up with no text");
+                        Assert.That(followUp.From, Is.InRange(RoundSurveyQuestionPrototype.MinAnswer, followUp.To), question.ID);
+                        Assert.That(followUp.To, Is.LessThanOrEqualTo(RoundSurveyQuestionPrototype.MaxAnswer), question.ID);
+                        Assert.That(followUp.Reasons, Is.Not.Empty.And.Unique, question.ID);
+                        Assert.That(question.FollowUps.Count(other => other.From <= followUp.To && followUp.From <= other.To), Is.EqualTo(1),
+                            $"{question.ID} has follow-ups that overlap");
+
+                        foreach (var reason in followUp.Reasons)
+                        {
+                            Assert.That(server.ProtoMan.HasIndex(reason), $"{question.ID} offers unknown reason {reason}");
+                        }
+                    }
+                }
+
+                foreach (var reason in server.ProtoMan.EnumeratePrototypes<RoundSurveyReasonPrototype>())
+                {
+                    Assert.That(loc.HasString(reason.Name), $"{reason.ID} has no name");
                 }
 
                 var topics = server.ProtoMan.EnumeratePrototypes<RoundSurveyTopicPrototype>().ToList();
@@ -634,6 +678,169 @@ public sealed class RoundSurveyTest : GameTest
     }
 
     [Test]
+    public async Task ReasonsExplainAnAnswer()
+    {
+        var server = Pair.Server;
+        var client = Pair.Client;
+        var survey = server.System<ServerSurveySystem>();
+        var clientSurvey = client.System<ClientSurveySystem>();
+        var loc = server.ResolveDependency<ILocalizationManager>();
+
+        server.CfgMan.SetCVar(CCVars.SurveyEnabled, true);
+
+        await PlayRound();
+
+        var user = Pair.Player!.UserId;
+        var roundId = server.System<GameTicker>().RoundId;
+
+        await client.WaitAssertion(() =>
+        {
+            var boxes = new List<RoundSurveyFollowUpBox>();
+            FindAll(client.ResolveDependency<IUserInterfaceManager>().WindowRoot, boxes);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(boxes.Select(box => box.Options.Count()), Is.EqualTo(new[] { 2, 1 }));
+                Assert.That(boxes.Select(box => box.Visible), Is.All.False, "A follow-up is shown before any answer");
+            });
+
+            boxes[0].Options.Last().Pressed = true;
+            Assert.That(boxes[0].Picked.Select(reason => reason.Id), Is.EqualTo(new[] { BugsReason }));
+            boxes[0].Clear();
+            Assert.That(boxes[0].Picked, Is.Empty);
+        });
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(survey.TrySetReasons(Pair.Player!, roundId, TestQuestion, [AntagsReason]), Is.False, "Accepted reasons with no answer");
+        });
+
+        await client.WaitPost(() =>
+        {
+            clientSurvey.Answer(roundId, TestQuestion, 2);
+            clientSurvey.SetReasons(roundId, TestQuestion, [BugsReason, AntagsReason]);
+        });
+
+        var rows = await WaitForReasons(roundId, $"{AntagsReason},{BugsReason}");
+        Assert.That(rows[0].Value, Is.EqualTo(2));
+
+        await server.WaitAssertion(() =>
+        {
+            var antags = loc.GetString("round-survey-reason-antags");
+            var bugs = loc.GetString("round-survey-reason-bugs");
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(survey.TrySetReasons(Pair.Player!, roundId, TestQuestion, [OtherReason]), Is.False,
+                    "Accepted a reason of another follow-up");
+                Assert.That(survey.TrySetReasons(Pair.Player!, roundId, TestQuestion, [AntagsReason, AntagsReason]), Is.False,
+                    "Accepted the same reason twice");
+                Assert.That(survey.TrySetReasons(Pair.Player!, roundId, TestQuestion, ["SurveyTestNoSuchReason"]), Is.False,
+                    "Accepted an unknown reason");
+                Assert.That(survey.TrySetReasons(Pair.Player!, roundId + 1, TestQuestion, [AntagsReason]), Is.False,
+                    "Accepted reasons for another round");
+
+                Assert.That(survey.GetResponse(user)!.Value.Embeds![0].Fields[0].Value, Is.EqualTo($"**2**\n{antags}, {bugs}"));
+                Assert.That(survey.GetSummary()!.Value.Embeds![0].Fields[0].Value,
+                    Does.EndWith(loc.GetString("round-survey-discord-reasons",
+                        ("text", loc.GetString("round-survey-follow-up-rating")),
+                        ("reasons", $"{antags} 1 · {bugs} 1"))));
+            });
+
+            // The reasons stay while the answer calls for the same follow-up.
+            Assert.That(survey.TryAnswer(Pair.Player!, roundId, TestQuestion, 1), Is.True);
+            Assert.That(survey.GetResponse(user)!.Value.Embeds![0].Fields[0].Value, Is.EqualTo($"**1**\n{antags}, {bugs}"));
+
+            Assert.That(survey.TryAnswer(Pair.Player!, roundId, TestQuestion, 4), Is.True);
+            Assert.Multiple(() =>
+            {
+                Assert.That(survey.GetResponse(user)!.Value.Embeds![0].Fields[0].Value, Is.EqualTo("**4**"));
+                Assert.That(survey.TrySetReasons(Pair.Player!, roundId, TestQuestion, [AntagsReason]), Is.False,
+                    "Accepted reasons for an answer with no follow-up");
+            });
+        });
+
+        rows = await WaitForReasons(roundId, string.Empty);
+        Assert.That(rows[0].Value, Is.EqualTo(4));
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(survey.TryAnswer(Pair.Player!, roundId, TestQuestion, 5), Is.True);
+            Assert.That(survey.TrySetReasons(Pair.Player!, roundId, TestQuestion, [OtherReason]), Is.True);
+        });
+
+        await WaitForReasons(roundId, OtherReason);
+    }
+
+    [Test]
+    public async Task DigestCountsReasons()
+    {
+        var server = Pair.Server;
+        var digests = server.System<RoundSurveyDigestSystem>();
+        var loc = server.ResolveDependency<ILocalizationManager>();
+
+        var from = new DateTime(2026, 9, 21, 0, 0, 0, DateTimeKind.Utc);
+        var regular = Guid.NewGuid();
+        var guest = Guid.NewGuid();
+        var stranger = Guid.NewGuid();
+
+        SurveyResponse Answer(int round, Guid player, int value, string reasons)
+        {
+            return new SurveyResponse
+            {
+                RoundId = round,
+                PlayerUserId = player,
+                Question = TestQuestion,
+                Value = value,
+                Reasons = reasons,
+                Time = from.AddDays(1),
+                Preset = TestPreset,
+                PlayerCount = 20,
+            };
+        }
+
+        var responses = new List<SurveyResponse>
+        {
+            Answer(1, regular, 1, $"{AntagsReason},{BugsReason}"),
+            Answer(2, regular, 2, AntagsReason),
+            Answer(1, guest, 2, string.Empty),
+            Answer(1, stranger, 2, AntagsReason),
+            Answer(2, stranger, 5, OtherReason),
+            Answer(3, stranger, 4, BugsReason),
+        };
+
+        await server.WaitAssertion(() =>
+        {
+            var digest = digests.BuildDigest(responses, [], from, from.AddDays(7))!;
+            var question = loc.GetString("round-survey-question-pace");
+
+            string Name(string text, int low, int high)
+            {
+                return loc.GetString("round-survey-digest-follow-up",
+                    ("question", question),
+                    ("from", low.ToString()),
+                    ("to", high.ToString()),
+                    ("text", loc.GetString(text)));
+            }
+
+            Assert.That(digest.Sections, Has.Count.EqualTo(4));
+            Assert.Multiple(() =>
+            {
+                Assert.That(digest.Sections[2].Name, Is.EqualTo(Name("round-survey-follow-up-rating", 1, 2)));
+                Assert.That(digest.Sections[3].Name, Is.EqualTo(Name("round-survey-question-length", 5, 5)));
+
+                var low = digest.Sections[2].Table;
+                Assert.That(low.Split('\n')[0], Does.EndWith(loc.GetString("round-survey-digest-column-share", ("people", "3"))));
+                Assert.That(low.Split('\n'), Has.Length.EqualTo(3));
+                Assert.That(Row(low, loc.GetString("round-survey-reason-antags")), Is.EqualTo(new[] { "2", "67%" }));
+                Assert.That(Row(low, loc.GetString("round-survey-reason-bugs")), Is.EqualTo(new[] { "1", "33%" }));
+
+                Assert.That(Row(digest.Sections[3].Table, loc.GetString("round-survey-reason-other")), Is.EqualTo(new[] { "1", "100%" }));
+            });
+        });
+    }
+
+    [Test]
     public async Task SurveyReachesThoseWhoComeBack()
     {
         var server = Pair.Server;
@@ -955,6 +1162,22 @@ public sealed class RoundSurveyTest : GameTest
         return rows;
     }
 
+    private async Task<List<SurveyResponse>> WaitForReasons(int roundId, string reasons)
+    {
+        var db = Pair.Server.ResolveDependency<IServerDbManager>();
+        var rows = new List<SurveyResponse>();
+
+        for (var i = 0; i < 20 && (rows.Count != 1 || rows[0].Reasons != reasons); i++)
+        {
+            await Pair.RunTicksSync(5);
+            rows = await db.GetSurveyResponses(roundId);
+        }
+
+        Assert.That(rows, Has.Count.EqualTo(1));
+        Assert.That(rows[0].Reasons, Is.EqualTo(reasons));
+        return rows;
+    }
+
     private async Task PlayRound()
     {
         var ticker = Pair.Server.System<GameTicker>();
@@ -1001,5 +1224,16 @@ public sealed class RoundSurveyTest : GameTest
         }
 
         return null;
+    }
+
+    private static void FindAll<T>(Control control, List<T> found) where T : Control
+    {
+        if (control is T hit)
+            found.Add(hit);
+
+        foreach (var child in control.Children)
+        {
+            FindAll(child, found);
+        }
     }
 }

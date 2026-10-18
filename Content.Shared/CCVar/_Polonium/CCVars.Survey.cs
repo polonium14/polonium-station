@@ -17,6 +17,12 @@ public sealed partial class CCVars
         CVarDef.Create("survey.close_delay", 120f, CVar.SERVERONLY);
 
     /// <summary>
+    /// Send the survey summary to Discord even if nobody has answered.
+    /// </summary>
+    public static readonly CVarDef<bool> SurveyPostEmpty =
+        CVarDef.Create("survey.post_empty", false, CVar.SERVERONLY);
+
+    /// <summary>
     /// How many rounds this client has had the survey tab highlighted in. The highlight stops after a few.
     /// </summary>
     public static readonly CVarDef<int> SurveyTabHighlights =

@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseAction
+  id: ActionMocnyFullBurp
+  name: Burp
+  description: Let the Mocny Full out.
+  components:
+  - type: Action
+    useDelay: 3
+    sound:
+      path: /Audio/_Polonium/Effects/burp.ogg
+      params:
+        variation: 0.15
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/Drinks/MocnyFull.rsi
+    layers:
+    - state: icon
+  - type: InstantAction
+    event: !type:BurpActionEvent

@@ -39,7 +39,7 @@ intro-lobby-overview-character-section-message-2 = Kliknij [bold]"{$intro-lobby-
 
 intro-character-creation-message-1 = W edytorze postaci możesz [bold]dostosować wygląd swoich postaci[/bold], [bold]ustawić preferencje ról[/bold] oraz inne parametry.
 intro-character-creation-message-2 = Wypróbuj edytor i dostosuj [bold]wygląd swojej postaci[/bold]! Możesz swobodnie zmieniać [bold]płeć, rasę, odcień skóry, włosy i oczy[/bold], a także [bold]odzież oraz akcesoria[/bold].
-intro-character-creation-message-3 = W tej zakładce wybierzesz role, w które chcesz wcielać się podczas rundy. Każde stanowisko wymaga znajomości określonych obowiązków, które znajdziesz w [bold]poradniku[/bold]. Na początek zalecamy prostsze role, takie jak [bold]Sprzątacz, Pracownik Obsługi lub Botanik[/bold].
+intro-character-creation-message-3 = W tej zakładce wybierzesz role, w które chcesz wcielać się podczas rundy. Każde stanowisko wymaga znajomości określonych obowiązków, które znajdziesz w [bold]poradniku[/bold]. Na początek zalecamy prostsze role, takie jak [bold]Sprzątacz, Pracownik Serwisu lub Botanik[/bold].
 intro-character-creation-click-job-priorities-button = Kliknij [bold]"{$character-setup-gui-edit-job-priorities-button}"[/bold], aby ustawić priorytety stanowisk.
 intro-character-creation-message-4 = Tutaj określasz [bold]priorytety stanowisk[/bold] — im wyższy priorytet, tym większa szansa na przydzielenie danej roli. Wybierz kilka interesujących Cię stanowisk i pamiętaj o zapisaniu zmian!
 intro-character-creation-click-back-to-setup-button = Po zakończeniu kliknij baner postaci, aby wrócić do edytora.

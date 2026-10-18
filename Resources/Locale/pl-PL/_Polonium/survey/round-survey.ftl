@@ -34,6 +34,18 @@ round-survey-question-memorable = Czy w tej rundzie wydarzyło się coś, co zap
 round-survey-answer-no = Nie
 round-survey-answer-yes = Tak
 
+round-survey-follow-up-rating = Co przeszkodziło w lepszej rundzie?
+round-survey-reason-nothing-to-do = Nie było dla mnie zajęcia
+round-survey-reason-nothing-happened = Nic się nie działo
+round-survey-reason-out-early = Wczesna śmierć, długo poza grą
+round-survey-reason-antags = Antagoniści
+round-survey-reason-too-chaotic = Za duży chaos
+round-survey-reason-other-players = Zachowanie innych graczy
+round-survey-reason-no-teamwork = Brak współpracy załogi
+round-survey-reason-admins = Decyzje administracji
+round-survey-reason-bugs = Błędy lub lagi
+round-survey-reason-other = Coś innego (napisz niżej)
+
 round-survey-comment-heading = Chcesz coś dodać?
 round-survey-comment-window-title = Opinia o grze
 round-survey-comment-placeholder = Wybierz temat i napisz kilka słów...
@@ -59,6 +71,7 @@ round-survey-discord-result = średnia **{ $average }** · odpowiedzi: { $count 
 round-survey-discord-target = cel { $target } ({ $offset })
 round-survey-discord-empty = brak odpowiedzi
 round-survey-discord-yes-no = { $answer }: **{ $share }%** ({ $yes } z { $count })
+round-survey-discord-reasons = { $text } { $reasons }
 
 round-survey-discord-respondent =
     Runda #{ $round } · tryb **{ $preset }**
@@ -91,6 +104,9 @@ round-survey-digest-column-left = wyszło
 round-survey-digest-column-people = osób
 round-survey-digest-column-average = średnia
 round-survey-digest-column-offset = od celu
+round-survey-digest-follow-up = { $question } ({ $from }–{ $to }): { $text }
+round-survey-digest-column-reason = powód
+round-survey-digest-column-share = z { $people }
 round-survey-digest-comments = Komentarze
 round-survey-digest-column-topic = temat
 round-survey-digest-column-comments = komentarze

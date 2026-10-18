@@ -1,0 +1,166 @@
+- type: entity
+  parent: MobReplicator
+  id: MobReplicatorTest
+  suffix: Unclassed, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorPreset
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestFighter1
+  suffix: Fighter 1, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorPreset
+    class: Fighter
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestFighter2
+  suffix: Fighter 2, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorPreset
+    class: Fighter
+    stages:
+      Ram: 1
+      Emitter: 1
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestFighter3
+  suffix: Fighter 3, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorModules
+    maxStages: 6
+  - type: ReplicatorPreset
+    class: Fighter
+    stages:
+      Ram: 3
+      Emitter: 3
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestDefender1
+  suffix: Defender 1, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorPreset
+    class: Defender
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestDefender2
+  suffix: Defender 2, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorPreset
+    class: Defender
+    stages:
+      Plating: 1
+      Regeneration: 1
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestDefender3
+  suffix: Defender 3, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorModules
+    maxStages: 6
+  - type: ReplicatorPreset
+    class: Defender
+    stages:
+      Plating: 3
+      Regeneration: 3
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestScout1
+  suffix: Scout 1, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorPreset
+    class: Scout
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestScout2
+  suffix: Scout 2, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorPreset
+    class: Scout
+    stages:
+      Thrusters: 1
+      Cloak: 1
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestScout3
+  suffix: Scout 3, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorModules
+    maxStages: 6
+  - type: ReplicatorPreset
+    class: Scout
+    stages:
+      Thrusters: 3
+      Cloak: 3
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestBuilder1
+  suffix: Builder 1, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorPreset
+    class: Builder
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestBuilder2
+  suffix: Builder 2, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorPreset
+    class: Builder
+    stages:
+      Toolkit: 1
+      Cargo: 1
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestBuilder3
+  suffix: Builder 3, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorModules
+    maxStages: 6
+  - type: ReplicatorPreset
+    class: Builder
+    stages:
+      Toolkit: 3
+      Cargo: 3
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestHunter1
+  suffix: Hunter 1, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorPreset
+    class: Hunter
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestHunter2
+  suffix: Hunter 2, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorPreset
+    class: Hunter
+    stages:
+      Capture: 1
+      Sensors: 1
+
+- type: entity
+  parent: MobReplicatorTest
+  id: MobReplicatorTestHunter3
+  suffix: Hunter 3, DO NOT MAP, ADMEME, TEST
+  components:
+  - type: ReplicatorModules
+    maxStages: 6
+  - type: ReplicatorPreset
+    class: Hunter
+    stages:
+      Capture: 3
+      Sensors: 3

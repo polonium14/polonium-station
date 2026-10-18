@@ -1,0 +1,10 @@
+ent-PolishFlagAnchor = biało-czerwona flaga z kotwicą
+    .desc = Flaga używana przez polskie statki kosmiczne, zgodna z obowiązującym wzorem wymienionym w Załączniku 6 do 'Nanotrasen Military Unit Designation Act'.
+ent-PolishFlag = flaga Polski
+    .desc = Flaga używana przez Polaków, zgodna z obowiązującym wzorem wymienionym w Załączniku 3 do 'Nanotrasen National Minorities Rights Act'.
+ent-PolishFlagEagle = biało-czerwona flaga z orzełkiem
+    .desc = Flaga używana zwyczajowo przez Polaków, niezgodna ze wzorem wymienionym w Załączniku 3 do 'Nanotrasen National Minorities Rights Act'.
+ent-PolishCrucifix = krzyż
+    .desc = Degeneraci tacy jak ty powinni być ukrzyżowani.
+ent-VehicleMaluch = maluch
+    .desc = Uwaga na głowę.

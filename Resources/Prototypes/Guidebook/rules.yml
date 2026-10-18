@@ -129,9 +129,6 @@
   - RuleC9
   - RuleC10
   - RuleC11
-  - RuleC12
-  #- RuleC13
-  # - RuleC14
 
 - type: guideEntry
   id: RuleC00
@@ -208,14 +205,7 @@
   name: guide-entry-rules-c10
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC10SiliconPolicy.xml"
-
-- type: guideEntry
-  id: RuleC11
-  name: guide-entry-rules-c11
-  ruleEntry: true
-  priority: 11
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC11Antag.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC10Antag.xml"
 
 # - type: guideEntry
 #   id: RuleC13
@@ -225,11 +215,11 @@
 #   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC13NoEORG.xml"
 
 - type: guideEntry
-  id: RuleC12
-  name: guide-entry-rules-c12
+  id: RuleC11
+  name: guide-entry-rules-c11
   ruleEntry: true
-  priority: 12
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC12LOOC.xml"
+  priority: 11
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC11LOOC.xml"
 
 # - type: guideEntry
 #   id: RuleC15

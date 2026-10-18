@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Polish poster set from Aquila Station, taken from aq33/NSV13 (aquila/icons/obj/contraband.dmi) at commit b340c8bf15",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "pl_contraband_1"
+    },
+    {
+      "name": "pl_contraband_2"
+    },
+    {
+      "name": "pl_contraband_4"
+    },
+    {
+      "name": "pl_contraband_7"
+    },
+    {
+      "name": "pl_contraband_8"
+    },
+    {
+      "name": "pl_contraband_11"
+    },
+    {
+      "name": "pl_contraband_13"
+    },
+    {
+      "name": "pl_contraband_14"
+    },
+    {
+      "name": "pl_contraband_18"
+    },
+    {
+      "name": "pl_contraband_22"
+    },
+    {
+      "name": "pl_contraband_23"
+    },
+    {
+      "name": "pl_contraband_25"
+    },
+    {
+      "name": "pl_contraband_27"
+    },
+    {
+      "name": "pl_contraband_29"
+    },
+    {
+      "name": "pl_contraband_30"
+    },
+    {
+      "name": "pl_contraband_31"
+    },
+    {
+      "name": "pl_contraband_32"
+    },
+    {
+      "name": "pl_contraband_33"
+    },
+    {
+      "name": "pl_contraband_34"
+    },
+    {
+      "name": "pl_contraband_35"
+    },
+    {
+      "name": "pl_contraband_36"
+    },
+    {
+      "name": "pl_contraband_38"
+    },
+    {
+      "name": "pl_contraband_40"
+    },
+    {
+      "name": "pl_contraband_44"
+    },
+    {
+      "name": "pl_contraband_46"
+    },
+    {
+      "name": "pl_contraband_47"
+    },
+    {
+      "name": "pl_contraband_50"
+    },
+    {
+      "name": "pl_legit_1"
+    },
+    {
+      "name": "pl_legit_3"
+    },
+    {
+      "name": "pl_legit_4"
+    },
+    {
+      "name": "pl_legit_5"
+    },
+    {
+      "name": "pl_legit_6"
+    },
+    {
+      "name": "pl_legit_7"
+    },
+    {
+      "name": "pl_legit_8"
+    },
+    {
+      "name": "pl_legit_9"
+    },
+    {
+      "name": "pl_legit_10"
+    },
+    {
+      "name": "pl_legit_12"
+    },
+    {
+      "name": "pl_legit_13"
+    },
+    {
+      "name": "pl_legit_15"
+    },
+    {
+      "name": "pl_legit_16"
+    },
+    {
+      "name": "pl_legit_17"
+    },
+    {
+      "name": "pl_legit_18"
+    },
+    {
+      "name": "pl_legit_22"
+    },
+    {
+      "name": "pl_legit_26"
+    },
+    {
+      "name": "pl_legit_28"
+    },
+    {
+      "name": "pl_legit_29"
+    },
+    {
+      "name": "pl_legit_32"
+    },
+    {
+      "name": "pl_legit_33"
+    },
+    {
+      "name": "pl_legit_34"
+    },
+    {
+      "name": "pl_legit_35"
+    },
+    {
+      "name": "pl_legit_45"
+    },
+    {
+      "name": "pl_legit_46"
+    },
+    {
+      "name": "pl_legit_47"
+    },
+    {
+      "name": "pl_legit_48"
+    },
+    {
+      "name": "pl_legit_49"
+    },
+    {
+      "name": "pl_legit_50"
+    },
+    {
+      "name": "pl_legit_51"
+    },
+    {
+      "name": "pl_legit_52"
+    },
+    {
+      "name": "pl_legit_53"
+    },
+    {
+      "name": "pl_legit_54"
+    },
+    {
+      "name": "pl_legit_55"
+    },
+    {
+      "name": "pl_legit_56"
+    },
+    {
+      "name": "pl_legit_57"
+    },
+    {
+      "name": "pl_legit_58"
+    }
+  ]
+}

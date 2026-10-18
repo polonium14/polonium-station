@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Made for Polonium Station by nikitosych",
+    "size": {
+        "x": 64,
+        "y": 64
+    },
+    "states": [
+        {
+            "name": "bolt_nonlethal",
+            "directions": 1
+        },
+        {
+            "name": "bolt_lethal",
+            "directions": 1
+        },
+        {
+            "name": "impact_nonlethal",
+            "directions": 1,
+            "delays": [
+                [0.06, 0.06, 0.06, 0.06]
+            ]
+        },
+        {
+            "name": "impact_lethal",
+            "directions": 1,
+            "delays": [
+                [0.06, 0.06, 0.06, 0.06]
+            ]
+        },
+        {
+            "name": "muzzle_nonlethal",
+            "directions": 1
+        },
+        {
+            "name": "muzzle_lethal",
+            "directions": 1
+        }
+    ]
+}

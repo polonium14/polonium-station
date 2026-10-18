@@ -1545,6 +1545,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("question");
 
+                    b.Property<string>("Reasons")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("reasons");
+
                     b.Property<TimeSpan>("RoundDuration")
                         .HasColumnType("interval")
                         .HasColumnName("round_duration");

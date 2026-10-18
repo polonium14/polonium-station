@@ -205,6 +205,20 @@ public sealed partial class RoundSurveyDigestSystem : EntitySystem
         foreach (var question in questions)
         {
             sections.Add(new RoundSurveyDigestSection(_survey.DescribeQuestion(question), DescribeAnswers(groups, question)));
+
+            foreach (var followUp in question.FollowUps)
+            {
+                if (DescribeReasons(responses, question, followUp) is not { } reasons)
+                    continue;
+
+                var name = Loc.GetString("round-survey-digest-follow-up",
+                    ("question", Loc.GetString(question.Text)),
+                    ("from", followUp.From.ToString()),
+                    ("to", followUp.To.ToString()),
+                    ("text", Loc.GetString(followUp.Text)));
+
+                sections.Add(new RoundSurveyDigestSection(name, reasons));
+            }
         }
 
         if (comments.Count > 0)
@@ -361,6 +375,36 @@ public sealed partial class RoundSurveyDigestSystem : EntitySystem
         }
 
         return Table(header.ToArray(), rows);
+    }
+
+    /// <summary>
+    /// How many of the players who gave an answer covered by the follow-up ticked each of the reasons.
+    /// </summary>
+    private string? DescribeReasons(List<SurveyResponse> responses, RoundSurveyQuestionPrototype question, RoundSurveyFollowUp followUp)
+    {
+        var people = responses
+            .Where(response => response.Question == question.ID && question.GetFollowUp(response.Value) == followUp)
+            .GroupBy(response => response.PlayerUserId)
+            .Select(own => own.SelectMany(response => response.Reasons.Split(',', StringSplitOptions.RemoveEmptyEntries)).ToHashSet())
+            .ToList();
+
+        var rows = people
+            .SelectMany(ticked => ticked)
+            .GroupBy(reason => reason)
+            .Select(reason => (Name: _survey.DescribeReason(reason.Key), Count: reason.Count()))
+            .OrderByDescending(reason => reason.Count)
+            .ThenBy(reason => reason.Name)
+            .Select(reason => new[] { reason.Name, reason.Count.ToString(), Percent(reason.Count / (float) people.Count) })
+            .ToList<string[]?>();
+
+        if (rows.Count == 0)
+            return null;
+
+        return Table([
+            Loc.GetString("round-survey-digest-column-reason"),
+            Loc.GetString("round-survey-digest-column-people"),
+            Loc.GetString("round-survey-digest-column-share", ("people", people.Count.ToString())),
+        ], rows);
     }
 
     private string DescribeComments(List<SurveyComment> comments)

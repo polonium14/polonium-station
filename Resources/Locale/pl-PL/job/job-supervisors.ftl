@@ -13,5 +13,5 @@ job-supervisors-security = ochroniarzom, strażnikowi i komendantowi
 job-supervisors-science = naukowcom i kierownikowi badań
 job-supervisors-hire = komukolwiek kto cię zatrudnił
 job-supervisors-everyone = absolutnie wszystkim
-job-supervisors-nobody = nobody
+job-supervisors-nobody = nikomu
 job-supervisors-central-commanders = urzędnikom centralnego dowództwa

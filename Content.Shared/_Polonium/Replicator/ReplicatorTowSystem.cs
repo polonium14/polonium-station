@@ -9,6 +9,7 @@ namespace Content.Shared._Polonium.Replicator;
 public sealed partial class ReplicatorTowSystem : EntitySystem
 {
     [Dependency] private ReplicatorHiveSystem _hive = default!;
+    [Dependency] private ReplicatorModuleSystem _modules = default!;
     [Dependency] private MovementSpeedModifierSystem _movementSpeed = default!;
 
     public override void Initialize()
@@ -31,7 +32,7 @@ public sealed partial class ReplicatorTowSystem : EntitySystem
             || !_hive.CanDigest(ent))
             return;
 
-        args.Modifier *= tow.PulledFrictionModifier;
+        args.Modifier *= tow.PulledFrictionModifier * _modules.GetTowFrictionMultiplier(puller);
     }
 
     private void OnPullStarted(Entity<ReplicatorTowComponent> ent, ref PullStartedMessage args)
@@ -47,6 +48,6 @@ public sealed partial class ReplicatorTowSystem : EntitySystem
     private void OnRefreshWeightless(Entity<ReplicatorTowComponent> ent, ref RefreshWeightlessModifiersEvent args)
     {
         if (TryComp<PullerComponent>(ent, out var puller) && puller.Pulling != null)
-            args.ModifyAcceleration(ent.Comp.WeightlessAccelerationModifier, 1f);
+            args.ModifyAcceleration(ent.Comp.WeightlessAccelerationModifier * _modules.GetTowAccelerationMultiplier(ent), 1f);
     }
 }

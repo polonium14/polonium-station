@@ -1462,6 +1462,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("question");
 
+                    b.Property<string>("Reasons")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("reasons");
+
                     b.Property<TimeSpan>("RoundDuration")
                         .HasColumnType("TEXT")
                         .HasColumnName("round_duration");

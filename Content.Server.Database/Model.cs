@@ -860,6 +860,11 @@ namespace Content.Server.Database
         public int Value { get; set; }
         public DateTime Time { get; set; }
 
+        /// <summary>
+        /// IDs of the reasons the player ticked for this answer, separated by commas.
+        /// </summary>
+        public string Reasons { get; set; } = string.Empty;
+
         public string Preset { get; set; } = string.Empty;
         public TimeSpan RoundDuration { get; set; }
         public int PlayerCount { get; set; }

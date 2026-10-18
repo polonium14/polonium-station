@@ -6,14 +6,14 @@ job-board-radio-announce = Ranga specjalisty ds. odzysku wzrosła do [bold]{ $ra
 job-board-ui-window-title = Tablica zadań
 job-board-ui-label-rank = [bold]Ranga:[/bold]
 job-board-ui-label-items = Cel: [color=red]{ $item }[/color]
-job-board-label-text = [head=2]Salvage Job Shipment[/head]
-    { "[italic]For use only on official off-station salvage shipments.[/italic]" }
+job-board-label-text = [head=2]Przesyłka w ramach akcji ratowniczej[/head]
+    { "[italic]Do stosowania wyłącznie w przypadku oficjalnych przesyłek ratowniczych poza stacją.[/italic]" }
     
-    { "[bold]Target:[/bold]" } { $target }
-    { "[bold]Reward:[/bold]" } ${ $reward }
+    { "[bold]Cel:[/bold]" } { $target }
+    { "[bold]Nagroda:[/bold]" } ${ $reward }
     
     
-    { "[italic]Shipments are subject to inspection by the Donk corporation[/italic]" }
+    { "[italic]Przesyłki podlegają kontroli ze strony Donk sp. z o.o.[/italic]" }
 salv-job-board-name-BountyTeethSpaceCarp = Kosmiczny Karp
 salv-job-board-name-BountySalvageScrap = Odłamki kosmiczne
 salv-job-board-name-BountySalvageOreGold = Złoto (ruda)

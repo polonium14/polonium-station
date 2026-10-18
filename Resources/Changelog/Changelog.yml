@@ -1,157 +1,4 @@
 ﻿Entries:
-- author: OrbitSystem07
-  changes:
-  - message: The uplink now properly states the capacity of the hypodart.
-    type: Fix
-  id: 9546
-  time: '2026-02-26T19:00:11.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43035
-- author: DinnerCalzone
-  changes:
-  - message: Techfabs now play an animation while building something.
-    type: Add
-  id: 9547
-  time: '2026-02-26T20:58:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42962
-- author: TriviaSolari
-  changes:
-  - message: Holosign projectors and dragon rifts no longer place signs at strange
-      angles.
-    type: Fix
-  id: 9548
-  time: '2026-02-27T00:08:28.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42909
-- author: sowelipililimute
-  changes:
-  - message: Underlying technical work for future medical improvements have resulted
-      in the following changes to better accomodate future development. Please note
-      that these changes are not representative of the final product and that the
-      medical balance will receive a major overhaul once limb and organ damage are
-      fully implemented.
-    type: Tweak
-  - message: Species now regenerate -0.05 of brute types individually (from -0.02).
-    type: Tweak
-  - message: Several mobs and weapons previously dealing split brute damage now deal
-      singular damage types.
-    type: Tweak
-  - message: Several reagents previously dealing split brute damage now deals singular
-      damage types.
-    type: Tweak
-  - message: Several reagents previously healing split brute damage now evenly heals
-      instead.
-    type: Tweak
-  - message: Spiders now regenerate -0.03 of brute and burn types individually (from
-      -0.02).
-    type: Tweak
-  - message: Skeletons now evenly heal when using milk.
-    type: Tweak
-  - message: Tomato killers now heal evenly when splashed with water, blood, or robust
-      harvest.
-    type: Tweak
-  - message: Tricordrazine now evenly heals both brute, burn and toxin.
-    type: Tweak
-  - message: Desoxyephedrine now deals slighlty more blunt damage (to offset tricordazine
-      changes).
-    type: Tweak
-  - message: Crusher mark leech hits now heal 5 of each brute category on hit (was
-      7).
-    type: Tweak
-  id: 9549
-  time: '2026-02-27T06:33:44.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43049
-- author: pcaessayrs
-  changes:
-  - message: Fixed bar sign UI not closing correctly
-    type: Fix
-  id: 9550
-  time: '2026-02-27T16:02:04.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42960
-- author: kontakt
-  changes:
-  - message: Throwing croissants no longer have a throwing knife in-hand sprite.
-    type: Fix
-  id: 9552
-  time: '2026-02-28T14:37:26.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43066
-- author: ScarKy0
-  changes:
-  - message: Makeshift Juicers now correctly craft in your hands instead of being
-      a construction ghost.
-    type: Fix
-  id: 9553
-  time: '2026-02-28T14:54:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43075
-- author: kento_da_neko
-  changes:
-  - message: The xenoborg gun now has a unique sprite
-    type: Add
-  id: 9554
-  time: '2026-02-28T15:21:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43013
-- author: Velken
-  changes:
-  - message: Fixed door remotes working on fences, curtains and other entities they
-      shouldn't work on.
-    type: Fix
-  id: 9555
-  time: '2026-02-28T20:30:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43063
-- author: IProduceWidgets
-  changes:
-  - message: C4 no longer sticks to Revenants.
-    type: Tweak
-  id: 9556
-  time: '2026-02-28T21:38:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42889
-- author: Hitlinemoss
-  changes:
-  - message: The rollerskates and clown mask/shoes cargo bounties have been removed.
-    type: Remove
-  - message: The pancakes cargo bounty now requires half as many pancakes, but rewards
-      half as many spesos.
-    type: Tweak
-  id: 9557
-  time: '2026-02-28T22:04:55.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42899
-- author: slarticodefast
-  changes:
-  - message: Fixed damage mispredicting.
-    type: Fix
-  id: 9558
-  time: '2026-03-01T00:06:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43080
-- author: slarticodefast
-  changes:
-  - message: Fixed topicals.
-    type: Fix
-  id: 9559
-  time: '2026-03-01T14:41:29.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43087
-- author: AffleWaffle
-  changes:
-  - message: APCs take 2 seconds to build instead of instantly appearing.
-    type: Tweak
-  id: 9560
-  time: '2026-03-01T17:58:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43089
-- author: SirWarock
-  changes:
-  - message: Added a nitrogen tank to the mining hardsuit crate!
-    type: Tweak
-  - message: Added internals to the luxury mining hardsuit crate!
-    type: Tweak
-  - message: Fixed the mining hardsuit helmet name and the mining hardsuit crate name!
-    type: Fix
-  id: 9561
-  time: '2026-03-01T18:31:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43072
-- author: Velken
-  changes:
-  - message: Fixed door remote not working on high security doors and windoors
-    type: Fix
-  id: 9562
-  time: '2026-03-01T23:28:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43094
 - author: UpAndLeaves
   changes:
   - message: Added storage:query and inventory:query commands
@@ -4265,3 +4112,214 @@
   id: 10041
   time: '2026-10-02T19:28:13.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1088
+- author: Nikita
+  changes:
+  - message: "Nowy skr\xF3t radio dla Dow\xF3dztwa to \"d\""
+    type: Tweak
+  - message: "Nowy skr\xF3t radio dla In\u017Cynierii to \"i\""
+    type: Tweak
+  - message: "Bie\u017C\u0105cy skr\xF3t radio dla Medycznego to \"m\""
+    type: Tweak
+  - message: "Bie\u017C\u0105cy skr\xF3t radio dla B+R to \"n\""
+    type: Tweak
+  - message: "Nowy skr\xF3t radio dla Ochrony to \"o\""
+    type: Tweak
+  - message: "Nowy skr\xF3t radio dla Serwisu to \"s\""
+    type: Tweak
+  - message: "Nowy skr\xF3t radio dla Logistyki to \"l\""
+    type: Tweak
+  - message: "Nowy skr\xF3t radio dla CD to \"c\""
+    type: Tweak
+  - message: "Reszta skr\xF3t\xF3w pozosta\u0142a bez zmian"
+    type: Tweak
+  id: 10042
+  time: '2026-10-08T09:26:56.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1094
+- author: nikitosych
+  changes:
+  - message: "Dodano poradniki dotycz\u0105ce praw jednostek syntetycznych i odblokowywania\
+      \ w\u0119z\u0142\xF3w artefakt\xF3w."
+    type: Add
+  - message: "Zaktualizowano zasady stacji i Prawo Kosmiczne, w tym procedury przes\u0142\
+      ucha\u0144, egzekucji, przeszuka\u0144 oraz wymierzania kar."
+    type: Tweak
+  - message: "Zmieniono numeracj\u0119 zasad podstawowych i usuni\u0119to osobn\u0105\
+      \ zasad\u0119 o prawach silikon\xF3w."
+    type: Tweak
+  - message: "Ujednolicono polskie nazewnictwo dzia\u0142u Serwisu i powi\u0105zanych\
+      \ r\xF3l."
+    type: Tweak
+  id: 10043
+  time: '2026-10-09T11:03:20.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1096
+- author: Nikita
+  changes:
+  - message: "Po niskiej ocenie rundy ankieta pyta, co przeszkodzi\u0142o w lepszej\
+      \ grze."
+    type: Add
+  - message: "Dodano pytanie uzupe\u0142niaj\u0105ce do ankiety po rundzie dla ocen\
+      \ od 1 do 3. Gracze mog\u0105 wybra\u0107 powody niskiej oceny."
+    type: Add
+  - message: "Dodano zapis i walidacj\u0119 wybranych powod\xF3w. Powody pojawiaj\u0105\
+      \ si\u0119 w odpowiedziach Discord oraz w podsumowaniach ankiety."
+    type: Add
+  id: 10044
+  time: '2026-10-09T11:48:58.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1097
+- author: Nikita
+  changes:
+  - message: "Naprawiono b\u0142\u0105d przy w\u0142\u0105czaniu \u015Bwiat\u0142\
+      a he\u0142m\xF3w g\xF3rniczych."
+    type: Fix
+  id: 10045
+  time: '2026-10-09T14:57:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1098
+- author: Saver310
+  changes:
+  - message: "Ustawiono czas u\u017Cycia metapluszak\xF3w na 1 sekund\u0119."
+    type: Tweak
+  - message: "Ustawiono szybko\u015B\u0107 ataku metapluszak\xF3w na 1 atak na sekund\u0119\
+      ."
+    type: Tweak
+  - message: "Zmieniono pierwsz\u0105 liter\u0119 nazwy pluszaka Itan-Kio na ma\u0142\
+      \u0105."
+    type: Tweak
+  id: 10046
+  time: '2026-10-12T17:17:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1100
+- author: Nikita
+  changes:
+  - message: "Ogromna aktualizacja replikator\xF3w"
+    type: Add
+  id: 10047
+  time: '2026-10-12T17:21:42.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1103
+- author: Saver310
+  changes:
+  - message: "Dodano pluszaka op\u0119tanego oficera ochrony!"
+    type: Add
+  id: 10048
+  time: '2026-10-12T19:12:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1102
+- author: Yaket
+  changes:
+  - message: "Dodano dost\u0119p do pokoju i narz\u0119dzi chemika dla medyka wi\u0119\
+      ziennego w przypadku szkieletowej za\u0142ogi"
+    type: Tweak
+  id: 10049
+  time: '2026-10-12T19:13:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1101
+- author: Zintex
+  changes:
+  - message: 'Mapa Terra: zlew i szafka w chemii, poprawa drzwi do zbrojowni, dodane
+      holopady na stacji'
+    type: Tweak
+  id: 10050
+  time: '2026-10-14T11:55:06.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1107
+- author: Zintex
+  changes:
+  - message: "Dodano 2 JSR wahad\u0142owce medyczno-ochronne (du\u017Cy i ma\u0142\
+      y medsec)"
+    type: Add
+  id: 10051
+  time: '2026-10-15T20:29:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1109
+- author: Zintex
+  changes:
+  - message: "Zmiany na Deathstar: brakujace spawny roli i szafki, dok przylot\xF3\
+      w, pralka, dost\u0119pno\u015B\u0107 generatora grawitacji, inteligentna lod\xF3\
+      wka dla meda, wi\u0119cej apteczek w medzie, wi\u0119cej instrument\xF3w, szafa\
+      \ graj\u0105ca"
+    type: Tweak
+  - message: "Poprawa b\u0142\u0119d\xF3w mapowania deathstar: usuni\u0119cie mapowania\
+      \ ATS, zamiana dok\xF3w syndykatu na w\u0142a\u015Bciwe"
+    type: Fix
+  id: 10052
+  time: '2026-10-15T23:12:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1110
+- author: Nikita
+  changes:
+  - message: "Replikatory s\u0105 wytrzymalsze. Wytrzyma\u0142o\u015B\u0107 zale\u017C\
+      y od klasy i ro\u015Bnie z ka\u017Cd\u0105 form\u0105."
+    type: Tweak
+  - message: "Replikatory otwieraj\u0105 ju\u017C tylko interfejsy maszyn roju."
+    type: Tweak
+  - message: "Holo\u015Bciana replikator\xF3w znika po siedmiu i p\xF3\u0142 minuty."
+    type: Tweak
+  - message: Powielacz replistali pracuje szybciej.
+    type: Tweak
+  - message: "W replikatorach nie ma ju\u017C oleju."
+    type: Remove
+  - message: "Kolosalny Replikator jest mniejszy i ma nieco mniej wytrzyma\u0142o\u015B\
+      ci."
+    type: Tweak
+  - message: "Wybuch g\u0142owicy nuklearnej niszczy Kolosalnego Replikatora"
+    type: Fix
+  - message: "B\u0142ysk wystrza\u0142u Kolosalnego Replikatora pojawia si\u0119 na\
+      \ lufie, a nie na \u015Brodku kad\u0142uba."
+    type: Fix
+  - message: "Zwi\u0119kszono progi \u015Bmierci replikator\xF3w. Warto\u015B\u0107\
+      \ zale\u017Cy od klasy i ro\u015Bnie wraz z kolejnymi formami."
+  id: 10053
+  time: '2026-10-17T11:58:27.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1111
+- author: pinkscreen i Nikita
+  changes:
+  - message: Dodano Mocnego Fulla.
+    type: Add
+  - message: Dodano bekanie.
+    type: Add
+  id: 10054
+  time: '2026-10-17T12:34:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1000
+- author: GibMeclay
+  changes:
+  - message: "Dostosowano akcent francuski do j\u0119zyka polskiego"
+    type: Tweak
+  id: 10055
+  time: '2026-10-17T12:39:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1108
+- author: Joker66613
+  changes:
+  - message: "Dodano polskie jedzenie i napoje z Aquili: go\u0142\u0105bki, \u017C\
+      urek, ptasie mleczko, Amarena, Mocny Full, Tymbark i Helena, a w cargo skrzyni\u0119\
+      \ krem\xF3wek."
+    type: Add
+  - message: "Dodano polskie flagi, sztandar, krzy\u017Ce i god\u0142a wieszane na\
+      \ \u015Bcianie oraz du\u017Cy krzy\u017C."
+    type: Add
+  - message: "Dodano 93 polskie plakaty, polskie tabliczki kierunkowe, szachownic\u0119\
+      \ lotnicz\u0105 i nowe szyldy barowe."
+    type: Add
+  - message: "Dodano Malucha, reklam\xF3wki, sanda\u0142y ze skarpetkami, str\xF3\
+      j Kapitana Bomby i brakuj\u0105ce wzory polskiej bielizny w bibelotach."
+    type: Add
+  - message: "Dodano nied\u017Awiedzia Wojtka i Kurwinoxy."
+    type: Add
+  id: 10056
+  time: '2026-10-17T14:52:41.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1104
+- author: Nikita
+  changes:
+  - message: "Dodano atak prawym przyciskiem dla Kolosalnego Replikatora, kt\xF3ry\
+      \ zadaje 90 obra\u017Ce\u0144 strukturalnych"
+    type: Add
+  - message: "Budowniczy III replikator mo\u017Ce stawi\u0107 wzmocnione \u015Bciany\
+      \ za pomoc\u0105 nowej umiej\u0119tno\u015Bci"
+    type: Add
+  - message: "Zwi\u0119kszono zdrowie gniazda, wzrasta te\u017C wraz z poziomem"
+    type: Tweak
+  - message: "Zmniejszono zdrowie wszystkich replikator\xF3w o 15%"
+    type: Tweak
+  - message: Zmniejszono zdrowie Kolosalnego Replikatora o 20%
+    type: Tweak
+  - message: "Szybkostrzelno\u015B\u0107 trybu \u015Bmertelnego miniguna Kolosalnego\
+      \ Replikatora zosta\u0142a zmniejszona o 15%"
+    type: Tweak
+  - message: "Poprawiono zdrowie replikator\xF3w. Teraz nie psuj\u0105 si\u0119 od\
+      \ 30% dmg."
+    type: Fix
+  id: 10057
+  time: '2026-10-17T23:55:32.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1113

@@ -23,6 +23,12 @@
       jumpsuit:
       - state: equipped-INNERCLOTHING
       - state: trinkets-equipped-INNERCLOTHING
+  - type: Tag # Polonium: składnik polskiego sztandaru i godeł
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - JumpsuitColorWhite
 
 # Grey Jumpsuit
 - type: entity
@@ -333,6 +339,12 @@
       - state: equipped-INNERCLOTHING
         color: "#eb0c07"
       - state: trinkets-equipped-INNERCLOTHING
+  - type: Tag # Polonium: składnik polskiego sztandaru i godeł
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - JumpsuitColorRed
 
 # Yellow Jumpsuit
 - type: entity
