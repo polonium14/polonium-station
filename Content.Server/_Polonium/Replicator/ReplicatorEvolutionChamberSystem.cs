@@ -9,6 +9,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
@@ -53,7 +54,8 @@ public sealed partial class ReplicatorEvolutionChamberSystem : EntitySystem
 
     private void OnModulesMapInit(Entity<ReplicatorModulesComponent> ent, ref MapInitEvent args)
     {
-        if (_mobThreshold.TryGetThresholdForState(ent, MobState.Dead, out var deadAt))
+        if (TryComp<MobThresholdsComponent>(ent, out var thresholds)
+            && _mobThreshold.TryGetThresholdForState(ent, MobState.Dead, out var deadAt, thresholds))
             UpdateDestruction(ent, deadAt.Value);
     }
 
