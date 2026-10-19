@@ -15,12 +15,12 @@ using Content.Shared.Item;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.NameIdentifier; // Polonium
 using Content.Shared.NameModifier.EntitySystems; // Polonium
 using Content.Shared.Popups;
+using Content.Shared.Stacks;
 using Content.Shared.StepTrigger.Components;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Stunnable;
@@ -38,7 +38,6 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedHandsSystem _handsSystem = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private PullingSystem _pulling = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedItemSystem _item = default!;
@@ -66,19 +65,7 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
         if (HasComp<ReplicatorNestFallingComponent>(args.Tripper))
             return;
 
-        // POLONIUM
         if (!_hive.CanDigest(args.Tripper))
-            return;
-
-        var isReplicator = HasComp<ReplicatorComponent>(args.Tripper);
-
-        if (TryComp<MobStateComponent>(args.Tripper, out var mobState) && isReplicator && _mobState.IsDead(args.Tripper))
-        {
-            StartFalling(ent, args.Tripper);
-            return;
-        }
-
-        if (mobState != null && _mobState.IsAlive(args.Tripper))
             return;
 
         StartFalling(ent, args.Tripper);
@@ -86,7 +73,6 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
 
     private void StartFalling(Entity<ReplicatorNestComponent> ent, EntityUid tripper, bool playSound = true)
     {
-
         if (TryComp<PullableComponent>(tripper, out var pullable) && pullable.BeingPulled)
             _pulling.TryStopPull(tripper, pullable);
 
@@ -105,8 +91,8 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
             return;
 
         // POLONIUM: replisteel only refunds the budget, or printed sheets could be fed back to grow the nest
-        TryComp<ReplicatorHiveComponent>(ent, out var hive);
-        if (hive != null && _hive.GetStoredBudget((ent, hive), tripper) is > 0 and var refund)
+        if (TryComp<ReplicatorHiveComponent>(ent, out var hive)
+            && _hive.GetStoredBudget((ent, hive), tripper) is > 0 and var refund)
         {
             _hive.AddBudget((ent, hive), refund);
             return;
@@ -118,7 +104,12 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
         ent.Comp.TotalPoints++;
         ent.Comp.SpawningProgress++;
 
-        if (TryComp<ItemComponent>(tripper, out var itemComp))
+        if (TryComp<StackComponent>(tripper, out var stackComp))
+        {
+            ent.Comp.TotalPoints += stackComp.Count;
+            ent.Comp.SpawningProgress += stackComp.Count;
+        }
+        else if (TryComp<ItemComponent>(tripper, out var itemComp))
         {
             if (_item.GetSizePrototype(itemComp.Size) == _item.GetSizePrototype("Large"))
                 ent.Comp.TotalPoints++;

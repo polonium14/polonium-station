@@ -17,6 +17,11 @@ using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Stunnable;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
+using Content.Shared.Storage.Components;
+using Content.Server.Storage.EntitySystems;
+using Content.Shared.Buckle.Components;
+using Content.Server.Buckle.Systems;
+using Content.Shared.Storage;
 
 namespace Content.Server._Impstation.Replicator;
 
@@ -31,6 +36,8 @@ public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private ReplicatorHiveSystem _hive = default!; // POLONIUM
     [Dependency] private ReplicatorQueenSystem _queen = default!; // POLONIUM
+    [Dependency] private EntityStorageSystem _entStorage = default!; // POLONIUM
+    [Dependency] private BuckleSystem _buckle = default!; // POLONIUM
 
     private readonly List<EntityUid> _protectedInside = new(); // POLONIUM
 
@@ -69,36 +76,30 @@ public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
             return;
         }
 
-        HandlePoints(nest, uid);
-
-        _protectedInside.Clear();
-        FindProtected(uid, _protectedInside);
-
-        foreach (var saved in _protectedInside)
+        if (TryComp<EntityStorageComponent>(uid, out var entStorage))
         {
-            _containerSystem.TryRemoveFromContainer(saved, force: true);
-            _transform.DropNextTo(saved, nest.Owner);
+            _entStorage.EmptyContents(uid, entStorage);
         }
 
-        QueueDel(uid);
-    }
-
-    // POLONIUM
-    private void FindProtected(EntityUid uid, List<EntityUid> found)
-    {
-        if (!TryComp<ContainerManagerComponent>(uid, out var manager))
-            return;
-
-        foreach (var container in _containerSystem.GetAllContainers(uid, manager))
+        if (TryComp<StorageComponent>(uid, out var container))
         {
-            foreach (var contained in container.ContainedEntities)
+            _containerSystem.EmptyContainer(container.Container, true);
+        }
+
+        if (TryComp<StrapComponent>(uid, out var strapComp) && strapComp.BuckledEntities.Count > 0)
+        {
+            foreach (var buckled in strapComp.BuckledEntities)
             {
-                if (_hive.IsProtected(contained))
-                    found.Add(contained);
-                else
-                    FindProtected(contained, found);
+                if (!TryComp<BuckleComponent>(buckled, out var buckleComp))
+                {
+                    _buckle.Unbuckle((uid, buckleComp), null);
+                }
             }
         }
+
+        HandlePoints(nest, uid);
+
+        QueueDel(uid);
     }
 
     private void OnEntRemoved(Entity<ReplicatorNestComponent> ent, ref EntRemovedFromContainerMessage args)
