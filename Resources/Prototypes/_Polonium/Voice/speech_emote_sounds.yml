@@ -36,3 +36,23 @@
       collection: XenoborgBuzzTwo
     Ping:
       collection: XenoborgPing
+
+- type: emoteSounds
+  id: HonkClown
+  params:
+    variation: 0.08
+  sounds:
+    Scream:
+      collection: HonkClownHorns
+    HonkClownWail:
+      collection: HonkClownHorns
+
+- type: emoteSounds
+  id: HonkClownBlob
+  params:
+    variation: 0.05
+  sounds:
+    Scream:
+      collection: HonkClownBlobScream
+    HonkClownWail:
+      collection: HonkClownHorns

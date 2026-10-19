@@ -540,6 +540,10 @@ public partial record struct AnomalySpawnSettings()
     /// Whether or not anomaly spawns entities on SeverityChanged
     /// </summary>
     public bool SpawnOnSeverityChanged { get; set; } = false;
+
+    public bool ScaleWithPlayers { get; set; } = false; // Polonium
+
+    public int PlayersForMaxAmount { get; set; } = 50; // Polonium
 }
 
 public sealed partial class ActionAnomalyPulseEvent : InstantActionEvent;

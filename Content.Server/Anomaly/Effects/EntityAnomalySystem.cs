@@ -2,6 +2,9 @@ using Content.Shared.Anomaly;
 using Content.Shared.Anomaly.Components;
 using Content.Shared.Anomaly.Effects;
 using Content.Shared.Anomaly.Effects.Components;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
+using Robust.Shared.Player;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 
@@ -41,8 +44,25 @@ public sealed partial class EntityAnomalySystem : SharedEntityAnomalySystem
             if (!entry.Settings.SpawnOnSuperCritical)
                 continue;
 
-            SpawnEntities(component, entry, 1, 1, args.PowerModifier);
+            SpawnEntities(component, entry, 1, 1, GetPowerModifier(entry, args.PowerModifier));
         }
+    }
+
+    // Polonium
+    private float GetPowerModifier(EntitySpawnSettingsEntry entry, float powerModifier)
+    {
+        if (!entry.Settings.ScaleWithPlayers)
+            return powerModifier;
+
+        var alive = 0;
+        var query = EntityQueryEnumerator<ActorComponent, MobStateComponent>();
+        while (query.MoveNext(out _, out _, out var mobState))
+        {
+            if (mobState.CurrentState != MobState.Dead)
+                alive++;
+        }
+
+        return Math.Clamp(alive / (float) Math.Max(1, entry.Settings.PlayersForMaxAmount), 0f, 1f);
     }
 
     private void OnShutdown(Entity<EntitySpawnAnomalyComponent> component, ref AnomalyShutdownEvent args)

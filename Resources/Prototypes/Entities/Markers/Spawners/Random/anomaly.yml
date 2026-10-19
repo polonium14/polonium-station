@@ -24,6 +24,7 @@
     - AnomalyTech
     #- AnomalySanta
     - AnomalyBanana
+    - AnomalyEvilClown # Polonium
     rareChance: 0.3
     rarePrototypes:
     - RandomAnomalyInjectorSpawner

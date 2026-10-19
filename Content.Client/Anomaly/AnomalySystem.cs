@@ -77,7 +77,7 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
         _sprite.LayerSetVisible((uid, sprite), layer, !pulsing);
         _sprite.LayerSetVisible((uid, sprite), animatedLayer, pulsing);
 
-        if (changed) // Polonium - pulse and rest animations always start from their first frame
+        if (changed) // Polonium
             _sprite.LayerSetAnimationTime((uid, sprite), pulsing ? animatedLayer : layer, 0f);
     }
 

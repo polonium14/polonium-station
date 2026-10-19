@@ -1,0 +1,36 @@
+- type: entity
+  parent: RedLaser
+  id: RedLaserHonk
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 5.88
+
+- type: entity
+  parent: RedMediumLaser
+  id: RedMediumLaserHonk
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 7.14
+
+- type: entity
+  parent: WeaponBehonkerLaser
+  id: WeaponBehonkerLaserHonk
+  components:
+  - type: BatteryAmmoProvider
+    proto: RedMediumLaserHonk
+    fireCost: 100
+
+- type: entity
+  parent: TrashBananaPeelExplosive
+  id: TrashBananaPeelHonkMine
+  suffix: Honk
+  components:
+  - type: Explosive
+    maxIntensity: 1.4
+    totalIntensity: 8

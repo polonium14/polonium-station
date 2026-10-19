@@ -22,6 +22,12 @@ public sealed partial class AutoEmotePrototype : IPrototype
     public TimeSpan Interval;
 
     /// <summary>
+    /// If set, the delay is picked at random between <see cref="Interval"/> and this value each time.
+    /// </summary>
+    [DataField]
+    public TimeSpan? MaxInterval; // Polonium
+
+    /// <summary>
     /// Probability of performing the emote each interval.
     /// </summary>
     [DataField]
