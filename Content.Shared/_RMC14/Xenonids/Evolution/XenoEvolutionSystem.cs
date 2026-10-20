@@ -383,12 +383,20 @@ public sealed partial class XenoEvolutionSystem : EntitySystem
 
                 // Polonium: przy 30 tickach na sekundę przyrost z jednego ticku (np. 0,1 pkt/s * 1/30 s)
                 // jest mniejszy niż 0,01 i FixedPoint2 obcinał go do zera, więc ewolucja stała w miejscu.
-                // Czekamy, aż uzbiera się choć jedna setna punktu.
-                var gained = evolution.PointsPerSecond.Double() * _evolutionPointsRate * elapsed.TotalSeconds;
-                if (gained < 0.01)
+                // Czekamy, aż uzbiera się choć jedna setna punktu, a niewliczona reszta czasu przechodzi na kolejny raz.
+                var perSecond = evolution.PointsPerSecond.Double() * _evolutionPointsRate;
+                if (perSecond <= 0)
+                {
+                    // Wstrzymana ewolucja nie może po wznowieniu wypłacić zaległych punktów naraz.
+                    evolution.LastPointsAt = time;
+                    continue;
+                }
+
+                var gained = FixedPoint2.New(perSecond * elapsed.TotalSeconds);
+                if (gained <= FixedPoint2.Zero)
                     continue;
 
-                evolution.LastPointsAt = time;
+                evolution.LastPointsAt += TimeSpan.FromSeconds(gained.Double() / perSecond);
                 evolution.Points = FixedPoint2.Min(evolution.Max, evolution.Points + gained);
                 Dirty(uid, evolution);
             }
