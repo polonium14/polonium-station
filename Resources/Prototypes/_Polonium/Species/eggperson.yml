@@ -1,0 +1,24 @@
+# Jajoludzie z Aquili (aq33/AquilaStation, wcześniej aq33/tgstation).
+- type: species
+  id: Eggperson
+  name: species-name-eggperson
+  roundStart: true
+  prototype: MobEggperson
+  dollPrototype: AppearanceEggperson
+  skinColoration: EggShell
+  defaultSkinTone: "#FFE7C9"
+  defaultSoundsBySex:
+  - MaleEggperson
+  - FemaleEggperson
+  - MaleEggperson
+  voices:
+  - MaleEggperson
+  - FemaleEggperson
+
+# Od białej skorupki po brązową.
+- type: skinColoration
+  id: EggShell
+  strategy: !type:ClampedHsvColoration
+    hue: [0.04, 0.13]
+    saturation: [0, 0.45]
+    value: [0.6, 1]
