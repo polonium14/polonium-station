@@ -113,7 +113,10 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
 
             // Staza i krio zatrzymują rozwój, śmierć nosiciela już nie.
             if (IsInStasis(host) || HasComp<CryostorageContainedComponent>(host))
+            {
+                embryo.NextStageAt += embryo.TickDelay;
                 continue;
+            }
 
             if (embryo.NextStageAt == null)
             {
@@ -243,7 +246,8 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
     {
         return TryComp<BuckleComponent>(host, out var buckle)
             && buckle.BuckledTo is { } bed
-            && HasComp<StasisBedComponent>(bed)
+            && TryComp<StasisBedComponent>(bed, out var stasis)
+            && stasis.Multiplier > 1f // zemagowane łóżko przyspiesza metabolizm zamiast go spowalniać
             && _powerReceiver.IsPowered(bed);
     }
 
