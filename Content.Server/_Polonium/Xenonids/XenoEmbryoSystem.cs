@@ -5,6 +5,7 @@ using Content.Shared._RMC14.Xenonids;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared.Bed.Components;
+using Content.Shared.Bed.Cryostorage;
 using Content.Shared.Body;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Damage;
@@ -116,8 +117,8 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
             embryo.NextTick = time + embryo.TickDelay;
             var ent = new Entity<XenoEmbryoComponent>(uid, embryo);
 
-            // Staza zatrzymuje rozwój, śmierć nosiciela już nie.
-            if (IsInStasis(host))
+            // Staza i krio zatrzymują rozwój, śmierć nosiciela już nie.
+            if (IsInStasis(host) || HasComp<CryostorageContainedComponent>(host))
                 continue;
 
             if (embryo.NextStageAt == null)
@@ -215,11 +216,13 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
     /// <summary>
     /// Wyklucie. Larwa jest rolą ducha, więc wychodzi od razu i czeka na gracza.
     /// Jeśli klatka piersiowa jest właśnie otwarta na stole, larwa wypełza bez zabijania nosiciela.
+    /// Nosiciel w kostnicy, worku albo szafce: larwa zostaje w środku razem z nim.
     /// </summary>
     public void Burst(Entity<XenoEmbryoComponent> embryo, EntityUid host)
     {
-        var coords = _transform.GetMoverCoordinates(host);
-        var larva = Spawn(embryo.Comp.LarvaPrototype, coords);
+        var larva = _container.TryGetContainingContainer(host, out var container)
+            ? SpawnInContainerOrDrop(embryo.Comp.LarvaPrototype, container.Owner, container.ID)
+            : Spawn(embryo.Comp.LarvaPrototype, _transform.GetMoverCoordinates(host));
         _audio.PlayPvs(BurstSound, host);
 
         if (IsChestOpen(host))
