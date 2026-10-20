@@ -80,7 +80,7 @@ public sealed partial class BedSystem : EntitySystem
 
     private void OnStasisUnstrapped(Entity<StasisBedComponent> ent, ref UnstrappedEvent args)
     {
-        RemComp<StasisBedBuckledComponent>(args.Buckle); // Polonium: znacznik siedzi na pacjencie, nie na łóżku
+        RemComp<StasisBedBuckledComponent>(ent);
         _metabolizer.UpdateMetabolicMultiplier(args.Buckle);
     }
 
