@@ -1,27 +1,27 @@
 book-text-holoparasite-info =
-    Thanks for choosing our holoparasite package!
-    At cybersun, we pride ourselves on cutting-edge military and industrial technology, and greatly appreciate your contribution to our establishment!
-    Guardians are helpful and intelligent beings which nest within your body, completely immune to common hazards such as pressure, temperature and even bullets!
-    You have purchased the holoparasite package, which contains a holoparasite activator, an instruction booklet, and our softcap merchandise.
-    Instructions for use:
-    1. Activate the holoparasite injector (preferably in a secluded area).
-    2. Wait for the tingling and/or painful metaphysical sensation.
-    3. Check your holoparasite for the ability to communicate and cooperate, and capacity to understand your orders.
-    4. Use your recall-manifest ability to summon or recall the holoparasite back into your body.
-    5. Keep the holoparasite within a short distance from yourself, otherwise it will be recalled by force!
-    WARNING: Guardians are metaphysical beings, but draw from your HEALTH in order to exist. Direct damage done to guardians will be partially transferred to you!
-    Cybersun inc. is not responsible for complete annihilation following the misuse of Holoparasite technology.
+    Dziękujemy za wybranie naszego pakietu holopasożyta!
+    W Cybersun szczycimy się nowatorskimi technologiami wojskowymi i przemysłowymi i bardzo doceniamy twój wkład w nasze przedsiębiorstwo!
+    Strażnicy to pomocne i inteligentne istoty, które gnieżdżą się w twoim ciele i są całkowicie odporne na zwykłe zagrożenia, takie jak ciśnienie, temperatura, a nawet kule!
+    Zakupiłeś pakiet holopasożyta, który zawiera aktywator holopasożyta, instrukcję obsługi oraz nasze czapki z daszkiem.
+    Instrukcja użycia:
+    1. Aktywuj wstrzykiwacz holopasożyta (najlepiej w odosobnionym miejscu).
+    2. Poczekaj na mrowienie i/lub bolesne doznanie metafizyczne.
+    3. Sprawdź, czy twój holopasożyt potrafi się komunikować i współpracować oraz czy rozumie twoje rozkazy.
+    4. Użyj zdolności przywołania/materializacji, aby przywołać holopasożyta lub z powrotem schować go w swoim ciele.
+    5. Trzymaj holopasożyta w niewielkiej odległości od siebie, w przeciwnym razie zostanie przywołany siłą!
+    OSTRZEŻENIE: Strażnicy są istotami metafizycznymi, ale do istnienia czerpią z twojego ZDROWIA. Bezpośrednie obrażenia zadane strażnikom zostaną częściowo przeniesione na ciebie!
+    Cybersun sp. z o.o. nie ponosi odpowiedzialności za całkowitą anihilację po niewłaściwym użyciu technologii holopasożyta.
 book-text-ame-scribbles =
-    I don't know if you're trained already, so I hope this'll help.
-    AME controller needs LV power and an HV wire to output to. Check the area with a crowbar if you aren't sure.
-    There should be an empty room next to where you found this, that room's wired for the AME.
-    You can put an AME anywhere if you can get the wires to it, though.
-    3x3 grid of AME parts, multitool them to unpack. Be careful not to 'trap' anything.
-    AME controller adjacent horizontally or vertically (not diagonally) to any point.
-    With only 1 core (what a 3x3 grid will get you), don't turn it up above 2.
-    The golden rule is 2 injection for every 1 core. You can go lower to save fuel.
-    Higher will burn the engine out and eventually make it explode. Don't.
-    Don't forget to refuel it, it tends to stop at the worst possible time.
+    Nie wiem, czy już jesteś przeszkolony, więc mam nadzieję, że to ci pomoże.
+    Kontroler AME potrzebuje zasilania LV i przewodu HV, do którego może przekazywać energię. Jeśli nie jesteś pewien, sprawdź teren łomem.
+    Obok miejsca, w którym to znalazłeś, powinno być puste pomieszczenie, które ma okablowanie pod AME.
+    AME możesz jednak postawić gdziekolwiek, jeśli doprowadzisz tam przewody.
+    Siatka 3x3 części AME, użyj na nich multitoola, aby je rozpakować. Uważaj, żeby niczego nie „uwięzić”.
+    Kontroler AME musi przylegać poziomo lub pionowo (nie po przekątnej) do dowolnego punktu.
+    Przy tylko 1 rdzeniu (tyle dostaniesz z siatki 3x3) nie ustawiaj wyżej niż 2.
+    Złota zasada brzmi: 2 wtryski na każdy 1 rdzeń. Możesz ustawić mniej, żeby oszczędzać paliwo.
+    Wyższe ustawienie wypali silnik, a w końcu doprowadzi do jego eksplozji. Nie rób tego.
+    Nie zapomnij go uzupełnić paliwem, lubi przestać działać w najgorszym możliwym momencie.
 book-text-agrichemkit-manual =
     Thank you for choosing the safe-for-all-ages NanoTrasen Agri-Chem is Fun! chemistry kit, the best learning-adjacent toy of 2468! Be prepared to discover all about the biggest innovations in agriculture since people buried fish with their corn seeds.
     
@@ -50,20 +50,20 @@ book-text-agrichemkit-manual =
     
     Do not drink unstable mutagen. Wash your hands thoroughly after handling. Wash your eyes if you have looked at unstable mutagen for over 30 minutes in a 24 hour period. Store in a dark room between 293–295K. Do not use on corporate holidays. If you begin hearing voices telling you to drink unstable mutagen, please contact your doctor, Kierownik Personelu, or exorcist.
 book-text-combat-bakery-kit =
-    Thank you for choosing our combat bakery kit!
-    Enclosed are two (2) CyberSun patented Throwing Croissants, and one (1) patent-pending Baguette Sword.
-    The included Donk Co. microwave board can construct a microwave capable of baking more weapons.
-    Just like the baked weapons, be sure to eat this note after use. Good luck, agent.
+    Dziękujemy za wybranie naszego bojowego zestawu piekarza!
+    W środku znajdziesz dwa (2) opatentowane przez CyberSun rzucane rogaliki oraz jeden (1) miecz-bagietkę z oczekującym patentem.
+    Dołączona płyta kuchenki mikrofalowej Donk sp. z o.o. pozwala zbudować mikrofalówkę zdolną upiec kolejną broń.
+    Tak jak upieczoną broń, po użyciu zjedz również tę notatkę. Powodzenia, agencie.
     
-    Baguette Sword Recipe:
-    Dough x 1
-    Salt 5u
-    Pepper 5u
-    Metal Rod x 1
-    Cook Time: 15 seconds
+    Przepis na miecz-bagietkę:
+    Ciasto x 1
+    Sól 5u
+    Pieprz 5u
+    Metalowy pręt x 1
+    Czas pieczenia: 15 sekund
     
-    Throwing Croissant Recipe:
-    Raw Croissant x 1
-    Butter Slice x 1
-    Glass Shard x 1
-    Cook Time: 5 seconds
+    Przepis na rzucany rogalik:
+    Surowy rogalik x 1
+    Plasterek masła x 1
+    Odłamek szkła x 1
+    Czas pieczenia: 5 sekund

@@ -7,6 +7,6 @@ mech-menu-title = panel sterowania mecha
 mech-integrity-display = Spójność: { $amount }%
 mech-energy-display = Energia: { $amount }%
 mech-energy-missing = Energia: BRAKUJE
-mech-slot-display = Open Slots: { $amount }
+mech-slot-display = Wolne sloty: { $amount }
 mech-construction-guide-string = Wszystkie części mecha muszą być przymocowane do uprzęży.
 mech-construction-guide-string-vim = Do uprzęży należy przymocować dwie nogi robottai hełm EVA.

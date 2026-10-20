@@ -1,12 +1,12 @@
-ent-AppearanceDwarf = dwarf appearance
+ent-AppearanceDwarf = wygląd krasnoluda
     .desc = { ent-AppearanceHuman.desc }
 ent-MobDwarf = Urist McRęce Krasnolud
     .desc = { ent-AppearanceDwarf.desc }
 ent-OrganDwarf = { ent-OrganBaseOrganic }
-    .suffix = Dwarf
+    .suffix = Krasnolud
     .desc = { ent-OrganBaseOrganic.desc }
 ent-OrganDwarfAppearance = { ent-OrganDwarf }
-    .suffix = Dwarf
+    .suffix = Krasnolud
     .desc = { ent-OrganDwarf.desc }
 ent-OrganDwarfMetabolizer = { ent-OrganDwarf }
     .desc = { ent-OrganDwarf.desc }

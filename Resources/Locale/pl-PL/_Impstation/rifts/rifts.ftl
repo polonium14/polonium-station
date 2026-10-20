@@ -1,1 +1,1 @@
-dino-rift-warning = A Dino Wars rift has been detected { $location }. Stop it at all costs!
+dino-rift-warning = Wykryto szczelinę Wojen Dinozaurów { $location }. Powstrzymajcie ją za wszelką cenę!

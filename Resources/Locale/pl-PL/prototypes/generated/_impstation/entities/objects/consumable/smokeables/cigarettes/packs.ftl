@@ -1,2 +1,2 @@
-ent-CigPackMixedRejects = Dan's soaked smokes rejects
-    .desc = Dan worked with Interdyne chemistry to dispose of excess chemicals, ENJOY CAUTIOUSLY.
+ent-CigPackMixedRejects = odrzuty Dan's Soaked Smokes
+    .desc = Dan współpracował z chemikami Interdyne, aby pozbyć się nadmiaru substancji. CIESZ SIĘ OSTROŻNIE.

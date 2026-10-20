@@ -23,9 +23,9 @@ comp-pda-ui-eject-pen-button = Wysuń Długopis
 comp-pda-ui-ringtone-button = Dzwonek
 comp-pda-ui-ringtone-button-description = Zmień dzwonek swojego PDA
 comp-pda-ui-toggle-flashlight-button = Włącz latarkę
-pda-bound-user-interface-music-button = Music Instrument
+pda-bound-user-interface-music-button = Instrument muzyczny
 pda-bound-user-interface-music-button-description = Odtwarzaj muzykę na swoim PDA
 comp-pda-ui-unknown = Nieznane
 comp-pda-ui-unassigned = Nieprzypisane
 pda-notification-message = [font size=12][bold]PDA[/bold] { $header }: [/font]
-    "{ $message }"
+    „{ $message }”

@@ -1,4 +1,4 @@
-ent-CultSoulStone = soul stone
+ent-CultSoulStone = kamień dusz
     .desc = May or may not contain a stolen soul.
-ent-CultSoulStoneShard = soulstone shard
-    .desc = A fragment of Nar'Sie's crystalized blood, still humming with trapped souls.
+ent-CultSoulStoneShard = odłamek kamienia dusz
+    .desc = Fragment skrystalizowanej krwi Nar'Sie, wciąż pulsujący uwięzionymi duszami.

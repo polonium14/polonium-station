@@ -1,29 +1,29 @@
-fax-machine-popup-source-unknown = unknown
-fax-machine-popup-received = Received correspondence from { $from }.
-fax-machine-popup-name-long = Fax name is too long
-fax-machine-popup-name-exist = Fax with same name already exist in network
-fax-machine-popup-name-set = Fax name has been updated
+fax-machine-popup-source-unknown = nieznane
+fax-machine-popup-received = Otrzymano korespondencję od: { $from }.
+fax-machine-popup-name-long = Nazwa faksu jest zbyt długa
+fax-machine-popup-name-exist = Faks o takiej samej nazwie już istnieje w sieci
+fax-machine-popup-name-set = Nazwa faksu została zaktualizowana
 fax-machine-popup-error = ERROR — jam in paper feed
 fax-machine-popup-copy-error = ERROR — unable to copy!
-fax-machine-dialog-rename = Rename
-fax-machine-dialog-field-name = Name
-fax-machine-ui-window = Fax Machine
-fax-machine-ui-file-button = Print File
-fax-machine-ui-paper-button-normal = Plain Paper
-fax-machine-ui-paper-button-office = Office Paper
-fax-machine-ui-copy-button = Copy
-fax-machine-ui-send-button = Send
-fax-machine-ui-refresh-button = Refresh
-fax-machine-ui-no-peers = No Peers
-fax-machine-ui-to = To:
-fax-machine-ui-from = From:
-fax-machine-ui-paper-inserted = Paper in tray
-fax-machine-ui-paper-not-inserted = No paper
-fax-machine-chat-notify = Received new fax message from "{ $fax }" fax
-fax-machine-printed-paper-name = printed paper
+fax-machine-dialog-rename = Zmień nazwę
+fax-machine-dialog-field-name = Nazwa
+fax-machine-ui-window = Faks
+fax-machine-ui-file-button = Drukuj plik
+fax-machine-ui-paper-button-normal = Zwykły papier
+fax-machine-ui-paper-button-office = Papier biurowy
+fax-machine-ui-copy-button = Kopiuj
+fax-machine-ui-send-button = Wyślij
+fax-machine-ui-refresh-button = Odśwież
+fax-machine-ui-no-peers = Brak urządzeń w sieci
+fax-machine-ui-to = Do:
+fax-machine-ui-from = Od:
+fax-machine-ui-paper-inserted = Papier w tacy
+fax-machine-ui-paper-not-inserted = Brak papieru
+fax-machine-chat-notify = Otrzymano nową wiadomość faksową z faksu „{ $fax }”
+fax-machine-printed-paper-name = wydrukowany papier
 fax-machine-sender-info =
     ─────────────────────────────────────
-    Fax sent
-    from: { $sender_name } [address: { $sender_addr }]
-    to: { $recipient_name } [address: { $recipient_addr }]
-    at: { $time }
+    Faks wysłany
+    od: { $sender_name } [adres: { $sender_addr }]
+    do: { $recipient_name } [adres: { $recipient_addr }]
+    o: { $time }

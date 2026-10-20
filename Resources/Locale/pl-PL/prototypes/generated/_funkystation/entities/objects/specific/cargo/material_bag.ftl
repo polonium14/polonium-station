@@ -1,2 +1,2 @@
-ent-MaterialBag = material bag
-    .desc = A sturdy bag for carrying large amounts processed material.
+ent-MaterialBag = worek na materiały
+    .desc = Wytrzymały worek do przenoszenia dużych ilości przetworzonych materiałów.

@@ -1,9 +1,9 @@
-revenant-essence-amount = You have [color=plum]{ $current } Essence[/color]. Your regen amount is [color=plum]{ $max } Essence[/color].
-revenant-max-essence-increased = Your max essence has increased!
-revenant-not-enough-essence = Not enough essence!
-revenant-in-solid = You cannot use this ability while within a solid object.
-revenant-soul-too-powerful = This soul is too strong to harvest!
-revenant-soul-harvested = This soul has already been harvested!
+revenant-essence-amount = Masz [color=plum]{ $current } esencji[/color]. Twoja regeneracja wynosi [color=plum]{ $max } esencji[/color].
+revenant-max-essence-increased = Twoja maksymalna esencja wzrosła!
+revenant-not-enough-essence = Za mało esencji!
+revenant-in-solid = Nie możesz użyć tej zdolności wewnątrz litego obiektu.
+revenant-soul-too-powerful = Ta dusza jest zbyt silna, by ją zebrać!
+revenant-soul-harvested = Ta dusza została już zebrana!
 revenant-soul-searching = You search for the soul of { $target }.
 revenant-soul-yield-high = { CAPITALIZE($target) } has an above average soul!
 revenant-soul-yield-average = { CAPITALIZE($target) } has an average soul.

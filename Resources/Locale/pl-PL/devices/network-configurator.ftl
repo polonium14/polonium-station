@@ -28,11 +28,11 @@ network-configurator-ui-count-label =
         [few] urządzenia
        *[many] urządzeń
     }
-network-configurator-text-set = Set
-network-configurator-text-add = Add
-network-configurator-text-clear = Clear
-network-configurator-text-copy = Copy
-network-configurator-text-show = Show
+network-configurator-text-set = Ustaw
+network-configurator-text-add = Dodaj
+network-configurator-text-clear = Wyczyść
+network-configurator-text-copy = Kopiuj
+network-configurator-text-show = Pokaż
 # tooltips
 network-configurator-tooltip-set = Ustawia listę urządzeń docelowych
 network-configurator-tooltip-add = Dodaje do listy urządzeń docelowych

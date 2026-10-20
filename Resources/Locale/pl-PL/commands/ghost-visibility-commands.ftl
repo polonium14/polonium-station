@@ -1,5 +1,5 @@
-cmd-toggleghostvisibility-desc = Toggles ghost visibility on the client.
-cmd-toggleghostvisibility-help = Usage: toggleghostvisibility [bool]
-cmd-toggleselfghost-desc = Toggles seeing your own ghost.
-cmd-toggleselfghost-help = Usage: toggleselfghost
-cmd-toggleselfghost-must-be-ghost = Entity must be a ghost.
+cmd-toggleghostvisibility-desc = Przełącza widoczność duchów u klienta.
+cmd-toggleghostvisibility-help = Użycie: toggleghostvisibility [bool]
+cmd-toggleselfghost-desc = Przełącza widoczność własnego ducha.
+cmd-toggleselfghost-help = Użycie: toggleselfghost
+cmd-toggleselfghost-must-be-ghost = Encja musi być duchem.

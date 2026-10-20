@@ -1,2 +1,2 @@
-command-description-mind-get = Grabs the mind from the entity, if any.
-command-description-mind-control = Assumes control of an entity with the given player.
+command-description-mind-get = Pobiera umysł z encji, jeśli istnieje.
+command-description-mind-control = Przejmuje kontrolę nad encją za pomocą danego gracza.

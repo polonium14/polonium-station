@@ -1,1 +1,1 @@
-unable-to-wield-cant-do = You can't wield this, it's too big!
+unable-to-wield-cant-do = Nie możesz tego dzierżyć, jest za duże!

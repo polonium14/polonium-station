@@ -1,4 +1,4 @@
-ent-AppearanceThaven = thaven appearance
+ent-AppearanceThaven = wygląd tejwana
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobThaven = Urist McUszaty
     .desc = { ent-AppearanceThaven.desc }
@@ -43,8 +43,8 @@ ent-OrganThavenAppendix = { ent-OrganBaseAppendix }
     .desc = { ent-OrganBaseAppendix.desc }
 ent-OrganThavenEars = { ent-OrganBaseEars }
     .desc = { ent-OrganBaseEars.desc }
-ent-OrganThavenLungs = thaven lungs
-    .desc = Technically not lungs since they don't draw chemicals from the air, these strange, durable organs use the motion of respiration to provide energy for cell maintenance.
+ent-OrganThavenLungs = płuca tejwana
+    .desc = Technicznie nie są to płuca, bo nie pobierają substancji z powietrza. Te dziwne, wytrzymałe narządy wykorzystują ruch oddechowy do dostarczania energii na potrzeby utrzymania komórek.
 ent-OrganThavenHeart = { ent-OrganBaseHeart }
     .desc = { ent-OrganBaseHeart.desc }
 ent-OrganThavenStomach = { ent-OrganBaseStomach }

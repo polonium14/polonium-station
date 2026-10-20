@@ -15,7 +15,7 @@ petting-success-dehydrated-carp = You pet { $target } on { POSS-ADJ($target) } d
 petting-success-dog = You pet { $target } on { POSS-ADJ($target) } soft floofy head.
 petting-success-frog = You pet { $target } on { POSS-ADJ($target) } slippery little head.
 petting-success-goat = You pet { $target } on { POSS-ADJ($target) } horned floofy head.
-petting-success-sheep = You pet { THE($target) } on { POSS-ADJ($target) } soft fluffy head.
+petting-success-sheep = Głaszczesz { THE($target) } po { POSS-ADJ($target) } miękkim, puchatym łbie.
 petting-success-goose = Against all odds, you manage to pet { $target } on { POSS-ADJ($target) } horrible little head.
 petting-success-kangaroo = You pet { $target } on { POSS-ADJ($target) } Strayan head.
 petting-success-possum = You pet { $target } on { POSS-ADJ($target) } horrible little head.
@@ -33,7 +33,7 @@ petting-success-slimes = You pet { $target } on { POSS-ADJ($target) } mucous sur
 petting-success-snake = You pet { $target } on { POSS-ADJ($target) } scaly large head.
 petting-success-monkey = You pet { $target } on { POSS-ADJ($target) } mischevious little head.
 petting-success-nymph = You pet { $target } on { POSS-ADJ($target) } wooden little head.
-petting-success-scurret = You pet { THE($target) } on { POSS-ADJ($target) } legally distinct head.
+petting-success-scurret = Głaszczesz { THE($target) } po { POSS-ADJ($target) } prawnie odrębnym łbie.
 petting-failure-generic = You reach out to pet { $target }, but { SUBJECT($target) } { CONJUGATE-BE($target) } aloof towards you.
 petting-failure-bat = You reach out to pet { $target }, but { SUBJECT($target) } { CONJUGATE-BE($target) } too hard to catch!
 petting-failure-carp = You reach out to pet { $target }, but { POSS-ADJ($target) } sharp teeth make you think twice.
@@ -41,7 +41,7 @@ petting-failure-corrupted-corgi = You reach out to pet { $target }, but think be
 petting-failure-crab = You reach out to pet { $target }, but { SUBJECT($target) } { CONJUGATE-BASIC($target, "snap", "snaps") } { POSS-ADJ($target) } claws in your general direction!
 petting-failure-dehydrated-carp = You pet { $target } on { POSS-ADJ($target) } dry little head.
 petting-failure-goat = You reach out to pet { $target }, but { SUBJECT($target) } stubbornly { CONJUGATE-BASIC($target, "refuse", "refuses") }!
-petting-failure-sheep = You reach out to pet { THE($target) }, but { SUBJECT($target) } stubbornly { CONJUGATE-BASIC($target, "refuse", "refuses") }!
+petting-failure-sheep = Wyciągasz rękę, by pogłaskać { THE($target) }, ale { SUBJECT($target) } uparcie odmawia!
 petting-failure-goose = You reach out to pet { $target }, but { SUBJECT($target) } { CONJUGATE-BE($target) } too horrible!
 petting-failure-possum = You reach out to pet { $target }, but are met with hisses and snarls!
 petting-failure-pig = You reach out to pet { $target }, but are met with irritated oinks and squeals!
@@ -54,7 +54,7 @@ petting-failure-bear = You reach out to pet { $target }, but { SUBJECT($target) 
 petting-failure-monkey = You reach out to pet { $target }, but { SUBJECT($target) } almost { CONJUGATE-BASIC($target, "bite", "bites") } your fingers!
 petting-failure-nymph = You reach out to pet { $target }, but { SUBJECT($target) } { CONJUGATE-BASIC($target, "move", "moves") } { POSS-ADJ($target) } branches away.
 petting-failure-shadow = You try to pet { $target }, but your hand passes through the cold darkness of { POSS-ADJ($target) } body.
-petting-failure-scurret = You reach out to pet { THE($target) }, but { SUBJECT($target) } does a backflip!
+petting-failure-scurret = Wyciągasz rękę, by pogłaskać { THE($target) }, ale { SUBJECT($target) } robi salto w tył!
 
 ## Petting silicons
 
@@ -91,7 +91,7 @@ petting-success-station-ai-others = { CAPITALIZE($user) } pets { $target } on { 
 
 ## Rattling fences
 
-fence-rattle-success = *rattle*
+fence-rattle-success = *brzdęk*
 
 ## Patting players on the back. Funky Change
 

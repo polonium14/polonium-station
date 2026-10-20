@@ -1,2 +1,2 @@
-ent-ActionViewMoods = View Moods
-    .desc = View your current moods.
+ent-ActionViewMoods = Pokaż nastroje
+    .desc = Pokaż swoje aktualne nastroje.

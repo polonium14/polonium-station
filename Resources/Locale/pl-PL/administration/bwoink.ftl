@@ -1,5 +1,5 @@
 bwoink-user-title = Wiadomość Administracyjna
-bwoink-admin-title = Admin Help
+bwoink-admin-title = Pomoc administracji
 bwoink-system-starmute-message-no-other-users = *System: Nikt nie może odebrać twojej wiadomości. Spróbuj zpingować administratorów na Discordzie.
 bwoink-system-messages-being-relayed-to-discord =
     Wszystkie wiadomości są przekazywane administratorom na Discordzie.

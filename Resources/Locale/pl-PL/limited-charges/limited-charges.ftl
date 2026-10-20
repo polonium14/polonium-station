@@ -1,12 +1,14 @@
 limited-charges-charges-remaining =
     { $charges ->
-        [one] It has [color=fuchsia]{ $charges }[/color] charge remaining.
-       *[other] It has [color=fuchsia]{ $charges }[/color] charges remaining.
+        [one] Ma [color=fuchsia]{ $charges }[/color] pozostały ładunek.
+        [few] Ma [color=fuchsia]{ $charges }[/color] pozostałe ładunki.
+       *[other] Ma [color=fuchsia]{ $charges }[/color] pozostałych ładunków.
     }
-limited-charges-max-charges = It's at [color=green]maximum[/color] charges.
+limited-charges-max-charges = Ma [color=green]maksymalną[/color] liczbę ładunków.
 limited-charges-recharging =
     { $seconds ->
-        [one] There is [color=yellow]{ $seconds }[/color] second left until the next charge.
-       *[other] There are [color=yellow]{ $seconds }[/color] seconds left until the next charge.
+        [one] Do następnego ładunku pozostała [color=yellow]{ $seconds }[/color] sekunda.
+        [few] Do następnego ładunku pozostały [color=yellow]{ $seconds }[/color] sekundy.
+       *[other] Do następnego ładunku pozostało [color=yellow]{ $seconds }[/color] sekund.
     }
-limited-charges-no-charges = No charges left!
+limited-charges-no-charges = Brak ładunków!

@@ -1,5 +1,5 @@
 ent-OrganBloodsucker = { "" }
-    .suffix = bloodsucker
+    .suffix = krwiopijca
     .desc = { "" }
 ent-OrganBloodsuckerStomach = { ent-OrganBloodsucker }
     .desc = { ent-OrganBloodsucker.desc }

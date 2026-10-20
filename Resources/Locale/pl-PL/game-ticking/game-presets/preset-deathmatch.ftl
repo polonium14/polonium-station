@@ -1,4 +1,4 @@
-death-match-title = DeathMatch
+death-match-title = Deathmatch
 death-match-description = Zabijaj wszystko, co się rusza! Normalna rozgrywka fabularna nie ma zastosowania. Pierwszy, kto zdobędzie 31 punktów, wygrywa!
 death-match-name-player = [bold]{ $name }[/bold] ([italic]{ $username }[/italic])
 death-match-name-npc = [bold]{ $name }[/bold]
