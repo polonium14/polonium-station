@@ -44,6 +44,7 @@ public sealed partial class XenoEggSystem : EntitySystem
     private static readonly SoundPathSpecifier EggBurstSound = new("/Audio/_RMC14/Xeno/alien_egg_burst.ogg");
     private static readonly SoundPathSpecifier EggClearSound = new("/Audio/_RMC14/Xeno/alien_resin_break1.ogg");
     private static readonly TimeSpan EggCheckDelay = TimeSpan.FromSeconds(0.5);
+    private readonly HashSet<Entity<MobStateComponent>> _nearbyMobs = new();
 
     private TimeSpan _eggLayCooldown = TimeSpan.FromSeconds(300);
 
@@ -262,7 +263,9 @@ public sealed partial class XenoEggSystem : EntitySystem
 
     private bool HasVictimNearby(Entity<XenoEggComponent> egg)
     {
-        foreach (var mob in _lookup.GetEntitiesInRange<MobStateComponent>(Transform(egg).Coordinates, egg.Comp.TriggerRange))
+        _nearbyMobs.Clear();
+        _lookup.GetEntitiesInRange(Transform(egg).Coordinates, egg.Comp.TriggerRange, _nearbyMobs);
+        foreach (var mob in _nearbyMobs)
         {
             if (_facehugger.CanHug(mob) && _interaction.InRangeUnobstructed(egg.Owner, mob.Owner, egg.Comp.TriggerRange))
                 return true;
