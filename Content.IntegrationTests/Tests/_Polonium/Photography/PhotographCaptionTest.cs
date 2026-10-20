@@ -1,3 +1,4 @@
+using PhotoViewerBoundUserInterface = Content.Client._Polonium.Photography.PhotoViewerBoundUserInterface;
 using Content.IntegrationTests.Tests.Interaction;
 using Content.Server._Polonium.Photography;
 using Content.Server.Examine;
@@ -25,9 +26,10 @@ public sealed class PhotographCaptionTest : InteractionTest
 
         // Pen on photo: server opens the viewer for us and offers the caption input.
         await Interact();
-        Assert.That(TryGetBui(PhotoViewerUiKey.Key, out _), "Using a pen on a photo must open its viewer.");
+        Assert.That(TryGetBui(PhotoViewerUiKey.Key, out var bui), "Using a pen on a photo must open its viewer.");
+        Assert.That(((PhotoViewerBoundUserInterface) bui!).IsSigning, "The viewer must show the caption input.");
 
-        await SendBui(PhotoViewerUiKey.Key, new PhotoSignMessage(pen, "  Maurice\n\tTexas  "));
+        await SendBui(PhotoViewerUiKey.Key, new PhotoSignMessage("  Maurice\n\tTexas  "));
 
         var photo = Comp<PoloniumPhotographComponent>();
         var penColor = Comp<SignatureWriterComponent>(pen).Color;
@@ -42,22 +44,40 @@ public sealed class PhotographCaptionTest : InteractionTest
         Assert.That(text, Does.Contain("Maurice Texas"), "The caption must be readable on examine.");
 
         // A second caption is ignored.
-        await SendBui(PhotoViewerUiKey.Key, new PhotoSignMessage(pen, "Someone else"));
+        await SendBui(PhotoViewerUiKey.Key, new PhotoSignMessage("Someone else"));
         Assert.That(Comp<PoloniumPhotographComponent>().Caption, Is.EqualTo("Maurice Texas"));
+    }
+
+    [Test]
+    public async Task PenOnOpenViewerShowsInput()
+    {
+        await SpawnTarget(PhotoProto);
+
+        // Viewer already open (e.g. activated in hand) before the pen touches the photo.
+        await Server.WaitPost(() => SEntMan.System<Robust.Server.GameObjects.UserInterfaceSystem>()
+            .OpenUi(SEntMan.GetEntity(Target!.Value), PhotoViewerUiKey.Key, SEntMan.GetEntity(Player)));
+        await RunTicks(15);
+        Assert.That(TryGetBui(PhotoViewerUiKey.Key, out var bui));
+        Assert.That(((PhotoViewerBoundUserInterface) bui!).IsSigning, Is.False, "No pen yet, no input.");
+
+        await PlaceInHands("Pen");
+        await Interact();
+        await RunTicks(15);
+        Assert.That(((PhotoViewerBoundUserInterface) bui!).IsSigning, "A pen on an open viewer must show the input.");
     }
 
     [Test]
     public async Task UnheldPenCannotSign()
     {
         await SpawnTarget(PhotoProto);
-        var pen = await PlaceInHands("Pen");
+        await PlaceInHands("Pen");
         await Interact();
 
         // Drop the pen into the world, then claim it in a message anyway.
         await Server.WaitPost(() => HandSys.TryDrop(SEntMan.GetEntity(Player)));
         await RunTicks(1);
 
-        await SendBui(PhotoViewerUiKey.Key, new PhotoSignMessage(pen, "forged"));
+        await SendBui(PhotoViewerUiKey.Key, new PhotoSignMessage("forged"));
         Assert.That(Comp<PoloniumPhotographComponent>().Caption, Is.Null);
     }
 

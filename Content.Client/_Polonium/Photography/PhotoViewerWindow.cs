@@ -37,6 +37,9 @@ public sealed partial class PhotoViewerWindow : BaseWindow
     private readonly BoxContainer _signRow;
     private readonly LineEdit _signInput;
     private bool _signed;
+
+    /// <summary>Whether the caption input is showing.</summary>
+    public bool IsSigning => _signRow.Visible;
     private OwnedTexture? _texture;
 
     public PhotoViewerWindow()

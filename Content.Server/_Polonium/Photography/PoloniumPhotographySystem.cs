@@ -59,6 +59,8 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
     private readonly Dictionary<int, string> _photoNames = new();
     private readonly Dictionary<int, string> _photoShooters = new();
     private readonly Dictionary<int, PendingCapture> _pending = new();
+    // Pen a user put to a photo, waiting for their caption. Cleared on sign, close or restart.
+    private readonly Dictionary<(EntityUid Photo, EntityUid User), EntityUid> _signPens = new();
 
     private int _nextCaptureId = 1;
     private int _nextPhotoId = 1;
@@ -78,7 +80,9 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
         SubscribeLocalEvent<PoloniumPhotographComponent, EntityTerminatingEvent>(OnPhotoTerminating);
         SubscribeLocalEvent<PoloniumPhotographComponent, ExaminedEvent>(OnPhotoExamined);
         SubscribeLocalEvent<PoloniumPhotographComponent, InteractUsingEvent>(OnPhotoInteractUsing);
+        SubscribeLocalEvent<PoloniumPhotographComponent, PhotoSignQueryMessage>(OnPhotoSignQuery);
         SubscribeLocalEvent<PoloniumPhotographComponent, PhotoSignMessage>(OnPhotoSign);
+        SubscribeLocalEvent<PoloniumPhotographComponent, BoundUIClosedEvent>(OnPhotoUiClosed);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnCleanup);
 
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
@@ -243,7 +247,7 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
     /// </summary>
     private void OnPhotoInteractUsing(Entity<PoloniumPhotographComponent> ent, ref InteractUsingEvent args)
     {
-        if (args.Handled || !TryGetCaptionStyle(args.Used, out var color, out var font))
+        if (args.Handled || !TryGetCaptionStyle(args.Used, out _, out _))
             return;
 
         args.Handled = true;
@@ -254,11 +258,37 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
             return;
         }
 
-        if (!TryComp<ActorComponent>(args.User, out var actor))
+        if (!HasComp<ActorComponent>(args.User))
             return;
 
-        _ui.OpenUi(ent.Owner, PhotoViewerUiKey.Key, args.User);
-        _ui.ServerSendUiMessage(ent.Owner, PhotoViewerUiKey.Key, new PhotoSignStartMessage(GetNetEntity(args.Used), color, font), actor.PlayerSession);
+        _signPens[(ent.Owner, args.User)] = args.Used;
+
+        // Already looking at it: show the input now. Otherwise the freshly opened viewer
+        // asks for it itself (PhotoSignQueryMessage), so the start can't beat the window.
+        if (_ui.IsUiOpen(ent.Owner, PhotoViewerUiKey.Key, args.User))
+            SendSignStart(ent.Owner, args.User);
+        else
+            _ui.OpenUi(ent.Owner, PhotoViewerUiKey.Key, args.User);
+    }
+
+    private void OnPhotoSignQuery(Entity<PoloniumPhotographComponent> ent, ref PhotoSignQueryMessage args)
+    {
+        SendSignStart(ent.Owner, args.Actor);
+    }
+
+    private void SendSignStart(EntityUid photo, EntityUid user)
+    {
+        if (!_signPens.TryGetValue((photo, user), out var pen) ||
+            !TryGetCaptionStyle(pen, out var color, out var font))
+            return;
+
+        // The EntityUid overload: the ICommonSession one is a no-op on the server.
+        _ui.ServerSendUiMessage(photo, PhotoViewerUiKey.Key, new PhotoSignStartMessage(color, font), user);
+    }
+
+    private void OnPhotoUiClosed(Entity<PoloniumPhotographComponent> ent, ref BoundUIClosedEvent args)
+    {
+        _signPens.Remove((ent.Owner, args.Actor));
     }
 
     private void OnPhotoSign(Entity<PoloniumPhotographComponent> ent, ref PhotoSignMessage args)
@@ -269,13 +299,14 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
         if (ent.Comp.Caption != null)
             return;
 
-        if (!TryGetEntity(args.Pen, out var pen))
+        if (!_signPens.Remove((ent.Owner, signer), out var pen))
             return;
 
         // Re-validate everything the client claims: still holding a writer and still in reach.
-        if (!_hands.IsHolding(signer, pen.Value) ||
+        if (TerminatingOrDeleted(pen) ||
+            !_hands.IsHolding(signer, pen) ||
             !_interaction.InRangeUnobstructed(signer, ent.Owner) ||
-            !TryGetCaptionStyle(pen.Value, out var color, out var font))
+            !TryGetCaptionStyle(pen, out var color, out var font))
         {
             _popup.PopupEntity(Loc.GetString("photograph-sign-failure", ("target", ent.Owner)), signer, signer, PopupType.SmallCaution);
             return;
@@ -352,6 +383,7 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
         _photoNames.Clear();
         _photoShooters.Clear();
         _pending.Clear();
+        _signPens.Clear();
         _nextCaptureId = 1;
         _nextPhotoId = 1;
     }

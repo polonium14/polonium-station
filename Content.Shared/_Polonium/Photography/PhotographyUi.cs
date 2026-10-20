@@ -40,31 +40,38 @@ public sealed class PhotoViewerBoundUserInterfaceState : BoundUserInterfaceState
 [Serializable, NetSerializable]
 public sealed class PhotoSignStartMessage : BoundUserInterfaceMessage
 {
-    public readonly NetEntity Pen;
     public readonly Color Color;
     public readonly string Font;
 
-    public PhotoSignStartMessage(NetEntity pen, Color color, string font)
+    public PhotoSignStartMessage(Color color, string font)
     {
-        Pen = pen;
         Color = color;
         Font = font;
     }
 }
 
 /// <summary>
-/// Client's caption for the photo. Server re-validates the pen (still held, still a
-/// <c>SignatureWriter</c>), the reach and the text; ink and font are recomputed server-side.
+/// Sent by the viewer as soon as it opens: "was I opened to sign?". The server answers with
+/// <see cref="PhotoSignStartMessage"/> if this user has a pending pen on this photo. Asking
+/// from the client avoids racing the start message against the window's creation.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class PhotoSignQueryMessage : BoundUserInterfaceMessage
+{
+}
+
+/// <summary>
+/// Client's caption for the photo. The pen is the one the server recorded when it was used on
+/// the photo; server re-validates it (still held, still a <c>SignatureWriter</c>), the reach
+/// and the text, and recomputes ink and font itself.
 /// </summary>
 [Serializable, NetSerializable]
 public sealed class PhotoSignMessage : BoundUserInterfaceMessage
 {
-    public readonly NetEntity Pen;
     public readonly string Text;
 
-    public PhotoSignMessage(NetEntity pen, string text)
+    public PhotoSignMessage(string text)
     {
-        Pen = pen;
         Text = text;
     }
 }
