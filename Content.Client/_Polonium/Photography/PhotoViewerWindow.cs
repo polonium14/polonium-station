@@ -83,10 +83,11 @@ public sealed partial class PhotoViewerWindow : BaseWindow
         _caption = new Label
         {
             Text = string.Empty,
-            HorizontalAlignment = HAlignment.Center,
+            // A clipping label measures 0 wide, so it must stretch and center its text itself.
+            HorizontalExpand = true,
+            Align = Label.AlignMode.Center,
             Margin = new Thickness(0, 8, 0, 0),
             ClipText = true,
-            MaxWidth = Size * Scale,
         };
 
         _signInput = new LineEdit
