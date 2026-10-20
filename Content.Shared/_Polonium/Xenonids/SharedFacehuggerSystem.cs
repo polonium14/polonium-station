@@ -155,8 +155,8 @@ public abstract partial class SharedFacehuggerSystem : EntitySystem
     /// <summary>
     /// Czy facehugger może się przyczepić do tego moba. Odpowiednik CanHug z NSV13.
     /// </summary>
-    /// <param name="checkHead">Czy hełm zasłaniający usta ma odstraszać. Facehugger rzucony albo wypuszczony z jaja
-    /// i tak skacze, tylko rozbija się o hełm.</param>
+    /// <param name="checkHead">Czy hełm zasłaniający usta ma odstraszać. Jajo i polujący facehugger omijają osoby
+    /// w hełmach. Bez tego sprawdzenia (rzut, próba podniesienia) facehugger skacze i rozbija się o hełm.</param>
     /// <param name="hugger">Facehugger, który już siedzi w slocie maski i nie ma się liczyć jako zajęta twarz.</param>
     public bool CanHug(EntityUid target, bool checkHead = true, EntityUid? hugger = null)
     {
@@ -231,7 +231,7 @@ public abstract partial class SharedFacehuggerSystem : EntitySystem
     /// <summary>
     /// Skacze na pierwszą osobę obok, której twarz nie jest osłonięta.
     /// </summary>
-    public bool TryLeapAtNearby(Entity<FacehuggerComponent> hugger, TransformComponent? xform = null, bool checkHead = true)
+    public bool TryLeapAtNearby(Entity<FacehuggerComponent> hugger, TransformComponent? xform = null)
     {
         if (!Resolve(hugger, ref xform) || hugger.Comp.State != FacehuggerState.Active)
             return false;
@@ -241,7 +241,7 @@ public abstract partial class SharedFacehuggerSystem : EntitySystem
 
         foreach (var target in _nearby)
         {
-            if (!CanHug(target, checkHead) || !Interaction.InRangeUnobstructed(hugger.Owner, target.Owner, hugger.Comp.LeapRange))
+            if (!CanHug(target) ||!Interaction.InRangeUnobstructed(hugger.Owner, target.Owner, hugger.Comp.LeapRange))
                 continue;
 
             if (TryLeap(hugger, target))
