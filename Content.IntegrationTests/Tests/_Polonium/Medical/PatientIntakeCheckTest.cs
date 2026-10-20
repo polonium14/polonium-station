@@ -27,6 +27,10 @@ namespace Content.IntegrationTests.Tests._Polonium.Medical;
 [TestOf(typeof(PatientIntakeCheckSystem))]
 public sealed class PatientIntakeCheckTest : GameTest
 {
+    private static readonly ProtoId<DamageTypePrototype> Blunt = "Blunt";
+    private static readonly ProtoId<ReagentPrototype> Bicaridine = "Bicaridine";
+    private static readonly ProtoId<ReagentPrototype> Toxin = "Toxin";
+
     [Test]
     public async Task CleanRoundstartSpeciesPass()
     {
@@ -40,6 +44,7 @@ public sealed class PatientIntakeCheckTest : GameTest
         var patients = new Dictionary<string, EntityUid>();
         await server.WaitPost(() =>
         {
+            PatientIntakeMachineTest.AddAir(entMan, map.MapUid);
             foreach (var species in protoMan.EnumeratePrototypes<SpeciesPrototype>().Where(s => s.RoundStart))
                 patients[species.ID] = entMan.SpawnEntity(species.Prototype, new MapCoordinates(Vector2.Zero, map.MapId));
         });
@@ -50,7 +55,7 @@ public sealed class PatientIntakeCheckTest : GameTest
         {
             foreach (var (species, patient) in patients)
             {
-                var failures = check.Check(patient, WoundableParts(entMan, patient));
+                var failures = check.Check(patient, PartCategories(entMan, patient));
                 Assert.That(failures, Is.Empty, $"A freshly spawned {species} must pass: {string.Join(", ", failures)}");
             }
         });
@@ -67,15 +72,19 @@ public sealed class PatientIntakeCheckTest : GameTest
 
         EntityUid patient = default;
         HashSet<ProtoId<OrganCategoryPrototype>> parts = default!;
-        await server.WaitPost(() => patient = entMan.SpawnEntity("MobHuman", new MapCoordinates(Vector2.Zero, map.MapId)));
+        await server.WaitPost(() =>
+        {
+            PatientIntakeMachineTest.AddAir(entMan, map.MapUid);
+            patient = entMan.SpawnEntity("MobHuman", new MapCoordinates(Vector2.Zero, map.MapId));
+        });
         await pair.RunTicksSync(5);
-        await server.WaitPost(() => parts = WoundableParts(entMan, patient));
+        await server.WaitPost(() => parts = PartCategories(entMan, patient));
 
         // Damage on one limb.
         await server.WaitPost(() =>
         {
             var arm = Organ(entMan, patient, "ArmLeft");
-            var blunt = server.ProtoMan.Index<DamageTypePrototype>("Blunt");
+            var blunt = server.ProtoMan.Index(Blunt);
             entMan.System<DamageableSystem>().TryChangeDamage(arm, new DamageSpecifier(blunt, FixedPoint2.New(20)), ignoreResistances: true);
         });
         await pair.RunTicksSync(2);
@@ -137,16 +146,15 @@ public sealed class PatientIntakeCheckTest : GameTest
         var protoMan = Pair.Server.ProtoMan;
         await Pair.Server.WaitAssertion(() =>
         {
-            Assert.That(PatientIntakeCheckSystem.IsHarmful(protoMan.Index<ReagentPrototype>("Bicaridine")), Is.False,
+            Assert.That(PatientIntakeCheckSystem.IsHarmful(protoMan.Index(Bicaridine)), Is.False,
                 "Overdose damage is conditional; a normal dose of medicine must pass.");
-            Assert.That(PatientIntakeCheckSystem.IsHarmful(protoMan.Index<ReagentPrototype>("Toxin")), Is.True);
+            Assert.That(PatientIntakeCheckSystem.IsHarmful(protoMan.Index(Toxin)), Is.True);
         });
     }
 
-    private static HashSet<ProtoId<OrganCategoryPrototype>> WoundableParts(IEntityManager entMan, EntityUid patient)
+    private static HashSet<ProtoId<OrganCategoryPrototype>> PartCategories(IEntityManager entMan, EntityUid patient)
     {
         return entMan.GetComponent<BodyComponent>(patient).Organs!.ContainedEntities
-            .Where(entMan.HasComponent<WoundableComponent>)
             .Select(o => entMan.GetComponent<OrganComponent>(o).Category)
             .OfType<ProtoId<OrganCategoryPrototype>>()
             .ToHashSet();
