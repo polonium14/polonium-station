@@ -25,7 +25,7 @@ public sealed class WizdenContentFreeze : GameTest
         var protoMan = server.ProtoMan;
 
         var recipesCount = protoMan.Count<FoodRecipePrototype>();
-        var recipesLimit = 232; // Polonium +8 (w tym +3 polskie jedzenie z Aquili), Funky +6
+        var recipesLimit = 233;
 
         if (recipesCount > recipesLimit)
         {

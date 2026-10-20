@@ -60,6 +60,18 @@
     FoodDoughCottonRope: 4
     Paper: 1
 
+- type: microwaveMealRecipe
+  id: RecipeHotMoth
+  name: przepis na hotmota
+  result: FoodHotMoth
+  time: 10
+  group: Savory
+  reagents:
+    Ketchup: 5
+  solids:
+    FoodBreadBun: 1
+    MobMothroach: 1
+
 
 # Polskie jedzenie z NSV13 (tgstation/tgstation#65848 i CM-SS13)
 - type: microwaveMealRecipe
