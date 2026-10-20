@@ -62,7 +62,6 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
 
         SubscribeLocalEvent<XenoEmbryoComponent, OrganGotInsertedEvent>(OnInserted);
         SubscribeLocalEvent<XenoEmbryoComponent, OrganGotRemovedEvent>(OnRemoved);
-        SubscribeLocalEvent<XenoInfectedComponent, ComponentShutdown>(OnInfectedShutdown);
     }
 
     private void OnInserted(Entity<XenoEmbryoComponent> ent, ref OrganGotInsertedEvent args)
@@ -80,11 +79,6 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
 
         // Poza ciałem embrion obumiera: zostaje zwykły organ, który nikogo już nie zarazi po wszczepieniu.
         RemCompDeferred<XenoEmbryoComponent>(ent);
-    }
-
-    private void OnInfectedShutdown(Entity<XenoInfectedComponent> ent, ref ComponentShutdown args)
-    {
-        ent.Comp.Embryo = null;
     }
 
     /// <summary>
