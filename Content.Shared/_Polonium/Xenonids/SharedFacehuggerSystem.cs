@@ -161,7 +161,6 @@ public abstract partial class SharedFacehuggerSystem : EntitySystem
     public bool CanHug(EntityUid target, bool checkHead = true, EntityUid? hugger = null)
     {
         if (HasComp<XenoComponent>(target)
-            || HasComp<XenoInfectionImmuneComponent>(target)
             || HasComp<XenoInfectedComponent>(target)
             || HasComp<ZombieComponent>(target))
             return false;

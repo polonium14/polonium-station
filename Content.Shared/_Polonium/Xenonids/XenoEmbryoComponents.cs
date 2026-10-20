@@ -77,9 +77,3 @@ public sealed partial class XenoInfectedComponent : Component
         "XenoInfectedIcon5",
     };
 }
-
-/// <summary>
-/// Gatunki i moby, na które facehugger nie skoczy.
-/// </summary>
-[RegisterComponent, NetworkedComponent]
-public sealed partial class XenoInfectionImmuneComponent : Component;
