@@ -1,28 +1,4 @@
 ﻿Entries:
-- author: sowelipililimute
-  changes:
-  - message: Underlying technical work for future medical improvements have resulted
-      in the following changes to better accomodate future development. Please note
-      that these changes are not representative of the final product and that the
-      medical balance will receive a major overhaul once limb and organ damage are
-      fully implemented.
-    type: Tweak
-  - message: Passive regeneration on mobs no longer stops after taking a certain amount
-      of damage.
-    type: Tweak
-  - message: Necrosol has been removed in favour of Acryox always healing, regardless
-      of damage.
-    type: Remove
-  - message: Hyperzine now heals you when critical, rather than relying on being above
-      a certain amount of damage.
-    type: Tweak
-  - message: Tricordrazine and Holy Water no longer have an upper damage
-    type: Tweak
-  - message: Changeling devour damage is no longer capped
-    type: Tweak
-  id: 9567
-  time: '2026-03-07T04:26:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43103
 - author: Minemoder
   changes:
   - message: Vulpkanins can now use Gauze markings.
@@ -4343,3 +4319,12 @@
   id: 10061
   time: '2026-10-20T10:01:51.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1117
+- author: Nikita
+  changes:
+  - message: "Dodano honkanomali\u0119"
+    type: Add
+  - message: "Dodano kilkadziesi\u0105t klaun\xF3w z twoich koszmar\xF3w"
+    type: Add
+  id: 10062
+  time: '2026-10-20T10:39:07.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1122
