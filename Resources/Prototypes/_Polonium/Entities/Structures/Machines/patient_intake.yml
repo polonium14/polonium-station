@@ -1,0 +1,68 @@
+# Morgue sprites and sounds are placeholders until it gets its own art.
+- type: entity
+  parent: Morgue
+  id: PatientIntakeMachine
+  name: patient intake
+  description: A Nanotrasen contract machine. It delivers patients for treatment and pays the medical budget for every one returned healthy. Examine a patient while holding a health analyzer to check they are fit for discharge.
+  components:
+  - type: EntityStorage
+    isCollidableWhenOpen: true
+    showContents: false
+    capacity: 30
+    enteringOffset: 0, -1
+    closeSound:
+      path: /Audio/Items/deconstruct.ogg
+    openSound:
+      path: /Audio/Items/deconstruct.ogg
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: ExtensionCableReceiver
+  - type: DeviceLinkSource
+    range: 30
+    ports:
+    - PatientIntakeFax
+  - type: PatientIntakeMachine
+    outfits:
+    - PatientIntakeOutfitGrey
+    - PatientIntakeOutfitBlue
+    - PatientIntakeOutfitGreen
+    - PatientIntakeOutfitWhite
+    speciesGear:
+      Vox: PatientIntakeVoxInternals
+
+- type: randomHumanoidSettings
+  id: PatientIntakePatient
+  # Diona bodies fail client-side initialization when they spawn near a player.
+  speciesBlacklist:
+  - Diona
+
+- type: startingGear
+  id: PatientIntakeOutfitGrey
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    shoes: ClothingShoesColorBlack
+
+- type: startingGear
+  id: PatientIntakeOutfitBlue
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCasualBlue
+    shoes: ClothingShoesColorBrown
+
+- type: startingGear
+  id: PatientIntakeOutfitGreen
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCasualGreen
+    shoes: ClothingShoesColorBrown
+    head: ClothingHeadHatBeret
+
+- type: startingGear
+  id: PatientIntakeOutfitWhite
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorWhite
+    shoes: ClothingShoesColorWhite
+
+- type: startingGear
+  id: PatientIntakeVoxInternals
+  equipment:
+    mask: ClothingMaskBreath
+    pocket1: EmergencyNitrogenTankFilled

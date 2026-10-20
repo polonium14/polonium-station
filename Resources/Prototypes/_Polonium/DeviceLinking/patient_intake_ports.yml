@@ -1,0 +1,10 @@
+- type: sourcePort
+  id: PatientIntakeFax
+  name: signal-port-name-patient-intake-fax
+  description: signal-port-description-patient-intake-fax
+  defaultLinks: [ PatientIntakeFaxReceiver ]
+
+- type: sinkPort
+  id: PatientIntakeFaxReceiver
+  name: signal-port-name-patient-intake-fax-receiver
+  description: signal-port-description-patient-intake-fax-receiver

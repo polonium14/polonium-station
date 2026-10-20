@@ -51,6 +51,10 @@
   - type: StationAiWhitelist
   - type: ApcPowerReceiver
     powerLoad: 250
+  # Polonium: patient intake machines print their case files and receipts here.
+  - type: DeviceLinkSink
+    ports:
+    - PatientIntakeFaxReceiver
   - type: Faxecute
     damage:
       types:

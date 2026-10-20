@@ -1,0 +1,194 @@
+# Issues the patient intake generator spends a case's budget on.
+# Damage and bleeds land on one random limb; bone and organ issues go through the same
+# trauma path real injuries take, so the normal surgeries treat them.
+
+- type: patientIntakeIssue
+  id: PatientIntakeBruising
+  kind: Damage
+  weight: 2
+  damage:
+    types:
+      Blunt: 20
+  description: patient-intake-issue-bruising
+  symptom: patient-intake-symptom-bruising
+
+- type: patientIntakeIssue
+  id: PatientIntakeCrushInjury
+  kind: Damage
+  weight: 1
+  cost: 2
+  damage:
+    types:
+      Blunt: 50
+  description: patient-intake-issue-crush
+  symptom: patient-intake-symptom-crush
+
+- type: patientIntakeIssue
+  id: PatientIntakeLaceration
+  kind: Damage
+  weight: 1
+  damage:
+    types:
+      Slash: 25
+  description: patient-intake-issue-laceration
+  symptom: patient-intake-symptom-laceration
+
+- type: patientIntakeIssue
+  id: PatientIntakePuncture
+  kind: Damage
+  weight: 1
+  damage:
+    types:
+      Piercing: 25
+  description: patient-intake-issue-puncture
+  symptom: patient-intake-symptom-puncture
+
+- type: patientIntakeIssue
+  id: PatientIntakeBurn
+  kind: Damage
+  weight: 2
+  damage:
+    types:
+      Heat: 25
+  description: patient-intake-issue-burn
+  symptom: patient-intake-symptom-burn
+
+- type: patientIntakeIssue
+  id: PatientIntakeSevereBurn
+  kind: Damage
+  weight: 1
+  cost: 2
+  damage:
+    types:
+      Heat: 50
+  description: patient-intake-issue-severe-burn
+  symptom: patient-intake-symptom-severe-burn
+
+- type: patientIntakeIssue
+  id: PatientIntakeFrostbite
+  kind: Damage
+  weight: 1
+  damage:
+    types:
+      Cold: 25
+  description: patient-intake-issue-frostbite
+  symptom: patient-intake-symptom-frostbite
+
+- type: patientIntakeIssue
+  id: PatientIntakeFracture
+  kind: Bone
+  weight: 4
+  cost: 2
+  severity: 40
+  description: patient-intake-issue-fracture
+  symptom: patient-intake-symptom-fracture
+
+- type: patientIntakeIssue
+  id: PatientIntakeOrganDamage
+  kind: Organ
+  weight: 3
+  cost: 3
+  severity: 8
+  categories: [ Heart, Lungs, Liver, Kidneys, Stomach ]
+  description: patient-intake-issue-organ
+  symptom: patient-intake-symptom-organ
+
+- type: patientIntakeIssue
+  id: PatientIntakeEyeTrauma
+  kind: Organ
+  weight: 2
+  cost: 2
+  severity: 5
+  categories: [ Eyes ]
+  description: patient-intake-issue-eye-trauma
+  symptom: patient-intake-symptom-eye-trauma
+
+- type: patientIntakeIssue
+  id: PatientIntakePoisoning
+  kind: Poison
+  weight: 2
+  reagent: Toxin
+  quantity: 15
+  description: patient-intake-issue-poisoning
+  symptom: patient-intake-symptom-poisoning
+
+- type: patientIntakeIssue
+  id: PatientIntakeCarpPoisoning
+  kind: Poison
+  weight: 1
+  cost: 2
+  reagent: CarpoToxin
+  quantity: 15
+  description: patient-intake-issue-carp-poisoning
+  symptom: patient-intake-symptom-carp-poisoning
+
+- type: patientIntakeIssue
+  id: PatientIntakeBloodLoss
+  kind: Bleed
+  weight: 2
+  cost: 2
+  severity: 120
+  damage:
+    types:
+      Slash: 20
+  description: patient-intake-issue-blood-loss
+  symptom: patient-intake-symptom-blood-loss
+
+- type: patientIntakeIssue
+  id: PatientIntakeEyeDamage
+  kind: Blind
+  cost: 2
+  eyeDamage: 3
+  description: patient-intake-issue-blind
+  symptom: patient-intake-symptom-blind
+
+- type: patientIntakeIssue
+  id: PatientIntakeForeignImplant
+  kind: Implant
+  cost: 2
+  implant: TrackingImplant
+  description: patient-intake-issue-implant
+  symptom: patient-intake-symptom-implant
+
+# Super-hard only: the replacement has to be sourced by medbay.
+- type: patientIntakeIssue
+  id: PatientIntakeMissingOrgan
+  kind: RemovePart
+  cost: 4
+  # Only organs with an insert surgery: there is none for kidneys.
+  categories: [ Eyes, Lungs, Liver, Stomach ]
+  description: patient-intake-issue-missing-organ
+  symptom: patient-intake-symptom-missing-organ
+
+- type: patientIntakeIssue
+  id: PatientIntakeMissingExtremity
+  kind: RemovePart
+  cost: 4
+  categories: [ HandLeft, HandRight, FootLeft, FootRight ]
+  description: patient-intake-issue-missing-extremity
+  symptom: patient-intake-symptom-missing-extremity
+
+# Specific requests only.
+- type: patientIntakeIssue
+  id: PatientIntakeReplaceEyes
+  kind: ReplacePart
+  cost: 0
+  categories: [ Eyes ]
+  description: patient-intake-issue-replace-eyes
+  symptom: patient-intake-issue-replace-eyes
+
+- type: patientIntakeIssue
+  id: PatientIntakeReplaceLiver
+  kind: ReplacePart
+  cost: 0
+  categories: [ Liver ]
+  description: patient-intake-issue-replace-liver
+  symptom: patient-intake-issue-replace-liver
+
+- type: patientIntakeIssue
+  id: PatientIntakeReplaceLungs
+  kind: ReplacePart
+  cost: 0
+  categories: [ Lungs ]
+  description: patient-intake-issue-replace-lungs
+  symptom: patient-intake-issue-replace-lungs
