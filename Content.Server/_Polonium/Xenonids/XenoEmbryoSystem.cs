@@ -74,8 +74,8 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
         if (TryComp<XenoInfectedComponent>(args.Target, out var infected) && infected.Embryo == ent.Owner)
             RemComp<XenoInfectedComponent>(args.Target);
 
-        // Poza ciałem embrion szybko obumiera.
-        ent.Comp.NextStageAt = null;
+        // Poza ciałem embrion obumiera: zostaje zwykły organ, który nikogo już nie zarazi po wszczepieniu.
+        RemCompDeferred<XenoEmbryoComponent>(ent);
     }
 
     private void OnInfectedShutdown(Entity<XenoInfectedComponent> ent, ref ComponentShutdown args)
