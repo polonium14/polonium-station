@@ -735,8 +735,8 @@ public abstract partial class SharedStorageSystem : EntitySystem
         }
 
         DoInteractWithStoredItem(player, storage, item);
-    }
         // funky end
+    }
 
     // funky, split out of OnInteractWithItem so the strip storage access doafter can call this again once it completes
     public void DoInteractWithStoredItem(Entity<HandsComponent> player, Entity<StorageComponent> storage, Entity<ItemComponent> item)
@@ -803,7 +803,7 @@ public abstract partial class SharedStorageSystem : EntitySystem
             DistanceThreshold = SharedInteractionSystem.InteractionRange,
             NeedHand = true,
             BlockDuplicate = true,
-            DuplicateCondition = DuplicateConditions.SameTool,
+            DuplicateCondition = DuplicateConditions.SameTarget,
         };
 
         if (_doAfterSystem.TryStartDoAfter(doAfterArgs))

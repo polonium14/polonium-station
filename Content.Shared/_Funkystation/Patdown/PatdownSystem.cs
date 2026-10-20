@@ -20,7 +20,7 @@ namespace Content.Shared._Funkystation.Patdown;
 /// <summary>
 /// verb + doAfter for patting someone down
 /// </summary>
-public sealed partial class SharedPatdownSystem : EntitySystem
+public sealed partial class PatdownSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = null!;
     [Dependency] private InventorySystem _inventory = null!;
@@ -67,16 +67,6 @@ public sealed partial class SharedPatdownSystem : EntitySystem
         if (_activeSearches.ContainsKey(target))
             return;
 
-        // red alert popup
-        _popup.PopupEntity(
-            Loc.GetString("patdown-alert-target", ("user", Identity.Entity(user, EntityManager))),
-            target,
-            target,
-            PopupType.LargeCaution);
-
-        if (_net.IsServer)
-            _activeSearches[target] = BuildSearchState(user, target, component.Delay);
-
         var doAfterArgs = new DoAfterArgs(EntityManager, user, component.Delay, new PatdownDoAfterEvent(), target, target)
         {
             BreakOnMove = true,
@@ -88,7 +78,17 @@ public sealed partial class SharedPatdownSystem : EntitySystem
         };
 
         if (!_doAfter.TryStartDoAfter(doAfterArgs))
-            _activeSearches.Remove(target);
+            return;
+
+        // red alert popup
+        _popup.PopupEntity(
+            Loc.GetString("patdown-alert-target", ("user", Identity.Entity(user, EntityManager))),
+            target,
+            target,
+            PopupType.LargeCaution);
+
+        if (_net.IsServer)
+            _activeSearches[target] = BuildSearchState(user, target, component.Delay);
     }
 
     // builds the list of popups to be spaced across the duration of the doafter
@@ -147,13 +147,26 @@ public sealed partial class SharedPatdownSystem : EntitySystem
             return;
 
         var now = _timing.CurTime;
+        List<EntityUid>? stale = null;
 
         foreach (var (target, state) in _activeSearches)
         {
+            // a deleted searcher never raises the doafter event, so clean up here
+            if (TerminatingOrDeleted(target) || TerminatingOrDeleted(state.Searcher))
+            {
+                (stale ??= new()).Add(target);
+                continue;
+            }
+
             for (var i = state.Pending.Count - 1; i >= 0; i--)
             {
                 var (revealAt, clothing) = state.Pending[i];
                 if (now < revealAt)
+                    continue;
+
+                state.Pending.RemoveAt(i);
+
+                if (TerminatingOrDeleted(clothing))
                     continue;
 
                 _popup.PopupEntity(
@@ -163,9 +176,15 @@ public sealed partial class SharedPatdownSystem : EntitySystem
                     PopupType.Medium);
 
                 _audio.PlayPvs(RustleSound, target);
-
-                state.Pending.RemoveAt(i);
             }
+        }
+
+        if (stale == null)
+            return;
+
+        foreach (var target in stale)
+        {
+            _activeSearches.Remove(target);
         }
     }
 

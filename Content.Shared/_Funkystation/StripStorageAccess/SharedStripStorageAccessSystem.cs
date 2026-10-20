@@ -3,7 +3,6 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
-using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared.Popups;
@@ -14,6 +13,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Utility;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Strip;
 using Content.Shared.Strip.Components;
 
 namespace Content.Shared._Funkystation.StripStorageAccess;
@@ -24,13 +24,15 @@ namespace Content.Shared._Funkystation.StripStorageAccess;
 public sealed partial class SharedStripStorageAccessSystem : EntitySystem
 {
     [Dependency] private SharedDoAfterSystem _doAfter = null!;
-    [Dependency] private  SharedStorageSystem _storage = null!;
+    [Dependency] private SharedStorageSystem _storage = null!;
     [Dependency] private InventorySystem _inventory = null!;
     [Dependency] private SharedHandsSystem _hands = null!;
     [Dependency] private SharedPopupSystem _popup = null!;
     [Dependency] private SharedAudioSystem _audio = null!;
     [Dependency] private SharedContainerSystem _container = null!;
     [Dependency] private SharedInteractionSystem _interaction = null!;
+    [Dependency] private SharedStrippableSystem _strippable = null!;
+    [Dependency] private SharedUserInterfaceSystem _ui = null!;
 
     public override void Initialize()
     {
@@ -45,11 +47,8 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
 
     private void OnOpenStorageButtonPressed(Entity<StrippableComponent> strippable, ref StrippingOpenStorageButtonPressed args)
     {
-
         if (args.Actor is not { Valid: true } user || !TryComp<HandsComponent>(user, out _))
-        {
             return;
-        }
 
         EntityUid? slotEntity;
         if (args.IsHand)
@@ -58,15 +57,15 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
         }
         else
         {
-            if (!TryComp<InventoryComponent>(strippable, out var inventory) ||
-                !_inventory.TryGetSlotEntity(strippable, args.Slot, out var held, inventory))
+            // pockets are obscured in the strip menu, so don't let their contents be opened either
+            if (!_inventory.TryGetSlotContainer(strippable, args.Slot, out var slot, out var slotDef) ||
+                _strippable.IsStripHidden(slotDef, user))
             {
                 return;
             }
 
-            slotEntity = held;
+            slotEntity = slot.ContainedEntity;
         }
-
 
         if (slotEntity is not { } storageUid || !HasComp<StorageComponent>(storageUid))
         {
@@ -92,6 +91,9 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
         var storageUid = target.Owner;
 
         if (!_interaction.InRangeUnobstructed(user, holder))
+            return;
+
+        if (_inventory.TryGetContainingSlot(storageUid, out var slotDef) && _strippable.IsStripHidden(slotDef, user))
             return;
 
         InteractionVerb verb = new()
@@ -139,15 +141,8 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
 
         args.Handled = true;
 
-        // bypass interaction checks because the item is inside a "container"
-        var alreadyHas = HasComp<BypassInteractionChecksComponent>(args.User);
-        if (!alreadyHas)
-            AddComp<BypassInteractionChecksComponent>(args.User);
-
+        // SharedInteractionSystem.UiRangeCheck keeps the UI open while the holder stays in range
         _storage.OpenStorageUI(storage, args.User);
-
-        if (!alreadyHas)
-            RemComp<BypassInteractionChecksComponent>(args.User);
     }
 
     private void OnRemoveDoAfter(Entity<StorageComponent> storage, ref StripStorageRemoveDoAfterEvent args)
@@ -160,15 +155,13 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
             !TryComp<ItemComponent>(item, out var itemComp))
             return;
 
+        // the holder may have moved the item or closed the bag during the doafter
+        if (!storage.Comp.Container.Contains(item) ||
+            !_ui.IsUiOpen(storage.Owner, StorageComponent.StorageUiKey.Key, args.User))
+            return;
+
         args.Handled = true;
 
-        var alreadyHas = HasComp<BypassInteractionChecksComponent>(args.User);
-        if (!alreadyHas)
-            AddComp<BypassInteractionChecksComponent>(args.User);
-
         _storage.DoInteractWithStoredItem((args.User, hands), storage, (item, itemComp));
-
-        if (!alreadyHas)
-            RemComp<BypassInteractionChecksComponent>(args.User);
     }
 }
