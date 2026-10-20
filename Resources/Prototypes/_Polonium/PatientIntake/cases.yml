@@ -1,0 +1,138 @@
+# Case kinds the patient intake machine rolls between, by weight.
+# Pay is the total for the case; mass casualty splits it between its patients.
+# minMedics: living, connected medical staff (CMO included) needed for the case to roll.
+
+- type: patientIntakeCase
+  id: PatientIntakeEasy
+  name: patient-intake-case-easy
+  weight: 40
+  budget: 2
+  payMin: 400
+  payMax: 700
+  fullIssueList: true
+
+- type: patientIntakeCase
+  id: PatientIntakeMedium
+  name: patient-intake-case-medium
+  weight: 30
+  budget: 4
+  payMin: 900
+  payMax: 1400
+
+- type: patientIntakeCase
+  id: PatientIntakeHard
+  name: patient-intake-case-hard
+  minMedics: 2
+  weight: 15
+  budget: 7
+  payMin: 1600
+  payMax: 2400
+
+- type: patientIntakeCase
+  id: PatientIntakeTimed
+  name: patient-intake-case-timed
+  minMedics: 3
+  weight: 5
+  budget: 4
+  payMin: 1800
+  payMax: 2600
+  windowMin: 300
+  windowMax: 420
+  debitOnTimeout: true
+
+- type: patientIntakeCase
+  id: PatientIntakeSuperHard
+  name: patient-intake-case-super-hard
+  minMedics: 3
+  weight: 4
+  budget: 10
+  payMin: 4000
+  payMax: 6000
+  windowMin: 1200
+  windowMax: 1500
+  debitOnTimeout: true
+  allowMissingParts: true
+
+- type: patientIntakeCase
+  id: PatientIntakeMassCasualty
+  name: patient-intake-case-mass-casualty
+  minMedics: 3
+  weight: 3
+  budget: 3
+  payMin: 2400
+  payMax: 3600
+  patientsMin: 2
+  patientsMax: 4
+
+- type: patientIntakeCase
+  id: PatientIntakeRequestEyes
+  name: patient-intake-case-request
+  minMedics: 2
+  weight: 1.5
+  payMin: 1200
+  payMax: 1800
+  fullIssueList: true
+  issues:
+  - PatientIntakeEyeDamage
+  - PatientIntakeReplaceEyes
+
+- type: patientIntakeCase
+  id: PatientIntakeRequestLiver
+  name: patient-intake-case-request
+  minMedics: 2
+  weight: 1.5
+  payMin: 1200
+  payMax: 1800
+  fullIssueList: true
+  issues:
+  - PatientIntakePoisoning
+  - PatientIntakeReplaceLiver
+
+- type: patientIntakeCase
+  id: PatientIntakeRequestLungs
+  name: patient-intake-case-request
+  minMedics: 2
+  weight: 1.5
+  payMin: 1200
+  payMax: 1800
+  fullIssueList: true
+  issues:
+  - PatientIntakeBruising
+  - PatientIntakeReplaceLungs
+
+# Themed cases: a fixed set of injuries with a story, vague symptoms only.
+- type: patientIntakeCase
+  id: PatientIntakeCarpAttack
+  name: patient-intake-case-carp-attack
+  minMedics: 2
+  weight: 3
+  payMin: 1500
+  payMax: 2100
+  issues:
+  - PatientIntakeCarpPoisoning
+  - PatientIntakeLaceration
+  - PatientIntakeBloodLoss
+
+- type: patientIntakeCase
+  id: PatientIntakeBurnWard
+  name: patient-intake-case-burn-ward
+  minMedics: 2
+  weight: 3
+  payMin: 1300
+  payMax: 1900
+  issues:
+  - PatientIntakeSevereBurn
+  - PatientIntakeBurn
+  - PatientIntakeEyeDamage
+
+- type: patientIntakeCase
+  id: PatientIntakeWorkplaceAccident
+  name: patient-intake-case-workplace-accident
+  minMedics: 2
+  weight: 3
+  payMin: 1600
+  payMax: 2200
+  issues:
+  - PatientIntakeCrushInjury
+  - PatientIntakeFracture
+  - PatientIntakeBloodLoss
