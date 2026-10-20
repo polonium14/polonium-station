@@ -85,14 +85,15 @@ public sealed partial class FacehuggerSystem : SharedFacehuggerSystem
             return;
         }
 
+        if (!_embryo.TryInfect(victim))
+            return;
+
         PopupBoth(victim,
             Loc.GetString("xeno-facehugger-impregnate-self", ("hugger", hugger.Owner)),
             Loc.GetString("xeno-facehugger-impregnate-others", ("hugger", hugger.Owner), ("target", victim)),
             PopupType.MediumCaution);
 
         Die(hugger, impregnated: true);
-
-        if (_embryo.TryInfect(victim))
-            _adminLog.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(victim):player} was impregnated by facehugger {ToPrettyString(hugger):entity}");
+        _adminLog.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(victim):player} was impregnated by facehugger {ToPrettyString(hugger):entity}");
     }
 }
