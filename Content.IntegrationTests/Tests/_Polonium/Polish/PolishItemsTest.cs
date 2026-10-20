@@ -8,6 +8,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Cuffs;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
+using Content.Shared.FixedPoint;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Vehicle.Systems;
 using Robust.Shared.Containers;
@@ -218,20 +219,29 @@ public sealed class PolishBannerTest : InteractionTest
     public async Task BannerHealsHolder()
     {
         var damageable = Server.System<DamageableSystem>();
+
+        // Liczymy tylko te dwa typy. Po 20 Blunt człowiek krwawi i suma obrażeń rośnie sama z siebie,
+        // przez co porównywanie całości było niestabilne w CI.
+        FixedPoint2 Healable()
+        {
+            var all = damageable.GetAllDamage(SPlayer).DamageDict;
+            return all.GetValueOrDefault("Blunt") + all.GetValueOrDefault("Heat");
+        }
+
         await Server.WaitPost(() => damageable.TryChangeDamage(SPlayer, new DamageSpecifier { DamageDict = { ["Blunt"] = 20, ["Heat"] = 20 } }, true));
-        var before = damageable.GetTotalDamage(SPlayer);
 
         await PlaceInHands("PolishBanner");
+        var before = Healable();
         await UseInHand();
         await RunTicks(1);
 
-        var after = damageable.GetTotalDamage(SPlayer);
+        var after = Healable();
         Assert.That(after, Is.EqualTo(before - 30), "The banner should heal 15 brute and 15 burn");
 
         // Drugie machnięcie od razu nie działa - sztandar ma minutę odnowienia.
         await UseInHand();
         await RunTicks(1);
-        Assert.That(damageable.GetTotalDamage(SPlayer), Is.EqualTo(after));
+        Assert.That(Healable(), Is.EqualTo(after));
     }
 
     [Test]
