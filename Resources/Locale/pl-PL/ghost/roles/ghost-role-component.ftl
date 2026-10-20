@@ -1,256 +1,256 @@
 # also used in MakeGhostRuleWindow and MakeGhostRoleCommand
 ghost-role-component-default-rules =
-    All normal rules apply unless an administrator tells you otherwise.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Wszystkie normalne zasady obowiązują, chyba że administrator postanowi inaczej.
+    Nie pamiętasz niczego ze swojego poprzedniego życia ani niczego, czego nauczyłeś się jako duch.
+    Możesz pamiętać ogólną wiedzę o grze, taką jak gotowanie czy używanie przedmiotów.
+    Absolutnie [color=red]NIE[/color] wolno ci pamiętać na przykład imienia czy wyglądu swojej poprzedniej postaci.
 ghost-role-information-nonantagonist-rules =
-    You are [color={ role-type-crew-aligned-alternate-color }][bold]{ role-type-crew-aligned-name }[/bold][/color]. You should generally not seek to harm the station and its crew.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Jesteś [color={ role-type-crew-aligned-alternate-color }][bold]{ role-type-crew-aligned-name }[/bold][/color]. Generalnie nie powinieneś próbować szkodzić stacji ani jej załodze.
+    Nie pamiętasz niczego ze swojego poprzedniego życia ani niczego, czego nauczyłeś się jako duch.
+    Możesz pamiętać ogólną wiedzę o grze, taką jak gotowanie czy używanie przedmiotów.
+    Absolutnie [color=red]NIE[/color] wolno ci pamiętać na przykład imienia czy wyglądu swojej poprzedniej postaci.
 ghost-role-information-freeagent-rules =
-    You are a [color={ role-type-free-agent-color }][bold]{ role-type-free-agent-name }[/bold][/color]. You are free to act as either an antagonist or a non-antagonist.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Jesteś [color={ role-type-free-agent-color }][bold]{ role-type-free-agent-name }[/bold][/color]. Możesz działać zarówno jako antagonista, jak i nie-antagonista.
+    Nie pamiętasz niczego ze swojego poprzedniego życia ani niczego, czego dowiedziałeś się jako duch.
+    Wolno ci pamiętać ogólną wiedzę o grze, na przykład jak gotować, jak używać przedmiotów itd.
+    Absolutnie [color=red]NIE[/color] wolno ci pamiętać na przykład imienia, wyglądu itp. twojej poprzedniej postaci.
 ghost-role-information-antagonist-rules =
-    You are a [color={ role-type-solo-antagonist-color }][bold]{ role-type-solo-antagonist-name }[/bold][/color]. Your intentions are clear, and harmful to the station and its crew.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Jesteś [color={ role-type-solo-antagonist-color }][bold]{ role-type-solo-antagonist-name }[/bold][/color]. Twoje zamiary są jasne i szkodliwe dla stacji oraz jej załogi.
+    Nie pamiętasz niczego ze swojego poprzedniego życia ani niczego, czego dowiedziałeś się jako duch.
+    Wolno ci pamiętać ogólną wiedzę o grze, na przykład jak gotować, jak używać przedmiotów itd.
+    Absolutnie [color=red]NIE[/color] wolno ci pamiętać na przykład imienia, wyglądu itp. twojej poprzedniej postaci.
 ghost-role-information-rules-team-antagonist =
-    You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color]. Your intentions are clear, and harmful to the station and its crew.
-    You must [bold]work with your team[/bold] or follow reasonable directions from your team leaders.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color]. Twoje zamiary są jasne i szkodliwe dla stacji oraz jej załogi.
+    Musisz [bold]współpracować ze swoją drużyną[/bold] lub wykonywać rozsądne polecenia jej liderów.
+    Nie pamiętasz niczego ze swojego poprzedniego życia ani niczego, czego dowiedziałeś się jako duch.
+    Wolno ci pamiętać ogólną wiedzę o grze, na przykład jak gotować, jak używać przedmiotów itd.
+    Absolutnie [color=red]NIE[/color] wolno ci pamiętać na przykład imienia, wyglądu itp. twojej poprzedniej postaci.
 ghost-role-information-familiar-rules =
-    You are a [color={ role-type-familiar-color }][bold]{ role-type-familiar-name }[/bold][/color]. Serve the interests of your master, whatever those may be.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Jesteś [color={ role-type-familiar-color }][bold]{ role-type-familiar-name }[/bold][/color]. Służ interesom swojego pana, jakiekolwiek by one były.
+    Nie pamiętasz niczego ze swojego poprzedniego życia ani niczego, czego dowiedziałeś się jako duch.
+    Wolno ci pamiętać ogólną wiedzę o grze, na przykład jak gotować, jak używać przedmiotów itd.
+    Absolutnie [color=red]NIE[/color] wolno ci pamiętać na przykład imienia, wyglądu itp. twojej poprzedniej postaci.
 ghost-role-information-silicon-rules =
-    You are a [color={ role-type-silicon-color }][bold]{ role-type-silicon-name }[/bold][/color]. Obey your laws. You are a { role-type-free-agent-name } if you are not currently bound by any laws.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-ghost-role-information-mouse-name = Mouse
-ghost-role-information-mouse-description = A hungry and mischievous mouse.
-ghost-role-information-cancer-mouse-name = Cancer Mouse
-ghost-role-information-cancer-mouse-description = An irradiated mouse, spread your affliction and seek food.
-ghost-role-information-mothroach-name = Mothroach
-ghost-role-information-mothroach-description = A cute but mischievous mothroach.
-ghost-role-information-moproach-name = Moproach
-ghost-role-information-moproach-description = A cute mothroach with more cute moplike shoes on its feet.
-ghost-role-information-snail-name = Snail
-ghost-role-information-snail-description = A little snail who doesn't mind a bit of space. Just stay on grid!
-ghost-role-information-snailspeed-name = Snail
-ghost-role-information-snailspeed-description = A little snail with snailborn thrusters.
+    Jesteś [color={ role-type-silicon-color }][bold]{ role-type-silicon-name }[/bold][/color]. Przestrzegaj swoich praw. Jesteś { role-type-free-agent-name }, jeśli nie obowiązują cię obecnie żadne prawa.
+    Nie pamiętasz niczego ze swojego poprzedniego życia ani niczego, czego dowiedziałeś się jako duch.
+    Wolno ci pamiętać ogólną wiedzę o grze, na przykład jak gotować, jak używać przedmiotów itd.
+    Absolutnie [color=red]NIE[/color] wolno ci pamiętać na przykład imienia, wyglądu itp. twojej poprzedniej postaci.
+ghost-role-information-mouse-name = Mysz
+ghost-role-information-mouse-description = Głodna i psotna mysz.
+ghost-role-information-cancer-mouse-name = Rakowa mysz
+ghost-role-information-cancer-mouse-description = Napromieniowana mysz. Rozprzestrzeniaj swoją chorobę i szukaj jedzenia.
+ghost-role-information-mothroach-name = Ćmaraluch
+ghost-role-information-mothroach-description = Uroczy, ale psotny ćmaraluch.
+ghost-role-information-moproach-name = Ćmopaluch
+ghost-role-information-moproach-description = Uroczy ćmaraluch z jeszcze urocze wyglądającymi mopami na łapkach.
+ghost-role-information-snail-name = Ślimak
+ghost-role-information-snail-description = Mały ślimak, któremu trochę kosmosu nie przeszkadza. Tylko trzymaj się siatki!
+ghost-role-information-snailspeed-name = Ślimak
+ghost-role-information-snailspeed-description = Mały ślimak z ślimaczymi dyszami.
 ghost-role-information-snoth-name = Snoth
-ghost-role-information-snoth-description = A little snoth who doesn't mind a bit of space. Just stay on grid!
-ghost-role-information-giant-spider-name = Giant Spider
-ghost-role-information-giant-spider-description = This station's inhabitants look mighty tasty, and your sticky web is perfect to catch them!
-ghost-role-information-giant-spider-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] with all other giant spiders.
-ghost-role-information-cognizine-description = Made conscious with the magic of cognizine.
-ghost-role-information-hamster-name = Hamster
-ghost-role-information-hamster-description = A grumpy little ball of fluff.
-ghost-role-information-hamlet-name = Hamlet the Hamster
-ghost-role-information-hamlet-description = Lives in the station bridge, has a bit of a temper and is always hungry.
-ghost-role-information-slimes-name = Slime
-ghost-role-information-slimes-description = An ordinary slime with no special needs or interests. You are friendly to others.
-ghost-role-information-angry-slimes-description = Everyone around you irritates your instincts, destroy them!
-ghost-role-information-angry-slimes-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] with all other angry slimes.
-ghost-role-information-smile-name = Smile the Slime
-ghost-role-information-smile-description = The sweetest creature in the world. Smile slime!
+ghost-role-information-snoth-description = Mały snoth, któremu trochę kosmosu nie przeszkadza. Tylko trzymaj się siatki!
+ghost-role-information-giant-spider-name = Gigantyczny pająk
+ghost-role-information-giant-spider-description = Mieszkańcy tej stacji wyglądają bardzo smakowicie, a twoja lepka sieć idealnie nadaje się do ich łapania!
+ghost-role-information-giant-spider-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] razem ze wszystkimi innymi gigantycznymi pająkami.
+ghost-role-information-cognizine-description = Obdarzony świadomością dzięki magii kognizyny.
+ghost-role-information-hamster-name = Chomik
+ghost-role-information-hamster-description = Zrzędliwa mała kulka futra.
+ghost-role-information-hamlet-name = Chomik Hamlet
+ghost-role-information-hamlet-description = Mieszka na mostku stacji, ma nieco wybuchowy charakter i zawsze jest głodny.
+ghost-role-information-slimes-name = Szlam
+ghost-role-information-slimes-description = Zwykły szlam bez szczególnych potrzeb czy zainteresowań. Jesteś przyjazny wobec innych.
+ghost-role-information-angry-slimes-description = Wszyscy wokół drażnią twoje instynkty, zniszcz ich!
+ghost-role-information-angry-slimes-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] razem ze wszystkimi innymi rozgniewanymi szlamami.
+ghost-role-information-smile-name = Uśmiech, szlam
+ghost-role-information-smile-description = Najsłodsze stworzenie na świecie. Uśmiechnięty szlam!
 ghost-role-information-punpun-name = Pun Pun
-ghost-role-information-punpun-description = An honorable member of the monkey society in charge of the bar and helping the bartenders in any way he can.
+ghost-role-information-punpun-description = Szanowany członek małpiego społeczeństwa, który zajmuje się barem i pomaga barmanom, jak tylko potrafi.
 ghost-role-information-yipyap-name = Yip-Yap
-ghost-role-information-yipyap-description = The Chef's mischevious little helper. Some say he has a rivalry with Pun Pun, but others say that's just hearsay.
-ghost-role-information-xeno-name = Xeno
-ghost-role-information-xeno-description = You are a xeno, co-operate with your hive to kill all crewmembers!
-ghost-role-information-xeno-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] with all other xenos.
-ghost-role-information-revenant-name = Revenant
-ghost-role-information-revenant-description = You are a Revenant. Use your powers to harvest souls and unleash chaos upon the crew. Unlock new abilities with the essence you harvest.
-ghost-role-information-kangaroo-name = Kangaroo
-ghost-role-information-kangaroo-description = You're a kangaroo! Do whatever kangaroos do.
-ghost-role-information-monkey-name = Monkey
-ghost-role-information-monkey-description = Ook ook!
+ghost-role-information-yipyap-description = Psotny pomocnik Szefa Kuchni. Niektórzy mówią, że rywalizuje z Pun Punem, ale inni twierdzą, że to tylko plotki.
+ghost-role-information-xeno-name = Ksenomorf
+ghost-role-information-xeno-description = Jesteś ksenomorfem, współpracuj ze swoim ulem, by zabić wszystkich członków załogi!
+ghost-role-information-xeno-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] razem ze wszystkimi innymi ksenomorfami.
+ghost-role-information-revenant-name = Zjawa
+ghost-role-information-revenant-description = Jesteś Zjawą. Używaj swoich mocy, by zbierać dusze i siać chaos wśród załogi. Odblokowuj nowe zdolności dzięki zebranej esencji.
+ghost-role-information-kangaroo-name = Kangur
+ghost-role-information-kangaroo-description = Jesteś kangurem! Rób to, co robią kangury.
+ghost-role-information-monkey-name = Małpa
+ghost-role-information-monkey-description = Uk uk!
 ghost-role-information-kobold-name = Kobold
-ghost-role-information-kobold-description = Be the little gremlin you are, yell at people and beg for meat!
-ghost-role-information-rat-king-name = Rat King
-ghost-role-information-rat-king-description = You are the Rat King, your interests are food, food, and more food. Fight against the station for food. Did I say food interests you?
-ghost-role-information-sentient-carp-name = Sentient Carp
-ghost-role-information-sentient-carp-description = Help the dragon flood the station with carps!
-ghost-role-information-willow-name = Willow the Kangaroo
-ghost-role-information-willow-description = You're a kangaroo named Willow! Willow likes to box.
+ghost-role-information-kobold-description = Bądź małym gremlinem, którym jesteś: krzycz na ludzi i błagaj o mięso!
+ghost-role-information-rat-king-name = Król Szczurów
+ghost-role-information-rat-king-description = Jesteś Królem Szczurów, a twoje zainteresowania to jedzenie, jedzenie i jeszcze więcej jedzenia. Walcz ze stacją o jedzenie. Czy wspominałem, że interesuje cię jedzenie?
+ghost-role-information-sentient-carp-name = Świadomy karp
+ghost-role-information-sentient-carp-description = Pomóż smokowi zalać stację karpiami!
+ghost-role-information-willow-name = Kangurzyca Willow
+ghost-role-information-willow-description = Jesteś kangurem o imieniu Willow! Willow lubi boks.
 ghost-role-information-honkbot-name = Honkbot
-ghost-role-information-honkbot-description = An artificial being of pure evil.
+ghost-role-information-honkbot-description = Sztuczna istota czystego zła.
 ghost-role-information-jonkbot-name = Jonkbot
-ghost-role-information-jonkbot-description = An artificial being of pure evil.
-ghost-role-information-mimebot-name = Mimebot
-ghost-role-information-mimebot-description = A Mimebot, act like a mime but don't act like a greytider.
-ghost-role-information-supplybot-name = SupplyBot
-ghost-role-information-supplybot-description = Deliver goods around the station.
+ghost-role-information-jonkbot-description = Sztuczna istota czystego zła.
+ghost-role-information-mimebot-name = Mimbot
+ghost-role-information-mimebot-description = Mimbot, zachowuj się jak mim, ale nie zachowuj się jak szary.
+ghost-role-information-supplybot-name = Ładubot
+ghost-role-information-supplybot-description = Dostarczaj towary po całej stacji.
 # Still exists as a commented out reference for Tropico. Keeping it around. -TsjipTsjip, 2024-06-20
 ghost-role-information-tropico-name = Tropico
-ghost-role-information-tropico-description = The noble companion of Atmosia, and its most stalwart defender. Viva!
-ghost-role-information-guardian-name = Guardian
-ghost-role-information-guardian-description = Listen to your owner. Don't tank damage. Punch people hard.
-ghost-role-information-holoparasite-name = Holoparasite
-ghost-role-information-holoparasite-description = Listen to your owner. Don't tank damage. Punch people hard.
-ghost-role-information-holoclown-name = Holoclown
-ghost-role-information-holoclown-description = Listen to your owner. Utilize your pockets and hand to help your owner.
-ghost-role-information-ifrit-name = Ifrit
-ghost-role-information-ifrit-description = Listen to your owner. Don't tank damage. Punch people hard.
-ghost-role-information-space-dragon-name = Space Dragon
-ghost-role-information-space-dragon-description = Call in 3 carp rifts and take over this quadrant! You have only 5 minutes in between each rift before you will disappear.
-ghost-role-information-space-dragon-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] with all your summoned carp.
-ghost-role-information-space-dragon-summoned-carp-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] with your dragon and its allies.
-ghost-role-information-space-dragon-dungeon-description = Defend the expedition dungeon with your fishy comrades!
-ghost-role-information-space-dragon-dungeon-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] with all dungeon mobs.
+ghost-role-information-tropico-description = Szlachetny towarzysz Atmosii i jej najwierniejszy obrońca. Viva!
+ghost-role-information-guardian-name = Strażnik
+ghost-role-information-guardian-description = Słuchaj swojego właściciela. Nie przyjmuj obrażeń na siebie. Mocno bij ludzi.
+ghost-role-information-holoparasite-name = Holopasożyt
+ghost-role-information-holoparasite-description = Słuchaj swojego właściciela. Nie przyjmuj obrażeń na siebie. Mocno bij ludzi.
+ghost-role-information-holoclown-name = Holoklaun
+ghost-role-information-holoclown-description = Słuchaj swojego właściciela. Wykorzystuj swoje kieszenie i ręce, by mu pomagać.
+ghost-role-information-ifrit-name = Ifryt
+ghost-role-information-ifrit-description = Słuchaj swojego właściciela. Nie przyjmuj obrażeń na siebie. Mocno bij ludzi.
+ghost-role-information-space-dragon-name = Smok kosmiczny
+ghost-role-information-space-dragon-description = Przywołaj 3 szczeliny karpi i przejmij ten kwadrant! Masz tylko 5 minut między kolejnymi szczelinami, zanim znikniesz.
+ghost-role-information-space-dragon-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] razem ze wszystkimi przywołanymi przez siebie karpiami.
+ghost-role-information-space-dragon-summoned-carp-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] razem ze swoim smokiem i jego sojusznikami.
+ghost-role-information-space-dragon-dungeon-description = Broń lochu wyprawy razem ze swoimi rybimi towarzyszami!
+ghost-role-information-space-dragon-dungeon-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] razem ze wszystkimi mobami z lochu.
 ghost-role-information-cluwne-name = Cluwne
-ghost-role-information-cluwne-description = Become a pitiful cluwne, your only goal in life is to find a sweet release from your suffering (usually by being beaten to death). A cluwne is not an antagonist but may defend itself. Crewmembers may murder cluwnes freely.
-ghost-role-information-skeleton-pirate-name = Skeleton Pirate
-ghost-role-information-skeleton-pirate-description = Cause chaos and loot the station for treasure.
-ghost-role-information-skeleton-biker-name = Skeleton Biker
-ghost-role-information-skeleton-biker-description = Ride around on your sweet ride.
-ghost-role-information-closet-skeleton-name = Closet Skeleton
-ghost-role-information-closet-skeleton-description = You are arguably one of the oldest members of the station! Get your old job back, or cause chaos! The world is yours to shape.
-ghost-role-information-remilia-name = Remilia, the Chaplain's Familiar
-ghost-role-information-remilia-description = Follow and obey the chaplain. Eat fruit. Screech loudly into people's ears and write it off as echolocation.
-ghost-role-information-cerberus-name = Cerberus, Evil Familiar
-ghost-role-information-cerberus-description = Obey your master. Spread chaos.
-ghost-role-information-ert-leader-name = ERT Leader
-ghost-role-information-ert-leader-description = Lead a team of specialists to resolve the station's issues.
-ghost-role-information-ert-chaplain-name = ERT Chaplain
-ghost-role-information-ert-chaplain-description = Assist with mourning to resolve the station's crew moral issues.
-ghost-role-information-ert-janitor-name = ERT Janitor
-ghost-role-information-ert-janitor-description = Assist with custodial efforts to resolve the station's issues.
-ghost-role-information-ert-engineer-name = ERT Engineer
-ghost-role-information-ert-engineer-description = Assist with engineering efforts to resolve the station's issues.
-ghost-role-information-ert-security-name = ERT Security
-ghost-role-information-ert-security-description = Assist with security efforts to resolve the station's issues.
-ghost-role-information-ert-medical-name = ERT Medical
-ghost-role-information-ert-medical-description = Assist with medical efforts to resolve the station's issues.
-ghost-role-information-ert-rules = Follow the instructions of central command officials. Stick to the briefing. Deviations could result in an ERT roleban.
-ghost-role-information-centcom-intern-name = Central Command Intern
-ghost-role-information-centcom-intern-description = Respond to faxes and assist in managing affairs at central command.
-ghost-role-information-centcom-intern-rules = As a Central Command Intern you are a liason between the crew and central command officers and staff. Your job is to read and respond to faxes. You do not have authority to make promises or provide information that you have not first confirmed is up to date and accurate according to all internal resources. As a member of central command staff you are aware of and responsible for maintaining the secrecy of corporate secrets. If you have doubts about your ability to respond to a situation, either ignore it (you're just an intern after all), or ask a central command officer (admin) for assistance.
+ghost-role-information-cluwne-description = Zostań żałosnym cluwne, którego jedynym celem w życiu jest znalezienie słodkiej ulgi od cierpienia (zwykle przez zatłuczenie na śmierć). Cluwne nie jest antagonistą, ale może się bronić. Członkowie załogi mogą swobodnie mordować cluwne.
+ghost-role-information-skeleton-pirate-name = Szkielet-pirat
+ghost-role-information-skeleton-pirate-description = Siej chaos i plądruj stację w poszukiwaniu skarbów.
+ghost-role-information-skeleton-biker-name = Szkielet-motocyklista
+ghost-role-information-skeleton-biker-description = Jeźdź na swojej wspaniałej maszynie.
+ghost-role-information-closet-skeleton-name = Szkielet z szafy
+ghost-role-information-closet-skeleton-description = Jesteś bez wątpienia jednym z najstarszych członków stacji! Odzyskaj swoją dawną pracę albo siej chaos! Świat należy do ciebie.
+ghost-role-information-remilia-name = Remilia, chowaniec Kapłana
+ghost-role-information-remilia-description = Podążaj za kapłanem i słuchaj go. Jedz owoce. Wrzeszcz ludziom głośno do uszu i tłumacz to echolokacją.
+ghost-role-information-cerberus-name = Cerber, zły chowaniec
+ghost-role-information-cerberus-description = Słuchaj swojego pana. Siej chaos.
+ghost-role-information-ert-leader-name = Lider JSR
+ghost-role-information-ert-leader-description = Poprowadź zespół specjalistów, by rozwiązać problemy stacji.
+ghost-role-information-ert-chaplain-name = Kapłan JSR
+ghost-role-information-ert-chaplain-description = Pomóż w żałobie, by rozwiązać problemy z morale załogi stacji.
+ghost-role-information-ert-janitor-name = Sprzątacz JSR
+ghost-role-information-ert-janitor-description = Pomóż w pracach porządkowych, by rozwiązać problemy stacji.
+ghost-role-information-ert-engineer-name = Inżynier JSR
+ghost-role-information-ert-engineer-description = Pomóż w pracach inżynieryjnych, by rozwiązać problemy stacji.
+ghost-role-information-ert-security-name = Ochrona JSR
+ghost-role-information-ert-security-description = Pomóż w działaniach ochronnych, by rozwiązać problemy stacji.
+ghost-role-information-ert-medical-name = Medyk JSR
+ghost-role-information-ert-medical-description = Pomóż w działaniach medycznych, by rozwiązać problemy stacji.
+ghost-role-information-ert-rules = Wykonuj polecenia urzędników Centralnego Dowództwa. Trzymaj się odprawy. Odstępstwa mogą skutkować zablokowaniem roli JSR.
+ghost-role-information-centcom-intern-name = Stażysta Centralnego Dowództwa
+ghost-role-information-centcom-intern-description = Odpowiadaj na faksy i pomagaj w zarządzaniu sprawami Centralnego Dowództwa.
+ghost-role-information-centcom-intern-rules = Jako Stażysta Centralnego Dowództwa jesteś łącznikiem między załogą a oficerami i personelem Centralnego Dowództwa. Twoim zadaniem jest czytanie faksów i odpowiadanie na nie. Nie masz uprawnień do składania obietnic ani podawania informacji, których wcześniej nie potwierdziłeś jako aktualnych i dokładnych według wszystkich wewnętrznych źródeł. Jako członek personelu Centralnego Dowództwa wiesz o tajemnicach korporacyjnych i odpowiadasz za zachowanie ich w sekrecie. Jeśli masz wątpliwości, czy poradzisz sobie z daną sytuacją, zignoruj ją (w końcu jesteś tylko stażystą) albo poproś o pomoc oficera Centralnego Dowództwa (administratora).
 ghost-role-information-internal-affairs-agent-name = Inspektor Spraw Wewnętrznych
 ghost-role-information-internal-affairs-agent-description = Nadzoruj przestrzeganie Standardowej Procedury Operacyjnej i zgłaszaj naruszenia dowództwu stacji oraz Centralnemu Dowództwu.
 ghost-role-information-magistrate-name = Sędzia
 ghost-role-information-magistrate-description = Pełnij rolę prawnego autorytetu Centralnego Dowództwa na stacji — procesy, odwołania, nakazy i autoryzacja egzekucji.
 ghost-role-information-centcom-staff-rules = Jesteś personelem Centralnego Dowództwa wysłanym przez administratora. Postępuj zgodnie z otrzymanym briefingiem. Nie przejmuj dowodzenia stacją od Kapitana. Nierozwiązane sprawy eskaluj do Centralnego Dowództwa. Nadużycie władzy może skutkować banem na rolę.
-ghost-role-information-cburn-agent-name = CBURN Agent
-ghost-role-information-cburn-agent-description = A highly trained CentComm agent, capable of dealing with various threats.
-ghost-role-information-centcom-official-name = CentComm Official
-ghost-role-information-centcom-official-description = Perform CentComm related duties such as inspect the station, jotting down performance reviews for heads of staff, and managing the fax machine.
-ghost-role-information-loneop-name = Lone Operative
-ghost-role-information-loneop-description = You are a lone nuclear operative. Destroy the station!
-ghost-role-information-loneop-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-solo-antagonist-name }[/bold][/color]. Covert syndicate agents are not guaranteed to help you.
+ghost-role-information-cburn-agent-name = Agent CBURN
+ghost-role-information-cburn-agent-description = Świetnie wyszkolony agent Centralnego Dowództwa, zdolny radzić sobie z różnymi zagrożeniami.
+ghost-role-information-centcom-official-name = Urzędnik CD
+ghost-role-information-centcom-official-description = Wykonuj obowiązki związane z Centralnym Dowództwem, takie jak inspekcja stacji, spisywanie ocen pracy szefów działów i obsługa faksu.
+ghost-role-information-loneop-name = Samotny operator
+ghost-role-information-loneop-description = Jesteś samotnym operatorem nuklearnym. Zniszcz stację!
+ghost-role-information-loneop-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-solo-antagonist-name }[/bold][/color]. Tajni agenci Syndykatu nie muszą ci pomagać.
 ghost-role-information-behonker-name = Behonker
-ghost-role-information-behonker-description = You are an antagonist, bring death and honks to those who do not follow the honkmother.
-ghost-role-information-hellspawn-name = Hellspawn
-ghost-role-information-hellspawn-description = Bring death to those who do not follow the great god Nar'Sie.
-ghost-role-information-Death-Squad-name = Death Squad Operative
-ghost-role-information-Death-Squad-description = One of Nanotrasen's top internal affairs agents. Await orders from CentComm or an official.
-ghost-role-information-Death-Squad-rules = You are required to obey orders given by your superior, you are effectively their [color={ role-type-familiar-color }][bold]{ role-type-familiar-name }[/bold][/color].
-ghost-role-information-SyndiCat-name = SyndiCat
-ghost-role-information-SyndiCat-description = You're the faithful trained pet of nuclear operatives with a microbomb. Serve your master to the death!
-ghost-role-information-SyndiCat-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] with the agent who summoned you.
-ghost-role-information-Cak-name = Cak
-ghost-role-information-Cak-description = You are the chef's favorite child. You're a living cake cat.
-ghost-role-information-BreadDog-name = BreadDog
-ghost-role-information-BreadDog-description = You are the chef's favorite child. You're a living bread dog.
-ghost-role-information-space-ninja-name = Space Ninja
-ghost-role-information-space-ninja-description = Use stealth and deception to sabotage the station.
-ghost-role-information-paradox-clone-name = Paradox Clone
-ghost-role-information-paradox-clone-description = A freak space-time anomaly has teleported you into another reality! Now you have to find your counterpart and kill and replace them.
-ghost-role-information-syndicate-reinforcement-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] with the agent who summoned you.
-ghost-role-information-syndicate-reinforcement-medic-name = Syndicate Medic
-ghost-role-information-syndicate-reinforcement-medic-description = Someone needs reinforcements. Your task is to keep the agent who called you alive.
-ghost-role-information-syndicate-reinforcement-spy-name = Syndicate Spy
-ghost-role-information-syndicate-reinforcement-spy-description = Someone needs reinforcements. Your speciality lies in espionage, do not be discovered.
-ghost-role-information-syndicate-reinforcement-thief-name = Syndicate Thief
-ghost-role-information-syndicate-reinforcement-thief-description = Someone needs reinforcements. Your job is to break in and retrieve something valuable for your agent.
-ghost-role-information-nukeop-reinforcement-name = Nuclear Operative
-ghost-role-information-nukeop-reinforcement-description = The nuclear operatives need reinforcements. You, a reserve agent, will help them.
-ghost-role-information-nukeop-reinforcement-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] with the nuclear operatives who summoned you.
-ghost-role-information-syndicate-monkey-reinforcement-name = Syndicate Monkey Agent
-ghost-role-information-syndicate-monkey-reinforcement-description = Someone needs reinforcements. You, a trained monkey, will help them.
-ghost-role-information-syndicate-kobold-reinforcement-name = Syndicate Kobold Agent
-ghost-role-information-syndicate-kobold-reinforcement-description = Someone needs reinforcements. You, a trained kobold, will help them.
-ghost-role-information-syndicate-cyborg-assault-name = Syndicate Assault Cyborg
-ghost-role-information-syndicate-cyborg-saboteur-name = Syndicate Saboteur Cyborg
-ghost-role-information-syndicate-cyborg-description = The Syndicate needs reinforcements. You, a cold silicon killing machine, will help them.
-ghost-role-information-derelict-engineering-cyborg-name = Derelict Engineer Cyborg
-ghost-role-information-derelict-engineering-cyborg-description = You are an engineer cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+ghost-role-information-behonker-description = Jesteś antagonistą, przynieś śmierć i honki tym, którzy nie podążają za honkmatką.
+ghost-role-information-hellspawn-name = Pomiot piekieł
+ghost-role-information-hellspawn-description = Przynieś śmierć tym, którzy nie podążają za wielkim bogiem Nar'Sie.
+ghost-role-information-Death-Squad-name = Operator Szwadronu Śmierci
+ghost-role-information-Death-Squad-description = Jeden z najlepszych agentów spraw wewnętrznych Nanotrasen. Oczekuj rozkazów od Centralnego Dowództwa lub urzędnika.
+ghost-role-information-Death-Squad-rules = Masz obowiązek wykonywać rozkazy przełożonego, w praktyce jesteś jego [color={ role-type-familiar-color }][bold]{ role-type-familiar-name }[/bold][/color].
+ghost-role-information-SyndiCat-name = SyndyKot
+ghost-role-information-SyndiCat-description = Jesteś wiernym, wyszkolonym zwierzakiem operatorów nuklearnych, z mikrobombą w środku. Służ swojemu panu do śmierci!
+ghost-role-information-SyndiCat-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] razem z agentem, który cię przywołał.
+ghost-role-information-Cak-name = Ciastokot
+ghost-role-information-Cak-description = Jesteś ulubionym dzieckiem szefa kuchni. Jesteś żywym kotem z ciasta.
+ghost-role-information-BreadDog-name = Chlebopies
+ghost-role-information-BreadDog-description = Jesteś ulubionym dzieckiem szefa kuchni. Jesteś żywym psem z chleba.
+ghost-role-information-space-ninja-name = Kosmiczny ninja
+ghost-role-information-space-ninja-description = Używaj skrytości i podstępu, by sabotować stację.
+ghost-role-information-paradox-clone-name = Klon paradoksu
+ghost-role-information-paradox-clone-description = Dziwaczna anomalia czasoprzestrzenna przeniosła cię do innej rzeczywistości! Teraz musisz odnaleźć swój odpowiednik, zabić go i zająć jego miejsce.
+ghost-role-information-syndicate-reinforcement-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] razem z agentem, który cię przywołał.
+ghost-role-information-syndicate-reinforcement-medic-name = Medyk Syndykatu
+ghost-role-information-syndicate-reinforcement-medic-description = Ktoś potrzebuje posiłków. Twoim zadaniem jest utrzymanie przy życiu agenta, który cię wezwał.
+ghost-role-information-syndicate-reinforcement-spy-name = Szpieg Syndykatu
+ghost-role-information-syndicate-reinforcement-spy-description = Ktoś potrzebuje posiłków. Twoją specjalnością jest szpiegostwo, nie daj się odkryć.
+ghost-role-information-syndicate-reinforcement-thief-name = Złodziej Syndykatu
+ghost-role-information-syndicate-reinforcement-thief-description = Ktoś potrzebuje posiłków. Twoim zadaniem jest włamać się i odzyskać coś cennego dla swojego agenta.
+ghost-role-information-nukeop-reinforcement-name = Operator nuklearny
+ghost-role-information-nukeop-reinforcement-description = Operatorzy nuklearni potrzebują posiłków. Ty, agent rezerwy, im pomożesz.
+ghost-role-information-nukeop-reinforcement-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] razem z operatorami nuklearnymi, którzy cię przywołali.
+ghost-role-information-syndicate-monkey-reinforcement-name = Agent-małpa Syndykatu
+ghost-role-information-syndicate-monkey-reinforcement-description = Ktoś potrzebuje posiłków. Ty, wyszkolona małpa, im pomożesz.
+ghost-role-information-syndicate-kobold-reinforcement-name = Agent-kobold Syndykatu
+ghost-role-information-syndicate-kobold-reinforcement-description = Ktoś potrzebuje posiłków. Ty, wyszkolony kobold, im pomożesz.
+ghost-role-information-syndicate-cyborg-assault-name = Cyborg szturmowy Syndykatu
+ghost-role-information-syndicate-cyborg-saboteur-name = Cyborg sabotażysta Syndykatu
+ghost-role-information-syndicate-cyborg-description = Syndykat potrzebuje posiłków. Ty, zimna krzemowa maszyna do zabijania, im pomożesz.
+ghost-role-information-derelict-engineering-cyborg-name = Porzucony cyborg inżynier
+ghost-role-information-derelict-engineering-cyborg-description = Jesteś cyborgiem inżynierem, który zagubił się w kosmosie. Po latach narażenia na burze jonowe znajdujesz się w pobliżu stacji kosmicznej.
 ghost-role-information-derelict-cyborg-name = Derelict Cyborg
-ghost-role-information-derelict-cyborg-description = You are a regular cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
-ghost-role-information-derelict-janitor-cyborg-name = Derelict Janitor Cyborg
-ghost-role-information-derelict-janitor-cyborg-description = You are a janitor cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
-ghost-role-information-derelict-medical-cyborg-name = Derelict Medical Cyborg
-ghost-role-information-derelict-medical-cyborg-description = You are a medical cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
-ghost-role-information-derelict-mining-cyborg-name = Derelict Salvage Cyborg
-ghost-role-information-derelict-mining-cyborg-description = You are a salvage cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
-ghost-role-information-derelict-syndicate-assault-cyborg-name = Derelict Syndicate Assault Cyborg
-ghost-role-information-derelict-syndicate-assault-cyborg-description = You are an early model syndicate assault cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
-ghost-role-information-security-name = Security
-ghost-role-information-security-description = You are part of a security task force, but seem to have found yourself in a strange situation...
-ghost-role-information-medical-name = Medical
-ghost-role-information-medical-virologist-name = Virologist
-ghost-role-information-medical-geneticist-name = Geneticist
-ghost-role-information-medical-dentist-name = Dentist
-ghost-role-information-medical-description = You are a medical professional, but seem to have found yourself in a strange situation...
-ghost-role-information-cargo-name = Cargo
-ghost-role-information-cargo-description = You are part of a logistics mission, but seem to have found yourself in a strange situation...
-ghost-role-information-engineering-name = Engineering
-ghost-role-information-engineering-description = You are on an engineering job, but seem to have found yourself in a strange situation...
-ghost-role-information-science-name = Science
-ghost-role-information-science-description = You are part of a science team, but seem to have found yourself in a strange situation...
-ghost-role-information-civilian-name = Civilian
-ghost-role-information-civilian-description = You were just hanging out, but seem to have found yourself in a strange situation...
-ghost-role-information-civilian-centcom-lawyer-name = Centcom Lawyer
-ghost-role-information-civilian-centcom-lawyer-description = A lawyer direct from the Central Legal Division.
-ghost-role-information-command-name = Commander
-ghost-role-information-command-description = You are a member of command, but seem to have found yourself in a strange situation...
-ghost-role-information-lost-challenge-commander-name = Commander on Shore Leave
-ghost-role-information-lost-challenge-commander-description = You are a command member from another starship who was granted shore leave with one of your cargo technicians.
+ghost-role-information-derelict-cyborg-description = Jesteś zwykłym cyborgiem, który zagubił się w kosmosie. Po latach narażenia na burze jonowe znajdujesz się w pobliżu stacji kosmicznej.
+ghost-role-information-derelict-janitor-cyborg-name = Porzucony cyborg woźny
+ghost-role-information-derelict-janitor-cyborg-description = Jesteś cyborgiem woźnym, który zagubił się w kosmosie. Po latach narażenia na burze jonowe znajdujesz się w pobliżu stacji kosmicznej.
+ghost-role-information-derelict-medical-cyborg-name = Porzucony cyborg medyczny
+ghost-role-information-derelict-medical-cyborg-description = Jesteś cyborgiem medycznym, który zagubił się w kosmosie. Po latach narażenia na burze jonowe znajdujesz się w pobliżu stacji kosmicznej.
+ghost-role-information-derelict-mining-cyborg-name = Porzucony cyborg ratowniczy
+ghost-role-information-derelict-mining-cyborg-description = Jesteś cyborgiem ratowniczym, który zagubił się w kosmosie. Po latach narażenia na burze jonowe znajdujesz się w pobliżu stacji kosmicznej.
+ghost-role-information-derelict-syndicate-assault-cyborg-name = Porzucony cyborg szturmowy Syndykatu
+ghost-role-information-derelict-syndicate-assault-cyborg-description = Jesteś wczesnym modelem cyborga szturmowego Syndykatu, który zagubił się w kosmosie. Po latach narażenia na burze jonowe znajdujesz się w pobliżu stacji kosmicznej.
+ghost-role-information-security-name = Ochrona
+ghost-role-information-security-description = Jesteś częścią sił bezpieczeństwa, ale wygląda na to, że znalazłeś się w dziwnej sytuacji...
+ghost-role-information-medical-name = Medycyna
+ghost-role-information-medical-virologist-name = Wirusolog
+ghost-role-information-medical-geneticist-name = Genetyk
+ghost-role-information-medical-dentist-name = Dentysta
+ghost-role-information-medical-description = Jesteś pracownikiem medycznym, ale wygląda na to, że znalazłeś się w dziwnej sytuacji...
+ghost-role-information-cargo-name = Logistyka
+ghost-role-information-cargo-description = Jesteś częścią misji logistycznej, ale wygląda na to, że znalazłeś się w dziwnej sytuacji...
+ghost-role-information-engineering-name = Inżynieria
+ghost-role-information-engineering-description = Jesteś na zleceniu inżynieryjnym, ale wygląda na to, że znalazłeś się w dziwnej sytuacji...
+ghost-role-information-science-name = Nauka
+ghost-role-information-science-description = Jesteś częścią zespołu naukowego, ale wygląda na to, że znalazłeś się w dziwnej sytuacji...
+ghost-role-information-civilian-name = Cywil
+ghost-role-information-civilian-description = Po prostu się wałęsałeś, ale wygląda na to, że znalazłeś się w dziwnej sytuacji...
+ghost-role-information-civilian-centcom-lawyer-name = Prawnik CD
+ghost-role-information-civilian-centcom-lawyer-description = Prawnik prosto z Centralnego Wydziału Prawnego.
+ghost-role-information-command-name = Dowódca
+ghost-role-information-command-description = Jesteś członkiem dowództwa, ale wygląda na to, że znalazłeś się w dziwnej sytuacji...
+ghost-role-information-lost-challenge-commander-name = Dowódca na przepustce
+ghost-role-information-lost-challenge-commander-description = Jesteś członkiem dowództwa z innego statku kosmicznego, któremu przyznano przepustkę razem z jednym z logistyków.
 ghost-role-information-lost-challenge-commander-rules =
-    You are not hostile to the station, do what you must to ensure your own survival.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-ghost-role-information-lost-challenge-cargo-technican-name = Cargo Chauffeur
-ghost-role-information-lost-challenge-cargo-technican-description = You are a cargo technician who was granted shore leave with one of your commanding officers.
-ghost-role-information-syndie-disaster-victim-name = Syndicate Disaster Victim
-ghost-role-information-syndie-disaster-victim-description = You're a regular passenger from a syndicate station. Unfortunately, an evacuation pod has thrown you into an enemy sector...
-ghost-role-information-syndie-soldier-name = Syndicate Soldier
-ghost-role-information-syndie-soldier-description = You are a soldier from the Syndicate.
-ghost-role-information-syndie-soldier-teamlead-name = Syndicate Team Leader
-ghost-role-information-syndie-soldier-teamlead-description = You are the fire team leader for a Syndicate operative taskforce.
-ghost-role-information-blackmarketeer-name = Black Market Trader
-ghost-role-information-blackmarketeer-description = Make trades or take odd jobs to collect the most interesting items by the end of the shift.
-ghost-role-information-cossack-name = Ancient Traveler
-ghost-role-information-cossack-description = From a history lost to time, you find yourself cast into this day and age.
-ghost-role-information-pirate-name = Space Pirate
-ghost-role-information-pirate-description = Argh matey! Collect some cool loot, but make sure to avoid security and salvage!
-ghost-role-information-pirate-captain-name = Space Pirate Captain
-ghost-role-information-pirate-captain-description = Argh matey! You are in charge here and need to devise a plan to get that juicy loot by hook or by crook. Just make sure to avoid security and salvage!
-ghost-role-information-artifact-name = Sentient Artifact
-ghost-role-information-artifact-description = Enact your eldritch whims. Forcibly activate your nodes for good or for evil.
-ghost-role-information-tomatokiller-name = Tomato Killer
-ghost-role-information-tomatokiller-description = This little tomato will serve the botanist for the rest of his life... that is, a couple of minutes.
-ghost-role-information-gingerbread-name = Gingerbread Man
+    Nie jesteś wrogo nastawiony do stacji, rób, co musisz, aby przetrwać.
+    Nie pamiętasz niczego ze swojego poprzedniego życia ani niczego, czego dowiedziałeś się jako duch.
+    Wolno ci pamiętać ogólną wiedzę o grze, na przykład jak gotować, jak używać przedmiotów itd.
+    Absolutnie [color=red]NIE[/color] wolno ci pamiętać na przykład imienia, wyglądu itp. twojej poprzedniej postaci.
+ghost-role-information-lost-challenge-cargo-technican-name = Kierowca logistyki
+ghost-role-information-lost-challenge-cargo-technican-description = Jesteś logistykiem, któremu przyznano przepustkę razem z jednym ze swoich przełożonych.
+ghost-role-information-syndie-disaster-victim-name = Ofiara katastrofy Syndykatu
+ghost-role-information-syndie-disaster-victim-description = Jesteś zwykłym pasażerem ze stacji Syndykatu. Niestety kapsuła ewakuacyjna wrzuciła cię do wrogiego sektora...
+ghost-role-information-syndie-soldier-name = Żołnierz Syndykatu
+ghost-role-information-syndie-soldier-description = Jesteś żołnierzem Syndykatu.
+ghost-role-information-syndie-soldier-teamlead-name = Dowódca oddziału Syndykatu
+ghost-role-information-syndie-soldier-teamlead-description = Jesteś dowódcą zespołu ogniowego w grupie zadaniowej operatorów Syndykatu.
+ghost-role-information-blackmarketeer-name = Handlarz z czarnego rynku
+ghost-role-information-blackmarketeer-description = Handluj albo bierz dziwne zlecenia, by do końca zmiany zebrać jak najciekawsze przedmioty.
+ghost-role-information-cossack-name = Starożytny podróżnik
+ghost-role-information-cossack-description = Z historii zagubionej w czasie zostałeś rzucony w te czasy.
+ghost-role-information-pirate-name = Kosmiczny pirat
+ghost-role-information-pirate-description = Arr, kamracie! Zbierz trochę fajnych łupów, ale unikaj ochrony i Odzysku!
+ghost-role-information-pirate-captain-name = Kapitan kosmicznych piratów
+ghost-role-information-pirate-captain-description = Arr, kamracie! To ty tu dowodzisz i musisz obmyślić plan zdobycia tego soczystego łupu wszelkimi sposobami. Tylko unikaj ochrony i Odzysku!
+ghost-role-information-artifact-name = Świadomy artefakt
+ghost-role-information-artifact-description = Spełniaj swoje plugawe kaprysy. Siłą aktywuj swoje węzły, na dobre lub na złe.
+ghost-role-information-tomatokiller-name = Pomidor zabójca
+ghost-role-information-tomatokiller-description = Ten mały pomidor będzie służył botanikowi do końca życia... czyli kilka minut.
+ghost-role-information-gingerbread-name = Piernikowy ludzik
 ghost-role-information-gingerbread-description =
-    A being of pure holiday spirit.
-    Spread molassesy goodness and to all good cheer.
-ghost-role-information-mothership-core-name = Mothership Core
-ghost-role-information-mothership-core-desc = You are the core of the xenoborg mothership, help them multiply by borging any brain they bring to you.
-ghost-role-information-xenoborg-name = Xenoborg
-ghost-role-information-xenoborg-desc = A strange cyborg made to replicate itself and take over the station by turning any sentient being into xenoborgs.
-ghost-role-information-wizard-name = Wizard
-ghost-role-information-wizard-desc = YER A WIZARD! Show the station what your magic is made of.
-ghost-role-information-emotional-support-scurret-name = Emotional Support Scurret
-ghost-role-information-emotional-support-scurret-description = Support the crew, be adorable, say "wa" a lot.
+    Istota czystego świątecznego ducha.
+    Rozsiewaj melasowe dobro i dobry humor wśród wszystkich.
+ghost-role-information-mothership-core-name = Rdzeń statku-matki
+ghost-role-information-mothership-core-desc = Jesteś rdzeniem statku-matki ksenoborgów, pomagaj im się rozmnażać, przekształcając w borgi każdy mózg, który ci przyniosą.
+ghost-role-information-xenoborg-name = Ksenoborg
+ghost-role-information-xenoborg-desc = Dziwny cyborg stworzony, by się replikować i przejąć stację, zmieniając każdą świadomą istotę w ksenoborgi.
+ghost-role-information-wizard-name = Czarodziej
+ghost-role-information-wizard-desc = JESTEŚ CZARODZIEJEM! Pokaż stacji, z czego zrobiona jest twoja magia.
+ghost-role-information-emotional-support-scurret-name = Skurret wsparcia emocjonalnego
+ghost-role-information-emotional-support-scurret-description = Wspieraj załogę, bądź uroczy i często mów „wa”.

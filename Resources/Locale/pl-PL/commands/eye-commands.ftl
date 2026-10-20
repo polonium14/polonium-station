@@ -1,7 +1,7 @@
-parse-bool-fail = Unable to parse { $arg } as a bool
-parse-float-fail = Unable to parse { $arg } as a float
-cmd-lockeyes-desc = Prevents eyes from being rotated any further.
-cmd-lockeyes-help = Usage: lockeyes <true/false>
-cmd-rotateeyes-desc = Rotates every player's current eye to the specified rotation
-cmd-rotateeyes-help = rotateeyes <degrees (default 0)>
-cmd-rotateeyes-command-count = Set { $count } eye rotations
+parse-bool-fail = Nie można odczytać { $arg } jako wartości logicznej
+parse-float-fail = Nie można odczytać { $arg } jako liczby zmiennoprzecinkowej
+cmd-lockeyes-desc = Zapobiega dalszemu obracaniu oczu.
+cmd-lockeyes-help = Użycie: lockeyes <true/false>
+cmd-rotateeyes-desc = Obraca oko każdego gracza do podanej rotacji
+cmd-rotateeyes-help = rotateeyes <stopnie (domyślnie 0)>
+cmd-rotateeyes-command-count = Ustawiono rotację oczu: { $count }

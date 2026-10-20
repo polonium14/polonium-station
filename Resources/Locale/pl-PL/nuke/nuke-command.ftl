@@ -1,5 +1,5 @@
-cmd-nukearm-desc = Toggle nuclear bomb timer. You can set timer directly. Uid is optional.
-cmd-nukearm-help = nukearm <timer> <uid>
-cmd-nukearm-not-found = Can't find any entity with a NukeComponent.
-cmd-nukearm-1-help = Time (in seconds)
-cmd-nukearm-2-help = Nuke
+cmd-nukearm-desc = Przełącza zegar bomby jądrowej. Czas można ustawić bezpośrednio. Uid jest opcjonalny.
+cmd-nukearm-help = nukearm <czas> <uid>
+cmd-nukearm-not-found = Nie można znaleźć żadnej encji z komponentem NukeComponent.
+cmd-nukearm-1-help = Czas (w sekundach)
+cmd-nukearm-2-help = Bomba

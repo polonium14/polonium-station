@@ -1,6 +1,6 @@
 objective-condition-kill-person-title = Zabij lub porzuć { $targetName }, { $job }
 objective-condition-kill-maroon-title = Zabij i porzuć { $targetName }, { $job }
-objective-condition-kill-station-ai = Destroy { $targetName }, { CAPITALIZE($job) } and ensure they remain out of commission.
+objective-condition-kill-station-ai = Zniszcz { $targetName }, { CAPITALIZE($job) } i dopilnuj, by pozostała wyłączona z użytku.
 objective-condition-maroon-person-title =
     Spraw, by { $targetName }, { $job } nie { GENDER($targetName) ->
         [male] dotarł

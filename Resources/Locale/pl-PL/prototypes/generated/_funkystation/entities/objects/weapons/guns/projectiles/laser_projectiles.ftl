@@ -1,2 +1,2 @@
-ent-EnergyBulletLaser = laser bolt
+ent-EnergyBulletLaser = pocisk laserowy
     .desc = { ent-BulletLaser.desc }

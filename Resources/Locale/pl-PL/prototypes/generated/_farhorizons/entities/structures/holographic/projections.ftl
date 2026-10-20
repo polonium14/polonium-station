@@ -1,2 +1,2 @@
-ent-HolosignRadiationBlocking = holographic radiation barrier
-    .desc = A barrier of hard light that blocks light and radiation, but nothing else.
+ent-HolosignRadiationBlocking = holograficzna bariera radiacyjna
+    .desc = Bariera ze stałego światła, która blokuje światło i promieniowanie, ale nic poza tym.

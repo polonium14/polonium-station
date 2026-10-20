@@ -7,5 +7,5 @@ advertisement-magivend-6 = TRĄB!
 advertisement-magivend-7 = O KURWA
 advertisement-magivend-8 = Zniszcz stację!
 advertisement-magivend-9 = Sprzęt do wyginania czasoprzestrzeni!
-advertisement-magivend-10 = 1234 LOONIES LOL!
+advertisement-magivend-10 = 1234 LUNIE LOL!
 advertisement-magivend-11 = NAR'SIE, WSTAŃ!!!

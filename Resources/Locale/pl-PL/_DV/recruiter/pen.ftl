@@ -1,1 +1,1 @@
-recruiter-pen-name = recruiter pen
+recruiter-pen-name = długopis rekrutera

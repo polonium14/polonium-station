@@ -1,3 +1,3 @@
 ent-BookshelfFilled = { ent-Bookshelf }
-    .suffix = random filled
+    .suffix = losowo wypełniona
     .desc = { ent-Bookshelf.desc }

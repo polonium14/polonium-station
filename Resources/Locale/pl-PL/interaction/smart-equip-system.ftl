@@ -1,4 +1,4 @@
-smart-equip-missing-equipment-slot = You have no { $slotName } slot to interact with!
-smart-equip-empty-equipment-slot = There's nothing in your { $slotName } slot to take out!
+smart-equip-missing-equipment-slot = Nie masz slotu „{ $slotName }”, z którym mógłbyś wejść w interakcję!
+smart-equip-empty-equipment-slot = W slocie „{ $slotName }” nie ma nic do wyjęcia!
 smart-equip-no-valid-item-slot-insert = There's no valid item slot for { $item } to go into!
-smart-equip-cant-drop = You can't drop that!
+smart-equip-cant-drop = Nie możesz tego upuścić!

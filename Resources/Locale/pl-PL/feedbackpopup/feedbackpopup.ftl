@@ -1,18 +1,19 @@
-feedbackpopup-window-name = Request for feedback
-feedbackpopup-control-button-text = Open Link
+feedbackpopup-window-name = Prośba o opinię
+feedbackpopup-control-button-text = Otwórz link
 feedbackpopup-control-total-surveys =
     { $num ->
-        [one] { $num } entry
-       *[other] { $num } entries
+        [one] { $num } wpis
+        [few] { $num } wpisy
+       *[other] { $num } wpisów
     }
-feedbackpopup-control-no-entries = No entries
-feedbackpopup-control-ui-footer = Let us know what you think!
+feedbackpopup-control-no-entries = Brak wpisów
+feedbackpopup-control-ui-footer = Daj nam znać, co myślisz!
 # Command strings
-command-description-openfeedbackpopup = Opens the feedback popup window.
-command-description-feedback-show = Opens the feedback popup window for the given sessions.
-command-description-feedback-add = Adds a feedback popup prototype to the given clients and opens the popup window if the client didn't already have the prototype listed.
-command-description-feedback-remove = Removes a feedback popup prototype from the given clients.
-cmd-givefeedbackpopup-desc = Gives the targeted player a feedback popup.
-cmd-givefeedbackpopup-help = Usage: givefeedbackpopup <playerUid> <prototypeId>
-cmd-showfeedbackpopup-desc = Open the feedback popup window.
-cmd-showfeedbackpopup-help = Usage: showfeedbackpopup
+command-description-openfeedbackpopup = Otwiera okno z prośbą o opinię.
+command-description-feedback-show = Otwiera okno z prośbą o opinię dla danych sesji.
+command-description-feedback-add = Dodaje prototyp prośby o opinię danym klientom i otwiera okno, jeśli klient nie miał jeszcze tego prototypu na liście.
+command-description-feedback-remove = Usuwa prototyp prośby o opinię danym klientom.
+cmd-givefeedbackpopup-desc = Daje wskazanemu graczowi okno z prośbą o opinię.
+cmd-givefeedbackpopup-help = Użycie: givefeedbackpopup <playerUid> <id prototypu>
+cmd-showfeedbackpopup-desc = Otwiera okno z prośbą o opinię.
+cmd-showfeedbackpopup-help = Użycie: showfeedbackpopup

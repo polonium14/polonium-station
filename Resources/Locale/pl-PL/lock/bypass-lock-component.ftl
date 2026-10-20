@@ -1,4 +1,4 @@
-bypass-lock-verb = Force open the access lock
-bypass-lock-disabled-healthy = The lock needs to be damaged further before it can be forced open.
-bypass-lock-disabled-wrong-tool = This lock requires { $quality } to be forced open.
-bypass-lock-disabled-already-open = The lock is already open.
+bypass-lock-verb = Wyważ zamek dostępu
+bypass-lock-disabled-healthy = Zamek trzeba bardziej uszkodzić, zanim da się go wyważyć.
+bypass-lock-disabled-wrong-tool = Aby wyważyć ten zamek, potrzebne jest: { $quality }.
+bypass-lock-disabled-already-open = Zamek jest już otwarty.

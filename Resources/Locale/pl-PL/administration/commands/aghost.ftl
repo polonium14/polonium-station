@@ -1,3 +1,3 @@
-cmd-aghost-desc = Makes you or others an admin ghost.
-aghost-no-mind-self = You can't ghost here!
-aghost-no-mind-other = They can't ghost here!
+cmd-aghost-desc = Zamienia ciebie lub innych w ducha administratora.
+aghost-no-mind-self = Nie możesz tu zostać duchem!
+aghost-no-mind-other = Ta osoba nie może tu zostać duchem!

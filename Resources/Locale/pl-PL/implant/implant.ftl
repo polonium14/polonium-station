@@ -1,7 +1,7 @@
 ## Implanter Attempt Messages
 
 implanter-component-implanting-target = { $user } próbuje cię czymś wszczepić!
-implanter-component-draw-target = { CAPITALIZE(THE({ $user })) } is trying to extract something from you!
+implanter-component-draw-target = { CAPITALIZE(THE({ $user })) } próbuje coś z ciebie wyciągnąć!
 implanter-component-implant-failed = { $target } nie może otrzymać { $implant }!
 implanter-draw-failed-permanent = { $implant } w { $target } jest połączony z { OBJECT($target) } i nie może być usunięty!
 implanter-draw-failed = Próbowałeś(-aś) usunąć implant, ale nic nie znajdujesz.
@@ -18,7 +18,7 @@ implanter-draw-text = Pobranie
 implanter-inject-text = Wystrzykanie
 implanter-empty-text = Pusty
 implanter-label-inject = [color=green]{ $implantName }[/color]
-    Mode: [color=white]{ $modeString }[/color]
+    Tryb: [color=white]{ $modeString }[/color]
 implanter-label-draw = [color=red]{ $implantName }[/color]
-    Mode: [color=white]{ $modeString }[/color]
+    Tryb: [color=white]{ $modeString }[/color]
 implanter-contained-implant-text = [color=green]{ $desc }[/color]

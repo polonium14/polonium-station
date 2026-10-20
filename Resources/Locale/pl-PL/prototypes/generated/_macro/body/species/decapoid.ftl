@@ -1,6 +1,6 @@
 ent-DecapoidSpeciesLayers = { "" }
     .desc = { "" }
-ent-AppearanceDecapoid = decapoid appearance
+ent-AppearanceDecapoid = wygląd dekapoida
     .desc = { ent-DecapoidSpeciesLayers.desc }
 ent-MobDecapoid = Urist McCrab
     .desc = { ent-AppearanceDecapoid.desc }
@@ -8,7 +8,7 @@ ent-BaseMobDecapoidInternals = { ent-MobDecapoid }
     .suffix = SpawnsWithInternals
     .desc = { ent-MobDecapoid.desc }
 ent-OrganDecapoid = { ent-OrganBase }
-    .suffix = decapoid
+    .suffix = dekapoid
     .desc = { ent-OrganBase.desc }
 ent-OrganDecapoidMetabolizer = { "" }
     .desc = { "" }

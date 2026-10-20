@@ -1,1 +1,1 @@
-steal-target-groups-cargo-supermatter-sliver = supermatter sliver
+steal-target-groups-cargo-supermatter-sliver = odłamek supermaterii

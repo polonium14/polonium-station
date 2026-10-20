@@ -1,4 +1,4 @@
-comp-gas-filter-ui-filter-status = Status:
+comp-gas-filter-ui-filter-status = Stan:
 comp-gas-filter-ui-status-enabled = Włącz
 comp-gas-filter-ui-status-disabled = Wyłącz
 comp-gas-filter-ui-filter-transfer-rate = Prędkość Przepływu (L/s):
@@ -8,4 +8,4 @@ comp-gas-filter-ui-filter-gas-select = Wybierz gaz do odfiltrowania:
 comp-gas-filter-ui-filter-gas-confirm = Ustaw Gaz
 comp-gas-filter-ui-filter-gas-none = Żaden
 comp-gas-filter-ui-filter-gas-all = Wszystkie
-comp-gas-filter-filtered-gas-examine = It is filtering [color={ $statusColor }]{ $filteredGas }[/color].
+comp-gas-filter-filtered-gas-examine = Filtruje [color={ $statusColor }]{ $filteredGas }[/color].

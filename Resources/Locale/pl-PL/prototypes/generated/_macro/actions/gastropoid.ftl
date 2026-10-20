@@ -1,2 +1,2 @@
-ent-ActionSlime = Slime Trail
-    .desc = Leave a trail of mucin.
+ent-ActionSlime = Ślad szlamu
+    .desc = Zostaw za sobą ślad śluzu.

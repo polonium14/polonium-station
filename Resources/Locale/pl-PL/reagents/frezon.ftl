@@ -1,2 +1,2 @@
-frezon-lungs-cold = Your lungs feel colder..
+frezon-lungs-cold = Twoje płuca wydają się zimniejsze..
 frezon-euphoric = Czujesz euforię, ale jesteś zziębnięty...

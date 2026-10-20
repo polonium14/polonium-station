@@ -1,1 +1,1 @@
-command-description-addaccesslog = Adds an access log to this entity. Do note that this bypasses the log's default limit and pause check.
+command-description-addaccesslog = Dodaje do tej encji wpis dziennika dostępu. Zwróć uwagę, że omija to domyślny limit dziennika i sprawdzenie wstrzymania.

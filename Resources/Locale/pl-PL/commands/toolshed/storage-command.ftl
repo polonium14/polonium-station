@@ -1,3 +1,3 @@
-command-description-storage-fasttake = Takes the most recently placed item from the piped storage entity.
-command-description-storage-insert = Inserts the piped entity into the given storage entity.
-command-description-storage-contents = Gets the entities in the storagebase of the piped entities and passes them along.
+command-description-storage-fasttake = Wyjmuje ostatnio włożony przedmiot z przekazanej potokiem encji z schowkiem.
+command-description-storage-insert = Wkłada przekazaną potokiem encję do danej encji z schowkiem.
+command-description-storage-contents = Pobiera encje znajdujące się w schowkach przekazanych potokiem encji i przekazuje je dalej.
