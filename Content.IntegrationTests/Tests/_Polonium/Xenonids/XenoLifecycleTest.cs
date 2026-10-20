@@ -4,6 +4,8 @@ using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Xenonids;
 using Content.Shared._Polonium.Xenonids;
+using Content.Shared._Shitmed.Body;
+using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._RMC14.Xenonids;
 using Content.Shared._RMC14.Xenonids.Egg;
 using Content.Shared._RMC14.Xenonids.Evolution;
@@ -183,21 +185,31 @@ public sealed class XenoLifecycleTest : GameTest
     {
         var coords = await Setup();
         EntityUid human = default;
+        EntityUid embryo = default;
 
         await Pair.Server.WaitPost(() =>
         {
             human = SSpawnAtPosition("MobHuman", coords);
             Assert.That(SEntMan.System<XenoEmbryoSystem>().TryInfect(human), Is.True);
+            embryo = SComp<XenoInfectedComponent>(human).Embryo!.Value;
 
             // To samo, co robi krok SurgeryStepRemoveOrgan.
-            var embryo = SComp<XenoInfectedComponent>(human).Embryo!.Value;
             var body = SComp<BodyComponent>(human);
-            Assert.That(SEntMan.System<SharedContainerSystem>().Remove(embryo, body.Organs!, force: true), Is.True);
+            Assert.That(LimbTargetMap.TryGetOrganByCategory(SEntMan, body, "Torso", out var torso), Is.True);
+            var surgeon = SSpawnAtPosition("MobHuman", coords);
+            var surgery = SSpawnAtPosition("SurgeryRemoveXenoEmbryo", coords);
+            var step = SSpawnAtPosition("SurgeryStepRemoveOrgan", coords);
+            var ev = new SurgeryStepEvent(surgeon, human, torso, EntityUid.Invalid, surgery, step);
+            SEntMan.EventBus.RaiseLocalEvent(step, ref ev);
         });
+
+        await RunSeconds(1);
 
         await Pair.Server.WaitAssertion(() =>
         {
             Assert.That(SEntMan.HasComponent<XenoInfectedComponent>(human), Is.False);
+            Assert.That(SComp<BodyComponent>(human).Organs!.ContainedEntities.Contains(embryo), Is.False, "Embrion nadal jest w ciele");
+            Assert.That(SEntMan.HasComponent<XenoEmbryoComponent>(embryo), Is.False, "Wyjęty embrion powinien obumrzeć");
         });
     }
 
