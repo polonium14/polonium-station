@@ -1,0 +1,114 @@
+- type: entity
+  abstract: true
+  parent: [ SimpleSpaceMobBase, BaseMobDestructible ]
+  id: BaseMobHonkCluwne
+  components:
+  - type: Cluwne
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: crit
+      Dead:
+        Base: crit
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4.5
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 150
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.15
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepClown
+  - type: Speech
+    speechVerb: Cluwne
+    allowedEmotes: ['Scream', 'Laugh']
+  - type: Vocal
+    emoteSounds: Cluwne
+  - type: Emoting
+
+- type: entity
+  parent: BaseMobHonkCluwne
+  id: MobCluwneGiggles
+  name: honkochich
+  description: Zielony od stóp do głowy, a chichocze tak, jakby to jego ktoś łaskotał. Nikt nie wie, kto.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/giggles.rsi
+  - type: InventorySlots
+  - type: Inventory
+    templateId: honkGiggles
+  - type: Hands
+    startingHands:
+      hand_right:
+        location: Right
+      hand_left:
+        location: Left
+  - type: ComplexInteraction
+  - type: Stripping
+  - type: Cluwne
+    outfitId: HonkGigglesGear
+
+- type: startingGear
+  id: HonkGigglesGear
+  equipment:
+    id: ClownPDA
+    back: ClothingBackpackClown
+
+# Honkochich z wybuchu anomalii. Z woli Honkmatki ma siać HONK, a nie atakować ludzi, i jest swój dla reszty klaunów.
+- type: entity
+  parent: MobCluwneGiggles
+  id: MobHonkGiggles
+  suffix: Honk
+  components:
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: GhostRole
+    makeSentient: true
+    name: ghost-role-information-honk-giggles-name
+    description: ghost-role-information-honk-giggles-description
+    rules: ghost-role-information-honk-giggles-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  parent: BaseMobBehonker
+  id: MobBehonkerHonk
+  suffix: Honk
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 7
+        Slash: 7
+  - type: BatteryAmmoProvider
+    proto: RedLaserHonk
+    fireCost: 62.5
+  - type: InnateTool
+    tools:
+    - id: WeaponBehonkerLaserHonk
+    - id: BikeHorn

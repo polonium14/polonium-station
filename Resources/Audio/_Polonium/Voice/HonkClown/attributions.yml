@@ -1,0 +1,9 @@
+- files: ["reverse.ogg", "abyss.ogg", "choir.ogg", "ringmod.ogg", "hellhorn.ogg", "moan.ogg", "tritone.ogg", "cathedral.ogg", "sickchoir.ogg", "toll.ogg", "echoes.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Made for Polonium Station by nikitosych from Resources/Audio/Items/bikehorn.ogg"
+  source: "https://github.com/space-wizards/space-station-14/blob/master/Resources/Audio/Items/bikehorn.ogg"
+
+- files: ["blob_scream.ogg"]
+  license: "Custom"
+  copyright: "Horror Sound - Lurking Horror Monster by alesiadavina on Pixabay, converted to mono and normalized by nikitosych (github)"
+  source: "https://pixabay.com/sound-effects/horror-sound-lurking-horror-monster-189948/"

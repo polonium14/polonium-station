@@ -90,7 +90,7 @@ public sealed partial class PaperSystem : EntitySystem
 
     private void OnMapInit(Entity<PaperComponent> entity, ref MapInitEvent args)
     {
-        if (!string.IsNullOrEmpty(entity.Comp.Content))
+        if (!string.IsNullOrEmpty(entity.Comp.Content) && !HasComp<RandomPaperContentComponent>(entity))
         {
             SetContent(entity, Loc.GetString(entity.Comp.Content));
         }
