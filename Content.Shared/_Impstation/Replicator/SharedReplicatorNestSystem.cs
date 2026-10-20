@@ -106,8 +106,8 @@ public abstract partial class SharedReplicatorNestSystem : EntitySystem
 
         if (TryComp<StackComponent>(tripper, out var stackComp))
         {
-            ent.Comp.TotalPoints += stackComp.Count;
-            ent.Comp.SpawningProgress += stackComp.Count;
+            ent.Comp.TotalPoints += stackComp.Count - 1;
+            ent.Comp.SpawningProgress += stackComp.Count - 1;
         }
         else if (TryComp<ItemComponent>(tripper, out var itemComp))
         {
