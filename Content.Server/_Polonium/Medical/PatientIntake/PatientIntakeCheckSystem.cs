@@ -35,6 +35,7 @@ public enum IntakeFailureKind : byte
     HarmfulReagent,
     Blind,
     Implant,
+    RequestNotDone,
 }
 
 /// <param name="Subject">Organ/part/reagent name for the receipt, if the failure is about one.</param>
@@ -44,7 +45,7 @@ public readonly record struct IntakeFailure(IntakeFailureKind Kind, string? Subj
 /// The "whole body healthy" judgment the patient intake machine runs on return. Also used by
 /// the health analyzer readout, so medics see exactly what the machine will fail them on.
 /// </summary>
-public sealed class PatientIntakeCheckSystem : EntitySystem
+public sealed partial class PatientIntakeCheckSystem : EntitySystem
 {
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private MobStateSystem _mobState = default!;
@@ -65,7 +66,7 @@ public sealed class PatientIntakeCheckSystem : EntitySystem
     public const float MinBloodLevel = 0.9f;
 
     /// <param name="expectedParts">
-    /// Woundable part categories the body had when the case started. Limbs aren't in
+    /// Organ categories the body had when the case started. Limbs aren't in
     /// <see cref="BodyComponent.ExpectedOrgans"/>, so a missing limb is only caught by this.
     /// </param>
     public List<IntakeFailure> Check(EntityUid patient, IReadOnlyCollection<ProtoId<OrganCategoryPrototype>>? expectedParts = null)
