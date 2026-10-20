@@ -105,6 +105,9 @@ entities:
       parallax: Water
     - type: MapLight
       ambientLightColor: '#5D306EFF'
+    - type: TriggerOnSpawn
+    - type: WeatherOnTrigger
+      weather: WeatherSnowfallLight
   - uid: 2
     components:
     - type: MetaData
