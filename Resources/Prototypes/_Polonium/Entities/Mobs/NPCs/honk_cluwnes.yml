@@ -51,6 +51,7 @@
   components:
   - type: Sprite
     sprite: _Polonium/Mobs/Clowns/giggles.rsi
+  - type: InventorySlots
   - type: Inventory
     templateId: honkGiggles
   - type: Hands
@@ -61,22 +62,14 @@
         location: Left
   - type: ComplexInteraction
   - type: Stripping
-  - type: Loadout
-    prototypes:
-    - HonkGigglesGear
+  - type: Cluwne
+    outfitId: HonkGigglesGear
 
 - type: startingGear
   id: HonkGigglesGear
   equipment:
-    id: HonkGigglesPDA
-    back: ClothingBackpackCluwne
-
-- type: entity
-  parent: ClownPDA
-  id: HonkGigglesPDA
-  suffix: Unremoveable
-  components:
-  - type: Unremoveable
+    id: ClownPDA
+    back: ClothingBackpackClown
 
 # Honkochich z wybuchu anomalii. Z woli Honkmatki ma siać HONK, a nie atakować ludzi, i jest swój dla reszty klaunów.
 - type: entity
