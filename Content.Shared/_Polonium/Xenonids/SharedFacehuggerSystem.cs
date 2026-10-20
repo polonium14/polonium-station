@@ -177,7 +177,7 @@ public abstract partial class SharedFacehuggerSystem : EntitySystem
         if (Inventory.TryGetSlotEntity(target, MaskSlot, out var mask)
             && mask != hugger
             && TryComp<FacehuggerComponent>(mask, out var worn)
-            && worn.Victim == target)
+            && worn.ImpregnateAt != null)
             return false;
 
         return !checkHead || !IsMouthCoveredByHead(target, out _);
