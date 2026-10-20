@@ -216,16 +216,25 @@ public abstract partial class SharedFacehuggerSystem : EntitySystem
             return false;
         }
 
-        if (Inventory.TryGetSlotEntity(target, MaskSlot, out var mask)
-            && Inventory.TryUnequip(target, MaskSlot, silent: true, force: true))
+        var torn = Inventory.TryGetSlotEntity(target, MaskSlot, out var mask)
+            && Inventory.TryUnequip(target, MaskSlot, silent: true, force: true);
+
+        if (!Inventory.TryEquip(target, hugger, MaskSlot, silent: true, force: true))
+        {
+            if (torn)
+                Inventory.TryEquip(target, mask!.Value, MaskSlot, silent: true, force: true);
+            return false;
+        }
+
+        if (torn)
         {
             PopupBoth(target,
-                Loc.GetString("xeno-facehugger-tear-self", ("hugger", hugger.Owner), ("mask", mask.Value)),
-                Loc.GetString("xeno-facehugger-tear-others", ("hugger", hugger.Owner), ("target", target), ("mask", mask.Value)),
+                Loc.GetString("xeno-facehugger-tear-self", ("hugger", hugger.Owner), ("mask", mask!.Value)),
+                Loc.GetString("xeno-facehugger-tear-others", ("hugger", hugger.Owner), ("target", target), ("mask", mask!.Value)),
                 PopupType.Medium);
         }
 
-        return Inventory.TryEquip(target, hugger, MaskSlot, silent: true, force: true);
+        return true;
     }
 
     /// <summary>
