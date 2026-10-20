@@ -62,7 +62,7 @@ public sealed partial class EntityAnomalySystem : SharedEntityAnomalySystem
                 alive++;
         }
 
-        return Math.Clamp(alive / (float) Math.Max(1, entry.Settings.PlayersForMaxAmount), 0f, 1f);
+        return Math.Clamp(alive / (float) Math.Max(1, entry.Settings.PlayersForMaxAmount), 0f, 1f) * powerModifier;
     }
 
     private void OnShutdown(Entity<EntitySpawnAnomalyComponent> component, ref AnomalyShutdownEvent args)
