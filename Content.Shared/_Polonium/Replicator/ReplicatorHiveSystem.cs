@@ -91,7 +91,9 @@ public sealed partial class ReplicatorHiveSystem : EntitySystem
         if (HasComp<MobStateComponent>(uid) && _mobState.IsAlive(uid))
             return false;
 
-        return true;
+        return HasComp<ReplicatorComponent>(uid)
+            || !TryComp<MindContainerComponent>(uid, out var mind)
+            || !mind.HasMind;
     }
 
     public static double ToSheets(int units)
