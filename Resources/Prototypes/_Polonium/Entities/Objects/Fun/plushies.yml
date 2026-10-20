@@ -100,6 +100,15 @@
     delay: 1.0
   - type: MeleeWeapon
     attackRate: 1
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 15
+      - ReagentId: Whiskey
+        Quantity: 10
+      - ReagentId: DrGibb
+        Quantity: 5
 
 - type: entity
   parent: PlushieHuman
