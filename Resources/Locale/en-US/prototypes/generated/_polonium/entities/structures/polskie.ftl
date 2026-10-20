@@ -1,0 +1,10 @@
+ent-PolishFlagAnchor = white-red flag with an anchor
+    .desc = The flag used by Polish spaceships, conforming to the pattern in Annex 6 to the 'Nanotrasen Military Unit Designation Act'.
+ent-PolishFlag = flag of Poland
+    .desc = The flag used by Poles, conforming to the pattern in Annex 3 to the 'Nanotrasen National Minorities Rights Act'.
+ent-PolishFlagEagle = white-red flag with an eagle
+    .desc = The flag customarily used by Poles, not conforming to the pattern in Annex 3 to the 'Nanotrasen National Minorities Rights Act'.
+ent-PolishCrucifix = cross
+    .desc = Degenerates like you should be crucified.
+ent-VehicleMaluch = maluch
+    .desc = Mind your head.

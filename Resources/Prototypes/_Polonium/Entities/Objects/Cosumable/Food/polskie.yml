@@ -1,0 +1,84 @@
+# Port polskiego jedzenia z NSV13 (Aquila): gołąbki i żurek z tgstation/tgstation#65848, ptasie mleczko z CM-SS13.
+
+- type: entity
+  name: stuffed cabbage
+  parent: FoodMealBase
+  id: FoodGolabki
+  description: Minced meat and rice wrapped in cabbage leaves and covered in tomato sauce. Finger-licking good.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - rice
+      - cabbage
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/polskie.rsi
+    state: golabki
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 20
+      - ReagentId: Vitamin
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  name: zurek
+  parent: FoodBowlBase
+  id: FoodSoupZurek
+  description: A traditional Polish sour rye soup with vegetables, sausage and egg. Best eaten with bread.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sour
+      - meaty
+      - egg
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/polskie.rsi
+    state: zurek
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 16
+      - ReagentId: Vitamin
+        Quantity: 4
+      - ReagentId: Protein
+        Quantity: 4
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
+- type: entity
+  name: bird's milk
+  parent: FoodSnackBase
+  id: FoodSnackPtasieMleczko
+  description: Soft marshmallow covered in chocolate. A popular Polish sweet, perfect with tea.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chocolate
+      - creamy
+      - sweet
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/polskie.rsi
+    state: ptasie_mleczko
+  - type: Item
+    size: Small
+  - type: Solution
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Sugar
+        Quantity: 4
+      - ReagentId: Cream
+        Quantity: 3
+      - ReagentId: CocoaPowder
+        Quantity: 3
+  - type: Tag
+    tags:
+    - FoodSnack

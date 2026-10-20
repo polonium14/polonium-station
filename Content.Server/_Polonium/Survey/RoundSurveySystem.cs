@@ -545,6 +545,17 @@ public sealed partial class RoundSurveySystem : EntitySystem
     {
         var now = _timing.RealTime;
 
+        if (!_cfg.GetCVar(CCVars.SurveyPostEmpty) && !HasAnswers(survey))
+        {
+            survey.Dirty = false;
+
+            if (survey is { Closed: true, SkipLogged: false } && _webhook != null)
+            {
+                survey.SkipLogged = true;
+                Log.Info($"Round survey of round {survey.RoundId} has no answers, skipping its summary to Discord");
+            }
+        }
+
         if (survey is { Dirty: true, Sending: false, Failed: false } && _webhook is { } summary && (survey.Closed || now >= survey.NextFlush))
             FlushSummary(survey, summary);
 
@@ -563,6 +574,11 @@ public sealed partial class RoundSurveySystem : EntitySystem
             PostResponse(survey, respondent, responses);
             return;
         }
+    }
+
+    private static bool HasAnswers(Survey survey)
+    {
+        return survey.Respondents.Values.Any(respondent => respondent.Answers.Count > 0);
     }
 
     private bool IsDelivered(Survey survey)
@@ -919,6 +935,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
         public bool Sending;
         public bool Failed;
         public bool Closed;
+        public bool SkipLogged;
 
         public TimeSpan NextResponse;
         public bool PostingResponse;

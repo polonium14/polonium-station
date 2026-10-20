@@ -32,6 +32,7 @@ replicator-teleport-prey-fail-immune = Ten cel wciąż oblepiają nanity, nie da
 replicator-on-structure-attack-fail = Nie możesz niszczyć tego, co zbudował rój.
 
 name-identifier-format-replicator = RL-{ $number }
+name-identifier-format-replicator-colossus = KL-{ $number }
 
 replicator-colossus-pulse-target = Fala bluespace'u porywa cię daleko stąd!
 
@@ -62,6 +63,8 @@ alert-level-delta-colossus-announcement = Na pokładzie stacji grasuje Kolosalny
 ghost-role-information-replicator-colossus-name = Kolosalny Replikator
 ghost-role-information-replicator-colossus-desc = Ukoronowanie dzieła roju. Przejdź przez stację, przerób ją dla roju i zmiażdż każdego, kto stanie ci na drodze.
 
+replicator-construction-fail-reinforce-foreign = To nie jest ściana roju.
+replicator-construction-fail-reinforce-done = Ta ściana jest już wzmocniona.
 replicator-construction-fail-no-wall = Nie ma tam ściany do przejęcia.
 replicator-construction-fail-not-hive-floor = Rój buduje tylko na podłodze replikatorów.
 replicator-build-selected = Wybrano: { $structure }. Wskaż podłogę replikatorów, trzymając replistal w ręce.
@@ -150,7 +153,7 @@ replicator-module-ram-3 = Wyrasta ci ciężkie ramię: szerokie zamachy, które 
 replicator-module-toolkit-name = Zestaw narzędzi
 replicator-module-toolkit-1 = Budujesz i przekształcasz o 20% szybciej.
 replicator-module-toolkit-2 = Budujesz i przekształcasz o 40% szybciej i wyrasta ci omninarzędzie.
-replicator-module-toolkit-3 = Wyrasta ci spawarka, a przekształcenie podłogi pod tobą obejmuje też cztery sąsiednie kafelki.
+replicator-module-toolkit-3 = Wyrasta ci spawarka, przekształcenie podłogi pod tobą obejmuje też cztery sąsiednie kafelki i możesz wzmacniać ściany roju.
 replicator-module-regeneration-name = Regeneracja
 replicator-module-regeneration-1 = Naprawiasz się dwa razy szybciej.
 replicator-module-regeneration-2 = Naprawiasz się trzy razy szybciej.

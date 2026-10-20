@@ -68,6 +68,10 @@
     - id: PosterContrabandExoChomp
     - id: PosterContrabandLustyExomorph
     - id: PosterContrabandAzOgonkiem
+    # Polonium: polski zestaw plakatów z NSV13, mała waga, żeby nie wypierał reszty
+    - !type:NestedSelector
+      tableId: PolishContrabandPosterTable
+      weight: 12
 
 - type: entityTable
   id: LegitPosterTable
@@ -125,6 +129,10 @@
     - id: PosterLegitTyrone
     - id: PosterLegitHelio
     - id: PosterLegitBotanyFear
+    # Polonium: polski zestaw plakatów z NSV13
+    - !type:NestedSelector
+      tableId: PolishLegitPosterTable
+      weight: 12
 
 - type: entity
   parent: MarkerBase

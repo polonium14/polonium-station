@@ -21,6 +21,8 @@
     BoxCandleSmall: 2
     Urn: 5
     Bible: 1
+    # 🇵🇱 Polonium: krucyfiks egzorcysty z NSV13
+    ClothingNeckCrucifixExorcist: 2
   contrabandInventory:
     FoodBakedBunHotX: 2
     DrinkWineBottleFull: 1

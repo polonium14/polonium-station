@@ -1,0 +1,463 @@
+# Szachownica lotnicza z NSV13 (Aquila, aq33/NSV13#304, sprite: Reprimann). Kierunki z BYOND są osobnymi decalami.
+
+- type: decal
+  id: Szachownica64CornerWhiteS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 64_corner_white_s
+
+- type: decal
+  id: Szachownica64CornerWhiteN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 64_corner_white_n
+
+- type: decal
+  id: Szachownica64CornerWhiteE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 64_corner_white_e
+
+- type: decal
+  id: Szachownica64CornerWhiteW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 64_corner_white_w
+
+- type: decal
+  id: Szachownica64CornerRedS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 64_corner_red_s
+
+- type: decal
+  id: Szachownica64CornerRedN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 64_corner_red_n
+
+- type: decal
+  id: Szachownica64CornerRedE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 64_corner_red_e
+
+- type: decal
+  id: Szachownica64CornerRedW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 64_corner_red_w
+
+- type: decal
+  id: Szachownica96CornerWhiteS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_corner_white_s
+
+- type: decal
+  id: Szachownica96CornerWhiteN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_corner_white_n
+
+- type: decal
+  id: Szachownica96CornerWhiteE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_corner_white_e
+
+- type: decal
+  id: Szachownica96CornerWhiteW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_corner_white_w
+
+- type: decal
+  id: Szachownica96SpacercornerWhiteS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacercorner_white_s
+
+- type: decal
+  id: Szachownica96SpacercornerWhiteN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacercorner_white_n
+
+- type: decal
+  id: Szachownica96SpacercornerWhiteE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacercorner_white_e
+
+- type: decal
+  id: Szachownica96SpacercornerWhiteW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacercorner_white_w
+
+- type: decal
+  id: Szachownica96MiddleS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_middle_s
+
+- type: decal
+  id: Szachownica96MiddleN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_middle_n
+
+- type: decal
+  id: Szachownica96MiddleE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_middle_e
+
+- type: decal
+  id: Szachownica96MiddleW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_middle_w
+
+- type: decal
+  id: Szachownica96SpacermiddleS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacermiddle_s
+
+- type: decal
+  id: Szachownica96SpacermiddleN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacermiddle_n
+
+- type: decal
+  id: Szachownica96SpacermiddleE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacermiddle_e
+
+- type: decal
+  id: Szachownica96SpacermiddleW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacermiddle_w
+
+- type: decal
+  id: Szachownica96CornerRedS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_corner_red_s
+
+- type: decal
+  id: Szachownica96CornerRedN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_corner_red_n
+
+- type: decal
+  id: Szachownica96CornerRedE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_corner_red_e
+
+- type: decal
+  id: Szachownica96CornerRedW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_corner_red_w
+
+- type: decal
+  id: Szachownica96SpacercornerRedS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacercorner_red_s
+
+- type: decal
+  id: Szachownica96SpacercornerRedN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacercorner_red_n
+
+- type: decal
+  id: Szachownica96SpacercornerRedE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacercorner_red_e
+
+- type: decal
+  id: Szachownica96SpacercornerRedW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 96_spacercorner_red_w
+
+- type: decal
+  id: Szachownica192CornerWhiteS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_corner_white_s
+
+- type: decal
+  id: Szachownica192CornerWhiteN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_corner_white_n
+
+- type: decal
+  id: Szachownica192CornerWhiteE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_corner_white_e
+
+- type: decal
+  id: Szachownica192CornerWhiteW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_corner_white_w
+
+- type: decal
+  id: Szachownica192MiddleWhiteS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_middle_white_s
+
+- type: decal
+  id: Szachownica192MiddleWhiteN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_middle_white_n
+
+- type: decal
+  id: Szachownica192MiddleWhiteE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_middle_white_e
+
+- type: decal
+  id: Szachownica192MiddleWhiteW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_middle_white_w
+
+- type: decal
+  id: Szachownica192BorderWhiteS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_border_white_s
+
+- type: decal
+  id: Szachownica192BorderWhiteN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_border_white_n
+
+- type: decal
+  id: Szachownica192BorderWhiteE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_border_white_e
+
+- type: decal
+  id: Szachownica192BorderWhiteW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_border_white_w
+
+- type: decal
+  id: Szachownica192SpacermiddleWhiteS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_spacermiddle_white_s
+
+- type: decal
+  id: Szachownica192SpacermiddleWhiteN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_spacermiddle_white_n
+
+- type: decal
+  id: Szachownica192SpacermiddleWhiteE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_spacermiddle_white_e
+
+- type: decal
+  id: Szachownica192SpacermiddleWhiteW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_spacermiddle_white_w
+
+- type: decal
+  id: Szachownica192SpacermiddleRedS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_spacermiddle_red_s
+
+- type: decal
+  id: Szachownica192SpacermiddleRedN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_spacermiddle_red_n
+
+- type: decal
+  id: Szachownica192SpacermiddleRedE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_spacermiddle_red_e
+
+- type: decal
+  id: Szachownica192SpacermiddleRedW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_spacermiddle_red_w
+
+- type: decal
+  id: Szachownica192BorderRedS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_border_red_s
+
+- type: decal
+  id: Szachownica192BorderRedN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_border_red_n
+
+- type: decal
+  id: Szachownica192BorderRedE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_border_red_e
+
+- type: decal
+  id: Szachownica192BorderRedW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_border_red_w
+
+- type: decal
+  id: Szachownica192MiddleRedS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_middle_red_s
+
+- type: decal
+  id: Szachownica192MiddleRedN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_middle_red_n
+
+- type: decal
+  id: Szachownica192MiddleRedE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_middle_red_e
+
+- type: decal
+  id: Szachownica192MiddleRedW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_middle_red_w
+
+- type: decal
+  id: Szachownica192CornerRedS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_corner_red_s
+
+- type: decal
+  id: Szachownica192CornerRedN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_corner_red_n
+
+- type: decal
+  id: Szachownica192CornerRedE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_corner_red_e
+
+- type: decal
+  id: Szachownica192CornerRedW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_corner_red_w
+
+- type: decal
+  id: Szachownica192FullWhite
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_full_white
+
+- type: decal
+  id: Szachownica192FullRed
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Polonium/Decals/szachownica.rsi
+    state: 192_full_red

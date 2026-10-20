@@ -1,0 +1,152 @@
+# Polskie moby z NSV13 (Aquila).
+
+# Niedźwiedź Wojtek z 22. Kompanii Zaopatrywania Artylerii II Korpusu Polskiego, który nosił skrzynie z pociskami.
+# Spokojny, dopóki nikt go nie skrzywdzi - oddaje tylko temu, kto go uderzył. Lubi piwo i papierosy, tak jak oryginał.
+- type: entity
+  parent: [ BaseUniquePet, SimpleSpaceMobBase, MobCombat, BaseSlicingRefinable ]
+  id: MobWojtek
+  name: Wojtek
+  description: Corporal Wojtek, a veteran of the artillery supply company. He carries shells for the bluespace artillery and never says no to a beer or a cigarette.
+  components:
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: InputMover
+  - type: MobMover
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Polonium/Mobs/wojtek.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: wojtek
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: wojtek
+      Critical:
+        Base: wojtek_martwy
+      Dead:
+        Base: wojtek_martwy
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      120: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 25
+        Structural: 60
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+  - type: FactionException
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: Wojtek
+    cigaretteHeal: 10
+    beerHeal: 20
+    deathSound:
+      path: /Audio/_Polonium/Animals/wojtusiu.ogg
+  - type: Vocal
+    emoteSounds: Bear
+  - type: Speech
+    speechVerb: LargeMob
+    speechSounds: Bass
+  - type: InteractionPopup
+    successChance: 0.8
+    interactSuccessString: petting-success-wojtek
+    interactFailureString: petting-failure-wojtek
+    interactSuccessSpawn: EffectHearts
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMeatBear
+      amount: 5
+    - id: MaterialHideBear
+      amount: 1
+  - type: Tag
+    tags:
+    - FootstepSound
+    - DoorBumpOpener
+
+# Kosmici z zestawu Kapitana Bomby. Antagonisty nie było w NSV13 - moby są do spawnu przez adminów.
+- type: entity
+  parent: [ SimpleMobBase, MobCombat ]
+  id: MobKurwinox
+  name: kurwinox
+  description: What a bastard, not only ugly but it reeks of shit too.
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Polonium/Mobs/kurwinox.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: bialy
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: bialy
+      Critical:
+        Base: bialy_martwy
+      Dead:
+        Base: bialy_martwy
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Dead
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 25
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: Tag
+    tags:
+    - FootstepSound
+    - DoorBumpOpener
+
+- type: entity
+  parent: MobKurwinox
+  id: MobKurwinoxRed
+  description: What a bastard, not only does it reek of shit but it's ugly too.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: czerwony
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: czerwony
+      Critical:
+        Base: czerwony_martwy
+      Dead:
+        Base: czerwony_martwy
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 35

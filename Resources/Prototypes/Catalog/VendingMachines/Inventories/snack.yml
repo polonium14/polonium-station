@@ -7,6 +7,8 @@
     FoodSnackPistachios: 3
     FoodSnackSus: 3
     FoodSnackSemki: 3
+    # 🇵🇱 Polonium: ptasie mleczko z NSV13
+    FoodSnackPtasieMleczko: 6
   contrabandInventory:
     FoodSnackSwirlLollipop: 2
     FoodSnackSyndi: 3

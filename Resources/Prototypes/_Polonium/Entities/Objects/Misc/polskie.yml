@@ -1,0 +1,261 @@
+# Polskie przedmioty z NSV13 (Aquila, aq33/NSV13#304, sprite'y: Reprimann).
+
+# Sztandar
+
+- type: entity
+  parent: BaseItem
+  id: PolishBannerMundane
+  name: Polish banner
+  description: For the fatherland!
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/sztandar.rsi
+    state: icon
+  - type: Item
+    sprite: _Polonium/Objects/Fun/sztandar.rsi
+    size: Large
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8
+  - type: Construction
+    graph: PolishBanner
+    node: banner
+
+- type: entity
+  parent: PolishBannerMundane
+  id: PolishBanner
+  suffix: Inspiring
+  components:
+  - type: InspiringBanner
+    warcry: inspiring-banner-warcry-polish
+    heal:
+      Brute: 15
+      Burn: 15
+
+# Krzyże i godła wieszane na ścianie
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BasePolishWallDecorItem
+  components:
+  - type: Item
+    size: Small
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  abstract: true
+  parent: BaseSignWeak
+  id: BasePolishWallDecor
+  components:
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: BasePolishWallDecorItem
+  id: PolishCrossWooden
+  name: wooden cross
+  description: Lord, have mercy on us.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/krzyze.rsi
+    state: drewniany
+  - type: WallHangable
+    structure: PolishCrossWoodenWall
+  - type: Construction
+    graph: PolishCrossWooden
+    node: cross
+
+- type: entity
+  parent: BasePolishWallDecor
+  id: PolishCrossWoodenWall
+  name: wooden cross
+  description: Lord, have mercy on us.
+  suffix: Wall
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/krzyze.rsi
+    state: drewniany
+  - type: WallHanging
+    item: PolishCrossWooden
+
+- type: entity
+  parent: BasePolishWallDecorItem
+  id: PolishCrossGolden
+  name: golden cross
+  description: Lord, have mercy on us - but with style.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/krzyze.rsi
+    state: zloty
+  - type: WallHangable
+    structure: PolishCrossGoldenWall
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 100
+  - type: Construction
+    graph: PolishCrossGolden
+    node: cross
+
+- type: entity
+  parent: BasePolishWallDecor
+  id: PolishCrossGoldenWall
+  name: golden cross
+  description: Lord, have mercy on us - but with style.
+  suffix: Wall
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/krzyze.rsi
+    state: zloty
+  - type: WallHanging
+    item: PolishCrossGolden
+
+- type: entity
+  parent: BasePolishWallDecorItem
+  id: PolishEmblemWooden
+  name: emblem in a wooden frame
+  description: The image of a white eagle with a golden crown on its head turned to the right, with spread wings, golden beak and talons, set in a red shield.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/godla.rsi
+    state: drewniane
+  - type: WallHangable
+    structure: PolishEmblemWoodenWall
+  - type: Construction
+    graph: PolishEmblemWooden
+    node: emblem
+
+- type: entity
+  parent: BasePolishWallDecor
+  id: PolishEmblemWoodenWall
+  name: emblem in a wooden frame
+  description: The image of a white eagle with a golden crown on its head turned to the right, with spread wings, golden beak and talons, set in a red shield.
+  suffix: Wall
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/godla.rsi
+    state: drewniane
+  - type: WallHanging
+    item: PolishEmblemWooden
+
+- type: entity
+  parent: BasePolishWallDecorItem
+  id: PolishEmblemBlack
+  name: emblem in a black frame
+  description: The image of a white eagle with a golden crown on its head turned to the right, with spread wings, golden beak and talons, set in a red shield.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/godla.rsi
+    state: czarne
+  - type: WallHangable
+    structure: PolishEmblemBlackWall
+  - type: Construction
+    graph: PolishEmblemBlack
+    node: emblem
+
+- type: entity
+  parent: BasePolishWallDecor
+  id: PolishEmblemBlackWall
+  name: emblem in a black frame
+  description: The image of a white eagle with a golden crown on its head turned to the right, with spread wings, golden beak and talons, set in a red shield.
+  suffix: Wall
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/godla.rsi
+    state: czarne
+  - type: WallHanging
+    item: PolishEmblemBlack
+
+# Reklamówki
+
+- type: entity
+  abstract: true
+  parent: BaseStorageItem
+  id: BasePlasticShoppingBag
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Misc/reklamowki.rsi
+  - type: Item
+    sprite: _Polonium/Objects/Misc/reklamowki.rsi
+    size: Normal
+  - type: Storage
+    grid:
+    - 0,0,3,2
+    maxItemSize: Normal
+  - type: Damageable
+    damageModifierSet: CardboardMod
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: BasePlasticShoppingBag
+  id: PlasticShoppingBagBiedronka
+  name: Biedronka shopping bag
+  description: A plastic shopping bag from Biedronka.
+  components:
+  - type: Sprite
+    state: biedronka
+  - type: Item
+    heldPrefix: biedronka
+
+- type: entity
+  parent: BasePlasticShoppingBag
+  id: PlasticShoppingBagLidl
+  name: Lidl shopping bag
+  description: A plastic shopping bag from Lidl.
+  components:
+  - type: Sprite
+    state: lidl
+  - type: Item
+    heldPrefix: lidl
+
+# Sandały
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesSandalsWhiteSocks
+  name: sandals
+  description: Sandals - now with white socks included.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shoes/sandaly.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Shoes/sandaly.rsi
+
+# Krucyfiks egzorcysty
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCrucifixExorcist
+  name: crucifix
+  description: If you didn't need it, you would have drunk it away long ago.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Neck/krucyfiks.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Neck/krucyfiks.rsi

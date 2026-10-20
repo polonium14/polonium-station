@@ -1,0 +1,6 @@
+- type: entity
+  parent: ActionScream
+  id: ActionHonkBlobScream
+  components:
+  - type: Action
+    useDelay: 30

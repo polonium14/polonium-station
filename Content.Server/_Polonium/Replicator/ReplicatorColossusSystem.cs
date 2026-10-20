@@ -83,6 +83,7 @@ public sealed partial class ReplicatorColossusSystem : EntitySystem
 
         InitializeAbilities();
         InitializeAssimilation();
+        InitializeNuke();
     }
 
     public override void Update(float frameTime)

@@ -1,0 +1,37 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from Yogstation (https://github.com/yogstation13/Yogstation), adapted for Polonium Station by nikitosych",
+    "size": {
+        "x": 64,
+        "y": 64
+    },
+    "states": [
+        {
+            "name": "alive",
+            "delays": [
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ]
+            ],
+            "directions": 4
+        },
+        {
+            "name": "crit",
+            "delays": [
+                [
+                    1.0
+                ]
+            ]
+        }
+    ]
+}

@@ -62,6 +62,8 @@ public sealed partial class ReplicatorConstructionSystem : EntitySystem
         SubscribeLocalEvent<ReplicatorComponent, ReplicatorConvertFloorDoAfterEvent>(OnConvertFloorDoAfter);
         SubscribeLocalEvent<ReplicatorComponent, ReplicatorConvertWallActionEvent>(OnConvertWall);
         SubscribeLocalEvent<ReplicatorComponent, ReplicatorConvertDoAfterEvent>(OnConvertDoAfter);
+        SubscribeLocalEvent<ReplicatorComponent, ReplicatorReinforceWallActionEvent>(OnReinforceWall);
+        SubscribeLocalEvent<ReplicatorComponent, ReplicatorReinforceDoAfterEvent>(OnReinforceDoAfter);
         SubscribeLocalEvent<ReplicatorComponent, ReplicatorBuildActionEvent>(OnBuild);
         SubscribeLocalEvent<ReplicatorComponent, ReplicatorBuildDoAfterEvent>(OnBuildDoAfter);
         SubscribeLocalEvent<ReplicatorComponent, ReplicatorHolowallActionEvent>(OnHolowall);
@@ -213,6 +215,89 @@ public sealed partial class ReplicatorConstructionSystem : EntitySystem
         QueueDel(wall);
         Spawn(args.Replacement, location);
         PlayConvert(location, args.Effect);
+    }
+
+    private void OnReinforceWall(Entity<ReplicatorComponent> ent, ref ReplicatorReinforceWallActionEvent args)
+    {
+        if (args.Handled || !TryGetHive(ent, out var hive))
+            return;
+
+        if (!TryGetFloor(args.Target, out var grid, out var tile) || FindWall(grid, tile.GridIndices) is not { } wall)
+        {
+            Fail(ent, "replicator-construction-fail-no-wall");
+            return;
+        }
+
+        if (!CanReinforceWall(wall, args.Wall, out var reason))
+        {
+            Fail(ent, reason);
+            return;
+        }
+
+        if (!_hive.CanAfford(hive, args.Cost))
+        {
+            Fail(ent, "replicator-construction-fail-budget", args.Cost);
+            return;
+        }
+
+        var location = _map.GridTileToLocal(grid, grid, tile.GridIndices);
+        var ev = new ReplicatorReinforceDoAfterEvent(GetNetCoordinates(location), GetNetEntity(wall), args.ReinforcedWall, args.Cost, args.Effect);
+        var doAfter = new DoAfterArgs(EntityManager, ent, args.Delay, ev, ent, target: wall)
+        {
+            BreakOnMove = true,
+            BreakOnDamage = true,
+            NeedHand = false,
+        };
+
+        if (_doAfter.TryStartDoAfter(doAfter))
+            args.Handled = true;
+    }
+
+    private void OnReinforceDoAfter(Entity<ReplicatorComponent> ent, ref ReplicatorReinforceDoAfterEvent args)
+    {
+        if (args.Handled || args.Cancelled)
+            return;
+
+        args.Handled = true;
+
+        if (!TryGetHive(ent, out var hive))
+            return;
+
+        var location = GetCoordinates(args.Location);
+        var wall = GetEntity(args.Wall);
+        if (!TryGetFloor(location, out var grid, out var tile)
+            || FindWall(grid, tile.GridIndices) != wall
+            || !CanReinforceWall(wall, null, out _))
+            return;
+
+        if (!_hive.TrySpend(hive, args.Cost))
+        {
+            Fail(ent, "replicator-construction-fail-budget", args.Cost);
+            return;
+        }
+
+        QueueDel(wall);
+        Spawn(args.Replacement, location);
+        PlayConvert(location, args.Effect);
+    }
+
+    private bool CanReinforceWall(EntityUid wall, EntProtoId? required, out string reason)
+    {
+        reason = string.Empty;
+
+        if (!_tag.HasTag(wall, ReplicatorHiveSystem.StructureTag))
+        {
+            reason = "replicator-construction-fail-reinforce-foreign";
+            return false;
+        }
+
+        if (required != null && MetaData(wall).EntityPrototype?.ID != required.Value.Id)
+        {
+            reason = "replicator-construction-fail-reinforce-done";
+            return false;
+        }
+
+        return true;
     }
 
     private void PlayConvert(EntityCoordinates location, EntProtoId? effect)

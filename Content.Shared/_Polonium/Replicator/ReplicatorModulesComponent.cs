@@ -20,6 +20,25 @@ public sealed partial class ReplicatorModulesComponent : Component
     public int MaxStages = 5;
 
     /// <summary>
+    /// How much more blunt damage than the form's health it takes to break the shell apart.
+    /// </summary>
+    [DataField]
+    public float HullBreakMultiplier = 1.3f;
+
+    /// <summary>
+    /// How much more damage of any kind than the form's health it takes to destroy the shell outright.
+    /// The inherited silicon destruction thresholds are moved up to this, so they cannot fire before death.
+    /// </summary>
+    [DataField]
+    public float OverkillMultiplier = 2f;
+
+    /// <summary>
+    /// The time it takes to pry a door open is multiplied by this for every installed stage.
+    /// </summary>
+    [DataField]
+    public float PryTimePerStage = 0.85f;
+
+    /// <summary>
     /// Shown to the hive over a replicator that has no class yet.
     /// </summary>
     [DataField]

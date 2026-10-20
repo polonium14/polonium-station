@@ -161,19 +161,16 @@
     resetOnHandSelected: false
     soundHit:
       collection: MetalThud
-    angle: 60
+    angle: 120
     range: 3
     attackRate: 0.8
-    animation: WeaponArcSmash
+    wideAnimation: WeaponArcReplicatorColossusSlam
     wideAnimationRotation: 0
     damage:
       types:
-        Blunt: 25
-        Structural: 60
+        Structural: 90
   - type: AltFireMelee
-    attackType: Light
-  - type: StaminaDamageOnHit
-    damage: 10
+    attackType: Heavy
 
 - type: entity
   abstract: true
@@ -184,13 +181,13 @@
     sharedAmmo: true
     muzzleOffsets:
       South:
-      - 0,0.515
+      - 0,0.443
       North:
-      - 0,2.685
+      - 0,2.309
       East:
-      - 2.583,1.6
+      - 2.221,1.376
       West:
-      - -2.583,1.6
+      - -2.221,1.376
   - type: Gun
     selectedMode: FullAuto
     availableModes:
@@ -232,7 +229,7 @@
   - type: Sprite
     state: laser
   - type: Gun
-    fireRate: 5.6
+    fireRate: 4.76
     soundGunshot:
       path: /Audio/_Polonium/Weapons/Guns/colossus_minigun_lethal.ogg
       params:
@@ -254,17 +251,17 @@
   - type: ReplicatorColossusGun
     muzzleOffsets:
       South:
-      - -0.75,1.829
-      - 0.75,1.829
+      - -0.645,1.573
+      - 0.645,1.573
       North:
-      - 0.75,3.158
-      - -0.75,3.158
+      - 0.645,2.716
+      - -0.645,2.716
       East:
-      - 1.582,2.179
-      - 1.582,2.809
+      - 1.361,1.874
+      - 1.361,2.416
       West:
-      - -1.582,2.809
-      - -1.582,2.179
+      - -1.361,2.416
+      - -1.361,1.874
   - type: Gun
     fireRate: 1.5
     projectileSpeed: 16
@@ -409,6 +406,19 @@
       shader: unshaded
   - type: TimedDespawn
     lifetime: 0.359
+
+- type: entity
+  parent: WeaponArcReplicatorBase
+  id: WeaponArcReplicatorColossusSlam
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_colossus_slam.rsi # this looks bad asf
+    layers:
+    - state: slam
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.529
 
 - type: entity
   parent: WeaponArcReplicatorBase

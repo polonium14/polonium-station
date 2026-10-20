@@ -69,6 +69,12 @@
     - ActionReplicatorBuildWall # POLONIUM
     - ActionReplicatorHolowall # POLONIUM
   - type: ReplicatorBuilder # POLONIUM
+  - type: ReplicatorChassis # POLONIUM
+    uiWhitelist:
+      tags:
+      - ReplicatorStructure
+      components:
+      - ReplicatorHive
   - type: ReplicatorTow # POLONIUM
   - type: NameIdentifier # POLONIUM
     group: Replicator
@@ -94,13 +100,13 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      75: Dead
+      106: Dead # POLONIUM: 75, classes set it per form
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTypeTrigger
         damageType: Blunt
-        damage: 100
+        damage: 137.8 # POLONIUM: 100
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]

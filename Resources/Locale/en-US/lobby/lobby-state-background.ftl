@@ -4,7 +4,6 @@ lobby-state-background-warden-artist = Solbusaur
 lobby-state-background-invisiblewall-title = Invisible Wall
 lobby-state-background-invisiblewall-artist = Vandersloot
 
-
 lobby-state-background-SSXIV-title = SSXIV
 lobby-state-background-SSXIV-artist = Abyssal
 
@@ -26,17 +25,14 @@ lobby-state-background-behonker-artist = InCrah
 lobby-state-background-terminalstation-title = Terminal Station
 lobby-state-background-terminalstation-artist = aserovich
 
-
-
 lobby-state-background-reclaimernuke-title = Reclaimer Nuke
 lobby-state-background-reclaimernuke-artist = GetOutMarutak
-
-
-lobby-state-background-drunkardsspree-title = Drunkards' Spree
-lobby-state-background-drunkardsspree-artist = Saver310
 
 lobby-state-background-certaindeath-title = Certain Death
 lobby-state-background-certaindeath-artist = Saver310
 
 lobby-state-background-jerzy-title = Obiad Jerzego
 lobby-state-background-jerzy-artist = Saver310
+
+lobby-state-background-drunkardsspreeredux-title = Drunkards' Spree Redux
+lobby-state-background-drunkardsspreeredux-artist = Saver310

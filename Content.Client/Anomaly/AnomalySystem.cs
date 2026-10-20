@@ -72,8 +72,13 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
             !_sprite.LayerMapTryGet((uid, sprite), AnomalyVisualLayers.Animated, out var animatedLayer, false))
             return;
 
+        var changed = sprite[animatedLayer].Visible != pulsing; // Polonium
+
         _sprite.LayerSetVisible((uid, sprite), layer, !pulsing);
         _sprite.LayerSetVisible((uid, sprite), animatedLayer, pulsing);
+
+        if (changed) // Polonium
+            _sprite.LayerSetAnimationTime((uid, sprite), pulsing ? animatedLayer : layer, 0f);
     }
 
     public override void Update(float frameTime)
