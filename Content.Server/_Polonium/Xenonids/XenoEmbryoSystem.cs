@@ -173,6 +173,13 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
         if (_mobState.IsDead(host))
             return;
 
+        if (embryo.Comp.Stage >= embryo.Comp.MaxStage)
+        {
+            _popup.PopupEntity(Loc.GetString("xeno-embryo-symptom-tearing"), host, host, PopupType.LargeCaution);
+            _damageable.TryChangeDamage(host, new DamageSpecifier { DamageDict = { ["Poison"] = 10 } }, ignoreResistances: true);
+            return;
+        }
+
         switch (embryo.Comp.Stage)
         {
             case 2:
@@ -197,10 +204,6 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
                     if (_random.Prob(0.2f))
                         _damageable.TryChangeDamage(host, new DamageSpecifier { DamageDict = { ["Poison"] = 1 } });
                 }
-                break;
-            case >= 5:
-                _popup.PopupEntity(Loc.GetString("xeno-embryo-symptom-tearing"), host, host, PopupType.LargeCaution);
-                _damageable.TryChangeDamage(host, new DamageSpecifier { DamageDict = { ["Poison"] = 10 } }, ignoreResistances: true);
                 break;
         }
     }
