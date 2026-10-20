@@ -10,6 +10,9 @@ public sealed class PhotoViewerBoundUserInterface : BoundUserInterface
 {
     private PhotoViewerWindow? _window;
 
+    /// <summary>Pen the server offered for signing, echoed back so it can re-validate it.</summary>
+    private NetEntity? _pen;
+
     public PhotoViewerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
     }
@@ -18,6 +21,22 @@ public sealed class PhotoViewerBoundUserInterface : BoundUserInterface
     {
         base.Open();
         _window = this.CreateWindow<PhotoViewerWindow>();
+        _window.OnSign += caption =>
+        {
+            if (_pen is { } pen)
+                SendMessage(new PhotoSignMessage(pen, caption));
+        };
+    }
+
+    protected override void ReceiveMessage(BoundUserInterfaceMessage message)
+    {
+        base.ReceiveMessage(message);
+
+        if (message is not PhotoSignStartMessage start)
+            return;
+
+        _pen = start.Pen;
+        _window?.BeginSign(start.Color, start.Font);
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -25,6 +44,6 @@ public sealed class PhotoViewerBoundUserInterface : BoundUserInterface
         base.UpdateState(state);
 
         if (state is PhotoViewerBoundUserInterfaceState cast)
-            _window?.Populate(cast.Data);
+            _window?.Populate(cast);
     }
 }
