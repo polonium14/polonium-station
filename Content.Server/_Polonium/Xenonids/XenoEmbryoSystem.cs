@@ -6,11 +6,13 @@ using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared.Bed.Components;
 using Content.Shared.Body;
+using Content.Shared.Buckle.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Power.EntitySystems;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
@@ -50,6 +52,7 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedPowerReceiverSystem _powerReceiver = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
 
     public override void Initialize()
@@ -114,7 +117,7 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
             var ent = new Entity<XenoEmbryoComponent>(uid, embryo);
 
             // Staza zatrzymuje rozwój, śmierć nosiciela już nie.
-            if (HasComp<StasisBedBuckledComponent>(host))
+            if (IsInStasis(host))
                 continue;
 
             if (embryo.NextStageAt == null)
@@ -234,6 +237,14 @@ public sealed partial class XenoEmbryoSystem : EntitySystem
 
         RemComp<XenoInfectedComponent>(host);
         QueueDel(embryo);
+    }
+
+    private bool IsInStasis(EntityUid host)
+    {
+        return TryComp<BuckleComponent>(host, out var buckle)
+            && buckle.BuckledTo is { } bed
+            && HasComp<StasisBedComponent>(bed)
+            && _powerReceiver.IsPowered(bed);
     }
 
     private bool IsChestOpen(EntityUid host)
