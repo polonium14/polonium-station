@@ -3,15 +3,21 @@ using System.Linq;
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Xenonids;
+using Content.Server._Shitmed.Medical.Surgery;
 using Content.Shared._Polonium.Xenonids;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery;
+using Content.Shared._Shitmed.Medical.Surgery.Tools;
 using Content.Shared._RMC14.Xenonids;
 using Content.Shared._RMC14.Xenonids.Egg;
 using Content.Shared._RMC14.Xenonids.Evolution;
 using Content.Shared.Body;
+using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
+using Content.Shared.Standing;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
@@ -210,6 +216,74 @@ public sealed class XenoLifecycleTest : GameTest
             Assert.That(SEntMan.HasComponent<XenoInfectedComponent>(human), Is.False);
             Assert.That(SComp<BodyComponent>(human).Organs!.ContainedEntities.Contains(embryo), Is.False, "Embrion nadal jest w ciele");
             Assert.That(SEntMan.HasComponent<XenoEmbryoComponent>(embryo), Is.False, "Wyjęty embrion powinien obumrzeć");
+        });
+    }
+
+    /// <summary>
+    /// Pełna operacja przez SurgerySystem: nacięcie, otwarcie klatki piersiowej, potem „Usuń embrion obcego”.
+    /// </summary>
+    [Test]
+    public async Task SurgeryRemovesEmbryo()
+    {
+        var coords = await Setup();
+        EntityUid human = default;
+        EntityUid torso = default;
+        EntityUid surgeon = default;
+        var surgery = SEntMan.System<SurgerySystem>();
+
+        (string Surgery, string Step)[] steps =
+        [
+            ("SurgeryOpenIncision", "SurgeryStepOpenIncisionScalpel"),
+            ("SurgeryOpenIncision", "SurgeryStepRetractSkin"),
+            ("SurgeryOpenRibcage", "SurgeryStepSawBones"),
+            ("SurgeryOpenRibcage", "SurgeryStepPriseOpenBones"),
+            ("SurgeryRemoveXenoEmbryo", "SurgeryStepOpenIncisionScalpel"),
+            ("SurgeryRemoveXenoEmbryo", "SurgeryStepClampBleeders"),
+            ("SurgeryRemoveXenoEmbryo", "SurgeryStepRemoveOrgan"),
+        ];
+
+        await Pair.Server.WaitPost(() =>
+        {
+            human = SSpawnAtPosition("MobHuman", coords);
+            SEntMan.GetComponent<SurgeryTargetComponent>(human).SepsisImmune = true;
+            SEntMan.System<StandingStateSystem>().Down(human);
+            Assert.That(SEntMan.System<XenoEmbryoSystem>().TryInfect(human), Is.True);
+            Assert.That(LimbTargetMap.TryGetOrganByCategory(SEntMan, SComp<BodyComponent>(human), "Torso", out torso), Is.True);
+
+            surgeon = SSpawnAtPosition(null, coords);
+            SEntMan.AddComponent<HandsComponent>(surgeon);
+            SEntMan.AddComponent<DoAfterComponent>(surgeon);
+            SEntMan.AddComponent<ScalpelComponent>(surgeon);
+            SEntMan.AddComponent<RetractorComponent>(surgeon);
+            SEntMan.AddComponent<BoneSawComponent>(surgeon);
+            SEntMan.AddComponent<HemostatComponent>(surgeon);
+            SEntMan.AddComponent<TweezersComponent>(surgeon);
+            SEntMan.System<SharedHandsSystem>().AddHand(surgeon, "right", HandLocation.Right);
+        });
+
+        foreach (var (procedure, step) in steps)
+        {
+            var started = false;
+            await Pair.Server.WaitPost(() =>
+            {
+                var procedureEnt = surgery.GetSingleton(procedure);
+                Assert.That(procedureEnt, Is.Not.Null, $"Brak operacji {procedure}");
+                if (surgery.IsStepComplete(human, torso, step, procedureEnt!.Value))
+                    return;
+
+                Assert.That(surgery.TryDoSurgeryStep(human, torso, surgeon, procedure, step, out var error), Is.True,
+                    $"{procedure}/{step}: {error}");
+                started = true;
+            });
+
+            if (started)
+                await RunSeconds(12);
+        }
+
+        await Pair.Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.HasComponent<XenoInfectedComponent>(human), Is.False, "Embrion został w środku");
+            Assert.That(SComp<BodyComponent>(human).Organs!.ContainedEntities.Any(e => SEntMan.HasComponent<XenoEmbryoComponent>(e)), Is.False);
         });
     }
 
