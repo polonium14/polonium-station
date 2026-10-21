@@ -1,51 +1,17 @@
-# SPDX-FileCopyrightText: 2022 0x6273 <0x40@keemail.me>
-# SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
-# SPDX-FileCopyrightText: 2022 Francesco <frafonia@gmail.com>
-# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2022 LittleBuilderJane <63973502+LittleBuilderJane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Nairod <110078045+Nairodian@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
-# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 avery <51971268+graevy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
-# SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 War Pigeon <54217755+minus1over12@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 Damian Zielińsi <zientasek.pl@gmail.com>
-# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
-# SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 Vortebo <64214314+Vortebo@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 piskaczek <192605039+piskaczek@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
-# SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2026 thepinkscreen <76622775+thepinkscreen@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
-  engineVersion: 289.0.0
+  engineVersion: 291.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/12/2026 14:14:23
-  entityCount: 9351
+  time: 10/22/2026 14:41:26
+  entityCount: 9352
 maps:
 - 1
 grids:
 - 2
 orphans: []
 nullspace:
-- 9329
 - 9330
 - 9331
 - 9332
@@ -68,6 +34,7 @@ nullspace:
 - 9349
 - 9350
 - 9351
+- 9352
 tilemap:
   0: Space
   7: FloorAstroGrass
@@ -306,6 +273,11 @@ entities:
           moles:
             Oxygen: 21.824879
             Nitrogen: 82.10312
+        - temperature: 235
+          volume: 2500
+          moles:
+            Oxygen: 27.225372
+            Nitrogen: 102.419266
         - temperature: 293.15
           volume: 2500
           moles: {}
@@ -317,11 +289,6 @@ entities:
           volume: 2500
           moles:
             Oxygen: 6666.982
-        - temperature: 235
-          volume: 2500
-          moles:
-            Oxygen: 27.225372
-            Nitrogen: 102.419266
         tiles:
           7,15:
             0: 61132
@@ -505,7 +472,7 @@ entities:
             1: 3663
           12,23:
             0: 4096
-            5: 238
+            2: 238
             1: 49152
           10,25:
             0: 34824
@@ -568,10 +535,10 @@ entities:
             0: 275
             1: 19976
           14,6:
-            2: 224
-            3: 57344
+            3: 224
+            4: 57344
           14,7:
-            4: 224
+            5: 224
           14,8:
             1: 61166
           15,5:
@@ -688,7 +655,7 @@ entities:
             1: 65520
           12,22:
             1: 238
-            5: 57344
+            2: 57344
           13,21:
             1: 43567
           13,22:
@@ -788,9 +755,9 @@ entities:
             1: 24339
             0: 8
           17,6:
-            2: 57568
+            3: 57568
           17,7:
-            2: 224
+            3: 224
           17,8:
             1: 28927
           18,5:
@@ -1131,7 +1098,6 @@ entities:
     - type: ImplicitRoof
     - type: ChunkContainer
       chunkEntities:
-      - 9329
       - 9330
       - 9331
       - 9332
@@ -1154,6 +1120,7 @@ entities:
       - 9349
       - 9350
       - 9351
+      - 9352
     - type: TileHistory
       chunkHistory: {}
     - type: ExplosionAirtightGrid
@@ -19256,7 +19223,7 @@ entities:
       canCollide: False
 - proto: ChunkEntity
   entities:
-  - uid: 9329
+  - uid: 9330
     components:
     - type: ChunkEntity
       root: 2
@@ -19664,7 +19631,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             1322: 68,77
-  - uid: 9330
+  - uid: 9331
     components:
     - type: ChunkEntity
       root: 2
@@ -19788,7 +19755,7 @@ entities:
             cleanable: True
           decals:
             633: 42,89
-  - uid: 9331
+  - uid: 9332
     components:
     - type: ChunkEntity
       root: 2
@@ -19983,7 +19950,7 @@ entities:
           decals:
             396: 48,56
             397: 48,55
-  - uid: 9332
+  - uid: 9333
     components:
     - type: ChunkEntity
       root: 2
@@ -20376,7 +20343,7 @@ entities:
           decals:
             1622: 78,53
             1623: 79,53
-  - uid: 9333
+  - uid: 9334
     components:
     - type: ChunkEntity
       root: 2
@@ -20431,7 +20398,7 @@ entities:
             579: 46,79
             580: 45,79
             581: 44,79
-  - uid: 9334
+  - uid: 9335
     components:
     - type: ChunkEntity
       root: 2
@@ -20530,7 +20497,7 @@ entities:
             cleanable: True
           decals:
             2239: 86,97
-  - uid: 9335
+  - uid: 9336
     components:
     - type: ChunkEntity
       root: 2
@@ -20851,7 +20818,7 @@ entities:
           decals:
             1903: 65,96
             1904: 66,96
-  - uid: 9336
+  - uid: 9337
     components:
     - type: ChunkEntity
       root: 2
@@ -20904,7 +20871,7 @@ entities:
           decals:
             1687: 80,45
             1730: 80,32
-  - uid: 9337
+  - uid: 9338
     components:
     - type: ChunkEntity
       root: 2
@@ -21254,7 +21221,7 @@ entities:
             cleanable: True
           decals:
             1744: 69,35
-  - uid: 9338
+  - uid: 9339
     components:
     - type: ChunkEntity
       root: 2
@@ -21631,7 +21598,7 @@ entities:
             color: '#A91409FF'
           decals:
             62: 79.76132,84.949585
-  - uid: 9339
+  - uid: 9340
     components:
     - type: ChunkEntity
       root: 2
@@ -21963,7 +21930,7 @@ entities:
             985: 59,88
             986: 59,89
             987: 59,90
-  - uid: 9340
+  - uid: 9341
     components:
     - type: ChunkEntity
       root: 2
@@ -22293,7 +22260,7 @@ entities:
           decals:
             1892: 54,73
             1893: 54,74
-  - uid: 9341
+  - uid: 9342
     components:
     - type: ChunkEntity
       root: 2
@@ -22335,7 +22302,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             393: 47,58
-  - uid: 9342
+  - uid: 9343
     components:
     - type: ChunkEntity
       root: 2
@@ -22694,7 +22661,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             423: 56,45
-  - uid: 9343
+  - uid: 9344
     components:
     - type: ChunkEntity
       root: 2
@@ -22922,7 +22889,7 @@ entities:
           decals:
             1819: 54.04841,98.08827
             1822: 55.97549,98.10911
-  - uid: 9344
+  - uid: 9345
     components:
     - type: ChunkEntity
       root: 2
@@ -23101,7 +23068,7 @@ entities:
           decals:
             2303: 83,94
             2306: 83,92
-  - uid: 9345
+  - uid: 9346
     components:
     - type: ChunkEntity
       root: 2
@@ -23235,7 +23202,7 @@ entities:
           decals:
             511: 77,29
             1024: 68,23
-  - uid: 9346
+  - uid: 9347
     components:
     - type: ChunkEntity
       root: 2
@@ -23365,7 +23332,7 @@ entities:
             446: 83,27
             468: 83,26
             469: 83,28
-  - uid: 9347
+  - uid: 9348
     components:
     - type: ChunkEntity
       root: 2
@@ -23463,7 +23430,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             1027: 60,23
-  - uid: 9348
+  - uid: 9349
     components:
     - type: ChunkEntity
       root: 2
@@ -23562,7 +23529,7 @@ entities:
             1974: 82,77
             1975: 82,76
             1976: 82,75
-  - uid: 9349
+  - uid: 9350
     components:
     - type: ChunkEntity
       root: 2
@@ -23655,7 +23622,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             1624: 80,53
-  - uid: 9350
+  - uid: 9351
     components:
     - type: ChunkEntity
       root: 2
@@ -23693,7 +23660,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             281: 46,31
-  - uid: 9351
+  - uid: 9352
     components:
     - type: ChunkEntity
       root: 2
@@ -26227,18 +26194,18 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 63.5,72.5
-  - uid: 3447
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 48.5,79.5
   - uid: 3448
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: 57.5,75.5
+  - uid: 3857
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 50.5,79.5
 - proto: DeskBell
   entities:
   - uid: 3449
@@ -28553,12 +28520,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 59.5,81.5
-  - uid: 3857
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 50.5,80.5
   - uid: 3858
     components:
     - type: Transform
@@ -28610,6 +28571,12 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 81.5,94.5
+  - uid: 9329
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 49.5,80.5
 - proto: EmergencyNitrogenTankFilled
   entities:
   - uid: 3866
@@ -28692,6 +28659,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 73.5,78.5
+  - uid: 4083
+    components:
+    - type: Transform
+      parent: 2
+      pos: 57.5,79.5
+    - type: FaxMachine
+      name: Szpital
   - uid: 6274
     components:
     - type: Transform
@@ -31060,11 +31034,11 @@ entities:
       pos: 50.5,92.5
     - type: Fixtures
       fixtures: {}
-  - uid: 4083
+  - uid: 6321
     components:
     - type: Transform
       parent: 2
-      pos: 49.5,80.5
+      pos: 48.5,81.5
     - type: Fixtures
       fixtures: {}
 - proto: FolderSpawner
@@ -50926,6 +50900,19 @@ entities:
     - type: Transform
       parent: 2
       pos: 56.5,76.5
+- proto: MedicalBiofabricator
+  entities:
+  - uid: 3447
+    components:
+    - type: Transform
+      parent: 2
+      pos: 48.5,80.5
+    - type: TechnologyDatabase
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
 - proto: MedicalComputerComms
   entities:
   - uid: 6270
@@ -50947,7 +50934,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: 57.05006,79.608665
+      pos: 56.431343,79.66777
 - proto: MedkitBruteFilled
   entities:
   - uid: 6295
@@ -50983,19 +50970,19 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: 57.61256,79.36908
+      pos: 56.93444,79.38342
   - uid: 6300
     components:
     - type: Transform
       parent: 2
-      pos: 57.61256,79.61908
+      pos: 56.94538,79.689644
 - proto: MedkitOxygenFilled
   entities:
   - uid: 6301
     components:
     - type: Transform
       parent: 2
-      pos: 57.06048,79.358665
+      pos: 56.44228,79.39436
 - proto: MedkitRadiationFilled
   entities:
   - uid: 6302
@@ -51094,17 +51081,6 @@ entities:
           - 3192
           showEnts: False
           occludes: True
-  - uid: 6256
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 48.5,80.5
-  - uid: 6321
-    components:
-    - type: Transform
-      parent: 2
-      pos: 49.5,81.5
   - uid: 6322
     components:
     - type: Transform
@@ -51450,6 +51426,18 @@ entities:
     - type: Transform
       parent: 2
       pos: 46.56629,87.52083
+- proto: PatientIntakeMachine
+  entities:
+  - uid: 6256
+    components:
+    - type: Transform
+      parent: 2
+      pos: 49.5,81.5
+    - type: DeviceLinkSource
+      linkedPorts:
+        4083:
+        - - PatientIntakeFax
+          - PatientIntakeFaxReceiver
 - proto: Pen
   entities:
   - uid: 6378
@@ -67557,30 +67545,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 83.71693,28.307678
-- proto: WeaponTaser
-  entities:
-  - uid: 8937
-    components:
-    - type: Transform
-      parent: 2
-      pos: 70.36719,74.72801
-  - uid: 8938
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 69.632164,66.18901
-  - uid: 8939
-    components:
-    - type: Transform
-      parent: 2
-      pos: 69.33008,66.81401
-  - uid: 8940
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 69.2155,66.34526
 - proto: WeaponEnergyTurretAI
   entities:
   - uid: 8941
@@ -67641,6 +67605,30 @@ entities:
     - type: Transform
       parent: 2
       pos: 67.686775,57.423492
+- proto: WeaponTaser
+  entities:
+  - uid: 8937
+    components:
+    - type: Transform
+      parent: 2
+      pos: 70.36719,74.72801
+  - uid: 8938
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 69.632164,66.18901
+  - uid: 8939
+    components:
+    - type: Transform
+      parent: 2
+      pos: 69.33008,66.81401
+  - uid: 8940
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: 69.2155,66.34526
 - proto: WeedSpray
   entities:
   - uid: 8947
@@ -68394,7 +68382,7 @@ entities:
       pos: 55.5,56.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -89208.42
+      secondsUntilStateChange: -89415.39
 - proto: WoodenBench
   entities:
   - uid: 9079
