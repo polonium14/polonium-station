@@ -49,7 +49,8 @@
     duration: null
     maxOccurrences: 1
     occursDuringRoundEnd: false
-    earliestStart: 20
+    earliestStart: 30
+    minimumPlayers: 15
     eventType: HostilesSpawn
   - type: GameRule
     chaosScore: 250
