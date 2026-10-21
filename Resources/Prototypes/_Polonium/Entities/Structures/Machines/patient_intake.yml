@@ -1,10 +1,37 @@
-# Morgue sprites and sounds are placeholders until it gets its own art.
 - type: entity
   parent: Morgue
   id: PatientIntakeMachine
   name: patient intake
   description: A Nanotrasen contract machine. It delivers patients for treatment and pays the medical budget for every one returned healthy. Examine a patient while holding a health analyzer to check they are fit for discharge.
   components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Machines/patient_intake.rsi
+    layers:
+    - state: closed
+      map: ["enum.MorgueVisualLayers.Base"]
+    - state: tray
+      offset: 0, -1
+      visible: false
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: light_ready
+      visible: false
+      map: ["enum.PatientIntakeVisualLayers.Light"]
+      shader: unshaded
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        enum.MorgueVisualLayers.Base:
+          True: { state: open }
+          False: { state: closed }
+        enum.StorageVisualLayers.Door:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PatientIntakeVisuals.Status:
+        enum.PatientIntakeVisualLayers.Light:
+          Off: { visible: false }
+          Ready: { visible: true, state: light_ready }
+          PatientWaiting: { visible: true, state: light_patient }
+          Busy: { visible: true, state: light_busy }
   - type: EntityStorage
     isCollidableWhenOpen: true
     showContents: false

@@ -261,7 +261,7 @@ public sealed partial class PatientIntakeSystem
             if (!TryComp<FaxMachineComponent>(sink, out var fax))
                 continue;
 
-            _fax.Receive(sink, new FaxPrintout(content, name), null, fax);
+            _fax.Receive(sink, new FaxPrintout(content, name, senderFaxName: Loc.GetString("patient-intake-fax-sender")), null, fax);
             return true;
         }
 
