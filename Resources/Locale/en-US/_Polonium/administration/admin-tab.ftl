@@ -1,4 +1,5 @@
 polonium-admin-tab-title = Quick actions
+polonium-admin-tab-search = Search...
 polonium-admin-tab-run = Run
 
 polonium-admin-tab-section-round = Round
@@ -15,6 +16,8 @@ polonium-admin-tab-section-station = Station
 polonium-admin-tab-alert-level = Alert level...
 polonium-admin-tab-alert-level-tooltip = Sets the alert level of the station you are on.
 polonium-admin-tab-call-ert = Call ERT...
+polonium-admin-tab-game-rule = Game rule / event...
+polonium-admin-tab-game-rule-tooltip = Adds and starts a game rule, e.g. a station event (meteors, migrations, antagonist spawns).
 polonium-admin-tab-nuke-codes = Send nuke codes
 polonium-admin-tab-bluespace-strike = Bluespace strike
 polonium-admin-tab-explosion = Explosion

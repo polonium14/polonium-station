@@ -12,6 +12,11 @@ public sealed class PrototypeCommandButton : CommandButton
     public string PrototypeKind { get; set; } = string.Empty;
     public string CommandFormat { get; set; } = string.Empty;
 
+    /// <summary>
+    /// For the entity kind: only list prototypes with this component.
+    /// </summary>
+    public string? RequiredComponent { get; set; }
+
     private PrototypeCommandWindow? _window;
 
     protected override void Execute(ButtonEventArgs obj)
@@ -22,7 +27,7 @@ public sealed class PrototypeCommandButton : CommandButton
             return;
         }
 
-        _window = new PrototypeCommandWindow(Text ?? string.Empty, PrototypeKind, CommandFormat);
+        _window = new PrototypeCommandWindow(Text ?? string.Empty, PrototypeKind, CommandFormat, RequiredComponent);
         _window.OpenCentered();
     }
 }

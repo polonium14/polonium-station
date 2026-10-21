@@ -15,10 +15,19 @@ public sealed partial class PrototypeCommandWindow : DefaultWindow
     [Dependency] private readonly IClientConsoleHost _console = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
+    /// <summary>
+    /// Above this many entries the window shows a search field.
+    /// </summary>
+    private const int SearchThreshold = 15;
+
     private readonly string _commandFormat;
     private readonly List<(string Id, string Description)> _entries = new();
+    private readonly List<int> _visible = new();
 
-    public PrototypeCommandWindow(string title, string kind, string commandFormat)
+    /// <param name="requiredComponent">
+    /// For the entity kind: only list prototypes that have this component, e.g. GameRule.
+    /// </param>
+    public PrototypeCommandWindow(string title, string kind, string commandFormat, string? requiredComponent = null)
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
@@ -28,41 +37,69 @@ public sealed partial class PrototypeCommandWindow : DefaultWindow
 
         if (_prototype.TryGetKindType(kind, out var kindType))
         {
-            _entries.AddRange(_prototype.EnumeratePrototypes(kindType)
+            var prototypes = _prototype.EnumeratePrototypes(kindType);
+            if (requiredComponent != null)
+                prototypes = prototypes.Where(p => p is EntityPrototype ent && ent.Components.ContainsKey(requiredComponent));
+
+            _entries.AddRange(prototypes
                 .Select(p => (p.ID, Describe(p)))
                 .OrderBy(e => e.ID, StringComparer.Ordinal));
         }
 
-        for (var i = 0; i < _entries.Count; i++)
-        {
-            PrototypeOptions.AddItem(_entries[i].Id, i);
-        }
+        SearchLineEdit.Visible = _entries.Count > SearchThreshold;
+        SearchLineEdit.OnTextChanged += args => Populate(args.Text);
 
         PrototypeOptions.OnItemSelected += args =>
         {
             PrototypeOptions.SelectId(args.Id);
-            UpdateDescription();
+            UpdateSelection();
         };
 
-        RunButton.Disabled = _entries.Count == 0;
         RunButton.OnPressed += _ =>
         {
-            var selected = PrototypeOptions.SelectedId;
-            if (selected < 0 || selected >= _entries.Count)
+            if (GetSelected() is not { } selected)
                 return;
 
             _console.ExecuteCommand(string.Format(_commandFormat, _entries[selected].Id));
         };
 
-        UpdateDescription();
+        Populate(string.Empty);
     }
 
-    private void UpdateDescription()
+    private void Populate(string filter)
+    {
+        PrototypeOptions.Clear();
+        _visible.Clear();
+
+        for (var i = 0; i < _entries.Count; i++)
+        {
+            var (id, description) = _entries[i];
+            if (filter.Length > 0 &&
+                !id.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
+                !description.Contains(filter, StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            PrototypeOptions.AddItem(id, i);
+            _visible.Add(i);
+        }
+
+        if (_visible.Count > 0)
+            PrototypeOptions.SelectId(_visible[0]);
+
+        UpdateSelection();
+    }
+
+    private int? GetSelected()
     {
         var selected = PrototypeOptions.SelectedId;
-        DescriptionLabel.Text = selected >= 0 && selected < _entries.Count
-            ? _entries[selected].Description
-            : string.Empty;
+        return _visible.Contains(selected) ? selected : null;
+    }
+
+    private void UpdateSelection()
+    {
+        var selected = GetSelected();
+        DescriptionLabel.Text = selected is { } i ? _entries[i].Description : string.Empty;
+        RunButton.Disabled = selected == null;
     }
 
     private static string Describe(IPrototype prototype)
@@ -71,6 +108,7 @@ public sealed partial class PrototypeCommandWindow : DefaultWindow
         {
             AlertLevelPrototype alert => alert.LocalizedName,
             ErtCallPresetPrototype ert => ert.Desc,
+            EntityPrototype ent when ent.Name != ent.ID => ent.Name,
             _ => string.Empty,
         };
     }
