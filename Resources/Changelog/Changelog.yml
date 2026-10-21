@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: TaserTheFox
-  changes:
-  - message: Fixed certain bottled reagents not having localization text.
-    type: Fix
-  id: 9573
-  time: '2026-03-14T16:21:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43208
 - author: Crude Oil
   changes:
   - message: Fixed some emitter alerts missing the word "emitter"
@@ -4327,3 +4320,11 @@
   id: 10067
   time: '2026-10-21T14:14:11.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1099
+- author: Joker66613
+  changes:
+  - message: "Zdj\u0119cia mo\u017Cna podpisa\u0107 d\u0142ugopisem. Podpis pojawia\
+      \ si\u0119 na dolnym pasku zdj\u0119cia w kolorze i czcionce d\u0142ugopisu."
+    type: Add
+  id: 10068
+  time: '2026-10-21T14:26:10.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1125
