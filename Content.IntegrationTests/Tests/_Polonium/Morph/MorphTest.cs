@@ -5,7 +5,10 @@ using Content.Server.Objectives.Components;
 using Content.Shared._Polonium.Morph;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
+using Content.Shared.Body.Components;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Devour.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind;
 using Content.Shared.Movement.Components;
 using Content.Shared.Polymorph.Components;
@@ -174,5 +177,30 @@ public sealed class MorphTest : InteractionTest
         await PerformDisguise(chair);
 
         Assert.That(SEntMan.HasComponent<ChameleonDisguisedComponent>(SPlayer), "Morph did not disguise as a chair.");
+    }
+
+    [Test]
+    public async Task PickingUpDisguisePoisonsVictim()
+    {
+        var item = await SpawnTarget("Crowbar");
+        await PerformDisguise(item);
+
+        EntityUid victim = default;
+        await Server.WaitPost(() =>
+        {
+            victim = SEntMan.SpawnEntity("MobHuman", SEntMan.GetCoordinates(PlayerCoords));
+            var disguise = SEntMan.GetComponent<ChameleonDisguisedComponent>(SPlayer).Disguise;
+            SEntMan.System<SharedHandsSystem>().TryPickupAnyHand(victim, disguise, checkActionBlocker: false);
+        });
+        await RunTicks(5);
+
+        await Server.WaitAssertion(() =>
+        {
+            var solutions = SEntMan.System<SharedSolutionContainerSystem>();
+            Assert.That(solutions.TryGetSolution(victim, BloodstreamComponent.DefaultBloodSolutionName, out _, out var blood)
+                && blood.Contents.Any(r => r.Reagent.Prototype == "MorphVenom"),
+                "Picking up the disguise did not poison the victim.");
+            Assert.That(SEntMan.HasComponent<ChameleonDisguisedComponent>(SPlayer), Is.False, "Picking up the disguise did not reveal the morph.");
+        });
     }
 }

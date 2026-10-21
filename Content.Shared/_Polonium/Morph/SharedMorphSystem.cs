@@ -3,6 +3,7 @@ using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Devour;
 using Content.Shared.Examine;
+using Content.Shared.Hands;
 using Content.Shared.Interaction;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Polymorph.Components;
@@ -48,6 +49,7 @@ public abstract partial class SharedMorphSystem : EntitySystem
         SubscribeLocalEvent<ChameleonDisguisedComponent, ComponentRemove>(OnDisguisedRemove);
 
         SubscribeLocalEvent<MorphDisguiseComponent, InteractHandEvent>(OnAmbush, before: [typeof(SharedChameleonProjectorSystem)]);
+        SubscribeLocalEvent<MorphDisguiseComponent, BeforeGettingEquippedHandEvent>(OnAmbushPickup, before: [typeof(SharedChameleonProjectorSystem)]);
         SubscribeLocalEvent<MorphDisguiseComponent, ExaminedEvent>(OnDisguiseExamined);
     }
 
@@ -166,15 +168,30 @@ public abstract partial class SharedMorphSystem : EntitySystem
     }
 
     /// <summary>
-    /// Knocks down and poisons whoever touches the disguised morph.
+    /// Ambushes whoever touches the disguised morph.
     /// </summary>
     private void OnAmbush(Entity<MorphDisguiseComponent> ent, ref InteractHandEvent args)
+    {
+        Ambush(ent, args.User);
+    }
+
+    /// <summary>
+    /// Ambushes whoever picks the disguised morph up without clicking it
+    /// </summary>
+    private void OnAmbushPickup(Entity<MorphDisguiseComponent> ent, ref BeforeGettingEquippedHandEvent args)
+    {
+        Ambush(ent, args.User);
+    }
+
+    /// <summary>
+    /// Knocks down and poisons whoever touched the disguised morph
+    /// </summary>
+    private void Ambush(Entity<MorphDisguiseComponent> ent, EntityUid victim)
     {
         if (!TryComp<ChameleonDisguiseComponent>(ent, out var disguise)
             || !TryComp<MorphComponent>(disguise.User, out var morph))
             return;
 
-        var victim = args.User;
         _stun.TryKnockdown(victim, morph.AmbushKnockdown);
         _bloodstream.TryAddToBloodstream(victim, new Solution(morph.AmbushReagent, morph.AmbushReagentAmount));
 
