@@ -165,6 +165,14 @@ public abstract partial class SharedInternalsSystem : EntitySystem
     private void OnInternalsShutdown(Entity<InternalsComponent> ent, ref ComponentShutdown args)
     {
         _alerts.ClearAlert(ent.Owner, ent.Comp.InternalsAlert);
+
+        // Polonium start
+        if (TryComp(ent.Comp.GasTankEntity, out GasTankComponent? tank) && tank.User == ent.Owner)
+        {
+            tank.User = null;
+            Dirty(ent.Comp.GasTankEntity.Value, tank);
+        }
+        // Polonium end
     }
 
     public void ConnectBreathTool(Entity<InternalsComponent> ent, EntityUid toolEntity)
@@ -205,8 +213,15 @@ public abstract partial class SharedInternalsSystem : EntitySystem
 
     public void DisconnectTank(Entity<InternalsComponent> ent, bool forced = false)
     {
-        if (TryComp(ent.Comp.GasTankEntity, out GasTankComponent? tank))
-            _gasTank.DisconnectFromInternals((ent.Comp.GasTankEntity.Value, tank), forced: forced);
+        // Polonium start
+        if (TryComp(ent.Comp.GasTankEntity, out GasTankComponent? tank)
+            && !_gasTank.DisconnectFromInternals((ent.Comp.GasTankEntity.Value, tank), forced: forced)
+            && tank.User == ent.Owner)
+        {
+            tank.User = null;
+            Dirty(ent.Comp.GasTankEntity.Value, tank);
+        }
+        // Polonium end
 
         ent.Comp.GasTankEntity = null;
         Dirty(ent);
