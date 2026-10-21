@@ -1,6 +1,6 @@
-ent-VelociraptorCube = velociraptor cube
-    .desc = Just add water! At your own risk.
-ent-TRexCube = tyrannosaurus rex cube
-    .desc = Just add water! At your own risk.
-ent-RandomDinoCube = dinosaur cube
-    .desc = Just add water! At your own risk.
+ent-VelociraptorCube = kostka welociraptora
+    .desc = Wystarczy dodać wody! Na własne ryzyko.
+ent-TRexCube = kostka tyranozaura
+    .desc = Wystarczy dodać wody! Na własne ryzyko.
+ent-RandomDinoCube = kostka dinozaura
+    .desc = Wystarczy dodać wody! Na własne ryzyko.

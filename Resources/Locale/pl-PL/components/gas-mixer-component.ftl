@@ -1,6 +1,6 @@
-comp-gas-mixer-ui-mixer-output-pressure = Output Pressure (kPa):
-comp-gas-mixer-ui-mixer-node-primary = Primary Port:
-comp-gas-mixer-ui-mixer-node-side = Side Port:
-comp-gas-mixer-ui-mixer-set = Set
-comp-gas-mixer-ui-mixer-max = Max
-comp-gas-mixer-ratio-examine = The side port ratio is [color={ $statusColor }]{ $sidePortRatio }[/color].
+comp-gas-mixer-ui-mixer-output-pressure = Ciśnienie wyjściowe (kPa):
+comp-gas-mixer-ui-mixer-node-primary = Port główny:
+comp-gas-mixer-ui-mixer-node-side = Port boczny:
+comp-gas-mixer-ui-mixer-set = Ustaw
+comp-gas-mixer-ui-mixer-max = Maks.
+comp-gas-mixer-ratio-examine = Proporcja portu bocznego wynosi [color={ $statusColor }]{ $sidePortRatio }[/color].

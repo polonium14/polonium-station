@@ -1,1 +1,1 @@
-clock-examine = The time reads: [color=white]{ $time }[/color]
+clock-examine = Zegar wskazuje: [color=white]{ $time }[/color]

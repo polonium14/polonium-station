@@ -1,4 +1,4 @@
-ent-AppearanceArachnid = arachnid appearance
+ent-AppearanceArachnid = wygląd arachnida
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobArachnid = Urist McSieć
     .desc = { ent-AppearanceArachnid.desc }

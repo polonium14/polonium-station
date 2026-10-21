@@ -22,5 +22,5 @@ reagent-name-cellulose = celuloza
 reagent-desc-cellulose = Krystaliczny polimer polidekstrozy, rośliny bez tego nie mogą się obejść.
 reagent-name-rororium = rororium
 reagent-desc-rororium = Dziwna substancja która wypełnia rdzenie władców roju którzy panoszą się po asteroidach górniczych. Uważana za źródło ich zdolności regeneracyjnych.
-reagent-name-lye = lye
-reagent-desc-lye = A translucent, orange, alkaline solution used in traditional soap production.
+reagent-name-lye = ług
+reagent-desc-lye = Półprzezroczysty, pomarańczowy roztwór zasadowy używany w tradycyjnej produkcji mydła.

@@ -1,3 +1,3 @@
-cmd-admin_overlay-desc = Toggles the admin player info overlay
+cmd-admin_overlay-desc = Przełącza nakładkę z informacjami o graczach dla administracji
 cmd-admin_overlay-usage = admin_overlay <true|false>
-cmd-admin_overlay-arg-state = state
+cmd-admin_overlay-arg-state = stan

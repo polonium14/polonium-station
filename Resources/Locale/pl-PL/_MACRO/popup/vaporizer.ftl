@@ -1,7 +1,7 @@
 vaporizer-examine-state =
     { $state ->
-       *[normal] [color=lightblue]The vaporizer is functioning normally.[/color]
-        [badsolution] [color=red]The vaporizer has a bad solution in the chamber![/color]
-        [lowsolution] [color=yellow]The vaporizer is low on fluid.[/color]
-        [empty] [color=red]The vaporizer is empty.[/color]
+       *[normal] [color=lightblue]Waporyzator działa normalnie.[/color]
+        [badsolution] [color=red]W komorze waporyzatora znajduje się zły roztwór![/color]
+        [lowsolution] [color=yellow]W waporyzatorze kończy się płyn.[/color]
+        [empty] [color=red]Waporyzator jest pusty.[/color]
     }

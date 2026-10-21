@@ -1,101 +1,101 @@
 # Chest
 
-marking-CrabChestBiopulse = Biopulse
-marking-CrabChestBiopulse-biopulse1 = Outer
-marking-CrabChestBiopulse-biopulse2 = Inner
-marking-CrabChestMasked = Masked
-marking-CrabChestMasked-masked = Masked
-marking-CrabCorset = Corset Stripes
-marking-CrabCorset-corset = Corset Stripes
-marking-CrabCrackedChest = Chest Cracks
-marking-CrabCrackedChest-crackedchest = Chest Cracks
-marking-CrabSpine = Armored Spine
-marking-Crabspine-spine = Armored Spine
-marking-DecapoidAbPlate = Abdominal Plate
-marking-DecapoidAbPlate-abdominalplate = Abdominal Plate
-marking-DecapoidLowerPlate = Lower Abdominal Plate
-marking-DecapoidLowerPlate-lowerplate = Lower Abdominal Plate
-marking-DecapoidPecPlate = Pectoral Plate
-marking-DecapoidPecPlate-pectoralplate = Pectoral Plate
-marking-FlowerMoonPlate = Flower Moon Plate
-marking-FlowerMoonPlate-flowermoonupper1 = Plate
-marking-FlowerMoonPlate-flowermoonupper2 = Outer
-marking-FlowerMoonPlate-flowermoonupper3 = Inner
+marking-CrabChestBiopulse = Biopuls
+marking-CrabChestBiopulse-biopulse1 = Zewnętrzne
+marking-CrabChestBiopulse-biopulse2 = Wewnętrzne
+marking-CrabChestMasked = Zamaskowany
+marking-CrabChestMasked-masked = Zamaskowany
+marking-CrabCorset = Pasy gorsetu
+marking-CrabCorset-corset = Pasy gorsetu
+marking-CrabCrackedChest = Pęknięcia na klatce piersiowej
+marking-CrabCrackedChest-crackedchest = Pęknięcia na klatce piersiowej
+marking-CrabSpine = Opancerzony kręgosłup
+marking-Crabspine-spine = Opancerzony kręgosłup
+marking-DecapoidAbPlate = Płyta brzuszna
+marking-DecapoidAbPlate-abdominalplate = Płyta brzuszna
+marking-DecapoidLowerPlate = Dolna płyta brzuszna
+marking-DecapoidLowerPlate-lowerplate = Dolna płyta brzuszna
+marking-DecapoidPecPlate = Płyta piersiowa
+marking-DecapoidPecPlate-pectoralplate = Płyta piersiowa
+marking-FlowerMoonPlate = Płyta kwiatowego księżyca
+marking-FlowerMoonPlate-flowermoonupper1 = Płyta
+marking-FlowerMoonPlate-flowermoonupper2 = Zewnętrzne
+marking-FlowerMoonPlate-flowermoonupper3 = Wewnętrzne
 
 # Head
 
-marking-CrabCrackedHead = Head Cracks
-marking-CrabCrackedHead-crackedhead = Head Cracks
-marking-CrabHeadHighlight = Face Highlight
-marking-CrabHeadHighlight-highlight = Face Highlight
-marking-GaudyClownHead = Gaudy Clown Face
-marking-GaudyClownHead-gaudyclownhead1 = Outer
-marking-GaudyClownHead-gaudyclownhead2 = Inner
+marking-CrabCrackedHead = Pęknięcia na głowie
+marking-CrabCrackedHead-crackedhead = Pęknięcia na głowie
+marking-CrabHeadHighlight = Rozjaśnienie twarzy
+marking-CrabHeadHighlight-highlight = Rozjaśnienie twarzy
+marking-GaudyClownHead = Krzykliwa twarz klauna
+marking-GaudyClownHead-gaudyclownhead1 = Zewnętrzne
+marking-GaudyClownHead-gaudyclownhead2 = Wewnętrzne
 
 # Snout
 
-marking-DecapoidGillsDefault = Gills (Default)
-marking-DecapoidGillsDefault-gills-default = Gills
-marking-GillStripes = Gills (Striped)
-marking-GillStripes-gills-stripes1 = Color 1
-marking-GillStripes-gills-stripes2 = Color 2
+marking-DecapoidGillsDefault = Skrzela (domyślne)
+marking-DecapoidGillsDefault-gills-default = Skrzela
+marking-GillStripes = Skrzela (pasiaste)
+marking-GillStripes-gills-stripes1 = Kolor 1
+marking-GillStripes-gills-stripes2 = Kolor 2
 
 # Eyes
 
-marking-CrabTallEyes = Eyes (Tall Eyestalks)
-marking-CrabTallEyes-eyes-tall1 = Stalks
-marking-CrabTallEyes-eyes-tall2 = Eyes
-marking-DecapoidEyesDefault = Eyes (Default)
-marking-DecapoidEyesDefault-eyes-default = Eyes
-marking-DecapoidEyesThree = Eyes (Three)
-marking-DecapoidEyesThree-eyes-three = Eyes
-marking-DecapoidEyesWideClose = Eyes (Wide Close)
-marking-DecapoidEyesWideClose-eyes-wide-close = Eyes
-marking-DecapoidEyesStalks = Eyes (Stalks)
-marking-DecapoidEyesStalks-eyes-stalks = Eyes
-marking-DecapoidEyesWideFar = Eyes (Wide Far)
-marking-DecapoidEyesWideFar-eyes-wide-far = Eyes
-marking-DecapoidEyesSpider = Eyes (Spider)
-marking-DecapoidEyesSpider-eyes-spider = Eyes
+marking-CrabTallEyes = Oczy (wysokie szypułki)
+marking-CrabTallEyes-eyes-tall1 = Szypułki
+marking-CrabTallEyes-eyes-tall2 = Oczy
+marking-DecapoidEyesDefault = Oczy (domyślne)
+marking-DecapoidEyesDefault-eyes-default = Oczy
+marking-DecapoidEyesThree = Oczy (trzy)
+marking-DecapoidEyesThree-eyes-three = Oczy
+marking-DecapoidEyesWideClose = Oczy (szeroko, blisko)
+marking-DecapoidEyesWideClose-eyes-wide-close = Oczy
+marking-DecapoidEyesStalks = Oczy (szypułki)
+marking-DecapoidEyesStalks-eyes-stalks = Oczy
+marking-DecapoidEyesWideFar = Oczy (szeroko, daleko)
+marking-DecapoidEyesWideFar-eyes-wide-far = Oczy
+marking-DecapoidEyesSpider = Oczy (pająk)
+marking-DecapoidEyesSpider-eyes-spider = Oczy
 
 # RArm
 
-marking-CrabRArmStripes = Stripes (Arm)
-marking-CrabRArmStripes-stripes = Stripes
-marking-DecapoidPauldronRight = Pauldron (Default)
-marking-DecapoidPauldronRight-pauldron = Pauldron
-marking-RightEncrustedPauldron = Pauldron (Encrusted)
-marking-RightEncrustedPauldron-pauldronencrusted1 = Pauldron
-marking-RightEncrustedPauldron-pauldronencrusted2 = Tip
-marking-RightEncrustedPauldron-pauldronencrusted3 = Gems
-marking-RPauldronArmored = Pauldron (Armored)
-marking-RPauldronArmored-pauldronarmored = Pauldron
+marking-CrabRArmStripes = Pasy (ręka)
+marking-CrabRArmStripes-stripes = Pasy
+marking-DecapoidPauldronRight = Naramiennik (domyślny)
+marking-DecapoidPauldronRight-pauldron = Naramiennik
+marking-RightEncrustedPauldron = Naramiennik (inkrustowany)
+marking-RightEncrustedPauldron-pauldronencrusted1 = Naramiennik
+marking-RightEncrustedPauldron-pauldronencrusted2 = Czubek
+marking-RightEncrustedPauldron-pauldronencrusted3 = Klejnoty
+marking-RPauldronArmored = Naramiennik (opancerzony)
+marking-RPauldronArmored-pauldronarmored = Naramiennik
 
 # LArm
 
-marking-DecapoidPauldronLeft = Pauldron (Default)
-marking-DecapoidPauldronLeft-pauldron = Pauldron
-marking-DecapoidPauldronSpike = Pauldron (Spike)
-marking-DecapoidPauldronSpike-pauldronspike = Pauldron
-marking-FlowerMoonPauldron = Pauldron (Flower Moon)
-marking-FlowerMoonPauldron-flowermoonpauldron1 = Pauldron
-marking-FlowerMoonPauldron-flowermoonpauldron2 = Tip
-marking-LeftEncrustedPauldron = Pauldron (Encrusted)
-marking-LeftEncrustedPauldron-pauldronencrusted1 = Pauldron
-marking-LeftEncrustedPauldron-pauldronencrusted2 = Tip
-marking-LeftEncrustedPauldron-pauldronencrusted3 = Gems
-marking-LPauldronArmored = Pauldron (Armored)
-marking-LPauldronArmored-pauldronarmored = Pauldron
-marking-PauldronCracked = Pauldron (Cracked)
-marking-PauldronCracked-pauldroncracked = Pauldron
-marking-PauldronSheerspine = Pauldron (Sheerspine)
-marking-PauldronSheerspine-sheerspine = Pauldron
-marking-PauldronWarlord = Pauldron (Warlord)
-marking-PauldronWarlord-warlord = Pauldron
-marking-PauldronCrystal = Pauldron (Crystal)
-marking-PauldronCrystal-pauldroncrystal = Pauldron
-marking-PauldronSkull = Pauldron (Skull)
-marking-PauldronSkull-pauldronskull = Pauldron
+marking-DecapoidPauldronLeft = Naramiennik (domyślny)
+marking-DecapoidPauldronLeft-pauldron = Naramiennik
+marking-DecapoidPauldronSpike = Naramiennik (kolec)
+marking-DecapoidPauldronSpike-pauldronspike = Naramiennik
+marking-FlowerMoonPauldron = Naramiennik (kwiatowy księżyc)
+marking-FlowerMoonPauldron-flowermoonpauldron1 = Naramiennik
+marking-FlowerMoonPauldron-flowermoonpauldron2 = Czubek
+marking-LeftEncrustedPauldron = Naramiennik (inkrustowany)
+marking-LeftEncrustedPauldron-pauldronencrusted1 = Naramiennik
+marking-LeftEncrustedPauldron-pauldronencrusted2 = Czubek
+marking-LeftEncrustedPauldron-pauldronencrusted3 = Klejnoty
+marking-LPauldronArmored = Naramiennik (opancerzony)
+marking-LPauldronArmored-pauldronarmored = Naramiennik
+marking-PauldronCracked = Naramiennik (popękany)
+marking-PauldronCracked-pauldroncracked = Naramiennik
+marking-PauldronSheerspine = Naramiennik (stromy kolec)
+marking-PauldronSheerspine-sheerspine = Naramiennik
+marking-PauldronWarlord = Naramiennik (wódz)
+marking-PauldronWarlord-warlord = Naramiennik
+marking-PauldronCrystal = Naramiennik (kryształowy)
+marking-PauldronCrystal-pauldroncrystal = Naramiennik
+marking-PauldronSkull = Naramiennik (czaszka)
+marking-PauldronSkull-pauldronskull = Naramiennik
 
 # RLeg
 
@@ -117,80 +117,80 @@ marking-PauldronSkull-pauldronskull = Pauldron
 
 # LHand
 
-marking-CrabSplitClaw = Split Claw
-marking-CrabSplitClaw-splitclaw1 = Upper
-marking-CrabSplitClaw-splitclaw2 = Lower
-marking-DecapoidClawGradient = Major Claw Gradient
-marking-DecapoidClawGradient-gradient = Major Claw Gradient
-marking-DecapoidClawPlate = Major Claw
-marking-DecapoidClawPlate-plate = Major Claw
+marking-CrabSplitClaw = Rozdwojone szczypce
+marking-CrabSplitClaw-splitclaw1 = Górne
+marking-CrabSplitClaw-splitclaw2 = Dolne
+marking-DecapoidClawGradient = Gradient większych szczypiec
+marking-DecapoidClawGradient-gradient = Gradient większych szczypiec
+marking-DecapoidClawPlate = Większe szczypce
+marking-DecapoidClawPlate-plate = Większe szczypce
 
 # RHand
 
-marking-DecapoidRHandGradient = Minor Claw Gradient
-marking-DecapoidRHandGradient-gradient = Minor Claw Gradient
-marking-DecapoidRHandPlate = Minor Claw
-marking-DecapoidRHandPlate-plate = Minor Claw
+marking-DecapoidRHandGradient = Gradient mniejszych szczypiec
+marking-DecapoidRHandGradient-gradient = Gradient mniejszych szczypiec
+marking-DecapoidRHandPlate = Mniejsze szczypce
+marking-DecapoidRHandPlate-plate = Mniejsze szczypce
 
 # FacialHair
 
 
 # Hair
 
-marking-DecapoidFlatHead = Flat Head
-marking-DecapoidFlatHead-flathead = Flat Head
-marking-DecapoidCrestFledgeling = Crest (Fledgeling)
-marking-DecapoidCrestHerald = Crest (Herald)
-marking-DecapoidCrestJester = Crest (Jester)
-marking-DecapoidCrestMalign = Crest (Malign)
-marking-DecapoidCrestReclaimer = Crest (Reclaimer)
-marking-DecapoidCrestWise = Crest (Wise)
+marking-DecapoidFlatHead = Płaska głowa
+marking-DecapoidFlatHead-flathead = Płaska głowa
+marking-DecapoidCrestFledgeling = Grzebień (pisklę)
+marking-DecapoidCrestHerald = Grzebień (herold)
+marking-DecapoidCrestJester = Grzebień (błazen)
+marking-DecapoidCrestMalign = Grzebień (złowrogi)
+marking-DecapoidCrestReclaimer = Grzebień (odzyskiwacz)
+marking-DecapoidCrestWise = Grzebień (mędrzec)
 
 # HeadSide
 
-marking-DecapoidWhiskerMid = Whiskers (Mid)
-marking-DecapoidWhisker-whisker-mid = Whiskers
-marking-DecapoidWhiskerMidR = Whiskers (Mid Uneven R)
-marking-DecapoidWhiskerMidR-whisker-midr = Whiskers
-marking-DecapoidWhiskerMidL = Whiskers (Mid Uneven L)
-marking-DecapoidWhiskerMidL-whisker-midl = Whiskers
-marking-DecapoidWhiskerShort = Whiskers (Short)
-marking-DecapoidWhiskerShort-whisker-short = Whiskers
-marking-DecapoidWhiskerLong = Whiskers (Long)
-marking-DecapoidWhiskerLong-whisker-long = Whiskers
-marking-DecapoidWhiskerLongR = Whiskers (Long Uneven R)
-marking-DecapoidWhiskerLongR-whisker-longr = Whiskers
-marking-DecapoidWhiskerLongL = Whiskers (Long Uneven L)
-marking-DecapoidWhiskerLongL-whisker-longl = Whiskers
-marking-DecapoidWhiskerSimple = Whiskers (Simple)
-marking-DecapoidWhisker-whisker-simple = Whiskers
-marking-DecapoidWhiskerStraight = Whiskers (Straight)
-marking-DecapoidWhiskerStraight-whisker-straight = Whiskers
-marking-DecapoidWhiskerHanging = Whiskers (Hanging)
-marking-DecapoidWhiskerHanging-whisker-hanging = Whiskers
-marking-DecapoidWhiskerCurled = Whiskers (Curled)
-marking-DecapoidWhiskerCurled-whisker-curled = Whiskers
+marking-DecapoidWhiskerMid = Wąsiki (średnie)
+marking-DecapoidWhisker-whisker-mid = Wąsiki
+marking-DecapoidWhiskerMidR = Wąsiki (średnie, nierówne P)
+marking-DecapoidWhiskerMidR-whisker-midr = Wąsiki
+marking-DecapoidWhiskerMidL = Wąsiki (średnie, nierówne L)
+marking-DecapoidWhiskerMidL-whisker-midl = Wąsiki
+marking-DecapoidWhiskerShort = Wąsiki (krótkie)
+marking-DecapoidWhiskerShort-whisker-short = Wąsiki
+marking-DecapoidWhiskerLong = Wąsiki (długie)
+marking-DecapoidWhiskerLong-whisker-long = Wąsiki
+marking-DecapoidWhiskerLongR = Wąsiki (długie, nierówne P)
+marking-DecapoidWhiskerLongR-whisker-longr = Wąsiki
+marking-DecapoidWhiskerLongL = Wąsiki (długie, nierówne L)
+marking-DecapoidWhiskerLongL-whisker-longl = Wąsiki
+marking-DecapoidWhiskerSimple = Wąsiki (proste)
+marking-DecapoidWhisker-whisker-simple = Wąsiki
+marking-DecapoidWhiskerStraight = Wąsiki (proste)
+marking-DecapoidWhiskerStraight-whisker-straight = Wąsiki
+marking-DecapoidWhiskerHanging = Wąsiki (zwisające)
+marking-DecapoidWhiskerHanging-whisker-hanging = Wąsiki
+marking-DecapoidWhiskerCurled = Wąsiki (zakręcone)
+marking-DecapoidWhiskerCurled-whisker-curled = Wąsiki
 
 # HeadTop
 
 
 # Tail
 
-marking-GrasperCurly = Curly
-marking-GrasperCurly-grasper-curly = Grasper
-marking-GrasperFreaky = Freaky
-marking-GrasperFreaky-grasper-freaky = Grasper
-marking-GrasperHigh = High Up
-marking-GrasperHigh-grasper-highup = Grasper
-marking-GrasperLong = Long
-marking-GrasperLong-grasper-long = Grasper
-marking-GrasperMoon = Moon
-marking-GrasperMoon-grasper-moon1 = Grasper
-marking-GrasperMoon-grasper-moon2 = Tip
-marking-GrasperShort = Short
-marking-GrasperShort-grasper-short = Grasper
-marking-GrasperUneven = Uneven
-marking-GrasperUneven-grasper-uneven = Grasper
+marking-GrasperCurly = Kręcony
+marking-GrasperCurly-grasper-curly = Chwytnik
+marking-GrasperFreaky = Dziwaczny
+marking-GrasperFreaky-grasper-freaky = Chwytnik
+marking-GrasperHigh = Wysoko
+marking-GrasperHigh-grasper-highup = Chwytnik
+marking-GrasperLong = długie
+marking-GrasperLong-grasper-long = Chwytnik
+marking-GrasperMoon = Księżyc
+marking-GrasperMoon-grasper-moon1 = Chwytnik
+marking-GrasperMoon-grasper-moon2 = Czubek
+marking-GrasperShort = krótkie
+marking-GrasperShort-grasper-short = Chwytnik
+marking-GrasperUneven = Nierówny
+marking-GrasperUneven-grasper-uneven = Chwytnik
 
 # RArmExtension
 

@@ -1,2 +1,2 @@
-cmd-toggleready-desc = Toggle the players ready status.
-cmd-toggleready-help = Usage: toggleready <ready>
+cmd-toggleready-desc = Przełącza status gotowości graczy.
+cmd-toggleready-help = Użycie: toggleready <gotowość>

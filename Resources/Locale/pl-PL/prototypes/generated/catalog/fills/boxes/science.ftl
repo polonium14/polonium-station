@@ -1,2 +1,2 @@
-ent-BoxBeaker = beaker box
-    .desc = A box full of beakers.
+ent-BoxBeaker = pudełko zlewek
+    .desc = Pudełko pełne zlewek.

@@ -1,6 +1,6 @@
 ninja-gloves-on = Rękawice wypełnia moc!
 ninja-gloves-off = Rękawice tracą moc...
-ninja-gloves-not-wearing-suit = You aren't wearing a ninja suit
-ninja-gloves-examine-on = All abilities are enabled.
-ninja-gloves-examine-off = Boring old gloves...
+ninja-gloves-not-wearing-suit = Nie masz na sobie stroju ninja
+ninja-gloves-examine-on = Wszystkie zdolności są włączone.
+ninja-gloves-examine-off = Nudne stare rękawice...
 ninja-doorjack-success = The gloves zap something in { $target }.

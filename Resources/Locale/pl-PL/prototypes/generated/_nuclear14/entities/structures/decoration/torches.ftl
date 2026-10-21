@@ -1,6 +1,6 @@
-ent-N14Torch = torch
-    .desc = A flaming torch for lighting an area.
-    .suffix = floor
+ent-N14Torch = pochodnia
+    .desc = Płonąca pochodnia do oświetlania okolicy.
+    .suffix = podłogowa
 ent-N14TorchWall = { ent-N14Torch }
-    .suffix = wall
+    .suffix = ścienna
     .desc = { ent-N14Torch.desc }

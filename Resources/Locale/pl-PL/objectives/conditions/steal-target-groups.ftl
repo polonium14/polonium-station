@@ -11,7 +11,7 @@ steal-target-groups-captain-id-card = ID kapitana
 steal-target-groups-jetpack-captain-filled = plecak odrzutowy kapitana
 steal-target-groups-weapon-antique-laser = antyczny pistolet laserowy
 steal-target-groups-nuke-disk = dysk autoryzacji bomby nuklearnej
-steal-target-groups-weapon-energy-magnum = energy magnum
+steal-target-groups-weapon-energy-magnum = magnum energetyczny
 # Thief Collection
 steal-target-groups-figurines = figurka
 steal-target-groups-heads-cloaks = płaszcz szefa
@@ -22,7 +22,7 @@ steal-target-groups-encryption-keys = karta szyfrująca
 steal-target-groups-technology-disks = dyskietka technologiczna
 steal-target-groups-mail = korespondencja
 steal-target-groups-id-cards = karta ID
-steal-target-groups-officer-handguns = security officer's handgun
+steal-target-groups-officer-handguns = pistolet oficera ochrony
 steal-target-groups-lamps = LAMPA
 steal-target-groups-huds = HUD
 # Thief single item
@@ -42,7 +42,7 @@ steal-target-groups-bible = biblia
 steal-target-groups-clothing-neck-goldmedal = złoty medal załoganta
 steal-target-groups-clothing-neck-clownmedal = medal błazna
 steal-target-groups-wanted-list-cartridge = karta listy poszukiwanych
-steal-target-groups-belt-ce = chief engineer's toolbelt
+steal-target-groups-belt-ce = pas narzędziowy głównego inżyniera
 steal-target-groups-captain-sword = szabla kapitana
 # Thief structures
 steal-target-groups-teg = część TEG
@@ -64,4 +64,4 @@ steal-target-groups-animal-morty = Morty
 steal-target-groups-animal-renault = Renolt
 steal-target-groups-animal-shiva = Śiwa
 steal-target-groups-animal-tropico = Tropiko
-steal-target-groups-salvage-shuttle-console-circuitboard = płyta konsolowa wahadhłowca odzyskowego
+steal-target-groups-salvage-shuttle-console-circuitboard = płyta konsolowa wahadłowca odzyskowego

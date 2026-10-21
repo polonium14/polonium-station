@@ -1,6 +1,6 @@
-cmd-clearjobpriorities-desc = Clears the selected character's job preferences for a connected player.
-cmd-clearjobpriorities-help = Usage: clearjobpriorities <player>
-cmd-clearjobpriorities-player-not-found = Player { $player } is not connected.
-cmd-clearjobpriorities-preferences-not-loaded = Preferences for { $player } have not loaded yet.
-cmd-clearjobpriorities-success = Cleared all job preferences for { $player }.
-cmd-clearjobpriorities-hint-player = [player]
+cmd-clearjobpriorities-desc = Czyści preferencje zawodów wybranej postaci połączonego gracza.
+cmd-clearjobpriorities-help = Użycie: clearjobpriorities <gracz>
+cmd-clearjobpriorities-player-not-found = Gracz { $player } nie jest połączony.
+cmd-clearjobpriorities-preferences-not-loaded = Preferencje gracza { $player } nie zostały jeszcze wczytane.
+cmd-clearjobpriorities-success = Wyczyszczono wszystkie preferencje zawodów gracza { $player }.
+cmd-clearjobpriorities-hint-player = [gracz]

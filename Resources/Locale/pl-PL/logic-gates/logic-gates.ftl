@@ -1,14 +1,14 @@
-logic-gate-examine = It is currently { INDEFINITE($gate) } { $gate } gate.
-logic-gate-cycle = Switched to { INDEFINITE($gate) } { $gate } gate
+logic-gate-examine = Obecnie jest to bramka: { $gate }.
+logic-gate-cycle = Przełączono na bramkę: { $gate }
 power-sensor-examine =
-    It is currently checking the network's { $output ->
-        [true] output
-       *[false] input
-    } battery.
-power-sensor-voltage-examine = It is checking the { $voltage } power network.
+    Obecnie sprawdza { $output ->
+        [true] wyjściową
+       *[false] wejściową
+    } baterię sieci.
+power-sensor-voltage-examine = Sprawdza sieć zasilania o napięciu: { $voltage }.
 power-sensor-switch =
-    Switched to checking the network's { $output ->
-        [true] output
-       *[false] input
-    } battery.
-power-sensor-voltage-switch = Switched network to { $voltage }!
+    Przełączono na sprawdzanie { $output ->
+        [true] wyjściowej
+       *[false] wejściowej
+    } baterii sieci.
+power-sensor-voltage-switch = Przełączono sieć na: { $voltage }!

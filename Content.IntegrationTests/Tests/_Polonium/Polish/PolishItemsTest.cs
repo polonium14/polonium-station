@@ -153,11 +153,15 @@ public sealed class PolishCrucifixTest : InteractionTest
                 var cuff = SEntMan.SpawnEntity("Handcuffs", SEntMan.GetCoordinates(TargetCoords));
                 Assert.That(cuffs.TryAddNewCuffs(victim, SPlayer, cuff), "The victim could not be cuffed");
             }
-
-            if (pull)
-                Assert.That(pulling.TryStartPull(SPlayer, victim), "The victim could not be pulled");
         });
         await RunTicks(5);
+
+        // pulling in the same tick the victim spawns makes the client log a duplicate pull-joint error
+        if (pull)
+        {
+            await Server.WaitPost(() => Assert.That(pulling.TryStartPull(SPlayer, victim), "The victim could not be pulled"));
+            await RunTicks(5);
+        }
         return (SEntMan.GetEntity(crucifix), victim);
     }
 
@@ -181,7 +185,6 @@ public sealed class PolishCrucifixTest : InteractionTest
     [Test]
     public async Task PulledCuffedVictimIsCrucifiedWithFreeHand()
     {
-        Pair.ClientLogHandler.JudgeLog += (sawmill, log) => sawmill == "system.joint" && log.RenderMessage().Contains("pull-joint");
         var (crucifix, victim) = await SetUp(true, true);
 
         Assert.That(HandSys.TryGetEmptyHand((SPlayer, Hands), out var emptyHand), "No free hand left");

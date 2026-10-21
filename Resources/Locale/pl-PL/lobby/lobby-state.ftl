@@ -21,10 +21,10 @@ lobby-state-song-text = Obecnie grane: [color=white]{ $songTitle }[/color] autor
 lobby-state-song-no-song-text = Nie odtwarzana jest obecnie żadna piosenka.
 lobby-state-song-unknown-title = [color=dimgray]Nieznany tytuł[/color]
 lobby-state-song-unknown-artist = [color=dimgray]Nieznany wykonawca[/color]
-lobby-state-background-text = Menu art: [color=white]{ $backgroundTitle }[/color] by [color=white]{ $backgroundArtist }[/color]
-lobby-state-background-no-background-text = No menu art loaded.
-lobby-state-background-unknown-title = [color=dimgray]Unknown title[/color]
-lobby-state-background-unknown-artist = [color=dimgray]Unknown artist[/color]
+lobby-state-background-text = Grafika menu: [color=white]{ $backgroundTitle }[/color], autor: [color=white]{ $backgroundArtist }[/color]
+lobby-state-background-no-background-text = Nie wczytano grafiki menu.
+lobby-state-background-unknown-title = [color=dimgray]Nieznany tytuł[/color]
+lobby-state-background-unknown-artist = [color=dimgray]Nieznany autor[/color]
 lobby-state-playtime-comment-normal =
     Spędziłeś(-aś) { $hours } { $hours ->
         [1] godzinę

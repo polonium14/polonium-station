@@ -1,7 +1,7 @@
 ent-OrganAnimalMetabolizer = { "" }
     .desc = { "" }
 ent-OrganAnimal = { ent-OrganBaseOrganic }
-    .suffix = Animal
+    .suffix = Zwierzę
     .desc = { ent-OrganBaseOrganic.desc }
 ent-OrganAnimalInternal = { ent-OrganAnimal }
     .desc = { ent-OrganAnimal.desc }

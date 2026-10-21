@@ -1,27 +1,27 @@
 cmd-align-desc =
-    Automatically snap the alignment of all anchored airlocks, doors, firelocks etc.
-    to line up with adjacent structures.
+    Automatycznie wyrównuje ustawienie wszystkich zakotwiczonych śluz, drzwi, blokad przeciwpożarowych itp.
+    do sąsiednich konstrukcji.
     
-    Use the [dry run] parameter to perform a check without rotating anything.
-cmd-align-help = Usage: { $command } [MapID] [dry run?]
-cmd-align-no-release = You can't use this command if the game is running in RELEASE configuration.
+    Użyj parametru [dry run], aby wykonać sprawdzenie bez obracania czegokolwiek.
+cmd-align-help = Użycie: { $command } [MapID] [dry run?]
+cmd-align-no-release = Nie możesz użyć tej komendy, jeśli gra działa w konfiguracji RELEASE.
 cmd-align-hint-id = MapID
 cmd-align-hint-dry = dry run?
 cmd-align-feedback-none =
     { $dry ->
-        [true] DRY RUN: No
-       *[false] No
-    } entities compatible with AlignerSystem were found!
+        [true] PRÓBA: nie znaleziono
+       *[false] Nie znaleziono
+    } żadnych encji zgodnych z AlignerSystem!
 cmd-align-feedback-good =
     { $dry ->
-        [true] DRY RUN: No
-       *[false] No
-    } misaligned entities were found.
+        [true] PRÓBA: nie znaleziono
+       *[false] Nie znaleziono
+    } żadnych źle wyrównanych encji.
 cmd-align-feedback =
     { $dry ->
-        [true] DRY RUN: Found
-       *[false] Found and fixed
+        [true] PRÓBA: znaleziono
+       *[false] Znaleziono i naprawiono
     } { $fixed ->
-        [one] a single misaligned entity.
-       *[else] { $fixed } misaligned entities.
+        [one] jedną źle wyrównaną encję.
+       *[else] źle wyrównane encje: { $fixed }.
     }

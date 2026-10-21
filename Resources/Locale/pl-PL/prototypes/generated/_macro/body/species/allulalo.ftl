@@ -1,4 +1,4 @@
-ent-AppearanceAllulalo = allulalo appearance
+ent-AppearanceAllulalo = wygląd allulalo
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobAllulalo = Uristia Mc-Hands
     .desc = { ent-AppearanceAllulalo.desc }

@@ -1,2 +1,2 @@
-cmd-showhtn-desc = Shows the current status for HTN NPCs.
-cmd-showhtn-help = Usage: showhtn
+cmd-showhtn-desc = Pokazuje obecny stan NPC opartych na HTN.
+cmd-showhtn-help = Użycie: showhtn

@@ -1,3 +1,3 @@
-cmd-showambient-desc = Shows all AmbientSoundComponents in the viewport.
-cmd-showambient-help = Usage: showambient
-cmd-showambient-status = Ambient sound overlay set to { $status }.
+cmd-showambient-desc = Pokazuje wszystkie AmbientSoundComponent w polu widzenia.
+cmd-showambient-help = Użycie: showambient
+cmd-showambient-status = Nakładkę dźwięków otoczenia ustawiono na { $status }.

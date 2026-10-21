@@ -1,17 +1,17 @@
-xenoborgs-title = Xenoborgs
-xenoborgs-description = A Xenoborg Mothership was detected near the station. Stop them from turning every sentient being into a xenoborg.
-xenoborgs-welcome = You're a xenoborg. Protect and help the mothership core to make more xenoborgs. and eventually turn all carbon-based life form into silicon.
-mothership-welcome = You're the mothership core. Guide the xenoborgs so they can bring your materials and sentient brains so you can grow the xenoborg army and turn all carbon-based life form into silicon.
-xenoborg-shuttle-call = We have detected that Xenoborgs have overtaken the station. Dispatching an emergency shuttle to collect remaining personnel.
-xenoborgs-borgsmajor = [color=deepskyblue]Xenoborg major victory![/color]
-xenoborgs-borgsminor = [color=deepskyblue]Xenoborg minor victory![/color]
-xenoborgs-neutral = [color=white]Neutral outcome![/color]
-xenoborgs-crewminor = [color=yellow]Crew minor victory![/color]
-xenoborgs-crewmajor = [color=yellow]Crew major victory![/color]
-xenoborgs-cond-all-xenoborgs-dead-core-alive = All xenoborgs were destroyed. The mothership core remains adrift in space.
-xenoborgs-cond-all-xenoborgs-dead-core-dead = The mothership core was destroyed and there are no xenoborgs left.
-xenoborg-number-xenoborg-alive-end = Number of xenoborgs alive: { $count }
-xenoborg-number-crew-alive-end = Number of crew alive: { $count }
-xenoborg-max-number = The highest number of xenoborgs was: { $count }
-xenoborgs-list-start = The starting xenoborg team were:
+xenoborgs-title = Ksenoborgi
+xenoborgs-description = W pobliżu stacji wykryto Statek-matkę ksenoborgów. Powstrzymaj je przed przekształceniem każdej świadomej istoty w ksenoborga.
+xenoborgs-welcome = Jesteś ksenoborgiem. Chroń rdzeń statku-matki i pomagaj mu tworzyć więcej ksenoborgów, a w końcu przekształcić wszystkie formy życia oparte na węglu w krzem.
+mothership-welcome = Jesteś rdzeniem statku-matki. Kieruj ksenoborgami, by przynosiły ci materiały i świadome mózgi, abyś mógł powiększać armię ksenoborgów i przekształcić wszystkie formy życia oparte na węglu w krzem.
+xenoborg-shuttle-call = Wykryliśmy, że ksenoborgi przejęły stację. Wysyłamy wahadłowiec ewakuacyjny, aby zabrać pozostały personel.
+xenoborgs-borgsmajor = [color=deepskyblue]Wielkie zwycięstwo ksenoborgów![/color]
+xenoborgs-borgsminor = [color=deepskyblue]Małe zwycięstwo ksenoborgów![/color]
+xenoborgs-neutral = [color=white]Wynik neutralny![/color]
+xenoborgs-crewminor = [color=yellow]Małe zwycięstwo załogi![/color]
+xenoborgs-crewmajor = [color=yellow]Wielkie zwycięstwo załogi![/color]
+xenoborgs-cond-all-xenoborgs-dead-core-alive = Wszystkie ksenoborgi zostały zniszczone. Rdzeń statku-matki wciąż dryfuje w kosmosie.
+xenoborgs-cond-all-xenoborgs-dead-core-dead = Rdzeń statku-matki został zniszczony i nie zostały żadne ksenoborgi.
+xenoborg-number-xenoborg-alive-end = Liczba żywych ksenoborgów: { $count }
+xenoborg-number-crew-alive-end = Liczba żywych członków załogi: { $count }
+xenoborg-max-number = Największa liczba ksenoborgów wyniosła: { $count }
+xenoborgs-list-start = Początkowa drużyna ksenoborgów:
 xenoborgs-list = - [color=White]{ $name }[/color] ([color=gray]{ $user }[/color])

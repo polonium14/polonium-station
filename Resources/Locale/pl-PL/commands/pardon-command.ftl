@@ -1,8 +1,8 @@
-cmd-pardon-desc = Pardon somebody's ban.
-cmd-pardon-help = Usage: pardon <ban id>
+cmd-pardon-desc = Ułaskawia czyjegoś bana.
+cmd-pardon-help = Użycie: pardon <id bana>
 cmd-pardon-unable-to-parse =
-    Unable to parse { $id } as a ban id integer.
+    Nie można odczytać { $id } jako całkowitego id bana.
     { $help }
-cmd-pardon-already-pardoned = This ban has already been pardoned.
-cmd-pardon-already-pardoned-specific = This ban has already been pardoned by { $admin } in { $time }.
-cmd-pardon-success = Pardoned ban with id { $id }.
+cmd-pardon-already-pardoned = Ten ban został już ułaskawiony.
+cmd-pardon-already-pardoned-specific = Ten ban został już ułaskawiony przez { $admin } w { $time }.
+cmd-pardon-success = Ułaskawiono bana o id { $id }.

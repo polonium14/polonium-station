@@ -1,5 +1,5 @@
-marking-AntAbdomen = Abdomen
-marking-AntAntennae1 = Upright Antennae
-marking-AntAntennae2 = Droopy Antennae
-marking-AntAntennae3 = Sideways Antennae
-marking-AntAntennae4 = Pointed Antennae
+marking-AntAbdomen = Odwłok
+marking-AntAntennae1 = Wyprostowane czułki
+marking-AntAntennae2 = Opadające czułki
+marking-AntAntennae3 = Czułki na boki
+marking-AntAntennae4 = Spiczaste czułki

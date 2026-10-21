@@ -1,3 +1,3 @@
-ent-SpawnPointGhostMiniDragon = ghost role spawn point
-    .suffix = mini dragon
+ent-SpawnPointGhostMiniDragon = punkt odrodzenia postaci-ducha
+    .suffix = mały smok
     .desc = { ent-MarkerBase.desc }

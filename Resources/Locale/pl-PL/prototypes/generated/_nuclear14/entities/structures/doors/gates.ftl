@@ -1,2 +1,2 @@
-ent-N14FenceChainGate = fence gate
-    .desc = A gate in the fence to allow access.
+ent-N14FenceChainGate = furtka w ogrodzeniu
+    .desc = Furtka w ogrodzeniu umożliwiająca wejście.

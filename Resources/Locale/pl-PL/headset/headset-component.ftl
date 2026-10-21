@@ -3,7 +3,7 @@ chat-radio-message-wrap = [color={ $color }]{ $channel } [bold]{ $name }[/bold] 
 chat-radio-message-wrap-bold = [color={ $color }]{ $channel } [bold]{ $name }[/bold] { $verb }, [font={ $fontType } size={ $fontSize }][bold]{ chat-manager-speech-double-quote-begin }{ $message }{ chat-manager-speech-double-quote-end }[/bold][/font][/color]
 examine-headset-default-channel = Użyj { $prefix } aby rozmawiać na domyślnym kanale ([color={ $color }]{ $channel }[/color]).
 chat-radio-common = Wspólny
-chat-radio-centcom = CentComm
+chat-radio-centcom = Centralne Dowództwo
 chat-radio-command = Dowództwo
 chat-radio-engineering = Inżynieryjny
 chat-radio-medical = Medyczny

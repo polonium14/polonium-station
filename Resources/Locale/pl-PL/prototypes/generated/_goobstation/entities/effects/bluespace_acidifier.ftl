@@ -1,2 +1,2 @@
-ent-BluespaceLifeline = bluespace lifeline
-    .desc = Teleports your body to save your life!
+ent-BluespaceLifeline = bluespace'owa linia ratunkowa
+    .desc = Teleportuje twoje ciało, by ocalić ci życie!
