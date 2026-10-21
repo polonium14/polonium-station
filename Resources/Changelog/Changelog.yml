@@ -1,30 +1,4 @@
 ﻿Entries:
-- author: ScarKy0
-  changes:
-  - message: Hostile vent critters now crawl out of a single vent, alerting the station
-      about the location in advance.
-    type: Add
-  - message: Friendly critters no longer have an announcement when spawning.
-    type: Remove
-  - message: Vent critters can no longer spawn on unachored vents.
-    type: Fix
-  id: 9570
-  time: '2026-03-11T23:42:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43047
-- author: Centronias
-  changes:
-  - message: Wrapped parcels can now fit in mail carts.
-    type: Add
-  id: 9571
-  time: '2026-03-13T20:22:29.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43226
-- author: Velken
-  changes:
-  - message: Corrupted silicon laws now use scrambled text in the UI again.
-    type: Fix
-  id: 9572
-  time: '2026-03-13T23:48:43.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43229
 - author: TaserTheFox
   changes:
   - message: Fixed certain bottled reagents not having localization text.
@@ -4328,3 +4302,28 @@
   id: 10064
   time: '2026-10-21T14:00:02.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1123
+- author: Saver310
+  changes:
+  - message: Dodano 10u whisky i 5u Dr. Gibb do pluszaka Asa.
+    type: Tweak
+  id: 10065
+  time: '2026-10-21T14:17:43.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1127
+- author: Saver310
+  changes:
+  - message: "Dodano \"Gang Krzese\u0142\""
+    type: Add
+  - message: "Usuni\u0119to \"Pewna \u015Amier\u0107\""
+    type: Remove
+  id: 10066
+  time: '2026-10-21T14:19:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1130
+- author: Joker66613
+  changes:
+  - message: "Dodano morpha \u2014 zmiennokszta\u0142tnego antagonist\u0119, kt\xF3\
+      ry przybiera posta\u0107 przedmiot\xF3w i po\u017Cartych za\u0142ogant\xF3w,\
+      \ po\u017Cera cia\u0142a i atakuje z zasadzki."
+    type: Add
+  id: 10067
+  time: '2026-10-21T14:14:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1099
