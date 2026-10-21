@@ -160,3 +160,39 @@ public sealed partial class PatientIntakeIssuePrototype : IPrototype
     [DataField(required: true)]
     public LocId Symptom;
 }
+
+/// <summary>
+/// A style of clothing patients arrive in. Every slot rolls its own item, so a group mixes
+/// into many different outfits.
+/// </summary>
+[Prototype]
+public sealed partial class PatientIntakeOutfitPrototype : IPrototype
+{
+    [IdDataField, ViewVariables]
+    public string ID { get; private set; } = default!;
+
+    /// <summary>
+    /// Relative roll weight against the other groups.
+    /// </summary>
+    [DataField]
+    public float Weight = 1f;
+
+    /// <summary>
+    /// Inventory slot name -> what may be worn there.
+    /// </summary>
+    [DataField(required: true)]
+    public Dictionary<string, PatientIntakeOutfitSlot> Slots = new();
+}
+
+[DataDefinition]
+public sealed partial class PatientIntakeOutfitSlot
+{
+    /// <summary>
+    /// Chance the slot is filled at all.
+    /// </summary>
+    [DataField]
+    public float Chance = 1f;
+
+    [DataField(required: true)]
+    public List<EntProtoId> Items = new();
+}

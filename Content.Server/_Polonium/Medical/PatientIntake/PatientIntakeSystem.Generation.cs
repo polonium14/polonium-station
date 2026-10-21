@@ -44,7 +44,7 @@ public sealed partial class PatientIntakeSystem
         Dirty(patient, comp);
 
         if (machine.Comp.Outfits.Count > 0)
-            _spawning.EquipStartingGear(patient, _random.Pick(machine.Comp.Outfits));
+            Dress(patient, _random.Pick(machine.Comp.Outfits.ToDictionary(o => _proto.Index(o), o => _proto.Index(o).Weight)));
 
         if (TryComp<HumanoidProfileComponent>(patient, out var profile)
             && machine.Comp.SpeciesGear.TryGetValue(profile.Species, out var speciesGear))
@@ -89,6 +89,23 @@ public sealed partial class PatientIntakeSystem
         _visualBody.ApplyProfileTo(patient, profile);
         _humanoidProfile.ApplyProfileTo(patient, profile);
         return patient;
+    }
+
+    /// <summary>
+    /// Rolls every slot of the group separately, so one group makes many different outfits.
+    /// </summary>
+    private void Dress(EntityUid patient, PatientIntakeOutfitPrototype outfit)
+    {
+        var coords = Transform(patient).Coordinates;
+        foreach (var (slot, options) in outfit.Slots)
+        {
+            if (options.Items.Count == 0 || !_random.Prob(options.Chance))
+                continue;
+
+            var item = Spawn(_random.Pick(options.Items), coords);
+            if (!_inventory.TryEquip(patient, item, slot, silent: true, force: true))
+                Del(item); // e.g. shoes on a species that can't wear them
+        }
     }
 
     private void RollIssues(EntityUid patient, PatientIntakePatientComponent comp, PatientIntakeCasePrototype caseProto)
