@@ -35,6 +35,7 @@ using Content.Shared.Roles.Jobs;
 using Content.Shared.Storage.Components;
 using Content.Shared.Verbs;
 using Robust.Server.Player;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
@@ -71,6 +72,8 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedPowerReceiverSystem _power = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedSolutionContainerSystem _solutions = default!;
     [Dependency] private SharedSubdermalImplantSystem _implants = default!;
     [Dependency] private StationSpawningSystem _spawning = default!;
@@ -89,7 +92,6 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
 
         SubscribeLocalEvent<PatientIntakeMachineComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<PatientIntakeMachineComponent, EntityTerminatingEvent>(OnMachineTerminating);
-        SubscribeLocalEvent<PatientIntakeMachineComponent, StorageAfterOpenEvent>(OnAfterOpen);
         SubscribeLocalEvent<PatientIntakeMachineComponent, StorageAfterCloseEvent>(OnAfterClose);
         SubscribeLocalEvent<PatientIntakeMachineComponent, GetVerbsEvent<AlternativeVerb>>(OnGetToggleVerb);
         SubscribeLocalEvent<PatientIntakeMachineComponent, GetVerbsEvent<Verb>>(OnGetMarkMissingVerb);
@@ -132,18 +134,21 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
     {
         base.Update(frameTime);
 
-        if (!_cfg.GetCVar(CCVars.PatientIntakeEnabled))
-            return;
-
+        var enabled = _cfg.GetCVar(CCVars.PatientIntakeEnabled);
         var query = EntityQueryEnumerator<PatientIntakeMachineComponent, EntityStorageComponent>();
         while (query.MoveNext(out var uid, out var machine, out var storage))
         {
             var ent = (uid, machine);
+            _appearance.SetData(uid, PatientIntakeVisuals.Status, GetStatus(ent, storage, enabled));
+            if (!enabled)
+                continue;
+
             if (machine.Case is { } activeCase)
             {
                 if (activeCase.ToSpawn > 0 && _timing.CurTime >= activeCase.NextPop && IsReadyForPatient(storage))
                     PopPatient(ent, activeCase, storage);
 
+                BeepIfWaiting((uid, machine), storage, frameTime);
                 continue;
             }
 
@@ -160,6 +165,33 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
             else
                 machine.UntilNextCase = RetryDelay;
         }
+    }
+
+    private PatientIntakeStatus GetStatus(Entity<PatientIntakeMachineComponent> ent, EntityStorageComponent storage, bool enabled)
+    {
+        if (!_power.IsPowered(ent.Owner))
+            return PatientIntakeStatus.Off;
+
+        if (ent.Comp.Case != null)
+            return IsPatientWaiting(storage) ? PatientIntakeStatus.PatientWaiting : PatientIntakeStatus.Busy;
+
+        return enabled && ent.Comp.Enabled ? PatientIntakeStatus.Ready : PatientIntakeStatus.Off;
+    }
+
+    private bool IsPatientWaiting(EntityStorageComponent storage)
+    {
+        return !storage.Open && storage.Contents.ContainedEntities.Any(HasComp<PatientIntakePatientComponent>);
+    }
+
+    private void BeepIfWaiting(Entity<PatientIntakeMachineComponent> ent, EntityStorageComponent storage, float frameTime)
+    {
+        ent.Comp.UntilWaitingSound -= TimeSpan.FromSeconds(frameTime);
+        if (ent.Comp.UntilWaitingSound > TimeSpan.Zero)
+            return;
+
+        ent.Comp.UntilWaitingSound = ent.Comp.WaitingSoundDelay;
+        if (IsPatientWaiting(storage))
+            _audio.PlayPvs(ent.Comp.WaitingSound, ent);
     }
 
     public bool IsRunning(Entity<PatientIntakeMachineComponent> ent)
@@ -284,9 +316,9 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
 
     #region Storage
 
-    private void OnAfterOpen(Entity<PatientIntakeMachineComponent> ent, ref StorageAfterOpenEvent args)
+    protected override void OnOpened(Entity<PatientIntakeMachineComponent> ent)
     {
-        if (ent.Comp.Case is not { } activeCase || !TryComp<EntityStorageComponent>(ent, out var storage))
+        if (ent.Comp.Case is not { } activeCase)
             return;
 
         // The tray contents are already ejected onto the tray here.

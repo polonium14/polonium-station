@@ -251,6 +251,26 @@ public sealed class PatientIntakeMachineTest : GameTest
     }
 
     [Test]
+    public async Task TrayStaysOpenAfterOpening()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestHealthy");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(2);
+        await server.WaitPost(() => storage.TryCloseStorage(machine, machine));
+        await server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<EntityStorageComponent>(machine).Open, Is.True, "Closing right after opening must be refused."));
+
+        await server.WaitPost(() => entMan.GetComponent<PatientIntakeMachineComponent>(machine).CloseLockedUntil = TimeSpan.Zero);
+        await server.WaitPost(() => storage.TryCloseStorage(machine, machine));
+        await server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<EntityStorageComponent>(machine).Open, Is.False, "Once the lock runs out the tray closes."));
+    }
+
+    [Test]
     public async Task WrongBodyIsRejected()
     {
         var (machine, _) = await StartCase("PatientIntakeTestHealthy");
@@ -269,6 +289,7 @@ public sealed class PatientIntakeMachineTest : GameTest
             xform.SetCoordinates(patient, new EntityCoordinates(machine, new Vector2(5, 5)));
             var stranger = entMan.SpawnEntity("MobHuman", new EntityCoordinates(machine, new Vector2(0, -1)));
             entMan.System<Content.Shared.Standing.StandingStateSystem>().Down(stranger);
+            entMan.GetComponent<PatientIntakeMachineComponent>(machine).CloseLockedUntil = TimeSpan.Zero;
             storage.TryCloseStorage(machine, machine);
         });
         await Pair.RunTicksSync(2);
@@ -297,6 +318,7 @@ public sealed class PatientIntakeMachineTest : GameTest
             var stranger = entMan.SpawnEntity("MobHuman", tray);
             storage.Insert(stranger, bag);
             storage.CloseStorage(bag);
+            entMan.GetComponent<PatientIntakeMachineComponent>(machine).CloseLockedUntil = TimeSpan.Zero;
             storage.TryCloseStorage(machine, machine);
         });
         await Pair.RunTicksSync(2);

@@ -7,6 +7,7 @@ using Content.Shared.Popups;
 using Content.Shared.Storage.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Polonium.Medical.PatientIntake;
 
@@ -19,14 +20,27 @@ public abstract partial class SharedPatientIntakeSystem : EntitySystem
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private SharedContainerSystem _containers = default!;
     [Dependency] private SharedPopupSystem _popups = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
+        SubscribeLocalEvent<PatientIntakeMachineComponent, StorageAfterOpenEvent>(OnAfterOpen);
         SubscribeLocalEvent<PatientIntakeMachineComponent, StorageCloseAttemptEvent>(OnCloseAttempt);
         SubscribeLocalEvent<PatientIntakeMachineComponent, StorageBeforeCloseEvent>(OnBeforeClose,
             after: [typeof(EntityStorageLayingDownOverrideSystem)]);
+    }
+
+    private void OnAfterOpen(Entity<PatientIntakeMachineComponent> ent, ref StorageAfterOpenEvent args)
+    {
+        ent.Comp.CloseLockedUntil = _timing.CurTime + ent.Comp.CloseLockTime;
+        Dirty(ent);
+        OnOpened(ent);
+    }
+
+    protected virtual void OnOpened(Entity<PatientIntakeMachineComponent> ent)
+    {
     }
 
     private void OnCloseAttempt(Entity<PatientIntakeMachineComponent> ent, ref StorageCloseAttemptEvent args)
@@ -53,6 +67,15 @@ public abstract partial class SharedPatientIntakeSystem : EntitySystem
         if (contents.Any(e => ContainsForeignBody(ent, e)))
         {
             Reject(ent, args.User, "patient-intake-popup-no-patient");
+            args.Cancelled = true;
+            return;
+        }
+
+        if (_timing.CurTime < ent.Comp.CloseLockedUntil)
+        {
+            var seconds = (int) Math.Ceiling((ent.Comp.CloseLockedUntil - _timing.CurTime).TotalSeconds);
+            if (args.User is { } user)
+                _popups.PopupClient(Loc.GetString("patient-intake-popup-locked", ("seconds", seconds)), ent, user);
             args.Cancelled = true;
         }
     }
