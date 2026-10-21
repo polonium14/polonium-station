@@ -1,17 +1,24 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 289.0.0
+  engineVersion: 291.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/05/2026 12:13:40
-  entityCount: 12472
+  time: 10/22/2026 14:37:31
+  entityCount: 12465
 maps:
 - 1
 grids:
 - 2
 orphans: []
 nullspace:
+- 4543
+- 4544
+- 4545
+- 4546
+- 4547
+- 4548
+- 4549
 - 12442
 - 12443
 - 12444
@@ -36,13 +43,6 @@ nullspace:
 - 12463
 - 12464
 - 12465
-- 12466
-- 12467
-- 12468
-- 12469
-- 12470
-- 12471
-- 12472
 tilemap:
   0: Space
   41: FloorArcadeBlue
@@ -1540,6 +1540,13 @@ entities:
     - type: GridSplitNode
     - type: ChunkContainer
       chunkEntities:
+      - 4543
+      - 4544
+      - 4545
+      - 4546
+      - 4547
+      - 4548
+      - 4549
       - 12442
       - 12443
       - 12444
@@ -1564,13 +1571,6 @@ entities:
       - 12463
       - 12464
       - 12465
-      - 12466
-      - 12467
-      - 12468
-      - 12469
-      - 12470
-      - 12471
-      - 12472
     - type: SurveillanceCameraMap
 - proto: AcousticGuitarInstrument
   entities:
@@ -5351,7 +5351,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: 13.470278,-15.320015
+      pos: 13.374341,-15.364959
 - proto: BoxCartridgeCap
   entities:
   - uid: 499
@@ -5475,11 +5475,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -10.371262,-31.421198
-  - uid: 515
-    components:
-    - type: Transform
-      parent: 2
-      pos: 14.501501,-15.43846
 - proto: BoxFolderRed
   entities:
   - uid: 516
@@ -5541,7 +5536,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: 13.942519,-15.320015
+      pos: 13.779008,-15.3321495
 - proto: BoxLightMixed
   entities:
   - uid: 529
@@ -26109,7 +26104,7 @@ entities:
       pos: -21.49966,9.580566
 - proto: ChunkEntity
   entities:
-  - uid: 12442
+  - uid: 4543
     components:
     - type: ChunkEntity
       root: 2
@@ -26394,7 +26389,7 @@ entities:
             694: -3,-29
             695: -2,-29
             696: -1,-29
-  - uid: 12443
+  - uid: 4544
     components:
     - type: ChunkEntity
       root: 2
@@ -26567,7 +26562,7 @@ entities:
             518: 21,24
             519: 22,24
             521: 20,24
-  - uid: 12444
+  - uid: 4545
     components:
     - type: ChunkEntity
       root: 2
@@ -26672,7 +26667,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             968: 4,-36
-  - uid: 12445
+  - uid: 4546
     components:
     - type: ChunkEntity
       root: 2
@@ -27036,7 +27031,7 @@ entities:
           decals:
             128: -5,7
             129: -5,8
-  - uid: 12446
+  - uid: 4547
     components:
     - type: ChunkEntity
       root: 2
@@ -27139,7 +27134,7 @@ entities:
             18: -40,2
             19: -40,1
             20: -40,0
-  - uid: 12447
+  - uid: 4548
     components:
     - type: ChunkEntity
       root: 2
@@ -27293,7 +27288,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             910: -20,9
-  - uid: 12448
+  - uid: 4549
     components:
     - type: ChunkEntity
       root: 2
@@ -27536,7 +27531,7 @@ entities:
           decals:
             211: 24,13
             213: 24,11
-  - uid: 12449
+  - uid: 12442
     components:
     - type: ChunkEntity
       root: 2
@@ -27854,7 +27849,7 @@ entities:
             angle: 3.141592653589793 rad
           decals:
             307: 7,11
-  - uid: 12450
+  - uid: 12443
     components:
     - type: ChunkEntity
       root: 2
@@ -28043,7 +28038,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             388: 49.003635,-25.832918
-  - uid: 12451
+  - uid: 12444
     components:
     - type: ChunkEntity
       root: 2
@@ -28184,7 +28179,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             327: 47.08176,-23.395418
-  - uid: 12452
+  - uid: 12445
     components:
     - type: ChunkEntity
       root: 2
@@ -28297,7 +28292,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             886: -4,29
-  - uid: 12453
+  - uid: 12446
     components:
     - type: ChunkEntity
       root: 2
@@ -28453,7 +28448,7 @@ entities:
             4: 4,25
             174: 0,28
             185: 4,23
-  - uid: 12454
+  - uid: 12447
     components:
     - type: ChunkEntity
       root: 2
@@ -28676,7 +28671,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             697: 0,-29
-  - uid: 12455
+  - uid: 12448
     components:
     - type: ChunkEntity
       root: 2
@@ -29016,7 +29011,7 @@ entities:
             cleanable: True
           decals:
             120: 0,-5
-  - uid: 12456
+  - uid: 12449
     components:
     - type: ChunkEntity
       root: 2
@@ -29140,7 +29135,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             827: -42,-6
-  - uid: 12457
+  - uid: 12450
     components:
     - type: ChunkEntity
       root: 2
@@ -29195,7 +29190,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             618: -52,-12
-  - uid: 12458
+  - uid: 12451
     components:
     - type: ChunkEntity
       root: 2
@@ -29314,7 +29309,7 @@ entities:
           decals:
             579: -17,-31
             580: -17,-30
-  - uid: 12459
+  - uid: 12452
     components:
     - type: ChunkEntity
       root: 2
@@ -29382,7 +29377,7 @@ entities:
             931: -4,-36
             947: -2,-37
             948: -1,-37
-  - uid: 12460
+  - uid: 12453
     components:
     - type: ChunkEntity
       root: 2
@@ -29498,7 +29493,7 @@ entities:
             278: 60,2
             279: 60,3
             280: 60,4
-  - uid: 12461
+  - uid: 12454
     components:
     - type: ChunkEntity
       root: 2
@@ -29700,7 +29695,7 @@ entities:
           decals:
             869: 61,-9
             870: 62,-9
-  - uid: 12462
+  - uid: 12455
     components:
     - type: ChunkEntity
       root: 2
@@ -29874,7 +29869,7 @@ entities:
             407: 24,-7
             408: 24,-6
             409: 24,-5
-  - uid: 12463
+  - uid: 12456
     components:
     - type: ChunkEntity
       root: 2
@@ -29897,7 +29892,7 @@ entities:
             733: 17,-18
             734: 18,-18
             735: 19,-18
-  - uid: 12464
+  - uid: 12457
     components:
     - type: ChunkEntity
       root: 2
@@ -30079,7 +30074,7 @@ entities:
           decals:
             2: -20,-15
             821: -20,-16
-  - uid: 12465
+  - uid: 12458
     components:
     - type: ChunkEntity
       root: 2
@@ -30119,7 +30114,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             859: -19,42
-  - uid: 12466
+  - uid: 12459
     components:
     - type: ChunkEntity
       root: 2
@@ -30149,7 +30144,7 @@ entities:
             855: -15,38
             856: -12,37
             865: -16,39
-  - uid: 12467
+  - uid: 12460
     components:
     - type: ChunkEntity
       root: 2
@@ -30322,7 +30317,7 @@ entities:
             815: 38,0
             816: 39,0
             817: 40,0
-  - uid: 12468
+  - uid: 12461
     components:
     - type: ChunkEntity
       root: 2
@@ -30362,7 +30357,7 @@ entities:
             921: 35.804787,-14.258554
             924: 35.272873,-13.024511
             925: 36.081383,-13.173448
-  - uid: 12469
+  - uid: 12462
     components:
     - type: ChunkEntity
       root: 2
@@ -30509,7 +30504,7 @@ entities:
           decals:
             20: -1,-7
             21: -1,-6
-  - uid: 12470
+  - uid: 12463
     components:
     - type: ChunkEntity
       root: 2
@@ -30538,7 +30533,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             393: -26,24
-  - uid: 12471
+  - uid: 12464
     components:
     - type: ChunkEntity
       root: 2
@@ -30563,7 +30558,7 @@ entities:
             color: '#FFFFFFFF'
           decals:
             834: 38,16
-  - uid: 12472
+  - uid: 12465
     components:
     - type: ChunkEntity
       root: 2
@@ -31129,12 +31124,6 @@ entities:
       pos: 35.56775,-3.545828
 - proto: ClothingEyesGlasses
   entities:
-  - uid: 4543
-    components:
-    - type: Transform
-      parent: 4542
-    - type: Physics
-      canCollide: False
   - uid: 4550
     components:
     - type: Transform
@@ -31240,12 +31229,6 @@ entities:
       pos: 51.410316,17.602825
 - proto: ClothingHandsGlovesLatex
   entities:
-  - uid: 4544
-    components:
-    - type: Transform
-      parent: 4542
-    - type: Physics
-      canCollide: False
   - uid: 4562
     components:
     - type: Transform
@@ -31462,12 +31445,6 @@ entities:
       pos: 4.570995,-42.497837
 - proto: ClothingMaskSterile
   entities:
-  - uid: 4545
-    components:
-    - type: Transform
-      parent: 4542
-    - type: Physics
-      canCollide: False
   - uid: 4591
     components:
     - type: Transform
@@ -31544,12 +31521,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 4546
-    components:
-    - type: Transform
-      parent: 4542
-    - type: Physics
-      canCollide: False
 - proto: ClothingNeckTransPin
   entities:
   - uid: 4600
@@ -31619,14 +31590,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -31.464373,10.564828
-- proto: ClothingOuterCoatLab
-  entities:
-  - uid: 4547
-    components:
-    - type: Transform
-      parent: 4542
-    - type: Physics
-      canCollide: False
 - proto: ClothingOuterVestHazard
   entities:
   - uid: 4620
@@ -31766,12 +31729,6 @@ entities:
       pos: 37.55209,-3.407352
 - proto: ClothingShoesLeather
   entities:
-  - uid: 4548
-    components:
-    - type: Transform
-      parent: 4542
-    - type: Physics
-      canCollide: False
   - uid: 4641
     components:
     - type: Transform
@@ -31817,12 +31774,6 @@ entities:
       pos: 14.57035,20.510712
 - proto: ClothingUniformJumpsuitDetective
   entities:
-  - uid: 4549
-    components:
-    - type: Transform
-      parent: 4542
-    - type: Physics
-      canCollide: False
   - uid: 4650
     components:
     - type: Transform
@@ -36938,6 +36889,13 @@ entities:
       pos: 42.5,-1.5
 - proto: FaxMachineBase
   entities:
+  - uid: 515
+    components:
+    - type: Transform
+      parent: 2
+      pos: 14.5,-15.5
+    - type: FaxMachine
+      name: Kostnica
   - uid: 4294
     components:
     - type: Transform
@@ -55869,6 +55827,19 @@ entities:
     - type: Transform
       parent: 2
       pos: 7.5,-8.5
+- proto: MedicalBiofabricator
+  entities:
+  - uid: 4542
+    components:
+    - type: Transform
+      parent: 2
+      pos: 15.5,-13.5
+    - type: TechnologyDatabase
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
 - proto: MedicalComputerComms
   entities:
   - uid: 12359
@@ -56030,11 +56001,6 @@ entities:
       pos: -31.683014,-19.621332
 - proto: Morgue
   entities:
-  - uid: 8150
-    components:
-    - type: Transform
-      parent: 2
-      pos: 14.5,-13.5
   - uid: 8151
     components:
     - type: Transform
@@ -56727,6 +56693,18 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 11.569283,-41.135525
+- proto: PatientIntakeMachine
+  entities:
+  - uid: 8150
+    components:
+    - type: Transform
+      parent: 2
+      pos: 14.5,-13.5
+    - type: DeviceLinkSource
+      linkedPorts:
+        515:
+        - - PatientIntakeFax
+          - PatientIntakeFaxReceiver
 - proto: Pen
   entities:
   - uid: 8248
@@ -65698,7 +65676,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: 13.175127,-15.438009
+      pos: 13.932125,-15.3758955
 - proto: StasisBed
   entities:
   - uid: 4723
@@ -78181,33 +78159,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 10.5,-13.5
-- proto: WardrobeWhite
-  entities:
-  - uid: 4542
-    components:
-    - type: MetaData
-      name: mortician's wardrobe
-      desc: Smells of formaldehyde, smoke and menthol.
-    - type: Transform
-      parent: 2
-      pos: 15.536513,-13.5
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          ents:
-          - 4547
-          - 4545
-          - 4543
-          - 4544
-          - 4546
-          - 4548
-          - 4549
-          showEnts: False
-          occludes: True
-        paper_label: !type:ContainerSlot
-          ent: null
-          showEnts: False
-          occludes: True
 - proto: WarningCO2
   entities:
   - uid: 11785
