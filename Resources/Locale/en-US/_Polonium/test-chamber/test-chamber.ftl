@@ -1,0 +1,10 @@
+test-chamber-window-title = Test chamber
+test-chamber-window-search = Search by name or PR...
+test-chamber-window-spawn = Drop kit
+test-chamber-window-reset = Clean up kits
+test-chamber-window-reset-confirm = Delete everything?
+test-chamber-window-pick = Pick a kit. Kits land on free tiles around the console.
+test-chamber-window-contents = Contents: {$entities}
+test-chamber-no-space = There is no free floor around the console.
+test-chamber-no-permission = Only admins with the Debug permission can use the test chamber console.
+test-chamber-reset-done = Removed entities dropped from kits: {$count}.
