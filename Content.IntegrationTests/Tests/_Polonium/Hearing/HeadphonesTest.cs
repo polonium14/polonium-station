@@ -13,7 +13,7 @@ namespace Content.IntegrationTests.Tests._Polonium.Hearing;
 /// Headphones: switched on over the ears they muffle speech, and worn anywhere on the head they keep off the
 /// flashbang's bang, which otherwise slows like a changeling screech.
 /// </summary>
-[TestOf(typeof(SpeechMufflingSystem))]
+[TestOf(typeof(HearingMufflingSystem))]
 [TestOf(typeof(BangOnTriggerSystem))]
 public sealed class HeadphonesTest : InteractionTest
 {
@@ -24,7 +24,7 @@ public sealed class HeadphonesTest : InteractionTest
     [Test]
     public async Task MuffleOnlyWhenOnAndOverEars()
     {
-        var muffling = SEntMan.System<SpeechMufflingSystem>();
+        var muffling = SEntMan.System<HearingMufflingSystem>();
         var inventory = SEntMan.System<InventorySystem>();
         var toggle = SEntMan.System<ItemToggleSystem>();
 
@@ -41,14 +41,14 @@ public sealed class HeadphonesTest : InteractionTest
         {
             Assert.That(inventory.TryEquip(mob, phones, "neck", true, true), "Headphones must fit around the neck.");
             Assert.That(toggle.TrySetActive(phones, true), "Headphones must switch on.");
-            Assert.That(muffling.IsSpeechMuffled(mob), Is.False, "Headphones around the neck don't cover the ears.");
+            Assert.That(muffling.IsHearingMuffled(mob), Is.False, "Headphones around the neck don't cover the ears.");
 
             Assert.That(inventory.TryUnequip(mob, "neck", true, true));
             Assert.That(inventory.TryEquip(mob, phones, "ears", true, true), "Headphones must fit over the ears.");
-            Assert.That(muffling.IsSpeechMuffled(mob), "Switched-on headphones over the ears muffle speech.");
+            Assert.That(muffling.IsHearingMuffled(mob), "Switched-on headphones over the ears muffle speech.");
 
             Assert.That(toggle.TrySetActive(phones, false));
-            Assert.That(muffling.IsSpeechMuffled(mob), Is.False, "Switched-off headphones let speech through.");
+            Assert.That(muffling.IsHearingMuffled(mob), Is.False, "Switched-off headphones let speech through.");
         });
     }
 

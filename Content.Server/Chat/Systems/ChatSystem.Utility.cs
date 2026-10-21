@@ -83,7 +83,7 @@ public sealed partial class ChatSystem
             if (muffledWrappedMessage != null
                 && session.AttachedEntity is { } listener
                 && listener != source
-                && _speechMuffling.IsSpeechMuffled(listener))
+                && _hearingMuffling.IsHearingMuffled(listener))
             {
                 _chatManager.ChatMessageToOne(channel, SpeechMuffledMessage, muffledWrappedMessage, source, entHideChat, session.Channel, author: author);
                 continue;

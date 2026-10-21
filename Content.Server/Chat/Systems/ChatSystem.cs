@@ -114,7 +114,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private EntityQuery<GhostHearingComponent> _ghostHearingQuery = default!;
     [Dependency] private SupporterSystem _supporters = default!;
     [Dependency] private ShutUpSystem _shutUp = default!;
-    [Dependency] private SpeechMufflingSystem _speechMuffling = default!; // POLONIUM
+    [Dependency] private HearingMufflingSystem _hearingMuffling = default!; // POLONIUM
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;

@@ -165,7 +165,7 @@ public sealed partial class ChatSystem
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
             // POLONIUM: headphones on, the whisper is lost
-            if (listener != source && _speechMuffling.IsSpeechMuffled(listener))
+            if (listener != source && _hearingMuffling.IsHearingMuffled(listener))
                 _chatManager.ChatMessageToOne(ChatChannel.Whisper, SpeechMuffledMessage,
                     Loc.GetString("speech-muffling-whisper-wrap-message", ("entityName", nameIdentity)), source, false, session.Channel);
             else // POLONIUM end
