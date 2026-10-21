@@ -116,6 +116,11 @@ namespace Content.Client.Inventory
         {
             base.Open();
 
+            // Polonium start -- prevents client crash when entity is deleted and strip menu is still open
+            if (!EntMan.EntityExists(Owner))
+                return;
+            // Polonium end
+
             _strippingMenu = this.CreateWindowCenteredLeft<StrippingMenu>();
             _strippingMenu.OnDirty += UpdateMenu;
             _strippingMenu.Title = Loc.GetString("strippable-bound-user-interface-stripping-menu-title",
