@@ -132,3 +132,9 @@
   background: /Textures/LobbyScreens/DrunkardsSpreeRedux.png
   title: lobby-state-background-drunkardsspreeredux-title
   artist: lobby-state-background-drunkardsspreeredux-artist
+
+- type: lobbyBackground
+  id: KrzesloGang
+  background: /Textures/LobbyScreens/KrzesloGang.png
+  title: lobby-state-background-krzeslogang-title
+  artist: lobby-state-background-krzeslogang-artist

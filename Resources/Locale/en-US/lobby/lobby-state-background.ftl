@@ -36,3 +36,6 @@ lobby-state-background-jerzy-artist = Saver310
 
 lobby-state-background-drunkardsspreeredux-title = Drunkards' Spree Redux
 lobby-state-background-drunkardsspreeredux-artist = Saver310
+
+lobby-state-background-krzeslogang-title = Gang Krzeseł
+lobby-state-background-krzeslogang-artist = Saver310
