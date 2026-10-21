@@ -522,6 +522,38 @@ public sealed class PatientIntakeMachineTest : GameTest
     }
 
     [Test]
+    public async Task EveryOutfitItemCanBeWornByAHuman()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var map = await pair.CreateTestMap();
+
+        await server.WaitAssertion(() =>
+        {
+            var machine = entMan.SpawnEntity("PatientIntakeMachine", map.GridCoords);
+            var inventory = entMan.System<Content.Shared.Inventory.InventorySystem>();
+            foreach (var group in entMan.GetComponent<PatientIntakeMachineComponent>(machine).Outfits)
+            {
+                foreach (var (slot, options) in server.ProtoMan.Index(group).Slots)
+                {
+                    foreach (var itemId in options.Items)
+                    {
+                        // A jumpsuit first, since some slots need one underneath.
+                        var human = entMan.SpawnEntity("MobHuman", map.GridCoords);
+                        if (slot != "jumpsuit")
+                            inventory.TryEquip(human, entMan.SpawnEntity("ClothingUniformJumpsuitColorGrey", map.GridCoords), "jumpsuit", true, true);
+
+                        var item = entMan.SpawnEntity(itemId, map.GridCoords);
+                        Assert.That(inventory.TryEquip(human, item, slot, true, true), Is.True, $"{group}: {itemId} can't be worn in {slot}.");
+                        entMan.DeleteEntity(human);
+                    }
+                }
+            }
+        });
+    }
+
+    [Test]
     public async Task MarkMissingDebitsAndReleasesThePatient()
     {
         var (machine, patient) = await StartCase("PatientIntakeTestHealthy");
