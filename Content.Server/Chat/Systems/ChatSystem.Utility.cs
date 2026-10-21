@@ -64,7 +64,7 @@ public sealed partial class ChatSystem
     /// <summary>
     ///     Sends a chat message to the given players in range of the source entity.
     /// </summary>
-    private void SendInVoiceRange(ChatChannel channel, string message, string wrappedMessage, EntityUid source, ChatTransmitRange range, NetUserId? author = null, EntityUid? excludeRecipient = null)
+    private void SendInVoiceRange(ChatChannel channel, string message, string wrappedMessage, EntityUid source, ChatTransmitRange range, NetUserId? author = null, EntityUid? excludeRecipient = null, string? muffledWrappedMessage = null) // POLONIUM: muffledWrappedMessage
     {
         foreach (var (session, data) in GetRecipients(source, VoiceRange))
         {
@@ -78,6 +78,18 @@ public sealed partial class ChatSystem
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
             var entHideChat = entRange == MessageRangeCheckResult.HideChat;
+
+            // POLONIUM: listeners with headphones on get the muffled version instead
+            if (muffledWrappedMessage != null
+                && session.AttachedEntity is { } listener
+                && listener != source
+                && _speechMuffling.IsSpeechMuffled(listener))
+            {
+                _chatManager.ChatMessageToOne(channel, SpeechMuffledMessage, muffledWrappedMessage, source, entHideChat, session.Channel, author: author);
+                continue;
+            }
+            // POLONIUM end
+
             _chatManager.ChatMessageToOne(channel, message, wrappedMessage, source, entHideChat, session.Channel, author: author);
         }
 
@@ -179,6 +191,7 @@ public sealed partial class ChatSystem
     public static readonly ProtoId<ReplacementAccentPrototype> ChatSanitize_Accent = "chatsanitize";
 
     public const string ChatSanitize_Polish = "chatsanitize-pl"; // Polonium
+    private const string SpeechMuffledMessage = "..."; // POLONIUM: what the speech bubble shows through headphones
 
     public string SanitizeMessageReplaceWords(string message)
     {

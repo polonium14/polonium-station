@@ -64,6 +64,7 @@
 using System.Globalization;
 using Content.Server._Polonium.Chat;
 using Content.Server._Polonium.Supporters;
+using Content.Shared._Polonium.Hearing; // POLONIUM
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
@@ -113,6 +114,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private EntityQuery<GhostHearingComponent> _ghostHearingQuery = default!;
     [Dependency] private SupporterSystem _supporters = default!;
     [Dependency] private ShutUpSystem _shutUp = default!;
+    [Dependency] private SpeechMufflingSystem _speechMuffling = default!; // POLONIUM
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
