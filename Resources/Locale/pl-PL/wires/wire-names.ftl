@@ -58,6 +58,7 @@ wire-name-door-timer = MINU
 wire-name-lock = BLOK
 wire-name-power = ZASI
 wire-name-arcade-invincible = MNDŻ
+wire-name-player-invincible = GRCZ
 wire-name-vending-contraband = MNDŻ
 wire-name-vending-eject = HNDL
 wire-name-pa-keyboard = KLAW
