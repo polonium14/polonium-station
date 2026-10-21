@@ -4,6 +4,10 @@ using Content.Shared.DeviceLinking;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Radio;
 using Content.Shared.Roles;
+using Robust.Shared.Audio;
+using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Polonium.Medical.PatientIntake;
@@ -12,7 +16,7 @@ namespace Content.Shared._Polonium.Medical.PatientIntake;
 /// Morgue-like machine that delivers NPC patients with generated injuries and pays the
 /// department account when they come back healthy.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class PatientIntakeMachineComponent : Component
 {
     /// <summary>
@@ -74,6 +78,27 @@ public sealed partial class PatientIntakeMachineComponent : Component
 
     [DataField]
     public float GearCutMax = 0.75f;
+
+    /// <summary>
+    /// Played while a patient waits in the closed tray, like a morgue holding a live body.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier WaitingSound = new SoundPathSpecifier("/Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg");
+
+    /// <summary>
+    /// How long the tray stays open after opening, so a patient isn't sent back by a misclick.
+    /// </summary>
+    [DataField]
+    public TimeSpan CloseLockTime = TimeSpan.FromSeconds(5);
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
+    public TimeSpan CloseLockedUntil;
+
+    [DataField]
+    public TimeSpan WaitingSoundDelay = TimeSpan.FromSeconds(30);
+
+    [ViewVariables]
+    public TimeSpan UntilWaitingSound;
 
     /// <summary>
     /// Time left until the next case. Only counts down while the machine is on and powered.
@@ -142,4 +167,24 @@ public sealed class PatientIntakeCase
     public int Net;
 
     public List<string> Receipt = new();
+}
+
+[Serializable, NetSerializable]
+public enum PatientIntakeVisuals : byte
+{
+    Status,
+}
+
+[Serializable, NetSerializable]
+public enum PatientIntakeStatus : byte
+{
+    Off,
+    Ready,
+    PatientWaiting,
+    Busy,
+}
+
+public enum PatientIntakeVisualLayers : byte
+{
+    Light,
 }
