@@ -23,43 +23,92 @@
     - PatientIntakeFax
   - type: PatientIntakeMachine
     outfits:
-    - PatientIntakeOutfitGrey
-    - PatientIntakeOutfitBlue
-    - PatientIntakeOutfitGreen
-    - PatientIntakeOutfitWhite
+    - PatientIntakeCivilian
+    - PatientIntakePatientGown
+    - PatientIntakeMilitary
     speciesGear:
       Vox: PatientIntakeVoxInternals
 
 - type: randomHumanoidSettings
   id: PatientIntakePatient
-  # Diona bodies fail client-side initialization when they spawn near a player.
   speciesBlacklist:
   - Diona
 
-- type: startingGear
-  id: PatientIntakeOutfitGrey
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitColorGrey
-    shoes: ClothingShoesColorBlack
+# Clothing groups
+- type: patientIntakeOutfit
+  id: PatientIntakeCivilian
+  weight: 70
+  slots:
+    jumpsuit:
+      items:
+      - ClothingUniformJumpsuitColorGrey
+      - ClothingUniformJumpsuitColorWhite
+      - ClothingUniformJumpsuitColorBlack
+      - ClothingUniformJumpsuitColorOrange
+      - ClothingUniformJumpsuitColorMaroon
+      - ClothingUniformJumpsuitColorDarkBlue
+      - ClothingUniformJumpsuitCasualBlue
+      - ClothingUniformJumpsuitCasualGreen
+      - ClothingUniformJumpsuitCasualPurple
+      - ClothingUniformJumpskirtCasualRed
+      - ClothingUniformJumpskirtColorTeal
+      - ClothingUniformJumpskirtColorPink
+    shoes:
+      chance: 0.9
+      items:
+      - ClothingShoesColorBlack
+      - ClothingShoesColorBrown
+      - ClothingShoesColorWhite
+      - ClothingShoesColorBlue
+      - ClothingShoesColorPurple
+      - ClothingShoesColorRed
+      - ClothingShoesColorOrange
+      - ClothingShoesSandalsWhiteSocks
+      - ClothingShoesSlippers
+    head:
+      chance: 0.3
+      items:
+      - ClothingHeadHatBeret
+      - ClothingHeadHatFedoraBrown
+      - ClothingHeadHatFedoraGrey
+      - ClothingHeadHatBowlerHat
+      - ClothingHeadHatGreysoft
+      - ClothingHeadHatBluesoft
+      - ClothingHeadHatRedsoft
+      - ClothingHeadHatTrucker
 
-- type: startingGear
-  id: PatientIntakeOutfitBlue
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitCasualBlue
-    shoes: ClothingShoesColorBrown
+- type: patientIntakeOutfit
+  id: PatientIntakePatientGown
+  weight: 20
+  slots:
+    jumpsuit:
+      chance: 0.4
+      items:
+      - ClothingUniformJumpsuitColorWhite
+    outerClothing:
+      items:
+      - ClothingOuterHospitalGown
+    shoes:
+      chance: 0.8
+      items:
+      - ClothingShoesSlippers
+      - ClothingShoeSlippersDuck
+      - ClothingShoesSandalsWhiteSocks
 
-- type: startingGear
-  id: PatientIntakeOutfitGreen
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitCasualGreen
-    shoes: ClothingShoesColorBrown
-    head: ClothingHeadHatBeret
-
-- type: startingGear
-  id: PatientIntakeOutfitWhite
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitColorWhite
-    shoes: ClothingShoesColorWhite
+- type: patientIntakeOutfit
+  id: PatientIntakeMilitary
+  weight: 10
+  slots:
+    jumpsuit:
+      items:
+      - ClothingUniformJumpsuitMercenary
+    shoes:
+      items:
+      - ClothingShoesBootsMerc
+    head:
+      chance: 0.5
+      items:
+      - ClothingHeadHatBeretMerc
 
 - type: startingGear
   id: PatientIntakeVoxInternals
