@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: Minemoder
-  changes:
-  - message: Vulpkanins can now use Gauze markings.
-    type: Add
-  id: 9568
-  time: '2026-03-07T21:39:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43096
-- author: 11BelowStudio
-  changes:
-  - message: Spent air grenades cannot be re-triggered.
-    type: Fix
-  id: 9569
-  time: '2026-03-08T01:05:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42866
 - author: ScarKy0
   changes:
   - message: Hostile vent critters now crawl out of a single vent, alerting the station
@@ -4328,3 +4314,17 @@
   id: 10062
   time: '2026-10-20T10:39:07.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1122
+- author: Nikita
+  changes:
+  - message: "Usuni\u0119to duplikat mocnegofulla z NSV"
+    type: Remove
+  id: 10063
+  time: '2026-10-21T13:57:03.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1129
+- author: haze
+  changes:
+  - message: "Od\u015Bwie\u017Cono Cork"
+    type: Tweak
+  id: 10064
+  time: '2026-10-21T14:00:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1123
