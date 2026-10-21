@@ -10,6 +10,7 @@ patient-intake-popup-access = Access denied: switching it on needs medical acces
 patient-intake-popup-missing-access = Access denied: only the Chief Medical Officer or the Captain can do that.
 patient-intake-popup-mind = The tray won't close: a person, or something with a person in it, is on the tray.
 patient-intake-popup-no-patient = The tray won't close: only the issued patient's body may go in.
+patient-intake-popup-locked = The tray stays open for another {$seconds} s, so a patient isn't sent back by accident.
 
 patient-intake-examine-running = It is [color=green]accepting cases[/color].
 patient-intake-examine-stopped = It is [color=red]not accepting cases[/color].
@@ -163,6 +164,8 @@ patient-intake-issue-replace-liver = Requests a liver transplant
 patient-intake-issue-replace-lungs = Requests a lung transplant
 
 ## Device linking
+
+patient-intake-fax-sender = Patient Intake
 
 signal-port-name-patient-intake-fax = Fax
 signal-port-description-patient-intake-fax = Sends case files and receipts to a fax machine.
