@@ -1,0 +1,41 @@
+<Control
+    xmlns="https://spacestation14.io"
+    xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    xmlns:pa="clr-namespace:Content.Client._Polonium.Administration.UI"
+    Margin="4"
+    MinSize="50 50">
+    <ScrollContainer HScrollEnabled="False" VerticalExpand="True">
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+            <Label Text="{Loc 'polonium-admin-tab-section-round'}" StyleClasses="LabelHeading" />
+            <GridContainer Columns="3">
+                <cc:CommandButton Command="delaystart" Text="{Loc 'polonium-admin-tab-delay-start'}" ToolTip="{Loc 'polonium-admin-tab-delay-start-tooltip'}" />
+                <cc:CommandButton Command="readyall" Text="{Loc 'polonium-admin-tab-ready-all'}" />
+                <cc:CommandButton Command="toggledisallowlatejoin true" Text="{Loc 'polonium-admin-tab-latejoin-off'}" />
+                <cc:CommandButton Command="toggledisallowlatejoin false" Text="{Loc 'polonium-admin-tab-latejoin-on'}" />
+                <cc:CommandButton Command="delayroundend" Text="{Loc 'polonium-admin-tab-delay-round-end'}" ToolTip="{Loc 'polonium-admin-tab-delay-round-end-tooltip'}" />
+                <cc:CommandButton Command="togglenewlife" Text="{Loc 'polonium-admin-tab-toggle-new-life'}" />
+            </GridContainer>
+
+            <Label Text="{Loc 'polonium-admin-tab-section-station'}" StyleClasses="LabelHeading" Margin="0 8 0 0" />
+            <GridContainer Columns="3">
+                <pa:PrototypeCommandButton Command="setalertlevel" CommandFormat="setalertlevel {0}" PrototypeKind="alertLevel"
+                                           Text="{Loc 'polonium-admin-tab-alert-level'}" ToolTip="{Loc 'polonium-admin-tab-alert-level-tooltip'}" />
+                <pa:PrototypeCommandButton Command="callert" CommandFormat="callert {0}" PrototypeKind="ertCall"
+                                           Text="{Loc 'polonium-admin-tab-call-ert'}" />
+                <cc:CommandButton Command="nukecodes" Text="{Loc 'polonium-admin-tab-nuke-codes'}" />
+                <cc:CommandButton Command="artbs" Text="{Loc 'polonium-admin-tab-bluespace-strike'}" />
+                <cc:CommandButton Command="explosionui" Text="{Loc 'polonium-admin-tab-explosion'}" />
+            </GridContainer>
+
+            <Label Text="{Loc 'polonium-admin-tab-section-self'}" StyleClasses="LabelHeading" Margin="0 8 0 0" />
+            <GridContainer Columns="3">
+                <cc:CommandButton Command="stealthmin" Text="{Loc 'polonium-admin-tab-stealthmin'}" />
+                <cc:CommandButton Command="godmode" Text="{Loc 'polonium-admin-tab-godmode'}" ToolTip="{Loc 'polonium-admin-tab-godmode-tooltip'}" />
+                <cc:CommandButton Command="adminwho" Text="{Loc 'polonium-admin-tab-adminwho'}" />
+                <cc:CommandButton Command="deadmin" Text="{Loc 'polonium-admin-tab-deadmin'}" />
+            </GridContainer>
+
+            <Label Text="{Loc 'polonium-admin-tab-console-hint'}" FontColorOverride="#8a8a8a" Margin="0 8 0 0" />
+        </BoxContainer>
+    </ScrollContainer>
+</Control>
