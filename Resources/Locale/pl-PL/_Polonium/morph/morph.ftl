@@ -1,10 +1,10 @@
-ghost-role-information-morph-name = Morph
-ghost-role-information-morph-description = Jesteś morphem, odrażającym tworem nauki, powstałym głównie z komórek zmiennokształtnego. Możesz przybrać kształt pobliskiego przedmiotu, co jednak zauważą osoby w pobliżu. W przebraniu poruszasz się szybciej, ale zadajesz mniej obrażeń, a kto przyjrzy ci się z bliska, wyczuje, że coś jest nie tak. Pożeraj przedmioty oraz martwe i nieprzytomne istoty. Trawienie istot przywraca ci zdrowie. Kto dotknie cię w przebraniu, zostanie ugryziony i zatruty. Możesz też przybrać postać pożartego załoganta, póki jego ciało jest w twoim brzuchu, ale nie potrafisz mówić.
+ghost-role-information-morph-name = Morf
+ghost-role-information-morph-description = Jesteś morfem, odrażającym tworem nauki, powstałym głównie z komórek zmiennokształtnego. Możesz przybrać kształt pobliskiego przedmiotu, co jednak zauważą osoby w pobliżu. W przebraniu poruszasz się szybciej, ale zadajesz mniej obrażeń, a kto przyjrzy ci się z bliska, wyczuje, że coś jest nie tak. Pożeraj przedmioty oraz martwe i nieprzytomne istoty. Trawienie istot przywraca ci zdrowie. Kto dotknie cię w przebraniu, zostanie ugryziony i zatruty. Możesz też przybrać postać pożartego załoganta, póki jego ciało jest w twoim brzuchu, ale nie potrafisz mówić.
 
-roles-antag-morph-name = Morph
+roles-antag-morph-name = Morf
 roles-antag-morph-objective = Pożeraj załogę i przetrwaj do końca zmiany.
-role-subtype-morph = Morph
-morph-round-end-agent-name = morph
+role-subtype-morph = Morf
+morph-round-end-agent-name = morf
 objective-issuer-morph = [color=#3cff00]Głód[/color]
 objective-morph-devour-title =
     Pożryj { $count } { $count ->
@@ -47,5 +47,5 @@ morph-stomach-throw = Przygotuj do wyplucia
 morph-stomach-digest = Traw
 morph-stomach-assume = Przybierz postać
 
-reagent-name-morph-venom = Jad morpha
+reagent-name-morph-venom = Jad morfa
 reagent-desc-morph-venom = Zabójczy jad zmiennokształtnego stworzenia.
