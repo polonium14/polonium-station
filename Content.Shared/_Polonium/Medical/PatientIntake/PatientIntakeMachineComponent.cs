@@ -49,10 +49,10 @@ public sealed partial class PatientIntakeMachineComponent : Component
     public ProtoId<RandomHumanoidSettingsPrototype> Humanoid = "PatientIntakePatient";
 
     /// <summary>
-    /// Random civilian outfit, one picked per patient.
+    /// Clothing groups a patient can arrive in, picked by their weight.
     /// </summary>
     [DataField]
-    public List<ProtoId<StartingGearPrototype>> Outfits = new();
+    public List<ProtoId<PatientIntakeOutfitPrototype>> Outfits = new();
 
     /// <summary>
     /// Extra gear per species, e.g. nitrogen internals for Vox.
