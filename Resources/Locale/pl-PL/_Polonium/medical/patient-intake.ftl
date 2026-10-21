@@ -10,6 +10,7 @@ patient-intake-popup-access = Brak dostępu: do włączenia potrzebny jest dost�
 patient-intake-popup-missing-access = Brak dostępu: może to zrobić tylko ordynator albo kapitan.
 patient-intake-popup-mind = Szuflada się nie zamknie: leży na niej osoba albo coś, w czym jest osoba.
 patient-intake-popup-no-patient = Szuflada się nie zamknie: do środka może trafić tylko ciało przydzielonego pacjenta.
+patient-intake-popup-locked = Szuflada zostanie otwarta jeszcze przez {$seconds} s, żeby nie odesłać pacjenta przez przypadek.
 
 patient-intake-examine-running = [color=green]Przyjmuje zlecenia[/color].
 patient-intake-examine-stopped = [color=red]Nie przyjmuje zleceń[/color].
@@ -160,6 +161,8 @@ patient-intake-issue-replace-liver = Prośba o przeszczep wątroby
 patient-intake-issue-replace-lungs = Prośba o przeszczep płuc
 
 ## Łączenie urządzeń
+
+patient-intake-fax-sender = Izba przyjęć
 
 signal-port-name-patient-intake-fax = Faks
 signal-port-description-patient-intake-fax = Wysyła karty pacjentów i pokwitowania do faksu.
