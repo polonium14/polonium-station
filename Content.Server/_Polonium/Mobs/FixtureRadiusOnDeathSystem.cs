@@ -6,7 +6,7 @@ using Robust.Shared.Physics.Systems;
 
 namespace Content.Server.Mobs;
 
-public sealed class FixtureRadiusOnDeathSystem : EntitySystem
+public sealed partial class FixtureRadiusOnDeathSystem : EntitySystem
 {
     [Dependency] private SharedPhysicsSystem _physics = default!;
 
