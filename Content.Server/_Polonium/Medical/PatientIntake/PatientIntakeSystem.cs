@@ -120,8 +120,8 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
                 header = true;
             }
 
-            args.AddLine(Loc.GetString("patient-intake-round-end-line",
-                ("cases", machine.CasesClosed), ("amount", machine.TotalNet)));
+            args.AddLine(Loc.GetString(machine.TotalNet < 0 ? "patient-intake-round-end-line-loss" : "patient-intake-round-end-line",
+                ("cases", machine.CasesClosed), ("amount", Math.Abs(machine.TotalNet))));
         }
     }
 
@@ -284,7 +284,7 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
 
         _radio.SendRadioMessage(ent, Loc.GetString("patient-intake-radio-arrived",
             ("case", Loc.GetString(caseProto.Name)),
-            ("number", ent.Comp.CaseCount),
+            ("name", Name(patient)),
             ("patient", activeCase.PatientsTotal - activeCase.ToSpawn),
             ("total", activeCase.PatientsTotal)), ent.Comp.Channel, ent);
     }
@@ -560,7 +560,7 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
                 return;
 
             args.PushMarkup(Loc.GetString("patient-intake-examine-case",
-                ("case", Loc.GetString(_proto.Index(activeCase.Proto).Name)), ("number", ent.Comp.CaseCount)));
+                ("case", Loc.GetString(_proto.Index(activeCase.Proto).Name))));
 
             if (activeCase.ClockStart is not { } start)
             {
