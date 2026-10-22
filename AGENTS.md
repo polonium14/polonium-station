@@ -64,7 +64,7 @@ Obowiązują [konwencje Wizdenu](https://docs.spacestation14.com/en/general-deve
 
 ## Lokalizacja
 
-- Każdy tekst widoczny dla gracza (popupy, UI, komunikaty, opisy) idzie przez pliki FTL i `Loc.GetString`. W C# i YAML nie ma tekstów zapisanych na sztywno. Wyjątkiem są angielskie `name`, `description` i `suffix` encji, z których skrypty generują pliki FTL.
+- Każdy tekst widoczny dla gracza (popupy, UI, komunikaty, opisy) idzie przez pliki FTL i `Loc.GetString`. W C# i YAML nie ma tekstów zapisanych na sztywno. Wyjątkiem są angielskie `name`, `description` i `suffix` encji, z których skrypty generują pliki FTL. Drugim wyjątkiem jest treść stron podręcznika, którą piszemy po polsku bezpośrednio w plikach XML (sekcja "Podręcznik"). Nazwy stron (`guideEntry`) oraz opisy odczynników i potraw, które podręcznik pokazuje automatycznie, zostają w FTL.
 - Nowe klucze dodaj w tym samym PR do `en-US` i `pl-PL` (treści Polonium do folderów `_Polonium`). Bez wersji angielskiej Crowdin i narzędzia tłumaczeniowe nie widzą klucza, a bez polskiej gracze dostają angielski tekst.
 - Istniejące tłumaczenia poprawia się na Crowdinie, nie w plikach repo. Wyjątkiem są pliki wyłączone z Crowdina, m.in. `_Polonium`.
 - Szczegóły, styl tłumaczenia i bezpieczne podłączenie agenta do Crowdina: [Resources/Locale/AGENTS.md](Resources/Locale/AGENTS.md).

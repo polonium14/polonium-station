@@ -53,7 +53,7 @@ ENGINE_RULES = [
 COMPILED_SECRET_RULES = [(re.compile(p, re.MULTILINE), why) for p, why in SECRET_RULES]
 COMPILED_ENGINE_RULES = [(re.compile(p, re.MULTILINE), why) for p, why in ENGINE_RULES]
 
-ENV_CALL = re.compile(r"(?:^|[;&|(`]|\s)env(?=$|[\s;&|()<>`])", re.MULTILINE)
+ENV_CALL = re.compile(r"(?:^|[;&|(`]|\s)(?:[^\s;&|()<>`'\"]*[/\\])?env(?:\.exe)?(?=$|[\s;&|()<>`])", re.MULTILINE)
 ENV_ASSIGNMENT = re.compile(r"[A-Za-z_][A-Za-z0-9_]*=")
 ENV_OPTIONS = {"-i", "--ignore-environment", "-0", "--null", "-v", "--debug", "-", "--"}
 ENV_OPTIONS_WITH_VALUE = {"-u", "--unset", "-C", "--chdir"}
@@ -101,7 +101,7 @@ def env_runs_program(arguments: str) -> bool:
             if token not in ENV_OPTIONS and not token.startswith(("--unset=", "--chdir=")):
                 return False
         elif not ENV_ASSIGNMENT.match(token):
-            return True
+            return "$" not in token and "`" not in token
     return False
 
 
