@@ -19,7 +19,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Shared.Storage.Components;
 using Content.Server.Storage.EntitySystems;
-using Content.Shared.Buckle.Components;
 using Content.Server.Buckle.Systems;
 using Content.Shared.Storage;
 
@@ -84,17 +83,6 @@ public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
         if (TryComp<StorageComponent>(uid, out var container))
         {
             _containerSystem.EmptyContainer(container.Container, true);
-        }
-
-        if (TryComp<StrapComponent>(uid, out var strapComp) && strapComp.BuckledEntities.Count > 0)
-        {
-            foreach (var buckled in strapComp.BuckledEntities)
-            {
-                if (!TryComp<BuckleComponent>(buckled, out var buckleComp))
-                {
-                    _buckle.Unbuckle((uid, buckleComp), null);
-                }
-            }
         }
 
         HandlePoints(nest, uid);
