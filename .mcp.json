@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "crowdin": {
+      "type": "http",
+      "url": "https://mcp.crowdin.com/v2/mcp",
+      "headers": {
+        "crowdin-tool-sets": "projects_groups,source_files,source_strings,string_translations,string_comments,translation_status,glossaries,tm",
+        "crowdin-project-type": "file-based"
+      }
+    }
+  }
+}
