@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Crude Oil
-  changes:
-  - message: Fixed some emitter alerts missing the word "emitter"
-    type: Fix
-  id: 9574
-  time: '2026-03-14T16:32:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43225
 - author: SnappingOpossum
   changes:
   - message: Certain randomised items and decorations no longer spawn with the wrong
@@ -4328,3 +4321,14 @@
   id: 10068
   time: '2026-10-21T14:26:10.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1125
+- author: Segonist
+  changes:
+  - message: "Wrzucenie stacku materia\u0142\xF3w do gniazda replikator\xF3w dodaje\
+      \ odpowiednio wi\u0119cej replistali"
+    type: Fix
+  - message: "Wrzucenie kontenera (szafka, plecak, itd.) do gniazda replikator\xF3\
+      w uwzgl\u0119dnia rzeczy znajduj\u0105ce si\u0119 w \u015Brodku"
+    type: Fix
+  id: 10069
+  time: '2026-10-22T12:46:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1121
