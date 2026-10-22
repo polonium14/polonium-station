@@ -36,7 +36,6 @@ public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
     [Dependency] private ReplicatorHiveSystem _hive = default!; // POLONIUM
     [Dependency] private ReplicatorQueenSystem _queen = default!; // POLONIUM
     [Dependency] private EntityStorageSystem _entStorage = default!; // POLONIUM
-    [Dependency] private BuckleSystem _buckle = default!; // POLONIUM
 
     private readonly List<EntityUid> _protectedInside = new(); // POLONIUM
 
