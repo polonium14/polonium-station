@@ -62,7 +62,7 @@ namespace Content.Server.Cargo.Systems
 
             var stationUid = _station.GetOwningStation(ent);
 
-            if (!TryGetOrderDatabase(stationUid, out var orderDatabase))
+            if (!OnSameMap(ent.Owner, stationUid) || !TryGetOrderDatabase(stationUid, out var orderDatabase)) // Polonium: Wizden #45080
                 return;
 
             if (!ProtoMan.TryIndex(slip.Product, out var product))
@@ -155,7 +155,8 @@ namespace Content.Server.Cargo.Systems
             var station = _station.GetOwningStation(uid);
 
             // No station to deduct from.
-            if (!TryComp(station, out StationBankAccountComponent? bank) ||
+            if (!OnSameMap(uid, station) || // Polonium: Wizden #45080
+                !TryComp(station, out StationBankAccountComponent? bank) ||
                 !TryComp(station, out StationDataComponent? stationData) ||
                 !TryGetOrderDatabase(station, out var orderDatabase))
             {
@@ -317,7 +318,7 @@ namespace Content.Server.Cargo.Systems
             if (component.Mode == CargoOrderConsoleMode.PrintSlip)
                 return;
 
-            if (!TryGetOrderDatabase(station, out var orderDatabase))
+            if (!OnSameMap(uid, station) || !TryGetOrderDatabase(station, out var orderDatabase)) // Polonium: Wizden #45080
                 return;
 
             if (!TryComp<StationBankAccountComponent>(station, out var bank))
@@ -372,7 +373,7 @@ namespace Content.Server.Cargo.Systems
 
             var stationUid = _station.GetOwningStation(uid);
 
-            if (!TryGetOrderDatabase(stationUid, out var orderDatabase))
+            if (!OnSameMap(uid, stationUid) || !TryGetOrderDatabase(stationUid, out var orderDatabase)) // Polonium: Wizden #45080
                 return;
 
             if (!TryComp<StationBankAccountComponent>(stationUid, out var bank))
@@ -704,6 +705,16 @@ namespace Content.Server.Cargo.Systems
         }
 
         #region Station
+
+        // Polonium: Wizden #45080, orders cannot be handled from a console on another map than the station
+        private bool OnSameMap(EntityUid uid, EntityUid? station)
+        {
+            if (station is null ||
+                _station.GetLargestGrid(station.Value) is not { } stationGrid)
+                return false;
+
+            return Transform(stationGrid).MapID == Transform(uid).MapID;
+        }
 
         private bool TryGetOrderDatabase([NotNullWhen(true)] EntityUid? stationUid, [MaybeNullWhen(false)] out StationCargoOrderDatabaseComponent dbComp)
         {
