@@ -74,9 +74,10 @@ public sealed partial class PatientIntakeSystem
         {
             // Each deduction is worked out as its own amount so the receipt can itemise it.
             var basePay = (int) share;
+            // Full pay inside the window; past it, pay runs out over one more window.
             var timeCut = caseProto.DebitOnTimeout
                 ? 0
-                : (int) (share * Math.Clamp((float) (elapsed / activeCase.Window), 0f, 1f));
+                : (int) (share * Math.Clamp((float) ((elapsed - activeCase.Window) / activeCase.Window), 0f, 1f));
 
             var gearCut = 0;
             var gearPercent = 0;
@@ -164,9 +165,7 @@ public sealed partial class PatientIntakeSystem
 
         var caseProto = _proto.Index(activeCase.Proto);
         var content = new StringBuilder();
-        content.AppendLine(Loc.GetString("patient-intake-receipt-header", ("number", ent.Comp.CaseCount)));
-        content.AppendLine(Loc.GetString("patient-intake-kind", ("case", Loc.GetString(caseProto.Name))));
-        content.AppendLine();
+        content.AppendLine(DocHeader(ent, "patient-intake-receipt-title", caseProto));
         foreach (var line in activeCase.Receipt)
         {
             content.AppendLine(line);
@@ -174,13 +173,15 @@ public sealed partial class PatientIntakeSystem
 
         content.AppendLine();
         content.AppendLine(Loc.GetString("patient-intake-receipt-total", ("amount", activeCase.Net)));
+        content.AppendLine();
+        content.Append(Loc.GetString("patient-intake-doc-footer"));
 
-        var title = Loc.GetString("patient-intake-receipt-name", ("number", ent.Comp.CaseCount));
+        var title = Loc.GetString("patient-intake-receipt-name");
         if (!TrySendToFax(ent, title, content.ToString()))
             SpawnPaper(ent, title, content.ToString());
 
         _radio.SendRadioMessage(ent, Loc.GetString(activeCase.Net < 0 ? "patient-intake-radio-finished-debit" : "patient-intake-radio-finished",
-            ("number", ent.Comp.CaseCount), ("amount", Math.Abs(activeCase.Net))), ent.Comp.Channel, ent);
+            ("case", Loc.GetString(caseProto.Name)), ("amount", Math.Abs(activeCase.Net))), ent.Comp.Channel, ent);
     }
 
     private void ChargeAccount(EntityUid machine, int amount)
@@ -208,6 +209,10 @@ public sealed partial class PatientIntakeSystem
         return Loc.TryGetString($"patient-intake-part-{subject.ToLowerInvariant()}", out var name) ? name : subject;
     }
 
+    private const string StampState = "paper_stamp-centcom";
+
+    private StampDisplayInfo Stamp => new() { StampedName = Loc.GetString("patient-intake-fax-sender"), StampedColor = Color.FromHex("#50afbf") };
+
     private (string Name, string Content) BuildCaseFile(
         Entity<PatientIntakeMachineComponent> ent,
         PatientIntakeCase activeCase,
@@ -219,12 +224,11 @@ public sealed partial class PatientIntakeSystem
             ? Loc.GetString(_proto.Index(profile.Species).Name)
             : string.Empty;
 
+        var name = FormattedMessage.EscapeText(Name(patient));
         var content = new StringBuilder();
-        content.AppendLine(Loc.GetString("patient-intake-file-header", ("number", ent.Comp.CaseCount)));
-        content.AppendLine(Loc.GetString("patient-intake-kind", ("case", Loc.GetString(caseProto.Name))));
-        content.AppendLine();
-        content.AppendLine(Loc.GetString("patient-intake-file-patient",
-            ("name", FormattedMessage.EscapeText(Name(patient))), ("species", species)));
+        content.AppendLine(DocHeader(ent, "patient-intake-file-title", caseProto));
+        content.AppendLine(Loc.GetString("patient-intake-file-identity", ("name", name)));
+        content.AppendLine(Loc.GetString("patient-intake-file-patient", ("species", species)));
         content.AppendLine(Loc.GetString(caseProto.DebitOnTimeout ? "patient-intake-file-deadline-hard" : "patient-intake-file-deadline",
             ("minutes", (int) activeCase.Window.TotalMinutes)));
         content.AppendLine(Loc.GetString("patient-intake-file-payout",
@@ -232,26 +236,38 @@ public sealed partial class PatientIntakeSystem
         if (activeCase.PatientsTotal > 1)
             content.AppendLine(Loc.GetString("patient-intake-file-mass", ("count", activeCase.PatientsTotal)));
 
-        content.AppendLine();
         content.AppendLine(Loc.GetString(caseProto.FullIssueList ? "patient-intake-file-issues" : "patient-intake-file-symptoms"));
+        var index = 0;
         foreach (var id in comp.Issues.Distinct())
         {
             var issue = _proto.Index(id);
             var line = caseProto.FullIssueList ? issue.Description : issue.Symptom;
-            content.AppendLine(Loc.GetString("patient-intake-examine-line", ("line", Loc.GetString(line))));
+            content.AppendLine(Loc.GetString("patient-intake-doc-item", ("index", ++index), ("line", Loc.GetString(line))));
         }
 
-        content.AppendLine();
         content.AppendLine(Loc.GetString("patient-intake-file-gear"));
+        index = 0;
         foreach (var item in comp.Gear)
         {
-            content.AppendLine(Loc.GetString("patient-intake-examine-line", ("line", FormattedMessage.EscapeText(Name(item)))));
+            content.AppendLine(Loc.GetString("patient-intake-doc-item", ("index", ++index), ("line", FormattedMessage.EscapeText(Name(item)))));
         }
 
         content.AppendLine();
-        content.AppendLine(Loc.GetString("patient-intake-file-rules"));
+        content.Append(Loc.GetString("patient-intake-doc-footer"));
+        return (Loc.GetString("patient-intake-file-name", ("name", Name(patient))), content.ToString());
+    }
 
-        return (Loc.GetString("patient-intake-file-name", ("number", ent.Comp.CaseCount)), content.ToString());
+    /// <summary>
+    /// Letterhead in the style of the station's NanoTrasen medical forms (see the document printer).
+    /// </summary>
+    private string DocHeader(EntityUid machine, LocId title, PatientIntakeCasePrototype caseProto)
+    {
+        var station = _station.GetOwningStation(machine) is { } s ? Name(s) : Loc.GetString("doc-text-printer-default-station");
+        return Loc.GetString("patient-intake-doc-header",
+            ("title", Loc.GetString(title)),
+            ("station", FormattedMessage.EscapeText(station)),
+            ("date", DateTime.Now.AddYears(1000).ToString("dd.MM.yyyy")),
+            ("case", Loc.GetString(caseProto.Name)));
     }
 
     private bool TrySendToFax(Entity<PatientIntakeMachineComponent> ent, string name, string content)
@@ -261,7 +277,8 @@ public sealed partial class PatientIntakeSystem
             if (!TryComp<FaxMachineComponent>(sink, out var fax))
                 continue;
 
-            _fax.Receive(sink, new FaxPrintout(content, name, senderFaxName: Loc.GetString("patient-intake-fax-sender")), null, fax);
+            _fax.Receive(sink, new FaxPrintout(content, name,
+                stampState: StampState, stampedBy: [Stamp], senderFaxName: Loc.GetString("patient-intake-fax-sender")), null, fax);
             return true;
         }
 
@@ -272,6 +289,7 @@ public sealed partial class PatientIntakeSystem
     {
         var paper = Spawn("Paper", Transform(machine).Coordinates);
         _paper.SetContent(paper, content);
+        _paper.TryStamp((paper, Comp<PaperComponent>(paper)), Stamp, StampState);
         _metaData.SetEntityName(paper, name);
         return paper;
     }

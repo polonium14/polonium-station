@@ -229,6 +229,29 @@ public sealed class PatientIntakeMachineTest : GameTest
         });
     }
 
+    [TestCase(9, 1000)]
+    [TestCase(15, 500)]
+    [TestCase(25, 0)]
+    public async Task PayOnlyDropsAfterTheTimeLimit(int minutes, int expected)
+    {
+        var (machine, patient) = await StartCase("PatientIntakeTestHealthy");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(2);
+        await server.WaitPost(() =>
+        {
+            entMan.GetComponent<PatientIntakePatientComponent>(patient).ClockStart =
+                server.ResolveDependency<IGameTiming>().CurTime - TimeSpan.FromMinutes(minutes);
+            storage.CloseStorage(machine);
+        });
+        await Pair.RunTicksSync(5);
+        await server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<PatientIntakeMachineComponent>(machine).LastNet, Is.EqualTo(expected).Within(1)));
+    }
+
     [Test]
     public async Task LateTimedReturnDebits()
     {
@@ -453,6 +476,36 @@ public sealed class PatientIntakeMachineTest : GameTest
                 .Count(e => entMan.HasComponent<PaperComponent>(e));
             Assert.That(printed + papers, Is.GreaterThan(0), "The case file must be produced somewhere.");
             Assert.That(papers, Is.Zero, "With a fax linked, the case file goes to the fax, not the tray.");
+        });
+    }
+
+    [Test]
+    public async Task PapersAreStampedForms()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestHealthy");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+
+        await server.WaitAssertion(() =>
+        {
+            var file = entMan.GetComponent<EntityStorageComponent>(machine).Contents.ContainedEntities
+                .Single(e => entMan.HasComponent<PaperComponent>(e));
+            var paper = entMan.GetComponent<PaperComponent>(file);
+            Assert.That(paper.Content, Does.Contain("NFZ-MED"), "The case file uses the letterhead.");
+            Assert.That(paper.StampedBy, Has.Count.EqualTo(1), "The case file comes stamped.");
+        });
+
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(2);
+        await server.WaitPost(() => storage.CloseStorage(machine));
+        await Pair.RunTicksSync(5);
+        await server.WaitAssertion(() =>
+        {
+            var lookup = entMan.System<EntityLookupSystem>();
+            var receipt = lookup.GetEntitiesInRange<PaperComponent>(entMan.GetComponent<TransformComponent>(machine).Coordinates, 2f)
+                .Single(p => !entMan.GetComponent<TransformComponent>(p).ParentUid.Equals(machine) && p.Comp.Content.Contains("NFZ-MED"));
+            Assert.That(receipt.Comp.StampedBy, Has.Count.EqualTo(1));
         });
     }
 

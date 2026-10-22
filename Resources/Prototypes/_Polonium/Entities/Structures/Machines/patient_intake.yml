@@ -1,7 +1,7 @@
 - type: entity
   parent: Morgue
   id: PatientIntakeMachine
-  name: patient intake
+  name: Bluespace NFZ
   description: A Nanotrasen contract machine. It delivers patients for treatment and pays the medical budget for every one returned healthy. Examine a patient while holding a health analyzer to check they are fit for discharge.
   components:
   - type: Sprite
