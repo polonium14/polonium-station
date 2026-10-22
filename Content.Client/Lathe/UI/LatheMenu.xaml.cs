@@ -129,7 +129,24 @@ public sealed partial class LatheMenu : FancyWindow
 
         RecipeCount.Text = Loc.GetString("lathe-menu-recipe-count", ("count", recipesToShow.Count));
 
-        var sortedRecipesToShow = recipesToShow.OrderBy(_lathe.GetRecipeName);
+        // Polonium: with every category shown, recipes that share a name (a biofab organ for each
+        // species) get their category appended, e.g. "eyes - Human".
+        var names = recipesToShow.ToDictionary(r => r, _lathe.GetRecipeName);
+        if (CurrentCategory == null)
+        {
+            var shared = names.Values.GroupBy(n => n).Where(g => g.Count() > 1).Select(g => g.Key).ToHashSet();
+            foreach (var recipe in recipesToShow)
+            {
+                if (shared.Contains(names[recipe]) && recipe.Categories.Count > 0)
+                {
+                    names[recipe] = Loc.GetString("lathe-menu-recipe-name-category",
+                        ("name", names[recipe]),
+                        ("category", Loc.GetString(_prototypeManager.Index(recipe.Categories[0]).Name)));
+                }
+            }
+        }
+
+        var sortedRecipesToShow = recipesToShow.OrderBy(r => names[r]);
 
         // Get the existing list of queue controls
         var oldChildCount = RecipeList.ChildCount;
@@ -144,6 +161,7 @@ public sealed partial class LatheMenu : FancyWindow
             if (idx >= oldChildCount)
             {
                 var control = new RecipeControl(_lathe, prototype, tooltipFunction, canProduce, GetRecipeDisplayControl(prototype));
+                control.SetRecipe(prototype, names[prototype]); // Polonium
                 control.OnButtonPressed += s =>
                 {
                     if (!int.TryParse(AmountLineEdit.Text, out var amount) || amount <= 0)
@@ -162,7 +180,7 @@ public sealed partial class LatheMenu : FancyWindow
                     continue;
                 }
 
-                child.SetRecipe(prototype);
+                child.SetRecipe(prototype, names[prototype]); // Polonium
                 child.SetTooltipSupplier(tooltipFunction);
                 child.SetCanProduce(canProduce);
                 child.SetDisplayControl(GetRecipeDisplayControl(prototype));

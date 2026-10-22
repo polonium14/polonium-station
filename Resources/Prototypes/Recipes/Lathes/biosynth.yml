@@ -39,6 +39,10 @@
   name: lathe-category-biosynth-rodentia
 
 - type: latheCategory
+  id: BiosynthSlimePerson
+  name: lathe-category-biosynth-slimeperson
+
+- type: latheCategory
   id: BiosynthThaven
   name: lathe-category-biosynth-thaven
 
@@ -1107,6 +1111,94 @@
     Biomass: 3
 
 - type: latheRecipe
+  id: SynthSlimePersonLungs
+  result: OrganSlimePersonLungs
+  categories: [ BiosynthSlimePerson ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthSlimePersonEyes
+  result: OrganSlimePersonEyes
+  categories: [ BiosynthSlimePerson ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthSlimePersonHead
+  result: OrganSlimePersonHead
+  categories: [ BiosynthSlimePerson ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthSlimePersonArmLeft
+  result: OrganSlimePersonArmLeft
+  categories: [ BiosynthSlimePerson ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthSlimePersonArmRight
+  result: OrganSlimePersonArmRight
+  categories: [ BiosynthSlimePerson ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthSlimePersonHandLeft
+  result: OrganSlimePersonHandLeft
+  categories: [ BiosynthSlimePerson ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthSlimePersonHandRight
+  result: OrganSlimePersonHandRight
+  categories: [ BiosynthSlimePerson ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthSlimePersonLegLeft
+  result: OrganSlimePersonLegLeft
+  categories: [ BiosynthSlimePerson ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthSlimePersonLegRight
+  result: OrganSlimePersonLegRight
+  categories: [ BiosynthSlimePerson ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthSlimePersonFootLeft
+  result: OrganSlimePersonFootLeft
+  categories: [ BiosynthSlimePerson ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthSlimePersonFootRight
+  result: OrganSlimePersonFootRight
+  categories: [ BiosynthSlimePerson ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
   id: SynthThavenHeart
   result: OrganThavenHeart
   categories: [ BiosynthThaven ]
@@ -1577,6 +1669,17 @@
   - SynthRodentiaLegRight
   - SynthRodentiaFootLeft
   - SynthRodentiaFootRight
+  - SynthSlimePersonLungs
+  - SynthSlimePersonEyes
+  - SynthSlimePersonHead
+  - SynthSlimePersonArmLeft
+  - SynthSlimePersonArmRight
+  - SynthSlimePersonHandLeft
+  - SynthSlimePersonHandRight
+  - SynthSlimePersonLegLeft
+  - SynthSlimePersonLegRight
+  - SynthSlimePersonFootLeft
+  - SynthSlimePersonFootRight
   - SynthThavenHeart
   - SynthThavenLiver
   - SynthThavenLungs
