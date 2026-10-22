@@ -38,3 +38,5 @@ lathe-menu-move-up-tooltip = Przenieś tę partię przed kolejkę.
 lathe-menu-move-down-tooltip = Przenieś tę partię za kolejkę.
 lathe-menu-item-single = { $index }. { $name }
 lathe-menu-item-batch = { $index }. { $name } ({ $printed }/{ $total })
+# Polonium
+lathe-menu-recipe-name-category = { $name } - { $category }
