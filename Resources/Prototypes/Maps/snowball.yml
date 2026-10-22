@@ -1,7 +1,7 @@
 - type: gameMap
   id: Snowball
   mapName: 'Snowball Station'
-  mapPath: /Maps/snowball.yml
+  mapPath: /Maps/_Polonium/snowball.yml
   minPlayers: 5
   maxPlayers: 24
   stations:
