@@ -104,6 +104,18 @@
   - PatientIntakeBruising
   - PatientIntakeReplaceLungs
 
+- type: patientIntakeCase
+  id: PatientIntakeRequestProsthesis
+  name: patient-intake-case-request
+  minMedics: 2
+  weight: 1.5
+  payMin: 1500
+  payMax: 2200
+  fullIssueList: true
+  issues:
+  - PatientIntakeBruising
+  - PatientIntakeProsthesis
+
 # Themed cases: a fixed set of injuries with a story, vague symptoms only.
 - type: patientIntakeCase
   id: PatientIntakeCarpAttack

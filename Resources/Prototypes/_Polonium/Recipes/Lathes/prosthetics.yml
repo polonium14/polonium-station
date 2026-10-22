@@ -1,0 +1,75 @@
+- type: latheRecipePack
+  id: ProstheticsStatic
+  recipes:
+  - OrganProstheticArmLeft
+  - OrganProstheticArmRight
+  - OrganProstheticHandLeft
+  - OrganProstheticHandRight
+  - OrganProstheticLegLeft
+  - OrganProstheticLegRight
+  - OrganProstheticFootLeft
+  - OrganProstheticFootRight
+
+- type: latheRecipe
+  id: OrganProstheticArmLeft
+  result: OrganProstheticArmLeft
+  completetime: 4
+  materials:
+    Steel: 500
+    Plastic: 200
+
+- type: latheRecipe
+  id: OrganProstheticArmRight
+  result: OrganProstheticArmRight
+  completetime: 4
+  materials:
+    Steel: 500
+    Plastic: 200
+
+- type: latheRecipe
+  id: OrganProstheticHandLeft
+  result: OrganProstheticHandLeft
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+
+- type: latheRecipe
+  id: OrganProstheticHandRight
+  result: OrganProstheticHandRight
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+
+- type: latheRecipe
+  id: OrganProstheticLegLeft
+  result: OrganProstheticLegLeft
+  completetime: 4
+  materials:
+    Steel: 500
+    Plastic: 200
+
+- type: latheRecipe
+  id: OrganProstheticLegRight
+  result: OrganProstheticLegRight
+  completetime: 4
+  materials:
+    Steel: 500
+    Plastic: 200
+
+- type: latheRecipe
+  id: OrganProstheticFootLeft
+  result: OrganProstheticFootLeft
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
+
+- type: latheRecipe
+  id: OrganProstheticFootRight
+  result: OrganProstheticFootRight
+  completetime: 2
+  materials:
+    Steel: 250
+    Plastic: 100
