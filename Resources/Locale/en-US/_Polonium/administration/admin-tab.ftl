@@ -18,7 +18,6 @@ polonium-admin-tab-alert-level-tooltip = Sets the alert level of the station you
 polonium-admin-tab-call-ert = Call ERT...
 polonium-admin-tab-game-rule = Game rule / event...
 polonium-admin-tab-game-rule-tooltip = Adds and starts a game rule, e.g. a station event (meteors, migrations, antagonist spawns).
-polonium-admin-tab-nuke-codes = Send nuke codes
 polonium-admin-tab-bluespace-strike = Bluespace strike
 polonium-admin-tab-explosion = Explosion
 

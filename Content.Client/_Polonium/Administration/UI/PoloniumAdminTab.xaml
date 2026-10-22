@@ -24,7 +24,6 @@
                                            Text="{Loc 'polonium-admin-tab-call-ert'}" />
                 <pa:PrototypeCommandButton Command="addgamerule" CommandFormat="addgamerule {0}" PrototypeKind="entity" RequiredComponent="GameRule"
                                            Text="{Loc 'polonium-admin-tab-game-rule'}" ToolTip="{Loc 'polonium-admin-tab-game-rule-tooltip'}" />
-                <cc:CommandButton Command="nukecodes" Text="{Loc 'polonium-admin-tab-nuke-codes'}" />
                 <cc:CommandButton Command="artbs" Text="{Loc 'polonium-admin-tab-bluespace-strike'}" />
                 <cc:CommandButton Command="explosionui" Text="{Loc 'polonium-admin-tab-explosion'}" />
             </GridContainer>

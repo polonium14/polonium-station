@@ -12,8 +12,8 @@ namespace Content.Client._Polonium.Administration.UI;
 [GenerateTypedNameReferences]
 public sealed partial class PrototypeCommandWindow : DefaultWindow
 {
-    [Dependency] private readonly IClientConsoleHost _console = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private IClientConsoleHost _console = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     /// <summary>
     /// Above this many entries the window shows a search field.
