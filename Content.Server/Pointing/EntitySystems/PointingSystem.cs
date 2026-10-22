@@ -25,6 +25,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Pointing.EntitySystems
 {
@@ -229,7 +230,7 @@ namespace Content.Server.Pointing.EntitySystems
                 if (containingInventory != null)
                 {
                     var item = pointed;
-                    var itemName = Identity.Entity(item, EntityManager);
+                    var itemName = FormattedMessage.RemoveMarkupPermissive(Name(Identity.Entity(item, EntityManager)));
 
                     // Target the pointing at the item's holder
                     pointed = containingInventory.Value;
