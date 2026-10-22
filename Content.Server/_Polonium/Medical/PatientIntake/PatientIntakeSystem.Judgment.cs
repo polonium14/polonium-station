@@ -4,6 +4,7 @@
 
 using System.Linq;
 using System.Text;
+using Content.Shared._Polonium.Body;
 using Content.Shared._Polonium.Medical.PatientIntake;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
@@ -31,7 +32,11 @@ public sealed partial class PatientIntakeSystem
         {
             foreach (var (category, original) in patient.Comp.Replace)
             {
-                if (organs.Contains(original))
+                // A prosthesis request is only met by a prosthesis; a missing part is reported on its own.
+                var notDone = organs.Contains(original)
+                    || (patient.Comp.Prosthetic.Contains(category)
+                        && organs.ContainedEntities.Any(o => TryComp<OrganComponent>(o, out var organ) && organ.Category == category && !HasComp<ProstheticComponent>(o)));
+                if (notDone)
                     failures.Add(new(IntakeFailureKind.RequestNotDone, category.Id));
             }
         }
@@ -246,7 +251,8 @@ public sealed partial class PatientIntakeSystem
         {
             var issue = _proto.Index(id);
             var line = caseProto.FullIssueList ? issue.Description : issue.Symptom;
-            content.AppendLine(Loc.GetString("patient-intake-doc-item", ("index", ++index), ("line", Loc.GetString(line))));
+            var part = comp.IssueParts.TryGetValue(id, out var category) ? PartName(category) : string.Empty;
+            content.AppendLine(Loc.GetString("patient-intake-doc-item", ("index", ++index), ("line", Loc.GetString(line, ("part", part)))));
         }
 
         content.AppendLine(Loc.GetString("patient-intake-file-gear"));
