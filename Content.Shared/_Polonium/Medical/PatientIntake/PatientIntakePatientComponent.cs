@@ -37,6 +37,18 @@ public sealed partial class PatientIntakePatientComponent : Component
     [ViewVariables]
     public Dictionary<ProtoId<OrganCategoryPrototype>, EntityUid> Replace = new();
 
+    /// <summary>
+    /// Categories whose replacement must be a prosthesis.
+    /// </summary>
+    [ViewVariables]
+    public HashSet<ProtoId<OrganCategoryPrototype>> Prosthetic = new();
+
+    /// <summary>
+    /// The part each part-specific issue landed on, for the case file.
+    /// </summary>
+    [ViewVariables]
+    public Dictionary<ProtoId<PatientIntakeIssuePrototype>, ProtoId<OrganCategoryPrototype>> IssueParts = new();
+
     [ViewVariables]
     public List<ProtoId<PatientIntakeIssuePrototype>> Issues = new();
 
