@@ -99,7 +99,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
+      160: Dead
   - type: MeleeWeapon
     damage:
       types:
