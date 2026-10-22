@@ -35,9 +35,9 @@ public sealed partial class RecipeControl : Control
         Button.TooltipSupplier = SupplyTooltip;
     }
 
-    public void SetRecipe(LatheRecipePrototype recipe)
+    public void SetRecipe(LatheRecipePrototype recipe, string? name = null) // Polonium: name override
     {
-        RecipeName.Text = _latheSystem.GetRecipeName(recipe);
+        RecipeName.Text = name ?? _latheSystem.GetRecipeName(recipe);
         _recipeId = recipe.ID;
     }
 
