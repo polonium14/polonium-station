@@ -59,7 +59,7 @@ public sealed partial class PatientIntakeCasePrototype : IPrototype
 
     /// <summary>
     /// Hard deadline: pay stays flat inside the window and a late return debits the account.
-    /// Otherwise pay decays to zero across the window and lateness never debits.
+    /// Otherwise pay is full inside the window, then decays to zero over one more window, and never debits.
     /// </summary>
     [DataField]
     public bool DebitOnTimeout;
