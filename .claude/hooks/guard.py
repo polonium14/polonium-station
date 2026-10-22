@@ -15,13 +15,13 @@ from __future__ import annotations
 import json
 import os
 import re
+import shlex
 import sys
 
 SECRET_NAME = r"[A-Za-z0-9_]*(?:TOKEN|SECRET|PASSWORD|PASSWD|API_?KEY|PRIVATE_?KEY|CREDENTIALS?)[A-Za-z0-9_]*"
 
 SECRET_RULES = [
     (r"\bprintenv\b", "wypisanie zmiennych środowiskowych"),
-    (r"(?:^|[;&|(]|\s)env(?:\s+(?:-0|--null))?\s*(?:$|[;&|)>])", "wypisanie zmiennych środowiskowych"),
     (r"(?:^|[;&|(]|/c\s)\s*(?:set|export(?:\s+-p)?)\s*(?:$|[;&|)>])", "wypisanie zmiennych powłoki"),
     (r"\b(?:declare|typeset)\s+-[a-zA-Z]*[px]", "wypisanie zmiennych powłoki"),
     (r"/proc/[^\s/]+/environ", "odczyt środowiska procesu"),
@@ -53,6 +53,12 @@ ENGINE_RULES = [
 COMPILED_SECRET_RULES = [(re.compile(p, re.MULTILINE), why) for p, why in SECRET_RULES]
 COMPILED_ENGINE_RULES = [(re.compile(p, re.MULTILINE), why) for p, why in ENGINE_RULES]
 
+ENV_CALL = re.compile(r"(?:^|[;&|(`]|\s)env(?=$|[\s;&|()<>`])", re.MULTILINE)
+ENV_ASSIGNMENT = re.compile(r"[A-Za-z_][A-Za-z0-9_]*=")
+ENV_OPTIONS = {"-i", "--ignore-environment", "-0", "--null", "-v", "--debug", "-", "--"}
+ENV_OPTIONS_WITH_VALUE = {"-u", "--unset", "-C", "--chdir"}
+SHELL_PUNCTUATION = "();<>|&`"
+
 CROWDIN_PREFIX = "mcp__crowdin__"
 CROWDIN_READ_VERBS = {"list", "get", "search", "find", "read", "check", "concordance", "view", "show"}
 
@@ -74,17 +80,52 @@ def ask(reason: str) -> None:
     sys.exit(0)
 
 
+def env_runs_program(arguments: str) -> bool:
+    """Whether the text after `env` names a program to run. Anything that cannot be classified counts as no."""
+    lexer = shlex.shlex(arguments.splitlines()[0] if arguments else "", posix=True, punctuation_chars=SHELL_PUNCTUATION)
+    lexer.whitespace_split = True
+    try:
+        tokens = list(lexer)
+    except ValueError:
+        return False
+
+    expects_value = False
+    for token in tokens:
+        if expects_value:
+            expects_value = False
+        elif token and token[0] in SHELL_PUNCTUATION:
+            return False
+        elif token in ENV_OPTIONS_WITH_VALUE:
+            expects_value = True
+        elif token.startswith("-"):
+            if token not in ENV_OPTIONS and not token.startswith(("--unset=", "--chdir=")):
+                return False
+        elif not ENV_ASSIGNMENT.match(token):
+            return True
+    return False
+
+
+def env_prints_environment(command: str) -> bool:
+    return any(not env_runs_program(command[match.end():]) for match in ENV_CALL.finditer(command))
+
+
+def block_secret(why: str) -> None:
+    block(
+        f"Zablokowano: {why}. Ta komenda mogłaby ujawnić token lub hasło w wyniku, "
+        "a wynik trafia do historii rozmowy. Nie obchodź tej blokady innym poleceniem. "
+        "Żeby sprawdzić, czy zmienna jest ustawiona, użyj "
+        "`python .claude/hooks/guard.py --check-env NAZWA` (na Linuksie i macOS `python3`). "
+        "Jeśli komenda tylko przeszukuje lub edytuje pliki i nie dotyka sekretów, "
+        "użyj narzędzi Grep, Read lub Edit zamiast powłoki."
+    )
+
+
 def check_command(command: str) -> None:
+    if env_prints_environment(command):
+        block_secret("wypisanie zmiennych środowiskowych")
     for rule, why in COMPILED_SECRET_RULES:
         if rule.search(command):
-            block(
-                f"Zablokowano: {why}. Ta komenda mogłaby ujawnić token lub hasło w wyniku, "
-                "a wynik trafia do historii rozmowy. Nie obchodź tej blokady innym poleceniem. "
-                "Żeby sprawdzić, czy zmienna jest ustawiona, użyj "
-                "`python .claude/hooks/guard.py --check-env NAZWA` (na Linuksie i macOS `python3`). "
-                "Jeśli komenda tylko przeszukuje lub edytuje pliki i nie dotyka sekretów, "
-                "użyj narzędzi Grep, Read lub Edit zamiast powłoki."
-            )
+            block_secret(why)
     for rule, why in COMPILED_ENGINE_RULES:
         if rule.search(command):
             block(

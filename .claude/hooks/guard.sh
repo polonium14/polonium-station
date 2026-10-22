@@ -9,9 +9,6 @@ for p in python3 python py; do
     fi
 done
 
-# Without Python the command cannot be checked. Block only when a token is present in the environment.
-if [ -n "${CROWDIN_PERSONAL_TOKEN:-}${GITHUB_TOKEN:-}${GH_TOKEN:-}" ]; then
-    echo "Nie znaleziono Pythona 3, więc hook nie może sprawdzić, czy komenda nie ujawni tokenu. Zainstaluj Pythona 3." >&2
-    exit 2
-fi
-exit 0
+# Without Python the command cannot be checked, so it is always blocked.
+echo "Nie znaleziono Pythona 3.8 lub nowszego (python3, python ani py), więc hook bezpieczeństwa nie może sprawdzić tej operacji i ją blokuje. Zainstaluj Pythona 3 i uruchom sesję ponownie." >&2
+exit 2

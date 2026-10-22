@@ -16,7 +16,7 @@ Polonium Station to polski fork Space Station 14 (C#, silnik RobustToolbox, arch
 Zgłaszaj:
 
 - zmiany niezwiązane z celem PR: przeformatowanie, zmiany nazw, poprawki stylu w plikach upstreamu, przypadkowe zmiany w `.slnx`, `.csproj`, plikach IDE i białych znakach,
-- zmiany w plikach spoza `_Polonium` bez komentarza `Polonium` z powodem,
+- zmiany w kodzie gry (`Content.*/`), prototypach (`Resources/Prototypes/`) i plikach FTL spoza folderów `_Polonium` bez komentarza `Polonium` z powodem; dokumentacji i konfiguracji repozytorium (np. `AGENTS.md`, `.github/`) to nie dotyczy,
 - teksty zapisane na sztywno w C# lub YAML, nowe klucze bez polskiej wersji, zdania sklejane z kawałków w kodzie,
 - dane od klienta, których serwer nie sprawdza, wyjątki rzucane przez błędne dane od klienta i stan widoczny dla klienta bez synchronizacji,
 - usunięty lub przemianowany prototyp encji bez wpisu w `Resources/migration.yml`,

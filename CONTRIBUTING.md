@@ -2,7 +2,7 @@
 
 #### 1. Jeden temat zmian = jeden PR (Pull Request)
 
-Zezwalamy na łączenie niewielkich zmian w kodzie (o ile każda z nich zostanie opisana w treści PR) lub tłumaczeń gry w jednym PR. Wymagamy jednak, aby większe zmiany były rozdzielane na osobne PR-y.
+Zezwalamy na łączenie w jednym PR niewielkich, powiązanych ze sobą zmian w kodzie (o ile każda z nich zostanie opisana w treści PR) lub tłumaczeń gry. Wymagamy jednak, aby większe zmiany były rozdzielane na osobne PR-y.
 
 Pełną treść wytycznych dotyczących PR można znaleźć [niżej](#wytyczne-dotyczące-pull-requestów).
 
@@ -14,9 +14,9 @@ Są jednak sytuacje, w których nie da się uniknąć kopiowania. Na przykład: 
 
 #### 3. Trzymaj się określonego stylu kodowania
 
-- `PascalCase` dla klas, struktur, interfejsów, zdarzeń, metod, właściwości, stałych, pól publicznych i pól `static readonly`
+- `PascalCase` dla klas, struktur, interfejsów, zdarzeń, metod, właściwości, stałych, pól publicznych i pól `static readonly` (także prywatnych)
 - `camelCase` dla zmiennych lokalnych i parametrów funkcji
-- `_camelCase` dla pól prywatnych, np. wstrzykiwanych zależności ([Dependency Injection](https://docs.spacestation14.com/en/robust-toolbox/ioc.html)) albo wartości CVarów zapamiętanych w systemie:
+- `_camelCase` dla pozostałych pól prywatnych, np. wstrzykiwanych zależności ([Dependency Injection](https://docs.spacestation14.com/en/robust-toolbox/ioc.html)) albo wartości CVarów zapamiętanych w systemie:
 
 ```csharp
 public abstract partial class SharedStaminaSystem : EntitySystem
