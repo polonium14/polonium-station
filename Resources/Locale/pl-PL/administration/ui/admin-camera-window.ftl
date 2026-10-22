@@ -1,5 +1,5 @@
-admin-camera-window-title = Observing { $name }
-admin-camera-window-title-placeholder = Observing
-admin-camera-window-follow = Follow
-admin-camera-window-pop-out = Pop out
-admin-camera-window-pop-in = Pop in
+admin-camera-window-title = Obserwowanie: { $name }
+admin-camera-window-title-placeholder = Obserwowanie
+admin-camera-window-follow = Śledź
+admin-camera-window-pop-out = Wysuń
+admin-camera-window-pop-in = Wsuń

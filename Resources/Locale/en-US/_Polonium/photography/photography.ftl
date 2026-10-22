@@ -1,6 +1,13 @@
 photo-viewer-title = photograph
 photo-viewer-empty = The photograph is blank.
 photograph-examine-subject = A photograph of {$name}.
+photograph-examine-caption = Signed on the bottom strip: [color={$color}]"{$caption}"[/color]
+photograph-already-signed = {CAPITALIZE(THE($target))} is already signed.
+photograph-sign-failure = You can't sign {THE($target)} from here.
+photograph-signed-self = You sign {THE($target)}.
+photograph-signed-other = {CAPITALIZE(THE($user))} signs {THE($target)}.
+photo-viewer-sign-placeholder = Write on the photo...
+photo-viewer-sign-button = Sign
 
 camera-toggle-flash-verb = Toggle flash
 camera-flash-on = Flash: [color=green]on[/color]

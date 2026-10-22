@@ -1,2 +1,2 @@
-command-description-solution-get = Grabs the given solution off the given entity.
-command-description-solution-adjreagent = Adjusts the given reagent on the given solution.
+command-description-solution-get = Pobiera dany roztwór z danej encji.
+command-description-solution-adjreagent = Zmienia ilość danego reagentu w danym roztworze.

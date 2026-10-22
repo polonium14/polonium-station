@@ -1,6 +1,6 @@
-ent-SpawnPointNanotrasenRepresentative = nanotrasenrepresentative
+ent-SpawnPointNanotrasenRepresentative = przedstawiciel Nanotrasen
     .desc = { ent-SpawnPointJobBase.desc }
-ent-SpawnPointNanotrasenCareerTrainer = nanotrasencareertrainer
+ent-SpawnPointNanotrasenCareerTrainer = instruktor kariery Nanotrasen
     .desc = { ent-SpawnPointJobBase.desc }
-ent-SpawnPointBlueshieldOfficer = blueshieldofficer
+ent-SpawnPointBlueshieldOfficer = oficer Blueshield
     .desc = { ent-SpawnPointJobBase.desc }

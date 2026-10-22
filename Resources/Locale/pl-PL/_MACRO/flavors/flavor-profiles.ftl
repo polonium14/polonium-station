@@ -1,3 +1,3 @@
-flavor-complex-ants = like ants
-flavor-complex-snotty = like snot
-flavor-complex-allulalo = like hand sanitizer
+flavor-complex-ants = jak mrówki
+flavor-complex-snotty = jak smarki
+flavor-complex-allulalo = jak płyn do dezynfekcji rąk

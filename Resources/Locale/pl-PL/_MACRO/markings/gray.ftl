@@ -1,53 +1,53 @@
 # Chest
 
-marking-BellyGem = Belly Gem
-marking-BellyGem-bellygem = Belly Gem
-marking-GrayObject = Inscrutable Objects
-marking-GrayObject-object1 = Keb Orb
-marking-GrayObject-object2 = Yaer Keb Orb
-marking-GrayTattooCar = Car Tattoo
-marking-GrayTattooCar-car1 = Car
-marking-GrayTattooCar-car2 = Wheels
-marking-GrayTattooPlane = Plane Tattoo
-marking-GrayTattooPlane-plane1 = Body
-marking-GrayTattooPlane-plane2 = Livery
-marking-RadiumGlow = Radium Glow
-marking-RadiumGlow-radiumglow = Radium Glow
+marking-BellyGem = Klejnot na brzuchu
+marking-BellyGem-bellygem = Klejnot na brzuchu
+marking-GrayObject = Niezgłębione przedmioty
+marking-GrayObject-object1 = Kula Keb
+marking-GrayObject-object2 = Kula Yaer Keb
+marking-GrayTattooCar = Tatuaż samochodu
+marking-GrayTattooCar-car1 = Samochód
+marking-GrayTattooCar-car2 = Koła
+marking-GrayTattooPlane = Tatuaż samolotu
+marking-GrayTattooPlane-plane1 = Kadłub
+marking-GrayTattooPlane-plane2 = Malowanie
+marking-RadiumGlow = Blask radu
+marking-RadiumGlow-radiumglow = Blask radu
 
 # Head
 
-marking-GrayEyebags = Gray Eyebags
-marking-GrayEyebags-eyebags = Eyebags
-marking-GrayHeadgem = Gray Headgem
-marking-GrayHeadgem-gem = Headgem
-marking-GrayLittleEyebrows = Gray Little Eyebrows
-marking-GrayLittleEyebrows-littleeyebrows = Eyebrows
-marking-GraySpots = Gray Head Spots
-marking-GraySpots-spots = Spots
-marking-GraySunkenCheeks = Gray Sunken Cheeks
-marking-GraySunkenCheeks-sunkencheeks = Sunken Cheeks
-marking-GrayTallEars = Gray Ears (Tall)
-marking-GrayTallEars-tallears = Ears
-marking-GrayWrinkles = Gray Wrinkles
-marking-GrayWrinkles-wrinkles = Gray Wrinkles
-marking-RadiumGlowBrain = Radium Glow Brain
-marking-RadiumGlowBrain-radiumglowbrain = Radium Glow Brain
-marking-RadiumGlowCheeks = Radium Glow Blush
-marking-RadiumGlowCheeks-radiumglowcheeks = Radium Glow Blush
+marking-GrayEyebags = Szare worki pod oczami
+marking-GrayEyebags-eyebags = Worki pod oczami
+marking-GrayHeadgem = Szary klejnot na głowie
+marking-GrayHeadgem-gem = Klejnot na głowie
+marking-GrayLittleEyebrows = Szare małe brwi
+marking-GrayLittleEyebrows-littleeyebrows = Brwi
+marking-GraySpots = Szare plamy na głowie
+marking-GraySpots-spots = Plamy
+marking-GraySunkenCheeks = Szare zapadnięte policzki
+marking-GraySunkenCheeks-sunkencheeks = Zapadnięte policzki
+marking-GrayTallEars = Szare uszy (wysokie)
+marking-GrayTallEars-tallears = Uszy
+marking-GrayWrinkles = Szare zmarszczki
+marking-GrayWrinkles-wrinkles = Szare zmarszczki
+marking-RadiumGlowBrain = Mózg świecący radem
+marking-RadiumGlowBrain-radiumglowbrain = Mózg świecący radem
+marking-RadiumGlowCheeks = Rumieniec świecący radem
+marking-RadiumGlowCheeks-radiumglowcheeks = Rumieniec świecący radem
 
 # Snout
 
 
 # Eyes
 
-marking-GrayCuteEyes-cute = Gray Eyes (Cute)
-marking-GrayCuteEyes = Gray Eyes (Cute)
-marking-GrayCoolEyes-cool = Gray Eyes (Cool)
-marking-GrayCoolEyes = Gray Eyes (Cool)
-marking-GrayFakeLashes = Fake Lashes
-marking-GrayFakeLashes-fakelashes = Fake Lashes
-marking-GrayWideEyes-wide = Gray Eyes (Wide)
-marking-GrayWideEyes = Gray Eyes (Wide)
+marking-GrayCuteEyes-cute = Szare oczy (słodkie)
+marking-GrayCuteEyes = Szare oczy (słodkie)
+marking-GrayCoolEyes-cool = Szare oczy (fajne)
+marking-GrayCoolEyes = Szare oczy (fajne)
+marking-GrayFakeLashes = Sztuczne rzęsy
+marking-GrayFakeLashes-fakelashes = Sztuczne rzęsy
+marking-GrayWideEyes-wide = Szare oczy (szerokie)
+marking-GrayWideEyes = Szare oczy (szerokie)
 
 # RArm
 
@@ -63,11 +63,11 @@ marking-GrayWideEyes = Gray Eyes (Wide)
 
 # UndergarmentBottom
 
-marking-GrayUnderwearClassic = Classics Of Stupee Culture
-marking-GrayUnderwearClassic-classic = Classics Of Stupee Culture
-marking-GrayUnderwearStriped = Striped Underwear
-marking-GrayUnderwearStriped-striped1 = Stripes
-marking-GrayUnderwearStriped-striped2 = Stripes
+marking-GrayUnderwearClassic = Klasyka kultury Stupee
+marking-GrayUnderwearClassic-classic = Klasyka kultury Stupee
+marking-GrayUnderwearStriped = Pasiasta bielizna
+marking-GrayUnderwearStriped-striped1 = Pasy
+marking-GrayUnderwearStriped-striped2 = Pasy
 marking-GrayUnderwearToga = Toga
 marking-GrayUnderwearToga-toga = Toga
 
@@ -94,13 +94,13 @@ marking-GrayUnderwearToga-toga = Toga
 
 # HeadSide
 
-marking-GrayCuteEars = Gray Ears (Cute)
-marking-GrayCuteEars-cute = Gray Ears (Cute)
+marking-GrayCuteEars = Szare uszy (słodkie)
+marking-GrayCuteEars-cute = Szare uszy (słodkie)
 
 # HeadTop
 
-marking-GrayClassicAntenna = Gray Antenna (Classic)
-marking-GrayClassicAntenna-classic = Gray Antenna (Classic)
+marking-GrayClassicAntenna = Szara antena (klasyczna)
+marking-GrayClassicAntenna-classic = Szara antena (klasyczna)
 
 # Tail
 

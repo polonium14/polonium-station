@@ -1,6 +1,6 @@
 # species specific
-loadout-group-full-tank-aquatic = Full tank for water-breathers
-loadout-group-breath-tool-decapoid = Vaporizer for decapoids
-loadout-group-breath-tool-inventory-decapoid = Vaporizer for decapoids (in inventory)
-loadout-group-breath-tool-inventory-decapoid-clown = Vaporizer for decapoid clowns (in inventory)
-loadout-group-breath-tool-inventory-decapoid-mime = Vaporizer for decapoid mimes (in inventory)
+loadout-group-full-tank-aquatic = Pełna butla dla oddychających wodą
+loadout-group-breath-tool-decapoid = Waporyzator dla dekapoidów
+loadout-group-breath-tool-inventory-decapoid = Waporyzator dla dekapoidów (w ekwipunku)
+loadout-group-breath-tool-inventory-decapoid-clown = Waporyzator dla dekapoidalnych klaunów (w ekwipunku)
+loadout-group-breath-tool-inventory-decapoid-mime = Waporyzator dla dekapoidalnych mimów (w ekwipunku)

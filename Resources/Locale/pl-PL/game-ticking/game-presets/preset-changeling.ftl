@@ -1,8 +1,8 @@
 changeling-role-greeting =
-    You are a changeling, a highly intelligent predator.
-    Your primary goal is to escape the station alive via assuming the identities of the denizens of this station.
-    You are hungry and will not make it long without sustenance...
-    Kill. Consume. Hide. Survive.
+    Jesteś zmiennokształtnym, wysoce inteligentnym drapieżnikiem.
+    Twoim głównym celem jest ucieczka ze stacji żywym poprzez przybieranie tożsamości jej mieszkańców.
+    Jesteś głodny i nie przetrwasz długo bez pożywienia...
+    Zabijaj. Pochłaniaj. Ukrywaj się. Przetrwaj.
 changeling-briefing =
     Jesteś Zmiennokształtnym.
     Możesz wykorzystać i przyjąć tożsamości tych, których pożerasz, aby uniknąć tragicznego losu.

@@ -1,8 +1,8 @@
-ent-CardBaseNanotrasen = card
+ent-CardBaseNanotrasen = karta
     .desc = { ent-CardBase.desc }
-ent-CardBoxNanotrasen = nanotrasen deck box
+ent-CardBoxNanotrasen = pudełko na talię Nanotrasen
     .desc = { ent-CardBoxBase.desc }
-ent-CardDeckNanotrasen = deck of cards
+ent-CardDeckNanotrasen = talia kart
     .desc = { ent-CardDeckBase.desc }
 ent-CardSc2OfClubsNanotrasen = { ent-CardBaseNanotrasen }
     .desc = { ent-CardBaseNanotrasen.desc }

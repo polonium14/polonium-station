@@ -306,7 +306,7 @@
         - id: FoodCakeBirthday
         - id: DrinkLean
           amount: 4
-        - id: DrinkMocnyFullCan # Polonium: mocny full z NSV13
+        - id: DrinkMocnyFull # Polonium: mocny full
           amount: 4
         - id: KnifePlastic
         - id: ClothingHeadHatPartyRed

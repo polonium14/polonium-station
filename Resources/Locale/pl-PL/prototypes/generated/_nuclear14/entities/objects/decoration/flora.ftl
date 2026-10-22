@@ -1,8 +1,8 @@
-ent-N14FloraLogBase = log
-    .desc = Once a tree, always a log.
-ent-N14FloraLog1 = log
-    .desc = Once a tree, always a log.
-    .suffix = seat
+ent-N14FloraLogBase = kłoda
+    .desc = Raz drzewem, na zawsze kłodą.
+ent-N14FloraLog1 = kłoda
+    .desc = Raz drzewem, na zawsze kłodą.
+    .suffix = siedzisko
 ent-N14FloraLog3 = { ent-N14FloraLogBase }
-    .suffix = stash
+    .suffix = skrytka
     .desc = { ent-N14FloraLogBase.desc }

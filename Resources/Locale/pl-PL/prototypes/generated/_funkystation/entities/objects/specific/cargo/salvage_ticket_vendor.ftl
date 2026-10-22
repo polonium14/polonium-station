@@ -1,2 +1,2 @@
-ent-VendingMachineSalvage = Salvage Vendor
-    .desc = A dwarf's best friend!
+ent-VendingMachineSalvage = Automat Odzysku
+    .desc = Najlepszy przyjaciel krasnoluda!

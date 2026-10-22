@@ -1,6 +1,6 @@
-command-description-tag-list = Lists tags on the given entities.
-command-description-tag-with = Returns only the entities with the given tag from the piped list of entities.
-command-description-tag-add = Adds a tag to the given entities.
-command-description-tag-rm = Removes a tag from the given entities.
-command-description-tag-addmany = Adds a list of tags to the given entities.
-command-description-tag-rmmany = Removes a list of tags from the given entities.
+command-description-tag-list = Wyświetla tagi danych encji.
+command-description-tag-with = Zwraca tylko te encje z przekazanej potokiem listy, które mają dany tag.
+command-description-tag-add = Dodaje tag do danych encji.
+command-description-tag-rm = Usuwa tag z danych encji.
+command-description-tag-addmany = Dodaje listę tagów do danych encji.
+command-description-tag-rmmany = Usuwa listę tagów z danych encji.

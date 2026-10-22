@@ -209,17 +209,17 @@
   copyright: "nikitavix on Discord"
   source: "https://funkystation.org"
 
-- files: ["PewnaSmierc.png"]
-  license: "CC-BY-NC-SA-4.0"
-  copyright: "Saver310"
-  source: "https://github.com/polonium14/polonium-station"
-
 - files: ["jerzy.png"]
   license: "CC-BY-NC-SA-4.0"
   copyright: "Saver310"
   source: "https://github.com/polonium14/polonium-station"
 
 - files: ["DrunkardsSpreeRedux.png"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Saver310"
+  source: "https://github.com/polonium14/polonium-station"
+
+- files: ["KrzesloGang.png"]
   license: "CC-BY-NC-SA-4.0"
   copyright: "Saver310"
   source: "https://github.com/polonium14/polonium-station"

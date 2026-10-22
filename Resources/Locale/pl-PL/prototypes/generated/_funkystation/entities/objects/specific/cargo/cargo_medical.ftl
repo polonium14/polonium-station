@@ -1,2 +1,2 @@
-ent-BoxEmergencyMedipens = emergency medipens box
-    .desc = Box that contains six emergency medipens
+ent-BoxEmergencyMedipens = pudełko awaryjnych medipenów
+    .desc = Pudełko zawierające sześć awaryjnych medipenów.

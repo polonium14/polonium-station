@@ -9,5 +9,5 @@ ent-BoxDeathRattleImplants = pudełko implantatorów Ostatecznego Tchnienia
     .desc = Sześć implantatorów Ostatecznego Tchnienia dla całej drużyny.
 ent-CombatBakeryKit = zestaw piekarnictwa bojowego
     .desc = Zestaw tajnej broni ukrytej w wypiekach.
-ent-SyndimovCircuitKit = syndimov circuit kit
-    .desc = A kit containing an electronics board with the Syndimov lawset and a Syndicate ID.
+ent-SyndimovCircuitKit = zestaw płytki Syndimova
+    .desc = Zestaw zawierający płytkę elektroniczną z zestawem praw Syndimova oraz identyfikator Syndykatu.

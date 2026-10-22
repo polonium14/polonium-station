@@ -1,2 +1,2 @@
 ent-HelldiverIDCard = karta identyfikacyjna nurka złomowego
-    .desc = To go where no person should go, to gain what was not ours, is what we ought to do.
+    .desc = Iść tam, gdzie nikt nie powinien, zdobywać to, co nie było nasze – oto, co powinniśmy robić.

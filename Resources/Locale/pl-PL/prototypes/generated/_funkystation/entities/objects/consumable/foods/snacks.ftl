@@ -1,4 +1,4 @@
 ent-FoodTrashNoRecycle = { ent-SolutionFood }
-    .desc = This is rubbish.
-ent-FoodPackingPeanut = packing peanut
-    .desc = Trash that keeps your packages safe. Best left uneaten.
+    .desc = To śmieć.
+ent-FoodPackingPeanut = styropianowa kulka
+    .desc = Odpadek, który chroni twoje paczki. Lepiej go nie jeść.

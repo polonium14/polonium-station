@@ -1,2 +1,2 @@
-cmd-readyall-desc = Readies up all players in the lobby, except for observers.
-cmd-readyall-help = Usage: readyall [bool]
+cmd-readyall-desc = Oznacza wszystkich graczy w lobby jako gotowych, z wyjątkiem obserwatorów.
+cmd-readyall-help = Użycie: readyall [bool]

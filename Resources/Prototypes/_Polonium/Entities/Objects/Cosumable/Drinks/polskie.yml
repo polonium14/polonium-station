@@ -2,22 +2,6 @@
 
 - type: entity
   parent: DrinkCanBaseFull
-  id: DrinkMocnyFullCan
-  name: mocny full
-  description: The best in the whole cosmos.
-  components:
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Beer
-        Quantity: 30
-  - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Drinks/mocnyfull.rsi
-  - type: Item
-    sprite: _Polonium/Objects/Cosumable/Drinks/mocnyfull.rsi
-
-- type: entity
-  parent: DrinkCanBaseFull
   id: DrinkHelenkaCan
   name: Helena apple-strawberry
   description: Tastes like the allotment garden.

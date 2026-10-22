@@ -99,7 +99,7 @@
     DrinkMelonSodaCan: 5  # readded missing drinks - Yaket
     # 🇵🇱 Polonium: polskie napoje z NSV13
     DrinkAmarenaBottleFull: 5
-    DrinkMocnyFullCan: 6
+    DrinkMocnyFull: 6
     DrinkTymbarkBottle: 6
     DrinkHelenkaCan: 6
   contrabandInventory:

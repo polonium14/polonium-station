@@ -1,9 +1,9 @@
-ent-DrinkWaterBottleLargeFull = water bottle
-    .desc = A bottle of clean water designed with claw-based ergonomics in mind. Fresh from the mineral-aquifers of Nest Krr'kik.
-    .suffix = Decapoid
-ent-DrinkWaterBottleTallFull = extended-capacity water bottle
-    .desc = A tall bottle of clean water designed with claw-based ergonomics in mind. Fresh from the mineral-aquifers of Nest Krr'kik.
-    .suffix = Decapoid, Extended
+ent-DrinkWaterBottleLargeFull = butelka wody
+    .desc = Butelka czystej wody zaprojektowana z myślą o ergonomii szponów. Prosto z mineralnych warstw wodonośnych Gniazda Krr'kik.
+    .suffix = Dekapoid
+ent-DrinkWaterBottleTallFull = butelka wody o zwiększonej pojemności
+    .desc = Wysoka butelka czystej wody zaprojektowana z myślą o ergonomii szponów. Prosto z mineralnych warstw wodonośnych Gniazda Krr'kik.
+    .suffix = Dekapoid, zwiększona pojemność
 ent-DrinkWaterBottleLargeFunnyFull = { ent-DrinkWaterBottleLargeFull }
-    .suffix = Decapoid, funny
+    .suffix = Dekapoid, śmieszna
     .desc = { ent-DrinkWaterBottleLargeFull.desc }

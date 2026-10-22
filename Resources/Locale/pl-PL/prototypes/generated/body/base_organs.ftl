@@ -1,6 +1,6 @@
-ent-OrganBase = organ
+ent-OrganBase = narząd
     .desc = { ent-BaseItem.desc }
-ent-OrganBaseOrganic = organ
+ent-OrganBaseOrganic = narząd
     .desc = { ent-OrganBase.desc }
 ent-OrganBaseTorso = klatka piersiowa
     .desc = { ent-OrganBase.desc }

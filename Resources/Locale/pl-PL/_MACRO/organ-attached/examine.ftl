@@ -1,1 +1,1 @@
-organ-attached-examine = { CAPITALIZE(SUBJECT($attached)) } is attached to { $body }'s { $organ }.
+organ-attached-examine = { CAPITALIZE(SUBJECT($attached)) } jest przymocowany do { $organ } ({ $body }).

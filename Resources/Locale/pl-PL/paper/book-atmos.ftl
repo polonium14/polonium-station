@@ -17,38 +17,38 @@ book-text-atmos-distro =
     
     You can validate the distro pressure with a gas analyzer, but keep in mind that high demand due to things like spacings can cause the distro to be below the set target pressure for extended periods. So, if you see a dip in pressure, don't panic — it might be temporary.
 book-text-atmos-waste =
-    The waste network is the primary system responsible for keeping the air on the station free of contaminants.
+    Sieć odpadowa to główny system odpowiedzialny za utrzymywanie powietrza na stacji w stanie wolnym od zanieczyszczeń.
     
-    You can identify the relevant pipes by their Pleasing Dull Red color or by using a tray scanner to trace which pipes are connected to the scrubbers on the station.
+    Odpowiednie rury można rozpoznać po przyjemnym matowoczerwonym kolorze lub użyć skanera T-promieniowego, aby prześledzić, które rury są połączone z oczyszczaczami powietrza na stacji.
     
-    The waste network is used to transport waste gasses to either be filtered or spaced. It is ideal to keep the pressure at 0 kPa, but it may sometimes be at a low non-zero pressure while in use.
+    Sieć odpadowa służy do transportu gazów odpadowych, które mają zostać przefiltrowane albo wyrzucone w przestrzeń kosmiczną. Idealnie ciśnienie utrzymuje się na poziomie 0 kPa, ale w trakcie użytkowania może czasem być niskie i niezerowe.
     
-    Technicians have the option to filter or space the waste gasses. While spacing is faster, filtering allows for the gasses to be reused for recycling or selling.
+    Technicy mogą wybrać, czy gazy odpadowe filtrować, czy wyrzucać w kosmos. Wyrzucanie jest szybsze, ale filtrowanie pozwala ponownie wykorzystać gazy w recyklingu lub je sprzedać.
     
-    The waste network can also be used to diagnose atmospheric issues on the station. High levels of a waste gas may suggest a large leak, while the presence of non-waste gases may indicate a scrubber configuration or physical connection issue. If the gases are at a high temperature, it could indicate a fire.
+    Sieć odpadowa pomaga też diagnozować problemy z atmosferą na stacji. Wysoki poziom gazu odpadowego może wskazywać na duży wyciek, a obecność gazów nieodpadowych może oznaczać błąd w konfiguracji oczyszczacza powietrza lub w fizycznym połączeniu. Jeśli gazy mają wysoką temperaturę, może to oznaczać pożar.
 book-text-atmos-alarms =
-    Air alarms are located throughout stations to allow management and monitoring of the local atmosphere.
+    Alarmy atmosferyczne są rozmieszczone na całej stacji, aby umożliwić zarządzanie lokalną atmosferą i jej monitorowanie.
     
-    The air alarm interface provides technicians with a list of connected sensors, their readings, and the ability to adjust thresholds. These thresholds are used to determine the alarm condition of the air alarm. Technicians can also use the interface to set target pressures for vents and configure the operating speeds and targeted gases for scrubbers.
+    Interfejs alarmu atmosferycznego udostępnia technikom listę podłączonych czujników, ich odczyty oraz możliwość regulacji progów. Progi te określają stan alarmowy urządzenia. Za pomocą interfejsu technicy mogą też ustawiać docelowe ciśnienie otworów wentylacyjnych oraz konfigurować prędkość pracy i docelowe gazy oczyszczaczy powietrza.
     
-    While the interface allows for fine-tuning of the devices under the air alarm's control, there are also several modes available for rapid configuration of the alarm. These modes are automatically switched to when the alarm state changes:
-    - Filtering: The default mode
-    - Filtering (wide): A filtering mode that modifies the operation of scrubbers to scrub a wider area
-    - Fill: Disables scrubbers and sets vents to their maximum pressure
-    - Panic: Disables vents and sets scrubbers to siphon
+    Interfejs pozwala precyzyjnie dostroić urządzenia podlegające alarmowi, ale dostępnych jest też kilka trybów do szybkiej konfiguracji. Tryby te włączają się automatycznie, gdy zmienia się stan alarmu:
+    - Filtrowanie: tryb domyślny
+    - Filtrowanie (szerokie): tryb filtrowania, który zmienia pracę oczyszczaczy powietrza tak, by filtrowały większy obszar
+    - Napełnianie: wyłącza oczyszczacze powietrza i ustawia otwory wentylacyjne na maksymalne ciśnienie
+    - Tryb paniki: wyłącza otwory wentylacyjne i ustawia oczyszczacze powietrza na zasysanie
     
-    A multitool or network configurator can be used to link devices to air alarms.
+    Do łączenia urządzeń z alarmami atmosferycznymi można użyć multitoola lub konfiguratora sieci.
 book-text-atmos-vents =
-    Below is a quick reference guide to several atmospheric devices:
+    Poniżej znajduje się krótki przewodnik po kilku urządzeniach atmosferycznych:
     
-                Passive Vents:
-                These vents don't require power, they allow gases to flow freely both into and out of the pipe network they are attached to.
+                Pasywne otwory wentylacyjne:
+                Nie wymagają one zasilania i pozwalają gazom swobodnie przepływać do sieci rur, do której są podłączone, i z niej na zewnątrz.
     
-                Active Vents:
-                These are the most common vents on the station. They have an internal pump, and require power. By default, they will only pump gases out of pipes, and only up to 101 kpa. However, they can be reconfigured using an air alarm. They will also lock out if the room is under 1 kpa, to prevent pumping gasses into space.
+                Aktywne otwory wentylacyjne:
+                To najpopularniejszy rodzaj otworów wentylacyjnych na stacji. Mają wewnętrzną pompę i wymagają zasilania. Domyślnie tylko wypompowują gazy z rur, i to tylko do 101 kPa. Można je jednak przekonfigurować za pomocą alarmu atmosferycznego. Blokują się też, gdy ciśnienie w pomieszczeniu spadnie poniżej 1 kPa, aby nie wpompowywać gazów w próżnię.
     
-                Air Scrubbers:
-                These devices allow gases to be removed from the environment and put into the connected pipe network. They can be configured to select specific gases when connected to an air alarm.
+                Oczyszczacze powietrza:
+                Te urządzenia usuwają gazy ze środowiska i przekazują je do podłączonej sieci rur. Po podłączeniu do alarmu atmosferycznego można je skonfigurować tak, by wybierały konkretne gazy.
     
-                Air Injectors:
-                Injectors are similar to active vents, but they have no internal pump and do not require power. They cannot be configured, but they can continue to pump gasses up to much higher pressures.
+                Wtryskiwacze powietrza:
+                Wtryskiwacze przypominają aktywne otwory wentylacyjne, ale nie mają wewnętrznej pompy i nie wymagają zasilania. Nie można ich konfigurować, ale potrafią pompować gazy do znacznie wyższych ciśnień.

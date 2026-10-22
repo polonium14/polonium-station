@@ -1,0 +1,10 @@
+ent-ActionMorphDisguise = Assume form
+    .desc = Twist your body into a copy of a nearby object.
+ent-ActionMorphReveal = Restore form
+    .desc = Collapse back into your true form.
+ent-ActionMorphStomach = Stomach contents
+    .desc = Spit out, prepare to throw or digest what you have eaten.
+ent-ActionMorphSpit = Spit
+    .desc = Spit the prepared stomach content at a location.
+ent-ActionMorphDevour = Devour
+    .desc = Swallow a dead or dying creature, or an item.
