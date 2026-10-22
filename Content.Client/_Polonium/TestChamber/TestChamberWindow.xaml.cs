@@ -52,7 +52,12 @@ public sealed partial class TestChamberWindow : FancyWindow
                         || (k.Pr?.Contains(search, StringComparison.CurrentCultureIgnoreCase) ?? false))
             .OrderBy(k => k.Pr != null)
             .ThenByDescending(k => PrNumber(k.Pr))
-            .ThenBy(k => k.Name);
+            .ThenBy(k => k.Name)
+            .ToList();
+
+        // A kit hidden by the search can't stay selected, or Drop kit would spawn something not on the list
+        if (_selected != null && !kits.Contains(_selected))
+            Select(null);
 
         foreach (var kit in kits)
         {
