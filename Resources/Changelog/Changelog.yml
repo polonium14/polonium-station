@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: SnappingOpossum
-  changes:
-  - message: Certain randomised items and decorations no longer spawn with the wrong
-      rotation.
-    type: Fix
-  id: 9575
-  time: '2026-03-14T16:32:36.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43234
 - author: themias
   changes:
   - message: Healing with a holy book now gives off a holy light.
@@ -4332,3 +4324,13 @@
   id: 10069
   time: '2026-10-22T12:46:55.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1121
+- author: Nikita
+  changes:
+  - message: "Cia\u0142a martwych potwor\xF3w z Honkanomalii mo\u017Cna teraz przepycha\u0107\
+      \ przez 1-kafelkowe korytarze"
+    type: Tweak
+  - message: Potwory z honkanomalii preszli przez lekki nerf
+    type: Tweak
+  id: 10070
+  time: '2026-10-22T18:13:31.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1141
