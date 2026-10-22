@@ -91,13 +91,13 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      82: Critical
-      96: Dead
+      94: Critical
+      110: Dead
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 192
+        damage: 220
       behaviors:
       - !type:GibBehavior { }
 
@@ -109,13 +109,13 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      54: Critical
-      64: Dead
+      63: Critical
+      74: Dead
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 128
+        damage: 148
       behaviors:
       - !type:GibBehavior { }
 
@@ -127,13 +127,13 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      98: Critical
-      115: Dead
+      112: Critical
+      132: Dead
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 230
+        damage: 264
       behaviors:
       - !type:GibBehavior { }
 
@@ -145,13 +145,13 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      128: Critical
-      150: Dead
+      147: Critical
+      173: Dead
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 346
       behaviors:
       - !type:GibBehavior { }
 
@@ -163,13 +163,13 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      137: Critical
-      161: Dead
+      157: Critical
+      185: Dead
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 322
+        damage: 370
       behaviors:
       - !type:GibBehavior { }
 
@@ -184,7 +184,7 @@
     offset: 0, 0.5
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.15
+    damageDivisor: 1.32
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/banana_tree.rsi
@@ -204,7 +204,7 @@
     sprite: _Polonium/Mobs/Clowns/lube.rsi
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 0.64
+    damageDivisor: 0.74
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/lube.rsi
@@ -252,7 +252,7 @@
     sprite: _Polonium/Mobs/Clowns/flesh_clown.rsi
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.15
+    damageDivisor: 1.32
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/flesh_clown.rsi
@@ -272,7 +272,7 @@
     sprite: _Polonium/Mobs/Clowns/pie_spewer.rsi
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.15
+    damageDivisor: 1.32
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/pie_spewer.rsi
@@ -292,7 +292,7 @@
   - type: BatterySelfRecharger
     autoRechargeRate: 25
   - type: Gun
-    fireRate: 0.5
+    fireRate: 0.25
     useKey: false
     selectedMode: SemiAuto
     availableModes:
@@ -310,7 +310,7 @@
     sprite: _Polonium/Mobs/Clowns/clown.rsi
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 0.96
+    damageDivisor: 1.1
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/clown.rsi
@@ -330,7 +330,7 @@
     sprite: _Polonium/Mobs/Clowns/c_thin.rsi
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.15
+    damageDivisor: 1.32
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/c_thin.rsi
@@ -350,7 +350,7 @@
     offset: 0, 0.5
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.5
+    damageDivisor: 1.73
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/honkhulk.rsi
@@ -385,7 +385,7 @@
     offset: 0, 0.5
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.15
+    damageDivisor: 1.32
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/honkmunculus.rsi
@@ -420,7 +420,7 @@
     offset: 0, 0.5
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.15
+    damageDivisor: 1.32
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/chlown.rsi
@@ -452,7 +452,7 @@
     offset: 0, 0.5
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.61
+    damageDivisor: 1.85
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/destroyer.rsi
@@ -487,7 +487,7 @@
     offset: 0, 0.5
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.15
+    damageDivisor: 1.32
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/mutant.rsi
@@ -518,7 +518,7 @@
     offset: 0, 0.5
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.5
+    damageDivisor: 1.73
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/blob.rsi
@@ -557,7 +557,7 @@
     sprite: _Polonium/Mobs/Clowns/honkling.rsi
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.15
+    damageDivisor: 1.32
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/honkling.rsi
@@ -589,7 +589,7 @@
     offset: 0, 0.5
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.15
+    damageDivisor: 1.32
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/long_face.rsi
@@ -616,7 +616,7 @@
     offset: 0, 0.5
   - type: DamageVisuals
     thresholds: [25, 50, 75, 85]
-    damageDivisor: 1.5
+    damageDivisor: 1.73
     trackAllDamage: true
     damageOverlay:
       sprite: _Polonium/Mobs/Clowns/c_punished.rsi
