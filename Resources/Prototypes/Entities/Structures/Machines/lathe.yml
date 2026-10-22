@@ -641,6 +641,7 @@
     - MedicalClothingStatic
     - EmptyMedkitsStatic
     - SurgeryStatic
+    - ProstheticsStatic # Polonium
     dynamicPacks:
     - Chemistry
   - type: Machine

@@ -40,6 +40,11 @@ public sealed class PatientIntakeTreatmentTest : GameTest
     /// </summary>
     private static readonly Dictionary<string, (string Surgery, string Step)> InsertSurgery = new()
     {
+        // Limbs before the hands and feet that hang off them.
+        { "ArmLeft", ("SurgeryAttachLeftArm", "SurgeryStepInsertArmLeft") },
+        { "ArmRight", ("SurgeryAttachRightArm", "SurgeryStepInsertArmRight") },
+        { "LegLeft", ("SurgeryAttachLeftLeg", "SurgeryStepInsertLegLeft") },
+        { "LegRight", ("SurgeryAttachRightLeg", "SurgeryStepInsertLegRight") },
         { "Eyes", ("SurgeryInsertEyes", "SurgeryStepInsertEyes") },
         { "Lungs", ("SurgeryInsertLungs", "SurgeryStepInsertLungs") },
         { "Liver", ("SurgeryInsertLiver", "SurgeryStepInsertLiver") },
@@ -172,11 +177,56 @@ public sealed class PatientIntakeTreatmentTest : GameTest
                 break;
 
             case PatientIntakeIssueKind.RemovePart:
-            case PatientIntakeIssueKind.ReplacePart:
-                foreach (var category in issue.Categories)
-                    TransplantFromDonor(entMan, patient, donor, category, replace: issue.Kind == PatientIntakeIssueKind.ReplacePart);
+                // Everything that is missing, in order: a lost arm took its hand with it.
+                foreach (var category in InsertSurgery.Keys)
+                    TransplantFromDonor(entMan, patient, donor, category, replace: false);
                 break;
+
+            case PatientIntakeIssueKind.ReplacePart:
+            {
+                var category = entMan.GetComponent<PatientIntakePatientComponent>(patient).IssueParts[issue.ID];
+                TransplantFromDonor(entMan, patient, donor, category, replace: true,
+                    prosthetic: issue.Prosthetic ? $"OrganProsthetic{category}" : null);
+                break;
+            }
         }
+    }
+
+    [Test]
+    public async Task ProsthesisRequestNeedsAProsthesis()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var intake = entMan.System<PatientIntakeSystem>();
+        var map = await pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+
+        EntityUid patient = default, donor = default;
+        await server.WaitPost(() =>
+        {
+            PatientIntakeMachineTest.AddAir(entMan, map.MapUid);
+            patient = entMan.SpawnEntity("MobHuman", coords);
+            donor = entMan.SpawnEntity("MobHuman", coords);
+        });
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            entMan.GetComponent<SurgeryTargetComponent>(patient).SepsisImmune = true;
+            var comp = entMan.AddComponent<PatientIntakePatientComponent>(patient);
+            comp.ExpectedParts = intake.PartCategories(patient);
+            Assert.That(intake.ApplyIssue(patient, comp, server.ProtoMan.Index<PatientIntakeIssuePrototype>("PatientIntakeProsthesis")), Is.True);
+            var category = comp.IssueParts["PatientIntakeProsthesis"];
+
+            TransplantFromDonor(entMan, patient, donor, category, replace: true);
+            Assert.That(intake.GetFailures((patient, comp)).Any(f => f.Kind == IntakeFailureKind.RequestNotDone), Is.True,
+                "An organic transplant doesn't meet a prosthesis request.");
+
+            TransplantFromDonor(entMan, patient, donor, category, replace: true, prosthetic: $"OrganProsthetic{category}");
+            Assert.That(intake.GetFailures((patient, comp)).Any(f => f.Kind == IntakeFailureKind.RequestNotDone), Is.False,
+                $"A prosthetic {category} meets it.");
+        });
     }
 
     private static void RunStepUntilTreated(IEntityManager entMan, EntityUid patient, TraumaType trauma, string surgeryId, string stepId)
@@ -199,7 +249,7 @@ public sealed class PatientIntakeTreatmentTest : GameTest
     /// <summary>
     /// Puts the donor's organ of this category in, removing the patient's own first for a swap request.
     /// </summary>
-    private static void TransplantFromDonor(IEntityManager entMan, EntityUid patient, EntityUid donor, string category, bool replace)
+    private static void TransplantFromDonor(IEntityManager entMan, EntityUid patient, EntityUid donor, string category, bool replace, string? prosthetic = null)
     {
         var containers = entMan.System<SharedContainerSystem>();
         var patientBody = entMan.GetComponent<BodyComponent>(patient);
@@ -214,9 +264,17 @@ public sealed class PatientIntakeTreatmentTest : GameTest
             containers.Remove(own, patientBody.Organs!, force: true);
         }
 
-        var donorBody = entMan.GetComponent<BodyComponent>(donor);
-        Assert.That(LimbTargetMap.TryGetOrganByCategory(entMan, donorBody, category, out var organ), Is.True);
-        containers.Remove(organ, donorBody.Organs!, force: true);
+        EntityUid organ;
+        if (prosthetic != null)
+        {
+            organ = entMan.SpawnEntity(prosthetic, entMan.GetComponent<TransformComponent>(patient).Coordinates);
+        }
+        else
+        {
+            var donorBody = entMan.GetComponent<BodyComponent>(donor);
+            Assert.That(LimbTargetMap.TryGetOrganByCategory(entMan, donorBody, category, out organ), Is.True);
+            containers.Remove(organ, donorBody.Organs!, force: true);
+        }
 
         var housing = ParentLimb.TryGetValue(category, out var limb)
             ? limb

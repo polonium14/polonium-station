@@ -200,10 +200,12 @@ public sealed partial class PatientIntakeSystem
 
             case PatientIntakeIssueKind.RemovePart:
             {
-                if (!TryPickOrgan(patient, issue, _ => true, out var organ, out _)
+                if (!TryPickOrgan(patient, issue, _ => true, out var organ, out var category)
                     || !TryComp<BodyComponent>(patient, out var body)
                     || body.Organs is null)
                     return false;
+
+                comp.IssueParts[issue.ID] = category;
 
                 // Woundable limbs go through amputation so the parent gets the dismemberment
                 // trauma reattach surgery expects.
@@ -231,6 +233,9 @@ public sealed partial class PatientIntakeSystem
                     return false;
 
                 comp.Replace[category] = organ;
+                comp.IssueParts[issue.ID] = category;
+                if (issue.Prosthetic)
+                    comp.Prosthetic.Add(category);
                 return true;
             }
         }

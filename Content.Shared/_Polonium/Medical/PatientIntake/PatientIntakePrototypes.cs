@@ -149,6 +149,12 @@ public sealed partial class PatientIntakeIssuePrototype : IPrototype
     public List<ProtoId<OrganCategoryPrototype>> Categories = new();
 
     /// <summary>
+    /// <see cref="PatientIntakeIssueKind.ReplacePart"/> only: the new part must be a prosthesis.
+    /// </summary>
+    [DataField]
+    public bool Prosthetic;
+
+    /// <summary>
     /// Case file line when the full issue list is shown. Gets <c>$part</c>.
     /// </summary>
     [DataField(required: true)]

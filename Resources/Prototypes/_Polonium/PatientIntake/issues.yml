@@ -168,6 +168,14 @@
   description: patient-intake-issue-missing-extremity
   symptom: patient-intake-symptom-missing-extremity
 
+- type: patientIntakeIssue
+  id: PatientIntakeMissingLimb
+  kind: RemovePart
+  cost: 5
+  categories: [ ArmLeft, ArmRight, LegLeft, LegRight ]
+  description: patient-intake-issue-missing-limb
+  symptom: patient-intake-symptom-missing-limb
+
 # Specific requests only.
 - type: patientIntakeIssue
   id: PatientIntakeReplaceEyes
@@ -192,3 +200,12 @@
   categories: [ Lungs ]
   description: patient-intake-issue-replace-lungs
   symptom: patient-intake-issue-replace-lungs
+
+- type: patientIntakeIssue
+  id: PatientIntakeProsthesis
+  kind: ReplacePart
+  cost: 0
+  prosthetic: true
+  categories: [ ArmLeft, ArmRight, HandLeft, HandRight, LegLeft, LegRight, FootLeft, FootRight ]
+  description: patient-intake-issue-prosthesis
+  symptom: patient-intake-issue-prosthesis

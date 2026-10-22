@@ -167,13 +167,16 @@ patient-intake-issue-blind = Uszkodzenie oczu
 patient-intake-symptom-blind = Nieostre widzenie
 patient-intake-issue-implant = Nielegalny implant śledzący (usuń go)
 patient-intake-symptom-implant = Uczucie czegoś pod skórą
-patient-intake-issue-missing-organ = Brak narządu wewnętrznego
+patient-intake-issue-missing-organ = Brak narządu wewnętrznego: {$part}
 patient-intake-symptom-missing-organ = Ofiara kradzieży narządu
-patient-intake-issue-missing-extremity = Brak dłoni lub stopy
+patient-intake-issue-missing-extremity = Brak dłoni lub stopy: {$part}
 patient-intake-symptom-missing-extremity = Utrata dłoni lub stopy w wypadku
+patient-intake-issue-missing-limb = Brak ręki lub nogi: {$part}
+patient-intake-symptom-missing-limb = Utrata kończyny w wypadku
 patient-intake-issue-replace-eyes = Prośba o nowe oczy (przeszczep)
 patient-intake-issue-replace-liver = Prośba o przeszczep wątroby
 patient-intake-issue-replace-lungs = Prośba o przeszczep płuc
+patient-intake-issue-prosthesis = Prośba o protezę: {$part}
 
 ## Łączenie urządzeń
 
