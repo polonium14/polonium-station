@@ -10,7 +10,7 @@ namespace Content.Shared._Polonium.TestChamber;
 /// Kits that need more than spawning (an antag role, reagents, a powered machine) can handle
 /// <see cref="TestChamberKitSpawnedEvent"/> in their own system.
 /// </remarks>
-[Prototype("testChamberKit")]
+[Prototype]
 public sealed partial class TestChamberKitPrototype : IPrototype
 {
     [IdDataField]
