@@ -116,3 +116,7 @@ rmc-xeno-pheromones-help =
     Warding - take less damage while critical.
 
     Recovery - faster health and plasma regeneration.
+
+## Construction menu
+
+rmc-xeno-structure-tooltip-cost = { $name } ({ $cost } plasma)

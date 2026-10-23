@@ -129,3 +129,7 @@ rmc-xeno-pheromones-help =
     Obrona - mniej obrażeń w stanie krytycznym.
     
     Regeneracja - szybsza regeneracja zdrowia i plazmy.
+
+## Menu budowy
+
+rmc-xeno-structure-tooltip-cost = { $name } ({ $cost } plazmy)
