@@ -235,6 +235,21 @@ public abstract partial class SharedGasTankSystem : GasMaxPressureSystem<GasTank
         return true;
     }
 
+    // Polonium start
+    /// <summary>
+    /// Drops the tank's user state without the use delay or disconnect sound,
+    /// for when the internals side goes away but <see cref="DisconnectFromInternals"/> is blocked.
+    /// </summary>
+    public void ClearInternalsUser(Entity<GasTankComponent> ent)
+    {
+        ent.Comp.User = null;
+        Dirty(ent);
+        _actions.SetToggled(ent.Comp.ToggleActionEntity, false);
+        ent.Comp.ConnectStream = Audio.Stop(ent.Comp.ConnectStream);
+        UpdateUserInterface(ent);
+    }
+    // Polonium end
+
     private bool ToggleInternals(Entity<GasTankComponent> ent, EntityUid? user = null)
     {
         if (ent.Comp.IsConnected)
