@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: themias
-  changes:
-  - message: Healing with a holy book now gives off a holy light.
-    type: Tweak
-  id: 9576
-  time: '2026-03-14T16:33:38.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43189
 - author: Centronias
   changes:
   - message: Certain small cargo products are now delivered in parcel wrap rather
@@ -4334,3 +4327,22 @@
   id: 10070
   time: '2026-10-22T18:13:31.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1141
+- author: Joker66613
+  changes:
+  - message: "Kr\xF3lowa sk\u0142ada jaja z facehuggerami. Facehugger skacze na twarz,\
+      \ usypia ofiar\u0119 i sk\u0142ada w niej embrion, z kt\xF3rego po kilku minutach\
+      \ wykluwa si\u0119 larwa."
+    type: Add
+  - message: "Nowa operacja \u201EUsu\u0144 embrion obcego\u201D. Etap infekcji wida\u0107\
+      \ na medycznym HUD-zie."
+    type: Add
+  - message: "Nowe zdarzenie: Inwazja ksenomorf\xF3w."
+    type: Add
+  - message: "Ewolucja ksenomorf\xF3w znowu nalicza punkty. Larwa ro\u015Bnie te\u017C\
+      \ bez Kr\xF3lowej."
+    type: Fix
+  - message: "Poprawiono t\u0142umaczenia ksenomorf\xF3w w niekt\xF3rych miejscach"
+    type: Fix
+  id: 10071
+  time: '2026-10-23T13:50:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1106
