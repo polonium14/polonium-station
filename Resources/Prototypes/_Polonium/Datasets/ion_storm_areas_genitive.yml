@@ -1,0 +1,6 @@
+# Polonium: dopełniacz dla selektora ION-AREA ("MUSZĄ IŚĆ DO ..."), bo IonStormAreas jest w mianowniku dla ION-WHO-GENERAL
+- type: localizedDataset
+  id: IonStormAreasGenitive
+  values:
+    prefix: ion-storm-areas-genitive-
+    count: 46
