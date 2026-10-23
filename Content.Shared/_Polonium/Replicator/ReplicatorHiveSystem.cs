@@ -2,6 +2,8 @@ using Content.Shared._Impstation.Replicator;
 using Content.Shared.Humanoid;
 using Content.Shared.Materials;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Stacks;
 using Content.Shared.Tag;
 using Robust.Shared.Network;
@@ -17,6 +19,7 @@ public sealed partial class ReplicatorHiveSystem : EntitySystem
 
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedMaterialStorageSystem _materialStorage = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
 
     public bool TryGetHive(EntityUid replicator, out Entity<ReplicatorHiveComponent, ReplicatorNestComponent> hive)
     {
@@ -80,24 +83,21 @@ public sealed partial class ReplicatorHiveSystem : EntitySystem
 
     public bool CanDigest(EntityUid uid)
     {
+        // player characters are never eaten
         if (HasComp<HumanoidProfileComponent>(uid))
             return false;
 
-        return HasComp<ReplicatorComponent>(uid) || !HoldsMind(uid);
-    }
+        // needs to be dead to be eaten
+        if (HasComp<MobStateComponent>(uid) && _mobState.IsAlive(uid))
+            return false;
 
-    public bool IsProtected(EntityUid uid)
-    {
-        return HasComp<HumanoidProfileComponent>(uid) || HoldsMind(uid);
+        return HasComp<ReplicatorComponent>(uid)
+            || !TryComp<MindContainerComponent>(uid, out var mind)
+            || !mind.HasMind;
     }
 
     public static double ToSheets(int units)
     {
         return Math.Round(units / (double)UnitsPerSheet, 2);
-    }
-
-    private bool HoldsMind(EntityUid uid)
-    {
-        return TryComp<MindContainerComponent>(uid, out var mind) && mind.HasMind;
     }
 }

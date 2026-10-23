@@ -1,4 +1,4 @@
-<!-- Wytyczne: https://github.com/polonium14/polonium-space/blob/master/CONTRIBUTING.md -->
+<!-- Wytyczne: https://github.com/polonium14/polonium-station/blob/master/CONTRIBUTING.md -->
 
 ## Informacje o PR
 <!-- Co zostało zmienione? -->
@@ -6,12 +6,22 @@
 ## Powód / Balans
 <!-- Opisz, jak zmiana wpłynie na balans rozgrywki lub dlaczego została wprowadzona. Podaj linki do odpowiednich dyskusji lub zgłoszeń, jeśli są dostępne. -->
 
+## Powiązane zgłoszenia
+<!-- Jeśli PR rozwiązuje zgłoszenie, wpisz "Closes #numer". Zgłoszenie zamknie się automatycznie po merge'u. -->
+
 ## Szczegóły techniczne
 <!-- Podsumowanie zmian w kodzie dla ułatwienia przeglądu. -->
 
 ## Media
 <!-- Dołącz materiały multimedialne, jeśli PR wprowadza zmiany w grze (ubrania, przedmioty, funkcje itp.).
 Drobne poprawki/refaktoryzacje są z tego zwolnione. Materiały mogą zostać użyte w raportach postępów SS14 z podaniem autora. -->
+
+## Wymagania
+<!-- Potwierdź, wpisując X w nawiasach: [X] -->
+- [ ] Przeczytałem(-am) [wytyczne](https://github.com/polonium14/polonium-station/blob/master/CONTRIBUTING.md) i się do nich stosuję.
+- [ ] Przetestowałem(-am) zmiany lokalnie, a zmiany w rozgrywce także w grze.
+- [ ] Dodałem(-am) media do PR albo zmiana ich nie wymaga.
+- [ ] Nowe teksty są w plikach FTL w `en-US` i `pl-PL` albo PR nie dodaje tekstów.
 
 ---
 
