@@ -73,7 +73,7 @@ public class Player
 Dobry przykład:
 
 ```csharp
-public class Player
+public sealed class Player
 {
     // Stałe
     private const int MaxHealth = 100;
@@ -124,7 +124,7 @@ Polonium bazuje na kodzie Wizard's Den i innych forków, a ich zmiany trafiają 
 
 - **Nowy kod i zasoby umieszczaj w folderach `_Polonium`** (np. `Content.Shared/_Polonium/`, `Resources/Prototypes/_Polonium/`, `Resources/Textures/_Polonium/`). Od razu widać, co jest nasze, a aktualizacje tych folderów nie dotykają.
 - **Pliki spoza `_Polonium` zmieniaj tylko wtedy, gdy nie da się inaczej.** Najpierw sprawdź, czy nie wystarczy event, nowy komponent, `partial class` albo własny prototyp dziedziczący po oryginalnym (`parent`).
-- **Każdą zmianę w cudzym pliku oznacz komentarzem ze słowem `Polonium` i powodem**, np. `// Polonium: dłuższy czas, bo mamy mały online`. Dłuższy blok zamknij komentarzem `// Polonium end`. Przy aktualizacji od razu widać, co zmieniliśmy i dlaczego.
+- **Każdą zmianę w cudzym pliku oznacz komentarzem ze słowem `Polonium` i powodem**, np. `// Polonium: longer time, because we have a small online`. Dłuższy blok zamknij komentarzem `// Polonium end`. Przy aktualizacji od razu widać, co zmieniliśmy i dlaczego.
 - **Nie poprawiaj stylu ani nie porządkuj kodu z upstreamu**, nawet jeśli da się go napisać ładniej. Graczom nic to nie daje, a konflikty wracają przy każdej aktualizacji.
 - **Nie zmieniaj submodułu `RobustToolbox`.** Silnik aktualizują maintainerzy w osobnym PR, a automatyczne sprawdzenie odrzuca PR, który zmienia submoduł razem z innymi plikami.
 
@@ -356,23 +356,15 @@ Oto jak wygląda przebieg pracy, gdy chcesz mieć jedno lokalne repozytorium do 
    upstream        https://github.com/space-wizards/space-station-14 (push)
    ```
 
-3. Stwórz nową gałąź:
+3. Stwórz nową gałąź bezpośrednio z `master` repozytorium PS14:
 
    ```bash
-   $ git checkout -b new-feature
+   $ git checkout -b new-feature polonium/master
+   branch 'new-feature' set up to track 'polonium/master'.
    Switched to a new branch 'new-feature'
    ```
 
-4. Zastąp stan gałęzi zawartością PS14 (gałęzi `master`):
-
-   ```bash
-   $ git reset --hard polonium/master
-   HEAD is now at 3c38b14144 Tłumaczenie HUD/UI (#15)
-   ```
-
-   **Uwaga:** polecenie `git reset --hard` usuwa wszystkie lokalne zmiany i ustawia gałąź dokładnie w tym samym stanie, co polonium/master. Dzięki temu możesz szybko pobrać najnowsze aktualizacje, jeśli lokalnie nie wprowadzałeś własnych zmian.
-
-5. Wyślij nową gałąź na GitHub:
+4. Wyślij nową gałąź na GitHub:
 
    ```bash
    git push -u origin new-feature
@@ -449,10 +441,9 @@ W takim przypadku postępujesz zgodnie z procedurą z [tego punktu](#1-jak-praco
 
 **Najważniejsze kroki:**
 
-1. Tworzysz nową gałąź,
-2. Resetujesz ją do stanu `master` repozytorium głównego (PS14),
-3. Pracujesz tylko na tej czystej historii,
-4. Wysyłasz gałąź na swojego forka i robisz Pull Request.
+1. Tworzysz nową gałąź bezpośrednio z `master` repozytorium głównego (PS14),
+2. Pracujesz tylko na tej czystej historii,
+3. Wysyłasz gałąź na swojego forka i robisz Pull Request.
 
 Dzięki temu unikasz bałaganu w commitach i możesz spokojnie pracować równolegle nad różnymi projektami.
 
