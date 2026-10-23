@@ -168,10 +168,7 @@ public abstract partial class SharedInternalsSystem : EntitySystem
 
         // Polonium start
         if (TryComp(ent.Comp.GasTankEntity, out GasTankComponent? tank) && tank.User == ent.Owner)
-        {
-            tank.User = null;
-            Dirty(ent.Comp.GasTankEntity.Value, tank);
-        }
+            _gasTank.ClearInternalsUser((ent.Comp.GasTankEntity.Value, tank));
         // Polonium end
     }
 
@@ -218,8 +215,7 @@ public abstract partial class SharedInternalsSystem : EntitySystem
             && !_gasTank.DisconnectFromInternals((ent.Comp.GasTankEntity.Value, tank), forced: forced)
             && tank.User == ent.Owner)
         {
-            tank.User = null;
-            Dirty(ent.Comp.GasTankEntity.Value, tank);
+            _gasTank.ClearInternalsUser((ent.Comp.GasTankEntity.Value, tank));
         }
         // Polonium end
 
