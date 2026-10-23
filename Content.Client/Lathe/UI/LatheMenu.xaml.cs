@@ -113,21 +113,11 @@ public sealed partial class LatheMenu : FancyWindow
                     continue;
             }
 
-            if (SearchBar.Text.Trim().Length != 0)
-            {
-                if (_lathe.GetRecipeName(recipe).ToLowerInvariant().Contains(SearchBar.Text.Trim().ToLowerInvariant()))
-                    recipesToShow.Add(proto);
-            }
-            else
-            {
-                recipesToShow.Add(proto);
-            }
+            recipesToShow.Add(proto);
         }
 
         if (!int.TryParse(AmountLineEdit.Text, out var quantity) || quantity <= 0)
             quantity = 1;
-
-        RecipeCount.Text = Loc.GetString("lathe-menu-recipe-count", ("count", recipesToShow.Count));
 
         // Polonium: with every category shown, recipes that share a name (a biofab organ for each
         // species) get their category appended, e.g. "eyes - Human".
@@ -145,6 +135,13 @@ public sealed partial class LatheMenu : FancyWindow
                 }
             }
         }
+
+        // Polonium: search the displayed name, so the category suffix is searchable too
+        var search = SearchBar.Text.Trim();
+        if (search.Length != 0)
+            recipesToShow.RemoveAll(r => !names[r].Contains(search, StringComparison.InvariantCultureIgnoreCase));
+
+        RecipeCount.Text = Loc.GetString("lathe-menu-recipe-count", ("count", recipesToShow.Count));
 
         var sortedRecipesToShow = recipesToShow.OrderBy(r => names[r]);
 
