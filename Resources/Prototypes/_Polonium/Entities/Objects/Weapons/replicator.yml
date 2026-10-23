@@ -216,8 +216,8 @@
         variation: 0.05
   - type: BasicEntityAmmoProvider
     proto: BulletReplicatorColossusDisabler
-    capacity: 90
-    count: 90
+    capacity: 100
+    count: 100
 
 - type: entity
   parent: BaseWeaponReplicatorColossusMinigun
@@ -236,8 +236,8 @@
         variation: 0.05
   - type: BasicEntityAmmoProvider
     proto: BulletReplicatorColossusLaser
-    capacity: 90
-    count: 90
+    capacity: 100
+    count: 100
 
 - type: entity
   parent: BaseWeaponReplicatorColossus
