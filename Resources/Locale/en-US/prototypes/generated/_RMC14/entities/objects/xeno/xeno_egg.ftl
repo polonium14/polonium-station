@@ -1,3 +1,7 @@
 ent-XenoEgg = xenonid egg
-    .desc = A large mottled egg. It will hatch into a larva when ready.
+    .desc = A large mottled egg.
     .gender = neuter
+ent-XenoEggGrown = { ent-XenoEgg }
+    .desc = { ent-XenoEgg.desc }
+    .gender = neuter
+    .suffix = grown
