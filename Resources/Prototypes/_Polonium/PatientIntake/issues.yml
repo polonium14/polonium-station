@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Issues the patient intake generator spends a case's budget on.
 # Damage and bleeds land on one random limb; bone and organ issues go through the same
 # trauma path real injuries take, so the normal surgeries treat them.
