@@ -396,7 +396,7 @@
   result: BiofabricatorMachineCircuitboard
 
 - type: latheRecipe
-  parent: [ BaseGoldCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
+  parent: [ BaseGoldCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]
   id: MedicalBiofabMachineBoard
   result: MedicalBiofabMachineBoard
 
