@@ -8,6 +8,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Cuffs;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
+using Content.Shared.FixedPoint;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Vehicle.Systems;
 using Robust.Shared.Containers;
@@ -217,24 +218,43 @@ public sealed class PolishBannerTest : InteractionTest
 {
     protected override string PlayerPrototype => "MobHuman";
 
+    /// <summary>
+    /// Only the types the banner heals. Total damage also picks up bleeding from the blunt wound,
+    /// which made the test flaky in CI.
+    /// </summary>
+    private static readonly string[] BannerHealedTypes = ["Blunt", "Slash", "Piercing", "Heat", "Shock", "Cold", "Caustic"];
+
+    private FixedPoint2 BannerHealedDamage(DamageableSystem damageable)
+    {
+        var all = damageable.GetAllDamage(SPlayer);
+        var total = FixedPoint2.Zero;
+        foreach (var type in BannerHealedTypes)
+        {
+            if (all.DamageDict.TryGetValue(type, out var value))
+                total += value;
+        }
+
+        return total;
+    }
+
     [Test]
     public async Task BannerHealsHolder()
     {
         var damageable = Server.System<DamageableSystem>();
         await Server.WaitPost(() => damageable.TryChangeDamage(SPlayer, new DamageSpecifier { DamageDict = { ["Blunt"] = 20, ["Heat"] = 20 } }, true));
-        var before = damageable.GetTotalDamage(SPlayer);
+        var before = BannerHealedDamage(damageable);
 
         await PlaceInHands("PolishBanner");
         await UseInHand();
         await RunTicks(1);
 
-        var after = damageable.GetTotalDamage(SPlayer);
+        var after = BannerHealedDamage(damageable);
         Assert.That(after, Is.EqualTo(before - 30), "The banner should heal 15 brute and 15 burn");
 
         // Drugie machnięcie od razu nie działa - sztandar ma minutę odnowienia.
         await UseInHand();
         await RunTicks(1);
-        Assert.That(damageable.GetTotalDamage(SPlayer), Is.EqualTo(after));
+        Assert.That(BannerHealedDamage(damageable), Is.EqualTo(after));
     }
 
     [Test]
