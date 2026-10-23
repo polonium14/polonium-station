@@ -1,0 +1,51 @@
+<Document>
+  # R.I.G.
+  [color=#e8c878]R.I.G.[/color] to modułowy kombinezon, droższa alternatywa dla skafandra. Chroni tak samo jak skafander swojego działu, a jego przewagą są moduły, które dokłada się do niego w trakcie zmiany.
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingBackpackModSuitEngineering"/>
+    <GuideEntityEmbed Entity="ClothingBackpackModSuitAtmospheric"/>
+    <GuideEntityEmbed Entity="ClothingBackpackModSuitMedical"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ClothingBackpackModSuitSecurity"/>
+    <GuideEntityEmbed Entity="ClothingBackpackModSuitSalvage"/>
+    <GuideEntityEmbed Entity="ClothingBackpackModSuitCivilian"/>
+  </Box>
+
+  R.I.G. cywilny jest prostszy i tańszy od pozostałych. Chroni jak kombinezon EVA, mieści mniej modułów, a do jego budowy wystarczy cywilny rdzeń, który nie wymaga uranu.
+
+  ## Budowa
+  <Box>
+    <GuideEntityEmbed Entity="ModSuitCoreStandard"/>
+    <GuideEntityEmbed Entity="ModSuitConstructionShell"/>
+    <GuideEntityEmbed Entity="ModSuitPlatingEngineering"/>
+  </Box>
+  R.I.G. składa robotyk. Rdzeń, ramę i części kombinezonu drukuje się w [textlink="fabrykatorze egzoszkieletów" link="Robotics"] po zbadaniu technologii [color=#e8c878]Robotyka[/color]. Poszycie, które decyduje o tym, jaki R.I.G. powstanie, zamawia się w dziale zaopatrzenia w kategorii R.I.G.
+
+  Do ramy wkłada się rdzeń, a potem hełm, napierśnik, rękawice i buty, przykręcając je po drodze narzędziami. Na końcu na ramę zakłada się poszycie. Jeśli nie wiesz, co dalej, przyjrzyj się ramie.
+
+  ## Używanie
+  R.I.G. nosi się na plecach. Po założeniu hełm, napierśnik, rękawice i buty same rozkładają się na ciele, a rzeczy, które wcześniej tam nosiłeś, trafiają do środka kombinezonu i wracają, gdy go zdejmiesz.
+
+  Akcja [color=#e8c878]Otwórz panel R.I.G.[/color] pokazuje stan baterii, uszczelnienie każdej części i zainstalowane moduły. Kombinezon chroni przed próżnią dopiero wtedy, gdy jest uszczelniony.
+
+  R.I.G. zasila bateria. Gdy się rozładuje, kombinezon dalej chroni, ale moduły się wyłączają, a ty poruszasz się wolniej. Baterię można wymienić w każdej chwili, także w uszczelnionym kombinezonie, ale zajmuje to chwilę. Uważaj na innych, bo ktoś może wyjąć baterię z kombinezonu, który masz na sobie.
+
+  ## Moduły
+  <Box>
+    <GuideEntityEmbed Entity="ModSuitModuleFlashlight"/>
+    <GuideEntityEmbed Entity="ModSuitModuleJetpackNormal"/>
+    <GuideEntityEmbed Entity="ModSuitModuleMagboots"/>
+    <GuideEntityEmbed Entity="ModSuitModuleMobility"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ModSuitModuleVisionMeson"/>
+    <GuideEntityEmbed Entity="ModSuitModuleVisionMed"/>
+    <GuideEntityEmbed Entity="ModSuitModuleVisionSec"/>
+    <GuideEntityEmbed Entity="ModSuitModuleStorageExpanded"/>
+  </Box>
+  Moduły drukuje się w fabrykatorze egzoszkieletów. Kilka z nich jest dostępnych od początku zmiany, a resztę odblokowują badania naukowe. Każdy R.I.G. ma od nowości moduł schowka.
+
+  Żeby zainstalować moduł, odkręć śrubokrętem panel kombinezonu i kliknij go modułem. Każdy moduł ma swoją złożoność, a kombinezon mieści tylko ograniczoną sumę, którą widać w panelu. Włączone moduły zużywają baterię, więc z kilkoma naraz zwykła bateria szybko się wyczerpie.
+</Document>

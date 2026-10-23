@@ -9,6 +9,14 @@
   cost: 5000
   recipeUnlocks:
   - ProximitySensor
+  - ModSuitCoreStandard # Polonium: R.I.G.
+  - ModSuitCoreCivilian # Polonium: R.I.G.
+  - ModSuitConstructionShell # Polonium: R.I.G.
+  - ModSuitConstructionHelmet # Polonium: R.I.G.
+  - ModSuitConstructionChestplate # Polonium: R.I.G.
+  - ModSuitConstructionGauntlets # Polonium: R.I.G.
+  - ModSuitConstructionBoots # Polonium: R.I.G.
+  - ModSuitModuleVisionDiagnostic # Polonium: R.I.G.
 
 - type: technology
   id: BasicAnomalousResearch
@@ -64,6 +72,7 @@
   recipeUnlocks:
   - ClothingShoesBootsMagSci
   - ClothingShoesBootsMoon
+  - ModSuitModuleMagboots # Polonium: R.I.G.
 
 - type: technology
   id: AnomalyCoreHarnessing
@@ -132,6 +141,7 @@
   recipeUnlocks:
     - WeaponForceGun
     - WeaponTetherGun
+    - ModSuitModuleMobility # Polonium: R.I.G.
 
 # Tier 3
 
@@ -170,6 +180,7 @@
   cost: 10000
   recipeUnlocks:
   - ClothingEyesNightVisionSecurityGoggles
+  - ModSuitModuleVisionNight # Polonium: R.I.G.
 
 - type: technology
   id: TeleSci

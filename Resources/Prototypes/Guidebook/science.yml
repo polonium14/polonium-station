@@ -62,6 +62,7 @@
   text: "/ServerInfo/_Polonium/Guidebook/Science/Robotics.xml"
   children:
   - Cyborgs
+  - RIG # Polonium: R.I.G. page
 
 - type: guideEntry
   id: XenoarchaeologyUnlockingNodes

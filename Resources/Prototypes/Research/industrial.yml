@@ -14,6 +14,7 @@
   - ClothingMaskWeldingGas
   - ClothingShoesBootsJump
   - WeaponLaserSvalinn
+  - ModSuitModuleVisionMeson # Polonium: R.I.G.
 
 - type: technology
   id: SpaceScanning
@@ -85,6 +86,7 @@
   - SolarControlComputerCircuitboard
   - SolarTrackerElectronics
   - EmitterCircuitboard
+  - ModSuitModuleInsulation # Polonium: R.I.G.
 
 - type: technology
   id: AtmosphericTech
@@ -134,6 +136,7 @@
   - ThrusterMachineCircuitboard
   - GyroscopeMachineCircuitboard
   - MiniGravityGeneratorCircuitboard
+  - ModSuitModuleJetpackNormal # Polonium: R.I.G.
 
 - type: technology
   id: AdvancedAtmospherics
@@ -200,6 +203,7 @@
     - MiningDrillDiamond
     - AdvancedMineralScannerEmpty
     - BorgModuleAdvancedMining
+    - ModSuitModuleStorageExpanded # Polonium: R.I.G.
 
 # Tier 3
 

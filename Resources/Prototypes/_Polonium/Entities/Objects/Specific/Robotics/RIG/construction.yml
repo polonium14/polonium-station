@@ -1,0 +1,133 @@
+- type: entity
+  parent: BaseItem
+  id: ModSuitCoreStandard
+  name: R.I.G. core
+  description: The heart of a R.I.G. Used in its construction.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/cores.rsi
+    state: standard
+  - type: Tag
+    tags:
+    - ModSuitCore
+  - type: GuideHelp
+    guides:
+    - RIG
+
+- type: entity
+  parent: BaseItem
+  id: ModSuitCoreCivilian
+  name: civilian R.I.G. core
+  description: A simpler R.I.G. core that needs no uranium. It only fits a civilian R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/cores.rsi
+    state: core
+  - type: Tag
+    tags:
+    - ModSuitCoreCivilian
+  - type: GuideHelp
+    guides:
+    - RIG
+
+- type: entity
+  parent: BaseItem
+  id: ModSuitConstructionShell
+  name: R.I.G. shell
+  description: The groundwork for a R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/construction_shell.rsi
+    layers:
+    - state: start
+      map: [ "enum.ConstructionVisuals.Layer" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ConstructionVisuals.Key:
+        enum.ConstructionVisuals.Layer:
+          start: { state: start }
+          modCore: { state: core }
+          modCoreScrewed: { state: screwed_core }
+          helmet: { state: helmet }
+          chestplate: { state: chestplate }
+          gauntlets: { state: gauntlets }
+          boots: { state: boots }
+          wrenched: { state: wrenched_assembly }
+          screwed: { state: screwed_assembly }
+          civModCore: { state: core }
+          civModCoreScrewed: { state: screwed_core }
+          civHelmet: { state: helmet }
+          civChestplate: { state: chestplate }
+          civGauntlets: { state: gauntlets }
+          civBoots: { state: boots }
+          civWrenched: { state: wrenched_assembly }
+          civScrewed: { state: screwed_assembly }
+  - type: Construction
+    graph: ModSuit
+    node: start
+    defaultTarget: rig
+  - type: GuideHelp
+    guides:
+    - RIG
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseModSuitConstructionPart
+  components:
+  - type: GuideHelp
+    guides:
+    - RIG
+
+- type: entity
+  parent: BaseModSuitConstructionPart
+  id: ModSuitConstructionHelmet
+  name: R.I.G. helmet assembly
+  description: The unfinished helmet of a R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/construction.rsi
+    state: helmet
+  - type: Tag
+    tags:
+    - ModSuitHelmet
+
+- type: entity
+  parent: BaseModSuitConstructionPart
+  id: ModSuitConstructionChestplate
+  name: R.I.G. chestplate assembly
+  description: The unfinished chestplate of a R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/construction.rsi
+    state: chestplate
+  - type: Tag
+    tags:
+    - ModSuitChestplate
+
+- type: entity
+  parent: BaseModSuitConstructionPart
+  id: ModSuitConstructionGauntlets
+  name: R.I.G. gauntlets assembly
+  description: The unfinished gauntlets of a R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/construction.rsi
+    state: gauntlets
+  - type: Tag
+    tags:
+    - ModSuitGauntlets
+
+- type: entity
+  parent: BaseModSuitConstructionPart
+  id: ModSuitConstructionBoots
+  name: R.I.G. boots assembly
+  description: The unfinished boots of a R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/construction.rsi
+    state: boots
+  - type: Tag
+    tags:
+    - ModSuitBoots

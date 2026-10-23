@@ -1,0 +1,95 @@
+<PanelContainer xmlns="https://spacestation14.io">
+    <BoxContainer
+        HorizontalAlignment="Stretch"
+        HorizontalExpand="True"
+        Margin="4, 8">
+        <PanelContainer
+            HorizontalAlignment="Stretch"
+            HorizontalExpand="True"
+            StyleClasses="PanelBackgroundLight">
+            <BoxContainer
+                HorizontalAlignment="Stretch"
+                HorizontalExpand="True">
+                <BoxContainer
+                    Orientation="Vertical"
+                    HorizontalAlignment="Left">
+                    <BoxContainer
+                        Orientation="Vertical"
+                        VerticalExpand="True"/>
+                    <SpriteView
+                        Name="ModuleIcon"
+                        Access="Public"
+                        Stretch="Fit"
+                        Scale="2 2"
+                        MinSize="64, 64"
+                        OverrideDirection="South">
+                        <PanelContainer StyleClasses="PdaBorderRect"/>
+                    </SpriteView>
+                    <BoxContainer
+                        Orientation="Vertical"
+                        VerticalExpand="True"/>
+                </BoxContainer>
+                <BoxContainer
+                    Margin="4 0"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Stretch"
+                    HorizontalExpand="True">
+                    <BoxContainer
+                        VerticalAlignment="Stretch"
+                        VerticalExpand="True"
+                        HorizontalAlignment="Stretch"
+                        HorizontalExpand="True">
+                        <Label
+                            Name="ModuleName"
+                            Align="Center"
+                            HorizontalExpand="True"
+                            Access="Public"/>
+                        <Label
+                            Name="Complexity"
+                            Align="Right"
+                            HorizontalExpand="True"
+                            Visible="False"
+                            Access="Public"/>
+                    </BoxContainer>
+                    <BoxContainer
+                        Margin="4"
+                        Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch"
+                        HorizontalExpand="True">
+                        <ColorSelectorSliders
+                            Name="ColorSelector"
+                            Access="Public"/>
+                    </BoxContainer>
+                    <BoxContainer
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Stretch"
+                        HorizontalExpand="True"
+                        Margin="8">
+                        <Button
+                            Name="ToggleButton"
+                            Text="{Loc 'modsuit-interface-toggle'}"
+                            ToggleMode="True"
+                            HorizontalAlignment="Stretch"
+                            HorizontalExpand="True"
+                            TextAlign="Center"
+                            Access="Public"/>
+                        <BoxContainer
+                            Name="EjectContainer"
+                            Margin="8, 0, 0, 0"
+                            HorizontalAlignment="Right"
+                            Access="Public">
+                            <Button
+                                Name="EjectButton"
+                                Text="{Loc 'modsuit-interface-eject'}"
+                                HorizontalAlignment="Right"
+                                HorizontalExpand="True"
+                                TextAlign="Center"
+                                Access="Public"/>
+                        </BoxContainer>
+                    </BoxContainer>
+                </BoxContainer>
+            </BoxContainer>
+        </PanelContainer>
+    </BoxContainer>
+</PanelContainer>

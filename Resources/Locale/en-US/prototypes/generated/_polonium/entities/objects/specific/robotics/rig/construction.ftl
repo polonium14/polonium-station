@@ -1,0 +1,16 @@
+ent-ModSuitCoreStandard = R.I.G. core
+    .desc = The heart of a R.I.G. Used in its construction.
+ent-ModSuitCoreCivilian = civilian R.I.G. core
+    .desc = A simpler R.I.G. core that needs no uranium. It only fits a civilian R.I.G.
+ent-ModSuitConstructionShell = R.I.G. shell
+    .desc = The groundwork for a R.I.G.
+ent-BaseModSuitConstructionPart = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-ModSuitConstructionHelmet = R.I.G. helmet assembly
+    .desc = The unfinished helmet of a R.I.G.
+ent-ModSuitConstructionChestplate = R.I.G. chestplate assembly
+    .desc = The unfinished chestplate of a R.I.G.
+ent-ModSuitConstructionGauntlets = R.I.G. gauntlets assembly
+    .desc = The unfinished gauntlets of a R.I.G.
+ent-ModSuitConstructionBoots = R.I.G. boots assembly
+    .desc = The unfinished boots of a R.I.G.

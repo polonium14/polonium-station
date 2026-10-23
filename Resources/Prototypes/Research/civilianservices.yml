@@ -133,6 +133,7 @@
   recipeUnlocks:
   - BorgModuleAdvancedTopical
   - AdvancedJetInjector
+  - ModSuitModuleVisionMed # Polonium: R.I.G.
 
 - type: technology
   id: AdvancedCleaning

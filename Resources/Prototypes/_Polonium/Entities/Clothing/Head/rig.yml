@@ -1,0 +1,416 @@
+- type: entity
+  abstract: true
+  id: ClothingHeadModSuitBase
+  categories: [ HideSpawnMenu ]
+  name: R.I.G. helmet
+  description: The helmet of a deployed R.I.G.
+  components:
+  - type: ModSuitSealable
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop: HEAD
+      HeadSide: HEAD
+      Snout: HEAD
+      FacialHair: HEAD
+  - type: ModSuitSealablePowerDraw
+    powerDraw:
+      true: 0.02
+      false: 0.01
+  - type: ModSuitDeployableInventory
+  - type: ContainerContainer
+    containers:
+      mod_suit_inventory: !type:ContainerSlot {}
+  - type: Clothing
+    slots:
+    - head
+    clothingVisuals:
+      head: []
+  - type: Appearance
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: GuideHelp
+    guides:
+    - RIG
+
+- type: entity
+  parent: ClothingHeadModSuitBase
+  id: ClothingHeadModSuitEngineering
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
+        state: icon
+    clothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
+          state: equipped-HELMET-sealed
+      false:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
+          state: equipped-HELMET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
+        state: equipped-HELMET-sealed
+      false:
+        sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
+        state: equipped-HELMET
+    sealedComponents:
+    - type: BreathMask
+    - type: IdentityBlocker
+    - type: IngestionBlocker
+    - type: PressureProtection
+      highPressureMultiplier: 0.1
+      lowPressureMultiplier: 1000
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.95
+          Heat: 0.9
+          Radiation: 0.25
+
+- type: entity
+  parent: ClothingHeadModSuitBase
+  id: ClothingHeadModSuitAtmospheric
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
+        state: icon
+    clothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
+          state: equipped-HELMET-sealed
+      false:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
+          state: equipped-HELMET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
+        state: equipped-HELMET-sealed
+      false:
+        sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
+        state: equipped-HELMET
+    sealedComponents:
+    - type: BreathMask
+    - type: IdentityBlocker
+    - type: IngestionBlocker
+    - type: PressureProtection
+      highPressureMultiplier: 0.08
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.6
+    - type: FireProtection
+      reduction: 0.2
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.95
+          Heat: 0.9
+          Radiation: 0.25
+
+- type: entity
+  parent: ClothingHeadModSuitBase
+  id: ClothingHeadModSuitMedical
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Head/ModSuits/medical.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/medical.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Head/ModSuits/medical.rsi
+        state: icon
+    clothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/medical.rsi
+          state: equipped-HELMET-sealed
+      false:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/medical.rsi
+          state: equipped-HELMET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/medical.rsi
+        state: equipped-HELMET-sealed
+      false:
+        sprite: _Polonium/Clothing/Head/ModSuits/medical.rsi
+        state: equipped-HELMET
+    sealedComponents:
+    - type: BreathMask
+    - type: IdentityBlocker
+    - type: IngestionBlocker
+    - type: PressureProtection
+      highPressureMultiplier: 0.6
+      lowPressureMultiplier: 1000
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.95
+          Heat: 0.9
+          Radiation: 0.25
+
+- type: entity
+  parent: ClothingHeadModSuitBase
+  id: ClothingHeadModSuitSecurity
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
+        state: icon
+    clothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
+          state: equipped-HELMET-sealed
+      false:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
+          state: equipped-HELMET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
+        state: equipped-HELMET-sealed
+      false:
+        sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
+        state: equipped-HELMET
+    sealedComponents:
+    - type: BreathMask
+    - type: IdentityBlocker
+    - type: IngestionBlocker
+    - type: PressureProtection
+      highPressureMultiplier: 0.525
+      lowPressureMultiplier: 1000
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.9
+          Heat: 0.9
+
+- type: entity
+  parent: ClothingHeadModSuitBase
+  id: ClothingHeadModSuitSalvage
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
+        state: icon
+    clothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
+          state: equipped-HELMET-sealed
+      false:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
+          state: equipped-HELMET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
+        state: equipped-HELMET-sealed
+      false:
+        sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
+        state: equipped-HELMET
+    sealedComponents:
+    - type: BreathMask
+    - type: IdentityBlocker
+    - type: IngestionBlocker
+    - type: PressureProtection
+      highPressureMultiplier: 0.525
+      lowPressureMultiplier: 1000
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.95
+          Heat: 0.9
+          Radiation: 0.25
+
+- type: entity
+  parent: ClothingHeadModSuitBase
+  id: ClothingHeadModSuitCivilian
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
+        state: icon
+    clothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
+          state: equipped-HELMET-sealed
+      false:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
+          state: equipped-HELMET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
+        state: equipped-HELMET-sealed
+      false:
+        sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
+        state: equipped-HELMET
+    sealedComponents:
+    - type: BreathMask
+    - type: IdentityBlocker
+    - type: IngestionBlocker
+    - type: PressureProtection
+      highPressureMultiplier: 0.6
+      lowPressureMultiplier: 1000
+
+- type: entity
+  parent: ClothingHeadModSuitBase
+  id: ClothingHeadModSuitSyndicate
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Head/ModSuits/syndicate.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/syndicate.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Head/ModSuits/syndicate.rsi
+        state: icon
+    clothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/syndicate.rsi
+          state: equipped-HELMET-sealed
+      false:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/syndicate.rsi
+          state: equipped-HELMET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/syndicate.rsi
+        state: equipped-HELMET-sealed
+      false:
+        sprite: _Polonium/Clothing/Head/ModSuits/syndicate.rsi
+        state: equipped-HELMET
+    sealedComponents:
+    - type: BreathMask
+    - type: IdentityBlocker
+    - type: IngestionBlocker
+    - type: PressureProtection
+      highPressureMultiplier: 0.08
+      lowPressureMultiplier: 1000
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.9
+          Heat: 0.9
+
+- type: entity
+  parent: ClothingHeadModSuitBase
+  id: ClothingHeadModSuitElite
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Head/ModSuits/elite.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/elite.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Head/ModSuits/elite.rsi
+        state: icon
+    clothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/elite.rsi
+          state: equipped-HELMET-sealed
+      false:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/elite.rsi
+          state: equipped-HELMET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/elite.rsi
+        state: equipped-HELMET-sealed
+      false:
+        sprite: _Polonium/Clothing/Head/ModSuits/elite.rsi
+        state: equipped-HELMET
+    sealedComponents:
+    - type: BreathMask
+    - type: IdentityBlocker
+    - type: IngestionBlocker
+    - type: PressureProtection
+      highPressureMultiplier: 0.08
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.6
+    - type: FireProtection
+      reduction: 0.2
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.9
+          Heat: 0.9

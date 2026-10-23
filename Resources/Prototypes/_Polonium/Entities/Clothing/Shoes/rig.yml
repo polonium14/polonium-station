@@ -1,0 +1,294 @@
+- type: entity
+  abstract: true
+  id: ClothingShoesModSuitBase
+  categories: [ HideSpawnMenu ]
+  name: R.I.G. boots
+  description: The boots of a deployed R.I.G.
+  components:
+  - type: ModSuitSealable
+  - type: ProtectedFromStepTriggers
+    slots: WITHOUT_POCKET
+  - type: ModSuitSealablePowerDraw
+    powerDraw:
+      true: 0.02
+      false: 0.01
+  - type: ModSuitDeployableInventory
+  - type: ContainerContainer
+    containers:
+      mod_suit_inventory: !type:ContainerSlot {}
+  - type: Clothing
+    slots:
+    - feet
+    clothingVisuals:
+      shoes: []
+  - type: Appearance
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: GuideHelp
+    guides:
+    - RIG
+
+- type: entity
+  parent: ClothingShoesModSuitBase
+  id: ClothingShoesModSuitEngineering
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shoes/ModSuits/engineering.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/engineering.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/engineering.rsi
+        state: icon
+    clothingLayers:
+      true:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/engineering.rsi
+          state: equipped-FEET-sealed
+      false:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/engineering.rsi
+          state: equipped-FEET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/engineering.rsi
+        state: equipped-FEET-sealed
+      false:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/engineering.rsi
+        state: equipped-FEET
+
+- type: entity
+  parent: ClothingShoesModSuitBase
+  id: ClothingShoesModSuitAtmospheric
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shoes/ModSuits/atmospheric.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/atmospheric.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/atmospheric.rsi
+        state: icon
+    clothingLayers:
+      true:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/atmospheric.rsi
+          state: equipped-FEET-sealed
+      false:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/atmospheric.rsi
+          state: equipped-FEET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/atmospheric.rsi
+        state: equipped-FEET-sealed
+      false:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/atmospheric.rsi
+        state: equipped-FEET
+
+- type: entity
+  parent: ClothingShoesModSuitBase
+  id: ClothingShoesModSuitMedical
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shoes/ModSuits/medical.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/medical.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/medical.rsi
+        state: icon
+    clothingLayers:
+      true:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/medical.rsi
+          state: equipped-FEET-sealed
+      false:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/medical.rsi
+          state: equipped-FEET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/medical.rsi
+        state: equipped-FEET-sealed
+      false:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/medical.rsi
+        state: equipped-FEET
+
+- type: entity
+  parent: ClothingShoesModSuitBase
+  id: ClothingShoesModSuitSecurity
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shoes/ModSuits/security.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/security.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/security.rsi
+        state: icon
+    clothingLayers:
+      true:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/security.rsi
+          state: equipped-FEET-sealed
+      false:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/security.rsi
+          state: equipped-FEET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/security.rsi
+        state: equipped-FEET-sealed
+      false:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/security.rsi
+        state: equipped-FEET
+
+- type: entity
+  parent: ClothingShoesModSuitBase
+  id: ClothingShoesModSuitSalvage
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shoes/ModSuits/salvage.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/salvage.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/salvage.rsi
+        state: icon
+    clothingLayers:
+      true:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/salvage.rsi
+          state: equipped-FEET-sealed
+      false:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/salvage.rsi
+          state: equipped-FEET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/salvage.rsi
+        state: equipped-FEET-sealed
+      false:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/salvage.rsi
+        state: equipped-FEET
+
+- type: entity
+  parent: ClothingShoesModSuitBase
+  id: ClothingShoesModSuitCivilian
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shoes/ModSuits/civilian.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/civilian.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/civilian.rsi
+        state: icon
+    clothingLayers:
+      true:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/civilian.rsi
+          state: equipped-FEET-sealed
+      false:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/civilian.rsi
+          state: equipped-FEET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/civilian.rsi
+        state: equipped-FEET-sealed
+      false:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/civilian.rsi
+        state: equipped-FEET
+
+- type: entity
+  parent: ClothingShoesModSuitBase
+  id: ClothingShoesModSuitSyndicate
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shoes/ModSuits/syndicate.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/syndicate.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/syndicate.rsi
+        state: icon
+    clothingLayers:
+      true:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/syndicate.rsi
+          state: equipped-FEET-sealed
+      false:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/syndicate.rsi
+          state: equipped-FEET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/syndicate.rsi
+        state: equipped-FEET-sealed
+      false:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/syndicate.rsi
+        state: equipped-FEET
+
+- type: entity
+  parent: ClothingShoesModSuitBase
+  id: ClothingShoesModSuitElite
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shoes/ModSuits/elite.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/elite.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/elite.rsi
+        state: icon
+    clothingLayers:
+      true:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/elite.rsi
+          state: equipped-FEET-sealed
+      false:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/elite.rsi
+          state: equipped-FEET
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/elite.rsi
+        state: equipped-FEET-sealed
+      false:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/elite.rsi
+        state: equipped-FEET

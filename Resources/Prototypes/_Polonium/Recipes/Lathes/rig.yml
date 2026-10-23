@@ -1,0 +1,179 @@
+- type: latheCategory
+  id: RIG
+  name: lathe-category-rig
+
+# Mira's costs plus 20%, because the R.I.G. is an expensive alternative to hardsuits.
+
+- type: latheRecipe
+  abstract: true
+  id: BaseModSuitPartRecipe
+  categories:
+  - RIG
+  completetime: 3
+  materials:
+    Steel: 960
+    Silver: 120
+
+- type: latheRecipe
+  abstract: true
+  id: BaseModSuitModuleRecipeBasic
+  categories:
+  - RIG
+  completetime: 3
+  materials:
+    Steel: 480
+    Glass: 60
+    Silver: 120
+
+- type: latheRecipe
+  abstract: true
+  id: BaseModSuitModuleRecipeMedium
+  categories:
+  - RIG
+  completetime: 5
+  materials:
+    Steel: 720
+    Glass: 60
+    Silver: 120
+
+- type: latheRecipe
+  id: ModSuitCoreStandard
+  result: ModSuitCoreStandard
+  categories:
+  - RIG
+  completetime: 10
+  materials:
+    Steel: 1000
+    Glass: 500
+    Gold: 300
+    Plasma: 300
+    Uranium: 100
+
+- type: latheRecipe
+  id: ModSuitCoreCivilian
+  result: ModSuitCoreCivilian
+  categories:
+  - RIG
+  completetime: 10
+  materials:
+    Steel: 800
+    Glass: 400
+    Plasma: 300
+
+- type: latheRecipe
+  parent: BaseModSuitPartRecipe
+  id: ModSuitConstructionShell
+  result: ModSuitConstructionShell
+
+- type: latheRecipe
+  parent: BaseModSuitPartRecipe
+  id: ModSuitConstructionHelmet
+  result: ModSuitConstructionHelmet
+
+- type: latheRecipe
+  parent: BaseModSuitPartRecipe
+  id: ModSuitConstructionChestplate
+  result: ModSuitConstructionChestplate
+
+- type: latheRecipe
+  parent: BaseModSuitPartRecipe
+  id: ModSuitConstructionGauntlets
+  result: ModSuitConstructionGauntlets
+
+- type: latheRecipe
+  parent: BaseModSuitPartRecipe
+  id: ModSuitConstructionBoots
+  result: ModSuitConstructionBoots
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeBasic
+  id: ModSuitModuleStorageNormal
+  result: ModSuitModuleStorageNormal
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeMedium
+  id: ModSuitModuleStorageExpanded
+  result: ModSuitModuleStorageExpanded
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeBasic
+  id: ModSuitModuleFlashlight
+  result: ModSuitModuleFlashlight
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeBasic
+  id: ModSuitModuleJetpackNormal
+  result: ModSuitModuleJetpackNormal
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeBasic
+  id: ModSuitModuleMagboots
+  result: ModSuitModuleMagboots
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeMedium
+  id: ModSuitModuleMobility
+  result: ModSuitModuleMobility
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeBasic
+  id: ModSuitModuleInsulation
+  result: ModSuitModuleInsulation
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeMedium
+  id: ModSuitModuleVisionWelding
+  result: ModSuitModuleVisionWelding
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeBasic
+  id: ModSuitModuleVisionMed
+  result: ModSuitModuleVisionMed
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeBasic
+  id: ModSuitModuleVisionDiagnostic
+  result: ModSuitModuleVisionDiagnostic
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeBasic
+  id: ModSuitModuleVisionSec
+  result: ModSuitModuleVisionSec
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeBasic
+  id: ModSuitModuleVisionMeson
+  result: ModSuitModuleVisionMeson
+
+- type: latheRecipe
+  parent: BaseModSuitModuleRecipeMedium
+  id: ModSuitModuleVisionNight
+  result: ModSuitModuleVisionNight
+
+- type: latheRecipePack
+  id: RIGStatic
+  recipes:
+  - ModSuitModuleStorageNormal
+  - ModSuitModuleFlashlight
+  - ModSuitModuleVisionWelding
+
+- type: latheRecipePack
+  id: RIG
+  recipes:
+  - ModSuitCoreStandard
+  - ModSuitCoreCivilian
+  - ModSuitConstructionShell
+  - ModSuitConstructionHelmet
+  - ModSuitConstructionChestplate
+  - ModSuitConstructionGauntlets
+  - ModSuitConstructionBoots
+  - ModSuitModuleStorageExpanded
+  - ModSuitModuleJetpackNormal
+  - ModSuitModuleMagboots
+  - ModSuitModuleMobility
+  - ModSuitModuleInsulation
+  - ModSuitModuleVisionMed
+  - ModSuitModuleVisionDiagnostic
+  - ModSuitModuleVisionSec
+  - ModSuitModuleVisionMeson
+  - ModSuitModuleVisionNight

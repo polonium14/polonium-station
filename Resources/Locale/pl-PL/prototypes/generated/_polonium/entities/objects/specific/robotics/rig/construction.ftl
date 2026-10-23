@@ -1,0 +1,16 @@
+ent-ModSuitCoreStandard = rdzeń R.I.G.
+    .desc = Serce R.I.G. Potrzebny do jego budowy.
+ent-ModSuitCoreCivilian = cywilny rdzeń R.I.G.
+    .desc = Prostszy rdzeń R.I.G., który nie wymaga uranu. Pasuje tylko do R.I.G. cywilnego.
+ent-ModSuitConstructionShell = rama R.I.G.
+    .desc = Podstawa do budowy R.I.G.
+ent-BaseModSuitConstructionPart = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-ModSuitConstructionHelmet = szkielet hełmu R.I.G.
+    .desc = Niedokończony hełm R.I.G.
+ent-ModSuitConstructionChestplate = szkielet napierśnika R.I.G.
+    .desc = Niedokończony napierśnik R.I.G.
+ent-ModSuitConstructionGauntlets = szkielet rękawic R.I.G.
+    .desc = Niedokończone rękawice R.I.G.
+ent-ModSuitConstructionBoots = szkielet butów R.I.G.
+    .desc = Niedokończone buty R.I.G.
