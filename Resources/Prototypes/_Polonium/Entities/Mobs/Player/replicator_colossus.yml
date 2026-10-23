@@ -34,9 +34,9 @@
       rockets:
         location: Right
     sortedHands:
+    - rockets
     - disabler
     - laser
-    - rockets
   - type: Loadout
     prototypes: [ ReplicatorColossusWeapons ]
   - type: ReplicatorColossusAmmo
