@@ -1,7 +1,7 @@
 ent-ClothingNeckMantleCap = mantolet kapitana
     .desc = Wygodny i szykowny mantolet przystały tylko najbardziej doświadczonemu kapitanowi.
 ent-ClothingNeckMantleCE = mantolet głównego inżyniera
-    .desc = Wysoka widoczność, git. System RIG, git. Ogniwo wysokiej pojemności, git. Wszystko, czego główny inżynier potrzebuje w stylowym mantlecie.
+    .desc = Wysoka widoczność, jest. System RIG, jest. Ogniwo wysokiej pojemności, jest. Wszystko, czego główny inżynier potrzebuje w stylowym mantolecie.
 ent-ClothingNeckMantleCMO = mantolet ordynatora
     .desc = Dla ordynatora, który był w tylu ambulatoriach, że wie: więcej ŚOI to mniej wizyt pralni CD po zmianie.
 ent-ClothingNeckMantleHOP = mantolet kierownika personelu

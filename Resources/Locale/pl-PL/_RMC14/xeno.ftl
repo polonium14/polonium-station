@@ -130,6 +130,6 @@ rmc-xeno-pheromones-help =
     
     Regeneracja - szybsza regeneracja zdrowia i plazmy.
 
-## Menu budowy
+## Construction menu
 
 rmc-xeno-structure-tooltip-cost = { $name } ({ $cost } plazmy)

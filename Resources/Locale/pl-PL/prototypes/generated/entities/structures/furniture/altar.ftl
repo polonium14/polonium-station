@@ -36,5 +36,5 @@ ent-AltarHeaven = ołtarz niebiański
     .desc = { ent-AltarBase.desc }
 ent-AltarFangs = ołtarz z kłami
     .desc = { ent-AltarHeaven.desc }
-ent-AltarBananium = Ołtarz Honkmother
+ent-AltarBananium = ołtarz Honkmother
     .desc = Ołtarz z bananium poświęcony honkmother.
