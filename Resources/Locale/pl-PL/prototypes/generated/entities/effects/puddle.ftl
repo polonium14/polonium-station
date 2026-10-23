@@ -34,5 +34,5 @@ ent-PuddleSparkle = błysk
     .desc = { "" }
 ent-Puddle = kałuża
     .desc = Kałuża cieczy.
-ent-Footprint = Ślad stopy
+ent-Footprint = ślad stopy
     .desc = Ślad cieczy

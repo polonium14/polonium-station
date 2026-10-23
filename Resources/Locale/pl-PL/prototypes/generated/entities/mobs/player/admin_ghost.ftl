@@ -1,10 +1,10 @@
-ent-AdminObserver = admin obserwator
+ent-AdminObserver = obserwator administratora
     .desc = { ent-MobObserverBase.desc }
-    .gender = mężczyzna
+    .gender = male
 ent-BaseAGhostAction = { ent-BaseAction }
     .desc = { ent-BaseAction.desc }
-ent-ActionAGhostShowSolar = Interfejs kontroli zasilania słonecznego
-    .desc = Wyświetl interfejs sterowania energią słoneczną.
+ent-ActionAGhostShowSolar = Interfejs sterowania panelami słonecznymi
+    .desc = Wyświetl interfejs sterowania panelami słonecznymi.
 ent-ActionAGhostShowCommunications = Interfejs komunikacji
     .desc = Wyświetl interfejs komunikacji.
 ent-ActionAGhostShowRadar = Interfejs skanera masowego

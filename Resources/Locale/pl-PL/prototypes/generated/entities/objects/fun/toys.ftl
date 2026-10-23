@@ -1,6 +1,6 @@
 ent-SnapPop = trzask, pęknięcie
     .desc = Rzuć to na podłogę i posłuchaj, jak to TRZASKA!
-ent-SnapPopBox = pudełko typu „snap pop”
+ent-SnapPopBox = pudełko petard
     .desc = W zestawie znajdują się cukierki typu „snap pops”, które zapewnią kilka minut zabawy!
 ent-PlasticBanana = banan
     .desc = Plastikowy banan.

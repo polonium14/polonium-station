@@ -1,2 +1,2 @@
-ent-SalvageShuttleMarker = Znacznik wahadłowca odzysku
+ent-SalvageShuttleMarker = znacznik wahadłowca odzysku
     .desc = { ent-FTLPoint.desc }
