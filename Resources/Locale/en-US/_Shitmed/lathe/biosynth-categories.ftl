@@ -1,0 +1,14 @@
+lathe-category-biosynth-arachnid = { species-name-arachnid }
+lathe-category-biosynth-diona = { species-name-diona }
+lathe-category-biosynth-dwarf = { species-name-dwarf }
+lathe-category-biosynth-felinid = { species-name-felinid }
+lathe-category-biosynth-gingerbread = { species-name-gingerbread }
+lathe-category-biosynth-harpy = { species-name-harpy }
+lathe-category-biosynth-human = { species-name-human }
+lathe-category-biosynth-moth = { species-name-moth }
+lathe-category-biosynth-reptilian = { species-name-reptilian }
+lathe-category-biosynth-rodentia = { species-name-rodentia }
+lathe-category-biosynth-slimeperson = { species-name-slime }
+lathe-category-biosynth-thaven = { species-name-thaven }
+lathe-category-biosynth-vox = { species-name-vox }
+lathe-category-biosynth-vulpkanin = { species-name-vulpkanin }
