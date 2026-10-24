@@ -275,6 +275,13 @@ namespace Content.Shared.Interaction
             if (target.Comp.ParentUid == user.Owner)
                 return true;
 
+            // funky start. allow UI interaction if the target is someone else's worn storage
+            if (HasComp<StorageComponent>(target)
+                && (HasComp<InventoryComponent>(target.Comp.ParentUid) || HasComp<HandsComponent>(target.Comp.ParentUid))
+                && InRangeAndAccessible(user, target.Comp.ParentUid, range))
+                return true;
+            // funky end
+
             return InRangeAndAccessible(user, target, range) || _ignoreUiRangeQuery.HasComp(user);
         }
 
