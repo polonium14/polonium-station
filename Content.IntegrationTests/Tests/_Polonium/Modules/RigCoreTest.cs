@@ -20,6 +20,8 @@ public sealed class RigCoreTest : InteractionTest
 {
     private static readonly EntProtoId Rig = "ClothingBackpackModSuitEngineering";
 
+    protected override string PlayerPrototype => "MobHuman";
+
     [Test]
     public async Task BuildRig()
     {

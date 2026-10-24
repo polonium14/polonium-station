@@ -58,5 +58,10 @@
   </Box>
   Moduły drukuje się w fabrykatorze egzoszkieletów. Kilka z nich jest dostępnych od początku zmiany, a resztę odblokowują badania naukowe. Każdy R.I.G. ma od nowości moduł schowka. Wyjęty z kombinezonu moduł schowka zabiera ze sobą rzeczy i można go otworzyć jak plecak.
 
-  Żeby zainstalować moduł, odkręć śrubokrętem panel kombinezonu i kliknij go modułem. Instalacja i wyjmowanie modułu chwilę trwają. Każdy moduł ma swoją złożoność, a kombinezon mieści tylko ograniczoną sumę, którą widać w panelu. Włączone moduły zużywają baterię, więc z kilkoma naraz zwykła bateria szybko się wyczerpie.
+  Żeby zainstalować moduł, odkręć śrubokrętem panel kombinezonu i kliknij go modułem. Instalacja i wyjmowanie modułu chwilę trwają. Część modułów widać na kombinezonie, na przykład izolację po gumowych końcówkach rękawic. Każdy moduł ma swoją złożoność, a kombinezon mieści tylko ograniczoną sumę, którą widać w panelu. Włączone moduły zużywają baterię, więc z kilkoma naraz zwykła bateria szybko się wyczerpie.
+
+  Włączone elektromagnesy w butach trochę spowalniają. Główny inżynier może zamiast nich zainstalować w kombinezonie swoje zaawansowane buty magnetyczne, które nie spowalniają, a wtedy na nogach widać je zamiast butów R.I.G.
+  <Box>
+    <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv"/>
+  </Box>
 </Document>

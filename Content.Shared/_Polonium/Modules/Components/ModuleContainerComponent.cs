@@ -23,11 +23,11 @@ public sealed partial class ModuleContainerComponent : Component
     /// How long it takes a player to install a module.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public TimeSpan InsertDelay = TimeSpan.FromSeconds(3);
+    public TimeSpan InsertDelay = TimeSpan.FromSeconds(2);
 
     /// <summary>
     /// How long it takes a player to take a module out.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public TimeSpan RemoveDelay = TimeSpan.FromSeconds(5);
+    public TimeSpan RemoveDelay = TimeSpan.FromSeconds(4);
 }

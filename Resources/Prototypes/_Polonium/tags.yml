@@ -83,6 +83,9 @@
   id: ModSuitModuleInsulation
 
 - type: Tag
+  id: ModSuitModuleMobility
+
+- type: Tag
   id: ModSuitPlatingAtmospheric
 
 - type: Tag

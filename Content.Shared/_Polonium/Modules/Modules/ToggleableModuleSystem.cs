@@ -23,7 +23,8 @@ public sealed partial class ToggleableModuleSystem : EntitySystem
 
     private void OnRemoved(Entity<ToggleableModuleComponent> ent, ref ModuleRemovedContainerEvent args)
     {
-        RaiseToggleEvents(ent!, false, null);
+        // The client may already have lost ModuleContainedComponent here, so the container comes from the event.
+        RaiseToggleEvents(ent.Owner, false, null, args.Container);
     }
 
     private void OnEnabled(Entity<ToggleableModuleComponent> ent, ref ModuleEnabledEvent args)
@@ -96,16 +97,20 @@ public sealed partial class ToggleableModuleSystem : EntitySystem
         if (!_module.TryGetContainer(ent.Owner, out var container))
             return;
 
+        RaiseToggleEvents(ent.Owner, toggled, user, container.Value);
+    }
+
+    private void RaiseToggleEvents(EntityUid module, bool toggled, EntityUid? user, EntityUid container)
+    {
         if (toggled)
         {
-            var ev = new ModuleEnabledEvent(container.Value, user);
-            RaiseLocalEvent(ent.Owner, ev);
+            var ev = new ModuleEnabledEvent(container, user);
+            RaiseLocalEvent(module, ev);
         }
         else
         {
-
-            var ev = new ModuleDisabledEvent(container.Value, user);
-            RaiseLocalEvent(ent.Owner, ev);
+            var ev = new ModuleDisabledEvent(container, user);
+            RaiseLocalEvent(module, ev);
         }
     }
 }

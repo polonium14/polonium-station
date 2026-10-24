@@ -158,11 +158,66 @@
     enabledDraw: 0.25
   - type: MagbootsModule
     modSuitPart: Boots
+  - type: SpeedModule
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: ModuleExclusivity
     maximum: 1
     blacklist:
       components:
       - MagbootsModule
+  - type: ModSuitModuleOverlay
+    suffix: magboots
+    enabledSuffix: magboots-on
+
+# Lets the chief engineer's advanced magboots work as the magboots module of a R.I.G., drawn in place of its boots.
+- type: entity
+  abstract: true
+  id: ModSuitModuleMagbootsAdvanced
+  components:
+  - type: ToggleableModule
+  - type: ToggleableModuleAction
+  - type: ToggleableUiModule
+  - type: ModSuitModuleComplexity
+    complexity: 2
+  - type: RequireSealedModule
+    parts:
+    - Boots
+  - type: ToggleableComponentModSuitPartModule
+    part: Boots
+    components:
+    - type: Magboots
+    - type: NoSlip
+  - type: PowerDrainModule
+    enabledDraw: 0.25
+  - type: MagbootsModule
+    modSuitPart: Boots
+  - type: ModuleExclusivity
+    maximum: 1
+    blacklist:
+      components:
+      - MagbootsModule
+  - type: ModSuitHidePartModule
+    part: Boots
+  - type: ModSuitDeployableContainerVisuals
+    partType: Boots
+  - type: ModuleContainerVisuals
+    clothingLayers:
+      true:
+        shoes:
+        - sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
+          state: on-equipped-FEET
+      false:
+        shoes:
+        - sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
+          state: equipped-FEET
+    itemLayers:
+      true:
+      - sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
+        state: icon-on
+      false:
+      - sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
+        state: icon
 
 - type: entity
   parent: BaseModSuitModuleAction
@@ -183,8 +238,14 @@
   - type: ModuleExclusivity
     maximum: 1
     blacklist:
-      components:
-      - SpeedModule
+      tags:
+      - ModSuitModuleMobility
+  - type: Tag
+    tags:
+    - ModSuitModule
+    - ModSuitModuleMobility
+  - type: ModSuitModuleOverlay
+    suffix: mobility
 
 # Protection
 
@@ -216,6 +277,8 @@
     tags:
     - ModSuitModule
     - ModSuitModuleInsulation
+  - type: ModSuitModuleOverlay
+    suffix: insulation
 
 - type: entity
   parent: BaseModSuitModuleToggle

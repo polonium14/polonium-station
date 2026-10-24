@@ -158,7 +158,7 @@ public abstract class RigTest : InteractionTest
         await RunTicks(5);
 
         await InteractUsing(Mobility, awaitDoAfters: false);
-        await RunSeconds(2);
+        await RunSeconds(1);
         Assert.That(Installed(), Is.False, "Module was installed before the do-after ended.");
 
         await RunSeconds(2);
@@ -169,7 +169,7 @@ public abstract class RigTest : InteractionTest
         await RunTicks(5);
 
         await SendBui(ModSuitUiKey.Key, new ModSuitEjectButtonMessage(module), Target);
-        await RunSeconds(3);
+        await RunSeconds(2);
         Assert.That(Installed(), "Module was removed before the do-after ended.");
 
         await RunSeconds(3);
@@ -231,6 +231,73 @@ public abstract class RigTest : InteractionTest
         {
             Assert.That(light.Activated, "Helmet light did not turn on without a cell in the R.I.G.");
             Assert.That(SEntMan.System<SharedPointLightSystem>().TryGetLight(helmet.Value, out var pointLight) && pointLight.Enabled, "Helmet light gives no light.");
+        });
+    }
+
+    [Test]
+    public async Task MagbootsFitNextToMobility()
+    {
+        await EquipRigWithMobility();
+
+        await Server.WaitPost(() =>
+        {
+            var magboots = SEntMan.SpawnEntity("ModSuitModuleMagboots", SEntMan.GetComponent<TransformComponent>(SPlayer).Coordinates);
+            var modules = SEntMan.GetComponent<ModuleContainerComponent>(_rig).Modules;
+            Assert.That(SEntMan.System<SharedContainerSystem>().Insert(magboots, modules), "Magboots could not be installed next to the mobility module.");
+        });
+    }
+
+    [Test]
+    public async Task InstalledModuleShowsOnSuit()
+    {
+        await EquipRigWithMobility();
+
+        Assert.That(SEntMan.System<SharedModSuitSystem>().TryGetDeployedPart(_rig, ModSuitPartType.Chestplate, out var chestplate));
+
+        await Client.WaitAssertion(() =>
+        {
+            var states = CEntMan.GetComponent<SpriteComponent>(ToClient(chestplate!.Value)).AllLayers.Select(l => l.RsiState.Name);
+            Assert.That(states, Has.Some.EndsWith("-mobility"), "The mobility module is not drawn on the chestplate.");
+        });
+
+        await Server.WaitPost(() => SEntMan.System<SharedContainerSystem>().Remove(_module, SEntMan.GetComponent<ModuleContainerComponent>(_rig).Modules));
+        await RunTicks(10);
+
+        await Client.WaitAssertion(() =>
+        {
+            var states = CEntMan.GetComponent<SpriteComponent>(ToClient(chestplate!.Value)).AllLayers.Select(l => l.RsiState.Name);
+            Assert.That(states, Has.None.EndsWith("-mobility"), "The removed mobility module is still drawn on the chestplate.");
+        });
+    }
+
+    [Test]
+    public async Task AdvancedMagbootsReplaceRigBoots()
+    {
+        await EquipRigWithMobility();
+
+        // Dionae cannot wear shoes, so the R.I.G. never deploys its boots on them.
+        if (!SEntMan.System<InventorySystem>().HasSlot(SPlayer, "shoes"))
+            return;
+
+        Assert.That(SEntMan.System<SharedModSuitSystem>().TryGetDeployedPart(_rig, ModSuitPartType.Boots, out var boots));
+
+        await Server.WaitPost(() =>
+        {
+            var magboots = SEntMan.SpawnEntity("ClothingShoesBootsMagAdv", SEntMan.GetComponent<TransformComponent>(SPlayer).Coordinates);
+            var modules = SEntMan.GetComponent<ModuleContainerComponent>(_rig).Modules;
+            Assert.That(SEntMan.System<SharedContainerSystem>().Insert(magboots, modules), "Advanced magboots could not be installed into the R.I.G.");
+        });
+        await RunTicks(10);
+
+        await Client.WaitAssertion(() =>
+        {
+            var paths = CEntMan.GetComponent<SpriteComponent>(ToClient(boots!.Value)).AllLayers
+                .Where(l => l.Visible)
+                .Select(l => l.ActualRsi?.Path.ToString() ?? string.Empty)
+                .ToList();
+
+            Assert.That(paths, Has.Some.Contains("magboots-advanced.rsi"), "The advanced magboots are not drawn on the R.I.G. boots.");
+            Assert.That(paths, Has.None.Contains("ModSuits"), "The R.I.G. boots are still drawn under the advanced magboots.");
         });
     }
 

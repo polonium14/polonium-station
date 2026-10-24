@@ -19,6 +19,7 @@ public partial class ModSuitSystem
 
     private const string LayerPrefix = "modsuit-sealable-layers";
     private const string LightsSuffix = "-lights";
+    private const string UnpoweredSuffix = "-unpowered";
 
     private void InitializeSealable()
     {
@@ -41,14 +42,26 @@ public partial class ModSuitSystem
 
         ent.Comp.RevealedLayers.Clear();
 
+        var hidden = IsHidden(ent.Owner);
+        for (var i = 0; i < sprite.AllLayers.Count(); i++)
+            _sprite.LayerSetVisible((ent.Owner, sprite), i, !hidden);
+
         if (!TryGetIconLayers(ent, isSealed, out var layers))
             return;
 
         var ev = new ModSuitSealedGetIconLayersEvent();
         RaiseLocalEvent(ent.Owner, ev);
 
-        AddIconLayers(ent, layers, sprite);
-        AddIconLayers(ent, GetCoreLightLayers(ent, layers), sprite);
+        if (!hidden)
+        {
+            var overlays = GetModuleOverlayLayers(ent, layers);
+
+            AddIconLayers(ent, layers, sprite);
+            AddIconLayers(ent, GetCoreLightLayers(ent, layers), sprite);
+            AddIconLayers(ent, overlays, sprite);
+            AddIconLayers(ent, GetCoreLightLayers(ent, overlays), sprite);
+        }
+
         AddIconLayers(ent, ev.Layers, sprite);
     }
 
@@ -69,9 +82,25 @@ public partial class ModSuitSystem
         var ev = new ModSuitSealedGetClothingLayersEvent(args.Slot);
         RaiseLocalEvent(ent.Owner, ev);
 
-        AddClothingLayers(layers, ref args);
-        AddClothingLayers(GetCoreLightLayers(ent, layers), ref args);
+        if (!IsHidden(ent.Owner))
+        {
+            var overlays = GetModuleOverlayLayers(ent, layers);
+
+            AddClothingLayers(layers, ref args);
+            AddClothingLayers(GetCoreLightLayers(ent, layers), ref args);
+            AddClothingLayers(overlays, ref args);
+            AddClothingLayers(GetCoreLightLayers(ent, overlays), ref args);
+        }
+
         AddClothingLayers(ev.Layers, ref args);
+    }
+
+    /// <summary>
+    /// Whether an installed module draws itself in place of this part.
+    /// </summary>
+    private bool IsHidden(EntityUid part)
+    {
+        return Appearance.TryGetData<bool>(part, ModSuitSealedVisuals.Hidden, out var hidden) && hidden;
     }
 
     /// <summary>
@@ -79,29 +108,55 @@ public partial class ModSuitSystem
     /// </summary>
     private List<PrototypeLayerData> GetCoreLightLayers(Entity<ModSuitSealableComponent> ent, List<PrototypeLayerData> layers)
     {
-        List<PrototypeLayerData> lights = [];
-
         if (IsUnpowered(ent.Owner))
-            return lights;
+            return [];
 
         var suit = CompOrNull<ModSuitDeployedPartComponent>(ent.Owner)?.Suit ?? ent.Owner;
         if (GetCore(suit)?.LightColor is not { } color)
-            return lights;
+            return [];
+
+        return GetVariantLayers(layers, LightsSuffix, color);
+    }
+
+    /// <summary>
+    /// Layers that draw the installed modules on the suit, using the overlay states named after each module.
+    /// </summary>
+    private List<PrototypeLayerData> GetModuleOverlayLayers(Entity<ModSuitSealableComponent> ent, List<PrototypeLayerData> layers)
+    {
+        List<PrototypeLayerData> overlays = [];
+
+        if (!Appearance.TryGetData<string>(ent.Owner, ModSuitSealedVisuals.Overlays, out var suffixes) || suffixes.Length == 0)
+            return overlays;
+
+        foreach (var suffix in suffixes.Split(','))
+            overlays.AddRange(GetVariantLayers(layers, "-" + suffix));
+
+        return overlays;
+    }
+
+    /// <summary>
+    /// Copies of the layers that use the "state-suffix" variant of their state, for the layers whose RSI has one.
+    /// Unpowered states share the variants of their powered state.
+    /// </summary>
+    private List<PrototypeLayerData> GetVariantLayers(List<PrototypeLayerData> layers, string suffix, Color? color = null)
+    {
+        List<PrototypeLayerData> variants = [];
 
         foreach (var layer in layers)
         {
             if (layer.RsiPath == null || layer.State == null)
                 continue;
 
-            var state = layer.State + LightsSuffix;
+            var baseState = layer.State.EndsWith(UnpoweredSuffix) ? layer.State[..^UnpoweredSuffix.Length] : layer.State;
+            var state = baseState + suffix;
             if (!_cache.TryGetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / layer.RsiPath, out var rsi) ||
                 !rsi.RSI.TryGetState(state, out _))
                 continue;
 
-            lights.Add(new PrototypeLayerData { RsiPath = layer.RsiPath, State = state, Color = color });
+            variants.Add(new PrototypeLayerData { RsiPath = layer.RsiPath, State = state, Color = color });
         }
 
-        return lights;
+        return variants;
     }
 
     private bool TryGetIconLayers(Entity<ModSuitSealableComponent> ent, bool isSealed, [NotNullWhen(true)] out List<PrototypeLayerData>? layers)
