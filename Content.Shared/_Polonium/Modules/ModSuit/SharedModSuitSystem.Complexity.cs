@@ -48,13 +48,13 @@ public partial class SharedModSuitSystem
         if (!TryComp<ModSuitModuleComplexityComponent>(args.Module, out var moduleComp))
             return;
 
-        if (ent.Comp.Complexity + moduleComp.Complexity > ent.Comp.MaxComplexity)
+        if (ent.Comp.Complexity + moduleComp.Complexity > GetMaxComplexity(ent))
             args.Cancel();
     }
 
     private void OnGetModSuitUiState(Entity<ModSuitComplexityLimitComponent> ent, ref ModSuitGetUiEntriesEvent args)
     {
-        var toAdd = (ent.Comp.Complexity, ent.Comp.MaxComplexity);
+        var toAdd = (ent.Comp.Complexity, GetMaxComplexity(ent));
         ModSuitComplexityBuiEntry? foundEntry = null;
 
         foreach (var entry in args.Entries)

@@ -42,6 +42,29 @@
     actions:
     - !type:AppearanceChange
     edges:
+    - to: modWired
+      steps:
+      - material: Cable
+        amount: 5
+        doAfter: 1
+    - to: modCore
+      steps:
+      - tool: Screwing
+        doAfter: 0.5
+
+  - node: modWired
+    actions:
+    - !type:AppearanceChange
+    edges:
+    - to: modWiresTrimmed
+      steps:
+      - tool: Cutting
+        doAfter: 0.5
+
+  - node: modWiresTrimmed
+    actions:
+    - !type:AppearanceChange
+    edges:
     - to: helmet
       steps:
       - tag: ModSuitHelmet
@@ -50,12 +73,34 @@
         icon:
           sprite: _Polonium/Objects/Specific/Robotics/ModSuits/construction.rsi
           state: helmet
-    - to: modCore
+    - to: modCoreScrewed
+      completed:
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 5
       steps:
-      - tool: Screwing
-        doAfter: 0.5
+      - tool: Cutting
+        doAfter: 1
 
   - node: helmet
+    actions:
+    - !type:AppearanceChange
+    edges:
+    - to: visor
+      steps:
+      - material: Glass
+        amount: 2
+        doAfter: 1
+    - to: modWiresTrimmed
+      steps:
+      - tool: Prying
+        doAfter: 0.5
+        completed:
+        - !type:EmptyContainer
+          container: helmet
+          pickup: true
+
+  - node: visor
     actions:
     - !type:AppearanceChange
     edges:
@@ -67,14 +112,14 @@
         icon:
           sprite: _Polonium/Objects/Specific/Robotics/ModSuits/construction.rsi
           state: chestplate
-    - to: modCoreScrewed
+    - to: helmet
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetGlass1
+        amount: 2
       steps:
       - tool: Prying
-        doAfter: 0.5
-        completed:
-        - !type:EmptyContainer
-          container: helmet
-          pickup: true
+        doAfter: 1
 
   - node: chestplate
     actions:
@@ -88,7 +133,7 @@
         icon:
           sprite: _Polonium/Objects/Specific/Robotics/ModSuits/construction.rsi
           state: gauntlets
-    - to: helmet
+    - to: visor
       steps:
       - tool: Prying
         doAfter: 0.5
@@ -139,16 +184,42 @@
     actions:
     - !type:AppearanceChange
     edges:
-    - to: screwed
+    - to: welded
       steps:
-      - tool: Screwing
-        doAfter: 0.5
+      - tool: Welding
+        doAfter: 2
     - to: boots
       steps:
       - tool: Anchoring
         doAfter: 0.5
 
+  - node: welded
+    actions:
+    - !type:AppearanceChange
+    edges:
+    - to: screwed
+      steps:
+      - tool: Screwing
+        doAfter: 0.5
+    - to: wrenched
+      steps:
+      - tool: Welding
+        doAfter: 2
+
   - node: screwed
+    actions:
+    - !type:AppearanceChange
+    edges:
+    - to: calibrated
+      steps:
+      - tool: Pulsing
+        doAfter: 2
+    - to: welded
+      steps:
+      - tool: Screwing
+        doAfter: 0.5
+
+  - node: calibrated
     actions:
     - !type:AppearanceChange
     edges:
@@ -190,10 +261,10 @@
       - tag: ModSuitPlatingCivilian
         name: ent-ModSuitPlatingCivilian
         store: plating
-    - to: wrenched
+    - to: screwed
       steps:
-      - tool: Screwing
-        doAfter: 0.5
+      - tool: Pulsing
+        doAfter: 2
 
   - node: civModCore
     actions:
@@ -216,6 +287,29 @@
     actions:
     - !type:AppearanceChange
     edges:
+    - to: civWired
+      steps:
+      - material: Cable
+        amount: 5
+        doAfter: 1
+    - to: civModCore
+      steps:
+      - tool: Screwing
+        doAfter: 0.5
+
+  - node: civWired
+    actions:
+    - !type:AppearanceChange
+    edges:
+    - to: civWiresTrimmed
+      steps:
+      - tool: Cutting
+        doAfter: 0.5
+
+  - node: civWiresTrimmed
+    actions:
+    - !type:AppearanceChange
+    edges:
     - to: civHelmet
       steps:
       - tag: ModSuitHelmet
@@ -224,12 +318,34 @@
         icon:
           sprite: _Polonium/Objects/Specific/Robotics/ModSuits/construction.rsi
           state: helmet
-    - to: civModCore
+    - to: civModCoreScrewed
+      completed:
+      - !type:SpawnPrototype
+        prototype: CableApcStack1
+        amount: 5
       steps:
-      - tool: Screwing
-        doAfter: 0.5
+      - tool: Cutting
+        doAfter: 1
 
   - node: civHelmet
+    actions:
+    - !type:AppearanceChange
+    edges:
+    - to: civVisor
+      steps:
+      - material: Glass
+        amount: 2
+        doAfter: 1
+    - to: civWiresTrimmed
+      steps:
+      - tool: Prying
+        doAfter: 0.5
+        completed:
+        - !type:EmptyContainer
+          container: helmet
+          pickup: true
+
+  - node: civVisor
     actions:
     - !type:AppearanceChange
     edges:
@@ -241,14 +357,14 @@
         icon:
           sprite: _Polonium/Objects/Specific/Robotics/ModSuits/construction.rsi
           state: chestplate
-    - to: civModCoreScrewed
+    - to: civHelmet
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetGlass1
+        amount: 2
       steps:
       - tool: Prying
-        doAfter: 0.5
-        completed:
-        - !type:EmptyContainer
-          container: helmet
-          pickup: true
+        doAfter: 1
 
   - node: civChestplate
     actions:
@@ -262,7 +378,7 @@
         icon:
           sprite: _Polonium/Objects/Specific/Robotics/ModSuits/construction.rsi
           state: gauntlets
-    - to: civHelmet
+    - to: civVisor
       steps:
       - tool: Prying
         doAfter: 0.5
@@ -313,16 +429,42 @@
     actions:
     - !type:AppearanceChange
     edges:
-    - to: civScrewed
+    - to: civWelded
       steps:
-      - tool: Screwing
-        doAfter: 0.5
+      - tool: Welding
+        doAfter: 2
     - to: civBoots
       steps:
       - tool: Anchoring
         doAfter: 0.5
 
+  - node: civWelded
+    actions:
+    - !type:AppearanceChange
+    edges:
+    - to: civScrewed
+      steps:
+      - tool: Screwing
+        doAfter: 0.5
+    - to: civWrenched
+      steps:
+      - tool: Welding
+        doAfter: 2
+
   - node: civScrewed
+    actions:
+    - !type:AppearanceChange
+    edges:
+    - to: civCalibrated
+      steps:
+      - tool: Pulsing
+        doAfter: 2
+    - to: civWelded
+      steps:
+      - tool: Screwing
+        doAfter: 0.5
+
+  - node: civCalibrated
     actions:
     - !type:AppearanceChange
     edges:
@@ -334,10 +476,10 @@
         icon:
           sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
           state: civilian
-    - to: civWrenched
+    - to: civScrewed
       steps:
-      - tool: Screwing
-        doAfter: 0.5
+      - tool: Pulsing
+        doAfter: 2
 
   - node: rig
 
@@ -358,3 +500,116 @@
 
   - node: civilianPlating
     entity: ClothingBackpackModSuitCivilian
+
+- type: constructionGraph
+  id: ModSuitCore
+  start: standard
+  graph:
+  - node: standard
+    entity: ModSuitCoreStandard
+    edges:
+    - to: plasmaInserted
+      steps:
+      - material: Plasma
+        amount: 5
+        doAfter: 1
+    - to: electricInserted
+      steps:
+      - tag: AnomalyCoreElectricity
+        name: construction-graph-tag-anomaly-core-electricity
+        store: addon
+        icon:
+          sprite: Structures/Specific/Anomalies/Cores/electric_core.rsi
+          state: core
+    - to: bluespaceInserted
+      steps:
+      - tag: AnomalyCoreBluespace
+        name: construction-graph-tag-anomaly-core-bluespace
+        store: addon
+        icon:
+          sprite: Structures/Specific/Anomalies/Cores/bluespace_core.rsi
+          state: core
+    - to: gravityInserted
+      steps:
+      - tag: AnomalyCoreGravity
+        name: construction-graph-tag-anomaly-core-gravity
+        store: addon
+        icon:
+          sprite: Structures/Specific/Anomalies/Cores/gravity_core.rsi
+          state: core
+
+  - node: plasmaInserted
+    entity: ModSuitCoreUnsecured
+    edges:
+    - to: plasma
+      steps:
+      - tool: Screwing
+        doAfter: 1
+    - to: standard
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlasma1
+        amount: 5
+      steps:
+      - tool: Prying
+        doAfter: 1
+
+  - node: electricInserted
+    entity: ModSuitCoreUnsecured
+    edges:
+    - to: electric
+      steps:
+      - tool: Screwing
+        doAfter: 1
+    - to: standard
+      steps:
+      - tool: Prying
+        doAfter: 1
+        completed:
+        - !type:EmptyContainer
+          container: addon
+          pickup: true
+
+  - node: bluespaceInserted
+    entity: ModSuitCoreUnsecured
+    edges:
+    - to: bluespace
+      steps:
+      - tool: Screwing
+        doAfter: 1
+    - to: standard
+      steps:
+      - tool: Prying
+        doAfter: 1
+        completed:
+        - !type:EmptyContainer
+          container: addon
+          pickup: true
+
+  - node: gravityInserted
+    entity: ModSuitCoreUnsecured
+    edges:
+    - to: gravity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+    - to: standard
+      steps:
+      - tool: Prying
+        doAfter: 1
+        completed:
+        - !type:EmptyContainer
+          container: addon
+          pickup: true
+
+  - node: plasma
+    entity: ModSuitCorePlasma
+
+  - node: electric
+    entity: ModSuitCoreElectric
+
+  - node: bluespace
+    entity: ModSuitCoreBluespace
+
+  - node: gravity
+    entity: ModSuitCoreGravity

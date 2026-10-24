@@ -50,15 +50,20 @@ public sealed partial class ModSuitSpeedSystem : EntitySystem
 
     private void OnRefreshSpeed(Entity<ModSuitSpeedComponent> ent, ref InventoryRelayedEvent<RefreshMovementSpeedModifiersEvent> args)
     {
+        // The unpowered values and the core bonus replace the suit's own modifier instead of stacking with it.
+        var clothing = CompOrNull<ClothingSpeedModifierComponent>(ent.Owner);
+        var walk = clothing?.WalkModifier ?? 1f;
+        var sprint = clothing?.SprintModifier ?? 1f;
+        var bonus = _modSuit.GetCore(ent.Owner)?.SpeedBonus ?? 0f;
+
         if (ent.Comp.Unpowered)
         {
-            // The unpowered values replace the suit's own modifier instead of stacking with it.
-            var clothing = CompOrNull<ClothingSpeedModifierComponent>(ent.Owner);
-            var walk = clothing?.WalkModifier ?? 1f;
-            var sprint = clothing?.SprintModifier ?? 1f;
-            args.Args.ModifySpeed(ent.Comp.UnpoweredWalkModifier / walk, ent.Comp.UnpoweredSprintModifier / sprint);
+            args.Args.ModifySpeed((ent.Comp.UnpoweredWalkModifier + bonus) / walk, (ent.Comp.UnpoweredSprintModifier + bonus) / sprint);
             return;
         }
+
+        if (bonus != 0f)
+            args.Args.ModifySpeed((walk + bonus) / walk, (sprint + bonus) / sprint);
 
         foreach (var module in _module.GetModules(ent.Owner))
         {

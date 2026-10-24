@@ -25,6 +25,12 @@ modsuit-seal-alert-owner = {CAPITALIZE(THE($user))} is trying to seal your suit 
 modsuit-unseal-alert-owner = {CAPITALIZE(THE($user))} is trying to unseal your suit ({$part})!
 modsuit-seal-other-no-power = The R.I.G. has no power to seal {THE($part)}.
 
+modsuit-core-examine = It has an integrated {$core}.
+modsuit-core-refuel-verb = Refuel the core
+modsuit-core-refuel-no-cell = There is no power cell to charge.
+modsuit-core-refuel-full = The power cell is already full.
+modsuit-core-refuel-done = The core turns the fuel into charge.
+
 lathe-category-rig = R.I.G.
 cargoproduct-category-name-rig = R.I.G.
 
@@ -35,5 +41,8 @@ construction-graph-tag-rig-chestplate = R.I.G. chestplate assembly
 construction-graph-tag-rig-gauntlets = R.I.G. gauntlets assembly
 construction-graph-tag-rig-boots = R.I.G. boots assembly
 construction-graph-tag-rig-plating = R.I.G. plating
+construction-graph-tag-anomaly-core-electricity = electric anomaly core
+construction-graph-tag-anomaly-core-bluespace = bluespace anomaly core
+construction-graph-tag-anomaly-core-gravity = gravity anomaly core
 
 guide-entry-rig = R.I.G.

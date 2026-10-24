@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "https://github.com/tgstation/tgstation/blob/8ac8fd086df2a487c1f3ae501a57ad4e221a0323/icons/obj/clothing/modsuit/mod_clothing.dmi, unpowered states reworked for Polonium Station by nikitosych",
+    "copyright": "https://github.com/tgstation/tgstation/blob/8ac8fd086df2a487c1f3ae501a57ad4e221a0323/icons/obj/clothing/modsuit/mod_clothing.dmi, unpowered states reworked for Polonium Station by nikitosych, light masks made for Polonium Station by nikitosych",
     "size": {
         "x": 32,
         "y": 32
@@ -26,6 +26,13 @@
         },
         {
             "name": "equipped-FEET-sealed-unpowered",
+            "directions": 4
+        },
+        {
+            "name": "icon-sealed-lights"
+        },
+        {
+            "name": "equipped-FEET-sealed-lights",
             "directions": 4
         }
     ]

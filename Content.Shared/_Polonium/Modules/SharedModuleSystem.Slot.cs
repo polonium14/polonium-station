@@ -2,6 +2,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared._Polonium.Modules.Components;
 using Content.Shared._Polonium.Modules.Events;
+using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Wires;
 
 namespace Content.Shared._Polonium.Modules;
@@ -10,7 +11,7 @@ public partial class SharedModuleSystem
 {
     private void InitializeSlot()
     {
-        SubscribeLocalEvent<ModuleContainerAddOnInteractComponent, InteractUsingEvent>(OnAddOnInteract);
+        SubscribeLocalEvent<ModuleContainerAddOnInteractComponent, InteractUsingEvent>(OnAddOnInteract, before: [typeof(SharedStorageSystem)]);
         SubscribeLocalEvent<ModuleContainerComponent, ModuleInsertDoAfterEvent>(OnInsertDoAfter);
         SubscribeLocalEvent<ModuleContainerComponent, ModuleRemoveDoAfterEvent>(OnRemoveDoAfter);
     }
@@ -81,7 +82,7 @@ public partial class SharedModuleSystem
             wiresPanel.Open)
             return true;
 
-        _popup.PopupClient(Loc.GetString("module-container-panel-closed", ("container", container)), container, user);
+        _popup.PopupEntity(Loc.GetString("module-container-panel-closed", ("container", container)), container, user);
         return false;
     }
 }

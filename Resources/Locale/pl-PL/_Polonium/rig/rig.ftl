@@ -25,6 +25,12 @@ modsuit-seal-alert-owner = {CAPITALIZE(THE($user))} próbuje uszczelnić Twój k
 modsuit-unseal-alert-owner = {CAPITALIZE(THE($user))} próbuje rozszczelnić Twój kombinezon ({$part})!
 modsuit-seal-other-no-power = R.I.G. nie ma zasilania, więc nie da się uszczelnić: {$part}.
 
+modsuit-core-examine = Ma zintegrowany {$core}.
+modsuit-core-refuel-verb = Zasil rdzeń
+modsuit-core-refuel-no-cell = Nie ma baterii do naładowania.
+modsuit-core-refuel-full = Bateria jest już pełna.
+modsuit-core-refuel-done = Rdzeń zamienia paliwo w ładunek.
+
 lathe-category-rig = R.I.G.
 cargoproduct-category-name-rig = R.I.G.
 
@@ -35,5 +41,8 @@ construction-graph-tag-rig-chestplate = szkielet napierśnika R.I.G.
 construction-graph-tag-rig-gauntlets = szkielet rękawic R.I.G.
 construction-graph-tag-rig-boots = szkielet butów R.I.G.
 construction-graph-tag-rig-plating = poszycie R.I.G.
+construction-graph-tag-anomaly-core-electricity = rdzeń anomalii elektrycznej
+construction-graph-tag-anomaly-core-bluespace = rdzeń anomalii bluespace
+construction-graph-tag-anomaly-core-gravity = rdzeń anomalii grawitacyjnej
 
 guide-entry-rig = R.I.G.

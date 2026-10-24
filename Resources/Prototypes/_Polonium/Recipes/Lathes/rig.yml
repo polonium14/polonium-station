@@ -42,9 +42,10 @@
   categories:
   - RIG
   completetime: 10
+  # The cable and glass taken off here are spent in the assembly steps.
   materials:
-    Steel: 1000
-    Glass: 500
+    Steel: 850
+    Glass: 300
     Gold: 300
     Plasma: 300
     Uranium: 100
@@ -56,8 +57,8 @@
   - RIG
   completetime: 10
   materials:
-    Steel: 800
-    Glass: 400
+    Steel: 650
+    Glass: 200
     Plasma: 300
 
 - type: latheRecipe

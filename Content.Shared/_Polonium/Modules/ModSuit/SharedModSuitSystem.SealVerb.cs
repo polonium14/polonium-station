@@ -98,7 +98,7 @@ public partial class SharedModSuitSystem
 
         if (!SetSeal((ent.Owner, ent.Comp), args.ShouldSeal))
         {
-            _popup.PopupClient(Loc.GetString("modsuit-seal-other-no-power", ("part", ent.Owner)), wearer, args.User);
+            _popup.PopupEntity(Loc.GetString("modsuit-seal-other-no-power", ("part", ent.Owner)), wearer, args.User);
             return;
         }
 

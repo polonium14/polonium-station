@@ -4,6 +4,8 @@ using Content.Shared.Item;
 using Content.Shared._Polonium.Modules.ModSuit;
 using Content.Shared._Polonium.Modules.ModSuit.Components;
 using Robust.Client.GameObjects;
+using Robust.Client.ResourceManagement;
+using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
@@ -11,10 +13,12 @@ namespace Content.Client._Polonium.Modules.ModSuit;
 
 public partial class ModSuitSystem
 {
+    [Dependency] private IResourceCache _cache = default!;
     [Dependency] private SharedItemSystem _item = default!;
     [Dependency] private SpriteSystem _sprite = default!;
 
     private const string LayerPrefix = "modsuit-sealable-layers";
+    private const string LightsSuffix = "-lights";
 
     private void InitializeSealable()
     {
@@ -44,6 +48,7 @@ public partial class ModSuitSystem
         RaiseLocalEvent(ent.Owner, ev);
 
         AddIconLayers(ent, layers, sprite);
+        AddIconLayers(ent, GetCoreLightLayers(ent, layers), sprite);
         AddIconLayers(ent, ev.Layers, sprite);
     }
 
@@ -70,7 +75,38 @@ public partial class ModSuitSystem
         RaiseLocalEvent(ent.Owner, ev);
 
         AddClothingLayers(layers, ref args);
+        AddClothingLayers(GetCoreLightLayers(ent, layers), ref args);
         AddClothingLayers(ev.Layers, ref args);
+    }
+
+    /// <summary>
+    /// Layers that tint the suit's lights in the colour of its core, using the "-lights" mask of each layer's state.
+    /// </summary>
+    private List<PrototypeLayerData> GetCoreLightLayers(Entity<ModSuitSealableComponent> ent, List<PrototypeLayerData> layers)
+    {
+        List<PrototypeLayerData> lights = [];
+
+        if (IsUnpowered(ent.Owner))
+            return lights;
+
+        var suit = CompOrNull<ModSuitDeployedPartComponent>(ent.Owner)?.Suit ?? ent.Owner;
+        if (GetCore(suit)?.LightColor is not { } color)
+            return lights;
+
+        foreach (var layer in layers)
+        {
+            if (layer.RsiPath == null || layer.State == null)
+                continue;
+
+            var state = layer.State + LightsSuffix;
+            if (!_cache.TryGetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / layer.RsiPath, out var rsi) ||
+                !rsi.RSI.TryGetState(state, out _))
+                continue;
+
+            lights.Add(new PrototypeLayerData { RsiPath = layer.RsiPath, State = state, Color = color });
+        }
+
+        return lights;
     }
 
     private bool TryGetIconLayers(Entity<ModSuitSealableComponent> ent, bool isSealed, [NotNullWhen(true)] out List<PrototypeLayerData>? layers)

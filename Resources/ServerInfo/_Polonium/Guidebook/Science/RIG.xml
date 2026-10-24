@@ -23,7 +23,18 @@
   </Box>
   R.I.G. składa robotyk. Rdzeń, ramę i części kombinezonu drukuje się w [textlink="fabrykatorze egzoszkieletów" link="Robotics"] po zbadaniu technologii [color=#e8c878]Robotyka[/color]. Poszycie, które decyduje o tym, jaki R.I.G. powstanie, zamawia się w dziale zaopatrzenia w kategorii R.I.G.
 
-  Do ramy wkłada się rdzeń, a potem hełm, napierśnik, rękawice i buty, przykręcając je po drodze narzędziami. Na końcu na ramę zakłada się poszycie. Jeśli nie wiesz, co dalej, przyjrzyj się ramie.
+  Do ramy wkłada się rdzeń, okablowuje go i przycina przewody, a potem zakłada hełm z szybką ze szkła, napierśnik, rękawice i buty. Złożony kombinezon trzeba jeszcze skręcić, zespawać i skalibrować multitoolem, a na końcu założyć na ramę poszycie. Jeśli nie wiesz, co dalej, przyjrzyj się ramie.
+
+  ### Rdzenie
+  <Box>
+    <GuideEntityEmbed Entity="ModSuitCorePlasma"/>
+    <GuideEntityEmbed Entity="ModSuitCoreElectric"/>
+    <GuideEntityEmbed Entity="ModSuitCoreBluespace"/>
+    <GuideEntityEmbed Entity="ModSuitCoreGravity"/>
+  </Box>
+  Zwykły rdzeń można przed budową ulepszyć. Wystarczy włożyć do niego rdzeń anomalii albo plazmę i przykręcić ulepszenie śrubokrętem. Rdzeń anomalii elektrycznej sprawia, że kombinezon sam powoli ładuje baterię, rdzeń anomalii bluespace pozwala zmieścić więcej modułów, a rdzeń anomalii grawitacyjnej sprawia, że kombinezon mniej spowalnia. Nadaje się zarówno świeży, jak i bezczynny rdzeń anomalii, więc warto dogadać się z naukowcami. Kombinezon z ulepszonym rdzeniem świeci w kolorze rdzenia, a po przyjrzeniu się mu widać, jaki rdzeń ma w środku.
+
+  Kombinezon z plazmowym rdzeniem można doładować plazmą. Weź ją do ręki i wybierz [color=#e8c878]Zasil rdzeń[/color] z menu kombinezonu. Zwykłe kliknięcie plazmą wkłada ją do schowka, jak każdą inną rzecz. Cywilnego rdzenia nie da się ulepszyć.
 
   ## Używanie
   R.I.G. nosi się na plecach. Po założeniu hełm, napierśnik, rękawice i buty same rozkładają się na ciele, a rzeczy, które wcześniej tam nosiłeś, trafiają do środka kombinezonu i wracają, gdy go zdejmiesz.
@@ -47,5 +58,5 @@
   </Box>
   Moduły drukuje się w fabrykatorze egzoszkieletów. Kilka z nich jest dostępnych od początku zmiany, a resztę odblokowują badania naukowe. Każdy R.I.G. ma od nowości moduł schowka. Wyjęty z kombinezonu moduł schowka zabiera ze sobą rzeczy i można go otworzyć jak plecak.
 
-  Żeby zainstalować moduł, odkręć śrubokrętem panel kombinezonu i kliknij go modułem. Każdy moduł ma swoją złożoność, a kombinezon mieści tylko ograniczoną sumę, którą widać w panelu. Włączone moduły zużywają baterię, więc z kilkoma naraz zwykła bateria szybko się wyczerpie.
+  Żeby zainstalować moduł, odkręć śrubokrętem panel kombinezonu i kliknij go modułem. Instalacja i wyjmowanie modułu chwilę trwają. Każdy moduł ma swoją złożoność, a kombinezon mieści tylko ograniczoną sumę, którą widać w panelu. Włączone moduły zużywają baterię, więc z kilkoma naraz zwykła bateria szybko się wyczerpie.
 </Document>
