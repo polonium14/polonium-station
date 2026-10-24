@@ -36,7 +36,7 @@ public partial class ModSuitSystem
         if (args.Sprite is not { } sprite)
             return;
 
-        foreach (var layer in ent.Comp.RevealedLayers)
+        foreach (var layer in ent.Comp.RevealedLayers.OrderDescending())
             _sprite.RemoveLayer((ent.Owner, sprite), layer);
 
         ent.Comp.RevealedLayers.Clear();
@@ -55,12 +55,7 @@ public partial class ModSuitSystem
     private void AddIconLayers(Entity<ModSuitSealableComponent> ent, List<PrototypeLayerData> layers, SpriteComponent sprite)
     {
         foreach (var layer in layers)
-        {
-            layer.MapKeys ??= [];
-            layer.MapKeys.Add(LayerPrefix);
-
             ent.Comp.RevealedLayers.Add(_sprite.AddLayer((ent.Owner, sprite), layer, null));
-        }
     }
 
     private void OnSealableClothingVisuals(Entity<ModSuitSealableComponent> ent, ref GetEquipmentVisualsEvent args)

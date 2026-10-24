@@ -21,7 +21,7 @@
   components:
   - type: Construction
     graph: ModSuitCore
-    node: standard
+    node: start
 
 - type: entity
   parent: BaseItem
@@ -34,7 +34,7 @@
     state: standard
   - type: Construction
     graph: ModSuitCore
-    node: standard
+    node: start
   - type: ContainerContainer
     containers:
       addon: !type:Container {}

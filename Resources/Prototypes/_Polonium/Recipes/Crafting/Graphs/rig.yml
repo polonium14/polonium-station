@@ -503,9 +503,9 @@
 
 - type: constructionGraph
   id: ModSuitCore
-  start: standard
+  start: start
   graph:
-  - node: standard
+  - node: start
     entity: ModSuitCoreStandard
     edges:
     - to: plasmaInserted
@@ -545,7 +545,7 @@
       steps:
       - tool: Screwing
         doAfter: 1
-    - to: standard
+    - to: start
       completed:
       - !type:SpawnPrototype
         prototype: SheetPlasma1
@@ -561,7 +561,7 @@
       steps:
       - tool: Screwing
         doAfter: 1
-    - to: standard
+    - to: start
       steps:
       - tool: Prying
         doAfter: 1
@@ -577,7 +577,7 @@
       steps:
       - tool: Screwing
         doAfter: 1
-    - to: standard
+    - to: start
       steps:
       - tool: Prying
         doAfter: 1
@@ -593,7 +593,7 @@
       steps:
       - tool: Screwing
         doAfter: 1
-    - to: standard
+    - to: start
       steps:
       - tool: Prying
         doAfter: 1
