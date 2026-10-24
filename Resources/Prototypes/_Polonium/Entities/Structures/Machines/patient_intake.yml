@@ -1,0 +1,148 @@
+# SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Morgue
+  id: PatientIntakeMachine
+  name: Bluespace NFZ
+  description: A Nanotrasen contract machine. It delivers patients for treatment and pays the medical budget for every one returned healthy. Examine a patient while holding a health analyzer to check they are fit for discharge.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Machines/patient_intake.rsi
+    layers:
+    - state: closed
+      map: ["enum.MorgueVisualLayers.Base"]
+    - state: tray
+      offset: 0, -1
+      visible: false
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: light_ready
+      visible: false
+      map: ["enum.PatientIntakeVisualLayers.Light"]
+      shader: unshaded
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        enum.MorgueVisualLayers.Base:
+          True: { state: open }
+          False: { state: closed }
+        enum.StorageVisualLayers.Door:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PatientIntakeVisuals.Status:
+        enum.PatientIntakeVisualLayers.Light:
+          Off: { visible: false }
+          Ready: { visible: true, state: light_ready }
+          PatientWaiting: { visible: true, state: light_patient }
+          Busy: { visible: true, state: light_busy }
+  - type: EntityStorage
+    isCollidableWhenOpen: true
+    showContents: false
+    capacity: 30
+    enteringOffset: 0, -1
+    closeSound:
+      path: /Audio/Items/deconstruct.ogg
+    openSound:
+      path: /Audio/Items/deconstruct.ogg
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: ExtensionCableReceiver
+  - type: DeviceLinkSource
+    range: 30
+    ports:
+    - PatientIntakeFax
+  - type: PatientIntakeMachine
+    outfits:
+    - PatientIntakeCivilian
+    - PatientIntakePatientGown
+    - PatientIntakeMilitary
+    speciesGear:
+      Vox: PatientIntakeVoxInternals
+
+- type: randomHumanoidSettings
+  id: PatientIntakePatient
+  speciesBlacklist:
+  - Diona
+
+# Clothing groups
+- type: patientIntakeOutfit
+  id: PatientIntakeCivilian
+  weight: 70
+  slots:
+    jumpsuit:
+      items:
+      - ClothingUniformJumpsuitColorGrey
+      - ClothingUniformJumpsuitColorWhite
+      - ClothingUniformJumpsuitColorBlack
+      - ClothingUniformJumpsuitColorOrange
+      - ClothingUniformJumpsuitColorMaroon
+      - ClothingUniformJumpsuitColorDarkBlue
+      - ClothingUniformJumpsuitCasualBlue
+      - ClothingUniformJumpsuitCasualGreen
+      - ClothingUniformJumpsuitCasualPurple
+      - ClothingUniformJumpskirtCasualRed
+      - ClothingUniformJumpskirtColorTeal
+      - ClothingUniformJumpskirtColorPink
+    shoes:
+      chance: 0.9
+      items:
+      - ClothingShoesColorBlack
+      - ClothingShoesColorBrown
+      - ClothingShoesColorWhite
+      - ClothingShoesColorBlue
+      - ClothingShoesColorPurple
+      - ClothingShoesColorRed
+      - ClothingShoesColorOrange
+      - ClothingShoesSandalsWhiteSocks
+      - ClothingShoesSlippers
+    head:
+      chance: 0.3
+      items:
+      - ClothingHeadHatBeret
+      - ClothingHeadHatFedoraBrown
+      - ClothingHeadHatFedoraGrey
+      - ClothingHeadHatBowlerHat
+      - ClothingHeadHatGreysoft
+      - ClothingHeadHatBluesoft
+      - ClothingHeadHatRedsoft
+      - ClothingHeadHatTrucker
+
+- type: patientIntakeOutfit
+  id: PatientIntakePatientGown
+  weight: 20
+  slots:
+    jumpsuit:
+      chance: 0.4
+      items:
+      - ClothingUniformJumpsuitColorWhite
+    outerClothing:
+      items:
+      - ClothingOuterHospitalGown
+    shoes:
+      chance: 0.8
+      items:
+      - ClothingShoesSlippers
+      - ClothingShoeSlippersDuck
+      - ClothingShoesSandalsWhiteSocks
+
+- type: patientIntakeOutfit
+  id: PatientIntakeMilitary
+  weight: 10
+  slots:
+    jumpsuit:
+      items:
+      - ClothingUniformJumpsuitMercenary
+    shoes:
+      items:
+      - ClothingShoesBootsMerc
+    head:
+      chance: 0.5
+      items:
+      - ClothingHeadHatBeretMerc
+
+- type: startingGear
+  id: PatientIntakeVoxInternals
+  equipment:
+    mask: ClothingMaskBreath
+    pocket1: EmergencyNitrogenTankFilled

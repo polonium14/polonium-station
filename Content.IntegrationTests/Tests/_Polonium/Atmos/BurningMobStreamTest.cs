@@ -17,7 +17,7 @@ namespace Content.IntegrationTests.Tests._Polonium.Atmos;
 [TestOf(typeof(Content.Client.Atmos.EntitySystems.FireVisualizerSystem))]
 public sealed class BurningMobStreamTest : GameTest
 {
-    public override PoolSettings PoolSettings => new() { Connected = true, Fresh = true, Dirty = true };
+    public override PoolSettings PoolSettings => new() { Connected = true, Dirty = true };
 
     [Test]
     public async Task BurningMobReachesAClientCleanly()
