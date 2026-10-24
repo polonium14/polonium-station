@@ -33,7 +33,7 @@
       HyperNoblium: stationHyperNoblium # Funky atmos - /tg/ gases
       ProtoNitrate: danger # Funky atmos - /tg/ gases
       Zauker: danger # Funky atmos - /tg/ gases
-      Halon: danger # Funky atmos - /tg/ gases
+      Halon: stationHalon # Funky atmos - /tg/ gases
       Helium: stationHelium # Funky atmos - /tg/ gases
       AntiNoblium: danger # Funky atmos - /tg/ gases
   - type: GuideHelp
