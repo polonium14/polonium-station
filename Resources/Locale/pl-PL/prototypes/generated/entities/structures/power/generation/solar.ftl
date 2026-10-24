@@ -16,6 +16,6 @@ ent-SolarPanelUraniumBroken = panel słoneczny z uranu
     .desc = Zniszczony panel słoneczny z uranu.
     .suffix = Zniszczony
 ent-SolarAssembly = konstrukcja panelu słonecznego
-    .desc = Konstrukcja panelu słonecznego. Przykręć do kabla wysokiego napięcia, aby rozpocząć budowę.
+    .desc = Konstrukcja panelu słonecznego. przykręć do kabla wysokiego napięcia aby rozpocząć budowe.
 ent-SolarTracker = urządzenie śledzenia słonecznego
     .desc = Zaawansowane urządzenie używane do śledzenia najbliższej gwiazdy.

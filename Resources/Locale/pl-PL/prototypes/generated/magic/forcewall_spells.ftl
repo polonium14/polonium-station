@@ -1,2 +1,2 @@
-ent-ActionForceWall = ściana siłowa
+ent-ActionForceWall = Ściana siłowa
     .desc = Tworzy magiczną barierę.

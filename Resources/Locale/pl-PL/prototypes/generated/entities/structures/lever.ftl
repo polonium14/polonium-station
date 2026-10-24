@@ -1,2 +1,2 @@
-ent-TwoWayLever = dwukierunkowa dźwignia
+ent-TwoWayLever = Dwu kierunkowa dźwignia
     .desc = Dwu kierunkowa dźwignia.

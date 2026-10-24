@@ -10,7 +10,7 @@ ent-CrateSecurityBiosuit = skrzynia z kombinezonami biologicznymi ochrony
     .desc = Zawiera 2 kombinezony biologiczne, aby żadna choroba nie rozpraszała Cię podczas pełnienia obowiązków. Wymaga dostępu do ochrony, aby otworzyć.
 ent-CrateSecurityTrackingMindshieldImplants = skrzynia z implantami
     .desc = Zawiera 4 implanty MindShield i 4 implanty śledzące. Wymaga dostępu do ochrony, aby otworzyć.
-ent-CrateSecNonlethalThrowables = skrzynka z nieśmiercionośną bronią do rzucania
+ent-CrateSecNonlethalThrowables = Skrzynka z nieśmiercionośną bronią do rzucania
     .desc =
         Zawiera po pudle granatów hukowych, kolczastych, łzawiących oraz 4 bole.
         Wymaga dostępu Ochrony by otworzyć.

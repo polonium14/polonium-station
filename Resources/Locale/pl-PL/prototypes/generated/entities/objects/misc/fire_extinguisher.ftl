@@ -15,4 +15,4 @@ ent-FireExtinguisherMini = kieszonkowa gaśnica
 ent-SolutionFireExtinguisherMini = { ent-SolutionSpray }
     .desc = { ent-SolutionSpray.desc }
 ent-SelfRechargingFireExtinguisher = gaśnica samonapełniająca się
-    .desc = Gasi pożary. Powoli sam się napełnia.
+    .desc = It extinguishes fires. it slowly refills with water.

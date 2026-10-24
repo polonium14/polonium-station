@@ -1,4 +1,4 @@
-ent-MothershipCore = rdzeń statku-matki
+ent-MothershipCore = Rdzeń statku-matki
     .desc = Świadoma maszyna zdolna do wytwarzania ksenoborgów. Bez niej ksenoborgowie są skazani na zagładę.
 ent-ActionXenoborgControlMonitor = Konsola kontroli ksenoborgów
     .desc = Wyświetl konsolę kontroli ksenoborgów

@@ -17,4 +17,4 @@ ent-ShellTranquilizer = nabój (12 kaliber uspokajające)
 ent-ShellShotgunImprovised = improwizowany nabój do strzelby
     .desc = Domowej roboty nabój do strzelby, który wystrzeliwuje bolesne odłamki szkła. Rozrzut jest tak szeroki, że nie trafiłby nawet w szeroką ścianę stodoły.
 ent-ShellShotgunUranium = nabój (12 kaliber uranowe)
-    .desc = Standardowy nabój stosowany w większości nowoczesnych strzelb. Amunicja uranowa zastępuje ołowiany rdzeń śrutu materiałem rozszczepialnym, napromieniowując cele od wewnątrz.
+    .desc = Standardowy nabój stosowany w większości nowoczesnych strzelb. Amunicja uranowa zastępuje ołówowy rdzeń śrutu materiałem rozszczepialnym, napromieniowując cele od wewnątrz.

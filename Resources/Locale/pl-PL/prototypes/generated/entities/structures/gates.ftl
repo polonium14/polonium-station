@@ -26,5 +26,5 @@ ent-PowerSensor = sensor mocy
     .desc = Generuje sygnał w odpowiedzi na zmiany w sieci energetycznej. Można przełączać miedzy opcjami napięcia kabla.
 ent-MemoryCell = komórka pamięci
     .desc = Układ typu zatrzask D (D-Latch), który przechowuje sygnał. Jego stan można zmieniać za pomocą sygnału wejściowego oraz portów dostępu.
-ent-RandomGate = bramka losowa
-    .desc = Bramka logiczna, która wysyła losowy sygnał po zmianie sygnału wejściowego.
+ent-RandomGate = bramka random
+    .desc = Bramka logiczna która wysyła losowy sygnał po zmianie sygnału wejsciowego.

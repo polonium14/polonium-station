@@ -55,5 +55,5 @@ ent-DrinkWineCan = puszka wina
     .desc = Twój sposób na zapomnienie o wszystkich zmartwieniach i dobrą zabawę!
 ent-DrinkHakkaMateCan = puszka hakka mate
     .desc = Jasnopomarańczowa puszka hakka mate, popularnego na Marsie napoju gazowanego na bazie yerba mate!
-ent-DrinkMelonSodaCan = puszka napoju melon katsuga
+ent-DrinkMelonSodaCan = Puszka napoju melon katsuga
     .desc = Puszka napoju o smaku melona katsuna. Ma charakterystyczny smak melona i napoju gazowanego, co nie jest zaskoczeniem.

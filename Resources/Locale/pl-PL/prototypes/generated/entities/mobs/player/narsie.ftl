@@ -1,4 +1,4 @@
-ent-MobNarsieBase = Nar'Sie
+ent-MobNarsieBase = Nar'Si
     .desc = Twój umysł zaczyna bulgotać i wyciekać, próbując pojąć to, co widzi.
 ent-MobNarsieSpawn = { ent-MobNarsieBase }
     .suffix = Przyzwanie

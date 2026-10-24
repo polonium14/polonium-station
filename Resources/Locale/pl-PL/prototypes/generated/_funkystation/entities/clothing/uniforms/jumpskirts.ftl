@@ -1,4 +1,4 @@
-ent-ClothingUniformJumpsuitNTRTurtleskirt = spódnica z golfem przedstawiciela Nanotrasen
+ent-ClothingUniformJumpsuitNTRTurtleskirt = spódniczka przedstawiciela Nanotrasen
     .desc = Drogie mieszanki wełny sprawiają, że ten sweter jest wyjątkowo wygodny, bez uczucia swędzenia!
 ent-ClothingUniformSecurityDressSkirtBase = mundur wyjściowy ochrony ze spódnicą
     .desc = Mundur wykonany z mocnego materiału, do codziennego noszenia.
@@ -6,7 +6,7 @@ ent-ClothingUniformSecurityDressSkirtSenior = mundur wyjściowy starszego oficer
     .desc = Mundur wykonany z mocnego materiału, do codziennego noszenia. Przyznawany starszym oficerom, by czuli się lepiej ze spędzonym w służbie czasem.
 ent-ClothingUniformSecurityMessSkirtBase = galowy mundur ochrony ze spódnicą
     .desc = Mundur wykonany z mocnego materiału, na specjalne okazje.
-ent-ClothingUniformHosDressSkirtBase = mundur wyjściowy komendanta ze spódnicą
+ent-ClothingUniformHosDressSkirtBase = mundur wyjściowy Komendanta ze spódnicą
     .desc = Mundur wykonany z mocnego materiału, do codziennego noszenia.
-ent-ClothingUniformMessHosDressBase = formalna sukienka komendanta
-    .desc = Formalny mundur komendanta, na specjalne okazje.
+ent-ClothingUniformMessHosDressBase = formalna sukienka Komendanta
+    .desc = Formalny mundur Komendanta, na specjalne okazje.

@@ -1,4 +1,4 @@
-ent-FireAxeCabinet = gablota na siekierę strażacką
+ent-FireAxeCabinet = gablota na siekiere strażacką
     .desc = Jest mała etykieta która ma napisane "Do użytku w sytuacjach awaryjnych" oraz detale o bezpiecznym użytkowaniu siekiery, która nie bardzo cie przekonuje.
 ent-FireAxeCabinetOpen = { ent-FireAxeCabinet }
     .suffix = Otwarte

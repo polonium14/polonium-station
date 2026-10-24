@@ -1,12 +1,12 @@
 ent-ActionCultistStudyVeil = Studiuj zasłonę
     .desc = Zbadaj stan zasłony i siłę swojego kultu.
 ent-ActionCultistCommune = Obcowanie
-    .desc = Wyślij wiadomość do współwyznawców. Uważaj — niewtajemniczeni mogą zobaczyć, jak szepczesz inkantację.
+    .desc = Send a message to your fellow cultists. Beware — the uninitiated can see you whispering the incantation.
 ent-ActionCultistSpellsSelect = Przygotuj zaklęcie
     .desc = Przygotuj krwawe zaklęcie, wycinając je na swoim ciele. Można przygotować do 1 zaklęcia bez stania na runie wzmocnienia.
 ent-ActionCultistSummonDagger = Przyzwij sztylet
-    .desc = Wykorzystaj błogosławieństwo Nar'Sie, by uformować z własnego ciała rytualny sztylet. Dopóki twoje serce bije, Ona pozwoli ci stworzyć kolejne.
+    .desc = Summon your ritual dagger.
 ent-ActionCultistSanguineDream = Krwisty sen
-    .desc = Złowieszcze zaklęcie pogrążające cel w pełnym koszmarów śnie. Razi cyborgi impulsem EMP. Osoby z implantem mindshield zostaną tylko na krótko ogłuszone, zamiast zasnąć.
+    .desc = A sinister spell that plunges a target into a nightmare-filled sleep. EMPs Cyborgs. Does not work on those with a mindshield.
 ent-ActionCultistTwistedConstruction = Wypaczona konstrukcja
-    .desc = Złowieszcze zaklęcie przekształcające stal lub szkło w stal runiczną lub szkło runiczne.
+    .desc = A sinister spell used to convert plasteel into runed metal.

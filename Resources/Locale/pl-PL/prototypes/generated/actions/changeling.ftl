@@ -5,7 +5,7 @@ ent-ActionChangelingBiodegrade = Biodegradacja
 ent-ActionChangelingDevour = [color=red]Pożarcie[/color]
     .desc = Pochłoń esencję ofiar i wchłoń ich tożsamość oraz umysł do własnego.
 ent-ActionChangelingTransform = Transformacja
-    .desc = Przemień się i przyjmij tożsamość osób, które pochłonąłeś.
+    .desc = Przemień się w innego humanoida. Nie obejmuje ubrań. Kosztuje 5 chemikaliów.
 ent-ActionChangelingStore = Sklep DNA
     .desc = Otwiera sklep ze zdolnościami.
 ent-ActionChangelingVoiceMimic = Naśladowanie głosu

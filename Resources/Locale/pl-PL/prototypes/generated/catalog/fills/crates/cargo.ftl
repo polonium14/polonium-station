@@ -1,5 +1,5 @@
-ent-CrateCargoLuxuryHardsuit = skrzynia z luksusowym skafandrem górniczym
-    .desc = W końcu skafander, który kwatermistrzowie mogą nazwać własnym. Centrala was usłyszała, teraz przestańcie pytać.
+ent-CrateCargoLuxuryHardsuit = skrzynia z luksusowym hardsuitem górniczym
+    .desc = W końcu hardsuit, który kwatermistrzowie mogą nazwać własnym. CD was usłyszało, teraz przestańcie pytać.
 ent-CrateCargoParcelWrap = skrzynia z folią do paczek
     .desc = Wszystko, czego potrzeba do pakowania paczek, w jednej skrzyni z trzema rolkami folii.
 ent-CrateCargoGambling = wielka loteria $$$

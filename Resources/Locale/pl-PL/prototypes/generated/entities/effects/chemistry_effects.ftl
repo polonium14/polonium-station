@@ -21,6 +21,6 @@ ent-BaseFoamedMetal = pianka metalowa
 ent-FoamedIronMetal = spieniony metal żelazny
     .desc = Do uszczelniania wyrw w kadłubie.
 ent-FoamedAluminiumMetal = spienione aluminium
-    .desc = Pozostałości rzadkiej piany po granacie z pianą aluminiową. Łatwo ją zniszczyć.
+    .desc = For sealing hull breaches.
 ent-ReactionFlash = { "" }
     .desc = { "" }

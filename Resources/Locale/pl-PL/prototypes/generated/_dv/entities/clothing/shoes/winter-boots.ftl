@@ -1,2 +1,2 @@
-ent-ClothingShoesBootsWinterParamedic = buty zimowe ratownika
+ent-ClothingShoesBootsWinterParamedic = zimowe buty ratownika
     .desc = { ent-ClothingShoesBaseWinterBoots.desc }

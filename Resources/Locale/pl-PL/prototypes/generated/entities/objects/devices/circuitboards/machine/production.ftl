@@ -1,6 +1,6 @@
-ent-AutolatheMachineCircuitboard = autolat (płytka maszynowa)
+ent-AutolatheMachineCircuitboard = Autolat (płytka maszynowa)
     .desc = Płytka maszynowa do Autolatu.
-ent-AutolatheHyperConvectionMachineCircuitboard = autolat z hiperkonwekcją (płytka maszynowa)
+ent-AutolatheHyperConvectionMachineCircuitboard = Autolat z hiperkonwekcją (płytka maszynowa)
     .desc = Płytka maszynowa do Autolatu z hiperkonwekcją.
 ent-ProtolatheMachineCircuitboard = protolat (płytka maszynowa)
     .desc = Płytka maszynowa do protolatu.
@@ -124,7 +124,7 @@ ent-SheetifierMachineCircuitboard = arkusz-master 2000 (płytka maszynowa)
     .desc = { ent-BaseMachineCircuitboard.desc }
 ent-MicrowaveMachineCircuitboard = mikrofalówka (płytka maszynowa)
     .desc = { ent-BaseMachineCircuitboard.desc }
-ent-SyndicateMicrowaveMachineCircuitboard = mikrofalówka Donk Co. (płytka maszynowa)
+ent-SyndicateMicrowaveMachineCircuitboard = mikrofalówka Donc-Co (płytka maszynowa)
     .desc = { ent-BaseMachineCircuitboard.desc }
 ent-FatExtractorMachineCircuitboard = ekstraktor lipidów (płytka maszynowa)
     .desc = { ent-BaseMachineCircuitboard.desc }

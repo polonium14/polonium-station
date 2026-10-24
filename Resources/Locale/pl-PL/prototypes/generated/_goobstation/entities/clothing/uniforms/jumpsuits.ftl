@@ -1,5 +1,5 @@
-ent-ClothingUniformJumpsuitNanotrasenRepresentative = koszula oficerska przedstawiciela Nanotrasen
-    .desc = Czarna tunika w stylu wojskowym noszona przez urzędników Nanotrasen. Drogie materiały sprawiają, że na większości stacji jest jedyna w swoim rodzaju.
+ent-ClothingUniformJumpsuitNanotrasenRepresentative = Przedstawiciel Nanotrasen suit
+    .desc = A black suit worn by officials.
 ent-ClothingUniformJumpsuitTrainer = kombinezon SKN
     .desc = Kombinezon wydawany szkoleniowcom kadr Nanotrasen. Napełnia dumą.
 ent-ClothingUniformJumpsuitBlueshieldOfficer = kombinezon oficera "Niebieska Tarcza"

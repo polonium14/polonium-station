@@ -7,4 +7,4 @@ ent-CartridgeRiflePractice = nabój (.20 karabinowe treningowe)
 ent-CartridgeRifleIncendiary = nabój (.20 karabinowe zapalające)
     .desc = Nowoczesny nabój pośredni do karabinów bojowych. Amunicja zapalająca zawiera samopaliącą się mieszankę, która podpala cele.
 ent-CartridgeRifleUranium = nabój (.20 karabinowe uranowe)
-    .desc = Nowoczesny nabój pośredni do karabinów bojowych. Amunicja uranowa zastępuje ołowiany rdzeń pocisku materiałem rozszczepialnym, napromieniowując cele od wewnątrz.
+    .desc = Nowoczesny nabój pośredni do karabinów bojowych. Amunicja uranowa zastępuje ołówowy rdzeń pocisku materiałem rozszczepialnym, napromieniowując cele od wewnątrz.

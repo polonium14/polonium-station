@@ -1,7 +1,7 @@
 ent-MobLing = Urist McLing
     .suffix = Nie-Antag
     .desc = { ent-MobHuman.desc }
-ent-MobHeadSlug = głowoślimak
+ent-MobHeadSlug = nagłówek
     .desc = Mały stwór przypominający ślimaka, z wielką, szeroko otwartą paszczą. Jest pokryty gęstym, śliskim śluzem.
 ent-ChangelingFleshClothingAbilityStoreDummy = { "" }
     .desc = { "" }

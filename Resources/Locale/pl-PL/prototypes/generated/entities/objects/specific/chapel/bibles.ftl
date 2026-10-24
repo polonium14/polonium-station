@@ -1,4 +1,4 @@
-ent-Bible = kosmiczna biblia
+ent-Bible = kosmiczna bilbia
     .desc = Nowa Międzygwiezdna Wersja 2340.
 ent-BibleNecronomicon = nekronomikon
     .desc = Jest notatka: Klatuu, Verata, Nikto -- Nie zapomnij o tym!
@@ -12,7 +12,7 @@ ent-BibleNarsie = tom nar'sie
     .desc = Co może pójść nie tak z książką pokrytą krwią?
 ent-BibleNanoTrasen = kodeks nanotrasimus
     .desc = Znajoma książka zawierająca Święte Procedury Operacyjne.
-ent-BibleHonk = radość honkmatki
+ent-BibleHonk = mirał honkmatki
     .desc = O, wspaniała i chwalebna Matko, Pani Radości, Opiekunko Masek i Zabawy. Błogosławiona jest wśród nas błaznów.
 ent-BibleRatvar = tablica ratvara
     .desc = Święty relikt zegarowego kultu, pobłogosławiony przez Ratvara, Zegar Sprawiedliwości.

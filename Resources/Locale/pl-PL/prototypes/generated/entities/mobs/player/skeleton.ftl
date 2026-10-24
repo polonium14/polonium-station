@@ -1,9 +1,9 @@
 ent-MobSkeletonPirate = szkielet pirat
     .desc = { ent-MobSkeletonPerson.desc }
-    .gender = male
+    .gender = mężczyzna
 ent-MobSkeletonBiker = szkielet motocyklista
     .desc = { ent-MobSkeletonPerson.desc }
-    .gender = male
+    .gender = mężczyzna
 ent-MobSkeletonCloset = szkielet z szafy
     .desc = { ent-MobSkeletonPerson.desc }
-    .gender = male
+    .gender = mężczyzna

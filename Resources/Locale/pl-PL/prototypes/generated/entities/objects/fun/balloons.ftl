@@ -5,4 +5,4 @@ ent-BalloonSyn = balon Syndie
 ent-BalloonNT = balon Nanotrasen
     .desc = Zaprojektowane specjalnie w celu wyrządzenia maksymalnych szkód psychicznych agentom Syndykatu.
 ent-BalloonCorgi = balonik w kształcie corgi
-    .desc = Zupełnie jak posiadanie prawdziwego psa — tylko o wiele bardziej unoszące się w powietrzu.
+    .desc = Just like owning a real dog — but a lot floatier.

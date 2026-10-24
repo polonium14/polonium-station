@@ -1,5 +1,5 @@
 ent-ClothingBackpackChameleon = plecak
-    .desc = Nosisz to na plecach i wkładasz do niego przedmioty.
+    .desc = Nosisz to na plecach i wkładasz do tego przedmioty.
     .suffix = Kameleon
 ent-ClothingBackpackWaterTank = plecakowy zbiornik na wodę
     .desc = Mieści dużo cieczy. Zasila dysze w twoich rękach i ma z boku gniazdo na te dysze.

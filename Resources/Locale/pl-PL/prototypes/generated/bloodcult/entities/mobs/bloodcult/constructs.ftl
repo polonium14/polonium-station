@@ -1,5 +1,5 @@
 ent-CultJuggernautShell = powłoka juggernauta
-    .desc = Duża, bezwładna potworność wykonana z runicznej stali. Można ją dokończyć, przeciągając na nią martwe ciało lub używając na niej napełnionego kamienia dusz.
+    .desc = A large, inert monstrosity made from runed metal.
 ent-MobBloodCultJuggernaut = Juggernaut
     .desc = Silny, powolny i z mnóstwem zdrowia. Większość problemów rozwiązuje, lejąc je pięścią. Odporny na słabe ataki.
 ent-MobBloodCultShade = Cień

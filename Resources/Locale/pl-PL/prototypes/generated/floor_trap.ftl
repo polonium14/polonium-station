@@ -1,6 +1,6 @@
 ent-CollideFloorTrap = { "" }
     .desc = { "" }
-ent-CollideFloorTrapSpawn = spawner pułapki podłogowej
+ent-CollideFloorTrapSpawn = spawn pułapka podłogowa
     .desc = { ent-CollideFloorTrap.desc }
 ent-FloorTrapExplosion = pułapka podłogowa — wybuch
     .desc = { ent-CollideFloorTrap.desc }

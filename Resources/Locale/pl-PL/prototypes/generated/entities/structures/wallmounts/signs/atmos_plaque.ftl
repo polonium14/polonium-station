@@ -1,9 +1,9 @@
-ent-PlaqueAtmos = tabliczka atmosferyczna
+ent-PlaqueAtmos = atmos plaque
     .suffix = Przywoływacz
     .desc = { ent-MarkerBase.desc }
 ent-PlaqueAtmosFEA = Tabliczka pamiątkowa Wydziału Atmosferycznego FEA
     .desc = Ta tablica upamiętnia upadek oddziału Atmos FEA. Poświęcona jest wszystkim zwęglonym, oszołomionym i wyczerpanym mężczyznom, którzy zginęli w jego rękach.
-ent-PlaqueAtmosLINDA = tabliczka pamiątkowa Działu Atmosferycznego firmy LINDA
+ent-PlaqueAtmosLINDA = Tabliczka pamiątkowa Działu Atmospherics firmy LINDA
     .desc = Ta tablica upamiętnia upadek dywizji Atmos LINDA. Poświęcona jest wszystkim zwęglonym, oszołomionym i wyczerpanym mężczyznom, którzy zginęli w jej szeregach.
 ent-PlaqueAtmosZAS = Tabliczka pamiątkowa Działu Atmosferycznego ZAS
     .desc = Ta tablica upamiętnia upadek dywizji Atmos ZAS. Poświęcona jest wszystkim zwęglonym, oszołomionym i wyczerpanym mężczyznom, którzy zginęli w jej szeregach.

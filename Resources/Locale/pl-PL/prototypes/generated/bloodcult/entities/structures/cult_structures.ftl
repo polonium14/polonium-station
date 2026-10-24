@@ -1,7 +1,7 @@
 ent-CultBaseStructure = { ent-BaseBloodCultContraband }
     .suffix = Podstawa
     .desc = { ent-BaseBloodCultContraband.desc }
-ent-CultPylon = pylon
+ent-CultPylon = Pylon
     .desc = Lewitujący kryształ, który powoli leczy wiernych Nar'Sie.
     .suffix = Kult
 ent-CultForge = Kuźnia

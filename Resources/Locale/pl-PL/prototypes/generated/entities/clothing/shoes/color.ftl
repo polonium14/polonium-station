@@ -1,7 +1,7 @@
 ent-ClothingShoesColorBlack = czarne buty
     .desc = Stylowe czarne buty.
 ent-ClothingShoesColorWhite = białe buty
-    .desc = Nie zdejmuj ich na firmowej imprezie wigilijnej.
+    .desc = Nie zdejmuj ich na firmowym wigilijnym imprezie.
 ent-ClothingShoesColorBlue = niebieskie buty
     .desc = Stylowe niebieskie buty.
 ent-ClothingShoesColorBrown = brązowe buty
