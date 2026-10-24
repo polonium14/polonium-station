@@ -1,7 +1,7 @@
 ent-BaseWeaponRevolver = BaseWeaponRevolver
     .desc = Celuj i strzelaj.
 ent-WeaponRevolverDeckard = Dekard
-    .desc = Pięknie wykonany, niestandardowy rewolwer. Używany, gdy nie ma czasu na test Voight-Kampff. Ładuje 5 nabojów .50 kalibru.
+    .desc = Pięknie wykonany, niestandardowy rewolwer. Używany, gdy nie ma czasu na test Voight-Kampff. Ładuje 5 nabojów .45 magnum.
 ent-WeaponRevolverInspector = Inspektor
     .desc = Rewolwer jednoprzyciskowy produkowany przez różne firmy. Jest łatwo dostępny na rynku cywilnym, co czyni go popularnym wyborem wśród prywatnych detektywów. Czujesz się szczęśliwy, trzymając go. Ładuje 6 nabojów .45 magnum.
 ent-WeaponRevolverMateba = Mateba

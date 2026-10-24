@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Centronias
-  changes:
-  - message: Certain small cargo products are now delivered in parcel wrap rather
-      than in crates.
-    type: Tweak
-  id: 9577
-  time: '2026-03-15T13:59:56.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40834
 - author: Velken
   changes:
   - message: Crew manifest names can now appear in ion storm laws.
@@ -4346,3 +4338,24 @@
   id: 10071
   time: '2026-10-23T13:50:29.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1106
+- author: Nikita
+  changes:
+  - message: Naprawiono zduplikowane akcje Kolosalnego Replikatora na pasku akcji
+    type: Fix
+  - message: "Naprawiono kolejno\u015B\u0107 r\u0105k Kolosalnego Replikatora"
+    type: Fix
+  - message: "Poprawiono animacj\u0119 chodzenia i pozosta\u0142e sprite'y Kolosalnego\
+      \ Replikatora"
+    type: Fix
+  - message: "Wsp\xF3lny zapas amunicji miniguna Kolosalnego Replikatora zmniejszono\
+      \ ze 120 do 100 strza\u0142\xF3w"
+    type: Tweak
+  - message: "Tryb og\u0142uszaj\u0105cy miniguna Kolosalnego Replikatora strzela\
+      \ wolniej (z 9,6 do 7,14 strza\u0142u na sekund\u0119)"
+    type: Tweak
+  - message: "Strza\u0142 w trybie \u015Bmiertelnym miniguna Kolosalnego Replikatora\
+      \ zu\u017Cywa teraz 2 \u0142adunki zamiast 1"
+    type: Tweak
+  id: 10072
+  time: '2026-10-23T15:40:42.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1147

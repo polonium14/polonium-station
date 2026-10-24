@@ -1,10 +1,10 @@
 ent-BaseMagazineBoxPistol = skrzynka amunicji (.35 auto)
     .desc = { ent-BaseItem.desc }
 ent-MagazineBoxPistol = skrzynka amunicji (.35 auto)
-    .desc = Kartonowe pudełko nabojów kalibru .35 auto. Przeznaczone do trzymania podstawowej ammunicji kinetycznej.
+    .desc = Kartonowe pudełko nabojów kalibru .35 auto. Przeznaczone do trzymania podstawowej amunicji kinetycznej.
 ent-MagazineBoxPistolPractice = skrzynka amunicji (.35 auto treningowe)
-    .desc = Kartonowe pudełko nabojów kalibru .35 auto. Przeznaczone do trzymania nieszkodliwej ammunicji treningowej.
+    .desc = Kartonowe pudełko nabojów kalibru .35 auto. Przeznaczone do trzymania nieszkodliwej amunicji treningowej.
 ent-MagazineBoxPistolIncendiary = skrzynka amunicji (.35 auto zapalające)
-    .desc = Kartonowe pudełko nabojów kalibru .35 auto. Przeznaczone do trzymania samo-zapłonowej ammunicji podpalającej.
+    .desc = Kartonowe pudełko nabojów kalibru .35 auto. Przeznaczone do trzymania samo-zapłonowej amunicji podpalającej.
 ent-MagazineBoxPistolUranium = skrzynka amunicji (.35 auto uranowe)
-    .desc = Kartonowe pudełko nabojów kalibru .35 auto. Przeznaczone do trzymania egzotycznej ammunicji z uranowym rdzeniem.
+    .desc = Kartonowe pudełko nabojów kalibru .35 auto. Przeznaczone do trzymania egzotycznej amunicji z uranowym rdzeniem.

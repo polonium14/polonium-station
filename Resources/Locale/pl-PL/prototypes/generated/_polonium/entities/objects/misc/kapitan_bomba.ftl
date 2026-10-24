@@ -1,8 +1,8 @@
-ent-ClothingHeadHelmetKapitanBomba = Kosmo-hełm
+ent-ClothingHeadHelmetKapitanBomba = kosmo-hełm
     .desc = Kosmiczny Hełm Kapitana Kosmicznego Statku Orzeł 1.
-ent-ClothingOuterSuitKapitanBomba = Kosmo-kombinezon
+ent-ClothingOuterSuitKapitanBomba = kosmo-kombinezon
     .desc = Kosmiczny kombinezon Kapitana Kosmicznego Statku Orzeł 1.
-ent-ClothingShoesKapitanBomba = Kosmo-Buty
+ent-ClothingShoesKapitanBomba = kosmo-buty
     .desc = Kosmiczne Buty Kapitana Bomby, sam je polerował.
 ent-MagazineLightRifleBoxBlaster = Amunicja Blastera
     .desc = Cudem nie przejebane na wódę, ale też nie dziwota bo kto widział 6mm sprzedać za flachę.

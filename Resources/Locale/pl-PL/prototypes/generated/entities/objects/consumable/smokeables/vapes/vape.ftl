@@ -1,2 +1,2 @@
 ent-Vape = e-papieros
-    .desc = Like a cigar, but for tough teens. (WARNING: Pour only water into the vape)
+    .desc = Jak cygaro, ale dla twardych nastolatków. (OSTRZEŻENIE: Wlewaj do vape'a wyłącznie wodę)

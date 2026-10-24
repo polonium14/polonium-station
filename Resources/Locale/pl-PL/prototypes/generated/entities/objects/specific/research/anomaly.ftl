@@ -1,6 +1,6 @@
 ent-AnomalyScanner = skaner anomalii
     .desc = Ręczny skaner stworzony do zbierania informacji o różnych anomaliach.
-ent-AnomalyScannerAdmin = narzędzie do wykrywania anomalii admin
+ent-AnomalyScannerAdmin = skaner anomalii administratora
     .desc = Ręczny skaner przeznaczony do gromadzenia informacji o różnych nietypowych obiektach. Ten egzemplarz wydaje się mieć kilka dodatkowych funkcji.
     .suffix = Admin
 ent-AnomalyLocatorUnpowered = lokalizator anomalii
