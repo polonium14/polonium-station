@@ -36,6 +36,9 @@ namespace Content.IntegrationTests.Tests._Polonium.Medical;
 [TestOf(typeof(PatientIntakeSystem))]
 public sealed class PatientIntakeMachineTest : GameTest
 {
+    internal static readonly ProtoId<PatientIntakeCasePrototype> HealthyCase = "PatientIntakeTestHealthy";
+    private static readonly ProtoId<Content.Shared.Humanoid.Prototypes.RandomHumanoidSettingsPrototype> PatientSettings = "PatientIntakePatient";
+
     [TestPrototypes]
     private const string Prototypes = @"
 - type: patientIntakeCase
@@ -470,7 +473,7 @@ public sealed class PatientIntakeMachineTest : GameTest
 
             var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
             entMan.System<PatientIntakeSystem>().StartCase((machine, comp), entMan.GetComponent<EntityStorageComponent>(machine),
-                server.ProtoMan.Index<PatientIntakeCasePrototype>("PatientIntakeTestHealthy"));
+                server.ProtoMan.Index(HealthyCase));
         });
         await pair.RunTicksSync(5);
         await server.WaitAssertion(() =>
@@ -545,12 +548,12 @@ public sealed class PatientIntakeMachineTest : GameTest
         var server = pair.Server;
         var entMan = server.EntMan;
         var map = await pair.CreateTestMap();
-        var caseProto = server.ProtoMan.Index<PatientIntakeCasePrototype>("PatientIntakeTestHealthy");
+        var caseProto = server.ProtoMan.Index(HealthyCase);
 
         await server.WaitAssertion(() =>
         {
             var intake = entMan.System<PatientIntakeSystem>();
-            var blacklist = server.ProtoMan.Index<Content.Shared.Humanoid.Prototypes.RandomHumanoidSettingsPrototype>("PatientIntakePatient").SpeciesBlacklist;
+            var blacklist = server.ProtoMan.Index(PatientSettings).SpeciesBlacklist;
             Assert.That(blacklist, Is.Not.Empty);
 
             for (var i = 0; i < 60; i++)
