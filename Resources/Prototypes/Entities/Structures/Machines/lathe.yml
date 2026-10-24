@@ -475,12 +475,14 @@
     - BorgModulesStatic
     - BorgLimbsStatic
     - RIGStatic # Polonium: R.I.G. modules available from the start
+    - PowerCellsStatic
     dynamicPacks:
     - Robotics
     - BorgModules
     - MechParts
     - MechEquipment
     - RIG # Polonium: R.I.G. parts and modules unlocked by research
+    - PowerCells
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient
