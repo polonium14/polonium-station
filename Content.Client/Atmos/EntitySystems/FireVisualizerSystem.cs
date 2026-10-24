@@ -1,3 +1,16 @@
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 TekuNut <13456422+TekuNut@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Atmos.Components;
 using Content.Client.DisplacementMap;
 using Content.Shared.Atmos;
@@ -20,7 +33,9 @@ public sealed partial class FireVisualizerSystem : VisualizerSystem<FireVisualsC
     {
         base.Initialize();
 
-        SubscribeLocalEvent<FireVisualsComponent, ComponentInit>(OnComponentInit);
+        // Polonium: Startup, not Init - an entity that arrives already burning spawns its fire light
+        // as a child here, and spawning children before the parent is initialized trips an engine assert.
+        SubscribeLocalEvent<FireVisualsComponent, ComponentStartup>(OnComponentInit);
         SubscribeLocalEvent<FireVisualsComponent, ComponentShutdown>(OnShutdown);
     }
 
@@ -41,7 +56,7 @@ public sealed partial class FireVisualizerSystem : VisualizerSystem<FireVisualsC
         }
     }
 
-    private void OnComponentInit(EntityUid uid, FireVisualsComponent component, ComponentInit args)
+    private void OnComponentInit(EntityUid uid, FireVisualsComponent component, ComponentStartup args)
     {
         if (!TryComp<SpriteComponent>(uid, out var sprite) || !TryComp(uid, out AppearanceComponent? appearance))
             return;
