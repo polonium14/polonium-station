@@ -1,0 +1,88 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseModSuitPlating
+  components:
+  - type: Item
+    size: Normal
+  - type: GuideHelp
+    guides:
+    - RIG
+
+- type: entity
+  parent: BaseModSuitPlating
+  id: ModSuitPlatingEngineering
+  name: engineering R.I.G. plating
+  description: The outer layer of a R.I.G., shielded against radiation. Fit it onto a finished shell to make an engineering R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: engineering
+  - type: Tag
+    tags:
+    - ModSuitPlatingEngineering
+
+- type: entity
+  parent: BaseModSuitPlating
+  id: ModSuitPlatingAtmospheric
+  name: atmospheric R.I.G. plating
+  description: The outer layer of a R.I.G., resistant to fire and heat. Fit it onto a finished shell to make an atmospheric R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: atmospheric
+  - type: Tag
+    tags:
+    - ModSuitPlatingAtmospheric
+
+- type: entity
+  parent: BaseModSuitPlating
+  id: ModSuitPlatingMedical
+  name: medical R.I.G. plating
+  description: A light outer layer of a R.I.G. in clinical white. Fit it onto a finished shell to make a medical R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: medical
+  - type: Tag
+    tags:
+    - ModSuitPlatingMedical
+
+- type: entity
+  parent: [ BaseModSuitPlating, BaseSecurityContraband ]
+  id: ModSuitPlatingSecurity
+  name: security R.I.G. plating
+  description: An armored outer layer of a R.I.G. in security red. Fit it onto a finished shell to make a security R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: security
+  - type: Tag
+    tags:
+    - ModSuitPlatingSecurity
+
+- type: entity
+  parent: BaseModSuitPlating
+  id: ModSuitPlatingSalvage
+  name: salvage R.I.G. plating
+  description: A sturdy outer layer of a R.I.G. for work off-station. Fit it onto a finished shell to make a salvage R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: salvage
+  - type: Tag
+    tags:
+    - ModSuitPlatingSalvage
+
+- type: entity
+  parent: BaseModSuitPlating
+  id: ModSuitPlatingCivilian
+  name: civilian R.I.G. plating
+  description: A simple outer layer of a R.I.G. Fit it onto a finished shell to make a civilian R.I.G.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: civilian
+  - type: Tag
+    tags:
+    - ModSuitPlatingCivilian

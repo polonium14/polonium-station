@@ -46,3 +46,59 @@
 
 - type: Tag
   id: JumpsuitColorWhite
+
+# Anomaly cores that upgrade a R.I.G. core
+- type: Tag
+  id: AnomalyCoreBluespace
+
+- type: Tag
+  id: AnomalyCoreElectricity
+
+- type: Tag
+  id: AnomalyCoreGravity
+
+# R.I.G. parts, platings and modules
+- type: Tag
+  id: ModSuitBoots
+
+- type: Tag
+  id: ModSuitChestplate
+
+- type: Tag
+  id: ModSuitCore
+
+- type: Tag
+  id: ModSuitCoreCivilian
+
+- type: Tag
+  id: ModSuitGauntlets
+
+- type: Tag
+  id: ModSuitHelmet
+
+- type: Tag
+  id: ModSuitModule
+
+- type: Tag
+  id: ModSuitModuleInsulation
+
+- type: Tag
+  id: ModSuitModuleMobility
+
+- type: Tag
+  id: ModSuitPlatingAtmospheric
+
+- type: Tag
+  id: ModSuitPlatingCivilian
+
+- type: Tag
+  id: ModSuitPlatingEngineering
+
+- type: Tag
+  id: ModSuitPlatingMedical
+
+- type: Tag
+  id: ModSuitPlatingSalvage
+
+- type: Tag
+  id: ModSuitPlatingSecurity

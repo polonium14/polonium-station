@@ -1,0 +1,22 @@
+- type: entity
+  parent: BaseAction
+  id: ActionModSuitViewUI
+  name: Open R.I.G. interface
+  description: Seal the suit, check its charge and manage its modules.
+  components:
+  - type: Action
+    itemIconStyle: BigItem
+    useDelay: 1
+  - type: InstantAction
+    event: !type:ModSuitViewUiEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionModuleToggle
+  name: Toggle module
+  description: Turn this R.I.G. module on or off.
+  components:
+  - type: Action
+    itemIconStyle: BigItem
+  - type: InstantAction
+    event: !type:ModuleToggleActionEvent

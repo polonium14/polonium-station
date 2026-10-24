@@ -1,0 +1,53 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "https://github.com/tgstation/tgstation/blob/8ac8fd086df2a487c1f3ae501a57ad4e221a0323/icons/obj/clothing/modsuit/mod_clothing.dmi, module overlays made for Polonium Station by nikitosych",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "icon-sealed"
+        },
+        {
+            "name": "equipped-FEET",
+            "directions": 4
+        },
+        {
+            "name": "equipped-FEET-sealed",
+            "directions": 4
+        },
+        {
+            "name": "icon-magboots"
+        },
+        {
+            "name": "icon-magboots-on"
+        },
+        {
+            "name": "icon-sealed-magboots"
+        },
+        {
+            "name": "icon-sealed-magboots-on"
+        },
+        {
+            "name": "equipped-FEET-magboots",
+            "directions": 4
+        },
+        {
+            "name": "equipped-FEET-magboots-on",
+            "directions": 4
+        },
+        {
+            "name": "equipped-FEET-sealed-magboots",
+            "directions": 4
+        },
+        {
+            "name": "equipped-FEET-sealed-magboots-on",
+            "directions": 4
+        }
+    ]
+}

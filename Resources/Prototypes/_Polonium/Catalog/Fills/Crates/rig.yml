@@ -1,0 +1,71 @@
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateRIGPlatingEngineering
+  name: engineering R.I.G. plating crate
+  description: Contains the plating for one engineering R.I.G. The core and the other parts are printed on the exosuit fabricator.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: ModSuitPlatingEngineering
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateRIGPlatingAtmospheric
+  name: atmospheric R.I.G. plating crate
+  description: Contains the plating for one atmospheric R.I.G. The core and the other parts are printed on the exosuit fabricator.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: ModSuitPlatingAtmospheric
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateRIGPlatingMedical
+  name: medical R.I.G. plating crate
+  description: Contains the plating for one medical R.I.G. The core and the other parts are printed on the exosuit fabricator.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: ModSuitPlatingMedical
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateRIGPlatingSecurity
+  name: security R.I.G. plating crate
+  description: Contains the plating for one security R.I.G. The core and the other parts are printed on the exosuit fabricator.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: ModSuitPlatingSecurity
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateRIGPlatingSalvage
+  name: salvage R.I.G. plating crate
+  description: Contains the plating for one salvage R.I.G. The core and the other parts are printed on the exosuit fabricator.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: ModSuitPlatingSalvage
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateRIGPlatingCivilian
+  name: civilian R.I.G. plating crate
+  description: Contains the plating for one civilian R.I.G. The core and the other parts are printed on the exosuit fabricator.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: ModSuitPlatingCivilian

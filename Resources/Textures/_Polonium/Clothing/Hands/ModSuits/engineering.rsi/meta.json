@@ -1,0 +1,53 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "https://github.com/tgstation/tgstation/blob/8ac8fd086df2a487c1f3ae501a57ad4e221a0323/icons/obj/clothing/modsuit/mod_clothing.dmi, unpowered states reworked for Polonium Station by nikitosych, light masks made for Polonium Station by nikitosych, module overlays made for Polonium Station by nikitosych",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "icon-sealed"
+        },
+        {
+            "name": "equipped-HAND",
+            "directions": 4
+        },
+        {
+            "name": "equipped-HAND-sealed",
+            "directions": 4
+        },
+        {
+            "name": "icon-sealed-unpowered"
+        },
+        {
+            "name": "equipped-HAND-sealed-unpowered",
+            "directions": 4
+        },
+        {
+            "name": "icon-sealed-lights"
+        },
+        {
+            "name": "equipped-HAND-sealed-lights",
+            "directions": 4
+        },
+        {
+            "name": "icon-insulation"
+        },
+        {
+            "name": "icon-sealed-insulation"
+        },
+        {
+            "name": "equipped-HAND-insulation",
+            "directions": 4
+        },
+        {
+            "name": "equipped-HAND-sealed-insulation",
+            "directions": 4
+        }
+    ]
+}
