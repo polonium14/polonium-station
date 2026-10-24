@@ -1,23 +1,16 @@
 using Content.Shared._Polonium.Modules.ModSuit.UI;
 using Robust.Client.UserInterface;
 using JetBrains.Annotations;
-using Robust.Shared.Timing;
 
 namespace Content.Client._Polonium.Modules.ModSuit;
 
 [UsedImplicitly]
 public sealed partial class ModSuitBoundUserInterface : BoundUserInterface
 {
-    [Dependency] private IGameTiming _timing = default!;
-
     private ModSuitWindow? _window;
-
-    private TimeSpan _nextFlashlightUpdate;
-    private static readonly TimeSpan FlashlightUpdateRate = TimeSpan.FromSeconds(0.25f);
 
     public ModSuitBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
-        IoCManager.InjectDependencies(this);
     }
 
     protected override void Open()
@@ -30,15 +23,6 @@ public sealed partial class ModSuitBoundUserInterface : BoundUserInterface
         _window.OnSealButtonPressed += parts => SendPredictedMessage(new ModSuitSealButtonMessage(parts));
         _window.OnToggleButtonPressed += (module, toggle) => SendPredictedMessage(new ModSuitToggleButtonMessage(module, toggle));
         _window.OnEjectButtonPressed += module => SendPredictedMessage(new ModSuitEjectButtonMessage(module));
-
-        _window.OnFlashlightColorChanged += (module, color) =>
-        {
-            if (_nextFlashlightUpdate > _timing.RealTime)
-                return;
-
-            SendPredictedMessage(new ModSuitFlashlightColorChangedMessage(module, color));
-            _nextFlashlightUpdate = _timing.RealTime + FlashlightUpdateRate;
-        };
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

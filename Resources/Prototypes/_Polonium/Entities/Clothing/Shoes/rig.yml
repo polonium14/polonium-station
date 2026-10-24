@@ -61,6 +61,19 @@
       false:
         sprite: _Polonium/Clothing/Shoes/ModSuits/engineering.rsi
         state: equipped-FEET
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/engineering.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/engineering.rsi
+          state: equipped-FEET-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/engineering.rsi
+        state: equipped-FEET-sealed-unpowered
 
 - type: entity
   parent: ClothingShoesModSuitBase
@@ -94,6 +107,19 @@
       false:
         sprite: _Polonium/Clothing/Shoes/ModSuits/atmospheric.rsi
         state: equipped-FEET
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/atmospheric.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/atmospheric.rsi
+          state: equipped-FEET-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/atmospheric.rsi
+        state: equipped-FEET-sealed-unpowered
 
 - type: entity
   parent: ClothingShoesModSuitBase
@@ -193,6 +219,19 @@
       false:
         sprite: _Polonium/Clothing/Shoes/ModSuits/salvage.rsi
         state: equipped-FEET
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Shoes/ModSuits/salvage.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        shoes:
+        - sprite: _Polonium/Clothing/Shoes/ModSuits/salvage.rsi
+          state: equipped-FEET-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Shoes/ModSuits/salvage.rsi
+        state: equipped-FEET-sealed-unpowered
 
 - type: entity
   parent: ClothingShoesModSuitBase

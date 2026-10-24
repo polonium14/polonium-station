@@ -59,6 +59,19 @@
       false:
         sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
         state: equipped-HAND
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+          state: equipped-HAND-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+        state: equipped-HAND-sealed-unpowered
     sealedComponents:
     - type: DamageOnInteractProtection
       damageProtection:
@@ -97,6 +110,19 @@
       false:
         sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
         state: equipped-HAND
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+          state: equipped-HAND-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+        state: equipped-HAND-sealed-unpowered
     sealedComponents:
     - type: DamageOnInteractProtection
       damageProtection:
@@ -173,6 +199,19 @@
       false:
         sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
         state: equipped-HAND
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+          state: equipped-HAND-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+        state: equipped-HAND-sealed-unpowered
     sealedComponents:
     - type: DamageOnInteractProtection
       damageProtection:
@@ -211,6 +250,19 @@
       false:
         sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
         state: equipped-HAND
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+          state: equipped-HAND-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+        state: equipped-HAND-sealed-unpowered
     sealedComponents:
     - type: DamageOnInteractProtection
       damageProtection:

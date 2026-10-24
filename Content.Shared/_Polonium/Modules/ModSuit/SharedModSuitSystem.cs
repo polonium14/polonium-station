@@ -17,7 +17,9 @@ public abstract partial class SharedModSuitSystem : EntitySystem
 
         InitializeComplexity();
         InitializeDeployable();
+        InitializePower();
         InitializeSealable();
+        InitializeSealVerb();
         InitializeUI();
     }
 

@@ -46,5 +46,6 @@ public partial class ModSuitSystem
         AddComp(ent.Owner, controlComp, true);
 
         Dirty(ent);
+        SetUnpoweredVisuals(ent, !HasPower(ent.Owner));
     }
 }

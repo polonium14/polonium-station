@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Item;
 using Content.Shared._Polonium.Modules.Components;
@@ -20,6 +21,7 @@ namespace Content.Shared._Polonium.Modules;
 public abstract partial class SharedModuleSystem : EntitySystem
 {
     [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedItemSystem _item = default!;
     [Dependency] private INetManager _net = default!;
@@ -229,13 +231,10 @@ public abstract partial class SharedModuleSystem : EntitySystem
         if (!TryGetEntity(args.Module, out var module) || GetContainer(module.Value) != ent.Owner)
             return;
 
-        if (!CanModifyModules(ent.Owner, args.Actor))
+        if (!CanModifyModules(ent.Owner, args.Actor) || !_container.CanRemove(module.Value, ent.Comp.Modules))
             return;
 
-        if (!_container.Remove(module.Value, ent.Comp.Modules))
-            return;
-
-        _hands.TryPickupAnyHand(args.Actor, module.Value);
+        StartModuleDoAfter(args.Actor, ent.Owner, module.Value, ent.Comp.RemoveDelay, new ModuleRemoveDoAfterEvent());
     }
 
     [PublicAPI]

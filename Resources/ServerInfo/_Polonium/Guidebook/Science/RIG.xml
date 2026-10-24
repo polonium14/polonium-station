@@ -28,13 +28,13 @@
   ## Używanie
   R.I.G. nosi się na plecach. Po założeniu hełm, napierśnik, rękawice i buty same rozkładają się na ciele, a rzeczy, które wcześniej tam nosiłeś, trafiają do środka kombinezonu i wracają, gdy go zdejmiesz.
 
-  Akcja [color=#e8c878]Otwórz panel R.I.G.[/color] pokazuje stan baterii, uszczelnienie każdej części i zainstalowane moduły. Kombinezon chroni przed próżnią dopiero wtedy, gdy jest uszczelniony.
+  Akcja [color=#e8c878]Otwórz panel R.I.G.[/color] pokazuje stan baterii, uszczelnienie każdej części i zainstalowane moduły. Kombinezon chroni przed próżnią dopiero wtedy, gdy jest uszczelniony. Inna osoba też może uszczelnić albo rozszczelnić część kombinezonu, który masz na sobie, ale trwa to kilka sekund i od razu się o tym dowiesz.
 
-  R.I.G. zasila bateria. Gdy się rozładuje, kombinezon dalej chroni, ale moduły się wyłączają, a ty poruszasz się wolniej. Baterię można wymienić w każdej chwili, także w uszczelnionym kombinezonie, ale zajmuje to chwilę. Uważaj na innych, bo ktoś może wyjąć baterię z kombinezonu, który masz na sobie.
+  R.I.G. zasila bateria. Gdy się rozładuje, kombinezon dalej chroni, ale moduły się wyłączają, a ty poruszasz się wolniej. Rozładowany kombinezon łatwo poznać po zgaszonych światłach. Baterię można wymienić w każdej chwili, także w uszczelnionym kombinezonie, ale zajmuje to chwilę. Uważaj na innych, bo ktoś może wyjąć baterię z kombinezonu, który masz na sobie. Latarka w hełmie, na szczęście, ma własne zasilanie, więc świeci także bez baterii kombinezonu.
 
   ## Moduły
   <Box>
-    <GuideEntityEmbed Entity="ModSuitModuleFlashlight"/>
+    <GuideEntityEmbed Entity="ModSuitModuleInsulation"/>
     <GuideEntityEmbed Entity="ModSuitModuleJetpackNormal"/>
     <GuideEntityEmbed Entity="ModSuitModuleMagboots"/>
     <GuideEntityEmbed Entity="ModSuitModuleMobility"/>
@@ -45,7 +45,7 @@
     <GuideEntityEmbed Entity="ModSuitModuleVisionSec"/>
     <GuideEntityEmbed Entity="ModSuitModuleStorageExpanded"/>
   </Box>
-  Moduły drukuje się w fabrykatorze egzoszkieletów. Kilka z nich jest dostępnych od początku zmiany, a resztę odblokowują badania naukowe. Każdy R.I.G. ma od nowości moduł schowka.
+  Moduły drukuje się w fabrykatorze egzoszkieletów. Kilka z nich jest dostępnych od początku zmiany, a resztę odblokowują badania naukowe. Każdy R.I.G. ma od nowości moduł schowka. Wyjęty z kombinezonu moduł schowka zabiera ze sobą rzeczy i można go otworzyć jak plecak.
 
   Żeby zainstalować moduł, odkręć śrubokrętem panel kombinezonu i kliknij go modułem. Każdy moduł ma swoją złożoność, a kombinezon mieści tylko ograniczoną sumę, którą widać w panelu. Włączone moduły zużywają baterię, więc z kilkoma naraz zwykła bateria szybko się wyczerpie.
 </Document>

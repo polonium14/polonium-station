@@ -7,7 +7,6 @@ using Content.Shared.Inventory;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Power;
 using Content.Shared.Power.Components;
-using Content.Shared.Power.EntitySystems;
 using Content.Shared.PowerCell;
 using Robust.Shared.Containers;
 
@@ -15,11 +14,10 @@ namespace Content.Shared._Polonium.Modules.ModSuit;
 
 public sealed partial class ModSuitSpeedSystem : EntitySystem
 {
-    [Dependency] private SharedBatterySystem _battery = default!;
     [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedModSuitSystem _modSuit = default!;
     [Dependency] private SharedModuleSystem _module = default!;
     [Dependency] private MovementSpeedModifierSystem _movementSpeed = default!;
-    [Dependency] private PowerCellSystem _powerCell = default!;
     [Dependency] private ToggleableModuleSystem _toggleableModule = default!;
 
     public override void Initialize()
@@ -37,7 +35,7 @@ public sealed partial class ModSuitSpeedSystem : EntitySystem
 
     private void OnMapInit(Entity<ModSuitSpeedComponent> ent, ref MapInitEvent args)
     {
-        SetUnpowered(ent, !HasPower(ent.Owner));
+        SetUnpowered(ent, !_modSuit.HasPower(ent.Owner));
     }
 
     private void OnBatteryStateChanged(Entity<ModSuitSpeedComponent> ent, ref BatteryStateChangedEvent args)
@@ -47,7 +45,7 @@ public sealed partial class ModSuitSpeedSystem : EntitySystem
 
     private void OnPowerCellChanged(Entity<ModSuitSpeedComponent> ent, ref PowerCellChangedEvent args)
     {
-        SetUnpowered(ent, args.Ejected || !HasPower(ent.Owner));
+        SetUnpowered(ent, args.Ejected || !_modSuit.HasPower(ent.Owner));
     }
 
     private void OnRefreshSpeed(Entity<ModSuitSpeedComponent> ent, ref InventoryRelayedEvent<RefreshMovementSpeedModifiersEvent> args)
@@ -67,11 +65,6 @@ public sealed partial class ModSuitSpeedSystem : EntitySystem
             if (TryComp<SpeedModuleComponent>(module, out var speed) && _toggleableModule.IsToggled(module))
                 args.Args.ModifySpeed(speed.WalkModifier, speed.SprintModifier);
         }
-    }
-
-    private bool HasPower(EntityUid uid)
-    {
-        return _powerCell.TryGetBatteryFromSlot(uid, out var battery) && _battery.GetCharge(battery.Value.AsNullable()) > 0f;
     }
 
     private void SetUnpowered(Entity<ModSuitSpeedComponent> ent, bool unpowered)

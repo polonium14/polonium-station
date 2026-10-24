@@ -43,14 +43,12 @@ public sealed partial class ToggleableUiModuleSystem : EntitySystem
 
     private void OnEnabled(Entity<ToggleableUiModuleComponent> ent, ref ModuleEnabledEvent args)
     {
-        if (_module.TryGetContainer(ent.Owner, out var container) && CanUpdate(container.Value))
-            _modSuit.UpdateUI(container.Value);
+        _modSuit.UpdateUI(args.Container);
     }
 
     private void OnDisabled(Entity<ToggleableUiModuleComponent> ent, ref ModuleDisabledEvent args)
     {
-        if (_module.TryGetContainer(ent.Owner, out var container) && CanUpdate(container.Value))
-            _modSuit.UpdateUI(container.Value);
+        _modSuit.UpdateUI(args.Container);
     }
 
     private void OnGetModSuitUi(Entity<ToggleableUiModuleComponent> ent, ref ModSuitGetModuleUiEvent args)

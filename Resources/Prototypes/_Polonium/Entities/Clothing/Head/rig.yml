@@ -6,6 +6,7 @@
   description: The helmet of a deployed R.I.G.
   components:
   - type: ModSuitSealable
+    sealOtherDelay: 3
   - type: HideLayerClothing
     layers:
       Hair: HEAD
@@ -13,6 +14,39 @@
       HeadSide: HEAD
       Snout: HEAD
       FacialHair: HEAD
+  - type: ItemTogglePointLight
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 2
+    lightMask: ConeSingle
+    autoRot: true
+    netsync: false
+  - type: HandheldLight
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: radiating
+      interpolate: Linear
+      maxDuration: 2.0
+      startValue: 3.0
+      endValue: 2.0
+      isLooped: true
+      reverseWhenFinished: true
+    - !type:PulseBehaviour
+      id: blinking
+      interpolate: Nearest
+      maxDuration: 1.0
+      startValue: 0.1
+      endValue: 2.0
+      isLooped: true
+  - type: Battery
+    maxCharge: 600
+    startingCharge: 600
+  - type: BatterySelfRecharger
+    autoRechargeRate: 2
   - type: ModSuitSealablePowerDraw
     powerDraw:
       true: 0.02
@@ -66,6 +100,19 @@
       false:
         sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
         state: equipped-HELMET
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
+          state: equipped-HELMET-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
+        state: equipped-HELMET-sealed-unpowered
     sealedComponents:
     - type: BreathMask
     - type: IdentityBlocker
@@ -81,6 +128,16 @@
           Piercing: 0.95
           Heat: 0.9
           Radiation: 0.25
+  - type: PointLight
+    color: '#d4ecff'
+  - type: ToggleableVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - sprite: _Polonium/Clothing/Head/ModSuits/engineering.rsi
+        state: equipped-HELMET-visor
+        shader: unshaded
+        color: '#d4ecff'
 
 - type: entity
   parent: ClothingHeadModSuitBase
@@ -114,6 +171,19 @@
       false:
         sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
         state: equipped-HELMET
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
+          state: equipped-HELMET-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
+        state: equipped-HELMET-sealed-unpowered
     sealedComponents:
     - type: BreathMask
     - type: IdentityBlocker
@@ -133,6 +203,16 @@
           Piercing: 0.95
           Heat: 0.9
           Radiation: 0.25
+  - type: PointLight
+    color: '#d4ecff'
+  - type: ToggleableVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - sprite: _Polonium/Clothing/Head/ModSuits/atmospheric.rsi
+        state: equipped-HELMET-visor
+        shader: unshaded
+        color: '#d4ecff'
 
 - type: entity
   parent: ClothingHeadModSuitBase
@@ -181,6 +261,16 @@
           Piercing: 0.95
           Heat: 0.9
           Radiation: 0.25
+  - type: PointLight
+    color: '#d4ecff'
+  - type: ToggleableVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - sprite: _Polonium/Clothing/Head/ModSuits/medical.rsi
+        state: equipped-HELMET-visor
+        shader: unshaded
+        color: '#d4ecff'
 
 - type: entity
   parent: ClothingHeadModSuitBase
@@ -214,6 +304,19 @@
       false:
         sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
         state: equipped-HELMET
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
+          state: equipped-HELMET-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
+        state: equipped-HELMET-sealed-unpowered
     sealedComponents:
     - type: BreathMask
     - type: IdentityBlocker
@@ -228,6 +331,16 @@
           Slash: 0.9
           Piercing: 0.9
           Heat: 0.9
+  - type: PointLight
+    color: '#d4ecff'
+  - type: ToggleableVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - sprite: _Polonium/Clothing/Head/ModSuits/security.rsi
+        state: equipped-HELMET-visor
+        shader: unshaded
+        color: '#d4ecff'
 
 - type: entity
   parent: ClothingHeadModSuitBase
@@ -261,6 +374,19 @@
       false:
         sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
         state: equipped-HELMET
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
+          state: equipped-HELMET-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
+        state: equipped-HELMET-sealed-unpowered
     sealedComponents:
     - type: BreathMask
     - type: IdentityBlocker
@@ -276,6 +402,16 @@
           Piercing: 0.95
           Heat: 0.9
           Radiation: 0.25
+  - type: PointLight
+    color: '#d4ecff'
+  - type: ToggleableVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - sprite: _Polonium/Clothing/Head/ModSuits/salvage.rsi
+        state: equipped-HELMET-visor
+        shader: unshaded
+        color: '#d4ecff'
 
 - type: entity
   parent: ClothingHeadModSuitBase
@@ -309,6 +445,19 @@
       false:
         sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
         state: equipped-HELMET
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
+          state: equipped-HELMET-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
+        state: equipped-HELMET-sealed-unpowered
     sealedComponents:
     - type: BreathMask
     - type: IdentityBlocker
@@ -316,6 +465,16 @@
     - type: PressureProtection
       highPressureMultiplier: 0.6
       lowPressureMultiplier: 1000
+  - type: PointLight
+    color: '#d4ecff'
+  - type: ToggleableVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - sprite: _Polonium/Clothing/Head/ModSuits/civilian.rsi
+        state: equipped-HELMET-visor
+        shader: unshaded
+        color: '#d4ecff'
 
 - type: entity
   parent: ClothingHeadModSuitBase
@@ -349,6 +508,10 @@
       false:
         sprite: _Polonium/Clothing/Head/ModSuits/syndicate.rsi
         state: equipped-HELMET
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/syndicate.rsi
+        state: icon-sealed-unpowered
     sealedComponents:
     - type: BreathMask
     - type: IdentityBlocker
@@ -363,6 +526,16 @@
           Slash: 0.9
           Piercing: 0.9
           Heat: 0.9
+  - type: PointLight
+    color: '#8cff8c'
+  - type: ToggleableVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - sprite: _Polonium/Clothing/Head/ModSuits/syndicate.rsi
+        state: equipped-HELMET-visor
+        shader: unshaded
+        color: '#8cff8c'
 
 - type: entity
   parent: ClothingHeadModSuitBase
@@ -396,6 +569,10 @@
       false:
         sprite: _Polonium/Clothing/Head/ModSuits/elite.rsi
         state: equipped-HELMET
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Head/ModSuits/elite.rsi
+        state: icon-sealed-unpowered
     sealedComponents:
     - type: BreathMask
     - type: IdentityBlocker
@@ -414,3 +591,13 @@
           Slash: 0.9
           Piercing: 0.9
           Heat: 0.9
+  - type: PointLight
+    color: '#8cff8c'
+  - type: ToggleableVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - sprite: _Polonium/Clothing/Head/ModSuits/elite.rsi
+        state: equipped-HELMET-visor
+        shader: unshaded
+        color: '#8cff8c'

@@ -84,7 +84,7 @@ public sealed partial class ToggleableModuleSystem : EntitySystem
             return;
         }
 
-        RaiseToggleEvents(ent, toggle, null);
+        RaiseToggleEvents(ent, toggle, user);
     }
 
     [PublicAPI]

@@ -65,6 +65,19 @@
       false:
         sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
         state: equipped-OUTERCLOTHING
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+          state: equipped-OUTERCLOTHING-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+        state: equipped-OUTERCLOTHING-sealed-unpowered
     sealedComponents:
     - type: PressureProtection
       highPressureMultiplier: 0.04
@@ -115,6 +128,19 @@
       false:
         sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
         state: equipped-OUTERCLOTHING
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+          state: equipped-OUTERCLOTHING-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+        state: equipped-OUTERCLOTHING-sealed-unpowered
     sealedComponents:
     - type: PressureProtection
       highPressureMultiplier: 0.02

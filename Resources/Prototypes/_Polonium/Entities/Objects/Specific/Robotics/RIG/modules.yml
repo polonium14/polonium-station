@@ -40,7 +40,6 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container {}
-      modsuit-storage-module: !type:Container {}
   - type: ModSuitModuleComplexity
   - type: ModuleExclusivity
     maximum: 1
@@ -97,55 +96,6 @@
     maxItemSize: Huge
     grid:
     - 0,0,6,4
-
-# Flashlight
-
-- type: entity
-  parent: BaseModSuitModuleAction
-  id: ModSuitModuleFlashlight
-  name: R.I.G. flashlight module
-  description: A pair of lights on the sides of the helmet. The color of the light can be changed in the suit interface.
-  components:
-  - type: Sprite
-    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/flashlight.rsi
-    state: flashlight
-  - type: ModSuitModuleComplexity
-    complexity: 1
-  - type: RequireSealedModule
-    parts:
-    - Helmet
-  - type: PowerDrainModule
-    enabledDraw: 0.15
-  - type: FlashlightModule
-  - type: ModSuitDeployableContainerVisuals
-    partType: Helmet
-  - type: ModuleContainerVisuals
-    clothingLayers:
-      true:
-        head:
-        - state: equipped-HELMET-visor
-          shader: unshaded
-  - type: AddComponentContainerModule
-    components:
-    - type: PointLight
-      enabled: false
-      radius: 3
-      energy: 2
-      mask: /Textures/Effects/LightMasks/cone.png
-      autoRot: true
-  - type: ModuleExclusivity
-    maximum: 1
-    blacklist:
-      components:
-      - FlashlightModule
-
-- type: entity
-  parent: ModSuitModuleFlashlight
-  id: ModSuitModuleFlashlightSyndie
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: FlashlightModule
-    color: green
 
 # Movement
 
@@ -228,8 +178,8 @@
   - type: PowerDrainModule
     enabledDraw: 0.3
   - type: SpeedModule
-    walkModifier: 1.1
-    sprintModifier: 1.1
+    walkModifier: 1.15
+    sprintModifier: 1.15
   - type: ModuleExclusivity
     maximum: 1
     blacklist:

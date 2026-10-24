@@ -4,6 +4,7 @@ using Content.Shared.Item;
 using Content.Shared._Polonium.Modules.ModSuit;
 using Content.Shared._Polonium.Modules.ModSuit.Components;
 using Robust.Client.GameObjects;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Content.Client._Polonium.Modules.ModSuit;
@@ -36,7 +37,7 @@ public partial class ModSuitSystem
 
         ent.Comp.RevealedLayers.Clear();
 
-        if (!ent.Comp.IconLayers.TryGetValue(isSealed, out var layers))
+        if (!TryGetIconLayers(ent, isSealed, out var layers))
             return;
 
         var ev = new ModSuitSealedGetIconLayersEvent();
@@ -62,10 +63,7 @@ public partial class ModSuitSystem
         if (!Appearance.TryGetData<bool>(ent.Owner, ModSuitSealedVisuals.Sealed, out var isSealed))
             return;
 
-        if (!ent.Comp.ClothingLayers.TryGetValue(isSealed, out var clothingLayers))
-            return;
-
-        if (!clothingLayers.TryGetValue(args.Slot, out var layers))
+        if (!TryGetClothingLayers(ent, isSealed, args.Slot, out var layers))
             return;
 
         var ev = new ModSuitSealedGetClothingLayersEvent(args.Slot);
@@ -73,6 +71,26 @@ public partial class ModSuitSystem
 
         AddClothingLayers(layers, ref args);
         AddClothingLayers(ev.Layers, ref args);
+    }
+
+    private bool TryGetIconLayers(Entity<ModSuitSealableComponent> ent, bool isSealed, [NotNullWhen(true)] out List<PrototypeLayerData>? layers)
+    {
+        if (IsUnpowered(ent.Owner) && ent.Comp.UnpoweredIconLayers.TryGetValue(isSealed, out layers))
+            return true;
+
+        return ent.Comp.IconLayers.TryGetValue(isSealed, out layers);
+    }
+
+    private bool TryGetClothingLayers(Entity<ModSuitSealableComponent> ent, bool isSealed, string slot, [NotNullWhen(true)] out List<PrototypeLayerData>? layers)
+    {
+        layers = null;
+
+        if (IsUnpowered(ent.Owner) &&
+            ent.Comp.UnpoweredClothingLayers.TryGetValue(isSealed, out var unpowered) &&
+            unpowered.TryGetValue(slot, out layers))
+            return true;
+
+        return ent.Comp.ClothingLayers.TryGetValue(isSealed, out var clothing) && clothing.TryGetValue(slot, out layers);
     }
 
     private static void AddClothingLayers(List<PrototypeLayerData> layers, ref GetEquipmentVisualsEvent args)

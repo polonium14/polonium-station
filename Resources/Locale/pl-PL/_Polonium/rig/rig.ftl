@@ -18,6 +18,13 @@ modsuit-cell-eject-verb = Wyjmij baterię
 modsuit-cell-eject-other-verb = Wyjmij baterię z {THE($suit)}
 modsuit-cell-alert-owner = {CAPITALIZE(THE($user))} wyjmuje baterię z Twojego {$suit}!
 
+verb-categories-modsuit-seal = Uszczelnienie R.I.G.
+modsuit-seal-other-verb = Uszczelnij {THE($part)}
+modsuit-unseal-other-verb = Rozszczelnij {THE($part)}
+modsuit-seal-alert-owner = {CAPITALIZE(THE($user))} próbuje uszczelnić Twój kombinezon ({$part})!
+modsuit-unseal-alert-owner = {CAPITALIZE(THE($user))} próbuje rozszczelnić Twój kombinezon ({$part})!
+modsuit-seal-other-no-power = R.I.G. nie ma zasilania, więc nie da się uszczelnić: {$part}.
+
 lathe-category-rig = R.I.G.
 cargoproduct-category-name-rig = R.I.G.
 

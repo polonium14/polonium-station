@@ -97,11 +97,6 @@
 
 - type: latheRecipe
   parent: BaseModSuitModuleRecipeBasic
-  id: ModSuitModuleFlashlight
-  result: ModSuitModuleFlashlight
-
-- type: latheRecipe
-  parent: BaseModSuitModuleRecipeBasic
   id: ModSuitModuleJetpackNormal
   result: ModSuitModuleJetpackNormal
 
@@ -154,7 +149,6 @@
   id: RIGStatic
   recipes:
   - ModSuitModuleStorageNormal
-  - ModSuitModuleFlashlight
   - ModSuitModuleVisionWelding
 
 - type: latheRecipePack

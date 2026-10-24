@@ -5,5 +5,6 @@ namespace Content.Shared._Polonium.Modules.ModSuit;
 [Serializable, NetSerializable]
 public enum ModSuitSealedVisuals : byte
 {
-    Sealed
+    Sealed,
+    Unpowered
 }

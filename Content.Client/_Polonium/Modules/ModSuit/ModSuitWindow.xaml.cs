@@ -28,7 +28,6 @@ public sealed partial class ModSuitWindow : DefaultWindow
     // Module buttons
     public event Action<NetEntity, bool>? OnToggleButtonPressed;
     public event Action<NetEntity>? OnEjectButtonPressed;
-    public event Action<NetEntity, Color>? OnFlashlightColorChanged;
 
     #endregion
 
@@ -86,7 +85,7 @@ public sealed partial class ModSuitWindow : DefaultWindow
 
         foreach (var (part, data) in _sealableParts)
         {
-            var spriteView = new ModSuitSealableSprite(data.Sprite[data.IsSealed]);
+            var spriteView = new ModSuitSealableSprite(data.Sprite);
             SealPanel.AddChild(spriteView);
 
             var button = new ModSuitSealableButton(part, data.IsSealed);
@@ -207,14 +206,6 @@ public sealed partial class ModSuitWindow : DefaultWindow
             // more likely to be parented goes at the bottom
             switch (data)
             {
-                case ModSuitFlashlightModuleBuiEntry flashlightEntry:
-                    var flashlightPanel = new ModSuitFlashlightModulePanel(module, flashlightEntry);
-                    ModuleList.AddChild(flashlightPanel);
-                    flashlightPanel.ToggleButton.OnPressed += _ => OnToggleButtonPressed?.Invoke(module, flashlightPanel.ToggleButton.Pressed);
-                    flashlightPanel.EjectButton.OnPressed += _ => OnEjectButtonPressed?.Invoke(module);
-                    flashlightPanel.ColorSelector.OnColorChanged += (color) => OnFlashlightColorChanged?.Invoke(module, color);
-                    break;
-
                 case ModSuitBaseToggleableModuleBuiEntry toggleableEntry:
                     var toggleablePanel = new ModSuitBaseToggleableModulePanel(module, toggleableEntry);
                     ModuleList.AddChild(toggleablePanel);

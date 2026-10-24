@@ -18,6 +18,13 @@ modsuit-cell-eject-verb = Remove power cell
 modsuit-cell-eject-other-verb = Remove the power cell from {THE($suit)}
 modsuit-cell-alert-owner = {CAPITALIZE(THE($user))} is pulling the power cell out of your {$suit}!
 
+verb-categories-modsuit-seal = R.I.G. seals
+modsuit-seal-other-verb = Seal {THE($part)}
+modsuit-unseal-other-verb = Unseal {THE($part)}
+modsuit-seal-alert-owner = {CAPITALIZE(THE($user))} is trying to seal your suit ({$part})!
+modsuit-unseal-alert-owner = {CAPITALIZE(THE($user))} is trying to unseal your suit ({$part})!
+modsuit-seal-other-no-power = The R.I.G. has no power to seal {THE($part)}.
+
 lathe-category-rig = R.I.G.
 cargoproduct-category-name-rig = R.I.G.
 

@@ -18,4 +18,16 @@ public sealed partial class ModuleContainerComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityWhitelist? Blacklist;
+
+    /// <summary>
+    /// How long it takes a player to install a module.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public TimeSpan InsertDelay = TimeSpan.FromSeconds(3);
+
+    /// <summary>
+    /// How long it takes a player to take a module out.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public TimeSpan RemoveDelay = TimeSpan.FromSeconds(5);
 }

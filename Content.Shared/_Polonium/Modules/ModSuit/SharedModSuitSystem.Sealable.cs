@@ -12,6 +12,7 @@ using Content.Shared._Polonium.Modules.ModSuit.UI;
 using Content.Shared.PowerCell;
 using JetBrains.Annotations;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Polonium.Modules.ModSuit;
 
@@ -113,7 +114,7 @@ public partial class SharedModSuitSystem
     private void OnSealableGetUiEntries(Entity<ModSuitSealableComponent> ent, ref ModSuitGetUiEntriesEvent args)
     {
         var type = CompOrNull<ModSuitPartTypeComponent>(ent.Owner)?.Type ?? ModSuitPartType.Other;
-        var newData = new ModSuitSealablePartBuiEntry(ent.Comp.UiLayer, type, ent.Comp.Sealed);
+        var newData = new ModSuitSealablePartBuiEntry(GetUiLayer(ent), type, ent.Comp.Sealed);
         var toAdd = KeyValuePair.Create(GetNetEntity(ent.Owner), newData);
 
         ModSuitSealableBuiEntry? foundEntry = null;
@@ -158,6 +159,14 @@ public partial class SharedModSuitSystem
             Array.Copy(foundEntry.Parts, insertIndex, parts, insertIndex + 1, foundEntry.Parts.Length - insertIndex);
 
         foundEntry.Parts = parts;
+    }
+
+    private SpriteSpecifier GetUiLayer(Entity<ModSuitSealableComponent> ent)
+    {
+        if (IsUnpowered(ent.Owner) && ent.Comp.UnpoweredUiLayer.TryGetValue(ent.Comp.Sealed, out var unpowered))
+            return unpowered;
+
+        return ent.Comp.UiLayer.GetValueOrDefault(ent.Comp.Sealed, SpriteSpecifier.Invalid);
     }
 
     private void OnSealablePowerGetPowerDraw(Entity<ModSuitSealablePowerDrawComponent> ent, ref ModSuitDeployableRelayedEvent<ModuleContainerGetBasePowerDrawRate> args)

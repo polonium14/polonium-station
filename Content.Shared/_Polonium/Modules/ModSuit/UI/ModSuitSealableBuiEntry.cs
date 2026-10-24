@@ -17,11 +17,11 @@ public sealed class ModSuitSealableBuiEntry : BaseModSuitPowerBuiEntry
 [Serializable, NetSerializable]
 public sealed class ModSuitSealablePartBuiEntry
 {
-    public readonly Dictionary<bool, SpriteSpecifier> Sprite;
+    public readonly SpriteSpecifier Sprite;
     public readonly ModSuitPartType Type;
     public readonly bool IsSealed;
 
-    public ModSuitSealablePartBuiEntry(Dictionary<bool, SpriteSpecifier> sprite, ModSuitPartType type, bool isSealed)
+    public ModSuitSealablePartBuiEntry(SpriteSpecifier sprite, ModSuitPartType type, bool isSealed)
     {
         Sprite = sprite;
         Type = type;

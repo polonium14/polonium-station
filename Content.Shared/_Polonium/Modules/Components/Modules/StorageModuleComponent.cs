@@ -1,17 +1,9 @@
-using Content.Shared.Storage;
-using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._Polonium.Modules.Components.Modules;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class StorageModuleComponent : Component
-{
-    public const string ContainerId = "modsuit-storage-module";
-
-    [ViewVariables]
-    public Container Items;
-
-    [ViewVariables, AutoNetworkedField]
-    public Dictionary<EntityUid, ItemStorageLocation> Locations = [];
-}
+/// <summary>
+/// A storage module. Its items are moved into the storage of the suit it is installed in, and back when it is removed.
+/// </summary>
+[RegisterComponent, NetworkedComponent]
+public sealed partial class StorageModuleComponent : Component;

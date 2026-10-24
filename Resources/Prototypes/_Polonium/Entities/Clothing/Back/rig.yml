@@ -88,6 +88,22 @@
       false:
         sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
         state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+        state: icon-sealed-unpowered
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+        state: icon-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+        state: equipped-BACKPACK-sealed-unpowered
   - type: ModSuitPartDeployable
     deployableParts:
       outerClothing: ClothingOuterModSuitEngineering
@@ -138,6 +154,22 @@
       false:
         sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
         state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+        state: icon-sealed-unpowered
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+        state: icon-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+        state: equipped-BACKPACK-sealed-unpowered
   - type: ModSuitPartDeployable
     deployableParts:
       outerClothing: ClothingOuterModSuitAtmospheric
@@ -188,6 +220,19 @@
       false:
         sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
         state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+        state: equipped-BACKPACK-sealed-unpowered
   - type: ModSuitPartDeployable
     deployableParts:
       outerClothing: ClothingOuterModSuitMedical
@@ -238,6 +283,19 @@
       false:
         sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
         state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+        state: equipped-BACKPACK-sealed-unpowered
   - type: ModSuitPartDeployable
     deployableParts:
       outerClothing: ClothingOuterModSuitSecurity
@@ -288,6 +346,19 @@
       false:
         sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
         state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+        state: equipped-BACKPACK-sealed-unpowered
   - type: ModSuitPartDeployable
     deployableParts:
       outerClothing: ClothingOuterModSuitSalvage
@@ -338,6 +409,19 @@
       false:
         sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
         state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+        state: equipped-BACKPACK-sealed-unpowered
   - type: ModSuitPartDeployable
     deployableParts:
       outerClothing: ClothingOuterModSuitCivilian
@@ -390,6 +474,19 @@
       false:
         sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
         state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+        state: equipped-BACKPACK-sealed-unpowered
   - type: ModSuitPartDeployable
     deployableParts:
       outerClothing: ClothingOuterModSuitSyndicate
@@ -415,7 +512,6 @@
       modules:
       - ModSuitModuleStorageSyndie
       - ModSuitModuleJetpackNormal
-      - ModSuitModuleFlashlightSyndie
       - ModSuitModuleMagboots
 
 - type: entity
@@ -451,6 +547,19 @@
       false:
         sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
         state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+        state: equipped-BACKPACK-sealed-unpowered
   - type: ModSuitPartDeployable
     deployableParts:
       outerClothing: ClothingOuterModSuitElite
@@ -476,5 +585,4 @@
       modules:
       - ModSuitModuleStorageSyndie
       - ModSuitModuleJetpackNormal
-      - ModSuitModuleFlashlightSyndie
       - ModSuitModuleMagboots
