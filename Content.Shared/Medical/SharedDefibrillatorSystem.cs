@@ -204,7 +204,7 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
             if (announce)
                 _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("defibrillator-rotten"), InGameICChatType.Speak, true);
         }
-        else if (TryComp<UnrevivableComponent>(target, out var unrevivable))
+        else if (TryComp<UnrevivableComponent>(target, out var unrevivable) && _mobState.IsDead(target))
         {
             if (announce)
                 _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString(unrevivable.ReasonMessage), InGameICChatType.Speak, true);
