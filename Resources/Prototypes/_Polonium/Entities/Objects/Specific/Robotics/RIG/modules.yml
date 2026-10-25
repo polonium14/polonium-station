@@ -69,7 +69,7 @@
   parent: BaseModSuitModuleStorage
   id: ModSuitModuleStorageExpanded
   name: R.I.G. expanded storage module
-  description: Hidden compartments spread across the whole suit, with much more room than the standard storage.
+  description: Hidden compartments spread across the whole suit, with much more room than the standard storage. Replaces it, so the standard module has to be removed first.
   components:
   - type: Sprite
     sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/storage.rsi

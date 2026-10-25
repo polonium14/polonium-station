@@ -4,7 +4,7 @@
     sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
     state: engineering
   product: CrateRIGPlatingEngineering
-  cost: 6000
+  cost: 4000
   category: cargoproduct-category-name-rig
   group: market
 
@@ -14,7 +14,7 @@
     sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
     state: atmospheric
   product: CrateRIGPlatingAtmospheric
-  cost: 6000
+  cost: 4000
   category: cargoproduct-category-name-rig
   group: market
 
@@ -24,7 +24,7 @@
     sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
     state: medical
   product: CrateRIGPlatingMedical
-  cost: 6000
+  cost: 4000
   category: cargoproduct-category-name-rig
   group: market
 
@@ -34,7 +34,7 @@
     sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
     state: security
   product: CrateRIGPlatingSecurity
-  cost: 6000
+  cost: 4000
   category: cargoproduct-category-name-rig
   group: market
 
@@ -44,7 +44,7 @@
     sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
     state: salvage
   product: CrateRIGPlatingSalvage
-  cost: 6000
+  cost: 4000
   category: cargoproduct-category-name-rig
   group: market
 
