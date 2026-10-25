@@ -188,7 +188,7 @@
     node: atmosphericPlating
 
 - type: entity
-  parent: [ ClothingBackpackModSuitBase, BaseCommandContraband ]
+  parent: [ ClothingBackpackModSuitBase, BaseMedicalContraband ]
   id: ClothingBackpackModSuitMedical
   name: medical R.I.G.
   description: A light modular suit for medical staff working in hazardous environments.
