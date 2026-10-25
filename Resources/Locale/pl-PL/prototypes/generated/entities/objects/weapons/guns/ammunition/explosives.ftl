@@ -27,3 +27,7 @@ ent-CannonBallGrapeshot = kartacz
 ent-CannonBallGlassshot = strzał w szybę
     .suffix = Pirat
     .desc = { ent-BaseCannonBall.desc }
+ent-BulletGuidedXenoborgMissile = kierowany pocisk ksenoborga
+    .desc = { ent-BulletRocket.desc }
+ent-BulletXenoborgMechadermisRocket = mechadermiczna rakieta
+    .desc = { ent-BaseBulletTrigger.desc }
