@@ -61,8 +61,8 @@ ghost-role-information-slimes-name = Szlam
 ghost-role-information-slimes-description = Zwykły szlam bez szczególnych potrzeb czy zainteresowań. Jesteś przyjazny wobec innych.
 ghost-role-information-angry-slimes-description = Wszyscy wokół drażnią twoje instynkty, zniszcz ich!
 ghost-role-information-angry-slimes-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] razem ze wszystkimi innymi rozgniewanymi szlamami.
-ghost-role-information-smile-name = Uśmiech, szlam
-ghost-role-information-smile-description = Najsłodsze stworzenie na świecie. Uśmiechnięty szlam!
+ghost-role-information-smile-name = Szlam Uśmiech
+ghost-role-information-smile-description = Najsłodsze stworzenie na świecie. Uśmiechnij się, Uśmiechu!
 ghost-role-information-punpun-name = Pun Pun
 ghost-role-information-punpun-description = Szanowany członek małpiego społeczeństwa, który zajmuje się barem i pomaga barmanom, jak tylko potrafi.
 ghost-role-information-yipyap-name = Yip-Yap

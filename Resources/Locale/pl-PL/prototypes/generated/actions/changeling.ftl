@@ -36,6 +36,7 @@ ent-ActionChangelingStasis = [color=red]Wejdź w stazę[/color]
     .desc = Wejdź w regeneracyjną stazę, udając śmierć, aby zregenerować wszystkie obrażenia.
 ent-ActionChangelingStasisWeak = { ent-ActionChangelingStasis }
     .desc = { ent-ActionChangelingStasis.desc }
-ent-ActionChangelingStingMute = Żądło wyciszające
+ent-ActionChangelingStingMute =
+    Żądło wyciszające
     Po cichu użądl cel i wstrzyknij mu substancje, które uniemożliwiają mówienie.
     Wymaga 30 chemikaliów.

@@ -7,5 +7,5 @@ ent-ClothingBagPet = torba dla zwierzaka
     .desc = Mała torba zaprojektowana dla zwierzaków i małych zwierząt.
 ent-ClothingBackpackHarmpack = H.A.R.M.P.A.C.K.
     .desc = Teraz możesz przeładowywać, bić i jeść przekąskę — jednocześnie.
-ent-XenoborgMaterialBag = kwadrat magazynowy silikonu
+ent-XenoborgMaterialBag = syntetyczny magazyn materiałów
     .desc = Podróbka torby bluespace, potrafi wessać wybrane materiały; nie nadaje się dla humanoidów przez szkodliwe emisje.
