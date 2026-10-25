@@ -1,4 +1,4 @@
-ent-BulletSeismicCharge = seismic charge
+ent-BulletSeismicCharge = ładunek sejsmiczny
     .desc = { ent-BaseBulletTrigger.desc }
 ent-BulletPlasmaCutterShuttle = { ent-BulletPlasmaCutter }
     .desc = { ent-BulletPlasmaCutter.desc }

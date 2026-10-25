@@ -5,3 +5,6 @@ ent-PlasmaWindowDirectional = kierunkowe okno plazmowe
 ent-PlasmaWindowDiagonal = { ent-PlasmaWindow }
     .suffix = diagonalne
     .desc = { ent-PlasmaWindow.desc }
+ent-PlasmaWindowDirectionalCorner = { ent-PlasmaWindowDirectional }
+    .suffix = Róg
+    .desc = { ent-PlasmaWindowDirectional.desc }

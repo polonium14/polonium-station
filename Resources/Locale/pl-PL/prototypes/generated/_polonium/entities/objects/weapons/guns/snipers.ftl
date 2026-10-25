@@ -1,2 +1,2 @@
-ent-WeaponBORSniperGun = Alexis-BOR .30 rifle
-    .desc = Najnowszy model snajperki bazowana na BOR 7,62. modyfikowana, żeby mogła używać amunicji .30 rifle
+ent-WeaponBORSniperGun = Alexis-BOR .30
+    .desc = Najnowszy model karabinu snajperskiego opartego na BOR 7,62, zmodyfikowany do strzelania amunicją .30 karabinową.

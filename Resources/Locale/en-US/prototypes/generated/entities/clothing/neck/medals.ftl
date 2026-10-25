@@ -14,3 +14,5 @@ ent-ClothingNeckSecuritymedal = security medal
     .desc = Given for the best work in the security department.
 ent-ClothingNeckClownmedal = clown medal
     .desc = Given for the best joke in the universe. HONK!
+ent-ClothingNeckMedalBase = medal
+    .desc = A medal to show your mettle. May or may not be made of metal.

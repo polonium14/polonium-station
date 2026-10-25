@@ -1,0 +1,10 @@
+ent-BaseMobHonkCluwne = { ent-SimpleSpaceMobBase }
+    .desc = { ent-SimpleSpaceMobBase.desc }
+ent-MobCluwneGiggles = honkochich
+    .desc = Zielony od stóp do głowy, a chichocze tak, jakby to jego ktoś łaskotał. Nikt nie wie, kto.
+ent-MobHonkGiggles = { ent-MobCluwneGiggles }
+    .suffix = Honk
+    .desc = { ent-MobCluwneGiggles.desc }
+ent-MobBehonkerHonk = { ent-BaseMobBehonker }
+    .suffix = Honk
+    .desc = { ent-BaseMobBehonker.desc }

@@ -221,3 +221,5 @@ ent-ClothingUniformJumpsuitCasualGreen = nieformalny zielony kombinezon
     .desc = Luźna, noszona zielona koszula z szarymi spodniami, idealna dla kogoś szukającego relaksu.
 ent-ClothingUniformJumpsuitFamilyGuy = znajome ciuchy
     .desc = Przypomina ci czasy, kiedy zrobiłeś coś zabawnego.
+ent-ClothingUniformJumpsuitTramDriver = mundur motorniczego
+    .desc = Idealnie wyprasowany, dla dobrze przygotowanych profesjonalistów.

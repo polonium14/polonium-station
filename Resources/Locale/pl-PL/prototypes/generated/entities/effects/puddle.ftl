@@ -36,3 +36,6 @@ ent-Puddle = kałuża
     .desc = Kałuża cieczy.
 ent-Footprint = ślad stopy
     .desc = Ślad cieczy
+ent-PuddleVentCrud = { ent-PuddleTemporary }
+    .suffix = Osad wentylacyjny
+    .desc = { ent-PuddleTemporary.desc }

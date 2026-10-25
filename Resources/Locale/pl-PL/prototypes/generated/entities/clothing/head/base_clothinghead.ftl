@@ -12,3 +12,5 @@ ent-ClothingHeadSuitWithLightBase = bazowy hełm skafandra z lampką
     .desc = { "" }
 ent-ClothingHeadHatHoodWinterBase = bazowy kaptur kurtki zimowej
     .desc = Kaptur, żeby głowa była ciepła.
+ent-ClothingHeadHardsuitInsulatedBase = { ent-TemperatureProtection }
+    .desc = { ent-TemperatureProtection.desc }

@@ -157,3 +157,5 @@ ent-VendingMachineWallMedicalCivilian = NanoMed band-aid
     .desc = It's a wall-mounted medical equipment dispenser. Natural chemicals only!
 ent-VendingMachineWallMedical = NanoMed
     .desc = { ent-VendingMachineWallMedicalCivilian.desc }
+ent-BaseVendingMachine = vending machine
+    .desc = Just add capitalism!

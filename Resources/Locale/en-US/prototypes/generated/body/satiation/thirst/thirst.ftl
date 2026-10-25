@@ -1,0 +1,2 @@
+ent-BaseThirstSlowdown = { "" }
+    .desc = { "" }

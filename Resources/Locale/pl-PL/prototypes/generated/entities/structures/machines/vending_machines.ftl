@@ -157,3 +157,5 @@ ent-VendingMachineWallMedicalCivilian = NanoMed opatrunkowy
     .desc = Naścienna wersja cywilnego Automatu medycznego. Zawiera tylko naturalne chemikalia!
 ent-VendingMachineWallMedical = NanoNFZ
     .desc = { ent-VendingMachineWallMedicalCivilian.desc }
+ent-BaseVendingMachine = automat sprzedający
+    .desc = Wystarczy dodać kapitalizm!

@@ -180,3 +180,5 @@ ent-ClothingHeadPropellerHat = propeller hat
     .desc = You're the bestest boy.
 ent-ClothingHeadHatMitreClown = honkmother mitre
     .desc = It's hard for parishoners to see a banana peel on the floor when they're looking up at your glorious chapeau.
+ent-ClothingHeadHatTramDriver = tram driver hat
+    .desc = It smells like confidence.

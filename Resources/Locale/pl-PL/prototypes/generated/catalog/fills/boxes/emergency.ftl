@@ -44,3 +44,5 @@ ent-BoxSurvivalMilitaryDouble = wojskowe pudełko przetrwania O2
 ent-BoxSurvivalMilitaryDoubleNitrogen = wojskowe pudełko przetrwania N2
     .desc = Pudełko przetrwania klasy wojskowej zawierające awaryjny zbiornik azotu o podwójnej pojemności, awaryjny medipen i awaryjną racę.
     .suffix = Wojskowe N2
+ent-BaseBoxSurvival = { ent-BoxCardboardSmall }
+    .desc = { ent-BoxCardboardSmall.desc }
