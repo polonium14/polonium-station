@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: murolem
-  changes:
-  - message: Retextured technology disk to have the color of their discipline and
-      extra marks for each tier. Also increased sell price for higher-tier disks.
-    type: Tweak
-  id: 9582
-  time: '2026-03-17T23:05:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/37719
 - author: Buunie099
   changes:
   - message: Fixed guidebook showing the wrong value for the maximum temperature of
@@ -4373,3 +4365,12 @@
   id: 10076
   time: '2026-10-25T14:36:22.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1161
+- author: Nikita
+  changes:
+  - message: "Koszt R.I.G.-a zosta\u0142 zmniejszony do 4000 spesos"
+    type: Tweak
+  - message: "R.I.G.-i wymagaj\u0105 teraz mniej stali i srebra"
+    type: Tweak
+  id: 10077
+  time: '2026-10-25T14:51:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1160
