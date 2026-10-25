@@ -2,8 +2,6 @@
   id: RIG
   name: lathe-category-rig
 
-# Mira's costs plus 20%, because the R.I.G. is an expensive alternative to hardsuits.
-
 - type: latheRecipe
   abstract: true
   id: BaseModSuitPartRecipe
@@ -11,8 +9,8 @@
   - RIG
   completetime: 3
   materials:
-    Steel: 960
-    Silver: 120
+    Steel: 800
+    Silver: 100
 
 - type: latheRecipe
   abstract: true
