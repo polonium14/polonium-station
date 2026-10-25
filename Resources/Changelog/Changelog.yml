@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Eternally-Confused
-  changes:
-  - message: The chem guidebook now shows when chemicals adjust body temperature again
-    type: Fix
-  id: 9581
-  time: '2026-03-17T17:52:32.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42394
 - author: murolem
   changes:
   - message: Retextured technology disk to have the color of their discipline and
@@ -4372,3 +4365,11 @@
   id: 10075
   time: '2026-10-25T09:28:37.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1157
+- author: Nikita
+  changes:
+  - message: "Poprawiono problem, kt\xF3ry powodowa\u0142, \u017Ce faksy nie dostawali\
+      \ cel\xF3w zmiany"
+    type: Fix
+  id: 10076
+  time: '2026-10-25T14:36:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1161
