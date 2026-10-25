@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: Velken
-  changes:
-  - message: Crew manifest names can now appear in ion storm laws.
-    type: Add
-  id: 9578
-  time: '2026-03-15T16:08:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42629
-- author: Verin, Centronias
-  changes:
-  - message: Character saving is no longer broken by erroneous hair.
-    type: Fix
-  id: 9579
-  time: '2026-03-15T16:08:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43170
 - author: slarticodefast
   changes:
   - message: The reagent grinder interactions and user interface are now predicted
@@ -4359,3 +4345,31 @@
   id: 10072
   time: '2026-10-23T15:40:42.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1147
+- author: Saver310
+  changes:
+  - message: "Dodano grafik\u0119 menu \"Ocieplam Go\""
+    type: Add
+  id: 10073
+  time: '2026-10-25T08:54:45.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1155
+- author: nikitosych
+  changes:
+  - message: "Dodano R.I.G., modu\u0142owe kombinezony pr\xF3\u017Cniowe noszone na\
+      \ plecach. Robotyk sk\u0142ada je z cz\u0119\u015Bci z fabrykatora egzoszkielet\xF3\
+      w, a wariant zale\u017Cy od poszycia zam\xF3wionego w logistyce."
+    type: Add
+  - message: "Dodano modu\u0142y R.I.G., mi\u0119dzy innymi plecak jonowy, buty magnetyczne,\
+      \ izolacj\u0119, wizjery i ulepszon\u0105 mobilno\u015B\u0107."
+    type: Add
+  - message: "Rdze\u0144 R.I.G. mo\u017Cna ulepszy\u0107 rdzeniem anomalii albo plazm\u0105\
+      . Ulepszony rdze\u0144 daje kombinezonowi niewielki bonus i zmienia kolor jego\
+      \ \u015Bwiate\u0142."
+    type: Add
+  - message: "Zaawansowane buty magnetyczne G\u0142\xF3wnego In\u017Cyniera mo\u017C\
+      na zamontowa\u0107 w R.I.G. jako modu\u0142."
+    type: Add
+  - message: "Syndykat mo\u017Ce kupi\u0107 R.I.G. i modu\u0142y w uplinku."
+    type: Add
+  id: 10074
+  time: '2026-10-24T14:46:23.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1154
