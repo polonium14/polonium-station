@@ -89,7 +89,7 @@ public sealed class PatientIntakePlayerTest : GameTest
         var server = pair.Server;
         var entMan = server.EntMan;
         var map = await pair.CreateTestMap();
-        var caseProto = server.ProtoMan.Index(PatientIntakeMachineTest.HealthyCase);
+        var caseProto = server.ProtoMan.Index<PatientIntakeCasePrototype>(PatientIntakeMachineTest.HealthyCase);
 
         await server.WaitPost(() =>
         {
