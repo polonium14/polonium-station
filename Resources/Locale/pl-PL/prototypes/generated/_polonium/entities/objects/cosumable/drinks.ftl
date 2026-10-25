@@ -1,5 +1,5 @@
 ent-DrinkOranzadaFull = butelka oranżady
-    .desc = Ah, polski klasyk, teraz z ulepszoną formulą dla stacji koszmicznych.
+    .desc = Ah, polski klasyk, teraz z ulepszoną formułą dla stacji kosmicznych.
     .gender = female
 
 ent-DrinkMocnyFull = Mocny Full
