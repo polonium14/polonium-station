@@ -16,3 +16,7 @@ ent-StatueIronsandTall = żelazny piasek i wysoki pomnik
     .desc = { ent-BaseIronsandStatue.desc }
 ent-StatueIronsandTall2 = żelazno-piaskowy wysoki posąg
     .desc = { ent-BaseIronsandStatue.desc }
+ent-BaseStatue = { ent-BaseStructure }
+    .desc = { ent-BaseStructure.desc }
+ent-StatueOrnateClown = ozdobny posąg zbawiciela
+    .desc = Pozłacany posąg. Przedstawia powrót zbawiciela, który powstanie i poprowadzi klaunów ku wielkiemu honkowi.

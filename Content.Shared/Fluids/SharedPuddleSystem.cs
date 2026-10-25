@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Funkystation.Footprints;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
@@ -58,6 +59,7 @@ public abstract partial class SharedPuddleSystem : EntitySystem
     /// The lowest threshold to be considered for puddle sprite states as well as slipperiness of a puddle.
     /// </summary>
     public const float LowThreshold = 0.3f;
+    public static readonly FixedPoint2 StuckResidueVolume = FixedPoint2.New(5);
 
     public const float MediumThreshold = 0.6f;
 
@@ -125,6 +127,12 @@ public abstract partial class SharedPuddleSystem : EntitySystem
             return;
 
         if (args.Solution.Comp.Solution.Volume <= 0)
+        {
+            _deletionQueue.Add(entity);
+            return;
+        }
+
+        if (ShouldDiscardPuddle(entity, args.Solution.Comp.Solution))
         {
             _deletionQueue.Add(entity);
             return;

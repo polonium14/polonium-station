@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "hotdog-pinkscreen, mothdog by pinkscreen and edited Saver310",
+    "copyright": "Base hotdog sprite by pinkscreen, mothdog and hotmoth edited by Saver310",
     "size": {
         "x": 32,
         "y": 32
@@ -27,6 +27,17 @@
         },
         {
             "name": "mothdog-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "hotmoth"
+        },
+        {
+            "name": "hotmoth-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "hotmoth-inhand-right",
             "directions": 4
         }
     ]

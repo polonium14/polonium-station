@@ -153,7 +153,14 @@ namespace Content.Server.GameTicking
         private void LoadMaps()
         {
             if (_map.MapExists(DefaultMap))
+            //POLONIUM START
+            {
+                if (CurrentPreset == null)
+                    AddGamePresetRules();
+
                 return;
+            }
+            //POLONIUM END
 
             AddGamePresetRules();
 
@@ -186,7 +193,7 @@ namespace Content.Server.GameTicking
             {
                 var msg = Loc.GetString("game-ticker-start-round-invalid-map",
                     ("map", mainStationMap.MapName),
-                    ("mode", Loc.GetString(CurrentPreset.ModeTitle)));
+                    ("mode", Loc.GetString(HidePreset(CurrentPreset).ModeTitle)));
                 Log.Debug(msg);
                 SendServerMessage(msg);
             }
@@ -574,7 +581,7 @@ namespace Content.Server.GameTicking
             _adminLogger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Round ended, showing summary");
 
             //Tell every client the round has ended.
-            var gamemodeTitle = CurrentPreset != null ? Loc.GetString(CurrentPreset.ModeTitle) : string.Empty;
+            var gamemodeTitle = CurrentPreset != null ? Loc.GetString(HidePreset(CurrentPreset).ModeTitle) : string.Empty;
 
             // Let things add text here.
             var textEv = new RoundEndTextAppendEvent();
@@ -809,7 +816,7 @@ namespace Content.Server.GameTicking
             }
         }
 
-        public bool DelayStart(TimeSpan time)
+        public bool DelayStart(TimeSpan time, bool announce = true) // POLONIUM: announce
         {
             if (_runLevel != GameRunLevel.PreRoundLobby)
             {
@@ -820,7 +827,8 @@ namespace Content.Server.GameTicking
 
             RaiseNetworkEvent(new TickerLobbyCountdownEvent(_roundStartTime, Paused));
 
-            _chatManager.DispatchServerAnnouncement(Loc.GetString("game-ticker-delay-start", ("seconds", time.TotalSeconds)));
+            if (announce) // POLONIUM
+                _chatManager.DispatchServerAnnouncement(Loc.GetString("game-ticker-delay-start", ("seconds", time.TotalSeconds)));
 
             return true;
         }

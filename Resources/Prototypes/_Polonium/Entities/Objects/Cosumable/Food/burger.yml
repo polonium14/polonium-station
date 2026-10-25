@@ -63,3 +63,25 @@
       - state: mothdog-inhand-left
       right:
       - state: mothdog-inhand-right
+
+- type: entity
+  name: hotmot
+  parent: FoodHotDog
+  id: FoodHotMoth
+  description: Ten hotdog jest faktycznie zrobiony z ćmy... Morderca.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - meaty
+    - light
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    state: hotmoth
+  - type: Item
+    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    inhandVisuals:
+      left:
+      - state: hotmoth-inhand-left
+      right:
+      - state: hotmoth-inhand-right

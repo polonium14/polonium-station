@@ -79,6 +79,8 @@ namespace Content.Client.Lobby
             _gameTicker.InfoBlobUpdated += UpdateLobbyUi;
             _gameTicker.LobbyStatusUpdated += LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated += LobbyLateJoinStatusUpdated;
+            _gameTicker.LobbyReadyCountUpdated += UpdateReadyButtonText; // POLONIUM
+            _cfg.OnValueChanged(CCVars.LobbyReadyCountOnButton, OnReadyCountCVarChanged); // POLONIUM
         }
 
         protected override void Shutdown()
@@ -88,6 +90,8 @@ namespace Content.Client.Lobby
             _gameTicker.InfoBlobUpdated -= UpdateLobbyUi;
             _gameTicker.LobbyStatusUpdated -= LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated -= LobbyLateJoinStatusUpdated;
+            _gameTicker.LobbyReadyCountUpdated -= UpdateReadyButtonText; // POLONIUM
+            _cfg.UnsubValueChanged(CCVars.LobbyReadyCountOnButton, OnReadyCountCVarChanged); // POLONIUM
             _contentAudioSystem.LobbySoundtrackChanged -= UpdateLobbySoundtrackInfo;
 
             _voteManager.ClearPopupContainer();
@@ -202,7 +206,7 @@ namespace Content.Client.Lobby
             {
                 Lobby!.StartTime.Text = string.Empty;
                 Lobby!.ReadyButton.Pressed = _gameTicker.AreWeReady;
-                Lobby!.ReadyButton.Text = Loc.GetString(Lobby!.ReadyButton.Pressed ? "lobby-state-player-status-ready": "lobby-state-player-status-not-ready");
+                UpdateReadyButtonText(); // POLONIUM
                 Lobby!.ReadyButton.ToggleMode = true;
                 Lobby!.ReadyButton.Disabled = false;
                 Lobby!.ObserveButton.Disabled = true;
@@ -233,6 +237,28 @@ namespace Content.Client.Lobby
             else
                 Lobby!.PlaytimeComment.Visible = false;
         }
+
+        // POLONIUM START
+        private void OnReadyCountCVarChanged(bool _)
+        {
+            UpdateReadyButtonText();
+        }
+
+        private void UpdateReadyButtonText()
+        {
+            if (Lobby == null || _gameTicker.IsGameStarted)
+                return;
+
+            var status = Loc.GetString(_gameTicker.AreWeReady
+                ? "lobby-state-player-status-ready"
+                : "lobby-state-player-status-not-ready");
+
+            if (_cfg.GetCVar(CCVars.LobbyReadyCountOnButton) && _gameTicker.LobbyReadyCount is { } count)
+                status = Loc.GetString("lobby-state-ready-button-count", ("status", status), ("ready", count.Ready), ("total", count.Total));
+
+            Lobby.ReadyButton.Text = status;
+        }
+        // POLONIUM END
 
         private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)
         {

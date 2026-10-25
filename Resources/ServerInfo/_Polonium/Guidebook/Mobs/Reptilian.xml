@@ -6,33 +6,33 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Reptilians
+  # Reptilianie
 
   <Box>
     <GuideEntityEmbed Entity="MobReptilian" Caption=""/>
   </Box>
 
-  Evolved from snakes, lizards, crocodiles, and all sorts of other reptiles, Reptilians are a hardy alien species.
+  Reptilianie wywodzą się z węży, jaszczurek, krokodyli i innych gadów. To wytrzymały, obcy gatunek.
 
-  ## Claws and Tails
+  ## Pazury i ogony
 
-  Reptilian claws are sharp, and deal [color=#ffb86b]Slashing[/color] damage. Additionally, Reptilians' tails enable
-  them to drag objects and people with both of their hands free.
+  Pazury reptilian są ostre i zadają obrażenia [color=#ffb86b]cięte[/color]. Dodatkowo ogon pozwala
+  ciągnąć przedmioty i ludzi, mając obie ręce wolne.
 
-  ## Diet
+  ## Dieta
 
-  Reptilians can only eat fruits, meat, and certain special foods like chocolate. They can, however, eat raw meat,
-  paper, crayons, and drink blood without biological consequences.
-  Your fellow crew might look at you differently, though...
+  Reptilianie jedzą tylko owoce, mięso i niektóre specjalne produkty, na przykład czekoladę. Mogą jednak jeść surowe mięso,
+  papier i kredki oraz pić krew bez biologicznych skutków.
+  Reszta załogi może jednak patrzeć na ciebie inaczej...
 
-  ## Damage
+  ## Obrażenia
 
-  Reptilians are more comfortable in higher temperatures than other species, but tend to get cold quicker as a result,
-  and suffer 30% more [color=cornflowerblue]Cold[/color] damage.
+  Reptilianom jest wygodniej w wyższej temperaturze niż innym gatunkom, ale przez to szybciej marzną
+  i dostają o 30% więcej obrażeń [color=cornflowerblue]odmrożeniowych[/color].
 
-  ## Reptilian Naming Conventions
+  ## Imiona reptilian
 
-  Reptilians typically have hyphenated two to four syllable names favouring guttural consonants while avoiding soft sounds.
+  Reptilianie zwykle mają imiona z łącznikiem, z dwóch do czterech sylab, z gardłowymi spółgłoskami i bez miękkich dźwięków.
 
   [bullet] Neeus-Hixeeh
 
@@ -40,12 +40,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   [bullet] Deroh-Haj
 
-  Some are known to have names that follow a pattern of Nouns-The-Verb, typically self-assigned or given by family.
+  Niektórzy mają imiona w schemacie rzeczownik-czasownik, zwykle nadane sobie albo przez rodzinę.
 
-  [bullet] Cleans-The-Floor
+  [bullet] Czyści-Podłogę
 
-  [bullet] Fights-The-Battles
+  [bullet] Toczy-Bitwy
 
-  [bullet] Treats-The-Injuries
+  [bullet] Opatruje-Rany
 
 </Document>

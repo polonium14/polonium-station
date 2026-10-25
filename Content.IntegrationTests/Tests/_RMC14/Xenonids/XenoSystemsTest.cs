@@ -30,17 +30,6 @@ public sealed class XenoSystemsTest : GameTest
 {
     private static readonly ProtoId<RadioChannelPrototype> Hivemind = "Hivemind";
 
-    [TestPrototypes]
-    private const string Prototypes = @"
-- type: entity
-  parent: XenoEgg
-  id: TestGrownXenoEgg
-  components:
-  - type: XenoEgg
-    grown: true
-    nextHatch: 9999999
-";
-
     [SidedDependency(Side.Server)] private readonly XenoPlasmaSystem _plasma = null!;
 
     [Test]
@@ -173,8 +162,9 @@ public sealed class XenoSystemsTest : GameTest
         });
     }
 
+    // Polonium: jajo z NSV13 wypuszcza facehuggera, a pusta skorupa zostaje do sprzątnięcia.
     [Test]
-    public async Task EggHatchesLarva()
+    public async Task EggReleasesFacehugger()
     {
         var map = await Pair.CreateTestMap();
         var coords = map.GridCoords.Offset(new Vector2(0.5f, 0.5f));
@@ -184,7 +174,7 @@ public sealed class XenoSystemsTest : GameTest
 
         await Pair.Server.WaitPost(() =>
         {
-            egg = SSpawnAtPosition("TestGrownXenoEgg", coords);
+            egg = SSpawnAtPosition("XenoEggGrown", coords);
             xeno = SSpawnAtPosition("CMXenoDrone", coords);
 
             var activate = new ActivateInWorldEvent(xeno, egg, complex: true);
@@ -193,17 +183,15 @@ public sealed class XenoSystemsTest : GameTest
             Assert.That(activate.Handled, Is.True);
         });
 
-        await Pair.RunTicksSync(5);
+        await RunSeconds(2);
 
         await Pair.Server.WaitAssertion(() =>
         {
-            Assert.That(SEntMan.Deleted(egg), Is.True);
+            Assert.That(SComp<XenoEggComponent>(egg).State, Is.EqualTo(XenoEggState.Opened));
 
-            var larvae = SEntMan.System<EntityLookupSystem>()
-                .GetEntitiesInRange<XenoComponent>(coords, 1.5f);
-            Assert.That(
-                larvae.Any(l => SComp<MetaDataComponent>(l).EntityPrototype?.ID == "CMXenoLarva"),
-                Is.True);
+            var huggers = SEntMan.System<EntityLookupSystem>()
+                .GetEntitiesInRange<Content.Shared._Polonium.Xenonids.FacehuggerComponent>(coords, 1.5f);
+            Assert.That(huggers, Is.Not.Empty);
         });
     }
 

@@ -1,5 +1,5 @@
-ent-SalvageTicket = salvage exchange ticket
-    .desc = Exchange your tickets for equipment!
+ent-SalvageTicket = kupon wymiany odzysku
+    .desc = Wymień kupony na wyposażenie!
     .suffix = 1
 ent-SalvageTicket2 = { ent-SalvageTicket }
     .suffix = 2

@@ -1,0 +1,10 @@
+- type: emote
+  id: HonkClownWail
+  name: chat-emote-name-honk
+  category: Vocal
+  available: false
+  icon: Interface/Emotes/honk.png
+  whitelist:
+    components:
+    - Vocal
+  chatMessages: ["chat-emote-msg-honk"]

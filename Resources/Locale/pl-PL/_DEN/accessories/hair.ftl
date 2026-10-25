@@ -1,4 +1,4 @@
-marking-amazon = Amazon
+marking-amazon = Amazonka
 marking-astolfo = Astolfo
 marking-baum = Baum
 marking-beachwave = Fale plażowe

@@ -36,6 +36,10 @@
       state: combat_level1
       shader: unshaded
       visible: false
+    - map: ["enum.ReplicatorVisuals.Thrust"] # POLONIUM
+      sprite: _Polonium/Mobs/Replicator/thrust.rsi
+      state: alive_thrust
+      shader: unshaded
   - type: UserInterface
     interfaces:
       enum.SiliconLawsUiKey.Key:
@@ -43,10 +47,37 @@
   - type: Appearance
   - type: ReplacementAccent
     accent: silicon
+  - type: Speech # POLONIUM
+    speechVerb: Robotic
+    speechSounds: Xenoborg
+  - type: Vocal # POLONIUM
+    emoteSounds: UnisexSiliconXenoborg
+    wilhelmProbability: 0
+  - type: Emoting # POLONIUM
+  - type: IntrinsicRadioTransmitter # POLONIUM
+    channels:
+    - ReplicatorHive
+  - type: ActiveRadio # POLONIUM
+    channels:
+    - ReplicatorHive
   - type: ActionGrant
     actions:
     - ActionViewLaws
     - ActionReplicatorTeleportPrey
+    - ActionReplicatorConvertFloor # POLONIUM
+    - ActionReplicatorConvertWall # POLONIUM
+    - ActionReplicatorBuildWall # POLONIUM
+    - ActionReplicatorHolowall # POLONIUM
+  - type: ReplicatorBuilder # POLONIUM
+  - type: ReplicatorChassis # POLONIUM
+    uiWhitelist:
+      tags:
+      - ReplicatorStructure
+      components:
+      - ReplicatorHive
+  - type: ReplicatorTow # POLONIUM
+  - type: NameIdentifier # POLONIUM
+    group: Replicator
   - type: CombatMode
   - type: Actions
   - type: ProtectedFromStepTriggers
@@ -61,6 +92,7 @@
       - DoorBumpOpener
       - CanPilot
       - VimPilot
+      - SiliconEmotes # POLONIUM
   - type: MobState
     allowedStates:
       - Alive
@@ -68,21 +100,24 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      75: Dead
+      106: Dead # POLONIUM: 75, classes set it per form
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTypeTrigger
         damageType: Blunt
-        damage: 100
+        damage: 137.8 # POLONIUM: 100
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          SheetPlasteel1:
+          SheetReplisteel1: # POLONIUM
             min: 1
-            max: 6
+            max: 1
+          ReplicatorNaniteSample: # POLONIUM
+            min: 1
+            max: 1
   - type: StatusEffects
     allowed:
     - Stun
@@ -99,10 +134,10 @@
       path: "/Audio/Items/wirecutter.ogg"
     angle: 0
     wideAnimationRotation: 0
-    animation: WeaponArcSlash
+    animation: WeaponArcReplicatorCrescent # POLONIUM
     damage:
       types:
-        Slash: 7
+        Structural: 7 # POLONIUM: no Slash
   - type: StaminaDamageOnHit
     damage: 10
   - type: MovementSpeedModifier
@@ -123,6 +158,10 @@
         Slash: -0.5
         Piercing: -0.5
         Heat: -0.5
+  - type: Barotrauma # POLONIUM
+    damage:
+      types:
+        Blunt: 0.19
   - type: ThermalVision
     lightRadius: 7
   - type: FlashImmunity
@@ -130,11 +169,22 @@
     needsHands: false
   - type: Hands
     showInHands: false
+    activeHandId: stun_ray # POLONIUM
     hands:
       stun_ray:
         location: Left
+      replisteel: # POLONIUM
+        location: Right
+        emptyLabel: replicator-hand-replisteel-empty
+        emptyRepresentative: SheetReplisteel1
+        whitelist:
+          tags:
+          - Replisteel
+          - ReplicatorColossusPart # POLONIUM
     sortedHands:
+    - replisteel # POLONIUM
     - stun_ray
+  - type: ReplicatorSheetHand # POLONIUM
   - type: Prying
     pryPowered: true
     force: true
@@ -172,9 +222,15 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2 # same as slime
     baseSprintSpeed: 4
-    weightlessFriction: 1
-    weightlessFrictionNoInput: 2
-    weightlessAcceleration: 1.8
+    baseWeightlessFriction: 5 # POLONIUM: weightless* fields get overwritten on MapInit
+    baseWeightlessAcceleration: 1.8 # POLONIUM
+  - type: ReplicatorTow # POLONIUM
+    pulledFrictionModifier: 0.1
+    weightlessAccelerationModifier: 3.5
+  - type: ReplicatorModules # POLONIUM
+  - type: ReplicatorEmpVulnerable # POLONIUM
+  - type: StatusIcon # POLONIUM
+    bounds: -0.5,-0.5,0.5,0.5
   - type: NoSlip
   - type: Sprite
     drawdepth: SmallMobs
@@ -186,6 +242,10 @@
       state: combat_level1
       shader: unshaded
       visible: false
+    - map: ["enum.ReplicatorVisuals.Thrust"] # POLONIUM
+      sprite: _Polonium/Mobs/Replicator/thrust.rsi
+      state: alive_thrust
+      shader: unshaded
   - type: Fixtures
     fixtures:
       fix1:
@@ -210,6 +270,9 @@
     damage: 10
   - type: Replicator
     upgradeStage: 1
+    stunRayProto: ReplicatorStunRayTier2 # POLONIUM
+  - type: ReplicatorBuilder # POLONIUM
+    buildTimeMultiplier: 0.6
   - type: MovementSpeedModifier
     baseWalkSpeed: 2 # same as slime
     baseSprintSpeed: 4
@@ -226,6 +289,10 @@
       state: combat_level2
       shader: unshaded
       visible: false
+    - map: ["enum.ReplicatorVisuals.Thrust"] # POLONIUM
+      sprite: _Polonium/Mobs/Replicator/thrust.rsi
+      state: alive_level2_thrust
+      shader: unshaded
   - type: NoSlip
   - type: DamageStateVisuals
     states:
@@ -251,6 +318,9 @@
   components:
   - type: Replicator
     upgradeStage: 2
+    stunRayProto: ReplicatorStunRayTier3 # POLONIUM
+  - type: ReplicatorBuilder # POLONIUM
+    buildTimeMultiplier: 1.4
   - type: MovementSpeedModifier
     baseWalkSpeed: 0.6 # these fellas are the tanks, they rely on the smaller guys stunning things for them.
     baseSprintSpeed: 4
@@ -264,6 +334,10 @@
       state: combat_level3
       shader: unshaded
       visible: false
+    - map: ["enum.ReplicatorVisuals.Thrust"] # POLONIUM
+      sprite: _Polonium/Mobs/Replicator/thrust.rsi
+      state: alive_level3_thrust
+      shader: unshaded
   - type: DamageStateVisuals
     states:
       Alive:

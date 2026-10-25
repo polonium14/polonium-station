@@ -74,3 +74,5 @@ ent-ClothingBackpackDebug3 = gay wackpack
 ent-ClothingBackpackDebug4 = offset wackpack
     .desc = What the fuck is this?
     .suffix = DEBUG
+ent-ClothingBackpackHoldingBase = { ent-ClothingBackpack }
+    .desc = { ent-ClothingBackpack.desc }

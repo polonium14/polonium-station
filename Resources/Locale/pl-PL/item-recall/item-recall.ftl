@@ -1,9 +1,9 @@
-item-recall-marked-name = Przywołaj { CAPITALIZE($item) }
-item-recall-marked-description = Recall { $item } back into your hand.
-item-recall-item-marked = You draw a magical sigil on { $item }.
-item-recall-item-already-marked = { CAPITALIZE($item) } is already marked!
+item-recall-marked-name = Przywołanie: { $item }
+item-recall-marked-description = Przywołaj z powrotem do ręki: { $item }.
+item-recall-item-marked = Kreślisz magiczny znak na przedmiocie: { $item }.
+item-recall-item-already-marked = Przedmiot { $item } jest już oznaczony!
 item-recall-item-mark-empty = Musisz trzymać przedmiot!
-item-recall-item-summon-self = { CAPITALIZE($item) } appears in your hand!
-item-recall-item-summon-others = { CAPITALIZE($item) } appears in { $name }'s hand!
-item-recall-item-disappear = { CAPITALIZE($item) } disappears!
-item-recall-item-unmark = You feel your connection with { $item } sever.
+item-recall-item-summon-self = { CAPITALIZE($item) } pojawia się w twojej ręce!
+item-recall-item-summon-others = { CAPITALIZE($item) } pojawia się w ręce osoby { $name }!
+item-recall-item-disappear = { CAPITALIZE($item) } znika!
+item-recall-item-unmark = Czujesz, jak zrywa się twoja więź z przedmiotem { $item }.

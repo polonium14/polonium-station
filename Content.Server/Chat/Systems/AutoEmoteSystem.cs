@@ -133,7 +133,11 @@ public sealed partial class AutoEmoteSystem : EntitySystem
         autoEmotePrototype ??= ProtoMan.Index<AutoEmotePrototype>(autoEmotePrototypeId);
 
         var curTime = _gameTiming.CurTime;
-        var time = curTime + autoEmotePrototype.Interval;
+        var interval = autoEmotePrototype.Interval;
+        if (autoEmotePrototype.MaxInterval is { } maxInterval && maxInterval > interval) // Polonium
+            interval += (maxInterval - interval) * _random.NextDouble();
+
+        var time = curTime + interval;
         autoEmote.EmoteTimers[autoEmotePrototypeId] = time;
 
         if (autoEmote.NextEmoteTime > time || autoEmote.NextEmoteTime <= curTime)

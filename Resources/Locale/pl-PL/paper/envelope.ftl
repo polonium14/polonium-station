@@ -1,4 +1,6 @@
-envelope-letter-slot = Letter
+envelope-verb-seal = Zaklej
+envelope-verb-tear = Rozerwij
+envelope-letter-slot = List
 envelope-sealed-examine = [color=gray]{ CAPITALIZE($envelope) } is sealed.[/color]
 envelope-torn-examine = [color=yellow]{ CAPITALIZE($envelope) } is torn and unusable![/color]
 envelope-default-message =

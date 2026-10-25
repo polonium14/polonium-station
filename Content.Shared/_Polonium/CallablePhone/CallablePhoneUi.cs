@@ -36,3 +36,14 @@ public sealed class CallablePhoneAnswerMessage : BoundUserInterfaceMessage;
 
 [Serializable, NetSerializable]
 public sealed class CallablePhoneHangUpMessage : BoundUserInterfaceMessage;
+
+[Serializable, NetSerializable]
+public sealed class CallablePhoneTeleportMessage : BoundUserInterfaceMessage
+{
+    public readonly NetEntity Receiver;
+
+    public CallablePhoneTeleportMessage(NetEntity receiver)
+    {
+        Receiver = receiver;
+    }
+}

@@ -9,3 +9,11 @@
   interval: 5.0
   chance: 0.5
   withChat: true
+
+- type: autoEmote
+  id: HonkClownWail
+  emote: HonkClownWail
+  interval: 5
+  maxInterval: 60
+  withChat: true
+  hiddenFromChatWindow: true

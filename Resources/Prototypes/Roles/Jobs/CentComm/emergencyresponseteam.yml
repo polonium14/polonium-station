@@ -89,7 +89,7 @@
     pocket2: ERTUplinkLeader
   storage:
     back:
-#    - WeaponDisabler # Funky - ERT already gets an N1984
+    - WeaponTaser
     - MedicatedSuture
     - RegenerativeMesh
     - BoxZiptie
@@ -115,7 +115,7 @@
     pocket2: ERTUplinkLeader
   storage:
     back:
-#    - WeaponDisabler # Funky
+    - WeaponTaser
     - MedicatedSuture
     - RegenerativeMesh
     - BoxZiptie
@@ -141,7 +141,7 @@
   - WeaponRifleLecter
   storage:
     back:
-#    - WeaponDisabler # Funky
+    - WeaponTaser
     - MedicatedSuture
     - RegenerativeMesh
     - BoxZiptie
@@ -363,7 +363,7 @@
     pocket2: ERTUplinkSecurity
   storage:
     back:
-#    - WeaponDisabler # Funky
+    - WeaponTaser
     - MedicatedSuture
     - RegenerativeMesh
     - BoxZiptie
@@ -389,7 +389,7 @@
     pocket2: ERTUplinkSecurity
   storage:
     back:
-#    - WeaponDisabler # Funky
+    - WeaponTaser
     - MedicatedSuture
     - RegenerativeMesh
     - BoxZiptie
@@ -416,7 +416,7 @@
     - WeaponRifleLecter
   storage:
     back:
-#    - WeaponDisabler # Funky
+    - WeaponTaser
     - MedicatedSuture
     - RegenerativeMesh
     - BoxZiptie

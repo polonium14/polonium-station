@@ -1,5 +1,6 @@
 using Content.Client.Gameplay;
 using Content.Client.Ghost;
+using Content.Client._Polonium.NewLife;
 using Content.Client._Polonium.Tutorial;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Ghost.Widgets;
@@ -8,6 +9,7 @@ using Content.Shared.Ghost.Components;
 using Content.Shared.Ghost.Systems;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
+using Robust.Shared.Timing;
 
 namespace Content.Client.UserInterface.Systems.Ghost;
 
@@ -18,6 +20,10 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
 
     [UISystemDependency] private readonly GhostSystem? _system = default;
     [UISystemDependency] private readonly TutorialPresentationSystem _tutorial = default!;
+    [UISystemDependency] private readonly NewLifeSystem? _newLife = default;
+
+    private NewLifeWindow? _newLifeWindow;
+    private TimeSpan _nextNewLifeRefresh;
 
     private GhostGui? Gui => UIManager.GetActiveUIWidgetOrNull<GhostGui>();
 
@@ -68,16 +74,58 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         }
 
         Gui.Visible = _system?.IsGhost ?? false;
-        
+
+        var tutorialLobby = _tutorial.ReadIntroMode() == SharedTutorialSystem.IntroTutorial;
+
         Gui.Update(
             _system?.AvailableGhostRoleCount,
             _system?.Player?.CanReturnToBody,
-            _tutorial.ReadIntroMode() == SharedTutorialSystem.IntroTutorial);
+            tutorialLobby);
+
+        UpdateNewLife(tutorialLobby);
+    }
+
+    public override void FrameUpdate(FrameEventArgs args)
+    {
+        base.FrameUpdate(args);
+
+
+        _nextNewLifeRefresh -= TimeSpan.FromSeconds(args.DeltaSeconds);
+        if (_nextNewLifeRefresh > TimeSpan.Zero || Gui is not { Visible: true })
+            return;
+
+        _nextNewLifeRefresh = TimeSpan.FromSeconds(1);
+
+        UpdateNewLife(_tutorial.ReadIntroMode() == SharedTutorialSystem.IntroTutorial);
+    }
+
+    private void UpdateNewLife(bool tutorialLobby)
+    {
+        if (Gui == null)
+            return;
+
+        var remaining = TimeSpan.Zero;
+
+        var visible = !tutorialLobby && _newLife != null && _newLife.TryGetRemaining(out remaining);
+
+        Gui.UpdateNewLife(visible, remaining);
+
+        if (!visible)
+            _newLifeWindow?.Close();
+        else
+            RefreshNewLifeWindow(remaining);
+    }
+
+    private void RefreshNewLifeWindow(TimeSpan remaining)
+    {
+        _newLifeWindow?.SetAvailable(remaining <= TimeSpan.Zero);
+        _newLifeWindow?.SetLivesLeft(_newLife?.GetLivesLeft());
     }
 
     private void OnPlayerRemoved(GhostComponent component)
     {
         Gui?.Hide();
+        _newLifeWindow?.Close();
     }
 
     private void OnPlayerUpdated(GhostComponent component)
@@ -97,6 +145,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     private void OnPlayerDetached()
     {
         Gui?.Hide();
+        _newLifeWindow?.Close();
     }
 
     private void OnWarpsResponse(GhostWarpsResponseEvent msg)
@@ -146,6 +195,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.ReturnToBodyPressed += ReturnToBody;
         Gui.ReturnToLobbyPressed += ReturnToLobby;
         Gui.GhostRolesPressed += GhostRolesPressed;
+        Gui.NewLifePressed += NewLifePressed;
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
         Gui.TargetWindow.OnWarpToRandomFollowedClicked += OnWarpToRandomFollowedClicked;
@@ -163,9 +213,11 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.ReturnToBodyPressed -= ReturnToBody;
         Gui.ReturnToLobbyPressed -= ReturnToLobby;
         Gui.GhostRolesPressed -= GhostRolesPressed;
+        Gui.NewLifePressed -= NewLifePressed;
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
 
         Gui.Hide();
+        _newLifeWindow?.Close();
     }
 
     private void ReturnToBody()
@@ -188,5 +240,22 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     private void GhostRolesPressed()
     {
         _system?.OpenGhostRoles();
+    }
+
+    private void NewLifePressed()
+    {
+        if (_newLifeWindow != null)
+        {
+            _newLifeWindow.MoveToFront();
+            return;
+        }
+
+        _newLifeWindow = new NewLifeWindow();
+
+        _newLifeWindow.Confirmed += () => _newLife?.RequestNewLife();
+        _newLifeWindow.OnClose += () => _newLifeWindow = null;
+        _newLifeWindow.OpenCentered();
+
+        UpdateGui();
     }
 }

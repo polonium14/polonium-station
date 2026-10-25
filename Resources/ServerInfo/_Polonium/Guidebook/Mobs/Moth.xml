@@ -6,32 +6,32 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Moth People
+  # Ćmy
 
   <Box>
     <GuideEntityEmbed Entity="MobMoth" Caption=""/>
   </Box>
 
-  Moth People are fuzzy, bewinged insect-humanoid aliens that share ancestry with the common moth.
+  Ćmy to puszyste, skrzydlate owado-humanoidy, spokrewnione ze zwykłą ćmą.
 
-  ## Diet
+  ## Dieta
 
-  Moth People can eat cotton, fabrics and clothing, but virtually none of the food that others would consider "edible".
+  Ćmy jedzą bawełnę, tkaniny i ubrania, ale prawie nic z tego, co inni uznaliby za „jadalne”.
 
-  ## Insectoid Physiology
+  ## Fizjologia owada
 
-  Covered in hair-like fuzz, Moth People tend to prefer a lower temperature range than humans. Furthermore, their blood
-  cannot be metabolized from Iron. Their wings give them better acceleration if there is no gravity on the station, but
-  they still can't move without equipment when floating out in space.
+  Pokryte włosowatym puchem ćmy wolą niższą temperaturę niż ludzie. Co więcej, ich krwi
+  nie da się zmetabolizować z żelaza. Skrzydła dają im lepsze przyspieszenie, gdy na stacji nie ma grawitacji, ale
+  w kosmosie nadal nie poruszają się bez sprzętu.
 
-  ## Damage
+  ## Obrażenia
 
-  Moth People take 30% less [color=cornflowerblue]Cold[/color] damage but 20% more [color=#ff8a8a]Heat[/color] damage, and catch
-  on fire more easily.
+  Ćmy dostają o 30% mniej obrażeń [color=cornflowerblue]odmrożeniowych[/color], ale o 20% więcej obrażeń [color=#ff8a8a]oparzeniowych[/color] i łatwiej
+  zajmują się ogniem.
 
-  ## Moth Person Naming Conventions
+  ## Imiona ciem
 
-  Moth People typically have latin and light related names.
+  Ćmy zwykle mają imiona łacińskie i związane ze światłem.
 
   [bullet] Silkie Gossamer
 

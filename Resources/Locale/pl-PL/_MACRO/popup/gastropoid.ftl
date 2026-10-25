@@ -1,2 +1,2 @@
-snailsprint-failure-thirst = You're too dehydrated to do that!
-snail-hurt-by-chem-popup = Ouch! That's not snail friendly.
+snailsprint-failure-thirst = Jesteś zbyt odwodniony, by to zrobić!
+snail-hurt-by-chem-popup = Au! To nie jest przyjazne ślimakom.

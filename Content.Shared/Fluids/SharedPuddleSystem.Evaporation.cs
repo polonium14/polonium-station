@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Funkystation.Footprints;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
@@ -115,6 +116,41 @@ public abstract partial class SharedPuddleSystem
     public bool CanFullyEvaporate(Solution solution)
     {
         return solution.GetTotalPrototypeQuantity(GetEvaporatingReagents(solution)) == solution.Volume;
+    }
+
+    /// <summary>
+    /// Mop bails out when the whole puddle is already absorber. Nothing to wipe
+    /// </summary>
+    public bool CanBeMopped(Solution solution)
+    {
+        if (solution.Volume <= FixedPoint2.Zero)
+            return false;
+
+        var absorbent = solution.GetTotalPrototypeQuantity(GetAbsorbentReagents(solution));
+        return absorbent < solution.Volume;
+    }
+
+    /// <summary>
+    /// Wont dry and a mop wont take it. Prints of this just sit there
+    /// </summary>
+    public bool IsStuckResidue(Solution solution)
+    {
+        if (solution.Volume <= FixedPoint2.Zero)
+            return false;
+
+        return !CanBeMopped(solution) && !CanFullyEvaporate(solution);
+    }
+
+    private bool ShouldDiscardPuddle(EntityUid uid, Solution solution)
+    {
+        if (!IsStuckResidue(solution))
+            return false;
+
+        // a print you cant wipe shouldnt be there at all
+        if (HasComp<FootprintComponent>(uid))
+            return true;
+
+        return solution.Volume < StuckResidueVolume;
     }
 
     /// <summary>

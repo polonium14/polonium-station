@@ -3,7 +3,7 @@
 species-name-human = Człowiek
 species-name-dwarf = Krasnolud
 species-name-reptilian = Reptilianin
-species-name-slime = Szlam
+species-name-slime = Szlamolud
 species-name-diona = Diona
 species-name-arachnid = Pajęczak
 species-name-moth = Ćma

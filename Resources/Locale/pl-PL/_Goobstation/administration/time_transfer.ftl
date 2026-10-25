@@ -1,1 +1,1 @@
-cmd-timetransferpanel-desc = Opens time transfer menu
+cmd-timetransferpanel-desc = Otwiera menu transferu czasu

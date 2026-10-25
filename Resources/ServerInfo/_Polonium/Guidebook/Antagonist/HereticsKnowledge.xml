@@ -1,40 +1,40 @@
 <Document>
-	#Knowledge
+	# Wiedza
 
-	##Knowledge Points
-	As a Heretic, your eldritch knowledge is what sets you above the heathens.
+	## Punkty wiedzy
+	Jako Heretyk wyróżniasz się wśród pogan mroczną wiedzą.
 
-	Collecting Knowledge Points is your main goal, as well as your ticket to greater power.
+	Zbieranie punktów wiedzy to twój główny cel i bilet do większej mocy.
 
-	Knowledge Points can be spent in the knowledge store to unlock new spells and rituals.
+	Punkty wiedzy wydajesz w sklepie wiedzy, żeby odblokować nowe czary i rytuały.
 
-	You can gain knowledge points and become stronger through a few ways:
-	- Draining influences that spawn randomly around the station.
-	- Sacrificing crew members your dark patrons hunger for.
-	- Automatically getting one knowledge point every 20 minutes.
-
-
-	## Heretical Research
-	Once you have some knowledge points, it's time to research! Open up your knowledge store using the action button.
-
-	Your first selection will commit you to a path that defines your initial abilities and Final Ascension.
-
-	You can earn abilities from other paths to a limited degree, but only when you have researched sufficient knowledge from your main path.
+	Punkty wiedzy i siłę zdobywasz na kilka sposobów:
+	- wysysając wpływy, które losowo pojawiają się na stacji,
+	- składając w ofierze członków załogi, których łakną twoi mroczni patroni,
+	- automatycznie, po jednym punkcie co 20 minut.
 
 
-	## Eldritch Influences
+	## Heretyckie badania
+	Gdy masz już trochę punktów wiedzy, czas na badania! Otwórz sklep wiedzy przyciskiem akcji.
+
+	Pierwszy wybór zobowiązuje cię do ścieżki, która określa początkowe umiejętności i ostateczne wniebowstąpienie.
+
+	Umiejętności z innych ścieżek możesz zdobywać tylko w ograniczonym zakresie i dopiero wtedy, gdy zbadasz dość wiedzy ze swojej głównej ścieżki.
+
+
+	## Mroczne wpływy
 	<Box>
 		<GuideEntityEmbed Entity="EldritchInfluence" Caption=""/>
 	</Box>
-	Influences are the easy way to gain knowledge points. Whenever there are Heretics aboard Space Station 14, influences will randomly spawn across the station.
+	Wpływy to łatwy sposób na punkty wiedzy. Gdy na stacji są Heretycy, wpływy losowo się na niej pojawiają.
 
-	They are not visible to the naked eye of a crew member, hovewer they [bold]will[/bold] become visible after harvesting, aside from suddenly changing colors.
+	Gołym okiem członek załogi ich nie widzi. Po zebraniu [bold]stają się[/bold] widoczne i nagle zmieniają kolor.
 
-	PRO TIP: Harvesting with a [color=#ffb86b]Focus[/color] equipped will yield double the points from influences.
+	WSKAZÓWKA: zbieranie z założonym [color=#ffb86b]ogniskiem[/color] daje z wpływów podwójne punkty.
 	<Box>
-		<GuideEntityEmbed Entity="EldritchInfluenceSpent" Caption="Harvested influence. Notice the glow."/>
+		<GuideEntityEmbed Entity="EldritchInfluenceSpent" Caption="Zebrany wpływ. Zwróć uwagę na poświatę."/>
 	</Box>
 
-	Each influence can only be harvested once, so the heretic that goes the fastest and grabs the most influences first has to do less killing and sacrificing to reach their ascensions.
+	Każdy wpływ da się zebrać tylko raz, więc Heretyk, który jest szybszy i zgarnie ich najwięcej, musi mniej zabijać i składać w ofierze, żeby dojść do wniebowstąpienia.
 
 </Document>

@@ -1,2 +1,2 @@
-ent-BookCart = book cart
-    .desc = A library on wheels.
+ent-BookCart = wózek z książkami
+    .desc = Biblioteka na kółkach.

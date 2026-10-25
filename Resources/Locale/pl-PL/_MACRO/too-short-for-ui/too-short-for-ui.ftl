@@ -1,1 +1,1 @@
-too-short-for-ui-cant-use = You're too short to reach the controls! Try getting up higher.
+too-short-for-ui-cant-use = Jesteś za niski, by dosięgnąć panelu sterowania! Spróbuj stanąć wyżej.

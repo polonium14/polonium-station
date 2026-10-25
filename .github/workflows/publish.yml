@@ -18,9 +18,6 @@ jobs:
       if: ${{GITHUB.REF_NAME == 'master' && github.repository == 'space-wizards/space-station-14'}}
       run: exit 1
 
-    - name: Install dependencies
-      run: sudo apt-get install -y python3-paramiko python3-lxml
-
     - uses: actions/checkout@v7
       with:
         submodules: 'recursive'
@@ -88,15 +85,3 @@ jobs:
       env:
         PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
         GITHUB_REPOSITORY: ${{ vars.GITHUB_REPOSITORY }}
-
-    - name: Publish changelog (Discord)
-      run: Tools/actions_changelogs_since_last_run.py
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-
-    - name: Publish changelog (RSS)
-      continue-on-error: true
-      run: Tools/actions_changelog_rss.py
-      env:
-        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}

@@ -1,4 +1,4 @@
-signal-timer-menu-title = Timer
-signal-timer-menu-label = Label:
-signal-timer-menu-delay = Delay:
+signal-timer-menu-title = Zegar
+signal-timer-menu-label = Etykieta:
+signal-timer-menu-delay = Opóźnienie:
 signal-timer-menu-start = Start

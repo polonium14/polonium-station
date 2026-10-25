@@ -33,6 +33,10 @@
   name: all-at-once-title
   description: all-at-once-description
   showInVote: false
+  moods: # Polonium
+    Standard: 1
+    Hot: 3
+    Madness: 45
   rules:
     - Nukeops
     - Traitor
@@ -56,6 +60,10 @@
   name: aller-at-once-title
   description: aller-at-once-description
   showInVote: false #Please god dont do this
+  moods: # Polonium
+    Standard: 1
+    Hot: 3
+    Madness: 25
   rules:
     - Nukeops
     - Traitor
@@ -80,6 +88,9 @@
   name: extended-title
   showInVote: false #2boring2vote
   description: extended-description
+  moods: # Polonium
+    Calm: 20
+    Standard: 8
   rules:
   - BasicStationEventScheduler
   - MeteorSwarmScheduler

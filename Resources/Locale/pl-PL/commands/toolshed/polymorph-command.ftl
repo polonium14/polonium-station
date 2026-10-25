@@ -1,1 +1,1 @@
-command-description-polymorph = Polymorphs the input entity with the given prototype.
+command-description-polymorph = Polimorfuje encję wejściową za pomocą danego prototypu.

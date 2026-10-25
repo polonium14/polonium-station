@@ -1,0 +1,13 @@
+ent-ClothingHeadHelmetKapitanBomba = kosmo-hełm
+    .desc = Kosmiczny Hełm Kapitana Kosmicznego Statku Orzeł 1.
+ent-ClothingOuterSuitKapitanBomba = kosmo-kombinezon
+    .desc = Kosmiczny kombinezon Kapitana Kosmicznego Statku Orzeł 1.
+ent-ClothingShoesKapitanBomba = kosmo-buty
+    .desc = Kosmiczne Buty Kapitana Bomby, sam je polerował.
+ent-MagazineLightRifleBoxBlaster = Amunicja Blastera
+    .desc = Cudem nie przejebane na wódę, ale też nie dziwota bo kto widział 6mm sprzedać za flachę.
+ent-WeaponLightMachineGunBlaster = Blaster Kapitana Bomby
+    .desc = Łapy precz tępe chuje.
+ent-KapitanBombaIDCard = karta identyfikacyjna Kapitana Bomby
+    .suffix = Admeme
+    .desc = { ent-IDCardStandard.desc }

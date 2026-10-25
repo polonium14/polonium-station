@@ -42,6 +42,7 @@ public sealed partial class CallablePhoneBoundUserInterface : BoundUserInterface
         _window.CallPressed += receiver => SendMessage(new CallablePhoneCallMessage(receiver));
         _window.AnswerPressed += () => SendMessage(new CallablePhoneAnswerMessage());
         _window.HangUpPressed += () => SendMessage(new CallablePhoneHangUpMessage());
+        _window.TeleportPressed += receiver => SendMessage(new CallablePhoneTeleportMessage(receiver));
 
         _window.OpenCentered();
     }

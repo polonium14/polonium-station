@@ -1,0 +1,9 @@
+ent-AnomalyEvilClown = anomalia
+    .desc = Czujesz się niedobrze patrząc na to.
+    .suffix = Honk
+ent-AnomalyCoreEvilClown = { ent-BaseAnomalyCore }
+    .desc = Rdzeń zniszczonej honkowej anomalii. Ma peruczkę i czerwony nos, a gdy się mu przyglądać, wydaje się uśmiechać szerzej.
+    .suffix = Honk
+ent-AnomalyCoreEvilClownInert = { ent-BaseAnomalyInertCore }
+    .desc = Wygasły rdzeń honkowej anomalii. Uśmiech zastygł mu na stałe.
+    .suffix = Honk, Inert

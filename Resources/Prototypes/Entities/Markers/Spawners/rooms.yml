@@ -30,7 +30,6 @@
         weight: 10
       - !type:AllSelector # 10% chance - the non-lethal package
         children:
-        - id: WeaponTaser
         - id: WeaponShotgunEnforcerRubber
         - id: BoxBeanbag
         weight: 10 # Polonium change end

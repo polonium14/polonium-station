@@ -1,2 +1,2 @@
-reagent-name-ethanotoxin = ethanotoxin
-reagent-desc-ethanotoxin = A medicinal venom from the jaw of an Allulalo. Contains a blood-clotting agent and adreno-stimulants, but your heart wont like it.
+reagent-name-ethanotoxin = etanotoksyna
+reagent-desc-ethanotoxin = Lecznicza trucizna z szczęki Allulalo. Zawiera środek przeciwzakrzepowy i adrenostymulanty, ale twoje serce tego nie polubi.

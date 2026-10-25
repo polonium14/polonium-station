@@ -1,1 +1,1 @@
-decapoid-cant-speak = You can't speak without a vaporizer mask!
+decapoid-cant-speak = Nie możesz mówić bez maski z waporyzatorem!

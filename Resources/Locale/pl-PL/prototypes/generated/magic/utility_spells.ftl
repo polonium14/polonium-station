@@ -1,2 +1,2 @@
-ent-ActionChargeSpell = Charge
-    .desc = Adds a charge back to your wand
+ent-ActionChargeSpell = Doładowanie
+    .desc = Przywraca ładunek twojej różdżce.

@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Sprite by Reprimann, taken from aq33/NSV13 (aq33/NSV13#304) at commit b340c8bf15",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "64_corner_white_s"
+    },
+    {
+      "name": "64_corner_white_n"
+    },
+    {
+      "name": "64_corner_white_e"
+    },
+    {
+      "name": "64_corner_white_w"
+    },
+    {
+      "name": "64_corner_red_s"
+    },
+    {
+      "name": "64_corner_red_n"
+    },
+    {
+      "name": "64_corner_red_e"
+    },
+    {
+      "name": "64_corner_red_w"
+    },
+    {
+      "name": "96_corner_white_s"
+    },
+    {
+      "name": "96_corner_white_n"
+    },
+    {
+      "name": "96_corner_white_e"
+    },
+    {
+      "name": "96_corner_white_w"
+    },
+    {
+      "name": "96_spacercorner_white_s"
+    },
+    {
+      "name": "96_spacercorner_white_n"
+    },
+    {
+      "name": "96_spacercorner_white_e"
+    },
+    {
+      "name": "96_spacercorner_white_w"
+    },
+    {
+      "name": "96_middle_s"
+    },
+    {
+      "name": "96_middle_n"
+    },
+    {
+      "name": "96_middle_e"
+    },
+    {
+      "name": "96_middle_w"
+    },
+    {
+      "name": "96_spacermiddle_s"
+    },
+    {
+      "name": "96_spacermiddle_n"
+    },
+    {
+      "name": "96_spacermiddle_e"
+    },
+    {
+      "name": "96_spacermiddle_w"
+    },
+    {
+      "name": "96_corner_red_s"
+    },
+    {
+      "name": "96_corner_red_n"
+    },
+    {
+      "name": "96_corner_red_e"
+    },
+    {
+      "name": "96_corner_red_w"
+    },
+    {
+      "name": "96_spacercorner_red_s"
+    },
+    {
+      "name": "96_spacercorner_red_n"
+    },
+    {
+      "name": "96_spacercorner_red_e"
+    },
+    {
+      "name": "96_spacercorner_red_w"
+    },
+    {
+      "name": "192_corner_white_s"
+    },
+    {
+      "name": "192_corner_white_n"
+    },
+    {
+      "name": "192_corner_white_e"
+    },
+    {
+      "name": "192_corner_white_w"
+    },
+    {
+      "name": "192_middle_white_s"
+    },
+    {
+      "name": "192_middle_white_n"
+    },
+    {
+      "name": "192_middle_white_e"
+    },
+    {
+      "name": "192_middle_white_w"
+    },
+    {
+      "name": "192_border_white_s"
+    },
+    {
+      "name": "192_border_white_n"
+    },
+    {
+      "name": "192_border_white_e"
+    },
+    {
+      "name": "192_border_white_w"
+    },
+    {
+      "name": "192_spacermiddle_white_s"
+    },
+    {
+      "name": "192_spacermiddle_white_n"
+    },
+    {
+      "name": "192_spacermiddle_white_e"
+    },
+    {
+      "name": "192_spacermiddle_white_w"
+    },
+    {
+      "name": "192_spacermiddle_red_s"
+    },
+    {
+      "name": "192_spacermiddle_red_n"
+    },
+    {
+      "name": "192_spacermiddle_red_e"
+    },
+    {
+      "name": "192_spacermiddle_red_w"
+    },
+    {
+      "name": "192_border_red_s"
+    },
+    {
+      "name": "192_border_red_n"
+    },
+    {
+      "name": "192_border_red_e"
+    },
+    {
+      "name": "192_border_red_w"
+    },
+    {
+      "name": "192_middle_red_s"
+    },
+    {
+      "name": "192_middle_red_n"
+    },
+    {
+      "name": "192_middle_red_e"
+    },
+    {
+      "name": "192_middle_red_w"
+    },
+    {
+      "name": "192_corner_red_s"
+    },
+    {
+      "name": "192_corner_red_n"
+    },
+    {
+      "name": "192_corner_red_e"
+    },
+    {
+      "name": "192_corner_red_w"
+    },
+    {
+      "name": "192_full_white"
+    },
+    {
+      "name": "192_full_red"
+    }
+  ]
+}

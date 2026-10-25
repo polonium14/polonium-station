@@ -4,3 +4,6 @@ ent-AccessBreakerUnlimited = zakłócacz uwierzytelniania
 ent-AccessBreaker = { ent-AccessBreakerUnlimited }
     .suffix = Ograniczony
     .desc = { ent-AccessBreakerUnlimited.desc }
+ent-XenoborgAccessBreaker = zakłócacz uwierzytelniania ksenoborgów
+    .desc = Urządzenie czyszczące dostęp, opracowane przez ksenoborgi do zakłócania cyfrowych zamków.
+    .suffix = Ograniczony

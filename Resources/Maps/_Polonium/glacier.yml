@@ -141985,7 +141985,7 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -17.5,25.5
-- proto: WeaponDisabler
+- proto: WeaponTaser
   entities:
   - uid: 633
     components:

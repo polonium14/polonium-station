@@ -1,0 +1,9 @@
+ent-MaterialXenoborgCrystal = kryształ ksenoborga
+    .desc = Specjalny kryształ powstały w wyniku syntezy jądrowej. Służy do tworzenia ksenoborgów.
+    .suffix = 10
+ent-MaterialXenoborgCrystal5 = { ent-MaterialXenoborgCrystal }
+    .suffix = 5
+    .desc = { ent-MaterialXenoborgCrystal.desc }
+ent-MaterialXenoborgCrystal1 = { ent-MaterialXenoborgCrystal }
+    .suffix = 1
+    .desc = { ent-MaterialXenoborgCrystal.desc }

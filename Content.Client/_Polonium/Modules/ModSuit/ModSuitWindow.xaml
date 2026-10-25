@@ -1,0 +1,129 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="{Loc 'modsuit-interface-title'}"
+    MinSize="512 768">
+    <BoxContainer
+        Orientation="Vertical"
+        HorizontalExpand="True"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="8">
+        <BoxContainer
+            Name="SealableContainer"
+            Orientation="Vertical"
+            HorizontalExpand="True"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Access="Public">
+            <controls:StripeBack
+                HasTopEdge="False"
+                HasBottomEdge="False"
+                HasMargins="False">
+                <PanelContainer StyleClasses="PdaBorderRect">
+                    <BoxContainer
+                        Name="SealContainer"
+                        Visible="False"
+                        Margin="16"
+                        VerticalAlignment="Top"
+                        Access="Public">
+                        <PanelContainer
+                            Name="SealPanel"
+                            StyleClasses="PanelBackgroundBaseDark"
+                            Access="Public">
+                        </PanelContainer>
+                        <BoxContainer
+                            Margin="16"/>
+                        <PanelContainer StyleClasses="PanelBackgroundLight">
+                            <BoxContainer
+                                Name="SealButtons"
+                                Margin="16, 8"
+                                Orientation="Vertical"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Access="Public"/>
+                        </PanelContainer>
+                    </BoxContainer>
+                </PanelContainer>
+            </controls:StripeBack>
+            <BoxContainer
+                Orientation="Vertical"
+                HorizontalExpand="True"
+                Margin="0, 8">
+                <PanelContainer StyleClasses="LowDivider"/>
+            </BoxContainer>
+        </BoxContainer>
+
+        <BoxContainer
+            Name="CenterContainer"
+            Visible="False"
+            Orientation="Vertical"
+            Access="Public">
+            <BoxContainer
+                Orientation="Horizontal"
+                HorizontalExpand="True"
+                Margin="32, 4">
+                <Label
+                    Name="ComplexityLabel"
+                    Visible="False"
+                    Align="Left"
+                    HorizontalExpand="True"
+                    Access="Public"/>
+                <PanelContainer
+                    HorizontalAlignment="Stretch"
+                    HorizontalExpand="True"
+                    VerticalAlignment="Stretch"
+                    VerticalExpand="True">
+                    <ProgressBar
+                        Name="ChargeBar"
+                        Visible="False"
+                        HorizontalExpand="True"
+                        MinValue="0"
+                        Value="1"
+                        MaxValue="1">
+                        <BoxContainer
+                            Margin="16, 0">
+                            <Label
+                                Name="ChargeLabel"
+                                Align="Right"
+                                HorizontalExpand="True"
+                                Access="Public"/>
+                        </BoxContainer>
+                    </ProgressBar>
+                    <BoxContainer
+                        VerticalExpand="True"
+                        VerticalAlignment="Stretch">
+                        <Label
+                            Text="{Loc 'modsuit-interface-no-cell'}"
+                            Name="NoCellLabel"
+                            Visible="False"
+                            Align="Right"
+                            HorizontalExpand="True"
+                            Access="Public"/>
+                    </BoxContainer>
+                </PanelContainer>
+            </BoxContainer>
+            <BoxContainer
+                Orientation="Vertical"
+                HorizontalExpand="True"
+                Margin="0, 8">
+                <PanelContainer StyleClasses="LowDivider"/>
+            </BoxContainer>
+        </BoxContainer>
+
+        <ScrollContainer
+            Margin="16, 0, 8, 8"
+            HorizontalExpand="True"
+            VerticalExpand="True"
+            HScrollEnabled="False">
+            <PanelContainer StyleClasses="PanelBackgroundBaseDark">
+                <BoxContainer
+                    Name="ModuleList"
+                    Orientation="Vertical"
+                    HorizontalExpand="True"
+                    HorizontalAlignment="Stretch"
+                    Access="Public"/>
+            </PanelContainer>
+        </ScrollContainer>
+    </BoxContainer>
+</DefaultWindow>

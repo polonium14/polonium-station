@@ -1,76 +1,82 @@
-card-examined = This is the { $target }.
-cards-verb-shuffle = Shuffle
-card-verb-shuffle-success = Cards shuffled
-cards-verb-draw = Draw card
-cards-verb-flip = Flip cards
-card-verb-join = Join cards
+card-examined = To jest { $target }.
+cards-verb-shuffle = Przetasuj
+card-verb-shuffle-success = Karty przetasowane
+cards-verb-draw = Dobierz kartę
+cards-verb-flip = Odwróć karty
+card-verb-join = Połącz karty
 card-verb-organize-success =
-    Cards flipped face { $facedown ->
-        [true] down
-       *[false] up
+    Karty obrócone { $facedown ->
+        [true] rewersem do góry
+       *[false] awersem do góry
     }
-cards-verb-organize-up = Flip cards face up
-cards-verb-organize-down = Flip cards face down
-cards-verb-pickcard = Pick a card
+cards-verb-organize-up = Odwróć karty awersem do góry
+cards-verb-organize-down = Odwróć karty rewersem do góry
+cards-verb-pickcard = Wybierz kartę
 card-stack-examine =
     { $count ->
-        [one] There is { $count } card in this stack.
-       *[other] There are { $count } cards in this stack.
+        [one] W tym stosie jest { $count } karta.
+        [few] W tym stosie są { $count } karty.
+       *[other] W tym stosie jest { $count } kart.
     }
-cards-verb-convert-to-deck = Convert to deck
-cards-verb-split = Split in half
-card-sc-2-clubs = 2 of clubs
-card-sc-3-clubs = 3 of clubs
-card-sc-4-clubs = 4 of clubs
-card-sc-5-clubs = 5 of clubs
-card-sc-6-clubs = 6 of clubs
-card-sc-7-clubs = 7 of clubs
-card-sc-8-clubs = 8 of clubs
-card-sc-9-clubs = 9 of clubs
-card-sc-10-clubs = 10 of clubs
-card-sc-ace-clubs = ace of clubs
-card-sc-jack-clubs = jack of clubs
-card-sc-king-clubs = king of clubs
-card-sc-queen-clubs = queen of clubs
-card-sc-2-diamonds = 2 of diamonds
-card-sc-3-diamonds = 3 of diamonds
-card-sc-4-diamonds = 4 of diamonds
-card-sc-5-diamonds = 5 of diamonds
-card-sc-6-diamonds = 6 of diamonds
-card-sc-7-diamonds = 7 of diamonds
-card-sc-8-diamonds = 8 of diamonds
-card-sc-9-diamonds = 9 of diamonds
-card-sc-10-diamonds = 10 of diamonds
-card-sc-ace-diamonds = ace of diamonds
-card-sc-jack-diamonds = jack of diamonds
-card-sc-king-diamonds = king of diamonds
-card-sc-queen-diamonds = queen of diamonds
-card-sc-2-hearts = 2 of hearts
-card-sc-3-hearts = 3 of hearts
-card-sc-4-hearts = 4 of hearts
-card-sc-5-hearts = 5 of hearts
-card-sc-6-hearts = 6 of hearts
-card-sc-7-hearts = 7 of hearts
-card-sc-8-hearts = 8 of hearts
-card-sc-9-hearts = 9 of hearts
-card-sc-10-hearts = 10 of hearts
-card-sc-ace-hearts = ace of hearts
-card-sc-jack-hearts = jack of hearts
-card-sc-king-hearts = king of hearts
-card-sc-queen-hearts = queen of hearts
-card-sc-2-spades = 2 of spades
-card-sc-3-spades = 3 of spades
-card-sc-4-spades = 4 of spades
-card-sc-5-spades = 5 of spades
-card-sc-6-spades = 6 of spades
-card-sc-7-spades = 7 of spades
-card-sc-8-spades = 8 of spades
-card-sc-9-spades = 9 of spades
-card-sc-10-spades = 10 of spades
-card-sc-ace-spades = ace of spades
-card-sc-jack-spades = jack of spades
-card-sc-king-spades = king of spades
-card-sc-queen-spades = queen of spades
+cards-stackquantitychange-added = Dodano kartę (łącznie kart: { $quantity })
+cards-stackquantitychange-removed = Usunięto kartę (łącznie kart: { $quantity })
+cards-stackquantitychange-joined = Połączono stosy (łącznie kart: { $quantity })
+cards-stackquantitychange-split = Rozdzielono stos (łącznie kart: { $quantity })
+cards-stackquantitychange-unknown = Zmieniła się liczba kart w stosie (łącznie kart: { $quantity })
+cards-verb-convert-to-deck = Zamień w talię
+cards-verb-split = Podziel na pół
+card-sc-2-clubs = 2 trefl
+card-sc-3-clubs = 3 trefl
+card-sc-4-clubs = 4 trefl
+card-sc-5-clubs = 5 trefl
+card-sc-6-clubs = 6 trefl
+card-sc-7-clubs = 7 trefl
+card-sc-8-clubs = 8 trefl
+card-sc-9-clubs = 9 trefl
+card-sc-10-clubs = 10 trefl
+card-sc-ace-clubs = as trefl
+card-sc-jack-clubs = walet trefl
+card-sc-king-clubs = król trefl
+card-sc-queen-clubs = dama trefl
+card-sc-2-diamonds = 2 karo
+card-sc-3-diamonds = 3 karo
+card-sc-4-diamonds = 4 karo
+card-sc-5-diamonds = 5 karo
+card-sc-6-diamonds = 6 karo
+card-sc-7-diamonds = 7 karo
+card-sc-8-diamonds = 8 karo
+card-sc-9-diamonds = 9 karo
+card-sc-10-diamonds = 10 karo
+card-sc-ace-diamonds = as karo
+card-sc-jack-diamonds = walet karo
+card-sc-king-diamonds = król karo
+card-sc-queen-diamonds = dama karo
+card-sc-2-hearts = 2 kier
+card-sc-3-hearts = 3 kier
+card-sc-4-hearts = 4 kier
+card-sc-5-hearts = 5 kier
+card-sc-6-hearts = 6 kier
+card-sc-7-hearts = 7 kier
+card-sc-8-hearts = 8 kier
+card-sc-9-hearts = 9 kier
+card-sc-10-hearts = 10 kier
+card-sc-ace-hearts = as kier
+card-sc-jack-hearts = walet kier
+card-sc-king-hearts = król kier
+card-sc-queen-hearts = dama kier
+card-sc-2-spades = 2 pik
+card-sc-3-spades = 3 pik
+card-sc-4-spades = 4 pik
+card-sc-5-spades = 5 pik
+card-sc-6-spades = 6 pik
+card-sc-7-spades = 7 pik
+card-sc-8-spades = 8 pik
+card-sc-9-spades = 9 pik
+card-sc-10-spades = 10 pik
+card-sc-ace-spades = as pik
+card-sc-jack-spades = walet pik
+card-sc-king-spades = król pik
+card-sc-queen-spades = dama pik
 card-sc-joker = joker
-container-sealed = A holographic security seal is on it. Opening it will have the seal dissipate.
-container-unsealed = The seal attached to it dissipates.
+container-sealed = Widnieje na nim holograficzna pieczęć ochronna. Jej otwarcie sprawi, że pieczęć się rozproszy.
+container-unsealed = Przymocowana do niego pieczęć się rozprasza.

@@ -28,6 +28,7 @@ public static partial class PoolManager
         (CCVars.GameDummyTicker.Name, "true"),
         (CCVars.GameLobbyEnabled.Name, "false"),
         (CCVars.TutorialMode.Name, "None"),
+        (CCVars.EvacScenariosEnabled.Name, "false"), // Polonium
         (CCVars.ConfigPresetDevelopment.Name, "false"),
         (CCVars.AdminLogsEnabled.Name, "false"),
         (CCVars.AutosaveEnabled.Name, "false"),

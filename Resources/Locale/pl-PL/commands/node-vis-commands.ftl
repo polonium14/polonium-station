@@ -1,6 +1,6 @@
-cmd-nodevis-desc = Toggles node group visualization.
-cmd-nodevis-help = Usage: nodevis
-cmd-nodevisfilter-desc = Toggles showing a specific group on nodevis.
+cmd-nodevis-desc = Przełącza wizualizację grup węzłów.
+cmd-nodevis-help = Użycie: nodevis
+cmd-nodevisfilter-desc = Przełącza wyświetlanie konkretnej grupy w nodevis.
 cmd-nodevisfilter-help =
-    Usage: nodevisfilter [filter]
-    Omit filter to list currently masked-off
+    Użycie: nodevisfilter [filtr]
+    Pomiń filtr, aby wyświetlić aktualnie ukryte grupy

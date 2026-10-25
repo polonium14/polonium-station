@@ -1,7 +1,7 @@
-ent-ClothingNeckBronzeheart = medal bronzeheart
+ent-ClothingNeckBronzeheart = medal Brązowego Serca
     .desc = Przyznawany załogantom za wzorową odwagę w obliczu niebezpieczeństwa.
 ent-ClothingNeckGoldmedal = złoty medal załoganta
-    .desc = Przyznawany załogantom, którzy okazują doskonałe załogowanie.
+    .desc = Przyznawany załogantom, którzy wykazują doskonałą postawę załoganta.
 ent-ClothingNeckCargomedal = logistyczny medal
     .desc = Przyznawany za najlepszą pracę w dziale logistyki.
 ent-ClothingNeckEngineermedal = medal inżyniera
@@ -14,3 +14,5 @@ ent-ClothingNeckSecuritymedal = medal ochrony
     .desc = Przyznawany za najlepszą pracę w dziale ochrony.
 ent-ClothingNeckClownmedal = medal klauna
     .desc = Przyznawany za najlepszy żart we wszechświecie. HONK!
+ent-ClothingNeckMedalBase = medal
+    .desc = Medal, który świadczy o twoim męstwie. Może być zrobiony z metalu, a może nie.

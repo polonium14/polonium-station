@@ -1,0 +1,14 @@
+- type: tile
+  id: FloorReplicator
+  parent: BaseStationTile
+  name: tiles-replicator-floor
+  sprite: /Textures/_Polonium/Tiles/replicator.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  itemDrop: null
+  footstepSounds:
+    collection: FootstepHull

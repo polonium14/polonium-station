@@ -1,4 +1,4 @@
-ent-AppearanceApid = apid appearance
+ent-AppearanceApid = wygląd apida
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobApid = Urist McBzzsz
     .desc = { ent-AppearanceApid.desc }

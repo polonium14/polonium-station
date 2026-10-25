@@ -7,6 +7,8 @@ using Content.Shared.CombatMode;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
+using Content.Shared._Polonium.Replicator; // POLONIUM
+using Content.Shared.Tag; // POLONIUM
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
@@ -23,6 +25,7 @@ public abstract partial class SharedReplicatorSystem : EntitySystem
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private TagSystem _tag = default!; // POLONIUM
 
     public override void Initialize()
     {
@@ -38,10 +41,10 @@ public abstract partial class SharedReplicatorSystem : EntitySystem
 
     private void OnMapInit(Entity<ReplicatorComponent> ent, ref MapInitEvent args)
     {
-        if (_net.IsClient)
+        if (_net.IsClient || ent.Comp.StunRayProto is not { } stunRayProto)
             return;
 
-        var stunRay = Spawn(ent.Comp.StunRayProto, Transform(ent).Coordinates);
+        var stunRay = Spawn(stunRayProto, Transform(ent).Coordinates);
         _hands.TryPickup(ent, stunRay, ent.Comp.StunRayHandId, checkActionBlocker: false);
     }
 
@@ -49,16 +52,34 @@ public abstract partial class SharedReplicatorSystem : EntitySystem
     {
         if (HasComp<ReplicatorComponent>(args.Target))
         {
-            _popup.PopupEntity(Loc.GetString("replicator-on-replicator-attack-fail"), ent, ent, PopupType.MediumCaution);
+            AttackFailPopup(ent, args, "replicator-on-replicator-attack-fail"); // POLONIUM
             args.Cancel();
             return;
         }
 
         if (HasComp<ReplicatorNestComponent>(args.Target))
         {
-            _popup.PopupEntity(Loc.GetString("replicator-on-nest-attack-fail"), ent, ent, PopupType.MediumCaution);
+            AttackFailPopup(ent, args, "replicator-on-nest-attack-fail"); // POLONIUM
+            args.Cancel();
+            return; // POLONIUM
+        }
+
+        // POLONIUM
+        if (args.Target is { } target && _tag.HasTag(target, ReplicatorHiveSystem.StructureTag))
+        {
+            AttackFailPopup(ent, args, "replicator-on-structure-attack-fail");
             args.Cancel();
         }
+    }
+
+    // POLONIUM: CanAttack is also checked without a swing, e.g. for the execution verb in the context menu
+    private void AttackFailPopup(Entity<ReplicatorComponent> ent, AttackAttemptEvent args, string message)
+    {
+        if (args.Weapon == null || !_timing.IsFirstTimePredicted || _timing.CurTime < ent.Comp.NextAttackFailPopup)
+            return;
+
+        ent.Comp.NextAttackFailPopup = _timing.CurTime + ent.Comp.AttackFailPopupCooldown;
+        _popup.PopupClient(Loc.GetString(message), ent, ent, PopupType.MediumCaution);
     }
 
     private void OnCombatToggle(Entity<ReplicatorComponent> ent, ref ToggleCombatActionEvent args)
@@ -84,8 +105,11 @@ public abstract partial class SharedReplicatorSystem : EntitySystem
         var myNestComp = EnsureComp<ReplicatorNestComponent>(myNest);
 
         HashSet<EntityUid> newMinions = [];
-        foreach (var (uid, _) in ent.Comp.RelatedReplicators)
+        foreach (var (uid, related) in ent.Comp.RelatedReplicators)
+        {
             newMinions.Add(uid);
+            related.MyNest = myNest; // POLONIUM
+        }
 
         myNestComp.SpawnedMinions = newMinions;
         myNestComp.SpawnedMinions.Add(ent);

@@ -1,0 +1,12 @@
+ent-CrateRIGPlatingEngineering = skrzynia z poszyciem R.I.G. inżynieryjnego
+    .desc = Zawiera poszycie do jednego R.I.G. inżynieryjnego. Rdzeń i pozostałe części drukuje się w fabrykatorze egzoszkieletów.
+ent-CrateRIGPlatingAtmospheric = skrzynia z poszyciem R.I.G. atmosferycznego
+    .desc = Zawiera poszycie do jednego R.I.G. atmosferycznego. Rdzeń i pozostałe części drukuje się w fabrykatorze egzoszkieletów.
+ent-CrateRIGPlatingMedical = skrzynia z poszyciem R.I.G. medycznego
+    .desc = Zawiera poszycie do jednego R.I.G. medycznego. Rdzeń i pozostałe części drukuje się w fabrykatorze egzoszkieletów.
+ent-CrateRIGPlatingSecurity = skrzynia z poszyciem R.I.G. ochrony
+    .desc = Zawiera poszycie do jednego R.I.G. ochrony. Rdzeń i pozostałe części drukuje się w fabrykatorze egzoszkieletów.
+ent-CrateRIGPlatingSalvage = skrzynia z poszyciem R.I.G. górniczego
+    .desc = Zawiera poszycie do jednego R.I.G. górniczego. Rdzeń i pozostałe części drukuje się w fabrykatorze egzoszkieletów.
+ent-CrateRIGPlatingCivilian = skrzynia z poszyciem R.I.G. cywilnego
+    .desc = Zawiera poszycie do jednego R.I.G. cywilnego. Rdzeń i pozostałe części drukuje się w fabrykatorze egzoszkieletów.

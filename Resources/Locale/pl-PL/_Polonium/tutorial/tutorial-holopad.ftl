@@ -320,9 +320,8 @@ tutorial-holopad-r17-crew-b-2 = I bardzo dobrze, bo reszty nauczą cię ludzie, 
 tutorial-holopad-r17-crew-c = Zapytaj inżyniera, jak działa silnik, a nie przestanie mówić przez dwie zmiany. Kucharz pokaże ci przepisy, których nie ma w żadnym poradniku.
 tutorial-holopad-r17-crew-c-2 = A ktoś w barze wytłumaczy ci wszystko, co dziś zostało niejasne.
 tutorial-holopad-r17-crew-d = Najlepszych rzeczy na tej stacji nie ma w dokumentacji. Są w załodze. Idź i je z niej wyciągnij.
-tutorial-holopad-r17-e = Na stole stoi teczka, a w niej dokument. Obok leży długopis. Wyjmij umowę i złóż na niej podpis.
-tutorial-holopad-r17-e-2 = Dowolny, i tak nikt go z niczym nie porównuje.
-tutorial-holopad-r17-f = Drobny druk jest naprawdę drobny. Szczerze odradzam czytanie. I proszę umowy nie zjadać. Zdarzało się dwa razy.
+tutorial-holopad-r17-e = Dobra, dość pogawędek. Tam, na końcu stołu, leży teczka, a w niej dokument. Wyjmij umowę i złóż podpis długopisem.
+tutorial-holopad-r17-e-2 = I proszę jej nie zjadać. Zdarzało się dwa razy.
 
 tutorial-holopad-finale = Statystycznie rzecz biorąc, nie zobaczymy się ponownie. No to cóż, powodzenia!
 

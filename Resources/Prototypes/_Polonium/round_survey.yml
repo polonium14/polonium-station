@@ -1,0 +1,162 @@
+- type: roundSurveyQuestion
+  id: RoundRating
+  text: round-survey-question-rating
+  low: round-survey-answer-bad
+  high: round-survey-answer-great
+  always: true
+  order: 0
+  followUps:
+  - text: round-survey-follow-up-rating
+    from: 1
+    to: 3
+    reasons:
+    - NothingToDo
+    - NothingHappened
+    - OutEarly
+    - Antags
+    - TooChaotic
+    - OtherPlayers
+    - NoTeamwork
+    - Admins
+    - Bugs
+    - Other
+
+- type: roundSurveyQuestion
+  id: RoundPace
+  text: round-survey-question-pace
+  low: round-survey-answer-calm
+  high: round-survey-answer-chaotic
+  target: 3
+  always: true
+  order: 1
+
+- type: roundSurveyQuestion
+  id: AntagStrength
+  text: round-survey-question-antags
+  low: round-survey-answer-too-weak
+  high: round-survey-answer-too-strong
+  target: 3
+  audience: Crew
+  needsAntags: true
+  order: 2
+
+- type: roundSurveyQuestion
+  id: OwnAntagStrength
+  text: round-survey-question-own-antag
+  low: round-survey-answer-own-too-weak
+  high: round-survey-answer-own-too-strong
+  target: 3
+  audience: Antag
+  weight: 3
+  order: 3
+
+- type: roundSurveyQuestion
+  id: DepartmentNeeded
+  text: round-survey-question-department
+  low: round-survey-answer-not-at-all
+  high: round-survey-answer-very
+  audience: Crew
+  order: 4
+
+- type: roundSurveyQuestion
+  id: RoundLength
+  text: round-survey-question-length
+  low: round-survey-answer-too-short
+  high: round-survey-answer-too-long
+  target: 3
+  minTimeInRound: 1200
+  order: 5
+
+- type: roundSurveyQuestion
+  id: MemorableMoment
+  text: round-survey-question-memorable
+  low: round-survey-answer-no
+  high: round-survey-answer-yes
+  yesNo: true
+  order: 6
+
+- type: roundSurveyReason
+  id: NothingToDo
+  name: round-survey-reason-nothing-to-do
+
+- type: roundSurveyReason
+  id: NothingHappened
+  name: round-survey-reason-nothing-happened
+
+- type: roundSurveyReason
+  id: OutEarly
+  name: round-survey-reason-out-early
+
+- type: roundSurveyReason
+  id: Antags
+  name: round-survey-reason-antags
+
+- type: roundSurveyReason
+  id: TooChaotic
+  name: round-survey-reason-too-chaotic
+
+- type: roundSurveyReason
+  id: OtherPlayers
+  name: round-survey-reason-other-players
+
+- type: roundSurveyReason
+  id: NoTeamwork
+  name: round-survey-reason-no-teamwork
+
+- type: roundSurveyReason
+  id: Admins
+  name: round-survey-reason-admins
+
+- type: roundSurveyReason
+  id: Bugs
+  name: round-survey-reason-bugs
+
+- type: roundSurveyReason
+  id: Other
+  name: round-survey-reason-other
+
+- type: roundSurveyTopic
+  id: Antags
+  name: round-survey-topic-antags
+  order: 0
+
+- type: roundSurveyTopic
+  id: Events
+  name: round-survey-topic-events
+  order: 1
+
+- type: roundSurveyTopic
+  id: Department
+  name: round-survey-topic-department
+  order: 2
+
+- type: roundSurveyTopic
+  id: Map
+  name: round-survey-topic-map
+  order: 3
+
+- type: roundSurveyTopic
+  id: Bug
+  name: round-survey-topic-bug
+  order: 4
+
+- type: roundSurveyTopic
+  id: Other
+  name: round-survey-topic-other
+  order: 5
+
+- type: roundSurveyPlayerGroup
+  id: RoundSurveyPlayers0
+  min: 0
+
+- type: roundSurveyPlayerGroup
+  id: RoundSurveyPlayers15
+  min: 15
+
+- type: roundSurveyPlayerGroup
+  id: RoundSurveyPlayers30
+  min: 30
+
+- type: roundSurveyPlayerGroup
+  id: RoundSurveyPlayers45
+  min: 45

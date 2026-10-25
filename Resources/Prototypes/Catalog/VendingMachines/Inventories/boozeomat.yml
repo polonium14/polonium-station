@@ -97,6 +97,11 @@
     DrinkVoltaicYellowWineBottleFull: 3 # readded missing drinks - Yaket
     DrinkHakkaMateCan: 5  # readded missing drinks - Yaket
     DrinkMelonSodaCan: 5  # readded missing drinks - Yaket
+    # 🇵🇱 Polonium: polskie napoje z NSV13
+    DrinkAmarenaBottleFull: 5
+    DrinkMocnyFull: 6
+    DrinkTymbarkBottle: 6
+    DrinkHelenkaCan: 6
   contrabandInventory:
     ChemistryBottleEthanol: 3
     DrinkBottleOfNothingFull: 1

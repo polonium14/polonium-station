@@ -7,6 +7,10 @@ suit-sensor-mode-cords = Współrzędne
 
 ## Descriptions
 
+suit-sensor-description-off = Nic nie jest zgłaszane stacji.
+suit-sensor-description-binary = Śmierć noszącego jest zgłaszana stacji.
+suit-sensor-description-vitals = Ogólny stan zdrowia noszącego jest zgłaszany stacji.
+suit-sensor-description-cords = Stan zdrowia i położenie noszącego są zgłaszane stacji.
 
 ## Popups
 

@@ -12,3 +12,5 @@ secretplus-admeme-description = If it can happen, it will.
 
 survivalplus-title = Survival+
 survivalplus-description = Starts pretty calm. Ends up not quite.
+
+secretplus-rule-skipped-not-enough-ready-players = SecretPlus: Skipped rule { $ruleName }: requires { $minimumPlayers } players, but only { $readyPlayersCount } are ready. This rule does not cancel the round start.

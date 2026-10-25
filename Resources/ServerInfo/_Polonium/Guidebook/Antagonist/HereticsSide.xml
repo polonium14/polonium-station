@@ -1,32 +1,32 @@
 <Document>
-  # Side Knowledge
+  # Wiedza poboczna
 
-  ## Wildering Mirror
+  ## Zwodnicze lustro
   <Box>
     <GuideEntityEmbed Entity="HereticMirror" Caption=""/>
   </Box>
-  Allows you to transmute a pair of eyes, a light bulb, and a crowbar into a Wildering Mirror.
+  Pozwala przemienić parę oczu, żarówkę i łom w Zwodnicze lustro.
 
-  The Wildering Mirror has a high chance to reflect energy weapons such as disablers when it is held.
+  Trzymane Zwodnicze lustro ma dużą szansę odbić broń energetyczną, na przykład ogłuszacz.
 
-  ## Armorer’s Ritual
+  ## Rytuał zbrojmistrza
   <Box>
     <GuideEntityEmbed Entity="ClothingOuterArmorHeretic" Caption=""/>
   </Box>
-  Allows you to transmute a table and a gas mask to create Eldritch Armor.
+  Pozwala przemienić stół i maskę przeciwgazową w mroczną zbroję.
 
-  Eldritch Armor provides great protection while also acting as a focus when hooded.
+  Mroczna zbroja daje solidną ochronę i działa jako ognisko, gdy kaptur jest podniesiony.
 
-  ## Priest’s Ritual
+  ## Rytuał kapłana
   <Box>
     <GuideEntityEmbed Entity="HereticEldritchFlask" Caption=""/>
   </Box>
-  Allows you to transmute a water tank and a shard of glass into an Eldritch Flask.
+  Pozwala przemienić zbiornik wody i odłamek szkła w mroczną kolbę.
 
-  This flask contains Omnizine as well as anti-bleeding chemicals.
- 
-  ## Ritual of Knowledge
-  You learn a special ritual that requires 4 random items, ranging from various organs to candles and stun batons.
+  W kolbie jest omnizyna oraz środki przeciwkrwotoczne.
 
-  Performing this ritual grants you 4 knowledge points and resets the items needed.
+  ## Rytuał wiedzy
+  Uczysz się specjalnego rytuału, który wymaga 4 losowych przedmiotów, od różnych organów po świece i pałki ogłuszające.
+
+  Odprawienie tego rytuału daje 4 punkty wiedzy i losuje potrzebne przedmioty od nowa.
 </Document>

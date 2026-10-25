@@ -42,3 +42,4 @@ names-wizard-first-dataset-41 = Yredelemnul
 names-wizard-first-dataset-42 = Yodalf
 names-wizard-first-dataset-43 = Zartemis
 names-wizard-first-dataset-44 = Zin
+names-wizard-first-dataset-45 = Molowarus

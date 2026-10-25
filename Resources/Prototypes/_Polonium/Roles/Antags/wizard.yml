@@ -1,0 +1,10 @@
+- type: startingGear
+  id: WizardLowpopGear
+  parent: WizardBlueGear
+  equipment:
+    pocket2: WizardsGrimoireLowpop
+
+- type: antagSpecifier
+  parent: Wizard
+  id: WizardLowpop
+  startingGear: WizardLowpopGear

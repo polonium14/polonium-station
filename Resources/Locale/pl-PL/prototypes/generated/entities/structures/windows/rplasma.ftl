@@ -5,3 +5,6 @@ ent-PlasmaReinforcedWindowDirectional = kierunkowe okno plazmowe wzmocnione
 ent-ReinforcedPlasmaWindowDiagonal = { ent-ReinforcedPlasmaWindow }
     .suffix = diagonalne
     .desc = { ent-ReinforcedPlasmaWindow.desc }
+ent-PlasmaReinforcedWindowDirectionalCorner = { ent-PlasmaReinforcedWindowDirectional }
+    .suffix = Róg
+    .desc = { ent-PlasmaReinforcedWindowDirectional.desc }

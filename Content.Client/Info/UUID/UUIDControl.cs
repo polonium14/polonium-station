@@ -1,39 +1,25 @@
 using Content.Shared.CCVar;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
+using Robust.Shared.IoC;
+using Robust.Shared.Localization;
 
 namespace Content.Client.Info.UUID;
 
 // ReSharper disable once InconsistentNaming
-public sealed class UUIDControl : BoxContainer
+public sealed class UUIDControl : Button
 {
     private UUIDWindow? _uuidWindow;
     private readonly IConfigurationManager _cfg;
-    private readonly Button _uuidButton;
 
     public UUIDControl()
     {
         _cfg = IoCManager.Resolve<IConfigurationManager>();
 
-        var buttons = new BoxContainer
-        {
-            Orientation = LayoutOrientation.Horizontal,
-        };
-        AddChild(buttons);
+        Text = Loc.GetString("server-info-uuid-button");
+        Visible = false;
 
-        _uuidButton = new Button
-        {
-            // ReSharper disable once StringLiteralTypo
-            Text = "Pokaż UUID",
-            TextAlign = Label.AlignMode.Center,
-            ClipText = false,
-            VerticalExpand = false,
-            Margin = new Thickness(3, 3, 3, 3),
-            Visible = false,
-        };
-
-        _uuidButton.OnPressed += _ => ToggleUUIDWindow();
-        buttons.AddChild(_uuidButton);
+        OnPressed += _ => ToggleUUIDWindow();
     }
 
     protected override void EnteredTree()
@@ -50,7 +36,6 @@ public sealed class UUIDControl : BoxContainer
 
     private void OnShowUUIDChanged(bool show)
     {
-        _uuidButton.Visible = show;
         Visible = show;
     }
 

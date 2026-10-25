@@ -8,6 +8,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Systems;
 using Content.Shared.Buckle.Components;
+using Content.Shared.Rejuvenate;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
@@ -30,6 +31,14 @@ public sealed partial class UnfinishedSurgeryPenaltySystem : EntitySystem
 
         SubscribeLocalEvent<BodyComponent, UnbuckledEvent>(OnUnbuckled);
         SubscribeLocalEvent<UnfinishedSurgeryPenaltyComponent, BleedModifierEvent>(OnBleedModifier);
+        SubscribeLocalEvent<UnfinishedSurgeryPenaltyComponent, RejuvenateEvent>(OnRejuvenate);
+    }
+
+    private void OnRejuvenate(Entity<UnfinishedSurgeryPenaltyComponent> ent, ref RejuvenateEvent args)
+    {
+        // BloodstreamSystem clears the bleeding itself. Drop the tracking immediately so
+        // future bleeding cannot inherit the old surgery penalty's protection from clotting.
+        RemComp<UnfinishedSurgeryPenaltyComponent>(ent);
     }
 
     private void OnUnbuckled(Entity<BodyComponent> ent, ref UnbuckledEvent args)

@@ -59,7 +59,7 @@ ent-ComputerCargoOrdersScience = komputer zamówień działu badań
     .desc = Służy do zamawiania zapasów przez dział badań.
 ent-ComputerCargoOrdersSecurity = komputer zamówień działu ochrony
     .desc = Służy do zamawiania zapasów przez dział ochrony.
-ent-ComputerCargoOrdersService = komputer zamówień działu obsługi
+ent-ComputerCargoOrdersService = komputer zamówień działu serwisowego
     .desc = Używany przez dział serwisowy do zamawiania materiałów eksploatacyjnych.
 ent-ComputerCargoBounty = komputer nagród logistycznych
     .desc = Służy do zarządzania aktualnie aktywnymi nagrodami.
@@ -96,3 +96,10 @@ ent-ComputerNukieDelivery = komputer dostawy syndykatu
     .desc =
         Komputer umożliwiający korzystanie z funkcji „bluespace” w niektórych urządzeniach przeznaczonych do operacji jądrowych. 
         Płytka drukowana jest zintegrowana z obudową i nie można jej odzyskać w przypadku demontażu urządzenia.
+ent-ComputerStationTeleportersControl = konsola sterowania teleporterami stacji
+    .desc = Służy do monitorowania pracy systemu teleportacji stacji.
+ent-ComputerStationTeleportersControlFilled = { ent-ComputerStationTeleportersControl }
+    .suffix = Automatycznie wypełnione, Sieć Nanotrasen
+    .desc = { ent-ComputerStationTeleportersControl.desc }
+ent-ComputerSyndicateTeleportersControl = konsola sterowania teleporterami Syndykatu
+    .desc = { ent-ComputerStationTeleportersControl.desc }

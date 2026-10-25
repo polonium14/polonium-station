@@ -7,5 +7,5 @@ guidebook-filter-placeholder-text = Filtruj elementy
 guidebook-toc-header = Spis treści
 guidebook-parser-error = Błąd przetwarzania
 guidebook-error-message = Komunikat błędu
-guidebook-monkey-unspin = Unspin Monkey
-guidebook-monkey-disco = Disco Monkey
+guidebook-monkey-unspin = Zatrzymaj małpę
+guidebook-monkey-disco = Dyskotekowa małpa

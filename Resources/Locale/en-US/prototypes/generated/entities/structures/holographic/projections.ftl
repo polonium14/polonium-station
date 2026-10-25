@@ -10,3 +10,5 @@ ent-HolosignSecurity = holographic barrier
     .desc = A barrier of hard light that blocks movement, but pretty weak.
 ent-HolosignForcefield = holographic force field
     .desc = A powerful temporal containment field that doesn't let anything through, not even a tesla or singularity.
+ent-XenoborgDeflectorField = deflector field
+    .desc = An energy matrix, comprised of interlocking fields that deflect projectiles. Powerful, but short-lived.

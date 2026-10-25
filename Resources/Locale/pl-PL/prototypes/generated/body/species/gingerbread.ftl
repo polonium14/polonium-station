@@ -1,9 +1,9 @@
-ent-AppearanceGingerbread = gingerbread appearance
+ent-AppearanceGingerbread = wygląd piernikowego ludzika
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobGingerbread = Urist McCiasteczko
     .desc = { ent-AppearanceGingerbread.desc }
 ent-OrganGingerbread = { ent-OrganBaseOrganic }
-    .suffix = gingerbread
+    .suffix = piernikowy ludzik
     .desc = { ent-OrganBaseOrganic.desc }
 ent-OrganGingerbreadExternal = { ent-OrganGingerbread }
     .desc = { ent-OrganGingerbread.desc }

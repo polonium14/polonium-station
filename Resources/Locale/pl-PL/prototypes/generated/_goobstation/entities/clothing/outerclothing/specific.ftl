@@ -1,4 +1,4 @@
 ent-SurveillanceWirelessCameraBodyEntertainment = kamera nopro
     .desc = Kamera na ciele. Patrzy na ciebie.
-ent-SurveillanceWirelessCameraBodySecurity = bodycam ochrony
+ent-SurveillanceWirelessCameraBodySecurity = kamera nasobna ochrony
     .desc = Kamera na ciele. Patrzy na ciebie.

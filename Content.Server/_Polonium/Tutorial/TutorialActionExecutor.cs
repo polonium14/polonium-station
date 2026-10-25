@@ -130,6 +130,10 @@ public sealed partial class TutorialActionExecutor : EntitySystem
                 _mentor.DropBriefing(player);
                 break;
 
+            case RetireHolopadAction:
+                _mentor.Retire(player);
+                break;
+
             case ShotScoreAction score:
                 if (!instant)
                     ShotScore(player, score);

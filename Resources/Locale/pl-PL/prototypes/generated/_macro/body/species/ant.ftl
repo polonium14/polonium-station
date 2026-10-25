@@ -1,11 +1,11 @@
-ent-AppearanceAnt = ant appearance
+ent-AppearanceAnt = wygląd mrówki
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobAnt = Urist McAnt
     .desc = { ent-AppearanceAnt.desc }
 ent-SolutionAntEdible = { ent-SolutionFood }
     .desc = { ent-SolutionFood.desc }
 ent-OrganAnt = { ent-OrganBase }
-    .suffix = Ant
+    .suffix = Mrówka
     .desc = { ent-OrganBase.desc }
 ent-OrganAntInternal = { ent-OrganAnt }
     .desc = { ent-OrganAnt.desc }

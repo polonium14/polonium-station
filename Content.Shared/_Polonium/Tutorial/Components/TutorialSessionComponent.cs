@@ -99,4 +99,7 @@ public sealed partial class TutorialSessionComponent : Component
 
     [ViewVariables]
     public EntityUid? MentorUid;
+
+    [ViewVariables]
+    public bool MentorRetired;
 }

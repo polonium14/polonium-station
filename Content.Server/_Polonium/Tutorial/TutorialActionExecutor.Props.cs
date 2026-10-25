@@ -5,7 +5,6 @@ using Content.Server.Wires;
 using Content.Shared._Polonium.Tutorial.Actions;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Prototypes;
-using Content.Shared.Atmos.Rotting;
 using Content.Shared.Administration.Components;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
@@ -166,13 +165,11 @@ public sealed partial class TutorialActionExecutor
         {
             var npc = EnsureComp<TutorialNpcComponent>(spawned);
             npc.PreventDeath = preventDeath;
+
             _npcs.KeepAwake(spawned);
             _npcs.SatiateAndIdle(spawned);
 
-            // a patient meant to be brought back must not start decomposing while the trainee reads
-            // the holopad - a rotten body refuses the defibrillator for good
-            if (!markDeadPatient)
-                RemComp<PerishableComponent>(spawned);
+            _npcs.StopRot(spawned);
         }
 
         if (markDeadPatient)

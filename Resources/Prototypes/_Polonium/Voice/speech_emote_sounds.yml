@@ -15,3 +15,44 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MothDeathGasp
+
+- type: emoteSounds
+  id: ReplicatorColossus
+  params:
+    variation: 0.12
+    maxDistance: 30
+  sounds:
+    Scream:
+      collection: ReplicatorColossusScreams
+    Laugh:
+      collection: XenoborgLaugh
+    Beep:
+      collection: XenoborgBeep
+    Chime:
+      collection: XenoborgChime
+    Buzz:
+      collection: XenoborgBuzz
+    Buzz-Two:
+      collection: XenoborgBuzzTwo
+    Ping:
+      collection: XenoborgPing
+
+- type: emoteSounds
+  id: HonkClown
+  params:
+    variation: 0.08
+  sounds:
+    Scream:
+      collection: HonkClownHorns
+    HonkClownWail:
+      collection: HonkClownHorns
+
+- type: emoteSounds
+  id: HonkClownBlob
+  params:
+    variation: 0.05
+  sounds:
+    Scream:
+      collection: HonkClownBlobScream
+    HonkClownWail:
+      collection: HonkClownHorns

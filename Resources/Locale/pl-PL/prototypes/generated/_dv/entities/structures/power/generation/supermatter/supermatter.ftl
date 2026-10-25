@@ -1,7 +1,7 @@
 ent-BaseSupermatter = { "" }
     .desc = { "" }
-ent-Supermatter = supermatter crystal
-    .desc = A strangely translucent and iridescent crystal.
-ent-SupermatterDecorative = supermatter crystal
-    .desc = A strangely translucent and iridescent crystal. On closer inspection, it's made of sugar.
-    .suffix = decorative
+ent-Supermatter = kryształ supermaterii
+    .desc = Dziwnie półprzezroczysty i opalizujący kryształ.
+ent-SupermatterDecorative = kryształ supermaterii
+    .desc = Dziwnie półprzezroczysty i opalizujący kryształ. Z bliska widać, że jest zrobiony z cukru.
+    .suffix = dekoracyjny

@@ -1,1 +1,1 @@
-command-description-unpolymorph = Reverts a polymorph.
+command-description-unpolymorph = Cofa polimorfię.

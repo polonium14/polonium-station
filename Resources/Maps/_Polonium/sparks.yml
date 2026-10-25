@@ -67557,7 +67557,7 @@ entities:
     - type: Transform
       parent: 2
       pos: 83.71693,28.307678
-- proto: WeaponDisabler
+- proto: WeaponTaser
   entities:
   - uid: 8937
     components:

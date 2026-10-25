@@ -42,6 +42,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - [color=#7ee8f7]Magnetyczne buty[/color]: Zapewniają ci przyczepność podczas eksplorowania kosmicznych szczątków, a dodatkowo chronią przed poślizgnięciem się..
   - [color=#7ee8f7]Tlen/Azot[/color]: W zależności od twojego gatunku, będziesz potrzebował [color=#7ee8f7]Azotu[/color] (szlamy i voxy) albo [color=#7ee8f7]Tlenu[/color] (każda inna rasa). [color=#7ee8f7]Dystrybutor zbiorników gazu[/color] posiada wszystkie potrzebne butle, więc zaopatrz się odpowiednio. Uważaj jednak wahadłowiec działu odzysku nie zawsze ma atmosferę, więc możesz zacząć się dusić jeszcze zanim dotrzesz w przestrzeń kosmiczną.
 
+  Droższą alternatywą dla skafandra jest [textlink="R.I.G. górniczy" link="RIG"], modułowy kombinezon składany przez robotyka.
+
   <Box>
     <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
   </Box>

@@ -170,6 +170,9 @@ public sealed partial class FootprintSystem : EntitySystem
         if (transferAmount < component.MinPrintVolume)
             return;
 
+        if (_puddle.IsStuckResidue(ownerSolution.Value.Comp.Solution))
+            return;
+
         if (!TryGetAnchoredFootprint(gridUid, grid, tile, out var printUid, out var printComp))
         {
             printUid = Spawn(FootprintEntityId, coords);

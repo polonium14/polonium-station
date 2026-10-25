@@ -1,0 +1,10 @@
+- type: localizedDataset
+  id: AdjectivesFeminine
+  values:
+    prefix: adjectives-feminine-dataset-
+    count: 422
+
+- type: nameIdentifierGroup
+  id: AdjectivePrefixFeminine
+  identifierDataset: AdjectivesFeminine
+  prefix: true

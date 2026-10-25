@@ -1,59 +1,59 @@
 entity-condition-guidebook-total-satiation =
     { $max ->
-        [2147483648] the target has at least { NATURALFIXED($min, 2) } total { $type }
+        [2147483648] cel ma łącznie co najmniej { NATURALFIXED($min, 2) } { $type }
        *[other]
             { $min ->
-                [0] the target has at most { NATURALFIXED($max, 2) } total { $type }
-               *[other] the target has between { NATURALFIXED($min, 2) } and { NATURALFIXED($max, 2) } total { $type }
+                [0] cel ma łącznie co najwyżej { NATURALFIXED($max, 2) } { $type }
+               *[other] cel ma łącznie od { NATURALFIXED($min, 2) } do { NATURALFIXED($max, 2) } { $type }
             }
     }
 entity-condition-guidebook-reagent-threshold =
     { $max ->
-        [2147483648] there's at least { NATURALFIXED($min, 2) }u of { $reagent }
+        [2147483648] jest co najmniej { NATURALFIXED($min, 2) }u reagentu { $reagent }
        *[other]
             { $min ->
-                [0] there's at most { NATURALFIXED($max, 2) }u of { $reagent }
-               *[other] there's between { NATURALFIXED($min, 2) }u and { NATURALFIXED($max, 2) }u of { $reagent }
+                [0] jest co najwyżej { NATURALFIXED($max, 2) }u reagentu { $reagent }
+               *[other] jest od { NATURALFIXED($min, 2) }u do { NATURALFIXED($max, 2) }u reagentu { $reagent }
             }
     }
-entity-condition-guidebook-mob-state-condition = the mob is { $state }
-entity-condition-guidebook-job-condition = the target's job is { $job }
+entity-condition-guidebook-mob-state-condition = mob jest w stanie: { $state }
+entity-condition-guidebook-job-condition = zawód celu to { $job }
 entity-condition-guidebook-body-temperature =
-    the body's temperature is { $max ->
-        [2147483648] at least { NATURALFIXED($min, 2) }k
+    temperatura ciała wynosi { $max ->
+        [2147483648] co najmniej { NATURALFIXED($min, 2) }k
        *[other]
             { $min ->
-                [0] at most { NATURALFIXED($max, 2) }k
-               *[other] between { NATURALFIXED($min, 2) }k and { NATURALFIXED($max, 2) }k
+                [0] co najwyżej { NATURALFIXED($max, 2) }k
+               *[other] od { NATURALFIXED($min, 2) }k do { NATURALFIXED($max, 2) }k
             }
     }
 entity-condition-guidebook-organ-type =
-    the metabolizing organ { $shouldhave ->
-        [true] is
-       *[false] is not
-    } { INDEFINITE($name) } { $name } organ
+    metabolizujący narząd { $shouldhave ->
+        [true] jest
+       *[false] nie jest
+    } narządem typu { $name }
 entity-condition-guidebook-has-tag =
-    the target { $invert ->
-        [true] does not have
-       *[false] has
-    } the tag { $tag }
+    cel { $invert ->
+        [true] nie ma
+       *[false] ma
+    } tag { $tag }
 entity-condition-guidebook-breathing =
-    the metabolizer is { $isBreathing ->
-        [true] breathing normally
-       *[false] suffocating
+    metabolizujący { $isBreathing ->
+        [true] oddycha normalnie
+       *[false] się dusi
     }
 entity-condition-guidebook-internals =
-    the metabolizer is { $usingInternals ->
-        [true] using internals
-       *[false] breathing atmospheric air
+    metabolizujący { $usingInternals ->
+        [true] korzysta z butli z powietrzem
+       *[false] oddycha powietrzem atmosferycznym
     }
-entity-condition-guidebook-unknown-reagent = unknown reagent in bloodstream
+entity-condition-guidebook-unknown-reagent = nieznany reagent we krwi
 entity-condition-guidebook-blood-reagent-threshold =
     { $max ->
-        [2147483648] bloodstream has at least { NATURALFIXED($min, 2) }u of { $reagent }
+        [2147483648] we krwi jest co najmniej { NATURALFIXED($min, 2) }u reagentu { $reagent }
        *[other]
             { $min ->
-                [0] bloodstream has at most { NATURALFIXED($max, 2) }u of { $reagent }
-               *[other] bloodstream has between { NATURALFIXED($min, 2) }u and { NATURALFIXED($max, 2) }u of { $reagent }
+                [0] we krwi jest co najwyżej { NATURALFIXED($max, 2) }u reagentu { $reagent }
+               *[other] we krwi jest od { NATURALFIXED($min, 2) }u do { NATURALFIXED($max, 2) }u reagentu { $reagent }
             }
     }

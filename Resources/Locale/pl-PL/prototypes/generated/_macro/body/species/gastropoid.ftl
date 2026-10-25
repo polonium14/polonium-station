@@ -1,4 +1,4 @@
-ent-AppearanceGastropoid = gastropoid appearance
+ent-AppearanceGastropoid = wygląd gastropoida
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobGastropoid = Uristsiru McShell
     .desc = { ent-AppearanceGastropoid.desc }

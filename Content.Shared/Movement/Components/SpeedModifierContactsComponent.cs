@@ -33,4 +33,10 @@ public sealed partial class SpeedModifierContactsComponent : Component
     /// </summary>
     [DataField]
     public EntityWhitelist? IgnoreWhitelist;
+    /// <summary>
+    /// A whitelist of entities that should be included.
+    /// Do not use it together with <see cref="IgnoreWhitelist"/>.
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? Whitelist;
 }

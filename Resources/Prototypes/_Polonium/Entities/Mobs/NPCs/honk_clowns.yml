@@ -1,0 +1,641 @@
+- type: entity
+  abstract: true
+  parent: SimpleSpaceMobBase
+  id: BaseMobHonkClown
+  suffix: Honk
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: crit
+      Dead:
+        Base: crit
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4.5
+  - type: MeleeWeapon
+    angle: 90
+    animation: WeaponArcBite
+    soundHit:
+      collection: Punch
+    damage:
+      types:
+        Blunt: 8.75
+  - type: NoSlip
+  - type: FixtureRadiusOnDeath
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 150
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.15
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepClown
+  - type: Speech
+    speechVerb: Cluwne
+    allowedEmotes: ['Scream', 'HonkClownWail']
+  - type: Vocal
+    emoteSounds: HonkClown
+    wilhelmProbability: 0
+  - type: Emoting
+  - type: AutoEmote
+    emotes:
+    - HonkClownWail
+  - type: GhostRole
+    prob: 0.3
+    makeSentient: true
+    name: ghost-role-information-honk-clown-name
+    description: ghost-role-information-honk-clown-description
+    rules: ghost-role-information-honk-clown-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
+  - type: SpawnOnGib
+    spawn:
+    - id: OrganHumanHeart
+    - id: OrganHumanLungs
+    - id: OrganHumanLiver
+    - id: OrganHumanStomach
+    - id: OrganHumanKidneys
+    - id: ClothingMaskClown
+      prob: 0.5
+
+- type: entity
+  abstract: true
+  parent: BaseMobHonkClown
+  id: BaseMobHonkClownHp150
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      94: Critical
+      110: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 220
+      behaviors:
+      - !type:GibBehavior { }
+
+- type: entity
+  abstract: true
+  parent: BaseMobHonkClown
+  id: BaseMobHonkClownHp100
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      63: Critical
+      74: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 148
+      behaviors:
+      - !type:GibBehavior { }
+
+- type: entity
+  abstract: true
+  parent: BaseMobHonkClown
+  id: BaseMobHonkClownHp180
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      112: Critical
+      132: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 264
+      behaviors:
+      - !type:GibBehavior { }
+
+- type: entity
+  abstract: true
+  parent: BaseMobHonkClown
+  id: BaseMobHonkClownHp234
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      147: Critical
+      173: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 346
+      behaviors:
+      - !type:GibBehavior { }
+
+- type: entity
+  abstract: true
+  parent: BaseMobHonkClown
+  id: BaseMobHonkClownHp252
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      157: Critical
+      185: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 370
+      behaviors:
+      - !type:GibBehavior { }
+
+- type: entity
+  parent: BaseMobHonkClownHp180
+  id: MobHonkBananaTree
+  name: bananowy honkodrzew
+  description: Drzewo, które ni stąd, ni zowąd nauczyło się chodzić. Pod stopami zostawia po sobie skórki.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/banana_tree.rsi
+    offset: 0, 0.5
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.32
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/banana_tree.rsi
+  - type: TimedSpawner
+    prototypes:
+    - TrashBananaPeel
+    - TrashBananaPeelHonkMine
+    intervalSeconds: 60
+
+- type: entity
+  parent: BaseMobHonkClownHp100
+  id: MobHonkLube
+  name: honkoślizg
+  description: Niebieski klaun, z którego cały czas coś kapie. Lepiej go nie dotykać, a jeszcze lepiej przez niego nie przechodzić.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/lube.rsi
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 0.74
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/lube.rsi
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.875
+    baseSprintSpeed: 5.175
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 3
+  - type: HTN
+    rootTask:
+      task: IdleCompound
+  - type: Slippery
+    slipData:
+      launchForwardsMultiplier: 2
+  - type: StepTrigger
+    intersectRatio: 0.2
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+      slips:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        hard: false
+        layer:
+        - SlipLayer
+
+- type: entity
+  parent: BaseMobHonkClownHp180
+  id: MobHonkFleshClown
+  name: honkomięs
+  description: Różowy kształt, który kiedyś mógł być klaunem. Teraz honka wilgotno.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/flesh_clown.rsi
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.32
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/flesh_clown.rsi
+  - type: Vocalizer
+    minVocalizeInterval: 1m
+    maxVocalizeInterval: 3m
+  - type: DatasetVocalizer
+    dataset: HonkClownPhrases
+
+- type: entity
+  parent: BaseMobHonkClownHp180
+  id: MobHonkPieSpewer
+  name: honkoplut
+  description: Przepaskudnie otyły klaun z paszczą pełną ciast. Wyrzyguje je prosto w twarz.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/pie_spewer.rsi
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.32
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/pie_spewer.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+  - type: HTN
+    rootTask:
+      task: HonkPieSpewerCompound
+  - type: BatteryAmmoProvider
+    proto: FoodPieBananaCream
+    fireCost: 100
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: BatterySelfRecharger
+    autoRechargeRate: 25
+  - type: Gun
+    fireRate: 0.25
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Effects/thunk.ogg
+
+- type: entity
+  parent: BaseMobHonkClownHp150
+  id: MobHonkClown
+  name: zdziczały honkarz
+  description: Wygląda niemal zwyczajnie. Ten uśmiech jednak nie powinien tak długo trwać.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/clown.rsi
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.1
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/clown.rsi
+  - type: Vocalizer
+    minVocalizeInterval: 1m
+    maxVocalizeInterval: 3m
+  - type: DatasetVocalizer
+    dataset: HonkClownPhrases
+
+- type: entity
+  parent: BaseMobHonkClownHp180
+  id: MobHonkThin
+  name: honkowa tyczka
+  description: Wyciągnięty jak struna klaun, który zmieści się w każdym korytarzu i w każdym koszmarze.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/c_thin.rsi
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.32
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/c_thin.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 2
+
+- type: entity
+  parent: BaseMobHonkClownHp234
+  id: MobHonkHonkhulk
+  name: honkhulk
+  description: Półtora raza większy od najwyższego z załogi, a mimo to na piersi wypisał tylko jedno słowo. HONK.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/honkhulk.rsi
+    offset: 0, 0.5
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.73
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/honkhulk.rsi
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.25
+    baseSprintSpeed: 4.05
+  - type: MeleeWeapon
+    animation: WeaponArcFist
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.6
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHonkhulk
+
+- type: entity
+  parent: BaseMobHonkClownHp180
+  id: MobHonkHonkmunculus
+  name: honkunkulus
+  description: Blady, długoręki twór sklejony ze śmiechu i pustych balonów. Chodzi tak, jakby ktoś go nauczył z opisu.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/honkmunculus.rsi
+    offset: 0, 0.5
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.32
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/honkmunculus.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.5
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHonkmunculus
+  - type: Vocalizer
+    minVocalizeInterval: 1m
+    maxVocalizeInterval: 3m
+  - type: DatasetVocalizer
+    dataset: HonkClownPhrases
+
+- type: entity
+  parent: BaseMobHonkClownHp180
+  id: MobHonkChlown
+  name: honkmistrz
+  description: Postarzały siłacz z cyrku, którego nikt nigdy nie odwołał z areny. Wciąż macha rękami do publiczności, której nie ma.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/chlown.rsi
+    offset: 0, 0.5
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.32
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/chlown.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.5
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Vocalizer
+    minVocalizeInterval: 1m
+    maxVocalizeInterval: 3m
+  - type: DatasetVocalizer
+    dataset: HonkClownPhrases
+
+- type: entity
+  parent: BaseMobHonkClownHp252
+  id: MobHonkDestroyer
+  name: honkoniszczyciel
+  description: Złoty hełm z bananą, zakrwawione łapska i kroki, które czuć w żołądku. Honk jest ostatnim, co usłyszysz.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/destroyer.rsi
+    offset: 0, 0.5
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.85
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/destroyer.rsi
+  - type: MeleeWeapon
+    animation: WeaponArcFist
+    damage:
+      types:
+        Blunt: 10.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.6
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHonkhulk
+
+- type: entity
+  parent: BaseMobHonkClownHp180
+  id: MobHonkMutant
+  name: honkomutant
+  description: Skóra pęka mu w szwach, a z ramienia wystaje coś, co przypomina łańcuch. Nikt nie chce wiedzieć, skąd się wzięło.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/mutant.rsi
+    offset: 0, 0.5
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.32
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/mutant.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 10.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.5
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+- type: entity
+  parent: BaseMobHonkClownHp234
+  id: MobHonkBlob
+  name: honkblob
+  description: Wielki, miękki worek z szeroką gębą i dwoma pomarańczowymi kępkami. Wszystko, co jadalne, zniknie w tej paszczy.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/blob.rsi
+    offset: 0, 0.5
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.73
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/blob.rsi
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3.6
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.6
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHonkBlob
+  - type: HTN
+    rootTask:
+      task: RuminantHostileCompound
+  - type: IgnoreBadFood
+  - type: Vocal
+    emoteSounds: HonkClownBlob
+    emoteAction: ActionHonkBlobScream
+
+- type: entity
+  parent: BaseMobHonkClownHp180
+  id: MobHonkHonkling
+  name: honklinek
+  description: Za duża głowa, nos jak czerwona kula i uśmiech, który nie schodzi. Honkling nigdy nie przestaje się cieszyć.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/honkling.rsi
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.32
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/honkling.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Vocalizer
+    minVocalizeInterval: 1m
+    maxVocalizeInterval: 3m
+  - type: DatasetVocalizer
+    dataset: HonkClownPhrases
+
+- type: entity
+  parent: BaseMobHonkClownHp180
+  id: MobHonkLongFace
+  name: honkogęba
+  description: Wszystko, co ma, to zęby i brwi. Reszta ledwo mu się mieści pod spodem.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/long_face.rsi
+    offset: 0, 0.5
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.32
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/long_face.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.5
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+- type: entity
+  parent: BaseMobHonkClownHp234
+  id: MobHonkPunished
+  name: skazaniec honk
+  description: Wygląda jak ktoś, kto odrabia karę za coś bardzo śmiesznego. Rośnie z godziny na godzinę.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Clowns/c_punished.rsi
+    offset: 0, 0.5
+  - type: DamageVisuals
+    thresholds: [25, 50, 75, 85]
+    damageDivisor: 1.73
+    trackAllDamage: true
+    damageOverlay:
+      sprite: _Polonium/Mobs/Clowns/c_punished.rsi
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.375
+    baseSprintSpeed: 4.275
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Vocalizer
+    minVocalizeInterval: 1m
+    maxVocalizeInterval: 3m
+  - type: DatasetVocalizer
+    dataset: HonkClownPhrases

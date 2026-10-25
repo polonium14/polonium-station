@@ -35,6 +35,7 @@ public sealed class LoadoutTests : GameTest
 
 - type: job
   id: LoadoutTester
+  name: job-name-passenger
   playTimeTracker: PlayTimeLoadoutTester
 ";
 

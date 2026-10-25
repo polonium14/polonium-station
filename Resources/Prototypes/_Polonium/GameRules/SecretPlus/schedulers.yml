@@ -1,0 +1,200 @@
+# Reguły planisty SecretPlus, po jednej na preset.
+# Który preset bierze którą regułę i jak często Sekret go losuje, ustawia się w game_presets.yml (pole "moods").
+# Antagoniści startowi są w antags.yml, zdarzenia w event_tables.yml.
+#
+# Drabinka w skrócie, przy 20 graczach:
+#   Low      około 9% załogi to antagoniści, tylko ukryci,   około 10 zdarzeń, spokojne
+#            a w co piątej rundzie nie ma ich wcale
+#   Mid      11-13%, tryb głośny w jednej trzeciej rund      około 13 zdarzeń, spokojne i robocze, niszczące rzadko
+#   MidHigh  antagoniści jak w Mid                           około 17 zdarzeń, w tym około 2 niszczące
+#   High     17-19%, zawsze tryb głośny                      około 17 zdarzeń, w tym około 3 niszczące, duże meteory
+#
+# Co robią pola komponentu SecretPlus
+#   minStartingChaos, maxStartingChaos   budżet antagonistów na gotowego gracza. Im większy, tym więcej antagonistów
+#   livingChaosChange, deadChaosChange   chaos doliczany co sekundę za każdego żywego gracza i za każdego ducha.
+#                                        Im bardziej ujemne pierwsze pole, tym więcej zdarzeń zmieści się w rundzie
+#   chaosChangeVariationMin, Max         losowy mnożnik obu tych pól, losowany raz na rundę
+#   eventIntervalMin, eventIntervalMax   ile sekund mija między losowaniami zdarzeń
+#   disallowedEvents                     typy zdarzeń, których planista nie losuje nigdy
+#   noRoundstartAntagsChance             szansa na rundę bez antagonistów startowych. Budżet idzie wtedy na zdarzenia
+#   primaryAntagsWeightTable             tabela głównego antagonisty
+#   roundStartAntagsWeightTable          tabela, na którą idzie reszta budżetu antagonistów
+#   primaryAntagPicks                    ile reguł bierzemy z tabeli głównej przy danej liczbie gotowych graczy.
+#                                        Ułamek to szansa na jeszcze jedną, czyli 1.5 to jedna reguła i 50% na drugą
+#   guaranteedPrimaryAntags              reguły z tabeli głównej startują zawsze, nawet jak nie starcza na nie budżetu
+#   primaryAntagChaosShare               jaką część swojej ceny reguła z tabeli głównej zabiera z budżetu
+#   exclusiveRules                       reguły, które nie startują razem. Liczba to próg graczy, od którego już mogą
+#   ghostAntagRules                      tabela antagonistów z ról duchów
+#   ghostAntagLimit                      ilu ich może być w rundzie przy danej liczbie połączonych graczy
+#   ghostAntagInterval                   ile sekund do pierwszego, a potem między kolejnymi
+#   eventsCountAllPlayers                progi graczy w zdarzeniach liczą wszystkich połączonych, a nie samą żywą załogę
+#   eventSpeedByPlayers                  ile razy częściej przychodzą zdarzenia przy danej liczbie graczy. Interwał
+#                                        dzieli się przez ten mnożnik, żeby duża załoga nie dostawała tyle co mała
+#   lateAntagsFrom, lateAntagsUntil      okno (w sekundach rundy), w którym spóźnieni gracze mogą jeszcze dołączyć
+#                                        do zdrajców, złodziei i reguły Changeling, jeśli załoga urosła
+
+# ====================================================================================================
+# Drabinka
+# ====================================================================================================
+
+# Mid jest bazą drabinki. Low, MidHigh i High dziedziczą po nim i wypisują tylko to, co mają inaczej.
+- type: entity
+  id: SecretPlusMid
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SecretPlus
+    minStartingChaos: 20
+    maxStartingChaos: 28
+    livingChaosChange: -0.012
+    deadChaosChange: 0.020
+    chaosChangeVariationMin: 0.8
+    chaosChangeVariationMax: 1.3
+    eventIntervalMin: 240  # 4 min
+    eventIntervalMax: 600  # 10 min
+    disallowedEvents: [ FriendlySpawn ]
+    primaryAntagsWeightTable: SecretPlusPrimaryMid
+    roundStartAntagsWeightTable: SecretPlusSupport
+    ghostAntagRules: !type:NestedSelector
+      tableId: SecretPlusGhostAntagsSoftTable
+    ghostAntagLimit:
+      0: 1
+      30: 2
+    ghostAntagInterval: 1200  # 20 min
+    eventsCountAllPlayers: true
+    eventSpeedByPlayers:  # do 30 graczy bez zmian, od 55 mnożnik już nie rośnie
+      0: 1
+      35: 1.1
+      40: 1.2
+      45: 1.3
+      50: 1.4
+      55: 1.5
+    lateAntagsFrom: 600  # 10 min
+    lateAntagsUntil: 1500  # 25 min
+  - type: SelectedGameRules
+    scheduledGameRules: !type:NestedSelector
+      tableId: SecretPlusMidTable
+
+# Low: mniej antagonistów, rzadsze zdarzenia i tylko mała szansa na to, co mają Mid i MidHigh.
+- type: entity
+  id: SecretPlusLow
+  parent: SecretPlusMid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SecretPlus
+    minStartingChaos: 8
+    maxStartingChaos: 14
+    noRoundstartAntagsChance: 0.2  # co piąta runda bez antagonistów startowych
+    livingChaosChange: -0.006
+    deadChaosChange: 0.015
+    eventIntervalMin: 360  # 6 min
+    eventIntervalMax: 780  # 13 min
+    primaryAntagsWeightTable: SecretPlusHidden
+    roundStartAntagsWeightTable: SecretPlusHidden
+    ghostAntagRules: !type:NestedSelector
+      tableId: SecretPlusGhostAntagsSoftTable
+      prob: 0.3
+    ghostAntagLimit:
+      0: 1
+  - type: SelectedGameRules
+    scheduledGameRules: !type:NestedSelector
+      tableId: SecretPlusTable
+
+# MidHigh: antagoniści jak w Mid, ale zdarzenia są częstsze i groźniejsze, a antagonistów z ról duchów jest więcej.
+- type: entity
+  id: SecretPlusMidHigh
+  parent: SecretPlusMid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SecretPlus
+    livingChaosChange: -0.022
+    deadChaosChange: 0.025
+    eventIntervalMin: 180  # 3 min
+    eventIntervalMax: 480  # 8 min
+    primaryAntagsWeightTable: SecretPlusPrimaryMidHigh
+    ghostAntagRules: !type:NestedSelector
+      tableId: SecretPlusGhostAntagsTable
+    ghostAntagLimit:
+      0: 1
+      18: 2
+      30: 3
+    ghostAntagInterval: 900  # 15 min
+  - type: SelectedGameRules
+    scheduledGameRules: !type:NestedSelector
+      tableId: SecretPlusMidHighTable
+
+# High: zdarzenia jak w MidHigh, więcej antagonistów i zawsze tryb głośny.
+- type: entity
+  id: SecretPlusHigh
+  parent: SecretPlusMidHigh
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SecretPlus
+    minStartingChaos: 28
+    maxStartingChaos: 38
+    primaryAntagsWeightTable: SecretPlusPrimaryHigh
+    primaryAntagPicks:
+      0: 1
+      35: 1.5  # drugi tryb głośny w połowie rund
+      55: 2
+    guaranteedPrimaryAntags: true
+    primaryAntagChaosShare: 0.3
+    exclusiveRules:  # dwa tryby drużynowe dopiero od 55 graczy, zombie nigdy z innym trybem drużynowym
+      Nukeops: 55
+      Revolutionary: 55
+      Xenoborgs: 55
+      Zombie: 1000
+  - type: SelectedGameRules
+    scheduledGameRules: !type:NestedSelector
+      tableId: SecretPlusHighTable
+
+# ====================================================================================================
+# Poza drabinką
+# ====================================================================================================
+
+# SurvivalPlus: bez antagonistów na start, za to standardowe zdarzenia, które z czasem przychodzą coraz częściej.
+- type: entity
+  id: SecretPlusRampingMid
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SecretPlus
+    minStartingChaos: 0
+    maxStartingChaos: 0
+    noRoundstartAntags: true
+    speedRamping: 0.0003
+    livingChaosChange: -0.018
+    deadChaosChange: 0.020
+    chaosChangeVariationMin: 0.8
+    chaosChangeVariationMax: 1.3
+    eventIntervalMin: 90
+    eventIntervalMax: 400
+    disallowedEvents: [ FriendlySpawn ]
+  - type: SelectedGameRules
+    scheduledGameRules: !type:NestedSelector
+      tableId: SecretPlusSurvivalTable
+
+# Admeme. Sekret go nie losuje.
+- type: entity
+  id: SecretPlusAdmeme
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SecretPlus
+    minStartingChaos: 45
+    maxStartingChaos: 60
+    livingChaosChange: -0.03
+    deadChaosChange: 0.03
+    chaosChangeVariationMin: 0.8
+    chaosChangeVariationMax: 1.3
+    chaosExponent: 1
+    eventIntervalMin: 60
+    eventIntervalMax: 200
+    disallowedEvents: [ FriendlySpawn ]
+    primaryAntagsWeightTable: SecretPlusChaos
+    roundStartAntagsWeightTable: SecretPlusChaos
+    ignoreIncompatible: true
+    ignoreTimings: true
+  - type: SelectedGameRules
+    scheduledGameRules: !type:NestedSelector
+      tableId: SecretPlusAdmemeTable

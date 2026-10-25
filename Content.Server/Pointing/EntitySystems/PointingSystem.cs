@@ -25,6 +25,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Pointing.EntitySystems
 {
@@ -107,6 +108,12 @@ namespace Content.Server.Pointing.EntitySystems
             }
 
             _replay.RecordServerMessage(new PopupEntityEvent(viewerMessage, PopupType.Small, _gameTiming.CurTick, netSource));
+        }
+
+        // Polonium fix
+        private string StripMarkup(EntityUid uid)
+        {
+            return FormattedMessage.RemoveMarkupPermissive(Name(uid));
         }
 
         public bool InRange(EntityUid pointer, EntityCoordinates coordinates)
@@ -209,7 +216,7 @@ namespace Content.Server.Pointing.EntitySystems
 
             if (Exists(pointed))
             {
-                var pointedName = Identity.Entity(pointed, EntityManager);
+                var pointedName = StripMarkup(Identity.Entity(pointed, EntityManager));
 
                 EntityUid? containingInventory = null;
                 // Search up through the target's containing containers until we find an inventory
@@ -229,11 +236,11 @@ namespace Content.Server.Pointing.EntitySystems
                 if (containingInventory != null)
                 {
                     var item = pointed;
-                    var itemName = Identity.Entity(item, EntityManager);
+                    var itemName = StripMarkup(Identity.Entity(item, EntityManager));
 
                     // Target the pointing at the item's holder
                     pointed = containingInventory.Value;
-                    pointedName = Identity.Entity(pointed, EntityManager);
+                    pointedName = StripMarkup(Identity.Entity(pointed, EntityManager));
                     var pointingAtOwnItem = player == pointed;
 
                     if (pointingAtOwnItem)

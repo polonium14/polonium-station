@@ -2667,7 +2667,6 @@
   - !type:ClaimNearbyMobAction
     anchorId: room15_urist
     assignAnchorId: room15_urist
-    preventDeath: false
   # he is treated here and nowhere else, the corridors have no beds and no defibrillator
   - !type:ConfineAnchorAction
     anchorId: room15_urist
@@ -2788,7 +2787,6 @@
   - !type:ClaimNearbyMobAction
     anchorId: room15_urist
     assignAnchorId: room15_urist
-    preventDeath: false
   completion: !type:HealthAnalyzedCondition
     anchorId: room15_urist
 
@@ -2869,10 +2867,18 @@
     assignAnchorId: room15_dylovene
     tutorialNpc: false
     preventDeath: false
-  completion: !type:AnchorSolutionContainsCondition
-    anchorId: room15_syringe
-    reagent: Dylovene
-    amount: 15
+  # whoever jumps ahead and empties a part-filled syringe into him leaves the bottle short of another
+  # fifteen, and the bottle is all there is. the poison going away counts just as much as the draw
+  completion: !type:AnyCondition
+    conditions:
+    - !type:AnchorSolutionContainsCondition
+      anchorId: room15_syringe
+      reagent: Dylovene
+      amount: 15
+    - !type:AnchorDamageBelowCondition
+      anchorId: room15_urist
+      damageType: Poison
+      max: 0
 
 - type: tutorialStep
   id: TutorialLinearR15ToPatient
@@ -4359,24 +4365,23 @@
   - tutorial-holopad-r17-crew-d
   - tutorial-holopad-r17-crew-e
   - tutorial-holopad-r17-crew-e-2
+  - tutorial-holopad-r17-e
+  - tutorial-holopad-r17-e-2
+  - tutorial-holopad-finale
   completion: !type:MentorFinishedSpeakingCondition
+  onComplete:
+  - !type:RetireHolopadAction
 
 - type: tutorialStep
   id: TutorialLinearR17Sign
   instruction: tutorial-step-r17-sign
   navigationAnchor: room17_folder_centcomm
   keybindHint: tutorial-hint-sign
-  speakAtAnchor: room17_folder_centcomm
-  speakAtRange: 8
   stuckSkipSeconds: 0
   highlightAnchors:
   - room17_folder_centcomm
   - room17_pen
   - room17_contract
-  speak:
-  - tutorial-holopad-r17-e
-  - tutorial-holopad-r17-e-2
-  - tutorial-holopad-r17-f
   onEnter:
   - !type:SpawnAtAnchorAction
     anchorId: room17_folder_centcomm
@@ -4402,6 +4407,4 @@
   blocking: true
   finale: true
   stuckSkipSeconds: 0
-  speak:
-  - tutorial-holopad-finale
   completion: !type:ManualAcknowledgeCondition

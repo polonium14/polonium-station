@@ -1,8 +1,8 @@
-ent-CrateCerenkiteFuelRod = fuel rod crate
-    .desc = 3 cerenkite fuel rods, for fuelling a nuclear reactor.
-ent-CrateBohrumControlRod = control rod crate
-    .desc = 2 bohrum control rods for a nuclear reactor.
-ent-CrateSteelGasChannel = gas channel rod crate
-    .desc = 4 steel gas channel rods for a nuclear reactor.
-ent-CrateSteelHeatExhanger = heat exchanger rod crate
-    .desc = 4 steel heat exchanger rods for a nuclear reactor.
+ent-CrateCerenkiteFuelRod = skrzynia z prętami paliwowymi
+    .desc = 3 pręty paliwowe z cerenkitu do zasilania reaktora jądrowego.
+ent-CrateBohrumControlRod = skrzynia z prętami regulacyjnymi
+    .desc = 2 pręty regulacyjne z bohru do reaktora jądrowego.
+ent-CrateSteelGasChannel = skrzynia z prętami kanałów gazowych
+    .desc = 4 stalowe pręty kanałów gazowych do reaktora jądrowego.
+ent-CrateSteelHeatExhanger = skrzynia z prętami wymienników ciepła
+    .desc = 4 stalowe pręty wymienników ciepła do reaktora jądrowego.

@@ -1,2 +1,2 @@
-hairball-mask = Take off your { $mask } first.
-hairball-cough = { CAPITALIZE($name) } starts coughing up a hairball!
+hairball-mask = Najpierw zdejmij: { $mask }.
+hairball-cough = { CAPITALIZE($name) } zaczyna wykasływać kulę sierści!

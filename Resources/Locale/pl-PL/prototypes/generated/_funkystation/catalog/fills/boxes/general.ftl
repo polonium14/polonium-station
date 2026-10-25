@@ -1,6 +1,6 @@
-ent-BoxLightTubeColored = colored lighttube box
+ent-BoxLightTubeColored = pudełko kolorowych świetlówek
     .desc = { ent-BoxLighttube.desc }
-ent-BoxLightBulbColored = colored lighttube box
+ent-BoxLightBulbColored = pudełko kolorowych żarówek
     .desc = { ent-BoxLightbulb.desc }
 ent-BoxMREPrmium = premium M.R.E.
-    .desc = A box of standard NT ERT rations. Filled with everything you want in a balanced meal after a hard day's work.
+    .desc = Pudełko standardowych racji żywnościowych JSR NT. Zawiera wszystko, czego pragniesz w zbilansowanym posiłku po ciężkim dniu pracy.

@@ -3,7 +3,7 @@
 
 # Thief Collection
 
-steal-target-groups-reactorfuelrod = reactor fuel rod
+steal-target-groups-reactorfuelrod = pręt paliwowy reaktora
 
 # Thief Single Item
 

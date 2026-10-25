@@ -1,0 +1,53 @@
+# Etap embrionu nad nosicielem. Widzą go ksenomorfy i każdy z medycznym HUD-em, jak w NSV13.
+- type: factionIcon
+  abstract: true
+  id: XenoInfectedIconBase
+  priority: 12
+  locationPreference: Right
+  visibleToGhosts: true
+  showTo:
+    components:
+    - Xeno
+    - ShowHealthIcons
+
+- type: factionIcon
+  parent: XenoInfectedIconBase
+  id: XenoInfectedIcon0
+  icon:
+    sprite: /Textures/_Polonium/Interface/xeno_infected.rsi
+    state: infected0
+
+- type: factionIcon
+  parent: XenoInfectedIconBase
+  id: XenoInfectedIcon1
+  icon:
+    sprite: /Textures/_Polonium/Interface/xeno_infected.rsi
+    state: infected1
+
+- type: factionIcon
+  parent: XenoInfectedIconBase
+  id: XenoInfectedIcon2
+  icon:
+    sprite: /Textures/_Polonium/Interface/xeno_infected.rsi
+    state: infected2
+
+- type: factionIcon
+  parent: XenoInfectedIconBase
+  id: XenoInfectedIcon3
+  icon:
+    sprite: /Textures/_Polonium/Interface/xeno_infected.rsi
+    state: infected3
+
+- type: factionIcon
+  parent: XenoInfectedIconBase
+  id: XenoInfectedIcon4
+  icon:
+    sprite: /Textures/_Polonium/Interface/xeno_infected.rsi
+    state: infected4
+
+- type: factionIcon
+  parent: XenoInfectedIconBase
+  id: XenoInfectedIcon5
+  icon:
+    sprite: /Textures/_Polonium/Interface/xeno_infected.rsi
+    state: infected5

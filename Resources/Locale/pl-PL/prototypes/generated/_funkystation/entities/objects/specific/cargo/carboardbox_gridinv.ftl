@@ -1,2 +1,2 @@
-ent-CardboardBoxLarge = Large Cardboard Box
+ent-CardboardBoxLarge = duże kartonowe pudło
     .desc = { ent-BaseItem.desc }

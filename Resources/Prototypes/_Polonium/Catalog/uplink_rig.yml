@@ -1,0 +1,84 @@
+- type: listing
+  id: UplinkRIGSyndicate
+  productEntity: ClothingBackpackModSuitSyndicateFilled
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkRIGElite
+  productEntity: ClothingBackpackModSuitEliteFilled
+  cost:
+    Telecrystal: 13
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: UplinkRIGModuleJetpack
+  productEntity: ModSuitModuleJetpackNormal
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkRIGModuleNightVision
+  productEntity: ModSuitModuleVisionNight
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkRIGModuleMobility
+  productEntity: ModSuitModuleMobility
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkRIGModuleMagboots
+  productEntity: ModSuitModuleMagboots
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkRIGModuleStorageSyndie
+  productEntity: ModSuitModuleStorageSyndie
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkRIGModuleVisionSec
+  productEntity: ModSuitModuleVisionSec
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkRIGModuleInsulation
+  productEntity: ModSuitModuleInsulation
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkRIGModuleVisionMed
+  productEntity: ModSuitModuleVisionMed
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkWearables

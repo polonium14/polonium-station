@@ -1,4 +1,4 @@
-ent-LockerBlueshieldOfficer = blueshield officer locker
+ent-LockerBlueshieldOfficer = szafka oficera Blueshield
     .desc = { ent-LockerBase.desc }
-ent-LockerNanorep = nanotrasen representative locker
+ent-LockerNanorep = szafka przedstawiciela Nanotrasen
     .desc = { ent-LockerBase.desc }

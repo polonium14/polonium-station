@@ -62,6 +62,9 @@
   - MagazineShotgunBeanbag
   - BoxShellTranquilizer
   - BoxBeanbag
+  - WeaponDisabler # Polonium addition
+  - WeaponTaser # Polonium addition
+  - WeaponDisablerSMG # Polonium addition
 
 - type: technology
   id: UraniumMunitions
@@ -100,6 +103,7 @@
   - Truncheon
   - TelescopicShield
   - HoloprojectorSecurity
+  - ModSuitModuleVisionSec # Polonium: R.I.G.
 
 - type: technology
   id: ExplosiveTechnology

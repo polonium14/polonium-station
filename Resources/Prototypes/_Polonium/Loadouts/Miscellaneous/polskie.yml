@@ -1,0 +1,162 @@
+# Polskie przedmioty z loadoutu NSV13 (Aquila). Tam kupowało się je za metawalutę, tutaj są w bibelotach - lądują w plecaku.
+
+- type: loadout
+  id: PolishShoppingBagBiedronka
+  storage:
+    back:
+    - PlasticShoppingBagBiedronka
+  groupBy: "polish"
+
+- type: loadout
+  id: PolishShoppingBagLidl
+  storage:
+    back:
+    - PlasticShoppingBagLidl
+  groupBy: "polish"
+
+- type: loadout
+  id: PolishSandals
+  storage:
+    back:
+    - ClothingShoesSandalsWhiteSocks
+  groupBy: "polish"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolish
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolish
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishAlt1
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishAlt1
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishAlt2
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishAlt2
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishAlt3
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishAlt3
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishAlt4
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishAlt4
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishAlt5
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishAlt5
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishAlt6
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishAlt6
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishAlt7
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishAlt7
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishAlt8
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishAlt8
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishWhite
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishWhite
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishILovePL
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishILovePL
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishMiniWhite
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishMiniWhite
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishStripe
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishStripe
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishOtuaBlack
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishOtuaBlack
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitPolishOtuaWhite
+  storage:
+    back:
+    - ClothingUniformJumpsuitPolishOtuaWhite
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutUniformShortsPolishPatternH
+  storage:
+    back:
+    - UniformShortsPolishPatternH
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutUniformShortsPolishPatternV
+  storage:
+    back:
+    - UniformShortsPolishPatternV
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutUniformShortsPolishPatternStripes
+  storage:
+    back:
+    - UniformShortsPolishPatternStripes
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutUniformShortsPolishMankini
+  storage:
+    back:
+    - UniformShortsPolishMankini
+  groupBy: "polish-underwear"
+
+- type: loadout
+  id: LoadoutClothingShoesPolishKneeSocks
+  storage:
+    back:
+    - ClothingShoesPolishKneeSocks
+  groupBy: "polish-underwear"

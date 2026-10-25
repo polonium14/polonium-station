@@ -4,6 +4,7 @@ using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Server.Physics.Controllers;
 using Content.Shared._Polonium.Tutorial.Components;
+using Content.Shared.Atmos.Rotting;
 using Content.Shared.Buckle;
 using Content.Shared.Climbing.Systems;
 using Content.Shared.Damage;
@@ -206,6 +207,8 @@ public sealed partial class TutorialNpcSystem : EntitySystem
 
     private void Bonk(EntityUid uid, TutorialNpcBonkComponent bonk)
     {
+        AllowDeath(uid);
+
         if (!HasComp<KnockedDownComponent>(uid))
             _climb.Bonk(bonk.Table, uid);
 
@@ -223,6 +226,18 @@ public sealed partial class TutorialNpcSystem : EntitySystem
     {
         RemComp<SSDIndicatorComponent>(uid);
         _statusEffects.TryRemoveStatusEffect(uid, SSDIndicatorSystem.StatusEffectSSDSleeping);
+    }
+
+    public void StopRot(EntityUid uid)
+    {
+        RemComp<RottingComponent>(uid);
+        RemComp<PerishableComponent>(uid);
+    }
+
+    public void AllowDeath(EntityUid uid)
+    {
+        if (TryComp<TutorialNpcComponent>(uid, out var npc))
+            npc.PreventDeath = false;
     }
 
     public void SatiateAndIdle(EntityUid uid)
@@ -251,6 +266,8 @@ public sealed partial class TutorialNpcSystem : EntitySystem
     /// </summary>
     public void Kill(EntityUid uid, float blunt)
     {
+        AllowDeath(uid);
+
         if (!_thresholds.TryGetThresholdForState(uid, MobState.Dead, out var deadAt) || deadAt is null)
             return;
 

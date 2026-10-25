@@ -1,8 +1,8 @@
-command-description-dynamicrule-list = Lists all currently active dynamic rules, usually this is just one.
-command-description-dynamicrule-get = Gets the currently active dynamic rule.
-command-description-dynamicrule-budget = Gets the current budget of the piped dynamic rule(s).
-command-description-dynamicrule-adjust = Adjusts the budget of the piped dynamic rule(s) by the specified amount.
-command-description-dynamicrule-set = Sets the budget of the piped dynamic rule(s) to the specified amount.
-command-description-dynamicrule-dryrun = Returns a list of rules that could be activated if the rule ran at this moment with all current context. This is not a complete list of every single rule that could be run, just a sample of the current valid ones.
-command-description-dynamicrule-executenow = Executes the piped dynamic rule as if it had reached its regular update time.
-command-description-dynamicrule-rules = Gets a list of all the rules spawned by the piped dynamic rule.
+command-description-dynamicrule-list = Wyświetla wszystkie aktualnie aktywne reguły dynamiczne, zwykle jest to tylko jedna.
+command-description-dynamicrule-get = Pobiera aktualnie aktywną regułę dynamiczną.
+command-description-dynamicrule-budget = Pobiera aktualny budżet przekazanych potokiem reguł dynamicznych.
+command-description-dynamicrule-adjust = Zmienia budżet przekazanych potokiem reguł dynamicznych o podaną wartość.
+command-description-dynamicrule-set = Ustawia budżet przekazanych potokiem reguł dynamicznych na podaną wartość.
+command-description-dynamicrule-dryrun = Zwraca listę reguł, które mogłyby zostać aktywowane, gdyby reguła została uruchomiona w tej chwili przy obecnym kontekście. To nie jest pełna lista wszystkich możliwych reguł, a jedynie próbka aktualnie prawidłowych.
+command-description-dynamicrule-executenow = Wykonuje przekazaną potokiem regułę dynamiczną tak, jakby nadszedł jej regularny czas aktualizacji.
+command-description-dynamicrule-rules = Pobiera listę wszystkich reguł utworzonych przez przekazaną potokiem regułę dynamiczną.

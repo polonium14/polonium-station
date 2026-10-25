@@ -16,6 +16,11 @@ card-stack-examine = { $count ->
     [one] There is {$count} card in this stack.
     *[other] There are {$count} cards in this stack.
 }
+cards-stackquantitychange-added = Card was added (Total cards: {$quantity})
+cards-stackquantitychange-removed = Card was removed (Total cards: {$quantity})
+cards-stackquantitychange-joined = Stack was merged (Total cards: {$quantity})
+cards-stackquantitychange-split = Stack was split (Total cards: {$quantity})
+cards-stackquantitychange-unknown = Stack count changed (Total cards: {$quantity})
 cards-verb-convert-to-deck = Convert to deck
 cards-verb-split = Split in half
 

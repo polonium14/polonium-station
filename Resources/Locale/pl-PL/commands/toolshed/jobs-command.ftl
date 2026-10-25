@@ -1,6 +1,6 @@
-command-description-jobs-jobs = Returns all jobs on a station.
-command-description-jobs-job = Returns a given job on a station.
-command-description-jobs-isinfinite = Returns true if the input job is infinite, otherwise false.
-command-description-jobs-adjust = Adjusts the number of slots for the given job.
-command-description-jobs-set = Sets the number of slots for the given job.
-command-description-jobs-amount = Returns the number of slots for the given job.
+command-description-jobs-jobs = Zwraca wszystkie zawody na stacji.
+command-description-jobs-job = Zwraca dany zawód ze stacji.
+command-description-jobs-isinfinite = Zwraca true, jeśli dany zawód jest nieskończony, w przeciwnym razie false.
+command-description-jobs-adjust = Zmienia liczbę miejsc dla danego zawodu.
+command-description-jobs-set = Ustawia liczbę miejsc dla danego zawodu.
+command-description-jobs-amount = Zwraca liczbę miejsc dla danego zawodu.

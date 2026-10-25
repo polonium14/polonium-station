@@ -1,30 +1,46 @@
+# Polonium: jajo z NSV13. Dojrzewa 90-150 s, a potem wypuszcza facehuggera na kogoś, kto podejdzie.
 - type: entity
   parent: BaseItem
   id: XenoEgg
   name: xenonid egg
-  description: A large mottled egg. It will hatch into a larva when ready.
+  description: A large mottled egg.
   components:
   - type: Transform
     anchored: true
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_egg.rsi
-    state: egg
+    layers:
+    - state: egg_growing
+      map: [ "base" ]
   - type: Item
     size: Normal
   - type: XenoEgg
   - type: HiveMember
-  - type: StepTrigger
-    requiredTriggeredSpeed: 0
-    intersectRatio: 0.2
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.XenoEggVisuals.State:
+        base:
+          Growing: { state: egg_growing }
+          Grown: { state: egg }
+          Opening: { state: egg_opening }
+          Opened: { state: egg_opened }
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_RMC14/Xeno/alien_egg_burst.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
-      slips:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.2,-0.2,0.2,0.2"
-        hard: false
-        layer:
-        - SlipLayer
       fix1:
         shape:
           !type:PhysShapeAabb
@@ -36,3 +52,15 @@
     enabled: false
   - type: Physics
     bodyType: Static
+
+- type: entity
+  parent: XenoEgg
+  id: XenoEggGrown
+  suffix: dojrzałe
+  components:
+  - type: XenoEgg
+    state: Grown
+  - type: Sprite
+    layers:
+    - state: egg
+      map: [ "base" ]

@@ -6,18 +6,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Dwarves
+  # Krasnoludy
 
   <Box>
     <GuideEntityEmbed Entity="MobDwarf" Caption=""/>
   </Box>
 
-  Dwarves are a stout and hardy mutation of Humans that have developed highly evolved livers.
+  Krasnoludy to krępa i wytrzymała mutacja ludzi, u których wykształciła się bardzo sprawna wątroba.
 
-  ## Physiology
+  ## Fizjologia
 
-  The primary difference between Dwarves and Humans is that their livers can metabolize alcohol similarly to medicines,
-  healing [color=#ffb86b]Brute[/color] and [color=#ff8a8a]Heat[/color] damage. Few also know, however, that Dwarves tend to asphyxiate twice as much as Humans.
+  Główna różnica między krasnoludami a ludźmi jest taka, że ich wątroba metabolizuje alkohol podobnie jak leki
+  i leczy obrażenia [color=#ffb86b]fizyczne[/color] oraz [color=#ff8a8a]oparzeniowe[/color]. Mało kto wie też, że krasnoludy duszą się dwa razy szybciej niż ludzie.
 
 
 </Document>

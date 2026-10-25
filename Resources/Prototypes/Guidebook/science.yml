@@ -53,7 +53,8 @@
   name: guide-entry-xenoarchaeology
   text: "/ServerInfo/_Polonium/Guidebook/Science/Xenoarchaeology.xml"
   children:
-  - ArtifactReports
+  - AnalysisConsole
+  - XenoarchaeologyUnlockingNodes
 
 - type: guideEntry
   id: Robotics
@@ -61,11 +62,12 @@
   text: "/ServerInfo/_Polonium/Guidebook/Science/Robotics.xml"
   children:
   - Cyborgs
+  - RIG # Polonium: R.I.G. page
 
 - type: guideEntry
-  id: ArtifactReports
-  name: guide-entry-artifact-reports
-  text: "/ServerInfo/_Polonium/Guidebook/Science/ArtifactReports.xml"
+  id: XenoarchaeologyUnlockingNodes
+  name: guide-entry-xenoarchaeologyunlockingnodes
+  text: "/ServerInfo/_Polonium/Guidebook/Science/UnlockingNodes.xml"
 
 - type: guideEntry
   id: Cyborgs

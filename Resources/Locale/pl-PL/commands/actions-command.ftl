@@ -1,6 +1,6 @@
-cmd-loadacts-desc = Loads action toolbar assignments from a user-file.
-cmd-loadacts-help = Usage: { $command } <user resource path>
-cmd-loadacts-error = Failed to load action assignments
-cmd-loadmapacts-desc = Loads the mapping preset action toolbar assignments.
-cmd-loadmapacts-help = Usage: { $command } <user resource path>
-cmd-loadmapacts-error = Failed to load action assignments
+cmd-loadacts-desc = Wczytuje przypisania paska akcji z pliku użytkownika.
+cmd-loadacts-help = Użycie: { $command } <ścieżka zasobu użytkownika>
+cmd-loadacts-error = Nie udało się wczytać przypisań akcji
+cmd-loadmapacts-desc = Wczytuje przypisania paska akcji dla presetu mapowania.
+cmd-loadmapacts-help = Użycie: { $command } <ścieżka zasobu użytkownika>
+cmd-loadmapacts-error = Nie udało się wczytać przypisań akcji

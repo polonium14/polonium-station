@@ -164,7 +164,8 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
     {
         if (component.DefaultText != null && component.Text == null)
         {
-            component.Text = Loc.GetString(component.DefaultText);
+            var defaultText = component.DefaultText.Value.Id;
+            component.Text = Loc.TryGetString(defaultText, out var text) ? text : defaultText;
             Dirty(uid, component);
         }
 

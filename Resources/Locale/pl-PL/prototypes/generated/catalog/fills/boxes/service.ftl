@@ -1,10 +1,10 @@
 ent-BoxCleanerGrenades = pudełko czystonatów
     .desc = Pudełko pełne granatów czyszczących.
-ent-BoxMousetrap = mousetrap box
-    .desc = This box is filled with mousetraps. Try not to get your hand stuck in one.
+ent-BoxMousetrap = pudełko pułapek na myszy
+    .desc = To pudełko jest pełne pułapek na myszy. Uważaj, żeby nie przytrzasnąć sobie w nich ręki.
 ent-BoxAgrichem = zestaw NT „AgriChem to frajda”
     .desc = Dla początkującego botanika, gotowego nauczyć się, jak maksymalizować plony. To wyblakłe pudełko musi mieć co najmniej 50 lat.
-ent-BoxLightbulbColorfulMixed = mixed colorful lightbulb box
+ent-BoxLightbulbColorfulMixed = pudełko mieszanych kolorowych żarówek
     .desc = { ent-BoxLightbulb.desc }
-ent-BoxLighttubeColorfulMixed = mixed colorful lighttube box
+ent-BoxLighttubeColorfulMixed = pudełko mieszanych kolorowych świetlówek
     .desc = { ent-BoxLighttube.desc }

@@ -1,6 +1,6 @@
-ent-ShelfWallFreezerWhite = wall freezer
-    .desc = A convenient place to store perishables.
-    .suffix = Frontier, White
-ent-ShelfWallFreezerDark = wall freezer
-    .suffix = Frontier, Dark
+ent-ShelfWallFreezerWhite = ścienna zamrażarka
+    .desc = Wygodne miejsce na łatwo psujące się produkty.
+    .suffix = Frontier, biała
+ent-ShelfWallFreezerDark = ścienna zamrażarka
+    .suffix = Frontier, ciemna
     .desc = { ent-ShelfWallFreezerWhite.desc }

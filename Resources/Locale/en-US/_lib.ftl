@@ -42,5 +42,15 @@ zzzz-fmt-energy-watt-hours = { TOSTRING($divided, "F1") } { $places ->
     *[5] ???
 }
 
+# Used internally by the GASQUANTITY() function.
+zzzz-fmt-gas-quantity = { TOSTRING($divided, "F1") } { $places ->
+    [0] mol
+    [1] kmol
+    [2] Mmol
+    [3] Gmol
+    [4] Tmol
+    *[5] ???
+}
+
 # Used internally by the PLAYTIME() function.
 zzzz-fmt-playtime = {$hours}H {$minutes}M

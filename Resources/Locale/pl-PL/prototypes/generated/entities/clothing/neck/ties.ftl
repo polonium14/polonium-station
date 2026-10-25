@@ -4,3 +4,7 @@ ent-ClothingNeckTieDet = krawat detektywa
     .desc = Luźno zawiązany krawat, idealny dodatek dla zapracowanego detektywa.
 ent-ClothingNeckTieSci = krawat naukowca
     .desc = Czemu wszyscy musimy nosić te śmieszne krawaty?
+ent-ClothingNeckTieBase = krawat
+    .desc = Zapinany krawat z neojedwabiu.
+ent-ClothingNeckTieSerious = poważny krawat
+    .desc = Idealnie zawiązany krawat, który pomoże ci przetrwać dzień pracy.

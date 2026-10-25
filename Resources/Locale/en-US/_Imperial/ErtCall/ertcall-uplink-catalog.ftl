@@ -186,8 +186,8 @@ ert-uplink-ErtCallUplinkWeaponMinigun-desc = Rapid-fire ballistic weapon.
 ert-uplink-ErtCallUplinkWeaponXrayCannon-name = X-Ray Cannon
 ert-uplink-ErtCallUplinkWeaponXrayCannon-desc = Penetrating radiation beam weapon.
 
-ert-uplink-ErtCallUplinkWeaponTaser-name = Taser
-ert-uplink-ErtCallUplinkWeaponTaser-desc = Stuns targets with electrical charge.
+ert-uplink-ErtCallUplinkWeaponTaserSuper-name = Elite Taser
+ert-uplink-ErtCallUplinkWeaponTaserSuper-desc = Stuns targets with electrical charge.
 
 ert-uplink-ErtCallUplinkWeaponAdvancedLaser-name = Advanced Laser Gun
 ert-uplink-ErtCallUplinkWeaponAdvancedLaser-desc = Improved energy sidearm.

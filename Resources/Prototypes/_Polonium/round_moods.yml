@@ -1,0 +1,21 @@
+- type: roundMood
+  id: Calm
+  name: ui-vote-mood-calm
+  order: 0
+
+- type: roundMood
+  id: Standard
+  name: ui-vote-mood-standard
+  order: 1
+  default: true
+
+- type: roundMood
+  id: Hot
+  name: ui-vote-mood-hot
+  order: 2
+
+- type: roundMood
+  id: Madness
+  name: ui-vote-mood-madness
+  order: 3
+  minPlayers: 30

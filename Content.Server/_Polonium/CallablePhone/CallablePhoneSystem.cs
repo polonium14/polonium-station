@@ -8,10 +8,12 @@ using Content.Server.Speech;
 using Content.Server.Speech.Components;
 using Content.Server.Telephone;
 using Content.Shared._Polonium.CallablePhone;
+using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
+using Content.Shared.Follower;
 using Content.Shared.Ghost;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
@@ -27,6 +29,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -51,6 +54,10 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
     [Dependency] private SharedContainerSystem _containers = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private FollowerSystem _followerSystem = default!;
+
+    private readonly Dictionary<NetUserId, TimeSpan> _lastPhoneTeleport = new();
+    private static readonly TimeSpan PhoneTeleportCooldown = TimeSpan.FromSeconds(0.5);
 
     private readonly HashSet<EntityUid> _centCommAwaitingPickup = new();
     private readonly HashSet<EntityUid> _centCommActiveCalls = new();
@@ -91,6 +98,7 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
         SubscribeLocalEvent<TelephoneHandsetComponent, CallablePhoneCallMessage>(OnHandsetCall);
         SubscribeLocalEvent<TelephoneHandsetComponent, CallablePhoneAnswerMessage>(OnHandsetAnswer);
         SubscribeLocalEvent<TelephoneHandsetComponent, CallablePhoneHangUpMessage>(OnHandsetHangUp);
+        SubscribeLocalEvent<TelephoneHandsetComponent, CallablePhoneTeleportMessage>(OnHandsetTeleport);
         SubscribeLocalEvent<TelephoneHandsetComponent, GotEquippedHandEvent>(OnHandsetEquipped);
         SubscribeLocalEvent<TelephoneHandsetComponent, GotUnequippedHandEvent>(OnHandsetUnequipped);
         SubscribeLocalEvent<TelephoneHandsetComponent, DroppedEvent>(OnHandsetDropped);
@@ -606,6 +614,75 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
             return;
 
         OnAnswer((phone, callable), ref args);
+    }
+
+    private void OnHandsetTeleport(Entity<TelephoneHandsetComponent> entity, ref CallablePhoneTeleportMessage args)
+    {
+        var phone = GetEntity(entity.Comp.ParentPhone);
+        if (!Exists(phone) || !TryComp<CallablePhoneComponent>(phone, out var callable))
+            return;
+
+        if (!_playerManager.TryGetSessionByEntity(args.Actor, out var session))
+            return;
+
+        if (!_adminManager.HasAdminFlag(session, AdminFlags.Admin))
+            return;
+
+        if (!HasComp<GhostComponent>(args.Actor))
+            return;
+
+        if (!UserHoldingPhoneHandset(phone, args.Actor))
+            return;
+
+        if (_lastPhoneTeleport.TryGetValue(session.UserId, out var last)
+            && _timing.CurTime < last + PhoneTeleportCooldown)
+            return;
+
+        _lastPhoneTeleport[session.UserId] = _timing.CurTime;
+
+        if (!TryGetListedPhone(phone, callable, args.Receiver, out var destination))
+            return;
+
+        if (!TryFollowPhone(args.Actor, destination))
+            return;
+
+        _adminLogger.Add(
+            LogType.Action,
+            LogImpact.Low,
+            $"{session.Name} followed {ToPrettyString(destination)} from {ToPrettyString(phone)}");
+    }
+
+    private bool TryGetListedPhone(
+        EntityUid source,
+        CallablePhoneComponent sourceCallable,
+        NetEntity receiverNet,
+        out EntityUid destination)
+    {
+        destination = default;
+
+        if (!TryGetEntity(receiverNet, out var uid) || !Exists(uid) || uid == source)
+            return false;
+
+        if (!TryComp<CallablePhoneComponent>(uid, out var callable))
+            return false;
+
+        if (!TryComp<TelephoneComponent>(uid, out var telephone) || telephone.UnlistedNumber)
+            return false;
+
+        if (!CanSourceSeeInDirectory(sourceCallable, callable))
+            return false;
+
+        destination = uid.Value;
+        return true;
+    }
+
+    private bool TryFollowPhone(EntityUid actor, EntityUid phone)
+    {
+        if (Transform(phone).MapID == MapId.Nullspace)
+            return false;
+
+        _followerSystem.StartFollowingEntity(actor, phone);
+        return true;
     }
 
     private void OnHandsetHangUp(Entity<TelephoneHandsetComponent> entity, ref CallablePhoneHangUpMessage args)

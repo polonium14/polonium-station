@@ -1,2 +1,2 @@
-ent-CultHamstone = hamstone
-    .desc = Crystalized blood of Nar'Sie, containing the brain and soul of a damned hamster.
+ent-CultHamstone = chomikamień
+    .desc = Skrystalizowana krew Nar'Sie zawierająca mózg i duszę potępionego chomika.

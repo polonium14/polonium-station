@@ -1,10 +1,10 @@
-ent-ClothingHeadHatAnimalCat = szara czapka CAT
+ent-ClothingHeadHatAnimalCat = szara kocia czapka
     .desc = Słodka, puszysta głowa szarego kota.
-ent-ClothingHeadHatAnimalCatBrown = brązowa czapka CAT
+ent-ClothingHeadHatAnimalCatBrown = brązowa kocia czapka
     .desc = Słodka, puszysta głowa brązowego kota.
-ent-ClothingHeadHatAnimalCatBlack = czarna czapka CAT
+ent-ClothingHeadHatAnimalCatBlack = czarna kocia czapka
     .desc = Słodka, puszysta głowa czarnego kota.
-ent-ClothingHeadHatAnimalHeadslime = czapka headslime
-    .desc = Zielony, klejący headslime; zakładasz go na głowę.
-ent-ClothingHeadHatAnimalMonkey = czapka monkey
+ent-ClothingHeadHatAnimalHeadslime = czapka głowoślimaka
+    .desc = Zielony, lepki głowoślimak. Zakładasz go na głowę.
+ent-ClothingHeadHatAnimalMonkey = czapka małpy
     .desc = To głowa małpy. Ma otwór na usta, żeby jeść banany.

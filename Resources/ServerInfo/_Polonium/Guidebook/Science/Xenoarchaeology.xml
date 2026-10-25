@@ -12,59 +12,54 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Ksenoarcheologia
-Ksenoarcheologia to dziedzina nauki zajmująca się badaniem i eksperymentowaniem z artefaktami pozaziemskimi.
+  # Ksenoarcheologia
 
-Na początku każdej zmiany departament Badań i Rozwoju ma zazwyczaj do dyspozycji co najmniej dwa artefakty do przeprowadzania eksperymentów. Aby kupić więcej, należy zwrócić się do działu zaopatrzenia.
+  Ksenoarcheologia to część działu Badań i Rozwoju, która zajmuje się obcymi [color=#e8c878]artefaktami[/color].
 
-Badając wyjątkowe właściwości każdego artefaktu, zdobywasz punkty badawcze, zwiększasz wartość rynkową artefaktu i możesz odkryć kilka przydatnych zdolności, które pomogą twojemu wydziałowi lub całej stacji!
+  Odkrywanie ich tajemnic daje punkty badawcze i ujawnia dziwne efekty. Jedne się przydają, inne potrafią zabić.
 
-## Węzły artefaktów
-<Box>
-<GuideEntityEmbed Entity="ComplexXenoArtifact" Caption=""/>
-<GuideEntityEmbed Entity="ComplexXenoArtifactItem" Caption=""/>
-</Box>
-Artefakty składają się z losowo generowanego drzewa węzłów. Węzły te mają "[color=#e8c878]głębokość[/color]", która określa, jak niebezpieczny jest dany węzeł, oraz liczbę innych węzłów z nim połączonych, zwanych "[color=#e8c878]krawędziami[/color]".
+  Na początku zmiany w laboratorium leży zwykle jeden albo dwa artefakty. Kolejne można:
+  - zamówić w [color=orange]Zaopatrzeniu[/color]
+  - dostać od [color=orange]Odzysku[/color], który znajduje je na wyprawach
+  - złożyć z [bold]fragmentów[/bold]
+  - znaleźć na stacji po niektórych wydarzeniach
 
-Artefakty zawsze zaczynają się na głębokości zerowej, czyli w korzeniu drzewa. Przemierzanie drzewa w celu odnalezienia jak największej liczby węzłów stanowi główny cel naukowców zajmujących się tymi artefaktami. Z węzłów pozyskuje się wiedzę, aby zdobywać punkty badawcze i zwiększać wartość rynkową artefaktu.
+  ## Artefakty
+  <Box>
+    <GuideEntityEmbed Entity="ComplexXenoArtifact" Caption=""/>
+    <GuideEntityEmbed Entity="ComplexXenoArtifactItem" Caption=""/>
+  </Box>
 
-Każdy węzeł składa się z dwóch elementów: [color=#e8c878]bodźca[/color] oraz [color=#e8c878]reakcji[/color].
+  Artefakt składa się z [bold]węzłów[/bold] ułożonych w [bold]warstwy[/bold].
+  - Odblokowanie węzła otwiera drogę do połączonych z nim węzłów z wyższej warstwy.
+  - Każdy węzeł ma [bold]wyzwalacz[/bold], czyli czynność, którą trzeba wykonać przy artefakcie.
+  - Żeby odblokować węzeł, wykonujesz jego wyzwalacz i wyzwalacze wszystkich węzłów, z których wyrasta.
+  - Odblokowany węzeł od razu odpala swój [bold]efekt[/bold] i dostaje status [bold][color=plum]Aktywny[/color][/bold].
+  - Każdy węzeł ma [bold]wytrzymałość[/bold], czyli liczbę ręcznych aktywacji, które wytrzyma po odblokowaniu.
+  - Wyższe węzły są trudniejsze, ale dają więcej [bold]punktów badawczych[/bold].
+  - Za odblokowanie całego artefaktu nie ma premii, ale każdy węzeł daje punkty.
 
-Bodźcem jest zewnętrzne zachowanie, które wywołuje reakcję. Istnieje wiele różnych bodźców, a węzły na wyższych poziomach charakteryzują się bodźcami trudniejszymi do zrealizowania. Niektóre bodźce wymagają improwizacji, a aby uzyskać wszystko, co jest potrzebne, może zaistnieć konieczność skontaktowania się z innymi działami.
+  ## Sprzęt
+  <Box>
+    <GuideEntityEmbed Entity="MachineArtifactAnalyzer" Caption="Analizator artefaktów"/>
+    <GuideEntityEmbed Entity="ComputerAnalysisConsole" Caption="Konsola analizy"/>
+    <GuideEntityEmbed Entity="NodeScanner" Caption="Skaner węzłów"/>
+  </Box>
+  - [bold]Analizator artefaktów:[/bold] platforma, na której kładziesz artefakt. Skanuje go i wysyła dane do konsoli.
+  - [bold][textlink="Konsola analizy:" link="AnalysisConsole"][/bold] pokazuje drzewo węzłów i wyodrębnia punkty. Musi być połączona z analizatorem za pomocą multitoola.
+  - [bold]Skaner węzłów:[/bold] ręczne urządzenie. Pokazuje ID węzłów, które właśnie się odblokowują, i to, czy artefakt jest gotowy na kolejną próbę. Przydaje się w komorze, kiedy nie widzisz konsoli.
 
-Niektóre reakcje występują natychmiastowo, podczas gdy inne powodują trwałe zmiany. Po uruchomieniu artefaktu reakcja powoduje, że artefakt losowo przemieszcza się do innego węzła, z którym jest połączony.
-
-Dzięki pewnym eksperymentom naukowym można zacząć rozumieć, w jaki sposób poszczególne węzły artefaktu są ze sobą połączone oraz jak przemieszczać się między nimi poprzez aktywowanie węzłów.
-
-Wszystkie węzły o głębokości niezerowej będą miały dokładnie jedną krawędź prowadzącą do węzła nadrzędnego. Wszystkie pozostałe krawędzie danego węzła prowadzą w dół, do kolejnej głębokości.
-
-## Analizator artefaktów i konsola analizy
-<Box>
-<GuideEntityEmbed Entity="MachineArtifactAnalyzer"/>
-<GuideEntityEmbed Entity="ComputerAnalysisConsole"/>
-</Box>
-Głównym sprzętem, z którego będziesz korzystać w ramach ksenoarcheologii, jest [color=#e8c878]analizator artefaktów[/color] oraz [color=#e8c878]konsola analizy[/color]. Możesz ich używać do tworzenia raportów zawierających cenne informacje na temat artefaktu.
-
-Aby je skonfigurować, wystarczy podłączyć je za pomocą konfiguratora sieciowego i umieścić artefakt na analizatorze. Każda stacja posiada co najmniej jedno z tych urządzeń, które jest już skonfigurowane.
-
-Użyj przycisku [color=#e8c878]skanuj[/color] na konsoli, aby dowiedzieć się, jakiego bodźca potrzebuje artefakt i jaki będzie skutek jego reakcji. Skanowanie trwa trzydzieści sekund.
-
-Użyj przycisku [color=#e8c878]drukuj[/color], aby zapisać wynik skanowania i móc do niego wrócić później.
-
-Po odkryciu nowego węzła możesz wyodrębnić punkty z artefaktu, korzystając z przycisku [color=#e8c878]Wyodrębnij punkty[/color].
-
-## Tworzenie artefaktów
-<GuideEntityEmbed Entity="ArtifactFragment" Caption="Fragment artefaktu"/>
-
-Można zebrać wiele fragmentów artefaktów i złożyć je w działający artefakt. Można poprosić o nie w departamencie odzysku – zazwyczaj znajdują je podczas wydobywania surowców z asteroid lub w trakcie wypraw.
-
-## Tendencja do przemieszczania się
-<Box>
-  <GuideEntityEmbed Entity="MachineArtifactAnalyzer"/>
-</Box>
-Artefakty umieszczone na zasilanym analizatorze artefaktów podlegają przesunięciu, które wpływa na to, do którego węzła się przemieszczą po aktywacji. Przesunięcie to można ustawić w konsoli artefaktów.
-
-Istnieją dwa rodzaje przesunięć:
-- [color=#e8c878]W górę:[/color] faworyzuje węzły położone bliżej punktu początkowego. Powoduje zmniejszenie głębokości.
-- [color=#e8c878]W dół:[/color] faworyzuje węzły położone dalej od punktu początkowego. Powoduje zwiększenie głębokości.
+  <Box>
+    <GuideEntityEmbed Entity="CrateArtifactContainer" Caption="Pojemnik na artefakty"/>
+    <GuideEntityEmbed Entity="HandheldArtifactContainer" Caption="Przenośny pojemnik"/>
+  </Box>
+  - [bold]Pojemniki na artefakty:[/bold] służą do przechowywania i przenoszenia. Zamknięty w nich artefakt nie reaguje na wyzwalacze i nie odpala efektów.
+  <Box>
+    <GuideEntityEmbed Entity="MachineArtifactCrusher" Caption="Kruszarka artefaktów"/>
+  </Box>
+  - [bold]Kruszarka artefaktów:[/bold] miażdży artefakt na fragmenty. Na stacji jej nie ma, płytę odblokowuje technologia „Recykling artefaktów”.
+  <Box>
+    <GuideEntityEmbed Entity="ArtifactFragment" Caption="Fragment artefaktu"/>
+  </Box>
+  - [bold]Fragment artefaktu:[/bold] kawałek zniszczonego artefaktu. Z czterech fragmentów złożysz w menu wytwarzania nowy artefakt.
 </Document>

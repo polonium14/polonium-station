@@ -1,0 +1,434 @@
+- type: entity
+  parent: BulletDisabler
+  id: BulletReplicatorDisabler
+  categories: [ HideSpawnMenu ]
+  name: replicator disabler bolt
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: omnilaser
+      shader: unshaded
+      color: "#e84fc2"
+  - type: StaminaDamageOnCollide
+    damage: 22
+
+- type: entity
+  parent: ReplicatorStunRay
+  id: ReplicatorStunRayTier2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Gun
+    fireRate: 1.5
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2.5
+  - type: BasicEntityAmmoProvider
+    proto: BulletReplicatorDisabler
+    capacity: 4
+    count: 4
+
+- type: entity
+  parent: ReplicatorStunRay
+  id: ReplicatorStunRayTier3
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Gun
+    fireRate: 1
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 3
+  - type: BasicEntityAmmoProvider
+    proto: BulletReplicatorDisabler
+    capacity: 6
+    count: 6
+
+- type: entity
+  parent: BulletDisabler
+  id: BulletReplicatorColossusDisabler
+  categories: [ HideSpawnMenu ]
+  name: colossus disabler bolt
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Guns/Projectiles/replicator_colossus.rsi
+    drawdepth: Effects
+    layers:
+    - state: bolt_nonlethal
+      shader: unshaded
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectReplicatorColossusDisabler
+    muzzleFlashOffset: 0,0
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.4,0.2,0.4"
+        hard: false
+        mask:
+        - Opaque
+        - Impassable
+        - BulletImpassable
+      fly-by:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: false
+  - type: StaminaDamageOnCollide
+    damage: 5
+  - type: Projectile
+    impactEffect: BulletImpactEffectReplicatorColossusDisabler
+    damage:
+      types:
+        Heat: 0
+    soundHit:
+      collection: WeakHit
+    forceSound: true
+  - type: ReplicatorColossusProjectile
+  - type: TimedDespawn
+    lifetime: 0.75
+
+- type: entity
+  parent: BulletLaser
+  id: BulletReplicatorColossusLaser
+  categories: [ HideSpawnMenu ]
+  name: colossus laser bolt
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Guns/Projectiles/replicator_colossus.rsi
+    drawdepth: Effects
+    layers:
+    - state: bolt_lethal
+      shader: unshaded
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectReplicatorColossusLaser
+    muzzleFlashOffset: 0,0
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.4,0.2,0.4"
+        hard: false
+        mask:
+        - Opaque
+        - Impassable
+        - BulletImpassable
+      fly-by:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: false
+  - type: Projectile
+    impactEffect: BulletImpactEffectReplicatorColossusLaser
+    damage:
+      types:
+        Heat: 5
+        Structural: 10
+  - type: ReplicatorColossusProjectile
+  - type: TimedDespawn
+    lifetime: 0.75
+
+- type: entity
+  parent: BulletRocket
+  id: BulletReplicatorColossusRocket
+  categories: [ HideSpawnMenu ]
+  name: colossus rocket
+  components:
+  - type: Explosive
+    explosionType: ReplicatorColossusRocket
+    canCreateVacuum: false
+  - type: ReplicatorColossusProjectile
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseWeaponReplicatorColossus
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Guns/replicator_colossus.rsi
+  - type: Unremoveable
+  - type: AmmoCounter
+  - type: MeleeWeapon
+    resetOnHandSelected: false
+    soundHit:
+      collection: MetalThud
+    angle: 120
+    range: 3
+    attackRate: 0.8
+    wideAnimation: WeaponArcReplicatorColossusSlam
+    wideAnimationRotation: 0
+    damage:
+      types:
+        Structural: 90
+  - type: AltFireMelee
+    attackType: Heavy
+
+- type: entity
+  abstract: true
+  parent: BaseWeaponReplicatorColossus
+  id: BaseWeaponReplicatorColossusMinigun
+  components:
+  - type: ReplicatorColossusGun
+    sharedAmmo: true
+    muzzleOffsets:
+      South:
+      - 0,0.443
+      North:
+      - 0,2.309
+      East:
+      - 2.221,1.376
+      West:
+      - -2.221,1.376
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    minAngle: 3
+    maxAngle: 10
+    angleIncrease: 0.6
+    angleDecay: 6
+    projectileSpeed: 24
+    cameraRecoilScalar: 0.3
+
+- type: entity
+  parent: BaseWeaponReplicatorColossusMinigun
+  id: WeaponReplicatorColossusDisabler
+  categories: [ HideSpawnMenu ]
+  name: photon minigun (disabling)
+  description: The colossus's rotary cannon, set to rapid disabling bolts.
+  components:
+  - type: Sprite
+    state: disabler
+  - type: Gun
+    fireRate: 7.14
+    soundGunshot:
+      path: /Audio/_Polonium/Weapons/Guns/colossus_minigun_nonlethal.ogg
+      params:
+        variation: 0.05
+  - type: BasicEntityAmmoProvider
+    proto: BulletReplicatorColossusDisabler
+    capacity: 100
+    count: 100
+
+- type: entity
+  parent: BaseWeaponReplicatorColossusMinigun
+  id: WeaponReplicatorColossusLaser
+  categories: [ HideSpawnMenu ]
+  name: photon minigun (lethal)
+  description: The colossus's rotary cannon, set to slower bolts that burn through flesh and walls.
+  components:
+  - type: Sprite
+    state: laser
+  - type: Gun
+    fireRate: 4.76
+    soundGunshot:
+      path: /Audio/_Polonium/Weapons/Guns/colossus_minigun_lethal.ogg
+      params:
+        variation: 0.05
+  - type: BasicEntityAmmoProvider
+    proto: BulletReplicatorColossusLaser
+    capacity: 100
+    count: 100
+
+- type: entity
+  parent: BaseWeaponReplicatorColossus
+  id: WeaponReplicatorColossusRocketLauncher
+  categories: [ HideSpawnMenu ]
+  name: rocket launcher
+  description: Launch tubes in the shoulder pods. They hold three rockets, and a new one is assembled every 22 seconds.
+  components:
+  - type: Sprite
+    state: rockets
+  - type: ReplicatorColossusGun
+    muzzleOffsets:
+      South:
+      - -0.645,1.573
+      - 0.645,1.573
+      North:
+      - 0.645,2.716
+      - -0.645,2.716
+      East:
+      - 1.361,1.874
+      - 1.361,2.416
+      West:
+      - -1.361,2.416
+      - -1.361,1.874
+  - type: Gun
+    fireRate: 1.5
+    projectileSpeed: 16
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: GunIgnorePrediction
+  - type: BasicEntityAmmoProvider
+    proto: BulletReplicatorColossusRocket
+    capacity: 3
+    count: 3
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 22
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+
+- type: startingGear
+  id: ReplicatorColossusWeapons
+  inhand:
+  - WeaponReplicatorColossusDisabler
+  - WeaponReplicatorColossusLaser
+  - WeaponReplicatorColossusRocketLauncher
+
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectReplicatorColossusDisabler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    offset: 0,0
+    layers:
+    - shader: unshaded
+      map: [ "enum.EffectLayers.Unshaded" ]
+      sprite: _Polonium/Objects/Weapons/Guns/Projectiles/replicator_colossus.rsi
+      state: muzzle_nonlethal
+
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectReplicatorColossusLaser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    offset: 0,0
+    layers:
+    - shader: unshaded
+      map: [ "enum.EffectLayers.Unshaded" ]
+      sprite: _Polonium/Objects/Weapons/Guns/Projectiles/replicator_colossus.rsi
+      state: muzzle_lethal
+
+- type: entity
+  id: BulletImpactEffectReplicatorColossusDisabler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - shader: unshaded
+      map: [ "enum.EffectLayers.Unshaded" ]
+      sprite: _Polonium/Objects/Weapons/Guns/Projectiles/replicator_colossus.rsi
+      state: impact_nonlethal
+  - type: TimedDespawn
+    lifetime: 0.25
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: EffectVisuals
+
+- type: entity
+  parent: BulletImpactEffectReplicatorColossusDisabler
+  id: BulletImpactEffectReplicatorColossusLaser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - shader: unshaded
+      map: [ "enum.EffectLayers.Unshaded" ]
+      sprite: _Polonium/Objects/Weapons/Guns/Projectiles/replicator_colossus.rsi
+      state: impact_lethal
+
+- type: entity
+  abstract: true
+  id: WeaponArcReplicatorBase
+  components:
+  - type: Sprite
+    drawdepth: Effects
+  - type: WeaponArcVisuals
+    fadeOut: false
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  parent: WeaponArcReplicatorBase
+  id: WeaponArcReplicatorCrescent
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_melee.rsi
+    layers:
+    - state: crescent
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.359
+
+- type: entity
+  parent: WeaponArcReplicatorBase
+  id: WeaponArcReplicatorWedge
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_melee.rsi
+    layers:
+    - state: wedge
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.329
+
+- type: entity
+  parent: WeaponArcReplicatorBase
+  id: WeaponArcReplicatorHex
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_melee.rsi
+    layers:
+    - state: hex
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.369
+
+- type: entity
+  parent: WeaponArcReplicatorBase
+  id: WeaponArcReplicatorWedgeFan
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_melee_wide.rsi
+    layers:
+    - state: wedge_fan
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.359
+
+- type: entity
+  parent: WeaponArcReplicatorBase
+  id: WeaponArcReplicatorColossusSlam
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_colossus_slam.rsi # this looks bad asf
+    layers:
+    - state: slam
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.529
+
+- type: entity
+  parent: WeaponArcReplicatorBase
+  id: WeaponArcReplicatorHexArc
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Effects/replicator_melee_wide.rsi
+    layers:
+    - state: hex_arc
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.489

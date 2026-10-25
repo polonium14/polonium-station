@@ -1,4 +1,4 @@
-generator-clogged = { CAPITALIZE(THE($generator)) } shuts off abruptly!
+generator-clogged = { CAPITALIZE($generator) } nagle się wyłącza!
 portable-generator-verb-start = Uruchom generator
 portable-generator-verb-start-msg-unreliable = Uruchom generator, może wymagać paru prób.
 portable-generator-verb-start-msg-reliable = Uruchom generator.
@@ -10,8 +10,8 @@ portable-generator-ui-title = Przenośny generator
 portable-generator-ui-status-stopped = Zatrzymany:
 portable-generator-ui-status-starting = Uruchamia się:
 portable-generator-ui-status-running = Uruchomiony:
-portable-generator-ui-power-switch = Status:
-portable-generator-ui-switch = Output:
+portable-generator-ui-power-switch = Stan:
+portable-generator-ui-switch = Wyjście:
 portable-generator-ui-start = Uruchom
 portable-generator-ui-stop = Zatrzymaj
 portable-generator-ui-target-power-label = Moc docelowa (kW):

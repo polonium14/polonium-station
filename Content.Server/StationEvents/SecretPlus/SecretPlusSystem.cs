@@ -32,6 +32,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Ghost.Components;
+using Content.Shared._Polonium.GameTicking; // POLONIUM
 
 namespace Content.Server.StationEvents.SecretPlus;
 
@@ -40,12 +41,22 @@ public sealed class SelectedEvent
     public readonly EntityPrototype Proto;
     public readonly GameRuleComponent RuleComp;
     public readonly StationEventComponent? EvComp;
+    // POLONIUM START
+    public readonly bool GhostAntag;
+    public readonly float? ChaosScore;
+    public readonly float? Weight;
+    // POLONIUM END
 
-    public SelectedEvent(EntityPrototype proto, GameRuleComponent ruleComp, StationEventComponent? evComp = null)
+    public SelectedEvent(EntityPrototype proto, GameRuleComponent ruleComp, StationEventComponent? evComp = null, bool ghostAntag = false, float? chaosScore = null, float? weight = null) // Polonium
     {
         Proto = proto;
         RuleComp = ruleComp;
         EvComp = evComp;
+        // POLONIUM START
+        GhostAntag = ghostAntag;
+        ChaosScore = chaosScore;
+        Weight = weight;
+        // POLONIUM END
     }
 }
 
@@ -80,6 +91,8 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
     {
         base.Initialize();
 
+        SubscribeLocalEvent<RoundStartAttemptEvent>(OnRoundStartAttempt, before: new[] { typeof(GameTicker) });
+
         _sawmill = _log.GetSawmill("secret_plus");
 
         Subs.CVar(_cfg, GoobCVars.MinimumTimeUntilFirstEvent, value => _minimumTimeUntilFirstEvent = value, true);
@@ -88,7 +101,8 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
     protected override void Added(EntityUid uid, SecretPlusComponent scheduler, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
-        var totalPlayers = GetTotalPlayerCount(_playerManager.Sessions);
+        var totalPlayers = GetEligiblePlayerCount();
+        scheduler.StartingPlayers = totalPlayers; // Polonium
         scheduler.ChaosScore =
             -_random.NextFloat(scheduler.MinStartingChaos * totalPlayers, scheduler.MaxStartingChaos * totalPlayers) *
             _roundstartChaosScoreMultiplier;
@@ -107,6 +121,34 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             SetupEvents((uid, scheduler), CountActivePlayers());
     }
 
+    private void OnRoundStartAttempt(RoundStartAttemptEvent args)
+    {
+        if (args.Forced || args.Cancelled)
+            return;
+
+        var query = EntityQueryEnumerator<SecretPlusComponent>();
+        while (query.MoveNext(out var uid, out var scheduler))
+        {
+            if (!_ticker.IsGameRuleAdded(uid))
+                continue;
+
+            foreach (var ruleUid in scheduler.RoundstartRules)
+            {
+                if (!TryComp<GameRuleComponent>(ruleUid, out var rule)
+                    || rule.CancelPresetOnTooFewPlayers
+                    || args.Players.Length >= rule.MinPlayers
+                    || !_ticker.EndGameRule(ruleUid, rule))
+                    continue;
+
+                _chat.SendAdminAnnouncement(Loc.GetString("secretplus-rule-skipped-not-enough-ready-players",
+                    ("ruleName", ToPrettyString(ruleUid)),
+                    ("minimumPlayers", rule.MinPlayers),
+                    ("readyPlayersCount", args.Players.Length)));
+                LogMessage($"Skipped rule '{ToPrettyString(ruleUid)}': requires {rule.MinPlayers} players, but only {args.Players.Length} are ready. The preset was not cancelled by this rule.", false);
+            }
+        }
+    }
+
     private void SetupEvents(Entity<SecretPlusComponent> scheduler, PlayerCount count, SelectedGameRulesComponent? selectedRules = null)
     {
         scheduler.Comp.SelectedEvents.Clear();
@@ -121,13 +163,13 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
     {
         foreach (var proto in _ticker.GetAllGameRulePrototypes())
         {
-            if (!proto.TryGetComponent<GameRuleComponent>(out var gameRule, _factory)
-                || !proto.TryGetComponent<StationEventComponent>(out var stationEvent, _factory))
+            if (!proto.TryComp<GameRuleComponent>(out var gameRule, _factory)
+                || !proto.TryComp<StationEventComponent>(out var stationEvent, _factory))
                 continue;
 
             if (scheduler.Comp.DisallowedEvents.Contains(stationEvent.EventType)
                 || (!scheduler.Comp.IgnoreTimings
-                    && !_event.CanRun(proto, stationEvent, count.Players, _ticker.RoundDuration(), 1f / GetRamping(scheduler))))
+                    && !_event.CanRun(proto, stationEvent, GetEventPlayerCount(scheduler, count), _ticker.RoundDuration(), 1f / GetRamping(scheduler)))) // Polonium
                 continue;
 
             scheduler.Comp.SelectedEvents.Add(new SelectedEvent(proto, gameRule, stationEvent));
@@ -139,27 +181,19 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         if (selectedRules == null)
             return;
 
+        var players = GetEventPlayerCount(scheduler, count); // Polonium
         var available = _event.AvailableEvents(
             scheduler.Comp.IgnoreTimings,
-            scheduler.Comp.IgnoreTimings ? int.MaxValue : null,
+            scheduler.Comp.IgnoreTimings ? int.MaxValue : players, // Polonium
             scheduler.Comp.IgnoreTimings ? TimeSpan.MaxValue : null,
             1f / GetRamping(scheduler));
 
-        if (!_event.TryBuildLimitedEvents(selectedRules.ScheduledGameRules, available, out var possibleEvents))
-            return;
+        // POLONIUM START
+        if (scheduler.Comp.GhostAntagRules is { } ghostAntags && CanStartGhostAntag(scheduler, players))
+            AddTableEvents(scheduler, ghostAntags, available, players, true);
 
-        foreach (var entry in possibleEvents)
-        {
-            var proto = entry.Key;
-            var stationEvent = entry.Value;
-            if (!proto.TryGetComponent<GameRuleComponent>(out var gameRule, _factory))
-                continue;
-
-            if (scheduler.Comp.DisallowedEvents.Contains(stationEvent.EventType))
-                continue;
-
-            scheduler.Comp.SelectedEvents.Add(new SelectedEvent(proto, gameRule, stationEvent));
-        }
+        AddTableEvents(scheduler, selectedRules.ScheduledGameRules, available, players, false);
+        // POLONIUM END
     }
 
     protected override void ActiveTick(EntityUid uid, SecretPlusComponent scheduler, GameRuleComponent gameRule, float frameTime)
@@ -171,6 +205,8 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
         scheduler.ChaosScore += count.Players * scheduler.LivingChaosChange * frameTime * ramp * speedup * mult;
         scheduler.ChaosScore += count.Ghosts * scheduler.DeadChaosChange * frameTime * speedup * mult;
+
+        UpdateLateAntags(scheduler); // Polonium
 
         var currTime = _timing.CurTime;
         if (currTime < scheduler.TimeNextEvent)
@@ -184,7 +220,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             return;
         }
 
-        var amt = TimeSpan.FromSeconds(_random.NextDouble(scheduler.EventIntervalMin.TotalSeconds, scheduler.EventIntervalMax.TotalSeconds) / ramp / speedup);
+        var amt = TimeSpan.FromSeconds(_random.NextDouble(scheduler.EventIntervalMin.TotalSeconds, scheduler.EventIntervalMax.TotalSeconds) / ramp / speedup / GetEventSpeed((uid, scheduler), count)); // Polonium
         scheduler.TimeNextEvent = currTime + amt;
 
         LogMessage($"Chaos score: {scheduler.ChaosScore}, Next event at: {_ticker.RoundDuration() + amt} (ramping {ramp})");
@@ -195,8 +231,15 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             SetupEvents((uid, scheduler), count);
 
         var selectedEvent = ChooseEvent((uid, scheduler));
+        // POLONIUM START
+        if (selectedEvent is { GhostAntag: true })
+        {
+            scheduler.GhostAntagsStarted++;
+            scheduler.LastGhostAntag = _ticker.RoundDuration();
+        }
+        // POLONIUM END
         if (selectedEvent != null)
-            StartRule((uid, scheduler), selectedEvent.Proto.ID, false);
+            StartRule((uid, scheduler), selectedEvent.Proto.ID, false, chaosScore: selectedEvent.ChaosScore); // Polonium
         else
             LogMessage("No runnable events");
     }
@@ -206,15 +249,29 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         if (scheduler.Comp.NoRoundstartAntags)
             return;
 
+        // POLONIUM START
+        if (_random.Prob(scheduler.Comp.NoRoundstartAntagsChance))
+        {
+            LogMessage("No roundstart rules this round", false);
+            return;
+        }
+        // POLONIUM END
+
         var primaryWeightList = _prototypeManager.Index(scheduler.Comp.PrimaryAntagsWeightTable);
         var weightList = _prototypeManager.Index(scheduler.Comp.RoundStartAntagsWeightTable);
 
-        var count = GetTotalPlayerCount(_playerManager.Sessions);
+        var eligiblePlayers = GetEligiblePlayerCount();
 
-        LogMessage($"Trying to run roundstart rules, total player count: {count}", false);
+        LogMessage($"Trying to run roundstart rules, eligible player count: {eligiblePlayers}", false);
 
-        var weights = weightList.Weights.ToDictionary();
-        var primaryWeights = primaryWeightList.Weights.ToDictionary();
+        var weights = weightList.Weights.Where(entry => CanRunWithPlayerCount(entry.Key)).ToDictionary();
+        var primaryWeights = primaryWeightList.Weights.Where(entry => CanRunWithPlayerCount(entry.Key)).ToDictionary();
+        // POLONIUM START
+        var primaryPicks = GetByPlayerCount(scheduler.Comp.PrimaryAntagPicks, eligiblePlayers);
+        var picksLeft = (int) primaryPicks;
+        if (primaryPicks > picksLeft && _random.Prob(primaryPicks - picksLeft))
+            picksLeft++;
+        // POLONIUM END
         const int maxIters = 50;
         var i = 0;
         var origChaos = scheduler.Comp.ChaosScore;
@@ -222,14 +279,22 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         {
             i++;
 
-            var pick = _random.Pick(i == 1 ? primaryWeights : weights);
+            // POLONIUM START
+            var fromPrimary = picksLeft > 0 && primaryWeights.Count > 0;
+            picksLeft--;
+            var candidates = fromPrimary ? primaryWeights : weights;
+            // POLONIUM END
+            if (candidates.Count == 0)
+                break;
+
+            var pick = _random.Pick(candidates);
 
             GameRuleComponent? ruleComp = null;
             if (!_prototypeManager.TryIndex(pick, out var entProto)
-                || !entProto.TryGetComponent<GameRuleComponent>(out ruleComp, _factory))
+                || !entProto.TryComp<GameRuleComponent>(out ruleComp, _factory))
                 continue;
 
-            var chaosScore = GetChaosScore(entProto, ruleComp);
+            var chaosScore = GetChaosScore(entProto, ruleComp, eligiblePlayers);
 
             if (chaosScore == null)
             {
@@ -237,17 +302,25 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
                 continue;
             }
 
+            if (!scheduler.Comp.IgnoreIncompatible)
+                weights.Remove(pick);
+
+            primaryWeights.Remove(pick); // Polonium
+
             var pickProb = -scheduler.Comp.ChaosScore / chaosScore.Value;
             if (i == 1)
                 pickProb *= scheduler.Comp.PrimaryAntagChaosBias;
             pickProb = MathF.Min(1f, pickProb);
-            if (!_random.Prob(pickProb))
-                continue;
+            // POLONIUM START
+            if (fromPrimary && scheduler.Comp.GuaranteedPrimaryAntags)
+                pickProb = 1f;
 
-            if (!scheduler.Comp.IgnoreIncompatible)
-                weights.Remove(pick);
-
-            IndexAndStartGameMode(pick, entProto, ruleComp);
+            if (_random.Prob(pickProb))
+            {
+                IndexAndStartGameMode(pick, entProto, ruleComp, fromPrimary ? scheduler.Comp.PrimaryAntagChaosShare : 1f);
+                RemoveExclusiveRules(pick);
+            }
+            // POLONIUM END
 
             if (weights.Count == 0)
                 return;
@@ -255,24 +328,58 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
         return;
 
-        void IndexAndStartGameMode(string pick, EntityPrototype? pickProto, GameRuleComponent? ruleComp)
+        // POLONIUM START
+        void RemoveExclusiveRules(string started)
+        {
+            if (!scheduler.Comp.ExclusiveRules.TryGetValue(started, out var startedFrom))
+                return;
+
+            foreach (var (other, otherFrom) in scheduler.Comp.ExclusiveRules)
+            {
+                if (eligiblePlayers >= Math.Max(startedFrom, otherFrom))
+                    continue;
+
+                weights.Remove(other);
+                primaryWeights.Remove(other);
+            }
+        }
+        // POLONIUM END
+
+        bool CanRunWithPlayerCount(string ruleId)
+        {
+            return _prototypeManager.TryIndex<EntityPrototype>(ruleId, out var proto)
+                && proto.TryComp<GameRuleComponent>(out var rule, _factory)
+                && rule.MinPlayers <= eligiblePlayers
+                && (!proto.TryComp<GameRuleMaxPlayersComponent>(out var max, _factory) // POLONIUM
+                    || max.MaxPlayers >= eligiblePlayers);
+        }
+
+        void IndexAndStartGameMode(string pick, EntityPrototype? pickProto, GameRuleComponent? ruleComp, float chaosShare) // Polonium
         {
             if (pickProto == null
                 || ruleComp == null
-                || ruleComp.MinPlayers > count)
+                || ruleComp.MinPlayers > eligiblePlayers)
                 return;
 
-            var effPlayers = (int)MathF.Round(count * scheduler.Comp.ChaosScore / origChaos);
+            var effPlayers = (int)MathF.Round(eligiblePlayers * scheduler.Comp.ChaosScore / origChaos);
             LogMessage($"Roundstart rule chosen: {pick} with score {GetChaosScore(pickProto, ruleComp, effPlayers)}");
-            StartRule(scheduler, pick, false, effPlayers);
+            StartRule(scheduler, pick, false, effPlayers, chaosShare); // Polonium
         }
     }
 
-    private void StartRule(Entity<SecretPlusComponent> scheduler, string rule, bool doStart = true, int? players = null)
+    private void StartRule(Entity<SecretPlusComponent> scheduler, string rule, bool doStart = true, int? players = null, float chaosShare = 1f, float? chaosScore = null) // Polonium
     {
         var ruleUid = _ticker.AddGameRule(rule);
 
-        scheduler.Comp.ChaosScore += GetChaosScore(ruleUid, players)!.Value;
+        // Roundstart antags are optional: losing ready players during map loading
+        // should end the affected rule, rather than cancel the entire preset.
+        if (players != null)
+        {
+            Comp<GameRuleComponent>(ruleUid).CancelPresetOnTooFewPlayers = false;
+            scheduler.Comp.RoundstartRules.Add(ruleUid);
+        }
+
+        scheduler.Comp.ChaosScore += (chaosScore ?? GetChaosScore(ruleUid, players)!.Value) * chaosShare; // Polonium
 
         if (players != null && TryComp<AntagSelectionComponent>(ruleUid, out var selection))
         {
@@ -327,10 +434,10 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
     public float? GetChaosScore(EntityPrototype ruleProto, GameRuleComponent? ruleComp, int? players = null)
     {
-        if (ruleComp == null && !ruleProto.TryGetComponent<GameRuleComponent>(out ruleComp, _factory))
+        if (ruleComp == null && !ruleProto.TryComp<GameRuleComponent>(out ruleComp, _factory))
             return null;
 
-        if (ruleProto.TryGetComponent<AntagSelectionComponent>(out var selection, _factory))
+        if (ruleProto.TryComp<AntagSelectionComponent>(out var selection, _factory))
         {
             var score = GetAntagChaosScore(selection, players);
             if (score != null)
@@ -374,6 +481,14 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         return count + _event.PlayerCountBias;
     }
 
+    public int GetEligiblePlayerCount()
+    {
+        if (_ticker.RunLevel == GameRunLevel.PreRoundLobby)
+            return _ticker.ReadyPlayerCount() + _event.PlayerCountBias;
+
+        return GetTotalPlayerCount(_playerManager.Sessions);
+    }
+
     public float GetRamping(Entity<SecretPlusComponent> scheduler)
     {
         var curTime = _ticker.RoundDuration();
@@ -390,7 +505,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             if (ev.EvComp == null)
                 continue;
 
-            var chaosScore = GetChaosScore(ev.Proto, ev.RuleComp);
+            var chaosScore = ev.ChaosScore ?? GetChaosScore(ev.Proto, ev.RuleComp); // Polonium
             if (chaosScore == null)
             {
                 Log.Warning($"Tried running event {ev.Proto.ID}, but chaos score was null");
@@ -406,7 +521,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             weight += scheduler.Comp.ChaosOffset;
             weight += weight < 0f ? -scheduler.Comp.ChaosThreshold : scheduler.Comp.ChaosThreshold;
             var delta = ChaosDelta(-scheduler.Comp.ChaosScore, weight, scheduler.Comp.ChaosMatching, scheduler.Comp.ChaosThreshold * scheduler.Comp.ChaosThreshold);
-            weights[ev] = ev.EvComp.Weight / (delta + 1f);
+            weights[ev] = (ev.Weight ?? ev.EvComp.Weight) / (delta + 1f); // Polonium
         }
 
         return weights.Count == 0 ? null : _random.Pick(weights);
@@ -419,6 +534,70 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             ratio = MathF.Abs(chaos2 * chaos1 / differentSignMultiplier);
         return MathF.Abs(MathF.Log(ratio, logBase));
     }
+
+    // POLONIUM START
+    private static T GetByPlayerCount<T>(Dictionary<int, T> values, int players) where T : struct
+    {
+        var best = int.MinValue;
+        T value = default;
+        foreach (var (minPlayers, entry) in values)
+        {
+            if (minPlayers > players || minPlayers < best)
+                continue;
+
+            best = minPlayers;
+            value = entry;
+        }
+
+        return value;
+    }
+
+    private int GetEventPlayerCount(Entity<SecretPlusComponent> scheduler, PlayerCount count)
+    {
+        return scheduler.Comp.EventsCountAllPlayers ? GetTotalPlayerCount(_playerManager.Sessions) : count.Players;
+    }
+
+    private bool CanStartGhostAntag(Entity<SecretPlusComponent> scheduler, int players)
+    {
+        return scheduler.Comp.GhostAntagsStarted < GetByPlayerCount(scheduler.Comp.GhostAntagLimit, players)
+            && _ticker.RoundDuration() >= scheduler.Comp.LastGhostAntag + scheduler.Comp.GhostAntagInterval;
+    }
+
+    private void UpdateLateAntags(SecretPlusComponent scheduler)
+    {
+        if (scheduler.LateAntagsClosed || scheduler.LateAntagsUntil <= scheduler.LateAntagsFrom)
+            return;
+
+        var time = _ticker.RoundDuration();
+        if (time < scheduler.LateAntagsFrom)
+            return;
+
+        var open = time < scheduler.LateAntagsUntil;
+        scheduler.LateAntagsClosed = !open;
+        var newPlayers = open
+            ? Math.Max(0, _antagSelection.GetActivePlayerCount() + _event.PlayerCountBias - scheduler.StartingPlayers)
+            : 0;
+
+        foreach (var rule in scheduler.RoundstartRules)
+        {
+            if (!TryComp<AntagSelectionComponent>(rule, out var selection)
+                || !selection.LateJoinAdditional
+                || Prototype(rule) is not { } proto
+                || !proto.TryComp<AntagSelectionComponent>(out var original, _factory))
+                continue;
+
+            for (var i = 0; i < selection.Antags.Length; i++)
+            {
+                if (selection.Antags[i] is not MinMaxAntagCountSelector antag
+                    || original.Antags[i] is not MinMaxAntagCountSelector originalAntag)
+                    continue;
+
+                var pinned = antag.Range.Min;
+                antag.Range = new MinMax(pinned, MathF.Min(pinned + newPlayers / antag.PlayerRatio, originalAntag.Range.Max));
+            }
+        }
+    }
+    // POLONIUM END
 
     private void LogMessage(string message, bool showChat = true)
     {

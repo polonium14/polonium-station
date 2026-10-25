@@ -14,8 +14,8 @@
 
 - type: job
   id: InternalAffairsAgent
-  name: Internal Affairs Agent
-  description: "Serve directly under the Nanotrasen Representative. Identify any violations of Standard Operating Procedure or Space Law. Report those violations."
+  name: job-name-iaa
+  description: job-description-iaa
   playTimeTracker: JobInternalAffairsAgent
   setPreference: false
   requirements:

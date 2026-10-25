@@ -1,7 +1,7 @@
-play-global-sound-command-description = Plays a global sound for a specific player or for every connected player if no players are specified.
-play-global-sound-command-help = playglobalsound <path> [volume] [user 1] ... [user n]
-play-global-sound-command-player-not-found = Player "{ $username }" not found.
-play-global-sound-command-volume-parse = Invalid volume of { $volume } specified.
-play-global-sound-command-arg-path = <path>
-play-global-sound-command-arg-volume = [volume]
-play-global-sound-command-arg-usern = [user { $user }]
+play-global-sound-command-description = Odtwarza globalny dźwięk dla wybranego gracza lub, jeśli nie podano graczy, dla wszystkich połączonych graczy.
+play-global-sound-command-help = playglobalsound <ścieżka> [głośność] [użytkownik 1] ... [użytkownik n]
+play-global-sound-command-player-not-found = Nie znaleziono gracza „{ $username }”.
+play-global-sound-command-volume-parse = Podano nieprawidłową głośność: { $volume }.
+play-global-sound-command-arg-path = <ścieżka>
+play-global-sound-command-arg-volume = [głośność]
+play-global-sound-command-arg-usern = [użytkownik { $user }]

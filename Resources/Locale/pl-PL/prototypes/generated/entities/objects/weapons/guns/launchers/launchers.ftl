@@ -21,3 +21,7 @@ ent-WeaponLauncherAdmemeMeteorLarge = wyrzutnia meteorów
 ent-WeaponLauncherAdmemeImmovableRodSlow = wyrzutnia nieruchomych prętów powolna
     .desc = Wystrzeliwuje powolne nieruchome pręty.
     .suffix = Admeme
+ent-WeaponGuidedMissileLauncherXenoborg = XB GML-78
+    .desc = Wyrzutnia kierowanych pocisków.
+ent-WeaponRocketLauncherXenoborg = XB MRL-97-D
+    .desc = Obca wyrzutnia rakiet z rakietami burzącymi.

@@ -1,0 +1,12 @@
+ent-SecretPlusMid = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }
+ent-SecretPlusLow = { ent-SecretPlusMid }
+    .desc = { ent-SecretPlusMid.desc }
+ent-SecretPlusMidHigh = { ent-SecretPlusMid }
+    .desc = { ent-SecretPlusMid.desc }
+ent-SecretPlusHigh = { ent-SecretPlusMidHigh }
+    .desc = { ent-SecretPlusMidHigh.desc }
+ent-SecretPlusRampingMid = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }
+ent-SecretPlusAdmeme = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }

@@ -1,0 +1,104 @@
+- type: entity
+  id: AnomalyEvilClown
+  parent: BaseAnomaly
+  name: anomalia
+  description: Czujesz się niedobrze patrząc na to.
+  suffix: Honk
+  components:
+  - type: Anomaly
+    corePrototype: AnomalyCoreEvilClown
+    coreInertPrototype: AnomalyCoreEvilClownInert
+    supercriticalSoundAtAnimationStart:
+      collection: AnomalyFleshSupercritical
+  - type: Sprite
+    sprite: _Polonium/Structures/Specific/Anomalies/evil_clown.rsi
+    layers:
+    - state: anom
+      map: ["enum.AnomalyVisualLayers.Base"]
+    - state: anom-pulse
+      map: ["enum.AnomalyVisualLayers.Animated"]
+      visible: false
+  - type: PointLight
+    radius: 3.5
+    energy: 4
+    color: "#e5d95a"
+    castShadows: false
+  - type: RadiationSource
+    intensity: 1.4
+    slope: 0.5
+  - type: EntitySpawnAnomaly
+    entries:
+    - settings:
+        spawnOnPulse: true
+        minAmount: 1
+        maxAmount: 3
+        minRange: 1.5
+        maxRange: 3.5
+      spawns:
+      - MobHonkBananaTree
+      - MobHonkLube
+      - MobHonkFleshClown
+      - MobHonkPieSpewer
+      - MobHonkClown
+      - MobHonkThin
+    - settings:
+        spawnOnSuperCritical: true
+        minAmount: 5
+        maxAmount: 30
+        minRange: 3
+        maxRange: 12
+        scaleWithPlayers: true
+      spawns:
+      - MobHonkBananaTree
+      - MobHonkLube
+      - MobHonkFleshClown
+      - MobHonkPieSpewer
+      - MobHonkClown
+      - MobHonkThin
+      - MobHonkHonkhulk
+      - MobHonkHonkmunculus
+      - MobHonkChlown
+      - MobHonkDestroyer
+      - MobHonkMutant
+      - MobHonkBlob
+      - MobHonkHonkling
+      - MobHonkLongFace
+      - MobHonkPunished
+      - MobHonkGiggles
+    - settings:
+        spawnOnSuperCritical: true
+        minAmount: 1
+        maxAmount: 4
+        minRange: 2
+        maxRange: 8
+        scaleWithPlayers: true
+      spawns:
+      - MobBehonkerHonk
+
+- type: entity
+  parent: BaseAnomalyCore
+  id: AnomalyCoreEvilClown
+  description: Rdzeń zniszczonej honkowej anomalii. Ma peruczkę i czerwony nos, a gdy się mu przyglądać, wydaje się uśmiechać szerzej.
+  suffix: Honk
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Specific/Anomalies/Cores/evil_clown_core.rsi
+  - type: PointLight
+    radius: 1.5
+    energy: 3.5
+    color: "#e5d95a"
+    castShadows: false
+
+- type: entity
+  parent: BaseAnomalyInertCore
+  id: AnomalyCoreEvilClownInert
+  description: Wygasły rdzeń honkowej anomalii. Uśmiech zastygł mu na stałe.
+  suffix: Honk, Inert
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Specific/Anomalies/Cores/evil_clown_core.rsi
+  - type: PointLight
+    radius: 1.5
+    energy: 3.5
+    color: "#e5d95a"
+    castShadows: false

@@ -1,0 +1,187 @@
+- type: entity
+  parent: BaseMobReplicator
+  id: MobReplicatorColossus
+  name: Colossal Replicator
+  description: A six-legged walking foundry, as tall as a room. Everything around it is being taken apart and remade for the hive.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Replicator
+    stunRayProto: null
+  - type: NameIdentifier
+    group: ReplicatorColossus
+  - type: ReplicatorColossus
+    launchSound:
+      path: /Audio/_Polonium/Effects/Replicators/colossus_init.ogg
+    launchEffect: EffectReplicatorColossusShockwave
+    launchLight: EffectReplicatorColossusLaunchLight
+  - type: StatusIcon
+    bounds: -1,-2.6,1,2.6
+  - type: ReplicatorColossusGait
+    sprite: _Polonium/Mobs/Replicator/colossus.rsi
+    strafeSprite: _Polonium/Mobs/Replicator/colossus_strafe.rsi
+    tilesPerLoop: 1.72
+    stepSound:
+      path: /Audio/_Polonium/Effects/Replicators/colossus_step.ogg
+      params:
+        variation: 0.08
+  - type: Hands
+    activeHandId: disabler
+    hands:
+      disabler:
+        location: Left
+      laser:
+        location: Left
+      rockets:
+        location: Right
+    sortedHands:
+    - rockets
+    - disabler
+    - laser
+  - type: Loadout
+    prototypes: [ ReplicatorColossusWeapons ]
+  - type: ReplicatorColossusAmmo
+    capacity: 100
+    rechargeCooldown: 0.5
+  - type: ReplicatorColossusPulse
+    chargeEffect: EffectReplicatorColossusPulseCharge
+    effect: EffectReplicatorColossusPulse
+    arrivalEffect: EffectReplicatorColossusArrival
+    ammoDrain: 100
+    chargeSound:
+      path: /Audio/_Polonium/Effects/Replicators/colossus_pulse_charge.ogg
+    sound:
+      path: /Audio/_Polonium/Effects/Replicators/colossus_pulse.ogg
+  - type: ReplicatorColossusSweep
+    wall: WallReplicator
+    reinforcedWall: WallReplicatorReinforced
+    tile: FloorReplicator
+    effect: EffectReplicatorColossusSweep
+    convertEffect: EffectReplicatorConvert
+    ammoDrain: 100
+    sound:
+      path: /Audio/_Polonium/Effects/Replicators/colossus_sweep.ogg
+    convertSound:
+      path: /Audio/_Polonium/Effects/Replicators/convert.ogg
+      params:
+        volume: -6
+        variation: 0.1
+  - type: ReplicatorColossusAssimilation
+    beacon: ReplicatorColossusBeacon
+  - type: GhostRole
+    name: ghost-role-information-replicator-colossus-name
+    description: ghost-role-information-replicator-colossus-desc
+    rules: ghost-role-information-replicator-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: ActionGrant
+    actions:
+    - ActionReplicatorColossusPulse
+    - ActionReplicatorColossusSweep
+    - ActionReplicatorColossusBeacon
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    offset: 0,1
+    layers:
+    - map: [ "enum.ReplicatorColossusVisualLayers.Body" ]
+      sprite: _Polonium/Mobs/Replicator/colossus.rsi
+      state: idle
+    - map: [ "enum.ReplicatorColossusVisualLayers.Thrust" ]
+      sprite: _Polonium/Mobs/Replicator/colossus.rsi
+      state: fly_thrust
+      shader: unshaded
+      visible: false
+    - map: [ "enum.ReplicatorColossusVisualLayers.Launch" ]
+      sprite: _Polonium/Mobs/Replicator/colossus_launch.rsi
+      state: launch
+      offset: 0,1.125
+      visible: false
+    - map: [ "enum.ReplicatorColossusVisualLayers.LaunchGlow" ]
+      sprite: _Polonium/Mobs/Replicator/colossus_launch.rsi
+      state: glow
+      offset: 0,1.125
+      shader: unshaded
+      visible: false
+  - type: Icon
+    sprite: _Polonium/Mobs/Replicator/colossus.rsi
+    state: icon
+  - type: PointLight
+    radius: 3.5
+    energy: 1.6
+    color: "#d7300a"
+    offset: 0,0.95
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.305
+        density: 400
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.5
+    baseSprintSpeed: 0.65
+  - type: MovementAlwaysTouching
+  - type: ExtendedReach
+    bonus: 2
+  - type: NoSlip
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1888: Dead
+  - type: Damageable
+    damageModifierSet: ReplicatorColossus
+  - type: ExplosionResistance
+    modifiers:
+      ReplicatorColossusRocket: 0
+  - type: Barotrauma
+    protectionSlots: []
+  - type: PressureProtection
+    lowPressureMultiplier: 1000
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    interval: 3
+    damage:
+      types:
+        Blunt: -0.25
+        Slash: -0.25
+        Piercing: -0.25
+        Heat: -0.25
+  - type: Vocal
+    emoteSounds: ReplicatorColossus
+    wilhelmProbability: 0
+  - type: ContentEye
+    maxZoom: 1.6, 1.6
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - EmagImmune
+    - SiliconEmotes
+
+- type: entity
+  parent: SpawnPointGhostReplicatorBase
+  id: SpawnPointGhostReplicatorColossus
+  name: Colossal Replicator spawn point
+  components:
+  - type: GhostRole
+    name: ghost-role-information-replicator-colossus-name
+    description: ghost-role-information-replicator-colossus-desc
+    rules: ghost-role-information-replicator-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: MobReplicatorColossus
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _Polonium/Objects/Specific/Replicator/colossus_parts.rsi
+      state: core

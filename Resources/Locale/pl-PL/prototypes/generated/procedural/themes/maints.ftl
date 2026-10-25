@@ -1,5 +1,5 @@
-ent-MaintsRoomMarker = Maints interior marker
+ent-MaintsRoomMarker = znacznik wnętrza przejść technicznych
     .desc = { ent-BaseRoomMarker.desc }
 ent-MaintsRoomMarkerClearing = { ent-MaintsRoomMarker }
-    .suffix = Clearing
+    .suffix = Polana
     .desc = { ent-MaintsRoomMarker.desc }

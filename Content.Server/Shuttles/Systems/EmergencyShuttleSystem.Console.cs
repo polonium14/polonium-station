@@ -1,4 +1,5 @@
 using System.Threading;
+using Content.Server._Polonium.EvacScenarios;
 using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
@@ -151,6 +152,12 @@ public sealed partial class EmergencyShuttleSystem
         {
             _launchedShuttles = true;
 
+            // Polonium - evac flight scenarios are picked here and may change how long the flight lasts
+            var launchingEv = new EvacShuttlesLaunchingEvent(TransitTime);
+            RaiseLocalEvent(ref launchingEv);
+            TransitTime = launchingEv.TransitTime;
+            // Polonium end
+
             var dataQuery = AllEntityQuery<StationEmergencyShuttleComponent>();
 
             while (dataQuery.MoveNext(out var stationUid, out var comp))
@@ -160,6 +167,13 @@ public sealed partial class EmergencyShuttleSystem
                 {
                     continue;
                 }
+
+                // Polonium - a flight scenario may send the shuttle somewhere other than CentComm
+                var courseEv = new EvacShuttleCourseEvent(stationUid, comp.EmergencyShuttle.Value, _consoleAccumulator, TransitTime);
+                RaiseLocalEvent(ref courseEv);
+                if (courseEv.Handled)
+                    continue;
+                // Polonium end
 
                 if (!Deleted(centcomm.Entity))
                 {

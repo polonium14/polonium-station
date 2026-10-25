@@ -1,2 +1,2 @@
-command-description-laws-list = Returns a list of all law bound entities.
-command-description-laws-get = Returns all of the laws for a given entity.
+command-description-laws-list = Zwraca listę wszystkich encji związanych prawami.
+command-description-laws-get = Zwraca wszystkie prawa danej encji.

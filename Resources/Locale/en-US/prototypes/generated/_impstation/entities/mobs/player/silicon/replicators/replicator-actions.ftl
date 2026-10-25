@@ -5,6 +5,6 @@ ent-ActionReplicatorUpgrade2 = Upgrade (Tier 2)
 ent-ActionReplicatorUpgrade3 = Upgrade (Tier 3)
     .desc = Gather nanites. Become stronger.
 ent-ActionReplicatorTeleportPrey = Hive Recall
-    .desc = Channel nanites to pull an incapacitated target to a random spot 8-10 tiles away on this grid.
+    .desc = Channel nanites to throw an incapacitated target 8-10 tiles away from you and far from any nest. The target can't be recalled again for 25 seconds.
 ent-ToggleThermalVision = Switch Thermal vision
     .desc = Switches Thermal vision.

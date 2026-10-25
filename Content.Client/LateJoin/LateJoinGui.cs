@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client._Polonium.NewLife;
 using Content.Client.CrewManifest;
 using Content.Client.GameTicking.Managers;
 using Content.Client.Lobby;
@@ -69,12 +70,29 @@ namespace Content.Client.LateJoin
             SelectedId += x =>
             {
                 var (station, jobId) = x;
-                _sawmill.Info($"Late joining as ID: {jobId}");
-                _consoleHost.ExecuteCommand($"joingame {CommandParsing.Escape(jobId)} {station}");
+
+                // Polonium: a new life has to be a new character, double check before joining as the old one
+                var name = _preferencesManager.Preferences?.SelectedCharacter.Name;
+                if (_entitySystem.GetEntitySystem<NewLifeSystem>().IsPreviousCharacter(name))
+                {
+                    var warning = new NewLifeSameCharacterWindow(name!);
+                    warning.Confirmed += () => JoinGame(station, jobId);
+                    warning.OpenCentered();
+                    Close();
+                    return;
+                }
+
+                JoinGame(station, jobId);
                 Close();
             };
 
             _gameTicker.LobbyJobsAvailableUpdated += JobsAvailableUpdated;
+        }
+
+        private void JoinGame(NetEntity station, string jobId)
+        {
+            _sawmill.Info($"Late joining as ID: {jobId}");
+            _consoleHost.ExecuteCommand($"joingame {CommandParsing.Escape(jobId)} {station}");
         }
 
         private void RebuildUI()

@@ -1,4 +1,11 @@
 markings-search = Szukaj
+-markings-selection =
+    { $selectable ->
+        [0] Nie możesz już wybrać żadnych oznaczeń.
+        [one] Możesz wybrać jeszcze jedno oznaczenie.
+        [few] Możesz wybrać jeszcze { $selectable } oznaczenia.
+       *[other] Możesz wybrać jeszcze { $selectable } oznaczeń.
+    }
 markings-limits = { $required ->
     [true] { $count ->
         [-1] Select at least one marking.
@@ -13,47 +20,47 @@ markings-limits = { $required ->
        *[other] Select up to {$count} markings. { -markings-selection(selectable: $selectable) }
     }
 }
-markings-reorder = Reorder markings
-humanoid-marking-modifier-respect-limits = Respect limits
-humanoid-marking-modifier-respect-group-sex = Respect group & sex restrictions
+markings-reorder = Zmień kolejność oznaczeń
+humanoid-marking-modifier-respect-limits = Przestrzegaj limitów
+humanoid-marking-modifier-respect-group-sex = Przestrzegaj ograniczeń grup i płci
 
 # Categories
 
-markings-organ-Torso = Torso
-markings-organ-Head = Head
-markings-organ-ArmLeft = Left Arm
-markings-organ-ArmRight = Right Arm
-markings-organ-HandRight = Right Hand
-markings-organ-HandLeft = Left Hand
-markings-organ-LegLeft = Left Leg
-markings-organ-LegRight = Right Leg
-markings-organ-FootLeft = Left Foot
-markings-organ-FootRight = Right Foot
-markings-organ-Eyes = Eyes
-markings-layer-Special = Special
-markings-layer-Tail = Tail
-markings-layer-Tail-Moth = Wings
-markings-layer-Hair = Hair
-markings-layer-FacialHair = Facial Hair
-markings-layer-UndergarmentTop = Undershirt
-markings-layer-UndergarmentBottom = Underpants
-markings-layer-Chest = Chest
-markings-layer-Head = Head
-markings-layer-Snout = Snout
-markings-layer-SnoutCover = Snout (Cover)
-markings-layer-HeadSide = Head (Side)
-markings-layer-HeadTop = Head (Top)
-markings-layer-Eyes = Eyes
-markings-layer-RArm = Right Arm
-markings-layer-LArm = Left Arm
-markings-layer-RHand = Right Hand
-markings-layer-LHand = Left Hand
-markings-layer-RLeg = Right Leg
-markings-layer-LLeg = Left Leg
-markings-layer-RFoot = Right Foot
-markings-layer-LFoot = Left Foot
-markings-layer-Overlay = Overlay
-markings-layer-TailOverlay = Overlay
+markings-organ-Torso = Tułów
+markings-organ-Head = Głowa
+markings-organ-ArmLeft = Lewe ramię
+markings-organ-ArmRight = Prawe ramię
+markings-organ-HandRight = Prawa dłoń
+markings-organ-HandLeft = Lewa dłoń
+markings-organ-LegLeft = Lewa noga
+markings-organ-LegRight = Prawa noga
+markings-organ-FootLeft = Lewa stopa
+markings-organ-FootRight = Prawa stopa
+markings-organ-Eyes = Oczy
+markings-layer-Special = Specjalne
+markings-layer-Tail = Ogon
+markings-layer-Tail-Moth = Skrzydła
+markings-layer-Hair = Włosy
+markings-layer-FacialHair = Zarost
+markings-layer-UndergarmentTop = Podkoszulek
+markings-layer-UndergarmentBottom = Bielizna (dół)
+markings-layer-Chest = Klatka piersiowa
+markings-layer-Head = Głowa
+markings-layer-Snout = Pysk
+markings-layer-SnoutCover = Pysk (nakładka)
+markings-layer-HeadSide = Głowa (bok)
+markings-layer-HeadTop = Głowa (góra)
+markings-layer-Eyes = Oczy
+markings-layer-RArm = Prawe ramię
+markings-layer-LArm = Lewe ramię
+markings-layer-RHand = Prawa dłoń
+markings-layer-LHand = Lewa dłoń
+markings-layer-RLeg = Prawa noga
+markings-layer-LLeg = Lewa noga
+markings-layer-RFoot = Prawa stopa
+markings-layer-LFoot = Lewa stopa
+markings-layer-Overlay = Nakładka
+markings-layer-TailOverlay = Nakładka
 marking-points-remaining = Pozostało Cech: [{ $current }/{ $max }]
 marking-used = { $marking-name }
 marking-used-forced = { $marking-name } (Wymuszone)
