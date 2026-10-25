@@ -45,6 +45,10 @@
     ToyFigurineCaptain: 1
     RubberStampCaptain: 1
     PaperCaptainsThoughts: 5
+   # 🇵🇱 Polonium: strój Kapitana Bomby z NSV13
+    ClothingHeadHelmetKapitanBomba: 1
+    ClothingOuterSuitKapitanBomba: 1
+    ClothingShoesKapitanBomba: 1
   contrabandInventory:
     ClothingNeckCloakSyndicateAdmiral: 1
   emaggedInventory:

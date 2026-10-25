@@ -1,7 +1,7 @@
-cmd-powerstat-desc = Shows statistics for pow3r.
-cmd-powerstat-help = Usage: powerstat
+cmd-powerstat-desc = Pokazuje statystyki pow3r.
+cmd-powerstat-help = Użycie: powerstat
 cmd-powerstat-output =
-    Networks:   { $networks }
-    Loads:      { $loads }
-    Supplies:   { $supplies }
-    Batteries:  { $batteries }
+    Sieci:       { $networks }
+    Odbiorniki:  { $loads }
+    Zasilacze:   { $supplies }
+    Baterie:     { $batteries }

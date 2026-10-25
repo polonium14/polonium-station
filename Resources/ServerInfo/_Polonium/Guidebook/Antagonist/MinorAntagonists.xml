@@ -103,4 +103,20 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - Uważaj, by nie stać się ofiarą polowania! Możesz zostać zarżnięty, a twoje smocze mięso dostarczy załodze cennej [bold]posoki[/bold], więc postaraj się przeżyć!
   - Twoje ostre pazury i potężne mięśnie pozwalają ci szybko [bold]wyważać drzwi[/bold]. Jesteś w stanie wyważyć nawet [bold]zaryglowane[/bold] drzwi!
   - Twoje smocze pochodzenie oznacza, że potrafisz latać i przetrwać w przestrzeni kosmicznej. Gdy zostaniesz ranny, zawsze możesz wycofać się w bezpieczne zakątki kosmosu!
+
+  # Morf
+
+  <Box>
+    <GuideEntityEmbed Entity="MobMorph" Scale="2"/>
+  </Box>
+
+  Morfy to odrażające twory nauki z komórek zmiennokształtnych, które [color=#3cff00]udają przedmioty[/color] i [color=#ff8a8a]pożerają załogę[/color]. Twoim celem jest pożreć kilku załogantów i przetrwać do końca zmiany.
+  - [color=#3cff00][italic]Przybierz kształt[/italic][/color] zmienia cię w kopię pobliskiego przedmiotu lub obiektu. Między przemianami musisz odczekać [bold]5 sekund[/bold], a osoby w pobliżu widzą, jak zmieniasz kształt.
+  - W przebraniu poruszasz się szybciej, ale zadajesz [bold]ćwierć obrażeń[/bold]. Kto obejrzy cię z bliska, zauważy, że [color=red]coś jest nie tak[/color].
+  - Kto dotknie cię w przebraniu ręką, [bold]wpada w zasadzkę[/bold]: zostaje powalony i dostaje [color=#3cff00]jad morfa[/color], który zatruwa, spowalnia, odbiera mowę i miesza w głowie.
+  - [color=#ff8a8a][italic]Pożryj[/italic][/color] połyka przedmioty oraz martwe i nieprzytomne istoty. W przebraniu nie możesz jeść.
+  - W menu [italic]Zawartość żołądka[/italic] możesz zjedzone rzeczy wypluć, przygotować do plucia albo strawić. Strawienie istoty [bold]leczy cię[/bold] i zostawia popiół, a jej ekwipunek wypada na ziemię. Akcja [italic]Plucie[/italic] ciska przygotowaną rzecz we wskazane miejsce.
+  - Możesz też [bold]przybrać postać pożartego załoganta[/bold], dopóki jego ciało jest w twoim brzuchu. W tej postaci nie jesteś szybszy, a każdy, kto ci się przyjrzy, zauważy, że coś jest nie tak.
+  - [bold]Nie potrafisz mówić[/bold] w żadnej postaci.
+  - Masz 150 punktów zdrowia, nie potrzebujesz powietrza, widzisz w ciemności i przechodzisz przez stoły. Po śmierci wypluwasz wszystko, co masz w brzuchu.
 </Document>

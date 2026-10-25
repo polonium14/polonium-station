@@ -8,3 +8,6 @@ ent-ArtifactFragment = fragment artefaktu
 ent-ArtifactFragment1 = { ent-ArtifactFragment }
     .suffix = Pojedynczy
     .desc = { ent-ArtifactFragment.desc }
+ent-DummyArtifactItem = artefakt
+    .suffix = Debug
+    .desc = { ent-BaseXenoArtifactItem.desc }

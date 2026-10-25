@@ -23,5 +23,5 @@ ent-DoorRemoteEngineering = pilot do śluz inżynieryjnych
 ent-DoorRemoteAll = super pilot do śluz
     .desc = Urządzenie, które pozwala zdalnie otwierać i zamykać drzwi. To urządzenie działa nawet w przypadku drzwi drewnianych!
     .suffix = Admeme
-ent-DoorRemoteXenoborg = Pilot do drzwi Ksenoborg
+ent-DoorRemoteXenoborg = pilot do drzwi ksenoborga
     .desc = { ent-DoorRemoteCanEletrifyDoors.desc }

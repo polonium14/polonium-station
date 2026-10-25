@@ -54,10 +54,10 @@ comp-kitchen-spike-butcher =
         [epicene] rozłożyłu
        *[neuter] rozłożyło
     } { $victim }!
-comp-kitchen-spike-butcher-empty = { CAPITALIZE(THE($victim)) } has no meat left to butcher!
-comp-kitchen-spike-need-tool-quality = { $quality } tool required to butcher { THE($target) }.
+comp-kitchen-spike-butcher-empty = { CAPITALIZE(THE($victim)) } nie ma już mięsa do oprawienia!
+comp-kitchen-spike-need-tool-quality = Do oprawienia { THE($target) } wymagane jest narzędzie: { $quality }.
 comp-kitchen-spike-unhook-verb = Zciągnij
 comp-kitchen-spike-hooked = [color=red]{ CAPITALIZE($victim) } jest na tym kolcu![/color]
 comp-kitchen-spike-meat-name = { $name } ({ $victim })
 comp-kitchen-spike-victim-examine = [color=orange]{ CAPITALIZE(SUBJECT($target)) } wygląda chudo.[/color]
-comp-kitchen-spike-deconstruct-occupied = Next, [color=red]unhook the body[/color].
+comp-kitchen-spike-deconstruct-occupied = Następnie [color=red]zdejmij ciało z haka[/color].

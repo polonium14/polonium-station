@@ -6,5 +6,5 @@ ent-ShowcaseRobotWhite = prezentacja białego robota
     .desc = Niefunkcjonalna replika starego robota.
 ent-ShowcaseRobotAntique = prezentacja robotów logistycznych
     .desc = Niefunkcjonalna replika starego robota logistycznego.
-ent-ShowcaseRobotMarauder = Prezentacja Marauder
+ent-ShowcaseRobotMarauder = prezentacja Marauder
     .desc = Niefunkcjonalna replika maruderu, pomalowana na zielono.

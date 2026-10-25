@@ -308,8 +308,8 @@
   description: "All the colors of the bloody murder rainbow."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
-    state: poster29_contraband
+    sprite: _Polonium/Structures/Wallmounts/plakaty_polskie.rsi
+    state: pl_contraband_29
 
 - type: entity
   parent: PosterBase

@@ -1,22 +1,31 @@
 using System.Numerics;
 using Content.Shared._Polonium.Photography;
 using Robust.Client.Graphics;
+using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
+using Robust.Client.UserInterface.RichText;
 using Robust.Shared.IoC;
 using Robust.Shared.Maths;
+using Robust.Shared.Prototypes;
 using SixLabors.ImageSharp.PixelFormats;
 
 namespace Content.Client._Polonium.Photography;
 
-/// <summary>Shows a developed photograph as a bare polaroid - no window chrome, just the card: pixel image in a dark inset on off-white paper, fat bottom caption strip, top-right X, drag-to-move. Texture is built from the unpacked RGB565 blob (no image decoder runs).</summary>
+/// <summary>Shows a developed photograph as a bare polaroid - no window chrome, just the card: pixel image in a dark inset on off-white paper, fat bottom caption strip (pen-written, in the pen's ink and font), top-right X, drag-to-move. Texture is built from the unpacked RGB565 blob (no image decoder runs).</summary>
 public sealed partial class PhotoViewerWindow : BaseWindow
 {
     [Dependency] private IClyde _clyde = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IResourceCache _resCache = default!;
+
+    /// <summary>Raised with the sanitized caption when the user commits what they wrote.</summary>
+    public event Action<string>? OnSign;
 
     private new const int Size = PhotographyConstants.PhotoSizePixels;
     private const int Scale = 3;
+    private const int CaptionFontSize = 26;
 
     private static readonly Color PaperColor = Color.FromHex("#F3EFE4");
     private static readonly Color InsetColor = Color.FromHex("#1A1A1A");
@@ -25,6 +34,12 @@ public sealed partial class PhotoViewerWindow : BaseWindow
     private readonly PanelContainer _photoInset;
     private readonly Label _caption;
     private readonly Label _empty;
+    private readonly BoxContainer _signRow;
+    private readonly LineEdit _signInput;
+    private bool _signed;
+
+    /// <summary>Whether the caption input is showing.</summary>
+    public bool IsSigning => _signRow.Visible;
     private OwnedTexture? _texture;
 
     public PhotoViewerWindow()
@@ -68,14 +83,37 @@ public sealed partial class PhotoViewerWindow : BaseWindow
         _caption = new Label
         {
             Text = string.Empty,
-            HorizontalAlignment = HAlignment.Center,
+            // A clipping label measures 0 wide, so it must stretch and center its text itself.
+            HorizontalExpand = true,
+            Align = Label.AlignMode.Center,
             Margin = new Thickness(0, 8, 0, 0),
+            ClipText = true,
+        };
+
+        _signInput = new LineEdit
+        {
+            HorizontalExpand = true,
+            PlaceHolder = Loc.GetString("photo-viewer-sign-placeholder"),
+            IsValid = text => text.Length <= PhotographyConstants.CaptionMaxLength,
+        };
+        _signInput.OnTextChanged += args => _caption.Text = SharedPoloniumPhotographySystem.SanitizeCaption(args.Text);
+        _signInput.OnTextEntered += _ => Submit();
+
+        var signButton = new Button { Text = Loc.GetString("photo-viewer-sign-button") };
+        signButton.OnPressed += _ => Submit();
+
+        _signRow = new BoxContainer
+        {
+            Orientation = BoxContainer.LayoutOrientation.Horizontal,
+            Margin = new Thickness(0, 6, 0, 0),
+            Visible = false,
+            Children = { _signInput, signButton },
         };
 
         var column = new BoxContainer
         {
             Orientation = BoxContainer.LayoutOrientation.Vertical,
-            Children = { _photoInset, _empty, _caption },
+            Children = { _photoInset, _empty, _caption, _signRow },
         };
 
         var card = new PanelContainer
@@ -118,7 +156,54 @@ public sealed partial class PhotoViewerWindow : BaseWindow
         return DragMode.Move;
     }
 
-    public void Populate(byte[]? data)
+    public void Populate(PhotoViewerBoundUserInterfaceState state)
+    {
+        if (state.Caption != null)
+        {
+            _signed = true;
+            _signRow.Visible = false;
+            SetCaptionStyle(state.CaptionColor, state.CaptionFont);
+            _caption.Text = state.Caption;
+        }
+
+        PopulateImage(state.Data);
+    }
+
+    /// <summary>Show the caption input, previewing the text live in the pen's ink and font.</summary>
+    public void BeginSign(Color color, string font)
+    {
+        if (_signed)
+            return;
+
+        SetCaptionStyle(color, font);
+        _caption.Text = SharedPoloniumPhotographySystem.SanitizeCaption(_signInput.Text);
+        _signRow.Visible = true;
+        _signInput.GrabKeyboardFocus();
+    }
+
+    private void Submit()
+    {
+        var caption = SharedPoloniumPhotographySystem.SanitizeCaption(_signInput.Text);
+        if (caption.Length == 0)
+            return;
+
+        // The server's state update fills in the committed caption; hide the input now so
+        // it can't be sent twice.
+        _signRow.Visible = false;
+        OnSign?.Invoke(caption);
+    }
+
+    private void SetCaptionStyle(Color color, string? fontId)
+    {
+        _caption.FontColorOverride = color;
+
+        if (!_prototype.TryIndex<FontPrototype>(fontId ?? PhotographyConstants.DefaultCaptionFont, out var font))
+            return;
+
+        _caption.FontOverride = new VectorFont(_resCache.GetResource<FontResource>(font.Path), CaptionFontSize);
+    }
+
+    private void PopulateImage(byte[]? data)
     {
         if (data == null || data.Length != PhotographyConstants.PhotoByteLength)
         {

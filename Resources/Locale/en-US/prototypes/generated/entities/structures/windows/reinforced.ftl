@@ -5,3 +5,6 @@ ent-WindowReinforcedDirectional = directional reinforced window
 ent-ReinforcedWindowDiagonal = { ent-ReinforcedWindow }
     .suffix = diagonal
     .desc = { ent-ReinforcedWindow.desc }
+ent-WindowReinforcedDirectionalCorner = { ent-WindowReinforcedDirectional }
+    .suffix = Corner
+    .desc = { ent-WindowReinforcedDirectional.desc }

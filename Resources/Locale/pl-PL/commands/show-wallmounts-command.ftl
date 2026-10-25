@@ -1,3 +1,3 @@
-cmd-showwallmounts-desc = Toggles showing wallmount interaction areas.
-cmd-showwallmounts-help = Usage: { $command }
-cmd-showwallmounts-status = Set wallmount debug overlay to { $status }.
+cmd-showwallmounts-desc = Przełącza wyświetlanie obszarów interakcji z elementami montowanymi na ścianie.
+cmd-showwallmounts-help = Użycie: { $command }
+cmd-showwallmounts-status = Nakładkę debugowania elementów ściennych ustawiono na { $status }.

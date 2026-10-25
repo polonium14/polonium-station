@@ -20,3 +20,5 @@ ent-TreasureCoinAdamantine = { ent-TreasureCoinIron }
     .desc = { ent-TreasureCoinIron.desc }
 ent-TreasureCoinDiamond = { ent-TreasureCoinIron }
     .desc = { ent-TreasureCoinIron.desc }
+ent-BaseCoin = moneta
+    .desc = Płaski kawałek metalu. Gdyby wciąż był w obiegu, inflacja uczyniłaby go bezwartościowym. Skoro nie jest, wart jest tyle, by trzymać go w książce.

@@ -1,0 +1,588 @@
+- type: entity
+  abstract: true
+  parent: [ Clothing, PowerCellSlotMediumItem ]
+  id: ClothingBackpackModSuitBase
+  components:
+  - type: ModSuitComplexityLimit
+    maxComplexity: 12
+  - type: ModSuitSealable
+  - type: ModSuitSealablePowerDraw
+    powerDraw:
+      true: 0.02
+      false: 0.01
+  - type: ModuleContainer
+    whitelist:
+      tags:
+      - ModSuitModule
+  - type: ModuleContainerAddOnInteract
+  - type: ModuleContainerPower
+  - type: PowerCellDraw
+    enabled: false
+  - type: PowerCellSlot
+    fitsInCharger: false
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot {}
+      modules: !type:Container {}
+      deployable-outerClothing: !type:ContainerSlot {}
+      deployable-gloves: !type:ContainerSlot {}
+      deployable-head: !type:ContainerSlot {}
+      deployable-shoes: !type:ContainerSlot {}
+  - type: ModSuitCellSlot
+  - type: ModSuitSpeed
+  - type: ModSuitUserInterface
+  - type: WiresPanel
+  - type: UserInterface
+    interfaces:
+      enum.ModSuitUiKey.Key:
+        type: ModSuitBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    slots:
+    - back
+    clothingVisuals:
+      back: []
+  - type: Appearance
+  - type: HeldSpeedModifier
+  - type: ContainerFill
+    containers:
+      modules:
+      - ModSuitModuleStorageNormal
+  - type: GuideHelp
+    guides:
+    - RIG
+
+- type: entity
+  parent: [ ClothingBackpackModSuitBase, BaseEngineeringContraband ]
+  id: ClothingBackpackModSuitEngineering
+  name: engineering R.I.G.
+  description: A modular suit built for engineering work. Shielded against radiation.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+        state: icon
+    clothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+          state: equipped-BACKPACK-sealed
+      false:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+          state: equipped-BACKPACK
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+        state: equipped-BACKPACK-sealed
+      false:
+        sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+        state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+        state: icon-sealed-unpowered
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+        state: icon-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/engineering.rsi
+        state: equipped-BACKPACK-sealed-unpowered
+  - type: ModSuitPartDeployable
+    deployableParts:
+      outerClothing: ClothingOuterModSuitEngineering
+      gloves: ClothingHandsModSuitEngineering
+      head: ClothingHeadModSuitEngineering
+      shoes: ClothingShoesModSuitEngineering
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: ModSuitSpeed
+    unpoweredWalkModifier: 0.6
+    unpoweredSprintModifier: 0.6
+  - type: ModuleContainerRequireWirePanel
+  - type: Construction
+    graph: ModSuit
+    node: engineeringPlating
+
+- type: entity
+  parent: [ ClothingBackpackModSuitBase, BaseEngineeringContraband ]
+  id: ClothingBackpackModSuitAtmospheric
+  name: atmospheric R.I.G.
+  description: A modular suit built for atmospheric technicians. Resistant to fire and heat.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+        state: icon
+    clothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+          state: equipped-BACKPACK-sealed
+      false:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+          state: equipped-BACKPACK
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+        state: equipped-BACKPACK-sealed
+      false:
+        sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+        state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+        state: icon-sealed-unpowered
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+        state: icon-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/atmospheric.rsi
+        state: equipped-BACKPACK-sealed-unpowered
+  - type: ModSuitPartDeployable
+    deployableParts:
+      outerClothing: ClothingOuterModSuitAtmospheric
+      gloves: ClothingHandsModSuitAtmospheric
+      head: ClothingHeadModSuitAtmospheric
+      shoes: ClothingShoesModSuitAtmospheric
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: ModSuitSpeed
+    unpoweredWalkModifier: 0.6
+    unpoweredSprintModifier: 0.6
+  - type: ModuleContainerRequireWirePanel
+  - type: Construction
+    graph: ModSuit
+    node: atmosphericPlating
+
+- type: entity
+  parent: [ ClothingBackpackModSuitBase, BaseCommandContraband ]
+  id: ClothingBackpackModSuitMedical
+  name: medical R.I.G.
+  description: A light modular suit for medical staff working in hazardous environments.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+        state: icon
+    clothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+          state: equipped-BACKPACK-sealed
+      false:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+          state: equipped-BACKPACK
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+        state: equipped-BACKPACK-sealed
+      false:
+        sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+        state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/medical.rsi
+        state: equipped-BACKPACK-sealed-unpowered
+  - type: ModSuitPartDeployable
+    deployableParts:
+      outerClothing: ClothingOuterModSuitMedical
+      gloves: ClothingHandsModSuitMedical
+      head: ClothingHeadModSuitMedical
+      shoes: ClothingShoesModSuitMedical
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: ModSuitSpeed
+    unpoweredWalkModifier: 0.85
+    unpoweredSprintModifier: 0.85
+  - type: ModuleContainerRequireWirePanel
+  - type: Construction
+    graph: ModSuit
+    node: medicalPlating
+
+- type: entity
+  parent: [ ClothingBackpackModSuitBase, BaseSecurityContraband ]
+  id: ClothingBackpackModSuitSecurity
+  name: security R.I.G.
+  description: An armored modular suit for security operations in hazardous environments.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+        state: icon
+    clothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+          state: equipped-BACKPACK-sealed
+      false:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+          state: equipped-BACKPACK
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+        state: equipped-BACKPACK-sealed
+      false:
+        sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+        state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/security.rsi
+        state: equipped-BACKPACK-sealed-unpowered
+  - type: ModSuitPartDeployable
+    deployableParts:
+      outerClothing: ClothingOuterModSuitSecurity
+      gloves: ClothingHandsModSuitSecurity
+      head: ClothingHeadModSuitSecurity
+      shoes: ClothingShoesModSuitSecurity
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: ModSuitSpeed
+    unpoweredWalkModifier: 0.65
+    unpoweredSprintModifier: 0.65
+  - type: ModuleContainerRequireWirePanel
+  - type: Construction
+    graph: ModSuit
+    node: securityPlating
+
+- type: entity
+  parent: [ ClothingBackpackModSuitBase, BaseCargoContraband ]
+  id: ClothingBackpackModSuitSalvage
+  name: salvage R.I.G.
+  description: A sturdy modular suit for salvage specialists working off-station.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+        state: icon
+    clothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+          state: equipped-BACKPACK-sealed
+      false:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+          state: equipped-BACKPACK
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+        state: equipped-BACKPACK-sealed
+      false:
+        sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+        state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/salvage.rsi
+        state: equipped-BACKPACK-sealed-unpowered
+  - type: ModSuitPartDeployable
+    deployableParts:
+      outerClothing: ClothingOuterModSuitSalvage
+      gloves: ClothingHandsModSuitSalvage
+      head: ClothingHeadModSuitSalvage
+      shoes: ClothingShoesModSuitSalvage
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: ModSuitSpeed
+    unpoweredWalkModifier: 0.65
+    unpoweredSprintModifier: 0.65
+  - type: ModuleContainerRequireWirePanel
+  - type: Construction
+    graph: ModSuit
+    node: salvagePlating
+
+- type: entity
+  parent: ClothingBackpackModSuitBase
+  id: ClothingBackpackModSuitCivilian
+  name: civilian R.I.G.
+  description: A simple modular suit that keeps its wearer alive in space. It has little room for modules.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+        state: icon
+    clothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+          state: equipped-BACKPACK-sealed
+      false:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+          state: equipped-BACKPACK
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+        state: equipped-BACKPACK-sealed
+      false:
+        sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+        state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/civilian.rsi
+        state: equipped-BACKPACK-sealed-unpowered
+  - type: ModSuitPartDeployable
+    deployableParts:
+      outerClothing: ClothingOuterModSuitCivilian
+      gloves: ClothingHandsModSuitCivilian
+      head: ClothingHeadModSuitCivilian
+      shoes: ClothingShoesModSuitCivilian
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: ModSuitSpeed
+    unpoweredWalkModifier: 0.7
+    unpoweredSprintModifier: 0.7
+  - type: ModSuitComplexityLimit
+    maxComplexity: 8
+  - type: ModuleContainerRequireWirePanel
+  - type: Construction
+    graph: ModSuit
+    node: civilianPlating
+
+- type: entity
+  parent: [ ClothingBackpackModSuitBase, BaseSyndicateContraband ]
+  id: ClothingBackpackModSuitSyndicate
+  name: syndicate R.I.G.
+  description: A blood-red modular suit with armor ruled illegal in most of the sector. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+        state: icon
+    clothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+          state: equipped-BACKPACK-sealed
+      false:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+          state: equipped-BACKPACK
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+        state: equipped-BACKPACK-sealed
+      false:
+        sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+        state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/syndicate.rsi
+        state: equipped-BACKPACK-sealed-unpowered
+  - type: ModSuitPartDeployable
+    deployableParts:
+      outerClothing: ClothingOuterModSuitSyndicate
+      gloves: ClothingHandsModSuitSyndicate
+      head: ClothingHeadModSuitSyndicate
+      shoes: ClothingShoesModSuitSyndicate
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ModSuitSpeed
+    unpoweredWalkModifier: 0.8
+    unpoweredSprintModifier: 0.8
+  - type: ModSuitComplexityLimit
+    maxComplexity: 15
+
+- type: entity
+  parent: ClothingBackpackModSuitSyndicate
+  id: ClothingBackpackModSuitSyndicateFilled
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      modules:
+      - ModSuitModuleStorageSyndie
+      - ModSuitModuleJetpackNormal
+      - ModSuitModuleMagboots
+
+- type: entity
+  parent: [ ClothingBackpackModSuitBase, BaseSyndicateContraband ]
+  id: ClothingBackpackModSuitElite
+  name: elite syndicate R.I.G.
+  description: An elite modular suit upgraded by Cybersun Industries, offering better armor and fire protection.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+        state: icon
+    clothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+          state: equipped-BACKPACK-sealed
+      false:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+          state: equipped-BACKPACK
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+        state: equipped-BACKPACK-sealed
+      false:
+        sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+        state: equipped-BACKPACK
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+          state: equipped-BACKPACK-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Back/ModSuits/elite.rsi
+        state: equipped-BACKPACK-sealed-unpowered
+  - type: ModSuitPartDeployable
+    deployableParts:
+      outerClothing: ClothingOuterModSuitElite
+      gloves: ClothingHandsModSuitElite
+      head: ClothingHeadModSuitElite
+      shoes: ClothingShoesModSuitElite
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ModSuitSpeed
+    unpoweredWalkModifier: 0.8
+    unpoweredSprintModifier: 0.8
+  - type: ModSuitComplexityLimit
+    maxComplexity: 15
+
+- type: entity
+  parent: ClothingBackpackModSuitElite
+  id: ClothingBackpackModSuitEliteFilled
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      modules:
+      - ModSuitModuleStorageSyndie
+      - ModSuitModuleJetpackNormal
+      - ModSuitModuleMagboots

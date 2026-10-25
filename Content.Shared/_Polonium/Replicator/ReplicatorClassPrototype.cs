@@ -1,3 +1,4 @@
+using Content.Shared.FixedPoint;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -64,6 +65,12 @@ public sealed partial class ReplicatorClassForm
 
     [DataField]
     public int Stages;
+
+    /// <summary>
+    /// Damage at which a replicator in this form dies.
+    /// </summary>
+    [DataField]
+    public FixedPoint2? Health;
 
     public string CombatState => $"{State}_combat";
 

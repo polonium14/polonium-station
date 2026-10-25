@@ -116,19 +116,25 @@
   background: /Textures/LobbyScreens/computerlove.webp
 
 - type: lobbyBackground
-  id: Drunkards
-  background: /Textures/LobbyScreens/DrunkardsSpree.png
-  title: lobby-state-background-drunkardsspree-title
-  artist: lobby-state-background-drunkardsspree-artist
-
-- type: lobbyBackground
-  id: CertainDeath
-  background: /Textures/LobbyScreens/PewnaSmierc.png
-  title: lobby-state-background-certaindeath-title
-  artist: lobby-state-background-certaindeath-artist
-
-- type: lobbyBackground
   id: Jerzy
   background: /Textures/LobbyScreens/jerzy.png
   title: lobby-state-background-jerzy-title
   artist: lobby-state-background-jerzy-artist
+
+- type: lobbyBackground
+  id: DrunkardsRedux
+  background: /Textures/LobbyScreens/DrunkardsSpreeRedux.png
+  title: lobby-state-background-drunkardsspreeredux-title
+  artist: lobby-state-background-drunkardsspreeredux-artist
+
+- type: lobbyBackground
+  id: KrzesloGang
+  background: /Textures/LobbyScreens/KrzesloGang.png
+  title: lobby-state-background-krzeslogang-title
+  artist: lobby-state-background-krzeslogang-artist
+
+- type: lobbyBackground
+  id: OcieplamGo
+  background: /Textures/LobbyScreens/OcieplamGo.png
+  title: lobby-state-background-ocieplamgo-title
+  artist: lobby-state-background-ocieplamgo-artist

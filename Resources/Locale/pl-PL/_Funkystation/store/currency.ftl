@@ -1,1 +1,1 @@
-store-currency-display-revcoin = RevCoin
+store-currency-display-revcoin = RewGrosz

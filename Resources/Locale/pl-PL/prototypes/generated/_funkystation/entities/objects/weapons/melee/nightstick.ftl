@@ -1,2 +1,2 @@
-ent-Nightstick = Pałka teleskopowa
+ent-Nightstick = pałka teleskopowa
     .desc = Pałka teleskopowa zaprojektowana po to by wbić kryminalistom prawo do głowy.

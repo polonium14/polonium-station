@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "https://github.com/tgstation/tgstation/blob/87b933384df4700bf98c2f7af821c0a730b7c3bb/icons/obj/clothing/modsuit/mod_modules.dmi (longfall)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "mobility"
+        }
+    ]
+}

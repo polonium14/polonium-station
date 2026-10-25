@@ -2054,7 +2054,7 @@
     baseWalkSpeed : 2.5
     baseSprintSpeed : 5
   - type: NameIdentifier
-    group: AdjectivePrefix
+    group: AdjectivePrefixFeminine
   - type: DamageStateVisuals
     states:
       Alive:

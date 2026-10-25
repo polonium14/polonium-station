@@ -1,0 +1,13 @@
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectMocnyFullBurp
+  name: Mocny Full burp
+  components:
+  - type: StatusEffect
+    whitelist:
+      components:
+      - MobState
+      - Actions
+      requireAll: true
+  - type: BurpStatusEffect
+    action: ActionMocnyFullBurp

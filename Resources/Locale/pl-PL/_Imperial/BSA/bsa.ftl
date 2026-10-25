@@ -1,4 +1,4 @@
-special-operations-officer = Admiral NanoTrasen
+special-operations-officer = Admirał NanoTrasen
 text-instruction-bsa =
     "Przed rozpoczęciem nuklearnego spalenia wyślij ogłoszenie o zniszczeniu stacji:
     

@@ -1,4 +1,4 @@
-signal-port-selector-menu-clear = Clear
-signal-port-selector-menu-link-defaults = Link defaults
-signal-port-selector-help = Select the ports you want to link up
-signal-port-selector-menu-done = Done
+signal-port-selector-menu-clear = Wyczyść
+signal-port-selector-menu-link-defaults = Powiąż domyślne
+signal-port-selector-help = Wybierz porty, które chcesz połączyć
+signal-port-selector-menu-done = Gotowe

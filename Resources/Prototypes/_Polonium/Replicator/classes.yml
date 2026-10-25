@@ -20,10 +20,13 @@
         Structural: 7
   forms:
   - state: fighter1
+    health: 123
   - state: fighter2
     stages: 2
+    health: 140
   - state: fighter3
     stages: 4
+    health: 157
 
 - type: replicatorClass
   id: Defender
@@ -50,10 +53,13 @@
         Structural: 7
   forms:
   - state: defender1
+    health: 136
   - state: defender2
     stages: 2
+    health: 157
   - state: defender3
     stages: 4
+    health: 178
 
 - type: replicatorClass
   id: Scout
@@ -66,10 +72,13 @@
   speedMultiplier: 1.1
   forms:
   - state: scout1
+    health: 106
   - state: scout2
     stages: 2
+    health: 119
   - state: scout3
     stages: 4
+    health: 131
 
 - type: replicatorClass
   id: Builder
@@ -82,10 +91,13 @@
   speedMultiplier: 0.65
   forms:
   - state: builder1
+    health: 106
   - state: builder2
     stages: 2
+    health: 119
   - state: builder3
     stages: 4
+    health: 131
 
 - type: replicatorClass
   id: Hunter
@@ -98,7 +110,10 @@
   speedMultiplier: 0.95
   forms:
   - state: hunter1
+    health: 114
   - state: hunter2
     stages: 2
+    health: 131
   - state: hunter3
     stages: 4
+    health: 148

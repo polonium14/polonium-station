@@ -1,5 +1,5 @@
-command-description-bank-accounts = Returns all accounts on a station.
-command-description-bank-account = Returns a given bank account from a station.
-command-description-bank-adjust = Adjusts the money for the given bank account.
-command-description-bank-set = Sets the money for the given bank account.
-command-description-bank-amount = Returns the money for the given bank account.
+command-description-bank-accounts = Zwraca wszystkie konta na stacji.
+command-description-bank-account = Zwraca dane konto bankowe ze stacji.
+command-description-bank-adjust = Zmienia ilość pieniędzy na danym koncie bankowym.
+command-description-bank-set = Ustawia ilość pieniędzy na danym koncie bankowym.
+command-description-bank-amount = Zwraca ilość pieniędzy na danym koncie bankowym.

@@ -5,3 +5,6 @@ ent-WindowReinforcedDirectional = kierunkowe okno wzmocnione
 ent-ReinforcedWindowDiagonal = { ent-ReinforcedWindow }
     .suffix = diagonalne
     .desc = { ent-ReinforcedWindow.desc }
+ent-WindowReinforcedDirectionalCorner = { ent-WindowReinforcedDirectional }
+    .suffix = Róg
+    .desc = { ent-WindowReinforcedDirectional.desc }

@@ -1,2 +1,2 @@
-cmd-startsingularityengine-desc = Automatically turns on the particle accelerator and containment field emitters.
-cmd-startsingularityengine-help = Usage: startsingularityengine
+cmd-startsingularityengine-desc = Automatycznie włącza akcelerator cząstek i emitery pola ograniczającego.
+cmd-startsingularityengine-help = Użycie: startsingularityengine

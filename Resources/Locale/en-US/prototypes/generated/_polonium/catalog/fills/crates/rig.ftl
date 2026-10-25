@@ -1,0 +1,12 @@
+ent-CrateRIGPlatingEngineering = engineering R.I.G. plating crate
+    .desc = Contains the plating for one engineering R.I.G. The core and the other parts are printed on the exosuit fabricator.
+ent-CrateRIGPlatingAtmospheric = atmospheric R.I.G. plating crate
+    .desc = Contains the plating for one atmospheric R.I.G. The core and the other parts are printed on the exosuit fabricator.
+ent-CrateRIGPlatingMedical = medical R.I.G. plating crate
+    .desc = Contains the plating for one medical R.I.G. The core and the other parts are printed on the exosuit fabricator.
+ent-CrateRIGPlatingSecurity = security R.I.G. plating crate
+    .desc = Contains the plating for one security R.I.G. The core and the other parts are printed on the exosuit fabricator.
+ent-CrateRIGPlatingSalvage = salvage R.I.G. plating crate
+    .desc = Contains the plating for one salvage R.I.G. The core and the other parts are printed on the exosuit fabricator.
+ent-CrateRIGPlatingCivilian = civilian R.I.G. plating crate
+    .desc = Contains the plating for one civilian R.I.G. The core and the other parts are printed on the exosuit fabricator.

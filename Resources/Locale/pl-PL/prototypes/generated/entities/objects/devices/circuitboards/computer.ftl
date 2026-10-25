@@ -98,3 +98,7 @@ ent-StationAiUploadCircuitboard = konsola zarządzania SI (płytka konsolowa)
     .desc = Płytka konsolowa do konsoli zarządzania SI.
 ent-StationAiFixerCircuitboard = Płytka konsoli przywracania SI
     .desc = Komputerowa płytka drukowana przeznaczona do konsoli przywracania SI.
+ent-StationTeleportersControlCircuitboard = konsola sterowania teleporterami (płytka konsolowa)
+    .desc = Komputerowa płytka drukowana do konsoli sterowania teleporterami.
+ent-SyndicateTeleportersControlCircuitboard = konsola sterowania teleporterami Syndykatu (płytka konsolowa)
+    .desc = Komputerowa płytka drukowana do konsoli sterowania teleporterami.

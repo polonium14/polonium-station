@@ -29,13 +29,13 @@ nukeops-role-commander = Dowódca
 nukeops-role-agent = Korpusman
 nukeops-role-operator = Operator
 nukeops-disk-carried-by =
-    { " " }carried by [color=White]{ $name }[/color], [color=orange]{ $job }[/color], { $location } { $user ->
+    { " " }niesiony przez [color=White]{ $name }[/color], [color=orange]{ $job }[/color], { $location } { $user ->
         [unknown] { "" }
        *[other] ([color=gray]{ $user }[/color])
     }
-nukeops-disk-location-title = Final location of Disk:
+nukeops-disk-location-title = Ostateczna lokalizacja dysku:
 storage-hierarchy-list =
     { $items-left ->
         [0] { $existing-text } { $item },
-       *[other] { $existing-text } { $item }, in
+       *[other] { $existing-text } { $item }, w
     }

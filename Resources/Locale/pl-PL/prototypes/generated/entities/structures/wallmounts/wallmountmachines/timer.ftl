@@ -1,8 +1,8 @@
-ent-SignalTimer = Licznik Sygnałowy
-    .desc = Licznik do wysyłania sygnałow po określonym czasie.
-ent-ScreenTimer = Licznik Ekranowy
+ent-SignalTimer = licznik sygnałowy
+    .desc = Licznik do wysyłania sygnałów po określonym czasie.
+ent-ScreenTimer = licznik ekranowy
     .desc = Licznik do wysyłania sygnałów po określonym czasie z wbudowanym ekranem.
-ent-BrigTimer = Licznik Brygu
+ent-BrigTimer = licznik brygu
     .desc = Licznik do celi więziennych.
-ent-TimerFrame = Rama licznika
+ent-TimerFrame = rama licznika
     .desc = Rama konstrukcyjna licznika.

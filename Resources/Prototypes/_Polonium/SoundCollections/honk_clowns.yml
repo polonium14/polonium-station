@@ -1,0 +1,41 @@
+- type: soundCollection
+  id: HonkClownHorns
+  files:
+  - /Audio/_Polonium/Voice/HonkClown/reverse.ogg
+  - /Audio/_Polonium/Voice/HonkClown/abyss.ogg
+  - /Audio/_Polonium/Voice/HonkClown/choir.ogg
+  - /Audio/_Polonium/Voice/HonkClown/ringmod.ogg
+  - /Audio/_Polonium/Voice/HonkClown/hellhorn.ogg
+  - /Audio/_Polonium/Voice/HonkClown/moan.ogg
+  - /Audio/_Polonium/Voice/HonkClown/tritone.ogg
+  - /Audio/_Polonium/Voice/HonkClown/cathedral.ogg
+  - /Audio/_Polonium/Voice/HonkClown/sickchoir.ogg
+  - /Audio/_Polonium/Voice/HonkClown/toll.ogg
+  - /Audio/_Polonium/Voice/HonkClown/echoes.ogg
+
+- type: soundCollection
+  id: HonkClownBlobScream
+  files:
+  - /Audio/_Polonium/Voice/HonkClown/blob_scream.ogg
+
+- type: soundCollection
+  id: FootstepHonkhulk
+  files:
+  - /Audio/_Polonium/Effects/Footsteps/honkhulkstep1.ogg
+  - /Audio/_Polonium/Effects/Footsteps/honkhulkstep2.ogg
+
+- type: soundCollection
+  id: FootstepHonkmunculus
+  files:
+  - /Audio/_Polonium/Effects/Footsteps/honkmunculusstep1.ogg
+  - /Audio/_Polonium/Effects/Footsteps/honkmunculusstep2.ogg
+  - /Audio/_Polonium/Effects/Footsteps/honkmunculusstep3.ogg
+  - /Audio/_Polonium/Effects/Footsteps/honkmunculusstep4.ogg
+
+- type: soundCollection
+  id: FootstepHonkBlob
+  files:
+  - /Audio/_Polonium/Effects/Footsteps/blobstep1.ogg
+  - /Audio/_Polonium/Effects/Footsteps/blobstep2.ogg
+  - /Audio/_Polonium/Effects/Footsteps/blobstep3.ogg
+  - /Audio/_Polonium/Effects/Footsteps/blobstep4.ogg

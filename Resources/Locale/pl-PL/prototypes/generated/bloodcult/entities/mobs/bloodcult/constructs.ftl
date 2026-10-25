@@ -1,6 +1,6 @@
-ent-CultJuggernautShell = juggernaut shell
-    .desc = A large, inert monstrosity made from runed metal.
+ent-CultJuggernautShell = powłoka juggernauta
+    .desc = Duża, bezwładna potworność wykonana z runicznej stali. Można ją dokończyć, przeciągając na nią martwe ciało lub używając na niej napełnionego kamienia dusz.
 ent-MobBloodCultJuggernaut = Juggernaut
-    .desc = Strong, slow, and has lots of health. Solves most problems by punching them. Immune to weak attacks.
-ent-MobBloodCultShade = Shade
-    .desc = A soul made solid, enslaved to the will of the blood cult.
+    .desc = Silny, powolny i z mnóstwem zdrowia. Większość problemów rozwiązuje, lejąc je pięścią. Odporny na słabe ataki.
+ent-MobBloodCultShade = Cień
+    .desc = Dusza, która stała się materialna i jest niewolnikiem woli kultu krwi.

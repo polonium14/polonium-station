@@ -1,0 +1,16 @@
+ent-ClothingUniformJumpsuitPolishWhite = white t-shirt
+    .desc = A plain white t-shirt.
+ent-ClothingUniformJumpsuitPolishILovePL = I Love PL t-shirt
+    .desc = A black t-shirt declaring love for Poland.
+ent-ClothingUniformJumpsuitPolishMiniWhite = white PL t-shirt
+    .desc = A white t-shirt with a small PL sign.
+ent-ClothingUniformJumpsuitPolishStripe = flag stripe t-shirt
+    .desc = A black t-shirt with a white-red stripe.
+ent-ClothingUniformJumpsuitPolishOtuaBlack = black OTUA t-shirt
+    .desc = A black OTUA t-shirt.
+ent-ClothingUniformJumpsuitPolishOtuaWhite = white OTUA t-shirt
+    .desc = A white OTUA t-shirt.
+ent-UniformShortsPolishMankini = Polish mankini
+    .desc = Patriotism with minimal coverage.
+ent-ClothingShoesPolishKneeSocks = white-red knee socks
+    .desc = Knee socks in the national colours.

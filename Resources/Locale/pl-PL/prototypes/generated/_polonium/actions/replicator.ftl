@@ -1,7 +1,7 @@
 ent-ActionReplicatorBuildWall = Zbuduj ścianę
     .desc = Wznieś ścianę replikatorów na wolnym kafelku podłogi replikatorów. Kosztuje pół arkusza z zapasu gniazda.
 ent-ActionReplicatorHolowall = Wyświetl holościanę
-    .desc = Utkaj holościanę w miejscu, w którym stoisz. Zatrzymuje powietrze, ale przepuszcza wszystkich, i znika po trzech minutach. Kosztuje szczyptę replistali z zapasu gniazda.
+    .desc = Utkaj holościanę w miejscu, w którym stoisz. Zatrzymuje powietrze, ale przepuszcza wszystkich, i znika po siedmiu i pół minuty. Kosztuje szczyptę replistali z zapasu gniazda.
 ent-ActionReplicatorColossusPulse = Impuls bluespace
     .desc = Naładuj generator pola, a potem odrzuć wszystkich wokół siebie daleko w głąb stacji. Silny cios przerywa ładowanie. Impuls zużywa cały zasobnik miniguna.
 ent-ActionReplicatorColossusSweep = Omiecenie nanitami
@@ -10,6 +10,8 @@ ent-ActionReplicatorConvertFloor = Przekształć podłogę
     .desc = Nanity przejmują podłogę tuż pod tobą. Kosztuje jedną dziesiątą arkusza z zapasu gniazda. Rój może budować tylko na takiej podłodze.
 ent-ActionReplicatorConvertWall = Przekształć ścianę
     .desc = Nanity przejmują wskazaną ścianę. Kosztuje jedną piątą arkusza z zapasu gniazda.
+ent-ActionReplicatorReinforceWall = Wzmocnij ścianę
+    .desc = Nanity pogrubiają wskazaną ścianę replikatorów, aż stanie się wzmocniona. Kosztuje trzy arkusze z zapasu gniazda.
 ent-ActionReplicatorColossusBeacon = Postaw nadajnik asymilacji
     .desc = Postaw nadajnik, który ściągnie na stację cały rój. Wymaga podłogi replikatorów i dziesięciu minut ładowania. Naładowany nadajnik sam podłącza się do ciebie, gdy tylko podejdziesz blisko, i po trzydziestu sekundach uwalnia asymilację. Przez ten czas nie możesz się ruszać ani strzelać. Jeśli nadajnik upadnie, możesz postawić kolejny, ale ładowanie zacznie się od nowa.
 ent-ActionReplicatorDash = Zryw dopalaczy

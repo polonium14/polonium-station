@@ -1,4 +1,4 @@
-ent-CrowbarCutePink = emotional support crowbar
-    .desc = Nothing makes maints feel safer than a friend for life by your side.
-ent-CrowbarCutePurple = emotional support crowbar
-    .desc = Nothing makes maints feel safer than a friend for life by your side.
+ent-CrowbarCutePink = łom wsparcia emocjonalnego
+    .desc = Nic nie sprawia, że w technicznych czujesz się bezpieczniej, niż przyjaciel na całe życie u twego boku.
+ent-CrowbarCutePurple = łom wsparcia emocjonalnego
+    .desc = Nic nie sprawia, że w technicznych czujesz się bezpieczniej, niż przyjaciel na całe życie u twego boku.

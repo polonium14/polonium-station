@@ -1,4 +1,4 @@
-harvestable-solution-success = You fill { THE($target) } with { $amount }u from { THE($source) }.
-harvestable-solution-empty = { CAPITALIZE(THE($source)) } has nothing ready to harvest.
-harvestable-solution-target-full = { CAPITALIZE(THE($target)) } is full!
-harvestable-solution-verb = Harvest
+harvestable-solution-success = Napełniasz { THE($target) } { $amount }u z { THE($source) }.
+harvestable-solution-empty = { CAPITALIZE(THE($source)) } nie ma nic gotowego do zebrania.
+harvestable-solution-target-full = { CAPITALIZE(THE($target)) } jest pełny!
+harvestable-solution-verb = Zbierz

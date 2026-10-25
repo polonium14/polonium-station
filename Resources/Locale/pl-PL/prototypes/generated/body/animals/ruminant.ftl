@@ -1,5 +1,5 @@
 ent-OrganRuminantStomach = { ent-OrganBaseStomach }
-    .suffix = Ruminant
+    .suffix = Przeżuwacz
     .desc = { ent-OrganBaseStomach.desc }
 ent-SolutionStomachRuminant = { ent-SolutionStomach }
     .desc = { ent-SolutionStomach.desc }

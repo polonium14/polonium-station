@@ -1,0 +1,4 @@
+- files: ["shoreline_water.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from Starlight (commit 1d5d980d64, \"fix for cork\")"
+  source: "https://github.com/ss14Starlight/space-station-14"

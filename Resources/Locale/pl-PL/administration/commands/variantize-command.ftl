@@ -1,3 +1,3 @@
-cmd-variantize-desc = Randomizes all tile variants on a given grid.
-cmd-variantize-help = variantize <grid id>
-cmd-variantize-hint-grid = Grid
+cmd-variantize-desc = Losuje warianty wszystkich kafelków na danej siatce.
+cmd-variantize-help = variantize <id siatki>
+cmd-variantize-hint-grid = Siatka

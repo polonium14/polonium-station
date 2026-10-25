@@ -1,4 +1,4 @@
-ent-OrganBaseHandLeftInactive = left hand
+ent-OrganBaseHandLeftInactive = lewa dłoń
     .desc = { ent-OrganBase.desc }
-ent-OrganBaseHandRightInactive = right hand
+ent-OrganBaseHandRightInactive = prawa dłoń
     .desc = { ent-OrganBase.desc }

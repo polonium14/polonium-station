@@ -1,30 +1,30 @@
-stat-values-desc = Dumps all stats for a particular category into a table.
-stat-values-server = Can't be run on the server!
-stat-values-args = Invalid number of args, need 1
-stat-values-invalid = { $arg } is not a valid stat!
+stat-values-desc = Zrzuca do tabeli wszystkie statystyki z danej kategorii.
+stat-values-server = Nie można uruchomić na serwerze!
+stat-values-args = Nieprawidłowa liczba argumentów, potrzebny 1
+stat-values-invalid = { $arg } nie jest prawidłową statystyką!
 # Cargo
-stat-cargo-values = Cargo sell prices
+stat-cargo-values = Ceny sprzedaży w cargo
 stat-cargo-id = ID
-stat-cargo-price = Price
+stat-cargo-price = Cena
 # Melee
-stat-melee-values = Melee weapon damage
+stat-melee-values = Obrażenia broni białej
 stat-melee-id = ID
-stat-melee-base-damage = Base damage
-stat-melee-wield-damage = Wielded damage
-stat-melee-attack-rate = Attack rate
+stat-melee-base-damage = Obrażenia bazowe
+stat-melee-wield-damage = Obrażenia przy dzierżeniu oburącz
+stat-melee-attack-rate = Szybkość ataku
 stat-melee-dps = DPS
-stat-melee-structural-damage = Structure damage
-stat-melee-structural-wield-damage = Wielded structure damage
+stat-melee-structural-damage = Obrażenia strukturalne
+stat-melee-structural-wield-damage = Obrażenia strukturalne przy dzierżeniu oburącz
 # Lathe
-stat-lathe-values = Lathe sell prices
+stat-lathe-values = Ceny sprzedaży w wytwórniach
 stat-lathe-id = ID
-stat-lathe-cost = Cost
-stat-lathe-sell = Sell price
+stat-lathe-cost = Koszt
+stat-lathe-sell = Cena sprzedaży
 # Item Sizes
-stat-item-values = Item sizes
+stat-item-values = Rozmiary przedmiotów
 stat-item-id = ID
-stat-item-price = Size
+stat-item-price = Rozmiar
 # Draw Rate
-stat-drawrate-values = APC draw rate
+stat-drawrate-values = Pobór mocy APC
 stat-drawrate-id = ID
-stat-drawrate-rate = Draw Rate (W)
+stat-drawrate-rate = Pobór mocy (W)

@@ -1,1 +1,1 @@
-command-description-jobboard-completeJob = Completes a given salvage job board job for the station.
+command-description-jobboard-completeJob = Kończy dane zlecenie z tablicy zleceń odzysku dla stacji.

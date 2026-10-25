@@ -1,0 +1,10 @@
+ent-XenoFacehugger = facehugger
+    .desc = Na końcu ogona ma coś w rodzaju rurki.
+    .gender = male
+ent-XenoFacehuggerDead = { ent-XenoFacehugger }
+    .desc = { ent-XenoFacehugger.desc }
+    .gender = male
+    .suffix = martwy
+ent-XenoFacehuggerLamarr = Lamarr
+    .desc = Pupil dyrektora badań, oswojony facehugger bez trąbki. Przyjazny, ale i tak może spróbować przytulić się do twojej głowy.
+    .gender = female

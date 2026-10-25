@@ -5,3 +5,6 @@ ent-PlasmaWindowDirectional = directional plasma window
 ent-PlasmaWindowDiagonal = { ent-PlasmaWindow }
     .suffix = diagonal
     .desc = { ent-PlasmaWindow.desc }
+ent-PlasmaWindowDirectionalCorner = { ent-PlasmaWindowDirectional }
+    .suffix = Corner
+    .desc = { ent-PlasmaWindowDirectional.desc }

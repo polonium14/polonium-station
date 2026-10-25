@@ -4,3 +4,6 @@ ent-AccessBreakerUnlimited = authentication disruptor
 ent-AccessBreaker = { ent-AccessBreakerUnlimited }
     .suffix = Limited
     .desc = { ent-AccessBreakerUnlimited.desc }
+ent-XenoborgAccessBreaker = xenoborg authentication disruptor
+    .desc = An access scrubbing device, engineered by xenoborgs for disrupting digital locks.
+    .suffix = Limited

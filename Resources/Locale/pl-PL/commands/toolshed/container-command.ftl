@@ -1,7 +1,7 @@
-command-description-container-contents = Gets all entities inside a container on an entity via the container's ID.
-command-description-container-get = Gets a container on an entity via the container's ID.
-command-description-container-insert = Puts an entity inside the piped container.
-command-description-container-insertmultiple = Put multiple entities inside the piped container.
-command-description-container-list = Gets the IDs of all containers in an entity.
-command-description-container-getall = Gets all containers in an entity.
-command-description-container-id = Gets the string id of the piped in containers.
+command-description-container-contents = Pobiera wszystkie encje wewnątrz kontenera encji na podstawie ID kontenera.
+command-description-container-get = Pobiera kontener encji na podstawie ID kontenera.
+command-description-container-insert = Wkłada encję do przekazanego potokiem kontenera.
+command-description-container-insertmultiple = Wkłada wiele encji do przekazanego potokiem kontenera.
+command-description-container-list = Pobiera ID wszystkich kontenerów w encji.
+command-description-container-getall = Pobiera wszystkie kontenery w encji.
+command-description-container-id = Pobiera tekstowe id przekazanych potokiem kontenerów.

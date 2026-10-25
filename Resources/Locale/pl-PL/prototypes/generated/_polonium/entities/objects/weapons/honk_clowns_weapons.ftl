@@ -1,0 +1,9 @@
+ent-RedLaserHonk = { ent-RedLaser }
+    .desc = { ent-RedLaser.desc }
+ent-RedMediumLaserHonk = { ent-RedMediumLaser }
+    .desc = { ent-RedMediumLaser.desc }
+ent-WeaponBehonkerLaserHonk = { ent-WeaponBehonkerLaser }
+    .desc = { ent-WeaponBehonkerLaser.desc }
+ent-TrashBananaPeelHonkMine = { ent-TrashBananaPeelExplosive }
+    .suffix = Honk
+    .desc = { ent-TrashBananaPeelExplosive.desc }

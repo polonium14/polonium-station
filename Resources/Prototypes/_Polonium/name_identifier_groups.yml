@@ -4,3 +4,10 @@
   fullName: true
   minValue: 100
   maxValue: 999
+
+- type: nameIdentifierGroup
+  id: ReplicatorColossus
+  format: name-identifier-format-replicator-colossus
+  fullName: true
+  minValue: 100
+  maxValue: 999

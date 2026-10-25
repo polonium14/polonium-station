@@ -205,8 +205,8 @@ marking-VoxBelly = Brzuch
 marking-VoxBelly-voxbelly = Brzuch
 marking-VoxTailBalled = Młockarz
 marking-VoxTailBalled-voxtailballed = Młockarz
-marking-ImpVoxTailSplit = Twinned
-marking-ImpVoxTailSplit-voxtailsplit = Twinned
+marking-ImpVoxTailSplit = Bliźniaczy
+marking-ImpVoxTailSplit-voxtailsplit = Bliźniaczy
 # upstream vox markings dont have localized names. lmfao
 # these are just straight up broken and shouldnt be visible from the markings menu period but ALAS im not skilled enough to remove them so you get this stupid botch job instead
 # moving this furniture a few inches to the left -cc
@@ -214,8 +214,8 @@ marking-VoxLArmScales = Łuski na Ramieniu L
 marking-VoxLHandScales = Łuski na Dłoni L
 marking-VoxRArmScales = Łuski na Ramieniu P
 marking-VoxRHandScales = Łuski na Dłoni P
-marking-VoxLFootScales = Foot Scales L
-marking-VoxLLegScales = Leg Scales L
+marking-VoxLFootScales = Łuski na stopie (L)
+marking-VoxLLegScales = Łuski na nodze (L)
 marking-VoxRFootScales = Łuski na Stopie P
 marking-VoxRLegScales = Łuski na Nodze P
 marking-VoxTailSplit-voxtailsplit = Bliźniaczy

@@ -18,3 +18,5 @@ ent-StatusEffectDesoxyStamina = 2-krotność maksymalnej wytrzymałości
     .desc = { ent-StaminaModifierStatusEffect.desc }
 ent-StatusEffectStimulantsStamina = 1,5-krotność maksymalnej wytrzymałości
     .desc = { ent-StaminaModifierStatusEffect.desc }
+ent-StatusEffectAdrenaline = adrenalina
+    .desc = { ent-MobStatusEffectBase.desc }

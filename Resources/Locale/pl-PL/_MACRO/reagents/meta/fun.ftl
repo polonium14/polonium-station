@@ -1,2 +1,2 @@
-reagent-name-ants = ants
-reagent-desc-ants = Literally just ants.
+reagent-name-ants = mrówki
+reagent-desc-ants = Dosłownie same mrówki.

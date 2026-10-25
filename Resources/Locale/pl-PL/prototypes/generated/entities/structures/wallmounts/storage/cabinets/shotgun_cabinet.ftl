@@ -1,4 +1,4 @@
-ent-ShotGunCabinet = gablota na strzelbe
+ent-ShotGunCabinet = gablota na strzelbę
     .desc = Jest mała etykieta która ma napisane "Do użytku w sytuacjach awaryjnych" oraz detale o bezpiecznym użytkowaniu strzelby, która nie bardzo cie przekonuje.
 ent-ShotGunCabinetOpen = { ent-ShotGunCabinet }
     .suffix = Otwarte

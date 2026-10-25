@@ -16,9 +16,9 @@ guidebook-reagent-sources-header = Składniki
 guidebook-reagent-sources-ent-wrapper = [bold]{ $name }[/bold] \[1\]
 guidebook-reagent-sources-gas-wrapper = [bold]{ $name } (gaz)[/bold] \[1\]
 guidebook-reagent-effects-header = Efekty
-guidebook-reagent-effects-metabolism-stage-rate = [bold]{ $stage }[/bold] [color=gray]({ $rate } units per second)[/color]
-guidebook-reagent-effects-metabolite-item = { $reagent } at a rate of { NATURALPERCENT($rate, 2) }
-guidebook-reagent-effects-metabolites = Metabolizes into { $items }.
+guidebook-reagent-effects-metabolism-stage-rate = [bold]{ $stage }[/bold] [color=gray]({ $rate } jednostek na sekundę)[/color]
+guidebook-reagent-effects-metabolite-item = { $reagent } w tempie { NATURALPERCENT($rate, 2) }
+guidebook-reagent-effects-metabolites = Metabolizuje się do: { $items }.
 guidebook-reagent-plant-metabolisms-header = Metabolizm roślinny
 guidebook-reagent-plant-metabolisms-rate = [bold]Metabolizm roślinny[/bold] [color=gray](1 jednostka co 3 sekundy)[/color]
 guidebook-reagent-physical-description = [italic]Substancja wygląda { $description }.[/italic]
@@ -39,8 +39,8 @@ guidebook-reagent-effects-metabolism-group-rate = [bold]{ $group }[/bold] [color
 guidebook-nested-effect-description =
     { $chance ->
         [1] { $effect }
-       *[other] Has a { NATURALPERCENT($chance, 2) } chance to { $effect }
+       *[other] Ma { NATURALPERCENT($chance, 2) } szans, by { $effect }
     }{ $conditionCount ->
         [0] .
-       *[other] { " " }when { $conditions }.
+       *[other] { " " }gdy { $conditions }.
     }

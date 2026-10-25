@@ -39,7 +39,7 @@ jobs:
           download_translations: false
           download_sources: false
           upload_language: pl
-          auto_approve_imported: true
+          auto_approve_imported: false
           import_eq_suggestions: false
           crowdin_branch_name: master
           config: crowdin.yml

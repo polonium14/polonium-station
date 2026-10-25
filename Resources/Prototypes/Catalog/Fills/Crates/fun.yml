@@ -306,6 +306,8 @@
         - id: FoodCakeBirthday
         - id: DrinkLean
           amount: 4
+        - id: DrinkMocnyFull # Polonium: mocny full
+          amount: 4
         - id: KnifePlastic
         - id: ClothingHeadHatPartyRed
           amount: 2

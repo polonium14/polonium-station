@@ -1,1 +1,1 @@
-command-description-rejuvenate = Rejuvenates the given entities, restoring them to full health, clearing status effects, etc.
+command-description-rejuvenate = Odnawia dane encje, przywracając pełne zdrowie, usuwając efekty statusu itd.

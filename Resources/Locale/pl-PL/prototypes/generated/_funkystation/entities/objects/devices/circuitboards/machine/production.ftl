@@ -5,4 +5,4 @@ ent-BluespaceGasSenderMachineBoard = nadajnik gazu bluespace (płytka maszynowa)
 ent-CrystallizerMachineCircuitboard = krystalizator (płytka maszynowa)
     .desc = Płytka drukowana do krystalizatora.
 ent-WashingMachineCircuitboard = pralka (płytka maszynowa)
-    .desc = A machine printed circuit board for an industrial-grade washing machine.
+    .desc = Płyta drukowana maszyny do przemysłowej pralki.

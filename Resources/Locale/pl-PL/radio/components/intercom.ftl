@@ -1,4 +1,4 @@
-intercom-menu-title = Intercom
+intercom-menu-title = Interkom
 intercom-channel-label = Kanał:
 intercom-button-text-mic = Mik.
 intercom-button-text-speaker = Głoś.

@@ -40,3 +40,5 @@ ent-MachineAnomalyVesselFlatpack = zestaw do montażu naczynia anomalnego
     .desc = Zestaw do samodzielnego montażu służący do budowy naczynia anomalnego.
 ent-ComputerBodyScannerFlatpack = zestaw do samodzielnego montażu skanera ciała
     .desc = Zestaw do samodzielnego montażu służący do budowy komputera skanera ciała.
+ent-XenoborgExtractorFlatpack = zestaw do montażu ekstraktora ksenoborga
+    .desc = Zestaw do montażu używany do budowy ekstraktora ksenoborga.

@@ -1,4 +1,4 @@
-advertisement-ammo-1 = Liberation Station: Your one-stop shop for all things second amendment!
+advertisement-ammo-1 = Liberation Station: Twój sklep na wszystko, co dotyczy drugiej poprawki!
 advertisement-ammo-2 = Bądź patriotą, wybierz spluwę!
 advertisement-ammo-3 = Trwałe bronie za małą cene!
 advertisement-ammo-4 = Lepiej martwy niż czerwony!

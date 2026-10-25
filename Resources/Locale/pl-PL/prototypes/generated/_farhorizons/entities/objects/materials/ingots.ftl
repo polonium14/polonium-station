@@ -1,6 +1,6 @@
-ent-IngotPlutonium = plutonium bar
+ent-IngotPlutonium = sztabka plutonu
     .suffix = Pełne
     .desc = { ent-IngotBase.desc }
-ent-IngotPlutonium1 = plutonium bar
-    .suffix = Single
+ent-IngotPlutonium1 = sztabka plutonu
+    .suffix = Pojedyncza
     .desc = { ent-IngotPlutonium.desc }

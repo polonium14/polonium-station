@@ -1,69 +1,69 @@
 # Chest
 
-marking-AllulaloUnderbelly = Underbelly
-marking-AllulaloUnderbelly-allulaloChestUnderbelly = Underbelly
-marking-AllulaloChestHeartMonitor = Heart Monitor
-marking-AllulaloChestHeartMonitor-allulaloChestHeartMonitor = Heart monitor
+marking-AllulaloUnderbelly = Podbrzusze
+marking-AllulaloUnderbelly-allulaloChestUnderbelly = Podbrzusze
+marking-AllulaloChestHeartMonitor = Monitor serca
+marking-AllulaloChestHeartMonitor-allulaloChestHeartMonitor = Monitor serca
 
 # Head
 
-marking-AllulaloHeadUnderbelly = Chin
-marking-AllulaloHeadUnderbelly-allulaloHeadUnderbelly = Chin
-marking-AllulaloHeadNeckFluff = Neck Plumage
-marking-AllulaloHeadNeckFluff-allulaloHeadNeckFluff = Plumage
-marking-AllulaloHeadSpikes = Head Spikes
-marking-AllulaloHeadSpikes-allulaloHeadSpikes = Head spikes
-marking-AllulaloHeadNeckPlumageOutrageous = Neck Plumage (Outrageous)
-marking-AllulaloHeadNeckPlumageOutrageous-allulaloHeadNeckPlumageOutrageous = Plumage
+marking-AllulaloHeadUnderbelly = Podbródek
+marking-AllulaloHeadUnderbelly-allulaloHeadUnderbelly = Podbródek
+marking-AllulaloHeadNeckFluff = Upierzenie szyi
+marking-AllulaloHeadNeckFluff-allulaloHeadNeckFluff = Upierzenie
+marking-AllulaloHeadSpikes = Kolce na głowie
+marking-AllulaloHeadSpikes-allulaloHeadSpikes = Kolce na głowie
+marking-AllulaloHeadNeckPlumageOutrageous = Upierzenie szyi (krzykliwe)
+marking-AllulaloHeadNeckPlumageOutrageous-allulaloHeadNeckPlumageOutrageous = Upierzenie
 
 # Snout
 
 # Eyes
-marking-AllulaloEyesDefault = Eyes (Default)
-marking-AllulaloEyesDefault-allulaloEyesDefault = eyes
-marking-AllulaloEyesHeterochromia = Eyes (Heterochromia)
-marking-AllulaloEyesHeterochromia-allulaloEyesDefaultLeft = Left eye
-marking-AllulaloEyesHeterochromia-allulaloEyesDefaultRight = Right eye
-marking-AllulaloEyesUnshaded = Eyes (Glowing)
-marking-AllulaloEyesUnshaded-allulaloEyesUnshadedLeft = Left eye
-marking-AllulaloEyesUnshaded-allulaloEyesUnshadedRight = Right eye
+marking-AllulaloEyesDefault = Oczy (domyślne)
+marking-AllulaloEyesDefault-allulaloEyesDefault = Oczy
+marking-AllulaloEyesHeterochromia = Oczy (heterochromia)
+marking-AllulaloEyesHeterochromia-allulaloEyesDefaultLeft = Lewe oko
+marking-AllulaloEyesHeterochromia-allulaloEyesDefaultRight = Prawe oko
+marking-AllulaloEyesUnshaded = Oczy (świecące)
+marking-AllulaloEyesUnshaded-allulaloEyesUnshadedLeft = Lewe oko
+marking-AllulaloEyesUnshaded-allulaloEyesUnshadedRight = Prawe oko
 
 # RArm
 
-marking-AllulaloWingsDefaultRight = Default Wings
-marking-AllulaloWingsDefaultRight-allulaloArmDefaultRight = Wing
-marking-AllulaloWingsSplitRight = Split Wings
-marking-AllulaloWingsSplitRight-allulaloArmSplit1 = Lower feathers
-marking-AllulaloWingsSplitRight-allulaloArmSplit2 = Upper feathers
-marking-AllulaloWingsOwlRight = Diving Wings
-marking-AllulaloWingsOwlRight-allulaloArmOwl1 = Middle feathers
-marking-AllulaloWingsOwlRight-allulaloArmOwl2 = Pattern feathers
-marking-AllulaloWingsOwlRight-allulaloArmOwl3 = Flight feathers
+marking-AllulaloWingsDefaultRight = Domyślne skrzydła
+marking-AllulaloWingsDefaultRight-allulaloArmDefaultRight = Skrzydło
+marking-AllulaloWingsSplitRight = Rozdwojone skrzydła
+marking-AllulaloWingsSplitRight-allulaloArmSplit1 = Dolne pióra
+marking-AllulaloWingsSplitRight-allulaloArmSplit2 = Górne pióra
+marking-AllulaloWingsOwlRight = Skrzydła do nurkowania
+marking-AllulaloWingsOwlRight-allulaloArmOwl1 = Środkowe pióra
+marking-AllulaloWingsOwlRight-allulaloArmOwl2 = Pióra ze wzorem
+marking-AllulaloWingsOwlRight-allulaloArmOwl3 = Lotki
 
 # LArm
 
-marking-AllulaloWingsDefaultLeft = Default Wings
-marking-AllulaloWingsDefaultLeft-allulaloArmDefaultLeft = Wing
-marking-AllulaloWingsSplitLeft = Split Wings
-marking-AllulaloWingsSplitLeft-allulaloArmSplit1 = Lower feathers
-marking-AllulaloWingsSplitLeft-allulaloArmSplit2 = Upper feathers
-marking-AllulaloWingsOwlLeft = Diving Wings
-marking-AllulaloWingsOwlLeft-allulaloArmOwl1 = Middle feathers
-marking-AllulaloWingsOwlLeft-allulaloArmOwl2 = Pattern feathers
-marking-AllulaloWingsOwlLeft-allulaloArmOwl3 = Flight feathers
+marking-AllulaloWingsDefaultLeft = Domyślne skrzydła
+marking-AllulaloWingsDefaultLeft-allulaloArmDefaultLeft = Skrzydło
+marking-AllulaloWingsSplitLeft = Rozdwojone skrzydła
+marking-AllulaloWingsSplitLeft-allulaloArmSplit1 = Dolne pióra
+marking-AllulaloWingsSplitLeft-allulaloArmSplit2 = Górne pióra
+marking-AllulaloWingsOwlLeft = Skrzydła do nurkowania
+marking-AllulaloWingsOwlLeft-allulaloArmOwl1 = Środkowe pióra
+marking-AllulaloWingsOwlLeft-allulaloArmOwl2 = Pióra ze wzorem
+marking-AllulaloWingsOwlLeft-allulaloArmOwl3 = Lotki
 
 # RLeg
 
 
 # LLeg
 
-marking-AllulaloLegUnderbellyDefaultLeft = Underbelly
-marking-AllulaloLegUnderbellyDefaultLeft-allulaloLegUnderbellyDefaultLeft = left leg underbelly
+marking-AllulaloLegUnderbellyDefaultLeft = Podbrzusze
+marking-AllulaloLegUnderbellyDefaultLeft-allulaloLegUnderbellyDefaultLeft = Podbrzusze lewej nogi
 
 # RLeg
 
-marking-AllulaloLegUnderbellyDefaultRight = Underbelly
-marking-AllulaloLegUnderbellyDefaultRight-allulaloLegUnderbellyDefaultRight = right leg underbelly
+marking-AllulaloLegUnderbellyDefaultRight = Podbrzusze
+marking-AllulaloLegUnderbellyDefaultRight-allulaloLegUnderbellyDefaultRight = Podbrzusze prawej nogi
 
 # UndergarmentBottom
 
@@ -73,13 +73,13 @@ marking-AllulaloLegUnderbellyDefaultRight-allulaloLegUnderbellyDefaultRight = ri
 
 # LFoot
 
-marking-AllulaloLegPlumageLeft = Excessive Feathers
-marking-AllulaloLegPlumageLeft-allulaloLegPlumage = plumage
+marking-AllulaloLegPlumageLeft = Nadmiar piór
+marking-AllulaloLegPlumageLeft-allulaloLegPlumage = Upierzenie
 
 # RFoot
 
-marking-AllulaloLegPlumageRight = Excessive Feathers
-marking-AllulaloLegPlumageRight-allulaloLegPlumage = plumage
+marking-AllulaloLegPlumageRight = Nadmiar piór
+marking-AllulaloLegPlumageRight-allulaloLegPlumage = Upierzenie
 
 # LHand
 
@@ -98,39 +98,39 @@ marking-AllulaloLegPlumageRight-allulaloLegPlumage = plumage
 
 # HeadTop
 
-marking-AllulaloHeadTopHorn = Horn
-marking-AllulaloHeadTopHorn-allulaloHeadTopHorn = Horn
-marking-AllulaloHeadTopFeathers = Fancy Feathers
-marking-AllulaloHeadTopFeathers-allulaloHeadTopFeathers = Feathers
-marking-AllulaloHeadTopCurvedHorns = Curved Horns
-marking-AllulaloHeadTopCurvedHorns-allulaloHeadTopCurvedHorns = Horns
-marking-AllulaloHeadTopSweptHorns = Swept horns
-marking-AllulaloHeadTopSweptHorns-allulaloHeadTopSweptHorns = Horns
-marking-AllulaloHeadTopStubHorns = Stub Horns
-marking-AllulaloHeadTopStubHorns-allulaloHeadTopStubHorns = Horns
-marking-AllulaloHeadTopPlumage1 = Plumage (Bold)
-marking-AllulaloHeadTopPlumage1-allulaloHeadTopPlumage1 = feathers
-marking-AllulaloHeadTopPlumage2 = Plumage (Brash)
-marking-AllulaloHeadTopPlumage2-allulaloHeadTopPlumage2 = feathers
+marking-AllulaloHeadTopHorn = Róg
+marking-AllulaloHeadTopHorn-allulaloHeadTopHorn = Róg
+marking-AllulaloHeadTopFeathers = Ozdobne pióra
+marking-AllulaloHeadTopFeathers-allulaloHeadTopFeathers = Pióra
+marking-AllulaloHeadTopCurvedHorns = Zakrzywione rogi
+marking-AllulaloHeadTopCurvedHorns-allulaloHeadTopCurvedHorns = Rogi
+marking-AllulaloHeadTopSweptHorns = Zagięte rogi
+marking-AllulaloHeadTopSweptHorns-allulaloHeadTopSweptHorns = Rogi
+marking-AllulaloHeadTopStubHorns = Krótkie rogi
+marking-AllulaloHeadTopStubHorns-allulaloHeadTopStubHorns = Rogi
+marking-AllulaloHeadTopPlumage1 = Upierzenie (śmiałe)
+marking-AllulaloHeadTopPlumage1-allulaloHeadTopPlumage1 = Pióra
+marking-AllulaloHeadTopPlumage2 = Upierzenie (zuchwałe)
+marking-AllulaloHeadTopPlumage2-allulaloHeadTopPlumage2 = Pióra
 
 # Tail
 
-marking-AllulaloTailDefault = Tail (default)
-marking-AllulaloTailDefault-allulaloTailDefault = Tail
-marking-AllulaloTailDefault-allulaloTailDefault2 = Feathers
-marking-AllulaloTailDefault-allulaloTailDefault3 = Underbelly
-marking-AllulaloTailThick = Thick Tail
-marking-AllulaloTailThick-allulaloTailLarge = Tail
-marking-AllulaloTailThick-allulaloTailLarge2 = Underbelly
-marking-AllulaloTailThick-allulaloTailLarge3 = Spikes
-marking-AllulaloTailThickSpikes = Thick Tail with Spikes
-marking-AllulaloTailThickSpikes-allulaloTailLarge = Tail
-marking-AllulaloTailThickSpikes-allulaloTailLarge2 = Underbelly
-marking-AllulaloTailThickSpikes-allulaloTailLarge3 = Spikes
-marking-AllulaloTailTuft = Tuft Tail
-marking-AllulaloTailTuft-allulaloTailTuft = Tail
-marking-AllulaloTailTuft-allulaloTailTuft2 = Underbelly
-marking-AllulaloTailTuft-allulaloTailTuft3 = Feathers
+marking-AllulaloTailDefault = Ogon (domyślny)
+marking-AllulaloTailDefault-allulaloTailDefault = Ogon
+marking-AllulaloTailDefault-allulaloTailDefault2 = Pióra
+marking-AllulaloTailDefault-allulaloTailDefault3 = Podbrzusze
+marking-AllulaloTailThick = Gruby ogon
+marking-AllulaloTailThick-allulaloTailLarge = Ogon
+marking-AllulaloTailThick-allulaloTailLarge2 = Podbrzusze
+marking-AllulaloTailThick-allulaloTailLarge3 = Kolce
+marking-AllulaloTailThickSpikes = Gruby ogon z kolcami
+marking-AllulaloTailThickSpikes-allulaloTailLarge = Ogon
+marking-AllulaloTailThickSpikes-allulaloTailLarge2 = Podbrzusze
+marking-AllulaloTailThickSpikes-allulaloTailLarge3 = Kolce
+marking-AllulaloTailTuft = Ogon z kitką
+marking-AllulaloTailTuft-allulaloTailTuft = Ogon
+marking-AllulaloTailTuft-allulaloTailTuft2 = Podbrzusze
+marking-AllulaloTailTuft-allulaloTailTuft3 = Pióra
 
 # RArmExtension
 

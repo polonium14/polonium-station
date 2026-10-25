@@ -1,12 +1,12 @@
 ent-WeldingMaskBase = maska spawalnicza
     .desc = { ent-ClothingHeadBase.desc }
 ent-ClothingHeadHatWelding = maska spawalnicza
-    .desc = Osłona twarzy na głowę, chroniąca noszącego całkowicie przed kosmicznym łukiem.
-ent-ClothingHeadHatWeldingMaskFlame = maska spawalnicza flame
+    .desc = Osłona twarzy zakładana na głowę, w pełni chroniąca noszącego przed kosmicznym okiem spawacza.
+ent-ClothingHeadHatWeldingMaskFlame = maska spawalnicza w płomienie
     .desc = Malowana maska spawalnicza, ta ma płomienie.
-ent-ClothingHeadHatWeldingMaskFlameBlue = maska spawalnicza blue-flame
+ent-ClothingHeadHatWeldingMaskFlameBlue = maska spawalnicza w niebieskie płomienie
     .desc = Malowana maska spawalnicza, ta ma niebieskie płomienie.
-ent-ClothingHeadHatWeldingMaskPainted = maska spawalnicza painted
+ent-ClothingHeadHatWeldingMaskPainted = malowana maska spawalnicza
     .desc = Maska spawalnicza, pomalowana na szkarłat.
-ent-ActionToggleWeldingMask = maska spawalnicza toggle
+ent-ActionToggleWeldingMask = Przełącz maskę spawalniczą
     .desc = Unosi lub opuszcza maskę spawalniczą.

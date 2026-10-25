@@ -14,4 +14,16 @@ public sealed partial class PoloniumPhotographComponent : Component
     /// <summary>Key into the server's <c>PhotoStorageManager</c>. 0 means "no image yet" (e.g. the client never answered a capture request).</summary>
     [AutoNetworkedField]
     public int PhotoId;
+
+    /// <summary>Text written on the bottom strip with a pen. Null until signed; a photo can be signed only once.</summary>
+    [AutoNetworkedField]
+    public string? Caption;
+
+    /// <summary>Ink color of <see cref="Caption"/>, taken from the pen (or crayon) at signing time.</summary>
+    [AutoNetworkedField]
+    public Color CaptionColor = Color.Black;
+
+    /// <summary>Font prototype id of <see cref="Caption"/>, taken from the pen at signing time.</summary>
+    [AutoNetworkedField]
+    public string? CaptionFont;
 }

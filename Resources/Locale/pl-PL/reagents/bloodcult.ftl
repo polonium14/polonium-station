@@ -1,12 +1,12 @@
-reagent-name-edge-essentia = edge essentia
-reagent-desc-edge-essentia = A dark, cursed substance that corrupts the blood of wounded victims, turning their bleeding wounds into sources of unholy blood.
+reagent-name-edge-essentia = esencja krawędzi
+reagent-desc-edge-essentia = Mroczna, przeklęta substancja, która psuje krew rannych ofiar, zamieniając ich krwawiące rany w źródła nieświętej krwi.
 reagent-effect-condition-guidebook-is-blood-cultist =
     { $invert ->
-        [true] the target is not a blood cultist
-       *[false] the target is a blood cultist
+        [true] cel nie jest kultystą krwi
+       *[false] cel jest kultystą krwi
     }
 reagent-effect-guidebook-juggernaut-blood-corruption =
     { $chance ->
-        [1] Corrupts
-       *[other] corrupt
-    } blood into unholy blood upon contact with a juggernaut
+        [1] Zamienia
+       *[other] zamieniają
+    } krew w nieświętą krew po zetknięciu z juggernautem

@@ -1,5 +1,5 @@
 ent-BaseShadowMob = { ent-BaseMob }
     .desc = { ent-BaseMob.desc }
-ent-MobCatShadow = kot cieniowy
+ent-MobCatShadow = cienisty kot
     .desc = Piękny kawałek ciemności. Mam nadzieję, że nie przyniesie ci klątwy.
-    .gender = mężczyzna
+    .gender = male

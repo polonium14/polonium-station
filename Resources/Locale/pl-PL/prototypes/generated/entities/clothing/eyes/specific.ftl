@@ -1,3 +1,3 @@
-ent-ClothingEyesChameleon = okulary SUN
-    .desc = Przydatne zarówno dla ochrony, jak i Cargoni.
+ent-ClothingEyesChameleon = okulary przeciwsłoneczne
+    .desc = Przydatne zarówno dla ochrony, jak i logistyki.
     .suffix = Kameleon

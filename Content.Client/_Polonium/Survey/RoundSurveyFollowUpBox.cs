@@ -29,11 +29,16 @@ public sealed class RoundSurveyFollowUpBox : BoxContainer
             Text = Loc.GetString(followUp.Text),
         });
 
-        var grid = new GridContainer
+        var columns = new BoxContainer
         {
-            Columns = 2,
-            HSeparationOverride = 16,
+            Orientation = LayoutOrientation.Horizontal,
+            SeparationOverride = 16,
         };
+
+        var left = new BoxContainer { Orientation = LayoutOrientation.Vertical };
+        var right = new BoxContainer { Orientation = LayoutOrientation.Vertical };
+        columns.AddChild(left);
+        columns.AddChild(right);
 
         foreach (var id in followUp.Reasons)
         {
@@ -46,11 +51,11 @@ public sealed class RoundSurveyFollowUpBox : BoxContainer
             };
 
             box.OnToggled += _ => Changed?.Invoke();
-            grid.AddChild(box);
+            (_options.Count % 2 == 0 ? left : right).AddChild(box);
             _options.Add((id, box));
         }
 
-        AddChild(grid);
+        AddChild(columns);
     }
 
     public IEnumerable<CheckBox> Options => _options.Select(option => option.Box);
