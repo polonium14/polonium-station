@@ -36,7 +36,7 @@ namespace Content.IntegrationTests.Tests._Polonium.Medical;
 [TestOf(typeof(PatientIntakeSystem))]
 public sealed class PatientIntakeMachineTest : GameTest
 {
-    internal static readonly ProtoId<PatientIntakeCasePrototype> HealthyCase = "PatientIntakeTestHealthy";
+    internal const string HealthyCase = "PatientIntakeTestHealthy";
     private static readonly ProtoId<Content.Shared.Humanoid.Prototypes.RandomHumanoidSettingsPrototype> PatientSettings = "PatientIntakePatient";
 
     [TestPrototypes]
@@ -473,7 +473,7 @@ public sealed class PatientIntakeMachineTest : GameTest
 
             var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
             entMan.System<PatientIntakeSystem>().StartCase((machine, comp), entMan.GetComponent<EntityStorageComponent>(machine),
-                server.ProtoMan.Index(HealthyCase));
+                server.ProtoMan.Index<PatientIntakeCasePrototype>(HealthyCase));
         });
         await pair.RunTicksSync(5);
         await server.WaitAssertion(() =>
@@ -548,7 +548,7 @@ public sealed class PatientIntakeMachineTest : GameTest
         var server = pair.Server;
         var entMan = server.EntMan;
         var map = await pair.CreateTestMap();
-        var caseProto = server.ProtoMan.Index(HealthyCase);
+        var caseProto = server.ProtoMan.Index<PatientIntakeCasePrototype>(HealthyCase);
 
         await server.WaitAssertion(() =>
         {
