@@ -135,6 +135,6 @@
 
 - type: lobbyBackground
   id: OcieplamGo
-  background: /Textures/LobbyScreens/KrzesloGang.png
+  background: /Textures/LobbyScreens/OcieplamGo.png
   title: lobby-state-background-ocieplamgo-title
   artist: lobby-state-background-ocieplamgo-artist
