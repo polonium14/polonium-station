@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: slarticodefast
-  changes:
-  - message: The reagent grinder interactions and user interface are now predicted
-      and should feel much more responsive.
-    type: Tweak
-  id: 9580
-  time: '2026-03-15T19:29:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42815
 - author: Eternally-Confused
   changes:
   - message: The chem guidebook now shows when chemicals adjust body temperature again
@@ -4373,3 +4365,10 @@
   id: 10074
   time: '2026-10-24T14:46:23.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1154
+- author: Nikita
+  changes:
+  - message: "R.I.G. medyczny jest zastrze\u017Cony do medycyny, nie dow\xF3dztwa"
+    type: Fix
+  id: 10075
+  time: '2026-10-25T09:28:37.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1157
