@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseAction
+  id: ActionVehicleBicycleBell
+  name: Ring the bell
+  description: Ding-ding! Make way, the father is off to solve another mystery.
+  components:
+  - type: Action
+    useDelay: 1.5
+    sound:
+      path: /Audio/_Polonium/Vehicles/bicycle_bell.ogg
+      params:
+        variation: 0.03
+  - type: Sprite
+    sprite: _Polonium/Objects/Vehicles/bicycle.rsi
+    layers:
+    - state: bell
+  - type: InstantAction
+    event: !type:VehicleSignalActionEvent
