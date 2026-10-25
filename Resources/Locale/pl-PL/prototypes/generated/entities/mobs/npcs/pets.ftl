@@ -83,3 +83,7 @@ ent-MobCrabAtmos = Tropiko
 ent-MobPollyParrot = papuga Polly
     .desc = Ekspertka w dziedzinie kwantowej teorii krakersów.
     .gender = female
+ent-BaseUniquePet = { "" }
+    .desc = { "" }
+ent-MobCorgiIanBase = { ent-BaseUniquePet }
+    .desc = { ent-BaseUniquePet.desc }

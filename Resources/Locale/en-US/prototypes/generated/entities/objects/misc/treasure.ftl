@@ -20,3 +20,5 @@ ent-TreasureCoinAdamantine = { ent-TreasureCoinIron }
     .desc = { ent-TreasureCoinIron.desc }
 ent-TreasureCoinDiamond = { ent-TreasureCoinIron }
     .desc = { ent-TreasureCoinIron.desc }
+ent-BaseCoin = coin
+    .desc = A flat bit of metal. If it was still in circulation, inflation would've made it worthless. Since it isn't, it's worth enough to keep in a book.

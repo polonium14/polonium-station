@@ -25,3 +25,5 @@ ent-ClothingOuterSuitCarp = kombinezon karpia
 ent-ClothingOuterHardsuitCarp = { ent-ClothingOuterSuitCarp }
     .suffix = Skafander, NIE MAPOWAĆ
     .desc = { ent-ClothingOuterSuitCarp.desc }
+ent-ClothingOuterSuitTramDriver = kurtka motorniczego
+    .desc = Chroni przed wszystkim, co mogłoby cię rozproszyć. Czyli przed niczym.

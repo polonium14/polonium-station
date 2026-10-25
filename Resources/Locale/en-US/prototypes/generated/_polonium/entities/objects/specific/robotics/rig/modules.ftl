@@ -34,3 +34,5 @@ ent-ModSuitModuleVisionMeson = R.I.G. meson visor module
     .desc = Meson scanner technology built into the helmet, revealing pipes and cables under the floor.
 ent-ModSuitModuleVisionNight = R.I.G. night vision module
     .desc = Light amplifiers in the helmet that let the wearer see in complete darkness.
+ent-ModSuitModuleMagbootsAdvanced = { "" }
+    .desc = { "" }

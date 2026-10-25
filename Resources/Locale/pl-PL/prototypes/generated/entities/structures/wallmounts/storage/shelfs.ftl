@@ -23,3 +23,5 @@ ent-ShelfChemistry = półka chemiczna
 ent-ShelfChemistryChemistrySecure = { ent-ShelfChemistry }
     .suffix = Chemia, zabezpieczone
     .desc = { ent-ShelfChemistry.desc }
+ent-ShelfBaseWeak = { ent-ShelfBase }
+    .desc = { ent-ShelfBase.desc }

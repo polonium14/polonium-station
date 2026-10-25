@@ -34,3 +34,5 @@ ent-ModSuitModuleVisionMeson = moduł wizjera mezonowego R.I.G.
     .desc = Technologia skanera mezonowego wbudowana w hełm, która ukazuje rury i kable pod podłogą.
 ent-ModSuitModuleVisionNight = moduł noktowizji R.I.G.
     .desc = Wzmacniacze światła w hełmie, dzięki którym użytkownik widzi w całkowitej ciemności.
+ent-ModSuitModuleMagbootsAdvanced = { "" }
+    .desc = { "" }

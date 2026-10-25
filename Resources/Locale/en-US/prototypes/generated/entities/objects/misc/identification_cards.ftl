@@ -146,3 +146,5 @@ ent-CBURNIDcard = CBURN ID card
 ent-UniversalIDCard = universal ID card
     .desc = An ID card that gives you access beyond your wildest dreams.
     .suffix = Admin
+ent-TramDriverIDCard = tram driver ID card
+    .desc = { ent-IDCardStandard.desc }

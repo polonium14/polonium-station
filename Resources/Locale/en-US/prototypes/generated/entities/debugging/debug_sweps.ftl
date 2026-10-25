@@ -22,3 +22,6 @@ ent-MeleeDebug100 = bang stick 100dmg
     .desc = { ent-MeleeDebugGib.desc }
 ent-MeleeDebug200 = bang stick 200dmg
     .desc = { ent-MeleeDebugGib.desc }
+ent-MeleeDebugUnbang = unbang stick
+    .desc = hit soft ye
+    .suffix = DEBUG

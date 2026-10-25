@@ -1,0 +1,11 @@
+ent-EnergyGate = energy gate
+    .desc = An advanced gate that permits one-way access and prevents tailgating.
+ent-EnergyGateGenpopEnter = { ent-EnergyGate }
+    .suffix = Genpop Enter
+    .desc = { ent-EnergyGate.desc }
+ent-EnergyGateGenpopLeave = { ent-EnergyGate }
+    .suffix = Genpop Leave
+    .desc = { ent-EnergyGate.desc }
+ent-EnergyGateAirtight = airtight energy gate
+    .suffix = Airtight
+    .desc = { ent-EnergyGate.desc }

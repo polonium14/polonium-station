@@ -74,3 +74,5 @@ ent-ClothingBackpackDebug3 = gejowski szalony plecak
 ent-ClothingBackpackDebug4 = szalony plecak z przesunięciem
     .desc = Co to, kurwa, jest?
     .suffix = Debug
+ent-ClothingBackpackHoldingBase = { ent-ClothingBackpack }
+    .desc = { ent-ClothingBackpack.desc }

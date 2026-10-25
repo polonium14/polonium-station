@@ -4,3 +4,5 @@ ent-AirlockRCDResistant = { ent-Airlock }
     .desc = { ent-Airlock.desc }
 ent-AirlockGlass = szklana śluza
     .desc = { ent-Airlock.desc }
+ent-BaseAirlockIndestructible = śluza
+    .desc = Otwiera się, zamyka i może cię zmiażdżyć.

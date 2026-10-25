@@ -1,2 +1,6 @@
 ent-BaseSign = znak podstawowy
     .desc = { ent-BaseWallmountMetallic.desc }
+ent-BaseSignIndestructible = { ent-BaseWallmount }
+    .desc = { ent-BaseWallmount.desc }
+ent-BaseSignWeak = { ent-BaseSignIndestructible }
+    .desc = { ent-BaseSignIndestructible.desc }

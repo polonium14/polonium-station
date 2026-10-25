@@ -38,3 +38,7 @@ ent-AltarFangs = ołtarz z kłami
     .desc = { ent-AltarHeaven.desc }
 ent-AltarBananium = ołtarz Honkmother
     .desc = Ołtarz z bananium poświęcony honkmother.
+ent-AltarBaseSteel = { ent-AltarBase }
+    .desc = { ent-AltarBase.desc }
+ent-AltarBaseWood = { ent-AltarBase }
+    .desc = { ent-AltarBase.desc }

@@ -1,0 +1,11 @@
+ent-EnergyGate = bramka energetyczna
+    .desc = Zaawansowana bramka, która przepuszcza w jedną stronę i nie pozwala przeciskać się za kimś.
+ent-EnergyGateGenpopEnter = { ent-EnergyGate }
+    .suffix = Cela zbiorowa Wejście
+    .desc = { ent-EnergyGate.desc }
+ent-EnergyGateGenpopLeave = { ent-EnergyGate }
+    .suffix = Cela zbiorowa Wyjście
+    .desc = { ent-EnergyGate.desc }
+ent-EnergyGateAirtight = hermetyczna bramka energetyczna
+    .suffix = Szczelny
+    .desc = { ent-EnergyGate.desc }

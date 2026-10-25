@@ -97,3 +97,5 @@ ent-SpawnPointReporter = Dziennikarz
     .desc = { ent-SpawnPointJobBase.desc }
 ent-SpawnPointPsychologist = Psycholog
     .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointTramDriver = motorniczy
+    .desc = { ent-SpawnPointJobBase.desc }

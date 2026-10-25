@@ -1,0 +1,15 @@
+ent-VendingMachineChefvendTutorial = { ent-VendingMachineChefvend }
+    .suffix = Samouczek
+    .desc = { ent-VendingMachineChefvend.desc }
+ent-VendingMachineDinnerwareTutorial = { ent-VendingMachineDinnerware }
+    .suffix = Samouczek
+    .desc = { ent-VendingMachineDinnerware.desc }
+ent-VendingMachineNutriTutorial = { ent-VendingMachineNutri }
+    .suffix = Samouczek
+    .desc = { ent-VendingMachineNutri.desc }
+ent-VendingMachineEngivendTutorial = { ent-VendingMachineEngivend }
+    .suffix = Samouczek
+    .desc = { ent-VendingMachineEngivend.desc }
+ent-VendingMachineEngiDrobeTutorial = { ent-VendingMachineEngiDrobe }
+    .suffix = Samouczek
+    .desc = { ent-VendingMachineEngiDrobe.desc }

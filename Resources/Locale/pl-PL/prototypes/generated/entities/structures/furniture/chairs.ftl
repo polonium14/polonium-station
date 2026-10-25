@@ -55,3 +55,5 @@ ent-WoodenBench = drewniana ławka
     .desc = Wbiła ci się drzazga? No cóż, przynajmniej jest ekologiczna.
 ent-ChairXeno = krzesło „Xeno”
     .desc = { ent-StoolBase.desc }
+ent-OfficeChairVehicleBase = { ent-OfficeChairBase }
+    .desc = { ent-OfficeChairBase.desc }

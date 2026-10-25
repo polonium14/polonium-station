@@ -221,3 +221,5 @@ ent-ClothingUniformJumpsuitCasualGreen = casual green jumpsuit
     .desc = A loose worn green shirt with a grey pants, perfect for someone looking to relax.
 ent-ClothingUniformJumpsuitFamilyGuy = familiar garbs
     .desc = Makes you remember the time you did something funny.
+ent-ClothingUniformJumpsuitTramDriver = tram driver jumpsuit
+    .desc = Perfectly ironed, for well-prepared professionals.

@@ -49,3 +49,5 @@ ent-MobSnailSpeed = { ent-MobSnail }
 ent-MobSnailMoth = Snoth
     .desc = { ent-BaseMobMothroach.desc }
     .gender = male
+ent-SolutionWoolSpaceSheep = { ent-SolutionWool }
+    .desc = { ent-SolutionWool.desc }
