@@ -201,7 +201,9 @@ public sealed partial class PatientIntakeSystem
 
             case PatientIntakeIssueKind.RemovePart:
             {
-                if (!TryPickOrgan(patient, issue, _ => true, out var organ, out var category)
+                _trauma.TryGetBodyTraumas(patient, out var traumas);
+                if (!TryPickOrgan(patient, issue, o => traumas?.All(t => t.Comp.TraumaTarget != o && t.Comp.HoldingWoundable != o) ?? true,
+                        out var organ, out var category)
                     || !TryComp<BodyComponent>(patient, out var body)
                     || body.Organs is null)
                     return false;
