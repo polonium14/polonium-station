@@ -78,7 +78,7 @@ meta:
   engineVersion: 291.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/22/2026 14:53:06
+  time: 10/26/2026 12:47:52
   entityCount: 24512
 maps:
 - 1
@@ -6613,7 +6613,7 @@ entities:
       pos: 60.5,25.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -9045.22
+      secondsUntilStateChange: -9068.633
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -78623,13 +78623,6 @@ entities:
       pos: -8.5,66.5
     - type: FaxMachine
       name: Detective Office
-  - uid: 10643
-    components:
-    - type: Transform
-      parent: 2
-      pos: 76.5,28.5
-    - type: FaxMachine
-      name: Captain Office
   - uid: 10644
     components:
     - type: Transform
@@ -78805,6 +78798,13 @@ entities:
       pos: 23.5,40.5
     - type: FaxMachine
       name: Kostnica
+- proto: FaxMachineCaptain
+  entities:
+  - uid: 10643
+    components:
+    - type: Transform
+      parent: 2
+      pos: 76.5,28.5
 - proto: filingCabinetDrawerRandom
   entities:
   - uid: 10668
@@ -81479,7 +81479,7 @@ entities:
       pos: -20.5,57.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -9418.586
+      secondsUntilStateChange: -9441.999
     - type: DeviceNetwork
       deviceLists:
       - 22
@@ -167430,7 +167430,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -219052.27
+      secondsUntilStateChange: -219075.67
   - uid: 24033
     components:
     - type: Transform
