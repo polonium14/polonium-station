@@ -81,7 +81,7 @@ accent-dwarf-words-replace-35 = mutra
 accent-dwarf-words-36 = nowicjusz
 accent-dwarf-words-replace-36 = szczypior
 accent-dwarf-words-37 = żółtodziób
-accent-dwarf-words-replace-37 meszek
+accent-dwarf-words-replace-37 = meszek
 accent-dwarf-words-38 = nowicjusz
 accent-dwarf-words-replace-38 = łoniak
 accent-dwarf-words-39 = specjalista
