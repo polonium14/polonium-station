@@ -11,6 +11,7 @@ construction-category-tiles = Płytki
 construction-category-utilities = Użytkowe
 construction-category-misc = Różne
 construction-category-clothing = Odzież
+construction-category-goblin = Goblińskie
 construction-category-favorites = Ulubione
 construction-add-favorite-button = Dodaj do ulubionych
 construction-remove-from-favorite-button = Usuń z ulubionych

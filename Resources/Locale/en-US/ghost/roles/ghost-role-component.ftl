@@ -93,6 +93,9 @@ ghost-role-information-monkey-description = Ook ook!
 ghost-role-information-kobold-name = Kobold
 ghost-role-information-kobold-description = Be the little gremlin you are, yell at people and beg for meat!
 
+ghost-role-information-goblin-name = Goblin
+ghost-role-information-goblin-description = Dwell the maintance tunnels, build your den and goblin all over the station!
+
 ghost-role-information-rat-king-name = Rat King
 
 ghost-role-information-rat-king-description = You are the Rat King, your interests are food, food, and more food. Fight against the station for food. Did I say food interests you?

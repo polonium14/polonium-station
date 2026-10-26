@@ -1,0 +1,420 @@
+- type: entity
+  name: goblin
+  id: MobBaseGoblin
+  parent: MobBaseAncestor
+  description: Śmierdzące, chytre, przestępcze. Ich sama egzystencja jest zbrodnią.
+  abstract: true
+  components:
+  - type: NameIdentifier
+    group: Goblin
+  - type: LizardAccent
+  - type: ReplacementAccent
+    accent: kobold
+  - type: Inventory
+    templateId: digitigrade
+    speciesId: harpy
+  - type: Speech
+    speechSounds: Lizard
+    speechVerb: Reptilian
+    allowedEmotes: ['Hiss', 'Scream']
+  - type: Vocal
+    emoteSounds: MaleReptilian
+  - type: BodyEmotes
+    soundsId: ReptilianBodyEmotes
+  - type: TypingIndicator
+    proto: lizard
+  - type: InteractionPopup
+    successChance: 0.4
+    interactSuccessString: petting-success-monkey
+    interactFailureString: petting-failure-monkey
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/lizard_happy.ogg
+    interactFailureSound:
+      path: /Audio/Items/wirecutter.ogg
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Critical
+      125: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 5
+  - type: Hands
+    startingHands:
+      hand_left:
+        location: Left
+      hand_right:
+        location: Right
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 7
+  - type: Puller
+    needsHands: True
+  - type: PassiveDamage # Slight passive regen.
+    intervalHaltOnDamageTaken: 5s
+    allowedStates:
+    - Alive
+    damage:
+      types:
+        Poison: -0.5
+  - type: InitialBody
+    organs:
+      Torso: OrganGoblinTorso
+      Head: OrganGoblinHead
+      ArmLeft: OrganGoblinArmLeft
+      ArmRight: OrganGoblinArmRight
+      HandRight: OrganGoblinHandRight
+      HandLeft: OrganGoblinHandLeft
+      LegLeft: OrganGoblinLegLeft
+      LegRight: OrganGoblinLegRight
+      FootLeft: OrganGoblinFootLeft
+      FootRight: OrganGoblinFootRight
+      Brain: OrganGoblinBrain
+      Eyes: OrganGoblinEyes
+      Tongue: OrganGoblinTongue
+      Appendix: OrganGoblinAppendix
+      Ears: OrganGoblinEars
+      Lungs: OrganGoblinLungs
+      Heart: OrganGoblinHeart
+      Stomach: OrganGoblinStomach
+      Liver: OrganGoblinLiver
+      Kidneys: OrganGoblinKidneys
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: Mobs/Animals/kobold.rsi
+      state: kobold
+    - map: [ "outline" ]
+      sprite: Mobs/Animals/kobold.rsi
+      state: outline
+    - map: [ "enum.GoblinoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "ears" ]
+    - map: [ "id" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+  - type: RandomSprite
+    getAllGroups: true
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          kobold: KoboldColors
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 2
+  - type: Tag # Polonium: mark clumsy for the toy-gun self-execution whitelist
+    tags:
+    - Clumsy
+    - GoblinCraft
+  - type: AlwaysRevolutionaryConvertible
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    prob: 1
+    makeSentient: true
+    name: ghost-role-information-goblin-name
+    description: ghost-role-information-goblin-description
+    rules: ghost-role-information-freeagent-rules
+
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganGoblin
+  abstract: true
+  suffix: goblin
+
+- type: entity
+  id: OrganGoblinMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Goblin ]
+
+- type: entity
+  parent: OrganGoblin
+  id: OrganGoblinInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+
+- type: entity
+  parent: OrganGoblin
+  id: OrganGoblinExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Goblin
+
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganGoblinExternal ]
+  id: OrganGoblinTorso
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 120
+    thresholds:
+      Healthy: 120
+      Minor: 105
+      Moderate: 95
+      Severe: 80
+      Critical: 65
+      Mangled: 50
+      Severed: 35
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganGoblinExternal ]
+  id: OrganGoblinHead
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 70
+    thresholds:
+      Healthy: 70
+      Minor: 55
+      Moderate: 40
+      Severe: 25
+      Critical: 10
+      Mangled: 5
+      Severed: 1
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganGoblinExternal ]
+  id: OrganGoblinArmLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 50
+    thresholds:
+      Healthy: 50
+      Minor: 40
+      Moderate: 35
+      Severe: 30
+      Critical: 20
+      Mangled: 5
+      Severed: 1
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganGoblinExternal ]
+  id: OrganGoblinArmRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 50
+    thresholds:
+      Healthy: 50
+      Minor: 40
+      Moderate: 35
+      Severe: 30
+      Critical: 20
+      Mangled: 5
+      Severed: 1
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganGoblinExternal ]
+  id: OrganGoblinHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganGoblinExternal ]
+  id: OrganGoblinHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganGoblinExternal ]
+  id: OrganGoblinLegLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 50
+    thresholds:
+      Healthy: 50
+      Minor: 40
+      Moderate: 35
+      Severe: 30
+      Critical: 20
+      Mangled: 5
+      Severed: 1
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganGoblinExternal ]
+  id: OrganGoblinLegRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 50
+    thresholds:
+      Healthy: 50
+      Minor: 40
+      Moderate: 35
+      Severe: 30
+      Critical: 20
+      Mangled: 5
+      Severed: 1
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganGoblinExternal ]
+  id: OrganGoblinFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganGoblinExternal ]
+  id: OrganGoblinFootRight
+
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganGoblinInternal ]
+  id: OrganGoblinBrain
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseEyes, OrganGoblinInternal, OrganGoblinExternal ]
+  id: OrganGoblinEyes
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi
+  - type: OrganIntegrity
+    integrityCap: 24
+    integrityThresholds:
+      Normal: 24
+      Damaged: 4
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganGoblinInternal ]
+  id: OrganGoblinTongue
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganGoblinInternal ]
+  id: OrganGoblinAppendix
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseEars, OrganGoblinInternal ]
+  id: OrganGoblinEars
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganGoblinInternal, OrganGoblinMetabolizer ]
+  id: OrganGoblinLungs
+  components:
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 9
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganGoblinInternal, OrganGoblinMetabolizer ]
+  id: OrganGoblinHeart
+  components:
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 9
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganGoblinInternal, OrganGoblinMetabolizer ]
+  id: OrganGoblinStomach
+  components:
+  - type: OrganIntegrity
+    integrityCap: 88 # consists of a lot of pieces, thus is incredibly hard to easily destroy
+    integrityThresholds:
+      Normal: 88
+      Damaged: 17
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganGoblinInternal, OrganGoblinMetabolizer ]
+  id: OrganGoblinLiver
+  components:
+  - type: OrganIntegrity
+    integrityCap: 42
+    integrityThresholds:
+      Normal: 42
+      Damaged: 12
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganGoblinInternal, OrganGoblinMetabolizer ]
+  id: OrganGoblinKidneys
+  components:
+  - type: OrganIntegrity
+    integrityCap: 42
+    integrityThresholds:
+      Normal: 42
+      Damaged: 12
+      Destroyed: 0
+
+- type: entity
+  name: dziki goblin
+  id: MobGoblinWild
+  parent: MobBaseGoblin
+  description: Śmierdzące, chytre, przestępcze. Ich sama egzystencja jest zbrodnią konwencji.
+  components:
+  - type: PermanentStatusEffects
+    statusEffects:
+    - StatusEffectClumsyKobold
+  - type: NpcFactionMember
+    factions:
+    - GoblinWild
+  - type: DuoEmote # Funky Change

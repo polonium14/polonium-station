@@ -227,7 +227,7 @@
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Rat ]
+          type: [ Rat, Goblin ]
           inverted: true
         - !type:ReagentCondition
           reagent: Ammonia
@@ -241,7 +241,7 @@
         probability: 0.12
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Rat, Vox ]
+          type: [ Rat, Vox, Goblin ]
           inverted: true
         - !type:ReagentCondition
           reagent: Ammonia

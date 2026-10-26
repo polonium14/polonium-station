@@ -1,0 +1,22 @@
+- type: construction
+  abstract: true
+  id: BaseGoblinStructure
+  graph: GoblinStructures
+  category: construction-category-goblin
+  placementMode: SnapgridCenter
+  canRotate: false
+  entityWhitelist:
+    tags:
+    - GoblinCraft
+
+- type: construction
+  abstract: true
+  id: BaseGoblinStuff
+  category: construction-category-goblin
+  objectType: Item
+  entityWhitelist:
+    tags:
+    - GoblinCraft
+
+
+
