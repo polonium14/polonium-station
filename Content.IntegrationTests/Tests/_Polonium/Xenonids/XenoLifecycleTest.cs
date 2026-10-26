@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Joker66613 <66482446+Joker66613@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 #nullable enable
 using System.Linq;
 using System.Numerics;
