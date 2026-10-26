@@ -146,14 +146,6 @@
   description: patient-intake-issue-blind
   symptom: patient-intake-symptom-blind
 
-- type: patientIntakeIssue
-  id: PatientIntakeForeignImplant
-  kind: Implant
-  cost: 2
-  implant: TrackingImplant
-  description: patient-intake-issue-implant
-  symptom: patient-intake-symptom-implant
-
 # Super-hard only: the replacement has to be sourced by medbay.
 - type: patientIntakeIssue
   id: PatientIntakeMissingOrgan
