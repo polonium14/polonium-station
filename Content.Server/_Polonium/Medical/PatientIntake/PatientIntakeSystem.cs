@@ -27,7 +27,6 @@ using Content.Shared.Examine;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Gibbing;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Implants;
 using Content.Shared.Inventory;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -79,7 +78,6 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedSolutionContainerSystem _solutions = default!;
-    [Dependency] private SharedSubdermalImplantSystem _implants = default!;
     [Dependency] private StationSpawningSystem _spawning = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private TraumaSystem _trauma = default!;

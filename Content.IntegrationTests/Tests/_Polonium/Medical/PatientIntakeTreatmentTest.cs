@@ -21,7 +21,6 @@ using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Eye.Blinding.Systems;
-using Content.Shared.Implants.Components;
 using NUnit.Framework;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
@@ -166,13 +165,6 @@ public sealed class PatientIntakeTreatmentTest : GameTest
             case PatientIntakeIssueKind.Blind:
                 // Oculine.
                 entMan.System<BlindableSystem>().AdjustEyeDamage(patient, -issue.EyeDamage);
-                break;
-
-            case PatientIntakeIssueKind.Implant:
-                // An implanter in draw mode takes it out.
-                var implants = entMan.GetComponent<ImplantedComponent>(patient).ImplantContainer;
-                foreach (var implant in implants.ContainedEntities.ToList())
-                    entMan.DeleteEntity(implant);
                 break;
 
             case PatientIntakeIssueKind.RemovePart:

@@ -110,7 +110,6 @@ patient-intake-failure-unfinishedsurgery = {$part}: niedokończona operacja
 patient-intake-failure-lowblood = Zbyt niski poziom krwi
 patient-intake-failure-harmfulreagent = Szkodliwa substancja we krwi: {$part}
 patient-intake-failure-blind = Uszkodzenia oczu
-patient-intake-failure-implant = Implant nie został wycięty: {$part}
 patient-intake-failure-requestnotdone = Narząd nie został wymieniony: {$part}
 
 patient-intake-part-torso = tułów
@@ -165,8 +164,6 @@ patient-intake-issue-blood-loss = Utrata krwi z rany
 patient-intake-symptom-blood-loss = Bladość, zawroty głowy, duża utrata krwi
 patient-intake-issue-blind = Uszkodzenie oczu
 patient-intake-symptom-blind = Nieostre widzenie
-patient-intake-issue-implant = Nielegalny implant śledzący (usuń go)
-patient-intake-symptom-implant = Uczucie czegoś pod skórą
 patient-intake-issue-missing-organ = Brak narządu wewnętrznego
 patient-intake-symptom-missing-organ = Ofiara kradzieży narządu
 patient-intake-issue-missing-extremity = Brak dłoni lub stopy

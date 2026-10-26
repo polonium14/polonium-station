@@ -106,7 +106,6 @@ public enum PatientIntakeIssueKind : byte
     /// <summary>Damage on a limb plus blood volume lost.</summary>
     Bleed,
     Blind,
-    Implant,
     /// <summary>An organ or limb from <see cref="PatientIntakeIssuePrototype.Categories"/> is missing.</summary>
     RemovePart,
     /// <summary>An organ from <see cref="PatientIntakeIssuePrototype.Categories"/> must be swapped for another.</summary>
@@ -142,9 +141,6 @@ public sealed partial class PatientIntakeIssuePrototype : IPrototype
 
     [DataField]
     public FixedPoint2 Quantity;
-
-    [DataField]
-    public EntProtoId? Implant;
 
     [DataField]
     public int EyeDamage;
