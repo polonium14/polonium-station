@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Buunie099
-  changes:
-  - message: Fixed guidebook showing the wrong value for the maximum temperature of
-      hellfire heaters.
-    type: Tweak
-  id: 9583
-  time: '2026-03-18T06:31:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43285
 - author: ProPeperos
   changes:
   - message: Changed the hitbox of borg chargers, so they no longer get stuck in doorways.
@@ -4374,3 +4366,10 @@
   id: 10077
   time: '2026-10-25T14:51:57.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1160
+- author: Nikita
+  changes:
+  - message: "Dodano rower dla Kap\u0142ana"
+    type: Add
+  id: 10078
+  time: '2026-10-25T16:00:01.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1162
