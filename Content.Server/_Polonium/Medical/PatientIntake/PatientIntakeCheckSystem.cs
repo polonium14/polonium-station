@@ -16,7 +16,6 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.FixedPoint;
-using Content.Shared.Implants.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
@@ -38,7 +37,6 @@ public enum IntakeFailureKind : byte
     LowBlood,
     HarmfulReagent,
     Blind,
-    Implant,
     RequestNotDone,
 }
 
@@ -101,9 +99,6 @@ public sealed partial class PatientIntakeCheckSystem : EntitySystem
         if (HasComp<PermanentBlindnessComponent>(patient)
             || TryComp<BlindableComponent>(patient, out var blindable) && (blindable.IsBlind || blindable.EyeDamage > 0))
             failures.Add(new(IntakeFailureKind.Blind));
-
-        if (TryComp<ImplantedComponent>(patient, out var implanted) && implanted.ImplantContainer.ContainedEntities.Count > 0)
-            failures.Add(new(IntakeFailureKind.Implant, Name(implanted.ImplantContainer.ContainedEntities[0])));
 
         return failures;
     }
