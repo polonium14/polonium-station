@@ -522,9 +522,9 @@
     accent-german-words-50: accent-german-words-replace-50
     accent-german-words-50-2: accent-german-words-replace-50
     accent-german-words-51: accent-german-words-replace-51
-    accent-german-words-52: accent-german-words-replace-52
     accent-german-words-53: accent-german-words-replace-53
     accent-german-words-53-2: accent-german-words-replace-53
+    accent-german-words-52: accent-german-words-replace-52
     accent-german-words-54: accent-german-words-replace-54
     accent-german-words-55: accent-german-words-replace-55
     accent-german-words-56: accent-german-words-replace-56
@@ -989,6 +989,7 @@
     accent-dwarf-words-86: accent-dwarf-words-replace-86
     accent-dwarf-words-87: accent-dwarf-words-replace-87
     accent-dwarf-words-88: accent-dwarf-words-replace-88
+    accent-dwarf-words-88-2: accent-dwarf-words-replace-88
     accent-dwarf-words-90: accent-dwarf-words-replace-90
     accent-dwarf-words-91: accent-dwarf-words-replace-91
     accent-dwarf-words-92: accent-dwarf-words-replace-92

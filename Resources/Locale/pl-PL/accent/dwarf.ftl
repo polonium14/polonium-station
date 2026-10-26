@@ -189,6 +189,7 @@ accent-dwarf-words-replace-86 = sioła
 accent-dwarf-words-87 = dziecko
 accent-dwarf-words-replace-87 = dziecię
 accent-dwarf-words-88 = mówie
+accent-dwarf-words-88-2 = mówię
 accent-dwarf-words-replace-88 = rzeke
 accent-dwarf-words-90 = mówisz
 accent-dwarf-words-replace-90 = rzeczesz
