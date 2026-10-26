@@ -109,7 +109,6 @@ patient-intake-failure-unfinishedsurgery = {$part}: unfinished surgery
 patient-intake-failure-lowblood = Blood volume too low
 patient-intake-failure-harmfulreagent = Harmful substance in the blood: {$part}
 patient-intake-failure-blind = Eye damage
-patient-intake-failure-implant = Implant not removed: {$part}
 patient-intake-failure-requestnotdone = Organ not replaced: {$part}
 
 patient-intake-part-torso = torso
@@ -164,8 +163,6 @@ patient-intake-issue-blood-loss = Blood loss from a wound
 patient-intake-symptom-blood-loss = Pale, dizzy, lost a lot of blood
 patient-intake-issue-blind = Eye damage
 patient-intake-symptom-blind = Complains of blurry vision
-patient-intake-issue-implant = Unauthorized tracking implant (extract it)
-patient-intake-symptom-implant = Feels something under the skin
 patient-intake-issue-missing-organ = Missing internal organ
 patient-intake-symptom-missing-organ = Survived an organ theft
 patient-intake-issue-missing-extremity = Missing hand or foot

@@ -199,9 +199,6 @@ public sealed partial class PatientIntakeSystem
                 _blindable.AdjustEyeDamage(patient, issue.EyeDamage);
                 return true;
 
-            case PatientIntakeIssueKind.Implant:
-                return issue.Implant is { } implant && _implants.AddImplant(patient, implant) != null;
-
             case PatientIntakeIssueKind.RemovePart:
             {
                 if (!TryPickOrgan(patient, issue, _ => true, out var organ, out _)
