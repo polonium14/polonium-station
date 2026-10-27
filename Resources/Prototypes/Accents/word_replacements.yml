@@ -397,6 +397,7 @@
     liar-word-38: liar-word-replacement-38
     liar-word-39: liar-word-replacement-39
 
+# Polonium: Tweaked to work with polish and expanded words list
 - type: accent
   id: german
   wordReplacements:
@@ -617,6 +618,8 @@
     accent-russian-words-5: accent-russian-words-replace-5
     accent-russian-words-6: accent-russian-words-replace-6
 
+
+# Polonium: Tweaked to work with polish and expanded words list
 - type: accent
   id: skeleton
   wordReplacements:
@@ -642,6 +645,8 @@
     accent-skeleton-words-12-5: accent-skeleton-words-replace-12
     accent-skeleton-words-12-6: accent-skeleton-words-replace-12
 
+
+# Polonium: Tweaked to work with polish and expanded words list
 - type: accent
   id: french
   wordReplacements:
@@ -939,7 +944,7 @@
     accent-french-words-91: accent-french-words-replace-91
     accent-french-words-92: accent-french-words-replace-92
 
-
+# Polonium: Tweaked to work with polish and expanded words list
 - type: accent
   id: dwarf
   wordReplacements:
