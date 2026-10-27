@@ -75,12 +75,15 @@
     tags:
     - PetWearable
     - WhitelistChameleon
-  - type: TrayScanner
-    toggleAction: ActionToggleTrayScanner
-    soundOn:
+  - type: TRayScanner
+  - type: ItemToggle # Polonium: the scanner state moved to ItemToggle in upstream #43689
+    soundActivate:
       path: /Audio/Items/flashlight_on.ogg
-    soundOff:
+    soundDeactivate:
       path: /Audio/Items/flashlight_off.ogg
+  - type: ToggleClothing
+    action: ActionToggleTrayScanner
+    mustEquip: false
   - type: GoggleShader
     shader: Goggles
     color: '#5AB43CCC'
@@ -308,4 +311,4 @@
     - state: tray-on
       map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
-    event: !type:ToggleTrayScannerEvent
+    event: !type:ToggleActionEvent
