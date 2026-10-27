@@ -33,6 +33,7 @@ using Robust.Shared.Random;
 // Polonium
 using Content.Shared.Maps;
 using Content.Shared.SubFloor;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server._Funkystation.ReagentFires.Systems
 {
@@ -52,6 +53,7 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
         [Dependency] private IConfigurationManager _cfg = null!;
         [Dependency] private InventorySystem _inventory = null!;
         // Polonium
+        [Dependency] private SharedMapSystem _mapSystem = null!;
         [Dependency] private TileSystem _tile = null!;
         [Dependency] private TurfSystem _turf = null!;
 
@@ -460,6 +462,10 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                 var tileBurntDecals = 0;
                 foreach (var set in tileDecals)
                 {
+                    // Polonium
+                    if (set.Decal.Coordinates.Floored() != tilePos)
+                        continue;
+
                     if (Array.IndexOf(_burntDecals, set.Decal.Id) == -1)
                         continue;
                     tileBurntDecals++;
@@ -476,12 +482,13 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                 }
                 // Polonium: Destroys tiles after four burn decal stacks and when flame is highly effective
                 else if (tileBurntDecals >= 4 && effectiveFlammability >= 4f && _random.Prob(0.25f) &&
-                         _turf.TryGetTileRef(xform.Coordinates, out var tileRef))
+                         TryComp<MapGridComponent>(gridUid.Value, out var mapGrid) &&
+                         _mapSystem.TryGetTileRef(gridUid.Value, mapGrid, tilePos, out var tileRef))
                 {
-                    var tileDef = _turf.GetContentTileDefinition(tileRef.Value);
+                    var tileDef = _turf.GetContentTileDefinition(tileRef);
                     if (!tileDef.IsSubFloor && tileDef.CanCrowbar && !tileDef.Indestructible)
                     {
-                        _tile.DeconstructTile(tileRef.Value, spawnItem: false);
+                        _tile.DeconstructTile(tileRef, spawnItem: false);
                     }
                 }
 
