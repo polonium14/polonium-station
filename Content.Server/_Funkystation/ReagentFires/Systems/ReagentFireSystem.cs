@@ -30,6 +30,9 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+// Polonium
+using Content.Shared.Maps;
+using Content.Shared.SubFloor;
 
 namespace Content.Server._Funkystation.ReagentFires.Systems
 {
@@ -48,6 +51,9 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
         [Dependency] private DamageableSystem _damageable = null!;
         [Dependency] private IConfigurationManager _cfg = null!;
         [Dependency] private InventorySystem _inventory = null!;
+        // Polonium
+        [Dependency] private TileSystem _tile = null!;
+        [Dependency] private TurfSystem _turf = null!;
 
         private readonly List<EntityUid> _toExtinguish = new();
         private readonly string[] _burntDecals = ["burnt1", "burnt2", "burnt3", "burnt4"];
@@ -468,6 +474,16 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                         out _,
                         cleanable: true);
                 }
+                // Polonium: Destroys tiles after four burn decal stacks and when flame is highly effective
+                else if (tileBurntDecals >= 4 && effectiveFlammability >= 4f && _random.Prob(0.25f) &&
+                         _turf.TryGetTileRef(xform.Coordinates, out var tileRef))
+                {
+                    var tileDef = _turf.GetContentTileDefinition(tileRef.Value);
+                    if (!tileDef.IsSubFloor && tileDef.CanCrowbar && !tileDef.Indestructible)
+                    {
+                        _tile.DeconstructTile(tileRef.Value, spawnItem: false);
+                    }
+                }
 
                 var directions = new[] { new Vector2i(0, 1), new Vector2i(0, -1), new Vector2i(1, 0), new Vector2i(-1, 0) };
                 foreach (var offset in directions)
@@ -531,6 +547,10 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                         continue;
 
                     if (_transform.GetGridTilePositionOrDefault((ent, entXform)) != tilePos)
+                        continue;
+
+                    // Polonium: things under floor don't burn until the floor gets burned first
+                    if (TryComp<SubFloorHideComponent>(ent, out var subFloor) && subFloor.BlockInteractions && subFloor.IsUnderCover)
                         continue;
 
                     if (HasComp<DamageableComponent>(ent))
