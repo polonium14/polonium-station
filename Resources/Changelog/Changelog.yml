@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ProPeperos
-  changes:
-  - message: Changed the hitbox of borg chargers, so they no longer get stuck in doorways.
-    type: Tweak
-  id: 9584
-  time: '2026-03-20T14:35:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43300
 - author: slarticodefast
   changes:
   - message: Fixed melee attack animations being rotated wrong if your camera is rotated.
@@ -4373,3 +4366,14 @@
   id: 10078
   time: '2026-10-25T16:00:01.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1162
+- author: GibMeclay
+  changes:
+  - message: Akcent Krasnoludzki
+    type: Add
+  - message: "Akcent Szkielet\xF3w"
+    type: Add
+  - message: Akcent Niemiecki
+    type: Tweak
+  id: 10079
+  time: '2026-10-27T17:49:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1166
