@@ -202,8 +202,11 @@ accent-german-words-61-3 = lightning ball
 accent-german-words-61-4 = ball lightning
 accent-german-words-61-5 = tesla
 accent-german-words-replace-61 = kugelblitz
+
 accent-german-words-62 = samochód
 accent-german-words-replace-62 = auto
+
+# Zakomentowane w word_replacements.yml
 accent-german-words-63 = wahadłowiec
 accent-german-words-63-2 = wahadłowca
 accent-german-words-63-3 = wahadłowcowi
@@ -212,11 +215,12 @@ accent-german-words-63-5 = wahadłowcem
 accent-german-words-63-6 = wahadłowcu
 accent-german-words-replace-63 = pendeln
 
-# komentarz pomocniczny w dodawaniu do word_replacements.yml
+
 
 accent-german-words-64 = szwadron śmierci
 accent-german-words-replace-64 = todesschwadron
 
+# Zakomentowane w word_replacements.yml
 accent-german-words-65 = ordynator
 accent-german-words-65-2 = ordynatora
 accent-german-words-65-3 = ordynatorowi
@@ -246,6 +250,7 @@ accent-german-words-replace-68 = offiziere
 accent-german-words-69 = do diabła
 accent-german-words-replace-69 = zum teufel
 
+# Zakomentowane w word_replacements.yml
 accent-german-words-70 = nauka
 accent-german-words-70-2 = nauki
 accent-german-words-70-3 = nauce
@@ -258,6 +263,7 @@ accent-german-words-70-9 = naukami
 accent-german-words-70-10 = naukach
 accent-german-words-replace-70 = wissenschaft
 
+# Zakomentowane w word_replacements.yml
 accent-german-words-71 = rozkaz to rozkaz
 accent-german-words-replace-71 = Befehl ist Befehl
 
@@ -273,6 +279,35 @@ accent-german-words-74-2 = szefa
 accent-german-words-74-3 = szefowi
 accent-german-words-74-4 = szefem
 accent-german-words-74-5 = szefie
-accent-german-words-replace-74 = Oberchef
+accent-german-words-replace-74 = oberchef
+
+# komentarz pomocniczny w dodawaniu do word_replacements.yml
+
+accent-german-words-75 = ochrona
+accent-german-words-75-2 = ochrony
+accent-german-words-75-3 = ochronie
+accent-german-words-75-4 = ochronę
+accent-german-words-75-5 = ochroną
+accent-german-words-75-6 = ochrono
+accent-german-words-replace-75 = polizei
+
+accent-german-words-76 = 1
+accent-german-words-76-2 = jeden
+accent-german-words-replace-76 = eins
+
+accent-german-words-77 = 2
+accent-german-words-77-2 = dwa
+accent-german-words-replace-77 = zwei
+
+accent-german-words-78 = 3
+accent-german-words-78-2 = trzy
+accent-german-words-replace-78 = drei
+
+accent-german-words-79 = moja
+accent-german-words-79-2 = moje
+accent-german-words-replace-79 = meine
+
+
+
 
 
