@@ -211,3 +211,68 @@ accent-german-words-63-4 = wahadłowiec
 accent-german-words-63-5 = wahadłowcem
 accent-german-words-63-6 = wahadłowcu
 accent-german-words-replace-63 = pendeln
+
+# komentarz pomocniczny w dodawaniu do word_replacements.yml
+
+accent-german-words-64 = szwadron śmierci
+accent-german-words-replace-64 = todesschwadron
+
+accent-german-words-65 = ordynator
+accent-german-words-65-2 = ordynatora
+accent-german-words-65-3 = ordynatorowi
+accent-german-words-65-4 = ordynatorem
+accent-german-words-65-5 = ordynatorze
+accent-german-words-replace-65 = oberarzt
+
+accent-german-words-66-2 = komendant
+accent-german-words-66-3 = komendanta
+accent-german-words-66-4 = komendantowi
+accent-german-words-66-5 = komendantem
+accent-german-words-66-6 = komendancie
+accent-german-words-replace-66 = Kommandant
+
+accent-german-words-67 = oficer
+accent-german-words-67-2 = oficer
+accent-german-words-67-3 = oficera
+accent-german-words-67-4 = oficerem
+accent-german-words-67-5 = oficerze
+accent-german-words-replace-67 = offizier
+accent-german-words-68 = oficerowie
+accent-german-words-68-2 = oficerów
+accent-german-words-68-3 = oficerom
+accent-german-words-68-4 = oficerami
+accent-german-words-replace-68 = offiziere
+
+accent-german-words-69 = do diabła
+accent-german-words-replace-69 = zum teufel
+
+accent-german-words-70 = nauka
+accent-german-words-70-2 = nauki
+accent-german-words-70-3 = nauce
+accent-german-words-70-4 = naukę
+accent-german-words-70-5 = nauką
+accent-german-words-70-6 = nauce
+accent-german-words-70-7 = nauk
+accent-german-words-70-8 = naukom
+accent-german-words-70-9 = naukami
+accent-german-words-70-10 = naukach
+accent-german-words-replace-70 = wissenschaft
+
+accent-german-words-71 = rozkaz to rozkaz
+accent-german-words-replace-71 = Befehl ist Befehl
+
+accent-german-words-72 = zrozumiano
+accent-german-words-replace-72 = verstanden
+
+accent-german-words-73 = raport
+accent-german-words-73-2 = status
+accent-german-words-replace-73 = bericht
+
+accent-german-words-74 = szef
+accent-german-words-74-2 = szefa
+accent-german-words-74-3 = szefowi
+accent-german-words-74-4 = szefem
+accent-german-words-74-5 = szefie
+accent-german-words-replace-74 = Oberchef
+
+
