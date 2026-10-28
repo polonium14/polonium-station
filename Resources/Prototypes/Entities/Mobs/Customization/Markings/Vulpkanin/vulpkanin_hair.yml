@@ -1,4 +1,5 @@
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairAdhara
   bodyPart: Hair
   groupWhitelist: [ Vulpkanin ]
@@ -8,6 +9,7 @@
       state: adhara
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairAnita
   bodyPart: Hair
   groupWhitelist: [ Vulpkanin ]
@@ -17,6 +19,7 @@
       state: anita
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairApollo
   bodyPart: Hair
   groupWhitelist: [ Vulpkanin ]
@@ -26,6 +29,7 @@
       state: apollo
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairBelle
   bodyPart: Hair
   groupWhitelist: [ Vulpkanin ]
@@ -35,6 +39,7 @@
       state: belle
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairBraided
   bodyPart: Hair
   canBeDisplaced: false
@@ -44,6 +49,7 @@
       state: braided
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairBun
   bodyPart: Hair
   canBeDisplaced: false
@@ -53,6 +59,7 @@
       state: bun
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairCleanCut
   bodyPart: Hair
   canBeDisplaced: false
@@ -62,6 +69,7 @@
       state: clean_cut
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairCurl
   bodyPart: Hair
   canBeDisplaced: false
@@ -71,6 +79,7 @@
       state: curl
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairHawk
   bodyPart: Hair
   canBeDisplaced: false
@@ -80,6 +89,7 @@
       state: hawk
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairJagged
   bodyPart: Hair
   canBeDisplaced: false
@@ -89,6 +99,7 @@
       state: jagged
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairJeremy
   bodyPart: Hair
   canBeDisplaced: false
@@ -98,6 +109,7 @@
       state: jeremy
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairKajam
   bodyPart: Hair
   canBeDisplaced: false
@@ -107,6 +119,7 @@
       state: kajam
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairKeid
   bodyPart: Hair
   canBeDisplaced: false
@@ -116,6 +129,7 @@
       state: keid
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairKleeia
   bodyPart: Hair
   canBeDisplaced: false
@@ -125,6 +139,7 @@
       state: kleeia
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairMizar
   bodyPart: Hair
   canBeDisplaced: false
@@ -134,6 +149,7 @@
       state: mizar
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairPunkBraided
   bodyPart: Hair
   canBeDisplaced: false
@@ -143,6 +159,7 @@
       state: punkbraided
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairRaine
   bodyPart: Hair
   canBeDisplaced: false
@@ -152,6 +169,7 @@
       state: raine
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairRough
   bodyPart: Hair
   canBeDisplaced: false
@@ -161,6 +179,7 @@
       state: rough
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairShort
   bodyPart: Hair
   canBeDisplaced: false
@@ -170,6 +189,7 @@
       state: short
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairShort2
   bodyPart: Hair
   canBeDisplaced: false
@@ -179,6 +199,7 @@
       state: short2
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpHairSpike
   bodyPart: Hair
   canBeDisplaced: false
@@ -189,6 +210,7 @@
 
 # Facial Hairs
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpFacialHairRuff
   bodyPart: FacialHair
   groupWhitelist: [ Vulpkanin ]
@@ -198,6 +220,7 @@
       state: ruff
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpFacialHairElder
   bodyPart: FacialHair
   groupWhitelist: [ Vulpkanin ]
@@ -207,6 +230,7 @@
       state: elder
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpFacialHairElderChin
   bodyPart: FacialHair
   groupWhitelist: [ Vulpkanin ]
@@ -216,6 +240,7 @@
       state: elder_chin
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpFacialHairKita
   bodyPart: FacialHair
   groupWhitelist: [ Vulpkanin ]
@@ -225,6 +250,7 @@
       state: kita
 
 - type: marking
+  parent: [ VulpBaseMarking ]
   id: VulpFacialHairGoatee
   bodyPart: FacialHair
   groupWhitelist: [ Vulpkanin ]
