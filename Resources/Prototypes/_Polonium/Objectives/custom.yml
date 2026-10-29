@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseObjective
+  id: PoloniumCustomObjective
+  name: Custom objective
+  description: An objective written by an administrator.
+  components:
+  - type: Objective
+    difficulty: 1
+    issuer: TheSyndicate
+    unique: false
+    icon:
+      sprite: Objects/Misc/bureaucracy.rsi
+      state: paper
+  - type: CustomObjectiveCondition
