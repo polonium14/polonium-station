@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: Minerva
-  changes:
-  - message: Singularity distortion effects now respect the reduced motion accessibility
-      option.
-    type: Tweak
-  id: 9593
-  time: '2026-03-28T16:01:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43362
-- author: M4rchy-S
-  changes:
-  - message: '"Reduce motion of visual effects" now works for drunk and blood loss
-      status'
-    type: Add
-  id: 9594
-  time: '2026-03-28T22:19:17.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41878
 - author: insoPL, Quantum-cross, ArtisticRoomba
   changes:
   - message: Hot gasses now have a visible distortion effect.
@@ -4386,3 +4370,17 @@
   id: 10087
   time: '2026-10-29T17:54:03.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1178
+- author: Yaket
+  changes:
+  - message: "Upi\u0119kszenie mapy samouczkowej"
+    type: Tweak
+  id: 10088
+  time: '2026-10-29T18:13:05.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1179
+- author: Nikita
+  changes:
+  - message: Dodano customowe cele dla postaci.
+    type: Add
+  id: 10089
+  time: '2026-10-29T18:13:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1175
