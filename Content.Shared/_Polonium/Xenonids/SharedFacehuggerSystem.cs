@@ -198,7 +198,9 @@ public abstract partial class SharedFacehuggerSystem : EntitySystem
     /// </summary>
     public bool TryLeap(Entity<FacehuggerComponent> hugger, EntityUid target)
     {
-        if (!Net.IsServer || hugger.Comp.State != FacehuggerState.Active || !CanHug(target, checkHead: false))
+        if (!Net.IsServer || hugger.Comp.State != FacehuggerState.Active
+            || TerminatingOrDeleted(hugger) || TerminatingOrDeleted(target)
+            || !CanHug(target, checkHead: false))
             return false;
 
         PopupBoth(target,
@@ -242,7 +244,7 @@ public abstract partial class SharedFacehuggerSystem : EntitySystem
     /// </summary>
     public bool TryLeapAtNearby(Entity<FacehuggerComponent> hugger, TransformComponent? xform = null)
     {
-        if (!Resolve(hugger, ref xform) || hugger.Comp.State != FacehuggerState.Active)
+        if (!Resolve(hugger, ref xform) || hugger.Comp.State != FacehuggerState.Active || TerminatingOrDeleted(hugger))
             return false;
 
         _nearby.Clear();
