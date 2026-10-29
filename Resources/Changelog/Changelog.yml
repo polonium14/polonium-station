@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: salarua
-  changes:
-  - message: Chat dialogue now appears in curly quotes rather than straight quotes.
-    type: Tweak
-  id: 9590
-  time: '2026-03-27T17:53:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43350
-- author: Velken
-  changes:
-  - message: Mail no longer goes all to one person per batch.
-    type: Fix
-  id: 9591
-  time: '2026-03-27T23:00:25.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43361
 - author: Gentleman-Bird
   changes:
   - message: Clockwork Glass is now grindable
@@ -4385,3 +4371,17 @@
   id: 10084
   time: '2026-10-29T12:05:42.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1171
+- author: Saver310
+  changes:
+  - message: Rerender "Ocieplam Go"
+    type: Tweak
+  id: 10085
+  time: '2026-10-29T14:37:48.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1174
+- author: GibMeclay
+  changes:
+  - message: "Zmieniono kolejno\u015B\u0107 odczynnik\xF3w w ChemoMacie"
+    type: Tweak
+  id: 10086
+  time: '2026-10-29T14:37:20.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1173
