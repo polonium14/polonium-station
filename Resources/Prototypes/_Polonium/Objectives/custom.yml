@@ -1,3 +1,7 @@
+- type: objectiveIssuer
+  id: CentralCommand
+  name: objective-issuer-centcom
+
 - type: entity
   parent: BaseObjective
   id: PoloniumCustomObjective

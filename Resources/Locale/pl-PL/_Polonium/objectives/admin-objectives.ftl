@@ -32,6 +32,8 @@ admin-objectives-remove-confirm = Na pewno?
 admin-objectives-filter-all = Wszyscy zleceniodawcy
 admin-objectives-steal = Kradzież: { $item }
 
+objective-issuer-centcom = [color=#2681a5]Centralne Dowództwo[/color]
+
 ## Nazwy na liście admina dla celów, których prototypy nie mają nazwy, bo prawdziwy tytuł dostają dopiero przy przypisaniu.
 
 admin-objectives-name-CarpRiftsObjective = Otwórz karpie wyrwy
