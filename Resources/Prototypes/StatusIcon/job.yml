@@ -623,3 +623,4 @@
     sprite: *icon-rsi
     state: Unknown # Polonium: Sus art missing; fallback
   jobName: job-name-sus
+  isCrewJob: false
