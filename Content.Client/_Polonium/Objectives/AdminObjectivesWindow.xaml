@@ -1,0 +1,38 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="{Loc 'admin-objectives-window-title'}"
+                      MinSize="560 680">
+    <BoxContainer Orientation="Vertical" Margin="10">
+        <Label Name="PlayerLabel" StyleClasses="LabelKeyText" />
+        <Label Name="NoMindLabel"
+               Text="{Loc 'admin-objectives-no-mind'}"
+               FontColorOverride="#FF3333"
+               Visible="False" />
+
+        <ScrollContainer HScrollEnabled="False" VerticalExpand="True" MinHeight="200">
+            <BoxContainer Name="ObjectivesContainer" Orientation="Vertical" />
+        </ScrollContainer>
+        <Label Name="EmptyLabel" Text="{Loc 'admin-objectives-empty'}" Visible="False" />
+
+        <PanelContainer StyleClasses="LowDivider" MinSize="0 2" Margin="0 6" />
+
+        <TabContainer Name="AddTabs" MinHeight="280">
+            <BoxContainer Name="StandardTab" Orientation="Vertical" Margin="6">
+                <LineEdit Name="SearchEdit" PlaceHolder="{Loc 'admin-objectives-search-placeholder'}" />
+                <ItemList Name="PrototypeList" VerticalExpand="True" MinHeight="160" />
+                <Label Name="StandardErrorLabel" FontColorOverride="#FF3333" Visible="False" />
+                <Button Name="AddStandardButton" Text="{Loc 'admin-objectives-add'}" Margin="0 6 0 0" />
+            </BoxContainer>
+            <BoxContainer Name="CustomTab" Orientation="Vertical" Margin="6">
+                <LineEdit Name="TitleEdit" PlaceHolder="{Loc 'admin-objectives-title-placeholder'}" />
+                <TextEdit Name="DescriptionEdit" MinHeight="90" VerticalExpand="True" />
+                <Label Name="DescriptionLimitLabel" HorizontalAlignment="Right" StyleClasses="LabelSmall" />
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'admin-objectives-issuer'}" Margin="0 0 8 0" />
+                    <OptionButton Name="IssuerOptions" HorizontalExpand="True" />
+                </BoxContainer>
+                <Button Name="AddCustomButton" Text="{Loc 'admin-objectives-add'}" Margin="0 6 0 0" />
+            </BoxContainer>
+        </TabContainer>
+    </BoxContainer>
+</controls:FancyWindow>

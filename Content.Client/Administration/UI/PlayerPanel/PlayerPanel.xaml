@@ -36,7 +36,7 @@
             <Button Name="CameraButton" Text="{Loc player-panel-camera}" Disabled="True"/>
            </GridContainer>
        </BoxContainer>
-       <!-- Polonium: admin custom objectives -->
-       <Button Name="CustomObjectivesButton" Text="{Loc player-panel-custom-objectives}" Disabled="True"/>
+       <!-- Polonium: admin objectives window -->
+       <Button Name="ObjectivesButton" Text="{Loc player-panel-objectives}" Disabled="True"/>
     </BoxContainer>
 </ui:FancyWindow>

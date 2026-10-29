@@ -7,13 +7,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Polonium.Objectives;
 
-public sealed class CustomObjectiveSystem : EntitySystem
+public sealed partial class CustomObjectiveSystem : EntitySystem
 {
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private SharedObjectivesSystem _objectives = default!;
     [Dependency] private MetaDataSystem _meta = default!;
-
-    private static readonly EntProtoId CustomObjectiveId = "PoloniumCustomObjective";
 
     private const float PartialProgress = 0.5f;
 
@@ -43,7 +41,7 @@ public sealed class CustomObjectiveSystem : EntitySystem
     {
         objective = default;
 
-        if (!_objectives.TryCreateObjective(mind, CustomObjectiveId, out var created))
+        if (!_objectives.TryCreateObjective(mind, CustomObjectives.Prototype, out var created))
             return false;
 
         objective = created.Value;
@@ -64,26 +62,5 @@ public sealed class CustomObjectiveSystem : EntitySystem
 
         condition.Status = status;
         return true;
-    }
-
-    public bool TryRemove(Entity<MindComponent> mind, EntityUid objective)
-    {
-        var index = mind.Comp.Objectives.IndexOf(objective);
-        if (index < 0 || !HasComp<CustomObjectiveConditionComponent>(objective))
-            return false;
-
-        return _mind.TryRemoveObjective(mind, mind.Comp, index);
-    }
-
-    public IEnumerable<Entity<CustomObjectiveConditionComponent, ObjectiveComponent>> GetCustomObjectives(MindComponent mind)
-    {
-        foreach (var objective in mind.Objectives)
-        {
-            if (TryComp<CustomObjectiveConditionComponent>(objective, out var condition) &&
-                TryComp<ObjectiveComponent>(objective, out var comp))
-            {
-                yield return (objective, condition, comp);
-            }
-        }
     }
 }

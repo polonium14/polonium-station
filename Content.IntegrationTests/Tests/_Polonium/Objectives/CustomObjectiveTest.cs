@@ -62,9 +62,7 @@ public sealed class CustomObjectiveTest : GameTest
             Assert.That(objectivesSys.IsCompleted(first, mindEnt), Is.True);
             Assert.That(objectivesSys.IsCompleted(second, mindEnt), Is.False);
 
-            Assert.That(customObjectives.GetCustomObjectives(mindEnt.Comp).Count(), Is.EqualTo(2));
-
-            Assert.That(customObjectives.TryRemove(mindEnt, first), Is.True);
+            Assert.That(mindSys.TryRemoveObjective(mindEnt, mindEnt.Comp, mindEnt.Comp.Objectives.IndexOf(first)), Is.True);
             Assert.That(mindEnt.Comp.Objectives, Has.Count.EqualTo(1));
             Assert.That(server.EntMan.EntityExists(first), Is.False);
             Assert.That(customObjectives.TrySetStatus(mindEnt, first, CustomObjectiveStatus.Completed), Is.False,

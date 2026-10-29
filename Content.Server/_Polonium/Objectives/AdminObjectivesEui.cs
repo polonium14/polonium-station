@@ -6,13 +6,15 @@ using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.Eui;
 using Content.Shared.Mind;
+using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Prototypes;
+using Content.Shared.Objectives.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Polonium.Objectives;
 
-public sealed partial class CustomObjectivesEui : BaseEui
+public sealed partial class AdminObjectivesEui : BaseEui
 {
     [Dependency] private IAdminManager _admins = default!;
     [Dependency] private IAdminLogManager _adminLog = default!;
@@ -21,18 +23,20 @@ public sealed partial class CustomObjectivesEui : BaseEui
     [Dependency] private ILogManager _logManager = default!;
 
     private readonly CustomObjectiveSystem _customObjectives;
+    private readonly SharedObjectivesSystem _objectives;
     private readonly SharedMindSystem _mind;
     private readonly ISawmill _sawmill;
     private readonly NetUserId _target;
     private readonly string _targetName;
 
-    public CustomObjectivesEui(IDependencyCollection deps, NetUserId target, string targetName)
+    public AdminObjectivesEui(IDependencyCollection deps, NetUserId target, string targetName)
     {
         deps.InjectDependencies(this, oneOff: true);
 
         _customObjectives = _entities.System<CustomObjectiveSystem>();
+        _objectives = _entities.System<SharedObjectivesSystem>();
         _mind = _entities.System<SharedMindSystem>();
-        _sawmill = _logManager.GetSawmill("custom-objectives");
+        _sawmill = _logManager.GetSawmill("admin-objectives");
         _target = target;
         _targetName = targetName;
     }
@@ -45,36 +49,36 @@ public sealed partial class CustomObjectivesEui : BaseEui
 
     public override EuiStateBase GetNewState()
     {
-        var objectives = new List<CustomObjectiveEntry>();
+        var objectives = new List<AdminObjectiveEntry>();
         var hasMind = _mind.TryGetMind(_target, out var mind);
 
         if (hasMind)
         {
-            foreach (var (uid, condition, comp) in _customObjectives.GetCustomObjectives(mind!.Value.Comp))
+            foreach (var uid in mind!.Value.Comp.Objectives)
             {
+                if (!_entities.TryGetComponent<ObjectiveComponent>(uid, out var comp))
+                    continue;
+
                 var meta = _entities.GetComponent<MetaDataComponent>(uid);
                 var issuer = _prototypes.TryIndex(comp.Issuer, out var issuerProto)
                     ? issuerProto.LocalizedName
                     : comp.Issuer.Id;
+                CustomObjectiveStatus? status =
+                    _entities.TryGetComponent<CustomObjectiveConditionComponent>(uid, out var condition)
+                        ? condition.Status
+                        : null;
 
-                objectives.Add(new CustomObjectiveEntry(
+                objectives.Add(new AdminObjectiveEntry(
                     _entities.GetNetEntity(uid),
                     meta.EntityName,
                     meta.EntityDescription,
                     issuer,
-                    condition.Status));
+                    _objectives.GetProgress(uid, mind.Value),
+                    status));
             }
         }
 
-        var issuers = new List<CustomObjectiveIssuer>();
-        foreach (var issuer in _prototypes.EnumeratePrototypes<ObjectiveIssuerPrototype>())
-        {
-            issuers.Add(new CustomObjectiveIssuer(issuer.ID, issuer.LocalizedName));
-        }
-
-        issuers.Sort((a, b) => string.Compare(a.Name, b.Name, StringComparison.CurrentCulture));
-
-        return new CustomObjectivesEuiState(_targetName, objectives, issuers, hasMind);
+        return new AdminObjectivesEuiState(_targetName, objectives, hasMind);
     }
 
     public override void HandleMessage(EuiMessageBase msg)
@@ -95,13 +99,16 @@ public sealed partial class CustomObjectivesEui : BaseEui
 
         switch (msg)
         {
-            case CustomObjectivesEuiMsg.Add add:
-                HandleAdd(mind.Value, add);
+            case AdminObjectivesEuiMsg.AddStandard add:
+                HandleAddStandard(mind.Value, add);
                 break;
-            case CustomObjectivesEuiMsg.SetStatus setStatus:
+            case AdminObjectivesEuiMsg.AddCustom add:
+                HandleAddCustom(mind.Value, add);
+                break;
+            case AdminObjectivesEuiMsg.SetStatus setStatus:
                 HandleSetStatus(mind.Value, setStatus);
                 break;
-            case CustomObjectivesEuiMsg.Remove remove:
+            case AdminObjectivesEuiMsg.Remove remove:
                 HandleRemove(mind.Value, remove);
                 break;
         }
@@ -109,14 +116,36 @@ public sealed partial class CustomObjectivesEui : BaseEui
         StateDirty();
     }
 
-    private void HandleAdd(Entity<MindComponent> mind, CustomObjectivesEuiMsg.Add add)
+    private void HandleAddStandard(Entity<MindComponent> mind, AdminObjectivesEuiMsg.AddStandard add)
+    {
+        if (add.Prototype == CustomObjectives.Prototype ||
+            !_prototypes.TryIndex<EntityPrototype>(add.Prototype, out var proto) ||
+            proto.Abstract ||
+            !proto.HasComp<ObjectiveComponent>(_entities.ComponentFactory))
+        {
+            _sawmill.Warning($"{Player} sent an invalid objective prototype for {_targetName}");
+            return;
+        }
+
+        if (!_objectives.TryCreateObjective(mind, add.Prototype, out var objective))
+        {
+            SendMessage(new AdminObjectivesEuiMsg.AddStandardFailed(add.Prototype));
+            return;
+        }
+
+        _mind.AddObjective(mind, mind.Comp, objective.Value);
+        _adminLog.Add(LogType.Action, LogImpact.Medium,
+            $"{Player:actor} gave {_targetName} the objective {_entities.ToPrettyString(objective.Value):objective}");
+    }
+
+    private void HandleAddCustom(Entity<MindComponent> mind, AdminObjectivesEuiMsg.AddCustom add)
     {
         var title = add.Title.Trim();
         var description = add.Description.Trim();
 
         if (title.Length == 0 ||
-            title.Length > CustomObjectiveLimits.MaxTitleLength ||
-            description.Length > CustomObjectiveLimits.MaxDescriptionLength ||
+            title.Length > CustomObjectives.MaxTitleLength ||
+            description.Length > CustomObjectives.MaxDescriptionLength ||
             !_prototypes.HasIndex<ObjectiveIssuerPrototype>(add.Issuer))
         {
             _sawmill.Warning($"{Player} sent an invalid custom objective for {_targetName}");
@@ -133,7 +162,7 @@ public sealed partial class CustomObjectivesEui : BaseEui
             $"{Player:actor} gave {_targetName} a custom objective {_entities.ToPrettyString(objective):objective}: {title}");
     }
 
-    private void HandleSetStatus(Entity<MindComponent> mind, CustomObjectivesEuiMsg.SetStatus setStatus)
+    private void HandleSetStatus(Entity<MindComponent> mind, AdminObjectivesEuiMsg.SetStatus setStatus)
     {
         if (!Enum.IsDefined(setStatus.Status) ||
             !_entities.TryGetEntity(setStatus.Objective, out var objective) ||
@@ -147,19 +176,23 @@ public sealed partial class CustomObjectivesEui : BaseEui
             $"{Player:actor} set the custom objective {_entities.ToPrettyString(objective.Value):objective} of {_targetName} to {setStatus.Status}");
     }
 
-    private void HandleRemove(Entity<MindComponent> mind, CustomObjectivesEuiMsg.Remove remove)
+    private void HandleRemove(Entity<MindComponent> mind, AdminObjectivesEuiMsg.Remove remove)
     {
-        if (!_entities.TryGetEntity(remove.Objective, out var objective))
-            return;
+        var index = _entities.TryGetEntity(remove.Objective, out var objective)
+            ? mind.Comp.Objectives.IndexOf(objective.Value)
+            : -1;
 
-        var name = _entities.ToPrettyString(objective.Value);
-        if (!_customObjectives.TryRemove(mind, objective.Value))
+        if (index < 0)
         {
-            _sawmill.Warning($"{Player} tried to remove an invalid custom objective from {_targetName}");
+            _sawmill.Warning($"{Player} tried to remove an invalid objective from {_targetName}");
             return;
         }
 
+        var name = _entities.ToPrettyString(objective!.Value);
+        if (!_mind.TryRemoveObjective(mind, mind.Comp, index))
+            return;
+
         _adminLog.Add(LogType.Action, LogImpact.Low,
-            $"{Player:actor} removed the custom objective {name:objective} from {_targetName}");
+            $"{Player:actor} removed the objective {name:objective} from {_targetName}");
     }
 }
