@@ -25,10 +25,12 @@ public sealed class ChatRepeatStacker(IConfigurationManager cfg)
     /// </summary>
     public bool TryStack(OutputPanel contents, FormattedMessage formatted, ChatMessage msg, Color color, bool allowUrl)
     {
-        var history = cfg.GetCVar(CCVars.ChatRepeatHistory);
+        var history = Math.Max(cfg.GetCVar(CCVars.ChatRepeatHistory), 0);
+
+        TrimTo(history);
 
         // Admin messages are never merged, so admins don't miss any of them.
-        if (history <= 0 || ChatChannel.AdminRelated.HasFlag(msg.Channel))
+        if (history == 0 || ChatChannel.AdminRelated.HasFlag(msg.Channel))
             return false;
 
         // The wrapped message contains the visible speaker name, so different speakers on the radio
@@ -47,10 +49,7 @@ public sealed class ChatRepeatStacker(IConfigurationManager cfg)
         }
 
         _recent.Enqueue(new Entry(key, contents.EntryCount, formatted));
-        while (_recent.Count > history)
-        {
-            _recent.Dequeue();
-        }
+        TrimTo(history);
 
         return false;
     }
@@ -62,6 +61,14 @@ public sealed class ChatRepeatStacker(IConfigurationManager cfg)
     public void Clear()
     {
         _recent.Clear();
+    }
+
+    private void TrimTo(int history)
+    {
+        while (_recent.Count > history)
+        {
+            _recent.Dequeue();
+        }
     }
 
     // Same tags as ChatBox.AddLine, so the stacked line renders like the original one.
