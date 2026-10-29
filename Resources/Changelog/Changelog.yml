@@ -1,21 +1,4 @@
 ﻿Entries:
-- author: Not-A-Chair
-  changes:
-  - message: Tricordrazine no longer heals radiation
-    type: Tweak
-  - message: . Tricordrazine no longer works on mobs in crit
-    type: Tweak
-  id: 9588
-  time: '2026-03-25T13:34:10.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43293
-- author: ArcaneValiance
-  changes:
-  - message: Ambuzol and Ambuzol Plus pills now properly cure and prevent infection
-      respectively.
-    type: Fix
-  id: 9589
-  time: '2026-03-25T13:49:55.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43331
 - author: salarua
   changes:
   - message: Chat dialogue now appears in curly quotes rather than straight quotes.
@@ -4381,3 +4364,24 @@
   id: 10082
   time: '2026-10-29T11:27:52.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1168
+- author: Nikita
+  changes:
+  - message: "Zmieniono wygl\u0105d mundur\xF3w Oficera Ochrony, Kadeta Ochrony, Nadzorcy\
+      \ Ochrony, Komendanta, Detektywa i Medyka Wi\u0119ziennego (tak\u017Ce sp\xF3\
+      dniczek)."
+    type: Tweak
+  id: 10083
+  time: '2026-10-29T12:08:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1172
+- author: Nikita
+  changes:
+  - message: "Po \u015Bmierci lub rozerwaniu na kawa\u0142ki ekran od razu robi si\u0119\
+      \ czarny, a d\u017Awi\u0119k cichnie. Przez 10 sekund nie mo\u017Cna wyj\u015B\
+      \u0107 z cia\u0142a jako duch."
+    type: Add
+  - message: "W stanie krytycznym ekran stopniowo ciemnieje, i d\u017Awi\u0119k cichnie\
+      \ tym bardziej, im bli\u017Cej do \u015Bmierci."
+    type: Add
+  id: 10084
+  time: '2026-10-29T12:05:42.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1171
