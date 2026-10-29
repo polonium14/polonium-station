@@ -58,3 +58,5 @@ ent-ScrapGeneratorFrame = rama generatora
     .desc = Rama generatora typu P.A.C.M.A.N. lub S.U.P.E.R.P.A.C.M.A.N. Gdzie jest reszta?
 ent-ScrapGeneratorFuelTank = zbiornik paliwa
     .desc = Zbiornik paliwa z generatora typu S.U.P.E.R.P.A.C.M.A.N. Wskaźnik pokazuje, że zostało jeszcze trochę paliwa.
+ent-ScrapTarget = zakrwawiona tarcza
+    .desc = Wygląda na to, że coś stanęło na drodze jej przeznaczeniu.

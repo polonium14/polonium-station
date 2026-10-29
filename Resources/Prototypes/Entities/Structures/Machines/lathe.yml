@@ -474,11 +474,13 @@
     - RoboticsStatic
     - BorgModulesStatic
     - BorgLimbsStatic
+    - RIGStatic # Polonium: R.I.G. modules available from the start
     dynamicPacks:
     - Robotics
     - BorgModules
     - MechParts
     - MechEquipment
+    - RIG # Polonium: R.I.G. parts and modules unlocked by research
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient

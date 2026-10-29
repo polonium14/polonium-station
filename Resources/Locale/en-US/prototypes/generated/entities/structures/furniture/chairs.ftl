@@ -55,3 +55,5 @@ ent-WoodenBench = wooden bench
     .desc = Did you get a splinter? Well, at least it’s eco friendly.
 ent-ChairXeno = xeno chair
     .desc = { ent-StoolBase.desc }
+ent-OfficeChairVehicleBase = { ent-OfficeChairBase }
+    .desc = { ent-OfficeChairBase.desc }

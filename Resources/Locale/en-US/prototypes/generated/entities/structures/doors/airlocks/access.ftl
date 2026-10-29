@@ -447,3 +447,6 @@ ent-AirlockMaintCommonLocked = { ent-AirlockMaint }
 ent-AirlockMaintIntLocked = { ent-AirlockMaint }
     .suffix = Interior, Locked
     .desc = { ent-AirlockMaint.desc }
+ent-AirlockExternalGlassShuttleCargo = cargo airlock
+    .suffix = External, Cargo, Glass, Docking
+    .desc = { ent-AirlockGlassShuttle.desc }

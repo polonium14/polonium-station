@@ -1,0 +1,20 @@
+<PanelContainer
+    xmlns="https://spacestation14.io"
+    Margin="2">
+    <BoxContainer
+        Orientation="Vertical"
+        HorizontalExpand="True">
+        <PanelContainer StyleClasses="LowDivider" />
+    </BoxContainer>
+    <BoxContainer
+        HorizontalAlignment="Stretch"
+        Margin="0, 8, 0, 0">
+        <Button
+            Name="ButtonButton"
+            Text="{Loc 'modsuit-interface-seal-all'}"
+            HorizontalAlignment="Stretch"
+            HorizontalExpand="True"
+            TextAlign="Center"
+            Access="Public"/>
+    </BoxContainer>
+</PanelContainer>

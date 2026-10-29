@@ -1,0 +1,55 @@
+# Facehugger z NSV13. Siedzi w jaju, skacze na twarz sąsiada, usypia go i składa embrion.
+- type: entity
+  parent: BaseItem
+  id: XenoFacehugger
+  name: facehugger
+  description: It has some sort of a tube at the end of its tail.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Xeno/facehugger.rsi
+    drawdepth: Items
+    layers:
+    - state: icon
+      map: [ "base" ]
+  - type: Item
+    size: Tiny
+    sprite: _Polonium/Objects/Xeno/facehugger.rsi
+  - type: Clothing
+    slots: [ mask ]
+    sprite: _Polonium/Objects/Xeno/facehugger.rsi
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.FacehuggerVisuals.State:
+        base:
+          Active: { state: icon }
+          Idle: { state: inactive }
+          Dead: { state: dead }
+          Impregnated: { state: impregnated }
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Facehugger
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_RMC14/Xeno/alien_egg_move.ogg
+
+- type: entity
+  parent: XenoFacehugger
+  id: XenoFacehuggerDead
+  suffix: martwy
+  components:
+  - type: Facehugger
+    state: Dead
+
+# Lamarr z gabinetu dyrektora badań w NSV13: bezpłodny, nikogo nie zarazi.
+- type: entity
+  parent: XenoFacehugger
+  id: XenoFacehuggerLamarr
+  name: Lamarr
+  description: The research director's pet, a domesticated and debeaked xenomorph facehugger. Friendly, but may still try to couple with your head.
+  components:
+  - type: Facehugger
+    sterile: true

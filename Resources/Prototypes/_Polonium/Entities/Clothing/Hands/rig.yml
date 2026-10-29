@@ -1,0 +1,384 @@
+- type: entity
+  abstract: true
+  id: ClothingHandsModSuitBase
+  categories: [ HideSpawnMenu ]
+  name: R.I.G. gauntlets
+  description: The gauntlets of a deployed R.I.G.
+  components:
+  - type: ModSuitSealable
+  - type: ModSuitSealablePowerDraw
+    powerDraw:
+      true: 0.02
+      false: 0.01
+  - type: ModSuitDeployableInventory
+  - type: ContainerContainer
+    containers:
+      mod_suit_inventory: !type:ContainerSlot {}
+  - type: Clothing
+    slots:
+    - gloves
+    clothingVisuals:
+      gloves: []
+  - type: Appearance
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: GuideHelp
+    guides:
+    - RIG
+
+- type: entity
+  parent: ClothingHandsModSuitBase
+  id: ClothingHandsModSuitEngineering
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+        state: icon
+    clothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+          state: equipped-HAND-sealed
+      false:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+          state: equipped-HAND
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+        state: equipped-HAND-sealed
+      false:
+        sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+        state: equipped-HAND
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+          state: equipped-HAND-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/engineering.rsi
+        state: equipped-HAND-sealed-unpowered
+    sealedComponents:
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+
+- type: entity
+  parent: ClothingHandsModSuitBase
+  id: ClothingHandsModSuitAtmospheric
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+        state: icon
+    clothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+          state: equipped-HAND-sealed
+      false:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+          state: equipped-HAND
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+        state: equipped-HAND-sealed
+      false:
+        sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+        state: equipped-HAND
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+          state: equipped-HAND-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/atmospheric.rsi
+        state: equipped-HAND-sealed-unpowered
+    sealedComponents:
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+
+- type: entity
+  parent: ClothingHandsModSuitBase
+  id: ClothingHandsModSuitMedical
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Hands/ModSuits/medical.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/medical.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/medical.rsi
+        state: icon
+    clothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/medical.rsi
+          state: equipped-HAND-sealed
+      false:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/medical.rsi
+          state: equipped-HAND
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/medical.rsi
+        state: equipped-HAND-sealed
+      false:
+        sprite: _Polonium/Clothing/Hands/ModSuits/medical.rsi
+        state: equipped-HAND
+    sealedComponents:
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+
+- type: entity
+  parent: ClothingHandsModSuitBase
+  id: ClothingHandsModSuitSecurity
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+        state: icon
+    clothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+          state: equipped-HAND-sealed
+      false:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+          state: equipped-HAND
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+        state: equipped-HAND-sealed
+      false:
+        sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+        state: equipped-HAND
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+          state: equipped-HAND-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/security.rsi
+        state: equipped-HAND-sealed-unpowered
+    sealedComponents:
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+
+- type: entity
+  parent: ClothingHandsModSuitBase
+  id: ClothingHandsModSuitSalvage
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+        state: icon
+    clothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+          state: equipped-HAND-sealed
+      false:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+          state: equipped-HAND
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+        state: equipped-HAND-sealed
+      false:
+        sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+        state: equipped-HAND
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+          state: equipped-HAND-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/salvage.rsi
+        state: equipped-HAND-sealed-unpowered
+    sealedComponents:
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+
+- type: entity
+  parent: ClothingHandsModSuitBase
+  id: ClothingHandsModSuitCivilian
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Hands/ModSuits/civilian.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/civilian.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/civilian.rsi
+        state: icon
+    clothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/civilian.rsi
+          state: equipped-HAND-sealed
+      false:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/civilian.rsi
+          state: equipped-HAND
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/civilian.rsi
+        state: equipped-HAND-sealed
+      false:
+        sprite: _Polonium/Clothing/Hands/ModSuits/civilian.rsi
+        state: equipped-HAND
+    sealedComponents:
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+
+- type: entity
+  parent: ClothingHandsModSuitBase
+  id: ClothingHandsModSuitSyndicate
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Hands/ModSuits/syndicate.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/syndicate.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/syndicate.rsi
+        state: icon
+    clothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/syndicate.rsi
+          state: equipped-HAND-sealed
+      false:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/syndicate.rsi
+          state: equipped-HAND
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/syndicate.rsi
+        state: equipped-HAND-sealed
+      false:
+        sprite: _Polonium/Clothing/Hands/ModSuits/syndicate.rsi
+        state: equipped-HAND
+    sealedComponents:
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+
+- type: entity
+  parent: ClothingHandsModSuitBase
+  id: ClothingHandsModSuitElite
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Hands/ModSuits/elite.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/elite.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/Hands/ModSuits/elite.rsi
+        state: icon
+    clothingLayers:
+      true:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/elite.rsi
+          state: equipped-HAND-sealed
+      false:
+        gloves:
+        - sprite: _Polonium/Clothing/Hands/ModSuits/elite.rsi
+          state: equipped-HAND
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/Hands/ModSuits/elite.rsi
+        state: equipped-HAND-sealed
+      false:
+        sprite: _Polonium/Clothing/Hands/ModSuits/elite.rsi
+        state: equipped-HAND
+    sealedComponents:
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10

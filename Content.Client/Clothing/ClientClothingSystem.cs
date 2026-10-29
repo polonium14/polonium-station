@@ -249,7 +249,7 @@ public sealed partial class ClientClothingSystem : ClothingSystem
 
             // Use a path for the layer if specified, otherwise use the default.
             RSI? rsi;
-            if (layer.RsiPath != null && _cache.TryGetResource<RSIResource>(layer.RsiPath, out var rsiResource))
+            if (layer.RsiPath != null && _cache.TryGetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / layer.RsiPath, out var rsiResource)) // Polonium: layer paths are relative to /Textures, like the fallback RSI above
                 rsi = rsiResource.RSI;
             else
                 rsi = baseRSI;

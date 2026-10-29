@@ -38,4 +38,6 @@ Obecnie dział medyczny spełnia dwa różne zadania:
     <GuideEntityEmbed Entity="PillCanister"/>
     <GuideEntityEmbed Entity="ChemMaster"/>
   </Box>
+## Praca w próżni
+  Personel medyczny, który wyrusza po pacjentów w kosmos, może zamiast skafandra nosić [textlink="R.I.G. medyczny" link="RIG"], modułowy kombinezon składany przez robotyka.
 </Document>

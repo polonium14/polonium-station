@@ -1,2 +1,2 @@
-ent-OreBoxVacuum = vacuum ore box
-    .desc = Advanced ore box for automatically picking up and storing unprocessed minerals.
+ent-OreBoxVacuum = odkurzająca skrzynia na rudę
+    .desc = Zaawansowana skrzynia na rudę, która automatycznie zbiera i przechowuje nieprzetworzone minerały.

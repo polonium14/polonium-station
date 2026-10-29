@@ -58,6 +58,7 @@ wire-name-door-timer = TIMR
 wire-name-lock = LOCK
 wire-name-power = POWR
 wire-name-arcade-invincible = MNGR
+wire-name-player-invincible = PLYR
 wire-name-vending-contraband = MNGR
 wire-name-vending-eject = VEND
 wire-name-pa-keyboard = KEYB

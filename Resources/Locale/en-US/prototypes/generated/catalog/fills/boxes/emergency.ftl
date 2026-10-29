@@ -44,3 +44,5 @@ ent-BoxSurvivalMilitaryDouble = military O2 survival box
 ent-BoxSurvivalMilitaryDoubleNitrogen = military N2 survival box
     .desc = A military-grade survival box containing a double-capacity emergency nitrogen tank, an emergency medipen, and an emergency flare.
     .suffix = Military N2
+ent-BaseBoxSurvival = { ent-BoxCardboardSmall }
+    .desc = { ent-BoxCardboardSmall.desc }

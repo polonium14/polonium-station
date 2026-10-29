@@ -16,3 +16,7 @@ ent-StatueIronsandTall = ironsand tall statue
     .desc = { ent-BaseIronsandStatue.desc }
 ent-StatueIronsandTall2 = ironsand tall statue
     .desc = { ent-BaseIronsandStatue.desc }
+ent-BaseStatue = { ent-BaseStructure }
+    .desc = { ent-BaseStructure.desc }
+ent-StatueOrnateClown = ornate savior statue
+    .desc = A gilded statue. It portrays the return of the savior who will rise up and lead the clowns to the great honk.

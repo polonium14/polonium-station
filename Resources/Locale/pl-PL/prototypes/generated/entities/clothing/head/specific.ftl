@@ -1,5 +1,5 @@
 ent-ClothingHeadHatChameleon = beret
-    .desc = Beret, ulubione nakrycie głowy artystów.
+    .desc = Ulubione nakrycie głowy artysty.
     .suffix = Kameleon
-ent-ClothingHeadHatDetGadget = czapka GO
+ent-ClothingHeadHatDetGadget = czapka Go-Go
     .desc = Nowatorski kapelusz z wbudowanym zestawem narzędzi. Sam przechowuje i wyjmuje przedmioty na hasło!

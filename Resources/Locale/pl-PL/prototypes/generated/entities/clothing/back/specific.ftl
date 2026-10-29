@@ -1,5 +1,5 @@
 ent-ClothingBackpackChameleon = plecak
-    .desc = Nosisz to na plecach i wkładasz do tego przedmioty.
+    .desc = Nosisz to na plecach i wkładasz do niego przedmioty.
     .suffix = Kameleon
 ent-ClothingBackpackWaterTank = plecakowy zbiornik na wodę
     .desc = Mieści dużo cieczy. Zasila dysze w twoich rękach i ma z boku gniazdo na te dysze.
@@ -7,5 +7,5 @@ ent-ClothingBagPet = torba dla zwierzaka
     .desc = Mała torba zaprojektowana dla zwierzaków i małych zwierząt.
 ent-ClothingBackpackHarmpack = H.A.R.M.P.A.C.K.
     .desc = Teraz możesz przeładowywać, bić i jeść przekąskę — jednocześnie.
-ent-XenoborgMaterialBag = kwadrat magazynowy silikonu
+ent-XenoborgMaterialBag = syntetyczny magazyn materiałów
     .desc = Podróbka torby bluespace, potrafi wessać wybrane materiały; nie nadaje się dla humanoidów przez szkodliwe emisje.

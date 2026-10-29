@@ -1,5 +1,3 @@
-ent-DrinkMocnyFullCan = mocny full
-    .desc = Najlepsze w całym kosmosie.
 ent-DrinkHelenkaCan = Helena jabłko - truskawka
     .desc = Smak działki.
 ent-DrinkTymbarkBottle = Tymbark jabłko - mięta

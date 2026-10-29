@@ -1,0 +1,59 @@
+- type: cargoProduct
+  id: RIGPlatingEngineering
+  icon:
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: engineering
+  product: CrateRIGPlatingEngineering
+  cost: 4000
+  category: cargoproduct-category-name-rig
+  group: market
+
+- type: cargoProduct
+  id: RIGPlatingAtmospheric
+  icon:
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: atmospheric
+  product: CrateRIGPlatingAtmospheric
+  cost: 4000
+  category: cargoproduct-category-name-rig
+  group: market
+
+- type: cargoProduct
+  id: RIGPlatingMedical
+  icon:
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: medical
+  product: CrateRIGPlatingMedical
+  cost: 4000
+  category: cargoproduct-category-name-rig
+  group: market
+
+- type: cargoProduct
+  id: RIGPlatingSecurity
+  icon:
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: security
+  product: CrateRIGPlatingSecurity
+  cost: 4000
+  category: cargoproduct-category-name-rig
+  group: market
+
+- type: cargoProduct
+  id: RIGPlatingSalvage
+  icon:
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: salvage
+  product: CrateRIGPlatingSalvage
+  cost: 4000
+  category: cargoproduct-category-name-rig
+  group: market
+
+- type: cargoProduct
+  id: RIGPlatingCivilian
+  icon:
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/plating.rsi
+    state: civilian
+  product: CrateRIGPlatingCivilian
+  cost: 2000
+  category: cargoproduct-category-name-rig
+  group: market

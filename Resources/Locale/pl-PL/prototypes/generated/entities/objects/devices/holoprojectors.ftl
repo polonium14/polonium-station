@@ -26,3 +26,5 @@ ent-HoloprojectorSecurity = projektor holobariery
 ent-HoloprojectorSecurityEmpty = { ent-HoloprojectorSecurity }
     .suffix = Pusty
     .desc = { ent-HoloprojectorSecurity.desc }
+ent-HoloprojectorXenoField = projektor pola odbijającego ksenoborgów
+    .desc = Obce urządzenie projektujące pola, które odbijają pociski.

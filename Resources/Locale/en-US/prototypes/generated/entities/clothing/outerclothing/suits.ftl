@@ -25,3 +25,5 @@ ent-ClothingOuterSuitCarp = carp suit
 ent-ClothingOuterHardsuitCarp = { ent-ClothingOuterSuitCarp }
     .suffix = Hardsuit, DO NOT MAP
     .desc = { ent-ClothingOuterSuitCarp.desc }
+ent-ClothingOuterSuitTramDriver = tram driver suit
+    .desc = It protects from everything that could distract you. That is, nothing at all.

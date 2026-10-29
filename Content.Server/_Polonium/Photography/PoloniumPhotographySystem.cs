@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Content.Server.Administration.Logs;
+using Content.Shared._Polonium.Paper;
 using Content.Shared._Polonium.Photography;
 using Content.Shared.Database;
 using Content.Shared.Examine;
@@ -9,7 +10,9 @@ using Content.Shared.Flash;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Interaction;
 using Content.Shared.Item.ItemToggle;
+using Content.Shared.Popups;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
@@ -40,8 +43,11 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private IAdminLogManager _adminLog = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     private static readonly SoundSpecifier ShutterSound = new SoundPathSpecifier("/Audio/Misc/camera_snap.ogg");
+    private static readonly SoundSpecifier SignSound = new SoundCollectionSpecifier("PaperScribbles", AudioParams.Default.WithVariation(0.1f));
 
     private sealed record PendingCapture(ICommonSession Session, EntityUid User, EntityCoordinates Coords, EntProtoId Photograph, string? SubjectName);
 
@@ -53,6 +59,8 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
     private readonly Dictionary<int, string> _photoNames = new();
     private readonly Dictionary<int, string> _photoShooters = new();
     private readonly Dictionary<int, PendingCapture> _pending = new();
+    // Pen a user put to a photo, waiting for their caption. Cleared on sign, close or restart.
+    private readonly Dictionary<(EntityUid Photo, EntityUid User), EntityUid> _signPens = new();
 
     private int _nextCaptureId = 1;
     private int _nextPhotoId = 1;
@@ -71,6 +79,10 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
         SubscribeNetworkEvent<SubmitPhotoEvent>(OnSubmitPhoto);
         SubscribeLocalEvent<PoloniumPhotographComponent, EntityTerminatingEvent>(OnPhotoTerminating);
         SubscribeLocalEvent<PoloniumPhotographComponent, ExaminedEvent>(OnPhotoExamined);
+        SubscribeLocalEvent<PoloniumPhotographComponent, InteractUsingEvent>(OnPhotoInteractUsing);
+        SubscribeLocalEvent<PoloniumPhotographComponent, PhotoSignQueryMessage>(OnPhotoSignQuery);
+        SubscribeLocalEvent<PoloniumPhotographComponent, PhotoSignMessage>(OnPhotoSign);
+        SubscribeLocalEvent<PoloniumPhotographComponent, BoundUIClosedEvent>(OnPhotoUiClosed);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnCleanup);
 
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
@@ -162,7 +174,7 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
         photoComp.PhotoId = photoId;
         Dirty(spawned, photoComp);
 
-        _ui.SetUiState(spawned, PhotoViewerUiKey.Key, new PhotoViewerBoundUserInterfaceState(data));
+        UpdatePhotoUi((spawned, photoComp));
 
         if (!TerminatingOrDeleted(pending.User))
             _hands.PickupOrDrop(pending.User, spawned, dropNear: true);
@@ -220,10 +232,118 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
         return found;
     }
 
+    /// <summary>Pushes blob + caption to everyone with this photograph's viewer open (and later openers).</summary>
+    private void UpdatePhotoUi(Entity<PoloniumPhotographComponent> ent)
+    {
+        var comp = ent.Comp;
+        _ui.SetUiState(ent.Owner, PhotoViewerUiKey.Key,
+            new PhotoViewerBoundUserInterfaceState(_photos.GetValueOrDefault(comp.PhotoId), comp.Caption, comp.CaptionColor, comp.CaptionFont));
+    }
+
+    /// <summary>
+    /// Pen (anything with a <see cref="SignatureWriterComponent"/>) on a photograph: open the
+    /// viewer for that user and ask their client to show the caption input. Nothing is
+    /// written yet; that waits for <see cref="PhotoSignMessage"/>.
+    /// </summary>
+    private void OnPhotoInteractUsing(Entity<PoloniumPhotographComponent> ent, ref InteractUsingEvent args)
+    {
+        if (args.Handled || !TryGetCaptionStyle(args.Used, out _, out _))
+            return;
+
+        args.Handled = true;
+
+        if (ent.Comp.Caption != null)
+        {
+            _popup.PopupEntity(Loc.GetString("photograph-already-signed", ("target", ent.Owner)), args.User, args.User);
+            return;
+        }
+
+        if (!HasComp<ActorComponent>(args.User))
+            return;
+
+        _signPens[(ent.Owner, args.User)] = args.Used;
+
+        // Already looking at it: show the input now. Otherwise the freshly opened viewer
+        // asks for it itself (PhotoSignQueryMessage), so the start can't beat the window.
+        if (_ui.IsUiOpen(ent.Owner, PhotoViewerUiKey.Key, args.User))
+            SendSignStart(ent.Owner, args.User);
+        else
+            _ui.OpenUi(ent.Owner, PhotoViewerUiKey.Key, args.User);
+    }
+
+    private void OnPhotoSignQuery(Entity<PoloniumPhotographComponent> ent, ref PhotoSignQueryMessage args)
+    {
+        SendSignStart(ent.Owner, args.Actor);
+    }
+
+    private void SendSignStart(EntityUid photo, EntityUid user)
+    {
+        if (!_signPens.TryGetValue((photo, user), out var pen) ||
+            !TryGetCaptionStyle(pen, out var color, out var font))
+            return;
+
+        // The EntityUid overload: the ICommonSession one is a no-op on the server.
+        _ui.ServerSendUiMessage(photo, PhotoViewerUiKey.Key, new PhotoSignStartMessage(color, font), user);
+    }
+
+    private void OnPhotoUiClosed(Entity<PoloniumPhotographComponent> ent, ref BoundUIClosedEvent args)
+    {
+        _signPens.Remove((ent.Owner, args.Actor));
+    }
+
+    private void OnPhotoSign(Entity<PoloniumPhotographComponent> ent, ref PhotoSignMessage args)
+    {
+        var signer = args.Actor;
+
+        // One caption per photo; a second message (double submit, two pens) is ignored.
+        if (ent.Comp.Caption != null)
+            return;
+
+        if (!_signPens.Remove((ent.Owner, signer), out var pen))
+            return;
+
+        // Re-validate everything the client claims: still holding a writer and still in reach.
+        if (TerminatingOrDeleted(pen) ||
+            !_hands.IsHolding(signer, pen) ||
+            !_interaction.InRangeUnobstructed(signer, ent.Owner) ||
+            !TryGetCaptionStyle(pen, out var color, out var font))
+        {
+            _popup.PopupEntity(Loc.GetString("photograph-sign-failure", ("target", ent.Owner)), signer, signer, PopupType.SmallCaution);
+            return;
+        }
+
+        var caption = SanitizeCaption(args.Text);
+        if (caption.Length == 0)
+            return;
+
+        ent.Comp.Caption = caption;
+        ent.Comp.CaptionColor = color;
+        ent.Comp.CaptionFont = font;
+        Dirty(ent);
+
+        _adminLog.Add(LogType.Action, LogImpact.Low,
+            $"{ToPrettyString(signer):player} signed photo id {new LoggablePhotoId(ent.Comp.PhotoId)} with caption \"{caption}\"");
+
+        _popup.PopupEntity(Loc.GetString("photograph-signed-self", ("target", ent.Owner)), signer, signer);
+        _popup.PopupEntity(Loc.GetString("photograph-signed-other", ("user", signer), ("target", ent.Owner)),
+            signer, Filter.PvsExcept(signer, entityManager: EntityManager), true);
+        _audio.PlayPvs(SignSound, signer);
+
+        UpdatePhotoUi(ent);
+    }
+
     private void OnPhotoExamined(Entity<PoloniumPhotographComponent> ent, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
             return;
+
+        // Anyone can read the strip; player-typed, so escaped like the subject name.
+        if (ent.Comp.Caption is { } caption)
+        {
+            args.PushMarkup(Loc.GetString("photograph-examine-caption",
+                ("caption", FormattedMessage.EscapeText(caption)),
+                ("color", ent.Comp.CaptionColor.ToHex())));
+        }
 
         // Subjectless photos examine like any plain item.
         if (!_photoNames.TryGetValue(ent.Comp.PhotoId, out var name))
@@ -263,6 +383,7 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
         _photoNames.Clear();
         _photoShooters.Clear();
         _pending.Clear();
+        _signPens.Clear();
         _nextCaptureId = 1;
         _nextPhotoId = 1;
     }

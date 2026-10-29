@@ -1,4 +1,7 @@
+using System.Text;
+using Content.Shared._Polonium.Paper;
 using Content.Shared.Charges.Systems;
+using Content.Shared.Crayon;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
@@ -121,5 +124,70 @@ public abstract partial class SharedPoloniumPhotographySystem : EntitySystem
     protected virtual bool StartCapture(Entity<PoloniumCameraComponent> camera, EntityUid user, EntityCoordinates targetCoords, EntityUid? target)
     {
         return false;
+    }
+
+    /// <summary>
+    /// Ink and font a caption written with <paramref name="pen"/> gets: the pen's
+    /// <see cref="SignatureWriterComponent"/> color and forced font (handwriting by default),
+    /// with a crayon's own color winning, same as paper signatures. False if it can't write.
+    /// </summary>
+    public bool TryGetCaptionStyle(EntityUid pen, out Color color, out string font)
+    {
+        color = default;
+        font = PhotographyConstants.DefaultCaptionFont;
+
+        if (!TryComp<SignatureWriterComponent>(pen, out var writer))
+            return false;
+
+        color = writer.Color;
+        if (writer.Font is { } forced)
+            font = forced;
+
+        if (TryComp<CrayonComponent>(pen, out var crayon))
+            color = crayon.Color;
+
+        return true;
+    }
+
+    /// <summary>
+    /// Normalizes player-typed caption text: control characters dropped, whitespace runs
+    /// collapsed to one space, trimmed and cut to <see cref="PhotographyConstants.CaptionMaxLength"/>.
+    /// Returns an empty string when nothing printable is left.
+    /// </summary>
+    public static string SanitizeCaption(string? text)
+    {
+        if (string.IsNullOrEmpty(text))
+            return string.Empty;
+
+        var builder = new StringBuilder(text.Length);
+        var lastWasSpace = true; // also strips leading whitespace
+        foreach (var rune in text.EnumerateRunes())
+        {
+            if (Rune.IsWhiteSpace(rune))
+            {
+                if (!lastWasSpace)
+                    builder.Append(' ');
+                lastWasSpace = true;
+                continue;
+            }
+
+            if (Rune.IsControl(rune) || Rune.GetUnicodeCategory(rune) == System.Globalization.UnicodeCategory.Format)
+                continue;
+
+            builder.Append(rune.ToString());
+            lastWasSpace = false;
+        }
+
+        var result = builder.ToString().TrimEnd();
+        if (result.Length > PhotographyConstants.CaptionMaxLength)
+        {
+            // Don't split a surrogate pair at the cut.
+            var cut = PhotographyConstants.CaptionMaxLength;
+            if (char.IsHighSurrogate(result[cut - 1]))
+                cut--;
+            result = result[..cut].TrimEnd();
+        }
+
+        return result;
     }
 }

@@ -140,7 +140,7 @@ public abstract partial class SharedJetpackSystem : EntitySystem
         SetEnabled(uid, component, !IsEnabled(uid));
     }
 
-    private bool CanEnableOnGrid(EntityUid? gridUid)
+    public bool CanEnableOnGrid(EntityUid? gridUid) // Polonium: public for the R.I.G. jetpack module
     {
         // No and no again! Do not attempt to activate the jetpack on a grid with gravity disabled. You will not be the first or the last to try this.
         // https://discord.com/channels/310555209753690112/310555209753690112/1270067921682694234

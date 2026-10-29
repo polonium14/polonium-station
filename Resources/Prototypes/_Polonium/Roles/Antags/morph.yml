@@ -1,0 +1,25 @@
+- type: antag
+  id: Morph
+  name: roles-antag-morph-name
+  antagonist: true
+  objective: roles-antag-morph-objective
+  setPreference: false
+
+- type: antagSpecifier
+  parent: RestrictedAntag
+  id: Morph
+  spawnerPrototype: SpawnPointGhostMorph
+  pickPlayer: false
+  mindRoles:
+  - MindRoleMorph
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleMorph
+  name: Morph Role
+  components:
+  - type: MindRole
+    antagPrototype: Morph
+    subtype: role-subtype-morph
+    exclusiveAntag: true
+  - type: MorphRole

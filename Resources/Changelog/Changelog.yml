@@ -1,186 +1,4 @@
 ﻿Entries:
-- author: Minemoder
-  changes:
-  - message: Vulpkanins can now use Gauze markings.
-    type: Add
-  id: 9568
-  time: '2026-03-07T21:39:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43096
-- author: 11BelowStudio
-  changes:
-  - message: Spent air grenades cannot be re-triggered.
-    type: Fix
-  id: 9569
-  time: '2026-03-08T01:05:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42866
-- author: ScarKy0
-  changes:
-  - message: Hostile vent critters now crawl out of a single vent, alerting the station
-      about the location in advance.
-    type: Add
-  - message: Friendly critters no longer have an announcement when spawning.
-    type: Remove
-  - message: Vent critters can no longer spawn on unachored vents.
-    type: Fix
-  id: 9570
-  time: '2026-03-11T23:42:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43047
-- author: Centronias
-  changes:
-  - message: Wrapped parcels can now fit in mail carts.
-    type: Add
-  id: 9571
-  time: '2026-03-13T20:22:29.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43226
-- author: Velken
-  changes:
-  - message: Corrupted silicon laws now use scrambled text in the UI again.
-    type: Fix
-  id: 9572
-  time: '2026-03-13T23:48:43.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43229
-- author: TaserTheFox
-  changes:
-  - message: Fixed certain bottled reagents not having localization text.
-    type: Fix
-  id: 9573
-  time: '2026-03-14T16:21:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43208
-- author: Crude Oil
-  changes:
-  - message: Fixed some emitter alerts missing the word "emitter"
-    type: Fix
-  id: 9574
-  time: '2026-03-14T16:32:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43225
-- author: SnappingOpossum
-  changes:
-  - message: Certain randomised items and decorations no longer spawn with the wrong
-      rotation.
-    type: Fix
-  id: 9575
-  time: '2026-03-14T16:32:36.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43234
-- author: themias
-  changes:
-  - message: Healing with a holy book now gives off a holy light.
-    type: Tweak
-  id: 9576
-  time: '2026-03-14T16:33:38.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43189
-- author: Centronias
-  changes:
-  - message: Certain small cargo products are now delivered in parcel wrap rather
-      than in crates.
-    type: Tweak
-  id: 9577
-  time: '2026-03-15T13:59:56.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40834
-- author: Velken
-  changes:
-  - message: Crew manifest names can now appear in ion storm laws.
-    type: Add
-  id: 9578
-  time: '2026-03-15T16:08:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42629
-- author: Verin, Centronias
-  changes:
-  - message: Character saving is no longer broken by erroneous hair.
-    type: Fix
-  id: 9579
-  time: '2026-03-15T16:08:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43170
-- author: slarticodefast
-  changes:
-  - message: The reagent grinder interactions and user interface are now predicted
-      and should feel much more responsive.
-    type: Tweak
-  id: 9580
-  time: '2026-03-15T19:29:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42815
-- author: Eternally-Confused
-  changes:
-  - message: The chem guidebook now shows when chemicals adjust body temperature again
-    type: Fix
-  id: 9581
-  time: '2026-03-17T17:52:32.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42394
-- author: murolem
-  changes:
-  - message: Retextured technology disk to have the color of their discipline and
-      extra marks for each tier. Also increased sell price for higher-tier disks.
-    type: Tweak
-  id: 9582
-  time: '2026-03-17T23:05:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/37719
-- author: Buunie099
-  changes:
-  - message: Fixed guidebook showing the wrong value for the maximum temperature of
-      hellfire heaters.
-    type: Tweak
-  id: 9583
-  time: '2026-03-18T06:31:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43285
-- author: ProPeperos
-  changes:
-  - message: Changed the hitbox of borg chargers, so they no longer get stuck in doorways.
-    type: Tweak
-  id: 9584
-  time: '2026-03-20T14:35:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43300
-- author: slarticodefast
-  changes:
-  - message: Fixed melee attack animations being rotated wrong if your camera is rotated.
-    type: Fix
-  id: 9585
-  time: '2026-03-21T17:02:28.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43307
-- author: SlartiBartFast, Verin
-  changes:
-  - message: Welders no longer perform an extra pass after a repair has completed.
-    type: Fix
-  id: 9586
-  time: '2026-03-22T22:57:42.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43321
-- author: mqole
-  changes:
-  - message: Flatpacks now use the collision of the flatpacked entity, so they can
-      be opened on tables and aren't blocked by ghosts.
-    type: Fix
-  id: 9587
-  time: '2026-03-24T20:25:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41849
-- author: Not-A-Chair
-  changes:
-  - message: Tricordrazine no longer heals radiation
-    type: Tweak
-  - message: . Tricordrazine no longer works on mobs in crit
-    type: Tweak
-  id: 9588
-  time: '2026-03-25T13:34:10.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43293
-- author: ArcaneValiance
-  changes:
-  - message: Ambuzol and Ambuzol Plus pills now properly cure and prevent infection
-      respectively.
-    type: Fix
-  id: 9589
-  time: '2026-03-25T13:49:55.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43331
-- author: salarua
-  changes:
-  - message: Chat dialogue now appears in curly quotes rather than straight quotes.
-    type: Tweak
-  id: 9590
-  time: '2026-03-27T17:53:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43350
-- author: Velken
-  changes:
-  - message: Mail no longer goes all to one person per batch.
-    type: Fix
-  id: 9591
-  time: '2026-03-27T23:00:25.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43361
 - author: Gentleman-Bird
   changes:
   - message: Clockwork Glass is now grindable
@@ -4328,3 +4146,242 @@
   id: 10062
   time: '2026-10-20T10:39:07.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1122
+- author: Nikita
+  changes:
+  - message: "Usuni\u0119to duplikat mocnegofulla z NSV"
+    type: Remove
+  id: 10063
+  time: '2026-10-21T13:57:03.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1129
+- author: haze
+  changes:
+  - message: "Od\u015Bwie\u017Cono Cork"
+    type: Tweak
+  id: 10064
+  time: '2026-10-21T14:00:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1123
+- author: Saver310
+  changes:
+  - message: Dodano 10u whisky i 5u Dr. Gibb do pluszaka Asa.
+    type: Tweak
+  id: 10065
+  time: '2026-10-21T14:17:43.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1127
+- author: Saver310
+  changes:
+  - message: "Dodano \"Gang Krzese\u0142\""
+    type: Add
+  - message: "Usuni\u0119to \"Pewna \u015Amier\u0107\""
+    type: Remove
+  id: 10066
+  time: '2026-10-21T14:19:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1130
+- author: Joker66613
+  changes:
+  - message: "Dodano morpha \u2014 zmiennokszta\u0142tnego antagonist\u0119, kt\xF3\
+      ry przybiera posta\u0107 przedmiot\xF3w i po\u017Cartych za\u0142ogant\xF3w,\
+      \ po\u017Cera cia\u0142a i atakuje z zasadzki."
+    type: Add
+  id: 10067
+  time: '2026-10-21T14:14:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1099
+- author: Joker66613
+  changes:
+  - message: "Zdj\u0119cia mo\u017Cna podpisa\u0107 d\u0142ugopisem. Podpis pojawia\
+      \ si\u0119 na dolnym pasku zdj\u0119cia w kolorze i czcionce d\u0142ugopisu."
+    type: Add
+  id: 10068
+  time: '2026-10-21T14:26:10.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1125
+- author: Segonist
+  changes:
+  - message: "Wrzucenie stacku materia\u0142\xF3w do gniazda replikator\xF3w dodaje\
+      \ odpowiednio wi\u0119cej replistali"
+    type: Fix
+  - message: "Wrzucenie kontenera (szafka, plecak, itd.) do gniazda replikator\xF3\
+      w uwzgl\u0119dnia rzeczy znajduj\u0105ce si\u0119 w \u015Brodku"
+    type: Fix
+  id: 10069
+  time: '2026-10-22T12:46:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1121
+- author: Nikita
+  changes:
+  - message: "Cia\u0142a martwych potwor\xF3w z Honkanomalii mo\u017Cna teraz przepycha\u0107\
+      \ przez 1-kafelkowe korytarze"
+    type: Tweak
+  - message: Potwory z honkanomalii preszli przez lekki nerf
+    type: Tweak
+  id: 10070
+  time: '2026-10-22T18:13:31.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1141
+- author: Joker66613
+  changes:
+  - message: "Kr\xF3lowa sk\u0142ada jaja z facehuggerami. Facehugger skacze na twarz,\
+      \ usypia ofiar\u0119 i sk\u0142ada w niej embrion, z kt\xF3rego po kilku minutach\
+      \ wykluwa si\u0119 larwa."
+    type: Add
+  - message: "Nowa operacja \u201EUsu\u0144 embrion obcego\u201D. Etap infekcji wida\u0107\
+      \ na medycznym HUD-zie."
+    type: Add
+  - message: "Nowe zdarzenie: Inwazja ksenomorf\xF3w."
+    type: Add
+  - message: "Ewolucja ksenomorf\xF3w znowu nalicza punkty. Larwa ro\u015Bnie te\u017C\
+      \ bez Kr\xF3lowej."
+    type: Fix
+  - message: "Poprawiono t\u0142umaczenia ksenomorf\xF3w w niekt\xF3rych miejscach"
+    type: Fix
+  id: 10071
+  time: '2026-10-23T13:50:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1106
+- author: Nikita
+  changes:
+  - message: Naprawiono zduplikowane akcje Kolosalnego Replikatora na pasku akcji
+    type: Fix
+  - message: "Naprawiono kolejno\u015B\u0107 r\u0105k Kolosalnego Replikatora"
+    type: Fix
+  - message: "Poprawiono animacj\u0119 chodzenia i pozosta\u0142e sprite'y Kolosalnego\
+      \ Replikatora"
+    type: Fix
+  - message: "Wsp\xF3lny zapas amunicji miniguna Kolosalnego Replikatora zmniejszono\
+      \ ze 120 do 100 strza\u0142\xF3w"
+    type: Tweak
+  - message: "Tryb og\u0142uszaj\u0105cy miniguna Kolosalnego Replikatora strzela\
+      \ wolniej (z 9,6 do 7,14 strza\u0142u na sekund\u0119)"
+    type: Tweak
+  - message: "Strza\u0142 w trybie \u015Bmiertelnym miniguna Kolosalnego Replikatora\
+      \ zu\u017Cywa teraz 2 \u0142adunki zamiast 1"
+    type: Tweak
+  id: 10072
+  time: '2026-10-23T15:40:42.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1147
+- author: Saver310
+  changes:
+  - message: "Dodano grafik\u0119 menu \"Ocieplam Go\""
+    type: Add
+  id: 10073
+  time: '2026-10-25T08:54:45.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1155
+- author: nikitosych
+  changes:
+  - message: "Dodano R.I.G., modu\u0142owe kombinezony pr\xF3\u017Cniowe noszone na\
+      \ plecach. Robotyk sk\u0142ada je z cz\u0119\u015Bci z fabrykatora egzoszkielet\xF3\
+      w, a wariant zale\u017Cy od poszycia zam\xF3wionego w logistyce."
+    type: Add
+  - message: "Dodano modu\u0142y R.I.G., mi\u0119dzy innymi plecak jonowy, buty magnetyczne,\
+      \ izolacj\u0119, wizjery i ulepszon\u0105 mobilno\u015B\u0107."
+    type: Add
+  - message: "Rdze\u0144 R.I.G. mo\u017Cna ulepszy\u0107 rdzeniem anomalii albo plazm\u0105\
+      . Ulepszony rdze\u0144 daje kombinezonowi niewielki bonus i zmienia kolor jego\
+      \ \u015Bwiate\u0142."
+    type: Add
+  - message: "Zaawansowane buty magnetyczne G\u0142\xF3wnego In\u017Cyniera mo\u017C\
+      na zamontowa\u0107 w R.I.G. jako modu\u0142."
+    type: Add
+  - message: "Syndykat mo\u017Ce kupi\u0107 R.I.G. i modu\u0142y w uplinku."
+    type: Add
+  id: 10074
+  time: '2026-10-24T14:46:23.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1154
+- author: Nikita
+  changes:
+  - message: "R.I.G. medyczny jest zastrze\u017Cony do medycyny, nie dow\xF3dztwa"
+    type: Fix
+  id: 10075
+  time: '2026-10-25T09:28:37.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1157
+- author: Nikita
+  changes:
+  - message: "Poprawiono problem, kt\xF3ry powodowa\u0142, \u017Ce faksy nie dostawali\
+      \ cel\xF3w zmiany"
+    type: Fix
+  id: 10076
+  time: '2026-10-25T14:36:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1161
+- author: Nikita
+  changes:
+  - message: "Koszt R.I.G.-a zosta\u0142 zmniejszony do 4000 spesos"
+    type: Tweak
+  - message: "R.I.G.-i wymagaj\u0105 teraz mniej stali i srebra"
+    type: Tweak
+  id: 10077
+  time: '2026-10-25T14:51:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1160
+- author: Nikita
+  changes:
+  - message: "Dodano rower dla Kap\u0142ana"
+    type: Add
+  id: 10078
+  time: '2026-10-25T16:00:01.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1162
+- author: GibMeclay
+  changes:
+  - message: Akcent Krasnoludzki
+    type: Add
+  - message: "Akcent Szkielet\xF3w"
+    type: Add
+  - message: Akcent Niemiecki
+    type: Tweak
+  id: 10079
+  time: '2026-10-27T17:49:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1166
+- author: Nikita
+  changes:
+  - message: "Zmniejszono szybko\u015B\u0107 rozpowszechniania si\u0119 kudzu cieniowego"
+    type: Tweak
+  - message: "Lekko zmniejszono szybko\u015B\u0107 rozpowszechniania si\u0119 kudzu\
+      \ z anomalii ro\u015Blinnej"
+    type: Tweak
+  id: 10080
+  time: '2026-10-29T10:04:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1169
+- author: DrSmugleaf, stinkiestdog, YaraaraY
+  changes:
+  - message: "Powtarzaj\u0105ce si\u0119 wiadomo\u015Bci na czacie \u0142\u0105cz\u0105\
+      \ si\u0119 teraz w jedn\u0105 lini\u0119 z licznikiem powt\xF3rze\u0144 zamiast\
+      \ za\u015Bmieca\u0107 okno czatu."
+    type: Add
+  id: 10081
+  time: '2026-10-29T11:28:52.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1170
+- author: Bagietens
+  changes:
+  - message: "Zmieniono dzia\u0142anie ognia powsta\u0142ego z roztwor\xF3w"
+    type: Tweak
+  id: 10082
+  time: '2026-10-29T11:27:52.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1168
+- author: Nikita
+  changes:
+  - message: "Zmieniono wygl\u0105d mundur\xF3w Oficera Ochrony, Kadeta Ochrony, Nadzorcy\
+      \ Ochrony, Komendanta, Detektywa i Medyka Wi\u0119ziennego (tak\u017Ce sp\xF3\
+      dniczek)."
+    type: Tweak
+  id: 10083
+  time: '2026-10-29T12:08:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1172
+- author: Nikita
+  changes:
+  - message: "Po \u015Bmierci lub rozerwaniu na kawa\u0142ki ekran od razu robi si\u0119\
+      \ czarny, a d\u017Awi\u0119k cichnie. Przez 10 sekund nie mo\u017Cna wyj\u015B\
+      \u0107 z cia\u0142a jako duch."
+    type: Add
+  - message: "W stanie krytycznym ekran stopniowo ciemnieje, i d\u017Awi\u0119k cichnie\
+      \ tym bardziej, im bli\u017Cej do \u015Bmierci."
+    type: Add
+  id: 10084
+  time: '2026-10-29T12:05:42.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1171
+- author: Saver310
+  changes:
+  - message: Rerender "Ocieplam Go"
+    type: Tweak
+  id: 10085
+  time: '2026-10-29T14:37:48.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1174
+- author: GibMeclay
+  changes:
+  - message: "Zmieniono kolejno\u015B\u0107 odczynnik\xF3w w ChemoMacie"
+    type: Tweak
+  id: 10086
+  time: '2026-10-29T14:37:20.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1173

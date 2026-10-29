@@ -1,0 +1,74 @@
+- type: entity
+  id: VehicleBicycle
+  parent: BaseVehicleStrap
+  name: bicycle
+  description: A classic city bicycle with a lamp, a rack and a chain guard. Just the thing for visiting parishioners.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Vehicles/bicycle.rsi
+    drawdepth: Mobs
+    offset: 0,-0.15625
+    layers:
+    - state: behind
+      map: ["behind"]
+    - state: bicycle
+      map: ["movement"]
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: bicycle-moving
+    noMovementLayers:
+      movement:
+        state: bicycle
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.VehicleVisuals.HasOperator:
+        behind:
+          True: { visible: false }
+          False: { visible: true }
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.6
+    baseSprintSpeed: 4.8
+  - type: MobMover
+    stepSoundMoveDistanceWalking: 1.8
+    stepSoundMoveDistanceRunning: 2.4
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: BicycleChain
+      params:
+        variation: 0.04
+  - type: VehicleActions
+    actions:
+    - ActionVehicleBicycleBell
+  - type: VehicleHandBlocker
+  - type: UnpoweredFlashlight
+  - type: PointLight
+    enabled: false
+    radius: 3.5
+    softness: 2
+    lightMask: ConeSingle
+    autoRot: true
+  - type: GravityAffected
+  - type: Strap
+    modifyBuckleDrawDepth: false
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PartRodMetal1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

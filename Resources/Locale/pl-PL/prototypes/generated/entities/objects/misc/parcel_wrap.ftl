@@ -1,6 +1,6 @@
 ent-ParcelWrap = opakowanie paczki
     .desc = Zużyty papier zawiera przedmioty przeznaczone do transportu.
-ent-ParcelWrapAdmeme = bluespace wrap
+ent-ParcelWrapAdmeme = papier pakowy bluespace
     .desc = W tym papierze znajdują się przedmioty przeznaczone do transportu. Wygląda na to, że ten konkretny egzemplarz może pomieścić w sobie niezwykle dużo rzeczy.
     .suffix = Admeme
 ent-BaseWrappedParcel = { ent-BasePaperLabelable }

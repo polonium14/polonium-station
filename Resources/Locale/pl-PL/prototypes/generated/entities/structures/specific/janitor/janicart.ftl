@@ -4,6 +4,6 @@ ent-MopBucketFull = wiadro do mopa
     .suffix = Pełne
     .desc = { ent-MopBucket.desc }
 ent-MopBucketCubeWrapped = kostka z wiadrem do mopa
-    .desc = Rozpakuj aby dostać kostke na wiadro do mopa.
+    .desc = Rozpakuj aby dostać kostkę na wiadro do mopa.
 ent-JanitorialTrolley = wózek woźnego
     .desc = To jest alfa i omega sanitacji.

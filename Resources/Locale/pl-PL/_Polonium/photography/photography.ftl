@@ -1,6 +1,13 @@
 photo-viewer-title = zdjęcie
 photo-viewer-empty = Zdjęcie jest puste.
 photograph-examine-subject = Zdjęcie przedstawia {$name}.
+photograph-examine-caption = Na dolnym pasku podpis: [color={$color}]„{$caption}”[/color]
+photograph-already-signed = To zdjęcie jest już podpisane.
+photograph-sign-failure = Nie możesz stąd podpisać tego zdjęcia.
+photograph-signed-self = Podpisujesz zdjęcie.
+photograph-signed-other = { CAPITALIZE(THE($user)) } podpisuje zdjęcie.
+photo-viewer-sign-placeholder = Napisz coś na zdjęciu...
+photo-viewer-sign-button = Podpisz
 
 camera-toggle-flash-verb = Przełącz lampę błyskową
 camera-flash-on = Lampa: [color=green]włączona[/color]

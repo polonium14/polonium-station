@@ -1,19 +1,21 @@
+using Content.Shared._Polonium.Xenonids;
 using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Map;
 using Content.Shared._RMC14.Xenonids.Hive;
 using Content.Shared._RMC14.Xenonids.Weeds;
 using Content.Shared.Actions;
+using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
-using Content.Shared.StepTrigger.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Egg;
@@ -23,6 +25,11 @@ public sealed partial class XenoEggSystem : EntitySystem
     private static readonly EntProtoId LayEggAction = "ActionXenoLayEgg";
 
     [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedFacehuggerSystem _facehugger = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IConfigurationManager _config = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
@@ -35,6 +42,9 @@ public sealed partial class XenoEggSystem : EntitySystem
     [Dependency] private SharedXenoWeedsSystem _weeds = default!;
 
     private static readonly SoundPathSpecifier EggBurstSound = new("/Audio/_RMC14/Xeno/alien_egg_burst.ogg");
+    private static readonly SoundPathSpecifier EggClearSound = new("/Audio/_RMC14/Xeno/alien_resin_break1.ogg");
+    private static readonly TimeSpan EggCheckDelay = TimeSpan.FromSeconds(0.5);
+    private readonly HashSet<Entity<MobStateComponent>> _nearbyMobs = new();
 
     private TimeSpan _eggLayCooldown = TimeSpan.FromSeconds(300);
 
@@ -44,8 +54,8 @@ public sealed partial class XenoEggSystem : EntitySystem
         SubscribeLocalEvent<XenoOvipositorCapableComponent, XenoLayEggDoAfterEvent>(OnLayEggDoAfter);
 
         SubscribeLocalEvent<XenoEggComponent, MapInitEvent>(OnEggMapInit);
-        SubscribeLocalEvent<XenoEggComponent, StepTriggeredOffEvent>(OnEggStepped);
         SubscribeLocalEvent<XenoEggComponent, ActivateInWorldEvent>(OnEggActivate);
+        SubscribeLocalEvent<XenoEggComponent, DestructionEventArgs>(OnEggDestroyed);
 
         Subs.CVar(_config, RMCCVars.RMCXenoQueenEggLayCooldownSeconds, OnEggLayCooldownChanged, true);
     }
@@ -165,42 +175,103 @@ public sealed partial class XenoEggSystem : EntitySystem
 
     private void OnEggMapInit(Entity<XenoEggComponent> egg, ref MapInitEvent args)
     {
-        egg.Comp.NextGrow = _timing.CurTime + egg.Comp.GrowTime;
+        var seconds = _random.NextDouble(egg.Comp.MinGrowTime.TotalSeconds, egg.Comp.MaxGrowTime.TotalSeconds);
+        egg.Comp.NextGrow = _timing.CurTime + TimeSpan.FromSeconds(seconds);
         Dirty(egg);
+        _appearance.SetData(egg, XenoEggVisuals.State, egg.Comp.State);
     }
 
-    private void OnEggStepped(Entity<XenoEggComponent> egg, ref StepTriggeredOffEvent args)
-    {
-        if (_net.IsClient || !egg.Comp.Grown)
-            return;
-
-        if (!HasComp<MobStateComponent>(args.Tripper) || HasComp<XenoComponent>(args.Tripper))
-            return;
-
-        TryHatch(egg);
-    }
-
+    // Polonium: jak w NSV13 ksenomorf wyjmuje facehuggera z dojrzałego jaja i sprząta pustą skorupę.
     private void OnEggActivate(Entity<XenoEggComponent> egg, ref ActivateInWorldEvent args)
     {
         if (args.Handled || !args.Complex)
             return;
 
-        if (!HasComp<XenoComponent>(args.User) || !egg.Comp.Grown)
-            return;
-
         args.Handled = true;
-        TryHatch(egg);
+
+        if (!HasComp<XenoComponent>(args.User))
+        {
+            _popup.PopupEntity(Loc.GetString("xeno-egg-slimy"), egg, args.User);
+            return;
+        }
+
+        switch (egg.Comp.State)
+        {
+            case XenoEggState.Growing:
+                _popup.PopupEntity(Loc.GetString("xeno-egg-not-grown"), egg, args.User);
+                break;
+            case XenoEggState.Grown:
+                _popup.PopupEntity(Loc.GetString("xeno-egg-retrieve"), egg, args.User);
+                StartOpening(egg, kill: false);
+                break;
+            case XenoEggState.Opening:
+                _popup.PopupEntity(Loc.GetString("xeno-egg-opening"), egg, args.User);
+                break;
+            case XenoEggState.Opened:
+                _popup.PopupEntity(Loc.GetString("xeno-egg-clear"), egg, args.User);
+                if (_net.IsServer)
+                {
+                    _audio.PlayPvs(EggClearSound, egg);
+                    QueueDel(egg);
+                }
+                break;
+        }
     }
 
-    private void TryHatch(Entity<XenoEggComponent> egg)
+    // Zniszczone jajo zabija facehuggera w środku.
+    private void OnEggDestroyed(Entity<XenoEggComponent> egg, ref DestructionEventArgs args)
     {
-        if (_net.IsClient || !egg.Comp.Grown)
+        if (_net.IsClient || egg.Comp.State == XenoEggState.Opened)
             return;
 
+        var hugger = Spawn(egg.Comp.SpawnPrototype, Transform(egg).Coordinates);
+        if (TryComp<FacehuggerComponent>(hugger, out var comp))
+            _facehugger.Die((hugger, comp));
+    }
+
+    private void StartOpening(Entity<XenoEggComponent> egg, bool kill)
+    {
+        if (egg.Comp.State is not (XenoEggState.Growing or XenoEggState.Grown))
+            return;
+
+        egg.Comp.State = XenoEggState.Opening;
+        egg.Comp.KillChild = kill;
+        egg.Comp.OpenAt = _timing.CurTime + egg.Comp.OpenTime;
+        Dirty(egg);
+        _appearance.SetData(egg, XenoEggVisuals.State, egg.Comp.State);
+    }
+
+    private void FinishOpening(Entity<XenoEggComponent> egg)
+    {
+        egg.Comp.State = XenoEggState.Opened;
+        Dirty(egg);
+        _appearance.SetData(egg, XenoEggVisuals.State, egg.Comp.State);
+
         var coords = Transform(egg).Coordinates;
-        Spawn(egg.Comp.SpawnPrototype, coords);
         _audio.PlayPvs(EggBurstSound, coords);
-        QueueDel(egg);
+
+        var hugger = Spawn(egg.Comp.SpawnPrototype, coords);
+
+        if (!TryComp<FacehuggerComponent>(hugger, out var comp))
+            return;
+
+        if (egg.Comp.KillChild)
+            _facehugger.Die((hugger, comp));
+        else
+            _facehugger.TryLeapAtNearby((hugger, comp));
+    }
+
+    private bool HasVictimNearby(Entity<XenoEggComponent> egg)
+    {
+        _nearbyMobs.Clear();
+        _lookup.GetEntitiesInRange(Transform(egg).Coordinates, egg.Comp.TriggerRange, _nearbyMobs);
+        foreach (var mob in _nearbyMobs)
+        {
+            if (_facehugger.CanHug(mob) && _interaction.InRangeUnobstructed(egg.Owner, mob.Owner, egg.Comp.TriggerRange))
+                return true;
+        }
+
+        return false;
     }
 
     public override void Update(float frameTime)
@@ -224,21 +295,30 @@ public sealed partial class XenoEggSystem : EntitySystem
         var eggs = EntityQueryEnumerator<XenoEggComponent>();
         while (eggs.MoveNext(out var uid, out var egg))
         {
-            if (!egg.Grown)
+            var ent = new Entity<XenoEggComponent>(uid, egg);
+            switch (egg.State)
             {
-                if (time < egg.NextGrow)
-                    continue;
+                case XenoEggState.Growing:
+                    if (time < egg.NextGrow)
+                        continue;
 
-                egg.Grown = true;
-                egg.NextHatch = time + egg.HatchDelay;
-                Dirty(uid, egg);
-                continue;
+                    egg.State = XenoEggState.Grown;
+                    Dirty(uid, egg);
+                    _appearance.SetData(uid, XenoEggVisuals.State, egg.State);
+                    break;
+                case XenoEggState.Grown:
+                    if (time < egg.NextCheck)
+                        continue;
+
+                    egg.NextCheck = time + EggCheckDelay;
+                    if (HasVictimNearby(ent))
+                        StartOpening(ent, kill: false);
+                    break;
+                case XenoEggState.Opening:
+                    if (time >= egg.OpenAt)
+                        FinishOpening(ent);
+                    break;
             }
-
-            if (time < egg.NextHatch)
-                continue;
-
-            TryHatch((uid, egg));
         }
     }
 }

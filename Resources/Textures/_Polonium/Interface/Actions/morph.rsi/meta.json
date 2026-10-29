@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from ParadiseSS13 at https://github.com/ParadiseSS13/Paradise/blob/edee60476d21ee840643bd1abe7f6003a8c65773/icons/mob/actions/actions.dmi (states morph_mimic, morph_reproduce, morph_ambush, acid_vent)",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "mimic"
+      },
+      {
+        "name": "reveal"
+      },
+      {
+        "name": "devour"
+      },
+      {
+        "name": "stomach"
+      }
+    ]
+  }

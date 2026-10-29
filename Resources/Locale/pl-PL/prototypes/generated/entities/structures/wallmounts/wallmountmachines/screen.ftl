@@ -1,4 +1,6 @@
 ent-Screen = ekran
     .desc = Wyświetla tekst albo czas.
 ent-ArrivalsShuttleTimer = ekran przybycia
-    .desc = wyświetla czaś do przybycia wahadłowca
+    .desc = Wyświetla czas do przybycia wahadłowca.
+ent-ScreenDummy = { ent-Screen }
+    .desc = { ent-Screen.desc }

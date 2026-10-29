@@ -44,7 +44,7 @@
   id: ClothingShoesBootsMag
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase, BaseGrandTheftContraband]
+  parent: [ClothingShoesBootsMagBase, BaseGrandTheftContraband, ModSuitModuleMagbootsAdvanced] # Polonium: also fits a R.I.G. as its magboots module
   id: ClothingShoesBootsMagAdv
   name: advanced magboots
   description: State-of-the-art magnetic boots that do not slow down their wearer.
@@ -61,6 +61,7 @@
     tags:
     - WhitelistChameleon
     - HighRiskItem
+    - ModSuitModule # Polonium: fits a R.I.G. as its magboots module
   - type: StaticPrice
     price: 750
   - type: StealTarget

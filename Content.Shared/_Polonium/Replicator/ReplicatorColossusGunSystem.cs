@@ -10,6 +10,7 @@ using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Polonium.Replicator;
@@ -17,6 +18,9 @@ namespace Content.Shared._Polonium.Replicator;
 public sealed partial class ReplicatorColossusGunSystem : EntitySystem
 {
     private const float WallClearance = 0.15f;
+    private const int LaserShotCost = 2;
+
+    private static readonly EntProtoId LaserProto = "WeaponReplicatorColossusLaser";
 
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedGunSystem _gun = default!;
@@ -97,7 +101,7 @@ public sealed partial class ReplicatorColossusGunSystem : EntitySystem
         Dirty(ent);
 
         if (ent.Comp.SharedAmmo)
-            Drain(args.User, args.Ammo.Count);
+            Drain(args.User, args.Ammo.Count * (MetaData(ent).EntityPrototype?.ID == LaserProto.Id ? LaserShotCost : 1)); // hardcoded intentionally
     }
 
     public void Drain(Entity<ReplicatorColossusAmmoComponent?> ent, int amount)

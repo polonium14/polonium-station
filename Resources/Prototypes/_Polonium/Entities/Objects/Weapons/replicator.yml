@@ -209,15 +209,15 @@
   - type: Sprite
     state: disabler
   - type: Gun
-    fireRate: 9.6
+    fireRate: 7.14
     soundGunshot:
       path: /Audio/_Polonium/Weapons/Guns/colossus_minigun_nonlethal.ogg
       params:
         variation: 0.05
   - type: BasicEntityAmmoProvider
     proto: BulletReplicatorColossusDisabler
-    capacity: 120
-    count: 120
+    capacity: 100
+    count: 100
 
 - type: entity
   parent: BaseWeaponReplicatorColossusMinigun
@@ -236,8 +236,8 @@
         variation: 0.05
   - type: BasicEntityAmmoProvider
     proto: BulletReplicatorColossusLaser
-    capacity: 120
-    count: 120
+    capacity: 100
+    count: 100
 
 - type: entity
   parent: BaseWeaponReplicatorColossus

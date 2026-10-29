@@ -18,3 +18,5 @@ ent-StatusEffectDesoxyStamina = 2x max stamina
     .desc = { ent-StaminaModifierStatusEffect.desc }
 ent-StatusEffectStimulantsStamina = 1.5x max stamina
     .desc = { ent-StaminaModifierStatusEffect.desc }
+ent-StatusEffectAdrenaline = adrenaline
+    .desc = { ent-MobStatusEffectBase.desc }

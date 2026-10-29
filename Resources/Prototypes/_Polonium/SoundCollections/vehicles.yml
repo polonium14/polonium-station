@@ -1,0 +1,7 @@
+- type: soundCollection
+  id: BicycleChain
+  files:
+  - /Audio/_Polonium/Vehicles/bicycle_chain1.ogg
+  - /Audio/_Polonium/Vehicles/bicycle_chain2.ogg
+  - /Audio/_Polonium/Vehicles/bicycle_chain3.ogg
+  - /Audio/_Polonium/Vehicles/bicycle_chain4.ogg

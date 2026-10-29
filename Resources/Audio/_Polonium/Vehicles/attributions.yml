@@ -2,3 +2,13 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from tgstation via aq33/NSV13 (sound/vehicles/carrev.ogg)"
   source: "https://github.com/aq33/NSV13/blob/master/sound/vehicles/carrev.ogg"
+
+- files: ["bicycle_bell.ogg"]
+  license: "CC0-1.0"
+  copyright: "Made by nikiforov5000 of Freesound.org, cut, filtered and normalised for Polonium Station"
+  source: "https://freesound.org/people/nikiforov5000/sounds/330956/"
+
+- files: ["bicycle_chain1.ogg", "bicycle_chain2.ogg", "bicycle_chain3.ogg", "bicycle_chain4.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Made by InspectorJ on Freesound.org, cut, filtered, converted to mono and normalised for Polonium Station"
+  source: "https://freesound.org/people/InspectorJ/sounds/484470/"

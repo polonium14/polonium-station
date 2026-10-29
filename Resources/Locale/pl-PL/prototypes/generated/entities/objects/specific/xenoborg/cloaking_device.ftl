@@ -1,4 +1,4 @@
 ent-CloakingDevice = urządzenie maskujące
-    .desc = Urządzenie, które pozwala Ksenoborgom stać się niewidzialnymi.
-ent-SuperCloakingDevice = urządzenie do supermaskowania
-    .desc = Urządzenie, które pozwala Ksenoborgom stać się naprawdę niewidzialnymi.
+    .desc = Urządzenie, które pozwala ksenoborgom stać się niewidzialnymi.
+ent-SuperCloakingDevice = super urządzenie maskujące
+    .desc = Urządzenie, które pozwala ksenoborgom stać się naprawdę niewidzialnymi.

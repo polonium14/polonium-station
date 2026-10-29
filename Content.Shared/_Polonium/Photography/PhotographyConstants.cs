@@ -41,4 +41,10 @@ public static class PhotographyConstants
 
     /// <summary>Max aim distance (tiles). Generous so line-of-sight is the real limit; just stops absurd cross-map clicks.</summary>
     public const float PhotoMaxRange = 15f;
+
+    /// <summary>Longest caption a pen can write on a photo's bottom strip, in characters.</summary>
+    public const int CaptionMaxLength = 32;
+
+    /// <summary>Handwriting font for captions when the pen doesn't force its own.</summary>
+    public const string DefaultCaptionFont = "ReenieBeanie";
 }

@@ -103,6 +103,7 @@
   - Truncheon
   - TelescopicShield
   - HoloprojectorSecurity
+  - ModSuitModuleVisionSec # Polonium: R.I.G.
 
 - type: technology
   id: ExplosiveTechnology
