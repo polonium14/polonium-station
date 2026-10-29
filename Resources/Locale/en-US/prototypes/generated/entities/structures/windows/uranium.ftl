@@ -5,3 +5,6 @@ ent-UraniumWindowDirectional = directional uranium window
 ent-UraniumWindowDiagonal = { ent-UraniumWindow }
     .suffix = diagonal
     .desc = { ent-UraniumWindow.desc }
+ent-UraniumWindowDirectionalCorner = { ent-UraniumWindowDirectional }
+    .suffix = Corner
+    .desc = { ent-UraniumWindowDirectional.desc }

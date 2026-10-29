@@ -40,3 +40,5 @@ ent-MachineAnomalyVesselFlatpack = anomaly vessel flatpack
     .desc = A flatpack used for constructing an anomaly vessel.
 ent-ComputerBodyScannerFlatpack = body scanner flatpack
     .desc = A flatpack used for constructing a body scanner computer.
+ent-XenoborgExtractorFlatpack = xenoborg extractor flatpack
+    .desc = A flatpack used for constructing a xenoborg extractor.

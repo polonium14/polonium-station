@@ -168,7 +168,7 @@ def create_new_item_since(changelog: Any, channel: Any, since: int, now: datetim
         ET.SubElement(xml_entry, XML_NS_B + "author").text = entry["author"]
 
         for change in entry["changes"]:
-            attrs = {XML_NS_B + "type": change["type"]}
+            attrs = {XML_NS_B + "type": change.get("type", "")}
             ET.SubElement(xml_entry, XML_NS_B + "change", attrs).text = change["message"]
 
     return True
@@ -183,7 +183,7 @@ def generate_description_for_entries(entries: List[Any]) -> str:
         desc.write("<ul>\n")
         for entry in sorted(group, key=lambda x: x["time"]):
             for change in entry["changes"]:
-                emoji = TYPES_TO_EMOJI.get(change["type"], "")
+                emoji = TYPES_TO_EMOJI.get(change.get("type"), "")
 
                 # Polonium
                 if EXPERIMENTAL_LABEL in (entry.get("labels") or []):

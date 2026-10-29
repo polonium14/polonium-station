@@ -26,3 +26,5 @@ ent-HoloprojectorSecurity = holobarrier projector
 ent-HoloprojectorSecurityEmpty = { ent-HoloprojectorSecurity }
     .suffix = Empty
     .desc = { ent-HoloprojectorSecurity.desc }
+ent-HoloprojectorXenoField = Xenoborg deflector field projector
+    .desc = An alien device, projecting fields that deflect projectiles.

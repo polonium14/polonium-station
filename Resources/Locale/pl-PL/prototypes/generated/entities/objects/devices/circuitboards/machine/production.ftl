@@ -168,3 +168,5 @@ ent-CutterMachineCircuitboard = przecinarka (płytka maszynowa)
     .desc = { ent-BaseMachineCircuitboard.desc }
 ent-SmartFridgeCircuitboard = Inteligentna lodówka (płytka maszynowa)
     .desc = Płytka drukowana do Inteligentna lodówka.
+ent-StationTeleporterMachineCircuitboard = teleporter (płytka maszynowa)
+    .desc = Płytka drukowana maszyny do teleportera bluespace.

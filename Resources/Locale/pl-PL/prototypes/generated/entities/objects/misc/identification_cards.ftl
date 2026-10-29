@@ -146,3 +146,5 @@ ent-CBURNIDcard = identyfikator RCBZ
 ent-UniversalIDCard = uniwersalny identyfikator
     .desc = identyfikator, która daje dostęp poza twoje najśmielsze sny.
     .suffix = Admin
+ent-TramDriverIDCard = karta identyfikacyjna motorniczego
+    .desc = { ent-IDCardStandard.desc }

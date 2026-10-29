@@ -180,3 +180,5 @@ ent-ClothingHeadPropellerHat = czapka ze śmigiełkiem
     .desc = Jesteś najgrzeczniejszym chłopcem.
 ent-ClothingHeadHatMitreClown = mitra Honkomatki
     .desc = Trudno parafianom zobaczyć skórkę banana na podłodze, gdy patrzą w górę na twój wspaniały kapelusz.
+ent-ClothingHeadHatTramDriver = czapka motorniczego
+    .desc = Pachnie pewnością siebie.

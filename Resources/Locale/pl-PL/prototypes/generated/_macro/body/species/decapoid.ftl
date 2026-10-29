@@ -56,3 +56,5 @@ ent-OrganDecapoidLiver = { ent-OrganBaseLiver }
     .desc = { ent-OrganBaseLiver.desc }
 ent-OrganDecapoidKidneys = { ent-OrganBaseKidneys }
     .desc = { ent-OrganBaseKidneys.desc }
+ent-StatusEffectClumsyDecapoid = { ent-MobStatusEffectBase }
+    .desc = { ent-MobStatusEffectBase.desc }

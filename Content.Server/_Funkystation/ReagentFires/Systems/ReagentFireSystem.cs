@@ -30,6 +30,11 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+// Polonium
+using Content.Shared.CCVar;
+using Content.Shared.Maps;
+using Content.Shared.SubFloor;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server._Funkystation.ReagentFires.Systems
 {
@@ -48,6 +53,10 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
         [Dependency] private DamageableSystem _damageable = null!;
         [Dependency] private IConfigurationManager _cfg = null!;
         [Dependency] private InventorySystem _inventory = null!;
+        // Polonium
+        [Dependency] private SharedMapSystem _mapSystem = null!;
+        [Dependency] private TileSystem _tile = null!;
+        [Dependency] private TurfSystem _turf = null!;
 
         private readonly List<EntityUid> _toExtinguish = new();
         private readonly string[] _burntDecals = ["burnt1", "burnt2", "burnt3", "burnt4"];
@@ -62,6 +71,9 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
         private float _volumeScalingCurve = 1.5f;
         private float _smallPuddleBurnThreshold = 1.0f;
         private float _smallPuddleBurnPercent = 0.5f;
+        // Polonium
+        private int _tileDestroyBurntDecals = 4;
+        private float _tileDestroyEffectiveFlammability = 4f;
 
         public override void Initialize()
         {
@@ -74,6 +86,9 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
             Subs.CVar(_cfg, ReagentFireCVars.VolumeScalingCurve, value => _volumeScalingCurve = value, true);
             Subs.CVar(_cfg, ReagentFireCVars.SmallPuddleBurnThreshold, value => _smallPuddleBurnThreshold = value, true);
             Subs.CVar(_cfg, ReagentFireCVars.SmallPuddleBurnPercent, value => _smallPuddleBurnPercent = value, true);
+            // Polonium
+            Subs.CVar(_cfg, CCVars.TileDestroyBurntDecals, value => _tileDestroyBurntDecals = value, true);
+            Subs.CVar(_cfg, CCVars.TileDestroyEffectiveFlammability, value => _tileDestroyEffectiveFlammability = value, true);
             SubscribeLocalEvent<TransformComponent, TileExposedEvent>(OnTileExposed);
             SubscribeLocalEvent<PuddleComponent, TileFireEvent>(OnPuddleTileFire);
             SubscribeLocalEvent<ReagentPuddleFireComponent, ComponentShutdown>(OnFireShutdown);
@@ -454,19 +469,36 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                 var tileBurntDecals = 0;
                 foreach (var set in tileDecals)
                 {
+                    // Polonium
+                    if (set.Decal.Coordinates.Floored() != tilePos)
+                        continue;
+
                     if (Array.IndexOf(_burntDecals, set.Decal.Id) == -1)
                         continue;
                     tileBurntDecals++;
-                    if (tileBurntDecals > 4)
+                    if (tileBurntDecals > _tileDestroyBurntDecals) // Polonium
                         break;
                 }
 
-                if (tileBurntDecals < 4 && _random.Prob(0.25f))
+                if (tileBurntDecals < _tileDestroyBurntDecals && _random.Prob(0.25f)) // Polonium
                 {
                     _decalSystem.TryAddDecal(_burntDecals[_random.Next(_burntDecals.Length)],
                         new EntityCoordinates(gridUid.Value, tilePos),
                         out _,
                         cleanable: true);
+                }
+                // Polonium: Destroys tiles after enough burn decal stacks and when flame is highly effective
+                else if (tileBurntDecals >= _tileDestroyBurntDecals &&
+                         effectiveFlammability >= _tileDestroyEffectiveFlammability &&
+                         _random.Prob(0.25f) &&
+                         TryComp<MapGridComponent>(gridUid.Value, out var mapGrid) &&
+                         _mapSystem.TryGetTileRef(gridUid.Value, mapGrid, tilePos, out var tileRef))
+                {
+                    var tileDef = _turf.GetContentTileDefinition(tileRef);
+                    if (!tileDef.IsSubFloor && tileDef.CanCrowbar && !tileDef.Indestructible)
+                    {
+                        _tile.DeconstructTile(tileRef, spawnItem: false);
+                    }
                 }
 
                 var directions = new[] { new Vector2i(0, 1), new Vector2i(0, -1), new Vector2i(1, 0), new Vector2i(-1, 0) };
@@ -531,6 +563,11 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                         continue;
 
                     if (_transform.GetGridTilePositionOrDefault((ent, entXform)) != tilePos)
+                        continue;
+
+                    // Polonium: Subfloor entities covered by a tile that block interactions (e.g. cables, pipes) will not be damaged.
+                    // The exceptions are subfloor entities that do not block interactions while being covered, like vents or scrubbers. (Which can be interacted with)
+                    if (TryComp<SubFloorHideComponent>(ent, out var subFloor) && subFloor.BlockInteractions && subFloor.IsUnderCover)
                         continue;
 
                     if (HasComp<DamageableComponent>(ent))

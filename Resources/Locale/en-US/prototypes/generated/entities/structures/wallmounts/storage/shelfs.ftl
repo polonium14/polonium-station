@@ -23,3 +23,5 @@ ent-ShelfChemistry = chemical shelf
 ent-ShelfChemistryChemistrySecure = { ent-ShelfChemistry }
     .suffix = Chemistry, Secure
     .desc = { ent-ShelfChemistry.desc }
+ent-ShelfBaseWeak = { ent-ShelfBase }
+    .desc = { ent-ShelfBase.desc }

@@ -6,3 +6,5 @@ ent-GravityGeneratorMini = mini generator grawitacji
 ent-GravityGeneratorMiniUncharged = { ent-GravityGeneratorMini }
     .suffix = Nienaładowany
     .desc = { ent-GravityGeneratorMini.desc }
+ent-BaseGravityGenerator = { ent-BaseMachinePowered }
+    .desc = { ent-BaseMachinePowered.desc }

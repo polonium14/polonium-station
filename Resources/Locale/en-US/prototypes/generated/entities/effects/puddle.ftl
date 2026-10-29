@@ -36,3 +36,6 @@ ent-Puddle = puddle
     .desc = A puddle of liquid.
 ent-Footprint = footprint
     .desc = Huh? Whose footprints are these?
+ent-PuddleVentCrud = { ent-PuddleTemporary }
+    .suffix = Vent Crud
+    .desc = { ent-PuddleTemporary.desc }

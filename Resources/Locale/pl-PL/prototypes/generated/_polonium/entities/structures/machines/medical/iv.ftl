@@ -7,5 +7,5 @@ ent-IVBag = worek kroplówki
 ent-IVBagSaline = { ent-IVBag }
     .suffix = sól fizjologiczna
     .desc = { ent-IVBag.desc }
-ent-IVDripFlatpack = flatpack stojak na kroplówkę
-    .desc = Flatpack służący do zbudowania stojaka na kroplówkę.
+ent-IVDripFlatpack = zestaw do montażu stojaka na kroplówkę
+    .desc = Zestaw służący do zbudowania stojaka na kroplówkę.

@@ -30,3 +30,12 @@ ent-ActionChangelingNightVision = Toggle Night Vision
     .desc = Turns our night vision on/off.
 ent-ActionChangelingScreech = Screech
     .desc = We produce a deafening screech that weakens those around us.
+ent-ActionChangelingFakeMindshieldToggle = [color=green]Toggle Fake Mindshield[/color]
+    .desc = Turn our mindshield visibility on or off.
+ent-ActionChangelingStasis = [color=red]Enter Stasis[/color]
+    .desc = Enter a regenerative stasis, faking death and allowing to regenerate all damage.
+ent-ActionChangelingStasisWeak = { ent-ActionChangelingStasis }
+    .desc = { ent-ActionChangelingStasis.desc }
+ent-ActionChangelingStingMute = Mute Sting
+    Silently sting a target and inject them with chemicals that prevent them from speaking.
+    Requires 30 Chemicals.

@@ -19,8 +19,8 @@ Jeśli chcesz hostować lub tworzyć zawartość dla SS14, to właśnie to repoz
 
 Polski serwer:
 
-<a href="https://ss14.info/servers/polonium-1" target="_blank" rel="noopener">
-  <img src="https://ss14.info/badge/135.png?size=md&amp;theme=light" width="116" height="28" alt="[PL]🪐 Polonium | 🎓 Mamy TUTORIAL z gry! | 🤍❤️ Polskie Community — Online | 0/50">
+<a href="https://ss14.info/servers/polonium-1?utm_source=widget&amp;utm_medium=badge" target="_blank" rel="noopener">
+  <img src="https://ss14.info/badge/6610918.svg?size=md&amp;lang=pl" width="192" height="28" alt="[PL]🪐 Polonium | 🦹 Nowi antagoniści! | 🤍❤️ Polskie Community — Playtest | za 28 godzin">
 </a>
 
 </div>

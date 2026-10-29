@@ -1,0 +1,10 @@
+ent-WallMalignBase = malign wall
+    .desc = { ent-BaseStructureWall.desc }
+ent-WallMalignIndestructibleNoOcclusion = malign wall
+    .suffix = indestructible, no occlusion
+    .desc = { ent-WallMalignBase.desc }
+ent-WallMalignIndestructible = malign wall
+    .suffix = indestructible
+    .desc = { ent-WallMalignBase.desc }
+ent-WallMalign = malign wall
+    .desc = { ent-WallMalignBase.desc }

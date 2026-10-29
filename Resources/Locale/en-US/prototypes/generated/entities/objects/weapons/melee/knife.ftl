@@ -27,3 +27,5 @@ ent-ThrowingKnife = throwing knife
     .desc = This blood-red knife is very aerodynamic and easy to throw, but good luck trying to fight someone hand-to-hand.
 ent-UtilityKnife = utility knife
     .desc = A knife with a retractable, tiny blade. Useful as a box cutter and letter opener, among other things.
+ent-XenoborgBioKnife = bio knife
+    .desc = Melds itself to specific metabolizers and will deal extra damage to those targets!

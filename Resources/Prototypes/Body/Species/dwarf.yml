@@ -138,8 +138,9 @@
         - MobLayer
   - type: Vocal
     emoteSounds: UnisexDwarf
+  # Polonium: activate the existing Polish dwarf accent prototype.
   - type: ReplacementAccent
-    accent: scottish
+    accent: dwarf
   - type: Speech
     speechSounds: Bass
   - type: CreamPied
