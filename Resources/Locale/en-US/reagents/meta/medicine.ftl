@@ -180,3 +180,6 @@ reagent-desc-heparin = Commonly used as an anticoagulant medication. Causes bloo
 
 reagent-name-osteodine = osteodine
 reagent-desc-osteodine = A milk-white regenerative compound that knits shattered bone back together. A full 25 units in the bloodstream at once will completely mend every break in the body. Overdose causes nausea and joint pain.
+
+reagent-name-ignisol = ignisol
+reagent-desc-ignisol = A volatile medicinal extract that treats frostbite by rapidly raising body temperature. Highly flammable and can cause overheating when overdosed.
