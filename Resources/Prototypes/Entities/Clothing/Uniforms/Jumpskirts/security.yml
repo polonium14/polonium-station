@@ -5,9 +5,9 @@
   description: Someone who wears this means business.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirts/Security/detective.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/detective.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirts/Security/detective.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/detective.rsi # Polonium: Corvax sprites
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -27,7 +27,7 @@
   description: It's bright red and rather crisp, much like security's victims tend to be.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirts/Security/hos.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/hos.rsi # Polonium: Corvax sprites
   - type: Item
     inhandVisuals:
       left:
@@ -35,15 +35,15 @@
         color: "#C12D30"
         sprite: Clothing/Uniforms/Jumpskirts/Color/color.rsi
       - state: overlay-inhand-left
-        sprite: Clothing/Uniforms/Jumpsuits/Security/hos.rsi
+        sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/hos.rsi # Polonium: Corvax sprites
       right:
       - state: inhand-right
         color: "#C12D30"
         sprite: Clothing/Uniforms/Jumpskirts/Color/color.rsi
       - state: overlay-inhand-right
-        sprite: Clothing/Uniforms/Jumpsuits/Security/hos.rsi
+        sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/hos.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirts/Security/hos.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/hos.rsi # Polonium: Corvax sprites
 
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
@@ -74,9 +74,9 @@
   description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirts/Security/brigmedic.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/brigmedic.rsi # Polonium: SS220 sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirts/Security/brigmedic.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/brigmedic.rsi # Polonium: SS220 sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -125,7 +125,7 @@
   description: A jumpskirt made of strong material, providing robust protection.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirts/Security/security.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/security.rsi # Polonium: Corvax sprites
   - type: Item
     inhandVisuals:
       left:
@@ -133,15 +133,15 @@
         color: "#C12D30"
         sprite: Clothing/Uniforms/Jumpskirts/Color/color.rsi
       - state: overlay-inhand-left
-        sprite: Clothing/Uniforms/Jumpsuits/Security/security.rsi
+        sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/security.rsi # Polonium: Corvax sprites
       right:
       - state: inhand-right
         color: "#C12D30"
         sprite: Clothing/Uniforms/Jumpskirts/Color/color.rsi
       - state: overlay-inhand-right
-        sprite: Clothing/Uniforms/Jumpsuits/Security/security.rsi
+        sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/security.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirts/Security/security.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/security.rsi # Polonium: Corvax sprites
 
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseSecurityContraband]
@@ -150,7 +150,7 @@
   description: A formal security suit for officers complete with Nanotrasen belt buckle.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirts/Security/warden.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/warden.rsi # Polonium: Corvax sprites
   - type: Item
     inhandVisuals:
       left:
@@ -158,15 +158,15 @@
         color: "#C12D30"
         sprite: Clothing/Uniforms/Jumpskirts/Color/color.rsi
       - state: overlay-inhand-left
-        sprite: Clothing/Uniforms/Jumpsuits/Security/warden.rsi
+        sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/warden.rsi # Polonium: Corvax sprites
       right:
       - state: inhand-right
         color: "#C12D30"
         sprite: Clothing/Uniforms/Jumpskirts/Color/color.rsi
       - state: overlay-inhand-right
-        sprite: Clothing/Uniforms/Jumpsuits/Security/warden.rsi
+        sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/warden.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirts/Security/warden.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/warden.rsi # Polonium: Corvax sprites
 
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
@@ -197,6 +197,6 @@
   description: A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirts/Security/security_grey.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/security_grey.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirts/Security/security_grey.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/security_grey.rsi # Polonium: Corvax sprites
