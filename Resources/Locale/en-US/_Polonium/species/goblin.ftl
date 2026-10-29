@@ -1,1 +1,0 @@
-goblin-hurt-by-spacecleaner-popup = This cleans the goblin! It burns it!

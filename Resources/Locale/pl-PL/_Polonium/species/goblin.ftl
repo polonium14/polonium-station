@@ -1,1 +1,0 @@
-goblin-hurt-by-spacecleaner-popup = To czyści goblina! To parzy go!

@@ -98,10 +98,11 @@
   parent: [FoodMeatRawBase, BaseSlicingRefinableFood]
   id: FoodMeatGoblin
   name: surowe mięso goblińskie
-  description: Niesanitarne, ale tak gobliny zawsze wyglądają, nawet od środka.
+  description: Niesanitarne, ale gobliny zawsze tak wyglądają, nawet od środka.
   components:
   - type: Sprite
-    state: rotten
+    sprite: _Polonium/Objects/Cosumable/Food/meat.rsi
+    state: goblin
   - type: ToolRefinable
     refineResult:
     - id: FoodMeatGoblinCutlet
@@ -118,19 +119,12 @@
       - ReagentId: SpaceDrugs
         Quantity: 15
   - type: Construction
-    graph: MeatSteak
+    graph: GoblinSteak
     node: start
-    defaultTarget: meat steak
+    defaultTarget: goblin steak
   - type: Tag
     tags:
     - Meat
-  - type: Item
-    storedOffset: -2,1
-    inhandVisuals:
-      left:
-      - state: plain-inhand-left
-      right:
-      - state: plain-inhand-right
 
 - type: entity
   parent: FoodMeatCutletBase
@@ -149,14 +143,79 @@
       - ReagentId: Nutriment
         Quantity: 1
       - ReagentId: UncookedAnimalProteins
+        Quantity: 4
+      - ReagentId: THC
+        Quantity: 6
+      - ReagentId: SpaceDrugs
+        Quantity: 6
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/meat.rsi
+    state: goblinCutlet
+  - type: Construction
+    graph: GoblinCutlet
+    node: start
+    defaultTarget: goblin cutlet
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+
+
+- type: entity
+  parent: [FoodMeatCookedBase, BaseSlicingRefinableFood]
+  id: FoodMeatGoblinCooked
+  name: stek gobliński
+  description: Nieco lepiej wyglądające, dalej pełna halucogenów.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/meat.rsi
+    layers:
+    - state: goblinCooked
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMeatGoblinCutletCooked
+      amount: 4
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Protein
+        Quantity: 7
+      - ReagentId: THC
+        Quantity: 12
+      - ReagentId: SpaceDrugs
+        Quantity: 12
+  - type: Construction
+    graph: GoblinSteak
+    node: goblin steak
+
+- type: entity
+  parent: FoodMeatCutletCookedBase
+  id: FoodMeatGoblinCutletCooked
+  name: gobliński kotlet
+  description: Upieczony, dalej uzależniający, kotlet.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: Protein
         Quantity: 3
       - ReagentId: THC
-        Quantity: 4
+        Quantity: 5
       - ReagentId: SpaceDrugs
-        Quantity: 4
+        Quantity: 5
   - type: Sprite
-    state: cutlet
+    sprite: _Polonium/Objects/Cosumable/Food/meat.rsi
+    state: goblinCutlet
+    color: darkgreen
   - type: Construction
-    graph: Cutlet
-    node: start
-    defaultTarget: cutlet
+    graph: GoblinCutlet
+    node: goblin cutlet
+  - type: Item
+    inhandVisuals:
+      left: []
+      right: []
+
