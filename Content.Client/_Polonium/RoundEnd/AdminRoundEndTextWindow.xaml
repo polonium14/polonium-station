@@ -1,0 +1,45 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                      Title="{Loc 'admin-round-end-text-window-title'}"
+                      SetSize="560 680"
+                      MinSize="460 560">
+    <BoxContainer Orientation="Vertical" Margin="10" SeparationOverride="10">
+        <PanelContainer>
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#2B2618" BorderColor="#C9A227" BorderThickness="3 0 0 0" />
+            </PanelContainer.PanelOverride>
+            <RichTextLabel Name="NoticeLabel" Margin="10 6" />
+        </PanelContainer>
+
+        <BoxContainer Orientation="Vertical">
+            <Label Text="{Loc 'admin-round-end-text-rules-title'}" StyleClasses="LabelKeyText" />
+            <RichTextLabel Name="RulesLabel" />
+        </BoxContainer>
+
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" SeparationOverride="2">
+            <BoxContainer Orientation="Horizontal">
+                <Label Text="{Loc 'admin-round-end-text-text'}" StyleClasses="LabelKeyText" HorizontalExpand="True" />
+                <Label Name="LimitLabel" StyleClasses="LabelSubText" VAlign="Bottom" />
+            </BoxContainer>
+            <PanelContainer StyleClasses="BackgroundDark" VerticalExpand="True">
+                <TextEdit Name="TextInput" MinHeight="110" Margin="4" />
+            </PanelContainer>
+            <Label Name="StatusLabel" StyleClasses="LabelSubText" />
+        </BoxContainer>
+
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" SeparationOverride="2">
+            <Label Text="{Loc 'admin-round-end-text-preview'}" StyleClasses="LabelKeyText" />
+            <PanelContainer StyleClasses="BackgroundDark" VerticalExpand="True">
+                <ScrollContainer HScrollEnabled="False" VerticalExpand="True" MinHeight="90" Margin="6">
+                    <RichTextLabel Name="PreviewLabel" VerticalAlignment="Top" />
+                </ScrollContainer>
+            </PanelContainer>
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal">
+            <Label Name="LastEditLabel" StyleClasses="LabelSubText" HorizontalExpand="True" VAlign="Center" />
+            <Button Name="SaveButton" Text="{Loc 'admin-round-end-text-save'}" MinWidth="120" />
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>
