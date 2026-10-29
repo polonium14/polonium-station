@@ -19,4 +19,11 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> ChatHighlightVolume =
         CVarDef.Create("chat.highlight_volume", 1f, CVar.CLIENTONLY | CVar.ARCHIVE, "The volume of the chat highlight ping sound.");
+
+    /// <summary>
+    /// How many recent distinct chat messages a repeated message can be merged into, shown with an "xN" counter.
+    /// 0 disables chat stacking.
+    /// </summary>
+    public static readonly CVarDef<int> ChatRepeatHistory =
+        CVarDef.Create("chat.repeat_history", 4, CVar.SERVER | CVar.REPLICATED, "How many recent distinct chat messages a repeated message can be merged into. 0 disables it.");
 }
