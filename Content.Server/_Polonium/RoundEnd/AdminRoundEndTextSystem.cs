@@ -99,7 +99,7 @@ public sealed partial class AdminRoundEndTextSystem : EntitySystem
         var query = EntityQueryEnumerator<GameRuleComponent>();
         while (query.MoveNext(out var uid, out _))
         {
-            foreach (var comp in EntityManager.GetComponents(uid))
+            foreach (var comp in AllComps(uid))
             {
                 if (!textRuleComponents.Contains(comp.GetType()))
                     continue;
