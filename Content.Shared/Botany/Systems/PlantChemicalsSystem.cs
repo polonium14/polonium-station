@@ -4,6 +4,8 @@ using Content.Shared.Botany.Events;
 using Content.Shared.FixedPoint;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
+using Robust.Shared.Network;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Botany.Systems;
@@ -13,9 +15,11 @@ namespace Content.Shared.Botany.Systems;
 /// </summary>
 public sealed partial class PlantChemicalsSystem : EntitySystem
 {
+    [Dependency] private INetManager _net = default!;
     [Dependency] private BotanySystem _botany = default!;
     [Dependency] private PlantMutationSystem _mutation = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     [SubscribeLocalEvent]
     private void OnCrossPollinate(Entity<PlantChemicalsComponent> ent, ref PlantCrossPollinateEvent args)
@@ -36,9 +40,12 @@ public sealed partial class PlantChemicalsSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, false))
             return;
 
-        var random = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
-        var (chemicalId, quantity) = randomChems.Pick(random);
-        var amount = FixedPoint2.Max(random.NextFloat(0f, 1f) * quantity, FixedPoint2.Epsilon);
+        // TODO: No prediction until we have a better way to handle predicted random.
+        if (!_net.IsServer)
+            return;
+
+        var (chemicalId, quantity) = randomChems.Pick(_random);
+        var amount = FixedPoint2.Max(_random.NextFloat(0f, 1f) * quantity, FixedPoint2.Epsilon);
         var seedChemQuantity = new PlantChemQuantity();
         if (ent.Comp.Chemicals.TryGetValue(chemicalId, out var value))
         {
