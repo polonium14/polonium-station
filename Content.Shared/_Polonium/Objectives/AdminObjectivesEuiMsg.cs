@@ -35,14 +35,20 @@ public readonly record struct AdminObjectiveEntry(
     float? Progress,
     CustomObjectiveStatus? CustomStatus);
 
+/// <param name="Name">Localized name for the admin list, objectives usually get their real title only when assigned.</param>
+[Serializable, NetSerializable]
+public readonly record struct AdminStandardObjective(string Id, string Name, string Issuer);
+
 [Serializable, NetSerializable]
 public sealed class AdminObjectivesEuiState(
     string playerName,
     List<AdminObjectiveEntry> objectives,
+    List<AdminStandardObjective> standardObjectives,
     bool hasMind) : EuiStateBase
 {
     public readonly string PlayerName = playerName;
     public readonly List<AdminObjectiveEntry> Objectives = objectives;
+    public readonly List<AdminStandardObjective> StandardObjectives = standardObjectives;
     public readonly bool HasMind = hasMind;
 }
 

@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.EUI;
@@ -22,6 +23,7 @@ public sealed partial class AdminObjectivesEui : BaseEui
     [Dependency] private IPrototypeManager _prototypes = default!;
     [Dependency] private ILogManager _logManager = default!;
 
+    private readonly AdminObjectivesSystem _adminObjectives;
     private readonly CustomObjectiveSystem _customObjectives;
     private readonly SharedObjectivesSystem _objectives;
     private readonly SharedMindSystem _mind;
@@ -29,10 +31,14 @@ public sealed partial class AdminObjectivesEui : BaseEui
     private readonly NetUserId _target;
     private readonly string _targetName;
 
+    private List<AdminObjectiveEntry> _lastObjectives = new();
+    private bool _lastHasMind;
+
     public AdminObjectivesEui(IDependencyCollection deps, NetUserId target, string targetName)
     {
         deps.InjectDependencies(this, oneOff: true);
 
+        _adminObjectives = _entities.System<AdminObjectivesSystem>();
         _customObjectives = _entities.System<CustomObjectiveSystem>();
         _objectives = _entities.System<SharedObjectivesSystem>();
         _mind = _entities.System<SharedMindSystem>();
@@ -44,41 +50,66 @@ public sealed partial class AdminObjectivesEui : BaseEui
     public override void Opened()
     {
         base.Opened();
+        _adminObjectives.Register(this);
         StateDirty();
+    }
+
+    public override void Closed()
+    {
+        base.Closed();
+        _adminObjectives.Unregister(this);
+    }
+
+    /// <summary>
+    /// Sends a new state if the player's objectives or their progress changed since the last one.
+    /// </summary>
+    public void Refresh()
+    {
+        var hasMind = TryGetObjectives(out var objectives);
+        if (hasMind != _lastHasMind || !objectives.SequenceEqual(_lastObjectives))
+            StateDirty();
     }
 
     public override EuiStateBase GetNewState()
     {
-        var objectives = new List<AdminObjectiveEntry>();
-        var hasMind = _mind.TryGetMind(_target, out var mind);
+        _lastHasMind = TryGetObjectives(out _lastObjectives);
+        return new AdminObjectivesEuiState(
+            _targetName,
+            _lastObjectives,
+            _adminObjectives.GetStandardObjectives(),
+            _lastHasMind);
+    }
 
-        if (hasMind)
+    private bool TryGetObjectives(out List<AdminObjectiveEntry> objectives)
+    {
+        objectives = new List<AdminObjectiveEntry>();
+        if (!_mind.TryGetMind(_target, out var mind))
+            return false;
+
+        foreach (var uid in mind.Value.Comp.Objectives)
         {
-            foreach (var uid in mind!.Value.Comp.Objectives)
-            {
-                if (!_entities.TryGetComponent<ObjectiveComponent>(uid, out var comp))
-                    continue;
+            if (!_entities.TryGetComponent<ObjectiveComponent>(uid, out var comp))
+                continue;
 
-                var meta = _entities.GetComponent<MetaDataComponent>(uid);
-                var issuer = _prototypes.TryIndex(comp.Issuer, out var issuerProto)
-                    ? issuerProto.LocalizedName
-                    : comp.Issuer.Id;
-                CustomObjectiveStatus? status =
-                    _entities.TryGetComponent<CustomObjectiveConditionComponent>(uid, out var condition)
-                        ? condition.Status
-                        : null;
+            var meta = _entities.GetComponent<MetaDataComponent>(uid);
+            var issuer = _prototypes.TryIndex(comp.Issuer, out var issuerProto)
+                ? issuerProto.LocalizedName
+                : comp.Issuer.Id;
+            CustomObjectiveStatus? status =
+                _entities.TryGetComponent<CustomObjectiveConditionComponent>(uid, out var condition)
+                    ? condition.Status
+                    : null;
 
-                objectives.Add(new AdminObjectiveEntry(
-                    _entities.GetNetEntity(uid),
-                    meta.EntityName,
-                    meta.EntityDescription,
-                    issuer,
-                    _objectives.GetProgress(uid, mind.Value),
-                    status));
-            }
+            objectives.Add(new AdminObjectiveEntry(
+                _entities.GetNetEntity(uid),
+                meta.EntityName,
+                meta.EntityDescription,
+                issuer,
+                _objectives.GetProgress(uid, mind.Value),
+                status));
         }
 
-        return new AdminObjectivesEuiState(_targetName, objectives, hasMind);
+        return true;
     }
 
     public override void HandleMessage(EuiMessageBase msg)

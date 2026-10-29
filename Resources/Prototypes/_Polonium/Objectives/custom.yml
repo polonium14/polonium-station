@@ -9,6 +9,6 @@
     issuer: TheSyndicate
     unique: false
     icon:
-      sprite: Objects/Misc/bureaucracy.rsi
-      state: paper
+      sprite: _Polonium/Interface/Objectives/custom.rsi
+      state: icon
   - type: CustomObjectiveCondition

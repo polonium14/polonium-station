@@ -16,22 +16,47 @@
 
         <PanelContainer StyleClasses="LowDivider" MinSize="0 2" Margin="0 6" />
 
-        <TabContainer Name="AddTabs" MinHeight="280">
-            <BoxContainer Name="StandardTab" Orientation="Vertical" Margin="6">
-                <LineEdit Name="SearchEdit" PlaceHolder="{Loc 'admin-objectives-search-placeholder'}" />
-                <ItemList Name="PrototypeList" VerticalExpand="True" MinHeight="160" />
-                <Label Name="StandardErrorLabel" FontColorOverride="#FF3333" Visible="False" />
-                <Button Name="AddStandardButton" Text="{Loc 'admin-objectives-add'}" Margin="0 6 0 0" />
-            </BoxContainer>
-            <BoxContainer Name="CustomTab" Orientation="Vertical" Margin="6">
-                <LineEdit Name="TitleEdit" PlaceHolder="{Loc 'admin-objectives-title-placeholder'}" />
-                <TextEdit Name="DescriptionEdit" MinHeight="90" VerticalExpand="True" />
-                <Label Name="DescriptionLimitLabel" HorizontalAlignment="Right" StyleClasses="LabelSmall" />
+        <TabContainer Name="AddTabs" MinHeight="300">
+            <BoxContainer Orientation="Vertical"
+                          Margin="6"
+                          SeparationOverride="4"
+                          TabContainer.TabTitle="{Loc 'admin-objectives-tab-standard'}">
                 <BoxContainer Orientation="Horizontal">
-                    <Label Text="{Loc 'admin-objectives-issuer'}" Margin="0 0 8 0" />
+                    <LineEdit Name="SearchEdit"
+                              PlaceHolder="{Loc 'admin-objectives-search-placeholder'}"
+                              HorizontalExpand="True"
+                              Margin="0 0 6 0" />
+                    <OptionButton Name="IssuerFilter" MinWidth="200" />
+                </BoxContainer>
+                <ItemList Name="PrototypeList" VerticalExpand="True" MinHeight="160" />
+                <ScrollContainer Name="StandardErrorScroll"
+                                 HScrollEnabled="False"
+                                 MinHeight="48"
+                                 Visible="False">
+                    <RichTextLabel Name="StandardErrorLabel" />
+                </ScrollContainer>
+                <Button Name="AddStandardButton" Text="{Loc 'admin-objectives-add'}" />
+            </BoxContainer>
+            <BoxContainer Orientation="Vertical"
+                          Margin="6"
+                          SeparationOverride="4"
+                          TabContainer.TabTitle="{Loc 'admin-objectives-tab-custom'}">
+                <Label Text="{Loc 'admin-objectives-title'}" StyleClasses="LabelSubText" />
+                <LineEdit Name="TitleEdit" PlaceHolder="{Loc 'admin-objectives-title-placeholder'}" />
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'admin-objectives-description'}"
+                           StyleClasses="LabelSubText"
+                           HorizontalExpand="True" />
+                    <Label Name="DescriptionLimitLabel" StyleClasses="LabelSubText" />
+                </BoxContainer>
+                <PanelContainer StyleClasses="BackgroundDark" VerticalExpand="True">
+                    <TextEdit Name="DescriptionEdit" MinHeight="80" Margin="4" />
+                </PanelContainer>
+                <BoxContainer Orientation="Horizontal" Margin="0 2 0 0">
+                    <Label Text="{Loc 'admin-objectives-issuer'}" StyleClasses="LabelSubText" Margin="0 0 8 0" />
                     <OptionButton Name="IssuerOptions" HorizontalExpand="True" />
                 </BoxContainer>
-                <Button Name="AddCustomButton" Text="{Loc 'admin-objectives-add'}" Margin="0 6 0 0" />
+                <Button Name="AddCustomButton" Text="{Loc 'admin-objectives-add'}" />
             </BoxContainer>
         </TabContainer>
     </BoxContainer>
