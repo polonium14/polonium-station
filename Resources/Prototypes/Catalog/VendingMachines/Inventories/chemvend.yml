@@ -2,8 +2,8 @@
   id: ChemVendInventory
   startingInventory:
     Jug: 4
-    JugNitrogen: 3    # Azot
     JugAluminium: 2   # Aluminium
+    JugNitrogen: 3    # Azot
     JugChlorine: 1    # Chlor
     JugSugar: 3       # Cukier
     JugEthanol: 2     # Etanol
@@ -14,8 +14,8 @@
     JugLithium: 2     # Lit
     JugCopper: 2      # Miedź
     JugPotassium: 2   # Potas
-    JugMercury: 1     # Rtęć
     JugRadium: 1      # Rad
+    JugMercury: 1     # Rtęć
     JugSulfur: 1      # Siarka
     JugSodium: 2      # Sód
     JugOxygen: 3      # Tlen
@@ -31,8 +31,8 @@
   id: ChemVendInventorySyndicate
   startingInventory:
     Jug: 4
-    JugNitrogen: 3    # Azot
     JugAluminium: 2   # Aluminium
+    JugNitrogen: 3    # Azot
     JugChlorine: 1    # Chlor
     JugSugar: 3       # Cukier
     JugEthanol: 2     # Etanol
@@ -43,8 +43,8 @@
     JugLithium: 2     # Lit
     JugCopper: 2      # Miedź
     JugPotassium: 2   # Potas
-    JugMercury: 1     # Rtęć
     JugRadium: 1      # Rad
+    JugMercury: 1     # Rtęć
     JugSulfur: 1      # Siarka
     JugSodium: 2      # Sód
     JugOxygen: 3      # Tlen
