@@ -135,6 +135,6 @@
 
 - type: lobbyBackground
   id: OcieplamGo
-  background: /Textures/LobbyScreens/OcieplamGo.png
+  background: /Textures/LobbyScreens/OcieplamGo.webp
   title: lobby-state-background-ocieplamgo-title
   artist: lobby-state-background-ocieplamgo-artist
