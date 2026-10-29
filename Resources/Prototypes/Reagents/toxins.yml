@@ -488,7 +488,7 @@
       - !type:PopupMessage
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Arachnid ]
+          type: [ Animal, Vox, Arachnid, Goblin ]
           inverted: true
         type: Local
         visualType: MediumCaution
@@ -498,12 +498,12 @@
         probability: 0.1
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Arachnid ]
+          type: [ Animal, Vox, Plant, Arachnid, Goblin ]
           inverted: true
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Arachnid ]
+          type: [ Animal, Vox, Plant, Arachnid, Goblin ]
           inverted: true
         damage:
           types:
@@ -518,7 +518,7 @@
       - !type:AdjustReagent
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Arachnid ]
+          type: [ Animal, Arachnid, Goblin ]
         reagent: Protein
         amount: 0.5
       - !type:AdjustReagent

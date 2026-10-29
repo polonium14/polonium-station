@@ -93,3 +93,70 @@
     refineResult:
     - id: FoodMeatMoffParowa
       amount: 4
+
+- type: entity
+  parent: [FoodMeatRawBase, BaseSlicingRefinableFood]
+  id: FoodMeatGoblin
+  name: surowe mięso goblińskie
+  description: Niesanitarne, ale tak gobliny zawsze wyglądają, nawet od środka.
+  components:
+  - type: Sprite
+    state: rotten
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMeatGoblinCutlet
+      amount: 4
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 2
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 4
+      - ReagentId: THC
+        Quantity: 15
+      - ReagentId: SpaceDrugs
+        Quantity: 15
+  - type: Construction
+    graph: MeatSteak
+    node: start
+    defaultTarget: meat steak
+  - type: Tag
+    tags:
+    - Meat
+  - type: Item
+    storedOffset: -2,1
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      right:
+      - state: plain-inhand-right
+
+- type: entity
+  parent: FoodMeatCutletBase
+  id: FoodMeatGoblinCutlet
+  name: surowy gobliński kotlet
+  description: surowy, bardzo uzależniający, gobliński kotlet.
+  components:
+  - type: Tag
+    tags:
+    - Raw
+    - Cutlet
+    - Meat
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 1
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 3
+      - ReagentId: THC
+        Quantity: 4
+      - ReagentId: SpaceDrugs
+        Quantity: 4
+  - type: Sprite
+    state: cutlet
+  - type: Construction
+    graph: Cutlet
+    node: start
+    defaultTarget: cutlet

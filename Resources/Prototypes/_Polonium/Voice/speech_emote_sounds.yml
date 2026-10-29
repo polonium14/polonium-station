@@ -56,3 +56,28 @@
       collection: HonkClownBlobScream
     HonkClownWail:
       collection: HonkClownHorns
+
+- type: emoteSounds
+  id: Goblin
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
+  params:
+    variation: 0.130
+  sounds:
+    Scream:
+      path: /Audio/_Polonium/Voice/Goblin/goblinScream.ogg
+    Laugh:
+      path: /Audio/_Polonium/Voice/Goblin/goblinLaugh.ogg
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      collection: Whistles
+    Crying:
+      collection: MaleCry
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp

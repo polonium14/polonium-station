@@ -13,7 +13,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Apid, Thaven, Arachnid, Moth ]
+          type: [ Human, Animal, Rat, Plant, Apid, Thaven, Arachnid, Moth, Goblin ]
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -47,7 +47,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Arachnid, Moth, Apid, Thaven ] #Macrocosm, add Apid
+          type: [ Human, Animal, Rat, Plant, Arachnid, Moth, Apid, Thaven, Goblin ] #Macrocosm, add Apid
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -59,6 +59,14 @@
           inverted: true
         ratios:
           CarbonDioxide: 1.0
+          Oxygen: -1.0
+      # Creating Ammonia when in presence of oxygen (stinky).
+      - !type:ModifyLungGas
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Goblin ]
+        ratios:
+          Ammonia: 1.0
           Oxygen: -1.0
       - !type:HealthChange
         conditions:
