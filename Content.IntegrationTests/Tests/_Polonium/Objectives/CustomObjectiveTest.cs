@@ -3,6 +3,7 @@ using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Objectives;
 using Content.Shared._Polonium.Objectives;
 using Content.Shared.Mind;
+using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Player;
@@ -14,7 +15,7 @@ public sealed class CustomObjectiveTest : GameTest
     private const string DummyUsername = "CustomObjectiveTestUser";
     private const string Title = "Burn the cargo bay";
     private const string Description = "Start a fire in cargo and leave a calling card.";
-    private const string Issuer = "TheSyndicate";
+    private const string Issuer = "CentralCommand";
 
     public override PoolSettings PoolSettings => new()
     {
@@ -52,6 +53,7 @@ public sealed class CustomObjectiveTest : GameTest
             Assert.That(mindEnt.Comp.Objectives, Has.Count.EqualTo(2));
             Assert.That(server.EntMan.GetComponent<MetaDataComponent>(first).EntityName, Is.EqualTo(Title));
             Assert.That(server.EntMan.GetComponent<MetaDataComponent>(first).EntityDescription, Is.EqualTo(Description));
+            Assert.That(server.EntMan.GetComponent<ObjectiveComponent>(first).Issuer.Id, Is.EqualTo(Issuer));
             Assert.That(objectivesSys.GetProgress(first, mindEnt), Is.EqualTo(0f));
 
             Assert.That(customObjectives.TrySetStatus(mindEnt, first, CustomObjectiveStatus.Partial), Is.True);

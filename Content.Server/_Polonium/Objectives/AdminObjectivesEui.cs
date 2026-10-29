@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.EUI;
@@ -51,6 +52,7 @@ public sealed partial class AdminObjectivesEui : BaseEui
     {
         base.Opened();
         _adminObjectives.Register(this);
+        _admins.OnPermsChanged += OnPermsChanged;
         StateDirty();
     }
 
@@ -58,6 +60,13 @@ public sealed partial class AdminObjectivesEui : BaseEui
     {
         base.Closed();
         _adminObjectives.Unregister(this);
+        _admins.OnPermsChanged -= OnPermsChanged;
+    }
+
+    private void OnPermsChanged(AdminPermsChangedEventArgs args)
+    {
+        if (args.Player == Player && !_admins.HasAdminFlag(Player, AdminFlags.Admin))
+            Close();
     }
 
     /// <summary>

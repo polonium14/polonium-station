@@ -99,7 +99,13 @@ public sealed partial class AdminObjectivesSystem : EntitySystem
 
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
     {
-        if (args.WasModified<EntityPrototype>())
-            _standardObjectives = null;
+        if (!args.WasModified<EntityPrototype>())
+            return;
+
+        _standardObjectives = null;
+        foreach (var eui in _openEuis)
+        {
+            eui.StateDirty();
+        }
     }
 }
