@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: slarticodefast
-  changes:
-  - message: Fixed melee attack animations being rotated wrong if your camera is rotated.
-    type: Fix
-  id: 9585
-  time: '2026-03-21T17:02:28.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43307
 - author: SlartiBartFast, Verin
   changes:
   - message: Welders no longer perform an extra pass after a repair has completed.
@@ -4377,3 +4370,13 @@
   id: 10079
   time: '2026-10-27T17:49:49.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1166
+- author: Nikita
+  changes:
+  - message: "Zmniejszono szybko\u015B\u0107 rozpowszechniania si\u0119 kudzu cieniowego"
+    type: Tweak
+  - message: "Lekko zmniejszono szybko\u015B\u0107 rozpowszechniania si\u0119 kudzu\
+      \ z anomalii ro\u015Blinnej"
+    type: Tweak
+  id: 10080
+  time: '2026-10-29T10:04:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1169
