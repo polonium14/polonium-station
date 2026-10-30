@@ -153,6 +153,7 @@
       - ActionCritLastWords
   - type: StoreDamageTakenOnMind
   - type: Deathgasp
+  - type: Patdownable
   - type: HealthExaminable
     examinableTypes:
     - Blunt
