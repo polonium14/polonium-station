@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
 # SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Oxtailime <104200316+oxtailime@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -66,3 +67,23 @@
     antags:
     - !type:FixedAntagCount
       proto: Morph
+
+# Gobliny :D
+- type: entity
+  id: GoblinSpawnHorde
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-horde-announcement
+    startAudio:
+      path: /Audio/_Polonium/Announcements/attention.ogg
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 5
+    maxDuration: 20
+  - type: VentHordeRule
+    table: !type:GroupSelector
+      rolls: 2, 3
+      children:
+      - id: MobGoblinWild

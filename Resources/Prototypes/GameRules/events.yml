@@ -80,6 +80,7 @@
     - id: PowerGridCheck
     - id: RandomSentience
     - id: SlimesSpawnHorde
+    - id: GoblinSpawnHorde # Polonium. Added GoblinSpawnHorde
     - id: SolarFlare
     - id: SnakeSpawnHorde
     - id: SpiderClownSpawnHorde

@@ -488,7 +488,7 @@
       - !type:PopupMessage
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Arachnid ]
+          type: [ Animal, Vox, Arachnid]
           inverted: true
         type: Local
         visualType: MediumCaution
