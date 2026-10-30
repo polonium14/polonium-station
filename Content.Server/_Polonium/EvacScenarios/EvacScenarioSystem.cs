@@ -16,6 +16,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Shared.GameTicking.Rules;
 
 namespace Content.Server._Polonium.EvacScenarios;
 
@@ -138,11 +139,13 @@ public sealed partial class EvacScenarioSystem : GameRuleSystem<EvacScenarioComp
         if ((IsForced ? ForcedScenario : RollScenario()) is not { } id)
             return;
 
-        var rule = GameTicker.AddGameRule(id);
+        if (GameTicker.AddGameRule(id) is not { } rule)
+            return;
+
         if (!TryComp<EvacScenarioComponent>(rule, out var scenario))
         {
             Log.Error($"{id} was picked as an evac flight scenario but has no {nameof(EvacScenarioComponent)}");
-            GameTicker.EndGameRule(rule);
+            GameTicker.EndGameRule(rule.AsNullable());
             return;
         }
 
@@ -160,7 +163,7 @@ public sealed partial class EvacScenarioSystem : GameRuleSystem<EvacScenarioComp
             LogImpact.High,
             $"Evac flight scenario {id} {(IsForced ? "forced by an admin" : "rolled")} for {scenario.Shuttles.Count} emergency shuttle(s)");
 
-        GameTicker.StartGameRule(rule);
+        GameTicker.StartGameRule(rule.AsNullable());
     }
 
     private void OnFTLStarted(ref FTLStartedEvent ev)
@@ -204,9 +207,10 @@ public sealed partial class EvacScenarioSystem : GameRuleSystem<EvacScenarioComp
         }
     }
 
-    protected override void Ended(EntityUid uid, EvacScenarioComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
+    protected override void Ended(Entity<EvacScenarioComponent> rule, ref GameRuleEndedEvent args)
     {
-        base.Ended(uid, component, gameRule, args);
+        base.Ended(rule, ref args);
+        var component = rule.Comp;
 
         if (component.Music != null && component.Started && GameTicker.RunLevel == GameRunLevel.InRound)
             RaiseNetworkEvent(new StopStationEventMusic(StationEventMusicType.EvacScenario), Filter.Broadcast());

@@ -8,6 +8,7 @@ using Content.Server.StationEvents.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared.GameTicking.Components;
 using JetBrains.Annotations;
+using Content.Server.Station.Systems;
 
 namespace Content.Server._Polonium.StationEvents;
 
@@ -27,10 +28,10 @@ public sealed partial class BreakerDownRule : StationEventSystem<BreakerDownRule
     {
         base.Started(uid, component, gameRule, args);
 
-        if (!TryGetRandomStation(out var chosenStation))
+        if (!Station.TryGetRandomStation(out var chosenStation))
             return;
 
-        foreach (var (apcUid, apc) in StationSystem.GetEntitiesWithComponentOnStation<ApcComponent>(chosenStation.Value, true))
+        foreach (var (apcUid, apc) in Station.GetEntitiesWithComponentOnStation<ApcComponent>(chosenStation.Value, true))
         {
             if (!apc.MainBreakerEnabled)
                 continue;

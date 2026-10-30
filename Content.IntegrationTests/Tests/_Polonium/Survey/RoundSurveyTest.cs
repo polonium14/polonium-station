@@ -8,7 +8,7 @@ using Content.Server._Polonium.GameTicking;
 using Content.Server._Polonium.Survey;
 using Content.Server.Database;
 using Content.Server.GameTicking;
-using Content.Server.GameTicking.Presets;
+using Content.Shared.GameTicking.Prototypes;
 using Content.Shared._Polonium.Survey;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
@@ -361,7 +361,7 @@ public sealed class RoundSurveyTest : GameTest
         await Pair.RunTicksSync(10);
 
         var user = Pair.Player!.UserId;
-        var roundId = server.System<GameTicker>().RoundId;
+        var roundId = server.System<ServerGameTicker>().RoundId;
         var clientSurvey = client.System<ClientSurveySystem>();
 
         var memorable = string.Empty;
@@ -508,7 +508,7 @@ public sealed class RoundSurveyTest : GameTest
     {
         var server = Pair.Server;
         var client = Pair.Client;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
         var survey = server.System<ServerSurveySystem>();
         var clientSurvey = client.System<ClientSurveySystem>();
 
@@ -691,7 +691,7 @@ public sealed class RoundSurveyTest : GameTest
         await PlayRound();
 
         var user = Pair.Player!.UserId;
-        var roundId = server.System<GameTicker>().RoundId;
+        var roundId = server.System<ServerGameTicker>().RoundId;
 
         await client.WaitAssertion(() =>
         {
@@ -845,7 +845,7 @@ public sealed class RoundSurveyTest : GameTest
     {
         var server = Pair.Server;
         var client = Pair.Client;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
         var survey = server.System<ServerSurveySystem>();
         var loc = server.ResolveDependency<ILocalizationManager>();
 
@@ -940,7 +940,7 @@ public sealed class RoundSurveyTest : GameTest
         await PlayRound();
 
         var user = Pair.Player!.UserId;
-        var roundId = server.System<GameTicker>().RoundId;
+        var roundId = server.System<ServerGameTicker>().RoundId;
         var now = DateTime.UtcNow.AddMinutes(-1);
 
         SurveyResponse Answer(int value, int second)
@@ -1094,7 +1094,7 @@ public sealed class RoundSurveyTest : GameTest
         var started = DateTime.UtcNow;
         await PlayRound();
 
-        var roundId = server.System<GameTicker>().RoundId;
+        var roundId = server.System<ServerGameTicker>().RoundId;
         var clientSurvey = client.System<ClientSurveySystem>();
         await client.WaitPost(() => clientSurvey.Answer(roundId, TestQuestion, 4));
 
@@ -1180,7 +1180,7 @@ public sealed class RoundSurveyTest : GameTest
 
     private async Task PlayRound()
     {
-        var ticker = Pair.Server.System<GameTicker>();
+        var ticker = Pair.Server.System<ServerGameTicker>();
 
         await StartRound();
 
@@ -1192,7 +1192,7 @@ public sealed class RoundSurveyTest : GameTest
     private async Task StartRound()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
 
         await server.WaitPost(() => server.System<RoundMoodSystem>().SetVotes(new() { [TestMood] = 3 }));
         await Pair.WaitClientCommand("toggleready True");

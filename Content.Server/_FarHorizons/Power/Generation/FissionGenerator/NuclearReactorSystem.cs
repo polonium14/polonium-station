@@ -62,7 +62,7 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
     [Dependency] private ServerGlobalSoundSystem _soundSystem = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private StationSystem _station = default!;
+    [Dependency] private ServerStationSystem _station = default!;
     [Dependency] private UserInterfaceSystem _uiSystem = null!;
     [Dependency] private DeviceLinkSystem _signal = default!;
     [Dependency] private PopupSystem _popupSystem = default!;

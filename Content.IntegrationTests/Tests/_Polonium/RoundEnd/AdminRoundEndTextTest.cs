@@ -4,6 +4,7 @@ using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Shared._Polonium.RoundEnd;
 using Content.Shared.GameTicking;
+using Content.Shared.GameTicking.Rules.Components;
 using Robust.Shared.Localization;
 
 namespace Content.IntegrationTests.Tests._Polonium.RoundEnd;
@@ -54,7 +55,7 @@ public sealed class AdminRoundEndTextTest : GameTest
     public async Task OnlyEditableDuringRound()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
         var roundEndText = server.System<AdminRoundEndTextSystem>();
         var admin = Pair.Player!;
 

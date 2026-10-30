@@ -8,6 +8,7 @@ using Content.Shared._Polonium.RoundEnd;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Robust.Shared.Player;
+using Content.Shared.GameTicking.Rules;
 
 namespace Content.Server._Polonium.RoundEnd;
 
@@ -17,7 +18,7 @@ namespace Content.Server._Polonium.RoundEnd;
 public sealed partial class AdminRoundEndTextSystem : EntitySystem
 {
     [Dependency] private IAdminLogManager _adminLog = default!;
-    [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private ServerGameTicker _ticker = default!;
 
     // GameRuleSystem<T>.AppendRoundEndText is protected, so nameof cannot reach it.
     private const string AppendTextMethod = "AppendRoundEndText";

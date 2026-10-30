@@ -22,6 +22,8 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared.GameTicking.Rules;
+using Content.Shared.GameTicking;
 
 namespace Content.Server._Polonium.EvacScenarios;
 
@@ -76,9 +78,10 @@ public sealed partial class EvacCrashLandingSystem : GameRuleSystem<EvacCrashLan
         component.Planet = mapUid;
     }
 
-    protected override void Ended(EntityUid uid, EvacCrashLandingComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
+    protected override void Ended(Entity<EvacCrashLandingComponent> rule, ref GameRuleEndedEvent args)
     {
-        base.Ended(uid, component, gameRule, args);
+        base.Ended(rule, ref args);
+        var component = rule.Comp;
 
         // Called off before the crash, so fly to CentComm after all.
         var stillHeading = false;
@@ -108,9 +111,10 @@ public sealed partial class EvacCrashLandingSystem : GameRuleSystem<EvacCrashLan
         }
     }
 
-    protected override void AppendRoundEndText(EntityUid uid, EvacCrashLandingComponent component, GameRuleComponent gameRule, ref RoundEndTextAppendEvent args)
+    protected override void AppendRoundEndText(Entity<EvacCrashLandingComponent> rule, ref RoundEndTextAppendEvent args)
     {
-        base.AppendRoundEndText(uid, component, gameRule, ref args);
+        base.AppendRoundEndText(rule, ref args);
+        var component = rule.Comp;
 
         if (component.LandedAt == null)
             return;

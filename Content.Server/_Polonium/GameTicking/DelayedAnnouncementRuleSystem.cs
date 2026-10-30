@@ -4,6 +4,8 @@ using Content.Shared._Polonium.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+using Content.Server.GameTicking;
+using Content.Shared.GameTicking.Rules;
 
 namespace Content.Server._Polonium.GameTicking;
 
@@ -33,6 +35,6 @@ public sealed partial class DelayedAnnouncementRuleSystem : GameRuleSystem<Delay
         if (comp.Sound != null)
             _audio.PlayGlobal(comp.Sound, filter, true);
 
-        GameTicker.EndGameRule(uid, gameRule);
+        GameTicker.EndGameRule((uid, gameRule));
     }
 }
