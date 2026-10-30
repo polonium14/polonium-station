@@ -741,7 +741,7 @@
       state: Chef
   - type: PresetIdCard
     job: Chef
-    name: Yip-Yap
+    name: id-card-preset-yipyap # Polonium: localization id since Wizden #46101
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
