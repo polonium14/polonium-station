@@ -169,8 +169,9 @@ def filter_entries_since_previous_run(
 
 
 def send_entries(entries: list[ChangelogEntry]):
-    for entry in entries:
-        lines = changelog_entries_to_message_lines([entry])
+    rendered = [(entry, changelog_entries_to_message_lines([entry])) for entry in entries]
+
+    for entry, lines in rendered:
         if not lines:
             continue
         print(f"Sending changelog entry {entry.get('id')} by {entry.get('author')}")
@@ -281,7 +282,7 @@ def changelog_entries_to_message_lines(entries: Iterable[ChangelogEntry]) -> lis
                 url = None
 
             for change in entry["changes"]:
-                emoji = TYPES_TO_EMOJI.get(change["type"], "❓")
+                emoji = TYPES_TO_EMOJI.get(change.get("type"), "❓")
                 message = change["message"]
 
                 # Polonium

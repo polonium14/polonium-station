@@ -96,3 +96,10 @@ ent-ComputerNukieDelivery = syndicate delivery computer
     .desc =
         A computer that can bluespace in certain equipment for Nuclear Operations. 
         The circuitboard is integrated into the frame and can't be recovered if deconstructed.
+ent-ComputerStationTeleportersControl = station teleporters control console
+    .desc = Used to monitor station teleport system operations.
+ent-ComputerStationTeleportersControlFilled = { ent-ComputerStationTeleportersControl }
+    .suffix = Autofilled, Nanotrasen Network
+    .desc = { ent-ComputerStationTeleportersControl.desc }
+ent-ComputerSyndicateTeleportersControl = syndicate teleporters control console
+    .desc = { ent-ComputerStationTeleportersControl.desc }

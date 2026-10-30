@@ -38,3 +38,7 @@ ent-AltarFangs = fanged altar
     .desc = { ent-AltarHeaven.desc }
 ent-AltarBananium = honkmother altar
     .desc = A bananium altar dedicated to the honkmother.
+ent-AltarBaseSteel = { ent-AltarBase }
+    .desc = { ent-AltarBase.desc }
+ent-AltarBaseWood = { ent-AltarBase }
+    .desc = { ent-AltarBase.desc }

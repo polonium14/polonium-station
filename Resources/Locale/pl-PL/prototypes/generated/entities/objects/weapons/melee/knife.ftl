@@ -27,3 +27,5 @@ ent-ThrowingKnife = nóż do rzucania
     .desc = Ten krwistoczerwony nóż jest bardzo aerodynamiczny i łatwy do rzucania, ale powodzenia w walce wręcz.
 ent-UtilityKnife = nóż uniwersalny
     .desc = Nóż z wysuwanym, małym ostrzem. Przydatny jako nożyk do kartonów i otwieracz do listów.
+ent-XenoborgBioKnife = bionóż
+    .desc = Dopasowuje się do określonych metabolizerów i zadaje takim celom dodatkowe obrażenia!

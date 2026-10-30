@@ -34,19 +34,19 @@
       rockets:
         location: Right
     sortedHands:
+    - rockets
     - disabler
     - laser
-    - rockets
   - type: Loadout
     prototypes: [ ReplicatorColossusWeapons ]
   - type: ReplicatorColossusAmmo
-    capacity: 120
+    capacity: 100
     rechargeCooldown: 0.5
   - type: ReplicatorColossusPulse
     chargeEffect: EffectReplicatorColossusPulseCharge
     effect: EffectReplicatorColossusPulse
     arrivalEffect: EffectReplicatorColossusArrival
-    ammoDrain: 120
+    ammoDrain: 100
     chargeSound:
       path: /Audio/_Polonium/Effects/Replicators/colossus_pulse_charge.ogg
     sound:
@@ -57,7 +57,7 @@
     tile: FloorReplicator
     effect: EffectReplicatorColossusSweep
     convertEffect: EffectReplicatorConvert
-    ammoDrain: 120
+    ammoDrain: 100
     sound:
       path: /Audio/_Polonium/Effects/Replicators/colossus_sweep.ogg
     convertSound:
@@ -77,15 +77,9 @@
       settings: default
   - type: ActionGrant
     actions:
-    - ActionViewLaws
     - ActionReplicatorColossusPulse
     - ActionReplicatorColossusSweep
     - ActionReplicatorColossusBeacon
-    - ActionReplicatorTeleportPrey
-    - ActionReplicatorConvertFloor
-    - ActionReplicatorConvertWall
-    - ActionReplicatorBuildWall
-    - ActionReplicatorHolowall
   - type: Sprite
     drawdepth: Mobs
     noRot: true

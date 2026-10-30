@@ -38,6 +38,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
+using Robust.Shared.Timing; // Polonium
 using Robust.Shared.Utility;
 using Content.Shared.Rounding;
 using Robust.Shared.Collections;
@@ -69,6 +70,7 @@ public abstract partial class SharedStorageSystem : EntitySystem
     [Dependency] protected SharedUserInterfaceSystem UI = default!;
     [Dependency] private TagSystem _tag = default!;
     [Dependency] protected UseDelaySystem UseDelay = default!;
+    [Dependency] private IGameTiming _timing = default!; // Polonium
 
     [Dependency] private EntityQuery<ItemComponent> _itemQuery = default!;
     [Dependency] private EntityQuery<StackComponent> _stackQuery = default!;
@@ -975,6 +977,10 @@ public abstract partial class SharedStorageSystem : EntitySystem
         {
             if (!TryGetAvailableGridSpace((entity.Owner, entity.Comp), (args.Entity, null), out var location))
             {
+                // Polonium: the server already placed the item, its location may arrive in the storage state after the container state
+                if (_timing.ApplyingState)
+                    return;
+
                 ContainerSystem.Remove(args.Entity, args.Container, force: true);
                 return;
             }

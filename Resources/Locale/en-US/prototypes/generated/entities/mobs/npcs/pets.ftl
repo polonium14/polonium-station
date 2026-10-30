@@ -83,3 +83,7 @@ ent-MobCrabAtmos = Tropico
 ent-MobPollyParrot = Polly the parrot
     .desc = An expert in quantum cracker theory
   .gender = female
+ent-BaseUniquePet = { "" }
+    .desc = { "" }
+ent-MobCorgiIanBase = { ent-BaseUniquePet }
+    .desc = { ent-BaseUniquePet.desc }

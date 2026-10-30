@@ -24,5 +24,5 @@ ent-GeneratorRTG = RTG
     .desc = Radioizotopowy generator termoelektryczny przeznaczony do długotrwałego zasilania.
     .suffix = 10 kW
 ent-GeneratorRTGDamaged = uszkodzony RTG
-    .desc = Radioizotopowy generator termoelektryczny przeznaczony do długotrwałego zasilania. Ten egzemplarz ma uszkodzoną powłoke.
+    .desc = Radioizotopowy generator termoelektryczny przeznaczony do długotrwałego zasilania. Ten egzemplarz ma uszkodzoną powłokę.
     .suffix = 10 kW

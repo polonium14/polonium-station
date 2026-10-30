@@ -199,7 +199,7 @@ adjectives-dataset-198 = pełen życia
 adjectives-dataset-199 = sprawiedliwy
 adjectives-dataset-200 = wierny
 adjectives-dataset-201 = fantastyczny
-adjectives-dataset-202 = w porządku
+adjectives-dataset-202 = przyzwoity
 adjectives-dataset-203 = przyjazny
 adjectives-dataset-204 = zabawny
 adjectives-dataset-205 = delikatny
@@ -275,7 +275,7 @@ adjectives-dataset-274 = gruchający
 adjectives-dataset-275 = ogłuszający
 adjectives-dataset-276 = słaby
 adjectives-dataset-277 = ostry
-adjectives-dataset-278 = wysoki (dźwięk)
+adjectives-dataset-278 = cienkogłosy
 adjectives-dataset-279 = syczący
 adjectives-dataset-280 = stłumiony
 adjectives-dataset-281 = ochrypły
@@ -325,7 +325,7 @@ adjectives-dataset-324 = lepki
 adjectives-dataset-325 = mocny
 adjectives-dataset-326 = słodki
 adjectives-dataset-327 = cierpki
-adjectives-dataset-328 = bez smaku
+adjectives-dataset-328 = mdły
 adjectives-dataset-329 = smaczny
 adjectives-dataset-330 = spragniony
 adjectives-dataset-331 = trzepoczący
@@ -387,62 +387,62 @@ adjectives-dataset-386 = ciepły
 adjectives-dataset-387 = mokry
 adjectives-dataset-388 = obfity
 adjectives-dataset-389 = pusty
-adjectives-dataset-390 = niewiele
+adjectives-dataset-390 = nieliczny
 adjectives-dataset-391 = ciężki
 adjectives-dataset-392 = lekki
-adjectives-dataset-393 = wiele
+adjectives-dataset-393 = mnogi
 adjectives-dataset-394 = liczne
 adjectives-dataset-395 = znaczący
 adjectives-dataset-396 = kapitalistyczny
 
-adjectives-dataset-397 = zippy
+adjectives-dataset-397 = żwawy
 
-adjectives-dataset-398 = zesty
+adjectives-dataset-398 = żywiołowy
 
-adjectives-dataset-399 = ravenous
+adjectives-dataset-399 = wygłodniały
 
-adjectives-dataset-400 = abominable
+adjectives-dataset-400 = ohydny
 
-adjectives-dataset-401 = man-eating
+adjectives-dataset-401 = ludożerczy
 
-adjectives-dataset-402 = sly
+adjectives-dataset-402 = chytry
 
-adjectives-dataset-403 = aloof
+adjectives-dataset-403 = wyniosły
 
-adjectives-dataset-404 = sluggish
+adjectives-dataset-404 = ospały
 
-adjectives-dataset-405 = wise
+adjectives-dataset-405 = mądry
 
-adjectives-dataset-406 = noble
+adjectives-dataset-406 = szlachetny
 
-adjectives-dataset-407 = stealthy
+adjectives-dataset-407 = skradający się
 
-adjectives-dataset-408 = cowardly
+adjectives-dataset-408 = tchórzliwy
 
-adjectives-dataset-409 = sniveling
+adjectives-dataset-409 = mazgajowaty
 
-adjectives-dataset-410 = wriggling
+adjectives-dataset-410 = wijący się
 
-adjectives-dataset-411 = skittering
+adjectives-dataset-411 = pomykający
 
-adjectives-dataset-412 = wretched
+adjectives-dataset-412 = nędzny
 
-adjectives-dataset-413 = creeping
+adjectives-dataset-413 = pełzający
 
-adjectives-dataset-414 = cunning
+adjectives-dataset-414 = przebiegły
 
-adjectives-dataset-415 = reticulated
+adjectives-dataset-415 = siatkowany
 
-adjectives-dataset-416 = snapping
+adjectives-dataset-416 = kłapiący
 
-adjectives-dataset-417 = giant
+adjectives-dataset-417 = gigantyczny
 
-adjectives-dataset-418 = suspicious
+adjectives-dataset-418 = podejrzliwy
 
-adjectives-dataset-419 = sussy
+adjectives-dataset-419 = podejrzany
 
-adjectives-dataset-420 = blazed
+adjectives-dataset-420 = rozpalony
 
-adjectives-dataset-421 = curmudgeonly
+adjectives-dataset-421 = zrzędliwy
 
-adjectives-dataset-422 = pudgy
+adjectives-dataset-422 = pulchny

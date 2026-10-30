@@ -21,3 +21,7 @@ ent-WeaponLauncherAdmemeMeteorLarge = meteor launcher
 ent-WeaponLauncherAdmemeImmovableRodSlow = immovable rod launcher
     .desc = It fires slow immovable rods.
     .suffix = Admeme
+ent-WeaponGuidedMissileLauncherXenoborg = XB GML-78
+    .desc = A guided missile launcher.
+ent-WeaponRocketLauncherXenoborg = XB MRL-97-D
+    .desc = A alien rocket launcher fitted with special demolition rockets.

@@ -1,12 +1,12 @@
 ent-BaseFlag = { ent-BaseSign }
     .desc = { ent-BaseSign.desc }
 ent-BlankFlag = pusta flaga
-    .desc = Kawałek białego płótna. Napewno nie flaga Francji.
+    .desc = Kawałek białego płótna. Na pewno nie flaga Francji.
 ent-NTFlag = flaga Nanotrasen
-    .desc = Chwała Nanotrasen! czekaj czy oni naprawde zrobili flagę dla korporacji?
+    .desc = Chwała Nanotrasen! Czekaj, czy oni naprawdę zrobili flagę dla korporacji?
 ent-SyndieFlag = flaga syndykatu
-    .desc = Pachnię krwią. Śmierć Nanotrasen!
-ent-LGBTQFlag = flaga LGBTQF
+    .desc = Pachnie krwią. Śmierć Nanotrasen!
+ent-LGBTQFlag = flaga LGBTQ
     .desc = Flaga "bycia gejem i łamania prawa"
 ent-PirateFlag = flaga piracka
     .desc = Ze wzniesionym Jollry Rogerem wszyscy wyglądają jak szczury lądowe.

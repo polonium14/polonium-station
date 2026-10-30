@@ -62,6 +62,10 @@
     energy: 10
     color: "#1e070e"
     castShadows: false
+  - type: Tag # Polonium: upgrades a R.I.G. core
+    tags:
+    - ForceableFollow
+    - AnomalyCoreGravity
 
 - type: entity
   parent: BaseAnomalyCore
@@ -128,6 +132,10 @@
     energy: 3.5
     color: "#00ccff"
     castShadows: false
+  - type: Tag # Polonium: upgrades a R.I.G. core
+    tags:
+    - ForceableFollow
+    - AnomalyCoreBluespace
 
 - type: entity
   parent: BaseAnomalyCore
@@ -142,6 +150,10 @@
     color: "#ffffaa"
     castShadows: false
   - type: Electrified
+  - type: Tag # Polonium: upgrades a R.I.G. core
+    tags:
+    - ForceableFollow
+    - AnomalyCoreElectricity
 
 - type: entity
   parent: BaseAnomalyCore
@@ -239,6 +251,10 @@
     energy: 10
     color: "#1e070e"
     castShadows: false
+  - type: Tag # Polonium: upgrades a R.I.G. core
+    tags:
+    - ForceableFollow
+    - AnomalyCoreGravity
 
 - type: entity
   parent: BaseAnomalyInertCore
@@ -305,6 +321,10 @@
     energy: 3.5
     color: "#00ccff"
     castShadows: false
+  - type: Tag # Polonium: upgrades a R.I.G. core
+    tags:
+    - ForceableFollow
+    - AnomalyCoreBluespace
 
 - type: entity
   parent: BaseAnomalyInertCore
@@ -318,6 +338,10 @@
     energy: 2.0
     color: "#ffffaa"
     castShadows: false
+  - type: Tag # Polonium: upgrades a R.I.G. core
+    tags:
+    - ForceableFollow
+    - AnomalyCoreElectricity
 
 - type: entity
   parent: BaseAnomalyInertCore

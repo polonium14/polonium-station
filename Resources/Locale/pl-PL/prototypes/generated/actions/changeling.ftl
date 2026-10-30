@@ -5,7 +5,7 @@ ent-ActionChangelingBiodegrade = Biodegradacja
 ent-ActionChangelingDevour = [color=red]Pożarcie[/color]
     .desc = Pochłoń esencję ofiar i wchłoń ich tożsamość oraz umysł do własnego.
 ent-ActionChangelingTransform = Transformacja
-    .desc = Przemień się w innego humanoida. Nie obejmuje ubrań. Kosztuje 5 chemikaliów.
+    .desc = Przemień się i przyjmij tożsamość osób, które pochłonąłeś.
 ent-ActionChangelingStore = Sklep DNA
     .desc = Otwiera sklep ze zdolnościami.
 ent-ActionChangelingVoiceMimic = Naśladowanie głosu
@@ -30,3 +30,13 @@ ent-ActionChangelingNightVision = Przełącz noktowizję
     .desc = Włącza lub wyłącza nasze widzenie w ciemności.
 ent-ActionChangelingScreech = Wrzask
     .desc = Wydajemy ogłuszający wrzask, który osłabia otaczających nas.
+ent-ActionChangelingFakeMindshieldToggle = [color=green]Przełącz fałszywą tarczę umysłu[/color]
+    .desc = Włącz lub wyłącz widoczność naszej tarczy umysłu.
+ent-ActionChangelingStasis = [color=red]Wejdź w stazę[/color]
+    .desc = Wejdź w regeneracyjną stazę, udając śmierć, aby zregenerować wszystkie obrażenia.
+ent-ActionChangelingStasisWeak = { ent-ActionChangelingStasis }
+    .desc = { ent-ActionChangelingStasis.desc }
+ent-ActionChangelingStingMute =
+    Żądło wyciszające
+    Po cichu użądl cel i wstrzyknij mu substancje, które uniemożliwiają mówienie.
+    Wymaga 30 chemikaliów.

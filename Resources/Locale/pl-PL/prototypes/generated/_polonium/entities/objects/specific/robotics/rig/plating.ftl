@@ -1,0 +1,14 @@
+ent-BaseModSuitPlating = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-ModSuitPlatingEngineering = poszycie R.I.G. inżynieryjnego
+    .desc = Zewnętrzna warstwa R.I.G. z osłoną przed promieniowaniem. Załóż ją na gotową ramę, żeby powstał R.I.G. inżynieryjny.
+ent-ModSuitPlatingAtmospheric = poszycie R.I.G. atmosferycznego
+    .desc = Zewnętrzna warstwa R.I.G. odporna na ogień i wysoką temperaturę. Załóż ją na gotową ramę, żeby powstał R.I.G. atmosferyczny.
+ent-ModSuitPlatingMedical = poszycie R.I.G. medycznego
+    .desc = Lekka zewnętrzna warstwa R.I.G. w szpitalnej bieli. Załóż ją na gotową ramę, żeby powstał R.I.G. medyczny.
+ent-ModSuitPlatingSecurity = poszycie R.I.G. ochrony
+    .desc = Opancerzona zewnętrzna warstwa R.I.G. w czerwieni ochrony. Załóż ją na gotową ramę, żeby powstał R.I.G. ochrony.
+ent-ModSuitPlatingSalvage = poszycie R.I.G. górniczego
+    .desc = Wytrzymała zewnętrzna warstwa R.I.G. do pracy poza stacją. Załóż ją na gotową ramę, żeby powstał R.I.G. górniczy.
+ent-ModSuitPlatingCivilian = poszycie R.I.G. cywilnego
+    .desc = Prosta zewnętrzna warstwa R.I.G. Załóż ją na gotową ramę, żeby powstał R.I.G. cywilny.

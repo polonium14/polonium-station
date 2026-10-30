@@ -110,6 +110,7 @@
   - type: FaxMachine
     name: "Central Command"
     notifyAdmins: true
+    receiveAllStationGoals: true # Polonium: GtationGoal
 
 - type: entity
   parent: FaxMachineBase
@@ -144,5 +145,6 @@
     - type: FaxMachine
       name: "Captain's Office"
       receiveNukeCodes: true
+      receiveStationGoal: true # Polonium: StationGoal
     - type: StealTarget
       stealGroup: FaxMachineCaptain

@@ -129,7 +129,7 @@
     tags:
     - Structure
   - type: StaticPrice
-    price: 500
+    price: 600
 
 - type: constructionGraph
   id: ReplicatorColossusWreck

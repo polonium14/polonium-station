@@ -10,3 +10,5 @@ ent-HolosignSecurity = bariera holograficzna
     .desc = Bariera z twardego światła, która uniemożliwia ruch, ale jest dość słaba.
 ent-HolosignForcefield = holograficzne pole siłowe
     .desc = Potężne pole ochronne, które nie przepuszcza niczego – ani nawet tesli, ani osobliwości.
+ent-XenoborgDeflectorField = pole odbijające
+    .desc = Macierz energii złożona z przenikających się pól, które odbijają pociski. Potężna, ale krótkotrwała.

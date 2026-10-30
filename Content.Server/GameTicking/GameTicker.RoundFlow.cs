@@ -588,6 +588,8 @@ namespace Content.Server.GameTicking
             RaiseLocalEvent(textEv);
 
             var roundEndText = $"{text}\n{textEv.Text}";
+            // Polonium: admin-written round outcome goes above the summary, text append handlers have no fixed order
+            roundEndText = EntityManager.System<_Polonium.RoundEnd.AdminRoundEndTextSystem>().Prepend(roundEndText);
 
             //Get the timespan of the round.
             var roundDuration = RoundDuration();

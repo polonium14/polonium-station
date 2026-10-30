@@ -1,4 +1,4 @@
-ent-ClothingHeadHatBeretCaptainWhite = beret
+ent-ClothingHeadHatBeretCaptainWhite = biały beret kapitana
     .desc = Biały beret kapitana, ikona stylu.
 ent-ClothingHeadHatCapcapWhite = biała czapka kapitana
     .desc = Stylowa biała czapka kapitana.

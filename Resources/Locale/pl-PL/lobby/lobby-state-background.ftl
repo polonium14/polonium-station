@@ -24,3 +24,5 @@ lobby-state-background-drunkardsspreeredux-title = Drunkards' Spree Redux
 lobby-state-background-drunkardsspreeredux-artist = Saver310
 lobby-state-background-krzeslogang-title = Gang Krzeseł
 lobby-state-background-krzeslogang-artist = Saver310
+lobby-state-background-ocieplamgo-title = Ocieplam Go
+lobby-state-background-ocieplamgo-artist = Saver310

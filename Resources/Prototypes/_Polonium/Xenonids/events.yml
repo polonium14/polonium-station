@@ -1,0 +1,20 @@
+# Inwazja ksenomorfów z NSV13 (alien_infestation): 1-2 larwy z jednego wentylatora,
+# a ogłoszenie dopiero po 10 minutach, kiedy ul zdąży się zagnieździć.
+- type: entity
+  parent: BaseGameRule
+  id: XenoInfestation
+  components:
+  - type: StationEvent
+    weight: 5
+    earliestStart: 20
+    minimumPlayers: 15
+    maxOccurrences: 1
+    occursDuringRoundEnd: false
+    eventType: HostilesSpawn
+    duration: 600
+    endAnnouncement: station-event-xeno-infestation-announcement
+    endAudio:
+      path: /Audio/_Polonium/Announcements/attention.ogg
+  - type: GameRule
+    chaosScore: 500
+  - type: XenoInfestationRule

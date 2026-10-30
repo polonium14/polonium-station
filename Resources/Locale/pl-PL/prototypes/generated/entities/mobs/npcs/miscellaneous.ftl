@@ -1,6 +1,6 @@
-ent-MobLaserRaptor = draieżnik laserowy
+ent-MobLaserRaptor = drapieżnik laserowy
     .desc = Z epoki Wikingów.
-    .gender = mężczyzna
+    .gender = male
 ent-MobTomatoKiller = zabójczy pomidor
     .desc = Wygląda na to, że to nie ty jesz dzisiaj pomidory, ale pomidory jedzą ciebie.
-    .gender = mężczyzna
+    .gender = male

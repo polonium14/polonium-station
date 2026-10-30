@@ -1,0 +1,406 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseModSuitModule
+  components:
+  - type: Item
+  - type: Sprite
+  - type: Tag
+    tags:
+    - ModSuitModule
+  - type: GuideHelp
+    guides:
+    - RIG
+
+- type: entity
+  abstract: true
+  parent: BaseModSuitModule
+  id: BaseModSuitModuleToggle
+  components:
+  - type: ToggleableModule
+
+- type: entity
+  abstract: true
+  parent: BaseModSuitModuleToggle
+  id: BaseModSuitModuleAction
+  components:
+  - type: ToggleableModuleAction
+  - type: ToggleableUiModule
+
+# Storage
+
+- type: entity
+  abstract: true
+  parent: BaseModSuitModule
+  id: BaseModSuitModuleStorage
+  components:
+  - type: Item
+    size: Huge
+  - type: StorageModule
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container {}
+  - type: ModSuitModuleComplexity
+  - type: ModuleExclusivity
+    maximum: 1
+    blacklist:
+      components:
+      - StorageModule
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+
+- type: entity
+  parent: BaseModSuitModuleStorage
+  id: ModSuitModuleStorageNormal
+  name: R.I.G. storage module
+  description: A set of compartments and pockets built into the suit. Every R.I.G. leaves the factory with one installed.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/storage.rsi
+    state: storage
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,3,3
+
+- type: entity
+  parent: BaseModSuitModuleStorage
+  id: ModSuitModuleStorageExpanded
+  name: R.I.G. expanded storage module
+  description: Hidden compartments spread across the whole suit, with much more room than the standard storage. Replaces it, so the standard module has to be removed first.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/storage.rsi
+    state: large
+  - type: ModSuitModuleComplexity
+    complexity: 2
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,5,3
+
+- type: entity
+  parent: [ BaseModSuitModuleStorage, BaseSyndicateContraband ]
+  id: ModSuitModuleStorageSyndie
+  name: R.I.G. syndicate storage module
+  description: A storage system by Cybersun Industries that compresses the items put inside it.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/storage.rsi
+    state: syndie
+  - type: ModSuitModuleComplexity
+    complexity: 3
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,6,4
+
+# Movement
+
+- type: entity
+  parent: BaseModSuitModuleAction
+  id: ModSuitModuleJetpackNormal
+  name: R.I.G. ion jetpack module
+  description: Electric thrusters across the suit that accelerate ions using charge from the suit's cell instead of burning gas.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/jetpack.rsi
+    state: normal
+  - type: ModSuitModuleComplexity
+    complexity: 3
+  - type: RequireSealedModule
+    parts:
+    - Chestplate
+    - Control
+  - type: PowerDrainModule
+    enabledDraw: 0.25
+    onUseDraw: 0.5
+  - type: JetpackModule
+  - type: ModuleExclusivity
+    maximum: 1
+    blacklist:
+      components:
+      - JetpackModule
+  - type: ModSuitDeployableContainerVisuals
+    partType: Control
+  - type: ModuleContainerVisuals
+    clothingLayers:
+      true:
+        back:
+        - sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/jetpack.rsi
+          state: normal-worn-on
+      false:
+        back:
+        - sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/jetpack.rsi
+          state: normal-worn
+
+- type: entity
+  parent: BaseModSuitModuleAction
+  id: ModSuitModuleMagboots
+  name: R.I.G. magnetic stability module
+  description: Powerful electromagnets fitted into the boots of the suit.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/magboots.rsi
+    state: standard
+  - type: ModSuitModuleComplexity
+    complexity: 2
+  - type: RequireSealedModule
+    parts:
+    - Boots
+  - type: ToggleableComponentModSuitPartModule
+    part: Boots
+    components:
+    - type: Magboots
+  - type: PowerDrainModule
+    enabledDraw: 0.25
+  - type: MagbootsModule
+    modSuitPart: Boots
+  - type: SpeedModule
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ModuleExclusivity
+    maximum: 1
+    blacklist:
+      components:
+      - MagbootsModule
+  - type: ModSuitModuleOverlay
+    suffix: magboots
+    enabledSuffix: magboots-on
+
+# Lets the chief engineer's advanced magboots work as the magboots module of a R.I.G., drawn in place of its boots.
+- type: entity
+  abstract: true
+  id: ModSuitModuleMagbootsAdvanced
+  components:
+  - type: ToggleableModule
+  - type: ToggleableModuleAction
+  - type: ToggleableUiModule
+  - type: ModSuitModuleComplexity
+    complexity: 2
+  - type: RequireSealedModule
+    parts:
+    - Boots
+  - type: ToggleableComponentModSuitPartModule
+    part: Boots
+    components:
+    - type: Magboots
+    - type: NoSlip
+  - type: PowerDrainModule
+    enabledDraw: 0.25
+  - type: MagbootsModule
+    modSuitPart: Boots
+  - type: ModuleExclusivity
+    maximum: 1
+    blacklist:
+      components:
+      - MagbootsModule
+  - type: ModSuitHidePartModule
+    part: Boots
+  - type: ModSuitDeployableContainerVisuals
+    partType: Boots
+  - type: ModuleContainerVisuals
+    clothingLayers:
+      true:
+        shoes:
+        - sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
+          state: on-equipped-FEET
+      false:
+        shoes:
+        - sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
+          state: equipped-FEET
+    itemLayers:
+      true:
+      - sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
+        state: icon-on
+      false:
+      - sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
+        state: icon
+
+- type: entity
+  parent: BaseModSuitModuleAction
+  id: ModSuitModuleMobility
+  name: R.I.G. enhanced mobility module
+  description: Servos in the joints of the suit that help its wearer move faster, at the cost of a lot of power.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/mobility.rsi
+    state: mobility
+  - type: ModSuitModuleComplexity
+    complexity: 3
+  - type: PowerDrainModule
+    enabledDraw: 0.3
+  - type: SpeedModule
+    walkModifier: 1.15
+    sprintModifier: 1.15
+  - type: ModuleExclusivity
+    maximum: 1
+    blacklist:
+      tags:
+      - ModSuitModuleMobility
+  - type: Tag
+    tags:
+    - ModSuitModule
+    - ModSuitModuleMobility
+  - type: ModSuitModuleOverlay
+    suffix: mobility
+
+# Protection
+
+- type: entity
+  parent: BaseModSuitModuleToggle
+  id: ModSuitModuleInsulation
+  name: R.I.G. insulation module
+  description: Insulated lining for the gauntlets of the suit. Works while they are sealed.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/insulation.rsi
+    state: insulation
+  - type: ModSuitModuleComplexity
+    complexity: 1
+  - type: RequireSealedModule
+    enableOnSealed: true
+    parts:
+    - Gauntlets
+  - type: ToggleableComponentModSuitPartModule
+    part: Gauntlets
+    components:
+    - type: Insulated
+  - type: ModuleExclusivity
+    maximum: 1
+    blacklist:
+      tags:
+      - ModSuitModuleInsulation
+  - type: Tag
+    tags:
+    - ModSuitModule
+    - ModSuitModuleInsulation
+  - type: ModSuitModuleOverlay
+    suffix: insulation
+
+- type: entity
+  parent: BaseModSuitModuleToggle
+  id: ModSuitModuleVisionWelding
+  name: R.I.G. welding protection module
+  description: A polarized overlay in front of the eyes that protects them from welding and bright flashes. Works while the helmet is sealed.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/vision.rsi
+    state: welding
+  - type: ModSuitModuleComplexity
+    complexity: 1
+  - type: ToggleableComponentContainerModule
+    components:
+    - type: EyeProtection
+    - type: FlashImmunity
+  - type: RequireSealedModule
+    enableOnSealed: true
+    parts:
+    - Helmet
+  - type: ModSuitDeployableContainerVisuals
+    partType: Helmet
+  - type: ModuleContainerVisuals
+    clothingLayers:
+      true:
+        head:
+        - sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/vision.rsi
+          state: welding-worn
+
+# Visors
+
+- type: entity
+  abstract: true
+  parent: BaseModSuitModuleAction
+  id: BaseModSuitModuleVision
+  components:
+  - type: ModSuitModuleComplexity
+    complexity: 2
+  - type: RequireSealedModule
+    parts:
+    - Helmet
+  - type: PowerDrainModule
+    enabledDraw: 0.15
+
+- type: entity
+  parent: BaseModSuitModuleVision
+  id: ModSuitModuleVisionMed
+  name: R.I.G. medical visor module
+  description: A biological scanning suite in the helmet that shows the health of living beings around the wearer.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/vision.rsi
+    state: med
+  - type: ToggleableComponentContainerModule
+    components:
+    - type: ShowHealthBars
+    - type: ShowHealthIcons
+
+- type: entity
+  parent: BaseModSuitModuleVision
+  id: ModSuitModuleVisionDiagnostic
+  name: R.I.G. diagnostic visor module
+  description: Sensors in the helmet that show the integrity of machines, cyborgs and exosuits.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/vision.rsi
+    state: diagnostic
+  - type: ToggleableComponentContainerModule
+    components:
+    - type: ShowHealthBars
+      damageContainers:
+      - Inorganic
+      - Silicon
+
+- type: entity
+  parent: BaseModSuitModuleVision
+  id: ModSuitModuleVisionSec
+  name: R.I.G. security visor module
+  description: A targeting system connected to the criminal records, showing jobs, mindshields and the status of the people around.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/vision.rsi
+    state: sec
+  - type: ToggleableComponentContainerModule
+    components:
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+
+- type: entity
+  parent: BaseModSuitModuleVision
+  id: ModSuitModuleVisionMeson
+  name: R.I.G. meson visor module
+  description: Meson scanner technology built into the helmet, revealing pipes and cables under the floor.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/vision.rsi
+    state: meson
+  - type: ToggleableComponentModSuitPartModule
+    part: Helmet
+    components:
+    - type: TrayScanner
+      enabled: true
+    - type: GoggleShader
+      shader: Goggles
+      color: '#5AB43CCC'
+      enabled: true
+
+- type: entity
+  parent: BaseModSuitModuleVision
+  id: ModSuitModuleVisionNight
+  name: R.I.G. night vision module
+  description: Light amplifiers in the helmet that let the wearer see in complete darkness.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Specific/Robotics/ModSuits/Modules/vision.rsi
+    state: night
+  - type: ToggleableComponentContainerModule
+    components:
+    - type: NightVision
+      relayOverlay: true
+      overlayColor: "#98FB9840"
+      lightingColor: "#98FB9866"
+      noiseAmount: 0.4
+      noiseMultiplier: 1.25

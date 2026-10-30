@@ -1,9 +1,9 @@
 ent-ClothingBeltSheath = pochwa na szablę
     .desc = Ozdobna pochwa zaprojektowana na ostrze oficera.
 ent-ClothingBeltQuiver = kołczan
-    .desc = Can hold up to 15 arrows, and fits snug around your waist.
-ent-ClothingBeltBandolier = bandolier
-    .desc = Bandolier na amunicję do strzelby.
+    .desc = Mieści do 16 strzał i dobrze przylega do talii.
+ent-ClothingBeltBandolier = bandolet
+    .desc = Bandolet na amunicję do strzelby.
 ent-ClothingBeltWand = pas na różdżki
     .desc = Pas na różne różdżki mocy. Prawdziwa nerka egzotycznej magii.
 ent-ClothingBeltHolster = kabura naramienna

@@ -1,0 +1,450 @@
+- type: entity
+  abstract: true
+  id: ClothingOuterModSuitBase
+  categories: [ HideSpawnMenu ]
+  name: R.I.G. chestplate
+  description: The chestplate of a deployed R.I.G.
+  components:
+  - type: ModSuitSealable
+  - type: AllowSuitStorage
+  - type: Geiger
+    attachedToSuit: true
+  - type: HideLayerClothing
+    layers:
+      Tail: OUTERCLOTHING
+  - type: ModSuitSealablePowerDraw
+    powerDraw:
+      true: 0.02
+      false: 0.01
+  - type: ModSuitDeployableInventory
+  - type: ContainerContainer
+    containers:
+      mod_suit_inventory: !type:ContainerSlot {}
+  - type: Clothing
+    slots:
+    - outerClothing
+    clothingVisuals:
+      outerClothing: []
+  - type: Appearance
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: GuideHelp
+    guides:
+    - RIG
+
+- type: entity
+  parent: ClothingOuterModSuitBase
+  id: ClothingOuterModSuitEngineering
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+        state: icon
+    clothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+          state: equipped-OUTERCLOTHING-sealed
+      false:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+          state: equipped-OUTERCLOTHING
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+        state: equipped-OUTERCLOTHING-sealed
+      false:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+        state: equipped-OUTERCLOTHING
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+          state: equipped-OUTERCLOTHING-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/engineering.rsi
+        state: equipped-OUTERCLOTHING-sealed-unpowered
+    sealedComponents:
+    - type: PressureProtection
+      highPressureMultiplier: 0.04
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.05
+    - type: ExplosionResistance
+      damageCoefficient: 0.5
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.9
+          Shock: 0.8
+          Caustic: 0.5
+          Radiation: 0.2
+
+- type: entity
+  parent: ClothingOuterModSuitBase
+  id: ClothingOuterModSuitAtmospheric
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+        state: icon
+    clothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+          state: equipped-OUTERCLOTHING-sealed
+      false:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+          state: equipped-OUTERCLOTHING
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+        state: equipped-OUTERCLOTHING-sealed
+      false:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+        state: equipped-OUTERCLOTHING
+    unpoweredIconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+        state: icon-sealed-unpowered
+    unpoweredClothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+          state: equipped-OUTERCLOTHING-sealed-unpowered
+    unpoweredUiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/atmospheric.rsi
+        state: equipped-OUTERCLOTHING-sealed-unpowered
+    sealedComponents:
+    - type: PressureProtection
+      highPressureMultiplier: 0.02
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.05
+    - type: FireProtection
+      reduction: 0.8
+    - type: ExplosionResistance
+      damageCoefficient: 0.5
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.9
+          Heat: 0.8
+          Radiation: 0.5
+
+- type: entity
+  parent: ClothingOuterModSuitBase
+  id: ClothingOuterModSuitMedical
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/OuterClothing/ModSuits/medical.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/medical.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/medical.rsi
+        state: icon
+    clothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/medical.rsi
+          state: equipped-OUTERCLOTHING-sealed
+      false:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/medical.rsi
+          state: equipped-OUTERCLOTHING
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/medical.rsi
+        state: equipped-OUTERCLOTHING-sealed
+      false:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/medical.rsi
+        state: equipped-OUTERCLOTHING
+    sealedComponents:
+    - type: PressureProtection
+      highPressureMultiplier: 0.3
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.05
+    - type: ZombificationResistance
+      zombificationResistanceCoefficient: 0.4
+    - type: Armor
+      modifiers:
+        coefficients:
+          Caustic: 0.1
+
+- type: entity
+  parent: ClothingOuterModSuitBase
+  id: ClothingOuterModSuitSecurity
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/OuterClothing/ModSuits/security.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/security.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/security.rsi
+        state: icon
+    clothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/security.rsi
+          state: equipped-OUTERCLOTHING-sealed
+      false:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/security.rsi
+          state: equipped-OUTERCLOTHING
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/security.rsi
+        state: equipped-OUTERCLOTHING-sealed
+      false:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/security.rsi
+        state: equipped-OUTERCLOTHING
+    sealedComponents:
+    - type: PressureProtection
+      highPressureMultiplier: 0.5
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.05
+    - type: ExplosionResistance
+      damageCoefficient: 0.5
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.6
+          Slash: 0.6
+          Piercing: 0.6
+          Heat: 0.8
+          Caustic: 0.7
+
+- type: entity
+  parent: ClothingOuterModSuitBase
+  id: ClothingOuterModSuitSalvage
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/OuterClothing/ModSuits/salvage.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/salvage.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/salvage.rsi
+        state: icon
+    clothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/salvage.rsi
+          state: equipped-OUTERCLOTHING-sealed
+      false:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/salvage.rsi
+          state: equipped-OUTERCLOTHING
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/salvage.rsi
+        state: equipped-OUTERCLOTHING-sealed
+      false:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/salvage.rsi
+        state: equipped-OUTERCLOTHING
+    sealedComponents:
+    - type: PressureProtection
+      highPressureMultiplier: 0.5
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.05
+    - type: ExplosionResistance
+      damageCoefficient: 0.7
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.7
+          Slash: 0.6
+          Piercing: 0.7
+          Heat: 0.7
+          Radiation: 0.3
+          Caustic: 0.7
+
+- type: entity
+  parent: ClothingOuterModSuitBase
+  id: ClothingOuterModSuitCivilian
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/OuterClothing/ModSuits/civilian.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/civilian.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/civilian.rsi
+        state: icon
+    clothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/civilian.rsi
+          state: equipped-OUTERCLOTHING-sealed
+      false:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/civilian.rsi
+          state: equipped-OUTERCLOTHING
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/civilian.rsi
+        state: equipped-OUTERCLOTHING-sealed
+      false:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/civilian.rsi
+        state: equipped-OUTERCLOTHING
+    sealedComponents:
+    - type: PressureProtection
+      highPressureMultiplier: 0.6
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.05
+
+- type: entity
+  parent: ClothingOuterModSuitBase
+  id: ClothingOuterModSuitSyndicate
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/OuterClothing/ModSuits/syndicate.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/syndicate.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/syndicate.rsi
+        state: icon
+    clothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/syndicate.rsi
+          state: equipped-OUTERCLOTHING-sealed
+      false:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/syndicate.rsi
+          state: equipped-OUTERCLOTHING
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/syndicate.rsi
+        state: equipped-OUTERCLOTHING-sealed
+      false:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/syndicate.rsi
+        state: equipped-OUTERCLOTHING
+    sealedComponents:
+    - type: PressureProtection
+      highPressureMultiplier: 0.05
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.05
+    - type: ExplosionResistance
+      damageCoefficient: 0.5
+    - type: StaminaResistance
+      damageCoefficient: 0.75
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.5
+          Slash: 0.5
+          Piercing: 0.5
+          Heat: 0.5
+          Radiation: 0.5
+          Caustic: 0.5
+
+- type: entity
+  parent: ClothingOuterModSuitBase
+  id: ClothingOuterModSuitElite
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/OuterClothing/ModSuits/elite.rsi
+    state: icon
+  - type: ModSuitSealable
+    iconLayers:
+      true:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/elite.rsi
+        state: icon-sealed
+      false:
+      - sprite: _Polonium/Clothing/OuterClothing/ModSuits/elite.rsi
+        state: icon
+    clothingLayers:
+      true:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/elite.rsi
+          state: equipped-OUTERCLOTHING-sealed
+      false:
+        outerClothing:
+        - sprite: _Polonium/Clothing/OuterClothing/ModSuits/elite.rsi
+          state: equipped-OUTERCLOTHING
+    uiLayer:
+      true:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/elite.rsi
+        state: equipped-OUTERCLOTHING-sealed
+      false:
+        sprite: _Polonium/Clothing/OuterClothing/ModSuits/elite.rsi
+        state: equipped-OUTERCLOTHING
+    sealedComponents:
+    - type: PressureProtection
+      highPressureMultiplier: 0.02
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.01
+    - type: FireProtection
+      reduction: 0.8
+    - type: ExplosionResistance
+      damageCoefficient: 0.3
+    - type: StaminaResistance
+      damageCoefficient: 0.75
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.6
+          Slash: 0.6
+          Piercing: 0.6
+          Heat: 0.2
+          Radiation: 0.01
+          Caustic: 0.5

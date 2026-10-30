@@ -58,3 +58,5 @@ ent-ScrapGeneratorFrame = generator frame
     .desc = A frame of a P.A.C.M.A.N. or S.U.P.E.R.P.A.C.M.A.N. type generator. Where is the rest of it?
 ent-ScrapGeneratorFuelTank = fuel tank
     .desc = A fuel tank from a S.U.P.E.R.P.A.C.M.A.N. type generator. The gauge indicates its got a little fuel left.
+ent-ScrapTarget = bloodied target
+    .desc = Seems like something must have gotten in the way of its purpose.

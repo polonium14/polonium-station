@@ -27,3 +27,7 @@ ent-CannonBallGrapeshot = grapeshot
 ent-CannonBallGlassshot = glassshot
     .suffix = Pirate
     .desc = { ent-BaseCannonBall.desc }
+ent-BulletGuidedXenoborgMissile = guided xenoborg missile
+    .desc = { ent-BulletRocket.desc }
+ent-BulletXenoborgMechadermisRocket = mechadermis rocket
+    .desc = { ent-BaseBulletTrigger.desc }

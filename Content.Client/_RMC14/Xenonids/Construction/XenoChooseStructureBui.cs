@@ -54,7 +54,7 @@ public sealed partial class XenoChooseStructureBui : BoundUserInterface
 
             var tooltip = structure.Name;
             if (_xenoConstruction.GetStructurePlasmaCost(structureId) is { } cost)
-                tooltip = $"{tooltip} ({cost} plasma)";
+                tooltip = Loc.GetString("rmc-xeno-structure-tooltip-cost", ("name", tooltip), ("cost", cost));
 
             var isSelected = selected == structureId;
             options.Add(new RadialMenuActionOption<EntProtoId>(SelectStructure, structureId)

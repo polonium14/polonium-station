@@ -132,3 +132,9 @@
   background: /Textures/LobbyScreens/KrzesloGang.png
   title: lobby-state-background-krzeslogang-title
   artist: lobby-state-background-krzeslogang-artist
+
+- type: lobbyBackground
+  id: OcieplamGo
+  background: /Textures/LobbyScreens/OcieplamGo.webp
+  title: lobby-state-background-ocieplamgo-title
+  artist: lobby-state-background-ocieplamgo-artist

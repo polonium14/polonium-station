@@ -1,9 +1,9 @@
 ent-MobTick = kosmiczny kleszcz
-    .desc = To kosmiczny kleszcz, uważaj na jego paskudne ugryzienie. CD raportuje, że 90 procent amputacji nóg w ładowni jest spowodowanych ugryzieniami kosmicznych kleszczy.
-    .gender = mężczyzna
+    .desc = To kosmiczny kleszcz, uważaj na jego paskudne ugryzienie. CD raportuje, że 90 procent amputacji nóg w Logistyce jest spowodowanych ugryzieniami kosmicznych kleszczy.
+    .gender = male
 ent-SolutionVenomTick = { ent-Solution }
     .desc = { ent-Solution.desc }
 ent-MobTickSalvage = { ent-MobTick }
-    .suffix = Zasady Salvage
+    .suffix = Odzysk
     .desc = { ent-MobTick.desc }
-    .gender = mężczyzna
+    .gender = male

@@ -49,4 +49,4 @@ ent-ClothingBackpackDuffelSyndicateMedicalBundle = { ent-ClothingBackpackDuffelS
 ent-ClothingBackpackDuffelHolding = bezdenna torba podróżna
     .desc = Torba podróżna otwierająca się na lokalną kieszeń bluespace.
 ent-ClothingBackpackDuffelCBURN = torba podróżna CBURN
-    .desc = Torba podróżna z assortymentem sprzętu do izolacji biologicznej.
+    .desc = Torba podróżna z asortymentem sprzętu do izolacji biologicznej.

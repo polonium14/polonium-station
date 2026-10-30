@@ -99,7 +99,8 @@ public sealed partial class IonLawSystem : EntitySystem
         AddSelector("ION-WHO-RANDOM", DatasetFill("IonStormCrew"));
         AddSelector("ION-WHO-RANDOM", RandomManifestFill("IonStormCrew"));
 
-        AddSelector("ION-AREA", DatasetFill("IonStormAreas"));
+        // Polonium: genitive forms, because the pl-PL law reads "MUST GO TO <area>"
+        AddSelector("ION-AREA", DatasetFill("IonStormAreasGenitive"));
 
         AddSelector("ION-PART", ConstantFill(true));
         AddSelector("ION-PART", ConstantFill(false));

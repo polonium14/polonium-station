@@ -34,6 +34,7 @@ public sealed partial class PlayerPanelEui : BaseEui
             _console.ExecuteCommand(whitelisted ? $"whitelistremove \"{id}\"" : $"whitelistadd \"{id}\"");
         };
 
+        PlayerPanel.OnObjectives += username => _console.ExecuteCommand($"objectives \"{username}\""); // Polonium
         PlayerPanel.OnFreezeAndMuteToggle += () => SendMessage(new PlayerPanelFreezeMessage(true));
         PlayerPanel.OnFreeze += () => SendMessage(new PlayerPanelFreezeMessage());
         PlayerPanel.OnLogs += () => SendMessage(new PlayerPanelLogsMessage());

@@ -1,0 +1,14 @@
+ent-BaseModSuitPlating = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-ModSuitPlatingEngineering = engineering R.I.G. plating
+    .desc = The outer layer of a R.I.G., shielded against radiation. Fit it onto a finished shell to make an engineering R.I.G.
+ent-ModSuitPlatingAtmospheric = atmospheric R.I.G. plating
+    .desc = The outer layer of a R.I.G., resistant to fire and heat. Fit it onto a finished shell to make an atmospheric R.I.G.
+ent-ModSuitPlatingMedical = medical R.I.G. plating
+    .desc = A light outer layer of a R.I.G. in clinical white. Fit it onto a finished shell to make a medical R.I.G.
+ent-ModSuitPlatingSecurity = security R.I.G. plating
+    .desc = An armored outer layer of a R.I.G. in security red. Fit it onto a finished shell to make a security R.I.G.
+ent-ModSuitPlatingSalvage = salvage R.I.G. plating
+    .desc = A sturdy outer layer of a R.I.G. for work off-station. Fit it onto a finished shell to make a salvage R.I.G.
+ent-ModSuitPlatingCivilian = civilian R.I.G. plating
+    .desc = A simple outer layer of a R.I.G. Fit it onto a finished shell to make a civilian R.I.G.

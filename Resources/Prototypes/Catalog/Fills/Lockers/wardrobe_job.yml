@@ -269,6 +269,7 @@
     - id: ClothingUniformJumpskirtChaplain
     - id: PlushieLizardJobChaplain
       prob: 0.02
+    - id: VehicleBicycle # Polonium
 
 - type: entity
   id: WardrobeSecurityFilled

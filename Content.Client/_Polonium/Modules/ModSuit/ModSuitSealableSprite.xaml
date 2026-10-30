@@ -1,0 +1,8 @@
+<PanelContainer xmlns="https://spacestation14.io">
+    <TextureRect
+        Name="PartSprite"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        TextureScale="4 4"
+        Access="Public"/>
+</PanelContainer>
