@@ -236,8 +236,14 @@ public sealed partial class BedInternalsSystem : EntitySystem
                 ReturnMask(bed, patient, mask);
         }
 
-        if (TryComp<GasTankComponent>(state.PreviousTank, out var previousTank) && !TerminatingOrDeleted(state.PreviousTank.Value))
+        // Only when the patient is not already breathing from something else, which was their own choice.
+        if (TryComp<InternalsComponent>(patient, out var internals)
+            && internals.GasTankEntity == null
+            && TryComp<GasTankComponent>(state.PreviousTank, out var previousTank)
+            && !TerminatingOrDeleted(state.PreviousTank.Value))
+        {
             _gasTank.ConnectToInternals((state.PreviousTank.Value, previousTank), patient);
+        }
 
         RemComp<BedInternalsPatientComponent>(patient);
     }

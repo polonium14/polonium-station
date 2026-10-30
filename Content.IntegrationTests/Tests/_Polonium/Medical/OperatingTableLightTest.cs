@@ -103,6 +103,25 @@ public sealed class OperatingTableLightTest : GameTest
         });
     }
 
+    [Test]
+    public async Task AUserOutOfReachIsNotOfferedTheLight()
+    {
+        await SetUp();
+
+        await Server.WaitAssertion(() =>
+        {
+            var far = new MapCoordinates(new Vector2(40, 0), SEntMan.GetComponent<TransformComponent>(_table).MapID);
+            var farUser = SEntMan.SpawnEntity("MobHuman", far);
+
+            var text = Server.ResolveDependency<ILocalizationManager>().GetString("operating-table-light-turn-on");
+            var verbs = SEntMan.System<SharedVerbSystem>().GetLocalVerbs(_table, farUser, typeof(AlternativeVerb));
+            Assert.That(verbs.Any(v => v.Text == text), Is.False, "A user far from the table should not be offered the verb.");
+
+            var nearby = SEntMan.System<SharedVerbSystem>().GetLocalVerbs(_table, _user, typeof(AlternativeVerb));
+            Assert.That(nearby.Any(v => v.Text == text), "A user next to the table should be offered the verb.");
+        });
+    }
+
     private async Task UseLightVerb(string textKey)
     {
         await Server.WaitPost(() =>
@@ -124,6 +143,7 @@ public sealed class OperatingTableLightTest : GameTest
         await Server.WaitAssertion(() =>
         {
             Assert.That(Vitals(), Is.EqualTo(VitalsState.Healthy));
+            Assert.That(SEntMan.GetComponent<OperatingTableLightComponent>(_table).SoundState, Is.EqualTo(VitalsState.Healthy));
             Assert.That(SEntMan.GetComponent<OperatingTableMonitoredComponent>(_patient).Table, Is.EqualTo(_table));
         });
 

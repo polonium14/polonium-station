@@ -10,9 +10,15 @@ namespace Content.Shared._Polonium.Medical.OperatingTable;
 [Access(typeof(OperatingTableLightSystem))]
 public sealed partial class OperatingTableLightComponent : Component
 {
+    /// <summary>
+    /// Whether the overhead light is on. Applied to the table's point light and sprite when the component starts.
+    /// </summary>
     [DataField, AutoNetworkedField]
     public bool LightOn;
 
+    /// <summary>
+    /// Played when someone switches the light on or off.
+    /// </summary>
     [DataField]
     public SoundSpecifier ToggleSound = new SoundPathSpecifier("/Audio/Machines/button.ogg");
 
@@ -28,24 +34,36 @@ public sealed partial class OperatingTableLightComponent : Component
     [DataField]
     public float InjuredThreshold = 0.5f;
 
+    /// <summary>
+    /// Looping heartbeat of a healthy patient.
+    /// </summary>
     [DataField]
     public SoundSpecifier? HeartbeatHealthySound = new SoundPathSpecifier("/Audio/_Polonium/Medical/heartbeat_monitor.ogg")
     {
         Params = AudioParams.Default.WithLoop(true).WithVolume(-5f),
     };
 
+    /// <summary>
+    /// Looping heartbeat of an injured patient.
+    /// </summary>
     [DataField]
     public SoundSpecifier? HeartbeatInjuredSound = new SoundPathSpecifier("/Audio/_Polonium/Medical/heartbeat_monitor_injured.ogg")
     {
         Params = AudioParams.Default.WithLoop(true).WithVolume(-5f),
     };
 
+    /// <summary>
+    /// Looping heartbeat of a patient in critical condition.
+    /// </summary>
     [DataField]
     public SoundSpecifier? HeartbeatCriticalSound = new SoundPathSpecifier("/Audio/_Polonium/Medical/heartbeat_monitor_critical.ogg")
     {
         Params = AudioParams.Default.WithLoop(true).WithVolume(-5f),
     };
 
+    /// <summary>
+    /// Looping flatline tone once the patient is dead.
+    /// </summary>
     [DataField]
     public SoundSpecifier? FlatlineSound = new SoundPathSpecifier("/Audio/_Polonium/Medical/flatline.ogg")
     {

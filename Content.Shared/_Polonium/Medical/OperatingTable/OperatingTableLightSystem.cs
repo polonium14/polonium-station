@@ -31,6 +31,7 @@ public sealed partial class OperatingTableLightSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<OperatingTableLightComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<OperatingTableLightComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
         SubscribeLocalEvent<OperatingTableLightComponent, StrappedEvent>(OnStrapped);
         SubscribeLocalEvent<OperatingTableLightComponent, UnstrappedEvent>(OnUnstrapped);
@@ -40,6 +41,13 @@ public sealed partial class OperatingTableLightSystem : EntitySystem
         SubscribeLocalEvent<OperatingTableMonitoredComponent, DamageChangedEvent>(OnPatientDamageChanged,
             after: [typeof(MobThresholdSystem)]);
         SubscribeLocalEvent<OperatingTableMonitoredComponent, MobStateChangedEvent>(OnPatientMobStateChanged);
+    }
+
+    private void OnStartup(Entity<OperatingTableLightComponent> ent, ref ComponentStartup args)
+    {
+        // A table saved with its light on must look and shine the same after loading.
+        _appearance.SetData(ent, OperatingTableVisuals.LightOn, ent.Comp.LightOn);
+        _pointLight.SetEnabled(ent, ent.Comp.LightOn);
     }
 
     private void OnGetVerbs(Entity<OperatingTableLightComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)

@@ -11,6 +11,8 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Inventory;
 using Content.Shared.Verbs;
 using NUnit.Framework;
+using Robust.Client.GameObjects;
+using Robust.Server.GameStates;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Localization;
@@ -98,21 +100,61 @@ public sealed class BedInternalsTest : GameTest
         return container.ContainedEntities.Cast<EntityUid?>().FirstOrDefault();
     }
 
+    private async Task AssertTankLayer(bool visible, string? state)
+    {
+        await Pair.RunTicksSync(5);
+
+        await Client.WaitAssertion(() =>
+        {
+            var bed = ToClientUid(_bed);
+            var sprites = CEntMan.System<SpriteSystem>();
+
+            Assert.That(sprites.LayerMapTryGet(bed, "tank", out var index, false), "The bed sprite should have a tank layer.");
+            Assert.That(CEntMan.GetComponent<SpriteComponent>(bed)[index].Visible, Is.EqualTo(visible));
+
+            if (state != null)
+                Assert.That(sprites.LayerGetRsiState(bed, index).Name, Is.EqualTo(state));
+        });
+    }
+
     [Test]
     public async Task TankOverlayFollowsTheTankInTheSlot()
     {
         await SetUp("MedicalBed");
+
+        await Server.WaitPost(() => SEntMan.System<PvsOverrideSystem>().AddGlobalOverride(_bed));
 
         await Server.WaitAssertion(() =>
         {
             var appearance = SEntMan.System<SharedAppearanceSystem>();
             Assert.That(appearance.TryGetData<BedTankVisual>(_bed, BedInternalsVisuals.TankVisual, out var visual));
             Assert.That(visual, Is.EqualTo(BedTankVisual.Oxygen));
+        });
 
-            SEntMan.System<ItemSlotsSystem>().TryEject(_bed, GasSlot, null, out _);
+        await AssertTankLayer(true, "tank_2");
 
-            Assert.That(appearance.TryGetData(_bed, BedInternalsVisuals.TankVisual, out visual));
+        await Server.WaitPost(() => SEntMan.System<ItemSlotsSystem>().TryEject(_bed, GasSlot, null, out _));
+
+        await Server.WaitAssertion(() =>
+        {
+            var appearance = SEntMan.System<SharedAppearanceSystem>();
+            Assert.That(appearance.TryGetData<BedTankVisual>(_bed, BedInternalsVisuals.TankVisual, out var visual));
             Assert.That(visual, Is.EqualTo(BedTankVisual.None));
+        });
+
+        await AssertTankLayer(false, null);
+    }
+
+    [Test]
+    public async Task ANearbyUserIsOfferedTheToggleWithoutForcing()
+    {
+        await SetUp("MedicalBed");
+
+        await Server.WaitAssertion(() =>
+        {
+            var text = Server.ResolveDependency<ILocalizationManager>().GetString("bed-internals-verb-enable");
+            var verbs = SEntMan.System<SharedVerbSystem>().GetLocalVerbs(_bed, _user, typeof(InteractionVerb));
+            Assert.That(verbs.Any(v => v.Text == text), "A user next to the bed should be offered the verb.");
         });
     }
 

@@ -81,7 +81,9 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
-      - !type:EmptyAllContainersBehaviour
+      - !type:EmptyContainersBehaviour
+        containers:
+        - gasTankSlot
       - !type:SpawnEntitiesBehavior
         spawn:
           SheetSteel1:

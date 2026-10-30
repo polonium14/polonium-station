@@ -62,6 +62,8 @@
           False: {state: icon}
   - type: StaticPrice
     price: 100
+  - type: BedTankVisual # Polonium: overlay on a medical bed or operating table, the gas inside varies
+    visual: Generic
 
 - type: entity
   parent: BaseAction
