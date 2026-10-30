@@ -37,6 +37,9 @@ public sealed partial class EventSchedulerTest : GameTest
         var rule = SProtoMan.Index<EntityPrototype>(ruleId);
         Assert.That(rule.TryComp<GameRuleComponent>(out var ruleComp, SEntMan.ComponentFactory), Is.True);
         Assert.That(rule.TryComp<StationEventComponent>(out var eventComp, SEntMan.ComponentFactory), Is.True);
+        // Polonium: events with zero weight are only started by admins and never picked at random
+        if (eventComp!.Weight <= 0)
+            return;
         // TODO: This is A LOT of duplicate data we don't need. GameRules refactor some day...
         var time = TimeSpan.Compare(ruleComp!.ActivatedAt, TimeSpan.FromMinutes(eventComp!.EarliestStart)) > 0
             ? ruleComp.ActivatedAt
@@ -74,6 +77,8 @@ public sealed partial class EventSchedulerTest : GameTest
             Assert.That(_gameTicker.StartGameRule(selected, out var ruleEnt), $"GameTicker failed to add game rule!");
             SEntMan.EnsureComponent<ActiveGameRuleComponent>(ruleEnt!.Value);
             ruleEnt!.Value.Comp.ActivatedAt = curTime;
+            // Polonium: CanRun blocks an event while it is active, so end this run before checking the next one
+            _gameTicker.EndGameRule(ruleEnt.Value.AsNullable());
         }
 
         void TestReoccurance()
