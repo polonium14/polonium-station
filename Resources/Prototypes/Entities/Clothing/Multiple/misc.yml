@@ -39,3 +39,4 @@
     soundDeactivate:
       path: /Audio/Items/flashlight_off.ogg
   - type: NoiseProtection
+  - type: HearingMuffling # Polonium
