@@ -22,10 +22,16 @@ namespace Content.Server._Polonium.Administration;
 public sealed partial class TimeTransferPanelEui : BaseEui
 {
     private static readonly Regex PlainMinutes = new(@"^\d{1,9}$", RegexOptions.Compiled);
-    private static readonly Regex Duration = new(@"^(?:\d{1,6}(?:y|mo|w|d|h|m))+$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+    private static readonly Regex Duration = new(@"^(?:\d{1,6}(?:y|mo|w|d|h)|\d{1,9}m)+$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
     private static readonly Regex DurationPart = new(@"(\d+)(y|mo|w|d|h|m)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
     private const long MaxMinutes = 100L * 525960;
+    private const int MaxTimeStringLength = 64;
+
+    /// <summary>
+    /// Players whose play time is being changed right now, so overlapping requests cannot overwrite each other.
+    /// </summary>
+    private static readonly HashSet<NetUserId> TransfersInProgress = new();
 
     [Dependency] private IAdminManager _adminMan = default!;
     [Dependency] private IAdminLogManager _adminLog = default!;
@@ -69,7 +75,7 @@ public sealed partial class TimeTransferPanelEui : BaseEui
         catch (Exception e)
         {
             _sawmill.Error($"{Player.Name} ({Player.UserId}) failed to transfer play time: {e}");
-            SendWarning(Loc.GetString("time-transfer-panel-warning-error"), Color.Red);
+            SendWarning("time-transfer-panel-warning-error", Color.Red);
         }
     }
 
@@ -83,7 +89,14 @@ public sealed partial class TimeTransferPanelEui : BaseEui
 
         if (timeData.Count == 0)
         {
-            SendWarning(Loc.GetString("time-transfer-panel-warning-no-job"), Color.Red);
+            SendWarning("time-transfer-panel-warning-no-job", Color.Red);
+            return;
+        }
+
+        if (timeData.Count > _protoMan.Count<PlayTimeTrackerPrototype>())
+        {
+            _sawmill.Warning($"{Player.Name} ({Player.UserId}) sent {timeData.Count} play time trackers, more than exist");
+            SendWarning("time-transfer-panel-warning-error", Color.Red);
             return;
         }
 
@@ -93,13 +106,13 @@ public sealed partial class TimeTransferPanelEui : BaseEui
             if (!_protoMan.HasIndex<PlayTimeTrackerPrototype>(data.PlaytimeTracker))
             {
                 _sawmill.Warning($"{Player.Name} ({Player.UserId}) sent unknown play time tracker {data.PlaytimeTracker}");
-                SendWarning(Loc.GetString("time-transfer-panel-warning-bad-tracker", ("tracker", data.PlaytimeTracker)), Color.Red);
+                SendWarning("time-transfer-panel-warning-bad-tracker", Color.Red, ("tracker", data.PlaytimeTracker));
                 return;
             }
 
             if (ParseTime(data.TimeString) is not { } time)
             {
-                SendWarning(Loc.GetString("time-transfer-panel-warning-bad-time", ("tracker", data.PlaytimeTracker), ("time", data.TimeString)), Color.Red);
+                SendWarning("time-transfer-panel-warning-bad-time", Color.Red, ("time", data.TimeString));
                 return;
             }
 
@@ -107,24 +120,53 @@ public sealed partial class TimeTransferPanelEui : BaseEui
         }
 
         var located = await _playerLocator.LookupIdByNameOrIdAsync(playerId);
+
+        // Permissions can be revoked while the lookup is running.
+        if (!_adminMan.HasAdminFlag(Player, AdminFlags.Moderator))
+            return;
+
         if (located == null)
         {
             _sawmill.Warning($"{Player.Name} ({Player.UserId}) tried to change play time of a non-existing player {playerId}");
-            SendWarning(Loc.GetString("time-transfer-panel-no-player-database-message"), Color.Red);
+            SendWarning("time-transfer-panel-no-player-database-message", Color.Red);
             return;
         }
 
-        if (_playerMan.TryGetSessionById(located.UserId, out var session) && _playTimeMan.TryGetTrackerTimes(session, out _))
-            ApplyToOnlinePlayer(session, times, overwrite);
-        else
-            await ApplyToDatabase(located.UserId, times, overwrite);
+        if (!TransfersInProgress.Add(located.UserId))
+        {
+            SendWarning("time-transfer-panel-warning-busy", Color.Red);
+            return;
+        }
+
+        try
+        {
+            if (_playerMan.TryGetSessionById(located.UserId, out var session))
+            {
+                // Still loading from the database: a write now could be overwritten by the stale loaded data.
+                if (!_playTimeMan.TryGetTrackerTimes(session, out _))
+                {
+                    SendWarning("time-transfer-panel-warning-loading", Color.Red);
+                    return;
+                }
+
+                ApplyToOnlinePlayer(session, times, overwrite);
+            }
+            else
+            {
+                await ApplyToDatabase(located.UserId, times, overwrite);
+            }
+        }
+        finally
+        {
+            TransfersInProgress.Remove(located.UserId);
+        }
 
         _adminLog.Add(LogType.AdminCommands,
             LogImpact.High,
             $"{Player:actor} {(overwrite ? "set" : "added")} play time of {located.Username} for trackers: {string.Join(", ", times.Select(t => $"{t.Key} = {t.Value}"))}");
         _sawmill.Info($"{Player.Name} ({Player.UserId}) {(overwrite ? "set" : "added")} {times.Count} play time trackers for {located.Username} ({located.UserId})");
 
-        SendWarning(Loc.GetString(overwrite ? "time-transfer-panel-warning-set-success" : "time-transfer-panel-warning-add-success"), Color.LightGreen);
+        SendWarning(overwrite ? "time-transfer-panel-warning-set-success" : "time-transfer-panel-warning-add-success", Color.LightGreen);
     }
 
     /// <summary>
@@ -168,6 +210,9 @@ public sealed partial class TimeTransferPanelEui : BaseEui
     /// </summary>
     private static TimeSpan? ParseTime(string timeString)
     {
+        if (timeString.Length > MaxTimeStringLength)
+            return null;
+
         if (PlainMinutes.IsMatch(timeString))
         {
             var plain = long.Parse(timeString);
@@ -196,9 +241,9 @@ public sealed partial class TimeTransferPanelEui : BaseEui
         return minutes > MaxMinutes ? null : TimeSpan.FromMinutes(minutes);
     }
 
-    private void SendWarning(string message, Color color)
+    private void SendWarning(string locKey, Color color, params (string Name, string Value)[] args)
     {
-        SendMessage(new TimeTransferWarningEuiMessage(message, color));
+        SendMessage(new TimeTransferWarningEuiMessage(locKey, color, args.ToDictionary(a => a.Name, a => a.Value)));
     }
 
     public override void Opened()

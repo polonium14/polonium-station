@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Client.Eui;
 using Content.Shared._Polonium.Administration;
 using Content.Shared.Eui;
@@ -23,7 +24,6 @@ public sealed class TimeTransferPanelEui : BaseEui
     public override void Closed()
     {
         _panel.Close();
-        _panel.Dispose();
     }
 
     public override void HandleState(EuiStateBase state)
@@ -41,6 +41,8 @@ public sealed class TimeTransferPanelEui : BaseEui
         if (msg is not TimeTransferWarningEuiMessage warning)
             return;
 
-        _panel.UpdateWarning(warning.Message, warning.WarningColor);
+        var args = warning.Args.Select(arg => (arg.Key, (object) arg.Value)).ToArray();
+        _panel.SetBusy(false);
+        _panel.UpdateWarning(Loc.GetString(warning.LocKey, args), warning.WarningColor);
     }
 }

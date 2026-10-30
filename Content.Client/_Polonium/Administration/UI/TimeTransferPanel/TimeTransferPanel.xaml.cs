@@ -94,8 +94,14 @@ public sealed partial class TimeTransferPanel : DefaultWindow
             }
 
             dataList.AddRange(Entries()
-                .Where(entry => entry.InGroup())
+                .Where(entry => entry.Visible && entry.InGroup())
                 .Select(entry => new TimeTransferData(entry.PlaytimeTracker, groupTime)));
+
+            if (dataList.Count == 0)
+            {
+                UpdateWarning(Loc.GetString("time-transfer-panel-warning-no-job"), Color.DarkRed);
+                return;
+            }
         }
         else
         {
@@ -107,16 +113,26 @@ public sealed partial class TimeTransferPanel : DefaultWindow
 
                 dataList.Add(new TimeTransferData(entry.PlaytimeTracker, timeString));
             }
+
+            if (dataList.Count == 0)
+            {
+                UpdateWarning(Loc.GetString("time-transfer-panel-warning-no-time"), Color.DarkRed);
+                return;
+            }
         }
 
-        if (dataList.Count == 0)
-        {
-            UpdateWarning(Loc.GetString("time-transfer-panel-warning-no-job"), Color.DarkRed);
-            return;
-        }
-
+        SetBusy(true);
         OnTransferMessageSend?.Invoke(player, dataList, overwrite);
         UpdateWarning(Loc.GetString("time-transfer-panel-warning-transfer-process"), Color.Gold);
+    }
+
+    /// <summary>
+    /// Blocks the buttons while the server handles a request, so a double click cannot apply it twice.
+    /// </summary>
+    public void SetBusy(bool busy)
+    {
+        AddTimeButton.Disabled = busy;
+        SetTimeButton.Disabled = busy;
     }
 
     private void UpdateGroup()
@@ -147,8 +163,11 @@ public sealed partial class TimeTransferPanel : DefaultWindow
             return;
         }
 
-        TimeTransfer(true);
+        var expired = _gameTiming.CurTime > _setButtonResetOn;
         ResetSetButton();
+
+        if (!expired)
+            TimeTransfer(true);
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

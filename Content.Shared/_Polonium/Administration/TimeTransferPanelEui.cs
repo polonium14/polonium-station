@@ -22,10 +22,14 @@ public sealed class TimeTransferEuiMessage(string playerId, List<TimeTransferDat
 }
 
 [Serializable, NetSerializable]
-public sealed class TimeTransferWarningEuiMessage(string message, Color warningColor) : EuiMessageBase
+public sealed class TimeTransferWarningEuiMessage(string locKey, Color warningColor, Dictionary<string, string>? args = null) : EuiMessageBase
 {
-    public string Message { get; } = message;
+    /// <summary>
+    /// Localization key, resolved on the client so the text follows the admin's language and not the server's.
+    /// </summary>
+    public string LocKey { get; } = locKey;
     public Color WarningColor { get; } = warningColor;
+    public Dictionary<string, string> Args { get; } = args ?? new();
 }
 
 /// <summary>
