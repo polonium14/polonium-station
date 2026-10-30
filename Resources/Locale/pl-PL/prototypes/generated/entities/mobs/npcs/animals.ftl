@@ -120,7 +120,6 @@ ent-MobKoboldSyndicateAgent = { ent-MobBaseSyndicateKobold }
     .suffix = agent Syndykatu
     .desc = { ent-MobBaseSyndicateKobold.desc }
     .gender = male
-    .gender = mężczyzna
 ent-MobKoboldSyndicateAgentNukeops = { ent-MobBaseSyndicateKobold }
     .suffix = operatorzy nuklearni
     .desc = { ent-MobBaseSyndicateKobold.desc }
