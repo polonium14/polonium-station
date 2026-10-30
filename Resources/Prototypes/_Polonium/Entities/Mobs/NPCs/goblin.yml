@@ -48,6 +48,9 @@
     damage:
       types:
         Slash: 7
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
   - type: Hands
     startingHands:
       hand_left:
