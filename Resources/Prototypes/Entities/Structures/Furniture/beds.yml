@@ -160,21 +160,6 @@
   - type: BedInternals
     gasSlot: gasTankSlot
     maskContainer: bedMask
-  - type: Destructible # Polonium: the gas tank must not vanish with the bed
-    thresholds:
-    - trigger: *DamageFurnitureNormal
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:EmptyContainersBehaviour
-        containers:
-        - gasTankSlot
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          SheetSteel1:
-            min: 1
-            max: 2
   # Polonium end
 
 - type: entity

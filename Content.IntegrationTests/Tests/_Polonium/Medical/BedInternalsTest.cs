@@ -8,6 +8,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Buckle;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Destructible;
 using Content.Shared.Inventory;
 using Content.Shared.Verbs;
 using NUnit.Framework;
@@ -285,6 +286,38 @@ public sealed class BedInternalsTest : GameTest
             Assert.That(SEntMan.HasComponent<BedInternalsPatientComponent>(_patient), Is.False);
             Assert.That(BedMask(), Is.Not.Null, "The bed should keep its mask.");
         });
+    }
+
+    [Test]
+    public async Task DestroyingTheBedGivesTheTankBack()
+    {
+        await SetUp("MedicalBed");
+        await ToggleInternals();
+
+        await Server.WaitPost(() => SEntMan.System<SharedDestructibleSystem>().DestroyEntity(_bed));
+        await Pair.RunTicksSync(5);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.EntityExists(_tank), "The tank should survive the bed being destroyed.");
+            Assert.That(SEntMan.System<SharedContainerSystem>().IsEntityInContainer(_tank), Is.False);
+            Assert.That(SEntMan.GetComponent<GasTankComponent>(_tank).User, Is.Null);
+            Assert.That(SEntMan.GetComponent<InternalsComponent>(_patient).GasTankEntity, Is.Null);
+            Assert.That(SEntMan.System<InventorySystem>().TryGetSlotEntity(_patient, MaskSlot, out _), Is.False,
+                "The bed's mask should go back into the bed and be destroyed with it.");
+        });
+    }
+
+    [Test]
+    public async Task DeletingTheBedDoesNotGiveTheTankBack()
+    {
+        await SetUp("MedicalBed");
+
+        await Server.WaitPost(() => SEntMan.DeleteEntity(_bed));
+        await Pair.RunTicksSync(5);
+
+        await Server.WaitAssertion(() =>
+            Assert.That(SEntMan.EntityExists(_tank), Is.False, "Deleting the bed should delete what is inside it."));
     }
 
     [Test]

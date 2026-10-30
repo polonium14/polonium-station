@@ -4,6 +4,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Destructible;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
@@ -41,6 +42,7 @@ public sealed partial class BedInternalsSystem : EntitySystem
         SubscribeLocalEvent<BedInternalsComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
         SubscribeLocalEvent<BedInternalsComponent, StrappedEvent>(OnStrapped);
         SubscribeLocalEvent<BedInternalsComponent, UnstrappedEvent>(OnUnstrapped);
+        SubscribeLocalEvent<BedInternalsComponent, DestructionEventArgs>(OnDestroyed);
     }
 
     private void OnMapInit(Entity<BedInternalsComponent> ent, ref MapInitEvent args)
@@ -82,6 +84,15 @@ public sealed partial class BedInternalsSystem : EntitySystem
         // While the client applies a server state the patient and the mask are already in their final place.
         if (ent.Comp.Enabled && !_timing.ApplyingState)
             Disable(ent);
+    }
+
+    private void OnDestroyed(Entity<BedInternalsComponent> ent, ref DestructionEventArgs args)
+    {
+        if (_net.IsClient ||
+            !_container.TryGetContainer(ent, ent.Comp.GasSlot, out var container))
+            return;
+
+        _container.EmptyContainer(container, true, Transform(ent).Coordinates);
     }
 
     private void OnStrapped(Entity<BedInternalsComponent> ent, ref StrappedEvent args)
