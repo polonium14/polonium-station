@@ -227,7 +227,23 @@
       - id: Wirecutter
       - id: Screwdriver
       - id: Wrench
-      - id: Crowbar
+      - !type:GroupSelector # Polonium: random crowbar colours from forky #274
+        weight: 1
+        children:
+        - id: CrowbarGreen
+          weight: 10
+        - id: CrowbarYellow
+          weight: 10
+        - id: CrowbarOrange
+          weight: 10
+        - id: Crowbar
+          weight: 15
+        - id: CrowbarRed
+          weight: 10
+        - id: CrowbarCutePurple
+          weight: 1
+        - id: CrowbarCutePink
+          weight: 1 # Polonium end
       - id: Multitool
       - id: Shovel
       - id: Welder
