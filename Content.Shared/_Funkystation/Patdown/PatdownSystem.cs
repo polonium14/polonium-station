@@ -104,18 +104,7 @@ public sealed partial class PatdownSystem : EntitySystem
 
         foreach (var slotDef in slotDefinitions)
         {
-            if (!_inventory.TryGetSlotEntity(target, slotDef.Name, out var worn))
-                continue;
-
-            if (_tag.HasTag(worn.Value, ConcealedTag))
-                continue;
-
-            if (!TryComp<StorageComponent>(worn.Value, out var storage))
-                continue;
-
-            var hasVisibleItem = storage.StoredItems.Keys.Any(item => !_tag.HasTag(item, ConcealedTag));
-
-            if (hasVisibleItem)
+            if (_inventory.TryGetSlotEntity(target, slotDef.Name, out var worn) && IsRevealable(target, worn.Value))
                 validClothing.Add(worn.Value);
         }
 
@@ -132,6 +121,19 @@ public sealed partial class PatdownSystem : EntitySystem
         }
 
         return state;
+    }
+
+    // worn by target in an inventory slot, not concealed, and holding at least one non-concealed item
+    private bool IsRevealable(EntityUid target, EntityUid clothing)
+    {
+        if (TerminatingOrDeleted(clothing) || _tag.HasTag(clothing, ConcealedTag))
+            return false;
+
+        if (Transform(clothing).ParentUid != target || !_inventory.TryGetContainingSlot(clothing, out _))
+            return false;
+
+        return TryComp<StorageComponent>(clothing, out var storage)
+            && storage.StoredItems.Keys.Any(item => !_tag.HasTag(item, ConcealedTag));
     }
 
     private void OnPatdownDoAfter(Entity<PatdownableComponent> target, ref PatdownDoAfterEvent args)
@@ -166,7 +168,8 @@ public sealed partial class PatdownSystem : EntitySystem
 
                 state.Pending.RemoveAt(i);
 
-                if (TerminatingOrDeleted(clothing))
+                // clothing may have been taken off or emptied since the search started
+                if (!IsRevealable(target, clothing))
                     continue;
 
                 _popup.PopupEntity(
