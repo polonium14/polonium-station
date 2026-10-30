@@ -32,3 +32,7 @@ ent-MobSharkSalvage = { ent-MobShark }
     .suffix = Salvage Ruleset
     .desc = { ent-MobShark.desc }
   .gender = male
+ent-MobSharkDragon = { ent-MobShark }
+    .suffix = DragonBrood
+    .desc = { ent-MobShark.desc }
+  .gender = male
