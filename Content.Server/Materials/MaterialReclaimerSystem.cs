@@ -2,6 +2,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Ghost;
 using Content.Server.Popups;
+using Content.Server.Stack; // Polonium
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage.Systems;
@@ -33,6 +34,7 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
     [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private GibbingSystem _gibbing = default!;
     [Dependency] private PuddleSystem _puddle = default!;
+    [Dependency] private StackSystem _stack = default!; // Polonium: still merges output stacks, Wizden #43651 is not ported
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private IAdminLogManager _adminLogger = default!;
     [Dependency] private SharedDestructibleSystem _destructible = default!;
