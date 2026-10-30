@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Content.Shared.DeviceConfigurator.Components;
 using Content.Shared.DeviceConfigurator.Systems;
 using Robust.Shared.Timing;
@@ -38,7 +39,7 @@ public sealed partial class DeviceListPruneSystem : EntitySystem
             }
 
             if (stale)
-                _deviceList.UpdateDeviceList((uid, list), _alive);
+                _deviceList.UpdateDeviceList((uid, list), CollectionsMarshal.AsSpan(_alive));
         }
     }
 }
