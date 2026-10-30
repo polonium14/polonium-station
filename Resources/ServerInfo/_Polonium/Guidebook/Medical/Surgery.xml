@@ -22,6 +22,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="OperatingTable" />
   </Box>
 
+  Stół operacyjny ma lampę, którą włączysz i wyłączysz z menu Alt + klik, oraz monitor funkcji życiowych. Monitor pokazuje stan przypiętego pacjenta (zdrowy, ranny, krytyczny, martwy) i odtwarza odgłos jego serca, a po śmierci pacjenta sygnał asystolii. Stół ma też gniazdo na zbiornik gazu, tak jak łóżko medyczne: włóż butlę, przypnij pacjenta i wybierz „Włącz układ oddechowy”. Jeśli pacjent nie ma maski do oddychania, stół założy mu własną maskę, a jeśli ma, układ użyje jego maski.
+
   Jeśli pacjenci nie zostaną poddani znieczuleniu, będą odczuwać silny ból, co pogorszy ich samopoczucie i spowoduje pogorszenie stanu ran pooperacyjnych.
 
   <Box>
