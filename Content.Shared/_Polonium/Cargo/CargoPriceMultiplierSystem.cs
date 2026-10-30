@@ -18,12 +18,10 @@ public sealed partial class CargoPriceMultiplierSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<StationBankAccountComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<StationBankAccountComponent, ComponentStartup>(OnStartup);
     }
 
-    // The CVars are read only once, when the station is created, so changing them mid-round
-    // doesn't change prices that players have already seen and only applies from the next round.
-    private void OnMapInit(Entity<StationBankAccountComponent> ent, ref MapInitEvent args)
+    private void OnStartup(Entity<StationBankAccountComponent> ent, ref ComponentStartup args)
     {
         // The CVars are server-only, the client gets the values from the networked component.
         if (_net.IsClient)
