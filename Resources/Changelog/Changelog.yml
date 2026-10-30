@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: insoPL, Quantum-cross, ArtisticRoomba
-  changes:
-  - message: Hot gasses now have a visible distortion effect.
-    type: Add
-  id: 9595
-  time: '2026-03-29T02:36:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42973
 - author: HoofedEar
   changes:
   - message: Lathe machine interfaces now display their proper names
@@ -4384,3 +4377,14 @@
   id: 10089
   time: '2026-10-29T18:13:39.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1175
+- author: Nikita
+  changes:
+  - message: 1 arkusz replistali teraz kosztuje 60$
+    type: Add
+  - message: "Komponenty kolosalnego replikatora maj\u0105 teraz koszty w cargo"
+    type: Add
+  - message: "Rdze\u0144 kolosalnego kosztuje teraz 2500$"
+    type: Add
+  id: 10090
+  time: '2026-10-30T11:58:08.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1184
