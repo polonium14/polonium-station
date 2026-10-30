@@ -1,4 +1,5 @@
-﻿using Content.Shared.FixedPoint;
+﻿using System.Globalization; // Polonium
+using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.Manager;
@@ -25,7 +26,8 @@ public sealed partial class DeviceFrequencyTypeSerializer : ITypeReader<DeviceFr
             return new DeviceFrequency(value);
 
         // A double value with a decimal, serialized as being without it and cast back to ushort
-        if (double.TryParse(node.Value, out var dec))
+        // Polonium: invariant culture, "145.9" does not parse with a comma decimal separator (pl-PL)
+        if (double.TryParse(node.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out var dec))
             return new DeviceFrequency((ushort) FixedPoint2.New(dec).Value);
 
         if (_protoMan.TryIndex<DeviceFrequencyPrototype>(node.Value, out var proto))
@@ -40,7 +42,7 @@ public sealed partial class DeviceFrequencyTypeSerializer : ITypeReader<DeviceFr
         ISerializationContext? context = null)
     {
         if (ushort.TryParse(node.Value, out _)
-            || double.TryParse(node.Value, out var dec)
+            || double.TryParse(node.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out var dec) // Polonium: invariant culture
             && dec < ushort.MaxValue
             || _protoMan.HasIndex<DeviceFrequencyPrototype>(node.Value))
             return new ValidatedValueNode(node);
