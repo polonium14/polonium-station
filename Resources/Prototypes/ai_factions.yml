@@ -10,7 +10,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
-  - Goblin #Polonium. Chase those gobbos down
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: NanoTrasen
@@ -24,7 +24,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
-  - Goblin #Polonium. Chase those gobbos down
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Mouse
@@ -47,7 +47,7 @@
   - Xeno
   - AllHostile
   - Dragon
-  - Goblin #Polonium. Chase those gobbos down
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: SimpleHostile
@@ -63,7 +63,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
-  - Goblin #Polonium. Chase those gobbos down
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: SimpleNeutral
@@ -80,7 +80,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
-  - Goblin #Polonium. Chase those gobbos down
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Xeno
@@ -95,7 +95,7 @@
   - Wizard
   - Dragon
   - Xenoborg
-  - Goblin #Polonium. Chase those gobbos down
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Zombie
@@ -111,7 +111,7 @@
   - Wizard
   - Dragon
   - Xenoborg
-  - Goblin #Polonium. Chase those gobbos down
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Revolutionary
@@ -123,7 +123,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
-  - Goblin #Polonium. Chase those gobbos down
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: AllHostile
@@ -141,7 +141,7 @@
   - Revolutionary
   - Wizard
   - Xenoborg
-  - Goblin #Polonium. Chase those gobbos down
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Wizard
@@ -176,7 +176,7 @@
   # cause they are hostile to them
   - SimpleHostile
   - AllHostile
-  - Goblin #Polonium. Chase those gobbos down
+  - GoblinWild #Polonium. Chase those gobbos down
 
 # Hostile to everyone except other DeathSquad members.
 - type: npcFaction
@@ -196,4 +196,4 @@
   - Wizard
   - Xenoborg
   - AllHostile
-  - Goblin #Polonium. Chase those gobbos down
+  - GoblinWild #Polonium. Chase those gobbos down
