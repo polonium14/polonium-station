@@ -28,7 +28,10 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    base: malign
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: malign
   - type: Appearance
   - type: DamageVisuals
     thresholds: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]

@@ -56,8 +56,7 @@
   - type: PlacementReplacement
     key: walls
   - type: IconSmooth
-    key: walls
-    mode: NoSprite
+    key: doors
   - type: XenoConstructionPlasmaCost
     plasma: 144
   - type: XenoStructureUpgradeable

@@ -35,7 +35,10 @@
     state: resin
   - type: IconSmooth
     key: walls
-    base: resin
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: resin
   - type: Destructible
     thresholds:
     - trigger:
@@ -63,7 +66,10 @@
     state: thickresin
   - type: IconSmooth
     key: walls
-    base: thickresin
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: thickresin
   - type: Destructible
     thresholds:
     - trigger:
@@ -88,7 +94,10 @@
     state: resin
   - type: IconSmooth
     key: walls
-    base: resin
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: resin
   - type: Destructible
     thresholds:
     - trigger:
@@ -135,7 +144,10 @@
     state: membrane
   - type: IconSmooth
     key: walls
-    base: membrane
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: membrane
   - type: Destructible
     thresholds:
     - trigger:
@@ -161,7 +173,10 @@
     state: thickmembrane
   - type: IconSmooth
     key: walls
-    base: thickmembrane
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: thickmembrane
   - type: Destructible
     thresholds:
     - trigger:

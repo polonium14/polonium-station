@@ -20,7 +20,6 @@
         - AirlockLayer
   - type: IconSmooth
     key: fence
-    mode: NoSprite
   - type: Sprite
     netsync: false
     sprite: _Nuclear14/Structures/Doors/chaingate.rsi
