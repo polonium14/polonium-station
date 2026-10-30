@@ -72,10 +72,10 @@
       body_organs: !type:AllSelector
         children:
         - id: OrganGoblinLungs
-        - id: OrganGoblinHeart
-        - id: OrganGoblinStomach
-        - id: OrganGoblinLiver
-        - id: OrganGoblinKidneys
+        - id: OrganAnimalHeart
+        - id: OrganAnimalStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalKidneys
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -136,6 +136,8 @@
     name: ghost-role-information-goblin-name
     description: ghost-role-information-goblin-description
     rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
 
 
 - type: entity
@@ -183,50 +185,6 @@
       Destroyed: 0
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganGoblinInternal, OrganGoblinExternal ]
-  id: OrganGoblinEyes
-  components:
-  - type: OrganIntegrity
-    integrityCap: 24
-    integrityThresholds:
-      Normal: 24
-      Damaged: 4
-      Destroyed: 0
-
-- type: entity
-  parent: [ OrganBaseTongue, OrganGoblinInternal ]
-  id: OrganGoblinTongue
-  components:
-  - type: OrganIntegrity
-    integrityCap: 30
-    integrityThresholds:
-      Normal: 30
-      Damaged: 6
-      Destroyed: 0
-
-- type: entity
-  parent: [ OrganBaseAppendix, OrganGoblinInternal ]
-  id: OrganGoblinAppendix
-  components:
-  - type: OrganIntegrity
-    integrityCap: 30
-    integrityThresholds:
-      Normal: 30
-      Damaged: 6
-      Destroyed: 0
-
-- type: entity
-  parent: [ OrganBaseEars, OrganGoblinInternal ]
-  id: OrganGoblinEars
-  components:
-  - type: OrganIntegrity
-    integrityCap: 30
-    integrityThresholds:
-      Normal: 30
-      Damaged: 6
-      Destroyed: 0
-
-- type: entity
   parent: [ OrganBaseLungs, OrganGoblinInternal, OrganGoblinMetabolizer ]
   id: OrganGoblinLungs
   components:
@@ -235,50 +193,6 @@
     integrityThresholds:
       Normal: 34
       Damaged: 9
-      Destroyed: 0
-
-- type: entity
-  parent: [ OrganBaseHeart, OrganGoblinInternal, OrganGoblinMetabolizer ]
-  id: OrganGoblinHeart
-  components:
-  - type: OrganIntegrity
-    integrityCap: 34
-    integrityThresholds:
-      Normal: 34
-      Damaged: 9
-      Destroyed: 0
-
-- type: entity
-  parent: [ OrganBaseStomach, OrganGoblinInternal, OrganGoblinMetabolizer ]
-  id: OrganGoblinStomach
-  components:
-  - type: OrganIntegrity
-    integrityCap: 88 # consists of a lot of pieces, thus is incredibly hard to easily destroy
-    integrityThresholds:
-      Normal: 88
-      Damaged: 17
-      Destroyed: 0
-
-- type: entity
-  parent: [ OrganBaseLiver, OrganGoblinInternal, OrganGoblinMetabolizer ]
-  id: OrganGoblinLiver
-  components:
-  - type: OrganIntegrity
-    integrityCap: 42
-    integrityThresholds:
-      Normal: 42
-      Damaged: 12
-      Destroyed: 0
-
-- type: entity
-  parent: [ OrganBaseKidneys, OrganGoblinInternal, OrganGoblinMetabolizer ]
-  id: OrganGoblinKidneys
-  components:
-  - type: OrganIntegrity
-    integrityCap: 42
-    integrityThresholds:
-      Normal: 42
-      Damaged: 12
       Destroyed: 0
 
 - type: entity

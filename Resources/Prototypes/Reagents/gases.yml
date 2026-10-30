@@ -47,16 +47,21 @@
       effects:
       - !type:Oxygenate
         conditions:
+        #Polonium. Added goblin to list
         - !type:MetabolizerTypeCondition
           type: [ Human, Animal, Rat, Plant, Arachnid, Moth, Apid, Thaven, Goblin ] #Macrocosm, add Apid
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
+        # Polonium, added goblin since they breathe out ammonia instead
         - !type:MetabolizerTypeCondition
           type: [ Vox ]
           inverted: true
         - !type:MetabolizerTypeCondition
           type: [ Thaven ]
+          inverted: true
+        - !type:MetabolizerTypeCondition
+          type: [ Goblin ]
           inverted: true
         ratios:
           CarbonDioxide: 1.0

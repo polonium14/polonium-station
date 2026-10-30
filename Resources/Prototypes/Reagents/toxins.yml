@@ -488,8 +488,7 @@
       - !type:PopupMessage
         conditions:
         - !type:MetabolizerTypeCondition
-          # Polonium. Added in Goblin, they also digest like carnivores
-          type: [ Animal, Vox, Arachnid, Goblin ]
+          type: [ Animal, Vox, Arachnid]
           inverted: true
         type: Local
         visualType: MediumCaution
@@ -499,12 +498,12 @@
         probability: 0.1
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Arachnid, Goblin ]
+          type: [ Animal, Vox, Plant, Arachnid ]
           inverted: true
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Arachnid, Goblin ]
+          type: [ Animal, Vox, Plant, Arachnid ]
           inverted: true
         damage:
           types:
@@ -519,7 +518,7 @@
       - !type:AdjustReagent
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Arachnid, Goblin ]
+          type: [ Animal, Arachnid ]
         reagent: Protein
         amount: 0.5
       - !type:AdjustReagent
