@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.GameTicking;
-using Content.Server.Pinpointer;
+using Content.Shared.Pinpointer;
 using Content.Server._Polonium.Replicator; // POLONIUM
 using Content.Shared._Impstation.Replicator;
 using Content.Shared._Polonium.Replicator; // POLONIUM

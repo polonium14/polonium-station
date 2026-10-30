@@ -3,7 +3,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Destructible;
 using Content.Server.Explosion.EntitySystems;
-using Content.Server.Pinpointer;
+using Content.Shared.Pinpointer;
 using Content.Shared._Impstation.Replicator;
 using Content.Shared._Polonium.Replicator;
 using Content.Shared.AlertLevel;

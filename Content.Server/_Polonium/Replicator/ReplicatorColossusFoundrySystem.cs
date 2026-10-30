@@ -1,6 +1,6 @@
 using System.Numerics;
 using Content.Server.Chat.Systems;
-using Content.Server.Pinpointer;
+using Content.Shared.Pinpointer;
 using Content.Shared._Impstation.Replicator;
 using Content.Shared._Impstation.SpawnedFromTracker;
 using Content.Shared._Polonium.Replicator;

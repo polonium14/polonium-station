@@ -1,6 +1,6 @@
 ﻿using Content.Server.Chat.Systems;
 using Content.Server.Fluids.EntitySystems;
-using Content.Server.Pinpointer;
+using Content.Shared.Pinpointer;
 using Content.Server.StationEvents.Events;
 using Content.Server._Funkystation.StationEvents.Components;
 using Content.Shared.Atmos;
