@@ -225,9 +225,6 @@
   - type: GameRule
     chaosScore: 60
   - type: BreakerFlipRule
-    blacklist:
-      components:
-        - ProtectedGrid
 
 
 - type: entity

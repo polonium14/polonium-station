@@ -1,8 +1,6 @@
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Station.Components;
 using Content.Shared.Storage;
-using Robust.Shared.Map;
 using Robust.Shared.Random;
 
 namespace Content.Server.StationEvents.Events;
@@ -23,38 +21,30 @@ public sealed partial class VentCrittersRule : StationEventSystem<VentCrittersRu
             return;
         }
 
-        var locations = EntityQueryEnumerator<VentCritterSpawnLocationComponent, TransformComponent>();
-        var validLocations = new List<EntityCoordinates>();
-        while (locations.MoveNext(out _, out _, out var transform))
-        {
-            if (!transform.Anchored)
-                continue;
-
-            if (CompOrNull<StationMemberComponent>(transform.GridUid)?.Station == station)
-            {
-                validLocations.Add(transform.Coordinates);
-                foreach (var spawn in EntitySpawnCollection.GetSpawns(component.Entries, RobustRandom))
-                {
-                    Spawn(spawn, transform.Coordinates);
-                }
-            }
-        }
-
-        if (component.SpecialEntries.Count == 0 || validLocations.Count == 0)
-        {
+        var validLocations = StationSystem.GetEntitiesWithComponentOnStation<VentCritterSpawnLocationComponent>(station.Value, true);
+        if (validLocations.Count == 0)
             return;
-        }
 
         // guaranteed spawn
-        var specialEntry = RobustRandom.Pick(component.SpecialEntries);
-        var specialSpawn = RobustRandom.Pick(validLocations);
-        Spawn(specialEntry.PrototypeId, specialSpawn);
+        if (component.SpecialEntries.Count > 0)
+        {
+            var specialEntry = RobustRandom.Pick(component.SpecialEntries);
+            var specialSpawn = Transform(RobustRandom.Pick(validLocations)).Coordinates;
+            Spawn(specialEntry.PrototypeId, specialSpawn);
+        }
 
         foreach (var location in validLocations)
         {
-            foreach (var spawn in EntitySpawnCollection.GetSpawns(component.SpecialEntries, RobustRandom))
+            var spawns = EntitySpawnCollection.GetSpawns(component.Entries, RobustRandom);
+            foreach (var spawn in spawns)
             {
-                Spawn(spawn, location);
+                Spawn(spawn, Transform(location).Coordinates);
+            }
+
+            var specialSpawns = EntitySpawnCollection.GetSpawns(component.SpecialEntries, RobustRandom);
+            foreach (var spawn in specialSpawns)
+            {
+                Spawn(spawn, Transform(location).Coordinates);
             }
         }
     }

@@ -1,4 +1,5 @@
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Atmos.Piping.Unary.Components;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
@@ -12,6 +13,7 @@ namespace Content.Server.StationEvents.Events
     {
         [Dependency] private IGameTiming _timing = default!;
         [Dependency] private AtmosphereSystem _atmosphere = default!;
+        [Dependency] private SharedTransformSystem _transform = default!;
 
         protected override void Started(EntityUid uid, GasLeakRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
         {
@@ -20,20 +22,32 @@ namespace Content.Server.StationEvents.Events
             if (!TryComp<StationEventComponent>(uid, out var stationEvent))
                 return;
 
-            // Essentially we'll pick out a target amount of gas to leak, then a rate to leak it at, then work out the duration from there.
-            if (TryFindRandomTile(out component.TargetTile, out var target, out component.TargetGrid, out component.TargetCoords))
+            if (!TryGetRandomStation(out var station))
+                return;
+
+            var stationVents = StationSystem.GetEntitiesWithComponentOnStation<GasVentScrubberComponent>(station.Value, true);
+            if (stationVents.Count == 0)
             {
-                component.TargetStation = target.Value;
-                component.FoundTile = true;
-
-                component.LeakGas = RobustRandom.Pick(component.LeakableGases);
-                // Was 50-50 on using normal distribution.
-                var totalGas = RobustRandom.Next(component.MinimumGas, component.MaximumGas);
-                component.MolesPerSecond = RobustRandom.Next(component.MinimumMolesPerSecond, component.MaximumMolesPerSecond);
-
-                if (gameRule.Delay is {} startAfter)
-                    stationEvent.EndTime = _timing.CurTime + TimeSpan.FromSeconds(totalGas / component.MolesPerSecond + startAfter.Next(RobustRandom));
+                ForceEndSelf(uid, gameRule);
+                return;
             }
+
+            var targetVent = RobustRandom.Pick(stationVents);
+            var ventXform = Transform(targetVent);
+
+            component.FoundTile = true;
+            component.TargetCoords = ventXform.Coordinates;
+            component.TargetGrid = ventXform.GridUid!.Value;
+            component.TargetTile = _transform.GetGridTilePositionOrDefault((targetVent, ventXform));
+
+            // Essentially we'll pick out a target amount of gas to leak, then a rate to leak it at, then work out the duration from there.
+            component.LeakGas = RobustRandom.Pick(component.LeakableGases);
+            // Was 50-50 on using normal distribution.
+            var totalGas = RobustRandom.Next(component.MinimumGas, component.MaximumGas);
+            component.MolesPerSecond = RobustRandom.Next(component.MinimumMolesPerSecond, component.MaximumMolesPerSecond);
+
+            if (gameRule.Delay is {} startAfter)
+                stationEvent.EndTime = _timing.CurTime + TimeSpan.FromSeconds(totalGas / component.MolesPerSecond + startAfter.Next(RobustRandom));
 
             // Look technically if you wanted to guarantee a leak you'd do this in announcement but having the announcement
             // there just to fuck with people even if there is no valid tile is funny.
