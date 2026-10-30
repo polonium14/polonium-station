@@ -97,8 +97,8 @@
 - type: entity
   parent: [FoodMeatRawBase, BaseSlicingRefinableFood]
   id: FoodMeatGoblin
-  name: surowe mięso goblińskie
-  description: Niesanitarne, ale gobliny zawsze tak wyglądają, nawet od środka.
+  name: goblin meat
+  description: Unsanitary, that's how goblins look, even on inside.
   components:
   - type: Sprite
     sprite: _Polonium/Objects/Cosumable/Food/meat.rsi
@@ -126,8 +126,8 @@
 - type: entity
   parent: FoodMeatCutletBase
   id: FoodMeatGoblinCutlet
-  name: surowy gobliński kotlet
-  description: surowy, bardzo uzależniający, gobliński kotlet.
+  name: raw goblin cutlet
+  description: raw, very addicting, goblin cutlet.
   components:
   - type: Tag
     tags:
@@ -161,8 +161,8 @@
 - type: entity
   parent: [FoodMeatCookedBase, BaseSlicingRefinableFood]
   id: FoodMeatGoblinCooked
-  name: stek gobliński
-  description: Nieco lepiej wyglądające, dalej pełna halucogenów.
+  name: goblin steak
+  description: Bit better looking, still full of hallucinogens.
   components:
   - type: Sprite
     sprite: _Polonium/Objects/Cosumable/Food/meat.rsi
@@ -190,8 +190,8 @@
 - type: entity
   parent: FoodMeatCutletCookedBase
   id: FoodMeatGoblinCutletCooked
-  name: gobliński kotlet
-  description: Upieczony, dalej uzależniający, kotlet.
+  name: goblin cutlet
+  description: Cooked, still addicting cutlet.
   components:
   - type: Solution
     solution:

@@ -1,5 +1,4 @@
 - type: entity
-  name: goblin
   id: MobBaseGoblin
   parent: MobBaseAncestor
   description: Śmierdzące, chytre, przestępcze. Ich sama egzystencja jest zbrodnią wojenną.
