@@ -170,3 +170,5 @@ ent-SmartFridgeCircuitboard = SmartFridge machine board
     .desc = A machine printed circuit board for a SmartFridge.
 ent-StationTeleporterMachineCircuitboard = teleporter machine board
     .desc = A machine printed circuit board for a bluespace teleporter.
+ent-MedicalBiofabMachineBoard = medical biofab machine board
+    .desc = A machine printed circuit board for a medical biofab.

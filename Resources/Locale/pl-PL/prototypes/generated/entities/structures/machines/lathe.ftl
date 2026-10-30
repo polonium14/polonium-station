@@ -40,3 +40,5 @@ ent-Sheetifier = arkusz-master 2000
     .desc = Bardzo arkuszowa maszyna.
 ent-CutterMachine = maszyna tnąca
     .desc = To jest maszyna tnąca. Tnie. Dodaj różnorodność na podłodze swojej stacji dzięki przyjemnym dla oka wzorom! Nie wkładaj palców do środka.
+ent-MedicalBiofabricator = biofabrykator medyczny
+    .desc = Wytwarza z biomasy narządy i inną materię organiczną, którą można chirurgicznie wszczepić pacjentom.
