@@ -159,7 +159,7 @@ public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
         _queen.UpdateHive(ent, nestLost: true); // POLONIUM: the queen and her nest action are picked there
     }
 
-    private void OnRoundEndTextAppend(RoundEndTextAppendEvent args)
+    private void OnRoundEndTextAppend(ref RoundEndTextAppendEvent args)
     {
         List<Entity<ReplicatorNestComponent>> nests = [];
 
