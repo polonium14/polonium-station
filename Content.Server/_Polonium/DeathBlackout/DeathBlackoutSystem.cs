@@ -13,7 +13,8 @@ using Robust.Shared.Timing;
 namespace Content.Server._Polonium.DeathBlackout;
 
 /// <summary>
-/// Starts the death blackout when a mob with a mind dies or is gibbed, and blocks ghosting until it ends.
+/// Starts the death blackout when a mob with a mind dies or is gibbed while in critical state, and blocks ghosting until it ends.
+/// An instant death, without going through critical state first, gets no blackout.
 /// </summary>
 public sealed partial class DeathBlackoutSystem : EntitySystem
 {
@@ -34,6 +35,9 @@ public sealed partial class DeathBlackoutSystem : EntitySystem
             return;
         }
 
+        if (args.OldMobState != MobState.Critical)
+            return;
+
         if (!TryComp<MindContainerComponent>(ent, out var mindContainer) || !mindContainer.HasMind)
             return;
 
@@ -47,8 +51,8 @@ public sealed partial class DeathBlackoutSystem : EntitySystem
         if (!TryComp<MindContainerComponent>(args.Body, out var mindContainer) || !mindContainer.HasMind)
             return;
 
-        // already got the blackout when it died
-        if (TryComp<MobStateComponent>(args.Body, out var mobState) && mobState.CurrentState == MobState.Dead)
+        // a dead body already got the blackout when it died, and a living one dies instantly
+        if (!TryComp<MobStateComponent>(args.Body, out var mobState) || mobState.CurrentState != MobState.Critical)
             return;
 
         ApplyDeathBlackout(ent);
