@@ -393,6 +393,11 @@ public sealed partial class EventManagerSystem : EntitySystem
                 lastRun = rule.ActivatedAt;
         }
 
+        // Polonium: ended rules lose GameRuleComponent, count them from the round history so they cannot repeat right away
+        count += _gameTicker.GetEndedOccurrences(prototype.ID, out var lastEnded);
+        if (lastRun < lastEnded)
+            lastRun = lastEnded;
+
         if (stationEvent.MaxOccurrences is { } maxOccurrences && count >= maxOccurrences)
             return false;
 
