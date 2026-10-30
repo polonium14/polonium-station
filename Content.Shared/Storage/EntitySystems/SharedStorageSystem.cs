@@ -784,14 +784,22 @@ public abstract partial class SharedStorageSystem : EntitySystem
         if (HasComp<BypassInteractionChecksComponent>(user))
             return false;
 
-        if (!ContainerSystem.TryGetContainingContainer(storageUid, out var container) || container.Owner == user)
-            return false;
+        // walk up so storage nested inside someone's backpack still counts as on them
+        var current = storageUid;
+        while (ContainerSystem.TryGetContainingContainer(current, out var container))
+        {
+            current = container.Owner;
+            if (current == user)
+                return false;
 
-        if (!HasComp<InventoryComponent>(container.Owner) && !HasComp<HandsComponent>(container.Owner))
-            return false;
+            if (HasComp<InventoryComponent>(current) || HasComp<HandsComponent>(current))
+            {
+                holder = current;
+                return true;
+            }
+        }
 
-        holder = container.Owner;
-        return true;
+        return false;
     }
 
     private void StartStripStorageRemoveDoAfter(EntityUid user, Entity<StorageComponent> storage, EntityUid holder, EntityUid item)
@@ -866,6 +874,16 @@ public abstract partial class SharedStorageSystem : EntitySystem
         {
             return;
         }
+
+        // funky start. dragging out of someone else's storage goes through the same doafter as clicking
+        if (localPlayer is { } user &&
+            TryComp(container.Owner, out StorageComponent? sourceStorage) &&
+            TryGetOtherMobHolder(container.Owner, user, out var holder))
+        {
+            StartStripStorageRemoveDoAfter(user, (container.Owner, sourceStorage), holder, itemUid.Value);
+            return;
+        }
+        // funky end
 
         if (!TryComp(localPlayer, out HandsComponent? handsComp) || !_sharedHandsSystem.TryPickup(localPlayer.Value, itemEnt, handsComp: handsComp, animate: false))
             return;
