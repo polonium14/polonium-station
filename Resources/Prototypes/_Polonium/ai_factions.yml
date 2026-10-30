@@ -1,5 +1,5 @@
 - type: npcFaction
-  id: goblinWild
+  id: GoblinWild
   hostile:
   - NanoTrasen
   - Dragon
