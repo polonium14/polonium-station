@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: aada
-  changes:
-  - message: The value of tier 1 tech disks has been lowered.
-    type: Tweak
-  id: 9597
-  time: '2026-03-29T23:41:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43395
 - author: MissKay1994
   changes:
   - message: Salt is now significantly less common in ore generation
@@ -4397,3 +4390,54 @@
   id: 10091
   time: '2026-10-30T14:21:06.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1182
+- author: Nikita
+  changes:
+  - message: "Szeroki zamach broni\u0105 bia\u0142\u0105 nie mo\u017Ce ju\u017C trafi\u0107\
+      \ kilka razy w ten sam cel."
+    type: Fix
+  - message: "Lot FTL do nieprawid\u0142owych wsp\xF3\u0142rz\u0119dnych nie niszczy\
+      \ ju\u017C mapy."
+    type: Fix
+  - message: "Gaz nie mno\u017Cy si\u0119 ju\u017C, gdy pole traci szczelno\u015B\u0107\
+      ."
+    type: Fix
+  - message: "Przemys\u0142owy rozdrabniacz nie duplikuje ju\u017C odczynnik\xF3w."
+    type: Fix
+  - message: "Wy\u0142\u0105czenie i w\u0142\u0105czenie zasilania tokarki nie duplikuje\
+      \ ju\u017C materia\u0142\xF3w."
+    type: Fix
+  - message: "Naprawiono przyci\u0119cia gry spowodowane przesy\u0142aniem organ\xF3\
+      w."
+    type: Fix
+  - message: "Hristov nie strzela ju\u017C przez drzwi."
+    type: Fix
+  - message: "Harpun zn\xF3w przyci\u0105ga gridy."
+    type: Fix
+  - message: "Imi\u0119 widoczne pod mask\u0105 aktualizuje si\u0119 po zmianie danych\
+      \ na karcie ID."
+    type: Fix
+  - message: "Zabezpieczone skrzynie na bro\u0144 trzeba najpierw odblokowa\u0107\
+      , a zamykanie i otwieranie zamk\xF3w trwa tyle, ile powinno."
+    type: Fix
+  - message: "Rozw\u015Bcieczone pszczo\u0142y w noszonym plecaku nie rozrywaj\u0105\
+      \ ju\u017C w\u0142a\u015Bciciela."
+    type: Fix
+  - message: "Zemagowany recykler nie usuwa ju\u017C stworze\u0144, kt\xF3re nie powinny\
+      \ zosta\u0107 zmielone."
+    type: Fix
+  - message: "P\xF3\u0142ka chemiczna mie\u015Bci chemikalia."
+    type: Fix
+  - message: "Naprawiono u\u017Cywanie przeno\u015Bnych \u0142adowarek."
+    type: Fix
+  - message: "Defibrylator leczy niedotlenienie u ka\u017Cdego \u017Cywego lub krytycznego\
+      \ pacjenta."
+    type: Fix
+  - message: "Eventy stacyjne nie trafiaj\u0105 ju\u017C w stacj\u0119 handlow\u0105\
+      \ ani inne gridy poza g\u0142\xF3wn\u0105 stacj\u0105."
+    type: Fix
+  - message: "Na mapach z upstreamu runda przydziela na start tylko kluczowe stanowiska,\
+      \ a pozosta\u0142e sloty s\u0105 dost\u0119pne do wyboru."
+    type: Tweak
+  id: 10092
+  time: '2026-10-30T15:59:14.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1189
