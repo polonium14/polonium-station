@@ -4,7 +4,9 @@ using Content.IntegrationTests.Utility;
 using Content.Server.StationEvents;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking;
+using System.Collections.Generic; // Polonium
 using Content.Shared.GameTicking.Components;
+using Robust.Shared.GameObjects; // Polonium
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -40,6 +42,22 @@ public sealed partial class EventSchedulerTest : GameTest
         // Polonium: events with zero weight are only started by admins and never picked at random
         if (eventComp!.Weight <= 0)
             return;
+
+        // Polonium: the round may have run this rule already (e.g. as a roundstart variation pass),
+        // and both active and ended runs block it, so start from a clean slate
+        var previousRuns = new List<EntityUid>();
+        var metaQuery = SEntMan.EntityQueryEnumerator<MetaDataComponent>();
+        while (metaQuery.MoveNext(out var uid, out var meta))
+        {
+            if (meta.EntityPrototype?.ID == ruleId)
+                previousRuns.Add(uid);
+        }
+
+        foreach (var uid in previousRuns)
+        {
+            SEntMan.DeleteEntity(uid);
+        }
+
         // TODO: This is A LOT of duplicate data we don't need. GameRules refactor some day...
         var time = TimeSpan.Compare(ruleComp!.ActivatedAt, TimeSpan.FromMinutes(eventComp!.EarliestStart)) > 0
             ? ruleComp.ActivatedAt
