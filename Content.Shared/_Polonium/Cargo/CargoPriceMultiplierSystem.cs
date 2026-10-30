@@ -1,4 +1,3 @@
-using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Prototypes;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
@@ -18,22 +17,20 @@ public sealed partial class CargoPriceMultiplierSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<StationBankAccountComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<CargoPriceMultiplierComponent, MapInitEvent>(OnMapInit);
     }
 
-    private void OnStartup(Entity<StationBankAccountComponent> ent, ref ComponentStartup args)
+    private void OnMapInit(Entity<CargoPriceMultiplierComponent> ent, ref MapInitEvent args)
     {
         // The CVars are server-only, the client gets the values from the networked component.
         if (_net.IsClient)
             return;
 
-        var multiplier = EnsureComp<CargoPriceMultiplierComponent>(ent);
-
         // Negative multipliers would make orders give money or sales take it.
-        multiplier.BuyMultiplier = Math.Max(0f, _cfg.GetCVar(CCVars.CargoBuyPriceMultiplier));
-        multiplier.SellMultiplier = Math.Max(0f, _cfg.GetCVar(CCVars.CargoSellPriceMultiplier));
+        ent.Comp.BuyMultiplier = Math.Max(0f, _cfg.GetCVar(CCVars.CargoBuyPriceMultiplier));
+        ent.Comp.SellMultiplier = Math.Max(0f, _cfg.GetCVar(CCVars.CargoSellPriceMultiplier));
 
-        Dirty(ent, multiplier);
+        Dirty(ent);
     }
 
     /// <summary>

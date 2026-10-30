@@ -14,7 +14,7 @@ public sealed class CargoPriceMultiplierTest : GameTest
 - type: entity
   id: CargoPriceMultiplierTestStation
   components:
-  - type: StationBankAccount
+  - type: CargoPriceMultiplier
 ";
 
     [Test]
