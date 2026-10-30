@@ -101,7 +101,7 @@ public sealed class BedInternalsTest : GameTest
         return container.ContainedEntities.Cast<EntityUid?>().FirstOrDefault();
     }
 
-    private async Task AssertTankLayer(bool visible, string? state)
+    private async Task AssertTankLayer(bool visible, string state = "")
     {
         await Pair.RunTicksSync(5);
 
@@ -113,7 +113,7 @@ public sealed class BedInternalsTest : GameTest
             Assert.That(sprites.LayerMapTryGet(bed, "tank", out var index, false), "The bed sprite should have a tank layer.");
             Assert.That(CEntMan.GetComponent<SpriteComponent>(bed)[index].Visible, Is.EqualTo(visible));
 
-            if (state != null)
+            if (state.Length > 0)
                 Assert.That(sprites.LayerGetRsiState(bed, index).Name, Is.EqualTo(state));
         });
     }
@@ -143,7 +143,7 @@ public sealed class BedInternalsTest : GameTest
             Assert.That(visual, Is.EqualTo(BedTankVisual.None));
         });
 
-        await AssertTankLayer(false, null);
+        await AssertTankLayer(false);
     }
 
     [Test]
