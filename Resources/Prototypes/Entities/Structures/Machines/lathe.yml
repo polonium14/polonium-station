@@ -888,6 +888,8 @@
     layers:
     - state: limbgrower_idleoff
       map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: limbgrower_panelopen
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: Machine
     board: MedicalBiofabMachineBoard
   - type: MaterialStorage
