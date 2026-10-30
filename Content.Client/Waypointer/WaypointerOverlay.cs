@@ -8,7 +8,7 @@ using Content.Client.Shuttles.Systems;
 using Content.Shared.CombatMode;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Station.Components;
-using Content.Shared.Station; // Polonium: our StationSystem is not in Shared yet
+using Content.Shared.Station.Systems;
 using Content.Shared.Waypointer;
 using Content.Shared.Waypointer.Components;
 using Content.Shared.Whitelist;
@@ -33,7 +33,7 @@ public sealed partial class WaypointerOverlay : Overlay
     private readonly SharedCombatModeSystem _combatMode;
     private readonly SharedPhysicsSystem _physics;
     private readonly SpriteSystem _sprite;
-    private readonly SharedStationSystem _station;
+    private readonly StationSystem _station;
     private readonly TransformSystem _transform;
     private readonly ShuttleSystem _shuttle;
     private readonly EntityWhitelistSystem _whitelist;
@@ -58,7 +58,7 @@ public sealed partial class WaypointerOverlay : Overlay
         _combatMode = _entity.System<SharedCombatModeSystem>();
         _physics = _entity.System<SharedPhysicsSystem>();
         _sprite = _entity.System<SpriteSystem>();
-        _station = _entity.System<SharedStationSystem>();
+        _station = _entity.System<StationSystem>();
         _transform = _entity.System<TransformSystem>();
         _unshadedShader = _prototype.Index(UnshadedShader).Instance();
         _shuttle = _entity.System<ShuttleSystem>();
