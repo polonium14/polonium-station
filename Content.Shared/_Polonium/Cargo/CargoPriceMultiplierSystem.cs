@@ -9,7 +9,7 @@ namespace Content.Shared._Polonium.Cargo;
 /// <summary>
 /// Applies the per-round cargo price multipliers from <see cref="CargoPriceMultiplierComponent"/>.
 /// </summary>
-public sealed class CargoPriceMultiplierSystem : EntitySystem
+public sealed partial class CargoPriceMultiplierSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private INetManager _net = default!;
