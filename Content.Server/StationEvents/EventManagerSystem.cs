@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared._Goobstation.CCVar;
 using Content.Server.GameTicking;
+using Content.Server._Polonium.GameTicking; // Polonium
 using Content.Server.RoundEnd;
 using Content.Server.StationEvents.Components;
 using Content.Shared.CCVar;
@@ -24,6 +25,7 @@ public sealed partial class EventManagerSystem : EntitySystem
     [Dependency] private EntityTableSystem _entityTable = default!;
     [Dependency] private ServerGameTicker _gameTicker = default!;
     [Dependency] private RoundEndSystem _roundEnd = default!;
+    [Dependency] private FinishedGameRuleSystem _finishedRules = default!; // Polonium
 
     public bool EventsEnabled { get; private set; }
     private void SetEnabled(bool value) => EventsEnabled = value;
@@ -393,8 +395,8 @@ public sealed partial class EventManagerSystem : EntitySystem
                 lastRun = rule.ActivatedAt;
         }
 
-        // Polonium: ended rules lose GameRuleComponent, count them from the round history so they cannot repeat right away
-        count += _gameTicker.GetEndedOccurrences(prototype.ID, out var lastEnded);
+        // Polonium: ended rules lose GameRuleComponent, count them separately so they cannot repeat right away
+        count += _finishedRules.GetEndedOccurrences(prototype.ID, out var lastEnded);
         if (lastRun < lastEnded)
             lastRun = lastEnded;
 
