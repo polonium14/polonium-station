@@ -3,7 +3,6 @@ using Content.Server.StationEvents.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Station.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 
@@ -24,11 +23,9 @@ public sealed partial class XenoInfestationRule : StationEventSystem<XenoInfesta
         }
 
         var locations = new List<EntityCoordinates>();
-        var query = EntityQueryEnumerator<VentCritterSpawnLocationComponent, TransformComponent>();
-        while (query.MoveNext(out _, out _, out var xform))
+        foreach (var vent in StationSystem.GetEntitiesWithComponentOnStation<VentCritterSpawnLocationComponent>(station.Value, true))
         {
-            if (xform.Anchored && CompOrNull<StationMemberComponent>(xform.GridUid)?.Station == station)
-                locations.Add(xform.Coordinates);
+            locations.Add(Transform(vent).Coordinates);
         }
 
         if (locations.Count == 0)
