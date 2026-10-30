@@ -59,22 +59,19 @@
   playTimeTracker: JobHeadOfPersonnel
   requirements:
     - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 1.25h
-    - !type:DepartmentTimeRequirement
       department: Medical
-      time: 1.25h
+      time: 7h
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 1.25h
+      time: 7h
     - !type:DepartmentTimeRequirement
-      department: Security
-      time: 1.25h
+      department: Engineering
+      time: 7h
     - !type:DepartmentTimeRequirement
-      department: Command
-      time: 1.25h
+      department: Cargo
+      time: 7h
     - !type:OverallPlaytimeRequirement
-      time: 25h
+      time: 12h
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
   supervisors: job-supervisors-captain

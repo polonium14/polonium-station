@@ -58,10 +58,9 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
+      time: 6h
+    - !type:OverallPlaytimeRequirement
       time: 5h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 15h
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

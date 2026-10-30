@@ -21,9 +21,14 @@
   description: job-description-station-ai
   playTimeTracker: JobStationAi
   requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 3h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 1.5h
   - !type:RoleTimeRequirement
     role: JobBorg
-    time: 5h
+    time: 2h
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
@@ -37,7 +42,7 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 5h
+      time: 2h
   icon: JobIconBorg
   supervisors: job-supervisors-rd
   jobEntity: PlayerBorgBattery

@@ -56,27 +56,24 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
+      time: 3h
+    - !type:RoleTimeRequirement
+      role: JobChiefEngineer
+      time: 3h
+    - !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
       time: 5h
-    - !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 2h
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 2h
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 5h
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 5h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 10h
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 20h
+    - !type:RoleTimeRequirement
+      role: JobResearchDirector
+      time: 3h
+    - !type:RoleTimeRequirement
+      role: JobQuartermaster
+      time: 3h
+    - !type:RoleTimeRequirement
+      role: JobChiefMedicalOfficer
+      time: 3h
     - !type:OverallPlaytimeRequirement
-      time: 40h
+      time: 20h
   startingGear: CaptainGear
   icon: "JobIconCaptain"
   joinNotifyCrew: true

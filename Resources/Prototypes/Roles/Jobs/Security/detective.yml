@@ -40,6 +40,8 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobSecurityOfficer
+    time: 3h
+  - !type:OverallPlaytimeRequirement
     time: 5h
   startingGear: DetectiveGear
   icon: "JobIconDetective"

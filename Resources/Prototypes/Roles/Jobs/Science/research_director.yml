@@ -55,7 +55,9 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Science
-    time: 10h
+    time: 6h
+  - !type:OverallPlaytimeRequirement
+    time: 5h
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain

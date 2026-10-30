@@ -61,15 +61,9 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 3h
-    - !type:RoleTimeRequirement
-      role: JobDetective
-      time: 1h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 30h
+      time: 5h
     - !type:OverallPlaytimeRequirement
-      time: 20h
+      time: 10h
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain

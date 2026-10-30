@@ -7,8 +7,11 @@
   icon: "JobIconTramDriver"
   supervisors: job-supervisors-hop
   requirements:
-    - !type:OverallPlaytimeRequirement # someone that's not doing this job will just be a pain for the station
-      time: 10h
+    - !type:OverallPlaytimeRequirement
+      time: 2.5h
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 1h
   access:
   - Maintenance
   - Service # the tram has command + service access
