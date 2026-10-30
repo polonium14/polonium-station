@@ -29,6 +29,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Server.GameTicking;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -53,6 +54,7 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private ServerGameTicker _ticker = default!;
 
     // ICommonSession is a new object after reconnect, so this is the account id
     private readonly Dictionary<NetUserId, SolitaryPlayerMap> _stations = [];
@@ -79,33 +81,33 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
 
     public bool TryJoinFromLobby(ICommonSession session)
     {
-        if (GameTicker.UserHasJoinedGame(session))
+        if (_ticker.UserHasJoinedGame(session))
             return false;
 
-        var preset = GameTicker.CurrentPreset ?? GameTicker.Preset;
+        var preset = _ticker.CurrentPreset ?? _ticker.Preset;
         if (preset?.ID != "Tutorial")
             return false;
 
         if (TryResumeTutorial(session))
             return true;
 
-        if (GameTicker.RunLevel == GameRunLevel.PreRoundLobby)
+        if (_ticker.RunLevel == GameRunLevel.PreRoundLobby)
         {
-            GameTicker.ToggleReady(session, true);
-            GameTicker.StartRound();
+            _ticker.ToggleReady(session, true);
+            _ticker.StartRound();
 
-            if (GameTicker.UserHasJoinedGame(session))
+            if (_ticker.UserHasJoinedGame(session))
                 return true;
 
             // timer already kicking off StartRound, wait and spawn after
-            if (GameTicker.RunLevel == GameRunLevel.PreRoundLobby)
+            if (_ticker.RunLevel == GameRunLevel.PreRoundLobby)
             {
                 _pendingLobbyJoins.Add(session.UserId);
                 return true;
             }
         }
 
-        if (GameTicker.RunLevel != GameRunLevel.InRound)
+        if (_ticker.RunLevel != GameRunLevel.InRound)
             return false;
 
         return TryRestartTutorial(session);
@@ -170,7 +172,7 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
 
         // Check if any Solitary Spawning rules are running
         var query = QueryActiveRules();
-        while (query.MoveNext(out _, out var comp, out _))
+        while (query.MoveNext(out var comp, out _, out _))
         {
             // TODO check blacklists/whitelists from the gamerule
 
@@ -230,7 +232,7 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
     {
         proto = null;
         var query = QueryActiveRules();
-        while (query.MoveNext(out _, out var comp, out _))
+        while (query.MoveNext(out var comp, out _, out _))
         {
             if (comp.Prototypes.Count == 0)
                 continue;
@@ -264,7 +266,7 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
         var stationName = Loc.GetString("solitary-station-name", ("character", profile.Name));
         var mapName = Loc.GetString("solitary-map-name", ("character", profile.Name));
         
-        var query = GameTicker.LoadGameMap(map, out var mapId, stationName: stationName);
+        var query = _ticker.LoadGameMap(map, out var mapId, stationName: stationName);
         var newMap = query.First();
         var mapUid = Transform(newMap).ParentUid;
 
@@ -307,7 +309,7 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
             return;
         }
 
-        GameTicker.DoSpawn(session, humanoid, station, jobId, true, out var mob, out _, out var jobName);
+        _ticker.DoSpawn(session, humanoid, station, jobId, true, out var mob, out _, out var jobName);
 
         if (_stations.TryGetValue(session.UserId, out var rec))
             _stations[session.UserId] = rec with { Trainee = mob };
@@ -354,7 +356,7 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
             if (!_player.TryGetSessionById(userId, out var session))
                 continue;
 
-            if (GameTicker.UserHasJoinedGame(session))
+            if (_ticker.UserHasJoinedGame(session))
                 continue;
 
             if (!TryResumeTutorial(session))
@@ -445,8 +447,8 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
 
         _mind.ControlMob(session.UserId, rec.Trainee);
 
-        if (!GameTicker.UserHasJoinedGame(session))
-            GameTicker.PlayerJoinGame(session);
+        if (!_ticker.UserHasJoinedGame(session))
+            _ticker.PlayerJoinGame(session);
     }
 
     private void MarkAway(NetUserId user)

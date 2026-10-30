@@ -11,7 +11,7 @@ public sealed partial class DocumentPrinterSystem : EntitySystem
 {
     [Dependency] private ItemSlotsSystem _itemSlots = default!;
     [Dependency] private PaperSystem _paper = default!;
-    [Dependency] private StationSystem _station = default!;
+    [Dependency] private ServerStationSystem _station = default!;
 
     public override void Initialize()
     {

@@ -7,13 +7,14 @@ using Robust.Server.GameObjects;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
+using Content.Shared.Shuttles.Components;
 
 namespace Content.Server._Imperial.ErtCall;
 public sealed partial class CallErtSystem : EntitySystem
 {
     [Dependency] private MapSystem _mapSystem = default!;
     [Dependency] private MapLoaderSystem _map = default!;
-    [Dependency] private StationSystem _station = default!;
+    [Dependency] private ServerStationSystem _station = default!;
     [Dependency] private ShuttleSystem _shuttle = default!;
 
     /// <summary>

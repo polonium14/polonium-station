@@ -1,10 +1,10 @@
 #nullable enable
 using System.Linq;
-using Content.Client.GameTicking.Managers;
+using Content.Client.GameTicking;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.GameTicking;
 using Content.Server.GameTicking;
-using Content.Server.GameTicking.Presets;
+using Content.Shared.GameTicking.Prototypes;
 using Content.Server.Voting;
 using Content.Server.Voting.Managers;
 using Content.Shared._Polonium.GameTicking;
@@ -206,7 +206,7 @@ public sealed class RoundMoodTest : GameTest
     public async Task MoodVoteStoresVotesAndKeepsPreset()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
         var mood = server.System<RoundMoodSystem>();
         var votes = server.ResolveDependency<IVoteManager>();
 
@@ -259,7 +259,7 @@ public sealed class RoundMoodTest : GameTest
     public async Task SecretPickFollowsMoodAndRoundStartClearsIt()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
         var mood = server.System<RoundMoodSystem>();
 
         await server.WaitPost(() => mood.SetVotes(new() { [SoloMood] = 3 }));
@@ -281,7 +281,7 @@ public sealed class RoundMoodTest : GameTest
     public async Task SecretPickSkipsPresetsWithoutEnoughPlayers()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
         var mood = server.System<RoundMoodSystem>();
 
         await server.WaitPost(() => mood.SetVotes(new() { [MixedMood] = 3 }));

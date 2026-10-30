@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Server.GameTicking.Presets;
+using Content.Shared.GameTicking.Prototypes;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Shared._Polonium.GameTicking;
 using Content.Shared.GameTicking;

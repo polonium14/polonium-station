@@ -5,6 +5,7 @@ using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
+using Content.Server.Station.Systems;
 
 namespace Content.Server._Polonium.Xenonids;
 
@@ -16,14 +17,14 @@ public sealed partial class XenoInfestationRule : StationEventSystem<XenoInfesta
     {
         base.Started(uid, component, gameRule, args);
 
-        if (!TryGetRandomStation(out var station))
+        if (!Station.TryGetRandomStation(out var station))
         {
             EndSilently(uid, gameRule);
             return;
         }
 
         var locations = new List<EntityCoordinates>();
-        foreach (var vent in StationSystem.GetEntitiesWithComponentOnStation<VentCritterSpawnLocationComponent>(station.Value, true))
+        foreach (var vent in Station.GetEntitiesWithComponentOnStation<VentCritterSpawnLocationComponent>(station.Value, true))
         {
             locations.Add(Transform(vent).Coordinates);
         }

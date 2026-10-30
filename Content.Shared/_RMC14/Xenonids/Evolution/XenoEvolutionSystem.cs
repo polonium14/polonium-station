@@ -24,7 +24,7 @@ public sealed partial class XenoEvolutionSystem : EntitySystem
     [Dependency] private IConfigurationManager _config = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private EntityLookupSystem _entityLookup = default!;
-    [Dependency] private SharedGameTicker _gameTicker = default!;
+    [Dependency] private GameTicker _gameTicker = default!;
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private INetManager _net = default!;

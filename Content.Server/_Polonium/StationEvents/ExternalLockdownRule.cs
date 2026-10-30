@@ -23,7 +23,7 @@ public sealed partial class ExternalLockdownRule : StationEventSystem<ExternalLo
     {
         base.Started(uid, component, gameRule, args);
 
-        if (!TryGetRandomStation(out var station))
+        if (!Station.TryGetRandomStation(out var station))
             return;
 
         _lockdown.BoltExternalAirlocksOnStation(station.Value);

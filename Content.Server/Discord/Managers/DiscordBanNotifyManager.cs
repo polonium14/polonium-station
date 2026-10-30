@@ -138,7 +138,7 @@ public sealed partial class DiscordBanNotifyManager
         if (minutes > 0)
             expires = DateTimeOffset.Now + TimeSpan.FromMinutes(minutes.Value);
 
-        _systems.TryGetEntitySystem(out GameTicker? ticker);
+        _systems.TryGetEntitySystem(out ServerGameTicker? ticker);
         int? roundId = ticker == null || ticker.RoundId == 0 ? null : ticker.RoundId;
 
         ICommonSession? session = null;

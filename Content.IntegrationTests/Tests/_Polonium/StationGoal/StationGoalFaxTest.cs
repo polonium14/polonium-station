@@ -41,8 +41,8 @@ public sealed class StationGoalFaxTest : GameTest
 
         await Server.WaitPost(() =>
         {
-            var ticker = SEntMan.System<GameTicker>();
-            var stationSys = SEntMan.System<StationSystem>();
+            var ticker = SEntMan.System<ServerGameTicker>();
+            var stationSys = SEntMan.System<ServerStationSystem>();
             var goalSys = SEntMan.System<StationGoalPaperSystem>();
             var mapSys = SEntMan.System<SharedMapSystem>();
 

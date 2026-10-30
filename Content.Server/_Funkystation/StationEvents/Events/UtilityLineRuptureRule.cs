@@ -31,7 +31,7 @@ public sealed partial class UtilityLineRuptureRule : StationEventSystem<UtilityL
             component.Reagent = _random.Pick(component.PossibleReagents);
         }
 
-        if (!TryFindRandomTile(out _, out var targetStation, out _, out var targetCoords))
+        if (!Station.TryFindRandomTile(out _, out var targetStation, out _, out var targetCoords))
             return;
 
         component.TargetCoordinates = targetCoords;

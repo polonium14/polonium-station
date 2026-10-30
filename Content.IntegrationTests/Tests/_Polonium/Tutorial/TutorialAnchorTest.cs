@@ -29,7 +29,7 @@ public sealed class TutorialAnchorTest : GameTest
     {
         var proto = Server.ResolveDependency<IPrototypeManager>();
         var entMan = Server.ResolveDependency<IEntityManager>();
-        var ticker = entMan.System<GameTicker>();
+        var ticker = entMan.System<ServerGameTicker>();
 
         var onMap = new HashSet<string>();
 
@@ -95,7 +95,7 @@ public sealed class TutorialAnchorTest : GameTest
     {
         var proto = Server.ResolveDependency<IPrototypeManager>();
         var entMan = Server.ResolveDependency<IEntityManager>();
-        var ticker = entMan.System<GameTicker>();
+        var ticker = entMan.System<ServerGameTicker>();
 
         var onMap = new HashSet<string>();
 
