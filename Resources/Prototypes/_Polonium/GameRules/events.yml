@@ -84,6 +84,6 @@
     maxDuration: 20
   - type: VentHordeRule
     table: !type:GroupSelector
-      rolls: 3, 6
+      rolls: 2, 3
       children:
       - id: MobGoblinWild
