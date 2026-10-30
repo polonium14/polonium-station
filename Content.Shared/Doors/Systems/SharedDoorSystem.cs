@@ -217,7 +217,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
         if (!Resolve(uid, ref door))
             return;
 
-        if (door.State is DoorState.Welded)
+        if (_weldSystem.IsWelded(uid))
             return;
 
         var alreadyClosed = door.State == DoorState.Closed;

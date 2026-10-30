@@ -1462,7 +1462,9 @@ entities:
       parent: 4313
       pos: -9.5,-6.5
     - type: Door
-      state: Welded
+      state: Closed
+    - type: Weldable
+      isWelded: True
     - type: Physics
       canCollide: False
     - type: Airtight
