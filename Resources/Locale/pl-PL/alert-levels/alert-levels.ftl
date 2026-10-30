@@ -1,5 +1,4 @@
 alert-level-announcement = Uwaga! Kod zagrożenia na stacji został zmieniony na { $name }! { $announcement }
-alert-level-unknown = Nieznany.
 alert-level-unknown-instructions = Nieznane.
 alert-level-green = Zielony
 alert-level-green-announcement =
