@@ -1,6 +1,5 @@
 name-identifier-format-monkey = (MK-{$number})
 name-identifier-format-kobold = (KB-{$number})
-name-identifier-format-goblin = (GOB-{$number})
 name-identifier-format-holoparasite = (HOLO-{$number})
 name-identifier-format-mmi = (MMI-{$number})
 name-identifier-format-positronic-brain = (PB-{$number})

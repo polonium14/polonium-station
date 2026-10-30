@@ -27,10 +27,6 @@
   name: metabolizer-type-rat
 
 - type: metabolizerType
-  id: Goblin
-  name: metabolizer-type-goblin
-
-- type: metabolizerType
   id: Plant
   name: metabolizer-type-plant
 

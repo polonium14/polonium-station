@@ -13,6 +13,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
+        # Polonium, added Goblin
           type: [ Human, Animal, Rat, Plant, Apid, Thaven, Arachnid, Moth, Goblin ]
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
@@ -60,7 +61,7 @@
         ratios:
           CarbonDioxide: 1.0
           Oxygen: -1.0
-      # Creating Ammonia when in presence of oxygen (stinky).
+      # Polonium. Creating Ammonia when in presence of oxygen (stinky goblin).
       - !type:ModifyLungGas
         conditions:
         - !type:MetabolizerTypeCondition

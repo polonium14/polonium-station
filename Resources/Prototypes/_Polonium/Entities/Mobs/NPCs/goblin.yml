@@ -100,9 +100,6 @@
     spawned:
     - id: FoodMeatGoblin
       amount: 3
-  - type: Tag
-    tags:
-    - GoblinCraft
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -169,9 +166,6 @@
   - type: VisualOrgan
     data:
       sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrganMarkings
-    markingData:
-      group: Goblin
 
 
 - type: entity
@@ -189,9 +183,6 @@
   parent: [ OrganBaseEyes, OrganGoblinInternal, OrganGoblinExternal ]
   id: OrganGoblinEyes
   components:
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Customization/eyes.rsi
   - type: OrganIntegrity
     integrityCap: 24
     integrityThresholds:

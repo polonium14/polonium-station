@@ -488,6 +488,7 @@
       - !type:PopupMessage
         conditions:
         - !type:MetabolizerTypeCondition
+          # Polonium. Added in Goblin, they also digest like carnivores
           type: [ Animal, Vox, Arachnid, Goblin ]
           inverted: true
         type: Local
