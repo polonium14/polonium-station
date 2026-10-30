@@ -42,7 +42,10 @@ public sealed partial class CargoSystem
             return;
         }
         GetPalletGoods(gridUid, out var toSell, out var goods);
-        var totalAmount = _priceMultiplier.GetSellPrice(_station.GetOwningStation(uid), goods.Sum(t => t.Item3)); // Polonium: per-round sell multiplier
+        // Polonium: per-round sell multiplier, rounded per item like in OnPalletSale so the appraisal matches the sale
+        var station = _station.GetOwningStation(uid);
+        var totalAmount = goods.Sum(t => Math.Round(_priceMultiplier.GetSellPrice(station, t.Item3)));
+        // Polonium end
         _uiSystem.SetUiState(uid,
             CargoPalletConsoleUiKey.Sale,
             new CargoPalletConsoleInterfaceState((int) totalAmount, toSell.Count, true));
