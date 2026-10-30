@@ -139,6 +139,12 @@ public sealed partial class SharedStripStorageAccessSystem : EntitySystem
         if (args.Cancelled || args.Handled)
             return;
 
+        // the holder may have dropped or handed off the storage during the doafter
+        if (args.Target is not { } holder ||
+            !_container.TryGetContainingContainer(storage.Owner, out var container) ||
+            container.Owner != holder)
+            return;
+
         args.Handled = true;
 
         // SharedInteractionSystem.UiRangeCheck keeps the UI open while the holder stays in range
