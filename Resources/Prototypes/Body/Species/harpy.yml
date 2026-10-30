@@ -141,18 +141,18 @@
     allowPercussion: false
     program: 52
   - type: SwappableInstrument
-    instrumentList:
-      "Voice": {52: 0}
-      "Trumpet": {56: 0}
-      "Electric": {27: 0}
-      "Bass": {33: 0}
-      "Rock": {29: 0}
-      "Acoustic": {24: 0}
-      "Flute": {73: 0}
-      "Sax": {66: 0}
-      "Piano": {1: 0}
-      "Church Organ": {19: 0}
-      "Violin": {41: 0}
+    instrumentList: # Polonium: style names are localization ids since Wizden #46292
+      swappable-instrument-style-harpy-voice: {52: 0}
+      swappable-instrument-style-harpy-trumpet: {56: 0}
+      swappable-instrument-style-harpy-electric: {27: 0}
+      swappable-instrument-style-harpy-bass: {33: 0}
+      swappable-instrument-style-harpy-rock: {29: 0}
+      swappable-instrument-style-harpy-acoustic: {24: 0}
+      swappable-instrument-style-harpy-flute: {73: 0}
+      swappable-instrument-style-harpy-sax: {66: 0}
+      swappable-instrument-style-harpy-piano: {1: 0}
+      swappable-instrument-style-harpy-church-organ: {19: 0}
+      swappable-instrument-style-harpy-violin: {41: 0}
   - type: UserInterface
     interfaces:
       enum.InstrumentUiKey.Key:
