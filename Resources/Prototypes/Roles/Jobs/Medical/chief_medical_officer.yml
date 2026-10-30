@@ -61,7 +61,9 @@
       time: 3h
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 10h
+      time: 6h
+    - !type:OverallPlaytimeRequirement
+      time: 5h
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain

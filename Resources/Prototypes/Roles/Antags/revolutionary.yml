@@ -7,7 +7,7 @@
   guides: [ Revolutionaries ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 0.5h
+    time: 2h
 
 - type: antagSpecifier
   abstract: true
