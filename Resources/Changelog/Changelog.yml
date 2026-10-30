@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ThatGuyUSA
-  changes:
-  - message: Wizard robes and hats have been given proper in-hand sprites.
-    type: Tweak
-  id: 9600
-  time: '2026-04-02T22:11:23.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43429
 - author: Booblesnoot42
   changes:
   - message: 'EXPERIMENTAL: Player-controlled spiders and slimes are now forced to
@@ -4441,3 +4434,11 @@
   id: 10094
   time: '2026-10-30T18:37:54.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1192
+- author: Nikita
+  changes:
+  - message: "Ilo\u015B\u0107 krwi wszystkich mob\xF3w zosta\u0142a zmniejszona o\
+      \ 40%"
+    type: Tweak
+  id: 10095
+  time: '2026-10-30T18:47:18.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1193
