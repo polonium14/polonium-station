@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Tayrtahn
-  changes:
-  - message: Ghost time of death display is now accurate.
-    type: Fix
-  id: 9599
-  time: '2026-03-31T03:41:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43411
 - author: ThatGuyUSA
   changes:
   - message: Wizard robes and hats have been given proper in-hand sprites.
@@ -4441,3 +4434,10 @@
   id: 10093
   time: '2026-10-30T18:23:25.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1190
+- author: Nikita
+  changes:
+  - message: "Przywr\xF3cono napis \"kurwa\" (dekala)"
+    type: Add
+  id: 10094
+  time: '2026-10-30T18:37:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1192
