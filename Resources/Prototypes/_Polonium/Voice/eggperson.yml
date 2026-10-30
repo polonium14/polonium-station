@@ -1,0 +1,34 @@
+- type: speechSounds
+  id: Eggcrack
+  saySound:
+    collection: EggpersonSpeech
+  askSound:
+    collection: EggpersonSpeech
+    params:
+      pitch: 1.15
+  exclaimSound:
+    collection: EggpersonSpeech
+    params:
+      pitch: 0.9
+
+- type: speechVerb
+  id: Eggperson
+  name: chat-speech-verb-name-eggperson
+  speechVerbStrings:
+  - chat-speech-verb-eggperson-1
+  - chat-speech-verb-eggperson-2
+  - chat-speech-verb-eggperson-3
+
+- type: emoteSounds
+  id: MaleEggperson
+  parent: MaleHuman
+  sounds:
+    Scream:
+      path: /Audio/_Polonium/Voice/Eggperson/egg_scream.ogg
+
+- type: emoteSounds
+  id: FemaleEggperson
+  parent: FemaleHuman
+  sounds:
+    Scream:
+      path: /Audio/_Polonium/Voice/Eggperson/egg_scream.ogg
