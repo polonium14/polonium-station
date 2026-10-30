@@ -42,7 +42,7 @@ public sealed partial class CargoSystem
             return;
         }
         GetPalletGoods(gridUid, out var toSell, out var goods);
-        var totalAmount = goods.Sum(t => t.Item3);
+        var totalAmount = _priceMultiplier.GetSellPrice(_station.GetOwningStation(uid), goods.Sum(t => t.Item3)); // Polonium: per-round sell multiplier
         _uiSystem.SetUiState(uid,
             CargoPalletConsoleUiKey.Sale,
             new CargoPalletConsoleInterfaceState((int) totalAmount, toSell.Count, true));
@@ -249,7 +249,7 @@ public sealed partial class CargoSystem
                 distribution = baseDistribution;
             }
 
-            UpdateBankAccount((station, bankAccount), (int) Math.Round(value), distribution, false);
+            UpdateBankAccount((station, bankAccount), (int) Math.Round(_priceMultiplier.GetSellPrice(station, value)), distribution, false); // Polonium: per-round sell multiplier
         }
 
         Dirty(station, bankAccount);
