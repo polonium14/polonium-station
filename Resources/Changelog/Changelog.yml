@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: HoofedEar
-  changes:
-  - message: Lathe machine interfaces now display their proper names
-    type: Tweak
-  id: 9596
-  time: '2026-03-29T23:26:46.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43392
 - author: aada
   changes:
   - message: The value of tier 1 tech disks has been lowered.
@@ -4388,3 +4381,19 @@
   id: 10090
   time: '2026-10-30T11:58:08.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1184
+- author: Nikita
+  changes:
+  - message: "\u0141\xF3\u017Cka medyczne i sto\u0142y operacyjne maj\u0105 gniazdo\
+      \ na zbiornik gazu. Po przypi\u0119ciu pacjenta mo\u017Cna w\u0142\u0105czy\u0107\
+      \ uk\u0142ad oddechowy, a \u0142\xF3\u017Cko poda pacjentowi gaz przez mask\u0119\
+      ."
+    type: Add
+  - message: "Sto\u0142y operacyjne maj\u0105 lamp\u0119, kt\xF3r\u0105 w\u0142\u0105\
+      czysz z menu Alt + klik, oraz monitor funkcji \u017Cyciowych pacjenta z odg\u0142\
+      osem pracy serca."
+    type: Add
+  - message: "Zmieniono grafik\u0119 \u0142\xF3\u017Cka medycznego i sto\u0142u operacyjnego."
+    type: Tweak
+  id: 10091
+  time: '2026-10-30T14:21:06.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1182
