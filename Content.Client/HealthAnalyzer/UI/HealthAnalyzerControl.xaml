@@ -51,7 +51,7 @@
         Orientation="Vertical">
     </BoxContainer>
 
-    <PanelContainer Name="WoundsDivider" Visible="False" StyleClasses="LowDivider" />
+    <controls:Separator Name="WoundsDivider" Visible="False" StyleClasses="LowDivider"/>
 
     <BoxContainer
         Name="WoundsContainer"

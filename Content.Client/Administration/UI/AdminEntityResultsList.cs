@@ -1,8 +1,10 @@
+using Content.Client.UserInterface.Controls;
 using Content.Client.Administration.UI.CustomControls;
 using Content.Client.Administration.UI.EntitySearch;
 using Content.Client.ContextMenu.UI;
 using Content.Client.Resources;
 using Content.Client.Stylesheets;
+using Content.Client.Stylesheets.Fonts;
 using Robust.Client.Console;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -22,15 +24,15 @@ public static class AdminEntityResultsList
 
     public static void PopulateHeader(BoxContainer header, ILocalizationManager loc, IResourceCache resCache)
     {
-        var bold = resCache.NotoStack(variation: "Bold", size: 12);
+        var bold = new NotoFontFamilyStack(resCache).GetFont(12, FontKind.Bold);
         header.Orientation = BoxContainer.LayoutOrientation.Horizontal;
         header.RemoveAllChildren();
         header.AddChild(StretchLabel(loc.GetString("ui-bql-results-col-id"), IdRatio, bold));
-        header.AddChild(new VSeparator());
+        header.AddChild(new Separator { StyleClasses = { StyleClass.LowDivider }, Orientation = Separator.OrientationMode.Vertical, MinHeight = 5 });
         header.AddChild(StretchLabel(loc.GetString("ui-bql-results-col-name"), NameRatio, bold));
-        header.AddChild(new VSeparator());
+        header.AddChild(new Separator { StyleClasses = { StyleClass.LowDivider }, Orientation = Separator.OrientationMode.Vertical, MinHeight = 5 });
         header.AddChild(StretchLabel(loc.GetString("ui-bql-results-col-proto"), ProtoRatio, bold));
-        header.AddChild(new VSeparator());
+        header.AddChild(new Separator { StyleClasses = { StyleClass.LowDivider }, Orientation = Separator.OrientationMode.Vertical, MinHeight = 5 });
         header.AddChild(StretchLabel(loc.GetString("ui-bql-results-col-actions"), ActionsRatio, bold));
     }
 
@@ -104,14 +106,14 @@ public static class AdminEntityResultsList
         PinnedEntitiesUIController? pins,
         bool italic = false)
     {
-        var font = italic ? resCache.NotoStack(variation: "Italic", size: 12) : null;
+        var font = italic ? new NotoFontFamilyStack(resCache).GetFont(12, FontKind.Italic) : null;
         var row = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
         row.AddChild(StretchLabel(entity.ToString(), IdRatio, font));
-        row.AddChild(new VSeparator());
+        row.AddChild(new Separator { StyleClasses = { StyleClass.LowDivider }, Orientation = Separator.OrientationMode.Vertical, MinHeight = 5 });
         row.AddChild(StretchLabel(name, NameRatio, font));
-        row.AddChild(new VSeparator());
+        row.AddChild(new Separator { StyleClasses = { StyleClass.LowDivider }, Orientation = Separator.OrientationMode.Vertical, MinHeight = 5 });
         row.AddChild(StretchLabel(proto ?? string.Empty, ProtoRatio, font));
-        row.AddChild(new VSeparator());
+        row.AddChild(new Separator { StyleClasses = { StyleClass.LowDivider }, Orientation = Separator.OrientationMode.Vertical, MinHeight = 5 });
         row.AddChild(CreateActions(name, proto, entity, console, loc, clipboard, resCache, allowDelete, pins, () => row.Orphan()));
         return row;
     }

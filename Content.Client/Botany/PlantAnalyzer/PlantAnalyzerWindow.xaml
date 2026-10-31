@@ -30,7 +30,7 @@
                            VerticalAlignment="Top" Name="ScanModeLabel"
                            Text="{Loc 'health-analyzer-window-entity-unknown-text'}" />
                 </BoxContainer>
-                <PanelContainer StyleClasses="LowDivider" />
+                <controls:Separator StyleClasses="LowDivider"/>
                 <BoxContainer Name="PlantDataTags" Margin="5 5 0 0" Orientation="Horizontal" Visible="false">
                     <RichTextLabel Margin="0 0 8 0" Name="Alive" Visible="false" Text="{Loc 'plant-analyzer-component-alive'}" />
                     <RichTextLabel Margin="0 0 8 0" Name="Dead" Visible="false" Text="{Loc 'plant-analyzer-component-dead'}" />
@@ -52,7 +52,7 @@
                     <Label Text=" / " />
                     <Label HorizontalAlignment="Right" Name="Lifespan" />
                 </GridContainer>
-                <PanelContainer Name="PlantDataDivider" Visible="false" StyleClasses="LowDivider" />
+                <controls:Separator Name="PlantDataDivider" Visible="false" StyleClasses="LowDivider"/>
                 <GridContainer Name="ContainerGrid" Margin="0 5" Columns="8" Visible="false">
                     <!-- Max values from `PlantHolderSystem.CheckLevelSanity` -->
                     <Label Text=" · " />
@@ -96,19 +96,19 @@
                     <Label Margin="12 0 0 0" Name="LtFieldIfTolerances3" />
                     <Label HorizontalAlignment="Right" Name="WeedResistanceLabel" />
                 </GridContainer>
-                <PanelContainer Name="ContainerDivider" Visible="false" StyleClasses="LowDivider" />
+                <controls:Separator Name="ContainerDivider" Visible="false" StyleClasses="LowDivider"/>
                 <BoxContainer Name="ChemicalsInWaterBox" Visible="false" Orientation="Horizontal" Margin="5">
                     <RichTextLabel Name="ChemicalsInWaterLabel" SetWidth="290" />
                 </BoxContainer>
-                <PanelContainer Name="ChemicalsInWaterDivider" Visible="false" StyleClasses="LowDivider" />
+                <controls:Separator Name="ChemicalsInWaterDivider" Visible="false" StyleClasses="LowDivider"/>
                 <BoxContainer Name="EnvironmentBox" Visible="false" Orientation="Horizontal" Margin="5">
                     <RichTextLabel Name="EnvironmentLabel" SetWidth="290" />
                 </BoxContainer>
-                <PanelContainer Name="EnvironmentDivider" Visible="false" StyleClasses="LowDivider" />
+                <controls:Separator Name="EnvironmentDivider" Visible="false" StyleClasses="LowDivider"/>
                 <BoxContainer Name="ProduceBox" Visible="false" Orientation="Horizontal" Margin="5">
                     <RichTextLabel Name="ProduceLabel" SetWidth="290" />
                 </BoxContainer>
-                <PanelContainer Name="ProduceDivider" Visible="false" StyleClasses="LowDivider" />
+                <controls:Separator Name="ProduceDivider" Visible="false" StyleClasses="LowDivider"/>
                 <Button Name="Print"
                     TextAlign="Center"
                     HorizontalExpand="True"
