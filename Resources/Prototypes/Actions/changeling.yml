@@ -271,7 +271,7 @@
     effects:
     - !type:AddReagentToBloodstream
       reagent: Fresium
-      amount: 10 # About 20 seconds of slowdown.
+      quantity: 10 # About 20 seconds of slowdown.
 
 - type: entity
   parent: BaseActionChangelingSting
