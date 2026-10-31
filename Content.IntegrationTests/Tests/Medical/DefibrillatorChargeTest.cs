@@ -56,7 +56,7 @@ public sealed class DefibrillatorChargeTest : GameTest
                 Assert.That(system.CanZap(defib, patient, user), Is.True);
                 system.Zap(defib, patient, user);
                 Assert.That(SEntMan.System<ZapListenerSystem>().Count(patient), Is.EqualTo(shocks));
-                Assert.That(batteries.GetCharge(cell.Value.Owner), Is.EqualTo(remainingCharge));
+                Assert.That(batteries.GetCharge(cell.Value.Owner).Charge, Is.EqualTo(remainingCharge));
             });
         }
         catch (Exception e)
