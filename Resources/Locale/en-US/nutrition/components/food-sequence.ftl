@@ -28,6 +28,7 @@ food-sequence-content-poppy = poppy
 food-sequence-content-lily = lily
 food-sequence-content-soy = soy
 food-sequence-content-cheese = cheese
+food-sequence-content-tofu = tofu
 food-sequence-content-brain = brain
 food-sequence-content-bear = bear meat
 food-sequence-content-penguin = penguin meat
