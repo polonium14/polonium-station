@@ -1324,3 +1324,7 @@ voicesensor: VoiceSensor
 # 2026-10-17
 AirlockChapelStandardGlassLocked: AirlockChapelGlassLocked
 AirlockStandardGlass: AirlockGlass
+
+# Polonium: Funky colored light boxes replaced by the upstream light packages from #45846
+BoxLightTubeColored: BoxLighttubeColorfulMixed
+BoxLightBulbColored: BoxLightbulbColorfulMixed
