@@ -1109,8 +1109,7 @@
     - TheatreIconGroup
     - CivilianIconGroup
     - SiliconIconGroup
-    - CentCommIconGroup
-    - TaskForceIconGroup
+    - CentCommIconGroup # Polonium: ERT icons stay here, the TaskForce group comes from the department split we did not port
     - AntagonistIconGroup
     - MiscIconGroup
     - BlankIconGroup
