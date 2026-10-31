@@ -1,0 +1,14 @@
+ent-FloorTileItemShuttleWhite = biała podłoga promu
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleBlue = niebieska podłoga promu
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleOrange = pomarańczowa podłoga promu
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttlePurple = fioletowa podłoga promu
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleRed = czerwona podłoga promu
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleGrey = szara podłoga promu
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleBlack = czarna podłoga promu
+    .desc = { ent-FloorTileItemBase.desc }

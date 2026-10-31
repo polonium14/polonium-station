@@ -1,0 +1,16 @@
+ent-MobMouse = mysz
+    .desc = Pisk!
+    .gender = female
+ent-MobMouseDead = mysz
+    .desc = Pisk!
+    .suffix = Martwa
+    .gender = female
+ent-MobMouse1 = { ent-MobMouse }
+    .desc = { ent-MobMouse.desc }
+    .gender = male
+ent-MobMouse2 = { ent-MobMouse }
+    .desc = { ent-MobMouse.desc }
+    .gender = male
+ent-MobMouseCancer = rakomysz
+    .desc = Toksyczna. Pisk!
+    .gender = female

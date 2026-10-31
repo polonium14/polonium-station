@@ -1,0 +1,14 @@
+ent-ClothingUniformJumpsuitChiefEngineer = chief engineer's jumpsuit
+    .desc = It's a high visibility jumpsuit given to those engineers insane enough to achieve the rank of Chief Engineer.
+ent-ClothingUniformJumpsuitChiefEngineerTurtle = chief engineer's turtleneck
+    .desc = A yellow turtleneck designed specifically for work in conditions of the engineering department.
+ent-ClothingUniformJumpsuitEngineering = engineering jumpsuit
+    .desc = If this suit was non-conductive, maybe engineers would actually do their damn job.
+ent-ClothingUniformJumpsuitEngineeringHazard = hazard jumpsuit
+    .desc = Woven in a grungy, warm orange. Lets others around you know that you really mean business when it comes to work.
+ent-ClothingUniformJumpsuitAtmos = atmospheric technician jumpsuit
+    .desc = I am at work. I can't leave work. Work is breathing. I am testing air quality.
+ent-ClothingUniformJumpsuitAtmosCasual = atmospheric technician's casual jumpsuit
+    .desc = Might as well relax with a job as easy as yours.
+ent-ClothingUniformJumpsuitSeniorEngineer = senior engineer jumpsuit
+    .desc = A sign of skill and prestige within the engineering department.

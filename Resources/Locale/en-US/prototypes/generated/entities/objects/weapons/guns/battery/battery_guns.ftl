@@ -1,19 +1,20 @@
-ent-BaseWeaponBattery = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-BaseWeaponBattery = { ent-BaseWeaponBatteryNoAmmoCounter }
+    .desc = { ent-BaseWeaponBatteryNoAmmoCounter.desc }
 ent-BaseLaserRifle = { ent-BaseWeaponBattery }
     .desc = { ent-BaseWeaponBattery.desc }
 ent-BaseWeaponPowerCell = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-BaseWeaponBatterySmall = { ent-BaseWeaponBattery }
-    .desc = { ent-BaseWeaponBattery.desc }
+ent-BaseWeaponBatterySmall = { ent-BaseWeaponBatterySmallNoAmmoCounter }
+    .desc = { ent-BaseWeaponBatterySmallNoAmmoCounter.desc }
 ent-BaseWeaponPowerCellSmall = { ent-BaseWeaponPowerCell }
     .desc = { ent-BaseWeaponPowerCell.desc }
 ent-WeaponLaserSvalinn = svalinn laser pistol
     .desc = A cheap and widely used laser pistol.
 ent-WeaponLaserGun = retro laser blaster
     .desc = A weapon using light amplified by the stimulated emission of radiation.
-ent-WeaponMakeshiftLaser = makeshift laser pistol
-    .desc = Better pray it won't burn your hands off.
+ent-WeaponMakeshiftLaser = { ent-WeaponMakeshiftLaserNoCell }
+    .suffix = Medium Cell
+    .desc = { ent-WeaponMakeshiftLaserNoCell.desc }
 ent-WeaponTeslaGun = tesla gun
     .desc = The power of the primordial element of lightning in your hands.
 ent-WeaponLaserCarbine = laser carbine
@@ -61,12 +62,25 @@ ent-WeaponEnergyMagnum = energy magnum
 ent-WeaponTemperatureGun = temperature gun
     .desc = An advanced gun that shoots body-temperature-changing beams. This probably constitutes as some kind of war crime.
 ent-WeaponLaserGunXenoborg = xenoborg laser gun
-    .desc = { ent-WeaponAdvancedLaser.desc }
+    .desc = { ent-BaseXenoborgContraband.desc }
 ent-WeaponLaserCannonXenoborg = xenoborg laser cannon
-    .desc = { ent-WeaponLaserCannon.desc }
+    .desc = { ent-BaseXenoborgContraband.desc }
 ent-WeaponBurstFireLaserXenoborg = xenoborg burst fire laser
     .desc = An alien weapon, channelling a burst-fire laser through a prism, causing targets to burst into fire.
 ent-WeaponRangeFinderXenoborg = xenoborg range finder
     .desc = { ent-BaseWeaponBatteryNoAmmoCounter.desc }
 ent-BaseWeaponBatteryNoAmmoCounter = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
+
+ent-BaseWeaponBatterySmallNoAmmoCounter = { ent-BaseWeaponBatteryNoAmmoCounter }
+    .desc = { ent-BaseWeaponBatteryNoAmmoCounter.desc }
+
+ent-WeaponMakeshiftLaserConstructionBase = { ent-BaseMinorContraband }
+    .desc = { ent-BaseMinorContraband.desc }
+
+ent-WeaponMakeshiftLaserFrame = makeshift laser pistol frame
+    .desc = Only needs a bit more screwing and a doctorate in practical bluespace technology.
+
+ent-WeaponMakeshiftLaserNoCell = makeshift laser pistol
+    .desc = Better pray it won't burn your hands off.
+    .suffix = No Cell

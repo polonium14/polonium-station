@@ -14,3 +14,6 @@ ent-CrateSecurityRiot = swat crate
     .desc = Contains two sets of riot armor, helmets, shields, and enforcers loaded with beanbags. Extra ammo is included. Requires Armory access to open.
 ent-CrateArmoryRifle = rifle crate
     .desc = Contains two high-powered assault rifles with four mags. Requires Armory access to open.
+
+ent-CrateArmoryMosin = mosin crate
+    .desc = Reliable, dirt cheap, and loud as hell. Contains three mosin rifles and 12 speedloaders of .30 rifle ammunition. Requires Armory access to open.

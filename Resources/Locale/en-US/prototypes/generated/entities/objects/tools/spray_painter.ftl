@@ -1,8 +1,8 @@
-ent-SprayPainter = spray painter
+ent-SprayPainter = { ent-SprayPainterRecharging }
+    .desc = { ent-SprayPainterRecharging.desc }
+ent-SprayPainterRecharging = spray painter
     .desc = A spray painter for painting airlocks, pipes, and other items.
-ent-SprayPainterRecharging = { ent-SprayPainter }
     .suffix = Admeme
-    .desc = { ent-SprayPainter.desc }
 ent-SprayPainterBorg = experimental spray painter
     .desc = An experimental recharging spray painter that can infinitely replicate compressed paint.
     .suffix = Borg

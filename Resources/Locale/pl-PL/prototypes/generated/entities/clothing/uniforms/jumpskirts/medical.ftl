@@ -1,0 +1,16 @@
+ent-ClothingUniformJumpskirtChemistry = chemiczny kombinezon ze spódnicą
+    .desc = Na tym kombinezonie ze spódnicą są jakieś dziwne plamy. Hm.
+ent-ClothingUniformJumpskirtVirology = wirusologiczny kombinezon ze spódnicą
+    .desc = Wykonany ze specjalnego włókna, które zapewnia szczególną ochronę przed zagrożeniami biologicznymi. Ma na sobie pasek rangi wirusologa.
+ent-ClothingUniformJumpskirtGenetics = genetyczny kombinezon ze spódnicą
+    .desc = Wykonany ze specjalnego włókna, które zapewnia szczególną ochronę przed zagrożeniami biologicznymi. Ma na sobie pasek rangi genetyka.
+ent-ClothingUniformJumpskirtCMO = kombinezon ze spódnicą ordynatora
+    .desc = To kombinezon ze spódnicą noszony przez tych, którzy mają doświadczenie, by zostać ordynatorem. Zapewnia niewielką ochronę biologiczną.
+ent-ClothingUniformJumpskirtCMOTurtle = golf ze spódnicą ordynatora
+    .desc = To golf noszony przez tych, którzy mają doświadczenie, by zostać ordynatorem. Zapewnia niewielką ochronę biologiczną.
+ent-ClothingUniformJumpskirtMedicalDoctor = kombinezon ze spódnicą doktora medycznego
+    .desc = Wykonany ze specjalnego włókna, które zapewnia niewielką ochronę przed zagrożeniami biologicznymi. Ma na sobie krzyż na piersi, oznaczający, że noszący jest przeszkolonym personelem medycznym.
+ent-ClothingUniformJumpskirtParamedic = kombinezon ze spódnicą ratownika
+    .desc = Ma na sobie plus, to dobra rzecz, prawda?
+ent-ClothingUniformJumpskirtSeniorPhysician = kombinezon ze spódnicą starszego lekarza
+    .desc = Znak umiejętności i prestiżu w dziale medycznym.

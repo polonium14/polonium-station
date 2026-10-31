@@ -1,0 +1,10 @@
+ent-BulletLaser = laser bolt
+    .desc = { ent-BaseBullet.desc }
+ent-BulletLaserSpread = wide laser barrage
+    .desc = { ent-BulletLaser.desc }
+ent-BulletLaserSpreadNarrow = lethal laser barrage
+    .desc = { ent-BulletLaser.desc }
+ent-BulletLaserMagnum = magnum laser bolt
+    .desc = { ent-BulletLaser.desc }
+ent-BulletLaserWindowPiercingMagnum = magnum window-piercing bolt
+    .desc = { ent-BulletLaser.desc }

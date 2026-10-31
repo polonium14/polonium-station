@@ -1,0 +1,10 @@
+ent-ClothingUniformJumpsuitCargo = kombinezon logistyka
+    .desc = Wytrzymały kombinezon wydawany pracownikom działu logistyki.
+ent-ClothingUniformJumpsuitSalvageSpecialist = mundur specjalisty ds. odzysku
+    .desc = To elegancki kombinezon z solidnym zestawem ogrodniczek. Jest bardzo brudny.
+ent-ClothingUniformJumpsuitQM = mundur kwatermistrza
+    .desc = Co brązowy może dla ciebie zrobić?
+ent-ClothingUniformJumpsuitQMTurtleneck = golf kwatermistrza
+    .desc = Ostry golf stworzony do wytrzymałego środowiska pracy zaopatrzenia.
+ent-ClothingUniformJumpsuitQMFormal = formalny garnitur kwatermistrza
+    .desc = Inspirowany kwatermistrzami z dawnych armii, idealny strój na formalną okazję zaopatrzeniową.

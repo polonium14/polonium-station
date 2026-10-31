@@ -18,3 +18,6 @@ ent-StatusEffectFriction = friction
     .desc = { ent-MobStatusEffectDebuff.desc }
 ent-StatusEffectStunned = stunned
     .desc = { ent-MobStatusEffectDebuff.desc }
+
+ent-StatusEffectKnockdown = knockdown
+    .desc = { ent-MobStatusEffectDebuff.desc }

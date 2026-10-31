@@ -1,6 +1,6 @@
-ent-DrinkBottlePlasticBaseFull = { ent-DrinkBaseMaterialPlastic }
+ent-DrinkBottlePlasticBaseFull = { ent-DrinkBottlePlasticBase }
     .suffix = Full
-    .desc = { ent-DrinkBaseMaterialPlastic.desc }
+    .desc = { ent-DrinkBottlePlasticBase.desc }
 ent-DrinkBottlePlasticSmallBaseFull = { ent-SolutionSmall }
     .desc = { ent-SolutionSmall.desc }
     .suffix = Full
@@ -50,3 +50,23 @@ ent-CustomDrinkJugFilled = beverage jug
     .desc = { ent-CustomDrinkJug.desc }
 ent-DrinkBottlePlasticBase = { ent-DrinkBaseMaterialPlastic }
     .desc = { ent-DrinkBaseMaterialPlastic.desc }
+
+ent-DrinkJuiceLemonJug = lemon juice jug
+    .desc = The very definiton of sour.
+    .suffix = For Drinks, Full
+
+ent-DrinkJuicePineappleJug = pineapple juice jug
+    .desc = The very essence of a vacation.
+    .suffix = For Drinks, Full
+
+ent-DrinkJuiceTomatoJug = tomato juice jug
+    .desc = Tastes like a debatably categorized plant.
+    .suffix = For Drinks, Full
+
+ent-DrinkMilkJug = milk jug
+    .desc = Two cartons in one!
+    .suffix = For Drinks, Full
+
+ent-DrinkSolDryJug = sol dry jug
+    .desc = Great for treating a hangover, no wonder the bar has a jug of it.
+    .suffix = For Drinks, Full

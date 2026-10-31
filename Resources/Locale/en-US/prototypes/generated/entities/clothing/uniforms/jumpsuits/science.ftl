@@ -1,0 +1,10 @@
+ent-ClothingUniformJumpsuitResearchDirector = research director's turtleneck
+    .desc = It's a turtleneck worn by those with the know-how to achieve the position of Research Director. Its fabric provides minor protection from biological contaminants.
+ent-ClothingUniformJumpsuitScientist = scientist jumpsuit
+    .desc = It's made of a special fiber that increases perceived intelligence and decreases personal ethics. It has markings that denote the wearer as a scientist.
+ent-ClothingUniformJumpsuitScientistFormal = scientist's formal jumpsuit
+    .desc = A uniform for sophisticated scientists, best worn with its matching tie.
+ent-ClothingUniformJumpsuitRoboticist = roboticist jumpsuit
+    .desc = It's a slimming black with reinforced seams; great for industrial work.
+ent-ClothingUniformJumpsuitSeniorResearcher = senior researcher jumpsuit
+    .desc = A sign of skill and prestige within the science department.

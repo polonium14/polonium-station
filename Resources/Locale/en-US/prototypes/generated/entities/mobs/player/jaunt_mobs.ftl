@@ -1,7 +1,7 @@
 ent-BaseMobJaunt = jaunt
-    .desc = Faint traces of a humanoid figure linger here
+    .desc = A faint image of a humanoid figure.
     .suffix = Ethereal
-  .gender = male
+    .gender = male
 ent-EtherealJaunt = jaunt
     .suffix = Wizard
     .desc = { ent-BaseMobJaunt.desc }

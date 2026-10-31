@@ -33,7 +33,7 @@ ent-ClothingOuterWizardBase = { ent-ClothingOuterBase }
     .desc = { ent-ClothingOuterBase.desc }
 ent-ClothingOuterWizardViolet = violet wizard robes
     .desc = A bizarre gem-encrusted violet robe that radiates magical energies.
-ent-ClothingOuterWizardBlue = wizard robes
+ent-ClothingOuterWizardBlue = blue wizard robes
     .desc = A bizarre gem-encrusted blue robe that radiates magical energies.
 ent-ClothingOuterWizardRed = red wizard robes
     .desc = Strange-looking, red, hat-wear that most certainly belongs to a real magic user.
@@ -57,3 +57,6 @@ ent-ClothingOuterFlannelGreen = green flannel jacket
     .desc = An old fashioned green flannel jacket for space autumn.
 ent-ClothingOuterRedRacoon = red racoon suit
     .desc = Fluffy suit of red racoon!
+
+ent-ClothingOuterWizardAbyss = abyss wizard robes
+    .desc = A robe with a fashionable leather vest, it is crackling with runic energy.

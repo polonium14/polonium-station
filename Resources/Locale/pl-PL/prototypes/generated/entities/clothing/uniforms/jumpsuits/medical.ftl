@@ -1,0 +1,16 @@
+ent-ClothingUniformJumpsuitChemistry = kombinezon chemika
+    .desc = Na tym kombinezonie są jakieś dziwne plamy. Hm.
+ent-ClothingUniformJumpsuitVirology = kombinezon wirusologa
+    .desc = Wykonany ze specjalnego włókna, które zapewnia szczególną ochronę przed zagrożeniami biologicznymi. Ma na sobie pasek rangi wirusologa.
+ent-ClothingUniformJumpsuitGenetics = kombinezon genetyka
+    .desc = Wykonany ze specjalnego włókna, które zapewnia szczególną ochronę przed zagrożeniami biologicznymi. Ma na sobie pasek rangi genetyka.
+ent-ClothingUniformJumpsuitCMO = mundur ordynatora
+    .desc = To kombinezon noszony przez tych, którzy mają doświadczenie, by zostać ordynatorem. Zapewnia niewielką ochronę biologiczną.
+ent-ClothingUniformJumpsuitCMOTurtle = golf ordynatora
+    .desc = To golf noszony przez tych, którzy mają doświadczenie, by zostać ordynatorem. Zapewnia niewielką ochronę biologiczną.
+ent-ClothingUniformJumpsuitMedicalDoctor = mundur lekarza
+    .desc = Wykonany ze specjalnego włókna, które zapewnia niewielką ochronę przed zagrożeniami biologicznymi. Ma na sobie krzyż na piersi, oznaczający, że noszący jest przeszkolonym personelem medycznym.
+ent-ClothingUniformJumpsuitParamedic = mundur ratownika
+    .desc = Ma na sobie plus, to dobra rzecz, prawda?
+ent-ClothingUniformJumpsuitSeniorPhysician = mundur starszego lekarza
+    .desc = Znak umiejętności i prestiżu w dziale medycznym.

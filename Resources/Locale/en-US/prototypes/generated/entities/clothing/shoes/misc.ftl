@@ -20,3 +20,9 @@ ent-ClothingShoesBootsMoon = moon boots
     .desc = Special anti-gravity boots developed with a speciality blend of lunar rock gel. Shipped from the Netherlands.
 ent-ClothingShoesBootsJump = jump boots
     .desc = High-tech boots that give you the incredible ability to JUMP! With these boots you can jump over lava, chasms and weird chemicals on the floor!
+
+ent-ClothingShoesSandalsBlack = black sandals
+    .desc = Best paired with robes or Hawaiian shirts. Worst paired with socks.
+
+ent-ClothingShoesSandalsBrown = brown sandals
+    .desc = Best paired with robes or Hawaiian shirts. Worst paired with socks.

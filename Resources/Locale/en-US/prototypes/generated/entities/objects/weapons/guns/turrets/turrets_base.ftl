@@ -1,7 +1,7 @@
 ent-BaseWeaponTurretIndestructible = turret
     .desc = { ent-BaseStructure.desc }
-ent-BaseTurretDestructible = { "" }
-    .desc = { "" }
+ent-BaseTurretDestructible = { ent-StructureHealthMachineStrong }
+    .desc = { ent-StructureHealthMachineStrong.desc }
 ent-BaseWeaponTurret = { ent-BaseWeaponTurretIndestructible }
     .desc = { ent-BaseWeaponTurretIndestructible.desc }
 ent-BaseWeaponBallisticTurretIndestructible = ballistic turret

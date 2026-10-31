@@ -1,0 +1,10 @@
+ent-ClothingUniformJumpsuitCaptain = kombinezon kapitana
+    .desc = To niebieski kombinezon ze złotymi oznaczeniami rangi „Kapitan”.
+ent-ClothingUniformJumpsuitHoP = mundur kierownika personelu
+    .desc = Raczej nudny i nieszkodliwy. Idealny do znikania z powierzchni wszechświata.
+ent-ClothingUniformJumpsuitCommandGeneric = kombinezon dowództwa
+    .desc = Zwykły kombinezon w barwach dowództwa, niepowiązany z żadnym konkretnym działem.
+ent-ClothingUniformJumpsuitNanotrasen = mundur Nanotrasen
+    .desc = Dostojny niebieski kombinezon reprezentujący NanoTrasen.
+ent-ClothingUniformJumpsuitCapFormal = garnitur kapitana
+    .desc = Garnitur na specjalne okazje.

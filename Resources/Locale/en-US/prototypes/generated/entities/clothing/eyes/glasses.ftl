@@ -16,7 +16,7 @@ ent-ClothingEyesGlassesOutlawGlasses = outlaw glasses
     .desc = A must for every self-respecting undercover agent.
 ent-ClothingEyesGlassesCheapSunglasses = cheap sunglasses
     .desc = A pair of black sunglasses. Doesn't block light well, more of an accessory than something useful.
-ent-ClothingEyesGlassesSunglasses = sun glasses
+ent-ClothingEyesGlassesSunglasses = sunglasses
     .desc = A pair of black sunglasses.
 ent-ClothingEyesGlassesSecurity = security glasses
     .desc = Upgraded sunglasses that provide flash immunity and a security HUD.
@@ -34,3 +34,6 @@ ent-ClothingEyesGlassesNoir = noir-tech glasses
     .desc = A pair of glasses that simulate what the world looked like before the invention of color.
 ent-ActionToggleTrayScanner = Toggle T-Ray Scanner
     .desc = Turn the T-ray scanning functionality on or off.
+
+ent-ClothingEyesGlassesBase = { ent-BaseScrewingRefinable }
+    .desc = { ent-BaseScrewingRefinable.desc }

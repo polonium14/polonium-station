@@ -1,0 +1,9 @@
+ent-MobDuckMallard = mallard duck
+    .desc = An adorable mallard duck, it's fluffy and soft!
+ent-MobDuckWhite = white duck
+    .desc = An adorable white duck, it's fluffy and soft!
+ent-MobDuckBrown = brown duck
+    .desc = An adorable brown duck, it's fluffy and soft!
+ent-FoodEggDuckFertilized = { ent-FoodEgg }
+    .suffix = Fertilized, Duck
+    .desc = { ent-FoodEgg.desc }

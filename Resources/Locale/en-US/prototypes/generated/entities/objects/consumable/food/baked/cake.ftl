@@ -1,5 +1,5 @@
-ent-FoodCakeBase = { ent-SolutionNormal }
-    .desc = { ent-SolutionNormal.desc }
+ent-FoodCakeBase = { ent-FoodCakeBaseNoSecretStash }
+    .desc = { ent-FoodCakeBaseNoSecretStash.desc }
 ent-FoodCakeSliceBase = { ent-SolutionVeryTiny }
     .desc = Just a slice of cake, it is enough for everyone.
 ent-FoodCakeBlueberry = blueberry cake
@@ -88,3 +88,6 @@ ent-FoodCakeBerryDelight = berry delight
     .desc = This is a cake that is approaching.
 ent-FoodCakeBerryDelightSlice = berry delight slice
     .desc = Put a fork in, your hunger in isolation.
+
+ent-FoodCakeBaseNoSecretStash = { ent-SolutionNormal }
+    .desc = { ent-SolutionNormal.desc }

@@ -1,0 +1,16 @@
+ent-ClothingUniformJumpskirtChemistry = chemistry jumpskirt
+    .desc = There's some odd stains on this jumpskirt. Hm.
+ent-ClothingUniformJumpskirtVirology = virology jumpskirt
+    .desc = It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it.
+ent-ClothingUniformJumpskirtGenetics = genetics jumpskirt
+    .desc = It's made of a special fiber that gives special protection against biohazards. It has a geneticist rank stripe on it.
+ent-ClothingUniformJumpskirtCMO = chief medical officer's jumpskirt
+    .desc = It's a jumpskirt worn by those with the experience to be Chief Medical Officer. It provides minor biological protection.
+ent-ClothingUniformJumpskirtCMOTurtle = chief medical officer's turtleneck jumpskirt
+    .desc = It's a turtleneck worn by those with the experience to be Chief Medical Officer. It provides minor biological protection.
+ent-ClothingUniformJumpskirtMedicalDoctor = medical doctor jumpskirt
+    .desc = It's made of a special fiber that provides minor protection against biohazards. It has a cross on the chest denoting that the wearer is trained medical personnel.
+ent-ClothingUniformJumpskirtParamedic = paramedic jumpskirt
+    .desc = It's got a plus on it, that's a good thing right?
+ent-ClothingUniformJumpskirtSeniorPhysician = senior physician jumpskirt
+    .desc = A sign of skill and prestige within the medical department.

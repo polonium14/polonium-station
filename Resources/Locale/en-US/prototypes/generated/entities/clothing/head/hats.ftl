@@ -90,7 +90,7 @@ ent-ClothingHeadHatWizardFake = fake wizard hat
     .desc = It has "WIZZARD" written across it in garish sequins. Comes with a cool beard.
 ent-ClothingHeadHatWizardBase = { ent-ClothingHeadBase }
     .desc = { ent-ClothingHeadBase.desc }
-ent-ClothingHeadHatWizardBlue = wizard hat
+ent-ClothingHeadHatWizardBlue = blue wizard hat
     .desc = A strange-looking blue hat that most certainly belongs to a powerful magic-user.
 ent-ClothingHeadHatXmasCrown = xmas crown
     .desc = "Happy Christmas!"
@@ -182,3 +182,6 @@ ent-ClothingHeadHatMitreClown = honkmother mitre
     .desc = It's hard for parishoners to see a banana peel on the floor when they're looking up at your glorious chapeau.
 ent-ClothingHeadHatTramDriver = tram driver hat
     .desc = It smells like confidence.
+
+ent-ClothingHeadHatWizardAbyss = abyss wizard hat
+    .desc = A strange looking red-trimmed hat that most certainly belongs to a powerful magic-user.

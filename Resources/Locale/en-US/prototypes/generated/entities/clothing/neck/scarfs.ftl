@@ -46,3 +46,6 @@ ent-ClothingNeckScarfStripedTrans = striped trans scarf
     .desc = A stylish striped trans scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
 ent-ClothingNeckScarfStripedLesbianLong = long bacon
     .desc = Long bacon! Perfect for sharing with your girlfriend!
+
+ent-ClothingNeckScarfVirtualIce = ice singer's scarf
+    .desc = A bright blue scarf with yellow tips at the ends.

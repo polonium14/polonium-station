@@ -40,3 +40,7 @@ ent-ClothingHeadsetWizard = wizard headset
     .desc = A headset used by the dreaded space wizards.
 ent-ClothingHeadsetNinja = green headset
     .desc = Who could refuse to wear this stylish black and green headset?
+
+ent-ClothingHeadsetSyndicateCovert = passenger headset
+    .suffix = Syndicate
+    .desc = { ent-ClothingHeadsetGrey.desc }

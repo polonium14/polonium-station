@@ -36,3 +36,18 @@ ent-ClothingShoesBootsCowboyWhite = white cowboy boots
     .desc = { ent-ClothingShoesBootsCowboyBrown.desc }
 ent-ClothingShoesBootsCowboyFancy = fancy cowboy boots
     .desc = { ent-ClothingShoesBootsCowboyBrown.desc }
+
+ent-ClothingShoesBootsVirtualChimera = chimera singer's boots
+    .desc = These boots are reminiscent of military combat boots, but they make you want to dance. They come in the unusual size 0401.
+
+ent-ClothingShoesBootsVirtualFan = singer's fan boots
+    .desc = Knee-high boots with yellow soles. If things get really boring, you can just go to sleep in them.
+
+ent-ClothingShoesBootsVirtualForeigner = foreign singer's boots
+    .desc = Stylish and unique shoes that complement a futuristic look.
+
+ent-ClothingShoesBootsVirtualIce = ice singer's boots
+    .desc = What was originally conceived as sneakers turned into tall, black boots for a virtual singer.
+
+ent-ClothingShoesBootsVirtualSinger = virtual singer's boots
+    .desc = The superposition of boots and stockings is possible!

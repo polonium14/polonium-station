@@ -81,3 +81,15 @@ ent-ToyIan = ian toy
     .desc = Unable to eat, but just as fluffy as the real guy!
 ent-ToyAmongPequeno = among pequeño
     .desc = Sus!
+
+ent-BasePlushieGinormous = { ent-BasePlushie }
+    .desc = { ent-BasePlushie.desc }
+
+ent-BasePlushieNormal = { ent-BasePlushie }
+    .desc = { ent-BasePlushie.desc }
+
+ent-BasePlushieSmall = { ent-BasePlushie }
+    .desc = { ent-BasePlushie.desc }
+
+ent-BasePlushieTiny = { ent-BasePlushie }
+    .desc = { ent-BasePlushie.desc }

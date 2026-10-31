@@ -178,3 +178,7 @@ ent-PrisonerPDA = { ent-ClearPDA }
     .desc = { ent-ClearPDA.desc }
 ent-TramDriverPDA = tram driver PDA
     .desc = A serious driver will always arrive on time.
+
+ent-SyndiCovertPDA = { ent-PassengerPDA }
+    .suffix = Adaptive
+    .desc = { ent-PassengerPDA.desc }
