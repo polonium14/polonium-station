@@ -126,6 +126,10 @@ public abstract partial class SharedStunSystem
     [SubscribeLocalEvent]
     private void OnCrawlerShutdown(Entity<CrawlerComponent> entity, ref ComponentShutdown args)
     {
+        // Polonium: standing up a deleted mob adds stamina status effects to a terminating entity
+        if (TerminatingOrDeleted(entity))
+            return;
+
         // hate. let me tell you how much i hate...
         // this may have unforseen consequences. blame scar
         ForceStandUp((entity.Owner, null), true);
