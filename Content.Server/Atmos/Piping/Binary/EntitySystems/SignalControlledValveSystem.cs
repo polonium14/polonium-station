@@ -13,6 +13,7 @@ public sealed partial class SignalControlledValveSystem : EntitySystem
     [Dependency] private GasValveSystem _valve = default!;
     [Dependency] private EntityQuery<GasValveComponent> _valveQuery;
 
+    [SubscribeLocalEvent]
     private void OnInit(EntityUid uid, SignalControlledValveComponent comp, ComponentInit args)
     {
         _signal.EnsureSinkPorts(uid, comp.OpenPort, comp.ClosePort, comp.TogglePort);
@@ -37,9 +38,9 @@ public sealed partial class SignalControlledValveSystem : EntitySystem
     {
         if (!_valveQuery.TryComp(ent.Owner, out var valve))
             return;
- 
+
         var state = args.Data.State;
- 
+
         if (args.Port == ent.Comp.OpenPort)
         {
             if (state != SignalState.Low)
