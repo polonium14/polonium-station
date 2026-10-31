@@ -5,6 +5,7 @@ using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Utility;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Maps;
+using Content.Shared._RMC14.Xenonids.Weeds; // Polonium
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
@@ -185,6 +186,10 @@ public sealed class IconSmoothTest : GameTest
                 var proto = IconSmoothEntities[i++];
                 // Puddles will disable icon smooth and delete themselves if empty or un-anchored so they will fuck up the test.
                 if (!SProtoMan.Resolve(proto, out var resolved) || resolved.HasComp<PuddleComponent>(SEntMan.ComponentFactory))
+                    continue;
+
+                // Polonium: RMC xeno weeds delete themselves when unanchored too
+                if (resolved.HasComp<XenoWeedsComponent>(SEntMan.ComponentFactory))
                     continue;
 
                 _spawned.Add(SEntMan.SpawnEntity(proto, new EntityCoordinates(TestMap!.Grid, x + 0.5f, y + 0.5f)));
