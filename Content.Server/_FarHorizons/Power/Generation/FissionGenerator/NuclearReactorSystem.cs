@@ -24,7 +24,7 @@ using System.Linq;
 using Content.Shared._FarHorizons.Materials.Systems;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.DeviceLinking.Events;
-using Content.Server.DeviceLinking.Systems;
+using Content.Shared.DeviceLinking.Systems;
 using Content.Shared.Construction.Components;
 using Content.Shared.Popups;
 using Content.Server.Popups;
@@ -38,6 +38,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Server.Radiation.Systems;
 using Content.Shared.Atmos.Components;
 using Content.Shared.AlertLevel;
+using Content.Shared.DeviceLinking.Payloads;
 
 namespace Content.Server._FarHorizons.Power.Generation.FissionGenerator;
 
@@ -62,7 +63,7 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
     [Dependency] private ServerGlobalSoundSystem _soundSystem = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private StationSystem _station = default!;
+    [Dependency] private ServerStationSystem _station = default!;
     [Dependency] private UserInterfaceSystem _uiSystem = null!;
     [Dependency] private DeviceLinkSystem _signal = default!;
     [Dependency] private PopupSystem _popupSystem = default!;
@@ -97,7 +98,8 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
 
         // Signal events
         SubscribeLocalEvent<NuclearReactorComponent, SignalReceivedEvent>(OnSignalReceived);
-        SubscribeLocalEvent<NuclearReactorComponent, PortDisconnectedEvent>(OnPortDisconnected);
+        SubscribeLocalEvent<NuclearReactorComponent, SignalReceivedEvent<LogicStatePayload>>(OnLogicSignalReceived); // Polonium
+        SubscribeLocalEvent<NuclearReactorComponent, SinkPortDisconnectedEvent>(OnPortDisconnected);
 
         // Anchor events
         SubscribeLocalEvent<NuclearReactorComponent, AnchorStateChangedEvent>(OnAnchorChanged);
@@ -830,14 +832,22 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
     }
     #endregion
 
+    // Polonium: logic states arrive as a separate payload event since Wizden #44346
     private void OnSignalReceived(EntityUid uid, NuclearReactorComponent comp, ref SignalReceivedEvent args)
     {
-        var state = SignalState.Momentary;
-        args.Data?.TryGetValue(DeviceNetworkConstants.LogicState, out state);
+        HandleSignal(uid, comp, args.Port, SignalState.Momentary, args.Trigger);
+    }
 
-        if (args.Port == comp.ControlRodInsertPort)
+    private void OnLogicSignalReceived(EntityUid uid, NuclearReactorComponent comp, ref SignalReceivedEvent<LogicStatePayload> args)
+    {
+        HandleSignal(uid, comp, args.Port, args.Data.State, args.Trigger);
+    }
+
+    private void HandleSignal(EntityUid uid, NuclearReactorComponent comp, string port, SignalState state, EntityUid? trigger)
+    {
+        if (port == comp.ControlRodInsertPort)
             comp.InsertPortState = state;
-        else if (args.Port == comp.ControlRodRetractPort)
+        else if (port == comp.ControlRodRetractPort)
             comp.RetractPortState = state;
 
         var logtext = "maintain";
@@ -846,10 +856,10 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
         else if (comp.RetractPortState != SignalState.Low && comp.InsertPortState == SignalState.Low)
             logtext = "retract";
 
-        _adminLog.Add(LogType.Action, $"{ToPrettyString(args.Trigger):trigger} set control rod insertion of {ToPrettyString(uid):target} to {logtext}");
+        _adminLog.Add(LogType.Action, $"{ToPrettyString(trigger):trigger} set control rod insertion of {ToPrettyString(uid):target} to {logtext}");
     }
 
-    private void OnPortDisconnected(EntityUid uid, NuclearReactorComponent comp, ref PortDisconnectedEvent args)
+    private void OnPortDisconnected(EntityUid uid, NuclearReactorComponent comp, ref SinkPortDisconnectedEvent args)
     {
         if (args.Port == comp.ControlRodInsertPort)
             comp.InsertPortState = SignalState.Low;

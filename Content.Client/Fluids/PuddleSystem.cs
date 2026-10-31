@@ -12,60 +12,42 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     [Dependency] private IconSmoothSystem _smooth = default!;
     [Dependency] private SpriteSystem _sprite = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<PuddleComponent, AppearanceChangeEvent>(OnPuddleAppearance);
-    }
-
+    [SubscribeLocalEvent]
     private void OnPuddleAppearance(EntityUid uid, PuddleComponent component, ref AppearanceChangeEvent args)
     {
         if (args.Sprite == null)
             return;
 
-        var volume = 1f;
+        if (!args.TryGetData<float>(PuddleVisuals.CurrentVolume, out var volume))
+            volume = 1.0f;
 
-        if (args.AppearanceData.TryGetValue(PuddleVisuals.CurrentVolume, out var volumeObj))
-        {
-            volume = (float)volumeObj;
-        }
+        // Polonium: Funky footprints are puddles without IconSmooth, which SetEnabled reports as an error since #45310
+        var smooth = HasComp<IconSmoothComponent>(uid);
 
         // Update smoothing and sprite based on volume.
-        if (TryComp<IconSmoothComponent>(uid, out var smooth))
+        if (volume < LowThreshold)
         {
-            if (volume < LowThreshold)
-            {
-                _sprite.LayerSetRsiState((uid, args.Sprite), 0, $"{smooth.StateBase}a");
-                _smooth.SetEnabled(uid, false, smooth);
-            }
-            else if (volume < MediumThreshold)
-            {
-                _sprite.LayerSetRsiState((uid, args.Sprite), 0, $"{smooth.StateBase}b");
-                _smooth.SetEnabled(uid, false, smooth);
-            }
-            else
-            {
-                if (!smooth.Enabled)
-                {
-                    _sprite.LayerSetRsiState((uid, args.Sprite), 0, $"{smooth.StateBase}0");
-                    _smooth.SetEnabled(uid, true, smooth);
-                    _smooth.DirtyNeighbours(uid);
-                }
-            }
+            _sprite.LayerSetRsiState((uid, args.Sprite), component.PuddleKey, $"{component.PuddleState}a");
+            if (smooth) // Polonium
+                _smooth.SetEnabled(uid, false, false);
+        }
+        else if (volume < MediumThreshold)
+        {
+            _sprite.LayerSetRsiState((uid, args.Sprite), component.PuddleKey, $"{component.PuddleState}b");
+            if (smooth) // Polonium
+                _smooth.SetEnabled(uid, false, false);
+        }
+        else if (smooth) // Polonium
+        {
+            _smooth.SetEnabled(uid, true);
         }
 
         var baseColor = Color.White;
 
-        if (args.AppearanceData.TryGetValue(PuddleVisuals.SolutionColor, out var colorObj))
-        {
-            var color = (Color)colorObj;
-            _sprite.SetColor((uid, args.Sprite), color * baseColor);
-        }
-        else
-        {
-            _sprite.SetColor((uid, args.Sprite), args.Sprite.Color * baseColor);
-        }
+        if (!args.TryGetData<Color>(PuddleVisuals.SolutionColor, out var color))
+            color = args.Sprite.Color;
+
+        _sprite.SetColor((uid, args.Sprite), color * baseColor);
     }
 
     #region Spill

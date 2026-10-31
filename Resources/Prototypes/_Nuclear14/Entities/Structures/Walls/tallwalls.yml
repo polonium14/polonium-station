@@ -66,7 +66,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/brick.rsi
   - type: IconSmooth
     key: walls
-    base: tallbrick
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallbrick
     
 - type: entity
   parent: N14BaseWallTall
@@ -80,7 +83,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/brickalt.rsi
   - type: IconSmooth
     key: walls
-    base: tallbrickalt
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallbrickalt
     
 - type: entity
   parent: N14BaseWallTall
@@ -94,7 +100,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/brickgray.rsi
   - type: IconSmooth
     key: walls
-    base: tallbrickgray
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallbrickgray
 
 - type: entity
   parent: N14BaseWallTall
@@ -114,7 +123,10 @@
     damageContainer: Inorganic
   - type: IconSmooth
     key: walls
-    base: tallconcrete
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallconcrete
     
 - type: entity
   parent: N14BaseWallTall
@@ -128,7 +140,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/concretealt.rsi
   - type: IconSmooth
     key: walls
-    base: tallconcretealt
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallconcretealt
 
 - type: entity
   parent: N14BaseWallTallMetal
@@ -142,7 +157,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/metal.rsi
   - type: IconSmooth
     key: walls
-    base: tallmetal
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallmetal
 
 - type: entity
   parent: N14BaseWallTallMetal
@@ -156,7 +174,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/reinfmetal.rsi
   - type: IconSmooth
     key: walls
-    base: tallreinfmetal
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallreinfmetal
     
 - type: entity
   parent: N14BaseWallTall
@@ -170,7 +191,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/rock.rsi
   - type: IconSmooth
     key: walls
-    base: tallrock
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallrock
   - type: SoundOnGather
   - type: Gatherable
     toolWhitelist:
@@ -201,7 +225,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/rockdrought.rsi
   - type: IconSmooth
     key: walls
-    base: tallrockdrought
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallrockdrought
     
 - type: entity
   parent: N14WallRockTall
@@ -215,7 +242,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/rockmammoth.rsi
   - type: IconSmooth
     key: walls
-    base: tallrockmammoth
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallrockmammoth
     
 - type: entity
   parent: N14BaseWallTallMetalWeak
@@ -229,7 +259,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/roughscrap.rsi
   - type: IconSmooth
     key: walls
-    base: tallroughscrap
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallroughscrap
     
 - type: entity
   parent: N14BaseWallTallMetal
@@ -243,7 +276,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/rustindustrial.rsi
   - type: IconSmooth
     key: walls
-    base: tallrustindustrial
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallrustindustrial
     
 - type: entity
   parent: N14BaseWallTallMetal
@@ -257,7 +293,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/rustmetal.rsi
   - type: IconSmooth
     key: walls
-    base: tallrustmetal
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallrustmetal
 
 - type: entity
   parent: N14BaseWallTallMetalWeak
@@ -271,7 +310,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/scrap.rsi
   - type: IconSmooth
     key: walls
-    base: tallscrap
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallscrap
     
 - type: entity
   parent: N14BaseWallTallMetalWeak
@@ -285,7 +327,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/scrapblue.rsi
   - type: IconSmooth
     key: walls
-    base: tallscrapblue
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallscrapblue
     
 - type: entity
   parent: N14BaseWallTallMetalWeak
@@ -299,7 +344,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/scrapred.rsi
   - type: IconSmooth
     key: walls
-    base: tallscrapred
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallscrapred
     
 - type: entity
   parent: N14BaseWallTallMetalWeak
@@ -313,7 +361,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/scrapwhite.rsi
   - type: IconSmooth
     key: walls
-    base: tallscrapwhite
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallscrapwhite
     
 - type: entity
   parent: N14BaseWallTallMetal
@@ -327,7 +378,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/sewer.rsi
   - type: IconSmooth
     key: walls
-    base: tallsewer
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallsewer
     
 - type: entity
   parent: N14BaseWallTallWood
@@ -341,7 +395,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/siding.rsi
   - type: IconSmooth
     key: walls
-    base: tallsiding
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallsiding
     
 - type: entity
   parent: N14BaseWallTallWood
@@ -355,7 +412,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/sidingblue.rsi
   - type: IconSmooth
     key: walls
-    base: tallsidingblue
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallsidingblue
     
 - type: entity
   parent: N14BaseWallTallWood
@@ -369,7 +429,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/sidingred.rsi
   - type: IconSmooth
     key: walls
-    base: tallsidingred
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallsidingred
     
 - type: entity
   parent: N14BaseWallTallWood
@@ -383,7 +446,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/sidinggreen.rsi
   - type: IconSmooth
     key: walls
-    base: tallsidinggreen
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallsidinggreen
 
 - type: entity
   parent: N14BaseWallTallWood
@@ -397,7 +463,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/wood.rsi
   - type: IconSmooth
     key: walls
-    base: tallwood
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallwood
     
 - type: entity
   parent: N14BaseWallTallWood
@@ -411,4 +480,7 @@
     sprite: _Nuclear14/Structures/Walls/ms13/tall/woodalt.rsi
   - type: IconSmooth
     key: walls
-    base: tallwoodalt
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: tallwoodalt

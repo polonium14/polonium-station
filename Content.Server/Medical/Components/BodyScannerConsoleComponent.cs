@@ -8,7 +8,7 @@ namespace Content.Server.Medical.Components;
 /// other linkable machine). The console itself has no scanner - all the actual work of resolving
 /// the linked bed's occupant and driving the doll+tabs Body/Organs/Chemicals window (the exact
 /// same <c>HealthAnalyzerWindow</c> the handheld health analyzer uses, via
-/// <see cref="HealthAnalyzerSystem.SendAnalyzerUiState"/>) happens in
+/// <see cref="HealthAnalyzer.ServerHealthAnalyzerSystem.SendAnalyzerUiState"/>) happens in
 /// <see cref="BodyScannerConsoleSystem"/>, on a periodic refresh while the BUI is open.
 /// </summary>
 [RegisterComponent]

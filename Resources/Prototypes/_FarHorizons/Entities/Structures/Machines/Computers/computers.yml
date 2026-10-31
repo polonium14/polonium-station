@@ -16,10 +16,13 @@
   - type: Sprite
     sprite: Structures/Machines/computers.rsi
     layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerScreen"]
-      state: power_monitor
+    - map: ["enum.ComputerVisualLayers.Frame"]
+    - map: ["enum.ComputerVisualLayers.Screen"]
+  - type: ComputerVisuals # Polonium: computer sprite states moved to ComputerVisuals by upstream #44256
+    stateScreen: power_monitor
+    stateKeyboard: null
+    stateKeys: null
+    statePanel: null
   - type: NuclearReactorMonitor
   - type: ActivatableUI
     key: enum.NuclearReactorUiKey.Key
@@ -63,10 +66,13 @@
   - type: Sprite
     sprite: Structures/Machines/computers.rsi
     layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerScreen"]
-      state: turbinecomp
+    - map: ["enum.ComputerVisualLayers.Frame"]
+    - map: ["enum.ComputerVisualLayers.Screen"]
+  - type: ComputerVisuals # Polonium: computer sprite states moved to ComputerVisuals by upstream #44256
+    stateScreen: turbinecomp
+    stateKeyboard: null
+    stateKeys: null
+    statePanel: null
   - type: GasTurbineMonitor
   - type: ActivatableUI
     key: enum.TurbineUiKey.Key

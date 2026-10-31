@@ -33,3 +33,6 @@ ent-SyndicateSponge = { ent-MonkeyCube }
     .desc = { ent-MonkeyCube.desc }
 ent-MopBucketCube = mop bucket cube
     .desc = Just add water! And then more water!
+
+ent-SlimeCube = slime cube
+    .desc = Just add water, carefully, they're sensitive to it.

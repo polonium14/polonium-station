@@ -85,7 +85,7 @@
     sprite: Structures/Machines/grinder.rsi
     drawdepth: LargeObjects
     snapCardinals: true
-    offset: "0.0,0.4"
+    offset: "0.0,0.1"
     layers:
     - map: [ "grinder" ]
       state: "grinder_empty"

@@ -16,6 +16,7 @@
   - type: Tag
     tags:
     - DonkPocket
+    - FinishedMeal
     - Meat
 
 # Donkpocket
@@ -334,6 +335,7 @@
     tags:
     - ClothMade
     - DonkPocket
+    - FinishedMeal
 
 - type: entity
   name: warm moth-pocket

@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.GameTicking;
-using Content.Server.Pinpointer;
+using Content.Shared.Pinpointer;
 using Content.Server._Polonium.Replicator; // POLONIUM
 using Content.Shared._Impstation.Replicator;
 using Content.Shared._Polonium.Replicator; // POLONIUM
@@ -21,6 +21,7 @@ using Content.Shared.Storage.Components;
 using Content.Server.Storage.EntitySystems;
 using Content.Server.Buckle.Systems;
 using Content.Shared.Storage;
+using Content.Shared.GameTicking;
 
 namespace Content.Server._Impstation.Replicator;
 
@@ -158,7 +159,7 @@ public sealed partial class ReplicatorNestSystem : SharedReplicatorNestSystem
         _queen.UpdateHive(ent, nestLost: true); // POLONIUM: the queen and her nest action are picked there
     }
 
-    private void OnRoundEndTextAppend(RoundEndTextAppendEvent args)
+    private void OnRoundEndTextAppend(ref RoundEndTextAppendEvent args)
     {
         List<Entity<ReplicatorNestComponent>> nests = [];
 

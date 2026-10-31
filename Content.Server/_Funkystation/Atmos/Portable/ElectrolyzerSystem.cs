@@ -16,6 +16,7 @@ using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
+using Content.Shared.DeviceLinking.Components;
 
 namespace Content.Server._Funkystation.Atmos.Portable;
 

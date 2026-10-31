@@ -10,8 +10,8 @@ using System.Linq;
 using Content.Shared._Goobstation.CCVar;
 using Content.Server._Goobstation.StationEvents.Components;
 using Content.Server.Antag;
-using Content.Server.Antag.Components;
-using Content.Server.Antag.Selectors;
+using Content.Shared.Antag.Components;
+using Content.Shared.Antag.Selectors;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
@@ -32,7 +32,10 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Ghost.Components;
+using Content.Shared.GameTicking.Rules;
+using Content.Shared.Antag;
 using Content.Shared._Polonium.GameTicking; // POLONIUM
+using Content.Shared.GameTicking;
 
 namespace Content.Server.StationEvents.SecretPlus;
 
@@ -80,7 +83,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private ServerGameTicker _ticker = default!;
 
     private float _minimumTimeUntilFirstEvent;
     private float _roundstartChaosScoreMultiplier;
@@ -91,7 +94,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RoundStartAttemptEvent>(OnRoundStartAttempt, before: new[] { typeof(GameTicker) });
+        SubscribeLocalEvent<RoundStartAttemptEvent>(OnRoundStartAttempt, before: new[] { typeof(ServerGameTicker) });
 
         _sawmill = _log.GetSawmill("secret_plus");
 
@@ -137,7 +140,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
                 if (!TryComp<GameRuleComponent>(ruleUid, out var rule)
                     || rule.CancelPresetOnTooFewPlayers
                     || args.Players.Length >= rule.MinPlayers
-                    || !_ticker.EndGameRule(ruleUid, rule))
+                    || !_ticker.EndGameRule((ruleUid, rule)))
                     continue;
 
                 _chat.SendAdminAnnouncement(Loc.GetString("secretplus-rule-skipped-not-enough-ready-players",
@@ -186,7 +189,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             scheduler.Comp.IgnoreTimings,
             scheduler.Comp.IgnoreTimings ? int.MaxValue : players, // Polonium
             scheduler.Comp.IgnoreTimings ? TimeSpan.MaxValue : null,
-            1f / GetRamping(scheduler));
+            1f / GetRamping(scheduler)).Events.Select(e => e.Item1).ToHashSet(); // Polonium
 
         // POLONIUM START
         if (scheduler.Comp.GhostAntagRules is { } ghostAntags && CanStartGhostAntag(scheduler, players))
@@ -369,7 +372,8 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
     private void StartRule(Entity<SecretPlusComponent> scheduler, string rule, bool doStart = true, int? players = null, float chaosShare = 1f, float? chaosScore = null) // Polonium
     {
-        var ruleUid = _ticker.AddGameRule(rule);
+        if (_ticker.AddGameRule(rule) is not { } ruleUid)
+            return;
 
         // Roundstart antags are optional: losing ready players during map loading
         // should end the affected rule, rather than cancel the entire preset.
@@ -379,7 +383,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             scheduler.Comp.RoundstartRules.Add(ruleUid);
         }
 
-        scheduler.Comp.ChaosScore += (chaosScore ?? GetChaosScore(ruleUid, players)!.Value) * chaosShare; // Polonium
+        scheduler.Comp.ChaosScore += (chaosScore ?? GetChaosScore(ruleUid.AsNullable(), players)!.Value) * chaosShare; // Polonium
 
         if (players != null && TryComp<AntagSelectionComponent>(ruleUid, out var selection))
         {
@@ -394,7 +398,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
         }
 
         if (doStart)
-            _ticker.StartGameRule(ruleUid);
+            _ticker.StartGameRule(ruleUid.AsNullable());
     }
 
     private PlayerCount CountActivePlayers()

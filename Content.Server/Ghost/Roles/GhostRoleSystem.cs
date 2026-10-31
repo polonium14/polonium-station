@@ -38,9 +38,10 @@ using Content.Shared.Ghost.Systems;
 using Content.Shared.Ghost.Components;
 using Content.Server.GameTicking;
 using Content.Server.Station.Systems;
-using Content.Server.Spawners.Components;
+using Content.Shared.Spawners.Components;
 using Content.Shared.Bed.Cryostorage;
 using Content.Shared.Preferences;
+using Content.Shared.Station.Systems;
 
 namespace Content.Server.Ghost.Roles;
 
@@ -60,9 +61,9 @@ public sealed partial class GhostRoleSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private PopupSystem _popupSystem = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
-    [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private ServerGameTicker _ticker = default!;
     [Dependency] private StationSpawningSystem _stationSpawning = default!;
-    [Dependency] private StationSystem _stationSystem = default!;
+    [Dependency] private ServerStationSystem _stationSystem = default!;
 
     private uint _nextRoleIdentifier;
     private bool _needsUpdateGhostRoleCount = true;

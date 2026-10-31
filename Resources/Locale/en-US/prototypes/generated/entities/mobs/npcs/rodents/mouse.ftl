@@ -1,0 +1,11 @@
+ent-MobMouse = mouse
+    .desc = Squeak!
+ent-MobMouseDead = mouse
+    .desc = Squeak!
+    .suffix = Dead
+ent-MobMouse1 = { ent-MobMouse }
+    .desc = { ent-MobMouse.desc }
+ent-MobMouse2 = { ent-MobMouse }
+    .desc = { ent-MobMouse.desc }
+ent-MobMouseCancer = cancer mouse
+    .desc = Toxic. Squeak!

@@ -237,8 +237,8 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingUniformJumpskirtPerformer
-        - id: ClothingShoesBootsPerformer
+        - id: ClothingUniformJumpskirtVirtualSinger
+        - id: ClothingShoesBootsVirtualSinger
         - id: FoodMealMemoryleek
 
 - type: entity

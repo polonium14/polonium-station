@@ -1,0 +1,14 @@
+ent-ClothingUniformJumpsuitChiefEngineer = mundur głównego inżyniera
+    .desc = To kombinezon o wysokiej widoczności, nadawany tym inżynierom, którzy są na tyle szaleni, aby osiągnąć rangę Głównego Inżyniera.
+ent-ClothingUniformJumpsuitChiefEngineerTurtle = golf głównego inżyniera
+    .desc = Żółty golf zaprojektowany specjalnie do pracy w warunkach działu inżynieryjnego.
+ent-ClothingUniformJumpsuitEngineering = kombinezon inżynieryjny
+    .desc = Gdyby ten garnitur był nieprzewodzący, może inżynierowie w końcu zrobiliby swoją robotę.
+ent-ClothingUniformJumpsuitEngineeringHazard = kombinezon roboczy
+    .desc = Wykonany w brudnym, ciepłym pomarańczowym kolorze. Informuje innych wokół ciebie, że naprawdę poważnie podchodzisz do pracy.
+ent-ClothingUniformJumpsuitAtmos = kombinezon technika atmosferycznego
+    .desc = Jestem w pracy. Nie mogę opuścić pracy. Praca to oddychanie. Testuję jakość powietrza.
+ent-ClothingUniformJumpsuitAtmosCasual = kombinezon roboczy technika atmosferycznego
+    .desc = Możesz się zrelaksować przy pracy takiej jak twoja.
+ent-ClothingUniformJumpsuitSeniorEngineer = mundur starszego inżyniera
+    .desc = Znak umiejętności i prestiżu w dziale inżynieryjnym.

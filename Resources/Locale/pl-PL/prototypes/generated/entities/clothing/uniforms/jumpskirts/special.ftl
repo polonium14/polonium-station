@@ -1,0 +1,10 @@
+ent-ClothingUniformJumpskirtOperative = kombinezon operatora nuklearnego ze spódnicą
+    .desc = Mundur dla elitarnych operatorów Syndykatu wykonujących operacje taktyczne w głębokim kosmosie.
+ent-ClothingUniformJumpskirtTacticool = kombinezon taktyczny ze spódnicą
+    .desc = Mundur dla przeciętnych taktycznych wojaków-LARP-erów, kradnących izolowane rękawice w głębokim kosmosie.
+ent-ClothingUniformJumpskirtSyndieFormalDress = sukienka wieczorowa syndykatu
+    .desc = Mundur Syndykatu jest uszyty w eleganckim stylu, aż szkoda robić w nim brudne sztuczki.
+ent-ClothingUniformJumpskirtTacticalMaid = taktyczny garnitur pokojówki ze spódnicą
+    .desc = Zakłada się, że najlepsze pokojówki powinny mieć projektanckie garnitury.
+ent-ClothingUniformJumpskirtWeb = pajęczy kombinezon ze spódnicą
+    .desc = Daje jasno do zrozumienia, że jesteś jednością z pajęczynami.

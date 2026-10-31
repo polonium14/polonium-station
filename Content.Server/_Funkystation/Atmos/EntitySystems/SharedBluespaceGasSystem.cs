@@ -17,13 +17,14 @@ using Content.Server._Funkystation.Atmos.Components;
 
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Reactions;
+using Content.Shared.DeviceLinking.Systems;
 
 namespace Content.Server._Funkystation.Atmos.Systems
 {
     public sealed partial class SharedBluespaceGasSystem : EntitySystem
     {
         [Dependency] private IConfigurationManager _cfg = default!;
-        [Dependency] private SharedDeviceLinkSystem DeviceLink = default!;
+        [Dependency] private DeviceLinkSystem DeviceLink = default!;
 
         private bool _bluespaceGasEnabled;
 
@@ -37,10 +38,10 @@ namespace Content.Server._Funkystation.Atmos.Systems
             _cfg.OnValueChanged(CCVars_Funky.BluespaceGasEnabled, enabled => _bluespaceGasEnabled = enabled, true);
 
             SubscribeLocalEvent<BluespaceSenderComponent, NewLinkEvent>(OnNewLink);
-            SubscribeLocalEvent<BluespaceGasUtilizerComponent, PortDisconnectedEvent>(OnPortDisconnected);
+            SubscribeLocalEvent<BluespaceGasUtilizerComponent, SinkPortDisconnectedEvent>(OnPortDisconnected);
         }
 
-        private void OnPortDisconnected(Entity<BluespaceGasUtilizerComponent> ent, ref PortDisconnectedEvent args)
+        private void OnPortDisconnected(Entity<BluespaceGasUtilizerComponent> ent, ref SinkPortDisconnectedEvent args)
         {
             if (args.Port != SinkPort)
                 return;

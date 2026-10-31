@@ -27,7 +27,7 @@ using Content.Client.Stylesheets;
 using Content.Client.Stylesheets.Fonts;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
-using Content.Shared.Timing;
+using Content.Shared.Timing.Systems;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;

@@ -1,3 +1,4 @@
+using Content.Client.Stylesheets;
 using System.Linq;
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
@@ -229,7 +230,7 @@ public sealed partial class AdminObjectivesWindow : FancyWindow
         buttons.AddChild(remove);
 
         box.AddChild(buttons);
-        box.AddChild(new PanelContainer { StyleClasses = { "LowDivider" }, MinSize = new Vector2(0, 1) });
+        box.AddChild(new Separator { StyleClasses = { StyleClass.LowDivider } });
         return box;
     }
 

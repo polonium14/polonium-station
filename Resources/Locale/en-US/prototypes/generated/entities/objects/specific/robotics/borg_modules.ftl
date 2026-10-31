@@ -83,11 +83,7 @@ ent-BorgModuleAnomaly = anomaly cyborg module
 ent-BorgModuleService = service cyborg module
     .desc = { ent-BaseBorgModuleService.desc }
 ent-BorgModuleMusique = musique cyborg module
-    .desc = { ent-BaseBorgModuleService.desc }
-ent-BorgModuleGardening = gardening cyborg module
-    .desc = { ent-BaseBorgModuleService.desc }
-ent-BorgModuleHarvesting = harvesting cyborg module
-    .desc = { ent-BaseBorgModuleService.desc }
+    .desc = { ent-BaseBorgModule.desc }
 ent-BorgModuleClowning = clowning cyborg module
     .desc = { ent-BaseBorgModuleService.desc }
 ent-BorgModuleAdvancedClowning = advanced clowning cyborg module
@@ -113,9 +109,7 @@ ent-XenoborgModuleBasic = basic xenoborg module
 ent-XenoborgModuleTool = tool xenoborg module
     .desc = Simple tools for most Xenoborgs.
 ent-XenoborgModuleAccessBreaker = access breaker xenoborg module
-    .desc = Module with a access breaker.
-ent-XenoborgModuleFireExtinguisher = fire extinguisher xenoborg module
-    .desc = Module with a self-refueling fire extinguisher.
+    .desc = Module with an access breaker.
 ent-XenoborgModuleDoorControl = door control xenoborg module
     .desc = Module that allows Xenoborgs to control airlocks.
 ent-XenoborgModuleTileGun = tile gun xenoborg module
@@ -164,3 +158,21 @@ ent-XenoborgModuleRocket = rocket module
     .desc = A module with a rocket launcher designed to destroy structures.
 ent-XenoborgModuleZap = zap xenoborg module
     .desc = Module that disables the grounding of the xenoborg, making them electrified. Shocking!
+
+ent-BorgModuleBotany = botany cyborg module
+    .desc = { ent-BaseBorgModuleService.desc }
+
+ent-BorgModuleCooking = cooking cyborg module
+    .desc = { ent-BaseBorgModuleService.desc }
+
+ent-BorgModuleDinnerwarePlaceholder = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+
+ent-BorgModuleFoodPlatterPlaceholder = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+
+ent-BorgModuleRawIngredientPlaceholder = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+
+ent-BorgModuleSeedProducePlaceholder = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }

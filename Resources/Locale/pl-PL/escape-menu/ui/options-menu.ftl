@@ -61,7 +61,6 @@ ui-options-show-ooc-patron-color = Pokazuj kolor OOC patronów
 ui-options-show-looc-on-head = Pokazuj wiadomości LOOC nad głowami postaci
 ui-options-fancy-speech = Pokazuj imiona w dymkach wiadomości
 ui-options-fancy-name-background = Dodaj tło imionom w dymkach wiadomości
-ui-options-chat-follow-button = Jako duch, pokaż przycisk śledzenia obok wiadomości na czacie
 ui-options-vsync = VSync
 ui-options-max-fps = Maksymalna liczba FPS:
 ui-options-max-fps-display-rate = Częstotliwość odświeżania

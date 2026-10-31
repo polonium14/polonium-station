@@ -17,7 +17,8 @@
     maxAccumuluator: 180
     spawnAccumulator: 15
     spawnCooldown: 15
-    spawn: DinosaurSpawnerRandom
+    spawn: !type:EntSelector # Polonium: DragonRift spawn is an entity table since Wizden #45759
+      id: DinosaurSpawnerRandom
     announcement: dino-rift-warning
   - type: Sprite
     layers:
@@ -50,7 +51,8 @@
     maxAccumuluator: 180
     spawnAccumulator: 15
     spawnCooldown: 15
-    spawn: DinosaurSpawnerEasy
+    spawn: !type:EntSelector # Polonium: DragonRift spawn is an entity table since Wizden #45759
+      id: DinosaurSpawnerEasy
     announcement: dino-rift-warning
 
 - type: entity
@@ -64,7 +66,8 @@
     maxAccumuluator: 180
     spawnAccumulator: 15
     spawnCooldown: 15
-    spawn: DinosaurSpawnerMedium
+    spawn: !type:EntSelector # Polonium: DragonRift spawn is an entity table since Wizden #45759
+      id: DinosaurSpawnerMedium
     announcement: dino-rift-warning
 
 - type: entity
@@ -78,7 +81,8 @@
     maxAccumuluator: 180
     spawnAccumulator: 15
     spawnCooldown: 15
-    spawn: DinosaurSpawnerHard
+    spawn: !type:EntSelector # Polonium: DragonRift spawn is an entity table since Wizden #45759
+      id: DinosaurSpawnerHard
     announcement: dino-rift-warning
 
 - type: entity
@@ -92,7 +96,8 @@
     maxAccumuluator: 300
     spawnAccumulator: 0
     spawnCooldown: 8
-    spawn: DinosaurSpawnerRandom
+    spawn: !type:EntSelector # Polonium: DragonRift spawn is an entity table since Wizden #45759
+      id: DinosaurSpawnerRandom
     announcement: dino-rift-warning
   - type: Sprite
     layers:

@@ -1,0 +1,10 @@
+ent-ClothingUniformJumpskirtChiefEngineer = kombinezon ze spódnicą głównego inżyniera
+    .desc = To kombinezon ze spódnicą o wysokiej widoczności, nadawany tym inżynierom, którzy są na tyle szaleni, aby osiągnąć rangę Głównego Inżyniera.
+ent-ClothingUniformJumpskirtChiefEngineerTurtle = golf głównego inżyniera
+    .desc = Żółty golf zaprojektowany specjalnie do pracy w warunkach działu inżynieryjnego.
+ent-ClothingUniformJumpskirtEngineering = inżynieryjny kombinezon ze spódnicą
+    .desc = Gdyby ten garnitur był nieprzewodzący, może inżynierowie w końcu zrobiliby swoją robotę.
+ent-ClothingUniformJumpskirtAtmos = kombinezon ze spódnicą technika atmosferyki
+    .desc = Jestem w pracy. Nie mogę opuścić pracy. Praca to oddychanie. Testuję jakość powietrza.
+ent-ClothingUniformJumpskirtSeniorEngineer = kombinezon ze spódnicą starszego inżyniera
+    .desc = Znak umiejętności i prestiżu w dziale inżynieryjnym.

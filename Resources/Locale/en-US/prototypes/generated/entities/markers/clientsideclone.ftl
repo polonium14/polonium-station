@@ -1,2 +1,2 @@
-ent-clientsideclone = clientsideclone
+ent-ClientsideClone = ClientsideClone
     .desc = { "" }

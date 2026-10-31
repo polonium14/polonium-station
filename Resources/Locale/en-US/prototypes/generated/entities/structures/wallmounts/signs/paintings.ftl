@@ -1,5 +1,5 @@
-ent-PaintingBase = { ent-BaseSign }
-    .desc = { ent-BaseSign.desc }
+ent-PaintingBase = { ent-BaseSignWeak }
+    .desc = { ent-BaseSignWeak.desc }
 ent-PaintingEmpty = empty frame
     .desc = An empty frame, waiting to be filled with art.
 ent-PaintingMoony = Abstract No.1

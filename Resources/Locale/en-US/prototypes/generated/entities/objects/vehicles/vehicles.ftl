@@ -4,3 +4,7 @@ ent-VehicleWheelchair = wheelchair
     .desc = A chair with big wheels. It looks like you can move in these on your own.
 ent-VehicleJanicart = janicart
     .desc = The janitor's trusty steed.
+
+ent-VehicleWheelchairFolded = { ent-VehicleWheelchair }
+    .suffix = folded
+    .desc = { ent-VehicleWheelchair.desc }

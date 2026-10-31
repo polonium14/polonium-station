@@ -19,6 +19,7 @@
     - id: LoneOpsSpawn
     - id: UnknownShuttleManOWar
     - id: UnknownShuttleInstigator
+    - id: UnknownShuttleNTQuark
 
 # Shuttle Game Rules
 

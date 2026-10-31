@@ -29,22 +29,7 @@ public sealed partial class ChameleonProjectorSystem : SharedChameleonProjectorS
 
     private void OnHandleState(Entity<ChameleonDisguiseComponent> ent, ref AfterAutoHandleStateEvent args)
     {
-        CopyComp<SpriteComponent>(ent);
-        if (_spriteQuery.TryComp(ent, out var sprite))
-        {
-            // Polonium: sprite layers are no longer serialized, so CopyComp leaves the disguise invisible
-            if (_spriteQuery.TryComp(ent.Comp.SourceEntity, out var sourceSprite))
-            {
-                _sprite.CopySprite((ent.Comp.SourceEntity, sourceSprite), (ent, sprite));
-
-                // Polonium: mobs (morph forms of devoured bodies) are copied lying down, stand them up
-                if (HasComp<MobStateComponent>(ent.Comp.SourceEntity))
-                    _sprite.SetRotation((ent, sprite), Angle.Zero);
-            }
-
-            // Polonium: runtime post-shaders (target/interaction outline) have no prototype and crash sprite init
-            _sprite.ClearPostShaders(sprite);
-        }
+        CopySprite(ent);
         CopyComp<GenericVisualizerComponent>(ent);
         CopyComp<SolutionContainerVisualsComponent>(ent);
         CopyComp<BurnStateVisualsComponent>(ent);
@@ -52,6 +37,25 @@ public sealed partial class ChameleonProjectorSystem : SharedChameleonProjectorS
         // reload appearance to hopefully prevent any invisible layers
         if (_appearanceQuery.TryComp(ent, out var appearance))
             _appearance.QueueUpdate(ent, appearance);
+    }
+
+    /// <summary>
+    /// Copies the source entity/prototype's sprite onto the disguise.
+    /// </summary>
+    private void CopySprite(Entity<ChameleonDisguiseComponent> ent)
+    {
+        if (!GetSrcEntity<SpriteComponent>(ent.Comp, out var src))
+            return;
+
+        var dest = EnsureComp<SpriteComponent>(ent);
+        _sprite.CopySprite(src, (ent.Owner, dest));
+
+        // Polonium: mobs (morph forms of devoured bodies) are copied lying down, stand them up
+        if (HasComp<MobStateComponent>(ent.Comp.SourceEntity))
+            _sprite.SetRotation((ent.Owner, dest), Angle.Zero);
+
+        // Polonium: runtime post-shaders (target/interaction outline) have no prototype and crash sprite init
+        _sprite.ClearPostShaders(dest);
     }
 
     private void OnStartup(Entity<ChameleonDisguisedComponent> ent, ref ComponentStartup args)

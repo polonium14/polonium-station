@@ -8,7 +8,6 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.EntityTable;
-using Content.Shared.Prototypes;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.VendingMachines;
 using Content.Shared.VendingMachines.Components;
@@ -129,7 +128,7 @@ namespace Content.IntegrationTests.Tests
                 {
                     if (proto.Abstract
                         || pair.IsTestPrototype(proto)
-                        || !proto.HasComponent<VendingMachineRestockComponent>())
+                        || !proto.HasComp<VendingMachineRestockComponent>(compFact))
                         continue;
 
                     restockEntities.Add(proto.ID);

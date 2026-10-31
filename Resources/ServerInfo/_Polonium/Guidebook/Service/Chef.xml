@@ -87,7 +87,7 @@ Uwaga: Możesz potrzebować trochę więcej mleka niż oczekujesz.
 Poproś Botanikę o to, czego potrzebujesz, bez botanika możesz musieć sam wyhodować więcej roślin.
 <Box>
 <GuideEntityEmbed Entity="SignHydro1" Caption=" "/>
-<GuideEntityEmbed Entity="hydroponicsTray"/>
+<GuideEntityEmbed Entity="HydroponicsTray"/>
 <GuideEntityEmbed Entity="WheatBushel"/>
 </Box>
 ## Zbieranie Mleka:

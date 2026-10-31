@@ -13,7 +13,6 @@
 
 - type: microwaveMealRecipe
   id: RecipeShrimpFried
-  name: fried shrimp recipe
   result: FoodShrimpFried
   time: 10
   group: Savory
@@ -35,7 +34,6 @@
 
 - type: microwaveMealRecipe
   id: RecipeMysteryStew
-  name: slop bowl recipe
   result: FoodMysteryStew
   time: 10
   group: Soup
@@ -48,7 +46,6 @@
 
 - type: microwaveMealRecipe
   id: RecipeSloppyJoe
-  name: sloppy joe recipe
   result: FoodBurgerSloppyJoe
   time: 10
   group: Savory
@@ -61,7 +58,6 @@
 
 - type: microwaveMealRecipe
   id: RecipeGyrosMeat
-  name: meat gyros recipe
   result: FoodGyrosMeat
   time: 15
   group: Savory
@@ -76,7 +72,6 @@
 
 - type: microwaveMealRecipe
   id: RecipeGyrosMystery
-  name: gyros? recipe
   result: FoodGyrosMystery
   time: 15
   group: Savory
@@ -91,7 +86,6 @@
 
 - type: microwaveMealRecipe
   id: RecipeGyrosTofu
-  name: tofu gyros recipe
   result: FoodGyrosTofu
   time: 15
   group: Savory

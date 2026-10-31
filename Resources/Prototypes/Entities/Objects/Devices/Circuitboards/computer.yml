@@ -275,7 +275,8 @@
     - type: ComputerBoard
       prototype: ComputerSalvageExpedition
     - type: StealTarget
-      stealGroup: SalvageExpeditionsComputerCircuitboard
+      stealGroup:
+      - SalvageExpeditionsComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -288,7 +289,8 @@
   - type: ComputerBoard
     prototype: ComputerShuttleCargo
   - type: StealTarget
-    stealGroup: CargoShuttleConsoleCircuitboard
+    stealGroup:
+    - CargoShuttleConsoleCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -301,7 +303,8 @@
   - type: ComputerBoard
     prototype: ComputerShuttleSalvage
   - type: StealTarget
-    stealGroup: SalvageShuttleConsoleCircuitboard
+    stealGroup:
+    - SalvageShuttleConsoleCircuitboard
 
 
 - type: entity

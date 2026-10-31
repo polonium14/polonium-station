@@ -11,3 +11,9 @@ ent-ChangelingNightVisionDummy = { "" }
     .desc = { "" }
 ent-ChangelingFakeMindshieldDummy = { "" }
     .desc = { "" }
+
+ent-MobHeadSlugBase = { ent-SimpleSpaceMobBase }
+    .desc = { ent-SimpleSpaceMobBase.desc }
+
+ent-MobHeadSlugElder = elder headslug
+    .desc = After living a few years, headslugs develop into this state and gain space faring abilities as a part of the changeling's reproduction cycle.

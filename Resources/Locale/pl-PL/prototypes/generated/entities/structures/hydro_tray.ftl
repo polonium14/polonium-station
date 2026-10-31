@@ -1,5 +1,5 @@
-ent-hydroponicsTray = hydroponiczna taca
+ent-HydroponicsTray = hydroponiczna taca
     .desc = Międzygwiezdna kosmiczna działka rolnicza, umożliwiająca szybki wzrost i selektywną hodowlę upraw. Tylko… pamiętaj o kosmicznych chwastach.
-ent-HydroponicsTrayEmpty = { ent-hydroponicsTray }
+ent-HydroponicsTrayEmpty = { ent-HydroponicsTray }
     .suffix = Pusty
-    .desc = { ent-hydroponicsTray.desc }
+    .desc = { ent-HydroponicsTray.desc }

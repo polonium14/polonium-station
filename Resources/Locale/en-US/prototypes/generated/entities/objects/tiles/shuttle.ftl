@@ -1,0 +1,14 @@
+ent-FloorTileItemShuttleWhite = white shuttle floor
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleBlue = blue shuttle floor
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleOrange = orange shuttle floor
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttlePurple = purple shuttle floor
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleRed = red shuttle floor
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleGrey = grey shuttle floor
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemShuttleBlack = black shuttle floor
+    .desc = { ent-FloorTileItemBase.desc }

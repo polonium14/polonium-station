@@ -69,7 +69,7 @@ namespace Content.Server.BloodCult.EntitySystems
 		[Dependency] private BloodCultistSystem _bloodCultist = default!;
 		[Dependency] private MindSystem _mind = default!;
 		[Dependency] private SharedAudioSystem _audio = default!;
-		[Dependency] private GameTicker _gameTicker = default!;
+		[Dependency] private ServerGameTicker _gameTicker = default!;
 		[Dependency] private SharedContainerSystem _container = default!;
 		[Dependency] private BloodstreamSystem _bloodstream = default!;
 		[Dependency] private SharedStunSystem _stun = default!;

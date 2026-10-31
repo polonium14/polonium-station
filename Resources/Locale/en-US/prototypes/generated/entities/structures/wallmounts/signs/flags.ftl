@@ -1,5 +1,5 @@
-ent-BaseFlag = { ent-BaseSign }
-    .desc = { ent-BaseSign.desc }
+ent-BaseFlag = { ent-BaseSignWeak }
+    .desc = { ent-BaseSignWeak.desc }
 ent-BlankFlag = blank flag
     .desc = Some piece of white cloth. Definitely not the flag of France.
 ent-NTFlag = Nanotrasen flag

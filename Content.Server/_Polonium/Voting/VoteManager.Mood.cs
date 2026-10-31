@@ -20,7 +20,7 @@ public sealed partial class VoteManager
 
     private List<RoundMoodPrototype> GetVotableMoods()
     {
-        var ticker = _entityManager.System<GameTicker>();
+        var ticker = _entityManager.System<ServerGameTicker>();
         var mood = _entityManager.System<RoundMoodSystem>();
         return mood.UsesMoods(ticker.Preset) ? mood.GetVotableMoods(CountConnectedPlayers()) : [];
     }

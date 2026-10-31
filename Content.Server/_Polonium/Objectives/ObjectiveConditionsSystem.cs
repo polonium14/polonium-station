@@ -6,6 +6,8 @@ using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Station;
 using Content.Shared.Whitelist;
+using Content.Shared.Station.Systems;
+using Content.Shared.Station.Components;
 
 namespace Content.Server._Polonium.Objectives;
 
@@ -15,7 +17,7 @@ public sealed partial class ObjectiveConditionsSystem : EntitySystem
     [Dependency] private InventorySystem _inventory = default!;
     [Dependency] private NumberObjectiveSystem _number = default!;
     [Dependency] private SharedMindSystem _mind = default!;
-    [Dependency] private SharedStationSystem _station = default!;
+    [Dependency] private StationSystem _station = default!;
     [Dependency] private TargetObjectiveSystem _target = default!;
 
     public override void Initialize()

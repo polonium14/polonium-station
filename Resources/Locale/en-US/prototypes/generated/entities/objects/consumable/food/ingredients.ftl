@@ -100,3 +100,9 @@ ent-FoodCroissantRaw = raw croissant
     .desc = Buttery, flaky goodness waiting to happen.
 ent-FoodCroissantRawCotton = raw cotton croissant
     .desc = Buttery, flaky, fibery goodness waiting to happen.
+
+ent-ReagentContainerPepper = pepper container
+    .desc = A big container of pepper. The king of spices, now in value size!
+
+ent-ReagentContainerSalt = salt container
+    .desc = A big container of salt. Experts debate whether it contains any iodine.

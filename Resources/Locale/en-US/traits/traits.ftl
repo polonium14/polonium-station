@@ -109,3 +109,6 @@ trait-russian-desc = Niko, it's Roman! Let's go bowling!
 trait-species-restricted = Your species cannot take this trait.
 
 trait-prerequisite-required = This trait requires the { $prerequisite } trait.
+
+trait-blink-dyspraxia-name = Blink Dyspraxia
+trait-blink-dyspraxia-desc = Your eyelids lack coordination. Blinking requires conscious effort, and sometimes your eyes just refuse to sync up.

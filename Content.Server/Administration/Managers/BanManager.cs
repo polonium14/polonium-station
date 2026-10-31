@@ -350,7 +350,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
     private int? GetCurrentRoundId()
     {
-        return _systems.TryGetEntitySystem<GameTicker>(out var ticker) && ticker.RoundId != 0
+        return _systems.TryGetEntitySystem<ServerGameTicker>(out var ticker) && ticker.RoundId != 0
             ? ticker.RoundId
             : null;
     }
@@ -372,7 +372,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         {
             roundIds = [..banInfo.RoundIds];
         }
-        else if (_systems.TryGetEntitySystem<GameTicker>(out var ticker) && ticker.RoundId != 0)
+        else if (_systems.TryGetEntitySystem<ServerGameTicker>(out var ticker) && ticker.RoundId != 0)
         {
             roundIds = [ticker.RoundId];
         }

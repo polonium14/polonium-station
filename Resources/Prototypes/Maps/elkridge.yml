@@ -2,7 +2,7 @@
   id: Elkridge
   mapName: 'Elkridge Depot'
   mapPath: /Maps/elkridge.yml
-  minPlayers: 25
+  minPlayers: 20
   maxPlayers: 44
   stations:
     Elkridge:
@@ -19,7 +19,8 @@
           path: /Maps/Shuttles/cargo_elkridge.yml
         - type: StationJobs
           availableJobs:
-            #command (7)
+            # TOTAL: 59 job slots
+            # Command (7)
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             HeadOfSecurity: [ 1, 1 ]

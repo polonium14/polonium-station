@@ -1,0 +1,12 @@
+ent-BaseBullet = BaseBullet
+    .desc = If you can see this you're probably dead!
+ent-BaseBulletTrigger = base bullet trigger
+    .desc = { ent-BaseBullet.desc }
+ent-BaseBulletPractice = base bullet practice
+    .desc = { ent-BaseBullet.desc }
+ent-BaseBulletIncendiary = base bullet incendiary
+    .desc = { ent-BaseBullet.desc }
+ent-BaseBulletAP = base bullet armor-piercing
+    .desc = { ent-BaseBullet.desc }
+ent-BaseBulletUranium = base bullet uranium
+    .desc = { ent-BaseBullet.desc }

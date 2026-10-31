@@ -45,5 +45,6 @@
       time: 2h
   icon: JobIconBorg
   supervisors: job-supervisors-rd
+  guides: [ Cyborgs ]
   jobEntity: PlayerBorgBattery
   applyTraits: false

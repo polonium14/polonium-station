@@ -168,7 +168,7 @@
   - type: Speech
     speechVerb: Vox
     speechSounds: Vox
-    allowedEmotes: ['Click', 'Chitter', 'Coo']
+    allowedEmotes: ['Click', 'Chitter', 'Coo', 'Hiss', 'Caw']
   - type: TypingIndicator
     proto: vox
   - type: CreamPied
@@ -415,7 +415,7 @@
   id: OrganVoxFootRight
 
 - type: entity
-  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganVoxInternal ]
+  parent: [ OrganBaseBrain, OrganVoxInternal ]
   id: OrganVoxBrain
   components:
   - type: OrganIntegrity
@@ -435,6 +435,9 @@
       Normal: 24
       Damaged: 4
       Destroyed: 0
+  - type: EyeBlinking
+    eyelidsSprite: /Textures/Mobs/Species/Vox/parts.rsi
+  - type: Appearance
 
 - type: entity
   parent: [ OrganBaseTongue, OrganVoxInternal ]
@@ -448,7 +451,7 @@
       Destroyed: 0
 
 - type: entity
-  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganVoxInternal ]
+  parent: [ OrganBaseAppendix, OrganVoxInternal ]
   id: OrganVoxAppendix
   components:
   - type: OrganIntegrity
@@ -459,7 +462,7 @@
       Destroyed: 0
 
 - type: entity
-  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganVoxInternal ]
+  parent: [ OrganBaseEars, OrganVoxInternal ]
   id: OrganVoxEars
   components:
   - type: OrganIntegrity
@@ -508,7 +511,7 @@
       Destroyed: 0
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganVoxInternal, OrganVoxMetabolizer ]
+  parent: [ OrganBaseLiver, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxLiver
   components:
   - type: OrganIntegrity
@@ -519,7 +522,7 @@
       Destroyed: 0
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganVoxInternal, OrganVoxMetabolizer ]
+  parent: [ OrganBaseKidneys, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxKidneys
   components:
   - type: OrganIntegrity

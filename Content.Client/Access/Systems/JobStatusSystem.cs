@@ -1,4 +1,11 @@
-﻿using Content.Client.Overlays;
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Whatstone <166147148+whatston3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Client.Overlays;
 using Content.Shared.Access.Systems;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
@@ -11,8 +18,8 @@ public sealed partial class JobStatusSystem : SharedJobStatusSystem
     [Dependency] private ShowJobIconsSystem _showJobIcons = default!;
     [Dependency] private ShowCrewIconsSystem _showCrewIcons = default!;
 
-    private static readonly ProtoId<SecurityIconPrototype> CrewBorderIcon = "CrewBorderIcon";
-    private static readonly ProtoId<SecurityIconPrototype> CrewUncertainBorderIcon = "CrewUncertainBorderIcon";
+    private static readonly ProtoId<StatusIconPrototype> CrewBorderIcon = "CrewBorderIcon";
+    private static readonly ProtoId<StatusIconPrototype> CrewUncertainBorderIcon = "CrewUncertainBorderIcon";
 
     public override void Initialize()
     {

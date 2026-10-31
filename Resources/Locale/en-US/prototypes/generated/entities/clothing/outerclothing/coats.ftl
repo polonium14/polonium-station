@@ -85,3 +85,9 @@ ent-ClothingOuterCoatExpensive = expensive coat
     .desc = Very fluffy pink coat, made out of very expensive fur (clearly).
 ent-ClothingOuterCoatExpensiveOpened = expensive coat
     .desc = { ent-ClothingOuterStorageFoldableBaseOpened.desc }
+
+ent-ClothingOuterCoatVirtualIce = ice singer's coat
+    .desc = A white coat with blue trim, designed to protect against strong winds. The code 'CRV2' is printed on the chest.
+
+ent-ClothingOuterCoatVirtualIceOpened = ice singer's coat
+    .desc = { ent-ClothingOuterStorageFoldableBaseOpened.desc }

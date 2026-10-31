@@ -1,3 +1,18 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 David <david.owen.dev@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kowlin <10947836+Kowlin@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Princess Cheeseballs <66055347+Princess-Cheeseballs@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Princess Cheeseballs <66055347+Pronana@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 JrInventor05 <205915704+JrInventor05@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Text;
 using Content.Shared.Administration.Notes;
 using Content.Shared.Database;
@@ -15,6 +30,7 @@ namespace Content.Client.Administration.UI.Notes;
 public sealed partial class AdminNotesLine : BoxContainer
 {
     private readonly SpriteSystem _sprites;
+    private readonly ISawmill _log;
 
     private const string AdminNotesTextureBase = "/Textures/Interface/AdminNotes/";
     private static readonly Dictionary<NoteSeverity, string> SeverityIcons = new()
@@ -34,6 +50,7 @@ public sealed partial class AdminNotesLine : BoxContainer
     {
         RobustXamlLoader.Load(this);
         _sprites = sprites;
+        _log = Logger.GetSawmill("admin.notes");
 
         Note = note;
         MouseFilter = MouseFilterMode.Pass;
@@ -61,7 +78,7 @@ public sealed partial class AdminNotesLine : BoxContainer
         if (iconPath is null)
         {
             SeverityRect.Visible = false;
-            Logger.WarningS("admin.notes", $"Could not find an icon for note ID {Note.Id}");
+            _log.Warning($"Could not find an icon for note ID {Note.Id}");
         }
         else
         {

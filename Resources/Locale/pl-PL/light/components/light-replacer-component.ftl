@@ -7,8 +7,6 @@ comp-light-replacer-insert-broken-light = Nie możesz włożyć zepsutych żaró
 # Shown when a player attempts to replace a light with the same color & type as the active light.
 comp-light-replacer-same-light = Ta oprawa już zawiera: { $light }!
 # Radial Menu messages
-comp-light-replacer-eject-specified-lights = Wyrzuć wszystkie: { $light }.
-comp-light-replacer-select-lights = Wybierz: { $light }.
 comp-light-replacer-open-empty = { CAPITALIZE(THE($light-replacer)) } jest całkowicie pusta!
 # Label
 comp-light-replacer-label =
@@ -16,14 +14,6 @@ comp-light-replacer-label =
     Żarówka: { $bulb }
 
 ### Examine
-
-comp-light-replacer-no-lights = Jest pusta.
-comp-light-replacer-has-lights = Zawiera następujące rzeczy:
-comp-light-replacer-light-listing =
-    { $amount ->
-        [one] [color=yellow]{ $amount }[/color] [color=gray]{ $name }[/color]
-       *[other] [color=yellow]{ $amount }[/color] [color=gray]{ $name }s[/color]
-    }
 
 ### Status Control
 

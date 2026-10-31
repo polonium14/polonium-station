@@ -10,6 +10,9 @@
       reagents:
       - ReagentId: Nutriment
         Quantity: 10
+  - type: Tag
+    tags:
+    - FinishedMeal
 
 # Ice-cream
 
@@ -92,8 +95,9 @@
     - FoodFrozenPopsicleTrash
   - type: Tag
     tags:
-    - Fruit
     - Creamsicle
+    - FinishedMeal
+    - Fruit
 
 - type: entity
   name: berry creamsicle
@@ -112,8 +116,9 @@
     - FoodFrozenPopsicleTrash
   - type: Tag
     tags:
-    - Fruit
     - Creamsicle
+    - FinishedMeal
+    - Fruit
 
 - type: entity
   name: jumbo ice-cream
@@ -194,6 +199,7 @@
     - FoodFrozenSnowconeTrash
   - type: Tag
     tags:
+    - FinishedMeal
     - Fruit
 
 - type: entity
@@ -211,6 +217,7 @@
     - FoodFrozenSnowconeTrash
   - type: Tag
     tags:
+    - FinishedMeal
     - Fruit
 
 - type: entity

@@ -50,7 +50,7 @@
                 Orientation="Vertical"
                 HorizontalExpand="True"
                 Margin="0, 8">
-                <PanelContainer StyleClasses="LowDivider"/>
+                <controls:Separator StyleClasses="LowDivider"/>
             </BoxContainer>
         </BoxContainer>
 
@@ -107,7 +107,7 @@
                 Orientation="Vertical"
                 HorizontalExpand="True"
                 Margin="0, 8">
-                <PanelContainer StyleClasses="LowDivider"/>
+                <controls:Separator StyleClasses="LowDivider"/>
             </BoxContainer>
         </BoxContainer>
 

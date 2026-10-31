@@ -8,4 +8,4 @@ ent-ClothingBagPet = pet bag
 ent-ClothingBackpackHarmpack = H.A.R.M.P.A.C.K.
     .desc = Now you can reload, punch, and eat a snack - simultaneously.
 ent-XenoborgMaterialBag = silicon storage square
-    .desc = A knockoff version of a bluespace bag, can vacumn up select materials, unfit for use by humanoids due to harmful emissions.
+    .desc = A knockoff version of a bluespace bag, can vacuum up select materials, unfit for use by humanoids due to harmful emissions.

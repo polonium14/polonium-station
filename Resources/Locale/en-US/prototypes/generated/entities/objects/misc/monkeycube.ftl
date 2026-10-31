@@ -1,5 +1,5 @@
 ent-MonkeyCubeBox = monkey cube box
-    .desc = Drymate brand monkey cubes. Just add water!
+    .desc = Drymate® brand monkey cubes. Just add water!
 ent-BaseWrappedCube = { ent-BaseItem }
     .suffix = Wrapped
     .desc = { ent-BaseItem.desc }
@@ -12,8 +12,14 @@ ent-VariantCubeBox = variant cube box
 ent-KoboldCubeWrapped = kobold cube
     .desc = Unwrap this to get a kobold cube.
 ent-SyndicateSpongeBox = monkey cube box
-    .desc = Drymate brand monkey cubes. Just add water!
+    .desc = Drymate® brand monkey cubes. Just add water!
     .suffix = Syndicate
 ent-SyndicateSpongeWrapped = monkey cube
     .suffix = Wrapped, Syndicate
     .desc = { ent-MonkeyCubeWrapped.desc }
+
+ent-SlimeCubeBox = slime cube box
+    .desc = Condensed slimes in a cube. Just add water! Drymate® is not responsible for undue hostility from inappropriate fluid application.
+
+ent-SlimeCubeWrapped = slime cube
+    .desc = Unwrap this to get a slime cube.
