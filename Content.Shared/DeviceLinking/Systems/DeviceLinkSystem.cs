@@ -6,6 +6,7 @@ using Content.Shared.Popups;
 using JetBrains.Annotations;
 using Robust.Shared.Collections;
 using Robust.Shared.GameStates;
+using Robust.Shared.Network; // Polonium
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -19,6 +20,7 @@ public sealed partial class DeviceLinkSystem : EntitySystem
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private INetManager _net = default!; // Polonium
 
     [Dependency] private EntityQuery<DeviceLinkSinkComponent> _deviceLinkSinkQuery;
     [Dependency] private EntityQuery<DeviceLinkSourceComponent> _deviceLinkSourceQuery;
@@ -157,7 +159,8 @@ public sealed partial class DeviceLinkSystem : EntitySystem
         {
             if (_deviceLinkSourceQuery.TryComp(sourceUid, out var source))
                 RemoveSinkFromSourceInternal((sourceUid, source), sink);
-            else if (!EntityManager.ShuttingDown)
+            // Polonium: clients also list sources they never received
+            else if (!EntityManager.ShuttingDown && _net.IsServer)
                 Log.Error($"Device sink {ToPrettyString(sink)} source list contains invalid entity: {ToPrettyString(sourceUid)}");
         }
     }
