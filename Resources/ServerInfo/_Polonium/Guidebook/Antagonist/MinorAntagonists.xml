@@ -83,7 +83,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   <Box>
     <GuideEntityEmbed Entity="MobAdultSlimesBlueAngry" Caption=""/>
-    <GuideEntityEmbed Entity="MobGiantSpiderAngry" Caption=""/>
+    <GuideEntityEmbed Entity="MobGiantSpiderTarantulaAngry" Caption=""/>
   </Box>
 
   Szlamy i pająki nie mają żadnych szczególnych cech, ale mimo to od czasu do czasu [color=#7ee8f7]atakują stację[/color]. Oba gatunki będą ścigać i atakować wszystko, co zobaczą.
