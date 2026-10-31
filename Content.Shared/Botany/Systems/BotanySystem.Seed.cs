@@ -192,7 +192,7 @@ public sealed partial class BotanySystem : EntitySystem
             return false;
 
         if (!ProtoMan.Resolve(ent.Comp2.PacketPrototype, out var seedProto)
-            || !seedProto.TryComp<SeedComponent>(out var seedComp, _componentFactory))
+            || !seedProto.TryComp<SeedComponent>(out var seedComp, Factory))
         {
             return false;
         }
