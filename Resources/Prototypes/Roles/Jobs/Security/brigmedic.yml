@@ -13,11 +13,9 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Medical
-    time: 2h
+    time: 5h
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 3h
-  - !type:OverallPlaytimeRequirement
     time: 5h
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"

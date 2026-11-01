@@ -41,11 +41,11 @@
   playTimeTracker: JobSecurityCadet
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 4h
+      time: 10h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 3h
-      inverted: true
+      time: 40h
+      inverted: true # stop playing intern if you're good at security!
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
