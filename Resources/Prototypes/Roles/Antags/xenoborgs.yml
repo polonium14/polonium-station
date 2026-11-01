@@ -25,7 +25,7 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobBorg
-    time: 2h
+    time: 2.5h # 2.5 hours
   guides: [ Xenoborgs ]
 
 - type: antagSpecifier

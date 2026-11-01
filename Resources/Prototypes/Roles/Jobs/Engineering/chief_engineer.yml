@@ -48,11 +48,9 @@
   description: job-description-ce
   playTimeTracker: JobChiefEngineer
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobStationEngineer
-      time: 6h
-    - !type:OverallPlaytimeRequirement
-      time: 6h
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 10h
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
   supervisors: job-supervisors-captain
