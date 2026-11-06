@@ -1,4 +1,4 @@
 ent-ClothingNeckBase = { ent-SolutionFood }
     .desc = { ent-SolutionFood.desc }
-ent-ClothingScarfBase = { ent-TemperatureProtectionMinimal }
+ent-ClothingScarfBase = { ent-ClothingNeckBase }
     .desc = { ent-TemperatureProtectionMinimal.desc }

@@ -48,7 +48,7 @@ ent-DrinkEnergyDrinkJug = Red Bool jug
 ent-CustomDrinkJugFilled = beverage jug
     .suffix = Full
     .desc = { ent-CustomDrinkJug.desc }
-ent-DrinkBottlePlasticBase = { ent-DrinkBaseMaterialPlastic }
+ent-DrinkBottlePlasticBase = { ent-SolutionNormal }
     .desc = { ent-DrinkBaseMaterialPlastic.desc }
 
 ent-DrinkJuiceLemonJug = lemon juice jug

@@ -15,7 +15,7 @@ from fluent.syntax.serializer import FluentSerializer
 
 from ftl_relocator import fingerprint_entry, messages_equivalent, same_path, upsert_entries as reloc_upsert_entries, remove_keys_from_content as reloc_remove_keys
 from file import YAMLFile, FluentFile
-from fluentast import FluentSerializedMessage, FluentAstAttributeFactory, FluentAstAbstract
+from fluentast import FluentSerializedMessage, FluentAstAttribute, FluentAstAttributeFactory, FluentAstAbstract
 from fluentformatter import FluentFormatter
 from project import Project
 import logging
@@ -408,9 +408,13 @@ class YAMLExtractor:
         self._pending_pl_renames: typing.List[typing.Tuple[str, typing.Dict[str, str]]] = []
 
     def execute(self):
-        for yaml_file in self.yaml_files:
-            yaml_elements = yaml_file.get_elements(yaml_file.parse_data(yaml_file.read_data()))
+        parsed_files = [
+            (yaml_file, yaml_file.get_elements(yaml_file.parse_data(yaml_file.read_data())))
+            for yaml_file in self.yaml_files
+        ]
+        self.elements_by_id = {el.id: el for _, elements in parsed_files for el in elements}
 
+        for yaml_file, yaml_elements in parsed_files:
             if not len(yaml_elements):
                 continue
 
@@ -445,15 +449,37 @@ class YAMLExtractor:
         if pruned_en:
             logging.info(f'Usunięto nieużywane klucze z en-US/prototypes/generated: {pruned_en}')
 
-    @classmethod
-    def serialize_yaml_element(cls, element):
+    def _inherits(self, entity_id, field, seen=None):
+        element = self.elements_by_id.get(entity_id)
+        if element is None:
+            return False
+        if getattr(element, field):
+            return True
+
+        seen = seen or set()
+        if entity_id in seen:
+            return False
+        seen.add(entity_id)
+
+        parents = element.parent_id if isinstance(element.parent_id, list) else [element.parent_id]
+        return any(parent and self._inherits(parent, field, seen) for parent in parents)
+
+    def _first_parent_with(self, parents, field):
+        # A nameless abstract first parent (e.g. species "Visual" organs) would leave the text empty
+        return next((parent for parent in parents if self._inherits(parent, field)), parents[0] if parents else 'None')
+
+    def serialize_yaml_element(self, element):
         parent_id = element.parent_id
+        attributes = FluentAstAttributeFactory.from_yaml_element(element)
         if isinstance(parent_id, list):
-            parent_id = parent_id[0] if parent_id else 'None'
+            desc_parent_id = self._first_parent_with(parent_id, 'description')
+            parent_id = self._first_parent_with(parent_id, 'name')
+            if not element.description and desc_parent_id != parent_id:
+                attributes = [FluentAstAttribute('desc', '{ ' + FluentSerializedMessage.get_key(desc_parent_id) + '.desc }')] + (attributes or [])
 
         message = FluentSerializedMessage.from_yaml_element(
             element.id, element.name,
-            FluentAstAttributeFactory.from_yaml_element(element),
+            attributes,
             parent_id
         )
 
@@ -461,7 +487,7 @@ class YAMLExtractor:
 
 
     def get_serialized_fluent_from_yaml_elements(self, yaml_elements):
-        fluent_serialized_messages = list(map(YAMLExtractor.serialize_yaml_element, yaml_elements))
+        fluent_serialized_messages = list(map(self.serialize_yaml_element, yaml_elements))
         fluent_exist_serialized_messages = list(filter(lambda m: m, fluent_serialized_messages))
 
         if not len(fluent_exist_serialized_messages):

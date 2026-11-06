@@ -48,5 +48,5 @@ ent-DrinkEnergyDrinkJug = dzbanek Red Bool
 ent-CustomDrinkJugFilled = dzbanek z napojem
     .suffix = Pełny
     .desc = { ent-CustomDrinkJug.desc }
-ent-DrinkBottlePlasticBase = { ent-DrinkBaseMaterialPlastic }
+ent-DrinkBottlePlasticBase = { ent-SolutionNormal }
     .desc = { ent-DrinkBaseMaterialPlastic.desc }

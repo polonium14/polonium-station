@@ -1,6 +1,5 @@
 using Content.Shared.RoundEnd;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Content.Shared.RoundEnd;
 
 namespace Content.Shared.GameTicking.Rules.Components;
 
