@@ -1,5 +1,5 @@
 ent-CrateEvaKit = EVA kit
-    .desc = A set consisting of two prestigious EVA suits and helmets. Requires Command access to open.
+    .desc = A set consisting of two prestigious EVA suits and helmets. Requires Command or External access to open.
 ent-CrateSpaceJetpack = jetpack crate
     .desc = Two jetpacks for those who don't know how to use fire extinguishers.
 ent-CrateSpaceMiniJetpack = mini jetpack crate

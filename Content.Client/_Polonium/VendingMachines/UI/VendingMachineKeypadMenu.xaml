@@ -29,7 +29,7 @@
             </Control>
             <Control MinHeight="8" />
 
-            <PanelContainer StyleClasses="LowDivider" />
+            <controls:Separator StyleClasses="LowDivider"/>
 
             <BoxContainer Orientation="Horizontal" Margin="8 4 8 4" MinHeight="24" VerticalAlignment="Center">
                 <Label Text="{Loc 'vending-machine-flavor-left'}" StyleClasses="WindowFooterText" />
@@ -40,7 +40,7 @@
             </BoxContainer>
         </BoxContainer>
 
-        <PanelContainer MinWidth="2" StyleClasses="LowDivider" />
+        <controls:Separator MinWidth="2" StyleClasses="LowDivider" Orientation="Vertical"/>
 
         <BoxContainer Orientation="Vertical" MinWidth="200" VerticalExpand="True">
 
@@ -78,7 +78,7 @@
                 </PanelContainer>
             </BoxContainer>
 
-            <PanelContainer StyleClasses="LowDivider" />
+            <controls:Separator StyleClasses="LowDivider"/>
 
             <BoxContainer Orientation="Vertical" SeparationOverride="4" Margin="12 12 12 12">
                 <Label Text="{Loc 'vending-machine-keypad-col'}" StyleClasses="LabelSubText" FontColorOverride="#555555" HorizontalAlignment="Center" />

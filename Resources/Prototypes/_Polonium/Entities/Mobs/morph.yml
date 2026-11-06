@@ -1,6 +1,6 @@
 # Port morpha z NSV13 (code/modules/antagonists/morph).
 - type: entity
-  parent: [ SimpleSpaceMobBase, BaseSlicingRefinable, MobNightVision ]
+  parent: [ SimpleSpaceMobBase, BaseSlicingRefinableButchering, MobNightVision ]
   id: MobMorph
   name: morph
   description: A revolting, pulsating pile of flesh.

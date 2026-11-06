@@ -1,0 +1,10 @@
+ent-ClothingUniformJumpskirtOperative = operative jumpskirt
+    .desc = Uniform for elite syndicate operatives performing tactical operations in deep space.
+ent-ClothingUniformJumpskirtTacticool = tacticool jumpskirt
+    .desc = Uniform for subpar operative LARPers performing tactical insulated glove theft in deep space.
+ent-ClothingUniformJumpskirtSyndieFormalDress = syndicate formal dress
+    .desc = The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this.
+ent-ClothingUniformJumpskirtTacticalMaid = tactical maid suitskirt
+    .desc = It is assumed that the best maids should have designer suits.
+ent-ClothingUniformJumpskirtWeb = web jumpskirt
+    .desc = Makes it clear that you are one with the webs.

@@ -17,7 +17,7 @@
         children:
         - id: RemoteSignaller
         - id: GeigerCounter
-        - id: trayScanner
+        - id: TRayScanner
         - id: FlashlightLantern
         - id: ClothingHandsGlovesColorBlack
         - id: Lighter
@@ -65,7 +65,7 @@
         - id: GeigerCounter
         - id: GasAnalyzer
         - id: Multitool
-        - id: trayScanner
+        - id: TRayScanner
         - id: FlashlightLantern
         - id: ClothingHandsGlovesColorBlack
         - id: ClothingMaskGas

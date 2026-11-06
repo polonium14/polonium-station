@@ -46,6 +46,8 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.DeviceLinking;
 using Content.Shared.Ghost.Components;
+using Content.Shared.DeviceLinking.Systems;
+using Content.Shared.DeviceLinking.Components;
 
 namespace Content.Server._EE.Supermatter.Systems;
 
@@ -67,7 +69,7 @@ public sealed partial class SupermatterSystem : EntitySystem
     [Dependency] private SharedAmbientSoundSystem _ambient = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private SharedDeviceLinkSystem _link = default!;
+    [Dependency] private DeviceLinkSystem _link = default!;
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private IAdminLogManager _adminLog = default!;
     [Dependency] private IChatManager _chatManager = default!;

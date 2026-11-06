@@ -1,0 +1,12 @@
+ent-BaseBullet = BaseBullet
+    .desc = Jeśli to widzisz, prawdopodobnie nie żyjesz!
+ent-BaseBulletTrigger = { ent-BaseBullet }
+    .desc = { ent-BaseBullet.desc }
+ent-BaseBulletPractice = bazowa kula treningowa
+    .desc = { ent-BaseBullet.desc }
+ent-BaseBulletIncendiary = bazowa kula zapalająca
+    .desc = { ent-BaseBullet.desc }
+ent-BaseBulletAP = bazowa kula przeciwpancerna
+    .desc = { ent-BaseBullet.desc }
+ent-BaseBulletUranium = bazowa kula uranowa
+    .desc = { ent-BaseBullet.desc }

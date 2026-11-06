@@ -1,4 +1,4 @@
-using Content.Client.GameTicking.Managers;
+using Content.Client.GameTicking;
 using Content.Shared._Polonium.Survey;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;

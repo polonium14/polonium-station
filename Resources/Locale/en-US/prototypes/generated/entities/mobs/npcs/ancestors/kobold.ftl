@@ -1,0 +1,13 @@
+ent-MobBaseKobold = kobold
+    .desc = Cousins to the sentient race of lizard people, kobolds blend in with their natural habitat and are as nasty as monkeys; ready to pull out your hair and stab you to death.
+ent-MobKobold = kobold
+    .desc = Cousins to the sentient race of lizard people, kobolds blend in with their natural habitat and are as nasty as monkeys; ready to pull out your hair and stab you to death.
+ent-MobBaseSyndicateKobold = { ent-MobBaseKobold }
+    .suffix = syndicate base
+    .desc = { ent-MobBaseKobold.desc }
+ent-MobKoboldSyndicateAgent = { ent-MobBaseSyndicateKobold }
+    .suffix = syndicate agent
+    .desc = { ent-MobBaseSyndicateKobold.desc }
+ent-MobKoboldSyndicateAgentNukeops = { ent-MobBaseSyndicateKobold }
+    .suffix = NukeOps
+    .desc = { ent-MobBaseSyndicateKobold.desc }

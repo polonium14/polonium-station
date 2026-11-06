@@ -1,9 +1,9 @@
 ent-BaseRock = boulder
     .desc = Heavy as a really heavy thing.
   .gender = male
-ent-BaseTree = { "" }
+ent-BaseTree = { ent-StructureHealthFurnitureStrong }
     .desc = Yep, it's a tree.
-  .gender = neuter
+    .gender = neuter
 ent-BaseTreeSnow = { ent-BaseTree }
     .desc = { ent-BaseTree.desc }
   .gender = neuter

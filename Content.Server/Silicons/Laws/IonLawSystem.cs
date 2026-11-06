@@ -1,11 +1,11 @@
 ﻿using Content.Shared.Dataset;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Silicons.Laws;
-using Content.Shared.Station;
 using Content.Shared.StationRecords;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
+using Content.Server.Station.Systems;
 using Content.Shared.StationRecords.Components;
 using Content.Shared.StationRecords.Systems;
 
@@ -17,7 +17,7 @@ namespace Content.Server.Silicons.Laws;
 public sealed partial class IonLawSystem : EntitySystem
 {
     [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private SharedStationSystem _stationSystem = default!;
+    [Dependency] private ServerStationSystem _stationSystem = default!;
     [Dependency] private StationRecordsSystem _stationRecordsSystem = default!;
 
     private ISawmill _sawmill = default!;

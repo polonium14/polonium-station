@@ -1,0 +1,10 @@
+ent-BulletAcid = kwas
+    .desc = { ent-BaseBullet.desc }
+ent-BulletWaterShot = woda
+    .desc = { ent-SolutionVapor.desc }
+ent-BulletHivebot = pocisk hivebota
+    .desc = { ent-BaseBullet.desc }
+ent-GrapplingHook = hak wspinaczkowy
+    .desc = { "" }
+ent-StickyHandPalm = lepka dłoń
+    .desc = { ent-GrapplingHook.desc }

@@ -82,7 +82,7 @@
     onBump: false
     requirePower: true
     highVoltageNode: input
-  - type: WiredNetworkConnection
+  - type: WiredNetwork
   - type: GuideHelp
     guides:
     - VoltageNetworks

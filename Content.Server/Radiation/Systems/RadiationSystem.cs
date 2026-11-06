@@ -4,7 +4,7 @@ using Content.Shared.Radiation.Events;
 using Content.Shared.Radiation.Systems;
 using Content.Shared.Stacks;
 using Robust.Shared.Configuration;
-using Robust.Shared.Map;
+using Robust.Shared.Map; // Polonium: Funky tile radiation sampling uses EntityCoordinates
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 
@@ -19,7 +19,6 @@ public sealed partial class RadiationSystem : SharedRadiationSystem
     [Dependency] private IGameTiming _gameTiming = default!;
 
 
-    [Dependency] private EntityQuery<RadiationReceiverComponent> _receiverQuery = default!;
     [Dependency] private EntityQuery<RadiationBlockingContainerComponent> _blockerQuery = default!;
     [Dependency] private EntityQuery<RadiationGridResistanceComponent> _resistanceQuery = default!;
     [Dependency] private EntityQuery<MapGridComponent> _gridQuery = default!;

@@ -47,7 +47,7 @@ public sealed partial class XenoHudOverlay : Overlay
 
     private readonly ShaderInstance _shader;
     private readonly ResPath _rsiPath = new("/Textures/_RMC14/Interface/xeno_hud.rsi");
-    private static readonly ProtoId<HealthIconPrototype> DeadIconId = "HealthIconDead";
+    private static readonly ProtoId<StatusIconPrototype> DeadIconId = "HealthIconDead";
     private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
@@ -176,7 +176,7 @@ public sealed partial class XenoHudOverlay : Overlay
 
     private void DrawDeadIcon(in OverlayDrawArgs args, Matrix3x2 scaleMatrix, Matrix3x2 rotationMatrix)
     {
-        if (!_prototype.TryIndex(DeadIconId, out HealthIconPrototype? deadProto))
+        if (!_prototype.TryIndex(DeadIconId, out StatusIconPrototype? deadProto))
             return;
 
         var icon = deadProto.Icon;

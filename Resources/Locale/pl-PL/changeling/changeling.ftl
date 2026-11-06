@@ -38,7 +38,6 @@ changeling-biodegrade-used-popup-self = Wymiotujemy kwasem na nasze { $restraint
 changeling-takeover-not-dead = To ciało wciąż żyje! Nie możemy go infekować, gdy żyje.
 changeling-takeover-is-changeling = To ciało odrzuca naszą próbę przejęcia!
 changeling-takeover-start-others = { CAPITALIZE(THE($user)) } zaczyna wpełzać do trupa!
-changeling-takeover-success-self = Pomyślnie zainfekowaliśmy ciało i przyjęliśmy jego formę.
 # stings
 changeling-sting-success = Cicho ukąsiliśmy { THE($target) }!
 # mindshield

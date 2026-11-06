@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Reflection;
 using Content.IntegrationTests.Fixtures;
-using Content.Server.Medical;
+using Content.Server.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body;
@@ -14,7 +14,7 @@ using Robust.Shared.Map;
 namespace Content.IntegrationTests.Tests._Shitmed.Body;
 
 [TestFixture]
-[TestOf(typeof(HealthAnalyzerSystem))]
+[TestOf(typeof(ServerHealthAnalyzerSystem))]
 public sealed class HealthAnalyzerUnfinishedSurgeryTest : GameTest
 {
     [TestPrototypes]
@@ -76,7 +76,7 @@ public sealed class HealthAnalyzerUnfinishedSurgeryTest : GameTest
         var server = pair.Server;
 
         var sEntMan = server.ResolveDependency<IEntityManager>();
-        var sHealthAnalyzer = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<HealthAnalyzerSystem>();
+        var sHealthAnalyzer = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<ServerHealthAnalyzerSystem>();
         var map = await pair.CreateTestMap();
         var coords = new MapCoordinates(Vector2.Zero, map.MapId);
 
@@ -100,7 +100,7 @@ public sealed class HealthAnalyzerUnfinishedSurgeryTest : GameTest
 
         await pair.RunTicksSync(5);
 
-        var fetchMethod = typeof(HealthAnalyzerSystem).GetMethod("FetchUnfinishedSurgeryData", BindingFlags.Instance | BindingFlags.NonPublic)!;
+        var fetchMethod = typeof(ServerHealthAnalyzerSystem).GetMethod("FetchUnfinishedSurgeryData", BindingFlags.Instance | BindingFlags.NonPublic)!;
 
         await server.WaitAssertion(() =>
         {

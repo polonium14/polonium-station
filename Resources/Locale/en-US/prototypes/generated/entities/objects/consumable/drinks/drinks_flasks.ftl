@@ -1,4 +1,4 @@
-ent-FlaskBase = { ent-DrinkBaseMaterialStrongMetal }
+ent-FlaskBase = { ent-SolutionSmall }
     .desc = { ent-DrinkBaseMaterialStrongMetal.desc }
 ent-DrinkFlaskOld = old flask
     .desc = A decrepit old flask, its lid seems to be missing.

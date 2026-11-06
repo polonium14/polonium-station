@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Content.Server.Administration.Logs;
 using Content.Server.RoundEnd;
 using Content.Shared.Database;
@@ -6,6 +5,7 @@ using Content.Shared.EntityTable;
 using Content.Shared.EntityTable.Conditions;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.GameTicking.Rules;
+using Content.Shared.GameTicking.Rules.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -22,7 +22,9 @@ public sealed partial class DynamicRuleSystem : GameRuleSystem<DynamicRuleCompon
     {
         base.Added(uid, component, gameRule, args);
 
-        component.Budget = _random.Next(component.StartingBudgetMin, component.StartingBudgetMax);;
+        var blend = _random.NextFloat(0, 1);
+        component.Budget = MathHelper.Lerp(component.StartingBudgetMin, component.StartingBudgetMax, blend);
+        component.BudgetPerSecond = MathHelper.Lerp(component.MinBudgetPerSecond, component.MaxBudgetPerSecond, blend);
         component.NextRuleTime = Timing.CurTime + _random.Next(component.MinRuleInterval, component.MaxRuleInterval);
     }
 
@@ -36,13 +38,14 @@ public sealed partial class DynamicRuleSystem : GameRuleSystem<DynamicRuleCompon
         Execute((uid, component));
     }
 
-    protected override void Ended(EntityUid uid, DynamicRuleComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
+    // TODO: We may not actually want to do this
+    protected override void Ended(Entity<DynamicRuleComponent> rule, ref GameRuleEndedEvent args)
     {
-        base.Ended(uid, component, gameRule, args);
+        base.Ended(rule, ref args);
 
-        foreach (var rule in component.Rules)
+        foreach (var gameRule in rule.Comp.Rules)
         {
-            GameTicker.EndGameRule(rule);
+            GameTicker.EndGameRule(gameRule);
         }
     }
 
@@ -67,10 +70,10 @@ public sealed partial class DynamicRuleSystem : GameRuleSystem<DynamicRuleCompon
     private IEnumerable<EntProtoId> GetRuleSpawns(Entity<DynamicRuleComponent> entity)
     {
         UpdateBudget((entity.Owner, entity.Comp));
-        var ctx = new EntityTableContext(new Dictionary<string, object>
+        var ctx = new EntityTableContext
         {
             { HasBudgetCondition.BudgetContextKey, entity.Comp.Budget },
-        });
+        };
 
         return _entityTable.GetSpawns(entity.Comp.Table, ctx: ctx);
     }
@@ -102,10 +105,10 @@ public sealed partial class DynamicRuleSystem : GameRuleSystem<DynamicRuleCompon
 
         foreach (var rule in GetRuleSpawns(entity))
         {
-            var res = GameTicker.StartGameRule(rule, out var ruleUid);
-            Debug.Assert(res);
+            if (!GameTicker.StartGameRule(rule, out var ruleUid))
+                continue;
 
-            executedRules.Add(ruleUid);
+            executedRules.Add(ruleUid.Value);
 
             if (TryComp<DynamicRuleCostComponent>(ruleUid, out var cost))
             {
@@ -130,7 +133,7 @@ public sealed partial class DynamicRuleSystem : GameRuleSystem<DynamicRuleCompon
         var query = EntityQueryEnumerator<DynamicRuleComponent, GameRuleComponent>();
         while (query.MoveNext(out var uid, out _, out var comp))
         {
-            if (!GameTicker.IsGameRuleActive(uid, comp))
+            if (!GameTicker.IsGameRuleActive((uid, comp)))
                 continue;
             rules.Add(uid);
         }

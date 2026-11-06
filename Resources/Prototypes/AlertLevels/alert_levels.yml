@@ -118,6 +118,16 @@
   emergencyLightColor: PaleVioletRed
   forceEnableEmergencyLights: true
 
+# Placeholder for the comms console in case of failure.
+- type: alertLevel
+  parent: Green
+  id: Unknown
+  name: generic-unknown-title
+  announcement: alert-level-unknown-announcement
+  instructions: alert-level-unknown-instructions
+  selectable: false
+  color: Gray
+
 # Polonium / Impstation custom alert levels
 - type: alertLevel
   id: Amber

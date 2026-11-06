@@ -11,6 +11,7 @@ using Robust.Shared.Console;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
+using Content.Shared.GameTicking;
 
 namespace Content.Server._Polonium.EvacScenarios;
 
@@ -25,7 +26,7 @@ public sealed partial class EvacScenarioCommand : LocalizedEntityCommands
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private EmergencyShuttleSystem _emergency = default!;
     [Dependency] private EvacScenarioSystem _scenario = default!;
-    [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private ServerGameTicker _ticker = default!;
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private TurfSystem _turf = default!;

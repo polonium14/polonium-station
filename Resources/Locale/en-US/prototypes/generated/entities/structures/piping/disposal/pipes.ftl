@@ -1,5 +1,5 @@
-ent-DisposalPipeBase = { "" }
-    .desc = { "" }
+ent-DisposalPipeBase = { ent-StructureHealthContainerWeak }
+    .desc = { ent-StructureHealthContainerWeak.desc }
 ent-DisposalHolder = disposal holder
     .desc = { "" }
 ent-DisposalPipeBroken = broken disposal pipe
@@ -33,3 +33,11 @@ ent-DisposalSignalRouter = disposal signal router
 ent-DisposalSignalRouterFlipped = { ent-DisposalSignalRouter }
     .suffix = flipped
     .desc = { ent-DisposalSignalRouter.desc }
+
+ent-DisposalRouterFlippedWaste = { ent-DisposalRouterFlipped }
+    .suffix = Flipped, Waste
+    .desc = { ent-DisposalRouterFlipped.desc }
+
+ent-DisposalRouterWaste = { ent-DisposalRouter }
+    .suffix = Waste
+    .desc = { ent-DisposalRouter.desc }

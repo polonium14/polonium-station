@@ -108,7 +108,7 @@
     collectionName: transmissionpoint
     sprite: _NF/Structures/Power/TransmissionPoint/32x32.rsi
     state: icon
-  - type: WiredNetworkConnection
+  - type: WiredNetwork
   - type: UserInterface
     interfaces:
       enum.AdjustablePowerDrawUiKey.Key:

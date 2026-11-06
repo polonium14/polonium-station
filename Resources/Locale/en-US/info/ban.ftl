@@ -88,8 +88,8 @@ server-ban-string-never = never
 # Kick on ban
 ban-kick-reason = You have been banned
 
-cmd-ban-invalid-round = { $round } nie jest prawidłowym numerem rundy!
+cmd-ban-invalid-round = { $round } is not a valid round number!
 
-cmd-ban-hint-round = [numer rundy sytuacji]
+cmd-ban-hint-round = [situation round number]
 
 cmd-banlistF-hint = <name/user ID>

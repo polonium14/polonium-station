@@ -1,5 +1,3 @@
-ent-ActionRetractableItemArmBlade = Ostrze w ramieniu
-    .desc = Zrzuć swoje ciało i przekształć je w mięsiste ostrze.
 ent-ActionChangelingBiodegrade = Biodegradacja
     .desc = Zwymiotuj kwasem na swoje więzy i uwolnij się.
 ent-ActionChangelingDevour = [color=red]Pożarcie[/color]
@@ -20,8 +18,6 @@ ent-ActionChangelingStingCryogenic = Kriogeniczne żądło
     .desc = Po cichu użądl cel i drastycznie spowolnij jego ruchy.
 ent-ActionChangelingStingLead = Śmiertelne żądło
     .desc = Po cichu użądl cel i wstrzyknij mu śmiertelną dawkę wolno działającej trucizny.
-ent-ActionChangelingStingHallucinogenic = Halucynogenne żądło
-    .desc = Po cichu użądl cel i wstrzyknij mu substancje spowalniające wyższe funkcje mózgu.
 ent-ActionChangelingLastResort = [color=red]Ostatnia deska ratunku[/color]
     .desc = Poświęcamy nasze obecne ciało w chwili potrzeby, gwałtownie rozrastając się, by przebić przeszkody, i odradzamy się jako larwa głowowa.
 ent-ActionChangelingTakeOverCorpse = Przejęcie zwłok
@@ -40,3 +36,6 @@ ent-ActionChangelingStingMute =
     Żądło wyciszające
     Po cichu użądl cel i wstrzyknij mu substancje, które uniemożliwiają mówienie.
     Wymaga 30 chemikaliów.
+
+ent-ActionRetractableItemArmblade = Ostrze w ramieniu
+    .desc = Zrzuć swoje ciało i przekształć je w mięsiste ostrze.

@@ -15,6 +15,18 @@
       Ammonia: stationAmmonia
       NitrousOxide: stationNO
       Frezon: danger
+      # Polonium: Funky gases
+      BZ: stationBZ
+      Healium: stationHealium
+      Nitrium: danger
+      Pluoxium: stationPluoxium
+      Hydrogen: danger
+      HyperNoblium: stationHyperNoblium
+      ProtoNitrate: danger
+      Zauker: danger
+      Halon: stationHalon
+      Helium: stationHelium
+      AntiNoblium: danger
 
 - type: entity
   parent: [AirSensorDecapoidBase, AirSensor]

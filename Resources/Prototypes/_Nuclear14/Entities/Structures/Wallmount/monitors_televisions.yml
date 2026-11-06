@@ -8,12 +8,15 @@
     drawdepth: Overdoors
     sprite: _Nuclear14/Structures/Wallmounts/vdu.rsi
     layers:
-      - map: ["computerLayerBody"]
-        state: VDU
-      - map: ["computerLayerKeyboard"]
-        state: keyboard
-      - map: ["computerLayerScreen"]
-        state: screen
+      - map: ["enum.ComputerVisualLayers.Frame"]
+      - map: ["enum.ComputerVisualLayers.Keyboard"]
+      - map: ["enum.ComputerVisualLayers.Screen"]
+  - type: ComputerVisuals # Polonium: computer sprite states moved to ComputerVisuals by upstream #44256
+    stateFrame: VDU
+    stateKeyboard: keyboard
+    stateScreen: screen
+    stateKeys: null
+    statePanel: null
   - type: Fixtures
     fixtures:
       fix1:

@@ -14,7 +14,8 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.PowerCell;
-using Content.Shared.Timing;
+using Content.Shared.Timing.Components;
+using Content.Shared.Timing.Systems;
 using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
@@ -194,20 +195,15 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
 
     private bool TryRevive(Entity<DefibrillatorComponent> ent, EntityUid user, EntityUid target, bool isOriginal)
     {
-        // Polonium - the shock also runs through whatever holds the patient, a bed or the hand pulling
-        // him, and those are not worth a verdict. neither is a tutorial patient, who has no mind by design
-        var announce = isOriginal && !HasComp<TutorialNpcComponent>(target);
-
         bool failedRevive = true;
+        string? message = null;
         if (_rotting.IsRotten(target))
         {
-            if (announce)
-                _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("defibrillator-rotten"), InGameICChatType.Speak, true);
+            message = Loc.GetString("defibrillator-rotten");
         }
         else if (TryComp<UnrevivableComponent>(target, out var unrevivable) && _mobState.IsDead(target))
         {
-            if (announce)
-                _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString(unrevivable.ReasonMessage), InGameICChatType.Speak, true);
+            message = Loc.GetString(unrevivable.ReasonMessage);
         }
         else
         {
@@ -231,14 +227,20 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
                 if (mindComp.CurrentEntity != target)
                     OpenReturnToBodyEui((mindUid, mindComp), playerSession);
             }
-            else if (announce)
+            else
             {
                 if (HasComp<MindContainerComponent>(target))
-                    _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("defibrillator-no-mind"), InGameICChatType.Speak, true); //target can host a mind but doesn't
+                    message = Loc.GetString("defibrillator-no-mind"); //target can host a mind but doesn't
                 else
-                    _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("defibrillator-not-living"), InGameICChatType.Speak, true); //target couldn't have hosted a mind
+                    message = Loc.GetString("defibrillator-not-living"); //target couldn't have hosted a mind
             }
         }
+
+        // Only report on the entity the pads were actually placed on. Everything else caught in the chain
+        // (the bed the patient is strapped to, whoever is pulling them) still gets zapped, just silently.
+        // Polonium: a tutorial patient has no mind by design, so the defibrillator stays silent
+        if (isOriginal && message != null && !HasComp<TutorialNpcComponent>(target))
+            _chat.TrySendInGameICMessage(ent.Owner, message, InGameICChatType.Speak, true);
 
         _electrocution.TryDoElectrocution(
             target,

@@ -39,5 +39,3 @@ ent-WaterDropletHat = kropelka wody
     .desc = Sprawia, że ośmioocy przyjaciele są osiem razy bardziej uroczy!
 ent-ClothingHeadHatHairflower = kwiatek do włosów
     .desc = Piękny kwiatek, który można wpiąć między kosmyki włosów.
-ent-ClothingHeadPerformerWig = peruka artysty
-    .desc = Przy bliższych oględzinach widać, że jest z włókna optycznego.

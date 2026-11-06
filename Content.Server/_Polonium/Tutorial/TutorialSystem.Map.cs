@@ -8,6 +8,7 @@ using Content.Shared.Construction;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Ghost.Roles.Components;
 using Content.Shared.Interaction;
+using Content.Shared.Power.Components;
 
 namespace Content.Server._Polonium.Tutorial;
 

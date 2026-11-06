@@ -1,0 +1,13 @@
+ent-MobChicken = kura
+    .desc = Pojawia się przed jajkiem i JEST dinozaurem!
+    .gender = female
+ent-MobChicken1 = { ent-MobChicken }
+    .desc = { ent-MobChicken.desc }
+    .gender = female
+ent-MobChicken2 = { ent-MobChicken }
+    .desc = { ent-MobChicken.desc }
+    .gender = female
+ent-FoodEggChickenFertilized = { ent-FoodEgg }
+    .suffix = Zapłodnione, Kura
+    .desc = { ent-FoodEgg.desc }
+    .gender = neuter

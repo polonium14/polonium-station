@@ -331,6 +331,13 @@ public abstract partial class SharedGunSystem
             ? TransformSystem.WithEntityId(fromCoordinates, gridUid)
             : new EntityCoordinates(Maps.GetMapOrInvalid(fromMap.MapId), fromMap.Position);
 
+        // Polonium: Wizden #45811, our Shoot lives in shared since the projectile prediction
+        if (!fromEnt.EntityId.Valid)
+        {
+            Log.Warning($"Tried to fire gun {ToPrettyString(gun)} at entity coordinates with an invalid EntityUid.");
+            return [];
+        }
+
         toMap = fromMap.Position + angle.ToVec() * mapDirection.Length();
         mapDirection = toMap - fromMap.Position;
         var gunVelocity = Physics.GetMapLinearVelocity(fromEnt);

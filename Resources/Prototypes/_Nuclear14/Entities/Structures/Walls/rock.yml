@@ -10,7 +10,10 @@
     noRot: true
   - type: IconSmooth
     key: walls
-    base: stone
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: stone
   - type: Icon
     sprite: Structures/Walls/stone-ironrock.rsi
     state: full
@@ -153,7 +156,10 @@
               acts: ["Destruction"]
     - type: IconSmooth
       key: walls
-      base: stone
+      states: # Polonium: Wizden #45310 state format
+      - !type:CornerSpriteSmoothing
+        mask: [ walls, windows, grilles, marble, doors ]
+        base: stone
     - type: Icon
       sprite: Structures/Walls/stone-ironrock.rsi
       state: full

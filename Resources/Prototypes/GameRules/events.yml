@@ -84,6 +84,7 @@
     - id: SnakeSpawnHorde
     - id: SpiderClownSpawnHorde
     - id: SpiderSpawnHorde
+    - id: VendorMalfunction
     - id: VentClog
     - id: UtilityLineRupture # Funky Station
 
@@ -108,6 +109,7 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
+    - id: SpaceChangelingSpawn
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
@@ -147,6 +149,16 @@
       max:  20
 
 - type: entity
+  abstract: true
+  parent: BaseGameRule
+  id: BaseStationEventVeryShortDelay
+  components:
+  - type: GameRule
+    delay:
+      min:  5
+      max:  10
+
+- type: entity
   id: BaseStationEventShortDelay
   parent: BaseGameRule
   abstract: true
@@ -180,6 +192,8 @@
   - type: GameRule
     chaosScore: 70
   - type: AnomalySpawnRule
+  - type: DynamicRuleCost
+    cost: 10
 
 - type: entity
   id: BluespaceArtifact
@@ -198,6 +212,8 @@
     duration: 35
     eventType: Chaotic
   - type: BluespaceArtifactRule
+  - type: DynamicRuleCost
+    cost: 10
 
 - type: entity
   id: BluespaceLocker
@@ -212,24 +228,29 @@
   - type: GameRule
     chaosScore: 40
   - type: BluespaceLockerRule
+  - type: DynamicRuleCost
+    cost: 10
 
 - type: entity
-  id: BreakerFlip
   parent: BaseGameRule
+  id: BreakerFlip
   components:
   - type: StationEvent
     weight: 7
     duration: 1
     minimumPlayers: 15
     eventType: Maintenance
+    startAudio:
+      path: /Audio/Announcements/announce.ogg
   - type: GameRule
     chaosScore: 60
   - type: BreakerFlipRule
-
+  - type: DynamicRuleCost
+    cost: 10
 
 - type: entity
-  id: BureaucraticError
   parent: BaseGameRule
+  id: BureaucraticError
   components:
   - type: StationEvent
     startAnnouncement: station-event-bureaucratic-error-announcement
@@ -246,6 +267,8 @@
     - MedicalIntern
     - SecurityCadet
     - TechnicalAssistant
+  - type: DynamicRuleCost
+    cost: 10
 
 - type: entity
   id: ClericalError
@@ -260,6 +283,8 @@
   - type: GameRule
     chaosScore: 30
   - type: ClericalErrorRule
+  - type: DynamicRuleCost
+    cost: 15
 
 - type: entity
   parent: BaseGameRule
@@ -275,6 +300,8 @@
     chaosScore: 60
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
+  - type: DynamicRuleCost
+    cost: 50
 
 - type: entity
   parent: BaseAntagGhostRoleRule
@@ -304,6 +331,39 @@
     antags:
     - !type:FixedAntagCount
       proto: Dragon
+  - type: DynamicRuleCost
+    cost: 75
+
+- type: entity
+  parent: BaseAntagGhostRoleRule
+  id: SpaceChangelingSpawn
+  components:
+  - type: StationEvent
+    weight: 6
+    earliestStart: 20 # can start early since lings need time to start doing stuff
+    reoccurrenceDelay: 40
+    minimumPlayers: 20
+    duration: null
+    occursDuringRoundEnd: false
+  - type: SpaceSpawnRule
+    spawnDistance: 80
+  - type: AntagSpawner
+    prototype: MobHeadSlugElder
+  - type: ChangelingRule
+  - type: AntagRandomObjectives
+    sets:
+    - groups: ChangelingObjectiveGroupDevourDummy
+      maxPicks: 1
+    - groups: ChangelingObjectiveGroupEscapeDummy
+      maxPicks: 1
+    - groups: ChangelingObjectiveGroupKillDummy
+      maxPicks: 1
+    maxDifficulty: 8
+  - type: AntagSelection
+    agentName: changeling-round-end-agent-name
+    antags:
+    - !type:FixedAntagCount
+      proto: SpaceChangeling
   - type: DynamicRuleCost
     cost: 75
 
@@ -368,7 +428,7 @@
     - !type:FixedAntagCount
       proto: ParadoxClone
   - type: DynamicRuleCost
-    cost: 50
+    cost: 75
 
 - type: entity
   parent: BaseGameRule
@@ -385,6 +445,8 @@
     chaosScore: 450
   - type: RandomSpawnRule
     prototype: MobRevenant
+  - type: DynamicRuleCost
+    cost: 75
 
 - type: entity
   parent: [ BaseAntagGhostRoleRule, BaseWizardRule ]
@@ -423,6 +485,8 @@
   - type: GameRule
     chaosScore: 80
   - type: GasLeakRule
+  - type: DynamicRuleCost
+    cost: 25
 
 - type: entity
   id: KudzuGrowth
@@ -437,6 +501,8 @@
   - type: GameRule
     chaosScore: 80
   - type: KudzuGrowthRule
+  - type: DynamicRuleCost
+    cost: 40 #this shit can get insane
 
 - type: entity
   id: PowerGridCheck
@@ -456,6 +522,8 @@
   - type: GameRule
     chaosScore: 80
   - type: PowerGridCheckRule
+  - type: DynamicRuleCost
+    cost: 20
 
 - type: entity
   parent: BaseGameRule
@@ -487,6 +555,22 @@
     extraCount: 2
     lightBreakChancePerSecond: 0.0003
     doorToggleChancePerSecond: 0.001
+  - type: DynamicRuleCost
+    cost: 10
+
+- type: entity
+  parent: BaseStationEventVeryShortDelay
+  id: VendorMalfunction
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vendor-malfunction-announcement
+    startAudio:
+      path: /Audio/Announcements/announce.ogg
+    weight: 5
+    duration: 1
+  - type: VendorMalfunctionRule
+  - type: DynamicRuleCost
+    cost: 5
 
 - type: entity
   id: VentClog
@@ -504,6 +588,8 @@
   - type: GameRule
     chaosScore: 70
   - type: VentClogRule
+  - type: DynamicRuleCost
+    cost: 15
 
 # Critters
 
@@ -527,6 +613,8 @@
       - id: MobAdultSlimesBlueAngry
       - id: MobAdultSlimesGreenAngry
       - id: MobAdultSlimesYellowAngry
+  - type: DynamicRuleCost
+    cost: 30
 
 - type: entity
   id: SnakeSpawnHorde
@@ -548,6 +636,8 @@
       - id: MobPurpleSnake
       - id: MobSmallPurpleSnake
       - id: MobCobraSpace
+  - type: DynamicRuleCost
+    cost: 30
 
 - type: entity
   id: SpiderSpawnHorde
@@ -566,7 +656,13 @@
     table: !type:GroupSelector
       rolls: 4, 8
       children:
-      - id: MobGiantSpiderAngry
+      - id: MobGiantSpiderTarantulaAngry
+      - id: MobGiantSpiderHunterAngry
+      - id: MobGiantSpiderGuardAngry
+      - id: MobGiantSpiderMidwifeAngry
+      - id: MobGiantSpiderNurseAngry
+  - type: DynamicRuleCost
+    cost: 30
 
 - type: entity
   id: SpiderClownSpawnHorde
@@ -585,16 +681,18 @@
     table: !type:GroupSelector
       rolls: 4, 8
       children:
-      - id: MobClownSpider
+      - id: MobGiantSpiderClownAngry
+  - type: DynamicRuleCost
+    cost: 30
 
 - type: entity
   id: ZombieOutbreak
   parent: BaseGameRule
   components:
   - type: StationEvent
-    earliestStart: 90
+    earliestStart: 45
     minimumPlayers: 40
-    weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
+    weight: 1
     duration: 1
     occursDuringRoundEnd: false
     eventType: HostilesSpawn
@@ -661,6 +759,8 @@
       range:
         min: 1
         max: 2
+  - type: DynamicRuleCost
+    cost: 50
 
 - type: entity
   id: MassHallucinations
@@ -680,6 +780,8 @@
     maxSoundDistance: 7
     sounds:
       collection: Paracusia
+  - type: DynamicRuleCost
+    cost: 10
 
 - type: entity
   parent: BaseGameRule
@@ -695,6 +797,8 @@
   - type: GameRule
     chaosScore: 150
   - type: IonStormRule
+  - type: DynamicRuleCost
+    cost: 25
 
 - type: entity
   id: GreytideVirus
@@ -719,6 +823,8 @@
     - Service
     blacklist:
     - External # don't space everything
+  - type: DynamicRuleCost
+    cost: 25
 
 - type: entity
   parent: BaseGameRule
@@ -727,7 +833,6 @@
   - type: StationEvent
     earliestStart: 0
     duration: 1
-    minimumPlayers: 1
     maxOccurrences: 2
     weight: 10
   - type: RandomSpawnRule
@@ -747,6 +852,8 @@
     occursDuringRoundEnd: false
   - type: SpaceSpawnRule
     spawnDistance: 0
+  - type: DynamicRuleCost
+    cost: 45
 
 - type: entity
   parent: BaseDerelictCyborgSpawn

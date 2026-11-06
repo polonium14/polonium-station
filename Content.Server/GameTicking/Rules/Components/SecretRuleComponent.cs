@@ -1,4 +1,4 @@
-using Content.Server.GameTicking.Presets;
+using Content.Shared.GameTicking.Prototypes;
 using Content.Shared.Random;
 using Robust.Shared.Prototypes;
 

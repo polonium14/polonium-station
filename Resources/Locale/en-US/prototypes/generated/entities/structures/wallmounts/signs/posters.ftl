@@ -1,5 +1,5 @@
-ent-PosterBase = { ent-BaseSign }
-    .desc = { ent-BaseSign.desc }
+ent-PosterBase = { ent-BaseSignWeak }
+    .desc = { ent-BaseSignWeak.desc }
 ent-PosterBroken = broken poster
     .desc = You can't make out anything from the poster's original print. It's ruined.
 ent-PosterContrabandFreeTonto = Free Tonto
@@ -235,7 +235,7 @@ ent-PosterLegitNTTGC = Nanotrasen Tactical Game Cards
 ent-PosterLegitSafetyMothSSD = Safety Moth - Space Sleep Disorder
     .desc = This informational poster uses Safety Moth™ to tell the viewer about Space Sleep Disorder (SSD), a condition where the person stops reacting to things. "Treat SSD crew with care! They might wake up at any time!"
 ent-PosterLegitOppenhopper = Oppenhopper
-    .desc = A poster for a long-forgotten movie. It follows a group of tenacious greenhorns from the Grasshopper Sector as they defend against onslaughts of the infamous Nuclear Operatives. The tagline reads: "Nuke Ops will continue until robustness improves."
+    .desc = A poster for a long-forgotten movie. It follows a group of tenacious greenhorns from the Grasshopper Sector as they defend against the repeated onslaughts of the infamous nuclear operatives. The tagline reads: "Nukeops will continue until robustness improves."
 ent-PosterLegitTyrone = Tyrone's Guide to Space
     .desc = A poster advertising online schooling about space. The classes listed seem to cover things from the basic usage of station equipment to complicated subjects like creating pipebombs or covering entire hallways in spacelube. A disclaimer reads "It's never THAT bad, and at the end you might even get a tortilla."
 ent-PosterLegitHelio = Helio Logistics ad
@@ -264,3 +264,9 @@ ent-PosterMapWaystation = Waystation Map
     .desc = A map of Waystation... wait isn't this packed upside down?
 ent-PosterMapOrigin = origin map
     .desc = A map of Origin Station.
+
+ent-PosterLegitRaptor = Raptor - Fact or Fiction?
+    .desc = A poster for an obscure documentary. It attempts to explore the life of space raptors, a species of rare theropods rumored to help stranded spessmen in their time of need.
+
+ent-PosterLegitVulture = Vulture in Sunset
+    .desc = A test print from a photograph, depicting a vulture silhouetted against the backdrop of a tranquil sunset.

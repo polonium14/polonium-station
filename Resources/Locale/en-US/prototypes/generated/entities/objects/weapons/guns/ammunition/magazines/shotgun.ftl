@@ -11,3 +11,9 @@ ent-MagazineShotgunSlug = ammo drum (.50 slug)
     .desc = A large drum magazine used by some military-grade automatic shotguns. Intended to hold long-ranged slug ammunition.
 ent-MagazineShotgunIncendiary = ammo drum (.50 incendiary)
     .desc = A large drum magazine used by some military-grade automatic shotguns. Intended to hold self-igniting incendiary ammunition.
+
+ent-MagazineShotgunTranquilizer = ammo drum (.50 tranquilizer)
+    .desc = A large drum magazine used by some military-grade automatic shotguns. Intended to hold strong sedative ammunition.
+
+ent-MagazineShotgunUranium = ammo drum (.50 uranium)
+    .desc = A large drum magazine used by some military-grade automatic shotguns. Intended to hold pellet uranium ammunition.

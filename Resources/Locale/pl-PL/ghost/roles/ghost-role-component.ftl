@@ -82,6 +82,8 @@ ghost-role-information-rat-king-name = Król Szczurów
 ghost-role-information-rat-king-description = Jesteś Królem Szczurów, a twoje zainteresowania to jedzenie, jedzenie i jeszcze więcej jedzenia. Walcz ze stacją o jedzenie. Czy wspominałem, że interesuje cię jedzenie?
 ghost-role-information-sentient-carp-name = Świadomy karp
 ghost-role-information-sentient-carp-description = Pomóż smokowi zalać stację karpiami!
+
+ghost-role-information-sentient-sharkminnow-name = Świadomy rekin
 ghost-role-information-willow-name = Kangurzyca Willow
 ghost-role-information-willow-description = Jesteś kangurem o imieniu Willow! Willow lubi boks.
 ghost-role-information-honkbot-name = Honkbot

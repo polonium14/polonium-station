@@ -6,7 +6,7 @@ namespace Content.Shared._Starfall.Particles;
 /// <summary>
 /// Spawns a particle effect on this entity when it initializes.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, ComponentProtoName("StarfallParticleEmitter")] // Polonium: Wizden #43568 registers its own ParticleEmitter
 public sealed partial class ParticleEmitterComponent : Component
 {
     /// <summary>The particle effect to emit.</summary>

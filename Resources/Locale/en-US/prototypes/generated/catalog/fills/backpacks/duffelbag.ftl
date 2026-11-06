@@ -1,9 +1,7 @@
 ent-ClothingBackpackDuffelSurgeryFilled = surgical duffel bag
     .desc = A large duffel bag for holding extra medical supplies - this one seems to be designed for holding surgical tools.
-    .suffix = NIE MAPOWAĆ
 ent-ClothingBackpackDuffelSyndicateFilledMedical = syndicate surgical duffel bag
     .desc = A large duffel bag containing a full suite of surgical tools.
-    .suffix = NIE MAPOWAĆ
 ent-ClothingBackpackDuffelSyndicateFilledMedicine = syndicate medicine duffel bag
     .desc = A large duffel bag containing essential medicinal reagents.
 ent-ClothingBackpackDuffelSyndicateFilledShotgun = Bulldog bundle
@@ -16,8 +14,8 @@ ent-ClothingBackpackDuffelSyndicateFilledRevolver = Python bundle
     .desc = Go loud and proud with a fully loaded Magnum Python, bundled with two speed loaders.
 ent-ClothingBackpackDuffelSyndicateFilledLMG = L6 Saw bundle
     .desc = More dakka: The iconic L6 lightmachinegun, bundled with 2 box magazines.
-ent-ClothingBackpackDuffelSyndicateFilledGrenadeLauncher = China-Lake bundle
-    .desc = An old China-Lake grenade launcher bundled with 11 rounds of various destruction capability.
+ent-ClothingBackpackDuffelSyndicateFilledGrenadeLauncher = China Lake bundle
+    .desc = An old China Lake grenade launcher bundled with 11 rounds of various destruction capability.
 ent-ClothingBackpackDuffelSyndicateAmmoFilled = ammo bundle
     .desc = Reloading! Contains 4 magazines for the C-20r, 5 drums for the Bulldog, 3 magazines for the Estoc DMR, and 2 ammo boxes for the L6 SAW.
 ent-ClothingBackpackDuffelSyndicateCostumeClown = { ent-ClothingBackpackDuffelClown }
@@ -55,3 +53,18 @@ ent-ClothingBackpackDuffelSyndicateFilledStarterKit = basic operative bundle
     .desc = Contains a weapon, medical supplies, breaching tools, spare ammo, and some simple utilities.
 ent-ClothingBackpackDuffelSyndicateFilledHushpup = Hushpup bundle
     .desc = Contains the Hushpup, bundled with a box of buckshot. Quarter included.
+
+ent-ClothingBackpackDuffelVirtualChimera = chimera singer outfit bag
+    .desc = Contains the famous chimera singer's outfit. Have a great performance!
+
+ent-ClothingBackpackDuffelVirtualFan = singer's fan outfit bag
+    .desc = Contains the singer's fan outfit. Have a great performance!
+
+ent-ClothingBackpackDuffelVirtualForeigner = foreign singer outfit bag
+    .desc = Contains the famous foreign singer's outfit. Have a great performance!
+
+ent-ClothingBackpackDuffelVirtualIce = ice singer outfit bag
+    .desc = Contains the ice singer's outfit. Have a great performance!
+
+ent-ClothingBackpackDuffelVirtualSinger = virtual singer outfit bag
+    .desc = Contains the famous virtual singer's outfit. Have a great performance!

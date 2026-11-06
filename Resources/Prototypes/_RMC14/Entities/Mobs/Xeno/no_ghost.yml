@@ -47,7 +47,7 @@
     prob: 0
 
 - type: entity
-  parent: MobGiantSpiderAngry
+  parent: MobGiantSpiderTarantulaAngry # Polonium: MobGiantSpiderAngry was split into variants by upstream #46156
   id: MobGiantSpiderAngryNoGhost
   suffix: NPC
   components:

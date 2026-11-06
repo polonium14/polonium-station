@@ -1,6 +1,6 @@
 using Content.Client.Guidebook.RichText;
-using Content.Client.Guidebook.Richtext;
 using Content.Client.UserInterface.RichText;
+using Content.Client.Guidebook.Richtext;
 using Robust.Client.UserInterface.RichText;
 
 namespace Content.Client.RichText;

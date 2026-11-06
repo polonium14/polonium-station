@@ -32,3 +32,7 @@ ent-MobSharkSalvage = { ent-MobShark }
     .suffix = Odzysk
     .desc = { ent-MobShark.desc }
     .gender = male
+ent-MobSharkDragon = { ent-MobShark }
+    .suffix = Smocze Potomstwo
+    .desc = { ent-MobShark.desc }
+    .gender = male

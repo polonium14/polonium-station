@@ -1,0 +1,12 @@
+ent-ClothingUniformJumpskirtCasualBlue = casual blue jumpskirt
+    .desc = A loose worn blue shirt with a grey skirt, perfect for someone looking to relax.
+ent-ClothingUniformJumpskirtCasualPurple = casual purple jumpskirt
+    .desc = A loose worn purple shirt with a grey skirt, perfect for someone looking to relax.
+ent-ClothingUniformJumpskirtCasualRed = casual red jumpskirt
+    .desc = A loose worn red shirt with a grey skirt, perfect for someone looking to relax.
+ent-ClothingUniformJumpskirtCasualGreen = casual green jumpskirt
+    .desc = A loose worn green shirt with a grey skirt, perfect for someone looking to relax.
+ent-ClothingUniformJumpskirtOldDress = old dress
+    .desc = A worn-looking dress from a very long time ago.
+ent-ClothingUniformJumpskirtOfLife = skirt of life
+    .desc = A skirt that symbolizes the joy and positivity of our life.

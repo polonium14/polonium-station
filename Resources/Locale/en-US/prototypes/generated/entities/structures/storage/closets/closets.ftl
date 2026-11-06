@@ -32,3 +32,7 @@ ent-ClosetBluespace = suspicious closet
 ent-ClosetBluespaceUnstable = suspicious closet
     .desc = It's a storage unit... right?
     .suffix = Bluespace unstable
+
+ent-ClosetMaintenanceWelded = { ent-ClosetMaintenance }
+    .suffix = Welded
+    .desc = { ent-ClosetMaintenance.desc }

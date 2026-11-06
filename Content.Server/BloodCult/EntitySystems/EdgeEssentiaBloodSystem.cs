@@ -28,7 +28,7 @@ public sealed partial class EdgeEssentiaBloodSystem : EntitySystem
 	[Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
 	[Dependency] private BloodstreamSystem _bloodstream = default!;
 	[Dependency] private BloodCultRuleSystem _bloodCultRule = default!;
-	[Dependency] private GameTicker _gameTicker = default!;
+	[Dependency] private ServerGameTicker _gameTicker = default!;
 
 	private TimeSpan _nextUpdate = TimeSpan.Zero;
 	private bool _bloodCultRuleActive = false;

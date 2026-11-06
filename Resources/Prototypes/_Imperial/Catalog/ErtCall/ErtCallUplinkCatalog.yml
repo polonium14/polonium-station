@@ -478,7 +478,7 @@
   id: ErtCallUplinkTrayScanner
   name: ert-uplink-ErtCallUplinkTrayScanner-name
   description: ert-uplink-ErtCallUplinkTrayScanner-desc
-  productEntity: trayScanner
+  productEntity: TRayScanner
   cost:
     BlueSpaceCube: 1
   categories:
@@ -2085,7 +2085,7 @@
   id: ErtCallUplinkTrayScannerDeadSquad
   name: ert-uplink-ErtCallUplinkTrayScanner-name
   description: ert-uplink-ErtCallUplinkTrayScanner-desc
-  productEntity: trayScanner
+  productEntity: TRayScanner
   cost:
     BlueSpaceCube: 2
   categories:

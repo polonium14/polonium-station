@@ -1,4 +1,13 @@
-﻿using System.Linq;
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Linq;
 using System.Numerics;
 using Content.Client.Administration.UI.BanList.Bans;
 using Content.Client.Administration.UI.BanList.RoleBans;
@@ -71,7 +80,7 @@ public sealed partial class BanListEui : BaseEui
 
     private static string FormatDate(DateTimeOffset date)
     {
-        return date.ToString("MM/dd/yyyy h:mm tt");
+        return date.ToString("yyyy-MM-dd HH:mm");
     }
 
     public static void SetData<T>(IBanListLine<T> line, SharedBan ban) where T : SharedBan

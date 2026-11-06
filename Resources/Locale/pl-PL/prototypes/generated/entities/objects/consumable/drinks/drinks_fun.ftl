@@ -1,4 +1,4 @@
-ent-BaseSqueezeBottle = { ent-DrinkBaseMaterialPlastic }
+ent-BaseSqueezeBottle = { ent-SolutionSmall }
     .desc = { ent-DrinkBaseMaterialPlastic.desc }
 ent-DrinkSpaceGlue = tubka z kosmoklejem
     .desc = Wysokowydajny klej przeznaczony do konserwacji niezwykle skomplikowanych urządzeń mechanicznych. NIE PIĆ!

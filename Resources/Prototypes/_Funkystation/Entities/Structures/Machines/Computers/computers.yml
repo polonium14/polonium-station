@@ -9,18 +9,8 @@
   name: science communications computer
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: comm_science
-    - map: ["computerLayerKeys"]
-      state: generic_keys
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+  - type: ComputerVisuals # Polonium: computer sprite states moved to ComputerVisuals by upstream #44256
+    stateScreen: comm_science
   - type: AccessReader
     access: [[ "ResearchDirector" ]]
   - type: CommunicationsConsole
@@ -41,18 +31,8 @@
   name: security communications computer
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: comm_security
-    - map: ["computerLayerKeys"]
-      state: generic_keys
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+  - type: ComputerVisuals # Polonium: computer sprite states moved to ComputerVisuals by upstream #44256
+    stateScreen: comm_security
   - type: AccessReader
     access: [[ "HeadOfSecurity" ]]
   - type: CommunicationsConsole
@@ -73,18 +53,8 @@
   name: service communications computer
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: comm_service
-    - map: ["computerLayerKeys"]
-      state: generic_keys
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+  - type: ComputerVisuals # Polonium: computer sprite states moved to ComputerVisuals by upstream #44256
+    stateScreen: comm_service
   - type: AccessReader
     access: [[ "HeadOfPersonnel" ]]
   - type: CommunicationsConsole
@@ -105,18 +75,8 @@
   name: cargo communications computer
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: comm_cargo
-    - map: ["computerLayerKeys"]
-      state: generic_keys
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+  - type: ComputerVisuals # Polonium: computer sprite states moved to ComputerVisuals by upstream #44256
+    stateScreen: comm_cargo
   - type: AccessReader
     access: [[ "Quartermaster" ]]
   - type: CommunicationsConsole
@@ -137,18 +97,8 @@
   name: engineering communications computer
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: comm_engi
-    - map: ["computerLayerKeys"]
-      state: generic_keys
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+  - type: ComputerVisuals # Polonium: computer sprite states moved to ComputerVisuals by upstream #44256
+    stateScreen: comm_engi
   - type: AccessReader
     access: [[ "ChiefEngineer" ]]
   - type: CommunicationsConsole
@@ -169,18 +119,8 @@
   name: medical communications computer
   description: A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
   components:
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: comm_medical
-    - map: ["computerLayerKeys"]
-      state: generic_keys
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
+  - type: ComputerVisuals # Polonium: computer sprite states moved to ComputerVisuals by upstream #44256
+    stateScreen: comm_medical
   - type: AccessReader
     access: [[ "ChiefMedicalOfficer" ]]
   - type: CommunicationsConsole

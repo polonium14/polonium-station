@@ -1,8 +1,8 @@
 #nullable enable
 using System.Linq;
 using Content.IntegrationTests.Fixtures;
-using Content.Server.Antag.Components;
-using Content.Server.Antag.Selectors;
+using Content.Shared.Antag.Components;
+using Content.Shared.Antag.Selectors;
 using Content.Server.GameTicking;
 using Content.Server.StationEvents.SecretPlus;
 using Content.Shared._Goobstation.CCVar;
@@ -273,13 +273,13 @@ public sealed class SecretPlusTest : GameTest
     public async Task ExclusiveRulesDoNotStartTogether()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
 
         server.CfgMan.SetCVar(GoobCVars.StationEventPlayerBias, 1);
 
         await server.WaitAssertion(() =>
         {
-            var scheduler = server.EntMan.GetComponent<SecretPlusComponent>(ticker.AddGameRule(AntagsRule));
+            var scheduler = server.EntMan.GetComponent<SecretPlusComponent>(ticker.AddGameRule(AntagsRule)!.Value);
             Assert.Multiple(() =>
             {
                 Assert.That(scheduler.StartingPlayers, Is.LessThan(10));
@@ -295,13 +295,13 @@ public sealed class SecretPlusTest : GameTest
     public async Task ExclusiveRulesStartTogetherWithEnoughPlayers()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
 
         server.CfgMan.SetCVar(GoobCVars.StationEventPlayerBias, 10);
 
         await server.WaitAssertion(() =>
         {
-            var scheduler = server.EntMan.GetComponent<SecretPlusComponent>(ticker.AddGameRule(AntagsRule));
+            var scheduler = server.EntMan.GetComponent<SecretPlusComponent>(ticker.AddGameRule(AntagsRule)!.Value);
             Assert.Multiple(() =>
             {
                 Assert.That(scheduler.StartingPlayers, Is.AtLeast(10));
@@ -317,13 +317,13 @@ public sealed class SecretPlusTest : GameTest
     public async Task RoundMayStartWithoutAntags()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
 
         server.CfgMan.SetCVar(GoobCVars.StationEventPlayerBias, 10);
 
         await server.WaitAssertion(() =>
         {
-            var scheduler = server.EntMan.GetComponent<SecretPlusComponent>(ticker.AddGameRule(NoAntagsRule));
+            var scheduler = server.EntMan.GetComponent<SecretPlusComponent>(ticker.AddGameRule(NoAntagsRule)!.Value);
             Assert.Multiple(() =>
             {
                 Assert.That(ticker.IsGameRuleAdded(LoudRuleA), Is.False);
@@ -338,7 +338,7 @@ public sealed class SecretPlusTest : GameTest
     public async Task GhostAntagsAreLimitedByConnectedPlayers()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
 
         server.CfgMan.SetCVar(GoobCVars.StationEventPlayerBias, 1);
         server.CfgMan.SetCVar(GoobCVars.MinimumTimeUntilFirstEvent, 0f);
@@ -357,7 +357,7 @@ public sealed class SecretPlusTest : GameTest
     public async Task EventsCountLivingPlayersByDefault()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
 
         server.CfgMan.SetCVar(GoobCVars.StationEventPlayerBias, 1);
         server.CfgMan.SetCVar(GoobCVars.MinimumTimeUntilFirstEvent, 0f);
@@ -377,13 +377,17 @@ public sealed class SecretPlusTest : GameTest
     public async Task TableRowOverridesEventValues()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
 
         server.CfgMan.SetCVar(GoobCVars.StationEventPlayerBias, 1);
         server.CfgMan.SetCVar(GoobCVars.MinimumTimeUntilFirstEvent, 0f);
 
         var uid = EntityUid.Invalid;
-        await server.WaitPost(() => ticker.StartGameRule(RowScheduler, out uid));
+        await server.WaitPost(() =>
+        {
+            ticker.StartGameRule(RowScheduler, out var rule);
+            uid = rule!.Value;
+        });
         await Pair.RunTicksSync(120);
 
         var scheduler = server.EntMan.GetComponent<SecretPlusComponent>(uid);
@@ -401,7 +405,7 @@ public sealed class SecretPlusTest : GameTest
     public async Task EventsComeFasterWithMorePlayers()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
         var timing = server.ResolveDependency<IGameTiming>();
 
         server.CfgMan.SetCVar(GoobCVars.StationEventPlayerBias, 1);
@@ -411,8 +415,10 @@ public sealed class SecretPlusTest : GameTest
         var slow = EntityUid.Invalid;
         await server.WaitPost(() =>
         {
-            ticker.StartGameRule(SpeedScheduler, out fast);
-            ticker.StartGameRule(SpeedSchedulerSlow, out slow);
+            ticker.StartGameRule(SpeedScheduler, out var fastRule);
+            ticker.StartGameRule(SpeedSchedulerSlow, out var slowRule);
+            fast = fastRule!.Value;
+            slow = slowRule!.Value;
         });
         await Pair.RunTicksSync(30);
 
@@ -429,7 +435,7 @@ public sealed class SecretPlusTest : GameTest
     public async Task LateAntagsFollowCrewGrowthUntilTheWindowCloses()
     {
         var server = Pair.Server;
-        var ticker = server.System<GameTicker>();
+        var ticker = server.System<ServerGameTicker>();
 
         await Pair.WaitClientCommand("toggleready True");
         await Pair.WaitCommand($"setgamepreset {LateAntagsPreset}");

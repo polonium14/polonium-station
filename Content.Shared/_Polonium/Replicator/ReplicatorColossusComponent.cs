@@ -16,7 +16,7 @@ public sealed partial class ReplicatorColossusComponent : Component
     public TimeSpan LaunchDuration = TimeSpan.FromSeconds(16.5);
 
     [DataField]
-    public ProtoId<FactionIconPrototype> Icon = "ReplicatorHiveColossus";
+    public ProtoId<StatusIconPrototype> Icon = "ReplicatorHiveColossus";
 
     [DataField]
     public SoundSpecifier? LaunchSound;

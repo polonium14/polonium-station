@@ -77,6 +77,7 @@ public sealed partial class BluespaceStrikeWindow : DefaultWindow
 
     protected override void EnteredTree()
     {
+        base.EnteredTree();
         SetLocation();
     }
 

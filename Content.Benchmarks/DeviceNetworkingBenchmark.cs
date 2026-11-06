@@ -1,12 +1,24 @@
-﻿using System.Collections.Generic;
+// SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2026 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using Content.IntegrationTests;
 using Content.IntegrationTests.Pair;
 using Content.IntegrationTests.Tests.DeviceNetwork;
-using Content.Server.DeviceNetwork.Systems;
-using Content.Shared.DeviceNetwork;
+using Content.Shared.DeviceNetwork.Systems;
 using Robust.Shared;
 using Robust.Shared.Analyzers;
 using Robust.Shared.GameObjects;
@@ -26,9 +38,6 @@ public class DeviceNetworkingBenchmark
     private readonly List<EntityUid> _targetEntities = new();
     private readonly List<EntityUid> _targetWirelessEntities = new();
 
-
-    private NetworkPayload _payload = default!;
-
     [TestPrototypes]
     private const string Prototypes = @"
 - type: entity
@@ -47,14 +56,14 @@ public class DeviceNetworkingBenchmark
       transmitFrequency: 100
       receiveFrequency: 100
       deviceNetId: Wireless
-    - type: WirelessNetworkConnection
+    - type: WirelessNetwork
       range: 100
         ";
 
     //public static IEnumerable<int> EntityCountSource { get; set; }
 
     //[ParamsSource(nameof(EntityCountSource))]
-    public int EntityCount = 500;
+    public int EntityCount = 1000;
 
     [GlobalSetup]
     public async Task SetupAsync()
@@ -69,14 +78,6 @@ public class DeviceNetworkingBenchmark
             var entityManager = server.InstanceDependencyCollection.Resolve<IEntityManager>();
             _deviceNetworkSystem = entityManager.EntitySysManager.GetEntitySystem<DeviceNetworkSystem>();
             _deviceNetTestSystem = entityManager.EntitySysManager.GetEntitySystem<DeviceNetworkTestSystem>();
-
-            var testValue = "test";
-            _payload = new NetworkPayload
-            {
-                ["Test"] = testValue,
-                ["testnumber"] = 1,
-                ["testbool"] = true
-            };
 
             _sourceEntity = entityManager.SpawnEntity("DummyNetworkDevicePrivate", MapCoordinates.Nullspace);
             _sourceWirelessEntity = entityManager.SpawnEntity("DummyWirelessNetworkDevice", MapCoordinates.Nullspace);
@@ -120,7 +121,13 @@ public class DeviceNetworkingBenchmark
 
         _pair.Server.Post(() =>
         {
-            _deviceNetworkSystem.QueuePacket(_sourceEntity, null, _payload, 100);
+            var payload = new TestPayload
+            {
+                TestString = "test",
+                TestNumber = 1,
+                TestBool = true,
+            };
+            _deviceNetworkSystem.SendPacket(_sourceEntity, null, ref payload, 100);
         });
 
         await server.WaitRunTicks(1);
@@ -134,7 +141,53 @@ public class DeviceNetworkingBenchmark
 
         _pair.Server.Post(() =>
         {
-            _deviceNetworkSystem.QueuePacket(_sourceWirelessEntity, null, _payload, 100);
+            var payload = new TestPayload
+            {
+                TestString = "test",
+                TestNumber = 1,
+                TestBool = true,
+            };
+            _deviceNetworkSystem.SendPacket(_sourceWirelessEntity, null, ref payload, 100);
+        });
+
+        await server.WaitRunTicks(1);
+        await server.WaitIdleAsync();
+    }
+
+    [Benchmark(Description = "Device Net Broadcast No Connection Checks (Class payload)")]
+    public async Task DeviceNetworkBroadcastNoConnectionChecksClass()
+    {
+        var server = _pair.Server;
+
+        _pair.Server.Post(() =>
+        {
+            var payload = new TestPayloadClass
+            {
+                TestString = "test",
+                TestNumber = 1,
+                TestBool = true,
+            };
+            _deviceNetworkSystem.SendPacket(_sourceEntity, null, ref payload, 100);
+        });
+
+        await server.WaitRunTicks(1);
+        await server.WaitIdleAsync();
+    }
+
+    [Benchmark(Description = "Device Net Broadcast Wireless Connection Checks (Class payload)")]
+    public async Task DeviceNetworkBroadcastWirelessConnectionChecksClass()
+    {
+        var server = _pair.Server;
+
+        _pair.Server.Post(() =>
+        {
+            var payload = new TestPayloadClass
+            {
+                TestString = "test",
+                TestNumber = 1,
+                TestBool = true,
+            };
+            _deviceNetworkSystem.SendPacket(_sourceWirelessEntity, null, ref payload, 100);
         });
 
         await server.WaitRunTicks(1);

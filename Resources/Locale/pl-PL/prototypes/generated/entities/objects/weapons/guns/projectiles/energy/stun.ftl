@@ -1,0 +1,14 @@
+ent-BulletTaser = pocisk paraliżujący
+    .desc = { ent-BaseBullet.desc }
+ent-BulletTaserSuper = strzałka do tasera
+    .desc = Jeśli to widzisz, to prawdopodobnie padłeś ofiarą ataku „stun-meta”
+ent-BulletDisabler = pocisk disablera
+    .desc = { ent-BaseBullet.desc }
+ent-BulletDisablerPractice = pocisk disablera treningowego
+    .desc = { ent-BaseBullet.desc }
+ent-BulletDisablerSmg = pocisk disablera smg
+    .desc = { ent-BaseBullet.desc }
+ent-BulletDisablerSmgSpread = szeroki ostrzał disablera smg
+    .desc = { ent-BulletDisablerSmg.desc }
+ent-EnergyCrossbowBolt = błysk energii
+    .desc = To będzie bolało.
