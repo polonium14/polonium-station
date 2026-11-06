@@ -11,7 +11,7 @@
   - Unkillable
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 2h
+    time: 5h
 
 - type: antagSpecifier
   parent: RestrictedAntag

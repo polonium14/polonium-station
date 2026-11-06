@@ -6,9 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 2h
-    - !type:OverallPlaytimeRequirement
-      time: 1.5h
+      time: 2h # 2 hours
   startingGear: RoboticistGear
   icon: "JobIconRoboticist"
   supervisors: job-supervisors-rd

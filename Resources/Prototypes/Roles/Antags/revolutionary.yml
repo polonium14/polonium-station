@@ -10,7 +10,7 @@
   - Roundstart
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 2h
+    time: 0.5h
 
 - type: antagSpecifier
   abstract: true
