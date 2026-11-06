@@ -47,6 +47,7 @@ chat-emote-name-gurgle = Bulgotanie
 chat-emote-name-coo = Gruchanie
 chat-emote-name-yap = Skomlenie
 chat-emote-name-gekker = Gekker
+chat-emote-name-blink = Mrugnięcie
 
 # Messages — formy czasu teraźniejszego zgodne z chatTriggers w speech_emotes.yml / disease_emotes.yml
 chat-emote-msg-scream = krzyczy!
@@ -98,3 +99,4 @@ chat-emote-msg-gurgle = bulgocze.
 chat-emote-msg-coo = grucha.
 chat-emote-msg-yap = skomli.
 chat-emote-msg-gekker = gekkeruje.
+chat-emote-msg-blink = mruga.
