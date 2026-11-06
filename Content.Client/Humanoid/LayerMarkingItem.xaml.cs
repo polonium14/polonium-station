@@ -12,7 +12,6 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Input;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Robust.Client.Graphics;
 
 namespace Content.Client.Humanoid;
 

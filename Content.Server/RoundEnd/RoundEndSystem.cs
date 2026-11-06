@@ -64,7 +64,6 @@ using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.RoundEnd;
 using Content.Shared.Station.Components;
 using Timer = Robust.Shared.Timing.Timer;
-using Content.Shared.RoundEnd;
 
 namespace Content.Server.RoundEnd
 {
