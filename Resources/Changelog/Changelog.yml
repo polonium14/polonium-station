@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Booblesnoot42
-  changes:
-  - message: 'EXPERIMENTAL: Player-controlled spiders and slimes are now forced to
-      attack if they are passive near enemies for too long.'
-    type: Tweak
-  id: 9601
-  time: '2026-04-03T06:18:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42399
 - author: alexalexmax
   changes:
   - message: Added a new uplink category for objective items.
@@ -4442,3 +4434,11 @@
   id: 10095
   time: '2026-10-30T18:47:18.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1193
+- author: Oxtailime
+  changes:
+  - message: "Zluzowano skafander medyka wi\u0119ziennego (z 35% spowolnienia, do\
+      \ 25%)"
+    type: Fix
+  id: 10096
+  time: '2026-11-06T15:32:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1199
