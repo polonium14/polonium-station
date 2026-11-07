@@ -70,7 +70,7 @@
       color: "#e8453c"
       screen: screen-alarm
       sound:
-        path: /Audio/_Polonium/Items/Breathalyzer/result_alarm.ogg
+        path: /Audio/_Polonium/Items/Breathalyzer/result_critical.ogg
   - type: ActivatableUI
     key: enum.BreathalyzerUiKey.Key
     verbText: breathalyzer-verb-open-display
