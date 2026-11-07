@@ -1,0 +1,8 @@
+- files: ["blow.ogg"]
+  license: "Custom"
+  copyright: "Vape inhale via freesound_community on Pixabay, reversed and modified by nikitosych (github)"
+  source: "https://pixabay.com/sound-effects/vapeinhale-39129/"
+- files: ["start.ogg", "analyze.ogg", "result_ok.ogg", "result_warn.ogg", "result_alarm.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Made for Polonium Station by nikitosych (github)"
+  source: "https://github.com/polonium14/polonium-station/tree/master/Resources/Audio/_Polonium/Items/Breathalyzer"

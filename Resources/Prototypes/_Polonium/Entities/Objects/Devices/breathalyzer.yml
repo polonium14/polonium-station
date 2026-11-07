@@ -1,0 +1,108 @@
+- type: entity
+  parent: [ BaseItem, PowerCellSlotMediumItem ]
+  id: Breathalyzer
+  name: breathalyzer
+  description: A handheld breath alcohol tester. Hold it, blow into the mouthpiece and it shows how much alcohol is in your blood.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Devices/breathalyzer.rsi
+    layers:
+    - state: base
+    - state: screen-idle
+      map: [ "enum.BreathalyzerVisualLayers.Screen" ]
+      shader: unshaded
+    - state: dirty
+      map: [ "enum.BreathalyzerVisualLayers.Dirty" ]
+      visible: false
+  - type: Item
+    sprite: _Polonium/Objects/Devices/breathalyzer.rsi
+    size: Small
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.BreathalyzerVisuals.Screen:
+        enum.BreathalyzerVisualLayers.Screen:
+          screen-off: { visible: false }
+          screen-idle: { state: screen-idle, visible: true }
+          screen-blow: { state: screen-blow, visible: true }
+          screen-analyze: { state: screen-analyze, visible: true }
+          screen-ok: { state: screen-ok, visible: true }
+          screen-warn: { state: screen-warn, visible: true }
+          screen-high: { state: screen-high, visible: true }
+          screen-alarm: { state: screen-alarm, visible: true }
+      enum.BreathalyzerVisuals.Dirty:
+        enum.BreathalyzerVisualLayers.Dirty:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Breathalyzer
+    startSound:
+      path: /Audio/_Polonium/Items/Breathalyzer/start.ogg
+    blowSound:
+      path: /Audio/_Polonium/Items/Breathalyzer/blow.ogg
+    analyzeSound:
+      path: /Audio/_Polonium/Items/Breathalyzer/analyze.ogg
+    printSound:
+      path: /Audio/Machines/short_print_and_rip.ogg
+      params:
+        variation: 0.25
+        maxDistance: 4.5
+    levels:
+    - threshold: 0
+      name: breathalyzer-level-sober
+      color: "#5fd16a"
+      screen: screen-ok
+      sound:
+        path: /Audio/_Polonium/Items/Breathalyzer/result_ok.ogg
+    - threshold: 0.2
+      name: breathalyzer-level-after-drinking
+      color: "#e3c84a"
+      screen: screen-warn
+      sound:
+        path: /Audio/_Polonium/Items/Breathalyzer/result_warn.ogg
+    - threshold: 0.5
+      name: breathalyzer-level-intoxicated
+      color: "#ee8a3a"
+      screen: screen-high
+      sound:
+        path: /Audio/_Polonium/Items/Breathalyzer/result_alarm.ogg
+    - threshold: 3
+      name: breathalyzer-level-poisoning
+      color: "#e8453c"
+      screen: screen-alarm
+      sound:
+        path: /Audio/_Polonium/Items/Breathalyzer/result_alarm.ogg
+  - type: ActivatableUI
+    key: enum.BreathalyzerUiKey.Key
+    verbText: breathalyzer-verb-open-display
+  - type: UserInterface
+    interfaces:
+      enum.BreathalyzerUiKey.Key:
+        type: BreathalyzerBoundUserInterface
+  - type: StaticPrice
+    price: 40
+  - type: GuideHelp
+    guides:
+    - Security
+
+- type: entity
+  parent: Paper
+  id: BreathalyzerReportPaper
+  name: breathalyzer printout
+  description: A short printout with a breath alcohol reading.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper_receipt_horizontal
+    - state: paper_receipt_horizontal_words
+      map: [ "enum.PaperVisualLayers.Writing" ]
+      visible: false
+    - state: paper_stamp-generic
+      map: [ "enum.PaperVisualLayers.Stamp" ]
+      visible: false
+  - type: PaperVisuals
+    backgroundImagePath: "/Textures/Interface/Paper/paper_background_perforated.svg.96dpi.png"
+    backgroundImageTile: true
+    backgroundPatchMargin: 6.0, 0.0, 6.0, 0.0
+    contentMargin: 12.0, 6.0, 6.0, 6.0
+    maxWritableArea: 368.0, 256.0
