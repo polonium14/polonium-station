@@ -264,3 +264,7 @@ ent-PosterMapWaystation = mapa Waystation
     .desc = Mapa Waystation... czekaj, czy to nie jest zapakowane do góry nogami?
 ent-PosterMapOrigin = mapa Origin
     .desc = Mapa stacji Origin.
+ent-PosterLegitRaptor = Raptor - Fact or Fiction?
+    .desc = A poster for an obscure documentary. It attempts to explore the life of space raptors, a species of rare theropods rumored to help stranded spessmen in their time of need.
+ent-PosterLegitVulture = Vulture in Sunset
+    .desc = A test print from a photograph, depicting a vulture silhouetted against the backdrop of a tranquil sunset.

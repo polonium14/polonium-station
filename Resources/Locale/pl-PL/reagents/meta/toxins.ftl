@@ -61,3 +61,6 @@ reagent-desc-hemorrhinol = Toksyna powodująca poważne uszkodzenia naczyń krwi
 reagent-name-hivarol = hivarol
 reagent-desc-hivarol = Toksyna atakująca określone rodzaje komórek w organizmie, zakłócająca łączność umysłu roju i wywołująca silny ból u jego członków.
 reagent-name-phosphoric-acid = kwas fosforowy
+reagent-desc-phosphoric-acid = An acidic chemical often used in agriculture. Keep away from your eyes.
+reagent-name-hardlight-toxin = hardlight toxin
+reagent-desc-hardlight-toxin = A highly advanced toxin which inundates a victim's nervous system with ionizing radiation when metabolized.

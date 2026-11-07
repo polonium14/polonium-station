@@ -1,4 +1,4 @@
-ent-BulletCaselessRifle = kula (.25 bezłuskowe)
+ent-BulletCaselessRifle = bullet (.25 caseless)
     .desc = { ent-BaseBullet.desc }
-ent-BulletCaselessRiflePractice = kula (.25 bezłuskowe treningowe)
+ent-BulletCaselessRiflePractice = bullet (.25 caseless practice)
     .desc = { ent-BaseBulletPractice.desc }

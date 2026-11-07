@@ -1,5 +1,6 @@
 ent-FireAxeCabinet = gablota na siekierę strażacką
     .desc = Jest mała etykieta która ma napisane "Do użytku w sytuacjach awaryjnych" oraz detale o bezpiecznym użytkowaniu siekiery, która nie bardzo cie przekonuje.
+    .suffix = Atmospherics
 ent-FireAxeCabinetOpen = { ent-FireAxeCabinet }
     .suffix = Otwarte
     .desc = { ent-FireAxeCabinet.desc }
@@ -9,3 +10,6 @@ ent-FireAxeCabinetFilled = { ent-FireAxeCabinet }
 ent-FireAxeCabinetFilledOpen = { ent-FireAxeCabinetFilled }
     .suffix = Wypełnione, Otwarte
     .desc = { ent-FireAxeCabinetFilled.desc }
+ent-FireAxeCabinetConstructed = fire axe cabinet
+    .desc = There is a small label that reads "For Emergency use only" along with details for safe use of the axe. As if.
+    .suffix = Free Access

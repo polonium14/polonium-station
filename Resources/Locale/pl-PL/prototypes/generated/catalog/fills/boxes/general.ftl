@@ -4,7 +4,6 @@ ent-BoxCardboardSmall = małe kartonowe pudło
     .desc = Małe kartonowe pudło do przechowywania rzeczy.
 ent-BoxHug = pudełko uścisków
     .desc = Specjalne pudełko dla wrażliwych osób.
-    .suffix = Ratunkowe
 ent-BoxLighttubeHoliday = pudełko świątecznych świetlówek
     .desc = { ent-BoxLightbulb.desc }
 ent-BoxPDA = pudełko PDA

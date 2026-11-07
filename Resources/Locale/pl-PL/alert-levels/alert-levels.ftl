@@ -1,4 +1,6 @@
 alert-level-announcement = Uwaga! Kod zagrożenia na stacji został zmieniony na { $name }! { $announcement }
+# unknown name uses generic-unknown-title
+alert-level-unknown-announcement = To jest test systemu rozgłaszania alarmów.
 alert-level-unknown-instructions = Nieznane.
 alert-level-green = Zielony
 alert-level-green-announcement =

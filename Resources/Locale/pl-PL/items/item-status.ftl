@@ -26,3 +26,4 @@ anomaly-status-infinite = [color=gold]Nieskończone ładunki[/color]
 anomaly-status-charges = [color=orange]Ładunki: { $charges }[/color]
 # Timer Trigger Status
 timer-trigger-status-delay = Ustawione opóźnienie: [color=white]{ $delay } s[/color]
+timer-trigger-status-delay-unknown = Ustawione opóźnienie: [color=gray]???[/color]

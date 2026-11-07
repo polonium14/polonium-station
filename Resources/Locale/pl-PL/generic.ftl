@@ -14,3 +14,5 @@ generic-minutes = minuty
 generic-seconds = sekundy
 generic-playtime-title = Czas gry
 generic-confirm = Potwierdź
+generic-disabled = Wyłączone
+generic-no-access = Niewystarczający dostęp.

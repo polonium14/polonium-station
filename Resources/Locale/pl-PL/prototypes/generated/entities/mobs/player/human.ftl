@@ -28,3 +28,5 @@ ent-MobHumanLoneNuclearOperative = Samotny Operator Nuklearny
 ent-MobHumanWizard = Czarodziej
     .desc = { ent-MobHuman.desc }
     .gender = male
+ent-MobHumanSyndicateReinforcement = { ent-MobHuman }
+    .desc = { ent-MobHuman.desc }

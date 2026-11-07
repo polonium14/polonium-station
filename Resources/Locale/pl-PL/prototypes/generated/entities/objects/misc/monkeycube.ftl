@@ -17,3 +17,7 @@ ent-SyndicateSpongeBox = pudełko małpich kostek
 ent-SyndicateSpongeWrapped = małpia kostka
     .suffix = Zapakowane, Syndykat
     .desc = { ent-MonkeyCubeWrapped.desc }
+ent-SlimeCubeBox = slime cube box
+    .desc = Condensed slimes in a cube. Just add water! Drymate® is not responsible for undue hostility from inappropriate fluid application.
+ent-SlimeCubeWrapped = slime cube
+    .desc = Unwrap this to get a slime cube.

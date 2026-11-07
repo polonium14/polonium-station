@@ -124,3 +124,6 @@ ent-DoorElectronicsVault = { ent-DoorElectronics }
 ent-DoorElectronicsXenoborg = { ent-DoorElectronics }
     .suffix = Ksenoborg, Zablokowane
     .desc = { ent-DoorElectronics.desc }
+ent-DoorElectronicsEVA = { ent-DoorElectronics }
+    .suffix = EVA, Locked
+    .desc = { ent-DoorElectronics.desc }

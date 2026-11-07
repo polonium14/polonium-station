@@ -60,3 +60,5 @@ ent-BasicRoundstartVariation = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
 ent-TutorialSpawn = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
+ent-BaseSilentGameRule = { "" }
+    .desc = { "" }

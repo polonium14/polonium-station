@@ -22,9 +22,6 @@ artifact-effect-hint-polymorph = Aktywność transmogryfikacyjna
 artifact-effect-hint-magnet = Fale magnetyczne
 artifact-effect-hint-visual = Zniekształcenia wizualne
 
-# the triggers should be more obvious than the effects
-# gives people an idea of what to do: don't be too specific (i.e. no "welders")
-
 ### Description hints
 
 xenoarch-trigger-examine-wrenching = Coś luźno się kręci.

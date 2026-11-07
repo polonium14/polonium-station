@@ -1,4 +1,4 @@
-ent-DrinkBottleGlassBase = { ent-SolutionNormal }
+ent-DrinkBottleGlassBase = { ent-DrinkBaseMaterialGlass }
     .desc = { ent-DrinkBaseMaterialGlass.desc }
 ent-DrinkBottleGlassBaseFull = { ent-DrinkBottleGlassBase }
     .suffix = Pełne

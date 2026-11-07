@@ -1,4 +1,4 @@
-# named frequencies
+# Named frequencies
 device-frequency-prototype-name-atmos = Urządzenia atmosferyczne
 device-frequency-prototype-name-suit-sensors = Czujniki kombinezonów
 device-frequency-prototype-name-crew-monitor = Monitor załogi
@@ -13,9 +13,13 @@ device-frequency-prototype-name-turret = Wieżyczka strażnicza
 device-frequency-prototype-name-turret-control = Sterowanie wieżyczkami strażniczymi
 device-frequency-prototype-name-xenoborg = Ksenoborg
 device-frequency-prototype-name-mothership = Statek-matka
+device-frequency-prototype-name-arrivals-shuttle-timer = Zegar przylotów
+device-frequency-prototype-name-shuttle-timer = Zegar wahadłowca ewakuacyjnego
 
-## camera frequencies
+## Camera frequencies
 
+device-frequency-prototype-name-surveillance-camera = Kamery
+device-frequency-prototype-name-surveillance-camera-test = Podsieć testowa
 device-frequency-prototype-name-surveillance-camera-engineering = Kamery inżynierii
 device-frequency-prototype-name-surveillance-camera-security = Kamery ochrony
 device-frequency-prototype-name-surveillance-camera-science = Kamery naukowe
@@ -25,7 +29,7 @@ device-frequency-prototype-name-surveillance-camera-service = Kamery serwisu
 device-frequency-prototype-name-surveillance-camera-medical = Kamery medyczne
 device-frequency-prototype-name-surveillance-camera-general = Kamery ogólne
 device-frequency-prototype-name-surveillance-camera-entertainment = Kamery rozrywki
-# prefixes for randomly generated device addresses
+# Prefixes for randomly generated device addresses
 device-address-prefix-vent = VNT-
 device-address-prefix-scrubber = SCR-
 device-address-prefix-sensor = SNS-
@@ -40,17 +44,15 @@ device-address-prefix-turret = TRT-
 device-address-prefix-console = CLS-
 device-address-prefix-fire-alarm = FIR-
 device-address-prefix-air-alarm = AIR-
+# Consoles
 device-address-prefix-sensor-monitor = MON-
-device-address-examine-message = Adres urządzenia to { $address }.
-# Unknown
-device-address-unknown = ????-????
-device-address-prefix-camera = CAM-
 device-address-prefix-camera-monitor = SCM-
+device-address-prefix-crew-monitor = MCM-
 # Servers and routers
 device-address-prefix-camera-router = CMR-
 device-address-prefix-camera-router-wireless = CMW-
-device-address-prefix-crew-monitor = MCM-
+device-address-prefix-camera = CAM-
 device-address-prefix-crew-monitoring-server = CMS-
-device-frequency-prototype-name-arrivals-shuttle-timer = Zegar przylotów
-device-frequency-prototype-name-shuttle-timer = Zegar wahadłowca ewakuacyjnego
-device-frequency-prototype-name-surveillance-camera = Kamery
+device-address-examine-message = Adres urządzenia to { $address }.
+# Unknown
+device-address-unknown = ????-????

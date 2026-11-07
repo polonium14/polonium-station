@@ -1,12 +1,12 @@
 ent-BaseFilingCabinet = { ent-BaseStructureDynamic }
     .desc = Szafka na wszystkie twoje potrzeby związane z dokumentacją.
     .suffix = Pusta
-ent-FilingCabinet = szafka na dokumenty
+ent-FilingCabinet = filing cabinet
     .desc = { ent-BaseFilingCabinet.desc }
-ent-FilingCabinetTall = wysoka szafka na dokumenty
+ent-FilingCabinetTall = tall cabinet
     .desc = { ent-BaseFilingCabinet.desc }
-ent-FilingCabinetDrawer = mała szafka na dokumenty
-    .desc = Mała szafka na wszystkie twoje potrzeby związane z dokumentacją. tym razem na kółkach.
+ent-FilingCabinetDrawer = chest drawer
+    .desc = A small drawer for all your filing needs, Now with wheels!
 ent-BaseBureaucraticStorageFill = { "" }
     .suffix = Wypełnione
     .desc = { "" }

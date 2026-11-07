@@ -1,4 +1,4 @@
-ent-BaseChemistryVial = { ent-DrinkBase }
+ent-BaseChemistryVial = { ent-DrinkBaseMaterialGlass }
     .desc = { ent-DrinkBaseMaterialGlass.desc }
 ent-ChemistryEmptyVial = fiolka
     .desc = Mała fiolka.

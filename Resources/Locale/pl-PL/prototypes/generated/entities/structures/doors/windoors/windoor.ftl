@@ -133,3 +133,6 @@ ent-WindoorSecurityLawyerLocked = { ent-WindoorSecurityLocked }
 ent-WindoorSecurityLocked = { ent-Windoor }
     .suffix = Ochrona, Zablokowane
     .desc = { ent-Windoor.desc }
+ent-WindoorEVALocked = { ent-WindoorCommandLocked }
+    .suffix = EVA, Locked
+    .desc = { ent-WindoorCommandLocked.desc }

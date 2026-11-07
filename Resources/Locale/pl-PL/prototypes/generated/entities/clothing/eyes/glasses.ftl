@@ -34,3 +34,5 @@ ent-ClothingEyesGlassesNoir = okulary noir-tech
     .desc = Okulary symulujące świat sprzed wynalezienia koloru.
 ent-ActionToggleTrayScanner = Przełącz skaner T-promieniowania
     .desc = Włącza lub wyłącza funkcję skanowania T-promieniowaniem.
+ent-ClothingEyesGlassesBase = { ent-BaseScrewingRefinable }
+    .desc = { ent-BaseScrewingRefinable.desc }

@@ -1,2 +1,2 @@
-ent-ActionManageWaypointers = Zarządzaj wskaźnikami
-    .desc = Zarządzaj widocznością swoich wskaźników.
+ent-ActionManageWaypointers = Manage Waypointers
+    .desc = Manage the visibility of your waypointers.

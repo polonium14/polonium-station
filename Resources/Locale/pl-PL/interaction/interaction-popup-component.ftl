@@ -34,6 +34,8 @@ petting-success-snake = You pet { $target } on { POSS-ADJ($target) } scaly large
 petting-success-monkey = You pet { $target } on { POSS-ADJ($target) } mischevious little head.
 petting-success-nymph = You pet { $target } on { POSS-ADJ($target) } wooden little head.
 petting-success-scurret = Głaszczesz { THE($target) } po { POSS-ADJ($target) } prawnie odrębnym łbie.
+petting-success-headslug = Głaszczesz { THE($target) } po oślizgłej powierzchni.
+petting-success-elder-headslug = Głaszczesz { THE($target) } po pulsującej skórze.
 petting-failure-generic = You reach out to pet { $target }, but { SUBJECT($target) } { CONJUGATE-BE($target) } aloof towards you.
 petting-failure-bat = You reach out to pet { $target }, but { SUBJECT($target) } { CONJUGATE-BE($target) } too hard to catch!
 petting-failure-carp = You reach out to pet { $target }, but { POSS-ADJ($target) } sharp teeth make you think twice.
@@ -55,6 +57,8 @@ petting-failure-monkey = You reach out to pet { $target }, but { SUBJECT($target
 petting-failure-nymph = You reach out to pet { $target }, but { SUBJECT($target) } { CONJUGATE-BASIC($target, "move", "moves") } { POSS-ADJ($target) } branches away.
 petting-failure-shadow = You try to pet { $target }, but your hand passes through the cold darkness of { POSS-ADJ($target) } body.
 petting-failure-scurret = Wyciągasz rękę, by pogłaskać { THE($target) }, ale { SUBJECT($target) } robi salto w tył!
+petting-failure-headslug = Próbujesz pogłaskać { THE($target) }, ale twoja dłoń zapada się w ciało.
+petting-failure-elder-headslug = Próbujesz pogłaskać { THE($target) }, ale mało brakuje, a cię ugryzie!
 
 ## Petting silicons
 

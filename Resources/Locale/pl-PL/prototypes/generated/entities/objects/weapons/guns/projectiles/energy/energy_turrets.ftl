@@ -1,8 +1,8 @@
-ent-BulletEnergyTurretBase = pocisk energetyczny
+ent-BulletEnergyTurretBase = energy bolt
     .desc = { ent-BaseBullet.desc }
-ent-BulletEnergyTurretLaser = pocisk laserowy
+ent-BulletEnergyTurretLaser = laser bolt
     .desc = { ent-BulletEnergyTurretBase.desc }
-ent-BulletEnergyTurretDisabler = pocisk disablera
+ent-BulletEnergyTurretDisabler = disabler bolt
     .desc = { ent-BulletEnergyTurretBase.desc }
-ent-TeslaGunBullet = pocisk pistoleta tesli
+ent-TeslaGunBullet = tesla gun lightning
     .desc = { ent-BaseBullet.desc }

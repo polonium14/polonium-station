@@ -14,6 +14,7 @@ credits-window-immortals-title = Ku Pamięci
 credits-window-special-thanks-section-title = Specjalne podziękowania
 credits-window-previous-page-button = Poprzednia strona
 credits-window-next-page-button = Następna strona
+credits-window-page-label = Strona:
 credits-window-attributions-directory = [color=white]Directory:[/color] { $directory }
 credits-window-attributions-files = [color=white]Files:[/color] { $files }
 credits-window-attributions-copyright = [color=white]Copyright:[/color] { $copyright }

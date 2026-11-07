@@ -1,5 +1,6 @@
 ent-ShotGunCabinet = gablota na strzelbę
     .desc = Jest mała etykieta która ma napisane "Do użytku w sytuacjach awaryjnych" oraz detale o bezpiecznym użytkowaniu strzelby, która nie bardzo cie przekonuje.
+    .suffix = Security
 ent-ShotGunCabinetOpen = { ent-ShotGunCabinet }
     .suffix = Otwarte
     .desc = { ent-ShotGunCabinet.desc }
@@ -9,3 +10,6 @@ ent-ShotGunCabinetFilled = { ent-ShotGunCabinet }
 ent-ShotGunCabinetFilledOpen = { ent-ShotGunCabinetFilled }
     .suffix = Wypełnione, Otwarte
     .desc = { ent-ShotGunCabinetFilled.desc }
+ent-ShotGunCabinetConstructed = shotgun cabinet
+    .desc = There is a small label that reads "For Emergency use only" along with details for safe use of the shotgun. As if.
+    .suffix = Free Access
