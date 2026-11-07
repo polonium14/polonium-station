@@ -24,7 +24,6 @@
   - AllHostile
   - Wizard
   - Xenoborg
-  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Mouse
@@ -123,7 +122,6 @@
   - AllHostile
   - Wizard
   - Xenoborg
-  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: AllHostile
@@ -159,6 +157,7 @@
   - Revolutionary
   - AllHostile
   - Xenoborg
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Xenoborg

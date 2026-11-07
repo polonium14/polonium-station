@@ -77,11 +77,14 @@
     startAnnouncement: station-event-vent-creatures-start-horde-announcement
     startAudio:
       path: /Audio/_Polonium/Announcements/attention.ogg
-    earliestStart: 20
-    minimumPlayers: 15
+    earliestStart: 10
+    minimumPlayers: 13
     weight: 5
     duration: 5
     maxDuration: 20
+    reoccurrenceDelay: 30
+  - type: GameRule
+    chaosScore: 200
   - type: VentHordeRule
     table: !type:GroupSelector
       rolls: 2, 3
