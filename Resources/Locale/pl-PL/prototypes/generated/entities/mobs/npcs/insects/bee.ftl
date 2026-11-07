@@ -1,7 +1,5 @@
-ent-MobBee = pszczoła
-    .desc = Dobrze ją mieć, ale cywilizacji nie zbudujesz tylko na miodzie.
-    .gender = female
-ent-MobAngryBee = pszczoła
-    .desc = Jaka miła pszczoła. O nie, wygląda na wkurzoną i chce mojej pizzy.
-    .suffix = Wściekła
-    .gender = female
+ent-MobBee = bee
+    .desc = Nice to have, but you can't build a civilization on a foundation of honey alone.
+ent-MobAngryBee = bee
+    .desc = How nice a bee. Oh no, it looks angry and wants my pizza.
+    .suffix = Angry

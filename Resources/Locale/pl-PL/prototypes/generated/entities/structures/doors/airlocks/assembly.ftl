@@ -23,7 +23,6 @@ ent-AirlockAssemblyEngineeringGlass = { ent-AirlockAssembly }
     .suffix = Inżynieria, Szkło
     .desc = { ent-AirlockAssembly.desc }
 ent-AirlockAssemblyExternal = { ent-AirlockAssembly }
-    .suffix = Zewnętrzne
     .desc = { ent-AirlockAssembly.desc }
 ent-AirlockAssemblyExternalGlass = { ent-AirlockAssembly }
     .suffix = Zewnętrzne, Szkło

@@ -50,3 +50,4 @@ comms-console-level-Red-flavour-label = Zachowaj czujność
 comms-console-level-Gamma-flavour-label = Zaproponuj szczególną ostrożność
 comms-console-level-Delta-flavour-label = Powodzenia
 comms-console-level-Epsilon-flavour-label = Jesteś zwolniony
+comms-console-level-Unknown-flavour-label = Zachowaj czujność

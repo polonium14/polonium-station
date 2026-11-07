@@ -88,3 +88,5 @@ ent-FoodCakeBerryDelight = jagodowa rozkosz
     .desc = To ciasto, które się zbliża.
 ent-FoodCakeBerryDelightSlice = kawałek jagodowej rozkoszy
     .desc = Wbij widelec — głód w izolacji zniknie.
+ent-FoodCakeBaseNoSecretStash = { ent-SolutionNormal }
+    .desc = { ent-SolutionNormal.desc }

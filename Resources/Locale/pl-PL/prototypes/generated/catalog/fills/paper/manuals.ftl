@@ -7,3 +7,5 @@ ent-PaperAgrichemManual = podręcznik NT „AgriChem to zabawa”
     .desc = Jedyna kartka z instrukcją dołączona do zestawu.
 ent-PaperWrittenCombatBakeryKit = instrukcja bojowego zestawu piekarza
     .desc = Zjedz notatkę po przeczytaniu.
+ent-PaperWrittenSyndicateInstructions = covert operations reinforcement manual
+    .desc = A shorthand manual that details the essentials of your latest mission. Destroy after reading.

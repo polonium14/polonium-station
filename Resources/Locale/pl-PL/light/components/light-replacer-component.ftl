@@ -13,8 +13,6 @@ comp-light-replacer-label =
     Świetlówka: { $tube }
     Żarówka: { $bulb }
 
-### Examine
-
 ### Status Control
 
 # Bulbs

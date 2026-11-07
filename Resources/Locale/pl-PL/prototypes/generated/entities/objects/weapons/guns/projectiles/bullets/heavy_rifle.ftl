@@ -1,4 +1,4 @@
-ent-BulletHeavyRifle = kula (.10 karabinowe)
+ent-BulletHeavyRifle = bullet (.10 rifle)
     .desc = { ent-BaseBullet.desc }
-ent-BulletMinigun = pocisk miniguna (.10 karabinowy)
+ent-BulletMinigun = minigun bullet (.10 rifle)
     .desc = { ent-BulletHeavyRifle.desc }

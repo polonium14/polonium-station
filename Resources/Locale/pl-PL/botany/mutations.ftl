@@ -1,2 +1,14 @@
 mutation-plant-sentient = Wygląda, jakby analizowała swoje otoczenie.
 mutation-plant-slippery = Jest śliska w dotyku.
+mutation-plant-description-kudzu = Rośnie niezwykle szybko i jest wyjątkowo cienka.
+mutation-plant-description-ligneous = Jest zdrewniała i do zbioru potrzebne będzie ostre narzędzie.
+mutation-plant-description-scream = This plant seems nervous somehow.
+mutation-plant-description-unviable = It is wilting and sickly.
+mutation-plant-description-seedless = Its harvested produce is seedless.
+mutation-plant-description-sampled = It has already been sampled.
+mutation-plant-noun-kudzu = kudzu growth
+mutation-plant-noun-ligneous = ligneous growth
+mutation-plant-noun-scream = mandragora
+mutation-plant-noun-unviable = unviability
+mutation-plant-noun-seedless = seedlessness
+mutation-plant-noun-sampled = clip scarring

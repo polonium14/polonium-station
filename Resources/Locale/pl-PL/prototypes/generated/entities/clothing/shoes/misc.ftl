@@ -20,3 +20,7 @@ ent-ClothingShoesBootsMoon = księżycowe buty
     .desc = Specjalne buty antygrawitacyjne opracowane z użyciem unikalnej mieszanki żelu z księżycowych skał. Wysłane z Holandii.
 ent-ClothingShoesBootsJump = buty skaczące
     .desc = Wysokotechnologiczne buty dające niesamowitą zdolność SKAKANIA! Możesz skakać nad lawą, przepaściami i dziwnymi chemikaliami na podłodze!
+ent-ClothingShoesSandalsBlack = black sandals
+    .desc = Best paired with robes or Hawaiian shirts. Worst paired with socks.
+ent-ClothingShoesSandalsBrown = brown sandals
+    .desc = Best paired with robes or Hawaiian shirts. Worst paired with socks.

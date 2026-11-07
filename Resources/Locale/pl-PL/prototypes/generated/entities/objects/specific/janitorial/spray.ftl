@@ -1,4 +1,4 @@
-ent-SprayBottleBase = { ent-SolutionSmall }
+ent-SprayBottleBase = { ent-DrinkBaseMaterialPlastic }
     .desc = { ent-DrinkBaseMaterialPlastic.desc }
 ent-SprayBottle = butelka z rozpylaczem
     .desc = Butelka z rozpylaczem i odkręcaną nakrętką.

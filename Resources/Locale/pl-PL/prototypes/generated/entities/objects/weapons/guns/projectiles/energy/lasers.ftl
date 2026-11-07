@@ -1,10 +1,10 @@
-ent-BulletLaser = pocisk laserowy
+ent-BulletLaser = laser bolt
     .desc = { ent-BaseBullet.desc }
-ent-BulletLaserSpread = szeroki ostrzał laserowy
+ent-BulletLaserSpread = wide laser barrage
     .desc = { ent-BulletLaser.desc }
-ent-BulletLaserSpreadNarrow = wąski ostrzał laserowy
+ent-BulletLaserSpreadNarrow = lethal laser barrage
     .desc = { ent-BulletLaser.desc }
-ent-BulletLaserMagnum = śruba laserowa typu magnum
+ent-BulletLaserMagnum = magnum laser bolt
     .desc = { ent-BulletLaser.desc }
-ent-BulletLaserWindowPiercingMagnum = bezwyglądowy rygiel typu magnum
+ent-BulletLaserWindowPiercingMagnum = magnum window-piercing bolt
     .desc = { ent-BulletLaser.desc }

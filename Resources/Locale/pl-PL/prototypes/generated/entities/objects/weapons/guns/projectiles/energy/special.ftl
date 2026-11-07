@@ -1,2 +1,2 @@
-ent-EmitterBolt = pocisk emitera
+ent-EmitterBolt = emitter bolt
     .desc = { ent-BaseBullet.desc }

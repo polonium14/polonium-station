@@ -36,6 +36,24 @@ ent-ActionChangelingStingMute =
     Żądło wyciszające
     Po cichu użądl cel i wstrzyknij mu substancje, które uniemożliwiają mówienie.
     Wymaga 30 chemikaliów.
-
-ent-ActionRetractableItemArmblade = Ostrze w ramieniu
-    .desc = Zrzuć swoje ciało i przekształć je w mięsiste ostrze.
+    .desc =
+        Silently sting a target and inject them with chemicals that prevent them from speaking. 
+        
+        Requires 30 Chemicals.
+ent-ActionChangelingFleshtomb = Fleshtomb
+    .desc =
+        Preserve a body in a fragile cocoon made of flesh, which slowly harvests their life for DNA. 
+        
+        Requires 35 Chemicals.
+ent-ActionChangelingStingArmblade = Armblade Sting
+    .desc =
+        Silently sting a target and cause them to grow a dull armblade after a lengthy delay. 
+        
+        Requires 50 Chemicals.
+ent-ActionChangelingStingHemotoxin = Hemotoxin Sting
+    .desc =
+        Sting a target and inject them with a dangerous dose of various toxins, causing extensive bleeding. 
+        
+        Requires 30 Chemicals.
+ent-ActionRetractableItemArmblade = Armblade
+    .desc = Shed your flesh and reform it into a fleshy blade. Can be toggled.

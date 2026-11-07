@@ -4,3 +4,6 @@ ent-VehicleWheelchair = wózek inwalidzki
     .desc = Krzesło z dużymi kółkami. Wygląda na to, że można się na nim poruszać samodzielnie.
 ent-VehicleJanicart = janicart
     .desc = Niezawodny wierzchowiec woźnego.
+ent-VehicleWheelchairFolded = { ent-VehicleWheelchair }
+    .suffix = folded
+    .desc = { ent-VehicleWheelchair.desc }

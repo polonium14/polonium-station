@@ -1,3 +1,2 @@
-ent-MobHamster = chomik
-    .desc = Uroczy, puszysty, krzepki chomik.
-    .gender = male
+ent-MobHamster = hamster
+    .desc = A cute, fluffy, robust hamster.

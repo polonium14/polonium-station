@@ -45,3 +45,5 @@ ent-SpawnPointGhostDerelictSyndicateAssaultCyborg = { ent-SpawnPointGhostDerelic
 ent-SpawnPointGhostWizard = punkt odrodzenia postaci-ducha
     .suffix = kreator
     .desc = { ent-BaseAntagSpawner.desc }
+ent-SpawnPointGhostSpaceChangeling = { ent-BaseAntagSpawner }
+    .desc = { ent-BaseAntagSpawner.desc }

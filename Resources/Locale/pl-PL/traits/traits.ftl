@@ -67,3 +67,5 @@ trait-russian-name = Rosyjski akcent
 trait-russian-desc = Suka Blyat!
 trait-species-restricted = Twój gatunek nie może wziąć tej cechy.
 trait-prerequisite-required = Ta cecha wymaga cechy { $prerequisite }.
+trait-blink-dyspraxia-name = Niezsynchronizowane mruganie
+trait-blink-dyspraxia-desc = Twoje powieki są niezgrane. Mruganie wymaga świadomego wysiłku, a czasem oczy po prostu odmawiają synchronizacji.

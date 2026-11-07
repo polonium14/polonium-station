@@ -1,7 +1,7 @@
 ent-BaseShutter = okiennica
     .desc = Aż ciarki przechodzą na samą myśl o tym, co może kryć się za tą zasłoną.
-ent-ShuttersNormal = { ent-BaseShutter }
-    .desc = { ent-BaseShutter.desc }
+ent-ShuttersNormal = { ent-BaseDeltaPressureGlass }
+    .desc = { ent-BaseDeltaPressureGlass.desc }
 ent-ShuttersNormalOpen = { ent-ShuttersNormal }
     .suffix = Otwarte
     .desc = { ent-ShuttersNormal.desc }

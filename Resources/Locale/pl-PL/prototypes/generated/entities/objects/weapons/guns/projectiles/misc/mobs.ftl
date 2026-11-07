@@ -1,6 +1,6 @@
-ent-WatcherBolt = pocisk obserwatora
+ent-WatcherBolt = watcher bolt
     .desc = { ent-BaseBullet.desc }
-ent-WatcherBoltMagmawing = pocisk obserwatora magmawing
+ent-WatcherBoltMagmawing = magmawing watcher bolt
     .desc = { ent-WatcherBolt.desc }
-ent-BasiliskRay = promień bazyliszka
+ent-BasiliskRay = basilisk ray
     .desc = { ent-BaseBullet.desc }

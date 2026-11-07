@@ -1,3 +1,2 @@
-ent-MobBaseAncestor = przodek genetyczny
-    .desc = Dwunożny genetyczny przodek... Czegoś. Tak, na stacji na pewno jest coś, co wywodzi się od tego, czymkolwiek to jest.
-    .gender = male
+ent-MobBaseAncestor = genetic ancestor
+    .desc = The genetic bipedal ancestor of... Uh... Something. Yeah, there's definitely something on the station that descended from whatever this is.

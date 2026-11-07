@@ -6,4 +6,5 @@ entity-category-name-mapping = Mapowanie
 entity-category-name-donotmap = Nie mapować
 entity-category-name-status-effects = Efekty Statusu
 entity-category-name-xeno-artifact-effects = Efekty Artefaktu Kseno
+entity-category-name-xeno-artifact-triggers = Wyzwalacze Artefaktu Kseno
 entity-category-suffix-donotmap = NIE MAPOWAĆ

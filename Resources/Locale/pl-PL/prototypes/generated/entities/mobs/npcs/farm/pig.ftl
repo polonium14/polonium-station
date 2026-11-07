@@ -1,3 +1,2 @@
-ent-MobPig = świnia
-    .desc = Chrum.
-    .gender = female
+ent-MobPig = pig
+    .desc = Oink.

@@ -46,3 +46,5 @@ ent-ClothingNeckScarfStripedTrans = transpłciowy szalik w paski
     .desc = Stylowy transpłciowy szalik w paski. Idealny zimowy dodatek dla osób z wyczuciem mody i tych, którzy nie znoszą zimnego podmuchu na karku.
 ent-ClothingNeckScarfStripedLesbianLong = długi bekon
     .desc = Długi bekon! Idealny do dzielenia się z dziewczyną!
+ent-ClothingNeckScarfVirtualIce = ice singer's scarf
+    .desc = A bright blue scarf with yellow tips at the ends.

@@ -22,3 +22,5 @@ ent-MobBloodstream = { "" }
     .desc = { "" }
 ent-MobNightVision = { "" }
     .desc = { "" }
+ent-BaseMobIrradiated = { "" }
+    .desc = { "" }

@@ -1,5 +1,4 @@
-ent-MobCow = krowa
-    .desc = Muu.
-    .gender = female
+ent-MobCow = cow
+    .desc = Moo.
 ent-SolutionUdder = { ent-SolutionLarge }
     .desc = { ent-SolutionLarge.desc }

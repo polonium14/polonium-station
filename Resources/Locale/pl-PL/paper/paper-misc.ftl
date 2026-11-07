@@ -67,3 +67,14 @@ book-text-combat-bakery-kit =
     Plasterek masła x 1
     Odłamek szkła x 1
     Czas pieczenia: 5 sekund
+book-text-reinforcement-initiation = [color=red][head=3]WITAJ W SYNDYKACIE[/head][/color]
+    
+    Zostałeś wybrany do ważnej misji i zostaniesz dyskretnie przeteleportowany na terytorium wroga. Po przybyciu przestrzegaj poniższych zasad:
+    
+    - Pomagaj zleceniodawcy w realizacji jego celów, to twój dowódca. Jego życie jest warte więcej niż twoje. Wykonuj jego rozkazy bez pytań.
+    
+    - [italic]Nie[/italic] ujawniaj swojej tożsamości wrogom Syndykatu, chyba że rozkaże ci to dowódca. Rozważ założenie cywilnego ubrania, aby wtopić się w tłum.
+    
+    - Upewnij się, że twoja adaptacyjna karta identyfikacyjna Syndykatu poprawnie pokazuje fałszywą tożsamość. Jeśli zapomniałeś szkolenia, zapytaj dowódcę, jak to zrobić.
+    
+    - Przede wszystkim pamiętaj:[bold] ŚMIERĆ NANOTRASEN. [/bold]

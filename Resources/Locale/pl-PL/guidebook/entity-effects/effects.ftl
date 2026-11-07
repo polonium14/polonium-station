@@ -426,6 +426,23 @@ entity-effect-guidebook-plant-seeds-remove =
         [1] Usuwa
        *[other] usunąć
     } nasiona rośliny
+entity-effect-guidebook-plant-change-trait =
+    { $chance ->
+        [1]
+            { $change ->
+                [Add] adds { $trait } to
+                [Remove] removes { $trait } from
+                [Toggle] toggles { $trait } on
+               *[other] changes { $trait } on
+            }
+       *[other]
+            { $change ->
+                [Add] add { $trait } to
+                [Remove] remove { $trait } from
+                [Toggle] toggle { $trait } on
+               *[other] change { $trait } on
+            }
+    } the plant
 entity-effect-guidebook-plant-mutate-exude-gasses =
     { $chance ->
         [1] Mutuje
@@ -461,3 +478,8 @@ entity-effect-guidebook-de-cultify =
         [1] Zmniejsza
        *[other] zmniejszyć
     } zepsucie kultem o { $amount }
+entity-effect-guidebook-make-trap-in-container =
+    { $chance ->
+        [1] Traps
+       *[other] traps
+    } the metabolizer inside a { $entityname }

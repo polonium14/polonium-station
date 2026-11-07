@@ -16,6 +16,7 @@ steal-target-groups-weapon-energy-magnum = magnum energetyczny
 steal-target-groups-figurines = figurka
 steal-target-groups-heads-cloaks = płaszcz szefa
 steal-target-groups-heads-bedsheets = kołdra szefa
+steal-target-groups-heads-hardsuits = skafander szefa
 steal-target-groups-stamps = pieczątka
 steal-target-groups-door-remotes = pilot do drzwi
 steal-target-groups-encryption-keys = karta szyfrująca

@@ -1,5 +1,5 @@
-ent-WindoorAssembly = zespół okna Windoor
-    .desc = Otwiera się, zamyka się i można przez nią zobaczyć!
+ent-WindoorAssembly = { ent-BaseWindoorAssembly }
+    .desc = { ent-BaseWindoorAssembly.desc }
 ent-WindoorAssemblyPlasma = konstrukcja plazmowego okna przesuwnego
     .desc = Otwiera się, zamyka i przez nią widać! To wygląda na purpurowe-, nie, różowe. Czekaj...
 ent-WindoorAssemblyUranium = konstrukcja uranowego okna przesuwnego

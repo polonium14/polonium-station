@@ -61,3 +61,13 @@ examine-gun-spread-modifier-reduction = Rozrzut zmniejszony o [color=yellow]{ $p
 examine-gun-spread-modifier-increase = Rozrzut zwiększony o [color=yellow]{ $percentage }%[/color].
 gun-clumsy = Broń wybucha ci w twarz!
 gun-set-fire-mode = Ustawiono tryb { $mode }
+gun-access-locked = { CAPITALIZE($target) } ma zablokowany dostęp!
+gun-toggle-on = { CAPITALIZE($target) } włącza się.
+gun-toggle-off = { CAPITALIZE($target) } wyłącza się.
+gun-not-anchored =
+    { CAPITALIZE($target) } nie jest { GENDER($target) ->
+       *[male] przymocowany
+        [female] przymocowana
+        [other] przymocowane
+    } do podłoża!
+gun-network-ammo-examine = Obecny typ pocisku to [color=yellow]{ $ammo }[/color].
