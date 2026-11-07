@@ -39,10 +39,15 @@ public sealed partial class ObjectivesSystem
     {
         foreach (var objective in mind.Objectives)
         {
-            if (HasComp<CustomObjectiveConditionComponent>(objective))
+            if (IsCustomObjective(objective))
                 return true;
         }
 
         return false;
+    }
+
+    private bool IsCustomObjective(EntityUid objective)
+    {
+        return HasComp<CustomObjectiveConditionComponent>(objective);
     }
 }

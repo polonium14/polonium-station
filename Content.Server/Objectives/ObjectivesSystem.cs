@@ -219,7 +219,7 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
                     else if (progress > 0.99f)
                     {
                         agentSummary.AppendLine(Loc.GetString(
-                            "objectives-objective-success",
+                            IsCustomObjective(objective) ? "objectives-custom-objective-success" : "objectives-objective-success", // Polonium: no percentage
                             ("objective", objectiveTitle),
                             ("progress", progress)
                         ));
@@ -228,7 +228,7 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
                     else if (progress <= 0.99f && progress >= 0.5f)
                     {
                         agentSummary.AppendLine(Loc.GetString(
-                            "objectives-objective-partial-success",
+                            IsCustomObjective(objective) ? "objectives-custom-objective-partial-success" : "objectives-objective-partial-success", // Polonium: no percentage
                             ("objective", objectiveTitle),
                             ("progress", progress)
                         ));
@@ -244,7 +244,7 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
                     else
                     {
                         agentSummary.AppendLine(Loc.GetString(
-                            "objectives-objective-fail",
+                            IsCustomObjective(objective) ? "objectives-custom-objective-fail" : "objectives-objective-fail", // Polonium: no percentage
                             ("objective", objectiveTitle),
                             ("progress", progress)
                         ));
