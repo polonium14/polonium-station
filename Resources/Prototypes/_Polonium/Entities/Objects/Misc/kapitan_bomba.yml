@@ -75,7 +75,6 @@
     sprite: _Polonium/Weapons/Guns/blaster.rsi
   - type: Clothing
     sprite: _Polonium/Weapons/Guns/blaster.rsi
-    slots: [ NONE ]
   - type: ItemSlots
     slots:
       gun_magazine:
