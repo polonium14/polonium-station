@@ -1,7 +1,4 @@
-ent-MobBaseGoblin = goblin
-  .desc = Śmierdzące, chytre, przestępcze. Ich sama egzystencja jest zbrodnią.
-  .gender = male
-ent-MobGoblinWild = goblin
+ent-MobGoblinWild = dziki goblin
   .desc = Śmierdzące, chytre, przestępcze. Ich sama egzystencja jest zbrodnią.
   .gender = male
 
