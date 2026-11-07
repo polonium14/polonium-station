@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ThatGuyUSA
-  changes:
-  - message: Midround Wizards now show up on the end results screen.
-    type: Fix
-  id: 9609
-  time: '2026-04-04T15:51:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42766
 - author: Zekins3366
   changes:
   - message: Fixed being able to set multiple conflicting head-top visuals on humans
@@ -5103,3 +5096,10 @@
   id: 10103
   time: '2026-11-07T17:00:21.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1212
+- author: Nikita
+  changes:
+  - message: "Dodano wyszukiwark\u0119 przedmiot\xF3w do automat\xF3w"
+    type: Add
+  id: 10104
+  time: '2026-11-07T20:13:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1215
