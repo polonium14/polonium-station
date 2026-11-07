@@ -1,5 +1,4 @@
 take-item-verb-text = Podnieś { $subject }
 place-item-verb-text = Odłóż { $subject }
-
-open-radial-menu-text = Otwórz menu wyjmowania
-no-item-slots-filled = Nie ma nic do wyjęcia!
+open-radial-menu-text = Open radial eject menu
+no-item-slots-filled = No items to eject!
