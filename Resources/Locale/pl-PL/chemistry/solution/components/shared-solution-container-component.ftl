@@ -5,14 +5,14 @@ shared-solution-container-component-on-examine-main-text =
     } o kolorze [color={ $color }]{ $colorName }[/color]. Wygląda { $desc }.
 examinable-solution-has-recognizable-chemicals = Rozpoznajesz w roztworze { $recognizedString }.
 examinable-solution-recognized = [color={ $color }]{ $chemical }[/color]
-examinable-solution-on-examine-volume = The contained solution is { $fillLevel ->
-    [exact] holding [color=white]{$current}/{$max}u[/color].
-   *[other] [bold]{ -solution-vague-fill-level(fillLevel: $fillLevel) }[/bold].
+examinable-solution-on-examine-volume = Zawarty roztwór { $fillLevel ->
+    [exact] ma [color=white]{$current}/{$max}u[/color].
+   *[other] jest [bold]{ -solution-vague-fill-level(fillLevel: $fillLevel) }[/bold].
 }
 
-examinable-solution-on-examine-volume-no-max = The contained solution is { $fillLevel ->
-    [exact] holding [color=white]{$current}u[/color].
-   *[other] [bold]{ -solution-vague-fill-level(fillLevel: $fillLevel) }[/bold].
+examinable-solution-on-examine-volume-no-max = Zawarty roztwór { $fillLevel ->
+    [exact] ma [color=white]{$current}u[/color].
+   *[other] jest [bold]{ -solution-vague-fill-level(fillLevel: $fillLevel) }[/bold].
 }
 
 examinable-solution-on-examine-volume-puddle =
