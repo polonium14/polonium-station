@@ -217,7 +217,7 @@
         Poison: 10
 
 - type: entity
-  parent: [ClothingHeadHatGreyFlatcap, BaseMinorContraband]
+  parent: ClothingHeadHatGreyFlatcap # Polonium: no BaseMinorContraband, the hidden blade should not be revealed on examine
   id: BladedFlatcapGrey
   name: grey flatcap
   description: Fashionable for both the working class and old man Jenkins. It has glass shards hidden in the brim.
