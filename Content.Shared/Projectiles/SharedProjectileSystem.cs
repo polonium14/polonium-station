@@ -125,12 +125,12 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         if (!embeddable.Comp.EmbedOnThrow)
             return;
 
-        EmbedAttach(embeddable, args.Target, null, embeddable.Comp);
+        EmbedAttach(embeddable, args.Target, null, embeddable.Comp, false); // Polonium
     }
 
     private void OnEmbedProjectileHit(Entity<EmbeddableProjectileComponent> embeddable, ref ProjectileHitEvent args)
     {
-        EmbedAttach(embeddable, args.Target, args.Shooter, embeddable.Comp);
+        EmbedAttach(embeddable, args.Target, args.Shooter, embeddable.Comp, true); // Polonium
 
         // Raise a specific event for projectiles.
         if (!TryComp<ProjectileComponent>(embeddable, out var projectile))
@@ -140,27 +140,35 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         RaiseLocalEvent(embeddable, ref ev);
     }
 
-    private void EmbedAttach(EntityUid uid, EntityUid target, EntityUid? user, EmbeddableProjectileComponent component)
+    private void EmbedAttach(EntityUid uid, EntityUid target, EntityUid? user, EmbeddableProjectileComponent component, bool shot)
     {
         if (HasComp<PredictedProjectileClientComponent>(uid))
+            return;
+
+        TryComp<PhysicsComponent>(uid, out var physics);
+
+        // Polonium: the client can't undo sticking something it doesn't predict, so it waits for the server to do it
+        if (_net.IsClient && physics is { Predict: false })
             return;
 
         // client already stuck it here so if we ended up further along the shot pull back
         // otherwise the shooter sees it creep forward when the real dart shows up
         PullBackToClientImpact(uid);
 
-        TryComp<PhysicsComponent>(uid, out var physics);
-
-        // the hit can spin the body before we stick it. keep the angle it was actually flying at
+        // Polonium: the hit can spin a shot body before we stick it, so it gets the angle it was flying at.
+        // Thrown items aren't spun yet and keep their ThrowingAngle
         var worldRot = _transform.GetWorldRotation(uid);
-        if (physics != null && physics.LinearVelocity.LengthSquared() > 0.01f)
-            worldRot = physics.LinearVelocity.ToWorldAngle();
-        else if (TryComp(uid, out PredictedProjectileServerComponent? predicted) &&
-                 predicted.ImpactDirection.LengthSquared() > 0.01f)
-            worldRot = predicted.ImpactDirection.ToWorldAngle();
+        if (shot)
+        {
+            var direction = Vector2.Zero;
+            if (physics != null && physics.LinearVelocity.LengthSquared() > 0.01f)
+                direction = physics.LinearVelocity;
+            else if (TryComp(uid, out PredictedProjectileServerComponent? predicted))
+                direction = predicted.ImpactDirection;
 
-        if (TryComp<ProjectileComponent>(uid, out var projectileComp))
-            worldRot += projectileComp.Angle;
+            if (direction.LengthSquared() > 0.01f)
+                worldRot = direction.ToWorldAngle() + (CompOrNull<ProjectileComponent>(uid)?.Angle ?? Angle.Zero);
+        }
 
         if (physics != null)
         {
@@ -195,6 +203,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         DebugTools.AssertEqual(embeddedContainer.EmbeddedObjects.Contains(uid), false);
 
         embeddedContainer.EmbeddedObjects.Add(uid);
+        Dirty(target, embeddedContainer); // Polonium: without it a reset prediction keeps the entity in the list
     }
 
     // predicting client already parked the shot - if we stopped further down the same line, scoot back

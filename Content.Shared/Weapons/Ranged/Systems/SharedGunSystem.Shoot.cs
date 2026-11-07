@@ -88,7 +88,8 @@ public abstract partial class SharedGunSystem
         EntityUid user,
         Entity<GunComponent> gun,
         List<int>? predictedProjectiles = null,
-        ICommonSession? userSession = null)
+        ICommonSession? userSession = null,
+        EntityCoordinates? origin = null) // Polonium
     {
         if (gun.Comp.FireRateModified <= 0f ||
             !_actionBlockerSystem.CanAttack(user))
@@ -160,7 +161,7 @@ public abstract partial class SharedGunSystem
         }
 
         var originEntity = HasComp<GunUseGunOriginComponent>(gun) ? gun.Owner : user;
-        var fromCoordinates = Transform(originEntity).Coordinates;
+        var fromCoordinates = origin ?? Transform(originEntity).Coordinates; // Polonium: where the predicting client fired from
 
         var shotOriginEv = new BeforeAttemptShootEvent(fromCoordinates, gun.Comp.ShootOriginOffset);
         RaiseLocalEvent(user, ref shotOriginEv);
@@ -375,6 +376,7 @@ public abstract partial class SharedGunSystem
                 Shooter = userSession,
                 ClientId = predicted,
                 ClientEnt = user,
+                Origin = fromMap, // Polonium
             };
             AddComp(projectile, comp, true);
             Dirty(projectile, comp);
@@ -444,7 +446,7 @@ public abstract partial class SharedGunSystem
                 case AmmoComponent newAmmo:
                     if (_netManager.IsServer || ClientSideGunPrediction)
                     {
-                        CreateAndFireProjectiles(ent!.Value, newAmmo);
+                        CreateAndFireProjectiles(PredictedAmmo(ent!.Value), newAmmo); // Polonium
                     }
                     else
                     {
@@ -497,6 +499,21 @@ public abstract partial class SharedGunSystem
 
         return shotProjectiles;
 
+        // Polonium: prediction patch
+        EntityUid PredictedAmmo(EntityUid ammoEnt)
+        {
+            if (!_netManager.IsClient ||
+                IsClientSide(ammoEnt) ||
+                HasComp<GunIgnorePredictionComponent>(gun) ||
+                !HasComp<ProjectileComponent>(ammoEnt) ||
+                Prototype(ammoEnt) is not { } proto)
+            {
+                return ammoEnt;
+            }
+
+            return Spawn(proto.ID, fromEnt);
+        }
+
         void CreateAndFireProjectiles(EntityUid ammoEnt, AmmoComponent ammoComp)
         {
             predictedProjectiles ??= new List<int>();
@@ -517,6 +534,10 @@ public abstract partial class SharedGunSystem
 
                 for (var i = 1; i < ammoSpreadComp.Count; i++)
                 {
+                    // Polonium: unpredicted guns only show the server pellets, nothing would clean these up on the client
+                    if (_netManager.IsClient && HasComp<GunIgnorePredictionComponent>(gun))
+                        break;
+
                     var newUid = Spawn(ammoSpreadComp.Proto, fromEnt);
                     ShootOrThrow(newUid, angles[i].ToVec(), gunVelocity, gun, user);
                     shotProjectiles.Add(newUid);

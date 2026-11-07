@@ -69,6 +69,11 @@ public abstract partial class SharedProjectileSystem
         if (attemptEv.Cancelled)
         {
             SetShooter(uid, component, target);
+
+            // the shooter's twin stopped here, let them see where the real one bounced to
+            if (_net.IsServer)
+                RemCompDeferred<PredictedProjectileServerComponent>(uid);
+
             return;
         }
 
@@ -108,11 +113,14 @@ public abstract partial class SharedProjectileSystem
 
         // The shooter predicts the hit effects client-side, so remove them from the server-side filter
         // to avoid the flash/sound playing twice for them. Other players get the server-driven effect.
+        // The client only predicts the first hit, anything after a penetration is shown by the server.
         if (_guns.GunPrediction &&
             TryComp(projectile, out PredictedProjectileServerComponent? serverProjectile) &&
-            serverProjectile.Shooter is { } shooter)
+            !serverProjectile.Hit)
         {
-            filter = filter.RemovePlayer(shooter);
+            serverProjectile.Hit = true;
+            if (serverProjectile.Shooter is { } shooter)
+                filter = filter.RemovePlayer(shooter);
         }
 
         if (modifiedDamage is not null &&
@@ -185,6 +193,10 @@ public abstract partial class SharedProjectileSystem
             Dirty(uid, predictedComp);
         }
         else if (component.ProjectileSpent && !component.DeleteOnCollide)
+        {
+            RemCompDeferred<PredictedProjectileServerComponent>(uid);
+        }
+        else if (_net.IsServer && !component.ProjectileSpent)
         {
             RemCompDeferred<PredictedProjectileServerComponent>(uid);
         }

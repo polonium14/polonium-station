@@ -8,6 +8,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
+using Content.Shared._Polonium.Projectiles;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Damage.Components;
@@ -33,6 +34,7 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private INetManager _netManager = default!;
     [Dependency] private SharedGunPredictionSystem _gunPrediction = default!;
+    [Dependency] private LaunchOverlapSystem _launchOverlap = default!; // Polonium
 
     [Dependency] private EntityQuery<HitscanBasicVisualsComponent> _visualsQuery = default!;
 
@@ -51,6 +53,7 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
         var rayCastResults = _physics.IntersectRay(mapCords.MapId, ray, ent.Comp.MaxDistance, shooter, false);
 
         var target = args.Target;
+        var shotDirection = args.ShotDirection; // Polonium
         // If you are in a container, use the raycast result
         // Otherwise:
         //  1.) Hit the first entity that you targeted.
@@ -58,7 +61,8 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
         var result = _container.IsEntityOrParentInContainer(shooter)
             ? rayCastResults.FirstOrNull()
             : rayCastResults.FirstOrNull(hit => hit.HitEntity == target
-                                                || CompOrNull<RequireProjectileTargetComponent>(hit.HitEntity)?.Active != true);
+                                                || CompOrNull<RequireProjectileTargetComponent>(hit.HitEntity)?.Active != true
+                                                && (hit.Distance > 0f || _launchOverlap.InLineOfFire(mapCords.Position, shotDirection, hit.HitEntity)));
 
         var distanceTried = result?.Distance ?? ent.Comp.MaxDistance;
 

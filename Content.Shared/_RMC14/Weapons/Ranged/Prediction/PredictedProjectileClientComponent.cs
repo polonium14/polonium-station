@@ -14,4 +14,6 @@ public sealed partial class PredictedProjectileClientComponent : Component
 
     // hit target waiting until physics is done so we send where the foam dart actually FUCKING STOPPED
     public EntityUid? PendingImpactTarget;
+
+    public TimeSpan HoldUntil;
 }

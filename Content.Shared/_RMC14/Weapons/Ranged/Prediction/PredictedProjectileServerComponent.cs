@@ -22,5 +22,7 @@ public sealed partial class PredictedProjectileServerComponent : Component
     // server only - where the predicting client already stuck the shot
     public MapCoordinates? ClientImpact;
 
+    public MapCoordinates Origin;
+
     public Vector2 ImpactDirection;
 }

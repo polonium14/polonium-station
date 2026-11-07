@@ -39,7 +39,8 @@ public abstract partial class SharedGunPredictionSystem : EntitySystem
         NetEntity? target,
         List<int>? projectiles,
         ICommonSession session,
-        bool rearmSemiAuto = false)
+        bool rearmSemiAuto = false,
+        EntityCoordinates? origin = null) // Polonium
     {
         var user = session.AttachedEntity;
 
@@ -61,6 +62,6 @@ public abstract partial class SharedGunPredictionSystem : EntitySystem
         if (rearmSemiAuto)
             _gun.ResetShotCounter(gun);
 
-        return _gun.AttemptShoot(user.Value, gun, projectiles, session);
+        return _gun.AttemptShoot(user.Value, gun, projectiles, session, origin); // Polonium
     }
 }
