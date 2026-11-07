@@ -2,6 +2,7 @@ using System.Linq;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Objectives;
 using Content.Shared._Polonium.Objectives;
+using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
@@ -69,6 +70,32 @@ public sealed class CustomObjectiveTest : GameTest
             Assert.That(server.EntMan.EntityExists(first), Is.False);
             Assert.That(customObjectives.TrySetStatus(mindEnt, first, CustomObjectiveStatus.Completed), Is.False,
                 "A removed objective must not accept a status.");
+        });
+    }
+
+    [Test]
+    public async Task RoundEndSummaryListsNonAntagTest()
+    {
+        var server = Pair.Server;
+        var playerMan = server.ResolveDependency<ISharedPlayerManager>();
+        var mindSys = server.System<SharedMindSystem>();
+        var customObjectives = server.System<CustomObjectiveSystem>();
+
+        await server.AddDummySession(DummyUsername);
+        await server.WaitRunTicks(5);
+
+        var session = playerMan.Sessions.Single();
+
+        await server.WaitAssertion(() =>
+        {
+            var mind = mindSys.CreateMind(session.UserId, "Test Crewmember");
+            Assert.That(customObjectives.TryAdd(mind, Title, Description, Issuer, out _), Is.True);
+
+            var ev = new RoundEndTextAppendEvent();
+            server.EntMan.EventBus.RaiseEvent(EventSource.Local, ref ev);
+
+            Assert.That(ev.Text, Does.Contain(Title),
+                "Custom objectives of a mind without an antag role must be in the round end summary.");
         });
     }
 }
