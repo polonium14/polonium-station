@@ -1,6 +1,7 @@
 ﻿<PanelContainer xmlns="https://spacestation14.io"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                xmlns:ui="clr-namespace:Content.Client._Polonium.VendingMachines.UI"
                 Name="SlotPanel"
                 StyleClasses="WindowBackground"
                 RectClipContent="True">
@@ -24,5 +25,7 @@
                    Margin="0 -3 0 0"
                    FontColorOverride="#ffffff" />
         </PanelContainer>
+
+        <ui:VendingMachineSearchFrame Name="SearchFrame" Visible="False" />
     </LayoutContainer>
 </PanelContainer>
