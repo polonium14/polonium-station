@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: slarticodefast
-  changes:
-  - message: You can now throw banana cream pies at the station AI.
-    type: Add
-  id: 9605
-  time: '2026-04-03T18:35:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43388
 - author: Samuka
   changes:
   - message: When reloading guns or magazines with stack items, it only reloads one
@@ -5088,3 +5081,13 @@
   id: 10099
   time: '2026-11-07T06:48:40.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1208
+- author: Nikita
+  changes:
+  - message: "Dodano mo\u017Cliwo\u015B\u0107 lotu dla harpii"
+    type: Add
+  - message: "Zmniejszono bonus do pr\u0119dko\u015Bci lotu harpi w stanie niewa\u017C\
+      ko\u015Bci (150% -> 15%)"
+    type: Tweak
+  id: 10100
+  time: '2026-11-07T07:58:00.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1209
