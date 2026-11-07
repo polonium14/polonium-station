@@ -249,6 +249,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             if (projectile.ProjectileSpent && !projectile.DeleteOnCollide)
             {
                 _sprite.SetVisible((serverUid, serverSprite), true);
+                TryDeleteClientTwin(server.ClientId);
                 continue;
             }
 

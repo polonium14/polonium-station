@@ -58,6 +58,7 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
         // Otherwise:
         //  1.) Hit the first entity that you targeted.
         //  2.) Hit the first entity that doesn't require you to aim at it specifically to be hit.
+        // Polonium: a ray from inside a body hits it at zero distance, only count that body if it is in front (#1204)
         var result = _container.IsEntityOrParentInContainer(shooter)
             ? rayCastResults.FirstOrNull()
             : rayCastResults.FirstOrNull(hit => hit.HitEntity == target

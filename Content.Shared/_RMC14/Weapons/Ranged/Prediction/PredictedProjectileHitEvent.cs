@@ -6,6 +6,7 @@ namespace Content.Shared._RMC14.Weapons.Ranged.Prediction;
 [Serializable, NetSerializable]
 public sealed class PredictedProjectileHitEvent(
     int projectile,
+    // Polonium: the client predicts only the first hit
     NetEntity target,
     MapCoordinates targetCoordinates,
     MapCoordinates impact) : EntityEventArgs

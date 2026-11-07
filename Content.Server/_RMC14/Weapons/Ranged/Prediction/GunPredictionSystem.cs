@@ -6,6 +6,7 @@ using System.Numerics;
 using Content.Server._Polonium.Weapons.Ranged;
 using Content.Server._RMC14.Movement;
 using Content.Server.Movement.Components;
+using Content.Shared._Polonium.Projectiles;
 using Content.Shared._Polonium.Teleportation;
 using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
@@ -26,6 +27,7 @@ namespace Content.Server._RMC14.Weapons.Ranged.Prediction;
 public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
 {
     [Dependency] private IConfigurationManager _config = default!;
+    [Dependency] private LaunchOverlapSystem _launchOverlap = default!; // Polonium
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private SharedProjectileSystem _projectile = default!;
     [Dependency] private RMCLagCompensationSystem _rmcLagCompensation = default!;
@@ -34,6 +36,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
     [Dependency] private SharedTransformSystem _transform = default!;
 
     private const float ImpactPathTolerance = 1f;
+    private const float ImpactBehindOriginTolerance = 0.1f; // Polonium
 
     private readonly Dictionary<(Guid, int), EntityUid> _predicted = new();
     private readonly List<(PredictedProjectileHitEvent Event, ICommonSession Player)> _predictedHits = new();
@@ -241,7 +244,31 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         var offset = impact.Position - origin.Position;
         var along = Vector2.Dot(offset, direction);
         var lateral = MathF.Abs(offset.X * direction.Y - offset.Y * direction.X);
-        return along >= -ImpactPathTolerance && along <= maxAlong && lateral <= ImpactPathTolerance;
+        return along >= -ImpactBehindOriginTolerance && along <= maxAlong && lateral <= ImpactPathTolerance;
+    }
+
+    // Polonium: the client may report a hit ahead of the server shot, so nothing solid may stand between them
+    private bool ImpactObstructed(Entity<PredictedProjectileServerComponent, PhysicsComponent> projectile, EntityUid target, MapCoordinates impact)
+    {
+        var current = _transform.GetMapCoordinates(projectile);
+        var offset = impact.Position - current.Position;
+        var length = offset.Length();
+        if (impact.MapId != current.MapId || length < 0.01f)
+            return false;
+
+        var ray = new CollisionRay(current.Position, offset / length, projectile.Comp2.CollisionMask);
+        foreach (var hit in _physics.IntersectRay(current.MapId, ray, length, projectile, false))
+        {
+            if (hit.HitEntity != target &&
+                hit.Distance > 0f &&
+                _physicsQuery.TryComp(hit.HitEntity, out var body) &&
+                body.BodyType == BodyType.Static)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void ProcessPredictedHit(PredictedProjectileHitEvent ev, ICommonSession player)
@@ -276,6 +303,8 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         }
 
         if (!ImpactOnPath((projectile, predictedProjectile, projectilePhysics), ev.Impact) ||
+            _launchOverlap.IsIgnored(projectile, hit) || // Polonium
+            ImpactObstructed((projectile, predictedProjectile, projectilePhysics), hit, ev.Impact) ||
             !Collides(
                 (projectile, predictedProjectile, projectilePhysics),
                 (hit, otherLagComp, otherFixtures, otherPhysics, otherTransform),

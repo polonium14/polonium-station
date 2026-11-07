@@ -5,6 +5,7 @@ using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
+using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Polonium.Projectiles;
@@ -12,6 +13,7 @@ namespace Content.Shared._Polonium.Projectiles;
 public sealed partial class LaunchOverlapSystem : EntitySystem
 {
     [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
 
@@ -57,15 +59,33 @@ public sealed partial class LaunchOverlapSystem : EntitySystem
             return;
         }
 
-        // A reflected projectile belongs to the reflector now and may hit anyone.
-        if (ent.Comp.Shooter != null &&
-            TryComp(ent, out ProjectileComponent? projectile) &&
-            projectile.Shooter != ent.Comp.Shooter)
+        // once out of the launch overlap it may be hit again, e.g. by a bola that bounced back
+        if (LaunchBounds(ent, _physics.GetPhysicsTransform(ent), ent.Comp.FixtureId) is not { } bounds ||
+            !bounds.Intersects(_lookup.GetWorldAABB(args.OtherEntity)))
         {
+            ent.Comp.Ignored.Remove(args.OtherEntity);
             return;
         }
 
-        args.Cancelled = true;
+        args.Cancelled = IsIgnored(ent.AsNullable(), args.OtherEntity);
+    }
+
+    /// <summary>
+    /// Whether a launched entity still passes through <paramref name="other"/>, which it overlapped at launch.
+    /// </summary>
+    public bool IsIgnored(Entity<LaunchOverlapComponent?> ent, EntityUid other)
+    {
+        if (!Resolve(ent, ref ent.Comp, false) ||
+            !ent.Comp.Ignored.Contains(other) ||
+            _timing.CurTime >= ent.Comp.EndTime)
+        {
+            return false;
+        }
+
+        // A reflected projectile belongs to the reflector now and may hit anyone.
+        return ent.Comp.Shooter == null ||
+               !TryComp(ent, out ProjectileComponent? projectile) ||
+               projectile.Shooter == ent.Comp.Shooter;
     }
 
     /// <summary>
@@ -85,40 +105,25 @@ public sealed partial class LaunchOverlapSystem : EntitySystem
             comp.Ignored.Clear();
 
         var xform = Transform(ent);
-        if (!xform.ParentUid.IsValid() ||
-            ent.Comp.LinearVelocity.LengthSquared() <= 0f ||
-            !TryComp(ent, out FixturesComponent? fixtures))
-        {
+        if (!xform.ParentUid.IsValid() || ent.Comp.LinearVelocity.LengthSquared() <= 0f)
             return;
-        }
 
         var direction = _transform.GetWorldRotation(xform.ParentUid).RotateVec(ent.Comp.LinearVelocity).Normalized();
         var (worldPos, worldRot) = _transform.GetWorldPositionRotation(xform);
-        var physicsTransform = new Transform(worldPos, worldRot);
-
-        Box2? bounds = null;
-        foreach (var (id, fixture) in fixtures.Fixtures)
-        {
-            if (fixtureId != null && id != fixtureId)
-                continue;
-
-            for (var i = 0; i < fixture.Shape.ChildCount; i++)
-            {
-                var aabb = fixture.Shape.ComputeAABB(physicsTransform, i);
-                bounds = bounds?.Union(aabb) ?? aabb;
-            }
-        }
-
-        if (bounds == null)
+        if (LaunchBounds(ent, new Transform(worldPos, worldRot), fixtureId) is not { } bounds)
             return;
 
         _overlapping.Clear();
-        _lookup.GetEntitiesIntersecting(xform.MapID, bounds.Value, _overlapping, LookupFlags.Dynamic | LookupFlags.Static);
+        _lookup.GetEntitiesIntersecting(xform.MapID, bounds, _overlapping, LookupFlags.Dynamic | LookupFlags.Static);
 
         var target = CompOrNull<TargetedProjectileComponent>(ent)?.Target;
         foreach (var other in _overlapping)
         {
             if (other == ent.Owner || other == shooter || other == target)
+                continue;
+
+            // a locker or anything else the shooter sits in stays solid
+            if (shooter != null && _transform.ContainsEntity(other, shooter.Value))
                 continue;
 
             if (InLineOfFire(worldPos, direction, other))
@@ -132,6 +137,28 @@ public sealed partial class LaunchOverlapSystem : EntitySystem
             return;
 
         comp.Shooter = shooter;
+        comp.FixtureId = fixtureId;
         comp.EndTime = _timing.CurTime + IgnoreTime;
+    }
+
+    private Box2? LaunchBounds(EntityUid uid, Transform transform, string? fixtureId)
+    {
+        if (!TryComp(uid, out FixturesComponent? fixtures))
+            return null;
+
+        Box2? bounds = null;
+        foreach (var (id, fixture) in fixtures.Fixtures)
+        {
+            if (fixtureId != null && id != fixtureId)
+                continue;
+
+            for (var i = 0; i < fixture.Shape.ChildCount; i++)
+            {
+                var aabb = fixture.Shape.ComputeAABB(transform, i);
+                bounds = bounds?.Union(aabb) ?? aabb;
+            }
+        }
+
+        return bounds;
     }
 }

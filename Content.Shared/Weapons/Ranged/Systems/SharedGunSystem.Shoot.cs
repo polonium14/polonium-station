@@ -511,7 +511,9 @@ public abstract partial class SharedGunSystem
                 return ammoEnt;
             }
 
-            return Spawn(proto.ID, fromEnt);
+            var twin = Spawn(proto.ID, fromEnt);
+            Appearance.AppendData(ammoEnt, twin); // e.g. a filled arrow keeps its solution layer
+            return twin;
         }
 
         void CreateAndFireProjectiles(EntityUid ammoEnt, AmmoComponent ammoComp)
