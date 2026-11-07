@@ -276,6 +276,7 @@ public sealed partial class GunSystem : SharedGunSystem
             RearmSemiAuto = rearmSemiAuto,
             Shot = projectiles?.Select(e => e.Id).ToList(),
             LastRealTick = _rmcLagCompensation.GetLastRealTick(null),
+            Origin = GetNetCoordinates(Transform(coordinateEntity).Coordinates), // Polonium
         });
     }
 
@@ -290,6 +291,7 @@ public sealed partial class GunSystem : SharedGunSystem
         if (ClientSideGunPrediction)
         {
             EnsureComp<PredictedProjectileClientComponent>(uid);
+            RemComp<PredictedSpawnComponent>(uid); // Polonium
             Physics.UpdateIsPredicted(uid);
         }
 

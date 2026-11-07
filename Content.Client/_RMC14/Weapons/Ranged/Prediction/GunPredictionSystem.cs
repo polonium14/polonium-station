@@ -4,6 +4,7 @@
 
 using System.Numerics;
 using Content.Client.Projectiles;
+using Content.Shared._Polonium.Teleportation;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Events;
@@ -31,6 +32,8 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
 
+    private static readonly TimeSpan HitHoldTime = TimeSpan.FromSeconds(1);
+
     private EntityQuery<IgnorePredictionHideComponent> _ignorePredictionHideQuery;
     private EntityQuery<IgnorePredictionHitComponent> _ignorePredictionHitQuery;
     private EntityQuery<PredictedProjectileClientComponent> _predictedClientQuery;
@@ -51,6 +54,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
 
         SubscribeLocalEvent<PredictedProjectileClientComponent, UpdateIsPredictedEvent>(OnClientProjectileUpdateIsPredicted);
         SubscribeLocalEvent<PredictedProjectileClientComponent, StartCollideEvent>(OnClientProjectileStartCollide);
+        SubscribeLocalEvent<PredictedProjectileClientComponent, PortalEnteredEvent>(OnClientProjectilePortalEntered); // Polonium
 
         SubscribeLocalEvent<PredictedProjectileServerComponent, ComponentAdd>(OnServerProjectileAdd);
         SubscribeLocalEvent<PredictedProjectileServerComponent, ComponentStartup>(OnServerProjectileStartup);
@@ -64,7 +68,9 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         var query = EntityQueryEnumerator<PredictedProjectileClientComponent>();
         while (query.MoveNext(out var uid, out var predicted))
         {
-            predicted.Coordinates = Transform(uid).Coordinates;
+            // Polonium: a twin whose grid or map was deleted sits in nullspace with coordinates relative to itself
+            var xform = Transform(uid);
+            predicted.Coordinates = xform.ParentUid.IsValid() ? xform.Coordinates : null;
         }
     }
 
@@ -82,11 +88,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
                 if (!Exists(target))
                     continue;
 
-                var hit = new HashSet<(NetEntity, MapCoordinates)>
-                {
-                    (GetNetEntity(target), _transform.GetMapCoordinates(target)),
-                };
-                RaiseNetworkEvent(new PredictedProjectileHitEvent(uid.Id, hit, _transform.GetMapCoordinates(uid)));
+                SendHit(uid, target);
             }
 
             return;
@@ -153,7 +155,24 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         // engine's ResetContacts during prediction reset. It is stopped/hidden here and cleaned up
         // safely in Update instead.
         _projectile.ProjectileCollide((ent, projectile, physics), args.OtherEntity, predicted: true);
-        MarkClientHit(ent, ent.Comp, physics);
+        MarkClientHit(ent, ent.Comp, projectile, physics);
+    }
+
+    // Polonium: the client often can't tell where a portal leads, so the twin vanishes in it
+    // and the server drops prediction for the real shot, which the shooter then sees come out
+    private void OnClientProjectilePortalEntered(Entity<PredictedProjectileClientComponent> ent, ref PortalEnteredEvent args)
+    {
+        if (args.Handled || !IsClientSide(ent))
+            return;
+
+        args.Handled = true;
+        if (ent.Comp.Hit)
+            return;
+
+        ent.Comp.Hit = true;
+        ent.Comp.HoldUntil = _timing.CurTime;
+        HideSprite(ent);
+        _physics.SetLinearVelocity(ent, Vector2.Zero);
     }
 
     private void OnServerProjectileAdd(Entity<PredictedProjectileServerComponent> ent, ref ComponentAdd args)
@@ -230,6 +249,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             if (projectile.ProjectileSpent && !projectile.DeleteOnCollide)
             {
                 _sprite.SetVisible((serverUid, serverSprite), true);
+                TryDeleteClientTwin(server.ClientId);
                 continue;
             }
 
@@ -246,6 +266,12 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
                 {
                     // hold the twin at the impact pose until the server arrow is shown
                     _physics.SetCanCollide(uid, false, body: physics);
+                    if (projectile.DeleteOnCollide || _timing.CurTime >= predicted.HoldUntil)
+                    {
+                        HideSprite(uid);
+                        QueueDel(uid);
+                    }
+
                     continue;
                 }
 
@@ -295,16 +321,10 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             if (hitEntity is not { } target)
                 continue;
 
-            var hit = new HashSet<(NetEntity, MapCoordinates)>
-            {
-                (GetNetEntity(target), _transform.GetMapCoordinates(target)),
-            };
-
-            var ev = new PredictedProjectileHitEvent(uid.Id, hit, _transform.GetMapCoordinates(uid));
-            RaiseNetworkEvent(ev);
+            SendHit(uid, target);
 
             _projectile.ProjectileCollide((uid, projectile, physics), target, predicted: true);
-            MarkClientHit(uid, predicted, physics);
+            MarkClientHit(uid, predicted, projectile, physics);
         }
 
         // Keep the shooter's authoritative projectile hidden after a predicted hit.
@@ -324,6 +344,15 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
                 _sprite.SetVisible((uid, sprite), false);
             }
         }
+    }
+
+    private void SendHit(EntityUid projectile, EntityUid target)
+    {
+        RaiseNetworkEvent(new PredictedProjectileHitEvent(
+            projectile.Id,
+            GetNetEntity(target),
+            _transform.GetMapCoordinates(target),
+            _transform.GetMapCoordinates(projectile)));
     }
 
     private void TryDeleteClientTwin(int clientId)
@@ -353,16 +382,21 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             _sprite.SetVisible((uid, sprite), true);
     }
 
-    private void MarkClientHit(EntityUid uid, PredictedProjectileClientComponent predicted, PhysicsComponent physics)
+    private void MarkClientHit(EntityUid uid, PredictedProjectileClientComponent predicted, ProjectileComponent projectile, PhysicsComponent physics)
     {
         if (predicted.Hit)
             return;
 
         predicted.Hit = true;
+        predicted.HoldUntil = _timing.CurTime + HitHoldTime;
+
+        if (projectile.DeleteOnCollide)
+            HideSprite(uid);
 
         _physics.SetAngularVelocity(uid, 0f, body: physics);
         _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
-        _physics.SetCanCollide(uid, false, body: physics);
+        // Polonium: no SetCanCollide here, inside a collision it destroys contacts the engine is still iterating
+        // in ResetContacts and crashes the client. Update turns collision off for hit twins
     }
 
     public override void FrameUpdate(float frameTime)
