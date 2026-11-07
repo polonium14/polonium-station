@@ -149,7 +149,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         SearchIcon.Modulate = searching ? SearchAccentColor : SearchIdleColor;
         SearchClear.Visible = searching;
         SearchCounter.Visible = searching;
-        SearchCounter.Text = $"{matches}/{_slots.Count}";
+        SearchCounter.Text = Loc.GetString("vending-machine-search-counter", ("matches", matches), ("total", _slots.Count));
         SearchCounter.FontColorOverride = matches > 0 ? SearchAccentColor : SearchNoMatchColor;
 
         if (scrollToMatch && matches > 0)
@@ -162,14 +162,20 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         if (GridScroll.Size.Y <= 0)
             return;
 
-        _scrollPending = false;
-
         var slot = _searchQuery.Length > 0
             ? _slots.Find(s => s.MatchesSearch(_searchQuery))
             : null;
 
         if (slot == null)
+        {
+            _scrollPending = false;
             return;
+        }
+
+        if (slot.Size.Y <= 0)
+            return;
+
+        _scrollPending = false;
 
         var top = slot.Position.Y;
         var bottom = top + slot.Size.Y;

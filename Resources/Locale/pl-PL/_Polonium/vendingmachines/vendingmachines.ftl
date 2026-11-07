@@ -14,3 +14,4 @@ vending-machine-keypad-feedback-invalid = [ BŁĄD ]
 vending-machine-keypad-feedback-denied = [ ODMOWA ]
 vending-machine-search-placeholder = Szukaj...
 vending-machine-search-clear = Wyczyść
+vending-machine-search-counter = { $matches }/{ $total }
