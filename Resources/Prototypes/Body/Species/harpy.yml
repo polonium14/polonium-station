@@ -135,7 +135,17 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
     baseSprintSpeed: 5.0
-    weightlessAcceleration: 2.5
+    baseWeightlessAcceleration: 1.15
+  # Polonium: harpy flight
+  - type: Flight
+    animatedRsi: /Textures/_EinsteinEngines/Mobs/Customization/Harpy/harpy_wings.rsi
+    speedModifier: 1.5
+  - type: StepTriggerImmune
+    whitelist:
+      components:
+      - PreventableStepTrigger
+      - LandMine
+  # Polonium end
   - type: HarpySinger
   - type: Instrument
     allowPercussion: false

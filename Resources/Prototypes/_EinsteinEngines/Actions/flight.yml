@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseAction
+  id: ActionToggleFlight
+  name: Fly
+  description: Make use of your wings to fly. Beat the flightless bird allegations.
+  components:
+  - type: Action
+    checkCanInteract: false
+  - type: Sprite
+    sprite: _EinsteinEngines/Interface/Actions/flight.rsi
+    layers:
+    - state: flight_off
+      map: ["enum.ActionVisuals.Icon"]
+    - state: flight_on
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
+  - type: InstantAction
+    event: !type:ToggleFlightEvent
