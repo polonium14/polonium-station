@@ -1,21 +1,4 @@
 ﻿Entries:
-- author: alexalexmax
-  changes:
-  - message: Added a new uplink category for objective items.
-    type: Add
-  - message: 'Added a new objective for traitors: Hijack the Automated Trade Station.
-      Your uplink will have a hijack beacon for you to use if you have this objective'
-    type: Add
-  id: 9602
-  time: '2026-04-03T10:35:56.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42135
-- author: Minemoder
-  changes:
-  - message: Humanoids can now break out of locked genpop lockers
-    type: Tweak
-  id: 9603
-  time: '2026-04-03T18:01:11.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41633
 - author: sudobeans
   changes:
   - message: Crew Manifest PDA program now displays a message when it fails to load.
@@ -4442,3 +4425,665 @@
   id: 10096
   time: '2026-11-06T15:32:29.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1199
+- author: Kontrybutorzy SS14
+  changes:
+  - message: Dodano motyw interfejsu Trasen-Knox przeniesiony z serwera /tg/station.
+    type: Add
+  - message: "W ustawieniach dost\u0119pno\u015Bci mo\u017Cna w\u0142\u0105czy\u0107\
+      \ podgl\u0105d pisanej wiadomo\u015Bci nad postaci\u0105."
+    type: Add
+  - message: "Postacie mrugaj\u0105, a podczas snu zamykaj\u0105 oczy. Emotka mrugni\u0119\
+      cia sprawia, \u017Ce posta\u0107 naprawd\u0119 mruga. Dodano te\u017C cech\u0119\
+      \ \"dyspraksja mrugania\"."
+    type: Add
+  - message: "Duchy maj\u0105 wska\u017Anik pisania i mog\u0105 klikn\u0105\u0107\
+      \ imi\u0119 gracza na czacie, \u017Ceby za nim pod\u0105\u017Ca\u0107. Przycisk\
+      \ ukrywania duch\xF3w mo\u017Ce ukry\u0107 tak\u017Ce w\u0142asnego ducha."
+    type: Add
+  - message: "Gracze z whitelist\u0105 widz\u0105, kt\xF3rzy gracze s\u0105 nowi w\
+      \ grze (mniej ni\u017C 90 minut gry)"
+    type: Add
+  - message: "Wska\u017Aniki pokazuj\u0105 kierunek do pobliskich wrak\xF3w i stacji.\
+      \ Smok kosmiczny te\u017C je dosta\u0142, \u017Ceby \u0142atwiej znale\u017A\
+      \u0107 stacj\u0119 i swoje szczeliny"
+    type: Add
+  - message: "Moby znacznie lepiej omijaj\u0105 przeszkody"
+    type: Add
+  - message: "Kafelki wystawione na pr\xF3\u017Cni\u0119 maj\u0105 regulowany filtr\
+      \ odbarwienia."
+    type: Add
+  - message: "Zmiennokszta\u0142tny mo\u017Ce kupi\u0107 form\u0119 grozy, kr\xF3\
+      tkotrwa\u0142\u0105 form\u0119 berserkera, kt\xF3rej prawie nie da si\u0119\
+      \ zabi\u0107. Wrzask przeniesiono do tej formy i nie mo\u017Cna go ju\u017C\
+      \ kupi\u0107 osobno."
+    type: Add
+  - message: "Zmiennokszta\u0142tny mo\u017Ce kupi\u0107 Fleshtomb, kt\xF3ry zamyka\
+      \ zw\u0142oki w s\u0142abym kokonie i powoli wysysa z nich DNA. Zamykanie zw\u0142\
+      ok trwa o po\u0142ow\u0119 kr\xF3cej, a zgni\u0142ych cia\u0142 nie da si\u0119\
+      \ ju\u017C zamkn\u0105\u0107 w kokonie."
+    type: Add
+  - message: "Zmiennokszta\u0142tny mo\u017Ce kupi\u0107 \u017C\u0105d\u0142o fa\u0142\
+      szywego ostrza, po kt\xF3rym celowi po d\u0142u\u017Cszym czasie wyrasta s\u0142\
+      absze ostrze ramienne, oraz \u017C\u0105d\u0142o hemotoksyny, szybkie, bardzo\
+      \ widoczne i g\u0142o\u015Bne, kt\xF3re wywo\u0142uje silne krwawienie."
+    type: Add
+  - message: "Dodano starsze g\u0142owo\u015Blimaki, wersj\u0119 zmiennokszta\u0142\
+      tnego dost\u0119pn\u0105 jako rola ducha. Mog\u0105 pojawia\u0107 si\u0119 w\
+      \ trakcie rund dynamicznych."
+    type: Add
+  - message: "Z\u0142odzieje mog\u0105 dosta\u0107 cel kradzie\u017Cy skafandra dow\xF3\
+      dztwa."
+    type: Add
+  - message: "Mo\u017Cna wytworzy\u0107 prowizoryczny identyfikator, kt\xF3ry podrabia\
+      \ imi\u0119, stanowisko i ikon\u0119 pracy, ale nie przechowuje dost\u0119p\xF3\
+      w. Identyfikator Syndykatu z uplinku jest teraz adaptacyjny i te\u017C mo\u017C\
+      e zmienia\u0107 imi\u0119, stanowisko oraz ikon\u0119."
+    type: Add
+  - message: "Szczeliny smoka czasem przywo\u0142uj\u0105 wierne mu kosmiczne rekiny."
+    type: Add
+  - message: "Kryj\xF3wka czarodzieja ma w\u0142asn\u0105 piecz\u0105tk\u0119."
+    type: Add
+  - message: "Logistyka mo\u017Ce zam\xF3wi\u0107 skrzyni\u0119 z trzema karabinami\
+      \ Kardaszew-Mosin i sze\u015B\u0107dziesi\u0119cioma nabojami za 3500."
+    type: Add
+  - message: "Mo\u017Cna wytworzy\u0107 prowizoryczny pistolet laserowy, kt\xF3ry\
+      \ jest ma\u0142ym przedmiotem, a z okular\xF3w mo\u017Cna \u015Brubokr\u0119\
+      tem wyj\u0105\u0107 soczewki."
+    type: Add
+  - message: "Dodano receptur\u0119 gazu \u0142zawi\u0105cego."
+    type: Add
+  - message: "Przy ogl\u0119dzinach broni obra\u017Cenia zm\u0119czenia s\u0105 widoczne\
+      \ razem z innymi rodzajami obra\u017Ce\u0144."
+    type: Add
+  - message: "Gabloty na strzelb\u0119, siekier\u0119 stra\u017Cack\u0105 i ga\u015B\
+      nic\u0119 mo\u017Cna budowa\u0107 i rozbiera\u0107."
+    type: Add
+  - message: "Maski spawalnicze i spawalnicze maski gazowe cz\u0119\u015Bciowo zas\u0142\
+      aniaj\u0105 widok."
+    type: Add
+  - message: "Dodano nyktalon, drogi odczynnik daj\u0105cy noktowizj\u0119. Mo\u017C\
+      na go pi\u0107 bez efektu b\u0142ysku. Felinaza te\u017C daje noktowizj\u0119\
+      ."
+    type: Add
+  - message: "Dodano miniozyn\u0119 i ragorium, \u015Brodki do kontrolowania bezrozumnych\
+      \ stworze\u0144. Zab\xF3jcze pomidory wi\u0105\u017Ce si\u0119 teraz, dodaj\u0105\
+      c krew do ich grz\u0105dki, a nie przez przebywanie w pobli\u017Cu."
+    type: Add
+  - message: "W\xF3zki inwalidzkie mo\u017Cna wytworzy\u0107 w fabrykatorze sprz\u0119\
+      tu medycznego."
+    type: Add
+  - message: "Strzykawk\u0105 mo\u017Cna wstrzykiwa\u0107 i pobiera\u0107 odczynniki\
+      \ z kostek ma\u0142p i odwodnionych kosmicznych karpi."
+    type: Add
+  - message: "Dodano dwie nowe mutacje aloesu, Aloe Ignis i Smoczy Ogon, przydatne\
+      \ przy leczeniu oparze\u0144 zimnem."
+    type: Add
+  - message: "W NutriVendzie jest Frank's Funky Fertilizer, nowy spos\xF3b na dziwaczne\
+      \ ro\u015Bliny kuchenne."
+    type: Add
+  - message: "Dodano solniczki i pieprzniczki dost\u0119pne w ChefVendzie, skrzyni\
+      \ zaopatrzenia kuchni i skrzyni Getmore Bakemore."
+    type: Add
+  - message: "Plasterki tofu i kurki mo\u017Cna dodawa\u0107 do sk\u0142adanych burger\xF3\
+      w i tacos, a kotlety, kapusta, pomidory i papryczki chili maj\u0105 nowe grafiki\
+      \ w burgerze."
+    type: Add
+  - message: "Dodano dzbanki z napojami, nowe butelki w dystrybutorze alkoholu i nowe\
+      \ napoje w dystrybutorze napoj\xF3w."
+    type: Add
+  - message: "Borgi serwisu maj\u0105 modu\u0142 gotowania. Modu\u0142y ogrodniczy\
+      \ i zbieracki po\u0142\u0105czono w jeden, a modu\u0142 muzyczny jest teraz\
+      \ og\xF3lnym modu\u0142em."
+    type: Add
+  - message: "Dodano wydarzenie, w kt\xF3rym cz\u0119\u015B\u0107 automat\xF3w na\
+      \ stacji zaczyna dzia\u0142a\u0107 wadliwie."
+    type: Add
+  - message: "Przedmioty, kt\xF3re przetwarza si\u0119 narz\u0119dziem, np. od\u0142\
+      amki szk\u0142a, mundury, k\u0142ody i martwe zwierz\u0119ta, maj\u0105 w ogl\u0119\
+      dzinach podpowied\u017A, jakiego narz\u0119dzia u\u017Cy\u0107."
+    type: Add
+  - message: "Maszyna do recyklingu przetwarza od\u0142amki szk\u0142a."
+    type: Add
+  - message: "Sukienki mo\u017Cna drukowa\u0107 w drukarce mundur\xF3w, a Kwatermistrz\
+      \ ma sukienkow\u0105 wersj\u0119 stroju galowego."
+    type: Add
+  - message: "Chomiki mog\u0105 nosi\u0107 rumiane maski klauna i maski cluwne'a,\
+      \ a we wszystkich maskach klauna mo\u017Cna z\u0142o\u017Cy\u0107 peruk\u0119\
+      ."
+    type: Add
+  - message: "Syntezatory maj\u0105 nowy styl instrumentu \"Square\"."
+    type: Add
+  - message: "Pude\u0142ka kostek szlamu mo\u017Cna kupi\u0107 w logistyce, a kostki\
+      \ szlamu wytworzy\u0107 w fabrykatorze biokostek."
+    type: Add
+  - message: "Skaner T-promieniowania pokazuje kable i rury pod \u015Bcianami."
+    type: Add
+  - message: "Badanie poziomu 1 pozwala tanio drukowa\u0107 o\u015Bwietlenie w paczkach\
+      \ po 10 sztuk ka\u017Cdego rodzaju za 80% ceny. Pude\u0142ka \u015Bwiate\u0142\
+      \ zamieniono na paczki, kt\xF3rymi uzupe\u0142nia si\u0119 wymieniacz \u017C\
+      ar\xF3wek."
+    type: Add
+  - message: "Ogniwa zasilaj\u0105ce mo\u017Cna wytwarza\u0107 w fabrykatorze egzoszkielet\xF3\
+      w, a lornetk\u0119 w autolacie. Przez lornetk\u0119 wida\u0107 dalej."
+    type: Add
+  - message: "Z uszkodzonej mapy stacji mo\u017Cna wyj\u0105\u0107 elektronik\u0119\
+      , \u017Ceby j\u0105 \u0142atwo naprawi\u0107."
+    type: Add
+  - message: "Bramki energetyczne przy przej\u015Bciu wydaj\u0105 szum zamiast klikni\u0119\
+      cia, a bramki na przylotach s\u0105 poprawnie obr\xF3cone."
+    type: Add
+  - message: "Podczas plagi paj\u0105k\xF3w mog\u0105 pojawi\u0107 si\u0119 cztery\
+      \ nowe odmiany: \u0142owca, stra\u017Cnik, akuszerka i piel\u0119gniarka. Odmiany\
+      \ r\xF3\u017Cni\u0105 si\u0119 ilo\u015Bci\u0105 jadu, regeneracj\u0105 i dawk\u0105\
+      , a paj\u0105ki-klauny wstrzykuj\u0105 \u015Bmiech zamiast mechanotoksyny."
+    type: Add
+  - message: "Papuga Polly i goryle mog\u0105 zyska\u0107 \u015Bwiadomo\u015B\u0107\
+      \ w losowym wydarzeniu."
+    type: Add
+  - message: "Voksy mog\u0105 kraka\u0107 i sycze\u0107, a wszystkie ich organy maj\u0105\
+      \ w\u0142a\u015Bciwy wygl\u0105d."
+    type: Add
+  - message: "Losowe nazwiska postaci s\u0105 teraz wybierane z 4000 najpopularniejszych\
+      \ nazwisk w Polsce zamiast z listy ponad 300 tysi\u0119cy, cz\u0119sto bardzo\
+      \ rzadkich. Dzi\u0119ki temu gra uruchamia si\u0119 szybciej i zu\u017Cywa mniej\
+      \ pami\u0119ci."
+    type: Tweak
+  - message: "Daty w dzienniku zmian i w interfejsach s\u0105 zapisywane w formacie\
+      \ RRRR-MM-DD."
+    type: Tweak
+  - message: "G\u0142o\u015Bno\u015B\u0107 pogody zale\u017Cy od g\u0142o\u015Bno\u015B\
+      ci d\u017Awi\u0119k\xF3w otoczenia."
+    type: Tweak
+  - message: "Szum kamer SI domy\u015Blnie u\u017Cywa \u0142agodniejszej wersji. Mo\u017C\
+      na to zmieni\u0107 w ustawieniach dost\u0119pno\u015Bci."
+    type: Tweak
+  - message: "Wskazywanie, analizator zdrowia i \u0142\u0105czenie urz\u0105dze\u0144\
+      \ dzia\u0142aj\u0105 z predykcj\u0105, wi\u0119c reaguj\u0105 bez op\xF3\u017A\
+      nienia."
+    type: Tweak
+  - message: "Rasy, kt\xF3rych akcent zast\u0119puje ca\u0142\u0105 wypowied\u017A\
+      \ (np. koty i szlamy), zachowuj\u0105 znak interpunkcyjny na ko\u0144cu wiadomo\u015B\
+      ci."
+    type: Tweak
+  - message: "Grafiki \u015Bcian i okien zosta\u0142y od\u015Bwie\u017Cone."
+    type: Tweak
+  - message: "Grafiki wielu mob\xF3w przesuni\u0119to, \u017Ceby pasowa\u0142y do\
+      \ ich hitboks\xF3w."
+    type: Tweak
+  - message: "Interfejs silosu materia\u0142\xF3w pokazuje maszyny i materia\u0142\
+      y w dw\xF3ch panelach obok siebie."
+    type: Tweak
+  - message: "\u015Aluzy dokuj\u0105ce znajdziesz w menu budowy pod nazwami \"\u015B\
+      luza dokuj\u0105ca\" i \"szklana \u015Bluza dokuj\u0105ca\"."
+    type: Tweak
+  - message: "Hemorrhinol nie przyspiesza ju\u017C krwawienia, tylko bezpo\u015Brednio\
+      \ usuwa krew i wywo\u0142uje krwawienie."
+    type: Tweak
+  - message: "\u017B\u0105d\u0142a zmiennokszta\u0142tnego maj\u0105 kr\xF3tsze czasy\
+      \ odnowienia. \u015Amiertelne \u017C\u0105d\u0142o zadaje troch\u0119 wi\u0119\
+      cej obra\u017Ce\u0144, a o\u015Blepiaj\u0105ce lekko uszkadza oczy."
+    type: Tweak
+  - message: "Ostrze ramienne i ubranie z cia\u0142a s\u0105 ta\u0144sze, ale zmiennokszta\u0142\
+      tny zaczyna z mniejsz\u0105 ilo\u015Bci\u0105 DNA."
+    type: Tweak
+  - message: "Po\u017Ceranie zadaje dodatkowe obra\u017Cenia \u017Cr\u0105ce, a tkanka\
+      \ rozlana przy po\u017Ceraniu zawiera DNA zmiennokszta\u0142tnego."
+    type: Tweak
+  - message: "Zmiennokszta\u0142tnym mo\u017Cna zosta\u0107 tak\u017Ce po do\u0142\
+      \u0105czeniu do trwaj\u0105cej rundy."
+    type: Tweak
+  - message: "G\u0142owo\u015Blimaki mo\u017Cna g\u0142aska\u0107 i potrafi\u0105\
+      \ bardzo powoli ci\u0105gn\u0105\u0107 obiekty. Nie mog\u0105 przejmowa\u0107\
+      \ zombie, nie da si\u0119 ich rozerwa\u0107 ani zamieni\u0107 w zombie, a po\
+      \ przej\u0119ciu zw\u0142ok od razu wchodz\u0105 w staz\u0119."
+    type: Tweak
+  - message: "Cele zmiennokszta\u0142tnego \"zabij\" i \"ucieknij jako\" nie mog\u0105\
+      \ wskazywa\u0107 tej samej osoby."
+    type: Tweak
+  - message: "Antagoni\u015Bci dzia\u0142aj\u0105cy na stacji nie dostaj\u0105 cel\xF3\
+      w wskazuj\u0105cych antagonist\xF3w spoza stacji, takich jak operatorzy nuklearni\
+      \ czy ninja."
+    type: Tweak
+  - message: "Zestaw s\u0142uchawkowy i zapalniczka ninja s\u0105 kontraband\u0105\
+      \ wysokiego stopnia, tak jak reszta jego sprz\u0119tu."
+    type: Tweak
+  - message: "Operatorzy nuklearni zaczynaj\u0105 w krwistoczerwonych butach magnetycznych\
+      \ zamiast but\xF3w bojowych, a podstawowy zestaw operatora zawiera buty antypo\u015B\
+      lizgowe zamiast but\xF3w magnetycznych."
+    type: Tweak
+  - message: "Posi\u0142ki Syndykatu kosztuj\u0105 9 TC zamiast 11, ale mo\u017Cna\
+      \ kupi\u0107 najwy\u017Cej dwa. Ich wyposa\u017Cenie jest sp\xF3jniejsze i ma\
+      \ kilka nowych sztuczek."
+    type: Tweak
+  - message: "Przodkowie genetyczni s\u0105 ta\u0144si, ale w uplinku mo\u017Cna kupi\u0107\
+      \ najwy\u017Cej trzech."
+    type: Tweak
+  - message: "Superkompaktowy chip SI nazywa si\u0119 teraz prowizorycznym mikrokontrolerem."
+    type: Tweak
+  - message: "Kula ognia smoka szybciej si\u0119 od niego oddala."
+    type: Tweak
+  - message: "Smoka i behonkera mo\u017Cna rozerwa\u0107 dopiero po \u015Bmierci,\
+      \ a smoka nie da si\u0119 spopieli\u0107. Moby w \u017Co\u0142\u0105dku smoka\
+      \ nie gnij\u0105."
+    type: Tweak
+  - message: "Kosmiczne karpie zadaj\u0105 niewielkie obra\u017Cenia \u015Bcianom\
+      \ i innym wytrzyma\u0142ym konstrukcjom."
+    type: Tweak
+  - message: "Zombie nie trac\u0105 r\u0105k, bo i tak s\u0105 zbyt niezdarne, \u017C\
+      eby z nich korzysta\u0107. Mog\u0105 te\u017C wychodzi\u0107 z szafek."
+    type: Tweak
+  - message: "Modu\u0142 operatora szturmowego borga Syndykatu zawiera \u015Brubokr\u0119\
+      t."
+    type: Tweak
+  - message: "P\u0142aszcze zimowe Syndykatu maj\u0105 nowe nazwy i opisy."
+    type: Tweak
+  - message: "Popularne pistolety, pistolety maszynowe i karabiny trac\u0105 celno\u015B\
+      \u0107 przy ci\u0105g\u0142ym ostrzale. Przerwanie ognia przywraca celno\u015B\
+      \u0107."
+    type: Tweak
+  - message: "Tarcze blokuj\u0105 og\xF3\u0142em mniej obra\u017Ce\u0144 i s\u0105\
+      \ podzielone na rozmiary. Du\u017Ce spowalniaj\u0105, ale lepiej chroni\u0105\
+      , a ma\u0142e s\u0105 s\u0142absze, ale nie spowalniaj\u0105."
+    type: Tweak
+  - message: "Og\u0142uszacze i og\u0142uszacze PM maj\u0105 wi\u0119ksz\u0105 pojemno\u015B\
+      \u0107, a og\u0142uszacze \u0142aduj\u0105 si\u0119 troch\u0119 szybciej. Pociski\
+      \ og\u0142uszaj\u0105ce energetycznej strzelby zadaj\u0105 mniej obra\u017C\
+      e\u0144 zm\u0119czenia."
+    type: Tweak
+  - message: "Og\u0142uszacz PM jest dost\u0119pny w badaniu amunicji nie\u015Bmierciono\u015B\
+      nej na poziomie 1 arsena\u0142u, a zaawansowane \u015Brodki przeciwzamieszkowe\
+      \ przeniesiono na poziom 2."
+    type: Tweak
+  - message: "Pa\u0142ka policyjna zajmuje 2x3 pola, a niekt\xF3rzy cz\u0142onkowie\
+      \ JSR maj\u0105 nieco inne wyposa\u017Cenie dopasowane do nowych rozmiar\xF3\
+      w przedmiot\xF3w."
+    type: Tweak
+  - message: "Bol\u0119 mo\u017Cna zdj\u0105\u0107, maj\u0105c woln\u0105 dowoln\u0105\
+      \ r\u0119k\u0119, a nie tylko aktywn\u0105. Zdejmuje si\u0119 j\u0105 szybciej\
+      \ i spowalnia troch\u0119 mniej."
+    type: Tweak
+  - message: "Energetyczna kusza zadaje obra\u017Cenia roz\u0142o\u017Cone w czasie,\
+      \ jest wi\u0119ksza i do uzupe\u0142nienia amunicji potrzebuje \u0142adunk\xF3\
+      w."
+    type: Tweak
+  - message: "Uranowe i usypiaj\u0105ce magazynki b\u0119bnowe s\u0105 dost\u0119\
+      pne po u\u017Cyciu emaga na autolacie i fabrykatorze ochrony, a magazynki beanbag\
+      \ i zapalaj\u0105ce do strzelb przeniesiono do asortymentu po emagu."
+    type: Tweak
+  - message: "Zabezpieczone skrzynie zbrojowni trudniej rozbi\u0107."
+    type: Tweak
+  - message: "Pod holobarier\u0105 ochrony nie da si\u0119 przeczo\u0142ga\u0107."
+    type: Tweak
+  - message: "Przeskakiwanie przez obiekt nie jest przerywane obra\u017Ceniami i ma\
+      \ ikon\u0119 w menu pod prawym przyciskiem myszy."
+    type: Tweak
+  - message: "Uderzenie zapalon\u0105 spawark\u0105 mo\u017Ce podpali\u0107 cel oblany\
+      \ paliwem."
+    type: Tweak
+  - message: "Podczas metabolizmu tr\xF3jkordrazyny otrzymuje si\u0119 troch\u0119\
+      \ wi\u0119cej obra\u017Ce\u0144."
+    type: Tweak
+  - message: "Aloksadon leczy 6 obra\u017Ce\u0144 od oparze\u0144 na sekund\u0119\
+      \ zamiast 4,5, a aloksadon i opporozydon dzia\u0142aj\u0105 ju\u017C w temperaturze\
+      \ 273 K (0 \xB0C)."
+    type: Tweak
+  - message: "Hivarol wymaga histaminy zamiast likoksydu, a ultrawaskulina potrzebuje\
+      \ plazmy jako katalizatora i jej nie zu\u017Cywa."
+    type: Tweak
+  - message: "Mechanotoksyna zadaje 0,6 obra\u017Ce\u0144 zamiast 1,6, zag\u0119szcza\
+      \ krew i ogranicza krwawienie."
+    type: Tweak
+  - message: "Jedzenie trawi si\u0119 szybciej, ale tylko w \u017Co\u0142\u0105dku."
+    type: Tweak
+  - message: "Borgi medyczne mog\u0105 trzyma\u0107 butelki chemiczne, a butelki chemiczne\
+      \ i majonez pasuj\u0105 do maszyn chemicznych."
+    type: Tweak
+  - message: "Woda \u015Bwi\u0119cona ma prawie wszystkie w\u0142a\u015Bciwo\u015B\
+      ci zwyk\u0142ej wody, wi\u0119c zmywa ka\u0142u\u017Ce i ciasta z twarzy oraz\
+      \ nawadnia kostki ma\u0142p. Szkielety nie s\u0105 ju\u017C odporne na reakcje\
+      \ kwasowe, tak\u017Ce z wod\u0105 \u015Bwi\u0119con\u0105."
+    type: Tweak
+  - message: "Botanika nie hoduje ju\u017C omnizyny, tylko jej prekursor, kt\xF3ry\
+      \ trzeba przetworzy\u0107 w omnizyn\u0119."
+    type: Tweak
+  - message: "Ro\u015Bliny zn\xF3w mo\u017Cna podlewa\u0107 bezpo\u015Brednio."
+    type: Tweak
+  - message: "Oset galaktyczny liczy si\u0119 jako kwiat w zleceniach."
+    type: Tweak
+  - message: "Po otwarciu worka z m\u0105k\u0105 i innych pojemnik\xF3w z produktami\
+      \ do gotowania mo\u017Cna obejrze\u0107 ich zawarto\u015B\u0107, a butelki oliwy\
+      \ i majonezu mo\u017Cna zamyka\u0107."
+    type: Tweak
+  - message: "Miska mie\u015Bci 60u, a jej zawarto\u015B\u0107 mo\u017Cna obejrze\u0107\
+      . Miska na cukierki mie\u015Bci mniej, ale ma w\u0142asn\u0105 siatk\u0119 ekwipunku\
+      \ i mo\u017Cna j\u0105 wytworzy\u0107 w autolacie i fabrykatorze sprz\u0119\
+      tu medycznego."
+    type: Tweak
+  - message: "\u015Awiadomy automat mo\u017Ce nadawa\u0107 na kanale serwisu, np.\
+      \ \u017Ceby poprosi\u0107 o uzupe\u0142nienie towaru."
+    type: Tweak
+  - message: "Str\xF3j performera ma nowy wygl\u0105d, nazw\u0119 i opis. Dodano seri\u0119\
+      \ stroj\xF3w wirtualnych piosenkarek, kt\xF3r\u0105 mo\u017Cna zam\xF3wi\u0107\
+      \ w logistyce, a w skrzyni przedstawie\u0144 teatralnych jeden z nich zast\u0119\
+      puje str\xF3j performera."
+    type: Tweak
+  - message: "Buty turysty i buty czarodzieja nazywaj\u0105 si\u0119 teraz czarnymi\
+      \ i br\u0105zowymi sanda\u0142ami, a Kap\u0142an mo\u017Ce wybra\u0107 sanda\u0142\
+      y w wyposa\u017Ceniu."
+    type: Tweak
+  - message: "D\u0142ugopis w PDA mima zast\u0105piono kredk\u0105 mima."
+    type: Tweak
+  - message: "Zmieniono grafik\u0119 jednolitych opasek na g\u0142ow\u0119."
+    type: Tweak
+  - message: "Losowa kolekcja instrument\xF3w zawiera tylko jeden specjalny instrument.\
+      \ Skrzynia zaopatrzenia wo\u017Anego kosztuje 800, a myd\u0142o Syndykatu jest\
+      \ warte 400."
+    type: Tweak
+  - message: "Pasy ratownika, wo\u017Anego i botanika mieszcz\u0105 wi\u0119cej przedmiot\xF3\
+      w zwi\u0105zanych z tymi rolami."
+    type: Tweak
+  - message: "Telepad mo\u017Cna po\u0142\u0105czy\u0107 z kilkoma konsolami i obs\u0142\
+      uguje zam\xF3wienia z ka\u017Cdej z nich, a cyfrow\u0105 tablic\u0119 mo\u017C\
+      na po\u0142\u0105czy\u0107 z komputerem zam\xF3wie\u0144 logistyki."
+    type: Tweak
+  - message: "Zam\xF3wie\u0144 nie mo\u017Cna zatwierdza\u0107 w trakcie lotu FTL\
+      \ ani na wyprawach."
+    type: Tweak
+  - message: "\u015Aluzy i skrzynie EVA wymagaj\u0105 dost\u0119pu dow\xF3dztwa oraz\
+      \ dost\u0119pu zewn\u0119trznego."
+    type: Tweak
+  - message: "\u015Aluzy wysy\u0142aj\u0105 sygna\u0142 o stanie zaryglowania, a zaciski\
+      \ dokuj\u0105ce mo\u017Cna prze\u0142\u0105cza\u0107 przez po\u0142\u0105czenia\
+      \ sieciowe."
+    type: Tweak
+  - message: "G\u0142\xF3wny port mieszacza gaz\xF3w nazywa si\u0119 teraz portem\
+      \ tylnym, a filtry i mieszacze mo\u017Cna od razu budowa\u0107 w konfiguracji\
+      \ drugorz\u0119dnej i trzeciorz\u0119dnej."
+    type: Tweak
+  - message: "Piana metalowa nie niszczy ju\u017C powietrza na kafelku, na kt\xF3\
+      rym si\u0119 pojawia."
+    type: Tweak
+  - message: "Domy\u015Blne \u015Bwietl\xF3wki zn\xF3w \u015Bwiec\u0105 tak jasno\
+      \ jak wcze\u015Bniej."
+    type: Tweak
+  - message: "Wy\u015Bwietlacze z licznikiem czasu, tak\u017Ce w areszcie, obs\u0142\
+      uguj\u0105 wiadomo\u015Bci do 16 znak\xF3w."
+    type: Tweak
+  - message: "Przy wyjmowaniu przez Alt+klik wk\u0142ad PDA ma pierwsze\u0144stwo\
+      \ przed identyfikatorem."
+    type: Tweak
+  - message: "Mo\u017Cna przypi\u0105\u0107 si\u0119 do \u0142adubota."
+    type: Tweak
+  - message: "Kapsu\u0142y ratunkowe pojawiaj\u0105 si\u0119 z otwartymi \u015Bluzami."
+    type: Tweak
+  - message: "Zmiennokszta\u0142tny nie mo\u017Ce ju\u017C kupi\u0107 \u017C\u0105\
+      d\u0142a halucynogennego."
+    type: Remove
+  - message: "Bole nie pojawiaj\u0105 si\u0119 ju\u017C w szafkach ochrony."
+    type: Remove
+  - message: "Borgi serwisu nie zaczynaj\u0105 ju\u017C z modu\u0142em klauna."
+    type: Remove
+  - message: "Z szafy graj\u0105cej usuni\u0119to utw\xF3r Sunset."
+    type: Remove
+  - message: "Dysku nuklearnego nie da si\u0119 ju\u017C ukry\u0107 w pluszaku."
+    type: Remove
+  - message: "Ma\u0142e przedmioty nie maj\u0105 ju\u017C schowk\xF3w, a w schowkach\
+      \ przedmiot\xF3w nie da si\u0119 ukry\u0107 innych schowk\xF3w, paczek ani pojemnik\xF3\
+      w. Toalet i doniczek to nie dotyczy."
+    type: Remove
+  - message: "W\u015Br\xF3d losowych nazwisk zn\xF3w pojawiaj\u0105 si\u0119 nazwiska\
+      \ zako\u0144czone na \"-ska\", takie jak G\u0105ska czy Trzaska."
+    type: Fix
+  - message: "Akcenty nie nak\u0142adaj\u0105 si\u0119 ju\u017C kilka razy na t\u0119\
+      \ sam\u0105 wiadomo\u015B\u0107."
+    type: Fix
+  - message: "Obr\xF3t kamery nie rozje\u017Cd\u017Ca si\u0119, gdy ruch jest zablokowany."
+    type: Fix
+  - message: "Kamera w poje\u017Adzie p\u0142ynnie za nim pod\u0105\u017Ca, a pojazd\
+      \ nie odje\u017Cd\u017Ca sam po odpi\u0119ciu si\u0119 z niego."
+    type: Fix
+  - message: "Monitory kamer nie przestaj\u0105 nagle dzia\u0142a\u0107, kamery bezprzewodowe\
+      \ i kamery ksenoborg\xF3w zn\xF3w dzia\u0142aj\u0105, a obraz kamer poprawnie\
+      \ wy\u015Bwietla si\u0119 w oknie."
+    type: Fix
+  - message: "Przyciski wyboru w konsolach atmosferycznych, przycisk odbierania w\
+      \ holopadzie i przycisk zatwierdzania w konfiguratorze sieci zn\xF3w s\u0105\
+      \ zielone."
+    type: Fix
+  - message: "Przedmioty w pojemnikach nie pokazuj\u0105 opcji obracania, kt\xF3rych\
+      \ nie da si\u0119 u\u017Cy\u0107."
+    type: Fix
+  - message: "Podgl\u0105d budowy przesuni\u0119tych obiekt\xF3w, np. lamp, jest ustawiany\
+      \ we w\u0142a\u015Bciwym miejscu."
+    type: Fix
+  - message: "Strony ras w podr\u0119czniku s\u0105 dok\u0142adniejsze i czytelniejsze,\
+      \ a przepis na szcz\u0119\u015Bcie jest prostszy."
+    type: Fix
+  - message: "Zmiennokszta\u0142tny nie mo\u017Ce po\u017Cera\u0107 zombie, a podczas\
+      \ przemiany kopiuje tak\u017Ce niemot\u0119."
+    type: Fix
+  - message: "Czas regeneracyjnej stazy g\u0142owo\u015Blimaka skaluje si\u0119 poprawnie,\
+      \ a po jej przerwaniu, np. defibrylatorem, zaczyna si\u0119 czas odnowienia."
+    type: Fix
+  - message: "Zmiennokszta\u0142tny pochodz\u0105cy od reptilianina nie traci skrzyde\u0142\
+      , gdy jako \u0107ma nosi skafander."
+    type: Fix
+  - message: "Ukryci ninja, ksenoborgi, pud\u0142a maskuj\u0105ce i artefakty nie\
+      \ pod\u015Bwietlaj\u0105 si\u0119 ju\u017C po najechaniu kursorem."
+    type: Fix
+  - message: "Posi\u0142ki operator\xF3w nuklearnych s\u0105 na ekranie ko\u0144ca\
+      \ rundy pokazywane jako operatorzy nuklearni."
+    type: Fix
+  - message: "Konsole komunikacyjne Syndykatu i czarodzieja mog\u0105 nadawa\u0107\
+      \ og\u0142oszenia spoza stacji."
+    type: Fix
+  - message: "Rdze\u0144 statku-matki normalnie widzi ksenoborgi na monitorze kamer."
+    type: Fix
+  - message: "Zombie nie maj\u0105 ju\u017C jednej jednostki krwi."
+    type: Fix
+  - message: "Smok w stanie krytycznym ma poprawn\u0105 grafik\u0119, a jego animacja\
+      \ nie rozje\u017Cd\u017Ca si\u0119 po wyj\u015Bciu z tego stanu."
+    type: Fix
+  - message: "Kosmiczne karpie z miotu smoka mog\u0105 m\xF3wi\u0107."
+    type: Fix
+  - message: "Czarodzieje i ksenoborgi mog\u0105 pojawia\u0107 si\u0119 w trakcie\
+      \ rund dynamicznych."
+    type: Fix
+  - message: "Spawalnicze maski gazowe, maski mima i klauna ochrony, bananowe maski\
+      \ klauna i maski gazowe szwadronu \u015Bmierci nie ucinaj\u0105 ju\u017C pysk\xF3\
+      w Wulp\xF3w."
+    type: Fix
+  - message: "Leporazyna stabilizuje temperatur\u0119 na poziomie 306,15 K, wi\u0119\
+      c lepiej dzia\u0142a na wszystkie rasy."
+    type: Fix
+  - message: "Wymazy dzia\u0142aj\u0105 tak jak przed zmianami w kodzie."
+    type: Fix
+  - message: "Spowolnienie z g\u0142odu zn\xF3w zaczyna si\u0119 dopiero przy silnym\
+      \ g\u0142odzie, a nie przy lekkim."
+    type: Fix
+  - message: "Martwe moby nie reguluj\u0105 ju\u017C temperatury cia\u0142a."
+    type: Fix
+  - message: "Defibrylator nie zg\u0142asza obiektu nieo\u017Cywionego, gdy pacjent\
+      \ le\u017Cy na \u0142\xF3\u017Cku, a przyklejony defibrylator nie traci drugiej\
+      \ r\u0119ki przy pora\u017Ceniu samego siebie."
+    type: Fix
+  - message: "R\xF3\u017Cne rodzaje broni zadaj\u0105 poprawne obra\u017Cenia konstrukcjom."
+    type: Fix
+  - message: "Bomby rurowe i inne zapalniki bez mo\u017Cliwo\u015Bci ogl\u0119dzin\
+      \ nie pokazuj\u0105 czasu po podniesieniu."
+    type: Fix
+  - message: "Granaty do granatnika nazywaj\u0105 si\u0119 teraz pociskami granatnika\
+      \ i maj\u0105 opisy."
+    type: Fix
+  - message: "Medibot zn\xF3w poprawnie m\xF3wi kwesti\u0119 o zako\u0144czeniu leczenia."
+    type: Fix
+  - message: "No\u017Ce i inne ostre przedmioty zn\xF3w tn\u0105 k\u0142ody."
+    type: Fix
+  - message: "Medali nie da si\u0119 poci\u0105\u0107 na tkanin\u0119."
+    type: Fix
+  - message: "Mikrofal\xF3wki dzia\u0142aj\u0105 p\u0142ynniej, a przepisy z sk\u0142\
+      adnikami w stosach s\u0105 bardziej przewidywalne."
+    type: Fix
+  - message: "\u015Amieci po zjedzeniu pojawiaj\u0105 si\u0119 w tej samej r\u0119\
+      ce, a przetworzenie produktu ze \u015Bmieciami nie podwaja \u015Bmieci."
+    type: Fix
+  - message: "Moby bez d\u0142oni nie mog\u0105 prze\u0142\u0105cza\u0107 ustawie\u0144\
+      \ grilla elektrycznego."
+    type: Fix
+  - message: "No\u017Ce i inne ostre przedmioty zn\xF3w tn\u0105 k\u0142ody."
+    type: Fix
+  - message: "Dysza opryskiwacza nie wch\u0142ania ka\u0142u\u017C, gdy zbiornik na\
+      \ plecach jest pe\u0142ny."
+    type: Fix
+  - message: "Dysku nuklearnego nie da si\u0119 sprzeda\u0107, gdy jest w pojemniku."
+    type: Fix
+  - message: "Chipy teleportera wypadaj\u0105 z konsoli sterowania teleporterem przy\
+      \ jej demonta\u017Cu."
+    type: Fix
+  - message: "Kupione zdolno\u015Bci pAI zostaj\u0105 w urz\u0105dzeniu po wyj\u015B\
+      ciu z niego lub restarcie."
+    type: Fix
+  - message: "Drewniane podpory nie s\u0105 niewidzialne, gibtonit w skale \u017C\
+      elaznej zn\xF3w wybucha, a drzwi z paj\u0119czyny maj\u0105 animacj\u0119 otwierania."
+    type: Fix
+  - message: "Zespawanych drzwi nie da si\u0119 ju\u017C odspawa\u0107 i otworzy\u0107\
+      \ doorjackiem ani wirusem greytide, cho\u0107 nadal mo\u017Cna je zaryglowa\u0107\
+      . Gdy wpada na nie kto\u015B bez dost\u0119pu, migaj\u0105 \u015Bwiat\u0142\
+      ami odmowy."
+    type: Fix
+  - message: "Foli\u0105 do paczek nie da si\u0119 owin\u0105\u0107 zakotwiczonych\
+      \ przedmiot\xF3w, a paczka z przedmiotem wymagaj\u0105cym dw\xF3ch r\u0105k\
+      \ te\u017C wymaga dw\xF3ch r\u0105k."
+    type: Fix
+  - message: "Klatka dla chomika nie mie\u015Bci przedmiot\xF3w wi\u0119kszych od\
+      \ chomika."
+    type: Fix
+  - message: "Odebrane faksy zn\xF3w pokazuj\u0105 nadawc\u0119."
+    type: Fix
+  - message: "E-papieros dzia\u0142a ze skr\xF3tami aktywacji, np. z aktywacj\u0105\
+      \ przedmiotu w r\u0119ce."
+    type: Fix
+  - message: "Rozdrabniacz odczynnik\xF3w nie ma b\u0142\u0119d\xF3w grafiki przy\
+      \ obracaniu i pod\u015Bwietleniu."
+    type: Fix
+  - message: "Maszyna do odzyskiwania biomasy przyjmuje cia\u0142a przez przeci\u0105\
+      gni\u0119cie i upuszczenie, wi\u0119c dzia\u0142a tak\u017Ce dla niezdarnych\
+      \ postaci i informuje, gdy celu nie da si\u0119 przetworzy\u0107."
+    type: Fix
+  - message: "Portal nie mo\u017Ce po\u0142\u0105czy\u0107 si\u0119 z niezasilonym\
+      \ portalem."
+    type: Fix
+  - message: "Hak z link\u0105 nie pr\xF3buje przesuwa\u0107 ca\u0142ych planet, a\
+      \ przywo\u0142any ponownie pr\u0119t nieruchomy poprawnie si\u0119 porusza."
+    type: Fix
+  - message: "Nazwane siatki, np. ATS, maj\u0105 poprawne nazwy w konsolach promu."
+    type: Fix
+  - message: "Losowe spawnery zn\xF3w uwzgl\u0119dniaj\u0105 rzadkie warianty."
+    type: Fix
+  - message: "Kr\xF3l szczur\xF3w, stworzenia z wentylacji, artefakty bluespace, wycieki\
+      \ gazu, szkielety w szafkach i inne wydarzenia stacyjne nie dziej\u0105 si\u0119\
+      \ ju\u017C na automatycznej stacji handlowej ani w innych miejscach poza stacj\u0105\
+      ."
+    type: Fix
+  - message: "Smile jest zawsze dost\u0119pny jako rola ducha na pocz\u0105tku rundy,\
+      \ je\u015Bli jest na mapie."
+    type: Fix
+  - message: "Kosmiczne koty i syndykoty mieszcz\u0105 si\u0119 w transporterach dla\
+      \ zwierz\u0105t."
+    type: Fix
+  - message: "M\u0142ode z jajka wyklutego w pojemniku trafia do tego samego pojemnika."
+    type: Fix
+  - message: "Zw\u0142ok nie zaskakuje ju\u017C nikt wyskakuj\u0105cy z kartonu."
+    type: Fix
+  - message: "Kolor niekt\xF3rych oznacze\u0144 cia\u0142a jest ograniczony do koloru\
+      \ rasy."
+    type: Fix
+  - message: "Otwarcie ekwipunku szlamu nie psuje ju\u017C ekwipunku."
+    type: Fix
+  - message: "Motorniczy i niekt\xF3re role przywo\u0142ywane przez admin\xF3w maj\u0105\
+      \ automatyczne pod\u015Bwietlanie na czacie."
+    type: Fix
+  - message: "Kwark NT zn\xF3w czasem si\u0119 pojawia."
+    type: Fix
+  - message: "Krioksadon zn\xF3w odm\u0142adza ro\u015Bliny, ro\u015Bliny bez nasion\
+      \ nie daj\u0105 nasion w ekstraktorze, a grz\u0105dki bez ro\u015Bliny nie zu\u017C\
+      ywaj\u0105 odczynnik\xF3w."
+    type: Fix
+  - message: "Poprawiono tolerancje temperatur ro\u015Blin i mutacje tolerancji temperatury,\
+      \ a mutowanie zab\xF3jczych pomidor\xF3w nie pokazuje b\u0142\u0119du w grz\u0105\
+      dce."
+    type: Fix
+  - message: "Podw\xF3jne wentylacje zn\xF3w wsp\xF3\u0142pracuj\u0105 z alarmami\
+      \ atmosferycznymi."
+    type: Fix
+  - message: Martwy mim nie jest zasypywany komunikatami podczas pisania.
+    type: Fix
+  - message: "Opisy r\xF3\u017Cowych kombinezon\xF3w i sp\xF3dnic nie pokazuj\u0105\
+      \ ju\u017C tag\xF3w HTML, a w nazwach i opisach stroj\xF3w Kwatermistrza poprawiono\
+      \ liter\xF3wki."
+    type: Fix
+  - message: "Tram ma w\u0142asny prom ewakuacyjny."
+    type: Add
+  - message: "Na Exo przebudowano dzia\u0142 naukowy, dodano miejsce dla Psychologa\
+      \ i telepad logistyki, z kt\xF3rym \u0142\u0105czy si\u0119 konsola zam\xF3\
+      wie\u0144 dla za\u0142ogi. W magazynie EVA zmieniono uk\u0142ad i jest w nim\
+      \ o jedn\u0105 par\u0119 but\xF3w magnetycznych mniej."
+    type: Tweak
+  - message: "Sushi Station ma telepad logistyki od pocz\u0105tku rundy. Zmieniono\
+      \ uk\u0142ad magazynu EVA, w kt\xF3rym jest o jedn\u0105 par\u0119 but\xF3w\
+      \ magnetycznych mniej, a dystrybutor butli nie wydaje ju\u017C butli z plazm\u0105\
+      ."
+    type: Tweak
+  - message: "Na Sushi Station ujednolicono pompy atmosferyczne, dodano wentylacje\
+      \ na mostach, w\xF3zek inwalidzki i w\xF3zek wo\u017Anego, a przetw\xF3rnia\
+      \ rudy ma \u015Bluzy przeciwpo\u017Carowe na kraw\u0119dziach."
+    type: Tweak
+  - message: "Na Tram2 przesuni\u0119to \u015Bluz\u0119 przeciwpo\u017Carow\u0105\
+      , kt\xF3ra sta\u0142a na przetw\xF3rni rudy i j\u0105 mia\u017Cd\u017Cy\u0142\
+      a."
+    type: Tweak
+  - message: "Na Box gruntownie przebudowano magazyn EVA, dodano przycisk w chemii,\
+      \ zlew w chemii jest od pocz\u0105tku pe\u0142ny, a spawn myszy przeniesiono\
+      \ z pomieszczenia, z kt\xF3rego nie da si\u0119 wyj\u015B\u0107."
+    type: Tweak
+  - message: "Na Elkridge zmieniono uk\u0142ad magazynu EVA, \u015Bluza mi\u0119dzy\
+      \ logistyk\u0105 a odzyskiem wymaga dost\u0119pu odzysku, przyciski drzwi s\u0105\
+      \ po\u0142\u0105czone, a przyciski wo\u017Anego usuni\u0119to."
+    type: Tweak
+  - message: "Na Marathon magazyn EVA nie ma ju\u017C wej\u015Bcia przez drzwi przeciwwybuchowe."
+    type: Tweak
+  - message: "Planeta operator\xF3w nuklearnych nie ma dachu i u\u017Cywa naturalnego\
+      \ \u015Bwiat\u0142a."
+    type: Tweak
+  - message: "Na Sushi Station \u015Bwiat\u0142a zewn\u0119trzne na przylotach s\u0105\
+      \ zasilone, ko\u015Bci\xF3\u0142 w tubie nie opr\xF3\u017Cnia sieci dystrybucji,\
+      \ a \u015Bluzy przeciwpo\u017Carowe w kuchni zatrzymuj\u0105 ta\u015Bmoci\u0105\
+      g. Silos materia\u0142\xF3w w dziale naukowym stoi za zamkni\u0119tymi drzwiami\
+      \ okiennymi."
+    type: Fix
+  - message: "Na Plasma dodano brakuj\u0105ce alarmy przeciwpo\u017Carowe i inne drobne\
+      \ poprawki, alarm w botanice jest po\u0142\u0105czony z wentylacjami i odp\u0142\
+      ywami, a wszystkie przyciski w biurze Kierownika Personelu daj\u0105 si\u0119\
+      \ klikn\u0105\u0107."
+    type: Fix
+  - message: "Na Box i Marathon zn\xF3w mo\u017Cna gra\u0107 jako Psycholog."
+    type: Fix
+  - message: "Na Packed \u015Bluza mi\u0119dzy ochron\u0105 a szatni\u0105 wi\u0119\
+      \u017Ani\xF3w wymaga dost\u0119pu do aresztu."
+    type: Fix
+  - message: "Na Snowball poprawnie dzia\u0142a ustawienie t\u0142a niskiej jako\u015B\
+      ci."
+    type: Fix
+  - message: "Konfiguracje map stacji poprawnie uwzgl\u0119dniaj\u0105 minimaln\u0105\
+      \ liczb\u0119 miejsc na stanowiskach."
+    type: Fix
+  id: 10097
+  time: '2026-11-06T19:43:41.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1198
+- author: Fildrance
+  changes:
+  - message: "W\xF3zek wo\u017Anego dosta\u0142 fajny interfejs radialny"
+    type: Add
+  id: 10098
+  time: '2026-11-07T06:41:23.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1205
