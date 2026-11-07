@@ -4,7 +4,7 @@
   name: materials-replisteel
   icon: { sprite: _Polonium/Objects/Materials/replisteel.rsi, state: replisteel }
   color: "#6d6587"
-  price: 0
+  price: 0.60
 
 - type: stack
   parent: BaseSheetStack

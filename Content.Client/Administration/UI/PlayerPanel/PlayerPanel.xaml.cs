@@ -27,6 +27,7 @@ public sealed partial class PlayerPanel : FancyWindow
     public event Action? OnLogs;
     public event Action? OnDelete;
     public event Action? OnRejuvenate;
+    public event Action<string?>? OnObjectives; // Polonium
 
     public NetUserId? TargetPlayer;
     public string? TargetUsername;
@@ -55,6 +56,7 @@ public sealed partial class PlayerPanel : FancyWindow
         LogsButton.OnPressed += _ => OnLogs?.Invoke();
         DeleteButton.OnPressed += _ => OnDelete?.Invoke();
         RejuvenateButton.OnPressed += _ => OnRejuvenate?.Invoke();
+        ObjectivesButton.OnPressed += _ => OnObjectives?.Invoke(TargetUsername); // Polonium
     }
 
     public void SetUsername(string player)
@@ -142,5 +144,6 @@ public sealed partial class PlayerPanel : FancyWindow
         LogsButton.Disabled = !_adminManager.CanCommand("adminlogs");
         RejuvenateButton.Disabled = !_adminManager.HasFlag(AdminFlags.Debug);
         DeleteButton.Disabled = !_adminManager.HasFlag(AdminFlags.Debug);
+        ObjectivesButton.Disabled = !_adminManager.CanCommand("objectives"); // Polonium
     }
 }

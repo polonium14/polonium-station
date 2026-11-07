@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Joker66613 <66482446+Joker66613@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 #nullable enable
 using System.Linq;
 using System.Numerics;
@@ -95,6 +100,34 @@ public sealed class XenoLifecycleTest : GameTest
             Assert.That(leaped, Is.False);
             Assert.That(Mask(human), Is.Null);
             Assert.That(SComp<FacehuggerComponent>(hugger).State, Is.EqualTo(FacehuggerState.Dead));
+        });
+    }
+
+    /// <summary>
+    /// Mrówka ginie od obrażeń przy przyczepieniu. Gdyby obrażenia zadać w trakcie wkładania do slotu maski,
+    /// rozpadnięcie się ofiary opróżniłoby jej ekwipunek w połowie wkładania.
+    /// </summary>
+    [Test]
+    public async Task LeapOnFragileVictim()
+    {
+        var coords = await Setup();
+        EntityUid ant = default;
+        EntityUid hugger = default;
+        var leaped = false;
+
+        await Pair.Server.WaitPost(() =>
+        {
+            ant = SSpawnAtPosition("MobAnt", coords);
+            hugger = SSpawnAtPosition("XenoFacehugger", coords);
+            leaped = SEntMan.System<FacehuggerSystem>().TryLeap((hugger, SComp<FacehuggerComponent>(hugger)), ant);
+        });
+
+        await Pair.Server.WaitRunTicks(3);
+
+        await Pair.Server.WaitAssertion(() =>
+        {
+            Assert.That(leaped, Is.True);
+            Assert.That(SEntMan.Deleted(ant), Is.True, "Mrówka powinna zginąć od obrażeń przy przyczepieniu");
         });
     }
 

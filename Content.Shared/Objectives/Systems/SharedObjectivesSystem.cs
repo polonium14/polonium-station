@@ -60,6 +60,7 @@ public abstract partial class SharedObjectivesSystem : EntitySystem
 
         if (!CanBeAssigned(uid, mindId, mind, comp))
         {
+            Del(uid); // Polonium: the log says it was deleted, but it leaked, admins can retry this from the objectives window
             Log.Warning($"Objective {proto} did not match the requirements for {_mind.MindOwnerLoggingString(mind)}, deleted it");
             return null;
         }

@@ -46,7 +46,8 @@
     Glass: 300
     Gold: 300
     Plasma: 300
-    Uranium: 100
+    # Wyłączone, bo przy małym online nie ma nikogo do wydobycia uranu
+    # Uranium: 100
 
 - type: latheRecipe
   id: ModSuitCoreCivilian

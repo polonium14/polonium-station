@@ -5,7 +5,6 @@ using Content.Server.VentHorde.Components;
 using Content.Server.VentHorde.Systems;
 using Content.Shared.EntityTable;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Station.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -94,24 +93,8 @@ public sealed partial class VentHordeRule : StationEventSystem<VentHordeRuleComp
             return null;
         }
 
-        // Query the possible locations
-        var locations = EntityQueryEnumerator<VentCritterSpawnLocationComponent, TransformComponent>();
-        var validLocations = new List<EntityUid>();
-
-        // Filter to things on the same station
-        while (locations.MoveNext(out var uid, out _, out var transform))
-        {
-            if (!transform.Anchored)
-                continue;
-
-            if (HasComp<VentHordeSpawnerComponent>(uid))
-                continue;
-
-            if (CompOrNull<StationMemberComponent>(transform.GridUid)?.Station == station)
-            {
-                validLocations.Add(uid);
-            }
-        }
+        var validLocations = StationSystem.GetEntitiesWithComponentOnStation<VentCritterSpawnLocationComponent>(station.Value, true);
+        validLocations.RemoveWhere(uid => HasComp<VentHordeSpawnerComponent>(uid));
 
         // Pick one at random
         if (validLocations.Count != 0)

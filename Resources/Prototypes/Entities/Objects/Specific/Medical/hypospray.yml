@@ -398,7 +398,7 @@
 - type: entity
   parent: ChemicalMedipen
   id: BoneAutoInjector
-  name: bone auto-injector
+  name: bone auto-injector (osteodine)
   description: A single-dose, non-refillable medipen containing osteodine, used to quickly and easily mend broken bones.
   components:
   - type: Item

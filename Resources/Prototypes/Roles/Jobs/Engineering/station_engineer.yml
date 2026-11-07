@@ -4,9 +4,11 @@
   description: job-description-engineer
   playTimeTracker: JobStationEngineer
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 1.25h
+    - !type:RoleTimeRequirement
+      role: JobTechnicalAssistant
+      time: 2h
+    - !type:OverallPlaytimeRequirement
+      time: 2h
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce

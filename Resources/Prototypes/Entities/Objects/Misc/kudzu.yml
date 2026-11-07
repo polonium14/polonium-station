@@ -164,7 +164,7 @@
   suffix: Angry, Floral Anomaly
   components:
   - type: Kudzu
-    spreadChance: 0.2
+    spreadChance: 0.175
   - type: EntityTableSpawner
     table: !type:GroupSelector
       children:
@@ -307,7 +307,7 @@
       map: [base]
   - type: Kudzu
     growthTickChance: 0.2
-    spreadChance: 0.99
+    spreadChance: 0.5
   - type: EntityTableSpawner
     table: !type:GroupSelector
       children:

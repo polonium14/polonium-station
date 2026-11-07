@@ -4,6 +4,8 @@
   graph:
     - node: start
       actions:
+        - !type:EmptyContainer # Polonium: a medical bed gives back its gas tank, other beds have no such container
+          container: gasTankSlot
         - !type:DestroyEntity {}
       edges:
         - to: bed

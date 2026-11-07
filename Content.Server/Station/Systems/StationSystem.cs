@@ -308,6 +308,38 @@ public sealed partial class StationSystem : SharedStationSystem
 
         QueueDel(station);
     }
+
+    /// <summary>
+    /// Get entities with <see cref="TComponent"/> on the station's largest grid.
+    /// Other grids that belong to the station, like the trade station, are skipped.
+    /// </summary>
+    /// <param name="station">The station to search for the entities.</param>
+    /// <param name="onlyAnchored">Whether to only get anchored entities.
+    /// Good check for air vents, bad for containers like crates.</param>
+    /// <returns>All matching entities.</returns>
+    public HashSet<Entity<TComponent>> GetEntitiesWithComponentOnStation<TComponent>(EntityUid station, bool onlyAnchored)
+        where TComponent : IComponent
+    {
+        HashSet<Entity<TComponent>> entities = [];
+
+        var grid = GetLargestGrid(station);
+        if (grid is null)
+            return entities;
+
+        var locations = EntityQueryEnumerator<TComponent, TransformComponent>();
+        while (locations.MoveNext(out var uid, out var component, out var transform))
+        {
+            if (onlyAnchored && !transform.Anchored)
+                continue;
+
+            if (transform.GridUid != grid)
+                continue;
+
+            entities.Add((uid, component));
+        }
+
+        return entities;
+    }
 }
 
 /// <summary>
@@ -315,92 +347,67 @@ public sealed partial class StationSystem : SharedStationSystem
 /// This is the ideal point to add components to it.
 /// </summary>
 [PublicAPI]
-public sealed class StationInitializedEvent : EntityEventArgs
+public sealed class StationInitializedEvent(EntityUid station) : EntityEventArgs
 {
     /// <summary>
     /// Station this event is for.
     /// </summary>
-    public EntityUid Station;
-
-    public StationInitializedEvent(EntityUid station)
-    {
-        Station = station;
-    }
+    public EntityUid Station = station;
 }
 
 /// <summary>
 /// Directed event fired on a station when a grid becomes a member of the station.
 /// </summary>
 [PublicAPI]
-public sealed class StationGridAddedEvent : EntityEventArgs
+public sealed class StationGridAddedEvent(EntityUid gridId, EntityUid station, bool isSetup) : EntityEventArgs
 {
     /// <summary>
     /// ID of the grid added to the station.
     /// </summary>
-    public EntityUid GridId;
+    public EntityUid GridId = gridId;
 
     /// <summary>
     /// EntityUid of the station this grid was added to.
     /// </summary>
-    public EntityUid Station;
+    public EntityUid Station = station;
 
     /// <summary>
     /// Indicates that the event was fired during station setup,
     /// so that it can be ignored if StationInitializedEvent was already handled.
     /// </summary>
-    public bool IsSetup;
-
-    public StationGridAddedEvent(EntityUid gridId, EntityUid station, bool isSetup)
-    {
-        GridId = gridId;
-        Station = station;
-        IsSetup = isSetup;
-    }
+    public bool IsSetup = isSetup;
 }
 
 /// <summary>
 /// Directed event fired on a station when a grid is no longer a member of the station.
 /// </summary>
 [PublicAPI]
-public sealed class StationGridRemovedEvent : EntityEventArgs
+public sealed class StationGridRemovedEvent(EntityUid gridId, EntityUid station) : EntityEventArgs
 {
     /// <summary>
     /// ID of the grid removed from the station.
     /// </summary>
-    public EntityUid GridId;
+    public EntityUid GridId = gridId;
 
     /// <summary>
     /// EntityUid of the station this grid was added to.
     /// </summary>
-    public EntityUid Station;
-
-    public StationGridRemovedEvent(EntityUid gridId, EntityUid station)
-    {
-        GridId = gridId;
-        Station = station;
-    }
+    public EntityUid Station = station;
 }
 
 /// <summary>
 /// Directed event fired on a station when it is renamed.
 /// </summary>
 [PublicAPI]
-public sealed class StationRenamedEvent : EntityEventArgs
+public sealed class StationRenamedEvent(string oldName, string newName) : EntityEventArgs
 {
     /// <summary>
     /// Prior name of the station.
     /// </summary>
-    public string OldName;
+    public string OldName = oldName;
 
     /// <summary>
     /// New name of the station.
     /// </summary>
-    public string NewName;
-
-    public StationRenamedEvent(string oldName, string newName)
-    {
-        OldName = oldName;
-        NewName = newName;
-    }
+    public string NewName = newName;
 }
-

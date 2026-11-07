@@ -200,7 +200,7 @@ namespace Content.Server.Cargo.Systems
                 PlayDenySound(uid, component);
             }
 
-            var cost = product.Cost * order.OrderQuantity;
+            var cost = _priceMultiplier.GetBuyCost(station, product) * order.OrderQuantity; // Polonium: per-round buy multiplier
             var accountBalance = GetBalanceFromAccount((station.Value, bank), order.Account);
 
             // Not enough balance
@@ -342,13 +342,14 @@ namespace Content.Server.Cargo.Systems
 
             var paper = EnsureComp<PaperComponent>(label);
             var msg = new FormattedMessage();
+            var unitCost = _priceMultiplier.GetBuyCost(_station.GetOwningStation(uid), product); // Polonium: per-round buy multiplier
 
             msg.AddMarkupPermissive(Loc.GetString("cargo-acquisition-slip-body",
                 ("product", product.Name),
                 ("description", product.Description),
-                ("unit", product.Cost),
+                ("unit", unitCost), // Polonium
                 ("amount", args.Amount),
-                ("cost", product.Cost * args.Amount),
+                ("cost", unitCost * args.Amount), // Polonium
                 ("orderer", args.Requester),
                 ("reason", args.Reason)));
             _paperSystem.SetContent((label, paper), msg.ToMarkup());

@@ -42,12 +42,6 @@ public sealed partial class GasLeakRuleComponent : Component
     public float LeakCooldown = 1.0f;
 
     /// <summary>
-    /// The station where the leak is located.
-    /// </summary>
-    [DataField]
-    public EntityUid TargetStation;
-
-    /// <summary>
     /// The specific grid where the leak is located.
     /// </summary>
     [DataField]

@@ -4,6 +4,7 @@ using Content.Server.Popups;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Stack;
 using Content.Server.Station.Systems;
+using Content.Shared._Polonium.Cargo; // Polonium
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Cargo;
@@ -39,6 +40,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
     [Dependency] private MetaDataSystem _metaSystem = default!;
     [Dependency] private RadioSystem _radio = default!;
     [Dependency] private IdentitySystem _identity = default!;
+    [Dependency] private CargoPriceMultiplierSystem _priceMultiplier = default!; // Polonium: per-round cargo price multipliers
 
     [Dependency] private EntityQuery<CargoSellBlacklistComponent> _cargoSellBlacklistQuery = default!;
     [Dependency] private EntityQuery<MobStateComponent> _mobStateQuery = default!;

@@ -28,13 +28,13 @@
   playTimeTracker: JobBlueshieldOfficer
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 10h # 10 hours
+      time: 6h
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 2.5h # 2.5 hours
+      time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 5h # 5 hours
+      time: 5h
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshieldOfficer"
   requireAdminNotify: true

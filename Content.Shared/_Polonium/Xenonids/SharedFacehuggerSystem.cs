@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Joker66613 <66482446+Joker66613@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._RMC14.Xenonids;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Body;
@@ -63,6 +68,7 @@ public abstract partial class SharedFacehuggerSystem : EntitySystem
         SubscribeLocalEvent<FacehuggerComponent, GotEquippedEvent>(OnEquipped);
         SubscribeLocalEvent<FacehuggerComponent, GotUnequippedEvent>(OnUnequipped);
         SubscribeLocalEvent<FacehuggerComponent, DamageDealtEvent>(OnDamageDealt);
+        SubscribeLocalEvent<FacehuggerAttachedEvent>(OnAttached);
     }
 
     private void OnMapInit(Entity<FacehuggerComponent> ent, ref MapInitEvent args)
@@ -273,15 +279,23 @@ public abstract partial class SharedFacehuggerSystem : EntitySystem
         hugger.Comp.ImpregnateAt = Timing.CurTime + RandomTime(hugger.Comp.MinImpregnationTime, hugger.Comp.MaxImpregnationTime);
 
         if (!hugger.Comp.Sterile)
-        {
-            _damageable.TryChangeDamage(victim, AttachDamage, origin: hugger);
-            _statusEffects.TryAddStatusEffectDuration(victim, SleepingSystem.StatusEffectForcedSleeping, hugger.Comp.KnockoutTime);
-        }
+            QueueLocalEvent(new FacehuggerAttachedEvent(hugger, victim));
 
         // Żeby nie skoczył od razu na tego, kto go zerwie.
         SetState(hugger, FacehuggerState.Idle);
         hugger.Comp.WakeAt = null;
         Dirty(hugger);
+    }
+
+    private void OnAttached(FacehuggerAttachedEvent args)
+    {
+        if (TerminatingOrDeleted(args.Victim)
+            || !TryComp<FacehuggerComponent>(args.Hugger, out var hugger)
+            || hugger.Victim != args.Victim)
+            return;
+
+        _damageable.TryChangeDamage(args.Victim, AttachDamage, origin: args.Hugger);
+        _statusEffects.TryAddStatusEffectDuration(args.Victim, SleepingSystem.StatusEffectForcedSleeping, hugger.KnockoutTime);
     }
 
     public void SetState(Entity<FacehuggerComponent> ent, FacehuggerState state)
@@ -331,4 +345,14 @@ public abstract partial class SharedFacehuggerSystem : EntitySystem
     {
         return TimeSpan.FromSeconds(Random.NextDouble(min.TotalSeconds, max.TotalSeconds));
     }
+}
+
+/// <summary>
+/// Raised queued after a facehugger lands on a face, so its damage and knockout happen outside the mask slot insertion.
+/// A class, because queued events cannot be structs.
+/// </summary>
+public sealed class FacehuggerAttachedEvent(EntityUid hugger, EntityUid victim) : EntityEventArgs
+{
+    public readonly EntityUid Hugger = hugger;
+    public readonly EntityUid Victim = victim;
 }

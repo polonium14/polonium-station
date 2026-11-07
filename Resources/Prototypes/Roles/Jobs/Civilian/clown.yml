@@ -3,6 +3,12 @@
   name: job-name-clown
   description: job-description-clown
   playTimeTracker: JobClown
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 1h
+    - !type:RoleTimeRequirement
+      role: JobMime
+      time: 1h
   startingGear: ClownGear
   icon: "JobIconClown"
   supervisors: job-supervisors-hop

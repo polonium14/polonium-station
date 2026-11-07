@@ -1,56 +1,56 @@
-- type: vendingMachineInventory
+- type: vendingMachineInventory  #Polonium: Changes to order of items to match alfabetical order in polish language.
   id: ChemVendInventory
   startingInventory:
     Jug: 4
-    JugAluminium: 2
-    JugCarbon: 4
-    JugChlorine: 1
-    JugCopper: 2
-    JugEthanol: 2
-    JugFluorine: 1
-    JugHydrogen: 3
-    JugIodine: 1
-    JugIron: 2
-    JugLithium: 2
-    JugMercury: 1
-    JugNitrogen: 3
-    JugOxygen: 3
-    JugPhosphorus: 1
-    JugPotassium: 2
-    JugRadium: 1
-    JugSilicon: 2
-    JugSodium: 2
-    JugSugar: 3
-    JugSulfur: 1
+    JugAluminium: 2   # Aluminium
+    JugNitrogen: 3    # Azot
+    JugChlorine: 1    # Chlor
+    JugSugar: 3       # Cukier
+    JugEthanol: 2     # Etanol
+    JugFluorine: 1    # Fluor
+    JugPhosphorus: 1  # Fosfor
+    JugIodine: 1      # Jod
+    JugSilicon: 2     # Krzem
+    JugLithium: 2     # Lit
+    JugCopper: 2      # Miedź
+    JugPotassium: 2   # Potas
+    JugRadium: 1      # Rad
+    JugMercury: 1     # Rtęć
+    JugSulfur: 1      # Siarka
+    JugSodium: 2      # Sód
+    JugOxygen: 3      # Tlen
+    JugCarbon: 4      # Węgiel
+    JugHydrogen: 3    # Wodór
+    JugIron: 2        # Żelazo
   contrabandInventory:
     DrinkLithiumFlask: 1
     StrangePill: 3
     ChemistryBottleToxin: 1
 
-- type: vendingMachineInventory
+- type: vendingMachineInventory #Polonium: Changes to order of items to match alfabetical order in polish language.
   id: ChemVendInventorySyndicate
   startingInventory:
     Jug: 4
-    JugAluminium: 2
-    JugCarbon: 4
-    JugChlorine: 1
-    JugCopper: 2
-    JugEthanol: 2
-    JugFluorine: 1
-    JugHydrogen: 3
-    JugIodine: 1
-    JugIron: 2
-    JugLithium: 2
-    JugMercury: 1
-    JugNitrogen: 3
-    JugOxygen: 3
-    JugPhosphorus: 1
-    JugPotassium: 2
-    JugRadium: 1
-    JugSilicon: 2
-    JugSodium: 2
-    JugSugar: 3
-    JugSulfur: 1
+    JugAluminium: 2   # Aluminium
+    JugNitrogen: 3    # Azot
+    JugChlorine: 1    # Chlor
+    JugSugar: 3       # Cukier
+    JugEthanol: 2     # Etanol
+    JugFluorine: 1    # Fluor
+    JugPhosphorus: 1  # Fosfor
+    JugIodine: 1      # Jod
+    JugSilicon: 2     # Krzem
+    JugLithium: 2     # Lit
+    JugCopper: 2      # Miedź
+    JugPotassium: 2   # Potas
+    JugRadium: 1      # Rad
+    JugMercury: 1     # Rtęć
+    JugSulfur: 1      # Siarka
+    JugSodium: 2      # Sód
+    JugOxygen: 3      # Tlen
+    JugCarbon: 4      # Węgiel
+    JugHydrogen: 3    # Wodór
+    JugIron: 2        # Żelazo
     JugWeldingFuel: 1
     PlasmaChemistryVial: 1
   contrabandInventory:

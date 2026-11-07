@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Client.Cargo.Systems;
 using Content.Client.UserInterface.Controls;
+using Content.Shared._Polonium.Cargo; // Polonium
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Prototypes;
@@ -24,6 +25,7 @@ namespace Content.Client.Cargo.UI
         private readonly IPrototypeManager _protoManager;
         private readonly CargoSystem _cargoSystem;
         private readonly SpriteSystem _spriteSystem;
+        private readonly CargoPriceMultiplierSystem _priceMultiplier; // Polonium: per-round cargo price multipliers
         private EntityUid _owner;
         private EntityUid? _station;
 
@@ -51,6 +53,7 @@ namespace Content.Client.Cargo.UI
             _protoManager = protoManager;
             _cargoSystem = entMan.System<CargoSystem>();
             _spriteSystem = spriteSystem;
+            _priceMultiplier = entMan.System<CargoPriceMultiplierSystem>(); // Polonium
             _owner = owner;
 
             _orderConsoleQuery = _entityManager.GetEntityQuery<CargoOrderConsoleComponent>();
@@ -160,7 +163,7 @@ namespace Content.Client.Cargo.UI
                         Product = prototype,
                         ProductName = { Text = prototype.Name },
                         MainButton = { ToolTip = prototype.Description },
-                        PointCost = { Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", prototype.Cost.ToString())) },
+                        PointCost = { Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", _priceMultiplier.GetBuyCost(_station, prototype).ToString())) }, // Polonium: per-round buy multiplier
                         Icon = { Texture = _spriteSystem.Frame0(prototype.Icon) },
                     };
                     button.MainButton.OnPressed += args =>
@@ -230,7 +233,7 @@ namespace Content.Client.Cargo.UI
                             "cargo-console-menu-order-row-title",
                             ("productName", productName),
                             ("orderAmount", order.OrderQuantity),
-                            ("orderPrice", productProto.Cost)),
+                            ("orderPrice", _priceMultiplier.GetBuyCost(_station, productProto))), // Polonium: per-round buy multiplier
                     },
 
                     Stride =

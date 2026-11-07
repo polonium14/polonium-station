@@ -4,7 +4,7 @@ meta:
   engineVersion: 291.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/20/2026 15:24:02
+  time: 10/26/2026 12:08:33
   entityCount: 7317
 maps:
 - 1
@@ -24700,14 +24700,6 @@ entities:
       pos: 15.5,3.5
     - type: FaxMachine
       name: Engineering
-  - uid: 2277
-    components:
-    - type: Transform
-      parent: 2
-      pos: 2.5,-0.5
-    - type: FaxMachine
-      receiveNukeCodes: True
-      name: Bridge
   - uid: 2278
     components:
     - type: Transform
@@ -24720,6 +24712,13 @@ entities:
     - type: Transform
       parent: 7133
       pos: -0.5,10.5
+- proto: FaxMachineCaptain
+  entities:
+  - uid: 2277
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5,-0.5
 - proto: FaxMachineSyndie
   entities:
   - uid: 2279

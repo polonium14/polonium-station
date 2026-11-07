@@ -53,9 +53,9 @@
   description: A uniform issued to the Nanotrasen troops, usually it comes with a car.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuits/Security/security.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/security.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuits/Security/security.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/security.rsi # Polonium: Corvax sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -75,9 +75,9 @@
   description: A uniform made of strong material, for day to day wear. Awarded to senior officers so they feel better about their time spent on the force.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuits/Security/security_grey.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/security_grey.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuits/Security/security_grey.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/security_grey.rsi # Polonium: Corvax sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -99,9 +99,9 @@
   description: The head of security's service uniform, for when you anticipate a war on mothroaches.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuits/Security/hos.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/hos.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuits/Security/hos.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/hos.rsi # Polonium: Corvax sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -134,6 +134,6 @@
   description: A uniform made of strong material, providing robust protection.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuits/Security/security.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/security.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuits/Security/security.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuits/Security/security.rsi # Polonium: Corvax sprites

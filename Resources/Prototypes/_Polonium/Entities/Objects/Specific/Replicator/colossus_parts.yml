@@ -138,6 +138,8 @@
       shader: unshaded
   - type: Item
     size: Normal
+  - type: StaticPrice
+    price: 2500
   - type: PointLight
     radius: 1.5
     energy: 1.5

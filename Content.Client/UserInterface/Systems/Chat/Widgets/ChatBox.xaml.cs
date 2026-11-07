@@ -21,6 +21,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Client._Polonium.Chat; // Polonium: chat stacking
 using Content.Client._Polonium.RichText;
 using Content.Client.RichText;
 using Content.Client.UserInterface.Systems.Chat.Controls;
@@ -33,6 +34,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Audio;
+using Robust.Shared.Configuration; // Polonium: chat stacking
 using Robust.Shared.Input;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
@@ -46,9 +48,11 @@ public partial class ChatBox : UIWidget
 {
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private ILogManager _log = default!;
+    [Dependency] private IConfigurationManager _cfg = default!; // Polonium: chat stacking
 
     private readonly ISawmill _sawmill;
     private readonly ChatUIController _controller;
+    private readonly ChatRepeatStacker _repeatStacker; // Polonium: chat stacking
 
     public bool Main { get; set; }
 
@@ -58,6 +62,7 @@ public partial class ChatBox : UIWidget
     {
         RobustXamlLoader.Load(this);
         _sawmill = _log.GetSawmill("chat");
+        _repeatStacker = new ChatRepeatStacker(_cfg); // Polonium: chat stacking
 
         ChatInput.Input.OnTextEntered += OnTextEntered;
         ChatInput.Input.OnKeyBindDown += OnInputKeyBindDown;
@@ -93,7 +98,7 @@ public partial class ChatBox : UIWidget
 
         var color = msg.MessageColorOverride ?? msg.Channel.TextColor();
 
-        AddLine(msg.WrappedMessage, color, allowUrl: msg.AllowHyperlinks);
+        AddLine(msg.WrappedMessage, color, allowUrl: msg.AllowHyperlinks, repeatSource: msg); // Polonium: chat stacking
     }
 
     private void OnHighlightsUpdated(string highlights)
@@ -116,6 +121,7 @@ public partial class ChatBox : UIWidget
     public void Repopulate()
     {
         Contents.Clear();
+        _repeatStacker.Clear(); // Polonium: chat stacking
 
         foreach (var message in _controller.History)
         {
@@ -126,6 +132,7 @@ public partial class ChatBox : UIWidget
     private void OnChannelFilter(ChatChannel channel, bool active)
     {
         Contents.Clear();
+        _repeatStacker.Clear(); // Polonium: chat stacking
 
         foreach (var message in _controller.History)
         {
@@ -143,12 +150,16 @@ public partial class ChatBox : UIWidget
         _controller.UpdateHighlights(highlighs);
     }
 
-    public void AddLine(string message, Color color, bool allowUrl = false)
+    public void AddLine(string message, Color color, bool allowUrl = false, ChatMessage? repeatSource = null) // Polonium: chat stacking
     {
         var formatted = new FormattedMessage(3);
         formatted.PushColor(color);
         formatted.AddMarkupOrThrow(message);
         formatted.Pop();
+
+        // Polonium: merge a repeated server message into its earlier line
+        if (repeatSource != null && _repeatStacker.TryStack(Contents, formatted, repeatSource, color, allowUrl))
+            return;
 
         if (allowUrl)
         {

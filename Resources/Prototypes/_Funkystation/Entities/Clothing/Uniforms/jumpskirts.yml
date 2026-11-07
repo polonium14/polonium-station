@@ -18,9 +18,9 @@
   description: A uniform made of strong material, for day to day wear.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirts/Security/security.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/security.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirts/Security/security.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/security.rsi # Polonium: Corvax sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -29,9 +29,9 @@
   description: A uniform made of strong material, for day to day wear. Awarded to senior officers so they feel better about their time spent on the force.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirts/Security/security_grey.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/security_grey.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirts/Security/security_grey.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/security_grey.rsi # Polonium: Corvax sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -40,9 +40,9 @@
   description: A uniform made of strong material, for special occasions.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirts/Security/security.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/security.rsi # Polonium: Corvax sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirts/Security/security.rsi
+    sprite: _Polonium/Clothing/Uniforms/Jumpskirts/Security/security.rsi # Polonium: Corvax sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
