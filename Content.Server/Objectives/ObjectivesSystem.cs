@@ -86,12 +86,20 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
         // ActiveGameRuleComponent. Antag rules that were added but lost their active component before
         // round end (e.g. dynamic/delayed rules) would otherwise vanish from the summary entirely.
         var query = EntityQueryEnumerator<GameRuleComponent>();
+        var listedMinds = new HashSet<EntityUid>(); // Polonium: custom objectives of unlisted minds
         while (query.MoveNext(out var uid, out _))
         {
             var info = new ObjectivesTextGetInfoEvent(new List<(EntityUid, string)>(), string.Empty);
             RaiseLocalEvent(uid, ref info);
             if (info.Minds.Count == 0)
                 continue;
+
+            // Polonium
+            foreach (var (mindId, _) in info.Minds)
+            {
+                listedMinds.Add(mindId);
+            }
+            // Polonium end
 
             // first group the gamerules by their agents, for example 2 different dragons
             var agent = info.AgentName;
@@ -147,13 +155,16 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
 
             ev.AddLine(result.AppendLine().ToString());
         }
+
+        AppendCustomObjectiveMinds(ref ev, listedMinds); // Polonium: admin objectives of non-antags
     }
 
     /// <summary>
     /// Generates a summary for a list of antag minds based on their agent.
     /// Contains the objective issuer, objectives and completion rate.
     /// </summary>
-    private void AddSummary(StringBuilder result, string agent, List<(EntityUid, string)> minds)
+    private void AddSummary(StringBuilder result, string agent, List<(EntityUid, string)> minds,
+        string withObjectivesLoc = "objectives-with-objectives") // Polonium: header for minds without an antag role
     {
         var agentSummaries = new List<(string summary, float successRate, int completedObjectives)>();
 
@@ -175,7 +186,7 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
             var completedObjectives = 0;
             var totalObjectives = 0;
             var agentSummary = new StringBuilder();
-            agentSummary.AppendLine(Loc.GetString("objectives-with-objectives", ("custody", custody), ("title", title), ("agent", agent)));
+            agentSummary.AppendLine(Loc.GetString(withObjectivesLoc, ("custody", custody), ("title", title), ("agent", agent))); // Polonium: withObjectivesLoc
 
             foreach (var objectiveGroup in objectives.GroupBy(o => Comp<ObjectiveComponent>(o).Issuer))
             {
@@ -208,7 +219,7 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
                     else if (progress > 0.99f)
                     {
                         agentSummary.AppendLine(Loc.GetString(
-                            "objectives-objective-success",
+                            IsCustomObjective(objective) ? "objectives-custom-objective-success" : "objectives-objective-success", // Polonium: no percentage
                             ("objective", objectiveTitle),
                             ("progress", progress)
                         ));
@@ -217,7 +228,7 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
                     else if (progress <= 0.99f && progress >= 0.5f)
                     {
                         agentSummary.AppendLine(Loc.GetString(
-                            "objectives-objective-partial-success",
+                            IsCustomObjective(objective) ? "objectives-custom-objective-partial-success" : "objectives-objective-partial-success", // Polonium: no percentage
                             ("objective", objectiveTitle),
                             ("progress", progress)
                         ));
@@ -233,7 +244,7 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
                     else
                     {
                         agentSummary.AppendLine(Loc.GetString(
-                            "objectives-objective-fail",
+                            IsCustomObjective(objective) ? "objectives-custom-objective-fail" : "objectives-objective-fail", // Polonium: no percentage
                             ("objective", objectiveTitle),
                             ("progress", progress)
                         ));
