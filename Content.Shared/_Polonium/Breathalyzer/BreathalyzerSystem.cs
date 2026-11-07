@@ -169,10 +169,10 @@ public sealed partial class BreathalyzerSystem : EntitySystem
 
     private bool CanForceTest(EntityUid target)
     {
-        if (!TryComp<CuffableComponent>(target, out var cuffable) || _hands.GetHandCount(target) == 0)
+        if (_hands.GetHandCount(target) == 0)
             return true;
 
-        return _cuffable.IsCuffed((target, cuffable));
+        return TryComp<CuffableComponent>(target, out var cuffable) && _cuffable.IsCuffed((target, cuffable));
     }
 
     private void TryStartTest(Entity<BreathalyzerComponent> ent, EntityUid user, EntityUid subject)
@@ -239,13 +239,17 @@ public sealed partial class BreathalyzerSystem : EntitySystem
         args.Handled = true;
         ent.Comp.BlowStream = _audio.Stop(ent.Comp.BlowStream);
 
-        if (args.Cancelled || !_powerCell.TryUseCharge(ent.Owner, ent.Comp.ChargePerTest, args.User, predicted: true))
+        var subject = args.Target ?? args.User;
+
+        if (args.Cancelled
+            || (subject != args.User && !CanForceTest(subject))
+            || !_ingestion.HasMouthAvailable(args.User, subject)
+            || !_powerCell.TryUseCharge(ent.Owner, ent.Comp.ChargePerTest, args.User, predicted: true))
         {
             ResetState(ent);
             return;
         }
 
-        var subject = args.Target ?? args.User;
         var reading = Measure(ent.Comp, subject);
 
         if (reading >= ent.Comp.VomitThreshold

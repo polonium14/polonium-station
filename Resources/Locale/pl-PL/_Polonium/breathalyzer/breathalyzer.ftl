@@ -2,7 +2,7 @@ breathalyzer-busy = { CAPITALIZE($device) } wciąż analizuje próbkę.
 breathalyzer-cannot-blow = Nie możesz dmuchnąć w { $device }.
 breathalyzer-blow-self = Dmuchasz w ustnik.
 breathalyzer-blow-others = { CAPITALIZE($user) } dmucha w { $device }.
-breathalyzer-force-user = Przykładasz ustnik do ust i każesz dmuchać: { $target }.
+breathalyzer-force-user = Przykładasz ustnik do ust i każesz dmuchać w { $device }: { $target }.
 breathalyzer-force-others = { CAPITALIZE($user) } każe dmuchać w { $device }: { $target }.
 
 breathalyzer-examine-idle = Wyświetlacz jest gotowy do pomiaru.
@@ -21,6 +21,7 @@ breathalyzer-ui-state-idle = CZUWANIE
 breathalyzer-ui-state-sampling = PRÓBKA
 breathalyzer-ui-state-analyzing = ANALIZA
 breathalyzer-ui-state-result = WYNIK
+breathalyzer-ui-state-previous = POPRZEDNI
 breathalyzer-ui-status-ready = GOTOWY
 breathalyzer-ui-status-blow = DMUCHAJ
 breathalyzer-ui-status-analyze = ANALIZUJĘ

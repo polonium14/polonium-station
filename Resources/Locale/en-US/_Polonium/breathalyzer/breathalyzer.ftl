@@ -16,11 +16,12 @@ breathalyzer-level-after-drinking = After drinking
 breathalyzer-level-intoxicated = Intoxicated
 breathalyzer-level-poisoning = Alcohol poisoning
 
-breathalyzer-ui-header = BREATHANALYZER 4000
+breathalyzer-ui-header = BREATHALYZER 4000
 breathalyzer-ui-state-idle = STANDBY
 breathalyzer-ui-state-sampling = SAMPLING
 breathalyzer-ui-state-analyzing = ANALYSIS
 breathalyzer-ui-state-result = RESULT
+breathalyzer-ui-state-previous = PREVIOUS
 breathalyzer-ui-status-ready = READY
 breathalyzer-ui-status-blow = BLOW
 breathalyzer-ui-status-analyze = ANALYSING

@@ -10,6 +10,7 @@ using Content.Shared.Paper;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.PowerCell;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Localization;
 
 namespace Content.IntegrationTests.Tests._Polonium.Breathalyzer;
 
@@ -154,7 +155,8 @@ public sealed class BreathalyzerTest : InteractionTest
 
         Assert.That(report, Is.Not.EqualTo(default(EntityUid)));
         var result = device.Comp.LastResult!.Value;
-        Assert.That(SEntMan.GetComponent<PaperComponent>(report).Content, Does.Contain(result.ToString("0.00")));
+        var culture = Server.ResolveDependency<ILocalizationManager>().DefaultCulture;
+        Assert.That(SEntMan.GetComponent<PaperComponent>(report).Content, Does.Contain(result.ToString("0.00", culture)));
         Assert.That(device.Comp.PrintReadyAt, Is.GreaterThan(STiming.CurTime));
         Assert.That(GetCharge(device), Is.EqualTo(before - device.Comp.ChargePerPrint).Within(0.01f));
     }

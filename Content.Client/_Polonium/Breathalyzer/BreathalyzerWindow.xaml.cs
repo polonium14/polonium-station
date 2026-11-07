@@ -111,8 +111,8 @@ public sealed partial class BreathalyzerWindow : FancyWindow
                 var color = level?.Color ?? LcdColor;
                 SetValue(result.ToString("0.00"), color);
                 SetStatus(level == null ? string.Empty : Loc.GetString(level.Name).ToUpperInvariant(), color);
-                SetState("breathalyzer-ui-state-result");
-                SetFooter(string.Empty);
+                SetState(comp.MouthpieceDirty ? "breathalyzer-ui-state-previous" : "breathalyzer-ui-state-result");
+                SetFooter(comp.MouthpieceDirty ? Loc.GetString("breathalyzer-ui-footer-dirty") : string.Empty);
                 SetBorder(Color.InterpolateBetween(LcdBorder, color, 0.55f));
                 break;
 

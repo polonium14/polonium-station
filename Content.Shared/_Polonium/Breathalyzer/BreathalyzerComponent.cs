@@ -128,10 +128,10 @@ public sealed partial class BreathalyzerComponent : Component
     [DataField]
     public TimeSpan LastMeasuredRoundTime;
 
-    [ViewVariables]
+    [DataField, ViewVariables]
     public float PendingResult;
 
-    [ViewVariables]
+    [DataField, ViewVariables]
     public string? PendingSubjectName;
 
     [ViewVariables]
