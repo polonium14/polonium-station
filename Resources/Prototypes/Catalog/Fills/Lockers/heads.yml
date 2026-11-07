@@ -9,6 +9,7 @@
     - id: CigPackGreen
       prob: 0.50
     - id: ClothingHeadsetAltCargo
+    - id: ClothingMultipleHeadphones # Polonium
     - id: DoorRemoteCargo
     - id: AstroNavCartridge
     - id: ClothingHandsKnuckleDustersQM

@@ -59,7 +59,12 @@ public sealed partial class ChatSystem
             ("fontSize", speech.FontSize),
             ("message", FormattedMessage.EscapeText(message)));
 
-        SendInVoiceRange(ChatChannel.Local, message, wrappedMessage, source, range, excludeRecipient: excludeRecipient);
+        // POLONIUM: listeners with headphones on only see that someone talks
+        var muffledWrappedMessage = Loc.GetString("speech-muffling-say-wrap-message",
+            ("entityName", FormattedMessage.EscapeText(nameOverride ?? Identity.Name(source, EntityManager))));
+
+        SendInVoiceRange(ChatChannel.Local, message, wrappedMessage, source, range, excludeRecipient: excludeRecipient, muffledWrappedMessage: muffledWrappedMessage);
+        // POLONIUM end
 
         if (triggerSpeakEvent)
         {
@@ -159,6 +164,16 @@ public sealed partial class ChatSystem
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
+            // POLONIUM: headphones on, the whisper is lost
+            if (listener != source && _hearingMuffling.IsHearingMuffled(listener))
+            {
+                // same rule as below: from afar and out of sight, you can't tell who it was
+                var muffledWrapped = data.Range <= WhisperClearRange || data.Observer || _examineSystem.InRangeUnOccluded(source, listener, WhisperMuffledRange)
+                    ? Loc.GetString("speech-muffling-whisper-wrap-message", ("entityName", nameIdentity))
+                    : Loc.GetString("speech-muffling-whisper-unknown-wrap-message");
+                _chatManager.ChatMessageToOne(ChatChannel.Whisper, SpeechMuffledMessage, muffledWrapped, source, false, session.Channel);
+            }
+            else // POLONIUM end
             if (data.Range <= WhisperClearRange || data.Observer)
                 _chatManager.ChatMessageToOne(ChatChannel.Whisper, message, wrappedMessage, source, false, session.Channel);
             //If listener is too far, they only hear fragments of the message
