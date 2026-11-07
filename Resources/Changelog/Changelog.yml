@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: 0-Anon
-  changes:
-  - message: Rebalanced the syndicate reinforcement specializations to be more effective
-      at their roles.
-    type: Tweak
-  id: 9607
-  time: '2026-04-04T04:06:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43057
-- author: spanky-spanky
-  changes:
-  - message: Cell rechargers, weapon rechargers and turbo rechargers can now be picked
-      up to transport them when unanchored.
-    type: Tweak
-  id: 9608
-  time: '2026-04-04T07:15:23.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40645
 - author: ThatGuyUSA
   changes:
   - message: Midround Wizards now show up on the end results screen.
@@ -5091,3 +5075,31 @@
   id: 10101
   time: '2026-11-07T15:37:43.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1210
+- author: Nikita
+  changes:
+  - message: "Behonker z honkanomalii nie spawnuje ju\u017C oko laserowe"
+    type: Tweak
+  id: 10102
+  time: '2026-11-07T16:27:20.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1214
+- author: Nikita
+  changes:
+  - message: "Pociski i rzucane przedmioty nie trafiaj\u0105 ju\u017C w osoby stoj\u0105\
+      ce obok lub za strzelaj\u0105cym, gdy ten strzela w inn\u0105 stron\u0119."
+    type: Fix
+  - message: "Pociski po trafieniu nie zostaj\u0105 ju\u017C przez chwil\u0119 w miejscu\
+      \ trafienia."
+    type: Fix
+  - message: "Pociski wystrzelone w portal wlatuj\u0105 do niego, zamiast przelatywa\u0107\
+      \ przez niego na ekranie strzelaj\u0105cego."
+    type: Fix
+  - message: "Wbite w\u0142\xF3cznie i strza\u0142ki zachowuj\u0105 kierunek, pod\
+      \ jakim si\u0119 wbi\u0142y."
+    type: Fix
+  - message: "Strza\u0142ki z broni piankowej znowu wida\u0107 w locie."
+    type: Fix
+  - message: Naprawiono crash gry przy strzelaniu ze strzelby z bliska.
+    type: Fix
+  id: 10103
+  time: '2026-11-07T17:00:21.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1212
