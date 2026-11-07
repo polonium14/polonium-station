@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Zekins3366
-  changes:
-  - message: Fixed being able to set multiple conflicting head-top visuals on humans
-      at the same time.
-    type: Fix
-  id: 9610
-  time: '2026-04-04T16:48:03.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43465
 - author: SlamBamActionman
   changes:
   - message: Player sell costs are now randomized when scanned with an appraisal tool.
@@ -5103,3 +5095,14 @@
   id: 10104
   time: '2026-11-07T20:13:39.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1215
+- author: Nikita
+  changes:
+  - message: "Dodano alkomat. Pokazuje, ile promili alkoholu ma badana osoba, wynik\
+      \ mo\u017Cna wydrukowa\u0107. Osob\u0119 skut\u0105 kajdankami mo\u017Cna zbada\u0107\
+      \ bez jej zgody"
+    type: Add
+  - message: "Alkomaty s\u0105 dost\u0119pne w automatach SecTech i NanoNFZ Plus"
+    type: Add
+  id: 10105
+  time: '2026-11-07T20:37:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1217
