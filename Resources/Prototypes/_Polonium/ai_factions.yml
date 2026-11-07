@@ -1,0 +1,12 @@
+- type: npcFaction
+  id: GoblinWild
+  hostile:
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Xenoborg
+  - AllHostile
