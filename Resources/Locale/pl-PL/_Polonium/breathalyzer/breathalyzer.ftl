@@ -16,7 +16,7 @@ breathalyzer-level-after-drinking = Po użyciu alkoholu
 breathalyzer-level-intoxicated = Nietrzeźwy
 breathalyzer-level-poisoning = Zatrucie alkoholowe
 
-breathalyzer-ui-header = ZGONOMETR 4000
+breathalyzer-ui-header = ZGONOMIERZ 4000
 breathalyzer-ui-state-idle = CZUWANIE
 breathalyzer-ui-state-sampling = PRÓBKA
 breathalyzer-ui-state-analyzing = ANALIZA
