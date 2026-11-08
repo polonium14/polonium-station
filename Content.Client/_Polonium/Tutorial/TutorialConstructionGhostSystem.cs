@@ -230,7 +230,7 @@ public sealed partial class TutorialConstructionGhostSystem : EntitySystem
         if (_anchors.TryGetValue(anchorId, out var cached)
             && TryComp<TutorialAnchorComponent>(cached, out var cachedAnchor)
             && cachedAnchor.AnchorId == anchorId
-            && TryComp<TransformComponent>(cached, out var cachedXform)
+            && TryComp(cached, out TransformComponent? cachedXform)
             && cachedXform.GridUid == grid)
         {
             return cached;
