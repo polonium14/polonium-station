@@ -1,12 +1,12 @@
 ent-MobSheepBase = sheepBase
-    .desc = A sheep.
-ent-MobSheep = sheep
-    .desc = An adorable genetically engineered chemical factory producing milk and cotton.
+    .desc = Owca.
+ent-MobSheep = owca
+    .desc = Urocza, zmodyfikowana genetycznie fabryka chemiczna produkująca mleko i bawełnę.
 ent-SolutionWoolSheep = { ent-SolutionWool }
     .desc = { ent-SolutionWool.desc }
 ent-SolutionUdderSheep = { ent-SolutionUdder }
     .desc = { ent-SolutionUdder.desc }
-ent-MobSheepRainbow = rainbow sheep
-    .desc = A sheep; this one seems... glowy.
+ent-MobSheepRainbow = tęczowa owca
+    .desc = Owca; ta wygląda na… świecącą.
 ent-SolutionWoolSheepRainbow = { ent-SolutionWool }
     .desc = { ent-SolutionWool.desc }

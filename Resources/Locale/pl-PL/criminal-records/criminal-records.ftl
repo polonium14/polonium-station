@@ -4,7 +4,7 @@ criminal-records-console-select-record-info = Wybierz kartę.
 criminal-records-console-no-records = Nie znaleziono żadnych kart!
 criminal-records-console-no-record-found = Nie znaleziono karty dla wybranej osoby.
 criminal-records-console-flavor-left = Najpierw aresztuj! Pytaj później.
-criminal-records-console-flavor-right = wersja 2.1
+criminal-records-console-flavor-right = v2.1
 criminal-records-console-show-all = Wszystkie
 
 ## Status

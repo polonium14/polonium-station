@@ -1,7 +1,7 @@
 ent-BaseCockroach = { ent-SolutionFood }
     .desc = { ent-SolutionFood.desc }
-ent-MobCockroach = cockroach
-    .desc = This station is just crawling with bugs.
-ent-MobGlockroach = glockroach
-    .desc = This station is just crawling with bu- OH GOD THAT COCKROACH HAS A GUN!!!
+ent-MobCockroach = karaluch
+    .desc = Ta stacja aż roi się od robactwa.
+ent-MobGlockroach = glockaraluch
+    .desc = Ta stacja aż roi się od robac- O BOŻE, TEN KARALUCH MA BROŃ!!!
     .suffix = Admeme

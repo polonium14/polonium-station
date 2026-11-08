@@ -1,6 +1,6 @@
 ent-BaseHydroponicsSoil = { ent-SolutionLarge }
     .desc = { ent-SolutionLarge.desc }
-ent-HydroponicsSoil = soil
-    .desc = A mix of organic matter and minerals creating a soil to grow your plant in space. Seems to be dry.
+ent-HydroponicsSoil = gleba
+    .desc = Mieszanka organicznej materii oraz minerałów tworząca glebę która pozwala twoim roślinom rosnąć w kosmosie. Zdaje się być wyschnięta.
 ent-FungalSoil = grzybowa gleba
     .desc = Mieszanka organicznej materii oraz korzeni grzybów tworząc glebę która pozwala twoim roślinom rosnąć w kosmosie. Zdaje się być wyschnięta.

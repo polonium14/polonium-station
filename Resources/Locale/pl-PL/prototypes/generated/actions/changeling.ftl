@@ -55,5 +55,5 @@ ent-ActionChangelingStingHemotoxin = Hemotoxin Sting
         Sting a target and inject them with a dangerous dose of various toxins, causing extensive bleeding. 
         
         Requires 30 Chemicals.
-ent-ActionRetractableItemArmblade = Armblade
-    .desc = Shed your flesh and reform it into a fleshy blade. Can be toggled.
+ent-ActionRetractableItemArmblade = Ostrze w ramieniu
+    .desc = Zrzuć swoje ciało i przekształć je w mięsiste ostrze.

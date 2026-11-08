@@ -1,10 +1,10 @@
-ent-BulletMagnum = bullet (.45 magnum)
+ent-BulletMagnum = kula (.45 magnum)
     .desc = { ent-BaseBullet.desc }
-ent-BulletMagnumPractice = bullet (.45 magnum practice)
+ent-BulletMagnumPractice = kula (.45 magnum treningowe)
     .desc = { ent-BaseBulletPractice.desc }
-ent-BulletMagnumIncendiary = bullet (.45 magnum incendiary)
+ent-BulletMagnumIncendiary = kula (.45 magnum zapalające)
     .desc = { ent-BaseBulletIncendiary.desc }
-ent-BulletMagnumAP = bullet (.45 magnum armor-piercing)
+ent-BulletMagnumAP = kula (.45 magnum przeciwpancerne)
     .desc = { ent-BaseBulletAP.desc }
-ent-BulletMagnumUranium = bullet (.45 magnum uranium)
+ent-BulletMagnumUranium = kula (.45 magnum uranowe)
     .desc = { ent-BaseBulletUranium.desc }

@@ -1,2 +1,2 @@
-flight-cannot-fly = You cannot fly right now.
-flight-cannot-use-wings = You cannot use your wings right now.
+flight-cannot-fly = Teraz nie możesz latać.
+flight-cannot-use-wings = Teraz nie możesz używać skrzydeł.

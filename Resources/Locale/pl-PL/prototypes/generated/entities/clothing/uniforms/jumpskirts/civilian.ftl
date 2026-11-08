@@ -9,4 +9,4 @@ ent-ClothingUniformJumpskirtCasualGreen = nieformalny zielony kombinezon ze spó
 ent-ClothingUniformJumpskirtOldDress = stara sukienka
     .desc = Wyglądająca na znoszoną sukienka sprzed bardzo dawna.
 ent-ClothingUniformJumpskirtOfLife = spódnica życia
-    .desc = A skirt that symbolizes the joy and positivity of our life.
+    .desc = Spódnica symbolizująca radość i pozytywy naszego życia.

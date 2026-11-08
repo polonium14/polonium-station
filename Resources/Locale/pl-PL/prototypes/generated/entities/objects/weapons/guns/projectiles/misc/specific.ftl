@@ -1,10 +1,10 @@
-ent-BulletAcid = acid spit
+ent-BulletAcid = kwasowa plwocina
     .desc = { ent-BaseBullet.desc }
-ent-BulletWaterShot = water
+ent-BulletWaterShot = woda
     .desc = { ent-SolutionVapor.desc }
-ent-BulletHivebot = hivebot bullet
+ent-BulletHivebot = pocisk hivebota
     .desc = { ent-BaseBullet.desc }
-ent-GrapplingHook = grappling hook
+ent-GrapplingHook = hak wspinaczkowy
     .desc = { "" }
-ent-StickyHandPalm = sticky hand palm
+ent-StickyHandPalm = lepka dłoń
     .desc = { ent-GrapplingHook.desc }
