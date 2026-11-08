@@ -1,4 +1,4 @@
-ent-BoltTempgunCold = freezing bolt
+ent-BoltTempgunCold = pocisk mrożący
     .desc = { ent-WatcherBolt.desc }
-ent-BoltTempgunHot = scorching bolt
+ent-BoltTempgunHot = pocisk palący
     .desc = { ent-WatcherBoltMagmawing.desc }

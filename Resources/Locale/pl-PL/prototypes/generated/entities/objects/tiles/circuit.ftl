@@ -1,6 +1,6 @@
-ent-FloorTileItemGCircuit = green circuit floor
+ent-FloorTileItemGCircuit = zielona podłoga obwodu
     .desc = { ent-FloorTileItemBase.desc }
-ent-FloorTileItemBCircuit = blue circuit floor
+ent-FloorTileItemBCircuit = niebieska podłoga obwodu
     .desc = { ent-FloorTileItemBase.desc }
-ent-FloorTileItemRCircuit = red circuit floor
+ent-FloorTileItemRCircuit = czerwona podłoga obwodu
     .desc = { ent-FloorTileItemBase.desc }

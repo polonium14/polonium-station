@@ -1,2 +1,2 @@
-ent-TRayScanner = t-ray scanner
-    .desc = A high-tech scanning device that uses Terahertz Radiation to detect subfloor infrastructure.
+ent-TRayScanner = skaner T-promieniowy
+    .desc = Zaawansowane urządzenie skanujące wykorzystujące promieniowanie terahercowe do wykrywania infrastruktury pod podłogą.

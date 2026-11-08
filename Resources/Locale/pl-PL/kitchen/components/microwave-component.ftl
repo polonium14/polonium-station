@@ -29,6 +29,6 @@ microwave-menu-eject-all-text = Opróżnij zawartość
 microwave-menu-eject-all-tooltip = Wyparowywuje wszelkie płyny, zwraca obiekty stałe.
 microwave-menu-instant-button = NATYCHMIASTOWE
 microwave-menu-footer-flavor-left = Nie wkładaj żadnej elektroniki, metali lub stworzeń żywych.
-microwave-menu-footer-flavor-right = w1.5
+microwave-menu-footer-flavor-right = v1.5
 microwave-component-suicide-multi-head-others-message = { CAPITALIZE($victim) } próbują upiec swoje głowy!
 microwave-component-suicide-multi-head-message = Upiekliście swoje głowy!

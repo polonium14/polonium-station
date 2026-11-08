@@ -1,9 +1,9 @@
-ent-MobDuckMallard = mallard duck
-    .desc = An adorable mallard duck, it's fluffy and soft!
-ent-MobDuckWhite = white duck
-    .desc = An adorable white duck, it's fluffy and soft!
-ent-MobDuckBrown = brown duck
-    .desc = An adorable brown duck, it's fluffy and soft!
+ent-MobDuckMallard = kaczka krzyżówka
+    .desc = Urocza kaczka krzyżówka, jest puszysta i mięciutka!
+ent-MobDuckWhite = biała kaczka
+    .desc = Urocza biała kaczka, jest puszysta i mięciutka!
+ent-MobDuckBrown = brązowa kaczka
+    .desc = Urocza brązowa kaczka, jest puszysta i mięciutka!
 ent-FoodEggDuckFertilized = { ent-FoodEgg }
-    .suffix = Fertilized, Duck
+    .suffix = Zapłodnione, Kaczka
     .desc = { ent-FoodEgg.desc }

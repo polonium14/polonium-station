@@ -1,13 +1,13 @@
-ent-BaseSMES = SMME
-    .desc = Jednostka wysokopojemnościowego superkonduktorowo magnetycznego magazynu energetycznego (SMME)
+ent-BaseSMES = SMES
+    .desc = Jednostka wysokopojemnościowego superkonduktorowo magnetycznego magazynu energetycznego (SMES)
 ent-SMESBasic = { ent-BaseSMES }
     .suffix = Podstawowy, 16MJ
     .desc = { ent-BaseSMES.desc }
 ent-SMESBasicEmpty = { ent-SMESBasic }
     .suffix = Pusty
     .desc = { ent-SMESBasic.desc }
-ent-SMESAdvanced = zaawansowany SMME
-    .desc = Jednostka jeszcze bardziej wysokopojemnościowego superkonduktorowego magnetycznego magazynu energetycznego (SMME)
+ent-SMESAdvanced = zaawansowany SMES
+    .desc = Jednostka jeszcze bardziej wysokopojemnościowego superkonduktorowego magnetycznego magazynu energetycznego (SMES)
     .suffix = Zaawansowany, 32MJ
 ent-SMESAdvancedEmpty = { ent-SMESAdvanced }
     .suffix = Pusty

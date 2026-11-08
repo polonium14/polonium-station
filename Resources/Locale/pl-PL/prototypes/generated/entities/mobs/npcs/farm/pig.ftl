@@ -1,2 +1,2 @@
-ent-MobPig = pig
-    .desc = Oink.
+ent-MobPig = świnia
+    .desc = Chrum.

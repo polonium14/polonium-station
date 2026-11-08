@@ -1,2 +1,2 @@
-ent-MobHamster = hamster
-    .desc = A cute, fluffy, robust hamster.
+ent-MobHamster = chomik
+    .desc = Uroczy, puszysty, krzepki chomik.

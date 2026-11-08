@@ -1,2 +1,2 @@
-ent-HoverEntity = hover entity
+ent-HoverEntity = obiekt typu hover
     .desc = { "" }
