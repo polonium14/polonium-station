@@ -57,9 +57,9 @@ tutorial-step-r16-cores = Połóż po jednej [color=#FFC83D][bold]paczce silnika
 tutorial-step-r16-unpack = Rozpakuj [color=#FFC83D][bold]multitoolem[/bold][/color] wszystkie [color=#FFC83D][bold]12 paczek[/bold][/color] na znacznikach. Złą osłonę zdejmiesz [color=#FFC83D][bold]spawarką[/bold][/color].
 tutorial-step-r16-controller = Przyciągnij [color=#FFC83D][bold]kontroler SAM[/bold][/color] na jego znacznik przy osłonach i przykręć go [color=#FFC83D][bold]kluczem[/bold][/color].
 tutorial-step-r16-fuel = Otwórz [color=#FFC83D][bold]skrzynię z paliwem[/bold][/color], weź [color=#FFC83D][bold]słój[/bold][/color] i włóż go do kontrolera SAM.
-tutorial-step-r16-craft-menu = Otwórz [color=#FFC83D][bold]menu budowania[/bold][/color].
+tutorial-step-r16-quick-build = Weź [color=#FFC83D][bold]stal[/bold][/color] ze stołu i [color=#FFC83D][bold]użyj jej w ręce[/bold][/color].
 tutorial-step-r16-frame = Postaw [color=#FFC83D][bold]zarys ramy maszyny[/bold][/color] na podświetlonym polu.
-tutorial-step-r16-frame-steel = Zamknij menu budowania, weź [color=#FFC83D][bold]stal[/bold][/color] i kliknij nią w [color=#FFC83D][bold]zarys ramy[/bold][/color].
+tutorial-step-r16-frame-steel = Kliknij [color=#FFC83D][bold]stalą[/bold][/color] w [color=#FFC83D][bold]zarys ramy[/bold][/color].
 tutorial-step-r16-lathe-load = Wrzuć do [color=#FFC83D][bold]autolatu[/bold][/color] [color=#FFC83D][bold]szkło, plastik i jedną paczkę stali[/bold][/color].
 tutorial-step-r16-lathe-smes = Wydrukuj w autolacie [color=#FFC83D][bold]części do SMES-a[/bold][/color].
 tutorial-step-r16-frame-examine = Obejrzyj [color=#FFC83D][bold]ramę[/bold][/color].
@@ -70,15 +70,15 @@ tutorial-step-r16-parts-examine = Obejrzyj [color=#FFC83D][bold]ramę[/bold][/co
 tutorial-step-r16-parts = Włóż do ramy [color=#FFC83D][bold]wszystkie części z listy[/bold][/color] wydrukowane w autolacie. Jeśli dużo przedmiotów leży na jednym miejscu, możesz rozróżnić je w [color=#FFC83D][bold]menu kontekstowym[/bold][/color].
 tutorial-step-r16-smes-screw = Skręć maszynę [color=#FFC83D][bold]śrubokrętem[/bold][/color].
 tutorial-step-r16-terminal-print = Wydrukuj [color=#FFC83D][bold]10 metrów kabla niskiego napięcia[/bold][/color] na terminal.
-tutorial-step-r16-terminal = Postaw [color=#FFC83D][bold]terminal kablowy[/bold][/color] na podświetlonym polu, zwrócony do [color=#FFC83D][bold]SMES-a[/bold][/color]. Obrót podglądu: { $rotate }.
+tutorial-step-r16-terminal = Otwórz [color=#FFC83D][bold]menu budowania[/bold][/color] ({ $craft }) i postaw [color=#FFC83D][bold]terminal kablowy[/bold][/color] na podświetlonym polu, zwrócony do [color=#FFC83D][bold]SMES-a[/bold][/color]. Obrót podglądu: { $rotate }.
 tutorial-step-r16-substation-frame = Postaw [color=#FFC83D][bold]ramę maszyny[/bold][/color] na [color=#FFC83D][bold]polu podstacji[/bold][/color].
 tutorial-step-r16-substation-print = Wydrukuj [color=#FFC83D][bold]części do podstacji[/bold][/color].
 tutorial-step-r16-substation = Złóż [color=#FFC83D][bold]podstację[/bold][/color]. [color=#FFC83D][bold]Oględziny ramy[/bold][/color] powiedzą ci, czego jeszcze brakuje.
 tutorial-step-r16-apc-print = Wydrukuj [color=#FFC83D][bold]elektronikę LKZ[/bold][/color].
 tutorial-step-r16-apc = Zbuduj [color=#FFC83D][bold]LKZ[/bold][/color] na podświetlonej [color=#FFC83D][bold]ścianie[/bold][/color].
-tutorial-hint-craft-menu = { $craft } albo [color=#FFC83D][bold]przycisk z młotkiem[/bold][/color] na górnym pasku - menu budowania
-tutorial-hint-craft-place = [color=#FFC83D][bold]Przepis w menu[/bold][/color], przycisk budowania, { $click } w [color=#FFC83D][bold]podświetlone pole[/bold][/color]
-tutorial-hint-frame-steel = { $craft } - zamknięcie menu, [color=#FFC83D][bold]stal[/bold][/color] do ręki, { $click } w [color=#FFC83D][bold]zarys[/bold][/color]
+tutorial-hint-quick-build = { $useHand } [color=#FFC83D][bold]ze stalą w ręce[/bold][/color] - [color=#FFC83D][bold]menu[/bold][/color] tego, co da się z niej zbudować
+tutorial-hint-quick-place = { $click } na [color=#FFC83D][bold]ramę maszyny[/bold][/color] w menu, potem { $click } w [color=#FFC83D][bold]podświetlone pole[/bold][/color]
+tutorial-hint-frame-steel = [color=#FFC83D][bold]Stal w ręce[/bold][/color], { $click } w [color=#FFC83D][bold]zarys[/bold][/color]
 tutorial-hint-examine-frame = { $examine } na [color=#FFC83D][bold]ramie[/bold][/color] - czego jej brakuje
 tutorial-hint-frame-anchor = { $click } [color=#FFC83D][bold]kluczem[/bold][/color] w ramę - [color=#FFC83D][bold]przykręcenie do podłogi[/bold][/color]
 tutorial-hint-frame-insert = { $click } [color=#FFC83D][bold]trzymanym przedmiotem[/bold][/color] w ramę - włożenie
@@ -86,7 +86,7 @@ tutorial-hint-frame-screw = { $click } [color=#FFC83D][bold]śrubokrętem[/bold]
 tutorial-hint-build-alone = { $craft } - [color=#FFC83D][bold]menu budowania[/bold][/color], { $examine } na [color=#FFC83D][bold]konstrukcji[/bold][/color] - czego jeszcze brakuje
 tutorial-hint-lathe-load = { $click } [color=#FFC83D][bold]paczką blach[/bold][/color] w [color=#FFC83D][bold]autolat[/bold][/color] - wrzucenie całej paczki, { $swap } - zmiana ręki
 tutorial-hint-lathe = { $click } [color=#FFC83D][bold]w autolat[/bold][/color] - okno. [color=#FFC83D][bold]Ilość wpisz w pole pod listą[/bold][/color], { $click } na przepis - zamówienie
-tutorial-hint-terminal = { $rotate } - obracaj podgląd, aż [color=#FFC83D][bold]terminal patrzy na SMES[/bold][/color]. Potem { $click } w podświetlone pole
+tutorial-hint-terminal = { $craft } albo [color=#FFC83D][bold]przycisk z młotkiem[/bold][/color] na górnym pasku - menu budowania. { $rotate } - obracaj podgląd, aż [color=#FFC83D][bold]terminal patrzy na SMES[/bold][/color]. Potem { $click } w podświetlone pole
 tutorial-step-r13-dough = Klikaj [color=#FFC83D][bold]workiem mąki w zlewkę[/bold][/color]. 5 mąki na kliknięcie, ciasto chce [color=#FFC83D][bold]45 mąki na 15 wody[/bold][/color].
 tutorial-step-r13-cow = Włącz [color=#FFC83D][bold]tryb walki[/bold][/color] i bij krowę nożem. Gdy padnie i przestanie się ruszać, możesz [color=#FFC83D][bold]poderżnąć jej gardło[/bold][/color] z menu kontekstowego.
 tutorial-step-r13-cheese = Weź z automatu [color=#FFC83D][bold]krąg sera[/bold][/color] i miej go w ręce.
