@@ -87,10 +87,26 @@ public sealed partial class TutorialSystem
 
     private void PrepareTutorialMap(EntityUid mapUid)
     {
-        var query = EntityQueryEnumerator<TransformComponent>();
-        while (query.MoveNext(out var uid, out var xform))
+        // walking the map's own children instead of every entity in the world, so a new trainee
+        // does not pay for everyone else's maps
+        var onMap = new List<EntityUid>();
+        var pending = new Stack<EntityUid>();
+        pending.Push(mapUid);
+
+        while (pending.TryPop(out var parent))
         {
-            if (xform.MapUid != mapUid)
+            onMap.Add(parent);
+
+            var children = Transform(parent).ChildEnumerator;
+            while (children.MoveNext(out var child))
+            {
+                pending.Push(child);
+            }
+        }
+
+        foreach (var uid in onMap)
+        {
+            if (TerminatingOrDeleted(uid))
                 continue;
 
             if ((HasComp<ConstructionComponent>(uid) || HasComp<CableComponent>(uid))
