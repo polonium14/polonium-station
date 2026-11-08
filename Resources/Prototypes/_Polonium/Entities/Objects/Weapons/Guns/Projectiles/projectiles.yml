@@ -70,3 +70,19 @@
   - type: SingularityDistortion
     falloffPower: 1.6
     intensity: 4
+
+- type: entity
+  parent: BulletLaser
+  id: BulletLaserPellet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileTracer
+    length: 2
+
+- type: entity
+  parent: BulletDisablerSmg
+  id: BulletDisablerSmgPellet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileTracer
+    length: 1.5

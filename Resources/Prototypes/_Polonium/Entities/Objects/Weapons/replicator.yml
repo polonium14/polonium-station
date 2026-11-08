@@ -4,6 +4,8 @@
   categories: [ HideSpawnMenu ]
   name: replicator disabler bolt
   components:
+  - type: ProjectileTracer
+    color: "#E84FC2"
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     layers:
@@ -47,6 +49,10 @@
   categories: [ HideSpawnMenu ]
   name: colossus disabler bolt
   components:
+  - type: ProjectileTracer
+    color: "#D70AA0"
+    length: 5
+    width: 0.08
   - type: Sprite
     sprite: _Polonium/Objects/Weapons/Guns/Projectiles/replicator_colossus.rsi
     drawdepth: Effects
@@ -97,6 +103,10 @@
   categories: [ HideSpawnMenu ]
   name: colossus laser bolt
   components:
+  - type: ProjectileTracer
+    color: "#D7300A"
+    length: 5
+    width: 0.08
   - type: Sprite
     sprite: _Polonium/Objects/Weapons/Guns/Projectiles/replicator_colossus.rsi
     drawdepth: Effects

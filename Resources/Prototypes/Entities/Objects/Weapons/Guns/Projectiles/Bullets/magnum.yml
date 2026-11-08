@@ -4,6 +4,8 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.45 magnum)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    width: 0.06
   - type: Projectile
     damage:
       types:
@@ -15,6 +17,8 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.45 magnum practice)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    width: 0.06
   - type: Projectile
     damage:
       types:
@@ -26,6 +30,8 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.45 magnum incendiary)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    width: 0.06
   - type: Projectile
     damage:
       types:
@@ -38,6 +44,8 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.45 magnum armor-piercing)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    width: 0.06
   - type: Projectile
     damage:
       types:
@@ -50,6 +58,8 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.45 magnum uranium)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    width: 0.06
   - type: Projectile
     damage:
       types:

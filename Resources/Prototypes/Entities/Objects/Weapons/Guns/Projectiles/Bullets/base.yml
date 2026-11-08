@@ -76,6 +76,9 @@
   categories: [ HideSpawnMenu ]
   name: base bullet practice
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#EB962880"
+    length: 1.5
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -91,6 +94,9 @@
   categories: [ HideSpawnMenu ]
   name: base bullet incendiary
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#FF4300"
+    length: 2.5
   - type: Projectile
     damage:
       types:
@@ -110,6 +116,8 @@
   categories: [ HideSpawnMenu ]
   name: base bullet armor-piercing
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#B4B4B4"
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -126,6 +134,8 @@
   categories: [ HideSpawnMenu ]
   name: base bullet uranium
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#6EC678"
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
