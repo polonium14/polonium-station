@@ -79,7 +79,7 @@ namespace Content.Client.Chat.UI
             ContentSize = bubble.DesiredSize;
             VerticalOffsetAchieved = -ContentSize.Y;
 
-            _deathTime = _timing.RealTime + TotalTime;
+            _deathTime = _timing.RealTime + GetLifetime(message, senderEntity); // Polonium: tutorial holopad bubbles last as long as they take to read
         }
 
         protected abstract Control BuildBubble(ChatMessage message, string speechStyleClass, Color? fontColor = null);

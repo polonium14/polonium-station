@@ -109,7 +109,7 @@ public sealed partial class TutorialPresentationSystem
 
     private static string Paint(string key)
     {
-        return $"[color={KeyColor}]{key}[/color]";
+        return $"[color={KeyColor}][bold]{key}[/bold][/color]";
     }
 
     private string Key(BoundKeyFunction function)

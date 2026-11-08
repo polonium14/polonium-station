@@ -393,7 +393,7 @@ public sealed partial class SolitarySpawningSystem : GameRuleSystem<SolitarySpaw
 
         foreach (var (user, since) in _awaySince)
         {
-            if (timeout is { } limit && now - since >= limit)
+            if (timeout is { } limit && now - since >= GetAwayLimit(user, limit)) // Polonium: shorter for those who left at the very start
             {
                 (dump ??= new()).Add(user);
                 continue;
