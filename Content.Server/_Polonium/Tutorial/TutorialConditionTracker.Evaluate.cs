@@ -121,7 +121,9 @@ public sealed partial class TutorialConditionTracker
             CraftingMenuOpenedCondition => session.Flags.Contains("crafting"),
             QuickConstructionOpenedCondition => session.Flags.Contains("quick-construction"),
             ConstructionGhostOnAnchorCondition ghost => session.Flags.Contains(
-                ghost.Stray ? $"ghost-stray:{ghost.AnchorId}" : $"ghost:{ghost.AnchorId}"),
+                ghost.Wrong ? $"ghost-wrong:{ghost.AnchorId}"
+                : ghost.Stray ? $"ghost-stray:{ghost.AnchorId}"
+                : $"ghost:{ghost.AnchorId}"),
             ExaminedNearAnchorCondition examinedNear => CheckExaminedNear(player, session, examinedNear),
             MachineFrameCompleteNearAnchorCondition frameDone => CheckFrameComplete(player, frameDone),
             AnchorEmptyOrGoneCondition empty => CheckEmptyOrGone(session, empty.AnchorId),

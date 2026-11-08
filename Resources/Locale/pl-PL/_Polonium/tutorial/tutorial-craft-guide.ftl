@@ -13,4 +13,5 @@ tutorial-craft-guide-status-pick = Kliknij świecący przepis na liście.
 tutorial-craft-guide-status-build = Kliknij świecący przycisk budowania.
 tutorial-craft-guide-status-place = Kliknij w znacznik. Żeby przerwać, kliknij przycisk budowania jeszcze raz.
 tutorial-craft-guide-need-hand = Weź do ręki materiał, na przykład stal - z pustą ręką budowa nie ruszy.
+tutorial-craft-guide-wrong-ghost = Tu ma stanąć coś innego. Usuń ten zarys z jego menu kontekstowego.
 tutorial-craft-guide-need-rotate = Terminal musi patrzeć na SMES. Obróć podgląd środkowym przyciskiem myszy, zanim klikniesz.

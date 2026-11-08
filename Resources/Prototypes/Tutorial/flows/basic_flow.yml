@@ -3647,8 +3647,8 @@
   completion: !type:MentorFinishedSpeakingCondition
 
 # nothing stops a trainee from raising all three machines at once, or in their own order, so the nets
-# that catch a run out of steel or a board in the wrong frame belong to the room and not to whichever
-# step happens to be up
+# that catch a run out of steel, a board in the wrong frame or an outline of the wrong thing on a marker
+# belong to the room and not to whichever step happens to be up. the client refuses to build such an outline
 - type: tutorialWatcherSet
   id: TutorialR16Build
   watchers:
@@ -3690,6 +3690,38 @@
       anchorId: room15_build_substation
       range: 0.5
       ignoreCarried: true
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r16-ghost-wrong
+    condition: !type:ConstructionGhostOnAnchorCondition
+      anchorId: room16_build_smes
+      recipe: MachineFrame
+      wrong: true
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r16-ghost-wrong
+    condition: !type:ConstructionGhostOnAnchorCondition
+      anchorId: room16_build_cable_terminal
+      recipe: CableTerminal
+      wrong: true
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r16-ghost-wrong
+    condition: !type:ConstructionGhostOnAnchorCondition
+      anchorId: room15_build_substation
+      recipe: MachineFrame
+      wrong: true
+  - !type:ConditionWatcher
+    rearm: true
+    quip:
+    - tutorial-holopad-r16-ghost-wrong
+    condition: !type:ConstructionGhostOnAnchorCondition
+      anchorId: room15_build_apc
+      recipe: APC
+      wrong: true
 
 # the SMES is the one machine built with a hand on the shoulder: the steel's own build menu, the autolathe, then every
 # stage of the frame and the examine text that says what the frame wants next. the terminal, the substation

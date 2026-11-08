@@ -169,6 +169,7 @@ public sealed partial class TutorialConditionTracker
 
         var onFlag = $"ghost:{ev.AnchorId}";
         var strayFlag = $"ghost-stray:{ev.AnchorId}";
+        var wrongFlag = $"ghost-wrong:{ev.AnchorId}";
 
         if (ev.OnTile)
             SetFlag(player, onFlag);
@@ -179,6 +180,11 @@ public sealed partial class TutorialConditionTracker
             SetFlag(player, strayFlag);
         else
             session.Flags.Remove(strayFlag);
+
+        if (ev.Wrong)
+            SetFlag(player, wrongFlag);
+        else
+            session.Flags.Remove(wrongFlag);
 
         Notify(player);
     }
