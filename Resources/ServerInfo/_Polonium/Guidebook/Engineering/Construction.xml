@@ -26,6 +26,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Menu tworzenia służy do budowania i wytwarzania przedmiotów w grze.
   Można je otworzyć, naciskając klawisz [color=#ffe566][bold][keybind="OpenCraftingMenu"][/bold][/color].
 
+  Najprostsze konstrukcje postawisz bez otwierania menu. Weź do ręki stal, metalowe pręty albo szkło i użyj ich klawiszem [color=#ffe566][bold][keybind="ActivateItemInHand"][/bold][/color]. Pojawi się kołowe menu z tym, co da się z tego materiału zbudować, na przykład z ramą maszyny, kratą albo oknem.
+
   Podczas umieszczania obiektów, które "przyciągają się" do siatki, możesz przytrzymać [color=#ffe566][bold][keybind="EditorLinePlace"][/bold][/color] aby ustawiać całą linię naraz, oraz [color=#ffe566][bold][keybind="EditorGridPlace"][/bold][/color] aby umieścić całą siatkę za jednym razem.
 
   Podczas wytwarzania przedmiotów wymagających wielu składników pamiętaj, że nie musisz trzymać wszystkiego naraz; możesz po prostu położyć składniki na podłodze, w plecaku lub na stole obok siebie, a podczas wytwarzania zostaną one zużyte.
