@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: themias
-  changes:
-  - message: Instead of disappearing, space dragons now burst into giblets if they
-      go too long without summoning a rift.
-    type: Tweak
-  id: 9612
-  time: '2026-04-04T18:35:44.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43296
 - author: VanderslootAssgiraffe
   changes:
   - message: Added new lobby art depicting a mime mocking nukies trapped behind an
@@ -5110,3 +5102,11 @@
   id: 10106
   time: '2026-11-08T10:44:18.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1220
+- author: Nikita
+  changes:
+  - message: "Za lec\u0105cymi kulami, laserami, pociskami tasera i og\u0142uszacza\
+      \ wida\u0107 teraz cienkie smugi"
+    type: Add
+  id: 10107
+  time: '2026-11-08T15:18:36.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1222
