@@ -139,7 +139,7 @@
   - TutorialLinearR16ExplainSubstation
   - TutorialLinearR16ExplainApc
   - TutorialLinearR16BuildIntro
-  - TutorialLinearR16CraftMenu
+  - TutorialLinearR16QuickBuild
   - TutorialLinearR16Frame
   - TutorialLinearR16FrameSteel
   - TutorialLinearR16LatheLoad
@@ -3691,37 +3691,48 @@
       range: 0.5
       ignoreCarried: true
 
-# the SMES is the one machine built with a hand on the shoulder: the crafting menu, the autolathe, then every
+# the SMES is the one machine built with a hand on the shoulder: the steel's own build menu, the autolathe, then every
 # stage of the frame and the examine text that says what the frame wants next. the terminal, the substation
 # and the APC come after, with less and less help.
 #
 # every stage of a frame is a new entity (UnfinishedMachineFrame, MachineFrame, then the machine), so the
 # steps look for whatever stands on the marker, and each also accepts any later stage so a quick trainee who
 # runs ahead does not get stuck waiting for a stage they already passed
+# a frame is one of the things steel builds by itself, so the crafting menu waits for the terminal, which steel
+# does not offer. a trainee who opens the crafting menu here anyway, or already has the outline down, moves on
 - type: tutorialStep
-  id: TutorialLinearR16CraftMenu
-  instruction: tutorial-step-r16-craft-menu
+  id: TutorialLinearR16QuickBuild
+  instruction: tutorial-step-r16-quick-build
   navigationAnchor: room16_build_smes
-  keybindHint: tutorial-hint-craft-menu
-  craftingGuideRecipe: MachineFrame
+  keybindHint: tutorial-hint-quick-build
+  highlightAnchors:
+  - room16_material_steel
   highlightTiles:
   - anchor: room16_build_smes
     until: [ UnfinishedMachineFrame, MachineFrame, SMESBasicEmpty ]
   speak:
-  - tutorial-holopad-r16-craft-menu-a
-  - tutorial-holopad-r16-craft-menu-b
+  - tutorial-holopad-r16-quick-build-a
+  - tutorial-holopad-r16-quick-build-b
   watcherSets: [ TutorialR16Build ]
   skipIf: !type:PrototypesOnAnchorsCondition
     anchorIds: [ room16_build_smes ]
     prototypes: [ SMESBasicEmpty ]
-  completion: !type:CraftingMenuOpenedCondition {}
+  completion: !type:AnyCondition
+    conditions:
+    - !type:QuickConstructionOpenedCondition {}
+    - !type:CraftingMenuOpenedCondition {}
+    - !type:ConstructionGhostOnAnchorCondition
+      anchorId: room16_build_smes
+      recipe: MachineFrame
+    - !type:PrototypesOnAnchorsCondition
+      anchorIds: [ room16_build_smes ]
+      prototypes: [ UnfinishedMachineFrame, MachineFrame, SMESBasicEmpty ]
 
 - type: tutorialStep
   id: TutorialLinearR16Frame
   instruction: tutorial-step-r16-frame
   navigationAnchor: room16_build_smes
-  keybindHint: tutorial-hint-craft-place
-  craftingGuideRecipe: MachineFrame
+  keybindHint: tutorial-hint-quick-place
   stuckSkipSeconds: 420
   highlightTiles:
   - anchor: room16_build_smes
@@ -3751,8 +3762,8 @@
       anchorIds: [ room16_build_smes ]
       prototypes: [ UnfinishedMachineFrame, MachineFrame, SMESBasicEmpty ]
 
-# the outline is only a plan. steel in hand clicked on it is what actually starts the frame. the menu is
-# closed only so it stops covering the table, placement mode stays on and a click on the ghost still reaches it
+# the outline is only a plan. steel in hand clicked on it is what actually starts the frame. placement mode
+# stays on after the outline goes down and a click on the ghost still reaches it
 - type: tutorialStep
   id: TutorialLinearR16FrameSteel
   instruction: tutorial-step-r16-frame-steel
@@ -4061,6 +4072,7 @@
   - anchor: room16_build_cable_terminal
     until: [ CableTerminal ]
   speak:
+  - tutorial-holopad-r16-terminal-menu
   - tutorial-holopad-r16-terminal-a
   - tutorial-holopad-r16-terminal-b
   # the marker faces the SMES, so the terminal on it has to face the same way
@@ -4097,8 +4109,7 @@
   id: TutorialLinearR16SubstationFrame
   instruction: tutorial-step-r16-substation-frame
   navigationAnchor: room15_build_substation
-  keybindHint: tutorial-hint-craft-place
-  craftingGuideRecipe: MachineFrame
+  keybindHint: tutorial-hint-quick-place
   stuckSkipSeconds: 420
   highlightTiles:
   - anchor: room15_build_substation

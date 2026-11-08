@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Medical.Components;
+using Content.Shared._DEN.QuickConstruction.Components;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Conditions;
@@ -72,6 +73,12 @@ public sealed partial class TutorialConditionTracker
     private void OnUiOpened(Entity<TutorialAnchorComponent> anchor, ref AfterActivatableUIOpenEvent args)
     {
         SetFlag(args.User, $"ui:{anchor.Comp.AnchorId}");
+        Notify(args.User);
+    }
+
+    private void OnQuickConstructionOpened(Entity<QuickConstructableComponent> material, ref AfterActivatableUIOpenEvent args)
+    {
+        SetFlag(args.User, "quick-construction");
         Notify(args.User);
     }
 
