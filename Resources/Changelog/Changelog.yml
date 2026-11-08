@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SlamBamActionman
-  changes:
-  - message: Player sell costs are now randomized when scanned with an appraisal tool.
-    type: Tweak
-  id: 9611
-  time: '2026-04-04T17:04:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43445
 - author: themias
   changes:
   - message: Instead of disappearing, space dragons now burst into giblets if they
@@ -5106,3 +5099,14 @@
   id: 10105
   time: '2026-11-07T20:37:38.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1217
+- author: Nikita, Yaraaray
+  changes:
+  - message: "Dodano szybk\u0105 konstrukcj\u0119! Po prostu we\u017A dowolny materia\u0142\
+      \ w r\u0119k\u0119 i wci\u015Bnij Z, \u017Ceby otworzy\u0107 menu."
+    type: Add
+  - message: "Dodano mo\u017Cliwo\u015B\u0107 usuwania zarys\xF3w konstrukcji w menu\
+      \ kontekstowym"
+    type: Add
+  id: 10106
+  time: '2026-11-08T10:44:18.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1220
