@@ -4,15 +4,20 @@ using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Conditions;
 using Content.Shared._Polonium.Tutorial.Watchers;
+using Content.Shared.Popups;
 using Robust.Client.Player;
+using Robust.Shared.Input;
+using Robust.Shared.Input.Binding;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Client._Polonium.Tutorial;
 
 /// <summary>
 /// Construction ghosts never exist on the server, so the current step cannot see them by itself.
 /// This watches the client's ghosts against the step's markers and tells the server when that changes.
+/// A ghost of the wrong recipe on a marker the step watches for one cannot be built.
 /// </summary>
 public sealed partial class TutorialConstructionGhostSystem : EntitySystem
 {
@@ -20,10 +25,59 @@ public sealed partial class TutorialConstructionGhostSystem : EntitySystem
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private IGameTiming _timing = default!;
+
+    private static readonly TimeSpan MeasureInterval = TimeSpan.FromSeconds(0.1);
 
     private readonly List<ConstructionGhostOnAnchorCondition> _wanted = new();
-    private readonly Dictionary<string, (bool OnTile, bool Stray)> _last = new();
+    private readonly Dictionary<string, (bool OnTile, bool Stray, bool Wrong)> _last = new();
+    private readonly Dictionary<string, EntityUid> _anchors = new();
     private readonly HashSet<string> _seen = new();
+    private string? _step;
+    private TimeSpan _nextMeasure;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        CommandBinds.Builder
+            .BindBefore(EngineKeyFunctions.Use,
+                new PointerInputCmdHandler(OnUse, outsidePrediction: true),
+                typeof(ConstructionSystem))
+            .Register<TutorialConstructionGhostSystem>();
+    }
+
+    public override void Shutdown()
+    {
+        CommandBinds.Unregister<TutorialConstructionGhostSystem>();
+        base.Shutdown();
+    }
+
+    private bool OnUse(in PointerInputCmdHandler.PointerInputCmdArgs args)
+    {
+        if (!TryComp<ConstructionGhostComponent>(args.EntityUid, out var ghost)
+            || Transform(args.EntityUid) is not { GridUid: { } grid } xform
+            || !TryComp<MapGridComponent>(grid, out var gridComp))
+        {
+            return false;
+        }
+
+        foreach (var cond in _wanted)
+        {
+            if (!cond.Wrong
+                || FindAnchor(grid, cond.AnchorId) is not { } anchor
+                || !IsWrongOnTile(grid, gridComp, cond, anchor, ghost, xform))
+            {
+                continue;
+            }
+
+            _popup.PopupEntity(Loc.GetString("tutorial-craft-guide-wrong-ghost"), args.EntityUid);
+            return true;
+        }
+
+        return false;
+    }
 
     public override void FrameUpdate(float frameTime)
     {
@@ -36,19 +90,24 @@ public sealed partial class TutorialConstructionGhostSystem : EntitySystem
             return;
         }
 
-        _wanted.Clear();
-        Collect(step.Completion);
-        foreach (var watcher in step.Watchers)
-        {
-            if (watcher is ConditionWatcher cond)
-                Collect(cond.Condition);
-        }
-
-        if (_wanted.Count == 0)
+        // the server drops its flags on every new step, so whatever stands on the markers is sent again
+        if (_step != stepId.Id)
         {
             Reset();
-            return;
+            _step = stepId.Id;
+            Collect(step.Completion);
+            CollectWatchers(step.Watchers);
+            foreach (var setId in step.WatcherSets)
+            {
+                if (_proto.TryIndex(setId, out var set))
+                    CollectWatchers(set.Watchers);
+            }
         }
+
+        if (_wanted.Count == 0 || _timing.RealTime < _nextMeasure)
+            return;
+
+        _nextMeasure = _timing.RealTime + MeasureInterval;
 
         if (Transform(player).GridUid is not { } grid || !TryComp<MapGridComponent>(grid, out var gridComp))
             return;
@@ -59,32 +118,51 @@ public sealed partial class TutorialConstructionGhostSystem : EntitySystem
             if (!_seen.Add(cond.AnchorId))
                 continue;
 
-            var (onTile, stray) = Measure(grid, gridComp, cond);
+            var state = Measure(grid, gridComp, cond, WrongConditionFor(cond.AnchorId));
 
-            if (_last.TryGetValue(cond.AnchorId, out var prev) && prev.OnTile == onTile && prev.Stray == stray)
+            if (_last.TryGetValue(cond.AnchorId, out var prev) && prev == state)
                 continue;
 
-            _last[cond.AnchorId] = (onTile, stray);
-            RaiseNetworkEvent(new TutorialConstructionGhostStateEvent(cond.AnchorId, onTile, stray));
+            _last[cond.AnchorId] = state;
+            RaiseNetworkEvent(new TutorialConstructionGhostStateEvent(cond.AnchorId, state.OnTile, state.Stray, state.Wrong));
         }
     }
 
-    private (bool OnTile, bool Stray) Measure(EntityUid grid, MapGridComponent gridComp, ConstructionGhostOnAnchorCondition cond)
+    private ConstructionGhostOnAnchorCondition? WrongConditionFor(string anchorId)
+    {
+        foreach (var cond in _wanted)
+        {
+            if (cond.Wrong && cond.AnchorId == anchorId)
+                return cond;
+        }
+
+        return null;
+    }
+
+    private (bool OnTile, bool Stray, bool Wrong) Measure(
+        EntityUid grid,
+        MapGridComponent gridComp,
+        ConstructionGhostOnAnchorCondition cond,
+        ConstructionGhostOnAnchorCondition? wrongCond)
     {
         if (FindAnchor(grid, cond.AnchorId) is not { } anchor)
-            return (false, false);
+            return (false, false, false);
 
         var anchorTile = _map.TileIndicesFor(grid, gridComp, Transform(anchor).Coordinates);
         var anchorPos = _transform.GetWorldPosition(anchor);
         var recipe = cond.Recipe is { } recipeId ? recipeId.Id : null;
         var onTile = false;
         var stray = false;
+        var wrong = false;
 
         var query = EntityQueryEnumerator<ConstructionGhostComponent, TransformComponent>();
         while (query.MoveNext(out _, out var ghost, out var xform))
         {
             if (xform.GridUid != grid)
                 continue;
+
+            if (wrongCond != null && IsWrongOnTile(grid, gridComp, wrongCond, anchor, ghost, xform))
+                wrong = true;
 
             if (recipe != null && ghost.Prototype?.ID != recipe)
                 continue;
@@ -100,7 +178,33 @@ public sealed partial class TutorialConstructionGhostSystem : EntitySystem
                 stray = true;
         }
 
-        return (onTile, stray);
+        return (onTile, stray, wrong);
+    }
+
+    // only the marker's own tile counts: the build markers sit a tile apart, so anything wider
+    // would call the right outline for the neighbouring marker wrong
+    private bool IsWrongOnTile(
+        EntityUid grid,
+        MapGridComponent gridComp,
+        ConstructionGhostOnAnchorCondition cond,
+        EntityUid anchor,
+        ConstructionGhostComponent ghost,
+        TransformComponent xform)
+    {
+        if (cond.Recipe is not { } recipe || ghost.Prototype == null || ghost.Prototype.ID == recipe.Id)
+            return false;
+
+        return _map.TileIndicesFor(grid, gridComp, xform.Coordinates)
+            == _map.TileIndicesFor(grid, gridComp, Transform(anchor).Coordinates);
+    }
+
+    private void CollectWatchers(List<TutorialWatcher> watchers)
+    {
+        foreach (var watcher in watchers)
+        {
+            if (watcher is ConditionWatcher cond)
+                Collect(cond.Condition);
+        }
     }
 
     private void Collect(TutorialCondition? cond)
@@ -123,18 +227,35 @@ public sealed partial class TutorialConstructionGhostSystem : EntitySystem
 
     private EntityUid? FindAnchor(EntityUid grid, string anchorId)
     {
+        if (_anchors.TryGetValue(anchorId, out var cached)
+            && TryComp<TutorialAnchorComponent>(cached, out var cachedAnchor)
+            && cachedAnchor.AnchorId == anchorId
+            && TryComp(cached, out TransformComponent? cachedXform)
+            && cachedXform.GridUid == grid)
+        {
+            return cached;
+        }
+
         var query = EntityQueryEnumerator<TutorialAnchorComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var anchor, out var xform))
         {
-            if (anchor.AnchorId == anchorId && xform.GridUid == grid)
-                return uid;
+            if (anchor.AnchorId != anchorId || xform.GridUid != grid)
+                continue;
+
+            _anchors[anchorId] = uid;
+            return uid;
         }
 
+        _anchors.Remove(anchorId);
         return null;
     }
 
     private void Reset()
     {
+        _step = null;
+        _wanted.Clear();
         _last.Clear();
+        _anchors.Clear();
+        _nextMeasure = TimeSpan.Zero;
     }
 }
