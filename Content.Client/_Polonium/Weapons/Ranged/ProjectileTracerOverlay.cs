@@ -33,6 +33,7 @@ public sealed partial class ProjectileTracerOverlay : Overlay
 
     private readonly List<(Vector2 Position, float Fade, float Distance)> _path = new();
     private readonly List<(Vector2 Position, float Fade, float Distance)> _arc = new();
+    private readonly List<(Vector2 Position, float Fade, float Distance)> _split = new();
     private readonly List<DrawVertexUV2DColor> _vertices = new();
     private readonly List<ushort> _indices = new();
 
@@ -200,6 +201,12 @@ public sealed partial class ProjectileTracerOverlay : Overlay
     /// </summary>
     private void AddLine(List<(Vector2 Position, float Fade, float Distance)> path, float width, Color color, float solid)
     {
+        if (solid > 0f)
+        {
+            SplitAt(path, solid);
+            path = _split;
+        }
+
         var start = _vertices.Count;
 
         for (var i = 0; i < path.Count; i++)
@@ -228,6 +235,27 @@ public sealed partial class ProjectileTracerOverlay : Overlay
             _indices.Add((ushort)(a + 1));
             _indices.Add((ushort)(b + 1));
             _indices.Add(b);
+        }
+    }
+
+    private void SplitAt(List<(Vector2 Position, float Fade, float Distance)> path, float fade)
+    {
+        _split.Clear();
+
+        for (var i = 0; i < path.Count; i++)
+        {
+            if (i > 0)
+            {
+                var (from, fromFade, fromDistance) = path[i - 1];
+                var (to, toFade, toDistance) = path[i];
+                if ((fromFade - fade) * (toFade - fade) < 0f)
+                {
+                    var t = (fade - fromFade) / (toFade - fromFade);
+                    _split.Add((Vector2.Lerp(from, to, t), fade, fromDistance + (toDistance - fromDistance) * t));
+                }
+            }
+
+            _split.Add(path[i]);
         }
     }
 

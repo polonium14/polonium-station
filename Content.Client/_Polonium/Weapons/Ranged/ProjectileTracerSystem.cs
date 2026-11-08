@@ -3,6 +3,7 @@ using Content.Shared._Polonium.Weapons.Ranged;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Map;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
 
 namespace Content.Client._Polonium.Weapons.Ranged;
@@ -14,13 +15,14 @@ public sealed partial class ProjectileTracerSystem : EntitySystem
     [Dependency] private SharedTransformSystem _transform = default!;
 
     private const float PointSpacing = 0.08f;
-    private const float MaxJump = 3f;
+    private const float MaxJump = 1.5f;
     private const int MaxPoints = 96;
 
     private readonly Dictionary<EntityUid, TracerTrail> _attached = new();
     private readonly List<TracerTrail> _trails = new();
     private readonly Stack<TracerTrail> _pool = new();
     private readonly List<EntityUid> _lost = new();
+    private EntityQuery<PhysicsComponent> _physicsQuery;
     private uint _frame;
     private int _seed;
 
@@ -29,6 +31,13 @@ public sealed partial class ProjectileTracerSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+
+        // sample the position after this frame's interpolation, where the projectile sprite is drawn
+        UpdatesAfter.Add(typeof(TransformSystem));
+
+        SubscribeLocalEvent<ProjectileTracerComponent, EntityTerminatingEvent>(OnTerminating);
+
+        _physicsQuery = GetEntityQuery<PhysicsComponent>();
         _overlay.AddOverlay(new ProjectileTracerOverlay(this));
     }
 
@@ -55,9 +64,12 @@ public sealed partial class ProjectileTracerSystem : EntitySystem
             if (!sprite.Visible || xform.MapID == MapId.Nullspace)
                 continue;
 
+            // a projectile stuck in someone or picked up is no longer flying
+            if (xform.ParentUid != xform.GridUid && xform.ParentUid != xform.MapUid)
+                continue;
+
             var position = _transform.GetWorldPosition(xform);
-            if (_attached.TryGetValue(uid, out var trail) &&
-                (trail.Map != xform.MapID || Vector2.DistanceSquared(trail.Head, position) > MaxJump * MaxJump))
+            if (_attached.TryGetValue(uid, out var trail) && Teleported(uid, trail, xform.MapID, position, now))
             {
                 // portals and other teleports start a new streak instead of drawing one across the map
                 Detach(trail, now);
@@ -74,6 +86,7 @@ public sealed partial class ProjectileTracerSystem : EntitySystem
 
             trail.Head = position;
             trail.Frame = _frame;
+            trail.SampleTime = now;
 
             if (Vector2.DistanceSquared(trail.Points[^1].Position, position) >= PointSpacing * PointSpacing)
             {
@@ -117,12 +130,46 @@ public sealed partial class ProjectileTracerSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Whether the projectile moved further since the last sample than its speed allows, as through a portal.
+    /// </summary>
+    private bool Teleported(EntityUid uid, TracerTrail trail, MapId map, Vector2 position, TimeSpan now)
+    {
+        if (trail.Map != map)
+            return true;
+
+        var speed = _physicsQuery.TryComp(uid, out var physics) ? physics.LinearVelocity.Length() : 0f;
+        var reach = MaxJump + speed * (float)(now - trail.SampleTime).TotalSeconds;
+        return Vector2.DistanceSquared(trail.Head, position) > reach * reach;
+    }
+
+    /// <summary>
+    /// Ends the streak where the projectile was removed, which can happen between frames when it hits something.
+    /// </summary>
+    private void OnTerminating(Entity<ProjectileTracerComponent> ent, ref EntityTerminatingEvent args)
+    {
+        if (!_attached.Remove(ent.Owner, out var trail))
+            return;
+
+        var now = _timing.RealTime;
+        var xform = Transform(ent.Owner);
+        if (xform.MapID == trail.Map && xform.MapID != MapId.Nullspace)
+        {
+            var position = _transform.GetWorldPosition(xform);
+            if (!Teleported(ent.Owner, trail, xform.MapID, position, now))
+                trail.Head = position;
+        }
+
+        Detach(trail, now);
+    }
+
     private TracerTrail Rent(ProjectileTracerComponent tracer, MapId map, Vector2 position, TimeSpan now)
     {
         var trail = _pool.Count > 0 ? _pool.Pop() : new TracerTrail();
         trail.Points.Clear();
         trail.Points.Add(new TracerPoint(position, now));
         trail.Head = position;
+        trail.SampleTime = now;
         trail.Map = map;
         trail.Attached = true;
         trail.Seed = _seed++;
@@ -150,6 +197,7 @@ public sealed class TracerTrail
     public readonly List<TracerPoint> Points = new();
 
     public Vector2 Head;
+    public TimeSpan SampleTime;
     public MapId Map;
     public bool Attached;
     public uint Frame;
