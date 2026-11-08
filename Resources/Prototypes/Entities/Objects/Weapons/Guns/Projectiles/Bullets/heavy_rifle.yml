@@ -7,11 +7,6 @@
   - type: ProjectileTracer # Polonium: bullet tracers
     length: 2.5
     width: 0.07
-  - type: PointLight # Polonium: bullets light their path
-    color: "#FFBB32"
-    radius: 2
-    energy: 1
-    castShadows: false
   - type: Projectile
     damage:
       types:

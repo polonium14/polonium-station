@@ -6,11 +6,6 @@
   components:
   - type: ProjectileTracer # Polonium: bullet tracers
     width: 0.06
-  - type: PointLight # Polonium: bullets light their path
-    color: "#FFBB32"
-    radius: 1.8
-    energy: 1
-    castShadows: false
   - type: Projectile
     damage:
       types:
@@ -51,11 +46,6 @@
   components:
   - type: ProjectileTracer # Polonium: bullet tracers
     width: 0.06
-  - type: PointLight # Polonium: bullets light their path
-    color: "#B4B4B4"
-    radius: 1.8
-    energy: 1
-    castShadows: false
   - type: Projectile
     damage:
       types:

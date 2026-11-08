@@ -11,7 +11,6 @@ public sealed partial class ProjectileTracerSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IOverlayManager _overlay = default!;
-    [Dependency] private SharedPointLightSystem _light = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
 
     private const float PointSpacing = 0.08f;
@@ -52,10 +51,7 @@ public sealed partial class ProjectileTracerSystem : EntitySystem
         var query = EntityQueryEnumerator<ProjectileTracerComponent, SpriteComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var tracer, out var sprite, out var xform))
         {
-            // the shooter's server copy stays hidden behind its predicted twin, which draws its own streak and light
-            if (_light.TryGetLight(uid, out var light) && light.Enabled != sprite.Visible)
-                _light.SetEnabled(uid, sprite.Visible, light);
-
+            // the shooter's server copy stays hidden behind its predicted twin, which draws its own streak
             if (!sprite.Visible || xform.MapID == MapId.Nullspace)
                 continue;
 
