@@ -4,6 +4,12 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.30 rifle)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+  - type: PointLight # Polonium: bullets light their path
+    color: "#FFBB32"
+    radius: 1.5
+    energy: 1
+    castShadows: false
   - type: Projectile
     damage:
       types:

@@ -4,6 +4,13 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.35 auto)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    width: 0.04
+  - type: PointLight # Polonium: bullets light their path
+    color: "#FFBB32"
+    radius: 1.2
+    energy: 1
+    castShadows: false
   - type: Projectile
     damage:
       types:
@@ -15,6 +22,8 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.35 auto practice)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    width: 0.04
   - type: Projectile
     damage:
       types:
@@ -26,6 +35,8 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.35 auto incendiary)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    width: 0.04
   - type: Projectile
     damage:
       types:
@@ -38,6 +49,8 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.35 auto uranium)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    width: 0.04
   - type: Projectile
     damage:
       types:

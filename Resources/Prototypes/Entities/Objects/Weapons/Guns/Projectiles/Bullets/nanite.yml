@@ -42,6 +42,13 @@
   categories: [ HideSpawnMenu ]
   name: nanite crystal
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#3D94FF"
+  - type: PointLight # Polonium: bullets light their path
+    color: "#3D94FF"
+    radius: 1.5
+    energy: 1
+    castShadows: false
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/nanite_crystal.rsi
     layers:

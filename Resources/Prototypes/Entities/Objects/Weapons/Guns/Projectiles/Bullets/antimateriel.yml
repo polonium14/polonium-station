@@ -4,6 +4,14 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.60 anti-materiel)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    length: 4
+    width: 0.1
+  - type: PointLight # Polonium: bullets light their path
+    color: "#FFBB32"
+    radius: 2.5
+    energy: 1
+    castShadows: false
   - type: Projectile
     damage:
       types:

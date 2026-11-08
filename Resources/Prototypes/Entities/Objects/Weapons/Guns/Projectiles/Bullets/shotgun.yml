@@ -4,6 +4,14 @@
   categories: [ HideSpawnMenu ]
   name: pellet (.50 slug)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    length: 2.5
+    width: 0.09
+  - type: PointLight # Polonium: bullets light their path
+    color: "#FFBB32"
+    radius: 1.8
+    energy: 1
+    castShadows: false
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     state: slug
@@ -36,6 +44,15 @@
   categories: [ HideSpawnMenu ]
   name: pellet (.50)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#858994CC"
+    length: 1.2
+    width: 0.03
+  - type: PointLight # Polonium: bullets light their path
+    color: "#858994"
+    radius: 0.8
+    energy: 1
+    castShadows: false
   - type: Projectile
     damage:
       types:
@@ -58,6 +75,9 @@
   categories: [ HideSpawnMenu ]
   name: pellet (.50 incendiary)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    length: 1.2
+    width: 0.03
   - type: Projectile
     damage:
       types:
@@ -82,6 +102,9 @@
   categories: [ HideSpawnMenu ]
   name: pellet (.50 practice)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    length: 1.2
+    width: 0.03
   - type: Projectile
     damage:
       types:
@@ -103,6 +126,15 @@
   categories: [ HideSpawnMenu ]
   name: improvised pellet
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#ADADADCC"
+    length: 1
+    width: 0.03
+  - type: PointLight # Polonium: bullets light their path
+    color: "#ADADAD"
+    radius: 0.8
+    energy: 1
+    castShadows: false
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -191,6 +223,9 @@
   categories: [ HideSpawnMenu ]
   name: pellet (.50 uranium)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    length: 1.2
+    width: 0.03
   - type: Projectile
     damage:
       types:
@@ -213,6 +248,15 @@
   categories: [ HideSpawnMenu ]
   name: grapeshot pellet
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#858994CC"
+    length: 1.5
+    width: 0.05
+  - type: PointLight # Polonium: bullets light their path
+    color: "#858994"
+    radius: 1.2
+    energy: 1
+    castShadows: false
   - type: Sprite
     noRot: false
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
@@ -240,6 +284,15 @@
   categories: [ HideSpawnMenu ]
   name: glass shard
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#ADADADCC"
+    length: 1
+    width: 0.03
+  - type: PointLight # Polonium: bullets light their path
+    color: "#ADADAD"
+    radius: 0.8
+    energy: 1
+    castShadows: false
   - type: Sprite
     noRot: false
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi

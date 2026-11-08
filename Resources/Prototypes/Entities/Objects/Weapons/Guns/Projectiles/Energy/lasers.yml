@@ -4,6 +4,12 @@
   categories: [ HideSpawnMenu ]
   name: laser bolt
   components:
+  - type: ProjectileTracer # Polonium: laser tracers
+    style: Laser
+    color: "#FF4D11"
+    length: 4
+    width: 0.04
+    fadeTime: 0.25
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     layers:
@@ -63,8 +69,10 @@
   categories: [ HideSpawnMenu ]
   name: lethal laser barrage
   components:
+  - type: ProjectileTracer # Polonium: shorter tracers for shotgun pellets
+    length: 2
   - type: ProjectileSpread
-    proto: BulletLaser
+    proto: BulletLaserPellet # Polonium: shorter tracers for shotgun pellets
     count: 4 #52 heat damage if you hit all your shots, but narrower spread
     spread: 10
 
@@ -74,6 +82,9 @@
   categories: [ HideSpawnMenu ]
   name: magnum laser bolt
   components:
+  - type: ProjectileTracer # Polonium: laser tracers
+    color: "#FF4D11"
+    width: 0.06
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_magnum.rsi
     layers:
@@ -94,6 +105,9 @@
   categories: [ HideSpawnMenu ]
   name: magnum window-piercing bolt
   components:
+  - type: ProjectileTracer # Polonium: laser tracers
+    color: "#FF4D11"
+    width: 0.06
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_magnum.rsi
     layers:
