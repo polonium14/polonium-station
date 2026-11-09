@@ -61,12 +61,19 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 5h
+      time: 3h
+    - !type:RoleTimeRequirement
+      role: JobDetective
+      time: 1h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 30h
     - !type:OverallPlaytimeRequirement
-      time: 10h
+      time: 20h
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain
+  guides: [ Command ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - HeadOfSecurity
   - Command

@@ -7,5 +7,5 @@ ent-PoweredLightPostSmallEmpty = oświetlenie słupka
 ent-PoweredLightPostSmall = oświetlenie słupowe
     .desc = Oprawa oświetleniowa. Jest zasilana prądem i emituje światło, gdy jest wyposażona w świetlówkę.
 ent-PoweredLEDLightPostSmall = oświetlenie słupkowe
-    .desc = Oprawa oświetleniowa. Jest zasilana prądem i emituje światło, gdy jest wyposażona w świetlówkę.
     .suffix = LED
+    .desc = Oprawa oświetleniowa. Jest zasilana prądem i emituje światło, gdy jest wyposażona w świetlówkę.

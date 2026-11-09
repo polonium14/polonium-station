@@ -1,0 +1,9 @@
+ent-MobChicken = kura
+    .desc = Pojawia się przed jajkiem i JEST dinozaurem!
+ent-MobChicken1 = { ent-MobChicken }
+    .desc = { ent-MobChicken.desc }
+ent-MobChicken2 = { ent-MobChicken }
+    .desc = { ent-MobChicken.desc }
+ent-FoodEggChickenFertilized = { ent-FoodEgg }
+    .suffix = Zapłodnione, Kura
+    .desc = { ent-FoodEgg.desc }

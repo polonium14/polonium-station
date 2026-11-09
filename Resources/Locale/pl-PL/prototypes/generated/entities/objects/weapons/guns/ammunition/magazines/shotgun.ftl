@@ -11,3 +11,7 @@ ent-MagazineShotgunSlug = bęben (12 kaliber jednolite)
     .desc = Duży magazynek bębnowy stosowany w niektórych wojskowych strzelbach automatycznych. Przeznaczony do przechowywania amunicji typu slug o dużym zasięgu.
 ent-MagazineShotgunIncendiary = bęben (12 kaliber zapalające)
     .desc = Duży magazynek bębnowy stosowany w niektórych wojskowych strzelbach automatycznych. Przeznaczony do przechowywania samopaliącej się amunicji zapalającej.
+ent-MagazineShotgunTranquilizer = ammo drum (.50 tranquilizer)
+    .desc = A large drum magazine used by some military-grade automatic shotguns. Intended to hold strong sedative ammunition.
+ent-MagazineShotgunUranium = ammo drum (.50 uranium)
+    .desc = A large drum magazine used by some military-grade automatic shotguns. Intended to hold pellet uranium ammunition.

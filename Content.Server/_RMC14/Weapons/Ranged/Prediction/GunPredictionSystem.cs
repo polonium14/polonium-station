@@ -3,8 +3,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
+using Content.Server._Polonium.Weapons.Ranged;
 using Content.Server._RMC14.Movement;
 using Content.Server.Movement.Components;
+using Content.Shared._Polonium.Projectiles;
+using Content.Shared._Polonium.Teleportation;
 using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.GameTicking;
@@ -24,11 +27,16 @@ namespace Content.Server._RMC14.Weapons.Ranged.Prediction;
 public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
 {
     [Dependency] private IConfigurationManager _config = default!;
+    [Dependency] private LaunchOverlapSystem _launchOverlap = default!; // Polonium
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private SharedProjectileSystem _projectile = default!;
     [Dependency] private RMCLagCompensationSystem _rmcLagCompensation = default!;
+    [Dependency] private ShotOriginSystem _shotOrigin = default!; // Polonium
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+
+    private const float ImpactPathTolerance = 1f;
+    private const float ImpactBehindOriginTolerance = 0.1f; // Polonium
 
     private readonly Dictionary<(Guid, int), EntityUid> _predicted = new();
     private readonly List<(PredictedProjectileHitEvent Event, ICommonSession Player)> _predictedHits = new();
@@ -64,6 +72,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         SubscribeLocalEvent<PredictedProjectileServerComponent, ComponentRemove>(OnPredictedRemove);
         SubscribeLocalEvent<PredictedProjectileServerComponent, EntityTerminatingEvent>(OnPredictedRemove);
         SubscribeLocalEvent<PredictedProjectileServerComponent, PreventCollideEvent>(OnPredictedPreventCollide);
+        SubscribeLocalEvent<PredictedProjectileServerComponent, PortalEnteredEvent>(OnPredictedPortalEntered); // Polonium
 
         Subs.CVar(_config, RMCCVars.RMCGunPredictionPreventCollision, v => _preventCollision = v, true);
         Subs.CVar(_config, RMCCVars.RMCGunPredictionLogHits, v => _logHits = v, true);
@@ -80,7 +89,11 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
     private void OnShootRequest(RequestShootEvent ev, EntitySessionEventArgs args)
     {
         _rmcLagCompensation.SetLastRealTick(args.SenderSession.UserId, ev.LastRealTick);
-        ShootRequested(ev.Gun, ev.Coordinates, ev.Target, ev.Shot, args.SenderSession, ev.RearmSemiAuto);
+        // Polonium: fire from where the client did, a walking shooter is already elsewhere on the server
+        var origin = args.SenderSession.AttachedEntity is { } user
+            ? _shotOrigin.ValidateOrigin(args.SenderSession, user, ev.Origin)
+            : null;
+        ShootRequested(ev.Gun, ev.Coordinates, ev.Target, ev.Shot, args.SenderSession, ev.RearmSemiAuto, origin);
     }
 
     private void OnPredictedMapInit(Entity<PredictedProjectileServerComponent> ent, ref MapInitEvent args)
@@ -105,6 +118,12 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
     private void OnPredictedProjectileHit(PredictedProjectileHitEvent ev, EntitySessionEventArgs args)
     {
         _predictedHits.Add((ev, args.SenderSession));
+    }
+
+    // Polonium: the shooter's twin vanishes in the portal, so they need to see the real shot come out
+    private void OnPredictedPortalEntered(Entity<PredictedProjectileServerComponent> ent, ref PortalEnteredEvent args)
+    {
+        RemCompDeferred<PredictedProjectileServerComponent>(ent);
     }
 
     private void OnPredictedPreventCollide(Entity<PredictedProjectileServerComponent> ent, ref PreventCollideEvent args)
@@ -203,11 +222,57 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         return bounds.Contains(projectilePosition);
     }
 
+    private bool ImpactOnPath(Entity<PredictedProjectileServerComponent, PhysicsComponent> projectile, MapCoordinates impact)
+    {
+        var origin = projectile.Comp1.Origin;
+        var current = _transform.GetMapCoordinates(projectile);
+        if (impact.MapId != origin.MapId || current.MapId != origin.MapId)
+            return false;
+
+        var velocity = _physics.GetMapLinearVelocity(projectile, projectile.Comp2);
+        var path = current.Position - origin.Position;
+        var direction = path.LengthSquared() > 0.0001f ? Vector2.Normalize(path) : velocity;
+        if (direction.LengthSquared() < 0.0001f)
+            return (impact.Position - origin.Position).Length() <= ImpactPathTolerance;
+
+        direction = Vector2.Normalize(direction);
+
+        // the shot may reach the server later than the client fired it, so the client can be a bit ahead
+        var lead = _shotOrigin.ShotLead(projectile.Comp1.Shooter);
+        var maxAlong = path.Length() + velocity.Length() * (float) lead.TotalSeconds + ImpactPathTolerance;
+
+        var offset = impact.Position - origin.Position;
+        var along = Vector2.Dot(offset, direction);
+        var lateral = MathF.Abs(offset.X * direction.Y - offset.Y * direction.X);
+        return along >= -ImpactBehindOriginTolerance && along <= maxAlong && lateral <= ImpactPathTolerance;
+    }
+
+    // Polonium: the client may report a hit ahead of the server shot, so nothing solid may stand between them
+    private bool ImpactObstructed(Entity<PredictedProjectileServerComponent, PhysicsComponent> projectile, EntityUid target, MapCoordinates impact)
+    {
+        var current = _transform.GetMapCoordinates(projectile);
+        var offset = impact.Position - current.Position;
+        var length = offset.Length();
+        if (impact.MapId != current.MapId || length < 0.01f)
+            return false;
+
+        var ray = new CollisionRay(current.Position, offset / length, projectile.Comp2.CollisionMask);
+        foreach (var hit in _physics.IntersectRay(current.MapId, ray, length, projectile, false))
+        {
+            if (hit.HitEntity != target &&
+                hit.Distance > 0f &&
+                _physicsQuery.TryComp(hit.HitEntity, out var body) &&
+                body.BodyType == BodyType.Static)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private void ProcessPredictedHit(PredictedProjectileHitEvent ev, ICommonSession player)
     {
-        if (ev.Hit.Count == 0)
-            return;
-
         if (!_predicted.TryGetValue((player.UserId, ev.Projectile), out var projectile))
             return;
 
@@ -226,43 +291,41 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             return;
         }
 
-        foreach (var (netEnt, clientPos) in ev.Hit)
+        if (GetEntity(ev.Target) is not { Valid: true } hit)
+            return;
+
+        if (!_lagCompensationQuery.TryComp(hit, out var otherLagComp) ||
+            !_fixturesQuery.TryComp(hit, out var otherFixtures) ||
+            !_physicsQuery.TryComp(hit, out var otherPhysics) ||
+            !_transformQuery.TryComp(hit, out var otherTransform))
         {
-            if (GetEntity(netEnt) is not { Valid: true } hit)
-                continue;
-
-            if (!_lagCompensationQuery.TryComp(hit, out var otherLagComp) ||
-                !_fixturesQuery.TryComp(hit, out var otherFixtures) ||
-                !_physicsQuery.TryComp(hit, out var otherPhysics) ||
-                !_transformQuery.TryComp(hit, out var otherTransform))
-            {
-                continue;
-            }
-
-            if (!Collides(
-                    (projectile, predictedProjectile, projectilePhysics),
-                    (hit, otherLagComp, otherFixtures, otherPhysics, otherTransform),
-                    clientPos,
-                    ev.Impact))
-            {
-                if (_logHits)
-                    Log.Info("missed");
-
-                continue;
-            }
-
-            if (_logHits)
-                Log.Info("hit");
-
-            predictedProjectile.ClientImpact = ev.Impact;
-            if (projectilePhysics.LinearVelocity.LengthSquared() > 0.01f)
-                predictedProjectile.ImpactDirection = Vector2.Normalize(projectilePhysics.LinearVelocity);
-
-            _projectile.PullBackToClientImpact(projectile);
-            predictedProjectile.Hit = true;
-            
-            _projectile.ProjectileCollide((projectile, projectileComp, projectilePhysics), hit, true);
+            return;
         }
+
+        if (!ImpactOnPath((projectile, predictedProjectile, projectilePhysics), ev.Impact) ||
+            _launchOverlap.IsIgnored(projectile, hit) || // Polonium
+            ImpactObstructed((projectile, predictedProjectile, projectilePhysics), hit, ev.Impact) ||
+            !Collides(
+                (projectile, predictedProjectile, projectilePhysics),
+                (hit, otherLagComp, otherFixtures, otherPhysics, otherTransform),
+                ev.TargetCoordinates,
+                ev.Impact))
+        {
+            if (_logHits)
+                Log.Info("missed");
+
+            return;
+        }
+
+        if (_logHits)
+            Log.Info("hit");
+
+        predictedProjectile.ClientImpact = ev.Impact;
+        if (projectilePhysics.LinearVelocity.LengthSquared() > 0.01f)
+            predictedProjectile.ImpactDirection = Vector2.Normalize(projectilePhysics.LinearVelocity);
+
+        _projectile.PullBackToClientImpact(projectile);
+        _projectile.ProjectileCollide((projectile, projectileComp, projectilePhysics), hit, true);
     }
 
     public override void Update(float frameTime)

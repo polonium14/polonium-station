@@ -14,5 +14,5 @@ ent-ClothingNeckSecuritymedal = medal ochrony
     .desc = Przyznawany za najlepszą pracę w dziale ochrony.
 ent-ClothingNeckClownmedal = medal klauna
     .desc = Przyznawany za najlepszy żart we wszechświecie. HONK!
-ent-ClothingNeckMedalBase = medal
-    .desc = Medal, który świadczy o twoim męstwie. Może być zrobiony z metalu, a może nie.
+ent-ClothingMedalBase = medal
+    .desc = A medal to show your mettle. May or may not be made out of metal.

@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Chat.Systems;
+using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared.Chat;
 using Robust.Server.GameObjects;
@@ -18,20 +19,13 @@ public sealed partial class TutorialMentorSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IPlayerManager _players = default!;
 
-    private static readonly EntProtoId MentorProto = "TutorialHoloMentor";
+    private static readonly EntProtoId MentorProto = TutorialMentorReading.MentorProto;
 
     /// <summary>Set on the session once a line of the current step has been said out loud.</summary>
     public const string SpokeFlag = "spoke";
 
     // let the player look around after spawning before anyone starts talking at them
     private static readonly TimeSpan FirstSpeakDelay = TimeSpan.FromSeconds(4);
-
-    // gap scales with how much there is to read, clamped so short lines never machine gun
-    // and long ones never drag. roughly 30 characters per second plus a beat to notice the line
-    private const double GapBaseSeconds = 0.8;
-    private const double GapSecondsPerChar = 1.0 / 30.0;
-    private const double GapMinSeconds = 2.0;
-    private const double GapMaxSeconds = 4.5;
 
     // breather after a step flips, gives the player a moment before the next room gets explained
     private static readonly TimeSpan StepSettle = TimeSpan.FromSeconds(1.6);
@@ -364,8 +358,7 @@ public sealed partial class TutorialMentorSystem : EntitySystem
 
     private static TimeSpan GapAfter(string text)
     {
-        var seconds = GapBaseSeconds + text.Length * GapSecondsPerChar;
-        return TimeSpan.FromSeconds(Math.Clamp(seconds, GapMinSeconds, GapMaxSeconds));
+        return TutorialMentorReading.ReadTime(text.Length);
     }
 
     private void Speak(EntityUid mentor, string text)

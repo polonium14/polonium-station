@@ -1,5 +1,5 @@
-ent-Bola = bola
-    .desc = Linked together with some spare cuffs and metal.
+ent-Bola = makeshift bola
+    .desc = A makeshift bola, cobbled together with some spare cuffs and metal. It doesn't look like it's going to stay together for very long.
 ent-BaseBola = bola
     .desc = { ent-BaseItem.desc }
 ent-SecurityBola = tactical bola

@@ -380,8 +380,8 @@
   - type: ToggleableComponentModSuitPartModule
     part: Helmet
     components:
-    - type: TrayScanner
-      enabled: true
+    - type: TRayScanner
+      requireToggle: false
     - type: GoggleShader
       shader: Goggles
       color: '#5AB43CCC'

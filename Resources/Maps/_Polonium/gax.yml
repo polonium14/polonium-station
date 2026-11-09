@@ -67687,8 +67687,6 @@ entities:
       pos: 55.5,20.5
   - uid: 8847
     components:
-    - type: MetaData
-      name: Pesquisa e Desenvolvimento
     - type: Transform
       parent: 2
       pos: 46.5,25.5

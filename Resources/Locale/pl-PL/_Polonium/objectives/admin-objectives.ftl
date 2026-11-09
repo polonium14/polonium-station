@@ -32,6 +32,12 @@ admin-objectives-remove-confirm = Na pewno?
 admin-objectives-filter-all = Wszyscy zleceniodawcy
 admin-objectives-steal = Kradzież: { $item }
 
+objectives-round-end-custom-result = Gracze z celami specjalnymi:
+objectives-custom-with-objectives = { $custody }{ $title } z następującymi celami:
+objectives-custom-objective-success = { $objective } | [color=green]Sukces![/color]
+objectives-custom-objective-partial-success = { $objective } | [color=yellow]Częściowy sukces![/color]
+objectives-custom-objective-fail = { $objective } | [color=red]Porażka![/color]
+
 objective-issuer-centcom = [color=#2681a5]Centralne Dowództwo[/color]
 
 ## Nazwy na liście admina dla celów, których prototypy nie mają nazwy, bo prawdziwy tytuł dostają dopiero przy przypisaniu.

@@ -1,0 +1,10 @@
+ent-ClothingUniformJumpskirtChiefEngineer = chief engineer's jumpskirt
+    .desc = It's a high visibility jumpskirt given to those engineers insane enough to achieve the rank of Chief Engineer.
+ent-ClothingUniformJumpskirtChiefEngineerTurtle = chief engineer's turtleneck
+    .desc = A yellow turtleneck designed specifically for work in conditions of the engineering department.
+ent-ClothingUniformJumpskirtEngineering = engineering jumpskirt
+    .desc = If this suit was non-conductive, maybe engineers would actually do their damn job.
+ent-ClothingUniformJumpskirtAtmos = atmospheric technician jumpskirt
+    .desc = I am at work. I can't leave work. Work is breathing. I am testing air quality.
+ent-ClothingUniformJumpskirtSeniorEngineer = senior engineer jumpskirt
+    .desc = A sign of skill and prestige within the engineering department.

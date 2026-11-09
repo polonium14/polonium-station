@@ -142,3 +142,9 @@ ent-AnomalyBerryPlants = anomaly berry
     .desc = { ent-BasePlant.desc }
 ent-BloonionPlants = bloonion bulb
     .desc = { ent-BasePlant.desc }
+
+ent-AloeIgnisPlants = aloe ignis
+    .desc = { ent-BasePlant.desc }
+
+ent-DragonTailPlants = dragon's tail
+    .desc = { ent-BasePlant.desc }

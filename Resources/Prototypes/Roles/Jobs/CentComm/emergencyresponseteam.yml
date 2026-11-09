@@ -277,7 +277,7 @@
     pocket2: GasAnalyzer
   storage:
     back:
-    - trayScanner
+    - TRayScanner
     - RCD
     - RCDAmmo
     - RCDAmmo
@@ -306,7 +306,7 @@
     pocket2: GasAnalyzer
   storage:
     back:
-    - trayScanner
+    - TRayScanner
     - RCD
     - RCDAmmo
     - RCDAmmo

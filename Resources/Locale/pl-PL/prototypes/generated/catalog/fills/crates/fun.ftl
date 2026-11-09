@@ -50,3 +50,5 @@ ent-CrateFunDartsSet = zestaw do gry w rzutki
     .desc = Pudełko ze wszystkim, czego potrzebujesz do radosnej gry w rzutki.
 ent-CrateFunScurret = nawodniony scurret
     .desc = Czekaj, co?
+ent-CrateVirtualSingerOutfits = virtual singer outfit crate
+    .desc = An assortment of various virtual singers’ outfits, perfect for a grand performance! The set also includes signature items.

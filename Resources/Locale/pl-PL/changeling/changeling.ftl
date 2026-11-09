@@ -15,9 +15,12 @@ changeling-devour-begin-consume-self = Nienaturalne usta wgryzają się głębok
 changeling-devour-begin-consume-others = { CAPITALIZE(POSS-ADJ($user)) } nienaturalne usta wgryzają się głęboko w { POSS-ADJ($user) } ofiarę.
 changeling-devour-consume-complete-self = Nasze nienaturalne usta cofają się, biomasa została strawiona.
 changeling-devour-consume-complete-others = { CAPITALIZE(POSS-ADJ($user)) } nienaturalne usta cofają się.
+changeling-devour-doafter-windup = [color=red]{ CAPITALIZE(THE($user)) } rozwiera twarz, szykując się do uczty![/color]
+changeling-devour-doafter = [color=red]{ CAPITALIZE(THE($user)) } rozszarpuje ciało ofiary: { $target }![/color]
 # transformation
 changeling-transform-attempt-self = Nasze kości pękają, mięśnie rwą się, jedno ciało staje się innym.
 changeling-transform-attempt-others = { CAPITALIZE(POSS-ADJ($user)) } kości pękają, mięśnie rwą się, ciało przekształca się w inne.
+changeling-transform-doafter = [color=red]The surface of { POSS-ADJ($user) } skin is melting, taking another shape.[/color]
 # transformation BUI
 changeling-transform-bui-select-entity = { $entity }
 changeling-transform-bui-drop-identity-menu = Usuń pożartą tożsamość z pamięci.
@@ -38,13 +41,23 @@ changeling-biodegrade-used-popup-self = Wymiotujemy kwasem na nasze { $restraint
 changeling-takeover-not-dead = To ciało wciąż żyje! Nie możemy go infekować, gdy żyje.
 changeling-takeover-is-changeling = To ciało odrzuca naszą próbę przejęcia!
 changeling-takeover-start-others = { CAPITALIZE(THE($user)) } zaczyna wpełzać do trupa!
-changeling-takeover-success-self = Pomyślnie zainfekowaliśmy ciało i przyjęliśmy jego formę.
+changeling-takeover-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } { CONJUGATE-BE($user) } crawling inside of { $target }![/color]
 # stings
 changeling-sting-success = Cicho ukąsiliśmy { THE($target) }!
+changeling-sting-hemotoxin = You feel sharp pain in your chest!
 # mindshield
 changeling-fake-mindshield-enabled = Emiutjemy fałszywą osłonę umysłu.
 changeling-fake-mindshield-disabled = Przestajemy emitować fałszywe fale osłony umysłu.
 # chemicals
 changeling-not-enough-chemicals = Nie mamy wystarczającej ilości chemikaliów.
 # other
+changeling-action-fail-generic = We cannot do this right now.
 changeling-paused-map-name = Mapa przechowywania tożsamości changelinga
+changeling-cocoon-success = We encase { THE($target) } in a fleshy tomb.
+changeling-cocoon-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } { CONJUGATE-BE($user) } covering { THE($target) } in a fleshy mass![/color]
+# horror transformation
+changeling-horror-alert-time-name = Remaining time
+changeling-horror-alert-time-desc = When this counter reaches 0, we will have exhausted our strength.
+changeling-horror-force-transform-self = Our energy depleted, we cannot maintain this form anymore.
+changeling-horror-force-transform-others = { CAPITALIZE(POSS-ADJ($user)) } flesh rapidly shrivels away and dies.
+changeling-horror-transform-fail = We do not have enough DNA stored to reveal ourselves.

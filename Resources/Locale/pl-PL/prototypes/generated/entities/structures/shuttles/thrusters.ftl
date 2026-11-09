@@ -1,6 +1,6 @@
 ent-BaseThruster = silnik
     .desc = Silnik, który pozwala wahadłowcom na przemieszczanie się.
-ent-Thruster = silnik
+ent-Thruster = silnik odrzutowy
     .desc = { ent-BaseThruster.desc }
 ent-ThrusterXenoborg = { ent-Thruster }
     .desc = { ent-Thruster.desc }

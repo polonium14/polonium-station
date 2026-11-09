@@ -3,7 +3,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Destructible;
 using Content.Server.Explosion.EntitySystems;
-using Content.Server.Pinpointer;
+using Content.Shared.Pinpointer;
 using Content.Shared._Impstation.Replicator;
 using Content.Shared._Polonium.Replicator;
 using Content.Shared.AlertLevel;
@@ -29,6 +29,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Station.Systems;
 
 namespace Content.Server._Polonium.Replicator;
 
@@ -61,7 +62,7 @@ public sealed partial class ReplicatorColossusSystem : EntitySystem
     [Dependency] private PullingSystem _pulling = default!;
     [Dependency] private ReplicatorRecallImmunitySystem _recallImmunity = default!;
     [Dependency] private SharedReplicatorSystem _replicator = default!;
-    [Dependency] private SharedStationSystem _station = default!;
+    [Dependency] private StationSystem _station = default!;
     [Dependency] private SharedStunSystem _stun = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
     [Dependency] private TileSystem _tile = default!;

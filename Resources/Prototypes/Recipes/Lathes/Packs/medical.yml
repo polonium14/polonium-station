@@ -16,6 +16,7 @@
   - ChemistryEmptyVial
   - ChemistryEmptyVialSmall
   - Dropper
+  - CandyBowl
 
 - type: latheRecipePack
   parent: BasicChemistryStatic
@@ -50,6 +51,7 @@
   - IVDripFlatpack
   - IVBag
   - BoneGel
+  - VehicleWheelchairFolded
 
 - type: latheRecipePack
   id: RollerBedsStatic

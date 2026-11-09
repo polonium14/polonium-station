@@ -85,3 +85,7 @@ ent-ClothingOuterCoatExpensive = drogi płaszcz
     .desc = Bardzo puszysty różowy płaszcz, wykonany z bardzo drogiego futra (oczywiście).
 ent-ClothingOuterCoatExpensiveOpened = drogi płaszcz
     .desc = { ent-ClothingOuterStorageFoldableBaseOpened.desc }
+ent-ClothingOuterCoatVirtualIce = ice singer's coat
+    .desc = A white coat with blue trim, designed to protect against strong winds. The code 'CRV2' is printed on the chest.
+ent-ClothingOuterCoatVirtualIceOpened = ice singer's coat
+    .desc = { ent-ClothingOuterCoatVirtualIce.desc }

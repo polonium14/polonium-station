@@ -43,6 +43,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Spawners;
 using Content.Shared.DeviceLinking;
 using Robust.Shared.Timing;
+using Content.Shared.DeviceLinking.Components;
 
 namespace Content.Server._EE.Supermatter.Systems;
 

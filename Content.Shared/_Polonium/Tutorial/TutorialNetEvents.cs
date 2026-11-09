@@ -39,12 +39,14 @@ public sealed class TutorialConstructionGhostStateEvent : EntityEventArgs
     public string AnchorId { get; }
     public bool OnTile { get; }
     public bool Stray { get; }
+    public bool Wrong { get; }
 
-    public TutorialConstructionGhostStateEvent(string anchorId, bool onTile, bool stray)
+    public TutorialConstructionGhostStateEvent(string anchorId, bool onTile, bool stray, bool wrong)
     {
         AnchorId = anchorId;
         OnTile = onTile;
         Stray = stray;
+        Wrong = wrong;
     }
 }
 

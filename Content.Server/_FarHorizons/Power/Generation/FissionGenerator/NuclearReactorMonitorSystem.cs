@@ -1,11 +1,12 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Administration.Logs;
-using Content.Server.DeviceLinking.Systems;
+using Content.Shared.DeviceLinking.Systems;
 using Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
 using Content.Shared.Database;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
 using Robust.Server.GameObjects;
+using Content.Shared.DeviceLinking.Components;
 
 namespace Content.Server._FarHorizons.Power.Generation.FissionGenerator;
 
@@ -28,7 +29,7 @@ public sealed partial class NuclearReactorMonitorSystem : EntitySystem
         SubscribeLocalEvent<NuclearReactorMonitorComponent, MapInitEvent>(OnMapInit);
 
         SubscribeLocalEvent<NuclearReactorMonitorComponent, NewLinkEvent>(OnNewLink);
-        SubscribeLocalEvent<NuclearReactorMonitorComponent, PortDisconnectedEvent>(OnPortDisconnected);
+        SubscribeLocalEvent<NuclearReactorMonitorComponent, SinkPortDisconnectedEvent>(OnPortDisconnected);
 
         SubscribeLocalEvent<NuclearReactorMonitorComponent, ReactorControlRodModifyMessage>(OnControlRodMessage);
 
@@ -60,7 +61,7 @@ public sealed partial class NuclearReactorMonitorSystem : EntitySystem
         Dirty(uid, comp);
     }
 
-    private void OnPortDisconnected(EntityUid uid, NuclearReactorMonitorComponent comp, ref PortDisconnectedEvent args)
+    private void OnPortDisconnected(EntityUid uid, NuclearReactorMonitorComponent comp, ref SinkPortDisconnectedEvent args)
     {
         if (args.Port != comp.LinkingPort)
             return;
@@ -146,7 +147,7 @@ public sealed partial class NuclearReactorMonitorSystem : EntitySystem
 
         _uiSystem.CloseUi(uid, NuclearReactorUiKey.Key);
         comp.reactor = null;
-        _signal.RemoveSinkFromSource(uidReactor.Value, uid, source, sink);
+        _signal.RemoveSinkFromSource((uidReactor.Value, source), (uid, sink));
         Dirty(uid, comp);
     }
 }

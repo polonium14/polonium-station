@@ -1,4 +1,4 @@
-ent-Airlock = airlock
+ent-Airlock = { ent-BaseAirlockIndestructible }
     .desc = It opens, it closes, and maybe crushes you.
 ent-AirlockRCDResistant = { ent-Airlock }
     .desc = { ent-Airlock.desc }

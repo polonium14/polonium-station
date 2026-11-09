@@ -1462,7 +1462,9 @@ entities:
       parent: 4313
       pos: -9.5,-6.5
     - type: Door
-      state: Welded
+      state: Closed
+    - type: Weldable
+      isWelded: True
     - type: Physics
       canCollide: False
     - type: Airtight
@@ -19718,10 +19720,6 @@ entities:
     - type: NetworkConfigurator
       linkModeActive: False
       lastUseAttempt: 1376.3800344
-      devices:
-        'UID: 47510': 1911
-        'UID: 47721': 114
-        'UID: 47511': 1887
     - type: EmitSoundOnCollide
       nextSound: -92.3518302
   - uid: 2039

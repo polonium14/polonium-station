@@ -1,0 +1,12 @@
+ent-MobSheepBase = sheepBase
+    .desc = A sheep.
+ent-MobSheep = sheep
+    .desc = An adorable genetically engineered chemical factory producing milk and cotton.
+ent-SolutionWoolSheep = { ent-SolutionWool }
+    .desc = { ent-SolutionWool.desc }
+ent-SolutionUdderSheep = { ent-SolutionUdder }
+    .desc = { ent-SolutionUdder.desc }
+ent-MobSheepRainbow = rainbow sheep
+    .desc = A sheep; this one seems... glowy.
+ent-SolutionWoolSheepRainbow = { ent-SolutionWool }
+    .desc = { ent-SolutionWool.desc }

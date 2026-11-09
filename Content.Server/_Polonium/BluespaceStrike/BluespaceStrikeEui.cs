@@ -28,7 +28,7 @@ public sealed class BluespaceStrikeEui : BaseEui
     private readonly BluespaceStrikeSystem _strike;
     private readonly ExplosionSystem _explosion;
     private readonly AlertLevelSystem _alertLevel;
-    private readonly StationSystem _station;
+    private readonly ServerStationSystem _station;
     private readonly ServerGlobalSoundSystem _globalSound;
     private readonly IAdminLogManager _adminLog;
     private readonly IPlayerManager _playerManager;
@@ -42,7 +42,7 @@ public sealed class BluespaceStrikeEui : BaseEui
         _strike = sys.GetEntitySystem<BluespaceStrikeSystem>();
         _explosion = sys.GetEntitySystem<ExplosionSystem>();
         _alertLevel = sys.GetEntitySystem<AlertLevelSystem>();
-        _station = sys.GetEntitySystem<StationSystem>();
+        _station = sys.GetEntitySystem<ServerStationSystem>();
         _globalSound = sys.GetEntitySystem<ServerGlobalSoundSystem>();
         _adminLog = IoCManager.Resolve<IAdminLogManager>();
         _playerManager = IoCManager.Resolve<IPlayerManager>();

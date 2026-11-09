@@ -21,7 +21,7 @@ public sealed partial class StationGoalPaperSystem : EntitySystem
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private FaxSystem _fax = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
-    [Dependency] private StationSystem _station = default!;
+    [Dependency] private ServerStationSystem _station = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
 
     public override void Initialize()

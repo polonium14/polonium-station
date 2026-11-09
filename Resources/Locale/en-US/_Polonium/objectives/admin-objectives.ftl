@@ -32,6 +32,12 @@ admin-objectives-remove-confirm = Sure?
 admin-objectives-filter-all = All issuers
 admin-objectives-steal = Steal: { $item }
 
+objectives-round-end-custom-result = Players with special objectives:
+objectives-custom-with-objectives = { $custody }{ $title } had the following objectives:
+objectives-custom-objective-success = { $objective } | [color=green]Success![/color]
+objectives-custom-objective-partial-success = { $objective } | [color=yellow]Partial Success![/color]
+objectives-custom-objective-fail = { $objective } | [color=red]Failure![/color]
+
 objective-issuer-centcom = [color=#2681a5]Central Command[/color]
 
 ## Names in the admin list for objectives whose prototypes have no name, they get their real title only when assigned.

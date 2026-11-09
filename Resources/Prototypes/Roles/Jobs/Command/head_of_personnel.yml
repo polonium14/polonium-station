@@ -59,22 +59,26 @@
   playTimeTracker: JobHeadOfPersonnel
   requirements:
     - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 1.25h
+    - !type:DepartmentTimeRequirement
       department: Medical
-      time: 7h
+      time: 1.25h
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 7h
+      time: 1.25h
     - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 7h
+      department: Security
+      time: 1.25h
     - !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 7h
+      department: Command
+      time: 1.25h
     - !type:OverallPlaytimeRequirement
-      time: 12h
+      time: 25h
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
   supervisors: job-supervisors-captain
+  guides: [ Command ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Command
   - HeadOfPersonnel

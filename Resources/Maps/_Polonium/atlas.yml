@@ -43300,8 +43300,6 @@ entities:
       pos: -48.43788,-11.496704
     - type: NetworkConfigurator
       linkModeActive: False
-      devices:
-        'UID: 98673': 229
 - proto: NitrogenCanister
   entities:
   - uid: 6340

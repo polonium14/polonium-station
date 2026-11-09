@@ -40,3 +40,6 @@ ent-ClothingHeadsetWizard = zestaw słuchawkowy czarodzieja
     .desc = Zestaw słuchawkowy używany przez osławionych kosmicznych czarodziejów.
 ent-ClothingHeadsetNinja = zielony zestaw słuchawkowy
     .desc = Któż odmówiłby noszenia tego stylowego czarno-zielonego zestawu?
+ent-ClothingHeadsetSyndicateCovert = passenger headset
+    .suffix = Syndicate
+    .desc = { ent-ClothingHeadsetGrey.desc }

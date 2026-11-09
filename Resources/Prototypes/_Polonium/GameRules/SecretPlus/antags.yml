@@ -9,7 +9,7 @@
 # Reguły, ich cena i ilu gotowych graczy potrzebują:
 #   Traitor                 150 za osobę   od 5 graczy
 #   ThiefSecretPlus          80 za osobę   od 12 graczy
-#   ChangelingSecretPlus    200 za osobę   od 20 graczy
+#   Changeling              200 za osobę   od 20 graczy
 #   WizardLowpop            900            10-20 graczy
 #   NukeopsLowpop           400            15-20 graczy
 #   Revolutionary          1000            od 15 graczy
@@ -28,14 +28,14 @@
   weights:
     Traitor: 0.55               # 55%
     ThiefSecretPlus: 0.30       # 30%
-    ChangelingSecretPlus: 0.15  # 15%
+    Changeling: 0.15            # 15%
 
 # Mid: głównie ukryci antagoniści, tryb głośny w mniej więcej jednej trzeciej rund.
 - type: weightedRandom
   id: SecretPlusPrimaryMid
   weights:
     Traitor: 0.38                # 38%
-    ChangelingSecretPlus: 0.14   # 14%
+    Changeling: 0.14             # 14%
     Revolutionary: 0.12          # 12%
     Nukeops: 0.10                # 10%
     NukeopsLowpop: 0.08          #  8%
@@ -49,7 +49,7 @@
   id: SecretPlusPrimaryMidHigh
   weights:
     Traitor: 0.38                # 38%
-    ChangelingSecretPlus: 0.14   # 14%
+    Changeling: 0.14             # 14%
     Revolutionary: 0.12          # 12%
     Nukeops: 0.10                # 10%
     NukeopsLowpop: 0.08          #  8%
@@ -95,7 +95,7 @@
   weights:
     ThiefSecretPlus: 0.40       # 40%
     Traitor: 0.35               # 35%
-    ChangelingSecretPlus: 0.25  # 25%
+    Changeling: 0.25            # 25%
 
 # ====================================================================================================
 # Reguły antagonistów przygotowane dla SecretPlus
@@ -118,12 +118,3 @@
       range:
         min: 1
         max: 2
-
-# Changeling, do którego mogą jeszcze dołączyć spóźnieni gracze (patrz lateAntagsFrom w schedulers.yml).
-- type: entity
-  parent: Changeling
-  id: ChangelingSecretPlus
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: AntagSelection
-    lateJoinAdditional: true

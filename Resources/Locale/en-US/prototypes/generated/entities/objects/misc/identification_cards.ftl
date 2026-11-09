@@ -101,9 +101,9 @@ ent-CluwneIDCard = cluwne ID card
     .desc = { ent-IDCardStandard.desc }
 ent-VisitorIDCard = visitor ID card
     .desc = { ent-IDCardStandard.desc }
-ent-AgentIDCard = { ent-PassengerIDCard }
+ent-AgentIDCard = passenger ID card
     .suffix = Agent
-    .desc = { ent-PassengerIDCard.desc }
+    .desc = { ent-IDCardStandard.desc }
 ent-NukieAgentIDCard = { ent-AgentIDCard }
     .suffix = Nukie
     .desc = { ent-AgentIDCard.desc }
@@ -148,3 +148,11 @@ ent-UniversalIDCard = universal ID card
     .suffix = Admin
 ent-TramDriverIDCard = tram driver ID card
     .desc = { ent-IDCardStandard.desc }
+
+ent-SyndicateIDCardAdaptive = syndicate ID card
+    .suffix = Adaptive
+    .desc = { ent-SyndicateIDCard.desc }
+
+ent-SyndicateIDCardAdaptivePassenger = { ent-SyndicateIDCardAdaptive }
+    .suffix = Adaptive, Passenger Icon
+    .desc = { ent-SyndicateIDCardAdaptive.desc }

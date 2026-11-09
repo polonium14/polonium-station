@@ -30,7 +30,8 @@
                 - /Maps/Shuttles/trading_outpost.yml
         - type: StationJobs
           availableJobs:
-            #command (6)
+            # TOTAL: 31 job slots
+            # Command (6)
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             HeadOfSecurity: [ 1, 1 ]

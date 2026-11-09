@@ -78,3 +78,12 @@ ent-DerelictSyndicateAssaultCyborgSpawn = { ent-BaseDerelictCyborgSpawn }
     .desc = { ent-BaseDerelictCyborgSpawn.desc }
 ent-UtilityLineRupture = Utility Line Rupture
     .desc = { ent-BaseStationEvent.desc }
+
+ent-BaseStationEventVeryShortDelay = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }
+
+ent-SpaceChangelingSpawn = { ent-BaseAntagGhostRoleRule }
+    .desc = { ent-BaseAntagGhostRoleRule.desc }
+
+ent-VendorMalfunction = { ent-BaseStationEventVeryShortDelay }
+    .desc = { ent-BaseStationEventVeryShortDelay.desc }

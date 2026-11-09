@@ -11,6 +11,7 @@ species-name-skeleton = Szkielet
 species-name-vox = Voks
 species-name-gingerbread = pyszny wypiek
 species-name-vulpkanin = Wulp
+species-name-horror = Człapiący potwór
 
 ## Misc species things
 

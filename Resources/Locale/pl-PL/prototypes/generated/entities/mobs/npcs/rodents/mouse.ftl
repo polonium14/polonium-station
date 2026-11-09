@@ -1,0 +1,11 @@
+ent-MobMouse = mysz
+    .desc = Pisk!
+ent-MobMouseDead = mysz
+    .desc = Pisk!
+    .suffix = Martwa
+ent-MobMouse1 = { ent-MobMouse }
+    .desc = { ent-MobMouse.desc }
+ent-MobMouse2 = { ent-MobMouse }
+    .desc = { ent-MobMouse.desc }
+ent-MobMouseCancer = rakomysz
+    .desc = Toksyczna. Pisk!

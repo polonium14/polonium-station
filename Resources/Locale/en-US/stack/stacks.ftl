@@ -132,6 +132,7 @@ stack-inflatable-wall = inflatable wall
 stack-inflatable-door = inflatable door
 stack-ointment = ointment
 stack-aloe-cream = aloe cream
+stack-dragon-tail-compress = dragon's tail compress
 stack-gauze = gauze
 stack-brutepack = brutepack
 stack-bloodpack = bloodpack

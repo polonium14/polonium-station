@@ -51,6 +51,7 @@ markings-layer-SnoutCover = Pysk (nakładka)
 markings-layer-HeadSide = Głowa (bok)
 markings-layer-HeadTop = Głowa (góra)
 markings-layer-Eyes = Oczy
+markings-layer-OverEyes = Nad oczami
 markings-layer-RArm = Prawe ramię
 markings-layer-LArm = Lewe ramię
 markings-layer-RHand = Prawa dłoń

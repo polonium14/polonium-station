@@ -17,8 +17,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Administration;
+using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Shared.Administration;
+using Content.Shared.Database;
 using Robust.Shared.Audio;
 using Robust.Shared.Console;
 using Robust.Shared.ContentPack;
@@ -32,6 +34,7 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IResourceManager _res = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
 
     public override string Command => "announce";
     public override string Description => Loc.GetString("cmd-announce-desc");
@@ -78,6 +81,18 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
             sound = new SoundPathSpecifier(args[3]);
 
         _chat.DispatchGlobalAnnouncement(message, sender, true, sound, color, centComAnnouncement);
+
+        if (shell.Player is null)
+        {
+            _adminLogger.Add(LogType.Chat, LogImpact.Low,
+                $"LOCAL used 'announce' with displayed sender {sender}: {message}");
+        }
+        else
+        {
+            _adminLogger.Add(LogType.Chat, LogImpact.Low,
+                $"{shell.Player:Player} used 'announce' with displayed sender {sender}: {message}");
+        }
+
         shell.WriteLine(Loc.GetString("shell-command-success"));
     }
 

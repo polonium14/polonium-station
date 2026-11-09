@@ -100,3 +100,7 @@ ent-FoodCroissantRaw = surowy croissant
     .desc = Maślana, krucha dobroć czekająca na upieczenie.
 ent-FoodCroissantRawCotton = surowy bawełniany croissant
     .desc = Maślana, krucha, włóknista dobroć czekająca na upieczenie.
+ent-ReagentContainerPepper = pepper container
+    .desc = A big container of pepper. The king of spices, now in value size!
+ent-ReagentContainerSalt = salt container
+    .desc = A big container of salt. Experts debate whether it contains any iodine.

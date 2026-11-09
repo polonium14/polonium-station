@@ -25,18 +25,18 @@ public sealed partial class AnomalySpawnRule : StationEventSystem<AnomalySpawnRu
     {
         base.Started(uid, component, gameRule, args);
 
-        if (!TryGetRandomStation(out var chosenStation))
+        if (!Station.TryGetRandomStation(out var chosenStation))
             return;
 
         if (!TryComp<StationDataComponent>(chosenStation, out var stationData))
             return;
 
-        var grid = StationSystem.GetLargestGrid((chosenStation.Value, stationData));
+        var grid = Station.GetLargestGrid((chosenStation.Value, stationData));
 
         if (grid is null)
             return;
 
-        var amountToSpawn = 1;
+        var amountToSpawn = component.AmountToSpawn.Next(RobustRandom);
         for (var i = 0; i < amountToSpawn; i++)
         {
             _anomaly.SpawnOnRandomGridLocation(grid.Value, component.AnomalySpawnerPrototype);

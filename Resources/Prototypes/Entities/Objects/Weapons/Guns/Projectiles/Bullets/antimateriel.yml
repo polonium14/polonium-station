@@ -4,6 +4,9 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.60 anti-materiel)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    length: 4
+    width: 0.1
   - type: Projectile
     damage:
       types:

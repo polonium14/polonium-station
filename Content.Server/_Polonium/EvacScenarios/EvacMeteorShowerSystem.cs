@@ -11,6 +11,7 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared.GameTicking.Rules;
 
 namespace Content.Server._Polonium.EvacScenarios;
 
@@ -54,9 +55,10 @@ public sealed partial class EvacMeteorShowerSystem : GameRuleSystem<EvacMeteorSh
         component.Phases.Sort((a, b) => a.Start.CompareTo(b.Start));
     }
 
-    protected override void Ended(EntityUid uid, EvacMeteorShowerComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
+    protected override void Ended(Entity<EvacMeteorShowerComponent> rule, ref GameRuleEndedEvent args)
     {
-        base.Ended(uid, component, gameRule, args);
+        base.Ended(rule, ref args);
+        var component = rule.Comp;
 
         foreach (var meteor in component.Meteors)
         {

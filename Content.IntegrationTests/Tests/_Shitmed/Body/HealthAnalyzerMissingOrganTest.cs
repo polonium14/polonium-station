@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Reflection;
 using Content.IntegrationTests.Fixtures;
-using Content.Server.Medical;
+using Content.Server.Medical.HealthAnalyzer;
 using Content.Shared.Body;
 using NUnit.Framework;
 using Robust.Shared.Containers;
@@ -24,7 +24,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 /// ExpectedOrgans to begin with) never shows up here.
 /// </summary>
 [TestFixture]
-[TestOf(typeof(HealthAnalyzerSystem))]
+[TestOf(typeof(ServerHealthAnalyzerSystem))]
 public sealed class HealthAnalyzerMissingOrganTest : GameTest
 {
     [TestPrototypes]
@@ -60,7 +60,7 @@ public sealed class HealthAnalyzerMissingOrganTest : GameTest
         var server = pair.Server;
 
         var sEntMan = server.ResolveDependency<IEntityManager>();
-        var sHealthAnalyzer = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<HealthAnalyzerSystem>();
+        var sHealthAnalyzer = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<ServerHealthAnalyzerSystem>();
         var map = await pair.CreateTestMap();
         var coords = new MapCoordinates(Vector2.Zero, map.MapId);
 
@@ -85,7 +85,7 @@ public sealed class HealthAnalyzerMissingOrganTest : GameTest
 
         await pair.RunTicksSync(5);
 
-        var fetchMethod = typeof(HealthAnalyzerSystem).GetMethod("FetchMissingOrgansData", BindingFlags.Instance | BindingFlags.NonPublic)!;
+        var fetchMethod = typeof(ServerHealthAnalyzerSystem).GetMethod("FetchMissingOrgansData", BindingFlags.Instance | BindingFlags.NonPublic)!;
 
         await server.WaitAssertion(() =>
         {

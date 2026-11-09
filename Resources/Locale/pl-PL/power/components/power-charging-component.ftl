@@ -12,10 +12,8 @@ power-charge-window-status-off = Wyłączony
 power-charge-window-status-charging = Ładuje się
 power-charge-window-status-discharging = Wyładowywuje się
 
-## UI Power Buttons
+## UI Power Display
 
-power-charge-window-power-on = Wł.
-power-charge-window-power-off = Wył.
 power-charge-window-power-label = { $draw } / { $max } W
 
 ## UI ETA label

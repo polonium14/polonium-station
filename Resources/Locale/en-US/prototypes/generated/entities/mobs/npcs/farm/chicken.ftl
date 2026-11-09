@@ -1,0 +1,9 @@
+ent-MobChicken = chicken
+    .desc = Comes before an egg, and IS a dinosaur!
+ent-MobChicken1 = { ent-MobChicken }
+    .desc = { ent-MobChicken.desc }
+ent-MobChicken2 = { ent-MobChicken }
+    .desc = { ent-MobChicken.desc }
+ent-FoodEggChickenFertilized = { ent-FoodEgg }
+    .suffix = Fertilized, Chicken
+    .desc = { ent-FoodEgg.desc }

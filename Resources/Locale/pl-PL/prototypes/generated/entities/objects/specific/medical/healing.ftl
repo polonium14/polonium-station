@@ -170,3 +170,5 @@ ent-PillCanisterAmbuzol = pojemnik na pigułki
 ent-SyringeHivarol = { ent-PrefilledSyringe }
     .suffix = hivarol
     .desc = { ent-PrefilledSyringe.desc }
+ent-DragonTailCompress = dragon's tail compress
+    .desc = A soothing salve extracted from dragon's tail plants. Used to treat heat and cold burns.

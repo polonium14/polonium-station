@@ -36952,7 +36952,6 @@ entities:
       pos: 14.5,-4.5
     - type: FaxMachine
       name: Medical
-      destinationAddress: Medical
   - uid: 5458
     components:
     - type: Transform
@@ -36967,7 +36966,6 @@ entities:
       pos: -17.5,-25.5
     - type: FaxMachine
       name: Science
-      destinationAddress: Science
   - uid: 5460
     components:
     - type: Transform
@@ -36982,7 +36980,6 @@ entities:
       pos: 13.5,12.5
     - type: FaxMachine
       name: Cargo
-      destinationAddress: Cargo
   - uid: 5462
     components:
     - type: Transform
@@ -36997,7 +36994,6 @@ entities:
       pos: 1.5,32.5
     - type: FaxMachine
       name: bridge
-      destinationAddress: bridge
   - uid: 8051
     components:
     - type: Transform

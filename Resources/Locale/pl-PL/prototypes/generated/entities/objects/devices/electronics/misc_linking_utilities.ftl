@@ -1,2 +1,2 @@
-ent-voicesensor = sensor głosowy
-    .desc = Ten mikrofon, wynaleziony przez Michała Telefon podczas pracy w Michałsoft, wysyła sygnały kiedy wykryje wypowiedziane zdanie które wcześniej było nagrane!
+ent-VoiceSensor = sensor głosowy
+    .desc = Ten mikrofon, wynaleziony przez Michała Fona podczas pracy w Michałsofcie, wysyła sygnał, gdy zostanie wypowiedziana wcześniej nagrana fraza kodowa!

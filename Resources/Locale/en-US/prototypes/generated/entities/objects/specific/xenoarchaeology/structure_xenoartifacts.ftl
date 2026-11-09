@@ -1,5 +1,5 @@
 ent-BaseXenoArtifactStructure = artifact
-    .desc = { ent-BaseStructureDynamic.desc }
+    .desc = { ent-BaseXenoArtifact.desc }
 ent-ComplexXenoArtifact = { ent-BaseXenoArtifactStructure }
     .desc = { ent-BaseXenoArtifactStructure.desc }
 ent-DummyArtifactStructure = artifact

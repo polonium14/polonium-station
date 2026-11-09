@@ -87,3 +87,5 @@ ent-CrateTrashCartJani = wózek na śmieci sprzątacza
 ent-InvisibleCrate = { ent-CrateBaseWeldable }
     .suffix = Ukryte
     .desc = { ent-CrateBaseWeldable.desc }
+ent-CrateEVASecure = EVA crate
+    .desc = { ent-CrateBaseSecure.desc }

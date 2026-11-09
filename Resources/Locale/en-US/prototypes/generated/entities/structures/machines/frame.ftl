@@ -3,6 +3,6 @@ ent-UnfinishedMachineFrame = machine frame
     .suffix = Unfinished
 ent-MachineFrame = machine frame
     .suffix = Ready
-    .desc = { "" }
+    .desc = { ent-StructureHealthMachineWeak.desc }
 ent-MachineFrameDestroyed = destroyed machine frame
     .desc = { ent-BaseStructureDynamic.desc }

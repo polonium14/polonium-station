@@ -26,7 +26,7 @@ Istnieje wiele narzędzi, które można wykorzystać do utrzymania upraw w zdrow
 
 ## Taca Hydroponiczna
 <Box>
-<GuideEntityEmbed Entity="hydroponicsTray"/>
+<GuideEntityEmbed Entity="HydroponicsTray"/>
 </Box>
 To taca hydroponiczna, hoduje rośliny za pomocą wody. Najpierw napełnij tacę wodą, a następnie dodaj nasiona.
 Światła tacy hydroponicznej oznaczają różne rzeczy w zależności od koloru i pozycji:

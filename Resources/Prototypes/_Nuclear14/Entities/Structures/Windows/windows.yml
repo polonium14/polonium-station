@@ -89,7 +89,10 @@
     state: full
   - type: IconSmooth
     key: windows
-    base: window
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: window
 
 - type: entity
   parent: N14WindowSmoothBase

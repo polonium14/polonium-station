@@ -1,0 +1,15 @@
+ent-MobBaseMonkey = małpa
+    .desc = Nowy kościół neo-darwinistów wierzy, że KAŻDE zwierzę wyewoluowało z małpy. Smakuje jak wieprzowina, a zabijanie ich jest i fajne, i relaksujące.
+ent-MobMonkey = małpa
+    .desc = Nowy kościół neo-darwinistów wierzy, że KAŻDE zwierzę wyewoluowało z małpy. Smakuje jak wieprzowina, a zabijanie ich jest i fajne, i relaksujące.
+ent-MobBaseSyndicateMonkey = małpa
+    .suffix = baza Syndykatu
+    .desc = Nowy kościół neo-darwinistów wierzy, że KAŻDE zwierzę wyewoluowało z małpy. Smakuje jak wieprzowina, a zabijanie ich jest i fajne, i relaksujące.
+ent-MobMonkeySyndicateAgent = { ent-MobBaseSyndicateMonkey }
+    .suffix = agent Syndykatu
+    .desc = { ent-MobBaseSyndicateMonkey.desc }
+ent-MobMonkeySyndicateAgentNukeops = { ent-MobBaseSyndicateMonkey }
+    .suffix = operatorzy nuklearni
+    .desc = { ent-MobBaseSyndicateMonkey.desc }
+ent-MobGuidebookMonkey = małpa przewodnik
+    .desc = Miejmy nadzieję, że pomocna małpa, której jedynym celem w życiu jest to, żebyś na nią klikał. Czy to się liczy jako samouczek od małpy?

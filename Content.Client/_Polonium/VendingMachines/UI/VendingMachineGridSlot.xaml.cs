@@ -34,6 +34,13 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
     private static readonly StyleBoxFlat RowMatchStyle = new() { BackgroundColor = new Color(40, 50, 70), BorderColor = new Color(120, 140, 190), BorderThickness = new Thickness(2) };
     private static readonly StyleBoxFlat ExactMatchStyle = new() { BackgroundColor = new Color(40, 70, 40), BorderColor = new Color(100, 255, 100), BorderThickness = new Thickness(2) };
 
+    private static readonly Color SearchDimColor = new(0.3f, 0.3f, 0.33f);
+
+    private string _searchText = string.Empty;
+    private bool _searchMatch;
+    private bool _searchDimmed;
+    private bool _keypadHighlighted;
+
     public bool SoldOut { get; private set; }
 
     public VendingMachineGridSlot()
@@ -64,16 +71,21 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
 
         // Polish "WYPRZEDANE" is wider than "SOLD OUT" - shrink the font a touch so it fits the slot.
         SoldLabel.FontOverride = _resourceCache.GetFont("/EngineFonts/NotoSans/NotoSans-Regular.ttf", 10);
+
+        SearchFrame.SetSize = new Vector2(SlotSize, SlotSize);
+        LayoutContainer.SetPosition(SearchFrame, Vector2.Zero);
     }
 
     public void SetItem(EntProtoId protoId, string code, uint amount, bool soldOut)
     {
         CodeLabel.Text = code;
         ItemSprite.SetPrototype(protoId);
+        _searchText = string.Empty;
 
         if (_protoManager.TryIndex(protoId, out var proto))
         {
             var tooltipText = proto.Name;
+            _searchText = VendingMachineKeypadMenu.NormalizeSearch(proto.Name);
 
             if (proto.Components.TryGetValue("Label", out var labelEntry) &&
                 labelEntry.Component is LabelComponent label)
@@ -91,6 +103,7 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
                         : labelId;
 
                     tooltipText = $"{proto.Name} ({labelText})";
+                    _searchText += " " + VendingMachineKeypadMenu.NormalizeSearch(labelText);
                 }
             }
 
@@ -124,6 +137,33 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
             PanelOverride = RowMatchStyle;
         else
             PanelOverride = NormalStyle;
+
+        _keypadHighlighted = isRowMatch || isExactMatch;
+        UpdateSearchDim();
+    }
+
+    public bool MatchesSearch(string normalizedQuery)
+    {
+        return _searchText.Contains(normalizedQuery, StringComparison.Ordinal);
+    }
+
+    /// <summary>
+    /// Frames a matching slot and dims the rest while a search is active
+    /// </summary>
+    public void SetSearchState(bool searching, bool match)
+    {
+        if (match && !_searchMatch)
+            SearchFrame.Restart();
+
+        _searchMatch = match;
+        SearchFrame.Visible = match;
+        _searchDimmed = searching && !match;
+        UpdateSearchDim();
+    }
+
+    private void UpdateSearchDim()
+    {
+        Modulate = _searchDimmed && !_keypadHighlighted ? SearchDimColor : Color.White;
     }
 
     private void ApplySoldOutState(bool soldOut)

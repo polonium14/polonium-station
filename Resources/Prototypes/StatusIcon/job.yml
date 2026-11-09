@@ -329,9 +329,9 @@
   icon:
     sprite: *icon-rsi
     state: Unknown # Polonium: TramDriver art missing; fallback
-  jobName: job-name-tramdriver
+  jobName: job-name-tram-driver
 
-# Entertainer (like service, but not actually service)
+# Theatre (not exactly service workers, but not civilians either)
 
 - type: jobIcon
   parent: JobIcon
@@ -623,3 +623,4 @@
     sprite: *icon-rsi
     state: Unknown # Polonium: Sus art missing; fallback
   jobName: job-name-sus
+  isCrewJob: false

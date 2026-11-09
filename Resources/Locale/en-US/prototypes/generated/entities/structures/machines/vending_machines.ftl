@@ -1,5 +1,5 @@
-ent-VendingMachine = vending machine
-    .desc = Just add capitalism!
+ent-VendingMachine = { ent-BaseVendingMachine }
+    .desc = { ent-BaseVendingMachine.desc }
 ent-VendingMachineWallmount = vending machine
     .desc = { ent-BaseWallmountMachine.desc }
 ent-VendingMachineCondiments = condiment station

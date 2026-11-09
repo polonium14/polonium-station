@@ -1,4 +1,4 @@
-- type: factionIcon
+- type: statusIcon
   abstract: true
   id: ReplicatorHiveIcon
   priority: 11
@@ -10,49 +10,49 @@
     - ShowAntagIcons
     - Replicator
 
-- type: factionIcon
+- type: statusIcon
   parent: ReplicatorHiveIcon
   id: ReplicatorHiveUnclassed
   icon:
     sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
     state: Unclassed
 
-- type: factionIcon
+- type: statusIcon
   parent: ReplicatorHiveIcon
   id: ReplicatorHiveFighter
   icon:
     sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
     state: Fighter
 
-- type: factionIcon
+- type: statusIcon
   parent: ReplicatorHiveIcon
   id: ReplicatorHiveDefender
   icon:
     sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
     state: Defender
 
-- type: factionIcon
+- type: statusIcon
   parent: ReplicatorHiveIcon
   id: ReplicatorHiveScout
   icon:
     sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
     state: Scout
 
-- type: factionIcon
+- type: statusIcon
   parent: ReplicatorHiveIcon
   id: ReplicatorHiveBuilder
   icon:
     sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
     state: Builder
 
-- type: factionIcon
+- type: statusIcon
   parent: ReplicatorHiveIcon
   id: ReplicatorHiveHunter
   icon:
     sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
     state: Hunter
 
-- type: factionIcon
+- type: statusIcon
   parent: ReplicatorHiveIcon
   id: ReplicatorHiveQueen
   locationPreference: Right
@@ -60,7 +60,7 @@
     sprite: /Textures/_Polonium/Interface/Misc/replicator_icons.rsi
     state: Queen
 
-- type: factionIcon
+- type: statusIcon
   parent: ReplicatorHiveIcon
   id: ReplicatorHiveColossus
   offsetHorizontal: 24

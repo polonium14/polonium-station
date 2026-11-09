@@ -53,7 +53,7 @@ public sealed partial class TutorialSystem
         if (session.AttachedEntity is not { } mob || !HasComp<GhostComponent>(mob))
             return;
 
-        EntityManager.System<GameTicker>().Respawn(session);
+        EntityManager.System<ServerGameTicker>().Respawn(session);
     }
 
     private void OnLobbyFlow(TutorialLobbyFlowEvent ev, EntitySessionEventArgs args)
@@ -75,7 +75,7 @@ public sealed partial class TutorialSystem
 
     public bool IsConsoleJoinBlocked(ICommonSession player)
     {
-        var ticker = EntityManager.System<GameTicker>();
+        var ticker = EntityManager.System<ServerGameTicker>();
         if (ticker.UserHasJoinedGame(player))
             return false;
 
