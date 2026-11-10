@@ -29,7 +29,7 @@ public sealed partial class BluespaceStrikeEui : BaseEui
 
     private static readonly ResolvedSoundSpecifier ArtilleryAnnounceSound =
         new ResolvedPathSpecifier("/Audio/_Polonium/Admeme/artyleria.ogg");
-    private const float ArtilleryAnnounceVolume = 17f;
+    private const float ArtilleryAnnounceVolume = 21f;
     private static readonly TimeSpan ArtilleryAnnounceCooldown = TimeSpan.FromSeconds(20);
 
     private readonly BluespaceStrikeSystem _strike;

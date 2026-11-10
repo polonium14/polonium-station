@@ -18,7 +18,7 @@ namespace Content.Shared._Polonium.BluespaceStrike;
 public sealed partial class BluespaceStrikeComponent : Component
 {
     public const float MinDelaySeconds = 1f;
-    public const float MaxDelaySeconds = 300f;
+    public const float MaxDelaySeconds = 30f;
     public const float MaxMarkersDelaySeconds = 15f;
     public const float MaxRadius = 100f;
 
