@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: 0-Anon
-  changes:
-  - message: Rat Kings can now pull objects.
-    type: Tweak
-  id: 9614
-  time: '2026-04-04T19:58:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42701
 - author: SlamBamActionman
   changes:
   - message: Uplink PDA codes are now universal. This means any PDA can open an uplink
@@ -5109,3 +5102,12 @@
   id: 10108
   time: '2026-11-10T21:09:22.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1227
+- author: Nikita
+  changes:
+  - message: Nowy marker do artylerii bluespace
+    type: Tweak
+  - message: "Podg\u0142o\u015Bniono d\u017Awi\u0119k og\u0142oszenia artylerii bluespace"
+    type: Tweak
+  id: 10109
+  time: '2026-11-10T22:32:18.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1229
