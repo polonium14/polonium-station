@@ -175,11 +175,14 @@ loadout-group-detective-head = Detective head
 loadout-group-detective-neck = Detective neck
 loadout-group-detective-jumpsuit = Detective jumpsuit
 loadout-group-detective-outerclothing = Detective outer clothing
-
+loadout-group-detective-belt = Detective belt
+loadout-group-detective-serviceweapon = Detective service weapon
+loadout-group-detective-serviceweapon-ammo = Detective ammunition
 loadout-group-security-cadet-hat = Security cadet hat
 loadout-group-security-cadet-jumpsuit = Security cadet jumpsuit
 loadout-group-security-star = Security Star
-
+loadout-group-security-serviceweapon = Security service weapon
+loadout-group-security-serviceweapon-ammo = Security ammunition
 # Medical
 loadout-group-medical-mask = Medical mask
 
