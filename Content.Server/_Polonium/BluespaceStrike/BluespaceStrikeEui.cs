@@ -7,47 +7,47 @@ using Content.Server.Administration.Logs;
 using Content.Server.AlertLevel;
 using Content.Server.Audio;
 using Content.Server.EUI;
-using Content.Server.Explosion.EntitySystems;
 using Content.Server.Station.Systems;
 using Content.Shared._Polonium.BluespaceStrike;
-using Content.Shared.Administration;
+using Content.Shared.AlertLevel;
 using Content.Shared.Database;
 using Content.Shared.Eui;
-using JetBrains.Annotations;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
-using Content.Shared.AlertLevel;
 
 namespace Content.Server._Polonium.BluespaceStrike;
 
-[UsedImplicitly]
-public sealed class BluespaceStrikeEui : BaseEui
+public sealed partial class BluespaceStrikeEui : BaseEui
 {
+    [Dependency] private IAdminLogManager _adminLog = default!;
+    [Dependency] private IEntityManager _entities = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private ILogManager _logManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+
+    private static readonly ResolvedSoundSpecifier ArtilleryAnnounceSound =
+        new ResolvedPathSpecifier("/Audio/_Polonium/Admeme/artyleria.ogg");
+    private const float ArtilleryAnnounceVolume = 17f;
+    private static readonly TimeSpan ArtilleryAnnounceCooldown = TimeSpan.FromSeconds(20);
+
     private readonly BluespaceStrikeSystem _strike;
-    private readonly ExplosionSystem _explosion;
     private readonly AlertLevelSystem _alertLevel;
     private readonly ServerStationSystem _station;
     private readonly ServerGlobalSoundSystem _globalSound;
-    private readonly IAdminLogManager _adminLog;
-    private readonly IPlayerManager _playerManager;
-    private readonly IGameTiming _timing;
     private readonly ISawmill _sawmill;
     private TimeSpan _nextArtillerySound = TimeSpan.Zero;
 
-    public BluespaceStrikeEui()
+    public BluespaceStrikeEui(IDependencyCollection deps)
     {
-        var sys = IoCManager.Resolve<IEntitySystemManager>();
-        _strike = sys.GetEntitySystem<BluespaceStrikeSystem>();
-        _explosion = sys.GetEntitySystem<ExplosionSystem>();
-        _alertLevel = sys.GetEntitySystem<AlertLevelSystem>();
-        _station = sys.GetEntitySystem<ServerStationSystem>();
-        _globalSound = sys.GetEntitySystem<ServerGlobalSoundSystem>();
-        _adminLog = IoCManager.Resolve<IAdminLogManager>();
-        _playerManager = IoCManager.Resolve<IPlayerManager>();
-        _timing = IoCManager.Resolve<IGameTiming>();
-        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("bluespace-strike");
+        deps.InjectDependencies(this, oneOff: true);
+
+        _strike = _entities.System<BluespaceStrikeSystem>();
+        _alertLevel = _entities.System<AlertLevelSystem>();
+        _station = _entities.System<ServerStationSystem>();
+        _globalSound = _entities.System<ServerGlobalSoundSystem>();
+        _sawmill = _logManager.GetSawmill("bluespace-strike");
     }
 
     public override void Opened()
@@ -121,45 +121,23 @@ public sealed class BluespaceStrikeEui : BaseEui
 
     private void HandlePreview(BluespaceStrikeEuiMsg.PreviewRequest request)
     {
-        if (request.Radius <= 0)
-            return;
-
-        var slope = BluespaceStrikeComponent.DefaultSlope;
-        var maxIntensity = BluespaceStrikeComponent.DefaultMaxIntensity;
-        var totalIntensity = _explosion.RadiusToIntensity(
-            BluespaceStrikeComponent.GetMathRadius(request.Radius),
-            slope,
-            maxIntensity);
-
-        if (totalIntensity <= 0)
-            return;
-
-        var previewRequest = new SpawnExplosionEuiMsg.PreviewRequest(
-            request.Epicenter,
-            BluespaceStrikeComponent.ExplosionType,
-            totalIntensity,
-            slope,
-            maxIntensity);
-
-        var explosion = _explosion.GenerateExplosionPreview(previewRequest);
-        if (explosion == null)
+        if (_strike.GeneratePreview(request.Epicenter, request.Radius) is not { } preview)
         {
-            _sawmill.Error("Failed to generate bluespace strike preview.");
+            _sawmill.Warning($"Failed to generate bluespace strike preview at {request.Epicenter} r={request.Radius}");
             return;
         }
 
-        SendMessage(new BluespaceStrikeEuiMsg.PreviewData(explosion, slope, totalIntensity));
+        SendMessage(preview);
     }
 
     private void HandleConfirm(BluespaceStrikeEuiMsg.Confirm confirm)
     {
-        var user = Player.AttachedEntity;
         var strike = _strike.ScheduleStrike(
             confirm.Epicenter,
             confirm.Radius,
             confirm.DelaySeconds,
             confirm.ShowMarkersAndSound,
-            user);
+            Player.AttachedEntity);
 
         if (strike == null)
         {
@@ -176,13 +154,10 @@ public sealed class BluespaceStrikeEui : BaseEui
         if (_timing.CurTime < _nextArtillerySound)
             return;
 
-        // playglobalsound <path> <volume>
-        var audio = AudioParams.Default
-            .WithVolume(BluespaceStrikeComponent.ArtilleryAnnounceVolume)
-            .AddVolume(-8);
+        var audio = AudioParams.Default.WithVolume(ArtilleryAnnounceVolume);
         var filter = Filter.Empty().AddAllPlayers(_playerManager);
-        _globalSound.PlayAdminGlobal(filter, BluespaceStrikeComponent.ArtilleryAnnounceSound, audio);
-        _nextArtillerySound = _timing.CurTime + BluespaceStrikeComponent.ArtilleryAnnounceCooldown;
+        _globalSound.PlayAdminGlobal(filter, ArtilleryAnnounceSound, audio);
+        _nextArtillerySound = _timing.CurTime + ArtilleryAnnounceCooldown;
 
         _adminLog.Add(LogType.Action, LogImpact.Medium,
             $"{Player} played bluespace artillery announce sound via artbs EUI");

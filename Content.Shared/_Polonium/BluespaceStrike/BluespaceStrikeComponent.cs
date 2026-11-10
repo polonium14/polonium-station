@@ -11,7 +11,8 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 namespace Content.Shared._Polonium.BluespaceStrike;
 
 /// <summary>
-/// Tracks a scheduled bluespace artillery strike until detonation.
+/// A bluespace artillery shell that falls onto its position and explodes at <see cref="DetonateAt"/>.
+/// The explosion itself is configured by the <c>Explosive</c> component on the same entity.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class BluespaceStrikeComponent : Component
@@ -19,54 +20,38 @@ public sealed partial class BluespaceStrikeComponent : Component
     public const float MinDelaySeconds = 1f;
     public const float MaxDelaySeconds = 300f;
     public const float MaxMarkersDelaySeconds = 15f;
-    public const float DefaultSlope = 50f;
-    public const float DefaultMaxIntensity = 200f;
-    public const float FallDurationSeconds = 0.9f;
-    public const float MaxMarkerRadius = 100f;
-
-    public const string ExplosionType = "BluespaceArtillery";
-    public const string ArtilleryAnnounceSound = "/Audio/_Polonium/Admeme/artyleria.ogg";
-    public const float ArtilleryAnnounceVolume = 25f;
-    public static readonly TimeSpan ArtilleryAnnounceCooldown = TimeSpan.FromSeconds(20);
-    public static readonly EntProtoId ControllerPrototype = "BluespaceStrikeController";
-    public static readonly EntProtoId MarkerPrototype = "BluespaceStrikeMarker";
-    public static readonly EntProtoId IncomingPrototype = "BluespaceStrikeIncoming";
-
-    public static float GetMathRadius(float userRadius)
-    {
-        return userRadius + DefaultMaxIntensity / DefaultSlope;
-    }
+    public const float MaxRadius = 100f;
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
     public TimeSpan DetonateAt;
 
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
-    public TimeSpan SpawnFallingAt;
+    /// <summary>
+    /// How long before <see cref="DetonateAt"/> the shell becomes visible and starts falling.
+    /// </summary>
+    [DataField]
+    public TimeSpan FallDuration = TimeSpan.FromSeconds(0.9);
 
-    [DataField, AutoNetworkedField]
+    /// <summary>
+    /// How far above the impact point the shell starts falling, in tiles.
+    /// </summary>
+    [DataField]
+    public float StartOffsetY = 14f;
+
+    /// <summary>
+    /// Radius of the full-strength zone in tiles, chosen by the admin.
+    /// </summary>
+    [DataField]
     public float Radius;
 
-    [DataField, AutoNetworkedField]
-    public float TotalIntensity;
-
-    [DataField, AutoNetworkedField]
-    public float IntensitySlope = DefaultSlope;
-
-    [DataField, AutoNetworkedField]
-    public float MaxIntensity = DefaultMaxIntensity;
+    [DataField]
+    public bool Falling;
 
     [DataField]
-    public List<EntityUid> Markers = new();
-
-    [DataField]
-    public EntityUid? AudioStream;
-
-    [DataField]
-    public EntityUid? IncomingVisual;
-
-    [DataField]
-    public bool FallingSpawned;
+    public EntProtoId MarkerPrototype = "BluespaceStrikeMarker";
 
     [DataField]
     public SoundSpecifier AirRaidSound = new SoundPathSpecifier("/Audio/_Polonium/Effects/ABS/airraid.ogg");
+
+    [DataField]
+    public List<EntityUid> Markers = new();
 }

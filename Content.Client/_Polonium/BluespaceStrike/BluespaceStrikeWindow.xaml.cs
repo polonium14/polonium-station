@@ -132,7 +132,7 @@ public sealed partial class BluespaceStrikeWindow : DefaultWindow
             return;
 
         var coords = new MapCoordinates(new Vector2(MapX.Value, MapY.Value), _mapData[selectedId]);
-        var radius = Math.Clamp(Radius.Value, 0.1f, BluespaceStrikeComponent.MaxMarkerRadius);
+        var radius = Math.Clamp(Radius.Value, 0.1f, BluespaceStrikeComponent.MaxRadius);
         _eui.RequestPreviewData(coords, radius);
     }
 
@@ -154,7 +154,7 @@ public sealed partial class BluespaceStrikeWindow : DefaultWindow
         Delay.Value = delay;
         UpdateMarkersConstraint();
 
-        var radius = Math.Clamp(Radius.Value, 0.1f, BluespaceStrikeComponent.MaxMarkerRadius);
+        var radius = Math.Clamp(Radius.Value, 0.1f, BluespaceStrikeComponent.MaxRadius);
         Radius.Value = radius;
         var coords = new MapCoordinates(new Vector2(MapX.Value, MapY.Value), _mapData[selectedId]);
         var showMarkers = ShowMarkersAndSound.Pressed

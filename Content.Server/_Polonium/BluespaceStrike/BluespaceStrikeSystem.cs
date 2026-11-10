@@ -3,17 +3,19 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Numerics;
-using Content.Server.AlertLevel;
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared._Polonium.BluespaceStrike;
+using Content.Shared.Administration;
 using Content.Shared.Administration.Logs;
+using Content.Shared.AlertLevel;
 using Content.Shared.Database;
+using Content.Shared.Explosion.Components;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Content.Shared.AlertLevel;
 
 namespace Content.Server._Polonium.BluespaceStrike;
 
@@ -24,10 +26,12 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private ExplosionSystem _explosion = default!;
     [Dependency] private SharedMapSystem _map = default!;
-    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedPointLightSystem _pointLight = default!;
+
+    private static readonly EntProtoId StrikePrototype = "BluespaceStrike";
 
     private readonly HashSet<BluespaceStrikeEui> _openEuis = new();
-    private readonly List<EntityUid> _toDetonate = new();
+    private readonly List<(EntityUid Uid, float Radius, ExplosiveComponent Explosive)> _toDetonate = new();
 
     public override void Initialize()
     {
@@ -50,9 +54,39 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
 
     private void OnShutdown(Entity<BluespaceStrikeComponent> ent, ref ComponentShutdown args)
     {
-        CleanupStrike(ent);
+        foreach (var marker in ent.Comp.Markers)
+        {
+            QueueDel(marker);
+        }
+
+        ent.Comp.Markers.Clear();
     }
 
+    /// <summary>
+    /// Builds the explosion preview of a strike with the given full-strength radius.
+    /// </summary>
+    public BluespaceStrikeEuiMsg.PreviewData? GeneratePreview(MapCoordinates epicenter, float radius)
+    {
+        if (radius is not > 0 || !TryGetStrikeExplosive(out var explosive))
+            return null;
+
+        var totalIntensity = GetTotalIntensity(explosive, radius);
+        var request = new SpawnExplosionEuiMsg.PreviewRequest(
+            epicenter,
+            explosive.ExplosionType,
+            totalIntensity,
+            explosive.IntensitySlope,
+            explosive.MaxIntensity);
+
+        if (_explosion.GenerateExplosionPreview(request) is not { } explosion)
+            return null;
+
+        return new BluespaceStrikeEuiMsg.PreviewData(explosion, explosive.IntensitySlope, totalIntensity);
+    }
+
+    /// <summary>
+    /// Spawns a strike that explodes after <paramref name="delaySeconds"/>.
+    /// </summary>
     public EntityUid? ScheduleStrike(
         MapCoordinates epicenter,
         float radius,
@@ -60,7 +94,10 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
         bool showMarkersAndSound = true,
         EntityUid? user = null)
     {
-        if (radius <= 0)
+        if (radius is not > 0
+            || !float.IsFinite(delaySeconds)
+            || !_map.MapExists(epicenter.MapId)
+            || !TryGetStrikeExplosive(out var explosive))
             return null;
 
         delaySeconds = Math.Clamp(delaySeconds,
@@ -70,62 +107,53 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
         if (delaySeconds > BluespaceStrikeComponent.MaxMarkersDelaySeconds)
             showMarkersAndSound = false;
 
-        var slope = BluespaceStrikeComponent.DefaultSlope;
-        var maxIntensity = BluespaceStrikeComponent.DefaultMaxIntensity;
-        var totalIntensity = _explosion.RadiusToIntensity(
-            BluespaceStrikeComponent.GetMathRadius(radius),
-            slope,
-            maxIntensity);
-
-        if (totalIntensity <= 0)
-            return null;
-
-        if (!_map.MapExists(epicenter.MapId))
-            return null;
-
-        // Ensure strike stays at the ordered coordinates
-        var strike = Spawn(BluespaceStrikeComponent.ControllerPrototype, epicenter);
-        var comp = EnsureComp<BluespaceStrikeComponent>(strike);
-        var now = _timing.CurTime;
-        var delay = TimeSpan.FromSeconds(delaySeconds);
-        var fallDuration = TimeSpan.FromSeconds(BluespaceStrikeComponent.FallDurationSeconds);
-
-        comp.DetonateAt = now + delay;
-        comp.SpawnFallingAt = now + delay - fallDuration;
-        if (comp.SpawnFallingAt < now)
-            comp.SpawnFallingAt = now;
-
-        comp.Radius = radius;
-        comp.TotalIntensity = totalIntensity;
-        comp.IntensitySlope = slope;
-        comp.MaxIntensity = maxIntensity;
+        var strike = Spawn(StrikePrototype, epicenter);
+        var comp = Comp<BluespaceStrikeComponent>(strike);
+        comp.DetonateAt = _timing.CurTime + TimeSpan.FromSeconds(delaySeconds);
+        comp.Radius = Math.Min(radius, BluespaceStrikeComponent.MaxRadius);
         Dirty(strike, comp);
 
         if (showMarkersAndSound)
         {
-            SpawnMarkers(strike, comp, epicenter);
-            StartAirRaid(strike, comp);
+            SpawnMarkers(comp, epicenter);
+            StartAirRaid((strike, comp));
         }
 
+        var totalIntensity = GetTotalIntensity(explosive, comp.Radius);
         if (user != null)
         {
             _adminLog.Add(LogType.Explosion, LogImpact.Extreme,
-                $"{ToPrettyString(user.Value):user} scheduled bluespace strike at {epicenter} radius={radius} delay={delaySeconds}s intensity={totalIntensity} warn={showMarkersAndSound}");
+                $"{ToPrettyString(user.Value):user} scheduled bluespace strike at {epicenter} radius={comp.Radius} delay={delaySeconds}s intensity={totalIntensity} warn={showMarkersAndSound}");
         }
         else
         {
             _adminLog.Add(LogType.Explosion, LogImpact.Extreme,
-                $"Bluespace strike scheduled at {epicenter} radius={radius} delay={delaySeconds}s intensity={totalIntensity} warn={showMarkersAndSound}");
+                $"Bluespace strike scheduled at {epicenter} radius={comp.Radius} delay={delaySeconds}s intensity={totalIntensity} warn={showMarkersAndSound}");
         }
 
         return strike;
     }
 
-    private void SpawnMarkers(EntityUid strike, BluespaceStrikeComponent comp, MapCoordinates epicenter)
+    private bool TryGetStrikeExplosive([NotNullWhen(true)] out ExplosiveComponent? explosive)
     {
-        var markerRadius = MathF.Min(comp.Radius, BluespaceStrikeComponent.MaxMarkerRadius);
-        var radiusInt = (int)MathF.Ceiling(markerRadius);
-        var radiusSq = markerRadius * markerRadius;
+        return ProtoMan.Index(StrikePrototype).TryComp(out explosive, EntityManager.ComponentFactory);
+    }
+
+    /// <summary>
+    /// The intensity is capped near the epicenter, so the explosion keeps full strength up to
+    /// <paramref name="radius"/> and then falls off over another MaxIntensity / IntensitySlope tiles.
+    /// </summary>
+    private float GetTotalIntensity(ExplosiveComponent explosive, float radius)
+    {
+        radius = Math.Min(radius, BluespaceStrikeComponent.MaxRadius);
+        var falloff = explosive.MaxIntensity / explosive.IntensitySlope;
+        return _explosion.RadiusToIntensity(radius + falloff, explosive.IntensitySlope, explosive.MaxIntensity);
+    }
+
+    private void SpawnMarkers(BluespaceStrikeComponent comp, MapCoordinates epicenter)
+    {
+        var radiusInt = (int) MathF.Ceiling(comp.Radius);
+        var radiusSq = comp.Radius * comp.Radius;
 
         for (var x = -radiusInt; x <= radiusInt; x++)
         {
@@ -134,89 +162,18 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
                 if (x * x + y * y > radiusSq)
                     continue;
 
-                var pos = epicenter.Position + new Vector2(x, y);
-                var marker = Spawn(BluespaceStrikeComponent.MarkerPrototype, new MapCoordinates(pos, epicenter.MapId));
-                comp.Markers.Add(marker);
+                comp.Markers.Add(Spawn(comp.MarkerPrototype, epicenter.Offset(x, y)));
             }
         }
-
-        Dirty(strike, comp);
     }
 
-    private void StartAirRaid(EntityUid strike, BluespaceStrikeComponent comp)
+    private void StartAirRaid(Entity<BluespaceStrikeComponent> ent)
     {
-        var maxDistance = MathF.Max(15f, comp.Radius * 2.5f);
-        var audio = _audio.PlayPvs(
-            comp.AirRaidSound,
-            strike,
+        var maxDistance = MathF.Max(15f, ent.Comp.Radius * 2.5f);
+        _audio.PlayPvs(
+            ent.Comp.AirRaidSound,
+            ent,
             AudioParams.Default.WithLoop(true).WithVolume(-5f).WithMaxDistance(maxDistance));
-
-        if (audio != null)
-            comp.AudioStream = audio.Value.Entity;
-
-        Dirty(strike, comp);
-    }
-
-    private void SpawnFallingVisual(Entity<BluespaceStrikeComponent> ent)
-    {
-        if (ent.Comp.FallingSpawned)
-            return;
-
-        ent.Comp.FallingSpawned = true;
-        var incoming = Spawn(BluespaceStrikeComponent.IncomingPrototype, _transform.GetMapCoordinates(ent));
-        ent.Comp.IncomingVisual = incoming;
-
-        if (TryComp(incoming, out BluespaceStrikeIncomingComponent? incomingComp))
-        {
-            incomingComp.FallDuration = TimeSpan.FromSeconds(BluespaceStrikeComponent.FallDurationSeconds);
-            incomingComp.ImpactAt = ent.Comp.DetonateAt;
-            Dirty(incoming, incomingComp);
-        }
-
-        Dirty(ent);
-    }
-
-    private void Detonate(Entity<BluespaceStrikeComponent> ent)
-    {
-        var mapCoords = _transform.GetMapCoordinates(ent);
-        var intensity = ent.Comp.TotalIntensity;
-        var slope = ent.Comp.IntensitySlope;
-        var max = ent.Comp.MaxIntensity;
-
-        CleanupStrike(ent);
-        RemComp<BluespaceStrikeComponent>(ent.Owner);
-
-        _explosion.QueueExplosion(
-            mapCoords,
-            BluespaceStrikeComponent.ExplosionType,
-            intensity,
-            slope,
-            max,
-            null);
-
-        QueueDel(ent.Owner);
-    }
-
-    private void CleanupStrike(Entity<BluespaceStrikeComponent> ent)
-    {
-        if (ent.Comp.AudioStream is { } stream)
-        {
-            _audio.Stop(stream);
-            ent.Comp.AudioStream = null;
-        }
-
-        foreach (var marker in ent.Comp.Markers)
-        {
-            if (!Deleted(marker))
-                QueueDel(marker);
-        }
-
-        ent.Comp.Markers.Clear();
-
-        if (ent.Comp.IncomingVisual is { } incoming && !Deleted(incoming))
-            QueueDel(incoming);
-
-        ent.Comp.IncomingVisual = null;
     }
 
     public override void Update(float frameTime)
@@ -225,20 +182,26 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
 
         var now = _timing.CurTime;
         _toDetonate.Clear();
-        var query = EntityQueryEnumerator<BluespaceStrikeComponent>();
-        while (query.MoveNext(out var uid, out var comp))
+        var query = EntityQueryEnumerator<BluespaceStrikeComponent, ExplosiveComponent>();
+        while (query.MoveNext(out var uid, out var strike, out var explosive))
         {
-            if (!comp.FallingSpawned && now >= comp.SpawnFallingAt)
-                SpawnFallingVisual((uid, comp));
+            // Spawned by hand rather than by ScheduleStrike.
+            if (strike.Radius <= 0)
+                continue;
 
-            if (now >= comp.DetonateAt)
-                _toDetonate.Add(uid);
+            if (!strike.Falling && now >= strike.DetonateAt - strike.FallDuration)
+            {
+                strike.Falling = true;
+                _pointLight.SetEnabled(uid, true);
+            }
+
+            if (now >= strike.DetonateAt)
+                _toDetonate.Add((uid, strike.Radius, explosive));
         }
 
-        foreach (var uid in _toDetonate)
+        foreach (var (uid, radius, explosive) in _toDetonate)
         {
-            if (TryComp(uid, out BluespaceStrikeComponent? comp))
-                Detonate((uid, comp));
+            _explosion.TriggerExplosive(uid, explosive, totalIntensity: GetTotalIntensity(explosive, radius));
         }
     }
 }
