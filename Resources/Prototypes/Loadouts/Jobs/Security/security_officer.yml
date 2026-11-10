@@ -149,6 +149,11 @@
   equipment:
     belt: ClothingBeltSecurityWebbingFilled
 
+- type: loadout
+  id: SecurityFullWebbing
+  equipment:
+    belt: FuClothingBeltSecurityWebbingFilled    
+
 # Outerclothing
 - type: loadout
   id: ArmorVest

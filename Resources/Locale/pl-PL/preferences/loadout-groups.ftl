@@ -188,6 +188,7 @@ loadout-group-brigmedic-jumpsuit = Medyk Więzienny – kombinezon
 loadout-group-brigmedic-backpack = Medyk Więzienny – plecak
 loadout-group-brigmedic-outerclothing = Medyk Więzienny – odzież wierzchnia
 loadout-group-brigmedic-glasses = Medyk Więzienny – okulary
+loadout-group-brigmedic-belt = Medyk więzienny - pas
 loadout-group-jobtoys = Zabawki
 loadout-group-survival-salvage-extended = Rozszerzona skrzynka przetrwania
 loadout-group-captain-shoes = Kapitan – buty

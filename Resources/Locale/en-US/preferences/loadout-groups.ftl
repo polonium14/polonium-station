@@ -223,6 +223,7 @@ loadout-group-brigmedic-jumpsuit = Brigmedic jumpsuit
 loadout-group-brigmedic-backpack = Brigmedic backpack
 loadout-group-brigmedic-outerclothing = Brigmedic outer clothing
 loadout-group-brigmedic-glasses = Brigmedic glasses
+loadout-group-brigmedic-belt = Brigmedic belts
 
 loadout-group-jobtoys = Zabawki
 

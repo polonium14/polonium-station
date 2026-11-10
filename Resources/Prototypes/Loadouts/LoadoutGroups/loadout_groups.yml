@@ -1320,6 +1320,7 @@
   loadouts:
   - SecurityBelt
   - SecurityWebbing
+  - SecurityFullWebbing
 
 - type: loadoutGroup
   id: SecurityGloves
@@ -1327,7 +1328,9 @@
   loadouts:
   - BlackGloves
   - WhiteGloves
-
+  - RedGloves
+  - FingerlessGloves
+  
 - type: loadoutGroup
   id: SecurityNeck
   name: loadout-group-security-neck
