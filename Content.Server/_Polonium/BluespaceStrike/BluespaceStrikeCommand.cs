@@ -13,6 +13,7 @@ namespace Content.Server._Polonium.BluespaceStrike;
 [AdminCommand(AdminFlags.Fun)]
 public sealed partial class BluespaceStrikeCommand : LocalizedEntityCommands
 {
+    [Dependency] private IDependencyCollection _deps = default!;
     [Dependency] private EuiManager _euiManager = default!;
 
     public override string Command => "artbs";
@@ -26,6 +27,6 @@ public sealed partial class BluespaceStrikeCommand : LocalizedEntityCommands
             return;
         }
 
-        _euiManager.OpenEui(new BluespaceStrikeEui(), player);
+        _euiManager.OpenEui(new BluespaceStrikeEui(_deps), player);
     }
 }

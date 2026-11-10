@@ -4,14 +4,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  id: BluespaceStrikeController
-  name: bluespace strike
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Transform
-  - type: BluespaceStrike
-
-- type: entity
   id: BluespaceStrikeMarker
   name: ""
   description: ""
@@ -29,7 +21,7 @@
   - type: Clickable
 
 - type: entity
-  id: BluespaceStrikeIncoming
+  id: BluespaceStrike
   name: ""
   categories: [ HideSpawnMenu ]
   components:
@@ -39,15 +31,21 @@
     state: impact_laser_blue
     drawdepth: Effects
     noRot: true
+    visible: false
     scale: 5, 5
     layers:
     - state: impact_laser_blue
       shader: unshaded
   - type: PointLight
+    enabled: false
     color: "#4FC3F7"
     radius: 8
     energy: 5
-  - type: BluespaceStrikeIncoming
+  - type: BluespaceStrike
+  - type: Explosive
+    explosionType: BluespaceArtillery
+    intensitySlope: 50
+    maxIntensity: 200
   - type: Tag
     tags:
     - HideContextMenu

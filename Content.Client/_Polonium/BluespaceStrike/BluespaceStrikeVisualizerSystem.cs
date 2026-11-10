@@ -13,10 +13,10 @@ using Robust.Shared.Timing;
 namespace Content.Client._Polonium.BluespaceStrike;
 
 /// <summary>
-/// Animates the incoming bluespace projectile falling from above onto the strike epicenter.
-/// Uses last-applied server tick time so prediction clock lead doesnt land the bolt early.
+/// Animates the bluespace strike shell falling from above onto its epicenter.
+/// Uses last-applied server tick time so prediction clock lead doesnt land the shell early.
 /// </summary>
-public sealed partial class BluespaceStrikeIncomingSystem : EntitySystem
+public sealed partial class BluespaceStrikeVisualizerSystem : EntitySystem
 {
     [Dependency] private IClientGameTiming _timing = default!;
     [Dependency] private SpriteSystem _sprite = default!;
@@ -36,19 +36,17 @@ public sealed partial class BluespaceStrikeIncomingSystem : EntitySystem
 
         var now = GetServerSyncedTime();
 
-        var query = EntityQueryEnumerator<BluespaceStrikeIncomingComponent, SpriteComponent>();
+        var query = EntityQueryEnumerator<BluespaceStrikeComponent, SpriteComponent>();
         while (query.MoveNext(out var uid, out var comp, out var sprite))
         {
-            if (comp.ImpactAt == default)
+            var remaining = comp.DetonateAt - now;
+            if (comp.DetonateAt == default || remaining > comp.FallDuration)
+            {
+                _sprite.SetVisible((uid, sprite), false);
                 continue;
+            }
 
-            var duration = (float)comp.FallDuration.TotalSeconds;
-            if (duration <= 0f)
-                duration = BluespaceStrikeComponent.FallDurationSeconds;
-
-            var remaining = (float)(comp.ImpactAt - now).TotalSeconds;
-            var progress = Math.Clamp(1f - remaining / duration, 0f, 1f);
-
+            var progress = Math.Clamp(1f - (float) (remaining / comp.FallDuration), 0f, 1f);
             var eased = progress * progress;
             var offset = new Vector2(0f, MathHelper.Lerp(comp.StartOffsetY, 0f, eased));
             var scale = Vector2.Lerp(StartScale, EndScale, eased);
