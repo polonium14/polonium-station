@@ -19,7 +19,6 @@ public sealed partial class BluespaceStrikeComponent : Component
 {
     public const float MinDelaySeconds = 1f;
     public const float MaxDelaySeconds = 30f;
-    public const float MaxMarkersDelaySeconds = 15f;
     public const float MaxRadius = 100f;
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]

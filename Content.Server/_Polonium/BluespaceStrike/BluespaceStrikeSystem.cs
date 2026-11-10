@@ -104,9 +104,6 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
             BluespaceStrikeComponent.MinDelaySeconds,
             BluespaceStrikeComponent.MaxDelaySeconds);
 
-        if (delaySeconds > BluespaceStrikeComponent.MaxMarkersDelaySeconds)
-            showMarkersAndSound = false;
-
         var strike = Spawn(StrikePrototype, epicenter);
         var comp = Comp<BluespaceStrikeComponent>(strike);
         comp.DetonateAt = _timing.CurTime + TimeSpan.FromSeconds(delaySeconds);
