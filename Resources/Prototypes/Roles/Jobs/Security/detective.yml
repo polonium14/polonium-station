@@ -62,7 +62,7 @@
     eyes: ClothingEyesGlassesSecurity
     id: DetectivePDA
     ears: ClothingHeadsetSecurity
-    belt: ClothingBeltHolsterFilled
+#   belt: ClothingBeltHolster # Polonium
   storage:
     back:
     - Flash

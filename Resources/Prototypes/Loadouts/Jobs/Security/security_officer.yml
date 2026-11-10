@@ -207,18 +207,34 @@
 # Service Weapon
 - type: loadout
   id: SecurityOfficerEnergyGun
-  storage:
-    back:
-    - WeaponEnergyPistol
+  equipment:
+    pocket1: WeaponEnergyPistol
 
 - type: loadout
   id: SecurityOfficerPistol
+  equipment:
+    pocket1: WeaponPistolMk58
+    
+- type: loadout
+  id: SecurityOfficerVis
+  equipment:
+    pocket1: WeaponVisMPSPistol
+
+# Ammunition - Polonium
+- type: loadout
+  id: SecurityOfficerAmmoPistol
   storage:
     back:
-    - WeaponPistolMk58
+    - MagazinePistol
 
 - type: loadout
-  id: SecurityOfficerVIS
+  id: SecurityOfficerAmmoVis
   storage:
     back:
-    - WeaponVisMPSPistol
+    - WeaponVisMPSPistolMagazine
+
+- type: loadout # Polonium - Losowe postacie z rolą nie dostają rzeczy jeśli do wyboru jest min 0
+  id: SecurityOfficerAmmoDonut
+  storage:
+    back:
+    - FoodDonutHomer  # Polonium - Laserek nie potrzebuje magazynków, ale przyjamniej sobie coś przegryzie

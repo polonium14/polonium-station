@@ -118,6 +118,8 @@
   - BrigmedicGlasses
   - BrigmedicBackpack
   - SecurityBelt
+  - SecurityServiceWeapon # Polonium
+  - SecurityServiceWeaponAmmo # Polonium
   - SecurityShoes
   - SurvivalSecurity
   - Trinkets

@@ -148,9 +148,14 @@ loadout-group-detective-head = Detektyw – nakrycie głowy
 loadout-group-detective-neck = Detektyw – szyja
 loadout-group-detective-jumpsuit = Detektyw – kombinezon
 loadout-group-detective-outerclothing = Detektyw – odzież wierzchnia
+loadout-group-detective-belt = Detektyw - pas
+loadout-group-detective-serviceweapon = Detektyw - broń służbowa
+loadout-group-detective-serviceweapon-ammo = Detektyw - amunicja
 loadout-group-security-cadet-hat = Kadet ochrony – kapelusz
 loadout-group-security-cadet-jumpsuit = Kadet ochrony – kombinezon
 loadout-group-security-star = Gwiazda ochrony
+loadout-group-security-serviceweapon = Ochrona - broń służbowa
+loadout-group-security-serviceweapon-ammo = Ochrona - amunicja
 # Medical
 loadout-group-medical-mask = Medyczna maska
 loadout-group-chief-medical-officer-head = Ordynator Medyczny – nakrycie głowy

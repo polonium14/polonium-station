@@ -450,6 +450,8 @@
   - HeadofSecurityJumpsuit
   - SecurityBackpack
   - SecurityBelt
+  - SecurityServiceWeapon # Polonium
+  - SecurityServiceWeaponAmmo # Polonium
   - HeadofSecurityOuterClothing
   - SecurityShoes
   - AssistiveItems
@@ -467,6 +469,8 @@
   - WardenJumpsuit
   - SecurityBackpack
   - SecurityBelt
+  - SecurityServiceWeapon # Polonium
+  - SecurityServiceWeaponAmmo # Polonium
   - WardenOuterClothing
   - SecurityShoes
   - AssistiveItems
@@ -488,6 +492,8 @@
   - SecurityShoes
   - SecurityPDA
   - SecurityBelt
+  - SecurityServiceWeapon # Polonium
+  - SecurityServiceWeaponAmmo # Polonium
   - AssistiveItems
   - SurvivalSecurity
   - Trinkets
@@ -504,6 +510,9 @@
   - SecurityBackpack
   - DetectiveOuterClothing
   - SecurityShoes
+  - DetectiveBelt # Polonium
+  - DetectiveServiceWeapon # Polonium
+  - DetectiveServiceWeaponAmmo # Polonium
   - AssistiveItems
   - SurvivalSecurity
   - Trinkets
