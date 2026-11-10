@@ -4,19 +4,19 @@
   id: BluespaceArtillery
   damagePerIntensity:
     types:
-      Heat: 40
-      Blunt: 40
-      Piercing: 30
-      Structural: 150
-  tileBreakChance: [ 0, 1, 1 ]
-  tileBreakIntensity: [ 0, 5, 15 ]
-  tileBreakRerollReduction: 5
+      Heat: 4
+      Blunt: 1
+      Piercing: 5
+      Structural: 500
+  tileBreakChance: [ 0, 0.1, 1, 1 ]
+  tileBreakIntensity: [ 0, 1, 100, 250 ]
+  tileBreakRerollReduction: 100
   intensityPerState: 15
   lightColor: "#55AAFF"
   flashColor: "#4FC3F7"
   texturePath: /Textures/_Polonium/Effects/bluespace.rsi
   fireStates: 1
-  fireStacks: 5
+  fireStacks: 20 # If you don't die from it, you will die from the fire
   temperature: 5000
   maxCombineDistance: 0
 
