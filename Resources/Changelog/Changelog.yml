@@ -1,22 +1,4 @@
 ﻿Entries:
-- author: K-Dynamic
-  changes:
-  - message: Clowns may change their loadout to start with the honkmother mitre.
-    type: Add
-  - message: Renames robes of the honkmother to honkmother coat.
-    type: Tweak
-  id: 9618
-  time: '2026-04-05T10:17:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35237
-- author: ScarKy0
-  changes:
-  - message: Cameras show as in-use when AI is nearby.
-    type: Add
-  - message: AI can no longer enable lights on cameras.
-    type: Remove
-  id: 9619
-  time: '2026-04-05T15:17:21.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43466
 - author: Princess-Cheeseballs
   changes:
   - message: Web vests have new more visible sprites.
@@ -5123,3 +5105,34 @@
   id: 10112
   time: '2026-11-11T16:55:00.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1232
+- author: oxtailime
+  changes:
+  - message: "Wypu\u015Bci\u0142 gobliny na stacje!"
+    type: Add
+  id: 10113
+  time: '2026-11-11T16:59:52.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1181
+- author: Nikita
+  changes:
+  - message: "Lasery strzelaj\u0105ce wi\u0105zk\u0105 rysuj\u0105 lec\u0105cy promie\u0144\
+      , kt\xF3ry rozb\u0142yskuje przy celu i wci\u0105ga si\u0119 w niego."
+    type: Add
+  - message: "Pociski i promienie zostawiaj\u0105 \u015Blady na \u015Bcianach i obiektach,\
+      \ metalowe cele sypi\u0105 iskrami, a trafiony obiekt drga."
+    type: Add
+  - message: "Uszkodzone maszyny, komputery, drzwi, szafki i lampy \u015Bcienne czasem\
+      \ sypi\u0105 iskrami."
+    type: Add
+  - message: "Ekrany, lampy i inne \u015Bwiec\u0105ce obiekty maj\u0105 po\u015Bwiat\u0119\
+      , najlepiej widoczn\u0105 w ciemno\u015Bci."
+    type: Add
+  - message: "W ustawieniach grafiki mo\u017Cna wy\u0142\u0105czy\u0107 \u015Blady\
+      \ po kulach, iskry i po\u015Bwiat\u0119 oraz dostroi\u0107 po\u015Bwiat\u0119\
+      ."
+    type: Add
+  - message: "Odrzut przy strzale lekko obraca kamer\u0119. Stare zachowanie przywraca\
+      \ opcja w ustawieniach dost\u0119pno\u015Bci."
+    type: Tweak
+  id: 10114
+  time: '2026-11-11T16:59:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1233
