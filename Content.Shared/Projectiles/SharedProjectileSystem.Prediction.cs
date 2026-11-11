@@ -9,6 +9,7 @@ using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Effects;
@@ -21,6 +22,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Projectiles;
 
@@ -32,6 +34,10 @@ public abstract partial class SharedProjectileSystem
     [Dependency] private SharedColorFlashEffectSystem _color = default!;
     [Dependency] private DamageableSystem _damageableSystem = default!;
     [Dependency] private SharedGunSystem _guns = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+
+    private static readonly ProtoId<DamageGroupPrototype> BruteGroup = "Brute";
+    private static readonly ProtoId<DamageGroupPrototype> BurnGroup = "Burn";
 
     partial void InitializeProjectilePrediction()
     {
@@ -171,6 +177,13 @@ public abstract partial class SharedProjectileSystem
             TryComp(uid, out TransformComponent? xform))
         {
             var impactEffectEv = new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates));
+            // Polonium start
+            if (!deleted && LeavesImpactMarks(ev.Damage))
+            {
+                impactEffectEv.Target = GetNetEntity(target);
+                impactEffectEv.WorldAngle = ourBody.LinearVelocity.ToAngle();
+            }
+            // Polonium end
             if (_net.IsServer)
                 RaiseNetworkEvent(impactEffectEv, filter);
             else
@@ -239,5 +252,12 @@ public abstract partial class SharedProjectileSystem
         }
 
         return true;
+    }
+
+    // Polonium: stun bolts and the like hit without holes or sparks
+    private bool LeavesImpactMarks(DamageSpecifier damage)
+    {
+        return damage.TryGetDamageInGroup(_proto.Index(BruteGroup), out var brute) && brute > FixedPoint2.Zero
+               || damage.TryGetDamageInGroup(_proto.Index(BurnGroup), out var burn) && burn > FixedPoint2.Zero;
     }
 }

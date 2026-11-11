@@ -8,6 +8,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Client._Starlight.Weapons.Ranged;
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Client.Animations;
@@ -20,6 +21,8 @@ public sealed partial class ProjectileSystem : SharedProjectileSystem
 {
     [Dependency] private AnimationPlayerSystem _player = default!;
     [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private ImpactVisualsSystem _impactVisuals = default!; // Polonium
+    [Dependency] private SharedTransformSystem _xform = default!; // Polonium
 
     public override void Initialize()
     {
@@ -33,6 +36,11 @@ public sealed partial class ProjectileSystem : SharedProjectileSystem
 
         if (Deleted(coords.EntityId))
             return;
+
+        // Polonium start: bullet holes, sparks and the hit wobble (port from Starlight)
+        if (TryGetEntity(ev.Target, out var target) && Exists(target))
+            _impactVisuals.PlayImpact(coords, ev.WorldAngle - _xform.GetWorldRotation(coords.EntityId), target.Value);
+        // Polonium end
 
         var ent = Spawn(ev.Prototype, coords);
 

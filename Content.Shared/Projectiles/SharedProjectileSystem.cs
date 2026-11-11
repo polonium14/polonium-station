@@ -367,6 +367,11 @@ public sealed class ImpactEffectEvent : EntityEventArgs
     public string Prototype;
     public NetCoordinates Coordinates;
 
+    // Polonium start: bullets get the same impact effects as hitscans (port from Starlight)
+    public NetEntity? Target;
+    public Angle WorldAngle;
+    // Polonium end
+
     public ImpactEffectEvent(string prototype, NetCoordinates coordinates)
     {
         Prototype = prototype;
