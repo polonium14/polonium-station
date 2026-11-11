@@ -203,6 +203,6 @@
   - type: NpcFactionMember
     factions:
     - GoblinWild
-  - type: DuoEmote # Funky Change
+  - type: DuoEmote
 
   
