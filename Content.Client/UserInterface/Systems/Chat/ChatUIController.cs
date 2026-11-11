@@ -42,6 +42,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
+using Content.Client._Polonium.Chat.Emoji;
 using Content.Client.Administration.Managers;
 using Content.Client.Chat;
 using Content.Client.Chat.Managers;
@@ -760,7 +761,8 @@ public sealed partial class ChatUIController : UIController
         // because ????????
 
         ChatSelectChannel chatChannel;
-        if (TryGetRadioChannel(text, out var radioChannel))
+        if (TryGetRadioChannel(text, out var radioChannel)
+            && !UIManager.GetUIController<ChatEmojiUIController>().StartsWithEmojiCode(text)) // Polonium: ":idz:" is an emoji, not the radio key "i"
             chatChannel = ChatSelectChannel.Radio;
         else
             chatChannel = PrefixToChannel.GetValueOrDefault(text[0]);

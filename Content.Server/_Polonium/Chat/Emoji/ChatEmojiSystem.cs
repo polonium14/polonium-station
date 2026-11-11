@@ -1,5 +1,7 @@
 using System.Text;
 using Content.Shared._Polonium.Chat.Emoji;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -7,15 +9,18 @@ namespace Content.Server._Polonium.Chat.Emoji;
 
 public sealed partial class ChatEmojiSystem : EntitySystem
 {
+    [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
 
     private readonly Dictionary<string, ChatEmojiPrototype> _byCode = new();
+    private int _limit;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
+        Subs.CVar(_cfg, CCVars.ChatEmojiLimit, value => _limit = value, true);
         CacheCodes();
     }
 
@@ -28,9 +33,10 @@ public sealed partial class ChatEmojiSystem : EntitySystem
 
         StringBuilder? builder = null;
         var copied = 0;
+        var emojis = 0;
         var start = escapedText.IndexOf(':');
 
-        while (start >= 0)
+        while (start >= 0 && emojis < _limit)
         {
             var end = escapedText.IndexOf(':', start + 1);
             if (end < 0)
@@ -45,6 +51,7 @@ public sealed partial class ChatEmojiSystem : EntitySystem
 
             builder ??= new StringBuilder(escapedText.Length);
             builder.Append(escapedText, copied, start - copied).Append(ChatEmojiMarkup.Tag(emoji.ID));
+            emojis++;
             copied = end + 1;
             start = escapedText.IndexOf(':', copied);
         }
