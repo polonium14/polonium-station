@@ -552,7 +552,15 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Serializable, NetSerializable]
     public sealed class HitscanEvent : EntityEventArgs
     {
-        public List<(NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)> Sprites = [];
+        // Polonium start: the client draws the beam travelling from the muzzle to the impact (port from Starlight)
+        public NetCoordinates Origin;
+        public Angle Angle;
+        public float Distance;
+        public SpriteSpecifier? MuzzleFlash;
+        public SpriteSpecifier? TravelFlash;
+        public SpriteSpecifier? ImpactFlash;
+        public NetEntity? HitEntity;
+        // Polonium end
     }
 
     /// <summary>

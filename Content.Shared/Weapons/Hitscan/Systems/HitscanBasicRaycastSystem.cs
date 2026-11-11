@@ -69,7 +69,7 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
 
         // Do visuals without an event. They should always happen and putting it on the attempt event is weird!
         // If more stuff gets added here, it should probably be turned into an event.
-        FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner, args.Gun, args.Shooter);
+        FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner, args.Gun, args.Shooter, result?.HitEntity); // Polonium
 
         // Admin logging
         if (result?.HitEntity != null)
@@ -113,18 +113,19 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
     /// <param name="hitscanUid">The hitscan entity itself.</param>
     /// <param name="gun">The gun that fired this hitscan.</param>
     /// <param name="shooter">Optional shooter, excluded from the network broadcast when predicting.</param>
+    /// <param name="hitEntity">Entity the shot hit, it gets the impact effects.</param>
     private void FireEffects(
         EntityCoordinates fromCoordinates,
         float distance,
         Angle shotAngle,
         EntityUid hitscanUid,
         EntityUid gun,
-        EntityUid? shooter = null)
+        EntityUid? shooter = null,
+        EntityUid? hitEntity = null)
     {
         if (distance == 0 || !_visualsQuery.TryComp(hitscanUid, out var vizComp))
             return;
 
-        var sprites = new List<(NetCoordinates coordinates, Angle angle, SpriteSpecifier sprite, float scale)>();
         var fromXform = Transform(fromCoordinates.EntityId);
 
         // We'll get the effects relative to the grid / map of the firer
@@ -143,37 +144,18 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
             shotAngle -= _transform.GetWorldRotation(fromXform);
         }
 
-        if (distance >= 1f)
+        // Polonium start: the client places the flashes itself to animate the beam (port from Starlight)
+        var ev = new SharedGunSystem.HitscanEvent
         {
-            if (vizComp.MuzzleFlash != null)
-            {
-                var coords = fromCoordinates.Offset(shotAngle.ToVec().Normalized() / 2);
-                var netCoords = GetNetCoordinates(coords);
-
-                sprites.Add((netCoords, shotAngle, vizComp.MuzzleFlash, 1f));
-            }
-
-            if (vizComp.TravelFlash != null)
-            {
-                var coords = fromCoordinates.Offset(shotAngle.ToVec() * (distance + 0.5f) / 2);
-                var netCoords = GetNetCoordinates(coords);
-
-                sprites.Add((netCoords, shotAngle, vizComp.TravelFlash, distance - 1.5f));
-            }
-        }
-
-        if (vizComp.ImpactFlash != null)
-        {
-            var coords = fromCoordinates.Offset(shotAngle.ToVec() * distance);
-            var netCoords = GetNetCoordinates(coords);
-
-            sprites.Add((netCoords, shotAngle.FlipPositive(), vizComp.ImpactFlash, 1f));
-        }
-
-        if (sprites.Count == 0)
-            return;
-
-        var ev = new SharedGunSystem.HitscanEvent { Sprites = sprites };
+            Origin = GetNetCoordinates(fromCoordinates),
+            Angle = shotAngle,
+            Distance = distance,
+            MuzzleFlash = vizComp.MuzzleFlash,
+            TravelFlash = vizComp.TravelFlash,
+            ImpactFlash = vizComp.ImpactFlash,
+            HitEntity = GetNetEntity(hitEntity),
+        };
+        // Polonium end
 
         // Clients cannot RaiseNetworkEvent with a Filter. During gun prediction, raise locally so the shooter still sees the hitscan
         if (_netManager.IsClient)
