@@ -31,6 +31,12 @@
   id: BaseWeaponBattery
   components:
   - type: AmmoCounter
+  # POLONIUM START
+  - type: GunMovementSpread
+    walk: 0.7
+    run: 2
+    sprint: 5
+  # POLONIUM END
 
 - type: entity
   parent: [BaseWeaponBattery, BaseGunWieldable]
@@ -125,6 +131,7 @@
     slots:
     - Belt
     - suitStorage
+  - type: GunMovementSpread # Polonium
 
 - type: entity
   abstract: true
@@ -148,6 +155,7 @@
     quickEquip: false
     slots:
     - Belt
+  - type: GunMovementSpread # Polonium
 
 - type: entity
   name: svalinn laser pistol
@@ -1054,6 +1062,12 @@
       map: [ "enum.GunVisualLayers.Base" ]
     - state: mag-unshaded-4
       map: [ "enum.GunVisualLayers.MagUnshaded" ]
+  # POLONIUM START: mounted on a borg, so moving does not shake it
+  - type: GunMovementSpread
+    walk: 0
+    run: 0
+    sprint: 0
+  # POLONIUM END
 
 - type: entity
   parent: [BaseXenoborgContraband, WeaponLaserCannon]
@@ -1080,6 +1094,12 @@
     fireRate: 2
     minAngle: 1
     maxAngle: 2
+  # POLONIUM START: mounted on a borg, so moving does not shake it
+  - type: GunMovementSpread
+    walk: 0
+    run: 0
+    sprint: 0
+  # POLONIUM END
 
 - type: entity
   parent: [BaseXenoborgContraband, WeaponAdvancedLaser]
@@ -1111,6 +1131,12 @@
   - type: BatteryAmmoProvider
     proto: XenoborgFireLaser
     fireCost: 100
+  # POLONIUM START: mounted on a borg, so moving does not shake it
+  - type: GunMovementSpread
+    walk: 0
+    run: 0
+    sprint: 0
+  # POLONIUM END
 
 - type: entity
   parent: [BaseWeaponBatteryNoAmmoCounter, BaseXenoborgContraband]

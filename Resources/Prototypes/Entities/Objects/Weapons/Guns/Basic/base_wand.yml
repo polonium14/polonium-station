@@ -3,6 +3,8 @@
   abstract: true
   parent: [ BaseItem, BaseMagicalContraband ]
   components:
+  - type: GunCrosshair # Polonium: magic crosshair
+    crosshair: Cloud
   - type: Sprite
     sprite: Objects/Weapons/Guns/Basic/wands.rsi
   - type: Item

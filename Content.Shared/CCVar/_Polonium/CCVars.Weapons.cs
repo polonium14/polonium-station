@@ -16,4 +16,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> GunOriginRejectionAlertCooldown =
         CVarDef.Create("gun.origin_rejection_alert_cooldown", 8f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Whether moving, running and sprinting widen the spread of guns with GunMovementSpreadComponent.
+    /// </summary>
+    public static readonly CVarDef<bool> GunMovementSpread =
+        CVarDef.Create("gun.movement_spread", false, CVar.SERVER | CVar.REPLICATED);
 }

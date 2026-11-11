@@ -28,8 +28,8 @@
     - type: Wieldable
       unwieldOnUse: false
     - type: GunWieldBonus
-      minAngle: -18
-      maxAngle: -24
+      minAngle: -23
+      maxAngle: -27
     - type: Gun
       fireRate: 6.0
       burstFireRate: 15
@@ -96,8 +96,8 @@
     - type: Wieldable
       unwieldOnUse: false
     - type: GunWieldBonus
-      minAngle: -7
-      maxAngle: -18
+      minAngle: -14
+      maxAngle: -17
     - type: Gun
       minAngle: 17
       maxAngle: 33

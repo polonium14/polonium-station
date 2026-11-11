@@ -10,6 +10,8 @@
   id: WeaponBORSniperGun
   description: Najnowszy model snajperki bazowana na BOR 7,62. modyfikowana, żeby mogła używać amunicji .30 rifle
   components:
+  - type: GunCrosshair
+    crosshair: TCross
   - type: Item
     size: Huge
     shape:
@@ -67,6 +69,10 @@
   - type: StaticPrice
     price: 1500
   - type: GunRequiresWield
+  - type: GunMovementSpread
+    walk: 1
+    run: 3.3
+    sprint: 8.3
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
     maxOffset: 4.0 # Dystans trochę mniejszy niż Hristow

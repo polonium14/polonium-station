@@ -25,6 +25,12 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  # POLONIUM START
+  - type: GunMovementSpread
+    walk: 1
+    run: 3.3
+    sprint: 8.3
+  # POLONIUM END
   - type: BallisticAmmoProvider
     capacity: 10
     proto: CartridgeLightRifle
@@ -44,6 +50,8 @@
   id: WeaponSniperMosin
   description: A true relic, the Kardashev-Mosin has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of .30 rifle.
   components:
+  - type: GunCrosshair # Polonium: rifled sniper rifle crosshair
+    crosshair: TCross
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
     layers:
@@ -92,6 +100,8 @@
   id: WeaponSniperHristov
   description: For when you absolutely, positively need to make someone regret their life choices from a safe distance. Uses .60 anti-materiel ammo.
   components:
+  - type: GunCrosshair # Polonium: rifled sniper rifle crosshair
+    crosshair: TCross
   - type: Item
     size: Huge
     shape:
