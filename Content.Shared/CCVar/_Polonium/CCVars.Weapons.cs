@@ -22,4 +22,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> GunMovementSpread =
         CVarDef.Create("gun.movement_spread", false, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// Whether shooting only kicks the camera back like before, without the screen roll.
+    /// </summary>
+    public static readonly CVarDef<bool> GunClassicCameraRecoil =
+        CVarDef.Create("gun.classic_camera_recoil", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

@@ -81,6 +81,7 @@
   suffix: Always powered
   description: "An always powered light."
   components:
+  - type: ESSparkOnHit # Polonium: sparks when damaged, from Starlight
   - type: Construction
     graph: LightFixture
     node: tubeLight

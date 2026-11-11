@@ -24,6 +24,8 @@ namespace Content.Server.Entry
             "DirectionalArrowIndicator",
             "SandboxCopyable",
             "EdgeTrim", // Funky Change
+            "ESTimedDespawnLightFade", // Polonium
+            "ESTimedDespawnSpriteFade", // Polonium
         };
     }
 }
