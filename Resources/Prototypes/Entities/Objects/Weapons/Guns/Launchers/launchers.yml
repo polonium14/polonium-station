@@ -34,9 +34,9 @@
   - type: GunIgnorePrediction
   # POLONIUM START
   - type: GunMovementSpread
-    walk: 3
-    run: 9
-    sprint: 20
+    walk: 1
+    run: 3
+    sprint: 6.7
   # POLONIUM END
 
 - type: entity

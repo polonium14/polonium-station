@@ -14,19 +14,19 @@ public sealed partial class GunMovementSpreadComponent : Component
     /// Extra spread at full walking speed.
     /// </summary>
     [DataField]
-    public Angle Walk = Angle.FromDegrees(1);
+    public Angle Walk = Angle.FromDegrees(0.3);
 
     /// <summary>
     /// Extra spread at full running speed.
     /// </summary>
     [DataField]
-    public Angle Run = Angle.FromDegrees(4);
+    public Angle Run = Angle.FromDegrees(1.5);
 
     /// <summary>
     /// Extra spread while sprinting.
     /// </summary>
     [DataField]
-    public Angle Sprint = Angle.FromDegrees(10);
+    public Angle Sprint = Angle.FromDegrees(4);
 
     /// <summary>
     /// How long the sprint penalty takes to fade after the holder stops sprinting.

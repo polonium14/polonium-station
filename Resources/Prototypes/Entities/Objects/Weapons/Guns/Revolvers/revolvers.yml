@@ -26,12 +26,6 @@
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 1.5
-    # POLONIUM START: precise first shot, but magnum recoil throws off rapid follow-ups
-    minAngle: 1
-    maxAngle: 12
-    angleIncrease: 4
-    angleDecay: 10
-    # POLONIUM END
     availableModes:
     - SemiAuto
     soundGunshot:

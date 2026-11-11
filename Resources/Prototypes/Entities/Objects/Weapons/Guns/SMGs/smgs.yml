@@ -33,9 +33,9 @@
     defaultDirection: 1, 0
   # POLONIUM START
   - type: GunMovementSpread
-    walk: 1.5
-    run: 5
-    sprint: 12
+    walk: 0.5
+    run: 1.7
+    sprint: 4
   # POLONIUM END
   - type: ChamberMagazineAmmoProvider
     soundRack:

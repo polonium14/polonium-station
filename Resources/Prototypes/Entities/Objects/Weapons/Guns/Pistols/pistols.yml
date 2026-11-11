@@ -28,12 +28,6 @@
     - Belt
   - type: Gun
     fireRate: 6
-    # POLONIUM START: one-handed pistols are less steady than wielded long guns
-    minAngle: 2
-    maxAngle: 14
-    angleIncrease: 2
-    angleDecay: 14
-    # POLONIUM END
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto

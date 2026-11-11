@@ -15,9 +15,9 @@
     maxAngle: -43
   # POLONIUM START
   - type: GunMovementSpread
-    walk: 2
-    run: 6
-    sprint: 15
+    walk: 0.7
+    run: 2
+    sprint: 5
   # POLONIUM END
   - type: Wieldable
   - type: Gun

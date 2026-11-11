@@ -49,8 +49,8 @@ public sealed class GunMovementSpreadTest : InteractionTest
         var move = SEntMan.GetComponent<MovementSpeedModifierComponent>(SPlayer);
 
         Assert.That(await PeekAtSpeed(gun, 0f), Is.EqualTo(2).Within(Tolerance));
-        Assert.That(await PeekAtSpeed(gun, move.CurrentWalkSpeed), Is.EqualTo(3).Within(Tolerance));
-        Assert.That(await PeekAtSpeed(gun, move.CurrentSprintSpeed), Is.EqualTo(6).Within(Tolerance));
+        Assert.That(await PeekAtSpeed(gun, move.CurrentWalkSpeed), Is.EqualTo(2.3).Within(Tolerance));
+        Assert.That(await PeekAtSpeed(gun, move.CurrentSprintSpeed), Is.EqualTo(3.3).Within(Tolerance));
     }
 
     [Test]
@@ -66,7 +66,7 @@ public sealed class GunMovementSpreadTest : InteractionTest
             sprinter.LastSprint = STiming.CurTime;
         });
 
-        Assert.That(await PeekAtSpeed(gun, 0f), Is.EqualTo(12).Within(Tolerance));
+        Assert.That(await PeekAtSpeed(gun, 0f), Is.EqualTo(5.3).Within(Tolerance));
 
         await RunSeconds(1.1f);
         Assert.That(await PeekAtSpeed(gun, 0f), Is.EqualTo(2).Within(Tolerance));

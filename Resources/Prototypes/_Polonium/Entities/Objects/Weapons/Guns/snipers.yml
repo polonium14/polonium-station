@@ -33,8 +33,6 @@
   - type: Gun
     minAngle: 21
     maxAngle: 35
-    angleIncrease: 2
-    angleDecay: 6
     fireRate: 3
     selectedMode: SemiAuto
     availableModes:
@@ -71,12 +69,10 @@
   - type: StaticPrice
     price: 1500
   - type: GunRequiresWield
-  - type: GunWieldBonus
-    maxAngle: -29
   - type: GunMovementSpread
-    walk: 3
-    run: 10
-    sprint: 25
+    walk: 1
+    run: 3.3
+    sprint: 8.3
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
     maxOffset: 4.0 # Dystans trochę mniejszy niż Hristow

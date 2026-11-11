@@ -19,10 +19,6 @@
   - type: AmmoCounter
   - type: Gun
     fireRate: 5
-    # POLONIUM START: automatic fire climbs instead of staying a laser beam
-    angleIncrease: 1
-    angleDecay: 8
-    # POLONIUM END
     selectedMode: FullAuto
     availableModes:
       - FullAuto
@@ -30,12 +26,10 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
   # POLONIUM START
-  - type: GunWieldBonus
-    maxAngle: -20
   - type: GunMovementSpread
-    walk: 2
-    run: 6
-    sprint: 15
+    walk: 0.7
+    run: 2
+    sprint: 5
   # POLONIUM END
   - type: ChamberMagazineAmmoProvider
     soundRack:

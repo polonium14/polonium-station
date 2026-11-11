@@ -31,9 +31,9 @@
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   # POLONIUM START
   - type: GunMovementSpread
-    walk: 2
-    run: 6
-    sprint: 15
+    walk: 0.7
+    run: 2
+    sprint: 5
   # POLONIUM END
   - type: CustomSpriteAmmoCounter
     loadedAmmoSprite: Interface/ItemStatus/Shotgun_Shells/not_spent.png
@@ -82,9 +82,9 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   # POLONIUM START
   - type: GunMovementSpread
-    walk: 2
-    run: 6
-    sprint: 15
+    walk: 0.7
+    run: 2
+    sprint: 5
   # POLONIUM END
   - type: Gun
     fireRate: 2
@@ -213,12 +213,6 @@
     sprite: Objects/Weapons/Guns/Shotguns/sawn_inhands_64x.rsi
   - type: Gun
     fireRate: 3
-    # POLONIUM START: fired one-handed without a stock
-    minAngle: 4
-    maxAngle: 12
-    angleIncrease: 4
-    angleDecay: 8
-    # POLONIUM END
   - type: GunSpreadModifier
     spread: 1.4
   - type: BallisticAmmoProvider
@@ -260,12 +254,6 @@
     sprite: Objects/Weapons/Guns/Shotguns/hm_pistol.rsi
   - type: Gun
     fireRate: 4
-    # POLONIUM START: fired one-handed without a stock
-    minAngle: 4
-    maxAngle: 12
-    angleIncrease: 4
-    angleDecay: 8
-    # POLONIUM END
   - type: BallisticAmmoProvider
     capacity: 1
   - type: Construction
