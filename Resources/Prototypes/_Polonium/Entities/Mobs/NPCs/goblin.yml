@@ -55,7 +55,7 @@
         location: Right
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: RuminantHostileCompound
   - type: Puller
     needsHands: True
   - type: PassiveDamage # Slight passive regen.

@@ -31,7 +31,7 @@
   - PetsNT
   - AllHostile
   - Wizard
-  - GoblinWild #Polonium. Goblins hunt them, and whenever possible they should defend themselves (by fleeing)
+  - GoblinWild #Polonium. Goblins hunt them
 
 - type: npcFaction
   id: Passive
