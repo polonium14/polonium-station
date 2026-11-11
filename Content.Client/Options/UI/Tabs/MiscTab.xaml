@@ -22,6 +22,13 @@
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="ShowHeldItemCheckBox" Text="{Loc 'ui-options-show-held-item'}" />
                 <CheckBox Name="ShowCombatModeIndicatorsCheckBox" Text="{Loc 'ui-options-show-combat-mode-indicators'}" />
+                <!-- Polonium: gun crosshair settings -->
+                <CheckBox Name="CrosshairSingleCheckBox" Text="{Loc 'ui-options-crosshair-single'}" />
+                <CheckBox Name="CrosshairOutlineCheckBox" Text="{Loc 'ui-options-crosshair-outline'}" />
+                <CheckBox Name="CrosshairSmoothingCheckBox" Text="{Loc 'ui-options-crosshair-smoothing'}" />
+                <ui:OptionSlider Name="CrosshairScaleSlider" Title="{Loc 'ui-options-crosshair-scale'}" />
+                <ui:OptionColorSlider Name="CrosshairColorSlider" Title="{Loc 'ui-options-crosshair-color'}" />
+                <!-- Polonium end -->
                 <Label Text="{Loc 'ui-options-general-storage'}"
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="OpaqueStorageWindowCheckBox" Text="{Loc 'ui-options-opaque-storage-window'}" />

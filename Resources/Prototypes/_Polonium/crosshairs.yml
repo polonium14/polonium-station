@@ -1,0 +1,44 @@
+- type: crosshair
+  id: Cross
+  shape: Cross
+  faceShooter: true
+
+- type: crosshair
+  id: TCross
+  shape: TCross
+
+- type: crosshair
+  id: Corners
+  shape: Corners
+
+- type: crosshair
+  id: Grid
+  shape: Grid
+
+- type: crosshair
+  id: Ring
+  shape: Ring
+
+- type: crosshair
+  id: DashedRing
+  shape: DashedRing
+
+- type: crosshair
+  id: Arcs
+  shape: Arcs
+
+- type: crosshair
+  id: Cloud
+  shape: Cloud
+
+- type: crosshair
+  id: Fan
+  shape: Fan
+
+- type: crosshair
+  id: PixelCross
+  shape: PixelCross
+
+- type: crosshair
+  id: Melee
+  shape: Chevrons

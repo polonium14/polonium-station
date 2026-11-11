@@ -4,6 +4,8 @@
   id: WeaponImprovisedPneumaticCannon
   description: Improvised using nothing but a pipe, some zipties, and a pneumatic cannon. Doesn't accept tanks without enough gas.
   components:
+  - type: GunCrosshair # Polonium: thrown items land at the cursor
+    crosshair: Corners
   - type: Sprite
     sprite: Objects/Weapons/Guns/Cannons/pneumatic_cannon.rsi
     layers:
@@ -70,6 +72,8 @@
   suffix: Empty
   description: Load cream pie for optimal results.
   components:
+  - type: GunCrosshair # Polonium: thrown items land at the cursor
+    crosshair: Corners
   - type: Sprite
     sprite: Objects/Weapons/Guns/Cannons/pie_cannon.rsi
     layers:
@@ -153,6 +157,8 @@
   id: LauncherSyringe
   description: Load full of poisoned syringes for optimal fun.
   components:
+  - type: GunCrosshair # Polonium: thrown items land at the cursor
+    crosshair: Corners
   - type: Sprite
     sprite: Objects/Weapons/Guns/Cannons/syringe_gun.rsi
     layers:

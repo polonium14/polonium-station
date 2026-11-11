@@ -10,6 +10,8 @@
   id: WeaponBORSniperGun
   description: Najnowszy model snajperki bazowana na BOR 7,62. modyfikowana, żeby mogła używać amunicji .30 rifle
   components:
+  - type: GunCrosshair
+    crosshair: TCross
   - type: Item
     size: Huge
     shape:

@@ -5,6 +5,8 @@
   name: BaseWeaponLauncher
   description: A rooty tooty point and shooty.
   components:
+  - type: GunCrosshair # Polonium: launchers have their own crosshair
+    crosshair: Grid
   - type: Sprite
   - type: ContainerContainer
     containers:

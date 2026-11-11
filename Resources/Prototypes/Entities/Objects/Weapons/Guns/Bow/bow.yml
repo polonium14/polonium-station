@@ -5,6 +5,8 @@
   description: The original rooty tooty point and shooty.
   abstract: true
   components:
+  - type: GunCrosshair # Polonium: bow and crossbow crosshair
+    crosshair: Ring
   - type: Sprite
     sprite: Objects/Weapons/Guns/Bow/bow.rsi
   - type: Item

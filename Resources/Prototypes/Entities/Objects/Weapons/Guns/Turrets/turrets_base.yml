@@ -4,6 +4,8 @@
   id: BaseWeaponTurretIndestructible
   name: turret
   components:
+  - type: GunCrosshair # Polonium: a possessed turret shows its cone
+    crosshair: Fan
   - type: InteractionOutline
   - type: Actions
   - type: Fixtures
