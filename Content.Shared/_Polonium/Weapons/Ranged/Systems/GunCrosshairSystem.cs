@@ -21,11 +21,12 @@ public sealed partial class GunCrosshairSystem : EntitySystem
     [Dependency] private SharedGunSystem _gun = default!;
 
     /// <summary>
-    /// Returns the crosshair for the gun and the cone its next round spreads its pellets over, zero for a single projectile.
+    /// Picks the crosshair for the gun and the cone its next round spreads its pellets over, zero for a single projectile.
+    /// Returns false when the gun has no round to fire, the crosshair is then the one the gun uses for single projectiles.
     /// </summary>
-    public ProtoId<CrosshairPrototype> GetCrosshair(EntityUid gun, out Angle pelletSpread)
+    public bool TryGetCrosshair(EntityUid gun, out ProtoId<CrosshairPrototype> crosshair, out Angle pelletSpread)
     {
-        ProtoId<CrosshairPrototype> crosshair = GunCrosshairComponent.DefaultCrosshair;
+        crosshair = GunCrosshairComponent.DefaultCrosshair;
         ProtoId<CrosshairPrototype>? pelletCrosshair = GunCrosshairComponent.DefaultPelletCrosshair;
         if (TryComp<GunCrosshairComponent>(gun, out var comp))
         {
@@ -34,17 +35,17 @@ public sealed partial class GunCrosshairSystem : EntitySystem
         }
 
         pelletSpread = Angle.Zero;
-        if (GetNextProjectile(gun) is not { } projectile ||
-            !projectile.TryGetComponent<ProjectileSpreadComponent>(out var spread, _factory) ||
-            spread.Count < 2)
-        {
-            return crosshair;
-        }
+        if (GetNextProjectile(gun) is not { } projectile)
+            return false;
+
+        if (!projectile.TryComp<ProjectileSpreadComponent>(out var spread, _factory) || spread.Count < 2)
+            return true;
 
         var ev = new GunGetAmmoSpreadEvent(spread.Spread);
         RaiseLocalEvent(gun, ref ev);
         pelletSpread = ev.Spread;
-        return pelletCrosshair ?? crosshair;
+        crosshair = pelletCrosshair ?? crosshair;
+        return true;
     }
 
     private EntityPrototype? GetNextProjectile(EntityUid gun)
@@ -100,7 +101,7 @@ public sealed partial class GunCrosshairSystem : EntitySystem
         if (!_proto.TryIndex(round, out var proto))
             return null;
 
-        return proto.TryGetComponent<CartridgeAmmoComponent>(out var cartridge, _factory)
+        return proto.TryComp<CartridgeAmmoComponent>(out var cartridge, _factory)
             ? _proto.Index(cartridge.Prototype)
             : proto;
     }

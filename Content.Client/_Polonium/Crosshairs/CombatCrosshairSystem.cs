@@ -36,6 +36,8 @@ public sealed partial class CombatCrosshairSystem : EntitySystem
     private bool _single;
     private bool _smoothing;
 
+    private readonly Dictionary<EntityUid, (ProtoId<CrosshairPrototype> Crosshair, Angle Pellets)> _lastLoaded = new();
+
     /// <summary>
     /// The gun the crosshair belongs to, or null for the melee crosshair.
     /// </summary>
@@ -59,6 +61,8 @@ public sealed partial class CombatCrosshairSystem : EntitySystem
         Subs.CVar(_cfg, CCVars.CrosshairSingle, v => _single = v, true);
         Subs.CVar(_cfg, CCVars.CrosshairSmoothing, v => _smoothing = v, true);
 
+        SubscribeLocalEvent<GunComponent, ComponentShutdown>(OnGunShutdown);
+
         _overlays.AddOverlay(new CombatCrosshairOverlay(_deps, this));
     }
 
@@ -66,6 +70,11 @@ public sealed partial class CombatCrosshairSystem : EntitySystem
     {
         base.Shutdown();
         _overlays.RemoveOverlay<CombatCrosshairOverlay>();
+    }
+
+    private void OnGunShutdown(Entity<GunComponent> ent, ref ComponentShutdown args)
+    {
+        _lastLoaded.Remove(ent);
     }
 
     public override void FrameUpdate(float frameTime)
@@ -93,7 +102,12 @@ public sealed partial class CombatCrosshairSystem : EntitySystem
             return;
         }
 
-        var crosshair = _crosshair.GetCrosshair(gun, out var pellets);
+        // An emptied gun keeps the crosshair of the round it was loaded with, many guns have no fill to fall back on.
+        if (_crosshair.TryGetCrosshair(gun, out var crosshair, out var pellets))
+            _lastLoaded[gun] = (crosshair, pellets);
+        else if (_lastLoaded.TryGetValue(gun, out var last))
+            (crosshair, pellets) = last;
+
         if (_single)
             crosshair = GunCrosshairComponent.DefaultCrosshair;
 

@@ -31,9 +31,11 @@ public sealed partial class CombatCrosshairOverlay : Overlay
     private static readonly Vector2i[] PixelNeighbours = [new(1, 0), new(-1, 0), new(0, 1), new(0, -1)];
 
     private const float MaxUiScale = 1.25f;
-    private const float BaseMinGap = 3f;
+    private const float BaseMinGap = 10f;
     private const float BaseTickLength = 6f;
     private const float BaseThickness = 2f;
+    private const float SpreadKnee = 35f;
+    private const float SpreadFalloff = 70f;
     private const int CloudLayers = 6;
     private const int PixelArm = 2;
     private const float ChevronApex = 14f;
@@ -305,7 +307,7 @@ public sealed partial class CombatCrosshairOverlay : Overlay
     {
         if (sight.Distance >= 1f)
         {
-            var half = sight.Spread / 2;
+            var half = MathF.Atan2(sight.SpreadRadius, sight.Distance);
             if (grow == 0f)
             {
                 var faint = color.WithAlpha(color.A * 0.45f);
@@ -443,6 +445,20 @@ public sealed partial class CombatCrosshairOverlay : Overlay
     {
         public float Thickness => BaseThickness * Scale;
         public float TickLength => BaseTickLength * Scale;
-        public float Gap => MathF.Tan(Spread / 2) * Distance + BaseMinGap * Scale;
+        public float Gap => SpreadRadius + BaseMinGap * Scale;
+
+        public float SpreadRadius
+        {
+            get
+            {
+                var real = MathF.Tan(Spread / 2) * Distance;
+                var knee = SpreadKnee * Scale;
+                if (real <= knee)
+                    return real;
+
+                var falloff = SpreadFalloff * Scale;
+                return knee + falloff * MathF.Log(1 + (real - knee) / falloff);
+            }
+        }
     }
 }
