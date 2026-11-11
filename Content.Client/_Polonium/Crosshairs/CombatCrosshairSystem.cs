@@ -111,7 +111,7 @@ public sealed partial class CombatCrosshairSystem : EntitySystem
         if (_single)
             crosshair = GunCrosshairComponent.DefaultCrosshair;
 
-        var target = (float) (_gun.PeekSpread(gun, player).Theta + pellets.Theta);
+        var target = (float)(_gun.PeekSpread(gun, player).Theta + pellets.Theta);
         if (Gun != gun.Owner || !_smoothing)
         {
             Spread = target;
