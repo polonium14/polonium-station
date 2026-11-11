@@ -268,6 +268,7 @@ public sealed partial class ChatSystem
             return;
 
         var clients = GetDeadChatClients();
+        var deadMessage = _chatEmoji.EscapeWithEmojis(message); // Polonium: chat emoji
         string wrappedMessage;
         if (_adminManager.IsAdmin(player))
         {
@@ -275,7 +276,7 @@ public sealed partial class ChatSystem
             wrappedMessage = Loc.GetString("chat-manager-send-admin-dead-chat-wrap-message",
                 ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
                 ("userName", (userName)),
-                ("message", FormattedMessage.EscapeText(message)));
+                ("message", deadMessage)); // Polonium: chat emoji
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Admin dead chat from {source}: {message}");
         }
         else
@@ -284,7 +285,7 @@ public sealed partial class ChatSystem
             wrappedMessage = Loc.GetString("chat-manager-send-dead-chat-wrap-message",
                 ("deadChannelName", Loc.GetString("chat-manager-dead-channel-name")),
                 ("playerName", (playerName)),
-                ("message", FormattedMessage.EscapeText(message)));
+                ("message", deadMessage)); // Polonium: chat emoji
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Dead chat from {source}: {message}");
         }
 

@@ -338,6 +338,7 @@ private ISawmill? _sawmill = default!;
 
         var playerName = _chatSystem.ChatNameLinks && player.AttachedEntity is {} attachedEntity ? $"[textlink=\"{FormattedMessage.EscapeStringParameter(player.Name)}\" entity=\"{_entityManager.GetNetEntity(attachedEntity)}\" color=\"{ChatChannel.AdminChat.TextColor().ToHex()}\"]" : FormattedMessage.EscapeText(player.Name);
         var clients = _adminManager.ActiveAdmins.Select(p => p.Channel);
+        var adminMessage = _entityManager.System<ChatEmojiSystem>().EscapeWithEmojis(message); // Polonium: chat emoji
         string wrappedMessage;
         if (_entityManager.System<SupporterSystem>().TryGetNameColor(player.UserId, out var supporterColor))
         {
@@ -345,14 +346,14 @@ private ISawmill? _sawmill = default!;
                 ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
                 ("color", supporterColor),
                 ("playerName", playerName),
-                ("message", FormattedMessage.EscapeText(message)));
+                ("message", adminMessage)); // Polonium: chat emoji
         }
         else
         {
             wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
                 ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
                 ("playerName", playerName),
-                ("message", FormattedMessage.EscapeText(message)));
+                ("message", adminMessage)); // Polonium: chat emoji
         }
 
         foreach (var client in clients)
