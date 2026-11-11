@@ -8,7 +8,6 @@ using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
-using SixLabors.ImageSharp.PixelFormats;
 
 namespace Content.Client._Polonium.Crosshairs;
 
@@ -51,8 +50,6 @@ public sealed partial class CombatCrosshairOverlay : Overlay
     private Color _color = Color.White;
     private float _scale = 1f;
     private bool _outline = true;
-    private ICursor? _blankCursor;
-    private Control? _hiddenCursorViewport;
 
     // The client sandbox bans stackalloc, so vertex and cell scratch space lives here.
     private readonly Vector2[] _vertices = new Vector2[(MaxArcSegments + 1) * 2];
@@ -75,6 +72,7 @@ public sealed partial class CombatCrosshairOverlay : Overlay
     private void OnColorChanged(string value)
     {
         _color = Color.TryFromHex(value, out var color) ? color : Color.White;
+        InvalidateCursors();
     }
 
     private void OnScaleChanged(float value)
@@ -85,6 +83,7 @@ public sealed partial class CombatCrosshairOverlay : Overlay
     private void OnOutlineChanged(bool value)
     {
         _outline = value;
+        InvalidateCursors();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -92,7 +91,7 @@ public sealed partial class CombatCrosshairOverlay : Overlay
         if (_system.Crosshair != null)
             return true;
 
-        UpdateCursor(null);
+        RestoreCursor();
         return false;
     }
 
@@ -102,10 +101,11 @@ public sealed partial class CombatCrosshairOverlay : Overlay
             return;
 
         var mouse = _input.MouseScreenPosition;
-        if (_eye.PixelToMap(mouse).MapId != args.MapId || !viewport.GlobalPixelRect.Contains((Vector2i) mouse.Position))
+        if (_eye.PixelToMap(mouse).MapId != args.MapId || !viewport.GlobalPixelRect.Contains((Vector2i)mouse.Position))
             return;
 
-        UpdateCursor(viewport);
+        var scale = MathF.Min(viewport.UIScale, MaxUiScale) * _scale;
+        SetCursor(viewport, CursorKindOf(crosshair.Shape), scale);
 
         var originEntity = _system.Gun is { } gun && _entities.HasComponent<GunUseGunOriginComponent>(gun) ? gun : _player.LocalEntity;
         var origin = originEntity is { } ent ? _eye.MapToScreen(_transform.GetMapCoordinates(ent)).Position : mouse.Position;
@@ -115,7 +115,7 @@ public sealed partial class CombatCrosshairOverlay : Overlay
             toMouse.Length(),
             MathF.Atan2(toMouse.Y, toMouse.X),
             _system.Spread,
-            MathF.Min(viewport.UIScale, MaxUiScale) * _scale);
+            scale);
 
         var handle = args.ScreenHandle;
         if (crosshair.FaceShooter && crosshair.Shape != CrosshairShape.PixelCross)
@@ -146,7 +146,6 @@ public sealed partial class CombatCrosshairOverlay : Overlay
                 break;
             case CrosshairShape.Ring:
                 DrawArc(handle, sight.Center, MathF.Max(sight.Gap, sight.Thickness), 0f, MathF.Tau, sight.Thickness * 0.7f + grow * 2, color);
-                DrawDot(handle, sight, color, grow);
                 break;
             case CrosshairShape.DashedRing:
                 DrawDashedRing(handle, sight, color, grow);
@@ -163,38 +162,6 @@ public sealed partial class CombatCrosshairOverlay : Overlay
             case CrosshairShape.PixelCross:
                 DrawPixelCross(handle, sight, color, grow);
                 break;
-            case CrosshairShape.Chevrons:
-                DrawChevrons(handle, sight, color, grow);
-                break;
-        }
-    }
-
-    private void DrawChevrons(DrawingHandleScreen handle, in Sight sight, Color color, float grow)
-    {
-        var apex = ChevronApex * sight.Scale;
-        var end = ChevronEnd * sight.Scale;
-        var halfWidth = ChevronHalfWidth * sight.Scale;
-        var width = ChevronWidth * sight.Scale;
-
-        var slope = halfWidth / (apex - end);
-        var sin = halfWidth / MathF.Sqrt(halfWidth * halfWidth + (apex - end) * (apex - end));
-        var outerApex = apex + grow / sin;
-        var innerApex = apex - (width + grow) / sin;
-        var cut = end - grow;
-        var outerSide = slope * (outerApex - cut);
-        var innerSide = MathF.Max(0f, slope * (innerApex - cut));
-
-        foreach (var dir in Axes)
-        {
-            var side = new Vector2(-dir.Y, dir.X);
-            var c = sight.Center;
-            _vertices[0] = c + dir * cut - side * outerSide;
-            _vertices[1] = c + dir * cut - side * innerSide;
-            _vertices[2] = c + dir * outerApex;
-            _vertices[3] = c + dir * innerApex;
-            _vertices[4] = c + dir * cut + side * outerSide;
-            _vertices[5] = c + dir * cut + side * innerSide;
-            handle.DrawPrimitives(DrawPrimitiveTopology.TriangleStrip, new ReadOnlySpan<Vector2>(_vertices, 0, 6), color);
         }
     }
 
@@ -205,7 +172,6 @@ public sealed partial class CombatCrosshairOverlay : Overlay
         var l = sight.TickLength;
         var g = sight.Gap;
 
-        DrawBox(handle, c + new Vector2(-t, -t) / 2, c + new Vector2(t, t) / 2, grow, color);
         DrawBox(handle, c + new Vector2(g, -t / 2), c + new Vector2(g + l, t / 2), grow, color);
         DrawBox(handle, c + new Vector2(-g - l, -t / 2), c + new Vector2(-g, t / 2), grow, color);
         DrawBox(handle, c + new Vector2(-t / 2, g), c + new Vector2(t / 2, g + l), grow, color);
@@ -231,8 +197,6 @@ public sealed partial class CombatCrosshairOverlay : Overlay
                 c + new Vector2(d.X * b + w / 2, d.Y * b),
                 grow, color);
         }
-
-        DrawDot(handle, sight, color, grow);
     }
 
     private static void DrawGrid(DrawingHandleScreen handle, in Sight sight, Color color, float grow)
@@ -269,8 +233,6 @@ public sealed partial class CombatCrosshairOverlay : Overlay
             DrawArc(handle, sight.Center, radius, from - extend, from + MathHelper.DegreesToRadians(16f) + extend,
                 sight.Thickness * 0.7f + grow * 2, color);
         }
-
-        DrawDot(handle, sight, color, grow);
     }
 
     private void DrawDiagonalArcs(DrawingHandleScreen handle, in Sight sight, Color color, float grow)
@@ -282,25 +244,21 @@ public sealed partial class CombatCrosshairOverlay : Overlay
             var middle = MathHelper.DegreesToRadians(45f + k * 90f);
             DrawArc(handle, sight.Center, radius, middle - half, middle + half, sight.Thickness * 0.85f + grow * 2, color);
         }
-
-        DrawDot(handle, sight, color, grow);
     }
 
     private static void DrawCloud(DrawingHandleScreen handle, in Sight sight, Color color, float grow)
     {
-        if (grow == 0f)
-        {
-            var radius = sight.Gap * 1.12f + 4f * sight.Scale;
-            var layer = color.WithAlpha(color.A * 0.05f);
-            for (var i = 0; i < CloudLayers; i++)
-            {
-                handle.DrawCircle(sight.Center, radius * (1f - (float) i / CloudLayers), layer);
-            }
+        if (grow != 0f)
+            return;
 
-            handle.DrawCircle(sight.Center, MathF.Max(sight.Gap, sight.Thickness), color.WithAlpha(color.A * 0.35f), false);
+        var radius = sight.Gap * 1.12f + 4f * sight.Scale;
+        var layer = color.WithAlpha(color.A * 0.05f);
+        for (var i = 0; i < CloudLayers; i++)
+        {
+            handle.DrawCircle(sight.Center, radius * (1f - (float)i / CloudLayers), layer);
         }
 
-        DrawDot(handle, sight, color, grow);
+        handle.DrawCircle(sight.Center, MathF.Max(sight.Gap, sight.Thickness), color.WithAlpha(color.A * 0.35f), false);
     }
 
     private static void DrawRails(DrawingHandleScreen handle, in Sight sight, Color color, float grow)
@@ -312,13 +270,17 @@ public sealed partial class CombatCrosshairOverlay : Overlay
 
         DrawBox(handle, c + new Vector2(-half, g), c + new Vector2(half, g + t), grow, color);
         DrawBox(handle, c + new Vector2(-half, -g - t), c + new Vector2(half, -g), grow, color);
-        DrawDot(handle, sight, color, grow);
+    }
+
+    private static float PixelCellSize(float scale)
+    {
+        return MathF.Max(2f, MathF.Round(2.5f * scale, MidpointRounding.AwayFromZero));
     }
 
     private void DrawPixelCross(DrawingHandleScreen handle, in Sight sight, Color color, float grow)
     {
-        var size = MathF.Max(2f, MathF.Round(2.5f * sight.Scale, MidpointRounding.AwayFromZero));
-        var gap = Math.Max(2, (int) MathF.Round(sight.Gap / size));
+        var size = PixelCellSize(sight.Scale);
+        var gap = Math.Max(2, (int)MathF.Round(sight.Gap / size));
         var corner = new Vector2(MathF.Round(sight.Center.X), MathF.Round(sight.Center.Y)) - new Vector2(MathF.Floor(size / 2));
 
         _cells[0] = Vector2i.Zero;
@@ -357,14 +319,12 @@ public sealed partial class CombatCrosshairOverlay : Overlay
 
     private static void DrawCell(DrawingHandleScreen handle, Vector2 corner, float size, Vector2i cell, Color color)
     {
-        var topLeft = corner + (Vector2) cell * size;
-        handle.DrawRect(new UIBox2(topLeft, topLeft + new Vector2(size)), color);
-    }
+        // The middle cell and its outline are the system cursor.
+        if (Math.Abs(cell.X) + Math.Abs(cell.Y) <= 1)
+            return;
 
-    private static void DrawDot(DrawingHandleScreen handle, in Sight sight, Color color, float grow)
-    {
-        var half = new Vector2(sight.Thickness * 0.45f);
-        DrawBox(handle, sight.Center - half, sight.Center + half, grow, color);
+        var topLeft = corner + (Vector2)cell * size;
+        handle.DrawRect(new UIBox2(topLeft, topLeft + new Vector2(size)), color);
     }
 
     private static void DrawBox(DrawingHandleScreen handle, Vector2 a, Vector2 b, float grow, Color color)
@@ -374,7 +334,7 @@ public sealed partial class CombatCrosshairOverlay : Overlay
 
     private void DrawArc(DrawingHandleScreen handle, Vector2 center, float radius, float from, float to, float width, Color color)
     {
-        var segments = Math.Clamp((int) (MathF.Abs(to - from) * radius / 4f), 3, MaxArcSegments);
+        var segments = Math.Clamp((int)(MathF.Abs(to - from) * radius / 4f), 3, MaxArcSegments);
         var inner = radius - width / 2;
         var outer = radius + width / 2;
         for (var i = 0; i <= segments; i++)
@@ -388,29 +348,12 @@ public sealed partial class CombatCrosshairOverlay : Overlay
         handle.DrawPrimitives(DrawPrimitiveTopology.TriangleStrip, new ReadOnlySpan<Vector2>(_vertices, 0, (segments + 1) * 2), color);
     }
 
-    private void UpdateCursor(Control? viewport)
-    {
-        if (_hiddenCursorViewport == viewport)
-            return;
-
-        if (_hiddenCursorViewport != null)
-            _hiddenCursorViewport.CustomCursorShape = null;
-
-        _hiddenCursorViewport = viewport;
-        if (viewport == null)
-            return;
-
-        _blankCursor ??= _clyde.CreateCursor(new SixLabors.ImageSharp.Image<Rgba32>(32, 32), Vector2i.Zero);
-        viewport.CustomCursorShape = _blankCursor;
-    }
-
     protected override void DisposeBehavior()
     {
         _cfg.UnsubValueChanged(CCVars.CrosshairColor, OnColorChanged);
         _cfg.UnsubValueChanged(CCVars.CrosshairScale, OnScaleChanged);
         _cfg.UnsubValueChanged(CCVars.CrosshairOutline, OnOutlineChanged);
-        UpdateCursor(null);
-        _blankCursor?.Dispose();
+        DisposeCursors();
         base.DisposeBehavior();
     }
 
