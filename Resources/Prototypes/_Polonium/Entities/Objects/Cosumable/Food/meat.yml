@@ -97,7 +97,7 @@
 - type: entity
   parent: [FoodMeatRawBase, BaseSlicingRefinableFood]
   id: FoodMeatGoblin
-  name: goblin meat
+  name: raw goblin meat
   description: Unsanitary, that's how goblins look, even on inside.
   components:
   - type: Sprite
