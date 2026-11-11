@@ -15,6 +15,12 @@
   - type: HeldSpeedModifier
   - type: Gun
     fireRate: 20
+    # POLONIUM START: a hand-held heavy machine gun sprays
+    minAngle: 4
+    maxAngle: 20
+    angleIncrease: 1
+    angleDecay: 10
+    # POLONIUM END
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -22,6 +28,12 @@
       path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  # POLONIUM START
+  - type: GunMovementSpread
+    walk: 3
+    run: 9
+    sprint: 20
+  # POLONIUM END
   - type: StaticPrice
     price: 500
   # No chamber because HMG may want its own

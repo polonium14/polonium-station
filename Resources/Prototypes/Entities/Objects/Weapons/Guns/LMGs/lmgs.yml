@@ -21,6 +21,12 @@
   - type: GunWieldBonus
     minAngle: -20
     maxAngle: -20
+  # POLONIUM START
+  - type: GunMovementSpread
+    walk: 3
+    run: 9
+    sprint: 20
+  # POLONIUM END
   - type: Gun
     minAngle: 24
     maxAngle: 45

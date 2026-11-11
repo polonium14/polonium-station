@@ -140,6 +140,12 @@
   - type: GunIgnorePrediction
   - type: Item
     size: Normal
+  # POLONIUM START: mounted on a borg, so moving does not shake it
+  - type: GunMovementSpread
+    walk: 0
+    run: 0
+    sprint: 0
+  # POLONIUM END
 
 - type: entity
   name: syringe gun

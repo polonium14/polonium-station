@@ -30,6 +30,12 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
   - type: GunIgnorePrediction
+  # POLONIUM START
+  - type: GunMovementSpread
+    walk: 3
+    run: 9
+    sprint: 20
+  # POLONIUM END
 
 - type: entity
   parent: [ BaseWeaponLauncher, BaseSyndicateContraband ]

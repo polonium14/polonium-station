@@ -25,6 +25,12 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  # POLONIUM START
+  - type: GunMovementSpread
+    walk: 3
+    run: 10
+    sprint: 25
+  # POLONIUM END
   - type: BallisticAmmoProvider
     capacity: 10
     proto: CartridgeLightRifle
@@ -167,6 +173,11 @@
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: GunRequiresWield
+  # POLONIUM START: smoothbore barrel, 4-8 degrees when wielded
+  - type: GunWieldBonus
+    minAngle: -17
+    maxAngle: -24
+  # POLONIUM END
 
 - type: entity
   name: flintlock pistol
@@ -175,7 +186,7 @@
   description: A pirate's companion. Yarrr! Uses .45 magnum ammo.
   components:
   - type: Gun
-    minAngle: 0
+    minAngle: 6 # Polonium: smoothbore, so even the first shot can miss
     maxAngle: 30 #miss him entirely because the barrel is smoothbore
   - type: Item
     size: Small

@@ -31,6 +31,12 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/smg.ogg
     defaultDirection: 1, 0
+  # POLONIUM START
+  - type: GunMovementSpread
+    walk: 1.5
+    run: 5
+    sprint: 12
+  # POLONIUM END
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/smg_cock.ogg

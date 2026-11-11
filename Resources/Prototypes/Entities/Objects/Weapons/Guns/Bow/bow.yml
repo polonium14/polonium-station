@@ -20,6 +20,12 @@
   - type: UseDelay
     delay: 1
   - type: GunRequiresWield
+  # POLONIUM START
+  - type: GunMovementSpread
+    walk: 2
+    run: 6
+    sprint: 15
+  # POLONIUM END
   - type: Gun
     minAngle: 0
     maxAngle: 5
