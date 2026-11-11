@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Tests.Interaction;
+using Content.Shared._Polonium.Weapons.Ranged.Components;
 using Content.Shared._Polonium.Weapons.Ranged.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Movement.Components;
@@ -47,10 +48,12 @@ public sealed class GunMovementSpreadTest : InteractionTest
         await OverrideCVar(Side.Server, CCVars.GunMovementSpread, true);
         var gun = ToServer(await PlaceInHands(GunProto));
         var move = SEntMan.GetComponent<MovementSpeedModifierComponent>(SPlayer);
+        var penalty = SEntMan.GetComponent<GunMovementSpreadComponent>(gun);
+        var still = await PeekAtSpeed(gun, 0f);
 
-        Assert.That(await PeekAtSpeed(gun, 0f), Is.EqualTo(2).Within(Tolerance));
-        Assert.That(await PeekAtSpeed(gun, move.CurrentWalkSpeed), Is.EqualTo(2.3).Within(Tolerance));
-        Assert.That(await PeekAtSpeed(gun, move.CurrentSprintSpeed), Is.EqualTo(3.3).Within(Tolerance));
+        Assert.That(still, Is.EqualTo(MinSpread(gun)).Within(Tolerance));
+        Assert.That(await PeekAtSpeed(gun, move.CurrentWalkSpeed), Is.EqualTo(still + penalty.Walk.Degrees).Within(Tolerance));
+        Assert.That(await PeekAtSpeed(gun, move.CurrentSprintSpeed), Is.EqualTo(still + penalty.Run.Degrees).Within(Tolerance));
     }
 
     [Test]
@@ -66,9 +69,15 @@ public sealed class GunMovementSpreadTest : InteractionTest
             sprinter.LastSprint = STiming.CurTime;
         });
 
-        Assert.That(await PeekAtSpeed(gun, 0f), Is.EqualTo(5.3).Within(Tolerance));
+        var penalty = SEntMan.GetComponent<GunMovementSpreadComponent>(gun);
+        Assert.That(await PeekAtSpeed(gun, 0f), Is.EqualTo(MinSpread(gun) + penalty.Sprint.Degrees).Within(Tolerance));
 
         await RunSeconds(1.1f);
-        Assert.That(await PeekAtSpeed(gun, 0f), Is.EqualTo(2).Within(Tolerance));
+        Assert.That(await PeekAtSpeed(gun, 0f), Is.EqualTo(MinSpread(gun)).Within(Tolerance));
+    }
+
+    private double MinSpread(EntityUid gun)
+    {
+        return SEntMan.GetComponent<GunComponent>(gun).MinAngleModified.Degrees;
     }
 }
