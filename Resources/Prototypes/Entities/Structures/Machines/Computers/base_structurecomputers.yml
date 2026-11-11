@@ -5,6 +5,9 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: ESSparkOnHit # Polonium: sparks when damaged, from Starlight
+    prob: 0.25
+    count: 2
   - type: Animateable
   - type: MeleeSound
     soundGroups:

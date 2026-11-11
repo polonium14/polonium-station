@@ -1,0 +1,2 @@
+ent-ESEffectSparks = iskry
+    .desc = { "" }

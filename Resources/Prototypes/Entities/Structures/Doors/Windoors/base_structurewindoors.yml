@@ -175,6 +175,9 @@
   parent: [BaseDeltaPressureGlassQuarter, BaseWindoorGeneric]
   id: BaseWindoor
   components:
+  - type: ESSparkOnHit # Polonium: sparks when damaged, from Starlight
+    prob: 0.25
+    count: 2
   - type: Sprite
     sprite: Structures/Doors/Windoors/windoor.rsi
   - type: Destructible
