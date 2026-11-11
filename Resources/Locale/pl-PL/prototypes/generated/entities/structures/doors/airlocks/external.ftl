@@ -1,4 +1,4 @@
-ent-AirlockExternal = external airlock
+ent-AirlockExternal = { ent-AirlockRCDResistant }
     .desc = Otwiera się, zamyka i może cię zmiażdżyć.
-ent-AirlockExternalGlass = external glass airlock
+ent-AirlockExternalGlass = { ent-AirlockExternal }
     .desc = { ent-AirlockExternal.desc }
