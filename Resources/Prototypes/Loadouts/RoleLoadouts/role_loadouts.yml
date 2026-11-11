@@ -469,8 +469,8 @@
   - WardenJumpsuit
   - SecurityBackpack
   - SecurityBelt
-  - SecurityServiceWeapon # Polonium
-  - SecurityServiceWeaponAmmo # Polonium
+  - SecurityServiceWeapon # Polonium: wybór broni
+  - SecurityServiceWeaponAmmo # Polonium: wybór amunicji
   - WardenOuterClothing
   - SecurityShoes
   - AssistiveItems
@@ -492,8 +492,8 @@
   - SecurityShoes
   - SecurityPDA
   - SecurityBelt
-  - SecurityServiceWeapon # Polonium
-  - SecurityServiceWeaponAmmo # Polonium
+  - SecurityServiceWeapon # Polonium: wybór broni
+  - SecurityServiceWeaponAmmo # Polonium: wybór amunicji
   - AssistiveItems
   - SurvivalSecurity
   - Trinkets
@@ -510,9 +510,9 @@
   - SecurityBackpack
   - DetectiveOuterClothing
   - SecurityShoes
-  - DetectiveBelt # Polonium
-  - DetectiveServiceWeapon # Polonium
-  - DetectiveServiceWeaponAmmo # Polonium
+  - DetectiveBelt # Polonium: by spawnował rewolwer poprawnie
+  - DetectiveServiceWeapon # Polonium: wybór broni
+  - DetectiveServiceWeaponAmmo # Polonium wybór amunicji
   - AssistiveItems
   - SurvivalSecurity
   - Trinkets

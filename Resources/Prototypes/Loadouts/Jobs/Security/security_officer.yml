@@ -149,7 +149,7 @@
   equipment:
     belt: ClothingBeltSecurityWebbingFilled
 
-- type: loadout
+- type: loadout # Polonium: funkcjonalnie to samo tylko inny wygląd
   id: SecurityFullWebbing
   equipment:
     belt: FuClothingBeltSecurityWebbingFilled    

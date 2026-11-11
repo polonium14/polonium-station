@@ -36,7 +36,7 @@
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
 
-- type: startingGear
+- type: startingGear # Polonium: przeniesiono bo nie ma powodu aby był w losowym miejscu
   id: BrigmedicGear
   equipment:
     gloves: ClothingHandsGlovesNitrile
@@ -52,8 +52,13 @@
   job: Brigmedic
   hasMindShield: true
   equipment:
+    jumpsuit: ClothingUniformJumpsuitBrigmedic
+    outerClothing: ClothingOuterCoatAMG
     head: ClothingHeadHatBeretBrigmedic
     eyes: ClothingEyesHudMedical
     mask: ClothingMaskBreathMedicalSecurity
     gloves: ClothingHandsGlovesNitrile
+    shoes: ClothingShoesColorRed
+    belt: ClothingBeltMedicalFilled
+
 
