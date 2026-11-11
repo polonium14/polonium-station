@@ -55,7 +55,7 @@ food-sequence-content-spacemans-trumpet = trąbką kosmonauty
 food-sequence-content-cherry = wiśnią
 food-sequence-content-snail = ślimakiem
 food-sequence-content-anomaly-berry = jagodą anomalii
-food-sequence-content-aloe-ignis = aloe ignis
+food-sequence-content-aloe-ignis = ognistym aloesem
 # added missing - Yaket
 food-sequence-content-mystery-meat = tajemniczym mięsem
 food-sequence-content-mysterycutlet-cooked = tajemniczym kotletem

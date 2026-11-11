@@ -37,14 +37,14 @@ ent-ActionChangelingStingMute =
     Po cichu użądl cel i wstrzyknij mu substancje, które uniemożliwiają mówienie.
     Wymaga 30 chemikaliów.
     .desc =
-        Silently sting a target and inject them with chemicals that prevent them from speaking. 
+        Po cichu użądl cel i wstrzyknij mu substancje chemiczne, które uniemożliwiają mu mówienie. 
         
-        Requires 30 Chemicals.
-ent-ActionChangelingFleshtomb = Fleshtomb
+        Wymaga 30 substancji chemicznych.
+ent-ActionChangelingFleshtomb = Mięsny Grobowiec
     .desc =
-        Preserve a body in a fragile cocoon made of flesh, which slowly harvests their life for DNA. 
+        Zachowaj ciało w delikatnym kokonie z mięsa, który powoli pozyskuje z niego życie w celu uzyskania DNA. 
         
-        Requires 35 Chemicals.
+        Wymaga 35 substancji chemicznych.
 ent-ActionChangelingStingArmblade = Armblade Sting
     .desc =
         Silently sting a target and cause them to grow a dull armblade after a lengthy delay. 
