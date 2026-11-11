@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: SlamBamActionman
-  changes:
-  - message: Uplink PDA codes are now universal. This means any PDA can open an uplink
-      store, as long as they have the correct code.
-    type: Tweak
-  - message: PDA ringtones now feature more notes.
-    type: Tweak
-  id: 9615
-  time: '2026-04-04T20:14:15.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/38712
 - author: Naxel
   changes:
   - message: Heavily optimized the radiation system to prevent severe server lag when
@@ -5111,3 +5101,10 @@
   id: 10109
   time: '2026-11-10T22:32:18.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1229
+- author: Nikita
+  changes:
+  - message: "Poprawiono spamowanie popup\xF3w podczas sprintowania"
+    type: Fix
+  id: 10110
+  time: '2026-11-11T06:05:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1230
