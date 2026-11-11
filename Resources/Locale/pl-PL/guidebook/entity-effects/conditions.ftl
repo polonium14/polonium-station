@@ -57,7 +57,7 @@ entity-condition-guidebook-blood-reagent-threshold =
                *[other] we krwi jest od { NATURALFIXED($min, 2) }u do { NATURALFIXED($max, 2) }u reagentu { $reagent }
             }
     }
-entity-condition-guidebook-mouth-uncovered-condition = the mob has an uncovered mouth
+entity-condition-guidebook-mouth-uncovered-condition = Stwór ma odkryte usta
 entity-condition-guidebook-bloodlevel =
     { $max ->
         [2147483648] the target has at least { NATURALFIXED($min, 2) }% total blood
