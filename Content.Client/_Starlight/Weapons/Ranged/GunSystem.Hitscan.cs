@@ -18,6 +18,7 @@ public sealed partial class GunSystem
     // The real shot is instant, so the beam is slowed down enough to be seen travelling.
     private const float BeamMsPerTile = 5000f / 315f;
     private const float FlashFadeMs = 100f;
+    private const float BeamWidth = 1f;
 
     private void RenderHitscan(HitscanEvent ev)
     {
@@ -76,12 +77,12 @@ public sealed partial class GunSystem
 
         if (travel)
         {
-            _sprite.SetScale(spriteEnt, new Vector2(0.05f, 0.5f));
+            _sprite.SetScale(spriteEnt, new Vector2(0.05f, BeamWidth));
             _sprite.SetOffset(spriteEnt, new Vector2(distance * -0.5f, 0f));
         }
         else
         {
-            _sprite.SetScale(spriteEnt, new Vector2(1f, 0.5f));
+            _sprite.SetScale(spriteEnt, new Vector2(1f, BeamWidth));
         }
 
         Comp<TimedDespawnComponent>(ent).Lifetime = time / 1000f;
@@ -111,9 +112,9 @@ public sealed partial class GunSystem
                 InterpolationMode = AnimationInterpolationMode.Cubic,
                 KeyFrames =
                 {
-                    new AnimationTrackProperty.KeyFrame(new Vector2(0.05f, 0.5f), delay / 1000f),
-                    new AnimationTrackProperty.KeyFrame(new Vector2(distance, 0.5f), length / 1000f),
-                    new AnimationTrackProperty.KeyFrame(new Vector2(distance, 0.5f), FlashFadeMs / 1000f),
+                    new AnimationTrackProperty.KeyFrame(new Vector2(0.05f, BeamWidth), delay / 1000f),
+                    new AnimationTrackProperty.KeyFrame(new Vector2(distance, BeamWidth), length / 1000f),
+                    new AnimationTrackProperty.KeyFrame(new Vector2(distance, BeamWidth), FlashFadeMs / 1000f),
                 },
             });
             anim.AnimationTracks.Add(new AnimationTrackComponentProperty
