@@ -7,6 +7,8 @@ using System.Numerics;
 using Content.Shared._Polonium.Weapons.Ranged.Events;
 using Content.Shared.Camera;
 using Content.Shared._RMC14.CCVar;
+using Content.Shared._Starlight.Camera;
+using Content.Shared.CCVar;
 using Content.Shared._RMC14.Random;
 using Content.Shared._RMC14.Weapons.Ranged;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
@@ -34,6 +36,7 @@ public abstract partial class SharedGunSystem
 {
     [Dependency] private IConfigurationManager _config = default!;
     [Dependency] private SharedCameraRecoilSystem _recoil = default!;
+    [Dependency] private ScreenshakeSystem _screenshake = default!; // Polonium
 
     public bool GunPrediction { get; private set; }
 
@@ -654,6 +657,10 @@ public abstract partial class SharedGunSystem
         if (!Timing.IsFirstTimePredicted || user == null || recoilDirection == Vector2.Zero || recoilScalar == 0)
             return;
 
-        _recoil.KickCamera(user.Value, recoilDirection.Normalized() * 0.5f * recoilScalar);
+        // Polonium start: Starlight's gun screenshake, a weaker kick and a short roll of the camera
+        var shakeIntensity = _config.GetCVar(CCVars.ScreenShakeIntensity);
+        _recoil.KickCamera(user.Value, recoilDirection.Normalized() * (0.5f + (0.13f - 0.5f) * shakeIntensity) * recoilScalar);
+        _screenshake.Screenshake(user.Value, new ScreenshakeParameters(0.035f * recoilScalar, 1.2f, 0.008f));
+        // Polonium end
     }
 }
