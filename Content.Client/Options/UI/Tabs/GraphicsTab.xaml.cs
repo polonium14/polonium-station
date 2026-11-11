@@ -117,6 +117,7 @@ public sealed partial class GraphicsTab : Control
         Control.AddOptionCheckBox(CCVars.HudFpsCounterVisible, FpsCounterCheckBox);
         Control.AddOptionCheckBox(StarlightCCVars.HolesEnabled, HolesCheckBox); // Polonium
         Control.AddOptionCheckBox(StarlightCCVars.SparksEnabled, SparksCheckBox); // Polonium
+        AddLightingOptions(); // Polonium
 
         Control.Initialize();
 
@@ -126,6 +127,7 @@ public sealed partial class GraphicsTab : Control
         UpdateViewportWidthRange();
         UpdateViewportSettingsVisibility();
         UpdateMaxFpsEnabled();
+        UpdateLightingSettingsVisibility(); // Polonium
     }
 
     private void UpdateMaxFpsEnabled()
