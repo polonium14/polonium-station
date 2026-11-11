@@ -1,5 +1,5 @@
-ent-PosterBase = { ent-BaseSign }
-    .desc = { ent-BaseSign.desc }
+ent-PosterBase = { ent-BaseSignWeak }
+    .desc = { ent-BaseSignWeak.desc }
 ent-PosterBroken = zniszczony plakat
     .desc = Nie można nic wyczytać z oryginalnego wydruku plakatu. Jest zniszczony.
 ent-PosterContrabandFreeTonto = Wolne Tonto

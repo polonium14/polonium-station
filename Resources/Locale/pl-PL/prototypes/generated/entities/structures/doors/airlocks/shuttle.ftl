@@ -1,6 +1,6 @@
 ent-AirlockShuttle = śluza dokująca
     .desc = Niezbędna do połączenia dwóch statków kosmicznych.
-ent-AirlockGlassShuttle = { ent-AirlockShuttle }
+ent-AirlockGlassShuttle = docking glass airlock
     .desc = { ent-AirlockShuttle.desc }
 ent-AirlockShuttleAssembly = konstrukcja śluzy zewnętrznej
     .desc = Nieukończona konstrukcja niezbędna do połączenia dwóch statków kosmicznych.
@@ -10,6 +10,6 @@ ent-AirlockGlassShuttleSyndicate = { ent-AirlockGlassShuttle }
 ent-AirlockShuttleSyndicate = { ent-AirlockShuttle }
     .suffix = Dokowanie
     .desc = { ent-AirlockShuttle.desc }
-ent-AirlockShuttleXenoborg = { ent-AirlockShuttle }
+ent-AirlockShuttleXenoborg = mechadermis docking airlock
     .suffix = Xenoborg
     .desc = { ent-AirlockShuttle.desc }

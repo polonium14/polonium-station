@@ -1,7 +1,7 @@
-ent-SprayPainter = pistolet natryskowy
-    .desc = Pistolet natryskowy do malowania śluz i rur.
-ent-SprayPainterRecharging = { ent-SprayPainter }
-    .desc = { ent-SprayPainter.desc }
+ent-SprayPainter = { ent-SprayPainterRecharging }
+    .desc = { ent-SprayPainterRecharging.desc }
+ent-SprayPainterRecharging = spray painter
+    .desc = A spray painter for painting airlocks, pipes, and other items.
     .suffix = Admeme
 ent-SprayPainterBorg = eksperymentalny malarz natryskowy
     .desc = Eksperymentalna pistoletowa farba w sprayu z funkcją doładowania, która potrafi w nieskończoność odtwarzać sprężoną farbę.

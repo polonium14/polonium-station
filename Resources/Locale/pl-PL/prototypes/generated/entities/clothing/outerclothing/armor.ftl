@@ -1,7 +1,7 @@
 ent-ClothingOuterArmorBase = kamizelka ochronna
     .desc = Standardowa kamizelka pancerna typu I, zapewniająca przyzwoitą ochronę przed większością rodzajów obrażeń.
-ent-ClothingOuterArmorBasic = { ent-BaseSecurityContraband }
-    .desc = { ent-BaseSecurityContraband.desc }
+ent-ClothingOuterArmorBasic = { ent-ClothingOuterArmorBase }
+    .desc = { ent-ClothingOuterArmorBase.desc }
 ent-ClothingOuterArmorBasicSlim = kamizelka ochronna
     .desc = Smukła kamizelka pancerna typu I, zapewniająca przyzwoitą ochronę przed większością rodzajów obrażeń.
     .suffix = smukła
