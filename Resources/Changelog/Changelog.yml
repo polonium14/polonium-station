@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Naxel
-  changes:
-  - message: Heavily optimized the radiation system to prevent severe server lag when
-      a large number of radiation sources are active.
-    type: Fix
-  id: 9616
-  time: '2026-04-05T04:53:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39173
 - author: Princess-Cheeseballs
   changes:
   - message: Random pill bottles can no longer spawn with ambuzol or ambuzol+
@@ -5108,3 +5100,26 @@
   id: 10110
   time: '2026-11-11T06:05:50.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1230
+- author: Nikita
+  changes:
+  - message: "W trybie walki kursor zamienia si\u0119 w celownik, kt\xF3ry pokazuje\
+      \ rozrzut nast\u0119pnego strza\u0142u. Kszta\u0142t celownika zale\u017Cy od\
+      \ rodzaju broni, a do walki wr\u0119cz jest osobny, sta\u0142y celownik."
+    type: Add
+  - message: "W ustawieniach, w zak\u0142adce \"Og\xF3lne\", mo\u017Cna zmieni\u0107\
+      \ kolor, rozmiar i obrys celownika, wy\u0142\u0105czy\u0107 p\u0142ynne zmiany\
+      \ rozrzutu albo ustawi\u0107 jeden celownik dla ka\u017Cdej broni dystansowej."
+    type: Add
+  - message: "Bro\u0144 palna traci celno\u015B\u0107, gdy strzelaj\u0105cy idzie,\
+      \ biegnie albo sprintuje."
+    type: Add
+  - message: "\u015Arut ze strzelb rozlatuje si\u0119 teraz z uwzgl\u0119dnieniem\
+      \ odrzutu broni, tak jak pojedyncze pociski."
+    type: Tweak
+  - message: "PMM Model-X i Glauberyt trzymane obur\u0105cz maj\u0105 mniejszy rozrzut."
+    type: Tweak
+  - message: "Sprint jest teraz pod spacj\u0105 zamiast Shifta."
+    type: Tweak
+  id: 10111
+  time: '2026-11-11T13:35:40.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1231
