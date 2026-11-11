@@ -19,7 +19,7 @@ public sealed partial class CrosshairPrototype : IPrototype
     public CrosshairShape Shape;
 
     /// <summary>
-    /// Whether the figure turns to face the shooter. Pixel and fan shapes ignore it.
+    /// Whether the figure turns to face the shooter. The pixel shape ignores it.
     /// </summary>
     [DataField]
     public bool FaceShooter;
@@ -38,7 +38,7 @@ public enum CrosshairShape : byte
     DashedRing,
     Arcs,
     Cloud,
-    Fan,
+    Rails,
     PixelCross,
     Chevrons,
 }

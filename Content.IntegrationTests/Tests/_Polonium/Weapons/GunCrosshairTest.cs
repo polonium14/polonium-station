@@ -17,7 +17,7 @@ public sealed class GunCrosshairTest : InteractionTest
     [TestCase("WeaponWandFireball", "Cloud")]
     [TestCase("WeaponWaterPistol", "DashedRing")]
     [TestCase("RevolverCapGun", "PixelCross")]
-    [TestCase("WeaponTurretSyndicate", "Fan")]
+    [TestCase("WeaponTurretSyndicate", "Rails")]
     [TestCase("WeaponShotgunDoubleBarreledRubber", "Cross")]
     public async Task PicksCrosshairOfGun(string gun, string crosshair)
     {

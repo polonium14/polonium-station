@@ -32,8 +32,9 @@
   shape: Cloud
 
 - type: crosshair
-  id: Fan
-  shape: Fan
+  id: Rails
+  shape: Rails
+  faceShooter: true
 
 - type: crosshair
   id: PixelCross
