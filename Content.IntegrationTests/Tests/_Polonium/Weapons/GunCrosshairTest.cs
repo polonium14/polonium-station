@@ -12,7 +12,7 @@ public sealed class GunCrosshairTest : InteractionTest
     [TestCase("WeaponSniperMosin", "TCross")]
     [TestCase("Musket", "Cross")]
     [TestCase("WeaponLauncherChinaLake", "Grid")]
-    [TestCase("WeaponImprovisedPneumaticCannon", "Corners")]
+    [TestCase("WeaponImprovisedPneumaticCannon", "Grid")]
     [TestCase("BowImprovised", "Ring")]
     [TestCase("WeaponWandFireball", "Cloud")]
     [TestCase("WeaponWaterPistol", "DashedRing")]
@@ -25,7 +25,7 @@ public sealed class GunCrosshairTest : InteractionTest
 
         await Server.WaitAssertion(() =>
         {
-            SEntMan.System<GunCrosshairSystem>().TryGetCrosshair(target, out var picked, out var pellets);
+            SEntMan.System<GunCrosshairSystem>().TryGetCrosshair(target, null, out var picked, out var pellets);
             Assert.That(picked.Id, Is.EqualTo(crosshair));
             Assert.That(pellets.Degrees, Is.Zero);
         });
@@ -38,9 +38,23 @@ public sealed class GunCrosshairTest : InteractionTest
 
         await Server.WaitAssertion(() =>
         {
-            Assert.That(SEntMan.System<GunCrosshairSystem>().TryGetCrosshair(target, out var picked, out var pellets));
+            Assert.That(SEntMan.System<GunCrosshairSystem>().TryGetCrosshair(target, null, out var picked, out var pellets));
             Assert.That(picked.Id, Is.EqualTo("Arcs"));
             Assert.That(pellets.Degrees, Is.EqualTo(15 * 0.6).Within(0.01)); // buckshot cone times the Kammerer choke
+        });
+    }
+
+    [TestCase("WeaponPistolMk58", "Corners")]
+    [TestCase("WeaponLauncherChinaLake", "Grid")]
+    public async Task RobotsAimPlainGunsWithTheirCrosshair(string gun, string crosshair)
+    {
+        var target = ToServer(await SpawnTarget(gun));
+        var borg = ToServer(await Spawn("BorgChassisGeneric"));
+
+        await Server.WaitAssertion(() =>
+        {
+            SEntMan.System<GunCrosshairSystem>().TryGetCrosshair(target, borg, out var picked, out _);
+            Assert.That(picked.Id, Is.EqualTo(crosshair));
         });
     }
 
@@ -61,7 +75,7 @@ public sealed class GunCrosshairTest : InteractionTest
 
         await Client.WaitAssertion(() =>
         {
-            Assert.That(CEntMan.System<GunCrosshairSystem>().TryGetCrosshair(ToClient(gun), out _, out _), Is.False);
+            Assert.That(CEntMan.System<GunCrosshairSystem>().TryGetCrosshair(ToClient(gun), CPlayer, out _, out _), Is.False);
             Assert.That(crosshairs.Crosshair?.ID, Is.EqualTo("Arcs"));
         });
     }

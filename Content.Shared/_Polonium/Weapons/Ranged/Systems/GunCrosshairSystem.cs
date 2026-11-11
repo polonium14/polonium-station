@@ -22,9 +22,10 @@ public sealed partial class GunCrosshairSystem : EntitySystem
 
     /// <summary>
     /// Picks the crosshair for the gun and the cone its next round spreads its pellets over, zero for a single projectile.
+    /// A gun without its own crosshair uses the one of its <paramref name="user"/>, if they have one.
     /// Returns false when the gun has no round to fire, the crosshair is then the one the gun uses for single projectiles.
     /// </summary>
-    public bool TryGetCrosshair(EntityUid gun, out ProtoId<CrosshairPrototype> crosshair, out Angle pelletSpread)
+    public bool TryGetCrosshair(EntityUid gun, EntityUid? user, out ProtoId<CrosshairPrototype> crosshair, out Angle pelletSpread)
     {
         crosshair = GunCrosshairComponent.DefaultCrosshair;
         ProtoId<CrosshairPrototype>? pelletCrosshair = GunCrosshairComponent.DefaultPelletCrosshair;
@@ -32,6 +33,10 @@ public sealed partial class GunCrosshairSystem : EntitySystem
         {
             crosshair = comp.Crosshair;
             pelletCrosshair = comp.PelletCrosshair;
+        }
+        else if (TryComp<GunUserCrosshairComponent>(user, out var userCrosshair))
+        {
+            crosshair = userCrosshair.Crosshair;
         }
 
         pelletSpread = Angle.Zero;

@@ -103,7 +103,7 @@ public sealed partial class CombatCrosshairSystem : EntitySystem
         }
 
         // An emptied gun keeps the crosshair of the round it was loaded with, many guns have no fill to fall back on.
-        if (_crosshair.TryGetCrosshair(gun, out var crosshair, out var pellets))
+        if (_crosshair.TryGetCrosshair(gun, player, out var crosshair, out var pellets))
             _lastLoaded[gun] = (crosshair, pellets);
         else if (_lastLoaded.TryGetValue(gun, out var last))
             (crosshair, pellets) = last;

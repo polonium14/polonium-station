@@ -4,8 +4,6 @@
   id: WeaponImprovisedPneumaticCannon
   description: Improvised using nothing but a pipe, some zipties, and a pneumatic cannon. Doesn't accept tanks without enough gas.
   components:
-  - type: GunCrosshair # Polonium: thrown items land at the cursor
-    crosshair: Corners
   - type: Sprite
     sprite: Objects/Weapons/Guns/Cannons/pneumatic_cannon.rsi
     layers:
@@ -38,6 +36,8 @@
     grid:
     - 0,0,1,1
   - type: Appearance
+  - type: GunCrosshair # Polonium
+    crosshair: Grid
   - type: ItemMapper
     containerWhitelist: [gas_tank]
     mapLayers:
@@ -72,8 +72,6 @@
   suffix: Empty
   description: Load cream pie for optimal results.
   components:
-  - type: GunCrosshair # Polonium: thrown items land at the cursor
-    crosshair: Corners
   - type: Sprite
     sprite: Objects/Weapons/Guns/Cannons/pie_cannon.rsi
     layers:
@@ -96,6 +94,8 @@
     soundEmpty:
       path: /Audio/Items/hiss.ogg
     clumsyProof: true
+  - type: GunCrosshair # Polonium
+    crosshair: Grid
   - type: ContainerAmmoProvider
     container: storagebase
   - type: GunIgnorePrediction
@@ -157,8 +157,6 @@
   id: LauncherSyringe
   description: Load full of poisoned syringes for optimal fun.
   components:
-  - type: GunCrosshair # Polonium: thrown items land at the cursor
-    crosshair: Corners
   - type: Sprite
     sprite: Objects/Weapons/Guns/Cannons/syringe_gun.rsi
     layers:
@@ -181,6 +179,8 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     clumsyProof: true
+  - type: GunCrosshair # Polonium
+    crosshair: Grid
   - type: ContainerAmmoProvider
     container: storagebase
   - type: GunIgnorePrediction
