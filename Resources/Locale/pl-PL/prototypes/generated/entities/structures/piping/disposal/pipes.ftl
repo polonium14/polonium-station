@@ -1,5 +1,5 @@
-ent-DisposalPipeBase = { "" }
-    .desc = { "" }
+ent-DisposalPipeBase = { ent-StructureHealthContainerWeak }
+    .desc = { ent-StructureHealthContainerWeak.desc }
 ent-DisposalHolder = uchwyt bloku utylizacyjnego
     .desc = { "" }
 ent-DisposalPipeBroken = uszkodzona rura utylizacyjna

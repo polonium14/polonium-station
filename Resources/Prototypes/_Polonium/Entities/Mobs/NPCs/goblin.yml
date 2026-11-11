@@ -1,7 +1,7 @@
 - type: entity
   id: MobBaseGoblin
   parent: MobBaseAncestor
-  description: Śmierdzące, chytre, przestępcze. Ich sama egzystencja jest zbrodnią wojenną.
+  description: Stinky, cunning, criminal. Their existance alone is a crime.
   abstract: true
   components:
   - type: NameIdentifier
@@ -161,29 +161,6 @@
     sprite: Mobs/Species/Human/organs.rsi
 
 - type: entity
-  parent: OrganGoblin
-  id: OrganGoblinExternal
-  abstract: true
-  components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Human/parts.rsi
-
-
-- type: entity
-  parent: [ OrganBaseBrain, OrganGoblinInternal ]
-  id: OrganGoblinBrain
-  components:
-  - type: OrganIntegrity
-    integrityCap: 30
-    integrityThresholds:
-      Normal: 30
-      Damaged: 6
-      Destroyed: 0
-
-- type: entity
   parent: [ OrganBaseLungs, OrganGoblinInternal, OrganGoblinMetabolizer ]
   id: OrganGoblinLungs
   components:
@@ -195,10 +172,10 @@
       Destroyed: 0
 
 - type: entity
-  name: dziki goblin
+  name: wild goblin
   id: MobGoblinWild
   parent: MobBaseGoblin
-  description: Śmierdzące, chytre, przestępcze. Ich sama egzystencja jest zbrodnią wojenną.
+  description: Stinky, cunning, criminal. Their existance alone is a crime.
   components:
   - type: NpcFactionMember
     factions:

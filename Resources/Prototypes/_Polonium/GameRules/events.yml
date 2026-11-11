@@ -77,8 +77,8 @@
     startAnnouncement: station-event-vent-creatures-start-horde-announcement
     startAudio:
       path: /Audio/_Polonium/Announcements/attention.ogg
-    earliestStart: 10
-    minimumPlayers: 13
+    earliestStart: 20
+    minimumPlayers: 15
     weight: 5
     duration: 5
     maxDuration: 20

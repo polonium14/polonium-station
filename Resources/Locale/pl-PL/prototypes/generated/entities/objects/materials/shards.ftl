@@ -1,4 +1,4 @@
-ent-ShardBase = { ent-MaterialBase }
+ent-ShardBase = { ent-SolutionCryo }
     .desc = To odłamek jakiegoś nieznanego materiału.
 ent-ShardGlass = odłamek szkła
     .desc = Mały kawałek szkła.

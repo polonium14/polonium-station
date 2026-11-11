@@ -66,7 +66,7 @@
         ratios:
           CarbonDioxide: 1.0
           Oxygen: -1.0
-      # Polonium. Creating Ammonia when in presence of oxygen (stinky goblin).
+      # Polonium. Creating Ammonia when breathing in oxygen (stinky goblin).
       - !type:ModifyLungGas
         conditions:
         - !type:MetabolizerTypeCondition
