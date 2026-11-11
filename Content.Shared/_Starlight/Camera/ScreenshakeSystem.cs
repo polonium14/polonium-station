@@ -10,7 +10,7 @@ namespace Content.Shared._Starlight.Camera;
 /// <summary>
 /// Shakes the local player's camera. Purely visual, the shake is never networked.
 /// </summary>
-public sealed class ScreenshakeSystem : EntitySystem
+public sealed partial class ScreenshakeSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IGameTiming _timing = default!;

@@ -15,7 +15,7 @@ namespace Content.Client._Starlight.Weapons.Ranged;
 /// <summary>
 /// Draws bullet holes, sparks and the wobble of the hit sprite where a shot lands.
 /// </summary>
-public sealed class ImpactVisualsSystem : EntitySystem
+public sealed partial class ImpactVisualsSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IPrototypeManager _proto = default!;
