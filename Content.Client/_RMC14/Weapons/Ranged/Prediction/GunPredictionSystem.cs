@@ -70,8 +70,30 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         {
             // Polonium: a twin whose grid or map was deleted sits in nullspace with coordinates relative to itself
             var xform = Transform(uid);
+            // Polonium start: physics steps from where the twin really is, not where the last frame drew it
+            RestoreTickPosition(uid, predicted, xform);
+            if (_timing.IsFirstTimePredicted && predicted.LerpTick != _timing.CurTick)
+            {
+                predicted.LerpTick = _timing.CurTick;
+                predicted.LerpParent = xform.ParentUid;
+                predicted.LerpFrom = xform.LocalPosition;
+                predicted.LerpTo = xform.LocalPosition;
+            }
+            // Polonium end
+
             predicted.Coordinates = xform.ParentUid.IsValid() ? xform.Coordinates : null;
         }
+    }
+
+    // Polonium
+    private void RestoreTickPosition(EntityUid uid, PredictedProjectileClientComponent predicted, TransformComponent xform)
+    {
+        if (!predicted.Lerped)
+            return;
+
+        predicted.Lerped = false;
+        if (xform.ParentUid == predicted.LerpParent)
+            _transform.SetLocalPositionNoLerp(uid, predicted.LerpTo, xform);
     }
 
     private void OnAfterSolve(ref PhysicsUpdateAfterSolveEvent ev)
@@ -81,6 +103,8 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             var pending = EntityQueryEnumerator<PredictedProjectileClientComponent>();
             while (pending.MoveNext(out var uid, out var predicted))
             {
+                predicted.LerpTo = Transform(uid).LocalPosition; // Polonium
+
                 if (predicted.PendingImpactTarget is not { } target)
                     continue;
 
@@ -260,6 +284,8 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         var projectiles = EntityQueryEnumerator<PredictedProjectileClientComponent, ProjectileComponent, PhysicsComponent>();
         while (projectiles.MoveNext(out var uid, out var predicted, out var projectile, out var physics))
         {
+            RestoreTickPosition(uid, predicted, Transform(uid)); // Polonium
+
             if (predicted.Hit)
             {
                 if (IsClientSide(uid))
@@ -403,11 +429,20 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
     {
         base.FrameUpdate(frameTime);
 
-        // TODO bullet prediction remove this when lerping doesnt make the client's entity slightly slower
+        // Polonium: the engine lerp moves the twin itself and no server state resets it, so we draw it between ticks ourselves
+        var step = (float)(_timing.TickRemainder.TotalSeconds / _timing.TickPeriod.TotalSeconds);
         var projectiles = EntityQueryEnumerator<PredictedProjectileClientComponent, TransformComponent>();
-        while (projectiles.MoveNext(out _, out var xform))
+        while (projectiles.MoveNext(out var uid, out var predicted, out var xform))
         {
             xform.ActivelyLerping = false;
+
+            // Polonium start
+            if (predicted.LerpParent != xform.ParentUid || predicted.LerpFrom == predicted.LerpTo)
+                continue;
+
+            _transform.SetLocalPositionNoLerp(uid, Vector2.Lerp(predicted.LerpFrom, predicted.LerpTo, step), xform);
+            predicted.Lerped = true;
+            // Polonium end
         }
     }
 }
