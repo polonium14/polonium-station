@@ -86,6 +86,20 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
     }
 
     // Polonium
+    /// <summary>
+    /// Moves every predicted projectile back from where the last frame drew it to where the last tick left it.
+    /// Runs before game states are applied, because the engine resets contacts there from the current positions.
+    /// </summary>
+    public void RestoreTickPositions()
+    {
+        var query = EntityQueryEnumerator<PredictedProjectileClientComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var predicted, out var xform))
+        {
+            RestoreTickPosition(uid, predicted, xform);
+        }
+    }
+
+    // Polonium
     private void RestoreTickPosition(EntityUid uid, PredictedProjectileClientComponent predicted, TransformComponent xform)
     {
         if (!predicted.Lerped)
