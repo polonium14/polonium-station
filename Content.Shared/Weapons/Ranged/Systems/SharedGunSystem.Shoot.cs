@@ -658,6 +658,12 @@ public abstract partial class SharedGunSystem
             return;
 
         // Polonium start: Starlight's gun screenshake, a weaker kick and a short roll of the camera
+        if (_config.GetCVar(CCVars.GunClassicCameraRecoil))
+        {
+            _recoil.KickCamera(user.Value, recoilDirection.Normalized() * 0.5f * recoilScalar);
+            return;
+        }
+
         var shakeIntensity = _config.GetCVar(CCVars.ScreenShakeIntensity);
         _recoil.KickCamera(user.Value, recoilDirection.Normalized() * (0.5f + (0.13f - 0.5f) * shakeIntensity) * recoilScalar);
         _screenshake.Screenshake(user.Value, new ScreenshakeParameters(0.035f * recoilScalar, 1.2f, 0.008f));
