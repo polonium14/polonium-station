@@ -63,6 +63,7 @@
 
 using System.Globalization;
 using Content.Server._Polonium.Chat;
+using Content.Server._Polonium.Chat.Emoji;
 using Content.Server._Polonium.Supporters;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -112,6 +113,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private EntityQuery<GhostHearingComponent> _ghostHearingQuery = default!;
     [Dependency] private SupporterSystem _supporters = default!;
     [Dependency] private ShutUpSystem _shutUp = default!;
+    [Dependency] private ChatEmojiSystem _chatEmoji = default!; // Polonium: chat emoji
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
