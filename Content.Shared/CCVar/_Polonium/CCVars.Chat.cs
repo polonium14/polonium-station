@@ -26,4 +26,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<int> ChatRepeatHistory =
         CVarDef.Create("chat.repeat_history", 4, CVar.SERVER | CVar.REPLICATED, "How many recent distinct chat messages a repeated message can be merged into. 0 disables it.");
+
+    /// <summary>
+    /// How many emoji codes in one chat message turn into images. The rest stay as text.
+    /// </summary>
+    public static readonly CVarDef<int> ChatEmojiLimit =
+        CVarDef.Create("chat.emoji_limit", 20, CVar.SERVERONLY, "How many emoji codes in one chat message turn into images. The rest stay as text.");
 }

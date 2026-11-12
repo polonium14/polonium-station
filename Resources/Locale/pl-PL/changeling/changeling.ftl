@@ -20,7 +20,7 @@ changeling-devour-doafter = [color=red]{ CAPITALIZE(THE($user)) } rozszarpuje ci
 # transformation
 changeling-transform-attempt-self = Nasze kości pękają, mięśnie rwą się, jedno ciało staje się innym.
 changeling-transform-attempt-others = { CAPITALIZE(POSS-ADJ($user)) } kości pękają, mięśnie rwą się, ciało przekształca się w inne.
-changeling-transform-doafter = [color=red]The surface of { POSS-ADJ($user) } skin is melting, taking another shape.[/color]
+changeling-transform-doafter = [color=red]Powierzchnia { POSS-ADJ($user) } skóry topi się, przyjmując inną postać.[/color]
 # transformation BUI
 changeling-transform-bui-select-entity = { $entity }
 changeling-transform-bui-drop-identity-menu = Usuń pożartą tożsamość z pamięci.
@@ -44,20 +44,20 @@ changeling-takeover-start-others = { CAPITALIZE(THE($user)) } zaczyna wpełzać 
 changeling-takeover-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } { CONJUGATE-BE($user) } crawling inside of { $target }![/color]
 # stings
 changeling-sting-success = Cicho ukąsiliśmy { THE($target) }!
-changeling-sting-hemotoxin = You feel sharp pain in your chest!
+changeling-sting-hemotoxin = Czujesz ostry ból w klatce piersiowej!
 # mindshield
 changeling-fake-mindshield-enabled = Emiutjemy fałszywą osłonę umysłu.
 changeling-fake-mindshield-disabled = Przestajemy emitować fałszywe fale osłony umysłu.
 # chemicals
 changeling-not-enough-chemicals = Nie mamy wystarczającej ilości chemikaliów.
 # other
-changeling-action-fail-generic = We cannot do this right now.
+changeling-action-fail-generic = Nie możemy tego teraz zrobić.
 changeling-paused-map-name = Mapa przechowywania tożsamości changelinga
-changeling-cocoon-success = We encase { THE($target) } in a fleshy tomb.
+changeling-cocoon-success = Zamykamy { THE($target) } w mięsistym grobie.
 changeling-cocoon-doafter = [color=red]{ CAPITALIZE(SUBJECT($user)) } { CONJUGATE-BE($user) } covering { THE($target) } in a fleshy mass![/color]
 # horror transformation
-changeling-horror-alert-time-name = Remaining time
-changeling-horror-alert-time-desc = When this counter reaches 0, we will have exhausted our strength.
-changeling-horror-force-transform-self = Our energy depleted, we cannot maintain this form anymore.
-changeling-horror-force-transform-others = { CAPITALIZE(POSS-ADJ($user)) } flesh rapidly shrivels away and dies.
-changeling-horror-transform-fail = We do not have enough DNA stored to reveal ourselves.
+changeling-horror-alert-time-name = Pozostały czas
+changeling-horror-alert-time-desc = Kiedy ten licznik osiągnie wartość 0, wyczerpią się nasze siły.
+changeling-horror-force-transform-self = Nasze siły się wyczerpały, nie jesteśmy już w stanie utrzymać tej postaci.
+changeling-horror-force-transform-others = { CAPITALIZE(POSS-ADJ($user)) } ciało szybko usycha i obumiera.
+changeling-horror-transform-fail = Nie dysponujemy wystarczającą ilością zgromadzonego materiału DNA, by ujawnić swoją tożsamość.

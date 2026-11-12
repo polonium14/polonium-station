@@ -1,0 +1,15 @@
+ent-MobBaseGoblin = { ent-MobBaseAncestor }
+    .desc = Śmierdzące, chytre, przestępcze. Ich sama egzystencja jest zbrodnią wojenną.
+    .gender = male
+ent-OrganGoblin = { ent-OrganBaseOrganic }
+    .suffix = goblin
+    .desc = { ent-OrganBaseOrganic.desc }
+ent-OrganGoblinMetabolizer = { "" }
+    .desc = { "" }
+ent-OrganGoblinInternal = { ent-OrganGoblin }
+    .desc = { ent-OrganGoblin.desc }
+ent-OrganGoblinLungs = { ent-OrganBaseLungs }
+    .desc = { ent-OrganBaseLungs.desc }
+ent-MobGoblinWild = dziki goblin
+    .desc = Śmierdzące, chytre, przestępcze. Ich sama egzystencja jest zbrodnią wojenną.
+    .gender = male

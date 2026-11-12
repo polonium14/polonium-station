@@ -1,0 +1,17 @@
+<emoji:ChatEmojiPicker
+    xmlns="https://spacestation14.io"
+    xmlns:emoji="clr-namespace:Content.Client._Polonium.Chat.Emoji"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+    <PanelContainer StyleClasses="BorderedWindowPanel">
+        <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="6">
+            <ScrollContainer HScrollEnabled="False" ReturnMeasure="True" MaxHeight="240">
+                <GridContainer Name="Grid" Columns="8" />
+            </ScrollContainer>
+            <controls:Separator StyleClasses="LowDivider" />
+            <BoxContainer Orientation="Horizontal" SeparationOverride="8" MinHeight="32">
+                <emoji:ChatEmojiControl Name="PreviewEmoji" SetSize="28 28" VerticalAlignment="Center" />
+                <Label Name="PreviewCode" StyleClasses="LabelHeading" ClipText="True" HorizontalExpand="True" VerticalAlignment="Center" />
+            </BoxContainer>
+        </BoxContainer>
+    </PanelContainer>
+</emoji:ChatEmojiPicker>

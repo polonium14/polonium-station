@@ -30,6 +30,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+  - type: GunMovementSpread # Polonium
   - type: UseDelay
     delay: 0.66
   - type: ContainerContainer

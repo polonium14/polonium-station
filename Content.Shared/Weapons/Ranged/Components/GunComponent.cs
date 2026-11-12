@@ -87,7 +87,7 @@ public sealed partial class GunComponent : Component
     /// What the current spread is for shooting. This gets changed every time the gun fires.
     /// </summary>
     [DataField]
-    [AutoNetworkedField]
+    // [AutoNetworkedField] // Polonium: client-local like LastFire, recoil grows only on the first prediction of a shot and server states rolled it back
     public Angle CurrentAngle;
 
     /// <summary>

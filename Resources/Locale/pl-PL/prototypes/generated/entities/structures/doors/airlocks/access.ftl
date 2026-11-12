@@ -1,6 +1,6 @@
-ent-AirlockServiceLocked = { ent-Airlock }
+ent-AirlockServiceLocked = { ent-AirlockService }
     .suffix = Serwis, Zablokowane
-    .desc = { ent-Airlock.desc }
+    .desc = { ent-AirlockService.desc }
 ent-AirlockLawyerLocked = { ent-AirlockServiceLocked }
     .suffix = Prawnik, Zablokowane
     .desc = { ent-AirlockServiceLocked.desc }

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "parowka-pinkscreen, moffparowa and petomoffparowek by pinkscreen and edited Saver310",
+  "copyright": "parowka-pinkscreen, moffparowa and petomoffparowek by pinkscreen and edited Saver310. Meats Taken from tgstation and modified by Swept, potato1234x and deltanedas at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa. meats modified into goblin variants by Oxtailime",
   "size": {
     "x": 32,
     "y": 32
@@ -18,6 +18,15 @@
       },
       {
           "name": "petomoffparowek"
+      },
+      {
+          "name": "goblin"
+      },
+      {
+          "name": "goblinCooked"
+      },
+      {
+          "name": "goblinCutlet"
       }
   ]
 }

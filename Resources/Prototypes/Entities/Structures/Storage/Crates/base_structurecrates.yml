@@ -88,6 +88,9 @@
   id: CrateBaseSecure
   suffix: Secure
   components:
+  - type: ESSparkOnHit # Polonium: sparks when damaged, from Starlight
+    prob: 0.25
+    count: 2
   - type: Lock
   - type: LockVisuals
   - type: AccessReader

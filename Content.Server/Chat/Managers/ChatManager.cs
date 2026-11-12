@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
 using Content.Server._Polonium.Chat;
+using Content.Server._Polonium.Chat.Emoji;
 using Content.Server._Polonium.Supporters;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -302,7 +303,8 @@ private ISawmill? _sawmill = default!;
         }
 
         Color? colorOverride = null;
-        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName",player.Name), ("message", FormattedMessage.EscapeText(message)));
+        var oocMessage = _entityManager.System<ChatEmojiSystem>().EscapeWithEmojis(message); // Polonium: chat emoji
+        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName",player.Name), ("message", oocMessage)); // Polonium: chat emoji
         if (_adminManager.HasAdminFlag(player, AdminFlags.NameColor))
         {
             var prefs = _preferencesManager.GetPreferences(player.UserId);
@@ -313,11 +315,11 @@ private ISawmill? _sawmill = default!;
             wrappedMessage = Loc.GetString("chat-manager-send-ooc-supporter-wrap-message",
                 ("color", supporterColor),
                 ("playerName", player.Name),
-                ("message", FormattedMessage.EscapeText(message)));
+                ("message", oocMessage)); // Polonium: chat emoji
         }
         else if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
         {
-            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", oocMessage)); // Polonium: chat emoji
         }
 
         //TODO: player.Name color, this will need to change the structure of the MsgChatMessage
@@ -336,6 +338,7 @@ private ISawmill? _sawmill = default!;
 
         var playerName = _chatSystem.ChatNameLinks && player.AttachedEntity is {} attachedEntity ? $"[textlink=\"{FormattedMessage.EscapeStringParameter(player.Name)}\" entity=\"{_entityManager.GetNetEntity(attachedEntity)}\" color=\"{ChatChannel.AdminChat.TextColor().ToHex()}\"]" : FormattedMessage.EscapeText(player.Name);
         var clients = _adminManager.ActiveAdmins.Select(p => p.Channel);
+        var adminMessage = _entityManager.System<ChatEmojiSystem>().EscapeWithEmojis(message); // Polonium: chat emoji
         string wrappedMessage;
         if (_entityManager.System<SupporterSystem>().TryGetNameColor(player.UserId, out var supporterColor))
         {
@@ -343,14 +346,14 @@ private ISawmill? _sawmill = default!;
                 ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
                 ("color", supporterColor),
                 ("playerName", playerName),
-                ("message", FormattedMessage.EscapeText(message)));
+                ("message", adminMessage)); // Polonium: chat emoji
         }
         else
         {
             wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
                 ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
                 ("playerName", playerName),
-                ("message", FormattedMessage.EscapeText(message)));
+                ("message", adminMessage)); // Polonium: chat emoji
         }
 
         foreach (var client in clients)

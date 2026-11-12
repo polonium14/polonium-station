@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client._Polonium.Crosshairs;
 using Content.Client.Hands.Systems;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Client.GameObjects;
@@ -65,6 +66,9 @@ public sealed class CombatModeIndicatorsOverlay : Overlay
         var mouseScreenPosition = _inputManager.MouseScreenPosition;
         var mousePosMap = _eye.PixelToMap(mouseScreenPosition);
         if (mousePosMap.MapId != args.MapId)
+            return;
+
+        if (_entMan.System<CombatCrosshairSystem>().Crosshair != null) // Polonium: our crosshairs replace these sights
             return;
 
         var handEntity = _hands.GetActiveHandEntity();

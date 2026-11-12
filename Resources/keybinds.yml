@@ -100,9 +100,9 @@ binds:
 - function: Walk
   type: State
   key: Control
-- function: Sprint
+- function: Sprint # Polonium
   type: State
-  key: Shift
+  key: Space
 # Shuttle
 - function: ShuttleStrafeUp
   type: State

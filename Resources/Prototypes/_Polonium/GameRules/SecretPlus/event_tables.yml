@@ -125,12 +125,13 @@
 
 # Niszczące: wrogie moby, rozszczelnienia i meteory.
 # Używane przez: MidHigh i High, a Low z "prob" (patrz SecretPlusTable).
-# Suma wag: 33
+# Suma wag: 38
 - type: entityTable
   id: SecretPlusDestructiveEventsTable
   table: !type:AllSelector
     children:
     - id: CowiekMaupaSpawn              # waga 5    koszt 250   gracze 5   od 20 min   ponownie po 25 min
+    - id: GoblinSpawnHorde              # waga 5    koszt 200   gracze 15  od 20 min   ponownie po 30 min
     - !type:EventSelector               # waga 4    koszt 300   gracze 10  od 20 min   ponownie po 40 min
       id: MeteorSwarmSmall
       eventWeight: 4

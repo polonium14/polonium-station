@@ -25,6 +25,12 @@
       - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
+  # POLONIUM START
+  - type: GunMovementSpread
+    walk: 0.7
+    run: 2
+    sprint: 5
+  # POLONIUM END
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg

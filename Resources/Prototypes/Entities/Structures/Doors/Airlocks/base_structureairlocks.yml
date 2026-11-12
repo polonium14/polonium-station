@@ -163,6 +163,9 @@
   id: Airlock
   description: It opens, it closes, and maybe crushes you.
   components:
+  - type: ESSparkOnHit # Polonium: sparks when damaged, from Starlight
+    prob: 0.25
+    count: 2
   - type: LayerChangeOnWeld
     unWeldedLayer: AirlockLayer
     weldedLayer: WallLayer

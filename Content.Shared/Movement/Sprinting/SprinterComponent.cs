@@ -216,4 +216,7 @@ public record struct SprintCapacityDepletedEvent;
 public record struct SprintCapacityRecoveredEvent;
 
 [ByRefEvent]
-public sealed class SprintAttemptEvent : CancellableEntityEventArgs;
+public sealed class SprintAttemptEvent : CancellableEntityEventArgs
+{
+    public bool ShowPopup;
+}

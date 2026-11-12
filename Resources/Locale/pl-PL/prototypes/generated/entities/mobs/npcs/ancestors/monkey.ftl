@@ -1,10 +1,10 @@
 ent-MobBaseMonkey = małpa
     .desc = Nowy kościół neo-darwinistów wierzy, że KAŻDE zwierzę wyewoluowało z małpy. Smakuje jak wieprzowina, a zabijanie ich jest i fajne, i relaksujące.
-ent-MobMonkey = małpa
-    .desc = Nowy kościół neo-darwinistów wierzy, że KAŻDE zwierzę wyewoluowało z małpy. Smakuje jak wieprzowina, a zabijanie ich jest i fajne, i relaksujące.
-ent-MobBaseSyndicateMonkey = małpa
+ent-MobMonkey = { ent-MobBaseMonkey }
+    .desc = { ent-MobBaseMonkey.desc }
+ent-MobBaseSyndicateMonkey = { ent-MobBaseMonkey }
     .suffix = baza Syndykatu
-    .desc = Nowy kościół neo-darwinistów wierzy, że KAŻDE zwierzę wyewoluowało z małpy. Smakuje jak wieprzowina, a zabijanie ich jest i fajne, i relaksujące.
+    .desc = { ent-MobBaseMonkey.desc }
 ent-MobMonkeySyndicateAgent = { ent-MobBaseSyndicateMonkey }
     .suffix = agent Syndykatu
     .desc = { ent-MobBaseSyndicateMonkey.desc }

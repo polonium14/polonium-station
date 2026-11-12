@@ -159,48 +159,7 @@ public sealed partial class GunSystem : SharedGunSystem
         // E.g., if a grid rotates while part of the beam is parented to the grid, and part of it is parented to the map.
         // Ideally, there should only be one entity, with one sprite that has multiple layers
         // Or at the very least, have the other entities parented to the same entity to make sure they stick together.
-        foreach (var a in ev.Sprites)
-        {
-            if (a.Sprite is not SpriteSpecifier.Rsi rsi)
-                continue;
-
-            var coords = GetCoordinates(a.coordinates);
-
-            if (!TryComp(coords.EntityId, out TransformComponent? relativeXform))
-                continue;
-
-            var ent = Spawn(HitscanProto, coords);
-            var sprite = Comp<SpriteComponent>(ent);
-
-            var xform = Transform(ent);
-            var targetWorldRot = a.angle + _xform.GetWorldRotation(relativeXform);
-            var delta = targetWorldRot - _xform.GetWorldRotation(xform);
-            _xform.SetLocalRotationNoLerp(ent, xform.LocalRotation + delta, xform);
-
-            sprite[EffectLayers.Unshaded].AutoAnimated = false;
-            _sprite.LayerSetSprite((ent, sprite), EffectLayers.Unshaded, rsi);
-            _sprite.LayerSetRsiState((ent, sprite), EffectLayers.Unshaded, rsi.RsiState);
-            _sprite.SetScale((ent, sprite), new Vector2(a.Distance, 1f));
-            sprite[EffectLayers.Unshaded].Visible = true;
-
-            var anim = new Animation()
-            {
-                Length = TimeSpan.FromSeconds(0.48f),
-                AnimationTracks =
-                {
-                    new AnimationTrackSpriteFlick()
-                    {
-                        LayerKey = EffectLayers.Unshaded,
-                        KeyFrames =
-                        {
-                            new AnimationTrackSpriteFlick.KeyFrame(rsi.RsiState, 0f),
-                        }
-                    }
-                }
-            };
-
-            _animPlayer.Play(ent, anim, "hitscan-effect");
-        }
+        RenderHitscan(ev); // Polonium: Starlight's travelling beam
     }
 
     public override void Update(float frameTime)

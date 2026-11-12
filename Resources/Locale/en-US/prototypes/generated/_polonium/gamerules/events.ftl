@@ -4,3 +4,6 @@ ent-BreakerDown = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
 ent-MorphSpawn = { ent-BaseAntagGhostRoleRule }
     .desc = { ent-BaseAntagGhostRoleRule.desc }
+
+ent-GoblinSpawnHorde = { ent-BaseStationEventShortDelay }
+    .desc = { ent-BaseStationEventShortDelay.desc }

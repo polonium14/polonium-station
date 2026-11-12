@@ -95,6 +95,7 @@ using Content.Client.GhostKick;
 using Content.Client.Guidebook;
 using Content.Client.Input;
 using Content.Client._Polonium.Tutorial.Lobby;
+using Content.Client._RMC14.Weapons.Ranged.Prediction; // Polonium
 using Content.Client.IoC;
 using Content.Client.Launcher;
 using Content.Client.Lobby;
@@ -330,6 +331,9 @@ namespace Content.Client.Entry
                 {
                     var updateSystem = _entitySystemManager.GetEntitySystem<BuiPreTickUpdateSystem>();
                     updateSystem.RunUpdates();
+
+                    // Polonium: the engine resets contacts while applying game states, before any system runs
+                    _entitySystemManager.GetEntitySystem<GunPredictionSystem>().RestoreTickPositions();
                 }
             }
         }

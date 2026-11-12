@@ -1,69 +1,4 @@
 ﻿Entries:
-- author: VanderslootAssgiraffe
-  changes:
-  - message: Added new lobby art depicting a mime mocking nukies trapped behind an
-      invisible wall as the mime defuses the nuke
-    type: Add
-  id: 9613
-  time: '2026-04-04T19:38:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42947
-- author: 0-Anon
-  changes:
-  - message: Rat Kings can now pull objects.
-    type: Tweak
-  id: 9614
-  time: '2026-04-04T19:58:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42701
-- author: SlamBamActionman
-  changes:
-  - message: Uplink PDA codes are now universal. This means any PDA can open an uplink
-      store, as long as they have the correct code.
-    type: Tweak
-  - message: PDA ringtones now feature more notes.
-    type: Tweak
-  id: 9615
-  time: '2026-04-04T20:14:15.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/38712
-- author: Naxel
-  changes:
-  - message: Heavily optimized the radiation system to prevent severe server lag when
-      a large number of radiation sources are active.
-    type: Fix
-  id: 9616
-  time: '2026-04-05T04:53:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39173
-- author: Princess-Cheeseballs
-  changes:
-  - message: Random pill bottles can no longer spawn with ambuzol or ambuzol+
-    type: Remove
-  id: 9617
-  time: '2026-04-05T05:36:30.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43458
-- author: K-Dynamic
-  changes:
-  - message: Clowns may change their loadout to start with the honkmother mitre.
-    type: Add
-  - message: Renames robes of the honkmother to honkmother coat.
-    type: Tweak
-  id: 9618
-  time: '2026-04-05T10:17:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35237
-- author: ScarKy0
-  changes:
-  - message: Cameras show as in-use when AI is nearby.
-    type: Add
-  - message: AI can no longer enable lights on cameras.
-    type: Remove
-  id: 9619
-  time: '2026-04-05T15:17:21.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43466
-- author: Princess-Cheeseballs
-  changes:
-  - message: Web vests have new more visible sprites.
-    type: Add
-  id: 9620
-  time: '2026-04-05T21:58:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43486
 - author: Princess-Cheeseballs
   changes:
   - message: Uplink implant now links to the same store as your PDA ringtone.
@@ -5110,3 +5045,94 @@
   id: 10107
   time: '2026-11-08T15:18:36.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1222
+- author: Koilak
+  changes:
+  - message: Wybuch artylerii bluespace
+    type: Tweak
+  id: 10108
+  time: '2026-11-10T21:09:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1227
+- author: Nikita
+  changes:
+  - message: Nowy marker do artylerii bluespace
+    type: Tweak
+  - message: "Podg\u0142o\u015Bniono d\u017Awi\u0119k og\u0142oszenia artylerii bluespace"
+    type: Tweak
+  id: 10109
+  time: '2026-11-10T22:32:18.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1229
+- author: Nikita
+  changes:
+  - message: "Poprawiono spamowanie popup\xF3w podczas sprintowania"
+    type: Fix
+  id: 10110
+  time: '2026-11-11T06:05:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1230
+- author: Nikita
+  changes:
+  - message: "W trybie walki kursor zamienia si\u0119 w celownik, kt\xF3ry pokazuje\
+      \ rozrzut nast\u0119pnego strza\u0142u. Kszta\u0142t celownika zale\u017Cy od\
+      \ rodzaju broni, a do walki wr\u0119cz jest osobny, sta\u0142y celownik."
+    type: Add
+  - message: "W ustawieniach, w zak\u0142adce \"Og\xF3lne\", mo\u017Cna zmieni\u0107\
+      \ kolor, rozmiar i obrys celownika, wy\u0142\u0105czy\u0107 p\u0142ynne zmiany\
+      \ rozrzutu albo ustawi\u0107 jeden celownik dla ka\u017Cdej broni dystansowej."
+    type: Add
+  - message: "Bro\u0144 palna traci celno\u015B\u0107, gdy strzelaj\u0105cy idzie,\
+      \ biegnie albo sprintuje."
+    type: Add
+  - message: "\u015Arut ze strzelb rozlatuje si\u0119 teraz z uwzgl\u0119dnieniem\
+      \ odrzutu broni, tak jak pojedyncze pociski."
+    type: Tweak
+  - message: "PMM Model-X i Glauberyt trzymane obur\u0105cz maj\u0105 mniejszy rozrzut."
+    type: Tweak
+  - message: "Sprint jest teraz pod spacj\u0105 zamiast Shifta."
+    type: Tweak
+  id: 10111
+  time: '2026-11-11T13:35:40.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1231
+- author: Nikita
+  changes:
+  - message: "Lot pocisk\xF3w jest teraz bardziej wyg\u0142adzony"
+    type: Tweak
+  id: 10112
+  time: '2026-11-11T16:55:00.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1232
+- author: oxtailime
+  changes:
+  - message: "Wypu\u015Bci\u0142 gobliny na stacje!"
+    type: Add
+  id: 10113
+  time: '2026-11-11T16:59:52.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1181
+- author: Nikita
+  changes:
+  - message: "Lasery strzelaj\u0105ce wi\u0105zk\u0105 rysuj\u0105 lec\u0105cy promie\u0144\
+      , kt\xF3ry rozb\u0142yskuje przy celu i wci\u0105ga si\u0119 w niego."
+    type: Add
+  - message: "Pociski i promienie zostawiaj\u0105 \u015Blady na \u015Bcianach i obiektach,\
+      \ metalowe cele sypi\u0105 iskrami, a trafiony obiekt drga."
+    type: Add
+  - message: "Uszkodzone maszyny, komputery, drzwi, szafki i lampy \u015Bcienne czasem\
+      \ sypi\u0105 iskrami."
+    type: Add
+  - message: "Ekrany, lampy i inne \u015Bwiec\u0105ce obiekty maj\u0105 po\u015Bwiat\u0119\
+      , najlepiej widoczn\u0105 w ciemno\u015Bci."
+    type: Add
+  - message: "W ustawieniach grafiki mo\u017Cna wy\u0142\u0105czy\u0107 \u015Blady\
+      \ po kulach, iskry i po\u015Bwiat\u0119 oraz dostroi\u0107 po\u015Bwiat\u0119\
+      ."
+    type: Add
+  - message: "Odrzut przy strzale lekko obraca kamer\u0119. Stare zachowanie przywraca\
+      \ opcja w ustawieniach dost\u0119pno\u015Bci."
+    type: Tweak
+  id: 10114
+  time: '2026-11-11T16:59:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1233
+- author: Nikita
+  changes:
+  - message: Dodano emoji
+    type: Add
+  id: 10115
+  time: '2026-11-12T13:49:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1236

@@ -1,0 +1,9 @@
+- type: shader
+  id: ScreenPostProcess
+  kind: source
+  path: "/Textures/_Starlight/Shaders/screen_postprocess.swsl"
+
+- type: shader
+  id: BloomExtract
+  kind: source
+  path: "/Textures/_Starlight/Shaders/bloom_extract.swsl"

@@ -1,0 +1,17 @@
+light_mode unshaded;
+blend_mode none;
+
+uniform sampler2D SCREEN_TEXTURE;
+uniform sampler2D BLOOM_TEXTURE;
+
+// How strongly glowing things bleed light around them.
+uniform highp float bloom;
+
+void fragment()
+{
+    highp vec4 screen = zTextureSpec(SCREEN_TEXTURE, Pos);
+    highp vec3 halo = texture2D(BLOOM_TEXTURE, Pos).rgb * bloom;
+    highp vec3 color = 1.0 - (1.0 - screen.rgb) * (1.0 - clamp(halo, 0.0, 1.0));
+
+    COLOR = vec4(clamp(color, 0.0, 1.0), screen.a);
+}

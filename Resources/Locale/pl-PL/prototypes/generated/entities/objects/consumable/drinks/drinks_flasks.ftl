@@ -1,4 +1,4 @@
-ent-FlaskBase = { ent-DrinkBaseMaterialStrongMetal }
+ent-FlaskBase = { ent-SolutionSmall }
     .desc = { ent-DrinkBaseMaterialStrongMetal.desc }
 ent-DrinkFlaskOld = stara piersiówka
     .desc = Zniszczona, stara piersiówka, której wydaje się brakować pokrywki.

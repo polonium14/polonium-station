@@ -23,17 +23,21 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         // Polonium: Funky footprints are puddles without IconSmooth, which SetEnabled reports as an error since #45310
         var smooth = HasComp<IconSmoothComponent>(uid);
+        // Polonium: footprints have no puddle layer either, FootprintSystem draws their prints as separate layers
+        var hasLayer = _sprite.LayerMapTryGet((uid, args.Sprite), component.PuddleKey, out _, false);
 
         // Update smoothing and sprite based on volume.
         if (volume < LowThreshold)
         {
-            _sprite.LayerSetRsiState((uid, args.Sprite), component.PuddleKey, $"{component.PuddleState}a");
+            if (hasLayer) // Polonium
+                _sprite.LayerSetRsiState((uid, args.Sprite), component.PuddleKey, $"{component.PuddleState}a");
             if (smooth) // Polonium
                 _smooth.SetEnabled(uid, false, false);
         }
         else if (volume < MediumThreshold)
         {
-            _sprite.LayerSetRsiState((uid, args.Sprite), component.PuddleKey, $"{component.PuddleState}b");
+            if (hasLayer) // Polonium
+                _sprite.LayerSetRsiState((uid, args.Sprite), component.PuddleKey, $"{component.PuddleState}b");
             if (smooth) // Polonium
                 _smooth.SetEnabled(uid, false, false);
         }

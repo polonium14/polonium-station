@@ -1,4 +1,4 @@
-ent-DrinkCartonBase = { ent-DrinkBaseMaterialCardboard }
+ent-DrinkCartonBase = { ent-SolutionSmall }
     .desc = { ent-DrinkBaseMaterialCardboard.desc }
 ent-DrinkCartonBaseFull = { ent-DrinkCartonBase }
     .suffix = Pełne
