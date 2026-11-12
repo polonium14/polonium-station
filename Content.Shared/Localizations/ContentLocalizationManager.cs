@@ -144,8 +144,8 @@ namespace Content.Shared.Localizations
             {
                 <= 0 => string.Empty,
                 1 => list[0],
-                2 => $"{list[0]} and {list[1]}",
-                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, and {list[^1]}"
+                2 => $"{list[0]} i {list[1]}", // Polonium
+                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, i {list[^1]}" // Polonium
             };
         }
 
@@ -158,8 +158,8 @@ namespace Content.Shared.Localizations
             {
                 <= 0 => string.Empty,
                 1 => list[0],
-                2 => $"{list[0]} or {list[1]}",
-                _ => $"{string.Join(" or ", list)}"
+                2 => $"{list[0]} albo {list[1]}", // Polonium
+                _ => $"{string.Join(" lub ", list)}" // Polonium
             };
         }
 
