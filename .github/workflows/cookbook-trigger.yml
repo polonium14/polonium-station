@@ -1,0 +1,28 @@
+name: Trigger cookbook update
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'Resources/Prototypes/**'
+      - 'Resources/Textures/**'
+      - 'Resources/Locale/pl-PL/**'
+
+permissions: {}
+
+jobs:
+  dispatch:
+    name: Dispatch to cookbook
+    if: vars.COOKBOOK_REPO != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Send repository_dispatch
+        env:
+          GH_TOKEN: ${{ secrets.COOKBOOK_DISPATCH_TOKEN }}
+          COOKBOOK_REPO: ${{ vars.COOKBOOK_REPO }}
+        run: |
+          gh api "repos/$COOKBOOK_REPO/dispatches" \
+            -f event_type=polonium-updated \
+            -f "client_payload[sha]=$GITHUB_SHA"
