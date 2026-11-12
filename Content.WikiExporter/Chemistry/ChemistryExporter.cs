@@ -1,8 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Encodings.Web;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using Content.Shared.Atmos.Prototypes;
 using Content.Shared.Body;
 using Content.Shared.Chemistry.Components;
@@ -14,58 +11,38 @@ using Content.Shared.EntityTable;
 using Content.Shared.Kitchen.Components;
 using Content.Shared.Metabolism;
 using Robust.Shared.GameObjects;
-using Robust.Shared.IoC;
 using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
 
-namespace Content.WikiExporter;
+namespace Content.WikiExporter.Chemistry;
 
 /// <summary>
 /// Reagents, reactions and reagent sources for the chemistry catalog on wiki based on Wiki.JS.
 /// </summary>
-public sealed partial class ChemistryExporter
+public sealed partial class ChemistryExporter : WikiExporter
 {
-    [Dependency] private IComponentFactory _factory = default!;
-    [Dependency] private IEntitySystemManager _entSys = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
-
     private static readonly EntProtoId Dispenser = "ChemDispenser";
     private static readonly ProtoId<MixingCategoryPrototype> DefaultMix = "DummyMix";
 
-    private static readonly JsonSerializerOptions Options = new()
-    {
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
-        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-    };
+    private SharedSolutionContainerSystem _solutions = default!;
 
-    private readonly SharedSolutionContainerSystem _solutions;
+    public override string Name => "chemistry";
 
-    public ChemistryExporter(IDependencyCollection deps)
+    public override object Export()
     {
-        deps.InjectDependencies(this);
-        _solutions = _entSys.GetEntitySystem<SharedSolutionContainerSystem>();
-    }
-
-    /// <summary>
-    /// Returns the whole data set as one JSON document.
-    /// </summary>
-    public string Export()
-    {
-        var data = new WikiData(
-            _proto.EnumeratePrototypes<MetabolismStagePrototype>().ToDictionary(p => p.ID, p => p.LocalizedName),
-            _proto.EnumeratePrototypes<MixingCategoryPrototype>().ToDictionary(p => p.ID, p => Loc.GetString(p.VerbText)),
+        _solutions = EntitySystems.GetEntitySystem<SharedSolutionContainerSystem>();
+        return new WikiData(
+            Proto.EnumeratePrototypes<MetabolismStagePrototype>().ToDictionary(p => p.ID, p => p.LocalizedName),
+            Proto.EnumeratePrototypes<MixingCategoryPrototype>().ToDictionary(p => p.ID, p => Loc.GetString(p.VerbText)),
             DispenserReagents(),
-            _proto.EnumeratePrototypes<ReagentPrototype>().Where(p => !p.Abstract).ToDictionary(p => p.ID, MakeReagent),
-            _proto.EnumeratePrototypes<ReactionPrototype>().OrderBy(p => p.ID).Select(MakeReaction).ToList(),
+            Proto.EnumeratePrototypes<ReagentPrototype>().Where(p => !p.Abstract).ToDictionary(p => p.ID, MakeReagent),
+            Proto.EnumeratePrototypes<ReactionPrototype>().OrderBy(p => p.ID).Select(MakeReaction).ToList(),
             Sources());
-
-        return JsonSerializer.Serialize(data, Options);
     }
 
     private WikiReagent MakeReagent(ReagentPrototype proto)
     {
-        var effects = new ReagentGuideEntry(proto, _proto, _entSys).GuideEntries?
+        var effects = new ReagentGuideEntry(proto, Proto, EntitySystems).GuideEntries?
             .Where(e => e.Value.EffectDescriptions.Length > 0)
             .Select(e => new WikiMetabolism(e.Key, e.Value.EffectDescriptions))
             .ToList();
@@ -90,21 +67,21 @@ public sealed partial class ChemistryExporter
             proto.Quantized,
             proto.Priority,
             proto.Source,
-            proto.Effects.Select(e => e.EntityEffectGuidebookText(_proto, _entSys)).OfType<string>().ToList());
+            proto.Effects.Select(e => e.EntityEffectGuidebookText(Proto, EntitySystems)).OfType<string>().ToList());
     }
 
     private List<string> DispenserReagents()
     {
         var found = new SortedSet<string>();
-        if (!_proto.Index(Dispenser).TryComp<EntityTableContainerFillComponent>(out var fill, _factory))
+        if (!Proto.Index(Dispenser).TryComp<EntityTableContainerFillComponent>(out var fill, Factory))
             return [];
 
-        var tables = _entSys.GetEntitySystem<EntityTableSystem>();
+        var tables = EntitySystems.GetEntitySystem<EntityTableSystem>();
         foreach (var table in fill.Containers.Values)
         {
             foreach (var item in tables.GetSpawns(table))
             {
-                foreach (var quantity in Contents(_proto.Index(item)))
+                foreach (var quantity in Contents(Proto.Index(item)))
                 {
                     found.Add(quantity.Reagent.Prototype);
                 }
@@ -116,7 +93,7 @@ public sealed partial class ChemistryExporter
 
     private IEnumerable<ReagentQuantity> Contents(EntityPrototype proto)
     {
-        if (proto.TryComp<SolutionComponent>(out var own, _factory))
+        if (proto.TryComp<SolutionComponent>(out var own, Factory))
         {
             foreach (var quantity in own.Solution.Contents)
             {
@@ -137,24 +114,24 @@ public sealed partial class ChemistryExporter
     {
         var sources = new List<WikiSource>();
 
-        foreach (var gas in _proto.EnumeratePrototypes<GasPrototype>().OrderBy(g => g.ID))
+        foreach (var gas in Proto.EnumeratePrototypes<GasPrototype>().OrderBy(g => g.ID))
         {
             if (gas.Reagent is { } reagent)
                 sources.Add(new WikiSource("gas", Loc.GetString(gas.Name), new() { [reagent.Id] = 1 }));
         }
 
         var names = new HashSet<string>();
-        foreach (var proto in _proto.EnumeratePrototypes<EntityPrototype>().OrderBy(p => p.ID))
+        foreach (var proto in Proto.EnumeratePrototypes<EntityPrototype>().OrderBy(p => p.ID))
         {
             if (proto.Abstract || names.Contains(proto.Name))
                 continue;
 
-            if (!proto.HideSpawnMenu && proto.HasComp<ReagentTankComponent>(_factory))
+            if (!proto.HideSpawnMenu && proto.HasComp<ReagentTankComponent>(Factory))
                 Add("tank", Contents(proto));
 
-            if (!proto.TryComp<ExtractableComponent>(out var extractable, _factory) ||
-                proto.HasComp<OrganComponent>(_factory) ||
-                proto.HasComp<PillComponent>(_factory))
+            if (!proto.TryComp<ExtractableComponent>(out var extractable, Factory) ||
+                proto.HasComp<OrganComponent>(Factory) ||
+                proto.HasComp<PillComponent>(Factory))
             {
                 continue;
             }

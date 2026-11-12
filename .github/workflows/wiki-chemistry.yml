@@ -54,13 +54,13 @@ jobs:
         run: dotnet build Content.WikiExporter/Content.WikiExporter.csproj --configuration Release /p:WarningsAsErrors= /m
 
       - name: Export chemistry data
-        run: dotnet run --project Content.WikiExporter --configuration Release --no-build -- "$RUNNER_TEMP/wiki/export.json"
+        run: dotnet run --project Content.WikiExporter --configuration Release --no-build -- "$RUNNER_TEMP/wiki/export" chemistry
 
       - name: Install Python packages
         run: pip install requests
 
       - name: Stamp data
-        run: python3 Tools/_Polonium/wiki_chemistry.py build "$RUNNER_TEMP/wiki/export.json" "$RUNNER_TEMP/wiki/build"
+        run: python3 Tools/_Polonium/wiki_chemistry.py build "$RUNNER_TEMP/wiki/export/chemistry.json" "$RUNNER_TEMP/wiki/build"
 
       - name: Upload to the wiki
         env:

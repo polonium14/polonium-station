@@ -1,9 +1,9 @@
 """Builds and uploads the data behind the chemistry pages of wiki.ss14.pl.
 
-    python Tools/_Polonium/wiki_chemistry.py build <export.json> <out dir>
+    python Tools/_Polonium/wiki_chemistry.py build <chemistry.json> <out dir>
     python Tools/_Polonium/wiki_chemistry.py upload <out dir> [--token-file <path>]
 
-The export comes from Content.WikiExporter (dotnet run --project Content.WikiExporter -- <file>).
+The export comes from Content.WikiExporter (dotnet run --project Content.WikiExporter -- <dir> chemistry).
 build stamps it with the date and commit, upload replaces it in the wiki asset folder.
 The API token is read from WIKI_TOKEN unless --token-file is given. upload requires requests.
 """
