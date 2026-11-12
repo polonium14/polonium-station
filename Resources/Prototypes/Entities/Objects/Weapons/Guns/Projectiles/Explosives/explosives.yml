@@ -96,6 +96,18 @@
     range: 7
   - type: SpawnOnTrigger
     proto: GrenadeFlashEffect
+  # Polonium: the bang is a changeling screech for everyone without headphones
+  - type: BangOnTrigger
+    range: 7
+    effects:
+    - !type:MovementSpeedModifier
+      walkSpeedModifier: 0.5
+      sprintSpeedModifier: 0.5
+      time: 5
+    - !type:Disarm
+    - !type:ModifyKnockdown
+      probability: 0.5
+  # Polonium end
   - type: DeleteOnTrigger
 
 - type: entity
