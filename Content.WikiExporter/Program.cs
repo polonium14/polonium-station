@@ -78,10 +78,15 @@ internal static class Program
                     Console.WriteLine($"{exporter.Name}: {file}");
                 }
             }
-            finally
+            catch (Exception e)
             {
-                await pair.CleanReturnAsync();
+                // A failed pair cannot be returned clean, so it is disposed and the original error is shown.
+                Console.Error.WriteLine(e);
+                await pair.DisposeAsync();
+                return 1;
             }
+
+            await pair.CleanReturnAsync();
         }
         finally
         {

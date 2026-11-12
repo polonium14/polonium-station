@@ -1,14 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Content.Shared.Atmos.Prototypes;
-using Content.Shared.Body;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Containers;
 using Content.Shared.EntityTable;
-using Content.Shared.Kitchen.Components;
 using Content.Shared.Metabolism;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Localization;
@@ -110,57 +108,6 @@ public sealed partial class ChemistryExporter : WikiExporter
         }
     }
 
-    private List<WikiSource> Sources()
-    {
-        var sources = new List<WikiSource>();
-
-        foreach (var gas in Proto.EnumeratePrototypes<GasPrototype>().OrderBy(g => g.ID))
-        {
-            if (gas.Reagent is { } reagent)
-                sources.Add(new WikiSource("gas", Loc.GetString(gas.Name), new() { [reagent.Id] = 1 }));
-        }
-
-        var names = new HashSet<string>();
-        foreach (var proto in Proto.EnumeratePrototypes<EntityPrototype>().OrderBy(p => p.ID))
-        {
-            if (proto.Abstract || names.Contains(proto.Name))
-                continue;
-
-            if (!proto.HideSpawnMenu && proto.HasComp<ReagentTankComponent>(Factory))
-                Add("tank", Contents(proto));
-
-            if (!proto.TryComp<ExtractableComponent>(out var extractable, Factory) ||
-                proto.HasComp<OrganComponent>(Factory) ||
-                proto.HasComp<PillComponent>(Factory))
-            {
-                continue;
-            }
-
-            if (extractable.JuiceSolution is { } juice)
-                Add("juice", juice.Contents);
-
-            if (extractable.GrindableSolutionName is { } grind && _solutions.TryGetSolution(proto, grind, out var ground))
-                Add("grind", ground.Contents);
-
-            void Add(string kind, IEnumerable<ReagentQuantity> contents)
-            {
-                var amounts = new Dictionary<string, double>();
-                foreach (var quantity in contents)
-                {
-                    amounts[quantity.Reagent.Prototype] = amounts.GetValueOrDefault(quantity.Reagent.Prototype) + quantity.Quantity.Double();
-                }
-
-                if (amounts.Count == 0)
-                    return;
-
-                sources.Add(new WikiSource(kind, proto.Name, amounts));
-                names.Add(proto.Name);
-            }
-        }
-
-        return sources;
-    }
-
     private sealed record WikiData(
         Dictionary<string, string> Stages,
         Dictionary<string, string> Mixers,
@@ -185,5 +132,12 @@ public sealed partial class ChemistryExporter : WikiExporter
         bool Source,
         List<string> Effects);
 
-    private sealed record WikiSource(string Kind, string Name, Dictionary<string, double> Out);
+    /// <param name="From">Reagent this one is made from in the body, for metabolites.</param>
+    /// <param name="Via">Plants whose mutation gives this one, when its seeds are not sold anywhere.</param>
+    private sealed record WikiSource(
+        string Kind,
+        string Name,
+        Dictionary<string, double> Out,
+        string? From = null,
+        List<string>? Via = null);
 }
