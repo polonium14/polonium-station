@@ -78547,13 +78547,6 @@ entities:
       pos: -8.5,66.5
     - type: FaxMachine
       name: Detective Office
-  - uid: 10643
-    components:
-    - type: Transform
-      parent: 2
-      pos: 76.5,28.5
-    - type: FaxMachine
-      name: Captain Office
   - uid: 10644
     components:
     - type: Transform
@@ -78729,6 +78722,13 @@ entities:
       pos: 23.5,40.5
     - type: FaxMachine
       name: Kostnica
+- proto: FaxMachineCaptain
+  entities:
+  - uid: 10643
+    components:
+    - type: Transform
+      parent: 2
+      pos: 76.5,28.5
 - proto: filingCabinetDrawerRandom
   entities:
   - uid: 10668
