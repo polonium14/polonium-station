@@ -1,19 +1,4 @@
 ﻿Entries:
-- author: AndrewFenriz
-  changes:
-  - message: Added a wide variety of new tile recipes to the Cutter Machine.
-    type: Add
-  id: 9622
-  time: '2026-04-05T22:33:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43431
-- author: psykana
-  changes:
-  - message: Nuclear operatives round end summary now shows the Disk's location. If
-      it wasn't atomized, that is.
-    type: Add
-  id: 9623
-  time: '2026-04-06T21:41:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39767
 - author: Princess-Cheeseballs
   changes:
   - message: Added a new Traitor objective to kill the Station AI!
@@ -5136,3 +5121,21 @@
   id: 10116
   time: '2026-11-13T10:25:16.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1186
+- author: Nikita
+  changes:
+  - message: "Burza jonowa teraz mo\u017Ce zmieni\u0107 nastroje Tejwan\xF3w z szans\u0105\
+      \ 80%."
+    type: Add
+  id: 10117
+  time: '2026-11-13T14:44:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1241
+- author: Czuat
+  changes:
+  - message: "Dodano mapie Atlas wi\u0119cej ga\u015Bnic, szafek awaryjnych, \u015B\
+      luzy dokuj\u0105ce dla odzysku. poprawiono okablowanie pomieszczenia z kryszta\u0142\
+      em supermaterii i APC nie powinna si\u0119 juz przeci\u0105\u017Ca\u0107, oraz\
+      \ powi\u0119kszono pok\xF3j z TEGiem."
+    type: Tweak
+  id: 10118
+  time: '2026-11-13T15:11:41.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1238
