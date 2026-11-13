@@ -12,11 +12,14 @@ using Content.Server.Actions;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Roles.Jobs;
+using Content.Server.StationEvents.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Dataset;
 using Content.Shared.Emag.Systems;
 using Content.Shared.GameTicking;
+using Content.Shared.GameTicking.Components;
+using Content.Shared.Station.Components;
 using Content.Shared._Impstation.Thaven;
 using Content.Shared._Impstation.Thaven.Components;
 using Content.Shared.Random;
@@ -74,6 +77,7 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
         SubscribeLocalEvent<ThavenMoodsBoundComponent, BoundUIOpenedEvent>(OnBoundUIOpened);
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnSpawnComplete); // funky
         SubscribeLocalEvent<RoundRestartCleanupEvent>((_) => NewSharedMoods());
+        SubscribeLocalEvent<GameRuleStartedEvent>(OnGameRuleStarted); // Polonium
     }
 
     private void NewSharedMoods()
@@ -432,6 +436,55 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
         if (!HasComp<MindShieldComponent>(uid)) // funky: dont emag mindshielded thavens
             TryAddRandomMood(uid, WildcardDataset, comp);
     }
+
+    // POLONIUM START
+    private void OnGameRuleStarted(ref GameRuleStartedEvent args)
+    {
+        if (!HasComp<IonStormRuleComponent>(args.Rule))
+            return;
+
+        var query = EntityQueryEnumerator<ThavenMoodsBoundComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var comp, out var xform))
+        {
+            if (!HasComp<StationMemberComponent>(xform.GridUid))
+                continue;
+
+            IonStormMoods((uid, comp));
+        }
+    }
+
+    private void IonStormMoods(Entity<ThavenMoodsBoundComponent> ent)
+    {
+        if (!_random.Prob(ent.Comp.IonStormChance))
+            return;
+
+        var moods = ent.Comp.Moods;
+
+        if (moods.Count > 1 && _random.Prob(ent.Comp.IonStormRemoveChance))
+        {
+            moods.RemoveAt(_random.Next(moods.Count));
+            NotifyMoodChange(ent);
+            UpdateBUIState(ent, ent.Comp);
+        }
+        else if (moods.Count < ent.Comp.MaxIonMoods && _random.Prob(ent.Comp.IonStormAddChance))
+        {
+            TryAddRandomMood(ent, ent.Comp);
+        }
+        else
+        {
+            var dataset = _proto.Index<WeightedRandomPrototype>(RandomThavenMoodDataset).Pick(_random);
+            if (!TryPick(dataset, out var proto, GetActiveMoods(ent, ent.Comp), null, GetMindDepartment(ent)))
+                return;
+
+            if (moods.Count > 1)
+                moods.RemoveAt(_random.Next(moods.Count));
+
+            AddMood(ent, RollMood(proto), ent.Comp);
+        }
+
+        Dirty(ent);
+    }
+    // POLONIUM END
 
     // Begin DeltaV: thaven mood upsets
     public void AddWildcardMood(Entity<ThavenMoodsBoundComponent> ent)
