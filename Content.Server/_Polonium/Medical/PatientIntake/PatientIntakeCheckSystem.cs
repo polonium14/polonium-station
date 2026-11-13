@@ -97,7 +97,7 @@ public sealed partial class PatientIntakeCheckSystem : EntitySystem
         }
 
         if (HasComp<PermanentBlindnessComponent>(patient)
-            || TryComp<BlindableComponent>(patient, out var blindable) && (blindable.IsBlind || blindable.EyeDamage > 0))
+            || TryComp<BlindableComponent>(patient, out var blindable) && blindable.EyeDamage > 0)
             failures.Add(new(IntakeFailureKind.Blind));
 
         return failures;

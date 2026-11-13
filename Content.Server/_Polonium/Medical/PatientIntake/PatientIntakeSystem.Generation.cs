@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Server._Polonium.Tutorial;
 using Content.Shared._Polonium.Medical.PatientIntake;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
@@ -29,6 +30,7 @@ public sealed partial class PatientIntakeSystem
     [Dependency] private HumanoidProfileSystem _humanoidProfile = default!;
     [Dependency] private OrganRelationSystem _organRelations = default!;
     [Dependency] private SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private TutorialNpcSystem _tutorialNpc = default!;
 
     /// <summary>
     /// Damage type and amount of the wound that owns a generated bone or organ trauma.
@@ -43,6 +45,8 @@ public sealed partial class PatientIntakeSystem
     public EntityUid SpawnPatient(Entity<PatientIntakeMachineComponent> machine, PatientIntakeCasePrototype caseProto, EntityCoordinates coords)
     {
         var patient = SpawnRandomPatient(machine.Comp.Humanoid, coords);
+        // No player ever controls a patient, so stock SSD handling would put it to sleep mid-case
+        _tutorialNpc.KeepAwake(patient);
         var comp = AddComp<PatientIntakePatientComponent>(patient);
         comp.Machine = machine;
         Dirty(patient, comp);

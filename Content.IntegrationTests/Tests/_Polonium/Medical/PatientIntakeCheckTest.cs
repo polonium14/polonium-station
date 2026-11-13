@@ -9,6 +9,7 @@ using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Medical.PatientIntake;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
+using Content.Shared.Bed.Sleep;
 using Content.Shared.Body.Systems;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
@@ -62,6 +63,35 @@ public sealed class PatientIntakeCheckTest : GameTest
                 var failures = check.Check(patient, PartCategories(entMan, patient));
                 Assert.That(failures, Is.Empty, $"A freshly spawned {species} must pass: {string.Join(", ", failures)}");
             }
+        });
+    }
+
+    /// <summary>
+    /// Sleep blinds a mob as long as it lasts, but it is not an eye injury.
+    /// </summary>
+    [Test]
+    public async Task SleepingPatientPasses()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var check = entMan.System<PatientIntakeCheckSystem>();
+        var map = await pair.CreateTestMap();
+
+        EntityUid patient = default;
+        await server.WaitPost(() =>
+        {
+            PatientIntakeMachineTest.AddAir(entMan, map.MapUid);
+            patient = entMan.SpawnEntity("MobHuman", new MapCoordinates(Vector2.Zero, map.MapId));
+        });
+        await pair.RunTicksSync(5);
+        await server.WaitPost(() => Assert.That(entMan.System<SleepingSystem>().TrySleeping(patient), Is.True));
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var failures = check.Check(patient, PartCategories(entMan, patient));
+            Assert.That(failures, Is.Empty, $"A sleeping, healthy patient must pass: {string.Join(", ", failures)}");
         });
     }
 

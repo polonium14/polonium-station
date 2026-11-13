@@ -21,6 +21,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Roles;
+using Content.Shared.SSDIndicator;
 using Content.Shared.Paper;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Body;
@@ -167,6 +168,7 @@ public sealed class PatientIntakeMachineTest : GameTest
         await server.WaitAssertion(() =>
         {
             Assert.That(entMan.GetComponent<MetaDataComponent>(patient).EntityPaused, Is.True, "Frozen until first opened.");
+            Assert.That(entMan.HasComponent<SSDIndicatorComponent>(patient), Is.False, "No player ever controls a patient, so it must not fall into SSD sleep.");
             Assert.That(entMan.GetComponent<EntityStorageComponent>(machine).Contents.Contains(patient));
         });
 
