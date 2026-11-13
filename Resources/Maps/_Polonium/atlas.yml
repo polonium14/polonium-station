@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 11/12/2026 23:42:11
-  entityCount: 9692
+  entityCount: 9693
 maps:
 - 7466
 grids:
@@ -27332,6 +27332,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 8.5,13.5
+  - uid: 9693
+    components:
+    - type: Transform
+      parent: 2
+      pos: 4.5,-14.5
+    - type: FaxMachine
+      name: Kostnica
 - proto: FaxMachineCaptain
   entities:
   - uid: 3945
@@ -44995,12 +45002,6 @@ entities:
       canCollide: False
 - proto: Morgue
   entities:
-  - uid: 6330
-    components:
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: 4.5,-15.5
   - uid: 6331
     components:
     - type: Transform
@@ -45343,6 +45344,19 @@ entities:
     - type: Transform
       parent: 2
       pos: -35.364105,0.69096327
+- proto: PatientIntakeMachine
+  entities:
+  - uid: 6330
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: 4.5,-15.5
+    - type: DeviceLinkSource
+      linkedPorts:
+        9693:
+        - - PatientIntakeFax
+          - PatientIntakeFaxReceiver
 - proto: Pen
   entities:
   - uid: 6386
