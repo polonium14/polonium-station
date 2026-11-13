@@ -202,6 +202,6 @@
   kind: ReplacePart
   cost: 0
   prosthetic: true
-  categories: [ ArmLeft, ArmRight, HandLeft, HandRight, LegLeft, LegRight, FootLeft, FootRight ]
+  categories: [ ArmLeft, ArmRight, LegLeft, LegRight ]
   description: patient-intake-issue-prosthesis
   symptom: patient-intake-issue-prosthesis

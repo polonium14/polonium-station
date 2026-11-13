@@ -274,6 +274,62 @@ public sealed class PatientIntakeTreatmentTest : GameTest
         });
     }
 
+    /// <summary>
+    /// A prosthesis request goes through real amputation, which takes the hand or foot along with
+    /// the limb. A prosthetic limb on its own meets the request.
+    /// </summary>
+    [Test]
+    public async Task ProstheticLimbAfterAmputationPasses()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var intake = entMan.System<PatientIntakeSystem>();
+        var map = await pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+
+        EntityUid patient = default, donor = default;
+        await server.WaitPost(() =>
+        {
+            PatientIntakeMachineTest.AddAir(entMan, map.MapUid);
+            patient = entMan.SpawnEntity("MobHuman", coords);
+            donor = entMan.SpawnEntity("MobHuman", coords);
+        });
+        await pair.RunTicksSync(5);
+
+        await server.WaitPost(() =>
+        {
+            entMan.GetComponent<SurgeryTargetComponent>(patient).SepsisImmune = true;
+            var comp = entMan.AddComponent<PatientIntakePatientComponent>(patient);
+            comp.ExpectedParts = intake.PartCategories(patient);
+            Assert.That(intake.ApplyIssue(patient, comp, server.ProtoMan.Index(ProsthesisIssue)), Is.True);
+            var category = comp.IssueParts[ProsthesisIssue];
+
+            var body = entMan.GetComponent<BodyComponent>(patient);
+            Assert.That(LimbTargetMap.TryGetOrganByCategory(entMan, body, category, out var limb), Is.True);
+            var surgery = entMan.System<SurgerySystem>();
+            var procedure = surgery.GetSingleton("SurgeryRemovePart")!.Value;
+            foreach (var stepId in entMan.GetComponent<SurgeryComponent>(procedure).Steps)
+            {
+                var ev = new SurgeryStepEvent(patient, patient, limb, patient, procedure, surgery.GetSingleton(stepId)!.Value);
+                entMan.EventBus.RaiseLocalEvent(surgery.GetSingleton(stepId)!.Value, ref ev);
+            }
+            Assert.That(entMan.GetComponent<OrganComponent>(limb).Body, Is.Not.EqualTo(patient), $"The {category} is amputated.");
+
+            TransplantFromDonor(entMan, patient, donor, category, replace: false, prosthetic: $"OrganProsthetic{category}");
+        });
+        await pair.RunTicksSync(5);
+        await server.WaitPost(() => HealEverything(entMan, patient));
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var failures = intake.GetFailures((patient, entMan.GetComponent<PatientIntakePatientComponent>(patient)));
+            Assert.That(failures.Where(f => f.Kind is IntakeFailureKind.RequestNotDone or IntakeFailureKind.MissingPart), Is.Empty,
+                string.Join(", ", failures));
+        });
+    }
+
     private static void RunStepUntilTreated(IEntityManager entMan, EntityUid patient, TraumaType trauma, string surgeryId, string stepId)
     {
         var surgery = entMan.System<SurgerySystem>();

@@ -239,6 +239,8 @@ public sealed partial class PatientIntakeSystem
 
                 comp.Replace[category] = organ;
                 comp.IssueParts[issue.ID] = category;
+                // Amputating a limb takes its hand or foot with it, and the request asks only for the limb.
+                comp.ExpectedParts.RemoveWhere(c => LimbTargetMap.TryGetParentCategory(c, out var parent) && parent == category);
                 if (issue.Prosthetic)
                     comp.Prosthetic.Add(category);
                 return true;
