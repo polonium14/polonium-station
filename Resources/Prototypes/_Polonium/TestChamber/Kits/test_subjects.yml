@@ -1,0 +1,23 @@
+# Stały zestaw konsoli, niezwiązany z żadnym PR - nie usuwać razem z zestawami PR-ów.
+#
+# Jak dodać zestaw dla nowego PR: nowy plik w tym folderze, np. pr_1125_podpisy_zdjec.yml
+#
+# - type: testChamberKit
+#   id: Pr1125
+#   name: "PR 1125: podpisy zdjęć"
+#   pr: polonium14/polonium-station#1125
+#   description: Zrób zdjęcie, podpisz je długopisem i sprawdź podpis przy oględzinach.
+#   entities:
+#     CameraPolonium: 1
+#     Pen: 1
+#
+# Po przetestowaniu PR usuwa się tylko ten plik. Jeśli zestaw musi coś ustawić (rola antaga, reagenty),
+# obsłuż TestChamberKitSpawnedEvent we własnym systemie.
+
+- type: testChamberKit
+  id: TestSubjects
+  name: Króliki doświadczalne
+  description: Trzy małpy i człowiek bez gracza do testów broni, chirurgii i chorób.
+  entities:
+    MobMonkey: 3
+    MobHuman: 1
