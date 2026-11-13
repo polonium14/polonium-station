@@ -125,7 +125,8 @@ public sealed partial class PatientIntakeCheckSystem : EntitySystem
                 if (woundable.Bleeds > 0)
                     failures.Add(new(IntakeFailureKind.Bleeding, name));
 
-                if (_trauma.HasWoundableTrauma(organ, woundableComp: woundable)
+                if (_trauma.TryGetWoundableTrauma(organ, out var traumas, woundableComp: woundable)
+                    && traumas.Any(t => !IsRemovedOrganTrauma(t, body))
                     || woundable.Bone?.ContainedEntities.Any(b => TryComp<BoneComponent>(b, out var bone) && bone.BoneSeverity != BoneSeverity.Normal) == true)
                     failures.Add(new(IntakeFailureKind.Trauma, name));
             }
@@ -142,6 +143,17 @@ public sealed partial class PatientIntakeCheckSystem : EntitySystem
             if (!present.Contains(expected))
                 failures.Add(new(IntakeFailureKind.MissingPart, expected.Id));
         }
+    }
+
+    /// <summary>
+    /// Organ damage stays on the limb's wound after the organ is taken out (surgery doesn't clean it
+    /// up), but transplanting a healthy organ in its place fixed the problem.
+    /// </summary>
+    private static bool IsRemovedOrganTrauma(Entity<TraumaComponent> trauma, BodyComponent body)
+    {
+        return trauma.Comp.TraumaType == TraumaType.OrganDamage
+            && trauma.Comp.TraumaTarget is { } target
+            && body.Organs?.Contains(target) != true;
     }
 
     private void CheckReagents(EntityUid patient, BloodstreamComponent bloodstream, List<IntakeFailure> failures)

@@ -67,6 +67,7 @@ public sealed class PatientIntakeTreatmentTest : GameTest
     };
 
     private static readonly ProtoId<PatientIntakeIssuePrototype> ProsthesisIssue = "PatientIntakeProsthesis";
+    private static readonly ProtoId<PatientIntakeIssuePrototype> EyeTraumaIssue = "PatientIntakeEyeTrauma";
 
     [Test]
     public async Task EveryIssueCanBeTreated()
@@ -224,6 +225,52 @@ public sealed class PatientIntakeTreatmentTest : GameTest
             TransplantFromDonor(entMan, patient, donor, category, replace: true, prosthetic: $"OrganProsthetic{category}");
             Assert.That(intake.GetFailures((patient, comp)).Any(f => f.Kind == IntakeFailureKind.RequestNotDone), Is.False,
                 $"A prosthetic {category} meets it.");
+        });
+    }
+
+    /// <summary>
+    /// Swapping a damaged organ for a healthy one treats it, even though the trauma stays on the
+    /// limb's wound and the old organ is kept around instead of deleted.
+    /// </summary>
+    [Test]
+    public async Task OrganTraumaIsTreatedByATransplant()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var intake = entMan.System<PatientIntakeSystem>();
+        var map = await pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+
+        EntityUid patient = default, donor = default;
+        await server.WaitPost(() =>
+        {
+            PatientIntakeMachineTest.AddAir(entMan, map.MapUid);
+            patient = entMan.SpawnEntity("MobHuman", coords);
+            donor = entMan.SpawnEntity("MobHuman", coords);
+        });
+        await pair.RunTicksSync(5);
+
+        await server.WaitPost(() =>
+        {
+            entMan.GetComponent<SurgeryTargetComponent>(patient).SepsisImmune = true;
+            var comp = entMan.AddComponent<PatientIntakePatientComponent>(patient);
+            comp.ExpectedParts = intake.PartCategories(patient);
+            Assert.That(intake.ApplyIssue(patient, comp, server.ProtoMan.Index(EyeTraumaIssue)), Is.True);
+        });
+        await pair.RunTicksSync(5);
+
+        await server.WaitPost(() =>
+        {
+            TransplantFromDonor(entMan, patient, donor, "Eyes", replace: true);
+            HealEverything(entMan, patient);
+        });
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var failures = intake.GetFailures((patient, entMan.GetComponent<PatientIntakePatientComponent>(patient)));
+            Assert.That(failures, Is.Empty, string.Join(", ", failures));
         });
     }
 
