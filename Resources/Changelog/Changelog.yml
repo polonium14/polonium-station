@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ketufaispikinut
-  changes:
-  - message: Added the tourist's travel camera along with very basic textual photographs.
-    type: Add
-  id: 9626
-  time: '2026-04-07T20:33:23.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43322
 - author: alexalexmax
   changes:
   - message: Items that can be stuck to walls are now able to be unstuck properly.
@@ -5145,3 +5138,14 @@
   id: 10120
   time: '2026-11-13T15:33:11.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1246
+- author: haze
+  changes:
+  - message: "Dodano Bluespace NFZ\u2122!"
+    type: Add
+  - message: "Dodano operacje usuni\u0119cia i wstawienia nerek."
+    type: Tweak
+  - message: "Biofabrykator medyczny mo\u017Ce teraz drukowa\u0107 nerki."
+    type: Tweak
+  id: 10121
+  time: '2026-11-13T15:42:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1242
