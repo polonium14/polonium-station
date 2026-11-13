@@ -9,6 +9,11 @@ on:
       - 'crowdin.yml'
       - '.github/workflows/crowdin-upload.yml'
   workflow_dispatch:
+    inputs:
+      approve_base:
+        description: 'Commit, od którego zatwierdzić na Crowdinie zmienione klucze pl-PL (puste: bez zatwierdzania)'
+        required: false
+        default: ''
 
 concurrency:
   group: crowdin
@@ -46,3 +51,40 @@ jobs:
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+      - name: Pick revision to approve from
+        id: range
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          MESSAGE: ${{ github.event.head_commit.message }}
+          INPUT_BASE: ${{ inputs.approve_base }}
+        run: |
+          base=""
+          if [ "$EVENT" = push ]; then
+            case "$MESSAGE" in
+              "New Crowdin updates"*|*"/l10n_master"*) echo "Crowdin sync merge, nothing to approve" ;;
+              *) base="$BEFORE" ;;
+            esac
+            [ "$base" = 0000000000000000000000000000000000000000 ] && base=""
+          else
+            base="$INPUT_BASE"
+          fi
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Python
+        if: steps.range.outputs.base != ''
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Approve changed pl-PL keys
+        if: steps.range.outputs.base != ''
+        env:
+          BASE: ${{ steps.range.outputs.base }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE"
+          pip install -r Tools/crowdinCI/requirements.txt
+          python Tools/crowdinCI/approve_changed.py --base "$BASE" --head HEAD
