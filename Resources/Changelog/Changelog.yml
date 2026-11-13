@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: Princess-Cheeseballs
-  changes:
-  - message: Added a new Traitor objective to kill the Station AI!
-    type: Add
-  - message: Traitor kill objectives will now show stage names instead of character
-      names if applicable
-    type: Fix
-  id: 9624
-  time: '2026-04-06T22:23:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43462
 - author: SuperGDPWYL
   changes:
   - message: Traitors can now be tasked with causing anomalies to go supercritical.
@@ -5139,3 +5129,14 @@
   id: 10118
   time: '2026-11-13T15:11:41.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1238
+- author: Nikita
+  changes:
+  - message: "Stary Ian i Lisa s\u0105 teraz MZW tak samo, jak zwyk\u0142y Ian lub\
+      \ szczeniak"
+    type: Fix
+  - message: "Klaun teraz nie mo\u017Ce dzwoni\u0107 do Centrali przez bananowy telefon\
+      \ :("
+    type: Remove
+  id: 10119
+  time: '2026-11-13T15:27:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1243
