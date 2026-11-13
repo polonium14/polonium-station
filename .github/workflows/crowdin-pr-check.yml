@@ -1,0 +1,53 @@
+# Crowdin -> git: regressions in the sync PR.
+name: Crowdin PR Check
+
+on:
+  pull_request:
+    branches: [ master ]
+    types: [ opened, reopened, synchronize ]
+    paths:
+      - 'Resources/Locale/pl-PL/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  check:
+    name: Check Crowdin sync PR
+    if: github.repository == 'polonium14/polonium-station' && github.head_ref == 'l10n_master'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python packages
+        run: pip install -r Tools/crowdinCI/requirements.txt
+
+      - name: Check translations
+        id: check
+        continue-on-error: true
+        run: python Tools/crowdinCI/check_pr.py --base HEAD^1 --head HEAD --output "$RUNNER_TEMP/report.md"
+
+      - name: Comment on PR
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          [ -f "$RUNNER_TEMP/report.md" ] || exit 0
+          gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/report.md" --edit-last --create-if-none
+
+      - name: Fail on problems
+        if: steps.check.outcome == 'failure'
+        run: exit 1
