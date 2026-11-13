@@ -161,16 +161,16 @@ public sealed partial class PatientIntakeSystem
         if (ent.Comp.Case is not { } activeCase || activeCase.Patients.Count > 0 || activeCase.ToSpawn > 0)
             return;
 
+        var charged = ChargeAccount(ent, activeCase, activeCase.Net);
         ent.Comp.Case = null;
-        ent.Comp.LastNet = activeCase.Net;
+        ent.Comp.LastNet = charged;
         ent.Comp.CasesClosed++;
-        ent.Comp.TotalNet += activeCase.Net;
+        ent.Comp.TotalNet += charged;
         ent.Comp.UntilNextCase = TimeSpan.FromMinutes(_random.NextFloat(
             _cfg.GetCVar(CCVars.PatientIntakeGapMin), _cfg.GetCVar(CCVars.PatientIntakeGapMax)));
 
-        ChargeAccount(ent, activeCase, activeCase.Net);
         _adminLogger.Add(LogType.Action, LogImpact.Low,
-            $"{ToPrettyString(ent):machine} closed patient intake case #{ent.Comp.CaseCount}, net {activeCase.Net} to {ent.Comp.Account}");
+            $"{ToPrettyString(ent):machine} closed patient intake case #{ent.Comp.CaseCount}, net {charged} (owed {activeCase.Net}) to {ent.Comp.Account}");
 
         var caseProto = _proto.Index(activeCase.Proto);
         var content = new StringBuilder();
@@ -189,17 +189,21 @@ public sealed partial class PatientIntakeSystem
         if (!TrySendToFax(ent, title, content.ToString()))
             SpawnPaper(ent, title, content.ToString());
 
-        _radio.SendRadioMessage(ent, Loc.GetString(activeCase.Net < 0 ? "patient-intake-radio-finished-debit" : "patient-intake-radio-finished",
-            ("case", Loc.GetString(caseProto.Name)), ("amount", Math.Abs(activeCase.Net))), ent.Comp.Channel, ent);
+        _radio.SendRadioMessage(ent, Loc.GetString(charged < 0 ? "patient-intake-radio-finished-debit" : "patient-intake-radio-finished",
+            ("case", Loc.GetString(caseProto.Name)), ("amount", Math.Abs(charged))), ent.Comp.Channel, ent);
     }
 
-    private void ChargeAccount(EntityUid machine, PatientIntakeCase activeCase, int amount)
+    /// <summary>
+    /// Settles with the case's station and returns what the account moved by: a debit is cut
+    /// to the balance. Without a station or account nothing moves and the full amount is returned.
+    /// </summary>
+    private int ChargeAccount(EntityUid machine, PatientIntakeCase activeCase, int amount)
     {
         if (amount == 0
             || !TryComp<PatientIntakeMachineComponent>(machine, out var comp)
             || (activeCase.Station ?? _station.GetOwningStation(machine)) is not { } station
             || !TryComp<StationBankAccountComponent>(station, out var bank))
-            return;
+            return amount;
 
         // Like delivery penalties, a debit never takes the account below zero.
         if (amount < 0)
@@ -207,6 +211,7 @@ public sealed partial class PatientIntakeSystem
 
         if (amount != 0)
             _cargo.UpdateBankAccount((station, bank), amount, comp.Account);
+        return amount;
     }
 
     public string FailureText(IntakeFailure failure)

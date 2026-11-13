@@ -564,8 +564,7 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
         _adminLogger.Add(LogType.Action, LogImpact.Medium,
             $"{ToPrettyString(ent):machine} destroyed during patient intake case #{ent.Comp.CaseCount}, net {net}");
 
-        ChargeAccount(ent, activeCase, net);
-        ent.Comp.TotalNet += net;
+        ent.Comp.TotalNet += ChargeAccount(ent, activeCase, net);
     }
 
     private void OnMachineExamined(Entity<PatientIntakeMachineComponent> ent, ref ExaminedEvent args)

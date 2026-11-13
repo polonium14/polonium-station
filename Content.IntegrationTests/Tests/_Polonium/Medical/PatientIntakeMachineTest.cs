@@ -537,6 +537,9 @@ public sealed class PatientIntakeMachineTest : GameTest
         await Pair.Server.WaitAssertion(() =>
             Assert.That(entMan.GetComponent<StationBankAccountComponent>(bank).Accounts[account], Is.EqualTo(0),
                 "A 500 debit on 100 empties the account without going negative."));
+        await Pair.Server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<PatientIntakeMachineComponent>(machine).LastNet, Is.EqualTo(-100),
+                "The stats record what the account actually lost."));
     }
 
     /// <summary>
