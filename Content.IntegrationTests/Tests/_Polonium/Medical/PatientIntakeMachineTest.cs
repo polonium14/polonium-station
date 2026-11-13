@@ -10,6 +10,9 @@ using Content.Server._Polonium.Medical.PatientIntake;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.GameTicking;
 using Content.Shared.Atmos;
+using Content.Shared.Cargo;
+using Content.Shared.Cargo.Components;
+using Content.Shared.Cargo.Prototypes;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._Polonium.Medical.PatientIntake;
 using Content.Shared.DeviceLinking;
@@ -491,6 +494,68 @@ public sealed class PatientIntakeMachineTest : GameTest
             Assert.That(entMan.EntityExists(patient), Is.True, "The body stays.");
             Assert.That(entMan.HasComponent<PatientIntakePatientComponent>(patient), Is.False);
         });
+    }
+
+    /// <summary>
+    /// Smashing the machine mid-case still settles what returned patients earned, with the station
+    /// the case started on, even though the machine no longer belongs to any station.
+    /// </summary>
+    [Test]
+    public async Task DestroyingTheMachineSettlesWhatWasEarned()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestMass", popDelay: TimeSpan.Zero);
+        var entMan = Pair.Server.EntMan;
+        var (bank, account) = await GiveCaseABank(machine, 100);
+
+        await OpenAndClose(machine);
+        await Pair.RunTicksSync(5);
+        await Pair.Server.WaitPost(() => entMan.DeleteEntity(machine));
+        await Pair.RunTicksSync(5);
+
+        await Pair.Server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<StationBankAccountComponent>(bank).Accounts[account], Is.InRange(590, 600),
+                "The returned patient's share is paid out."));
+    }
+
+    /// <summary>
+    /// Like delivery penalties, a debit takes the account down to zero at most.
+    /// </summary>
+    [Test]
+    public async Task DebitsStopAtAnEmptyAccount()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestHealthy");
+        var entMan = Pair.Server.EntMan;
+        var (bank, account) = await GiveCaseABank(machine, 100);
+
+        await Pair.Server.WaitPost(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            entMan.System<PatientIntakeSystem>().MarkMissing((machine, comp), comp.Case!);
+        });
+        await Pair.Server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<StationBankAccountComponent>(bank).Accounts[account], Is.EqualTo(0),
+                "A 500 debit on 100 empties the account without going negative."));
+    }
+
+    /// <summary>
+    /// Test maps have no station, so the active case settles with a stand-in bank.
+    /// </summary>
+    private async Task<(EntityUid Bank, ProtoId<CargoAccountPrototype> Account)> GiveCaseABank(EntityUid machine, int balance)
+    {
+        var entMan = Pair.Server.EntMan;
+        EntityUid bank = default;
+        ProtoId<CargoAccountPrototype> account = default;
+        await Pair.Server.WaitPost(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            account = comp.Account;
+            bank = entMan.Spawn();
+            var bankComp = entMan.AddComponent<StationBankAccountComponent>(bank);
+            var cargo = entMan.System<SharedCargoSystem>();
+            cargo.UpdateBankAccount((bank, bankComp), balance - cargo.GetBalanceFromAccount((bank, bankComp), account), account);
+            comp.Case!.Station = bank;
+        });
+        return (bank, account);
     }
 
     [Test]

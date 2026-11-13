@@ -168,7 +168,7 @@ public sealed partial class PatientIntakeSystem
         ent.Comp.UntilNextCase = TimeSpan.FromMinutes(_random.NextFloat(
             _cfg.GetCVar(CCVars.PatientIntakeGapMin), _cfg.GetCVar(CCVars.PatientIntakeGapMax)));
 
-        ChargeAccount(ent, activeCase.Net);
+        ChargeAccount(ent, activeCase, activeCase.Net);
         _adminLogger.Add(LogType.Action, LogImpact.Low,
             $"{ToPrettyString(ent):machine} closed patient intake case #{ent.Comp.CaseCount}, net {activeCase.Net} to {ent.Comp.Account}");
 
@@ -193,15 +193,20 @@ public sealed partial class PatientIntakeSystem
             ("case", Loc.GetString(caseProto.Name)), ("amount", Math.Abs(activeCase.Net))), ent.Comp.Channel, ent);
     }
 
-    private void ChargeAccount(EntityUid machine, int amount)
+    private void ChargeAccount(EntityUid machine, PatientIntakeCase activeCase, int amount)
     {
         if (amount == 0
             || !TryComp<PatientIntakeMachineComponent>(machine, out var comp)
-            || _station.GetOwningStation(machine) is not { } station
+            || (activeCase.Station ?? _station.GetOwningStation(machine)) is not { } station
             || !TryComp<StationBankAccountComponent>(station, out var bank))
             return;
 
-        _cargo.UpdateBankAccount((station, bank), amount, comp.Account);
+        // Like delivery penalties, a debit never takes the account below zero.
+        if (amount < 0)
+            amount = -Math.Min(-amount, Math.Max(0, _cargo.GetBalanceFromAccount((station, bank), comp.Account)));
+
+        if (amount != 0)
+            _cargo.UpdateBankAccount((station, bank), amount, comp.Account);
     }
 
     public string FailureText(IntakeFailure failure)

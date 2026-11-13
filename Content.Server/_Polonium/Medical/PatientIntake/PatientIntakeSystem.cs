@@ -260,6 +260,7 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
             Window = caseProto.WindowMin + (caseProto.WindowMax - caseProto.WindowMin) * _random.NextDouble(),
             PatientsTotal = patients,
             ToSpawn = patients,
+            Station = _station.GetOwningStation(ent),
         };
 
         _adminLogger.Add(LogType.Action, LogImpact.Low,
@@ -534,13 +535,15 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
 
     private void OnMachineTerminating(Entity<PatientIntakeMachineComponent> ent, ref EntityTerminatingEvent args)
     {
-        // Case voided: no pay, no penalty, the bodies stay - except a hard order already past
-        // its deadline, which would otherwise be dodged by smashing the machine.
+        // Case voided and the bodies stay, but what returned patients already earned or cost is
+        // settled, plus a hard order already past its deadline: smashing the machine dodges neither.
+        // Nothing is settled when the whole map goes away at round end.
         if (ent.Comp.Case is not { } activeCase)
             return;
 
+        var mapEnding = TerminatingOrDeleted(Transform(ent).MapUid);
         var debit = 0;
-        if (_proto.Index(activeCase.Proto).DebitOnTimeout && !TerminatingOrDeleted(Transform(ent).MapUid))
+        if (_proto.Index(activeCase.Proto).DebitOnTimeout && !mapEnding)
         {
             foreach (var patient in activeCase.Patients)
             {
@@ -557,12 +560,12 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
         }
 
         ent.Comp.Case = null;
+        var net = mapEnding ? 0 : activeCase.Net - debit;
         _adminLogger.Add(LogType.Action, LogImpact.Medium,
-            $"{ToPrettyString(ent):machine} destroyed during patient intake case #{ent.Comp.CaseCount}, debit {debit}");
+            $"{ToPrettyString(ent):machine} destroyed during patient intake case #{ent.Comp.CaseCount}, net {net}");
 
-        if (debit > 0)
-            ChargeAccount(ent, -debit);
-        ent.Comp.TotalNet -= debit;
+        ChargeAccount(ent, activeCase, net);
+        ent.Comp.TotalNet += net;
     }
 
     private void OnMachineExamined(Entity<PatientIntakeMachineComponent> ent, ref ExaminedEvent args)

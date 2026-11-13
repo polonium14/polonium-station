@@ -172,6 +172,12 @@ public sealed class PatientIntakeCase
     public int Net;
 
     public List<string> Receipt = new();
+
+    /// <summary>
+    /// The station whose account the case settles with, fixed when the case starts so moving
+    /// the machine off the station doesn't skip the charge.
+    /// </summary>
+    public EntityUid? Station;
 }
 
 [Serializable, NetSerializable]
