@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Created by BoskiYourk (GitHub), edited by spanky-spanky (GitHub). Charge lights and sights split into glowing layers for each fire mode by DevCS-CP (github) for Starlight, https://github.com/ss14Starlight/space-station-14/pull/5843",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "base"
+    },
+    {
+      "name": "energy-unshaded-0"
+    },
+    {
+      "name": "energy-unshaded-1"
+    },
+    {
+      "name": "energy-unshaded-2"
+    },
+    {
+      "name": "energy-unshaded-3"
+    },
+    {
+      "name": "energypierce-unshaded-0"
+    },
+    {
+      "name": "energypierce-unshaded-1"
+    },
+    {
+      "name": "energypierce-unshaded-2"
+    },
+    {
+      "name": "energypierce-unshaded-3"
+    },
+    {
+      "name": "disable-unshaded-0"
+    },
+    {
+      "name": "disable-unshaded-1"
+    },
+    {
+      "name": "disable-unshaded-2"
+    },
+    {
+      "name": "disable-unshaded-3"
+    }
+  ]
+}

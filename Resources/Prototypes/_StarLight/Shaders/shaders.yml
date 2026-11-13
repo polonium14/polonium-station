@@ -1,4 +1,14 @@
 - type: shader
+  id: LightTonemapCopy
+  kind: source
+  path: "/Textures/_Starlight/Shaders/light_tonemap_copy.swsl"
+
+- type: shader
+  id: LightTonemap
+  kind: source
+  path: "/Textures/_Starlight/Shaders/light_tonemap.swsl"
+
+- type: shader
   id: ScreenPostProcess
   kind: source
   path: "/Textures/_Starlight/Shaders/screen_postprocess.swsl"

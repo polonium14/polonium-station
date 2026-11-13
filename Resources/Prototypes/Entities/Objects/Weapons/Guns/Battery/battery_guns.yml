@@ -920,15 +920,15 @@
   description: A one-of-a-kind prototype energy weapon that uses two different shotgun configurations. It offers the possibility of both focused and wide shots, making it a versatile weapon. # Funky
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
+    sprite: _Starlight/Objects/Weapons/Guns/Battery/Energy_Shotgun.rsi # Polonium: czerwone paski świecą, ze Starlight
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
-      - state: mag-unshaded-4
+      - state: energy-unshaded-4 # Polonium
         map: ["enum.GunVisualLayers.MagUnshaded"]
         shader: unshaded
   - type: MagazineVisuals
-    magState: mag
+    magState: energy # Polonium
     steps: 5
     zeroVisible: false
   - type: Appearance
@@ -945,9 +945,11 @@
     fireModes:
     - proto: BulletLaserSpreadNarrow
       fireCost: 80
+      magState: energy # Polonium: kolor świateł zależy od trybu
     - proto: BulletDisablerSmgSpread
       fireCost: 48
       pacifismAllowedMode: true
+      magState: disable # Polonium
   - type: Item
     size: Large
     sprite: Objects/Weapons/Guns/Battery/inhands_64x.rsi
@@ -964,16 +966,16 @@
   description:  high powered self-charging energy pistol designed for elite security personnel. It has has three firing modes allowing for either high damage, window piercing, or non-lethal disabling.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
+    sprite: _Starlight/Objects/Weapons/Guns/Battery/Energy_Magnum.rsi # Polonium: świecą też muszki, kolor zależy od trybu, ze Starlight
     layers:
     - state: base
       map: [ "enum.GunVisualLayers.Base" ]
-    - state: mag-unshaded-1
+    - state: energy-unshaded-1 # Polonium
       visible: false
       map: [ "enum.GunVisualLayers.MagUnshaded" ]
       shader: unshaded
   - type: MagazineVisuals
-    magState: mag
+    magState: energy # Polonium
     steps: 4
     zeroVisible: true
   - type: Appearance
@@ -996,10 +998,13 @@
     fireModes:
     - proto: BulletLaserMagnum
       fireCost: 150
+      magState: energy # Polonium: kolor świateł zależy od trybu
     - proto: BulletLaserWindowPiercingMagnum
       fireCost: 150
+      magState: energypierce # Polonium
     - proto: BulletDisabler
       fireCost: 62.5
+      magState: disable # Polonium
   - type: BatterySelfRecharger
     autoRechargeRate: 48
     autoRechargePauseTime: 10
