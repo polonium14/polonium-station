@@ -416,19 +416,22 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   W szczególności:
   - improwizowana broń;
-  - maski Syndykatu;
+  - identyfikator i pieczątka Syndykatu;
+  - implanty wolności, magazynowy, teleportacyjny i dymny;
   - zmodyfikowane PDA spoza rejestru;
   - kamizelki kuloodporne (barmana, ochrony itd.);
   - środki samoobrony (ogłuszacze, paralizatory, kije, błyski itp.) w rękach osób nieuprawnionych;
   - nielegalne dysponowanie niebezpiecznymi narzędziami obcymi dla danego działu;
   - sprzedaż takiego sprzętu.
 
-  [bold]Uwagi:[/bold] Broń, granaty oraz materiały wybuchowe kwalifikują się jako §303 lub §403. Sprzęt z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] — jako §503. Samo posiadanie narzędzi znalezionych w tunelach technicznych, bez dowodu kradzieży, nie stanowi podstawy do postawienia zarzutu.
+  [bold]Uwagi:[/bold] Broń, granaty oraz materiały wybuchowe kwalifikują się jako §303 lub §403. Sprzęt z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] kwalifikuje się jako §503. Odzież, maska przeciwgazowa i PDA z samym logo Syndykatu nie są kontrabandą. Samo posiadanie narzędzi znalezionych w tunelach technicznych, bez dowodu kradzieży, nie stanowi podstawy do postawienia zarzutu.
 
   ## §303 Posiadanie broni
   [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 5:00 – 11:00
 
-  [bold]Opis:[/bold] Posiadanie broni nielegalnej lub kontrabandowej (broń palna bez zezwolenia, ostrza bojowe, granaty, ładunki wybuchowe, broń Syndykatu spoza rejestru, implanty wybuchowe).
+  [bold]Opis:[/bold] Posiadanie broni nielegalnej lub kontrabandowej (broń palna bez zezwolenia, ostrza bojowe, granaty, ładunki wybuchowe, broń Syndykatu spoza rejestru).
+
+  Z tego artykułu kwalifikują się także implanty: mikrobomba, makrobomba, szyfrujący DNA, ostatniego tchnienia, kwasu pośmiertnego i fałszywej tarczy umysłu.
 
   [bold]Uwagi:[/bold] Sprzedaż i dystrybucja kwalifikują się jako §403. Broń z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] — jako §503.
 
@@ -445,6 +448,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Opis:[/bold] Posiadanie lub obrót przedmiotami wpisanymi do [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"], w tym:
   - urządzenia umożliwiające dostęp do nielegalnych rynków, na których oferowane są środki służące do celów terrorystycznych;
   - broń jądrowa, biologiczna, destrukcyjna oraz środki masowego rażenia;
+  - implanty łącza, radia Syndykatu, maski głosowej, kontrolera kameleonowego i EMP;
   - przedmioty magiczne i anomalne, z wyłączeniem wyposażenia dozwolonego dla kapłanów i wyznaczonego personelu.
 
   [bold]Uwagi:[/bold] Wyjątki określone w rejestrze zachowują kwalifikację z §203 lub §303. Kapłan oraz inny personel działający w ramach SPO nie odpowiadają z tego artykułu za dozwolone wyposażenie. Wykaz: [textlink="Rejestr wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"].
@@ -496,7 +500,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   [bold]Opis:[/bold] Wejście na teren niezabezpieczony bez stosownego zezwolenia.
 
-  W szczególności: obszar działowy bez posiadanego dostępu, magazyny, tunele techniczne oraz inne strefy nieujęte w wykazie §305.
+  W szczególności: obszar działowy bez posiadanego dostępu, magazyny oraz inne strefy nieujęte w wykazie §305.
 
   [bold]Uwagi:[/bold] W drobnych przypadkach wystarczy nakaz opuszczenia terenu lub odprowadzenie. Zgoda pracownika danego działu jest wystarczająca; zakaz wydany przez kierownika działu ma jednak charakter nadrzędny.
 
