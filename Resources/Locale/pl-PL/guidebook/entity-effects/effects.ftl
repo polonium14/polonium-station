@@ -75,22 +75,42 @@ entity-effect-guidebook-status-effect-old =
             { $chance ->
                 [1] Wywołuje
                *[other] wywołać
-            } { LOC($key) } na co najmniej { NATURALFIXED($time, 3) } { MANY("second", $time) } bez kumulacji
+            } { LOC($key) } na co najmniej { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } bez kumulacji
         [add]
             { $chance ->
                 [1] Wywołuje
                *[other] wywołać
-            } { LOC($key) } na co najmniej { NATURALFIXED($time, 3) } { MANY("second", $time) } z kumulacją
+            } { LOC($key) } na co najmniej { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } z kumulacją
         [set]
             { $chance ->
                 [1] Wywołuje
                *[other] wywołać
-            } { LOC($key) } na { NATURALFIXED($time, 3) } { MANY("second", $time) } bez kumulacji
+            } { LOC($key) } na { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } bez kumulacji
        *[remove]
             { $chance ->
                 [1] Usuwa
                *[other] usunąć
-            } { NATURALFIXED($time, 3) } { MANY("second", $time) } efektu: { LOC($key) }
+            } { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } efektu: { LOC($key) }
     }
 entity-effect-guidebook-status-effect =
     { $type ->
@@ -98,22 +118,42 @@ entity-effect-guidebook-status-effect =
             { $chance ->
                 [1] Wywołuje
                *[other] wywołać
-            } { $key } na co najmniej { NATURALFIXED($time, 3) } { MANY("second", $time) } bez kumulacji
+            } { $key } na co najmniej { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } bez kumulacji
         [add]
             { $chance ->
                 [1] Wywołuje
                *[other] wywołać
-            } { $key } na co najmniej { NATURALFIXED($time, 3) } { MANY("second", $time) } z kumulacją
+            } { $key } na co najmniej { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } z kumulacją
         [set]
             { $chance ->
                 [1] Wywołuje
                *[other] wywołać
-            } { $key } na co najmniej { NATURALFIXED($time, 3) } { MANY("second", $time) } bez kumulacji
+            } { $key } na co najmniej { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } bez kumulacji
        *[remove]
             { $chance ->
                 [1] Usuwa
                *[other] usunąć
-            } { NATURALFIXED($time, 3) } { MANY("second", $time) } efektu: { $key }
+            } { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } efektu: { $key }
     } { $delay ->
         [0] natychmiast
        *[other] po opóźnieniu wynoszącym { NATURALFIXED($delay, 3) } s
@@ -150,22 +190,42 @@ entity-effect-guidebook-knockdown =
             { $chance ->
                 [1] Wywołuje
                *[other] wywołać
-            } { LOC($key) } na co najmniej { NATURALFIXED($time, 3) } { MANY("second", $time) } bez kumulacji
+            } { LOC($key) } na co najmniej { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } bez kumulacji
         [add]
             { $chance ->
                 [1] Wywołuje
                *[other] wywołać
-            } powalenie na co najmniej { NATURALFIXED($time, 3) } { MANY("second", $time) } z kumulacją
+            } powalenie na co najmniej { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } z kumulacją
        *[set]
             { $chance ->
                 [1] Wywołuje
                *[other] wywołać
-            } powalenie na co najmniej { NATURALFIXED($time, 3) } { MANY("second", $time) } bez kumulacji
+            } powalenie na co najmniej { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } bez kumulacji
         [remove]
             { $chance ->
                 [1] Usuwa
                *[other] usunąć
-            } { NATURALFIXED($time, 3) } { MANY("second", $time) } powalenia
+            } { NATURALFIXED($time, 3) } { $time ->
+                [one] sekundę
+                [few] sekundy
+                [many] sekund
+               *[other] sekundy
+            } powalenia
     }
 entity-effect-guidebook-set-solution-temperature-effect =
     { $chance ->
@@ -270,7 +330,12 @@ entity-effect-guidebook-electrocute =
                 [true] porazić prądem
                *[false] razić prądem
             }
-    } metabolizującego przez { NATURALFIXED($time, 3) } { MANY("second", $time) }
+    } metabolizującego przez { NATURALFIXED($time, 3) } { $time ->
+        [one] sekundę
+        [few] sekundy
+        [many] sekund
+       *[other] sekundy
+    }
 entity-effect-guidebook-emote =
     { $chance ->
         [1] Wymusi
@@ -331,12 +396,22 @@ entity-effect-guidebook-paralyze =
     { $chance ->
         [1] Paraliżuje
        *[other] sparaliżować
-    } metabolizującego na co najmniej { NATURALFIXED($time, 3) } { MANY("second", $time) }
+    } metabolizującego na co najmniej { NATURALFIXED($time, 3) } { $time ->
+        [one] sekundę
+        [few] sekundy
+        [many] sekund
+       *[other] sekundy
+    }
 entity-effect-guidebook-movespeed-modifier =
     { $chance ->
         [1] Zmienia
        *[other] zmienić
-    } prędkość ruchu o współczynnik { NATURALFIXED($sprintspeed, 3) }x na co najmniej { NATURALFIXED($time, 3) } { MANY("second", $time) }
+    } prędkość ruchu o współczynnik { NATURALFIXED($sprintspeed, 3) }x na co najmniej { NATURALFIXED($time, 3) } { $time ->
+        [one] sekundę
+        [few] sekundy
+        [many] sekund
+       *[other] sekundy
+    }
 entity-effect-guidebook-reset-narcolepsy =
     { $chance ->
         [1] Tymczasowo powstrzymuje
@@ -371,12 +446,22 @@ entity-effect-guidebook-reduce-rotting =
     { $chance ->
         [1] Cofa
        *[other] cofnąć
-    } gnicie o { NATURALFIXED($time, 3) } { MANY("second", $time) }
+    } gnicie o { NATURALFIXED($time, 3) } { $time ->
+        [one] sekundę
+        [few] sekundy
+        [many] sekund
+       *[other] sekundy
+    }
 entity-effect-guidebook-area-reaction =
     { $chance ->
         [1] Wywołuje
        *[other] wywołać
-    } reakcję dymu lub piany na { NATURALFIXED($duration, 3) } { MANY("second", $duration) }
+    } reakcję dymu lub piany na { NATURALFIXED($duration, 3) } { $duration ->
+        [one] sekundę
+        [few] sekundy
+        [many] sekund
+       *[other] sekundy
+    }
 entity-effect-guidebook-add-to-solution-reaction =
     { $chance ->
         [1] Powoduje
