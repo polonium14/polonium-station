@@ -151,7 +151,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/brick.rsi
   - type: IconSmooth
     key: walls
-    base: slantedbrick
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedbrick
     
 - type: entity
   parent: [ N14WallBrickSlantedIndestructible, N14BaseWallSlanted ]
@@ -170,7 +173,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/brickalt.rsi
   - type: IconSmooth
     key: walls
-    base: slantedbrickalt
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedbrickalt
     
 - type: entity
   parent: [ N14WallBrickAltSlantedIndestructible, N14BaseWallSlanted ]
@@ -189,7 +195,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/brickgray.rsi
   - type: IconSmooth
     key: walls
-    base: slantedbrickgray
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedbrickgray
     
 - type: entity
   parent: [ N14WallBrickGraySlantedIndestructible, N14BaseWallSlanted ]
@@ -208,7 +217,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/concrete.rsi
   - type: IconSmooth
     key: walls
-    base: slantedconcrete
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedconcrete
 
 - type: entity
   parent: BaseWallIndestructible
@@ -221,7 +233,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/concretealt.rsi
   - type: IconSmooth
     key: walls
-    base: slantedconcretealt
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedconcretealt
     
 - type: entity
   parent: [ N14WallConcreteAltSlantedIndestructible, N14BaseWallSlanted ]
@@ -240,7 +255,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/metal.rsi
   - type: IconSmooth
     key: walls
-    base: slantedmetal
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedmetal
     
 - type: entity
   parent: [ N14WallMetalSlantedIndestructible, N14BaseWallSlantedMetal ]
@@ -259,7 +277,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/reinfmetal.rsi
   - type: IconSmooth
     key: walls
-    base: slantedreinfmetal
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedreinfmetal
     
 - type: entity
   parent: [ N14WallReinfMetalSlantedIndestructible, N14BaseWallSlantedMetal ]
@@ -278,7 +299,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/roughscrap.rsi
   - type: IconSmooth
     key: walls
-    base: slantedroughscrap
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedroughscrap
     
 - type: entity
   parent: [ N14WallRoughScrapSlantedIndestructible, N14BaseWallSlantedMetalWeak ]
@@ -297,7 +321,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/rustindustrial.rsi
   - type: IconSmooth
     key: walls
-    base: slantedrustindustrial
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedrustindustrial
     
 - type: entity
   parent: [ N14WallIndustrialRustSlantedIndestructible, N14BaseWallSlantedMetal ]
@@ -316,7 +343,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/rustmetal.rsi
   - type: IconSmooth
     key: walls
-    base: slantedrustmetal
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedrustmetal
     
 - type: entity
   parent: [ N14WallMetalRustSlantedIndestructible, N14BaseWallSlantedMetal ]
@@ -335,7 +365,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/scrapblue.rsi
   - type: IconSmooth
     key: walls
-    base: slantedscrap
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedscrap
     
 - type: entity
   parent: [ N14WallScrapBlueSlantedIndestructible, N14BaseWallSlantedMetalWeak ]
@@ -354,7 +387,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/scrapred.rsi
   - type: IconSmooth
     key: walls
-    base: slantedscrap
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedscrap
     
 - type: entity
   parent: [ N14WallScrapRedSlantedIndestructible, N14BaseWallSlantedMetalWeak ]
@@ -373,7 +409,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/scrapwhite.rsi
   - type: IconSmooth
     key: walls
-    base: slantedscrap
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedscrap
     
 - type: entity
   parent: [ N14WallScrapWhiteSlantedIndestructible, N14BaseWallSlantedMetalWeak ]
@@ -392,7 +431,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/siding.rsi
   - type: IconSmooth
     key: walls
-    base: slantedsiding
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedsiding
     
 - type: entity
   parent: [ N14WallSidingSlantedIndestructible, N14BaseWallSlantedWood ]
@@ -411,7 +453,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/sidingblue.rsi
   - type: IconSmooth
     key: walls
-    base: slantedsiding
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedsiding
 
 - type: entity
   parent: [ N14WallSidingBlueSlantedIndestructible, N14BaseWallSlantedWood ]
@@ -430,7 +475,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/sidingred.rsi
   - type: IconSmooth
     key: walls
-    base: slantedsiding
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedsiding
     
 - type: entity
   parent: [ N14WallSidingRedSlantedIndestructible, N14BaseWallSlantedWood ]
@@ -449,7 +497,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/sidinggreen.rsi
   - type: IconSmooth
     key: walls
-    base: slantedsiding
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedsiding
     
 - type: entity
   parent: [ N14WallSidingGreenSlantedIndestructible, N14BaseWallSlantedWood ]
@@ -468,7 +519,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/wood.rsi
   - type: IconSmooth
     key: walls
-    base: slantedwood
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedwood
     
 - type: entity
   parent: [ N14WallWoodSlantedIndestructible, N14BaseWallSlantedWood ]
@@ -491,7 +545,10 @@
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/woodalt.rsi
   - type: IconSmooth
     key: walls
-    base: slantedwood
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: slantedwood
     
 - type: entity
   parent: [ N14WallWoodAltSlantedIndestructible, N14BaseWallSlantedWood ]

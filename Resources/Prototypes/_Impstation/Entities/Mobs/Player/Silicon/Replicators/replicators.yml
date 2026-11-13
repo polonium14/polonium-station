@@ -44,6 +44,8 @@
     interfaces:
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
+  - type: GunUserCrosshair
+    crosshair: Corners
   - type: Appearance
   - type: ReplacementAccent
     accent: silicon

@@ -20,3 +20,5 @@ ent-StatusEffectStimulantsStamina = 1,5-krotność maksymalnej wytrzymałości
     .desc = { ent-StaminaModifierStatusEffect.desc }
 ent-StatusEffectAdrenaline = adrenalina
     .desc = { ent-MobStatusEffectBase.desc }
+ent-StatusEffectNightVision = Night Vision
+    .desc = { ent-MobStatusEffectBase.desc }

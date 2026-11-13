@@ -14,7 +14,7 @@ namespace Content.Tests.Client
         [TestCase('Ł', "lstroke")]
         [TestCase('A', "a")]
         [TestCase('7', "7")]
-        [TestCase(' ', "blank")]
+        [TestCase(' ', null)]
         [TestCase('~', null)]
         public void GetStateFromChar(char chr, string expected)
         {

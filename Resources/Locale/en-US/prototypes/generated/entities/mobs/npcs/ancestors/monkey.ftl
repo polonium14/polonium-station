@@ -1,0 +1,15 @@
+ent-MobBaseMonkey = monkey
+    .desc = New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
+ent-MobMonkey = { ent-MobBaseMonkey }
+    .desc = { ent-MobBaseMonkey.desc }
+ent-MobBaseSyndicateMonkey = { ent-MobBaseMonkey }
+    .suffix = syndicate base
+    .desc = { ent-MobBaseMonkey.desc }
+ent-MobMonkeySyndicateAgent = { ent-MobBaseSyndicateMonkey }
+    .suffix = syndicate agent
+    .desc = { ent-MobBaseSyndicateMonkey.desc }
+ent-MobMonkeySyndicateAgentNukeops = { ent-MobBaseSyndicateMonkey }
+    .suffix = NukeOps
+    .desc = { ent-MobBaseSyndicateMonkey.desc }
+ent-MobGuidebookMonkey = guidebook monkey
+    .desc = A hopefully helpful monkey whose only purpose in life is for you to click on. Does this count as having a monkey give you a tutorial?

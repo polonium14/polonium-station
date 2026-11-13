@@ -31,6 +31,12 @@
   id: BaseWeaponBattery
   components:
   - type: AmmoCounter
+  # POLONIUM START
+  - type: GunMovementSpread
+    walk: 0.7
+    run: 2
+    sprint: 5
+  # POLONIUM END
 
 - type: entity
   parent: [BaseWeaponBattery, BaseGunWieldable]
@@ -107,9 +113,9 @@
       cell_slot: !type:ContainerSlot
 
 - type: entity
-  id: BaseWeaponBatterySmall
-  parent: BaseWeaponBattery
   abstract: true
+  parent: BaseWeaponBatteryNoAmmoCounter
+  id: BaseWeaponBatterySmallNoAmmoCounter
   components:
   - type: Item
     size: Small
@@ -125,6 +131,14 @@
     slots:
     - Belt
     - suitStorage
+  - type: GunMovementSpread # Polonium
+
+- type: entity
+  abstract: true
+  parent: BaseWeaponBatterySmallNoAmmoCounter
+  id: BaseWeaponBatterySmall
+  components:
+  - type: AmmoCounter
 
 - type: entity
   id: BaseWeaponPowerCellSmall
@@ -141,6 +155,7 @@
     quickEquip: false
     slots:
     - Belt
+  - type: GunMovementSpread # Polonium
 
 - type: entity
   name: svalinn laser pistol
@@ -201,21 +216,38 @@
     - LaserWeapon
 
 - type: entity
+  abstract: true
+  parent: BaseMinorContraband
+  id: WeaponMakeshiftLaserConstructionBase
+  components:
+  - type: Construction
+    graph: MakeshiftLaserGraph
+    containers:
+    - cell_slot
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+    storedOffset: 0,-4
+
+- type: entity
+  parent: [WeaponMakeshiftLaserConstructionBase, BaseWeaponPowerCell]
+  id: WeaponMakeshiftLaserNoCell
+  categories: [ HideSpawnMenu ]
   name: makeshift laser pistol
-  parent: [BaseWeaponBatterySmall, BaseMinorContraband]
-  id: WeaponMakeshiftLaser
+  suffix: No Cell
   description: Better pray it won't burn your hands off.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
-  - type: Item
-    storedOffset: 0,-4
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -223,16 +255,47 @@
   - type: Appearance
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
+    quickEquip: false
+    slots:
+    - Belt
+    - suitStorage
   - type: BatteryAmmoProvider
-    proto: RedLaser
+    proto: RedLaserMakeshift
     fireCost: 62.5
-  - type: Battery
-    maxCharge: 500
-    startingCharge: 500
+  - type: PowerCellSlot
+    fitsInCharger: false
   - type: Tag
     tags:
     - Sidearm
     - LaserWeapon
+  - type: Construction
+    node: mslaser
+
+- type: entity # for salv loot & co
+  parent: WeaponMakeshiftLaserNoCell
+  id: WeaponMakeshiftLaser
+  suffix: Medium Cell
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        startingItem: PowerCellMedium
+        locked: true
+        whitelist:
+          tags:
+          - PowerCell
+
+- type: entity
+  parent: [BaseItem, WeaponMakeshiftLaserConstructionBase]
+  id: WeaponMakeshiftLaserFrame
+  name: makeshift laser pistol frame
+  description: Only needs a bit more screwing and a doctorate in practical bluespace technology.
+  components:
+  - type: Sprite
+    state: frame
+  - type: Construction
+    node: mslaserframe
+    defaultTarget: mslaser
 
 - type: entity
   name: tesla gun
@@ -534,9 +597,12 @@
     projectileSpeed: 35 # any higher and this causes issues in lag
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: Battery
+    maxCharge: 800
+    startingCharge: 800 # Charges in a 20W recharger at 40 seconds
   - type: BatteryAmmoProvider
     proto: BulletDisablerPractice
-    fireCost: 62.5
+    fireCost: 25 # 32 shots, 2 stamcrits, +3 miss buffer per stamcrit (256 stam damage total)
   - type: Tag
     tags:
     - Taser
@@ -707,7 +773,8 @@
   - type: StaticPrice
     price: 750
   - type: StealTarget
-    stealGroup: WeaponAntiqueLaser
+    stealGroup:
+    - WeaponAntiqueLaser
   - type: SentienceTarget # I hope this is only the captain's gun
     flavorKind: station-event-random-sentience-flavor-inanimate
     weight: 0.0002 # 5,000 times less likely than 1 regular animal
@@ -917,7 +984,8 @@
     - HighRiskItem
     - Sidearm
   - type: StealTarget
-    stealGroup: WeaponEnergyMagnum
+    stealGroup:
+    - WeaponEnergyMagnum
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
@@ -981,7 +1049,7 @@
     price: 100
 
 - type: entity
-  parent: [WeaponAdvancedLaser, BaseXenoborgContraband]
+  parent: [BaseXenoborgContraband, WeaponAdvancedLaser]
   id: WeaponLaserGunXenoborg
   name: xenoborg laser gun
   components:
@@ -994,9 +1062,15 @@
       map: [ "enum.GunVisualLayers.Base" ]
     - state: mag-unshaded-4
       map: [ "enum.GunVisualLayers.MagUnshaded" ]
+  # POLONIUM START: mounted on a borg, so moving does not shake it
+  - type: GunMovementSpread
+    walk: 0
+    run: 0
+    sprint: 0
+  # POLONIUM END
 
 - type: entity
-  parent: [WeaponLaserCannon, BaseXenoborgContraband]
+  parent: [BaseXenoborgContraband, WeaponLaserCannon]
   id: WeaponLaserCannonXenoborg
   name: xenoborg laser cannon
   components:
@@ -1020,9 +1094,15 @@
     fireRate: 2
     minAngle: 1
     maxAngle: 2
+  # POLONIUM START: mounted on a borg, so moving does not shake it
+  - type: GunMovementSpread
+    walk: 0
+    run: 0
+    sprint: 0
+  # POLONIUM END
 
 - type: entity
-  parent: [WeaponAdvancedLaser, BaseXenoborgContraband]
+  parent: [BaseXenoborgContraband, WeaponAdvancedLaser]
   id: WeaponBurstFireLaserXenoborg
   name: xenoborg burst fire laser
   description: An alien weapon, channelling a burst-fire laser through a prism, causing targets to burst into fire.
@@ -1051,6 +1131,12 @@
   - type: BatteryAmmoProvider
     proto: XenoborgFireLaser
     fireCost: 100
+  # POLONIUM START: mounted on a borg, so moving does not shake it
+  - type: GunMovementSpread
+    walk: 0
+    run: 0
+    sprint: 0
+  # POLONIUM END
 
 - type: entity
   parent: [BaseWeaponBatteryNoAmmoCounter, BaseXenoborgContraband]

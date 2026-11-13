@@ -45,6 +45,12 @@
   categories: [ HideSpawnMenu ]
   name: laser bolt
   components:
+  - type: ProjectileTracer # Polonium: laser tracers
+    style: Laser
+    color: "#FF4D11"
+    length: 4
+    width: 0.04
+    fadeTime: 0.25
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectHeavyLaser
   - type: Sprite
@@ -64,6 +70,12 @@
   categories: [ HideSpawnMenu ]
   name: disabler bolt
   components:
+  - type: ProjectileTracer # Polonium: laser tracers
+    style: Laser
+    color: "#00C8EB"
+    length: 4
+    width: 0.04
+    fadeTime: 0.25
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectOmnilaser
   - type: Sprite

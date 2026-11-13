@@ -19,7 +19,7 @@ paper-tutorial-burger =
     {"["}bold]Czego tu nie ma, a trzeba zrobić samemu:[/bold]
     - {"["}bold]Bułka:[/bold] 15 wody i 45 mąki w zlewce daje ciasto. Ciasto pokrojone nożem daje 8 kawałków. Jeden kawałek, 5 sekund w mikrofalówce.
     - {"["}bold]Ser:[/bold] krąg z automatu, pokrojony nożem, daje 4 plastry.
-    - {"["}bold]Pomidory:[/bold] donica w hydroponice. Najpierw woda i nawóz, potem nasiona.
+    - {"["}bold]Pomidory:[/bold] taca w hydroponice. Najpierw woda i nawóz, potem nasiona.
     - {"["}bold]Mięso:[/bold] krowa w chłodni. Nóż załatwia sprawę.
 
     {"["}italic]Uwaga kucharza: całe jajko wrzucone do mikrofalówki nie liczy się wcale. Rozbij je do zlewki.[/italic]

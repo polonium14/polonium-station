@@ -18,7 +18,7 @@ ent-PlushieRouny = rouny plushie
     .desc = Rouny.
 ent-PlushieLamp = lamp plushie
     .desc = A light emitting friend!
-ent-PlushieArachind = arachnid plushie
+ent-PlushieArachnid = arachnid plushie
     .desc = An adorable stuffed toy that resembles an arachnid. It feels silky..
 ent-PlushieLizard = lizard plushie
     .desc = An adorable stuffed toy that resembles a lizardperson. Made by CentComm as a token initiative to combat speciesism in work environments. "Welcome your new colleagues as you do this plush, with open arms!"
@@ -81,3 +81,15 @@ ent-ToyIan = ian toy
     .desc = Unable to eat, but just as fluffy as the real guy!
 ent-ToyAmongPequeno = among pequeño
     .desc = Sus!
+
+ent-BasePlushieGinormous = { ent-BasePlushie }
+    .desc = { ent-BasePlushie.desc }
+
+ent-BasePlushieNormal = { ent-BasePlushie }
+    .desc = { ent-BasePlushie.desc }
+
+ent-BasePlushieSmall = { ent-BasePlushie }
+    .desc = { ent-BasePlushie.desc }
+
+ent-BasePlushieTiny = { ent-BasePlushie }
+    .desc = { ent-BasePlushie.desc }

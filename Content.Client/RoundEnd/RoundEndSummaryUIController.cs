@@ -1,6 +1,6 @@
 using System.Numerics;
 using Content.Client._Polonium.Survey;
-using Content.Client.GameTicking.Managers;
+using Content.Client.GameTicking;
 using Content.Shared._Polonium.Survey;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;

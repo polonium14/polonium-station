@@ -4,6 +4,9 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.10 rifle)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    length: 2.5
+    width: 0.07
   - type: Projectile
     damage:
       types:

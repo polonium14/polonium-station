@@ -1,0 +1,9 @@
+ent-MobDuckMallard = kaczka krzyżówka
+    .desc = Urocza kaczka krzyżówka, jest puszysta i mięciutka!
+ent-MobDuckWhite = biała kaczka
+    .desc = Urocza biała kaczka, jest puszysta i mięciutka!
+ent-MobDuckBrown = brązowa kaczka
+    .desc = Urocza brązowa kaczka, jest puszysta i mięciutka!
+ent-FoodEggDuckFertilized = { ent-FoodEgg }
+    .suffix = Zapłodnione, Kaczka
+    .desc = { ent-FoodEgg.desc }

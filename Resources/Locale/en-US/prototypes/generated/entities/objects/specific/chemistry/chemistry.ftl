@@ -53,3 +53,27 @@ ent-SolutionPill = { ent-SolutionFood }
     .desc = { ent-SolutionFood.desc }
 ent-PillCanister = pill canister
     .desc = Holds up to 10 pills.
+
+ent-BluespaceBeakerBlood = { ent-BluespaceBeaker }
+    .suffix = blood
+    .desc = { ent-BluespaceBeaker.desc }
+
+ent-BluespaceBeakerDexPlusSaline = { ent-BluespaceBeaker }
+    .suffix = dex+ & saline
+    .desc = { ent-BluespaceBeaker.desc }
+
+ent-BluespaceBeakerPunctTranex = { ent-BluespaceBeaker }
+    .suffix = punct & tranex
+    .desc = { ent-BluespaceBeaker.desc }
+
+ent-BluespaceBeakerPyraDerma = { ent-BluespaceBeaker }
+    .suffix = pyra & derma
+    .desc = { ent-BluespaceBeaker.desc }
+
+ent-BluespaceBeakerTrico = { ent-BluespaceBeaker }
+    .suffix = tricordrazine
+    .desc = { ent-BluespaceBeaker.desc }
+
+ent-BluespaceBeakerWater = { ent-BluespaceBeaker }
+    .suffix = water
+    .desc = { ent-BluespaceBeaker.desc }

@@ -218,7 +218,8 @@ public abstract partial class SharedTutorialSystem : EntitySystem
             return;
 
         // the knife is in the trainee's hand, so the container holding it says who is cutting
-        if (!_container.TryGetContainingContainer((args.Using, null, null), out var holder)
+        if (args.Using is not { } knife
+            || !_container.TryGetContainingContainer((knife, null, null), out var holder)
             || !HasComp<TutorialSessionComponent>(holder.Owner))
             return;
 

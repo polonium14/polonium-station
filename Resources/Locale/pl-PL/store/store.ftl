@@ -17,3 +17,6 @@ store-preset-name-changeling = Sklep DNA
 store-ui-default-refund-text = Zwrot
 store-ui-default-search-text = Szukaj
 store-listing-locked = Zablokowane
+store-generator-examine = { CAPITALIZE(THE($entity)) } zawiera [color=yellow]{ $amount } { $currency }[/color].
+store-generator-collect-empty-popup = Nie ma czego zebrać.
+store-generator-collect-popup = Zbierasz { $amount } { $currency } z { THE($entity) }.

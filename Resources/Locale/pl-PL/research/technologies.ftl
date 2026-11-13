@@ -81,3 +81,4 @@ research-technology-portable-fission = Przenośny reaktor jądrowy
 research-technology-homebrewed-implants = Implanty domowej roboty
 research-technology-shuttle-salvage-weapons = Technologia wyrzutni odzyskowych
 research-technology-shuttle-salvage-equipment = Technologia sprzętu promów odzyskowych
+research-technology-packaged-lights = Wydajna produkcja lamp

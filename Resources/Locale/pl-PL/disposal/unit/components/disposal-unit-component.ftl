@@ -6,6 +6,7 @@ ui-disposal-unit-label-pressure = Ciśnienie:
 ui-disposal-unit-label-status = Gotowy
 ui-disposal-unit-button-flush = Wyślij
 ui-disposal-unit-button-eject = Wyrzuć
+ui-disposal-unit-button-routing = Trasa
 ui-disposal-unit-button-power = Zasilanie
 
 ## Verbs
@@ -22,6 +23,7 @@ disposal-unit-state-Ready = Gotowy
 # Yes I want it to always say Pressurizing
 disposal-unit-state-Flushed = Budowanie ciśnienia
 disposal-unit-state-Pressurizing = Budowanie ciśnienia
+disposal-unit-state-Unpowered = Brak zasilania
 # putting people in
 disposal-unit-being-inserted = { CAPITALIZE($user) } próbuje włożyć cię do zsypu!
 disposal-self-insert-verb-get-data-text = Wskocz

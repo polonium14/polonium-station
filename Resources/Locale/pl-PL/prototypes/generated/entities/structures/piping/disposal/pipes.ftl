@@ -1,5 +1,5 @@
-ent-DisposalPipeBase = { "" }
-    .desc = { "" }
+ent-DisposalPipeBase = { ent-StructureHealthContainerWeak }
+    .desc = { ent-StructureHealthContainerWeak.desc }
 ent-DisposalHolder = uchwyt bloku utylizacyjnego
     .desc = { "" }
 ent-DisposalPipeBroken = uszkodzona rura utylizacyjna
@@ -33,3 +33,9 @@ ent-DisposalSignalRouter = router sygnałowy utylizacyjny
 ent-DisposalSignalRouterFlipped = { ent-DisposalSignalRouter }
     .suffix = odwrócony
     .desc = { ent-DisposalSignalRouter.desc }
+ent-DisposalRouterFlippedWaste = { ent-DisposalRouterFlipped }
+    .suffix = Flipped, Waste
+    .desc = { ent-DisposalRouterFlipped.desc }
+ent-DisposalRouterWaste = { ent-DisposalRouter }
+    .suffix = Waste
+    .desc = { ent-DisposalRouter.desc }

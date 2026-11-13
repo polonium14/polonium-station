@@ -3,3 +3,4 @@ ent-WallmountTelescreen = teleekran
     .suffix = router kamer
 ent-WallmountTelescreenFrame = rama teleekranu
     .desc = Mam nadzieje że będzie mieć porządny sygnał...
+    .suffix = Wallmount

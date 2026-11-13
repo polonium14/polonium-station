@@ -1,0 +1,10 @@
+ent-BulletLaser = pocisk laserowy
+    .desc = { ent-BaseBullet.desc }
+ent-BulletLaserSpread = szeroki ostrzał laserowy
+    .desc = { ent-BulletLaser.desc }
+ent-BulletLaserSpreadNarrow = śmiercionośny ostrzał laserowy
+    .desc = { ent-BulletLaser.desc }
+ent-BulletLaserMagnum = pocisk laserowy magnum
+    .desc = { ent-BulletLaser.desc }
+ent-BulletLaserWindowPiercingMagnum = pocisk magnum przebijający szyby
+    .desc = { ent-BulletLaser.desc }

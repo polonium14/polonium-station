@@ -98,6 +98,7 @@ public sealed class TutorialLocaleTest : GameTest
         "tutorial-craft-guide-step-place",
         "tutorial-craft-guide-step-place-body",
         "tutorial-craft-guide-title",
+        "tutorial-craft-guide-wrong-ghost",
         "tutorial-guide-done",
         "tutorial-hint-less",
         "tutorial-hint-more",

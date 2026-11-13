@@ -9,6 +9,7 @@ using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Effects;
@@ -21,6 +22,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Projectiles;
 
@@ -32,6 +34,10 @@ public abstract partial class SharedProjectileSystem
     [Dependency] private SharedColorFlashEffectSystem _color = default!;
     [Dependency] private DamageableSystem _damageableSystem = default!;
     [Dependency] private SharedGunSystem _guns = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+
+    private static readonly ProtoId<DamageGroupPrototype> BruteGroup = "Brute";
+    private static readonly ProtoId<DamageGroupPrototype> BurnGroup = "Burn";
 
     partial void InitializeProjectilePrediction()
     {
@@ -69,6 +75,11 @@ public abstract partial class SharedProjectileSystem
         if (attemptEv.Cancelled)
         {
             SetShooter(uid, component, target);
+
+            // the shooter's twin stopped here, let them see where the real one bounced to
+            if (_net.IsServer)
+                RemCompDeferred<PredictedProjectileServerComponent>(uid);
+
             return;
         }
 
@@ -108,11 +119,14 @@ public abstract partial class SharedProjectileSystem
 
         // The shooter predicts the hit effects client-side, so remove them from the server-side filter
         // to avoid the flash/sound playing twice for them. Other players get the server-driven effect.
+        // The client only predicts the first hit, anything after a penetration is shown by the server.
         if (_guns.GunPrediction &&
             TryComp(projectile, out PredictedProjectileServerComponent? serverProjectile) &&
-            serverProjectile.Shooter is { } shooter)
+            !serverProjectile.Hit)
         {
-            filter = filter.RemovePlayer(shooter);
+            serverProjectile.Hit = true;
+            if (serverProjectile.Shooter is { } shooter)
+                filter = filter.RemovePlayer(shooter);
         }
 
         if (modifiedDamage is not null &&
@@ -163,6 +177,13 @@ public abstract partial class SharedProjectileSystem
             TryComp(uid, out TransformComponent? xform))
         {
             var impactEffectEv = new ImpactEffectEvent(component.ImpactEffect, GetNetCoordinates(xform.Coordinates));
+            // Polonium start
+            if (!deleted && LeavesImpactMarks(ev.Damage))
+            {
+                impactEffectEv.Target = GetNetEntity(target);
+                impactEffectEv.WorldAngle = ourBody.LinearVelocity.ToAngle();
+            }
+            // Polonium end
             if (_net.IsServer)
                 RaiseNetworkEvent(impactEffectEv, filter);
             else
@@ -185,6 +206,10 @@ public abstract partial class SharedProjectileSystem
             Dirty(uid, predictedComp);
         }
         else if (component.ProjectileSpent && !component.DeleteOnCollide)
+        {
+            RemCompDeferred<PredictedProjectileServerComponent>(uid);
+        }
+        else if (_net.IsServer && !component.ProjectileSpent)
         {
             RemCompDeferred<PredictedProjectileServerComponent>(uid);
         }
@@ -227,5 +252,12 @@ public abstract partial class SharedProjectileSystem
         }
 
         return true;
+    }
+
+    // Polonium: stun bolts and the like hit without holes or sparks
+    private bool LeavesImpactMarks(DamageSpecifier damage)
+    {
+        return damage.TryGetDamageInGroup(_proto.Index(BruteGroup), out var brute) && brute > FixedPoint2.Zero
+               || damage.TryGetDamageInGroup(_proto.Index(BurnGroup), out var burn) && burn > FixedPoint2.Zero;
     }
 }

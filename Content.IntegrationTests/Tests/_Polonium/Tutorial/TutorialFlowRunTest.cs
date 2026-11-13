@@ -39,7 +39,7 @@ public sealed class TutorialFlowRunTest : GameTest
     {
         var proto = Server.ResolveDependency<IPrototypeManager>();
         var entMan = Server.ResolveDependency<IEntityManager>();
-        var ticker = entMan.System<GameTicker>();
+        var ticker = entMan.System<ServerGameTicker>();
         var tutorial = entMan.System<TutorialSystem>();
 
         var flow = TutorialContent.Flow(proto);

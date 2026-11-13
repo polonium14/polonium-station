@@ -1,12 +1,12 @@
 ent-BaseShutter = shutter
     .desc = One shudders to think about what might be behind this shutter.
-ent-ShuttersNormal = { ent-BaseDeltaPressureGlass }
-    .desc = { ent-BaseDeltaPressureGlass.desc }
+ent-ShuttersNormal = { ent-BaseShutter }
+    .desc = { ent-BaseShutter.desc }
 ent-ShuttersNormalOpen = { ent-ShuttersNormal }
     .suffix = Open
     .desc = { ent-ShuttersNormal.desc }
 ent-ShuttersRadiation = radiation shutters
-    .desc = Why did they make these shutters radioactive?
+    .desc = These come with extra-radiation-resistant paint.
 ent-ShuttersRadiationOpen = { ent-ShuttersRadiation }
     .suffix = Open
     .desc = { ent-ShuttersRadiation.desc }

@@ -31,6 +31,7 @@
   abstract: true
   components:
     - type: StationBankAccount
+    - type: CargoPriceMultiplier # Polonium: per-round cargo price multipliers
     - type: StationCargoOrderDatabase
       orders:
         Cargo: [ ]

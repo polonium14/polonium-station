@@ -51,7 +51,8 @@ public sealed partial class GasTankSystem : SharedGasTankSystem
         else if (entity.Comp.CheckUser)
         {
             entity.Comp.CheckUser = false;
-            if (Transform(entity).ParentUid != entity.Comp.User)
+            if (Transform(entity).ParentUid != entity.Comp.User
+                && !IsInBedOfUser(entity)) // Polonium: the tank feeds a patient from the bed they are buckled to
             {
                 DisconnectFromInternals(entity, forced: true);
             }

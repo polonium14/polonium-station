@@ -1,0 +1,5 @@
+- type: shader
+  id: PoloniumTracer
+  kind: canvas
+  light_mode: unshaded
+  blend_mode: Premultiplied

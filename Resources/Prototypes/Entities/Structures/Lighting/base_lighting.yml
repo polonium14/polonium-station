@@ -18,6 +18,7 @@
         collection: GlassSmash
   - type: Transform
     anchored: true
+  - type: Pullable
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
@@ -80,6 +81,7 @@
   suffix: Always powered
   description: "An always powered light."
   components:
+  - type: ESSparkOnHit # Polonium: sparks when damaged, from Starlight
   - type: Construction
     graph: LightFixture
     node: tubeLight
@@ -125,7 +127,7 @@
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: SmartLight
-  - type: WirelessNetworkConnection
+  - type: WirelessNetwork
     range: 200
   - type: DeviceLinkSink
     ports:
@@ -317,12 +319,13 @@
       light_bulb: !type:ContainerSlot
   - type: PoweredLight
     bulb: Bulb
+  - type: SpookyPoweredLight
   - type: ApcPowerReceiver
   - type: ExtensionCableReceiver
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: SmartLight
-  - type: WirelessNetworkConnection
+  - type: WirelessNetwork
     range: 200
   - type: Appearance
   - type: PoweredLightVisuals

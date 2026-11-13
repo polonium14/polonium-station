@@ -56,6 +56,12 @@
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
+  - type: ProjectileTracer # Polonium: laser tracers
+    style: Laser
+    color: "#FF4D11"
+    length: 4
+    width: 0.04
+    fadeTime: 0.25
   - type: Reflective
     reflective:
     - Energy

@@ -3,4 +3,4 @@ ent-StorageTankIndestructible = zbiornik magazynowy
 ent-StorageTank = zbiornik magazynowy
     .desc = Zbiornik do przechowywania cieczy.
 ent-StorageTankBig = { ent-SolutionTank }
-    .desc = { ent-SolutionTank.desc }
+    .desc = { ent-StorageTank.desc }

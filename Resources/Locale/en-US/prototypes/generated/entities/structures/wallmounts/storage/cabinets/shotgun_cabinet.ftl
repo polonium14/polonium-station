@@ -1,5 +1,6 @@
 ent-ShotGunCabinet = shotgun cabinet
     .desc = There is a small label that reads "For Emergency use only" along with details for safe use of the shotgun. As if.
+    .suffix = Security
 ent-ShotGunCabinetOpen = { ent-ShotGunCabinet }
     .suffix = Open
     .desc = { ent-ShotGunCabinet.desc }
@@ -9,3 +10,7 @@ ent-ShotGunCabinetFilled = { ent-ShotGunCabinet }
 ent-ShotGunCabinetFilledOpen = { ent-ShotGunCabinetFilled }
     .suffix = Filled, Open
     .desc = { ent-ShotGunCabinetFilled.desc }
+
+ent-ShotGunCabinetConstructed = shotgun cabinet
+    .desc = There is a small label that reads "For Emergency use only" along with details for safe use of the shotgun. As if.
+    .suffix = Free Access

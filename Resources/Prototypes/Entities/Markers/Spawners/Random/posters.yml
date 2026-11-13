@@ -129,6 +129,8 @@
     - id: PosterLegitTyrone
     - id: PosterLegitHelio
     - id: PosterLegitBotanyFear
+    - id: PosterLegitRaptor
+    - id: PosterLegitVulture
     # Polonium: polski zestaw plakatów z NSV13
     - !type:NestedSelector
       tableId: PolishLegitPosterTable

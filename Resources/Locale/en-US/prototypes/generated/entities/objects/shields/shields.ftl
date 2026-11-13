@@ -28,3 +28,12 @@ ent-BrokenEnergyShield = broken energy shield
     .desc = Something inside is burned out, it is no longer functional.
 ent-TelescopicShield = telescopic shield
     .desc = An advanced riot shield made of lightweight materials that collapses for easy storage.
+
+ent-BaseGinormousShield = { ent-BaseShield }
+    .desc = { ent-BaseShield.desc }
+
+ent-BaseLargeShield = { ent-BaseShield }
+    .desc = { ent-BaseShield.desc }
+
+ent-BaseRoundShield = { ent-BaseLargeShield }
+    .desc = { ent-BaseLargeShield.desc }

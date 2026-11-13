@@ -1,25 +1,6 @@
 # Harpy mimicry emotes. Gated per-species via Speech.allowedEmotes rather than tags.
 
 - type: emote
-  id: Caw
-  name: Caw
-  category: Vocal
-  available: false
-  icon: _Goobstation/Interface/Emotes/caw.png
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
-  chatMessages: [caws.]
-  chatTriggers:
-  - caws
-  - caw
-  - cawing
-  - cawed
-
-- type: emote
   id: Ring
   name: Ring
   category: Vocal

@@ -16,8 +16,8 @@ using Robust.Shared.Timing;
 namespace Content.Client._Polonium.DeathBlackout;
 
 /// <summary>
-/// Covers the whole screen in black and mutes the audio during the death blackout,
-/// and fades both gradually while the local player is in critical state.
+/// Covers the game view and HUD in black and mutes the audio during the death blackout,
+/// and fades both gradually while the local player is in critical state. Windows stay above the black.
 /// </summary>
 public sealed partial class DeathBlackoutSystem : EntitySystem
 {
@@ -38,7 +38,7 @@ public sealed partial class DeathBlackoutSystem : EntitySystem
 
     private PanelContainer? _panel;
     private float _level;
-    private bool _wasBlackout;
+    private bool _fadingOut;
     private float _lastGain = -1f;
     private bool _muffled;
 
@@ -63,11 +63,16 @@ public sealed partial class DeathBlackoutSystem : EntitySystem
         {
             // hard cut in
             _level = 1f;
+            _fadingOut = true;
         }
-        else if (_wasBlackout)
+        else if (_fadingOut)
         {
-            // hard cut out
-            _level = target;
+            // linear fade out at a fixed pace once the blackout ends
+            var duration = _cfg.GetCVar(CCVars.DeathBlackoutFadeOut);
+            _level = duration > 0f ? MathF.Max(target, _level - frameTime / duration) : target;
+
+            if (_level <= target)
+                _fadingOut = false;
         }
         else
         {
@@ -77,8 +82,6 @@ public sealed partial class DeathBlackoutSystem : EntitySystem
             if (target <= 0f && _level < 0.001f)
                 _level = 0f;
         }
-
-        _wasBlackout = blackout;
 
         UpdatePanel();
         UpdateAudio();
@@ -129,7 +132,8 @@ public sealed partial class DeathBlackoutSystem : EntitySystem
         return Math.Clamp(progress, 0f, 1f);
     }
 
-    // the black panel sits in the popup root and is kept on top, so it covers the whole UI as well as the world
+    // the black panel sits right below the window root, so it covers the game view, its popups and the HUD,
+    // while windows like the escape menu or ahelp are drawn on top of it
     private void UpdatePanel()
     {
         if (_level <= 0f)
@@ -148,18 +152,15 @@ public sealed partial class DeathBlackoutSystem : EntitySystem
                 MouseFilter = Control.MouseFilterMode.Ignore,
                 PanelOverride = new StyleBoxFlat { BackgroundColor = Color.Black },
             };
-            LayoutContainer.SetAnchorAndMarginPreset(_panel, LayoutContainer.LayoutPreset.Wide);
         }
 
         if (_panel.Parent == null)
-            _ui.PopupRoot.AddChild(_panel);
-
-        if (!_panel.Visible)
         {
-            _panel.Visible = true;
-            _panel.SetPositionInParent(_ui.PopupRoot.ChildCount - 1);
+            _ui.RootControl.AddChild(_panel);
+            _panel.SetPositionInParent(_ui.WindowRoot.GetPositionInParent());
         }
 
+        _panel.Visible = true;
         _panel.Modulate = Color.White.WithAlpha(_level);
     }
 

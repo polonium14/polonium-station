@@ -147,8 +147,8 @@ public sealed partial class TutorialActionExecutor
                 Dirty(doorUid, door);
             }
 
-            if (TryComp<DoorBoltComponent>(doorUid, out var doorBolt))
-                _door.SetBoltsDown((doorUid, doorBolt), true, force: true);
+            if (TryComp<DoorBoltComponent>(doorUid, out var doorBolt) && !doorBolt.BoltsDown)
+                _door.SetBoltsDown((doorUid, doorBolt), true);
 
             if (TryComp<WiresPanelComponent>(doorUid, out var panel))
                 _wires.TogglePanel(doorUid, panel, false);
@@ -205,7 +205,8 @@ public sealed partial class TutorialActionExecutor
             if (!TryComp<DoorBoltComponent>(doorUid, out var doorBolt))
                 continue;
 
-            _door.SetBoltsDown((doorUid, doorBolt), bolt, force: true);
+            if (doorBolt.BoltsDown != bolt)
+                _door.SetBoltsDown((doorUid, doorBolt), bolt);
             any = true;
         }
 

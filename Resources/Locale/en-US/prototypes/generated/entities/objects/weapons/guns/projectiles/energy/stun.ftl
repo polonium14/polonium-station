@@ -1,0 +1,14 @@
+ent-BulletTaser = taser bolt
+    .desc = { ent-BaseBullet.desc }
+ent-BulletTaserSuper = taser bolt
+    .desc = If you can see this, you've probably been stun-meta'd
+ent-BulletDisabler = disabler bolt
+    .desc = { ent-BaseBullet.desc }
+ent-BulletDisablerPractice = disabler bolt practice
+    .desc = { ent-BaseBullet.desc }
+ent-BulletDisablerSmg = disabler bolt smg
+    .desc = { ent-BaseBullet.desc }
+ent-BulletDisablerSmgSpread = disabling laser barrage
+    .desc = { ent-BulletDisablerSmg.desc }
+ent-EnergyCrossbowBolt = energy bolt
+    .desc = This'll hurt.

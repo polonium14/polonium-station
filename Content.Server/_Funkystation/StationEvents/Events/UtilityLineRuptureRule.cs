@@ -1,6 +1,6 @@
 ﻿using Content.Server.Chat.Systems;
 using Content.Server.Fluids.EntitySystems;
-using Content.Server.Pinpointer;
+using Content.Shared.Pinpointer;
 using Content.Server.StationEvents.Events;
 using Content.Server._Funkystation.StationEvents.Components;
 using Content.Shared.Atmos;
@@ -31,7 +31,7 @@ public sealed partial class UtilityLineRuptureRule : StationEventSystem<UtilityL
             component.Reagent = _random.Pick(component.PossibleReagents);
         }
 
-        if (!TryFindRandomTile(out _, out var targetStation, out _, out var targetCoords))
+        if (!Station.TryFindRandomTile(out _, out var targetStation, out _, out var targetCoords))
             return;
 
         component.TargetCoordinates = targetCoords;

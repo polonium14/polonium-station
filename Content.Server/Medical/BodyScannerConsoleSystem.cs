@@ -1,5 +1,6 @@
-using Content.Server.DeviceLinking.Systems;
+using Content.Shared.DeviceLinking.Systems;
 using Content.Server.Medical.Components;
+using Content.Server.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.HealthAnalyzer;
 using Content.Shared.Body;
@@ -8,6 +9,7 @@ using Content.Shared.DeviceLinking;
 using Content.Shared.MedicalScanner;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
+using Content.Shared.DeviceLinking.Components;
 
 namespace Content.Server.Medical;
 
@@ -17,7 +19,7 @@ namespace Content.Server.Medical;
 /// configurator, same as every other linkable machine) at an operating table or medical bed's
 /// <see cref="DeviceLinkSinkComponent"/>. On a periodic refresh while its BUI is open, this
 /// system resolves whoever is buckled to the linked bed and reuses
-/// <see cref="HealthAnalyzerSystem.SendAnalyzerUiState"/> to drive the exact same doll+tabs
+/// <see cref="ServerHealthAnalyzerSystem.SendAnalyzerUiState"/> to drive the exact same doll+tabs
 /// Body/Organs/Chemicals window the handheld health analyzer uses (see
 /// <c>Content.Client.HealthAnalyzer.UI.HealthAnalyzerWindow</c>) - the console is just another
 /// entity opening the same UI key/BUI class, not a bespoke summary view.
@@ -26,7 +28,7 @@ public sealed partial class BodyScannerConsoleSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;
-    [Dependency] private HealthAnalyzerSystem _healthAnalyzer = default!;
+    [Dependency] private ServerHealthAnalyzerSystem _healthAnalyzer = default!;
     [Dependency] private DeviceLinkSystem _deviceLink = default!;
 
     public override void Initialize()

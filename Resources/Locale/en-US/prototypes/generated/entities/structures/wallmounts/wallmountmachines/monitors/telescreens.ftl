@@ -1,5 +1,6 @@
-ent-WallmountTelescreen = telescreen
-    .desc = Finally, some decent reception around here...
-    .suffix = camera monitor
-ent-WallmountTelescreenFrame = telescreen frame
-    .desc = Finally, some decent reception around here...
+ent-WallmountTelescreen = camera monitor
+    .desc = A wallmounted surveillance camera monitor. You're watching them. Maybe.
+    .suffix = Wallmount
+ent-WallmountTelescreenFrame = camera monitor frame
+    .desc = A frame for a wallmounted surveillance camera monitor.
+    .suffix = Wallmount

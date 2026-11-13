@@ -1,4 +1,4 @@
-- type: factionIcon
+- type: statusIcon
   id: ZombieFaction
   priority: 11
   showTo:
@@ -10,7 +10,7 @@
     sprite: &job-icon-rsi /Textures/_Funkystation/Interface/Misc/job_icons.rsi # Funky - Any antag faction icons that are already ID card options go here
     state: Zombie
 
-- type: factionIcon
+- type: statusIcon
   id: InitialInfectedFaction
   priority: 11
   showTo:
@@ -22,7 +22,7 @@
     sprite: &antag-icon-rsi /Textures/_Funkystation/Interface/Misc/antag_icons.rsi # Funky - All other antag faction icons go here
     state: InitialInfected
 
-- type: factionIcon
+- type: statusIcon
   id: RevolutionaryFaction
   isShaded: true
   priority: 11
@@ -34,7 +34,7 @@
     sprite: *antag-icon-rsi # Funky
     state: Revolutionary
 
-- type: factionIcon
+- type: statusIcon
   id: HeadRevolutionaryFaction
   isShaded: true
   priority: 11
@@ -46,7 +46,7 @@
     sprite: *antag-icon-rsi # Funky
     state: HeadRevolutionary
 
-- type: factionIcon
+- type: statusIcon
   id: BloodCultFaction
   isShaded: true
   priority: 11
@@ -60,7 +60,7 @@
     sprite: *antag-icon-rsi # Funky
     state: Cultist
 
-- type: factionIcon
+- type: statusIcon
   id: SyndicateFaction
   priority: 0
   locationPreference: Left

@@ -32,7 +32,8 @@
     tags:
     - WhitelistChameleon
   - type: StealTarget
-    stealGroup: ClothingEyesHuds # It goes on the head...but why not?
+    stealGroup: # It goes on the head...but why not?
+    - ClothingEyesHuds
   - type: IdentityBlocker
   - type: IngestionBlocker
   - type: TriggerOnGotEquipped # Here starts the mess of components used to give visors unique features.

@@ -20,7 +20,10 @@
             - WallLayer
     - type: IconSmooth
       key: walls
-      base: stone
+      states: # Polonium: Wizden #45310 state format
+      - !type:CornerSpriteSmoothing
+        mask: [ walls, windows, grilles, marble, doors ]
+        base: stone
     - type: Sprite
       sprite: Structures/Walls/stone-ironrock.rsi
       state: full
@@ -67,4 +70,7 @@
     sprite: _Nuclear14/Structures/Walls/nc14/fencechain.rsi
   - type: IconSmooth
     key: walls
-    base: fence
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: fence

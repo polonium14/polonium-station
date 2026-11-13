@@ -9,5 +9,6 @@ ui-escape-disconnect = Rozłącz
 ui-escape-quit = Wyjdź
 ui-escape-restart-tutorial = Od nowa
 ui-escape-feedback = Opinie
+ui-escape-bug-report = Zgłoś błąd
 ui-escape-remarks = Uwagi administratora
 ui-escape-remarks-button-disabled = Ta funkcjonalność została wyłączona przez serwer.

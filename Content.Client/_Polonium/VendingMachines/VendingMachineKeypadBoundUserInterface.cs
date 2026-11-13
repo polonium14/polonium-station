@@ -37,6 +37,14 @@ public sealed partial class VendingMachineKeypadBoundUserInterface(EntityUid own
         _menu.OnCodeEntered += OnCodeEntered;
         _menu.OnAudioPlayed += OnAudioPlayed;
         Refresh();
+
+        _menu.SetSearchText(EntMan.System<VendingMachineSearchMemorySystem>().GetQuery(Owner));
+        _menu.OnSearchChanged += OnSearchChanged;
+    }
+
+    private void OnSearchChanged(string query)
+    {
+        EntMan.System<VendingMachineSearchMemorySystem>().SetQuery(Owner, query);
     }
 
     public void Refresh()
@@ -109,6 +117,7 @@ public sealed partial class VendingMachineKeypadBoundUserInterface(EntityUid own
 
         _menu.OnCodeEntered -= OnCodeEntered;
         _menu.OnAudioPlayed -= OnAudioPlayed;
+        _menu.OnSearchChanged -= OnSearchChanged;
         _menu.OnClose -= Close;
         _menu.Close();
     }

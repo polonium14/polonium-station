@@ -5,7 +5,7 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     /// <summary>
-    /// Whether the screen cuts to black and the audio goes silent when a player dies.
+    /// Whether the screen cuts to black and the audio goes silent when a player dies from critical state.
     /// </summary>
     public static readonly CVarDef<bool> DeathBlackoutEnabled =
         CVarDef.Create("deathblackout.enabled", true, CVar.SERVER | CVar.REPLICATED);
@@ -20,5 +20,11 @@ public sealed partial class CCVars
     /// Seconds of black screen after death. Ghosting is blocked for this long.
     /// </summary>
     public static readonly CVarDef<float> DeathBlackoutDuration =
-        CVarDef.Create("deathblackout.duration", 10f, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("deathblackout.duration", 7.5f, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// Seconds the black screen takes to fade out once the death blackout ends.
+    /// </summary>
+    public static readonly CVarDef<float> DeathBlackoutFadeOut =
+        CVarDef.Create("deathblackout.fade_out", 1.5f, CVar.SERVER | CVar.REPLICATED);
 }

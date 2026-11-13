@@ -1,6 +1,7 @@
+using Content.Client._Polonium.Chat.Emoji;
 using Content.Client.Guidebook.RichText;
-using Content.Client.Guidebook.Richtext;
 using Content.Client.UserInterface.RichText;
+using Content.Client.Guidebook.Richtext;
 using Robust.Client.UserInterface.RichText;
 
 namespace Content.Client.RichText;
@@ -49,5 +50,6 @@ public static class UserFormattableTags
         typeof(ProtodataTag),
         typeof(ScrambleTag),
         typeof(TextLinkTag),
+        typeof(ChatEmojiTag), // Polonium: chat emoji
     ];
 }

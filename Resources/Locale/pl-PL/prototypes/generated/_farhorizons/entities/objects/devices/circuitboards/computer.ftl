@@ -1,4 +1,4 @@
-ent-NuclearReactorMonitorComputerCircuitboard = konsola monitora reaktora jądrowego (płytka konsolowa)
+ent-NuclearReactorMonitorComputerCircuitboard = monitor reaktora jądrowego (płytka konsolowa)
     .desc = Płytka drukowana komputera do monitora reaktora jądrowego.
-ent-GasTurbineMonitorComputerCircuitboard = płyta komputera monitora turbiny gazowej
+ent-GasTurbineMonitorComputerCircuitboard = monitor turbiny gazowej (płytka konsolowa)
     .desc = Płyta drukowana komputera monitora turbiny gazowej.

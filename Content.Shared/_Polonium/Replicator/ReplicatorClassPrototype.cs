@@ -42,7 +42,7 @@ public sealed partial class ReplicatorClassPrototype : IPrototype
     public ComponentRegistry Components = new();
 
     [DataField]
-    public ProtoId<FactionIconPrototype>? Icon;
+    public ProtoId<StatusIconPrototype>? Icon;
 
     public ReplicatorClassForm? GetForm(int stages)
     {

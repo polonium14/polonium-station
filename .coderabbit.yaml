@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "pl-PL"
+early_access: false
+tone_instructions: "Pisz zwięźle i na temat. Bez pochwał i streszczeń, tylko konkretne uwagi z uzasadnieniem."
+
+chat:
+  auto_reply: true
+
+knowledge_base:
+  code_guidelines:
+    enabled: true
+    filePatterns:
+      - "AGENTS.md"
+      - "**/AGENTS.md"
+      - "CONTRIBUTING.md"
+
+reviews:
+  high_level_summary: false
+  review_status: true
+  changed_files_summary: false
+  sequence_diagrams: false
+  estimate_code_review_effort: false
+  poem: false
+  assess_linked_issues: false
+  related_issues: true
+  related_prs: true
+  suggested_labels: true
+  suggested_reviewers: false
+  abort_on_close: true
+
+  auto_review:
+    enabled: false
+    auto_incremental_review: false
+    drafts: false
+    ignore_title_keywords:
+      - "WIP"
+      - "Automatic"
+      - "Draft"
+      - "Szkic"
+
+  path_filters:
+    - "!RobustToolbox/**"
+    - "!Resources/Locale/**/*.ftl"
+    - "!Resources/MapImages/**"
+    - "!Resources/Textures/**/*.png"
+    - "!Resources/Audio/**"
+    - "!Resources/Maps/**/*.yml"
+    - "!Resources/Changelog/**"
+
+  path_instructions:
+    - path: "**/*.cs"
+      instructions: |
+        Sprawdzaj zgodność z AGENTS.md w katalogu głównym: ECS (komponenty tylko z danymi, logika w systemach),
+        predykcję i synchronizację stanu, brak zaufania do danych od klienta, czas przez IGameTiming,
+        brak alokacji i LINQ na gorących ścieżkach, brak magicznych wartości, brak tekstów poza Loc.GetString.
+        Zmiany w plikach spoza `_Polonium` muszą mieć komentarz `Polonium`.
+    - path: "Resources/Prototypes/**/*.yml"
+      instructions: |
+        Sprawdzaj zgodność z Resources/Prototypes/AGENTS.md. Usunięcie lub zmiana ID prototypu encji
+        wymaga wpisu w Resources/migration.yml. Zmiany w plikach spoza `_Polonium` muszą mieć komentarz `# Polonium:`.
+    - path: "Content.Server.Database/**"
+      instructions: |
+        Sprawdzaj zgodność z Content.Server.Database/AGENTS.md. Migracje muszą być wygenerowane dla PostgreSQL i SQLite.
+    - path: "Resources/Maps/**"
+      instructions: |
+        Mapy zapisuje edytor gry. Zgłaszaj ręczne edycje, przypadkowo otwarte drzwi i zmiany cudzych map
+        zamiast kopii w `Resources/Maps/_Polonium/`.
+
+issue_enrichment:
+  auto_enrich:
+    enabled: false
+  planning:
+    enabled: false

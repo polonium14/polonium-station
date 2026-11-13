@@ -1,5 +1,5 @@
 # Shown when examining an in-construction object
-construction-insert-arbitrary-entity = Następnie wstaw { $stepName }.
+construction-insert-arbitrary-entity = Następnie wstaw: { $stepName }.
 construction-insert-info-examine-name-instrument-brass = instrument dęty blaszany
 construction-insert-info-examine-name-instrument-keyed = instrument klawiszowy
 construction-insert-info-examine-name-instrument-percussion = instrument perkusyjny

@@ -1,0 +1,12 @@
+ent-ActionRatKingRaiseArmy = Zbierz armię
+    .desc = Wydaj trochę głodu, aby przywołać sojuszniczego szczura, który pomoże ci się bronić.
+ent-ActionRatKingDomain = Władztwo Króla Szczurów
+    .desc = Wydaj trochę głodu, aby uwolnić chmurę amoniaku do powietrza.
+ent-ActionRatKingOrderStay = Zostańcie!
+    .desc = Rozkaż swojej armii pozostać na miejscu.
+ent-ActionRatKingOrderFollow = Podążajcie!
+    .desc = Rozkaż swojej armii podążać za tobą.
+ent-ActionRatKingOrderCheeseEm = Serujcie ich!
+    .desc = Rozkaż swojej armii zaatakować każdego, na kogo wskażesz.
+ent-ActionRatKingOrderLoose = Wolno!
+    .desc = Rozkaż swojej armii działać według własnego uznania.

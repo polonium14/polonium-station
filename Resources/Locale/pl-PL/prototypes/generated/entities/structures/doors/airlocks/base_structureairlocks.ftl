@@ -1,4 +1,4 @@
-ent-Airlock = śluza
+ent-Airlock = { ent-BaseAirlockIndestructible }
     .desc = Otwiera się, zamyka i może cię zmiażdżyć.
 ent-AirlockRCDResistant = { ent-Airlock }
     .desc = { ent-Airlock.desc }

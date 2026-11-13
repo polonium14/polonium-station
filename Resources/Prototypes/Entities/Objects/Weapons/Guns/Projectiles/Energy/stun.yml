@@ -4,6 +4,12 @@
   categories: [ HideSpawnMenu ]
   name: taser bolt
   components:
+  - type: ProjectileTracer # Polonium: taser tracers
+    style: Electric
+    color: "#FFFF33"
+    length: 1.6
+    width: 0.04
+    fadeTime: 0.15
   - type: FlyBySound
     sound:
       collection: EnergyMiss
@@ -63,6 +69,8 @@
   name: taser bolt
   description: If you can see this, you've probably been stun-meta'd
   components:
+  - type: ProjectileTracer # Polonium: taser tracers
+    width: 0.05
   - type: Sprite
     noRot: true
     sprite: Structures/Power/Generation/Tesla/energy_miniball.rsi
@@ -91,6 +99,12 @@
   categories: [ HideSpawnMenu ]
   name: disabler bolt
   components:
+  - type: ProjectileTracer # Polonium: laser tracers
+    style: Laser
+    color: "#00C8EB"
+    length: 4
+    width: 0.04
+    fadeTime: 0.25
   - type: Reflective
     reflective:
     - Energy
@@ -135,6 +149,12 @@
   categories: [ HideSpawnMenu ]
   name: disabler bolt practice
   components:
+  - type: ProjectileTracer # Polonium: laser tracers
+    style: Laser
+    color: "#00C8EB80"
+    length: 3
+    width: 0.035
+    fadeTime: 0.25
   - type: FlyBySound
     sound:
       collection: EnergyMiss
@@ -176,6 +196,12 @@
   categories: [ HideSpawnMenu ]
   name: disabler bolt smg
   components:
+  - type: ProjectileTracer # Polonium: laser tracers
+    style: Laser
+    color: "#00C8EB"
+    length: 3
+    width: 0.035
+    fadeTime: 0.25
   - type: Reflective
     reflective:
     - Energy
@@ -220,14 +246,16 @@
   categories: [ HideSpawnMenu ]
   name: disabling laser barrage
   components:
+  - type: ProjectileTracer # Polonium: shorter tracers for shotgun pellets
+    length: 1.5
   - type: ProjectileSpread
-    proto: BulletDisablerSmg
+    proto: BulletDisablerSmgPellet # Polonium: shorter tracers for shotgun pellets
     count: 3 #bit stronger than a disabler if you hit your shots you goober, still not a 2 hit stun though
     spread: 9
 
 # Energy crossbow
 - type: entity
-  parent: [ SolutionAmmo, BaseBullet ]
+  parent: [SolutionAmmo, SolutionToolVeryTiny, BaseBullet]
   id: EnergyCrossbowBolt
   categories: [ HideSpawnMenu ]
   name: energy bolt
@@ -246,22 +274,12 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 2
-  - type: StunOnCollide #somewhat mirror to taser stats, meant to be tot 'sidegrade'
-    stunAmount: 0
-    knockdownAmount: 2.5
-    slowdownAmount: 2.5
-    walkSpeedModifier: 0.2
-    sprintSpeedModifier: 0.2
-    drop: false
-  - type: StaminaDamageOnCollide #additional stam damage to make repeated pushups less of a viable counter
-    damage: 45
+        Radiation: 1
   - type: Solution
     solution:
-      maxVol: 1.5
       reagents:
-      - ReagentId: Toxin
-        Quantity: 1.5
+      - ReagentId: HardlightToxin
+        Quantity: 7.5
   - type: SolutionInjectOnProjectileHit
-    transferAmount: 1.5
+    transferAmount: 7.5
     solution: ammo

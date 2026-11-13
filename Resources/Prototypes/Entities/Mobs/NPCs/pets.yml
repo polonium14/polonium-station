@@ -14,7 +14,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseUniquePet, MobCorgi, BaseSlicingRefinable ]
+  parent: [ BaseUniquePet, MobCorgi, BaseSlicingRefinableButchering ]
   id: MobCorgiIanBase # Polonium: restructured to include Ian in contraband
   components:
   - type: Sprite
@@ -64,7 +64,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalIan
+    stealGroup:
+    - AnimalIan
 
 - type: entity
   parent: MobCorgiIanBase
@@ -77,7 +78,7 @@
     allowedDepartments: [ Command ]
 
 - type: entity
-  parent: [ MobCorgiIanBase, BaseSlicingRefinable ]
+  parent: [ MobCorgiIanBase, BaseSlicingRefinableButchering ]
   id: MobCorgiIanOld
   name: Old Ian
   description: Still the favorite pet corgi. Love his wheels.
@@ -168,7 +169,7 @@
   - type: SpeakOnException
 
 - type: entity
-  parent: [ MobCorgiPuppy, BaseSlicingRefinable ]
+  parent: [ MobCorgiPuppy, BaseSlicingRefinableButchering ]
   id: MobCorgiIanPup
   name: Puppy Ian
   description: Favourite puppy corgi. Awww.
@@ -183,7 +184,8 @@
       amount: 2
     - id: MaterialHideCorgi
   - type: StealTarget
-    stealGroup: AnimalIan
+    stealGroup:
+    - AnimalIan
   - type: Contraband
     severity: GrandTheft
     allowedDepartments: [ Command ]
@@ -209,7 +211,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalNamedCat
+    stealGroup:
+    - AnimalNamedCat
   - type: SpeakOnException
     speechCooldown: 3m
     chanceSpeakNoAccent: 0.01
@@ -235,7 +238,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalNamedCat
+    stealGroup:
+    - AnimalNamedCat
 
 - type: entity
   parent: [ BaseUniquePet, MobCatCaracal ]
@@ -262,7 +266,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalNamedCat
+    stealGroup:
+    - AnimalNamedCat
 
 - type: entity
   parent: [ BaseUniquePet, MobFerret ]
@@ -280,7 +285,7 @@
     - VimPilot
 
 - type: entity
-  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinable , BaseMobDestructible ]
+  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinableButchering , BaseMobDestructible ]
   id: MobBingus
   name: Bingus
   description: Bingus my beloved...
@@ -334,10 +339,11 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalNamedCat
+    stealGroup:
+    - AnimalNamedCat
 
 - type: entity
-  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinable , BaseMobDestructible ]
+  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinableButchering , BaseMobDestructible ]
   id: MobMcGriff
   name: McGriff
   description: This dog can tell something smells around here, and that something is CRIME!
@@ -409,11 +415,12 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalMcGriff
+    stealGroup:
+    - AnimalMcGriff
   - type: MessyDrinker
 
 - type: entity
-  parent: [ BaseUniquePet, MobSloth, BaseSlicingRefinable ]
+  parent: [ BaseUniquePet, MobSloth, BaseSlicingRefinableButchering ]
   id: MobPaperwork
   name: Paperwork
   description: Took up a new job sorting books in the library after he got transferred from Space Station 13. He seems to be just as slow at this.
@@ -447,7 +454,7 @@
       gender: male
 
 - type: entity
-  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinable , BaseMobDestructible ]
+  parent: [ BaseUniquePet, SimpleMobBase, StripableInventoryBase, BaseSlicingRefinableButchering , BaseMobDestructible ]
   id: MobWalter
   name: Walter
   description: He likes chems and treats. Walter.
@@ -503,7 +510,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalWalter
+    stealGroup:
+    - AnimalWalter
   - type: Speech
     speechVerb: Canine
     speechSounds: Dog
@@ -531,7 +539,8 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalMorty
+    stealGroup:
+    - AnimalMorty
 
 - type: entity
   parent: MobPossumMorty
@@ -620,7 +629,7 @@
     - VimPilot
 
 - type: entity
-  parent: [ BaseUniquePet, MobFox, BaseSlicingRefinable ]
+  parent: [ BaseUniquePet, MobFox, BaseSlicingRefinableButchering ]
   id: MobFoxRenault
   name: Renault
   description: The captain's trustworthy fox.
@@ -647,10 +656,11 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalRenault
+    stealGroup:
+    - AnimalRenault
 
 - type: entity
-  parent: [ BaseUniquePet, MobHamster, BaseSlicingRefinable ]
+  parent: [ BaseUniquePet, MobHamster, BaseSlicingRefinableButchering ]
   id: MobHamsterHamlet
   name: Hamlet
   description: A grumpy, cute and fluffy hamster.
@@ -719,7 +729,7 @@
     predicted: true
 
 - type: entity
-  parent: [ BaseUniquePet, MobGiantSpider ]
+  parent: [ BaseUniquePet, MobSpiderBase ]
   id: MobSpiderShiva
   name: Shiva
   description: The first defender of the station.
@@ -762,6 +772,7 @@
       0: Alive
       150: Dead
   - type: MeleeWeapon
+    altDisarm: false
     angle: 0
     animation: WeaponArcBite
     soundHit:
@@ -783,7 +794,8 @@
     - DoorBumpOpener
     - FootstepSound
   - type: StealTarget
-    stealGroup: AnimalShiva
+    stealGroup:
+    - AnimalShiva
 
 - type: entity
   parent: [ BaseUniquePet, MobKangaroo ]
@@ -817,7 +829,7 @@
     prototypes: [ BoxingKangarooGear ]
 
 - type: entity
-  parent: [ BaseUniquePet, MobAdultSlimes, StripableInventoryBase, BaseSlicingRefinable ]
+  parent: [ BaseUniquePet, MobAdultSlimes, StripableInventoryBase, BaseSlicingRefinableButchering ]
   id: MobSlimesPet
   name: Smile
   description: This masterpiece has gone through thousands of experiments. But it is the sweetest creature in the world. Smile Slime!
@@ -891,6 +903,7 @@
     name: ghost-role-information-smile-name
     description: ghost-role-information-smile-description
     rules: ghost-role-information-nonantagonist-rules
+    prob: 1
     raffle: null
   - type: Grammar
     attributes:
@@ -992,7 +1005,8 @@
       gender: male
 #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
-    stealGroup: AnimalTropico
+    stealGroup:
+    - AnimalTropico
 
 - type: entity
   parent: [ BaseUniquePet, MobParrotBase ]
@@ -1010,4 +1024,9 @@
       gender: male
   - type: Loadout
     prototypes: [ MobPollyGear ]
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-organic
+  - type: Tag
+    tags:
+    - CannotSuicide
 

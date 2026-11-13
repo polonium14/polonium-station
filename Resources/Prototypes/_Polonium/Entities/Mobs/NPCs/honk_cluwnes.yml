@@ -112,3 +112,7 @@
     tools:
     - id: WeaponBehonkerLaserHonk
     - id: BikeHorn
+  - type: ToolRefinable
+    refineResult:
+    - id: MaterialBananium1
+      amount: 2

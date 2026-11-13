@@ -83,6 +83,9 @@ using Robust.Shared.GameObjects;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Speech.Components;
 using Content.Shared.Speech.Prototypes;
+using Content.Shared.GameTicking.Rules;
+using Content.Shared.GameTicking;
+using Content.Shared.Roles;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -173,7 +176,7 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 	[Dependency] private PopupSystem _popupSystem = default!;
 	[Dependency] private IRobustRandom _random = default!;
 	[Dependency] private IGameTiming _timing = default!;
-	[Dependency] private GameTicker _gameTicker = default!;
+	[Dependency] private ServerGameTicker _gameTicker = default!;
 	[Dependency] private IPlayerManager _playerManager = default!;
 	[Dependency] private ChatSystem _chat = default!;
 	[Dependency] private SharedPhysicsSystem _physics = default!;
@@ -692,10 +695,10 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
     }
 
 	// todo: This doesn't count correctly. And it happens after Nar'Sie is summoned and has already eaten at least all of the cultists on the final ritual site.
-	protected override void AppendRoundEndText(EntityUid uid, BloodCultRuleComponent component, GameRuleComponent gameRule,
-        ref RoundEndTextAppendEvent args)
+	protected override void AppendRoundEndText(Entity<BloodCultRuleComponent> rule, ref RoundEndTextAppendEvent args)
     {
-        base.AppendRoundEndText(uid, component, gameRule, ref args);
+        base.AppendRoundEndText(rule, ref args);
+        var (uid, component) = rule;
 
         var sessionData = _antag.GetAntagIdentifiers(uid);
 		if (component.CultistsWin)
@@ -755,7 +758,7 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 		var query = EntityQueryEnumerator<BloodCultRuleComponent, GameRuleComponent>();
 		while (query.MoveNext(out var uid, out var ruleComp, out var gameRule))
 		{
-			if (!GameTicker.IsGameRuleActive(uid, gameRule))
+			if (!GameTicker.IsGameRuleActive((uid, gameRule)))
 				continue;
 
 			component = ruleComp;
@@ -1618,7 +1621,7 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 
 		while (query.MoveNext(out var uid, out var ruleComp, out var gameRule))
 		{
-			if (!GameTicker.IsGameRuleActive(uid, gameRule))
+			if (!GameTicker.IsGameRuleActive((uid, gameRule)))
 				continue;
 
 			found = true;
@@ -1673,7 +1676,7 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 
 		while (query.MoveNext(out var uid, out var ruleComp, out var gameRule))
 		{
-			if (!GameTicker.IsGameRuleActive(uid, gameRule))
+			if (!GameTicker.IsGameRuleActive((uid, gameRule)))
 				continue;
 
 			found = true;

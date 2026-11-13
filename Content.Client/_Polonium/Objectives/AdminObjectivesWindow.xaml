@@ -14,7 +14,7 @@
         </ScrollContainer>
         <Label Name="EmptyLabel" Text="{Loc 'admin-objectives-empty'}" Visible="False" />
 
-        <PanelContainer StyleClasses="LowDivider" MinSize="0 2" Margin="0 6" />
+        <controls:Separator StyleClasses="LowDivider" MinSize="0 2" Margin="0 6"/>
 
         <TabContainer Name="AddTabs" MinHeight="300">
             <BoxContainer Orientation="Vertical"

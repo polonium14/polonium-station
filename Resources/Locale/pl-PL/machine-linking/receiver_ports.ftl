@@ -1,5 +1,7 @@
 signal-port-name-toggle = Przełącz
 signal-port-description-toggle = Przełącza stan urządzenia.
+signal-port-name-dock-toggle = Przełącz dokowanie
+signal-port-description-dock-toggle = Włącza zacisk dokowania urządzenia przy stanie WYSOKIM.
 signal-port-name-on-receiver = Włącz
 signal-port-description-on-receiver = Włącza urządzenie.
 signal-port-name-off-receiver = Wyłącz

@@ -15,5 +15,5 @@ apc-menu-power-state-label-tripped = PRZECIĄŻENIE
 # For the flavor text on the footer
 
 apc-menu-flavor-left = Skontaktuj się z inżynierem w celu uzyskania pomocy.
-apc-menu-flavor-right = wersja 1.2
+apc-menu-flavor-right = v1.2
 apc-menu-breaker-button = Przełącz

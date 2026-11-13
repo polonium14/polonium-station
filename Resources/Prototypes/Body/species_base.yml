@@ -1,5 +1,12 @@
 - type: entity
   abstract: true
+  parent: BaseSpeciesMobNoCrawl
+  id: BaseSpeciesMob
+  components:
+  - type: Crawler
+
+- type: entity
+  abstract: true
   parent:
   - BaseMob
   - MobCombat
@@ -7,7 +14,7 @@
   - MobPolymorphable
   - StripableInventoryBase
   - BaseSpeciesAppearance
-  id: BaseSpeciesMob
+  id: BaseSpeciesMobNoCrawl
   save: false
   components:
   - type: Targeting
@@ -53,7 +60,7 @@
       Extinguish: [ Touch ]
       Acidic: [Touch, Ingestion]
     reactions:
-    - reagents: [Water, SpaceCleaner]
+    - reagents: [ Water, Holywater, SpaceCleaner ]
       methods: [Touch]
       effects:
       - !type:WashCreamPie
@@ -88,7 +95,6 @@
   - type: SleepEmitSound
   - type: SSDIndicator
   - type: StandingState
-  - type: Crawler
   - type: Dna
   - type: MindContainer
   - type: MindExaminable
@@ -149,10 +155,10 @@
   - MobRespirator
   - MobAtmosStandard
   - MobFlammable
-  - BaseSpeciesMob
+  - BaseSpeciesMobNoCrawl
   - BaseMobDestructible
   - BaseHungerThirstSlowdown
-  id: BaseSpeciesMobOrganic
+  id: BaseSpeciesMobOrganicNoCrawl
   save: false
   components:
   - type: Satiation
@@ -211,3 +217,12 @@
   - type: ESPainFlash # Funky, ES port
   - type: FootprintOwner # Funky change
   - type: DuoEmote # Funky change
+
+- type: entity
+  abstract: true
+  parent:
+  - BaseSpeciesMobOrganicNoCrawl
+  id: BaseSpeciesMobOrganic
+  save: false
+  components:
+  - type: Crawler

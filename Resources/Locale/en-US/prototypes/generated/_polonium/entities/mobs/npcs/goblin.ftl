@@ -1,0 +1,15 @@
+ent-MobBaseGoblin = { ent-MobBaseAncestor }
+    .desc = Stinky, cunning, criminal. Their existance alone is a crime.
+    .gender = male
+ent-OrganGoblin = { ent-OrganBaseOrganic }
+    .suffix = goblin
+    .desc = { ent-OrganBaseOrganic.desc }
+ent-OrganGoblinMetabolizer = { "" }
+    .desc = { "" }
+ent-OrganGoblinInternal = { ent-OrganGoblin }
+    .desc = { ent-OrganGoblin.desc }
+ent-OrganGoblinLungs = { ent-OrganBaseLungs }
+    .desc = { ent-OrganBaseLungs.desc }
+ent-MobGoblinWild = wild goblin
+    .desc = Stinky, cunning, criminal. Their existance alone is a crime.
+    .gender = male

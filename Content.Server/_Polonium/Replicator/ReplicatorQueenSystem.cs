@@ -11,6 +11,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.GameTicking;
 
 namespace Content.Server._Polonium.Replicator;
 
@@ -27,7 +28,7 @@ public sealed partial class ReplicatorQueenSystem : EntitySystem
     [Dependency] private ISharedPlayerManager _player = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedActionsSystem _actions = default!;
-    [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private ServerGameTicker _ticker = default!;
     [Dependency] private MobStateSystem _mobState = default!;
 
     private readonly List<Entity<ReplicatorComponent>> _hive = new();

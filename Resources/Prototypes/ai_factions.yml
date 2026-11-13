@@ -10,6 +10,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: NanoTrasen
@@ -30,9 +31,12 @@
   - PetsNT
   - AllHostile
   - Wizard
+  - GoblinWild #Polonium. Goblins hunt them
 
 - type: npcFaction
   id: Passive
+  hostile:
+  - GoblinWild #Polonium. Goblins hunt them, and whenever possible they should defend themselves
 
 - type: npcFaction
   id: PetsNT
@@ -45,6 +49,7 @@
   - Xeno
   - AllHostile
   - Dragon
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: SimpleHostile
@@ -60,6 +65,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: SimpleNeutral
@@ -76,6 +82,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Xeno
@@ -90,6 +97,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Zombie
@@ -105,6 +113,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Revolutionary
@@ -133,6 +142,7 @@
   - Revolutionary
   - Wizard
   - Xenoborg
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Wizard
@@ -150,6 +160,7 @@
   - Revolutionary
   - AllHostile
   - Xenoborg
+  - GoblinWild #Polonium. Chase those gobbos down
 
 - type: npcFaction
   id: Xenoborg
@@ -166,6 +177,7 @@
   # cause they are hostile to them
   - SimpleHostile
   - AllHostile
+  - GoblinWild #Polonium. Chase those gobbos down
 
 # Hostile to everyone except other DeathSquad members.
 - type: npcFaction
@@ -185,3 +197,4 @@
   - Wizard
   - Xenoborg
   - AllHostile
+  - GoblinWild #Polonium. Chase those gobbos down

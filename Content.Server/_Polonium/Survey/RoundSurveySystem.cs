@@ -7,7 +7,7 @@ using Content.Server._Polonium.GameTicking;
 using Content.Server.Database;
 using Content.Server.Discord;
 using Content.Server.GameTicking;
-using Content.Server.GameTicking.Presets;
+using Content.Shared.GameTicking.Prototypes;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared._Polonium.Survey;
@@ -44,7 +44,7 @@ public sealed partial class RoundSurveySystem : EntitySystem
     [Dependency] private ISharedPlayerManager _player = default!;
     [Dependency] private DiscordWebhook _discord = default!;
     [Dependency] private PlayTimeTrackingManager _playTime = default!;
-    [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private ServerGameTicker _ticker = default!;
     [Dependency] private RoundMoodSystem _mood = default!;
     [Dependency] private SharedJobSystem _jobs = default!;
     [Dependency] private SharedMindSystem _mind = default!;

@@ -1,7 +1,7 @@
 ent-UraniumWindow = okno uranowe
-    .desc = { ent-BaseDeltaPressurePlasma.desc }
+    .desc = { ent-BaseWindowStructure.desc }
 ent-UraniumWindowDirectional = kierunkowe okno uranowe
-    .desc = { ent-BaseDeltaPressurePlasmaQuarter.desc }
+    .desc = { ent-BaseWindowStructureDirectional.desc }
 ent-UraniumWindowDiagonal = { ent-UraniumWindow }
     .suffix = diagonalne
     .desc = { ent-UraniumWindow.desc }

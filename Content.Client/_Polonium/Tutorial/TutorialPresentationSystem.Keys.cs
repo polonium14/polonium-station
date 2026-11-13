@@ -79,7 +79,6 @@ public sealed partial class TutorialPresentationSystem
             // loc files spell these out in full, keep the names they already use
             ("switch-channel-key", PaintKey(ContentKeyFunctions.CycleChatChannelForward)),
             ("default-chat-channel", _loc.GetString("hud-chatbox-select-channel-Local")),
-            ("verb-categories-eject", _loc.GetString("verb-categories-eject")),
             ("examine-verb", _loc.GetString("examine-verb-name")),
             ("climb-verb", _loc.GetString("comp-climbable-verb-climb")),
             ("execution-verb", _loc.GetString("execution-verb-name")),
@@ -110,7 +109,7 @@ public sealed partial class TutorialPresentationSystem
 
     private static string Paint(string key)
     {
-        return $"[color={KeyColor}]{key}[/color]";
+        return $"[color={KeyColor}][bold]{key}[/bold][/color]";
     }
 
     private string Key(BoundKeyFunction function)

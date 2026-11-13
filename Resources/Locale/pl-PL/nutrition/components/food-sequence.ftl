@@ -28,6 +28,7 @@ food-sequence-content-poppy = makiem
 food-sequence-content-lily = lilią
 food-sequence-content-soy = soją
 food-sequence-content-cheese = serem
+food-sequence-content-tofu = tofu
 food-sequence-content-brain = mózgiem
 food-sequence-content-bear = mięsem niedźwiedzia
 food-sequence-content-penguin = mięsem pingwina
@@ -54,6 +55,7 @@ food-sequence-content-spacemans-trumpet = trąbką kosmonauty
 food-sequence-content-cherry = wiśnią
 food-sequence-content-snail = ślimakiem
 food-sequence-content-anomaly-berry = jagodą anomalii
+food-sequence-content-aloe-ignis = ognistym aloesem
 # added missing - Yaket
 food-sequence-content-mystery-meat = tajemniczym mięsem
 food-sequence-content-mysterycutlet-cooked = tajemniczym kotletem
@@ -88,6 +90,7 @@ food-sequence-burger-content-spacemans-trumpet = kosmotrąbko
 food-sequence-burger-content-anomaly-berry = anomalio
 food-sequence-burger-content-extradimensional-orange = trójwymiaro
 food-sequence-burger-content-world-pea = pokojo
+food-sequence-burger-content-aloe-ignis = ognistoaloeso
 
 # COTTON BURGERS
 

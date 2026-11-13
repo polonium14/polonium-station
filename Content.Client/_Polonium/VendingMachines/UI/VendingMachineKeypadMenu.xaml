@@ -2,11 +2,35 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-                      MinSize="680 500">
+                      MinSize="680 570">
 
     <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
 
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" MinWidth="460">
+
+            <PanelContainer Name="SearchBar" HorizontalExpand="True" Margin="0 0 0 6">
+                <BoxContainer Orientation="Horizontal" Margin="10 3 8 3" SeparationOverride="8">
+                    <TextureRect Name="SearchIcon"
+                                 TexturePath="/Textures/Interface/VerbIcons/examine.svg.192dpi.png"
+                                 Stretch="KeepAspectCentered"
+                                 SetSize="16 16"
+                                 VerticalAlignment="Center" />
+                    <LineEdit Name="SearchInput"
+                              HorizontalExpand="True"
+                              VerticalAlignment="Center"
+                              PlaceHolder="{Loc 'vending-machine-search-placeholder'}" />
+                    <Label Name="SearchCounter"
+                           MinWidth="44"
+                           Align="Right"
+                           VerticalAlignment="Center"
+                           Visible="False" />
+                    <TextureButton Name="SearchClear"
+                                   TexturePath="/Textures/Interface/Nano/cross.svg.png"
+                                   ToolTip="{Loc 'vending-machine-search-clear'}"
+                                   VerticalAlignment="Center"
+                                   Visible="False" />
+                </BoxContainer>
+            </PanelContainer>
 
             <PanelContainer Name="GlassBackground" VerticalExpand="True" HorizontalExpand="True">
                 <PanelContainer.PanelOverride>
@@ -29,7 +53,7 @@
             </Control>
             <Control MinHeight="8" />
 
-            <PanelContainer StyleClasses="LowDivider" />
+            <controls:Separator StyleClasses="LowDivider"/>
 
             <BoxContainer Orientation="Horizontal" Margin="8 4 8 4" MinHeight="24" VerticalAlignment="Center">
                 <Label Text="{Loc 'vending-machine-flavor-left'}" StyleClasses="WindowFooterText" />
@@ -40,7 +64,7 @@
             </BoxContainer>
         </BoxContainer>
 
-        <PanelContainer MinWidth="2" StyleClasses="LowDivider" />
+        <controls:Separator MinWidth="2" StyleClasses="LowDivider" Orientation="Vertical"/>
 
         <BoxContainer Orientation="Vertical" MinWidth="200" VerticalExpand="True">
 
@@ -78,7 +102,7 @@
                 </PanelContainer>
             </BoxContainer>
 
-            <PanelContainer StyleClasses="LowDivider" />
+            <controls:Separator StyleClasses="LowDivider"/>
 
             <BoxContainer Orientation="Vertical" SeparationOverride="4" Margin="12 12 12 12">
                 <Label Text="{Loc 'vending-machine-keypad-col'}" StyleClasses="LabelSubText" FontColorOverride="#555555" HorizontalAlignment="Center" />

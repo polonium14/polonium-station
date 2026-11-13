@@ -68,6 +68,7 @@ soil-construction-graph-any-mushroom = dowolny grzyb
 construction-graph-tag-mop-basic = mop
 construction-graph-tag-paper = papier biurowy
 construction-graph-tag-core-pinpointer-piece = część pinpointera rdzenia
+construction-graph-tag-glass-lens = szklana soczewka
 # toys
 construction-graph-tag-rubber-ducky = gumowa kaczuszka
 construction-graph-tag-ghost = pluszak ducha

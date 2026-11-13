@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Medical.Components;
+using Content.Shared._DEN.QuickConstruction.Components;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Conditions;
@@ -14,6 +15,7 @@ using Content.Shared.Disposal.Unit;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Medical.HealthAnalyzer;
 using Content.Shared.Nutrition;
 using Content.Shared.Projectiles;
 using Content.Shared.Slippery;
@@ -71,6 +73,12 @@ public sealed partial class TutorialConditionTracker
     private void OnUiOpened(Entity<TutorialAnchorComponent> anchor, ref AfterActivatableUIOpenEvent args)
     {
         SetFlag(args.User, $"ui:{anchor.Comp.AnchorId}");
+        Notify(args.User);
+    }
+
+    private void OnQuickConstructionOpened(Entity<QuickConstructableComponent> material, ref AfterActivatableUIOpenEvent args)
+    {
+        SetFlag(args.User, "quick-construction");
         Notify(args.User);
     }
 
@@ -161,6 +169,7 @@ public sealed partial class TutorialConditionTracker
 
         var onFlag = $"ghost:{ev.AnchorId}";
         var strayFlag = $"ghost-stray:{ev.AnchorId}";
+        var wrongFlag = $"ghost-wrong:{ev.AnchorId}";
 
         if (ev.OnTile)
             SetFlag(player, onFlag);
@@ -171,6 +180,11 @@ public sealed partial class TutorialConditionTracker
             SetFlag(player, strayFlag);
         else
             session.Flags.Remove(strayFlag);
+
+        if (ev.Wrong)
+            SetFlag(player, wrongFlag);
+        else
+            session.Flags.Remove(wrongFlag);
 
         Notify(player);
     }

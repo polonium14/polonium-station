@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Content.Server.Database;
 using Content.Server.Discord;
-using Content.Server.GameTicking.Presets;
+using Content.Shared.GameTicking.Prototypes;
 using Content.Shared._Polonium.Survey;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;

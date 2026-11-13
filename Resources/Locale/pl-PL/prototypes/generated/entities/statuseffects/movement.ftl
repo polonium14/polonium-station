@@ -18,3 +18,5 @@ ent-StatusEffectFriction = tarcie
     .desc = { ent-MobStatusEffectDebuff.desc }
 ent-StatusEffectStunned = oszołomiony
     .desc = { ent-MobStatusEffectDebuff.desc }
+ent-StatusEffectKnockdown = knockdown
+    .desc = { ent-MobStatusEffectDebuff.desc }

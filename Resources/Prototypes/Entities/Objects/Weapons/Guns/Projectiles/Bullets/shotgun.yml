@@ -4,6 +4,9 @@
   categories: [ HideSpawnMenu ]
   name: pellet (.50 slug)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    length: 2.5
+    width: 0.09
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     state: slug
@@ -36,11 +39,15 @@
   categories: [ HideSpawnMenu ]
   name: pellet (.50)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#858994CC"
+    length: 1.2
+    width: 0.03
   - type: Projectile
     damage:
       types:
         Piercing: 10
-        Structural: 8
+        Structural: 6
 
 - type: entity
   parent: PelletShotgun
@@ -58,6 +65,9 @@
   categories: [ HideSpawnMenu ]
   name: pellet (.50 incendiary)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    length: 1.2
+    width: 0.03
   - type: Projectile
     damage:
       types:
@@ -82,6 +92,9 @@
   categories: [ HideSpawnMenu ]
   name: pellet (.50 practice)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    length: 1.2
+    width: 0.03
   - type: Projectile
     damage:
       types:
@@ -103,6 +116,10 @@
   categories: [ HideSpawnMenu ]
   name: improvised pellet
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#ADADADCC"
+    length: 1
+    width: 0.03
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     layers:
@@ -191,6 +208,9 @@
   categories: [ HideSpawnMenu ]
   name: pellet (.50 uranium)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    length: 1.2
+    width: 0.03
   - type: Projectile
     damage:
       types:
@@ -213,6 +233,10 @@
   categories: [ HideSpawnMenu ]
   name: grapeshot pellet
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#858994CC"
+    length: 1.5
+    width: 0.05
   - type: Sprite
     noRot: false
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
@@ -240,6 +264,10 @@
   categories: [ HideSpawnMenu ]
   name: glass shard
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
+    color: "#ADADADCC"
+    length: 1
+    width: 0.03
   - type: Sprite
     noRot: false
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi

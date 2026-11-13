@@ -55,6 +55,7 @@ loadout-group-chaplain-mask = Kapłan – maska
 loadout-group-chaplain-jumpsuit = Kapłan – kombinezon
 loadout-group-chaplain-outerclothing = Kapłan – odzież wierzchnia
 loadout-group-chaplain-neck = Kapłan – szyja
+loadout-group-chaplain-shoes = Kapłan – buty
 loadout-group-chaplain-bible = Święta Książka
 loadout-group-janitor-head = Sprzątacz – nakrycie głowy
 loadout-group-janitor-jumpsuit = Sprzątacz – kombinezon

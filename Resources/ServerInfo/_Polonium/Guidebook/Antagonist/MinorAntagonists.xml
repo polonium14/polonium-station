@@ -83,7 +83,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   <Box>
     <GuideEntityEmbed Entity="MobAdultSlimesBlueAngry" Caption=""/>
-    <GuideEntityEmbed Entity="MobGiantSpiderAngry" Caption=""/>
+    <GuideEntityEmbed Entity="MobGiantSpiderTarantulaAngry" Caption=""/>
   </Box>
 
   Szlamy i pająki nie mają żadnych szczególnych cech, ale mimo to od czasu do czasu [color=#7ee8f7]atakują stację[/color]. Oba gatunki będą ścigać i atakować wszystko, co zobaczą.
@@ -119,4 +119,19 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - Możesz też [bold]przybrać postać pożartego załoganta[/bold], dopóki jego ciało jest w twoim brzuchu. W tej postaci nie jesteś szybszy, a każdy, kto ci się przyjrzy, zauważy, że coś jest nie tak.
   - [bold]Nie potrafisz mówić[/bold] w żadnej postaci.
   - Masz 150 punktów zdrowia, nie potrzebujesz powietrza, widzisz w ciemności i przechodzisz przez stoły. Po śmierci wypluwasz wszystko, co masz w brzuchu.
+
+  # Goblin
+
+  <Box>
+    <GuideEntityEmbed Entity="MobGoblinWild" Scale="2"/>
+  </Box>
+
+  [color=green]Gobliny[/color] to niskorosłe stworki, co wkradły się na stacje poprzez wentylację. One same z siebie [color=red]polują na mysze i inne zwierzęta aby poszerzać trującą dla innych ammonie.[/color]
+  - Gobliny są [color=green]niewrażliwe na ammonie[/color], wykorzystują ten gaz do przywłaszczenia pomieszczeń w których żyją. [bold]Oraz wydychają ammonie zamiast dwutlenku węgla![/bold]
+  - [color=green]Posiadają dwie dłonie[/color], na tyle silne by trzymać dwa obiekty naraz, oraz dzierżyć broń w obu.
+  - [color=green]Mogą zakładać rękawiczki[/color], ale ich stopy są zbyt zdeformowane by nosić jakiekolwiek obuwie.
+  - nie wszystkie [color=green]gobliny są złe[/color], [color=red]ale mają potencjał do tego[/color].
+  - Podobnie jak koboldy, masz 60 punktów życia do kryta, i 120 do śmierci. Uważaj! [color=red]Twoje mięso ma zawarte halucogeny, co mogą być pożądaną cechą u niektórych załogantów![/color]
+
+ 
 </Document>

@@ -95,6 +95,7 @@ using Content.Client.GhostKick;
 using Content.Client.Guidebook;
 using Content.Client.Input;
 using Content.Client._Polonium.Tutorial.Lobby;
+using Content.Client._RMC14.Weapons.Ranged.Prediction; // Polonium
 using Content.Client.IoC;
 using Content.Client.Launcher;
 using Content.Client.Lobby;
@@ -115,8 +116,6 @@ using Content.Client.UserInterface;
 using Content.Client.Viewport;
 using Content.Client.Voting;
 using Content.Shared.Ame.Components;
-using Content.Shared.FeedbackSystem;
-using Content.Shared.Gravity;
 using Content.Shared.Localizations;
 using Robust.Client;
 using Robust.Client.Graphics;
@@ -220,8 +219,6 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("alertLevels");
             _prototypeManager.RegisterIgnore("nukeopsRole");
             _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
-            _prototypeManager.RegisterIgnore("codewordGenerator");
-            _prototypeManager.RegisterIgnore("codewordFaction");
             _prototypeManager.RegisterIgnore("stationGoal");
             _prototypeManager.RegisterIgnore("solitarySpawning"); // Project Batfly
 
@@ -334,6 +331,9 @@ namespace Content.Client.Entry
                 {
                     var updateSystem = _entitySystemManager.GetEntitySystem<BuiPreTickUpdateSystem>();
                     updateSystem.RunUpdates();
+
+                    // Polonium: the engine resets contacts while applying game states, before any system runs
+                    _entitySystemManager.GetEntitySystem<GunPredictionSystem>().RestoreTickPositions();
                 }
             }
         }

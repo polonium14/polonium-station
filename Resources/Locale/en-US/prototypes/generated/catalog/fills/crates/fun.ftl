@@ -50,3 +50,6 @@ ent-CrateFunDartsSet = dartboard box set
     .desc = A box with everything you need for a fun game of darts.
 ent-CrateFunScurret = hydrated scurret
     .desc = Wait, what?
+
+ent-CrateVirtualSingerOutfits = virtual singer outfit crate
+    .desc = An assortment of various virtual singers’ outfits, perfect for a grand performance! The set also includes signature items.

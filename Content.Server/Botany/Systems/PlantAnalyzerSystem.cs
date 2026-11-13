@@ -91,7 +91,7 @@ public sealed partial class PlantAnalyzerSystem : BaseAnalyzerSystem<PlantAnalyz
                     lifespan: plant.Lifespan,
                     dead: holder.Dead,
                     viable: true, // TODO: no new-model equivalent; a live plant is treated as viable
-                    mutating: holder.MutationLevel > 0f,
+                    mutating: holder.MutationLevels.Values.Any(level => level > 0f),
                     kudzu: HasComp<PlantTraitKudzuComponent>(plantUid)
                 );
 

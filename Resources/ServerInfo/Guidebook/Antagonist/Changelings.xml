@@ -31,7 +31,7 @@
   ### Ewolucja
 
   <Box>
-    <GuideEntityEmbed Entity="ActionRetractableItemArmBlade" Caption="Wysuwane ostrze z ramienia"/>
+    <GuideEntityEmbed Entity="ActionRetractableItemArmblade" Caption="Wysuwane ostrze z ramienia"/>
     <GuideEntityEmbed Entity="ActionChangelingStingDna" Caption="Ekstrakcja DNA"/>
     <GuideEntityEmbed Entity="ActionChangelingNightVision" Caption="Noktowizja"/>
   </Box>
@@ -75,7 +75,7 @@
     <GuideEntityEmbed Entity="SyringeHivarol" Caption="Strzykawka z hivarolem"/>
   </Box>
 
-  Pod przykrywką changeling prawie nie różni się od załogi, ale kiedy myśli, że jest sam, może zdradzić prawdziwą postać. Jeśli zobaczysz przemianę, pożeranie albo ubranie, które rozpada się w resztki mięsa, od razu wiadomo, z kim masz do czynienia. Trzask stawów i darcie ciała przy przemianie są głośne i charakterystyczne.
+  Pod przykrywką changeling prawie nie różni się od załogi, ale kiedy myśli, że jest sam, może zdradzić prawdziwą postać. Jeśli zobaczysz przemianę, pożeranie albo ubranie, które rozpada się w resztki mięsa, od razu wiadomo, z kim masz do czynienia. Trzask stawów i darcie ciała przy przemianie są głośne i charakterystyczne. Uważaj jednak, [bold]changeling potrafi wrobić zwykłych członków załogi[/bold]. Na szczęście załoga też ma swoje narzędzia.
 
   Changelingi są na tyle żarłoczne, że przy jedzeniu zostawiają potworny bałagan. [bold]Podczas pożerania zostawiają po sobie odrobinę własnej tkanki.[/bold] Sama z siebie do niczego się nie nada, ale z pomocą [textlink="chemika" link="Chemist"] zsyntetyzujesz odczynnik, który drażni changelingi. Po wstrzyknięciu trzęsą się i krzyczą.
 

@@ -1,0 +1,13 @@
+ent-MobBaseKobold = kobold
+    .desc = Kuzyni rozumnej rasy jaszczuro-ludzi, koboldy wtapiają się w naturalne otoczenie i są tak wredne jak małpy; gotowe wyrwać ci włosy i zadźgać cię na śmierć.
+ent-MobKobold = kobold
+    .desc = Kuzyni rozumnej rasy jaszczuro-ludzi, koboldy wtapiają się w naturalne otoczenie i są tak wredne jak małpy; gotowe wyrwać ci włosy i zadźgać cię na śmierć.
+ent-MobBaseSyndicateKobold = { ent-MobBaseKobold }
+    .suffix = baza Syndykatu
+    .desc = { ent-MobBaseKobold.desc }
+ent-MobKoboldSyndicateAgent = { ent-MobBaseSyndicateKobold }
+    .suffix = agent Syndykatu
+    .desc = { ent-MobBaseSyndicateKobold.desc }
+ent-MobKoboldSyndicateAgentNukeops = { ent-MobBaseSyndicateKobold }
+    .suffix = operatorzy nuklearni
+    .desc = { ent-MobBaseSyndicateKobold.desc }

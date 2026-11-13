@@ -58,3 +58,9 @@ examine-gun-spread-modifier-increase = The spread has been increased by [color=y
 gun-clumsy = Broń wybucha ci w twarz!
 
 gun-set-fire-mode = Ustawiono tryb { $mode }
+
+gun-access-locked = The {$target} is access locked!
+gun-toggle-on = The {$target} turns on.
+gun-toggle-off = The {$target} turns off.
+gun-not-anchored = The {$target} isn't anchored to the ground!
+gun-network-ammo-examine = Current projectile type is [color=yellow]{$ammo}[/color].

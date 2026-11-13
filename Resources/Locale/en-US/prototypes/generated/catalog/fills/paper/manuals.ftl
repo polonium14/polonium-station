@@ -7,3 +7,6 @@ ent-PaperAgrichemManual = NT "AgriChem Is Fun" manual
     .desc = The single sheet of instructions that came in the kit.
 ent-PaperWrittenCombatBakeryKit = combat bakery kit instructions
     .desc = Eat note after reading.
+
+ent-PaperWrittenSyndicateInstructions = covert operations reinforcement manual
+    .desc = A shorthand manual that details the essentials of your latest mission. Destroy after reading.

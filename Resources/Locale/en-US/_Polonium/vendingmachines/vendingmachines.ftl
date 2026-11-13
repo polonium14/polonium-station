@@ -12,3 +12,6 @@ vending-machine-keypad-feedback-success-4 = [ VEND ]
 vending-machine-keypad-feedback-empty = [ EMPTY ]
 vending-machine-keypad-feedback-invalid = [ ERROR ]
 vending-machine-keypad-feedback-denied = [ DENIED ]
+vending-machine-search-placeholder = Search...
+vending-machine-search-clear = Clear
+vending-machine-search-counter = { $matches }/{ $total }

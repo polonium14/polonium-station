@@ -1,4 +1,4 @@
-ent-FireBomb = boba zapalająca
+ent-FireBomb = bomba zapalająca
     .desc = Słabe, improwizowane urządzenie zapalające.
 ent-FireBombEmpty = bomba zapalająca
     .desc = Słabe, improwizowane urządzenie zapalające. Nie ma paliwa.

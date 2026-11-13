@@ -37,6 +37,27 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: technology
+  id: PackagedLights
+  name: research-technology-packaged-lights
+  icon:
+    sprite: Objects/Storage/EntityProvider/packaged_lights.rsi
+    state: base # Doesn't seem to work with sprite layers.
+  discipline: CivilianServices
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - BoxLighttube
+  - BoxExteriorLighttube
+  - BoxLedLighttube
+  - BoxSodiumLighttube
+  - BoxLightbulb
+  - BoxDimLightbulb
+  - BoxWarmLightbulb
+  - BoxLedLightbulb
+  - BoxLightMixed
+  - BoxLedLightMixed
+
+- type: technology
   id: Hydroponics
   name: research-technology-basic-hydroponics
   icon:

@@ -147,4 +147,5 @@
       receiveNukeCodes: true
       receiveStationGoal: true # Polonium: StationGoal
     - type: StealTarget
-      stealGroup: FaxMachineCaptain
+      stealGroup:
+      - FaxMachineCaptain

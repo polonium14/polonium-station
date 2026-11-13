@@ -8,4 +8,4 @@
   id: NamesLast
   values:
     prefix: names-last-dataset-
-    count: 314549
+    count: 4000 # Polonium: the 4000 most common Polish surnames from the PESEL register (dane.gov.pl, 2026-01-20)

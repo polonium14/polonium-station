@@ -1,0 +1,10 @@
+ent-ClothingUniformJumpsuitResearchDirector = golf kierownika badań
+    .desc = To golf noszony przez tych, którzy mają wiedzę, by osiągnąć stanowisko kierownika badań. Jego materiał zapewnia niewielką ochronę przed zanieczyszczeniami biologicznymi.
+ent-ClothingUniformJumpsuitScientist = kombinezon naukowca
+    .desc = Wykonany ze specjalnego włókna, które zwiększa postrzeganą inteligencję i obniża osobistą etykę. Ma oznaczenia wskazujące, że noszący jest naukowcem.
+ent-ClothingUniformJumpsuitScientistFormal = elegancki kombinezon naukowca
+    .desc = Mundur dla wyrafinowanych naukowców, najlepiej nosić z pasującym krawatem.
+ent-ClothingUniformJumpsuitRoboticist = kombinezon robotyka
+    .desc = Jest smukły, czarny z wzmocnionymi szwami; świetny do pracy przemysłowej.
+ent-ClothingUniformJumpsuitSeniorResearcher = mundur starszego badacza
+    .desc = Znak umiejętności i prestiżu w dziale naukowym.

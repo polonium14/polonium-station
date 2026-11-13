@@ -11,7 +11,10 @@
     state: full
   - type: IconSmooth
     key: walls
-    base: repli
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: repli
   - type: Tag
     tags:
     - ReplicatorStructure
@@ -58,7 +61,10 @@
     state: rfull
   - type: IconSmooth
     key: walls
-    base: rrepli
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: rrepli
   - type: Damageable
     damageModifierSet: PlasteelStaticMod
   - type: Destructible

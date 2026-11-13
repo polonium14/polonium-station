@@ -161,3 +161,9 @@ ent-FoodAnomalyBerry = anomaly berry
     .desc = A strange blue fruit. Something about it doesn't seem right.
 ent-FoodBloonion = bloonion bulb
     .desc = A strange floating bulb.. Nothing worth crying over.
+
+ent-FoodAloeIgnis = aloe ignis leaf
+    .desc = A jagged leaf. It's uncomfortably warm to the touch and smells like ozone and spice.
+
+ent-FoodDragonTail = dragon's tail stalk
+    .desc = A long, spiraling stalk that glows with a soft emerald light. It can be processed into useful compress to sooth burns.
