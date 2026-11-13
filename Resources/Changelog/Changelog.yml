@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: TriviaSolari
-  changes:
-  - message: The Station AI is now notified when their core is taking damage.
-    type: Add
-  id: 9628
-  time: '2026-04-08T05:40:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43513
 - author: themias
   changes:
   - message: Wizards can hear the sound of their fireball spell again
@@ -5160,3 +5153,30 @@
   id: 10122
   time: '2026-11-13T16:15:22.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1244
+- author: Nikita
+  changes:
+  - message: Czarnobyl
+    type: Add
+  - message: "Reaktor, kt\xF3ry przekroczy temperatur\u0119 stopienia, wybucha dopiero\
+      \ po kr\xF3tkiej chwili. Je\u015Bli zd\u0105\u017Cysz go sch\u0142odzi\u0107\
+      , wybuchu nie b\u0119dzie."
+    type: Add
+  - message: "Ze stopionego reaktora wylewa si\u0119 radioaktywne korium. Zastyg\u0142\
+      e mo\u017Cna rozbi\u0107 kilofem i przerobi\u0107 w przetworniku rudy na uran\
+      \ i w\u0119giel."
+    type: Add
+  - message: "Silne promieniowanie wida\u0107 na ekranie jako szum."
+    type: Add
+  - message: "Stopiony reaktor wypuszcza du\u017Co mniej trytu, wi\u0119c po\u017C\
+      ar zostaje w okolicy ruin."
+    type: Tweak
+  - message: "Awaria ma\u0142ego reaktora jest s\u0142absza ni\u017C du\u017Cego."
+    type: Tweak
+  - message: "Dym i ogie\u0144 przegrzanego reaktora nie s\u0105 ju\u017C zamienione\
+      \ miejscami."
+    type: Fix
+  - message: "Awaria reaktora podnosi poziom alarmu na \u017C\xF3\u0142ty."
+    type: Fix
+  id: 10123
+  time: '2026-11-13T16:38:32.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1249
