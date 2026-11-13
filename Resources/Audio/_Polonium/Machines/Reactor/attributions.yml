@@ -1,0 +1,59 @@
+- files: ["reactor_hum.ogg"]
+  license: "CC0-1.0"
+  copyright: "EnginesTurbinesOne.wav by pushkin on Freesound, modified by nikitosych (github)"
+  source: "https://freesound.org/people/pushkin/sounds/100403/"
+
+- files: ["reactor_strain.ogg"]
+  license: "CC0-1.0"
+  copyright: "Pulsating Low Stutter Loop by gerainsan on Freesound, layered with Earthquake Rumble, Low Frequency by CHallSmith (https://freesound.org/people/CHallSmith/sounds/870683/), modified by nikitosych (github)"
+  source: "https://freesound.org/people/gerainsan/sounds/457045/"
+
+- files: ["reactor_rumble.ogg"]
+  license: "CC0-1.0"
+  copyright: "Earthquake Rumble, Low Frequency by CHallSmith on Freesound, modified by nikitosych (github)"
+  source: "https://freesound.org/people/CHallSmith/sounds/870683/"
+
+- files: ["reactor_tremor1.ogg","reactor_tremor2.ogg", "reactor_tremor3.ogg", "reactor_tremor4.ogg"]
+  license: "CC0-1.0"
+  copyright: "Earthquake Rumble, Low Frequency by CHallSmith on Freesound, layered with Cinematic Rumble.flac by qubodup (https://freesound.org/people/qubodup/sounds/184936/), modified by nikitosych (github)"
+  source: "https://freesound.org/people/CHallSmith/sounds/870683/"
+
+- files: ["reactor_creak1.ogg"]
+  license: "CC0-1.0"
+  copyright: "Metal Creak 1.wav by ingudios on Freesound, layered with Earthquake Rumble, Low Frequency by CHallSmith (https://freesound.org/people/CHallSmith/sounds/870683/), modified by nikitosych (github)"
+  source: "https://freesound.org/people/ingudios/sounds/119465/"
+
+- files: ["reactor_creak2.ogg"]
+  license: "CC0-1.0"
+  copyright: "Metal Creak 2.wav by ingudios on Freesound, layered with Earthquake Rumble, Low Frequency by CHallSmith (https://freesound.org/people/CHallSmith/sounds/870683/), modified by nikitosych (github)"
+  source: "https://freesound.org/people/ingudios/sounds/119466/"
+
+- files: ["reactor_creak3.ogg"]
+  license: "CC0-1.0"
+  copyright: "Metal Creak 3.wav by ingudios on Freesound, layered with Earthquake Rumble, Low Frequency by CHallSmith (https://freesound.org/people/CHallSmith/sounds/870683/), modified by nikitosych (github)"
+  source: "https://freesound.org/people/ingudios/sounds/119467/"
+
+- files: ["reactor_creak4.ogg"]
+  license: "CC0-1.0"
+  copyright: "Metal Creak 4.wav by ingudios on Freesound, layered with Earthquake Rumble, Low Frequency by CHallSmith (https://freesound.org/people/CHallSmith/sounds/870683/), modified by nikitosych (github)"
+  source: "https://freesound.org/people/ingudios/sounds/119468/"
+
+- files: ["reactor_explosion.ogg"]
+  license: "CC0-1.0"
+  copyright: "Huge Explosion by unfa on Freesound, layered with Sub Rush 1 by JarredGibb (https://freesound.org/people/JarredGibb/sounds/263892/) and Cinematic Rumble.flac by qubodup (https://freesound.org/people/qubodup/sounds/184936/), modified by nikitosych (github)"
+  source: "https://freesound.org/people/unfa/sounds/259300/"
+
+- files: ["reactor_pulse1.ogg", "reactor_pulse2.ogg", "reactor_pulse3.ogg"]
+  license: "CC0-1.0"
+  copyright: "Sub Rush 1 by JarredGibb on Freesound, layered with Pulsating Low Stutter Loop by gerainsan (https://freesound.org/people/gerainsan/sounds/457045/), modified by nikitosych (github)"
+  source: "https://freesound.org/people/JarredGibb/sounds/263892/"
+
+- files: ["corium_bubbling.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Lava loop.wav by Audionautics on Freesound, modified by nikitosych (github)"
+  source: "https://freesound.org/people/Audionautics/sounds/133901/"
+
+- files: ["corium_burn.ogg"]
+  license: "CC0-1.0"
+  copyright: "metal_hissing.wav by vibe_crc on Freesound, modified by nikitosych (github)"
+  source: "https://freesound.org/people/vibe_crc/sounds/50620/"

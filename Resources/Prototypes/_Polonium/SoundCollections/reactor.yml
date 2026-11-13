@@ -1,0 +1,22 @@
+- type: soundCollection
+  id: ReactorTremor
+  files:
+  - /Audio/_Polonium/Machines/Reactor/reactor_tremor1.ogg
+  - /Audio/_Polonium/Machines/Reactor/reactor_tremor2.ogg
+  - /Audio/_Polonium/Machines/Reactor/reactor_tremor3.ogg
+  - /Audio/_Polonium/Machines/Reactor/reactor_tremor4.ogg
+
+- type: soundCollection
+  id: ReactorCreak
+  files:
+  - /Audio/_Polonium/Machines/Reactor/reactor_creak1.ogg
+  - /Audio/_Polonium/Machines/Reactor/reactor_creak2.ogg
+  - /Audio/_Polonium/Machines/Reactor/reactor_creak3.ogg
+  - /Audio/_Polonium/Machines/Reactor/reactor_creak4.ogg
+
+- type: soundCollection
+  id: ReactorPulse
+  files:
+  - /Audio/_Polonium/Machines/Reactor/reactor_pulse1.ogg
+  - /Audio/_Polonium/Machines/Reactor/reactor_pulse2.ogg
+  - /Audio/_Polonium/Machines/Reactor/reactor_pulse3.ogg
