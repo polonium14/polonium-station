@@ -1,0 +1,247 @@
+# Jajoludzie z Aquili. Skorupka twardnieje, im bardziej jajko jest usmażone (EggShellComponent).
+- type: markingsGroup
+  parent: Undergarments
+  id: Eggperson
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.Special:
+      limit: 0
+      required: false
+
+# Kruchość względem tłuczenia liczy EggShellSystem, tu zostaje tylko gotowanie.
+- type: damageModifierSet
+  id: Eggperson
+  coefficients:
+    Heat: 1.1
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceEggperson
+  categories: [ HideSpawnMenu ]
+  name: eggperson appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganEggpersonTorso
+      Head: OrganEggpersonHead
+      ArmLeft: OrganEggpersonArmLeft
+      ArmRight: OrganEggpersonArmRight
+      HandRight: OrganEggpersonHandRight
+      HandLeft: OrganEggpersonHandLeft
+      LegLeft: OrganEggpersonLegLeft
+      LegRight: OrganEggpersonLegRight
+      FootLeft: OrganEggpersonFootLeft
+      FootRight: OrganEggpersonFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Eggperson
+
+- type: entity
+  parent: AppearanceEggperson
+  id: MobEggpersonDummy
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent:
+  - AppearanceEggperson
+  - BaseSpeciesMobOrganic
+  id: MobEggperson
+  name: Urist McYolk
+  components:
+  - type: EggShell
+  - type: Speech
+    speechVerb: Eggperson
+    speechSounds: Eggcrack
+  - type: Damageable
+    damageModifierSet: Eggperson
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Egg
+        Quantity: 300
+  - type: Butcherable
+    spawned:
+    - id: FoodMealOmelette
+      amount: 3
+    - id: Eggshells
+      amount: 2
+
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganEggperson
+  abstract: true
+  suffix: eggperson
+
+- type: entity
+  parent: OrganEggperson
+  id: OrganEggpersonExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/Eggperson/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: _Polonium/Mobs/Species/Eggperson/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Eggperson
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganEggpersonExternal ]
+  id: OrganEggpersonTorso
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 200
+    thresholds:
+      Healthy: 200
+      Minor: 190
+      Moderate: 180
+      Severe: 160
+      Critical: 140
+      Mangled: 125
+      Severed: 110
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganEggpersonExternal ]
+  id: OrganEggpersonHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Snout
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 125
+    thresholds:
+      Healthy: 125
+      Minor: 115
+      Moderate: 105
+      Severe: 85
+      Critical: 65
+      Mangled: 50
+      Severed: 35
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganEggpersonExternal ]
+  id: OrganEggpersonArmLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganEggpersonExternal ]
+  id: OrganEggpersonArmRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganEggpersonExternal ]
+  id: OrganEggpersonHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganEggpersonExternal ]
+  id: OrganEggpersonHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganEggpersonExternal ]
+  id: OrganEggpersonLegLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganEggpersonExternal ]
+  id: OrganEggpersonLegRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganEggpersonExternal ]
+  id: OrganEggpersonFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganEggpersonExternal ]
+  id: OrganEggpersonFootRight
