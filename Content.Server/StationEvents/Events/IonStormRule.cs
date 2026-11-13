@@ -1,3 +1,4 @@
+using Content.Server._Polonium.StationEvents; // Polonium
 using Content.Server.Silicons.Laws;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
@@ -26,5 +27,9 @@ public sealed partial class IonStormRule : StationEventSystem<IonStormRuleCompon
 
             _ionStorm.IonStormTarget((ent, lawBound, target));
         }
+
+        // Polonium: let thaven moods use the same station
+        var ev = new IonStormStationEvent(chosenStation.Value.Owner);
+        RaiseLocalEvent(ref ev);
     }
 }

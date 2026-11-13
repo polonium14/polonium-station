@@ -12,13 +12,12 @@ using Content.Server.Actions;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Roles.Jobs;
-using Content.Server.StationEvents.Components;
+using Content.Server._Polonium.StationEvents;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Dataset;
 using Content.Shared.Emag.Systems;
 using Content.Shared.GameTicking;
-using Content.Shared.GameTicking.Components;
 using Content.Shared.Station.Components;
 using Content.Shared._Impstation.Thaven;
 using Content.Shared._Impstation.Thaven.Components;
@@ -77,7 +76,7 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
         SubscribeLocalEvent<ThavenMoodsBoundComponent, BoundUIOpenedEvent>(OnBoundUIOpened);
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnSpawnComplete); // funky
         SubscribeLocalEvent<RoundRestartCleanupEvent>((_) => NewSharedMoods());
-        SubscribeLocalEvent<GameRuleStartedEvent>(OnGameRuleStarted); // Polonium
+        SubscribeLocalEvent<IonStormStationEvent>(OnIonStormStation); // Polonium
     }
 
     private void NewSharedMoods()
@@ -438,15 +437,12 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
     }
 
     // POLONIUM START
-    private void OnGameRuleStarted(ref GameRuleStartedEvent args)
+    private void OnIonStormStation(ref IonStormStationEvent args)
     {
-        if (!HasComp<IonStormRuleComponent>(args.Rule))
-            return;
-
         var query = EntityQueryEnumerator<ThavenMoodsBoundComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var comp, out var xform))
         {
-            if (!HasComp<StationMemberComponent>(xform.GridUid))
+            if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != args.Station)
                 continue;
 
             IonStormMoods((uid, comp));
