@@ -153,6 +153,7 @@
       enum.ThavenMoodsUiKey.Key:
         type: ThavenMoodsBoundUserInterface
         requireInputValidation: false
+  - type: TailDuoEmote # Polonium change
 
 - type: entity
   parent: OrganBaseOrganic
