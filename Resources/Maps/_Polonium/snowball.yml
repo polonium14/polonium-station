@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 09/22/2026 17:17:10
-  entityCount: 19008
+  entityCount: 19009
 maps:
 - 1793
 grids:
@@ -9374,6 +9374,13 @@ entities:
     - type: Transform
       parent: 1
       pos: 40.5,42.5
+- proto: BiomassReclaimer
+  entities:
+  - uid: 10079
+    components:
+    - type: Transform
+      parent: 1
+      pos: 65.5,32.5
 - proto: BlastDoor
   entities:
   - uid: 91
@@ -50051,6 +50058,31 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: 49.5,42.5
+- proto: MedicalBiofabricator
+  entities:
+  - uid: 10078
+    components:
+    - type: Transform
+      parent: 1
+      pos: 65.5,33.5
+    - type: TechnologyDatabase
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+- proto: PatientIntakeMachine
+  entities:
+  - uid: 10071
+    components:
+    - type: Transform
+      parent: 1
+      pos: 67.5,36.5
+    - type: DeviceLinkSource
+      linkedPorts:
+        10601:
+        - - PatientIntakeFax
+          - PatientIntakeFaxReceiver
 - proto: d2Dice
   entities:
   - uid: 2651
@@ -61551,6 +61583,13 @@ entities:
     - type: Transform
       parent: 1
       pos: 22.5,90.5
+    - type: Fixtures
+      fixtures: {}
+  - uid: 19009
+    components:
+    - type: Transform
+      parent: 1
+      pos: 65.5,32.5
     - type: Fixtures
       fixtures: {}
 - proto: FloorTileItemSteel
@@ -91383,11 +91422,6 @@ entities:
     - type: Transform
       parent: 1
       pos: 68.5,36.5
-  - uid: 10071
-    components:
-    - type: Transform
-      parent: 1
-      pos: 67.5,36.5
   - uid: 10075
     components:
     - type: Transform
@@ -91406,18 +91440,6 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: 67.5,32.5
-  - uid: 10078
-    components:
-    - type: Transform
-      parent: 1
-      rot: 1.5707963267948966 rad
-      pos: 65.5,32.5
-  - uid: 10079
-    components:
-    - type: Transform
-      parent: 1
-      rot: 1.5707963267948966 rad
-      pos: 65.5,33.5
 - proto: MouseTimedSpawner
   entities:
   - uid: 10544

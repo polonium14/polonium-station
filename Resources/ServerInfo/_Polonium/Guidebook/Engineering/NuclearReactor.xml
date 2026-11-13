@@ -108,7 +108,7 @@
 
 	[bold]Temperatura[/bold] pokazuje obecną temperaturę reaktora, w zakresie od 0 do 2000 kelwinów.
 
-	Jeśli reaktor dojdzie do 2000 kelwinów, nastąpi [color=#ff8a8a]stopienie[/color].
+	Jeśli reaktor przekroczy 2000 kelwinów, po krótkiej chwili nastąpi [color=#ff8a8a]stopienie[/color], chyba że zdążysz go schłodzić.
 
 	[bold]Promieniowanie[/bold] pokazuje, ile promieniowania reaktor właśnie emituje, w zakresie od 0 do 50 radów.
 
@@ -164,6 +164,34 @@
 	</Box>
 
 	Przy pracy obok reaktora warto mieć ochronę i osłonę.
+
+	## Stopienie reaktora
+	<Box>
+		<GuideEntityEmbed Entity="NuclearReactorMelted"/>
+	</Box>
+	Przegrzany reaktor zaczyna dymić, a potem płonąć. Kiedy zbliża się do [color=#ff8a8a]stopienia[/color], drży cała stacja i migają światła.
+
+	Reaktor, który przekroczy temperaturę stopienia, nie wybucha od razu. Przez krótką chwilę trzęsie się coraz mocniej, a wstrząsy przychodzą coraz częściej. Jeśli w tym czasie zdążysz go schłodzić, wybuchu nie będzie.
+
+	Stopiony reaktor wybucha i rozrzuca dookoła radioaktywne odłamki. Jego ruiny promieniują do końca rundy, a nad nimi długo unosi się słup dymu.
+
+	### Korium
+	<Box>
+		<GuideEntityEmbed Entity="Corium"/>
+	</Box>
+	Chwilę po wybuchu ze stopionego rdzenia wylewa się kałuża [bold]korium[/bold], rozżarzonej masy paliwa, prętów i stali. Potem powoli rozlewa się dalej po podłodze, ale nie przejdzie przez ściany.
+
+	Świeże korium jest płynne i parzy każdego, kto na nim stanie. Z czasem pokrywa się skorupą, a w końcu zastyga na dobre, ale przez cały ten czas promieniuje.
+
+	### Sprzątanie po awarii
+	<Box>
+		<GuideEntityEmbed Entity="Pickaxe"/>
+		<GuideEntityEmbed Entity="CoriumChunk"/>
+		<GuideEntityEmbed Entity="OreProcessor"/>
+	</Box>
+	Zastygłe korium da się rozbić kilofem albo wiertłem górniczym, tak jak skałę. Dopóki jest płynne albo pokryte skorupą, żadne narzędzie go nie ruszy.
+
+	Z każdego rozbitego fragmentu zostaje [bold]kawałek korium[/bold]. Przetwornik rudy odzyska z niego uran i węgiel.
 
 
 	## Turbina gazowa

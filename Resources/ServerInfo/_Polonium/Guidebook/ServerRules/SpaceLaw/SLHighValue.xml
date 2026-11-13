@@ -8,7 +8,7 @@
   - karty ID kapitana, kierownika personelu lub inne karty o analogicznym poziomie dostępu;
   - klucze szyfrujące zawierające dostęp do wszystkich kanałów łączności stacji;
   - pieczęć Kapitana oraz pieczęć Centralnego Dowództwa;
-  - Ian.
+  - Ian, także jako Szczeniak Ian i Stary Ian, oraz Lisa.
 
   Za mienie lub sprzęt o charakterze krytycznym uznaje się elementy, bez których stacja nie jest w stanie prawidłowo funkcjonować.
 
@@ -56,6 +56,9 @@
   ## Pozostałe
   <Box>
     <GuideEntityEmbed Entity="MobCorgiIan" Caption="Ian"/>
+    <GuideEntityEmbed Entity="MobCorgiIanPup" Caption="Szczeniak Ian"/>
+    <GuideEntityEmbed Entity="MobCorgiIanOld" Caption="Stary Ian"/>
+    <GuideEntityEmbed Entity="MobCorgiLisa" Caption="Lisa"/>
     <GuideEntityEmbed Entity="FoodMeatCorgi" Caption="Mięso Iana"/>
   </Box>
 </Document>

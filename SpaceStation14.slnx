@@ -23,6 +23,7 @@
     <File Path="Directory.Packages.props" />
     <File Path="README.md" />
   </Folder>
+  <Project Path="Content.WikiExporter/Content.WikiExporter.csproj" />
   <Project Path="Content.Benchmarks/Content.Benchmarks.csproj" />
   <Project Path="Content.Client/Content.Client.csproj" />
   <Project Path="Content.IntegrationTests/Content.IntegrationTests.csproj" />

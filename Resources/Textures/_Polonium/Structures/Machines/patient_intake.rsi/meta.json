@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/31d88c7454e429a64fbae4a9f7b4aecaf838e9a1, status lights edited by haze-14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "closed",
+      "directions": 4
+    },
+    {
+      "name": "open",
+      "directions": 4
+    },
+    {
+      "name": "tray",
+      "directions": 4
+    },
+    {
+      "name": "light_ready",
+      "directions": 4
+    },
+    {
+      "name": "light_patient",
+      "directions": 4
+    },
+    {
+      "name": "light_busy",
+      "directions": 4
+    }
+  ]
+}

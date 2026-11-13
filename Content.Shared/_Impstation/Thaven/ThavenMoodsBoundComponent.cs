@@ -29,6 +29,20 @@ public sealed partial class ThavenMoodsBoundComponent : Component
 
     [DataField(serverOnly: true), ViewVariables]
     public EntityUid? Action;
+
+    // POLONIUM START
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float IonStormChance = 0.8f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float IonStormRemoveChance = 0.25f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float IonStormAddChance = 0.25f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public int MaxIonMoods = 4;
+    // POLONIUM END
 }
 
 public sealed partial class ToggleMoodsScreenEvent : InstantActionEvent

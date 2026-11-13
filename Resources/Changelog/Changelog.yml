@@ -1,64 +1,4 @@
 ﻿Entries:
-- author: Princess-Cheeseballs
-  changes:
-  - message: Uplink implant now links to the same store as your PDA ringtone.
-    type: Add
-  id: 9621
-  time: '2026-04-05T22:16:46.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43485
-- author: AndrewFenriz
-  changes:
-  - message: Added a wide variety of new tile recipes to the Cutter Machine.
-    type: Add
-  id: 9622
-  time: '2026-04-05T22:33:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43431
-- author: psykana
-  changes:
-  - message: Nuclear operatives round end summary now shows the Disk's location. If
-      it wasn't atomized, that is.
-    type: Add
-  id: 9623
-  time: '2026-04-06T21:41:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39767
-- author: Princess-Cheeseballs
-  changes:
-  - message: Added a new Traitor objective to kill the Station AI!
-    type: Add
-  - message: Traitor kill objectives will now show stage names instead of character
-      names if applicable
-    type: Fix
-  id: 9624
-  time: '2026-04-06T22:23:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43462
-- author: SuperGDPWYL
-  changes:
-  - message: Traitors can now be tasked with causing anomalies to go supercritical.
-    type: Add
-  id: 9625
-  time: '2026-04-07T18:59:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43505
-- author: ketufaispikinut
-  changes:
-  - message: Added the tourist's travel camera along with very basic textual photographs.
-    type: Add
-  id: 9626
-  time: '2026-04-07T20:33:23.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43322
-- author: alexalexmax
-  changes:
-  - message: Items that can be stuck to walls are now able to be unstuck properly.
-    type: Fix
-  id: 9627
-  time: '2026-04-08T04:13:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43514
-- author: TriviaSolari
-  changes:
-  - message: The Station AI is now notified when their core is taking damage.
-    type: Add
-  id: 9628
-  time: '2026-04-08T05:40:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43513
 - author: themias
   changes:
   - message: Wizards can hear the sound of their fireball spell again
@@ -5136,3 +5076,107 @@
   id: 10115
   time: '2026-11-12T13:49:54.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1236
+- author: haze
+  changes:
+  - message: Dodano biofabrykator
+    type: Add
+  id: 10116
+  time: '2026-11-13T10:25:16.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1186
+- author: Nikita
+  changes:
+  - message: "Burza jonowa teraz mo\u017Ce zmieni\u0107 nastroje Tejwan\xF3w z szans\u0105\
+      \ 80%."
+    type: Add
+  id: 10117
+  time: '2026-11-13T14:44:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1241
+- author: Czuat
+  changes:
+  - message: "Dodano mapie Atlas wi\u0119cej ga\u015Bnic, szafek awaryjnych, \u015B\
+      luzy dokuj\u0105ce dla odzysku. poprawiono okablowanie pomieszczenia z kryszta\u0142\
+      em supermaterii i APC nie powinna si\u0119 juz przeci\u0105\u017Ca\u0107, oraz\
+      \ powi\u0119kszono pok\xF3j z TEGiem."
+    type: Tweak
+  id: 10118
+  time: '2026-11-13T15:11:41.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1238
+- author: Nikita
+  changes:
+  - message: "Stary Ian i Lisa s\u0105 teraz MZW tak samo, jak zwyk\u0142y Ian lub\
+      \ szczeniak"
+    type: Fix
+  - message: "Klaun teraz nie mo\u017Ce dzwoni\u0107 do Centrali przez bananowy telefon\
+      \ :("
+    type: Remove
+  id: 10119
+  time: '2026-11-13T15:27:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1243
+- author: Nikita
+  changes:
+  - message: "Ochronie nie wolno ju\u017C wchodzi\u0107 do tuneli technicznych podczas\
+      \ kodu zielonego."
+    type: Tweak
+  - message: Zniesiono zakaz wchodzenia do tuneli technicznych podczas kodu czerwonego.
+    type: Tweak
+  - message: "Poprawiono jednolito\u015B\u0107 SPO i PK mi\u0119dzy gr\u0105 a wiki."
+    type: Fix
+  id: 10120
+  time: '2026-11-13T15:33:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1246
+- author: haze
+  changes:
+  - message: "Dodano Bluespace NFZ\u2122!"
+    type: Add
+  - message: "Dodano operacje usuni\u0119cia i wstawienia nerek."
+    type: Tweak
+  - message: "Biofabrykator medyczny mo\u017Ce teraz drukowa\u0107 nerki."
+    type: Tweak
+  id: 10121
+  time: '2026-11-13T15:42:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1242
+- author: Nikita
+  changes:
+  - message: "Dodano opcj\u0119 grafiki \"Mi\u0119kkie \u015Bwiat\u0142o\", kt\xF3\
+      ra przygasza zbyt jasne miejsca, gdzie nak\u0142ada si\u0119 \u015Bwiat\u0142\
+      o kilku lamp"
+    type: Add
+  - message: "Lampy \u015Bwiec\u0105 troch\u0119 s\u0142abiej i \u0142agodniej"
+    type: Tweak
+  - message: "Po\u015Bwiata \u015Bwiec\u0105cych przedmiot\xF3w jest domy\u015Blnie\
+      \ mocniejsza"
+    type: Tweak
+  - message: "\u015Awiat\u0142a \u0142adowania energetycznej strzelby i magnum energetycznego\
+      \ \u015Bwiec\u0105 w ciemno\u015Bci i zmieniaj\u0105 kolor razem z trybem strza\u0142\
+      u"
+    type: Tweak
+  id: 10122
+  time: '2026-11-13T16:15:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1244
+- author: Nikita
+  changes:
+  - message: Czarnobyl
+    type: Add
+  - message: "Reaktor, kt\xF3ry przekroczy temperatur\u0119 stopienia, wybucha dopiero\
+      \ po kr\xF3tkiej chwili. Je\u015Bli zd\u0105\u017Cysz go sch\u0142odzi\u0107\
+      , wybuchu nie b\u0119dzie."
+    type: Add
+  - message: "Ze stopionego reaktora wylewa si\u0119 radioaktywne korium. Zastyg\u0142\
+      e mo\u017Cna rozbi\u0107 kilofem i przerobi\u0107 w przetworniku rudy na uran\
+      \ i w\u0119giel."
+    type: Add
+  - message: "Silne promieniowanie wida\u0107 na ekranie jako szum."
+    type: Add
+  - message: "Stopiony reaktor wypuszcza du\u017Co mniej trytu, wi\u0119c po\u017C\
+      ar zostaje w okolicy ruin."
+    type: Tweak
+  - message: "Awaria ma\u0142ego reaktora jest s\u0142absza ni\u017C du\u017Cego."
+    type: Tweak
+  - message: "Dym i ogie\u0144 przegrzanego reaktora nie s\u0105 ju\u017C zamienione\
+      \ miejscami."
+    type: Fix
+  - message: "Awaria reaktora podnosi poziom alarmu na \u017C\xF3\u0142ty."
+    type: Fix
+  id: 10123
+  time: '2026-11-13T16:38:32.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1249

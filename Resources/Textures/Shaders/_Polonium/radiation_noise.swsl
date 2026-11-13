@@ -1,0 +1,15 @@
+uniform highp float intensity;
+uniform highp float seed;
+
+const highp float MAX_SPECKLES = 0.004;
+const highp float MAX_GRAIN = 0.05;
+
+void fragment() {
+    highp vec2 cell = floor(FRAGCOORD.xy * 0.5);
+    highp vec2 shift = vec2(fract(seed * 0.6180339), fract(seed * 0.4142135)) * 512.0;
+    highp vec2 noise = zRandom(cell * 0.01 + shift) * 0.5 + 0.5;
+
+    highp float speck = step(1.0 - MAX_SPECKLES * intensity, noise.x);
+    highp float alpha = max(speck * (0.6 + 0.4 * noise.y), noise.y * MAX_GRAIN * intensity);
+    COLOR = vec4(vec3(0.95), alpha);
+}

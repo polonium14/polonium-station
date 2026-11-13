@@ -1,0 +1,880 @@
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+using Content.IntegrationTests.Fixtures;
+using Content.Server._Polonium.Medical.PatientIntake;
+using Content.Server.Atmos.EntitySystems;
+using Content.Server.GameTicking;
+using Content.Shared.Atmos;
+using Content.Shared.Cargo;
+using Content.Shared.Cargo.Components;
+using Content.Shared.Cargo.Prototypes;
+using Content.Server.Storage.EntitySystems;
+using Content.Shared._Polonium.Medical.PatientIntake;
+using Content.Shared.DeviceLinking;
+using Content.Shared.DeviceLinking.Systems;
+using Content.Shared.Fax.Components;
+using Content.Shared.GameTicking;
+using Content.Shared.Gibbing;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Mind;
+using Content.Shared.Power.EntitySystems;
+using Content.Shared.Roles;
+using Content.Shared.SSDIndicator;
+using Content.Shared.Paper;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
+using Content.Shared.Body;
+using Content.Shared.Storage.Components;
+using NUnit.Framework;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Map;
+using Robust.Shared.Maths;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
+
+namespace Content.IntegrationTests.Tests._Polonium.Medical;
+
+[TestFixture]
+[TestOf(typeof(PatientIntakeSystem))]
+public sealed class PatientIntakeMachineTest : GameTest
+{
+    internal const string HealthyCase = "PatientIntakeTestHealthy";
+    private static readonly ProtoId<Content.Shared.Humanoid.Prototypes.RandomHumanoidSettingsPrototype> PatientSettings = "PatientIntakePatient";
+
+    [TestPrototypes]
+    private const string Prototypes = @"
+- type: patientIntakeCase
+  id: PatientIntakeTestHealthy
+  name: patient-intake-case-easy
+  weight: 0
+  payMin: 1000
+  payMax: 1000
+  windowMin: 600
+  windowMax: 600
+  issues: []
+
+- type: patientIntakeCase
+  id: PatientIntakeTestPoisoned
+  name: patient-intake-case-easy
+  weight: 0
+  payMin: 1000
+  payMax: 1000
+  issues: [ PatientIntakePoisoning ]
+
+- type: patientIntakeCase
+  id: PatientIntakeTestTimed
+  name: patient-intake-case-timed
+  weight: 0
+  payMin: 1000
+  payMax: 1000
+  windowMin: 60
+  windowMax: 60
+  debitOnTimeout: true
+  debitFraction: 0.5
+  issues: []
+
+- type: patientIntakeCase
+  id: PatientIntakeTestMass
+  name: patient-intake-case-mass-casualty
+  weight: 0
+  payMin: 1000
+  payMax: 1000
+  patientsMin: 2
+  patientsMax: 2
+  issues: []
+";
+
+    [Test]
+    public async Task EveryIssueFailsTheCheck()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var intake = entMan.System<PatientIntakeSystem>();
+        var map = await pair.CreateTestMap();
+
+        var issues = server.ProtoMan.EnumeratePrototypes<PatientIntakeIssuePrototype>().ToList();
+        var patients = new Dictionary<string, EntityUid>();
+        await server.WaitPost(() =>
+        {
+            AddAir(entMan, map.MapUid);
+            foreach (var issue in issues)
+                patients[issue.ID] = entMan.SpawnEntity("MobHuman", new MapCoordinates(Vector2.Zero, map.MapId));
+        });
+        await pair.RunTicksSync(5);
+
+        await server.WaitPost(() =>
+        {
+            foreach (var issue in issues)
+            {
+                var patient = patients[issue.ID];
+                var comp = entMan.AddComponent<PatientIntakePatientComponent>(patient);
+                comp.ExpectedParts = PartCategories(entMan, patient);
+                Assert.That(intake.ApplyIssue(patient, comp, issue), Is.True, $"{issue.ID} must apply to a human.");
+            }
+        });
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            foreach (var issue in issues)
+            {
+                var patient = patients[issue.ID];
+                var failures = intake.GetFailures((patient, entMan.GetComponent<PatientIntakePatientComponent>(patient)));
+                Assert.That(failures, Is.Not.Empty, $"{issue.ID} left a body that passes the check. expected=[{string.Join(",", entMan.GetComponent<PatientIntakePatientComponent>(patient).ExpectedParts)}] present=[{string.Join(",", PartCategories(entMan, patient))}]");
+
+                if (issue.Kind is PatientIntakeIssueKind.Bone or PatientIntakeIssueKind.Organ)
+                {
+                    Assert.That(failures.Select(f => f.Kind), Does.Contain(IntakeFailureKind.Trauma),
+                        $"{issue.ID} must go through a trauma, or surgery can't treat it.");
+                }
+            }
+        });
+    }
+
+    [Test]
+    public async Task EveryCaseStartsWithAnUnhealthyPatient()
+    {
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var intake = entMan.System<PatientIntakeSystem>();
+        var cases = server.ProtoMan.EnumeratePrototypes<PatientIntakeCasePrototype>()
+            .Where(c => c.Weight > 0)
+            .ToList();
+
+        foreach (var caseProto in cases)
+        {
+            var (machine, patient) = await StartCase(caseProto.ID);
+            await server.WaitAssertion(() =>
+            {
+                var comp = entMan.GetComponent<PatientIntakePatientComponent>(patient);
+                Assert.That(comp.Issues, Is.Not.Empty, $"{caseProto.ID} rolled no issues.");
+                Assert.That(comp.Gear, Is.Not.Empty, $"{caseProto.ID} patient got no clothes.");
+                Assert.That(intake.GetFailures((patient, comp)), Is.Not.Empty, $"{caseProto.ID} patient is already healthy.");
+            });
+            await server.WaitPost(() => entMan.DeleteEntity(machine));
+        }
+    }
+
+    [Test]
+    public async Task HealthyReturnPaysAndFreesTheMachine()
+    {
+        var (machine, patient) = await StartCase("PatientIntakeTestHealthy");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(entMan.GetComponent<MetaDataComponent>(patient).EntityPaused, Is.True, "Frozen until first opened.");
+            Assert.That(entMan.HasComponent<SSDIndicatorComponent>(patient), Is.False, "No player ever controls a patient, so it must not fall into SSD sleep.");
+            Assert.That(entMan.GetComponent<EntityStorageComponent>(machine).Contents.Contains(patient));
+        });
+
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(5);
+        await server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(entMan.GetComponent<MetaDataComponent>(patient).EntityPaused, Is.False);
+            Assert.That(entMan.GetComponent<PatientIntakePatientComponent>(patient).ClockStart, Is.Not.Null, "The clock starts on first open.");
+        });
+
+        await server.WaitPost(() => storage.CloseStorage(machine));
+        await Pair.RunTicksSync(5);
+        await server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(comp.Case, Is.Null);
+            Assert.That(comp.LastNet, Is.GreaterThan(900), "A healthy, prompt return pays nearly in full.");
+            Assert.That(comp.CasesClosed, Is.EqualTo(1));
+            Assert.That(comp.TotalNet, Is.EqualTo(comp.LastNet));
+
+            var roundEnd = new RoundEndTextAppendEvent();
+            entMan.EventBus.RaiseEvent(EventSource.Local, ref roundEnd);
+            Assert.That(roundEnd.Text, Does.Contain(comp.TotalNet.ToString()), "The round-end summary lists the machine's total.");
+            Assert.That(entMan.Deleted(patient) || entMan.IsQueuedForDeletion(patient), Is.True);
+        });
+    }
+
+    [Test]
+    public async Task MassCasualtyPaysWhenTheLastPatientIsBack()
+    {
+        var (machine, first) = await StartCase("PatientIntakeTestMass", popDelay: TimeSpan.Zero);
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+
+        await OpenAndClose(machine);
+        await Pair.RunTicksSync(5);
+
+        EntityUid second = default;
+        await server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(comp.Case, Is.Not.Null, "One of two patients back: the case stays open.");
+            second = comp.Case!.Patients.Single();
+            Assert.That(second, Is.Not.EqualTo(first), "The second patient pops once the tray is free.");
+        });
+
+
+        await OpenAndClose(machine);
+        await server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(comp.Case, Is.Null);
+            Assert.That(comp.LastNet, Is.GreaterThan(900), "Both shares paid out at the end.");
+        });
+    }
+
+    /// <summary>
+    /// Returning one mass casualty patient opens the tray, which ejects the next one. Closing must
+    /// take back only the returned patient, even with someone standing on the tray tile.
+    /// </summary>
+    [Test]
+    public async Task ReturningAPatientLeavesTheNextOneOnTheTray()
+    {
+        var (machine, first) = await StartCase("PatientIntakeTestMass", popDelay: TimeSpan.Zero);
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+        var xforms = entMan.System<SharedTransformSystem>();
+        var away = new EntityCoordinates(machine, new Vector2(3, 0));
+
+        // Take the first patient away and close the empty tray, so the second one pops in.
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(5);
+        await server.WaitPost(() =>
+        {
+            xforms.SetCoordinates(first, away);
+            storage.CloseStorage(machine);
+        });
+        await Pair.RunTicksSync(5);
+
+        EntityUid second = default;
+        await server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            second = comp.Case!.Patients.Single(p => p != first);
+            Assert.That(entMan.GetComponent<EntityStorageComponent>(machine).Contents.Contains(second));
+        });
+
+        // Open to return the first: the second lands on the tray, next to a standing bystander.
+        EntityUid bystander = default;
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(5);
+        await server.WaitPost(() =>
+        {
+            var tray = new EntityCoordinates(machine, entMan.GetComponent<EntityStorageComponent>(machine).EnteringOffset);
+            xforms.SetCoordinates(first, tray);
+            // Lying down, the next patient would pass the morgue's insert checks.
+            entMan.System<Content.Shared.Standing.StandingStateSystem>().Down(second);
+            bystander = entMan.SpawnEntity("MobHuman", tray);
+        });
+        await Pair.RunTicksSync(5);
+        await server.WaitPost(() =>
+        {
+            entMan.GetComponent<PatientIntakeMachineComponent>(machine).CloseLockedUntil = TimeSpan.Zero;
+            Assert.That(storage.TryCloseStorage(machine, machine), Is.True, "A standing bystander must not block the close.");
+        });
+        await Pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(entMan.Deleted(first) || entMan.IsQueuedForDeletion(first), Is.True, "The returned patient is judged.");
+            Assert.That(entMan.Deleted(second) || entMan.IsQueuedForDeletion(second), Is.False, "The patient just ejected stays out.");
+            Assert.That(entMan.Deleted(bystander) || entMan.IsQueuedForDeletion(bystander), Is.False);
+            Assert.That(comp.Case, Is.Not.Null, "The second patient is still out.");
+            Assert.That(comp.Case!.Patients, Is.EquivalentTo(new[] { second }));
+        });
+    }
+
+    [Test]
+    public async Task UntreatedReturnPaysNothing()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestPoisoned");
+        await OpenAndClose(machine);
+        await Pair.Server.WaitAssertion(() =>
+        {
+            var comp = Pair.Server.EntMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(comp.Case, Is.Null);
+            Assert.That(comp.LastNet, Is.EqualTo(0), "Easy cases never debit for a failed check.");
+        });
+    }
+
+    [TestCase(9, 1000)]
+    [TestCase(15, 500)]
+    [TestCase(25, 0)]
+    public async Task PayOnlyDropsAfterTheTimeLimit(int minutes, int expected)
+    {
+        var (machine, patient) = await StartCase("PatientIntakeTestHealthy");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(2);
+        await server.WaitPost(() =>
+        {
+            entMan.GetComponent<PatientIntakePatientComponent>(patient).ClockStart =
+                server.ResolveDependency<IGameTiming>().CurTime - TimeSpan.FromMinutes(minutes);
+            storage.CloseStorage(machine);
+        });
+        await Pair.RunTicksSync(5);
+        await server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<PatientIntakeMachineComponent>(machine).LastNet, Is.EqualTo(expected).Within(1)));
+    }
+
+    [Test]
+    public async Task LateTimedReturnDebits()
+    {
+        var (machine, patient) = await StartCase("PatientIntakeTestTimed");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(2);
+        await server.WaitPost(() =>
+        {
+            entMan.GetComponent<PatientIntakePatientComponent>(patient).ClockStart =
+                server.ResolveDependency<IGameTiming>().CurTime - TimeSpan.FromMinutes(5);
+            storage.CloseStorage(machine);
+        });
+        await Pair.RunTicksSync(5);
+        await server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<PatientIntakeMachineComponent>(machine).LastNet, Is.EqualTo(-500)));
+    }
+
+    [Test]
+    public async Task TrayStaysOpenAfterOpening()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestHealthy");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(2);
+        await server.WaitPost(() => storage.TryCloseStorage(machine, machine));
+        await server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<EntityStorageComponent>(machine).Open, Is.True, "Closing right after opening must be refused."));
+
+        await server.WaitPost(() => entMan.GetComponent<PatientIntakeMachineComponent>(machine).CloseLockedUntil = TimeSpan.Zero);
+        await server.WaitPost(() => storage.TryCloseStorage(machine, machine));
+        await server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<EntityStorageComponent>(machine).Open, Is.False, "Once the lock runs out the tray closes."));
+    }
+
+    [Test]
+    public async Task WrongBodyIsRejected()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestHealthy");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(2);
+        await server.WaitPost(() =>
+        {
+            // Pull the patient away and leave a stranger's corpse on the tray.
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            var patient = comp.Case!.Patients.First();
+            var xform = entMan.System<SharedTransformSystem>();
+            xform.SetCoordinates(patient, new EntityCoordinates(machine, new Vector2(5, 5)));
+            var stranger = entMan.SpawnEntity("MobHuman", new EntityCoordinates(machine, new Vector2(0, -1)));
+            entMan.System<Content.Shared.Standing.StandingStateSystem>().Down(stranger);
+            entMan.GetComponent<PatientIntakeMachineComponent>(machine).CloseLockedUntil = TimeSpan.Zero;
+            storage.TryCloseStorage(machine, machine);
+        });
+        await Pair.RunTicksSync(2);
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(entMan.GetComponent<EntityStorageComponent>(machine).Open, Is.True, "The close must be refused.");
+            Assert.That(entMan.GetComponent<PatientIntakeMachineComponent>(machine).Case, Is.Not.Null, "Nothing is voided.");
+        });
+    }
+
+    [Test]
+    public async Task BodyHiddenInABagWithThePatientIsRejected()
+    {
+        var (machine, patient) = await StartCase("PatientIntakeTestHealthy");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(2);
+        await server.WaitPost(() =>
+        {
+            // Closing would delete everything on the tray, so a body tucked into a bag must stop it.
+            var tray = new EntityCoordinates(machine, new Vector2(0, -1));
+            var bag = entMan.SpawnEntity("BodyBag", tray);
+            var stranger = entMan.SpawnEntity("MobHuman", tray);
+            storage.Insert(stranger, bag);
+            storage.CloseStorage(bag);
+            entMan.GetComponent<PatientIntakeMachineComponent>(machine).CloseLockedUntil = TimeSpan.Zero;
+            storage.TryCloseStorage(machine, machine);
+        });
+        await Pair.RunTicksSync(2);
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(entMan.GetComponent<EntityStorageComponent>(machine).Open, Is.True, "The close must be refused.");
+            Assert.That(entMan.EntityExists(patient), Is.True);
+        });
+    }
+
+    [Test]
+    public async Task FrozenPatientsOrgansAndGearArePausedToo()
+    {
+        var (_, patient) = await StartCase("PatientIntakeTestHealthy");
+        var entMan = Pair.Server.EntMan;
+        await Pair.Server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakePatientComponent>(patient);
+            var organs = entMan.GetComponent<BodyComponent>(patient).Organs!.ContainedEntities;
+            Assert.That(organs, Is.Not.Empty);
+            Assert.That(organs.Concat(comp.Gear).All(e => entMan.GetComponent<MetaDataComponent>(e).EntityPaused), Is.True,
+                "Organs and worn gear must be frozen with the body, or the patient deteriorates before the tray opens.");
+        });
+    }
+
+    [Test]
+    public async Task MindEnteringThePatientFailsTheCase()
+    {
+        var (machine, patient) = await StartCase("PatientIntakeTestHealthy");
+        var entMan = Pair.Server.EntMan;
+        await Pair.Server.WaitPost(() =>
+        {
+            var minds = entMan.System<SharedMindSystem>();
+            var mind = minds.CreateMind(null);
+            minds.TransferTo(mind, patient);
+        });
+        await Pair.RunTicksSync(5);
+        await Pair.Server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(comp.Case, Is.Null);
+            Assert.That(comp.LastNet, Is.EqualTo(-500));
+            Assert.That(entMan.HasComponent<PatientIntakePatientComponent>(patient), Is.False, "The body becomes an ordinary one.");
+        });
+    }
+
+    [Test]
+    public async Task GibbingThePatientFailsTheCase()
+    {
+        var (machine, patient) = await StartCase("PatientIntakeTestHealthy");
+        var entMan = Pair.Server.EntMan;
+        await Pair.Server.WaitPost(() => entMan.System<GibbingSystem>().Gib(patient));
+        await Pair.RunTicksSync(5);
+        await Pair.Server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(comp.Case, Is.Null);
+            Assert.That(comp.LastNet, Is.EqualTo(-500));
+        });
+    }
+
+    [Test]
+    public async Task DestroyingTheMachineVoidsTheCase()
+    {
+        var (machine, patient) = await StartCase("PatientIntakeTestHealthy");
+        var entMan = Pair.Server.EntMan;
+        await Pair.Server.WaitPost(() =>
+        {
+            entMan.System<EntityStorageSystem>().OpenStorage(machine);
+            entMan.DeleteEntity(machine);
+        });
+        await Pair.RunTicksSync(5);
+        await Pair.Server.WaitAssertion(() =>
+        {
+            Assert.That(entMan.EntityExists(patient), Is.True, "The body stays.");
+            Assert.That(entMan.HasComponent<PatientIntakePatientComponent>(patient), Is.False);
+        });
+    }
+
+    /// <summary>
+    /// Smashing the machine mid-case still settles what returned patients earned, with the station
+    /// the case started on, even though the machine no longer belongs to any station.
+    /// </summary>
+    [Test]
+    public async Task DestroyingTheMachineSettlesWhatWasEarned()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestMass", popDelay: TimeSpan.Zero);
+        var entMan = Pair.Server.EntMan;
+        var (bank, account) = await GiveCaseABank(machine, 100);
+
+        await OpenAndClose(machine);
+        await Pair.RunTicksSync(5);
+        await Pair.Server.WaitPost(() => entMan.DeleteEntity(machine));
+        await Pair.RunTicksSync(5);
+
+        await Pair.Server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<StationBankAccountComponent>(bank).Accounts[account], Is.InRange(590, 600),
+                "The returned patient's share is paid out."));
+    }
+
+    /// <summary>
+    /// Like delivery penalties, a debit takes the account down to zero at most.
+    /// </summary>
+    [Test]
+    public async Task DebitsStopAtAnEmptyAccount()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestHealthy");
+        var entMan = Pair.Server.EntMan;
+        var (bank, account) = await GiveCaseABank(machine, 100);
+
+        await Pair.Server.WaitPost(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            entMan.System<PatientIntakeSystem>().MarkMissing((machine, comp), comp.Case!);
+        });
+        await Pair.Server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<StationBankAccountComponent>(bank).Accounts[account], Is.EqualTo(0),
+                "A 500 debit on 100 empties the account without going negative."));
+        await Pair.Server.WaitAssertion(() =>
+            Assert.That(entMan.GetComponent<PatientIntakeMachineComponent>(machine).LastNet, Is.EqualTo(-100),
+                "The stats record what the account actually lost."));
+    }
+
+    /// <summary>
+    /// Test maps have no station, so the active case settles with a stand-in bank.
+    /// </summary>
+    private async Task<(EntityUid Bank, ProtoId<CargoAccountPrototype> Account)> GiveCaseABank(EntityUid machine, int balance)
+    {
+        var entMan = Pair.Server.EntMan;
+        EntityUid bank = default;
+        ProtoId<CargoAccountPrototype> account = default;
+        await Pair.Server.WaitPost(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            account = comp.Account;
+            bank = entMan.Spawn();
+            var bankComp = entMan.AddComponent<StationBankAccountComponent>(bank);
+            var cargo = entMan.System<SharedCargoSystem>();
+            cargo.UpdateBankAccount((bank, bankComp), balance - cargo.GetBalanceFromAccount((bank, bankComp), account), account);
+            comp.Case!.Station = bank;
+        });
+        return (bank, account);
+    }
+
+    [Test]
+    public async Task SwitchingOnNeedsMedicalAccessButOffDoesNot()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestHealthy");
+        var entMan = Pair.Server.EntMan;
+        await Pair.Server.WaitAssertion(() =>
+        {
+            var intake = entMan.System<PatientIntakeSystem>();
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            var coords = entMan.GetComponent<TransformComponent>(machine).Coordinates;
+            var stranger = entMan.SpawnEntity("MobHuman", coords);
+
+            intake.TryToggle((machine, comp), stranger, false);
+            Assert.That(comp.Enabled, Is.False, "Anyone may switch it off.");
+
+            intake.TryToggle((machine, comp), stranger, true);
+            Assert.That(comp.Enabled, Is.False, "No medical access, no switching on.");
+
+            var medic = entMan.SpawnEntity("MobHuman", coords);
+            var id = entMan.SpawnEntity("MedicalIDCard", coords);
+            entMan.System<SharedHandsSystem>().TryPickupAnyHand(medic, id);
+            intake.TryToggle((machine, comp), medic, true);
+            Assert.That(comp.Enabled, Is.True);
+        });
+    }
+
+    [Test]
+    public async Task LinkedFaxPrintsTheCaseFile()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var map = await pair.CreateTestMap();
+
+        EntityUid machine = default, fax = default;
+        await server.WaitPost(() =>
+        {
+            AddAir(entMan, map.MapUid);
+            entMan.System<SharedMapSystem>().SetTile(map.Grid, new Vector2i(0, -1), map.Tile.Tile);
+            machine = entMan.SpawnEntity("PatientIntakeMachine", map.GridCoords);
+            fax = entMan.SpawnEntity("FaxMachineBase", map.GridCoords);
+            entMan.System<DeviceLinkSystem>().LinkDefaults(null, machine, fax);
+
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            entMan.System<PatientIntakeSystem>().StartCase((machine, comp), entMan.GetComponent<EntityStorageComponent>(machine),
+                server.ProtoMan.Index<PatientIntakeCasePrototype>(HealthyCase));
+        });
+        await pair.RunTicksSync(5);
+        await server.WaitAssertion(() =>
+        {
+            var printed = entMan.GetComponent<FaxMachineComponent>(fax).PrintingQueue.Count;
+            var papers = entMan.GetComponent<EntityStorageComponent>(machine).Contents.ContainedEntities
+                .Count(e => entMan.HasComponent<PaperComponent>(e));
+            Assert.That(printed + papers, Is.GreaterThan(0), "The case file must be produced somewhere.");
+            Assert.That(papers, Is.Zero, "With a fax linked, the case file goes to the fax, not the tray.");
+        });
+    }
+
+    [Test]
+    public async Task PapersAreStampedForms()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestHealthy");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+
+        await server.WaitAssertion(() =>
+        {
+            var file = entMan.GetComponent<EntityStorageComponent>(machine).Contents.ContainedEntities
+                .Single(e => entMan.HasComponent<PaperComponent>(e));
+            var paper = entMan.GetComponent<PaperComponent>(file);
+            Assert.That(paper.Content, Does.Contain("NFZ-MED"), "The case file uses the letterhead.");
+            Assert.That(paper.StampedBy, Has.Count.EqualTo(1), "The case file comes stamped.");
+        });
+
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(2);
+        await server.WaitPost(() => storage.CloseStorage(machine));
+        await Pair.RunTicksSync(5);
+        await server.WaitAssertion(() =>
+        {
+            var lookup = entMan.System<EntityLookupSystem>();
+            var receipt = lookup.GetEntitiesInRange<PaperComponent>(entMan.GetComponent<TransformComponent>(machine).Coordinates, 2f)
+                .Single(p => !entMan.GetComponent<TransformComponent>(p).ParentUid.Equals(machine) && p.Comp.Content.Contains("NFZ-MED"));
+            Assert.That(receipt.Comp.StampedBy, Has.Count.EqualTo(1));
+        });
+    }
+
+    [Test]
+    public async Task StartCommandStartsTheRequestedCase()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var map = await pair.CreateTestMap();
+
+        EntityUid machine = default;
+        await server.WaitPost(() =>
+        {
+            AddAir(entMan, map.MapUid);
+            machine = entMan.SpawnEntity("PatientIntakeMachine", map.GridCoords);
+            var console = server.ResolveDependency<Robust.Shared.Console.IConsoleHost>();
+            console.ExecuteCommand($"patientintake_start {entMan.GetNetEntity(machine)} PatientIntakeTestPoisoned");
+        });
+        await pair.RunTicksSync(2);
+        await server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(comp.Case, Is.Not.Null, "No medic online and no timer: the command must start it anyway.");
+            Assert.That(comp.Case!.Proto.Id, Is.EqualTo("PatientIntakeTestPoisoned"));
+        });
+    }
+
+    [Test]
+    public async Task BlacklistedSpeciesAreNeverRolled()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var map = await pair.CreateTestMap();
+        var caseProto = server.ProtoMan.Index<PatientIntakeCasePrototype>(HealthyCase);
+
+        await server.WaitAssertion(() =>
+        {
+            var intake = entMan.System<PatientIntakeSystem>();
+            var blacklist = server.ProtoMan.Index(PatientSettings).SpeciesBlacklist;
+            Assert.That(blacklist, Is.Not.Empty);
+
+            for (var i = 0; i < 60; i++)
+            {
+                var machine = entMan.SpawnEntity("PatientIntakeMachine", map.GridCoords);
+                var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+                intake.StartCase((machine, comp), entMan.GetComponent<EntityStorageComponent>(machine), caseProto);
+                var patient = comp.Case!.Patients.First();
+                var species = entMan.GetComponent<Content.Shared.Humanoid.HumanoidProfileComponent>(patient).Species;
+                Assert.That(blacklist, Does.Not.Contain(species.Id));
+                entMan.DeleteEntity(machine);
+                entMan.DeleteEntity(patient);
+            }
+        });
+    }
+
+    [Test]
+    public async Task ReceiptItemisesTimeBasePayAndMissingEffects()
+    {
+        var (machine, patient) = await StartCase("PatientIntakeTestHealthy");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(5);
+        await server.WaitPost(() =>
+        {
+            // Keep one issued item out of the tray.
+            var item = entMan.GetComponent<PatientIntakePatientComponent>(patient).Gear.First();
+            entMan.System<SharedTransformSystem>().SetCoordinates(item, new EntityCoordinates(machine, new Vector2(5, 5)));
+            storage.CloseStorage(machine);
+        });
+        await Pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var receipt = string.Join("\n", entMan.EntityQuery<PaperComponent>().Select(p => p.Content));
+            var loc = server.ResolveDependency<Robust.Shared.Localization.ILocalizationManager>();
+            Assert.That(receipt, Does.Contain(loc.GetString("patient-intake-receipt-base", ("amount", 1000))));
+            var gearPrefix = loc.GetString("patient-intake-receipt-gear", ("count", 1), ("amount", 0), ("percent", 0));
+            gearPrefix = gearPrefix[..gearPrefix.IndexOf("-0", System.StringComparison.Ordinal)];
+            Assert.That(receipt, Does.Contain(gearPrefix), "The missing-effects cut is listed with its amount.");
+
+            var net = entMan.GetComponent<PatientIntakeMachineComponent>(machine).LastNet;
+            Assert.That(net, Is.InRange(200, 550), "A 50-75% cut off ~1000 spesos.");
+        });
+    }
+
+    [Test]
+    public async Task EveryOutfitItemCanBeWornByAHuman()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var map = await pair.CreateTestMap();
+
+        await server.WaitAssertion(() =>
+        {
+            var machine = entMan.SpawnEntity("PatientIntakeMachine", map.GridCoords);
+            var inventory = entMan.System<Content.Shared.Inventory.InventorySystem>();
+            foreach (var group in entMan.GetComponent<PatientIntakeMachineComponent>(machine).Outfits)
+            {
+                foreach (var (slot, options) in server.ProtoMan.Index(group).Slots)
+                {
+                    foreach (var itemId in options.Items)
+                    {
+                        // A jumpsuit first, since some slots need one underneath.
+                        var human = entMan.SpawnEntity("MobHuman", map.GridCoords);
+                        if (slot != "jumpsuit")
+                            inventory.TryEquip(human, entMan.SpawnEntity("ClothingUniformJumpsuitColorGrey", map.GridCoords), "jumpsuit", true, true);
+
+                        var item = entMan.SpawnEntity(itemId, map.GridCoords);
+                        Assert.That(inventory.TryEquip(human, item, slot, true, true), Is.True, $"{group}: {itemId} can't be worn in {slot}.");
+                        entMan.DeleteEntity(human);
+                    }
+                }
+            }
+        });
+    }
+
+    [Test]
+    public async Task MarkMissingDebitsAndReleasesThePatient()
+    {
+        var (machine, patient) = await StartCase("PatientIntakeTestHealthy");
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        await server.WaitPost(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            entMan.System<PatientIntakeSystem>().MarkMissing((machine, comp), comp.Case!);
+        });
+        await server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(comp.Case, Is.Null);
+            Assert.That(comp.LastNet, Is.EqualTo(-500));
+            Assert.That(entMan.HasComponent<PatientIntakePatientComponent>(patient), Is.False);
+            Assert.That(entMan.GetComponent<MetaDataComponent>(patient).EntityPaused, Is.False);
+
+            // The patient was still in the closed tray: it must not stay there and block the next case.
+            var storage = entMan.GetComponent<EntityStorageComponent>(machine);
+            Assert.That(storage.Open, Is.True);
+            Assert.That(storage.Contents.Contains(patient), Is.False);
+        });
+    }
+
+    /// <summary>
+    /// Marking a mass casualty case missing debits only the patients still out, not the whole case.
+    /// </summary>
+    [Test]
+    public async Task MarkMissingDebitsOnlyOutstandingPatients()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestMass", popDelay: TimeSpan.Zero);
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+
+        // The first of two patients comes back healthy and is paid its share.
+        await OpenAndClose(machine);
+        await Pair.RunTicksSync(5);
+
+        await server.WaitPost(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            entMan.System<PatientIntakeSystem>().MarkMissing((machine, comp), comp.Case!);
+        });
+        await server.WaitAssertion(() =>
+        {
+            // About +500 for the returned share, -250 (half of the other share) for the missing one.
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(comp.Case, Is.Null);
+            Assert.That(comp.LastNet, Is.InRange(200, 250));
+        });
+    }
+
+    private async Task<(EntityUid Machine, EntityUid Patient)> StartCase(string caseId, TimeSpan? popDelay = null)
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var map = await pair.CreateTestMap();
+
+        EntityUid machine = default;
+        EntityUid patient = default;
+        await server.WaitPost(() =>
+        {
+            AddAir(entMan, map.MapUid);
+
+            // The tray slides out onto the tile south of the machine.
+            entMan.System<SharedMapSystem>().SetTile(map.Grid, new Vector2i(0, -1), map.Tile.Tile);
+            machine = entMan.SpawnEntity("PatientIntakeMachine", map.GridCoords);
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            comp.PopDelay = popDelay ?? comp.PopDelay;
+            var storage = entMan.GetComponent<EntityStorageComponent>(machine);
+            entMan.System<PatientIntakeSystem>().StartCase((machine, comp), storage, server.ProtoMan.Index<PatientIntakeCasePrototype>(caseId));
+            patient = comp.Case!.Patients.First();
+        });
+        await pair.RunTicksSync(5);
+        return (machine, patient);
+    }
+
+    /// <summary>
+    /// Breathable air, so live patients don't pick up vacuum damage between treatment and the check.
+    /// </summary>
+    public static void AddAir(IEntityManager entMan, EntityUid map)
+    {
+        var moles = new float[Atmospherics.AdjustedNumberOfGases];
+        moles[(int) Gas.Oxygen] = 21.824779f;
+        moles[(int) Gas.Nitrogen] = 82.10312f;
+        entMan.System<AtmosphereSystem>().SetMapAtmosphere(map, false, new GasMixture(moles, Atmospherics.T20C));
+    }
+
+    private async Task OpenAndClose(EntityUid machine)
+    {
+        var storage = Pair.Server.EntMan.System<EntityStorageSystem>();
+        await Pair.Server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(5);
+        await Pair.Server.WaitPost(() => storage.CloseStorage(machine));
+        await Pair.RunTicksSync(5);
+    }
+
+    private static HashSet<ProtoId<OrganCategoryPrototype>> PartCategories(IEntityManager entMan, EntityUid patient)
+    {
+        return entMan.GetComponent<BodyComponent>(patient).Organs!.ContainedEntities
+            .Select(o => entMan.GetComponent<OrganComponent>(o).Category)
+            .OfType<ProtoId<OrganCategoryPrototype>>()
+            .ToHashSet();
+    }
+}
