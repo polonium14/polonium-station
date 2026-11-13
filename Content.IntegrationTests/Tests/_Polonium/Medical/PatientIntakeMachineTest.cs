@@ -718,6 +718,39 @@ public sealed class PatientIntakeMachineTest : GameTest
             Assert.That(comp.LastNet, Is.EqualTo(-500));
             Assert.That(entMan.HasComponent<PatientIntakePatientComponent>(patient), Is.False);
             Assert.That(entMan.GetComponent<MetaDataComponent>(patient).EntityPaused, Is.False);
+
+            // The patient was still in the closed tray: it must not stay there and block the next case.
+            var storage = entMan.GetComponent<EntityStorageComponent>(machine);
+            Assert.That(storage.Open, Is.True);
+            Assert.That(storage.Contents.Contains(patient), Is.False);
+        });
+    }
+
+    /// <summary>
+    /// Marking a mass casualty case missing debits only the patients still out, not the whole case.
+    /// </summary>
+    [Test]
+    public async Task MarkMissingDebitsOnlyOutstandingPatients()
+    {
+        var (machine, _) = await StartCase("PatientIntakeTestMass", popDelay: TimeSpan.Zero);
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+
+        // The first of two patients comes back healthy and is paid its share.
+        await OpenAndClose(machine);
+        await Pair.RunTicksSync(5);
+
+        await server.WaitPost(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            entMan.System<PatientIntakeSystem>().MarkMissing((machine, comp), comp.Case!);
+        });
+        await server.WaitAssertion(() =>
+        {
+            // About +500 for the returned share, -250 (half of the other share) for the missing one.
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(comp.Case, Is.Null);
+            Assert.That(comp.LastNet, Is.InRange(200, 250));
         });
     }
 

@@ -500,6 +500,9 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
     /// </summary>
     public void MarkMissing(Entity<PatientIntakeMachineComponent> ent, PatientIntakeCase activeCase)
     {
+        // Patients already judged were paid or debited on return; only the outstanding ones count.
+        var outstanding = activeCase.Patients.Count + activeCase.ToSpawn;
+
         foreach (var patient in activeCase.Patients)
         {
             ReleasePatient(patient);
@@ -508,7 +511,14 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
         activeCase.Patients.Clear();
         activeCase.ToSpawn = 0;
 
-        var debit = (int) (activeCase.Payout * _proto.Index(activeCase.Proto).DebitFraction);
+        // A released body left in the closed tray would keep the machine from starting another case.
+        // With the patients cleared, opening doesn't start any clock.
+        if (TryComp<EntityStorageComponent>(ent, out var storage)
+            && !storage.Open
+            && storage.Contents.ContainedEntities.Any(HasComp<BodyComponent>))
+            _storage.OpenStorage((ent, storage));
+
+        var debit = Debit(activeCase) * outstanding;
         activeCase.Net -= debit;
         activeCase.Receipt.Add(Loc.GetString("patient-intake-receipt-missing", ("amount", debit)));
         TryFinishCase(ent);
