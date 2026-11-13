@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Content.Shared.Atmos.Prototypes;
@@ -6,7 +7,12 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Containers;
+using Content.Shared.EntityEffects;
+using Content.Shared.EntityEffects.Effects.Atmos;
+using Content.Shared.EntityEffects.Effects.Body;
+using Content.Shared.EntityEffects.Effects.StatusEffects;
 using Content.Shared.EntityTable;
+using Content.Shared.FixedPoint;
 using Content.Shared.Metabolism;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Localization;
@@ -23,12 +29,17 @@ public sealed partial class ChemistryExporter : WikiExporter
     private static readonly ProtoId<MixingCategoryPrototype> DefaultMix = "DummyMix";
 
     private SharedSolutionContainerSystem _solutions = default!;
+    private Dictionary<ProtoId<MetabolismStagePrototype>, MetabolismSolutionEntry> _stages = default!;
+    private TimeSpan _cycle;
 
     public override string Name => "chemistry";
 
     public override object Export()
     {
         _solutions = EntitySystems.GetEntitySystem<SharedSolutionContainerSystem>();
+        var metabolizer = Factory.GetComponent<MetabolizerComponent>();
+        _stages = metabolizer.Solutions;
+        _cycle = metabolizer.UpdateInterval;
         return new WikiData(
             Proto.EnumeratePrototypes<MetabolismStagePrototype>().ToDictionary(p => p.ID, p => p.LocalizedName),
             Proto.EnumeratePrototypes<MixingCategoryPrototype>().ToDictionary(p => p.ID, p => Loc.GetString(p.VerbText)),
@@ -40,9 +51,9 @@ public sealed partial class ChemistryExporter : WikiExporter
 
     private WikiReagent MakeReagent(ReagentPrototype proto)
     {
-        var effects = new ReagentGuideEntry(proto, Proto, EntitySystems).GuideEntries?
-            .Where(e => e.Value.EffectDescriptions.Length > 0)
-            .Select(e => new WikiMetabolism(e.Key, e.Value.EffectDescriptions))
+        var effects = proto.Metabolisms?.Metabolisms
+            .Select(m => MakeMetabolism(proto, m.Key, m.Value))
+            .Where(m => m.Lines.Length > 0)
             .ToList();
 
         return new WikiReagent(
@@ -51,6 +62,50 @@ public sealed partial class ChemistryExporter : WikiExporter
             proto.SubstanceColor.ToHex(),
             proto.Group,
             effects?.Count > 0 ? effects : null);
+    }
+
+    private WikiMetabolism MakeMetabolism(ReagentPrototype proto, ProtoId<MetabolismStagePrototype> stage, ReagentEffectsEntry entry)
+    {
+        var all = _stages.TryGetValue(stage, out var solution) && solution.MetabolizeAll;
+        var lines = entry.Effects
+            .Select(effect => EffectLine(proto, effect, entry.MetabolismRate))
+            .OfType<string>()
+            .ToArray();
+
+        return new WikiMetabolism(stage, entry.MetabolismRate.Double() / _cycle.TotalSeconds, all, lines);
+    }
+
+    /// <summary>
+    /// The guidebook line of one effect. The game does not say how strong some effects are,
+    /// so their part of the line is swapped for a wiki text with the amount.
+    /// </summary>
+    private string? EffectLine(ReagentPrototype proto, EntityEffect effect, FixedPoint2 rate)
+    {
+        var line = proto.GuidebookReagentEffectDescription(Proto, EntitySystems, effect, rate);
+        if (line == null
+            || AmountText(effect) is not { } amount
+            || effect.EntityEffectGuidebookText(Proto, EntitySystems) is not { } text)
+            return line;
+
+        return line.Replace(text, amount);
+    }
+
+    private static string? AmountText(EntityEffect effect)
+    {
+        return effect switch
+        {
+            Jitter jitter => Loc.GetString("wiki-effect-jittering",
+                ("chance", jitter.Probability), ("time", jitter.Time), ("refresh", jitter.Refresh)),
+            Drunk drunk => Loc.GetString("wiki-effect-drunk",
+                ("chance", drunk.Probability), ("time", drunk.BoozePower.TotalSeconds)),
+            ModifyBleed bleed => Loc.GetString("wiki-effect-modify-bleed-amount",
+                ("chance", bleed.Probability), ("deltasign", MathF.Sign(bleed.Amount)), ("amount", MathF.Abs(bleed.Amount))),
+            ModifyBloodLevel blood => Loc.GetString("wiki-effect-modify-blood-level",
+                ("chance", blood.Probability), ("deltasign", MathF.Sign(blood.Amount.Float())), ("amount", MathF.Abs(blood.Amount.Float()))),
+            Flammable flammable => Loc.GetString("wiki-effect-flammable-reaction",
+                ("chance", flammable.Probability), ("amount", flammable.Multiplier)),
+            _ => null,
+        };
     }
 
     private WikiReaction MakeReaction(ReactionPrototype proto)
@@ -118,7 +173,9 @@ public sealed partial class ChemistryExporter : WikiExporter
 
     private sealed record WikiReagent(string Name, string Desc, string Color, string Group, List<WikiMetabolism>? Effects);
 
-    private sealed record WikiMetabolism(string Stage, string[] Lines);
+    /// <param name="Rate">Units metabolized per second.</param>
+    /// <param name="All">The organ metabolizes the whole amount every cycle, like the lungs, so Rate does not apply.</param>
+    private sealed record WikiMetabolism(string Stage, double Rate, bool All, string[] Lines);
 
     private sealed record WikiReaction(
         Dictionary<string, double> In,
