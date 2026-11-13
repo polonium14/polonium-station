@@ -907,3 +907,4 @@
     staticPacks:
     - MedicalBiofabStatic
     - ProstheticsStatic
+    - MedicalBiofabKidneysStatic

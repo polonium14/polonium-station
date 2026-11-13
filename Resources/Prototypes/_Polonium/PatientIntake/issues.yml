@@ -151,8 +151,7 @@
   id: PatientIntakeMissingOrgan
   kind: RemovePart
   cost: 4
-  # Only organs with an insert surgery: there is none for kidneys.
-  categories: [ Eyes, Lungs, Liver, Stomach ]
+  categories: [ Eyes, Lungs, Liver, Kidneys, Stomach ]
   description: patient-intake-issue-missing-organ
   symptom: patient-intake-symptom-missing-organ
 

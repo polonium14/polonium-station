@@ -52,6 +52,7 @@ public sealed class PatientIntakeTreatmentTest : GameTest
         { "Lungs", ("SurgeryInsertLungs", "SurgeryStepInsertLungs") },
         { "Liver", ("SurgeryInsertLiver", "SurgeryStepInsertLiver") },
         { "Stomach", ("SurgeryInsertStomach", "SurgeryStepInsertStomach") },
+        { "Kidneys", ("SurgeryInsertKidneys", "SurgeryStepInsertKidneys") },
         { "HandLeft", ("SurgeryAttachLeftHand", "SurgeryStepInsertHandLeft") },
         { "HandRight", ("SurgeryAttachRightHand", "SurgeryStepInsertHandRight") },
         { "FootLeft", ("SurgeryAttachLeftFoot", "SurgeryStepInsertFootLeft") },
@@ -327,6 +328,46 @@ public sealed class PatientIntakeTreatmentTest : GameTest
             var failures = intake.GetFailures((patient, entMan.GetComponent<PatientIntakePatientComponent>(patient)));
             Assert.That(failures.Where(f => f.Kind is IntakeFailureKind.RequestNotDone or IntakeFailureKind.MissingPart), Is.Empty,
                 string.Join(", ", failures));
+        });
+    }
+
+    /// <summary>
+    /// Kidneys have their own remove and insert surgeries, so a patient can get new ones.
+    /// </summary>
+    [Test]
+    public async Task KidneysCanBeReplaced()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var intake = entMan.System<PatientIntakeSystem>();
+        var map = await pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+
+        EntityUid patient = default, donor = default;
+        await server.WaitPost(() =>
+        {
+            PatientIntakeMachineTest.AddAir(entMan, map.MapUid);
+            patient = entMan.SpawnEntity("MobHuman", coords);
+            donor = entMan.SpawnEntity("MobHuman", coords);
+        });
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(entMan.System<SurgerySystem>().GetSingleton("SurgeryRemoveKidneys"), Is.Not.Null);
+
+            entMan.GetComponent<SurgeryTargetComponent>(patient).SepsisImmune = true;
+            var comp = entMan.AddComponent<PatientIntakePatientComponent>(patient);
+            comp.ExpectedParts = intake.PartCategories(patient);
+            var body = entMan.GetComponent<BodyComponent>(patient);
+            Assert.That(LimbTargetMap.TryGetOrganByCategory(entMan, body, "Kidneys", out var kidneys), Is.True);
+            entMan.System<SharedContainerSystem>().Remove(kidneys, body.Organs!, force: true);
+            Assert.That(intake.GetFailures((patient, comp)).Any(f => f.Kind == IntakeFailureKind.MissingPart), Is.True);
+
+            TransplantFromDonor(entMan, patient, donor, "Kidneys", replace: false);
+            Assert.That(intake.GetFailures((patient, comp)).Any(f => f.Kind == IntakeFailureKind.MissingPart), Is.False,
+                "The insert surgery puts the donor's kidneys in.");
         });
     }
 
