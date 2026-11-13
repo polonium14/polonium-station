@@ -8408,6 +8408,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 18.5,-7.5
+- proto: BananaPhoneInstrument
+  entities:
+  - uid: 462
+    components:
+    - type: Transform
+      parent: 2
+      pos: -9.729915,-30.052383
 - proto: BanjoInstrument
   entities:
   - uid: 463
@@ -23880,13 +23887,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 22.5,-13.5
-- proto: CallableBananaPhoneInstrument
-  entities:
-  - uid: 462
-    components:
-    - type: Transform
-      parent: 2
-      pos: -9.729915,-30.052383
 - proto: CallablePhoneInstrument
   entities:
   - uid: 9103

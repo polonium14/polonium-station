@@ -1,41 +1,19 @@
 - type: entity
-  parent: [BaseHandheldInstrument, BaseGrandTheftContraband]
-  id: CallablePhoneInstrument
-  name: red phone
-  description: Should anything ever go wrong...
+  abstract: true
+  parent: BaseHandheldInstrument
+  id: BaseCallablePhoneInstrument
   components:
-  - type: Sprite
-    sprite: _Polonium/Objects/Fun/Instruments/otherinstruments.rsi
-    layers:
-    - state: red_phone
-      map: ["base"]
   - type: Appearance
-  - type: GenericVisualizer
-    visuals:
-      enum.CallablePhoneVisuals.HookState:
-        base:
-          OnHook: { state: red_phone }
-          OffHook: { state: red_phone_no_handset }
-  - type: EmitSoundOnLand
-    sound:
-       path: /Audio/Items/ring.ogg
   - type: Instrument
     program: 124
   - type: Item
     size: Small
-  - type: Prayable
-    sentMessage: prayer-popup-notify-centcom-sent
-    notificationPrefix: prayer-chat-notify-centcom
-    verb: prayer-verbs-voicemail
-    verbImage: null
   - type: GuideHelp
     guides:
     - RedPhoneSOP
   - type: CallablePhone
     phoneGroups:
     - PublicStation
-    dialableGroups:
-    - CentComm
     # phoneName: callable-phone-example-bridge  # optional; also editable via View Variables at runtime
     pickupHandsetSound:
       path: /Audio/_Polonium/Machines/Telephone/handset_pickup.ogg
@@ -83,6 +61,35 @@
   - type: ContainerContainer
     containers:
       handset: !type:ContainerSlot {}
+
+- type: entity
+  parent: [ BaseCallablePhoneInstrument, BaseGrandTheftContraband ]
+  id: CallablePhoneInstrument
+  name: red phone
+  description: Should anything ever go wrong...
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/otherinstruments.rsi
+    layers:
+    - state: red_phone
+      map: ["base"]
+  - type: GenericVisualizer
+    visuals:
+      enum.CallablePhoneVisuals.HookState:
+        base:
+          OnHook: { state: red_phone }
+          OffHook: { state: red_phone_no_handset }
+  - type: EmitSoundOnLand
+    sound:
+       path: /Audio/Items/ring.ogg
+  - type: Prayable
+    sentMessage: prayer-popup-notify-centcom-sent
+    notificationPrefix: prayer-chat-notify-centcom
+    verb: prayer-verbs-voicemail
+    verbImage: null
+  - type: CallablePhone
+    dialableGroups:
+    - CentComm
   - type: ItemSlots
     slots:
       handset:
@@ -192,7 +199,7 @@
     adminChatPrefix: prayer-chat-notify-centcom
 
 - type: entity
-  parent: CallablePhoneInstrument
+  parent: BaseCallablePhoneInstrument
   id: CallableBananaPhoneInstrument
   name: banana phone
   description: A direct line to the Honkmother. Seems to always go to voicemail.
@@ -281,6 +288,7 @@
 - type: entity
   parent: TelephoneHandsetRed
   id: TelephoneHandsetBlue
+  categories: [ HideSpawnMenu ]
   name: blue phone handset
   description: The handset for a wired telephone.
   components:
@@ -291,6 +299,7 @@
 - type: entity
   parent: TelephoneHandsetRed
   id: TelephoneHandsetBanana
+  categories: [ HideSpawnMenu ]
   name: banana phone handset
   description: The handset for a wired telephone.
   components:
@@ -301,6 +310,7 @@
 - type: entity
   parent: TelephoneHandsetRed
   id: TelephoneHandsetBloodRed
+  categories: [ HideSpawnMenu ]
   name: blood-red phone handset
   description: The handset for a wired telephone.
   components:

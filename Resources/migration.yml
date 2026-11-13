@@ -938,7 +938,6 @@ ClothingUniformOveralls: FuClothingUniformShirtPantstHydroponicsOveralls
 # 2026-05-30 zamiana starych telefonów-instrumentów na callable phones
 PhoneInstrument: CallablePhoneInstrument
 PhoneInstrumentSyndicate: CallablePhoneInstrumentSyndicate
-BananaPhoneInstrument: CallableBananaPhoneInstrument
 
 #2027-07-17
 # 2026-07-16

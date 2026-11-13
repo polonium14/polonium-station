@@ -13,9 +13,10 @@
     group: null # Strips the numeric identifier from the pet's ingame name
 
 - type: entity
-  abstract: true
   parent: [ BaseUniquePet, MobCorgi, BaseSlicingRefinableButchering ]
-  id: MobCorgiIanBase # Polonium: restructured to include Ian in contraband
+  id: MobCorgiIan
+  name: Ian
+  description: Favorite pet corgi.
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -66,19 +67,14 @@
   - type: StealTarget
     stealGroup:
     - AnimalIan
-
-- type: entity
-  parent: MobCorgiIanBase
-  id: MobCorgiIan
-  name: Ian
-  description: Favorite pet corgi.
-  components:
+  # Polonium start: Ian and every pet inheriting his theft objective are grand theft contraband
   - type: Contraband
     severity: GrandTheft
     allowedDepartments: [ Command ]
+  # Polonium end
 
 - type: entity
-  parent: [ MobCorgiIanBase, BaseSlicingRefinableButchering ]
+  parent: [ MobCorgiIan, BaseSlicingRefinableButchering ]
   id: MobCorgiIanOld
   name: Old Ian
   description: Still the favorite pet corgi. Love his wheels.
@@ -103,7 +99,7 @@
     - id: MaterialHideCorgi
 
 - type: entity
-  parent: MobCorgiIanBase
+  parent: MobCorgiIan
   id: MobCorgiLisa
   name: Lisa
   description: Ian's favorite corgi.
@@ -145,7 +141,7 @@
             state: corgi_mask_displacement
 
 - type: entity
-  parent: MobCorgiIanBase
+  parent: MobCorgiIan
   id: MobCorgiMouse
   name: real mouse
   description: It's 100% a real hungry mouse.
