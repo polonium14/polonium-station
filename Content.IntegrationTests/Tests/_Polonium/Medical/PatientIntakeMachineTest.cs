@@ -227,6 +227,67 @@ public sealed class PatientIntakeMachineTest : GameTest
         });
     }
 
+    /// <summary>
+    /// Returning one mass casualty patient opens the tray, which ejects the next one. Closing must
+    /// take back only the returned patient, even with someone standing on the tray tile.
+    /// </summary>
+    [Test]
+    public async Task ReturningAPatientLeavesTheNextOneOnTheTray()
+    {
+        var (machine, first) = await StartCase("PatientIntakeTestMass", popDelay: TimeSpan.Zero);
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var storage = entMan.System<EntityStorageSystem>();
+        var xforms = entMan.System<SharedTransformSystem>();
+        var away = new EntityCoordinates(machine, new Vector2(3, 0));
+
+        // Take the first patient away and close the empty tray, so the second one pops in.
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(5);
+        await server.WaitPost(() =>
+        {
+            xforms.SetCoordinates(first, away);
+            storage.CloseStorage(machine);
+        });
+        await Pair.RunTicksSync(5);
+
+        EntityUid second = default;
+        await server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            second = comp.Case!.Patients.Single(p => p != first);
+            Assert.That(entMan.GetComponent<EntityStorageComponent>(machine).Contents.Contains(second));
+        });
+
+        // Open to return the first: the second lands on the tray, next to a standing bystander.
+        EntityUid bystander = default;
+        await server.WaitPost(() => storage.OpenStorage(machine));
+        await Pair.RunTicksSync(5);
+        await server.WaitPost(() =>
+        {
+            var tray = new EntityCoordinates(machine, entMan.GetComponent<EntityStorageComponent>(machine).EnteringOffset);
+            xforms.SetCoordinates(first, tray);
+            bystander = entMan.SpawnEntity("MobHuman", tray);
+        });
+        await Pair.RunTicksSync(5);
+        await server.WaitPost(() =>
+        {
+            entMan.GetComponent<PatientIntakeMachineComponent>(machine).CloseLockedUntil = TimeSpan.Zero;
+            Assert.That(storage.TryCloseStorage(machine, machine), Is.True, "A standing bystander must not block the close.");
+        });
+        await Pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
+            Assert.That(entMan.Deleted(first) || entMan.IsQueuedForDeletion(first), Is.True, "The returned patient is judged.");
+            Assert.That(entMan.Deleted(second) || entMan.IsQueuedForDeletion(second), Is.False, "The patient just ejected stays out.");
+            Assert.That(entMan.Deleted(bystander) || entMan.IsQueuedForDeletion(bystander), Is.False);
+            Assert.That(comp.Case, Is.Not.Null, "The second patient is still out.");
+            Assert.That(comp.Case!.Patients, Is.EquivalentTo(new[] { second }));
+        });
+    }
+
     [Test]
     public async Task UntreatedReturnPaysNothing()
     {

@@ -98,6 +98,12 @@ public sealed partial class PatientIntakeMachineComponent : Component
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
     public TimeSpan CloseLockedUntil;
 
+    /// <summary>
+    /// When the tray was last opened. Patients whose clock started then were just ejected by that opening.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
+    public TimeSpan LastOpened;
+
     [DataField]
     public TimeSpan WaitingSoundDelay = TimeSpan.FromSeconds(30);
 

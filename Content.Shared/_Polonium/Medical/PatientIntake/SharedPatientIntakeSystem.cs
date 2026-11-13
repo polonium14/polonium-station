@@ -9,6 +9,7 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Morgue;
 using Content.Shared.Popups;
 using Content.Shared.Storage.Components;
+using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
@@ -25,6 +26,7 @@ public abstract partial class SharedPatientIntakeSystem : EntitySystem
     [Dependency] private SharedContainerSystem _containers = default!;
     [Dependency] private SharedPopupSystem _popups = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedEntityStorageSystem _entityStorage = default!;
 
     public override void Initialize()
     {
@@ -39,6 +41,7 @@ public abstract partial class SharedPatientIntakeSystem : EntitySystem
     private void OnAfterOpen(Entity<PatientIntakeMachineComponent> ent, ref StorageAfterOpenEvent args)
     {
         ent.Comp.CloseLockedUntil = _timing.CurTime + ent.Comp.CloseLockTime;
+        ent.Comp.LastOpened = _timing.CurTime;
         Dirty(ent);
         OnOpened(ent);
     }
@@ -52,7 +55,7 @@ public abstract partial class SharedPatientIntakeSystem : EntitySystem
         if (!TryComp<EntityStorageComponent>(ent, out var storage))
             return;
 
-        var contents = GetTrayEntities(ent, storage);
+        var contents = GetEntitiesToInsert(ent, storage);
         contents.UnionWith(storage.Contents.ContainedEntities);
         // Ghosts float over the tray but never go in.
         contents.RemoveWhere(HasComp<GhostComponent>);
@@ -86,20 +89,42 @@ public abstract partial class SharedPatientIntakeSystem : EntitySystem
 
     /// <summary>
     /// The morgue only takes in bodies lying down; a healed patient may well be standing.
+    /// While an earlier patient goes back, patients ejected by this opening stay on the tray:
+    /// in a mass casualty, the next patient lands on the tray the medics open to return one.
     /// </summary>
     private void OnBeforeClose(Entity<PatientIntakeMachineComponent> ent, ref StorageBeforeCloseEvent args)
     {
         if (!TryComp<EntityStorageComponent>(ent, out var storage))
             return;
 
-        foreach (var entity in GetTrayEntities(ent, storage))
+        var patients = GetTrayEntities(ent, storage).Where(e => IsCasePatient(ent, e)).ToList();
+        var returning = patients.Any(p => !EjectedByLastOpening(ent, p));
+
+        foreach (var patient in patients)
         {
-            if (!IsCasePatient(ent, entity))
+            if (returning && EjectedByLastOpening(ent, patient))
                 continue;
 
-            args.Contents.Add(entity);
-            args.BypassChecks.Add(entity);
+            args.Contents.Add(patient);
+            args.BypassChecks.Add(patient);
         }
+    }
+
+    private bool EjectedByLastOpening(Entity<PatientIntakeMachineComponent> ent, EntityUid patient)
+    {
+        return TryComp<PatientIntakePatientComponent>(patient, out var comp) && comp.ClockStart == ent.Comp.LastOpened;
+    }
+
+    /// <summary>
+    /// What closing would actually take in, after the laying-down rule and the insert checks,
+    /// so a medic standing on the tray tile doesn't block the close.
+    /// </summary>
+    private HashSet<EntityUid> GetEntitiesToInsert(EntityUid machine, EntityStorageComponent storage)
+    {
+        var ev = new StorageBeforeCloseEvent(null, GetTrayEntities(machine, storage), []);
+        RaiseLocalEvent(machine, ref ev);
+        ev.Contents.RemoveWhere(e => !ev.BypassChecks.Contains(e) && !_entityStorage.CanInsert(e, machine, storage));
+        return ev.Contents;
     }
 
     protected bool IsCasePatient(EntityUid machine, EntityUid entity)

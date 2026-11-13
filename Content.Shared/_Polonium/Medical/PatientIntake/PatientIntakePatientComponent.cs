@@ -10,10 +10,10 @@ namespace Content.Shared._Polonium.Medical.PatientIntake;
 
 /// <summary>
 /// Tags an NPC as the issued patient of a patient intake machine's active case.
-/// Removing it turns the body into an ordinary one. Only <see cref="Machine"/> is networked,
-/// so the client can predict which body the tray accepts; the rest is server bookkeeping.
+/// Removing it turns the body into an ordinary one. Only <see cref="Machine"/> and <see cref="ClockStart"/>
+/// are networked, so the client can predict which body the tray accepts; the rest is server bookkeeping.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class PatientIntakePatientComponent : Component
 {
     [ViewVariables, AutoNetworkedField]
@@ -55,7 +55,7 @@ public sealed partial class PatientIntakePatientComponent : Component
     /// <summary>
     /// When this patient's tray was first opened. Each mass casualty patient gets its own clock.
     /// </summary>
-    [ViewVariables]
+    [ViewVariables, AutoNetworkedField, AutoPausedField]
     public TimeSpan? ClockStart;
 
     /// <summary>

@@ -334,6 +334,7 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
 
             SetFrozen(patient, false);
             comp.ClockStart = _timing.CurTime;
+            Dirty(patient, comp);
         }
     }
 
