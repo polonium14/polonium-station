@@ -2995,8 +2995,7 @@ entities:
     - type: LinkedDeviceNetwork
       deviceLists:
       - 9597
-      configurators:
-      - invalid
+      configurators: []
   - uid: 9665
     components:
     - type: Transform
