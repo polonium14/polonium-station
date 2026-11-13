@@ -1,3 +1,5 @@
+ent-BaseCallablePhoneInstrument = { ent-BaseHandheldInstrument }
+    .desc = { ent-BaseHandheldInstrument.desc }
 ent-CallablePhoneInstrument = red phone
     .desc = Should anything ever go wrong...
 ent-CallablePhoneInstrumentBlue = blue phone

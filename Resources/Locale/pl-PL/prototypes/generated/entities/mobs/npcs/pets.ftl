@@ -85,5 +85,3 @@ ent-MobPollyParrot = papuga Polly
     .gender = female
 ent-BaseUniquePet = { "" }
     .desc = { "" }
-ent-MobCorgiIanBase = { ent-MobCorgi }
-    .desc = { ent-MobCorgi.desc }

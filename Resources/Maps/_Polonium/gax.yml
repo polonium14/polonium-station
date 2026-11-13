@@ -10843,6 +10843,13 @@ entities:
       canCollide: False
       angularDamping: 0
     - type: InsideEntityStorage
+- proto: BananaPhoneInstrument
+  entities:
+  - uid: 1022
+    components:
+    - type: Transform
+      parent: 2
+      pos: 40.525475,43.56165
 - proto: BananaSeeds
   entities:
   - uid: 1023
@@ -41612,13 +41619,6 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -31.5,25.5
-- proto: CallableBananaPhoneInstrument
-  entities:
-  - uid: 1022
-    components:
-    - type: Transform
-      parent: 2
-      pos: 40.525475,43.56165
 - proto: CallablePhoneInstrument
   entities:
   - uid: 17061
