@@ -69,6 +69,7 @@ patient-intake-doc-item = {$index}. {$line}
 patient-intake-file-title = Skierowanie do leczenia
 patient-intake-file-identity = - [bold]Tożsamość pacjenta:[/bold] {$name}
 patient-intake-file-patient = - [bold]Gatunek:[/bold] {$species}
+patient-intake-file-internals = - [color=orange]Pacjent oddycha tylko z wydanej butli: pilnuj, żeby była podłączona, i w porę ją napełnij albo wymień.[/color]
 patient-intake-file-deadline = - [bold]Limit czasu:[/bold] {$minutes} min
 patient-intake-file-deadline-hard = - [bold]Limit czasu:[/bold] {$minutes} min [color=orange](opóźnienia obciążą budżet medyczny!)[/color]
 patient-intake-file-payout = - [bold]Wynagrodzenie:[/bold] do {$amount} spesos

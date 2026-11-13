@@ -68,6 +68,7 @@ patient-intake-doc-item = {$index}. {$line}
 patient-intake-file-title = Treatment referral
 patient-intake-file-identity = - [bold]Patient:[/bold] {$name}
 patient-intake-file-patient = - [bold]Species:[/bold] {$species}
+patient-intake-file-internals = - [color=orange]The patient breathes only from the issued tank: keep it connected and refill or replace it in time.[/color]
 patient-intake-file-deadline = - [bold]Time limit:[/bold] {$minutes} min
 patient-intake-file-deadline-hard = - [bold]Time limit:[/bold] {$minutes} min [color=orange](delays will be charged to the medical budget!)[/color]
 patient-intake-file-payout = - [bold]Payout:[/bold] up to {$amount} spesos

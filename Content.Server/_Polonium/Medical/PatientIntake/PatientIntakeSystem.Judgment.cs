@@ -243,6 +243,9 @@ public sealed partial class PatientIntakeSystem
         content.AppendLine(DocHeader(ent, "patient-intake-file-title", caseProto));
         content.AppendLine(Loc.GetString("patient-intake-file-identity", ("name", name)));
         content.AppendLine(Loc.GetString("patient-intake-file-patient", ("species", species)));
+        // Species gear is breathing gear (Vox nitrogen): without its tank the patient suffocates mid-case.
+        if (profile != null && ent.Comp.SpeciesGear.ContainsKey(profile.Species))
+            content.AppendLine(Loc.GetString("patient-intake-file-internals"));
         content.AppendLine(Loc.GetString(caseProto.DebitOnTimeout ? "patient-intake-file-deadline-hard" : "patient-intake-file-deadline",
             ("minutes", (int) activeCase.Window.TotalMinutes)));
         content.AppendLine(Loc.GetString("patient-intake-file-payout",
