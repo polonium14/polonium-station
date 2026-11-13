@@ -231,7 +231,7 @@
 # Small crew nuclear reactors
 - type: entity
   id: NuclearReactorSmall
-  parent: [ NuclearReactorCrew, BaseNuclearReactorSmallMeltdown ]: smaller meltdown
+  parent: [ NuclearReactorCrew, BaseNuclearReactorSmallMeltdown ]
   name: small nuclear reactor
   components:
   - type: Sprite
@@ -352,7 +352,7 @@
 # Small salvage nuclear reactors
 - type: entity
   id: NuclearReactorSmallSalvage
-  parent: [ NuclearReactorSalvage, BaseNuclearReactorSmallMeltdown ]: smaller meltdown
+  parent: [ NuclearReactorSalvage, BaseNuclearReactorSmallMeltdown ]
   suffix: Salvage
   name: small nuclear reactor
   components:
@@ -431,7 +431,7 @@
         graphite_damaged_4_mirrored: ""
   - type: RadiationSource
     intensity: 1.6
-  - type: PointLight: glows like uranium ore
+  - type: PointLight
     radius: 1.2
     energy: 0.8
     color: "#9be792"
