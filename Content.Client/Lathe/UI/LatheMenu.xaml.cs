@@ -1,3 +1,31 @@
+// SPDX-FileCopyrightText: 2022 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Justin <justinly@usc.edu>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Thom <119594676+ItsMeThom@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Crotalus <Crotalus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
+// SPDX-FileCopyrightText: 2025 Whatstone <166147148+whatston3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
+// SPDX-FileCopyrightText: 2026 Chris V. <HoofedEar@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Text;
 using Content.Client.Materials;
@@ -115,20 +143,32 @@ public sealed partial class LatheMenu : FancyWindow
                     continue;
             }
 
-            if (searchBarText.Length <= 0)
-            {
-                recipesToShow.Add((proto, _lathe.GetRecipeName(recipe)));
-            }
-            else
-            {
-                var recipeName = _lathe.GetRecipeName(recipe);
-                if (recipeName.ToLowerInvariant().Contains(searchBarText))
-                    recipesToShow.Add((proto, recipeName));
-            }
+            recipesToShow.Add((proto, _lathe.GetRecipeName(recipe))); // Polonium: search runs below, on the displayed name
         }
 
         if (!int.TryParse(AmountLineEdit.Text, out var quantity) || quantity <= 0)
             quantity = 1;
+
+        // Polonium: with every category shown, recipes that share a name (a biofab organ for each
+        // species) get their category appended, e.g. "eyes - Human".
+        if (CurrentCategory == null)
+        {
+            var shared = recipesToShow.GroupBy(r => r.Name).Where(g => g.Count() > 1).Select(g => g.Key).ToHashSet();
+            for (var i = 0; i < recipesToShow.Count; i++)
+            {
+                var r = recipesToShow[i];
+                if (!shared.Contains(r.Name) || r.Proto.Categories.Count == 0)
+                    continue;
+
+                recipesToShow[i] = (r.Proto, Loc.GetString("lathe-menu-recipe-name-category",
+                    ("name", r.Name),
+                    ("category", Loc.GetString(_prototypeManager.Index(r.Proto.Categories[0]).Name))));
+            }
+        }
+
+        // Polonium: search the displayed name, so the category suffix is searchable too
+        if (searchBarText.Length != 0)
+            recipesToShow.RemoveAll(r => !r.Name.Contains(searchBarText, StringComparison.InvariantCultureIgnoreCase));
 
         RecipeCount.Text = Loc.GetString("lathe-menu-recipe-count", ("count", recipesToShow.Count));
 
@@ -167,6 +207,7 @@ public sealed partial class LatheMenu : FancyWindow
                     continue;
                 }
 
+                child.SetRecipe(recipe.Proto, recipe.Name); // Polonium: the name changes with the category suffix even for the same recipe
                 child.SetTooltipSupplier(tooltipFunction);
                 child.SetCanProduce(canProduce);
                 if (recipe.Proto.ID != child.RecipeId)

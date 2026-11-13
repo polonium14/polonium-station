@@ -170,3 +170,5 @@ ent-SmartFridgeCircuitboard = Inteligentna lodówka (płytka maszynowa)
     .desc = Płytka drukowana do Inteligentna lodówka.
 ent-StationTeleporterMachineCircuitboard = teleporter (płytka maszynowa)
     .desc = Płytka drukowana maszyny do teleportera bluespace.
+ent-MedicalBiofabMachineBoard = biofabrykator medyczny (płytka maszynowa)
+    .desc = Płytka maszynowa do biofabrykatora medycznego.
