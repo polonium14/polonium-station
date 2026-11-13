@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SuperGDPWYL
-  changes:
-  - message: Traitors can now be tasked with causing anomalies to go supercritical.
-    type: Add
-  id: 9625
-  time: '2026-04-07T18:59:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43505
 - author: ketufaispikinut
   changes:
   - message: Added the tourist's travel camera along with very basic textual photographs.
@@ -5140,3 +5133,15 @@
   id: 10119
   time: '2026-11-13T15:27:50.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1243
+- author: Nikita
+  changes:
+  - message: "Ochronie nie wolno ju\u017C wchodzi\u0107 do tuneli technicznych podczas\
+      \ kodu zielonego."
+    type: Tweak
+  - message: Zniesiono zakaz wchodzenia do tuneli technicznych podczas kodu czerwonego.
+    type: Tweak
+  - message: "Poprawiono jednolito\u015B\u0107 SPO i PK mi\u0119dzy gr\u0105 a wiki."
+    type: Fix
+  id: 10120
+  time: '2026-11-13T15:33:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1246
