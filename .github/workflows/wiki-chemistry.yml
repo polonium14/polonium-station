@@ -1,0 +1,68 @@
+name: Wiki chemistry data
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'Resources/Prototypes/**/Reagents/**'
+      - 'Resources/Prototypes/**/Reactions/**'
+      - 'Resources/Prototypes/**/Chemistry/**'
+      - 'Resources/Prototypes/Entities/Structures/Dispensers/**'
+      - 'Resources/Prototypes/Atmospherics/**'
+      - 'Resources/Locale/pl-PL/**'
+      - 'Content.Shared/Chemistry/**'
+      - 'Content.Shared/EntityEffects/**'
+      - 'Content.Shared/Localizations/**'
+      - 'Content.WikiExporter/**'
+      - 'Tools/_Polonium/wiki_chemistry.py'
+      - '.github/workflows/wiki-chemistry.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: wiki-chemistry
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    name: Export and upload to wiki
+    if: github.repository == 'polonium14/polonium-station'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - name: Pull engine updates
+        uses: space-wizards/submodule-dependency@v0.1.5
+
+      - name: Update Engine Submodules
+        run: |
+          cd RobustToolbox/
+          git submodule update --init --recursive
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Build exporter
+        run: dotnet build Content.WikiExporter/Content.WikiExporter.csproj --configuration Release /p:WarningsAsErrors= /m
+
+      - name: Export chemistry data
+        run: dotnet run --project Content.WikiExporter --configuration Release --no-build -- "$RUNNER_TEMP/wiki/export" chemistry
+
+      - name: Install Python packages
+        run: pip install requests
+
+      - name: Stamp data
+        run: python3 Tools/_Polonium/wiki_chemistry.py build "$RUNNER_TEMP/wiki/export/chemistry.json" "$RUNNER_TEMP/wiki/build"
+
+      - name: Upload to the wiki
+        env:
+          WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        run: python3 Tools/_Polonium/wiki_chemistry.py upload "$RUNNER_TEMP/wiki/build"

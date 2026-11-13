@@ -144,8 +144,12 @@ namespace Content.Shared.Localizations
             {
                 <= 0 => string.Empty,
                 1 => list[0],
-                2 => $"{list[0]} and {list[1]}",
-                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, and {list[^1]}"
+                // Polonium: the conjunction comes from FTL, upstream hardcodes English "and"
+                _ => Loc.GetString("zzzz-fmt-list-and",
+                    ("count", list.Count),
+                    ("first", string.Join(", ", list.GetRange(0, list.Count - 1))),
+                    ("last", list[^1]))
+                // Polonium end
             };
         }
 
@@ -158,8 +162,8 @@ namespace Content.Shared.Localizations
             {
                 <= 0 => string.Empty,
                 1 => list[0],
-                2 => $"{list[0]} or {list[1]}",
-                _ => $"{string.Join(" or ", list)}"
+                // Polonium: the conjunction comes from FTL, upstream hardcodes English "or"
+                _ => list.Aggregate((first, last) => Loc.GetString("zzzz-fmt-list-or", ("first", first), ("last", last)))
             };
         }
 
