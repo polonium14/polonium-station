@@ -1,0 +1,105 @@
+# Kidneys for every species the biofab prints a liver for, priced like the other organs but the heart.
+# Dwarves have human kidneys.
+
+- type: latheRecipe
+  id: SynthArachnidKidneys
+  result: OrganArachnidKidneys
+  categories: [ BiosynthArachnid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDwarfKidneys
+  result: OrganHumanKidneys
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthFelinidKidneys
+  result: OrganFelinidKidneys
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHarpyKidneys
+  result: OrganHarpyKidneys
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHumanKidneys
+  result: OrganHumanKidneys
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthMothKidneys
+  result: OrganMothKidneys
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthReptilianKidneys
+  result: OrganReptilianKidneys
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthRodentiaKidneys
+  result: OrganRodentiaKidneys
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthThavenKidneys
+  result: OrganThavenKidneys
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVoxKidneys
+  result: OrganVoxKidneys
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVulpkaninKidneys
+  result: OrganVulpkaninKidneys
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipePack
+  id: MedicalBiofabKidneysStatic
+  recipes:
+  - SynthArachnidKidneys
+  - SynthDwarfKidneys
+  - SynthFelinidKidneys
+  - SynthHarpyKidneys
+  - SynthHumanKidneys
+  - SynthMothKidneys
+  - SynthReptilianKidneys
+  - SynthRodentiaKidneys
+  - SynthThavenKidneys
+  - SynthVoxKidneys
+  - SynthVulpkaninKidneys

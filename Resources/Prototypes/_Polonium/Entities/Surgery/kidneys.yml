@@ -1,0 +1,32 @@
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveKidneys
+  name: Remove Kidneys
+  components:
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: Kidneys
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertKidneys
+  name: Insert Kidneys
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepInsertKidneys
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: Kidneys
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertKidneys
+  name: Add kidneys
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    state: kidney-l
