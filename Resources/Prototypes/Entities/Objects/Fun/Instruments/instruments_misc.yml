@@ -44,6 +44,7 @@
 - type: entity
   parent: BaseHandheldInstrument
   id: PhoneInstrument
+  categories: [ HideSpawnMenu ] # Polonium: replaced by callable phones from _Polonium
   name: red phone
   description: Should anything ever go wrong...
   components:
@@ -67,6 +68,7 @@
 - type: entity
   parent: PhoneInstrument
   id: PhoneInstrumentSyndicate
+  categories: [ HideSpawnMenu ] # Polonium: replaced by callable phones from _Polonium
   name: blood-red phone
   description: For evil people to call their friends.
   components:
