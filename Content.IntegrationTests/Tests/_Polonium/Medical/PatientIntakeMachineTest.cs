@@ -270,6 +270,8 @@ public sealed class PatientIntakeMachineTest : GameTest
         {
             var tray = new EntityCoordinates(machine, entMan.GetComponent<EntityStorageComponent>(machine).EnteringOffset);
             xforms.SetCoordinates(first, tray);
+            // Lying down, the next patient would pass the morgue's insert checks.
+            entMan.System<Content.Shared.Standing.StandingStateSystem>().Down(second);
             bystander = entMan.SpawnEntity("MobHuman", tray);
         });
         await Pair.RunTicksSync(5);

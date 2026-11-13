@@ -103,7 +103,11 @@ public abstract partial class SharedPatientIntakeSystem : EntitySystem
         foreach (var patient in patients)
         {
             if (returning && EjectedByLastOpening(ent, patient))
+            {
+                // The lookup already put it in; lying down, it would pass the insert checks.
+                args.Contents.Remove(patient);
                 continue;
+            }
 
             args.Contents.Add(patient);
             args.BypassChecks.Add(patient);
