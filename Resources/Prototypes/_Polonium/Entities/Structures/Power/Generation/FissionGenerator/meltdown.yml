@@ -1,0 +1,158 @@
+- type: entity
+  id: ReactorSmokeColumn
+  categories: [ HideSpawnMenu ]
+  name: smoke column
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Power/Generation/FissionGenerator/reactor_smoke_column.rsi
+    drawdepth: Effects
+    noRot: true
+    offset: 0, 4
+    layers:
+    - state: column
+    - state: column_glow
+      shader: unshaded
+
+- type: entity
+  id: ReactorSmokeColumnSmall
+  parent: ReactorSmokeColumn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: column_small
+    - state: column_small_glow
+      shader: unshaded
+
+# Mała awaria dla małego reaktora: 25 gniazd zamiast 49 i obudowa 3x3 zamiast 5x5,
+# więc zasięgi są mniej więcej 3/5, a siła i liczba efektów mniej więcej połowa dużego reaktora.
+- type: entity
+  id: BaseNuclearReactorSmallMeltdown
+  abstract: true
+  components:
+  - type: NuclearReactor
+    meltdownRadiation: 7
+    meltdownExplosionMinIntensity: 50
+    meltdownExplosionIntensityPerBadness: 3
+    meltdownExplosionMaxTileIntensity: 4
+    meltdownMinDebris: 5
+    meltdownMaxDebris: 15
+    meltdownMaxTritium: 100
+  - type: ReactorMeltdownEffects
+    criticalDuration: 30
+    rumbleShake: 0.25
+    tremorShake: 0.4
+    tremorFlickerChance: 0.1
+    meltdownShake: 0.6
+    meltdownFlickerChance: 0.35
+    meltdownFlickerDuration: 5
+    bulbBurstRange: 6
+    shockwaveRadius: 18
+    shockwaveIntensity: 0.6
+    pulseRadius: 4
+    pulseIntensity: 0.25
+    smokeColumnPrototype: ReactorSmokeColumnSmall
+    initialCorium: 3
+    maxCorium: 10
+    stationSoundVolume: -4
+  - type: ReactorMeltdownVisuals
+    buildUpMinGlowRadius: 2
+    buildUpMaxGlowRadius: 3.5
+    meltdownGlowEnergy: 4
+    meltdownGlowRadius: 5.5
+    residualGlowRadius: 2.5
+
+- type: entity
+  id: Corium
+  categories: [ HideSpawnMenu ]
+  name: corium
+  description: A glowing mass of molten reactor core, fuel and steel. Better not to stand next to it for long.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Sprite
+    sprite: _Polonium/Structures/Power/Generation/FissionGenerator/corium.rsi
+    drawdepth: FloorObjects
+  - type: Icon
+    sprite: _Polonium/Structures/Power/Generation/FissionGenerator/corium.rsi
+    state: icon
+  - type: IconSmooth
+    key: corium
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ corium ]
+      base: molten
+    - !type:CornerSpriteSmoothing
+      mask: [ corium ]
+      base: molten_glow
+      layerKey: glow
+  - type: PointLight
+  - type: RadiationSource
+    intensity: 0
+  - type: AmbientSound
+    enabled: false
+    volume: -6
+    range: 5
+    sound:
+      path: /Audio/_Polonium/Machines/Reactor/corium_bubbling.ogg
+  - type: GuideHelp
+    guides:
+    - NuclearReactor
+  # Zastygłe korium kruszy się jak skała, tylko dwa razy wytrzymalsza: dwa uderzenia kilofem trzymanym oburącz.
+  - type: Damageable
+    damageModifierSet: RockMod
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CoriumChunk:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Corium
+    burnSound:
+      path: /Audio/_Polonium/Machines/Reactor/corium_burn.ogg
+      params:
+        volume: -6
+        variation: 0.1
+    stages:
+      Molten:
+        state: molten
+        duration: 180
+        radiation: 1
+        lightEnergy: 1.6
+        lightRadius: 2
+        lightColor: "#b8f040"
+        damage:
+          types:
+            Heat: 2
+        bubbling: true
+      Crust:
+        state: crust
+        duration: 420
+        radiation: 0.7
+        lightEnergy: 0.9
+        lightRadius: 1.6
+        lightColor: "#8fd42a"
+      Solid:
+        state: solid
+        radiation: 0.5
+        lightEnergy: 0.4
+        lightRadius: 1.2
+        lightColor: "#3f7a16"
+        breakable: true

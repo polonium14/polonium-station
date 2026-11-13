@@ -28,10 +28,11 @@
       shader: unshaded
       visible: false
       map: [ "enum.ReactorVisualLayers.Lights" ]
-    - state: reactor_fire
+    - state: reactor_smoke
       visible: false
       map: [ "enum.ReactorVisualLayers.Smoke" ]
-    - state: reactor_smoke
+    - state: reactor_fire
+      shader: unshaded
       visible: false
       map: [ "enum.ReactorVisualLayers.Fire" ]
   - type: GenericVisualizer
@@ -143,6 +144,14 @@
     guides:
     - NuclearReactor
     - Power
+  - type: ReactorMeltdownVisuals
+  - type: ReactorMeltdownEffects
+  - type: ReactorHum
+  - type: AmbientSound
+    enabled: false
+    range: 8
+    sound:
+      path: /Audio/_Polonium/Machines/Reactor/reactor_hum.ogg
 
 # Crew nuclear reactors
 - type: entity
@@ -222,7 +231,7 @@
 # Small crew nuclear reactors
 - type: entity
   id: NuclearReactorSmall
-  parent: NuclearReactorCrew
+  parent: [ NuclearReactorCrew, BaseNuclearReactorSmallMeltdown ]: smaller meltdown
   name: small nuclear reactor
   components:
   - type: Sprite
@@ -343,7 +352,7 @@
 # Small salvage nuclear reactors
 - type: entity
   id: NuclearReactorSmallSalvage
-  parent: NuclearReactorSalvage
+  parent: [ NuclearReactorSalvage, BaseNuclearReactorSmallMeltdown ]: smaller meltdown
   suffix: Salvage
   name: small nuclear reactor
   components:
@@ -422,6 +431,10 @@
         graphite_damaged_4_mirrored: ""
   - type: RadiationSource
     intensity: 1.6
+  - type: PointLight: glows like uranium ore
+    radius: 1.2
+    energy: 0.8
+    color: "#9be792"
 
 # Arrows to indicate flow
 - type: entity
