@@ -1,0 +1,10 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+               MinWidth="360">
+    <BoxContainer Orientation="Vertical" Margin="4">
+        <LineEdit Name="SearchLineEdit" Access="Public" PlaceHolder="{Loc 'polonium-admin-tab-search'}" HorizontalExpand="True" Visible="False" Margin="0 0 0 4" />
+        <OptionButton Name="PrototypeOptions" Access="Public" HorizontalExpand="True" />
+        <Label Name="DescriptionLabel" Margin="0 4" />
+        <controls:ConfirmButton Name="RunButton" Text="{Loc 'polonium-admin-tab-run'}" HorizontalAlignment="Right" />
+    </BoxContainer>
+</DefaultWindow>
