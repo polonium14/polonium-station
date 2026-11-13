@@ -1,7 +1,7 @@
 ent-ReinforcedPlasmaWindow = okno plazmowe wzmocnione
-    .desc = { ent-BaseDeltaPressureReinforcedPlasma.desc }
+    .desc = { ent-BaseWindowStructure.desc }
 ent-PlasmaReinforcedWindowDirectional = kierunkowe okno plazmowe wzmocnione
-    .desc = { ent-BaseDeltaPressureReinforcedPlasmaQuarter.desc }
+    .desc = { ent-BaseWindowStructureDirectional.desc }
 ent-ReinforcedPlasmaWindowDiagonal = { ent-ReinforcedPlasmaWindow }
     .suffix = diagonalne
     .desc = { ent-ReinforcedPlasmaWindow.desc }

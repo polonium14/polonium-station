@@ -158,6 +158,7 @@ stack-inflatable-wall = nadmuchiwana ściana
 stack-inflatable-door = nadmuchiwane drzwi
 stack-ointment = maść
 stack-aloe-cream = krem aloesowy
+stack-dragon-tail-compress = kompres z ogona smoka
 stack-gauze = gaza
 stack-brutepack = plastry
 stack-bloodpack = pakiet krwi

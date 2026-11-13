@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Content.Shared._Polonium.Teleportation; // Polonium
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
@@ -123,6 +124,16 @@ public abstract partial class SharedPortalSystem : EntitySystem
         {
             return;
         }
+
+        // Polonium: client-only entities like predicted shots never get the server's teleport, so they need to know they went in
+        if (ent.Comp.RandomTeleport || TryComp<LinkedEntityComponent>(ent, out var links) && links.LinkedEntities.Count != 0)
+        {
+            var entered = new PortalEnteredEvent(ent);
+            RaiseLocalEvent(subject, ref entered);
+            if (entered.Handled)
+                return;
+        }
+        // Polonium end
 
         if (TryComp<LinkedEntityComponent>(ent, out var link) && link.LinkedEntities.Count != 0)
         {

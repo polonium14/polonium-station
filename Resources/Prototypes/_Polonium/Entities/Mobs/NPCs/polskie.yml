@@ -3,7 +3,7 @@
 # Niedźwiedź Wojtek z 22. Kompanii Zaopatrywania Artylerii II Korpusu Polskiego, który nosił skrzynie z pociskami.
 # Spokojny, dopóki nikt go nie skrzywdzi - oddaje tylko temu, kto go uderzył. Lubi piwo i papierosy, tak jak oryginał.
 - type: entity
-  parent: [ BaseUniquePet, SimpleSpaceMobBase, MobCombat, BaseSlicingRefinable ]
+  parent: [ BaseUniquePet, SimpleSpaceMobBase, MobCombat, BaseSlicingRefinableButchering ]
   id: MobWojtek
   name: Wojtek
   description: Corporal Wojtek, a veteran of the artillery supply company. He carries shells for the bluespace artillery and never says no to a beer or a cigarette.

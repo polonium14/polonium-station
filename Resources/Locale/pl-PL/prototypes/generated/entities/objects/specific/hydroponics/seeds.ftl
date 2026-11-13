@@ -143,3 +143,7 @@ ent-AnomalyBerrySeeds = opakowanie nasion jagód anomalii
     .desc = { ent-SeedBase.desc }
 ent-BloonionSeeds = opakowanie nasion bloonionu
     .desc = { ent-SeedBase.desc }
+ent-AloeIgnisSeeds = packet of aloe ignis seeds
+    .desc = { ent-SeedBase.desc }
+ent-DragonTailSeeds = packet of dragon's tail seeds
+    .desc = { ent-SeedBase.desc }

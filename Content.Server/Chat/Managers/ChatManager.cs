@@ -2,12 +2,12 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
 using Content.Server._Polonium.Chat;
+using Content.Server._Polonium.Chat.Emoji;
 using Content.Server._Polonium.Supporters;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.Discord.DiscordLink;
-using Content.Server.Ghost;
 using Content.Server.Players.RateLimiting;
 using Content.Server.Preferences.Managers;
 using Content.Shared.Administration;
@@ -17,7 +17,6 @@ using Content.Shared.Database;
 using Content.Shared.Mind;
 using Content.Shared.Players.RateLimiting;
 using Robust.Shared.Configuration;
-using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Replays;
@@ -51,8 +50,9 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private DiscordChatLink _discordLink = default!;
     [Dependency] private ILogManager _logManager = default!;
     [Dependency] private ILocalizationManager _localizationManager = default!;
+    private SharedChatSystem _chatSystem = default!;
 
-    private ISawmill? _sawmill = default!;
+private ISawmill? _sawmill = default!;
 
     /// <summary>
     /// The maximum length a player-sent message can be sent
@@ -74,6 +74,8 @@ internal sealed partial class ChatManager : IChatManager
 
         _sawmill = _logManager.GetSawmill("SERVER");
 
+        _chatSystem = _entityManager.System<SharedChatSystem>();
+
         RegisterRateLimits();
     }
 
@@ -93,10 +95,10 @@ internal sealed partial class ChatManager : IChatManager
         DispatchServerAnnouncement(Loc.GetString(val ? "chat-manager-admin-ooc-chat-enabled-message" : "chat-manager-admin-ooc-chat-disabled-message"));
     }
 
-        public void DeleteMessagesBy(NetUserId uid)
-        {
-            if (!_players.TryGetValue(uid, out var user))
-                return;
+    public void DeleteMessagesBy(NetUserId uid)
+    {
+        if (!_players.TryGetValue(uid, out var user))
+            return;
 
         var msg = new MsgDeleteChatMessagesBy { Key = user.Key, Entities = user.Entities };
         _netManager.ServerSendToAll(msg);
@@ -117,7 +119,7 @@ internal sealed partial class ChatManager : IChatManager
 
     #region Server Announcements
 
-    public void DispatchServerAnnouncement(string message, Color? colorOverride = null)
+    public void DispatchServerAnnouncement(string message, Color? colorOverride = null, ICommonSession? sender = null)
     {
         var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", FormattedMessage.EscapeText(message)));
         ChatMessageToAll(ChatChannel.Server, message, wrappedMessage, EntityUid.Invalid, hideChat: false, recordReplay: true, colorOverride: colorOverride);
@@ -126,7 +128,12 @@ internal sealed partial class ChatManager : IChatManager
         // during server setup when some cvars are changed
         _sawmill?.Info(message);
 
-        _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Server announcement: {message}");
+        if (sender is null) //just so that log search works...
+            _adminLogger.Add(LogType.Chat, LogImpact.Low,
+                $"Server announcement from SYSTEM: {message}");
+        else
+            _adminLogger.Add(LogType.Chat, LogImpact.Low,
+                $"Server announcement from {sender:Player}: {message}");
     }
 
     public void DispatchServerMessage(ICommonSession player, string message, bool suppressLog = false)
@@ -296,7 +303,8 @@ internal sealed partial class ChatManager : IChatManager
         }
 
         Color? colorOverride = null;
-        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName",player.Name), ("message", FormattedMessage.EscapeText(message)));
+        var oocMessage = _entityManager.System<ChatEmojiSystem>().EscapeWithEmojis(message); // Polonium: chat emoji
+        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName",player.Name), ("message", oocMessage)); // Polonium: chat emoji
         if (_adminManager.HasAdminFlag(player, AdminFlags.NameColor))
         {
             var prefs = _preferencesManager.GetPreferences(player.UserId);
@@ -307,11 +315,11 @@ internal sealed partial class ChatManager : IChatManager
             wrappedMessage = Loc.GetString("chat-manager-send-ooc-supporter-wrap-message",
                 ("color", supporterColor),
                 ("playerName", player.Name),
-                ("message", FormattedMessage.EscapeText(message)));
+                ("message", oocMessage)); // Polonium: chat emoji
         }
         else if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
         {
-            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", oocMessage)); // Polonium: chat emoji
         }
 
         //TODO: player.Name color, this will need to change the structure of the MsgChatMessage
@@ -328,22 +336,24 @@ internal sealed partial class ChatManager : IChatManager
             return;
         }
 
+        var playerName = _chatSystem.ChatNameLinks && player.AttachedEntity is {} attachedEntity ? $"[textlink=\"{FormattedMessage.EscapeStringParameter(player.Name)}\" entity=\"{_entityManager.GetNetEntity(attachedEntity)}\" color=\"{ChatChannel.AdminChat.TextColor().ToHex()}\"]" : FormattedMessage.EscapeText(player.Name);
         var clients = _adminManager.ActiveAdmins.Select(p => p.Channel);
+        var adminMessage = _entityManager.System<ChatEmojiSystem>().EscapeWithEmojis(message); // Polonium: chat emoji
         string wrappedMessage;
         if (_entityManager.System<SupporterSystem>().TryGetNameColor(player.UserId, out var supporterColor))
         {
             wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-supporter-wrap-message",
                 ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
                 ("color", supporterColor),
-                ("playerName", player.Name),
-                ("message", FormattedMessage.EscapeText(message)));
+                ("playerName", playerName),
+                ("message", adminMessage)); // Polonium: chat emoji
         }
         else
         {
             wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
                 ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
-                ("playerName", player.Name),
-                ("message", FormattedMessage.EscapeText(message)));
+                ("playerName", playerName),
+                ("message", adminMessage)); // Polonium: chat emoji
         }
 
         foreach (var client in clients)
@@ -368,35 +378,12 @@ internal sealed partial class ChatManager : IChatManager
 
     #region Utility
 
-    private bool IsValidWarpDestination(EntityUid source)
-    {
-        if (!source.Valid)
-            return false;
-
-        if (!_entityManager.TryGetComponent(source, out TransformComponent? transform))
-            return false;
-
-        return transform.MapID != MapId.Nullspace;
-    }
-
-    public string PrependFollowButtonIfAppropriate(string wrappedMessage, EntityUid source, INetChannel recipient)
-    {
-        if (IsValidWarpDestination(source) && ShouldShowFollowButton(recipient))
-        {
-            var btnText = _localizationManager.GetString("chat-manager-follow-button");
-            return $"[cmdlink=\"{btnText}\" command=\"{GhostFollowEntityCommand.CommandName} {_entityManager.GetNetEntity(source)}\" /] " + wrappedMessage;
-        }
-
-        return wrappedMessage;
-    }
-
     public void ChatMessageToOne(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat, INetChannel client, Color? colorOverride = null, bool recordReplay = false, string? audioPath = null, float audioVolume = 0, NetUserId? author = null, bool allowHyperlinks = false)
     {
         var user = author == null ? null : EnsurePlayer(author);
         var netSource = _entityManager.GetNetEntity(source);
         user?.AddEntity(netSource);
 
-        wrappedMessage = PrependFollowButtonIfAppropriate(wrappedMessage, source, client);
         var msg = new ChatMessage(channel, message, wrappedMessage, netSource, user?.Key, hideChat, colorOverride, audioPath, audioVolume, allowHyperlinks);
         _netManager.ServerSendMessage(new MsgChatMessage() { Message = msg }, client);
 
@@ -419,12 +406,8 @@ internal sealed partial class ChatManager : IChatManager
         var netSource = _entityManager.GetNetEntity(source);
         user?.AddEntity(netSource);
 
-        foreach (var client in clients)
-        {
-            var customWrapMessage = PrependFollowButtonIfAppropriate(wrappedMessage, source, client);
-            var msg = new ChatMessage(channel, message, customWrapMessage, netSource, user?.Key, hideChat, colorOverride, audioPath, audioVolume);
-            _netManager.ServerSendMessage(new MsgChatMessage { Message = msg }, client);
-        }
+        var msg = new ChatMessage(channel, message, wrappedMessage, netSource, user?.Key, hideChat, colorOverride, audioPath, audioVolume);
+        _netManager.ServerSendToMany(new MsgChatMessage() { Message = msg }, clients);
 
         if (!recordReplay)
             return;
@@ -432,7 +415,6 @@ internal sealed partial class ChatManager : IChatManager
         if ((channel & ChatChannel.AdminRelated) == 0 ||
             _configurationManager.GetCVar(CCVars.ReplayRecordAdminChat))
         {
-            var msg = new ChatMessage(channel, message, wrappedMessage, netSource, user?.Key, hideChat, colorOverride, audioPath, audioVolume);
             _replay.RecordServerMessage(msg);
         }
     }
@@ -493,22 +475,6 @@ internal sealed partial class ChatManager : IChatManager
     }
 
     #endregion
-
-    private bool ShouldShowFollowButton(INetChannel recipient)
-    {
-        if (!_player.TryGetSessionByChannel(recipient, out var session))
-            return false;
-
-        if (_entityManager.TrySystem(out GhostSystem? ghost))
-        {
-            if (!ghost.CanGhostWarp(session, out _))
-            {
-                return false;
-            }
-        }
-
-        return _netConfigManager.GetClientCVar(recipient, CCVars.InterfaceChatFollowButton);
-    }
 }
 
 public enum OOCChatType : byte

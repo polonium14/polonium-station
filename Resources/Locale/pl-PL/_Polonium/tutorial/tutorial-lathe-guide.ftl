@@ -16,5 +16,5 @@ tutorial-lathe-guide-need-materials = Za mało surowca na „{ $name }”. Wrzu�
 tutorial-lathe-guide-machine-smes = SMES
 tutorial-lathe-guide-machine-terminal = terminal kablowy
 tutorial-lathe-guide-machine-substation = podstację
-tutorial-lathe-guide-machine-apc = APC
+tutorial-lathe-guide-machine-apc = LKZ
 tutorial-lathe-guide-machine-cables = kable

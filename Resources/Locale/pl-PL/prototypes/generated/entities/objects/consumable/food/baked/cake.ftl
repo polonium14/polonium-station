@@ -1,5 +1,5 @@
-ent-FoodCakeBase = { ent-SolutionNormal }
-    .desc = { ent-SolutionNormal.desc }
+ent-FoodCakeBase = { ent-FoodCakeBaseNoSecretStash }
+    .desc = { ent-FoodCakeBaseNoSecretStash.desc }
 ent-FoodCakeSliceBase = { ent-SolutionVeryTiny }
     .desc = Tylko kawałek ciasta — wystarczy dla każdego.
 ent-FoodCakeBlueberry = ciasto jagodowe
@@ -88,3 +88,5 @@ ent-FoodCakeBerryDelight = jagodowa rozkosz
     .desc = To ciasto, które się zbliża.
 ent-FoodCakeBerryDelightSlice = kawałek jagodowej rozkoszy
     .desc = Wbij widelec — głód w izolacji zniknie.
+ent-FoodCakeBaseNoSecretStash = { ent-SolutionNormal }
+    .desc = { ent-SolutionNormal.desc }

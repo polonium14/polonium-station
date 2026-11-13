@@ -61,7 +61,6 @@ ui-options-show-ooc-patron-color = Pokazuj kolor OOC patronów
 ui-options-show-looc-on-head = Pokazuj wiadomości LOOC nad głowami postaci
 ui-options-fancy-speech = Pokazuj imiona w dymkach wiadomości
 ui-options-fancy-name-background = Dodaj tło imionom w dymkach wiadomości
-ui-options-chat-follow-button = Jako duch, pokaż przycisk śledzenia obok wiadomości na czacie
 ui-options-vsync = VSync
 ui-options-max-fps = Maksymalna liczba FPS:
 ui-options-max-fps-display-rate = Częstotliwość odświeżania
@@ -88,6 +87,7 @@ ui-options-hud-theme-clockwork = Zegarmistrz
 ui-options-hud-theme-retro = Retro
 ui-options-hud-theme-minimalist = Minimalizm
 ui-options-hud-theme-ashen = Popielny
+ui-options-hud-theme-trasen = Trasen-Knox
 ui-options-hud-layout-default = Domyślny
 ui-options-hud-layout-separated = Podzielony
 ui-options-vp-stretch = Rozciągnij widok, aby dopasować go do okna gry
@@ -387,6 +387,9 @@ ui-options-chat-window-opacity = Przezroczystość okna czatu
 ui-options-speech-bubble-text-opacity = Przezroczystość tekstu w dymkach
 ui-options-speech-bubble-speaker-opacity = Przezroczystość mówiącego w dymkach
 ui-options-speech-bubble-background-opacity = Przezroczystość tła w dymkach
+ui-options-chat-preview = Pokazuj dymki podglądu czatu podczas pisania
+ui-options-preview-bubble-background-opacity = Przezroczystość tła dymków podglądu
+ui-options-vacuum-overlay-intensity = Intensywność nakładki próżni
 ui-options-censor-nudity = Cenzuruj nagość postaci
 
 ## Admin menu

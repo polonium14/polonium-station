@@ -48,11 +48,17 @@ public sealed partial class MiscTab : Control
         Control.AddOptionCheckBox(CCVars.LoocAboveHeadShow, ShowLoocAboveHeadCheckBox);
         Control.AddOptionCheckBox(CCVars.HudHeldItemShow, ShowHeldItemCheckBox);
         Control.AddOptionCheckBox(CCVars.CombatModeIndicatorsPointShow, ShowCombatModeIndicatorsCheckBox);
+        // POLONIUM START
+        Control.AddOptionCheckBox(CCVars.CrosshairSingle, CrosshairSingleCheckBox);
+        Control.AddOptionCheckBox(CCVars.CrosshairOutline, CrosshairOutlineCheckBox);
+        Control.AddOptionCheckBox(CCVars.CrosshairSmoothing, CrosshairSmoothingCheckBox);
+        Control.AddOptionPercentSlider(CCVars.CrosshairScale, CrosshairScaleSlider, 0.5f, 2f);
+        Control.AddOptionColorSlider(CCVars.CrosshairColor, CrosshairColorSlider);
+        // POLONIUM END
         Control.AddOptionCheckBox(CCVars.OpaqueStorageWindow, OpaqueStorageWindowCheckBox);
         Control.AddOptionCheckBox(CCVars.ChatEnableFancyBubbles, FancySpeechBubblesCheckBox);
         Control.AddOptionCheckBox(CCVars.ChatFancyNameBackground, FancyNameBackgroundsCheckBox);
         Control.AddOptionCheckBox(CCVars.StaticStorageUI, StaticStorageUI);
-        Control.AddOptionCheckBox(CCVars.InterfaceChatFollowButton, ChatFollowButton);
 
         Control.Initialize();
     }

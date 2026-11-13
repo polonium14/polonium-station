@@ -7,7 +7,7 @@
     state: grenade
   - type: TimedDespawn
     lifetime: 0.6
-  - type: ParticleEmitter
+  - type: StarfallParticleEmitter # Polonium: renamed to avoid clashing with Wizden's ParticleEmitter
     effect: ExplosionFlash
 
 - type: entity
@@ -24,7 +24,7 @@
   components:
   - type: TimedDespawn
     lifetime: 2.8
-  - type: ParticleEmitter
+  - type: StarfallParticleEmitter # Polonium: renamed to avoid clashing with Wizden's ParticleEmitter
     effect: ExplosionSmoke
 
 - type: entity
@@ -33,7 +33,7 @@
   components:
   - type: TimedDespawn
     lifetime: 1.2
-  - type: ParticleEmitter
+  - type: StarfallParticleEmitter # Polonium: renamed to avoid clashing with Wizden's ParticleEmitter
     effect: ExplosionEmbers
 
 - type: entity
@@ -42,7 +42,7 @@
   components:
   - type: TimedDespawn
     lifetime: 2.8
-  - type: ParticleEmitter
+  - type: StarfallParticleEmitter # Polonium: renamed to avoid clashing with Wizden's ParticleEmitter
     effect: ExplosionGlowingEmbers
 
 - type: entity

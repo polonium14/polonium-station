@@ -1,0 +1,31 @@
+- type: constructionGraph
+  id: GoblinSteak
+  start: start
+  graph:
+
+  - node: start
+    edges:
+    - to: goblin steak
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+
+  - node: goblin steak
+    entity: FoodMeatGoblinCooked
+
+- type: constructionGraph
+  id: GoblinCutlet
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: goblin cutlet
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: goblin cutlet
+    entity: FoodMeatGoblinCutletCooked

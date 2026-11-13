@@ -19,7 +19,7 @@ public sealed partial class LobbyReadinessSystem : EntitySystem
 {
     [Dependency] private IChatManager _chat = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
-    [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private ServerGameTicker _ticker = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private ISharedPlayerManager _players = default!;
 
@@ -45,7 +45,7 @@ public sealed partial class LobbyReadinessSystem : EntitySystem
 
         // The countdown has to be extended in the same tick the ticker would preload the maps,
         // before the preset rules get added with the current ready count.
-        UpdatesBefore.Add(typeof(GameTicker));
+        UpdatesBefore.Add(typeof(ServerGameTicker));
 
         SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
 

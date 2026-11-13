@@ -14,7 +14,8 @@ class YAMLElements:
         self.elements = list(map(lambda i: self.create_element(i), items))
 
     def create_element(self, item):
-        if not 'id' in item:
+        # Variant prototypes list several ids at once and cannot be mapped to one locale key
+        if not 'id' in item or not isinstance(item['id'], str):
             return None
 
         if item['type'] == 'entity':

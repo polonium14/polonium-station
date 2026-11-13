@@ -33,6 +33,11 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitQMFormal
 
+- type: loadout
+  id: QuartermasterFormalDress
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtQMFormalDress
+
 # Head
 - type: loadout
   id: QuartermasterHead

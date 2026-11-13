@@ -12,7 +12,6 @@
   - type: Rotatable
   - type: Physics
     canCollide: false
-  - type: Fixtures
   - type: Clickable
   - type: WallMount
   - type: InteractionOutline
@@ -23,6 +22,16 @@
     - Structure
   - type: Sprite
     drawdepth: WallMountedItems
+  - type: Pullable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 5
+        mask:
+        - FullTileMask
 
 - type: entity
   abstract: true
@@ -53,6 +62,9 @@
   id: BaseWallmountMachine
   abstract: true
   components:
+  - type: ESSparkOnHit # Polonium: sparks when damaged, from Starlight
+    prob: 0.25
+    count: 2
   - type: ApcPowerReceiver
     powerLoad: 100
   - type: ExtensionCableReceiver

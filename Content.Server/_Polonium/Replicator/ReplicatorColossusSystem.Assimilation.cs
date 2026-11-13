@@ -488,7 +488,7 @@ public sealed partial class ReplicatorColossusSystem
         _colossusDestroyed = false;
     }
 
-    private void OnRoundEndText(RoundEndTextAppendEvent args)
+    private void OnRoundEndText(ref RoundEndTextAppendEvent args)
     {
         if (_assimilated)
             args.AddLine(Loc.GetString("replicator-round-end-assimilated"));

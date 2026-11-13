@@ -1,5 +1,3 @@
-particle-accelerator-control-menu-on-button = Włącz
-particle-accelerator-control-menu-off-button = Wyłącz
 particle-accelerator-control-menu-service-manual-reference = Odnieś się do s. 132 instrukcji obsługi
 particle-accelerator-control-menu-device-version-label = Akcelerator Cząsteczek Mark 2
 particle-accelerator-control-menu-power-label = [bold]Moc:[/bold]

@@ -8,8 +8,6 @@ ent-ClothingShoeSlippersDuck = ducky slippers
     .desc = You wish these made quacking sounds as you walked. It's a good thing they don't, though.
 ent-ClothingShoeSlippersLizard = lizard plushie slippers
     .desc = An adorable pair of slippers that resemble a lizardperson. Combine this with some other green clothing and you'll be the coolest crewmember on the station!
-ent-ClothingShoesTourist = tourist shoes
-    .desc = These cheap sandals don't look very comfortable.
 ent-ClothingShoesDameDane = yakuza shoes
     .desc = At last...
 ent-ClothingShoesSnakeskinBoots = snakeskin boots
@@ -22,3 +20,9 @@ ent-ClothingShoesBootsMoon = moon boots
     .desc = Special anti-gravity boots developed with a speciality blend of lunar rock gel. Shipped from the Netherlands.
 ent-ClothingShoesBootsJump = jump boots
     .desc = High-tech boots that give you the incredible ability to JUMP! With these boots you can jump over lava, chasms and weird chemicals on the floor!
+
+ent-ClothingShoesSandalsBlack = black sandals
+    .desc = Best paired with robes or Hawaiian shirts. Worst paired with socks.
+
+ent-ClothingShoesSandalsBrown = brown sandals
+    .desc = Best paired with robes or Hawaiian shirts. Worst paired with socks.

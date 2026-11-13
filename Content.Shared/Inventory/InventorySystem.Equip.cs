@@ -416,9 +416,28 @@ public abstract partial class InventorySystem
         bool checkDoafter = false,
         bool triggerHandContact = false)
     {
+        return TryUnequip(actor, target, slot, out removedItem, out _, silent, force, predicted,
+            inventory, clothing, reparent, checkDoafter, triggerHandContact);
+    }
+
+    public bool TryUnequip(
+        EntityUid actor,
+        EntityUid target,
+        string slot,
+        [NotNullWhen(true)] out EntityUid? removedItem,
+        out bool doAfterStarted,
+        bool silent = false,
+        bool force = false,
+        bool predicted = false,
+        InventoryComponent? inventory = null,
+        ClothingComponent? clothing = null,
+        bool reparent = true,
+        bool checkDoafter = false,
+        bool triggerHandContact = false)
+    {
         var itemsDropped = 0;
-        return TryUnequip(actor, target, slot, out removedItem, ref itemsDropped,
-            silent, force, predicted, inventory, clothing, reparent, checkDoafter);
+        return TryUnequip(actor, target, slot, out removedItem, out doAfterStarted, ref itemsDropped,
+            silent, force, predicted, inventory, clothing, reparent, checkDoafter, triggerHandContact);
     }
 
     private bool TryUnequip(
@@ -426,6 +445,7 @@ public abstract partial class InventorySystem
         EntityUid target,
         string slot,
         [NotNullWhen(true)] out EntityUid? removedItem,
+        out bool doAfterStarted,
         ref int itemsDropped,
         bool silent = false,
         bool force = false,
@@ -437,6 +457,7 @@ public abstract partial class InventorySystem
         bool triggerHandContact = false)
     {
         removedItem = null;
+        doAfterStarted = false;
 
         if (TerminatingOrDeleted(target))
             return false;
@@ -489,7 +510,7 @@ public abstract partial class InventorySystem
                 NeedHand = true,
             };
 
-            _doAfter.TryStartDoAfter(args);
+            doAfterStarted = _doAfter.TryStartDoAfter(args);
             return false;
         }
 
@@ -515,7 +536,7 @@ public abstract partial class InventorySystem
             if (slotDef != slotDefinition && slotDef.DependsOn == slotDefinition.Name)
             {
                 //this recursive call might be risky
-                TryUnequip(actor, target, slotDef.Name, out _, ref itemsDropped, true, true, predicted, inventory, reparent: reparent);
+                TryUnequip(actor, target, slotDef.Name, out _, out _, ref itemsDropped, true, true, predicted, inventory, reparent: reparent);
             }
         }
 

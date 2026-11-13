@@ -42,7 +42,7 @@ public sealed partial class PowerTransmissionSystem : EntitySystem
     [Dependency] private NodeContainerSystem _node = default!;
     [Dependency] private NodeGroupSystem _nodeGroup = default!;
     [Dependency] private PointLightSystem _pointLight = default!;
-    [Dependency] private StationSystem _station = default!;
+    [Dependency] private ServerStationSystem _station = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;
 
     public override void Initialize()

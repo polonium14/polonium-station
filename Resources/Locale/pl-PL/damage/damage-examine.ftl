@@ -8,4 +8,5 @@ damage-throw = rzucane
 damage-examine = Zadaje następujące obrażenia:
 damage-examine-type = Zadaje następujące obrażenia [color=cyan]{ $type }[/color]:
 damage-value = - [color=red]{ $amount }[/color] jednostek [color=yellow]{ $type }[/color].
+damage-value-stamina = - [color=red]{ $amount }[/color] jednostek [color=cyan]wytrzymałości[/color].
 damage-none = Nie zadaje obrażeń.

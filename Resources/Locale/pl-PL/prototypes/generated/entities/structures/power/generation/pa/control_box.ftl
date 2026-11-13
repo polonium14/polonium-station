@@ -1,5 +1,5 @@
-ent-ParticleAcceleratorControlBox = komputer kontroli AKCEL
+ent-ParticleAcceleratorControlBox = konsola kontroli AKCEL
     .desc = Służy do kontroli gęstości cząsteczek.
-ent-ParticleAcceleratorControlBoxUnfinished = komputer kontroli AKCEL
+ent-ParticleAcceleratorControlBoxUnfinished = konsola kontroli AKCEL
     .desc = Służy do kontroli gęstości cząsteczek. Wygląda na niedokończony.
     .suffix = Niedokończony.

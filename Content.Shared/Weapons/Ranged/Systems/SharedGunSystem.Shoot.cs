@@ -4,8 +4,11 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared._Polonium.Weapons.Ranged.Events;
 using Content.Shared.Camera;
 using Content.Shared._RMC14.CCVar;
+using Content.Shared._Starlight.Camera;
+using Content.Shared.CCVar;
 using Content.Shared._RMC14.Random;
 using Content.Shared._RMC14.Weapons.Ranged;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
@@ -33,6 +36,7 @@ public abstract partial class SharedGunSystem
 {
     [Dependency] private IConfigurationManager _config = default!;
     [Dependency] private SharedCameraRecoilSystem _recoil = default!;
+    [Dependency] private ScreenshakeSystem _screenshake = default!; // Polonium
 
     public bool GunPrediction { get; private set; }
 
@@ -88,7 +92,8 @@ public abstract partial class SharedGunSystem
         EntityUid user,
         Entity<GunComponent> gun,
         List<int>? predictedProjectiles = null,
-        ICommonSession? userSession = null)
+        ICommonSession? userSession = null,
+        EntityCoordinates? origin = null) // Polonium
     {
         if (gun.Comp.FireRateModified <= 0f ||
             !_actionBlockerSystem.CanAttack(user))
@@ -160,7 +165,7 @@ public abstract partial class SharedGunSystem
         }
 
         var originEntity = HasComp<GunUseGunOriginComponent>(gun) ? gun.Owner : user;
-        var fromCoordinates = Transform(originEntity).Coordinates;
+        var fromCoordinates = origin ?? Transform(originEntity).Coordinates; // Polonium: where the predicting client fired from
 
         var shotOriginEv = new BeforeAttemptShootEvent(fromCoordinates, gun.Comp.ShootOriginOffset);
         RaiseLocalEvent(user, ref shotOriginEv);
@@ -325,11 +330,18 @@ public abstract partial class SharedGunSystem
         var toMap = TransformSystem.ToMapCoordinates(toCoordinates).Position;
         var mapDirection = toMap - fromMap.Position;
         var mapAngle = mapDirection.ToAngle();
-        var angle = GetRecoilAngle(Timing.CurTime, gun, gun.Comp, mapDirection.ToAngle());
+        var angle = GetRecoilAngle(Timing.CurTime, gun, gun.Comp, mapDirection.ToAngle(), user); // Polonium: spread depends on the shooter
 
         var fromEnt = Maps.TryFindGridAt(fromMap, out var gridUid, out _)
             ? TransformSystem.WithEntityId(fromCoordinates, gridUid)
             : new EntityCoordinates(Maps.GetMapOrInvalid(fromMap.MapId), fromMap.Position);
+
+        // Polonium: Wizden #45811, our Shoot lives in shared since the projectile prediction
+        if (!fromEnt.EntityId.Valid)
+        {
+            Log.Warning($"Tried to fire gun {ToPrettyString(gun)} at entity coordinates with an invalid EntityUid.");
+            return [];
+        }
 
         toMap = fromMap.Position + angle.ToVec() * mapDirection.Length();
         mapDirection = toMap - fromMap.Position;
@@ -368,6 +380,7 @@ public abstract partial class SharedGunSystem
                 Shooter = userSession,
                 ClientId = predicted,
                 ClientEnt = user,
+                Origin = fromMap, // Polonium
             };
             AddComp(projectile, comp, true);
             Dirty(projectile, comp);
@@ -437,7 +450,7 @@ public abstract partial class SharedGunSystem
                 case AmmoComponent newAmmo:
                     if (_netManager.IsServer || ClientSideGunPrediction)
                     {
-                        CreateAndFireProjectiles(ent!.Value, newAmmo);
+                        CreateAndFireProjectiles(PredictedAmmo(ent!.Value), newAmmo); // Polonium
                     }
                     else
                     {
@@ -490,6 +503,23 @@ public abstract partial class SharedGunSystem
 
         return shotProjectiles;
 
+        // Polonium: prediction patch
+        EntityUid PredictedAmmo(EntityUid ammoEnt)
+        {
+            if (!_netManager.IsClient ||
+                IsClientSide(ammoEnt) ||
+                HasComp<GunIgnorePredictionComponent>(gun) ||
+                !HasComp<ProjectileComponent>(ammoEnt) ||
+                Prototype(ammoEnt) is not { } proto)
+            {
+                return ammoEnt;
+            }
+
+            var twin = Spawn(proto.ID, fromEnt);
+            Appearance.AppendData(ammoEnt, twin); // e.g. a filled arrow keeps its solution layer
+            return twin;
+        }
+
         void CreateAndFireProjectiles(EntityUid ammoEnt, AmmoComponent ammoComp)
         {
             predictedProjectiles ??= new List<int>();
@@ -501,8 +531,8 @@ public abstract partial class SharedGunSystem
                 RaiseLocalEvent(gun, ref spreadEvent);
 
                 var angles = LinearSpread(
-                    mapAngle - spreadEvent.Spread / 2,
-                    mapAngle + spreadEvent.Spread / 2,
+                    angle - spreadEvent.Spread / 2, // Polonium: pellets follow the recoil and movement spread too
+                    angle + spreadEvent.Spread / 2,
                     ammoSpreadComp.Count);
 
                 ShootOrThrow(ammoEnt, angles[0].ToVec(), gunVelocity, gun, user);
@@ -510,6 +540,10 @@ public abstract partial class SharedGunSystem
 
                 for (var i = 1; i < ammoSpreadComp.Count; i++)
                 {
+                    // Polonium: unpredicted guns only show the server pellets, nothing would clean these up on the client
+                    if (_netManager.IsClient && HasComp<GunIgnorePredictionComponent>(gun))
+                        break;
+
                     var newUid = Spawn(ammoSpreadComp.Proto, fromEnt);
                     ShootOrThrow(newUid, angles[i].ToVec(), gunVelocity, gun, user);
                     shotProjectiles.Add(newUid);
@@ -562,7 +596,7 @@ public abstract partial class SharedGunSystem
         ShootProjectile(uid, mapDirection, gunVelocity, gun, user, gun.Comp.ProjectileSpeedModified);
     }
 
-    private Angle GetRecoilAngle(TimeSpan curTime, EntityUid gunUid, GunComponent component, Angle direction)
+    private Angle GetRecoilAngle(TimeSpan curTime, EntityUid gunUid, GunComponent component, Angle direction, EntityUid? user) // Polonium: user
     {
         var timeSinceLastFire = (curTime - component.LastFire).TotalSeconds;
         var newTheta = MathHelper.Clamp(
@@ -572,14 +606,37 @@ public abstract partial class SharedGunSystem
         component.CurrentAngle = new Angle(newTheta);
         component.LastFire = component.NextFire;
 
+        // POLONIUM START
+        var spreadEv = new GetGunSpreadEvent(user, component.CurrentAngle);
+        RaiseLocalEvent(gunUid, ref spreadEv);
+        // POLONIUM END
+
         long tick = Timing.CurTick.Value;
         tick = tick << 32;
         tick = tick | (uint) GetNetEntity(gunUid).Id;
         var random = new Xoroshiro64S(tick).NextFloat(-0.5f, 0.5f);
-        var angle = new Angle(direction.Theta + component.CurrentAngle.Theta * random);
+        var angle = new Angle(direction.Theta + spreadEv.Spread.Theta * random); // Polonium: spreadEv
         DebugTools.Assert(component.CurrentAngle.Theta * random <= component.MaxAngleModified.Theta);
         return angle;
     }
+
+    // POLONIUM START
+    /// <summary>
+    /// Returns the spread cone the next shot would have if fired now, without changing the gun.
+    /// </summary>
+    public Angle PeekSpread(Entity<GunComponent> gun, EntityUid? user)
+    {
+        var timeSinceLastFire = Math.Max(0, (Timing.CurTime - gun.Comp.LastFire).TotalSeconds);
+        var theta = MathHelper.Clamp(
+            gun.Comp.CurrentAngle.Theta + gun.Comp.AngleIncreaseModified.Theta - gun.Comp.AngleDecayModified.Theta * timeSinceLastFire,
+            gun.Comp.MinAngleModified.Theta,
+            gun.Comp.MaxAngleModified.Theta);
+
+        var ev = new GetGunSpreadEvent(user, new Angle(theta));
+        RaiseLocalEvent(gun, ref ev);
+        return ev.Spread;
+    }
+    // POLONIUM END
 
     private Angle[] LinearSpread(Angle start, Angle end, int intervals)
     {
@@ -600,6 +657,16 @@ public abstract partial class SharedGunSystem
         if (!Timing.IsFirstTimePredicted || user == null || recoilDirection == Vector2.Zero || recoilScalar == 0)
             return;
 
-        _recoil.KickCamera(user.Value, recoilDirection.Normalized() * 0.5f * recoilScalar);
+        // Polonium start: Starlight's gun screenshake, a weaker kick and a short roll of the camera
+        if (_config.GetCVar(CCVars.GunClassicCameraRecoil))
+        {
+            _recoil.KickCamera(user.Value, recoilDirection.Normalized() * 0.5f * recoilScalar);
+            return;
+        }
+
+        var shakeIntensity = _config.GetCVar(CCVars.ScreenShakeIntensity);
+        _recoil.KickCamera(user.Value, recoilDirection.Normalized() * (0.5f + (0.13f - 0.5f) * shakeIntensity) * recoilScalar);
+        _screenshake.Screenshake(user.Value, new ScreenshakeParameters(0.035f * recoilScalar, 1.2f, 0.008f));
+        // Polonium end
     }
 }

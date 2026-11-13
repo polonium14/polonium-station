@@ -7,7 +7,7 @@ admin-bluespace-strike-eui-label-preview = Podgląd
 admin-bluespace-strike-eui-label-markers = Markery + syrena
 admin-bluespace-strike-eui-warning-not-epsilon = Uwaga! Kod alertu to nie Epsilon. Upewnij się, że wiesz, co robisz.
 admin-bluespace-strike-eui-label-radius = Promień (max 100)
-admin-bluespace-strike-eui-label-delay = Opóźnienie (1–300 s)
+admin-bluespace-strike-eui-label-delay = Opóźnienie (1–30 s)
 admin-bluespace-strike-eui-label-play-artillery = Odtwórz dźwięk artylerii
 admin-bluespace-strike-eui-label-confirm = Ognia!
 

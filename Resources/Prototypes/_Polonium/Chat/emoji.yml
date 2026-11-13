@@ -1,0 +1,54 @@
+- type: chatEmoji
+  id: Blad
+  code: blad
+  sprite: /Textures/_Polonium/Interface/Chat/Emoji/blad.png
+
+- type: chatEmoji
+  id: Idz
+  code: idz
+  sprite: /Textures/_Polonium/Interface/Chat/Emoji/idz.png
+
+- type: chatEmoji
+  id: IdzBlad
+  code: idzblad
+  sprite: /Textures/_Polonium/Interface/Chat/Emoji/idzblad.png
+
+- type: chatEmoji
+  id: IdzFioletowy
+  code: idzfioletowy
+  sprite: /Textures/_Polonium/Interface/Chat/Emoji/idzfioletowy.png
+
+- type: chatEmoji
+  id: IdzOwo
+  code: idzowo
+  sprite: /Textures/_Polonium/Interface/Chat/Emoji/idzowo.png
+
+- type: chatEmoji
+  id: IdzSpac
+  code: idzspac
+  sprite: /Textures/_Polonium/Interface/Chat/Emoji/idzspac.png
+
+- type: chatEmoji
+  id: IdzZrob
+  code: idzzrob
+  sprite: /Textures/_Polonium/Interface/Chat/Emoji/idzzrob.png
+
+- type: chatEmoji
+  id: Nie
+  code: nie
+  sprite: /Textures/_Polonium/Interface/Chat/Emoji/nie.png
+
+- type: chatEmoji
+  id: NieRob
+  code: nierob
+  sprite: /Textures/_Polonium/Interface/Chat/Emoji/nierob.png
+
+- type: chatEmoji
+  id: Rob
+  code: rob
+  sprite: /Textures/_Polonium/Interface/Chat/Emoji/rob.png
+
+- type: chatEmoji
+  id: RobTeraz
+  code: robteraz
+  sprite: /Textures/_Polonium/Interface/Chat/Emoji/robteraz.png

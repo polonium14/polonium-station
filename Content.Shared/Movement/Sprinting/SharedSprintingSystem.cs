@@ -216,7 +216,7 @@ public abstract partial class SharedSprintingSystem : EntitySystem
             return;
 
         if (newSprintState
-            && (!CanSprint(uid, component)
+            && (!CanSprint(uid, component, showPopup: true)
             || _timing.CurTime - component.LastSprint < SprintsDelay))
             return;
 
@@ -311,7 +311,7 @@ public abstract partial class SharedSprintingSystem : EntitySystem
 
     #region Conditionals
 
-    private bool CanSprint(EntityUid uid, SprinterComponent component)
+    private bool CanSprint(EntityUid uid, SprinterComponent component, bool showPopup = false)
     {
         if (MathF.Max(0f, component.CurrentSprintCapacity) <= 0f)
             return false;
@@ -319,11 +319,12 @@ public abstract partial class SharedSprintingSystem : EntitySystem
         // Awaiting on a wizden PR that refactors gravity from whatever the fuck this is.
         if (_gravity.IsWeightless(uid))
         {
-            _popupSystem.PopupClient(Loc.GetString("no-sprint-while-weightless"), uid, uid, PopupType.Medium);
+            if (showPopup)
+                _popupSystem.PopupClient(Loc.GetString("no-sprint-while-weightless"), uid, uid, PopupType.Medium);
             return false;
         }
 
-        var ev = new SprintAttemptEvent();
+        var ev = new SprintAttemptEvent { ShowPopup = showPopup };
         RaiseLocalEvent(uid, ref ev);
 
         return !ev.Cancelled;
@@ -334,7 +335,8 @@ public abstract partial class SharedSprintingSystem : EntitySystem
         if (component.CanStillInteract)
             return;
 
-        _popupSystem.PopupClient(Loc.GetString("no-sprint-while-restrained"), uid, uid, PopupType.Medium);
+        if (args.ShowPopup)
+            _popupSystem.PopupClient(Loc.GetString("no-sprint-while-restrained"), uid, uid, PopupType.Medium);
         args.Cancel();
     }
 
@@ -343,7 +345,8 @@ public abstract partial class SharedSprintingSystem : EntitySystem
         if (!_standing.IsDown((uid, component)))
             return;
 
-        _popupSystem.PopupClient(Loc.GetString("no-sprint-while-lying"), uid, uid, PopupType.Medium);
+        if (args.ShowPopup)
+            _popupSystem.PopupClient(Loc.GetString("no-sprint-while-lying"), uid, uid, PopupType.Medium);
         args.Cancel();
     }
 

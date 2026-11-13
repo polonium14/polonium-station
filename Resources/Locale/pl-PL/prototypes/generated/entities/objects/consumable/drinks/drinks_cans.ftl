@@ -1,4 +1,4 @@
-ent-DrinkCanBase = { ent-DrinkBaseMaterialMetal }
+ent-DrinkCanBase = { ent-SolutionSmall }
     .desc = { ent-DrinkBaseMaterialMetal.desc }
 ent-DrinkCanBaseFull = { ent-DrinkCanBase }
     .suffix = Pełne
@@ -10,9 +10,9 @@ ent-DrinkColaCanBase = Puszka Space Cola
 ent-DrinkColaCan = { ent-DrinkColaCanBase }
     .suffix = Pełne
     .desc = { ent-DrinkColaCanBase.desc }
-ent-DrinkColaCanEmpty = { ent-DrinkBaseOpenableOpen }
+ent-DrinkColaCanEmpty = { ent-DrinkColaCanBase }
     .suffix = Puste
-    .desc = { ent-DrinkBaseOpenableOpen.desc }
+    .desc = { ent-DrinkColaCanBase.desc }
 ent-DrinkIcedTeaCan = puszka mrożonej herbaty
     .desc = Orzeźwiająca puszka mrożonej herbaty.
 ent-DrinkLemonLimeCan = puszka Smite

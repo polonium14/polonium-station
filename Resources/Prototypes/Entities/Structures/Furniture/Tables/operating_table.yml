@@ -5,11 +5,17 @@
   description: Special medical table for surgery. Speeds up surgical steps performed on a patient buckled to it.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/optable.rsi
-    state: operating_table
+    sprite: _Polonium/Structures/Furniture/Tables/optable.rsi # Polonium: sprites with a light, a vitals monitor and a gas tank
     noRot: true
+    layers:
+    - state: operating_table
+      map: ["enum.OperatingTableVisualLayers.Base"]
+    - state: vitals_1
+      map: ["enum.OperatingTableVisualLayers.Vitals"]
+      visible: false
+    - map: ["tank"]
   - type: Icon
-    sprite: Structures/Furniture/Tables/optable.rsi
+    sprite: _Polonium/Structures/Furniture/Tables/optable.rsi
     state: operating_table
   - type: AmbientMusicMarkerMedical
   - type: OperatingTable
@@ -17,3 +23,53 @@
   - type: DeviceLinkSink
     ports:
       - BodyScannerReceiver
+  # Polonium: overhead light and vitals monitor, see OperatingTableLightSystem
+  - type: OperatingTableLight
+  - type: PointLight
+    enabled: false
+    radius: 6
+    energy: 3
+    color: "#FFFFFF"
+    castShadows: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.OperatingTableVisuals.LightOn:
+        enum.OperatingTableVisualLayers.Base:
+          True: { state: operating_table_on }
+          False: { state: operating_table }
+      enum.OperatingTableVisuals.VitalsState:
+        enum.OperatingTableVisualLayers.Vitals:
+          None: { visible: false }
+          Healthy: { state: vitals_1, visible: true }
+          Injured: { state: vitals_2, visible: true }
+          Critical: { state: vitals_3, visible: true }
+          Dead: { state: vitals_4, visible: true }
+      enum.BedInternalsVisuals.TankVisual:
+        tank:
+          None: { visible: false }
+          Nitrogen: { state: tank_1, visible: true }
+          Oxygen: { state: tank_2, visible: true }
+          Generic: { state: tank_3, visible: true }
+          Plasma: { state: tank_4, visible: true }
+          Nitrous: { state: tank_5, visible: true }
+  # A gas tank in the table can be connected to the patient, see BedInternalsSystem
+  - type: ItemSlots
+    slots:
+      gasTankSlot:
+        name: comp-gas-canister-slot-name-gas-tank
+        whitelist:
+          components:
+          - GasTank
+        insertOnInteract: true
+      bedMask: # the bed's own mask, only BedInternalsSystem moves it
+        locked: true
+        startingItem: ClothingMaskBreathMedicalBed
+  - type: ContainerContainer
+    containers:
+      gasTankSlot: !type:ContainerSlot {}
+      bedMask: !type:ContainerSlot {}
+  - type: BedInternals
+    gasSlot: gasTankSlot
+    maskContainer: bedMask
+  # Polonium end

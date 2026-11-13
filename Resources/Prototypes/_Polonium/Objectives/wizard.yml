@@ -533,7 +533,7 @@
   components:
   - type: Objective
     icon:
-      sprite: Clothing/Head/Hats/wizardhat.rsi
+      sprite: Clothing/Head/Hats/wizard_blue.rsi
       state: icon
   - type: WearingWhitelistCondition
     slots: [ head, outerClothing ]

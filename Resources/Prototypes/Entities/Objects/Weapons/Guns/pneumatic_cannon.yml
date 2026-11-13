@@ -36,6 +36,8 @@
     grid:
     - 0,0,1,1
   - type: Appearance
+  - type: GunCrosshair # Polonium
+    crosshair: Grid
   - type: ItemMapper
     containerWhitelist: [gas_tank]
     mapLayers:
@@ -92,6 +94,8 @@
     soundEmpty:
       path: /Audio/Items/hiss.ogg
     clumsyProof: true
+  - type: GunCrosshair # Polonium
+    crosshair: Grid
   - type: ContainerAmmoProvider
     container: storagebase
   - type: GunIgnorePrediction
@@ -140,6 +144,12 @@
   - type: GunIgnorePrediction
   - type: Item
     size: Normal
+  # POLONIUM START: mounted on a borg, so moving does not shake it
+  - type: GunMovementSpread
+    walk: 0
+    run: 0
+    sprint: 0
+  # POLONIUM END
 
 - type: entity
   name: syringe gun
@@ -169,6 +179,8 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     clumsyProof: true
+  - type: GunCrosshair # Polonium
+    crosshair: Grid
   - type: ContainerAmmoProvider
     container: storagebase
   - type: GunIgnorePrediction

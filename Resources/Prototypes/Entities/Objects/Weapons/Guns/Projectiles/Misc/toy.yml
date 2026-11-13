@@ -38,6 +38,7 @@
     fixedRotation: true
   - type: Ammo
   - type: Projectile
+    angle: 180 # Polonium: the tip points up on the sprite, same as ThrowingAngle
     deleteOnCollide: false
     onlyCollideWhenShot: true
     damage:

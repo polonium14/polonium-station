@@ -11,6 +11,7 @@ using Content.Shared.Popups;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
 using Robust.Shared.Map;
+using Content.Shared.Timing.Systems;
 
 namespace Content.Shared._Polonium.Photography;
 

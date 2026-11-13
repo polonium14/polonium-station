@@ -161,3 +161,7 @@ ent-FoodAnomalyBerry = jagoda anomalii
     .desc = Dziwny niebieski owoc. Coś w nim nie gra.
 ent-FoodBloonion = cebulka bloonionu
     .desc = Dziwna, unosząca się w powietrzu żarówka… Nic, czym warto by się przejmować.
+ent-FoodAloeIgnis = aloe ignis leaf
+    .desc = A jagged leaf. It's uncomfortably warm to the touch and smells like ozone and spice.
+ent-FoodDragonTail = dragon's tail stalk
+    .desc = A long, spiraling stalk that glows with a soft emerald light. It can be processed into useful compress to sooth burns.

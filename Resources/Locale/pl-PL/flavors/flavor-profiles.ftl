@@ -12,6 +12,7 @@ flavor-base-savory = wytrawnie
 flavor-base-sweet = słodko
 flavor-base-salty = słono
 flavor-base-sour = kwaśno
+flavor-base-earthy = ziemiście
 flavor-base-bitter = gorzko
 flavor-base-spicy = ostro
 flavor-base-metallic = metalicznie

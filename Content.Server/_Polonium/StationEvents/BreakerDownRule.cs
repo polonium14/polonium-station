@@ -7,8 +7,8 @@ using Content.Server.Power.EntitySystems;
 using Content.Server.StationEvents.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Station.Components;
 using JetBrains.Annotations;
+using Content.Server.Station.Systems;
 
 namespace Content.Server._Polonium.StationEvents;
 
@@ -28,16 +28,9 @@ public sealed partial class BreakerDownRule : StationEventSystem<BreakerDownRule
     {
         base.Started(uid, component, gameRule, args);
 
-        if (!TryGetRandomStation(out var chosenStation))
-            return;
-
-        var query = EntityQueryEnumerator<ApcComponent, TransformComponent>();
-        while (query.MoveNext(out var apcUid, out var apc, out var xform))
+        foreach (var (apcUid, apc) in Station.GetEntitiesWithComponentOnStation<ApcComponent>(true))
         {
             if (!apc.MainBreakerEnabled)
-                continue;
-
-            if (CompOrNull<StationMemberComponent>(xform.GridUid)?.Station != chosenStation)
                 continue;
 
             _apcSystem.ApcToggleBreaker(apcUid, apc);

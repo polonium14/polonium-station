@@ -1,4 +1,4 @@
-ent-BaseChemistryVial = { ent-DrinkBaseMaterialGlass }
+ent-BaseChemistryVial = { ent-DrinkBase }
     .desc = { ent-DrinkBaseMaterialGlass.desc }
 ent-ChemistryEmptyVial = vial
     .desc = A small vial.

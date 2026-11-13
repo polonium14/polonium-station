@@ -1,0 +1,11 @@
+swappable-instrument-style-harpy-voice = Voice
+swappable-instrument-style-harpy-trumpet = Trumpet
+swappable-instrument-style-harpy-electric = Electric
+swappable-instrument-style-harpy-bass = Bass
+swappable-instrument-style-harpy-rock = Rock
+swappable-instrument-style-harpy-acoustic = Acoustic
+swappable-instrument-style-harpy-flute = Flute
+swappable-instrument-style-harpy-sax = Sax
+swappable-instrument-style-harpy-piano = Piano
+swappable-instrument-style-harpy-church-organ = Church Organ
+swappable-instrument-style-harpy-violin = Violin

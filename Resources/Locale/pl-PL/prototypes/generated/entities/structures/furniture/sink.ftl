@@ -1,5 +1,5 @@
 ent-SinkEmpty = zlew
-    .desc = Baterie zostały dokręcone z maksymalnym możliwym momentem obrotowym, ale mimo to nadal się kapie.
+    .desc = Baterie zostały dokręcone z maksymalnym możliwym momentem obrotowym, ale mimo to nadal kapią.
     .suffix = Puste
 ent-Sink = { ent-SinkEmpty }
     .suffix = Woda

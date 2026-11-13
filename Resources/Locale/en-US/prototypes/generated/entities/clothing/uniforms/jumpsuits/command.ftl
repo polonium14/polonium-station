@@ -1,0 +1,10 @@
+ent-ClothingUniformJumpsuitCaptain = captain's jumpsuit
+    .desc = It's a blue jumpsuit with some gold markings denoting the rank of "Captain".
+ent-ClothingUniformJumpsuitHoP = head of personnel's jumpsuit
+    .desc = Rather bland and inoffensive. Perfect for vanishing off the face of the universe.
+ent-ClothingUniformJumpsuitCommandGeneric = command jumpsuit
+    .desc = A generic Command-colored jumpsuit not associated with any particular department.
+ent-ClothingUniformJumpsuitNanotrasen = nanotrasen jumpsuit
+    .desc = A stately blue jumpsuit to represent NanoTrasen.
+ent-ClothingUniformJumpsuitCapFormal = captain's formal suit
+    .desc = A suit for special occasions.

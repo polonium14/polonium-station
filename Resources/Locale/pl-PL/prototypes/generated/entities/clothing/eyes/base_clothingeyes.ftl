@@ -5,3 +5,5 @@ ent-ClothingHeadEyeBaseFlippable = { ent-ClothingEyesBase }
 ent-ClothingHeadEyeBaseFlipped = { ent-ClothingHeadEyeBaseFlippable }
     .suffix = odwrócone
     .desc = { ent-ClothingHeadEyeBaseFlippable.desc }
+ent-ClothingEyesSunglassesBase = { ent-ClothingEyesBase }
+    .desc = { ent-ClothingEyesBase.desc }

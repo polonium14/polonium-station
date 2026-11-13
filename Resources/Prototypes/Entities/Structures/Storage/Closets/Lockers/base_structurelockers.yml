@@ -3,6 +3,9 @@
   parent: [ ClosetBase, StructureHealthContainerWeak ]
   id: LockerBase
   components:
+  - type: ESSparkOnHit # Polonium: sparks when damaged, from Starlight
+    prob: 0.25
+    count: 2
   - type: AccessReader
   - type: Lock
   - type: LockVisuals

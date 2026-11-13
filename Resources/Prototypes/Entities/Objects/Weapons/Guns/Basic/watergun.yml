@@ -3,6 +3,8 @@
   parent: [SolutionGun, SolutionSmall, BaseItem] # 12 shots
   id: WeaponWaterGunBase
   components:
+  - type: GunCrosshair # Polonium: liquid gun crosshair
+    crosshair: DashedRing
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/water_pistol.rsi
   - type: Clothing

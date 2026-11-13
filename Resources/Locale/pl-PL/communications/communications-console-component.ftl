@@ -27,7 +27,6 @@ comms-console-shuttle-unavailable = Wahadłowiec jest tymczasowo niedostępny
 comms-console-message-too-long = Wiadomość jest za długa
 comms-console-message-cannot-send = Komunikacja została tymczasowo wyłączona
 # Placeholder values
-comms-console-announcement-sent-by = Wysłane przez
 comms-console-announcement-unknown-sender = Nieznany
 # Comms console variant titles
 comms-console-announcement-title-station = Konsola komunikacyjna
@@ -51,3 +50,4 @@ comms-console-level-Red-flavour-label = Zachowaj czujność
 comms-console-level-Gamma-flavour-label = Zaproponuj szczególną ostrożność
 comms-console-level-Delta-flavour-label = Powodzenia
 comms-console-level-Epsilon-flavour-label = Jesteś zwolniony
+comms-console-level-Unknown-flavour-label = Zachowaj czujność

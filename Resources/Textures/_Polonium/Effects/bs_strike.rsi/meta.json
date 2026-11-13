@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Made by Nikita.pl for Polonium Station at https://github.com/polonium14/polonium-station/tree/master/Resources/Textures/_Polonium/Effects/bs_strike.rsi",
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Made for Polonium Station by nikitosych",
     "size": {
         "x": 32,
         "y": 32
@@ -11,14 +11,20 @@
             "name": "1",
             "delays": [
                 [
-                    0.18,
-                    0.18,
-                    0.18,
-                    0.18,
-                    0.18,
-                    0.18,
-                    0.18,
-                    0.18
+                    0.08,
+                    0.08,
+                    0.08,
+                    0.08,
+                    0.08,
+                    0.08,
+                    0.08,
+                    0.08,
+                    0.08,
+                    0.08,
+                    0.08,
+                    0.08,
+                    0.08,
+                    1000.0
                 ]
             ]
         }

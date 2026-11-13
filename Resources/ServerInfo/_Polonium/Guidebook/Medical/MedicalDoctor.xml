@@ -70,6 +70,7 @@ Jeśli to możliwe, przypnij pacjenta do łóżka medycznego; jeśli potrzebujes
 <GuideEntityEmbed Entity="MedicalBed"/>
 <GuideEntityEmbed Entity="StasisBed"/>
 </Box>
+Łóżko medyczne ma gniazdo na zbiornik gazu. Włóż do niego butlę z tlenem (albo z innym gazem, np. podtlenkiem azotu), przypnij pacjenta i wybierz „Włącz układ oddechowy”. Łóżko założy pacjentowi własną maskę i podłączy butlę. Jeśli pacjent ma już maskę do oddychania, łóżko użyje jej, a cudzą maskę, której nie da się podłączyć do gazu, trzeba najpierw zdjąć. Po wyłączeniu układu albo odpięciu pacjenta maska wraca do łóżka. Pamiętaj, że gaz z butli trzeba dobrać do gatunku pacjenta, np. Vox oddycha azotem.
 ## Ocena zwłok
 Nie da się uratować wszystkich – czasami śmierć jest nieunikniona. W zależności od [color=#e8c878]stanu[/color] zwłok można podjąć kilka działań.
 

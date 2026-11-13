@@ -4,6 +4,7 @@
   categories: [ HideSpawnMenu ]
   name: bullet (.25 caseless)
   components:
+  - type: ProjectileTracer # Polonium: bullet tracers
   - type: Projectile
     damage:
       types:

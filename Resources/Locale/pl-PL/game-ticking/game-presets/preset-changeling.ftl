@@ -8,3 +8,8 @@ changeling-briefing =
     Możesz wykorzystać i przyjąć tożsamości tych, których pożerasz, aby uniknąć tragicznego losu.
 objective-issuer-changeling = [color=#FA2A55]Umysł-Kolektywny[/color]
 changeling-round-end-agent-name = zmiennokształtny
+space-changeling-role-greeting =
+    Jesteś zmiennokształtnym, wysoce inteligentnym drapieżnikiem.
+    Po dekadach dryfowania w przestrzeni kosmicznej w stanie zamrożenia znajdujesz się w pobliżu stacji kosmicznej wypełnionej po brzegi soczystymi członkami załogi.
+    Jesteś głodny i bez pożywienia długo nie przetrwasz...
+    Zabijaj. Pochłaniaj. Ukrywaj się. Przetrwaj.

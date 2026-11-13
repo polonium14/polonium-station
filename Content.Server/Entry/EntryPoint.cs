@@ -227,7 +227,7 @@ namespace Content.Server.Entry
             _discordChatLink.Initialize();
             _euiManager.Initialize();
             _gameMap.Initialize();
-            _entSys.GetEntitySystem<GameTicker>().PostInitialize();
+            _entSys.GetEntitySystem<ServerGameTicker>().PostInitialize();
             IoCManager.Resolve<DiscordBanNotifyManager>().Initialize();
             _ban.Initialize();
             _connection.PostInit();

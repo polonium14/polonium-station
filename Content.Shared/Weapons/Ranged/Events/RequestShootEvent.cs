@@ -32,4 +32,9 @@ public sealed class RequestShootEvent : EntityEventArgs
 
     public List<int>? Shot;
     public GameTick LastRealTick;
+
+    /// <summary>
+    /// Polonium: where the predicting client fired from, the server may move the shot here.
+    /// </summary>
+    public NetCoordinates? Origin;
 }

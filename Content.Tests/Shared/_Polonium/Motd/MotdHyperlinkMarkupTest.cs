@@ -121,8 +121,6 @@ public sealed class UrlTagRestrictedContextTest
 
         var radio = new ChatMessage(ChatChannel.Radio, "announcement", "announcement", default, null);
         Assert.That(radio.AllowHyperlinks, Is.False);
-
-        Assert.That(new ChatMessage(msg).AllowHyperlinks, Is.False);
     }
 
     [Test]

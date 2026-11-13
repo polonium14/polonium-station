@@ -36,7 +36,7 @@
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc 'admin-bluespace-strike-eui-label-delay'}" MinSize="120 0" />
-            <FloatSpinBox Name="Delay" MinSize="130 0" HorizontalExpand="True" Value="15"/>
+            <FloatSpinBox Name="Delay" MinSize="130 0" HorizontalExpand="True" Value="5"/>
         </BoxContainer>
 
         <Control MinSize="0 20"/>

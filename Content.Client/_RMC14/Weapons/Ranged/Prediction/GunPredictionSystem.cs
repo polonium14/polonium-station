@@ -4,6 +4,7 @@
 
 using System.Numerics;
 using Content.Client.Projectiles;
+using Content.Shared._Polonium.Teleportation;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Events;
@@ -31,6 +32,8 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
 
+    private static readonly TimeSpan HitHoldTime = TimeSpan.FromSeconds(1);
+
     private EntityQuery<IgnorePredictionHideComponent> _ignorePredictionHideQuery;
     private EntityQuery<IgnorePredictionHitComponent> _ignorePredictionHitQuery;
     private EntityQuery<PredictedProjectileClientComponent> _predictedClientQuery;
@@ -51,6 +54,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
 
         SubscribeLocalEvent<PredictedProjectileClientComponent, UpdateIsPredictedEvent>(OnClientProjectileUpdateIsPredicted);
         SubscribeLocalEvent<PredictedProjectileClientComponent, StartCollideEvent>(OnClientProjectileStartCollide);
+        SubscribeLocalEvent<PredictedProjectileClientComponent, PortalEnteredEvent>(OnClientProjectilePortalEntered); // Polonium
 
         SubscribeLocalEvent<PredictedProjectileServerComponent, ComponentAdd>(OnServerProjectileAdd);
         SubscribeLocalEvent<PredictedProjectileServerComponent, ComponentStartup>(OnServerProjectileStartup);
@@ -64,8 +68,46 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         var query = EntityQueryEnumerator<PredictedProjectileClientComponent>();
         while (query.MoveNext(out var uid, out var predicted))
         {
-            predicted.Coordinates = Transform(uid).Coordinates;
+            // Polonium: a twin whose grid or map was deleted sits in nullspace with coordinates relative to itself
+            var xform = Transform(uid);
+            // Polonium start: physics steps from where the twin really is, not where the last frame drew it
+            RestoreTickPosition(uid, predicted, xform);
+            if (_timing.IsFirstTimePredicted && predicted.LerpTick != _timing.CurTick)
+            {
+                predicted.LerpTick = _timing.CurTick;
+                predicted.LerpParent = xform.ParentUid;
+                predicted.LerpFrom = xform.LocalPosition;
+                predicted.LerpTo = xform.LocalPosition;
+            }
+            // Polonium end
+
+            predicted.Coordinates = xform.ParentUid.IsValid() ? xform.Coordinates : null;
         }
+    }
+
+    // Polonium
+    /// <summary>
+    /// Moves every predicted projectile back from where the last frame drew it to where the last tick left it.
+    /// Runs before game states are applied, because the engine resets contacts there from the current positions.
+    /// </summary>
+    public void RestoreTickPositions()
+    {
+        var query = EntityQueryEnumerator<PredictedProjectileClientComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var predicted, out var xform))
+        {
+            RestoreTickPosition(uid, predicted, xform);
+        }
+    }
+
+    // Polonium
+    private void RestoreTickPosition(EntityUid uid, PredictedProjectileClientComponent predicted, TransformComponent xform)
+    {
+        if (!predicted.Lerped)
+            return;
+
+        predicted.Lerped = false;
+        if (xform.ParentUid == predicted.LerpParent)
+            _transform.SetLocalPositionNoLerp(uid, predicted.LerpTo, xform);
     }
 
     private void OnAfterSolve(ref PhysicsUpdateAfterSolveEvent ev)
@@ -75,6 +117,8 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             var pending = EntityQueryEnumerator<PredictedProjectileClientComponent>();
             while (pending.MoveNext(out var uid, out var predicted))
             {
+                predicted.LerpTo = Transform(uid).LocalPosition; // Polonium
+
                 if (predicted.PendingImpactTarget is not { } target)
                     continue;
 
@@ -82,11 +126,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
                 if (!Exists(target))
                     continue;
 
-                var hit = new HashSet<(NetEntity, MapCoordinates)>
-                {
-                    (GetNetEntity(target), _transform.GetMapCoordinates(target)),
-                };
-                RaiseNetworkEvent(new PredictedProjectileHitEvent(uid.Id, hit, _transform.GetMapCoordinates(uid)));
+                SendHit(uid, target);
             }
 
             return;
@@ -153,7 +193,24 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         // engine's ResetContacts during prediction reset. It is stopped/hidden here and cleaned up
         // safely in Update instead.
         _projectile.ProjectileCollide((ent, projectile, physics), args.OtherEntity, predicted: true);
-        MarkClientHit(ent, ent.Comp, physics);
+        MarkClientHit(ent, ent.Comp, projectile, physics);
+    }
+
+    // Polonium: the client often can't tell where a portal leads, so the twin vanishes in it
+    // and the server drops prediction for the real shot, which the shooter then sees come out
+    private void OnClientProjectilePortalEntered(Entity<PredictedProjectileClientComponent> ent, ref PortalEnteredEvent args)
+    {
+        if (args.Handled || !IsClientSide(ent))
+            return;
+
+        args.Handled = true;
+        if (ent.Comp.Hit)
+            return;
+
+        ent.Comp.Hit = true;
+        ent.Comp.HoldUntil = _timing.CurTime;
+        HideSprite(ent);
+        _physics.SetLinearVelocity(ent, Vector2.Zero);
     }
 
     private void OnServerProjectileAdd(Entity<PredictedProjectileServerComponent> ent, ref ComponentAdd args)
@@ -230,6 +287,7 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             if (projectile.ProjectileSpent && !projectile.DeleteOnCollide)
             {
                 _sprite.SetVisible((serverUid, serverSprite), true);
+                TryDeleteClientTwin(server.ClientId);
                 continue;
             }
 
@@ -240,12 +298,20 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
         var projectiles = EntityQueryEnumerator<PredictedProjectileClientComponent, ProjectileComponent, PhysicsComponent>();
         while (projectiles.MoveNext(out var uid, out var predicted, out var projectile, out var physics))
         {
+            RestoreTickPosition(uid, predicted, Transform(uid)); // Polonium
+
             if (predicted.Hit)
             {
                 if (IsClientSide(uid))
                 {
                     // hold the twin at the impact pose until the server arrow is shown
                     _physics.SetCanCollide(uid, false, body: physics);
+                    if (projectile.DeleteOnCollide || _timing.CurTime >= predicted.HoldUntil)
+                    {
+                        HideSprite(uid);
+                        QueueDel(uid);
+                    }
+
                     continue;
                 }
 
@@ -295,16 +361,10 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             if (hitEntity is not { } target)
                 continue;
 
-            var hit = new HashSet<(NetEntity, MapCoordinates)>
-            {
-                (GetNetEntity(target), _transform.GetMapCoordinates(target)),
-            };
-
-            var ev = new PredictedProjectileHitEvent(uid.Id, hit, _transform.GetMapCoordinates(uid));
-            RaiseNetworkEvent(ev);
+            SendHit(uid, target);
 
             _projectile.ProjectileCollide((uid, projectile, physics), target, predicted: true);
-            MarkClientHit(uid, predicted, physics);
+            MarkClientHit(uid, predicted, projectile, physics);
         }
 
         // Keep the shooter's authoritative projectile hidden after a predicted hit.
@@ -324,6 +384,15 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
                 _sprite.SetVisible((uid, sprite), false);
             }
         }
+    }
+
+    private void SendHit(EntityUid projectile, EntityUid target)
+    {
+        RaiseNetworkEvent(new PredictedProjectileHitEvent(
+            projectile.Id,
+            GetNetEntity(target),
+            _transform.GetMapCoordinates(target),
+            _transform.GetMapCoordinates(projectile)));
     }
 
     private void TryDeleteClientTwin(int clientId)
@@ -353,27 +422,41 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             _sprite.SetVisible((uid, sprite), true);
     }
 
-    private void MarkClientHit(EntityUid uid, PredictedProjectileClientComponent predicted, PhysicsComponent physics)
+    private void MarkClientHit(EntityUid uid, PredictedProjectileClientComponent predicted, ProjectileComponent projectile, PhysicsComponent physics)
     {
         if (predicted.Hit)
             return;
 
         predicted.Hit = true;
+        predicted.HoldUntil = _timing.CurTime + HitHoldTime;
+
+        if (projectile.DeleteOnCollide)
+            HideSprite(uid);
 
         _physics.SetAngularVelocity(uid, 0f, body: physics);
         _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
-        _physics.SetCanCollide(uid, false, body: physics);
+        // Polonium: no SetCanCollide here, inside a collision it destroys contacts the engine is still iterating
+        // in ResetContacts and crashes the client. Update turns collision off for hit twins
     }
 
     public override void FrameUpdate(float frameTime)
     {
         base.FrameUpdate(frameTime);
 
-        // TODO bullet prediction remove this when lerping doesnt make the client's entity slightly slower
+        // Polonium: the engine lerp moves the twin itself and no server state resets it, so we draw it between ticks ourselves
+        var step = (float)(_timing.TickRemainder.TotalSeconds / _timing.TickPeriod.TotalSeconds);
         var projectiles = EntityQueryEnumerator<PredictedProjectileClientComponent, TransformComponent>();
-        while (projectiles.MoveNext(out _, out var xform))
+        while (projectiles.MoveNext(out var uid, out var predicted, out var xform))
         {
             xform.ActivelyLerping = false;
+
+            // Polonium start
+            if (predicted.LerpParent != xform.ParentUid || predicted.LerpFrom == predicted.LerpTo)
+                continue;
+
+            _transform.SetLocalPositionNoLerp(uid, Vector2.Lerp(predicted.LerpFrom, predicted.LerpTo, step), xform);
+            predicted.Lerped = true;
+            // Polonium end
         }
     }
 }

@@ -70,6 +70,14 @@ Broń śmiercionośna należy do poziomu III i może być użyta tylko zgodnie z
   <GuideEntityEmbed Entity="WeaponRifleLecter"/>
 </Box>
 
+## Alkomat
+
+[color=#e8c878]Alkomat[/color] pozwala sprawdzić, czy ktoś jest trzeźwy, na przykład funkcjonariusz przed służbą albo pilot przed lotem. Badana osoba bierze alkomat do ręki i dmucha w ustnik, a po krótkiej analizie urządzenie pokazuje zawartość alkoholu we krwi w promilach i ocenę stanu, od trzeźwości po zatrucie alkoholowe. Wynik zostaje na wyświetlaczu, więc po oddaniu urządzenia funkcjonariusz może go odczytać sam. Osobę zakutą w kajdanki można zbadać bez jej zgody, przykładając jej alkomat do ust. Wynik można wydrukować i dołączyć do akt sprawy. Alkomat działa na ogniwo zasilające, które po kilkunastu badaniach trzeba wymienić albo naładować. Są dostępne w automatach SecTech i NanoNFZ.
+
+<Box>
+  <GuideEntityEmbed Entity="Breathalyzer"/>
+</Box>
+
 ## Różnorodne
 
 Funkcjonariusze Ochrony nie powinni patrolować wentylacji na zielonym kodzie zagrożenia, szczególnie w pojedynkę. Zamiast tego powinni skupić się na utrzymywaniu porządku na stacji.

@@ -13,7 +13,9 @@ using Content.Shared.Atmos;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._Polonium.Medical.PatientIntake;
 using Content.Shared.DeviceLinking;
+using Content.Shared.DeviceLinking.Systems;
 using Content.Shared.Fax.Components;
+using Content.Shared.GameTicking;
 using Content.Shared.Gibbing;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind;
@@ -188,7 +190,7 @@ public sealed class PatientIntakeMachineTest : GameTest
             Assert.That(comp.TotalNet, Is.EqualTo(comp.LastNet));
 
             var roundEnd = new RoundEndTextAppendEvent();
-            entMan.EventBus.RaiseEvent(EventSource.Local, roundEnd);
+            entMan.EventBus.RaiseEvent(EventSource.Local, ref roundEnd);
             Assert.That(roundEnd.Text, Does.Contain(comp.TotalNet.ToString()), "The round-end summary lists the machine's total.");
             Assert.That(entMan.Deleted(patient) || entMan.IsQueuedForDeletion(patient), Is.True);
         });
@@ -469,7 +471,7 @@ public sealed class PatientIntakeMachineTest : GameTest
             entMan.System<SharedMapSystem>().SetTile(map.Grid, new Vector2i(0, -1), map.Tile.Tile);
             machine = entMan.SpawnEntity("PatientIntakeMachine", map.GridCoords);
             fax = entMan.SpawnEntity("FaxMachineBase", map.GridCoords);
-            entMan.System<SharedDeviceLinkSystem>().LinkDefaults(null, machine, fax);
+            entMan.System<DeviceLinkSystem>().LinkDefaults(null, machine, fax);
 
             var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
             entMan.System<PatientIntakeSystem>().StartCase((machine, comp), entMan.GetComponent<EntityStorageComponent>(machine),

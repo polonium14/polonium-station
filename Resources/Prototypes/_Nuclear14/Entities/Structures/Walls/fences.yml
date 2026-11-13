@@ -56,4 +56,7 @@
         acts: [ "Destruction" ]
   - type: IconSmooth
     key: fence
-    base: fence
+    states: # Polonium: Wizden #45310 state format
+    - !type:CornerSpriteSmoothing
+      mask: [ fence ]
+      base: fence

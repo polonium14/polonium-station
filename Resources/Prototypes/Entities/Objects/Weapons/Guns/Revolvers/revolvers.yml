@@ -30,6 +30,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+  - type: GunMovementSpread # Polonium
   - type: UseDelay
     delay: 0.66
   - type: ContainerContainer
@@ -96,7 +97,8 @@
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
   - type: StealTarget
-    stealGroup: OfficerHandgun
+    stealGroup:
+    - OfficerHandgun
 
 - type: entity
   name: Mateba

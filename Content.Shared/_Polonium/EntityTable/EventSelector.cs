@@ -14,7 +14,7 @@ public sealed partial class EventSelector : EntityTableSelector
     /// <summary>
     /// Put a dictionary under this key in <see cref="EntityTableContext"/> and the rolled rows end up in it, by event id.
     /// </summary>
-    public const string OverridesKey = "EventOverrides";
+    public static readonly EntityTableContextKey<Dictionary<EntProtoId, EventSelector>> OverridesKey = new("EventOverrides");
 
     [DataField(required: true)]
     public EntProtoId Id;
@@ -39,7 +39,7 @@ public sealed partial class EventSelector : EntityTableSelector
         IPrototypeManager proto,
         EntityTableContext ctx)
     {
-        if (ctx.TryGetData<Dictionary<EntProtoId, EventSelector>>(OverridesKey, out var overrides))
+        if (ctx.TryGetData(OverridesKey, out var overrides))
             overrides.TryAdd(Id, this);
 
         yield return Id;

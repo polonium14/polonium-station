@@ -18,6 +18,7 @@
   - ClothingUniformJumpsuitQMTurtleneck
   - ClothingUniformJumpskirtQMTurtleneck
   - ClothingUniformJumpsuitQMFormal
+  - ClothingUniformJumpskirtQMFormalDress
 
 - type: latheRecipePack
   id: ClothingCommand
@@ -38,6 +39,26 @@
   - ClothingHeadHatCommandSoft
   - ClothingUniformJumpskirtCommandGeneric
   - ClothingUniformJumpsuitCommandGeneric
+
+- type: latheRecipePack
+  id: ClothingDresses
+  recipes:
+  - ClothingUniformJumpskirtBlackElegantDress
+  - ClothingUniformJumpskirtBlueElegantDress
+  - ClothingUniformJumpskirtBlueTurtleneckDress
+  - ClothingUniformJumpskirtCyanStripedDress
+  - ClothingUniformJumpskirtGreenElegantDress
+  - ClothingUniformJumpskirtGreenStripedDress
+  - ClothingUniformJumpskirtGreenTurtleneckDress
+  - ClothingUniformJumpskirtOrangeStripedDress
+  - ClothingUniformJumpskirtPinkStripedDress
+  - ClothingUniformJumpskirtPurpleElegantDress
+  - ClothingUniformJumpskirtPurpleTurtleneckDress
+  - ClothingUniformJumpskirtRedElegantDress
+  - ClothingUniformJumpskirtRedStripedDress
+  - ClothingUniformJumpskirtRedTurtleneckDress
+  - ClothingUniformJumpskirtYellowOldDress
+  - ClothingUniformJumpskirtYellowTurtleneckDress
 
 - type: latheRecipePack
   id: ClothingEngineering
@@ -137,6 +158,7 @@
   - ClothingUniformJumpskirtMime
   - ClothingUniformJumpsuitMusician
   - ClothingUniformJumpsuitTramDriver
+  - ClothingUniformJumpskirtTramDriver
 
 - type: latheRecipePack
   id: WinterCoats

@@ -24,6 +24,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Content.Shared.AlertLevel;
 using Content.Shared.Ghost.Components;
+using Content.Shared.Station.Systems;
 
 namespace Content.Server._Polonium.StationAi;
 
@@ -48,7 +49,7 @@ public sealed partial class ExternalLockdownSystem : EntitySystem
     [Dependency] private SharedDoorSystem _doors = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SiliconLawSystem _laws = default!;
-    [Dependency] private SharedStationSystem _station = default!;
+    [Dependency] private StationSystem _station = default!;
 
     [Dependency] private EntityQuery<FirelockComponent> _firelockQuery = default!;
     [Dependency] private EntityQuery<DoorBoltComponent> _boltQuery = default!;

@@ -7,7 +7,6 @@ using Content.Server.Body.Systems;
 using Content.Server.Cargo.Systems;
 using Content.Server.Fax;
 using Content.Server.GameTicking;
-using Content.Server.Medical.Components;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Station.Systems;
 using Content.Server.Storage.EntitySystems;
@@ -23,11 +22,14 @@ using Content.Shared.CCVar;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DeviceLinking;
+using Content.Shared.DeviceLinking.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Eye.Blinding.Systems;
+using Content.Shared.GameTicking;
 using Content.Shared.Gibbing;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
+using Content.Shared.Medical.HealthAnalyzer;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Paper;
@@ -35,6 +37,7 @@ using Content.Shared.Popups;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Roles.Jobs;
+using Content.Shared.Station.Systems;
 using Content.Shared.Storage.Components;
 using Content.Shared.Verbs;
 using Robust.Server.Player;
@@ -69,7 +72,7 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
     [Dependency] private PatientIntakeCheckSystem _check = default!;
     [Dependency] private RadioSystem _radio = default!;
     [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private SharedDeviceLinkSystem _deviceLink = default!;
+    [Dependency] private DeviceLinkSystem _deviceLink = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedJobSystem _jobs = default!;
     [Dependency] private SharedMindSystem _mind = default!;
@@ -107,7 +110,7 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
         SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEndText);
     }
 
-    private void OnRoundEndText(RoundEndTextAppendEvent args)
+    private void OnRoundEndText(ref RoundEndTextAppendEvent args)
     {
         var query = EntityQueryEnumerator<PatientIntakeMachineComponent>();
         var header = false;

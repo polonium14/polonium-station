@@ -32,3 +32,6 @@ ent-ClosetBluespace = podejrzana szafka
 ent-ClosetBluespaceUnstable = podejrzana szafka
     .desc = To tylko schowek... prawda?
     .suffix = Niestabilny Bluespace
+ent-ClosetMaintenanceWelded = { ent-ClosetMaintenance }
+    .suffix = Welded
+    .desc = { ent-ClosetMaintenance.desc }

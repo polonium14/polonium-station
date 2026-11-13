@@ -1,5 +1,5 @@
 ent-BaseCrystalStalagmite = crystal
-    .desc = A crystaline solid.
+    .desc = An outcrop of jagged crystals.
 ent-CrystalGreen = { ent-BaseCrystalStalagmite }
     .suffix = green
     .desc = { ent-BaseCrystalStalagmite.desc }

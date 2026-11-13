@@ -84,3 +84,5 @@ ent-ActionIntrinsicStore = Sklep
     .desc = Otwiera sklep.
 ent-ActionChangeVoiceMaskImplant = { ent-ActionChangeVoiceMask }
     .desc = { ent-ActionChangeVoiceMask.desc }
+ent-ActionOpenVendingMachineInterface = Toggle UI
+    .desc = Select free gifts from your inventory!

@@ -1,5 +1,5 @@
-ent-BaseMech = { "" }
-    .desc = { "" }
+ent-BaseMech = { ent-StructureHealthMachineMassive }
+    .desc = { ent-StructureHealthMachineMassive.desc }
 ent-MechRipley = Ripley APLU
     .desc = Wszechstronny i lekko opancerzony model Ripley sprawdza się niemal w każdej sytuacji wymagającej ciężkiej pracy. Skrót „APLU” oznacza Autonomous Power Loading Unit (autonomiczna jednostka załadunkowa).
 ent-MechRipleyBattery = { ent-MechRipley }

@@ -1,0 +1,12 @@
+ent-ClothingUniformJumpskirtCasualBlue = nieformalny niebieski kombinezon ze spódnicą
+    .desc = Luźna, znoszona niebieska koszula z szarą spódnicą, idealna dla kogoś, kto chce odpocząć.
+ent-ClothingUniformJumpskirtCasualPurple = fioletowy nieformalny kombinezon ze spódnicą
+    .desc = Luźna, znoszona fioletowa koszula z szarą spódnicą, idealna dla kogoś, kto chce odpocząć.
+ent-ClothingUniformJumpskirtCasualRed = nieformalny czerwony kombinezon ze spódnicą
+    .desc = Luźna, znoszona czerwona koszula z szarą spódnicą, idealna dla kogoś, kto chce odpocząć.
+ent-ClothingUniformJumpskirtCasualGreen = nieformalny zielony kombinezon ze spódnicą
+    .desc = Luźna, znoszona zielona koszula z szarą spódnicą, idealna dla kogoś, kto chce odpocząć.
+ent-ClothingUniformJumpskirtOldDress = stara sukienka
+    .desc = Wyglądająca na znoszoną sukienka sprzed bardzo dawna.
+ent-ClothingUniformJumpskirtOfLife = spódnica życia
+    .desc = Spódnica symbolizująca radość i pozytywy naszego życia.

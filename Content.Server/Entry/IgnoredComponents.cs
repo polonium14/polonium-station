@@ -22,7 +22,10 @@ namespace Content.Server.Entry
             "AnomalyScannerScreen",
             "MultipartMachineGhost",
             "DirectionalArrowIndicator",
+            "SandboxCopyable",
             "EdgeTrim", // Funky Change
+            "ESTimedDespawnLightFade", // Polonium
+            "ESTimedDespawnSpriteFade", // Polonium
         };
     }
 }

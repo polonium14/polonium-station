@@ -13,7 +13,7 @@ bounty-console-manifest-reward = Nagroda: ${ $reward }
 bounty-console-description-label = [color=gray]{ $description }[/color]
 bounty-console-id-label = ID#{ $id }
 bounty-console-flavor-left = Żądania zbierane z lokalnych nieuczciwych handlarzy.
-bounty-console-flavor-right = w1.4
+bounty-console-flavor-right = v1.4
 bounty-manifest-header = [font size=14][bold]Oficjalne rządanie logistyczne[/bold] (ID#{ $id })[/font]
 bounty-manifest-list-start = Zawartość:
 bounty-console-tab-available-label = Dastępne

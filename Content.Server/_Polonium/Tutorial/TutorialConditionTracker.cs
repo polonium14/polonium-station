@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._DEN.QuickConstruction.Components;
 using Content.Shared._Polonium.Tutorial;
 using Content.Shared._Polonium.Tutorial.Components;
 using Content.Shared._Polonium.Tutorial.Conditions;
@@ -83,6 +84,7 @@ public sealed partial class TutorialConditionTracker : EntitySystem
         SubscribeLocalEvent<TutorialAnchorComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<TutorialAnchorComponent, UseInHandEvent>(OnUseInHand);
         SubscribeLocalEvent<TutorialAnchorComponent, AfterActivatableUIOpenEvent>(OnUiOpened);
+        SubscribeLocalEvent<QuickConstructableComponent, AfterActivatableUIOpenEvent>(OnQuickConstructionOpened);
         SubscribeLocalEvent<TutorialAnchorComponent, StrappedEvent>(OnStrapped);
         SubscribeLocalEvent<TutorialAnchorComponent, ComponentShutdown>(OnAnchorRemoved);
         SubscribeLocalEvent<TutorialAnchorComponent, ExaminedEvent>(OnExamined);

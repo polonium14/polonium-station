@@ -34,3 +34,15 @@ ent-StatusEffectPressureImmunity = pressure immunity
     .desc = { ent-MobStatusEffectBase.desc }
 ent-StatusEffectVentriloquistPuppetMuted = { ent-MutedStatusEffectBase }
     .desc = { ent-MutedStatusEffectBase.desc }
+
+ent-StatusEffectForcedItemArmblade = forced armblade
+    .desc = { ent-MobStatusEffectDebuff.desc }
+
+ent-StatusEffectForcedItemCatEars = forced cat ears
+    .desc = { ent-MobStatusEffectDebuff.desc }
+
+ent-StatusEffectForcedItemMaid = forced maid outfit
+    .desc = { ent-MobStatusEffectDebuff.desc }
+
+ent-StatusEffectHorrorFormArmblades = forced armblade
+    .desc = { ent-MobStatusEffectDebuff.desc }

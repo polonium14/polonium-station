@@ -8,3 +8,6 @@ ent-TraitStatusEffectPainNumbness = pain numbness
     .desc = { ent-PainNumbnessStatusEffectBase.desc }
 ent-TraitStatusEffectMuted = { ent-MutedStatusEffectBase }
     .desc = { ent-MutedStatusEffectBase.desc }
+
+ent-TraitStatusEffectBlinkDyspraxia = blink dyspraxia
+    .desc = { ent-MobStatusEffectBase.desc }

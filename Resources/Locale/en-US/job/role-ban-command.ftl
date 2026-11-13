@@ -53,8 +53,8 @@ cmd-roleban-until =  until {$expires}
 cmd-departmentban-desc = Bans a player from the roles comprising a department
 cmd-departmentban-help = Usage: departmentban <name or user ID> <department> <reason> [duration in minutes, leave out or 0 for permanent ban]
 
-cmd-roleban-hint-round = Numer rundy sytuacji
+cmd-roleban-hint-round = Situation round number
 
-cmd-roleban-round-parse = "{ $round }" nie jest numerem rundy.
+cmd-roleban-round-parse = "{ $round }" is not a round number.
 
-cmd-roleban-existing = { $target } już ma bana na { $role }.
+cmd-roleban-existing = { $target } already has a ban for { $role }.

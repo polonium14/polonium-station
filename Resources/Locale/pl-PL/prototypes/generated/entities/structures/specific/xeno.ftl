@@ -1,5 +1,5 @@
 ent-XenoWardingTower = odstraszająca wieża kseno
-    .desc = { "" }
+    .desc = { ent-BaseStatue.desc }
 ent-CarpStatue = pomnik karpia
     .desc = Pomnik dzielnego karpia któremu wszystko zawdzięczamy. Do budowy użyto prawdziwych zębów.
 ent-CarpStatueEmpty = { ent-CarpStatue }

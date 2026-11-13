@@ -14,3 +14,5 @@ ent-CrateSecurityRiot = skrzynia z wyposażeniem do tłumienia zamieszek
     .desc = Zawiera dwa komplety pancerza przeciwzamieszkowego, hełmy, maski gazowe i tarcze oraz cztery granaty z gazem łzawiącym. Wymaga dostępu do Zbrojowni, aby otworzyć.
 ent-CrateArmoryRifle = skrzynia z karabinami
     .desc = Zawiera dwa potężne karabiny szturmowe z czterema magazynkami. Otwarcie wymaga dostępu do zbrojowni.
+ent-CrateArmoryMosin = mosin crate
+    .desc = Reliable, dirt cheap, and loud as hell. Contains three mosin rifles and 12 speedloaders of .30 rifle ammunition. Requires Armory access to open.

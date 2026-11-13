@@ -1,4 +1,4 @@
-ent-SprayBottleBase = { ent-DrinkBaseMaterialPlastic }
+ent-SprayBottleBase = { ent-SolutionSmall }
     .desc = { ent-DrinkBaseMaterialPlastic.desc }
 ent-SprayBottle = spray bottle
     .desc = A spray bottle with an unscrewable top.

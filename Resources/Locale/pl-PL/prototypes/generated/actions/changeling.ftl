@@ -1,5 +1,3 @@
-ent-ActionRetractableItemArmBlade = Ostrze w ramieniu
-    .desc = Zrzuć swoje ciało i przekształć je w mięsiste ostrze.
 ent-ActionChangelingBiodegrade = Biodegradacja
     .desc = Zwymiotuj kwasem na swoje więzy i uwolnij się.
 ent-ActionChangelingDevour = [color=red]Pożarcie[/color]
@@ -20,8 +18,6 @@ ent-ActionChangelingStingCryogenic = Kriogeniczne żądło
     .desc = Po cichu użądl cel i drastycznie spowolnij jego ruchy.
 ent-ActionChangelingStingLead = Śmiertelne żądło
     .desc = Po cichu użądl cel i wstrzyknij mu śmiertelną dawkę wolno działającej trucizny.
-ent-ActionChangelingStingHallucinogenic = Halucynogenne żądło
-    .desc = Po cichu użądl cel i wstrzyknij mu substancje spowalniające wyższe funkcje mózgu.
 ent-ActionChangelingLastResort = [color=red]Ostatnia deska ratunku[/color]
     .desc = Poświęcamy nasze obecne ciało w chwili potrzeby, gwałtownie rozrastając się, by przebić przeszkody, i odradzamy się jako larwa głowowa.
 ent-ActionChangelingTakeOverCorpse = Przejęcie zwłok
@@ -40,3 +36,24 @@ ent-ActionChangelingStingMute =
     Żądło wyciszające
     Po cichu użądl cel i wstrzyknij mu substancje, które uniemożliwiają mówienie.
     Wymaga 30 chemikaliów.
+    .desc =
+        Po cichu użądl cel i wstrzyknij mu substancje chemiczne, które uniemożliwiają mu mówienie. 
+        
+        Wymaga 30 substancji chemicznych.
+ent-ActionChangelingFleshtomb = Mięsny Grobowiec
+    .desc =
+        Zachowaj ciało w delikatnym kokonie z mięsa, który powoli pozyskuje z niego życie w celu uzyskania DNA. 
+        
+        Wymaga 35 substancji chemicznych.
+ent-ActionChangelingStingArmblade = Armblade Sting
+    .desc =
+        Silently sting a target and cause them to grow a dull armblade after a lengthy delay. 
+        
+        Requires 50 Chemicals.
+ent-ActionChangelingStingHemotoxin = Hemotoxin Sting
+    .desc =
+        Sting a target and inject them with a dangerous dose of various toxins, causing extensive bleeding. 
+        
+        Requires 30 Chemicals.
+ent-ActionRetractableItemArmblade = Ostrze w ramieniu
+    .desc = Zrzuć swoje ciało i przekształć je w mięsiste ostrze.

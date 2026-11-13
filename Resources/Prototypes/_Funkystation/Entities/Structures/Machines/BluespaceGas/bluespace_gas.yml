@@ -34,7 +34,7 @@
           False: { state: off }
   - type: DeviceNetwork
     deviceNetId: Wireless
-  - type: WirelessNetworkConnection
+  - type: WirelessNetwork
     range: 1000
   - type: DeviceLinkSource
     range: 1000
@@ -74,7 +74,7 @@
   components:
   - type: DeviceNetwork
     deviceNetId: Wireless
-  - type: WirelessNetworkConnection
+  - type: WirelessNetwork
     range: 1000
   - type: DeviceLinkSink
     ports:

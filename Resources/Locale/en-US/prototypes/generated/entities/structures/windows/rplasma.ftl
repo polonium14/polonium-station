@@ -1,7 +1,7 @@
 ent-ReinforcedPlasmaWindow = reinforced plasma window
-    .desc = { ent-BaseDeltaPressureReinforcedPlasma.desc }
+    .desc = { ent-BaseWindowStructure.desc }
 ent-PlasmaReinforcedWindowDirectional = directional reinforced plasma window
-    .desc = { ent-BaseDeltaPressureReinforcedPlasmaQuarter.desc }
+    .desc = { ent-BaseWindowStructureDirectional.desc }
 ent-ReinforcedPlasmaWindowDiagonal = { ent-ReinforcedPlasmaWindow }
     .suffix = diagonal
     .desc = { ent-ReinforcedPlasmaWindow.desc }

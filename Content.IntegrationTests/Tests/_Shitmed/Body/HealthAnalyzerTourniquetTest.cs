@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Reflection;
 using Content.IntegrationTests.Fixtures;
-using Content.Server.Medical;
+using Content.Server.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared._Shitmed.Tourniquet;
 using Content.Shared.Body;
@@ -37,7 +37,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 /// exercises identically and untested, out of scope to add now).
 /// </summary>
 [TestFixture]
-[TestOf(typeof(HealthAnalyzerSystem))]
+[TestOf(typeof(ServerHealthAnalyzerSystem))]
 public sealed class HealthAnalyzerTourniquetTest : GameTest
 {
     private static readonly ProtoId<DamageTypePrototype> PiercingDamageType = "Piercing";
@@ -102,7 +102,7 @@ public sealed class HealthAnalyzerTourniquetTest : GameTest
 
         var sEntMan = server.ResolveDependency<IEntityManager>();
         var sDamageable = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<DamageableSystem>();
-        var sHealthAnalyzer = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<HealthAnalyzerSystem>();
+        var sHealthAnalyzer = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<ServerHealthAnalyzerSystem>();
         var sProtoMan = server.ResolveDependency<IPrototypeManager>();
         var map = await pair.CreateTestMap();
         var coords = new MapCoordinates(Vector2.Zero, map.MapId);
@@ -139,7 +139,7 @@ public sealed class HealthAnalyzerTourniquetTest : GameTest
 
         await pair.RunTicksSync(5);
 
-        var fetchMethod = typeof(HealthAnalyzerSystem).GetMethod("FetchTourniquetData", BindingFlags.Instance | BindingFlags.NonPublic)!;
+        var fetchMethod = typeof(ServerHealthAnalyzerSystem).GetMethod("FetchTourniquetData", BindingFlags.Instance | BindingFlags.NonPublic)!;
 
         await server.WaitAssertion(() =>
         {

@@ -18,7 +18,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
         <BoxContainer Name="RootContainer" VerticalExpand="True" Orientation="Vertical">
 
             <Label Text="Controls"/>
-            <PanelContainer StyleClasses="LowDivider"/>
+            <controls:Separator StyleClasses="LowDivider"/>
             <BoxContainer Name="Controls" Margin="0 5" Orientation="Vertical">
                 <BoxContainer Name="PowerControlContainer" Margin="0 5" Orientation="Horizontal">
                     <Label Text="Power: "/>
@@ -37,7 +37,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
             <BoxContainer Orientation="Horizontal">
                 <BoxContainer HorizontalExpand="True" Orientation="Vertical">
                     <Label Text="Progress and Requirements"/>
-                    <PanelContainer StyleClasses="LowDivider"/>
+                    <controls:Separator StyleClasses="LowDivider"/>
                     <BoxContainer Name="ProgressAndRequirements" Margin="0 5" Orientation="Vertical">
                         <BoxContainer Name="ProgressContainer" Margin="0 5" Orientation="Horizontal">
                             <Label Text="Progress: " MinSize="115 0"/>
@@ -81,7 +81,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                 </BoxContainer>
                 <BoxContainer HorizontalExpand="True" Orientation="Vertical" >
                     <Label Text="Recipe" Margin="20 0" />
-                    <PanelContainer StyleClasses="LowDivider"/>
+                    <controls:Separator StyleClasses="LowDivider"/>
                     <PanelContainer Name="RecipePanel" MinSize="322 180" Margin="18 5 5 5" >
                         <PanelContainer.PanelOverride>
                             <gfx:StyleBoxFlat BackgroundColor="#222222" />

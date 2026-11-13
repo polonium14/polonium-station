@@ -1,5 +1,5 @@
-ent-VendingMachine = automat sprzedający
-    .desc = Wystarczy dodać kapitalizm!
+ent-VendingMachine = { ent-BaseVendingMachine }
+    .desc = { ent-BaseVendingMachine.desc }
 ent-VendingMachineWallmount = automat sprzedający
     .desc = { ent-BaseWallmountMachine.desc }
 ent-VendingMachineCondiments = automat z przyprawami
