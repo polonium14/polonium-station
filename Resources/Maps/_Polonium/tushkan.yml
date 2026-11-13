@@ -59792,6 +59792,11 @@ entities:
       pos: -28.51582,9.526109
 - proto: Morgue
   entities:
+  - uid: 7240
+    components:
+    - type: Transform
+      parent: 2
+      pos: 28.5,37.5
   - uid: 7241
     components:
     - type: Transform
@@ -60442,11 +60447,6 @@ entities:
       pos: 28.1376,-18.149729
 - proto: PatientIntakeMachine
   entities:
-  - uid: 7240
-    components:
-    - type: Transform
-      parent: 2
-      pos: 28.5,37.5
   - uid: 8338
     components:
     - type: Transform
