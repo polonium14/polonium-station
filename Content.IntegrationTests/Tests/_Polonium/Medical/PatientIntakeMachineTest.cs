@@ -178,7 +178,7 @@ public sealed class PatientIntakeMachineTest : GameTest
         {
             var comp = entMan.GetComponent<PatientIntakeMachineComponent>(machine);
             Assert.That(entMan.GetComponent<MetaDataComponent>(patient).EntityPaused, Is.False);
-            Assert.That(comp.Case!.ClockStart, Is.Not.Null, "The clock starts on first open.");
+            Assert.That(entMan.GetComponent<PatientIntakePatientComponent>(patient).ClockStart, Is.Not.Null, "The clock starts on first open.");
         });
 
         await server.WaitPost(() => storage.CloseStorage(machine));

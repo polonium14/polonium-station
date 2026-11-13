@@ -334,7 +334,6 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
 
             SetFrozen(patient, false);
             comp.ClockStart = _timing.CurTime;
-            activeCase.ClockStart ??= _timing.CurTime;
         }
     }
 
@@ -354,7 +353,7 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
         }
 
         _adminLogger.Add(LogType.EntityDelete, LogImpact.Medium,
-            $"{ToPrettyString(ent):machine} took back case #{ent.Comp.CaseCount} and deleted {string.Join(", ", contents.Select(e => ToPrettyString(e)))}");
+            $"{ToPrettyString(args.User):user} closed {ToPrettyString(ent):machine}, which took back case #{ent.Comp.CaseCount} and deleted {string.Join(", ", contents.Select(e => ToPrettyString(e)))}");
 
         foreach (var entity in contents)
         {
@@ -567,7 +566,17 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
             args.PushMarkup(Loc.GetString("patient-intake-examine-case",
                 ("case", Loc.GetString(_proto.Index(activeCase.Proto).Name))));
 
-            if (activeCase.ClockStart is not { } start)
+            // Each patient has its own clock: show the patient out the longest.
+            TimeSpan? earliest = null;
+            foreach (var patient in activeCase.Patients)
+            {
+                if (TryComp<PatientIntakePatientComponent>(patient, out var comp)
+                    && comp.ClockStart is { } clock
+                    && (earliest == null || clock < earliest))
+                    earliest = clock;
+            }
+
+            if (earliest is not { } start)
             {
                 args.PushMarkup(Loc.GetString("patient-intake-examine-clock-waiting"));
                 return;

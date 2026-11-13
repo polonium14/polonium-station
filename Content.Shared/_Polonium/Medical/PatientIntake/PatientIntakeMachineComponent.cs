@@ -146,11 +146,6 @@ public sealed class PatientIntakeCase
 
     public TimeSpan Window;
 
-    /// <summary>
-    /// Set the first time the tray is opened with a patient inside.
-    /// </summary>
-    public TimeSpan? ClockStart;
-
     public int PatientsTotal;
 
     /// <summary>
