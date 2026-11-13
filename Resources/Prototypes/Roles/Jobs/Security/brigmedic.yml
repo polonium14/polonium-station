@@ -36,6 +36,17 @@
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
 
+- type: startingGear # Polonium: przeniesiono bo nie ma powodu aby był w losowym miejscu
+  id: BrigmedicGear
+  equipment:
+    gloves: ClothingHandsGlovesNitrile
+    id: BrigmedicPDA
+    ears: ClothingHeadsetBrigmedic
+    mask: ClothingMaskBreathMedicalSecurity
+  storage:
+    back:
+    - Flash  
+
 - type: chameleonOutfit
   id: BrigmedicChameleonOutfit
   job: Brigmedic
@@ -49,4 +60,5 @@
     gloves: ClothingHandsGlovesNitrile
     shoes: ClothingShoesColorRed
     belt: ClothingBeltMedicalFilled
+
 
