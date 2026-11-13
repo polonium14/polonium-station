@@ -7,6 +7,7 @@ public sealed partial class GraphicsTab
 {
     private void AddLightingOptions()
     {
+        Control.AddOptionCheckBox(StarlightCCVars.LightTonemap, LightTonemapCheckBox);
         var bloom = Control.AddOptionCheckBox(StarlightCCVars.Bloom, BloomCheckBox);
 
         Control.AddOptionPercentSlider(StarlightCCVars.BloomStrength, BloomStrengthSlider, 0f, 3f);

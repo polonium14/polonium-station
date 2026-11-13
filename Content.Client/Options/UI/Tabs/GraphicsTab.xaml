@@ -28,7 +28,8 @@
                 <!-- Polonium: shot impact effects from Starlight -->
                 <CheckBox Name="HolesCheckBox" Text="{Loc 'ui-options-holes'}" ToolTip="{Loc 'ui-options-holes-tooltip'}" />
                 <CheckBox Name="SparksCheckBox" Text="{Loc 'ui-options-sparks'}" ToolTip="{Loc 'ui-options-sparks-tooltip'}" />
-                <!-- Polonium: bloom from Starlight -->
+                <!-- Polonium: soft light and bloom from Starlight -->
+                <CheckBox Name="LightTonemapCheckBox" Text="{Loc 'ui-options-light-tonemap'}" ToolTip="{Loc 'ui-options-light-tonemap-tooltip'}" />
                 <CheckBox Name="BloomCheckBox" Text="{Loc 'ui-options-bloom'}" ToolTip="{Loc 'ui-options-bloom-tooltip'}" />
                 <BoxContainer Name="BloomSettings" Orientation="Vertical" Margin="16 0 0 0">
                     <ui:OptionSlider Name="BloomStrengthSlider" Title="{Loc 'ui-options-bloom-strength'}" />
