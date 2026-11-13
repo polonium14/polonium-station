@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: alexalexmax
-  changes:
-  - message: Items that can be stuck to walls are now able to be unstuck properly.
-    type: Fix
-  id: 9627
-  time: '2026-04-08T04:13:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43514
 - author: TriviaSolari
   changes:
   - message: The Station AI is now notified when their core is taking damage.
@@ -5149,3 +5142,21 @@
   id: 10121
   time: '2026-11-13T15:42:24.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1242
+- author: Nikita
+  changes:
+  - message: "Dodano opcj\u0119 grafiki \"Mi\u0119kkie \u015Bwiat\u0142o\", kt\xF3\
+      ra przygasza zbyt jasne miejsca, gdzie nak\u0142ada si\u0119 \u015Bwiat\u0142\
+      o kilku lamp"
+    type: Add
+  - message: "Lampy \u015Bwiec\u0105 troch\u0119 s\u0142abiej i \u0142agodniej"
+    type: Tweak
+  - message: "Po\u015Bwiata \u015Bwiec\u0105cych przedmiot\xF3w jest domy\u015Blnie\
+      \ mocniejsza"
+    type: Tweak
+  - message: "\u015Awiat\u0142a \u0142adowania energetycznej strzelby i magnum energetycznego\
+      \ \u015Bwiec\u0105 w ciemno\u015Bci i zmieniaj\u0105 kolor razem z trybem strza\u0142\
+      u"
+    type: Tweak
+  id: 10122
+  time: '2026-11-13T16:15:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1244
