@@ -313,7 +313,10 @@ public sealed partial class PatientIntakeSystem
         return true;
     }
 
-    private bool TryGetHousingLimb(EntityUid patient, ProtoId<OrganCategoryPrototype> organCategory, out Entity<WoundableComponent> limb)
+    /// <summary>
+    /// Finds the body part that houses organs of the given category.
+    /// </summary>
+    public bool TryGetHousingLimb(EntityUid patient, ProtoId<OrganCategoryPrototype> organCategory, out Entity<WoundableComponent> limb)
     {
         foreach (var (part, category) in WoundableParts(patient))
         {
@@ -332,7 +335,10 @@ public sealed partial class PatientIntakeSystem
     /// A small real wound on the limb to own the trauma. Made through actual damage, so the wound
     /// has damage behind it and ordinary brute medicine heals it; an induced wound would not.
     /// </summary>
-    private Entity<TraumaInflicterComponent>? InduceWound(Entity<WoundableComponent> limb)
+    /// <summary>
+    /// Wounds a body part with a small amount of real damage and returns the wound, so a trauma can be attached to it.
+    /// </summary>
+    public Entity<TraumaInflicterComponent>? InduceWound(Entity<WoundableComponent> limb)
     {
         _damageable.TryChangeDamage(limb.Owner, new DamageSpecifier(_proto.Index<DamageTypePrototype>(InducedWoundType), InducedWoundDamage),
             ignoreResistances: true, interruptsDoAfters: false);
