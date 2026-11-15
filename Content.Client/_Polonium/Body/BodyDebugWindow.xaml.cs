@@ -13,23 +13,28 @@ namespace Content.Client._Polonium.Body;
 [GenerateTypedNameReferences]
 public sealed partial class BodyDebugWindow : FancyWindow
 {
-    public event Action<List<(NetEntity Organ, int Percent)>>? OnApply;
-    public event Action<NetEntity>? OnKill;
-    public event Action<NetEntity>? OnRevive;
-    public event Action<NetEntity>? OnRemove;
+    private const int DefaultWoundDamage = 10;
+
+    public event Action<List<(NetEntity Target, BodyDebugSlider Slider, int Percent)>>? OnApply;
+    public event Action<BodyDebugAction, NetEntity>? OnAction;
     public event Action<string>? OnInsert;
+    public event Action<NetEntity, string, int>? OnAddWound;
     public event Action? OnRefresh;
 
     /// <summary>
     /// Slider values not sent to the server yet. Dropped with every new state, organ entities change when one dies.
     /// </summary>
-    private readonly Dictionary<NetEntity, int> _pending = new();
+    private readonly Dictionary<(NetEntity Target, BodyDebugSlider Slider), int> _pending = new();
 
     public BodyDebugWindow()
     {
         RobustXamlLoader.Load(this);
 
-        ApplyButton.OnPressed += _ => OnApply?.Invoke(_pending.Select(change => (change.Key, change.Value)).ToList());
+        TabContainer.SetTabTitle(Tabs.GetChild(0), Loc.GetString("body-debug-section-organs"));
+        TabContainer.SetTabTitle(Tabs.GetChild(1), Loc.GetString("body-debug-section-limbs"));
+
+        ApplyButton.OnPressed += _ =>
+            OnApply?.Invoke(_pending.Select(change => (change.Key.Target, change.Key.Slider, change.Value)).ToList());
         RefreshButton.OnPressed += _ => OnRefresh?.Invoke();
     }
 
@@ -43,27 +48,25 @@ public sealed partial class BodyDebugWindow : FancyWindow
         _pending.Clear();
         ApplyButton.Disabled = true;
 
-        OrgansContainer.RemoveAllChildren();
-        foreach (var organ in state.Organs)
-        {
-            if (OrgansContainer.ChildCount > 0)
-                OrgansContainer.AddChild(new Separator { StyleClasses = { "LowDivider" }, MinSize = new Vector2(0, 2) });
+        Fill(OrgansContainer, state.Organs.Select(BuildOrganRow));
+        Fill(LimbsContainer, state.Limbs.Select(limb => BuildLimbRow(limb, state.WoundTypes)));
+    }
 
-            OrgansContainer.AddChild(BuildRow(organ));
+    private static void Fill(BoxContainer container, IEnumerable<Control> rows)
+    {
+        container.RemoveAllChildren();
+        foreach (var row in rows)
+        {
+            if (container.ChildCount > 0)
+                container.AddChild(new Separator { StyleClasses = { "LowDivider" }, MinSize = new Vector2(0, 2) });
+
+            container.AddChild(row);
         }
     }
 
-    private Control BuildRow(BodyDebugOrgan organ)
+    private Control BuildOrganRow(BodyDebugOrgan organ)
     {
-        var row = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
-        var header = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, SeparationOverride = 6 };
-        row.AddChild(header);
-        header.AddChild(new Label
-        {
-            Text = Loc.GetString("body-debug-organ-name", ("name", organ.Name), ("category", organ.Category)),
-            HorizontalExpand = true,
-            ClipText = true,
-        });
+        var row = MakeRow(organ.Name, organ.Category, out var header);
 
         switch (organ.Kind)
         {
@@ -74,8 +77,8 @@ public sealed partial class BodyDebugWindow : FancyWindow
 
             case BodyDebugOrganKind.Dead when organ.Organ is { } dead:
                 header.AddChild(new Label { Text = Loc.GetString("body-debug-dead") });
-                header.AddChild(MakeButton("body-debug-revive", () => OnRevive?.Invoke(dead)));
-                header.AddChild(MakeButton("body-debug-remove", () => OnRemove?.Invoke(dead)));
+                header.AddChild(MakeButton("body-debug-revive", () => OnAction?.Invoke(BodyDebugAction.ReviveOrgan, dead)));
+                header.AddChild(MakeButton("body-debug-remove", () => OnAction?.Invoke(BodyDebugAction.RemoveOrgan, dead)));
                 return row;
         }
 
@@ -83,37 +86,108 @@ public sealed partial class BodyDebugWindow : FancyWindow
             return row;
 
         // Protected organs keep the buttons, greyed out, so every row lines up and shows what is refused.
-        header.AddChild(MakeButton("body-debug-kill", () => OnKill?.Invoke(uid), organ.Protected));
-        header.AddChild(MakeButton("body-debug-remove", () => OnRemove?.Invoke(uid), organ.Protected));
+        header.AddChild(MakeButton("body-debug-kill", () => OnAction?.Invoke(BodyDebugAction.KillOrgan, uid), organ.Protected));
+        header.AddChild(MakeButton("body-debug-remove", () => OnAction?.Invoke(BodyDebugAction.RemoveOrgan, uid), organ.Protected));
 
-        row.AddChild(new Label
-        {
-            Text = Loc.GetString("body-debug-organ-status",
-                ("integrity", organ.Integrity.ToString()),
-                ("cap", organ.Cap.ToString()),
-                ("severity", Loc.GetString($"body-debug-severity-{organ.Severity}")),
-                ("healthyFrom", organ.HealthyFrom.ToString()),
-                ("floor", organ.Floor.ToString())),
-            StyleClasses = { "LabelSubText" },
-        });
+        row.AddChild(MakeSubText(Loc.GetString("body-debug-organ-status",
+            ("integrity", organ.Integrity.ToString()),
+            ("cap", organ.Cap.ToString()),
+            ("severity", Loc.GetString($"body-debug-severity-{organ.Severity}")),
+            ("healthyFrom", organ.HealthyFrom.ToString()),
+            ("floor", organ.Floor.ToString()))));
 
         if (organ.Modifiers.Count > 0)
         {
-            row.AddChild(new Label
-            {
-                Text = Loc.GetString("body-debug-modifiers",
-                    ("modifiers", string.Join(", ", organ.Modifiers.Select(modifier => $"{modifier.Name} {modifier.Value}")))),
-                StyleClasses = { "LabelSubText" },
-                ClipText = true,
-            });
+            row.AddChild(MakeSubText(Loc.GetString("body-debug-modifiers",
+                ("modifiers", string.Join(", ", organ.Modifiers.Select(modifier => $"{modifier.Name} {modifier.Value}"))))));
         }
 
-        var current = (int) MathF.Round((organ.Integrity / organ.Cap).Float() * 100f);
+        row.AddChild(MakeSlider(uid, BodyDebugSlider.Organ, organ.Integrity, organ.Cap, organ.Floor));
+        return row;
+    }
+
+    private Control BuildLimbRow(BodyDebugLimb limb, List<string> woundTypes)
+    {
+        var row = MakeRow(limb.Name, limb.Category, out var header);
+
+        if (limb.Limb is not { } uid)
+        {
+            header.AddChild(new Label { Text = Loc.GetString("body-debug-missing") });
+            header.AddChild(MakeButton("body-debug-restore", () => OnInsert?.Invoke(limb.Category)));
+            return row;
+        }
+
+        header.AddChild(MakeButton("body-debug-heal-wounds", () => OnAction?.Invoke(BodyDebugAction.HealLimb, uid)));
+        header.AddChild(MakeButton("body-debug-stop-bleeding", () => OnAction?.Invoke(BodyDebugAction.StopBleeding, uid)));
+        header.AddChild(MakeButton("body-debug-amputate", () => OnAction?.Invoke(BodyDebugAction.Amputate, uid), !limb.CanAmputate));
+
+        row.AddChild(MakeSubText(Loc.GetString("body-debug-limb-status",
+            ("integrity", limb.Integrity.ToString()),
+            ("cap", limb.Cap.ToString()),
+            ("severity", limb.Severity.ToString()),
+            ("bleeds", limb.Bleeds.ToString()))));
+
+        if (limb.Wounds.Count > 0)
+        {
+            row.AddChild(MakeSubText(Loc.GetString("body-debug-wounds",
+                ("wounds", string.Join(", ", limb.Wounds.Select(wound => $"{wound.Name} {wound.Severity}"))))));
+        }
+
+        if (limb.Cap > FixedPoint2.Zero)
+            row.AddChild(MakeSlider(uid, BodyDebugSlider.Limb, limb.Integrity, limb.Cap, FixedPoint2.Zero));
+
+        if (limb.BoneCap > FixedPoint2.Zero)
+        {
+            row.AddChild(MakeSubText(Loc.GetString("body-debug-bone-status",
+                ("integrity", limb.BoneIntegrity.ToString()),
+                ("cap", limb.BoneCap.ToString()),
+                ("severity", limb.BoneSeverity.ToString()))));
+            row.AddChild(MakeSlider(uid, BodyDebugSlider.Bone, limb.BoneIntegrity, limb.BoneCap, FixedPoint2.Zero));
+        }
+
+        if (woundTypes.Count == 0)
+            return row;
+
+        var types = new OptionButton();
+        for (var i = 0; i < woundTypes.Count; i++)
+        {
+            types.AddItem(woundTypes[i], i);
+        }
+
+        types.OnItemSelected += args => types.SelectId(args.Id);
+        var amount = new SpinBox { Value = DefaultWoundDamage, MinWidth = 90 };
+        amount.IsValid = value => value > 0;
+
+        var woundRow = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, SeparationOverride = 6 };
+        woundRow.AddChild(types);
+        woundRow.AddChild(amount);
+        woundRow.AddChild(MakeButton("body-debug-add-wound", () => OnAddWound?.Invoke(uid, woundTypes[types.SelectedId], amount.Value)));
+        row.AddChild(woundRow);
+        return row;
+    }
+
+    private static BoxContainer MakeRow(string name, string category, out BoxContainer header)
+    {
+        var row = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
+        header = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, SeparationOverride = 6 };
+        row.AddChild(header);
+        header.AddChild(new Label
+        {
+            Text = Loc.GetString("body-debug-organ-name", ("name", name), ("category", category)),
+            HorizontalExpand = true,
+            ClipText = true,
+        });
+        return row;
+    }
+
+    private Control MakeSlider(NetEntity target, BodyDebugSlider kind, FixedPoint2 integrity, FixedPoint2 cap, FixedPoint2 floor)
+    {
+        var current = (int) MathF.Round((integrity / cap).Float() * 100f);
         var percent = new Label { Text = Loc.GetString("body-debug-percent", ("percent", current)), MinWidth = 48 };
         var slider = new Slider
         {
             // The server clamps to the floor anyway; the slider just does not offer values that cannot be reached.
-            MinValue = MathF.Ceiling((organ.Floor / organ.Cap).Float() * 100f),
+            MinValue = MathF.Ceiling((floor / cap).Float() * 100f),
             MaxValue = 100,
             Rounded = true,
             HorizontalExpand = true,
@@ -124,9 +198,9 @@ public sealed partial class BodyDebugWindow : FancyWindow
             var value = (int) slider.Value;
             percent.Text = Loc.GetString("body-debug-percent", ("percent", value));
             if (value == current)
-                _pending.Remove(uid);
+                _pending.Remove((target, kind));
             else
-                _pending[uid] = value;
+                _pending[(target, kind)] = value;
 
             ApplyButton.Disabled = _pending.Count == 0;
         };
@@ -134,8 +208,12 @@ public sealed partial class BodyDebugWindow : FancyWindow
         var sliderRow = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, SeparationOverride = 6 };
         sliderRow.AddChild(slider);
         sliderRow.AddChild(percent);
-        row.AddChild(sliderRow);
-        return row;
+        return sliderRow;
+    }
+
+    private static Label MakeSubText(string text)
+    {
+        return new Label { Text = text, StyleClasses = { "LabelSubText" }, ClipText = true };
     }
 
     private static Button MakeButton(string text, Action pressed, bool disabled = false)

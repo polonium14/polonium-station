@@ -15,10 +15,9 @@ public sealed class BodyDebugEui : BaseEui
         _window = new BodyDebugWindow();
         _window.OnClose += () => SendMessage(new CloseEuiMessage());
         _window.OnApply += changes => SendMessage(new BodyDebugEuiMsg.Apply(changes));
-        _window.OnKill += organ => SendMessage(new BodyDebugEuiMsg.Kill(organ));
-        _window.OnRevive += organ => SendMessage(new BodyDebugEuiMsg.Revive(organ));
-        _window.OnRemove += organ => SendMessage(new BodyDebugEuiMsg.Remove(organ));
+        _window.OnAction += (action, target) => SendMessage(new BodyDebugEuiMsg.Act(action, target));
         _window.OnInsert += category => SendMessage(new BodyDebugEuiMsg.Insert(category));
+        _window.OnAddWound += (limb, type, amount) => SendMessage(new BodyDebugEuiMsg.AddWound(limb, type, amount));
         _window.OnRefresh += () => SendMessage(new BodyDebugEuiMsg.Refresh());
     }
 

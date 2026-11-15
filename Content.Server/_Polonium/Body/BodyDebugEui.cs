@@ -51,7 +51,7 @@ public sealed partial class BodyDebugEui : BaseEui
     public override EuiStateBase GetNewState()
     {
         var name = _entities.TryGetComponent<MetaDataComponent>(_target, out var meta) ? meta.EntityName : string.Empty;
-        return new BodyDebugEuiState(name, _bodyDebug.GetOrgans(_target), _error);
+        return new BodyDebugEuiState(name, _bodyDebug.GetOrgans(_target), _bodyDebug.GetLimbs(_target), _bodyDebug.GetWoundTypes(), _error);
     }
 
     public override void HandleMessage(EuiMessageBase msg)
@@ -71,50 +71,64 @@ public sealed partial class BodyDebugEui : BaseEui
         switch (msg)
         {
             case BodyDebugEuiMsg.Apply apply:
-                foreach (var (netOrgan, percent) in apply.Changes)
+                foreach (var (netTarget, slider, percent) in apply.Changes)
                 {
-                    if (!_entities.TryGetEntity(netOrgan, out var organ))
+                    if (!_entities.TryGetEntity(netTarget, out var target))
                         continue;
 
-                    var organName = _entities.ToPrettyString(organ.Value);
-                    if (Check(_bodyDebug.TrySetOrganIntegrity(_target, organ.Value, percent), "body-debug-error-integrity"))
-                        Log($"set the integrity of {organName} to {percent}%");
+                    var targetName = _entities.ToPrettyString(target.Value);
+                    var done = slider switch
+                    {
+                        BodyDebugSlider.Organ => _bodyDebug.TrySetOrganIntegrity(_target, target.Value, percent),
+                        BodyDebugSlider.Limb => _bodyDebug.TrySetLimbIntegrity(_target, target.Value, percent),
+                        BodyDebugSlider.Bone => _bodyDebug.TrySetBoneIntegrity(_target, target.Value, percent),
+                        _ => false,
+                    };
+
+                    if (Check(done, "body-debug-error-integrity"))
+                        Log($"set the {slider} integrity of {targetName} to {percent}%");
                 }
 
                 break;
 
-            case BodyDebugEuiMsg.Kill kill:
-                Act(kill.Organ, _bodyDebug.TryKillOrgan, "killed", "body-debug-error-kill");
-                break;
+            case BodyDebugEuiMsg.Act act:
+                if (!_entities.TryGetEntity(act.Target, out var acted))
+                    break;
 
-            case BodyDebugEuiMsg.Revive revive:
-                Act(revive.Organ, _bodyDebug.TryReviveOrgan, "revived", "body-debug-error-revive");
-                break;
+                // Taken before the action, the target may be deleted by it.
+                var actedName = _entities.ToPrettyString(acted.Value);
+                var success = act.Action switch
+                {
+                    BodyDebugAction.KillOrgan => _bodyDebug.TryKillOrgan(_target, acted.Value),
+                    BodyDebugAction.ReviveOrgan => _bodyDebug.TryReviveOrgan(_target, acted.Value),
+                    BodyDebugAction.RemoveOrgan => _bodyDebug.TryRemoveOrgan(_target, acted.Value),
+                    BodyDebugAction.HealLimb => _bodyDebug.TryHealLimb(_target, acted.Value),
+                    BodyDebugAction.StopBleeding => _bodyDebug.TryStopBleeding(_target, acted.Value),
+                    BodyDebugAction.Amputate => _bodyDebug.TryAmputate(_target, acted.Value),
+                    _ => false,
+                };
 
-            case BodyDebugEuiMsg.Remove remove:
-                Act(remove.Organ, _bodyDebug.TryRemoveOrgan, "removed", "body-debug-error-remove");
+                if (Check(success, "body-debug-error-action"))
+                    Log($"used {act.Action} on {actedName}");
+
                 break;
 
             case BodyDebugEuiMsg.Insert insert:
                 if (_prototypes.HasIndex<OrganCategoryPrototype>(insert.Category)
-                    && Check(_bodyDebug.TryInsertOrgan(_target, insert.Category), "body-debug-error-insert"))
-                    Log($"inserted a fresh {insert.Category} organ");
+                    && Check(_bodyDebug.TryPutBack(_target, insert.Category), "body-debug-error-insert"))
+                    Log($"put back a fresh {insert.Category}");
+
+                break;
+
+            case BodyDebugEuiMsg.AddWound wound:
+                if (_entities.TryGetEntity(wound.Limb, out var limb)
+                    && Check(_bodyDebug.TryAddWound(_target, limb.Value, wound.DamageType, Math.Clamp(wound.Amount, 1, BodyDebugSystem.MaxWoundDamage)), "body-debug-error-wound"))
+                    Log($"dealt {wound.Amount} {wound.DamageType} damage to {_entities.ToPrettyString(limb.Value)}");
 
                 break;
         }
 
         StateDirty();
-    }
-
-    private void Act(NetEntity netOrgan, Func<EntityUid, EntityUid, bool> action, string verb, string error)
-    {
-        if (!_entities.TryGetEntity(netOrgan, out var organ))
-            return;
-
-        // Taken before the action, the organ may be deleted by it.
-        var organName = _entities.ToPrettyString(organ.Value);
-        if (Check(action(_target, organ.Value), error))
-            Log($"{verb} {organName}");
     }
 
     private bool Check(bool success, string error)
