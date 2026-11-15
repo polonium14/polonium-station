@@ -125,11 +125,14 @@ public sealed partial class OrganFailureSystem : EntitySystem
     {
         var (_, failure, integrity) = organ;
         var healthy = integrity.OrganSeverity == OrganSeverity.Normal;
+        var category = CompOrNull<OrganComponent>(organ)?.Category;
+        // One lung or kidney of a pair is half the organ, so the pair falls ill and hurts like a single one.
+        var share = PairedOrgans.Share(category);
 
         if (failure.Stage == 0)
         {
             var lost = 100f * (1f - integrity.OrganIntegrity.Float() / integrity.IntegrityCap.Float());
-            if (_random.Prob(Math.Clamp(lost * _contractChance, 0f, 1f)))
+            if (_random.Prob(Math.Clamp(lost * _contractChance * share, 0f, 1f)))
                 SetStage((organ, failure), 1);
 
             return;
@@ -148,14 +151,14 @@ public sealed partial class OrganFailureSystem : EntitySystem
 
         if (stage.Damage is { } damage)
         {
-            var factor = _circulation.GetDialysisFactor(body, CompOrNull<OrganComponent>(organ)?.Category);
+            var factor = _circulation.GetDialysisFactor(body, category) * share;
             if (factor > 0f)
                 _circulation.DealOrganDamage(body, damage * (UpdateInterval * factor));
         }
 
         foreach (var symptom in stage.Symptoms)
         {
-            if (_random.Prob(symptom.Chance * UpdateInterval))
+            if (_random.Prob(symptom.Chance * UpdateInterval * share))
                 ShowSymptom(body, symptom);
         }
 

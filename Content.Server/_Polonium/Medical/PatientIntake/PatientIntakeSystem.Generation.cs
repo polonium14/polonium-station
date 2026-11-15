@@ -4,6 +4,7 @@
 
 using System.Linq;
 using Content.Server._Polonium.Tutorial;
+using Content.Shared._Polonium.Body;
 using Content.Shared._Polonium.Medical.PatientIntake;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
@@ -302,7 +303,10 @@ public sealed partial class PatientIntakeSystem
             return false;
 
         var candidates = body.Organs.ContainedEntities
-            .Where(o => TryComp<OrganComponent>(o, out var c) && c.Category is { } cat && issue.Categories.Contains(cat) && filter(o))
+            .Where(o => TryComp<OrganComponent>(o, out var c)
+                && c.Category is { } cat
+                && issue.Categories.Any(wanted => PairedOrgans.Matches(cat, wanted))
+                && filter(o))
             .ToList();
 
         if (candidates.Count == 0)

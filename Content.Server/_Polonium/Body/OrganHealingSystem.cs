@@ -80,14 +80,25 @@ public sealed partial class OrganHealingSystem : EntitySystem
         {
             if (!TryComp<OrganIntegrityComponent>(organ, out var integrity)
                 || CompOrNull<OrganComponent>(organ)?.Category is not { } category
-                || categories != null && !categories.Contains(category)
-                || excluded.Contains(category))
+                || categories != null && !MatchesAny(category, categories)
+                || MatchesAny(category, excluded))
                 continue;
 
             organs.Add((organ, integrity));
         }
 
         return organs;
+    }
+
+    private static bool MatchesAny(ProtoId<OrganCategoryPrototype> category, HashSet<ProtoId<OrganCategoryPrototype>> wanted)
+    {
+        foreach (var other in wanted)
+        {
+            if (PairedOrgans.Matches(category, other))
+                return true;
+        }
+
+        return false;
     }
 }
 

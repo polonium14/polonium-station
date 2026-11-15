@@ -53,9 +53,7 @@ public sealed partial class CirculationSystem : EntitySystem
 
     private static readonly ProtoId<OrganCategoryPrototype> Heart = "Heart";
     private static readonly ProtoId<OrganCategoryPrototype> Brain = "Brain";
-    private static readonly ProtoId<OrganCategoryPrototype> Lungs = "Lungs";
     private static readonly ProtoId<OrganCategoryPrototype> Liver = "Liver";
-    private static readonly ProtoId<OrganCategoryPrototype> Kidneys = "Kidneys";
     private static readonly ProtoId<DamageTypePrototype> Poison = "Poison";
     private static readonly LocId NoBrainReason = "defibrillator-no-brain";
     private static readonly LocId NoHeartReason = "defibrillator-no-heart";
@@ -77,6 +75,11 @@ public sealed partial class CirculationSystem : EntitySystem
     /// </summary>
     private const float SickKidneyRate = 0.75f;
     private const float DeadKidneyRate = 0.5f;
+
+    /// <summary>
+    /// Share of the oxygen a body keeps when one lung of the pair does not work.
+    /// </summary>
+    private const float OneLungCap = 0.6f;
 
     /// <summary>
     /// Share of poison damage the kidneys and the liver lose when it hurts them.
@@ -139,7 +142,7 @@ public sealed partial class CirculationSystem : EntitySystem
             || poison <= FixedPoint2.Zero)
             return;
 
-        HurtOrgan(ent, Kidneys, poison * KidneyToxinShare);
+        HurtOrgan(ent, PairedOrgans.Kidneys, poison * KidneyToxinShare);
         HurtOrgan(ent, Liver, poison * LiverToxinShare);
     }
 
@@ -148,10 +151,10 @@ public sealed partial class CirculationSystem : EntitySystem
         if (!_random.Prob(_toxinOrganChance))
             return;
 
-        foreach (var organ in _healing.GetLivingOrgans(body, [category], []))
-        {
-            _healing.DamageOrgan(organ, amount);
-        }
+        // One organ, so a pair of kidneys wears down as fast as a single one and rarely fails at once.
+        var organs = _healing.GetLivingOrgans(body, [category], []);
+        if (organs.Count > 0)
+            _healing.DamageOrgan(_random.Pick(organs), amount);
     }
 
     private void OnBeforeEmote(Entity<OxygenLimitComponent> ent, ref BeforeEmoteEvent args)
@@ -202,7 +205,9 @@ public sealed partial class CirculationSystem : EntitySystem
         var heart = false;
         var brain = false;
         var liver = false;
-        var kidneys = false;
+        // How much of the lungs and kidneys work: a side counts half, a single organ whole.
+        var lungs = 0f;
+        var kidneys = 0f;
         var sickKidneys = false;
         var loss = 0f;
         var cap = 1f;
@@ -214,13 +219,16 @@ public sealed partial class CirculationSystem : EntitySystem
             brain |= category == Brain;
             liver |= category == Liver && alive;
 
-            if (category == Kidneys && alive)
+            if (alive && PairedOrgans.Matches(category, PairedOrgans.Lungs))
+                lungs += PairedOrgans.Share(category);
+
+            if (alive && PairedOrgans.Matches(category, PairedOrgans.Kidneys))
             {
-                kidneys = true;
+                kidneys += PairedOrgans.Share(category);
                 sickKidneys |= CompOrNull<OrganIntegrityComponent>(organ)?.OrganSeverity is not null and not OrganSeverity.Normal;
             }
 
-            if (category != Heart && category != Lungs || !alive || GetStage(organ) is not { } stage)
+            if (category != Heart && !PairedOrgans.Matches(category, PairedOrgans.Lungs) || !alive || GetStage(organ) is not { } stage)
                 continue;
 
             loss = MathF.Max(loss, stage.SaturationLoss);
@@ -232,13 +240,15 @@ public sealed partial class CirculationSystem : EntitySystem
         var expectsHeart = false;
         var expectsBrain = false;
         var expectsLiver = false;
+        var expectsLungs = false;
         var expectsKidneys = false;
         foreach (var category in bodyComp.ExpectedOrgans)
         {
             expectsHeart |= category == Heart;
             expectsBrain |= category == Brain;
             expectsLiver |= category == Liver;
-            expectsKidneys |= category == Kidneys;
+            expectsLungs |= PairedOrgans.Matches(category, PairedOrgans.Lungs);
+            expectsKidneys |= PairedOrgans.Matches(category, PairedOrgans.Kidneys);
         }
 
         var stopped = expectsHeart && !heart;
@@ -252,19 +262,23 @@ public sealed partial class CirculationSystem : EntitySystem
             RemComp<StoppedCirculationComponent>(body);
         }
 
+        // Without any lung the respirator already suffocates the body.
+        if (expectsLungs && lungs > 0f && lungs < 1f)
+            cap = MathF.Min(cap, OneLungCap);
+
         SetOxygenLimit(body, loss, cap);
 
         var kidneyRate = !expectsKidneys ? 1f
-            : !kidneys ? DeadKidneyRate
-            : sickKidneys ? SickKidneyRate
+            : kidneys <= 0f ? DeadKidneyRate
+            : sickKidneys || kidneys < 1f ? SickKidneyRate
             : 1f;
         SetKidneyRate(body, kidneyRate);
 
         var poison = 0f;
         if (expectsLiver && !liver)
             poison += _deadOrganPoison * GetDialysisFactor(body, Liver);
-        if (expectsKidneys && !kidneys)
-            poison += _deadOrganPoison * GetDialysisFactor(body, Kidneys);
+        if (expectsKidneys && kidneys <= 0f)
+            poison += _deadOrganPoison * GetDialysisFactor(body, PairedOrgans.Kidneys);
         SetPoisoning(body, poison);
 
         LocId? reason = null;
@@ -285,7 +299,7 @@ public sealed partial class CirculationSystem : EntitySystem
             || !TryComp<DialysisComponent>(machine, out var dialysis))
             return 1f;
 
-        if (category == Kidneys)
+        if (PairedOrgans.Matches(category, PairedOrgans.Kidneys))
             return dialysis.KidneyPoisonFactor;
 
         return category == Liver ? dialysis.LiverPoisonFactor : 1f;
