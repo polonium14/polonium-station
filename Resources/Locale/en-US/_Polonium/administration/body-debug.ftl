@@ -29,3 +29,5 @@ body-debug-bone-status = Bone { $integrity } of { $cap }, { $severity }.
 body-debug-wounds = Wounds: { $wounds }
 body-debug-error-action = The action failed: the target left the body or does not allow it.
 body-debug-error-wound = Could not wound this body part.
+body-debug-circulation-stopped = No working heart: circulation has stopped.
+body-debug-saturation = Oxygen saturation: { $saturation }

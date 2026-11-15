@@ -29,3 +29,5 @@ body-debug-bone-status = Kość { $integrity } z { $cap }, { $severity }.
 body-debug-wounds = Rany: { $wounds }
 body-debug-error-action = Akcja się nie udała: celu nie ma już w ciele albo na to nie pozwala.
 body-debug-error-wound = Nie udało się zranić tej części ciała.
+body-debug-circulation-stopped = Brak działającego serca: krążenie zatrzymane.
+body-debug-saturation = Saturacja tlenem: { $saturation }

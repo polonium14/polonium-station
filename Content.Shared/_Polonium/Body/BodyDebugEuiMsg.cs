@@ -88,8 +88,19 @@ public sealed class BodyDebugEuiState(
     List<BodyDebugOrgan> organs,
     List<BodyDebugLimb> limbs,
     List<string> woundTypes,
+    bool circulationStopped,
+    float? saturation,
     string? error) : EuiStateBase
 {
+    /// <summary>
+    /// Oxygen saturation of the body, null if it does not breathe.
+    /// </summary>
+    public readonly float? Saturation = saturation;
+
+    /// <summary>
+    /// True if the body has no working heart.
+    /// </summary>
+    public readonly bool CirculationStopped = circulationStopped;
     public readonly string TargetName = targetName;
     public readonly List<BodyDebugOrgan> Organs = organs;
     public readonly List<BodyDebugLimb> Limbs = limbs;

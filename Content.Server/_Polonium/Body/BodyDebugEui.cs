@@ -1,5 +1,6 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Server.Body.Components;
 using Content.Server.EUI;
 using Content.Server.Administration;
 using Content.Shared._Polonium.Body;
@@ -51,7 +52,10 @@ public sealed partial class BodyDebugEui : BaseEui
     public override EuiStateBase GetNewState()
     {
         var name = _entities.TryGetComponent<MetaDataComponent>(_target, out var meta) ? meta.EntityName : string.Empty;
-        return new BodyDebugEuiState(name, _bodyDebug.GetOrgans(_target), _bodyDebug.GetLimbs(_target), _bodyDebug.GetWoundTypes(), _error);
+        return new BodyDebugEuiState(name, _bodyDebug.GetOrgans(_target), _bodyDebug.GetLimbs(_target), _bodyDebug.GetWoundTypes(),
+            _entities.System<CirculationSystem>().IsStopped(_target),
+            _entities.GetComponentOrNull<RespiratorComponent>(_target)?.Saturation,
+            _error);
     }
 
     public override void HandleMessage(EuiMessageBase msg)

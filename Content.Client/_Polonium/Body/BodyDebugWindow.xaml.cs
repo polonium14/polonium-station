@@ -41,6 +41,11 @@ public sealed partial class BodyDebugWindow : FancyWindow
     public void SetState(BodyDebugEuiState state)
     {
         TargetLabel.Text = state.TargetName;
+        CirculationLabel.Visible = state.CirculationStopped;
+        SaturationLabel.Visible = state.Saturation != null;
+        if (state.Saturation is { } saturation)
+            SaturationLabel.Text = Loc.GetString("body-debug-saturation", ("saturation", saturation.ToString("0.0")));
+
         ErrorLabel.Visible = state.Error != null;
         if (state.Error != null)
             ErrorLabel.Text = Loc.GetString(state.Error);
