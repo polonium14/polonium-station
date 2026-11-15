@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Content.Server._Shitmed.PartStatus;
+using Content.Shared._Polonium.Body; // Polonium: dead organs
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Medical.Surgery;
@@ -13,6 +14,7 @@ using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.FixedPoint; // Polonium: dead organs
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Medical.HealthAnalyzer;
@@ -274,6 +276,13 @@ public sealed partial class ServerHealthAnalyzerSystem : HealthAnalyzerSystem
 
         foreach (var organ in body.Organs.ContainedEntities)
         {
+            // A dead organ has no integrity component. The client skips entries with a cap of 0, so it gets 0 out of 1.
+            if (HasComp<DeadOrganComponent>(organ))
+            {
+                organs[GetNetEntity(organ)] = new OrganTraumaData(FixedPoint2.Zero, FixedPoint2.New(1), OrganSeverity.Destroyed, new());
+                continue;
+            }
+
             if (!TryComp<OrganIntegrityComponent>(organ, out var integrity))
                 continue;
 
