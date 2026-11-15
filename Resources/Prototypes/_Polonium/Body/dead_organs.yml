@@ -1,0 +1,107 @@
+- type: entity
+  abstract: true
+  parent: [ OrganBase, OrganBaseChildInternal ]
+  id: OrganDeadBase
+  description: This organ is dead. It can only be cut out and replaced.
+  components:
+  - type: DeadOrgan
+  - type: GibbableOrgan
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadHeart
+  name: dead heart
+  components:
+  - type: Organ
+    category: Heart
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: heart
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadLungs
+  name: dead lungs
+  components:
+  - type: Organ
+    category: Lungs
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: lungs
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadLiver
+  name: dead liver
+  components:
+  - type: Organ
+    category: Liver
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: liver
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadKidneys
+  name: dead kidneys
+  components:
+  - type: Organ
+    category: Kidneys
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: kidneys
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadStomach
+  name: dead stomach
+  components:
+  - type: Organ
+    category: Stomach
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: stomach
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadEyes
+  name: dead eyes
+  components:
+  - type: Organ
+    category: Eyes
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: eyes
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadTongue
+  name: dead tongue
+  components:
+  - type: Organ
+    category: Tongue
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    state: tongue
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadEars
+  name: dead ears
+  components:
+  - type: Organ
+    category: Ears
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    state: ears
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadAppendix
+  name: dead appendix
+  components:
+  - type: Organ
+    category: Appendix
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: appendix
