@@ -99,6 +99,12 @@ Uszkodzone serce, płuca, wątroba albo nerki mogą popaść w niewydolność. C
 
 Chore serce pompuje mniej krwi, więc do ciała dociera mniej tlenu, a w stadium 3 pacjent traci przytomność. Analizator pokazuje SpO2, czyli nasycenie krwi tlenem. U zdrowej osoby wynosi 95–99%.
 
+<Box>
+<GuideEntityEmbed Entity="DialysisMachine"/>
+</Box>
+
+[color=#e8c878]Maszyna do dializy[/color] przejmuje pracę nerek. Przeciągnij ją na pacjenta, żeby podłączyć kaniule; odciągnięcie maszyny dalej niż na dwie kratki wyrywa je z ręki. Co sekundę usuwa z krwi około 2 jednostek wszystkiego poza lekami, więc pomaga też przy zatruciu i przedawkowaniu narkotyków, a leki można podawać w trakcie. Pacjent na dializie nie dostaje trucizny od chorych ani martwych nerek, a od wątroby trzy razy mniej. Obrażeń od trucizny, które pacjent już ma, dializa nie leczy. Maszynę robi lathe medyczny po zbadaniu stazy biochemicznej.
+
 Nerki ustalają tempo działania leków, trucizn, jedzenia i picia. Przy chorych nerkach wszystko to działa o jedną czwartą wolniej, przy martwych albo usuniętych o połowę wolniej, ale w sumie tak samo mocno. Martwa albo usunięta wątroba i martwe albo usunięte nerki trują pacjenta. Każde zatrucie uszkadza też nerki i wątrobę.
 
 Uszkodzone narządy leczą też leki: omnizyna (wszystkie narządy), krioksadon (wszystkie poza mózgiem, tylko w wychłodzonym ciele), kwas pentetowy (nerki, wątroba, żołądek), perfluorodekalina i salbutamol (płuca), a powoli także jodek potasu i zwykła woda (nerki). Przedawkowanie kwasu pentetowego, salbutamolu albo perfluorodekaliny samo uszkadza narządy. Takiego uszkodzenia nie wyleczy operacja, tylko leki na narządy albo przeszczep.
