@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Shared._Polonium.Body;
 using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
@@ -132,7 +133,8 @@ public sealed partial class PatientIntakeCheckSystem : EntitySystem
             }
 
             // Any missing integrity counts: an organ stays in the Normal severity down to 35% integrity.
-            if (TryComp<OrganIntegrityComponent>(organ, out var integrity) && integrity.OrganIntegrity < integrity.IntegrityCap)
+            if (TryComp<OrganIntegrityComponent>(organ, out var integrity) && integrity.OrganIntegrity < integrity.IntegrityCap
+                || HasComp<DeadOrganComponent>(organ))
                 failures.Add(new(IntakeFailureKind.OrganDamage, name));
 
             if (_surgery.HasUnfinishedSurgerySteps(organ))
