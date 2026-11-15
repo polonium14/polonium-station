@@ -18,3 +18,98 @@
           Toxin: -0.075
           Airloss: -0.075
           Brute: -0.075
+- type: reagent
+  id: PenteticAcid
+  name: reagent-name-pentetic-acid
+  group: Medicine
+  desc: reagent-desc-pentetic-acid
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#b2ffd1"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -1
+      - !type:HealOrgans
+        categories: [ Kidneys, Liver, Stomach ]
+        amount: 1.5
+      - !type:DamageOrgans
+        conditions:
+        - !type:ReagentCondition
+          reagent: PenteticAcid
+          min: 15
+        categories: [ Kidneys ]
+        amount: 3
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: PenteticAcid
+          min: 15
+        probability: 0.02
+
+- type: reagent
+  id: Salbutamol
+  name: reagent-name-salbutamol
+  group: Medicine
+  desc: reagent-desc-salbutamol
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#00e5e5"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -1
+      - !type:HealOrgans
+        categories: [ Lungs ]
+        amount: 0.5
+      - !type:DamageOrgans
+        conditions:
+        - !type:ReagentCondition
+          reagent: Salbutamol
+          min: 30
+        categories: [ Kidneys ]
+        amount: 1
+      - !type:Jitter
+        conditions:
+        - !type:ReagentCondition
+          reagent: Salbutamol
+          min: 30
+
+- type: reagent
+  id: Perfluorodecalin
+  name: reagent-name-perfluorodecalin
+  group: Medicine
+  desc: reagent-desc-perfluorodecalin
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: medicine
+  color: "#ff6464"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -3
+      - !type:HealOrgans
+        categories: [ Lungs ]
+        amount: 1
+      - !type:DamageOrgans
+        conditions:
+        - !type:ReagentCondition
+          reagent: Perfluorodecalin
+          min: 20
+        categories: [ Lungs ]
+        amount: 2
+      - !type:Emote
+        conditions:
+        - !type:ReagentCondition
+          reagent: Perfluorodecalin
+          min: 20
+        emote: Cough
+        probability: 0.08
