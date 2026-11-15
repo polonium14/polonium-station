@@ -27,6 +27,18 @@
     },
     {
       "name": "appendix"
+    },
+    {
+      "name": "lung-l"
+    },
+    {
+      "name": "lung-r"
+    },
+    {
+      "name": "kidney-l"
+    },
+    {
+      "name": "kidney-r"
     }
   ]
 }
