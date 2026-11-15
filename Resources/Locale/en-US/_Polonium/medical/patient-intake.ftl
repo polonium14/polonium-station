@@ -132,6 +132,10 @@ patient-intake-part-heart = heart
 patient-intake-part-stomach = stomach
 patient-intake-part-liver = liver
 patient-intake-part-kidneys = kidneys
+patient-intake-part-lungleft = left lung
+patient-intake-part-lungright = right lung
+patient-intake-part-kidneyleft = left kidney
+patient-intake-part-kidneyright = right kidney
 patient-intake-part-beak = beak
 
 ## Issues

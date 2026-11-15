@@ -133,6 +133,10 @@ patient-intake-part-heart = serce
 patient-intake-part-stomach = żołądek
 patient-intake-part-liver = wątroba
 patient-intake-part-kidneys = nerki
+patient-intake-part-lungleft = lewe płuco
+patient-intake-part-lungright = prawe płuco
+patient-intake-part-kidneyleft = lewa nerka
+patient-intake-part-kidneyright = prawa nerka
 patient-intake-part-beak = dziób
 
 ## Dolegliwości
