@@ -48,7 +48,7 @@ public sealed partial class RadioSystem : SharedRadioSystem
     private void OnIntrinsicReceive(EntityUid uid, IntrinsicRadioReceiverComponent component, ref RadioReceiveEvent args)
     {
         if (TryComp(uid, out ActorComponent? actor))
-            _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
+            _netMan.ServerSendMessage(Content.Server._Polonium.Body.HearingSystem.Hear(EntityManager, uid, args.ChatMsg), actor.PlayerSession.Channel); // Polonium: hearing
     }
 
     /// <inheritdoc/>
