@@ -29,6 +29,7 @@
       Normal: 11.9
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganAnimalInternal, OrganAnimalMetabolizer ]
@@ -40,6 +41,7 @@
       Normal: 9.8
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadHeart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganAnimalInternal, OrganAnimalMetabolizer ]
@@ -51,6 +53,7 @@
       Normal: 19.6
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadStomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganAnimalInternal, OrganAnimalMetabolizer ]
@@ -62,6 +65,7 @@
       Normal: 11.9
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLiver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganAnimalInternal, OrganAnimalMetabolizer ]
@@ -73,6 +77,7 @@
       Normal: 11.9
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadKidneys
 
 - type: entity
   id: BaseMobAnimal

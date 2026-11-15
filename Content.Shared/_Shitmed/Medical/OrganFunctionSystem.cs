@@ -3,6 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Polonium.Body;
 using Content.Shared.Body;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
@@ -64,6 +65,9 @@ public sealed partial class OrganFunctionSystem : EntitySystem
             return;
 
         if (TerminatingOrDeleted(args.Target))
+            return;
+
+        if (HasComp<DeadOrganComponent>(ent))
             return;
 
         switch (ent.Comp.Category?.Id)

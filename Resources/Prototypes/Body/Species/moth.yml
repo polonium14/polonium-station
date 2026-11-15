@@ -385,6 +385,7 @@
       Normal: 8.4
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEyes
   - type: EyeBlinking
     eyelidsSprite: /Textures/Mobs/Species/Moth/parts.rsi
   - type: Appearance
@@ -399,6 +400,7 @@
       Normal: 10.5
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadTongue
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganMothInternal ]
@@ -410,6 +412,7 @@
       Normal: 10.5
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadAppendix
 
 - type: entity
   parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganMothInternal ]
@@ -421,6 +424,7 @@
       Normal: 10.5
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEars
 
 - type: entity
   parent: [ OrganBaseLungs, OrganMothInternal, OrganMothMetabolizer ]
@@ -432,6 +436,7 @@
       Normal: 11.9
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganMothInternal, OrganMothMetabolizer ] # Polonium: moth should eat cloth!
@@ -443,6 +448,7 @@
       Normal: 9.8
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadHeart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganMothInternal, OrganMothMetabolizer ]
@@ -460,6 +466,7 @@
       Normal: 19.6
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadStomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganMothInternal, OrganMothMetabolizer ] # Polonium: moth should eat cloth!
@@ -471,6 +478,7 @@
       Normal: 11.9
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLiver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganMothInternal, OrganMothMetabolizer ]
@@ -482,3 +490,4 @@
       Normal: 14.7
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadKidneys

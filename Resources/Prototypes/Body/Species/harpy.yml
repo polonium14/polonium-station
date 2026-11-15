@@ -378,6 +378,7 @@
       Normal: 8.4
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganHarpyInternal ]
@@ -389,6 +390,7 @@
       Normal: 10.5
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadTongue
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganHarpyInternal ]
@@ -400,6 +402,7 @@
       Normal: 10.5
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadAppendix
 
 - type: entity
   parent: [ OrganBaseEars, OrganHarpyInternal ]
@@ -411,6 +414,7 @@
       Normal: 10.5
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEars
 
 # An advanced pair of avian lungs. Filters oxygen by moving air constantly through air sacs.
 - type: entity
@@ -425,6 +429,7 @@
       Normal: 11.9
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganHarpyInternal, OrganHarpyMetabolizer ]
@@ -436,6 +441,7 @@
       Normal: 11.9
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadHeart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganHarpyInternal, OrganHarpyMetabolizer ]
@@ -447,6 +453,7 @@
       Normal: 30.8
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadStomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganHarpyInternal, OrganHarpyMetabolizer ]
@@ -458,6 +465,7 @@
       Normal: 14.7
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLiver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganHarpyInternal, OrganHarpyMetabolizer ]
@@ -469,3 +477,4 @@
       Normal: 14.7
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadKidneys

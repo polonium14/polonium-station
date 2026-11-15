@@ -378,3 +378,4 @@
       Normal: 14.7
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs

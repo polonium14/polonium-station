@@ -301,6 +301,7 @@
       Normal: 8.4
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEyes
   - type: EyeBlinking
     eyelidsSprite: /Textures/Mobs/Species/Human/parts.rsi
   - type: Appearance
@@ -315,6 +316,7 @@
       Normal: 10.5
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadTongue
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganHumanInternal ]
@@ -326,6 +328,7 @@
       Normal: 10.5
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadAppendix
 
 - type: entity
   parent: [ OrganBaseEars, OrganHumanInternal ]
@@ -337,6 +340,7 @@
       Normal: 10.5
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEars
 
 - type: entity
   parent: [ OrganBaseLungs, OrganHumanInternal, OrganHumanMetabolizer ]
@@ -348,6 +352,7 @@
       Normal: 11.9
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganHumanInternal, OrganHumanMetabolizer ]
@@ -359,6 +364,7 @@
       Normal: 11.9
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadHeart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganHumanInternal, OrganHumanMetabolizer ]
@@ -370,6 +376,7 @@
       Normal: 30.8
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadStomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganHumanInternal, OrganHumanMetabolizer ]
@@ -381,6 +388,7 @@
       Normal: 14.7
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLiver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganHumanInternal, OrganHumanMetabolizer ]
@@ -392,3 +400,4 @@
       Normal: 14.7
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadKidneys

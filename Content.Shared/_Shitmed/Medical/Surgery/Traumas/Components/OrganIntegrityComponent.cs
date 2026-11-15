@@ -2,6 +2,7 @@ using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 
@@ -29,6 +30,13 @@ public sealed partial class OrganIntegrityComponent : Component
 
     [DataField]
     public SoundSpecifier OrganDestroyedSound = new SoundCollectionSpecifier("OrganDestroyed");
+
+    /// <summary>
+    /// Organ put into the body in place of this one when it is destroyed.
+    /// Without it the destroyed organ just disappears.
+    /// </summary>
+    [DataField]
+    public EntProtoId? DeadOrgan;
 
     /// <summary>
     /// Integrity never drops below this value. Keeps the brain from being destroyed by damage.

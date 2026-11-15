@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Polonium.Body;
 using Content.Shared._Shitmed.CCVar;
 using Content.Shared._Shitmed.Medical.Surgery.Pain;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
@@ -133,11 +134,19 @@ public partial class TraumaSystem
         if (TryComp<OrganIntegrityComponent>(args.Organ.Owner, out var organIntegrity))
             _audio.PlayPvs(organIntegrity.OrganDestroyedSound, bodyUid);
 
+        var parentPart = CompOrNull<ChildOrganComponent>(args.Organ.Owner)?.Parent;
+
         if (body.Comp.Organs is not null)
             _container.Remove(args.Organ.Owner, body.Comp.Organs, force: true);
 
         if (_net.IsServer)
             QueueDel(args.Organ.Owner);
+
+        if (_net.IsServer)
+        {
+            var destroyedEv = new OrganDestroyedEvent(args.Organ.Owner, parentPart);
+            RaiseLocalEvent(bodyUid, ref destroyedEv);
+        }
     }
 
     #endregion

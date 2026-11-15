@@ -327,12 +327,13 @@
   parent: [ OrganArachnidVisual, OrganBaseEyes, OrganArachnidInternal ]
   id: OrganArachnidEyes
   components:
-  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEyes
   - type: Appearance
   - type: EyeBlinking
     eyelidsSprite: /Textures/Mobs/Species/Arachnid/parts.rsi
@@ -341,86 +342,94 @@
   parent: [ OrganBaseTongue, OrganArachnidInternal ]
   id: OrganArachnidTongue
   components:
-  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 56
     integrityThresholds:
       Normal: 19.6
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadTongue
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganArachnidInternal ]
   id: OrganArachnidAppendix
   components:
-  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadAppendix
 
 - type: entity
   parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganArachnidInternal ]
   id: OrganArachnidEars
   components:
-  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEars
 
 - type: entity
   parent: [ OrganBaseLungs, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidLungs
   components:
-  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 56
     integrityThresholds:
       Normal: 19.6
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidHeart
   components:
-  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
       Normal: 14.7
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadHeart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidStomach
   components:
-  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 88
     integrityThresholds:
       Normal: 30.8
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadStomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidLiver
   components:
-  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 56
     integrityThresholds:
       Normal: 19.6
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLiver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidKidneys
   components:
-  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
       Normal: 14.7
       Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadKidneys
