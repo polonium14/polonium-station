@@ -470,6 +470,8 @@
   - type: GibbableOrgan
   - type: Organ
     category: Lungs
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Lungs
   - type: Lung
   - type: Metabolizer
     stages: [ Respiration ]
@@ -505,6 +507,8 @@
   - type: GibbableOrgan
   - type: Organ
     category: Heart
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Heart
   - type: Sprite
     layers:
     - state: heart-on
@@ -557,6 +561,8 @@
   - type: GibbableOrgan
   - type: Organ
     category: Liver
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Liver
   - type: Sprite
     layers:
     - state: liver
@@ -577,6 +583,8 @@
   - type: GibbableOrgan
   - type: Organ
     category: Kidneys
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Kidneys
   - type: Sprite
     layers:
       - state: kidney-l

@@ -1,0 +1,15 @@
+organ-failure-pale = { $name } blednie.
+organ-failure-shudder = { $name } drży.
+organ-failure-groan = { $name } jęczy.
+organ-failure-twitch = { $name } drga.
+organ-failure-abdomen = Boli cię brzuch!
+organ-failure-back = Strasznie bolą cię plecy!
+organ-failure-flank = Czujesz kłujący ból w boku!
+organ-failure-upper-abdomen = Czujesz rozdzierający ból w prawym nadbrzuszu!
+organ-failure-ribs = Bolą cię żebra!
+organ-failure-breathing-hurts = Boli cię przy oddychaniu!
+organ-failure-cant-breathe = Z bólu nie możesz złapać tchu!
+organ-failure-palpitations = Serce ci kołacze.
+organ-failure-breathless = Brakuje ci tchu.
+condition-organ-failure = • { $organ }: niewydolność, stadium { $stage }.
+health-analyzer-window-entity-spo2-text = SpO2:
