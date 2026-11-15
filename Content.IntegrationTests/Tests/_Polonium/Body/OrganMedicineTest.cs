@@ -57,12 +57,12 @@ public sealed class OrganMedicineTest : GameTest
     [Test]
     public async Task PenteticAcidHealsItsOrgansOnly()
     {
-        var body = await Patient("PenteticAcid", 10, "Kidneys", "Liver", "Heart");
+        var body = await Patient("PenteticAcid", 10, "KidneyLeft", "Liver", "Heart");
         await Pair.RunSeconds(4);
 
         await Server.WaitAssertion(() =>
         {
-            var kidneys = Integrity(body, "Kidneys");
+            var kidneys = Integrity(body, "KidneyLeft");
             var heart = Integrity(body, "Heart");
             Assert.Multiple(() =>
             {
@@ -82,7 +82,7 @@ public sealed class OrganMedicineTest : GameTest
 
         await Server.WaitAssertion(() =>
         {
-            var kidneys = Integrity(body, "Kidneys");
+            var kidneys = Integrity(body, "KidneyLeft");
             Assert.That(kidneys.OrganIntegrity, Is.LessThan(kidneys.IntegrityCap), "Above 15u the kidneys lose more than they gain.");
             Assert.That(kidneys.IntegrityModifiers.Keys.Select(key => key.Item1), Does.Contain(OrganHealingSystem.ChemicalDamageId));
         });
@@ -96,7 +96,7 @@ public sealed class OrganMedicineTest : GameTest
         await Server.WaitAssertion(() =>
         {
             body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
-            var kidneys = Organ(body, "Kidneys");
+            var kidneys = Organ(body, "KidneyLeft");
             var integrity = SEntMan.GetComponent<OrganIntegrityComponent>(kidneys);
             Healing.DamageOrgan((kidneys, integrity), integrity.IntegrityCap - 2);
             Assert.That(SEntMan.System<BloodstreamSystem>().TryAddToBloodstream(body, new Solution("PenteticAcid", 40)));
@@ -107,7 +107,7 @@ public sealed class OrganMedicineTest : GameTest
 
         await Server.WaitAssertion(() =>
         {
-            Assert.That(SEntMan.HasComponent<DeadOrganComponent>(Organ(body, "Kidneys")));
+            Assert.That(SEntMan.HasComponent<DeadOrganComponent>(Organ(body, "KidneyLeft")));
         });
     }
 
@@ -119,7 +119,7 @@ public sealed class OrganMedicineTest : GameTest
         await Server.WaitAssertion(() =>
         {
             body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
-            Assert.That(SEntMan.System<BodyDebugSystem>().TryKillOrgan(body, Organ(body, "Lungs")));
+            Assert.That(SEntMan.System<BodyDebugSystem>().TryKillOrgan(body, Organ(body, "LungLeft")));
             Assert.That(SEntMan.System<BloodstreamSystem>().TryAddToBloodstream(body, new Solution("Perfluorodecalin", 30)));
         });
 
@@ -127,7 +127,7 @@ public sealed class OrganMedicineTest : GameTest
 
         await Server.WaitAssertion(() =>
         {
-            Assert.That(SEntMan.HasComponent<DeadOrganComponent>(Organ(body, "Lungs")), "A dead organ is past healing.");
+            Assert.That(SEntMan.HasComponent<DeadOrganComponent>(Organ(body, "LungLeft")), "A dead organ is past healing.");
         });
     }
 
@@ -147,7 +147,7 @@ public sealed class OrganMedicineTest : GameTest
     [Test]
     public async Task BloodstreamDrugsNeedAWorkingHeart()
     {
-        var body = await Patient("PenteticAcid", 0, "Kidneys");
+        var body = await Patient("PenteticAcid", 0, "KidneyLeft");
         await Server.WaitAssertion(() =>
         {
             Assert.That(SEntMan.System<BodyDebugSystem>().TryKillOrgan(body, Organ(body, "Heart")));
@@ -158,7 +158,7 @@ public sealed class OrganMedicineTest : GameTest
 
         await Server.WaitAssertion(() =>
         {
-            var kidneys = Integrity(body, "Kidneys");
+            var kidneys = Integrity(body, "KidneyLeft");
             Assert.That(kidneys.OrganIntegrity, Is.EqualTo(kidneys.IntegrityCap - 10), "Without a heart the blood chemistry stands still.");
         });
     }

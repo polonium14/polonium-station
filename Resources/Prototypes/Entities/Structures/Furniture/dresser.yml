@@ -286,7 +286,7 @@
       weight: 0.00001
     - id: OrganHumanHead
       weight: 0.00001
-    - id: OrganHumanKidneys
+    - id: OrganHumanKidneyLeft # Polonium: paired kidneys
       weight: 0.00001
 
 - type: entityTable

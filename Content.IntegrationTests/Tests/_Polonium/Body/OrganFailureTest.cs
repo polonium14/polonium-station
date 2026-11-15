@@ -72,6 +72,8 @@ public sealed class OrganFailureTest : GameTest
         Healing.DamageOrgan((organ, integrity), integrity.IntegrityCap * (1f - fraction));
     }
 
+    private static readonly string[] BothKidneys = ["KidneyLeft", "KidneyRight"];
+
     private FixedPoint2 Poison(EntityUid body)
     {
         var damage = SEntMan.System<DamageableSystem>().GetPositiveDamage((body, SEntMan.GetComponent<DamageableComponent>(body)));
@@ -134,20 +136,24 @@ public sealed class OrganFailureTest : GameTest
         await Server.WaitAssertion(() =>
         {
             body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
-            var kidneys = Organ(body, "Kidneys");
-            Wear(kidneys, 0.2f);
-            Failure.SetStage((kidneys, FailureOf(kidneys)), 3);
-            before = Integrity(kidneys).OrganIntegrity;
+            foreach (var side in BothKidneys)
+            {
+                var kidney = Organ(body, side);
+                Wear(kidney, 0.2f);
+                Failure.SetStage((kidney, FailureOf(kidney)), 3);
+                before = Integrity(kidney).OrganIntegrity;
+            }
         });
 
         await Pair.RunSeconds(5);
 
         await Server.WaitAssertion(() =>
         {
-            var kidneys = Organ(body, "Kidneys");
+            var kidneys = Organ(body, "KidneyLeft");
             Assert.Multiple(() =>
             {
-                Assert.That(Poison(body), Is.InRange(FixedPoint2.New(1.5), FixedPoint2.New(3)), "Stage 3 deals 0.5 poison a second.");
+                Assert.That(Poison(body), Is.InRange(FixedPoint2.New(1.5), FixedPoint2.New(3)),
+                    "Stage 3 deals 0.5 poison a second, half from each kidney.");
                 Assert.That(Integrity(kidneys).OrganIntegrity, Is.LessThan(before), "The failure wears the kidneys down.");
                 Assert.That(Integrity(kidneys).OrganIntegrity, Is.GreaterThan(before - 2),
                     "The kidneys' own poison does not hurt the kidneys on top of that.");
@@ -163,19 +169,21 @@ public sealed class OrganFailureTest : GameTest
         await Server.WaitAssertion(() =>
         {
             var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
-            var kidneys = Integrity(Organ(body, "Kidneys"));
+            var kidneys = BothKidneys.Select(side => Integrity(Organ(body, side))).ToList();
             var liver = Integrity(Organ(body, "Liver"));
             var poison = new DamageSpecifier(Server.ProtoMan.Index(PoisonType), 10);
+            FixedPoint2 Lost() => kidneys.Aggregate(FixedPoint2.Zero, (sum, k) => sum + k.IntegrityCap - k.OrganIntegrity);
 
             SEntMan.System<DamageableSystem>().ChangeDamage(body, poison, ignoreResistances: true);
             Assert.Multiple(() =>
             {
-                Assert.That(kidneys.OrganIntegrity, Is.EqualTo(kidneys.IntegrityCap - 1), "A tenth of the poison.");
+                Assert.That(Lost(), Is.EqualTo(FixedPoint2.New(1)), "A tenth of the poison.");
+                Assert.That(kidneys.Count(k => k.OrganIntegrity < k.IntegrityCap), Is.EqualTo(1), "It hurts one kidney of the pair.");
                 Assert.That(liver.OrganIntegrity, Is.EqualTo(liver.IntegrityCap - FixedPoint2.New(0.4)), "A twenty-fifth of the poison.");
             });
 
             SEntMan.System<CirculationSystem>().DealOrganDamage(body, poison);
-            Assert.That(kidneys.OrganIntegrity, Is.EqualTo(kidneys.IntegrityCap - 1), "Poison from the organs themselves does not count.");
+            Assert.That(Lost(), Is.EqualTo(FixedPoint2.New(1)), "Poison from the organs themselves does not count.");
         });
     }
 
@@ -193,7 +201,11 @@ public sealed class OrganFailureTest : GameTest
             PatientIntakeMachineTest.AddAir(SEntMan, map.MapUid);
             healthy = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             sick = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
-            Assert.That(SEntMan.System<BodyDebugSystem>().TryKillOrgan(sick, Organ(sick, "Kidneys")));
+            foreach (var side in BothKidneys)
+            {
+                Assert.That(SEntMan.System<BodyDebugSystem>().TryKillOrgan(sick, Organ(sick, side)));
+            }
+
             Assert.That(SEntMan.GetComponent<KidneyFunctionComponent>(sick).Rate, Is.EqualTo(0.5f));
 
             foreach (var body in new[] { healthy, sick })
@@ -253,7 +265,7 @@ public sealed class OrganFailureTest : GameTest
         {
             body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             Assert.That(SEntMan.HasComponent<KidneyFunctionComponent>(body), Is.False, "Healthy kidneys work at full pace.");
-            Wear(Organ(body, "Kidneys"), 0.3f);
+            Wear(Organ(body, "KidneyLeft"), 0.3f);
         });
 
         await Pair.RunTicksSync(5);
@@ -261,7 +273,7 @@ public sealed class OrganFailureTest : GameTest
         await Server.WaitAssertion(() =>
         {
             Assert.That(SEntMan.GetComponent<KidneyFunctionComponent>(body).Rate, Is.EqualTo(0.75f));
-            var kidneys = Organ(body, "Kidneys");
+            var kidneys = Organ(body, "KidneyLeft");
             Healing.HealOrgan((kidneys, Integrity(kidneys)), Integrity(kidneys).IntegrityCap);
         });
 
@@ -287,11 +299,11 @@ public sealed class OrganFailureTest : GameTest
             Wear(liver, 0.3f);
             Failure.SetStage((liver, FailureOf(liver)), 1);
 
-            var lungs = Organ(body, "Lungs");
+            var lungs = Organ(body, "LungLeft");
             Assert.That(SEntMan.System<BodyDebugSystem>().TrySetFailureStage(body, lungs, 1), Is.False,
                 "A healthy organ cannot be put into failure.");
 
-            var kidneys = Organ(body, "Kidneys");
+            var kidneys = Organ(body, "KidneyLeft");
             Wear(kidneys, 0.0005f);
             Failure.SetStage((kidneys, FailureOf(kidneys)), 3);
         });
@@ -303,8 +315,51 @@ public sealed class OrganFailureTest : GameTest
             Assert.Multiple(() =>
             {
                 Assert.That(FailureOf(Organ(body, "Liver")).Stage, Is.EqualTo(3), "The failure climbs to the last stage and stays.");
-                Assert.That(SEntMan.HasComponent<DeadOrganComponent>(Organ(body, "Kidneys")), "Failure can wear an organ down to death.");
+                Assert.That(SEntMan.HasComponent<DeadOrganComponent>(Organ(body, "KidneyLeft")), "Failure can wear an organ down to death.");
             });
+        });
+    }
+
+    [Test]
+    public async Task OneDeadKidneySlowsButDoesNotPoison()
+    {
+        SetChances(0f, 0f, 0f);
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+
+        await Server.WaitAssertion(() =>
+        {
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            Assert.That(SEntMan.System<BodyDebugSystem>().TryKillOrgan(body, Organ(body, "KidneyLeft")));
+            Assert.That(SEntMan.GetComponent<KidneyFunctionComponent>(body).Rate, Is.EqualTo(0.75f), "The other kidney carries on, slower.");
+        });
+
+        await Pair.RunSeconds(3);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(Poison(body), Is.EqualTo(FixedPoint2.Zero), "One working kidney keeps the body clean.");
+        });
+    }
+
+    [Test]
+    public async Task OneDeadLungLowersOxygen()
+    {
+        SetChances(0f, 0f, 0f);
+        var map = await Pair.CreateTestMap();
+
+        await Server.WaitAssertion(() =>
+        {
+            var human = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            var diona = SEntMan.SpawnAtPosition("MobDiona", map.GridCoords);
+            Assert.Multiple(() =>
+            {
+                Assert.That(SEntMan.HasComponent<OxygenLimitComponent>(human), Is.False, "Two lungs give all the oxygen.");
+                Assert.That(SEntMan.HasComponent<OxygenLimitComponent>(diona), Is.False, "A single unpaired lung is whole.");
+            });
+
+            Assert.That(SEntMan.System<BodyDebugSystem>().TryKillOrgan(human, Organ(human, "LungRight")));
+            Assert.That(SEntMan.GetComponent<OxygenLimitComponent>(human).Cap, Is.EqualTo(0.6f), "One lung keeps 60% of the oxygen.");
         });
     }
 
@@ -374,7 +429,7 @@ public sealed class OrganFailureTest : GameTest
         {
             PatientIntakeMachineTest.AddAir(SEntMan, map.MapUid);
             body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
-            var lungs = Organ(body, "Lungs");
+            var lungs = Organ(body, "LungLeft");
             Wear(lungs, 0.2f);
             Failure.SetStage((lungs, FailureOf(lungs)), 2);
 

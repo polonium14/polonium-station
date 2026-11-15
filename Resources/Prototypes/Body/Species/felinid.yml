@@ -84,11 +84,13 @@
       Tongue: OrganFelinidTongue
       Appendix: OrganFelinidAppendix
       Ears: OrganFelinidEars
-      Lungs: OrganFelinidLungs
+      LungLeft: OrganFelinidLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganFelinidLungRight
       Heart: OrganFelinidHeart
       Stomach: OrganFelinidStomach
       Liver: OrganFelinidLiver
-      Kidneys: OrganFelinidKidneys
+      KidneyLeft: OrganFelinidKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganFelinidKidneyRight
   - type: HumanoidProfile
     species: Felinid
 
@@ -425,6 +427,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganFelinidInternal, OrganFelinidMetabolizer ]
   id: OrganFelinidLungs
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 34
@@ -473,6 +476,7 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganFelinidInternal, OrganFelinidMetabolizer ]
   id: OrganFelinidKidneys
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 42

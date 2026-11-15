@@ -77,11 +77,13 @@
       Tongue: OrganHorrorTongue
       Appendix: OrganHorrorAppendix
       Ears: OrganHorrorEars
-      Lungs: OrganHorrorLungs
+      LungLeft: OrganHorrorLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganHorrorLungRight
       Heart: OrganHorrorHeart
       Stomach: OrganHorrorStomach
       Liver: OrganHorrorLiver
-      Kidneys: OrganHorrorKidneys
+      KidneyLeft: OrganHorrorKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganHorrorKidneyRight
 
 - type: entity
   parent:
@@ -401,6 +403,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganHorrorInternal, OrganHorrorMetabolizer ]
   id: OrganHorrorLungs
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 34
@@ -449,6 +452,7 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganHorrorInternal, OrganHorrorMetabolizer ]
   id: OrganHorrorKidneys
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 42

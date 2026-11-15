@@ -100,7 +100,7 @@ public static class LimbTargetMap
     private static readonly Dictionary<ProtoId<OrganCategoryPrototype>, ProtoId<OrganCategoryPrototype>[]> VitalOrgansByLimb = new()
     {
         { "Head", new ProtoId<OrganCategoryPrototype>[] { "Brain", "Eyes", "Tongue", "Ears" } },
-        { "Torso", new ProtoId<OrganCategoryPrototype>[] { "Heart", "Lungs", "Stomach", "Liver", "Kidneys", "Appendix" } },
+        { "Torso", new ProtoId<OrganCategoryPrototype>[] { "Heart", "Lungs", "Stomach", "Liver", "Kidneys", "Appendix", "LungLeft", "LungRight", "KidneyLeft", "KidneyRight" } },
     };
 
     public static IReadOnlyList<ProtoId<OrganCategoryPrototype>> GetVitalOrganCategories(ProtoId<OrganCategoryPrototype> limbCategory)

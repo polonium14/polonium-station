@@ -81,11 +81,13 @@
       Tongue: OrganThavenTongue
       Appendix: OrganThavenAppendix
       Ears: OrganThavenEars
-      Lungs: OrganThavenLungs
+      LungLeft: OrganThavenLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganThavenLungRight
       Heart: OrganThavenHeart
       Stomach: OrganThavenStomach
       Liver: OrganThavenLiver
-      Kidneys: OrganThavenKidneys
+      KidneyLeft: OrganThavenKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganThavenKidneyRight
   - type: HumanoidProfile
     species: Thaven
   - type: Inventory
@@ -396,6 +398,7 @@
 - type: entity
   parent: [ OrganHumanLungs, OrganThavenInternal ]
   id: OrganThavenLungs
+  abstract: true
   name: thaven lungs
   description: Technically not lungs since they don't draw chemicals from the air, these strange, durable organs use the motion of respiration to provide energy for cell maintenance.
   components:
@@ -442,6 +445,7 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganThavenInternal, OrganThavenMetabolizer ]
   id: OrganThavenKidneys
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 42

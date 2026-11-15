@@ -1336,3 +1336,38 @@ BoxLightBulbColored: BoxLightbulbColorfulMixed
 
 BluespaceStrikeController: null
 BluespaceStrikeIncoming: null
+
+# Polonium: paired lungs and kidneys, the old pair becomes the left organ
+OrganArachnidLungs: OrganArachnidLungLeft
+OrganHumanLungs: OrganHumanLungLeft
+OrganFelinidLungs: OrganFelinidLungLeft
+OrganHarpyLungs: OrganHarpyLungLeft
+OrganHorrorLungs: OrganHorrorLungLeft
+OrganMothLungs: OrganMothLungLeft
+OrganReptilianLungs: OrganReptilianLungLeft
+OrganRodentiaLungs: OrganRodentiaLungLeft
+OrganThavenLungs: OrganThavenLungLeft
+OrganVoxLungs: OrganVoxLungLeft
+OrganVulpkaninLungs: OrganVulpkaninLungLeft
+OrganAllulaloLungs: OrganAllulaloLungLeft
+OrganAntLungs: OrganAntLungLeft
+OrganApidLungs: OrganApidLungLeft
+OrganDecapoidLungs: OrganDecapoidLungLeft
+OrganGastropoidLungs: OrganGastropoidLungLeft
+OrganGrayLungs: OrganGrayLungLeft
+OrganArachnidKidneys: OrganArachnidKidneyLeft
+OrganHumanKidneys: OrganHumanKidneyLeft
+OrganFelinidKidneys: OrganFelinidKidneyLeft
+OrganHarpyKidneys: OrganHarpyKidneyLeft
+OrganHorrorKidneys: OrganHorrorKidneyLeft
+OrganMothKidneys: OrganMothKidneyLeft
+OrganReptilianKidneys: OrganReptilianKidneyLeft
+OrganRodentiaKidneys: OrganRodentiaKidneyLeft
+OrganThavenKidneys: OrganThavenKidneyLeft
+OrganVoxKidneys: OrganVoxKidneyLeft
+OrganVulpkaninKidneys: OrganVulpkaninKidneyLeft
+OrganAllulaloKidneys: OrganAllulaloKidneyLeft
+OrganAntKidneys: OrganAntKidneyLeft
+OrganDecapoidKidneys: OrganDecapoidKidneyLeft
+OrganGastropoidKidneys: OrganGastropoidKidneyLeft
+OrganGrayKidneys: OrganGrayKidneyLeft

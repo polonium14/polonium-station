@@ -147,11 +147,13 @@
       Tongue: OrganAllulaloTongue
       Appendix: OrganAllulaloAppendix
       Ears: OrganAllulaloEars
-      Lungs: OrganAllulaloLungs
+      LungLeft: OrganAllulaloLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganAllulaloLungRight
       Heart: OrganAllulaloHeart
       Stomach: OrganAllulaloStomach
       Liver: OrganAllulaloLiver
-      Kidneys: OrganAllulaloKidneys
+      KidneyLeft: OrganAllulaloKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganAllulaloKidneyRight
   - type: HumanoidProfile
     species: Allulalo
 
@@ -446,6 +448,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganAllulaloInternal, OrganHumanMetabolizer ]
   id: OrganAllulaloLungs
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
 
 - type: entity
   parent: [ OrganBaseHeart, OrganAllulaloInternal, OrganAllulaloMetabolizer ]
@@ -462,3 +465,4 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganAllulaloInternal, OrganAllulaloMetabolizer ]
   id: OrganAllulaloKidneys
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml

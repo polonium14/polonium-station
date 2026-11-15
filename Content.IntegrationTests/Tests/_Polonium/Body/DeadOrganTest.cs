@@ -88,7 +88,7 @@ public sealed class DeadOrganTest : GameTest
     public async Task DestroyedOrganLeavesDeadOrganWithSameParent()
     {
         var map = await Pair.CreateTestMap();
-        string[] categories = ["Heart", "Lungs", "Stomach"];
+        string[] categories = ["Heart", "LungLeft", "Stomach"];
         var body = EntityUid.Invalid;
         var originals = new Dictionary<string, EntityUid>();
         var parents = new Dictionary<string, EntityUid?>();

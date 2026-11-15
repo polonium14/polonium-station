@@ -128,11 +128,13 @@
       Tongue: OrganMothTongue
       Appendix: OrganMothAppendix
       Ears: OrganMothEars
-      Lungs: OrganMothLungs
+      LungLeft: OrganMothLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganMothLungRight
       Heart: OrganMothHeart
       Stomach: OrganMothStomach
       Liver: OrganMothLiver
-      Kidneys: OrganMothKidneys
+      KidneyLeft: OrganMothKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganMothKidneyRight
   - type: HumanoidProfile
     species: Moth
 
@@ -429,6 +431,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganMothInternal, OrganMothMetabolizer ]
   id: OrganMothLungs
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 34
@@ -483,6 +486,7 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganMothInternal, OrganMothMetabolizer ]
   id: OrganMothKidneys
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 42

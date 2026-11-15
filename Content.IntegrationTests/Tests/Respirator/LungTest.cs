@@ -29,7 +29,7 @@ public sealed class LungTest : GameTest
     containers:
       body_organs: !type:AllSelector
         children:
-        - id: OrganHumanLungs
+        - id: OrganHumanLungLeft # Polonium: paired lungs
   - type: MobState
     allowedStates:
       - Alive

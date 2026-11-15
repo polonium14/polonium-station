@@ -84,11 +84,13 @@
       Tongue: OrganHarpyTongue
       Appendix: OrganHarpyAppendix
       Ears: OrganHarpyEars
-      Lungs: OrganHarpyLungs
+      LungLeft: OrganHarpyLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganHarpyLungRight
       Heart: OrganHarpyHeart
       Stomach: OrganHarpyStomach
       Liver: OrganHarpyLiver
-      Kidneys: OrganHarpyKidneys
+      KidneyLeft: OrganHarpyKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganHarpyKidneyRight
   - type: HumanoidProfile
     species: Harpy
   - type: Inventory
@@ -420,6 +422,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganHarpyMetabolizer ]
   id: OrganHarpyLungs
+  abstract: true
   components:
   - type: Sprite
     sprite: Mobs/Species/Harpy/organs.rsi
@@ -470,6 +473,7 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganHarpyInternal, OrganHarpyMetabolizer ]
   id: OrganHarpyKidneys
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 42

@@ -77,11 +77,13 @@
       Tongue: OrganRodentiaTongue
       Appendix: OrganRodentiaAppendix
       Ears: OrganRodentiaEars
-      Lungs: OrganRodentiaLungs
+      LungLeft: OrganRodentiaLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganRodentiaLungRight
       Heart: OrganRodentiaHeart
       Stomach: OrganRodentiaStomach
       Liver: OrganRodentiaLiver
-      Kidneys: OrganRodentiaKidneys
+      KidneyLeft: OrganRodentiaKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganRodentiaKidneyRight
   - type: HumanoidProfile
     species: Rodentia
   - type: Inventory
@@ -401,6 +403,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganRodentiaInternal, OrganRodentiaMetabolizer ]
   id: OrganRodentiaLungs
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 34
@@ -450,6 +453,7 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganRodentiaInternal, OrganRodentiaMetabolizer ]
   id: OrganRodentiaKidneys
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 42

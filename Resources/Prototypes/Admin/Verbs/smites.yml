@@ -805,6 +805,10 @@
     - Stomach
     - Liver
     - Kidneys
+    - LungLeft # Polonium: paired lungs and kidneys
+    - LungRight
+    - KidneyLeft
+    - KidneyRight
   - !type:PopupMessage
     messages: [ admin-smite-vomit-organs-self ]
     type: Local

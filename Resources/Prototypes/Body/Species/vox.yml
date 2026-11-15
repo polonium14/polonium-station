@@ -148,11 +148,13 @@
       Tongue: OrganVoxTongue
       Appendix: OrganVoxAppendix
       Ears: OrganVoxEars
-      Lungs: OrganVoxLungs
+      LungLeft: OrganVoxLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganVoxLungRight
       Heart: OrganVoxHeart
       Stomach: OrganVoxStomach
       Liver: OrganVoxLiver
-      Kidneys: OrganVoxKidneys
+      KidneyLeft: OrganVoxKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganVoxKidneyRight
   - type: HumanoidProfile
     species: Vox
 
@@ -480,6 +482,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxLungs
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 34
@@ -533,6 +536,7 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxKidneys
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 42

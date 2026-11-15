@@ -79,11 +79,13 @@
       Tongue: OrganHumanTongue
       Appendix: OrganHumanAppendix
       Ears: OrganHumanEars
-      Lungs: OrganHumanLungs
+      LungLeft: OrganHumanLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganHumanLungRight
       Heart: OrganHumanHeart
       Stomach: OrganHumanStomach
       Liver: OrganHumanLiver
-      Kidneys: OrganHumanKidneys
+      KidneyLeft: OrganHumanKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganHumanKidneyRight
   - type: HumanoidProfile
     species: Human
 
@@ -345,6 +347,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganHumanInternal, OrganHumanMetabolizer ]
   id: OrganHumanLungs
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
   components:
   - type: OrganIntegrity
     integrityCap: 34
@@ -393,6 +396,7 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganHumanInternal, OrganHumanMetabolizer ]
   id: OrganHumanKidneys
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
   components:
   - type: OrganIntegrity
     integrityCap: 42

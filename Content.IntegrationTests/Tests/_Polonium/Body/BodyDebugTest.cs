@@ -179,7 +179,7 @@ public sealed class BodyDebugTest : GameTest
         {
             var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             Assert.That(Debug.TrySetOrganIntegrity(body, Organ(body, "Liver"), 20));
-            Assert.That(Debug.TryKillOrgan(body, Organ(body, "Lungs")));
+            Assert.That(Debug.TryKillOrgan(body, Organ(body, "LungLeft")));
             Assert.That(Debug.TryRemoveOrgan(body, Organ(body, "Stomach")));
 
             var kinds = Debug.GetOrgans(body).Select(row => row.Kind).ToHashSet();

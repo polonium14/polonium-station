@@ -103,11 +103,13 @@
       Tongue: OrganReptilianTongue
       Appendix: OrganReptilianAppendix
       Ears: OrganReptilianEars
-      Lungs: OrganReptilianLungs
+      LungLeft: OrganReptilianLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganReptilianLungRight
       Heart: OrganReptilianHeart
       Stomach: OrganReptilianStomach
       Liver: OrganReptilianLiver
-      Kidneys: OrganReptilianKidneys
+      KidneyLeft: OrganReptilianKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganReptilianKidneyRight
   - type: HumanoidProfile
     species: Reptilian
 
@@ -409,6 +411,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganReptilianInternal, OrganReptilianMetabolizer ]
   id: OrganReptilianLungs
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 34
@@ -466,6 +469,7 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganReptilianInternal, OrganReptilianMetabolizer ]
   id: OrganReptilianKidneys
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 42

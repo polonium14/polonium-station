@@ -102,11 +102,13 @@
       Tongue: OrganAntTongue
       Appendix: OrganAntAppendix
       Ears: OrganAntEars
-      Lungs: OrganAntLungs
+      LungLeft: OrganAntLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganAntLungRight
       Heart: OrganAntHeart
       Stomach: OrganAntStomach
       Liver: OrganAntLiver
-      Kidneys: OrganAntKidneys
+      KidneyLeft: OrganAntKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganAntKidneyRight
   - type: HumanoidProfile
     species: Ant
 
@@ -432,6 +434,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganAntInternal, OrganHumanMetabolizer ]
   id: OrganAntLungs
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
 
 - type: entity
   parent: [ OrganBaseHeart, OrganAntInternal, OrganHumanMetabolizer ]
@@ -448,3 +451,4 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganAntInternal, OrganHumanMetabolizer ]
   id: OrganAntKidneys
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml

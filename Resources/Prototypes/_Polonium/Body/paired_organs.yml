@@ -1,0 +1,508 @@
+# Paired lungs and kidneys for the player species: each side is its own organ category, because a body holds
+# one organ per category. A side is the species organ with the side mixin first, so the mixin wins.
+
+- type: organCategory
+  id: LungLeft
+
+- type: organCategory
+  id: LungRight
+
+- type: organCategory
+  id: KidneyLeft
+
+- type: organCategory
+  id: KidneyRight
+
+- type: entity
+  abstract: true
+  id: OrganSideLungLeft
+  name: left lung
+  components:
+  - type: Organ
+    category: LungLeft
+  - type: Sprite
+    layers:
+    - state: lung-l
+
+- type: entity
+  abstract: true
+  id: OrganSideLungRight
+  name: right lung
+  components:
+  - type: Organ
+    category: LungRight
+  - type: Sprite
+    layers:
+    - state: lung-r
+
+- type: entity
+  abstract: true
+  id: OrganSideKidneyLeft
+  name: left kidney
+  components:
+  - type: Organ
+    category: KidneyLeft
+  - type: Sprite
+    layers:
+    - state: kidney-l
+
+- type: entity
+  abstract: true
+  id: OrganSideKidneyRight
+  name: right kidney
+  components:
+  - type: Organ
+    category: KidneyRight
+  - type: Sprite
+    layers:
+    - state: kidney-r
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadLungLeft
+  name: dead left lung
+  components:
+  - type: Organ
+    category: LungLeft
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: lung-l
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadLungRight
+  name: dead right lung
+  components:
+  - type: Organ
+    category: LungRight
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: lung-r
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadKidneyLeft
+  name: dead left kidney
+  components:
+  - type: Organ
+    category: KidneyLeft
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: kidney-l
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadKidneyRight
+  name: dead right kidney
+  components:
+  - type: Organ
+    category: KidneyRight
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: kidney-r
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganArachnidLungs ]
+  id: OrganArachnidLungLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganArachnidLungs ]
+  id: OrganArachnidLungRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganHumanLungs ]
+  id: OrganHumanLungLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganHumanLungs ]
+  id: OrganHumanLungRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganFelinidLungs ]
+  id: OrganFelinidLungLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganFelinidLungs ]
+  id: OrganFelinidLungRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganHarpyLungs ]
+  id: OrganHarpyLungLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganHarpyLungs ]
+  id: OrganHarpyLungRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganHorrorLungs ]
+  id: OrganHorrorLungLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganHorrorLungs ]
+  id: OrganHorrorLungRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganMothLungs ]
+  id: OrganMothLungLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganMothLungs ]
+  id: OrganMothLungRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganReptilianLungs ]
+  id: OrganReptilianLungLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganReptilianLungs ]
+  id: OrganReptilianLungRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganRodentiaLungs ]
+  id: OrganRodentiaLungLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganRodentiaLungs ]
+  id: OrganRodentiaLungRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganThavenLungs ]
+  id: OrganThavenLungLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganThavenLungs ]
+  id: OrganThavenLungRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganVoxLungs ]
+  id: OrganVoxLungLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganVoxLungs ]
+  id: OrganVoxLungRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganVulpkaninLungs ]
+  id: OrganVulpkaninLungLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganVulpkaninLungs ]
+  id: OrganVulpkaninLungRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganAllulaloLungs ]
+  id: OrganAllulaloLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganAllulaloLungs ]
+  id: OrganAllulaloLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganAntLungs ]
+  id: OrganAntLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganAntLungs ]
+  id: OrganAntLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganApidLungs ]
+  id: OrganApidLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganApidLungs ]
+  id: OrganApidLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganDecapoidLungs ]
+  id: OrganDecapoidLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganDecapoidLungs ]
+  id: OrganDecapoidLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganGastropoidLungs ]
+  id: OrganGastropoidLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganGastropoidLungs ]
+  id: OrganGastropoidLungRight
+
+- type: entity
+  parent: [ OrganSideLungLeft, OrganGrayLungs ]
+  id: OrganGrayLungLeft
+
+- type: entity
+  parent: [ OrganSideLungRight, OrganGrayLungs ]
+  id: OrganGrayLungRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganArachnidKidneys ]
+  id: OrganArachnidKidneyLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganArachnidKidneys ]
+  id: OrganArachnidKidneyRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganHumanKidneys ]
+  id: OrganHumanKidneyLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganHumanKidneys ]
+  id: OrganHumanKidneyRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganFelinidKidneys ]
+  id: OrganFelinidKidneyLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganFelinidKidneys ]
+  id: OrganFelinidKidneyRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganHarpyKidneys ]
+  id: OrganHarpyKidneyLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganHarpyKidneys ]
+  id: OrganHarpyKidneyRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganHorrorKidneys ]
+  id: OrganHorrorKidneyLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganHorrorKidneys ]
+  id: OrganHorrorKidneyRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganMothKidneys ]
+  id: OrganMothKidneyLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganMothKidneys ]
+  id: OrganMothKidneyRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganReptilianKidneys ]
+  id: OrganReptilianKidneyLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganReptilianKidneys ]
+  id: OrganReptilianKidneyRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganRodentiaKidneys ]
+  id: OrganRodentiaKidneyLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganRodentiaKidneys ]
+  id: OrganRodentiaKidneyRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganThavenKidneys ]
+  id: OrganThavenKidneyLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganThavenKidneys ]
+  id: OrganThavenKidneyRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganVoxKidneys ]
+  id: OrganVoxKidneyLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganVoxKidneys ]
+  id: OrganVoxKidneyRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganVulpkaninKidneys ]
+  id: OrganVulpkaninKidneyLeft
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganVulpkaninKidneys ]
+  id: OrganVulpkaninKidneyRight
+  components:
+  - type: OrganIntegrity
+    deadOrgan: OrganDeadKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganAllulaloKidneys ]
+  id: OrganAllulaloKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganAllulaloKidneys ]
+  id: OrganAllulaloKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganAntKidneys ]
+  id: OrganAntKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganAntKidneys ]
+  id: OrganAntKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganDecapoidKidneys ]
+  id: OrganDecapoidKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganDecapoidKidneys ]
+  id: OrganDecapoidKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganGastropoidKidneys ]
+  id: OrganGastropoidKidneyLeft
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganGastropoidKidneys ]
+  id: OrganGastropoidKidneyRight
+
+- type: entity
+  parent: [ OrganSideKidneyLeft, OrganGrayKidneys ]
+  id: OrganGrayKidneyLeft
+  name: cube
+  components:
+  - type: Sprite # The gray sprite has a single cube.
+    layers:
+    - state: kidney-r
+
+- type: entity
+  parent: [ OrganSideKidneyRight, OrganGrayKidneys ]
+  id: OrganGrayKidneyRight
+  name: cube
+  components:
+  - type: Sprite # The gray sprite has a single cube.
+    layers:
+    - state: kidney-r

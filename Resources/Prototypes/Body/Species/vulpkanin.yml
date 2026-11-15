@@ -102,11 +102,13 @@
       Tongue: OrganVulpkaninTongue
       Appendix: OrganVulpkaninAppendix
       Ears: OrganVulpkaninEars
-      Lungs: OrganVulpkaninLungs
+      LungLeft: OrganVulpkaninLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganVulpkaninLungRight
       Heart: OrganVulpkaninHeart
       Stomach: OrganVulpkaninStomach
       Liver: OrganVulpkaninLiver
-      Kidneys: OrganVulpkaninKidneys
+      KidneyLeft: OrganVulpkaninKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganVulpkaninKidneyRight
   - type: HumanoidProfile
     species: Vulpkanin
   - type: Inventory
@@ -438,6 +440,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninLungs
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 34
@@ -486,6 +489,7 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninKidneys
+  abstract: true
   components:
   - type: OrganIntegrity
     integrityCap: 42

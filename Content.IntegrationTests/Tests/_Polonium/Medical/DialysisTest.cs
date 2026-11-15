@@ -135,7 +135,8 @@ public sealed class DialysisTest : GameTest
             var debug = SEntMan.System<BodyDebugSystem>();
             foreach (var body in new[] { patient, control })
             {
-                Assert.That(debug.TryKillOrgan(body, Organ(body, "Kidneys")));
+                Assert.That(debug.TryKillOrgan(body, Organ(body, "KidneyLeft")));
+                Assert.That(debug.TryKillOrgan(body, Organ(body, "KidneyRight")));
                 Assert.That(debug.TryKillOrgan(body, Organ(body, "Liver")));
             }
         });

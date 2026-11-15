@@ -158,11 +158,13 @@
       Tongue: OrganMothTongue
       Appendix: OrganMothAppendix
       Ears: OrganMothEars
-      Lungs: OrganApidLungs
+      LungLeft: OrganApidLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganApidLungRight
       Heart: OrganHumanHeart
       Stomach: OrganHumanStomach
       Liver: OrganHumanLiver
-      Kidneys: OrganHumanKidneys
+      KidneyLeft: OrganHumanKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganHumanKidneyRight
   - type: HumanoidProfile
     species: Apid
 
@@ -440,3 +442,4 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganApidInternal, OrganApidMetabolizer ]
   id: OrganApidLungs
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml

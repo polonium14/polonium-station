@@ -89,11 +89,13 @@
       Tongue: OrganHumanTongue
       Appendix: OrganHumanAppendix
       Ears: OrganHumanEars
-      Lungs: OrganHumanLungs
+      LungLeft: OrganHumanLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganHumanLungRight
       Heart: OrganDwarfHeart
       Stomach: OrganDwarfStomach
       Liver: OrganDwarfLiver
-      Kidneys: OrganHumanKidneys
+      KidneyLeft: OrganHumanKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganHumanKidneyRight
   - type: Hands
     leftHandDisplacement:
       sizeMaps:
