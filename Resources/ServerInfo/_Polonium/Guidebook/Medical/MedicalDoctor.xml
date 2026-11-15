@@ -83,11 +83,20 @@ Martwy narząd zostaje w ciele, ale nie pełni żadnej funkcji i nie da się go 
 
 <Box>
 <GuideEntityEmbed Entity="OrganDeadHeart" Caption="martwe serce"/>
-<GuideEntityEmbed Entity="OrganDeadLungs" Caption="martwe płuca"/>
+<GuideEntityEmbed Entity="OrganDeadLungLeft" Caption="martwe lewe płuco"/>
 <GuideEntityEmbed Entity="OrganDeadLiver" Caption="martwa wątroba"/>
 </Box>
 
 Mózgu nie da się zniszczyć obrażeniami.
+
+Płuca i nerki są parą: lewe i prawe płuco oraz lewa i prawa nerka to osobne narządy, każdy z własną operacją usunięcia i wszczepienia. Z jednym działającym płucem pacjent oddycha, ale ma mniejszy zapas tlenu i szybciej zaczyna się dusić. Bez obu płuc się dusi.
+
+<Box>
+<GuideEntityEmbed Entity="OrganHumanLungLeft" Caption="lewe płuco"/>
+<GuideEntityEmbed Entity="OrganHumanLungRight" Caption="prawe płuco"/>
+<GuideEntityEmbed Entity="OrganHumanKidneyLeft" Caption="lewa nerka"/>
+<GuideEntityEmbed Entity="OrganHumanKidneyRight" Caption="prawa nerka"/>
+</Box>
 
 ## Zmysły
 
@@ -113,7 +122,7 @@ Chore serce pompuje mniej krwi, więc do ciała dociera mniej tlenu, a w stadium
 
 [color=#e8c878]Maszyna do dializy[/color] przejmuje pracę nerek. Przeciągnij ją na pacjenta, żeby podłączyć kaniule; odciągnięcie maszyny dalej niż na dwie kratki wyrywa je z ręki. Co sekundę usuwa z krwi około 2 jednostek wszystkiego poza lekami, więc pomaga też przy zatruciu i przedawkowaniu narkotyków, a leki można podawać w trakcie. Pacjent na dializie nie dostaje trucizny od chorych ani martwych nerek, a od wątroby trzy razy mniej. Obrażeń od trucizny, które pacjent już ma, dializa nie leczy. Maszynę robi lathe medyczny po zbadaniu stazy biochemicznej.
 
-Nerki ustalają tempo działania leków, trucizn, jedzenia i picia. Przy chorych nerkach wszystko to działa o jedną czwartą wolniej, przy martwych albo usuniętych o połowę wolniej, ale w sumie tak samo mocno. Martwa albo usunięta wątroba i martwe albo usunięte nerki trują pacjenta. Każde zatrucie uszkadza też nerki i wątrobę.
+Nerki ustalają tempo działania leków, trucizn, jedzenia i picia. Gdy choć jedna nerka jest chora, martwa albo usunięta, wszystko to działa o jedną czwartą wolniej, a bez żadnej działającej nerki o połowę wolniej, ale w sumie tak samo mocno. Martwa albo usunięta wątroba truje pacjenta, nerki dopiero wtedy, gdy nie działa żadna z nich. Każde zatrucie uszkadza też nerki i wątrobę.
 
 Uszkodzone narządy leczą też leki: omnizyna (wszystkie narządy), krioksadon (wszystkie poza mózgiem, tylko w wychłodzonym ciele), kwas pentetowy (nerki, wątroba, żołądek), perfluorodekalina i salbutamol (płuca), a powoli także jodek potasu i zwykła woda (nerki). Przedawkowanie kwasu pentetowego, salbutamolu albo perfluorodekaliny samo uszkadza narządy. Takiego uszkodzenia nie wyleczy operacja, tylko leki na narządy albo przeszczep.
 
