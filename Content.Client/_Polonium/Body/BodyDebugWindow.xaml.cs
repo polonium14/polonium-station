@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Polonium.Body;
 using Content.Shared.FixedPoint;
@@ -45,6 +46,9 @@ public sealed partial class BodyDebugWindow : FancyWindow
         OrgansContainer.RemoveAllChildren();
         foreach (var organ in state.Organs)
         {
+            if (OrgansContainer.ChildCount > 0)
+                OrgansContainer.AddChild(new Separator { StyleClasses = { "LowDivider" }, MinSize = new Vector2(0, 2) });
+
             OrgansContainer.AddChild(BuildRow(organ));
         }
     }
@@ -78,11 +82,9 @@ public sealed partial class BodyDebugWindow : FancyWindow
         if (organ.Organ is not { } uid || organ.Cap <= FixedPoint2.Zero)
             return row;
 
-        if (!organ.Protected)
-        {
-            header.AddChild(MakeButton("body-debug-kill", () => OnKill?.Invoke(uid)));
-            header.AddChild(MakeButton("body-debug-remove", () => OnRemove?.Invoke(uid)));
-        }
+        // Protected organs keep the buttons, greyed out, so every row lines up and shows what is refused.
+        header.AddChild(MakeButton("body-debug-kill", () => OnKill?.Invoke(uid), organ.Protected));
+        header.AddChild(MakeButton("body-debug-remove", () => OnRemove?.Invoke(uid), organ.Protected));
 
         row.AddChild(new Label
         {
@@ -136,9 +138,9 @@ public sealed partial class BodyDebugWindow : FancyWindow
         return row;
     }
 
-    private static Button MakeButton(string text, Action pressed)
+    private static Button MakeButton(string text, Action pressed, bool disabled = false)
     {
-        var button = new Button { Text = Loc.GetString(text) };
+        var button = new Button { Text = Loc.GetString(text), Disabled = disabled };
         button.OnPressed += _ => pressed();
         return button;
     }
