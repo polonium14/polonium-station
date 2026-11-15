@@ -29,6 +29,7 @@ public sealed partial class BodyDebugSystem : EntitySystem
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private EuiManager _eui = default!;
     [Dependency] private OrganRelationSystem _relation = default!;
+    [Dependency] private OrganHealingSystem _healing = default!;
     [Dependency] private PatientIntakeSystem _intake = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private TraumaSystem _trauma = default!;
@@ -84,7 +85,7 @@ public sealed partial class BodyDebugSystem : EntitySystem
         if (wanted > damage)
             return TryDamageOrgan(body, (organ, organComp, integrity), wanted - damage);
 
-        HealOrgan((organ, integrity), damage - wanted);
+        _healing.HealOrgan((organ, integrity), damage - wanted);
         return true;
     }
 
@@ -104,31 +105,6 @@ public sealed partial class BodyDebugSystem : EntitySystem
 
         var trauma = _trauma.AddTrauma(organ, limb, inflicter, TraumaType.OrganDamage, amount);
         return trauma != EntityUid.Invalid && _trauma.TryCreateOrganDamageModifier(organ, amount, trauma, ModifierId, organ.Comp2);
-    }
-
-    private void HealOrgan(Entity<OrganIntegrityComponent> organ, FixedPoint2 amount)
-    {
-        // Trauma damage first, the way surgery heals it. The rest follows, or the organ could never reach its cap.
-        var modifiers = organ.Comp.IntegrityModifiers
-            .Where(modifier => modifier.Value > FixedPoint2.Zero)
-            .OrderByDescending(modifier => HasComp<TraumaComponent>(modifier.Key.Item2))
-            .ToArray();
-
-        foreach (var ((id, owner), value) in modifiers)
-        {
-            if (amount <= FixedPoint2.Zero)
-                return;
-
-            if (value <= amount)
-            {
-                amount -= value;
-                _trauma.TryRemoveOrganDamageModifier(organ, owner, id, organ.Comp);
-                continue;
-            }
-
-            _trauma.TryChangeOrganDamageModifier(organ, -amount, owner, id, organ.Comp);
-            return;
-        }
     }
 
     /// <summary>
