@@ -46,7 +46,7 @@ public sealed class BodyDebugTest : GameTest
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
         {
-            var body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var heart = Organ(body, "Heart");
             var torso = Organ(body, "Torso");
             var integrity = Integrity(heart);
@@ -95,7 +95,7 @@ public sealed class BodyDebugTest : GameTest
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
         {
-            var body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var brain = Organ(body, "Brain");
             var integrity = Integrity(brain);
 
@@ -123,7 +123,7 @@ public sealed class BodyDebugTest : GameTest
 
         await Server.WaitAssertion(() =>
         {
-            body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var blindable = SEntMan.GetComponent<BlindableComponent>(body);
             var eyes = Organ(body, "Eyes");
             var parent = SEntMan.GetComponent<ChildOrganComponent>(eyes).Parent;
@@ -177,7 +177,7 @@ public sealed class BodyDebugTest : GameTest
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
         {
-            var body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             Assert.That(Debug.TrySetOrganIntegrity(body, Organ(body, "Liver"), 20));
             Assert.That(Debug.TryKillOrgan(body, Organ(body, "Lungs")));
             Assert.That(Debug.TryRemoveOrgan(body, Organ(body, "Stomach")));

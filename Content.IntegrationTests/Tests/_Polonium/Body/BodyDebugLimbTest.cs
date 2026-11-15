@@ -38,7 +38,7 @@ public sealed class BodyDebugLimbTest : GameTest
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
         {
-            var body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var arm = Find(body, "ArmLeft")!.Value;
             var woundable = SEntMan.GetComponent<WoundableComponent>(arm);
             var wounds = SEntMan.System<WoundSystem>();
@@ -85,7 +85,7 @@ public sealed class BodyDebugLimbTest : GameTest
 
         await Server.WaitAssertion(() =>
         {
-            body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var torso = Find(body, "Torso")!.Value;
             Assert.That(Debug.TryAmputate(body, torso), Is.False, "The torso stays.");
             Assert.That(Debug.TryAmputate(body, Find(body, "ArmLeft")!.Value));

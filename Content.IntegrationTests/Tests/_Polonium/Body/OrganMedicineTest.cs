@@ -40,7 +40,7 @@ public sealed class OrganMedicineTest : GameTest
         var body = EntityUid.Invalid;
         await Server.WaitAssertion(() =>
         {
-            body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             foreach (var category in damaged)
             {
                 var organ = Organ(body, category);
@@ -95,7 +95,7 @@ public sealed class OrganMedicineTest : GameTest
         var body = EntityUid.Invalid;
         await Server.WaitAssertion(() =>
         {
-            body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var kidneys = Organ(body, "Kidneys");
             var integrity = SEntMan.GetComponent<OrganIntegrityComponent>(kidneys);
             Healing.DamageOrgan((kidneys, integrity), integrity.IntegrityCap - 2);
@@ -118,7 +118,7 @@ public sealed class OrganMedicineTest : GameTest
         var body = EntityUid.Invalid;
         await Server.WaitAssertion(() =>
         {
-            body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             Assert.That(SEntMan.System<BodyDebugSystem>().TryKillOrgan(body, Organ(body, "Lungs")));
             Assert.That(SEntMan.System<BloodstreamSystem>().TryAddToBloodstream(body, new Solution("Perfluorodecalin", 30)));
         });

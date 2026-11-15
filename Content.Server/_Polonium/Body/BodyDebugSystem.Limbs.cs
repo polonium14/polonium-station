@@ -248,7 +248,7 @@ public sealed partial class BodyDebugSystem
     private bool IsLimbPrototype(EntProtoId proto)
     {
         // Hands and feet are body parts without wounds of their own, so "not an internal organ" is the test.
-        return _proto.TryIndex(proto, out var entity) && !entity.TryGetComponent<InternalChildOrganComponent>(out _, Factory);
+        return _proto.TryIndex(proto, out var entity) && !entity.HasComp<InternalChildOrganComponent>(Factory);
     }
 
     private bool TryGetLimb(EntityUid body, EntityUid limb, out WoundableComponent woundable)

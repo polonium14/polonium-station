@@ -56,7 +56,7 @@ public sealed class DeadOrganTest : GameTest
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
         {
-            var body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var heart = Organ(body, "Heart");
             var integrity = SEntMan.GetComponent<OrganIntegrityComponent>(heart);
             var trauma = SEntMan.System<TraumaSystem>();
@@ -95,7 +95,7 @@ public sealed class DeadOrganTest : GameTest
 
         await Server.WaitAssertion(() =>
         {
-            body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             foreach (var category in categories)
             {
                 originals[category] = Organ(body, category);
@@ -131,7 +131,7 @@ public sealed class DeadOrganTest : GameTest
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
         {
-            var body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var torso = Organ(body, "Torso");
             var surgery = SEntMan.System<SurgerySystem>();
 
@@ -177,7 +177,7 @@ public sealed class DeadOrganTest : GameTest
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
         {
-            var body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var dead = Destroy(body, "Heart");
             var liver = Organ(body, "Liver");
             var liverIntegrity = SEntMan.GetComponent<OrganIntegrityComponent>(liver);
@@ -202,7 +202,7 @@ public sealed class DeadOrganTest : GameTest
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
         {
-            var body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var blindable = SEntMan.GetComponent<BlindableComponent>(body);
             var dead = Destroy(body, "Eyes");
             Assert.That(blindable.MinDamage, Is.EqualTo(blindable.MaxDamage), "Destroyed eyes blind their owner.");
@@ -222,7 +222,7 @@ public sealed class DeadOrganTest : GameTest
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
         {
-            var body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var dead = Destroy(body, "Heart");
             var bodyComp = SEntMan.GetComponent<BodyComponent>(body);
             var analyzer = SEntMan.System<ServerHealthAnalyzerSystem>();
