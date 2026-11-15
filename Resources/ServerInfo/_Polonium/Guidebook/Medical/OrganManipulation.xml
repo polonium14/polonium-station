@@ -37,24 +37,6 @@ Jeśli jednak chcesz przeszczepić narząd, musisz wykonać odpowiednią operacj
 - Przeszczep [color=#e8c878]serca[/color] wyleczy organizm pacjenta z gnicia i rozkładu.
 - Przeszczep [color=#e8c878]oczu[/color] pozwoli pacjentowi znów widzieć i wyleczy wszelkie uszkodzenia wzroku.
 
-## Stan narządu
-
-Narząd jest w jednym z trzech stanów, które pokazuje analizator zdrowia w trybie narządów:
-
-- [color=#e8c878]Stan w większości dobry[/color]: narząd ma co najmniej 35% integralności i działa w pełni.
-- [color=#e8c878]Uszkodzony[/color]: narząd ma mniej niż 35% integralności. Wyleczysz go operacją „Ulecz narządy”.
-- [color=#e8c878]Zniszczony[/color]: integralność spadła do zera i narząd jest martwy.
-
-Martwy narząd zostaje w ciele, ale nie pełni żadnej funkcji i nie da się go naprawić. Trzeba go wyciąć operacją usunięcia narządu i wszczepić w jego miejsce nowy. Martwy narząd wszczepiony innej osobie nadal jest martwy.
-
-<Box>
-<GuideEntityEmbed Entity="OrganDeadHeart" Caption="martwe serce"/>
-<GuideEntityEmbed Entity="OrganDeadLungs" Caption="martwe płuca"/>
-<GuideEntityEmbed Entity="OrganDeadLiver" Caption="martwa wątroba"/>
-</Box>
-
-Mózgu nie da się zniszczyć obrażeniami.
-
 ## Gdzie mogę zdobyć więcej narządów?
 
 Zazwyczaj, gdy pacjenci zgłaszają się z potrzebą przeszczepu, muszą otrzymać nowy narząd, ponieważ ich stare albo zaginęły, albo uległy nieodwracalnemu uszkodzeniu.
