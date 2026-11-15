@@ -21,10 +21,12 @@ public sealed partial class StoppedCirculationComponent : Component
     /// </summary>
     [DataField]
     public float SaturationCeiling;
-
-    /// <summary>
-    /// Whether this system made the body unrevivable, so it only lifts what it added itself.
-    /// </summary>
-    [DataField]
-    public bool AddedUnrevivable;
 }
+
+/// <summary>
+/// Marks a body that <see cref="CirculationSystem"/> made unrevivable because a vital organ is missing,
+/// so it only lifts what it added itself and never an unrevivable trait.
+/// </summary>
+[RegisterComponent]
+[Access(typeof(CirculationSystem))]
+public sealed partial class MissingVitalOrganComponent : Component;

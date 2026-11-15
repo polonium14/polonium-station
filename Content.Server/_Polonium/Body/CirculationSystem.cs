@@ -1,10 +1,13 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared._Polonium.Body;
-using Content.Shared.Bed.Sleep;
+using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components;
+using Content.Shared.Chat;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.Humanoid;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Traits.Assorted;
@@ -18,7 +21,9 @@ namespace Content.Server._Polonium.Body;
 /// Stops the circulation of a humanoid whose heart is dead or cut out. Oxygen no longer reaches the body:
 /// its saturation sinks to nothing within seconds, it passes out and then suffocates at the usual rate,
 /// whatever it breathes. A defibrillator cannot bring it back until a working heart is in.
-/// Animals and other bodies without a character profile live without a heart as before.
+/// Losing the brain, by decapitation or surgery, kills the body outright, and it cannot be defibrillated
+/// until the brain is back.
+/// Animals and other bodies without a character profile live without a heart or brain as before.
 /// </summary>
 public sealed partial class CirculationSystem : EntitySystem
 {
@@ -29,6 +34,13 @@ public sealed partial class CirculationSystem : EntitySystem
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
     private static readonly ProtoId<OrganCategoryPrototype> Heart = "Heart";
+    private static readonly ProtoId<OrganCategoryPrototype> Brain = "Brain";
+    private static readonly LocId NoBrainReason = "defibrillator-no-brain";
+
+    /// <summary>
+    /// Out cold without being asleep, so there is no snoring popup and a shove does not wake the body up.
+    /// </summary>
+    private static readonly EntProtoId Unconscious = "StatusEffectUnconscious";
     private static readonly LocId UnrevivableReason = "defibrillator-no-heart";
     private static readonly TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
 
@@ -45,6 +57,7 @@ public sealed partial class CirculationSystem : EntitySystem
 
         SubscribeLocalEvent<HumanoidProfileComponent, OrganInsertedIntoEvent>(OnOrganInserted);
         SubscribeLocalEvent<HumanoidProfileComponent, OrganRemovedFromEvent>(OnOrganRemoved);
+        SubscribeLocalEvent<StoppedCirculationComponent, BeforeEmoteEvent>(OnBeforeEmote);
 
         Subs.CVar(_cfg, CCVars.OrgansNoHeartSaturationLoss, perSecond => _saturationLoss = perSecond, true);
     }
@@ -56,7 +69,24 @@ public sealed partial class CirculationSystem : EntitySystem
 
     private void OnOrganRemoved(Entity<HumanoidProfileComponent> ent, ref OrganRemovedFromEvent args)
     {
+        // Shitmed marks the body for death when the brain leaves, but the code that acted on it is
+        // commented out in ConsciousnessSystem, so the body is killed here instead.
+        // Character appearance dummies have a profile and organs, but are not alive to begin with.
+        if (!TerminatingOrDeleted(ent)
+            && TryComp<MobStateComponent>(ent, out var mobState)
+            && TryComp<ConsciousnessRequiredComponent>(args.Organ, out var required)
+            && required.CausesDeath
+            && !_mobState.IsDead(ent, mobState))
+            _mobState.ChangeMobState(ent, MobState.Dead, mobState);
+
         Refresh(ent);
+    }
+
+    private void OnBeforeEmote(Entity<StoppedCirculationComponent> ent, ref BeforeEmoteEvent args)
+    {
+        // The respirator makes a suffocating body gasp no matter what; an unconscious one does not.
+        if (_statusEffects.HasStatusEffect(ent, Unconscious))
+            args.Cancel();
     }
 
     /// <summary>
@@ -73,52 +103,80 @@ public sealed partial class CirculationSystem : EntitySystem
         if (TerminatingOrDeleted(body) || !TryComp<BodyComponent>(body, out var bodyComp) || bodyComp.Organs is not { } organs)
             return;
 
-        var working = false;
+        var heart = false;
+        var brain = false;
         foreach (var organ in organs.ContainedEntities)
         {
-            if (CompOrNull<OrganComponent>(organ)?.Category != Heart || HasComp<DeadOrganComponent>(organ))
-                continue;
-
-            working = true;
-            break;
+            var category = CompOrNull<OrganComponent>(organ)?.Category;
+            heart |= category == Heart && !HasComp<DeadOrganComponent>(organ);
+            brain |= category == Brain;
         }
 
-        // A body that never had a heart, like a diona, has no circulation to stop.
+        // A body that never had a heart or brain, like a diona, has nothing to lose.
         // Enumerated, because BodyComponent only grants other systems read access to the set.
         var expectsHeart = false;
+        var expectsBrain = false;
         foreach (var category in bodyComp.ExpectedOrgans)
         {
             expectsHeart |= category == Heart;
+            expectsBrain |= category == Brain;
         }
 
-        if (working || !expectsHeart)
+        var stopped = expectsHeart && !heart;
+        if (!stopped)
         {
-            if (!TryComp<StoppedCirculationComponent>(body, out var stopped))
+            RemComp<StoppedCirculationComponent>(body);
+        }
+        else if (!HasComp<StoppedCirculationComponent>(body))
+        {
+            var comp = AddComp<StoppedCirculationComponent>(body);
+            comp.NextUpdate = _timing.CurTime + UpdateInterval;
+            comp.SaturationCeiling = CompOrNull<RespiratorComponent>(body)?.Saturation ?? 0f;
+        }
+
+        LocId? reason = null;
+        if (expectsBrain && !brain)
+            reason = NoBrainReason;
+        else if (stopped)
+            reason = UnrevivableReason;
+
+        SetUnrevivable(body, reason);
+    }
+
+    /// <summary>
+    /// The defibrillator still fires on an unrevivable body, it just reports why nothing happened.
+    /// </summary>
+    private void SetUnrevivable(EntityUid body, LocId? reason)
+    {
+        var ours = HasComp<MissingVitalOrganComponent>(body);
+        if (reason is not { } message)
+        {
+            if (!ours)
                 return;
 
-            if (stopped.AddedUnrevivable)
-                RemComp<UnrevivableComponent>(body);
-
-            RemComp<StoppedCirculationComponent>(body);
+            RemComp<UnrevivableComponent>(body);
+            RemComp<MissingVitalOrganComponent>(body);
             return;
         }
 
-        if (HasComp<StoppedCirculationComponent>(body))
-            return;
+        UnrevivableComponent unrevivable;
+        if (ours)
+        {
+            unrevivable = Comp<UnrevivableComponent>(body);
+        }
+        else
+        {
+            // An unrevivable trait is not ours to change.
+            if (HasComp<UnrevivableComponent>(body))
+                return;
 
-        var comp = AddComp<StoppedCirculationComponent>(body);
-        comp.NextUpdate = _timing.CurTime + UpdateInterval;
-        comp.SaturationCeiling = CompOrNull<RespiratorComponent>(body)?.Saturation ?? 0f;
+            AddComp<MissingVitalOrganComponent>(body);
+            unrevivable = AddComp<UnrevivableComponent>(body);
+            unrevivable.Analyzable = false;
+            unrevivable.Cloneable = true;
+        }
 
-        // The defibrillator still fires on an unrevivable body, it just reports why nothing happened.
-        if (HasComp<UnrevivableComponent>(body))
-            return;
-
-        comp.AddedUnrevivable = true;
-        var unrevivable = AddComp<UnrevivableComponent>(body);
-        unrevivable.ReasonMessage = UnrevivableReason;
-        unrevivable.Analyzable = false;
-        unrevivable.Cloneable = true;
+        unrevivable.ReasonMessage = message;
         Dirty(body, unrevivable);
     }
 
@@ -147,7 +205,7 @@ public sealed partial class CirculationSystem : EntitySystem
                 _respirator.UpdateSaturation(uid, stopped.SaturationCeiling - respirator.Saturation, respirator);
 
             if (respirator.Saturation < respirator.SuffocationThreshold)
-                _statusEffects.TryUpdateStatusEffectDuration(uid, SleepingSystem.StatusEffectForcedSleeping, PassOutTime);
+                _statusEffects.TryUpdateStatusEffectDuration(uid, Unconscious, PassOutTime);
         }
     }
 }

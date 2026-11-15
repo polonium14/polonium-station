@@ -8,6 +8,7 @@ using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Body;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Traits.Assorted;
 using NUnit.Framework;
 using Robust.Shared.GameObjects;
@@ -23,6 +24,11 @@ public sealed class CirculationTest : GameTest
 {
     private BodyDebugSystem Debug => SEntMan.System<BodyDebugSystem>();
     private CirculationSystem Circulation => SEntMan.System<CirculationSystem>();
+
+    private bool Unconscious(EntityUid body)
+    {
+        return SEntMan.System<StatusEffectsSystem>().HasStatusEffect(body, "StatusEffectUnconscious");
+    }
 
     private EntityUid Organ(EntityUid body, string category)
     {
@@ -42,8 +48,8 @@ public sealed class CirculationTest : GameTest
 
         await Server.WaitAssertion(() =>
         {
-            body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
-            control = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            control = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             Assert.That(Circulation.IsStopped(body), Is.False, "A fresh body has a working heart.");
 
             var heart = Organ(body, "Heart");
@@ -63,9 +69,10 @@ public sealed class CirculationTest : GameTest
             Assert.Multiple(() =>
             {
                 Assert.That(respirator.Saturation, Is.EqualTo(respirator.MinSaturation), "All oxygen is gone after 20 seconds.");
-                Assert.That(SEntMan.HasComponent<SleepingComponent>(body), "A body without oxygen passes out.");
+                Assert.That(Unconscious(body), "A body without oxygen passes out.");
+                Assert.That(SEntMan.HasComponent<SleepingComponent>(body), Is.False, "Unconscious, not asleep: no snoring.");
                 Assert.That(mobState.IsAlive(body), "It suffocates at the usual rate, so it is far from dead.");
-                Assert.That(SEntMan.HasComponent<SleepingComponent>(control), Is.False, "Passing out is only for a stopped heart.");
+                Assert.That(Unconscious(control), Is.False, "Passing out is only for a stopped heart.");
             });
 
             // Oxygen given to the body does not stay.
@@ -97,7 +104,56 @@ public sealed class CirculationTest : GameTest
 
         await Server.WaitAssertion(() =>
         {
-            Assert.That(SEntMan.HasComponent<SleepingComponent>(body), Is.False, "With a heart and oxygen the body wakes up.");
+            Assert.That(Unconscious(body), Is.False, "With a heart and oxygen the body comes to.");
+        });
+    }
+
+    [Test]
+    public async Task LosingTheBrainKills()
+    {
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+        var mobState = SEntMan.System<MobStateSystem>();
+
+        await Server.WaitAssertion(() =>
+        {
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            Assert.That(SEntMan.System<BodyDebugSystem>().TryAmputate(body, Organ(body, "Head")));
+            Assert.Multiple(() =>
+            {
+                Assert.That(mobState.IsDead(body), "No head, no brain, no life.");
+                Assert.That(SEntMan.GetComponent<UnrevivableComponent>(body).ReasonMessage.Id, Is.EqualTo("defibrillator-no-brain"));
+            });
+        });
+
+        await Pair.RunTicksSync(30);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.System<BodyDebugSystem>().TryPutBack(body, "Head"));
+            Assert.Multiple(() =>
+            {
+                Assert.That(mobState.IsDead(body), "Putting the head back does not raise the dead.");
+                Assert.That(SEntMan.HasComponent<UnrevivableComponent>(body), Is.False, "A defibrillator can bring it back now.");
+            });
+        });
+    }
+
+    [Test]
+    public async Task MissingBrainOutranksMissingHeart()
+    {
+        var map = await Pair.CreateTestMap();
+        await Server.WaitAssertion(() =>
+        {
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            var debug = SEntMan.System<BodyDebugSystem>();
+            Assert.That(debug.TryKillOrgan(body, Organ(body, "Heart")));
+            Assert.That(debug.TryAmputate(body, Organ(body, "Head")));
+            Assert.That(SEntMan.GetComponent<UnrevivableComponent>(body).ReasonMessage.Id, Is.EqualTo("defibrillator-no-brain"));
+
+            Assert.That(debug.TryPutBack(body, "Head"));
+            Assert.That(SEntMan.GetComponent<UnrevivableComponent>(body).ReasonMessage.Id, Is.EqualTo("defibrillator-no-heart"),
+                "With the brain back, the dead heart is what still stops a defibrillator.");
         });
     }
 
@@ -107,7 +163,7 @@ public sealed class CirculationTest : GameTest
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
         {
-            var body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             SEntMan.AddComponent<UnrevivableComponent>(body);
 
             Assert.That(Debug.TryRemoveOrgan(body, Organ(body, "Heart")));
@@ -122,13 +178,13 @@ public sealed class CirculationTest : GameTest
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
         {
-            var monkey = SEntMan.SpawnEntity("MobMonkey", map.GridCoords);
+            var monkey = SEntMan.SpawnAtPosition("MobMonkey", map.GridCoords);
             var heart = Organ(monkey, "Heart");
             var cap = SEntMan.GetComponent<OrganIntegrityComponent>(heart).IntegrityCap;
             SEntMan.System<TraumaSystem>().TrySetOrganDamageModifier(heart, cap, monkey, "CirculationTest");
             Assert.That(Circulation.IsStopped(monkey), Is.False);
 
-            var diona = SEntMan.SpawnEntity("MobDiona", map.GridCoords);
+            var diona = SEntMan.SpawnAtPosition("MobDiona", map.GridCoords);
             Assert.That(Circulation.IsStopped(diona), Is.False, "A diona never had a heart.");
         });
     }
