@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared._Polonium.Body;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared.Body;
 using Content.Shared.Rejuvenate;
 using Robust.Shared.Containers;
@@ -10,11 +11,13 @@ namespace Content.Server._Polonium.Body;
 
 /// <summary>
 /// Leaves a dead organ in the slot of a destroyed one, so it has to be cut out and replaced.
+/// Rejuvenation brings every organ back to full integrity.
 /// </summary>
 public sealed partial class DeadOrganSystem : EntitySystem
 {
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private OrganRelationSystem _relation = default!;
+    [Dependency] private TraumaSystem _trauma = default!;
 
     public override void Initialize()
     {
@@ -43,6 +46,15 @@ public sealed partial class DeadOrganSystem : EntitySystem
 
         foreach (var organ in organs.ContainedEntities.ToArray())
         {
+            // BodyRejuvenateSystem removes traumas, but leaves the damage they did to the organ.
+            if (TryComp<OrganIntegrityComponent>(organ, out var integrity))
+            {
+                foreach (var (id, owner) in integrity.IntegrityModifiers.Keys.ToArray())
+                {
+                    _trauma.TryRemoveOrganDamageModifier(organ, owner, id, integrity);
+                }
+            }
+
             if (!HasComp<DeadOrganComponent>(organ))
                 continue;
 

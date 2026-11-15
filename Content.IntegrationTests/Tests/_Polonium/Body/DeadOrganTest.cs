@@ -179,8 +179,12 @@ public sealed class DeadOrganTest : GameTest
         {
             var body = SEntMan.SpawnEntity("MobHuman", map.GridCoords);
             var dead = Destroy(body, "Heart");
+            var liver = Organ(body, "Liver");
+            var liverIntegrity = SEntMan.GetComponent<OrganIntegrityComponent>(liver);
+            SEntMan.System<TraumaSystem>().TrySetOrganDamageModifier(liver, 10, body, Modifier);
 
             SEntMan.System<RejuvenateSystem>().PerformRejuvenate(body);
+            Assert.That(liverIntegrity.OrganIntegrity, Is.EqualTo(liverIntegrity.IntegrityCap), "Rejuvenation heals damaged organs.");
 
             var heart = Organ(body, "Heart");
             Assert.Multiple(() =>
