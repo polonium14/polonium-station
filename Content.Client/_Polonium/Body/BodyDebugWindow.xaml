@@ -1,0 +1,17 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="{Loc 'body-debug-window-title'}"
+                      MinSize="560 640">
+    <BoxContainer Orientation="Vertical" Margin="10" SeparationOverride="6">
+        <Label Name="TargetLabel" StyleClasses="LabelKeyText" />
+        <Label Name="ErrorLabel" FontColorOverride="#FF3333" Visible="False" />
+        <Label Text="{Loc 'body-debug-section-organs'}" StyleClasses="LabelHeading" />
+        <ScrollContainer HScrollEnabled="False" VerticalExpand="True">
+            <BoxContainer Name="OrgansContainer" Orientation="Vertical" SeparationOverride="8" />
+        </ScrollContainer>
+        <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+            <Button Name="ApplyButton" Text="{Loc 'body-debug-apply'}" HorizontalExpand="True" Disabled="True" />
+            <Button Name="RefreshButton" Text="{Loc 'body-debug-refresh'}" />
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>
