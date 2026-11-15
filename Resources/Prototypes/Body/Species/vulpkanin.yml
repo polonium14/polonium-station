@@ -375,9 +375,10 @@
   - type: OrganIntegrity
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    integrityFloor: 6
 
 - type: entity
   parent: [ OrganVulpkaninVisual, OrganBaseEyes, OrganVulpkaninInternal ]
@@ -390,8 +391,8 @@
   - type: OrganIntegrity
     integrityCap: 24
     integrityThresholds:
-      Normal: 24
-      Damaged: 4
+      Normal: 8.4
+      Damaged: 0.01
       Destroyed: 0
   - type: EyeBlinking
     eyelidsSprite: /Textures/Mobs/Species/Human/parts.rsi # Polonium: our vulpkanin use the generic human eyes
@@ -404,8 +405,8 @@
   - type: OrganIntegrity
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
@@ -415,8 +416,8 @@
   - type: OrganIntegrity
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
@@ -426,8 +427,8 @@
   - type: OrganIntegrity
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
@@ -437,8 +438,8 @@
   - type: OrganIntegrity
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
@@ -448,8 +449,8 @@
   - type: OrganIntegrity
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
@@ -459,8 +460,8 @@
   - type: OrganIntegrity
     integrityCap: 88
     integrityThresholds:
-      Normal: 88
-      Damaged: 17
+      Normal: 30.8
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
@@ -470,8 +471,8 @@
   - type: OrganIntegrity
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
@@ -481,6 +482,6 @@
   - type: OrganIntegrity
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0

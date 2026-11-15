@@ -286,11 +286,7 @@ public partial class TraumaSystem
         // An empty modifier set means all damage has been treated, including the final modifier.
         var totalDamage = organ.IntegrityModifiers.Aggregate(FixedPoint2.Zero, (current, modifier) => current + modifier.Value);
 
-        var floor = FixedPoint2.Zero;
-        if (TryComp<OrganComponent>(uid, out var organComp)
-            && organComp.Category == "Brain"
-            && organ.IntegrityThresholds.TryGetValue(OrganSeverity.Damaged, out var damagedThreshold))
-            floor = damagedThreshold;
+        var floor = organ.IntegrityFloor;
 
         organ.OrganIntegrity = FixedPoint2.Clamp(organ.IntegrityCap - totalDamage, floor, organ.IntegrityCap);
 
@@ -299,7 +295,7 @@ public partial class TraumaSystem
             var ev = new OrganIntegrityChangedEvent(oldIntegrity, organ.OrganIntegrity);
             RaiseLocalEvent(uid, ref ev);
 
-            if (TryComp<OrganComponent>(uid, out organComp) && organComp.Body is { } body)
+            if (TryComp<OrganComponent>(uid, out var organComp) && organComp.Body is { } body)
             {
                 var ev1 = new OrganIntegrityChangedEventOnWoundable((uid, organComp), oldIntegrity, organ.OrganIntegrity);
                 RaiseLocalEvent(body, ref ev1);

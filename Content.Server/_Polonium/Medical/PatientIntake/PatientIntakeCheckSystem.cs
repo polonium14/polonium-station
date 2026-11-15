@@ -131,7 +131,8 @@ public sealed partial class PatientIntakeCheckSystem : EntitySystem
                     failures.Add(new(IntakeFailureKind.Trauma, name));
             }
 
-            if (TryComp<OrganIntegrityComponent>(organ, out var integrity) && integrity.OrganSeverity != OrganSeverity.Normal)
+            // Any missing integrity counts: an organ stays in the Normal severity down to 35% integrity.
+            if (TryComp<OrganIntegrityComponent>(organ, out var integrity) && integrity.OrganIntegrity < integrity.IntegrityCap)
                 failures.Add(new(IntakeFailureKind.OrganDamage, name));
 
             if (_surgery.HasUnfinishedSurgerySteps(organ))

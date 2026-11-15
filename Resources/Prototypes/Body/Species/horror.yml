@@ -337,12 +337,13 @@
   parent: [ OrganBaseBrain, OrganHorrorInternal ]
   id: OrganHorrorBrain
   components:
-  - type: OrganIntegrity # Polonium: Shitmed organ integrity, human values
+  - type: OrganIntegrity
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    integrityFloor: 6
 
 - type: entity
   parent: [ OrganBaseEyes, OrganHorrorInternal, OrganHorrorExternal ]
@@ -353,97 +354,97 @@
   - type: VisualOrgan
     data:
       sprite: Mobs/Species/Horror/parts.rsi
-  - type: OrganIntegrity # Polonium: Shitmed organ integrity, human values
+  - type: OrganIntegrity
     integrityCap: 24
     integrityThresholds:
-      Normal: 24
-      Damaged: 4
+      Normal: 8.4
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseTongue, OrganHorrorInternal ]
   id: OrganHorrorTongue
   components:
-  - type: OrganIntegrity # Polonium: Shitmed organ integrity, human values
+  - type: OrganIntegrity
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganHorrorInternal ]
   id: OrganHorrorAppendix
   components:
-  - type: OrganIntegrity # Polonium: Shitmed organ integrity, human values
+  - type: OrganIntegrity
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseEars, OrganHorrorInternal ]
   id: OrganHorrorEars
   components:
-  - type: OrganIntegrity # Polonium: Shitmed organ integrity, human values
+  - type: OrganIntegrity
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseLungs, OrganHorrorInternal, OrganHorrorMetabolizer ]
   id: OrganHorrorLungs
   components:
-  - type: OrganIntegrity # Polonium: Shitmed organ integrity, human values
+  - type: OrganIntegrity
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseHeart, OrganHorrorInternal, OrganHorrorMetabolizer ]
   id: OrganHorrorHeart
   components:
-  - type: OrganIntegrity # Polonium: Shitmed organ integrity, human values
+  - type: OrganIntegrity
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseStomach, OrganHorrorInternal, OrganHorrorMetabolizer ]
   id: OrganHorrorStomach
   components:
-  - type: OrganIntegrity # Polonium: Shitmed organ integrity, human values
+  - type: OrganIntegrity
     integrityCap: 88
     integrityThresholds:
-      Normal: 88
-      Damaged: 17
+      Normal: 30.8
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseLiver, OrganHorrorInternal, OrganHorrorMetabolizer ]
   id: OrganHorrorLiver
   components:
-  - type: OrganIntegrity # Polonium: Shitmed organ integrity, human values
+  - type: OrganIntegrity
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganHorrorInternal, OrganHorrorMetabolizer ]
   id: OrganHorrorKidneys
   components:
-  - type: OrganIntegrity # Polonium: Shitmed organ integrity, human values
+  - type: OrganIntegrity
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0

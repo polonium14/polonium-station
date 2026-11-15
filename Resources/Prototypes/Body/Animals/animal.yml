@@ -26,8 +26,8 @@
   - type: OrganIntegrity
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 8
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
@@ -37,8 +37,8 @@
   - type: OrganIntegrity
     integrityCap: 28
     integrityThresholds:
-      Normal: 28
-      Damaged: 6
+      Normal: 9.8
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
@@ -48,8 +48,8 @@
   - type: OrganIntegrity
     integrityCap: 56
     integrityThresholds:
-      Normal: 56
-      Damaged: 16
+      Normal: 19.6
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
@@ -59,8 +59,8 @@
   - type: OrganIntegrity
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 8
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity
@@ -70,8 +70,8 @@
   - type: OrganIntegrity
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 8
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
 
 - type: entity

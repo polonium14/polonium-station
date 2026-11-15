@@ -349,9 +349,10 @@
   - type: OrganIntegrity
     integrityCap: 120
     integrityThresholds:
-      Normal: 120
-      Damaged: 27
+      Normal: 42
+      Damaged: 0.01
       Destroyed: 0
+    integrityFloor: 27
 
 - type: entity
   parent: [ OrganBaseEyes, OrganSlimePersonInternal, OrganSlimePersonExternal ]
@@ -374,6 +375,6 @@
   - type: OrganIntegrity
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 14
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0

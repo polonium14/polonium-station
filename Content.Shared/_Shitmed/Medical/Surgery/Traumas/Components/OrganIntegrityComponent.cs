@@ -29,4 +29,10 @@ public sealed partial class OrganIntegrityComponent : Component
 
     [DataField]
     public SoundSpecifier OrganDestroyedSound = new SoundCollectionSpecifier("OrganDestroyed");
+
+    /// <summary>
+    /// Integrity never drops below this value. Keeps the brain from being destroyed by damage.
+    /// </summary>
+    [DataField]
+    public FixedPoint2 IntegrityFloor;
 }
