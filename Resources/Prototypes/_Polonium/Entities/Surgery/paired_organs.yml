@@ -1,0 +1,114 @@
+# Surgeries for the paired lungs and kidneys, one per side, because a surgery targets one organ category.
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveLungLeft
+  name: Remove left lung
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: LungLeft
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertLungLeft
+  name: Insert left lung
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertLungs
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: LungLeft
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveKidneyLeft
+  name: Remove left kidney
+  components:
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: KidneyLeft
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertKidneyLeft
+  name: Insert left kidney
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepInsertKidney
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: KidneyLeft
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveLungRight
+  name: Remove right lung
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: LungRight
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertLungRight
+  name: Insert right lung
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertLungs
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: LungRight
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveKidneyRight
+  name: Remove right kidney
+  components:
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: KidneyRight
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertKidneyRight
+  name: Insert right kidney
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepInsertKidney
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: KidneyRight
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertKidney
+  name: Add kidney
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    state: kidney-l

@@ -50,10 +50,12 @@ public sealed class PatientIntakeTreatmentTest : GameTest
         { "LegLeft", ("SurgeryAttachLeftLeg", "SurgeryStepInsertLegLeft") },
         { "LegRight", ("SurgeryAttachRightLeg", "SurgeryStepInsertLegRight") },
         { "Eyes", ("SurgeryInsertEyes", "SurgeryStepInsertEyes") },
-        { "Lungs", ("SurgeryInsertLungs", "SurgeryStepInsertLungs") },
+        { "LungLeft", ("SurgeryInsertLungLeft", "SurgeryStepInsertLungs") },
+        { "LungRight", ("SurgeryInsertLungRight", "SurgeryStepInsertLungs") },
         { "Liver", ("SurgeryInsertLiver", "SurgeryStepInsertLiver") },
         { "Stomach", ("SurgeryInsertStomach", "SurgeryStepInsertStomach") },
-        { "Kidneys", ("SurgeryInsertKidneys", "SurgeryStepInsertKidneys") },
+        { "KidneyLeft", ("SurgeryInsertKidneyLeft", "SurgeryStepInsertKidney") },
+        { "KidneyRight", ("SurgeryInsertKidneyRight", "SurgeryStepInsertKidney") },
         { "HandLeft", ("SurgeryAttachLeftHand", "SurgeryStepInsertHandLeft") },
         { "HandRight", ("SurgeryAttachRightHand", "SurgeryStepInsertHandRight") },
         { "FootLeft", ("SurgeryAttachLeftFoot", "SurgeryStepInsertFootLeft") },
@@ -360,19 +362,19 @@ public sealed class PatientIntakeTreatmentTest : GameTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(entMan.System<SurgerySystem>().GetSingleton("SurgeryRemoveKidneys"), Is.Not.Null);
+            Assert.That(entMan.System<SurgerySystem>().GetSingleton("SurgeryRemoveKidneyLeft"), Is.Not.Null);
 
             entMan.GetComponent<SurgeryTargetComponent>(patient).SepsisImmune = true;
             var comp = entMan.AddComponent<PatientIntakePatientComponent>(patient);
             comp.ExpectedParts = intake.PartCategories(patient);
             var body = entMan.GetComponent<BodyComponent>(patient);
-            Assert.That(LimbTargetMap.TryGetOrganByCategory(entMan, body, "Kidneys", out var kidneys), Is.True);
+            Assert.That(LimbTargetMap.TryGetOrganByCategory(entMan, body, "KidneyLeft", out var kidneys), Is.True);
             entMan.System<SharedContainerSystem>().Remove(kidneys, body.Organs!, force: true);
             Assert.That(intake.GetFailures((patient, comp)).Any(f => f.Kind == IntakeFailureKind.MissingPart), Is.True);
 
-            TransplantFromDonor(entMan, patient, donor, "Kidneys", replace: false);
+            TransplantFromDonor(entMan, patient, donor, "KidneyLeft", replace: false);
             Assert.That(intake.GetFailures((patient, comp)).Any(f => f.Kind == IntakeFailureKind.MissingPart), Is.False,
-                "The insert surgery puts the donor's kidneys in.");
+                "The insert surgery puts the donor's kidney in.");
         });
     }
 
