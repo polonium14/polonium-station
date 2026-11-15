@@ -67,6 +67,7 @@ public abstract class HealthAnalyzerBaseMessage : BoundUserInterfaceMessage
 public sealed class HealthAnalyzerBodyMessage : HealthAnalyzerBaseMessage
 {
     public readonly bool Unrevivable;
+    public bool CirculationStopped;
     public readonly NetEntity? SelectedPart;
     public readonly Dictionary<NetEntity, List<WoundableTraumaData>> Traumas;
 

@@ -259,6 +259,15 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
                 Margin = new Thickness(0, 4),
             });
 
+        // Polonium: no working heart
+        if (msg.CirculationStopped)
+            ConditionsListContainer.AddChild(new RichTextLabel
+            {
+                Text = Loc.GetString("condition-body-no-circulation", ("entity", Identity.Name(_target.Value, _entityManager))),
+                Margin = new Thickness(0, 4),
+            });
+        // Polonium end
+
         foreach (var (bodyPart, isBleeding) in msg.Bleeding)
         {
             if (!isBleeding || isPart && bodyPart != selectedBodyPart)

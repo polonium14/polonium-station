@@ -119,7 +119,8 @@ public sealed partial class ServerHealthAnalyzerSystem : HealthAnalyzerSystem
 
                 _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerBodyMessage(
                     GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, unrevivable, bodyStatus, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans,
-                    FetchTraumaData(body), part != null ? GetNetEntity(part.Value) : null));
+                    FetchTraumaData(body), part != null ? GetNetEntity(part.Value) : null)
+                    { CirculationStopped = HasComp<Content.Server._Polonium.Body.StoppedCirculationComponent>(validTarget) }); // Polonium: no working heart
                 break;
         }
     }
