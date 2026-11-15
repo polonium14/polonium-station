@@ -1,0 +1,50 @@
+- type: entity
+  parent: BaseStructure
+  id: DialysisMachine
+  name: dialysis machine
+  description: Draws blood from a patient, filters out everything but medicine and returns it. Takes over for failing kidneys and eases a failing liver.
+  components:
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.45,0.4,0.45"
+        density: 100
+        mask:
+        - MobMask
+  - type: Transform
+    anchored: false
+    noRot: true
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _Polonium/Structures/Machines/Medical/dialysis.rsi
+    layers:
+    - state: off
+      map: [ "enum.IVDripVisualLayers.Base" ]
+  - type: IVDrip
+    slot: null
+    noBagState: off
+    unattachedState: off
+    attachedState: on
+    lineOriginOffset: "0.25, 0.0"
+    ripDamage:
+      types:
+        Piercing: 5
+  - type: Dialysis
+  - type: GuideHelp
+    guides:
+    - MedicalDoctor
+
+- type: entity
+  parent: BaseFlatpack
+  id: DialysisMachineFlatpack
+  name: dialysis machine flatpack
+  description: A flatpack used for constructing a dialysis machine.
+  components:
+  - type: Flatpack
+    entity: DialysisMachine

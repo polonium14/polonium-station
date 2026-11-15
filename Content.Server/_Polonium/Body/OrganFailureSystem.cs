@@ -147,7 +147,11 @@ public sealed partial class OrganFailureSystem : EntitySystem
         var stage = _proto.Index(failure.Failure).Stages[failure.Stage - 1];
 
         if (stage.Damage is { } damage)
-            _circulation.DealOrganDamage(body, damage * UpdateInterval);
+        {
+            var factor = _circulation.GetDialysisFactor(body, CompOrNull<OrganComponent>(organ)?.Category);
+            if (factor > 0f)
+                _circulation.DealOrganDamage(body, damage * (UpdateInterval * factor));
+        }
 
         foreach (var symptom in stage.Symptoms)
         {

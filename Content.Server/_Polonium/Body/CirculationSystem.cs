@@ -1,6 +1,8 @@
+using Content.Server._Polonium.Medical.Dialysis;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared._Polonium.Body;
+using Content.Shared._Polonium.Medical.Dialysis;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
@@ -257,9 +259,9 @@ public sealed partial class CirculationSystem : EntitySystem
 
         var poison = 0f;
         if (expectsLiver && !liver)
-            poison += _deadOrganPoison;
+            poison += _deadOrganPoison * GetDialysisFactor(body, Liver);
         if (expectsKidneys && !kidneys)
-            poison += _deadOrganPoison;
+            poison += _deadOrganPoison * GetDialysisFactor(body, Kidneys);
         SetPoisoning(body, poison);
 
         LocId? reason = null;
@@ -269,6 +271,21 @@ public sealed partial class CirculationSystem : EntitySystem
             reason = NoHeartReason;
 
         SetUnrevivable(body, reason);
+    }
+
+    /// <summary>
+    /// Share of the poison a dead or failing organ of this category still deals, 1 without dialysis.
+    /// </summary>
+    public float GetDialysisFactor(EntityUid body, ProtoId<OrganCategoryPrototype>? category)
+    {
+        if (CompOrNull<OnDialysisComponent>(body)?.Machine is not { } machine
+            || !TryComp<DialysisComponent>(machine, out var dialysis))
+            return 1f;
+
+        if (category == Kidneys)
+            return dialysis.KidneyPoisonFactor;
+
+        return category == Liver ? dialysis.LiverPoisonFactor : 1f;
     }
 
     private OrganFailureStage? GetStage(EntityUid organ)
