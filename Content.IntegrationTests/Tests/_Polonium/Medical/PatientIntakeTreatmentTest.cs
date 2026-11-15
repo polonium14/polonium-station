@@ -8,6 +8,7 @@ using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Medical.PatientIntake;
 using Content.Server._Shitmed.Medical.Surgery;
+using Content.Shared._Polonium.Body;
 using Content.Shared._Polonium.Medical.PatientIntake;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery;
@@ -118,6 +119,10 @@ public sealed class PatientIntakeTreatmentTest : GameTest
                 // Damage rolls its own traumas through the normal pipeline, like a real injury.
                 RunStepUntilTreated(entMan, patients[issue.ID], TraumaType.BoneDamage, "SurgeryMendBones", "SurgeryStepMendBones");
                 RunStepUntilTreated(entMan, patients[issue.ID], TraumaType.OrganDamage, "SurgeryHealOrgans", "SurgeryStepHealOrgans");
+
+                // A heavy injury can roll a trauma that kills an organ outright; only a transplant fixes that.
+                foreach (var dead in Organs(entMan, patients[issue.ID]).Where(entMan.HasComponent<DeadOrganComponent>))
+                    TransplantFromDonor(entMan, patients[issue.ID], donors[issue.ID], entMan.GetComponent<OrganComponent>(dead).Category!.Value, replace: true);
             }
         });
         await pair.RunTicksSync(5);
