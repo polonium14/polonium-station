@@ -128,7 +128,7 @@ public sealed partial class OrganFailureSystem : EntitySystem
 
         if (failure.Stage == 0)
         {
-            var lost = 100f * (1f - (integrity.OrganIntegrity / integrity.IntegrityCap).Float());
+            var lost = 100f * (1f - integrity.OrganIntegrity.Float() / integrity.IntegrityCap.Float());
             if (_random.Prob(Math.Clamp(lost * _contractChance, 0f, 1f)))
                 SetStage((organ, failure), 1);
 

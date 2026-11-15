@@ -48,6 +48,7 @@ public sealed partial class CirculationSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private OrganHealingSystem _healing = default!;
     [Dependency] private RespiratorSystem _respirator = default!;
+    [Dependency] private SensesSystem _senses = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
     private static readonly ProtoId<OrganCategoryPrototype> Heart = "Heart";
@@ -195,6 +196,8 @@ public sealed partial class CirculationSystem : EntitySystem
             || !TryComp<BodyComponent>(body, out var bodyComp)
             || bodyComp.Organs is not { } organs)
             return;
+
+        _senses.MarkDirty(body);
 
         var heart = false;
         var brain = false;
