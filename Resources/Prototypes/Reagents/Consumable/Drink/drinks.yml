@@ -515,6 +515,10 @@
       - !type:Satiate
         satiationType: Thirst
         factor: 4
+      - !type:HealOrgans # Polonium: water slowly heals the kidneys
+        categories: [ Kidneys ]
+        amount: 0.5
+        probability: 0.1
     Respiration:
       effects:
       - !type:HealthChange
