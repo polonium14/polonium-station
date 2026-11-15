@@ -162,6 +162,11 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
             ? $"{msg.BloodLevel * 100:F1} %"
             : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
 
+        // Polonium: pulse oximetry
+        SpO2Label.Text = msg.SpO2 is { } spO2
+            ? $"{spO2:F0} %"
+            : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
+
         StatusLabel.Text =
             _entityManager.TryGetComponent<MobStateComponent>(_target.Value, out var mobState)
                 ? GetStatus(mobState.CurrentState)
@@ -396,6 +401,16 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
                 Text = Loc.GetString($"condition-organ-damage-{data.Severity}", ("organ", organName)),
                 Margin = new Thickness(0, 4),
             });
+
+            // Polonium: staged organ failure
+            if (data.FailureStage > 0)
+            {
+                ConditionsListContainer.AddChild(new RichTextLabel
+                {
+                    Text = Loc.GetString("condition-organ-failure", ("organ", organName), ("stage", data.FailureStage)),
+                    Margin = new Thickness(0, 4),
+                });
+            }
         }
 
         if (_target is not null)

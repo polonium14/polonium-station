@@ -98,19 +98,20 @@ public sealed partial class ServerHealthAnalyzerSystem : HealthAnalyzerSystem
         var tourniqueted = FetchTourniquetData(body);
         var unfinishedSurgery = FetchUnfinishedSurgeryData(body);
         var missingOrgans = FetchMissingOrgansData(body);
+        var spO2 = EntityManager.System<Content.Server._Polonium.Body.CirculationSystem>().ReadSpO2(validTarget); // Polonium: pulse oximetry
 
         switch (mode)
         {
             case HealthAnalyzerMode.Organs:
                 _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerOrgansMessage(
                     GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, bodyStatus, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans,
-                    FetchOrganData(body)));
+                    FetchOrganData(body)) { SpO2 = spO2 }); // Polonium: pulse oximetry
                 break;
 
             case HealthAnalyzerMode.Chemicals:
                 _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerChemicalsMessage(
                     GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, bodyStatus, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans,
-                    FetchChemicalData(validTarget, body)));
+                    FetchChemicalData(validTarget, body)) { SpO2 = spO2 }); // Polonium: pulse oximetry
                 break;
 
             case HealthAnalyzerMode.Body:
@@ -120,7 +121,7 @@ public sealed partial class ServerHealthAnalyzerSystem : HealthAnalyzerSystem
                 _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerBodyMessage(
                     GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, unrevivable, bodyStatus, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans,
                     FetchTraumaData(body), part != null ? GetNetEntity(part.Value) : null)
-                    { CirculationStopped = HasComp<Content.Server._Polonium.Body.StoppedCirculationComponent>(validTarget) }); // Polonium: no working heart
+                    { CirculationStopped = HasComp<Content.Server._Polonium.Body.StoppedCirculationComponent>(validTarget), SpO2 = spO2 }); // Polonium: no working heart, pulse oximetry
                 break;
         }
     }
@@ -291,7 +292,8 @@ public sealed partial class ServerHealthAnalyzerSystem : HealthAnalyzerSystem
                 integrity.OrganIntegrity,
                 integrity.IntegrityCap,
                 integrity.OrganSeverity,
-                integrity.IntegrityModifiers.Select(x => (x.Key.Item1, x.Value)).ToList());
+                integrity.IntegrityModifiers.Select(x => (x.Key.Item1, x.Value)).ToList())
+                { FailureStage = CompOrNull<OrganFailureComponent>(organ)?.Stage ?? 0 }; // Polonium: staged organ failure
         }
 
         return organs;

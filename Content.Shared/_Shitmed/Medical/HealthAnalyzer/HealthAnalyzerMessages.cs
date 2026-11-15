@@ -22,6 +22,7 @@ public abstract class HealthAnalyzerBaseMessage : BoundUserInterfaceMessage
     public readonly NetEntity? TargetEntity;
     public readonly float Temperature;
     public readonly float BloodLevel;
+    public float? SpO2;
     public readonly bool? ScanMode;
     public readonly HealthAnalyzerMode ActiveMode;
     public readonly Dictionary<TargetBodyPart, WoundableSeverity>? Body;
@@ -204,6 +205,7 @@ public struct OrganTraumaData
     public FixedPoint2 IntegrityCap;
     public OrganSeverity Severity;
     public List<(string Name, FixedPoint2 Value)> Modifiers;
+    public int FailureStage;
 
     public OrganTraumaData(FixedPoint2 integrity,
         FixedPoint2 integrityCap,
