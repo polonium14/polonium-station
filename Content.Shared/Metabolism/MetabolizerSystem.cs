@@ -57,6 +57,23 @@ public sealed partial class MetabolizerSystem : EntitySystem
         Dirty(ent);
     }
 
+    // Polonium: kidneys set the pace of chemistry
+    private static readonly ProtoId<MetabolismStagePrototype> RespirationStage = "Respiration";
+
+    /// <summary>
+    /// How fast this organ metabolizes chemicals compared to normal. Breathing is never slowed.
+    /// </summary>
+    private float GetChemicalRate(EntityUid uid, MetabolizerComponent comp)
+    {
+        if (comp.Stages.Contains(RespirationStage) || _organQuery.CompOrNull(uid)?.Body is not { } body)
+            return 1f;
+
+        var ev = new Content.Shared._Polonium.Body.GetChemicalMetabolismRateEvent();
+        RaiseLocalEvent(body, ref ev);
+        return Math.Max(ev.Rate, 0.01f);
+    }
+    // Polonium end
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -70,7 +87,7 @@ public sealed partial class MetabolizerSystem : EntitySystem
             if (_gameTiming.CurTime < comp.NextUpdate)
                 continue;
 
-            comp.NextUpdate += comp.AdjustedUpdateInterval;
+            comp.NextUpdate += comp.AdjustedUpdateInterval / GetChemicalRate(uid, comp); // Polonium: kidneys set the pace of chemistry
             toUpdate.Add((uid, comp));
         }
 
