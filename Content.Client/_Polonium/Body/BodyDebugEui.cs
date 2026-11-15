@@ -19,6 +19,7 @@ public sealed class BodyDebugEui : BaseEui
         _window.OnInsert += category => SendMessage(new BodyDebugEuiMsg.Insert(category));
         _window.OnAddWound += (limb, type, amount) => SendMessage(new BodyDebugEuiMsg.AddWound(limb, type, amount));
         _window.OnRefresh += () => SendMessage(new BodyDebugEuiMsg.Refresh());
+        _window.OnSetFailureStage += (organ, stage) => SendMessage(new BodyDebugEuiMsg.SetFailureStage(organ, stage));
     }
 
     public override void Opened()

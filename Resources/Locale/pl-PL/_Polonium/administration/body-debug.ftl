@@ -31,3 +31,7 @@ body-debug-error-action = Akcja się nie udała: celu nie ma już w ciele albo n
 body-debug-error-wound = Nie udało się zranić tej części ciała.
 body-debug-circulation-stopped = Brak działającego serca: krążenie zatrzymane.
 body-debug-saturation = Saturacja tlenem: { $saturation }
+body-debug-failure = Niewydolność:
+body-debug-failure-none = brak
+body-debug-failure-stage = stadium { $stage }
+body-debug-error-failure = Zdrowy narząd nie może być niewydolny. Najpierw obniż jego integralność poniżej progu zdrowia.

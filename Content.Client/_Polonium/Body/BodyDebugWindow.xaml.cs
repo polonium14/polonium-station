@@ -20,6 +20,7 @@ public sealed partial class BodyDebugWindow : FancyWindow
     public event Action<string>? OnInsert;
     public event Action<NetEntity, string, int>? OnAddWound;
     public event Action? OnRefresh;
+    public event Action<NetEntity, int>? OnSetFailureStage;
 
     /// <summary>
     /// Slider values not sent to the server yet. Dropped with every new state, organ entities change when one dies.
@@ -108,6 +109,24 @@ public sealed partial class BodyDebugWindow : FancyWindow
         }
 
         row.AddChild(MakeSlider(uid, BodyDebugSlider.Organ, organ.Integrity, organ.Cap, organ.Floor));
+
+        if (organ.FailureStages > 0)
+        {
+            var stages = new OptionButton();
+            stages.AddItem(Loc.GetString("body-debug-failure-none"), 0);
+            for (var stage = 1; stage <= organ.FailureStages; stage++)
+            {
+                stages.AddItem(Loc.GetString("body-debug-failure-stage", ("stage", stage)), stage);
+            }
+
+            stages.SelectId(organ.FailureStage);
+            stages.OnItemSelected += args => OnSetFailureStage?.Invoke(uid, args.Id);
+
+            var failureRow = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, SeparationOverride = 6 };
+            failureRow.AddChild(new Label { Text = Loc.GetString("body-debug-failure") });
+            failureRow.AddChild(stages);
+            row.AddChild(failureRow);
+        }
         return row;
     }
 

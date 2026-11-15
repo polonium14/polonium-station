@@ -30,6 +30,7 @@ public sealed partial class BodyDebugSystem : EntitySystem
     [Dependency] private EuiManager _eui = default!;
     [Dependency] private OrganRelationSystem _relation = default!;
     [Dependency] private OrganHealingSystem _healing = default!;
+    [Dependency] private OrganFailureSystem _failure = default!;
     [Dependency] private PatientIntakeSystem _intake = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private TraumaSystem _trauma = default!;
@@ -105,6 +106,22 @@ public sealed partial class BodyDebugSystem : EntitySystem
 
         var trauma = _trauma.AddTrauma(organ, limb, inflicter, TraumaType.OrganDamage, amount);
         return trauma != EntityUid.Invalid && _trauma.TryCreateOrganDamageModifier(organ, amount, trauma, ModifierId, organ.Comp2);
+    }
+
+    /// <summary>
+    /// Sets the failure stage of an organ in the body, 0 to cure it.
+    /// </summary>
+    public bool TrySetFailureStage(EntityUid body, EntityUid organ, int stage)
+    {
+        if (!TryGetOrgan(body, organ, out _) || !TryComp<OrganFailureComponent>(organ, out var failure))
+            return false;
+
+        // A healthy organ shakes off failure within a second, so starting one there would look broken.
+        if (stage > 0 && CompOrNull<OrganIntegrityComponent>(organ)?.OrganSeverity == OrganSeverity.Normal)
+            return false;
+
+        _failure.SetStage((organ, failure), stage);
+        return true;
     }
 
     /// <summary>
@@ -209,7 +226,9 @@ public sealed partial class BodyDebugSystem : EntitySystem
                 integrity.IntegrityFloor,
                 integrity.OrganSeverity,
                 integrity.IntegrityModifiers.Select(modifier => (modifier.Key.Item1, modifier.Value)).ToList(),
-                category == Brain));
+                category == Brain,
+                CompOrNull<OrganFailureComponent>(organ)?.Stage ?? 0,
+                TryComp<OrganFailureComponent>(organ, out var failure) ? _failure.GetStageCount((organ, failure)) : 0));
         }
 
         foreach (var category in bodyComp.ExpectedOrgans)

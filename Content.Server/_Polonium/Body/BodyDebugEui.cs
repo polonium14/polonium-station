@@ -124,6 +124,13 @@ public sealed partial class BodyDebugEui : BaseEui
 
                 break;
 
+            case BodyDebugEuiMsg.SetFailureStage failureStage:
+                if (_entities.TryGetEntity(failureStage.Organ, out var failing)
+                    && Check(_bodyDebug.TrySetFailureStage(_target, failing.Value, failureStage.Stage), "body-debug-error-failure"))
+                    Log($"set the failure of {_entities.ToPrettyString(failing.Value)} to stage {failureStage.Stage}");
+
+                break;
+
             case BodyDebugEuiMsg.AddWound wound:
                 if (_entities.TryGetEntity(wound.Limb, out var limb)
                     && Check(_bodyDebug.TryAddWound(_target, limb.Value, wound.DamageType, Math.Clamp(wound.Amount, 1, BodyDebugSystem.MaxWoundDamage)), "body-debug-error-wound"))

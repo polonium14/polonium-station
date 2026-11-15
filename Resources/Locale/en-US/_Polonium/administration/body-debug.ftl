@@ -31,3 +31,7 @@ body-debug-error-action = The action failed: the target left the body or does no
 body-debug-error-wound = Could not wound this body part.
 body-debug-circulation-stopped = No working heart: circulation has stopped.
 body-debug-saturation = Oxygen saturation: { $saturation }
+body-debug-failure = Failure:
+body-debug-failure-none = none
+body-debug-failure-stage = stage { $stage }
+body-debug-error-failure = A healthy organ cannot fail. Bring its integrity below the healthy threshold first.

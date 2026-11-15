@@ -46,6 +46,8 @@ public enum BodyDebugAction : byte
 /// <param name="HealthyFrom">Lowest integrity at which the organ is still healthy.</param>
 /// <param name="Floor">Integrity never drops below this value.</param>
 /// <param name="Protected">True for organs that can only have their integrity changed.</param>
+/// <param name="FailureStage">Current failure stage, 0 if none.</param>
+/// <param name="FailureStages">Number of failure stages, 0 for organs that cannot fail.</param>
 [Serializable, NetSerializable]
 public readonly record struct BodyDebugOrgan(
     NetEntity? Organ,
@@ -58,7 +60,9 @@ public readonly record struct BodyDebugOrgan(
     FixedPoint2 Floor,
     OrganSeverity Severity,
     List<(string Name, FixedPoint2 Value)> Modifiers,
-    bool Protected);
+    bool Protected,
+    int FailureStage = 0,
+    int FailureStages = 0);
 
 /// <summary>
 /// One body part row of the body debug window.
@@ -141,6 +145,13 @@ public static class BodyDebugEuiMsg
         public readonly NetEntity Limb = limb;
         public readonly string DamageType = damageType;
         public readonly int Amount = amount;
+    }
+
+    [Serializable, NetSerializable]
+    public sealed class SetFailureStage(NetEntity organ, int stage) : EuiMessageBase
+    {
+        public readonly NetEntity Organ = organ;
+        public readonly int Stage = stage;
     }
 
     [Serializable, NetSerializable]
