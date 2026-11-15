@@ -1,0 +1,294 @@
+# Paired organs from the biofab. Each side costs what the pair cost before.
+# Left lungs come from the upstream lung recipes, everything else is here. Dwarves have human kidneys.
+
+- type: latheRecipe
+  id: SynthArachnidLungRight
+  result: OrganArachnidLungRight
+  categories: [ BiosynthArachnid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthFelinidLungRight
+  result: OrganFelinidLungRight
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHarpyLungRight
+  result: OrganHarpyLungRight
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHumanLungRight
+  result: OrganHumanLungRight
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthMothLungRight
+  result: OrganMothLungRight
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthReptilianLungRight
+  result: OrganReptilianLungRight
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthRodentiaLungRight
+  result: OrganRodentiaLungRight
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthThavenLungRight
+  result: OrganThavenLungRight
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVoxLungRight
+  result: OrganVoxLungRight
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVulpkaninLungRight
+  result: OrganVulpkaninLungRight
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthArachnidKidneyLeft
+  result: OrganArachnidKidneyLeft
+  categories: [ BiosynthArachnid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthArachnidKidneyRight
+  result: OrganArachnidKidneyRight
+  categories: [ BiosynthArachnid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDwarfKidneyLeft
+  result: OrganHumanKidneyLeft
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDwarfKidneyRight
+  result: OrganHumanKidneyRight
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthFelinidKidneyLeft
+  result: OrganFelinidKidneyLeft
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthFelinidKidneyRight
+  result: OrganFelinidKidneyRight
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHarpyKidneyLeft
+  result: OrganHarpyKidneyLeft
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHarpyKidneyRight
+  result: OrganHarpyKidneyRight
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHumanKidneyLeft
+  result: OrganHumanKidneyLeft
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHumanKidneyRight
+  result: OrganHumanKidneyRight
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthMothKidneyLeft
+  result: OrganMothKidneyLeft
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthMothKidneyRight
+  result: OrganMothKidneyRight
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthReptilianKidneyLeft
+  result: OrganReptilianKidneyLeft
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthReptilianKidneyRight
+  result: OrganReptilianKidneyRight
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthRodentiaKidneyLeft
+  result: OrganRodentiaKidneyLeft
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthRodentiaKidneyRight
+  result: OrganRodentiaKidneyRight
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthThavenKidneyLeft
+  result: OrganThavenKidneyLeft
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthThavenKidneyRight
+  result: OrganThavenKidneyRight
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVoxKidneyLeft
+  result: OrganVoxKidneyLeft
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVoxKidneyRight
+  result: OrganVoxKidneyRight
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVulpkaninKidneyLeft
+  result: OrganVulpkaninKidneyLeft
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVulpkaninKidneyRight
+  result: OrganVulpkaninKidneyRight
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipePack
+  id: MedicalBiofabPairedOrgansStatic
+  recipes:
+  - SynthArachnidLungRight
+  - SynthFelinidLungRight
+  - SynthHarpyLungRight
+  - SynthHumanLungRight
+  - SynthMothLungRight
+  - SynthReptilianLungRight
+  - SynthRodentiaLungRight
+  - SynthThavenLungRight
+  - SynthVoxLungRight
+  - SynthVulpkaninLungRight
+  - SynthArachnidKidneyLeft
+  - SynthArachnidKidneyRight
+  - SynthDwarfKidneyLeft
+  - SynthDwarfKidneyRight
+  - SynthFelinidKidneyLeft
+  - SynthFelinidKidneyRight
+  - SynthHarpyKidneyLeft
+  - SynthHarpyKidneyRight
+  - SynthHumanKidneyLeft
+  - SynthHumanKidneyRight
+  - SynthMothKidneyLeft
+  - SynthMothKidneyRight
+  - SynthReptilianKidneyLeft
+  - SynthReptilianKidneyRight
+  - SynthRodentiaKidneyLeft
+  - SynthRodentiaKidneyRight
+  - SynthThavenKidneyLeft
+  - SynthThavenKidneyRight
+  - SynthVoxKidneyLeft
+  - SynthVoxKidneyRight
+  - SynthVulpkaninKidneyLeft
+  - SynthVulpkaninKidneyRight
