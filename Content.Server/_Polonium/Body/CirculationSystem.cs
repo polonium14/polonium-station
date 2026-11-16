@@ -8,6 +8,8 @@ using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared.Body;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
@@ -45,6 +47,7 @@ public sealed partial class CirculationSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private BloodstreamSystem _bloodstream = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private OrganHealingSystem _healing = default!;
@@ -55,6 +58,7 @@ public sealed partial class CirculationSystem : EntitySystem
     private static readonly ProtoId<OrganCategoryPrototype> Heart = "Heart";
     private static readonly ProtoId<OrganCategoryPrototype> Brain = "Brain";
     private static readonly ProtoId<OrganCategoryPrototype> Liver = "Liver";
+    private static readonly ProtoId<OrganCategoryPrototype> Spleen = "Spleen";
     private static readonly ProtoId<DamageTypePrototype> Poison = "Poison";
     private static readonly LocId NoBrainReason = "defibrillator-no-brain";
     private static readonly LocId NoHeartReason = "defibrillator-no-heart";
@@ -206,6 +210,7 @@ public sealed partial class CirculationSystem : EntitySystem
         var heart = false;
         var brain = false;
         var liver = false;
+        var spleen = false;
         // How much of the lungs and kidneys work: a side counts half, a single organ whole.
         var lungs = 0f;
         var kidneys = 0f;
@@ -219,6 +224,7 @@ public sealed partial class CirculationSystem : EntitySystem
             heart |= category == Heart && alive;
             brain |= category == Brain;
             liver |= category == Liver && alive;
+            spleen |= category == Spleen && alive;
 
             if (alive && PairedOrgans.Matches(category, PairedOrgans.Lungs))
                 lungs += PairedOrgans.Share(category);
@@ -241,6 +247,7 @@ public sealed partial class CirculationSystem : EntitySystem
         var expectsHeart = false;
         var expectsBrain = false;
         var expectsLiver = false;
+        var expectsSpleen = false;
         var expectsLungs = false;
         var expectsKidneys = false;
         foreach (var category in bodyComp.ExpectedOrgans)
@@ -248,6 +255,7 @@ public sealed partial class CirculationSystem : EntitySystem
             expectsHeart |= category == Heart;
             expectsBrain |= category == Brain;
             expectsLiver |= category == Liver;
+            expectsSpleen |= category == Spleen;
             expectsLungs |= PairedOrgans.Matches(category, PairedOrgans.Lungs);
             expectsKidneys |= PairedOrgans.Matches(category, PairedOrgans.Kidneys);
         }
@@ -281,6 +289,11 @@ public sealed partial class CirculationSystem : EntitySystem
         if (expectsKidneys && kidneys <= 0f)
             poison += _deadOrganPoison * GetDialysisFactor(body, PairedOrgans.Kidneys);
         SetPoisoning(body, poison);
+
+        if (expectsSpleen && !spleen)
+            EnsureComp<BloodDrainComponent>(body);
+        else
+            RemComp<BloodDrainComponent>(body);
 
         LocId? reason = null;
         if (expectsBrain && !brain)
@@ -483,6 +496,23 @@ public sealed partial class CirculationSystem : EntitySystem
 
             if (respirator.Saturation < respirator.SuffocationThreshold)
                 _statusEffects.TryUpdateStatusEffectDuration(uid, Unconscious, PassOutTime);
+        }
+
+        var drained = EntityQueryEnumerator<BloodDrainComponent, BloodstreamComponent>();
+        while (drained.MoveNext(out var uid, out var drain, out var bloodstream))
+        {
+            if (_timing.CurTime < drain.NextUpdate)
+                continue;
+
+            drain.NextUpdate = _timing.CurTime + bloodstream.AdjustedUpdateInterval;
+
+            // The dead neither regenerate nor lose blood this way.
+            if (_mobState.IsDead(uid))
+                continue;
+
+            // The bloodstream still regenerates on its own, so taking twice that leaves the body losing what a
+            // healthy spleen would have given back.
+            _bloodstream.TryModifyBloodLevel((uid, bloodstream), -2 * bloodstream.BloodRefreshAmount);
         }
 
         var poisoned = EntityQueryEnumerator<OrganPoisoningComponent>();

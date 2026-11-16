@@ -4,6 +4,17 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 namespace Content.Server._Polonium.Body;
 
 /// <summary>
+/// A body without a working spleen: it stops regenerating blood and slowly loses it.
+/// </summary>
+[RegisterComponent, AutoGenerateComponentPause]
+[Access(typeof(CirculationSystem))]
+public sealed partial class BloodDrainComponent : Component
+{
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
+    public TimeSpan NextUpdate;
+}
+
+/// <summary>
 /// Marks a body that has no working heart. It cannot be defibrillated.
 /// </summary>
 [RegisterComponent]
