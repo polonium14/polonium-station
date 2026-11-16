@@ -96,11 +96,8 @@ public sealed partial class BodyDebugWindow : FancyWindow
         header.AddChild(MakeButton("body-debug-remove", () => OnAction?.Invoke(BodyDebugAction.RemoveOrgan, uid), organ.Protected));
 
         row.AddChild(MakeSubText(Loc.GetString("body-debug-organ-status",
-            ("integrity", organ.Integrity.ToString()),
-            ("cap", organ.Cap.ToString()),
             ("severity", Loc.GetString($"body-debug-severity-{organ.Severity}")),
-            ("healthyFrom", organ.HealthyFrom.ToString()),
-            ("floor", organ.Floor.ToString()))));
+            ("healthyFrom", organ.HealthyFrom.ToString()))));
 
         if (organ.Modifiers.Count > 0)
         {
@@ -146,8 +143,6 @@ public sealed partial class BodyDebugWindow : FancyWindow
         header.AddChild(MakeButton("body-debug-amputate", () => OnAction?.Invoke(BodyDebugAction.Amputate, uid), !limb.CanAmputate));
 
         row.AddChild(MakeSubText(Loc.GetString("body-debug-limb-status",
-            ("integrity", limb.Integrity.ToString()),
-            ("cap", limb.Cap.ToString()),
             ("severity", limb.Severity.ToString()),
             ("bleeds", limb.Bleeds.ToString()))));
 
@@ -163,8 +158,6 @@ public sealed partial class BodyDebugWindow : FancyWindow
         if (limb.BoneCap > FixedPoint2.Zero)
         {
             row.AddChild(MakeSubText(Loc.GetString("body-debug-bone-status",
-                ("integrity", limb.BoneIntegrity.ToString()),
-                ("cap", limb.BoneCap.ToString()),
                 ("severity", limb.BoneSeverity.ToString()))));
             row.AddChild(MakeSlider(uid, BodyDebugSlider.Bone, limb.BoneIntegrity, limb.BoneCap, FixedPoint2.Zero));
         }
