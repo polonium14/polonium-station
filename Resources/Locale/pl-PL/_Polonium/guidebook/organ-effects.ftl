@@ -7,7 +7,7 @@ entity-effect-guidebook-damage-organs =
     { $chance ->
         [1] Odbiera
         *[other] odebrać
-    } {NATURALFIXED($amount, 2)} integralności narządów: { $organs }. Tego uszkodzenia nie leczy operacja
+    } {NATURALFIXED($amount, 2)} integralności narządów: { $organs }
 entity-effect-guidebook-organs-all = wszystkie
 entity-effect-guidebook-organs-all-except = wszystkie poza: { $organs }
 entity-effect-guidebook-organ-Heart = serce

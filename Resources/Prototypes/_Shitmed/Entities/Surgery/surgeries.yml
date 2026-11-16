@@ -172,19 +172,6 @@
   - type: SurgeryTraumaPresentCondition
     trauma: BoneDamage
 
-- type: entity
-  parent: BasePartSurgery
-  id: SurgeryHealOrgans
-  name: Heal Organs
-  components:
-  - type: Surgery
-    requirement: SurgeryOpenIncision
-    steps:
-    - SurgeryStepClampInternalBleeders
-    - SurgeryStepHealOrgans
-  - type: SurgeryTraumaPresentCondition
-    trauma: OrganDamage
-
 # I fucking hate hardcoding all of this shit to accomodate for surgery BUI.
 # If anyone can give me pointers on how to make it better I'd be incredibly grateful.
 

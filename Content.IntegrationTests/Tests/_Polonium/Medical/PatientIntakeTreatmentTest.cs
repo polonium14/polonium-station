@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
+using Content.Server._Polonium.Body;
 using Content.Server._Polonium.Medical.PatientIntake;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Server._Shitmed.Medical.Surgery;
 using Content.Shared._Polonium.Body;
 using Content.Shared._Polonium.Medical.PatientIntake;
@@ -120,7 +122,7 @@ public sealed class PatientIntakeTreatmentTest : GameTest
 
                 // Damage rolls its own traumas through the normal pipeline, like a real injury.
                 RunStepUntilTreated(entMan, patients[issue.ID], TraumaType.BoneDamage, "SurgeryMendBones", "SurgeryStepMendBones");
-                RunStepUntilTreated(entMan, patients[issue.ID], TraumaType.OrganDamage, "SurgeryHealOrgans", "SurgeryStepHealOrgans");
+                HealOrgans(entMan, patients[issue.ID]);
 
                 // A heavy injury can roll a trauma that kills an organ outright; only a transplant fixes that.
                 foreach (var dead in Organs(entMan, patients[issue.ID]).Where(entMan.HasComponent<DeadOrganComponent>))
@@ -165,7 +167,7 @@ public sealed class PatientIntakeTreatmentTest : GameTest
                 break;
 
             case PatientIntakeIssueKind.Organ:
-                RunStepUntilTreated(entMan, patient, TraumaType.OrganDamage, "SurgeryHealOrgans", "SurgeryStepHealOrgans");
+                HealOrgans(entMan, patient);
                 break;
 
             case PatientIntakeIssueKind.Poison:
@@ -376,6 +378,23 @@ public sealed class PatientIntakeTreatmentTest : GameTest
             Assert.That(intake.GetFailures((patient, comp)).Any(f => f.Kind == IntakeFailureKind.MissingPart), Is.False,
                 "The insert surgery puts the donor's kidney in.");
         });
+    }
+
+    /// <summary>
+    /// Organ damage heals with organ medicine, which goes through the organ healing system; living organs only, a dead
+    /// one needs a transplant.
+    /// </summary>
+    private static void HealOrgans(IEntityManager entMan, EntityUid patient)
+    {
+        var healing = entMan.System<OrganHealingSystem>();
+        foreach (var organ in Organs(entMan, patient))
+        {
+            if (entMan.HasComponent<DeadOrganComponent>(organ)
+                || !entMan.TryGetComponent<OrganIntegrityComponent>(organ, out var integrity))
+                continue;
+
+            healing.HealOrgan((organ, integrity), integrity.IntegrityCap);
+        }
     }
 
     private static void RunStepUntilTreated(IEntityManager entMan, EntityUid patient, TraumaType trauma, string surgeryId, string stepId)

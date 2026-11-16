@@ -7,7 +7,7 @@ entity-effect-guidebook-damage-organs =
     { $chance ->
         [1] Damages
         *[other] damage
-    } { $organs } by {NATURALFIXED($amount, 2)} integrity, which surgery cannot treat
+    } { $organs } by {NATURALFIXED($amount, 2)} integrity
 entity-effect-guidebook-organs-all = every organ
 entity-effect-guidebook-organs-all-except = every organ except { $organs }
 entity-effect-guidebook-organ-Heart = the heart

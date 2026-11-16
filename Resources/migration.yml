@@ -1371,3 +1371,7 @@ OrganAntKidneys: OrganAntKidneyLeft
 OrganDecapoidKidneys: OrganDecapoidKidneyLeft
 OrganGastropoidKidneys: OrganGastropoidKidneyLeft
 OrganGrayKidneys: OrganGrayKidneyLeft
+
+# Polonium: the "Heal Organs" surgery is gone, organ damage heals with medicine or a transplant
+SurgeryHealOrgans: null
+SurgeryStepHealOrgans: null

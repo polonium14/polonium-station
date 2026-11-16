@@ -30,14 +30,10 @@ public sealed class SurgeryTreatmentCompletionTest : GameTest
     public sealed class CompletionListenerSystem : TestListenerSystem<SurgeryStepEvent>;
 
     // Reuse the minimal body, torso, heart and wound prototypes from HealedWoundTraumaTreatmentTest.
-    [TestCase(false, 0)]
-    [TestCase(true, 0)]
-    [TestCase(false, 1)]
-    [TestCase(true, 1)]
-    [TestCase(false, 2)]
-    [TestCase(true, 2)]
-    [TestCase(true, 3)]
-    public async Task TreatmentOnlyReportsActualInterruptions(bool organTreatment, int completionMode)
+    [TestCase(0)]
+    [TestCase(1)]
+    [TestCase(2)]
+    public async Task TreatmentOnlyReportsActualInterruptions(int completionMode)
     {
         var map = await Pair.CreateTestMap();
         var coords = new MapCoordinates(Vector2.Zero, map.MapId);
@@ -46,9 +42,9 @@ public sealed class SurgeryTreatmentCompletionTest : GameTest
         var wounds = SEntMan.System<WoundSystem>();
         var failures = SEntMan.System<FailureListenerSystem>();
         var completions = SEntMan.System<CompletionListenerSystem>();
-        var type = organTreatment ? TraumaType.OrganDamage : TraumaType.BoneDamage;
-        var surgeryId = organTreatment ? "SurgeryHealOrgans" : "SurgeryMendBones";
-        var stepId = organTreatment ? "SurgeryStepHealOrgans" : "SurgeryStepMendBones";
+        var type = TraumaType.BoneDamage;
+        var surgeryId = "SurgeryMendBones";
+        var stepId = "SurgeryStepMendBones";
         EntityUid user = default, body = default, torso = default, heart = default, bone = default;
 
         await Server.WaitAssertion(() =>
@@ -81,37 +77,19 @@ public sealed class SurgeryTreatmentCompletionTest : GameTest
             var woundable = SEntMan.GetComponent<WoundableComponent>(torso);
             var inflicter = SEntMan.GetComponent<TraumaInflicterComponent>(wound);
             bone = woundable.Bone!.ContainedEntities.Single();
-            if (organTreatment)
-            {
-                var trauma = traumas.AddTrauma(heart, (torso, woundable), (wound, inflicter), type, FixedPoint2.New(35));
-                traumas.TryCreateOrganDamageModifier(heart, FixedPoint2.New(35), trauma, "WoundableDamage");
-            }
-            else
-                traumas.ApplyBoneTrauma(bone, (torso, woundable), (wound, inflicter), FixedPoint2.New(35));
+            traumas.ApplyBoneTrauma(bone, (torso, woundable), (wound, inflicter), FixedPoint2.New(35));
 
             Assert.That(surgery.TryDoSurgeryStep(body, torso, user, surgeryId, stepId, out var error), Is.True, error.ToString());
 
             if (completionMode == 1)
             {
                 // Another treatment finishes the injury while this surgeon is still working.
-                if (organTreatment)
-                {
-                    var integrity = SEntMan.GetComponent<OrganIntegrityComponent>(heart);
-                    foreach (var key in integrity.IntegrityModifiers.Keys.ToArray())
-                        traumas.TryRemoveOrganDamageModifier(heart, key.Item2, key.Item1);
-                }
-                else
-                    traumas.SetBoneIntegrity(bone, SEntMan.GetComponent<BoneComponent>(bone).IntegrityCap);
+                traumas.SetBoneIntegrity(bone, SEntMan.GetComponent<BoneComponent>(bone).IntegrityCap);
             }
             else if (completionMode == 2)
             {
                 var doAfter = SEntMan.GetComponent<DoAfterComponent>(user).DoAfters.Values.Single();
                 SEntMan.System<SharedDoAfterSystem>().Cancel(user, doAfter.Index);
-            }
-            else if (completionMode == 3)
-            {
-                // The target organ leaves the patient while treatment is in progress.
-                containers.Remove(heart, organs);
             }
         });
 
@@ -122,7 +100,7 @@ public sealed class SurgeryTreatmentCompletionTest : GameTest
         {
             Assert.That(failures.Count(user), Is.EqualTo(completionMode == 2 ? 1 : 0));
             Assert.That(completions.Count(user), Is.EqualTo(completionMode == 0 ? 3 : 0));
-            Assert.That(traumas.HasWoundableTrauma(torso, type), Is.EqualTo(completionMode is 2 or 3));
+            Assert.That(traumas.HasWoundableTrauma(torso, type), Is.EqualTo(completionMode == 2));
             Assert.That(SEntMan.GetComponent<DoAfterComponent>(user).DoAfters.Values
                 .Any(d => !d.Completed && !d.Cancelled), Is.False);
         });

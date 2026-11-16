@@ -168,28 +168,6 @@
 
 - type: entity
   parent: SurgeryStepBase
-  id: SurgeryStepHealOrgans
-  name: Heal Organs
-  components:
-  - type: SurgeryStep
-    tool:
-    - type: Tending
-    duration: 7
-  - type: SurgeryAffixOrganStep
-  - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
-    state: hemostat
-  - type: SurgeryStepPainInflicter
-    amount: 24
-    painType: TraumaticPain
-    sleepModifier: 0
-  - type: SurgeryRepeatableStep
-  - type: SurgeryTraumaTreatmentStep
-    traumaType: OrganDamage
-    amount: 17
-
-- type: entity
-  parent: SurgeryStepBase
   id: SurgeryStepPriseOpenBones
   name: Prise the bones open
   components:

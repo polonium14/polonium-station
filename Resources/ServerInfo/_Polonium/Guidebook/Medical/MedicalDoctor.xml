@@ -78,7 +78,7 @@ Jeśli to możliwe, przypnij pacjenta do łóżka medycznego; jeśli potrzebujes
 Narząd jest w jednym z trzech stanów, które pokazuje analizator zdrowia:
 
 - [color=#e8c878]Stan w większości dobry[/color]: narząd ma co najmniej 35% integralności i działa w pełni.
-- [color=#e8c878]Uszkodzony[/color]: narząd ma mniej niż 35% integralności. Wyleczysz go operacją „Ulecz narządy”.
+- [color=#e8c878]Uszkodzony[/color]: narząd ma mniej niż 35% integralności. Wyleczysz go lekami na narządy albo wymienisz przeszczepem.
 - [color=#e8c878]Zniszczony[/color]: integralność spadła do zera i narząd jest martwy.
 
 Martwy narząd zostaje w ciele, ale nie pełni żadnej funkcji i nie da się go naprawić. Trzeba go wyciąć operacją usunięcia narządu i wszczepić w jego miejsce nowy. Martwy narząd wszczepiony innej osobie nadal jest martwy.
@@ -132,7 +132,7 @@ Chore serce pompuje mniej krwi, więc do ciała dociera mniej tlenu, a w stadium
 
 Nerki ustalają tempo działania leków, trucizn, jedzenia i picia. Gdy choć jedna nerka jest chora, martwa albo usunięta, wszystko to działa o jedną czwartą wolniej, a bez żadnej działającej nerki o połowę wolniej, ale w sumie tak samo mocno. Martwa albo usunięta wątroba truje pacjenta, nerki dopiero wtedy, gdy nie działa żadna z nich. Każde zatrucie uszkadza też nerki i wątrobę.
 
-Uszkodzone narządy leczą też leki: omnizyna (wszystkie narządy), krioksadon (wszystkie poza mózgiem, tylko w wychłodzonym ciele), kwas pentetowy (nerki, wątroba, żołądek), perfluorodekalina i salbutamol (płuca), a powoli także jodek potasu i zwykła woda (nerki). Przedawkowanie kwasu pentetowego, salbutamolu albo perfluorodekaliny samo uszkadza narządy. Takiego uszkodzenia nie wyleczy operacja, tylko leki na narządy albo przeszczep.
+Uszkodzone narządy leczą leki: omnizyna (wszystkie narządy), krioksadon (wszystkie poza mózgiem, tylko w wychłodzonym ciele), kwas pentetowy (nerki, wątroba, żołądek), perfluorodekalina i salbutamol (płuca), okulina (oczy), a powoli także jodek potasu, sól fizjologiczna i zwykła woda (nerki). Narządu, którego żaden lek nie leczy, albo martwego trzeba wymienić przeszczepem. Przedawkowanie kwasu pentetowego, salbutamolu albo perfluorodekaliny samo uszkadza narządy.
 
 Bez działającego serca krążenie staje. Tlen przestaje docierać do ciała, więc pacjent po kilkunastu sekundach traci przytomność i dusi się, nawet z maską tlenową. Ratunkiem jest wszczepienie działającego serca. Defibrylator nie ożywi ciała bez działającego serca. Bez mózgu ciało umiera od razu, także po odcięciu głowy albo wycięciu mózgu w czasie operacji. Po przywróceniu głowy albo mózgu pacjent dalej jest martwy i trzeba go ożywić defibrylatorem.
 

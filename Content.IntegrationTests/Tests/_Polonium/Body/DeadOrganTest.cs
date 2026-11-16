@@ -126,7 +126,7 @@ public sealed class DeadOrganTest : GameTest
     }
 
     [Test]
-    public async Task DeadOrganCanBeRemovedButNotHealed()
+    public async Task DeadOrganCanBeRemovedAndReplaced()
     {
         var map = await Pair.CreateTestMap();
         await Server.WaitAssertion(() =>
@@ -142,24 +142,11 @@ public sealed class DeadOrganTest : GameTest
                 return !ev.Cancelled;
             }
 
-            // A real organ trauma, the only thing the heal surgery accepts.
-            var heart = Organ(body, "Heart");
-            var traumas = SEntMan.System<TraumaSystem>();
-            Assert.That(SEntMan.System<WoundSystem>().TryCreateWound(torso, "WoundBlunt", 10, out var wound), "Test setup: wound on the torso.");
-            var trauma = traumas.AddTrauma(heart,
-                (torso, SEntMan.GetComponent<WoundableComponent>(torso)),
-                (wound!.Value, SEntMan.GetComponent<TraumaInflicterComponent>(wound.Value)),
-                TraumaType.OrganDamage,
-                10);
-            traumas.TryCreateOrganDamageModifier(heart, 10, trauma, "WoundableDamage");
-            Assert.That(Valid("SurgeryHealOrgans"), "A damaged heart can be healed.");
-
             var dead = Destroy(body, "Heart");
             Assert.Multiple(() =>
             {
                 Assert.That(Valid("SurgeryRemoveHeart"), "A dead heart has to be removable.");
                 Assert.That(Valid("SurgeryInsertHeart"), Is.False, "The dead heart still takes the slot.");
-                Assert.That(Valid("SurgeryHealOrgans"), Is.False, "A dead organ cannot be healed.");
             });
 
             SEntMan.System<SharedContainerSystem>().Remove(dead, SEntMan.GetComponent<BodyComponent>(body).Organs!);

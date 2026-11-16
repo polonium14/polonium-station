@@ -51,21 +51,12 @@ public sealed class BodyDebugTest : GameTest
             var torso = Organ(body, "Torso");
             var integrity = Integrity(heart);
             var traumas = SEntMan.System<TraumaSystem>();
-            var surgery = SEntMan.System<SurgerySystem>();
-
-            bool HealValid()
-            {
-                var ev = new SurgeryValidEvent(body, torso, Category: "Torso");
-                SEntMan.EventBus.RaiseLocalEvent(surgery.GetSingleton("SurgeryHealOrgans")!.Value, ref ev);
-                return !ev.Cancelled;
-            }
 
             Assert.That(Debug.TrySetOrganIntegrity(body, heart, integrity.IntegrityCap / 2));
             Assert.Multiple(() =>
             {
                 Assert.That(integrity.OrganIntegrity, Is.EqualTo(integrity.IntegrityCap / 2));
                 Assert.That(traumas.HasWoundableTrauma(torso, TraumaType.OrganDamage), "The damage hangs on a real trauma.");
-                Assert.That(HealValid(), "Surgery can heal what the slider did.");
             });
 
             // Going further down grows the same trauma instead of wounding the torso again.
@@ -84,7 +75,6 @@ public sealed class BodyDebugTest : GameTest
             {
                 Assert.That(integrity.OrganIntegrity, Is.EqualTo(integrity.IntegrityCap));
                 Assert.That(traumas.HasWoundableTrauma(torso, TraumaType.OrganDamage), Is.False);
-                Assert.That(HealValid(), Is.False);
             });
         });
     }
