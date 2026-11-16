@@ -33,15 +33,15 @@ public sealed partial class BodyDebugSystem
     private static readonly ProtoId<DamageTypePrototype> SliderDamage = "Blunt";
 
     /// <summary>
-    /// Sets a body part's integrity to a percentage of its cap, with real damage going down and wound healing going up.
+    /// Sets a body part's integrity, up to its cap, with real damage going down and wound healing going up.
     /// The result can miss the target, because wounds scale and heal by the part's own rules.
     /// </summary>
-    public bool TrySetLimbIntegrity(EntityUid body, EntityUid limb, int percent)
+    public bool TrySetLimbIntegrity(EntityUid body, EntityUid limb, FixedPoint2 value)
     {
         if (!TryGetLimb(body, limb, out var woundable))
             return false;
 
-        var target = woundable.IntegrityCap * Math.Clamp(percent, 0, 100) / FixedPoint2.New(100);
+        var target = FixedPoint2.Clamp(value, FixedPoint2.Zero, woundable.IntegrityCap);
         var current = woundable.WoundableIntegrity;
         if (target < current)
             return TryAddWound(body, limb, SliderDamage, current - target);
@@ -63,14 +63,14 @@ public sealed partial class BodyDebugSystem
     /// <summary>
     /// Sets the integrity of a body part's bone. Going down fractures it through a real trauma, a full bone has none left.
     /// </summary>
-    public bool TrySetBoneIntegrity(EntityUid body, EntityUid limb, int percent)
+    public bool TrySetBoneIntegrity(EntityUid body, EntityUid limb, FixedPoint2 value)
     {
         if (!TryGetLimb(body, limb, out var woundable)
             || woundable.Bone?.ContainedEntities.FirstOrNull() is not { } bone
             || !TryComp<BoneComponent>(bone, out var boneComp))
             return false;
 
-        var target = boneComp.IntegrityCap * Math.Clamp(percent, 0, 100) / FixedPoint2.New(100);
+        var target = FixedPoint2.Clamp(value, FixedPoint2.Zero, boneComp.IntegrityCap);
         var current = boneComp.BoneIntegrity;
         if (target == current)
             return true;

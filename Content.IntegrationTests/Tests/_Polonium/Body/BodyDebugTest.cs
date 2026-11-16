@@ -60,7 +60,7 @@ public sealed class BodyDebugTest : GameTest
                 return !ev.Cancelled;
             }
 
-            Assert.That(Debug.TrySetOrganIntegrity(body, heart, 50));
+            Assert.That(Debug.TrySetOrganIntegrity(body, heart, integrity.IntegrityCap / 2));
             Assert.Multiple(() =>
             {
                 Assert.That(integrity.OrganIntegrity, Is.EqualTo(integrity.IntegrityCap / 2));
@@ -70,16 +70,16 @@ public sealed class BodyDebugTest : GameTest
 
             // Going further down grows the same trauma instead of wounding the torso again.
             var wounds = SEntMan.System<WoundSystem>().GetWoundableWounds(torso).Count();
-            Assert.That(Debug.TrySetOrganIntegrity(body, heart, 40));
-            Assert.That(Debug.TrySetOrganIntegrity(body, heart, 36));
+            Assert.That(Debug.TrySetOrganIntegrity(body, heart, integrity.IntegrityCap * 0.4f));
+            Assert.That(Debug.TrySetOrganIntegrity(body, heart, integrity.IntegrityCap * 0.36f));
             Assert.That(SEntMan.System<WoundSystem>().GetWoundableWounds(torso).Count(), Is.EqualTo(wounds));
 
-            Assert.That(Debug.TrySetOrganIntegrity(body, heart, 35));
+            Assert.That(Debug.TrySetOrganIntegrity(body, heart, integrity.IntegrityCap * 0.35f));
             Assert.That(integrity.OrganSeverity, Is.EqualTo(OrganSeverity.Normal), "35% is exactly on the healthy threshold.");
-            Assert.That(Debug.TrySetOrganIntegrity(body, heart, 34));
+            Assert.That(Debug.TrySetOrganIntegrity(body, heart, integrity.IntegrityCap * 0.34f));
             Assert.That(integrity.OrganSeverity, Is.EqualTo(OrganSeverity.Damaged));
 
-            Assert.That(Debug.TrySetOrganIntegrity(body, heart, 100));
+            Assert.That(Debug.TrySetOrganIntegrity(body, heart, integrity.IntegrityCap));
             Assert.Multiple(() =>
             {
                 Assert.That(integrity.OrganIntegrity, Is.EqualTo(integrity.IntegrityCap));
@@ -99,10 +99,10 @@ public sealed class BodyDebugTest : GameTest
             var brain = Organ(body, "Brain");
             var integrity = Integrity(brain);
 
-            Assert.That(Debug.TrySetOrganIntegrity(body, brain, 0));
+            Assert.That(Debug.TrySetOrganIntegrity(body, brain, FixedPoint2.Zero));
             Assert.That(integrity.OrganIntegrity, Is.EqualTo(integrity.IntegrityFloor));
 
-            Assert.That(Debug.TrySetOrganIntegrity(body, brain, 50));
+            Assert.That(Debug.TrySetOrganIntegrity(body, brain, integrity.IntegrityCap / 2));
             Assert.That(integrity.OrganIntegrity, Is.EqualTo(integrity.IntegrityCap / 2));
 
             Assert.Multiple(() =>
@@ -178,7 +178,7 @@ public sealed class BodyDebugTest : GameTest
         await Server.WaitAssertion(() =>
         {
             var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
-            Assert.That(Debug.TrySetOrganIntegrity(body, Organ(body, "Liver"), 20));
+            Assert.That(Debug.TrySetOrganIntegrity(body, Organ(body, "Liver"), Integrity(Organ(body, "Liver")).IntegrityCap * 0.2f));
             Assert.That(Debug.TryKillOrgan(body, Organ(body, "LungLeft")));
             Assert.That(Debug.TryRemoveOrgan(body, Organ(body, "Stomach")));
 

@@ -45,10 +45,10 @@ public sealed class BodyDebugLimbTest : GameTest
             var traumas = SEntMan.System<TraumaSystem>();
             var cap = woundable.IntegrityCap;
 
-            Assert.That(Debug.TrySetLimbIntegrity(body, arm, 50));
+            Assert.That(Debug.TrySetLimbIntegrity(body, arm, cap / 2));
             Assert.That(woundable.WoundableIntegrity, Is.EqualTo(cap / 2), "Slider down.");
 
-            Assert.That(Debug.TrySetLimbIntegrity(body, arm, 80));
+            Assert.That(Debug.TrySetLimbIntegrity(body, arm, cap * 0.8f));
             Assert.That(woundable.WoundableIntegrity, Is.EqualTo(cap * 0.8f), "Slider up.");
 
             var before = wounds.GetWoundableWounds(arm).Count();
@@ -60,14 +60,14 @@ public sealed class BodyDebugLimbTest : GameTest
             Assert.That(woundable.WoundableIntegrity, Is.EqualTo(cap), "Heal wounds.");
 
             var bone = SEntMan.GetComponent<BoneComponent>(woundable.Bone!.ContainedEntities[0]);
-            Assert.That(Debug.TrySetBoneIntegrity(body, arm, 0));
+            Assert.That(Debug.TrySetBoneIntegrity(body, arm, FixedPoint2.Zero));
             Assert.Multiple(() =>
             {
                 Assert.That(bone.BoneSeverity, Is.EqualTo(BoneSeverity.Broken));
                 Assert.That(traumas.HasWoundableTrauma(arm, TraumaType.BoneDamage), "A broken bone has a trauma surgery can mend.");
             });
 
-            Assert.That(Debug.TrySetBoneIntegrity(body, arm, 100));
+            Assert.That(Debug.TrySetBoneIntegrity(body, arm, bone.IntegrityCap));
             Assert.Multiple(() =>
             {
                 Assert.That(bone.BoneIntegrity, Is.EqualTo(bone.IntegrityCap));

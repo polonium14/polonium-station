@@ -199,7 +199,7 @@ public sealed class CprTest : GameTest
             patient = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var rescuer = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var heart = Organ(patient, "Heart");
-            Assert.That(Debug.TrySetOrganIntegrity(patient, heart, 20));
+            Assert.That(Debug.TrySetOrganIntegrity(patient, heart, SEntMan.GetComponent<OrganIntegrityComponent>(heart).IntegrityCap * 0.2f));
             Assert.That(Debug.TrySetFailureStage(patient, heart, 3));
             Assert.That(SEntMan.System<BloodstreamSystem>().TryAddToBloodstream(patient, new Solution("Epinephrine", 5)));
             SEntMan.System<StatusEffectsSystem>().TryUpdateStatusEffectDuration(patient, CirculationSystem.Unconscious, TimeSpan.FromSeconds(30));

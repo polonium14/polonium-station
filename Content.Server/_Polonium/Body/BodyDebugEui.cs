@@ -75,7 +75,7 @@ public sealed partial class BodyDebugEui : BaseEui
         switch (msg)
         {
             case BodyDebugEuiMsg.Apply apply:
-                foreach (var (netTarget, slider, percent) in apply.Changes)
+                foreach (var (netTarget, slider, value) in apply.Changes)
                 {
                     if (!_entities.TryGetEntity(netTarget, out var target))
                         continue;
@@ -83,14 +83,14 @@ public sealed partial class BodyDebugEui : BaseEui
                     var targetName = _entities.ToPrettyString(target.Value);
                     var done = slider switch
                     {
-                        BodyDebugSlider.Organ => _bodyDebug.TrySetOrganIntegrity(_target, target.Value, percent),
-                        BodyDebugSlider.Limb => _bodyDebug.TrySetLimbIntegrity(_target, target.Value, percent),
-                        BodyDebugSlider.Bone => _bodyDebug.TrySetBoneIntegrity(_target, target.Value, percent),
+                        BodyDebugSlider.Organ => _bodyDebug.TrySetOrganIntegrity(_target, target.Value, value),
+                        BodyDebugSlider.Limb => _bodyDebug.TrySetLimbIntegrity(_target, target.Value, value),
+                        BodyDebugSlider.Bone => _bodyDebug.TrySetBoneIntegrity(_target, target.Value, value),
                         _ => false,
                     };
 
                     if (Check(done, "body-debug-error-integrity"))
-                        Log($"set the {slider} integrity of {targetName} to {percent}%");
+                        Log($"set the {slider} integrity of {targetName} to {value}");
                 }
 
                 break;

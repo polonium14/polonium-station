@@ -115,12 +115,12 @@ public sealed class BodyDebugEuiState(
 public static class BodyDebugEuiMsg
 {
     /// <summary>
-    /// Sets integrities to whole percents of their cap.
+    /// Sets integrities to the given values.
     /// </summary>
     [Serializable, NetSerializable]
-    public sealed class Apply(List<(NetEntity Target, BodyDebugSlider Slider, int Percent)> changes) : EuiMessageBase
+    public sealed class Apply(List<(NetEntity Target, BodyDebugSlider Slider, FixedPoint2 Integrity)> changes) : EuiMessageBase
     {
-        public readonly List<(NetEntity Target, BodyDebugSlider Slider, int Percent)> Changes = changes;
+        public readonly List<(NetEntity Target, BodyDebugSlider Slider, FixedPoint2 Integrity)> Changes = changes;
     }
 
     [Serializable, NetSerializable]

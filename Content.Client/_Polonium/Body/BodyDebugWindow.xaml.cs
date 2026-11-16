@@ -15,7 +15,7 @@ public sealed partial class BodyDebugWindow : FancyWindow
 {
     private const int DefaultWoundDamage = 10;
 
-    public event Action<List<(NetEntity Target, BodyDebugSlider Slider, int Percent)>>? OnApply;
+    public event Action<List<(NetEntity Target, BodyDebugSlider Slider, FixedPoint2 Integrity)>>? OnApply;
     public event Action<BodyDebugAction, NetEntity>? OnAction;
     public event Action<string>? OnInsert;
     public event Action<NetEntity, string, int>? OnAddWound;
@@ -25,7 +25,7 @@ public sealed partial class BodyDebugWindow : FancyWindow
     /// <summary>
     /// Slider values not sent to the server yet. Dropped with every new state, organ entities change when one dies.
     /// </summary>
-    private readonly Dictionary<(NetEntity Target, BodyDebugSlider Slider), int> _pending = new();
+    private readonly Dictionary<(NetEntity Target, BodyDebugSlider Slider), FixedPoint2> _pending = new();
 
     public BodyDebugWindow()
     {
@@ -206,22 +206,21 @@ public sealed partial class BodyDebugWindow : FancyWindow
 
     private Control MakeSlider(NetEntity target, BodyDebugSlider kind, FixedPoint2 integrity, FixedPoint2 cap, FixedPoint2 floor)
     {
-        var current = (int) MathF.Round((integrity / cap).Float() * 100f);
-        var percent = new Label { Text = Loc.GetString("body-debug-percent", ("percent", current)), MinWidth = 48 };
+        var percent = new Label { Text = IntegrityText(integrity, cap), MinWidth = 90 };
         var slider = new Slider
         {
             // The server clamps to the floor anyway; the slider just does not offer values that cannot be reached.
-            MinValue = MathF.Ceiling((floor / cap).Float() * 100f),
-            MaxValue = 100,
-            Rounded = true,
+            MinValue = floor.Float(),
+            MaxValue = cap.Float(),
             HorizontalExpand = true,
         };
-        slider.SetValueWithoutEvent(current);
+        slider.SetValueWithoutEvent(integrity.Float());
         slider.OnValueChanged += _ =>
         {
-            var value = (int) slider.Value;
-            percent.Text = Loc.GetString("body-debug-percent", ("percent", value));
-            if (value == current)
+            // Tenths are fine enough for testing and keep the label readable.
+            var value = FixedPoint2.New(MathF.Round(slider.Value * 10f) / 10f);
+            percent.Text = IntegrityText(value, cap);
+            if (value == integrity)
                 _pending.Remove((target, kind));
             else
                 _pending[(target, kind)] = value;
@@ -233,6 +232,11 @@ public sealed partial class BodyDebugWindow : FancyWindow
         sliderRow.AddChild(slider);
         sliderRow.AddChild(percent);
         return sliderRow;
+    }
+
+    private static string IntegrityText(FixedPoint2 value, FixedPoint2 cap)
+    {
+        return Loc.GetString("body-debug-integrity", ("value", value), ("cap", cap));
     }
 
     private static Label MakeSubText(string text)

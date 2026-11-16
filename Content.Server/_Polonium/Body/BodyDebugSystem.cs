@@ -66,17 +66,17 @@ public sealed partial class BodyDebugSystem : EntitySystem
     }
 
     /// <summary>
-    /// Sets an organ's integrity to a percentage of its cap, clamped to the organ's floor.
+    /// Sets an organ's integrity, clamped between the organ's floor and cap.
     /// Going down creates a real organ trauma, going up heals the organ's damage modifiers.
     /// </summary>
     /// <returns>False if the organ is not in the body, has no integrity or nothing could hold the wound.</returns>
-    public bool TrySetOrganIntegrity(EntityUid body, EntityUid organ, int percent)
+    public bool TrySetOrganIntegrity(EntityUid body, EntityUid organ, FixedPoint2 value)
     {
         if (!TryGetOrgan(body, organ, out var organComp) || !TryComp<OrganIntegrityComponent>(organ, out var integrity))
             return false;
 
         var cap = integrity.IntegrityCap;
-        var target = FixedPoint2.Clamp(cap * Math.Clamp(percent, 0, 100) / FixedPoint2.New(100), integrity.IntegrityFloor, cap);
+        var target = FixedPoint2.Clamp(value, integrity.IntegrityFloor, cap);
 
         // Compared against the summed modifiers, not the integrity: the integrity is clamped,
         // so an organ sitting on its floor can hide more damage than it shows.
@@ -131,7 +131,7 @@ public sealed partial class BodyDebugSystem : EntitySystem
     {
         return TryGetOrgan(body, organ, out var organComp)
                && organComp.Category != Brain
-               && TrySetOrganIntegrity(body, organ, 0);
+               && TrySetOrganIntegrity(body, organ, FixedPoint2.Zero);
     }
 
     /// <summary>
