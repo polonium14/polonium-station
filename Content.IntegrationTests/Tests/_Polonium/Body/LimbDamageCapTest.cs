@@ -12,6 +12,7 @@ using Content.Shared.FixedPoint;
 using NUnit.Framework;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests._Polonium.Body;
 
@@ -23,6 +24,9 @@ namespace Content.IntegrationTests.Tests._Polonium.Body;
 [TestFixture]
 public sealed class LimbDamageCapTest : GameTest
 {
+    private static readonly ProtoId<DamageTypePrototype> BluntType = "Blunt";
+    private static readonly ProtoId<DamageTypePrototype> Heat = "Heat";
+
     private DamageableSystem Damageable => SEntMan.System<DamageableSystem>();
 
     private EntityUid Part(EntityUid body, string category)
@@ -40,7 +44,7 @@ public sealed class LimbDamageCapTest : GameTest
 
     private DamageSpecifier Blunt(float amount)
     {
-        return new DamageSpecifier(Server.ProtoMan.Index<DamageTypePrototype>("Blunt"), amount);
+        return new DamageSpecifier(Server.ProtoMan.Index(BluntType), amount);
     }
 
     private EntityUid Attacker(EntityCoordinates coords, TargetBodyPart target)
@@ -105,7 +109,7 @@ public sealed class LimbDamageCapTest : GameTest
         await Server.WaitAssertion(() =>
         {
             var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
-            Damageable.TryChangeDamage(body, new DamageSpecifier(Server.ProtoMan.Index<DamageTypePrototype>("Heat"), 10),
+            Damageable.TryChangeDamage(body, new DamageSpecifier(Server.ProtoMan.Index(Heat), 10),
                 ignoreResistances: true);
 
             Assert.Multiple(() =>
