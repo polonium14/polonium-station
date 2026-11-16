@@ -107,6 +107,7 @@ patient-intake-failure-trauma = {$part}: trauma
 patient-intake-failure-bleeding = Bleeding
 patient-intake-failure-missingpart = Missing: {$part}
 patient-intake-failure-unfinishedsurgery = {$part}: unfinished surgery
+patient-intake-failure-cavityitem = {$part}: foreign object inside
 patient-intake-failure-lowblood = Blood volume too low
 patient-intake-failure-harmfulreagent = Harmful substance in the blood: {$part}
 patient-intake-failure-blind = Eye damage
@@ -161,6 +162,8 @@ patient-intake-issue-organ = Internal organ damage
 patient-intake-symptom-organ = Abdominal pain after an accident
 patient-intake-issue-eye-trauma = Eye trauma
 patient-intake-symptom-eye-trauma = Took a hit to the head
+patient-intake-issue-foreign-body = Foreign object in the chest cavity
+patient-intake-symptom-foreign-body = Pressure in the chest, "something is in there"
 patient-intake-issue-poisoning = Toxin poisoning
 patient-intake-symptom-poisoning = Nauseous, ate something odd
 patient-intake-issue-carp-poisoning = Carpotoxin poisoning
@@ -178,6 +181,7 @@ patient-intake-symptom-missing-limb = Lost a limb in an accident
 patient-intake-issue-replace-eyes = Requests new eyes (transplant)
 patient-intake-issue-replace-liver = Requests a liver transplant
 patient-intake-issue-replace-lungs = Requests a lung transplant
+patient-intake-issue-replace-spleen = Requests a spleen transplant
 patient-intake-issue-prosthesis = Wants a prosthesis: {$part}
 
 ## Device linking

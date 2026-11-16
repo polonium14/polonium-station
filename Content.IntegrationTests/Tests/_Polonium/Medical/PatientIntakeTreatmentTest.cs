@@ -12,6 +12,7 @@ using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Server._Shitmed.Medical.Surgery;
 using Content.Shared._Polonium.Body;
 using Content.Shared._Polonium.Medical.PatientIntake;
+using Content.Shared._Polonium.Medical.Surgery;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
@@ -58,6 +59,7 @@ public sealed class PatientIntakeTreatmentTest : GameTest
         { "Stomach", ("SurgeryInsertStomach", "SurgeryStepInsertStomach") },
         { "KidneyLeft", ("SurgeryInsertKidneyLeft", "SurgeryStepInsertKidney") },
         { "KidneyRight", ("SurgeryInsertKidneyRight", "SurgeryStepInsertKidney") },
+        { "Spleen", ("SurgeryInsertSpleen", "SurgeryStepInsertSpleen") },
         { "HandLeft", ("SurgeryAttachLeftHand", "SurgeryStepInsertHandLeft") },
         { "HandRight", ("SurgeryAttachRightHand", "SurgeryStepInsertHandRight") },
         { "FootLeft", ("SurgeryAttachLeftFoot", "SurgeryStepInsertFootLeft") },
@@ -190,6 +192,14 @@ public sealed class PatientIntakeTreatmentTest : GameTest
                 foreach (var category in InsertSurgery.Keys)
                     TransplantFromDonor(entMan, patient, donor, category, replace: false);
                 break;
+
+            case PatientIntakeIssueKind.CavityItem:
+            {
+                // The removal step of the surgery ends in the same place: the item out of the torso.
+                var torso = Organs(entMan, patient).Single(o => entMan.GetComponent<OrganComponent>(o).Category == "Torso");
+                Assert.That(entMan.System<SurgicalCavitySystem>().DropContents(torso), issue.ID);
+                break;
+            }
 
             case PatientIntakeIssueKind.ReplacePart:
             {

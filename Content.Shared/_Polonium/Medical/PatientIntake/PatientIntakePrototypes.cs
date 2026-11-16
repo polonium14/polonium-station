@@ -110,6 +110,8 @@ public enum PatientIntakeIssueKind : byte
     RemovePart,
     /// <summary>An organ from <see cref="PatientIntakeIssuePrototype.Categories"/> must be swapped for another.</summary>
     ReplacePart,
+    /// <summary>One item from <see cref="PatientIntakeIssuePrototype.Items"/> is hidden in the chest cavity.</summary>
+    CavityItem,
 }
 
 [Prototype]
@@ -153,6 +155,12 @@ public sealed partial class PatientIntakeIssuePrototype : IPrototype
     /// </summary>
     [DataField]
     public bool Prosthetic;
+
+    /// <summary>
+    /// <see cref="PatientIntakeIssueKind.CavityItem"/> only: the items one is picked from.
+    /// </summary>
+    [DataField]
+    public List<EntProtoId> Items = new();
 
     /// <summary>
     /// Case file line when the full issue list is shown. Gets <c>$part</c>.

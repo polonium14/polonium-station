@@ -247,6 +247,21 @@ public sealed partial class PatientIntakeSystem
                     comp.Prosthetic.Add(category);
                 return true;
             }
+
+            case PatientIntakeIssueKind.CavityItem:
+            {
+                if (issue.Items.Count == 0
+                    || !TryComp<BodyComponent>(patient, out var body)
+                    || !LimbTargetMap.TryGetOrganByCategory(EntityManager, body, Torso, out var torso))
+                    return false;
+
+                var item = Spawn(_random.Pick(issue.Items), Transform(patient).Coordinates);
+                if (_cavity.TryInsert(torso, item))
+                    return true;
+
+                Del(item);
+                return false;
+            }
         }
 
         return false;

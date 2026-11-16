@@ -6,6 +6,7 @@ using Content.Shared.Database;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Item;
 using Robust.Shared.Containers;
+using Robust.Shared.Network;
 
 namespace Content.Shared._Polonium.Medical.Surgery;
 
@@ -20,6 +21,7 @@ public sealed partial class SurgicalCavitySystem : EntitySystem
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedItemSystem _item = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private INetManager _net = default!;
 
     public const string ContainerId = "polonium_surgical_cavity";
 
@@ -78,14 +80,21 @@ public sealed partial class SurgicalCavitySystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Puts the item into the part's cavity, if the cavity is empty.
+    /// </summary>
+    public bool TryInsert(EntityUid part, EntityUid item)
+    {
+        if (GetContents(part) != null)
+            return false;
+
+        EnsureComp<SurgicalCavityComponent>(part);
+        return _container.Insert(item, _container.EnsureContainer<ContainerSlot>(part, ContainerId));
+    }
+
     private void OnInsertStep(Entity<SurgeryCavityInsertStepComponent> ent, ref SurgeryStepEvent args)
     {
-        if (args.Tool == args.User || !HasComp<ItemComponent>(args.Tool) || GetContents(args.Part) != null)
-            return;
-
-        EnsureComp<SurgicalCavityComponent>(args.Part);
-        var cavity = _container.EnsureContainer<ContainerSlot>(args.Part, ContainerId);
-        if (!_container.Insert(args.Tool, cavity))
+        if (args.Tool == args.User || !HasComp<ItemComponent>(args.Tool) || !TryInsert(args.Part, args.Tool))
             return;
 
         _adminLog.Add(LogType.Action, LogImpact.Medium,
@@ -102,9 +111,11 @@ public sealed partial class SurgicalCavitySystem : EntitySystem
             $"{ToPrettyString(args.User):user} took {ToPrettyString(item):item} out of the chest cavity of {ToPrettyString(args.Body):target}");
     }
 
+    // The server drops the item and the client gets the result; a client dropping it too would fight the state.
     private void OnPartTerminating(Entity<SurgicalCavityComponent> ent, ref EntityTerminatingEvent args)
     {
-        DropContents(ent);
+        if (_net.IsServer)
+            DropContents(ent);
     }
 
     /// <summary>
@@ -112,7 +123,8 @@ public sealed partial class SurgicalCavitySystem : EntitySystem
     /// </summary>
     private void OnPartRemoved(Entity<SurgicalCavityComponent> ent, ref EntGotRemovedFromContainerMessage args)
     {
-        DropContents(ent);
+        if (_net.IsServer)
+            DropContents(ent);
     }
 
     /// <summary>
@@ -121,10 +133,11 @@ public sealed partial class SurgicalCavitySystem : EntitySystem
     /// <returns>False if the cavity was empty.</returns>
     public bool DropContents(EntityUid part)
     {
-        if (GetContents(part) is not { } item || !_container.TryRemoveFromContainer(item))
+        // A body, or loose part, that is being deleted takes the item with it: there is nowhere to drop it.
+        var nextTo = CompOrNull<OrganComponent>(part)?.Body ?? part;
+        if (TerminatingOrDeleted(nextTo) || GetContents(part) is not { } item || !_container.TryRemoveFromContainer(item))
             return false;
 
-        var nextTo = CompOrNull<OrganComponent>(part)?.Body ?? part;
         _transform.DropNextTo(item, nextTo);
         return true;
     }
