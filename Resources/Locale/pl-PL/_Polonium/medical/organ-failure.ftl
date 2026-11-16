@@ -11,5 +11,3 @@ organ-failure-breathing-hurts = Boli cię przy oddychaniu!
 organ-failure-cant-breathe = Z bólu nie możesz złapać tchu!
 organ-failure-palpitations = Serce ci kołacze.
 organ-failure-breathless = Brakuje ci tchu.
-condition-organ-failure = • { $organ }: niewydolność, stadium { $stage }.
-health-analyzer-window-entity-spo2-text = SpO2:

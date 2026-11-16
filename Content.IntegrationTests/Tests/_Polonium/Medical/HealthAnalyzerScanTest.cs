@@ -1,3 +1,4 @@
+using Content.Server._Polonium.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using System.Linq;
 using Content.IntegrationTests.Fixtures;
@@ -21,7 +22,7 @@ namespace Content.IntegrationTests.Tests._Polonium.Medical;
 public sealed class HealthAnalyzerScanTest : GameTest
 {
     private BodyDebugSystem Debug => SEntMan.System<BodyDebugSystem>();
-    private ServerHealthAnalyzerSystem Analyzer => SEntMan.System<ServerHealthAnalyzerSystem>();
+    private PatientScanSystem Analyzer => SEntMan.System<PatientScanSystem>();
 
     private EntityUid Part(EntityUid body, string category)
     {

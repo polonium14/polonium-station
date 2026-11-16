@@ -1,4 +1,6 @@
+using Content.Shared.Body;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Storage;
@@ -8,9 +10,10 @@ using Robust.Shared.Containers;
 namespace Content.Shared.Medical.HealthAnalyzer;
 
 /// <summary>
-/// Polonium: a health analyzer, or a PDA with the MedTek cartridge, keeps scanning when put away where a medic keeps
-/// it at hand: a pocket, the PDA slot, the belt slot or a storage belt worn there. A backpack, the floor, a locker or
-/// someone else's hands still stop it.
+/// Polonium additions to the upstream analyzer. The patient scan reads the body, so only a mob with one can be scanned.
+/// A health analyzer, or a PDA with the MedTek cartridge, keeps scanning when put away where a medic keeps it at hand:
+/// a pocket, the PDA slot, the belt slot or a storage belt worn there. A backpack, the floor, a locker or someone
+/// else's hands still stop it.
 /// </summary>
 public abstract partial class HealthAnalyzerSystem
 {
@@ -19,6 +22,11 @@ public abstract partial class HealthAnalyzerSystem
     [Dependency] private SharedHandsSystem _hands = default!;
 
     private const SlotFlags ScanningSlots = SlotFlags.POCKET | SlotFlags.IDCARD | SlotFlags.BELT;
+
+    private bool ValidScanTarget(EntityUid target)
+    {
+        return HasComp<MobStateComponent>(target) && HasComp<BodyComponent>(target);
+    }
 
     private bool KeepsScanningWhereCarried(EntityUid analyzer)
     {

@@ -11,5 +11,3 @@ organ-failure-breathing-hurts = It hurts to breathe!
 organ-failure-cant-breathe = The pain will not let you catch your breath!
 organ-failure-palpitations = Your heart is racing.
 organ-failure-breathless = You are short of breath.
-condition-organ-failure = • { $organ }: failure, stage { $stage }.
-health-analyzer-window-entity-spo2-text = SpO2:

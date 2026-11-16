@@ -1,4 +1,15 @@
 using System.Linq;
+using Content.Server.Body.Components;
+using Content.Shared._Shitmed.Medical.Surgery;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
+using Content.Shared._Shitmed.Targeting;
+using Content.Shared.Body.Systems;
+using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Medical.HealthAnalyzer;
+using Content.Shared.MedicalScanner;
+using Robust.Server.GameObjects;
+using Robust.Shared.Prototypes;
 using Content.Server._Polonium.Body;
 using Content.Shared._Polonium.Body;
 using Content.Shared._Polonium.Medical.HealthAnalyzer;
@@ -17,16 +28,46 @@ using Content.Shared.Temperature.Components;
 using Content.Shared.Traits.Assorted;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Medical.HealthAnalyzer;
+namespace Content.Server._Polonium.Medical.HealthAnalyzer;
 
 /// <summary>
-/// Polonium: the one-view health analyzer. Gathers everything about a patient into a single message.
+/// The one-view health analyzer: gathers everything about a patient into a single message and sends it in place of
+/// the upstream analyzer state, for the handheld analyzer, the MedTek cartridge and the body scanner console.
 /// </summary>
-public sealed partial class ServerHealthAnalyzerSystem
+public sealed partial class PatientScanSystem : EntitySystem
 {
+    [Dependency] private BloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private CirculationSystem _circulation = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private MobThresholdSystem _mobThresholds = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private SharedSurgerySystem _surgerySystem = default!;
+    [Dependency] private UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private WoundSystem _woundSystem = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<HealthAnalyzerComponent, HealthAnalyzerUpdateUiEvent>(OnUpdateUi);
+    }
+
+    private void OnUpdateUi(Entity<HealthAnalyzerComponent> analyzer, ref HealthAnalyzerUpdateUiEvent args)
+    {
+        args.Handled = true;
+        SendScan(analyzer, HealthAnalyzerUiKey.Key, analyzer.Comp.ScannedEntity, analyzer.Comp.IsAnalyzerActive);
+    }
+
+    /// <summary>
+    /// Sends the whole scan of the target to the analyzer window on the given entity.
+    /// </summary>
+    public void SendScan(EntityUid uiEntity, Enum uiKey, EntityUid? target, bool scanActive)
+    {
+        if (!_uiSystem.HasUi(uiEntity, uiKey))
+            return;
+
+        _uiSystem.ServerSendUiMessage(uiEntity, uiKey, BuildScan(target, scanActive));
+    }
 
     /// <summary>
     /// Everything the analyzer shows about the target; an empty message when there is no patient with a body.
@@ -194,5 +235,143 @@ public sealed partial class ServerHealthAnalyzerSystem
         {
             scan.Organs.Add(new AnalyzerOrganData { Category = category, Missing = true });
         }
+    }
+
+    private Dictionary<TargetBodyPart, bool> FetchBleedData(BodyComponent body)
+    {
+        var bleeding = new Dictionary<TargetBodyPart, bool>();
+
+        if (body.Organs is null)
+            return bleeding;
+
+        foreach (var organ in body.Organs.ContainedEntities)
+        {
+            if (!TryComp<OrganComponent>(organ, out var organComp)
+                || organComp.Category is not { } category
+                || !LimbTargetMap.TryGetTarget(category, out var targetPart)
+                || !TryComp<WoundableComponent>(organ, out var woundable))
+                continue;
+
+            bleeding[targetPart] = woundable.Bleeds > 0;
+        }
+
+        return bleeding;
+    }
+
+    private Dictionary<TargetBodyPart, bool> FetchTourniquetData(BodyComponent body)
+    {
+        var tourniqueted = new Dictionary<TargetBodyPart, bool>();
+
+        if (body.Organs is null)
+            return tourniqueted;
+
+        foreach (var organ in body.Organs.ContainedEntities)
+        {
+            if (!TryComp<OrganComponent>(organ, out var organComp)
+                || organComp.Category is not { } category
+                || !LimbTargetMap.TryGetTarget(category, out var targetPart)
+                || !TryComp<WoundableComponent>(organ, out var woundable))
+                continue;
+
+            var hasTourniquet = false;
+            foreach (var wound in _woundSystem.GetWoundableWounds(organ, woundable))
+            {
+                if (!TryComp<BleedInflicterComponent>(wound, out var bleedInflicter))
+                    continue;
+
+                if (bleedInflicter.BleedingModifiers.ContainsKey("TourniquetPresent"))
+                {
+                    hasTourniquet = true;
+                    break;
+                }
+            }
+
+            tourniqueted[targetPart] = hasTourniquet;
+        }
+
+        return tourniqueted;
+    }
+
+    private Dictionary<TargetBodyPart, bool> FetchUnfinishedSurgeryData(BodyComponent body)
+    {
+        var unfinished = new Dictionary<TargetBodyPart, bool>();
+
+        if (body.Organs is null)
+            return unfinished;
+
+        foreach (var organ in body.Organs.ContainedEntities)
+        {
+            if (!TryComp<OrganComponent>(organ, out var organComp)
+                || organComp.Category is not { } category
+                || !LimbTargetMap.TryGetTarget(category, out var targetPart))
+                continue;
+
+            unfinished[targetPart] = _surgerySystem.HasUnfinishedSurgerySteps(organ);
+        }
+
+        return unfinished;
+    }
+
+    private List<ProtoId<OrganCategoryPrototype>> FetchMissingOrgansData(BodyComponent body)
+    {
+        var missing = new List<ProtoId<OrganCategoryPrototype>>();
+
+        if (body.ExpectedOrgans.Count == 0)
+            return missing;
+
+        var present = new HashSet<ProtoId<OrganCategoryPrototype>>();
+        if (body.Organs is not null)
+        {
+            foreach (var organ in body.Organs.ContainedEntities)
+            {
+                if (TryComp<OrganComponent>(organ, out var organComp) && organComp.Category is { } category)
+                    present.Add(category);
+            }
+        }
+
+        foreach (var expected in body.ExpectedOrgans)
+        {
+            if (!present.Contains(expected))
+                missing.Add(expected);
+        }
+
+        return missing;
+    }
+
+    private Dictionary<NetEntity, NamedSolution> FetchChemicalData(EntityUid target, BodyComponent body)
+    {
+        var solutions = new Dictionary<NetEntity, NamedSolution>();
+
+        if (TryComp<SolutionManagerComponent>(target, out var container))
+        {
+            foreach (var (name, solution) in _solutionContainerSystem.EnumerateSolutions((target, container)))
+            {
+                if (name is null || name == BloodstreamComponent.DefaultBloodTemporarySolutionName)
+                    continue;
+
+                var displayName = name switch
+                {
+                    BloodstreamComponent.DefaultBloodSolutionName => Loc.GetString("group-solution-name-bloodstream"),
+                    BloodstreamComponent.DefaultMetabolitesSolutionName => Loc.GetString("group-solution-name-metabolites"),
+                    "print" => Loc.GetString("group-solution-name-print"),
+                    _ => name,
+                };
+                solutions[GetNetEntity(solution)] = new NamedSolution(displayName, solution.Comp.Solution);
+            }
+        }
+
+        if (body.Organs is null)
+            return solutions;
+
+        foreach (var organ in body.Organs.ContainedEntities)
+        {
+            if (!TryComp<StomachComponent>(organ, out var stomach) || stomach.Solution is not { } stomachSolution)
+                continue;
+
+            var organName = MetaData(organ).EntityName;
+            solutions[GetNetEntity(stomachSolution)] = new NamedSolution(organName, stomachSolution.Comp.Solution);
+        }
+
+        return solutions;
     }
 }

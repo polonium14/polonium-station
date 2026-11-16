@@ -1,3 +1,4 @@
+using Content.Server._Polonium.Medical.HealthAnalyzer;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -5,7 +6,6 @@ using Content.IntegrationTests.Fixtures;
 using Content.Server._Shitmed.Medical.Surgery;
 using Content.Server.Medical.HealthAnalyzer;
 using Content.Shared._Polonium.Body;
-using Content.Shared._Shitmed.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Medical.Surgery.Conditions;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
@@ -211,7 +211,7 @@ public sealed class DeadOrganTest : GameTest
         {
             var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             Destroy(body, "Heart");
-            var heart = SEntMan.System<ServerHealthAnalyzerSystem>().BuildScan(body, true).Organs
+            var heart = SEntMan.System<PatientScanSystem>().BuildScan(body, true).Organs
                 .Where(organ => organ.Category == "Heart").ToList();
             Assert.Multiple(() =>
             {

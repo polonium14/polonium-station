@@ -1,4 +1,3 @@
-using Content.Shared._Shitmed.Medical.HealthAnalyzer;
 using Content.Shared.Medical.Cryogenics;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -67,18 +66,4 @@ public sealed partial class HealthAnalyzerComponent : Component
     /// </summary>
     [DataField]
     public bool Silent;
-
-    // Polonium start: Shitmed readout tabs
-    /// <summary>
-    /// Which tab of the Shitmed readout is shown.
-    /// </summary>
-    [DataField]
-    public HealthAnalyzerMode CurrentMode = HealthAnalyzerMode.Body;
-
-    /// <summary>
-    /// The body part picked on the body doll, if any.
-    /// </summary>
-    [DataField]
-    public EntityUid? CurrentBodyPart;
-    // Polonium end
 }

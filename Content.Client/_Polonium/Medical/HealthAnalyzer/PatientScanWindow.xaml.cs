@@ -4,7 +4,6 @@ using Content.Client.Resources;
 using Content.Client.Stylesheets.Palette;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Polonium.Medical.HealthAnalyzer;
-using Content.Shared._Shitmed.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds;
 using Content.Shared._Shitmed.Targeting;

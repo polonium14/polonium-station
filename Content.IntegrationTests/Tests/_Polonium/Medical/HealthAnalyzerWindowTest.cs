@@ -1,3 +1,4 @@
+using Content.Server._Polonium.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared.FixedPoint;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ public sealed class HealthAnalyzerWindowTest : GameTest
 
         await Server.WaitAssertion(() =>
         {
-            var analyzer = SEntMan.System<ServerHealthAnalyzerSystem>();
+            var analyzer = SEntMan.System<PatientScanSystem>();
             var debug = SEntMan.System<BodyDebugSystem>();
 
             EntityUid Part(EntityUid body, string category)

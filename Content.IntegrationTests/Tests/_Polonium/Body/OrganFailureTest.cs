@@ -1,3 +1,4 @@
+using Content.Server._Polonium.Medical.HealthAnalyzer;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -7,7 +8,6 @@ using Content.Server._Polonium.Body;
 using Content.Server.Body.Components;
 using Content.Server.Medical.HealthAnalyzer;
 using Content.Shared._Polonium.Body;
-using Content.Shared._Shitmed.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared.Body;
 using Content.Shared.Body.Systems;
@@ -433,7 +433,7 @@ public sealed class OrganFailureTest : GameTest
             Wear(lungs, 0.2f);
             Failure.SetStage((lungs, FailureOf(lungs)), 2);
 
-            var scan = SEntMan.System<ServerHealthAnalyzerSystem>().BuildScan(body, true);
+            var scan = SEntMan.System<PatientScanSystem>().BuildScan(body, true);
             Assert.That(scan.Organs.Single(organ => organ.Category == "LungLeft").FailureStage, Is.EqualTo(2));
         });
 

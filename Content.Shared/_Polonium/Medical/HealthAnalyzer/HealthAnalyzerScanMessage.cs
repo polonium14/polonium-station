@@ -1,4 +1,3 @@
-using Content.Shared._Shitmed.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds;
 using Content.Shared._Shitmed.Targeting;
@@ -110,3 +109,9 @@ public struct AnalyzerOrganData
     public bool Dead;
     public bool Missing;
 }
+
+/// <summary>
+/// One of the patient's solutions with the name the analyzer shows for it.
+/// </summary>
+[Serializable, NetSerializable]
+public record struct NamedSolution(string Name, Solution Solution);
