@@ -1,0 +1,7 @@
+# Breathing perfluorodecalin instead of air: no breath from the surroundings, the reagent supplies the oxygen.
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectLiquidBreathing
+  name: liquid breathing
+  components:
+  - type: LiquidBreathingStatusEffect

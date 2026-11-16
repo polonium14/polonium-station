@@ -20,3 +20,4 @@ entity-effect-guidebook-organ-Tongue = język
 entity-effect-guidebook-organ-Ears = uszy
 entity-effect-guidebook-organ-Appendix = wyrostek robaczkowy
 entity-effect-guidebook-organ-Brain = mózg
+entity-effect-guidebook-organ-Spleen = śledzionę

@@ -5,7 +5,11 @@ using Content.Shared._Polonium.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared.Body;
 using Content.Shared.Body.Systems;
+using Content.Server.Body.Systems;
+using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.FixedPoint;
 using NUnit.Framework;
 using Robust.Shared.GameObjects;
@@ -76,6 +80,8 @@ public sealed class OrganMedicineTest : GameTest
 
     [TestCase("Oculine", "Eyes")]
     [TestCase("Mannitol", "Brain")]
+    [TestCase("Salbutamol", "Spleen")]
+    [TestCase("Perfluorodecalin", "Spleen")]
     public async Task MedicineHealsItsOrgan(string reagent, string category)
     {
         var map = await Pair.CreateTestMap();
@@ -98,6 +104,50 @@ public sealed class OrganMedicineTest : GameTest
         {
             Assert.That(Integrity(body, category).OrganIntegrity, Is.GreaterThan(damaged));
         });
+    }
+
+    [Test]
+    public async Task PenteticAcidFlushesOtherChemicals()
+    {
+        var body = await Patient("PenteticAcid", 10);
+        await Server.WaitAssertion(() =>
+            Assert.That(SEntMan.System<BloodstreamSystem>().TryAddToBloodstream(body, new Solution("Bicaridine", 10))));
+
+        await Pair.RunSeconds(4);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.That(InBlood(body, "Bicaridine"), Is.EqualTo(FixedPoint2.Zero), "Other drugs are flushed out.");
+                Assert.That(InBlood(body, "PenteticAcid"), Is.GreaterThan(FixedPoint2.Zero), "The acid itself stays.");
+            });
+        });
+    }
+
+    [Test]
+    public async Task PerfluorodecalinBreathesForTheBodyInVacuum()
+    {
+        // The test map has no air, so an untreated body would start to suffocate at once.
+        var body = await Patient("Perfluorodecalin", 15);
+        await Pair.RunSeconds(10);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.That(SEntMan.System<StatusEffectsSystem>().HasEffectComp<LiquidBreathingStatusEffectComponent>(body));
+                Assert.That(SEntMan.System<RespiratorSystem>().IsBreathing(body), "The reagent keeps the blood oxygenated.");
+            });
+        });
+    }
+
+    private FixedPoint2 InBlood(EntityUid body, string reagent)
+    {
+        var bloodstream = SEntMan.GetComponent<BloodstreamComponent>(body);
+        Entity<SolutionComponent>? blood = null;
+        SEntMan.System<SharedSolutionContainerSystem>().ResolveSolution(body, bloodstream.BloodSolutionName, ref blood);
+        return blood!.Value.Comp.Solution.GetTotalPrototypeQuantity(reagent);
     }
 
     [Test]
