@@ -18,7 +18,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Shitmed.Medical.HealthAnalyzer;
+using Content.Client._Polonium.Medical.HealthAnalyzer; // Polonium
+using Content.Shared._Polonium.Medical.HealthAnalyzer; // Polonium
 using Content.Shared.MedicalScanner;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
@@ -29,7 +30,7 @@ namespace Content.Client.HealthAnalyzer.UI
     public sealed class HealthAnalyzerBoundUserInterface : BoundUserInterface
     {
         [ViewVariables]
-        private HealthAnalyzerWindow? _window;
+        private PatientScanWindow? _window; // Polonium: one view instead of tabs
 
         public HealthAnalyzerBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
@@ -39,33 +40,28 @@ namespace Content.Client.HealthAnalyzer.UI
         {
             base.Open();
 
-            _window = this.CreateWindow<HealthAnalyzerWindow>();
+            _window = this.CreateWindow<PatientScanWindow>(); // Polonium: one view instead of tabs
 
             _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
-
-            _window.OnModeChanged += (mode, owner) =>
-                SendMessage(new HealthAnalyzerModeSelectedMessage(EntMan.GetNetEntity(owner), mode));
-            _window.OnBodyPartSelected += (part, owner) =>
-                SendMessage(new HealthAnalyzerPartSelectedMessage(EntMan.GetNetEntity(owner), part));
         }
+
+        // Polonium: the window spawns a client-side doll entity
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            if (disposing)
+                _window?.ReleaseDoll();
+        }
+        // Polonium end
 
         protected override void ReceiveMessage(BoundUserInterfaceMessage message)
         {
             if (_window == null)
                 return;
 
-            switch (message)
-            {
-                case HealthAnalyzerBodyMessage body:
-                    _window.Populate(body);
-                    break;
-                case HealthAnalyzerOrgansMessage organs:
-                    _window.Populate(organs);
-                    break;
-                case HealthAnalyzerChemicalsMessage chemicals:
-                    _window.Populate(chemicals);
-                    break;
-            }
+            // Polonium: the whole scan in one message
+            if (message is HealthAnalyzerScanMessage scan)
+                _window.Populate(scan);
         }
     }
 }

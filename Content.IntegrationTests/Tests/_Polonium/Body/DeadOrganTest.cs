@@ -223,25 +223,14 @@ public sealed class DeadOrganTest : GameTest
         await Server.WaitAssertion(() =>
         {
             var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
-            var dead = Destroy(body, "Heart");
-            var bodyComp = SEntMan.GetComponent<BodyComponent>(body);
-            var analyzer = SEntMan.System<ServerHealthAnalyzerSystem>();
-
-            object Fetch(string method)
-            {
-                return typeof(ServerHealthAnalyzerSystem)
-                    .GetMethod(method, BindingFlags.Instance | BindingFlags.NonPublic)!
-                    .Invoke(analyzer, [bodyComp])!;
-            }
-
-            var organs = (Dictionary<NetEntity, OrganTraumaData>) Fetch("FetchOrganData");
-            var missing = (List<ProtoId<OrganCategoryPrototype>>) Fetch("FetchMissingOrgansData");
+            Destroy(body, "Heart");
+            var heart = SEntMan.System<ServerHealthAnalyzerSystem>().BuildScan(body, true).Organs
+                .Where(organ => organ.Category == "Heart").ToList();
             Assert.Multiple(() =>
             {
-                Assert.That(organs[SEntMan.GetNetEntity(dead)].Severity, Is.EqualTo(OrganSeverity.Destroyed));
-                Assert.That(organs[SEntMan.GetNetEntity(dead)].IntegrityCap, Is.GreaterThan(FixedPoint2.Zero),
-                    "The client skips organs with a zero integrity cap.");
-                Assert.That(missing, Does.Not.Contain(new ProtoId<OrganCategoryPrototype>("Heart")));
+                Assert.That(heart, Has.Count.EqualTo(1), "A dead heart is reported once, as dead, not as missing.");
+                Assert.That(heart[0].Dead);
+                Assert.That(heart[0].Missing, Is.False);
             });
         });
     }

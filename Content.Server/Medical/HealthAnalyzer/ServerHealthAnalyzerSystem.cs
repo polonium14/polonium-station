@@ -1,12 +1,10 @@
 ﻿using System.Linq;
 using Content.Server._Shitmed.PartStatus;
-using Content.Shared._Polonium.Body; // Polonium: dead organs
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
-using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared._Shitmed.Targeting;
@@ -14,7 +12,6 @@ using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.FixedPoint; // Polonium: dead organs
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Medical.HealthAnalyzer;
@@ -37,7 +34,6 @@ public sealed partial class ServerHealthAnalyzerSystem : HealthAnalyzerSystem
     [Dependency] private BloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private PartStatusSystem _partStatus = default!;
     [Dependency] private WoundSystem _woundSystem = default!;
-    [Dependency] private TraumaSystem _traumaSystem = default!;
     [Dependency] private SharedSurgerySystem _surgerySystem = default!;
     // Polonium end
 
@@ -71,59 +67,8 @@ public sealed partial class ServerHealthAnalyzerSystem : HealthAnalyzerSystem
         if (!_uiSystem.HasUi(uiEntity, uiKey))
             return;
 
-        // No patient to show (console not linked, linked bed empty, or target lost its body) -
-        // a null TargetEntity is exactly what the client's TrySetupEntity already treats as "no
-        // patient data", so this reuses the handheld analyzer's own empty state instead of
-        // needing a bespoke placeholder.
-        if (target is not { } validTarget || !TryComp<BodyComponent>(validTarget, out var body))
-        {
-            _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerBodyMessage(
-                null, float.NaN, float.NaN, null, false, null,
-                new(), false, new(), new(), new(), new(), null));
-            return;
-        }
-
-        var bodyTemperature = float.NaN;
-        if (TryComp<TemperatureComponent>(validTarget, out var temp))
-            bodyTemperature = temp.Temperature;
-
-        var bloodAmount = float.NaN;
-        if (HasComp<BloodstreamComponent>(validTarget))
-            bloodAmount = _bloodstreamSystem.GetBloodLevel(validTarget);
-
-        var bodyStatus = _woundSystem.GetDamageableStatesOnBody(validTarget);
-        var bleeding = FetchBleedData(body);
-        var systemicBleeding = TryComp<BloodstreamComponent>(validTarget, out var bloodstreamComp)
-            && bloodstreamComp.BleedAmountNotFromWounds > 0;
-        var tourniqueted = FetchTourniquetData(body);
-        var unfinishedSurgery = FetchUnfinishedSurgeryData(body);
-        var missingOrgans = FetchMissingOrgansData(body);
-        var spO2 = EntityManager.System<Content.Server._Polonium.Body.CirculationSystem>().ReadSpO2(validTarget); // Polonium: pulse oximetry
-
-        switch (mode)
-        {
-            case HealthAnalyzerMode.Organs:
-                _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerOrgansMessage(
-                    GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, bodyStatus, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans,
-                    FetchOrganData(body)) { SpO2 = spO2 }); // Polonium: pulse oximetry
-                break;
-
-            case HealthAnalyzerMode.Chemicals:
-                _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerChemicalsMessage(
-                    GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, bodyStatus, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans,
-                    FetchChemicalData(validTarget, body)) { SpO2 = spO2 }); // Polonium: pulse oximetry
-                break;
-
-            case HealthAnalyzerMode.Body:
-            default:
-                var unrevivable = TryComp<UnrevivableComponent>(validTarget, out var unrevivableComp) && unrevivableComp.Analyzable;
-
-                _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerBodyMessage(
-                    GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, unrevivable, bodyStatus, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans,
-                    FetchTraumaData(body), part != null ? GetNetEntity(part.Value) : null)
-                    { CirculationStopped = HasComp<Content.Server._Polonium.Body.StoppedCirculationComponent>(validTarget), SpO2 = spO2 }); // Polonium: no working heart, pulse oximetry
-                break;
-        }
+        // One view instead of tabs: the whole scan goes out every time, so the mode and part are not used.
+        _uiSystem.ServerSendUiMessage(uiEntity, uiKey, BuildScan(target, scanMode));
     }
 
     private Dictionary<TargetBodyPart, bool> FetchBleedData(BodyComponent body)
@@ -225,78 +170,6 @@ public sealed partial class ServerHealthAnalyzerSystem : HealthAnalyzerSystem
         }
 
         return missing;
-    }
-
-    private Dictionary<NetEntity, List<WoundableTraumaData>> FetchTraumaData(BodyComponent body)
-    {
-        var traumas = new Dictionary<NetEntity, List<WoundableTraumaData>>();
-
-        if (body.Organs is null)
-            return traumas;
-
-        foreach (var organ in body.Organs.ContainedEntities)
-        {
-            if (!HasComp<WoundableComponent>(organ))
-                continue;
-
-            traumas[GetNetEntity(organ)] = FetchTraumaData(organ);
-        }
-
-        return traumas;
-    }
-
-    private List<WoundableTraumaData> FetchTraumaData(EntityUid woundable)
-    {
-        var traumasList = new List<WoundableTraumaData>();
-
-        if (!_traumaSystem.TryGetWoundableTrauma(woundable, out var traumasFound))
-            return traumasList;
-
-        foreach (var trauma in traumasFound)
-        {
-            if (trauma.Comp.TraumaType == TraumaType.BoneDamage
-                && trauma.Comp.TraumaTarget is { } bone
-                && TryComp(bone, out BoneComponent? boneComp))
-            {
-                traumasList.Add(new WoundableTraumaData(
-                    trauma.Comp.TraumaType.ToString(), trauma.Comp.TraumaSeverity, boneComp.BoneSeverity.ToString()));
-                continue;
-            }
-
-            traumasList.Add(new WoundableTraumaData(trauma.Comp.TraumaType.ToString(), trauma.Comp.TraumaSeverity));
-        }
-
-        return traumasList;
-    }
-
-    private Dictionary<NetEntity, OrganTraumaData> FetchOrganData(BodyComponent body)
-    {
-        var organs = new Dictionary<NetEntity, OrganTraumaData>();
-
-        if (body.Organs is null)
-            return organs;
-
-        foreach (var organ in body.Organs.ContainedEntities)
-        {
-            // A dead organ has no integrity component. The client skips entries with a cap of 0, so it gets 0 out of 1.
-            if (HasComp<DeadOrganComponent>(organ))
-            {
-                organs[GetNetEntity(organ)] = new OrganTraumaData(FixedPoint2.Zero, FixedPoint2.New(1), OrganSeverity.Destroyed, new());
-                continue;
-            }
-
-            if (!TryComp<OrganIntegrityComponent>(organ, out var integrity))
-                continue;
-
-            organs[GetNetEntity(organ)] = new OrganTraumaData(
-                integrity.OrganIntegrity,
-                integrity.IntegrityCap,
-                integrity.OrganSeverity,
-                integrity.IntegrityModifiers.Select(x => (x.Key.Item1, x.Value)).ToList())
-                { FailureStage = CompOrNull<OrganFailureComponent>(organ)?.Stage ?? 0 }; // Polonium: staged organ failure
-        }
-
-        return organs;
     }
 
     private Dictionary<NetEntity, NamedSolution> FetchChemicalData(EntityUid target, BodyComponent body)

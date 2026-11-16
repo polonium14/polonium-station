@@ -433,11 +433,8 @@ public sealed class OrganFailureTest : GameTest
             Wear(lungs, 0.2f);
             Failure.SetStage((lungs, FailureOf(lungs)), 2);
 
-            var analyzer = SEntMan.System<ServerHealthAnalyzerSystem>();
-            var organs = (Dictionary<NetEntity, OrganTraumaData>) typeof(ServerHealthAnalyzerSystem)
-                .GetMethod("FetchOrganData", BindingFlags.Instance | BindingFlags.NonPublic)!
-                .Invoke(analyzer, [SEntMan.GetComponent<BodyComponent>(body)])!;
-            Assert.That(organs[SEntMan.GetNetEntity(lungs)].FailureStage, Is.EqualTo(2));
+            var scan = SEntMan.System<ServerHealthAnalyzerSystem>().BuildScan(body, true);
+            Assert.That(scan.Organs.Single(organ => organ.Category == "LungLeft").FailureStage, Is.EqualTo(2));
         });
 
         for (var i = 0; i < 10; i++)

@@ -19,7 +19,9 @@ W tym przewodniku znajdziesz podstawowe informacje na temat dostępnych metod le
 ## Podstawy
 Istnieją dwa sposoby ustalenia, co dolega danej osobie: wykonanie skanu (za pomocą analizatora zdrowia lub medycznego PDA) lub zbadanie pacjenta poprzez naciśnięcie klawisza Shift i kliknięcie symbolu serca.
 
-Korzystanie z analizatora zdrowia jest często skuteczniejsze niż badanie fizykalne, ponieważ niektóre schorzenia (takie jak zatrucie lub napromieniowanie) nie są wykrywane podczas badania. Jednak używanie analizatora ma swoje wady, ponieważ generuje hałas i zużywa baterię.<Box>
+Korzystanie z analizatora zdrowia jest często skuteczniejsze niż badanie fizykalne, ponieważ niektóre schorzenia (takie jak zatrucie lub napromieniowanie) nie są wykrywane podczas badania. Jednak używanie analizatora ma swoje wady, ponieważ generuje hałas i zużywa baterię.
+
+Analizator pokazuje wszystko na jednym ekranie. Na górze są SpO2, krew i temperatura z paskami: kreska na pasku SpO2 to 88%, poniżej której pacjent się dusi, a kreska na pasku krwi to poziom, od którego utrata krwi zaczyna ranić. Strzałka obok wartości mówi, czy rośnie, czy spada. Ramka [color=#e8c878]Wymaga interwencji[/color] zbiera to, czym trzeba się zająć, najgroźniejsze na górze, i znika, gdy nic pacjentowi nie grozi. Niżej są kukła z urazami kończyn, obok niej opis każdej rannej kończyny (krwawienie, złamanie, opaska uciskowa, niedokończona operacja), i narządy z paskami integralności oraz kwadracikami stadium niewydolności, widocznymi tylko przy niewydolności. Na dole są obrażenia z pomarańczową kreską stanu krytycznego i czerwoną kreską śmierci oraz substancje we krwi, jeśli jakieś są. Kliknięcie kończyny na kukle pokazuje obrażenia tylko tej kończyny. Najedź na wiersz, żeby zobaczyć szczegóły i wskazówkę leczenia. W okularach z HUD medycznym nad pacjentem z niedokończoną operacją widać ikonę kleszczyków chirurgicznych, a analizator pokazuje ją w ramce jako „operacja w toku”.<Box>
 <GuideEntityEmbed Entity="SignExamroom" Caption="zbadaj pacjenta"/>
 <GuideEntityEmbed Entity="MedicalPDA"/>
 <GuideEntityEmbed Entity="MedicalInternPDA"/>
@@ -73,7 +75,7 @@ Jeśli to możliwe, przypnij pacjenta do łóżka medycznego; jeśli potrzebujes
 Łóżko medyczne ma gniazdo na zbiornik gazu. Włóż do niego butlę z tlenem (albo z innym gazem, np. podtlenkiem azotu), przypnij pacjenta i wybierz „Włącz układ oddechowy”. Łóżko założy pacjentowi własną maskę i podłączy butlę. Jeśli pacjent ma już maskę do oddychania, łóżko użyje jej, a cudzą maskę, której nie da się podłączyć do gazu, trzeba najpierw zdjąć. Po wyłączeniu układu albo odpięciu pacjenta maska wraca do łóżka. Pamiętaj, że gaz z butli trzeba dobrać do gatunku pacjenta, np. Vox oddycha azotem.
 ## Stan narządu
 
-Narząd jest w jednym z trzech stanów, które pokazuje analizator zdrowia w trybie narządów:
+Narząd jest w jednym z trzech stanów, które pokazuje analizator zdrowia:
 
 - [color=#e8c878]Stan w większości dobry[/color]: narząd ma co najmniej 35% integralności i działa w pełni.
 - [color=#e8c878]Uszkodzony[/color]: narząd ma mniej niż 35% integralności. Wyleczysz go operacją „Ulecz narządy”.
@@ -114,7 +116,7 @@ Uszkodzone oczy, język i uszy słabną stopniowo, a uszkodzony mózg osłabia j
 
 ## Niewydolność narządów
 
-Uszkodzone serce, płuca, wątroba albo nerki mogą popaść w niewydolność. Choroba narasta w trzech stadiach, co kilka minut, i sama dalej niszczy narząd. Analizator pokazuje ją w trybie narządów razem ze stadium. Mija, gdy narząd wróci do co najmniej 35% integralności, albo po jego wymianie.
+Uszkodzone serce, płuca, wątroba albo nerki mogą popaść w niewydolność. Choroba narasta w trzech stadiach, co kilka minut, i sama dalej niszczy narząd. Analizator pokazuje ją przy narządzie razem ze stadium. Mija, gdy narząd wróci do co najmniej 35% integralności, albo po jego wymianie.
 
 - [color=#e8c878]Stadium 1[/color]: pacjent blednie, drży, skarży się na ból brzucha albo żeber.
 - [color=#e8c878]Stadium 2[/color]: jęki, silny ból, krótkie omdlenia.
