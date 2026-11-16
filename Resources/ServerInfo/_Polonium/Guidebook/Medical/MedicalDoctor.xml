@@ -106,6 +106,16 @@ Płuca i nerki są parą: lewe i prawe płuco oraz lewa i prawa nerka to osobne 
 <GuideEntityEmbed Entity="OrganSpleen" Caption="śledziona"/>
 </Box>
 
+## Co niszczy narządy
+
+Narządy zużywają się nie tylko od ran. Uszkodzenia zbierają się powoli i same nie znikają, więc pacjent może przyjść z chorym narządem bez żadnego urazu:
+
+- [color=#e8c878]Wątroba[/color]: trucizny i dużo alkoholu naraz. Jedno piwo nie szkodzi, butelka wódki tak.
+- [color=#e8c878]Nerki[/color]: trucizny i długie pragnienie.
+- [color=#e8c878]Płuca[/color]: papierosy, wdychanie plazmy albo trytium i gorące powietrze, na przykład przy pożarze. Maska z butlą chroni przed gazem i żarem.
+- [color=#e8c878]Serce[/color]: porażenie prądem oraz przedawkowanie efedryny, dezoksyefedryny albo hiperzyny. Epinefryna w zwykłej dawce leczy serce.
+- [color=#e8c878]Śledziona[/color]: promieniowanie.
+
 ## Zmysły
 
 Uszkodzone oczy, język i uszy słabną stopniowo, a uszkodzony mózg osłabia je wszystkie naraz. Po lobotomii mózg działa najwyżej w 20%, nawet zdrowy: pacjent widzi mocno rozmyte, słabo słyszy i silnie sepleni. Cofa to operacja „Napraw tkankę mózgową”.

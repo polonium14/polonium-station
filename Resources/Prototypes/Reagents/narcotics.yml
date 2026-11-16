@@ -19,6 +19,13 @@
             Poison: 0.55
             Blunt: 1.1 # meant to be slightly more than tricordrazine heals
       # OD
+      - !type:DamageOrgans # Polonium: an overdose strains the heart, a lasting mark on those who survive it
+        conditions:
+        - !type:ReagentCondition
+          reagent: Desoxyephedrine
+          min: 16
+        categories: [ Heart ]
+        amount: 0.25
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition
@@ -96,6 +103,13 @@
         type: Local
         probability: 0.05
       # OD
+      - !type:DamageOrgans # Polonium: an overdose strains the heart, a lasting mark on those who survive it
+        conditions:
+        - !type:ReagentCondition
+          reagent: Ephedrine
+          min: 20
+        categories: [ Heart ]
+        amount: 0.25
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition
@@ -177,6 +191,13 @@
       # Side effects
       - !type:Jitter
       # OD
+      - !type:DamageOrgans # Polonium: an overdose strains the heart, a lasting mark on those who survive it
+        conditions:
+        - !type:ReagentCondition
+          reagent: Stimulants
+          min: 45
+        categories: [ Heart ]
+        amount: 0.25
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition
@@ -257,6 +278,16 @@
   flavor: bitter
   color: "#C0C0C0"
   physicalDesc: reagent-physical-desc-strong-smelling
+  # Polonium: smoking wears the lungs down, about 1 integrity per lung per cigarette.
+  # The rate matches what a cigarette puts in the blood (0.15u every 3 s).
+  metabolisms:
+    Bloodstream:
+      metabolismRate: 0.05
+      effects:
+      - !type:DamageOrgans
+        probability: 0.5
+        categories: [ Lungs ]
+        amount: 0.01
   plantMetabolism:
   - !type:PlantAdjustHealth
     amount: -5

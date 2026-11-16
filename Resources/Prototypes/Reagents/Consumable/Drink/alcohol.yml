@@ -260,6 +260,18 @@
           inverted: true
       - !type:Drunk
         boozePower: 2
+      # Polonium: heavy drinking wears the liver down; one drink stays under the threshold
+      - !type:DamageOrgans
+        probability: 0.2
+        categories: [ Liver ]
+        amount: 0.1
+        conditions:
+        - !type:ReagentCondition
+          reagent: Ethanol
+          min: 10
+        - !type:MetabolizerTypeCondition
+          type: [ Dwarf, Allulalo ]
+          inverted: true
 
 - type: reagent
   id: Gin

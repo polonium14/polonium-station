@@ -80,6 +80,7 @@ public sealed class OrganMedicineTest : GameTest
 
     [TestCase("Oculine", "Eyes")]
     [TestCase("Mannitol", "Brain")]
+    [TestCase("Epinephrine", "Heart")]
     [TestCase("Salbutamol", "Spleen")]
     [TestCase("Perfluorodecalin", "Spleen")]
     public async Task MedicineHealsItsOrgan(string reagent, string category)

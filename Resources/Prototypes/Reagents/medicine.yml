@@ -471,6 +471,13 @@
           types:
             Asphyxiation: 1
             Poison: 1
+      - !type:HealOrgans # Polonium: heart medicine
+        conditions:
+        - !type:ReagentCondition
+          reagent: Epinephrine
+          max: 20
+        categories: [ Heart ]
+        amount: 0.5
       - !type:AdjustReagent
         reagent: HeartbreakerToxin
         amount: -2

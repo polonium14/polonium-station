@@ -87,10 +87,16 @@ public sealed partial class CirculationSystem : EntitySystem
     private const float OneLungCap = 0.6f;
 
     /// <summary>
-    /// Share of poison damage the kidneys and the liver lose when it hurts them.
+    /// Damage types that wear an organ down, and the share of the damage the organ loses when it does.
+    /// Poison strains the kidneys and liver, electricity the heart, radiation the blood-making spleen.
     /// </summary>
-    private const float KidneyToxinShare = 0.1f;
-    private const float LiverToxinShare = 0.04f;
+    private static readonly (ProtoId<DamageTypePrototype> Type, ProtoId<OrganCategoryPrototype> Organ, float Share)[] StrainedOrgans =
+    [
+        ("Poison", PairedOrgans.Kidneys, 0.1f),
+        ("Poison", "Liver", 0.04f),
+        ("Shock", "Heart", 0.2f),
+        ("Radiation", "Spleen", 0.1f),
+    ];
 
     /// <summary>
     /// A reading older than this starts the average over.
@@ -142,18 +148,30 @@ public sealed partial class CirculationSystem : EntitySystem
 
     private void OnDamageDealt(Entity<HumanoidProfileComponent> ent, ref DamageDealtEvent args)
     {
-        if (_organPoison
-            || !args.Damage.DamageDict.TryGetValue(Poison, out var poison)
-            || poison <= FixedPoint2.Zero)
+        if (_organPoison)
             return;
 
-        HurtOrgan(ent, PairedOrgans.Kidneys, poison * KidneyToxinShare);
-        HurtOrgan(ent, Liver, poison * LiverToxinShare);
+        foreach (var (type, organ, share) in StrainedOrgans)
+        {
+            if (args.Damage.DamageDict.TryGetValue(type, out var damage) && damage > FixedPoint2.Zero)
+                HurtOrgan(ent, organ, damage.Float() * share);
+        }
     }
 
-    private void HurtOrgan(EntityUid body, ProtoId<OrganCategoryPrototype> category, FixedPoint2 amount)
+    private void HurtOrgan(EntityUid body, ProtoId<OrganCategoryPrototype> category, float share)
     {
         if (!_random.Prob(_toxinOrganChance))
+            return;
+
+        // FixedPoint2 keeps hundredths, so a tick's share (often 0.004) would round to nothing.
+        // Rounding up by the leftover's chance keeps the average right.
+        var hundredths = share * 100f;
+        var whole = MathF.Floor(hundredths);
+        if (_random.Prob(hundredths - whole))
+            whole++;
+
+        var amount = FixedPoint2.New(whole / 100f);
+        if (amount <= FixedPoint2.Zero)
             return;
 
         // One organ, so a pair of kidneys wears down as fast as a single one and rarely fails at once.
