@@ -121,6 +121,10 @@ public abstract partial class HealthAnalyzerSystem : EntitySystem
         if (_timing.ApplyingState)
             return;
 
+        // Polonium: keeps scanning from a pocket, the PDA slot or the belt, see HealthAnalyzerSystem.Carried
+        if (KeepsScanningWhereCarried(analyzer))
+            return;
+
         StopAnalyzingEntity(analyzer);
     }
 
