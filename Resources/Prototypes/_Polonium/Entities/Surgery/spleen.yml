@@ -1,0 +1,32 @@
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveSpleen
+  name: Remove spleen
+  components:
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: Spleen
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertSpleen
+  name: Insert spleen
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepInsertSpleen
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: Spleen
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertSpleen
+  name: Add spleen
+  components:
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/spleen.rsi
+    state: spleen
