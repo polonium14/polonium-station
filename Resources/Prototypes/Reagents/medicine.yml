@@ -838,6 +838,10 @@
           factor: 6
         - !type:ModifyBloodLevel
           amount: 12 # NFZ bumped 6 -> 12
+        - !type:HealOrgans # Polonium: an IV drip supports the kidneys, like drunk water
+          categories: [ Kidneys ]
+          amount: 0.5
+          probability: 0.1
     #Macrocosm edit start
         - !type:HealthChange
           conditions:
