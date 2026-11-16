@@ -98,6 +98,12 @@ Płuca i nerki są parą: lewe i prawe płuco oraz lewa i prawa nerka to osobne 
 <GuideEntityEmbed Entity="OrganHumanKidneyRight" Caption="prawa nerka"/>
 </Box>
 
+Śledziona dba o to, żeby krew sama się uzupełniała. Bez działającej śledziony krew przestaje się odnawiać, a pacjent powoli ją traci: człowiek spada poniżej bezpiecznego poziomu po około 3 minutach. Do czasu przeszczepu krew uzupełnisz kroplówką, solą fizjologiczną albo żelazem.
+
+<Box>
+<GuideEntityEmbed Entity="OrganSpleen" Caption="śledziona"/>
+</Box>
+
 ## Zmysły
 
 Uszkodzone oczy, język i uszy słabną stopniowo, a uszkodzony mózg osłabia je wszystkie naraz.
