@@ -2,6 +2,7 @@ using System.Linq;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Body;
 using Content.Shared._Polonium.Body;
+using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared.Body;
 using Content.Shared.Chat;
@@ -112,6 +113,45 @@ public sealed class SensesTest : GameTest
                 Assert.That(SEntMan.GetComponent<BlindableComponent>(body).MinDamage, Is.GreaterThan(0), "Healthy eyes, damaged brain: blurry.");
                 Assert.That(SEntMan.GetComponent<HearingLossComponent>(body).Garble, Is.GreaterThan(0f));
                 Assert.That(SEntMan.GetComponent<PolishLispComponent>(body).Chance, Is.EqualTo(0.7f).Within(0.02f));
+            });
+        });
+    }
+
+    [Test]
+    public async Task LobotomyCapsTheBrainUntilMended()
+    {
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+
+        // The lobotomy step marks the head, the mending step takes the mark off.
+        await Server.WaitAssertion(() =>
+        {
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            SEntMan.AddComponent<LobotomizedComponent>(Organ(body, "Head"));
+        });
+        await Pair.RunTicksSync(3);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.That(SEntMan.System<SensesSystem>().GetEfficiency(body, "Eyes"), Is.EqualTo(0.2f).Within(0.01f),
+                    "A healthy brain counts for 20% once lobotomized.");
+                Assert.That(SEntMan.GetComponent<BlindableComponent>(body).MinDamage, Is.GreaterThan(0));
+                Assert.That(SEntMan.GetComponent<PolishLispComponent>(body).Chance, Is.EqualTo(0.8f).Within(0.02f));
+            });
+
+            SEntMan.RemoveComponent<LobotomizedComponent>(Organ(body, "Head"));
+        });
+        await Pair.RunTicksSync(3);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.That(SEntMan.System<SensesSystem>().GetEfficiency(body, "Eyes"), Is.EqualTo(1f).Within(0.01f));
+                Assert.That(SEntMan.GetComponent<BlindableComponent>(body).MinDamage, Is.Zero);
+                Assert.That(SEntMan.HasComponent<PolishLispComponent>(body), Is.False);
             });
         });
     }

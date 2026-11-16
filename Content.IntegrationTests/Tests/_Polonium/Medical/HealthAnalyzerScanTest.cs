@@ -3,6 +3,7 @@ using System.Linq;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Body;
 using Content.Server.Medical.HealthAnalyzer;
+using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body;
@@ -104,6 +105,11 @@ public sealed class HealthAnalyzerScanTest : GameTest
             });
 
             Assert.That(Analyzer.BuildScan(SEntMan.SpawnAtPosition("MobMonkey", map.GridCoords), true).Target, Is.Not.Null);
+
+            var lobotomized = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            Assert.That(Analyzer.BuildScan(lobotomized, true).Lobotomized, Is.False);
+            SEntMan.AddComponent<LobotomizedComponent>(Part(lobotomized, "Head"));
+            Assert.That(Analyzer.BuildScan(lobotomized, true).Lobotomized, "The lobotomy shows in the alerts.");
         });
     }
 }

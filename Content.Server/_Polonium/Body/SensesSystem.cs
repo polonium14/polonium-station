@@ -1,6 +1,9 @@
 using Content.Shared._Polonium.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
+using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
 using Content.Shared.Body;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
@@ -33,6 +36,9 @@ public sealed partial class SensesSystem : EntitySystem
 {
     [Dependency] private BlindableSystem _blindable = default!;
     [Dependency] private PolishLispSystem _lisp = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+
+    private float _lobotomyBrainEfficiency;
 
     private static readonly ProtoId<OrganCategoryPrototype> Brain = "Brain";
     private static readonly ProtoId<OrganCategoryPrototype> Eyes = "Eyes";
@@ -54,6 +60,18 @@ public sealed partial class SensesSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<OrganIntegrityComponent, OrganIntegrityChangedEvent>(OnIntegrityChanged);
+        SubscribeLocalEvent<LobotomizedComponent, ComponentStartup>(OnLobotomyChanged);
+        SubscribeLocalEvent<LobotomizedComponent, ComponentShutdown>(OnLobotomyChanged);
+        Subs.CVar(_cfg, CCVars.OrgansLobotomyBrainEfficiency, value => _lobotomyBrainEfficiency = value, true);
+    }
+
+    /// <summary>
+    /// The lobotomy surgery marks the head, the mending surgery takes the mark off; either way the senses change.
+    /// </summary>
+    private void OnLobotomyChanged<T>(Entity<LobotomizedComponent> ent, ref T args)
+    {
+        if (CompOrNull<OrganComponent>(ent)?.Body is { } body)
+            MarkDirty(body);
     }
 
     private void OnIntegrityChanged(Entity<OrganIntegrityComponent> ent, ref OrganIntegrityChangedEvent args)
@@ -102,8 +120,10 @@ public sealed partial class SensesSystem : EntitySystem
 
         var brain = 0f;
         var organ = 0f;
+        var lobotomized = false;
         foreach (var uid in organs.ContainedEntities)
         {
+            lobotomized |= HasComp<LobotomizedComponent>(uid);
             var organCategory = CompOrNull<OrganComponent>(uid)?.Category;
             if (organCategory != category && organCategory != Brain || !TryComp<OrganIntegrityComponent>(uid, out var integrity))
                 continue;
@@ -115,6 +135,9 @@ public sealed partial class SensesSystem : EntitySystem
             else
                 organ = fraction;
         }
+
+        if (lobotomized)
+            brain = MathF.Min(brain, _lobotomyBrainEfficiency);
 
         return organ * brain;
     }

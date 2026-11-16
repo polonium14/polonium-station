@@ -28,6 +28,7 @@ health-analyzer-scan-alert-bleeding-systemic = Krwawienie bez rany
 health-analyzer-scan-alert-surgery = {$limb}: operacja w toku
 health-analyzer-scan-alert-failure = {$organ}: niewydolność, stadium {$stage}
 health-analyzer-scan-alert-dead-organ = {$organ}: martwy narząd
+health-analyzer-scan-alert-lobotomy = Mózg: po lobotomii
 health-analyzer-scan-alert-blood = Mało krwi: {$value}%
 health-analyzer-scan-alert-unrevivable = Nie da się ożywić: {$reason}
 health-analyzer-scan-alert-more = i {$count} więcej

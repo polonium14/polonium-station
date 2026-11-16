@@ -1,7 +1,9 @@
+using System.Linq;
 using Content.Server._Polonium.Body;
 using Content.Shared._Polonium.Body;
 using Content.Shared._Polonium.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Body;
+using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
@@ -72,6 +74,7 @@ public sealed partial class ServerHealthAnalyzerSystem
         FetchOrgans(body, scan);
 
         scan.CirculationStopped = _circulation.IsStopped(patient);
+        scan.Lobotomized = body.Organs?.ContainedEntities.Any(HasComp<LobotomizedComponent>) ?? false;
         // The reasons the circulation sets (no heart, no brain) are hidden from the old analyzer's trait line, not from this.
         if (TryComp<UnrevivableComponent>(patient, out var unrevivable)
             && (unrevivable.Analyzable || HasComp<MissingVitalOrganComponent>(patient)))

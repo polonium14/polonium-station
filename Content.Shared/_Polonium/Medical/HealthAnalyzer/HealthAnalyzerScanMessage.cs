@@ -63,6 +63,11 @@ public sealed class HealthAnalyzerScanMessage : BoundUserInterfaceMessage
     public bool CirculationStopped;
 
     /// <summary>
+    /// The head carries a lobotomy, which holds the brain back until it is mended.
+    /// </summary>
+    public bool Lobotomized;
+
+    /// <summary>
     /// Why a defibrillator will not bring the patient back, if it will not.
     /// </summary>
     public LocId? Unrevivable;

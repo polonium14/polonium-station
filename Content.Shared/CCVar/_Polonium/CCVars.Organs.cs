@@ -34,4 +34,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> OrgansFailureStageChance =
         CVarDef.Create("organs.failure_stage_chance", 0.0025f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// The most a lobotomized brain counts for in the senses, 0 to 1, whatever its integrity.
+    /// </summary>
+    public static readonly CVarDef<float> OrgansLobotomyBrainEfficiency =
+        CVarDef.Create("organs.lobotomy_brain_efficiency", 0.2f, CVar.SERVERONLY);
 }

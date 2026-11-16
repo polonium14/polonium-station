@@ -413,6 +413,9 @@ public sealed partial class PatientScanWindow : FancyWindow
             alerts.Add((Loc.GetString("health-analyzer-scan-alert-dead-organ", ("organ", OrganName(organ.Category))), true));
         }
 
+        if (scan.Lobotomized)
+            alerts.Add((Loc.GetString("health-analyzer-scan-alert-lobotomy"), false));
+
         if (!float.IsNaN(scan.BloodLevel) && scan.BloodLevel < scan.BloodlossThreshold)
             alerts.Add((Loc.GetString("health-analyzer-scan-alert-blood", ("value", $"{scan.BloodLevel * 100:0}")), true));
 
