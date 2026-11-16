@@ -84,6 +84,7 @@
       Liver: OrganHorrorLiver
       KidneyLeft: OrganHorrorKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganHorrorKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
 
 - type: entity
   parent:

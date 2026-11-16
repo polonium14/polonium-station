@@ -109,6 +109,7 @@
       Liver: OrganAntLiver
       KidneyLeft: OrganAntKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganAntKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Ant
 

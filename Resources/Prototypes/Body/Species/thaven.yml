@@ -88,6 +88,7 @@
       Liver: OrganThavenLiver
       KidneyLeft: OrganThavenKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganThavenKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Thaven
   - type: Inventory

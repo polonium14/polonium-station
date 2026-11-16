@@ -135,6 +135,7 @@
       Liver: OrganMothLiver
       KidneyLeft: OrganMothKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganMothKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Moth
 

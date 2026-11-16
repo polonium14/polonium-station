@@ -109,6 +109,7 @@
       Liver: OrganVulpkaninLiver
       KidneyLeft: OrganVulpkaninKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganVulpkaninKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Vulpkanin
   - type: Inventory

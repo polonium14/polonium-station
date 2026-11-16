@@ -1,0 +1,37 @@
+# The spleen keeps the blood topping itself up. Without a working one the body stops regenerating blood and slowly
+# loses it (CirculationSystem). One spleen fits every species, as it has no chemistry of its own.
+
+- type: organCategory
+  id: Spleen
+
+- type: entity
+  parent: [ OrganBase, OrganBaseChildInternal ]
+  id: OrganSpleen
+  name: spleen
+  description: Keeps the blood topping itself up.
+  components:
+  - type: GibbableOrgan
+  - type: Organ
+    category: Spleen
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/spleen.rsi
+    state: spleen
+  - type: OrganIntegrity # Same thresholds as the other organs: healthy from 35% integrity, dead at 0
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 10.5
+      Damaged: 0.01
+      Destroyed: 0
+    deadOrgan: OrganDeadSpleen
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadSpleen
+  name: dead spleen
+  components:
+  - type: Organ
+    category: Spleen
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/spleen.rsi
+    state: spleen
+    color: "#7a6a62"

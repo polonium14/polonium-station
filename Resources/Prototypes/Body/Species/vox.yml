@@ -155,6 +155,7 @@
       Liver: OrganVoxLiver
       KidneyLeft: OrganVoxKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganVoxKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Vox
 

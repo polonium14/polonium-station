@@ -96,6 +96,7 @@
       Liver: OrganDwarfLiver
       KidneyLeft: OrganHumanKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganHumanKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: Hands
     leftHandDisplacement:
       sizeMaps:

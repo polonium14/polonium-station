@@ -110,6 +110,7 @@
       Liver: OrganReptilianLiver
       KidneyLeft: OrganReptilianKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganReptilianKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Reptilian
 

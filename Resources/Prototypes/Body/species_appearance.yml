@@ -91,7 +91,7 @@
         type: StrippableBoundUserInterface
   - type: InitialBody
     relationships:
-      Torso: [Head, ArmLeft, ArmRight, LegLeft, LegRight, Appendix, Lungs, Heart, Stomach, Liver, Kidneys, LungLeft, LungRight, KidneyLeft, KidneyRight] # Polonium: paired lungs and kidneys
+      Torso: [Head, ArmLeft, ArmRight, LegLeft, LegRight, Appendix, Lungs, Heart, Stomach, Liver, Kidneys, LungLeft, LungRight, KidneyLeft, KidneyRight, Spleen] # Polonium: paired lungs and kidneys, spleen
       Head: [Brain, Eyes, Tongue, Ears]
       ArmLeft: [HandLeft]
       ArmRight: [HandRight]

@@ -91,6 +91,7 @@
       Liver: OrganHarpyLiver
       KidneyLeft: OrganHarpyKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganHarpyKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Harpy
   - type: Inventory

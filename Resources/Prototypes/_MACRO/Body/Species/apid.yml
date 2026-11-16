@@ -165,6 +165,7 @@
       Liver: OrganHumanLiver
       KidneyLeft: OrganHumanKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganHumanKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Apid
 

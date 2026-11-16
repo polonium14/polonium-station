@@ -169,6 +169,7 @@
       Liver: OrganDecapoidLiver
       KidneyLeft: OrganDecapoidKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganDecapoidKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Decapoid
 

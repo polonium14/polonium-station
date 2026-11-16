@@ -154,6 +154,7 @@
       Liver: OrganAllulaloLiver
       KidneyLeft: OrganAllulaloKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganAllulaloKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Allulalo
 

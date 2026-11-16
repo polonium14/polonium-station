@@ -66,6 +66,7 @@
       Liver: OrganArachnidLiver
       KidneyLeft: OrganArachnidKidneyLeft # Polonium: paired lungs and kidneys
       KidneyRight: OrganArachnidKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Arachnid
 
