@@ -75,6 +75,31 @@ public sealed class OrganMedicineTest : GameTest
     }
 
     [Test]
+    public async Task OculineHealsTheEyes()
+    {
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+        FixedPoint2 damaged = default;
+        await Server.WaitAssertion(() =>
+        {
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            var eyes = Organ(body, "Eyes");
+            var integrity = SEntMan.GetComponent<OrganIntegrityComponent>(eyes);
+            // Half the eyes' cap: damaged enough to blur the sight, far from destroying them.
+            Healing.DamageOrgan((eyes, integrity), integrity.IntegrityCap / 2);
+            damaged = integrity.OrganIntegrity;
+            Assert.That(SEntMan.System<BloodstreamSystem>().TryAddToBloodstream(body, new Solution("Oculine", 10)));
+        });
+
+        await Pair.RunSeconds(4);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(Integrity(body, "Eyes").OrganIntegrity, Is.GreaterThan(damaged));
+        });
+    }
+
+    [Test]
     public async Task PenteticAcidOverdoseDamagesKidneys()
     {
         var body = await Patient("PenteticAcid", 40);

@@ -1152,6 +1152,9 @@
     Bloodstream:
       effects:
       - !type:EyeDamage
+      - !type:HealOrgans # Polonium: damaged eyes keep the sight blurry until the organ itself heals
+        categories: [ Eyes ]
+        amount: 0.5
       #Macrocosm edit start
       - !type:HealthChange
         conditions:
