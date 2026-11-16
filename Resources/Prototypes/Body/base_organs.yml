@@ -357,6 +357,8 @@
   name: brain
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 3
   - type: GibbableOrgan
   - type: Organ
     category: Brain
@@ -467,6 +469,8 @@
   name: lungs
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 2
   - type: GibbableOrgan
   - type: Organ
     category: Lungs
@@ -524,6 +528,8 @@
   name: stomach
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 3
   - type: GibbableOrgan
   - type: Organ
     category: Stomach
@@ -558,6 +564,8 @@
   name: liver
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 3
   - type: GibbableOrgan
   - type: Organ
     category: Liver

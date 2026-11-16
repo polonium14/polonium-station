@@ -652,10 +652,7 @@ public partial class TraumaSystem
                                 && oc.Category is { } c
                                 && housedCategories.Contains(c))
                             .ToList();
-                        _random.Shuffle(organs);
-
-                        if (organs.Count > 0)
-                            targetChosen = organs[0];
+                        targetChosen = EntityManager.System<Content.Shared._Polonium.Body.OrganTraumaSystem>().PickOrgan(organs);
                     }
 
                     break;
