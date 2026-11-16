@@ -1,3 +1,4 @@
+using Content.Server._Polonium.Medical.Cpr;
 using Content.Server._Polonium.Medical.Dialysis;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
@@ -465,9 +466,14 @@ public sealed partial class CirculationSystem : EntitySystem
             if (_mobState.IsIncapacitated(uid))
                 continue;
 
-            limit.Ceiling = limit.Loss > 0f
-                ? MathF.Max(respirator.MinSaturation, limit.Ceiling - limit.Loss * (float) UpdateInterval.TotalSeconds)
-                : respirator.MaxSaturation;
+            // Chest compressions move the blood of a body that still has its heart: the oxygen it has stays.
+            var compressed = TryComp<ChestCompressionsComponent>(uid, out var compressions)
+                             && compressions.Until > _timing.CurTime;
+
+            if (limit.Loss <= 0f)
+                limit.Ceiling = respirator.MaxSaturation;
+            else if (!compressed)
+                limit.Ceiling = MathF.Max(respirator.MinSaturation, limit.Ceiling - limit.Loss * (float) UpdateInterval.TotalSeconds);
 
             // Breathing still fills the lungs, the oxygen just does not get where it is needed. From here the
             // respirator deals its usual suffocation damage.
