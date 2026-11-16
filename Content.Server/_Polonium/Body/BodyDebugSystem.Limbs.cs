@@ -89,12 +89,7 @@ public sealed partial class BodyDebugSystem
             return true;
         }
 
-        // Mend-bones surgery only treats a bone that has a trauma, so the first hit needs a wound to hang one on.
-        if (_trauma.HasWoundableTrauma(limb, TraumaType.BoneDamage, woundable))
-            return _trauma.ApplyDamageToBone(bone, current - target, boneComp);
-
-        return _intake.InduceWound((limb, woundable)) is { } inflicter
-               && _trauma.ApplyBoneTrauma(bone, (limb, woundable), inflicter, current - target, boneComp);
+        return _intake.DamageBone((limb, woundable), current - target);
     }
 
     /// <summary>
