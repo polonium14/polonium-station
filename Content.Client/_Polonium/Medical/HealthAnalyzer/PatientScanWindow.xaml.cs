@@ -369,6 +369,16 @@ public sealed partial class PatientScanWindow : FancyWindow
     {
         var alerts = new List<(string Text, bool Critical)>();
 
+        // The state itself goes first: everything below is why.
+        if (scan.Target is { } target
+            && _entMan.TryGetComponent<MobStateComponent>(_entMan.GetEntity(target), out var mobState))
+        {
+            if (mobState.CurrentState == MobState.Dead)
+                alerts.Add((Loc.GetString("health-analyzer-scan-alert-dead"), true));
+            else if (mobState.CurrentState == MobState.Critical)
+                alerts.Add((Loc.GetString("health-analyzer-scan-alert-critical"), true));
+        }
+
         if (scan.CirculationStopped)
             alerts.Add((Loc.GetString("health-analyzer-scan-alert-no-circulation"), true));
 

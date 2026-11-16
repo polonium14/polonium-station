@@ -19,6 +19,8 @@ health-analyzer-scan-spo2-tooltip = W normie 95–99%. Poniżej 88% pacjent jest
 health-analyzer-scan-blood-tooltip = Poniżej kreski niedobór krwi zaczyna szkodzić organizmowi. Krew uzupełnisz kroplówką, solą fizjologiczną albo żelazem.
 
 health-analyzer-scan-alerts = Wymaga interwencji
+health-analyzer-scan-alert-dead = Pacjent nie żyje
+health-analyzer-scan-alert-critical = Pacjent w stanie krytycznym
 health-analyzer-scan-alert-no-circulation = Krążenie zatrzymane
 health-analyzer-scan-alert-missing = {$organ}: brak
 health-analyzer-scan-alert-spo2 = SpO2 {$value}%: niedotlenienie

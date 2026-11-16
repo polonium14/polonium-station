@@ -19,6 +19,8 @@ health-analyzer-scan-spo2-tooltip = Normal is 95–99%. Below 88% the patient is
 health-analyzer-scan-blood-tooltip = Below the line, blood loss starts to hurt. Blood is topped up with an IV, saline or iron.
 
 health-analyzer-scan-alerts = Needs attention
+health-analyzer-scan-alert-dead = The patient is dead
+health-analyzer-scan-alert-critical = The patient is in critical condition
 health-analyzer-scan-alert-no-circulation = Circulation stopped
 health-analyzer-scan-alert-missing = {$organ}: missing
 health-analyzer-scan-alert-spo2 = SpO2 {$value}%: hypoxia
