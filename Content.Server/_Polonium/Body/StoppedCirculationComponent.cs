@@ -22,6 +22,12 @@ public sealed partial class BloodDrainComponent : Component
 public sealed partial class StoppedCirculationComponent : Component;
 
 /// <summary>
+/// Set by the body debug window: the circulation stays stopped even though the heart works, until the window clears it.
+/// </summary>
+[RegisterComponent]
+public sealed partial class CirculationArrestComponent : Component;
+
+/// <summary>
 /// Limits how much oxygen reaches a body: a stopped or failing heart, or failing lungs.
 /// Below the suffocation threshold the body passes out and suffocates, whatever it breathes.
 /// </summary>

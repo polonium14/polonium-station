@@ -118,12 +118,14 @@ public sealed partial class SurgicalCavitySystem : EntitySystem
     /// <summary>
     /// Drops the hidden item next to the body, or the loose part, rather than into the body's organ container.
     /// </summary>
-    private void DropContents(EntityUid part)
+    /// <returns>False if the cavity was empty.</returns>
+    public bool DropContents(EntityUid part)
     {
         if (GetContents(part) is not { } item || !_container.TryRemoveFromContainer(item))
-            return;
+            return false;
 
         var nextTo = CompOrNull<OrganComponent>(part)?.Body ?? part;
         _transform.DropNextTo(item, nextTo);
+        return true;
     }
 }

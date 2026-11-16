@@ -23,6 +23,9 @@ public enum BodyDebugSlider : byte
     Organ,
     Limb,
     Bone,
+    Blood,
+    Temperature,
+    Saturation,
 }
 
 /// <summary>
@@ -37,6 +40,11 @@ public enum BodyDebugAction : byte
     HealLimb,
     StopBleeding,
     Amputate,
+    ToggleLobotomy,
+    EjectCavity,
+    ResetSurgery,
+    RemoveTourniquet,
+    ToggleCirculation,
 }
 
 /// <summary>
@@ -82,29 +90,45 @@ public readonly record struct BodyDebugLimb(
     FixedPoint2 BoneCap,
     BoneSeverity BoneSeverity,
     List<(string Name, FixedPoint2 Severity)> Wounds,
-    bool CanAmputate);
+    bool CanAmputate,
+    bool Lobotomized = false,
+    string? CavityItem = null,
+    bool UnfinishedSurgery = false,
+    bool Tourniquet = false);
+
+/// <summary>
+/// Whole-body readings of the body debug window, each null when the body does not have it.
+/// </summary>
+/// <param name="CirculationArrested">The window stopped the circulation itself, with a working heart.</param>
+[Serializable, NetSerializable]
+public readonly record struct BodyDebugVitals(
+    FixedPoint2? BloodVolume,
+    FixedPoint2 NormalBloodVolume,
+    float? Temperature,
+    float? Saturation,
+    float MinSaturation,
+    float MaxSaturation,
+    bool CirculationStopped,
+    bool CirculationArrested);
 
 /// <param name="WoundTypes">Damage types the admin can wound a body part with.</param>
 /// <param name="Error">Localization key of the reason the last action failed.</param>
 [Serializable, NetSerializable]
 public sealed class BodyDebugEuiState(
+    NetEntity body,
     string targetName,
     List<BodyDebugOrgan> organs,
     List<BodyDebugLimb> limbs,
     List<string> woundTypes,
-    bool circulationStopped,
-    float? saturation,
+    BodyDebugVitals vitals,
     string? error) : EuiStateBase
 {
     /// <summary>
-    /// Oxygen saturation of the body, null if it does not breathe.
+    /// The body itself, the target of the whole-body sliders and actions.
     /// </summary>
-    public readonly float? Saturation = saturation;
+    public readonly NetEntity Body = body;
 
-    /// <summary>
-    /// True if the body has no working heart.
-    /// </summary>
-    public readonly bool CirculationStopped = circulationStopped;
+    public readonly BodyDebugVitals Vitals = vitals;
     public readonly string TargetName = targetName;
     public readonly List<BodyDebugOrgan> Organs = organs;
     public readonly List<BodyDebugLimb> Limbs = limbs;
@@ -115,7 +139,7 @@ public sealed class BodyDebugEuiState(
 public static class BodyDebugEuiMsg
 {
     /// <summary>
-    /// Sets integrities to the given values.
+    /// Sets integrities, or the body's blood, temperature and saturation, to the given values.
     /// </summary>
     [Serializable, NetSerializable]
     public sealed class Apply(List<(NetEntity Target, BodyDebugSlider Slider, FixedPoint2 Integrity)> changes) : EuiMessageBase

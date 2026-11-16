@@ -260,7 +260,8 @@ public sealed partial class CirculationSystem : EntitySystem
             expectsKidneys |= PairedOrgans.Matches(category, PairedOrgans.Kidneys);
         }
 
-        var stopped = expectsHeart && !heart;
+        // The body debug window can stop a working heart, for testing CPR without killing the organ.
+        var stopped = expectsHeart && (!heart || HasComp<CirculationArrestComponent>(body));
         if (stopped)
         {
             EnsureComp<StoppedCirculationComponent>(body);

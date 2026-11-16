@@ -1,6 +1,5 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
-using Content.Server.Body.Components;
 using Content.Server.EUI;
 using Content.Server.Administration;
 using Content.Shared._Polonium.Body;
@@ -52,10 +51,8 @@ public sealed partial class BodyDebugEui : BaseEui
     public override EuiStateBase GetNewState()
     {
         var name = _entities.TryGetComponent<MetaDataComponent>(_target, out var meta) ? meta.EntityName : string.Empty;
-        return new BodyDebugEuiState(name, _bodyDebug.GetOrgans(_target), _bodyDebug.GetLimbs(_target), _bodyDebug.GetWoundTypes(),
-            _entities.System<CirculationSystem>().IsStopped(_target),
-            _entities.GetComponentOrNull<RespiratorComponent>(_target)?.Saturation,
-            _error);
+        return new BodyDebugEuiState(_entities.GetNetEntity(_target), name, _bodyDebug.GetOrgans(_target), _bodyDebug.GetLimbs(_target),
+            _bodyDebug.GetWoundTypes(), _bodyDebug.GetVitals(_target), _error);
     }
 
     public override void HandleMessage(EuiMessageBase msg)
@@ -86,11 +83,15 @@ public sealed partial class BodyDebugEui : BaseEui
                         BodyDebugSlider.Organ => _bodyDebug.TrySetOrganIntegrity(_target, target.Value, value),
                         BodyDebugSlider.Limb => _bodyDebug.TrySetLimbIntegrity(_target, target.Value, value),
                         BodyDebugSlider.Bone => _bodyDebug.TrySetBoneIntegrity(_target, target.Value, value),
+                        // The whole-body sliders act on the window's own body, whatever target the client named.
+                        BodyDebugSlider.Blood => _bodyDebug.TrySetBloodVolume(_target, value),
+                        BodyDebugSlider.Temperature => _bodyDebug.TrySetTemperature(_target, value.Float()),
+                        BodyDebugSlider.Saturation => _bodyDebug.TrySetSaturation(_target, value.Float()),
                         _ => false,
                     };
 
                     if (Check(done, "body-debug-error-integrity"))
-                        Log($"set the {slider} integrity of {targetName} to {value}");
+                        Log($"set the {slider} of {targetName} to {value}");
                 }
 
                 break;
@@ -109,6 +110,11 @@ public sealed partial class BodyDebugEui : BaseEui
                     BodyDebugAction.HealLimb => _bodyDebug.TryHealLimb(_target, acted.Value),
                     BodyDebugAction.StopBleeding => _bodyDebug.TryStopBleeding(_target, acted.Value),
                     BodyDebugAction.Amputate => _bodyDebug.TryAmputate(_target, acted.Value),
+                    BodyDebugAction.ToggleLobotomy => _bodyDebug.TryToggleLobotomy(_target, acted.Value),
+                    BodyDebugAction.EjectCavity => _bodyDebug.TryEjectCavity(_target, acted.Value),
+                    BodyDebugAction.ResetSurgery => _bodyDebug.TryResetSurgery(_target, acted.Value),
+                    BodyDebugAction.RemoveTourniquet => _bodyDebug.TryRemoveTourniquet(_target, acted.Value),
+                    BodyDebugAction.ToggleCirculation => _bodyDebug.TryToggleCirculation(_target),
                     _ => false,
                 };
 

@@ -14,6 +14,14 @@ namespace Content.Client._Polonium.Body;
 public sealed partial class BodyDebugWindow : FancyWindow
 {
     private const int DefaultWoundDamage = 10;
+    private const float KelvinToCelsius = 273.15f;
+    private const string HeadCategory = "Head";
+
+    /// <summary>
+    /// Temperature slider range, kelvin: well past freezing and burning on both ends.
+    /// </summary>
+    private static readonly FixedPoint2 MinTemperature = 200;
+    private static readonly FixedPoint2 MaxTemperature = 400;
 
     public event Action<List<(NetEntity Target, BodyDebugSlider Slider, FixedPoint2 Integrity)>>? OnApply;
     public event Action<BodyDebugAction, NetEntity>? OnAction;
@@ -42,10 +50,6 @@ public sealed partial class BodyDebugWindow : FancyWindow
     public void SetState(BodyDebugEuiState state)
     {
         TargetLabel.Text = state.TargetName;
-        CirculationLabel.Visible = state.CirculationStopped;
-        SaturationLabel.Visible = state.Saturation != null;
-        if (state.Saturation is { } saturation)
-            SaturationLabel.Text = Loc.GetString("body-debug-saturation", ("saturation", saturation.ToString("0.0")));
 
         ErrorLabel.Visible = state.Error != null;
         if (state.Error != null)
@@ -54,8 +58,59 @@ public sealed partial class BodyDebugWindow : FancyWindow
         _pending.Clear();
         ApplyButton.Disabled = true;
 
+        BuildVitals(state.Body, state.Vitals);
         Fill(OrgansContainer, state.Organs.Select(BuildOrganRow));
         Fill(LimbsContainer, state.Limbs.Select(limb => BuildLimbRow(limb, state.WoundTypes)));
+    }
+
+    /// <summary>
+    /// Whole-body sliders: blood, temperature and saturation, and the circulation switch.
+    /// </summary>
+    private void BuildVitals(NetEntity body, BodyDebugVitals vitals)
+    {
+        VitalsContainer.RemoveAllChildren();
+
+        if (vitals.BloodVolume is { } blood && vitals.NormalBloodVolume > FixedPoint2.Zero)
+        {
+            VitalsContainer.AddChild(new Label { Text = Loc.GetString("body-debug-blood") });
+            VitalsContainer.AddChild(MakeSlider(body, BodyDebugSlider.Blood, blood, vitals.NormalBloodVolume, FixedPoint2.Zero));
+        }
+
+        if (vitals.Temperature is { } kelvin)
+        {
+            VitalsContainer.AddChild(new Label { Text = Loc.GetString("body-debug-temperature") });
+            VitalsContainer.AddChild(MakeSlider(body, BodyDebugSlider.Temperature, kelvin, MaxTemperature, MinTemperature,
+                value => Loc.GetString("body-debug-temperature-value",
+                    ("celsius", (value.Float() - KelvinToCelsius).ToString("0.0")), ("kelvin", value.Float().ToString("0.0")))));
+        }
+
+        if (vitals.Saturation is { } saturation)
+        {
+            VitalsContainer.AddChild(new Label { Text = Loc.GetString("body-debug-saturation") });
+            VitalsContainer.AddChild(MakeSlider(body, BodyDebugSlider.Saturation, saturation, vitals.MaxSaturation, vitals.MinSaturation,
+                value => value.Float().ToString("0.0")));
+        }
+
+        var circulation = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, SeparationOverride = 6 };
+        if (vitals.CirculationStopped)
+        {
+            circulation.AddChild(new Label
+            {
+                Text = Loc.GetString("body-debug-circulation-stopped"),
+                FontColorOverride = Color.FromHex("#FF3333"),
+                HorizontalExpand = true,
+            });
+        }
+        else
+        {
+            circulation.AddChild(new Control { HorizontalExpand = true });
+        }
+
+        // Only a stop the window made itself can be undone here; a dead or missing heart needs the organ fixed.
+        circulation.AddChild(MakeButton(vitals.CirculationArrested ? "body-debug-circulation-restart" : "body-debug-circulation-stop",
+            () => OnAction?.Invoke(BodyDebugAction.ToggleCirculation, body),
+            vitals.CirculationStopped && !vitals.CirculationArrested));
+        VitalsContainer.AddChild(circulation);
     }
 
     private static void Fill(BoxContainer container, IEnumerable<Control> rows)
@@ -152,6 +207,8 @@ public sealed partial class BodyDebugWindow : FancyWindow
                 ("wounds", string.Join(", ", limb.Wounds.Select(wound => $"{wound.Name} {wound.Severity}"))))));
         }
 
+        AddStateRow(row, uid, limb);
+
         if (limb.Cap > FixedPoint2.Zero)
             row.AddChild(MakeSlider(uid, BodyDebugSlider.Limb, limb.Integrity, limb.Cap, FixedPoint2.Zero));
 
@@ -183,6 +240,49 @@ public sealed partial class BodyDebugWindow : FancyWindow
         return row;
     }
 
+    /// <summary>
+    /// What else is going on with the part, each with the button that undoes or sets it: the lobotomy (head only),
+    /// the chest cavity, marks of an unfinished surgery and a tourniquet.
+    /// </summary>
+    private void AddStateRow(BoxContainer row, NetEntity uid, BodyDebugLimb limb)
+    {
+        var states = new List<string>();
+        var buttons = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, SeparationOverride = 6 };
+
+        if (limb.Category == HeadCategory)
+        {
+            if (limb.Lobotomized)
+                states.Add(Loc.GetString("body-debug-lobotomized"));
+
+            buttons.AddChild(MakeButton(limb.Lobotomized ? "body-debug-unlobotomize" : "body-debug-lobotomize",
+                () => OnAction?.Invoke(BodyDebugAction.ToggleLobotomy, uid)));
+        }
+
+        if (limb.CavityItem is { } item)
+        {
+            states.Add(Loc.GetString("body-debug-cavity", ("item", item)));
+            buttons.AddChild(MakeButton("body-debug-cavity-eject", () => OnAction?.Invoke(BodyDebugAction.EjectCavity, uid)));
+        }
+
+        if (limb.UnfinishedSurgery)
+        {
+            states.Add(Loc.GetString("body-debug-unfinished-surgery"));
+            buttons.AddChild(MakeButton("body-debug-reset-surgery", () => OnAction?.Invoke(BodyDebugAction.ResetSurgery, uid)));
+        }
+
+        if (limb.Tourniquet)
+        {
+            states.Add(Loc.GetString("body-debug-tourniquet"));
+            buttons.AddChild(MakeButton("body-debug-remove-tourniquet", () => OnAction?.Invoke(BodyDebugAction.RemoveTourniquet, uid)));
+        }
+
+        if (states.Count > 0)
+            row.AddChild(MakeSubText(string.Join(" · ", states)));
+
+        if (buttons.ChildCount > 0)
+            row.AddChild(buttons);
+    }
+
     private static BoxContainer MakeRow(string name, string category, out BoxContainer header)
     {
         var row = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
@@ -197,9 +297,11 @@ public sealed partial class BodyDebugWindow : FancyWindow
         return row;
     }
 
-    private Control MakeSlider(NetEntity target, BodyDebugSlider kind, FixedPoint2 integrity, FixedPoint2 cap, FixedPoint2 floor)
+    private Control MakeSlider(NetEntity target, BodyDebugSlider kind, FixedPoint2 integrity, FixedPoint2 cap, FixedPoint2 floor,
+        Func<FixedPoint2, string>? format = null)
     {
-        var percent = new Label { Text = IntegrityText(integrity, cap), MinWidth = 90 };
+        format ??= value => IntegrityText(value, cap);
+        var percent = new Label { Text = format(integrity), MinWidth = 90 };
         var slider = new Slider
         {
             // The server clamps to the floor anyway; the slider just does not offer values that cannot be reached.
@@ -212,7 +314,7 @@ public sealed partial class BodyDebugWindow : FancyWindow
         {
             // Tenths are fine enough for testing and keep the label readable.
             var value = FixedPoint2.New(MathF.Round(slider.Value * 10f) / 10f);
-            percent.Text = IntegrityText(value, cap);
+            percent.Text = format(value);
             if (value == integrity)
                 _pending.Remove((target, kind));
             else

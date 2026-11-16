@@ -4,8 +4,7 @@
                       MinSize="600 700">
     <BoxContainer Orientation="Vertical" Margin="10" SeparationOverride="6">
         <Label Name="TargetLabel" StyleClasses="LabelKeyText" />
-        <Label Name="SaturationLabel" StyleClasses="LabelSubText" Visible="False" />
-        <Label Name="CirculationLabel" Text="{Loc 'body-debug-circulation-stopped'}" FontColorOverride="#FF3333" Visible="False" />
+        <BoxContainer Name="VitalsContainer" Orientation="Vertical" SeparationOverride="2" />
         <Label Name="ErrorLabel" FontColorOverride="#FF3333" Visible="False" />
         <TabContainer Name="Tabs" VerticalExpand="True">
             <ScrollContainer HScrollEnabled="False" VerticalExpand="True">

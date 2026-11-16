@@ -195,7 +195,7 @@ public sealed partial class BodyDebugSystem
                 continue;
 
             TryComp<BoneComponent>(woundable.Bone?.ContainedEntities.FirstOrNull(), out var bone);
-            rows.Add(new BodyDebugLimb(GetNetEntity(limb), category, Name(limb),
+            rows.Add(WithStates(new BodyDebugLimb(GetNetEntity(limb), category, Name(limb),
                 woundable.WoundableIntegrity,
                 woundable.IntegrityCap,
                 woundable.WoundableSeverity,
@@ -204,7 +204,7 @@ public sealed partial class BodyDebugSystem
                 bone?.IntegrityCap ?? FixedPoint2.Zero,
                 bone?.BoneSeverity ?? BoneSeverity.Normal,
                 _wound.GetWoundableWounds(limb, woundable).Select(wound => (Name(wound), wound.Comp.WoundSeverityPoint)).ToList(),
-                woundable.CanRemove && !_wound.IsWoundableRoot(limb)));
+                woundable.CanRemove && !_wound.IsWoundableRoot(limb)), limb));
         }
 
         if (!TryComp<InitialBodyComponent>(body, out var manifest))
