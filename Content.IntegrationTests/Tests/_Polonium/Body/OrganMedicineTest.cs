@@ -74,8 +74,9 @@ public sealed class OrganMedicineTest : GameTest
         });
     }
 
-    [Test]
-    public async Task OculineHealsTheEyes()
+    [TestCase("Oculine", "Eyes")]
+    [TestCase("Mannitol", "Brain")]
+    public async Task MedicineHealsItsOrgan(string reagent, string category)
     {
         var map = await Pair.CreateTestMap();
         var body = EntityUid.Invalid;
@@ -83,19 +84,19 @@ public sealed class OrganMedicineTest : GameTest
         await Server.WaitAssertion(() =>
         {
             body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
-            var eyes = Organ(body, "Eyes");
-            var integrity = SEntMan.GetComponent<OrganIntegrityComponent>(eyes);
-            // Half the eyes' cap: damaged enough to blur the sight, far from destroying them.
-            Healing.DamageOrgan((eyes, integrity), integrity.IntegrityCap / 2);
+            var organ = Organ(body, category);
+            var integrity = SEntMan.GetComponent<OrganIntegrityComponent>(organ);
+            // Half the organ's cap: clearly damaged, far from destroying it.
+            Healing.DamageOrgan((organ, integrity), integrity.IntegrityCap / 2);
             damaged = integrity.OrganIntegrity;
-            Assert.That(SEntMan.System<BloodstreamSystem>().TryAddToBloodstream(body, new Solution("Oculine", 10)));
+            Assert.That(SEntMan.System<BloodstreamSystem>().TryAddToBloodstream(body, new Solution(reagent, 10)));
         });
 
         await Pair.RunSeconds(4);
 
         await Server.WaitAssertion(() =>
         {
-            Assert.That(Integrity(body, "Eyes").OrganIntegrity, Is.GreaterThan(damaged));
+            Assert.That(Integrity(body, category).OrganIntegrity, Is.GreaterThan(damaged));
         });
     }
 

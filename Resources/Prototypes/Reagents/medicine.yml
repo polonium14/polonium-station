@@ -1597,6 +1597,9 @@
         visualType: Medium
         messages: [ "mannitol-effect-enlightened" ]
         probability: 0.2
+      - !type:HealOrgans # Polonium: heals the brain, no overdose
+        categories: [ Brain ]
+        amount: 0.5
 
 - type: reagent
   id: Psicodine
