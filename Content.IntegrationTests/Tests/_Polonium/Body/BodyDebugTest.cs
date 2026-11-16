@@ -2,6 +2,7 @@ using System.Linq;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Body;
 using Content.Server._Shitmed.Medical.Surgery;
+using Content.Server.Administration.Managers;
 using Content.Server.EUI;
 using Content.Shared._Polonium.Body;
 using Content.Shared._Polonium.Medical.Surgery;
@@ -190,6 +191,31 @@ public sealed class BodyDebugTest : GameTest
         });
 
         await RunUntilSynced();
+    }
+
+    [Test]
+    public async Task MessagesWithoutTheDebugFlagAreIgnored()
+    {
+        var map = await Pair.CreateTestMap();
+        await Server.WaitAssertion(() =>
+        {
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            var liver = Organ(body, "Liver");
+            var admins = Server.ResolveDependency<IAdminManager>();
+            Assert.That(admins.HasAdminFlag(ServerSession!, BodyDebugSystem.RequiredFlag), "The test player starts as an admin.");
+
+            var eui = new BodyDebugEui(Server.ResolveDependency<IDependencyCollection>(), body);
+            Server.ResolveDependency<EuiManager>().OpenEui(eui, ServerSession!);
+
+            admins.DeAdmin(ServerSession!);
+            eui.HandleMessage(new BodyDebugEuiMsg.Act(BodyDebugAction.KillOrgan, SEntMan.GetNetEntity(liver)));
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(SEntMan.HasComponent<DeadOrganComponent>(Organ(body, "Liver")), Is.False);
+                Assert.That(eui.IsShutDown);
+            });
+        });
     }
 
     [Test]
