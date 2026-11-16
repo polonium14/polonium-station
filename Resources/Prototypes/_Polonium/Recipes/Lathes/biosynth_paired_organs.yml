@@ -1,4 +1,4 @@
-# Paired organs from the biofab. Each side costs what the pair cost before.
+# Paired organs and the spleen from the biofab. Each side costs what the pair cost before.
 # Left lungs come from the upstream lung recipes, everything else is here. Dwarves have human kidneys.
 
 - type: latheRecipe
@@ -257,6 +257,15 @@
   materials:
     Biomass: 4
 
+# One spleen fits every species, so it shows up in each species' list.
+- type: latheRecipe
+  id: SynthSpleen
+  result: OrganSpleen
+  categories: [ BiosynthArachnid, BiosynthDwarf, BiosynthFelinid, BiosynthHarpy, BiosynthHuman, BiosynthMoth, BiosynthReptilian, BiosynthRodentia, BiosynthThaven, BiosynthVox, BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
 - type: latheRecipePack
   id: MedicalBiofabPairedOrgansStatic
   recipes:
@@ -292,3 +301,4 @@
   - SynthVoxKidneyRight
   - SynthVulpkaninKidneyLeft
   - SynthVulpkaninKidneyRight
+  - SynthSpleen
