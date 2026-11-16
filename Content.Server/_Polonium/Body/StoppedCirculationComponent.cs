@@ -75,17 +75,31 @@ public sealed partial class OrganPoisoningComponent : Component
 }
 
 /// <summary>
-/// Running average of a patient's oxygen saturation, for the health analyzer.
+/// The last breath cycle of a body's oxygen saturation, for the health analyzer. One breath swings the saturation
+/// through most of its range, so a single value says little about the patient.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, UnsavedComponent]
 [Access(typeof(CirculationSystem))]
 public sealed partial class SpO2ReadingComponent : Component
 {
-    [DataField]
-    public float Average;
+    /// <summary>
+    /// Samples kept: two for each of the four respirator updates a full breath takes.
+    /// </summary>
+    public const int Window = 8;
 
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-    public TimeSpan LastRead;
+    public readonly float[] Samples = new float[Window];
+
+    /// <summary>
+    /// How many of <see cref="Samples"/> are filled.
+    /// </summary>
+    public int Count;
+
+    /// <summary>
+    /// Where the next sample goes.
+    /// </summary>
+    public int Next;
+
+    public TimeSpan NextSample;
 }
 
 /// <summary>

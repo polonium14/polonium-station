@@ -99,9 +99,18 @@ public sealed partial class CirculationSystem : EntitySystem
     ];
 
     /// <summary>
-    /// A reading older than this starts the average over.
+    /// How often breathing bodies are checked for a due saturation sample.
     /// </summary>
-    private static readonly TimeSpan SpO2Memory = TimeSpan.FromSeconds(10);
+    private static readonly TimeSpan SpO2SampleInterval = TimeSpan.FromSeconds(1);
+
+    /// <summary>
+    /// After this many respirator updates in a row below the suffocation threshold the reading drops at once,
+    /// instead of waiting for the last good breath to leave the window.
+    /// </summary>
+    private const int SpO2SuffocationCycles = 2;
+
+    private TimeSpan _nextSpO2Sample;
+    private readonly List<EntityUid> _untrackedBreathers = [];
 
     private float _saturationLoss;
     private float _deadOrganPoison;
@@ -437,41 +446,96 @@ public sealed partial class CirculationSystem : EntitySystem
     }
 
     /// <summary>
-    /// Oxygen saturation as a percentage a pulse oximeter would show, averaged over the last few readings.
-    /// Null for a body that does not breathe.
+    /// Oxygen saturation as a percentage a pulse oximeter would show. Null for a body that does not breathe.
     /// </summary>
+    /// <remarks>
+    /// The respirator's saturation falls between breaths and jumps back on each inhale, so the reading is the
+    /// highest value of the last full breath: what the lungs actually reach. It stays put while the patient
+    /// breathes normally and falls only when the breaths themselves bring in less.
+    /// </remarks>
     public float? ReadSpO2(EntityUid body)
     {
         // The respirator stops at death, so its last value would read like a living patient.
         if (!TryComp<RespiratorComponent>(body, out var respirator) || _mobState.IsDead(body))
             return null;
 
-        var sample = ToSpO2(respirator);
-        // A fresh reading, or one after a long break, starts the average over.
-        if (!TryComp<SpO2ReadingComponent>(body, out var reading) || _timing.CurTime - reading.LastRead > SpO2Memory)
+        var saturation = UsableSaturation(body, respirator);
+        if (respirator.SuffocationCycles < SpO2SuffocationCycles && TryComp<SpO2ReadingComponent>(body, out var reading))
         {
-            reading = EnsureComp<SpO2ReadingComponent>(body);
-            reading.Average = sample;
-        }
-        else
-        {
-            reading.Average += (sample - reading.Average) * 0.3f;
+            for (var i = 0; i < reading.Count; i++)
+            {
+                saturation = MathF.Max(saturation, reading.Samples[i]);
+            }
         }
 
-        reading.LastRead = _timing.CurTime;
-        return reading.Average;
+        return ToSpO2(respirator, saturation);
     }
 
     /// <summary>
-    /// Maps the respirator's saturation to a pulse oximeter percentage. The game's saturation is not a percentage:
-    /// a healthy body swings between breaths in the upper part of its range, which reads 95–99%. The suffocation
-    /// threshold reads 88% and the very bottom 50%.
+    /// The respirator's saturation, without the part a weak heart or a missing lung cannot use.
+    /// An inhale can overshoot that limit until the next update trims it.
     /// </summary>
-    private static float ToSpO2(RespiratorComponent respirator)
+    private float UsableSaturation(EntityUid body, RespiratorComponent respirator)
+    {
+        var saturation = respirator.Saturation;
+        if (TryComp<OxygenLimitComponent>(body, out var limit))
+            saturation = MathF.Min(saturation, MathF.Min(limit.Ceiling, respirator.MaxSaturation * limit.Cap));
+
+        return saturation;
+    }
+
+    private void SampleSpO2()
+    {
+        if (_timing.CurTime < _nextSpO2Sample)
+            return;
+
+        _nextSpO2Sample = _timing.CurTime + SpO2SampleInterval;
+
+        var breathers = EntityQueryEnumerator<RespiratorComponent>();
+        while (breathers.MoveNext(out var uid, out var respirator))
+        {
+            if (!TryComp<SpO2ReadingComponent>(uid, out var reading))
+            {
+                _untrackedBreathers.Add(uid);
+                continue;
+            }
+
+            // The respirator stops at death; what it showed before must not come back with the patient.
+            if (_mobState.IsDead(uid))
+            {
+                reading.Count = 0;
+                reading.Next = 0;
+                continue;
+            }
+
+            if (_timing.CurTime < reading.NextSample)
+                continue;
+
+            // Two samples per respirator update, so a slowed metabolism (stasis) still gets one full breath.
+            reading.NextSample = _timing.CurTime + respirator.AdjustedUpdateInterval / 2;
+            reading.Samples[reading.Next] = UsableSaturation(uid, respirator);
+            reading.Next = (reading.Next + 1) % SpO2ReadingComponent.Window;
+            reading.Count = Math.Min(reading.Count + 1, SpO2ReadingComponent.Window);
+        }
+
+        foreach (var uid in _untrackedBreathers)
+        {
+            EnsureComp<SpO2ReadingComponent>(uid);
+        }
+
+        _untrackedBreathers.Clear();
+    }
+
+    /// <summary>
+    /// Maps a respirator saturation to a pulse oximeter percentage. The game's saturation is not a percentage:
+    /// a healthy body tops it up to the maximum with every breath, which reads 99%. The upper 60% of the range
+    /// above the suffocation threshold reads 95–99%, the threshold itself 88% and the very bottom 50%.
+    /// </summary>
+    private static float ToSpO2(RespiratorComponent respirator, float saturation)
     {
         var threshold = respirator.SuffocationThreshold;
         var healthy = threshold + (respirator.MaxSaturation - threshold) * 0.4f;
-        var saturation = Math.Clamp(respirator.Saturation, respirator.MinSaturation, respirator.MaxSaturation);
+        saturation = Math.Clamp(saturation, respirator.MinSaturation, respirator.MaxSaturation);
 
         if (saturation >= healthy)
             return 95f + 4f * (saturation - healthy) / MathF.Max(respirator.MaxSaturation - healthy, 0.01f);
@@ -485,6 +549,8 @@ public sealed partial class CirculationSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        SampleSpO2();
 
         var oxygen = EntityQueryEnumerator<OxygenLimitComponent, RespiratorComponent>();
         while (oxygen.MoveNext(out var uid, out var limit, out var respirator))

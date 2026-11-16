@@ -445,4 +445,55 @@ public sealed class OrganFailureTest : GameTest
 
         Assert.That(readings, Is.All.InRange(93f, 100f), "A body with stage 2 lungs still breathes well.");
     }
+
+    /// <summary>
+    /// The saturation swings with every breath; the reading must not follow it.
+    /// </summary>
+    [TestCase(false, 98.5f, 99f)]
+    [TestCase(true, 95f, 97f)]
+    public async Task SpO2StaysPutWhileBreathing(bool oneLung, float lowest, float highest)
+    {
+        SetChances(0f, 0f, 0f);
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+        var readings = new List<float>();
+
+        await Server.WaitAssertion(() =>
+        {
+            PatientIntakeMachineTest.AddAir(SEntMan, map.MapUid);
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            if (oneLung)
+                Assert.That(SEntMan.System<BodyDebugSystem>().TryKillOrgan(body, Organ(body, "LungLeft")));
+        });
+
+        // Long enough for the lost lung to show in a whole breath.
+        await Pair.RunSeconds(20);
+        for (var i = 0; i < 30; i++)
+        {
+            await Pair.RunSeconds(1);
+            await Server.WaitPost(() => readings.Add(SEntMan.System<CirculationSystem>().ReadSpO2(body)!.Value));
+        }
+
+        Assert.Multiple(() =>
+        {
+            Assert.That(readings, Is.All.InRange(lowest, highest));
+            Assert.That(readings.Max() - readings.Min(), Is.LessThan(0.5f), "The reading holds still over several breaths.");
+        });
+    }
+
+    [Test]
+    public async Task SpO2FallsWhenBreathingStops()
+    {
+        SetChances(0f, 0f, 0f);
+        // No air on this map.
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+        await Server.WaitAssertion(() => body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords));
+        await Pair.RunSeconds(12);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.System<CirculationSystem>().ReadSpO2(body), Is.LessThan(88f));
+        });
+    }
 }
