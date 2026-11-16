@@ -136,6 +136,7 @@ patient-intake-part-lungleft = left lung
 patient-intake-part-lungright = right lung
 patient-intake-part-kidneyleft = left kidney
 patient-intake-part-kidneyright = right kidney
+patient-intake-part-spleen = spleen
 patient-intake-part-beak = beak
 
 ## Issues

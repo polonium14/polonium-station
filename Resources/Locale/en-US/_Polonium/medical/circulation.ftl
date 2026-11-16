@@ -6,3 +6,4 @@ condition-organ-missing-LungLeft = • {$entity} is missing their left lung.
 condition-organ-missing-LungRight = • {$entity} is missing their right lung.
 condition-organ-missing-KidneyLeft = • {$entity} is missing their left kidney.
 condition-organ-missing-KidneyRight = • {$entity} is missing their right kidney.
+condition-organ-missing-Spleen = • {$entity} is missing their spleen.

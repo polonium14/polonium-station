@@ -137,6 +137,7 @@ patient-intake-part-lungleft = lewe płuco
 patient-intake-part-lungright = prawe płuco
 patient-intake-part-kidneyleft = lewa nerka
 patient-intake-part-kidneyright = prawa nerka
+patient-intake-part-spleen = śledziona
 patient-intake-part-beak = dziób
 
 ## Dolegliwości
