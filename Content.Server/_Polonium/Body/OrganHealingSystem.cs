@@ -34,6 +34,13 @@ public sealed partial class OrganHealingSystem : EntitySystem
             .OrderByDescending(modifier => HasComp<TraumaComponent>(modifier.Key.Item2))
             .ToArray();
 
+        // An organ with a floor (the brain) keeps counting damage below it, where nobody can see it.
+        // That damage heals for free, so the first dose already shows on the analyzer.
+        var hidden = modifiers.Aggregate(FixedPoint2.Zero, (sum, modifier) => sum + modifier.Value)
+                     - (organ.Comp.IntegrityCap - organ.Comp.IntegrityFloor);
+        if (hidden > FixedPoint2.Zero)
+            amount += hidden;
+
         foreach (var ((id, owner), value) in modifiers)
         {
             if (amount <= FixedPoint2.Zero)

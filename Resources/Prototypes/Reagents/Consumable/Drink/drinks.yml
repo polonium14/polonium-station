@@ -510,6 +510,12 @@
   flammability: -4 # Funky change
   friction: 0.4
   metabolisms:
+    Bloodstream: # Polonium: water heals the kidneys when injected too; drunk water never reaches the blood, so nothing heals twice
+      effects:
+      - !type:HealOrgans
+        categories: [ Kidneys ]
+        amount: 0.5
+        probability: 0.1
     Digestion:
       effects:
       - !type:Satiate

@@ -222,6 +222,76 @@ public sealed class OrganMedicineTest : GameTest
     }
 
     [Test]
+    public async Task CryoxadoneHealsAColdBodyButNotTheBrain()
+    {
+        var body = await Patient("Cryoxadone", 10, "Liver", "Brain");
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.System<BodyDebugSystem>().TrySetTemperature(body, 150f));
+        });
+        await Pair.RunSeconds(4);
+
+        await Server.WaitAssertion(() =>
+        {
+            var liver = Integrity(body, "Liver");
+            var brain = Integrity(body, "Brain");
+            Assert.Multiple(() =>
+            {
+                Assert.That(liver.OrganIntegrity, Is.GreaterThan(liver.IntegrityCap - 10));
+                Assert.That(brain.OrganIntegrity, Is.EqualTo(brain.IntegrityCap - 10), "The brain is left out.");
+            });
+        });
+    }
+
+    /// <summary>
+    /// Water and potassium iodide heal their organs both swallowed and injected.
+    /// </summary>
+    // Both heal by chance on each tick, so the doses are long enough not to miss.
+    [TestCase("Water", "KidneyLeft", 45, 120)]
+    [TestCase("PotassiumIodide", "Liver", 40, 90)]
+    public async Task MedicineHealsSwallowedOrInjected(string reagent, string category, int amount, int seconds)
+    {
+        var swallowed = await Patient(reagent, 0, category);
+        var injected = await Patient(reagent, amount, category);
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.System<StomachSystem>().TryTransferSolution(Organ(swallowed, "Stomach"), new Solution(reagent, amount)));
+        });
+        await Pair.RunSeconds(seconds);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.That(Integrity(swallowed, category).OrganIntegrity, Is.GreaterThan(Integrity(swallowed, category).IntegrityCap - 10));
+                Assert.That(Integrity(injected, category).OrganIntegrity, Is.GreaterThan(Integrity(injected, category).IntegrityCap - 10));
+            });
+        });
+    }
+
+    /// <summary>
+    /// The brain stops at its floor while damage keeps piling up; that hidden damage must not delay healing.
+    /// </summary>
+    [Test]
+    public async Task BrainBelowItsFloorHealsAtOnce()
+    {
+        var body = await Patient("Mannitol", 10);
+        await Server.WaitAssertion(() =>
+        {
+            var brain = Integrity(body, "Brain");
+            Healing.DamageOrgan((Organ(body, "Brain"), brain), brain.IntegrityCap * 3);
+            Assert.That(brain.OrganIntegrity, Is.EqualTo(brain.IntegrityFloor));
+        });
+        await Pair.RunSeconds(4);
+
+        await Server.WaitAssertion(() =>
+        {
+            var brain = Integrity(body, "Brain");
+            Assert.That(brain.OrganIntegrity, Is.GreaterThan(brain.IntegrityFloor));
+        });
+    }
+
+    [Test]
     public async Task BloodstreamDrugsNeedAWorkingHeart()
     {
         var body = await Patient("PenteticAcid", 0, "KidneyLeft");

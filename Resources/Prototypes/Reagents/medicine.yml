@@ -1661,6 +1661,12 @@
   flavor: medicine
   color: "#baa15d"
   metabolisms:
+    Bloodstream: # Polonium: heals the kidneys and liver when injected too; a swallowed dose never reaches the blood, so nothing heals twice
+      effects:
+      - !type:HealOrgans
+        categories: [ Kidneys, Liver ]
+        amount: 0.5
+        probability: 0.33
     Digestion:
       effects:
       - !type:ModifyStatusEffect
