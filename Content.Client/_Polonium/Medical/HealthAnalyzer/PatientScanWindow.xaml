@@ -13,7 +13,7 @@
         <BoxContainer Name="Readout" Orientation="Vertical" SeparationOverride="10" Visible="False">
             <!-- Patient -->
             <BoxContainer Orientation="Horizontal" SeparationOverride="6">
-                <Label Name="NameLabel" StyleClasses="FontLarge" ClipText="True" VerticalAlignment="Center"/>
+                <Label Name="NameLabel" StyleClasses="FontLarge" VerticalAlignment="Center"/>
                 <Label Name="SpeciesLabel" StyleClasses="LabelSubText" HorizontalExpand="True" VerticalAlignment="Center"/>
                 <BoxContainer Orientation="Vertical" SeparationOverride="-4">
                     <Label Name="StateLabel" Align="Right"/>
@@ -115,7 +115,7 @@
                         <BoxContainer Orientation="Vertical" SeparationOverride="3" Margin="8 6">
                             <Label Text="{Loc 'health-analyzer-scan-organs'}" StyleClasses="LabelSubText"/>
                             <!-- Its own scroll, so a body with many organs does not stretch the window -->
-                            <polonium:FadingScrollContainer HScrollEnabled="False" SetHeight="210">
+                            <polonium:FadingScrollContainer HScrollEnabled="False" SetHeight="219">
                                 <BoxContainer Name="OrganRows" Orientation="Vertical" SeparationOverride="3" Margin="0 0 8 0"/>
                             </polonium:FadingScrollContainer>
                         </BoxContainer>
