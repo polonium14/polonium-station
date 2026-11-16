@@ -1,0 +1,53 @@
+# The chest cavity: one small item hidden in the torso through an opened ribcage, as in SS13.
+
+- type: entity
+  parent: BasePartSurgery
+  id: SurgeryCavityInsert
+  name: Hide item in chest cavity
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepCavityInsert
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+
+- type: entity
+  parent: BasePartSurgery
+  id: SurgeryCavityRemove
+  name: Take item out of chest cavity
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepCavityRemove
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepCavityInsert
+  name: Hide the held item
+  components:
+  - type: SurgeryStep
+    duration: 5
+  - type: SurgeryCavityInsertStep
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/retractor.rsi
+    state: retractor
+  - type: SurgeryStepEmoteEffect
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepCavityRemove
+  name: Take the item out
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Hemostat
+    duration: 5
+  - type: SurgeryCavityRemoveStep
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
+    state: hemostat
+  - type: SurgeryStepEmoteEffect

@@ -84,4 +84,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Nie są co prawda idealne w porównaniu z prawdziwym sprzętem chirurgicznym, ale w razie potrzeby się przydadzą!
 
+  ## Schowek w klatce piersiowej
+
+  Przez otwartą klatkę piersiową (nacięcie, odciągnięcie skóry, przepiłowanie i rozsunięcie kości) możesz schować w tułowiu jeden mały przedmiot: weź go do ręki i wybierz operację „Schowaj przedmiot w klatce piersiowej”. Operacja „Wyjmij przedmiot z klatki piersiowej” wymaga kleszczyków i oddaje przedmiot do twojej ręki. Na koniec zamknij nacięcie jak po każdej operacji.
+
+  Schowany przedmiot działa dalej: odbezpieczony granat wybuchnie w środku. Analizator go nie wykrywa, widać go dopiero przy operacji. Gdy tułów zostanie zniszczony, przedmiot wypada.
+
 </Document>

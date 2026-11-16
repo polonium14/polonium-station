@@ -966,6 +966,9 @@ public abstract partial class SharedSurgerySystem
             && !BleedsTreatmentComplete(part))
             return false;
 
+        if (!PoloniumStepComplete(stepEnt, part))
+            return false;
+
         return true;
     }
 
