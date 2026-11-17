@@ -137,5 +137,6 @@ internal static class ServerContentIoC
         deps.Register<ISharedFeedbackManager, ServerFeedbackManager>();
         deps.Register<WhitelistManager>();
         deps.Register<_Polonium.DiscordLinking.DiscordLinkManager>(); // Polonium
+        deps.Register<_Polonium.Contributors.ContributorManager>(); // Polonium
     }
 }

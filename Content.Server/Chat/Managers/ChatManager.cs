@@ -310,10 +310,10 @@ private ISawmill? _sawmill = default!;
             var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;
         }
-        if (_entityManager.System<SupporterSystem>().TryGetNameColor(player.UserId, out var supporterColor))
+        if (_entityManager.System<ChatNameColorSystem>().TryGetNameColor(player, out var nameColor)) // Polonium: supporter and contributor name color
         {
             wrappedMessage = Loc.GetString("chat-manager-send-ooc-supporter-wrap-message",
-                ("color", supporterColor),
+                ("color", nameColor), // Polonium: supporter and contributor name color
                 ("playerName", player.Name),
                 ("message", oocMessage)); // Polonium: chat emoji
         }
