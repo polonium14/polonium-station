@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: AndrewFenriz
-  changes:
-  - message: 'Added visual overlays to the janibelt for: Soap, Cleaner Grenade, Plungers,
-      Light Replacer, Wire Brush, Wet Floor Signs, and Holosign Projector.'
-    type: Add
-  - message: Added missing sprites for trash bags when equipped on the belt.
-    type: Add
-  id: 9630
-  time: '2026-04-10T06:12:36.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43492
 - author: SirWarock
   changes:
   - message: Fixed the Prediction Issue when trying to forcefeed someone with a pulled-down
@@ -5180,3 +5170,14 @@
   id: 10124
   time: '2026-11-17T07:40:19.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1258
+- author: NIkita
+  changes:
+  - message: "Konto w grze mo\u017Cna powi\u0105za\u0107 z kontem Discord przyciskiem\
+      \ \"Konto i Discord\" w lobby albo w menu pod Esc"
+    type: Add
+  - message: "Przycisk UUID w lobby otwiera okno konta, kt\xF3re pokazuje UUID i stan\
+      \ powi\u0105zania z Discordem"
+    type: Tweak
+  id: 10125
+  time: '2026-11-17T13:23:58.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1260
