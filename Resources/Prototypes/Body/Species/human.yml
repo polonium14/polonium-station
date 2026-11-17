@@ -283,6 +283,8 @@
   parent: [ OrganBaseBrain, OrganHumanInternal ]
   id: OrganHumanBrain
   components:
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     integrityCap: 30
     integrityThresholds:
@@ -295,6 +297,8 @@
   parent: [ OrganBaseEyes, OrganHumanInternal, OrganHumanExternal ]
   id: OrganHumanEyes
   components:
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
   - type: VisualOrgan
     data:
       sprite: Mobs/Customization/eyes.rsi
@@ -325,6 +329,8 @@
   parent: [ OrganBaseAppendix, OrganHumanInternal ]
   id: OrganHumanAppendix
   components:
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     integrityCap: 30
     integrityThresholds:
@@ -362,6 +368,8 @@
   parent: [ OrganBaseHeart, OrganHumanInternal, OrganHumanMetabolizer ]
   id: OrganHumanHeart
   components:
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     integrityCap: 34
     integrityThresholds:
@@ -374,6 +382,8 @@
   parent: [ OrganBaseStomach, OrganHumanInternal, OrganHumanMetabolizer ]
   id: OrganHumanStomach
   components:
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     integrityCap: 88 # consists of a lot of pieces, thus is incredibly hard to easily destroy
     integrityThresholds:
@@ -386,6 +396,8 @@
   parent: [ OrganBaseLiver, OrganHumanInternal, OrganHumanMetabolizer ]
   id: OrganHumanLiver
   components:
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     integrityCap: 42
     integrityThresholds:

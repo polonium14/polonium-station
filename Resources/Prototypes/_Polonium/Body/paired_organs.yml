@@ -60,7 +60,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadLungLeft
-  name: dead left lung
+  name: left lung
   components:
   - type: Organ
     category: LungLeft
@@ -71,7 +71,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadLungRight
-  name: dead right lung
+  name: right lung
   components:
   - type: Organ
     category: LungRight
@@ -82,7 +82,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadKidneyLeft
-  name: dead left kidney
+  name: left kidney
   components:
   - type: Organ
     category: KidneyLeft
@@ -93,7 +93,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadKidneyRight
-  name: dead right kidney
+  name: right kidney
   components:
   - type: Organ
     category: KidneyRight
@@ -119,6 +119,8 @@
   parent: [ OrganSideLungLeft, OrganHumanLungs ]
   id: OrganHumanLungLeft
   components:
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     deadOrgan: OrganDeadLungLeft
 
@@ -126,6 +128,8 @@
   parent: [ OrganSideLungRight, OrganHumanLungs ]
   id: OrganHumanLungRight
   components:
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     deadOrgan: OrganDeadLungRight
 
@@ -321,6 +325,8 @@
   parent: [ OrganSideKidneyLeft, OrganHumanKidneys ]
   id: OrganHumanKidneyLeft
   components:
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     deadOrgan: OrganDeadKidneyLeft
 
@@ -328,6 +334,8 @@
   parent: [ OrganSideKidneyRight, OrganHumanKidneys ]
   id: OrganHumanKidneyRight
   components:
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     deadOrgan: OrganDeadKidneyRight
 

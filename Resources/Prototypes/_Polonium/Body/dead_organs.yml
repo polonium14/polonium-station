@@ -2,7 +2,8 @@
   abstract: true
   parent: [ OrganBase, OrganBaseChildInternal ]
   id: OrganDeadBase
-  description: This organ is dead. It can only be cut out and replaced.
+  # The name and the description do not give away that the organ is dead; the analyzer does.
+  description: An internal organ.
   components:
   - type: DeadOrgan
   - type: GibbableOrgan
@@ -10,7 +11,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadHeart
-  name: dead heart
+  name: heart
   components:
   - type: Organ
     category: Heart
@@ -21,7 +22,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadLungs
-  name: dead lungs
+  name: lungs
   components:
   - type: Organ
     category: Lungs
@@ -32,7 +33,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadLiver
-  name: dead liver
+  name: liver
   components:
   - type: Organ
     category: Liver
@@ -43,7 +44,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadKidneys
-  name: dead kidneys
+  name: kidneys
   components:
   - type: Organ
     category: Kidneys
@@ -54,7 +55,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadStomach
-  name: dead stomach
+  name: stomach
   components:
   - type: Organ
     category: Stomach
@@ -65,7 +66,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadEyes
-  name: dead eyes
+  name: eyes
   components:
   - type: Organ
     category: Eyes
@@ -76,7 +77,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadTongue
-  name: dead tongue
+  name: tongue
   components:
   - type: Organ
     category: Tongue
@@ -87,7 +88,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadEars
-  name: dead ears
+  name: ears
   components:
   - type: Organ
     category: Ears
@@ -98,7 +99,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadAppendix
-  name: dead appendix
+  name: appendix
   components:
   - type: Organ
     category: Appendix

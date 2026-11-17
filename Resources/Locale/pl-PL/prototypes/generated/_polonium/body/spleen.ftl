@@ -1,4 +1,4 @@
 ent-OrganSpleen = śledziona
     .desc = Dba o to, żeby krew sama się uzupełniała.
-ent-OrganDeadSpleen = martwa śledziona
+ent-OrganDeadSpleen = śledziona
     .desc = { ent-OrganDeadBase.desc }

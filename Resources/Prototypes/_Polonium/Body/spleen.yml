@@ -27,7 +27,7 @@
 - type: entity
   parent: OrganDeadBase
   id: OrganDeadSpleen
-  name: dead spleen
+  name: spleen
   components:
   - type: Organ
     category: Spleen
