@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Polonium.Supporters;
@@ -48,6 +49,22 @@ public sealed partial class SupporterSystem : EntitySystem
     }
 
     public bool IsSupporter(NetUserId userId) => ((_g & _k) != 0) && _f.Contains(userId);
+
+    /// <summary>
+    /// Whether the player is an active supporter.
+    /// </summary>
+    public bool IsSupporter(ICommonSession player)
+    {
+        return IsSupporter(player.UserId);
+    }
+
+    /// <summary>
+    /// Whether the player controlling the entity is an active supporter. False when no player controls it.
+    /// </summary>
+    public bool IsSupporter(Entity<ActorComponent?> ent)
+    {
+        return Resolve(ent, ref ent.Comp, false) && IsSupporter(ent.Comp.PlayerSession);
+    }
 
     public bool TryGetNameColor(NetUserId userId, [NotNullWhen(true)] out string? color)
     {
