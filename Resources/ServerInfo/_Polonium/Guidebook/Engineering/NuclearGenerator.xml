@@ -1,0 +1,46 @@
+<Document>
+	# Generator Jądrowy
+    <Box>
+	  <GuideEntityEmbed Entity="NuclearReactorNormal" Caption="" Scale="1.5"/>
+	  <GuideEntityEmbed Entity="Turbine" Caption="" Scale="1.5"/>
+    </Box>
+
+	Generator jądrowy robi prąd, podgrzewając gaz reakcjami rozszczepienia w [textlink="reaktorze jądrowym" link="NuclearReactor"]. Gorący gaz napędza potem [textlink="turbine gazową" link="GasTurbine"].
+    
+	## Uruchamianie generatora
+	Żeby uruchomić generator jądrowy, inżynierowie robią po kolei:
+	- Napełniają obieg chłodziwa gazem, zwykle azotem albo gazem ze specjalnymi [textlink="właściwościami" link="NuclearReactor"]
+	- Ustawiają Natężenie przepływu turbiny gazowej pod układ reaktora, przy podstawowej liczbie kanałów gazowych(8) ustawia się 1000
+	- Wkładają pręty paliwowe w puste miejsca siatki, zwykle obok prętów sterujących i w otoczeniu wymienników oraz kanałów gazowych.
+	- Wysuwają(-) pręty sterujące, żeby reaktor zaczął się rozgrzewać, około 80%.
+	- W trakcie rozgrzewania korygują obciążenie statora turbiny gazowej, żeby trzymać optymalne obroty. Możesz użyć bramek logicznych do zautomatyzowania tego procesu.
+	- Kiedy turbina daje stacji dość prądu, wsuwają(+) pręty sterujące tak, żeby temperatura reaktora stała w miejscu.
+
+	Z czasem pręty paliwowe tracą radioaktywność. Wtedy trzeba dalej wysunąć(-) pręty sterujące albo wymienić paliwo.
+	
+
+    ##Bramka logiczna
+	Turbiny gazowe mają wyjścia sygnału dzięki którym możesz zautomatyzować korekcje obciążenia statora za pomocą bramek logicznych
+<Box>
+  <GuideEntityEmbed Entity="Multitool" Caption="" Scale="2.5" Margin="0"/>
+</Box>	
+<Box>
+  <GuideEntityEmbed Entity="Turbine" Caption="" Scale="1.5" Margin="0"/>
+</Box>
+<Box>
+  <GuideEntityEmbed Entity="LogicGateOr" Caption="A" Scale="2" Margin="0"/>
+  <GuideEntityEmbed Entity="LogicGateOr" Caption="B" Scale="2" Margin="0"/>
+</Box>
+
+    Jednym ze sposobów na zautomatyzowanie statora jest:
+	- Stworzenie dwóch bramek logiczny OR(LUB)
+	- Podłączenie turbiny do bramki A ustawiając porty Wysoka Prędkość->Wejście A
+	- Podłączenie bramki A ustawiając porty Wyjście->Zwiększ Obciążenie
+	- Podłączenie turbiny do bramki B ustawiając porty Niska Prędkość->Wejście A
+	- Podłączenie bramki B do turbiny ustawiając porty Wyjście->Zmniejsz Obciążenie
+
+    Należy uważać aby poprawnie podłączyć te bramki oraz mieć na uwadzę obciążenie statora jak uruchamiamy turbine ponieważ bramki mogą nie wyrobić z korektą i uszkodzić łopatkę.
+
+    Przy wyższych osiągach reaktora możliwe jest że bramka logiczna nię bedzie wyrabiać, co będzie wymagało modyfikacji bramek logicznych lub wymiany części turbiny na lepsze albo pilnej obserwacji.
+	
+</Document>

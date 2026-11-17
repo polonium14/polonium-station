@@ -1,8 +1,4 @@
 <Document>
-	# Generator jądrowy
-
-	Generator jądrowy robi prąd, podgrzewając gaz reakcjami rozszczepienia w reaktorze. Gorący gaz napędza potem turbinę gazową.
-
 	## Reaktor jądrowy
 	<Box>
 		<GuideEntityEmbed Entity="NuclearReactorNormal"/>
@@ -37,7 +33,7 @@
 
 	Powyżej 80°C potrzebujesz rękawic. Przy 500°C rękawice też nie wystarczą.
 
-	Są cztery rodzaje prętów. Robi się je z różnych materiałów i wkłada w siatkę: pręty paliwowe, pręty sterujące, kanały gazowe i wymienniki ciepła.
+	Są cztery rodzaje prętów. Robi się je z różnych [textlink="materiałów" link="NuclearMaterials"] i wkłada w siatkę: pręty paliwowe, pręty sterujące, kanały gazowe i wymienniki ciepła.
 
 	### Pręty paliwowe
 	Pręty paliwowe są źródłem neutronów i ciepła w reaktorze.
@@ -192,79 +188,5 @@
 	Zastygłe korium da się rozbić kilofem albo wiertłem górniczym, tak jak skałę. Dopóki jest płynne albo pokryte skorupą, żadne narzędzie go nie ruszy.
 
 	Z każdego rozbitego fragmentu zostaje [bold]kawałek korium[/bold]. Przetwornik rudy odzyska z niego uran i węgiel.
-
-
-	## Turbina gazowa
-	<Box>
-		<GuideEntityEmbed Entity="Turbine"/>
-	</Box>
-
-	To w turbinie naprawdę powstaje prąd.
-
-	Bierze gorący gaz z reaktora, oddaje elektryczność i odsyła chłodniejszy gaz z powrotem do reaktora.
-
-	Ile energii zrobi turbina, zależy od ustawionego przepływu, obciążenia statora i od obrotów.
-
-	### Przepływ
-	Przepływ (w interfejsie [bold]Flow Rate[/bold]) mówi, ile gazu przechodzi przez turbinę w ciągu sekundy.
-
-	Im wyższy przepływ, tym wyższe obroty turbiny.
-
-	Zwykle ustawia się go tak, żeby przez rdzeń szło maksimum. Liczysz to tak: 100 razy liczba kanałów gazowych, plus 200.
-
-	### Obciążenie statora
-	Obciążenie statora (w interfejsie [bold]Stator Load[/bold]) mówi, ile mocy przypada na jeden obrót turbiny.
-
-	Im wyższe obciążenie, tym niższe obroty.
-
-	Zwykle dobiera się je tak, żeby turbina trzymała optymalne obroty.
-
-	### Obroty
-	Obroty, w interfejsie [bold]RPM[/bold], mówią, jak szybko kręci się turbina.
-
-	Turbina ma optymalne obroty, przy których daje najwięcej mocy.
-
-	Szybciej albo wolniej niż optimum działa słabo.
-
-	## Wskaźniki turbiny
-	Turbina ma wskaźniki, które ostrzegają przed groźnym stanem albo usterką. W interfejsie są po angielsku.
-
-	### Przekroczenie obrotów
-	W interfejsie [bold]OVERSPEED[/bold]. Obroty są za wysokie.
-
-	Kiedy obroty za bardzo rosną, turbina zaczyna odnosić uszkodzenia.
-
-	Długie albo mocne przekroczenie sprawi, że turbina [color=#ff8a8a]rozerwie się na kawałki[/color].
-
-	Uszkodzenia naprawisz [color=#ffe566]spawarką[/color], choć pełna naprawa zwykle wymaga kilku podejść.
-
-	### Przegrzanie
-	W interfejsie [bold]OVERTEMP[/bold]. Gaz wchodzący do turbiny jest za gorący.
-
-	Jeśli gaz ma więcej niż 3000 kelwinów, turbina otworzy awaryjny zawór upustowy i zrzuci gaz do pomieszczenia.
-
-	Taki gaz poważnie parzy, a jeśli jest palny, może też wywołać pożar.
-
-	### Utknięcie
-	W interfejsie [bold]STALLING[/bold]. Obciążenie statora jest za wysokie albo gaz nie jest dość gorący.
-
-	Utknięcie znaczy, że gaz wchodzący do turbiny nie „pcha” dość mocno, żeby pokonać opór statora.
-
-	### Za niska temperatura
-	W interfejsie [bold]UNDERTEMP[/bold]. Gaz wchodzący do turbiny jest za zimny.
-
-	Jeśli gaz ma temperaturę pokojową albo niższą (20°C), turbina nie ma z niego czego wyciągnąć.
-
-
-	# Uruchamianie generatora
-	Żeby uruchomić generator jądrowy, inżynierowie robią po kolei:
-	- Napełniają obieg chłodziwa gazem.
-	- Ustawiają przepływ turbiny pod układ reaktora.
-	- Wkładają pręty paliwowe w puste miejsca siatki, zwykle obok prętów sterujących i w otoczeniu wymienników oraz kanałów gazowych.
-	- Wysuwają pręty sterujące, żeby reaktor zaczął się rozgrzewać.
-	- W trakcie rozgrzewania korygują obciążenie statora, żeby trzymać optymalne obroty.
-	- Kiedy turbina daje stacji dość prądu, wsuwają pręty sterujące tak, żeby temperatura reaktora stała w miejscu.
-
-	Z czasem pręty paliwowe tracą radioaktywność. Wtedy trzeba dalej wysunąć pręty sterujące albo wymienić paliwo.
 
 </Document>
