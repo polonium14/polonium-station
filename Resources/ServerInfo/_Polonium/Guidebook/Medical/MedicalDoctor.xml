@@ -77,9 +77,9 @@ Jeśli to możliwe, przypnij pacjenta do łóżka medycznego; jeśli potrzebujes
 
 Narząd jest w jednym z trzech stanów, które pokazuje analizator zdrowia:
 
-- [color=#e8c878]Stan w większości dobry[/color]: narząd ma co najmniej 35% integralności i działa w pełni.
-- [color=#e8c878]Uszkodzony[/color]: narząd ma mniej niż 35% integralności. Wyleczysz go lekami na narządy albo wymienisz przeszczepem.
-- [color=#e8c878]Zniszczony[/color]: integralność spadła do zera i narząd jest martwy.
+- [color=#e8c878]W normie[/color]: narząd ma co najmniej 35% integralności i działa w pełni.
+- [color=#e8c878]Uszkodzenie[/color]: narząd ma mniej niż 35% integralności. Wyleczysz go lekami na narządy, operacją naprawy narządu (raz na narząd, do 60%) albo wymienisz przeszczepem.
+- [color=#e8c878]Martwica[/color]: integralność spadła do zera i narząd jest martwy. Jeśli narządu nie ma wcale, analizator pokazuje „brak”.
 
 Martwy narząd zostaje w ciele, ale nie pełni żadnej funkcji i nie da się go naprawić. Trzeba go wyciąć operacją usunięcia narządu i wszczepić w jego miejsce nowy. Martwy narząd wszczepiony innej osobie nadal jest martwy.
 
@@ -141,7 +141,7 @@ Deksalina i deksalina plus przenoszą tlen we krwi: dopóki działają, saturacj
 <GuideEntityEmbed Entity="DialysisMachine"/>
 </Box>
 
-[color=#e8c878]Maszyna do dializy[/color] przejmuje pracę nerek. Przeciągnij ją na pacjenta, żeby podłączyć kaniule; odciągnięcie maszyny dalej niż na dwie kratki wyrywa je z ręki. Co sekundę usuwa z krwi około 2 jednostek wszystkiego poza lekami, więc pomaga też przy zatruciu i przedawkowaniu narkotyków, a leki można podawać w trakcie. Pacjent na dializie nie dostaje trucizny od chorych ani martwych nerek, a od wątroby trzy razy mniej. Obrażeń od trucizny, które pacjent już ma, dializa nie leczy. Maszynę robi lathe medyczny po zbadaniu stazy biochemicznej.
+[color=#e8c878]Maszyna do dializy[/color] przejmuje pracę nerek. Przeciągnij ją na pacjenta, żeby podłączyć kaniule; odciągnięcie maszyny dalej niż na dwie kratki wyrywa je z ręki. Co sekundę usuwa z krwi około 2 jednostek wszystkiego poza lekami, więc pomaga też przy zatruciu i przedawkowaniu narkotyków, a leki można podawać w trakcie. Pacjent na dializie nie dostaje trucizny od chorych ani martwych nerek, a od wątroby trzy razy mniej. Obrażeń od trucizny, które pacjent już ma, dializa nie leczy. Paczkę z maszyną drukuje drukarka płytek po zbadaniu stazy biochemicznej.
 
 Nerki ustalają tempo działania leków, trucizn, jedzenia i picia. Gdy choć jedna nerka jest chora, martwa albo usunięta, wszystko to działa o jedną czwartą wolniej, a bez żadnej działającej nerki o połowę wolniej, ale w sumie tak samo mocno. Martwa albo usunięta wątroba truje pacjenta, nerki dopiero wtedy, gdy nie działa żadna z nich. Każde zatrucie uszkadza też nerki i wątrobę.
 
