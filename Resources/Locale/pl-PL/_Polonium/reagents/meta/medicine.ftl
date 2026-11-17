@@ -6,5 +6,3 @@ reagent-name-salbutamol = salbutamol
 reagent-desc-salbutamol = Rozszerza drogi oddechowe. Łagodzi duszność i powoli leczy płuca oraz śledzionę. Przedawkowany obciąża nerki i wywołuje drżenie.
 reagent-name-perfluorodecalin = perfluorodekalina
 reagent-desc-perfluorodecalin = Gęsta ciecz, która dostarcza tlen prosto do tkanek. Szybko łagodzi niedotlenienie, leczy płuca i śledzionę, a w większej ilości pozwala oddychać samą cieczą. W nadmiarze zalewa płuca i wywołuje kaszel.
-reagent-name-morphine = morfina
-reagent-desc-morphine = Silny lek przeciwbólowy. Pacjent nie czuje bólu podczas operacji, dzięki czemu zabieg idzie szybciej. Większe dawki wywołują senność, a potem sen, a przedawkowanie zatruwa i zatrzymuje oddech.
