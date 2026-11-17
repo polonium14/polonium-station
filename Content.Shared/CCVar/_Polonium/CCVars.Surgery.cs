@@ -44,9 +44,10 @@ public sealed partial class CCVars
 
     /// <summary>
     /// Blood an open incision in the torso loses every 3 seconds once its bleeders are clamped.
+    /// The body makes 1 in that time, so above 1 even a clamped patient slowly runs dry.
     /// </summary>
     public static readonly CVarDef<float> SurgeryClampedIncisionBleed =
-        CVarDef.Create("surgery.clamped_incision_bleed", 0.3f, CVar.SERVERONLY);
+        CVarDef.Create("surgery.clamped_incision_bleed", 1.2f, CVar.SERVERONLY);
 
     /// <summary>
     /// The most a slow tool and poor conditions can add up to, so an improvised tool is never outright useless.
