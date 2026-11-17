@@ -9,8 +9,6 @@
   - type: SurgeryTool
   - type: Tweezers
     speed: 0.55
-  - type: BoneSetter
-    speed: 0.5
   # Polonium end
   - type: EmitSoundOnLand
     sound:

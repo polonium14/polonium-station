@@ -47,4 +47,11 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> SurgeryClampedIncisionBleed =
         CVarDef.Create("surgery.clamped_incision_bleed", 0.3f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// The most a slow tool and poor conditions can add up to, so an improvised tool is never outright useless.
+    /// A clumsy surgeon's own chance comes on top.
+    /// </summary>
+    public static readonly CVarDef<float> SurgeryBotchMaxChance =
+        CVarDef.Create("surgery.botch_max_chance", 0.9f, CVar.SERVER | CVar.REPLICATED);
 }

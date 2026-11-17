@@ -45,6 +45,8 @@
   - type: ClumsyVaultStatusEffect
     clumsyChance: 0.25 # Climbing proficiency
     clumsySound: *SoundMonkeyScream
+  - type: ClumsySurgeryStatusEffect # Polonium
+    clumsySound: *SoundMonkeyScream
 
 # Kobolds are naked monkeys
 - type: entity
@@ -61,6 +63,8 @@
   - type: ClumsyInjectorStatusEffect
     clumsySound: *SoundReptileScream
   - type: ClumsyVaultStatusEffect
+    clumsySound: *SoundReptileScream
+  - type: ClumsySurgeryStatusEffect # Polonium
     clumsySound: *SoundReptileScream
 
 #endregion
@@ -87,6 +91,9 @@
   - type: ClumsyVaultStatusEffect
     clumsyChance: *ChanceCluwne
     clumsySound: *SoundCluwneHorn
+  - type: ClumsySurgeryStatusEffect # Polonium
+    clumsyChance: *ChanceCluwne
+    clumsySound: *SoundCluwneHorn
 
 # A terribler fate
 - type: entity
@@ -102,6 +109,8 @@
   - type: ClumsyInjectorStatusEffect
     clumsyChance: *Chance100
   - type: ClumsyVaultStatusEffect
+    clumsyChance: *Chance100
+  - type: ClumsySurgeryStatusEffect # Polonium
     clumsyChance: *Chance100
 
 # =^_^= nya!
@@ -119,6 +128,8 @@
   - type: ClumsyInjectorStatusEffect
     clumsySound: *SoundCatMeow
   - type: ClumsyVaultStatusEffect
+    clumsySound: *SoundCatMeow
+  - type: ClumsySurgeryStatusEffect # Polonium
     clumsySound: *SoundCatMeow
 
 # Wahey!

@@ -1,0 +1,17 @@
+# Clamping the bleeders of a fresh incision, the second step of "Open Incision". An open incision bleeds
+# until it is clamped (see UnfinishedSurgeryPenaltySystem); without this step only the organ removal
+# surgeries offered a clamp.
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepClampIncision
+  name: Clamp the bleeders
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Hemostat
+    add:
+    - type: BleedersClamped
+    duration: 2
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
+    state: hemostat

@@ -58,7 +58,7 @@ public abstract partial class SharedSurgerySystem
         var chance = (slowdown - _config.GetCVar(CCVars.SurgeryBotchThreshold))
             * stepComp.Duration
             * _config.GetCVar(CCVars.SurgeryBotchChancePerSecond);
-        chance = Math.Clamp(chance, 0f, 1f);
+        chance = Math.Clamp(chance, 0f, _config.GetCVar(CCVars.SurgeryBotchMaxChance));
 
         // A clumsy surgeon fails on top of that, even with the best tools.
         return 1f - (1f - chance) * (1f - ClumsyChance(user, out _));
@@ -115,7 +115,7 @@ public abstract partial class SharedSurgerySystem
         _audio.PlayPvs(sound, body);
 
         var damage = new DamageSpecifier(_prototypes.Index(BotchDamageType), _config.GetCVar(CCVars.SurgeryBotchDamage));
-        var ev = new SurgeryStepDamageEvent(user, body, part, surgery, damage, 0.5f);
+        var ev = new SurgeryStepDamageEvent(user, body, part, surgery, damage, 1f);
         RaiseLocalEvent(body, ref ev);
         return true;
     }

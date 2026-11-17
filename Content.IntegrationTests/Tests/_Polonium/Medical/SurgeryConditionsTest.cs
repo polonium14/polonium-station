@@ -66,6 +66,8 @@ public sealed class SurgeryConditionsTest : GameTest
     [TestCase(0.1f, true)]
     public async Task HopelessToolBotchesTheStep(float scalpelSpeed, bool botched)
     {
+        // Without the cap, so the hopeless tool fails for certain.
+        Server.CfgMan.SetCVar(CCVars.SurgeryBotchMaxChance, 1f);
         var map = await Pair.CreateTestMap();
         EntityUid user = default, body = default, torso = default;
         var damageable = SEntMan.System<DamageableSystem>();
@@ -156,6 +158,7 @@ public sealed class SurgeryConditionsTest : GameTest
         (string, string)[] steps =
         [
             (Surgery, Step),
+            (Surgery, "SurgeryStepClampIncision"),
             (Surgery, "SurgeryStepRetractSkin"),
             ("SurgeryOpenRibcage", "SurgeryStepSawBones"),
             ("SurgeryOpenRibcage", "SurgeryStepPriseOpenBones"),

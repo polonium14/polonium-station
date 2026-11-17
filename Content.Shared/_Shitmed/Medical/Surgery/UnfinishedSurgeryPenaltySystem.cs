@@ -26,6 +26,7 @@ public sealed partial class UnfinishedSurgeryPenaltySystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private BloodstreamSystem _bloodstream = default!;
+    [Dependency] private SharedSurgerySystem _surgery = default!;
 
     private static readonly TimeSpan TickInterval = TimeSpan.FromSeconds(3);
 
@@ -48,6 +49,13 @@ public sealed partial class UnfinishedSurgeryPenaltySystem : EntitySystem
 
         SubscribeLocalEvent<UnfinishedSurgeryPenaltyComponent, BleedModifierEvent>(OnBleedModifier);
         SubscribeLocalEvent<UnfinishedSurgeryPenaltyComponent, RejuvenateEvent>(OnRejuvenate);
+        SubscribeLocalEvent<IncisionOpenComponent, OrganGotRemovedEvent>(OnIncisedPartRemoved);
+    }
+
+    private void OnIncisedPartRemoved(Entity<IncisionOpenComponent> ent, ref OrganGotRemovedEvent args)
+    {
+        // A limb cut off in a fight with its incision still open would bleed again once it is sewn back on.
+        _surgery.ResetSurgery(ent);
     }
 
     private void OnRejuvenate(Entity<UnfinishedSurgeryPenaltyComponent> ent, ref RejuvenateEvent args)

@@ -62,8 +62,6 @@
   - type: SurgeryTool
   - type: Retractor
     speed: 0.44
-  - type: Drill
-    speed: 0.25
   # Polonium end
   - type: EmitSoundOnLand
     sound:
