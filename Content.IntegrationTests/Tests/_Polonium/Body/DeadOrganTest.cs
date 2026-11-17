@@ -125,6 +125,36 @@ public sealed class DeadOrganTest : GameTest
         });
     }
 
+    /// <summary>
+    /// A body gets the lung surgeries of its own build: one per side for a human, the single one for a diona.
+    /// </summary>
+    [TestCase("MobHuman", "LungLeft", "SurgeryInsertLungLeft", "SurgeryInsertLungs")]
+    [TestCase("MobDiona", "Lungs", "SurgeryInsertLungs", "SurgeryInsertLungLeft")]
+    public async Task OnlyMatchingLungSurgeryIsOffered(string mob, string lung, string offered, string hidden)
+    {
+        var map = await Pair.CreateTestMap();
+        await Server.WaitAssertion(() =>
+        {
+            var body = SEntMan.SpawnAtPosition(mob, map.GridCoords);
+            var torso = Organ(body, "Torso");
+            var surgery = SEntMan.System<SurgerySystem>();
+            SEntMan.System<SharedContainerSystem>().Remove(Organ(body, lung), SEntMan.GetComponent<BodyComponent>(body).Organs!);
+
+            bool Valid(string id)
+            {
+                var ev = new SurgeryValidEvent(body, torso, Category: "Torso");
+                SEntMan.EventBus.RaiseLocalEvent(surgery.GetSingleton(id)!.Value, ref ev);
+                return !ev.Cancelled;
+            }
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(Valid(offered));
+                Assert.That(Valid(hidden), Is.False);
+            });
+        });
+    }
+
     [Test]
     public async Task DeadOrganCanBeRemovedAndReplaced()
     {

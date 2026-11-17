@@ -28,6 +28,24 @@ public static class PairedOrgans
     }
 
     /// <summary>
+    /// Whether a body built with these organs holds this organ in the other form: a left and a right one where
+    /// the category names the single organ, or the single organ where the category names one side.
+    /// </summary>
+    public static bool WrongForm(IReadOnlySet<ProtoId<OrganCategoryPrototype>> expected, ProtoId<OrganCategoryPrototype> category)
+    {
+        if (expected.Contains(category))
+            return false;
+
+        foreach (var other in expected)
+        {
+            if (Matches(other, category) || Matches(category, other))
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
     /// How much of the whole an organ of this category is: half for one side of a pair, all of it otherwise.
     /// </summary>
     public static float Share(ProtoId<OrganCategoryPrototype>? category)

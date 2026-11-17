@@ -340,6 +340,12 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             return;
         }
 
+        if (Content.Shared._Polonium.Body.PairedOrgans.WrongForm(body.ExpectedOrgans, ent.Comp.Category))
+        {
+            args.Cancelled = true;
+            return;
+        }
+
         // Inverse: valid when the organ is absent, or (if Reattaching) present but still
         // tagged as freshly reattached — keeps an "organ missing" condition valid for one more
         // step right after a transplant, until the affix step clears the tag.
