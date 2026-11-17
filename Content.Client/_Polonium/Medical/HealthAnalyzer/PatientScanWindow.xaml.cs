@@ -147,6 +147,8 @@ public sealed partial class PatientScanWindow : FancyWindow
 
         // One tooltip for the whole bar: every damage group with the analyzer's icons, its types below.
         DamageChart.TooltipSupplier = _ => DamageTooltip();
+        // The breakdown is the point of the bar, so it shows without the usual wait.
+        DamageChart.TooltipDelay = 0f;
     }
 
     /// <summary>

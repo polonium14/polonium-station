@@ -107,7 +107,12 @@ public sealed partial class AnalyzerBar : Control
 
         if (Mode == BarMode.Outline)
         {
-            handle.DrawRect(box, Hatch, filled: false);
+            // Four filled strips instead of an unfilled rectangle, whose left and top lines fall
+            // on the edge of the control and get clipped away.
+            handle.DrawRect(new UIBox2(0, 0, size.X, 1), Hatch);
+            handle.DrawRect(new UIBox2(0, size.Y - 1, size.X, size.Y), Hatch);
+            handle.DrawRect(new UIBox2(0, 0, 1, size.Y), Hatch);
+            handle.DrawRect(new UIBox2(size.X - 1, 0, size.X, size.Y), Hatch);
             DrawTexts(handle, size);
             return;
         }
