@@ -4,6 +4,13 @@
   name: cigar
   description: "A brown roll of tobacco and... well, you're not quite sure."
   components:
+  # Polonium: a cigar holds twice the nicotine of a cigarette, so it burns twice as long and wears the lungs twice as much
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nicotine
+        Quantity: 20
+  # Polonium end
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cigars/cigar.rsi
     state: unlit-icon
