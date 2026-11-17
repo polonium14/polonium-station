@@ -17,6 +17,9 @@
         Heat: 3
   - type: ClumsyInjectorStatusEffect
   - type: ClumsyVaultStatusEffect
+  - type: ClumsySurgeryStatusEffect # Polonium: clumsy surgeons botch surgery steps
+    clumsySound:
+      path: /Audio/Items/bikehorn.ogg
 
 #region Permanent Statuses
 
@@ -131,6 +134,9 @@
     clumsyChance: *ChanceDrunk
     clumsySound: *SoundGlug
   - type: ClumsyVaultStatusEffect
+    clumsyChance: *ChanceDrunk
+    clumsySound: *SoundGlug
+  - type: ClumsySurgeryStatusEffect # Polonium: a drunk surgeon botches surgery steps
     clumsyChance: *ChanceDrunk
     clumsySound: *SoundGlug
 

@@ -6,3 +6,5 @@ reagent-name-salbutamol = salbutamol
 reagent-desc-salbutamol = Widens the airways. Eases shortness of breath and slowly heals the lungs and spleen. An overdose strains the kidneys and causes jitters.
 reagent-name-perfluorodecalin = perfluorodecalin
 reagent-desc-perfluorodecalin = A dense liquid that carries oxygen straight to the tissues. Quickly relieves hypoxia, heals the lungs and spleen, and in larger amounts lets the body breathe the liquid alone. Too much floods the lungs and causes coughing.
+reagent-name-morphine = morphine
+reagent-desc-morphine = A strong painkiller. The patient feels no pain during surgery, which also makes the operation faster. Larger doses cause drowsiness and then sleep, and an overdose poisons and stops the breathing.

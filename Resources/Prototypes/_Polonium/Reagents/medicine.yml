@@ -145,3 +145,46 @@
           min: 20
         emote: Cough
         probability: 0.08
+
+# Morphine: a painkiller for surgery that makes the patient drowsy and puts them to sleep in larger doses.
+- type: reagent
+  id: Morphine
+  name: reagent-name-morphine
+  group: Medicine
+  desc: reagent-desc-morphine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: bitter
+  color: "#a9fbfb"
+  metabolisms:
+    Bloodstream:
+      metabolismRate: 0.25
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectAnalgesia
+        time: 4
+        type: Update
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: Morphine
+          min: 10
+        effectProto: StatusEffectDrowsiness
+        time: 4
+        type: Update
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: Morphine
+          min: 20
+        effectProto: StatusEffectForcedSleeping
+        time: 4
+        type: Update
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Morphine
+          min: 30
+        damage:
+          types:
+            Poison: 1
+            Asphyxiation: 1

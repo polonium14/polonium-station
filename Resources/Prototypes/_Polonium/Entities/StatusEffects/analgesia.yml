@@ -1,0 +1,7 @@
+# The patient feels no pain: surgery hurts as little as under anesthesia and goes faster.
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectAnalgesia
+  name: analgesia
+  components:
+  - type: AnalgesiaStatusEffect

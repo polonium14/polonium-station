@@ -1,0 +1,30 @@
+# Repairs badly damaged organs of the torso without a transplant, once per organ, like a
+# coronary bypass, lobectomy, hepatectomy or gastrectomy.
+
+- type: entity
+  parent: BasePartSurgery
+  id: SurgeryRepairOrgans
+  name: Repair organs
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepRepairOrgans
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepRepairOrgans
+  name: Repair the most damaged organ
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Hemostat
+    duration: 8
+  - type: SurgeryRepairOrgansStep
+  - type: SurgeryRepeatableStep
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
+    state: hemostat
+  - type: SurgeryStepEmoteEffect

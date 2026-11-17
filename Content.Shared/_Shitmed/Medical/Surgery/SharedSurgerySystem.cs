@@ -211,6 +211,12 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             return;
         }
 
+        if (TryBotchStep(args.User, ent, part, step, tool, surgery))
+        {
+            RaiseStepFailed(args.User, ent, args.Surgery, args.Step);
+            return;
+        }
+
         var ev = new SurgeryStepEvent(args.User, ent, part, tool, surgery, step);
         RaiseLocalEvent(step, ref ev);
         RaiseLocalEvent(args.User, ref ev);

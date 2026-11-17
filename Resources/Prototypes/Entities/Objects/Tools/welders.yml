@@ -3,6 +3,11 @@
   parent: [SolutionWelder, BaseItem]
   id: BaseWelder
   components:
+  # Polonium: improvised surgery tool, slow and likely to botch the step
+  - type: SurgeryTool
+  - type: Cautery
+    speed: 0.67
+  # Polonium end
   - type: Sprite
     layers:
     - state: icon

@@ -40,4 +40,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> OrgansLobotomyBrainEfficiency =
         CVarDef.Create("organs.lobotomy_brain_efficiency", 0.2f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Seconds a healthy organ lasts outside a body and outside a freezer before it dies. Zero turns the decay off.
+    /// </summary>
+    public static readonly CVarDef<float> OrgansDecayTime =
+        CVarDef.Create("organs.decay_time", 900f, CVar.SERVERONLY);
 }
