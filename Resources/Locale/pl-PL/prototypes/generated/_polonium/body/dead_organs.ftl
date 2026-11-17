@@ -1,5 +1,5 @@
 ent-OrganDeadBase = { ent-OrganBase }
-    .desc = Narząd wewnętrzny.
+    .desc = { ent-OrganBase.desc }
 ent-OrganDeadHeart = serce
     .desc = { ent-OrganDeadBase.desc }
 ent-OrganDeadLungs = płuca

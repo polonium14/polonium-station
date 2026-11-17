@@ -1,5 +1,5 @@
 ent-OrganDeadBase = { ent-OrganBase }
-    .desc = An internal organ.
+    .desc = { ent-OrganBase.desc }
 ent-OrganDeadHeart = heart
     .desc = { ent-OrganDeadBase.desc }
 ent-OrganDeadLungs = lungs

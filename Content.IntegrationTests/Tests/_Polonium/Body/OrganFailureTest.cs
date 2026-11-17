@@ -161,6 +161,40 @@ public sealed class OrganFailureTest : GameTest
         });
     }
 
+    /// <summary>
+    /// A small organ's share per second is below what FixedPoint2 can hold; it must not round away.
+    /// </summary>
+    [Test]
+    public async Task FailingHeartWearsItselfDown()
+    {
+        SetChances(0f, 0f, 0f);
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+        var heart = EntityUid.Invalid;
+        var before = FixedPoint2.Zero;
+
+        await Server.WaitAssertion(() =>
+        {
+            PatientIntakeMachineTest.AddAir(SEntMan, map.MapUid);
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            heart = Organ(body, "Heart");
+            var integrity = SEntMan.GetComponent<OrganIntegrityComponent>(heart);
+            // Sick, so the stage holds.
+            SEntMan.System<OrganHealingSystem>().DamageOrgan((heart, integrity), integrity.IntegrityCap * 0.7f);
+            Failure.SetStage((heart, FailureOf(heart)), 2);
+            before = integrity.OrganIntegrity;
+        });
+
+        await Pair.RunSeconds(120);
+
+        await Server.WaitAssertion(() =>
+        {
+            // 34 x 0.00025 a second: about 1 over two minutes.
+            var lost = (before - SEntMan.GetComponent<OrganIntegrityComponent>(heart).OrganIntegrity).Float();
+            Assert.That(lost, Is.InRange(0.4f, 2f));
+        });
+    }
+
     [Test]
     public async Task PoisonWearsKidneysAndLiverDownOnce()
     {

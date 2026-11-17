@@ -58,4 +58,14 @@ public partial class TraumaSystem
         // The dismemberment trauma hangs on a wound it makes on the parent part, so it needs no inflicter.
         ApplyTraumas(limb, default, new List<TraumaType> { TraumaType.Dismemberment }, severity);
     }
+
+    /// <summary>
+    /// Severs a limb of a body that has no nerve system, so nothing feels it: the stump trauma and the pain
+    /// are skipped, the limb just comes off.
+    /// </summary>
+    private void SeverWithoutNerves(Entity<WoundableComponent> limb)
+    {
+        if (!_wound.IsWoundableRoot(limb.Owner))
+            _wound.AmputateWoundableSafely(limb.Owner, limb.Comp);
+    }
 }

@@ -95,7 +95,9 @@ public sealed partial class PatientScanSystem : EntitySystem
             scan.NormalBloodVolume = bloodstream.BloodReferenceSolution.Volume;
             scan.BloodVolume = scan.NormalBloodVolume * scan.BloodLevel;
             scan.BloodlossThreshold = bloodstream.BloodlossThreshold;
-            scan.SystemicBleeding = bloodstream.BleedAmountNotFromWounds > 0;
+            // An open surgical incision bleeds through the same pool; the scan already reports the surgery.
+            var surgical = CompOrNull<UnfinishedSurgeryPenaltyComponent>(patient)?.PenaltyBleed ?? 0f;
+            scan.SystemicBleeding = bloodstream.BleedAmountNotFromWounds - surgical > 0.01f;
         }
 
         scan.SpO2 = _circulation.ReadSpO2(patient);

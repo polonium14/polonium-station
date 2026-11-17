@@ -21,3 +21,4 @@ entity-effect-guidebook-organ-Ears = uszy
 entity-effect-guidebook-organ-Appendix = wyrostek robaczkowy
 entity-effect-guidebook-organ-Brain = mózg
 entity-effect-guidebook-organ-Spleen = śledzionę
+entity-effect-guidebook-organ-chance = , każdemu z szansą { NATURALPERCENT($chance, 0) }

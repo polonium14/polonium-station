@@ -627,7 +627,12 @@ public partial class TraumaSystem
             return;
 
         if (!_consciousness.TryGetNerveSystem(body, out var nerveSys))
+        {
+            if (traumas.Contains(TraumaType.Dismemberment))
+                SeverWithoutNerves(target);
+
             return;
+        }
 
         foreach (var trauma in traumas)
         {

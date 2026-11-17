@@ -121,6 +121,8 @@
   components:
   - type: Sprite # Polonium: human organs use the _Polonium organ sprites
     sprite: _Polonium/Mobs/Species/Human/organs.rsi
+  - type: Item # Polonium: these organ sprites have no in-hand states
+    sprite: Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     deadOrgan: OrganDeadLungLeft
 
@@ -130,6 +132,8 @@
   components:
   - type: Sprite # Polonium: human organs use the _Polonium organ sprites
     sprite: _Polonium/Mobs/Species/Human/organs.rsi
+  - type: Item # Polonium: these organ sprites have no in-hand states
+    sprite: Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     deadOrgan: OrganDeadLungRight
 
@@ -327,6 +331,8 @@
   components:
   - type: Sprite # Polonium: human organs use the _Polonium organ sprites
     sprite: _Polonium/Mobs/Species/Human/organs.rsi
+  - type: Item # Polonium: these organ sprites have no in-hand states
+    sprite: Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     deadOrgan: OrganDeadKidneyLeft
 
@@ -336,6 +342,8 @@
   components:
   - type: Sprite # Polonium: human organs use the _Polonium organ sprites
     sprite: _Polonium/Mobs/Species/Human/organs.rsi
+  - type: Item # Polonium: these organ sprites have no in-hand states
+    sprite: Mobs/Species/Human/organs.rsi
   - type: OrganIntegrity
     deadOrgan: OrganDeadKidneyRight
 

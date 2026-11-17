@@ -67,10 +67,15 @@ public sealed partial class DamageOrgans : EntityEffectBase<DamageOrgans>
 
     public override string EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
-        return Loc.GetString("entity-effect-guidebook-damage-organs",
-            ("chance", Probability * OrganChance),
+        var text = Loc.GetString("entity-effect-guidebook-damage-organs",
+            ("chance", Probability),
             ("amount", Amount.Float()),
             ("organs", OrganEffectText.Describe(Categories, [])));
+
+        // The reagent's own chance is added by the guidebook; the per-organ one has to be said here.
+        return OrganChance < 1f
+            ? text + Loc.GetString("entity-effect-guidebook-organ-chance", ("chance", OrganChance))
+            : text;
     }
 }
 

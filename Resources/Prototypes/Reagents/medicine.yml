@@ -1673,6 +1673,14 @@
         categories: [ Kidneys, Liver ]
         amount: 0.5
         probability: 0.33
+      - !type:HealthChange # the same overdose as when swallowed
+        conditions:
+          - !type:ReagentCondition
+            reagent: PotassiumIodide
+            min: 20
+        damage:
+          types:
+            Poison: 1
     Digestion:
       effects:
       - !type:ModifyStatusEffect

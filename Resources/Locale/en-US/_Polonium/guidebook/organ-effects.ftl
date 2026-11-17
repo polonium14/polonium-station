@@ -21,3 +21,4 @@ entity-effect-guidebook-organ-Ears = the ears
 entity-effect-guidebook-organ-Appendix = the appendix
 entity-effect-guidebook-organ-Brain = the brain
 entity-effect-guidebook-organ-Spleen = the spleen
+entity-effect-guidebook-organ-chance = , each organ at a { NATURALPERCENT($chance, 0) } chance

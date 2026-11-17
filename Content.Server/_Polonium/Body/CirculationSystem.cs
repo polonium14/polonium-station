@@ -587,7 +587,10 @@ public sealed partial class CirculationSystem : EntitySystem
 
             // Only a body that keeps suffocating passes out. One lung dips below the threshold for a moment
             // at the end of every breath and recovers with the next one.
-            if (respirator.Saturation < respirator.SuffocationThreshold && respirator.SuffocationCycles >= SpO2SuffocationCycles)
+            // A capped reserve alone (one lung, a weak heart) leaves the patient as awake as a healthy one.
+            if (limit.Loss > 0f
+                && respirator.Saturation < respirator.SuffocationThreshold
+                && respirator.SuffocationCycles >= SpO2SuffocationCycles)
                 _statusEffects.TryUpdateStatusEffectDuration(uid, Unconscious, PassOutTime);
         }
 

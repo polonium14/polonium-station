@@ -98,10 +98,15 @@ public sealed partial class HearingSystem : EntitySystem
             return;
 
         // The wrapped text holds the message escaped for markup, swap that part only.
+        // Only its last occurrence: a short message can also appear inside the speaker's name or the markup.
         var escaped = FormattedMessage.EscapeText(args.Message);
-        args.WrappedMessage = args.WrappedMessage.Contains(escaped)
-            ? args.WrappedMessage.Replace(escaped, FormattedMessage.EscapeText(garbled))
-            : args.WrappedMessage.Replace(args.Message, garbled);
+        var (find, replacement) = args.WrappedMessage.Contains(escaped)
+            ? (escaped, FormattedMessage.EscapeText(garbled))
+            : (args.Message, garbled);
+        var at = args.WrappedMessage.LastIndexOf(find, StringComparison.Ordinal);
+        if (at >= 0)
+            args.WrappedMessage = args.WrappedMessage[..at] + replacement + args.WrappedMessage[(at + find.Length)..];
+
         args.Message = garbled;
     }
 

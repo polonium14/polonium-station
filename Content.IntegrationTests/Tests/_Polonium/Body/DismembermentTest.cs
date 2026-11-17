@@ -108,6 +108,23 @@ public sealed class DismembermentTest : GameTest
     }
 
     [Test]
+    public async Task BodyWithoutABrainStillLosesLimbs()
+    {
+        Server.CfgMan.SetCVar(CCVars.DismembermentChanceMultiplier, 1000f);
+        var map = await Pair.CreateTestMap();
+
+        await Server.WaitAssertion(() =>
+        {
+            var body = Victim(map.GridCoords, "ArmLeft", 30);
+            var organs = SEntMan.GetComponent<BodyComponent>(body).Organs!;
+            SEntMan.System<Robust.Shared.Containers.SharedContainerSystem>().Remove(Part(body, "Brain"), organs);
+
+            Cut(body, map.GridCoords, TargetBodyPart.LeftArm);
+            Assert.That(Part(body, "ArmLeft").IsValid(), Is.False, "No brain, no nerves, but the arm still comes off.");
+        });
+    }
+
+    [Test]
     public async Task BrokenBoneOpensTheWay()
     {
         Server.CfgMan.SetCVar(CCVars.DismembermentChanceMultiplier, 1000f);

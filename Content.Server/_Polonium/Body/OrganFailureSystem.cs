@@ -4,6 +4,7 @@ using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
+using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs.Systems;
@@ -163,7 +164,14 @@ public sealed partial class OrganFailureSystem : EntitySystem
         }
 
         // Last, because it may kill the organ.
-        _healing.DamageOrgan((organ, integrity), integrity.IntegrityCap * stage.SelfDamage * UpdateInterval);
+        // FixedPoint2 keeps hundredths and a small organ's share per update is below that, so the leftover
+        // is rounded up by chance: the average stays right instead of dropping to nothing.
+        var hundredths = integrity.IntegrityCap.Float() * stage.SelfDamage * UpdateInterval * 100f;
+        var whole = MathF.Floor(hundredths);
+        if (_random.Prob(hundredths - whole))
+            whole++;
+
+        _healing.DamageOrgan((organ, integrity), FixedPoint2.New(whole / 100f));
     }
 
     private void ShowSymptom(EntityUid body, OrganFailureSymptom symptom)

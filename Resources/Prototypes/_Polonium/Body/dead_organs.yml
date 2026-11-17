@@ -2,8 +2,7 @@
   abstract: true
   parent: [ OrganBase, OrganBaseChildInternal ]
   id: OrganDeadBase
-  # The name and the description do not give away that the organ is dead; the analyzer does.
-  description: An internal organ.
+  # The name and the description do not give away that the organ is dead; the look and the analyzer do.
   components:
   - type: DeadOrgan
   - type: GibbableOrgan
