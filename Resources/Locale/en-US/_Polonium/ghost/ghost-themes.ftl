@@ -2,15 +2,25 @@ ghost-theme-open-button = Ghost Theme
 
 ghost-theme-window-title = Ghost Themes
 ghost-theme-window-search = Search...
+ghost-theme-window-no-results = No themes match your search.
+ghost-theme-window-unlocked-count = { $unlocked } of { $total } unlocked
 ghost-theme-window-color = Color
 ghost-theme-window-choose = Choose
-ghost-theme-become-supporter = Become a Supporter
-ghost-theme-entry-playtime = { $hours } h
+ghost-theme-window-apply-color = Apply Color
+ghost-theme-window-in-use = In Use
+ghost-theme-window-support = Support the Project
 
-ghost-theme-locked-playtime = Unlocks after { $hours } h of playtime. You have played { $played } h.
-ghost-theme-locked-supporters = Available to supporters of the server.
-ghost-theme-locked-contributors = Available to contributors: people who help make Polonium Station.
-ghost-theme-locked-admins = Available to admins.
+ghost-theme-status-unlocked = Unlocked
+ghost-theme-status-locked = Locked
+ghost-theme-playtime-progress = { $played } / { $hours } h
+
+ghost-theme-access-everyone = Available to every player.
+ghost-theme-access-playtime = Unlocks after { $hours } h of playtime.
+ghost-theme-access-supporters = Available to supporters of the server.
+ghost-theme-access-supporters-unlocked = Available to supporters of the server. Thank you for your support!
+ghost-theme-access-contributors = Available to contributors: people who help make Polonium Station.
+ghost-theme-access-contributors-unlocked = Available to contributors: people who help make Polonium Station. Thank you for your help!
+ghost-theme-access-admins = Available to admins.
 
 ghost-theme-category-public = Public
 ghost-theme-category-supporters = Supporters

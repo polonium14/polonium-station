@@ -2,15 +2,25 @@ ghost-theme-open-button = Wygląd Ducha
 
 ghost-theme-window-title = Wygląd Ducha
 ghost-theme-window-search = Szukaj...
+ghost-theme-window-no-results = Nie znaleziono wyglądu o takiej nazwie.
+ghost-theme-window-unlocked-count = odblokowano { $unlocked } z { $total }
 ghost-theme-window-color = Kolor
 ghost-theme-window-choose = Wybierz
-ghost-theme-become-supporter = Zostań Wspierającym
-ghost-theme-entry-playtime = { $hours } godz.
+ghost-theme-window-apply-color = Zastosuj kolor
+ghost-theme-window-in-use = W użyciu
+ghost-theme-window-support = Wesprzyj projekt
 
-ghost-theme-locked-playtime = Odblokowuje się po { $hours } godz. gry. Masz za sobą { $played } godz.
-ghost-theme-locked-supporters = Dostępne dla osób wspierających serwer.
-ghost-theme-locked-contributors = Dostępne dla kontrybutorów, czyli osób, które pomagają tworzyć Polonium Station.
-ghost-theme-locked-admins = Dostępne dla administracji.
+ghost-theme-status-unlocked = Odblokowane
+ghost-theme-status-locked = Zablokowane
+ghost-theme-playtime-progress = { $played } / { $hours } godz.
+
+ghost-theme-access-everyone = Dostępne dla wszystkich graczy.
+ghost-theme-access-playtime = Odblokowuje się po { $hours } godz. gry.
+ghost-theme-access-supporters = Dostępne dla osób wspierających serwer.
+ghost-theme-access-supporters-unlocked = Dostępne dla osób wspierających serwer. Dziękujemy za wsparcie!
+ghost-theme-access-contributors = Dostępne dla kontrybutorów, czyli osób, które pomagają tworzyć Polonium Station.
+ghost-theme-access-contributors-unlocked = Dostępne dla kontrybutorów, czyli osób, które pomagają tworzyć Polonium Station. Dziękujemy za pomoc!
+ghost-theme-access-admins = Dostępne dla administracji.
 
 ghost-theme-category-public = Publiczne
 ghost-theme-category-supporters = Wspierający

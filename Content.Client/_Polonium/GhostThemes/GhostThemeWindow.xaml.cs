@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Client.Stylesheets.Palette;
@@ -13,6 +14,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Client._Polonium.GhostThemes;
@@ -30,20 +32,33 @@ public sealed partial class GhostThemeWindow : FancyWindow
     [Dependency] private IUriOpener _uri = default!;
 
     private static readonly EntProtoId PreviewDummy = "GhostThemePreview";
+    private static readonly Direction[] PreviewTurns = [Direction.South, Direction.East, Direction.North, Direction.West];
     private static readonly SpriteSpecifier LockIcon =
         new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/lock.svg.192dpi.png"));
+    private static readonly SpriteSpecifier UnlockIcon =
+        new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/unlock.svg.192dpi.png"));
+    private static readonly SpriteSpecifier InUseIcon =
+        new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Nano/checkbox_checked.svg.96dpi.png"));
+
+    private const float PreviewSize = 160f;
+    private const float PreviewTurnSeconds = 1f;
+    private const float TileSeparation = 4f;
+    private const float ScrollbarWidth = 12f;
 
     private readonly GhostThemeSystem _themes;
     private readonly SpriteSystem _sprite;
     private readonly EntityUid _preview;
 
-    private readonly List<GhostThemeEntry> _entries = new();
-    private readonly List<GhostThemeEntry> _searchEntries = new();
-    private readonly List<GhostThemePrototype> _shownThemes = new();
-    private readonly Dictionary<ProtoId<GhostThemeCategoryPrototype>, int> _tabs = new();
+    private readonly ButtonGroup _tileGroup = new();
+    private readonly List<Section> _sections = new();
 
     private HashSet<ProtoId<GhostThemePrototype>> _available = new();
+    private ProtoId<GhostThemePrototype> _current;
+    private Color _currentColor = Color.White;
     private GhostThemePrototype? _selected;
+    private int _columns = 1;
+    private int _previewTurn;
+    private float _previewTurnTime;
 
     /// <summary>
     /// Raised when the player picks a theme they can use.
@@ -62,8 +77,9 @@ public sealed partial class GhostThemeWindow : FancyWindow
         Preview.SetEntity(_preview);
 
         SearchBar.OnTextChanged += _ => UpdateSearch();
-        ColorSliders.OnColorChanged += _ => UpdatePreview();
-        ChooseButton.OnPressed += _ => OnChoosePressed();
+        GridScroll.OnResized += UpdateColumns;
+        ColorSliders.OnColorChanged += _ => OnColorChanged();
+        ActionButton.OnPressed += _ => OnActionPressed();
         OnClose += () => _entMan.DeleteEntity(_preview);
     }
 
@@ -73,25 +89,32 @@ public sealed partial class GhostThemeWindow : FancyWindow
     public void Populate(HashSet<ProtoId<GhostThemePrototype>> available, ProtoId<GhostThemePrototype> current, Color color)
     {
         _available = available;
+
+        // The server ignores a theme the player lost access to, so their ghost is the default one.
+        if (!available.Contains(current))
+        {
+            current = GhostThemeSystem.DefaultTheme;
+            color = Color.White;
+        }
+
+        _current = current;
+        _currentColor = color;
         ColorSliders.Color = color;
 
-        BuildTabs();
+        BuildSections();
         UpdateSearch();
 
-        if (!_proto.TryIndex(current, out var theme) && !_proto.TryIndex(GhostThemeSystem.DefaultTheme, out theme))
-            return;
-
-        Select(theme);
-        if (_tabs.TryGetValue(theme.Category, out var tab))
-            Tabs.CurrentTab = tab;
+        if (_proto.TryIndex(current, out var theme) || _proto.TryIndex(GhostThemeSystem.DefaultTheme, out theme))
+            Select(theme);
     }
 
-    private void BuildTabs()
+    private void BuildSections()
     {
-        Tabs.RemoveAllChildren();
-        _entries.Clear();
-        _shownThemes.Clear();
-        _tabs.Clear();
+        Sections.RemoveAllChildren();
+        _sections.Clear();
+
+        var lockIcon = _sprite.Frame0(LockIcon);
+        var inUseIcon = _sprite.Frame0(InUseIcon);
 
         foreach (var category in _proto.EnumeratePrototypes<GhostThemeCategoryPrototype>().OrderBy(c => c.Priority))
         {
@@ -102,126 +125,237 @@ public sealed partial class GhostThemeWindow : FancyWindow
                 .ThenBy(t => Loc.GetString(t.Name), StringComparer.CurrentCulture)
                 .ToList();
 
-            if (themes.Count == 0 || category.HideIfLocked && !themes.Any(t => _available.Contains(t.ID)))
+            var unlocked = themes.Count(t => _available.Contains(t.ID));
+            if (themes.Count == 0 || category.HideIfLocked && unlocked == 0)
                 continue;
 
-            var list = new BoxContainer
+            var count = new Label
             {
-                Orientation = BoxContainer.LayoutOrientation.Vertical,
-                SeparationOverride = 2,
+                Text = Loc.GetString("ghost-theme-window-unlocked-count", ("unlocked", unlocked), ("total", themes.Count)),
+                HorizontalExpand = true,
+                Align = Label.AlignMode.Right,
+                VerticalAlignment = VAlignment.Bottom,
+            };
+            count.AddStyleClass(StyleClass.LabelWeak);
+
+            var header = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Horizontal,
+                Margin = new Thickness(0, 0, ScrollbarWidth, 0),
+                Children =
+                {
+                    new Label { Text = Loc.GetString(category.Name), StyleClasses = { StyleClass.LabelHeading } },
+                    count,
+                },
             };
 
-            if (category.Access == GhostThemeAccess.Supporters)
-                AddSupporterButton(list);
+            var grid = new GridContainer
+            {
+                Columns = _columns,
+                HSeparationOverride = (int) TileSeparation,
+                VSeparationOverride = (int) TileSeparation,
+                HorizontalAlignment = HAlignment.Left,
+            };
 
+            var tiles = new List<GhostThemeTile>();
             foreach (var theme in themes)
             {
-                list.AddChild(CreateEntry(theme, _entries));
-                _shownThemes.Add(theme);
+                var tile = new GhostThemeTile(theme, _sprite.Frame0(theme.Sprite), lockIcon, inUseIcon, _tileGroup);
+                tile.SetLocked(!_available.Contains(theme.ID));
+                tile.SetInUse(theme.ID == _current);
+                tile.OnPressed += _ => Select(theme);
+                grid.AddChild(tile);
+                tiles.Add(tile);
             }
 
-            var scroll = new ScrollContainer { HScrollEnabled = false, VerticalExpand = true };
-            scroll.AddChild(list);
-            Tabs.AddChild(scroll);
+            var root = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+                SeparationOverride = 6,
+                Children =
+                {
+                    header,
+                    new Separator { Margin = new Thickness(0, 0, ScrollbarWidth, 0), StyleClasses = { StyleClass.LowDivider } },
+                    grid,
+                },
+            };
 
-            var index = Tabs.ChildCount - 1;
-            Tabs.SetTabTitle(index, Loc.GetString(category.Name));
-            _tabs[category.ID] = index;
+            Sections.AddChild(root);
+            _sections.Add(new Section(root, grid, tiles));
         }
     }
 
-    private void AddSupporterButton(BoxContainer list)
+    private void UpdateColumns()
     {
-        // Opening anything other than a web page would throw, so a broken link hides the button.
-        if (!Uri.TryCreate(_cfg.GetCVar(CCVars.SupportersLink).Trim(), UriKind.Absolute, out var link)
-            || link.Scheme != Uri.UriSchemeHttp && link.Scheme != Uri.UriSchemeHttps)
+        var columns = Math.Max(1,
+            (int) ((GridScroll.Width - ScrollbarWidth + TileSeparation) / (GhostThemeTile.TileSize + TileSeparation)));
+
+        if (columns == _columns)
             return;
 
-        var button = new Button
+        _columns = columns;
+        foreach (var section in _sections)
         {
-            Text = Loc.GetString("ghost-theme-become-supporter"),
-            Margin = new Thickness(0, 0, 0, 4),
-        };
-        button.AddStyleClass(StyleClass.Positive);
-        button.OnPressed += _ => _uri.OpenUri(link);
-        list.AddChild(button);
-    }
-
-    private GhostThemeEntry CreateEntry(GhostThemePrototype theme, List<GhostThemeEntry> entries)
-    {
-        var entry = new GhostThemeEntry(theme,
-            _sprite.Frame0(theme.Sprite),
-            _sprite.Frame0(LockIcon),
-            !_available.Contains(theme.ID));
-
-        entry.Pressed = theme == _selected;
-        entry.OnPressed += _ => Select(theme);
-        entries.Add(entry);
-        return entry;
+            section.Grid.Columns = columns;
+        }
     }
 
     private void UpdateSearch()
     {
         var search = SearchBar.Text.Trim();
-        var searching = search.Length > 0;
+        var anyShown = false;
 
-        Tabs.Visible = !searching;
-        SearchResults.Visible = searching;
-
-        SearchList.RemoveAllChildren();
-        _searchEntries.Clear();
-        if (!searching)
-            return;
-
-        foreach (var theme in _shownThemes)
+        foreach (var section in _sections)
         {
-            if (Loc.GetString(theme.Name).Contains(search, StringComparison.CurrentCultureIgnoreCase))
-                SearchList.AddChild(CreateEntry(theme, _searchEntries));
+            var sectionShown = false;
+            foreach (var tile in section.Tiles)
+            {
+                tile.Visible = tile.ThemeName.Contains(search, StringComparison.CurrentCultureIgnoreCase);
+                sectionShown |= tile.Visible;
+            }
+
+            section.Root.Visible = sectionShown;
+            anyShown |= sectionShown;
         }
+
+        GridScroll.Visible = anyShown;
+        NoResults.Visible = !anyShown;
     }
 
     private void Select(GhostThemePrototype theme)
     {
         _selected = theme;
 
-        // Toggle buttons flip themselves when clicked, so every entry is set again.
-        foreach (var entry in _entries.Concat(_searchEntries))
+        foreach (var section in _sections)
         {
-            entry.Pressed = entry.ThemeId == theme.ID;
+            foreach (var tile in section.Tiles)
+            {
+                if (tile.GhostTheme.ID == theme.ID)
+                    tile.Pressed = true;
+            }
         }
 
         ThemeName.Text = Loc.GetString(theme.Name);
         ThemeDescription.SetMessage(Loc.GetString(theme.Description));
         ColorBox.Visible = theme.Colorizable;
 
-        var locked = !_available.Contains(theme.ID);
-        ChooseButton.Disabled = locked;
-        LockedReason.Visible = locked;
-        if (locked)
-            LockedReason.SetMessage(GetLockReason(theme), Palettes.Status.Warning);
-
+        UpdatePreviewScale(theme);
+        UpdateStatus(theme);
+        UpdateActionButton();
         UpdatePreview();
     }
 
-    private string GetLockReason(GhostThemePrototype theme)
+    private void UpdatePreviewScale(GhostThemePrototype theme)
     {
-        if (!_proto.TryIndex(theme.Category, out var category))
-            return string.Empty;
+        var frame = _sprite.Frame0(theme.Sprite);
+        var size = Math.Max(frame.Width, frame.Height);
 
-        return category.Access switch
+        // Pixel art only stays sharp when scaled by a whole number.
+        var scale = Math.Max(1, (int) (PreviewSize / size));
+        Preview.Scale = new Vector2(scale, scale);
+
+        _previewTurn = 0;
+        _previewTurnTime = 0f;
+        Preview.OverrideDirection = PreviewTurns[0];
+    }
+
+    protected override void FrameUpdate(FrameEventArgs args)
+    {
+        base.FrameUpdate(args);
+
+        _previewTurnTime += args.DeltaSeconds;
+        if (_previewTurnTime < PreviewTurnSeconds)
+            return;
+
+        _previewTurnTime -= PreviewTurnSeconds;
+        _previewTurn = (_previewTurn + 1) % PreviewTurns.Length;
+        Preview.OverrideDirection = PreviewTurns[_previewTurn];
+    }
+
+    private void UpdateStatus(GhostThemePrototype theme)
+    {
+        var locked = !_available.Contains(theme.ID);
+        var color = locked ? Palettes.Status.Warning : Palettes.Status.Good;
+
+        StatusIcon.Texture = _sprite.Frame0(locked ? LockIcon : UnlockIcon);
+        StatusIcon.Modulate = color;
+        StatusLabel.Text = Loc.GetString(locked ? "ghost-theme-status-locked" : "ghost-theme-status-unlocked");
+        StatusLabel.FontColorOverride = color;
+
+        var access = _proto.TryIndex(theme.Category, out var category) ? category.Access : GhostThemeAccess.Everyone;
+        var hours = (int) theme.Playtime.TotalHours;
+
+        StatusDetails.SetMessage(access switch
         {
-            GhostThemeAccess.Supporters => Loc.GetString("ghost-theme-locked-supporters"),
-            GhostThemeAccess.Contributors => Loc.GetString("ghost-theme-locked-contributors"),
-            GhostThemeAccess.Admins => Loc.GetString("ghost-theme-locked-admins"),
-            _ => Loc.GetString("ghost-theme-locked-playtime",
-                ("hours", (int) theme.Playtime.TotalHours),
-                ("played", (int) _jobRequirements.FetchOverallPlaytime().TotalHours)),
-        };
+            GhostThemeAccess.Supporters => Loc.GetString(locked
+                ? "ghost-theme-access-supporters"
+                : "ghost-theme-access-supporters-unlocked"),
+            GhostThemeAccess.Contributors => Loc.GetString(locked
+                ? "ghost-theme-access-contributors"
+                : "ghost-theme-access-contributors-unlocked"),
+            GhostThemeAccess.Admins => Loc.GetString("ghost-theme-access-admins"),
+            _ when hours > 0 => Loc.GetString("ghost-theme-access-playtime", ("hours", hours)),
+            _ => Loc.GetString("ghost-theme-access-everyone"),
+        });
+
+        PlaytimeBar.Visible = locked && access == GhostThemeAccess.Everyone && hours > 0;
+        if (!PlaytimeBar.Visible)
+            return;
+
+        var played = Math.Min((int) _jobRequirements.FetchOverallPlaytime().TotalHours, hours);
+        PlaytimeBar.MaxValue = hours;
+        PlaytimeBar.Value = played;
+        PlaytimeLabel.Text = Loc.GetString("ghost-theme-playtime-progress", ("played", played), ("hours", hours));
+    }
+
+    private void UpdateActionButton()
+    {
+        if (_selected == null)
+            return;
+
+        if (!_available.Contains(_selected.ID))
+        {
+            var support = IsSupporterTheme(_selected) && TryGetSupportLink(out _);
+            ActionButton.Text = Loc.GetString(support ? "ghost-theme-window-support" : "ghost-theme-window-choose");
+            ActionButton.Disabled = !support;
+            return;
+        }
+
+        if (_selected.ID != _current)
+        {
+            ActionButton.Text = Loc.GetString("ghost-theme-window-choose");
+            ActionButton.Disabled = false;
+            return;
+        }
+
+        var colorChanged = _selected.Colorizable && GetColor().ToHex() != _currentColor.ToHex();
+        ActionButton.Text = Loc.GetString(colorChanged ? "ghost-theme-window-apply-color" : "ghost-theme-window-in-use");
+        ActionButton.Disabled = !colorChanged;
+    }
+
+    private bool IsSupporterTheme(GhostThemePrototype theme)
+    {
+        return _proto.TryIndex(theme.Category, out var category) && category.Access == GhostThemeAccess.Supporters;
+    }
+
+    private bool TryGetSupportLink(out string link)
+    {
+        // Opening anything other than a web page would throw, so such a link hides the button.
+        // UriKind is not allowed in the client sandbox, so Uri.TryCreate cannot check it.
+        link = _cfg.GetCVar(CCVars.SupportersLink).Trim();
+        return link.StartsWith("https://", StringComparison.OrdinalIgnoreCase)
+               || link.StartsWith("http://", StringComparison.OrdinalIgnoreCase);
     }
 
     private Color GetColor()
     {
         return _selected is { Colorizable: true } ? ColorSliders.Color.WithAlpha(1f) : Color.White;
+    }
+
+    private void OnColorChanged()
+    {
+        UpdatePreview();
+        UpdateActionButton();
     }
 
     private void UpdatePreview()
@@ -230,11 +364,33 @@ public sealed partial class GhostThemeWindow : FancyWindow
             _themes.ApplyTheme(_preview, _selected, GetColor());
     }
 
-    private void OnChoosePressed()
+    private void OnActionPressed()
     {
-        if (_selected == null || !_available.Contains(_selected.ID))
+        if (_selected == null)
             return;
 
-        ThemeChosen?.Invoke(_selected.ID, GetColor());
+        if (!_available.Contains(_selected.ID))
+        {
+            if (IsSupporterTheme(_selected) && TryGetSupportLink(out var link))
+                _uri.OpenUri(link);
+
+            return;
+        }
+
+        _current = _selected.ID;
+        _currentColor = GetColor();
+        ThemeChosen?.Invoke(_current, _currentColor);
+
+        foreach (var section in _sections)
+        {
+            foreach (var tile in section.Tiles)
+            {
+                tile.SetInUse(tile.GhostTheme.ID == _current);
+            }
+        }
+
+        UpdateActionButton();
     }
+
+    private sealed record Section(BoxContainer Root, GridContainer Grid, List<GhostThemeTile> Tiles);
 }

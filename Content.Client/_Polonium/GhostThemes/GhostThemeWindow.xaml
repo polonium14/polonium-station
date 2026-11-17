@@ -1,28 +1,49 @@
 <controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       Title="{Loc 'ghost-theme-window-title'}"
-                      MinSize="720 480"
-                      SetSize="820 560">
-    <BoxContainer Orientation="Horizontal" Margin="4" SeparationOverride="8">
-        <BoxContainer Orientation="Vertical" HorizontalExpand="True" SeparationOverride="4">
+                      MinSize="760 600"
+                      SetSize="940 660">
+    <BoxContainer Orientation="Horizontal" Margin="8" SeparationOverride="8">
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" SeparationOverride="6">
             <LineEdit Name="SearchBar" PlaceHolder="{Loc 'ghost-theme-window-search'}" />
-            <TabContainer Name="Tabs" VerticalExpand="True" />
-            <ScrollContainer Name="SearchResults" VerticalExpand="True" HScrollEnabled="False" Visible="False">
-                <BoxContainer Name="SearchList" Orientation="Vertical" SeparationOverride="2" />
+            <ScrollContainer Name="GridScroll" VerticalExpand="True" HScrollEnabled="False">
+                <BoxContainer Name="Sections" Orientation="Vertical" SeparationOverride="12" />
             </ScrollContainer>
+            <Label Name="NoResults"
+                   Text="{Loc 'ghost-theme-window-no-results'}"
+                   StyleClasses="LabelWeak"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   VerticalExpand="True"
+                   Margin="0 16"
+                   Visible="False" />
         </BoxContainer>
-        <PanelContainer StyleClasses="BackgroundPanelDark" MinWidth="280" MaxWidth="280">
-            <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="6">
-                <SpriteView Name="Preview" Scale="4 4" OverrideDirection="South" SetSize="160 160" HorizontalAlignment="Center" />
-                <Label Name="ThemeName" StyleClasses="LabelHeading" HorizontalAlignment="Center" />
-                <RichTextLabel Name="ThemeDescription" />
-                <BoxContainer Name="ColorBox" Orientation="Vertical" Visible="False">
-                    <Label Text="{Loc 'ghost-theme-window-color'}" StyleClasses="LabelKeyText" />
-                    <ColorSelectorSliders Name="ColorSliders" />
-                </BoxContainer>
-                <Control VerticalExpand="True" />
-                <RichTextLabel Name="LockedReason" Visible="False" />
-                <Button Name="ChooseButton" Text="{Loc 'ghost-theme-window-choose'}" StyleClasses="positive" />
+        <PanelContainer StyleClasses="BackgroundPanelDark" SetWidth="320">
+            <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="8">
+                <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
+                    <BoxContainer Orientation="Vertical" SeparationOverride="8">
+                        <SpriteView Name="Preview" SetSize="160 160" HorizontalAlignment="Center" />
+                        <Label Name="ThemeName" StyleClasses="LabelHeadingBigger" Align="Center" ClipText="True" />
+                        <RichTextLabel Name="ThemeDescription" />
+                        <controls:Separator StyleClasses="LowDivider" />
+                        <BoxContainer Orientation="Vertical" SeparationOverride="4">
+                            <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+                                <TextureRect Name="StatusIcon" SetSize="16 16" Stretch="KeepAspectCentered" VerticalAlignment="Center" />
+                                <Label Name="StatusLabel" StyleClasses="LabelKeyText" VerticalAlignment="Center" />
+                            </BoxContainer>
+                            <RichTextLabel Name="StatusDetails" />
+                            <ProgressBar Name="PlaytimeBar" MinValue="0" MaxValue="1" Page="0" HorizontalExpand="True" Visible="False">
+                                <Label Name="PlaytimeLabel" HorizontalAlignment="Center" />
+                            </ProgressBar>
+                        </BoxContainer>
+                        <BoxContainer Name="ColorBox" Orientation="Vertical" SeparationOverride="4" Visible="False">
+                            <controls:Separator StyleClasses="LowDivider" />
+                            <Label Text="{Loc 'ghost-theme-window-color'}" StyleClasses="LabelKeyText" />
+                            <ColorSelectorSliders Name="ColorSliders" />
+                        </BoxContainer>
+                    </BoxContainer>
+                </ScrollContainer>
+                <Button Name="ActionButton" StyleClasses="positive" MinHeight="32" />
             </BoxContainer>
         </PanelContainer>
     </BoxContainer>
