@@ -123,7 +123,7 @@
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
       enum.SurgeryUIKey.Key:
-        type: SurgeryBui
+        type: OperationBui # Polonium: our one-view surgery window
   - type: Puller
   - type: Speech
     speechSounds: Alto

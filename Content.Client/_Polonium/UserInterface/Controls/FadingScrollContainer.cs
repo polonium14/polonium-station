@@ -40,7 +40,9 @@ public sealed class FadingScrollContainer : ScrollContainer
         if (content == null)
             return;
 
-        var scroll = VScroll;
+        // A list that just got shorter keeps its old scroll value until the next arrange, which would put every
+        // row above the top edge and fade them all.
+        var scroll = Math.Clamp(VScroll, 0f, Math.Max(0f, content.Height - Height));
         // How strongly each edge fades: in full while there is a whole fade's worth left to scroll that way, easing
         // off over the last stretch, so reaching the end does not light the edge row up at once.
         var topStrength = Math.Clamp(scroll / FadeHeight, 0f, 1f);

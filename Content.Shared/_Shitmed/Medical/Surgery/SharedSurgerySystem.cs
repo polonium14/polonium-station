@@ -130,7 +130,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
     private void OnMapInit(Entity<SurgeryTargetComponent> ent, ref MapInitEvent args)
     {
-        var data = new InterfaceData("SurgeryBui");
+        var data = new InterfaceData("OperationBui");
         _ui.SetUi(ent.Owner, SurgeryUIKey.Key, data);
     }
 

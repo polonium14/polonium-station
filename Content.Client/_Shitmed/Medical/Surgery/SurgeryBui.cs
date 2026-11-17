@@ -7,9 +7,7 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client._Shitmed.Choice.UI;
 using Content.Client.Administration.UI.CustomControls;
-using Robust.Client.UserInterface.Controls;
 using Content.Shared._Shitmed.Medical.Surgery;
-using Content.Shared._Polonium.Medical.Surgery;
 using Content.Shared.Body;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
@@ -264,25 +262,13 @@ public sealed partial class SurgeryBui : BoundUserInterface
             return string.Compare(a.Name, b.Name, StringComparison.Ordinal);
         });
 
-        var rows = new Dictionary<EntProtoId, BoxContainer>();
         foreach (var surgery in surgeries)
         {
-            var surgeryButton = new ChoiceControl { HorizontalExpand = true };
-            surgeryButton.Button.OnPressed += _ => OnSurgeryPressed(surgery.Ent, netPart, surgery.Id);
-
-            if (_entities.TryGetComponent(surgery.Ent, out SurgeryAlternativeComponent? alternative)
-                && alternative.Of.FirstOrNull(rows.ContainsKey) is { } main)
-            {
-                surgeryButton.Set(Loc.GetString(alternative.Label), null);
-                rows[main].AddChild(surgeryButton);
-                continue;
-            }
-
+            var surgeryButton = new ChoiceControl();
             surgeryButton.Set(surgery.Name, null);
-            var row = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, HorizontalExpand = true };
-            row.AddChild(surgeryButton);
-            rows[surgery.Id] = row;
-            _window.Surgeries.AddChild(row);
+
+            surgeryButton.Button.OnPressed += _ => OnSurgeryPressed(surgery.Ent, netPart, surgery.Id);
+            _window.Surgeries.AddChild(surgeryButton);
         }
 
         RefreshUI();

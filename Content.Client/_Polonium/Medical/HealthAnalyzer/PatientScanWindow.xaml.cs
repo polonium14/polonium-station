@@ -1,3 +1,4 @@
+using LimbDoll = Content.Client._Polonium.UserInterface.Controls.LimbDoll;
 using System.Linq;
 using System.Numerics;
 using Content.Client.Resources;
@@ -77,11 +78,7 @@ public sealed partial class PatientScanWindow : FancyWindow
         "Eyes", "Ears", "Tongue", "Appendix",
     ];
 
-    private static readonly TargetBodyPart[] LimbOrder =
-    [
-        TargetBodyPart.Head, TargetBodyPart.Chest, TargetBodyPart.LeftArm,
-        TargetBodyPart.RightArm, TargetBodyPart.LeftLeg, TargetBodyPart.RightLeg,
-    ];
+    private static readonly TargetBodyPart[] LimbOrder = LimbDoll.Limbs;
 
     private readonly Dictionary<TargetBodyPart, TextureButton> _limbButtons;
     private readonly Dictionary<string, AnalyzerBar> _organCells = new();
@@ -97,7 +94,7 @@ public sealed partial class PatientScanWindow : FancyWindow
     private string _solutionKey = string.Empty;
     private TargetBodyPart? _selectedLimb;
     private HealthAnalyzerScanMessage? _last;
-    private EntityUid _doll;
+    private LimbDoll? _doll;
 
     /// <summary>
     /// The damage the chart shows right now, for its tooltip.
@@ -105,11 +102,6 @@ public sealed partial class PatientScanWindow : FancyWindow
     private DamageSpecifier _shownDamage = new();
 
     private static readonly ResPath GroupIcons = new("/Textures/Objects/Devices/health_analyzer.rsi");
-
-    /// <summary>
-    /// Sprite layer of each limb's status, then of each limb's bleeding, in <see cref="LimbOrder"/>.
-    /// </summary>
-    private readonly int[] _dollLayers = new int[12];
 
     public PatientScanWindow()
     {
@@ -156,14 +148,18 @@ public sealed partial class PatientScanWindow : FancyWindow
     /// </summary>
     public void ReleaseDoll()
     {
-        if (_entMan.EntityExists(_doll))
-            _entMan.DeleteEntity(_doll);
+        _doll?.Release();
     }
 
     private void SelectLimb(TargetBodyPart? part)
     {
         _selectedLimb = part;
         WholeBodyButton.Visible = part != null;
+        foreach (var (limb, button) in _limbButtons)
+        {
+            LimbDoll.Outline(button, limb, limb == part);
+        }
+
         if (_last != null)
             UpdateDamage(_last);
     }
@@ -601,48 +597,16 @@ public sealed partial class PatientScanWindow : FancyWindow
         return string.Join("\n", lines);
     }
 
-    /// <summary>
-    /// The doll is one sprite with a status layer per limb and a bleeding layer on top of each, kept between updates.
-    /// </summary>
     private EntityUid UpdateDoll(Dictionary<TargetBodyPart, AnalyzerLimbData> limbs)
     {
-        var sprites = _entMan.System<SpriteSystem>();
-        if (!_entMan.EntityExists(_doll))
+        _doll ??= new LimbDoll(_entMan);
+        foreach (var part in LimbOrder)
         {
-            _doll = _entMan.Spawn("AlertSpriteView");
-            if (!_entMan.TryGetComponent<SpriteComponent>(_doll, out var fresh))
-                return _doll;
-
-            // The view prototype may come with layers of its own, so remember where ours land.
-            for (var i = 0; i < _dollLayers.Length; i++)
-            {
-                _dollLayers[i] = sprites.AddTextureLayer((_doll, fresh), (Texture?) null);
-                sprites.LayerSetScale((_doll, fresh), _dollLayers[i], new Vector2(3f, 3f));
-            }
+            limbs.TryGetValue(part, out var limb);
+            _doll.Set(part, (int) limb.Severity, limb.Bleeding);
         }
 
-        if (!_entMan.TryGetComponent<SpriteComponent>(_doll, out var sprite))
-            return _doll;
-
-        var doll = new Entity<SpriteComponent?>(_doll, sprite);
-        for (var i = 0; i < LimbOrder.Length; i++)
-        {
-            var part = LimbOrder[i];
-            var name = part.ToString().ToLowerInvariant();
-            var rsi = new ResPath($"/Textures/_Shitmed/Interface/Targeting/Status/{name}.rsi");
-            var severity = limbs.TryGetValue(part, out var limb) ? (int) limb.Severity : 0;
-
-            SetDollLayer(doll, sprites, _dollLayers[i], new SpriteSpecifier.Rsi(rsi, $"{name}_{severity}"), true);
-            SetDollLayer(doll, sprites, _dollLayers[LimbOrder.Length + i], new SpriteSpecifier.Rsi(rsi, $"{name}_bleed"), limb.Bleeding);
-        }
-
-        return _doll;
-    }
-
-    private static void SetDollLayer(Entity<SpriteComponent?> doll, SpriteSystem sprites, int layer, SpriteSpecifier specifier, bool visible)
-    {
-        sprites.LayerSetTexture(doll, layer, sprites.Frame0(specifier));
-        sprites.LayerSetVisible(doll, layer, visible);
+        return _doll.Entity;
     }
 
     #endregion
