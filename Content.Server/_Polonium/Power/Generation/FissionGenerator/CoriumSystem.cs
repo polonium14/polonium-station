@@ -9,9 +9,10 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Polonium.Power.Generation.FissionGenerator;
 
-public sealed partial class CoriumSystem : SharedCoriumSystem
+public sealed partial class CoriumSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedGodmodeSystem _godmode = default!;
     [Dependency] private SharedPointLightSystem _light = default!;
     [Dependency] private SharedRadiationSystem _radiation = default!;
     [Dependency] private SharedMapSystem _map = default!;
@@ -94,6 +95,13 @@ public sealed partial class CoriumSystem : SharedCoriumSystem
             return;
 
         ent.Comp.NextStage = _timing.CurTime + data.Duration;
+
+        // Godmode rather than a custom damage block, so tests and other systems see the hot corium as intentionally invulnerable.
+        if (data.Breakable)
+            _godmode.DisableGodmode(ent);
+        else
+            _godmode.EnableGodmode(ent);
+
         _radiation.SetIntensity(ent.Owner, data.Radiation);
         _ambient.SetAmbience(ent, data.Bubbling);
 
