@@ -13,6 +13,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 /// <summary>
 /// Polonium rules for severing limbs: the limb itself has to be badly hurt, a head only comes off
 /// a body that is down for good, and explosions sever through the same path as a blade.
+/// Also how much of a hit an organ takes.
 /// </summary>
 public partial class TraumaSystem
 {
@@ -33,6 +34,15 @@ public partial class TraumaSystem
         return limb.Comp.Bone?.ContainedEntities.FirstOrNull() is { } bone
             && TryComp<BoneComponent>(bone, out var boneComp)
             && boneComp.BoneSeverity == BoneSeverity.Broken;
+    }
+
+    /// <summary>
+    /// Integrity an organ loses to a hit of this severity. The organs are small next to the hits that reach them,
+    /// so they take only a share.
+    /// </summary>
+    public FixedPoint2 OrganTraumaDamage(FixedPoint2 severity)
+    {
+        return severity * _cfg.GetCVar(CCVars.OrgansTraumaDamageMultiplier);
     }
 
     private float SeverChance(FixedPoint2 chance)

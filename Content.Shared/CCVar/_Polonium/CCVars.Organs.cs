@@ -70,4 +70,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> OrgansCoughChance =
         CVarDef.Create("organs.cough_chance", 0.3f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Share of a hit's damage that an organ loses in integrity when the hit injures it.
+    /// </summary>
+    public static readonly CVarDef<float> OrgansTraumaDamageMultiplier =
+        CVarDef.Create("organs.trauma_damage_multiplier", 0.25f, CVar.SERVERONLY);
 }

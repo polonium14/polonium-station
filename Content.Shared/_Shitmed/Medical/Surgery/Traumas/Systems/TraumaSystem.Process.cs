@@ -692,12 +692,13 @@ public partial class TraumaSystem
                     break;
 
                 case TraumaType.OrganDamage:
-                    var traumaEnt = AddTrauma(targetChosen.Value, target, inflicter, TraumaType.OrganDamage, severity);
+                    var organDamage = OrganTraumaDamage(severity);
+                    var traumaEnt = AddTrauma(targetChosen.Value, target, inflicter, TraumaType.OrganDamage, organDamage);
 
                     if (traumaEnt != EntityUid.Invalid
-                        && !TryChangeOrganDamageModifier(targetChosen.Value, severity, traumaEnt, "WoundableDamage"))
+                        && !TryChangeOrganDamageModifier(targetChosen.Value, organDamage, traumaEnt, "WoundableDamage"))
                     {
-                        TryCreateOrganDamageModifier(targetChosen.Value, severity, traumaEnt, "WoundableDamage");
+                        TryCreateOrganDamageModifier(targetChosen.Value, organDamage, traumaEnt, "WoundableDamage");
                     }
 
                     break;

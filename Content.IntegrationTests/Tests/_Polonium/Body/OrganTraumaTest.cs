@@ -4,6 +4,7 @@ using Content.Server._Polonium.Body;
 using Content.Shared._Polonium.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Body;
 using Content.Shared.FixedPoint;
@@ -85,6 +86,16 @@ public sealed class OrganTraumaTest : GameTest
 
             bone.BoneSeverity = BoneSeverity.Cracked;
             Assert.That(Stopped(), Is.Zero, "A cracked bone shields nothing.");
+        });
+    }
+
+    [Test]
+    public async Task OrganTakesAShareOfTheHit()
+    {
+        await Server.WaitAssertion(() =>
+        {
+            // A quarter by default: a hit of 20 costs an organ 5 integrity instead of 20.
+            Assert.That(SEntMan.System<TraumaSystem>().OrganTraumaDamage(20), Is.EqualTo(FixedPoint2.New(5)));
         });
     }
 
