@@ -8,6 +8,8 @@ using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared._Shitmed.Medical.Surgery.Tools;
 using Content.Server._Polonium.Body;
 using Content.Shared._Polonium.Medical.Surgery;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
@@ -186,6 +188,54 @@ public sealed class SurgeryConditionsTest : GameTest
                 Assert.That(SEntMan.HasComponent<OrganRepairedComponent>(heart), Is.False, "Only the chosen organ is repaired.");
                 Assert.That(surgery.TryDoSurgeryStep(body, torso, user, "SurgeryRepairLiver", "SurgeryStepRepairOrgan", out _), Is.False,
                     "Nothing is left to repair.");
+            });
+        });
+    }
+
+    /// <summary>
+    /// A sawed-open chest can be closed without bone gel: the incision is gone, the ribs stay broken.
+    /// </summary>
+    [Test]
+    public async Task SawedChestClosesWithoutBoneGel()
+    {
+        var map = await Pair.CreateTestMap();
+        EntityUid body = default, torso = default, user = default;
+        var surgery = SEntMan.System<SurgerySystem>();
+
+        await Server.WaitAssertion(() =>
+        {
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            torso = Torso(body);
+            SEntMan.GetComponent<SurgeryTargetComponent>(body).SepsisImmune = true;
+            SEntMan.System<StandingStateSystem>().Down(body);
+            user = Surgeon(body, 1f);
+            SEntMan.AddComponent<RetractorComponent>(user);
+            SEntMan.AddComponent<CauteryComponent>(user);
+
+            SEntMan.AddComponent<IncisionOpenComponent>(torso);
+            SEntMan.AddComponent<BleedersClampedComponent>(torso);
+            SEntMan.AddComponent<SkinRetractedComponent>(torso);
+            SEntMan.AddComponent<BonesSawedComponent>(torso);
+            SEntMan.AddComponent<BonesOpenComponent>(torso);
+        });
+
+        foreach (var step in new[] { "SurgeryStepCloseBones", "SurgeryStepCloseIncisionField" })
+        {
+            await Server.WaitAssertion(() =>
+            {
+                Assert.That(surgery.TryDoSurgeryStep(body, torso, user, "SurgeryCloseIncisionField", step, out var error), $"{step}: {error}");
+            });
+            await Pair.RunSeconds(8);
+        }
+
+        await Server.WaitAssertion(() =>
+        {
+            var bone = SEntMan.GetComponent<WoundableComponent>(torso).Bone!.ContainedEntities.Single();
+            Assert.Multiple(() =>
+            {
+                Assert.That(surgery.HasUnfinishedSurgerySteps(torso), Is.False, "Nothing is left open.");
+                Assert.That(SEntMan.GetComponent<BoneComponent>(bone).BoneSeverity, Is.EqualTo(BoneSeverity.Broken),
+                    "The ribs were never sealed.");
             });
         });
     }

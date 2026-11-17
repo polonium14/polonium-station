@@ -4,3 +4,5 @@ surgery-popup-step-SurgeryStepRepairOrgan = { $user } naprawia narząd w { $part
 surgery-popup-step-SurgeryStepClampIncision = { $user } zaciska krwawiące naczynia na { $part } { $target }.
 surgery-popup-step-SurgeryStepInsertKidney = { $user } wkłada nerkę do { $part } { $target }!
 surgery-popup-step-SurgeryStepInsertSpleen = { $user } wkłada śledzionę do { $part } { $target }!
+surgery-popup-step-SurgeryStepCloseIncisionField = { $user } przypala ranę na { $part } { $target } nad niezespolonymi kośćmi!
+surgery-alternative-no-bone-gel = bez żelu kostnego
