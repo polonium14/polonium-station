@@ -46,4 +46,28 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> OrgansDecayTime =
         CVarDef.Create("organs.decay_time", 900f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Percentage points the oxygen saturation reads lower for a while after smoking.
+    /// </summary>
+    public static readonly CVarDef<float> OrgansSmokingSpO2Drop =
+        CVarDef.Create("organs.smoking_spo2_drop", 3f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// A body whose saturation reads below this coughs now and then.
+    /// </summary>
+    public static readonly CVarDef<float> OrgansCoughSpO2 =
+        CVarDef.Create("organs.cough_spo2", 97f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// A body whose saturation reads below this gasps instead of coughing.
+    /// </summary>
+    public static readonly CVarDef<float> OrgansGaspSpO2 =
+        CVarDef.Create("organs.gasp_spo2", 92f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Chance every 5 seconds that a body with a low saturation reading coughs or gasps.
+    /// </summary>
+    public static readonly CVarDef<float> OrgansCoughChance =
+        CVarDef.Create("organs.cough_chance", 0.3f, CVar.SERVERONLY);
 }

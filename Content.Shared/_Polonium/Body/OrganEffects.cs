@@ -59,10 +59,16 @@ public sealed partial class DamageOrgans : EntityEffectBase<DamageOrgans>
     [DataField(required: true)]
     public FixedPoint2 Amount;
 
+    /// <summary>
+    /// Chance rolled for each organ on its own, so a left and a right organ do not always wear down together.
+    /// </summary>
+    [DataField]
+    public float OrganChance = 1f;
+
     public override string EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         return Loc.GetString("entity-effect-guidebook-damage-organs",
-            ("chance", Probability),
+            ("chance", Probability * OrganChance),
             ("amount", Amount.Float()),
             ("organs", OrganEffectText.Describe(Categories, [])));
     }

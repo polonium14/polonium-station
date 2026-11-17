@@ -512,6 +512,74 @@ public sealed class OrganFailureTest : GameTest
         Assert.That(passedOut, Is.Zero);
     }
 
+    /// <summary>
+    /// Smoking and a lost lung both read a little low, and a low reading brings a cough; a healthy body has neither.
+    /// </summary>
+    [Test]
+    public async Task SmokingAndOneLungReadLowAndBringACough()
+    {
+        SetChances(0f, 0f, 0f);
+        var map = await Pair.CreateTestMap();
+        EntityUid healthy = default, smoker = default, oneLung = default;
+
+        await Server.WaitAssertion(() =>
+        {
+            PatientIntakeMachineTest.AddAir(SEntMan, map.MapUid);
+            healthy = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            smoker = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            oneLung = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            Assert.That(SEntMan.System<BloodstreamSystem>().TryAddToBloodstream(smoker, new Solution("Nicotine", 2)));
+            Assert.That(SEntMan.System<BodyDebugSystem>().TryKillOrgan(oneLung, Organ(oneLung, "LungLeft")));
+        });
+
+        await Pair.RunSeconds(20);
+
+        await Server.WaitAssertion(() =>
+        {
+            var circulation = SEntMan.System<CirculationSystem>();
+            var symptoms = SEntMan.System<LowOxygenSymptomsSystem>();
+            Assert.Multiple(() =>
+            {
+                Assert.That(circulation.ReadSpO2(healthy), Is.InRange(98.5f, 99f));
+                Assert.That(circulation.ReadSpO2(smoker), Is.InRange(95.5f, 96f), "Three points below a healthy reading.");
+                Assert.That(symptoms.HasSymptoms(healthy, out _), Is.False);
+                Assert.That(symptoms.HasSymptoms(smoker, out var smokerSevere) && !smokerSevere, "A smoker coughs.");
+                Assert.That(symptoms.HasSymptoms(oneLung, out var lungSevere) && !lungSevere, "One lung coughs.");
+            });
+        });
+    }
+
+    /// <summary>
+    /// Dexalin carries oxygen: the saturation holds without air for as long as the drug lasts.
+    /// </summary>
+    [Test]
+    public async Task DexalinHoldsTheSaturationWithoutAir()
+    {
+        SetChances(0f, 0f, 0f);
+        // No air on this map.
+        var map = await Pair.CreateTestMap();
+        EntityUid treated = default, untreated = default;
+
+        await Server.WaitAssertion(() =>
+        {
+            treated = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            untreated = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            Assert.That(SEntMan.System<BloodstreamSystem>().TryAddToBloodstream(treated, new Solution("Dexalin", 15)));
+        });
+
+        await Pair.RunSeconds(15);
+
+        await Server.WaitAssertion(() =>
+        {
+            var circulation = SEntMan.System<CirculationSystem>();
+            Assert.Multiple(() =>
+            {
+                Assert.That(circulation.ReadSpO2(treated), Is.GreaterThanOrEqualTo(95f));
+                Assert.That(circulation.ReadSpO2(untreated), Is.LessThan(88f));
+            });
+        });
+    }
+
     [Test]
     public async Task SpO2FallsWhenBreathingStops()
     {

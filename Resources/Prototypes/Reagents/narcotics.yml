@@ -285,9 +285,14 @@
       metabolismRate: 0.05
       effects:
       - !type:DamageOrgans
-        probability: 0.5
+        organChance: 0.5 # each lung rolls on its own
         categories: [ Lungs ]
         amount: 0.01
+      # Polonium: the oxygen saturation reads a little lower for half a minute after the last puff
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSmokerBreath
+        time: 30
+        type: Update
   plantMetabolism:
   - !type:PlantAdjustHealth
     amount: -5

@@ -377,6 +377,9 @@
           types:
             Asphyxiation: -1
             Bloodloss: -0.5
+      # Polonium: dexalin carries oxygen, so the saturation holds and slowly climbs even without breathing
+      - !type:Oxygenate
+        factor: 1.25
       - !type:HealthChange
         conditions:
           - !type:ReagentCondition
@@ -403,6 +406,9 @@
           types:
             Asphyxiation: -3.5
             Bloodloss: -3
+      # Polonium: dexalin plus carries oxygen, so the saturation climbs quickly even without breathing
+      - !type:Oxygenate
+        factor: 2
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition

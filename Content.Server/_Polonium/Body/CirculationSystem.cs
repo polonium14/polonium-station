@@ -468,7 +468,13 @@ public sealed partial class CirculationSystem : EntitySystem
             }
         }
 
-        return ToSpO2(respirator, saturation);
+        var spo2 = ToSpO2(respirator, saturation);
+
+        // Smoking shows on the reading for a while, without taking any oxygen away.
+        if (_statusEffects.HasEffectComp<SmokerBreathStatusEffectComponent>(body))
+            spo2 = MathF.Max(spo2 - _cfg.GetCVar(CCVars.OrgansSmokingSpO2Drop), 0f);
+
+        return spo2;
     }
 
     /// <summary>

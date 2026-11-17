@@ -6,6 +6,7 @@ using Content.Shared.Body;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Server._Polonium.Body;
 
@@ -128,12 +129,16 @@ public sealed partial class HealOrgansEntityEffectSystem : EntityEffectSystem<Bo
 public sealed partial class DamageOrgansEntityEffectSystem : EntityEffectSystem<BodyComponent, DamageOrgans>
 {
     [Dependency] private OrganHealingSystem _healing = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     protected override void Effect(Entity<BodyComponent> entity, ref EntityEffectEvent<DamageOrgans> args)
     {
         var amount = args.Effect.Amount * args.Scale;
         foreach (var organ in _healing.GetLivingOrgans(entity, args.Effect.Categories, []))
         {
+            if (args.Effect.OrganChance < 1f && !_random.Prob(args.Effect.OrganChance))
+                continue;
+
             _healing.DamageOrgan(organ, amount);
         }
     }
