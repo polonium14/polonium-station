@@ -3,6 +3,10 @@ using Content.Shared._Shitmed.Medical.Surgery.Wounds;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage;
+using Content.Shared.Body.Systems;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -17,7 +21,12 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 /// </summary>
 public partial class TraumaSystem
 {
+    [Dependency] private BloodstreamSystem _bloodstream = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private IPrototypeManager _prototypes = default!;
+
     private static readonly ProtoId<OrganCategoryPrototype> HeadCategory = "Head";
+    private static readonly ProtoId<DamageTypePrototype> SeverDamageType = "Slash";
 
     /// <summary>
     /// Whether a cut may sever this limb at all: it is already badly hurt or its bone is broken,
@@ -67,5 +76,28 @@ public partial class TraumaSystem
     {
         if (!_wound.IsWoundableRoot(limb.Owner))
             _wound.AmputateWoundableSafely(limb.Owner, limb.Comp);
+    }
+
+    /// <summary>
+    /// A limb torn off in a fight takes its own damage away with it, so the part it hung on takes a share of
+    /// that damage and the stump bleeds. Surgical amputation does not come through here.
+    /// </summary>
+    private void HurtBySevering(EntityUid body, Entity<WoundableComponent> limb, EntityUid parent)
+    {
+        var share = _damageable.GetTotalDamage(limb.Owner).Float() * _cfg.GetCVar(CCVars.DismembermentParentDamageShare);
+        var amount = Math.Clamp(share,
+            _cfg.GetCVar(CCVars.DismembermentParentDamageMin),
+            _cfg.GetCVar(CCVars.DismembermentParentDamageMax));
+
+        // Slash, because a slash wound on the torso rolls no bone or organ trauma of its own.
+        if (amount > 0f)
+        {
+            _damageable.TryChangeDamage(parent,
+                new DamageSpecifier(_prototypes.Index(SeverDamageType), amount),
+                ignoreResistances: true,
+                interruptsDoAfters: false);
+        }
+
+        _bloodstream.TryModifyBleedAmount(body, _cfg.GetCVar(CCVars.DismembermentBleed));
     }
 }

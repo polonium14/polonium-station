@@ -759,6 +759,7 @@ public partial class TraumaSystem
                             severity,
                             organComp.Category);
 
+                        HurtBySevering(body, target, targetChosen.Value);
                         _wound.AmputateWoundableSafely(target.Owner, target.Comp);
                     }
                     break;

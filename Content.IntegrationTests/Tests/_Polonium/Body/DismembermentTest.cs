@@ -7,6 +7,7 @@ using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body;
+using Content.Shared.Body.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
@@ -78,6 +79,10 @@ public sealed class DismembermentTest : GameTest
                 Assert.That(Part(hurt, "ArmLeft").IsValid(), Is.False, "A badly hurt arm comes off.");
                 Assert.That(SEntMan.System<TraumaSystem>().TryGetWoundableTrauma(Part(hurt, "Torso"), out _, TraumaType.Dismemberment),
                     "The torso keeps the stump.");
+                // The arm had 50 damage and took 15 more with the cut; half of that stays behind on the torso.
+                Assert.That(SEntMan.System<DamageableSystem>().GetTotalDamage(Part(hurt, "Torso")).Float(), Is.InRange(25f, 33f),
+                    "The torso takes half of the lost arm's damage.");
+                Assert.That(SEntMan.GetComponent<BloodstreamComponent>(hurt).BleedAmount, Is.GreaterThan(0f), "The stump bleeds.");
             });
         });
     }

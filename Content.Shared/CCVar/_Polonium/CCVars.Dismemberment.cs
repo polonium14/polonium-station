@@ -21,4 +21,28 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> DismembermentExplosionChancePerDamage =
         CVarDef.Create("dismemberment.explosion_chance_per_damage", 0.005f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Share of a severed limb's damage that the part it hung on takes when the limb is torn off.
+    /// </summary>
+    public static readonly CVarDef<float> DismembermentParentDamageShare =
+        CVarDef.Create("dismemberment.parent_damage_share", 0.5f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// The least damage the part a limb hung on takes when the limb is torn off.
+    /// </summary>
+    public static readonly CVarDef<float> DismembermentParentDamageMin =
+        CVarDef.Create("dismemberment.parent_damage_min", 15f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// The most damage the part a limb hung on takes when the limb is torn off.
+    /// </summary>
+    public static readonly CVarDef<float> DismembermentParentDamageMax =
+        CVarDef.Create("dismemberment.parent_damage_max", 50f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Bleeding added to the body when a limb is torn off. It clots like any other bleeding.
+    /// </summary>
+    public static readonly CVarDef<float> DismembermentBleed =
+        CVarDef.Create("dismemberment.bleed", 5f, CVar.SERVERONLY);
 }
