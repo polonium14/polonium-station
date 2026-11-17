@@ -466,10 +466,7 @@ public partial class TraumaSystem
         if (category is null || !LimbTargetMap.TryGetParentCategory(category.Value, out var parentCategory))
             return false;
 
-        if (!TryComp<BodyComponent>(body, out var bodyComp)
-            || !LimbTargetMap.TryGetOrganByCategory(EntityManager, bodyComp, parentCategory, out var parentOrgan)
-            || !TryComp<WoundableComponent>(parentOrgan, out var parentWoundableComp)
-            || parentWoundableComp.WoundableSeverity != WoundableSeverity.Mangled)
+        if (!CanBeSevered(target, body, category.Value))
             return false;
 
         var deduction = GetTraumaChanceDeduction(
@@ -519,7 +516,7 @@ public partial class TraumaSystem
                 0,
                 1);
 
-        var result = _random.Prob((float) chance);
+        var result = _random.Prob(SeverChance(chance));
         return result;
     }
 
