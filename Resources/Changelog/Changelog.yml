@@ -1,28 +1,4 @@
 ﻿Entries:
-- author: SirWarock
-  changes:
-  - message: Fixed the Prediction Issue when trying to forcefeed someone with a pulled-down
-      mask!
-    type: Fix
-  id: 9631
-  time: '2026-04-10T13:24:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43543
-- author: aada
-  changes:
-  - message: The wire brush can now scrub away spiderwebs and posters.
-    type: Add
-  id: 9632
-  time: '2026-04-10T16:38:05.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43537
-- author: ahandleman
-  changes:
-  - message: Kudzu Gene Removal Effect to Plant-B-Gone!
-    type: Add
-  - message: Removed Magic Shared Seed Kudzu Removal!
-    type: Fix
-  id: 9633
-  time: '2026-04-10T20:22:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43385
 - author: ArtisticRoomba
   changes:
   - message: Fixed the pneumatic valve overshooting gas equalization between the two
@@ -5181,3 +5157,25 @@
   id: 10125
   time: '2026-11-17T13:23:58.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1260
+- author: Nikita
+  changes:
+  - message: Motywy ducha!
+    type: Add
+  id: 10126
+  time: '2026-11-17T21:19:12.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1263
+- author: Koilak
+  changes:
+  - message: "Emotke stukania si\u0119 ogonomi dla Felinid\xF3w oraz Tejwan\xF3w"
+    type: Add
+  id: 10127
+  time: '2026-11-17T21:21:36.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1251
+- author: Czuat
+  changes:
+  - message: "Uzupe\u0142niono oraz poprawiono poradnik reaktora j\u0105drowego aby\
+      \ by\u0142 czytelniejszy."
+    type: Tweak
+  id: 10128
+  time: '2026-11-17T21:20:26.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1257
