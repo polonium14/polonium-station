@@ -118,6 +118,7 @@
         - id: ChemistryBottleHyronalin
         - id: ChemistryBottleKelotane
         - id: ChemistryBottleEpinephrine # A power item for medical players that feels thematic and worth stealing
+        - id: ChemistryBottleMorphine # Polonium: painkiller for surgery
         - id: PillCanisterTricordrazine
 
 - type: entity
