@@ -2,34 +2,50 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Bed.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Systems;
-using Content.Shared.Buckle.Components;
+using Content.Shared.CCVar;
 using Content.Shared.Rejuvenate;
+using Robust.Shared.Configuration;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
+/// <summary>
+/// An open surgical incision bleeds for as long as it stays open: strongly until its bleeders are clamped,
+/// weakly afterwards. The bleeding does not clot and stops when the incision is closed.
+/// </summary>
 public sealed partial class UnfinishedSurgeryPenaltySystem : EntitySystem
 {
+    [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private INetManager _net = default!;
-    [Dependency] private SharedSurgerySystem _surgery = default!;
     [Dependency] private BloodstreamSystem _bloodstream = default!;
 
     private static readonly TimeSpan TickInterval = TimeSpan.FromSeconds(3);
 
-    private const float BleedPerUnfinishedOrgan = 2f;
+    private static readonly ProtoId<OrganCategoryPrototype> Torso = "Torso";
+    private static readonly ProtoId<OrganCategoryPrototype> Head = "Head";
+
+    /// <summary>
+    /// Share of the torso's bleeding an incision in the head bleeds, and one in an arm or a leg.
+    /// </summary>
+    private const float HeadShare = 0.5f;
+    private const float LimbShare = 0.25f;
+
+    private TimeSpan _nextTick;
+    private readonly Dictionary<EntityUid, float> _bleeding = [];
+    private readonly List<EntityUid> _closed = [];
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BodyComponent, UnbuckledEvent>(OnUnbuckled);
         SubscribeLocalEvent<UnfinishedSurgeryPenaltyComponent, BleedModifierEvent>(OnBleedModifier);
         SubscribeLocalEvent<UnfinishedSurgeryPenaltyComponent, RejuvenateEvent>(OnRejuvenate);
     }
@@ -39,30 +55,6 @@ public sealed partial class UnfinishedSurgeryPenaltySystem : EntitySystem
         // BloodstreamSystem clears the bleeding itself. Drop the tracking immediately so
         // future bleeding cannot inherit the old surgery penalty's protection from clotting.
         RemComp<UnfinishedSurgeryPenaltyComponent>(ent);
-    }
-
-    private void OnUnbuckled(Entity<BodyComponent> ent, ref UnbuckledEvent args)
-    {
-        if (!HasComp<HealOnBuckleComponent>(args.Strap))
-            return;
-
-        var unfinishedCount = CountUnfinishedOrgans(ent.Comp);
-        if (unfinishedCount == 0)
-            return;
-
-        if (!TryComp<BloodstreamComponent>(ent, out var bloodstream))
-            return;
-
-        var before = bloodstream.BleedAmountNotFromWounds;
-        _bloodstream.TryModifyBleedAmount((ent.Owner, bloodstream), BleedPerUnfinishedOrgan * unfinishedCount);
-        var applied = bloodstream.BleedAmountNotFromWounds - before;
-
-        var isNew = !HasComp<UnfinishedSurgeryPenaltyComponent>(ent);
-        var penalty = EnsureComp<UnfinishedSurgeryPenaltyComponent>(ent);
-        if (isNew)
-            penalty.NextTick = _timing.CurTime + TickInterval;
-        penalty.PenaltyBleed += applied;
-        Dirty(ent.Owner, penalty);
     }
 
     private void OnBleedModifier(Entity<UnfinishedSurgeryPenaltyComponent> ent, ref BleedModifierEvent args)
@@ -84,47 +76,61 @@ public sealed partial class UnfinishedSurgeryPenaltySystem : EntitySystem
     {
         base.Update(frameTime);
 
-        if (!_net.IsServer)
+        if (!_net.IsServer || _timing.CurTime < _nextTick)
             return;
 
-        var query = EntityQueryEnumerator<UnfinishedSurgeryPenaltyComponent, BodyComponent>();
-        while (query.MoveNext(out var uid, out var penalty, out var body))
+        _nextTick = _timing.CurTime + TickInterval;
+
+        var open = _cfg.GetCVar(CCVars.SurgeryOpenIncisionBleed);
+        var clamped = _cfg.GetCVar(CCVars.SurgeryClampedIncisionBleed);
+
+        _bleeding.Clear();
+        var incisions = EntityQueryEnumerator<IncisionOpenComponent, OrganComponent>();
+        while (incisions.MoveNext(out var part, out _, out var organ))
         {
-            if (_timing.CurTime < penalty.NextTick)
+            if (organ.Body is not { } body)
                 continue;
 
-            penalty.NextTick += TickInterval;
+            var share = organ.Category == Torso ? 1f : organ.Category == Head ? HeadShare : LimbShare;
+            var bleed = (HasComp<BleedersClampedComponent>(part) ? clamped : open) * share;
+            _bleeding[body] = _bleeding.GetValueOrDefault(body) + bleed;
+        }
 
+        foreach (var (body, bleed) in _bleeding)
+        {
+            SetBleed(body, bleed);
+        }
 
-            if (TryComp<BloodstreamComponent>(uid, out var bloodstream)
-                && penalty.PenaltyBleed > bloodstream.BleedAmountNotFromWounds)
-            {
-                penalty.PenaltyBleed = bloodstream.BleedAmountNotFromWounds;
-                Dirty(uid, penalty);
-            }
+        _closed.Clear();
+        var penalties = EntityQueryEnumerator<UnfinishedSurgeryPenaltyComponent>();
+        while (penalties.MoveNext(out var uid, out _))
+        {
+            if (!_bleeding.ContainsKey(uid))
+                _closed.Add(uid);
+        }
 
-            if (CountUnfinishedOrgans(body) != 0)
-                continue;
-
-            if (bloodstream != null)
-                _bloodstream.TryModifyBleedAmount((uid, bloodstream), -penalty.PenaltyBleed);
-
+        foreach (var uid in _closed)
+        {
+            SetBleed(uid, 0f);
             RemComp<UnfinishedSurgeryPenaltyComponent>(uid);
         }
     }
 
-    private int CountUnfinishedOrgans(BodyComponent body)
+    /// <summary>
+    /// Brings the surgical share of the body's bleeding to the wanted amount.
+    /// </summary>
+    private void SetBleed(EntityUid body, float wanted)
     {
-        if (body.Organs is null)
-            return 0;
+        if (!TryComp<BloodstreamComponent>(body, out var bloodstream))
+            return;
 
-        var count = 0;
-        foreach (var organ in body.Organs.ContainedEntities)
-        {
-            if (_surgery.HasUnfinishedSurgerySteps(organ))
-                count++;
-        }
+        var penalty = EnsureComp<UnfinishedSurgeryPenaltyComponent>(body);
+        var held = Math.Min(penalty.PenaltyBleed, bloodstream.BleedAmountNotFromWounds);
+        var before = bloodstream.BleedAmountNotFromWounds;
+        _bloodstream.TryModifyBleedAmount((body, bloodstream), wanted - held);
 
-        return count;
+        // The bloodstream caps the total, so only what was really added or removed is tracked.
+        penalty.PenaltyBleed = held + bloodstream.BleedAmountNotFromWounds - before;
+        Dirty(body, penalty);
     }
 }

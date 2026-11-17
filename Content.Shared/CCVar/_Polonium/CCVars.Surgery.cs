@@ -34,4 +34,17 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> SurgeryJitterBotchChance =
         CVarDef.Create("surgery.jitter_botch_chance", 0.25f, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// Blood an open incision in the torso loses every 3 seconds until its bleeders are clamped.
+    /// The head bleeds half of it, an arm or a leg a quarter.
+    /// </summary>
+    public static readonly CVarDef<float> SurgeryOpenIncisionBleed =
+        CVarDef.Create("surgery.open_incision_bleed", 2.5f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Blood an open incision in the torso loses every 3 seconds once its bleeders are clamped.
+    /// </summary>
+    public static readonly CVarDef<float> SurgeryClampedIncisionBleed =
+        CVarDef.Create("surgery.clamped_incision_bleed", 0.3f, CVar.SERVERONLY);
 }
