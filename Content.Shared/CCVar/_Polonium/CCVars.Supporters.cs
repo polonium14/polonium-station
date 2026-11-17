@@ -18,4 +18,10 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<float> SupportersRefreshMinutes =
         CVarDef.Create("supporters.refresh_minutes", 60f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// The page where players can become supporters. The game shows no link to it while it is empty.
+    /// </summary>
+    public static readonly CVarDef<string> SupportersLink =
+        CVarDef.Create("supporters.link", string.Empty, CVar.SERVER | CVar.REPLICATED);
 }

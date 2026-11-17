@@ -1,0 +1,56 @@
+- type: ghostTheme
+  id: Custodian
+  name: ghost-theme-custodian-name
+  description: ghost-theme-custodian-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-custodian
+  colorizable: true
+  category: Contributors
+
+- type: ghostTheme
+  id: Wisp
+  name: ghost-theme-wisp-name
+  description: ghost-theme-wisp-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/wisp.rsi
+    state: wisp
+  colorizable: true
+  category: Contributors
+
+- type: ghostTheme
+  id: Architect
+  name: ghost-theme-architect-name
+  description: ghost-theme-architect-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-architect
+  colorizable: true
+  category: Contributors
+
+- type: ghostTheme
+  id: SkeletonMage
+  name: ghost-theme-skeleton-mage-name
+  description: ghost-theme-skeleton-mage-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-mage
+  category: Contributors
+
+- type: ghostTheme
+  id: Robot
+  name: ghost-theme-robot-name
+  description: ghost-theme-robot-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-rinary
+  category: Contributors
+
+- type: ghostTheme
+  id: Clown
+  name: ghost-theme-clown-name
+  description: ghost-theme-clown-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/clown.rsi
+    state: clown
+  category: Contributors

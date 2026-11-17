@@ -1,0 +1,56 @@
+- type: ghostTheme
+  id: Narsie
+  name: ghost-theme-narsie-name
+  description: ghost-theme-narsie-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-narsie
+  category: Admins
+
+- type: ghostTheme
+  id: Daemon
+  name: ghost-theme-daemon-name
+  description: ghost-theme-daemon-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-daemon
+  category: Admins
+
+- type: ghostTheme
+  id: Abomination
+  name: ghost-theme-abomination-name
+  description: ghost-theme-abomination-desc
+  sprite:
+    sprite: Mobs/Demons/abomination.rsi
+    state: abomination
+  category: Admins
+
+- type: ghostTheme
+  id: SpaceDragon
+  name: ghost-theme-space-dragon-name
+  description: ghost-theme-space-dragon-desc
+  sprite:
+    sprite: Mobs/Aliens/Carps/dragon.rsi
+    state: alive
+  colorizable: true
+  category: Admins
+
+- type: ghostTheme
+  id: BuffRatKing
+  name: ghost-theme-buff-rat-king-name
+  description: ghost-theme-buff-rat-king-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-buff-rat-king
+  colorizable: true
+  category: Admins
+
+- type: ghostTheme
+  id: LizardPlushie
+  name: ghost-theme-lizard-plushie-name
+  description: ghost-theme-lizard-plushie-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-lizard-plushie
+  colorizable: true
+  category: Admins
