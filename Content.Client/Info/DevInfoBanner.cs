@@ -1,5 +1,5 @@
 using Content.Client.Credits;
-using Content.Client.Info.UUID;
+using Content.Client._Polonium.DiscordLinking; // Polonium
 using Content.Shared.CCVar;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -31,7 +31,7 @@ namespace Content.Client.Info
             creditsButton.OnPressed += _ => new CreditsWindow().Open();
             buttons.AddChild(creditsButton);
 
-            buttons.AddChild(new UUIDControl());
+            buttons.AddChild(new AccountButton()); // Polonium: opens the account and Discord window
         }
     }
 }

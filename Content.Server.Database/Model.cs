@@ -800,7 +800,9 @@ namespace Content.Server.Database
         /// Results from rejected connections with external API checking tools
         IPChecks = 5,
         /// Results from rejected connections who are authenticated but have no modern hwid associated with them.
-        NoHwid = 6
+        NoHwid = 6,
+        // Polonium: refused by the Discord link check. A high value so it does not clash with new upstream values.
+        DiscordLink = 100,
     }
 
     public class ServerBanHit

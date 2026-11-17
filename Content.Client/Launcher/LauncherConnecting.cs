@@ -21,6 +21,7 @@ namespace Content.Client.Launcher
         [Dependency] private IConfigurationManager _cfg = default!;
         [Dependency] private IClipboardManager _clipboard = default!;
         [Dependency] private ILogManager _logManager = default!;
+        [Dependency] private IUriOpener _uriOpener = default!; // Polonium
 
         private LauncherConnectingGui? _control;
         private ISawmill _sawmill = default!;
@@ -61,7 +62,7 @@ namespace Content.Client.Launcher
 
         protected override void Startup()
         {
-            _control = new LauncherConnectingGui(this, _random, _prototypeManager, _cfg, _clipboard);
+            _control = new LauncherConnectingGui(this, _random, _prototypeManager, _cfg, _clipboard, _uriOpener); // Polonium: uri opener
 
             _sawmill = _logManager.GetSawmill("launcher-ui");
 

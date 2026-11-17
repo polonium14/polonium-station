@@ -4,34 +4,28 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.Player;
 
-namespace Content.Client.Info.UUID;
+namespace Content.Client._Polonium.DiscordLinking;
 
 [GenerateTypedNameReferences]
-public sealed partial class UUIDWindow : DefaultWindow
+public sealed partial class AccountWindow : DefaultWindow
 {
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IClipboardManager _clipboard = default!;
 
-    public UUIDWindow()
+    public AccountWindow()
     {
         IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
 
-        var session = _player.LocalSession;
-        var uid = session?.UserId;
-        var name = session?.Name;
-
-        if (session == null || !uid.HasValue)
+        var uid = _player.LocalSession?.UserId;
+        if (!uid.HasValue)
         {
-            UsernameField.Text = "Błąd wczytywania lokalnych danych";
+            UsernameField.Text = Loc.GetString("discord-link-uuid-error");
             UUIDField.Visible = false;
             CopyUUID.Visible = false;
             return;
         }
 
-        UsernameField.Text = name != null
-            ? $"{name}: "
-            : string.Empty;
         UUIDField.Text = uid.Value.ToString();
         UUIDField.FontColorOverride = Color.GreenYellow;
         CopyUUID.OnPressed += _ => _clipboard.SetText(uid.Value.ToString());
