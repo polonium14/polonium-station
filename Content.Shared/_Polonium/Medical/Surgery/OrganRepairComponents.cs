@@ -3,10 +3,10 @@ using Robust.Shared.GameStates;
 namespace Content.Shared._Polonium.Medical.Surgery;
 
 /// <summary>
-/// Surgery step that repairs the most damaged organ of the operated part. Each organ can be repaired once.
+/// Surgery step that repairs the organ its surgery names. Each organ can be repaired once.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class SurgeryRepairOrgansStepComponent : Component
+public sealed partial class SurgeryRepairOrganStepComponent : Component
 {
     /// <summary>
     /// The share of its full integrity an organ is brought back to. Organs above it need no repair.

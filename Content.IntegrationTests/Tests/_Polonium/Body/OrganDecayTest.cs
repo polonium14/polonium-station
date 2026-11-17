@@ -100,23 +100,24 @@ public sealed class OrganDecayTest : GameTest
             var healing = SEntMan.System<OrganHealingSystem>();
             var repair = SEntMan.System<OrganRepairSurgerySystem>();
             var surgery = SEntMan.System<Content.Server._Shitmed.Medical.Surgery.SurgerySystem>();
-            var step = surgery.GetSingleton("SurgeryStepRepairOrgans")!.Value;
+            var step = surgery.GetSingleton("SurgeryStepRepairOrgan")!.Value;
+            var liverRepair = surgery.GetSingleton("SurgeryRepairLiver")!.Value;
 
-            Assert.That(repair.IsStepComplete(step, torso), "Healthy organs need no repair.");
+            Assert.That(repair.IsStepComplete(step, body, liverRepair), "Healthy organs need no repair.");
 
             healing.DamageOrgan((liver, integrity), integrity.IntegrityCap * 0.9f);
-            Assert.That(repair.IsStepComplete(step, torso), Is.False);
+            Assert.That(repair.IsStepComplete(step, body, liverRepair), Is.False);
 
-            var ev = new SurgeryStepEvent(body, body, torso, body, step, step);
+            var ev = new SurgeryStepEvent(body, body, torso, body, liverRepair, step);
             SEntMan.EventBus.RaiseLocalEvent(step, ref ev);
             Assert.Multiple(() =>
             {
                 Assert.That(integrity.OrganIntegrity, Is.EqualTo(integrity.IntegrityCap * 0.6f));
-                Assert.That(repair.IsStepComplete(step, torso));
+                Assert.That(repair.IsStepComplete(step, body, liverRepair));
             });
 
             healing.DamageOrgan((liver, integrity), integrity.IntegrityCap * 0.5f);
-            Assert.That(repair.IsStepComplete(step, torso), "A repaired organ cannot be repaired again.");
+            Assert.That(repair.IsStepComplete(step, body, liverRepair), "A repaired organ cannot be repaired again.");
         });
     }
 }

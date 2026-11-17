@@ -4,7 +4,7 @@ using Content.Shared._Shitmed.Medical.Surgery;
 namespace Content.Server._Polonium.Body;
 
 /// <summary>
-/// The organ repair surgery: one finished step brings one organ back to working order, once per organ.
+/// The organ repair surgeries: the finished step brings the chosen organ back to working order, once per organ.
 /// </summary>
 public sealed partial class OrganRepairSystem : EntitySystem
 {
@@ -15,12 +15,12 @@ public sealed partial class OrganRepairSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SurgeryRepairOrgansStepComponent, SurgeryStepEvent>(OnRepairStep);
+        SubscribeLocalEvent<SurgeryRepairOrganStepComponent, SurgeryStepEvent>(OnRepairStep);
     }
 
-    private void OnRepairStep(Entity<SurgeryRepairOrgansStepComponent> ent, ref SurgeryStepEvent args)
+    private void OnRepairStep(Entity<SurgeryRepairOrganStepComponent> ent, ref SurgeryStepEvent args)
     {
-        if (!_repair.TryGetRepairable(ent, args.Part, out var organ, out var target))
+        if (!_repair.TryGetRepairable(ent, args.Body, args.Surgery, out var organ, out var target))
             return;
 
         _healing.HealOrgan(organ, target - organ.Comp.OrganIntegrity);

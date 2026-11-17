@@ -26,9 +26,9 @@ public abstract partial class SharedSurgerySystem
 
     private static readonly ProtoId<DamageTypePrototype> BotchDamageType = "Slash";
 
-    private bool PoloniumStepComplete(EntityUid step, EntityUid part)
+    private bool PoloniumStepComplete(EntityUid step, EntityUid part, EntityUid body, EntityUid surgery)
     {
-        return _cavity.IsStepComplete(step, part) && _organRepair.IsStepComplete(step, part);
+        return _cavity.IsStepComplete(step, part) && _organRepair.IsStepComplete(step, body, surgery);
     }
 
     /// <summary>

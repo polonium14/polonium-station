@@ -145,6 +145,12 @@ public sealed class SurgeryConditionsTest : GameTest
                 .Single(o => SEntMan.GetComponent<OrganComponent>(o).Category == "Liver");
             var integrity = SEntMan.GetComponent<OrganIntegrityComponent>(liver);
             SEntMan.System<OrganHealingSystem>().DamageOrgan((liver, integrity), integrity.IntegrityCap * 0.9f);
+
+            // The heart is damaged too, but the surgeon picks the liver.
+            var heart = SEntMan.GetComponent<BodyComponent>(body).Organs!.ContainedEntities
+                .Single(o => SEntMan.GetComponent<OrganComponent>(o).Category == "Heart");
+            var heartIntegrity = SEntMan.GetComponent<OrganIntegrityComponent>(heart);
+            SEntMan.System<OrganHealingSystem>().DamageOrgan((heart, heartIntegrity), heartIntegrity.IntegrityCap * 0.9f);
         });
 
         (string, string)[] steps =
@@ -153,7 +159,7 @@ public sealed class SurgeryConditionsTest : GameTest
             (Surgery, "SurgeryStepRetractSkin"),
             ("SurgeryOpenRibcage", "SurgeryStepSawBones"),
             ("SurgeryOpenRibcage", "SurgeryStepPriseOpenBones"),
-            ("SurgeryRepairOrgans", "SurgeryStepRepairOrgans"),
+            ("SurgeryRepairLiver", "SurgeryStepRepairOrgan"),
         ];
 
         foreach (var (procedure, step) in steps)
@@ -172,7 +178,10 @@ public sealed class SurgeryConditionsTest : GameTest
             {
                 Assert.That(integrity.OrganIntegrity, Is.EqualTo(integrity.IntegrityCap * 0.6f));
                 Assert.That(SEntMan.HasComponent<OrganRepairedComponent>(liver));
-                Assert.That(surgery.TryDoSurgeryStep(body, torso, user, "SurgeryRepairOrgans", "SurgeryStepRepairOrgans", out _), Is.False,
+                var heart = SEntMan.GetComponent<BodyComponent>(body).Organs!.ContainedEntities
+                    .Single(o => SEntMan.GetComponent<OrganComponent>(o).Category == "Heart");
+                Assert.That(SEntMan.HasComponent<OrganRepairedComponent>(heart), Is.False, "Only the chosen organ is repaired.");
+                Assert.That(surgery.TryDoSurgeryStep(body, torso, user, "SurgeryRepairLiver", "SurgeryStepRepairOrgan", out _), Is.False,
                     "Nothing is left to repair.");
             });
         });
