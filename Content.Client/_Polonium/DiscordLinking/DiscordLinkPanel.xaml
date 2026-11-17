@@ -1,0 +1,14 @@
+<BoxContainer xmlns="https://spacestation14.io"
+              Orientation="Vertical"
+              SeparationOverride="6"
+              Margin="0 10 0 0">
+    <RichTextLabel Name="StatusLabel" HorizontalExpand="True" />
+    <BoxContainer Orientation="Horizontal" SeparationOverride="4">
+        <Button Name="LinkButton" Text="{Loc 'discord-link-button-link'}" Visible="False" />
+        <Button Name="CheckButton" Text="{Loc 'discord-link-button-check'}" Visible="False" />
+    </BoxContainer>
+    <BoxContainer Name="UrlRow" Orientation="Horizontal" SeparationOverride="4" Visible="False">
+        <LineEdit Name="UrlEdit" Editable="False" HorizontalExpand="True" />
+        <Button Name="CopyLinkButton" Text="{Loc 'discord-link-button-copy-link'}" />
+    </BoxContainer>
+</BoxContainer>

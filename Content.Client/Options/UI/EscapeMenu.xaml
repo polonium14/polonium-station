@@ -15,6 +15,7 @@
         <changelog:ChangelogButton Access="Public" Name="ChangelogButton" StyleClasses="OpenBoth"/>
         <Button Access="Public" Name="FeedbackButton" Text="{Loc 'ui-escape-feedback'}" StyleClasses="OpenBoth"/>
         <Button Access="Public" Name="SurveyCommentButton" Text="{Loc 'ui-escape-survey-comment'}" StyleClasses="OpenBoth"/> <!-- Polonium -->
+        <Button Access="Public" Name="DiscordLinkButton" Text="{Loc 'ui-escape-discord-link'}" StyleClasses="OpenBoth" Visible="False"/> <!-- Polonium -->
         <Button Access="Public" Name="BugReportButton" Text="{Loc 'ui-escape-bug-report'}" StyleClasses="OpenBoth"/>
         <Button Access="Public" Name="AdminRemarksButton" Text="{Loc 'ui-escape-remarks'}" StyleClasses="OpenRight"/>
         <controls:Separator StyleClasses="LowDivider" Margin="0 2.5 0 2.5"/>
