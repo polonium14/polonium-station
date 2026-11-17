@@ -1,0 +1,197 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from Skyrat",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "ghost-narsie",
+            "directions": 4
+        },
+        {
+            "name": "ghost-sheet",
+            "directions": 4
+        },
+        {
+            "name": "ghost-cat",
+            "directions": 4
+        },
+        {
+            "name": "ghost-ian",
+            "directions": 4
+        },
+        {
+            "name": "ghost-ian_cute",
+            "directions": 4
+        },
+        {
+            "name": "ghost-king",
+            "directions": 4
+        },
+        {
+            "name": "ghost-mellow",
+            "directions": 4
+        },
+        {
+            "name": "ghost-blazeit",
+            "directions": 4
+        },
+        {
+            "name": "ghost-funkypurp",
+            "directions": 4
+        },
+        {
+            "name": "ghost-skeleton",
+            "directions": 4
+        },
+        {
+            "name": "ghost-rinary",
+            "directions": 4
+        },
+        {
+            "name": "ghost-daemon",
+            "directions": 4
+        },
+        {
+            "name": "ghost-revenant",
+            "directions": 4
+        },
+        {
+            "name": "ghost-firewraith",
+            "directions": 4,
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "ghost-carpman",
+            "copyright": "Made by Conf for Starlight",
+            "directions": 4
+        },
+        {
+            "name": "ghost-moff",
+            "copyright": "Based off the moths and default ghost from tgstation, StygianEagle",
+            "directions": 4
+        },
+        {
+            "name": "ghost-buff-rat-king",
+            "copyright": "Default Buff Rat King greyscaled",
+            "directions": 4
+        },
+        {
+            "name": "ghost-fox",
+            "copyright": "Default Fox greyscaled",
+            "directions": 4
+        },
+        {
+            "name": "ghost-lizard-plushie",
+            "copyright": "Default Lizard Plushie greyscaled",
+            "directions": 4
+        },
+        {
+            "name": "ghost-mothroach",
+            "copyright": "Default Mothroach greyscaled",
+            "directions": 4
+        },
+        {
+            "name": "ghost-scurret",
+            "copyright": "Default Scurret greyscaled",
+            "directions": 4
+        },
+        {
+            "name": "ghost-mage",
+            "copyright": "Based off the Terminator Skull & Chaplain Robes",
+            "directions": 4
+        },
+        {
+            "name": "ghost-custodian",
+            "copyright": "A custom item by AftrLite(Github), Modified by CrazyPhantom779(Github) to one layer",
+            "directions": 4,
+            "delays": [
+                [
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15
+                ],
+                [
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15
+                ]
+            ]
+        },
+        {
+            "name": "ghost-architect",
+            "copyright": "By Cvlancer, based on the default ghost",
+            "directions": 4
+        }
+    ]
+}
