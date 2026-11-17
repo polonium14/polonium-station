@@ -579,7 +579,9 @@ public sealed partial class CirculationSystem : EntitySystem
             if (respirator.Saturation > most)
                 _respirator.UpdateSaturation(uid, most - respirator.Saturation, respirator);
 
-            if (respirator.Saturation < respirator.SuffocationThreshold)
+            // Only a body that keeps suffocating passes out. One lung dips below the threshold for a moment
+            // at the end of every breath and recovers with the next one.
+            if (respirator.Saturation < respirator.SuffocationThreshold && respirator.SuffocationCycles >= SpO2SuffocationCycles)
                 _statusEffects.TryUpdateStatusEffectDuration(uid, Unconscious, PassOutTime);
         }
 

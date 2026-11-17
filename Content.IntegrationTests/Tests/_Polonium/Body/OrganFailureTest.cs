@@ -481,6 +481,37 @@ public sealed class OrganFailureTest : GameTest
         });
     }
 
+    /// <summary>
+    /// One lung runs short at the end of every breath, but the next breath comes in time: the patient stays awake.
+    /// </summary>
+    [Test]
+    public async Task OneLungDoesNotKnockThePatientOut()
+    {
+        SetChances(0f, 0f, 0f);
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+        var passedOut = 0;
+
+        await Server.WaitAssertion(() =>
+        {
+            PatientIntakeMachineTest.AddAir(SEntMan, map.MapUid);
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            Assert.That(SEntMan.System<BodyDebugSystem>().TryKillOrgan(body, Organ(body, "LungLeft")));
+        });
+
+        for (var i = 0; i < 60; i++)
+        {
+            await Pair.RunSeconds(1);
+            await Server.WaitPost(() =>
+            {
+                if (SEntMan.System<StatusEffectsSystem>().HasStatusEffect(body, CirculationSystem.Unconscious))
+                    passedOut++;
+            });
+        }
+
+        Assert.That(passedOut, Is.Zero);
+    }
+
     [Test]
     public async Task SpO2FallsWhenBreathingStops()
     {
