@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Body;
+using Content.Server.Explosion.EntitySystems;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
@@ -21,8 +22,8 @@ using Robust.Shared.Prototypes;
 namespace Content.IntegrationTests.Tests._Polonium.Body;
 
 /// <summary>
-/// Severing limbs: a blade only takes off a limb that is already badly hurt, and a head only comes off
-/// a body that is down.
+/// Severing limbs: a blade only takes off a limb that is already badly hurt, a head only comes off
+/// a body that is down, and a strong explosion tears off one arm or leg.
 /// </summary>
 [TestFixture]
 public sealed class DismembermentTest : GameTest
@@ -127,6 +128,63 @@ public sealed class DismembermentTest : GameTest
             {
                 Assert.That(Part(whole, "ArmLeft").IsValid(), "A whole bone holds the arm.");
                 Assert.That(Part(broken, "ArmLeft").IsValid(), Is.False, "A broken bone lets the blade through.");
+            });
+        });
+    }
+
+    [Test]
+    public async Task ExplosionThatGibsTheBodyDoesNotBreak()
+    {
+        Server.CfgMan.SetCVar(CCVars.DismembermentExplosionChancePerDamage, 1f);
+        var map = await Pair.CreateTestMap();
+        EntityUid body = default;
+
+        await Server.WaitPost(() =>
+        {
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            // A syndicate minibomb under the feet.
+            SEntMan.System<ExplosionSystem>().QueueExplosion(
+                SEntMan.System<SharedTransformSystem>().ToMapCoordinates(map.GridCoords), "TransparentMinibomb", 150f, 75f, 100f, null, addLog: false);
+        });
+
+        await Pair.RunSeconds(3);
+
+        await Server.WaitAssertion(() => Assert.That(SEntMan.Deleted(body), "The body is gibbed."));
+    }
+
+    // A grenade under the feet deals about 100 blunt and piercing damage.
+    [TestCase(40f, 1f, true)]
+    [TestCase(40f, 0f, false)]
+    [TestCase(95f, 1f, true)]
+    [TestCase(105f, 1f, false)]
+    public async Task ExplosionTearsOffOneLimb(float threshold, float chancePerDamage, bool severed)
+    {
+        Server.CfgMan.SetCVar(CCVars.DismembermentExplosionThreshold, threshold);
+        Server.CfgMan.SetCVar(CCVars.DismembermentExplosionChancePerDamage, chancePerDamage);
+        var map = await Pair.CreateTestMap();
+        EntityUid body = default;
+
+        await Server.WaitPost(() =>
+        {
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            // A standard explosive grenade under the feet.
+            SEntMan.System<ExplosionSystem>().QueueExplosion(
+                SEntMan.System<SharedTransformSystem>().ToMapCoordinates(map.GridCoords), "Transparent", 120f, 3f, 10f, null, addLog: false);
+        });
+
+        await Pair.RunSeconds(3);
+
+        await Server.WaitAssertion(() =>
+        {
+            string[] limbs = ["ArmLeft", "ArmRight", "LegLeft", "LegRight"];
+            var left = limbs.Count(limb => Part(body, limb).IsValid());
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(left, Is.EqualTo(severed ? 3 : 4));
+                Assert.That(Part(body, "Head").IsValid(), "The head stays.");
+                Assert.That(SEntMan.System<TraumaSystem>().TryGetWoundableTrauma(Part(body, "Torso"), out _, TraumaType.Dismemberment),
+                    Is.EqualTo(severed));
             });
         });
     }
