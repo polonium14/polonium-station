@@ -6,7 +6,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Polonium.Power.Generation.FissionGenerator;
 
-public sealed partial class CoriumSystem : SharedCoriumSystem
+public sealed partial class CoriumSystem : EntitySystem
 {
     [Dependency] private IconSmoothSystem _iconSmooth = default!;
 
