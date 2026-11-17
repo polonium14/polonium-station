@@ -9,11 +9,13 @@
     "states": [
         {
             "name": "ghost-narsie",
-            "directions": 4
+            "directions": 4,
+            "copyright": "Taken from Skyrat, made see-through for Polonium Station"
         },
         {
             "name": "ghost-sheet",
-            "directions": 4
+            "directions": 4,
+            "copyright": "Taken from Skyrat, made see-through for Polonium Station"
         },
         {
             "name": "ghost-cat",
@@ -49,15 +51,18 @@
         },
         {
             "name": "ghost-rinary",
-            "directions": 4
+            "directions": 4,
+            "copyright": "Taken from Skyrat, made see-through for Polonium Station"
         },
         {
             "name": "ghost-daemon",
-            "directions": 4
+            "directions": 4,
+            "copyright": "Taken from Skyrat, made see-through for Polonium Station"
         },
         {
             "name": "ghost-revenant",
-            "directions": 4
+            "directions": 4,
+            "copyright": "Taken from Skyrat, made see-through for Polonium Station"
         },
         {
             "name": "ghost-firewraith",
@@ -87,11 +92,12 @@
                     0.1,
                     0.1
                 ]
-            ]
+            ],
+            "copyright": "Taken from Skyrat, made see-through for Polonium Station"
         },
         {
             "name": "ghost-carpman",
-            "copyright": "Made by Conf for Starlight",
+            "copyright": "Made by Conf for Starlight, made see-through for Polonium Station",
             "directions": 4
         },
         {
@@ -101,27 +107,27 @@
         },
         {
             "name": "ghost-buff-rat-king",
-            "copyright": "Default Buff Rat King greyscaled",
+            "copyright": "Default Buff Rat King greyscaled, made see-through for Polonium Station",
             "directions": 4
         },
         {
             "name": "ghost-fox",
-            "copyright": "Default Fox greyscaled",
+            "copyright": "Default Fox greyscaled, made see-through for Polonium Station",
             "directions": 4
         },
         {
             "name": "ghost-lizard-plushie",
-            "copyright": "Default Lizard Plushie greyscaled",
+            "copyright": "Default Lizard Plushie greyscaled, made see-through for Polonium Station",
             "directions": 4
         },
         {
             "name": "ghost-mothroach",
-            "copyright": "Default Mothroach greyscaled",
+            "copyright": "Default Mothroach greyscaled, made see-through for Polonium Station",
             "directions": 4
         },
         {
             "name": "ghost-scurret",
-            "copyright": "Default Scurret greyscaled",
+            "copyright": "Default Scurret greyscaled, made see-through for Polonium Station",
             "directions": 4
         },
         {
@@ -131,7 +137,7 @@
         },
         {
             "name": "ghost-custodian",
-            "copyright": "A custom item by AftrLite(Github), Modified by CrazyPhantom779(Github) to one layer",
+            "copyright": "A custom item by AftrLite(Github), Modified by CrazyPhantom779(Github) to one layer, made see-through for Polonium Station",
             "directions": 4,
             "delays": [
                 [

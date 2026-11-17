@@ -48,8 +48,8 @@
   name: ghost-theme-space-carp-name
   description: ghost-theme-space-carp-desc
   sprite:
-    sprite: Mobs/Aliens/Carps/space.rsi
-    state: alive
+    sprite: _Polonium/Mobs/Ghosts/GhostThemes/space_carp.rsi
+    state: space_carp
   colorizable: true
   category: Supporters
 

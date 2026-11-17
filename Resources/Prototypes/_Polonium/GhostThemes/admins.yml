@@ -21,7 +21,7 @@
   name: ghost-theme-abomination-name
   description: ghost-theme-abomination-desc
   sprite:
-    sprite: Mobs/Demons/abomination.rsi
+    sprite: _Polonium/Mobs/Ghosts/GhostThemes/abomination.rsi
     state: abomination
   category: Admins
 
@@ -30,8 +30,8 @@
   name: ghost-theme-space-dragon-name
   description: ghost-theme-space-dragon-desc
   sprite:
-    sprite: Mobs/Aliens/Carps/dragon.rsi
-    state: alive
+    sprite: _Polonium/Mobs/Ghosts/GhostThemes/space_dragon.rsi
+    state: space_dragon
   colorizable: true
   category: Admins
 
