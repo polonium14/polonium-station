@@ -22,14 +22,14 @@
     ##Bramka logiczna
 	Turbiny gazowe mają wyjścia sygnału dzięki którym możesz zautomatyzować korekcje obciążenia statora za pomocą bramek logicznych
 <Box>
-  <GuideEntityEmbed Entity="Multitool" Caption="" Scale="2.5"Margin="0"/>
+  <GuideEntityEmbed Entity="Multitool" Caption="" Scale="2.5" Margin="0"/>
 </Box>	
 <Box>
-  <GuideEntityEmbed Entity="Turbine" Caption="" Scale="1.5"Margin="0"/>
+  <GuideEntityEmbed Entity="Turbine" Caption="" Scale="1.5" Margin="0"/>
 </Box>
 <Box>
-  <GuideEntityEmbed Entity="LogicGateOr" Caption="A" Scale="2"Margin="0"/>
-  <GuideEntityEmbed Entity="LogicGateOr" Caption="B" Scale="2"Margin="0"/>
+  <GuideEntityEmbed Entity="LogicGateOr" Caption="A" Scale="2" Margin="0"/>
+  <GuideEntityEmbed Entity="LogicGateOr" Caption="B" Scale="2" Margin="0"/>
 </Box>
 
     Jednym ze sposobów na zautomatyzowanie statora jest:
