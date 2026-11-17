@@ -33,5 +33,5 @@
     category: Spleen
   - type: Sprite
     sprite: _Polonium/Mobs/Species/spleen.rsi
-    state: spleen
+    state: spleen-dead
     color: "#7a6a62"
