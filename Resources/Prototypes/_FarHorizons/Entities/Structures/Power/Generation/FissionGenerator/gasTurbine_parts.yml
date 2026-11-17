@@ -12,7 +12,7 @@
   - type: MultiHandedItem
   - type: GuideHelp
     guides:
-    - NuclearReactor
+    - GasTurbine
     - Power
  
 # Blades

@@ -30,7 +30,7 @@ gas-turbine-repair-fail-blade = Musisz wymienić łopatkę turbiny, zanim da si�
 gas-turbine-repair-fail-stator = Musisz wymienić stojan, zanim da się to naprawić.
 turbine-repair = Naprawiasz część uszkodzeń { $target } za pomocą { $tool }.
 # Anchoring warnings
-turbine-unanchor-warning = You cannot unanchor the gas turbine while it's spinning!
+turbine-unanchor-warning = Nie możesz odkotwiczyć turbiny w trakcie pracy!
 turbine-anchor-warning = Nieprawidłowe miejsce zakotwiczenia.
 
 ### UI
@@ -44,11 +44,11 @@ comp-turbine-ui-overtemp = PRZEGRZANIE
 comp-turbine-ui-stalling = ZAHAMOWANIE
 comp-turbine-ui-undertemp = NIEDOGRZANIE
 comp-turbine-ui-flow-rate = Natężenie przepływu
-comp-turbine-ui-stator-load = Obciążenie stojana
+comp-turbine-ui-stator-load = Obciążenie statora
 comp-turbine-ui-blade = Łopatka turbiny
 comp-turbine-ui-blade-integrity = Integralność
 comp-turbine-ui-blade-stress = Naprężenie
-comp-turbine-ui-stator = Stojan turbiny
+comp-turbine-ui-stator = Stator turbiny
 comp-turbine-ui-stator-potential = Potencjał
 comp-turbine-ui-stator-supply = Zasilanie
 comp-turbine-ui-power = { POWERWATTS($power) }
