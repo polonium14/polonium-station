@@ -1,6 +1,8 @@
+using Content.Client.Ghost;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Ghost.Widgets;
 using Content.Shared._Polonium.GhostThemes;
+using Content.Shared.Ghost.Components;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
@@ -11,7 +13,7 @@ namespace Content.Client._Polonium.GhostThemes;
 /// <summary>
 /// Opens the ghost theme window from the button in the ghost bar.
 /// </summary>
-public sealed class GhostThemeUIController : UIController, IOnSystemChanged<GhostThemeSystem>
+public sealed class GhostThemeUIController : UIController, IOnSystemChanged<GhostThemeSystem>, IOnSystemChanged<GhostSystem>
 {
     [UISystemDependency] private readonly GhostThemeSystem? _system = default;
 
@@ -41,6 +43,19 @@ public sealed class GhostThemeUIController : UIController, IOnSystemChanged<Ghos
     {
         system.ThemesReceived -= OnThemesReceived;
         system.EnabledChanged -= OnEnabledChanged;
+    }
+
+    // A player who is no longer a ghost can't pick a theme, the server would ignore it.
+    public void OnSystemLoaded(GhostSystem system)
+    {
+        system.PlayerRemoved += OnGhostRemoved;
+        system.PlayerDetached += CloseWindow;
+    }
+
+    public void OnSystemUnloaded(GhostSystem system)
+    {
+        system.PlayerRemoved -= OnGhostRemoved;
+        system.PlayerDetached -= CloseWindow;
     }
 
     /// <summary>
@@ -75,6 +90,16 @@ public sealed class GhostThemeUIController : UIController, IOnSystemChanged<Ghos
         if (Gui is { } gui)
             gui.GhostThemeButton.OnPressed -= OnButtonPressed;
 
+        CloseWindow();
+    }
+
+    private void OnGhostRemoved(GhostComponent component)
+    {
+        CloseWindow();
+    }
+
+    private void CloseWindow()
+    {
         _opening = false;
         _window?.Close();
     }
@@ -89,11 +114,8 @@ public sealed class GhostThemeUIController : UIController, IOnSystemChanged<Ghos
         if (Gui is { } gui)
             gui.GhostThemeButton.Visible = enabled;
 
-        if (enabled)
-            return;
-
-        _opening = false;
-        _window?.Close();
+        if (!enabled)
+            CloseWindow();
     }
 
     private void OnThemesReceived(HashSet<ProtoId<GhostThemePrototype>> available)

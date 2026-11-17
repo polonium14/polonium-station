@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
+using Content.Client.Stylesheets.Palette;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Polonium.GhostThemes;
 using Content.Shared.CCVar;
@@ -131,8 +132,9 @@ public sealed partial class GhostThemeWindow : FancyWindow
 
     private void AddSupporterButton(BoxContainer list)
     {
-        var link = _cfg.GetCVar(CCVars.SupportersLink).Trim();
-        if (link.Length == 0)
+        // Opening anything other than a web page would throw, so a broken link hides the button.
+        if (!Uri.TryCreate(_cfg.GetCVar(CCVars.SupportersLink).Trim(), UriKind.Absolute, out var link)
+            || link.Scheme != Uri.UriSchemeHttp && link.Scheme != Uri.UriSchemeHttps)
             return;
 
         var button = new Button
@@ -196,7 +198,7 @@ public sealed partial class GhostThemeWindow : FancyWindow
         ChooseButton.Disabled = locked;
         LockedReason.Visible = locked;
         if (locked)
-            LockedReason.SetMessage(GetLockReason(theme), StyleNano.ConcerningOrangeFore);
+            LockedReason.SetMessage(GetLockReason(theme), Palettes.Status.Warning);
 
         UpdatePreview();
     }

@@ -7,7 +7,7 @@
         <Button Name="NewLifeButton" Text="{Loc ghost-gui-return-to-lobby-button}" Visible="False" />
         <Button Name="GhostWarpButton" Text="{Loc ghost-gui-ghost-warp-button}" />
         <!-- Polonium: ghost themes, handled by GhostThemeUIController -->
-        <Button Name="GhostThemeButton" Access="Public" Text="{Loc ghost-gui-ghost-theme-button}" />
+        <Button Name="GhostThemeButton" Access="Public" Text="{Loc ghost-theme-open-button}" />
         <Button Name="GhostRolesButton" />
     </BoxContainer>
 </widgets:GhostGui>

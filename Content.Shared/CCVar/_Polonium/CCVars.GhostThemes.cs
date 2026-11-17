@@ -7,7 +7,7 @@ public sealed partial class CCVars
     /// <summary>
     /// Whether players can pick a ghost theme. When off, every ghost looks like the default one.
     /// </summary>
-    public static readonly CVarDef<bool> GhostThemesEnabled =
+    public static readonly CVarDef<bool> GhostThemeEnabled =
         CVarDef.Create("ghost_theme.enabled", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>

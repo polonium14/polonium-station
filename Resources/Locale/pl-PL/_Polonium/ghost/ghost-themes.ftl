@@ -1,4 +1,4 @@
-ghost-gui-ghost-theme-button = Wygląd Ducha
+ghost-theme-open-button = Wygląd Ducha
 
 ghost-theme-window-title = Wygląd Ducha
 ghost-theme-window-search = Szukaj...

@@ -72,7 +72,7 @@ public sealed partial class GhostThemeSystem : EntitySystem
         SubscribeLocalEvent<LocalPlayerAttachedEvent>(OnLocalPlayerAttached);
         SubscribeNetworkEvent<GhostThemesAvailableEvent>(OnThemesAvailable);
 
-        Subs.CVar(_cfg, CCVars.GhostThemesEnabled, OnEnabledChanged, true);
+        Subs.CVar(_cfg, CCVars.GhostThemeEnabled, OnEnabledChanged, true);
     }
 
     /// <summary>

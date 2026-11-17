@@ -36,7 +36,7 @@ public sealed partial class GhostThemeSystem : EntitySystem
         SubscribeNetworkEvent<RequestGhostThemesEvent>(OnRequest);
         SubscribeNetworkEvent<SelectGhostThemeEvent>(OnSelect);
 
-        Subs.CVar(_cfg, CCVars.GhostThemesEnabled, OnEnabledChanged, true);
+        Subs.CVar(_cfg, CCVars.GhostThemeEnabled, OnEnabledChanged, true);
     }
 
     /// <summary>
@@ -99,11 +99,21 @@ public sealed partial class GhostThemeSystem : EntitySystem
             return;
 
         // The client only offers the themes it was told about, but the list may be stale, e.g. a supporter whose support ran out.
-        if (!_proto.TryIndex(msg.Theme, out var theme) || !IsAvailable(args.SenderSession, theme))
+        if (string.IsNullOrEmpty(msg.Theme.Id)
+            || !_proto.TryIndex(msg.Theme, out var theme)
+            || !IsAvailable(args.SenderSession, theme))
             return;
 
+        if (!float.IsFinite(msg.Color.R) || !float.IsFinite(msg.Color.G) || !float.IsFinite(msg.Color.B))
+        {
+            Log.Warning($"{args.SenderSession} sent an invalid ghost theme color {msg.Color}");
+            return;
+        }
+
         // A see-through color would let a player hide their ghost from other ghosts.
-        var color = theme.Colorizable ? msg.Color.WithAlpha(1f) : Color.White;
+        var color = theme.Colorizable
+            ? new Color(Math.Clamp(msg.Color.R, 0f, 1f), Math.Clamp(msg.Color.G, 0f, 1f), Math.Clamp(msg.Color.B, 0f, 1f))
+            : Color.White;
 
         var comp = EnsureComp<GhostThemeComponent>(uid);
         comp.Theme = theme.ID;
@@ -111,8 +121,8 @@ public sealed partial class GhostThemeSystem : EntitySystem
         Dirty(uid, comp);
 
         // The default sprite is colored by the ghost itself, which the client keeps reapplying.
-        if (theme.KeepGhostSprite)
-            _ghost.SetColor((uid, ghost), color);
+        // Other themes hide that sprite, so the color goes back to white for when themes are switched off.
+        _ghost.SetColor((uid, ghost), theme.KeepGhostSprite ? color : Color.White);
     }
 
     private void OnEnabledChanged(bool enabled)
@@ -122,11 +132,9 @@ public sealed partial class GhostThemeSystem : EntitySystem
             return;
 
         var query = EntityQueryEnumerator<GhostThemeComponent, GhostComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var ghost))
+        while (query.MoveNext(out var uid, out _, out var ghost))
         {
-            if (_proto.TryIndex(comp.Theme, out var theme) && theme.KeepGhostSprite)
-                _ghost.SetColor((uid, ghost), Color.White);
-
+            _ghost.SetColor((uid, ghost), Color.White);
             RemCompDeferred<GhostThemeComponent>(uid);
         }
     }

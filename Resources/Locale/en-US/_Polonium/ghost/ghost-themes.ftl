@@ -1,4 +1,4 @@
-ghost-gui-ghost-theme-button = Ghost Theme
+ghost-theme-open-button = Ghost Theme
 
 ghost-theme-window-title = Ghost Themes
 ghost-theme-window-search = Search...
