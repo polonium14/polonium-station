@@ -214,6 +214,9 @@
   boilingPoint: 78.2
   meltingPoint: -114.1
   metabolisms:
+    Digestion: # Polonium: pure ethanol is all ethanol; without this it inherits the 12% of a weak drink
+      metabolites:
+        Ethanol: 1
     Metabolites:
       metabolismRate: 0.05
       effects:
@@ -260,15 +263,25 @@
           inverted: true
       - !type:Drunk
         boozePower: 2
-      # Polonium: heavy drinking wears the liver down; one drink stays under the threshold
+      # Polonium: drinking wears the liver down: 30u of vodka takes about an eighth of a human liver
       - !type:DamageOrgans
-        probability: 0.2
         categories: [ Liver ]
-        amount: 0.1
+        amount: 0.03
         conditions:
         - !type:ReagentCondition
           reagent: Ethanol
-          min: 10
+          min: 2
+        - !type:MetabolizerTypeCondition
+          type: [ Dwarf, Allulalo ]
+          inverted: true
+      # Polonium: from the dose that poisons, it also reaches the brain
+      - !type:DamageOrgans
+        categories: [ Brain ]
+        amount: 0.03
+        conditions:
+        - !type:ReagentCondition
+          reagent: Ethanol
+          min: 15
         - !type:MetabolizerTypeCondition
           type: [ Dwarf, Allulalo ]
           inverted: true

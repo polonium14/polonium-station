@@ -69,7 +69,7 @@ public sealed class OrganStrainTest : GameTest
     public async Task HeavyDrinkingWearsTheLiverDown()
     {
         var drunk = await Human("Ethanol", 60);
-        var sober = await Human("Ethanol", 5);
+        var sober = await Human("Ethanol", 1);
         await Pair.RunSeconds(60);
 
         await Server.WaitAssertion(() =>
@@ -77,8 +77,27 @@ public sealed class OrganStrainTest : GameTest
             Assert.Multiple(() =>
             {
                 Assert.That(Lost(drunk, "Liver"), Is.GreaterThan(FixedPoint2.Zero));
-                Assert.That(Lost(sober, "Liver"), Is.EqualTo(FixedPoint2.Zero), "One drink stays under the threshold.");
+                Assert.That(Lost(sober, "Liver"), Is.EqualTo(FixedPoint2.Zero), "A sip stays under the threshold.");
             });
+        });
+    }
+
+    [Test]
+    public async Task ADrinkOfVodkaWearsTheLiverDown()
+    {
+        var body = await Human();
+        await Server.WaitAssertion(() =>
+        {
+            var stomach = SEntMan.GetComponent<BodyComponent>(body).Organs!.ContainedEntities
+                .Single(o => SEntMan.GetComponent<OrganComponent>(o).Category == "Stomach");
+            Assert.That(SEntMan.System<StomachSystem>().TryTransferSolution(stomach, new Solution("Vodka", 30)));
+        });
+        await Pair.RunSeconds(300);
+
+        // Measured at about 5.7 of the liver's 42.
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(Lost(body, "Liver").Float(), Is.InRange(3f, 9f));
         });
     }
 
