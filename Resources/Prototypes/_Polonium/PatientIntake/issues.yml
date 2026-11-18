@@ -120,6 +120,26 @@
   - SpaceCash10
   - ToyRubberDuck
   - BikeHorn
+  - Hemostat
+  - Scalpel
+  - Gauze
+  - ClothingHandsGlovesLatex
+  - Spoon
+  - Fork
+  - d6Dice
+  - CrayonRed
+  - HarmonicaInstrument
+  - Whistle
+  - Soap
+  - LightBulb
+  - ToyMouse
+  - Mousetrap
+  - FoodEgg
+  - TrashBananaPeel
+  - BalloonNT
+  - CartridgePistol
+  - Zipties
+  - Shiv
   description: patient-intake-issue-foreign-body
   symptom: patient-intake-symptom-foreign-body
 
