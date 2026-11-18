@@ -20,6 +20,18 @@ public sealed partial class CCVars
         CVarDef.Create("supporters.refresh_minutes", 60f, CVar.SERVERONLY);
 
     /// <summary>
+    /// The shortest time between two fetches of the list started by a player joining or linking their Discord account.
+    /// </summary>
+    public static readonly CVarDef<int> SupportersFetchCooldownSeconds =
+        CVarDef.Create("supporters.fetch_cooldown_seconds", 10, CVar.SERVERONLY);
+
+    /// <summary>
+    /// How long after a failed fetch the list is fetched again.
+    /// </summary>
+    public static readonly CVarDef<int> SupportersRetryDelaySeconds =
+        CVarDef.Create("supporters.retry_delay_seconds", 60, CVar.SERVERONLY);
+
+    /// <summary>
     /// The page where players can become supporters. The game shows no link to it while it is empty.
     /// </summary>
     public static readonly CVarDef<string> SupportersLink =
