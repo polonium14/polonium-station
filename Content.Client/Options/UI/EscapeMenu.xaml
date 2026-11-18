@@ -6,23 +6,38 @@
                 Title="{Loc 'ui-escape-title'}"
                 Resizable="False">
 
-    <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
-        <ui:VoteCallMenuButton />
+    <!-- Polonium: buttons grouped two per row. When one button of a row is hidden, the other one takes the full width. -->
+    <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="340">
+        <BoxContainer Orientation="Horizontal" SeparationOverride="4">
+            <Button Access="Public" Name="OptionsButton" Text="{Loc 'ui-escape-options'}" HorizontalExpand="True" />
+            <ui:VoteCallMenuButton Text="{Loc 'ui-escape-call-vote'}" HorizontalExpand="True" />
+        </BoxContainer>
+        <Button Access="Public" Name="RestartTutorialButton" Text="{Loc 'ui-escape-restart-tutorial'}" />
+
         <controls:Separator StyleClasses="LowDivider" Margin="0 2.5 0 2.5"/>
-        <Button Access="Public" Name="RulesButton" Text="{Loc 'ui-escape-rules'}" StyleClasses="OpenLeft" />
-        <Button Access="Public" Name="GuidebookButton" Text="{Loc 'ui-escape-guidebook'}" StyleClasses="OpenBoth" />
-        <Button Access="Public" Name="WikiButton" Text="{Loc 'ui-escape-wiki'}" StyleClasses="OpenBoth" />
-        <changelog:ChangelogButton Access="Public" Name="ChangelogButton" StyleClasses="OpenBoth"/>
-        <Button Access="Public" Name="FeedbackButton" Text="{Loc 'ui-escape-feedback'}" StyleClasses="OpenBoth"/>
-        <Button Access="Public" Name="SurveyCommentButton" Text="{Loc 'ui-escape-survey-comment'}" StyleClasses="OpenBoth"/> <!-- Polonium -->
-        <Button Access="Public" Name="DiscordLinkButton" Text="{Loc 'ui-escape-discord-link'}" StyleClasses="OpenBoth" Visible="False"/> <!-- Polonium -->
-        <Button Access="Public" Name="BugReportButton" Text="{Loc 'ui-escape-bug-report'}" StyleClasses="OpenBoth"/>
-        <Button Access="Public" Name="AdminRemarksButton" Text="{Loc 'ui-escape-remarks'}" StyleClasses="OpenRight"/>
+        <BoxContainer Orientation="Horizontal" SeparationOverride="4">
+            <Button Access="Public" Name="RulesButton" Text="{Loc 'ui-escape-rules'}" HorizontalExpand="True" />
+            <Button Access="Public" Name="GuidebookButton" Text="{Loc 'ui-escape-guidebook'}" HorizontalExpand="True" />
+        </BoxContainer>
+        <BoxContainer Orientation="Horizontal" SeparationOverride="4">
+            <Button Access="Public" Name="WikiButton" Text="{Loc 'ui-escape-wiki'}" HorizontalExpand="True" />
+            <changelog:ChangelogButton Access="Public" Name="ChangelogButton" HorizontalExpand="True" />
+        </BoxContainer>
+
         <controls:Separator StyleClasses="LowDivider" Margin="0 2.5 0 2.5"/>
-        <Button Access="Public" Name="OptionsButton" Text="{Loc 'ui-escape-options'}" />
-        <Button Access="Public" Name="RestartTutorialButton" Text="{Loc 'ui-escape-restart-tutorial'}" StyleClasses="OpenBoth" />
+        <BoxContainer Orientation="Horizontal" SeparationOverride="4">
+            <Button Access="Public" Name="FeedbackButton" Text="{Loc 'ui-escape-surveys'}" HorizontalExpand="True" />
+            <Button Access="Public" Name="SurveyCommentButton" Text="{Loc 'ui-escape-survey-comment'}" HorizontalExpand="True" />
+        </BoxContainer>
+        <Button Access="Public" Name="BugReportButton" Text="{Loc 'ui-escape-bug-report'}" />
+        <Button Access="Public" Name="DiscordLinkButton" Text="{Loc 'ui-escape-discord-link'}" Visible="False" />
+        <Button Access="Public" Name="AdminRemarksButton" Text="{Loc 'ui-escape-remarks'}" />
+
         <controls:Separator StyleClasses="LowDivider" Margin="0 2.5 0 2.5"/>
-        <Button Access="Public" Name="DisconnectButton" Text="{Loc 'ui-escape-disconnect'}" StyleClasses="negative OpenLeft" />
-        <Button Access="Public" Name="QuitButton" Text="{Loc 'ui-escape-quit'}" StyleClasses="negative OpenRight" />
+        <BoxContainer Orientation="Horizontal" SeparationOverride="4">
+            <Button Access="Public" Name="DisconnectButton" Text="{Loc 'ui-escape-disconnect'}" StyleClasses="negative" HorizontalExpand="True" />
+            <Button Access="Public" Name="QuitButton" Text="{Loc 'ui-escape-quit'}" StyleClasses="negative" HorizontalExpand="True" />
+        </BoxContainer>
     </BoxContainer>
+    <!-- Polonium end -->
 </ui1:EscapeMenu>
