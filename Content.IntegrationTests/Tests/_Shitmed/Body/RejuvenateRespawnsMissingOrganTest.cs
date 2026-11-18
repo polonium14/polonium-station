@@ -4,6 +4,7 @@ using Content.IntegrationTests.Fixtures;
 using Content.Shared.Administration.Systems;
 using Content.Shared.Body;
 using NUnit.Framework;
+using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 
@@ -104,6 +105,53 @@ public sealed class RejuvenateRespawnsMissingOrganTest : GameTest
                 .ToList();
             Assert.That(hearts, Has.Count.EqualTo(1), "Rejuvenate should have respawned the missing heart.");
             Assert.That(hearts[0], Is.Not.EqualTo(originalHeart), "The respawned heart should be a fresh entity, not the deleted one.");
+        });
+    }
+
+    /// <summary>
+    /// An organ taken out by surgery comes back on rejuvenate, attached to the part that houses it.
+    /// </summary>
+    [Test]
+    public async Task SurgicallyRemovedOrganIsRespawnedWithParent()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+
+        var sEntMan = server.ResolveDependency<IEntityManager>();
+        var sRejuvenate = sEntMan.System<RejuvenateSystem>();
+        var sContainer = sEntMan.System<SharedContainerSystem>();
+        var sRelation = sEntMan.System<OrganRelationSystem>();
+        var map = await pair.CreateTestMap();
+
+        EntityUid victim = default;
+        await server.WaitPost(() => victim = sEntMan.SpawnEntity("MobHuman", new MapCoordinates(Vector2.Zero, map.MapId)));
+        await pair.RunTicksSync(5);
+
+        EntityUid? Organ(string category)
+        {
+            return sEntMan.GetComponent<BodyComponent>(victim).Organs!.ContainedEntities
+                .Where(o => sEntMan.GetComponent<OrganComponent>(o).Category == category)
+                .Cast<EntityUid?>()
+                .FirstOrDefault();
+        }
+
+        // Same end state as SharedSurgerySystem.OnRemoveOrganStep: out of the body and orphaned.
+        await server.WaitPost(() =>
+        {
+            var heart = Organ("Heart")!.Value;
+            sContainer.Remove(heart, sEntMan.GetComponent<BodyComponent>(victim).Organs!);
+            sRelation.Orphan(heart);
+        });
+        await pair.RunTicksSync(5);
+
+        await server.WaitPost(() => sRejuvenate.PerformRejuvenate(victim));
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var heart = Organ("Heart");
+            Assert.That(heart, Is.Not.Null, "Rejuvenate should have respawned the removed heart.");
+            Assert.That(sEntMan.GetComponent<ChildOrganComponent>(heart!.Value).Parent, Is.EqualTo(Organ("Torso")));
         });
     }
 }
