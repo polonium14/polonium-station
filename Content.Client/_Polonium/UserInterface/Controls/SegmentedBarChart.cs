@@ -188,6 +188,9 @@ public sealed class SegmentedBarChart : Control
 
     private readonly List<Entry> _entries = new();
 
+    // Polonium: the segment under the cursor, the tooltip is rebuilt only when it changes.
+    private Entry? _hovered;
+
 
     public SegmentedBarChart()
     {
@@ -296,6 +299,12 @@ public sealed class SegmentedBarChart : Control
 
     protected override void MouseMove(GUIMouseMoveEventArgs args)
     {
+        // Polonium: only when the cursor reaches another segment; hiding on every move made the tooltip flicker.
+        TryFindEntry(args.RelativePosition.X, Width, out var entry);
+        if (entry == _hovered)
+            return;
+
+        _hovered = entry;
         HideTooltip();
     }
 
@@ -414,6 +423,8 @@ public sealed class SegmentedBarChart : Control
             // Polonium: centered in the bar's height instead of stuck to the top.
             VAlign = Label.VAlignMode.Center,
             FontColorOverride = textColor,
+            // Polonium: readable over any segment color and over the empty bar.
+            OutlineColorOverride = textColor == Color.Black ? Color.White : Color.Black,
             Margin = new Thickness(4, 0, 0, 0)
         };
         AddChild(childLabel);
@@ -447,7 +458,8 @@ public sealed class SegmentedBarChart : Control
         var msg = new FormattedMessage();
         msg.AddText(entry.Tooltip);
 
-        var tooltip = new Tooltip();
+        // Polonium: follows the cursor now that it stays up while the cursor moves within a segment.
+        var tooltip = new Tooltip { Tracking = true };
         tooltip.SetMessage(msg);
         return tooltip;
     }

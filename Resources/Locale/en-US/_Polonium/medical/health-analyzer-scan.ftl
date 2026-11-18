@@ -31,6 +31,7 @@ health-analyzer-scan-alert-surgery = {$limb}: surgery in progress
 health-analyzer-scan-alert-failure = {$organ}: failure, stage {$stage}
 health-analyzer-scan-alert-dead-organ = {$organ}: dead
 health-analyzer-scan-alert-lobotomy = Brain: lobotomized
+health-analyzer-scan-alert-xeno-embryo = Chest: alien embryo
 health-analyzer-scan-alert-blood = Low blood level: {$value}%
 health-analyzer-scan-alert-unrevivable = Cannot be revived: {$reason}
 health-analyzer-scan-alert-more = +{$count} more

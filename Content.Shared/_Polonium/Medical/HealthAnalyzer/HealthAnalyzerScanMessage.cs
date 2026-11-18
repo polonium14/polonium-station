@@ -67,6 +67,11 @@ public sealed class HealthAnalyzerScanMessage : BoundUserInterfaceMessage
     public bool Lobotomized;
 
     /// <summary>
+    /// A xeno embryo grows inside the patient.
+    /// </summary>
+    public bool XenoEmbryo;
+
+    /// <summary>
     /// Why a defibrillator will not bring the patient back, if it will not.
     /// </summary>
     public LocId? Unrevivable;

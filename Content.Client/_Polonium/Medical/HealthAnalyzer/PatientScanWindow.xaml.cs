@@ -420,6 +420,10 @@ public sealed partial class PatientScanWindow : FancyWindow
             alerts.Add((Loc.GetString("health-analyzer-scan-alert-dead-organ", ("organ", OrganName(organ.Category))), true));
         }
 
+        // Critical: it kills the host when it bursts, and a warning could get lost among the others.
+        if (scan.XenoEmbryo)
+            alerts.Add((Loc.GetString("health-analyzer-scan-alert-xeno-embryo"), true));
+
         if (scan.Lobotomized)
             alerts.Add((Loc.GetString("health-analyzer-scan-alert-lobotomy"), false));
 
@@ -793,7 +797,7 @@ public sealed partial class PatientScanWindow : FancyWindow
         }
 
         // The engine tooltip panel, for its look; its own text label is not used.
-        var tooltip = new Tooltip();
+        var tooltip = new Tooltip { Tracking = true };
         tooltip.RemoveAllChildren();
         tooltip.AddChild(list);
         return tooltip;

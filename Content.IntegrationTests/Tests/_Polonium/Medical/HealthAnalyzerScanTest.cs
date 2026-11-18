@@ -6,6 +6,7 @@ using Content.Server._Polonium.Body;
 using Content.Server.Medical.HealthAnalyzer;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
+using Content.Shared._Polonium.Xenonids;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body;
 using Content.Shared.Damage.Systems;
@@ -111,6 +112,10 @@ public sealed class HealthAnalyzerScanTest : GameTest
             Assert.That(Analyzer.BuildScan(lobotomized, true).Lobotomized, Is.False);
             SEntMan.AddComponent<LobotomizedComponent>(Part(lobotomized, "Head"));
             Assert.That(Analyzer.BuildScan(lobotomized, true).Lobotomized, "The lobotomy shows in the alerts.");
+
+            Assert.That(Analyzer.BuildScan(lobotomized, true).XenoEmbryo, Is.False);
+            SEntMan.AddComponent<XenoInfectedComponent>(lobotomized);
+            Assert.That(Analyzer.BuildScan(lobotomized, true).XenoEmbryo, "The embryo shows in the alerts.");
         });
     }
 }

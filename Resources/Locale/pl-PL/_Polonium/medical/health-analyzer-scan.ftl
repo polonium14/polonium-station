@@ -31,6 +31,7 @@ health-analyzer-scan-alert-surgery = {$limb}: operacja w toku
 health-analyzer-scan-alert-failure = {$organ}: niewydolność, stadium {$stage}
 health-analyzer-scan-alert-dead-organ = {$organ}: martwy narząd
 health-analyzer-scan-alert-lobotomy = Mózg: po lobotomii
+health-analyzer-scan-alert-xeno-embryo = Klatka piersiowa: embrion obcego
 health-analyzer-scan-alert-blood = Niski poziom krwi: {$value}%
 health-analyzer-scan-alert-unrevivable = Nie da się ożywić: {$reason}
 health-analyzer-scan-alert-more = i {$count} więcej
