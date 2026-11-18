@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: ArtisticRoomba
-  changes:
-  - message: Fixed the pneumatic valve overshooting gas equalization between the two
-      connected pipenets.
-    type: Fix
-  id: 9634
-  time: '2026-04-10T20:41:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43542
 - author: Buunie099
   changes:
   - message: Revenants will passively chill their environments based on how much essence
@@ -5179,3 +5171,10 @@
   id: 10128
   time: '2026-11-17T21:20:26.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1257
+- author: Nikita
+  changes:
+  - message: Ulepszono menu escape
+    type: Tweak
+  id: 10129
+  time: '2026-11-18T10:09:17.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1265
