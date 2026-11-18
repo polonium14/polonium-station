@@ -1,4 +1,4 @@
-# Paired organs and the spleen from the biofab. Each side costs what the pair cost before.
+# Paired organs, the spleen, tongue and ears from the biofab. Each side costs what the pair cost before.
 # Left lungs come from the upstream lung recipes, everything else is here. Dwarves have human kidneys.
 
 - type: latheRecipe
@@ -257,6 +257,200 @@
   materials:
     Biomass: 4
 
+# Dwarves have human lungs, tongue and ears.
+- type: latheRecipe
+  id: SynthDwarfLungLeft
+  result: OrganHumanLungLeft
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDwarfLungRight
+  result: OrganHumanLungRight
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+# Tongue and ears cost the same as the eyes.
+- type: latheRecipe
+  id: SynthArachnidTongue
+  result: OrganArachnidTongue
+  categories: [ BiosynthArachnid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDwarfTongue
+  result: OrganHumanTongue
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthFelinidTongue
+  result: OrganFelinidTongue
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHarpyTongue
+  result: OrganHarpyTongue
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHumanTongue
+  result: OrganHumanTongue
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthMothTongue
+  result: OrganMothTongue
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthReptilianTongue
+  result: OrganReptilianTongue
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthRodentiaTongue
+  result: OrganRodentiaTongue
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthThavenTongue
+  result: OrganThavenTongue
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVoxTongue
+  result: OrganVoxTongue
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVulpkaninTongue
+  result: OrganVulpkaninTongue
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthArachnidEars
+  result: OrganArachnidEars
+  categories: [ BiosynthArachnid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDwarfEars
+  result: OrganHumanEars
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthFelinidEars
+  result: OrganFelinidEars
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHarpyEars
+  result: OrganHarpyEars
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHumanEars
+  result: OrganHumanEars
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthMothEars
+  result: OrganMothEars
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthReptilianEars
+  result: OrganReptilianEars
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthRodentiaEars
+  result: OrganRodentiaEars
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthThavenEars
+  result: OrganThavenEars
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVoxEars
+  result: OrganVoxEars
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVulpkaninEars
+  result: OrganVulpkaninEars
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
 # One spleen fits every species, so it shows up in each species' list.
 - type: latheRecipe
   id: SynthSpleen
@@ -302,3 +496,27 @@
   - SynthVulpkaninKidneyLeft
   - SynthVulpkaninKidneyRight
   - SynthSpleen
+  - SynthDwarfLungLeft
+  - SynthDwarfLungRight
+  - SynthArachnidTongue
+  - SynthDwarfTongue
+  - SynthFelinidTongue
+  - SynthHarpyTongue
+  - SynthHumanTongue
+  - SynthMothTongue
+  - SynthReptilianTongue
+  - SynthRodentiaTongue
+  - SynthThavenTongue
+  - SynthVoxTongue
+  - SynthVulpkaninTongue
+  - SynthArachnidEars
+  - SynthDwarfEars
+  - SynthFelinidEars
+  - SynthHarpyEars
+  - SynthHumanEars
+  - SynthMothEars
+  - SynthReptilianEars
+  - SynthRodentiaEars
+  - SynthThavenEars
+  - SynthVoxEars
+  - SynthVulpkaninEars
