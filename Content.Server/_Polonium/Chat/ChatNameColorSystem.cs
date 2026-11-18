@@ -13,7 +13,7 @@ public sealed partial class ChatNameColorSystem : EntitySystem
 {
     [Dependency] private IAdminManager _admin = default!;
     [Dependency] private ContributorManager _contributors = default!;
-    [Dependency] private SupporterSystem _supporters = default!;
+    [Dependency] private SupporterManager _supporters = default!;
 
     public bool TryGetNameColor(ICommonSession player, [NotNullWhen(true)] out string? color)
     {

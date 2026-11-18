@@ -25,7 +25,7 @@ public sealed partial class GhostThemeSystem : EntitySystem
     [Dependency] private PlayTimeTrackingManager _playTime = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private SharedGhostSystem _ghost = default!;
-    [Dependency] private SupporterSystem _supporters = default!;
+    [Dependency] private SupporterManager _supporters = default!;
 
     private bool _enabled;
 
@@ -50,8 +50,8 @@ public sealed partial class GhostThemeSystem : EntitySystem
         var access = category.Access switch
         {
             GhostThemeAccess.Everyone => true,
-            GhostThemeAccess.Supporters => _supporters.IsSupporter(player),
-            GhostThemeAccess.Contributors => _contributors.IsContributor(player),
+            GhostThemeAccess.Supporters => _supporters.Contains(player),
+            GhostThemeAccess.Contributors => _contributors.Contains(player),
             GhostThemeAccess.Admins => _admin.IsAdmin(player, includeDeAdmin: true),
             _ => false,
         };

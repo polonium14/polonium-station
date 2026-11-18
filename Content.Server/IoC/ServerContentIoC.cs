@@ -138,5 +138,6 @@ internal static class ServerContentIoC
         deps.Register<WhitelistManager>();
         deps.Register<_Polonium.DiscordLinking.DiscordLinkManager>(); // Polonium
         deps.Register<_Polonium.Contributors.ContributorManager>(); // Polonium
+        deps.Register<_Polonium.Supporters.SupporterManager>(); // Polonium
     }
 }
