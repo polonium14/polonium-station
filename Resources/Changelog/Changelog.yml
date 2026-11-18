@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Buunie099
-  changes:
-  - message: Revenants will passively chill their environments based on how much essence
-      they have
-    type: Add
-  id: 9635
-  time: '2026-04-11T10:49:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43500
 - author: ProPeperos
   changes:
   - message: Fixed stacks of concrete and astro mowed/jungle grass splitting in to
@@ -5178,3 +5170,23 @@
   id: 10129
   time: '2026-11-18T10:09:17.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1265
+- author: Nikita
+  changes:
+  - message: "Dodano nowe cele zmiany dla ma\u0142ej za\u0142ogi (do 18 os\xF3b):\
+      \ plac\xF3wk\u0119 obserwacyjn\u0105, ma\u0142y prom, remont tuneli technicznych,\
+      \ muzeum znalezisk, punkt kontroli przy odlotach, ma\u0142e zoo, ma\u0142\u0105\
+      \ szklarni\u0119, inspekcj\u0119 BHP, realizacj\u0119 \u017C\u0105da\u0144 Centralnego\
+      \ Dow\xF3dztwa oraz zbi\xF3rk\u0119 organ\xF3w i krwi."
+    type: Add
+  - message: "Do drukarki dokument\xF3w dodano raport z inspekcji BHP."
+    type: Add
+  - message: "Cel zmiany zale\u017Cy teraz od liczby cz\u0142onk\xF3w za\u0142ogi\
+      \ na starcie rundy, a nie od liczby wszystkich graczy na serwerze."
+    type: Tweak
+  - message: "Du\u017Ce cele budowlane, takie jak bunkry, strefa teatralna i wahad\u0142\
+      owce, pojawiaj\u0105 si\u0119 teraz dopiero przy za\u0142odze licz\u0105cej\
+      \ co najmniej 19 os\xF3b."
+    type: Tweak
+  id: 10130
+  time: '2026-11-18T14:49:13.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1266
