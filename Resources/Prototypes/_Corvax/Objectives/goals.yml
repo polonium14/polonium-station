@@ -2,79 +2,84 @@
 - type: stationGoal
   id: Singularity
   text: station-goal-singularity
-  minPlayers: 15
+  minPlayers: 19
 
 - type: stationGoal
   id: SolarPanels
   text: station-goal-solar-panels
+  minPlayers: 15
 
 - type: stationGoal
   id: Artifacts
   text: station-goal-artifacts
-  minPlayers: 15
+  minPlayers: 18
 
 - type: stationGoal
   id: Bank
   text: station-goal-bank
-  minPlayers: 15
+  minPlayers: 19
 
 - type: stationGoal
   id: Zoo
   text: station-goal-zoo
+  minPlayers: 18
 
 - type: stationGoal
   id: MiningOutpost
   text: station-goal-mining-outpost
-  minPlayers: 15
+  minPlayers: 19
 
 - type: stationGoal
   id: Tesla
   text: station-goal-tesla
-  minPlayers: 15
+  minPlayers: 19
 
 - type: stationGoal
   id: SecurityTraining
   text: station-goal-security
-  minPlayers: 15
+  minPlayers: 16
 
 - type: stationGoal
   id: ShuttleMed
   text: station-goal-shuttle-med
-  minPlayers: 10
+  minPlayers: 19
 
 - type: stationGoal
   id: ShuttleSec
   text: station-goal-shuttle-sec
-  minPlayers: 10
+  minPlayers: 19
 
 - type: stationGoal
   id: ShuttleRnd
   text: station-goal-shuttle-rnd
-  minPlayers: 10
+  minPlayers: 19
 
 - type: stationGoal
   id: ShuttleSrv
   text: station-goal-shuttle-srv
-  minPlayers: 10
+  minPlayers: 19
 
 - type: stationGoal
   id: ShuttleEmergency
   text: station-goal-shuttle-emergency
-  minPlayers: 10
+  minPlayers: 19
 
 - type: stationGoal
   id: Theatre
   text: station-goal-theatre
+  minPlayers: 19
 
 - type: stationGoal
   id: CellAI
   text: station-goal-ai
-  minPlayers: 15
+  minPlayers: 19
 
 - type: stationGoal
   id: Botany
   text: station-goal-botany
+  minPlayers: 18
 
 - type: stationGoal
   id: Bunker
   text: station-goal-bunker
+  minPlayers: 19
