@@ -649,6 +649,8 @@
   abstract: true
   id: OrganBaseChildExternal
   components:
+  - type: OrganPrice # Polonium: upstream's old limb price, only for limbs that came off a body
+    price: 100
   - type: ChildOrgan
   - type: DetachableOrgan
     detachedBody: DetachedBody
@@ -659,3 +661,5 @@
   components:
   - type: ChildOrgan
   - type: InternalChildOrgan
+  - type: OrganPrice # Polonium: upstream's old organ price, only for organs that came out of a body
+    price: 50
