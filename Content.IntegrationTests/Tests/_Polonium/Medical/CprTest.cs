@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Body;
@@ -100,6 +101,39 @@ public sealed class CprTest : GameTest
                 Assert.That(SEntMan.GetComponent<StaminaComponent>(rescuer).StaminaDamage, Is.GreaterThan(0f),
                     "Compressions tire the rescuer.");
             });
+        });
+    }
+
+    [Test]
+    public async Task CompressionsEndOncePatientIsOutOfCrit()
+    {
+        SetChances(0f, 0f);
+        var map = await Pair.CreateTestMap();
+        var patient = EntityUid.Invalid;
+
+        // Out cold but alive with a beating heart: compressions can start, but there is nothing left to go on for.
+        await Server.WaitAssertion(() =>
+        {
+            PatientIntakeMachineTest.AddAir(SEntMan, map.MapUid);
+            patient = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            var rescuer = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            Assert.That(SEntMan.System<StatusEffectsSystem>()
+                .TrySetStatusEffectDuration(patient, CirculationSystem.Unconscious, TimeSpan.FromSeconds(60)));
+            Assert.That(Cpr.TryStart(rescuer, patient));
+        });
+
+        await Pair.RunSeconds(5);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(Cpr.IsCompressed(patient), "The first cycle is done.");
+        });
+
+        await Pair.RunSeconds(10);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(Cpr.IsCompressed(patient), Is.False, "No second cycle followed.");
         });
     }
 

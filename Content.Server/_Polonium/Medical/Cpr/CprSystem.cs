@@ -208,7 +208,8 @@ public sealed partial class CprSystem : EntitySystem
             TryBreakRibs(ent);
 
         _stamina.TakeStaminaDamage(args.User, _staminaCost, visual: false);
-        args.Repeat = true;
+        // Checked after this cycle's effects: once the patient is out of crit with a beating heart, the rescuer stops.
+        args.Repeat = _mobState.IsIncapacitated(ent) || _circulation.IsStopped(ent);
     }
 
     private bool TryGetHeart(EntityUid body, out EntityUid heart)
