@@ -23,6 +23,11 @@ public sealed partial class OrganHealingSystem : EntitySystem
     public const string ChemicalDamageId = "ChemicalDamage";
 
     /// <summary>
+    /// Modifier name of the integrity a failure took for good. Nothing heals it; it goes with the organ.
+    /// </summary>
+    public const string ScarId = "FailureScar";
+
+    /// <summary>
     /// Takes away organ damage. Trauma damage goes first, the way surgery heals it, then the rest.
     /// </summary>
     public void HealOrgan(Entity<OrganIntegrityComponent> organ, FixedPoint2 amount)
@@ -31,7 +36,7 @@ public sealed partial class OrganHealingSystem : EntitySystem
             return;
 
         var modifiers = organ.Comp.IntegrityModifiers
-            .Where(modifier => modifier.Value > FixedPoint2.Zero)
+            .Where(modifier => modifier.Value > FixedPoint2.Zero && modifier.Key.Item1 != ScarId)
             .OrderByDescending(modifier => HasComp<TraumaComponent>(modifier.Key.Item2))
             .ToArray();
 
@@ -57,6 +62,38 @@ public sealed partial class OrganHealingSystem : EntitySystem
             _trauma.TryChangeOrganDamageModifier(organ, -amount, owner, id, organ.Comp);
             return;
         }
+    }
+
+    /// <summary>
+    /// Whether a failure has left its lasting mark on the organ.
+    /// </summary>
+    public bool IsScarred(Entity<OrganIntegrityComponent> organ)
+    {
+        return organ.Comp.IntegrityModifiers.ContainsKey((ScarId, organ.Owner));
+    }
+
+    /// <summary>
+    /// Integrity a failure took from the organ for good; zero without a scar.
+    /// </summary>
+    public FixedPoint2 GetScar(Entity<OrganIntegrityComponent> organ)
+    {
+        return organ.Comp.IntegrityModifiers.GetValueOrDefault((ScarId, organ.Owner));
+    }
+
+    /// <summary>
+    /// Takes a fraction of the organ's maximum integrity away for good, once per organ.
+    /// The scar comes out of the damage the organ already has, so scarring a sick organ does not kill it:
+    /// the organ only loses integrity if it was healthier than the scar allows.
+    /// </summary>
+    public void Scar(Entity<OrganIntegrityComponent> organ, float fraction)
+    {
+        if (fraction <= 0f || IsScarred(organ))
+            return;
+
+        var amount = organ.Comp.IntegrityCap * fraction;
+        // Healed first: adding the scar on top of the damage could take the organ to zero and destroy it.
+        HealOrgan(organ, amount);
+        _trauma.TryCreateOrganDamageModifier(organ, amount, organ, ScarId, organ.Comp);
     }
 
     /// <summary>

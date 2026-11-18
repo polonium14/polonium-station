@@ -664,6 +664,8 @@ public sealed partial class PatientScanWindow : FancyWindow
         bar.Mode = mode;
         bar.Color = color;
         bar.Target = fraction;
+        // A dead or missing organ already shows as such; the scar is drawn on a living one.
+        bar.Lost = organ.IntegrityCap > 0 ? (organ.Scar / organ.IntegrityCap).Float() : 0f;
 
         var reading = new List<string> { Loc.GetString(word) };
         if (mode == BarMode.Fill)
@@ -676,7 +678,10 @@ public sealed partial class PatientScanWindow : FancyWindow
         if (mode == BarMode.Fill)
             lines.Add($"{organ.Integrity} / {organ.IntegrityCap}");
         if (organ.FailureStage > 0)
-            lines.Add(Loc.GetString("health-analyzer-scan-hint-failure", ("stage", organ.FailureStage)));
+            lines.Add(Loc.GetString(organ.FailureNeedsSurgery ? "health-analyzer-scan-hint-failure-surgery" : "health-analyzer-scan-hint-failure",
+                ("stage", organ.FailureStage)));
+        if (organ.Scar > 0)
+            lines.Add(Loc.GetString("health-analyzer-scan-hint-scarred"));
         if (organ.Dead)
             lines.Add(Loc.GetString("health-analyzer-scan-hint-dead-organ"));
         else if (organ.Missing)

@@ -165,6 +165,9 @@ public sealed partial class BodyDebugWindow : FancyWindow
         if (organ.FailureStages > 0)
         {
             var stages = new OptionButton();
+            // A handful of entries never needs scrolling, and the popup showed scrollbars over them.
+            stages.OptionsScroll.HScrollEnabled = false;
+            stages.OptionsScroll.VScrollEnabled = false;
             stages.AddItem(Loc.GetString("body-debug-failure-none"), 0);
             for (var stage = 1; stage <= organ.FailureStages; stage++)
             {

@@ -121,6 +121,10 @@ public sealed partial class BodyDebugSystem : EntitySystem
             return false;
 
         _failure.SetStage((organ, failure), stage);
+        // Same as a failure that grew into this stage by itself, so the scar can be tested from here.
+        if (TryComp<OrganIntegrityComponent>(organ, out var integrity))
+            _failure.Scar((organ, failure, integrity));
+
         return true;
     }
 

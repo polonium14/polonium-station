@@ -349,7 +349,10 @@ public sealed partial class CirculationSystem : EntitySystem
 
     private OrganFailureStage? GetStage(EntityUid organ)
     {
-        if (!TryComp<OrganFailureComponent>(organ, out var failure) || failure.Stage <= 0)
+        // A failing organ that is healthy for now still does its job.
+        if (!TryComp<OrganFailureComponent>(organ, out var failure)
+            || failure.Stage <= 0
+            || CompOrNull<OrganIntegrityComponent>(organ)?.OrganSeverity == OrganSeverity.Normal)
             return null;
 
         var stages = _proto.Index(failure.Failure).Stages;

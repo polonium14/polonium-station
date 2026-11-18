@@ -19,8 +19,9 @@ namespace Content.Server._Polonium.Body;
 
 /// <summary>
 /// Sick organs of a humanoid can fall into failure. The failure grows through stages, wears the organ down and
-/// shows symptoms, and passes once the organ is healthy again or replaced. What each stage does to the body
-/// as a whole (oxygen, poison) is up to <see cref="CirculationSystem"/>.
+/// shows symptoms, and passes once the organ is healthy enough for its stage, repaired by surgery or replaced.
+/// A failing organ that is healthy for now spares the body, but keeps wearing itself down.
+/// What each stage does to the body as a whole (oxygen, poison) is up to <see cref="CirculationSystem"/>.
 /// </summary>
 public sealed partial class OrganFailureSystem : EntitySystem
 {
@@ -77,8 +78,18 @@ public sealed partial class OrganFailureSystem : EntitySystem
             return;
 
         organ.Comp.Stage = stage;
+        Dirty(organ);
         if (CompOrNull<OrganComponent>(organ)?.Body is { } body)
             _circulation.Refresh(body);
+    }
+
+    /// <summary>
+    /// Leaves the lasting mark of the organ's current stage of failure, if that stage has one. Once per organ.
+    /// </summary>
+    public void Scar(Entity<OrganFailureComponent, OrganIntegrityComponent> organ)
+    {
+        if (organ.Comp1.Stage > 0)
+            _healing.Scar((organ, organ.Comp2), _proto.Index(organ.Comp1.Failure).Stages[organ.Comp1.Stage - 1].Scar);
     }
 
     public override void Update(float frameTime)
@@ -139,18 +150,26 @@ public sealed partial class OrganFailureSystem : EntitySystem
             return;
         }
 
-        if (healthy)
+        var stages = _proto.Index(failure.Failure).Stages;
+        var stage = stages[failure.Stage - 1];
+
+        // The further the failure has gone, the more of the organ has to be healed for it to pass.
+        if (healthy
+            && !stage.NeedsSurgery
+            && integrity.OrganIntegrity.Float() >= integrity.IntegrityCap.Float() * stage.CureAt)
         {
             SetStage((organ, failure), 0);
             return;
         }
 
-        if (failure.Stage < GetStageCount((organ, failure)) && _random.Prob(_stageChance))
+        if (failure.Stage < stages.Count && _random.Prob(_stageChance))
+        {
             SetStage((organ, failure), failure.Stage + 1);
+            stage = stages[failure.Stage - 1];
+            Scar(organ);
+        }
 
-        var stage = _proto.Index(failure.Failure).Stages[failure.Stage - 1];
-
-        if (stage.Damage is { } damage)
+        if (!healthy && stage.Damage is { } damage)
         {
             var factor = _circulation.GetDialysisFactor(body, category) * share;
             if (factor > 0f)

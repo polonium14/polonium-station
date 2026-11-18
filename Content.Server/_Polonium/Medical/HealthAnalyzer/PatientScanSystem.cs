@@ -13,6 +13,7 @@ using Robust.Shared.Prototypes;
 using Content.Server._Polonium.Body;
 using Content.Shared._Polonium.Body;
 using Content.Shared._Polonium.Medical.HealthAnalyzer;
+using Content.Shared._Polonium.Medical.Surgery;
 using Content.Shared._Polonium.Xenonids;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
@@ -39,6 +40,8 @@ public sealed partial class PatientScanSystem : EntitySystem
 {
     [Dependency] private BloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private CirculationSystem _circulation = default!;
+    [Dependency] private OrganHealingSystem _organHealing = default!;
+    [Dependency] private OrganRepairSurgerySystem _organRepair = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private MobThresholdSystem _mobThresholds = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
@@ -231,6 +234,8 @@ public sealed partial class PatientScanSystem : EntitySystem
                     IntegrityCap = integrity.IntegrityCap,
                     Severity = integrity.OrganSeverity,
                     FailureStage = CompOrNull<OrganFailureComponent>(organ)?.Stage ?? 0,
+                    FailureNeedsSurgery = _organRepair.FailureNeedsSurgery(organ),
+                    Scar = _organHealing.GetScar((organ, integrity)),
                 });
             }
         }

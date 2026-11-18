@@ -15,6 +15,7 @@ namespace Content.Server._Polonium.Body;
 /// </summary>
 public sealed partial class DeadOrganSystem : EntitySystem
 {
+    [Dependency] private OrganFailureSystem _failure = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private OrganRelationSystem _relation = default!;
     [Dependency] private TraumaSystem _trauma = default!;
@@ -54,6 +55,10 @@ public sealed partial class DeadOrganSystem : EntitySystem
                     _trauma.TryRemoveOrganDamageModifier(organ, owner, id, integrity);
                 }
             }
+
+            // A late stage of failure does not pass by itself once the organ is whole.
+            if (TryComp<OrganFailureComponent>(organ, out var failure))
+                _failure.SetStage((organ, failure), 0);
 
             if (!HasComp<DeadOrganComponent>(organ))
                 continue;

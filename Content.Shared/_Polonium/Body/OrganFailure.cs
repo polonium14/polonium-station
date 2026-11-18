@@ -1,14 +1,15 @@
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Damage;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Polonium.Body;
 
 /// <summary>
 /// Lets an organ fall into failure once it is sick. Failure grows through stages, harms the organ further
-/// and shows symptoms, and passes when the organ is healthy again or replaced.
+/// and shows symptoms, and passes when the organ is healthy enough for its stage, repaired or replaced.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class OrganFailureComponent : Component
 {
     /// <summary>
@@ -20,7 +21,7 @@ public sealed partial class OrganFailureComponent : Component
     /// <summary>
     /// Current stage, 0 while the organ is not failing.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public int Stage;
 }
 
@@ -48,6 +49,24 @@ public sealed partial class OrganFailureStage
     /// </summary>
     [DataField]
     public float SelfDamage;
+
+    /// <summary>
+    /// Fraction of its maximum integrity the organ has to get back, on top of being healthy, for the failure to pass.
+    /// </summary>
+    [DataField]
+    public float CureAt;
+
+    /// <summary>
+    /// Healing the organ no longer makes the failure pass: only the repair surgery or a new organ does.
+    /// </summary>
+    [DataField]
+    public bool NeedsSurgery;
+
+    /// <summary>
+    /// Fraction of its maximum integrity the organ loses for good when the failure grows into this stage.
+    /// </summary>
+    [DataField]
+    public float Scar;
 
     /// <summary>
     /// Damage dealt to the body per second.

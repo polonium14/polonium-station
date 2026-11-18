@@ -11,7 +11,7 @@ namespace Content.Client._Polonium.Medical.HealthAnalyzer;
 
 /// <summary>
 /// A thin horizontal bar for the health analyzer: a fill or a pointer that glides to new readings, threshold lines, and
-/// a shaded safe band. A dead organ draws a hatched track and a missing one only an outline, so the state never rests
+/// a shaded safe band. A dead organ draws a hatched track, a scarred one hatches the part it lost for good, and a missing one only an outline, so the state never rests
 /// on color alone.
 /// </summary>
 public sealed partial class AnalyzerBar : Control
@@ -42,6 +42,11 @@ public sealed partial class AnalyzerBar : Control
     public bool Pointer { get; set; }
 
     public BarMode Mode { get; set; } = BarMode.Fill;
+
+    /// <summary>
+    /// The end of a filled bar that is lost for good, 0 to 1 from the right, hatched like a dead organ.
+    /// </summary>
+    public float Lost { get; set; }
 
     /// <summary>
     /// Threshold lines, 0 to 1.
@@ -121,15 +126,8 @@ public sealed partial class AnalyzerBar : Control
 
         if (Mode == BarMode.Hatched)
         {
-            // Diagonal hatching over the whole track: the organ is dead.
-            // Each line rises one pixel per pixel; cut it at both ends so it stays inside the bar.
-            for (var x = -size.Y; x < size.X; x += 6)
-            {
-                var from = Math.Max(x, 0);
-                var to = Math.Min(x + size.Y, size.X);
-                handle.DrawLine(new Vector2(from, size.Y - (from - x)), new Vector2(to, size.Y - (to - x)), Hatch);
-            }
-
+            // Over the whole track: the organ is dead.
+            DrawHatch(handle, size, 0);
             DrawTexts(handle, size);
             return;
         }
@@ -143,6 +141,9 @@ public sealed partial class AnalyzerBar : Control
         else
             handle.DrawRect(new UIBox2(0, 0, at, size.Y), Color);
 
+        if (Lost > 0f)
+            DrawHatch(handle, size, (int) MathF.Round((1f - Math.Clamp(Lost, 0f, 1f)) * size.X));
+
         foreach (var notch in Notches)
         {
             var x = Math.Clamp(notch, 0f, 1f) * size.X;
@@ -150,6 +151,21 @@ public sealed partial class AnalyzerBar : Control
         }
 
         DrawTexts(handle, size);
+    }
+
+    /// <summary>
+    /// Diagonal hatching from the given pixel to the right end of the track.
+    /// </summary>
+    private static void DrawHatch(DrawingHandleScreen handle, Vector2i size, int start)
+    {
+        // Each line rises one pixel per pixel; cut it at both ends so it stays inside the hatched part.
+        for (var x = -size.Y; x < size.X; x += 6)
+        {
+            var from = Math.Max(x, start);
+            var to = Math.Min(x + size.Y, size.X);
+            if (from < to)
+                handle.DrawLine(new Vector2(from, size.Y - (from - x)), new Vector2(to, size.Y - (to - x)), Hatch);
+        }
     }
 
     /// <summary>

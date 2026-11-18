@@ -8,6 +8,8 @@ using Content.Server._Polonium.Body;
 using Content.Server.Body.Components;
 using Content.Server.Medical.HealthAnalyzer;
 using Content.Shared._Polonium.Body;
+using Content.Shared._Polonium.Medical.Surgery;
+using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared.Body;
 using Content.Shared.Body.Systems;
@@ -122,6 +124,120 @@ public sealed class OrganFailureTest : GameTest
         await Server.WaitAssertion(() =>
         {
             Assert.That(FailureOf(Organ(body, "Liver")).Stage, Is.Zero, "A healed organ is no longer failing.");
+        });
+    }
+
+    [Test]
+    public async Task LaterStagesAreHarderToEnd()
+    {
+        SetChances(0f, 0f, 0f);
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+
+        void HealTo(string category, float fraction)
+        {
+            var organ = Organ(body, category);
+            var integrity = Integrity(organ);
+            Healing.HealOrgan((organ, integrity), integrity.IntegrityCap * fraction - integrity.OrganIntegrity);
+        }
+
+        await Server.WaitAssertion(() =>
+        {
+            PatientIntakeMachineTest.AddAir(SEntMan, map.MapUid);
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            foreach (var (category, stage) in new[] { ("Liver", 2), ("LungLeft", 3) })
+            {
+                var organ = Organ(body, category);
+                Wear(organ, 0.2f);
+                Failure.SetStage((organ, FailureOf(organ)), stage);
+                HealTo(category, 0.5f);
+            }
+        });
+
+        await Pair.RunSeconds(3);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(FailureOf(Organ(body, "Liver")).Stage, Is.EqualTo(2), "Stage 2 does not pass at half integrity.");
+            HealTo("Liver", 0.7f);
+            HealTo("LungLeft", 1f);
+        });
+
+        await Pair.RunSeconds(3);
+
+        await Server.WaitAssertion(() =>
+        {
+            var lung = Organ(body, "LungLeft");
+            Assert.Multiple(() =>
+            {
+                Assert.That(FailureOf(Organ(body, "Liver")).Stage, Is.Zero, "Stage 2 passes from 60%.");
+                Assert.That(FailureOf(lung).Stage, Is.EqualTo(3), "Stage 3 does not pass by healing.");
+                Assert.That(SEntMan.HasComponent<OxygenLimitComponent>(body), Is.False,
+                    "A failing lung that is healthy for now does its job.");
+            });
+
+            // The repair surgery is offered although the lung is whole, and ends the failure.
+            var repair = SEntMan.System<OrganRepairSurgerySystem>();
+            var surgery = SEntMan.System<Content.Server._Shitmed.Medical.Surgery.SurgerySystem>();
+            var step = surgery.GetSingleton("SurgeryStepRepairOrgan")!.Value;
+            var lungRepair = surgery.GetSingleton("SurgeryRepairLungLeft")!.Value;
+            Assert.That(repair.IsStepComplete(step, body, lungRepair), Is.False);
+
+            var ev = new SurgeryStepEvent(body, body, Organ(body, "Torso"), body, lungRepair, step);
+            SEntMan.EventBus.RaiseLocalEvent(step, ref ev);
+            Assert.That(FailureOf(lung).Stage, Is.Zero, "The repair surgery ends stage 3.");
+        });
+    }
+
+    [Test]
+    public async Task GrowingIntoTheLastStageScarsOnce()
+    {
+        SetChances(0f, 1f, 0f);
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+
+        await Server.WaitAssertion(() =>
+        {
+            body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            var liver = Organ(body, "Liver");
+            Wear(liver, 0.3f);
+            Failure.SetStage((liver, FailureOf(liver)), 1);
+        });
+
+        await Pair.RunSeconds(5);
+
+        await Server.WaitAssertion(() =>
+        {
+            var liver = Organ(body, "Liver");
+            var integrity = Integrity(liver);
+            Assert.That(FailureOf(liver).Stage, Is.EqualTo(3));
+            Assert.That(Healing.IsScarred((liver, integrity)));
+            Assert.That(SEntMan.System<PatientScanSystem>().BuildScan(body, true).Organs.Single(o => o.Category == "Liver").Scar,
+                Is.EqualTo(integrity.IntegrityCap * 0.25f), "The analyzer is told how much is lost.");
+
+            Healing.HealOrgan((liver, integrity), integrity.IntegrityCap);
+            Assert.That(integrity.OrganIntegrity, Is.EqualTo(integrity.IntegrityCap * 0.75f), "The scar is beyond healing.");
+
+            // The body debug window scars too, so the scar can be tested without waiting for the failure to grow.
+            var kidney = Organ(body, "KidneyLeft");
+            Wear(kidney, 0.1f);
+            var before = Integrity(kidney).OrganIntegrity;
+            Assert.That(SEntMan.System<BodyDebugSystem>().TrySetFailureStage(body, kidney, 3));
+            Assert.Multiple(() =>
+            {
+                Assert.That(Healing.IsScarred((kidney, Integrity(kidney))));
+                Assert.That(Integrity(kidney).OrganIntegrity, Is.EqualTo(before), "The scar comes out of the damage already there.");
+            });
+
+            SEntMan.System<Content.Shared.Administration.Systems.RejuvenateSystem>().PerformRejuvenate(body);
+        });
+
+        await Pair.RunSeconds(1);
+
+        await Server.WaitAssertion(() =>
+        {
+            var liver = Organ(body, "Liver");
+            Assert.That(Integrity(liver).OrganIntegrity, Is.EqualTo(Integrity(liver).IntegrityCap), "Rejuvenate takes the scar away.");
         });
     }
 

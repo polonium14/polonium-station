@@ -111,6 +111,16 @@ public struct AnalyzerOrganData
     public FixedPoint2 IntegrityCap;
     public OrganSeverity Severity;
     public int FailureStage;
+
+    /// <summary>
+    /// The failure is past what healing the organ can end.
+    /// </summary>
+    public bool FailureNeedsSurgery;
+
+    /// <summary>
+    /// Integrity a failure took from the organ for good; zero without a scar.
+    /// </summary>
+    public FixedPoint2 Scar;
     public bool Dead;
     public bool Missing;
 }
