@@ -42,11 +42,13 @@ public sealed partial class FlashOverlay : Overlay
     {
         var playerEntity = _playerManager.LocalEntity;
 
-        if (playerEntity == null)
+        // Polonium: a flash that ended without the removal event reaching us (taken off by server state, e.g. rejuvenate,
+        // or the player left the body) must not leave its last, black frame on screen forever.
+        if (playerEntity == null || !_statusSys.HasEffectComp<FlashedStatusEffectComponent>(playerEntity))
+        {
+            PercentComplete = 1f;
             return;
-
-        if (!_statusSys.HasEffectComp<FlashedStatusEffectComponent>(playerEntity))
-            return;
+        }
 
         if (!_statusSys.TryGetTime(playerEntity.Value, SharedFlashSystem.FlashedKey, out var time))
             return;
