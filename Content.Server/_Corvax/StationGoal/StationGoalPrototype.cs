@@ -18,6 +18,12 @@ public sealed partial class StationGoalPrototype : IPrototype
     public int? MaxPlayers;
 
     /// <summary>
+    /// Relative chance of the goal being picked among the goals that fit the crew count
+    /// </summary>
+    [DataField]
+    public float Weight = 1f;
+
+    /// <summary>
     /// Goal may require certain items to complete. These items will appear near the receiving fax machine at the start of the round.
     /// </summary>
     [DataField]

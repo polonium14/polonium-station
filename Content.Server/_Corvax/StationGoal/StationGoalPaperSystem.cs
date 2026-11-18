@@ -3,8 +3,8 @@ using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Fax.Components;
 using Content.Shared.GameTicking;
-using Content.Shared.Paper;
-using Robust.Server.Player;
+using Content.Shared.Random.Helpers;
+using Content.Shared.Station.Components;
 using Robust.Shared.Configuration;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
@@ -20,7 +20,6 @@ public sealed partial class StationGoalPaperSystem : EntitySystem
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private FaxSystem _fax = default!;
-    [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private ServerStationSystem _station = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
 
@@ -34,31 +33,26 @@ public sealed partial class StationGoalPaperSystem : EntitySystem
         if (!_cfg.GetCVar(CCVars.StationGoal))
             return;
 
-        var playerCount = _playerManager.PlayerCount;
-
         var query = EntityQueryEnumerator<StationGoalComponent>();
         while (query.MoveNext(out var uid, out var station))
         {
-            var tempGoals = new List<ProtoId<StationGoalPrototype>>(station.Goals);
-            StationGoalPrototype? selGoal = null;
-            while (tempGoals.Count > 0)
+            var crew = CompOrNull<StationJobsComponent>(uid)?.PlayerJobs.Count ?? 0;
+            var weights = new Dictionary<ProtoId<StationGoalPrototype>, float>();
+            foreach (var goalId in station.Goals)
             {
-                var goalId = _random.Pick(tempGoals);
                 var goalProto = _proto.Index(goalId);
 
-                if (goalProto.MaxPlayers.HasValue && playerCount > goalProto.MaxPlayers.Value ||
-                    goalProto.MinPlayers.HasValue && playerCount < goalProto.MinPlayers.Value)
-                {
-                    tempGoals.Remove(goalId);
+                if (goalProto.MaxPlayers.HasValue && crew > goalProto.MaxPlayers.Value ||
+                    goalProto.MinPlayers.HasValue && crew < goalProto.MinPlayers.Value)
                     continue;
-                }
 
-                selGoal = goalProto;
-                break;
+                weights[goalId] = goalProto.Weight;
             }
 
-            if (selGoal is null)
+            if (weights.Count == 0)
                 continue;
+
+            var selGoal = _proto.Index(_random.Pick(weights));
 
             if (SendStationGoal(uid, selGoal))
             {
