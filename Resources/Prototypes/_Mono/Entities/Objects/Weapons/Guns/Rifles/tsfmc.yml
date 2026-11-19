@@ -30,7 +30,7 @@
     - FullAuto
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+      path: /Audio/_Goobstation/Weapons/Guns/Gunshots/smartgun_shoot.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
