@@ -30,7 +30,6 @@
   - type: Item
     size: Ginormous
     sprite: _Mono/Objects/Weapons/Guns/Launchers/mk348_inhands_32x.rsi
-  - type: UnshadedHeldVisuals
   - type: AmmoCounter
   - type: GunRequiresWield
   - type: Gun

@@ -27,15 +27,7 @@
             "directions": 4
         },
         {
-            "name": "inhand-left-unshaded",
-            "directions": 4
-        },
-        {
             "name": "inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "inhand-right-unshaded",
             "directions": 4
         },
         {
@@ -43,15 +35,7 @@
             "directions": 4
         },
         {
-            "name": "equipped-BACKPACK-unshaded",
-            "directions": 4
-        },
-        {
             "name": "equipped-SUITSTORAGE",
-            "directions": 4
-        },
-        {
-            "name": "equipped-SUITSTORAGE-unshaded",
             "directions": 4
         }
     ]

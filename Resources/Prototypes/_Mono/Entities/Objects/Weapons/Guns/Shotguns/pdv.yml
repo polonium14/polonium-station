@@ -18,7 +18,6 @@
     sprite: _Mono/Objects/Weapons/Guns/Shotguns/flagbearer_inhands_32x.rsi
     shape:
     - 0,0,4,1
-  - type: UnshadedHeldVisuals
   - type: GunRequiresWield
   - type: Gun
     selectedMode: FullAuto

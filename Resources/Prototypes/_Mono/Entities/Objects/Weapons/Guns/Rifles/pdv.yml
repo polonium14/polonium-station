@@ -17,7 +17,6 @@
     sprite: _Mono/Objects/Weapons/Guns/Rifles/wspr_inhands_32x.rsi
   - type: Item
     sprite: _Mono/Objects/Weapons/Guns/Rifles/wspr_inhands_32x.rsi
-  - type: UnshadedHeldVisuals
   - type: TracelessGun
   - type: GunWieldBonus
     minAngle: -20

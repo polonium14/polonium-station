@@ -25,7 +25,6 @@
     slots:
     - suitStorage
     - Belt
-  - type: UnshadedHeldVisuals
   - type: AmmoCounter
   - type: Gun
     fireRate: 1.5

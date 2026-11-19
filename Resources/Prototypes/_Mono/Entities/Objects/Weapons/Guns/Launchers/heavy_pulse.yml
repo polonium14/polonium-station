@@ -24,10 +24,9 @@
   - type: Item
     size: Ginormous
     sprite: _Mono/Objects/Weapons/Guns/Launchers/hpc-inhand-32x.rsi
-  - type: UnshadedHeldVisuals
   - type: GunRequiresWield
   - type: Gun
-    fireRate: 0.25
+    fireRate: 0.3
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_perforator.ogg
   - type: GunMovementSpread

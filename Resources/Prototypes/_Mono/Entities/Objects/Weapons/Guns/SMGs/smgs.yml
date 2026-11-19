@@ -15,7 +15,6 @@
       shader: unshaded
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/SMGs/rs-2_malandro.rsi
-  - type: UnshadedHeldVisuals
   - type: Gun
     minAngle: 4
     maxAngle: 22

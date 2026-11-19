@@ -18,7 +18,6 @@
   - type: Item
     size: Ginormous
     sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen_inhands_32x.rsi
-  - type: UnshadedHeldVisuals
   - type: GunRequiresWield
   - type: Gun
     fireRate: 0.4

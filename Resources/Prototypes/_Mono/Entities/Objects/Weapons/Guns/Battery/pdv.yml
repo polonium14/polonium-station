@@ -25,7 +25,6 @@
     sprite: _Mono/Objects/Weapons/Guns/Rifles/calico_inhands_32x.rsi
     shape:
     - 0,0,3,2
-  - type: UnshadedHeldVisuals
   - type: Gun
     fireRate: 1.4
     soundGunshot:

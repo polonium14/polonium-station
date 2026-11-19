@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-NC-SA-3.0",
-    "copyright": "Made by _starch_ (discord) for Monolith, tweaked by Onezero0, reworked with glowing layers for Polonium Station by nikitosych",
+    "copyright": "Made by _starch_ (discord) for Monolith, tweaked by Onezero0",
     "size": {
         "x": 32,
         "y": 32
@@ -12,15 +12,7 @@
             "directions": 4
         },
         {
-            "name": "inhand-left-unshaded",
-            "directions": 4
-        },
-        {
             "name": "inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "inhand-right-unshaded",
             "directions": 4
         },
         {
@@ -28,15 +20,7 @@
             "directions": 4
         },
         {
-            "name": "wielded-inhand-left-unshaded",
-            "directions": 4
-        },
-        {
             "name": "wielded-inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "wielded-inhand-right-unshaded",
             "directions": 4
         },
         {
@@ -44,15 +28,7 @@
             "directions": 4
         },
         {
-            "name": "equipped-BACKPACK-unshaded",
-            "directions": 4
-        },
-        {
             "name": "equipped-SUITSTORAGE",
-            "directions": 4
-        },
-        {
-            "name": "equipped-SUITSTORAGE-unshaded",
             "directions": 4
         }
     ]

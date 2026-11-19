@@ -19,7 +19,6 @@
     sprite: _Mono/Objects/Weapons/Guns/LMGs/grizzly/Grizzly-inhands.rsi
     shape:
     - 0,0,5,3
-  - type: UnshadedHeldVisuals
   - type: GunRequiresWield
   - type: Gun
     minAngle: 22

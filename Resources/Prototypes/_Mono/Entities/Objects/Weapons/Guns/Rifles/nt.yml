@@ -15,7 +15,6 @@
       shader: unshaded
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/Rifles/ntsf_ltr_556.rsi
-  - type: UnshadedHeldVisuals
   - type: GunWieldBonus
     minAngle: -20
     maxAngle: -24
