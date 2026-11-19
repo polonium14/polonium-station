@@ -1,7 +1,7 @@
 ### Examine
 
-gas-turbine-examine-stator-null = Wygląda na to, że brakuje statora.
-gas-turbine-examine-stator = Ma stator.
+gas-turbine-examine-stator-null = Wygląda na to, że brakuje stojana.
+gas-turbine-examine-stator = Ma stojan.
 gas-turbine-examine-blade-null = Wygląda na to, że brakuje łopatki turbiny.
 gas-turbine-examine-blade = Ma łopatkę turbiny.
 turbine-spinning-0 = Łopatki się nie kręcą.
@@ -27,10 +27,10 @@ turbine-smoke = { $owner } zaczyna dymić!
 turbine-smoke-stop = { $owner } przestaje dymić.
 # Shown during repairs
 gas-turbine-repair-fail-blade = Musisz wymienić łopatkę turbiny, zanim da się to naprawić.
-gas-turbine-repair-fail-stator = Musisz wymienić stator, zanim da się to naprawić.
+gas-turbine-repair-fail-stator = Musisz wymienić stojan, zanim da się to naprawić.
 turbine-repair = Naprawiasz część uszkodzeń { $target } za pomocą { $tool }.
 # Anchoring warnings
-turbine-unanchor-warning = Nie możesz odkotwiczyć turbiny w trakcie pracy!
+turbine-unanchor-warning = You cannot unanchor the gas turbine while it's spinning!
 turbine-anchor-warning = Nieprawidłowe miejsce zakotwiczenia.
 
 ### UI
@@ -44,11 +44,11 @@ comp-turbine-ui-overtemp = PRZEGRZANIE
 comp-turbine-ui-stalling = ZAHAMOWANIE
 comp-turbine-ui-undertemp = NIEDOGRZANIE
 comp-turbine-ui-flow-rate = Natężenie przepływu
-comp-turbine-ui-stator-load = Obciążenie statora
+comp-turbine-ui-stator-load = Obciążenie stojana
 comp-turbine-ui-blade = Łopatka turbiny
 comp-turbine-ui-blade-integrity = Integralność
 comp-turbine-ui-blade-stress = Naprężenie
-comp-turbine-ui-stator = Stator turbiny
+comp-turbine-ui-stator = Stojan turbiny
 comp-turbine-ui-stator-potential = Potencjał
 comp-turbine-ui-stator-supply = Zasilanie
 comp-turbine-ui-power = { POWERWATTS($power) }
