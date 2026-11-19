@@ -44,10 +44,14 @@ public sealed partial class GunMovementSpreadSystem : EntitySystem
 
         var walkSpeed = MovementSpeedModifierComponent.DefaultBaseWalkSpeed;
         var runSpeed = MovementSpeedModifierComponent.DefaultBaseSprintSpeed;
+        var baseWalkSpeed = walkSpeed;
+        var baseRunSpeed = runSpeed;
         if (TryComp<MovementSpeedModifierComponent>(user, out var move))
         {
             walkSpeed = move.CurrentWalkSpeed;
             runSpeed = move.CurrentSprintSpeed;
+            baseWalkSpeed = move.BaseWalkSpeed;
+            baseRunSpeed = move.BaseSprintSpeed;
         }
 
         var penalty = 0.0;
@@ -57,10 +61,10 @@ public sealed partial class GunMovementSpreadSystem : EntitySystem
         {
             if (sprinter is { IsSprinting: true })
                 penalty = comp.Sprint.Theta * Math.Clamp(speed / Math.Max(runSpeed, StillSpeed), 0f, 1f);
-            else if (speed <= walkSpeed || runSpeed <= walkSpeed)
-                penalty = comp.Walk.Theta * Math.Clamp(speed / Math.Max(walkSpeed, StillSpeed), 0f, 1f);
             else
-                penalty = double.Lerp(comp.Walk.Theta, comp.Run.Theta, Math.Clamp((speed - walkSpeed) / (runSpeed - walkSpeed), 0f, 1f));
+                penalty = GetMovePenalty(comp, speed, walkSpeed, runSpeed, comp.Run.Theta);
+
+            penalty = Math.Max(penalty, GetMovePenalty(comp, speed, baseWalkSpeed, baseRunSpeed, comp.Sprint.Theta));
         }
 
         if (sprinter is { IsSprinting: false } && comp.SprintRecovery > TimeSpan.Zero)
@@ -71,5 +75,13 @@ public sealed partial class GunMovementSpreadSystem : EntitySystem
         }
 
         return new Angle(penalty);
+    }
+
+    private static double GetMovePenalty(GunMovementSpreadComponent comp, float speed, float walkSpeed, float runSpeed, double limit)
+    {
+        if (speed <= walkSpeed || runSpeed <= walkSpeed)
+            return comp.Walk.Theta * Math.Clamp(speed / Math.Max(walkSpeed, StillSpeed), 0f, 1f);
+
+        return Math.Min(limit, double.Lerp(comp.Walk.Theta, comp.Run.Theta, (speed - walkSpeed) / (runSpeed - walkSpeed)));
     }
 }

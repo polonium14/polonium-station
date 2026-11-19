@@ -23,7 +23,7 @@ public sealed partial class GunMovementSpreadComponent : Component
     public Angle Run = Angle.FromDegrees(1.5);
 
     /// <summary>
-    /// Extra spread while sprinting.
+    /// Extra spread while sprinting. Also caps the penalty for moving faster than a normal run.
     /// </summary>
     [DataField]
     public Angle Sprint = Angle.FromDegrees(4);
