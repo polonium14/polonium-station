@@ -5,7 +5,7 @@
   description: A man-portable volley gun that empties ten barrels in a blink. Its hopper takes eighty loose .35 auto rounds, and the whole thing is a chore to carry.
   components:
   - type: GunCrosshair
-    crosshair: Grid
+    crosshair: Arcs
   - type: Sprite
     sprite: _Mono/Objects/Weapons/Guns/Launchers/mk348.rsi
     layers:
