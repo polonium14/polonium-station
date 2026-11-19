@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: BeatusCrow
-  changes:
-  - message: NPCs no longer detect invisible targets.
-    type: Add
-  id: 9637
-  time: '2026-04-11T21:20:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43562
 - author: AndrewFenriz
   changes:
   - message: Fixed Cutter Machine rotation to be consistent with other lathes.
@@ -5190,3 +5183,20 @@
   id: 10131
   time: '2026-11-19T09:34:25.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1269
+- author: Nikita
+  changes:
+  - message: "W uplinku Syndykatu pojawi\u0142y si\u0119 pistolet maszynowy Malandro\
+      \ i karabinek Szept, kt\xF3ry nie zostawia \u0142usek ani smug po pociskach."
+    type: Add
+  - message: "W uplinku JSR s\u0105 teraz karabin szturmowy Sok\xF3\u0142, karabin\
+      \ wyborowy Jastrz\u0105b, karabin maszynowy Grizzly i Szept."
+    type: Add
+  - message: "Oddzia\u0142y CBRN mog\u0105 kupi\u0107 automatyczn\u0105 strzelb\u0119\
+      \ Chor\u0105\u017Cy i karabin energetyczny Bazyliszek."
+    type: Add
+  - message: "Do arsena\u0142u Szwadronu \u015Amierci dosz\u0142y karabin Widmo, ci\u0119\
+      \u017Cka armata impulsowa i Mk348 Grad z amunicj\u0105 zapalaj\u0105c\u0105."
+    type: Add
+  id: 10132
+  time: '2026-11-19T19:29:12.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1272
