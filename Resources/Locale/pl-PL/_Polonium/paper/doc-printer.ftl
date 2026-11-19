@@ -28,3 +28,21 @@ doc-text-printer-safety-inspection-report = [color=#1b67a5][mono]█▄ █ ▀�
     { "[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]" }
     { "[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]" }
     { "[italic]Miejsce na pieczątkę:[/italic]" }
+doc-text-printer-inspector-request = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o przysłanie[/head][/color]
+    { "[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=2]Inspektora Centralnego Dowództwa[/head][/color]" }
+    { "             [head=3]Sektor: :STACJA: | XXX-CD[/head]" }
+    { "===============================================" }
+    { "[bold]Data:[/bold] :DATA:" }
+    { "[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:" }
+    { "[bold]Stanowisko:[/bold] :STANOWISKO:" }
+    { "===============================================" }
+    { "Niniejszym wnioskuję o skierowanie na stację Inspektora Centralnego Dowództwa." }
+    { "- [bold]Powód wniosku:[/bold]" }
+    { "- [bold]Działy i osoby, których dotyczy sprawa:[/bold]" }
+    { "- [bold]Dotychczasowe próby rozwiązania sprawy na stacji:[/bold]" }
+    { "- [bold]Dowody i dokumenty w załączeniu*:[/bold]" }
+    { "* - pole opcjonalne." }
+    { "Przyjmuję do wiadomości, że Inspektor skontroluje całą stację, w tym mój dział i mnie. Wniosek złożony bez podstaw może skutkować konsekwencjami dyscyplinarnymi." }
+    { "[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]" }
+    { "[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]" }
+    { "[italic]Miejsce na pieczątkę:[/italic]" }
