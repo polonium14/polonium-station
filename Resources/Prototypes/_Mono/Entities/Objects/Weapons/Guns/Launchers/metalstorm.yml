@@ -63,3 +63,12 @@
   - type: SpeedModifiedOnWield
     walkModifier: 0.6
     sprintModifier: 0.6
+
+- type: entity
+  parent: WeaponLauncherMk348
+  id: WeaponLauncherMk348Incendiary
+  suffix: Incendiary
+  description: A man-portable volley gun that empties ten barrels in a blink. Its hopper takes eighty loose .35 auto rounds, and this one comes filled with incendiary ones.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolIncendiary

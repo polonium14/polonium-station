@@ -177,3 +177,29 @@
     whitelist:
       tags:
       - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponLauncherMk348Incendiary
+  productEntity: WeaponLauncherMk348Incendiary
+  cost:
+    BlueSpaceCube: 30
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazineBoxPistolIncendiaryMk348
+  productEntity: MagazineBoxPistolIncendiary
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkDeadSquad
