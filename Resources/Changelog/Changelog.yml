@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: AndrewFenriz
-  changes:
-  - message: Fixed Cutter Machine rotation to be consistent with other lathes.
-    type: Fix
-  id: 9638
-  time: '2026-04-11T21:35:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43494
 - author: Princess-Cheeseballs
   changes:
   - message: Paradox clones will no longer be slow when spawning.
@@ -5200,3 +5193,10 @@
   id: 10132
   time: '2026-11-19T19:29:12.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1272
+- author: Nikita
+  changes:
+  - message: "Nikt z dow\xF3dztwa teraz nie mo\u017Ce zosta\u0107 antagiem"
+    type: Fix
+  id: 10133
+  time: '2026-11-19T20:57:08.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1274
