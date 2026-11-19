@@ -28,6 +28,11 @@
   - ResearchDirector
   - ChiefEngineer
   - Quartermaster
+  - NanotrasenRepresentative
+  - NanotrasenCareerTrainer
+  - Magistrate
+  - InternalAffairsAgent
+  - BlueshieldOfficer
 
 # Borgs
 - type: antagSpecifier
