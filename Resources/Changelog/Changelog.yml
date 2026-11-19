@@ -1,13 +1,6 @@
 ﻿Entries:
 - author: Princess-Cheeseballs
   changes:
-  - message: Paradox clones will no longer be slow when spawning.
-    type: Fix
-  id: 9639
-  time: '2026-04-12T19:15:04.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43528
-- author: Princess-Cheeseballs
-  changes:
   - message: Target station map at the nuclear operative outpost will now show the
       target station.
     type: Fix
@@ -5200,3 +5193,10 @@
   id: 10133
   time: '2026-11-19T20:57:08.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1274
+- author: Nikita
+  changes:
+  - message: Spolszczono sprite terminalu WTH JSR
+    type: Tweak
+  id: 10134
+  time: '2026-11-19T22:13:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1275
