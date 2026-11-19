@@ -1,0 +1,40 @@
+- type: entity
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseMajorContraband]
+  id: WeaponAMRShenzhen
+  name: Kratos
+  description: An accelerator rifle that throws a .60 slug far faster than powder ever could. It holds five rounds, reloads slowly and pins its shooter to the spot. Uses .60 anti-materiel ammo.
+  components:
+  - type: GunCrosshair
+    crosshair: TCross
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: base-unshaded
+      shader: unshaded
+  - type: Clothing
+    sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen_inhands_32x.rsi
+  - type: Item
+    size: Ginormous
+    sprite: _Mono/Objects/Weapons/Guns/Snipers/shenzhen_inhands_32x.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 0.4
+    projectileSpeed: 50
+  - type: CustomSpriteAmmoCounter
+    loadedAmmoSprite: Interface/ItemStatus/Sniper_Cartriges/not_spent.png
+    spentAmmoSprite: Interface/ItemStatus/Sniper_Cartriges/spent.png
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeAntiMateriel
+    capacity: 5
+    proto: CartridgeAntiMateriel
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.3
+    sprintModifier: 0.3
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 4
+    pvsIncrease: 0.4

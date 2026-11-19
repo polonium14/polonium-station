@@ -1,0 +1,268 @@
+- type: entity
+  abstract: true
+  parent: GunSafe
+  id: GunSafeBaseCentcomm
+  suffix: Central Command, Locked
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"]]
+
+- type: entity
+  abstract: true
+  parent: GunSafe
+  id: GunSafeBaseSyndicate
+  suffix: Syndicate, Locked
+  components:
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
+
+- type: entity
+  parent: [GunSafeBaseCentcomm, BaseCentcommContraband]
+  id: GunSafeRifleXlr556
+  name: falcon safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeRifleXlr556
+
+- type: entityTable
+  id: FillGunSafeRifleXlr556
+  table: !type:AllSelector
+    children:
+    - id: WeaponRifleXlr556
+      amount: 2
+    - id: MagazineRifle
+      amount: 4
+
+- type: entity
+  parent: [GunSafeBaseCentcomm, BaseCentcommContraband]
+  id: GunSafeRifleMR8C
+  name: hawk safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeRifleMR8C
+
+- type: entityTable
+  id: FillGunSafeRifleMR8C
+  table: !type:AllSelector
+    children:
+    - id: WeaponRifleMR8C
+      amount: 2
+    - id: MagazineLightRifle
+      amount: 4
+
+- type: entity
+  parent: [GunSafeBaseCentcomm, BaseCentcommContraband]
+  id: GunSafeLMGGrizzly
+  name: grizzly safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeLMGGrizzly
+
+- type: entityTable
+  id: FillGunSafeLMGGrizzly
+  table: !type:AllSelector
+    children:
+    - id: WeaponLMGGrizzly
+    - id: MagazineLightRifleBox
+      amount: 2
+
+- type: entity
+  parent: [GunSafeBaseCentcomm, BaseCentcommContraband]
+  id: GunSafeShotgunFlagbearer
+  name: flagbearer safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeShotgunFlagbearer
+
+- type: entityTable
+  id: FillGunSafeShotgunFlagbearer
+  table: !type:AllSelector
+    children:
+    - id: WeaponShotgunFlagbearer
+      amount: 2
+    - id: BoxLethalshot
+      amount: 4
+
+- type: entity
+  parent: [GunSafeBaseCentcomm, BaseCentcommContraband]
+  id: GunSafeDEWBasilisk
+  name: basilisk safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeDEWBasilisk
+
+- type: entityTable
+  id: FillGunSafeDEWBasilisk
+  table: !type:AllSelector
+    children:
+    - id: WeaponDEWBasilisk
+      amount: 2
+
+- type: entity
+  parent: [GunSafeBaseSyndicate, BaseSyndicateContraband]
+  id: GunSafeSubMachineGunMalandro
+  name: malandro safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeSubMachineGunMalandro
+
+- type: entityTable
+  id: FillGunSafeSubMachineGunMalandro
+  table: !type:AllSelector
+    children:
+    - id: WeaponSubMachineGunMalandro
+      amount: 2
+    - id: MagazinePistolSubMachineGun
+      amount: 4
+
+- type: entity
+  parent: [GunSafeBaseCentcomm, BaseCentcommContraband]
+  id: GunSafeRifleWSPR
+  name: whisper safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeRifleWSPR
+
+- type: entityTable
+  id: FillGunSafeRifleWSPR
+  table: !type:AllSelector
+    children:
+    - id: WeaponRifleWSPR
+      amount: 2
+    - id: MagazineLightRifle
+      amount: 4
+
+- type: entity
+  parent: [GunSafeBaseCentcomm, BaseCentcommContraband]
+  id: GunSafeRifleNtsfLtr
+  name: specter safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeRifleNtsfLtr
+
+- type: entityTable
+  id: FillGunSafeRifleNtsfLtr
+  table: !type:AllSelector
+    children:
+    - id: WeaponRifleNtsfLtr
+      amount: 2
+    - id: MagazineRifle
+      amount: 4
+
+- type: entity
+  parent: [GunSafeBaseCentcomm, BaseCentcommContraband]
+  id: GunSafeHeavyPulseCannon
+  name: heavy pulse cannon safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeHeavyPulseCannon
+
+- type: entityTable
+  id: FillGunSafeHeavyPulseCannon
+  table: !type:AllSelector
+    children:
+    - id: WeaponHeavyPulseCannon
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseMajorContraband]
+  id: GunSafeLauncherMk348
+  name: mk348 hailstorm safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeLauncherMk348
+
+- type: entityTable
+  id: FillGunSafeLauncherMk348
+  table: !type:AllSelector
+    children:
+    - id: WeaponLauncherMk348
+    - id: MagazineBoxPistol
+      amount: 2
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseMajorContraband]
+  id: GunSafeAMRShenzhen
+  name: kratos safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeAMRShenzhen
+
+- type: entityTable
+  id: FillGunSafeAMRShenzhen
+  table: !type:AllSelector
+    children:
+    - id: WeaponAMRShenzhen
+    - id: MagazineBoxAntiMateriel
+      amount: 2
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseMajorContraband]
+  id: GunSafeLRC21PPL
+  name: plasma lance safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeLRC21PPL
+
+- type: entityTable
+  id: FillGunSafeLRC21PPL
+  table: !type:AllSelector
+    children:
+    - id: WeaponLRC21PPL
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseMajorContraband]
+  id: GunSafeRevolverDragoon
+  name: dragoon safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeRevolverDragoon
+
+- type: entityTable
+  id: FillGunSafeRevolverDragoon
+  table: !type:AllSelector
+    children:
+    - id: WeaponRevolverDragoon
+      amount: 2
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseMajorContraband]
+  id: GunSafeUllmanPulsePistol
+  name: DP-17 safe
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillGunSafeUllmanPulsePistol
+
+- type: entityTable
+  id: FillGunSafeUllmanPulsePistol
+  table: !type:AllSelector
+    children:
+    - id: UllmanWeaponPulsePistol
+      amount: 2
