@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: ProPeperos
-  changes:
-  - message: Fixed stacks of concrete and astro mowed/jungle grass splitting in to
-      wrong items
-    type: Fix
-  id: 9636
-  time: '2026-04-11T19:05:06.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43547
 - author: BeatusCrow
   changes:
   - message: NPCs no longer detect invisible targets.
@@ -5190,3 +5182,11 @@
   id: 10130
   time: '2026-11-18T14:49:13.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1266
+- author: Nikita
+  changes:
+  - message: "Dodano nowy wniosek o przys\u0142anie Inspektora Centralnego Dow\xF3\
+      dztwa do drukarki i Wiki (biurokracja)"
+    type: Add
+  id: 10131
+  time: '2026-11-19T09:34:25.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1269
