@@ -1,0 +1,44 @@
+- type: entity
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseMajorContraband]
+  id: WeaponLRC21PPL
+  name: plasma lance
+  description: A long-barrelled pulsed plasma projector. Each shot burns through cover and drains a sixth of the cell, so count them.
+  components:
+  - type: GunCrosshair
+    crosshair: TCross
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Battery/lrc21.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: base-unshaded
+      shader: unshaded
+    - state: mag-unshaded-1
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: Clothing
+    sprite: _Mono/Objects/Weapons/Guns/Battery/nt_longarm_inhands_32x.rsi
+  - type: Item
+    sprite: _Mono/Objects/Weapons/Guns/Battery/nt_longarm_inhands_32x.rsi
+    shape:
+    - 0,0,4,1
+  - type: UnshadedHeldVisuals
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 0.7
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: BatteryAmmoProvider
+    proto: PlasmaLanceBeam
+    fireCost: 250
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 1500
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.7
+    sprintModifier: 0.7

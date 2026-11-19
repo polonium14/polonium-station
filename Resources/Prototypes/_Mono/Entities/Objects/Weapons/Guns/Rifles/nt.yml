@@ -1,0 +1,56 @@
+- type: entity
+  parent: [BaseWeaponRifle, BaseCentcommContraband]
+  id: WeaponRifleNtsfLtr
+  name: Specter
+  description: The automatic rifle of the Nanotrasen Death Squad. It fires fast and stays level, and it is only ever sent to stations that are not meant to have survivors. Feeds from .20 rifle magazines.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Rifles/ntsf_ltr_556.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: base-unshaded
+      shader: unshaded
+  - type: Clothing
+    sprite: _Mono/Objects/Weapons/Guns/Rifles/ntsf_ltr_556.rsi
+  - type: UnshadedHeldVisuals
+  - type: GunWieldBonus
+    minAngle: -20
+    maxAngle: -24
+  - type: Gun
+    fireRate: 7
+    angleIncrease: 1
+    angleDecay: 12
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance

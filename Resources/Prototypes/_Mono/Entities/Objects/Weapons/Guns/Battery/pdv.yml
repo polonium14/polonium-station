@@ -1,0 +1,38 @@
+- type: entity
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseCentcommContraband]
+  id: WeaponDEWBasilisk
+  name: Basilisk
+  description: A directed-energy rifle that cooks its target with a beam of hard radiation. It needs no ammunition, only a recharger, and its fifteen shots do not hurry.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Rifles/basilisk.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: base-unshaded
+      shader: unshaded
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+  - type: Clothing
+    sprite: _Mono/Objects/Weapons/Guns/Rifles/calico_inhands_32x.rsi
+  - type: Item
+    sprite: _Mono/Objects/Weapons/Guns/Rifles/calico_inhands_32x.rsi
+    shape:
+    - 0,0,3,2
+  - type: UnshadedHeldVisuals
+  - type: Gun
+    fireRate: 1.4
+    soundGunshot:
+      path: /Audio/Weapons/emitter.ogg
+  - type: BatteryAmmoProvider
+    proto: BasiliskRifleBeam
+    fireCost: 100
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 1500

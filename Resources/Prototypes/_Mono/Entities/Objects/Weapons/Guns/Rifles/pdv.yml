@@ -1,0 +1,35 @@
+- type: entity
+  parent: [BaseWeaponRifle, BaseCentcommContraband]
+  id: WeaponRifleWSPR
+  name: Whisper
+  description: A special forces carbine with a built-in suppressor. It burns up its casings as it fires and its bullets leave no tracer, so little gives the shooter away. Feeds from .30 rifle magazines.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Rifles/wspr.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: base-unshaded
+      shader: unshaded
+  - type: Clothing
+    sprite: _Mono/Objects/Weapons/Guns/Rifles/wspr_inhands_32x.rsi
+  - type: Item
+    sprite: _Mono/Objects/Weapons/Guns/Rifles/wspr_inhands_32x.rsi
+  - type: UnshadedHeldVisuals
+  - type: TracelessGun
+  - type: GunWieldBonus
+    minAngle: -20
+    maxAngle: -18
+  - type: Gun
+    fireRate: 4.5
+    angleIncrease: 1.5
+    angleDecay: 9.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
