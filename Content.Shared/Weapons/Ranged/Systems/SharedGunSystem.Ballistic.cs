@@ -6,7 +6,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Power;
 using Content.Shared.Stacks;
 using Content.Shared.Verbs;
-using Content.Shared._Polonium.Weapons.Ranged.Components; // Polonium
+using Content.Shared._Polonium.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Containers;
@@ -81,7 +81,7 @@ public abstract partial class SharedGunSystem
 
         args.Handled = true;
 
-        // Polonium: targets that are filled faster or slower than the source's own delay
+        // Polonium start: targets that are filled faster or slower than the source's own delay
         var fillDelay = component.FillDelay;
         if (TryComp<AmmoFillDelayModifierComponent>(args.Target, out var fillModifier))
             fillDelay *= fillModifier.Multiplier;
