@@ -398,7 +398,10 @@ public sealed class DiscordLinkTest : GameTest
         });
     }
 
+    private static PoolSettings BanningPair => new() { Connected = true, Destructive = true };
+
     [Test]
+    [PairConfig(nameof(BanningPair))]
     public async Task ConnectionCheckRefusesAltsOfBannedPlayers()
     {
         await EnableLinking();
