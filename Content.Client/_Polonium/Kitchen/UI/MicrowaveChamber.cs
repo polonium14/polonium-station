@@ -1064,7 +1064,11 @@ public sealed partial class MicrowaveChamber : Control
     private void UpdateHover()
     {
         if (_mouse is not { } mouse)
+        {
+            Hovered = null;
+            DefaultCursorShape = CursorShape.Arrow;
             return;
+        }
 
         EntityUid? hovered = null;
         if (Interactive)
