@@ -1,0 +1,15 @@
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentSafetyInspectionReport
+  name: health and safety inspection report
+  components:
+    - type: Paper
+      content: doc-text-printer-safety-inspection-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentInspectorRequest
+  name: Central Command inspector request
+  components:
+    - type: Paper
+      content: doc-text-printer-inspector-request

@@ -1,0 +1,48 @@
+- type: entity
+  parent: [BaseItem, BaseMajorContraband]
+  id: WeaponRevolverDragoon
+  name: Dragoon
+  description: A heavy officer's revolver with a small fabricator in the frame that makes its own .45 magnum rounds. It never needs reloading, only a little patience.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Pistols/vizier-revolver.rsi
+    layers:
+    - state: icon
+      map: ["enum.GunVisualLayers.Base"]
+    - state: icon-unshaded
+      shader: unshaded
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Tag
+    tags:
+    - Sidearm
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 1.5
+    shotsPerBurst: 2
+    burstFireRate: 12
+    burstCooldown: 0.75
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+  - type: GunMovementSpread
+  - type: BasicEntityAmmoProvider
+    proto: BulletMagnum
+    capacity: 6
+    count: 6
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+    rechargeSound:
+      path: /Audio/Weapons/Guns/Cock/shotgun_close.ogg

@@ -1,0 +1,15 @@
+- type: latheRecipe
+  id: PrintedDocumentSafetyInspectionReportRecipe
+  result: PrintedDocumentSafetyInspectionReport
+  categories: [CommandDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentInspectorRequestRecipe
+  result: PrintedDocumentInspectorRequest
+  categories: [CommandDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }

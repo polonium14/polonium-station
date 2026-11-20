@@ -1,0 +1,13 @@
+- type: entity
+  id: GhostThemePreview
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: Mobs/Ghosts/ghost_human.rsi
+    color: "#fff8"
+    noRot: true
+    layers:
+    - state: animated
+      map: [ "ghostVariant" ]
+      shader: unshaded

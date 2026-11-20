@@ -1,0 +1,20 @@
+- type: entity
+  parent: BasicHitscan
+  id: UllmanPulse
+  categories: [ HideSpawnMenu ]
+  name: ultraviolet pulse beam
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 28
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: _Mono/Objects/Weapons/Guns/Projectiles/lasers.rsi
+      state: uv_muzzle_laser
+    travelFlash:
+      sprite: _Mono/Objects/Weapons/Guns/Projectiles/lasers.rsi
+      state: uv_beam
+    impactFlash:
+      sprite: _Mono/Objects/Weapons/Guns/Projectiles/lasers.rsi
+      state: uv_impact_laser

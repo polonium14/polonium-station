@@ -1,0 +1,76 @@
+- type: entity
+  parent: [BaseItem, BaseGunWieldable, BaseMajorContraband]
+  id: WeaponLauncherMk348
+  name: Mk348 Hailstorm
+  description: A man-portable volley gun that empties ten barrels in a blink. Its hopper takes eighty loose .35 auto rounds, and the whole thing is a chore to carry.
+  components:
+  - type: GunCrosshair
+    crosshair: Arcs
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Launchers/mk348.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: base-unshaded
+      shader: unshaded
+    - state: mag-unshaded-1
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: Clothing
+    sprite: _Mono/Objects/Weapons/Guns/Launchers/mk348_inhands_32x.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Item
+    size: Ginormous
+    sprite: _Mono/Objects/Weapons/Guns/Launchers/mk348_inhands_32x.rsi
+  - type: AmmoCounter
+  - type: GunRequiresWield
+  - type: Gun
+    minAngle: 22
+    maxAngle: 36
+    angleIncrease: 2
+    angleDecay: 16
+    fireRate: 4
+    shotsPerBurst: 10
+    burstFireRate: 30
+    burstCooldown: 1.5
+    selectedMode: Burst
+    availableModes:
+    - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/m41.ogg
+  - type: GunMovementSpread
+    walk: 1
+    run: 3
+    sprint: 6.7
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgePistol
+    capacity: 80
+    proto: CartridgePistol
+  - type: AmmoFillDelayModifier
+    multiplier: 0.5
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.6
+    sprintModifier: 0.6
+
+- type: entity
+  parent: WeaponLauncherMk348
+  id: WeaponLauncherMk348Incendiary
+  suffix: Incendiary
+  description: A man-portable volley gun that empties ten barrels in a blink. Its hopper takes eighty loose .35 auto rounds, and this one comes filled with incendiary ones.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolIncendiary

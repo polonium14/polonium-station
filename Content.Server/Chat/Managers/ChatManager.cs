@@ -50,6 +50,7 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private DiscordChatLink _discordLink = default!;
     [Dependency] private ILogManager _logManager = default!;
     [Dependency] private ILocalizationManager _localizationManager = default!;
+    [Dependency] private SupporterManager _supporters = default!; // Polonium
     private SharedChatSystem _chatSystem = default!;
 
 private ISawmill? _sawmill = default!;
@@ -310,10 +311,10 @@ private ISawmill? _sawmill = default!;
             var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;
         }
-        if (_entityManager.System<SupporterSystem>().TryGetNameColor(player.UserId, out var supporterColor))
+        if (_entityManager.System<ChatNameColorSystem>().TryGetNameColor(player, out var nameColor)) // Polonium: supporter and contributor name color
         {
             wrappedMessage = Loc.GetString("chat-manager-send-ooc-supporter-wrap-message",
-                ("color", supporterColor),
+                ("color", nameColor), // Polonium: supporter and contributor name color
                 ("playerName", player.Name),
                 ("message", oocMessage)); // Polonium: chat emoji
         }
@@ -340,7 +341,7 @@ private ISawmill? _sawmill = default!;
         var clients = _adminManager.ActiveAdmins.Select(p => p.Channel);
         var adminMessage = _entityManager.System<ChatEmojiSystem>().EscapeWithEmojis(message); // Polonium: chat emoji
         string wrappedMessage;
-        if (_entityManager.System<SupporterSystem>().TryGetNameColor(player.UserId, out var supporterColor))
+        if (_supporters.TryGetNameColor(player.UserId, out var supporterColor)) // Polonium
         {
             wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-supporter-wrap-message",
                 ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
