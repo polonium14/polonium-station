@@ -175,7 +175,6 @@ loadout-group-detective-head = Detective head
 loadout-group-detective-neck = Detective neck
 loadout-group-detective-jumpsuit = Detective jumpsuit
 loadout-group-detective-outerclothing = Detective outer clothing
-loadout-group-detective-belt = Detective belt
 loadout-group-detective-serviceweapon = Detective service weapon
 loadout-group-security-cadet-hat = Security cadet hat
 loadout-group-security-cadet-jumpsuit = Security cadet jumpsuit

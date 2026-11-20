@@ -148,7 +148,6 @@ loadout-group-detective-head = Detektyw – nakrycie głowy
 loadout-group-detective-neck = Detektyw – szyja
 loadout-group-detective-jumpsuit = Detektyw – kombinezon
 loadout-group-detective-outerclothing = Detektyw – odzież wierzchnia
-loadout-group-detective-belt = Detektyw - pas
 loadout-group-detective-serviceweapon = Detektyw - broń służbowa
 loadout-group-security-cadet-hat = Kadet ochrony – kapelusz
 loadout-group-security-cadet-jumpsuit = Kadet ochrony – kombinezon
