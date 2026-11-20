@@ -1,3 +1,4 @@
+# Polonium: chirurgical port of https://github.com/space-wizards/space-station-14/pull/43534
 - type: entity
   name: Human Corpse Spawner
   id: SalvageHumanCorpseSpawner
@@ -22,7 +23,19 @@
       - state: green
   - type: ConditionalSpawner
     prototypes:
-      - MobRandomServiceCorpse
+      - MobCorpseBartender
+      - MobCorpseBotanist
+      - MobCorpseChef
+      - MobCorpseJanitor
+      - MobCorpseLawyer
+      - MobCorpseChaplain
+      - MobCorpseLibrarian
+      - MobCorpseReporter
+      - MobCorpseMusician
+      - MobCorpseServiceWorker
+      - MobCorpseMime
+      - MobCorpseClown
+      - MobCorpsePassenger
 
 - type: entity
   name: Random Engineer Corpse Spawner
@@ -35,7 +48,9 @@
       - state: green
   - type: ConditionalSpawner
     prototypes:
-      - MobRandomEngineerCorpse
+      - MobCorpseAtmosphericTechnician
+      - MobCorpseStationEngineer
+      - MobCorpseTechnicalAssistant
 
 - type: entity
   name: Random Cargo Corpse Spawner
@@ -48,7 +63,9 @@
       - state: green
   - type: ConditionalSpawner
     prototypes:
-      - MobRandomCargoCorpse
+      - MobCorpseQuartermaster
+      - MobCorpseSalvageSpecialist
+      - MobCorpseCargoTechnician
 
 - type: entity
   name: Random Medic Corpse Spawner
@@ -61,7 +78,11 @@
       - state: green
   - type: ConditionalSpawner
     prototypes:
-      - MobRandomMedicCorpse
+      - MobCorpseMedicalDoctor
+      - MobCorpseParamedic
+      - MobCorpseChemist
+      - MobCorpseMedicalIntern
+      - MobCorpsePsychologist
 
 - type: entity
   name: Random Science Corpse Spawner
@@ -74,7 +95,9 @@
       - state: green
   - type: ConditionalSpawner
     prototypes:
-      - MobRandomScienceCorpse
+      - MobCorpseScientist
+      - MobCorpseResearchAssistant
+      - MobCorpseRoboticist # Polonium: not in the upstream PR
 
 - type: entity
   name: Random Security Corpse Spawner
@@ -87,7 +110,10 @@
       - state: green
   - type: ConditionalSpawner
     prototypes:
-      - MobRandomSecurityCorpse
+      - MobCorpseWarden
+      - MobCorpseDetective
+      - MobCorpseSecurityOfficer
+      - MobCorpseSecurityCadet
 
 - type: entity
   name: Random Command Corpse Spawner
@@ -100,4 +126,11 @@
       - state: green
   - type: ConditionalSpawner
     prototypes:
-      - MobRandomCommandCorpse
+      - MobCorpseCentcommOfficial
+      - MobCorpseCaptain
+      - MobCorpseHeadOfPersonnel
+      - MobCorpseChiefEngineer
+      - MobCorpseChiefMedicalOfficer
+      - MobCorpseHeadOfSecurity
+      - MobCorpseResearchDirector
+      - MobCorpseQuartermaster
