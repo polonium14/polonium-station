@@ -123,6 +123,7 @@ public sealed partial class MicrowaveDeviceWindow : BaseWindow
     private MicrowaveDeviceState _state = MicrowaveDeviceState.Off;
     private string _count = string.Empty;
     private string _hoverText = string.Empty;
+    private EntityUid? _hoveredUid;
     private int _shownCount = -1;
     private int _shownCapacity = -1;
     private float _scroll;
@@ -273,12 +274,17 @@ public sealed partial class MicrowaveDeviceWindow : BaseWindow
 
     private void SetHovered(EntityUid? uid)
     {
-        _chamber.Highlighted = uid;
-        _note.Highlighted = uid;
-        _scroll = 0f;
-        _hoverText = uid != null && _entMan.TryGetComponent(uid.Value, out MetaDataComponent? meta)
+        var text = uid != null && _entMan.TryGetComponent(uid.Value, out MetaDataComponent? meta)
             ? meta.EntityName.ToUpperInvariant()
             : string.Empty;
+
+        if (_hoveredUid != uid || _hoverText != text)
+            _scroll = 0f;
+
+        _hoveredUid = uid;
+        _chamber.Highlighted = uid;
+        _note.Highlighted = uid;
+        _hoverText = text;
     }
 
     /// <summary>
@@ -306,7 +312,7 @@ public sealed partial class MicrowaveDeviceWindow : BaseWindow
 
         var wrecked = _wreckAge >= 0f;
         var now = _timing.RealTime;
-        if (_holding && (wrecked || _holdAge >= HoldTime || _holdAge >= HoldGrace && !state.Active && state.Contents.Count > 0))
+        if (_holding && (wrecked || _chamber.MeltingComplete && (_holdAge >= HoldTime || _holdAge >= HoldGrace && !state.Active && state.Contents.Count > 0)))
         {
             _holding = false;
             _chamber.Release();
@@ -332,6 +338,7 @@ public sealed partial class MicrowaveDeviceWindow : BaseWindow
         _chamber.SetCooking(cooking, opening);
         _chamber.SetContents(state.Contents);
         _chamber.CopyRows(_rows);
+        SetHovered(_hoveredUid);
         _chamber.Lit = cooking;
         _chamber.Malfunctioning = state.Malfunctioning;
         _chamber.Interactive = idle;

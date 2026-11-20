@@ -1063,11 +1063,11 @@ public sealed partial class MicrowaveChamber : Control
 
     private void UpdateHover()
     {
-        if (_mouse == null)
+        if (_mouse is not { } mouse)
             return;
 
         EntityUid? hovered = null;
-        if (Interactive && _mouse is { } mouse)
+        if (Interactive)
         {
             var scale = PixelCanvas.GetScale(UIScale);
             var point = new Vector2i((int) (mouse.X / scale), (int) (mouse.Y / scale));

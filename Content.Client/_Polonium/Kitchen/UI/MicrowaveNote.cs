@@ -113,13 +113,9 @@ public sealed partial class MicrowaveNote : Control
             row.Former = string.Empty;
 
         var maxWidth = ArtWidth - TextLeft - TextRight;
-        var shown = name;
-        var cut = name.Length;
-        while (cut > 1 && _font.Measure(shown) > maxWidth)
-        {
-            cut--;
-            shown = string.Concat(name.AsSpan(0, cut).TrimEnd(), Ellipsis);
-        }
+        var shown = _font.Measure(name) <= maxWidth
+            ? name
+            : string.Concat(name.AsSpan(0, _font.Fit(name, maxWidth - _font.Measure(Ellipsis))).TrimEnd(), Ellipsis);
 
         row.Shown = shown;
         row.Width = _font.Measure(shown) - 1;
@@ -133,6 +129,13 @@ public sealed partial class MicrowaveNote : Control
         {
             if (row.Former.Length == 0)
                 continue;
+
+            if (ReducedMotion)
+            {
+                row.Former = string.Empty;
+                Write(row);
+                continue;
+            }
 
             var done = (int) (row.Rewritten / RewriteStep);
             row.Rewritten += args.DeltaSeconds;

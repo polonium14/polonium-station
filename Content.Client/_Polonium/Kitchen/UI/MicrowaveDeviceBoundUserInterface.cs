@@ -29,7 +29,10 @@ public sealed partial class MicrowaveDeviceBoundUserInterface(EntityUid owner, E
             _window.SetSkin(skin.Body, skin.Light, skin.Plate);
 
         // The door of an idle microwave swings open with the window. Nobody else sees that, so only this player hears it.
-        if (!_microwave.IsActiveMicrowave(Owner) && EntMan.TryGetComponent(Owner, out MicrowaveSoundsComponent? sounds))
+        if (EntMan.TryGetComponent(Owner, out MicrowaveComponent? microwave)
+            && !microwave.Broken
+            && !_microwave.IsActiveMicrowave(Owner)
+            && EntMan.TryGetComponent(Owner, out MicrowaveSoundsComponent? sounds))
             _audio.PlayEntity(sounds.DoorOpenSound, Filter.Local(), Owner, false);
 
         _window.OnStart += () => SendPredictedMessage(new MicrowaveStartCookMessage());
