@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Writes a Crowdin config limited to the FTL files changed since the last upload."""
 
 from __future__ import annotations
 

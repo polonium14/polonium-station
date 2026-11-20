@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Approves on Crowdin the pl-PL values changed in the repository between two revisions."""
 
 from __future__ import annotations
 
