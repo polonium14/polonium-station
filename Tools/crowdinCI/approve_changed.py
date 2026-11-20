@@ -138,7 +138,7 @@ def main() -> int:
         return 1
     branch_id = branches[0]['data']['id']
     prefix = f'/{args.branch}/'
-    files = {f['path'][len(prefix):]: f['id'] for f in crowdin.paged('/files', {'branchId': branch_id})
+    files = {f['path'][len(prefix):]: f['id'] for f in crowdin.paged('/files', {'branchId': branch_id, 'recursion': 1})
              if f['path'].startswith(prefix)}
 
     failures = 0
