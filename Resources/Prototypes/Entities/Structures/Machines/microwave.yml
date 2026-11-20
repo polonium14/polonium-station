@@ -170,6 +170,10 @@
     capacity: 10
     canMicrowaveIdsSafely: false
     explosionChance: 0.3
+  - type: MicrowaveDeviceSkin # Polonium: the red body, green light and brand of this microwave in its window
+    body: /Textures/_Polonium/Interface/Microwave/Donk/body.png
+    light: /Textures/_Polonium/Interface/Microwave/Donk/chamber_lit.png
+    plate: polonium-microwave-plate-donk
   - type: Sprite
     sprite: Structures/Machines/microwave_syndie.rsi
     drawdepth: SmallObjects

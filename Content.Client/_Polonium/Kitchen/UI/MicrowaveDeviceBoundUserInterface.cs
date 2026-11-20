@@ -22,6 +22,9 @@ public sealed partial class MicrowaveDeviceBoundUserInterface(EntityUid owner, E
 
         _window = this.CreateWindow<MicrowaveDeviceWindow>();
         _window.StateSource = GetState;
+        if (EntMan.TryGetComponent(Owner, out MicrowaveDeviceSkinComponent? skin))
+            _window.SetSkin(skin.Body, skin.Light, skin.Plate);
+
         _window.OnStart += () => SendPredictedMessage(new MicrowaveStartCookMessage());
         _window.OnEjectAll += () => SendPredictedMessage(new MicrowaveEjectMessage());
         _window.OnEject += uid => SendPredictedMessage(new MicrowaveEjectSolidIndexedMessage(EntMan.GetNetEntity(uid)));
