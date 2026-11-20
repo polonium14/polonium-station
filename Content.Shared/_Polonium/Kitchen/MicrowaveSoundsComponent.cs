@@ -16,7 +16,7 @@ public sealed partial class MicrowaveSoundsComponent : Component
     public SoundSpecifier? DoorCloseSound;
 
     /// <summary>
-    /// Played when the door opens as cooking stops, and to a player whose window opens on an idle microwave.
+    /// Played when the door opens as cooking stops, and to the player who opens the window of an idle microwave.
     /// </summary>
     [DataField]
     public SoundSpecifier? DoorOpenSound;
@@ -44,6 +44,18 @@ public sealed partial class MicrowaveSoundsComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier? BurnSound;
+
+    /// <summary>
+    /// Played when something in the chamber catches fire.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? IgniteSound;
+
+    /// <summary>
+    /// How long after the start the fire breaks out. Matches the moment the flames show in the window.
+    /// </summary>
+    [DataField]
+    public TimeSpan IgniteDelay = TimeSpan.FromSeconds(1);
 
     /// <summary>
     /// When the next spark sound is due.
