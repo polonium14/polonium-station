@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Glissadia
-  changes:
-  - message: The ChemMaster UI now updates automatically when reagents are dragged
-      and dropped into the ChemMaster.
-    type: Fix
-  id: 9641
-  time: '2026-04-13T20:08:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43584
 - author: peaceful-joules
   changes:
   - message: Airlocks that were hacked via access breaker no longer have buggy examine
@@ -5202,3 +5194,10 @@
   id: 10135
   time: '2026-11-20T15:42:50.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1279
+- author: Nikita
+  changes:
+  - message: Nowy interfejs dla mikrofali
+    type: Add
+  id: 10136
+  time: '2026-11-20T16:52:30.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1280
