@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Princess-Cheeseballs
-  changes:
-  - message: Target station map at the nuclear operative outpost will now show the
-      target station.
-    type: Fix
-  id: 9640
-  time: '2026-04-13T13:40:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43583
 - author: Glissadia
   changes:
   - message: The ChemMaster UI now updates automatically when reagents are dragged
@@ -5200,3 +5192,13 @@
   id: 10134
   time: '2026-11-19T22:13:35.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1275
+- author: Nikita
+  changes:
+  - message: "Zw\u0142oki na ekspedycjach zn\xF3w nosz\u0105 ubrania swojego zawodu."
+    type: Fix
+  - message: "Pancerz i bro\u0144 kr\xF3tka pojawiaj\u0105 si\u0119 na zw\u0142okach\
+      \ tylko cz\u0430sami."
+    type: Tweak
+  id: 10135
+  time: '2026-11-20T15:42:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1279
