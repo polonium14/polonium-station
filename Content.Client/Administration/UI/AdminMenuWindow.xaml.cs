@@ -16,6 +16,7 @@ public sealed partial class AdminMenuWindow : DefaultWindow
         Title = Loc.GetString("admin-menu-title");
         RobustXamlLoader.Load(this);
         MasterTabContainer.SetTabTitle((int) TabIndex.Admin, Loc.GetString("admin-menu-admin-tab"));
+        MasterTabContainer.SetTabTitle((int) TabIndex.Polonium, Loc.GetString("polonium-admin-tab-title")); // Polonium
         MasterTabContainer.SetTabTitle((int) TabIndex.Adminbus, Loc.GetString("admin-menu-adminbus-tab"));
         MasterTabContainer.SetTabTitle((int) TabIndex.Atmos, Loc.GetString("admin-menu-atmos-tab"));
         MasterTabContainer.SetTabTitle((int) TabIndex.Round, Loc.GetString("admin-menu-round-tab"));
@@ -43,6 +44,7 @@ public sealed partial class AdminMenuWindow : DefaultWindow
     private enum TabIndex
     {
         Admin = 0,
+        Polonium, // Polonium
         Adminbus,
         Atmos,
         Round,
