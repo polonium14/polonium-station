@@ -12,6 +12,15 @@
       - IdCard
       - PAI
       - NukeDisk
+  - type: MicrowaveSounds # Polonium: the door, sparks and burning that the microwave window shows
+    doorCloseSound:
+      path: /Audio/Items/toolbox_close.ogg
+    doorOpenSound:
+      path: /Audio/Items/toolbox_open.ogg
+    sparkSound:
+      collection: sparks
+    burnSound:
+      path: /Audio/Effects/sizzle.ogg
   - type: Appearance
   - type: GenericVisualizer
     visuals:
