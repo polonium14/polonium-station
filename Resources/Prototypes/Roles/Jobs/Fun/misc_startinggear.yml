@@ -133,6 +133,19 @@
   inhand:
     - WeaponMeleeToolboxRobust
 
+#Brigmedic
+
+- type: startingGear # Polonium - jednak będzie w losowym miejscu
+  id: BrigmedicGear
+  equipment:
+    gloves: ClothingHandsGlovesNitrile
+    id: BrigmedicPDA
+    ears: ClothingHeadsetBrigmedic
+    mask: ClothingMaskBreathMedicalSecurity
+  storage:
+    back:
+    - Flash
+    
 # Aghost
 - type: startingGear
   id: MobAghostGear

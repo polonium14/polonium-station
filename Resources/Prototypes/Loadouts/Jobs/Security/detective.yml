@@ -51,36 +51,25 @@
   equipment:
     outerClothing: ClothingOuterCoatDetectiveLoadoutGrey
     
-# Belt - Polonium
-
-- type: loadout
-  id: DetectiveBeltHolster
-  equipment:
-    belt: ClothingBeltHolster 
 
 # Detective service weapon - Polonium    
 - type: loadout
   id: DetectiveInspectorRevolver
+  dummyEntity: WeaponRevolverInspector
+  equipment:
+    belt: ClothingBeltHolster 
   storage:
     belt: 
     - WeaponRevolverInspector
+    - SpeedLoaderMagnum
 
 - type: loadout
   id: DetectiveEnergyRevolver
+  dummyEntity: WeaponEnergyRevolver
+  equipment:
+    belt: ClothingBeltHolster 
   storage:
     belt: 
     - WeaponEnergyRevolver
-
-# Service weapon ammo - Polonium
-- type: loadout
-  id: DetectiveSpeedLoaderMagnum
-  storage:
-    belt: 
-    - SpeedLoaderMagnum
-
-- type: loadout # Polonium - Losowe postacie z rolą nie dostają rzeczy jeśli do wyboru jest min 0
-  id: DetectiveAmmoDonut
-  storage:
-    back:
-    - FoodDonutHomer  # Polonium - Laserek nie potrzebuje magazynków, ale przyjamniej sobie coś przegryzie    
+    
   

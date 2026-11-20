@@ -62,7 +62,7 @@
     eyes: ClothingEyesGlassesSecurity
     id: DetectivePDA
     ears: ClothingHeadsetSecurity
-#   belt: ClothingBeltHolster # Polonium
+#   belt: ClothingBeltHolster # Polonium - kolejność dodawania rzeczy z loadoutu: teraz się pojawia wybierając broń służbową
   storage:
     back:
     - Flash

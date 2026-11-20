@@ -1320,7 +1320,6 @@
   loadouts:
   - SecurityBelt
   - SecurityWebbing
-  - SecurityFullWebbing
 
 - type: loadoutGroup
   id: SecurityGloves
@@ -1373,38 +1372,17 @@
   id: SecurityServiceWeapon
   name: loadout-group-security-serviceweapon
   loadouts:
-  - SecurityOfficerPistol
+#  - SecurityOfficerPistol
   - SecurityOfficerVis
   - SecurityOfficerEnergyGun
   
-- type: loadoutGroup # Polonium: amunicja dla broni
-  id: SecurityServiceWeaponAmmo
-  name: loadout-group-security-serviceweapon-ammo
-  loadouts:
-  - SecurityOfficerAmmoPistol
-  - SecurityOfficerAmmoVis
-  - SecurityOfficerAmmoDonut  
-
 - type: loadoutGroup # Polonium: wybór broni dla detektywa
   id: DetectiveServiceWeapon
   name: loadout-group-detective-serviceweapon
   loadouts:
-  - DetectiveInspectorRevolver
+#  - DetectiveInspectorRevolver
   - DetectiveEnergyRevolver
 
-- type: loadoutGroup # Polonium: wybór amunicji dla detektywa
-  id: DetectiveServiceWeaponAmmo
-  name: loadout-group-detective-serviceweapon-ammo
-  loadouts:
-  - DetectiveSpeedLoaderMagnum
-  - DetectiveAmmoDonut
-
-- type: loadoutGroup # Polonium: bo spawnując belt z starting gear nie umiesza rewolwera przez kolejność dawania rzeczy
-  id: DetectiveBelt
-  name: loadout-group-detective-belt
-  loadouts:
-  - DetectiveBeltHolster  
-  
 - type: loadoutGroup
   id: DetectiveHead
   name: loadout-group-detective-head

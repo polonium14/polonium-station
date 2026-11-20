@@ -148,11 +148,7 @@
   id: SecurityWebbing
   equipment:
     belt: ClothingBeltSecurityWebbingFilled
-
-- type: loadout # Polonium: funkcjonalnie to samo tylko inny wygląd
-  id: SecurityFullWebbing
-  equipment:
-    belt: FuClothingBeltSecurityWebbingFilled    
+   
 
 # Outerclothing
 - type: loadout
@@ -211,35 +207,25 @@
 
 # Service Weapon
 - type: loadout
-  id: SecurityOfficerEnergyGun
-  equipment:
-    pocket1: WeaponEnergyPistol
-
-- type: loadout
   id: SecurityOfficerPistol
+  dummyEntity: WeaponPistolMk58
   equipment:
     pocket1: WeaponPistolMk58
-    
-- type: loadout
-  id: SecurityOfficerVis
-  equipment:
-    pocket1: WeaponVisMPSPistol
-
-# Ammunition - Polonium
-- type: loadout
-  id: SecurityOfficerAmmoPistol
   storage:
     back:
     - MagazinePistol
-
+    
 - type: loadout
-  id: SecurityOfficerAmmoVis
+  id: SecurityOfficerVis
+  dummyEntity: WeaponVisMPSPistol
+  equipment:
+    pocket1: WeaponVisMPSPistol
   storage:
     back:
     - WeaponVisMPSPistolMagazine
-
-- type: loadout # Polonium - Losowe postacie z rolą nie dostają rzeczy jeśli do wyboru jest min 0
-  id: SecurityOfficerAmmoDonut
-  storage:
-    back:
-    - FoodDonutHomer  # Polonium - Laserek nie potrzebuje magazynków, ale przyjamniej sobie coś przegryzie
+    
+- type: loadout
+  id: SecurityOfficerEnergyGun
+  dummyEntity: WeaponEnergyPistol
+  equipment:
+    pocket1: WeaponEnergyPistol

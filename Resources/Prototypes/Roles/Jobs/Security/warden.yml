@@ -86,9 +86,11 @@
     eyes: ClothingEyesGlassesSecurity
     id: WardenPDA
     ears: ClothingHeadsetSecurity
+#    pocket1: WeaponPistolMk58 # Polonium: teraz się wybiera broń służbową w loadout
   storage:
     back:
     - Flash
+#    - MagazinePistol # Polonium: teraz się wybiera broń służbową w loadout
 
 - type: chameleonOutfit
   id: WardenChameleonOutfit

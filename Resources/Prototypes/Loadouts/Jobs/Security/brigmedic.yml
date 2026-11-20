@@ -81,11 +81,7 @@
   id: BrigmedicWebbing
   equipment:
     belt: ClothingBeltSecurityWebbingFilled
-
-- type: loadout
-  id: BrigmedicFullWebbing
-  equipment:
-    belt: FuClothingBeltSecurityWebbingFilled     
+     
 
 # Loadout groups
 - type: loadoutGroup
@@ -136,7 +132,6 @@
   - BrigmedicMedicalBelt
   - BrigmedicBelt
   - BrigmedicWebbing
-  - BrigmedicFullWebbing
   
 # Role loadout
 - type: roleLoadout
@@ -147,9 +142,7 @@
   - BrigmedicOuterClothing
   - BrigmedicGlasses
   - BrigmedicBackpack
-  - BrigmedicBelt
-  - SecurityServiceWeapon # Polonium
-  - SecurityServiceWeaponAmmo # Polonium
+  - BrigmedicBelt  
   - SecurityShoes
   - SurvivalSecurity
   - Trinkets
