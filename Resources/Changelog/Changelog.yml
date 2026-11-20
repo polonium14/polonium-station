@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: peaceful-joules
-  changes:
-  - message: Airlocks that were hacked via access breaker no longer have buggy examine
-      window.
-    type: Fix
-  id: 9642
-  time: '2026-04-16T17:25:23.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43564
 - author: perryprog
   changes:
   - message: Door wire panels are now viewed via Alt + E, or via right clicking on
@@ -5201,3 +5193,13 @@
   id: 10136
   time: '2026-11-20T16:52:30.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1280
+- author: Nikita
+  changes:
+  - message: "Nowe d\u017Awi\u0119ki dla nowej mikrofal\xF3wki"
+    type: Add
+  - message: "Poprawiono bug, kt\xF3ry powodowa\u0142 wielokrotne odtwarzanie d\u017A\
+      wi\u0119ku zamkni\u0119cia mikrofali w jednym momencie"
+    type: Fix
+  id: 10137
+  time: '2026-11-20T21:12:47.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1281
