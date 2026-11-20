@@ -219,6 +219,9 @@
   components:
   - type: Destructible
     thresholds: []
+  # a microwave that explodes from metal stays broken and shut, which would end the cooking step for good
+  - type: Microwave
+    explosionChance: 0
 
 # stock mk58 spawns with a loaded magazine, and the range is about filling one and putting it in.
 # both slots are spelled out whole so the null sticks whether the slot map merges or replaces
