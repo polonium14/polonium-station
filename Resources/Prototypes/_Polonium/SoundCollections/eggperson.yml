@@ -1,0 +1,7 @@
+- type: soundCollection
+  id: EggpersonSpeech
+  files:
+  - /Audio/_Polonium/Voice/Eggperson/eggcrack1.ogg
+  - /Audio/_Polonium/Voice/Eggperson/eggcrack2.ogg
+  - /Audio/_Polonium/Voice/Eggperson/eggcrack3.ogg
+  - /Audio/_Polonium/Voice/Eggperson/eggcrack4.ogg
