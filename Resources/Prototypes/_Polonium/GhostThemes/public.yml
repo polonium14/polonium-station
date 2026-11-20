@@ -1,0 +1,217 @@
+- type: ghostTheme
+  id: Default
+  name: ghost-theme-default-name
+  description: ghost-theme-default-desc
+  sprite:
+    sprite: Mobs/Ghosts/ghost_human.rsi
+    state: animated
+  keepGhostSprite: true
+  colorizable: true
+  category: Public
+
+- type: ghostTheme
+  id: Sheet
+  name: ghost-theme-sheet-name
+  description: ghost-theme-sheet-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-sheet
+  colorizable: true
+  category: Public
+
+- type: ghostTheme
+  id: Cat
+  name: ghost-theme-cat-name
+  description: ghost-theme-cat-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-cat
+  colorizable: true
+  category: Public
+
+- type: ghostTheme
+  id: Ian
+  name: ghost-theme-ian-name
+  description: ghost-theme-ian-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-ian
+  colorizable: true
+  category: Public
+
+- type: ghostTheme
+  id: Moth
+  name: ghost-theme-moth-name
+  description: ghost-theme-moth-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-moff
+  colorizable: true
+  category: Public
+  playtime: 5h
+
+- type: ghostTheme
+  id: Skeleton
+  name: ghost-theme-skeleton-name
+  description: ghost-theme-skeleton-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-skeleton
+  colorizable: true
+  category: Public
+  playtime: 5h
+
+- type: ghostTheme
+  id: Fox
+  name: ghost-theme-fox-name
+  description: ghost-theme-fox-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-fox
+  colorizable: true
+  category: Public
+  playtime: 5h
+
+- type: ghostTheme
+  id: Mothroach
+  name: ghost-theme-mothroach-name
+  description: ghost-theme-mothroach-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-mothroach
+  colorizable: true
+  category: Public
+  playtime: 10h
+
+- type: ghostTheme
+  id: Scurret
+  name: ghost-theme-scurret-name
+  description: ghost-theme-scurret-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-scurret
+  colorizable: true
+  category: Public
+  playtime: 10h
+
+- type: ghostTheme
+  id: IanCute
+  name: ghost-theme-ian-cute-name
+  description: ghost-theme-ian-cute-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-ian_cute
+  colorizable: true
+  category: Public
+  playtime: 10h
+
+- type: ghostTheme
+  id: Penguin
+  name: ghost-theme-penguin-name
+  description: ghost-theme-penguin-desc
+  sprite:
+    sprite: _Polonium/Mobs/Ghosts/GhostThemes/penguin.rsi
+    state: penguin
+  colorizable: true
+  category: Public
+  playtime: 10h
+
+- type: ghostTheme
+  id: Funkypurp
+  name: ghost-theme-funkypurp-name
+  description: ghost-theme-funkypurp-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-funkypurp
+  category: Public
+  playtime: 25h
+
+- type: ghostTheme
+  id: Blazeit
+  name: ghost-theme-blazeit-name
+  description: ghost-theme-blazeit-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-blazeit
+  category: Public
+  playtime: 25h
+
+- type: ghostTheme
+  id: Mellow
+  name: ghost-theme-mellow-name
+  description: ghost-theme-mellow-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-mellow
+  category: Public
+  playtime: 25h
+
+- type: ghostTheme
+  id: Cateor
+  name: ghost-theme-cateor-name
+  description: ghost-theme-cateor-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/cateor.rsi
+    state: cateor
+  category: Public
+  playtime: 25h
+
+- type: ghostTheme
+  id: Revenant
+  name: ghost-theme-revenant-name
+  description: ghost-theme-revenant-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-revenant
+  category: Public
+  playtime: 50h
+
+- type: ghostTheme
+  id: Carpman
+  name: ghost-theme-carpman-name
+  description: ghost-theme-carpman-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-carpman
+  category: Public
+  playtime: 50h
+
+- type: ghostTheme
+  id: Firewraith
+  name: ghost-theme-firewraith-name
+  description: ghost-theme-firewraith-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-firewraith
+  category: Public
+  playtime: 50h
+
+- type: ghostTheme
+  id: Jellyfish
+  name: ghost-theme-jellyfish-name
+  description: ghost-theme-jellyfish-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/jellyfish.rsi
+    state: ghost_jellyfish
+  category: Public
+  playtime: 50h
+
+- type: ghostTheme
+  id: Iridescent
+  name: ghost-theme-iridescent-name
+  description: ghost-theme-iridescent-desc
+  sprite:
+    sprite: _Polonium/Mobs/Ghosts/GhostThemes/iridescent.rsi
+    state: iridescent
+  category: Public
+  playtime: 50h
+
+- type: ghostTheme
+  id: King
+  name: ghost-theme-king-name
+  description: ghost-theme-king-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+    state: ghost-king
+  category: Public
+  playtime: 100h

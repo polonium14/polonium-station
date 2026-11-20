@@ -36,7 +36,45 @@ jobs:
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python packages
+        run: pip install -r Tools/crowdinCI/requirements.txt
+
+      - name: Pick files to upload
+        id: files
+        env:
+          EVENT: ${{ github.event_name }}
+          GH_TOKEN: ${{ github.token }}
+          UPLOAD_STEP: Upload sources and pl-PL
+        run: |
+          mode=full
+          if [ "$EVENT" = push ]; then
+            # The newest run whose upload step succeeded. The steps after it may have failed.
+            base=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/crowdin-upload.yml/runs?branch=master&status=completed&per_page=30" \
+                --jq '.workflow_runs[] | "\(.id) \(.head_sha)"' |
+              while read -r id sha; do
+                step=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$id/jobs" \
+                  --jq '.jobs[].steps[] | select(.name == env.UPLOAD_STEP) | .conclusion')
+                if [ "$step" = success ]; then echo "$sha"; break; fi
+              done)
+            echo "Last upload: ${base:-not found}"
+            if [ -n "$base" ] && git fetch --no-tags --depth=1 origin "$base"; then
+              mode=$(python Tools/crowdinCI/changed_config.py --base "$base" --output crowdin.changed.yml)
+            fi
+          fi
+          echo "Mode: $mode"
+          case "$mode" in
+            changed) echo "config=crowdin.changed.yml" >> "$GITHUB_OUTPUT" ;;
+            full) echo "config=crowdin.yml" >> "$GITHUB_OUTPUT" ;;
+          esac
+
       - name: Upload sources and pl-PL
+        if: steps.files.outputs.config != ''
         uses: crowdin/github-action@v2
         with:
           upload_sources: true
@@ -47,7 +85,7 @@ jobs:
           auto_approve_imported: false
           import_eq_suggestions: false
           crowdin_branch_name: master
-          config: crowdin.yml
+          config: ${{ steps.files.outputs.config }}
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
@@ -72,12 +110,6 @@ jobs:
           fi
           echo "base=$base" >> "$GITHUB_OUTPUT"
 
-      - name: Set up Python
-        if: steps.range.outputs.base != ''
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
       - name: Approve changed pl-PL keys
         if: steps.range.outputs.base != ''
         env:
@@ -86,5 +118,4 @@ jobs:
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
         run: |
           git fetch --no-tags --depth=1 origin "$BASE"
-          pip install -r Tools/crowdinCI/requirements.txt
           python Tools/crowdinCI/approve_changed.py --base "$BASE" --head HEAD

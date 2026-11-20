@@ -1,5 +1,6 @@
 using Content.Client.FeedbackPopup;
 using Content.Client.Gameplay;
+using Content.Client._Polonium.DiscordLinking; // Polonium
 using Content.Client._Polonium.Survey;
 using Content.Client._Polonium.Tutorial;
 using Content.Client.UserInterface.Controls;
@@ -32,6 +33,7 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
     [Dependency] private FeedbackPopupUIController _feedback = null!;
     [Dependency] private ILocalizationManager _loc = default!;
     [Dependency] private RoundSurveyCommentUIController _surveyComment = default!; // Polonium
+    [Dependency] private DiscordLinkUIController _discordLink = default!; // Polonium
     [UISystemDependency] private readonly TutorialPresentationSystem? _tutorial = default;
 
     private Options.UI.EscapeMenu? _escapeWindow;
@@ -85,6 +87,13 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
         };
 
         _cfg.OnValueChanged(CCVars.SurveyEnabled, OnSurveyEnabledChanged, true);
+
+        _escapeWindow.DiscordLinkButton.OnPressed += _ =>
+        {
+            CloseEscapeWindow();
+            _discordLink.ToggleWindow();
+        };
+        _discordLink.SetEscapeButton(_escapeWindow.DiscordLinkButton);
         // POLONIUM END
 
         _escapeWindow.ChangelogButton.OnPressed += _ =>
@@ -155,6 +164,7 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
     {
         _cfg.UnsubValueChanged(CCVars.SeeOwnNotes, OnSeeOwnNotesChanged);
         _cfg.UnsubValueChanged(CCVars.SurveyEnabled, OnSurveyEnabledChanged); // Polonium
+        _discordLink.SetEscapeButton(null); // Polonium
 
         if (_escapeWindow != null)
         {

@@ -1,0 +1,44 @@
+- type: entity
+  parent: [BaseWeaponBattery, BaseMajorContraband]
+  id: UllmanWeaponPulsePistol
+  name: DP-17
+  description: A heavy pulse pistol that fires an ultraviolet beam. Its cell tops itself up after a few quiet seconds, so it never needs a recharger.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Battery/ui_pistol.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-1
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Tag
+    tags:
+    - Sidearm
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/advancedlasergun.rsi
+    slots:
+    - suitStorage
+    - Belt
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
+  - type: BatteryAmmoProvider
+    proto: UllmanPulse
+    fireCost: 100
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 1500
+  - type: BatterySelfRecharger
+    autoRechargeRate: 50
+    autoRechargePauseTime: 10

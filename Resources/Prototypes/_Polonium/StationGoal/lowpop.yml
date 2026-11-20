@@ -1,0 +1,68 @@
+- type: stationGoal
+  id: ObservationPost
+  text: station-goal-observation-post
+  maxPlayers: 18
+
+- type: stationGoal
+  id: SmallShuttle
+  text: station-goal-small-shuttle
+  maxPlayers: 18
+
+- type: stationGoal
+  id: MaintRenovationBar
+  text: station-goal-maint-renovation-bar
+  maxPlayers: 18
+  weight: 0.25
+
+- type: stationGoal
+  id: MaintRenovationReadingRoom
+  text: station-goal-maint-renovation-reading-room
+  maxPlayers: 18
+  weight: 0.25
+
+- type: stationGoal
+  id: MaintRenovationBoxing
+  text: station-goal-maint-renovation-boxing
+  maxPlayers: 18
+  weight: 0.25
+
+- type: stationGoal
+  id: MaintRenovationMusic
+  text: station-goal-maint-renovation-music
+  maxPlayers: 18
+  weight: 0.25
+
+- type: stationGoal
+  id: Museum
+  text: station-goal-museum
+  maxPlayers: 18
+
+- type: stationGoal
+  id: DeparturesCheckpoint
+  text: station-goal-departures-checkpoint
+  maxPlayers: 18
+
+- type: stationGoal
+  id: ZooSmall
+  text: station-goal-zoo-small
+  maxPlayers: 18
+
+- type: stationGoal
+  id: BotanySmall
+  text: station-goal-botany-small
+  maxPlayers: 18
+
+- type: stationGoal
+  id: SafetyInspection
+  text: station-goal-safety-inspection
+  maxPlayers: 18
+
+- type: stationGoal
+  id: CentcomBounties
+  text: station-goal-centcom-bounties
+  maxPlayers: 18
+
+- type: stationGoal
+  id: OrganBloodDrive
+  text: station-goal-organ-blood-drive
+  maxPlayers: 18

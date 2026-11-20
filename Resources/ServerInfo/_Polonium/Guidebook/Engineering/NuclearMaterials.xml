@@ -670,4 +670,153 @@
     - Pręt sterujący: 0-2 (zależy od wsunięcia)
     - Kanał gazowy: 0.5
     - Wymiennik ciepła: 0.1
+	
+	# Efektywność Materiałowa Części Turbiny
+	Te tabelki pokazują liste efektów jakie ma materiał na turbine.
+	
+	## Łopatki
+	<Table Columns="3">
+		<ColorBox>
+			<Box>
+				Materiał
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box>
+				Integralność
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box>
+				Bezwładność
+			</Box>
+		</ColorBox>
+
+		<ColorBox Color="#b18b25">
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				Mosiądz
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				10
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				1000
+			</Box>
+		</ColorBox>
+
+		<ColorBox Color="#80ffff">
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				Diament
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				35
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				1200
+			</Box>
+		</ColorBox>
+
+		<ColorBox Color="#ffd700">
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				Złoto
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				10
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				1200
+			</Box>
+		</ColorBox>
+
+		<ColorBox Color="#696969">
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				Plastal
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				15
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				1400
+			</Box>
+		</ColorBox>
+
+		<ColorBox Color="#808080">
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				Stal
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				15
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				800
+			</Box>
+		</ColorBox>
+    </Table>
+
+	## Statory
+	<Table Columns="2">
+		<ColorBox>
+			<Box>
+				Materiał
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box>
+				Efektywność
+			</Box>
+		</ColorBox>
+		
+		<ColorBox Color="#ffd700">
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				Złoto
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				140%
+			</Box>
+		</ColorBox>
+
+		<ColorBox Color="#c0c0c0">
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				Srebro
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				120%
+			</Box>
+		</ColorBox>
+
+		<ColorBox Color="#808080">
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				Stal
+			</Box>
+		</ColorBox>
+		<ColorBox>
+			<Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
+				100%
+			</Box>
+		</ColorBox>
+    </Table>
 </Document>

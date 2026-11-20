@@ -120,7 +120,7 @@
     unlockOnClick: false
   - type: GuideHelp
     guides:
-    - NuclearReactor
+    - GasTurbine
     - Power
 
 - type: entity

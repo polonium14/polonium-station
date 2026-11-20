@@ -1,0 +1,59 @@
+- type: entity
+  parent: [BaseWeaponLightMachineGun, BaseCentcommContraband]
+  id: WeaponLMGGrizzly
+  name: Grizzly
+  description: A medium machine gun for fire support. It takes .30 ammo belts and ordinary .30 rifle magazines alike, and it is too heavy to fire without both hands on it.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/LMGs/grizzly/Grizzly-icon.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: base-unshaded
+      shader: unshaded
+  - type: Clothing
+    sprite: _Mono/Objects/Weapons/Guns/LMGs/grizzly/Grizzly-inhands.rsi
+  - type: Item
+    sprite: _Mono/Objects/Weapons/Guns/LMGs/grizzly/Grizzly-inhands.rsi
+    shape:
+    - 0,0,5,3
+  - type: GunRequiresWield
+  - type: Gun
+    minAngle: 22
+    maxAngle: 38
+    angleIncrease: 3
+    angleDecay: 12
+    fireRate: 5
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleBox
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineLightRifleBox
+          - MagazineLightRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance

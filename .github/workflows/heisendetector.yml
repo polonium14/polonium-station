@@ -2,9 +2,8 @@ name: Hunt for Heisentests
 
 on:
   workflow_dispatch:
-  # every 15 minutes
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "0 3 * * *"
 
 jobs:
   hunt:

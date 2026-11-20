@@ -12,5 +12,5 @@ ent-EnergyKatana = katana energetyczna
     .desc = Katana nasycona silną energią.
 ent-Claymore = wielki miecz
     .desc = Starożytna broń wojenna.
-ent-Throngler = tłum
+ent-Throngler = Throngler
     .desc = Po co to w ogóle robić?

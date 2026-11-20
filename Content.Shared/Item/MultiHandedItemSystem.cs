@@ -24,6 +24,10 @@ public sealed partial class MultiHandedItemSystem : EntitySystem
 
     private void OnEquipped(Entity<MultiHandedItemComponent> ent, ref GotEquippedHandEvent args)
     {
+        // Polonium fix: don't spawn virtual items when applying state, because the virtual items will be spawned by the state application itself
+        if (_timing.ApplyingState)
+            return;
+
         for (var i = 0; i < ent.Comp.HandsNeeded - 1; i++)
         {
             _virtualItem.TrySpawnVirtualItemInHand(ent.Owner, args.User);

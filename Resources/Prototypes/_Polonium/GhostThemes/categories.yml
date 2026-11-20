@@ -1,0 +1,23 @@
+- type: ghostThemeCategory
+  id: Public
+  name: ghost-theme-category-public
+  priority: 0
+
+- type: ghostThemeCategory
+  id: Supporters
+  name: ghost-theme-category-supporters
+  priority: 1
+  access: Supporters
+
+- type: ghostThemeCategory
+  id: Contributors
+  name: ghost-theme-category-contributors
+  priority: 2
+  access: Contributors
+
+- type: ghostThemeCategory
+  id: Admins
+  name: ghost-theme-category-admins
+  priority: 3
+  access: Admins
+  hideIfLocked: true

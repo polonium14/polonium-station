@@ -1,0 +1,30 @@
+- type: entity
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseCentcommContraband]
+  id: WeaponShotgunFlagbearer
+  name: Flagbearer
+  description: An automatic shotgun built around a fixed sixteen-shell drum. It holds a lot and takes a long while to top up, one shell at a time. Uses .50 shotgun shells.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Shotguns/flagbearer.rsi
+    layers:
+    - state: icon
+      map: ["enum.GunVisualLayers.Base"]
+    - state: icon-unshaded
+      shader: unshaded
+  - type: Clothing
+    sprite: _Mono/Objects/Weapons/Guns/Shotguns/flagbearer_inhands_32x.rsi
+  - type: Item
+    size: Huge
+    sprite: _Mono/Objects/Weapons/Guns/Shotguns/flagbearer_inhands_32x.rsi
+    shape:
+    - 0,0,4,1
+  - type: GunRequiresWield
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+  - type: BallisticAmmoProvider
+    capacity: 16
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.8
+    sprintModifier: 0.8

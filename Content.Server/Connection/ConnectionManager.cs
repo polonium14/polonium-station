@@ -8,6 +8,8 @@ using Content.Server.Connection.IPIntel;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.Preferences.Managers;
+using Content.Server._Polonium.DiscordLinking; // Polonium
+using Content.Shared._Polonium.DiscordLinking; // Polonium
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Players.PlayTimeTracking;
@@ -63,6 +65,7 @@ namespace Content.Server.Connection
         [Dependency] private IHttpClientHolder _http = default!;
         [Dependency] private IAdminManager _adminManager = default!;
         [Dependency] private IEntityManager _entityManager = default!;
+        [Dependency] private DiscordLinkManager _discordLink = default!; // Polonium
 
         private ServerGameTicker? _ticker;
 
@@ -153,6 +156,10 @@ namespace Content.Server.Connection
                 var properties = new Dictionary<string, object>();
                 if (reason == ConnectionDenyReason.Full)
                     properties["delay"] = _cfg.GetCVar(CCVars.GameServerFullReconnectDelay);
+
+                // Polonium: the connecting screen shows a button that opens this page
+                if (reason == ConnectionDenyReason.DiscordLink && _discordLink.TakeDenyUrl(userId) is { } discordLinkUrl)
+                    properties[SharedDiscordLink.DenyUrlProperty] = discordLinkUrl;
 
                 e.Deny(new NetDenyReason(msg, properties));
             }
@@ -337,6 +344,11 @@ namespace Content.Server.Connection
                     break;
                 }
             }
+
+            // Polonium: players who have to link their Discord account first. Before IPIntel to keep its API limit.
+            if (await _discordLink.CheckConnection(userId, e.UserName, e.AuthType) is { } discordDenial)
+                return (ConnectionDenyReason.DiscordLink, discordDenial.Message, null);
+            // Polonium end
 
             // ALWAYS keep this at the end, to preserve the API limit.
             if (_cfg.GetCVar(CCVars.GameIPIntelEnabled) && adminData == null)
