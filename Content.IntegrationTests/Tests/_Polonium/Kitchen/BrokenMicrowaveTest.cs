@@ -11,7 +11,6 @@ namespace Content.IntegrationTests.Tests._Polonium.Kitchen;
 public sealed class BrokenMicrowaveTest : InteractionTest
 {
     private const string Microwave = "KitchenMicrowave";
-    private const string Mess = "FoodBadRecipe";
     private const uint CookSeconds = 10;
     private const int CookTimeKey = 2;
     private const int ExplosionTicks = 15;
@@ -98,7 +97,8 @@ public sealed class BrokenMicrowaveTest : InteractionTest
         var prototypes = Comp.Storage.ContainedEntities
             .Select(uid => SEntMan.GetComponent<MetaDataComponent>(uid).EntityPrototype?.ID)
             .ToList();
-        Assert.That(prototypes, Is.EquivalentTo(new[] { Mess, Mess, "FoodBreadBun" }));
+        var mess = Comp.FailureResult.Id;
+        Assert.That(prototypes, Is.EquivalentTo(new[] { mess, mess, "FoodBreadBun" }));
 
         await RunSeconds(CookSeconds + 1);
         AssertComp<ActiveMicrowaveComponent>(false);

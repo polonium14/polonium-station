@@ -31,6 +31,18 @@ public sealed partial class MicrowaveSoundSystem : EntitySystem
             sounds.NextSpark = now + _random.Next(sounds.MinSparkInterval, sounds.MaxSparkInterval);
             _audio.PlayPvs(sounds.SparkSound, uid);
         }
+
+        // An instant cook is long over by the time the fire breaks out, so this does not wait on the active microwave.
+        var ignitions = EntityQueryEnumerator<MicrowaveIgnitionComponent, MicrowaveSoundsComponent, MicrowaveComponent>();
+        while (ignitions.MoveNext(out var uid, out var ignition, out var sounds, out var microwave))
+        {
+            if (ignition.At > now)
+                continue;
+
+            RemCompDeferred<MicrowaveIgnitionComponent>(uid);
+            if (!microwave.Broken)
+                _audio.PlayPvs(sounds.IgniteSound, uid);
+        }
     }
 
     // The game's own system holds the startup and shutdown of this component,
@@ -44,9 +56,7 @@ public sealed partial class MicrowaveSoundSystem : EntitySystem
             return;
 
         sounds.NextSpark = _timing.CurTime + sounds.MinSparkInterval;
-        if (BurnedContents((ent, microwave)))
-            _audio.PlayPvs(sounds.BurnSound, ent);
-
+        PlayBurning((ent, microwave), sounds);
         if (HasDoorMoved(ent))
             _audio.PlayPvs(sounds.DoorCloseSound, ent);
     }
@@ -70,15 +80,21 @@ public sealed partial class MicrowaveSoundSystem : EntitySystem
         return ent.Comp.TotalTime > 0f;
     }
 
-    private bool BurnedContents(Entity<MicrowaveComponent> microwave)
+    private void PlayBurning(Entity<MicrowaveComponent> microwave, MicrowaveSoundsComponent sounds)
     {
+        var melted = false;
+        var ignited = false;
         foreach (var item in _microwave.GetMicrowaveContents(microwave.AsNullable()))
         {
-            // The start either swaps a thing for the mess on the spot or leaves it to be deleted.
-            if (EntityManager.IsQueuedForDeletion(item) || MetaData(item).CreationTick == _timing.CurTick)
-                return true;
+            // The start swaps a thing that melts for the mess on the spot, and leaves a thing that burns up to be deleted.
+            melted |= MetaData(item).CreationTick == _timing.CurTick;
+            ignited |= EntityManager.IsQueuedForDeletion(item);
         }
 
-        return false;
+        if (melted)
+            _audio.PlayPvs(sounds.BurnSound, microwave);
+
+        if (ignited)
+            EnsureComp<MicrowaveIgnitionComponent>(microwave).At = _timing.CurTime + sounds.IgniteDelay;
     }
 }

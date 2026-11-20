@@ -14,13 +14,15 @@
       - NukeDisk
   - type: MicrowaveSounds # Polonium: the door, sparks and burning that the microwave window shows
     doorCloseSound:
-      path: /Audio/Items/toolbox_close.ogg
+      path: /Audio/_Polonium/Machines/Microwave/door_close.ogg
     doorOpenSound:
-      path: /Audio/Items/toolbox_open.ogg
+      path: /Audio/_Polonium/Machines/Microwave/door_open.ogg
     sparkSound:
       collection: sparks
     burnSound:
       path: /Audio/Effects/sizzle.ogg
+    igniteSound:
+      path: /Audio/_Polonium/Machines/Microwave/ignite.ogg
   - type: Appearance
   - type: GenericVisualizer
     visuals:

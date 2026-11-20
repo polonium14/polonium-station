@@ -1,0 +1,9 @@
+- files: ["door_open.ogg", "door_close.ogg"]
+  license: "CC0-1.0"
+  copyright: "microwave_open_close.wav by j1987 on Freesound, cut and modified by nikitosych (github)"
+  source: "https://freesound.org/people/j1987/sounds/72623/"
+
+- files: ["ignite.ogg"]
+  license: "CC0-1.0"
+  copyright: "Basic Fire Whoosh 2 by LookIMadeAThing on Freesound, cut and modified by nikitosych (github)"
+  source: "https://freesound.org/people/LookIMadeAThing/sounds/260555/"
