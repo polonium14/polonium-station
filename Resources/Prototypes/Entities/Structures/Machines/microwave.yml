@@ -6,6 +6,12 @@
   components:
   - type: Microwave
     capacity: 10
+  - type: MicrowaveReactionVisuals # Polonium: contents that spark in the microwave window
+    sparking:
+      components:
+      - IdCard
+      - PAI
+      - NukeDisk
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -45,7 +51,7 @@
   - type: UserInterface
     interfaces:
       enum.MicrowaveUiKey.Key:
-        type: MicrowaveBoundUserInterface
+        type: MicrowaveDeviceBoundUserInterface # Polonium: the microwave drawn as a device
   - type: Physics
   - type: Fixtures
     fixtures:
