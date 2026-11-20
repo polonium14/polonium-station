@@ -140,7 +140,8 @@ public abstract partial class MicrowaveSystem
         out List<EntityUid> ingredientContents)
     {
         ingredientContents = contents.ToList();
-        foreach (var item in contents)
+        // Polonium: iterate a copy, burning an item changes the container and threw "Collection was modified"
+        foreach (var item in contents.ToArray())
         {
             MicrowaveItem(microwave,
                 item,
