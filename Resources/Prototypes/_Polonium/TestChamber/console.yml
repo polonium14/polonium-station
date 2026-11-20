@@ -1,0 +1,31 @@
+- type: entity
+  parent: BaseComputer
+  id: PoloniumTestChamberConsole
+  name: test chamber console
+  description: Drops item kits for the PRs being tested and cleans up after the tests. Only for admins with the Debug permission.
+  suffix: DEBUG
+  components:
+  - type: TestChamberConsole
+  - type: ApcPowerReceiver
+    needsPower: false
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm_logs
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: ActivatableUI
+    key: enum.TestChamberUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.TestChamberUiKey.Key:
+        type: TestChamberBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: Godmode
