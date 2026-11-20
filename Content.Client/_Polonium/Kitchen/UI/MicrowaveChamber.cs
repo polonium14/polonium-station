@@ -196,6 +196,20 @@ public sealed partial class MicrowaveChamber : Control
         return false;
     }
 
+    public bool MeltingComplete
+    {
+        get
+        {
+            foreach (var item in _items)
+            {
+                if (item.Leave < 0f && item.Stage == Stage.Melting && (_cookTime < MeltStart || item.StageTime < 1f))
+                    return false;
+            }
+
+            return true;
+        }
+    }
+
     /// <summary>
     /// Keeps the current contents on the plate whatever the game says, so that an instant cook can still be watched.
     /// </summary>
@@ -1049,6 +1063,9 @@ public sealed partial class MicrowaveChamber : Control
 
     private void UpdateHover()
     {
+        if (_mouse == null)
+            return;
+
         EntityUid? hovered = null;
         if (Interactive && _mouse is { } mouse)
         {

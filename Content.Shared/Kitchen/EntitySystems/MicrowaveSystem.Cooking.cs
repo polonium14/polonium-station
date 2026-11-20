@@ -49,6 +49,8 @@ public abstract partial class MicrowaveSystem
 
         ent.Comp.Broken = true;
         DirtyField(ent.AsNullable(), nameof(ent.Comp.Broken));
+        StopCooking((ent.Owner, ent.Comp));
+        Container.EmptyContainer(ent.Comp.Storage);
     }
 
     /// <summary>
