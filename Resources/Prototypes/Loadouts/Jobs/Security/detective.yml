@@ -50,7 +50,6 @@
   id: DetectiveCoatGrey
   equipment:
     outerClothing: ClothingOuterCoatDetectiveLoadoutGrey
-    
 
 # Detective service weapon - Polonium    
 - type: loadout
@@ -71,5 +70,3 @@
   storage:
     belt: 
     - WeaponEnergyRevolver
-    
-  
