@@ -175,11 +175,11 @@ loadout-group-detective-head = Detective head
 loadout-group-detective-neck = Detective neck
 loadout-group-detective-jumpsuit = Detective jumpsuit
 loadout-group-detective-outerclothing = Detective outer clothing
-
+loadout-group-detective-serviceweapon = Detective service weapon
 loadout-group-security-cadet-hat = Security cadet hat
 loadout-group-security-cadet-jumpsuit = Security cadet jumpsuit
 loadout-group-security-star = Security Star
-
+loadout-group-security-serviceweapon = Security service weapon
 # Medical
 loadout-group-medical-mask = Medical mask
 
@@ -220,6 +220,7 @@ loadout-group-brigmedic-jumpsuit = Brigmedic jumpsuit
 loadout-group-brigmedic-backpack = Brigmedic backpack
 loadout-group-brigmedic-outerclothing = Brigmedic outer clothing
 loadout-group-brigmedic-glasses = Brigmedic glasses
+loadout-group-brigmedic-belt = Brigmedic belt
 
 loadout-group-jobtoys = Zabawki
 

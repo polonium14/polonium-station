@@ -108,6 +108,14 @@
   - BrigmedicNormGlasses
   - BrigmedicHud
 
+- type: loadoutGroup
+  id: BrigmedicBelt
+  name: loadout-group-brigmedic-belt
+  loadouts:
+  - BrigmedicMedicalBelt
+  - BrigmedicBelt
+  - BrigmedicWebbing
+  
 # Role loadout
 - type: roleLoadout
   id: JobBrigmedic
@@ -117,8 +125,9 @@
   - BrigmedicOuterClothing
   - BrigmedicGlasses
   - BrigmedicBackpack
-  - SecurityBelt
+  - BrigmedicBelt  
   - SecurityShoes
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
+

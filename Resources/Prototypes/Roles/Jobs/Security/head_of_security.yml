@@ -100,11 +100,11 @@
     id: HoSPDA
     gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetAltSecurity
-    pocket1: WeaponPistolMk58
+#    pocket1: WeaponPistolMk58 # Polonium: teraz się wybiera broń służbową w loadout
   storage:
     back:
     - Flash
-    - MagazinePistol
+#    - MagazinePistol # Polonium: teraz się wybiera broń służbową w loadout
 
 - type: chameleonOutfit
   id: HeadOfSecurityChameleonOutfit
