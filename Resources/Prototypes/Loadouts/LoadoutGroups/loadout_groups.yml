@@ -1352,6 +1352,7 @@
   loadouts:
   - CombatBoots # Polonium: funkcjonalnie to samo
   - JackBoots
+  - CombatBoots # Polonium: funkcjonalnie to samo
   - SecurityWinterBoots
 
 - type: loadoutGroup
