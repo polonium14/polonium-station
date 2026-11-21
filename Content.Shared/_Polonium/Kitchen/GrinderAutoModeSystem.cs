@@ -6,7 +6,7 @@ namespace Content.Shared._Polonium.Kitchen;
 /// <summary>
 /// Lets the window of a reagent grinder ask for one automatic mode by name. The game itself only steps to the next mode.
 /// </summary>
-public sealed class GrinderAutoModeSystem : EntitySystem
+public sealed partial class GrinderAutoModeSystem : EntitySystem
 {
     [Dependency] private SharedReagentGrinderSystem _grinder = default!;
 
