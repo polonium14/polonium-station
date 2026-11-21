@@ -16,7 +16,7 @@
   description: Prints equipment for use by the musician.
   components:
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Polonium/Structures/Machines/techfab.rsi # Polonium: redrawn to match the operator console
     layers:
     - state: icon
       map: ["enum.LatheVisualLayers.IsRunning"]
@@ -50,7 +50,7 @@
   description: Prints equipment for use by cargo personnel.
   components:
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Polonium/Structures/Machines/techfab.rsi # Polonium: redrawn to match the operator console
     layers:
     - state: icon
       map: ["enum.LatheVisualLayers.IsRunning"]
