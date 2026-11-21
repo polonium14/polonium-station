@@ -493,9 +493,12 @@
   parent: BaseStationEventLongDelay
   components:
   - type: StationEvent
-    earliestStart: 15
+    startAnnouncement: station-event-kudzu-growth-start-announcement # Polonium: załoga ma szansę zareagować
+    startAudio: # Polonium
+      path: /Audio/_Polonium/Announcements/attention.ogg
+    earliestStart: 10 # Polonium: było 15
     minimumPlayers: 15
-    weight: 7
+    weight: 2 # Polonium: było 7
     duration: 240
     eventType: Maintenance
   - type: GameRule

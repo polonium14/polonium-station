@@ -27,9 +27,9 @@
 #
 # Sumy wag, kiedy wszystko jest dostępne (bazowa szansa zdarzenia = waga / suma):
 #   Low      104, plus wpisy z "prob", jeśli ich rzut się uda
-#   Mid      152
-#   MidHigh  188
-#   High     190
+#   Mid      147,25
+#   MidHigh  183,25
+#   High     185,25
 #   Antagoniści z ról duchów dokładają 18,5 (tabela łagodna) albo 42,6 (pełna), dopóki jest dla nich miejsce.
 
 # ====================================================================================================
@@ -85,7 +85,7 @@
 # Robocze: zdarzenia, które dają działom coś do naprawienia.
 # Używane przez: Mid, MidHigh, High.
 # MiniDragonMigration daje rolę ducha, która jest samotnym antagonistą, ale do ghostAntagLimit się nie wlicza.
-# Suma wag: 48
+# Suma wag: 43,25
 - type: entityTable
   id: SecretPlusWorkEventsTable
   table: !type:AllSelector
@@ -94,7 +94,7 @@
     - id: GasLeak                   # waga 8    koszt 80    gracze 0   od  5 min   ponownie po 30 min
     - id: GreytideVirusSecretPlus   # waga 4    koszt 200   gracze 15  od  5 min   ponownie po 20 min
     - id: IonStorm                  # waga 8    koszt 150   gracze 0   od  5 min   ponownie po 20 min
-    - id: KudzuGrowth               # waga 7    koszt 80    gracze 15  od 15 min   ponownie po 30 min
+    - id: KudzuGrowth               # waga 2.25 koszt 80    gracze 15  od 10 min   ponownie po 30 min
     - id: MiniDragonMigration       # waga 3    koszt 25    gracze 1   od 15 min   ponownie po 30 min
     - !type:EventSelector
       id: SpaceDustMinor            # waga 5    koszt 30    gracze 0   od 10 min   ponownie po 20 min
@@ -107,7 +107,7 @@
 # Robocze dla Low: cztery zdarzenia, z czego trzy mają własne progi graczy.
 # Kudzu zostaje ze standardowym progiem, takim samym jak w tabeli roboczej.
 # Używane przez: Low, z "prob" (patrz SecretPlusTable).
-# Suma wag: 31
+# Suma wag: 26,25
 - type: entityTable
   id: SecretPlusLowWorkEventsTable
   table: !type:AllSelector
@@ -121,7 +121,7 @@
     - !type:EventSelector
       id: IonStorm                   # waga 8    koszt 150   gracze 6   od  5 min   ponownie po 20 min
       minimumPlayers: 6
-    - id: KudzuGrowth                # waga 7    koszt 80    gracze 15  od 15 min   ponownie po 30 min
+    - id: KudzuGrowth                # waga 2.25 koszt 80    gracze 15  od 10 min   ponownie po 30 min
 
 # Niszczące: wrogie moby, rozszczelnienia i meteory.
 # Używane przez: MidHigh i High, a Low z "prob" (patrz SecretPlusTable).
@@ -195,7 +195,7 @@
 
 # Low: cały czas spokojne zdarzenia i po trochu wszystkiego innego.
 # Z symulacji przy 20 graczach wychodzi mniej więcej jedno niszczące zdarzenie na cztery rundy,
-# każde robocze zdarzenie Low w 9-13% rund, mały pył kosmiczny w 14% rund
+# każde robocze zdarzenie Low w 9-13% rund (kudzu około 4%), mały pył kosmiczny w 14% rund
 # i mini smok w około 17% rund (w pozostałych presetach 20-24%).
 # Wiersz SpaceDustMinor ma te same wartości co w tabeli roboczej. Jak zmieniasz jeden, zmień też drugi.
 - type: entityTable

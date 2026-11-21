@@ -85,7 +85,8 @@
   - type: AtmosExposed
   - type: Kudzu
     growthTickChance: 0.3
-    spreadChance: 0.4
+    spreadChance: 0.3 # Polonium: nerf, kudzu rosło za szybko
+    failedSpreadUsesUpdate: true # Polonium
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.2
     sprintSpeedModifier: 0.2
@@ -137,6 +138,7 @@
   - type: Kudzu
     spriteVariants: 5
     spreadChance: 0.01
+    failedSpreadUsesUpdate: false # Polonium: anomalia kwiatowa zostaje bez nerfu
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.8
     sprintSpeedModifier: 0.8
@@ -205,7 +207,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 40
+        damage: 30 # Polonium: za space-wizards/space-station-14#44888
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -219,7 +221,8 @@
       - Flesh
   - type: Kudzu
     growthTickChance: 0.1
-    spreadChance: 0.4
+    spreadChance: 0.2 # Polonium: za space-wizards/space-station-14#44888
+    failedSpreadUsesUpdate: true # Polonium
     # Heals each time it manages to do a growth tick:
     damageRecovery:
       types:

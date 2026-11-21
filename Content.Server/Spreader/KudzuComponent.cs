@@ -20,6 +20,13 @@ public sealed partial class KudzuComponent : Component
     [DataField]
     public float SpreadChance = 1f;
 
+    // Polonium
+    /// <summary>
+    /// If true, a failed spread roll uses up a spreader update, so <see cref="SpreadChance"/> sets the real growth rate.
+    /// </summary>
+    [DataField]
+    public bool FailedSpreadUsesUpdate;
+
     /// <summary>
     /// How much damage is required to reduce growth level
     /// </summary>
