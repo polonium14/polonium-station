@@ -14,13 +14,34 @@ namespace Content.Client.Weapons.Ranged.Systems;
 
 public sealed partial class GunSystem
 {
+    private readonly List<EntityUid> _staleAmmoCounters = new(); // Polonium
+
     private void OnAmmoCounterCollect(Entity<AmmoCounterComponent> ent, ref ItemStatusCollectMessage args)
     {
         RefreshControl(ent);
 
+        // Polonium: gun put in hand by the server state that spawned it has no ammo data yet
+        if (Timing.ApplyingState)
+            _staleAmmoCounters.Add(ent);
+
         if (ent.Comp.Control != null)
             args.Controls.Add(ent.Comp.Control);
     }
+
+    // Polonium start
+    public override void FrameUpdate(float frameTime)
+    {
+        base.FrameUpdate(frameTime);
+
+        foreach (var uid in _staleAmmoCounters)
+        {
+            if (TryComp<AmmoCounterComponent>(uid, out var counter))
+                UpdateAmmoCount((uid, counter));
+        }
+
+        _staleAmmoCounters.Clear();
+    }
+    // Polonium end
 
     /// <summary>
     /// Refreshes the control being used to show ammo. Useful if you change the AmmoProvider.
