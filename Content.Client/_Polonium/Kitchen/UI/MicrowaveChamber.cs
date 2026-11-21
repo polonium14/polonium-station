@@ -336,7 +336,7 @@ public sealed partial class MicrowaveChamber : Control
     /// <summary>
     /// Lists what is on the plate in the order it was put in, including things that only exist as a picture by now.
     /// </summary>
-    public void CopyRows(List<MicrowaveRow> rows)
+    public void CopyRows(List<PixelNoteRow> rows)
     {
         rows.Clear();
         foreach (var item in _items)
@@ -347,7 +347,7 @@ public sealed partial class MicrowaveChamber : Control
             if (item.Uid.IsValid() && _entMan.TryGetComponent(item.Uid, out MetaDataComponent? meta))
                 item.Name = meta.EntityName;
 
-            rows.Add(new MicrowaveRow(item.Uid, item.Name));
+            rows.Add(new PixelNoteRow(item.Uid, item.Name));
         }
     }
 

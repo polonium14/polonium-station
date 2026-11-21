@@ -254,7 +254,7 @@ public sealed partial class LatheCatalog : Control
         var width = (int) MathF.Round(finalSize.X / Unit) - (Scrollable ? BarWidth : 0);
         for (var i = 0; i < VisibleRows; i++)
         {
-            _rows[i].Arrange(LatheLayout.Box(UIScale, 0, i * RowHeight, width, RowHeight));
+            _rows[i].Arrange(PixelLayout.Box(UIScale, 0, i * RowHeight, width, RowHeight));
         }
 
         return finalSize;

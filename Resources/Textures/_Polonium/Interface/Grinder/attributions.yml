@@ -1,0 +1,4 @@
+- files: ["body.png", "jug.png", "glass.png", "lid.png", "blades.png", "hub.png", "note.png", "controls.png"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Made for Polonium Station by nikitosych"
+  source: "https://github.com/polonium14/polonium-station"

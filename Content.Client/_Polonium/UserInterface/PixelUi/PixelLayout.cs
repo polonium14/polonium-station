@@ -1,8 +1,9 @@
-using Content.Client._Polonium.UserInterface.PixelUi;
+namespace Content.Client._Polonium.UserInterface.PixelUi;
 
-namespace Content.Client._Polonium.Lathe.UI;
-
-public static class LatheLayout
+/// <summary>
+/// Places the parts of a pixel-art window so that each covers a whole number of screen pixels.
+/// </summary>
+public static class PixelLayout
 {
     // The engine cuts a control's position and size down to whole screen pixels. Without a little slack
     // float error costs a row or a column at interface scales such as 125 %.
@@ -19,6 +20,12 @@ public static class LatheLayout
             Snap(top * scale) / uiScale,
             Snap(width * scale) / uiScale,
             Snap(height * scale) / uiScale);
+    }
+
+    /// <inheritdoc cref="Box(float,float,float,float,float)"/>
+    public static UIBox2 Box(float uiScale, UIBox2i art)
+    {
+        return Box(uiScale, art.Left, art.Top, art.Width, art.Height);
     }
 
     private static float Snap(float pixels)

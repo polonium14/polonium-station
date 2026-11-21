@@ -145,9 +145,9 @@ public sealed class LatheScreen : Control
         var scale = PixelCanvas.GetScale(UIScale);
         var face = _font.Face(scale);
         var searchLeft = Padding * 2 + face.Font.Measure(_prompt) * face.Dot / (float) scale;
-        _search.Arrange(LatheLayout.Box(UIScale, searchLeft, HeaderHeight, PaneWidth - Padding - searchLeft, PromptHeight));
-        _catalog.Arrange(LatheLayout.Box(UIScale, 0, ListTop, PaneWidth - 1, SoftTop - ListTop));
-        _plot.Arrange(LatheLayout.Box(UIScale, PaneWidth, HeaderHeight, LathePlot.ArtWidth, LathePlot.ArtHeight));
+        _search.Arrange(PixelLayout.Box(UIScale, searchLeft, HeaderHeight, PaneWidth - Padding - searchLeft, PromptHeight));
+        _catalog.Arrange(PixelLayout.Box(UIScale, 0, ListTop, PaneWidth - 1, SoftTop - ListTop));
+        _plot.Arrange(PixelLayout.Box(UIScale, PaneWidth, HeaderHeight, LathePlot.ArtWidth, LathePlot.ArtHeight));
         _overlay.Arrange(UIBox2.FromDimensions(Vector2.Zero, finalSize));
         return finalSize;
     }

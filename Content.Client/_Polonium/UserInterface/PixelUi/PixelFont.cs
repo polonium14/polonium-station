@@ -1,5 +1,6 @@
 using System.Text;
 using Content.Client.Resources;
+using Content.Client.Stylesheets.Fonts;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 
@@ -14,6 +15,7 @@ namespace Content.Client._Polonium.UserInterface.PixelUi;
 public readonly record struct PixelFont(Font Font, float Scale, int CapTop, int CapHeight)
 {
     private const string Tiny5Path = "/Fonts/_Polonium/Tiny5/Tiny5-Regular.ttf";
+    private const string PlainPath = "/Fonts/Atkinson/AtkinsonHyperlegibleNext-Regular.ttf";
 
     /// <summary>
     /// Tiny5 is drawn on an 8 pixel em. The engine renders 4/3 pixels per point, so that is size 6.
@@ -24,32 +26,53 @@ public readonly record struct PixelFont(Font Font, float Scale, int CapTop, int 
     }
 
     /// <summary>
-    /// Width of the text in art pixels, including the empty column after the last glyph.
+    /// The usual text font of the game, at its usual size when one art pixel covers two screen pixels. Its glyphs are
+    /// not built from whole pixels, so it has to be measured with the pixel scale it is drawn at.
     /// </summary>
-    public int Measure(ReadOnlySpan<char> text)
+    public static PixelFont Plain(IResourceCache cache)
     {
+        return new PixelFont(PoloniumFonts.GetFontWithFallback(cache, PlainPath, 12), 0.5f, 7, 11);
+    }
+
+    /// <summary>
+    /// Width of the text, including the empty column after the last glyph. It is in art pixels, or in screen pixels
+    /// when <paramref name="pixelScale"/> says how many of them one art pixel covers.
+    /// </summary>
+    public int Measure(ReadOnlySpan<char> text, int pixelScale = 1)
+    {
+        var scale = Scale * pixelScale;
         var width = 0;
         while (!text.IsEmpty)
         {
             text = text[Decode(text, out var rune)..];
-            width += Font.GetCharMetrics(rune, Scale)?.Advance ?? 0;
+            width += Font.GetCharMetrics(rune, scale)?.Advance ?? 0;
         }
 
         return width;
     }
 
     /// <summary>
-    /// How many characters from the start of the text fit into the given width in art pixels.
+    /// Width of the empty column after a glyph, in the units of <see cref="Measure"/>.
     /// </summary>
-    public int Fit(ReadOnlySpan<char> text, int width)
+    public int Trail(int pixelScale = 1)
     {
+        return Math.Max(1, (int) (Scale * pixelScale));
+    }
+
+    /// <summary>
+    /// How many characters from the start of the text fit into the given width, which is in the units of <see cref="Measure"/>.
+    /// </summary>
+    public int Fit(ReadOnlySpan<char> text, int width, int pixelScale = 1)
+    {
+        var scale = Scale * pixelScale;
+        var trail = Trail(pixelScale);
         var used = 0;
         var count = 0;
         while (count < text.Length)
         {
             var length = Decode(text[count..], out var rune);
-            var advance = Font.GetCharMetrics(rune, Scale)?.Advance ?? 0;
-            if (used + advance - 1 > width)
+            var advance = Font.GetCharMetrics(rune, scale)?.Advance ?? 0;
+            if (used + advance - trail > width)
                 break;
 
             used += advance;
