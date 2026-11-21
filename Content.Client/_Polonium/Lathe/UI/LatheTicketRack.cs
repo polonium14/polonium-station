@@ -632,7 +632,7 @@ public sealed partial class LatheTicketRack : Control
 
         if (revealed >= NameTop + NameHeight)
         {
-            var screen = new LatheScreenCanvas(handle, _screenFont, UIScale);
+            var screen = new LatheScreenCanvas(handle, _screenFont, UIScale, paper: true);
             screen.Text(x + TextLeft, y + NameTop, NameHeight, TextWidth, ticket.Name, LathePalette.Ink.WithAlpha(ticket.Alpha));
         }
 
