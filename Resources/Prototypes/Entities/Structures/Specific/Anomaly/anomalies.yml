@@ -944,6 +944,7 @@
   id: AnomalyShadow
   parent: BaseAnomaly
   suffix: Shadow
+  description: An impossible object wreathed in dark haze. The haze seems to shrink back from bright flashes of light. # Polonium: podpowiedź, bo samej mgły nie da się obejrzeć
   components:
   - type: Sprite
     sprite: Structures/Specific/Anomalies/shadow_anom.rsi
@@ -983,9 +984,9 @@
       - ShadowKudzuWeak
     - settings:
         spawnOnSuperCritical: true
-        minAmount: 30
-        maxAmount: 40
-        maxRange: 50
+        minAmount: 20 # Polonium: było 30-40 w promieniu 50
+        maxAmount: 25
+        maxRange: 35
       spawns:
       - ShadowKudzu
   - type: Portal
