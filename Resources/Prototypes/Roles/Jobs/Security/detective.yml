@@ -62,7 +62,7 @@
     eyes: ClothingEyesGlassesSecurity
     id: DetectivePDA
     ears: ClothingHeadsetSecurity
-#   belt: ClothingBeltHolster # Polonium - kolejność dodawania rzeczy z loadoutu: teraz się pojawia wybierając broń służbową
+#   belt: ClothingBeltHolsterFilled # Polonium: kabura z bronią przychodzi z loadoutu DetectiveServiceWeapon
   storage:
     back:
     - Flash
