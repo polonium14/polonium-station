@@ -1372,7 +1372,7 @@
   id: SecurityServiceWeapon
   name: loadout-group-security-serviceweapon
   loadouts:
-#  - SecurityOfficerPistol
+  - SecurityOfficerPistol
   - SecurityOfficerVis
   - SecurityOfficerEnergyGun
   
