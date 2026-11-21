@@ -1,24 +1,26 @@
+using System.Text;
 using Content.Client._Polonium.UserInterface.PixelUi;
 using Content.Client.Resources;
+using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 
 namespace Content.Client._Polonium.Lathe.UI;
 
 /// <summary>
-/// The typeface of the green screen. A capital is five art pixels tall, and the screen draws it with finer dots
-/// than the body: ten rows on even scales, fifteen on scales that divide by three. Each drawing of Jersey is
-/// used only where its own pixels land on whole screen pixels.
+/// The typefaces of the console: the game's standard font on its screen, Jersey in the screen's header, on the amount
+/// readout, on paper and on the name plate.
+/// Each drawing of Jersey is used only where its own pixels land on whole screen pixels.
 /// </summary>
 public sealed class LatheScreenFont
 {
+    private const string TextPath = "/Fonts/NotoSans/NotoSans-Regular.ttf";
     private const string CoarsePath = "/Fonts/_Polonium/Jersey10/Jersey10-Regular.ttf";
     private const string FinePath = "/Fonts/_Polonium/Jersey15/Jersey15-Regular.ttf";
+    private const int TextSize = 10;
     private const int FineLine = 27;
+    private const int CoarseLine = 20;
 
-    /// <summary>
-    /// Height of a text line of the coarse font in its own pixels.
-    /// </summary>
-    public const int CoarseLine = 20;
+    private readonly Font _text;
 
     /// <summary>
     /// Jersey 10 is drawn on a 56/3 pixel em. The engine renders 4/3 pixels per point, so that is size 14.
@@ -32,11 +34,26 @@ public sealed class LatheScreenFont
 
     public LatheScreenFont(IResourceCache cache)
     {
+        _text = cache.GetFont(TextPath, TextSize);
         Coarse = new PixelFont(cache.GetFont(CoarsePath, 14), 1f, 5, 10);
         Fine = new PixelFont(cache.GetFont(FinePath, 27), 0.75f, 6, 15);
     }
 
     public LatheScreenFace Face(int scale)
+    {
+        var size = scale / 2f;
+        var capital = _text.GetCharMetrics(new Rune('H'), size);
+        var capHeight = capital?.Height ?? 0;
+        var capTop = _text.GetAscent(size) - (capital?.BearingY ?? 0);
+        return new LatheScreenFace(new PixelFont(_text, size, capTop, capHeight), 1, _text.GetHeight(size));
+    }
+
+    public LatheScreenFace Readout(int scale)
+    {
+        return new LatheScreenFace(Coarse, scale, CoarseLine);
+    }
+
+    public LatheScreenFace PixelFace(int scale)
     {
         if (scale % 2 != 0 && scale % 3 == 0)
             return new LatheScreenFace(Fine, scale / 3, FineLine);

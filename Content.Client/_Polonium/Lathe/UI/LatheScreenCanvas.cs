@@ -16,12 +16,12 @@ public readonly struct LatheScreenCanvas
     public readonly int Scale;
     public readonly int Dot;
 
-    public LatheScreenCanvas(DrawingHandleScreen handle, LatheScreenFont font, float uiScale)
+    public LatheScreenCanvas(DrawingHandleScreen handle, LatheScreenFont font, float uiScale, bool pixel = false)
     {
         _handle = handle;
         Scale = PixelCanvas.GetScale(uiScale);
         Dot = GetDot(Scale);
-        _face = font.Face(Scale);
+        _face = pixel ? font.PixelFace(Scale) : font.Face(Scale);
     }
 
     public static int GetDot(int scale)

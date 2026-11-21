@@ -157,16 +157,17 @@ public sealed class LatheScreen : Control
         base.Draw(handle);
 
         var canvas = new LatheScreenCanvas(handle, _font, UIScale);
-        DrawCatalogHeader(canvas);
+        var header = new LatheScreenCanvas(handle, _font, UIScale, pixel: true);
+        DrawCatalogHeader(header);
         canvas.Text(Padding, HeaderHeight, PromptHeight, PaneWidth, _prompt, LathePalette.Screen);
         canvas.RuleAbove(0, ListTop, PaneWidth, LathePalette.ScreenDim);
         canvas.RuleLeftOf(PaneWidth, 0, SoftTop, LathePalette.ScreenDim);
 
         canvas.Rect(PaneWidth, 0, ArtWidth - PaneWidth, HeaderHeight, LathePalette.Screen);
-        DrawTitle(canvas, PaneWidth + Padding, _plotTitle, PlotGlitchSalt);
+        DrawTitle(header, PaneWidth + Padding, _plotTitle, PlotGlitchSalt);
         Digits(_head, 2, _plot.Head.X);
         Digits(_head, 8, _plot.Head.Y);
-        canvas.TextRight(ArtWidth - Padding, 0, HeaderHeight, _head, LathePalette.ScreenBack);
+        header.TextRight(ArtWidth - Padding, 0, HeaderHeight, _head, LathePalette.ScreenBack);
 
         DrawReadout(canvas);
         DrawSoft(canvas);

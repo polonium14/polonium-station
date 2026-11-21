@@ -160,7 +160,7 @@ public sealed partial class LatheTextField : Control
             return;
 
         var scale = PixelCanvas.GetScale(UIScale);
-        var face = Readout ? new LatheScreenFace(Font.Coarse, scale, LatheScreenFont.CoarseLine) : Font.Face(scale);
+        var face = Readout ? Font.Readout(scale) : Font.Face(scale);
         var dot = face.Dot;
         var focused = HasKeyboardFocus();
         var empty = _text.Length == 0;
