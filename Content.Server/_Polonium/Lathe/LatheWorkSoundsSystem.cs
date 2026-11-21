@@ -25,12 +25,12 @@ public sealed partial class LatheWorkSoundsSystem : EntitySystem
     private void OnStartPrinting(Entity<LatheWorkSoundsComponent> ent, ref LatheStartPrintingEvent args)
     {
         // The motor spins up on the first item of a run that takes any time.
-        if (ent.Comp.Running
+        if (ent.Comp.MotorRunning
             || !TryComp(ent, out LatheProducingComponent? producing)
             || producing.ProductionLength <= TimeSpan.Zero)
             return;
 
-        ent.Comp.Running = true;
+        ent.Comp.MotorRunning = true;
         _audio.Stop(ent.Comp.Stream);
         ent.Comp.Stream = _audio.PlayPvs(ent.Comp.StartSound, ent)?.Entity;
         _ambient.SetAmbience(ent, true);
@@ -42,13 +42,13 @@ public sealed partial class LatheWorkSoundsSystem : EntitySystem
             return;
 
         _audio.Stop(sounds.Stream);
-        if (!sounds.Running)
+        if (!sounds.MotorRunning)
         {
             sounds.Stream = _audio.PlayPvs(sounds.InstantSound, ent)?.Entity;
             return;
         }
 
-        sounds.Running = false;
+        sounds.MotorRunning = false;
         _ambient.SetAmbience(ent, false);
         sounds.Stream = _audio.PlayPvs(sounds.StopSound, ent)?.Entity;
     }

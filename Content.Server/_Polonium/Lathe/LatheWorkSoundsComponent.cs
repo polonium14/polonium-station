@@ -34,5 +34,5 @@ public sealed partial class LatheWorkSoundsComponent : Component
     /// <summary>
     /// Whether the motor runs: the current run has reached an item that takes time.
     /// </summary>
-    public bool Running;
+    public bool MotorRunning;
 }
