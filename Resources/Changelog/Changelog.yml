@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: jessicamaybe
-  changes:
-  - message: Changed the sound for closing airlocks.
-    type: Tweak
-  - message: Fixed door animations being interrupted during normal use.
-    type: Fix
-  id: 9646
-  time: '2026-04-17T10:31:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43613
-- author: Boaz1111
-  changes:
-  - message: Fixes the trit-frezon ratio in the guidebook being incorrect.
-    type: Fix
-  id: 9647
-  time: '2026-04-17T19:51:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43622
 - author: piskaczek
   changes:
   - message: Reduced the amount of wirebrushes in the janicloset and janicrate.
@@ -5216,3 +5200,30 @@
   id: 10140
   time: '2026-11-21T22:21:05.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1287
+- author: Nikita
+  changes:
+  - message: "Kudzu teraz b\u0119dzie si\u0119 pojawia\u0142o w ok. 23% rund (by\u0142\
+      o ok. 55%)"
+    type: Tweak
+  - message: "zmniejszono szybko\u015B\u0107 rozrastania si\u0119 kudzu zwyk\u0142\
+      ego, mi\u0119snego i kwiatowego"
+    type: Tweak
+  - message: "Promie\u0144, w kt\xF3rym pojawia si\u0119 kudzu cieniowe po wybuchu\
+      \ anomalii cieniowej, zosta\u0142 zmniejszony o 30%"
+    type: Tweak
+  - message: Zmniejszono zdrowie kudzu z anomalii kwiatowej
+    type: Tweak
+  - message: "Kudzu z anomalii kwiatowej przyjmuje teraz obra\u017Cenia t\u0119pe"
+    type: Fix
+  id: 10141
+  time: '2026-11-21T23:16:48.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1290
+- author: Nikita
+  changes:
+  - message: "Naprawiono b\u0142\u0105d, przez kt\xF3ry VGRoid czasami pojawia\u0142\
+      \ si\u0119 pusty, bez ska\u0142 i stworze\u0144, i nie dzia\u0142a\u0142y na\
+      \ nim buty magnetyczne."
+    type: Fix
+  id: 10142
+  time: '2026-11-21T23:17:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1289
