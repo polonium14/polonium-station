@@ -435,7 +435,7 @@ public sealed partial class LathePulpitWindow : BaseWindow
             child.Measure(availableSize);
         }
 
-        return LatheLayout.Box(UIScale, 0, 0, Offset + ConsoleSize.X, ConsoleSize.Y).Size;
+        return PixelLayout.Box(UIScale, 0, 0, Offset + ConsoleSize.X, ConsoleSize.Y).Size;
     }
 
     protected override Vector2 ArrangeOverride(Vector2 finalSize)
@@ -462,14 +462,14 @@ public sealed partial class LathePulpitWindow : BaseWindow
         if (_help != null)
             Place(_help, HelpKey);
 
-        _tank?.Arrange(LatheLayout.Box(UIScale, 0, TankTop, LatheTank.ArtWidth, LatheTank.ArtHeight));
+        _tank?.Arrange(PixelLayout.Box(UIScale, 0, TankTop, LatheTank.ArtWidth, LatheTank.ArtHeight));
 
         return finalSize;
     }
 
     private void Place(Control control, UIBox2i art)
     {
-        control.Arrange(LatheLayout.Box(UIScale, art.Left + Offset, art.Top, art.Width, art.Height));
+        control.Arrange(PixelLayout.Box(UIScale, art.Left + Offset, art.Top, art.Width, art.Height));
     }
 
     protected override void Draw(DrawingHandleScreen handle)

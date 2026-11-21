@@ -239,7 +239,7 @@ public sealed partial class LatheMaterials : Control
             var left = i * CellPitch - _scroll;
             for (var k = 0; k < _cells[i].Keys.Length; k++)
             {
-                _cells[i].Keys[k].Arrange(LatheLayout.Box(UIScale, left + k * KeyPitch, KeyTop, KeyWidth, KeyHeight));
+                _cells[i].Keys[k].Arrange(PixelLayout.Box(UIScale, left + k * KeyPitch, KeyTop, KeyWidth, KeyHeight));
             }
         }
 

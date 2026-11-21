@@ -581,7 +581,7 @@ public sealed partial class LatheTicketRack : Control
                 var top = i * KeyPitch;
                 key.Visible = top + KeyHeight <= revealed && ticket.Alpha > 0f;
                 key.Modulate = Color.White.WithAlpha(ticket.Alpha);
-                key.Arrange(LatheLayout.Box(UIScale, KeyLeft + ticket.ShiftX, ticket.Top - _scroll + ticket.ShiftY + top, KeyWidth, KeyHeight));
+                key.Arrange(PixelLayout.Box(UIScale, KeyLeft + ticket.ShiftX, ticket.Top - _scroll + ticket.ShiftY + top, KeyWidth, KeyHeight));
             }
         }
 
