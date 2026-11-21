@@ -54,7 +54,9 @@
   - type: UserInterface
     interfaces:
       enum.ReagentGrinderUiKey.Key:
-        type: ReagentGrinderBoundUserInterface
+        type: GrinderDeviceBoundUserInterface # Polonium: the grinder drawn as a blender
+  - type: GrinderMassVisuals # Polonium: reagents without a melting point that the grinder window still draws as dust
+    dryReagents: [ Flour, Cornmeal, CocoaPowder, TeaPowder, Oats, Rice, Ash, Charcoal, TableSalt, Brass, Silver, Cellulose, Fiber ]
   - type: Appearance
   - type: GenericVisualizer
     visuals:
