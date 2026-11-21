@@ -10,7 +10,7 @@ namespace Content.Shared._Polonium.Kitchen;
 public sealed partial class MicrowaveSoundsComponent : Component
 {
     /// <summary>
-    /// Played when the door shuts as cooking starts.
+    /// Played when the door shuts as cooking starts, and to the player who closes the window of an idle microwave.
     /// </summary>
     [DataField]
     public SoundSpecifier? DoorCloseSound;
@@ -20,6 +20,13 @@ public sealed partial class MicrowaveSoundsComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier? DoorOpenSound;
+
+    /// <summary>
+    /// What the client last saw of the door, to play its sounds as that changes.
+    /// Null until the client has looked, so a microwave that comes into view stays quiet.
+    /// </summary>
+    [ViewVariables]
+    public MicrowaveDoorView? Seen;
 
     /// <summary>
     /// Played now and then while the contents make the microwave malfunction.
@@ -63,3 +70,8 @@ public sealed partial class MicrowaveSoundsComponent : Component
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
     public TimeSpan NextSpark;
 }
+
+/// <param name="Cooking">The microwave was cooking with its door shut.</param>
+/// <param name="Watched">The local player had the window of the microwave open.</param>
+/// <param name="CookEnd">When the cooking was going to end.</param>
+public readonly record struct MicrowaveDoorView(bool Cooking, bool Watched, TimeSpan CookEnd);
