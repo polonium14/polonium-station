@@ -201,7 +201,7 @@
   - type: UserInterface
     interfaces:
       enum.LatheUiKey.Key:
-        type: LatheBoundUserInterface
+        type: LathePulpitBoundUserInterface # Polonium: operator console window
       enum.ResearchClientUiKey.Key:
         type: ResearchClientBoundUserInterface
   - type: Transform
