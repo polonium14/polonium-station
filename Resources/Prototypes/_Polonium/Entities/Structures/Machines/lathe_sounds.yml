@@ -1,0 +1,69 @@
+- type: entity
+  abstract: true
+  id: BaseLatheWorkSoundsMetal
+  components:
+  - type: AmbientSound
+    enabled: false
+    volume: -8
+    range: 5
+    sound:
+      path: /Audio/_Polonium/Machines/Lathe/work_metal.ogg
+  - type: LatheWorkSounds
+    startSound:
+      path: /Audio/_Polonium/Machines/Lathe/work_start.ogg
+      params:
+        variation: 0.04
+    stopSound:
+      path: /Audio/_Polonium/Machines/Lathe/work_stop.ogg
+      params:
+        variation: 0.04
+
+- type: entity
+  abstract: true
+  id: BaseLatheWorkSoundsOre
+  components:
+  - type: AmbientSound
+    enabled: false
+    volume: -8
+    range: 5
+    sound:
+      path: /Audio/_Polonium/Machines/Lathe/work_ore.ogg
+  - type: LatheWorkSounds
+    startSound:
+      path: /Audio/_Polonium/Machines/Lathe/work_start.ogg
+      params:
+        pitch: 0.85
+        variation: 0.04
+    stopSound:
+      path: /Audio/_Polonium/Machines/Lathe/work_stop.ogg
+      params:
+        pitch: 0.85
+        variation: 0.04
+    instantSound:
+      path: /Audio/_Polonium/Machines/Lathe/work_ore_instant.ogg
+      params:
+        variation: 0.06
+
+- type: entity
+  abstract: true
+  id: BaseLatheWorkSoundsBio
+  components:
+  - type: AmbientSound
+    enabled: false
+    volume: -8
+    range: 5
+    sound:
+      path: /Audio/_Polonium/Machines/Lathe/work_bio.ogg
+  - type: LatheWorkSounds
+    startSound:
+      path: /Audio/_Polonium/Machines/Lathe/work_start.ogg
+      params:
+        pitch: 1.12
+        volume: -3
+        variation: 0.04
+    stopSound:
+      path: /Audio/_Polonium/Machines/Lathe/work_stop.ogg
+      params:
+        pitch: 1.12
+        volume: -3
+        variation: 0.04

@@ -11,12 +11,12 @@
 
 - type: entity
   id: MusicTechFab
-  parent: [BaseLatheLube] # Goob edit
+  parent: [BaseLatheLube, BaseLatheWorkSoundsMetal] # Goob edit # Polonium: sounds of a print run
   name: music techfab
   description: Prints equipment for use by the musician.
   components:
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Polonium/Structures/Machines/techfab.rsi # Polonium: redrawn to match the operator console
     layers:
     - state: icon
       map: ["enum.LatheVisualLayers.IsRunning"]
@@ -45,12 +45,12 @@
 
 - type: entity
   id: CargoTechFab
-  parent: [BaseLatheLube] # Goob edit
+  parent: [BaseLatheLube, BaseLatheWorkSoundsMetal] # Goob edit # Polonium: sounds of a print run
   name: cargo techfab
   description: Prints equipment for use by cargo personnel.
   components:
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Polonium/Structures/Machines/techfab.rsi # Polonium: redrawn to match the operator console
     layers:
     - state: icon
       map: ["enum.LatheVisualLayers.IsRunning"]

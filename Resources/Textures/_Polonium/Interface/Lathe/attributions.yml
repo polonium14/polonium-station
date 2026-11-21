@@ -1,0 +1,4 @@
+- files: ["body.png", "plate.png", "ticket.png", "gauge.png", "key_light.png", "key_red.png", "key_dark.png", "leds.png", "stop.png", "icons.png", "tank_back.png", "tank_front.png"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Made for Polonium Station by nikitosych"
+  source: "https://github.com/polonium14/polonium-station"

@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Client._Polonium.Tutorial.UI;
+using Content.Client._Polonium.Lathe.UI;
 using Content.Client._Polonium.UserInterface;
 using Content.Client.Lathe.UI;
 using Content.Shared._Polonium.Tutorial;
@@ -11,6 +12,7 @@ using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._Polonium.Tutorial;
@@ -69,9 +71,7 @@ public sealed partial class TutorialLatheGuideSystem : EntitySystem
             _step = stepId.Id;
         }
 
-        if (FindAnchor(player, guide.Lathe) is not { } lathe
-            || !_ui.TryGetOpenUi<LatheBoundUserInterface>(lathe, LatheUiKey.Key, out var bui)
-            || bui.Menu is not { IsOpen: true } menu)
+        if (FindAnchor(player, guide.Lathe) is not { } lathe || FindWindow(lathe) is not { } menu)
         {
             Hide();
             return;
@@ -110,15 +110,32 @@ public sealed partial class TutorialLatheGuideSystem : EntitySystem
         string? warning = null;
         if (phase == Phase.Order)
         {
-            foreach (var control in Descendants<RecipeControl>(menu))
+            if (menu is LathePulpitWindow pulpit)
             {
-                if (missing.Any(m => m.Item.Recipe == control.RecipeId))
-                    targets.Add(control);
-            }
+                foreach (var row in pulpit.Rows)
+                {
+                    if (row.Visible && missing.Any(m => m.Item.Recipe == row.RecipeId))
+                        targets.Add(row);
+                }
 
-            if (missing.Any(m => m.Left > 1)
-                && Descendants<LineEdit>(menu).FirstOrDefault(edit => edit.Name == "AmountLineEdit") is { } amount)
-                targets.Add(amount);
+                if (pulpit.Catalog is { } catalog && missing.Any(m => catalog.Hides(m.Item.Recipe)))
+                    targets.Add(catalog);
+
+                if (missing.Any(m => m.Left > 1) && pulpit.AmountField is { } field)
+                    targets.Add(field);
+            }
+            else
+            {
+                foreach (var control in Descendants<RecipeControl>(menu))
+                {
+                    if (missing.Any(m => m.Item.Recipe == control.RecipeId))
+                        targets.Add(control);
+                }
+
+                if (missing.Any(m => m.Left > 1)
+                    && Descendants<LineEdit>(menu).FirstOrDefault(edit => edit.Name == "AmountLineEdit") is { } amount)
+                    targets.Add(amount);
+            }
 
             foreach (var (item, left) in missing)
             {
@@ -143,6 +160,17 @@ public sealed partial class TutorialLatheGuideSystem : EntitySystem
         card.SetActiveStep((int) phase);
         card.SetStatus(Loc.GetString(status), string.Join("\n", lines), warning);
         card.PlaceBeside(menu);
+    }
+
+    private BaseWindow? FindWindow(EntityUid lathe)
+    {
+        if (_ui.TryGetOpenUi<LathePulpitBoundUserInterface>(lathe, LatheUiKey.Key, out var pulpit))
+            return pulpit.Window is { IsOpen: true } window ? window : null;
+
+        if (_ui.TryGetOpenUi<LatheBoundUserInterface>(lathe, LatheUiKey.Key, out var bui))
+            return bui.Menu is { IsOpen: true } menu ? menu : null;
+
+        return null;
     }
 
     private static IEnumerable<T> Descendants<T>(Control root) where T : Control
