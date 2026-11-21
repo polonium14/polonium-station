@@ -450,6 +450,7 @@
   - HeadofSecurityJumpsuit
   - SecurityBackpack
   - SecurityBelt
+  - SecurityServiceWeapon # Polonium
   - HeadofSecurityOuterClothing
   - SecurityShoes
   - AssistiveItems
@@ -467,6 +468,7 @@
   - WardenJumpsuit
   - SecurityBackpack
   - SecurityBelt
+  - SecurityServiceWeapon # Polonium: wybór broni
   - WardenOuterClothing
   - SecurityShoes
   - AssistiveItems
@@ -488,6 +490,7 @@
   - SecurityShoes
   - SecurityPDA
   - SecurityBelt
+  - SecurityServiceWeapon # Polonium: wybór broni
   - AssistiveItems
   - SurvivalSecurity
   - Trinkets
@@ -504,6 +507,7 @@
   - SecurityBackpack
   - DetectiveOuterClothing
   - SecurityShoes
+  - DetectiveServiceWeapon # Polonium: wybór broni
   - AssistiveItems
   - SurvivalSecurity
   - Trinkets

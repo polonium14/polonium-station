@@ -148,6 +148,7 @@
   id: SecurityWebbing
   equipment:
     belt: ClothingBeltSecurityWebbingFilled
+   
 
 # Outerclothing
 - type: loadout
@@ -206,19 +207,26 @@
 
 # Service Weapon
 - type: loadout
-  id: SecurityOfficerEnergyGun
-  storage:
-    back:
-    - WeaponEnergyPistol
-
-- type: loadout
   id: SecurityOfficerPistol
+  dummyEntity: WeaponPistolMk58
+  equipment:
+    pocket1: WeaponPistolMk58
   storage:
     back:
-    - WeaponPistolMk58
+    - MagazinePistol
 
 - type: loadout
-  id: SecurityOfficerVIS
+  id: SecurityOfficerVis
+  dummyEntity: WeaponVisMPSPistol
+  equipment:
+    pocket1: WeaponVisMPSPistol
   storage:
     back:
-    - WeaponVisMPSPistol
+    - WeaponVisMPSPistolMagazine
+    
+- type: loadout
+  id: SecurityOfficerEnergyGun
+  dummyEntity: WeaponEnergyPistol
+  equipment:
+    pocket1: WeaponEnergyPistol
+

@@ -50,3 +50,23 @@
   id: DetectiveCoatGrey
   equipment:
     outerClothing: ClothingOuterCoatDetectiveLoadoutGrey
+
+# Detective service weapon - Polonium
+- type: loadout
+  id: DetectiveInspectorRevolver
+  dummyEntity: WeaponRevolverInspector
+  equipment:
+    belt: ClothingBeltHolster
+  storage:
+    belt:
+    - WeaponRevolverInspector
+    - SpeedLoaderMagnum
+
+- type: loadout
+  id: DetectiveEnergyRevolver
+  dummyEntity: WeaponEnergyRevolver
+  equipment:
+    belt: ClothingBeltHolster
+  storage:
+    belt:
+    - WeaponEnergyRevolver
