@@ -135,10 +135,11 @@
     drawdepth: HighFloorObjects
     sprite: Objects/Misc/kudzuflower.rsi
     state: kudzu_11
+  - type: Damageable # Polonium: bez płaskiej redukcji obrażeń tępych
+    damageModifierSet: FloralKudzu
   - type: Kudzu
     spriteVariants: 5
-    spreadChance: 0.01
-    failedSpreadUsesUpdate: false # Polonium: anomalia kwiatowa zostaje bez nerfu
+    spreadChance: 0.1 # Polonium: nerf, teraz to realna prędkość wzrostu
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.8
     sprintSpeedModifier: 0.8
@@ -166,7 +167,7 @@
   suffix: Angry, Floral Anomaly
   components:
   - type: Kudzu
-    spreadChance: 0.175
+    spreadChance: 0.2 # Polonium: nerf, teraz to realna prędkość wzrostu
   - type: EntityTableSpawner
     table: !type:GroupSelector
       children:
