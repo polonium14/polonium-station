@@ -201,7 +201,7 @@
   - type: UserInterface
     interfaces:
       enum.LatheUiKey.Key:
-        type: LatheBoundUserInterface
+        type: LathePulpitBoundUserInterface # Polonium: operator console window
       enum.ResearchClientUiKey.Key:
         type: ResearchClientBoundUserInterface
   - type: Transform
@@ -258,12 +258,12 @@
 
 - type: entity
   id: Autolathe
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseLatheWorkSoundsMetal ] # Polonium: sounds of a print run
   name: autolathe
   description: It produces basic items using metal and glass. Has the ability to process blueprints to print new recipes.
   components:
   - type: Sprite
-    sprite: Structures/Machines/autolathe.rsi
+    sprite: _Polonium/Structures/Machines/autolathe.rsi # Polonium: redrawn to match the operator console
     snapCardinals: true
     layers:
     - state: icon
@@ -329,18 +329,18 @@
   description: A highly-experimental autolathe that harnesses the power of extreme heat to slowly create objects more cost-effectively.
   components:
   - type: Sprite
-    sprite: Structures/Machines/autolathe_hypercon.rsi
+    sprite: _Polonium/Structures/Machines/autolathe_hypercon.rsi # Polonium: redrawn to match the operator console
   - type: Machine
     board: AutolatheHyperConvectionMachineCircuitboard
 
 - type: entity
   id: Protolathe
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseLatheWorkSoundsMetal ] # Polonium: sounds of a print run
   name: protolathe
   description: Converts raw materials into advanced items.
   components:
   - type: Sprite
-    sprite: Structures/Machines/protolathe.rsi
+    sprite: _Polonium/Structures/Machines/protolathe.rsi # Polonium: redrawn to match the operator console
     snapCardinals: true
     layers:
     - state: icon
@@ -395,7 +395,7 @@
   description: A highly-experimental protolathe that harnesses the power of extreme heat to slowly create objects more cost-effectively.
   components:
   - type: Sprite
-    sprite: Structures/Machines/protolathe_hypercon.rsi
+    sprite: _Polonium/Structures/Machines/protolathe_hypercon.rsi # Polonium: redrawn to match the operator console
   - type: Machine
     board: ProtolatheHyperConvectionMachineCircuitboard
 
@@ -406,7 +406,7 @@
   description: Prints circuit boards for machines.
   components:
   - type: Sprite
-    sprite: Structures/Machines/circuit_imprinter.rsi
+    sprite: _Polonium/Structures/Machines/circuit_imprinter.rsi # Polonium: redrawn to match the operator console
     snapCardinals: true
     layers:
     - state: icon
@@ -453,18 +453,18 @@
   description: A highly-experimental circuit imprinter that harnesses the power of extreme heat to slowly create objects more cost-effectively.
   components:
   - type: Sprite
-    sprite: Structures/Machines/circuit_imprinter_hypercon.rsi
+    sprite: _Polonium/Structures/Machines/circuit_imprinter_hypercon.rsi # Polonium: redrawn to match the operator console
   - type: Machine
     board: CircuitImprinterHyperConvectionMachineCircuitboard
 
 - type: entity
   id: ExosuitFabricator
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseLatheWorkSoundsMetal ] # Polonium: sounds of a print run
   name: exosuit fabricator
   description: Creates parts for robotics and other mechanical needs.
   components:
   - type: Sprite
-    sprite: Structures/Machines/exosuit_fabricator.rsi
+    sprite: _Polonium/Structures/Machines/exosuit_fabricator.rsi # Polonium: redrawn to match the operator console
     layers:
     - state: fab-idle
       map: ["enum.LatheVisualLayers.IsRunning"]
@@ -499,12 +499,12 @@
 
 - type: entity
   id: Biofabricator
-  parent: BaseLathe
+  parent: [ BaseLathe, BaseLatheWorkSoundsBio ] # Polonium: sounds of a print run
   name: biocube fabricator
   description: Produces animal cubes using biomass.
   components:
   - type: Sprite
-    sprite: Structures/Machines/biofabricator.rsi
+    sprite: _Polonium/Structures/Machines/biofabricator.rsi # Polonium: redrawn to match the operator console
     snapCardinals: true
     layers:
     - state: icon
@@ -538,12 +538,12 @@
 
 - type: entity
   id: SecurityTechFab
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseLatheWorkSoundsMetal ] # Polonium: sounds of a print run
   name: security techfab
   description: Prints equipment for use by security crew.
   components:
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Polonium/Structures/Machines/techfab.rsi # Polonium: redrawn to match the operator console
     layers:
     - state: icon
       map: ["enum.LatheVisualLayers.IsRunning"]
@@ -587,12 +587,12 @@
 
 - type: entity
   id: AmmoTechFab
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseLatheWorkSoundsMetal ] # Polonium: sounds of a print run
   name: ammo techfab
   description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
   components:
     - type: Sprite
-      sprite: Structures/Machines/techfab.rsi
+      sprite: _Polonium/Structures/Machines/techfab.rsi # Polonium: redrawn to match the operator console
       layers:
         - state: icon
           map: ["enum.LatheVisualLayers.IsRunning"]
@@ -622,12 +622,12 @@
 
 - type: entity
   id: MedicalTechFab
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseLatheWorkSoundsMetal ] # Polonium: sounds of a print run
   name: medical techfab
   description: Prints equipment for use by the medbay.
   components:
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _Polonium/Structures/Machines/techfab.rsi # Polonium: redrawn to match the operator console
     layers:
     - state: icon
       map: ["enum.LatheVisualLayers.IsRunning"]
@@ -673,7 +673,7 @@
   - type: Transform
     noRot: false
   - type: Sprite
-    sprite: Structures/Machines/uniform_printer.rsi
+    sprite: _Polonium/Structures/Machines/uniform_printer.rsi # Polonium: redrawn to match the operator console
     snapCardinals: false
     layers:
     - state: icon
@@ -710,12 +710,12 @@
 
 - type: entity
   id: Biogenerator
-  parent: BaseLathe
+  parent: [ BaseLathe, BaseLatheWorkSoundsBio ] # Polonium: sounds of a print run
   name: biogenerator
   description: Converts plants into biomass, which can be used to construct useful items.
   components:
   - type: Sprite
-    sprite: Structures/Machines/biofabricator.rsi
+    sprite: _Polonium/Structures/Machines/biofabricator.rsi # Polonium: redrawn to match the operator console
     snapCardinals: true
     layers:
     - state: icon
@@ -756,13 +756,13 @@
     - HostileCubesStatic
 
 - type: entity
-  parent: BaseLathe
+  parent: [ BaseLathe, BaseLatheWorkSoundsOre ] # Polonium: sounds of a print run
   id: OreProcessor
   name: ore processor
   description: It produces sheets and ingots using ores.
   components:
     - type: Sprite
-      sprite: Structures/Machines/ore_processor.rsi
+      sprite: _Polonium/Structures/Machines/ore_processor.rsi # Polonium: redrawn to match the operator console
       layers:
         - state: icon
           map: ["enum.LatheVisualLayers.IsRunning"]
@@ -795,7 +795,7 @@
   description: An ore processor specifically designed for mass-producing metals in industrial applications.
   components:
   - type: Sprite
-    sprite: Structures/Machines/ore_processor_industrial.rsi
+    sprite: _Polonium/Structures/Machines/ore_processor_industrial.rsi # Polonium: redrawn to match the operator console
   - type: Machine
     board: OreProcessorIndustrialMachineCircuitboard
   - type: Lathe
@@ -807,13 +807,13 @@
     - AdvancedSmelting
 
 - type: entity
-  parent: BaseLathe
+  parent: [ BaseLathe, BaseLatheWorkSoundsOre ] # Polonium: sounds of a print run
   id: Sheetifier
   name: sheet-meister 2000
   description: A very sheety machine.
   components:
   - type: Sprite
-    sprite: Structures/Machines/sheetifier.rsi
+    sprite: _Polonium/Structures/Machines/sheetifier.rsi # Polonium: redrawn to match the operator console
     layers:
     - state: base_machine
       map: ["enum.LatheVisualLayers.IsRunning"]
@@ -844,7 +844,7 @@
   description: This is a cutter. It cuts. Add variety to your station floor with eye-pleasing patterns! Don't stick your fingers in.
   components:
   - type: Sprite
-    sprite: Structures/Machines/cuttermachine.rsi
+    sprite: _Polonium/Structures/Machines/cuttermachine.rsi # Polonium: redrawn to match the operator console
     snapCardinals: true
     layers:
     - state: icon
@@ -882,12 +882,12 @@
 
 - type: entity
   id: MedicalBiofabricator
-  parent: BaseLathe
+  parent: [ BaseLathe, BaseLatheWorkSoundsBio ] # Polonium: sounds of a print run
   name: medical biofabricator
   description: Produces organs and other organic matter that can be surgically grafted onto patients with biomass.
   components:
   - type: Sprite
-    sprite: _Shitmed/Structures/Machines/limbgrower.rsi
+    sprite: _Polonium/Structures/Machines/limbgrower.rsi # Polonium: redrawn to match the operator console
     snapCardinals: true
     layers:
     - state: limbgrower_idleoff
