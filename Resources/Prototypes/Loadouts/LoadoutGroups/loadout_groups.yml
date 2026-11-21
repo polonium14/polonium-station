@@ -1350,7 +1350,6 @@
   id: SecurityShoes
   name: loadout-group-security-shoes
   loadouts:
-  - CombatBoots # Polonium: funkcjonalnie to samo
   - JackBoots
   - CombatBoots # Polonium: funkcjonalnie to samo
   - SecurityWinterBoots
