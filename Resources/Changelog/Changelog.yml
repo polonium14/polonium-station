@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ThatGuyUSA
-  changes:
-  - message: elite webvest has pockets again.
-    type: Fix
-  id: 9645
-  time: '2026-04-17T03:41:49.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43615
 - author: jessicamaybe
   changes:
   - message: Changed the sound for closing airlocks.
@@ -5212,3 +5205,14 @@
   id: 10139
   time: '2026-11-21T15:04:57.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1226
+- author: Nikita
+  changes:
+  - message: "M\u0142ynek ma nowe okno: wida\u0107 w nim wrzucone produkty, mielenie\
+      \ i naczynie pod spodem."
+    type: Tweak
+  - message: "Notatki w oknach mikrofal\xF3wki i m\u0142ynka s\u0105 pisane zwyk\u0142\
+      \u0105 czcionk\u0105 gry."
+    type: Tweak
+  id: 10140
+  time: '2026-11-21T22:21:05.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1287
