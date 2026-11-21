@@ -60,11 +60,15 @@ public sealed partial class MicrowaveDeviceWindow : BaseWindow
     private const float FumeInterval = 0.05f;
     private const float GrilleFumeChance = 0.5f;
     private const float JoltStep = 0.05f;
-    private const float LayoutSlack = 0.25f;
     private const float HoldTime = 2.1f;
     private const float HoldGrace = 0.3f;
     private const int PanelSparks = 10;
     private const int PanelBottom = 204;
+    private const int NoteWidth = 96;
+    private const int NoteHeight = 124;
+    private const int NoteHeadingTop = 13;
+    private const int NoteRows = 10;
+    private const int NoteEmptyDrop = 4;
 
     private static readonly TimeSpan DoneTime = TimeSpan.FromSeconds(2.5);
     private static readonly LocId StockPlate = "polonium-microwave-plate";
@@ -80,8 +84,8 @@ public sealed partial class MicrowaveDeviceWindow : BaseWindow
     private static readonly UIBox2i StartKey = UIBox2i.FromDimensions(240, 138, 82, 19);
     private static readonly UIBox2i EjectKey = UIBox2i.FromDimensions(240, 160, 82, 26);
     private static readonly UIBox2i CloseKey = UIBox2i.FromDimensions(319, 7, 11, 12);
-    private static readonly UIBox2i NoteArea = UIBox2i.FromDimensions(342, 22, MicrowaveNote.ArtWidth, MicrowaveNote.ArtHeight);
-    private static readonly UIBox2i NotePaper = UIBox2i.FromDimensions(342, 28, MicrowaveNote.ArtWidth, MicrowaveNote.ArtHeight - 6);
+    private static readonly UIBox2i NoteArea = UIBox2i.FromDimensions(342, 22, NoteWidth, NoteHeight);
+    private static readonly UIBox2i NotePaper = UIBox2i.FromDimensions(342, 28, NoteWidth, NoteHeight - 6);
     private static readonly UIBox2i Grille = UIBox2i.FromDimensions(244, 188, 74, 10);
     private static readonly Vector2i[] Jolt = [new(-3, 2), new(3, -2), new(-2, -1), new(2, 1), new(-1, 0)];
 
@@ -103,9 +107,10 @@ public sealed partial class MicrowaveDeviceWindow : BaseWindow
     private readonly Texture _segments;
     private readonly MicrowaveChamber _chamber;
     private readonly MicrowaveDoor _door;
-    private readonly MicrowaveNote _note;
+    private readonly PixelNote _note;
+    private readonly PixelNoteSection _noteList;
     private readonly PixelParticles _fumes;
-    private readonly List<MicrowaveRow> _rows = new();
+    private readonly List<PixelNoteRow> _rows = new();
     private readonly PixelKey[] _timeKeys = new PixelKey[TimeKeyCount];
     private readonly PixelKey _start;
     private readonly PixelKey _eject;
@@ -197,7 +202,11 @@ public sealed partial class MicrowaveDeviceWindow : BaseWindow
         _close.MuteSounds = false;
         _close.OnPressed += _ => Close();
 
-        _note = new MicrowaveNote();
+        _note = new PixelNote(_cache.GetTexture(TexturePath + "note.png"), PixelFont.Plain(_cache), NoteWidth);
+        _noteList = _note.AddSection(NoteHeadingTop, NoteRows);
+        _noteList.Heading = Loc.GetString("polonium-microwave-note-header");
+        _noteList.Empty = Loc.GetString("polonium-microwave-note-empty");
+        _noteList.EmptyDrop = NoteEmptyDrop;
         _note.OnItemPressed += uid => OnEject?.Invoke(uid);
         _note.OnHoverChanged += SetHovered;
         AddChild(_note);
@@ -350,7 +359,8 @@ public sealed partial class MicrowaveDeviceWindow : BaseWindow
             _count = $"{_rows.Count}/{state.Capacity}";
         }
 
-        _note.SetRows(_rows, state.Capacity);
+        _noteList.Tally = _count;
+        _note.SetRows(_noteList, _rows);
         _note.Interactive = idle;
 
         for (var i = 0; i < _timeKeys.Length; i++)
@@ -480,7 +490,7 @@ public sealed partial class MicrowaveDeviceWindow : BaseWindow
             child.Measure(availableSize);
         }
 
-        return new Vector2(Snap(CanvasSize.X), Snap(CanvasSize.Y));
+        return PixelLayout.Box(UIScale, UIBox2i.FromDimensions(Vector2i.Zero, CanvasSize)).Size;
     }
 
     protected override Vector2 ArrangeOverride(Vector2 finalSize)
@@ -505,14 +515,7 @@ public sealed partial class MicrowaveDeviceWindow : BaseWindow
 
     private void Place(Control control, UIBox2i art)
     {
-        control.Arrange(UIBox2.FromDimensions(Snap(art.Left), Snap(art.Top), Snap(art.Width), Snap(art.Height)));
-    }
-
-    // The engine cuts positions and sizes down to whole screen pixels, so without the slack
-    // float error costs a row or a column of art at interface scales such as 125 %.
-    private float Snap(int art)
-    {
-        return (art * PixelCanvas.GetScale(UIScale) + LayoutSlack) / UIScale;
+        control.Arrange(PixelLayout.Box(UIScale, art));
     }
 
     protected override void Draw(DrawingHandleScreen handle)
