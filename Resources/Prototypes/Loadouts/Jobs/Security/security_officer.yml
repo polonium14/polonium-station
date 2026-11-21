@@ -214,7 +214,7 @@
   storage:
     back:
     - MagazinePistol
-    
+
 - type: loadout
   id: SecurityOfficerVis
   dummyEntity: WeaponVisMPSPistol
