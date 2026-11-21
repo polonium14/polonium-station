@@ -66,23 +66,6 @@
   equipment:
     back: ClothingBackpackDuffelBrigmedic
 
-# Polonium: żeby miał do wyboru do koloru
-- type: loadout
-  id: BrigmedicMedicalBelt
-  equipment:
-    belt: ClothingBeltMedicalFilled
-
-- type: loadout
-  id: BrigmedicBelt
-  equipment:
-    belt: ClothingBeltSecurityFilled
-
-- type: loadout
-  id: BrigmedicWebbing
-  equipment:
-    belt: ClothingBeltSecurityWebbingFilled
-     
-
 # Loadout groups
 - type: loadoutGroup
   id: BrigmedicHead
