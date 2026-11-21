@@ -11,7 +11,7 @@
 
 - type: entity
   id: MusicTechFab
-  parent: [BaseLatheLube] # Goob edit
+  parent: [BaseLatheLube, BaseLatheWorkSoundsMetal] # Goob edit # Polonium: sounds of a print run
   name: music techfab
   description: Prints equipment for use by the musician.
   components:
@@ -45,7 +45,7 @@
 
 - type: entity
   id: CargoTechFab
-  parent: [BaseLatheLube] # Goob edit
+  parent: [BaseLatheLube, BaseLatheWorkSoundsMetal] # Goob edit # Polonium: sounds of a print run
   name: cargo techfab
   description: Prints equipment for use by cargo personnel.
   components:
