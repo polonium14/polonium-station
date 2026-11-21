@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: perryprog
-  changes:
-  - message: Door wire panels are now viewed via Alt + E, or via right clicking on
-      the door. Left clicking with a multitool or wirecutters still works as before.
-      Left clicking with other items now opens the door instead of the wire panel.
-    type: Tweak
-  id: 9643
-  time: '2026-04-16T22:37:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/38733
 - author: 11BelowStudio
   changes:
   - message: Closed the legal loophole which allowed security officers to use web
@@ -5203,3 +5194,16 @@
   id: 10137
   time: '2026-11-20T21:12:47.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1281
+- author: Nikita
+  changes:
+  - message: "Laty maj\u0105 nowe okno operatora!"
+    type: Add
+  - message: "Przytrzymanie przycisku STOP na pulpicie latu anuluje ca\u0142\u0105\
+      \ kolejk\u0119 i zwraca materia\u0142y."
+    type: Add
+  - message: "Sprite'y lat\xF3w i pokrewnych maszyn zosta\u0142y przerysowane, \u017C\
+      eby pasowa\u0142y do nowego pulpitu."
+    type: Tweak
+  id: 10138
+  time: '2026-11-21T11:51:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1283
