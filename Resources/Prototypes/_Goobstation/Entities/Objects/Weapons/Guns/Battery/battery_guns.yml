@@ -50,6 +50,4 @@
     attackType: Light
   - type: Item # Polonium: Fix sprite
     heldPrefix: lethal
-  - type: StealTarget
-    stealGroup:
-    - OfficerHandgun
+    
