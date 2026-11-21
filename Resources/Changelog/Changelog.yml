@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: 11BelowStudio
-  changes:
-  - message: Closed the legal loophole which allowed security officers to use web
-      vests.
-    type: Fix
-  - message: Bartenders may only use their own armour vests.
-    type: Tweak
-  id: 9644
-  time: '2026-04-17T02:53:05.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42862
 - author: ThatGuyUSA
   changes:
   - message: elite webvest has pockets again.
@@ -5207,3 +5197,18 @@
   id: 10138
   time: '2026-11-21T11:51:29.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1283
+- author: Czuat
+  changes:
+  - message: "Dodano do loadoutu kategorie do wyboru broni s\u0142u\u017Cbowej ochrony\
+      \ oraz detektywa. Ochrona wybiera mi\u0119dzy pistoletem mk58 i Vis MPS oraz\
+      \ pistoletem energetycznym RG-2  a detektyw mi\u0119dzy rewolwerem Inspektor\
+      \ a energetycznym rewolwerem EG-4."
+    type: Add
+  - message: "Medyk wi\u0119zienny teraz mo\u017Ce wybra\u0107 jaki pas chce oraz\
+      \ dostaje Flash w plecaku"
+    type: Add
+  - message: "Naprawiono duplikowanie si\u0119 ekwipunku Medyka wi\u0119ziennego"
+    type: Fix
+  id: 10139
+  time: '2026-11-21T15:04:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1226
