@@ -135,7 +135,7 @@
 
 #Brigmedic
 
-- type: startingGear # Polonium - jednak będzie w losowym miejscu
+- type: startingGear # Polonium: ubrania i pas są w loadoucie, flash jak u reszty ochrony
   id: BrigmedicGear
   equipment:
     gloves: ClothingHandsGlovesNitrile
