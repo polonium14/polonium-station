@@ -8,7 +8,8 @@ using Robust.Shared.Timing;
 namespace Content.Server._Polonium.Kitchen;
 
 /// <summary>
-/// Plays the sounds from <see cref="MicrowaveSoundsComponent"/> to everyone near the microwave.
+/// Plays the sparks and the burning from <see cref="MicrowaveSoundsComponent"/> to everyone near the microwave.
+/// The door is played by each client for itself.
 /// </summary>
 public sealed partial class MicrowaveSoundSystem : EntitySystem
 {
@@ -45,8 +46,7 @@ public sealed partial class MicrowaveSoundSystem : EntitySystem
         }
     }
 
-    // The game's own system holds the startup and shutdown of this component,
-    // so the start and the end of cooking are caught on the events next to them.
+    // The game's own system holds the startup of this component, so the start of cooking is caught on the event before it.
     [SubscribeLocalEvent]
     private void OnCookStart(Entity<ActiveMicrowaveComponent> ent, ref ComponentInit args)
     {
@@ -57,27 +57,6 @@ public sealed partial class MicrowaveSoundSystem : EntitySystem
 
         sounds.NextSpark = _timing.CurTime + sounds.MinSparkInterval;
         PlayBurning((ent, microwave), sounds);
-        if (HasDoorMoved(ent))
-            _audio.PlayPvs(sounds.DoorCloseSound, ent);
-    }
-
-    [SubscribeLocalEvent]
-    private void OnCookEnd(Entity<ActiveMicrowaveComponent> ent, ref ComponentRemove args)
-    {
-        if (TerminatingOrDeleted(ent)
-            || !HasDoorMoved(ent)
-            || !TryComp(ent, out MicrowaveSoundsComponent? sounds)
-            || !TryComp(ent, out MicrowaveComponent? microwave)
-            || microwave.Broken)
-            return;
-
-        _audio.PlayPvs(sounds.DoorOpenSound, ent);
-    }
-
-    // An instant cook is over within a tick, the door has no time to move.
-    private static bool HasDoorMoved(Entity<ActiveMicrowaveComponent> ent)
-    {
-        return ent.Comp.TotalTime > 0f;
     }
 
     private void PlayBurning(Entity<MicrowaveComponent> microwave, MicrowaveSoundsComponent sounds)

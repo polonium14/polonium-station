@@ -266,7 +266,9 @@ public abstract partial class MicrowaveSystem
 
         // TODO: Audio prediction sucks. Predict this properly when audio prediction is less broken
         // https://github.com/space-wizards/RobustToolbox/issues/6436
-        if (_net.IsServer)
+        // Polonium: a microwave with door sounds beeps on the client, in step with its door.
+        // An instant cook can pass a client unseen, so the server still plays that one.
+        if (_net.IsServer && (active.TotalTime <= 0f || !HasComp<_Polonium.Kitchen.MicrowaveSoundsComponent>(ent)))
             Audio.PlayPvs(microwave.FoodDoneSound, ent); // beep... beep... beep
 
         // Clean up the microwave.

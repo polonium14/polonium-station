@@ -4,13 +4,14 @@ using System.Linq;
 using Content.IntegrationTests.Tests.Interaction;
 using Content.Server.Kitchen.EntitySystems;
 using Content.Shared._Polonium.Kitchen;
-using Content.Shared.Interaction;
+using Content.Shared.Input;
 using Content.Shared.Kitchen.Components;
 using Content.Shared.Kitchen.EntitySystems;
 using Content.Shared.Power.EntitySystems;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Input;
 
 namespace Content.IntegrationTests.Tests._Polonium.Kitchen;
 
@@ -21,8 +22,13 @@ public sealed class MicrowaveSoundTest : InteractionTest
     private const uint CookSeconds = 5;
     private const int CookTimeKey = 1;
     private const int WindowTicks = 30;
+    private const int MaxListenTicks = 600;
 
     private MicrowaveSoundsComponent Sounds => SEntMan.GetComponent<MicrowaveSoundsComponent>(STarget!.Value);
+
+    private SoundSpecifier DoneSound => SEntMan.GetComponent<MicrowaveComponent>(STarget!.Value).FoodDoneSound;
+
+    private bool Cooking => SEntMan.HasComponent<ActiveMicrowaveComponent>(STarget);
 
     /// <summary>
     /// The files that a sound of the microwave can play, as its prototype sets them.
@@ -41,29 +47,62 @@ public sealed class MicrowaveSoundTest : InteractionTest
         return files;
     }
 
-    /// <summary>
-    /// Counts how many times the client starts to play the sound while the given ticks pass.
-    /// </summary>
-    private async Task<int> HeardByClient(SoundSpecifier? sound, int ticks)
+    private Dictionary<EntityUid, string> ClientSounds()
     {
-        var files = Files(sound);
-        var heard = new HashSet<EntityUid>();
-        for (var i = 0; i < ticks; i++)
+        var sounds = new Dictionary<EntityUid, string>();
+        var query = CEntMan.AllEntityQueryEnumerator<AudioComponent>();
+        while (query.MoveNext(out var uid, out var audio))
+        {
+            var name = audio.FileName;
+            sounds[uid] = name;
+        }
+
+        return sounds;
+    }
+
+    /// <summary>
+    /// Does the action and returns the files of the sounds that the client starts to play after it.
+    /// Listens for as long as the condition holds and for a short while more.
+    /// </summary>
+    private async Task<List<string>> Listen(Func<Task> action, Func<bool>? during = null)
+    {
+        Dictionary<EntityUid, string> old = [];
+        await Client.WaitPost(() => old = ClientSounds());
+        await action();
+
+        var heard = new Dictionary<EntityUid, string>();
+        var left = WindowTicks;
+        for (var i = 0; i < MaxListenTicks && left > 0; i++)
         {
             await RunTicks(1);
             await Client.WaitPost(() =>
             {
-                var query = CEntMan.AllEntityQueryEnumerator<AudioComponent>();
-                while (query.MoveNext(out var uid, out var audio))
+                foreach (var (uid, file) in ClientSounds())
                 {
-                    var name = audio.FileName;
-                    if (files.Contains(name))
-                        heard.Add(uid);
+                    if (!old.ContainsKey(uid))
+                        heard[uid] = file;
                 }
             });
+
+            if (during?.Invoke() != true)
+                left--;
         }
 
-        return heard.Count;
+        return heard.Values.ToList();
+    }
+
+    private int Count(List<string> heard, SoundSpecifier? sound)
+    {
+        return heard.Count(Files(sound).Contains);
+    }
+
+    /// <summary>
+    /// Sends a message from the window the way the window does, so the client predicts what it causes.
+    /// </summary>
+    private Task Send(BoundUserInterfaceMessage message)
+    {
+        Assert.That(TryGetBui(MicrowaveUiKey.Key, out var bui));
+        return Client.WaitPost(() => bui!.SendPredictedMessage(message));
     }
 
     private async Task SpawnMicrowave(string prototype, params string[] contents)
@@ -104,40 +143,76 @@ public sealed class MicrowaveSoundTest : InteractionTest
     }
 
     /// <summary>
-    /// The door is heard shutting when cooking starts and opening when it ends, and food alone does not sizzle.
+    /// The player who cooks hears the door shut once at the start, and the door open with one beep at the end.
+    /// Food alone does not sizzle.
     /// </summary>
     [Test]
     public async Task DoorSoundsAroundCooking()
     {
         await SpawnMicrowave(Microwave, "FoodBreadBun");
-        await StartCooking(CookTimeKey, CookSeconds);
+        await SendBui(MicrowaveUiKey.Key, new MicrowaveSelectCookTimeMessage(CookTimeKey, CookSeconds));
+        var start = await Listen(() => Send(new MicrowaveStartCookMessage()));
         AssertComp<ActiveMicrowaveComponent>();
         Assert.Multiple(() =>
         {
-            Assert.That(Playing(Sounds.DoorCloseSound), Is.EqualTo(1));
-            Assert.That(Playing(Sounds.DoorOpenSound), Is.Zero);
-            Assert.That(Playing(Sounds.BurnSound), Is.Zero);
+            Assert.That(Count(start, Sounds.DoorCloseSound), Is.EqualTo(1));
+            Assert.That(Count(start, Sounds.DoorOpenSound), Is.Zero);
+            Assert.That(Count(start, Sounds.BurnSound), Is.Zero);
+            Assert.That(Count(start, DoneSound), Is.Zero);
         });
 
-        await WaitForCookEnd();
-        Assert.That(Playing(Sounds.DoorOpenSound), Is.EqualTo(1));
+        var end = await Listen(() => Task.CompletedTask, () => Cooking);
+        AssertComp<ActiveMicrowaveComponent>(false);
+        Assert.Multiple(() =>
+        {
+            Assert.That(Count(end, Sounds.DoorOpenSound), Is.EqualTo(1));
+            Assert.That(Count(end, Sounds.DoorCloseSound), Is.Zero);
+            Assert.That(Count(end, DoneSound), Is.EqualTo(1));
+        });
     }
 
     /// <summary>
-    /// An instant cook is over before the door could move, so the door stays quiet.
+    /// A player without the window hears the door and the beep of a microwave that runs next to them.
+    /// </summary>
+    [Test]
+    public async Task DoorHeardWithoutWindow()
+    {
+        await SpawnMicrowave(Microwave, "FoodBreadBun");
+        await SendBui(MicrowaveUiKey.Key, new MicrowaveSelectCookTimeMessage(CookTimeKey, CookSeconds));
+        await CloseBui(MicrowaveUiKey.Key);
+
+        var start = await Listen(() => Server.WaitPost(() =>
+        {
+            var microwave = SEntMan.GetComponent<MicrowaveComponent>(STarget!.Value);
+            SEntMan.System<ServerMicrowaveSystem>().StartCooking((STarget.Value, microwave), null);
+        }));
+        AssertComp<ActiveMicrowaveComponent>();
+        Assert.That(Count(start, Sounds.DoorCloseSound), Is.EqualTo(1));
+
+        var end = await Listen(() => Task.CompletedTask, () => Cooking);
+        Assert.Multiple(() =>
+        {
+            Assert.That(Count(end, Sounds.DoorOpenSound), Is.EqualTo(1));
+            Assert.That(Count(end, DoneSound), Is.EqualTo(1));
+        });
+    }
+
+    /// <summary>
+    /// An instant cook is over before the door could move, so the door stays quiet and only the beep is heard.
     /// </summary>
     [Test]
     public async Task InstantCookKeepsDoorQuiet()
     {
         await SpawnMicrowave(Microwave, "FoodBreadBun");
-        await StartCooking(0, 0);
-        await RunTicks(5);
+        await SendBui(MicrowaveUiKey.Key, new MicrowaveSelectCookTimeMessage(0, 0));
+        var heard = await Listen(() => Send(new MicrowaveStartCookMessage()));
 
         AssertComp<ActiveMicrowaveComponent>(false);
         Assert.Multiple(() =>
         {
-            Assert.That(Playing(Sounds.DoorCloseSound), Is.Zero);
-            Assert.That(Playing(Sounds.DoorOpenSound), Is.Zero);
+            Assert.That(Count(heard, Sounds.DoorCloseSound), Is.Zero);
+            Assert.That(Count(heard, Sounds.DoorOpenSound), Is.Zero);
+            Assert.That(Count(heard, DoneSound), Is.EqualTo(1));
         });
     }
 
@@ -183,7 +258,7 @@ public sealed class MicrowaveSoundTest : InteractionTest
     }
 
     /// <summary>
-    /// The player who opens the window hears the door once, and closing the window makes no sound.
+    /// The player who closes the window of an idle microwave hears the door shut once, and hears it open once with the window.
     /// Closing used to play the door several times while the server confirmed it.
     /// </summary>
     [Test]
@@ -191,11 +266,19 @@ public sealed class MicrowaveSoundTest : InteractionTest
     {
         await SpawnMicrowave(Microwave);
         Assert.That(TryGetBui(MicrowaveUiKey.Key, out var bui));
-        await Client.WaitPost(() => bui!.Close());
-        Assert.That(await HeardByClient(Sounds.DoorOpenSound, WindowTicks), Is.Zero);
+        var closing = await Listen(() => Client.WaitPost(() => bui!.Close()));
+        Assert.Multiple(() =>
+        {
+            Assert.That(Count(closing, Sounds.DoorCloseSound), Is.EqualTo(1));
+            Assert.That(Count(closing, Sounds.DoorOpenSound), Is.Zero);
+        });
 
-        await Client.WaitPost(() => CEntMan.System<SharedInteractionSystem>().InteractionActivate(CPlayer, CTarget!.Value));
-        Assert.That(await HeardByClient(Sounds.DoorOpenSound, WindowTicks), Is.EqualTo(1));
+        var opening = await Listen(() => SetKey(ContentKeyFunctions.ActivateItemInWorld, BoundKeyState.Down));
+        Assert.Multiple(() =>
+        {
+            Assert.That(Count(opening, Sounds.DoorOpenSound), Is.EqualTo(1));
+            Assert.That(Count(opening, Sounds.DoorCloseSound), Is.Zero);
+        });
     }
 
     /// <summary>
