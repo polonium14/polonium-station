@@ -1380,7 +1380,7 @@
   id: DetectiveServiceWeapon
   name: loadout-group-detective-serviceweapon
   loadouts:
-#  - DetectiveInspectorRevolver
+  - DetectiveInspectorRevolver
   - DetectiveEnergyRevolver
 
 - type: loadoutGroup
