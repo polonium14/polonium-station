@@ -92,7 +92,7 @@ public sealed partial class LatheMaterials : Control
         var changed = false;
         for (var i = _cells.Count - 1; i >= 0; i--)
         {
-            if (_model.Materials.GetValueOrDefault(_cells[i].Material.ID) > 0)
+            if (Shown(_cells[i].Material.ID))
                 continue;
 
             foreach (var key in _cells[i].Keys)
@@ -104,13 +104,14 @@ public sealed partial class LatheMaterials : Control
             changed = true;
         }
 
-        foreach (var (id, volume) in _model.Materials)
+        foreach (var id in _model.Materials.Keys)
         {
-            if (volume <= 0 || HasCell(id) || !_proto.Resolve(id, out var material))
-                continue;
+            changed |= TryAddCell(id);
+        }
 
-            _cells.Add(Create(material));
-            changed = true;
+        foreach (var id in _model.Reserved.Keys)
+        {
+            changed |= TryAddCell(id);
         }
 
         if (changed)
@@ -130,6 +131,23 @@ public sealed partial class LatheMaterials : Control
 
         _scroll = scroll;
         InvalidateArrange();
+    }
+
+    /// <summary>
+    /// A material keeps its gauge while some of it lies in store or the queue has taken it, even all of it.
+    /// </summary>
+    private bool Shown(ProtoId<MaterialPrototype> material)
+    {
+        return _model.Materials.GetValueOrDefault(material) > 0 || _model.Reserved.GetValueOrDefault(material) > 0;
+    }
+
+    private bool TryAddCell(ProtoId<MaterialPrototype> id)
+    {
+        if (!Shown(id) || HasCell(id) || !_proto.Resolve(id, out var material))
+            return false;
+
+        _cells.Add(Create(material));
+        return true;
     }
 
     private Cell Create(MaterialPrototype material)

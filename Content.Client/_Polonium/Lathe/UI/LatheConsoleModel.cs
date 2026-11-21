@@ -42,8 +42,6 @@ public sealed partial class LatheConsoleModel
     public const float GaugeSheets = 40f;
 
     private static readonly TimeSpan DenyTime = TimeSpan.FromSeconds(1.6);
-    private static readonly TimeSpan AbortWindow = TimeSpan.FromSeconds(1);
-    private static readonly TimeSpan FinishTolerance = TimeSpan.FromSeconds(0.25);
     private static readonly TimeSpan OutputTime = TimeSpan.FromSeconds(1.4);
     private static readonly TimeSpan GlitchHold = TimeSpan.FromSeconds(2.4);
     private const int GlitchSpread = 24;
@@ -55,7 +53,6 @@ public sealed partial class LatheConsoleModel
     private readonly SharedSolutionContainerSystem _solutions;
 
     private readonly List<LatheRecipePrototype> _recipes = new();
-    private TimeSpan? _abortedAt;
     private TimeSpan _nextGlitch;
     private int _glitchStep;
 
@@ -287,12 +284,6 @@ public sealed partial class LatheConsoleModel
         return (int) (hash % (uint) range);
     }
 
-    public void NoteAbort()
-    {
-        if (Printing != null)
-            _abortedAt = Now;
-    }
-
     /// <summary>
     /// Reads the lathe's components. Called once a frame.
     /// </summary>
@@ -350,17 +341,21 @@ public sealed partial class LatheConsoleModel
         LatheRecipePrototype? printing = null;
         var start = TimeSpan.Zero;
         var length = TimeSpan.Zero;
-        if (_entMan.TryGetComponent(Entity, out LatheProgressComponent? progress) && _proto.Resolve(progress.Recipe, out printing))
+        var finished = TimeSpan.Zero;
+        if (_entMan.TryGetComponent(Entity, out LatheProgressComponent? progress))
         {
-            start = progress.StartTime;
-            length = progress.Length;
+            finished = progress.Finished;
+            if (progress.Recipe is { } recipe && _proto.Resolve(recipe, out printing))
+            {
+                start = progress.StartTime;
+                length = progress.Length;
+            }
         }
 
         if (Printing != null && (printing == null || start != PrintStart))
         {
-            var aborted = _abortedAt is { } at && Now - at <= AbortWindow;
-            _abortedAt = null;
-            var produced = !aborted && _timing.CurTime >= PrintStart + PrintLength - FinishTolerance;
+            // Only the server knows whether the item came out: a stop key, a power cut or another operator may cut it short.
+            var produced = finished >= PrintStart;
             if (produced)
                 Outputs.Add(new LatheOutput(Printing, Now));
 

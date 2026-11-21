@@ -3,11 +3,13 @@ using Content.Shared._Polonium.Lathe;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Lathe;
 using Content.Shared.ReagentSpeed;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Polonium.Lathe;
 
 public sealed partial class LatheProgressSystem : EntitySystem
 {
+    [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedSolutionContainerSystem _solutions = default!;
 
     public override void Initialize()
@@ -15,6 +17,8 @@ public sealed partial class LatheProgressSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<LatheComponent, LatheStartPrintingEvent>(OnStartPrinting);
+        // The lathe's own system holds the shutdown of this component, so the end of a run is caught on its removal.
+        SubscribeLocalEvent<LatheProducingComponent, ComponentRemove>(OnRunEnd);
     }
 
     private void OnStartPrinting(Entity<LatheComponent> ent, ref LatheStartPrintingEvent args)
@@ -23,6 +27,10 @@ public sealed partial class LatheProgressSystem : EntitySystem
             return;
 
         var progress = EnsureComp<LatheProgressComponent>(ent);
+        // Within a run only an item that came out starts the next one.
+        if (progress.Recipe != null)
+            progress.Finished = progress.StartTime;
+
         progress.Recipe = args.Recipe.ID;
         progress.StartTime = producing.StartTime;
         progress.Length = producing.ProductionLength;
@@ -33,16 +41,22 @@ public sealed partial class LatheProgressSystem : EntitySystem
             Dirty(lube.Value);
     }
 
-    public override void Update(float frameTime)
+    private void OnRunEnd(Entity<LatheProducingComponent> ent, ref ComponentRemove args)
     {
-        base.Update(frameTime);
+        if (TerminatingOrDeleted(ent))
+            return;
 
-        // The lathe system raises no event when printing stops, it only drops its own component.
-        var query = EntityQueryEnumerator<LatheProgressComponent>();
-        while (query.MoveNext(out var uid, out _))
+        if (TryComp<LatheProgressComponent>(ent, out var progress) && progress.Recipe != null)
         {
-            if (!HasComp<LatheProducingComponent>(uid))
-                RemCompDeferred<LatheProgressComponent>(uid);
+            // An aborted item stops before its time is up.
+            if (_timing.CurTime >= progress.StartTime + ent.Comp.ProductionLength)
+                progress.Finished = progress.StartTime;
+
+            progress.Recipe = null;
+            Dirty(ent, progress);
         }
+
+        var ev = new LatheRunEndedEvent();
+        RaiseLocalEvent(ent, ref ev);
     }
 }

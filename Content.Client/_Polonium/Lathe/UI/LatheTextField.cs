@@ -11,8 +11,10 @@ namespace Content.Client._Polonium.Lathe.UI;
 /// <summary>
 /// A one-line entry on a screen, typed like on a terminal: the cursor always stands at the end.
 /// </summary>
-public sealed class LatheTextField : Control
+public sealed partial class LatheTextField : Control
 {
+    [Dependency] private IClipboardManager _clipboard = default!;
+
     private const float BlinkTime = 0.53f;
 
     private string _text = string.Empty;
@@ -37,6 +39,8 @@ public sealed class LatheTextField : Control
 
     public LatheTextField()
     {
+        IoCManager.InjectDependencies(this);
+
         MouseFilter = MouseFilterMode.Stop;
         CanKeyboardFocus = true;
         KeyboardFocusOnClick = true;
@@ -74,20 +78,32 @@ public sealed class LatheTextField : Control
     {
         base.TextEntered(args);
 
+        Insert(args.Text);
+    }
+
+    private void Insert(string entered)
+    {
         // The sandbox does not allow what the compiler makes of "string + char", hence the builder.
         var text = new StringBuilder(_text);
-        foreach (var character in args.Text)
+        foreach (var rune in entered.EnumerateRunes())
         {
-            if (text.Length >= MaxLength)
+            if (text.Length + rune.Utf16SequenceLength > MaxLength)
                 break;
 
-            if (char.IsControl(character) || DigitsOnly && character is < '0' or > '9')
+            if (Rune.IsControl(rune) || DigitsOnly && rune.Value is < '0' or > '9')
                 continue;
 
-            text.Append(character);
+            text.Append(rune.ToString());
         }
 
         Change(text.ToString());
+    }
+
+    private async void Paste()
+    {
+        var pasted = await _clipboard.GetText();
+        if (!Disposed)
+            Insert(pasted);
     }
 
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
@@ -101,6 +117,10 @@ public sealed class LatheTextField : Control
         {
             if (_text.Length > 0)
                 Change(_text[..^(_text.Length > 1 && char.IsLowSurrogate(_text[^1]) ? 2 : 1)]);
+        }
+        else if (args.Function == EngineKeyFunctions.TextPaste)
+        {
+            Paste();
         }
         else if (args.Function == EngineKeyFunctions.TextSubmit || args.Function == EngineKeyFunctions.TextReleaseFocus)
         {

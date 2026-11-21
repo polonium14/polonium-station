@@ -117,6 +117,7 @@ public sealed partial class LatheTicketRack : Control
     private LatheRecipePrototype? _syncedPrinting;
     private TimeSpan _syncedStart;
     private bool _synced;
+    private bool _following;
     private int _scroll;
     private int _content;
     private int _arranged;
@@ -365,10 +366,7 @@ public sealed partial class LatheTicketRack : Control
         SyncHeld();
 
         if (grew && _synced)
-        {
-            Layout();
-            _scroll = MaxScroll;
-        }
+            _following = true;
 
         _synced = true;
     }
@@ -399,6 +397,13 @@ public sealed partial class LatheTicketRack : Control
                 Leave(idle, false);
             }
 
+            return;
+        }
+
+        // A held ticket is the item in work, even when a moved batch of the same recipe has printed some already.
+        if (_held is { } current && current.Recipe == printing)
+        {
+            Batch = (current.Total, current.Total);
             return;
         }
 
@@ -481,12 +486,21 @@ public sealed partial class LatheTicketRack : Control
         Sync();
         Number();
         Layout();
+
+        // A new ticket grows as it feeds in, so the view keeps up with it until it is whole or the operator scrolls.
+        if (_following)
+        {
+            _scroll = MaxScroll;
+            _following = _tickets.Exists(ticket => ticket.Phase == Phase.Entering);
+        }
+
         _scroll = Math.Clamp(_scroll, 0, MaxScroll);
 
+        // Tickets that swap places keep the same geometry between them, so each one counts by itself.
         var arranged = _scroll;
         foreach (var ticket in _tickets)
         {
-            arranged = HashCode.Combine(arranged, ticket.Top, ticket.Height, ticket.ShiftX, ticket.ShiftY, ticket.Alpha);
+            arranged = HashCode.Combine(arranged, ticket, ticket.Top, ticket.Height, ticket.ShiftX, ticket.ShiftY, ticket.Alpha);
         }
 
         if (arranged == _arranged)
@@ -551,6 +565,7 @@ public sealed partial class LatheTicketRack : Control
         if (args.Delta.Y == 0f || MaxScroll == 0)
             return;
 
+        _following = false;
         _scroll = Math.Clamp(_scroll - MathF.Sign(args.Delta.Y) * ScrollStep, 0, MaxScroll);
         args.Handle();
     }

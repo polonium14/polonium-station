@@ -110,6 +110,13 @@ public sealed partial class LatheTank : Control
         }
 
         _volume = volume;
+        if (_model.ReducedMotion)
+        {
+            _shown = Wanted;
+            _bubbles.Clear();
+            return;
+        }
+
         _clock += args.DeltaSeconds;
         if (_clock < FrameTime)
             return;

@@ -18,8 +18,7 @@ public sealed partial class LatheWorkSoundsSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<LatheWorkSoundsComponent, LatheStartPrintingEvent>(OnStartPrinting);
-        // The lathe's own system holds the shutdown of this component, so the end of a run is caught on its removal.
-        SubscribeLocalEvent<LatheProducingComponent, ComponentRemove>(OnRunEnd);
+        SubscribeLocalEvent<LatheWorkSoundsComponent, LatheRunEndedEvent>(OnRunEnd);
     }
 
     private void OnStartPrinting(Entity<LatheWorkSoundsComponent> ent, ref LatheStartPrintingEvent args)
@@ -36,20 +35,17 @@ public sealed partial class LatheWorkSoundsSystem : EntitySystem
         _ambient.SetAmbience(ent, true);
     }
 
-    private void OnRunEnd(Entity<LatheProducingComponent> ent, ref ComponentRemove args)
+    private void OnRunEnd(Entity<LatheWorkSoundsComponent> ent, ref LatheRunEndedEvent args)
     {
-        if (TerminatingOrDeleted(ent) || !TryComp(ent, out LatheWorkSoundsComponent? sounds))
-            return;
-
-        _audio.Stop(sounds.Stream);
-        if (!sounds.MotorRunning)
+        _audio.Stop(ent.Comp.Stream);
+        if (!ent.Comp.MotorRunning)
         {
-            sounds.Stream = _audio.PlayPvs(sounds.InstantSound, ent)?.Entity;
+            ent.Comp.Stream = _audio.PlayPvs(ent.Comp.InstantSound, ent)?.Entity;
             return;
         }
 
-        sounds.MotorRunning = false;
+        ent.Comp.MotorRunning = false;
         _ambient.SetAmbience(ent, false);
-        sounds.Stream = _audio.PlayPvs(sounds.StopSound, ent)?.Entity;
+        ent.Comp.Stream = _audio.PlayPvs(ent.Comp.StopSound, ent)?.Entity;
     }
 }

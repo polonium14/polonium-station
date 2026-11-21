@@ -313,7 +313,7 @@ public sealed partial class LatheCatalog : Control
             if (!_proto.Resolve(id, out MaterialPrototype? material))
                 continue;
 
-            var cost = _model.Cost(recipe, amount);
+            var cost = _model.Cost(recipe, amount) * _model.Amount;
             float volume = _model.SheetVolume(material);
             var unit = Loc.GetString(material.Unit);
             var name = Loc.GetString(material.Name);

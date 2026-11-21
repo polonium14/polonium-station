@@ -240,11 +240,8 @@ public sealed partial class LathePulpitWindow : BaseWindow
         };
         _stop.OnPressed += _ =>
         {
-            if (_stoppedAll)
-                return;
-
-            model.NoteAbort();
-            OnAbort?.Invoke();
+            if (!_stoppedAll)
+                OnAbort?.Invoke();
         };
         _keySounds.Attach(_stop, _stopSound);
         AddChild(_stop);
@@ -365,8 +362,8 @@ public sealed partial class LathePulpitWindow : BaseWindow
         _plus.Disabled = _model.Amount >= LatheConsoleModel.MaxAmount;
         _servers.Visible = _model.HasServers;
 
-        // A key that disabled itself under the finger never reports its release.
-        if (_repeat != 0 && (_repeat < 0 ? _minus : _plus).Disabled)
+        // A key that disabled itself under the finger never reports its release, nor does one that lost the mouse.
+        if (_repeat != 0 && (_repeat < 0 ? _minus : _plus) is var held && (held.Disabled || UserInterfaceManager.ControlFocused != held))
             _repeat = 0;
 
         if (_repeat != 0)
@@ -395,7 +392,6 @@ public sealed partial class LathePulpitWindow : BaseWindow
         else if (!_stoppedAll && (_stopHeld += args.DeltaSeconds) >= StopHoldTime)
         {
             _stoppedAll = true;
-            _model.NoteAbort();
             _rack.DoomAll();
             _keySounds.PlaySignal(_stopAllSound);
             OnStopAll?.Invoke();
