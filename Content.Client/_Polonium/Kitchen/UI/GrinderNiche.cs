@@ -63,13 +63,16 @@ public sealed partial class GrinderNiche : Control
     private float _leave;
     private float _clock;
     private int _pictureScale;
-    private bool _active;
+    private bool _busy;
     private bool _reduced;
     private bool _opened;
     private bool _hovered;
     private bool _clickable;
 
-    public event Action? OnPressed;
+    /// <summary>
+    /// Raised by a click. It carries true when the niche is empty and the held vessel should go in.
+    /// </summary>
+    public event Action<bool>? OnPressed;
 
     /// <param name="painter">Tells the stream which colours the grains of a dry mass have.</param>
     public GrinderNiche(GrinderSpriteProbe probe, GrinderMassPainter painter)
@@ -97,7 +100,7 @@ public sealed partial class GrinderNiche : Control
         _clock += delta;
         _reduced = reduced;
         _stream = stream;
-        _active = model.Program != null;
+        _busy = model.Busy;
         _hand = model.HandVessel;
 
         if (model.Vessel != _vessel)
@@ -138,14 +141,14 @@ public sealed partial class GrinderNiche : Control
 
     private void UpdateHint()
     {
-        _clickable = _vessel != null ? !_active : _hand != null;
+        _clickable = _vessel != null ? !_busy : _hand != null;
         var shape = _clickable ? CursorShape.Hand : CursorShape.Arrow;
         if (DefaultCursorShape != shape)
             DefaultCursorShape = shape;
 
         if (_vessel != null)
         {
-            this.SetLiveToolTip(_active ? null : _takeTip);
+            this.SetLiveToolTip(_busy ? null : _takeTip);
             return;
         }
 
@@ -324,7 +327,7 @@ public sealed partial class GrinderNiche : Control
         if (args.Function != EngineKeyFunctions.UIClick || !_clickable)
             return;
 
-        OnPressed?.Invoke();
+        OnPressed?.Invoke(_vessel == null);
         args.Handle();
     }
 }

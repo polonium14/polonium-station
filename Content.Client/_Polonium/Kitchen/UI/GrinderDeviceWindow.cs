@@ -118,9 +118,10 @@ public sealed partial class GrinderDeviceWindow : BaseWindow
     public event Action<EntityUid>? OnEject;
 
     /// <summary>
-    /// Raised by a click on the vessel or on its empty place. The game takes the vessel out or puts in the one from the hand.
+    /// Raised by a click on the vessel, on its empty place or on the key that takes the vessel out.
+    /// It carries true to put in the vessel from the hand and false to take the vessel out.
     /// </summary>
-    public event Action? OnVesselPressed;
+    public event Action<bool>? OnVesselPressed;
 
     public GrinderDeviceWindow()
     {
@@ -157,7 +158,7 @@ public sealed partial class GrinderDeviceWindow : BaseWindow
         _jug.OnHoverChanged += SetHovered;
 
         _niche = new GrinderNiche(_probe, _jug.Painter);
-        _niche.OnPressed += () => OnVesselPressed?.Invoke();
+        _niche.OnPressed += insert => OnVesselPressed?.Invoke(insert);
         Add(_niche, GrinderNiche.Area);
         Add(_jug, GrinderJug.Area);
 
@@ -177,7 +178,7 @@ public sealed partial class GrinderDeviceWindow : BaseWindow
 
         _ejectVessel = AddKey(Around(RightAxis, 234, 10), GrinderArt.MediumKey, GrinderArt.MediumKeyDown, GrinderArt.EjectIcon);
         _ejectVessel.ToolTip = Loc.GetString("polonium-grinder-eject-vessel");
-        _ejectVessel.OnPressed += _ => OnVesselPressed?.Invoke();
+        _ejectVessel.OnPressed += _ => OnVesselPressed?.Invoke(false);
 
         _knob = new GrinderKey
         {

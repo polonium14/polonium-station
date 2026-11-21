@@ -57,6 +57,7 @@ public sealed partial class GrinderJug : Control
     private const float DropRate = 4.8f;
     private const float Gravity = 300f;
     private const float ShakeRate = 30f;
+    private const float RestartDrop = 0.5f;
 
     private static readonly Vector2i JugAt = new(26, 45);
     private static readonly Vector2i GlassAt = new(38, 50);
@@ -167,7 +168,8 @@ public sealed partial class GrinderJug : Control
         _lid = reduced || MathF.Abs(target - _lid) <= lidStep ? target : _lid + MathF.Sign(target - _lid) * lidStep;
 
         var grew = SyncItems(model.Contents);
-        if (_run != null && _run.Program != model.Program)
+        // A run that follows another one of the same program without a pause shows only as the progress falling back.
+        if (_run != null && (_run.Program != model.Program || model.Progress < _run.Progress - RestartDrop))
             Finish();
 
         if (model.Program is { } program && (_run == null || grew))
@@ -394,7 +396,9 @@ public sealed partial class GrinderJug : Control
     private void StepRun(float progress, float delta)
     {
         var run = _run!;
-        run.Shift += delta * ShiftSpeed;
+        run.Progress = progress;
+        if (!_reduced)
+            run.Shift += delta * ShiftSpeed;
 
         var volume = 0f;
         var mixed = Vector3.Zero;
@@ -957,11 +961,13 @@ public sealed partial class GrinderJug : Control
             {
                 var item = _drawOrder[i];
                 var info = item.Info;
+                // A lifted thing is hit both where it lies and where it is drawn.
+                var lift = item.Uid == Hovered ? HoverLift : 0;
                 var box = UIBox2i.FromDimensions(
                     Left + GrinderArt.Round(item.X - info.Width / 2f),
-                    Top + GrinderArt.Round(item.Y - info.Height / 2f),
+                    Top + GrinderArt.Round(item.Y - info.Height / 2f) - lift,
                     info.Width,
-                    info.Height);
+                    info.Height + lift);
                 if (box.Contains(point))
                     hovered = item.Uid;
             }
@@ -1017,6 +1023,7 @@ public sealed partial class GrinderJug : Control
     private sealed class Run
     {
         public GrinderProgram Program;
+        public float Progress;
         public float Total;
         public float Pour;
         public float Shift;

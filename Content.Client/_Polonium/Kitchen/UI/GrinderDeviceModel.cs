@@ -275,11 +275,19 @@ public sealed class GrinderDeviceModel
             var entry = new GrinderPlanEntry
             {
                 Item = item,
-                Volume = solution.Volume.Float() * count,
                 Color = solution.GetColor(_proto),
                 All = all,
             };
 
+            plan.Add(entry);
+
+            // The game uses the thing up even when the rounding of a stack leaves no room for what it gives, and then nothing reaches the vessel.
+            var volume = solution.Volume * count;
+            if (volume > available)
+                continue;
+
+            available -= volume;
+            entry.Volume = volume.Float();
             foreach (var (reagent, quantity) in solution.Contents)
             {
                 var amount = quantity.Float() * count;
@@ -295,13 +303,6 @@ public sealed class GrinderDeviceModel
                 if (dry)
                     entry.DryVolume += amount;
             }
-
-            // The game uses the thing up even when the rounding of a stack leaves no room for what it gives.
-            var volume = solution.Volume * count;
-            if (volume <= available)
-                available -= volume;
-
-            plan.Add(entry);
         }
     }
 
