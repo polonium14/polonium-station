@@ -1,5 +1,6 @@
 - type: entity
   id: PMMMachineGunMagazineBase
+  categories: [ HideSpawnMenu ]
   name: Magazynek PMM Model-X (.35 auto any)
   parent: [ BaseItem, BaseSecurityContraband]
   components:

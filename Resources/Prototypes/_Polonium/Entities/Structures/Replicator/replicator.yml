@@ -331,6 +331,7 @@
 - type: entity
   parent: EffectReplicatorBase
   id: EffectReplicatorConvert
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
@@ -342,6 +343,7 @@
 - type: entity
   parent: EffectReplicatorBase
   id: EffectReplicatorBuild
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
@@ -353,6 +355,7 @@
 - type: entity
   parent: EffectReplicatorBase
   id: EffectReplicatorRepair
+  categories: [ HideSpawnMenu ]
   components:
   - type: Transform
     anchored: false
@@ -371,6 +374,7 @@
 - type: entity
   parent: EffectReplicatorBase
   id: EffectReplicatorScan
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     scale: 3, 3
