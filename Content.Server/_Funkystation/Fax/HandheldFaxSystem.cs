@@ -41,6 +41,9 @@ public sealed partial class HandheldFaxSystem : EntitySystem
     // otherwise drop on the ground if that's not possible.
     private void OnFaxPaperPrinted(EntityUid faxUid, FaxMachineComponent component, ref FaxPaperPrintedEvent args)
     {
+        if (args.Handled)
+            return;
+
         // Only redirect if the fax is actually inside a container.
         if (!_container.TryGetContainingContainer(faxUid, out var parentContainer))
             return;

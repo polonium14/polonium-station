@@ -81,7 +81,7 @@ public sealed partial class FaxMachineComponent : Component
     /// Sound to play when fax printing new message
     /// </summary>
     [DataField]
-    public SoundSpecifier PrintSound = new SoundPathSpecifier("/Audio/Machines/printer.ogg");
+    public SoundSpecifier? PrintSound = new SoundPathSpecifier("/Audio/Machines/printer.ogg"); // Polonium: the AI fax prints silently
 
     /// <summary>
     /// Sound to play when fax successfully send message

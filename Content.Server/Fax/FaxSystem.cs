@@ -5,6 +5,7 @@ using Content.Shared.DeviceNetwork.Systems;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Tools;
+using Content.Shared._DV.Fax; // Polonium: AI fax
 using Content.Shared.Administration.Logs;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
@@ -344,7 +345,7 @@ public sealed partial class FaxSystem : EntitySystem
         else
             _appearanceSystem.SetData(uid, FaxMachineVisuals.VisualState, FaxMachineVisualState.Normal);
     }
-    private void UpdateUserInterface(EntityUid uid, FaxMachineComponent? component = null)
+    public void UpdateUserInterface(EntityUid uid, FaxMachineComponent? component = null) // Polonium: AI fax
     {
         if (!Resolve(uid, ref component))
             return;
@@ -357,7 +358,7 @@ public sealed partial class FaxSystem : EntitySystem
         var canCopy = isPaperInserted &&
                       component.SendTimeoutRemaining <= 0 &&
                       component.InsertingTimeRemaining <= 0;
-        var state = new FaxUiState(component.FaxName, component.KnownFaxes, canSend, canCopy, isPaperInserted, component.DestinationFaxAddress);
+        var state = new FaxUiState(component.FaxName, component.KnownFaxes, canSend, canCopy, isPaperInserted, component.DestinationFaxAddress, component.SendTimeoutRemaining <= 0); // Polonium: AI fax
         _userInterface.SetUiState(uid, FaxUiKey.Key, state);
     }
 
@@ -369,8 +370,13 @@ public sealed partial class FaxSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
+        // Polonium: the address comes from the client and may be stale after a refresh
+        if (!component.KnownFaxes.TryGetValue(destAddress, out var destName))
+            return;
+
         component.DestinationFaxAddress = destAddress;
-        component.DestinationFaxName = component.KnownFaxes[destAddress];
+        component.DestinationFaxName = destName;
+        // Polonium end
 
         UpdateUserInterface(uid, component);
     }
@@ -401,6 +407,10 @@ public sealed partial class FaxSystem : EntitySystem
     /// </summary>
     public void PrintFile(EntityUid uid, FaxMachineComponent component, FaxFileMessage args)
     {
+        // Polonium: the cooldown was only enforced for copying and sending
+        if (component.SendTimeoutRemaining > 0)
+            return;
+
         var prototype = args.OfficePaper ? component.PrintOfficePaperId : component.PrintPaperId;
 
         var name = Loc.GetString("fax-machine-printed-paper-name");
@@ -424,7 +434,7 @@ public sealed partial class FaxSystem : EntitySystem
     ///     Copies the paper in the fax. A timeout is set after copying,
     ///     which is shared by the send button.
     /// </summary>
-    public void Copy(EntityUid uid, FaxMachineComponent? component, FaxCopyMessage args)
+    public void Copy(EntityUid uid, FaxMachineComponent? component, BoundUserInterfaceMessage args, EntityUid? item = null) // Polonium: AI fax
     {
         if (!Resolve(uid, ref component))
             return;
@@ -432,7 +442,7 @@ public sealed partial class FaxSystem : EntitySystem
         if (component.SendTimeoutRemaining > 0)
             return;
 
-        var sendEntity = component.PaperSlot.Item;
+        var sendEntity = item ?? component.PaperSlot.Item; // Polonium: AI fax
         if (sendEntity == null)
             return;
 
@@ -471,7 +481,7 @@ public sealed partial class FaxSystem : EntitySystem
     ///     Sends message to addressee if paper is set and a known fax is selected
     ///     A timeout is set after sending, which is shared by the copy button.
     /// </summary>
-    public void Send(EntityUid uid, FaxMachineComponent? component, FaxSendMessage args)
+    public void Send(EntityUid uid, FaxMachineComponent? component, BoundUserInterfaceMessage args, EntityUid? item = null) // Polonium: AI fax
     {
         if (!Resolve(uid, ref component))
             return;
@@ -479,7 +489,7 @@ public sealed partial class FaxSystem : EntitySystem
         if (component.SendTimeoutRemaining > 0)
             return;
 
-        var sendEntity = component.PaperSlot.Item;
+        var sendEntity = item ?? component.PaperSlot.Item; // Polonium: AI fax
         if (sendEntity == null)
             return;
 
@@ -568,6 +578,10 @@ public sealed partial class FaxSystem : EntitySystem
             NotifyAdmins(faxName);
 
         component.PrintingQueue.Enqueue(printout);
+
+        // Polonium: AI fax
+        var received = new FaxReceivedEvent(faxName);
+        RaiseLocalEvent(uid, ref received);
     }
 
     private void SpawnPaperFromQueue(EntityUid uid, FaxMachineComponent? component = null)

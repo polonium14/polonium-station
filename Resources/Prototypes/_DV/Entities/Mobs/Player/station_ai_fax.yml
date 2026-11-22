@@ -1,0 +1,34 @@
+- type: entity
+  id: StationAiFaxModule
+  categories: [ HideSpawnMenu, DoNotMap ]
+  name: station AI fax module
+  description: The fax machine built into a station AI.
+  components:
+  - type: FaxMachine
+    printSound: null
+    paperSlot:
+      whitelist:
+        components:
+        - FaxableObject
+      blacklist:
+        components:
+        - CargoSlip
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      Paper: !type:ContainerSlot
+      PaperLibrary: !type:Container
+  - type: UserInterface
+    interfaces:
+      enum.FaxUiKey.Key:
+        type: StationAiFaxBoundUserInterface
+  - type: StationAiWhitelist
+  - type: ApcPowerReceiver
+    needsPower: false
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: Fax
+    transmitFrequencyId: Fax
+  - type: StationAiFax
+    templatePacks:
+    - PrinterDocStatic

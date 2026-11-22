@@ -1,0 +1,13 @@
+- type: chatNotification
+  id: StationAiFaxReceived
+  message: station-ai-fax-notification-received
+  color: "#5ed7aa"
+  sound: /Audio/Machines/printer.ogg
+  nextDelay: 2
+
+- type: chatNotification
+  id: StationAiFaxArchiveFull
+  message: station-ai-fax-notification-full
+  color: Orange
+  sound: /Audio/Misc/notice2.ogg
+  nextDelay: 10
