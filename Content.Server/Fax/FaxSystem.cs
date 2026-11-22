@@ -6,6 +6,7 @@ using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Tools;
 using Content.Shared._DV.Fax; // Polonium: AI fax
+using Content.Shared._Polonium.Photography; // Polonium: faxed photographs
 using Content.Shared.Administration.Logs;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
@@ -460,20 +461,25 @@ public sealed partial class FaxSystem : EntitySystem
             return;
 
         if (!TryComp(sendEntity, out MetaDataComponent? metadata) ||
-            !TryComp<PaperComponent>(sendEntity, out var paper))
+            !TryScan(sendEntity.Value, out var paper, out var photo)) // Polonium: faxed photographs
             return;
 
         TryComp<LabelComponent>(sendEntity, out var labelComponent);
         TryComp<NameModifierComponent>(sendEntity, out var nameMod);
 
         // TODO: See comment in 'Send()' about not being able to copy whole entities
-        var printout = new FaxPrintout(paper.Content,
+        // Polonium: a photograph has no paper, so its fields fall back to empty
+        var printout = new FaxPrintout(paper?.Content ?? string.Empty,
                                        nameMod?.BaseName ?? metadata.EntityName,
                                        GetRawLabel(labelComponent), // Polonium: AI fax
                                        metadata.EntityPrototype?.ID ?? component.PrintPaperId,
-                                       paper.StampState,
-                                       paper.StampedBy,
-                                       paper.EditingDisabled);
+                                       paper?.StampState,
+                                       paper?.StampedBy,
+                                       paper?.EditingDisabled ?? false)
+        {
+            Photo = photo,
+        };
+        // Polonium end
 
         component.PrintingQueue.Enqueue(printout);
         component.SendTimeoutRemaining += component.SendTimeout;
@@ -513,7 +519,7 @@ public sealed partial class FaxSystem : EntitySystem
             return;
 
         if (!TryComp(sendEntity, out MetaDataComponent? metadata) ||
-           !TryComp<PaperComponent>(sendEntity, out var paper))
+           !TryScan(sendEntity.Value, out var paper, out var photo)) // Polonium: faxed photographs
             return;
 
         if (metadata.EntityPrototype == null)
@@ -523,9 +529,9 @@ public sealed partial class FaxSystem : EntitySystem
 
         TryComp<LabelComponent>(sendEntity, out var labelComponent);
 
-        var content = paper.Content;
+        var content = paper?.Content ?? string.Empty; // Polonium: faxed photographs
 
-        if (component.AddSenderInfo)
+        if (component.AddSenderInfo && paper != null) // Polonium: a photograph has no page for this text
         {
             var faxMachineAddress = _deviceNetworkSystem.GetAddress(uid);
             if (string.IsNullOrEmpty(faxMachineAddress))
@@ -551,10 +557,13 @@ public sealed partial class FaxSystem : EntitySystem
                     nameMod?.BaseName ?? metadata.EntityName,
                     GetRawLabel(labelComponent), // Polonium: AI fax
                     metadata.EntityPrototype.ID,
-                    paper.StampState,
-                    paper.StampedBy,
-                    paper.EditingDisabled,
-                    component.FaxName),
+                    paper?.StampState, // Polonium: faxed photographs
+                    paper?.StampedBy, // Polonium: faxed photographs
+                    paper?.EditingDisabled ?? false, // Polonium: faxed photographs
+                    component.FaxName)
+            {
+                Photo = photo, // Polonium: faxed photographs
+            },
         };
 
         _deviceNetworkSystem.SendPacket(uid, component.DestinationFaxAddress, ref payload);
@@ -564,7 +573,7 @@ public sealed partial class FaxSystem : EntitySystem
             $"{ToPrettyString(args.Actor):actor} " +
             $"sent fax from \"{component.FaxName}\" {ToPrettyString(uid):tool} " +
             $"to \"{faxName}\" ({component.DestinationFaxAddress}) " +
-            $"of {ToPrettyString(sendEntity):subject}: {paper.Content}");
+            $"of {ToPrettyString(sendEntity):subject}: {paper?.Content:content}"); // Polonium: faxed photographs
 
         component.SendTimeoutRemaining += component.SendTimeout;
 
@@ -611,6 +620,20 @@ public sealed partial class FaxSystem : EntitySystem
         return label?.CurrentLabel is { } text ? FormattedMessage.RemoveMarkupPermissive(text) : null;
     }
 
+    /// <summary>
+    ///     Polonium: besides paper, a fax can scan a photograph, which brings its picture instead of text.
+    /// </summary>
+    private bool TryScan(EntityUid item, out PaperComponent? paper, out FaxedPhoto? photo)
+    {
+        TryComp(item, out paper);
+
+        var scan = new FaxScanPhotoEvent();
+        RaiseLocalEvent(item, ref scan);
+        photo = scan.Photo;
+
+        return paper != null || photo != null;
+    }
+
     private void SpawnPaperFromQueue(EntityUid uid, FaxMachineComponent? component = null)
     {
         if (!Resolve(uid, ref component) || component.PrintingQueue.Count == 0)
@@ -643,6 +666,14 @@ public sealed partial class FaxSystem : EntitySystem
         {
             _labelSystem.Label(printed, label);
         }
+
+        // Polonium: faxed photographs
+        if (printout.Photo is { } photo)
+        {
+            var photoPrinted = new FaxPhotoPrintedEvent(photo);
+            RaiseLocalEvent(printed, ref photoPrinted);
+        }
+        // Polonium end
 
         // _Funkystation: allow other systems (HandheldFaxSystem) to redirect the paper
         var printedEvent = new FaxPaperPrintedEvent(printed);

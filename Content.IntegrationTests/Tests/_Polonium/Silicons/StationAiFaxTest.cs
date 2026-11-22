@@ -3,8 +3,10 @@ using System.Linq;
 using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Pair;
 using Content.Server._DV.Silicons;
+using Content.Server._Polonium.Photography;
 using Content.Server.Fax;
 using Content.Shared._DV.Silicons;
+using Content.Shared._Polonium.Photography;
 using Content.Shared.Actions.Components;
 using Content.Shared.Fax;
 using Content.Shared.Fax.Components;
@@ -40,6 +42,7 @@ public sealed class StationAiFaxTest : GameTest
     private static readonly EntProtoId BrainProto = "StationAiBrain";
     private static readonly EntProtoId FaxProto = "FaxMachineBase";
     private static readonly EntProtoId PaperProto = "Paper";
+    private static readonly EntProtoId PhotoProto = "PoloniumPhotograph";
     private static readonly ProtoId<LatheRecipePrototype> AllowedTemplate = "PrintedDocumentReportStationRecipe";
     private static readonly ProtoId<LatheRecipePrototype> ForbiddenTemplate = "PrintedDocumentSyndicateSummonsRecipe";
 
@@ -482,6 +485,60 @@ public sealed class StationAiFaxTest : GameTest
 
         await Server.WaitAssertion(() =>
             Assert.That(SEntMan.System<SharedUserInterfaceSystem>().TryOpenUi(module, FaxUiKey.Key, ai)));
+    }
+
+    [Test]
+    public async Task FaxedPhotoOpensInTheViewerAndCanBeCopied()
+    {
+        var blob = new byte[PhotographyConstants.PhotoByteLength];
+        blob[0] = 0xAB;
+
+        var map = await Pair.CreateTestMap();
+        var (_, ai, module) = await SpawnAi(map);
+        await OpenFaxUi(ai, module);
+
+        await Server.WaitPost(() => SEntMan.System<FaxSystem>().Receive(module,
+            new FaxPrintout(string.Empty, "photo", prototypeId: PhotoProto)
+            {
+                Photo = new FaxedPhoto(blob, null, null, null, Color.Black, null),
+            }));
+        await RunSeconds(PrintDelay(module));
+
+        EntityUid document = default;
+        await Server.WaitPost(() => document = Library(module).Single());
+        await SendBui(module, FaxUiKey.Key, new StationAiFaxOpenMessage(SEntMan.GetNetEntity(document)));
+
+        var netDocument = SEntMan.GetNetEntity(document);
+        await Client.WaitAssertion(() =>
+        {
+            var ui = CEntMan.GetComponent<UserInterfaceComponent>(CEntMan.GetEntity(netDocument));
+            Assert.That(ui.ClientOpenInterfaces.ContainsKey(PhotoViewerUiKey.Key), "The AI's client must show the picture.");
+        });
+
+        await Server.WaitAssertion(() =>
+        {
+            var photos = SEntMan.System<PoloniumPhotographySystem>();
+            var id = SEntMan.GetComponent<PoloniumPhotographComponent>(document).PhotoId;
+            Assert.That(SEntMan.System<SharedUserInterfaceSystem>().IsUiOpen(document, PhotoViewerUiKey.Key, ai));
+            Assert.That(photos.GetStoredPhoto(id), Is.EqualTo(blob));
+        });
+
+        await SendBui(module, FaxUiKey.Key, new StationAiFaxCopyMessage(netDocument));
+        await RunSeconds(PrintDelay(module));
+
+        await Server.WaitAssertion(() =>
+        {
+            var photos = SEntMan.System<PoloniumPhotographySystem>();
+            var copy = Library(module).Single(d => d != document);
+            Assert.That(photos.GetStoredPhoto(SEntMan.GetComponent<PoloniumPhotographComponent>(copy).PhotoId), Is.EqualTo(blob));
+        });
+
+        await Server.WaitPost(() => SEntMan.System<MobStateSystem>().ChangeMobState(ai, MobState.Dead));
+        await RunTicksSync(5);
+
+        await Server.WaitAssertion(() =>
+            Assert.That(SEntMan.System<SharedUserInterfaceSystem>().IsUiOpen(document, PhotoViewerUiKey.Key, ai), Is.False,
+                "A dead AI must lose the picture along with the rest of its windows."));
     }
 
     private async Task<EntityUid> SpawnFax(TestMapData map)

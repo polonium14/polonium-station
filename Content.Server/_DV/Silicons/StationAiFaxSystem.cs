@@ -20,6 +20,7 @@ using Content.Shared.Paper;
 using Content.Shared.Popups;
 using Content.Shared.Research.Prototypes;
 using Content.Shared.Silicons.StationAi;
+using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
@@ -241,9 +242,16 @@ public sealed partial class StationAiFaxSystem : EntitySystem
 
     private void OnOpenDocument(Entity<StationAiFaxComponent> ent, ref StationAiFaxOpenMessage args)
     {
-        if (GetDocument(ent, args.Document) is not { } document ||
-            !TryComp<PaperComponent>(document, out var paper))
+        if (GetDocument(ent, args.Document) is not { } document)
             return;
+
+        if (!TryComp<PaperComponent>(document, out var paper))
+        {
+            if (TryComp<ActivatableUIComponent>(document, out var activatable))
+                _ui.OpenUi(document, activatable.Key, args.Actor);
+
+            return;
+        }
 
         var editable = IsEditable(paper);
         paper.Mode = editable ? PaperComponent.PaperAction.Write : PaperComponent.PaperAction.Read;
@@ -398,7 +406,7 @@ public sealed partial class StationAiFaxSystem : EntitySystem
 
         foreach (var document in library.ContainedEntities)
         {
-            _ui.CloseUi(document, PaperComponent.PaperUiKey.Key, ai);
+            _ui.CloseUis(document, ai);
         }
     }
 

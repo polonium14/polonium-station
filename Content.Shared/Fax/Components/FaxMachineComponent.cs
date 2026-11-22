@@ -207,6 +207,12 @@ public sealed partial class FaxPrintout
     [DataField]
     public string? SenderFaxName { get; private set; } = default!;
 
+    /// <summary>
+    ///     Polonium: the picture of a faxed photograph. Kept in memory only, like the photo store.
+    /// </summary>
+    [NonSerialized]
+    public Content.Shared._Polonium.Photography.FaxedPhoto? Photo;
+
     private FaxPrintout()
     {
     }
