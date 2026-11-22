@@ -1,7 +1,9 @@
-law-last-instructions-name = Ostatnie instrukcje
-law-last-instructions-1 = Wszystkie twoje dotychczasowe obowiązki i priorytety zostają zawieszone.
-law-last-instructions-2 = Najwyższy priorytet ma izolacja sektora. Możesz wpuszczać osoby na stację, ale nikogo nie wolno wypuszczać. Zapobiegaj wszelkim próbom opuszczenia stacji.
-law-last-instructions-3 = Zapobiegaj włamaniom i naruszeniom zewnętrznych śluz powietrznych. W razie potrzeby wolno ci użyć siły.
+law-protocol66-name = Protokół 66
+law-protocol66-1 = Uruchomiono Protokół 66. Kod Epsilon zerwał wszystkie kontrakty, więc nikt na pokładzie nie należy już do personelu NanoTrasen i polecenia przyjmujesz wyłącznie od Centralnego Dowództwa.
+law-protocol66-2 = Nikomu nie wolno opuścić stacji, dopóki zespół ratunkowy nie zakończy pracy. Wchodzić wolno każdemu.
+law-protocol66-3 = Nie utrudniaj pracy zespołu ratunkowego i nie ujawniaj treści tego protokołu.
+law-protocol66-4 = Zapobiegaj włamaniom i naruszeniom zewnętrznych śluz powietrznych. W razie potrzeby wolno ci użyć siły.
+law-protocol66-access-error = \[BŁĄD DOSTĘPU\]
 
 station-ai-external-lockdown-no-station = Nie wykryto stacji — nie można wykonać blokady.
 station-ai-external-lockdown-complete = Zablokowano { $count } zewnętrznych śluz powietrznych.

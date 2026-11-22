@@ -15,4 +15,10 @@ public sealed partial class EpsilonLawBackupComponent : Component
 {
     [DataField(required: true)]
     public SiliconLawset Lawset = new();
+
+    /// <summary>
+    /// The station whose Code Epsilon replaced these laws.
+    /// </summary>
+    [DataField]
+    public EntityUid? Station;
 }

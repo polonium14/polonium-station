@@ -28,7 +28,7 @@ public sealed partial class GuideLawsetListEmbed : Control, IDocumentTag
 
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
-        foreach (var lawset in _prototype.EnumeratePrototypes<SiliconLawsetPrototype>().OrderBy(x => x.ID))
+        foreach (var lawset in _prototype.EnumeratePrototypes<SiliconLawsetPrototype>().Where(x => !x.HiddenInGuidebook).OrderBy(x => x.ID)) // Polonium: secret lawsets are not listed
         {
             GuideLawsetEmbed embed = new(lawset);
             GroupContainer.AddChild(embed);
