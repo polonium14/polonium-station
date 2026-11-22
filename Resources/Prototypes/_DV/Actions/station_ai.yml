@@ -7,6 +7,7 @@
   - type: Action
     keywords: [ "AI", "fax", "interface" ]
     priority: -5
+    temporary: true
   - type: Sprite
     sprite: _DV/Interface/Actions/actions_ai.rsi
     layers:

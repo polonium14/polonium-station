@@ -87,7 +87,7 @@ public sealed partial class FaxMachineComponent : Component
     /// Sound to play when fax successfully send message
     /// </summary>
     [DataField]
-    public SoundSpecifier SendSound = new SoundPathSpecifier("/Audio/Machines/high_tech_confirm.ogg");
+    public SoundSpecifier? SendSound = new SoundPathSpecifier("/Audio/Machines/high_tech_confirm.ogg"); // Polonium: the AI fax sends silently
 
     /// <summary>
     /// Known faxes in network by address with fax names

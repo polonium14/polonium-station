@@ -1,5 +1,6 @@
 using Content.Server._Corvax.Documents;
 using Content.Server._Funkystation.Fax;
+using Content.Server._Polonium.Paper;
 using Content.Server.Fax;
 using Content.Server.Station.Systems;
 using Content.Shared._DV.Fax;
@@ -16,10 +17,12 @@ using Content.Shared.Fax.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Paper;
+using Content.Shared.Popups;
 using Content.Shared.Research.Prototypes;
 using Content.Shared.Silicons.StationAi;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -38,6 +41,8 @@ public sealed partial class StationAiFaxSystem : EntitySystem
     [Dependency] private FaxSystem _fax = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private PaperSystem _paper = default!;
+    [Dependency] private PaperWriteGuardSystem _paperWrite = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private ServerStationSystem _station = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;
 
@@ -51,11 +56,13 @@ public sealed partial class StationAiFaxSystem : EntitySystem
         SubscribeLocalEvent<StationAiFaxHolderComponent, ComponentShutdown>(OnHolderShutdown);
         SubscribeLocalEvent<StationAiFaxHolderComponent, StationAiOpenFaxEvent>(OnOpenFax);
         SubscribeLocalEvent<StationAiFaxHolderComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<StationAiFaxHolderComponent, PlayerAttachedEvent>(OnPlayerAttached);
 
         SubscribeLocalEvent<StationAiFaxComponent, MapInitEvent>(OnModuleMapInit);
         SubscribeLocalEvent<StationAiFaxComponent, DeviceNetworkPacketEvent<FaxPingPayload>>(OnPing, before: [typeof(FaxSystem)]);
         SubscribeLocalEvent<StationAiFaxComponent, BoundUserInterfaceMessageAttempt>(OnModuleUiAttempt);
         SubscribeLocalEvent<StationAiFaxComponent, FaxReceivedEvent>(OnFaxReceived);
+        SubscribeLocalEvent<StationAiFaxComponent, FaxPrintAttemptEvent>(OnPrintAttempt);
         SubscribeLocalEvent<StationAiFaxComponent, FaxPaperPrintedEvent>(OnPaperPrinted, before: [typeof(HandheldFaxSystem)]);
 
         SubscribeLocalEvent<StationAiFaxDocumentComponent, BoundUserInterfaceMessageAttempt>(OnDocumentUiAttempt);
@@ -86,7 +93,7 @@ public sealed partial class StationAiFaxSystem : EntitySystem
         }
 
         _fax.Refresh(module);
-        Announce(module);
+        ComeOnline(module);
     }
 
     private void OnHolderShutdown(Entity<StationAiFaxHolderComponent> ent, ref ComponentShutdown args)
@@ -113,7 +120,13 @@ public sealed partial class StationAiFaxSystem : EntitySystem
         if (args.NewMobState == MobState.Dead)
             CloseUis(ent, module);
         else if (args.OldMobState == MobState.Dead)
-            Announce(module);
+            ComeOnline(module);
+    }
+
+    private void OnPlayerAttached(Entity<StationAiFaxHolderComponent> ent, ref PlayerAttachedEvent args)
+    {
+        if (GetModule(ent) is { } module && TryComp<StationAiFaxComponent>(module, out var fax))
+            NotifyMissed((module, fax));
     }
 
     private void OnModuleMapInit(Entity<StationAiFaxComponent> ent, ref MapInitEvent args)
@@ -131,7 +144,17 @@ public sealed partial class StationAiFaxSystem : EntitySystem
     private void OnModuleUiAttempt(Entity<StationAiFaxComponent> ent, ref BoundUserInterfaceMessageAttempt args)
     {
         if (!IsAvailable(ent, out var ai) || args.Actor != ai)
+        {
             args.Cancel();
+            return;
+        }
+
+        if (args.Message is FaxFileMessage or StationAiFaxCopyMessage or StationAiFaxTemplateMessage &&
+            PendingDocuments(ent) >= ent.Comp.MaxDocuments)
+        {
+            _popup.PopupCursor(Loc.GetString("station-ai-fax-popup-full"), ai, PopupType.SmallCaution);
+            args.Cancel();
+        }
     }
 
     private void OnDocumentUiAttempt(Entity<StationAiFaxDocumentComponent> ent, ref BoundUserInterfaceMessageAttempt args)
@@ -164,7 +187,36 @@ public sealed partial class StationAiFaxSystem : EntitySystem
 
     private void OnFaxReceived(Entity<StationAiFaxComponent> ent, ref FaxReceivedEvent args)
     {
-        Notify(ent, ent.Comp.ReceivedNotification, FormattedMessage.EscapeText(args.SenderName));
+        args.Silent = true;
+
+        var pending = PendingDocuments(ent);
+        if (pending >= ent.Comp.MaxDocuments + ent.Comp.MaxQueuedDocuments)
+        {
+            args.Cancelled = true;
+            ent.Comp.LostDocuments = true;
+            NotifyMissed(ent);
+            return;
+        }
+
+        if (!CanNotify(ent))
+        {
+            ent.Comp.MissedDocuments = true;
+            return;
+        }
+
+        var notification = pending >= ent.Comp.MaxDocuments
+            ? ent.Comp.ArchiveFullNotification
+            : ent.Comp.ReceivedNotification;
+        Notify(ent, notification, FormattedMessage.EscapeText(args.SenderName));
+    }
+
+    private void OnPrintAttempt(Entity<StationAiFaxComponent> ent, ref FaxPrintAttemptEvent args)
+    {
+        if (_container.TryGetContainer(ent, StationAiFaxComponent.Container, out var library) &&
+            library.ContainedEntities.Count >= ent.Comp.MaxDocuments)
+        {
+            args.Cancelled = true;
+        }
     }
 
     private void OnPaperPrinted(Entity<StationAiFaxComponent> ent, ref FaxPaperPrintedEvent args)
@@ -172,16 +224,19 @@ public sealed partial class StationAiFaxSystem : EntitySystem
         args.Handled = true;
 
         var library = _container.EnsureContainer<Container>(ent, StationAiFaxComponent.Container);
-        if (library.ContainedEntities.Count >= ent.Comp.MaxDocuments ||
-            !_container.Insert(args.Paper, library, force: true))
+        if (!_container.Insert(args.Paper, library, force: true))
         {
             QueueDel(args.Paper);
-            Notify(ent, ent.Comp.ArchiveFullNotification);
+            ent.Comp.LostDocuments = true;
+            NotifyMissed(ent);
             return;
         }
 
         EnsureComp<StationAiWhitelistComponent>(args.Paper);
         EnsureComp<StationAiFaxDocumentComponent>(args.Paper);
+
+        if (TryComp<PaperComponent>(args.Paper, out var paper))
+            paper.Sound = null;
     }
 
     private void OnOpenDocument(Entity<StationAiFaxComponent> ent, ref StationAiFaxOpenMessage args)
@@ -190,7 +245,11 @@ public sealed partial class StationAiFaxSystem : EntitySystem
             !TryComp<PaperComponent>(document, out var paper))
             return;
 
-        paper.Mode = IsEditable(paper) ? PaperComponent.PaperAction.Write : PaperComponent.PaperAction.Read;
+        var editable = IsEditable(paper);
+        paper.Mode = editable ? PaperComponent.PaperAction.Write : PaperComponent.PaperAction.Read;
+        if (editable)
+            _paperWrite.AllowWriting(document, args.Actor);
+
         _paper.UpdateUserInterface((document, paper));
         _ui.OpenUi(document, PaperComponent.PaperUiKey.Key, args.Actor);
     }
@@ -262,6 +321,24 @@ public sealed partial class StationAiFaxSystem : EntitySystem
         return HasComp<StationAiFaxHolderComponent>(ai) && !_mobState.IsDead(ai);
     }
 
+    private bool CanNotify(EntityUid module)
+    {
+        return IsAvailable(module, out var ai) && HasComp<ActorComponent>(ai);
+    }
+
+    /// <summary>
+    /// Documents in the archive plus those still waiting to be printed.
+    /// </summary>
+    private int PendingDocuments(Entity<StationAiFaxComponent> ent)
+    {
+        var queued = TryComp<FaxMachineComponent>(ent, out var fax) ? fax.PrintingQueue.Count : 0;
+        var archived = _container.TryGetContainer(ent, StationAiFaxComponent.Container, out var library)
+            ? library.ContainedEntities.Count
+            : 0;
+
+        return queued + archived;
+    }
+
     private EntityUid? GetModule(EntityUid ai)
     {
         return _container.TryGetContainer(ai, StationAiFaxHolderComponent.Container, out var slot) &&
@@ -282,13 +359,34 @@ public sealed partial class StationAiFaxSystem : EntitySystem
     /// <summary>
     /// Faxes only learn about a device from its pong, so tell them this one has come online.
     /// </summary>
-    private void Announce(EntityUid module)
+    private void ComeOnline(EntityUid module)
     {
-        if (!TryComp<FaxMachineComponent>(module, out var fax))
+        if (!IsAvailable(module, out _) ||
+            !TryComp<FaxMachineComponent>(module, out var fax) ||
+            !TryComp<StationAiFaxComponent>(module, out var aiFax))
             return;
 
         var pong = new FaxPongPayload { FaxName = fax.FaxName };
         _deviceNetwork.SendPacket(module, null, ref pong);
+
+        NotifyMissed((module, aiFax));
+    }
+
+    /// <summary>
+    /// Tells the AI what happened to its correspondence while it could not read the chat.
+    /// </summary>
+    private void NotifyMissed(Entity<StationAiFaxComponent> ent)
+    {
+        if (!CanNotify(ent))
+            return;
+
+        if (ent.Comp.LostDocuments)
+            Notify(ent, ent.Comp.LostNotification);
+        else if (ent.Comp.MissedDocuments)
+            Notify(ent, ent.Comp.MissedNotification);
+
+        ent.Comp.LostDocuments = false;
+        ent.Comp.MissedDocuments = false;
     }
 
     private void CloseUis(EntityUid ai, EntityUid module)

@@ -23,6 +23,7 @@ using Content.Shared.Labels.EntitySystems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.NameModifier.Components;
 using Content.Shared.Paper;
+using Content.Shared.Popups; // Polonium: AI fax
 using Content.Shared.Power;
 using Content.Shared.Tools;
 using Content.Shared.UserInterface;
@@ -32,6 +33,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility; // Polonium: AI fax
 
 namespace Content.Server.Fax;
 
@@ -120,6 +122,13 @@ public sealed partial class FaxSystem : EntitySystem
 
         if (comp.PrintingQueue.Count > 0)
         {
+            // Polonium: the AI fax holds printouts back while its archive is full
+            var attempt = new FaxPrintAttemptEvent();
+            RaiseLocalEvent(uid, ref attempt);
+            if (attempt.Cancelled)
+                return;
+            // Polonium end
+
             comp.PrintingTimeRemaining = comp.PrintingTime;
             _audioSystem.PlayPvs(comp.PrintSound, uid);
         }
@@ -409,7 +418,11 @@ public sealed partial class FaxSystem : EntitySystem
     {
         // Polonium: the cooldown was only enforced for copying and sending
         if (component.SendTimeoutRemaining > 0)
+        {
+            _popupSystem.PopupCursor(Loc.GetString("fax-machine-popup-cooldown"), args.Actor, PopupType.SmallCaution);
             return;
+        }
+        // Polonium end
 
         var prototype = args.OfficePaper ? component.PrintOfficePaperId : component.PrintPaperId;
 
@@ -456,7 +469,7 @@ public sealed partial class FaxSystem : EntitySystem
         // TODO: See comment in 'Send()' about not being able to copy whole entities
         var printout = new FaxPrintout(paper.Content,
                                        nameMod?.BaseName ?? metadata.EntityName,
-                                       labelComponent?.CurrentLabel,
+                                       GetRawLabel(labelComponent), // Polonium: AI fax
                                        metadata.EntityPrototype?.ID ?? component.PrintPaperId,
                                        paper.StampState,
                                        paper.StampedBy,
@@ -536,7 +549,7 @@ public sealed partial class FaxSystem : EntitySystem
             Data = new FaxPrintout(
                     content,
                     nameMod?.BaseName ?? metadata.EntityName,
-                    labelComponent?.CurrentLabel,
+                    GetRawLabel(labelComponent), // Polonium: AI fax
                     metadata.EntityPrototype.ID,
                     paper.StampState,
                     paper.StampedBy,
@@ -571,17 +584,31 @@ public sealed partial class FaxSystem : EntitySystem
 
         var faxName = printout.SenderFaxName ?? Loc.GetString("fax-machine-popup-source-unknown");
 
-        _popupSystem.PopupEntity(Loc.GetString("fax-machine-popup-received", ("from", faxName)), uid);
+        // Polonium: AI fax
+        var received = new FaxReceivedEvent(faxName);
+        RaiseLocalEvent(uid, ref received);
+        if (received.Cancelled)
+            return;
+
+        if (!received.Silent)
+            _popupSystem.PopupEntity(Loc.GetString("fax-machine-popup-received", ("from", faxName)), uid);
+        // Polonium end
+
         _appearanceSystem.SetData(uid, FaxMachineVisuals.VisualState, FaxMachineVisualState.Printing);
 
         if (component.NotifyAdmins)
             NotifyAdmins(faxName);
 
         component.PrintingQueue.Enqueue(printout);
+    }
 
-        // Polonium: AI fax
-        var received = new FaxReceivedEvent(faxName);
-        RaiseLocalEvent(uid, ref received);
+    /// <summary>
+    ///     Polonium: labels are stored escaped and get escaped again when the printout is labelled,
+    ///     so without this every copy would add more backslashes.
+    /// </summary>
+    private static string? GetRawLabel(LabelComponent? label)
+    {
+        return label?.CurrentLabel is { } text ? FormattedMessage.RemoveMarkupPermissive(text) : null;
     }
 
     private void SpawnPaperFromQueue(EntityUid uid, FaxMachineComponent? component = null)

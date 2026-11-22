@@ -13,5 +13,10 @@ fax-machine-ui-template-window = Document Templates
 fax-machine-ui-template-search = Search templates...
 fax-machine-ui-template-empty = No matching templates.
 
+fax-machine-popup-cooldown = The fax machine is still busy.
+station-ai-fax-popup-full = The fax archive is full.
+
 station-ai-fax-notification-received = Received correspondence from: { $source }.
-station-ai-fax-notification-full = The fax archive is full. A new document was discarded.
+station-ai-fax-notification-full = Correspondence from { $source } is waiting because the fax archive is full. Shred a document to receive it.
+station-ai-fax-notification-lost = The fax archive and print queue are full. Some correspondence was lost.
+station-ai-fax-notification-missed = Correspondence arrived while you were away. Check your fax archive.

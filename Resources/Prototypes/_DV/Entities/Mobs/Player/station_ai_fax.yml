@@ -6,6 +6,7 @@
   components:
   - type: FaxMachine
     printSound: null
+    sendSound: null
     paperSlot:
       whitelist:
         components:

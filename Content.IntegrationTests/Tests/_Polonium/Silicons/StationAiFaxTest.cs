@@ -5,8 +5,10 @@ using Content.IntegrationTests.Pair;
 using Content.Server._DV.Silicons;
 using Content.Server.Fax;
 using Content.Shared._DV.Silicons;
+using Content.Shared.Actions.Components;
 using Content.Shared.Fax;
 using Content.Shared.Fax.Components;
+using Content.Shared.Labels.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
@@ -22,6 +24,7 @@ using Robust.Shared.Localization;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.IntegrationTests.Tests._Polonium.Silicons;
 
@@ -166,7 +169,7 @@ public sealed class StationAiFaxTest : GameTest
     }
 
     [Test]
-    public async Task FullArchiveDiscardsNewDocuments()
+    public async Task FullArchiveHoldsDocumentsUntilThereIsRoom()
     {
         var map = await Pair.CreateTestMap();
         var (_, _, module) = await SpawnAi(map);
@@ -180,11 +183,120 @@ public sealed class StationAiFaxTest : GameTest
         });
         await RunSeconds(PrintDelay(module) * 2);
 
+        EntityUid first = default;
         await Server.WaitAssertion(() =>
         {
-            var document = Library(module).Single();
-            Assert.That(SEntMan.GetComponent<PaperComponent>(document).Content, Is.EqualTo("first"));
+            first = Library(module).Single();
+            Assert.That(SEntMan.GetComponent<PaperComponent>(first).Content, Is.EqualTo("first"));
+            Assert.That(SEntMan.GetComponent<FaxMachineComponent>(module).PrintingQueue, Has.Count.EqualTo(1));
             Assert.That(LoosePapers(), Is.Empty);
+        });
+
+        await Server.WaitPost(() => SEntMan.DeleteEntity(first));
+        await RunSeconds(PrintDelay(module));
+
+        await Server.WaitAssertion(() =>
+            Assert.That(SEntMan.GetComponent<PaperComponent>(Library(module).Single()).Content, Is.EqualTo("second")));
+    }
+
+    [Test]
+    public async Task DocumentsPastTheQueueLimitAreDropped()
+    {
+        var map = await Pair.CreateTestMap();
+        var (_, _, module) = await SpawnAi(map);
+
+        await Server.WaitAssertion(() =>
+        {
+            var aiFax = SEntMan.GetComponent<StationAiFaxComponent>(module);
+            aiFax.MaxDocuments = 1;
+            aiFax.MaxQueuedDocuments = 1;
+
+            var system = SEntMan.System<FaxSystem>();
+            system.Receive(module, new FaxPrintout("first", "first"));
+            system.Receive(module, new FaxPrintout("second", "second"));
+            system.Receive(module, new FaxPrintout("third", "third"));
+
+            Assert.That(SEntMan.GetComponent<FaxMachineComponent>(module).PrintingQueue, Has.Count.EqualTo(2));
+        });
+    }
+
+    [Test]
+    public async Task FullArchiveRejectsNewDrafts()
+    {
+        var map = await Pair.CreateTestMap();
+        var (_, ai, module) = await SpawnAi(map);
+        await OpenFaxUi(ai, module);
+
+        await Server.WaitPost(() =>
+        {
+            SEntMan.GetComponent<StationAiFaxComponent>(module).MaxDocuments = 1;
+            SEntMan.System<FaxSystem>().Receive(module, new FaxPrintout("kept", "kept"));
+        });
+        await RunSeconds(PrintDelay(module));
+
+        await SendBui(module, FaxUiKey.Key, new FaxFileMessage(null, "draft", false));
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(Library(module), Has.Count.EqualTo(1));
+            Assert.That(SEntMan.GetComponent<FaxMachineComponent>(module).PrintingQueue, Is.Empty);
+        });
+    }
+
+    [Test]
+    public async Task AiIsToldAboutFaxesThatArrivedWhileItWasAway()
+    {
+        var map = await Pair.CreateTestMap();
+        var (core, ai, module) = await SpawnAi(map);
+
+        await Server.WaitPost(() =>
+        {
+            var containers = SEntMan.System<SharedContainerSystem>();
+            containers.Remove(ai, containers.GetContainer(core, StationAiCoreComponent.Container));
+            SEntMan.System<FaxSystem>().Receive(module, new FaxPrintout("while away", "while away"));
+        });
+        await RunSeconds(PrintDelay(module));
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.GetComponent<StationAiFaxComponent>(module).MissedDocuments);
+            Assert.That(Library(module), Has.Count.EqualTo(1), "The document must wait in the archive.");
+        });
+
+        await Server.WaitPost(() =>
+        {
+            var containers = SEntMan.System<SharedContainerSystem>();
+            containers.Insert(ai, containers.GetContainer(core, StationAiCoreComponent.Container));
+        });
+        await RunTicksSync(5);
+
+        await Server.WaitAssertion(() =>
+            Assert.That(SEntMan.GetComponent<StationAiFaxComponent>(module).MissedDocuments, Is.False));
+    }
+
+    [Test]
+    public async Task CopiesKeepLabelsReadable()
+    {
+        const string text = "Raport [pilne]";
+
+        var map = await Pair.CreateTestMap();
+        var (_, ai, module) = await SpawnAi(map);
+
+        await Server.WaitPost(() => SEntMan.System<FaxSystem>().Receive(module, new FaxPrintout("body", "name", text)));
+        await RunSeconds(PrintDelay(module));
+
+        await Server.WaitPost(() =>
+            SEntMan.System<FaxSystem>().Copy(module, null, new StationAiFaxCopyMessage(default) { Actor = ai }, Library(module).Single()));
+        await RunSeconds(PrintDelay(module));
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(Library(module), Has.Count.EqualTo(2));
+            foreach (var document in Library(module))
+            {
+                Assert.That(SEntMan.GetComponent<LabelComponent>(document).CurrentLabel,
+                    Is.EqualTo(FormattedMessage.EscapeText(text)));
+            }
         });
     }
 
@@ -269,6 +381,17 @@ public sealed class StationAiFaxTest : GameTest
             var slot = SEntMan.System<SharedContainerSystem>().GetContainer(ai, StationAiFaxHolderComponent.Container);
             Assert.That(slot.ContainedEntities.Single(), Is.EqualTo(module), "Returning must keep the same archive.");
             Assert.That(SEntMan.GetComponent<FaxMachineComponent>(fax).KnownFaxes.Values, Does.Contain(moduleName));
+
+            var action = SEntMan.GetComponent<StationAiFaxHolderComponent>(ai).Action;
+            var actions = 0;
+            var query = SEntMan.EntityQueryEnumerator<ActionComponent, MetaDataComponent>();
+            while (query.MoveNext(out _, out var meta))
+            {
+                if (meta.EntityPrototype?.ID == action)
+                    actions++;
+            }
+
+            Assert.That(actions, Is.EqualTo(1), "Re-entering a core must not leave old actions behind.");
         });
     }
 
@@ -298,6 +421,34 @@ public sealed class StationAiFaxTest : GameTest
 
         await Server.WaitAssertion(() =>
             Assert.That(SEntMan.GetComponent<FaxMachineComponent>(fax).KnownFaxes.Values, Does.Contain(moduleName)));
+    }
+
+    [Test]
+    public async Task DeadAiDoesNotAnnounceItselfWhenEnteringACore()
+    {
+        var map = await Pair.CreateTestMap();
+        var fax = await SpawnFax(map);
+        var (core, ai, module) = await SpawnAi(map);
+
+        await Server.WaitPost(() =>
+        {
+            SEntMan.System<MobStateSystem>().ChangeMobState(ai, MobState.Dead);
+            var containers = SEntMan.System<SharedContainerSystem>();
+            containers.Remove(ai, containers.GetContainer(core, StationAiCoreComponent.Container));
+            SEntMan.System<FaxSystem>().Refresh(fax);
+        });
+        await RunTicksSync(5);
+
+        await Server.WaitPost(() =>
+        {
+            var containers = SEntMan.System<SharedContainerSystem>();
+            containers.Insert(ai, containers.GetContainer(core, StationAiCoreComponent.Container));
+        });
+        await RunTicksSync(5);
+
+        await Server.WaitAssertion(() =>
+            Assert.That(SEntMan.GetComponent<FaxMachineComponent>(fax).KnownFaxes.Values,
+                Does.Not.Contain(SEntMan.GetComponent<FaxMachineComponent>(module).FaxName)));
     }
 
     [Test]

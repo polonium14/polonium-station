@@ -36,6 +36,7 @@ public sealed partial class StationAiFaxBoundUserInterface : BoundUserInterface
         _window.CopyPressed += document => SendMessage(new StationAiFaxCopyMessage(EntMan.GetNetEntity(document)));
         _window.SendPressed += document => SendMessage(new StationAiFaxSendMessage(EntMan.GetNetEntity(document)));
         _window.ShredPressed += document => SendMessage(new StationAiFaxShredMessage(EntMan.GetNetEntity(document)));
+        _window.CanCreateChanged += canCreate => _templateWindow?.SetCanCreate(canCreate);
 
         if (EntMan.TryGetComponent<StationAiFaxComponent>(Owner, out var fax) &&
             EntMan.System<SharedContainerSystem>().TryGetContainer(Owner, StationAiFaxComponent.Container, out var library))
@@ -63,6 +64,8 @@ public sealed partial class StationAiFaxBoundUserInterface : BoundUserInterface
             _templateWindow.SetTemplates(GetTemplates(fax));
             _templateWindow.TemplateSelected += recipe => SendMessage(new StationAiFaxTemplateMessage(recipe));
         }
+
+        _templateWindow.SetCanCreate(_window?.CanCreate ?? false);
 
         if (_templateWindow.IsOpen)
             _templateWindow.MoveToFront();

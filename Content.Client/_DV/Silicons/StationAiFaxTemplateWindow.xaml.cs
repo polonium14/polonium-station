@@ -14,7 +14,9 @@ public sealed partial class StationAiFaxTemplateWindow : FancyWindow
 {
     public event Action<ProtoId<LatheRecipePrototype>>? TemplateSelected;
 
+    private readonly List<Button> _buttons = new();
     private List<StationAiFaxTemplate> _templates = new();
+    private bool _canCreate = true;
 
     public StationAiFaxTemplateWindow()
     {
@@ -30,9 +32,20 @@ public sealed partial class StationAiFaxTemplateWindow : FancyWindow
         Rebuild();
     }
 
+    public void SetCanCreate(bool canCreate)
+    {
+        _canCreate = canCreate;
+
+        foreach (var button in _buttons)
+        {
+            button.Disabled = !canCreate;
+        }
+    }
+
     private void Rebuild()
     {
         TemplateList.RemoveAllChildren();
+        _buttons.Clear();
 
         var search = SearchBar.Text.Trim();
         string? category = null;
@@ -51,7 +64,16 @@ public sealed partial class StationAiFaxTemplateWindow : FancyWindow
                 TemplateList.AddChild(new Label { Text = category, StyleClasses = { "LabelSubText" }, Margin = new Thickness(2, 6, 0, 2) });
             }
 
-            var button = new Button { Text = template.Name, ClipText = true, HorizontalExpand = true, ToolTip = template.Name };
+            var button = new Button
+            {
+                Text = template.Name,
+                ClipText = true,
+                HorizontalExpand = true,
+                ToolTip = template.Name,
+                Disabled = !_canCreate,
+            };
+            _buttons.Add(button);
+
             var recipe = template.Recipe;
             button.OnPressed += _ =>
             {

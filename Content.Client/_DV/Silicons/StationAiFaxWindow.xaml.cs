@@ -24,6 +24,12 @@ public sealed partial class StationAiFaxWindow : FancyWindow
     public event Action<EntityUid>? CopyPressed;
     public event Action<EntityUid>? SendPressed;
     public event Action<EntityUid>? ShredPressed;
+    public event Action<bool>? CanCreateChanged;
+
+    /// <summary>
+    /// Whether a new document can be created right now.
+    /// </summary>
+    public bool CanCreate { get; private set; }
 
     private readonly List<(EntityUid Document, StationAiFaxItem Item)> _items = new();
     private BaseContainer? _library;
@@ -75,7 +81,7 @@ public sealed partial class StationAiFaxWindow : FancyWindow
 
         foreach (var (document, item) in _items)
         {
-            item.SetName(GetDocumentName(document));
+            UpdateName(document, item);
         }
     }
 
@@ -107,7 +113,7 @@ public sealed partial class StationAiFaxWindow : FancyWindow
         {
             var document = _library.ContainedEntities[i];
             var item = new StationAiFaxItem();
-            item.SetName(GetDocumentName(document));
+            UpdateName(document, item);
             item.OpenPressed += () => OpenPressed?.Invoke(document);
             item.CopyPressed += () => CopyPressed?.Invoke(document);
             item.SendPressed += () => SendPressed?.Invoke(document);
@@ -134,6 +140,12 @@ public sealed partial class StationAiFaxWindow : FancyWindow
         {
             item.SetEnabled(canCreate, _offCooldown && _hasDestination);
         }
+
+        if (canCreate == CanCreate)
+            return;
+
+        CanCreate = canCreate;
+        CanCreateChanged?.Invoke(canCreate);
     }
 
     private void UpdatePeers(FaxUiState state)
@@ -162,11 +174,11 @@ public sealed partial class StationAiFaxWindow : FancyWindow
             PeerSelected?.Invoke(state.AvailablePeers.First().Key);
     }
 
-    private string GetDocumentName(EntityUid document)
+    private void UpdateName(EntityUid document, StationAiFaxItem item)
     {
         if (_entMan.TryGetComponent<LabelComponent>(document, out var label) && label.CurrentLabel is { } text)
-            return text;
-
-        return _entMan.GetComponentOrNull<MetaDataComponent>(document)?.EntityName ?? string.Empty;
+            item.SetLabel(text);
+        else
+            item.SetName(_entMan.GetComponentOrNull<MetaDataComponent>(document)?.EntityName ?? string.Empty);
     }
 }
