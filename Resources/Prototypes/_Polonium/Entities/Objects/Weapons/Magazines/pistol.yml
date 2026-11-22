@@ -7,6 +7,7 @@
 
   # Muszę zrobić poprawny prototyp do tłumaczenia kiedyś
   id: WeaponVisMPSPistolMagazineBase
+  categories: [ HideSpawnMenu ]
   name: Magazynek VIS MPS (.35 auto any)
   parent: [ BaseItem, BaseSecurityContraband]
   components:

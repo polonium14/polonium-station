@@ -8,6 +8,7 @@
 
   # Muszę zrobić poprawny prototyp do tłumaczenia kiedyś
   id: BorSniperMagazineBase
+  categories: [ HideSpawnMenu ]
   name: Magazynek Alexis-BOR (.30 rifle any)
   parent: [ BaseItem, BaseSecurityContraband]
   components:

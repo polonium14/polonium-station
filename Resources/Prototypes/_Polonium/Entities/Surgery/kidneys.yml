@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseSurgeryRemoveOrgan
   id: SurgeryRemoveKidneys
+  categories: [ HideSpawnMenu ]
   name: Remove Kidneys
   components:
   - type: SurgeryPartCondition
@@ -11,6 +12,7 @@
 - type: entity
   parent: BaseSurgeryInsertOrgan
   id: SurgeryInsertKidneys
+  categories: [ HideSpawnMenu ]
   name: Insert Kidneys
   components:
   - type: Surgery
@@ -25,6 +27,7 @@
 - type: entity
   parent: SurgeryStepInsertOrgan
   id: SurgeryStepInsertKidneys
+  categories: [ HideSpawnMenu ]
   name: Add kidneys
   components:
   - type: Sprite

@@ -10,6 +10,7 @@
 - type: entity
   parent: BaseStructure
   id: TutorialHolopad
+  categories: [ HideSpawnMenu ]
   name: training holopad
   description: A floor-mounted projector. The facility's training intelligence uses it to be in two places at once.
   suffix: Tutorial
@@ -59,6 +60,7 @@
 - type: entity
   parent: HolopadHologram
   id: TutorialHoloMentor
+  categories: [ HideSpawnMenu ]
   name: N.A.N.C.I.
   description: Facility training intelligence. Speaks as if the handbook were a person.
   suffix: Tutorial
@@ -84,6 +86,7 @@
 - type: entity
   parent: MobAdultSlimesBlue
   id: TutorialSlime
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: HTN
@@ -98,6 +101,7 @@
 - type: entity
   parent: Paper
   id: PaperTutorialContract
+  categories: [ HideSpawnMenu ]
   name: employment contract
   description: Nanotrasen paperwork. Not for eating.
   suffix: Tutorial
@@ -110,6 +114,7 @@
 - type: entity
   parent: GravityGenerator
   id: TutorialGravityGenerator
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial, Charged
   components:
   - type: ApcPowerReceiver
@@ -126,6 +131,7 @@
 - type: entity
   parent: JanitorialTrolley
   id: JanitorialTrolleyTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: TutorialNoPour
@@ -136,6 +142,7 @@
 - type: entity
   parent: PuddleTemporary
   id: PuddleTutorial
+  categories: [ HideSpawnMenu ]
   name: puddle
   suffix: Tutorial
   components:
@@ -155,6 +162,7 @@
 - type: entity
   parent: DrinkColaCan
   id: DrinkColaCanTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: Openable
@@ -165,6 +173,7 @@
 - type: entity
   parent: ReagentContainerFlour
   id: ReagentContainerFlourTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: Openable
@@ -180,16 +189,19 @@
 - type: entity
   parent: LargeBeaker
   id: LargeBeakerTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
 
 - type: entity
   parent: Bucket
   id: BucketTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
 
 - type: entity
   parent: ChemistryBottleEZNutrient
   id: ChemistryBottleEZNutrientTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
 
 # every machine the kitchen flow depends on is beyond breaking. a trainee who decides to take a
@@ -198,6 +210,7 @@
 - type: entity
   parent: Sink
   id: SinkTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   # a normal sink holds under five hundred units and the kitchen asks for water four separate
@@ -215,6 +228,7 @@
 - type: entity
   parent: KitchenMicrowave
   id: KitchenMicrowaveTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: Destructible
@@ -228,6 +242,7 @@
 - type: entity
   parent: WeaponPistolMk58
   id: WeaponPistolMk58Tutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial, Empty
   components:
   - type: ItemSlots
@@ -255,6 +270,7 @@
 - type: entity
   parent: Syringe
   id: SyringeTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
 
 # it cannot be poured out, splashed or smashed, and the whole bottle is still under the twenty
@@ -263,6 +279,7 @@
 - type: entity
   parent: ChemistryBottleDylovene
   id: ChemistryBottleDyloveneTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: Solution
@@ -279,6 +296,7 @@
 - type: entity
   parent: Paper
   id: PaperTutorialBurgerRecipe
+  categories: [ HideSpawnMenu ]
   name: recipe sheet
   description: A page torn out of the kitchen folder. Someone circled the cook time twice.
   suffix: Tutorial
@@ -293,6 +311,7 @@
 - type: entity
   parent: TomatoPlants
   id: TomatoPlantsTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: PlantHolder
@@ -314,6 +333,7 @@
 - type: entity
   parent: TomatoSeeds
   id: TomatoSeedsTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: Seed
@@ -329,6 +349,7 @@
 - type: entity
   parent: HydroponicsTrayEmpty
   id: HydroponicsTrayTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial, Empty
   components:
   - type: PlantTray
@@ -354,6 +375,7 @@
 - type: entity
   parent: BaseMachine
   id: TutorialJukebox
+  categories: [ HideSpawnMenu ]
   name: jukebox
   description: A machine capable of playing a wide variety of tunes. Enjoyment not guaranteed.
   suffix: Tutorial
@@ -384,6 +406,7 @@
 # mime wall, just without the timed despawn. no sprite = actually invisible
 - type: entity
   id: WallInvisiblePermanent
+  categories: [ HideSpawnMenu ]
   name: invisible wall
   suffix: Permanent
   placement:
@@ -410,6 +433,7 @@
 - type: entity
   parent: Defibrillator
   id: DefibrillatorTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: Defibrillator
@@ -429,6 +453,7 @@
 - type: entity
   parent: DefibrillatorCabinet
   id: DefibrillatorCabinetTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: ContainerFill
