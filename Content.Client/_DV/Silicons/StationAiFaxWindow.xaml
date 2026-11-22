@@ -1,0 +1,69 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="{Loc 'fax-machine-ui-window'}"
+    MinSize="540 480"
+    SetSize="580 620">
+
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="8" SeparationOverride="8">
+        <PanelContainer StyleClasses="PanelDark" HorizontalExpand="True">
+            <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="4">
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'fax-machine-ui-from'}" HorizontalExpand="True" />
+                    <Label Name="FromLabel" Align="Right" />
+                </BoxContainer>
+
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'fax-machine-ui-to'}" HorizontalExpand="True" VerticalAlignment="Center" />
+                    <OptionButton Name="PeerSelector" StyleClasses="OpenRight" />
+                    <Button Name="RefreshButton"
+                            StyleClasses="OpenLeft"
+                            ToolTip="{Loc 'fax-machine-ui-refresh-button'}">
+                        <TextureButton MouseFilter="Ignore"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Scale="0.9 0.9"
+                                       StyleClasses="RefreshButton" />
+                    </Button>
+                </BoxContainer>
+
+                <Label Name="CountLabel" HorizontalAlignment="Right" />
+            </BoxContainer>
+        </PanelContainer>
+
+        <PanelContainer StyleClasses="PanelDark" HorizontalExpand="True" VerticalExpand="True">
+            <Label Name="EmptyLabel"
+                   Text="{Loc 'fax-machine-ui-no-faxes'}"
+                   StyleClasses="PlaceholderText"
+                   Align="Center"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
+            <ScrollContainer Name="DocumentScroll"
+                             HorizontalExpand="True"
+                             VerticalExpand="True"
+                             HScrollEnabled="False">
+                <BoxContainer Name="DocumentList"
+                              Orientation="Vertical"
+                              HorizontalExpand="True"
+                              VerticalAlignment="Top"
+                              Margin="6"
+                              SeparationOverride="6" />
+            </ScrollContainer>
+        </PanelContainer>
+
+        <BoxContainer Orientation="Horizontal">
+            <Button Name="BlankButton"
+                    Text="{Loc 'fax-machine-ui-add-blank-file'}"
+                    StyleClasses="OpenRight"
+                    HorizontalExpand="True" />
+            <Button Name="TemplateButton"
+                    Text="{Loc 'fax-machine-ui-add-template'}"
+                    StyleClasses="OpenBoth"
+                    HorizontalExpand="True" />
+            <Button Name="UploadButton"
+                    Text="{Loc 'fax-machine-ui-upload-file'}"
+                    StyleClasses="OpenLeft"
+                    HorizontalExpand="True" />
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

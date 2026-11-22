@@ -18,13 +18,15 @@ public sealed class FaxUiState : BoundUserInterfaceState
     public bool IsPaperInserted { get; }
     public bool CanSend { get; }
     public bool CanCopy { get; }
+    public bool CanSendCooldown { get; } // Polonium: AI fax, off cooldown regardless of the paper slot
 
     public FaxUiState(string deviceName,
         Dictionary<DeviceAddress, string> peers,
         bool canSend,
         bool canCopy,
         bool isPaperInserted,
-        DeviceAddress? destAddress)
+        DeviceAddress? destAddress,
+        bool canSendCooldown) // Polonium: AI fax
     {
         DeviceName = deviceName;
         AvailablePeers = peers;
@@ -32,6 +34,7 @@ public sealed class FaxUiState : BoundUserInterfaceState
         CanSend = canSend;
         CanCopy = canCopy;
         DestinationAddress = destAddress;
+        CanSendCooldown = canSendCooldown; // Polonium: AI fax
     }
 }
 

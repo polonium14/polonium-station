@@ -53,6 +53,7 @@
     interfaces:
       enum.PhotoViewerUiKey.Key:
         type: PhotoViewerBoundUserInterface
+  - type: FaxableObject
   - type: Tag
     tags:
     - Document

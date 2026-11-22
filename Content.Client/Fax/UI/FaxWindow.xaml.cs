@@ -38,6 +38,7 @@ public sealed partial class FaxWindow : DefaultWindow
     {
         CopyButton.Disabled = !state.CanCopy;
         SendButton.Disabled = !state.CanSend;
+        FileButton.Disabled = !state.CanSendCooldown; // Polonium: the server now rejects file prints during the cooldown
         FromLabel.Text = state.DeviceName;
 
         if (state.IsPaperInserted)

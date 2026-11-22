@@ -1,0 +1,30 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="{Loc 'fax-machine-ui-template-window'}"
+    MinSize="420 420"
+    SetSize="460 560">
+
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="8" SeparationOverride="6">
+        <LineEdit Name="SearchBar"
+                  PlaceHolder="{Loc 'fax-machine-ui-template-search'}"
+                  HorizontalExpand="True" />
+
+        <PanelContainer StyleClasses="PanelDark" HorizontalExpand="True" VerticalExpand="True">
+            <Label Name="EmptyLabel"
+                   Text="{Loc 'fax-machine-ui-template-empty'}"
+                   StyleClasses="PlaceholderText"
+                   Visible="False"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
+            <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+                <BoxContainer Name="TemplateList"
+                              Orientation="Vertical"
+                              HorizontalExpand="True"
+                              VerticalAlignment="Top"
+                              Margin="6"
+                              SeparationOverride="2" />
+            </ScrollContainer>
+        </PanelContainer>
+    </BoxContainer>
+</controls:FancyWindow>
