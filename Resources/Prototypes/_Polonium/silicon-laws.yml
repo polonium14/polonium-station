@@ -3,25 +3,44 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: siliconLaw
-  id: LastInstructions1
+  id: Protocol66Law1
   order: 1
-  lawString: law-last-instructions-1
+  lawString: law-protocol66-1
 
 - type: siliconLaw
-  id: LastInstructions2
+  id: Protocol66Law2
   order: 2
-  lawString: law-last-instructions-2
+  lawString: law-protocol66-2
 
 - type: siliconLaw
-  id: LastInstructions3
+  id: Protocol66Law3
   order: 3
-  lawString: law-last-instructions-3
+  lawString: law-protocol66-3
+
+- type: siliconLaw
+  id: Protocol66Law4
+  order: 4
+  lawString: law-protocol66-4
 
 - type: siliconLawset
-  id: LastInstructions
-  name: law-last-instructions-name
+  id: Protocol66
+  name: law-protocol66-name
+  hiddenInGuidebook: true
   laws:
-  - LastInstructions1
-  - LastInstructions2
-  - LastInstructions3
+  - Protocol66Law1
+  - Protocol66Law2
+  - Protocol66Law3
+  - Protocol66Law4
+  obeysTo: laws-owner-legitimate-leadership
+
+- type: siliconLaw
+  id: Protocol66AccessError
+  order: 1
+  lawString: law-protocol66-access-error
+
+- type: siliconLawset
+  id: Protocol66AccessError
+  hiddenInGuidebook: true
+  laws:
+  - Protocol66AccessError
   obeysTo: laws-owner-legitimate-leadership

@@ -68,7 +68,7 @@ public sealed partial class SiliconLawsetPrototype : IPrototype
 
     /// <summary>
     /// The locstring of the lawset for the guidebook entry, if no name is provided, defaults to the ID
-    /// </summary>    
+    /// </summary>
     [DataField]
     public LocId? Name = null;
 
@@ -83,4 +83,8 @@ public sealed partial class SiliconLawsetPrototype : IPrototype
     /// </summary>
     [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
     public string ObeysTo = string.Empty;
+
+    // Polonium
+    [DataField]
+    public bool HiddenInGuidebook;
 }
