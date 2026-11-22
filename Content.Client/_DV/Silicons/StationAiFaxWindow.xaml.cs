@@ -149,12 +149,6 @@ public sealed partial class StationAiFaxWindow : FancyWindow
 
         PeerSelector.Disabled = false;
 
-        if (state.DestinationAddress == null)
-        {
-            PeerSelected?.Invoke(state.AvailablePeers.First().Key);
-            return;
-        }
-
         foreach (var (address, name) in state.AvailablePeers)
         {
             PeerSelector.AddItem(name);
@@ -163,6 +157,9 @@ public sealed partial class StationAiFaxWindow : FancyWindow
             if (address == state.DestinationAddress)
                 PeerSelector.Select(id);
         }
+
+        if (state.DestinationAddress == null)
+            PeerSelected?.Invoke(state.AvailablePeers.First().Key);
     }
 
     private string GetDocumentName(EntityUid document)
