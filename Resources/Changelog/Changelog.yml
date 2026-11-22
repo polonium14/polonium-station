@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: jessicamaybe
-  changes:
-  - message: Monkeys will now put people in critical condition into disposal bins
-    type: Add
-  id: 9650
-  time: '2026-04-18T22:00:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/37983
 - author: Princess-Cheeseballs
   changes:
   - message: Gas Canisters can now explode from overpressure.
@@ -5234,3 +5227,12 @@
   id: 10144
   time: '2026-11-22T13:34:34.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1292
+- author: Nikita
+  changes:
+  - message: "Naprawiono dzia\u0142anie kodu Epsilon na SI Stacji."
+    type: Fix
+  - message: "Kod Epsilon wp\u0142ywa teraz tak\u017Ce na cyborgi."
+    type: Tweak
+  id: 10145
+  time: '2026-11-22T14:07:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1293
