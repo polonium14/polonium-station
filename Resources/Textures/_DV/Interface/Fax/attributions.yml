@@ -1,0 +1,4 @@
+- files: ["eye.svg", "eye.svg.192dpi.png", "files.svg", "files.svg.192dpi.png", "send.svg", "send.svg.192dpi.png", "shredder.svg", "shredder.svg.192dpi.png"]
+  license: "Custom"
+  copyright: "ISC License, full text in LICENSE-Lucide.txt. Copyright (c) 2026 Lucide Icons and Contributors. White versions by Janet Blackquill from https://github.com/DeltaV-Station/Delta-v/pull/6064"
+  source: "https://github.com/lucide-icons/lucide"
