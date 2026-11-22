@@ -1,19 +1,4 @@
 ﻿Entries:
-- author: piskaczek
-  changes:
-  - message: Reduced the amount of wirebrushes in the janicloset and janicrate.
-    type: Tweak
-  id: 9648
-  time: '2026-04-18T10:56:44.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43629
-- author: SlamBamActionman
-  changes:
-  - message: Wizard's Knock spell no longer unlocks cryosleep units, magic lamps and
-      the locker trap spell.
-    type: Fix
-  id: 9649
-  time: '2026-04-18T16:58:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43641
 - author: jessicamaybe
   changes:
   - message: Monkeys will now put people in critical condition into disposal bins
@@ -5227,3 +5212,25 @@
   id: 10142
   time: '2026-11-21T23:17:11.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1289
+- author: Nikita
+  changes:
+  - message: "SI Stacji mo\u017Ce teraz korzysta\u0107 z faks\xF3w."
+    type: Add
+  - message: "Zdj\u0119cia teraz mo\u017Cna faksowa\u0107."
+    type: Add
+  - message: "Etykiety z nawiasami kwadratowymi nie zyskuj\u0105 ju\u017C uko\u015B\
+      nik\xF3w przy kopiowaniu i wysy\u0142aniu faksem."
+    type: Fix
+  - message: "Tekst na kartce mo\u017Ce zapisa\u0107 tylko osoba, kt\xF3ra otworzy\u0142\
+      a j\u0105 narz\u0119dziem do pisania."
+    type: Fix
+  id: 10143
+  time: '2026-11-22T13:34:51.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1291
+- author: Saver310
+  changes:
+  - message: "Drobne poprawki do Asa Pluszog\u0142owego"
+    type: Tweak
+  id: 10144
+  time: '2026-11-22T13:34:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1292
