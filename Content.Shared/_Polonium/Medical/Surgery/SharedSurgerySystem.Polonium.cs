@@ -87,16 +87,6 @@ public abstract partial class SharedSurgerySystem
         return Math.Clamp(worst, 0f, 1f);
     }
 
-    private void WarnBotchRisk(EntityUid step, EntityUid user, EntityUid body, float toolSpeed)
-    {
-        var chance = BotchChance(step, user, body, toolSpeed);
-        if (chance <= 0f)
-            return;
-
-        var percent = (int) MathF.Round(chance * 100f);
-        _popup.PopupClient(Loc.GetString("surgery-popup-botch-risk", ("chance", percent)), user, user, PopupType.SmallCaution);
-    }
-
     /// <summary>
     /// Rolls for a finished step; on a failure the part is cut and the step stays undone. Server only.
     /// </summary>
