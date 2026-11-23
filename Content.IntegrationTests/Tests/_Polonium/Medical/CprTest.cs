@@ -122,7 +122,8 @@ public sealed class CprTest : GameTest
             Assert.That(Cpr.TryStart(rescuer, patient));
         });
 
-        await Pair.RunSeconds(5);
+        // One compression takes half a second and holds the body for a second more.
+        await Pair.RunSeconds(1);
 
         await Server.WaitAssertion(() =>
         {
