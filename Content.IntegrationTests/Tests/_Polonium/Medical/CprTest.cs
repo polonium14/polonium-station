@@ -183,9 +183,10 @@ public sealed class CprTest : GameTest
             patient = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var rescuer = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             // Poison leaves no wound to bleed from, so the patient stays in crit for the whole test.
+            // 150 is past soft crit, where an awake patient gets no compressions.
             var poison = Server.ResolveDependency<IPrototypeManager>().Index(Poison);
-            SEntMan.System<DamageableSystem>().TryChangeDamage(patient, new DamageSpecifier(poison, FixedPoint2.New(120)), ignoreResistances: true);
-            Assert.That(SEntMan.System<MobStateSystem>().IsCritical(patient), "Setup: 120 poison puts a human in crit.");
+            SEntMan.System<DamageableSystem>().TryChangeDamage(patient, new DamageSpecifier(poison, FixedPoint2.New(150)), ignoreResistances: true);
+            Assert.That(SEntMan.System<MobStateSystem>().IsCritical(patient), "Setup: 150 poison puts a human in hard crit.");
             if (compressions)
                 Assert.That(Cpr.TryStart(rescuer, patient));
         });

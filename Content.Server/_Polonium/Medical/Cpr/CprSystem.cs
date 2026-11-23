@@ -120,13 +120,19 @@ public sealed partial class CprSystem : EntitySystem
     }
 
     /// <summary>
-    /// Out cold, in critical condition, dead, or about to be for want of a heartbeat.
+    /// Out cold, in hard crit, dead, or about to be for want of a heartbeat.
+    /// A patient in soft crit with a beating heart is awake: medicine stops their suffocation, not compressions.
     /// </summary>
     private bool NeedsCpr(EntityUid patient)
     {
-        return _mobState.IsIncapacitated(patient)
+        return OutCold(patient)
                || _circulation.IsStopped(patient)
                || _statusEffects.HasStatusEffect(patient, CirculationSystem.Unconscious);
+    }
+
+    private bool OutCold(EntityUid patient)
+    {
+        return _mobState.IsIncapacitated(patient) && !_mobState.IsSoftCritical(patient);
     }
 
     private void OnGetVerbs(Entity<HumanoidProfileComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
@@ -215,8 +221,8 @@ public sealed partial class CprSystem : EntitySystem
             TryBreakRibs(ent);
 
         _stamina.TakeStaminaDamage(args.User, _staminaCost, visual: false);
-        // Checked after this cycle's effects: once the patient is out of crit with a beating heart, the rescuer stops.
-        args.Repeat = _mobState.IsIncapacitated(ent) || _circulation.IsStopped(ent);
+        // Checked after this cycle's effects: once the patient is out of hard crit with a beating heart, the rescuer stops.
+        args.Repeat = OutCold(ent) || _circulation.IsStopped(ent);
     }
 
     private bool TryGetHeart(EntityUid body, out EntityUid heart)
