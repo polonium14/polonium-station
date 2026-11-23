@@ -37,6 +37,12 @@ public sealed partial class StationAiOverlay : Overlay
     private float _updateRate = 1f / 30f;
     private float _accumulator;
 
+    // Polonium: abductors watch a station grid while their body stays on the ship
+    public EntityUid? GridOverride;
+
+    // Polonium: the abductor console never uses the animated static, it strains the eyes
+    public bool StillStatic;
+
     public StationAiOverlay()
     {
         IoCManager.InjectDependencies(this);
@@ -69,7 +75,7 @@ public sealed partial class StationAiOverlay : Overlay
 
         var playerEnt = _player.LocalEntity;
         _entManager.TryGetComponent(playerEnt, out TransformComponent? playerXform);
-        var gridUid = playerXform?.GridUid ?? EntityUid.Invalid;
+        var gridUid = GridOverride ?? playerXform?.GridUid ?? EntityUid.Invalid; // Polonium: GridOverride
         _entManager.TryGetComponent(gridUid, out MapGridComponent? grid);
         _entManager.TryGetComponent(gridUid, out BroadphaseComponent? broadphase);
 
@@ -109,7 +115,7 @@ public sealed partial class StationAiOverlay : Overlay
             () =>
             {
                 worldHandle.SetTransform(invMatrix);
-                var shader = _proto.Index(_activeShader).Instance();
+                var shader = _proto.Index(StillStatic ? CameraStaticAccessibleShader : _activeShader).Instance(); // Polonium: StillStatic
                 worldHandle.UseShader(shader);
                 worldHandle.DrawRect(worldBounds, Color.White);
             },

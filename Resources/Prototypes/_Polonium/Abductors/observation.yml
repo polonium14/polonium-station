@@ -1,0 +1,121 @@
+- type: entity
+  parent: [ Incorporeal, BaseMob ]
+  id: AbductorObservationEye
+  name: observation eye
+  categories: [ HideSpawnMenu, DoNotMap ]
+  components:
+  - type: NoFTL
+  - type: Eye
+    pvsScale: 1.5
+  - type: Sprite
+    visible: false
+    sprite: _Shitmed/Structures/Machines/abductor_camera_console.rsi
+    layers:
+    - state: eye
+      shader: unshaded
+
+- type: entity
+  id: EffectAbductorWarp
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    noRot: true
+    sprite: _Shitmed/Effects/abductor_warp.rsi
+    layers:
+    - state: warp
+      shader: unshaded
+  - type: PointLight
+    radius: 2
+    energy: 2
+    color: "#FC0097"
+  - type: TimedDespawn
+    lifetime: 12
+
+- type: entity
+  parent: BaseAction
+  id: ActionAbductorRecall
+  name: Return to the ship
+  description: After a visible charge-up, brings you back to the ship's telepad. Moving or taking damage interrupts it.
+  components:
+  - type: Action
+    useDelay: 60
+  - type: Sprite
+    sprite: _Shitmed/Interface/Actions/actions_abductor.rsi
+    layers:
+    - state: implant
+  - type: InstantAction
+    event: !type:AbductorRecallActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionAbductorSendPad
+  name: Send from the telepad
+  description: Sends everyone standing on the telepad to the viewed spot. The landing is visible before it happens.
+  components:
+  - type: Action
+    useDelay: 9
+  - type: Sprite
+    sprite: _Shitmed/Interface/Actions/actions_abductor.rsi
+    layers:
+    - state: send
+  - type: InstantAction
+    event: !type:AbductorSendPadActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionAbductorSendSelf
+  name: Go down
+  description: Teleports you to the viewed spot. The landing is visible before it happens.
+  components:
+  - type: Action
+    useDelay: 9
+  - type: Sprite
+    sprite: _Shitmed/Interface/Actions/actions_abductor.rsi
+    layers:
+    - state: send-yourself
+  - type: InstantAction
+    event: !type:AbductorSendSelfActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionAbductorRetrieve
+  name: Pull up the specimen
+  description: Brings the marked specimen onto the telepad together with you and ends the observation. It has to be subdued and free.
+  components:
+  - type: Action
+    useDelay: 5
+  - type: Sprite
+    sprite: _Shitmed/Interface/Actions/actions_abductor.rsi
+    layers:
+    - state: take
+  - type: InstantAction
+    event: !type:AbductorRetrieveActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionAbductorSetRelease
+  name: Set the release point
+  description: Finished specimens will be returned to the viewed spot.
+  components:
+  - type: Action
+    useDelay: 1
+  - type: Sprite
+    sprite: _Shitmed/Interface/Actions/actions_abductor.rsi
+    layers:
+    - state: release
+  - type: InstantAction
+    event: !type:AbductorSetReleaseActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionAbductorExitObservation
+  name: Leave the console
+  description: Stops watching the station.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Interface/Actions/actions_abductor.rsi
+    layers:
+    - state: exit
+  - type: InstantAction
+    event: !type:AbductorExitObservationActionEvent
