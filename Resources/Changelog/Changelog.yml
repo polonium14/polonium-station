@@ -1,16 +1,4 @@
 ﻿Entries:
-- author: B_Kirill
-  changes:
-  - message: NPCs can now wield and activate melee weapons.
-    type: Add
-  - message: NPCs can now wield guns and close their bolts.
-    type: Add
-  - message: NPCs can now reload guns without a cartridge in the chamber, provided
-      there are cartridges in the clip.
-    type: Add
-  id: 9654
-  time: '2026-04-21T04:37:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40900
 - author: themias, jessicamaybe
   changes:
   - message: Added a traitor objective to break into letters and packages
@@ -5227,3 +5215,22 @@
   id: 10148
   time: '2026-11-23T18:32:08.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1304
+- author: Nikita
+  changes:
+  - message: "Blok utylizacyjny i blok pocztowy maj\u0105 nowe okna, kt\xF3re wygl\u0105\
+      daj\u0105 jak te urz\u0105dzenia. D\u017Awigni\u0119 mo\u017Cna poci\u0105gn\u0105\
+      \u0107 myszk\u0105."
+    type: Tweak
+  - message: "Klikni\u0119cie otworu w oknie bloku wk\u0142ada trzymany przedmiot.\
+      \ Pust\u0105 r\u0119k\u0105 wyjmuje si\u0119 w ten spos\xF3b ostatni\u0105 w\u0142\
+      o\u017Con\u0105 rzecz."
+    type: Add
+  - message: "W oknie bloku utylizacyjnego wida\u0107 ma\u0142e stworzenia wpadaj\u0105\
+      ce do \u015Brodka."
+    type: Add
+  - message: "Blok pocztowy nie wysy\u0142a ju\u017C poczty sam po wybraniu adresu,\
+      \ gdy wcze\u015Bniej poci\u0105gni\u0119to d\u017Awigni\u0119 bez adresu."
+    type: Fix
+  id: 10149
+  time: '2026-11-23T20:29:15.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1299
