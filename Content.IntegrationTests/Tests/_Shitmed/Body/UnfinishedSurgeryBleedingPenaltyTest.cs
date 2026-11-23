@@ -143,4 +143,29 @@ public sealed class UnfinishedSurgeryBleedingPenaltyTest : GameTest
             });
         });
     }
+
+    [Test]
+    public async Task CutOffPartLosesIncisionButKeepsLobotomy()
+    {
+        var map = await Pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+
+        await Server.WaitAssertion(() =>
+        {
+            var mob = SEntMan.SpawnEntity("UnfinishedSurgeryPenaltyMob", coords);
+            var torso = SEntMan.SpawnEntity("UnfinishedSurgeryPenaltyTorso", coords);
+
+            var container = SEntMan.System<SharedContainerSystem>();
+            container.Insert(torso, container.GetContainer(mob, BodyComponent.ContainerID));
+            SEntMan.AddComponent<IncisionOpenComponent>(torso);
+            SEntMan.AddComponent<LobotomizedComponent>(torso);
+
+            Assert.That(container.Remove(torso, container.GetContainer(mob, BodyComponent.ContainerID)));
+            Assert.Multiple(() =>
+            {
+                Assert.That(SEntMan.HasComponent<IncisionOpenComponent>(torso), Is.False);
+                Assert.That(SEntMan.HasComponent<LobotomizedComponent>(torso), Is.True, "A lobotomy is a result, not an open step.");
+            });
+        });
+    }
 }

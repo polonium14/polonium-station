@@ -10,6 +10,17 @@ public abstract partial class SharedSurgerySystem
     /// </summary>
     public void ResetSurgery(EntityUid organ)
     {
+        ClearUnfinishedSurgerySteps(organ);
+        RemComp<LobotomizedComponent>(organ);
+        RemComp<PartsRemovedComponent>(organ);
+    }
+
+    /// <summary>
+    /// Removes the markers <see cref="HasUnfinishedSurgerySteps"/> looks for and leaves the results of
+    /// finished surgeries, such as a lobotomy, alone.
+    /// </summary>
+    public void ClearUnfinishedSurgerySteps(EntityUid organ)
+    {
         RemComp<IncisionOpenComponent>(organ);
         RemComp<SkinRetractedComponent>(organ);
         RemComp<BleedersClampedComponent>(organ);
@@ -21,8 +32,6 @@ public abstract partial class SharedSurgerySystem
         RemComp<BoneLeftoversRemovedComponent>(organ);
         RemComp<BodyPartReattachedComponent>(organ);
         RemComp<OrganReattachedComponent>(organ);
-        RemComp<LobotomizedComponent>(organ);
-        RemComp<PartsRemovedComponent>(organ);
     }
 
     /// <summary>

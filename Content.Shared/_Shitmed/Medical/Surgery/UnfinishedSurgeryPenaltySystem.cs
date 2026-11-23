@@ -55,7 +55,7 @@ public sealed partial class UnfinishedSurgeryPenaltySystem : EntitySystem
     private void OnIncisedPartRemoved(Entity<IncisionOpenComponent> ent, ref OrganGotRemovedEvent args)
     {
         // A limb cut off in a fight with its incision still open would bleed again once it is sewn back on.
-        _surgery.ResetSurgery(ent);
+        _surgery.ClearUnfinishedSurgerySteps(ent);
     }
 
     private void OnRejuvenate(Entity<UnfinishedSurgeryPenaltyComponent> ent, ref RejuvenateEvent args)
