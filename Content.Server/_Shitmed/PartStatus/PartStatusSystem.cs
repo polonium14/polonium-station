@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Text;
 using Content.Server.Chat.Managers;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
@@ -101,7 +100,7 @@ public sealed partial class PartStatusSystem : EntitySystem
     }
 
     /// <summary>
-    /// Builds the same per-limb status line used by the examine verb, keyed by body part, for
+    /// Builds the same per-limb status used by the examine verb, without colours, keyed by body part, for
     /// consumers that need it outside the examine flow (e.g. HealthAnalyzerSystem's scan readout).
     /// A health analyzer counts as a HandScanner-tier device, so this additionally surfaces
     /// wounds that hide from plain examine (WoundVisibility.HandScanner, e.g. WoundPoison).
@@ -111,7 +110,8 @@ public sealed partial class PartStatusSystem : EntitySystem
         var result = new Dictionary<TargetBodyPart, string>();
 
         foreach (var partStatus in CollectPartStatuses(mob, WoundVisibility.HandScanner))
-            result[partStatus.Part] = BuildStatusDescription(partStatus, false).Status;
+            result[partStatus.Part] = string.Join(Loc.GetString("inspect-part-status-comma"),
+                BuildStatusEntries(partStatus).Select(entry => entry.Text));
 
         return result;
     }
@@ -128,13 +128,13 @@ public sealed partial class PartStatusSystem : EntitySystem
                 || !TryComp<BoneComponent>(woundable.Comp.Bone?.ContainedEntities.FirstOrNull(), out var bone))
                 continue;
 
-            var (damageSeverities, isBleeding) = AnalyzeWounds(woundable, maxVisibility);
+            var (wounds, isBleeding) = AnalyzeWounds(woundable, maxVisibility);
 
             partStatusSet.Add(new PartStatus(
                 target,
                 Loc.GetString($"target-zone-{target.ToString().ToLower()}"),
                 woundable.Comp.WoundableSeverity,
-                damageSeverities,
+                wounds,
                 bone.BoneSeverity,
                 isBleeding));
         }
@@ -142,11 +142,13 @@ public sealed partial class PartStatusSystem : EntitySystem
         return partStatusSet;
     }
 
-    private (Dictionary<string, WoundSeverity> DamageSeverities, bool IsBleeding) AnalyzeWounds(
+    // Wounds are keyed by damage type ID (not the localized group name, which never matched
+    // "Brute"/"Burn"/"Toxin" outside English, so no wound was ever shown), keeping the worst severity per type.
+    private (Dictionary<ProtoId<DamageTypePrototype>, PartWound> Wounds, bool IsBleeding) AnalyzeWounds(
         Entity<WoundableComponent> woundable,
         WoundVisibility maxVisibility)
     {
-        var damageSeverities = new Dictionary<string, WoundSeverity>();
+        var wounds = new Dictionary<ProtoId<DamageTypePrototype>, PartWound>();
         var isBleeding = false;
 
         foreach (var wound in _woundSystem.GetWoundableWounds(woundable))
@@ -156,15 +158,15 @@ public sealed partial class PartStatusSystem : EntitySystem
                 || wound.Comp.WoundVisibility > maxVisibility)
                 continue;
 
-            if (!damageSeverities.TryGetValue(damageGroup.Id, out var existingSeverity) ||
-                wound.Comp.WoundSeverity > existingSeverity)
-                damageSeverities[_proto.Index(damageGroup).LocalizedName] = wound.Comp.WoundSeverity;
+            if (!wounds.TryGetValue(wound.Comp.DamageType, out var existing)
+                || wound.Comp.WoundSeverity > existing.Severity)
+                wounds[wound.Comp.DamageType] = new PartWound(damageGroup, wound.Comp.WoundSeverity);
 
             if (TryComp<BleedInflicterComponent>(wound, out var bleeds) && bleeds.IsBleeding)
                 isBleeding = true;
         }
 
-        return (damageSeverities, isBleeding);
+        return (wounds, isBleeding);
     }
 
     private FormattedMessage GetExamineText(EntityUid entity,
@@ -190,7 +192,7 @@ public sealed partial class PartStatusSystem : EntitySystem
         message.AddText(Loc.GetString(titlestring, ("entity", Identity.Name(entity, EntityManager))));
         message.PushNewline();
         AddLine(message);
-        CreateBodyPartMessage(partStatusSet, entity == examiner, ref message, !styling);
+        CreateBodyPartMessage(partStatusSet, message);
 
         if (styling)
         {
@@ -201,10 +203,8 @@ public sealed partial class PartStatusSystem : EntitySystem
         return message;
     }
 
-    private void CreateBodyPartMessage(HashSet<PartStatus> partStatusSet,
-        bool inspectingSelf,
-        ref FormattedMessage message,
-        bool styleless = false)
+    // One short "Part: wound, wound" row per limb, each wound coloured by its kind.
+    private void CreateBodyPartMessage(HashSet<PartStatus> partStatusSet, FormattedMessage message)
     {
         var orderedParts = PartOrder
             .Select(part => partStatusSet.FirstOrDefault(p => p.Part == part))
@@ -213,135 +213,66 @@ public sealed partial class PartStatusSystem : EntitySystem
 
         foreach (var partStatus in orderedParts)
         {
-            var (statusDescription, traumaOnly) = BuildStatusDescription(partStatus, inspectingSelf);
-            var possessive = inspectingSelf
-                ? Loc.GetString("inspect-part-status-you")
-                : Loc.GetString("inspect-part-status-their");
+            message.AddText("    " + Loc.GetString("inspect-part-status-row", ("part", partStatus.PartName)));
 
-            var locString = traumaOnly ? "inspect-part-status-line-trauma-only" : "inspect-part-status-line";
+            var entries = BuildStatusEntries(partStatus);
+            for (var i = 0; i < entries.Count; i++)
+            {
+                if (i > 0)
+                    message.AddText(Loc.GetString("inspect-part-status-comma"));
 
-            if (styleless)
-                locString += "-styleless";
-
-            message.AddText("    " + Loc.GetString(locString,
-                ("possessive", possessive),
-                ("part", partStatus.PartName),
-                ("status", statusDescription)));
+                message.PushColor(entries[i].Color);
+                message.AddText(entries[i].Text);
+                message.Pop();
+            }
 
             message.PushNewline();
         }
     }
 
-    private (string Status, bool TraumaOnly) BuildStatusDescription(PartStatus partStatus, bool inspectingSelf)
+    private static readonly Color FineColor = Color.FromHex("#9a9a9a");
+    private static readonly Color BleedingColor = Color.FromHex("#e03a3a");
+    private static readonly Color BoneColor = Color.FromHex("#e8c547");
+    private static readonly Color OtherWoundColor = Color.FromHex("#d0d0d0");
+
+    private static readonly Dictionary<string, Color> GroupColors = new()
     {
-        var sb = new StringBuilder();
-        var hasStatus = false;
+        { "Brute", Color.FromHex("#ff6b6b") },
+        { "Burn", Color.FromHex("#ff9f43") },
+        { "Toxin", Color.FromHex("#7ccf3f") },
+    };
 
-        var overallSeverity = GetOverallWoundSeverity(partStatus.DamageSeverities);
-        if (overallSeverity != WoundSeverity.Healed)
-        {
-            var localeText = $"inspect-wound-{overallSeverity.ToString().ToLower()}";
-            sb.Append(Loc.GetString(localeText));
-            hasStatus = true;
-        }
-
-        var damageDescriptions = GetDamageGroupDescriptions(partStatus.DamageSeverities);
-        if (damageDescriptions.Count > 0)
-        {
-            if (hasStatus)
-                sb.Append(Loc.GetString("inspect-part-status-comma"));
-            sb.Append(Loc.GetString("inspect-part-status-conjunction"));
-            sb.Append(string.Join(" ", damageDescriptions));
-            hasStatus = true;
-        }
-
-        var traumaDescriptions = GetTraumaDescriptions(partStatus, inspectingSelf);
-        var traumaOnly = false;
-        if (traumaDescriptions.Count > 0)
-        {
-            if (hasStatus)
-            {
-                sb.Append(Loc.GetString("inspect-part-status-conjunction2"));
-            }
-            else
-            {
-                // No overall/damage-group text preceded this - the trauma description(s) are
-                // the entire status, and the caller will pick a template with no baked-in
-                // verb for them, so no conjunction prefix is needed here.
-                traumaOnly = true;
-            }
-
-            sb.Append(string.Join(Loc.GetString("inspect-part-status-comma"), traumaDescriptions));
-            hasStatus = true;
-        }
-
-        if (!hasStatus)
-            sb.Append(Loc.GetString("inspect-part-status-fine"));
-
-        return (sb.ToString(), traumaOnly);
-    }
-
-    private static readonly string[] RenderedDamageGroups = { "Brute", "Burn", "Toxin" };
-
-    private WoundSeverity GetOverallWoundSeverity(Dictionary<string, WoundSeverity> damageSeverities)
+    private List<(string Text, Color Color)> BuildStatusEntries(PartStatus partStatus)
     {
-        if (damageSeverities.Count == 0)
-            return WoundSeverity.Healed;
+        var entries = new List<(string Text, Color Color)>();
 
-        var maxSeverity = WoundSeverity.Healed;
-        foreach (var (type, severity) in damageSeverities)
+        foreach (var (type, wound) in partStatus.Wounds.OrderByDescending(pair => pair.Value.Severity))
         {
-            if (!RenderedDamageGroups.Contains(type) || severity <= maxSeverity)
-                continue;
-
-            maxSeverity = severity;
-        }
-
-        return maxSeverity;
-    }
-
-    private List<string> GetDamageGroupDescriptions(Dictionary<string, WoundSeverity> damageSeverities)
-    {
-        var descriptions = new List<string>();
-        foreach (var (type, severity) in damageSeverities)
-        {
-            if (!RenderedDamageGroups.Contains(type))
-                continue;
-
-            var cappedSeverity = severity > WoundSeverity.Severe ? WoundSeverity.Severe : severity;
-            var localeText = $"inspect-wound-{type}-{cappedSeverity.ToString().ToLower()}";
-            descriptions.Add(Loc.GetString(localeText));
-        }
-
-        if (descriptions.Count > 1)
-        {
-            var lastDescription = descriptions[^1];
-            descriptions[^1] = Loc.GetString("inspect-part-status-and") + lastDescription;
-        }
-
-        return descriptions;
-    }
-
-    private List<string> GetTraumaDescriptions(PartStatus partStatus, bool inspectingSelf)
-    {
-        var descriptions = new List<string>();
-
-        if (partStatus.BoneSeverity > BoneSeverity.Normal)
-        {
-            var localeText = inspectingSelf ? "self-inspect-trauma-BoneDamage" : "inspect-trauma-BoneDamage";
-            descriptions.Add(Loc.GetString(localeText));
+            var name = Loc.TryGetString($"inspect-wound-type-{type}", out var typeName)
+                ? typeName
+                : _proto.Index(type).LocalizedName;
+            var severity = wound.Severity > WoundSeverity.Critical ? WoundSeverity.Critical : wound.Severity;
+            var text = Loc.GetString("inspect-part-status-wound",
+                ("wound", name),
+                ("severity", Loc.GetString($"inspect-wound-severity-{severity.ToString().ToLower()}")));
+            entries.Add((text, GroupColors.GetValueOrDefault(wound.Group.Id, OtherWoundColor)));
         }
 
         if (partStatus.Bleeding)
-            descriptions.Add(Loc.GetString("inspect-wound-Bleeding-moderate"));
+            entries.Add((Loc.GetString("inspect-part-status-bleeding"), BleedingColor));
 
-        if (descriptions.Count > 1)
+        if (partStatus.BoneSeverity > BoneSeverity.Normal)
         {
-            var lastDescription = descriptions[^1];
-            descriptions[^1] = Loc.GetString("inspect-part-status-and") + lastDescription;
+            var bone = partStatus.BoneSeverity == BoneSeverity.Broken
+                ? "inspect-part-status-bone-broken"
+                : "inspect-part-status-bone-damaged";
+            entries.Add((Loc.GetString(bone), BoneColor));
         }
 
-        return descriptions;
+        if (entries.Count == 0)
+            entries.Add((Loc.GetString("inspect-part-status-fine"), FineColor));
+
+        return entries;
     }
 
     private void AddLine(FormattedMessage message)

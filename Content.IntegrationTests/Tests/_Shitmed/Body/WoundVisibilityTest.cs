@@ -205,6 +205,9 @@ public sealed class WoundVisibilityTest : GameTest
             var text = sPartStatus.GetPartStatusDescriptions(victim)[TargetBodyPart.Chest];
             Assert.That(text, Does.Not.Contain("fine"),
                 "An ordinary Blunt wound's severity should now actually render in the health analyzer.");
+            // The wound is looked up by damage type ID, so its name shows in any language.
+            Assert.That(text, Does.Contain(Loc.GetString("inspect-wound-type-Blunt")),
+                "The Blunt wound is named by its own damage type.");
         });
     }
 }

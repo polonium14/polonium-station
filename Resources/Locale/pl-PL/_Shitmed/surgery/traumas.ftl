@@ -1,5 +1,3 @@
-self-inspect-trauma-BoneDamage = boli w środku
-inspect-trauma-BoneDamage = wygląda na zwichniętą
 popup-trauma-BoneDamage-Normal = { $part } wygląda już w porządku.
 popup-trauma-BoneDamage-Damaged = { $part } boli od uszkodzenia.
 popup-trauma-BoneDamage-Cracked = { $part } trzeszczy złowieszczo!
