@@ -2,3 +2,8 @@
   id: Replicators
   name: guide-entry-replicators
   text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Replicators.xml"
+
+- type: guideEntry
+  id: Abductors
+  name: guide-entry-abductors
+  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Abductors.xml"
