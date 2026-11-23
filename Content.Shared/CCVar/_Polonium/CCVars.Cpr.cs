@@ -14,7 +14,7 @@ public sealed partial class CCVars
     /// Asphyxiation healed per cycle on a patient whose heart is still in the body.
     /// </summary>
     public static readonly CVarDef<float> CprAsphyxiationHeal =
-        CVarDef.Create("cpr.asphyxiation_heal", 1.875f, CVar.SERVERONLY);
+        CVarDef.Create("cpr.asphyxiation_heal", 0.94f, CVar.SERVERONLY);
 
     /// <summary>
     /// Chance per cycle that the compressions break the ribs.
