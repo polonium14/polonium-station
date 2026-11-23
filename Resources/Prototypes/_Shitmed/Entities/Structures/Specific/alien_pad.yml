@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseMachinePowered
+  id: AbductorAlienPad
+  name: alien pad
+  description: Beam in the inferior lifeforms and dig in.
+  components:
+  - type: GuideHelp
+    guides:
+    - Abductors
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.00"
+        density: 190
+        mask:
+        - MachineMask
+  - type: Sprite
+    sprite: _Shitmed/Structures/abductor_alien_pad.rsi
+    drawdepth: FloorObjects
+    layers:
+    - state: offline
+    - state: idle
+  - type: Appearance
+  - type: CollideOnAnchor
+  - type: AbductorTelepad

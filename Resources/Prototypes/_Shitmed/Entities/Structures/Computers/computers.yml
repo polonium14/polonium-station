@@ -1,0 +1,69 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BaseComputer
+  id: BaseAbductorComputer
+  components:
+  - type: Sprite
+    noRot: true
+    layers:
+    - map: ["enum.ComputerVisualLayers.Frame"]
+  - type: ComputerVisuals
+    stateFrame: console
+    stateKeyboard: null
+    stateScreen: null
+    stateKeys: null
+    statePanel: null
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#FC0097"
+
+- type: entity
+  parent: BaseAbductorComputer
+  id: AbductorConsole
+  name: abductor console
+  description: A computer that is used for spying on the station.
+  components:
+  - type: GuideHelp
+    guides:
+    - Abductors
+  - type: Sprite
+    sprite: _Shitmed/Structures/Machines/abductor_console.rsi
+  - type: AbductorStatusConsole
+  - type: ApcPowerReceiver
+    needsPower: false
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    name: store-abductor-name
+    categories:
+    - AbductorEquipment
+    currencyWhitelist:
+    - AbductorCredit
+    balance:
+      AbductorCredit: 0
+
+- type: entity
+  parent: BaseAbductorComputer
+  id: AbductorHumanObservationConsole
+  name: human observation console
+  description: Use this to set teleporter destination or retrieve people marked by scientist tools.
+  components:
+  - type: GuideHelp
+    guides:
+    - Abductors
+  - type: Sprite
+    sprite: _Shitmed/Structures/Machines/abductor_camera_console.rsi
+  - type: AbductorObservationConsole
+    actions:
+    - ActionAbductorSendPad
+    - ActionAbductorSendSelf
+    - ActionAbductorRetrieve
+    - ActionAbductorSetRelease
+    - ActionAbductorExitObservation

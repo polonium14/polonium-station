@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Bed
+  id: AbductorOperatingTable
+  name: abductor operating table
+  description: Special medical table for surgery. Speeds up surgical steps performed on a patient buckled to it.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Structures/Furniture/Tables/abductor_optable.rsi
+    noRot: true
+    layers:
+    - state: operating_table
+  - type: Icon
+    sprite: _Shitmed/Structures/Furniture/Tables/abductor_optable.rsi
+    state: operating_table
+  - type: OperatingTable
+    speedModifier: 1.25
