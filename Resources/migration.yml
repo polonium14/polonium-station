@@ -1375,3 +1375,8 @@ OrganGrayKidneys: OrganGrayKidneyLeft
 # Polonium: the "Heal Organs" surgery is gone, organ damage heals with medicine or a transplant
 SurgeryHealOrgans: null
 SurgeryStepHealOrgans: null
+
+# Polonium: kidneys are a left and a right organ now, each with its own surgery
+SurgeryInsertKidneys: null
+SurgeryRemoveKidneys: null
+SurgeryStepInsertKidneys: null
