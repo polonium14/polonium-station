@@ -74,3 +74,39 @@ public sealed class ThresholdMarks : Control
         }
     }
 }
+
+/// <summary>
+/// Icons in the row above the damage chart, each centered over its threshold line.
+/// </summary>
+public sealed class ThresholdIcons : Control
+{
+    private const float IconSize = 16f;
+
+    public List<(float Fraction, Texture Icon)> Icons { get; } = new();
+
+    public ThresholdIcons()
+    {
+        HorizontalExpand = true;
+        MinSize = new Vector2(0, IconSize);
+        MouseFilter = MouseFilterMode.Ignore;
+    }
+
+    protected override void Draw(DrawingHandleScreen handle)
+    {
+        var size = IconSize * UIScale;
+        var width = PixelSize.X;
+
+        // From the last one back: when two thresholds sit too close for both icons, the later, graver one stays.
+        float? taken = null;
+        for (var i = Icons.Count - 1; i >= 0; i--)
+        {
+            var (fraction, icon) = Icons[i];
+            var left = Math.Clamp(Math.Clamp(fraction, 0f, 1f) * width - size / 2f, 0f, MathF.Max(width - size, 0f));
+            if (taken is { } next && left + size > next)
+                continue;
+
+            handle.DrawTextureRect(icon, UIBox2.FromDimensions(left, PixelSize.Y - size, size, size));
+            taken = left;
+        }
+    }
+}

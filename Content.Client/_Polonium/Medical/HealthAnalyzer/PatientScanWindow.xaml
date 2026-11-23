@@ -125,11 +125,11 @@
                 <!-- Damage against the critical and dead thresholds -->
                 <PanelContainer Name="DamageFrame">
                     <BoxContainer Orientation="Vertical" SeparationOverride="2" Margin="8 6">
-                        <BoxContainer Orientation="Horizontal" SeparationOverride="6">
-                            <Label Name="DamageTitle" StyleClasses="LabelSubText" HorizontalExpand="True"/>
-                            <Label Name="DamageValue" StyleClasses="LabelSubText"/>
-                            <scan:TrendMarker Name="DamageTrend"/>
-                        </BoxContainer>
+                        <Control>
+                            <Label Name="DamageTitle" StyleClasses="LabelSubText" VerticalAlignment="Bottom"/>
+                            <!-- A warning over the critical line and a skull over the death line -->
+                            <scan:ThresholdIcons Name="DamageIcons"/>
+                        </Control>
                         <Control MinHeight="24" MaxHeight="24">
                             <polonium:SegmentedBarChart Name="DamageChart" MinHeight="24" MaxHeight="24"
                                                         Gap="0" MinEntryWidth="0" ShowBackground="True"
@@ -137,6 +137,10 @@
                             <!-- Orange line at critical condition, red at death, over the chart -->
                             <scan:ThresholdMarks Name="DamageMarks"/>
                         </Control>
+                        <BoxContainer Orientation="Horizontal" SeparationOverride="6" HorizontalAlignment="Right">
+                            <Label Name="DamageValue" StyleClasses="LabelSubText"/>
+                            <scan:TrendMarker Name="DamageTrend"/>
+                        </BoxContainer>
                     </BoxContainer>
                 </PanelContainer>
 

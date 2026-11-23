@@ -63,6 +63,11 @@ public sealed partial class PatientScanWindow : FancyWindow
     private const float TemperatureMargin = 20f;
     private const float HealthyOrganFraction = 0.35f;
     private const int AlertSlots = 4;
+
+    /// <summary>
+    /// How far past the death threshold the damage chart reaches: 220 for a human who dies at 200.
+    /// </summary>
+    private const float DamagePastDeath = 1.1f;
     private const int TrendLength = 6;
 
     private static readonly ProtoId<OrganCategoryPrototype> Heart = "Heart";
@@ -102,6 +107,10 @@ public sealed partial class PatientScanWindow : FancyWindow
     private DamageSpecifier _shownDamage = new();
 
     private static readonly ResPath GroupIcons = new("/Textures/Objects/Devices/health_analyzer.rsi");
+
+    // The medical HUD's critical badge and the death gasp skull: both already known from the game.
+    private static readonly SpriteSpecifier CritIcon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/health_icons.rsi"), "Critical");
+    private static readonly SpriteSpecifier DeadIcon = new SpriteSpecifier.Texture(new("/Textures/Interface/Emotes/deathgasp.png"));
 
     public PatientScanWindow()
     {
@@ -740,17 +749,26 @@ public sealed partial class PatientScanWindow : FancyWindow
         _shownDamage = damage;
         DamageChart.Clear();
         DamageMarks.Marks.Clear();
+        DamageIcons.Icons.Clear();
 
         if (limb == null)
         {
             DamageTitle.Text = Loc.GetString("health-analyzer-scan-damage");
             var dead = scan.DeadThreshold ?? total;
-            var capacity = FixedPoint2.Max(dead, total).Float();
+            // A little past death, so its line and skull do not sit on the very edge of the chart.
+            var capacity = MathF.Max(dead.Float() * DamagePastDeath, total.Float());
             DamageChart.Capacity = Math.Max(capacity, 1f);
             if (scan.CritThreshold is { } crit)
+            {
                 DamageMarks.Marks.Add((crit.Float() / DamageChart.Capacity, Warning));
+                DamageIcons.Icons.Add((crit.Float() / DamageChart.Capacity, _entMan.System<SpriteSystem>().Frame0(CritIcon)));
+            }
+
             if (scan.DeadThreshold is { } deadAt)
+            {
                 DamageMarks.Marks.Add((deadAt.Float() / DamageChart.Capacity, Critical));
+                DamageIcons.Icons.Add((deadAt.Float() / DamageChart.Capacity, _entMan.System<SpriteSystem>().Frame0(DeadIcon)));
+            }
 
             DamageValue.Text = $"{MathF.Round(total.Float()):0}";
             DamageTrend.Direction = Trend(_damageHistory, total.Float(), 0.5f);
