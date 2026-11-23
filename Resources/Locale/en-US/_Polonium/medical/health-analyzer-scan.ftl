@@ -1,6 +1,7 @@
 health-analyzer-scan-species = ({$species})
 health-analyzer-scan-state-alive = Alive
 health-analyzer-scan-state-critical = Critical
+health-analyzer-scan-state-soft-critical = Critical, conscious
 health-analyzer-scan-state-dead = Dead
 health-analyzer-scan-active = scanning
 health-analyzer-scan-inactive = out of range
@@ -21,6 +22,7 @@ health-analyzer-scan-blood-tooltip = Below the line, blood loss starts to hurt. 
 health-analyzer-scan-alerts = Needs attention
 health-analyzer-scan-alert-dead = The patient is dead
 health-analyzer-scan-alert-critical = The patient is in critical condition
+health-analyzer-scan-alert-soft-critical = The patient is in critical condition, still conscious
 health-analyzer-scan-alert-no-circulation = Circulation stopped
 health-analyzer-scan-alert-missing = {$organ}: missing
 health-analyzer-scan-alert-spo2 = SpO2 {$value}%: hypoxia

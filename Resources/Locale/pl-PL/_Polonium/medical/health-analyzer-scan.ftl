@@ -1,6 +1,7 @@
 health-analyzer-scan-species = ({$species})
 health-analyzer-scan-state-alive = Żywy
 health-analyzer-scan-state-critical = Stan krytyczny
+health-analyzer-scan-state-soft-critical = Stan krytyczny, przytomny
 health-analyzer-scan-state-dead = Martwy
 health-analyzer-scan-active = skanowanie trwa
 health-analyzer-scan-inactive = poza zasięgiem
@@ -21,6 +22,7 @@ health-analyzer-scan-blood-tooltip = Poniżej kreski niedobór krwi zaczyna szko
 health-analyzer-scan-alerts = Wymaga interwencji
 health-analyzer-scan-alert-dead = Pacjent nie żyje
 health-analyzer-scan-alert-critical = Pacjent w stanie krytycznym
+health-analyzer-scan-alert-soft-critical = Pacjent w stanie krytycznym, jeszcze przytomny
 health-analyzer-scan-alert-no-circulation = Krążenie zatrzymane
 health-analyzer-scan-alert-missing = {$organ}: brak
 health-analyzer-scan-alert-spo2 = SpO2 {$value}%: niedotlenienie
