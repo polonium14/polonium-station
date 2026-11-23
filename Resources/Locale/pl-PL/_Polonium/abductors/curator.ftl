@@ -10,7 +10,7 @@ abductor-curator-arrival-lone-3 = Każdy okaz trzeba porwać, wymienić mu serce
 abductor-curator-arrival-lone-4 = Zacznij od konsoli obserwacyjnej. Sieć kamer stacji pracuje dziś dla nas. Namierz samotny cel i zejdź na dół.
 
 abductor-curator-arrival-scientist-1 = Naukowcu, tu Kurator Wydziału Sondowania. Powiem, po co tu jesteś.
-abductor-curator-arrival-scientist-2 = Musisz wypełnić je tym, co masz na stanie: kapsułą, stołem operacyjnym i Agentem, sztuk jeden. Wszystko podlega zwrotowi.
+abductor-curator-arrival-scientist-2 = Wypełnij je tym, co masz na stanie: kapsułą, stołem operacyjnym i Agentem, sztuk jeden. Wszystko podlega zwrotowi.
 abductor-curator-arrival-scientist-3 = Agent obezwładnia cele na stacji. Ty wysyłasz go w teren z konsoli, ściągasz oznaczone okazy na telepad i operujesz.
 abductor-curator-arrival-scientist-4 = Operacja jest krótka: wyjąć serce, wstawić gruczoł, zamknąć ciało.
 abductor-curator-arrival-scientist-4-cont = Okaz ma ją przeżyć, komora analizuje tylko żywe egzemplarze.
