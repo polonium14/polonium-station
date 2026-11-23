@@ -89,7 +89,12 @@ public sealed partial class RespiratorSystem : EntitySystem
 
             UpdateSaturation(uid, -(float)respirator.UpdateInterval.TotalSeconds, respirator);
 
-            if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
+            // Polonium: someone can breathe for a patient in crit (chest compressions)
+            var assisted = new Content.Server._Polonium.Body.AssistedBreathingEvent();
+            if (_mobState.IsIncapacitated(uid))
+                RaiseLocalEvent(uid, ref assisted);
+
+            if (!_mobState.IsIncapacitated(uid) || assisted.Assisted) // cannot breathe in crit. Polonium: unless assisted
             {
                 switch (respirator.Status)
                 {

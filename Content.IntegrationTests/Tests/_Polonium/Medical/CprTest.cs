@@ -15,6 +15,11 @@ using Content.Shared.Body.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage.Components;
+using Robust.Shared.Prototypes;
+using Content.Shared.FixedPoint;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.StatusEffectNew;
@@ -159,6 +164,37 @@ public sealed class CprTest : GameTest
         await Server.WaitAssertion(() =>
         {
             Assert.That(Cpr.IsCompressed(patient), Is.False, "Without a heart no blood moves.");
+        });
+    }
+
+    [TestCase(false)]
+    [TestCase(true)]
+    public async Task CompressionsBreatheForAPatientInCrit(bool compressions)
+    {
+        SetChances(0f, 0f);
+        var map = await Pair.CreateTestMap();
+        var patient = EntityUid.Invalid;
+
+        await Server.WaitAssertion(() =>
+        {
+            PatientIntakeMachineTest.AddAir(SEntMan, map.MapUid);
+            patient = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            var rescuer = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            // Poison leaves no wound to bleed from, so the patient stays in crit for the whole test.
+            var poison = Server.ResolveDependency<IPrototypeManager>().Index<DamageTypePrototype>("Poison");
+            SEntMan.System<DamageableSystem>().TryChangeDamage(patient, new DamageSpecifier(poison, FixedPoint2.New(120)), ignoreResistances: true);
+            Assert.That(SEntMan.System<MobStateSystem>().IsCritical(patient), "Setup: 120 poison puts a human in crit.");
+            if (compressions)
+                Assert.That(Cpr.TryStart(rescuer, patient));
+        });
+
+        await Pair.RunSeconds(12);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.System<MobStateSystem>().IsCritical(patient), "Setup: the patient is still in crit.");
+            var breathing = SEntMan.System<CirculationSystem>().ReadSpO2(patient) >= 88f;
+            Assert.That(breathing, Is.EqualTo(compressions), "A patient in crit breathes only while someone gives compressions.");
         });
     }
 

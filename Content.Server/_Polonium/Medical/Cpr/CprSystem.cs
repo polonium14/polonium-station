@@ -38,7 +38,7 @@ namespace Content.Server._Polonium.Medical.Cpr;
 /// <summary>
 /// Chest compressions. Anyone with free hands and an uncovered mouth can give them to a patient who is
 /// out cold, in critical condition or dead. While someone keeps pushing on a heart that is still in the body, the blood
-/// moves: the patient keeps their oxygen, loses some asphyxiation and does not rot, and a heart in the last stage of
+/// moves: the patient keeps their oxygen, breathes even in critical condition, loses some asphyxiation and does not rot, and a heart in the last stage of
 /// failure can pick up again. Each push can break the ribs, and the rescuer slowly tires. It brings no one back to life.
 /// </summary>
 public sealed partial class CprSystem : EntitySystem
@@ -86,6 +86,7 @@ public sealed partial class CprSystem : EntitySystem
         SubscribeLocalEvent<HumanoidProfileComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
         SubscribeLocalEvent<HumanoidProfileComponent, CprDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<ChestCompressionsComponent, IsRottingEvent>(OnIsRotting);
+        SubscribeLocalEvent<ChestCompressionsComponent, AssistedBreathingEvent>(OnAssistedBreathing);
 
         Subs.CVar(_cfg, CCVars.CprCycleTime, value => _cycleTime = value, true);
         Subs.CVar(_cfg, CCVars.CprAsphyxiationHeal, value => _asphyxiationHeal = value, true);
@@ -102,6 +103,12 @@ public sealed partial class CprSystem : EntitySystem
     public bool IsCompressed(EntityUid body)
     {
         return TryComp<ChestCompressionsComponent>(body, out var compressions) && compressions.Until > _timing.CurTime;
+    }
+
+    private void OnAssistedBreathing(Entity<ChestCompressionsComponent> ent, ref AssistedBreathingEvent args)
+    {
+        // The rescuer breathes for a patient in critical condition, who then takes in the air around them.
+        args.Assisted |= ent.Comp.Until > _timing.CurTime;
     }
 
     private void OnIsRotting(Entity<ChestCompressionsComponent> ent, ref IsRottingEvent args)
