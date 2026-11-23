@@ -97,7 +97,7 @@ public sealed partial class BodyScannerConsoleSystem : EntitySystem
             return;
 
         var patient = GetPatient(console);
-        _healthAnalyzer.SendAnalyzerUiState(console.Owner, HealthAnalyzerUiKey.Key, patient, console.Comp.CurrentMode, console.Comp.CurrentBodyPart, patient != null);
+        _healthAnalyzer.SendAnalyzerUiState(console.Owner, HealthAnalyzerUiKey.Key, patient, console.Comp.CurrentMode, ref console.Comp.CurrentBodyPart, patient != null);
     }
 
     private EntityUid? GetPatient(Entity<BodyScannerConsoleComponent> console)

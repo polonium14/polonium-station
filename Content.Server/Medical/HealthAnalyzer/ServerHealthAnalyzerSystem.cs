@@ -60,14 +60,17 @@ public sealed partial class ServerHealthAnalyzerSystem : HealthAnalyzerSystem
             HealthAnalyzerUiKey.Key,
             analyzer.Comp.ScannedEntity,
             analyzer.Comp.CurrentMode,
-            analyzer.Comp.CurrentBodyPart,
+            ref analyzer.Comp.CurrentBodyPart,
             analyzer.Comp.IsAnalyzerActive);
     }
 
-    public void SendAnalyzerUiState(EntityUid uiEntity, Enum uiKey, EntityUid? target, HealthAnalyzerMode mode, EntityUid? part, bool scanMode)
+    public void SendAnalyzerUiState(EntityUid uiEntity, Enum uiKey, EntityUid? target, HealthAnalyzerMode mode, ref EntityUid? part, bool scanMode)
     {
         if (!_uiSystem.HasUi(uiEntity, uiKey))
             return;
+
+        if (target == null || !TryComp<OrganComponent>(part, out var selectedOrgan) || selectedOrgan.Body != target)
+            part = null;
 
         // No patient to show (console not linked, linked bed empty, or target lost its body) -
         // a null TargetEntity is exactly what the client's TrySetupEntity already treats as "no
