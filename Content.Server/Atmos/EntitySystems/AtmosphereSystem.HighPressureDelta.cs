@@ -117,6 +117,7 @@ public sealed partial class AtmosphereSystem
             }
         }
 
+        _airFlowVisuals.ReportTile(gridAtmosphere, tile.GridIndices, tile.PressureDirection, tile.PressureDifference); // Polonium: airflow visuals
 
         if (tile.PressureDifference > 100)
         {
