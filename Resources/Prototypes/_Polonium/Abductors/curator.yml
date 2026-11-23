@@ -1,0 +1,235 @@
+- type: abductorCuratorLine
+  id: AbductorCuratorArrivalLone
+  variants:
+  - - abductor-curator-arrival-lone-1
+    - abductor-curator-arrival-why
+    - abductor-curator-arrival-lone-2
+    - abductor-curator-arrival-lone-3
+    - abductor-curator-arrival-lone-4
+
+- type: abductorCuratorLine
+  id: AbductorCuratorArrivalScientist
+  variants:
+  - - abductor-curator-arrival-scientist-1
+    - abductor-curator-arrival-why
+    - abductor-curator-arrival-scientist-2
+    - abductor-curator-arrival-scientist-3
+    - abductor-curator-arrival-scientist-4
+
+- type: abductorCuratorLine
+  id: AbductorCuratorArrivalAgent
+  variants:
+  - - abductor-curator-arrival-agent-1
+    - abductor-curator-arrival-why
+    - abductor-curator-arrival-agent-2
+    - abductor-curator-arrival-agent-3
+    - abductor-curator-arrival-agent-4
+
+- type: abductorCuratorLine
+  id: AbductorCuratorFirstMark
+  variants:
+  - - abductor-curator-first-mark
+
+- type: abductorCuratorLine
+  id: AbductorCuratorFirstAboard
+  variants:
+  - - abductor-curator-first-aboard-1
+    - abductor-curator-first-aboard-2
+    - abductor-curator-first-aboard-3
+
+- type: abductorCuratorLine
+  id: AbductorCuratorFirstExperiment
+  variants:
+  - - abductor-curator-first-experiment-1
+    - abductor-curator-first-experiment-2
+    - abductor-curator-first-experiment-3
+
+- type: abductorCuratorLine
+  id: AbductorCuratorClean
+  variants:
+  - - abductor-curator-clean-1
+  - - abductor-curator-clean-2
+  - - abductor-curator-clean-3
+
+- type: abductorCuratorLine
+  id: AbductorCuratorSloppy
+  variants:
+  - - abductor-curator-sloppy-1
+  - - abductor-curator-sloppy-2
+  - - abductor-curator-sloppy-3
+
+- type: abductorCuratorLine
+  id: AbductorCuratorDead
+  variants:
+  - - abductor-curator-dead-1
+  - - abductor-curator-dead-2
+
+- type: abductorCuratorLine
+  id: AbductorCuratorNoGland
+  variants:
+  - - abductor-curator-no-gland-1
+  - - abductor-curator-no-gland-2
+
+- type: abductorCuratorLine
+  id: AbductorCuratorRepeat
+  variants:
+  - - abductor-curator-repeat-1
+  - - abductor-curator-repeat-2
+
+- type: abductorCuratorLine
+  id: AbductorCuratorNoMind
+  variants:
+  - - abductor-curator-no-mind-1
+  - - abductor-curator-no-mind-2
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandRegeneration
+  variants:
+  - - abductor-curator-gland-regeneration
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandEgg
+  variants:
+  - - abductor-curator-gland-egg
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandPressure
+  variants:
+  - - abductor-curator-gland-pressure
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandStep
+  variants:
+  - - abductor-curator-gland-step
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandWelder
+  variants:
+  - - abductor-curator-gland-welder
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandWhispers
+  variants:
+  - - abductor-curator-gland-whispers
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandStealth
+  variants:
+  - - abductor-curator-gland-stealth
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandNewFace
+  variants:
+  - - abductor-curator-gland-new-face
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandMenagerie
+  variants:
+  - - abductor-curator-gland-menagerie
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandScram
+  variants:
+  - - abductor-curator-gland-scram
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandGravity
+  variants:
+  - - abductor-curator-gland-gravity
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandFlash
+  variants:
+  - - abductor-curator-gland-flash
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandSmoke
+  variants:
+  - - abductor-curator-gland-smoke
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandSleepgas
+  variants:
+  - - abductor-curator-gland-sleepgas
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandArcs
+  variants:
+  - - abductor-curator-gland-arcs
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandSwap
+  variants:
+  - - abductor-curator-gland-swap
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandEmp
+  variants:
+  - - abductor-curator-gland-emp
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandSlime
+  variants:
+  - - abductor-curator-gland-slime
+
+- type: abductorCuratorLine
+  id: AbductorCuratorGlandSpiders
+  variants:
+  - - abductor-curator-gland-spiders
+
+- type: abductorCuratorLine
+  id: AbductorCuratorOrderLiver
+  variants:
+  - - abductor-curator-order-liver
+
+- type: abductorCuratorLine
+  id: AbductorCuratorOrderKidneys
+  variants:
+  - - abductor-curator-order-kidneys
+
+- type: abductorCuratorLine
+  id: AbductorCuratorOrderStomach
+  variants:
+  - - abductor-curator-order-stomach
+
+- type: abductorCuratorLine
+  id: AbductorCuratorOrderLungs
+  variants:
+  - - abductor-curator-order-lungs
+
+- type: abductorCuratorLine
+  id: AbductorCuratorOrderEyes
+  variants:
+  - - abductor-curator-order-eyes
+
+- type: abductorCuratorLine
+  id: AbductorCuratorOrderArmLeft
+  variants:
+  - - abductor-curator-order-arm-left
+
+- type: abductorCuratorLine
+  id: AbductorCuratorOrderArmRight
+  variants:
+  - - abductor-curator-order-arm-right
+
+- type: abductorCuratorLine
+  id: AbductorCuratorOrderLegLeft
+  variants:
+  - - abductor-curator-order-leg-left
+
+- type: abductorCuratorLine
+  id: AbductorCuratorOrderLegRight
+  variants:
+  - - abductor-curator-order-leg-right
+
+- type: abductorCuratorLine
+  id: AbductorCuratorOrderDone
+  variants:
+  - - abductor-curator-order-done-1
+  - - abductor-curator-order-done-2
+
+- type: abductorCuratorLine
+  id: AbductorCuratorOrderMissed
+  variants:
+  - - abductor-curator-order-missed-1
+  - - abductor-curator-order-missed-2
