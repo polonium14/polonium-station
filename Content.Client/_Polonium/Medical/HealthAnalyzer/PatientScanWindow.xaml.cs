@@ -157,7 +157,7 @@ public sealed partial class PatientScanWindow : FancyWindow
         WholeBodyButton.Visible = part != null;
         foreach (var (limb, button) in _limbButtons)
         {
-            LimbDoll.Outline(button, limb, limb == part);
+            LimbDoll.Outline(_resources, button, limb, limb == part);
         }
 
         if (_last != null)

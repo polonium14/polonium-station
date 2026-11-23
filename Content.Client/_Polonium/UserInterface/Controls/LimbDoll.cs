@@ -86,11 +86,11 @@ public sealed class LimbDoll(IEntityManager entities)
     /// <summary>
     /// Gives the button of the picked limb the outline the others only get under the cursor.
     /// </summary>
-    public static void Outline(TextureButton button, TargetBodyPart part, bool picked)
+    public static void Outline(IResourceCache cache, TextureButton button, TargetBodyPart part, bool picked)
     {
         var name = part == TargetBodyPart.Chest ? "torso" : part.ToString().ToLowerInvariant();
         button.TextureNormal = picked
-            ? IoCManager.Resolve<IResourceCache>().GetTexture($"/Textures/_Shitmed/Interface/Targeting/Doll/{name}_hover.png")
+            ? cache.GetTexture($"/Textures/_Shitmed/Interface/Targeting/Doll/{name}_hover.png")
             : null;
         button.ModulateSelfOverride = picked ? StyleNano.NanoGold : null;
     }
