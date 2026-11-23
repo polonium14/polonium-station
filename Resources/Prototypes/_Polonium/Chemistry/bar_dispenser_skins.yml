@@ -1,0 +1,100 @@
+- type: barDispenserSkin
+  id: Wood
+  showContainers: true
+  body: "#3c1700"
+  bodyLight: "#6f3400"
+  bodyBright: "#954900"
+  bodyShade: "#281300"
+  bodyDeep: "#1c0d00"
+  well: "#1c0d00"
+  key: "#e4d2ae"
+  keyHover: "#f4e8cc"
+  keyPressed: "#c9b68d"
+  keyShade: "#9c8960"
+  print: "#f2e3c4"
+  cubes:
+  - Ice
+  grains:
+  - Sugar
+  pourSound:
+    collection: BarDispenserPour
+    params:
+      variation: 0.04
+  fizzSound:
+    collection: BarDispenserFizz
+    params:
+      variation: 0.04
+  cubesSound:
+    collection: BarDispenserIce
+    params:
+      variation: 0.04
+  grainsSound:
+    collection: BarDispenserSugar
+    params:
+      variation: 0.04
+  drainSound:
+    path: /Audio/_Polonium/Machines/BarDispenser/drain.ogg
+    params:
+      variation: 0.08
+  vesselInSound:
+    collection: BarDispenserVesselIn
+    params:
+      variation: 0.05
+  vesselOutSound:
+    collection: BarDispenserVesselOut
+    params:
+      variation: 0.05
+  containerOutSound:
+    collection: BarDispenserBottleOut
+    params:
+      variation: 0.05
+
+- type: barDispenserSkin
+  id: Steel
+  body: "#444444"
+  bodyLight: "#6a6a6a"
+  bodyBright: "#8d8d8d"
+  bodyShade: "#2d2d2d"
+  bodyDeep: "#1c1c1c"
+  well: "#0c0c0c"
+  key: "#d2d2d2"
+  keyHover: "#ececec"
+  keyPressed: "#b4b4b4"
+  keyShade: "#858585"
+  print: "#f2f2f2"
+  cubes:
+  - Ice
+  grains:
+  - Sugar
+  pourSound:
+    collection: BarDispenserPour
+    params:
+      variation: 0.04
+  fizzSound:
+    collection: BarDispenserFizz
+    params:
+      variation: 0.04
+  cubesSound:
+    collection: BarDispenserIce
+    params:
+      variation: 0.04
+  grainsSound:
+    collection: BarDispenserSugar
+    params:
+      variation: 0.04
+  drainSound:
+    path: /Audio/_Polonium/Machines/BarDispenser/drain.ogg
+    params:
+      variation: 0.08
+  vesselInSound:
+    collection: BarDispenserVesselIn
+    params:
+      variation: 0.05
+  vesselOutSound:
+    collection: BarDispenserVesselOut
+    params:
+      variation: 0.05
+  containerOutSound:
+    collection: BarDispenserVesselOut
+    params:
+      variation: 0.05

@@ -23,6 +23,14 @@
     guides:
     - Bartender
     - Drinks
+  # Polonium: the dispenser drawn as the steel bar device of its sprite
+  - type: UserInterface
+    interfaces:
+      enum.ReagentDispenserUiKey.Key:
+        type: BarDispenserBoundUserInterface
+  - type: BarDispenserSkin
+    skin: Steel
+  # Polonium end
 
 - type: entity
   parent: SodaDispenserEmpty

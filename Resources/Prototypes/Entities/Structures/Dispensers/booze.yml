@@ -26,6 +26,14 @@
   - type: StealTarget
     stealGroup:
     - BoozeDispenser
+  # Polonium: the dispenser drawn as the wooden bar device of its sprite
+  - type: UserInterface
+    interfaces:
+      enum.ReagentDispenserUiKey.Key:
+        type: BarDispenserBoundUserInterface
+  - type: BarDispenserSkin
+    skin: Wood
+  # Polonium end
 
 - type: entity
   id: BoozeDispenser
