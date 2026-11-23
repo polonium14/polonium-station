@@ -39,6 +39,9 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
 
     private void OnTypingChanged(TypingChangedEvent ev, EntitySessionEventArgs args)
     {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         var uid = args.SenderSession.AttachedEntity;
 
         if (!Exists(uid))
