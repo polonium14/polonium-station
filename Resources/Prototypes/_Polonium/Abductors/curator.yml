@@ -163,6 +163,11 @@
   - - abductor-curator-gland-swap
 
 - type: abductorCuratorLine
+  id: AbductorCuratorGlandOutburst
+  variants:
+  - - abductor-curator-gland-outburst
+
+- type: abductorCuratorLine
   id: AbductorCuratorGlandEmp
   variants:
   - - abductor-curator-gland-emp

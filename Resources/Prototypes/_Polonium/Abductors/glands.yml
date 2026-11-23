@@ -335,6 +335,25 @@
 
 - type: entity
   parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandOutburst
+  suffix: Speech swap
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandOutburst
+    uses: 0
+    bodyComponents:
+    - type: AbductorSpeechSwap
+      lines: AbductorGlandOutbursts
+      chance: 0.5
+
+- type: localizedDataset
+  id: AbductorGlandOutbursts
+  values:
+    prefix: abductor-gland-outburst-
+    count: 78
+
+- type: entity
+  parent: BaseOrganAbductorGland
   id: OrganAbductorGlandSwap
   suffix: Swap
   components:
@@ -444,6 +463,7 @@
         - id: OrganAbductorGlandSleepgas
         - id: OrganAbductorGlandArcs
         - id: OrganAbductorGlandSwap
+        - id: OrganAbductorGlandOutburst
       - !type:GroupSelector
         weight: 15
         children:

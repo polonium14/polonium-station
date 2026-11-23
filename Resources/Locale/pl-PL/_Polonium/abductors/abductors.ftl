@@ -72,6 +72,7 @@ abductor-gland-popup-emp = Coś w twojej piersi wysyła niewidzialną falę. Ele
 abductor-gland-popup-slime = Zwracasz coś żywego. Ma bardzo zły humor.
 abductor-gland-popup-spiders = Coś chodzi pod twoją skórą. Małe pająki wychodzą na zewnątrz.
 abductor-gland-popup-creature-call = Z twojego gardła wyrywa się cudzy głos.
+abductor-gland-popup-outburst = Język wymyka ci się spod kontroli.
 
 abductor-gland-call-cow = przeciągle muczy.
 abductor-gland-call-dog = szczeka na całe gardło.

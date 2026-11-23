@@ -63,6 +63,7 @@ abductor-curator-gland-smoke = Z porów okazu bucha okresowo gęsty dym, nieszko
 abductor-curator-gland-sleepgas = Okaz wydycha co jakiś czas chmurę podtlenku azotu. W ciasnym pokoju wszyscy robią się senni i weseli.
 abductor-curator-gland-arcs = Ten egzemplarz gromadzi ładunek i co kilka minut razi piorunem kogoś lub coś obok siebie. Uścisku dłoni nie polecam.
 abductor-curator-gland-swap = Bez ostrzeżenia okaz zamienia się miejscami z kimś w pobliżu. O zgodę drugiej strony gruczoł nie pyta.
+abductor-curator-gland-outburst = Język okazu żyje teraz własnym życiem. Od czasu do czasu powie coś, za co ochrona zechce z nim porozmawiać.
 abductor-curator-gland-emp = Gruczoł wyśle kilka impulsów, od których gaśnie elektronika wokół nosiciela. Potem wypali się na dobre.
 abductor-curator-gland-slime = Okaz zwróci dorosły, rozgniewany szlam. Zrobi to kilka razy, po czym gruczoł się uspokoi. Szlam nie.
 abductor-curator-gland-spiders = Jadowite pajączki dojrzewają w piersi okazu i w kilku rzutach wyjdą parami na zewnątrz. Szczęśliwie nie u nas.

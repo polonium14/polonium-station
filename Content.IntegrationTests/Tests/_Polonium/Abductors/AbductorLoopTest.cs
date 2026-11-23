@@ -4,6 +4,7 @@ using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Polonium.Abductors;
 using Content.Server._Shitmed.Medical.Surgery;
+using Content.Server.Chat.Systems;
 using Content.Server.StationEvents;
 using Content.Server.StationEvents.Components;
 using Content.Shared._Polonium.Abductors;
@@ -16,10 +17,12 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Buckle;
 using Content.Shared.CCVar;
+using Content.Shared.Chat;
 using Content.Shared.Cuffs;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.Dataset;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
@@ -42,6 +45,7 @@ using NUnit.Framework;
 using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Localization;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
@@ -65,6 +69,8 @@ public sealed class AbductorLoopTest : GameTest
     private const string PassiveGland = "OrganAbductorGlandStep";
     private const string FastGland = "TestAbductorGlandFast";
     private const string StealthGland = "OrganAbductorGlandStealth";
+    private const string OutburstAlwaysGland = "TestAbductorGlandOutburstAlways";
+    private const string OutburstNeverGland = "TestAbductorGlandOutburstNever";
     private const string ArcsTrigger = "TestAbductorArcs";
     private const string LightningRod = "TestAbductorLightningRod";
     private const string Wall = "WallSolid";
@@ -109,6 +115,34 @@ public sealed class AbductorLoopTest : GameTest
   - type: SpawnOnTrigger
     targetUser: true
     proto: FoodEgg
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: TestAbductorGlandOutburstAlways
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandOutburst
+    uses: 0
+    bodyComponents:
+    - type: AbductorSpeechSwap
+      lines: AbductorGlandOutbursts
+      minInterval: 1
+      maxInterval: 1
+      chance: 1
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: TestAbductorGlandOutburstNever
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandOutburst
+    uses: 0
+    bodyComponents:
+    - type: AbductorSpeechSwap
+      lines: AbductorGlandOutbursts
+      minInterval: 1
+      maxInterval: 1
+      chance: 0
 
 - type: entity
   id: TestAbductorArcs
@@ -525,6 +559,69 @@ public sealed class AbductorLoopTest : GameTest
 
             Assert.That(containers.Remove(gland, entMan.GetComponent<BodyComponent>(specimen).Organs!), Is.True);
             Assert.That(entMan.HasComponent<StepTriggerImmuneComponent>(specimen), Is.False);
+        });
+    }
+
+    [Test]
+    public async Task OutburstGlandSwapsOneTypedMessagePerInterval()
+    {
+        var (_, _, _, specimen) = await SetUpCrew();
+        var server = Pair.Server;
+        var entMan = server.EntMan;
+        var chat = entMan.System<ChatSystem>();
+        var glands = entMan.System<AbductorGlandSystem>();
+        var loc = server.ResolveDependency<ILocalizationManager>();
+        const string said = "Dzień dobry.";
+        var lines = new List<object>();
+
+        await server.WaitAssertion(() =>
+        {
+            SwapHeartFor(specimen, OutburstAlwaysGland);
+            Assert.That(chat.TransformSpeech(specimen, said, typed: true), Is.EqualTo(said), "A sleeping gland does nothing.");
+
+            glands.WakeAll(specimen);
+            Assert.That(chat.TransformSpeech(specimen, said, typed: true), Is.EqualTo(said), "The first interval has not passed yet.");
+
+            var dataset = entMan.GetComponent<AbductorSpeechSwapComponent>(specimen).Lines;
+            foreach (var key in server.ProtoMan.Index<LocalizedDatasetPrototype>(dataset).Values)
+            {
+                Assert.That(loc.TryGetString(key, out var line, ("speaker", specimen)), Is.True, key);
+                lines.Add(line!);
+            }
+        });
+
+        await Pair.RunSeconds(1.5f);
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(chat.TransformSpeech(specimen, said), Is.EqualTo(said), "Scripted speech is left alone.");
+            Assert.That(chat.TransformSpeech(specimen, said, typed: true), Is.AnyOf(lines.ToArray()), "Scripted speech keeps the roll.");
+            Assert.That(chat.TransformSpeech(specimen, said, typed: true), Is.EqualTo(said), "Only one message per interval.");
+        });
+
+        await Pair.RunSeconds(1.5f);
+
+        await server.WaitAssertion(() =>
+        {
+            var swap = entMan.GetComponent<AbductorSpeechSwapComponent>(specimen);
+            var nextRoll = swap.NextRoll;
+            chat.TrySendInGameICMessage(specimen, said, InGameICChatType.Speak, false);
+            Assert.That(swap.NextRoll, Is.EqualTo(nextRoll), "A message without a player is not typed.");
+
+            entMan.System<SharedMindSystem>().ControlMob(ServerSession!.UserId, specimen);
+            chat.TrySendInGameICMessage(specimen, said, InGameICChatType.Speak, ChatTransmitRange.Normal, player: ServerSession);
+            Assert.That(swap.NextRoll, Is.GreaterThan(nextRoll), "A message from the player's session is typed.");
+
+            SwapHeartFor(specimen, OutburstNeverGland);
+            glands.WakeAll(specimen);
+            Assert.That(entMan.HasComponent<AbductorSpeechSwapComponent>(specimen), Is.True);
+        });
+
+        await Pair.RunSeconds(1.5f);
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(chat.TransformSpeech(specimen, said, typed: true), Is.EqualTo(said), "A lost roll keeps the message.");
         });
     }
 

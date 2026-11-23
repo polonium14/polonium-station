@@ -21,13 +21,14 @@ public sealed partial class ChatSystem
         bool hideLog = false,
         bool ignoreActionBlocker = false,
         EntityUid? excludeRecipient = null,
-        bool triggerSpeakEvent = true
+        bool triggerSpeakEvent = true,
+        bool typed = false // Polonium: typed
         )
     {
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
 
-        var message = TransformSpeech(source, originalMessage);
+        var message = TransformSpeech(source, originalMessage, typed); // Polonium: typed
 
         if (message.Length == 0)
             return;
@@ -97,7 +98,8 @@ public sealed partial class ChatSystem
         RadioChannelPrototype? channel,
         string? nameOverride,
         bool hideLog = false,
-        bool ignoreActionBlocker = false
+        bool ignoreActionBlocker = false,
+        bool typed = false // Polonium: typed
         )
     {
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
@@ -116,7 +118,7 @@ public sealed partial class ChatSystem
         }
         // POLONIUM end
 
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupOrThrow(originalMessage));
+        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupOrThrow(originalMessage), typed); // Polonium: typed
         if (message.Length == 0)
             return;
 
