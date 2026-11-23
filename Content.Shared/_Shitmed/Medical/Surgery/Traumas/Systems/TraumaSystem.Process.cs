@@ -269,15 +269,18 @@ public partial class TraumaSystem
 
     public FixedPoint2 GetArmourChanceDeduction(EntityUid body, Entity<TraumaInflicterComponent> inflicter, TraumaType traumaType, ProtoId<OrganCategoryPrototype> coverage)
     {
+        if (!TryComp<WoundComponent>(inflicter, out var wound))
+            return FixedPoint2.Zero;
+
         var ev = new CoefficientQueryEvent(SlotFlags.WITHOUT_POCKET);
         RaiseLocalEvent(body, ev);
 
-        if (ev.DamageModifiers.Coefficients.Count == 0)
+        // Only armor against the kind of damage that made the wound counts. An average of whatever the armor
+        // lists let a suit that only stops acid shield organs from a club better than heavy armor did.
+        if (!ev.DamageModifiers.Coefficients.TryGetValue(wound.DamageType, out var coefficient))
             return FixedPoint2.Zero;
 
-        var averageCoefficient = ev.DamageModifiers.Coefficients.Values.Average();
-
-        return FixedPoint2.Clamp(FixedPoint2.New((1f - averageCoefficient) * DeductionStrength), FixedPoint2.Zero, FixedPoint2.New(1));
+        return FixedPoint2.Clamp(FixedPoint2.New((1f - coefficient) * DeductionStrength), FixedPoint2.Zero, FixedPoint2.New(1));
     }
 
     public FixedPoint2 GetTraumaChanceDeduction(

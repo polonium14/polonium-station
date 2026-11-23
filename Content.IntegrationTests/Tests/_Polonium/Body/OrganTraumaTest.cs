@@ -8,6 +8,7 @@ using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Body;
 using Content.Shared.FixedPoint;
+using Content.Shared.Inventory;
 using NUnit.Framework;
 using Robust.Shared.GameObjects;
 
@@ -26,6 +27,30 @@ public sealed class OrganTraumaTest : GameTest
     {
         return SEntMan.GetComponent<BodyComponent>(body).Organs!.ContainedEntities
             .Single(o => SEntMan.GetComponent<OrganComponent>(o).Category == category);
+    }
+
+    [TestCase("ClothingOuterHardsuitMedical", "WoundBlunt", 0f, TestName = "AcidSuitDoesNotStopAClub")]
+    [TestCase("ClothingOuterHardsuitMedical", "WoundCaustic", 0.45f, TestName = "AcidSuitStopsAcid")]
+    [TestCase("ClothingOuterArmorHeavy", "WoundBlunt", 0.4f, TestName = "HeavyArmorStopsAClub")]
+    [TestCase("ClothingOuterArmorHeavy", "WoundSlash", 0.4f, TestName = "HeavyArmorStopsABlade")]
+    public async Task ArmorOnlyCountsAgainstTheWoundsOwnDamage(string armor, string wound, float deduction)
+    {
+        var map = await Pair.CreateTestMap();
+        await Server.WaitAssertion(() =>
+        {
+            var body = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            var worn = SEntMan.SpawnAtPosition(armor, map.GridCoords);
+            Assert.That(SEntMan.System<InventorySystem>().TryEquip(body, worn, "outerClothing", force: true));
+
+            var inflicter = SEntMan.SpawnAtPosition(wound, map.GridCoords);
+            var chance = SEntMan.System<TraumaSystem>().GetArmourChanceDeduction(
+                body,
+                (inflicter, SEntMan.GetComponent<TraumaInflicterComponent>(inflicter)),
+                TraumaType.OrganDamage,
+                "Torso");
+
+            Assert.That(chance.Float(), Is.EqualTo(deduction).Within(0.01f));
+        });
     }
 
     [Test]
