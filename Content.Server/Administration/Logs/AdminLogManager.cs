@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Content.Server.Administration.Systems;
 using Content.Server.Database;
 using Content.Server.EUI;
+using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
@@ -37,7 +38,7 @@ public sealed partial class AdminLogManager : SharedAdminLogManager, IAdminLogMa
     [Dependency] private IReflectionManager _reflection = default!;
     [Dependency] private IDependencyCollection _dependencies = default!;
     [Dependency] private ISharedPlayerManager _player = default!;
-    [Dependency] private ISharedPlaytimeManager _playtime = default!;
+    [Dependency] private PlayTimeTrackingManager _playtime = default!;
     [Dependency] private ISharedChatManager _chat = default!;
     [Dependency] private IPrototypeManager _proto = default!;
 
@@ -491,8 +492,8 @@ public sealed partial class AdminLogManager : SharedAdminLogManager, IAdminLogMa
             {
                 if (_highImpactLogPlaytime >= 0 && _player.TryGetSessionById(new NetUserId(id), out var session))
                 {
-                    var playtimes = _playtime.GetPlayTimes(session);
-                    if (playtimes.TryGetValue(PlayTimeTrackingShared.TrackerOverall, out var overallTime) &&
+                    if (_playtime.TryGetTrackerTimes(session, out var playtimes) &&
+                        playtimes.TryGetValue(PlayTimeTrackingShared.TrackerOverall, out var overallTime) &&
                         overallTime <= TimeSpan.FromHours(_highImpactLogPlaytime))
                     {
                         adminLog = true;
