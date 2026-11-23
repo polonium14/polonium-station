@@ -54,6 +54,49 @@ public sealed class OrganTraumaTest : GameTest
     }
 
     [Test]
+    public async Task ArmorScalesTheChanceWithoutZeroingIt()
+    {
+        var map = await Pair.CreateTestMap();
+        await Server.WaitAssertion(() =>
+        {
+            var traumas = SEntMan.System<TraumaSystem>();
+            var inventory = SEntMan.System<InventorySystem>();
+
+            float OrganChance(EntityUid body)
+            {
+                var torso = Organ(body, "Torso");
+                var wound = SEntMan.SpawnAtPosition("WoundBlunt", map.GridCoords);
+                var hits = 0;
+                for (var i = 0; i < Rolls; i++)
+                {
+                    if (traumas.RandomOrganTraumaChance(
+                            (torso, SEntMan.GetComponent<WoundableComponent>(torso)),
+                            (wound, SEntMan.GetComponent<TraumaInflicterComponent>(wound))))
+                        hits++;
+                }
+
+                return hits / (float) Rolls;
+            }
+
+            var bare = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            var officer = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            Assert.That(inventory.TryEquip(officer, SEntMan.SpawnAtPosition("ClothingOuterArmorBasic", map.GridCoords), "outerClothing", force: true));
+            Assert.That(inventory.TryEquip(officer, SEntMan.SpawnAtPosition("ClothingHeadHelmetBasic", map.GridCoords), "head", force: true));
+            var heavy = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
+            Assert.That(inventory.TryEquip(heavy, SEntMan.SpawnAtPosition("ClothingOuterArmorHeavy", map.GridCoords), "outerClothing", force: true));
+
+            var base17 = OrganChance(bare);
+            Assert.Multiple(() =>
+            {
+                Assert.That(base17, Is.InRange(0.13f, 0.21f), "A blunt wound has a 17% organ chance on a bare body.");
+                // Vest and helmet stack, and every worn piece counts for every body part.
+                Assert.That(OrganChance(officer), Is.InRange(base17 * 0.6f, base17), "A vest and a helmet lower the chance a little.");
+                Assert.That(OrganChance(heavy), Is.InRange(0.05f, base17 * 0.85f), "Heavy armor lowers it a lot and never to zero.");
+            });
+        });
+    }
+
+    [Test]
     public async Task DamagedPartRaisesOrganDamageChance()
     {
         var map = await Pair.CreateTestMap();
