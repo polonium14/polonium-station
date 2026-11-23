@@ -25,6 +25,7 @@ namespace Content.Server.Atmos.EntitySystems
         private readonly TileAtmosphere[] _depressurizeTiles = new TileAtmosphere[Atmospherics.MonstermosHardTileLimit];
         private readonly TileAtmosphere[] _depressurizeSpaceTiles = new TileAtmosphere[Atmospherics.MonstermosHardTileLimit];
         private readonly TileAtmosphere[] _depressurizeProgressionOrder = new TileAtmosphere[Atmospherics.MonstermosHardTileLimit * 2];
+        private readonly List<EntityUid> _firelockCandidates = new();
 
         private void EqualizePressureInZone(
             Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent,
@@ -581,16 +582,26 @@ namespace Content.Server.Atmos.EntitySystems
             var reconsiderAdjacent = false;
 
             var mapGrid = ent.Comp3;
-            foreach (var entity in _map.GetAnchoredEntities(ent.Owner, mapGrid, tile.GridIndices))
-            {
-                if (_firelockQuery.TryGetComponent(entity, out var firelock))
-                    reconsiderAdjacent |= _firelockSystem.EmergencyPressureStop(entity, firelock);
-            }
+            var candidatesStart = _firelockCandidates.Count;
+            _map.GetAnchoredEntities((ent.Owner, mapGrid), tile.GridIndices, _firelockCandidates);
+            _map.GetAnchoredEntities((ent.Owner, mapGrid), other.GridIndices, _firelockCandidates);
+            var candidatesEnd = _firelockCandidates.Count;
 
-            foreach (var entity in _map.GetAnchoredEntities(ent.Owner, mapGrid, other.GridIndices))
+            try
             {
-                if (_firelockQuery.TryGetComponent(entity, out var firelock))
-                    reconsiderAdjacent |= _firelockSystem.EmergencyPressureStop(entity, firelock);
+                for (var i = candidatesStart; i < candidatesEnd; i++)
+                {
+                    var entity = _firelockCandidates[i];
+                    if (_firelockQuery.TryGetComponent(entity, out var firelock)
+                        && !EntityManager.IsQueuedForDeletion(entity))
+                    {
+                        reconsiderAdjacent |= _firelockSystem.EmergencyPressureStop(entity, firelock);
+                    }
+                }
+            }
+            finally
+            {
+                _firelockCandidates.RemoveRange(candidatesStart, candidatesEnd - candidatesStart);
             }
 
             if (!reconsiderAdjacent)

@@ -24,8 +24,8 @@ public sealed class EntityCoordinatesConverter : AdminLogConverter<EntityCoordin
         writer.WriteNumber("x", value.X);
         writer.WriteNumber("y", value.Y);
         EntityUid? mapUid = null;
-        if (_entityManager.TryGetTarget(out var entMan))
-            mapUid = entMan.GetComponent<TransformComponent>(value.EntityId).MapUid;
+        if (_entityManager.TryGetTarget(out var entMan) && entMan.TryGetComponent(value.EntityId, out TransformComponent? xform))
+            mapUid = xform.MapUid;
 
         if (mapUid.HasValue)
         {

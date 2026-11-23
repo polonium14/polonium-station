@@ -1,0 +1,19 @@
+- type: airFlowGasTint
+  id: Plasma
+  color: "#a95fb8"
+
+- type: airFlowGasTint
+  id: Tritium
+  color: "#2ddb08"
+
+- type: airFlowGasTint
+  id: WaterVapor
+  color: "#e6f3ff"
+
+- type: airFlowGasTint
+  id: Ammonia
+  color: "#8a4fb5"
+
+- type: airFlowGasTint
+  id: Frezon
+  color: "#6fd1ee"

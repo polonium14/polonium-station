@@ -33,6 +33,8 @@ public sealed partial class WashingMachineSystem : SharedWashingMachineSystem
 
     private static readonly SoundSpecifier HitSound = new SoundCollectionSpecifier("MetalThud");
 
+    private readonly List<EntityUid> _washedItems = new();
+
     public override void Initialize()
     {
         base.Initialize();
@@ -80,9 +82,18 @@ public sealed partial class WashingMachineSystem : SharedWashingMachineSystem
 
         var hasHeavyItems = false;
 
-        foreach (var item in storage.Contents.ContainedEntities)
+        _washedItems.Clear();
+        _washedItems.AddRange(storage.Contents.ContainedEntities);
+
+        foreach (var item in _washedItems)
         {
+            if (!IsInDrum(storage, item))
+                continue;
+
             _damageable.TryChangeDamage(item, damage, true);
+
+            if (!IsInDrum(storage, item))
+                continue;
 
             if (sprayWater)
                 _reactive.DoEntityReaction(item, waterSpray, ReactionMethod.Touch);
@@ -98,6 +109,11 @@ public sealed partial class WashingMachineSystem : SharedWashingMachineSystem
 
             comp.AccumulatedSelfDamage += comp.SelfDamagePerSecond * frameTime;
         }
+    }
+
+    private bool IsInDrum(EntityStorageComponent storage, EntityUid item)
+    {
+        return storage.Contents.Contains(item) && !EntityManager.IsQueuedForDeletion(item);
     }
 
     protected override bool TryStartWash(Entity<WashingMachineComponent> ent, EntityUid user)
