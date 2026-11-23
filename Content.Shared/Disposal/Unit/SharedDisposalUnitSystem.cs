@@ -291,6 +291,7 @@ public abstract partial class SharedDisposalUnitSystem : EntitySystem
         if (beforeFlushArgs.Cancelled)
         {
             SetEngage(ent, false);
+            RecalculateFlushTime(ent, true); // Polonium: a past NextFlush retried every tick and sent mail on address pick, without the lever
             return false;
         }
 
