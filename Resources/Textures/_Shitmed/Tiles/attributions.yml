@@ -1,0 +1,4 @@
+- files: ["abductor_tile.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from tgstation at commit 694e667478c7241c7e4283ce26db046d897a855c, icons/turf/floors.dmi, state alienpod6"
+  source: "https://github.com/tgstation/tgstation/blob/694e667478c7241c7e4283ce26db046d897a855c/icons/turf/floors.dmi"
