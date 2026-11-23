@@ -70,11 +70,11 @@ namespace Content.Server.Body.Components
 
         [DataField(required: true)]
         [ViewVariables(VVAccess.ReadWrite)]
-        public DamageSpecifier Damage = default!;
+        public DamageSpecifier Damage = new();
 
         [DataField(required: true)]
         [ViewVariables(VVAccess.ReadWrite)]
-        public DamageSpecifier DamageRecovery = default!;
+        public DamageSpecifier DamageRecovery = new();
 
         [DataField]
         public TimeSpan GaspEmoteCooldown = TimeSpan.FromSeconds(8);
