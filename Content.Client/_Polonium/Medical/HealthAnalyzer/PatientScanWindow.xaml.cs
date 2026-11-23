@@ -409,6 +409,22 @@ public sealed partial class PatientScanWindow : FancyWindow
                 alerts.Add((Loc.GetString("health-analyzer-scan-alert-surgery", ("limb", LimbName(part))), false));
         }
 
+        foreach (var part in LimbOrder)
+        {
+            if (!scan.Limbs.TryGetValue(part, out var limb))
+                continue;
+
+            if (limb.Severity != WoundableSeverity.Healthy)
+            {
+                var severity = Loc.GetString($"health-analyzer-scan-severity-{limb.Severity.ToString().ToLowerInvariant()}");
+                alerts.Add((Loc.GetString("health-analyzer-scan-alert-limb", ("limb", LimbName(part)), ("severity", severity)),
+                    limb.Severity >= WoundableSeverity.Critical));
+            }
+
+            if (limb.Bone == BoneSeverity.Broken)
+                alerts.Add((Loc.GetString("health-analyzer-scan-alert-fracture", ("limb", LimbName(part))), false));
+        }
+
         foreach (var organ in scan.Organs.Where(organ => organ.FailureStage > 0).OrderByDescending(organ => organ.FailureStage))
         {
             alerts.Add((Loc.GetString("health-analyzer-scan-alert-failure", ("organ", OrganName(organ.Category)), ("stage", organ.FailureStage)),
