@@ -60,7 +60,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   ## Otwarta rana krwawi
 
   Nacięcie krwawi tak długo, jak jest otwarte, bez względu na to, czy pacjent leży na stole, na łóżku, czy na podłodze. To krwawienie samo nie ustaje.
-  Zaciśnij naczynia hemostatem zaraz po nacięciu (to drugi krok operacji „Otwórz nacięcie”): zostaje wtedy tylko powolne sączenie, które organizm nadrabia. Bandaż tego krwawienia nie zatrzyma. Nacięcie na tułowiu krwawi najmocniej, na głowie o połowę słabiej, a na ręce albo nodze czterokrotnie słabiej.
+  Zaciśnij naczynia hemostatem zaraz po nacięciu (to drugi krok operacji „Zrób nacięcie”): zostaje wtedy tylko powolne sączenie, które organizm nadrabia. Bandaż tego krwawienia nie zatrzyma. Nacięcie na klatce piersiowej krwawi najmocniej, na głowie o połowę słabiej, a na ręce albo nodze czterokrotnie słabiej.
   Krwawienie kończy dopiero zamknięcie nacięcia, więc nie zostawiaj pacjenta rozciętego i nie wypuszczaj go z niedokończoną operacją.
 
   ## Sterylność
@@ -90,7 +90,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Nie są co prawda idealne w porównaniu z prawdziwym sprzętem chirurgicznym, ale w razie potrzeby się przydadzą!
 
-  Nóż albo odłamek szkła zastąpi skalpel, obcinak hemostat i rozwórkę, śrubokręt albo widelec rozwórkę, zapalona spawarka kauter, tasak albo topór strażacki piłę, a łom pęsetę.
+  Nóż albo odłamek szkła zastąpi skalpel, obcinak hemostat i rozwórkę, śrubokręt albo widelec rozwórkę, zapalona spawarka kauter, tasak albo topór strażacki piłę, a łom hemostat przy wyjmowaniu narządu.
   Narzędzie zastępcze jest wolniejsze, a zbyt wolny krok może się nie udać: pacjent zostaje wtedy zraniony, a krok trzeba powtórzyć. Zanim zaczniesz, gra pokaże, jaka jest na to szansa.
   Prawdziwe narzędzia nie zawodzą nawet na podłodze, a stół operacyjny przyspiesza zabieg i zmniejsza ryzyko przy narzędziach zastępczych.
   Żelu kostnego nic nie zastąpi. Przepiłowaną klatkę piersiową albo czaszkę zamkniesz bez niego operacją „Zamknij nacięcie bez żelu kostnego”: zsuń kości i przypal ranę. Pacjent przestaje krwawić, ale kość zostaje złamana, dopóki ktoś nie wykona operacji „Napraw kości”.
@@ -102,10 +102,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Morfina w większej dawce usypia, a przedawkowana zatruwa i zatrzymuje oddech.
   Butelkę morfiny znajdziesz w pasie medycznym oraz w automatach NanoMed i NanoMed Plus.
 
-  ## Implantowanie przedmiotów w klatce piersiowej
+  ## Chowanie przedmiotów w klatce piersiowej
 
-  Przez otwartą klatkę piersiową (nacięcie, odciągnięcie skóry, przepiłowanie i rozsunięcie kości) możesz schować w tułowiu jeden mały przedmiot: weź go do ręki i wybierz operację „Schowaj przedmiot w klatce piersiowej”. Operacja „Wyjmij przedmiot z klatki piersiowej” wymaga kleszczyków i oddaje przedmiot do twojej ręki. Na koniec zamknij nacięcie jak po każdej operacji.
+  Przez otwartą klatkę piersiową (nacięcie, odciągnięcie skóry, przepiłowanie i rozsunięcie kości) możesz schować w niej jeden mały przedmiot: weź go do ręki i wybierz operację „Schowaj przedmiot w klatce piersiowej”. Operacja „Wyjmij przedmiot z klatki piersiowej” wymaga hemostatu i oddaje przedmiot do twojej ręki. Na koniec zamknij nacięcie jak po każdej operacji.
 
-  Schowany przedmiot działa dalej: odbezpieczony granat wybuchnie w środku. Analizator go nie wykrywa, widać go dopiero przy operacji. Gdy tułów zostanie zniszczony, przedmiot wypada.
+  Schowany przedmiot działa dalej: odbezpieczony granat wybuchnie w środku. Analizator go nie wykrywa, widać go dopiero przy operacji. Gdy klatka piersiowa zostanie zniszczona, przedmiot wypada.
 
 </Document>
