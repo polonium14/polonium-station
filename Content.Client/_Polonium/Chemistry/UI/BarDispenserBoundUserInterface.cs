@@ -31,7 +31,18 @@ public sealed class BarDispenserBoundUserInterface(EntityUid owner, Enum uiKey) 
         _window.OnEject += location => SendMessage(new ReagentDispenserEjectContainerMessage(location));
         _window.OnAmountSelected += amount => SendMessage(new ReagentDispenserSetDispenseAmountMessage(amount));
         _window.OnClear += () => SendMessage(new ReagentDispenserClearContainerSolutionMessage());
-        _window.OnVesselPressed += insert => SendPredictedMessage(new ItemSlotButtonPressedEvent(SharedReagentDispenser.OutputSlotName, tryEject: !insert, tryInsert: insert));
+        _window.OnVesselPressed += PressVessel;
+    }
+
+    private void PressVessel(bool insert)
+    {
+        var press = new ItemSlotButtonPressedEvent(SharedReagentDispenser.OutputSlotName, tryEject: !insert, tryInsert: insert);
+
+        // The slot leaves its eject sound to the user's client and plays its insert sound for everyone, the user included.
+        if (insert)
+            SendMessage(press);
+        else
+            SendPredictedMessage(press);
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

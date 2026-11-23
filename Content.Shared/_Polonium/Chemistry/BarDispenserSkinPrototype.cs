@@ -136,18 +136,6 @@ public sealed partial class BarDispenserSkinPrototype : IPrototype
     public SoundSpecifier? DrainSound;
 
     /// <summary>
-    /// Heard when a vessel is put under the nozzle.
-    /// </summary>
-    [DataField]
-    public SoundSpecifier? VesselInSound;
-
-    /// <summary>
-    /// Heard when the vessel is taken away.
-    /// </summary>
-    [DataField]
-    public SoundSpecifier? VesselOutSound;
-
-    /// <summary>
     /// Heard when a stored container leaves the dispenser.
     /// </summary>
     [DataField]

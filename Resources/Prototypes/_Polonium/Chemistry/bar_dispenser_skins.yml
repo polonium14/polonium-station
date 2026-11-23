@@ -36,14 +36,6 @@
     path: /Audio/_Polonium/Machines/BarDispenser/drain.ogg
     params:
       variation: 0.08
-  vesselInSound:
-    collection: BarDispenserVesselIn
-    params:
-      variation: 0.05
-  vesselOutSound:
-    collection: BarDispenserVesselOut
-    params:
-      variation: 0.05
   containerOutSound:
     collection: BarDispenserBottleOut
     params:
@@ -86,14 +78,6 @@
     path: /Audio/_Polonium/Machines/BarDispenser/drain.ogg
     params:
       variation: 0.08
-  vesselInSound:
-    collection: BarDispenserVesselIn
-    params:
-      variation: 0.05
-  vesselOutSound:
-    collection: BarDispenserVesselOut
-    params:
-      variation: 0.05
   containerOutSound:
     collection: BarDispenserVesselOut
     params:

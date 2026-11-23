@@ -17,8 +17,6 @@ public enum BarBayCue : byte
     Cubes,
     Grains,
     Drain,
-    VesselIn,
-    VesselOut,
 }
 
 /// <summary>
@@ -104,7 +102,6 @@ public sealed partial class BarDispenserBay : Control
     private int _look;
     private bool _reduced;
     private bool _opened;
-    private bool _landing;
     private bool _drainHeard;
     private bool _hovered;
     private bool _clickable;
@@ -176,14 +173,6 @@ public sealed partial class BarDispenserBay : Control
                 _leave = 0f;
             }
 
-            if (_opened)
-            {
-                if (_vessel != null)
-                    OnCue?.Invoke(BarBayCue.VesselOut);
-
-                _landing = model.Vessel != null;
-            }
-
             _vessel = model.Vessel;
             _settled = _vessel != null && shown ? 0f : 1f;
             _drain = null;
@@ -192,11 +181,6 @@ public sealed partial class BarDispenserBay : Control
 
         _opened = true;
         _settled = MathF.Min(1f, _settled + delta / DropTime);
-        if (_landing && _settled >= 1f)
-        {
-            _landing = false;
-            OnCue?.Invoke(BarBayCue.VesselIn);
-        }
 
         if (_leaving != null)
         {

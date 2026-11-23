@@ -398,9 +398,7 @@ public sealed partial class BarDispenserWindow : BaseWindow
             BarBayCue.Fizz => skin.FizzSound,
             BarBayCue.Cubes => skin.CubesSound,
             BarBayCue.Grains => skin.GrainsSound,
-            BarBayCue.Drain => skin.DrainSound,
-            BarBayCue.VesselIn => skin.VesselInSound,
-            _ => skin.VesselOutSound,
+            _ => skin.DrainSound,
         });
     }
 
