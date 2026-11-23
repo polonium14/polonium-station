@@ -88,6 +88,8 @@ abductor-gland-call-mouse = cienko piszczy jak mysz.
 abductor-gland-call-bear = ryczy niczym niedźwiedź.
 abductor-gland-call-monkey = wrzeszczy jak małpa.
 abductor-gland-call-parrot = skrzeczy jak papuga.
+abductor-gland-call-maupa = drze ryja jak maupa.
+abductor-gland-call-zombie = jęczy przeciągle: "maaazg..."
 
 objective-issuer-abductor = [color=#ff0099]Wydział Sondowania[/color]
 objective-abductor-experiments-title = Uzupełnij rejestr

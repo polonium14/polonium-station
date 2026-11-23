@@ -210,6 +210,16 @@
     - emote: abductor-gland-call-monkey
       sound:
         path: /Audio/Animals/monkey_scream.ogg
+    - emote: abductor-gland-call-maupa
+      sound:
+        collection: MaupaScreams
+        params:
+          volume: -17
+    - emote: abductor-gland-call-zombie
+      sound:
+        collection: ZombieScreams
+        params:
+          volume: -3
     - emote: abductor-gland-call-parrot
       sound:
         path: /Audio/Animals/parrot_raught.ogg
