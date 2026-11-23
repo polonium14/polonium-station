@@ -1,0 +1,119 @@
+- type: objectiveIssuer
+  id: AbducteeObsession
+  name: objective-issuer-abductee
+
+- type: antag
+  id: Abductee
+  name: roles-antag-abductee-name
+  antagonist: true
+  objective: roles-antag-abductee-objective
+
+- type: entity
+  parent: BaseMindRole
+  id: MindRoleAbducteeHarmless
+  name: Abductee Role (Harmless)
+  components:
+  - type: MindRole
+    roleType: Neutral
+    subtype: role-subtype-abductee
+
+- type: entity
+  parent: BaseMindRole
+  id: MindRoleAbducteeAnnoying
+  name: Abductee Role (Free Agent)
+  components:
+  - type: MindRole
+    roleType: FreeAgent
+    subtype: role-subtype-abductee
+    sortWeight: 30
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleAbducteeHarmful
+  name: Abductee Role (Antagonist)
+  components:
+  - type: MindRole
+    roleType: SoloAntagonist
+    subtype: role-subtype-abductee
+    antagPrototype: Abductee
+
+- type: abducteeTier
+  id: AbducteeHarmless
+  weight: 75
+  mindRole: MindRoleAbducteeHarmless
+  briefing: abductee-briefing-harmless
+  objectives:
+  - title: abductee-objective-spoons-title
+    description: abductee-objective-spoons-description
+  - title: abductee-objective-flowers-title
+    description: abductee-objective-flowers-description
+  - title: abductee-objective-light-title
+    description: abductee-objective-light-description
+  - title: abductee-objective-coffee-title
+    description: abductee-objective-coffee-description
+  - title: abductee-objective-shoes-title
+    description: abductee-objective-shoes-description
+  - title: abductee-objective-symbol-title
+    description: abductee-objective-symbol-description
+  - title: abductee-objective-pet-title
+    description: abductee-objective-pet-description
+  - title: abductee-objective-sandwich-title
+    description: abductee-objective-sandwich-description
+  - title: abductee-objective-diary-title
+    description: abductee-objective-diary-description
+  - title: abductee-objective-anthem-title
+    description: abductee-objective-anthem-description
+  - title: abductee-objective-colors-title
+    description: abductee-objective-colors-description
+  - title: abductee-objective-chairs-title
+    description: abductee-objective-chairs-description
+  - title: abductee-objective-vacuum-title
+    description: abductee-objective-vacuum-description
+  - title: abductee-objective-laugh-title
+    description: abductee-objective-laugh-description
+  - title: abductee-objective-hats-title
+    description: abductee-objective-hats-description
+  - title: abductee-objective-stars-title
+    description: abductee-objective-stars-description
+  - title: abductee-objective-portrait-title
+    description: abductee-objective-portrait-description
+  - title: abductee-objective-plant-title
+    description: abductee-objective-plant-description
+
+- type: abducteeTier
+  id: AbducteeAnnoying
+  weight: 20
+  mindRole: MindRoleAbducteeAnnoying
+  briefing: abductee-briefing-annoying
+  objectives:
+  - title: abductee-objective-pens-title
+    description: abductee-objective-pens-description
+  - title: abductee-objective-doors-title
+    description: abductee-objective-doors-description
+  - title: abductee-objective-copies-title
+    description: abductee-objective-copies-description
+  - title: abductee-objective-trespass-title
+    description: abductee-objective-trespass-description
+  - title: abductee-objective-investigation-title
+    description: abductee-objective-investigation-description
+  - title: abductee-objective-bins-title
+    description: abductee-objective-bins-description
+  - title: abductee-objective-kitchen-title
+    description: abductee-objective-kitchen-description
+  - title: abductee-objective-furniture-title
+    description: abductee-objective-furniture-description
+
+- type: abducteeTier
+  id: AbducteeHarmful
+  weight: 5
+  mindRole: MindRoleAbducteeHarmful
+  briefing: abductee-briefing-harmful
+  objectives:
+  - title: abductee-objective-cameras-title
+    description: abductee-objective-cameras-description
+  - title: abductee-objective-telecoms-title
+    description: abductee-objective-telecoms-description
+  - title: abductee-objective-power-title
+    description: abductee-objective-power-description
+  - title: abductee-objective-bridge-title
+    description: abductee-objective-bridge-description

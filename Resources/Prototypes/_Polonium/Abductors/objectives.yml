@@ -1,0 +1,36 @@
+- type: objectiveIssuer
+  id: AbductorProbingDivision
+  name: objective-issuer-abductor
+
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseAbductorExperimentsObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    issuer: AbductorProbingDivision
+    icon:
+      sprite: _Shitmed/Structures/abductor_experimentator.rsi
+      state: experimentator_0
+  - type: AbductorExperimentsCondition
+
+- type: entity
+  parent: BaseAbductorExperimentsObjective
+  id: AbductorExperimentsObjectiveLone
+  components:
+  - type: NumberObjective
+    min: 3
+    max: 3
+    title: objective-abductor-experiments-title
+    description: objective-abductor-experiments-description
+
+- type: entity
+  parent: BaseAbductorExperimentsObjective
+  id: AbductorExperimentsObjectivePair
+  components:
+  - type: NumberObjective
+    min: 6
+    max: 6
+    title: objective-abductor-experiments-title
+    description: objective-abductor-experiments-description
