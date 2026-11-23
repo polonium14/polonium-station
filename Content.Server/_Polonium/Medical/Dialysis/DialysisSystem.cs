@@ -74,8 +74,27 @@ public sealed partial class DialysisSystem : EntitySystem
 
         if (ent.Comp.Patient is { } old && CompOrNull<OnDialysisComponent>(old)?.Machine == ent.Owner)
         {
-            RemComp<OnDialysisComponent>(old);
-            _circulation.Refresh(old);
+            // A second machine on the same patient takes over instead of the protection ending.
+            EntityUid? other = null;
+            var machines = EntityQueryEnumerator<DialysisComponent>();
+            while (machines.MoveNext(out var uid, out var dialysis))
+            {
+                if (uid == ent.Owner || dialysis.Patient != old)
+                    continue;
+
+                other = uid;
+                break;
+            }
+
+            if (other is { } remaining)
+            {
+                Comp<OnDialysisComponent>(old).Machine = remaining;
+            }
+            else
+            {
+                RemComp<OnDialysisComponent>(old);
+                _circulation.Refresh(old);
+            }
         }
 
         ent.Comp.Patient = patient;

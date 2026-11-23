@@ -167,4 +167,31 @@ public sealed class DialysisTest : GameTest
             Assert.That(Poison(patient), Is.GreaterThan(onMachine + 4), "Off the machine the poisoning is back in full.");
         });
     }
+
+    [Test]
+    public async Task SecondMachineLeavingKeepsTheFirstWorking()
+    {
+        var (machine, patient, _) = await Setup();
+        await Pair.RunSeconds(1);
+
+        var second = EntityUid.Invalid;
+        await Server.WaitPost(() =>
+        {
+            second = SEntMan.SpawnAtPosition("DialysisMachine", SEntMan.GetComponent<TransformComponent>(machine).Coordinates);
+            Attach(second, patient);
+        });
+
+        await Pair.RunSeconds(1);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.System<DialysisSystem>().GetMachine(patient)?.Owner, Is.EqualTo(second));
+            Attach(second, null);
+        });
+
+        await Pair.RunSeconds(1);
+
+        await Server.WaitAssertion(() =>
+            Assert.That(SEntMan.System<DialysisSystem>().GetMachine(patient)?.Owner, Is.EqualTo(machine)));
+    }
 }
