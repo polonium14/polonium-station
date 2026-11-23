@@ -506,6 +506,10 @@
         effectProto: StatusEffectStunned
         time: 0.75
         type: Remove
+      - !type:ModifyStatusEffect # Polonium: stand and walk in soft crit
+        effectProto: StatusEffectSoftCritStand
+        time: 2
+        type: Update
       - !type:ModifyKnockdown
         time: 0.75
         type: Remove
