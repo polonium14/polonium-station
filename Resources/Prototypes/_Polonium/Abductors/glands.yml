@@ -1,0 +1,525 @@
+- type: entity
+  abstract: true
+  parent: OrganHumanHeart
+  id: BaseOrganAbductorGland
+  name: alien gland
+  description: A pulsating alien organ. It does the work of a heart and something else besides.
+  components:
+  - type: GuideHelp
+    guides:
+    - Abductors
+  - type: Sprite
+    sprite: _Shitmed/Mobs/Species/Misc/Dubious/organs.rsi
+    layers:
+    - state: gland
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandRegeneration
+  suffix: Regeneration
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandRegeneration
+    minInterval: 5
+    maxInterval: 5
+  - type: DamageOnTrigger
+    targetUser: true
+    ignoreResistances: true
+    damage:
+      types:
+        Blunt: -0.3
+        Slash: -0.3
+        Piercing: -0.3
+        Heat: -0.3
+        Cold: -0.3
+        Shock: -0.3
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandEgg
+  suffix: Egg layer
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandEgg
+  - type: SpawnOnTrigger
+    targetUser: true
+    proto: FoodEgg
+  - type: PopupOnTrigger
+    targetUser: true
+    quiet: true
+    predicted: false
+    text: abductor-gland-popup-egg
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandPressure
+  suffix: Pressure-proof skin
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandPressure
+    uses: 0
+    bodyStatusEffect: StatusEffectPressureImmunity
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandStep
+  suffix: Step immunity
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandStep
+    uses: 0
+    bodyComponents:
+    - type: StepTriggerImmune
+      whitelist:
+        components:
+        - PreventableStepTrigger
+        - LandMine
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandWelder
+  suffix: Welder repair
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandWelder
+    uses: 0
+    bodyComponents:
+    - type: Repairable
+      damage:
+        types:
+          Blunt: -5
+          Slash: -5
+          Piercing: -5
+          Heat: -5
+      fuelCost: 2
+      doAfterDelay: 2
+      allowSelfRepair: false
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandWhispers
+  suffix: Whispers
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandWhispers
+    uses: 0
+    bodyComponents:
+    - type: Paracusia
+      minTimeBetweenIncidents: 30
+      maxTimeBetweenIncidents: 120
+      maxSoundDistance: 7
+      sounds:
+        collection: Paracusia
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandStealth
+  suffix: Stealth
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandStealth
+    uses: 0
+    bodyComponents:
+    - type: Stealth
+      enabledOnDeath: false
+      minVisibility: 0.15
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.2
+      movementVisibilityRate: 0.4
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandNewFace
+  suffix: New face
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandNewFace
+    uses: 1
+  - type: DnaScrambleOnTrigger
+    targetUser: true
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandMenagerie
+  suffix: Creature calls
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandMenagerie
+  - type: AbductorCreatureCallOnTrigger
+    targetUser: true
+    calls:
+    - emote: abductor-gland-call-cow
+      sound:
+        path: /Audio/Animals/cow_moo.ogg
+        params:
+          volume: -7
+    - emote: abductor-gland-call-dog
+      sound:
+        collection: VulpkaninBarks
+    - emote: abductor-gland-call-cat
+      sound:
+        path: /Audio/Animals/cat_meow.ogg
+        params:
+          volume: 4
+    - emote: abductor-gland-call-sheep
+      sound:
+        collection: Sheep
+    - emote: abductor-gland-call-goat
+      sound:
+        path: /Audio/Animals/goat_bah.ogg
+    - emote: abductor-gland-call-pig
+      sound:
+        path: /Audio/Animals/pig_oink.ogg
+        params:
+          volume: 2
+    - emote: abductor-gland-call-chicken
+      sound:
+        path: /Audio/Animals/chicken_cluck_happy.ogg
+        params:
+          volume: -4
+    - emote: abductor-gland-call-duck
+      sound:
+        path: /Audio/Animals/duck_quack_happy.ogg
+        params:
+          volume: -2
+    - emote: abductor-gland-call-goose
+      sound:
+        path: /Audio/Animals/goose_honk.ogg
+        params:
+          volume: -7
+    - emote: abductor-gland-call-frog
+      sound:
+        path: /Audio/Animals/frog_ribbit.ogg
+        params:
+          volume: 2
+    - emote: abductor-gland-call-snake
+      sound:
+        path: /Audio/Animals/snake_hiss.ogg
+        params:
+          volume: 8
+    - emote: abductor-gland-call-mouse
+      sound:
+        path: /Audio/Animals/mouse_squeak.ogg
+        params:
+          volume: 8
+    - emote: abductor-gland-call-bear
+      sound:
+        path: /Audio/Animals/bear.ogg
+        params:
+          volume: -3
+    - emote: abductor-gland-call-monkey
+      sound:
+        path: /Audio/Animals/monkey_scream.ogg
+    - emote: abductor-gland-call-parrot
+      sound:
+        path: /Audio/Animals/parrot_raught.ogg
+        params:
+          volume: -7
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandScram
+  suffix: Scram
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandScram
+  - type: ScramOnTrigger
+    targetUser: true
+    teleportRadius: 8, 25
+  - type: PopupOnTrigger
+    targetUser: true
+    quiet: true
+    predicted: false
+    text: abductor-gland-popup-scram
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandGravity
+  suffix: Gravity
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandGravity
+  - type: RepulseAttractOnTrigger
+    targetUser: true
+    speed: -5
+    range: 4
+    whitelist:
+      components:
+      - Item
+      - MobMover
+  - type: PopupOnTrigger
+    targetUser: true
+    quiet: true
+    predicted: false
+    text: abductor-gland-popup-gravity
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandFlash
+  suffix: Flash
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandFlash
+  - type: FlashOnTrigger
+    targetUser: true
+    range: 3
+    duration: 4
+  - type: PopupOnTrigger
+    targetUser: true
+    quiet: true
+    predicted: false
+    text: abductor-gland-popup-flash
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandSmoke
+  suffix: Smoke
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandSmoke
+  - type: SmokeOnTrigger
+    targetUser: true
+    duration: 12
+    spreadAmount: 20
+  - type: EmitSoundOnTrigger
+    targetUser: true
+    positional: true
+    sound: /Audio/Effects/smoke.ogg
+  - type: PopupOnTrigger
+    targetUser: true
+    quiet: true
+    predicted: false
+    text: abductor-gland-popup-smoke
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandSleepgas
+  suffix: N2O
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandSleepgas
+  - type: AbductorGasBurstOnTrigger
+    targetUser: true
+    gas: NitrousOxide
+    moles: 8
+  - type: PopupOnTrigger
+    targetUser: true
+    quiet: true
+    predicted: false
+    text: abductor-gland-popup-sleepgas
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandArcs
+  suffix: Shock
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandArcs
+  - type: AbductorArcsOnTrigger
+    targetUser: true
+  - type: PopupOnTrigger
+    targetUser: true
+    quiet: true
+    predicted: false
+    text: abductor-gland-popup-arcs
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandSwap
+  suffix: Swap
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandSwap
+  - type: AbductorSwapOnTrigger
+    targetUser: true
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandEmp
+  suffix: EMP
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandEmp
+    uses: 3
+  - type: EmpOnTrigger
+    targetUser: true
+    range: 3
+    energyConsumption: 12000
+    disableDuration: 15
+  - type: PopupOnTrigger
+    targetUser: true
+    quiet: true
+    predicted: false
+    text: abductor-gland-popup-emp
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandSlime
+  suffix: Angry slime
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandSlime
+    uses: 3
+  - type: SpawnEntityTableOnTrigger
+    targetUser: true
+    table: !type:GroupSelector
+      children:
+      - id: MobAdultSlimesBlueAngry
+      - id: MobAdultSlimesGreenAngry
+      - id: MobAdultSlimesYellowAngry
+  - type: PopupOnTrigger
+    targetUser: true
+    quiet: true
+    predicted: false
+    text: abductor-gland-popup-slime
+
+- type: entity
+  parent: BaseOrganAbductorGland
+  id: OrganAbductorGlandSpiders
+  suffix: Spiderlings
+  components:
+  - type: AbductorGland
+    report: AbductorCuratorGlandSpiders
+    uses: 3
+  - type: SpawnEntityTableOnTrigger
+    targetUser: true
+    table: !type:AllSelector
+      children:
+      - id: MobAbductorSpiderling
+      - id: MobAbductorSpiderling
+  - type: PopupOnTrigger
+    targetUser: true
+    quiet: true
+    predicted: false
+    text: abductor-gland-popup-spiders
+
+- type: entity
+  parent: BaseStructure
+  id: AbductorGlandDispenser
+  name: gland dispenser
+  description: Stores replacement organs for the specimens.
+  components:
+  - type: GuideHelp
+    guides:
+    - Abductors
+  - type: Sprite
+    noRot: true
+    sprite: _Shitmed/Structures/Machines/abductor_gland_dispenser.rsi
+    state: dispenser
+  - type: InteractionOutline
+  - type: UseDelay
+    delay: 2
+  - type: AbductorGlandDispenser
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 50
+        children:
+        - id: OrganAbductorGlandRegeneration
+        - id: OrganAbductorGlandEgg
+        - id: OrganAbductorGlandPressure
+        - id: OrganAbductorGlandStep
+        - id: OrganAbductorGlandWelder
+        - id: OrganAbductorGlandWhispers
+        - id: OrganAbductorGlandStealth
+        - id: OrganAbductorGlandNewFace
+        - id: OrganAbductorGlandMenagerie
+      - !type:GroupSelector
+        weight: 35
+        children:
+        - id: OrganAbductorGlandScram
+        - id: OrganAbductorGlandGravity
+        - id: OrganAbductorGlandFlash
+        - id: OrganAbductorGlandSmoke
+        - id: OrganAbductorGlandSleepgas
+        - id: OrganAbductorGlandArcs
+        - id: OrganAbductorGlandSwap
+      - !type:GroupSelector
+        weight: 15
+        children:
+        - id: OrganAbductorGlandEmp
+        - id: OrganAbductorGlandSlime
+        - id: OrganAbductorGlandSpiders
+
+- type: entity
+  parent: BaseLightning
+  id: LightningAbductorGland
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Lightning
+    canArc: false
+
+- type: entity
+  parent: MobSpiderSpace
+  id: MobAbductorSpiderling
+  name: spiderling
+  description: Small, twitchy and very much not supposed to be living inside anyone.
+  components:
+  - type: Sprite
+    scale: 0.6, 0.6
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      15: Dead
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMeatSpider
+      amount: 1
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 20
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 2
+        Poison: 1
+  - type: SolutionManager
+    solutions:
+    - SolutionVenomAbductorSpiderling
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 0.5
+  - type: PointLight
+    radius: 0.8
+    energy: 1
+    color: "#4faffb"
+
+- type: entity
+  parent: [ SolutionWeapon, SolutionTiny ]
+  id: SolutionVenomAbductorSpiderling
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Toxin
+        Quantity: 3
+
+- type: entity
+  parent: Cablecuffs
+  id: AbductorCuffs
+  name: alien restraints
+  description: Thin bands of alien material. They come apart once removed.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Handcuff
+    breakoutTime: 30
+    color: "#ff0099"
+    used: true # TryAddNewCuffs tego nie ustawia, a bez tego Uncuff nie zdejmie kajdanek
+    brokenPrototype: EffectSparks
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ff0099"
+      right:
+      - state: inhand-right
+        color: "#ff0099"
+  - type: Sprite
+    color: "#ff0099"

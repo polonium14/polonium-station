@@ -98,7 +98,7 @@ public abstract partial class SharedStealthSystem : EntitySystem
 
     private void OnStealthGetState(EntityUid uid, StealthComponent component, ref ComponentGetState args)
     {
-        args.State = new StealthComponentState(component.LastVisibility, component.LastUpdated, component.Enabled, component.ShimmerFrequency);
+        args.State = new StealthComponentState(component.LastVisibility, component.LastUpdated, component.Enabled, component.ShimmerFrequency, component.MinVisibility); // Polonium
     }
 
     private void OnStealthHandleState(EntityUid uid, StealthComponent component, ref ComponentHandleState args)
@@ -110,6 +110,7 @@ public abstract partial class SharedStealthSystem : EntitySystem
         component.LastVisibility = cast.Visibility;
         component.LastUpdated = cast.LastUpdated;
         component.ShimmerFrequency = cast.ShimmerFrequency;
+        component.MinVisibility = cast.MinVisibility; // Polonium
     }
 
     private void OnMove(EntityUid uid, StealthOnMoveComponent component, ref MoveEvent args)

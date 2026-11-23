@@ -81,10 +81,11 @@ public sealed partial class StealthComponent : Component
 }
 
 [Serializable, NetSerializable]
-public sealed class StealthComponentState(float stealthLevel, TimeSpan? lastUpdated, bool enabled, float shimmerFrequency) : ComponentState
+public sealed class StealthComponentState(float stealthLevel, TimeSpan? lastUpdated, bool enabled, float shimmerFrequency, float minVisibility) : ComponentState // Polonium: minVisibility
 {
     public readonly float Visibility = stealthLevel;
     public readonly TimeSpan? LastUpdated = lastUpdated;
     public readonly bool Enabled = enabled;
     public readonly float ShimmerFrequency = shimmerFrequency;
+    public readonly float MinVisibility = minVisibility; // Polonium: a floor set on a component added at runtime has to reach the client
 }
