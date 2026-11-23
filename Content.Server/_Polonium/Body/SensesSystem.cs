@@ -125,11 +125,14 @@ public sealed partial class SensesSystem : EntitySystem
         {
             lobotomized |= HasComp<LobotomizedComponent>(uid);
             var organCategory = CompOrNull<OrganComponent>(uid)?.Category;
-            if (organCategory != category && organCategory != Brain || !TryComp<OrganIntegrityComponent>(uid, out var integrity))
+            if (organCategory != category && organCategory != Brain || HasComp<DeadOrganComponent>(uid))
                 continue;
 
+            // An organ without integrity cannot wear down (some species have none), so it works in full.
             // In floats: FixedPoint2 division keeps two decimals and would round a sliver of integrity to nothing.
-            var fraction = integrity.OrganIntegrity.Float() / integrity.IntegrityCap.Float();
+            var fraction = TryComp<OrganIntegrityComponent>(uid, out var integrity)
+                ? integrity.OrganIntegrity.Float() / integrity.IntegrityCap.Float()
+                : 1f;
             if (organCategory == Brain)
                 brain = fraction;
             else

@@ -8,6 +8,7 @@ using Content.Shared.Body;
 using Content.Shared.Chat;
 using Content.Shared.Eye.Blinding.Components;
 using NUnit.Framework;
+using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
 
 namespace Content.IntegrationTests.Tests._Polonium.Body;
@@ -46,6 +47,55 @@ public sealed class SensesTest : GameTest
         var heard = new ListenerHearsMessageEvent(channel, distance, message, $"Someone says, \"{message}\"");
         SEntMan.EventBus.RaiseLocalEvent(listener, ref heard);
         return heard;
+    }
+
+    [Test]
+    public async Task OrgansWithoutIntegrityAreNotImpaired()
+    {
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+
+        // Gray organs carry no OrganIntegrity, so the body does not expect them and nothing can wear them down.
+        await Server.WaitPost(() => body = SEntMan.SpawnAtPosition("MobGray", map.GridCoords));
+        await Pair.RunTicksSync(3);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.That(SEntMan.System<SensesSystem>().GetEfficiency(body, "Ears"), Is.Null);
+                Assert.That(SEntMan.HasComponent<HearingLossComponent>(body), Is.False);
+                Assert.That(SEntMan.GetComponent<BlindableComponent>(body).MinDamage, Is.Zero);
+            });
+        });
+    }
+
+    [TestCase("MobHuman", "OrganGrayEars")]
+    [TestCase("MobGray", "OrganHumanEars")]
+    public async Task TransplantAcrossSpeciesHears(string species, string ears)
+    {
+        var map = await Pair.CreateTestMap();
+        var body = EntityUid.Invalid;
+
+        await Server.WaitAssertion(() =>
+        {
+            body = SEntMan.SpawnAtPosition(species, map.GridCoords);
+            var organs = SEntMan.GetComponent<BodyComponent>(body).Organs!;
+            var containers = SEntMan.System<SharedContainerSystem>();
+            Assert.That(containers.Remove(Organ(body, "Ears"), organs));
+            Assert.That(containers.Insert(SEntMan.SpawnAtPosition(ears, map.GridCoords), organs));
+        });
+
+        await Pair.RunTicksSync(3);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.That(SEntMan.System<SensesSystem>().GetEfficiency(body, "Ears"), Is.Null.Or.EqualTo(1f));
+                Assert.That(SEntMan.HasComponent<HearingLossComponent>(body), Is.False);
+            });
+        });
     }
 
     [Test]
