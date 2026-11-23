@@ -3,19 +3,24 @@
   variants:
   - - abductor-curator-arrival-lone-1
     - abductor-curator-arrival-why
+    - abductor-curator-arrival-why-cont
     - abductor-curator-arrival-lone-2
+    - abductor-curator-arrival-lone-2-cont
     - abductor-curator-arrival-lone-3
     - abductor-curator-arrival-lone-4
     - abductor-curator-arrival-lone-5
+    - abductor-curator-arrival-lone-5-cont
 
 - type: abductorCuratorLine
   id: AbductorCuratorArrivalScientist
   variants:
   - - abductor-curator-arrival-scientist-1
     - abductor-curator-arrival-why
+    - abductor-curator-arrival-why-cont
     - abductor-curator-arrival-scientist-2
     - abductor-curator-arrival-scientist-3
     - abductor-curator-arrival-scientist-4
+    - abductor-curator-arrival-scientist-4-cont
     - abductor-curator-arrival-scientist-5
 
 - type: abductorCuratorLine
@@ -23,10 +28,13 @@
   variants:
   - - abductor-curator-arrival-agent-1
     - abductor-curator-arrival-why
+    - abductor-curator-arrival-why-cont
     - abductor-curator-arrival-agent-2
     - abductor-curator-arrival-agent-3
+    - abductor-curator-arrival-agent-3-cont
     - abductor-curator-arrival-agent-4
     - abductor-curator-arrival-agent-5
+    - abductor-curator-arrival-agent-5-cont
 
 - type: abductorCuratorLine
   id: AbductorCuratorFirstMark
@@ -44,6 +52,7 @@
   id: AbductorCuratorFirstExperiment
   variants:
   - - abductor-curator-first-experiment-1
+    - abductor-curator-first-experiment-1-cont
     - abductor-curator-first-experiment-2
     - abductor-curator-first-experiment-3
 
@@ -65,6 +74,7 @@
   id: AbductorCuratorDead
   variants:
   - - abductor-curator-dead-1
+    - abductor-curator-dead-1-cont
   - - abductor-curator-dead-2
 
 - type: abductorCuratorLine
@@ -240,4 +250,5 @@
   id: AbductorCuratorOrderMissed
   variants:
   - - abductor-curator-order-missed-1
+    - abductor-curator-order-missed-1-cont
   - - abductor-curator-order-missed-2
