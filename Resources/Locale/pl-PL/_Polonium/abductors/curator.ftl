@@ -1,27 +1,23 @@
 abductor-curator-title = KURATOR
 
 abductor-curator-arrival-why = Znajdujesz się w izolowanej kapsule badawczej.
-abductor-curator-arrival-why-cont = Zbieramy okazy dla statku-matki, a załoga stacji to w naszym rejestrze na razie puste rubryki.
+abductor-curator-arrival-why-cont = Zbieramy okazy dla statku-matki, w naszym rejestrze rubryki o załodze stacji są na razie puste.
 
 abductor-curator-arrival-lone-1 = Pobudka, Badaczu. Mówi Kurator Wydziału Sondowania. Powiem, po co tu jesteś.
-abductor-curator-arrival-lone-2 = Wypełnisz je okaz po okazie, w pojedynkę.
+abductor-curator-arrival-lone-2 = Musisz wypełnić je okaz po okazie, w pojedynkę.
 abductor-curator-arrival-lone-2-cont = Planowaliśmy dwuosobowy zespół, ale budżet zatwierdził tylko ciebie.
 abductor-curator-arrival-lone-3 = Każdy okaz trzeba porwać, wymienić mu serce na gruczoł, zbadać w komorze i odesłać na stację. W stanie żywym.
 abductor-curator-arrival-lone-4 = Zacznij od konsoli obserwacyjnej. Sieć kamer stacji pracuje dziś dla nas. Namierz samotny cel i zejdź na dół.
-abductor-curator-arrival-lone-5 = Na stacji przyda się pałka abduktora: ogłusza, usypia, skuwa i zakłada znacznik.
-abductor-curator-arrival-lone-5-cont = Tryb zmienisz, używając jej w dłoni.
 
 abductor-curator-arrival-scientist-1 = Naukowcu, tu Kurator Wydziału Sondowania. Powiem, po co tu jesteś.
-abductor-curator-arrival-scientist-2 = Wypełnisz je tym, co masz na stanie: kapsułą, stołem operacyjnym i Agentem, sztuk jeden. Wszystko podlega zwrotowi.
+abductor-curator-arrival-scientist-2 = Musisz wypełnić je tym, co masz na stanie: kapsułą, stołem operacyjnym i Agentem, sztuk jeden. Wszystko podlega zwrotowi.
 abductor-curator-arrival-scientist-3 = Agent obezwładnia cele na stacji. Ty wysyłasz go w teren z konsoli, ściągasz oznaczone okazy na telepad i operujesz.
 abductor-curator-arrival-scientist-4 = Operacja jest krótka: wyjąć serce, wstawić gruczoł, zamknąć ciało.
 abductor-curator-arrival-scientist-4-cont = Okaz ma ją przeżyć, komora analizuje tylko żywe egzemplarze.
 abductor-curator-arrival-scientist-5 = Zacznij od konsoli obserwacyjnej. Gdy Agent stanie na telepadzie, znajdź mu samotny cel i wyślij go na stację.
 
 abductor-curator-arrival-agent-1 = Agencie, tu Kurator Wydziału Sondowania. Powiem, po co tu jesteś.
-abductor-curator-arrival-agent-2 = Wypełnisz je razem z Naukowcem, który ma skalpel i zostaje w kapsule. Ty masz pałkę i schodzisz po okazy.
-abductor-curator-arrival-agent-3 = Pałka abduktora ma cztery tryby: ogłuszanie, usypianie, kajdanki i znacznik.
-abductor-curator-arrival-agent-3-cont = Tryb zmienisz, używając jej w dłoni.
+abductor-curator-arrival-agent-2 = Musisz wypełnić je razem z Naukowcem, który ma skalpel i zostaje w kapsule. Ty masz pałkę i schodzisz po okazy.
 abductor-curator-arrival-agent-4 = Najpierw ogłusz, potem uśpij i skuj. Na koniec załóż znacznik, wtedy Naukowiec ściągnie okaz do kapsuły.
 abductor-curator-arrival-agent-5 = Poprzedni Agent przysłał nam okaz w worku na zwłoki. Worków nie katalogujemy.
 abductor-curator-arrival-agent-5-cont = Stań na telepadzie, Naukowiec wyśle cię na stację.

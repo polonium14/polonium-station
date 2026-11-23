@@ -8,8 +8,6 @@
     - abductor-curator-arrival-lone-2-cont
     - abductor-curator-arrival-lone-3
     - abductor-curator-arrival-lone-4
-    - abductor-curator-arrival-lone-5
-    - abductor-curator-arrival-lone-5-cont
 
 - type: abductorCuratorLine
   id: AbductorCuratorArrivalScientist
@@ -30,8 +28,6 @@
     - abductor-curator-arrival-why
     - abductor-curator-arrival-why-cont
     - abductor-curator-arrival-agent-2
-    - abductor-curator-arrival-agent-3
-    - abductor-curator-arrival-agent-3-cont
     - abductor-curator-arrival-agent-4
     - abductor-curator-arrival-agent-5
     - abductor-curator-arrival-agent-5-cont
