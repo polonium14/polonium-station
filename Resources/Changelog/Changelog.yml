@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: AffleWaffle
-  changes:
-  - message: Intercom Assembly is now breakable.
-    type: Fix
-  id: 9653
-  time: '2026-04-20T02:39:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43647
 - author: B_Kirill
   changes:
   - message: NPCs can now wield and activate melee weapons.
@@ -5226,3 +5219,11 @@
   id: 10147
   time: '2026-11-23T15:45:37.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1297
+- author: Nikita
+  changes:
+  - message: "Konsola skanera cia\u0142a i analizator zdrowia nie pokazuj\u0105 ju\u017C\
+      \ danych odci\u0119tej ko\u0144czyny ani ko\u0144czyny poprzedniego pacjenta."
+    type: Fix
+  id: 10148
+  time: '2026-11-23T18:32:08.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1304
