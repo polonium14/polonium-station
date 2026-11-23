@@ -4,6 +4,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared._Polonium.Weapons.Ranged.Components;
 using Content.Shared._Polonium.Weapons.Ranged.Events;
 using Content.Shared.Camera;
 using Content.Shared._RMC14.CCVar;
@@ -398,6 +399,7 @@ public abstract partial class SharedGunSystem
             switch (shootable)
             {
                 case CartridgeAmmoComponent cartridge:
+                    var caseless = cartridge.DeleteOnSpawn || HasComp<TracelessGunComponent>(gun); // Polonium: guns that burn up the casings of ordinary cartridges
                     if (!cartridge.Spent)
                     {
                         if (_netManager.IsServer || ClientSideGunPrediction)
@@ -418,7 +420,7 @@ public abstract partial class SharedGunSystem
 
                             SetCartridgeSpent(ent.Value, cartridge, true);
 
-                            if (cartridge.DeleteOnSpawn &&
+                            if (caseless && // Polonium: caseless
                                 (_netManager.IsServer || IsClientSide(ent.Value)))
                             {
                                 Del(ent.Value);
@@ -438,7 +440,7 @@ public abstract partial class SharedGunSystem
 
                     Recoil(user, mapDirection, gun.Comp.CameraRecoilScalarModified);
 
-                    if (!cartridge.DeleteOnSpawn && !Containers.IsEntityInContainer(ent!.Value))
+                    if (!caseless && !Containers.IsEntityInContainer(ent!.Value)) // Polonium: caseless
                         EjectCartridge(ent.Value, angle);
 
                     if (IsClientSide(ent!.Value))

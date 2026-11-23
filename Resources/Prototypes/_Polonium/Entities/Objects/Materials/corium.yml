@@ -1,0 +1,37 @@
+- type: stack
+  parent: BaseMediumStack
+  id: CoriumChunk
+  name: stack-corium-chunk
+  icon: { sprite: /Textures/_Polonium/Objects/Materials/corium_chunk.rsi, state: corium }
+  spawn: CoriumChunk
+
+# Rdzeń reaktora to paliwo uranowe i grafitowy moderator, więc przetwórnia rudy odzyskuje z korium uran i węgiel.
+- type: entity
+  parent: OreBase
+  id: CoriumChunk
+  name: corium chunk
+  description: A chunk of solidified corium broken out of a melted reactor. An ore processor can recover uranium and coal from it.
+  components:
+  - type: Stack
+    stackType: CoriumChunk
+    count: 1
+  - type: Sprite
+    sprite: _Polonium/Objects/Materials/corium_chunk.rsi
+    layers:
+    - state: corium
+    - state: corium_glow
+      shader: unshaded
+  - type: Item
+    sprite: _Polonium/Objects/Materials/corium_chunk.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      RawUranium: 100
+      Coal: 100
+  - type: PointLight
+    radius: 1.2
+    energy: 0.5
+    castShadows: false
+    color: "#ff7a2e"
+  - type: GuideHelp
+    guides:
+    - NuclearReactor

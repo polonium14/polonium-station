@@ -1,0 +1,205 @@
+- type: listing
+  id: UplinkSmgMalandro
+  productEntity: WeaponSubMachineGunMalandro
+  cost:
+    Telecrystal: 7
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 5
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkRifleWhisper
+  productEntity: WeaponRifleWSPR
+  cost:
+    Telecrystal: 14
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 10
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkRifleWhisperMagazine
+  productEntity: MagazineLightRifle
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: ErtCallUplinkWeaponRifleFalcon
+  productEntity: WeaponRifleXlr556
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkCombat
+    blacklist:
+      tags:
+      - ErtUplinkCBURN
+      - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponRifleHawk
+  productEntity: WeaponRifleMR8C
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkCombat
+    blacklist:
+      tags:
+      - ErtUplinkCBURN
+      - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponRifleWhisper
+  productEntity: WeaponRifleWSPR
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkCombat
+    blacklist:
+      tags:
+      - ErtUplinkCBURN
+      - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponLMGGrizzly
+  productEntity: WeaponLMGGrizzly
+  cost:
+    BlueSpaceCube: 16
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkCombat
+    blacklist:
+      tags:
+      - ErtUplinkCBURN
+      - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazineLightRifleBoxGrizzly
+  productEntity: MagazineLightRifleBox
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkCombat
+    blacklist:
+      tags:
+      - ErtUplinkCBURN
+      - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponShotgunFlagbearer
+  productEntity: WeaponShotgunFlagbearer
+  cost:
+    BlueSpaceCube: 12
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkCBURN
+
+- type: listing
+  id: ErtCallUplinkBoxLethalshotFlagbearer
+  productEntity: BoxLethalshot
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkCBURN
+
+- type: listing
+  id: ErtCallUplinkWeaponDEWBasilisk
+  productEntity: WeaponDEWBasilisk
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkCBURN
+
+- type: listing
+  id: ErtCallUplinkWeaponRifleSpecter
+  productEntity: WeaponRifleNtsfLtr
+  cost:
+    BlueSpaceCube: 22
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponHeavyPulseCannon
+  productEntity: WeaponHeavyPulseCannon
+  cost:
+    BlueSpaceCube: 45
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponLauncherMk348Incendiary
+  productEntity: WeaponLauncherMk348Incendiary
+  cost:
+    BlueSpaceCube: 30
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazineBoxPistolIncendiaryMk348
+  productEntity: MagazineBoxPistolIncendiary
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - ErtUplinkDeadSquad

@@ -81,13 +81,13 @@ public sealed partial class FaxMachineComponent : Component
     /// Sound to play when fax printing new message
     /// </summary>
     [DataField]
-    public SoundSpecifier PrintSound = new SoundPathSpecifier("/Audio/Machines/printer.ogg");
+    public SoundSpecifier? PrintSound = new SoundPathSpecifier("/Audio/Machines/printer.ogg"); // Polonium: the AI fax prints silently
 
     /// <summary>
     /// Sound to play when fax successfully send message
     /// </summary>
     [DataField]
-    public SoundSpecifier SendSound = new SoundPathSpecifier("/Audio/Machines/high_tech_confirm.ogg");
+    public SoundSpecifier? SendSound = new SoundPathSpecifier("/Audio/Machines/high_tech_confirm.ogg"); // Polonium: the AI fax sends silently
 
     /// <summary>
     /// Known faxes in network by address with fax names
@@ -206,6 +206,12 @@ public sealed partial class FaxPrintout
 
     [DataField]
     public string? SenderFaxName { get; private set; } = default!;
+
+    /// <summary>
+    ///     Polonium: the picture of a faxed photograph. Kept in memory only, like the photo store.
+    /// </summary>
+    [NonSerialized]
+    public Content.Shared._Polonium.Photography.FaxedPhoto? Photo;
 
     private FaxPrintout()
     {

@@ -1,0 +1,14 @@
+- type: soundCollection
+  id: LatheConsoleStop
+  files:
+    - /Audio/_Polonium/Machines/Lathe/console_stop.ogg
+
+- type: soundCollection
+  id: LatheConsoleStopAll
+  files:
+    - /Audio/_Polonium/Machines/Lathe/console_stop_all.ogg
+
+- type: soundCollection
+  id: LatheConsoleDeny
+  files:
+    - /Audio/_Polonium/Machines/Lathe/console_deny.ogg

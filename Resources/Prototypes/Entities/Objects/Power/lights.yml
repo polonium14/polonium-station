@@ -102,9 +102,10 @@
   - type: LightBulb
     bulb: Bulb
     color: "#FFD1A3" # 4000K color temp
-    lightEnergy: 1.0
+    # Polonium: przygaszone pod miękkie światło i poświatę, o połowę słabiej niż na Starlight
+    lightEnergy: 0.8
     lightRadius: 6
-    lightSoftness: 1.1
+    lightSoftness: 1.25
     shortName: comp-light-bulb-incandescent
   - type: Tag
     tags:
@@ -120,9 +121,10 @@
   - type: LightBulb
     bulb: Bulb
     color: "#EEEEFF"
-    lightEnergy: 1
-    lightRadius: 8
-    lightSoftness: 1
+    # Polonium: przygaszone pod miękkie światło i poświatę, o połowę słabiej niż na Starlight
+    lightEnergy: 0.8
+    lightRadius: 7
+    lightSoftness: 1.15
     BurningTemperature: 350 #LEDs are colder than incandescent bulbs
     PowerUse: 6 #LEDs are more power efficient than incandescent bulbs
     shortName: comp-light-bulb-led
@@ -221,9 +223,10 @@
   components:
   - type: LightBulb
     color: "#FFE4CE" # 5000K color temp
-    lightEnergy: 0.8
-    lightRadius: 10
-    lightSoftness: 1
+    # Polonium: przygaszone pod miękkie światło i poświatę, o połowę słabiej niż na Starlight
+    lightEnergy: 0.7
+    lightRadius: 8.5
+    lightSoftness: 1.25
     PowerUse: 25
     shortName: comp-light-bulb-fluorescent
 
@@ -259,9 +262,10 @@
   components:
   - type: LightBulb
     color: "#EEEEFF"
-    lightEnergy: 1
-    lightRadius: 15
-    lightSoftness: 0.9
+    # Polonium: przygaszone pod miękkie światło i poświatę, o połowę słabiej niż na Starlight
+    lightEnergy: 0.8
+    lightRadius: 12
+    lightSoftness: 1.1
     BurningTemperature: 350
     PowerUse: 12
     shortName: comp-light-bulb-led

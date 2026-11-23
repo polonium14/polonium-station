@@ -62,7 +62,7 @@
     eyes: ClothingEyesGlassesSecurity
     id: DetectivePDA
     ears: ClothingHeadsetSecurity
-    belt: ClothingBeltHolsterFilled
+#   belt: ClothingBeltHolsterFilled # Polonium: kabura z bronią przychodzi z loadoutu DetectiveServiceWeapon
   storage:
     back:
     - Flash

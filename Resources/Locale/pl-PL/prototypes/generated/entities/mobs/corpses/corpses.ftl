@@ -1,28 +1,151 @@
-ent-MobRandomServiceCorpse = { ent-SalvageHumanCorpse }
-    .suffix = Martwy, Serwis
+ent-MobCorpseAtmosphericTechnician = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Technik Atmosferyki
     .desc = { ent-SalvageHumanCorpse.desc }
-    .gender = male
-ent-MobRandomEngineerCorpse = { ent-SalvageHumanCorpse }
-    .suffix = Martwy, Inżynier
+
+ent-MobCorpseBartender = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Barman
     .desc = { ent-SalvageHumanCorpse.desc }
-    .gender = male
-ent-MobRandomCargoCorpse = { ent-SalvageHumanCorpse }
+
+ent-MobCorpseBotanist = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Botanik
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseCaptain = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Kapitan
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseCargoTechnician = { ent-SalvageHumanCorpse }
     .suffix = Martwy, Logistyk
     .desc = { ent-SalvageHumanCorpse.desc }
-    .gender = male
-ent-MobRandomMedicCorpse = { ent-SalvageHumanCorpse }
-    .suffix = Martwy, Medyk
+
+ent-MobCorpseCentcommOfficial = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Urzędnik CD
     .desc = { ent-SalvageHumanCorpse.desc }
-    .gender = male
-ent-MobRandomScienceCorpse = { ent-SalvageHumanCorpse }
+
+ent-MobCorpseChaplain = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Kapłan
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseChef = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Kucharz
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseChemist = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Chemik
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseChiefEngineer = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Główny Inżynier
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseChiefMedicalOfficer = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Ordynator
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseClown = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Klaun
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseDetective = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Detektyw
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseHeadOfPersonnel = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Kierownik Personelu
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseHeadOfSecurity = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Komendant
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseJanitor = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Woźny
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseLawyer = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Prawnik
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseLibrarian = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Bibliotekarz
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseMedicalDoctor = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Doktor Medyczny
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseMedicalIntern = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Stażysta Medyczny
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseMime = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Mim
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseMusician = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Muzyk
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseParamedic = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Ratownik
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpsePassenger = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Pasażer
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpsePsychologist = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Psycholog
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseQuartermaster = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Kwatermistrz
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseReporter = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Dziennikarz
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseResearchAssistant = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Asystent Naukowy
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseResearchDirector = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Kierownik Badań
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseRoboticist = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Robotyk
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseSalvageSpecialist = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Specjalista ds. Odzysku
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseScientist = { ent-SalvageHumanCorpse }
     .suffix = Martwy, Naukowiec
     .desc = { ent-SalvageHumanCorpse.desc }
-    .gender = male
-ent-MobRandomSecurityCorpse = { ent-SalvageHumanCorpse }
-    .suffix = Martwy, Ochrona
+
+ent-MobCorpseSecurityCadet = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Kadet Ochrony
     .desc = { ent-SalvageHumanCorpse.desc }
-    .gender = male
-ent-MobRandomCommandCorpse = { ent-SalvageHumanCorpse }
-    .suffix = Martwy, Dowództwo
+
+ent-MobCorpseSecurityOfficer = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Oficer Ochrony
     .desc = { ent-SalvageHumanCorpse.desc }
-    .gender = male
+
+ent-MobCorpseServiceWorker = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Pracownik Serwisu
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseStationEngineer = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Inżynier Stacji
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseTechnicalAssistant = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Pomocnik Techniczny
+    .desc = { ent-SalvageHumanCorpse.desc }
+
+ent-MobCorpseWarden = { ent-SalvageHumanCorpse }
+    .suffix = Martwy, Nadzorca Ochrony
+    .desc = { ent-SalvageHumanCorpse.desc }

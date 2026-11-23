@@ -60,7 +60,13 @@ public sealed partial class KudzuSystem : EntitySystem
         }
 
         if (!_robustRandom.Prob(component.SpreadChance))
+        {
+            // Polonium: otherwise the next vine rerolls and a large patch gains a tile every second at any chance
+            if (component.FailedSpreadUsesUpdate)
+                args.Updates--;
+
             return;
+        }
 
         var prototype = MetaData(uid).EntityPrototype?.ID;
 

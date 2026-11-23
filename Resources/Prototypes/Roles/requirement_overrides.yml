@@ -4,38 +4,13 @@
     Captain:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 0.5h
+      time: 1h
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 0.5h
+      time: 1h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 0.5h
+      time: 2h
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 0.5h
-
-- type: jobRequirementOverride
-  id: Zeroed
-  jobs:
-    InternalAffairsAgent:
-    - !type:OverallPlaytimeRequirement
-      time: 5h # 5 hours
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 1.5h # 1.5 hours
-    Magistrate:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 10h # 10 hours
-    - !type:DepartmentTimeRequirement
-      department: CentralCommand
-      time: 2.5h # 2.5 hours
-    NanotrasenRepresentative:
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 10h # 10 hours
-    - !type:DepartmentTimeRequirement
-      department: CentralCommand
-      time: 2.5h # 2.5 hours
-
+      time: 2h

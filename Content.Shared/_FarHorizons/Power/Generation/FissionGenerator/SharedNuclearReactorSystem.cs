@@ -78,6 +78,9 @@ public abstract partial class SharedNuclearReactorSystem : EntitySystem
         var comp = ent.Comp;
         var uid = ent.Owner;
 
+        if (comp.Melted) // Polonium
+            return;
+
         if (comp.Temperature >= comp.ReactorOverheatTemp)
         {
             if(!comp.IsSmoking)

@@ -8,6 +8,7 @@
 - type: entity
   parent: IDCardStandard
   id: TraineeIDCard
+  categories: [ HideSpawnMenu ]
   name: trainee ID card
   description: A bright orange card for someone who's still learning.
   components:
@@ -25,6 +26,7 @@
 - type: entity
   parent: BasePDA
   id: TraineePDA
+  categories: [ HideSpawnMenu ]
   name: trainee PDA
   description: Standard-issue for new recruits. Smells like fresh plastic.
   components:

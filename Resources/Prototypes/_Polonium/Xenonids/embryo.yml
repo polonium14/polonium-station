@@ -31,6 +31,7 @@
 - type: entity
   parent: BaseSurgeryRemoveOrgan
   id: SurgeryRemoveXenoEmbryo
+  categories: [ HideSpawnMenu ]
   name: Remove Alien Embryo
   components:
   - type: Surgery

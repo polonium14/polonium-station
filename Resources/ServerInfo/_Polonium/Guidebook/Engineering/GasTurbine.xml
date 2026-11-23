@@ -1,0 +1,91 @@
+<Document>
+	# Turbina gazowa
+	<Box>
+		<GuideEntityEmbed Entity="Turbine" Scale="1.5"/>
+	</Box>
+
+	To w turbinie naprawdę powstaje prąd.
+
+	Bierze gorący gaz z reaktora, oddaje elektryczność i odsyła chłodniejszy gaz z powrotem do reaktora.
+
+	Ile energii zrobi turbina, zależy od ustawionego Natężenia przepływu, obciążenia statora i od obrotów.
+
+	### Przepływ
+	Przepływ (w interfejsie [bold]Natężenie przepływu[/bold]) mówi, ile litrów gazu przechodzi przez turbinę w ciągu sekundy.
+
+	Im wyższy przepływ, tym wyższe obroty turbiny.
+
+	Zwykle ustawia się go tak, żeby przez rdzeń reaktora szło maksimum. Liczysz to tak: 100 razy liczba prętów kanału gazowego, plus 200.
+
+	### Obciążenie statora
+	Obciążenie statora (w interfejsie [bold]Obciążenie statora[/bold]) mówi, ile mocy przypada na jeden obrót turbiny.
+
+	Im wyższe obciążenie, tym niższe obroty.
+
+	Zwykle dobiera się je tak, żeby turbina trzymała optymalne obroty.
+	
+	Przyjmuje sygnały więc można to na przykład zautomatyzować bramką logiczną
+
+	### Obroty
+	Obroty, w interfejsie [bold]Obr./min[/bold], mówią, jak szybko kręci się turbina.
+
+	Turbina ma optymalne obroty, przy których daje najwięcej mocy.
+
+	Szybciej albo wolniej niż optimum działa słabo.
+	
+	Turbina wysyła sygnał o tym czy prędkość jest niska lub za wysoka, pozwala to na przykład zautomatyzować obciążenie statora bramką logiczną.
+
+	## Wskaźniki turbiny
+	Turbina ma wskaźniki, które ostrzegają przed groźnym stanem albo usterką.
+
+	### Przekroczenie obrotów
+	W interfejsie [bold]NADMIERNE OBROTY[/bold]. Obroty są za wysokie.
+
+	Kiedy obroty za bardzo rosną, turbina zaczyna odnosić uszkodzenia.
+
+	Długie albo mocne przekroczenie sprawi, że turbina [color=#ff8a8a]rozerwie się na kawałki[/color].
+
+	Uszkodzenia naprawisz [color=#ffe566]spawarką[/color], choć pełna naprawa zwykle wymaga kilku podejść.
+
+	### Przegrzanie
+	W interfejsie [bold]PRZEGRZANIE[/bold]. Gaz wchodzący do turbiny jest za gorący.
+
+	Jeśli gaz ma więcej niż 3000 kelwinów, turbina otworzy awaryjny zawór upustowy i zrzuci gaz do pomieszczenia.
+
+	Taki gaz poważnie parzy, a jeśli jest palny, może też wywołać pożar.
+
+	### Utknięcie
+	W interfejsie [bold]ZAHAMOWANIE[/bold]. Obciążenie statora jest za wysokie albo gaz nie jest dość gorący.
+
+	Utknięcie znaczy, że gaz wchodzący do turbiny nie „pcha” dość mocno, żeby pokonać opór statora.
+
+	### Za niska temperatura
+	W interfejsie [bold]NIEDOGRZANIE[/bold]. Gaz wchodzący do turbiny jest za zimny.
+
+	Jeśli gaz ma temperaturę pokojową albo niższą (20°C), turbina nie ma z niego czego wyciągnąć.
+
+	## Części Turbiny
+	<Box>
+		<GuideEntityEmbed Entity="NuclearFabricator"/>
+	</Box>
+	<Box>
+		<GuideEntityEmbed Entity="SteelGasTurbineBlade" Caption="łopatka turbiny" />
+		<GuideEntityEmbed Entity="SteelGasTurbineStator" Caption="stator turbiny" />
+	</Box>
+
+	Części turbiny definiują jak dobrze funkcjonuje turbina gazowa.
+	
+	Części turbiny są wytwarzanie w fabrykatorze jądrowym z różnych [textlink="materiałów" link="NuclearMaterials"].
+	
+	Turbina przyjmuje dwa różne rodzaje części: Łopatki oraz Statory
+
+	### Łopatki Turbiny
+	Łopatki Turbiny decydują o jej intergralności oraz bezwładnośći.
+
+	Wyższa integralność oznacza że Łopatka może przyjąć większe uszkodzenia zanim ulegnie awarii, czyniąc ją zasadniczo bezpieczniejszą.
+
+	Wyższa bezwładność oznacza że do zmiany prędkości obrotowej(Obr./min) potrzeba więcej energii, co przekłada się na stabilniejszą prace.
+	
+	### Statory Turbiny
+	Statory wpływają na efektywność mocy oraz moc wyjściową Turbiny.
+</Document>

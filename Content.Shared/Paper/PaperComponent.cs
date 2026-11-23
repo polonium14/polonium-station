@@ -53,7 +53,7 @@ public sealed partial class PaperComponent : Component
     /// Sound played after writing to the paper.
     /// </summary>
     [DataField("sound")]
-    public SoundSpecifier? Sound { get; private set; } = new SoundCollectionSpecifier("PaperScribbles", AudioParams.Default.WithVariation(0.1f));
+    public SoundSpecifier? Sound { get; set; } = new SoundCollectionSpecifier("PaperScribbles", AudioParams.Default.WithVariation(0.1f)); // Polonium: public set, papers in the AI fax archive are silent
 
     [Serializable, NetSerializable]
     public sealed class PaperBoundUserInterfaceState : BoundUserInterfaceState

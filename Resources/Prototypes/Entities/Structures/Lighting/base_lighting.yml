@@ -32,9 +32,10 @@
       shader: unshaded
   - type: PointLight
     color: "#FFE4CE" # 5000K color temp
-    energy: 0.8
-    radius: 10
-    softness: 1
+    # Polonium: jak świetlówka LightTube, przygaszone pod miękkie światło i poświatę
+    energy: 0.7
+    radius: 8.5
+    softness: 1.25
 #    offset: "0, 0.25"
   - type: RCDDeconstructable
     cost: 4

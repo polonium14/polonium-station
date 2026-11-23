@@ -8,6 +8,7 @@ using Content.Shared.DeviceLinking;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization;
 using System.Numerics;
+using Content.Shared.AlertLevel;
 
 namespace Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
 
@@ -138,13 +139,57 @@ public sealed partial class NuclearReactorComponent : Component
     /// Alert level to set after meltdown
     /// </summary>
     [DataField]
-    public string MeltdownAlertLevel = "yellow";
+    public ProtoId<AlertLevelPrototype> MeltdownAlertLevel = "Yellow"; // Polonium
 
     /// <summary>
     /// The minimum radiation from the melted reactor
     /// </summary>
     [DataField]
     public float MeltdownRadiation = 10;
+
+    // Polonium
+    /// <summary>
+    /// Smallest total intensity of the meltdown explosion.
+    /// </summary>
+    [DataField]
+    public float MeltdownExplosionMinIntensity = 100;
+
+    /// <summary>
+    /// Total intensity the meltdown explosion gains per point of meltdown badness.
+    /// </summary>
+    [DataField]
+    public float MeltdownExplosionIntensityPerBadness = 5;
+
+    /// <summary>
+    /// Highest intensity of the meltdown explosion on a single tile.
+    /// </summary>
+    [DataField]
+    public float MeltdownExplosionMaxTileIntensity = 5;
+
+    /// <summary>
+    /// Lower bound of the random debris chunk count thrown out by the meltdown.
+    /// </summary>
+    [DataField]
+    public int MeltdownMinDebris = 10;
+
+    /// <summary>
+    /// Upper bound of the random debris chunk count thrown out by the meltdown.
+    /// </summary>
+    [DataField]
+    public int MeltdownMaxDebris = 30;
+
+    /// <summary>
+    /// Moles of tritium the meltdown releases per point of meltdown badness.
+    /// </summary>
+    [DataField]
+    public float MeltdownTritiumPerBadness = 0.5f;
+
+    /// <summary>
+    /// Most tritium the meltdown releases, in moles, so its fire stays around the ruins.
+    /// </summary>
+    [DataField]
+    public float MeltdownMaxTritium = 200f;
+    // Polonium end
 
     /// <summary>
     /// How quickly radiation decreases

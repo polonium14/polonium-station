@@ -142,6 +142,8 @@ namespace Content.Server.Entry
         [Dependency] private ServerInfoManager _serverInfo = default!;
         [Dependency] private ServerUpdateManager _updateManager = default!;
         [Dependency] private ServerFeedbackManager _feedbackManager = null!;
+        [Dependency] private _Polonium.Contributors.ContributorManager _contributors = default!; // Polonium
+        [Dependency] private _Polonium.Supporters.SupporterManager _supporters = default!; // Polonium
 
         public override void PreInit()
         {
@@ -234,6 +236,8 @@ namespace Content.Server.Entry
             _multiServerKick.Initialize();
             _cvarCtrl.Initialize();
             _feedbackManager.Initialize();
+            _contributors.Initialize(); // Polonium
+            _supporters.Initialize(); // Polonium
         }
 
         public override void Update(ModUpdateLevel level, FrameEventArgs frameEventArgs)
@@ -254,6 +258,8 @@ namespace Content.Server.Entry
                     _playTimeTracking.Update();
                     _watchlistWebhookManager.Update();
                     _connection.Update();
+                    _contributors.Update(); // Polonium
+                    _supporters.Update(); // Polonium
                     break;
             }
         }

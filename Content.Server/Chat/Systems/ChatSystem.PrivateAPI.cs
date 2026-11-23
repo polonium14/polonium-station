@@ -251,10 +251,10 @@ public sealed partial class ChatSystem
             return;
 
         string wrappedMessage;
-        if (_supporters.TryGetNameColor(player.UserId, out var supporterColor))
+        if (_chatNameColor.TryGetNameColor(player, out var nameColor)) // Polonium: supporter and contributor name color
         {
             wrappedMessage = Loc.GetString("chat-manager-entity-looc-supporter-wrap-message",
-                ("color", supporterColor),
+                ("color", nameColor), // Polonium: supporter and contributor name color
                 ("entityName", name),
                 ("message", FormattedMessage.EscapeText(message)));
         }

@@ -48,3 +48,5 @@
       collection: MetalThud
   - type: AltFireMelee
     attackType: Light
+  - type: Item # Polonium: Fix sprite
+    heldPrefix: lethal

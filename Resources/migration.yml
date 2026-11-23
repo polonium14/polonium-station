@@ -1337,6 +1337,15 @@ BoxLightBulbColored: BoxLightbulbColorfulMixed
 BluespaceStrikeController: null
 BluespaceStrikeIncoming: null
 
+# Polonium: department corpses split into per-job corpses from https://github.com/space-wizards/space-station-14/pull/43534
+MobRandomServiceCorpse: RandomServiceCorpseSpawner
+MobRandomEngineerCorpse: RandomEngineerCorpseSpawner
+MobRandomCargoCorpse: RandomCargoCorpseSpawner
+MobRandomMedicCorpse: RandomMedicCorpseSpawner
+MobRandomScienceCorpse: RandomScienceCorpseSpawner
+MobRandomSecurityCorpse: RandomSecurityCorpseSpawner
+MobRandomCommandCorpse: RandomCommandCorpseSpawner
+
 # Polonium: paired lungs and kidneys, the old pair becomes the left organ
 OrganArachnidLungs: OrganArachnidLungLeft
 OrganHumanLungs: OrganHumanLungLeft

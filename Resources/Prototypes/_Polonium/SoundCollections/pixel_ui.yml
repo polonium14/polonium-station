@@ -1,0 +1,11 @@
+- type: soundCollection
+  id: PixelKeyDown
+  files:
+    - /Audio/_Polonium/Interface/PixelUi/key_down1.ogg
+    - /Audio/_Polonium/Interface/PixelUi/key_down2.ogg
+
+- type: soundCollection
+  id: PixelKeyUp
+  files:
+    - /Audio/_Polonium/Interface/PixelUi/key_up1.ogg
+    - /Audio/_Polonium/Interface/PixelUi/key_up2.ogg

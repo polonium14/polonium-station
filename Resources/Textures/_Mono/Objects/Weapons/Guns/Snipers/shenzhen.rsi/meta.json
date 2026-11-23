@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Made by kasature90 (github)/_starch_ (discord), reworked with glowing layers for Polonium Station by nikitosych",
+    "size": {
+        "x": 64,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "base"
+        },
+        {
+            "name": "base-unshaded"
+        }
+    ]
+}

@@ -43,6 +43,7 @@
 - type: entity
   parent: VendingMachineChefvend
   id: VendingMachineChefvendTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: VendingMachine
@@ -54,6 +55,7 @@
 - type: entity
   parent: VendingMachineDinnerware
   id: VendingMachineDinnerwareTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: VendingMachine
@@ -65,6 +67,7 @@
 - type: entity
   parent: VendingMachineNutri
   id: VendingMachineNutriTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: VendingMachine
@@ -76,6 +79,7 @@
 - type: entity
   parent: VendingMachineEngivend
   id: VendingMachineEngivendTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: VendingMachine
@@ -87,6 +91,7 @@
 - type: entity
   parent: VendingMachineEngiDrobe
   id: VendingMachineEngiDrobeTutorial
+  categories: [ HideSpawnMenu ]
   suffix: Tutorial
   components:
   - type: VendingMachine

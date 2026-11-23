@@ -1,0 +1,39 @@
+- files: ["work_start.ogg", "work_stop.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "elevator_motor.wav by pempi on Freesound, cut and modified by nikitosych (github)"
+  source: "https://freesound.org/people/pempi/sounds/33873/"
+
+- files: ["work_metal.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "elevator_motor.wav by pempi (CC-BY-4.0, https://freesound.org/people/pempi/sounds/33873/) mixed with CNC Stepper Motors.wav by squashy555 (CC0-1.0, https://freesound.org/people/squashy555/sounds/614362/), both from Freesound, cut, looped and modified by nikitosych (github)"
+  source: "https://freesound.org/people/pempi/sounds/33873/"
+
+- files: ["work_ore.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Quarry.wav (https://freesound.org/people/juskiddink/sounds/66932/) and COFFEE grind.wav (https://freesound.org/people/juskiddink/sounds/67429/) by juskiddink mixed with elevator_motor.wav by pempi (https://freesound.org/people/pempi/sounds/33873/), all CC-BY-4.0 from Freesound, cut, slowed down, looped and modified by nikitosych (github)"
+  source: "https://freesound.org/people/juskiddink/sounds/66932/"
+
+- files: ["work_ore_instant.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Quarry.wav (https://freesound.org/people/juskiddink/sounds/66932/) and COFFEE grind.wav (https://freesound.org/people/juskiddink/sounds/67429/) by juskiddink on Freesound, cut, slowed down and modified by nikitosych (github)"
+  source: "https://freesound.org/people/juskiddink/sounds/66932/"
+
+- files: ["work_bio.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Motor and bubbles in a petting tank at an aquarium by RavenWolfProds (CC0-1.0, https://freesound.org/people/RavenWolfProds/sounds/503656/) and oxygen concentrator close prospect.flac by kb7clx (CC0-1.0, https://freesound.org/people/kb7clx/sounds/378147/) mixed with elevator_motor.wav by pempi (CC-BY-4.0, https://freesound.org/people/pempi/sounds/33873/), all from Freesound, cut, looped and modified by nikitosych (github)"
+  source: "https://freesound.org/people/RavenWolfProds/sounds/503656/"
+
+- files: ["console_stop.ogg"]
+  license: "CC0-1.0"
+  copyright: "Light - Heavy lights turned on by TILIADESIGN on Freesound, cut and modified by nikitosych (github)"
+  source: "https://freesound.org/people/TILIADESIGN/sounds/486536/"
+
+- files: ["console_stop_all.ogg"]
+  license: "CC0-1.0"
+  copyright: "Fuze Switch Flick by LordForklift on Freesound, cut and modified by nikitosych (github)"
+  source: "https://freesound.org/people/LordForklift/sounds/448394/"
+
+- files: ["console_deny.ogg"]
+  license: "CC0-1.0"
+  copyright: "acess denied buzz by Jacco18 on Freesound, slowed down and modified by nikitosych (github)"
+  source: "https://freesound.org/people/Jacco18/sounds/419023/"

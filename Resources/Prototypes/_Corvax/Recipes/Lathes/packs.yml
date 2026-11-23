@@ -24,6 +24,8 @@
   - PrintedDocumentAccessRevocationOrderRecipe
   - PrintedDocumentCommandDecreeRecipe
   - PrintedDocumentStationGoalProgressReportRecipe
+  - PrintedDocumentSafetyInspectionReportRecipe
+  - PrintedDocumentInspectorRequestRecipe
   - PrintedDocumentRestrictedEquipmentPermitRecipe
   - PrintedDocumentInterrogationProtocolRecipe
   - PrintedDocumentSearchWarrantRecipe

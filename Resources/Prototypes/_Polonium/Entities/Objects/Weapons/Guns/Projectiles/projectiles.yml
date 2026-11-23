@@ -28,6 +28,7 @@
 
 - type: entity
   id: BulletPlasmaCutterShuttle
+  categories: [ HideSpawnMenu ]
   parent: BulletPlasmaCutter
   components:
   - type: GatheringProjectile
@@ -47,7 +48,7 @@
 - type: entity
   id: BulletMineralVacuum
   parent: BaseBullet
-  #categories: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     visible: false

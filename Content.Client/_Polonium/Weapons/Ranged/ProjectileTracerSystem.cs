@@ -23,6 +23,7 @@ public sealed partial class ProjectileTracerSystem : EntitySystem
     private readonly Stack<TracerTrail> _pool = new();
     private readonly List<EntityUid> _lost = new();
     private EntityQuery<PhysicsComponent> _physicsQuery;
+    private EntityQuery<ProjectileTracerHiddenComponent> _hiddenQuery;
     private uint _frame;
     private int _seed;
 
@@ -38,6 +39,7 @@ public sealed partial class ProjectileTracerSystem : EntitySystem
         SubscribeLocalEvent<ProjectileTracerComponent, EntityTerminatingEvent>(OnTerminating);
 
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
+        _hiddenQuery = GetEntityQuery<ProjectileTracerHiddenComponent>();
         _overlay.AddOverlay(new ProjectileTracerOverlay(this));
     }
 
@@ -61,7 +63,7 @@ public sealed partial class ProjectileTracerSystem : EntitySystem
         while (query.MoveNext(out var uid, out var tracer, out var sprite, out var xform))
         {
             // the shooter's server copy stays hidden behind its predicted twin, which draws its own streak
-            if (!sprite.Visible || xform.MapID == MapId.Nullspace)
+            if (!sprite.Visible || xform.MapID == MapId.Nullspace || _hiddenQuery.HasComp(uid))
                 continue;
 
             // a projectile stuck in someone or picked up is no longer flying

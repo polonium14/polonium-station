@@ -39,6 +39,7 @@ using Content.Server.Radiation.Systems;
 using Content.Shared.Atmos.Components;
 using Content.Shared.AlertLevel;
 using Content.Shared.DeviceLinking.Payloads;
+using Content.Server._Polonium.Power.Generation.FissionGenerator;
 
 namespace Content.Server._FarHorizons.Power.Generation.FissionGenerator;
 
@@ -391,7 +392,12 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
 
         if (comp.Temperature > comp.ReactorMeltdownTemp) // Disabled the explode if over 1000 rads thing, hope the server survives
         {
-            CatastrophicOverload(ent);
+            // Polonium: the meltdown only starts at this temperature
+            var attempt = new ReactorMeltdownAttemptEvent();
+            RaiseLocalEvent(uid, ref attempt);
+            if (!attempt.Cancelled)
+                CatastrophicOverload(ent);
+            // Polonium end
         }
 
         UpdateVisuals(ent);
@@ -551,7 +557,7 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
             }
         }
         comp.RadiationLevel = Math.Clamp(comp.RadiationLevel + MeltdownBadness, 0, 200);
-        comp.AirContents.AdjustMoles(Gas.Tritium, MeltdownBadness * 15);
+        comp.AirContents.AdjustMoles(Gas.Tritium, Math.Min(MeltdownBadness * comp.MeltdownTritiumPerBadness, comp.MeltdownMaxTritium)); // Polonium: 15 mol per badness set whole departments on fire
         comp.AirContents.Temperature = Math.Max(comp.Temperature, comp.AirContents.Temperature);
 
         var T = _atmosphereSystem.GetTileMixture(ent.Owner, excite: true);
@@ -561,11 +567,11 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
         _adminLog.Add(LogType.Explosion, LogImpact.High, $"{ToPrettyString(ent):reactor} catastrophically overloads, meltdown badness: {MeltdownBadness}");
 
         // You did not see graphite on the roof. You're in shock. Report to medical.
-        for (var i = 0; i < _random.Next(10, 30); i++)
+        for (var i = 0; i < _random.Next(comp.MeltdownMinDebris, comp.MeltdownMaxDebris); i++) // Polonium: per-reactor debris
             _throwingSystem.TryThrow(Spawn("NuclearDebrisChunk", _transformSystem.GetMapCoordinates(uid)), _random.NextAngle().ToVec().Normalized(), _random.NextFloat(8, 16), uid);
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/metal_break5.ogg"), uid);
-        _explosionSystem.QueueExplosion(ent.Owner, "Radioactive", Math.Max(100, MeltdownBadness * 5), 1, 5, 0, canCreateVacuum: false);
+        _explosionSystem.QueueExplosion(ent.Owner, "Radioactive", Math.Max(comp.MeltdownExplosionMinIntensity, MeltdownBadness * comp.MeltdownExplosionIntensityPerBadness), 1, comp.MeltdownExplosionMaxTileIntensity, 0, canCreateVacuum: false); // Polonium: per-reactor explosion
 
         var lightcomp = _lightSystem.EnsureLight(uid);
         _lightSystem.SetEnergy(uid, 0.1f, lightcomp);
@@ -581,6 +587,10 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
 
         // This will Dirty() the reactor, so no need to declare it explicitly
         UpdateGridVisual(ent);
+
+        // Polonium
+        var ev = new ReactorMeltdownEvent();
+        RaiseLocalEvent(uid, ref ev);
     }
 
     private void UpdateVisuals(Entity<NuclearReactorComponent> ent)
@@ -594,6 +604,8 @@ public sealed partial class NuclearReactorSystem : SharedNuclearReactorSystem
             _appearance.SetData(uid, ReactorVisuals.Status, ReactorStatusLights.Off);
             _appearance.SetData(uid, ReactorVisuals.Input, false);
             _appearance.SetData(uid, ReactorVisuals.Output, false);
+            _appearance.SetData(uid, ReactorVisuals.Smoke, false); // Polonium
+            _appearance.SetData(uid, ReactorVisuals.Fire, false); // Polonium
             return;
         }
 

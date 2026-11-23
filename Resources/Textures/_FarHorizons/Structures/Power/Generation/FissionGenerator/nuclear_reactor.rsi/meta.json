@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-NC-SA-3.0",
-    "copyright": "taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/misc/nuclearreactor.dmi",
+    "copyright": "taken from goonstation https://github.com/goonstation/goonstation/blob/ff86b044/icons/misc/nuclearreactor.dmi, reactor_smoke and reactor_fire made for Polonium Station by nikitosych",
     "size": {
         "x": 160,
         "y": 160
@@ -126,10 +126,42 @@
             ]
         },
         {
-            "name": "reactor_smoke"
+            "name": "reactor_smoke",
+            "delays": [
+                [
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12,
+                    0.12
+                ]
+            ]
         },
         {
-            "name": "reactor_fire"
+            "name": "reactor_fire",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
         }
     ]
 }

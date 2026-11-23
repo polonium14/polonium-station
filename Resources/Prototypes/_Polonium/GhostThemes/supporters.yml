@@ -1,0 +1,72 @@
+- type: ghostTheme
+  id: Angel
+  name: ghost-theme-angel-name
+  description: ghost-theme-angel-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/angel.rsi
+    state: angel
+  category: Supporters
+
+- type: ghostTheme
+  id: ShadowDemon
+  name: ghost-theme-shadow-demon-name
+  description: ghost-theme-shadow-demon-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/shadow_demon.rsi
+    state: shadow_demon
+  category: Supporters
+
+- type: ghostTheme
+  id: Faithless
+  name: ghost-theme-faithless-name
+  description: ghost-theme-faithless-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/faithless.rsi
+    state: faithless
+  category: Supporters
+
+- type: ghostTheme
+  id: Mushroom
+  name: ghost-theme-mushroom-name
+  description: ghost-theme-mushroom-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/mushroom.rsi
+    state: mushroom
+  category: Supporters
+
+- type: ghostTheme
+  id: Walker
+  name: ghost-theme-walker-name
+  description: ghost-theme-walker-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/walker.rsi
+    state: walker
+  category: Supporters
+
+- type: ghostTheme
+  id: SpaceCarp
+  name: ghost-theme-space-carp-name
+  description: ghost-theme-space-carp-desc
+  sprite:
+    sprite: _Polonium/Mobs/Ghosts/GhostThemes/space_carp.rsi
+    state: space_carp
+  colorizable: true
+  category: Supporters
+
+- type: ghostTheme
+  id: PaiFox
+  name: ghost-theme-pai-fox-name
+  description: ghost-theme-pai-fox-desc
+  sprite:
+    sprite: _Starlight/Mobs/Customization/GhostThemes/pai_fox.rsi
+    state: pai_fox
+  category: Supporters
+
+- type: ghostTheme
+  id: Gilded
+  name: ghost-theme-gilded-name
+  description: ghost-theme-gilded-desc
+  sprite:
+    sprite: _Polonium/Mobs/Ghosts/GhostThemes/gilded.rsi
+    state: gilded
+  category: Supporters

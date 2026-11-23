@@ -18,7 +18,6 @@ hostname = "[PL]🪐 Polonium Station | Serwer Szkoleniowy"
 lobbyenabled = true
 lobbyduration = 2
 soft_max_players = 50
-role_timer_override = "Zeroed"
 server_full_reconnect_delay = 30
 defaultpreset = "Tutorial"
 disallowlatejoins = false

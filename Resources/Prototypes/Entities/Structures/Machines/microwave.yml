@@ -6,6 +6,23 @@
   components:
   - type: Microwave
     capacity: 10
+  - type: MicrowaveReactionVisuals # Polonium: contents that spark in the microwave window
+    sparking:
+      components:
+      - IdCard
+      - PAI
+      - NukeDisk
+  - type: MicrowaveSounds # Polonium: the door, sparks and burning that the microwave window shows
+    doorCloseSound:
+      path: /Audio/_Polonium/Machines/Microwave/door_close.ogg
+    doorOpenSound:
+      path: /Audio/_Polonium/Machines/Microwave/door_open.ogg
+    sparkSound:
+      collection: sparks
+    burnSound:
+      path: /Audio/Effects/sizzle.ogg
+    igniteSound:
+      path: /Audio/_Polonium/Machines/Microwave/ignite.ogg
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -45,7 +62,7 @@
   - type: UserInterface
     interfaces:
       enum.MicrowaveUiKey.Key:
-        type: MicrowaveBoundUserInterface
+        type: MicrowaveDeviceBoundUserInterface # Polonium: the microwave drawn as a device
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -164,6 +181,10 @@
     capacity: 10
     canMicrowaveIdsSafely: false
     explosionChance: 0.3
+  - type: MicrowaveDeviceSkin # Polonium: the red body, green light and brand of this microwave in its window
+    body: /Textures/_Polonium/Interface/Microwave/Donk/body.png
+    light: /Textures/_Polonium/Interface/Microwave/Donk/chamber_lit.png
+    plate: polonium-microwave-plate-donk
   - type: Sprite
     sprite: Structures/Machines/microwave_syndie.rsi
     drawdepth: SmallObjects

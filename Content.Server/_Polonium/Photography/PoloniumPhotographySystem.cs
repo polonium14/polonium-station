@@ -83,6 +83,8 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
         SubscribeLocalEvent<PoloniumPhotographComponent, PhotoSignQueryMessage>(OnPhotoSignQuery);
         SubscribeLocalEvent<PoloniumPhotographComponent, PhotoSignMessage>(OnPhotoSign);
         SubscribeLocalEvent<PoloniumPhotographComponent, BoundUIClosedEvent>(OnPhotoUiClosed);
+        SubscribeLocalEvent<PoloniumPhotographComponent, FaxScanPhotoEvent>(OnFaxScan);
+        SubscribeLocalEvent<PoloniumPhotographComponent, FaxPhotoPrintedEvent>(OnFaxPrinted);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnCleanup);
 
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
@@ -187,6 +189,47 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
         _photoShooters.Remove(ent.Comp.PhotoId);
     }
 
+    private void OnFaxScan(Entity<PoloniumPhotographComponent> ent, ref FaxScanPhotoEvent args)
+    {
+        var id = ent.Comp.PhotoId;
+        args.Photo = new FaxedPhoto(
+            _photos.GetValueOrDefault(id),
+            _photoNames.GetValueOrDefault(id),
+            _photoShooters.GetValueOrDefault(id),
+            ent.Comp.Caption,
+            ent.Comp.CaptionColor,
+            ent.Comp.CaptionFont);
+    }
+
+    /// <summary>
+    /// A copy gets its own id so it outlives the original, while every copy shares one array.
+    /// </summary>
+    private void OnFaxPrinted(Entity<PoloniumPhotographComponent> ent, ref FaxPhotoPrintedEvent args)
+    {
+        var photo = args.Photo;
+
+        ent.Comp.Caption = photo.Caption;
+        ent.Comp.CaptionColor = photo.CaptionColor;
+        ent.Comp.CaptionFont = photo.CaptionFont;
+
+        if (photo.Data is { } data)
+        {
+            var id = _nextPhotoId++;
+            ent.Comp.PhotoId = id;
+            _photos[id] = data;
+            if (photo.Subject is { } subject)
+                _photoNames[id] = subject;
+            if (photo.Shooter is { } shooter)
+                _photoShooters[id] = shooter;
+
+            _adminLog.Add(LogType.Action, LogImpact.Low,
+                $"{ToPrettyString(ent):entity} was printed by a fax as photo id {new LoggablePhotoId(id)}");
+        }
+
+        Dirty(ent);
+        UpdatePhotoUi(ent);
+    }
+
     /// <summary>Metadata for every photo stored this round, ordered by id.</summary>
     public List<(int Id, string Shooter, string? Subject)> GetStoredPhotos()
     {
@@ -206,26 +249,42 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
     public byte[]? GetStoredPhoto(int id) => _photos.GetValueOrDefault(id);
 
     /// <summary>
-    /// Admin removal of an abusive photo: deletes the photograph entity carrying this id
-    /// (its terminating handler frees the blob), and clears the store directly for the rare
-    /// case where the blob outlived its entity. False if nothing matched.
+    /// Admin removal of an abusive photo: deletes the photograph entities carrying this image,
+    /// faxed copies included (their terminating handler frees the blob), and clears the store
+    /// directly for the rare case where a blob outlived its entity. Copies still waiting in a
+    /// fax queue share the array, so wiping it makes them print blank. False if nothing matched.
     /// </summary>
     public bool DeleteStoredPhoto(int id)
     {
+        var ids = new HashSet<int> { id };
+        if (_photos.TryGetValue(id, out var data))
+        {
+            foreach (var (otherId, other) in _photos)
+            {
+                if (ReferenceEquals(other, data))
+                    ids.Add(otherId);
+            }
+
+            Array.Clear(data);
+        }
+
         var found = false;
         var query = EntityQueryEnumerator<PoloniumPhotographComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.PhotoId != id)
+            if (!ids.Contains(comp.PhotoId))
                 continue;
             QueueDel(uid);
             found = true;
         }
 
-        if (_photos.Remove(id))
+        foreach (var photoId in ids)
         {
-            _photoNames.Remove(id);
-            _photoShooters.Remove(id);
+            if (!_photos.Remove(photoId))
+                continue;
+
+            _photoNames.Remove(photoId);
+            _photoShooters.Remove(photoId);
             found = true;
         }
 

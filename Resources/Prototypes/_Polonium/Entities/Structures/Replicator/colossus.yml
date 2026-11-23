@@ -272,6 +272,7 @@
 - type: entity
   parent: EffectReplicatorColossusBase
   id: EffectReplicatorColossusShockwave
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Polonium/Effects/replicator_colossus_burst.rsi
@@ -317,6 +318,7 @@
 - type: entity
   parent: EffectReplicatorColossusBase
   id: EffectReplicatorColossusPulseCharge
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     offset: 0,1.8
@@ -333,6 +335,7 @@
 - type: entity
   parent: EffectReplicatorColossusBase
   id: EffectReplicatorColossusPulse
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Polonium/Effects/replicator_colossus_burst.rsi
@@ -345,6 +348,7 @@
 - type: entity
   parent: EffectReplicatorColossusBase
   id: EffectReplicatorColossusArrival
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
@@ -356,6 +360,7 @@
 - type: entity
   parent: EffectReplicatorColossusBase
   id: EffectReplicatorColossusSweep
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Polonium/Effects/replicator_colossus_sweep.rsi
@@ -374,6 +379,7 @@
 - type: entity
   parent: EffectReplicatorColossusBase
   id: EffectReplicatorColossusAssimilationCharge
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     offset: 0,1.8

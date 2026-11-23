@@ -1,11 +1,11 @@
 - type: entity
   id: NuclearFabricator
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseLatheWorkSoundsMetal ] # Polonium: sounds of a print run
   name: nuclear fabricator
   description: It makes nuclear parts.
   components:
   - type: Sprite
-    sprite: Structures/Machines/protolathe.rsi
+    sprite: _Polonium/Structures/Machines/protolathe.rsi # Polonium: redrawn to match the operator console
     snapCardinals: true
     layers:
     - state: icon
