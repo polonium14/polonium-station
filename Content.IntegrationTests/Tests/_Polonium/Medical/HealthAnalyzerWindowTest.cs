@@ -65,7 +65,7 @@ public sealed class HealthAnalyzerWindowTest : GameTest
 
         await Pair.RunTicksSync(5);
 
-        PatientScanWindow? window = null;
+        PatientScanWindow window = null;
         await Client.WaitPost(() =>
         {
             window = new PatientScanWindow();
@@ -76,7 +76,7 @@ public sealed class HealthAnalyzerWindowTest : GameTest
         {
             await Client.WaitPost(() =>
             {
-                window!.Populate(scan);
+                window.Populate(scan);
                 // The damage tooltip is built on hover; build it here too.
                 typeof(PatientScanWindow).GetMethod("DamageTooltip", BindingFlags.Instance | BindingFlags.NonPublic)!
                     .Invoke(window, null);
@@ -86,7 +86,7 @@ public sealed class HealthAnalyzerWindowTest : GameTest
 
         await Client.WaitPost(() =>
         {
-            window!.ReleaseDoll();
+            window.ReleaseDoll();
             window.Close();
         });
     }

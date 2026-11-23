@@ -38,6 +38,8 @@ public sealed class CprTest : GameTest
     // CVars are changed, so the pair is not reused.
     public override PoolSettings PoolSettings => new() { Dirty = true };
 
+    private static readonly ProtoId<DamageTypePrototype> Poison = "Poison";
+
     private CprSystem Cpr => SEntMan.System<CprSystem>();
     private BodyDebugSystem Debug => SEntMan.System<BodyDebugSystem>();
 
@@ -181,7 +183,7 @@ public sealed class CprTest : GameTest
             patient = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             var rescuer = SEntMan.SpawnAtPosition("MobHuman", map.GridCoords);
             // Poison leaves no wound to bleed from, so the patient stays in crit for the whole test.
-            var poison = Server.ResolveDependency<IPrototypeManager>().Index<DamageTypePrototype>("Poison");
+            var poison = Server.ResolveDependency<IPrototypeManager>().Index(Poison);
             SEntMan.System<DamageableSystem>().TryChangeDamage(patient, new DamageSpecifier(poison, FixedPoint2.New(120)), ignoreResistances: true);
             Assert.That(SEntMan.System<MobStateSystem>().IsCritical(patient), "Setup: 120 poison puts a human in crit.");
             if (compressions)

@@ -54,11 +54,6 @@ public sealed class UnfinishedSurgeryBleedingPenaltyTest : GameTest
     private const float OpenBleed = 2.5f;
     private const float ClampedBleed = 1.2f;
 
-    private async Task RunSeconds(float seconds)
-    {
-        await Pair.RunTicksSync((int) (seconds / SGameTiming.TickPeriod.TotalSeconds));
-    }
-
     [TestCase(false)]
     [TestCase(true)]
     public async Task OpenIncisionBleedsUntilClosed(bool rejuvenate)
