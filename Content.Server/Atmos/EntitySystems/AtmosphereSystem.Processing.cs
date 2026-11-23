@@ -410,6 +410,7 @@ namespace Content.Server.Atmos.EntitySystems
                 }
             }
 
+            _airFlowVisuals.EndCycle(ent); // Polonium: airflow visuals
             return true;
         }
 
