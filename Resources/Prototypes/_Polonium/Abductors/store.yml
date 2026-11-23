@@ -1,0 +1,179 @@
+- type: currency
+  id: AbductorCredit
+  displayName: store-currency-display-abductor-credit
+  canWithdraw: false
+
+- type: storeCategory
+  id: AbductorEquipment
+  name: store-category-abductor-equipment
+
+- type: listing
+  id: AbductorStoreBaton
+  productEntity: Wonderprod
+  cost:
+    AbductorCredit: 2
+  categories:
+  - AbductorEquipment
+
+- type: listing
+  id: AbductorStoreHelmet
+  productEntity: ClothingHeadHelmetAbductor
+  cost:
+    AbductorCredit: 1
+  categories:
+  - AbductorEquipment
+
+- type: listing
+  id: AbductorStoreArmor
+  productEntity: ClothingOuterArmorAbductor
+  cost:
+    AbductorCredit: 1
+  categories:
+  - AbductorEquipment
+
+- type: listing
+  id: AbductorStoreJammer
+  productEntity: RadioJammer
+  cost:
+    AbductorCredit: 1
+  categories:
+  - AbductorEquipment
+
+- type: listing
+  id: AbductorStoreChameleonProjector
+  productEntity: ChameleonProjector
+  cost:
+    AbductorCredit: 2
+  categories:
+  - AbductorEquipment
+
+- type: listing
+  id: AbductorStoreShrinkRay
+  productEntity: WeaponAbductorShrinkRay
+  cost:
+    AbductorCredit: 2
+  categories:
+  - AbductorEquipment
+
+- type: listing
+  id: AbductorStoreChemKit
+  name: store-abductor-chem-kit-name
+  description: store-abductor-chem-kit-desc
+  productEntity: ClothingBackpackDuffelAbductorChemKit
+  cost:
+    AbductorCredit: 2
+  categories:
+  - AbductorEquipment
+
+- type: listing
+  id: AbductorStoreCow
+  name: store-abductor-cow-name
+  description: store-abductor-cow-desc
+  icon:
+    sprite: Mobs/Animals/Farm/cow.rsi
+    state: alive
+  productEvent: !type:AbductorCowDeliveryEvent
+  raiseProductEventOnUser: true
+  cost:
+    AbductorCredit: 1
+  categories:
+  - AbductorEquipment
+
+- type: entity
+  parent: ClothingBackpackDuffelAbductor
+  id: ClothingBackpackDuffelAbductorChemKit
+  suffix: Chem dispenser kit
+  components:
+  - type: StorageFill
+    contents:
+    - id: ChemDispenserMachineCircuitboard
+    - id: SheetSteel10
+    - id: CableApcStack10
+    - id: MicroManipulatorStockPart
+    - id: SheetGlass1
+    - id: SheetPlastic10
+    - id: Beaker
+      amount: 2
+    - id: Screwdriver
+    - id: Wrench
+
+- type: entity
+  parent: [ BaseWeaponBatterySmall, BaseMajorContraband ]
+  id: WeaponAbductorShrinkRay
+  name: shrink ray
+  description: Alien equipment of unclear purpose. Whatever it hits comes out half the size and a good deal more fragile.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Guns/Abductors/shrink_ray.rsi
+    layers:
+    - state: icon
+  - type: Item
+    sprite: _Polonium/Objects/Weapons/Guns/Abductors/shrink_ray.rsi
+  - type: Clothing
+    sprite: _Polonium/Objects/Weapons/Guns/Abductors/shrink_ray.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+  - type: Gun
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/_Polonium/Abductors/shrink_fire.ogg
+  - type: BatteryAmmoProvider
+    proto: BulletAbductorShrink
+    fireCost: 250
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: BatterySelfRecharger
+    autoRechargeRate: 15
+
+- type: entity
+  parent: BaseBullet
+  id: BulletAbductorShrink
+  name: shrink bolt
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: spell
+      color: "#ff0099"
+      shader: unshaded
+  - type: Projectile
+    impactEffect: null
+    forceSound: true
+    damage:
+      types:
+        Blunt: 0
+    soundHit:
+      path: /Audio/_Polonium/Abductors/shrink_hit.ogg
+  - type: TriggerOnCollide
+    fixtureID: projectile
+    maxTriggers: 1
+  - type: WhitelistTriggerCondition
+    userWhitelist:
+      components:
+      - MobState
+  - type: SetStatusEffectOnTrigger
+    targetUser: true
+    status: StatusEffectAbductorShrink
+    duration: 75
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectAbductorShrink
+  name: shrunken
+  components:
+  - type: AbductorShrinkStatusEffect
+  - type: MovementModStatusEffect
+    walkSpeedModifier: 0.75
+    sprintSpeedModifier: 0.75
+  - type: DamageModifierStatusEffect
+    modifiers:
+      coefficients:
+        Blunt: 1.5
+        Slash: 1.5
+        Piercing: 1.5
+        Heat: 1.5
+        Cold: 1.5
+        Shock: 1.5
