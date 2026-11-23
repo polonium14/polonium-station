@@ -20,6 +20,7 @@
   - type: Targeting
   - type: Consciousness
     threshold: 95
+  - type: SoftCrit # Polonium: soft crit below 130 damage
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,0.5
   - type: JobStatus

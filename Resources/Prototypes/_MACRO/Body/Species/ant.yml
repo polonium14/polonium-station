@@ -154,6 +154,8 @@
       0: Alive
       9: Critical
       10: Dead
+  - type: SoftCrit # Polonium: no soft crit, the human threshold does not fit these thresholds
+    hardCritThreshold: 9
   - type: Destructible
     thresholds:
     - trigger:

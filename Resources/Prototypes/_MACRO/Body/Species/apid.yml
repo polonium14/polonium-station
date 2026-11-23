@@ -199,6 +199,8 @@
       0: Alive
       60: Critical
       125: Dead
+  - type: SoftCrit # Polonium: no soft crit, the human threshold does not fit these thresholds
+    hardCritThreshold: 60
   - type: Temperature
     temperature: 310.15
     specificHeat: 46
