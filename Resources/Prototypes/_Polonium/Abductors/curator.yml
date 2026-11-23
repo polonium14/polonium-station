@@ -6,6 +6,7 @@
     - abductor-curator-arrival-lone-2
     - abductor-curator-arrival-lone-3
     - abductor-curator-arrival-lone-4
+    - abductor-curator-arrival-lone-5
 
 - type: abductorCuratorLine
   id: AbductorCuratorArrivalScientist
@@ -15,6 +16,7 @@
     - abductor-curator-arrival-scientist-2
     - abductor-curator-arrival-scientist-3
     - abductor-curator-arrival-scientist-4
+    - abductor-curator-arrival-scientist-5
 
 - type: abductorCuratorLine
   id: AbductorCuratorArrivalAgent
@@ -24,6 +26,7 @@
     - abductor-curator-arrival-agent-2
     - abductor-curator-arrival-agent-3
     - abductor-curator-arrival-agent-4
+    - abductor-curator-arrival-agent-5
 
 - type: abductorCuratorLine
   id: AbductorCuratorFirstMark
