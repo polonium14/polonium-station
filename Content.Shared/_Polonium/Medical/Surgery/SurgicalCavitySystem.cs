@@ -4,6 +4,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Body;
 using Content.Shared.Database;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Item;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
@@ -66,7 +67,8 @@ public sealed partial class SurgicalCavitySystem : EntitySystem
             return;
 
         // An empty hand gives the surgeon themselves as the tool.
-        if (args.Tool == args.User || !TryComp<ItemComponent>(args.Tool, out var item))
+        // A virtual item stands for something pulled or held in both hands, it is not a thing to hide.
+        if (args.Tool == args.User || HasComp<VirtualItemComponent>(args.Tool) || !TryComp<ItemComponent>(args.Tool, out var item))
         {
             args.Invalid = StepInvalidReason.MissingTool;
             args.Popup = Loc.GetString("surgery-cavity-need-item");
@@ -85,7 +87,7 @@ public sealed partial class SurgicalCavitySystem : EntitySystem
     /// </summary>
     public bool TryInsert(EntityUid part, EntityUid item)
     {
-        if (GetContents(part) != null)
+        if (GetContents(part) != null || HasComp<VirtualItemComponent>(item))
             return false;
 
         EnsureComp<SurgicalCavityComponent>(part);
