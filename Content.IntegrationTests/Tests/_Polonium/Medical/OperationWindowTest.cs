@@ -40,7 +40,7 @@ public sealed class OperationWindowTest : GameTest
             var torso = SEntMan.GetComponent<BodyComponent>(body).Organs!.ContainedEntities
                 .Single(o => SEntMan.GetComponent<OrganComponent>(o).Category == "Torso");
             SEntMan.AddComponent<IncisionOpenComponent>(torso);
-            SEntMan.AddComponent<BleedersClampedComponent>(torso);
+            SEntMan.AddComponent<IncisionClampedComponent>(torso);
             SEntMan.AddComponent<SkinRetractedComponent>(torso);
             SEntMan.AddComponent<BonesSawedComponent>(torso);
             SEntMan.AddComponent<BonesOpenComponent>(torso);

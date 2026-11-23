@@ -100,7 +100,7 @@ public sealed partial class UnfinishedSurgeryPenaltySystem : EntitySystem
                 continue;
 
             var share = organ.Category == Torso ? 1f : organ.Category == Head ? HeadShare : LimbShare;
-            var bleed = (HasComp<BleedersClampedComponent>(part) ? clamped : open) * share;
+            var bleed = (HasComp<IncisionClampedComponent>(part) ? clamped : open) * share;
             _bleeding[body] = _bleeding.GetValueOrDefault(body) + bleed;
         }
 

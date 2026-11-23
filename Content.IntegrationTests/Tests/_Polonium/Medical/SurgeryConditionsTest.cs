@@ -213,7 +213,7 @@ public sealed class SurgeryConditionsTest : GameTest
             SEntMan.AddComponent<CauteryComponent>(user);
 
             SEntMan.AddComponent<IncisionOpenComponent>(torso);
-            SEntMan.AddComponent<BleedersClampedComponent>(torso);
+            SEntMan.AddComponent<IncisionClampedComponent>(torso);
             SEntMan.AddComponent<SkinRetractedComponent>(torso);
             SEntMan.AddComponent<BonesSawedComponent>(torso);
             SEntMan.AddComponent<BonesOpenComponent>(torso);

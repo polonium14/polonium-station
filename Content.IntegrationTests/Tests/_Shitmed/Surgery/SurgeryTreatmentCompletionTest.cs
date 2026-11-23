@@ -72,7 +72,7 @@ public sealed class SurgeryTreatmentCompletionTest : GameTest
 
             SEntMan.AddComponent<IncisionOpenComponent>(torso);
             SEntMan.AddComponent<SkinRetractedComponent>(torso);
-            SEntMan.AddComponent<BleedersClampedComponent>(torso);
+            SEntMan.AddComponent<IncisionClampedComponent>(torso);
             SEntMan.AddComponent<BonesSawedComponent>(torso);
             SEntMan.AddComponent<InternalBleedersClampedComponent>(torso);
             var woundable = SEntMan.GetComponent<WoundableComponent>(torso);

@@ -1,2 +1,2 @@
-ent-SurgeryStepClampIncision = Zaciśnij naczynia krwionośne
+ent-SurgeryStepClampIncision = Zaciśnij nacięcie
     .desc = { ent-SurgeryStepBase.desc }

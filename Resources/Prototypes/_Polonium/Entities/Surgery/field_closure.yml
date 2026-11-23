@@ -30,6 +30,7 @@
     - type: SkinRetracted
     - type: BleedersClamped
     - type: IncisionOpen
+    - type: IncisionClamped
     - type: BodyPartReattached
     - type: InternalBleedersClamped
     - type: SeveredSkinRemoved

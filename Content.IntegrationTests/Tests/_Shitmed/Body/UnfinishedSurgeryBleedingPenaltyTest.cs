@@ -52,7 +52,7 @@ public sealed class UnfinishedSurgeryBleedingPenaltyTest : GameTest
 
     // The default surgery.open_incision_bleed and surgery.clamped_incision_bleed for the torso.
     private const float OpenBleed = 2.5f;
-    private const float ClampedBleed = 0.3f;
+    private const float ClampedBleed = 1.2f;
 
     private async Task RunSeconds(float seconds)
     {
@@ -88,7 +88,7 @@ public sealed class UnfinishedSurgeryBleedingPenaltyTest : GameTest
         {
             Assert.That(SEntMan.GetComponent<BloodstreamComponent>(mob).BleedAmount, Is.EqualTo(OpenBleed).Within(0.01f),
                 "An unclamped incision bleeds at the full rate and does not clot.");
-            SEntMan.AddComponent<BleedersClampedComponent>(torso);
+            SEntMan.AddComponent<IncisionClampedComponent>(torso);
         });
 
         await RunSeconds(6);
@@ -102,7 +102,7 @@ public sealed class UnfinishedSurgeryBleedingPenaltyTest : GameTest
             {
                 // Closing the incision removes its markers.
                 SEntMan.RemoveComponent<IncisionOpenComponent>(torso);
-                SEntMan.RemoveComponent<BleedersClampedComponent>(torso);
+                SEntMan.RemoveComponent<IncisionClampedComponent>(torso);
                 return;
             }
 

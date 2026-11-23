@@ -40,7 +40,7 @@ public sealed class SurgeryInsertionToolTest : GameTest
             containers.Insert(torso, containers.GetContainer(patient, BodyComponent.ContainerID));
             SEntMan.AddComponent<IncisionOpenComponent>(torso);
             SEntMan.AddComponent<SkinRetractedComponent>(torso);
-            SEntMan.AddComponent<BleedersClampedComponent>(torso);
+            SEntMan.AddComponent<IncisionClampedComponent>(torso);
             Assert.That(SEntMan.System<SurgerySystem>().TryDoSurgeryStep(patient, torso, user,
                 procedure, step, out var error), Is.EqualTo(expected),
                 "Holding any Organ component should not pass tool validation for the wrong transplant category.");

@@ -23,6 +23,7 @@ public abstract partial class SharedSurgerySystem
     {
         RemComp<IncisionOpenComponent>(organ);
         RemComp<SkinRetractedComponent>(organ);
+        RemComp<IncisionClampedComponent>(organ);
         RemComp<BleedersClampedComponent>(organ);
         RemComp<InternalBleedersClampedComponent>(organ);
         RemComp<BonesOpenComponent>(organ);
@@ -45,6 +46,7 @@ public abstract partial class SharedSurgerySystem
     {
         return HasComp<IncisionOpenComponent>(organ)
             || HasComp<SkinRetractedComponent>(organ)
+            || HasComp<IncisionClampedComponent>(organ)
             || HasComp<BleedersClampedComponent>(organ)
             || HasComp<InternalBleedersClampedComponent>(organ)
             || HasComp<BonesOpenComponent>(organ)

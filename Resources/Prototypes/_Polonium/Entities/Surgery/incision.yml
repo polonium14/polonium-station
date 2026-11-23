@@ -4,13 +4,13 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepClampIncision
-  name: Clamp the bleeders
+  name: Clamp the incision
   components:
   - type: SurgeryStep
     tool:
     - type: Hemostat
     add:
-    - type: BleedersClamped
+    - type: IncisionClamped
     duration: 2
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi

@@ -50,7 +50,7 @@ public sealed class DismembermentSurgeryProgressTest : GameTest
             SEntMan.System<SharedHandsSystem>().AddHand(user, "right", HandLocation.Right);
             SEntMan.AddComponent<IncisionOpenComponent>(part);
             SEntMan.AddComponent<SkinRetractedComponent>(part);
-            SEntMan.AddComponent<BleedersClampedComponent>(part);
+            SEntMan.AddComponent<IncisionClampedComponent>(part);
             Assert.That(surgery.TryDoSurgeryStep(body, part, user,
                 "SurgeryRemovePart", "SurgeryStepSawFeature", out var error), Is.True, error.ToString());
         });
@@ -107,7 +107,7 @@ public sealed class DismembermentSurgeryProgressTest : GameTest
             SEntMan.AddComponent<StitchesComponent>(tool);
             SEntMan.AddComponent<IncisionOpenComponent>(part);
             SEntMan.AddComponent<SkinRetractedComponent>(part);
-            SEntMan.AddComponent<BleedersClampedComponent>(part);
+            SEntMan.AddComponent<IncisionClampedComponent>(part);
             foreach (var stepId in new[] { "SurgeryStepRemoveSeveredSkin", "SurgeryStepRemoveLeftoverBones", "SurgeryStepSealDismembermentWound" })
             {
                 var step = surgery.GetSingleton(stepId)!.Value;

@@ -1,2 +1,2 @@
-ent-SurgeryStepClampIncision = Clamp the bleeders
+ent-SurgeryStepClampIncision = Clamp the incision
     .desc = { ent-SurgeryStepBase.desc }
