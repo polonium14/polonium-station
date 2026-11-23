@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseSurgeryRemoveOrgan
   id: SurgeryRemoveSpleen
+  categories: [ HideSpawnMenu ]
   name: Remove spleen
   components:
   - type: SurgeryPartCondition
@@ -11,6 +12,7 @@
 - type: entity
   parent: BaseSurgeryInsertOrgan
   id: SurgeryInsertSpleen
+  categories: [ HideSpawnMenu ]
   name: Insert spleen
   components:
   - type: Surgery
@@ -25,6 +27,7 @@
 - type: entity
   parent: SurgeryStepInsertOrgan
   id: SurgeryStepInsertSpleen
+  categories: [ HideSpawnMenu ]
   name: Add spleen
   components:
   - type: Sprite

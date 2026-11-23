@@ -3,6 +3,7 @@
 - type: entity
   parent: BaseSurgeryRemoveOrgan
   id: SurgeryRemoveLungLeft
+  categories: [ HideSpawnMenu ]
   name: Remove left lung
   components:
   - type: Surgery
@@ -15,6 +16,7 @@
 - type: entity
   parent: BaseSurgeryInsertOrgan
   id: SurgeryInsertLungLeft
+  categories: [ HideSpawnMenu ]
   name: Insert left lung
   components:
   - type: Surgery
@@ -31,6 +33,7 @@
 - type: entity
   parent: BaseSurgeryRemoveOrgan
   id: SurgeryRemoveKidneyLeft
+  categories: [ HideSpawnMenu ]
   name: Remove left kidney
   components:
   - type: SurgeryPartCondition
@@ -41,6 +44,7 @@
 - type: entity
   parent: BaseSurgeryInsertOrgan
   id: SurgeryInsertKidneyLeft
+  categories: [ HideSpawnMenu ]
   name: Insert left kidney
   components:
   - type: Surgery
@@ -55,6 +59,7 @@
 - type: entity
   parent: BaseSurgeryRemoveOrgan
   id: SurgeryRemoveLungRight
+  categories: [ HideSpawnMenu ]
   name: Remove right lung
   components:
   - type: Surgery
@@ -67,6 +72,7 @@
 - type: entity
   parent: BaseSurgeryInsertOrgan
   id: SurgeryInsertLungRight
+  categories: [ HideSpawnMenu ]
   name: Insert right lung
   components:
   - type: Surgery
@@ -83,6 +89,7 @@
 - type: entity
   parent: BaseSurgeryRemoveOrgan
   id: SurgeryRemoveKidneyRight
+  categories: [ HideSpawnMenu ]
   name: Remove right kidney
   components:
   - type: SurgeryPartCondition
@@ -93,6 +100,7 @@
 - type: entity
   parent: BaseSurgeryInsertOrgan
   id: SurgeryInsertKidneyRight
+  categories: [ HideSpawnMenu ]
   name: Insert right kidney
   components:
   - type: Surgery
@@ -107,6 +115,7 @@
 - type: entity
   parent: SurgeryStepInsertOrgan
   id: SurgeryStepInsertKidney
+  categories: [ HideSpawnMenu ]
   name: Add kidney
   components:
   - type: Sprite

@@ -28,6 +28,7 @@
 - type: entity
   parent: BaseSurgeryRepairOrgan
   id: SurgeryRepairHeart
+  categories: [ HideSpawnMenu ]
   name: Repair heart
   components:
   - type: SurgeryOrganCondition
@@ -36,6 +37,7 @@
 - type: entity
   parent: BaseSurgeryRepairOrgan
   id: SurgeryRepairLungLeft
+  categories: [ HideSpawnMenu ]
   name: Repair left lung
   components:
   - type: SurgeryOrganCondition
@@ -44,6 +46,7 @@
 - type: entity
   parent: BaseSurgeryRepairOrgan
   id: SurgeryRepairLungRight
+  categories: [ HideSpawnMenu ]
   name: Repair right lung
   components:
   - type: SurgeryOrganCondition
@@ -52,6 +55,7 @@
 - type: entity
   parent: BaseSurgeryRepairOrgan
   id: SurgeryRepairLungs
+  categories: [ HideSpawnMenu ]
   name: Repair lungs
   components:
   - type: SurgeryOrganCondition
@@ -60,6 +64,7 @@
 - type: entity
   parent: BaseSurgeryRepairOrgan
   id: SurgeryRepairLiver
+  categories: [ HideSpawnMenu ]
   name: Repair liver
   components:
   - type: SurgeryOrganCondition
@@ -68,6 +73,7 @@
 - type: entity
   parent: BaseSurgeryRepairOrgan
   id: SurgeryRepairStomach
+  categories: [ HideSpawnMenu ]
   name: Repair stomach
   components:
   - type: SurgeryOrganCondition
@@ -76,6 +82,7 @@
 - type: entity
   parent: BaseSurgeryRepairOrgan
   id: SurgeryRepairKidneyLeft
+  categories: [ HideSpawnMenu ]
   name: Repair left kidney
   components:
   - type: SurgeryOrganCondition
@@ -84,6 +91,7 @@
 - type: entity
   parent: BaseSurgeryRepairOrgan
   id: SurgeryRepairKidneyRight
+  categories: [ HideSpawnMenu ]
   name: Repair right kidney
   components:
   - type: SurgeryOrganCondition
@@ -92,6 +100,7 @@
 - type: entity
   parent: BaseSurgeryRepairOrgan
   id: SurgeryRepairKidneys
+  categories: [ HideSpawnMenu ]
   name: Repair kidneys
   components:
   - type: SurgeryOrganCondition
@@ -100,6 +109,7 @@
 - type: entity
   parent: BaseSurgeryRepairOrgan
   id: SurgeryRepairSpleen
+  categories: [ HideSpawnMenu ]
   name: Repair spleen
   components:
   - type: SurgeryOrganCondition
@@ -108,6 +118,7 @@
 - type: entity
   parent: BaseSurgeryRepairOrgan
   id: SurgeryRepairAppendix
+  categories: [ HideSpawnMenu ]
   name: Repair appendix
   components:
   - type: SurgeryOrganCondition
@@ -116,6 +127,7 @@
 - type: entity
   parent: BaseSurgeryRepairHeadOrgan
   id: SurgeryRepairEyes
+  categories: [ HideSpawnMenu ]
   name: Repair eyes
   components:
   - type: SurgeryOrganCondition
@@ -124,6 +136,7 @@
 - type: entity
   parent: BaseSurgeryRepairHeadOrgan
   id: SurgeryRepairEars
+  categories: [ HideSpawnMenu ]
   name: Repair ears
   components:
   - type: SurgeryOrganCondition
@@ -132,6 +145,7 @@
 - type: entity
   parent: BaseSurgeryRepairHeadOrgan
   id: SurgeryRepairTongue
+  categories: [ HideSpawnMenu ]
   name: Repair tongue
   components:
   - type: SurgeryOrganCondition
@@ -140,6 +154,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepRepairOrgan
+  categories: [ HideSpawnMenu ]
   name: Repair the organ
   components:
   - type: SurgeryStep

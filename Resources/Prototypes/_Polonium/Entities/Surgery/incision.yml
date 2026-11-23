@@ -4,6 +4,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepClampIncision
+  categories: [ HideSpawnMenu ]
   name: Clamp the incision
   components:
   - type: SurgeryStep

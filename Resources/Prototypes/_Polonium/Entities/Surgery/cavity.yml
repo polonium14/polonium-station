@@ -3,6 +3,7 @@
 - type: entity
   parent: BasePartSurgery
   id: SurgeryCavityInsert
+  categories: [ HideSpawnMenu ]
   name: Hide item in chest cavity
   components:
   - type: Surgery
@@ -15,6 +16,7 @@
 - type: entity
   parent: BasePartSurgery
   id: SurgeryCavityRemove
+  categories: [ HideSpawnMenu ]
   name: Take item out of chest cavity
   components:
   - type: Surgery
@@ -27,6 +29,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepCavityInsert
+  categories: [ HideSpawnMenu ]
   name: Hide the held item
   components:
   - type: SurgeryStep
@@ -40,6 +43,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepCavityRemove
+  categories: [ HideSpawnMenu ]
   name: Take the item out
   components:
   - type: SurgeryStep
