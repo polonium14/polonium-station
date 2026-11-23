@@ -342,7 +342,7 @@
   parent: [ OrganBaseBrain, OrganRodentiaInternal ]
   id: OrganRodentiaBrain
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -357,7 +357,7 @@
   - type: VisualOrgan
     data:
       sprite: Mobs/Customization/eyes.rsi
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 24
     integrityThresholds:
       Normal: 8.4
@@ -369,7 +369,7 @@
   parent: [ OrganBaseTongue, OrganRodentiaInternal ]
   id: OrganRodentiaTongue
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -381,7 +381,7 @@
   parent: [ OrganBaseAppendix, OrganRodentiaInternal ]
   id: OrganRodentiaAppendix
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -393,7 +393,7 @@
   parent: [ OrganBaseEars, OrganRodentiaInternal ]
   id: OrganRodentiaEars
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -406,7 +406,7 @@
   id: OrganRodentiaLungs
   abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9
@@ -418,7 +418,7 @@
   parent: [ OrganBaseHeart, OrganRodentiaInternal, OrganRodentiaMetabolizer ]
   id: OrganRodentiaHeart
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9
@@ -431,7 +431,7 @@
   parent: [ OrganBaseStomach, OrganRodentiaInternal, OrganRodentiaMetabolizer ]
   id: OrganRodentiaStomach
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 88
     integrityThresholds:
       Normal: 30.8
@@ -443,7 +443,7 @@
   parent: [ OrganBaseLiver, OrganRodentiaInternal, OrganRodentiaMetabolizer ]
   id: OrganRodentiaLiver
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
       Normal: 14.7
@@ -456,7 +456,7 @@
   id: OrganRodentiaKidneys
   abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
       Normal: 14.7

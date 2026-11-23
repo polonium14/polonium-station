@@ -360,7 +360,7 @@
   parent: [ OrganBaseBrain, OrganHarpyInternal ]
   id: OrganHarpyBrain
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -375,7 +375,7 @@
   - type: VisualOrgan
     data:
       sprite: Mobs/Customization/eyes.rsi
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 24
     integrityThresholds:
       Normal: 8.4
@@ -387,7 +387,7 @@
   parent: [ OrganBaseTongue, OrganHarpyInternal ]
   id: OrganHarpyTongue
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -399,7 +399,7 @@
   parent: [ OrganBaseAppendix, OrganHarpyInternal ]
   id: OrganHarpyAppendix
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -411,7 +411,7 @@
   parent: [ OrganBaseEars, OrganHarpyInternal ]
   id: OrganHarpyEars
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -427,7 +427,7 @@
   components:
   - type: Sprite
     sprite: Mobs/Species/Harpy/organs.rsi
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9
@@ -439,7 +439,7 @@
   parent: [ OrganBaseHeart, OrganHarpyInternal, OrganHarpyMetabolizer ]
   id: OrganHarpyHeart
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9
@@ -451,7 +451,7 @@
   parent: [ OrganBaseStomach, OrganHarpyInternal, OrganHarpyMetabolizer ]
   id: OrganHarpyStomach
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 88
     integrityThresholds:
       Normal: 30.8
@@ -463,7 +463,7 @@
   parent: [ OrganBaseLiver, OrganHarpyInternal, OrganHarpyMetabolizer ]
   id: OrganHarpyLiver
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
       Normal: 14.7
@@ -476,7 +476,7 @@
   id: OrganHarpyKidneys
   abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
       Normal: 14.7

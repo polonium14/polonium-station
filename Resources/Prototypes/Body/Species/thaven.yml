@@ -340,7 +340,7 @@
   parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganThavenInternal ]
   id: OrganThavenBrain
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -352,7 +352,7 @@
   parent: [ OrganThavenVisual, OrganBaseEyes, OrganThavenInternal ]
   id: OrganThavenEyes
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 24
     integrityThresholds:
       Normal: 8.4
@@ -364,7 +364,7 @@
   parent: [ OrganBaseTongue, OrganSpriteHumanInternal, OrganThaven ]
   id: OrganThavenTongue
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -376,7 +376,7 @@
   parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganThaven ]
   id: OrganThavenAppendix
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -388,7 +388,7 @@
   parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganThaven ]
   id: OrganThavenEars
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -411,7 +411,7 @@
   parent: [ OrganBaseHeart, OrganThavenInternal, OrganThavenMetabolizer ]
   id: OrganThavenHeart
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9
@@ -423,7 +423,7 @@
   parent: [ OrganBaseStomach, OrganThavenInternal, OrganThavenMetabolizer ]
   id: OrganThavenStomach
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 88
     integrityThresholds:
       Normal: 30.8
@@ -435,7 +435,7 @@
   parent: [ OrganBaseLiver, OrganThavenInternal, OrganThavenMetabolizer ]
   id: OrganThavenLiver
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
       Normal: 14.7
@@ -448,7 +448,7 @@
   id: OrganThavenKidneys
   abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
       Normal: 14.7

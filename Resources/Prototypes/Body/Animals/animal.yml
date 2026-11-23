@@ -23,7 +23,7 @@
   parent: [ OrganBaseLungs, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalLungs
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9
@@ -35,7 +35,7 @@
   parent: [ OrganBaseHeart, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalHeart
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 28
     integrityThresholds:
       Normal: 9.8
@@ -47,7 +47,7 @@
   parent: [ OrganBaseStomach, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalStomach
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 56
     integrityThresholds:
       Normal: 19.6
@@ -59,7 +59,7 @@
   parent: [ OrganBaseLiver, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalLiver
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9
@@ -71,7 +71,7 @@
   parent: [ OrganBaseKidneys, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalKidneys
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9

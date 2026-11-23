@@ -348,7 +348,7 @@
   parent: [ OrganBaseBrain, OrganDionaInternal ]
   id: OrganDionaBrain
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
     integrityCap: 56
     integrityThresholds:
       Normal: 19.6
@@ -364,7 +364,7 @@
     data:
       sprite: Mobs/Customization/eyes.rsi
       state: diona
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9
@@ -382,7 +382,7 @@
   - type: Sprite
     layers:
     - state: lungs
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
       Normal: 14.7
@@ -397,7 +397,7 @@
   - type: Metabolizer
     maxReagents: 6
     stages: [ Digestion, Bloodstream, Metabolites ]
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 70
     integrityThresholds:
       Normal: 24.5

@@ -421,7 +421,7 @@
   parent: [ OrganBaseBrain, OrganVoxInternal ]
   id: OrganVoxBrain
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -433,7 +433,7 @@
   parent: [ OrganVoxVisual, OrganBaseEyes, OrganVoxInternal ]
   id: OrganVoxEyes
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 24
     integrityThresholds:
       Normal: 8.4
@@ -448,7 +448,7 @@
   parent: [ OrganBaseTongue, OrganVoxInternal ]
   id: OrganVoxTongue
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -460,7 +460,7 @@
   parent: [ OrganBaseAppendix, OrganVoxInternal ]
   id: OrganVoxAppendix
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -472,7 +472,7 @@
   parent: [ OrganBaseEars, OrganVoxInternal ]
   id: OrganVoxEars
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
       Normal: 10.5
@@ -485,7 +485,7 @@
   id: OrganVoxLungs
   abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9
@@ -497,7 +497,7 @@
   parent: [ OrganBaseHeart, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxHeart
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
       Normal: 11.9
@@ -514,7 +514,7 @@
       tags:
       - Trash
     isSpecialDigestibleExclusive: false
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 88
     integrityThresholds:
       Normal: 30.8
@@ -526,7 +526,7 @@
   parent: [ OrganBaseLiver, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxLiver
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
       Normal: 14.7
@@ -539,7 +539,7 @@
   id: OrganVoxKidneys
   abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
       Normal: 14.7
