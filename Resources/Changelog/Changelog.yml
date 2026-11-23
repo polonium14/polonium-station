@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: ArtisticRoomba
-  changes:
-  - message: Passive gates now have better equalization behavior and have less of
-      a tendency to over-equalize.
-    type: Fix
-  id: 9652
-  time: '2026-04-19T05:51:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43552
 - author: AffleWaffle
   changes:
   - message: Intercom Assembly is now breakable.
@@ -5226,3 +5218,11 @@
   id: 10146
   time: '2026-11-23T10:50:38.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1295
+- author: Nikita
+  changes:
+  - message: "Posta\u0107, kt\xF3ra wr\xF3ci\u0142a do gry z kapsu\u0142y kriosnu,\
+      \ znika ju\u017C z listy w oknie kapsu\u0142y."
+    type: Fix
+  id: 10147
+  time: '2026-11-23T15:45:37.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1297
