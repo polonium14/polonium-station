@@ -1,4 +1,5 @@
 using System.Numerics;
+using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;
@@ -27,6 +28,7 @@ public sealed partial class AirFlowParticleOverlay : Overlay
     public AirFlowParticleOverlay(AirFlowVisualsSystem system)
     {
         IoCManager.InjectDependencies(this);
+        ZIndex = (int) DrawDepth.Effects;
         _system = system;
         _xform = _entMan.System<SharedTransformSystem>();
         _puff = _resources.GetResource<TextureResource>(PuffTexture).Texture;

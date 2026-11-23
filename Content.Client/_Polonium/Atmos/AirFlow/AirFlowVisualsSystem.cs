@@ -24,7 +24,12 @@ public sealed partial class AirFlowVisualsSystem : EntitySystem
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private TurfSystem _turf = default!;
 
-    private static readonly TimeSpan HoldTime = TimeSpan.FromSeconds(1.5);
+    /// <summary>
+    /// How long a tile keeps its flow without news from the server. The server says when a flow stops, so this
+    /// only matters when its updates no longer arrive, for example after the player has left the area.
+    /// It has to outlast an atmos cycle of a heavily loaded server.
+    /// </summary>
+    private static readonly TimeSpan HoldTime = TimeSpan.FromSeconds(5);
     private const float SmoothInterval = 0.1f;
     private const float FieldRelax = 5f;
     private const float MinStrength = 0.05f;
@@ -65,7 +70,7 @@ public sealed partial class AirFlowVisualsSystem : EntitySystem
 
         SubscribeNetworkEvent<AirFlowVisualsUpdateEvent>(OnFlowUpdate);
         Subs.CVar(_cfg, CCVars.ReducedMotion, value => _reducedMotion = value, true);
-        Subs.CVar(_cfg, CCVars.AirFlowVisualsRadius, value => _radius = value, true);
+        Subs.CVar(_cfg, CCVars.AirFlowVisualsRadius, value => _radius = Math.Max(0, value), true);
 
         _overlay.AddOverlay(new AirFlowParticleOverlay(this));
         _overlay.AddOverlay(new AirFlowHazeOverlay(this));

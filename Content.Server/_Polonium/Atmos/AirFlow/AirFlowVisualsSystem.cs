@@ -2,6 +2,7 @@ using Content.Shared._Polonium.Atmos.AirFlow;
 using Content.Shared.Atmos;
 using Content.Shared.CCVar;
 using Content.Shared.Chunking;
+using Content.Shared.GameTicking;
 using Microsoft.Extensions.ObjectPool;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -38,7 +39,14 @@ public sealed partial class AirFlowVisualsSystem : EntitySystem
         base.Initialize();
 
         Subs.CVar(_cfg, CCVars.AirFlowVisualsEnabled, OnEnabledChanged, true);
-        Subs.CVar(_cfg, CCVars.AirFlowVisualsRadius, value => _radius = value, true);
+        Subs.CVar(_cfg, CCVars.AirFlowVisualsRadius, value => _radius = Math.Max(0, value), true);
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
+    }
+
+    private void OnRoundRestart(RoundRestartCleanupEvent ev)
+    {
+        _pending.Clear();
+        _flowing.Clear();
     }
 
     private void OnEnabledChanged(bool value)

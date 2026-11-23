@@ -29,6 +29,7 @@ public sealed class AirFlowVisualsTest : AtmosTest
 
     /// <summary>
     /// Three seconds: time for the atmos cycle that notices the seal, and for the client to let the flow die down.
+    /// Shorter than the time after which the client gives up on a flow by itself.
     /// </summary>
     private const int SealTicks = 90;
 
@@ -107,6 +108,8 @@ public sealed class AirFlowVisualsTest : AtmosTest
             Assert.That(towardsBreach, "The flow on the floor must point at the breach.");
             Assert.That(farFlow, Is.Zero, "Tiles further from the breach than the radius must not be sent.");
         });
+
+        Assert.That(clientAirFlow.GetFlow(clientGrid, floorTile).Length(), Is.GreaterThan(0.05f), "Sanity: the air must still be rushing when the breach gets sealed.");
 
         await Server.WaitPost(() =>
         {

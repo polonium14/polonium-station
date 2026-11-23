@@ -35,6 +35,11 @@ public sealed partial class AirFlowVisualsSystem
     /// </summary>
     private const float WispBrightening = 0.5f;
 
+    /// <summary>
+    /// How many times faster a particle ages once it is left outside the reach of every breach.
+    /// </summary>
+    private const float StrandedAging = 7f;
+
     private const float OutDrag = 1.3f;
     private const float OutSpread = 0.32f;
 
@@ -211,7 +216,8 @@ public sealed partial class AirFlowVisualsSystem
         }
 
         var tile = GetTile(particle.Pos);
-        if (!flow.Cells.ContainsKey(tile) && IsVoid(flow, tile))
+        var known = flow.Cells.TryGetValue(tile, out var cell);
+        if (!known && IsVoid(flow, tile))
         {
             particle.Out = frameTime;
             var side = new Vector2(-particle.Vel.Y, particle.Vel.X);
@@ -219,6 +225,10 @@ public sealed partial class AirFlowVisualsSystem
             particle.Pos += particle.Vel * frameTime;
             return true;
         }
+
+        // The breach this particle was heading for is sealed while another one keeps the grid flowing.
+        if (!known || cell!.Reach <= 0f)
+            particle.Age += frameTime * StrandedAging;
 
         var target = Sample(flow, particle.Pos) * (FlowSpeed * particle.Mobility);
         particle.Vel += (target - particle.Vel) * (1f - MathF.Exp(-particle.Relax * frameTime));

@@ -12,6 +12,9 @@ public sealed partial class AirFlowGasTintPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
+    /// <summary>
+    /// Colour of the fog. Streaks use a brighter shade of it.
+    /// </summary>
     [DataField(required: true)]
     public Color Color;
 }
