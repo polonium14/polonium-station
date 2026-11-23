@@ -1,0 +1,48 @@
+- type: abductorOrder
+  id: AbductorOrderLiver
+  category: Liver
+  line: AbductorCuratorOrderLiver
+
+- type: abductorOrder
+  id: AbductorOrderKidneys
+  category: Kidneys
+  line: AbductorCuratorOrderKidneys
+
+- type: abductorOrder
+  id: AbductorOrderStomach
+  category: Stomach
+  line: AbductorCuratorOrderStomach
+
+- type: abductorOrder
+  id: AbductorOrderLungs
+  category: Lungs
+  line: AbductorCuratorOrderLungs
+
+- type: abductorOrder
+  id: AbductorOrderEyes
+  category: Eyes
+  line: AbductorCuratorOrderEyes
+
+- type: abductorOrder
+  id: AbductorOrderArmLeft
+  category: ArmLeft
+  fromDonor: true
+  line: AbductorCuratorOrderArmLeft
+
+- type: abductorOrder
+  id: AbductorOrderArmRight
+  category: ArmRight
+  fromDonor: true
+  line: AbductorCuratorOrderArmRight
+
+- type: abductorOrder
+  id: AbductorOrderLegLeft
+  category: LegLeft
+  fromDonor: true
+  line: AbductorCuratorOrderLegLeft
+
+- type: abductorOrder
+  id: AbductorOrderLegRight
+  category: LegRight
+  fromDonor: true
+  line: AbductorCuratorOrderLegRight
