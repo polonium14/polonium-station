@@ -4,13 +4,12 @@ using Content.Shared.CartridgeLoader;
 using Content.Shared.Delivery;
 using Content.Shared.GameTicking;
 using Content.Shared.PDA;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Polonium.CartridgeLoader.Cartridges;
 
 /// <summary>
-/// Handles the LogiApp PDA program: installs it on every PDA, notifies PDA owners about new parcels
+/// Handles the LogiApp PDA program: notifies PDA owners about new parcels
 /// and reports the status of parcels addressed to them.
 /// </summary>
 public sealed partial class LogiAppCartridgeSystem : EntitySystem
@@ -21,29 +20,13 @@ public sealed partial class LogiAppCartridgeSystem : EntitySystem
     [Dependency] private SharedUserInterfaceSystem _ui = default!;
     [Dependency] private IGameTiming _timing = default!;
 
-    private static readonly EntProtoId LogiAppCartridge = "LogiAppCartridge";
-
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PdaComponent, MapInitEvent>(OnPdaMapInit);
         SubscribeLocalEvent<DeliveryComponent, DeliverySpawnedEvent>(OnDeliverySpawned);
         SubscribeLocalEvent<LogiAppCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<LogiAppCartridgeComponent, CartridgeMessageEvent>(OnUiMessage);
-    }
-
-    /// <summary>
-    /// Many PDA prototypes override the preinstalled program list, so the program is added here
-    /// instead of to each of those lists.
-    /// </summary>
-    private void OnPdaMapInit(Entity<PdaComponent> ent, ref MapInitEvent args)
-    {
-        if (!HasComp<CartridgeLoaderComponent>(ent) || _cartridgeLoader.HasProgram<LogiAppCartridgeComponent>(ent.Owner))
-            return;
-
-        // Spawned directly into the container like the prototype's preinstalled programs, so it doesn't take disk space checks into account.
-        TrySpawnInContainer(LogiAppCartridge, ent, CartridgeLoaderComponent.UnremovableContainerId, out _);
     }
 
     private void OnDeliverySpawned(Entity<DeliveryComponent> ent, ref DeliverySpawnedEvent args)

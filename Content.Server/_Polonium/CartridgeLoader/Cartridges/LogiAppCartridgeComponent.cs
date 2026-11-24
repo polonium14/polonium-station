@@ -14,7 +14,7 @@ public sealed partial class LogiAppCartridgeComponent : Component
     /// How often parcel statuses are checked while the program is open, so the list refreshes by itself.
     /// </summary>
     [DataField]
-    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
+    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(5);
 
     /// <summary>
     /// When parcel statuses are checked next.
