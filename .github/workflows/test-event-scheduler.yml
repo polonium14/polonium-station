@@ -1,0 +1,63 @@
+# Polonium: EventSchedulerTest is too slow and memory-hungry for every PR (see build-test-debug.yml),
+# so it runs here nightly and on demand.
+name: Event Scheduler Test
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
+  DOTNET_NOLOGO: 1
+  NUGET_XMLDOC_MODE: skip
+
+jobs:
+  event-scheduler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+    - name: Checkout Master
+      uses: actions/checkout@v7
+      with:
+        submodules: recursive
+
+    - name: Pull engine updates
+      uses: space-wizards/submodule-dependency@v0.1.5
+
+    - name: Update Engine Submodules
+      run: |
+        cd RobustToolbox/
+        git submodule update --init --recursive
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: 10.0.x
+        cache: true
+        cache-dependency-path: |
+          **/*.csproj
+          nuget.config
+          RobustToolbox/nuget.config
+
+    - name: Install dependencies
+      run: dotnet restore
+
+    - name: Build Project
+      run: dotnet build --configuration DebugOpt --no-restore /m
+
+    - name: Run EventSchedulerTest
+      shell: pwsh
+      run: |
+        $env:DOTNET_gcServer=1
+        $env:DOTNET_GCHeapHardLimit="0x380000000"
+        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed "NUnit.Where=class == Content.IntegrationTests.Tests.GameRules.EventSchedulerTest" NUnit.TestOutputXml="logs" NUnit.WorkDirectory="$(pwd)/test_results"
+
+    - name: Archive NUnit3 test results.
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: event-scheduler-results
+        path: test_results/*
+        retention-days: 7
