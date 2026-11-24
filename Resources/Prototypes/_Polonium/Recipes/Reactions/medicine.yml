@@ -1,0 +1,42 @@
+# Organ medicines.
+
+- type: reaction
+  id: PenteticAcid
+  reactants:
+    Ammonia:
+      amount: 3
+    Chlorine:
+      amount: 1
+    Carbon:
+      amount: 1
+    Sodium:
+      amount: 1
+  products:
+    PenteticAcid: 6
+
+- type: reaction
+  id: Salbutamol
+  reactants:
+    Sodium:
+      amount: 1
+    Phenol:
+      amount: 1
+    Carbon:
+      amount: 1
+    Oxygen:
+      amount: 1
+  products:
+    Salbutamol: 4
+
+- type: reaction
+  id: Perfluorodecalin
+  minTemp: 373.15
+  reactants:
+    Hydrogen:
+      amount: 1
+    Fluorine:
+      amount: 1
+    Phenol:
+      amount: 1
+  products:
+    Perfluorodecalin: 2

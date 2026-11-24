@@ -167,9 +167,10 @@
   - type: OrganIntegrity
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   name: wild goblin

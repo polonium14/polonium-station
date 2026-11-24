@@ -1,9 +1,6 @@
 using Content.Shared.DeviceLinking.Systems;
 using Content.Server.Medical.Components;
-using Content.Server.Medical.HealthAnalyzer;
-using Content.Shared._Shitmed.Body;
-using Content.Shared._Shitmed.Medical.HealthAnalyzer;
-using Content.Shared.Body;
+using Content.Server._Polonium.Medical.HealthAnalyzer;
 using Content.Shared.Buckle.Components;
 using Content.Shared.DeviceLinking;
 using Content.Shared.MedicalScanner;
@@ -19,16 +16,15 @@ namespace Content.Server.Medical;
 /// configurator, same as every other linkable machine) at an operating table or medical bed's
 /// <see cref="DeviceLinkSinkComponent"/>. On a periodic refresh while its BUI is open, this
 /// system resolves whoever is buckled to the linked bed and reuses
-/// <see cref="ServerHealthAnalyzerSystem.SendAnalyzerUiState"/> to drive the exact same doll+tabs
-/// Body/Organs/Chemicals window the handheld health analyzer uses (see
-/// <c>Content.Client.HealthAnalyzer.UI.HealthAnalyzerWindow</c>) - the console is just another
-/// entity opening the same UI key/BUI class, not a bespoke summary view.
+/// <see cref="PatientScanSystem.SendScan"/> to drive the same patient scan window the handheld
+/// health analyzer opens - the console is just another entity opening the same UI key/BUI class,
+/// not a bespoke summary view.
 /// </summary>
 public sealed partial class BodyScannerConsoleSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;
-    [Dependency] private ServerHealthAnalyzerSystem _healthAnalyzer = default!;
+    [Dependency] private PatientScanSystem _patientScan = default!;
     [Dependency] private DeviceLinkSystem _deviceLink = default!;
 
     public override void Initialize()
@@ -36,12 +32,6 @@ public sealed partial class BodyScannerConsoleSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<BodyScannerConsoleComponent, BoundUIOpenedEvent>(OnBoundUiOpened);
-
-        Subs.BuiEvents<BodyScannerConsoleComponent>(HealthAnalyzerUiKey.Key, subs =>
-        {
-            subs.Event<HealthAnalyzerModeSelectedMessage>(OnModeSelected);
-            subs.Event<HealthAnalyzerPartSelectedMessage>(OnPartSelected);
-        });
     }
 
     public override void Update(float frameTime)
@@ -68,36 +58,13 @@ public sealed partial class BodyScannerConsoleSystem : EntitySystem
         UpdateUi(ent);
     }
 
-    private void OnModeSelected(Entity<BodyScannerConsoleComponent> ent, ref HealthAnalyzerModeSelectedMessage args)
-    {
-        ent.Comp.CurrentMode = args.Mode;
-        ent.Comp.CurrentBodyPart = null; // switching mode resets any limb drilldown, matches the handheld scanner
-        UpdateUi(ent);
-    }
-
-    private void OnPartSelected(Entity<BodyScannerConsoleComponent> ent, ref HealthAnalyzerPartSelectedMessage args)
-    {
-        ent.Comp.CurrentMode = HealthAnalyzerMode.Body; // selecting a limb always jumps to the Body tab, matches the handheld scanner
-
-        EntityUid? part = null;
-        if (args.BodyPart is { } bodyPart
-            && GetPatient(ent) is { } patient
-            && LimbTargetMap.TryGetCategory(bodyPart, out var category)
-            && TryComp<BodyComponent>(patient, out var body)
-            && LimbTargetMap.TryGetOrganByCategory(EntityManager, body, category, out var organ))
-            part = organ;
-
-        ent.Comp.CurrentBodyPart = part;
-        UpdateUi(ent);
-    }
-
     private void UpdateUi(Entity<BodyScannerConsoleComponent> console)
     {
         if (!_ui.IsUiOpen(console.Owner, HealthAnalyzerUiKey.Key))
             return;
 
         var patient = GetPatient(console);
-        _healthAnalyzer.SendAnalyzerUiState(console.Owner, HealthAnalyzerUiKey.Key, patient, console.Comp.CurrentMode, ref console.Comp.CurrentBodyPart, patient != null);
+        _patientScan.SendScan(console.Owner, HealthAnalyzerUiKey.Key, patient, patient != null);
     }
 
     private EntityUid? GetPatient(Entity<BodyScannerConsoleComponent> console)

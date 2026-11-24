@@ -17,3 +17,8 @@
   license: "CC-BY-4.0"
   copyright: "Burp, Male, Short, A.wav by InspectorJ, converted to mono OGG, sped up by 20% and trimmed of silence"
   source: "https://freesound.org/people/InspectorJ/sounds/428137/"
+
+- files: ["cprpulse.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by mixing some Effects sounds together by Orsoniks (uses thudwoosh and weak_hit1). Taken from Funky Station (forky-station PR #325)"
+  source: "https://github.com/cmss13-devs/cmss13"

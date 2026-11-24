@@ -1,0 +1,123 @@
+# Surgeries for the paired lungs and kidneys, one per side, because a surgery targets one organ category.
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveLungLeft
+  categories: [ HideSpawnMenu ]
+  name: Remove left lung
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: LungLeft
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertLungLeft
+  categories: [ HideSpawnMenu ]
+  name: Insert left lung
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertLungs
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: LungLeft
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveKidneyLeft
+  categories: [ HideSpawnMenu ]
+  name: Remove left kidney
+  components:
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: KidneyLeft
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertKidneyLeft
+  categories: [ HideSpawnMenu ]
+  name: Insert left kidney
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepInsertKidney
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: KidneyLeft
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveLungRight
+  categories: [ HideSpawnMenu ]
+  name: Remove right lung
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: LungRight
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertLungRight
+  categories: [ HideSpawnMenu ]
+  name: Insert right lung
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertLungs
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: LungRight
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveKidneyRight
+  categories: [ HideSpawnMenu ]
+  name: Remove right kidney
+  components:
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: KidneyRight
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertKidneyRight
+  categories: [ HideSpawnMenu ]
+  name: Insert right kidney
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepInsertKidney
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    categories: [ Torso ]
+  - type: SurgeryOrganCondition
+    category: KidneyRight
+
+- type: entity
+  parent: SurgeryStepInsertOrgan
+  id: SurgeryStepInsertKidney
+  categories: [ HideSpawnMenu ]
+  name: Add kidney
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    state: kidney-l

@@ -10,6 +10,7 @@ namespace Content.Shared.Mobs.Systems;
 public sealed partial class MobStateActionsSystem : EntitySystem
 {
     [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private MobStateSystem _mobState = default!; // Polonium: soft crit
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -34,7 +35,7 @@ public sealed partial class MobStateActionsSystem : EntitySystem
     /// <summary>
     /// Adds or removes actions from a mob based on mobstate.
     /// </summary>
-    private void ComposeActions(EntityUid uid, MobStateActionsComponent component, MobState newMobState)
+    public void ComposeActions(EntityUid uid, MobStateActionsComponent component, MobState newMobState) // Polonium: public, soft crit recomposes on its threshold
     {
         if (!TryComp<ActionsComponent>(uid, out var action))
             return;
@@ -44,6 +45,10 @@ public sealed partial class MobStateActionsSystem : EntitySystem
             Del(act);
         }
         component.GrantedActions.Clear();
+
+        // Polonium: succumb and the other crit actions are for hard crit only
+        if (newMobState == MobState.Critical && _mobState.IsSoftCritical(uid))
+            return;
 
         if (!component.Actions.TryGetValue(newMobState, out var toGrant))
             return;

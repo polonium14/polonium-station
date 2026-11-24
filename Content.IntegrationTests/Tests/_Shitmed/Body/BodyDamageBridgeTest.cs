@@ -258,8 +258,10 @@ public sealed class BodyDamageBridgeTest : GameTest
         {
             var proto = sProtoMan.Index(BluntDamageType);
             // No origin at all - mirrors environmental damage sources that never carry a
-            // TargetingComponent-bearing attacker. Torso (Chest, weight 1.0) gets the full 20;
-            // Arm (weight 0.3) gets 6.
+            // TargetingComponent-bearing attacker. The split is normalized to sum to the real 20
+            // (weights 1.0 + 0.3 = 1.3): Arm (weight 0.3) gets 20*0.3/1.3 = 4.61, and the Torso
+            // (heaviest, the anchor) soaks the exact remainder 20 - 4.61 = 15.39. Organs sum back
+            // to the mob's own 20 - no phantom over-distribution to mask stranded damage.
             sDamageable.TryChangeDamage(victim, new DamageSpecifier(proto, FixedPoint2.New(20)));
         });
 
@@ -269,9 +271,11 @@ public sealed class BodyDamageBridgeTest : GameTest
         {
             Assert.Multiple(() =>
             {
-                Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.New(20)));
-                Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New(6)));
+                Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.New(15.39)));
+                Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New(4.61)));
                 Assert.That(sDamageable.GetTotalDamage(victim), Is.EqualTo(FixedPoint2.New(20)));
+                Assert.That(sDamageable.GetTotalDamage(torso) + sDamageable.GetTotalDamage(arm),
+                    Is.EqualTo(sDamageable.GetTotalDamage(victim)));
             });
         });
     }
@@ -310,9 +314,9 @@ public sealed class BodyDamageBridgeTest : GameTest
         await server.WaitPost(() =>
         {
             var proto = sProtoMan.Index(BluntDamageType);
-            // Both organs have integrityCap 30, so the Minor threshold scales to 0.3. Torso
-            // (weight 1.0) gets the full 0.1, Arm (weight 0.3) gets 0.03 - both still below
-            // that line.
+            // Both organs have integrityCap 30, so the Minor threshold scales to 0.3. Normalized
+            // split of 0.1 over weights 1.0 + 0.3: Arm gets 0.1*0.3/1.3 = 0.02, Torso (anchor)
+            // soaks the remainder 0.08 - both still below that line.
             sDamageable.TryChangeDamage(victim, new DamageSpecifier(proto, FixedPoint2.New(0.1)));
         });
 
@@ -322,8 +326,8 @@ public sealed class BodyDamageBridgeTest : GameTest
         {
             Assert.Multiple(() =>
             {
-                Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.New(0.1)));
-                Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New(0.03)));
+                Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.New(0.08)));
+                Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New(0.02)));
 
                 var torsoWoundable = sEntMan.GetComponent<WoundableComponent>(torso);
                 Assert.That(torsoWoundable.Wounds, Is.Not.Null);
@@ -515,8 +519,9 @@ public sealed class BodyDamageBridgeTest : GameTest
         await server.WaitPost(() =>
         {
             var proto = sProtoMan.Index(BluntDamageType);
-            // Untargeted damage first, weighted onto both organs - Torso (weight 1.0) gets 20,
-            // Arm (weight 0.3) gets 6, matching UntargetedDamageAppliesWeightedByPartType.
+            // Untargeted damage first, normalized onto both organs - Arm (weight 0.3) gets
+            // 20*0.3/1.3 = 4.61, Torso (anchor) soaks the remainder 15.39, matching
+            // UntargetedDamageAppliesWeightedByPartType.
             sDamageable.TryChangeDamage(victim, new DamageSpecifier(proto, FixedPoint2.New(20)));
         });
 
@@ -526,8 +531,8 @@ public sealed class BodyDamageBridgeTest : GameTest
         {
             Assert.Multiple(() =>
             {
-                Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.New(20)));
-                Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New(6)));
+                Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.New(15.39)));
+                Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New(4.61)));
                 Assert.That(sDamageable.GetTotalDamage(victim), Is.EqualTo(FixedPoint2.New(20)));
             });
         });
@@ -547,12 +552,70 @@ public sealed class BodyDamageBridgeTest : GameTest
         {
             Assert.Multiple(() =>
             {
-                Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.New(10)),
-                    "Torso (weight 1.0) should have healed by the full 10 - it should NOT still show its pre-heal damage while the mob reads a lower total.");
-                Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New(3)),
-                    "Arm (weight 0.3) should have healed by 3, same weighting the deal side already uses.");
+                Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.New(7.69)),
+                    "Torso (anchor) should have healed by the remainder 7.70 - it should NOT still show its pre-heal damage while the mob reads a lower total.");
+                Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New(2.31)),
+                    "Arm (weight 0.3) should have healed by 2.30, same normalized weighting the deal side uses.");
                 Assert.That(sDamageable.GetTotalDamage(victim), Is.EqualTo(FixedPoint2.New(10)),
                     "The mob's own pool should reflect the full nominal heal, same as before this fix - the bug was organs never seeing any of it, not the mob's own number being wrong.");
+                Assert.That(sDamageable.GetTotalDamage(torso) + sDamageable.GetTotalDamage(arm),
+                    Is.EqualTo(sDamageable.GetTotalDamage(victim)));
+            });
+        });
+    }
+
+    [Test]
+    public async Task OriginDamageToAMissingLimbRedirectsToTheTorsoInsteadOfStranding()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var sEntMan = server.ResolveDependency<IEntityManager>();
+
+        var map = await pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+
+        EntityUid attacker = default;
+        EntityUid victim = default;
+        EntityUid torso = default;
+
+        await server.WaitPost(() =>
+        {
+            attacker = sEntMan.SpawnEntity("BridgeTestAttacker", coords);
+            victim = sEntMan.SpawnEntity("BridgeTestVictim", coords);
+            // Only a torso - the arm the attacker aims at is absent (dismembered).
+            torso = sEntMan.SpawnEntity("BridgeTestTorsoOrgan", coords);
+
+            var container = sEntMan.System<SharedContainerSystem>();
+            var organsContainer = container.GetContainer(victim, BodyComponent.ContainerID);
+            container.Insert(torso, organsContainer);
+
+            // Aim at the left arm, which has no organ present.
+            sEntMan.GetComponent<TargetingComponent>(attacker).Target = TargetBodyPart.LeftArm;
+        });
+
+        await pair.RunTicksSync(5);
+
+        var sDamageable = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<DamageableSystem>();
+        var sProtoMan = server.ResolveDependency<IPrototypeManager>();
+
+        await server.WaitPost(() =>
+        {
+            var proto = sProtoMan.Index(BluntDamageType);
+            sDamageable.TryChangeDamage(victim, new DamageSpecifier(proto, FixedPoint2.New(10)), origin: attacker);
+        });
+
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                // The full hit walked ArmLeft -> Torso and landed on the torso organ rather than
+                // stranding on the mob's aggregate pool with no organ to heal it off.
+                Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.New(10)));
+                Assert.That(sDamageable.GetTotalDamage(victim), Is.EqualTo(FixedPoint2.New(10)));
+                Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(sDamageable.GetTotalDamage(victim)),
+                    "No organless remainder: every point on the mob is accounted for on an organ.");
             });
         });
     }

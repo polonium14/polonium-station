@@ -19,7 +19,9 @@ W tym przewodniku znajdziesz podstawowe informacje na temat dostępnych metod le
 ## Podstawy
 Istnieją dwa sposoby ustalenia, co dolega danej osobie: wykonanie skanu (za pomocą analizatora zdrowia lub medycznego PDA) lub zbadanie pacjenta poprzez naciśnięcie klawisza Shift i kliknięcie symbolu serca.
 
-Korzystanie z analizatora zdrowia jest często skuteczniejsze niż badanie fizykalne, ponieważ niektóre schorzenia (takie jak zatrucie lub napromieniowanie) nie są wykrywane podczas badania. Jednak używanie analizatora ma swoje wady, ponieważ generuje hałas i zużywa baterię.<Box>
+Korzystanie z analizatora zdrowia jest często skuteczniejsze niż badanie fizykalne, ponieważ niektóre schorzenia (takie jak zatrucie lub napromieniowanie) nie są wykrywane podczas badania. Jednak używanie analizatora ma swoje wady, ponieważ generuje hałas i zużywa baterię.
+
+Analizator pokazuje wszystko na jednym ekranie. Po zeskanowaniu możesz go schować do kieszeni, slotu PDA albo pasa, a okno dalej pokazuje pacjenta; to samo dotyczy PDA z katridżem MedTek. Plecak, upuszczenie albo oddanie komuś przerywa skan. Na górze są SpO2, krew i temperatura z paskami: kreska na pasku SpO2 to 88%, poniżej której pacjent jest niedotleniony, a kreska na pasku krwi to poziom, od którego niedobór krwi zaczyna szkodzić organizmowi. Strzałka obok wartości mówi, czy rośnie, czy spada. Ramka [color=#e8c878]Wymaga interwencji[/color] zbiera to, czym trzeba się zająć (także urazy kończyn i złamania), najgroźniejsze na górze, i znika, gdy nic pacjentowi nie grozi. Niżej są kukła z urazami kończyn, obok niej opis każdej rannej kończyny (krwawienie, złamanie, opaska uciskowa, niedokończona operacja), i narządy, każdy z paskiem integralności, stanem i dopiskiem „niewydolność”, gdy narząd zawodzi. Na dole są obrażenia z pomarańczową kreską stanu krytycznego (nad nią wykrzyknik) i czerwoną kreską śmierci (nad nią czaszka), pod paskiem suma obrażeń, a niżej substancje we krwi, jeśli jakieś są. Kliknięcie kończyny na kukle pokazuje obrażenia tylko tej kończyny, na tle jej limitu. Najedź na wiersz, żeby zobaczyć szczegóły i wskazówkę leczenia. Przez medyczny HUD nad pacjentem z niedokończoną operacją widać ikonę kleszczyków chirurgicznych, a analizator pokazuje ją w ramce jako „niedokończona operacja”.<Box>
 <GuideEntityEmbed Entity="SignExamroom" Caption="zbadaj pacjenta"/>
 <GuideEntityEmbed Entity="MedicalPDA"/>
 <GuideEntityEmbed Entity="MedicalInternPDA"/>
@@ -71,6 +73,84 @@ Jeśli to możliwe, przypnij pacjenta do łóżka medycznego; jeśli potrzebujes
 <GuideEntityEmbed Entity="StasisBed"/>
 </Box>
 Łóżko medyczne ma gniazdo na zbiornik gazu. Włóż do niego butlę z tlenem (albo z innym gazem, np. podtlenkiem azotu), przypnij pacjenta i wybierz „Włącz układ oddechowy”. Łóżko założy pacjentowi własną maskę i podłączy butlę. Jeśli pacjent ma już maskę do oddychania, łóżko użyje jej, a cudzą maskę, której nie da się podłączyć do gazu, trzeba najpierw zdjąć. Po wyłączeniu układu albo odpięciu pacjenta maska wraca do łóżka. Pamiętaj, że gaz z butli trzeba dobrać do gatunku pacjenta, np. Vox oddycha azotem.
+## Stan narządu
+
+Narząd jest w jednym z trzech stanów, które pokazuje analizator zdrowia:
+
+- [color=#e8c878]W normie[/color]: narząd ma co najmniej 35% integralności i działa w pełni.
+- [color=#e8c878]Uszkodzenie[/color]: narząd ma mniej niż 35% integralności. Wyleczysz go lekami na narządy, operacją naprawy narządu (raz na narząd, do 60%) albo wymienisz przeszczepem.
+- [color=#e8c878]Martwica[/color]: integralność spadła do zera i narząd jest martwy. Jeśli narządu nie ma wcale, analizator pokazuje „brak”.
+
+Martwy narząd zostaje w ciele, ale nie pełni żadnej funkcji i nie da się go naprawić. Trzeba go wyciąć operacją usunięcia narządu i wszczepić w jego miejsce nowy. Martwy narząd wszczepiony innej osobie nadal jest martwy.
+
+<Box>
+<GuideEntityEmbed Entity="OrganDeadHeart" Caption="martwe serce"/>
+<GuideEntityEmbed Entity="OrganDeadLungLeft" Caption="martwe lewe płuco"/>
+<GuideEntityEmbed Entity="OrganDeadLiver" Caption="martwa wątroba"/>
+</Box>
+
+Mózgu nie da się zniszczyć obrażeniami.
+
+Płuca i nerki są parą: lewe i prawe płuco oraz lewa i prawa nerka to osobne narządy, każdy z własną operacją usunięcia i wszczepienia. Z jednym działającym płucem pacjent oddycha, ale ma mniejszy zapas tlenu i szybciej zaczyna się dusić. Bez obu płuc się dusi.
+
+<Box>
+<GuideEntityEmbed Entity="OrganHumanLungLeft" Caption="lewe płuco"/>
+<GuideEntityEmbed Entity="OrganHumanLungRight" Caption="prawe płuco"/>
+<GuideEntityEmbed Entity="OrganHumanKidneyLeft" Caption="lewa nerka"/>
+<GuideEntityEmbed Entity="OrganHumanKidneyRight" Caption="prawa nerka"/>
+</Box>
+
+Śledziona dba o to, żeby krew sama się uzupełniała. Bez działającej śledziony krew przestaje się odnawiać, a pacjent powoli ją traci: człowiek spada poniżej bezpiecznego poziomu po około 3 minutach. Do czasu przeszczepu krew uzupełnisz kroplówką, solą fizjologiczną albo żelazem.
+
+<Box>
+<GuideEntityEmbed Entity="OrganSpleen" Caption="śledziona"/>
+</Box>
+
+## Co niszczy narządy
+
+Narządy zużywają się nie tylko od ran. Uszkodzenia zbierają się powoli i same nie znikają, więc pacjent może przyjść z chorym narządem bez żadnego urazu:
+
+- [color=#e8c878]Wątroba[/color]: trucizny i dużo alkoholu naraz. Jedno piwo nie szkodzi, butelka wódki tak.
+- [color=#e8c878]Nerki[/color]: trucizny i długie pragnienie.
+- [color=#e8c878]Płuca[/color]: papierosy i cygara (cygaro szkodzi dwa razy bardziej niż papieros), wdychanie plazmy albo trytium i gorące powietrze, na przykład przy pożarze. Maska z butlą chroni przed gazem i żarem.
+- [color=#e8c878]Serce[/color]: porażenie prądem oraz przedawkowanie efedryny, dezoksyefedryny albo hiperzyny. Epinefryna w zwykłej dawce leczy serce.
+- [color=#e8c878]Śledziona[/color]: promieniowanie.
+
+Pancerz zmniejsza szansę, że cios uszkodzi narząd, złamie kość albo odetnie kończynę, ale tylko przy tych obrażeniach, przed którymi sam chroni. Nawet ciężki pancerz nie daje pełnej ochrony.
+
+## Zmysły
+
+Uszkodzone oczy, język i uszy słabną stopniowo, a uszkodzony mózg osłabia je wszystkie naraz. Po lobotomii mózg działa najwyżej w 20%, nawet zdrowy: pacjent widzi mocno rozmyty obraz, słabo słyszy i silnie sepleni. Cofa to operacja „Napraw tkankę mózgową”.
+
+- [color=#e8c878]Oczy[/color]: poniżej 35% sprawności obraz coraz bardziej się rozmywa. Martwe albo wycięte oczy nie widzą.
+- [color=#e8c878]Język[/color]: od pierwszego uszkodzenia pacjent sepleni („cy słysys?” zamiast „czy słyszysz?”), tym częściej, im gorzej z językiem. Martwy albo wycięty język nie mówi.
+- [color=#e8c878]Uszy[/color]: poniżej 35% sprawności pacjent gubi litery tego, co słyszy. Z martwymi albo wyciętymi uszami jest głuchy: z bliska rozumie tylko część słów, a z zestawu słuchawkowego połowę.
+
+## Niewydolność narządów
+
+Uszkodzone serce, płuca, wątroba albo nerki mogą popaść w niewydolność. Choroba narasta w trzech stadiach, co kilka minut, i sama dalej niszczy narząd. Analizator pokazuje ją przy narządzie razem ze stadium. Im dalej zaszła, tym trudniej ją cofnąć: stadium 1 mija, gdy narząd wróci do co najmniej 35% integralności, stadium 2 dopiero od 60%, a stadium 3 leki już nie cofną. Wtedy pomaga tylko operacja naprawy narządu (raz na narząd) albo przeszczep. Wejście w stadium 3 zostawia też bliznę: narząd na stałe traci ćwierć integralności, aż do wymiany. Dopóki leki trzymają chory narząd w dobrym stanie, nie szkodzi on reszcie organizmu, ale dalej sam się niszczy, więc leczenie tylko kupuje czas.
+
+- [color=#e8c878]Stadium 1[/color]: pacjent blednie, drży, skarży się na ból brzucha albo żeber.
+- [color=#e8c878]Stadium 2[/color]: jęki, silny ból, krótkie omdlenia.
+- [color=#e8c878]Stadium 3[/color]: wątroba i nerki trują, płuca przestają dostarczać tlen.
+
+Chore serce pompuje mniej krwi, więc do ciała dociera mniej tlenu, a w stadium 3 pacjent traci przytomność. Analizator pokazuje SpO2, czyli nasycenie krwi tlenem. U zdrowej osoby wynosi 95–99%.
+
+Odczyt poniżej 97% daje się usłyszeć: pacjent co jakiś czas kaszle, a poniżej 92% łapie powietrze. Tak wygląda ktoś bez jednego płuca albo zaraz po papierosie, bo palenie na pół minuty obniża odczyt o kilka punktów.
+Deksalina i deksalina plus przenoszą tlen we krwi: dopóki działają, saturacja nie spada nawet u pacjenta, który nie oddycha.
+
+<Box>
+<GuideEntityEmbed Entity="DialysisMachine"/>
+</Box>
+
+[color=#e8c878]Maszyna do dializy[/color] przejmuje pracę nerek. Przeciągnij ją na pacjenta, żeby podłączyć kaniule; odciągnięcie maszyny dalej niż na dwie kratki wyrywa je z ręki. Co sekundę usuwa z krwi około 2 jednostek wszystkiego poza lekami, więc pomaga też przy zatruciu i przedawkowaniu narkotyków, a leki można podawać w trakcie. Pacjent na dializie nie dostaje trucizny od chorych ani martwych nerek, a od wątroby trzy razy mniej. Obrażeń od trucizny, które pacjent już ma, dializa nie leczy. Zestaw do montażu maszyny drukuje drukarka płytek po zbadaniu stazy biochemicznej.
+
+Nerki ustalają tempo działania leków, trucizn, jedzenia i picia. Gdy choć jedna nerka jest chora, martwa albo usunięta, wszystko to działa o jedną czwartą wolniej, a bez żadnej działającej nerki o połowę wolniej, ale w sumie tak samo mocno. Martwa albo usunięta wątroba truje pacjenta, nerki dopiero wtedy, gdy nie działa żadna z nich. Każde zatrucie uszkadza też nerki i wątrobę.
+
+Uszkodzone narządy leczą leki: omnizyna (wszystkie narządy), krioksadon (wszystkie poza mózgiem, tylko w wychłodzonym ciele), kwas pentetowy (nerki, wątroba, żołądek), perfluorodekalina i salbutamol (płuca), okulina (oczy), mannitol (mózg), a powoli także jodek potasu, sól fizjologiczna i zwykła woda (nerki). Narządu, którego żaden lek nie leczy, albo martwego trzeba wymienić przeszczepem. Przedawkowanie kwasu pentetowego, salbutamolu albo perfluorodekaliny samo uszkadza narządy. Kwas pentetowy usuwa też promieniowanie, ale wypłukuje z krwi wszystkie inne leki i lekko rani tkanki, więc nie podawaj go razem z innymi lekami. Salbutamol i perfluorodekalina leczą też śledzionę. Od 4 jednostek perfluorodekaliny pacjent oddycha płynem: nie bierze powietrza z otoczenia, a tlen dostarcza sam lek, więc przeżyje w próżni albo w trującym powietrzu, dopóki lek działa.
+
+Bez działającego serca krążenie staje. Tlen przestaje docierać do ciała, więc pacjent po kilkunastu sekundach traci przytomność i dusi się, nawet w masce oddechowej. Ratunkiem jest wszczepienie działającego serca. Defibrylator nie ożywi ciała bez działającego serca. Bez mózgu ciało umiera od razu, także po odcięciu głowy albo wycięciu mózgu w czasie operacji. Po przywróceniu głowy albo mózgu pacjent dalej jest martwy i trzeba go ożywić defibrylatorem.
+
 ## Ocena zwłok
 Nie da się uratować wszystkich – czasami śmierć jest nieunikniona. W zależności od [color=#e8c878]stanu[/color] zwłok można podjąć kilka działań.
 
@@ -87,5 +167,12 @@ Pacjenta z obrażeniami poniżej 200 (nie licząc niedotlenienia) na torsie oraz
 <GuideEntityEmbed Entity="Defibrillator"/>
 <GuideEntityEmbed Entity="Ointment"/>
 </Box>
+
+## RKO
+Pacjenta nieprzytomnego, w stanie krytycznym albo martwego możesz reanimować uciskaniem klatki piersiowej: wybierz [color=#e8c878]RKO[/color] z menu pod prawym przyciskiem myszy. Ty i pacjent musicie mieć odsłonięte usta, więc zdejmij maski i hełmy. Uciskasz dwa razy na sekundę, dopóki nie ruszysz się z miejsca.
+
+Dopóki uciskasz, a serce pacjenta jest w ciele (nawet martwe albo chore), krew krąży: pacjent nie traci tlenu i odzyskuje trochę oddechu, pacjent w stanie krytycznym znów oddycha powietrzem z otoczenia, a martwe ciało nie gnije. Serce w ostatnim stadium niewydolności może przy tym wrócić do stadium 2, częściej z epinefryną we krwi. RKO nikogo nie ożywia, do tego służy defibrylator. Bez serca uciskanie nic nie daje, potrzebny jest przeszczep.
+
+Każde uciśnięcie może złamać pacjentowi żebra. Złamane żebra leczy operacja „Napraw kości”. Długie RKO męczy ratownika.
 
 </Document>

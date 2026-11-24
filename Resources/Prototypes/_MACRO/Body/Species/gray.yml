@@ -131,11 +131,14 @@
       Tongue: OrganGrayTongue
       Appendix: OrganGrayAppendix
       Ears: OrganGrayEars
-      Lungs: OrganGrayLungs
+      LungLeft: OrganGrayLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganGrayLungRight
       Heart: OrganGrayHeart
       Stomach: OrganGrayStomach
       Liver: OrganGrayLiver
-      Kidneys: OrganGrayKidneys
+      KidneyLeft: OrganGrayKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganGrayKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Gray
 
@@ -376,6 +379,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganGrayInternal, OrganHumanMetabolizer, BaseHandheldInstrument ]
   id: OrganGrayLungs
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
   name: cupod
   description: "Eugh..."
   components:
@@ -407,6 +411,7 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganGrayInternal, OrganGrayMetabolizer ]
   id: OrganGrayKidneys
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
   name: cube
   description: "A small, hard cube of an unidentifiable metal. It's warm to the touch, and pulsates faintly."
   components:

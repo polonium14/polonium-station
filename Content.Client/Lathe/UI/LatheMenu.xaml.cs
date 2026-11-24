@@ -207,6 +207,7 @@ public sealed partial class LatheMenu : FancyWindow
                     continue;
                 }
 
+                child.SetRecipe(recipe.Proto, recipe.Name); // Polonium: the name changes with the category suffix even for the same recipe
                 child.SetTooltipSupplier(tooltipFunction);
                 child.SetCanProduce(canProduce);
                 if (recipe.Proto.ID != child.RecipeId)

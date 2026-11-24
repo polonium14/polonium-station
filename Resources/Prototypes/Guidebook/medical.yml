@@ -27,7 +27,7 @@
   - Cloning
   - Cryogenics
   - Medicalpatches
-  # - Surgery # Shitmed Change
+  - Surgery # Polonium: surgery pages, see _Polonium/Guidebook/surgery.yml
 
 - type: guideEntry
   id: MedicalDoctor

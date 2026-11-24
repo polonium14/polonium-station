@@ -180,6 +180,8 @@ public partial class MobStateSystem
         {
             case MobState.Dead:
             case MobState.Critical:
+                if (SoftCritAllows(target, component, args)) // Polonium: soft crit crawls and whispers
+                    break;
                 args.Cancel();
                 break;
         }

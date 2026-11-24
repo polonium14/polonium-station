@@ -18,3 +18,173 @@
           Toxin: -0.075
           Airloss: -0.075
           Brute: -0.075
+- type: reagent
+  id: PenteticAcid
+  name: reagent-name-pentetic-acid
+  group: Medicine
+  desc: reagent-desc-pentetic-acid
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#b2ffd1"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -1
+            Radiation: -1
+      - !type:HealOrgans
+        categories: [ Kidneys, Liver, Stomach ]
+        amount: 1.5
+      # Aggressive chelation: it flushes every other chemical out of the blood and bruises the tissue.
+      - !type:CleanBloodstream
+        cleanseRate: 3
+        excluded: PenteticAcid
+      - !type:HealthChange
+        probability: 0.33
+        ignoreResistances: true
+        damage:
+          types:
+            Blunt: 1
+            Heat: 1
+      - !type:DamageOrgans
+        conditions:
+        - !type:ReagentCondition
+          reagent: PenteticAcid
+          min: 15
+        categories: [ Kidneys ]
+        amount: 3
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: PenteticAcid
+          min: 15
+        probability: 0.02
+
+- type: reagent
+  id: Salbutamol
+  name: reagent-name-salbutamol
+  group: Medicine
+  desc: reagent-desc-salbutamol
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#00e5e5"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -1
+      - !type:HealOrgans
+        categories: [ Lungs, Spleen ]
+        amount: 0.5
+      - !type:DamageOrgans
+        conditions:
+        - !type:ReagentCondition
+          reagent: Salbutamol
+          min: 30
+        categories: [ Kidneys ]
+        amount: 1
+      - !type:Jitter
+        conditions:
+        - !type:ReagentCondition
+          reagent: Salbutamol
+          min: 30
+
+- type: reagent
+  id: Perfluorodecalin
+  name: reagent-name-perfluorodecalin
+  group: Medicine
+  desc: reagent-desc-perfluorodecalin
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: medicine
+  color: "#ff6464"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -3
+      - !type:EvenHealthChange
+        probability: 0.33
+        damage:
+          Brute: -1
+          Burn: -1
+      - !type:HealOrgans
+        categories: [ Lungs, Spleen ]
+        amount: 1
+      # Liquid breathing: from 4u the body stops taking in air and the reagent oxygenates the blood.
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: Perfluorodecalin
+          min: 4
+        effectProto: StatusEffectLiquidBreathing
+        time: 2
+        type: Update
+      - !type:Oxygenate
+        conditions:
+        - !type:ReagentCondition
+          reagent: Perfluorodecalin
+          min: 4
+        factor: 2
+      - !type:DamageOrgans
+        conditions:
+        - !type:ReagentCondition
+          reagent: Perfluorodecalin
+          min: 20
+        categories: [ Lungs ]
+        amount: 2
+      - !type:Emote
+        conditions:
+        - !type:ReagentCondition
+          reagent: Perfluorodecalin
+          min: 20
+        emote: Cough
+        probability: 0.08
+
+# Morphine: a painkiller for surgery that makes the patient drowsy and puts them to sleep in larger doses.
+- type: reagent
+  id: Morphine
+  name: reagent-name-morphine
+  group: Medicine
+  desc: reagent-desc-morphine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: bitter
+  color: "#a9fbfb"
+  metabolisms:
+    Bloodstream:
+      metabolismRate: 0.25
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectAnalgesia
+        time: 4
+        type: Update
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: Morphine
+          min: 10
+        effectProto: StatusEffectDrowsiness
+        time: 4
+        type: Update
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: Morphine
+          min: 20
+        effectProto: StatusEffectForcedSleeping
+        time: 4
+        type: Update
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Morphine
+          min: 30
+        damage:
+          types:
+            Poison: 1
+            Asphyxiation: 1

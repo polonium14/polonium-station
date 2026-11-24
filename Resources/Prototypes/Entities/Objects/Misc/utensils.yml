@@ -36,6 +36,11 @@
   name: fork
   description: An eating utensil, perfect for stabbing.
   components:
+  # Polonium: improvised surgery tool, slow and likely to botch the step
+  - type: SurgeryTool
+  - type: Retractor
+    speed: 0.35
+  # Polonium end
   - type: Tag
     tags:
     - Dinnerware

@@ -263,6 +263,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             message = message[1..];
         }
 
+        ApplySoftCritSpeech(source, ignoreActionBlocker, ref desiredType); // Polonium: soft crit only whispers
+
         bool shouldCapitalize = (desiredType != InGameICChatType.Emote);
         bool shouldPunctuate = _configurationManager.GetCVar(CCVars.ChatPunctuation);
         // Capitalizing the word I only happens in English, so we check language here
@@ -286,6 +288,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         {
             if (TryProcessRadioMessage(source, message, out var modMessage, out var channel))
             {
+                channel = SoftCritRadioChannel(source, ignoreActionBlocker, channel); // Polonium: no radio in soft crit
                 SendEntityWhisper(source, modMessage, range, channel, nameOverride, hideLog, ignoreActionBlocker);
                 return;
             }

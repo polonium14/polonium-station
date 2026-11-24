@@ -158,11 +158,14 @@
       Tongue: OrganMothTongue
       Appendix: OrganMothAppendix
       Ears: OrganMothEars
-      Lungs: OrganApidLungs
+      LungLeft: OrganApidLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganApidLungRight
       Heart: OrganHumanHeart
       Stomach: OrganHumanStomach
       Liver: OrganHumanLiver
-      Kidneys: OrganHumanKidneys
+      KidneyLeft: OrganHumanKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganHumanKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Apid
 
@@ -196,6 +199,8 @@
       0: Alive
       60: Critical
       125: Dead
+  - type: SoftCrit # Polonium: no soft crit, the human threshold does not fit these thresholds
+    hardCritThreshold: 60
   - type: Temperature
     temperature: 310.15
     specificHeat: 46
@@ -440,3 +445,4 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganApidInternal, OrganApidMetabolizer ]
   id: OrganApidLungs
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml

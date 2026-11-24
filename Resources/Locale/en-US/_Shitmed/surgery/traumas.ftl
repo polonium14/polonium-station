@@ -1,6 +1,3 @@
-self-inspect-trauma-BoneDamage = hurts inside
-inspect-trauma-BoneDamage = looks dislocated
-
 popup-trauma-BoneDamage-Normal = Your { $part } feels fine again.
 popup-trauma-BoneDamage-Damaged = Your { $part } aches painfully.
 popup-trauma-BoneDamage-Cracked = Your { $part } cracks ominously!

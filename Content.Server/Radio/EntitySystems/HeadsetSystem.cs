@@ -110,6 +110,6 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
         }
 
         if (TryComp(parent, out ActorComponent? actor))
-            _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
+            _netMan.ServerSendMessage(Content.Server._Polonium.Body.HearingSystem.Hear(EntityManager, parent, args.ChatMsg), actor.PlayerSession.Channel); // Polonium: hearing
     }
 }

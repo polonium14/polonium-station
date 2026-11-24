@@ -4,6 +4,11 @@
   id: ShardBase
   description: It's a shard of some unknown material.
   components:
+  # Polonium: improvised surgery tool, slow and likely to botch the step
+  - type: SurgeryTool
+  - type: Scalpel
+    speed: 0.44
+  # Polonium end
   - type: Appearance
   - type: Extractable
     grindableSolutionName: composite

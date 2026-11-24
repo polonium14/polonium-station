@@ -59,11 +59,14 @@
       Tongue: OrganArachnidTongue
       Appendix: OrganArachnidAppendix
       Ears: OrganArachnidEars
-      Lungs: OrganArachnidLungs
+      LungLeft: OrganArachnidLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganArachnidLungRight
       Heart: OrganArachnidHeart
       Stomach: OrganArachnidStomach
       Liver: OrganArachnidLiver
-      Kidneys: OrganArachnidKidneys
+      KidneyLeft: OrganArachnidKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganArachnidKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Arachnid
 
@@ -315,23 +318,25 @@
   parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganArachnidInternal ]
   id: OrganArachnidBrain
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    integrityFloor: 6
 
 - type: entity
   parent: [ OrganArachnidVisual, OrganBaseEyes, OrganArachnidInternal ]
   id: OrganArachnidEyes
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 8
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEyes
   - type: Appearance
   - type: EyeBlinking
     eyelidsSprite: /Textures/Mobs/Species/Arachnid/parts.rsi
@@ -340,86 +345,96 @@
   parent: [ OrganBaseTongue, OrganArachnidInternal ]
   id: OrganArachnidTongue
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 56
     integrityThresholds:
-      Normal: 56
-      Damaged: 16
+      Normal: 19.6
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadTongue
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganArachnidInternal ]
   id: OrganArachnidAppendix
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadAppendix
 
 - type: entity
   parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganArachnidInternal ]
   id: OrganArachnidEars
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEars
 
 - type: entity
   parent: [ OrganBaseLungs, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidLungs
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 56
     integrityThresholds:
-      Normal: 56
-      Damaged: 16
+      Normal: 19.6
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidHeart
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadHeart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidStomach
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 88
     integrityThresholds:
-      Normal: 88
-      Damaged: 21
+      Normal: 30.8
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadStomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidLiver
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 56
     integrityThresholds:
-      Normal: 56
-      Damaged: 16
+      Normal: 19.6
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLiver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidKidneys
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadKidneys

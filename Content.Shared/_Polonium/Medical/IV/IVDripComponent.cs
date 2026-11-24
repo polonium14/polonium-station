@@ -15,8 +15,12 @@ public sealed partial class IVDripComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? AttachedTo;
 
+    /// <summary>
+    /// Item slot holding the IV bag. Null for a machine that needs no bag, like dialysis.
+    /// </summary>
+
     [DataField, AutoNetworkedField]
-    public string Slot = "pack";
+    public string? Slot = "pack";
 
     [DataField, AutoNetworkedField]
     public FixedPoint2 TransferAmount = FixedPoint2.New(5);

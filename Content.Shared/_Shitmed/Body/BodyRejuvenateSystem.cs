@@ -22,6 +22,7 @@ public sealed partial class BodyRejuvenateSystem : EntitySystem
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedSurgerySystem _surgery = default!;
+    [Dependency] private OrganRelationSystem _organRelation = default!;
 
     public override void Initialize()
     {
@@ -84,11 +85,12 @@ public sealed partial class BodyRejuvenateSystem : EntitySystem
         if (component.Organs is null || !TryComp<InitialBodyComponent>(uid, out var initialBody))
             return;
 
-        var present = new HashSet<string>();
+        var present = new Dictionary<string, EntityUid>();
+        var respawned = new HashSet<string>();
         foreach (var organ in component.Organs.ContainedEntities)
         {
             if (TryComp<OrganComponent>(organ, out var organComp) && organComp.Category is { } category)
-                present.Add(category);
+                present[category] = organ;
         }
 
         var coords = new EntityCoordinates(uid, Vector2.Zero);
@@ -96,12 +98,33 @@ public sealed partial class BodyRejuvenateSystem : EntitySystem
 
         foreach (var (category, proto) in initialBody.Organs)
         {
-            if (present.Contains(category))
+            if (present.ContainsKey(category))
                 continue;
 
             var spawn = Spawn(proto, coords);
             if (!_container.Insert(spawn, component.Organs, containerXform: xform))
+            {
                 Del(spawn);
+                continue;
+            }
+
+            present[category] = spawn;
+            respawned.Add(category);
+        }
+
+        if (initialBody.Relationships is null)
+            return;
+
+        foreach (var (parentCategory, children) in initialBody.Relationships)
+        {
+            if (!present.TryGetValue(parentCategory, out var parent))
+                continue;
+
+            foreach (var childCategory in children)
+            {
+                if (respawned.Contains(childCategory))
+                    _organRelation.Relate(parent, present[childCategory]);
+            }
         }
     }
 }

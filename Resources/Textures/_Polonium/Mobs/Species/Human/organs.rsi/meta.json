@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from Goonstation at commit https://github.com/goonstation/goonstation/commit/3f15a3c702c9161c0c6aa1c596c7e9bdec136eb3, icons/obj/items/organs/. heart-off is the same sprite as heart-on; eyeball-l and eyeball-r are the single eye sprite moved 5 pixels to the left and to the right.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "heart-on"
+    },
+    {
+      "name": "heart-off"
+    },
+    {
+      "name": "lung-l"
+    },
+    {
+      "name": "lung-r"
+    },
+    {
+      "name": "liver"
+    },
+    {
+      "name": "kidney-l"
+    },
+    {
+      "name": "kidney-r"
+    },
+    {
+      "name": "stomach"
+    },
+    {
+      "name": "appendix"
+    },
+    {
+      "name": "brain"
+    },
+    {
+      "name": "eyeball-l"
+    },
+    {
+      "name": "eyeball-r"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Nicotine in the blood: the oxygen saturation reads a little lower for a while after smoking.
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectSmokerBreath
+  name: smoker's breath
+  components:
+  - type: SmokerBreathStatusEffect

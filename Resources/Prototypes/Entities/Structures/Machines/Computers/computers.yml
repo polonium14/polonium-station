@@ -745,7 +745,7 @@
   - type: UserInterface
     interfaces:
       enum.HealthAnalyzerUiKey.Key:
-        type: HealthAnalyzerBoundUserInterface
+        type: PatientScanBoundUserInterface # Polonium: our one-view analyzer
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
 

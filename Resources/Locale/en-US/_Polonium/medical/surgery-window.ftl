@@ -1,0 +1,9 @@
+surgery-group-access = Opening and closing
+surgery-group-wounds = Wounds
+surgery-group-organs = Organs
+surgery-group-limbs = Limbs
+surgery-group-other = Other
+surgery-window-pick-surgery = Pick a surgery
+surgery-window-requires = requires: { $surgery }
+surgery-window-open-incision = open incision
+surgery-window-first = First: { $surgery }

@@ -1,4 +1,6 @@
 using Content.Shared._Polonium.DeathBlackout;
+using Content.Shared._Polonium.Mobs;
+using Content.Shared.FixedPoint;
 using Content.Shared.CCVar;
 using Content.Shared.DamageOverlay;
 using Content.Shared.Mobs;
@@ -27,11 +29,13 @@ public sealed partial class DeathBlackoutSystem : EntitySystem
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IUserInterfaceManager _ui = default!;
     [Dependency] private MobThresholdSystem _thresholds = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
 
     [Dependency] private EntityQuery<DeathBlackoutComponent> _blackoutQuery = default!;
     [Dependency] private EntityQuery<DamageOverlayComponent> _overlayQuery = default!;
     [Dependency] private EntityQuery<MobStateComponent> _mobStateQuery = default!;
     [Dependency] private EntityQuery<MobThresholdsComponent> _thresholdsQuery = default!;
+    [Dependency] private EntityQuery<SoftCritComponent> _softCritQuery = default!;
 
     // how fast the crit fade catches up with the damage value
     private const float FadeCatchUp = 4f;
@@ -113,22 +117,26 @@ public sealed partial class DeathBlackoutSystem : EntitySystem
             !_overlayQuery.TryComp(player, out var overlay))
             return 0f;
 
-        if (mobState.CurrentState != MobState.Critical)
+        // soft crit is awake, so the fade only runs from hard crit on
+        if (mobState.CurrentState != MobState.Critical || _mobState.IsSoftCritical(player, mobState))
             return 0f;
 
-        if (!_thresholds.TryGetThresholdForState(player, MobState.Critical, out var start, thresholds) ||
+        if (!_thresholds.TryGetThresholdForState(player, MobState.Critical, out var critStart, thresholds) ||
             !_thresholds.TryGetDeadThreshold(player, out var dead, thresholds))
             return 0f;
 
+        var start = _softCritQuery.TryComp(player, out var softCrit)
+            ? FixedPoint2.Max(critStart.Value, softCrit.HardCritThreshold)
+            : critStart.Value;
         var deadThreshold = dead.Value.Float();
-        var range = deadThreshold - start.Value.Float();
+        var range = deadThreshold - start.Float();
 
         if (range <= 0f)
             return 0f;
 
         // the crit overlay level is the damage as a fraction of the dead threshold and is already networked
         var damage = overlay.CritLevel * deadThreshold;
-        var progress = (damage - start.Value.Float()) / range;
+        var progress = (damage - start.Float()) / range;
         return Math.Clamp(progress, 0f, 1f);
     }
 

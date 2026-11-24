@@ -18,7 +18,7 @@
   - type: UserInterface
     interfaces:
       enum.HealthAnalyzerUiKey.Key:
-        type: HealthAnalyzerBoundUserInterface
+        type: PatientScanBoundUserInterface # Polonium: our one-view analyzer
   - type: HealthAnalyzer
     scanningEndSound:
       path: "/Audio/Items/Medical/healthscanner.ogg"

@@ -118,6 +118,8 @@
   name: drowsiness
   components:
   - type: DrowsinessStatusEffect
+  - type: ClumsySurgeryStatusEffect # Polonium: a drowsy surgeon botches surgery steps
+    clumsyChance: 0.25
 
 # Adds drugs overlay
 - type: entity
@@ -126,6 +128,8 @@
   name: hallucinations
   components:
   - type: SeeingRainbowsStatusEffect
+  - type: ClumsySurgeryStatusEffect # Polonium: a hallucinating surgeon botches surgery steps
+    clumsyChance: 0.25
   - type: ExaminableStatusEffect
     messageId: status-effect-examine-seeing-rainbow
     requiresConciousness: true

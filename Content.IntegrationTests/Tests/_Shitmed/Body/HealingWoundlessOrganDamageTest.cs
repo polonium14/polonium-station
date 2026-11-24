@@ -143,14 +143,14 @@ public sealed class HealingWoundlessOrganDamageTest : GameTest
         await pair.RunTicksSync(5);
 
         // Untargeted (origin: null) Heat damage straight to the mob, matching real fire/reagent
-        // damage - fans out via ApplyToAllLimbs's weight table (Torso 1.0, Arms 0.3). 2.5 clears
-        // torso's own minorThreshold (1 * 200/100 = 2) as its full weighted share, forming a real
-        // wound; the arm's 0.3-weighted share (0.75) stays under its own threshold (1 * 80/100 =
-        // 0.8) - real damage, no wound.
+        // damage - fans out via ApplyToAllLimbs, which now normalizes the weight table (Torso 1.0,
+        // Arm 0.3) to sum to the real damage. Of 3.0: the arm takes 3.0*0.3/1.3 = 0.69 (under its
+        // own minorThreshold 1 * 80/100 = 0.8, so real damage but no wound), and the torso (anchor)
+        // soaks the remainder 2.31 - over its own threshold (1 * 200/100 = 2), forming a real wound.
         await server.WaitPost(() =>
         {
             var proto = sProtoMan.Index(HeatDamageType);
-            sDamageable.TryChangeDamage(patient, new DamageSpecifier(proto, FixedPoint2.New("2.5")), ignoreResistances: true, origin: null);
+            sDamageable.TryChangeDamage(patient, new DamageSpecifier(proto, FixedPoint2.New("3.0")), ignoreResistances: true, origin: null);
         });
 
         await pair.RunTicksSync(5);
@@ -158,8 +158,8 @@ public sealed class HealingWoundlessOrganDamageTest : GameTest
         await server.WaitAssertion(() =>
         {
 #pragma warning disable CS0618
-            Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.New("2.5")), "Sanity: torso got its full weighted share and a real wound.");
-            Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New("0.75")), "Sanity: arm got its weighted, wound-less share.");
+            Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.New("2.31")), "Sanity: torso got the normalized remainder and a real wound.");
+            Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New("0.69")), "Sanity: arm got its normalized, wound-less share.");
 #pragma warning restore CS0618
         });
 
@@ -181,7 +181,7 @@ public sealed class HealingWoundlessOrganDamageTest : GameTest
         {
 #pragma warning disable CS0618
             Assert.That(sDamageable.GetTotalDamage(torso), Is.EqualTo(FixedPoint2.Zero), "Torso's real wound should be fully healed.");
-            Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New("0.75")), "Arm's own raw damage must be untouched by a heal that targeted the torso.");
+            Assert.That(sDamageable.GetTotalDamage(arm), Is.EqualTo(FixedPoint2.New("0.69")), "Arm's own raw damage must be untouched by a heal that targeted the torso.");
 #pragma warning restore CS0618
         });
 

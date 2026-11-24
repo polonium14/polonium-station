@@ -1,0 +1,9 @@
+# Shown on a medical HUD over a patient left with an open surgery.
+- type: statusIcon
+  id: SurgeryInProgressIcon
+  priority: 4
+  locationPreference: Left
+  isShaded: true
+  icon:
+    sprite: /Textures/_Polonium/Interface/Misc/surgery_icon.rsi
+    state: surgery

@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Polonium.Body;
 using Content.Shared._Shitmed.CCVar;
 using Content.Shared._Shitmed.Medical.Surgery.Pain;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
@@ -133,11 +134,19 @@ public partial class TraumaSystem
         if (TryComp<OrganIntegrityComponent>(args.Organ.Owner, out var organIntegrity))
             _audio.PlayPvs(organIntegrity.OrganDestroyedSound, bodyUid);
 
+        var parentPart = CompOrNull<ChildOrganComponent>(args.Organ.Owner)?.Parent;
+
         if (body.Comp.Organs is not null)
             _container.Remove(args.Organ.Owner, body.Comp.Organs, force: true);
 
         if (_net.IsServer)
             QueueDel(args.Organ.Owner);
+
+        if (_net.IsServer)
+        {
+            var destroyedEv = new OrganDestroyedEvent(args.Organ.Owner, parentPart);
+            RaiseLocalEvent(bodyUid, ref destroyedEv);
+        }
     }
 
     #endregion
@@ -286,11 +295,7 @@ public partial class TraumaSystem
         // An empty modifier set means all damage has been treated, including the final modifier.
         var totalDamage = organ.IntegrityModifiers.Aggregate(FixedPoint2.Zero, (current, modifier) => current + modifier.Value);
 
-        var floor = FixedPoint2.Zero;
-        if (TryComp<OrganComponent>(uid, out var organComp)
-            && organComp.Category == "Brain"
-            && organ.IntegrityThresholds.TryGetValue(OrganSeverity.Damaged, out var damagedThreshold))
-            floor = damagedThreshold;
+        var floor = organ.IntegrityFloor;
 
         organ.OrganIntegrity = FixedPoint2.Clamp(organ.IntegrityCap - totalDamage, floor, organ.IntegrityCap);
 
@@ -299,7 +304,7 @@ public partial class TraumaSystem
             var ev = new OrganIntegrityChangedEvent(oldIntegrity, organ.OrganIntegrity);
             RaiseLocalEvent(uid, ref ev);
 
-            if (TryComp<OrganComponent>(uid, out organComp) && organComp.Body is { } body)
+            if (TryComp<OrganComponent>(uid, out var organComp) && organComp.Body is { } body)
             {
                 var ev1 = new OrganIntegrityChangedEventOnWoundable((uid, organComp), oldIntegrity, organ.OrganIntegrity);
                 RaiseLocalEvent(body, ref ev1);

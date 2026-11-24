@@ -180,6 +180,7 @@
   - CryoPodMachineCircuitboard
   - CryostasisBeaker
   - SyringeCryostasis
+  - DialysisMachineFlatpack # Polonium: dialysis machine
 
 - type: technology # Merge with other T2 medical research if possible!
   id: MechanizedTreatment

@@ -31,6 +31,7 @@
     Ointment: 3
     Bloodpack: 3
     ChemistryBottleEpinephrine: 3
+    ChemistryBottleMorphine: 3 # Polonium: painkiller for surgery
     Syringe: 3
     PillCanisterTricordrazine: 2
   contrabandInventory:
@@ -78,6 +79,7 @@
     VehicleWheelchair: 2 # Polonium Change
     IVDripFlatpack: 2 # Polonium Change
     IVBagSaline: 3 # Polonium Change
+    ChemistryBottleMorphine: 3 # Polonium: painkiller for surgery
     IVBag: 4 # Polonium Change
     ClothingOuterHospitalGown: 2 # Not a popular item, so less stock
     Breathalyzer: 2 # Polonium

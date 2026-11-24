@@ -1,6 +1,4 @@
-using Content.Shared._Shitmed.Body;
-using Content.Shared._Shitmed.Medical.HealthAnalyzer;
-using Content.Shared.Body;
+using Content.Shared._Polonium.Medical.HealthAnalyzer; // Polonium
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.EntitySystems;
@@ -31,55 +29,9 @@ public abstract partial class HealthAnalyzerSystem : EntitySystem
     [Dependency] private SharedUserInterfaceSystem _ui = default!;
 
     [Dependency] private EntityQuery<BloodstreamComponent> _bloodstreamQuery;
-    [Dependency] private EntityQuery<BodyComponent> _bodyQuery; // Polonium
     [Dependency] private EntityQuery<MobStateComponent> _mobStateQuery;
     [Dependency] private EntityQuery<TransformComponent> _transformQuery;
     [Dependency] private EntityQuery<UnrevivableComponent> _unrevivableQuery;
-
-    // Polonium start: tabs and body doll of the Shitmed readout
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        Subs.BuiEvents<HealthAnalyzerComponent>(HealthAnalyzerUiKey.Key, subs =>
-        {
-            subs.Event<HealthAnalyzerModeSelectedMessage>(OnModeSelected);
-            subs.Event<HealthAnalyzerPartSelectedMessage>(OnPartSelected);
-        });
-    }
-
-    private void OnModeSelected(Entity<HealthAnalyzerComponent> ent, ref HealthAnalyzerModeSelectedMessage args)
-    {
-        ent.Comp.CurrentMode = args.Mode;
-        ent.Comp.CurrentBodyPart = null;
-
-        if (ent.Comp.ScannedEntity != null)
-            UpdateUi(ent);
-    }
-
-    private void OnPartSelected(Entity<HealthAnalyzerComponent> ent, ref HealthAnalyzerPartSelectedMessage args)
-    {
-        if (ent.Comp.ScannedEntity is not { } target)
-            return;
-
-        ent.Comp.CurrentMode = HealthAnalyzerMode.Body;
-
-        EntityUid? part = null;
-        if (args.BodyPart is { } bodyPart
-            && LimbTargetMap.TryGetCategory(bodyPart, out var category)
-            && _bodyQuery.TryComp(target, out var body)
-            && LimbTargetMap.TryGetOrganByCategory(EntityManager, body, category, out var organ))
-            part = organ;
-
-        ent.Comp.CurrentBodyPart = part;
-        UpdateUi(ent);
-    }
-
-    private bool ValidScanTarget(EntityUid target)
-    {
-        return _mobStateQuery.HasComp(target) && _bodyQuery.HasComp(target);
-    }
-    // Polonium end
 
     public override void Update(float frameTime)
     {
@@ -121,6 +73,10 @@ public abstract partial class HealthAnalyzerSystem : EntitySystem
         if (_timing.ApplyingState)
             return;
 
+        // Polonium: keeps scanning from a pocket, the PDA slot or the belt, see HealthAnalyzerSystem.Polonium
+        if (KeepsScanningWhereCarried(analyzer))
+            return;
+
         StopAnalyzingEntity(analyzer);
     }
 
@@ -139,7 +95,7 @@ public abstract partial class HealthAnalyzerSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnAfterInteract(Entity<HealthAnalyzerComponent> analyzer, ref AfterInteractEvent args)
     {
-        if (args.Target == null || !args.CanReach || !ValidScanTarget(args.Target.Value)) // Polonium: the Shitmed readout needs a body
+        if (args.Target == null || !args.CanReach || !ValidScanTarget(args.Target.Value)) // Polonium: our scan reads the body
             return;
 
         _audio.PlayPredicted(analyzer.Comp.ScanningBeginSound, analyzer, args.User);
@@ -200,7 +156,6 @@ public abstract partial class HealthAnalyzerSystem : EntitySystem
     {
         // Link the health analyzer to the scanned entity
         analyzer.Comp.ScannedEntity = target;
-        analyzer.Comp.CurrentBodyPart = null; // Polonium
         analyzer.Comp.IsAnalyzerActive = true;
         analyzer.Comp.NextUpdate = _timing.CurTime + analyzer.Comp.UpdateInterval;
 
@@ -259,8 +214,14 @@ public abstract partial class HealthAnalyzerSystem : EntitySystem
         );
     }
 
-    protected virtual void UpdateUi(Entity<HealthAnalyzerComponent> analyzer) // Polonium: the server sends the Shitmed readout instead
+    private void UpdateUi(Entity<HealthAnalyzerComponent> analyzer)
     {
+        // Polonium: our patient scan replaces the upstream state, see PatientScanSystem
+        var update = new HealthAnalyzerUpdateUiEvent();
+        RaiseLocalEvent(analyzer, ref update);
+        if (update.Handled)
+            return;
+
         // Gather all the information the UI needs.
         var state = GetHealthAnalyzerUiState(analyzer.Comp.ScannedEntity, analyzer.Comp.IsAnalyzerActive);
         // Send it to the BUI.
