@@ -6,6 +6,7 @@ using Content.Server._Polonium.Delivery;
 using Content.Shared._Polonium.CartridgeLoader.Cartridges;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Delivery;
+using Content.Shared.Destructible;
 using Content.Shared.PDA;
 using NUnit.Framework;
 using Robust.Shared.GameObjects;
@@ -89,6 +90,46 @@ public sealed class LogiAppCartridgeTest : GameTest
 
             entMan.DeleteEntity(parcel);
             Assert.That(system.GetStatus(tracked, app.Comp.CourierDistance), Is.EqualTo(LogiAppParcelStatus.Destroyed));
+        });
+    }
+
+    /// <summary>
+    /// A broken fragile parcel counts as damaged even though breaking it doesn't penalize it.
+    /// </summary>
+    [Test]
+    public async Task BrokenFragileParcelIsDamaged()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var entMan = server.EntMan;
+        var map = await pair.CreateTestMap();
+
+        var system = entMan.System<LogiAppCartridgeSystem>();
+        var loaderSystem = entMan.System<CartridgeLoaderSystem>();
+        var pdaSystem = entMan.System<SharedPdaSystem>();
+        var destructible = entMan.System<SharedDestructibleSystem>();
+
+        EntityUid pda = default;
+        EntityUid parcel = default;
+
+        await server.WaitPost(() =>
+        {
+            var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+            pda = entMan.Spawn(Pda, coords);
+            pdaSystem.SetOwner(pda, entMan.GetComponent<PdaComponent>(pda), pda, Owner);
+            var teleporter = entMan.Spawn(Teleporter, coords);
+
+            parcel = SpawnParcel(entMan, teleporter, coords);
+            entMan.EnsureComponent<DeliveryFragileComponent>(parcel);
+            destructible.BreakEntity(parcel);
+        });
+
+        await server.WaitAssertion(() =>
+        {
+            var app = GetApp(entMan, loaderSystem, pda);
+            Assert.That(entMan.GetComponent<DeliveryFragileComponent>(parcel).Broken);
+            Assert.That(entMan.GetComponent<DeliveryComponent>(parcel).WasPenalized, Is.False);
+            Assert.That(system.GetStatus(app.Comp.Parcels[0], app.Comp.CourierDistance), Is.EqualTo(LogiAppParcelStatus.Damaged));
         });
     }
 
