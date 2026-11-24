@@ -28,7 +28,6 @@ public sealed class StationGoalFaxTest : GameTest
 
     public override PoolSettings PoolSettings => new()
     {
-        Connected = true,
         Dirty = true,
     };
 

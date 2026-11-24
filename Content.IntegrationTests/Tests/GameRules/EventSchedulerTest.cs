@@ -1,4 +1,5 @@
-﻿using Content.IntegrationTests.Fixtures;
+﻿using Content.IntegrationTests._Polonium.Attributes; // Polonium
+using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Utility;
 using Content.Server.StationEvents;
@@ -12,6 +13,7 @@ using Robust.Shared.Timing;
 
 namespace Content.IntegrationTests.Tests.GameRules;
 
+[SlowTest] // Polonium: 81 connected rounds on Saltern, ~30% of the suite's time; runs nightly
 public sealed partial class EventSchedulerTest : GameTest
 {
     public override PoolSettings PoolSettings => new()
