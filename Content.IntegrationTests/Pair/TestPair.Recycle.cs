@@ -1,6 +1,8 @@
 #nullable enable
+using System.Collections;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using Content.Server.GameTicking;
 using Content.Server.Preferences.Managers;
 using Content.Shared.CCVar;
@@ -19,6 +21,23 @@ public sealed partial class TestPair
     {
         await base.Cleanup();
         await ResetModifiedPreferences();
+        await ClearSpriteDeserializeQueue(); // Polonium
+    }
+
+    // Polonium: the client ResourceCache adds every SpriteComponent ever created to _toDeserialize, which the
+    // engine reads and clears only once at client startup. A recycled pair therefore keeps every sprite of
+    // every test alive (tens of thousands after EntityTest), and the suite outgrows the 16 GB CI runner.
+    private static readonly FieldInfo? SpriteDeserializeQueue = typeof(Robust.Client.ResourceManagement.IResourceCache).Assembly
+        .GetType("Robust.Client.ResourceManagement.ResourceCache")
+        ?.GetField("_toDeserialize", BindingFlags.Instance | BindingFlags.NonPublic);
+
+    private async Task ClearSpriteDeserializeQueue()
+    {
+        if (SpriteDeserializeQueue == null)
+            throw new InvalidOperationException("ResourceCache._toDeserialize is gone: check whether the engine fixed the sprite leak and drop this workaround.");
+
+        var cache = Client.ResolveDependency<Robust.Client.ResourceManagement.IResourceCache>();
+        await Client.WaitPost(() => ((IList) SpriteDeserializeQueue.GetValue(cache)!).Clear());
     }
 
     private async Task ResetModifiedPreferences()
