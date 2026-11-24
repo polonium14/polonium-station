@@ -1,6 +1,5 @@
 logiapp-program-name = LogiApp
 logiapp-notification-new-parcel = Nowa przesyłka czeka w cargo.
-logiapp-refresh-button = Odśwież
 logiapp-clear-finished-button = Usuń zakończone
 logiapp-no-parcels = Brak przesyłek zaadresowanych do ciebie.
 logiapp-unknown-parcel = przesyłka

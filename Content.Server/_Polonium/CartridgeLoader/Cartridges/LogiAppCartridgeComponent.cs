@@ -1,13 +1,27 @@
+using Content.Shared._Polonium.CartridgeLoader.Cartridges;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server._Polonium.CartridgeLoader.Cartridges;
 
 /// <summary>
 /// PDA program that notifies its owner about parcels addressed to them and tracks their status.
 /// </summary>
-[RegisterComponent, Access(typeof(LogiAppCartridgeSystem))]
+[RegisterComponent, AutoGenerateComponentPause, Access(typeof(LogiAppCartridgeSystem))]
 public sealed partial class LogiAppCartridgeComponent : Component
 {
+    /// <summary>
+    /// How often parcel statuses are checked while the program is open, so the list refreshes by itself.
+    /// </summary>
+    [DataField]
+    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
+
+    /// <summary>
+    /// When parcel statuses are checked next.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
+    public TimeSpan NextUpdate;
+
     /// <summary>
     /// Parcels addressed to the PDA owner since the program was installed.
     /// </summary>
@@ -53,4 +67,10 @@ public sealed partial class LogiAppTrackedParcel
     /// </summary>
     [DataField]
     public TimeSpan ArrivalTime;
+
+    /// <summary>
+    /// Status last sent to the program's UI, used to send a new state only when a status changes.
+    /// </summary>
+    [ViewVariables]
+    public LogiAppParcelStatus? LastSentStatus;
 }

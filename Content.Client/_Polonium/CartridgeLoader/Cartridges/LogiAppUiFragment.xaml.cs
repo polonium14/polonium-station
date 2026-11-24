@@ -11,7 +11,6 @@ public sealed partial class LogiAppUiFragment : BoxContainer
 {
     [Dependency] private IPrototypeManager _prototype = default!;
 
-    public event Action? OnRefresh;
     public event Action? OnClearFinished;
 
     public LogiAppUiFragment()
@@ -23,7 +22,6 @@ public sealed partial class LogiAppUiFragment : BoxContainer
         HorizontalExpand = true;
         VerticalExpand = true;
 
-        RefreshButton.OnPressed += _ => OnRefresh?.Invoke();
         ClearFinishedButton.OnPressed += _ => OnClearFinished?.Invoke();
     }
 

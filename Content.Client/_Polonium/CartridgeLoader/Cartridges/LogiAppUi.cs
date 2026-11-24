@@ -17,7 +17,6 @@ public sealed partial class LogiAppUi : UIFragment
     public override void Setup(BoundUserInterface userInterface, EntityUid? fragmentOwner)
     {
         _fragment = new LogiAppUiFragment();
-        _fragment.OnRefresh += () => SendMessage(LogiAppUiAction.Refresh, userInterface);
         _fragment.OnClearFinished += () => SendMessage(LogiAppUiAction.ClearFinished, userInterface);
     }
 

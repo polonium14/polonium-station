@@ -40,6 +40,5 @@ public sealed class LogiAppUiMessageEvent(LogiAppUiAction action) : CartridgeMes
 [Serializable, NetSerializable]
 public enum LogiAppUiAction : byte
 {
-    Refresh,
     ClearFinished,
 }
