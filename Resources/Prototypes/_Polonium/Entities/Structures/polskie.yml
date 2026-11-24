@@ -123,9 +123,18 @@
     maxOccupants: 5
     engineSound:
       path: /Audio/_Polonium/Vehicles/carrev.ogg
+  - type: Storage
+    grid:
+    - 0,0,3,3
+    maxItemSize: Huge
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: ContainerContainer
     containers:
       maluch_seats: !type:Container
+      storagebase: !type:Container
   - type: Damageable
     damageModifierSet: SteelMod
   - type: Injurable
