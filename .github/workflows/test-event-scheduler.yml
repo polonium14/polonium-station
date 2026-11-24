@@ -52,6 +52,7 @@ jobs:
       run: |
         $env:DOTNET_gcServer=1
         $env:DOTNET_GCHeapHardLimit="0x300000000"
+        $env:POLONIUM_SLOW_TESTS="1"
         dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj --filter "FullyQualifiedName~EventSchedulerTest" -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed NUnit.TestOutputXml="logs" NUnit.WorkDirectory="$(pwd)/test_results"
 
     - name: Archive NUnit3 test results.

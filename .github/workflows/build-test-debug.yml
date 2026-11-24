@@ -71,9 +71,9 @@ jobs:
         $env:DOTNET_GCHeapHardLimit="0x300000000"
         # Polonium: EventSchedulerTest (81 cases, each a full connected round on Saltern) was ~31% of the
         # suite's time and its biggest memory spike, pushing runs past the 30 minute timeout. It runs
-        # nightly and on demand in test-event-scheduler.yml instead. The VSTest --filter skips it before it runs;
-        # NUnit.Where only hid it from the summary and the tests still executed.
-        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj --filter "FullyQualifiedName!~EventSchedulerTest" -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed NUnit.TestOutputXml="logs" NUnit.WorkDirectory="$(pwd)/test_results"
+        # nightly and on demand in test-event-scheduler.yml instead: it carries [SlowTest] and skips itself unless
+        # POLONIUM_SLOW_TESTS=1. Test filters can't do this (see SlowTestAttribute).
+        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed NUnit.TestOutputXml="logs" NUnit.WorkDirectory="$(pwd)/test_results"
 
     - name: Archive NUnit3 test results.
       if: always()
