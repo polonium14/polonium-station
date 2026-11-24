@@ -358,7 +358,7 @@
   id: SalvageVendorBruteMedkit
   name: vendor-salvage-brute-medkit-name
   description: vendor-salvage-brute-medkit-desc
-  icon: { sprite: Objects/Specific/Medical/firstaidkits.rsi, state: brutekit}
+  icon: { sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi, state: brutekit} # Polonium: Funky medkit sprites
   productEntity: MedkitBruteFilled
   cost:
     SalvageTicket: 150

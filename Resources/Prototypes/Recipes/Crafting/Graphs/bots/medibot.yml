@@ -8,7 +8,7 @@
       steps:
       - tag: Medkit
         icon:
-          sprite: Objects/Specific/Medical/firstaidkits.rsi
+          sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi # Polonium: Funky medkit sprites
           state: firstaid
         name: construction-graph-tag-medkit
       - tag: DiscreteHealthAnalyzer
