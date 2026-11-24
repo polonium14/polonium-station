@@ -15,7 +15,8 @@ public sealed partial class MailingUnitSystem : SharedMailingUnitSystem
 
     private void OnMailingState(Entity<MailingUnitComponent> ent, ref AfterAutoHandleStateEvent args)
     {
-        if (_userInterface.TryGetOpenUi<MailingUnitBoundUserInterface>(ent.Owner, MailingUnitUiKey.Key, out var bui))
+        // Polonium: the open window can be the device view, which reads the component by itself
+        if (_userInterface.TryGetOpenUi(ent.Owner, MailingUnitUiKey.Key, out var open) && open is MailingUnitBoundUserInterface bui)
         {
             bui.Refresh(ent);
         }

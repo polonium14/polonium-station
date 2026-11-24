@@ -1,0 +1,54 @@
+- files: ["pour1.ogg", "pour2.ogg", "pour3.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Pouring drinks by llupo2 on Freesound, cut, converted to mono and levelled by nikitosych (github)"
+  source: "https://freesound.org/people/llupo2/sounds/723382/"
+
+- files: ["pour4.ogg", "vessel_in2.ogg", "vessel_in3.ogg"]
+  license: "CC0-1.0"
+  copyright: "Pouring water into glass by FillSoko on Freesound, cut, converted to mono and levelled by nikitosych (github)"
+  source: "https://freesound.org/people/FillSoko/sounds/257957/"
+
+- files: ["fizz1.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Pouring_coke.mp3 by Taira Komori on Freesound, cut, converted to mono and levelled by nikitosych (github)"
+  source: "https://freesound.org/people/Taira%20Komori/sounds/212735/"
+
+- files: ["fizz2.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Soda Can (open, pour, and fizz) by ABStudios on Freesound, cut, converted to mono and levelled by nikitosych (github)"
+  source: "https://freesound.org/people/ABStudios/sounds/177104/"
+
+- files: ["fizz3.ogg"]
+  license: "CC0-1.0"
+  copyright: "pouring fizzy drink.wav by squashy555 on Freesound, cut, converted to mono and levelled by nikitosych (github)"
+  source: "https://freesound.org/people/squashy555/sounds/234620/"
+
+- files: ["ice1.ogg", "ice2.ogg", "ice3.ogg", "ice4.ogg"]
+  license: "CC0-1.0"
+  copyright: "Ice Cubes Dropped in a Glass.aif by ftpalad on Freesound, cut, converted to mono and levelled by nikitosych (github)"
+  source: "https://freesound.org/people/ftpalad/sounds/119917/"
+
+- files: ["sugar1.ogg", "sugar2.ogg", "sugar3.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "ricetrickle.wav by julesibulesi on Freesound, cut, converted to mono and levelled by nikitosych (github)"
+  source: "https://freesound.org/people/julesibulesi/sounds/70099/"
+
+- files: ["drain.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Pouring_drain_1.wav by coldwellw on Freesound, cut, converted to mono and levelled by nikitosych (github)"
+  source: "https://freesound.org/people/coldwellw/sounds/172753/"
+
+- files: ["vessel_in1.ogg"]
+  license: "CC0-1.0"
+  copyright: "Setting Down Glass On Table by HogantheLogan on Freesound, cut, converted to mono and levelled by nikitosych (github)"
+  source: "https://freesound.org/people/HogantheLogan/sounds/466791/"
+
+- files: ["vessel_out1.ogg", "vessel_out2.ogg"]
+  license: "CC0-1.0"
+  copyright: "picking up glass bottle.wav by jrssandoval on Freesound, cut, converted to mono and levelled by nikitosych (github)"
+  source: "https://freesound.org/people/jrssandoval/sounds/67150/"
+
+- files: ["bottle_out1.ogg", "bottle_out2.ogg", "bottle_out3.ogg", "bottle_out4.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "bottles clinking.wav by volivieri on Freesound, cut, converted to mono and levelled by nikitosych (github)"
+  source: "https://freesound.org/people/volivieri/sounds/37190/"

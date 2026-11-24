@@ -1,7 +1,7 @@
 - type: cargoProduct
   id: MedicalSupplies
   icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi # Polonium: Funky medkit sprites
     state: firstaid
   product: CrateMedicalSupplies
   cost: 2400
@@ -21,7 +21,7 @@
 - type: cargoProduct
   id: EmergencyBurnKit
   icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi # Polonium: Funky medkit sprites
     state: burnkit
   product: CrateEmergencyBurnKit
   cost: 700
@@ -31,7 +31,7 @@
 - type: cargoProduct
   id: EmergencyToxinKit
   icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi # Polonium: Funky medkit sprites
     state: toxinkit
   product: CrateEmergencyToxinKit
   cost: 600
@@ -41,7 +41,7 @@
 - type: cargoProduct
   id: EmergencyO2Kit
   icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi # Polonium: Funky medkit sprites
     state: o2kit
   product: CrateEmergencyO2Kit
   cost: 600
@@ -51,7 +51,7 @@
 - type: cargoProduct
   id: EmergencyBruteKit
   icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi # Polonium: Funky medkit sprites
     state: brutekit
   product: CrateEmergencyBruteKit
   cost: 600
@@ -61,7 +61,7 @@
 - type: cargoProduct
   id: EmergencyAdvancedKit
   icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi # Polonium: Funky medkit sprites
     state: advkit
   product: CrateEmergencyAdvancedKit
   cost: 1200
@@ -71,7 +71,7 @@
 - type: cargoProduct
   id: EmergencyRadiationKit
   icon:
-    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi # Polonium: Funky medkit sprites
     state: radkit
   product: CrateEmergencyRadiationKit
   cost: 600

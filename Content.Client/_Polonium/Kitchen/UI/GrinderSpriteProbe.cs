@@ -45,8 +45,8 @@ public sealed class GrinderSpriteProbe
 
     private readonly IEntityManager _entMan;
     private readonly IClyde _clyde;
-    private readonly Dictionary<EntityUid, GrinderSpriteInfo> _known = new();
-    private readonly List<(EntityUid Uid, GrinderSpriteInfo Info)> _pending = new();
+    private readonly Dictionary<(EntityUid Uid, Direction Facing), GrinderSpriteInfo> _known = new();
+    private readonly List<(EntityUid Uid, Direction Facing, GrinderSpriteInfo Info)> _pending = new();
     private IRenderTexture? _target;
 
     public GrinderSpriteProbe(IEntityManager entMan, IClyde clyde)
@@ -56,19 +56,19 @@ public sealed class GrinderSpriteProbe
     }
 
     /// <summary>
-    /// What is known about the entity's picture. The same object is filled in a few frames after the first request.
+    /// What is known about the entity's picture from the given side. The same object is filled in a few frames after the first request.
     /// </summary>
-    public GrinderSpriteInfo Get(EntityUid uid)
+    public GrinderSpriteInfo Get(EntityUid uid, Direction facing = Direction.South)
     {
-        if (_known.TryGetValue(uid, out var info))
+        if (_known.TryGetValue((uid, facing), out var info))
             return info;
 
         if (_known.Count >= Capacity)
             _known.Clear();
 
         info = new GrinderSpriteInfo();
-        _known[uid] = info;
-        _pending.Add((uid, info));
+        _known[(uid, facing)] = info;
+        _pending.Add((uid, facing, info));
         return info;
     }
 
@@ -82,7 +82,7 @@ public sealed class GrinderSpriteProbe
 
         _target ??= _clyde.CreateRenderTarget(new Vector2i(Size, Size), new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb), name: "grinder-probe");
         var target = _target;
-        foreach (var (uid, info) in _pending)
+        foreach (var (uid, facing, info) in _pending)
         {
             if (_entMan.Deleted(uid) || !_entMan.TryGetComponent(uid, out SpriteComponent? sprite))
                 continue;
@@ -91,7 +91,7 @@ public sealed class GrinderSpriteProbe
                 () =>
                 {
                     handle.SetTransform(Matrix3x2.Identity);
-                    handle.DrawEntity(uid, new Vector2(Size / 2f), Vector2.One, Angle.Zero, overrideDirection: Direction.South, sprite: sprite);
+                    handle.DrawEntity(uid, new Vector2(Size / 2f), Vector2.One, Angle.Zero, overrideDirection: facing, sprite: sprite);
                 },
                 Color.Transparent);
             target.CopyPixelsToMemory<Rgba32>(image =>

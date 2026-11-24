@@ -64,13 +64,15 @@ jobs:
       shell: pwsh
       run: |
         $env:DOTNET_gcServer=1
-        # Polonium: cap the managed heap at 14 GB (hex bytes). The suite peaks at ~11.7 GB after
-        # batching the EntityTest spawn-everything cases (see EntityTest.cs); without a cap, memory
-        # creep from new content wedges the 16 GB runner in silent 30+ minute GC thrash. With the
-        # cap, exceeding the budget is a fast, attributed OutOfMemoryException test failure instead.
-        # 14 GB managed + ~1 GB native sits close to the runner's physical limit - if runs start
-        # slowing down near the cap, lower it before trusting durations again.
-        $env:DOTNET_GCHeapHardLimit="0x380000000"
+        # Polonium: cap the managed heap at 12 GB (hex bytes). Server GC grows the heap up to the cap before it
+        # collects hard, so the cap plus native memory must fit the 16 GB runner: with 14 GB the suite reached
+        # ~15 GB RSS and swapped into the 30 minute timeout. Measured locally in a 15 GB cgroup without swap:
+        # 14 GB cap gets OOM-killed, 12 GB passes with a 13.9 GB peak in ~9 minutes.
+        $env:DOTNET_GCHeapHardLimit="0x300000000"
+        # Polonium: EventSchedulerTest (81 cases, each a full connected round on Saltern) was ~31% of the
+        # suite's time and its biggest memory spike, pushing runs past the 30 minute timeout. It runs
+        # nightly and on demand in test-event-scheduler.yml instead: it carries [SlowTest] and skips itself unless
+        # POLONIUM_SLOW_TESTS=1. Test filters can't do this (see SlowTestAttribute).
         dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed NUnit.TestOutputXml="logs" NUnit.WorkDirectory="$(pwd)/test_results"
 
     - name: Archive NUnit3 test results.
