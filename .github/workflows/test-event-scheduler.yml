@@ -51,7 +51,7 @@ jobs:
       shell: pwsh
       run: |
         $env:DOTNET_gcServer=1
-        $env:DOTNET_GCHeapHardLimit="0x380000000"
+        $env:DOTNET_GCHeapHardLimit="0x300000000"
         dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed "NUnit.Where=class == Content.IntegrationTests.Tests.GameRules.EventSchedulerTest" NUnit.TestOutputXml="logs" NUnit.WorkDirectory="$(pwd)/test_results"
 
     - name: Archive NUnit3 test results.

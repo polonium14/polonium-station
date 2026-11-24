@@ -23,17 +23,15 @@ namespace Content.IntegrationTests.Tests
     {
         private static readonly HashSet<ProtoId<EntityCategoryPrototype>> IgnoredCategories = ["Spawner", "Debug", "GameRules"];
 
-        // Polonium: Destructive instead of Dirty. Dirty only forces a slow recycle, so the pair that spawned every
-        // prototype lived on with its grown caches; Destructive kills it after the test.
         public override PoolSettings PoolSettings => new()
         {
             Connected = true,
-            Destructive = true
+            Dirty = true
         };
 
         public static PoolSettings Disconnected => new()
         {
-            Destructive = true,
+            Dirty = true,
         };
 
         [Test]
