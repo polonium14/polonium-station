@@ -11,6 +11,6 @@
   - type: Cartridge
     programName: logiapp-program-name
     icon:
-      sprite: Objects/Specific/Cargo/mail.rsi
-      state: icon
+      sprite: _Polonium/Interface/Misc/program_icons.rsi
+      state: logiapp
   - type: LogiAppCartridge
