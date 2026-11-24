@@ -212,7 +212,6 @@ guide-entry-rules-sl-restricted-gear = Ograniczony Sprzęt
 guide-entry-rules-sl-restricted-weapons = Ograniczona Broń
 guide-entry-rules-ban-types = Typy Banów
 guide-entry-rules-ban-durations = Czas Trwania Banów
-guide-entry-metashield = Metashield
 guide-entry-namingscheme = Schemat Nazewnictwa
 guide-entry-writing = Pisanie
 guide-entry-glossary = Słownik
