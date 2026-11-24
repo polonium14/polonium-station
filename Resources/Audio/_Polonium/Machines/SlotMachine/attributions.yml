@@ -1,0 +1,14 @@
+- files: ["slotmachine_spin.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Taken from Sara Tinnick on YouTube, imported from Goob-Station (Goob-Station/Goob-Station#4929)"
+  source: "https://www.youtube.com/watch?v=0afvjj9bwbc"
+
+- files: ["slotmachine_bigwin.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Imported from Goob-Station (Goob-Station/Goob-Station#4929). Upstream lists two sources for this file: Charlotte Pollock (https://www.youtube.com/watch?v=Xa2tDZxnm6w) and SoundEffectsFactory (https://www.youtube.com/watch?v=LBjAw8VC1Ok), both on YouTube"
+  source: "https://github.com/Goob-Station/Goob-Station/tree/master/Resources/Audio/_Goobstation/Machines/SlotMachine"
+
+- files: ["slotmachine_jackpotwin.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Imported from Goob-Station (Goob-Station/Goob-Station#4929). Upstream attributions.yml has no entry for this file, original author unknown"
+  source: "https://github.com/Goob-Station/Goob-Station/tree/master/Resources/Audio/_Goobstation/Machines/SlotMachine"
