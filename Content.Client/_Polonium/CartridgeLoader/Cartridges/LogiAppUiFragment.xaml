@@ -1,0 +1,14 @@
+<cartridges:LogiAppUiFragment xmlns:cartridges="clr-namespace:Content.Client._Polonium.CartridgeLoader.Cartridges"
+                              xmlns="https://spacestation14.io" Margin="1 0 2 0">
+    <PanelContainer StyleClasses="BackgroundDark"></PanelContainer>
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="4">
+            <Button Name="RefreshButton" Text="{Loc 'logiapp-refresh-button'}" HorizontalExpand="True"/>
+            <Button Name="ClearFinishedButton" Text="{Loc 'logiapp-clear-finished-button'}" HorizontalExpand="True"/>
+        </BoxContainer>
+        <Label Name="EmptyLabel" Text="{Loc 'logiapp-no-parcels'}" HorizontalAlignment="Center" Margin="4"/>
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+            <BoxContainer Orientation="Vertical" Name="ParcelContainer" HorizontalExpand="True" VerticalExpand="True"/>
+        </ScrollContainer>
+    </BoxContainer>
+</cartridges:LogiAppUiFragment>

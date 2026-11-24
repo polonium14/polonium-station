@@ -1,3 +1,4 @@
+using Content.Server._Polonium.Delivery; // Polonium
 using Content.Shared.Delivery;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.EntityTable;
@@ -41,7 +42,11 @@ public sealed partial class DeliverySystem
 
             foreach (var id in spawns)
             {
-                Spawn(id, coords);
+                // Polonium: tell other systems which spawner created the delivery (used by the LogiApp PDA program)
+                var delivery = Spawn(id, coords);
+                var ev = new DeliverySpawnedEvent(ent);
+                RaiseLocalEvent(delivery, ref ev);
+                // Polonium end
             }
         }
 
