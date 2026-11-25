@@ -87,6 +87,7 @@ public sealed class AbductorLoopTest : GameTest
     private static readonly (string Surgery, string Step, string Tool)[] HeartSwap =
     [
         ("SurgeryOpenIncision", "SurgeryStepOpenIncisionScalpel", AlienScalpel),
+        ("SurgeryOpenIncision", "SurgeryStepClampIncision", AlienPinches),
         ("SurgeryOpenIncision", "SurgeryStepRetractSkin", AlienPinches),
         ("SurgeryOpenRibcage", "SurgeryStepSawBones", AlienScalpel),
         ("SurgeryOpenRibcage", "SurgeryStepPriseOpenBones", AlienPinches),
