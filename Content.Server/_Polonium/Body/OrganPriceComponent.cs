@@ -8,10 +8,17 @@ namespace Content.Server._Polonium.Body;
 public sealed partial class OrganPriceComponent : Component
 {
     /// <summary>
-    /// What the organ is worth outside a body after it has been in one.
+    /// What the organ is worth outside a body after it has been in one, at full integrity.
+    /// With <see cref="MaxPrice"/> set, this is the lower bound of the roll and gets replaced by the rolled price.
     /// </summary>
     [DataField(required: true)]
     public double Price;
+
+    /// <summary>
+    /// If set, the price is rolled once between <see cref="Price"/> and this when the organ first goes into a body.
+    /// </summary>
+    [DataField]
+    public double? MaxPrice;
 
     /// <summary>
     /// Whether the organ has ever been in a body.

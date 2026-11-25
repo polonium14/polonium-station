@@ -37,7 +37,7 @@ public sealed class OrganPriceTest : GameTest
 
             Assert.Multiple(() =>
             {
-                Assert.That(pricing.GetPrice(heart), Is.EqualTo(50));
+                Assert.That(pricing.GetPrice(heart), Is.InRange(1200, 3000), "A fresh heart is at full integrity.");
                 Assert.That(pricing.GetPrice(arm, includeContents: false), Is.EqualTo(100));
                 Assert.That(pricing.GetPrice(body), Is.EqualTo(whole), "Organs inside a body add nothing to it.");
             });
