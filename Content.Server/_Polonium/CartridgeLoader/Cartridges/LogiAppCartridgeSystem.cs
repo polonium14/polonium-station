@@ -149,15 +149,16 @@ public sealed partial class LogiAppCartridgeSystem : EntitySystem
         if (!TryComp<DeliveryComponent>(parcel.Parcel, out var delivery) || TerminatingOrDeleted(parcel.Parcel))
             return LogiAppParcelStatus.Destroyed;
 
+        // Checked before damage: cutting a parcel open penalizes it too, and an opened parcel is gone either way.
+        if (delivery.IsOpened)
+            return LogiAppParcelStatus.Opened;
+
         if (delivery.WasPenalized)
             return LogiAppParcelStatus.Damaged;
 
         // Breaking a fragile parcel doesn't penalize it, so it's checked on its own.
         if (TryComp<DeliveryFragileComponent>(parcel.Parcel, out var fragile) && fragile.Broken)
             return LogiAppParcelStatus.Damaged;
-
-        if (delivery.IsOpened)
-            return LogiAppParcelStatus.Opened;
 
         if (!delivery.IsLocked)
             return LogiAppParcelStatus.Unlocked;

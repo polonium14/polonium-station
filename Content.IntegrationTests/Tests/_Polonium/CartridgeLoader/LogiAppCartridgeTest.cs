@@ -94,7 +94,8 @@ public sealed class LogiAppCartridgeTest : GameTest
     }
 
     /// <summary>
-    /// A broken fragile parcel counts as damaged even though breaking it doesn't penalize it.
+    /// A broken fragile parcel counts as damaged even though breaking it doesn't penalize it,
+    /// until it is opened.
     /// </summary>
     [Test]
     public async Task BrokenFragileParcelIsDamaged()
@@ -130,6 +131,13 @@ public sealed class LogiAppCartridgeTest : GameTest
             Assert.That(entMan.GetComponent<DeliveryFragileComponent>(parcel).Broken);
             Assert.That(entMan.GetComponent<DeliveryComponent>(parcel).WasPenalized, Is.False);
             Assert.That(system.GetStatus(app.Comp.Parcels[0], app.Comp.CourierDistance), Is.EqualTo(LogiAppParcelStatus.Damaged));
+
+            // Cutting a parcel open penalizes it and opens it; the player should see it as opened, not as still waiting.
+            var delivery = entMan.GetComponent<DeliveryComponent>(parcel);
+            delivery.WasPenalized = true;
+            delivery.IsOpened = true;
+            Assert.That(system.GetStatus(app.Comp.Parcels[0], app.Comp.CourierDistance), Is.EqualTo(LogiAppParcelStatus.Opened),
+                "A damaged parcel that was opened counts as opened.");
         });
     }
 
