@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: psykana
-  changes:
-  - message: T-ray scanner now has dedicated wiring and piping modes.
-    type: Add
-  id: 9659
-  time: '2026-04-24T08:46:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43161
 - author: Nox38
   changes:
   - message: All military boots (jack, combat, merc) now have the 50% injury slowdown
@@ -5242,3 +5235,12 @@
   id: 10153
   time: '2026-11-25T10:40:22.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1311
+- author: Pinkscreen, Nikita
+  changes:
+  - message: "Maski gazowe Ochrony, SWAT, JSR i Szwadronu \u015Amierci maj\u0105 akcj\u0119\
+      \ \"Komendy g\u0142osowe\", kt\xF3ra odtwarza wybran\u0105 komend\u0119 przez\
+      \ g\u0142o\u015Bnik maski."
+    type: Add
+  id: 10154
+  time: '2026-11-25T16:51:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1325
