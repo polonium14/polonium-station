@@ -21,6 +21,7 @@ using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Revenant;
 using Content.Shared.Revenant.Components;
+using Content.Shared.Storage.Components;
 using Content.Shared.Tag;
 using Content.Shared.Throwing;
 using Content.Shared.Whitelist;
@@ -279,7 +280,8 @@ public sealed partial class RevenantSystem
                 continue;
 
             //randomly opens some lockers and such.
-            _entityStorage.OpenStorage(ent, args.Performer);
+            if (TryComp<EntityStorageComponent>(ent, out var storage)) // Polonium: OpenStorage logs an error for every entity without storage
+                _entityStorage.OpenStorage((ent, storage), args.Performer);
 
             //chucks shit
             if (_itemQuery.HasComp(ent) &&
