@@ -1,0 +1,17 @@
+- type: entity
+  parent: [DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull]
+  id: DrinkDrGibbBottleFull
+  name: Dr. Gibb bottle
+  description: A delicious blend of 42 different flavours, now in a bottle!
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: DrGibb
+        Quantity: 120
+  - type: Label
+    currentLabel: reagent-name-dr-gibb
+  - type: Sprite
+    sprite: _Gearstation/Objects/Consumable/Drinks/dr_gibb_bottle.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
