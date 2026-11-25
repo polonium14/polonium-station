@@ -5,7 +5,9 @@
   variables, referencing variables with tokens, reading credential files and
   commands that print stored tokens.
 - Blocks commands that change the RobustToolbox submodule or SpaceStation14.slnx.
-- Asks the user before every Crowdin MCP call that is not a read.
+- Asks the user before every Crowdin MCP call that is not a read. With
+  CROWDIN_AGENT_AUTOWRITE=1 adding and approving translations goes through
+  the usual permission flow without this question.
 
 Manual use: `guard.py --check-env NAME` tells whether a variable is set
 without printing its value.
@@ -68,6 +70,8 @@ SHELL_PUNCTUATION = "();<>|&`"
 
 CROWDIN_PREFIX = "mcp__crowdin__"
 CROWDIN_READ_VERBS = {"list", "get", "search", "find", "read", "check", "concordance", "view", "show"}
+CROWDIN_AUTOWRITE_ENV = "CROWDIN_AGENT_AUTOWRITE"
+CROWDIN_AUTOWRITE_OPERATIONS = {"add_string_translation", "add_approval"}
 
 
 def block(message: str) -> None:
@@ -145,6 +149,8 @@ def check_crowdin(tool_name: str) -> None:
     operation = tool_name[len(CROWDIN_PREFIX):].lower()
     verb = operation.split("_", 1)[0]
     if verb in CROWDIN_READ_VERBS:
+        return
+    if operation in CROWDIN_AUTOWRITE_OPERATIONS and os.environ.get(CROWDIN_AUTOWRITE_ENV) == "1":
         return
     if "approv" in operation:
         ask(
