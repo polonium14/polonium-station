@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: MarkerBase
+  id: BaseSpawnPointAbductor
+  components:
+  - type: SpawnPoint
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Structures/Wallmounts/signs.rsi
+      state: radiation
+
+- type: entity
+  parent: BaseSpawnPointAbductor
+  id: SpawnPointLoneAbductor
+  name: lone abductor spawner
+  components:
+  - type: AntagGridSpawnPoint
+    whitelist:
+    - AbductorLone
+
+- type: entity
+  parent: BaseSpawnPointAbductor
+  id: SpawnPointAbductorAgent
+  name: abductor agent spawner
+  components:
+  - type: AntagGridSpawnPoint
+    whitelist:
+    - AbductorAgent
+
+- type: entity
+  parent: BaseSpawnPointAbductor
+  id: SpawnPointAbductorScientist
+  name: abductor scientist spawner
+  components:
+  - type: AntagGridSpawnPoint
+    whitelist:
+    - AbductorScientist

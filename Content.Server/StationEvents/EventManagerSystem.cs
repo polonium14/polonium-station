@@ -376,6 +376,13 @@ public sealed partial class EventManagerSystem : EntitySystem
         if (_gameTicker.IsIgnored(prototype))
             return false;
 
+        // Polonium: a rule behind a feature switch stays out of the rotation while the switch is off
+        if (prototype.TryComp<GameRuleFeatureSwitchComponent>(out var featureSwitch, EntityManager.ComponentFactory)
+            && !_configurationManager.GetCVar<bool>(featureSwitch.CVar))
+        {
+            return false;
+        }
+
         // Slightly slower if we don't care about MaxOccurrences, but that's not a huge issue in the context of the event scheduler.
         var count = 0;
         var lastRun = TimeSpan.Zero;

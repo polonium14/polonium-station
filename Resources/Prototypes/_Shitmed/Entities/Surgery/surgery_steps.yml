@@ -668,9 +668,6 @@
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
     state: heart-on
-  - type: SurgerySpecialDamageChangeEffect
-    damageType: Rot
-    isConsumable: true
 
 - type: entity
   parent: SurgeryStepInsertOrgan

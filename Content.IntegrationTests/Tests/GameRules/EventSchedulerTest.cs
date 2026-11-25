@@ -2,11 +2,13 @@
 using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Utility;
+using Content.Server._Polonium.GameTicking; // Polonium
 using Content.Server.StationEvents;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking;
 using System.Collections.Generic; // Polonium
 using Content.Shared.GameTicking.Components;
+using Robust.Shared.Configuration; // Polonium
 using Robust.Shared.GameObjects; // Polonium
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -26,6 +28,7 @@ public sealed partial class EventSchedulerTest : GameTest
 
     [SidedDependency(Side.Server)] private EventManagerSystem _eventMan = default!;
     [SidedDependency(Side.Server)] private GameTicker _gameTicker = default!;
+    [SidedDependency(Side.Server)] private IConfigurationManager _cfg = default!; // Polonium
 
     private static readonly string[] AntagGameRules = GameDataScrounger.EntitiesWithComponent("StationEvent");
 
@@ -44,6 +47,10 @@ public sealed partial class EventSchedulerTest : GameTest
         // Polonium: events with zero weight are only started by admins and never picked at random
         if (eventComp!.Weight <= 0)
             return;
+
+        // Polonium: a rule behind a feature switch stays out of the rotation until the switch is on
+        if (rule.TryComp<GameRuleFeatureSwitchComponent>(out var featureSwitch, SEntMan.ComponentFactory))
+            _cfg.SetCVar(featureSwitch!.CVar, true);
 
         // Polonium: the round may have run this rule already (e.g. as a roundstart variation pass),
         // and both active and ended runs block it, so start from a clean slate

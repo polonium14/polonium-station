@@ -145,9 +145,9 @@ public sealed partial class ChatSystem
         return newMessage;
     }
 
-    public string TransformSpeech(EntityUid sender, string message)
+    public string TransformSpeech(EntityUid sender, string message, bool typed = false) // Polonium: typed
     {
-        var ev = new TransformSpeechEvent(sender, message);
+        var ev = new TransformSpeechEvent(sender, message) { Typed = typed }; // Polonium: typed
         RaiseLocalEvent(sender, ev, true);
 
         return ev.Message;

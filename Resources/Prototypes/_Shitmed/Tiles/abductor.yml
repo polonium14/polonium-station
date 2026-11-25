@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: tile
+  parent: BaseStationTile
+  id: FloorAbductor
+  name: tiles-abductor-floor
+  sprite: /Textures/_Shitmed/Tiles/abductor_tile.png
+  footstepSounds:
+    collection: FootstepAsteroid

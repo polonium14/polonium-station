@@ -1,0 +1,314 @@
+- type: entity
+  parent:
+  - AppearanceGray
+  - BaseSpeciesMobOrganic
+  id: MobAbductor
+  name: abductor
+  components:
+  - type: TypingIndicator
+    proto: gray
+  - type: Vocal
+    emoteSounds: UnisexGray
+  - type: Speech
+    speechSounds: PVC
+  - type: Damageable
+    damageModifierSet: Abductor
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: GrayBlood
+        Quantity: 300
+
+- type: damageModifierSet
+  id: Abductor
+  coefficients:
+    Blunt: 1.15
+    Slash: 1.15
+    Piercing: 1.15
+    Cold: 0.3
+    Heat: 0.3
+    Radiation: 0.2
+    Cellular: 1
+
+- type: radioChannel
+  id: Abductor
+  name: chat-radio-abductor
+  keycode: 'a'
+  frequency: 207.9
+  color: "#ff0099"
+  longRange: true
+
+- type: entity
+  parent: [ EncryptionKey, BaseMajorContraband ]
+  id: EncryptionKeyAbductor
+  name: alien encryption key
+  description: A cypher chip of alien make.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Abductor
+    defaultChannel: Abductor
+  - type: Sprite
+    layers:
+    - state: crypt_silver
+
+- type: localizedDataset
+  id: NamesAbductorDesignation
+  values:
+    prefix: names-abductor-designation-
+    count: 12
+
+- type: startingGear
+  id: AbductorLoneGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAbductor
+    ears: ClothingHeadsetAltAbductor
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadHelmetAbductor
+    outerClothing: ClothingOuterCoatAbductor
+    back: ClothingBackpackAbductor
+    id: AgentIDCard
+  inhand:
+  - Wonderprod
+
+- type: startingGear
+  id: AbductorScientistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAbductor
+    ears: ClothingHeadsetAltAbductor
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadMirror
+    outerClothing: ClothingOuterCoatAbductor
+    back: ClothingBackpackDuffelAbductor
+    id: AgentIDCard
+
+- type: startingGear
+  id: AbductorAgentGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAbductor
+    ears: ClothingHeadsetAltAbductor
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadHelmetAbductor
+    outerClothing: ClothingOuterArmorAbductor
+    back: ClothingBackpackAbductor
+    id: AgentIDCard
+  inhand:
+  - Wonderprod
+
+- type: antag
+  id: AbductorLone
+  name: roles-antag-abductor-lone-name
+  antagonist: true
+  objective: roles-antag-abductor-objective
+
+- type: antag
+  id: AbductorScientist
+  name: roles-antag-abductor-scientist-name
+  antagonist: true
+  objective: roles-antag-abductor-objective
+
+- type: antag
+  id: AbductorAgent
+  name: roles-antag-abductor-agent-name
+  antagonist: true
+  objective: roles-antag-abductor-objective
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleAbductorLone
+  name: Lone Abductor Role
+  components:
+  - type: MindRole
+    roleType: SoloAntagonist
+    subtype: role-subtype-abductor
+    exclusiveAntag: true
+    antagPrototype: AbductorLone
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleAbductorScientist
+  name: Abductor Scientist Role
+  components:
+  - type: MindRole
+    roleType: TeamAntagonist
+    subtype: role-subtype-abductor
+    exclusiveAntag: true
+    antagPrototype: AbductorScientist
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleAbductorAgent
+  name: Abductor Agent Role
+  components:
+  - type: MindRole
+    roleType: TeamAntagonist
+    subtype: role-subtype-abductor
+    exclusiveAntag: true
+    antagPrototype: AbductorAgent
+
+- type: entity
+  abstract: true
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: BaseGhostRoleAbductor
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _MACRO/Mobs/Species/Gray/parts.rsi
+      state: full
+
+- type: entity
+  parent: BaseGhostRoleAbductor
+  id: GhostRoleAbductorLone
+  components:
+  - type: GhostRole
+    name: ghost-role-information-abductor-lone-name
+    description: ghost-role-information-abductor-lone-description
+    rules: ghost-role-information-abductor-lone-rules
+    mindRoles:
+    - MindRoleAbductorLone
+
+- type: entity
+  parent: BaseGhostRoleAbductor
+  id: GhostRoleAbductorScientist
+  components:
+  - type: GhostRole
+    name: ghost-role-information-abductor-scientist-name
+    description: ghost-role-information-abductor-scientist-description
+    rules: ghost-role-information-abductor-team-rules
+    mindRoles:
+    - MindRoleAbductorScientist
+
+- type: entity
+  parent: BaseGhostRoleAbductor
+  id: GhostRoleAbductorAgent
+  components:
+  - type: GhostRole
+    name: ghost-role-information-abductor-agent-name
+    description: ghost-role-information-abductor-agent-description
+    rules: ghost-role-information-abductor-team-rules
+    mindRoles:
+    - MindRoleAbductorAgent
+
+- type: antagSpecifier
+  abstract: true
+  parent: RestrictedAntag
+  id: BaseAbductor
+  pickPlayer: false
+
+- type: antagSpecifier
+  parent: BaseAbductor
+  id: AbductorLone
+  prefRoles:
+  - GenericAntagonist
+  spawnerPrototype: GhostRoleAbductorLone
+  startingGear: AbductorLoneGear
+  components:
+  - type: Abductor
+    arrivalLine: AbductorCuratorArrivalLone
+  - type: RandomMetadata
+    nameSegments:
+    - NamesAbductorDesignation
+    nameFormat: name-format-abductor-lone
+  mindRoles:
+  - MindRoleAbductorLone
+
+- type: antagSpecifier
+  parent: BaseAbductor
+  id: AbductorScientist
+  prefRoles:
+  - GenericTeamAntagonist
+  spawnerPrototype: GhostRoleAbductorScientist
+  startingGear: AbductorScientistGear
+  components:
+  - type: Abductor
+    arrivalLine: AbductorCuratorArrivalScientist
+  - type: RandomMetadata
+    nameSegments:
+    - NamesAbductorDesignation
+    nameFormat: name-format-abductor-scientist
+  mindRoles:
+  - MindRoleAbductorScientist
+
+- type: antagSpecifier
+  parent: BaseAbductor
+  id: AbductorAgent
+  prefRoles:
+  - GenericTeamAntagonist
+  spawnerPrototype: GhostRoleAbductorAgent
+  startingGear: AbductorAgentGear
+  components:
+  - type: Abductor
+    arrivalLine: AbductorCuratorArrivalAgent
+  - type: RandomMetadata
+    nameSegments:
+    - NamesAbductorDesignation
+    nameFormat: name-format-abductor-agent
+  mindRoles:
+  - MindRoleAbductorAgent
+
+- type: entity
+  abstract: true
+  parent: BaseAntagGhostRoleRule
+  id: BaseAbductorRule
+  components:
+  - type: RuleGrids
+  - type: LoadMapRule
+    gridPath: /Maps/_Polonium/Shuttles/abductor_shuttle.yml
+  - type: AntagSpawner
+    prototype: MobAbductor
+  - type: AbductorRule
+
+- type: entity
+  parent: BaseAbductorRule
+  id: AbductorLoneSpawn
+  components:
+  - type: AntagObjectives
+    objectives:
+    - AbductorExperimentsObjectiveLone
+  - type: AntagSelection
+    agentName: abductor-round-end-agent-name
+    antags:
+    - !type:FixedAntagCount
+      proto: AbductorLone
+
+- type: entity
+  parent: BaseAbductorRule
+  id: AbductorPairSpawn
+  components:
+  - type: AntagObjectives
+    objectives:
+    - AbductorExperimentsObjectivePair
+  - type: AntagSelection
+    agentName: abductor-round-end-agent-name
+    antags:
+    - !type:FixedAntagCount
+      proto: AbductorScientist
+    - !type:FixedAntagCount
+      proto: AbductorAgent
+
+- type: entity
+  parent: BaseGameRule
+  id: AbductorSpawn
+  components:
+  - type: StationEvent
+    weight: 4
+    earliestStart: 15
+    reoccurrenceDelay: 45
+    maxOccurrences: 1
+    minimumPlayers: 10
+    eventType: HostilesSpawn
+    occursDuringRoundEnd: false
+  - type: GameRule
+    chaosScore: 250
+  - type: GameRuleFeatureSwitch
+    cvar: abductors.enabled
+  - type: AbductorDispatchRule
+    lone: AbductorLoneSpawn
+    pair: AbductorPairSpawn
+    pairMinimumPlayers: 20

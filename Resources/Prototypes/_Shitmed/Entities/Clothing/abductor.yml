@@ -1,0 +1,99 @@
+- type: entity
+  parent: [ UnsensoredClothingUniformBase, BaseMajorContraband ]
+  id: ClothingUniformJumpsuitAbductor
+  name: abductor uniform
+  description: A seamless suit woven from an alien fiber.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Clothing/Uniforms/Jumpsuit/abductor.rsi
+  - type: Clothing
+    sprite: _Shitmed/Clothing/Uniforms/Jumpsuit/abductor.rsi
+
+- type: entity
+  parent: [ ClothingBackpack, BaseMajorContraband ]
+  id: ClothingBackpackAbductor
+  name: alien backpack
+  description: An ordinary backpack woven from a durable fiber.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Clothing/Back/Backpacks/abductor.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+- type: entity
+  parent: [ ClothingBackpackDuffel, BaseMajorContraband ]
+  id: ClothingBackpackDuffelAbductor
+  name: alien duffel bag
+  description: An ordinary duffel bag woven from a durable fiber.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Clothing/Back/Duffels/abductor.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: Storage
+    grid:
+    - 0,0,8,4
+
+- type: entity
+  parent: [ ClothingHeadsetAlt, BaseMajorContraband ]
+  id: ClothingHeadsetAltAbductor
+  name: abductor over-ear headset
+  description: A headset tuned to a channel no station can hear.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyAbductor
+  - type: Sprite
+    sprite: _Shitmed/Clothing/Ears/Headsets/abductor.rsi
+  - type: Clothing
+    sprite: _Shitmed/Clothing/Ears/Headsets/abductor.rsi
+
+- type: entity
+  parent: [ ClothingHeadHelmetBase, BaseMajorContraband ]
+  id: ClothingHeadHelmetAbductor
+  name: alien helmet
+  description: A smooth helmet shaped for a much larger skull.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: EyeProtection
+  - type: Sprite
+    sprite: _Shitmed/Clothing/Head/Helmets/abductor.rsi
+  - type: Clothing
+    sprite: _Shitmed/Clothing/Head/Helmets/abductor.rsi
+
+- type: entity
+  parent: [ ClothingOuterArmorBase, BaseMajorContraband ]
+  id: ClothingOuterArmorAbductor
+  name: agent vest
+  description: A vest of alien make, worn by those who collect the specimens.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Clothing/OuterClothing/Armor/abductor.rsi
+  - type: Clothing
+    sprite: _Shitmed/Clothing/OuterClothing/Armor/abductor.rsi
+
+- type: entity
+  parent: [ ClothingOuterStorageBase, AllowSuitStorageClothing, BaseMajorContraband ]
+  id: ClothingOuterCoatAbductor
+  name: alien lab coat
+  description: A coat of alien origin that protects from various injuries, as well as from chemical spills.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Clothing/OuterClothing/Coats/abductor.rsi
+  - type: Clothing
+    sprite: _Shitmed/Clothing/OuterClothing/Coats/abductor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Caustic: 0.75

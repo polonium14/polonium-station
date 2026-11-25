@@ -1,0 +1,40 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseStructure
+  id: AbductorExperimentator
+  name: experimentator
+  description: A device that analyzes the result of the experiment and resets the subject to the place from where they were taken.
+  components:
+  - type: GuideHelp
+    guides:
+    - Abductors
+  - type: Sprite
+    noRot: true
+    sprite: _Shitmed/Structures/abductor_experimentator.rsi
+    layers:
+    - state: experimentator_0
+      map: [ "base" ]
+  - type: InteractionOutline
+  - type: Physics
+    canCollide: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.AbductorChamberVisuals.Occupied:
+        base:
+          True: { state: experimentator_1 }
+          False: { state: experimentator_0 }
+  - type: ContainerContainer
+    containers:
+      specimen: !type:ContainerSlot
+  - type: DragInsertContainer
+    containerId: specimen
+    entryDelay: 2
+  - type: AbductorChamber
+    startSound:
+      path: /Audio/Machines/scanning.ogg
+    successSound:
+      path: /Audio/Machines/scan_finish.ogg
+    failureSound:
+      path: /Audio/Machines/buzz-sigh.ogg
