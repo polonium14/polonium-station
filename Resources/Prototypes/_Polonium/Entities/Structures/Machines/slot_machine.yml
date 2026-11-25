@@ -90,6 +90,7 @@
     slots:
       money:
         name: slotmachine-slot-money
+        ejectOnBreak: true
         whitelist:
           components:
           - Cash
