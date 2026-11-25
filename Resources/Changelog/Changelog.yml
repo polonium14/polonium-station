@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: jkwookee
-  changes:
-  - message: Both wizard rods & normal rods now destroy full sized grilles.
-    type: Fix
-  id: 9657
-  time: '2026-04-23T03:07:21.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40714
 - author: themias
   changes:
   - message: Dropping or putting away an RCD now cancels the construction
@@ -5237,3 +5230,15 @@
   id: 10151
   time: '2026-11-25T07:36:44.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1298
+- author: Nikita
+  changes:
+  - message: "Maluch teraz posiada baga\u017Cnik 8x4"
+    type: Add
+  - message: Maluch teraz kosztuje 47500 spesos zamiast 69000
+    type: Tweak
+  - message: "Kierowca i pasa\u017Cerowie nie mog\u0105 teraz strzela\u0107, znajduj\u0105\
+      c si\u0119 w maluchu"
+    type: Remove
+  id: 10152
+  time: '2026-11-25T09:16:47.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1308
