@@ -10,7 +10,6 @@ using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
-using Content.Shared.Buckle.Components;
 using NUnit.Framework;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
@@ -19,14 +18,10 @@ using Robust.Shared.Map;
 namespace Content.IntegrationTests.Tests._Shitmed.Body;
 
 /// <summary>
-/// User request: "when the patient is unbuckled from the surgery bed maybe they should slowly
-/// start to bleed?" - penalizes getting up with unfinished surgery (see
-/// HealthAnalyzerUnfinishedSurgeryTest for the marker-detection half of this feature).
-///
-/// UnfinishedSurgeryPenaltySystem's OnUnbuckled subscribes UnbuckledEvent directly - this test
-/// raises that event directly rather than driving the full SharedBuckleSystem interaction/range
-/// checks (same "test the handler, not the engine's own buckle machinery" approach
-/// HealthAnalyzerTourniquetTest already uses for TourniquetDoAfterEvent).
+/// An open surgical incision bleeds for as long as it stays open, wherever the patient lies:
+/// strongly until its bleeders are clamped, weakly afterwards. The bleeding does not clot
+/// and stops when the incision is closed (see HealthAnalyzerUnfinishedSurgeryTest for the
+/// marker-detection half of this feature).
 /// </summary>
 [TestFixture]
 [TestOf(typeof(UnfinishedSurgeryPenaltySystem))]
@@ -47,202 +42,125 @@ public sealed class UnfinishedSurgeryBleedingPenaltyTest : GameTest
     bloodlossHealDamage:
       types:
         Bloodloss: -1
-  - type: Buckle
 
 - type: entity
-  id: UnfinishedSurgeryPenaltyArm
+  id: UnfinishedSurgeryPenaltyTorso
   components:
   - type: Organ
-    category: ArmLeft
-  - type: Damageable
-  - type: Injurable
-  - type: Nerve
-  - type: Woundable
-    integrityCap: 80
-    thresholds:
-      Healthy: 80
-      Minor: 64
-      Moderate: 48
-      Severe: 32
-      Critical: 16
-      Mangled: 6
-      Severed: 0
-
-- type: entity
-  id: UnfinishedSurgeryPenaltyBed
-  components:
-  - type: Strap
-  - type: HealOnBuckle
-    damage:
-      types:
-        Poison: -0.1
-
-- type: entity
-  id: UnfinishedSurgeryPenaltyChair
-  components:
-  - type: Strap
+    category: Torso
 ";
+
+    // The default surgery.open_incision_bleed and surgery.clamped_incision_bleed for the torso.
+    private const float OpenBleed = 2.5f;
+    private const float ClampedBleed = 1.2f;
 
     [TestCase(false)]
     [TestCase(true)]
-    public async Task UnbuckleFromBedWithUnfinishedSurgeryStartsBleeding(bool rejuvenate)
+    public async Task OpenIncisionBleedsUntilClosed(bool rejuvenate)
     {
-        var pair = Pair;
-        var server = pair.Server;
-
-        var sEntMan = server.ResolveDependency<IEntityManager>();
-        var map = await pair.CreateTestMap();
+        var map = await Pair.CreateTestMap();
         var coords = new MapCoordinates(Vector2.Zero, map.MapId);
 
         EntityUid mob = default;
-        EntityUid arm = default;
-        EntityUid bed = default;
+        EntityUid torso = default;
 
-        await server.WaitPost(() =>
+        await Server.WaitPost(() =>
         {
-            mob = sEntMan.SpawnEntity("UnfinishedSurgeryPenaltyMob", coords);
-            arm = sEntMan.SpawnEntity("UnfinishedSurgeryPenaltyArm", coords);
-            bed = sEntMan.SpawnEntity("UnfinishedSurgeryPenaltyBed", coords);
+            mob = SEntMan.SpawnEntity("UnfinishedSurgeryPenaltyMob", coords);
+            torso = SEntMan.SpawnEntity("UnfinishedSurgeryPenaltyTorso", coords);
 
-            var container = sEntMan.System<SharedContainerSystem>();
-            var organsContainer = container.GetContainer(mob, BodyComponent.ContainerID);
-            container.Insert(arm, organsContainer);
+            var container = SEntMan.System<SharedContainerSystem>();
+            container.Insert(torso, container.GetContainer(mob, BodyComponent.ContainerID));
 
-            // Leave an incision open - unfinished surgery.
-            sEntMan.AddComponent<IncisionOpenComponent>(arm);
+            // The patient lies on the floor: no bed or operating table is involved.
+            SEntMan.AddComponent<IncisionOpenComponent>(torso);
         });
 
-        await pair.RunTicksSync(5);
+        // Long enough for several bleed updates, so clotting would show if it happened.
+        await RunSeconds(15);
 
-        // Raise UnbuckledEvent directly, as if the mob just got up off the bed.
-        await server.WaitPost(() =>
+        await Server.WaitAssertion(() =>
         {
-            var strapEnt = new Entity<StrapComponent>(bed, sEntMan.GetComponent<StrapComponent>(bed));
-            var buckleEnt = new Entity<BuckleComponent>(mob, sEntMan.GetComponent<BuckleComponent>(mob));
-            var ev = new UnbuckledEvent(strapEnt, buckleEnt);
-            sEntMan.EventBus.RaiseLocalEvent(mob, ref ev);
+            Assert.That(SEntMan.GetComponent<BloodstreamComponent>(mob).BleedAmount, Is.EqualTo(OpenBleed).Within(0.01f),
+                "An unclamped incision bleeds at the full rate and does not clot.");
+            SEntMan.AddComponent<IncisionClampedComponent>(torso);
         });
 
-        await pair.RunTicksSync(5);
+        await RunSeconds(6);
 
-        await server.WaitAssertion(() =>
+        await Server.WaitAssertion(() =>
         {
-            Assert.That(sEntMan.HasComponent<UnfinishedSurgeryPenaltyComponent>(mob), Is.True,
-                "Unbuckling with unfinished surgery from a HealOnBuckle-bearing bed should start the penalty.");
-        });
+            Assert.That(SEntMan.GetComponent<BloodstreamComponent>(mob).BleedAmount, Is.EqualTo(ClampedBleed).Within(0.01f),
+                "Clamping the bleeders leaves only a slow seep.");
 
-        // Run past several tick intervals (3s each) so the penalty system's Update() actually fires.
-        await pair.RunTicksSync((int) (15 / SGameTiming.TickPeriod.TotalSeconds));
-
-        await server.WaitAssertion(() =>
-        {
-            var bloodstream = sEntMan.GetComponent<BloodstreamComponent>(mob);
-            Assert.That(bloodstream.BleedAmount, Is.GreaterThan(0),
-                "The mob should now be visibly bleeding (BleedAmount > 0, drives the HUD alert and eventual puddle) as a penalty.");
-        });
-
-        // Close the incision - surgery is finished, penalty should stop and remove itself.
-        await server.WaitAssertion(() =>
-        {
             if (!rejuvenate)
             {
-                sEntMan.RemoveComponent<IncisionOpenComponent>(arm);
+                // Closing the incision removes its markers.
+                SEntMan.RemoveComponent<IncisionOpenComponent>(torso);
+                SEntMan.RemoveComponent<IncisionClampedComponent>(torso);
                 return;
             }
 
-            // Rejuvenation must clear every unfinished step, including on organs that
-            // do not support wounds, and remove the active penalty immediately.
-            sEntMan.AddComponent<SkinRetractedComponent>(arm);
-            sEntMan.AddComponent<BleedersClampedComponent>(arm);
-            sEntMan.AddComponent<InternalBleedersClampedComponent>(arm);
-            sEntMan.AddComponent<BonesOpenComponent>(arm);
-            sEntMan.AddComponent<BonesSawedComponent>(arm);
-            sEntMan.AddComponent<BodyPartSawedComponent>(arm);
-            sEntMan.AddComponent<SeveredSkinRemovedComponent>(arm);
-            sEntMan.AddComponent<BoneLeftoversRemovedComponent>(arm);
-            sEntMan.AddComponent<BodyPartReattachedComponent>(arm);
-            sEntMan.AddComponent<OrganReattachedComponent>(arm);
-            sEntMan.AddComponent<LobotomizedComponent>(arm);
-            sEntMan.AddComponent<PartsRemovedComponent>(arm);
-            var organ = sEntMan.SpawnEntity(null, coords);
-            sEntMan.AddComponent<OrganComponent>(organ);
-            var container = sEntMan.System<SharedContainerSystem>();
-            Assert.That(container.Insert(organ, container.GetContainer(mob, BodyComponent.ContainerID)), Is.True);
-            sEntMan.AddComponent<IncisionOpenComponent>(organ);
+            // Rejuvenation must clear every unfinished step and remove the tracking immediately.
+            SEntMan.AddComponent<SkinRetractedComponent>(torso);
+            SEntMan.AddComponent<InternalBleedersClampedComponent>(torso);
+            SEntMan.AddComponent<BonesOpenComponent>(torso);
+            SEntMan.AddComponent<BonesSawedComponent>(torso);
+            SEntMan.AddComponent<BodyPartSawedComponent>(torso);
+            SEntMan.AddComponent<SeveredSkinRemovedComponent>(torso);
+            SEntMan.AddComponent<BoneLeftoversRemovedComponent>(torso);
+            SEntMan.AddComponent<BodyPartReattachedComponent>(torso);
+            SEntMan.AddComponent<OrganReattachedComponent>(torso);
+            SEntMan.AddComponent<LobotomizedComponent>(torso);
+            SEntMan.AddComponent<PartsRemovedComponent>(torso);
 
-            sEntMan.System<RejuvenateSystem>().PerformRejuvenate(mob);
-            Assert.That(sEntMan.System<SharedSurgerySystem>().HasUnfinishedSurgerySteps(arm), Is.False);
-            Assert.That(sEntMan.System<SharedSurgerySystem>().HasUnfinishedSurgerySteps(organ), Is.False);
-            Assert.That(sEntMan.HasComponent<LobotomizedComponent>(arm), Is.False);
-            Assert.That(sEntMan.HasComponent<PartsRemovedComponent>(arm), Is.False);
-            Assert.That(sEntMan.HasComponent<UnfinishedSurgeryPenaltyComponent>(mob), Is.False);
-            Assert.That(sEntMan.GetComponent<BloodstreamComponent>(mob).BleedAmount, Is.Zero);
-
-            var strapEnt = new Entity<StrapComponent>(bed, sEntMan.GetComponent<StrapComponent>(bed));
-            var buckleEnt = new Entity<BuckleComponent>(mob, sEntMan.GetComponent<BuckleComponent>(mob));
-            var ev = new UnbuckledEvent(strapEnt, buckleEnt);
-            sEntMan.EventBus.RaiseLocalEvent(mob, ref ev);
-            Assert.That(sEntMan.HasComponent<UnfinishedSurgeryPenaltyComponent>(mob), Is.False,
-                "Getting up after rejuvenation must not restart surgery bleeding.");
-            sEntMan.System<RejuvenateSystem>().PerformRejuvenate(mob);
+            SEntMan.System<RejuvenateSystem>().PerformRejuvenate(mob);
+            Assert.Multiple(() =>
+            {
+                Assert.That(SEntMan.System<SharedSurgerySystem>().HasUnfinishedSurgerySteps(torso), Is.False);
+                Assert.That(SEntMan.HasComponent<LobotomizedComponent>(torso), Is.False);
+                Assert.That(SEntMan.HasComponent<PartsRemovedComponent>(torso), Is.False);
+                Assert.That(SEntMan.HasComponent<UnfinishedSurgeryPenaltyComponent>(mob), Is.False);
+                Assert.That(SEntMan.GetComponent<BloodstreamComponent>(mob).BleedAmount, Is.Zero);
+            });
         });
 
-        await pair.RunTicksSync((int) (15 / pair.Server.Timing.TickPeriod.TotalSeconds));
+        await RunSeconds(6);
 
-        await server.WaitAssertion(() =>
+        await Server.WaitAssertion(() =>
         {
-            Assert.That(sEntMan.HasComponent<UnfinishedSurgeryPenaltyComponent>(mob), Is.False,
-                "Finishing the surgery should remove the penalty tracking component.");
-
-            var bloodstream = sEntMan.GetComponent<BloodstreamComponent>(mob);
-            Assert.That(bloodstream.BleedAmount, Is.EqualTo(0f),
-                "Finishing the surgery should also stop the bleed the penalty applied - the incision is closed.");
+            Assert.Multiple(() =>
+            {
+                Assert.That(SEntMan.HasComponent<UnfinishedSurgeryPenaltyComponent>(mob), Is.False,
+                    "A closed incision leaves no tracking behind.");
+                Assert.That(SEntMan.GetComponent<BloodstreamComponent>(mob).BleedAmount, Is.Zero,
+                    "A closed incision stops bleeding.");
+            });
         });
     }
 
     [Test]
-    public async Task UnbuckleFromPlainChairNeverStartsThePenalty()
+    public async Task CutOffPartLosesIncisionButKeepsLobotomy()
     {
-        var pair = Pair;
-        var server = pair.Server;
-
-        var sEntMan = server.ResolveDependency<IEntityManager>();
-        var map = await pair.CreateTestMap();
+        var map = await Pair.CreateTestMap();
         var coords = new MapCoordinates(Vector2.Zero, map.MapId);
 
-        EntityUid mob = default;
-        EntityUid arm = default;
-        EntityUid chair = default;
-
-        await server.WaitPost(() =>
+        await Server.WaitAssertion(() =>
         {
-            mob = sEntMan.SpawnEntity("UnfinishedSurgeryPenaltyMob", coords);
-            arm = sEntMan.SpawnEntity("UnfinishedSurgeryPenaltyArm", coords);
-            chair = sEntMan.SpawnEntity("UnfinishedSurgeryPenaltyChair", coords);
+            var mob = SEntMan.SpawnEntity("UnfinishedSurgeryPenaltyMob", coords);
+            var torso = SEntMan.SpawnEntity("UnfinishedSurgeryPenaltyTorso", coords);
 
-            var container = sEntMan.System<SharedContainerSystem>();
-            var organsContainer = container.GetContainer(mob, BodyComponent.ContainerID);
-            container.Insert(arm, organsContainer);
+            var container = SEntMan.System<SharedContainerSystem>();
+            container.Insert(torso, container.GetContainer(mob, BodyComponent.ContainerID));
+            SEntMan.AddComponent<IncisionOpenComponent>(torso);
+            SEntMan.AddComponent<LobotomizedComponent>(torso);
 
-            sEntMan.AddComponent<IncisionOpenComponent>(arm);
-        });
-
-        await pair.RunTicksSync(5);
-
-        await server.WaitPost(() =>
-        {
-            var strapEnt = new Entity<StrapComponent>(chair, sEntMan.GetComponent<StrapComponent>(chair));
-            var buckleEnt = new Entity<BuckleComponent>(mob, sEntMan.GetComponent<BuckleComponent>(mob));
-            var ev = new UnbuckledEvent(strapEnt, buckleEnt);
-            sEntMan.EventBus.RaiseLocalEvent(mob, ref ev);
-        });
-
-        await pair.RunTicksSync(5);
-
-        await server.WaitAssertion(() =>
-        {
-            Assert.That(sEntMan.HasComponent<UnfinishedSurgeryPenaltyComponent>(mob), Is.False,
-                "A plain chair (no HealOnBuckleComponent) should never trigger the bleed-on-unbuckle penalty.");
+            Assert.That(container.Remove(torso, container.GetContainer(mob, BodyComponent.ContainerID)));
+            Assert.Multiple(() =>
+            {
+                Assert.That(SEntMan.HasComponent<IncisionOpenComponent>(torso), Is.False);
+                Assert.That(SEntMan.HasComponent<LobotomizedComponent>(torso), Is.True, "A lobotomy is a result, not an open step.");
+            });
         });
     }
 }

@@ -148,11 +148,14 @@
       Tongue: OrganVoxTongue
       Appendix: OrganVoxAppendix
       Ears: OrganVoxEars
-      Lungs: OrganVoxLungs
+      LungLeft: OrganVoxLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganVoxLungRight
       Heart: OrganVoxHeart
       Stomach: OrganVoxStomach
       Liver: OrganVoxLiver
-      Kidneys: OrganVoxKidneys
+      KidneyLeft: OrganVoxKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganVoxKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Vox
 
@@ -418,23 +421,25 @@
   parent: [ OrganBaseBrain, OrganVoxInternal ]
   id: OrganVoxBrain
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    integrityFloor: 6
 
 - type: entity
   parent: [ OrganVoxVisual, OrganBaseEyes, OrganVoxInternal ]
   id: OrganVoxEyes
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 24
     integrityThresholds:
-      Normal: 24
-      Damaged: 4
+      Normal: 8.4
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEyes
   - type: EyeBlinking
     eyelidsSprite: /Textures/Mobs/Species/Vox/parts.rsi
   - type: Appearance
@@ -443,56 +448,62 @@
   parent: [ OrganBaseTongue, OrganVoxInternal ]
   id: OrganVoxTongue
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadTongue
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganVoxInternal ]
   id: OrganVoxAppendix
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadAppendix
 
 - type: entity
   parent: [ OrganBaseEars, OrganVoxInternal ]
   id: OrganVoxEars
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEars
 
 - type: entity
   parent: [ OrganBaseLungs, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxLungs
+  abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxHeart
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadHeart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganVoxInternal, OrganVoxMetabolizer ]
@@ -503,31 +514,35 @@
       tags:
       - Trash
     isSpecialDigestibleExclusive: false
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 88
     integrityThresholds:
-      Normal: 88
-      Damaged: 17
+      Normal: 30.8
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadStomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxLiver
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLiver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxKidneys
+  abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadKidneys

@@ -1,0 +1,12 @@
+- type: entity
+  id: ChemistryBottleMorphine
+  suffix: morphine
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    localizedLabel: reagent-name-morphine
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Morphine
+        Quantity: 30

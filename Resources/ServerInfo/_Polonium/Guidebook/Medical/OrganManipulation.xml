@@ -18,9 +18,9 @@ Zazwyczaj organizm posiada następujące narządy:
 <GuideEntityEmbed Entity="OrganHumanHeart" Caption="serce"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="OrganHumanKidneys" Caption="nerki"/>
+<GuideEntityEmbed Entity="OrganHumanKidneyLeft" Caption="nerka (lewa i prawa)"/>
 <GuideEntityEmbed Entity="OrganHumanLiver" Caption="wątroba"/>
-<GuideEntityEmbed Entity="OrganHumanLungs" Caption="płuca"/>
+<GuideEntityEmbed Entity="OrganHumanLungLeft" Caption="płuco (lewe i prawe)"/>
 <GuideEntityEmbed Entity="OrganHumanStomach" Caption="żołądek"/>
 </Box>
 
@@ -29,13 +29,26 @@ Aby usunąć narząd, musisz wykonać na nim odpowiednią operację usunięcia n
 
 Jeśli jednak chcesz przeszczepić narząd, musisz wykonać odpowiednią operację przeszczepu narządu w miejscu, w którym pierwotnie się znajdował.
 
-## Jakie skutki ma przeszczep poszczególnych narządów?
+## Po co przeszczepiać narząd?
 
-- Przeszczep [color=#e8c878]mózgu[/color] pozwoli pacjentowi przejąć kontrolę nad innym ciałem. To doskonała alternatywa dla klonowania, jeśli możesz sobie pozwolić na poświęcenie innego ciała.
-- Przeszczep [color=#e8c878]wątroby[/color] wyleczy organizm pacjenta z ciężkiego zatrucia.
-- Przeszczep [color=#e8c878]płuc[/color] pomoże wyleczyć pacjentów z ciężkiego uduszenia.
-- Przeszczep [color=#e8c878]serca[/color] wyleczy organizm pacjenta z gnicia i rozkładu.
-- Przeszczep [color=#e8c878]oczu[/color] pozwoli pacjentowi znów widzieć i wyleczy wszelkie uszkodzenia wzroku.
+Każdy narząd ma swoją funkcję, opisaną na stronie „Doktor Medyczny”. Chory narząd leczysz lekami albo operacją naprawy, a martwy można tylko wyciąć i wymienić.
+
+- Przeszczep [color=#e8c878]mózgu[/color] pozwoli pacjentowi przejąć kontrolę nad innym ciałem. Wyjęcie mózgu zabija ciało.
+- Nowe [color=#e8c878]serce[/color] przywraca krążenie. Bez działającego serca pacjent traci przytomność i dusi się, a defibrylator nie ożywia.
+- Nowa [color=#e8c878]wątroba[/color] albo [color=#e8c878]nerka[/color] kończy zatruwanie organizmu przez martwy narząd.
+- Nowe [color=#e8c878]płuco[/color] przywraca pełny zapas tlenu.
+- Nowa [color=#e8c878]śledziona[/color] przywraca odnawianie krwi.
+- Nowe [color=#e8c878]oczy[/color], [color=#e8c878]uszy[/color] albo [color=#e8c878]język[/color] przywracają wzrok, słuch albo mowę.
+
+## Naprawa narządów
+
+Mocno uszkodzony narząd można naprawić bez przeszczepu. Otwórz klatkę piersiową (albo natnij głowę przy oczach, uszach i języku) i wybierz z listy operację dla konkretnego narządu, na przykład „Napraw wątrobę”. Jeden krok hemostatem przywraca narząd do 60% integralności. Operacja jest na liście także wtedy, gdy narząd jej nie potrzebuje; wtedy krok jest od razu oznaczony jako wykonany.
+Każdy narząd da się tak naprawić tylko raz. Później pomogą już tylko leki albo przeszczep. Martwego narządu naprawić się nie da.
+
+## Przechowywanie narządów
+
+Narząd wyjęty z ciała obumiera w około kwadrans. Rozkład zatrzymuje zamrażarka, kostnica albo inny pojemnik chroniący przed gniciem, więc narządy do przeszczepu trzymaj właśnie tam.
+Mózg jest wyjątkiem i poza ciałem nie obumiera.
 
 ## Gdzie mogę zdobyć więcej narządów?
 
@@ -53,6 +66,6 @@ Domyślnie każdy Ordynator Medyczny ma dostęp do płytki maszynowej biofabryka
 ## Dlaczego przeszczep narządu
 ## nie przyniósł żadnego efektu?
 
-Organizm twojego pacjenta odrzucił narząd, ponieważ jest on w złym stanie. Spróbuj użyć świeżego narządu od dawcy lub uzyskać nowy z medycznego biofabrykatora.
+Wszczepiony narząd był martwy albo zdążył obumrzeć poza ciałem. Martwy narząd zostaje martwy także w nowym ciele. Sprawdź pacjenta analizatorem i użyj świeżego narządu, najlepiej prosto z biofabrykatora albo z zamrażarki.
 
 </Document>

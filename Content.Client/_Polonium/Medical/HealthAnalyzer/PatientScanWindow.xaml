@@ -1,0 +1,159 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      xmlns:scan="clr-namespace:Content.Client._Polonium.Medical.HealthAnalyzer"
+                      xmlns:polonium="clr-namespace:Content.Client._Polonium.UserInterface.Controls"
+                      MinWidth="760"
+                      Resizable="False">
+    <BoxContainer Orientation="Vertical" Margin="10" SeparationOverride="10">
+        <Label Name="NoPatientLabel"
+               Text="{Loc 'health-analyzer-window-no-patient-data-text'}"
+               Align="Center"
+               VerticalExpand="True"/>
+
+        <BoxContainer Name="Readout" Orientation="Vertical" SeparationOverride="10" Visible="False">
+            <!-- Patient -->
+            <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+                <Label Name="NameLabel" StyleClasses="FontLarge" VerticalAlignment="Center"/>
+                <Label Name="SpeciesLabel" StyleClasses="LabelSubText" HorizontalExpand="True" VerticalAlignment="Center"/>
+                <BoxContainer Orientation="Vertical" SeparationOverride="-4">
+                    <Label Name="StateLabel" Align="Right"/>
+                    <Label Name="ScanLabel" Align="Right" StyleClasses="LabelSubText"/>
+                </BoxContainer>
+            </BoxContainer>
+
+            <controls:Separator StyleClasses="LowDivider"/>
+
+            <BoxContainer Name="ReadoutBody" Orientation="Vertical" SeparationOverride="8">
+                <!-- Vitals -->
+                <PanelContainer Name="VitalsFrame">
+                    <BoxContainer Orientation="Horizontal" SeparationOverride="20" Margin="8 6">
+                        <BoxContainer Orientation="Vertical" HorizontalExpand="True" SeparationOverride="2">
+                            <Label Text="{Loc 'health-analyzer-scan-spo2'}" StyleClasses="LabelSubText"/>
+                            <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+                                <Label Name="SpO2Value" StyleClasses="FontLarge"/>
+                                <Label Name="SpO2State" StyleClasses="LabelSubText" VerticalAlignment="Center"/>
+                                <scan:TrendMarker Name="SpO2Trend"/>
+                            </BoxContainer>
+                            <scan:AnalyzerBar Name="SpO2Bar"/>
+                        </BoxContainer>
+                        <BoxContainer Orientation="Vertical" HorizontalExpand="True" SeparationOverride="2">
+                            <Label Text="{Loc 'health-analyzer-scan-blood'}" StyleClasses="LabelSubText"/>
+                            <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+                                <Label Name="BloodValue" StyleClasses="FontLarge"/>
+                                <Label Name="BloodState" StyleClasses="LabelSubText" VerticalAlignment="Center"/>
+                                <scan:TrendMarker Name="BloodTrend"/>
+                            </BoxContainer>
+                            <scan:AnalyzerBar Name="BloodBar"/>
+                        </BoxContainer>
+                        <BoxContainer Orientation="Vertical" HorizontalExpand="True" SeparationOverride="2">
+                            <Label Text="{Loc 'health-analyzer-scan-temperature'}" StyleClasses="LabelSubText"/>
+                            <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+                                <Label Name="TemperatureValue" StyleClasses="FontLarge"/>
+                                <Label Name="TemperatureState" StyleClasses="LabelSubText" VerticalAlignment="Center"/>
+                            </BoxContainer>
+                            <scan:AnalyzerBar Name="TemperatureBar" Pointer="True"/>
+                        </BoxContainer>
+                    </BoxContainer>
+                </PanelContainer>
+
+                <!-- Life threats; hidden when there are none -->
+                <PanelContainer Name="AlertPanel">
+                    <BoxContainer Orientation="Vertical" Margin="8 4 8 6">
+                        <Label Name="AlertTitle" Text="{Loc 'health-analyzer-scan-alerts'}" StyleClasses="LabelSubText"/>
+                        <BoxContainer Orientation="Horizontal" SeparationOverride="16">
+                            <BoxContainer Name="AlertColumnLeft" Orientation="Vertical" HorizontalExpand="True"/>
+                            <BoxContainer Name="AlertColumnRight" Orientation="Vertical" HorizontalExpand="True"/>
+                        </BoxContainer>
+                    </BoxContainer>
+                </PanelContainer>
+
+                <!-- Body and organs -->
+                <BoxContainer Orientation="Horizontal" SeparationOverride="8">
+                    <PanelContainer Name="BodyFrame" MinWidth="260" MaxWidth="260">
+                        <BoxContainer Orientation="Vertical" SeparationOverride="4" Margin="8 6" VerticalExpand="True">
+                            <Label Text="{Loc 'health-analyzer-scan-body'}" StyleClasses="LabelSubText"/>
+                            <BoxContainer Orientation="Horizontal" SeparationOverride="8" VerticalExpand="True">
+                                <PanelContainer VerticalAlignment="Center">
+                                    <SpriteView Name="DollView" OverrideDirection="South" SetSize="96 96"/>
+                                    <PanelContainer Name="PartView" SetSize="57 96" Margin="18 0 0 0"
+                                                    VerticalAlignment="Center" HorizontalAlignment="Left">
+                                        <PanelContainer SetSize="15 33" Margin="4 0 0 0" HorizontalAlignment="Left">
+                                            <TextureButton Name="RightArmButton" MinSize="15 33"
+                                                           StyleClasses="TargetDollButtonRightArm" VerticalAlignment="Top"/>
+                                        </PanelContainer>
+                                        <PanelContainer SetSize="43 75" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <TextureButton Name="HeadButton" MinSize="28 23" VerticalAlignment="Top"
+                                                           HorizontalAlignment="Center" StyleClasses="TargetDollButtonHead"/>
+                                            <TextureButton Name="ChestButton" SetSize="28 37" Margin="0 18 0 0"
+                                                           VerticalAlignment="Top" HorizontalAlignment="Center"
+                                                           StyleClasses="TargetDollButtonChest"/>
+                                            <PanelContainer MinSize="38 35" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                                                <PanelContainer MinSize="20 30" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                                    <TextureButton Name="LeftLegButton" MinSize="20 30" VerticalAlignment="Top"
+                                                                   HorizontalAlignment="Left" StyleClasses="TargetDollButtonLeftLeg"/>
+                                                </PanelContainer>
+                                                <PanelContainer MinSize="20 30" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                                    <TextureButton Name="RightLegButton" MinSize="20 30" VerticalAlignment="Top"
+                                                                   HorizontalAlignment="Right" StyleClasses="TargetDollButtonRightLeg"/>
+                                                </PanelContainer>
+                                            </PanelContainer>
+                                        </PanelContainer>
+                                        <PanelContainer SetSize="15 33" Margin="0 0 4 0" HorizontalAlignment="Right">
+                                            <TextureButton Name="LeftArmButton" MinSize="15 33"
+                                                           StyleClasses="TargetDollButtonLeftArm" VerticalAlignment="Top"/>
+                                        </PanelContainer>
+                                    </PanelContainer>
+                                </PanelContainer>
+                                <BoxContainer Name="Callouts" Orientation="Vertical" HorizontalExpand="True" SeparationOverride="2"/>
+                            </BoxContainer>
+                            <Button Name="WholeBodyButton" Text="{Loc 'health-analyzer-scan-whole-body'}"
+                                    HorizontalAlignment="Left" Visible="False" StyleClasses="ButtonSquare"/>
+                        </BoxContainer>
+                    </PanelContainer>
+
+                    <PanelContainer Name="OrgansFrame" HorizontalExpand="True">
+                        <BoxContainer Orientation="Vertical" SeparationOverride="3" Margin="8 6">
+                            <Label Text="{Loc 'health-analyzer-scan-organs'}" StyleClasses="LabelSubText"/>
+                            <!-- Its own scroll, so a body with many organs does not stretch the window -->
+                            <polonium:FadingScrollContainer HScrollEnabled="False" SetHeight="219">
+                                <BoxContainer Name="OrganRows" Orientation="Vertical" SeparationOverride="3" Margin="0 0 8 0"/>
+                            </polonium:FadingScrollContainer>
+                        </BoxContainer>
+                    </PanelContainer>
+                </BoxContainer>
+
+                <!-- Damage against the critical and dead thresholds -->
+                <PanelContainer Name="DamageFrame">
+                    <BoxContainer Orientation="Vertical" SeparationOverride="2" Margin="8 6">
+                        <Control>
+                            <Label Name="DamageTitle" StyleClasses="LabelSubText" VerticalAlignment="Bottom"/>
+                            <!-- A warning over the critical line and a skull over the death line -->
+                            <scan:ThresholdIcons Name="DamageIcons"/>
+                        </Control>
+                        <Control MinHeight="24" MaxHeight="24">
+                            <polonium:SegmentedBarChart Name="DamageChart" MinHeight="24" MaxHeight="24"
+                                                        Gap="0" MinEntryWidth="0" ShowBackground="True"
+                                                        ShowRuler="True" ShowSmallNotches="False" HideClippedLabels="True"/>
+                            <!-- Orange line at critical condition, red at death, over the chart -->
+                            <scan:ThresholdMarks Name="DamageMarks"/>
+                        </Control>
+                        <BoxContainer Orientation="Horizontal" SeparationOverride="6" HorizontalAlignment="Right">
+                            <Label Name="DamageValue" StyleClasses="LabelSubText"/>
+                            <scan:TrendMarker Name="DamageTrend"/>
+                        </BoxContainer>
+                    </BoxContainer>
+                </PanelContainer>
+
+                <!-- Chemistry; hidden when there is nothing -->
+                <PanelContainer Name="ChemicalsSection">
+                    <BoxContainer Orientation="Vertical" SeparationOverride="2" Margin="8 6">
+                        <Label Text="{Loc 'health-analyzer-scan-chemicals'}" StyleClasses="LabelSubText"/>
+                        <polonium:SegmentedBarChart Name="BloodChart" MinHeight="28" MaxHeight="28"
+                                                    ShowRuler="True" ShowBackground="True" LabelsOnTop="True" SlideOnReorder="True"/>
+                        <GridContainer Name="OtherSolutions" Columns="2" HSeparationOverride="16"/>
+                    </BoxContainer>
+                </PanelContainer>
+            </BoxContainer>
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

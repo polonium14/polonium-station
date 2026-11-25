@@ -57,6 +57,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   Gdy już będziesz mieć narzędzia pod ręką, trzymając użyj prawego przycisku myszy na pacjencie, aby rozpocząć operację. Będziesz mógł wybrać, którą część chcesz operować.
 
+  ## Otwarta rana krwawi
+
+  Nacięcie krwawi tak długo, jak jest otwarte, bez względu na to, czy pacjent leży na stole, na łóżku, czy na podłodze. To krwawienie samo nie ustaje.
+  Zaciśnij naczynia hemostatem zaraz po nacięciu (to drugi krok operacji „Zrób nacięcie”): zostaje wtedy tylko powolne sączenie, które organizm nadrabia. Bandaż tego krwawienia nie zatrzyma. Nacięcie na klatce piersiowej krwawi najmocniej, na głowie o połowę słabiej, a na ręce albo nodze czterokrotnie słabiej.
+  Krwawienie kończy dopiero zamknięcie nacięcia, więc nie zostawiaj pacjenta rozciętego i nie wypuszczaj go z niedokończoną operacją.
+
   ## Sterylność
 
   Podczas użytkowania na narzędziach gromadzi się brud oraz zanieczyszczenia, co wymaga ich wyczyszczenia.
@@ -83,5 +89,23 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
 
   Nie są co prawda idealne w porównaniu z prawdziwym sprzętem chirurgicznym, ale w razie potrzeby się przydadzą!
+
+  Nóż albo odłamek szkła zastąpi skalpel, obcinak hemostat i rozwórkę, śrubokręt albo widelec rozwórkę, zapalona spawarka kauter, tasak albo topór strażacki piłę, a łom hemostat przy wyjmowaniu narządu.
+  Narzędzie zastępcze jest wolniejsze, a zbyt wolny krok może się nie udać: pacjent zostaje wtedy zraniony, a krok trzeba powtórzyć.
+  Prawdziwe narzędzia nie zawodzą nawet na podłodze, a stół operacyjny przyspiesza zabieg i zmniejsza ryzyko przy narzędziach zastępczych.
+  Żelu kostnego nic nie zastąpi. Przepiłowaną klatkę piersiową albo czaszkę zamkniesz bez niego operacją „Zamknij nacięcie bez żelu kostnego”: zsuń kości i przypal ranę. Pacjent przestaje krwawić, ale kość zostaje złamana, dopóki ktoś nie wykona operacji „Napraw kości”.
+  Niezdarny chirurg, na przykład klaun, psuje co drugi krok bez względu na narzędzia. Chirurg pijany, senny, z halucynacjami albo z drżącymi rękami psuje co czwarty.
+
+  ## Znieczulenie
+
+  Przytomny pacjent czuje każdy krok operacji. Uśpiony pacjent albo pacjent po morfinie nie czuje bólu, a operacja idzie u niego szybciej, więc także narzędzia zastępcze zawodzą rzadziej.
+  Morfina w większej dawce usypia, a przedawkowana zatruwa i zatrzymuje oddech.
+  Butelkę morfiny znajdziesz w pasie medycznym oraz w automatach NanoMed i NanoMed Plus.
+
+  ## Chowanie przedmiotów w klatce piersiowej
+
+  Przez otwartą klatkę piersiową (nacięcie, odciągnięcie skóry, przepiłowanie i rozsunięcie kości) możesz schować w niej jeden mały przedmiot: weź go do ręki i wybierz operację „Schowaj przedmiot w klatce piersiowej”. Operacja „Wyjmij przedmiot z klatki piersiowej” wymaga hemostatu i oddaje przedmiot do twojej ręki. Na koniec zamknij nacięcie jak po każdej operacji.
+
+  Schowany przedmiot działa dalej: odbezpieczony granat wybuchnie w środku. Analizator go nie wykrywa, widać go dopiero przy operacji. Gdy klatka piersiowa zostanie zniszczona, przedmiot wypada.
 
 </Document>

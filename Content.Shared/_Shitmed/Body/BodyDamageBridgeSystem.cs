@@ -14,6 +14,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Standing;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Shared._Shitmed.Body;
@@ -106,19 +107,34 @@ public sealed partial class BodyDamageBridgeSystem : EntitySystem
 
             var rolledTarget = RollHitLocation(ent.Owner, selectedTarget, args.Damage);
 
-            if (!LimbTargetMap.TryGetCategory(rolledTarget, out var category))
+            // A hit on a missing limb lands on the nearest part that is still there, so no damage
+            // ends up on the mob alone, where no limb shows it and no treatment finds it.
+            if (LimbTargetMap.TryGetCategory(rolledTarget, out var category)
+                && TryResolveOrganWithFallback(ent.Comp, category, out var organ))
+            {
+                ApplyBridgedDamage(ent.Comp, organ, args.Damage, origin);
                 return;
-
-            if (!LimbTargetMap.TryGetOrganByCategory(EntityManager, ent.Comp, category, out var organ))
-                return;
-
-            AddComp<SkipOrganMobSyncComponent>(organ);
-            _damageable.TryChangeDamage(organ, args.Damage, ignoreResistances: true, interruptsDoAfters: false, origin: origin);
-            RemComp<SkipOrganMobSyncComponent>(organ);
-            return;
+            }
         }
 
         ApplyToAllLimbs(ent.Comp, args.Damage, args.Origin);
+    }
+
+    /// <summary>
+    /// The organ of this category, or of the nearest parent that is present (hand, arm, torso).
+    /// </summary>
+    private bool TryResolveOrganWithFallback(BodyComponent body, ProtoId<OrganCategoryPrototype> category, out EntityUid organ)
+    {
+        while (true)
+        {
+            if (LimbTargetMap.TryGetOrganByCategory(EntityManager, body, category, out organ))
+                return true;
+
+            if (!LimbTargetMap.TryGetParentCategory(category, out var parent))
+                return false;
+
+            category = parent;
+        }
     }
 
     private TargetBodyPart RollHitLocation(EntityUid victim, TargetBodyPart selectedTarget, DamageSpecifier damage)
@@ -154,19 +170,120 @@ public sealed partial class BodyDamageBridgeSystem : EntitySystem
         if (body.Organs is null)
             return;
 
-        // copy because TryChangeDamage can yank organs out during foreach
-        foreach (var contained in body.Organs.ContainedEntities.ToArray())
+        // The shares sum to 1 over the limbs that are present, so the limbs together take exactly what the mob took.
+        // The heaviest limb (the torso) soaks the rounding remainder.
+        var limbs = new List<(EntityUid Organ, float Weight)>();
+        var totalWeight = 0f;
+        EntityUid anchor = default;
+        var anchorWeight = -1f;
+
+        foreach (var contained in body.Organs.ContainedEntities)
         {
             if (!TryComp<OrganComponent>(contained, out var organComp)
                 || organComp.Category is not { } category
                 || !LimbTargetMap.TryGetTarget(category, out var target))
                 continue;
 
-            var weighted = damage * GetPartDamageWeight(target);
-            AddComp<SkipOrganMobSyncComponent>(contained);
-            _damageable.TryChangeDamage(contained, weighted, ignoreResistances: true, interruptsDoAfters: false, origin: origin);
-            RemComp<SkipOrganMobSyncComponent>(contained);
+            var weight = GetPartDamageWeight(target);
+            limbs.Add((contained, weight));
+            totalWeight += weight;
+
+            if (weight > anchorWeight)
+            {
+                anchorWeight = weight;
+                anchor = contained;
+            }
         }
+
+        if (totalWeight <= 0f)
+            return;
+
+        var applied = new DamageSpecifier();
+        foreach (var (organ, weight) in limbs)
+        {
+            if (organ == anchor || TerminatingOrDeleted(organ))
+                continue;
+
+            var weighted = damage * (weight / totalWeight);
+            applied += weighted;
+            ApplyBridgedDamage(body, organ, weighted, origin);
+        }
+
+        ApplyBridgedDamage(body, anchor, damage - applied, origin);
+    }
+
+    /// <summary>
+    /// Applies a bridged damage delta to one limb, marked so the organ->mob sync skips it (the mob already took this
+    /// damage through its own reaction to the originating event; mirroring it back would double it). A limb takes
+    /// damage up to its integrity cap; the rest goes on to its parent part, so a wrecked leg passes the hits to the
+    /// torso instead of soaking them without end.
+    /// </summary>
+    private void ApplyBridgedDamage(BodyComponent body, EntityUid organ, DamageSpecifier damage, EntityUid? origin)
+    {
+        var overflow = GetOverflow(body, organ, damage, out var parent);
+
+        AddComp<SkipOrganMobSyncComponent>(organ);
+        try
+        {
+            _damageable.TryChangeDamage(organ, overflow is { } excess ? damage - excess : damage,
+                ignoreResistances: true, interruptsDoAfters: false, origin: origin);
+        }
+        finally
+        {
+            RemComp<SkipOrganMobSyncComponent>(organ);
+        }
+
+        if (overflow is { } rest && parent is { } next && !TerminatingOrDeleted(next))
+            ApplyBridgedDamage(body, next, rest, origin);
+    }
+
+    /// <summary>
+    /// The part of a damage delta that does not fit into the limb below its integrity cap, split evenly over the damage
+    /// types. Null when it all fits, when it heals, or when the limb has no parent to pass it on to (the torso).
+    /// </summary>
+    private DamageSpecifier? GetOverflow(BodyComponent body, EntityUid organ, DamageSpecifier damage, out EntityUid? parent)
+    {
+        parent = null;
+        if (!TryComp<WoundableComponent>(organ, out var woundable)
+            || !TryComp<OrganComponent>(organ, out var organComp)
+            || organComp.Category is not { } category
+            || !LimbTargetMap.TryGetParentCategory(category, out var parentCategory)
+            || !TryResolveOrganWithFallback(body, parentCategory, out var parentOrgan))
+            return null;
+
+        var incoming = FixedPoint2.Zero;
+        foreach (var amount in damage.DamageDict.Values)
+        {
+            if (amount > FixedPoint2.Zero)
+                incoming += amount;
+        }
+
+        var room = FixedPoint2.Max(woundable.IntegrityCap - _damageable.GetTotalDamage(organ), FixedPoint2.Zero);
+        if (incoming <= room)
+            return null;
+
+        // In FixedPoint2 throughout: a float share would be cut to two decimals and lose whole points.
+        // The last type takes what rounding leaves, so the overflow is exactly what does not fit.
+        var excess = incoming - room;
+        var overflow = new DamageSpecifier();
+        var assigned = FixedPoint2.Zero;
+        string? last = null;
+        foreach (var (type, amount) in damage.DamageDict)
+        {
+            if (amount <= FixedPoint2.Zero)
+                continue;
+
+            var part = amount * excess / incoming;
+            overflow.DamageDict[type] = part;
+            assigned += part;
+            last = type;
+        }
+
+        if (last != null)
+            overflow.DamageDict[last] += excess - assigned;
+
+        parent = parentOrgan;
+        return overflow;
     }
 
     /// <summary>
@@ -204,12 +321,13 @@ public sealed partial class BodyDamageBridgeSystem : EntitySystem
         }
     }
 
+    // Relative shares only: ApplyToAllLimbs normalizes them over the limbs present, so only the ratios matter.
     private static float GetPartDamageWeight(TargetBodyPart target)
     {
         return target switch
         {
             TargetBodyPart.Head => 0.2f,
-            TargetBodyPart.Chest => 1.0f, // 100% damage
+            TargetBodyPart.Chest => 1.0f,
             TargetBodyPart.LeftArm or TargetBodyPart.RightArm => 0.3f,
             TargetBodyPart.LeftLeg or TargetBodyPart.RightLeg => 0.3f,
             _ => 0.2f,

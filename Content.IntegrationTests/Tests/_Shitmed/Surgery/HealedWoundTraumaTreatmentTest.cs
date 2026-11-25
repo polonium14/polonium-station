@@ -67,7 +67,6 @@ public sealed class HealedWoundTraumaTreatmentTest : GameTest
 ";
 
     [TestCase(TraumaType.BoneDamage, "SurgeryMendBones", "SurgeryStepMendBones")]
-    [TestCase(TraumaType.OrganDamage, "SurgeryHealOrgans", "SurgeryStepHealOrgans")]
     public async Task FullyHealedWoundKeepsTraumaTreatable(TraumaType type, string surgeryId, string stepId)
     {
         var wounds = SEntMan.System<WoundSystem>();
@@ -93,16 +92,8 @@ public sealed class HealedWoundTraumaTreatmentTest : GameTest
             var woundable = SEntMan.GetComponent<WoundableComponent>(torso);
             var inflicter = SEntMan.GetComponent<TraumaInflicterComponent>(wound);
             bone = woundable.Bone!.ContainedEntities.Single();
-            if (type == TraumaType.BoneDamage)
-            {
-                var boneComp = SEntMan.GetComponent<BoneComponent>(bone);
-                traumas.ApplyBoneTrauma(bone, (torso, woundable), (wound, inflicter), boneComp.IntegrityCap);
-            }
-            else
-            {
-                var trauma = traumas.AddTrauma(heart, (torso, woundable), (wound, inflicter), type, FixedPoint2.New(20));
-                traumas.TryCreateOrganDamageModifier(heart, FixedPoint2.New(20), trauma, "WoundableDamage");
-            }
+            var boneComp = SEntMan.GetComponent<BoneComponent>(bone);
+            traumas.ApplyBoneTrauma(bone, (torso, woundable), (wound, inflicter), boneComp.IntegrityCap);
 
             Assert.That(wounds.TryHealWoundsOnWoundable(torso, FixedPoint2.New(100), out _), Is.True);
         });
@@ -116,10 +107,7 @@ public sealed class HealedWoundTraumaTreatmentTest : GameTest
             Assert.That(wounds.HasDamageOfType(torso, "Blunt"), Is.False);
             Assert.That(wounds.GetWoundableSeverityPoint(torso), Is.EqualTo(FixedPoint2.Zero));
             Assert.That(traumas.HasWoundableTrauma(torso, type), Is.True);
-            if (type == TraumaType.BoneDamage)
-                Assert.That(SEntMan.GetComponent<BoneComponent>(bone).BoneSeverity, Is.EqualTo(BoneSeverity.Broken));
-            else
-                Assert.That(SEntMan.GetComponent<OrganIntegrityComponent>(heart).OrganIntegrity, Is.EqualTo(FixedPoint2.New(80)));
+            Assert.That(SEntMan.GetComponent<BoneComponent>(bone).BoneSeverity, Is.EqualTo(BoneSeverity.Broken));
 
             var surgeryEnt = surgery.GetSingleton(surgeryId)!.Value;
             var valid = new SurgeryValidEvent(body, torso, Category: "Torso");
@@ -134,10 +122,7 @@ public sealed class HealedWoundTraumaTreatmentTest : GameTest
             }
 
             Assert.That(traumas.HasWoundableTrauma(torso, type), Is.False);
-            if (type == TraumaType.BoneDamage)
-                Assert.That(SEntMan.GetComponent<BoneComponent>(bone).BoneSeverity, Is.EqualTo(BoneSeverity.Normal));
-            else
-                Assert.That(SEntMan.GetComponent<OrganIntegrityComponent>(heart).OrganIntegrity, Is.EqualTo(FixedPoint2.New(100)));
+            Assert.That(SEntMan.GetComponent<BoneComponent>(bone).BoneSeverity, Is.EqualTo(BoneSeverity.Normal));
         });
 
         await Pair.RunTicksSync(5);

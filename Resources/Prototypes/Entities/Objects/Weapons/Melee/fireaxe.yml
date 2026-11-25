@@ -4,6 +4,11 @@
   id: FireAxe
   description: Truly, the weapon of a madman. Who would think to fight fire with an axe?
   components:
+  # Polonium: improvised surgery tool, slow and likely to botch the step
+  - type: SurgeryTool
+  - type: BoneSaw
+    speed: 0.5
+  # Polonium end
   - type: Tag
     tags:
     - FireAxe

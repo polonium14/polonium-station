@@ -543,7 +543,7 @@ public abstract partial class SharedSurgerySystem
             return;
 
         var painToInflict = ent.Comp.Amount;
-        if (Status.HasEffectComp<ForcedSleepingStatusEffectComponent>(args.Body))
+        if (FeelsNoPain(args.Body))
             painToInflict *= ent.Comp.SleepModifier;
 
         if (!_pain.TryChangePainModifier(
@@ -767,6 +767,7 @@ public abstract partial class SharedSurgerySystem
                 speed *= operatingTableComponent.SpeedModifier; // apply surgery speed modifier
         if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
             speed *= surgerySpeedMod.SpeedModifier;
+        speed *= PatientSpeedModifier(target);
 
         return stepComp.Duration / speed;
     }
@@ -964,6 +965,9 @@ public abstract partial class SharedSurgerySystem
 
         if (HasComp<SurgeryBleedsTreatmentStepComponent>(stepEnt)
             && !BleedsTreatmentComplete(part))
+            return false;
+
+        if (!PoloniumStepComplete(stepEnt, part, body, surgery))
             return false;
 
         return true;

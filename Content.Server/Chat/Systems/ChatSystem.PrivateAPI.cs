@@ -161,14 +161,21 @@ public sealed partial class ChatSystem
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
+            // Polonium: pick the variant first, so the listener's hearing can change it
+            (string Message, string Wrapped) whisper;
             if (data.Range <= WhisperClearRange || data.Observer)
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, message, wrappedMessage, source, false, session.Channel);
+                whisper = (message, wrappedMessage);
             //If listener is too far, they only hear fragments of the message
             else if (_examineSystem.InRangeUnOccluded(source, listener, WhisperMuffledRange))
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, wrappedobfuscatedMessage, source, false, session.Channel);
+                whisper = (obfuscatedMessage, wrappedobfuscatedMessage);
             //If listener is too far and has no line of sight, they can't identify the whisperer's identity
             else
-                _chatManager.ChatMessageToOne(ChatChannel.Whisper, obfuscatedMessage, wrappedUnknownMessage, source, false, session.Channel);
+                whisper = (obfuscatedMessage, wrappedUnknownMessage);
+
+            var heard = new Content.Shared._Polonium.Body.ListenerHearsMessageEvent(ChatChannel.Whisper, data.Range, whisper.Message, whisper.Wrapped);
+            RaiseLocalEvent(listener, ref heard);
+            _chatManager.ChatMessageToOne(ChatChannel.Whisper, heard.Message, heard.WrappedMessage, source, false, session.Channel);
+            // Polonium end
         }
 
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));

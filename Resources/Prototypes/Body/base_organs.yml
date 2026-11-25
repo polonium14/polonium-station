@@ -357,6 +357,8 @@
   name: brain
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 3
   - type: GibbableOrgan
   - type: Organ
     category: Brain
@@ -467,9 +469,13 @@
   name: lungs
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 2
   - type: GibbableOrgan
   - type: Organ
     category: Lungs
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Lungs
   - type: Lung
   - type: Metabolizer
     stages: [ Respiration ]
@@ -505,6 +511,8 @@
   - type: GibbableOrgan
   - type: Organ
     category: Heart
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Heart
   - type: Sprite
     layers:
     - state: heart-on
@@ -520,6 +528,8 @@
   name: stomach
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 3
   - type: GibbableOrgan
   - type: Organ
     category: Stomach
@@ -554,9 +564,13 @@
   name: liver
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 3
   - type: GibbableOrgan
   - type: Organ
     category: Liver
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Liver
   - type: Sprite
     layers:
     - state: liver
@@ -577,6 +591,8 @@
   - type: GibbableOrgan
   - type: Organ
     category: Kidneys
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Kidneys
   - type: Sprite
     layers:
       - state: kidney-l
@@ -633,6 +649,8 @@
   abstract: true
   id: OrganBaseChildExternal
   components:
+  - type: OrganPrice # Polonium: upstream's old limb price, only for limbs that came off a body
+    price: 100
   - type: ChildOrgan
   - type: DetachableOrgan
     detachedBody: DetachedBody
@@ -643,3 +661,5 @@
   components:
   - type: ChildOrgan
   - type: InternalChildOrgan
+  - type: OrganPrice # Polonium: upstream's old organ price, only for organs that came out of a body
+    price: 50

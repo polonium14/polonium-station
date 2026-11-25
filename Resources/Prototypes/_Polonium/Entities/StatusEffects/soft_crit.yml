@@ -1,0 +1,7 @@
+# Epinephrine in the blood: a mob in soft crit can stand up and walk.
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectSoftCritStand
+  name: soft crit stand
+  components:
+  - type: SoftCritStandStatusEffect

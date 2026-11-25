@@ -16,6 +16,7 @@ using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
+using Content.Shared._Polonium.Medical.Surgery;
 using Content.Shared.Body;
 using Content.Shared.Body.Systems;
 using Content.Shared.CCVar;
@@ -85,6 +86,9 @@ public sealed partial class PatientIntakeSystem : SharedPatientIntakeSystem
     [Dependency] private StationSystem _station = default!;
     [Dependency] private TraumaSystem _trauma = default!;
     [Dependency] private WoundSystem _wound = default!;
+    [Dependency] private SurgicalCavitySystem _cavity = default!;
+
+    private static readonly ProtoId<OrganCategoryPrototype> Torso = "Torso";
 
     /// <summary>
     /// How often a machine that is due for a case rechecks the spawn conditions.

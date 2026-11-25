@@ -33,6 +33,7 @@ public sealed partial class TourniquetSystem : EntitySystem
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private PainSystem _pain = default!;
     [Dependency] private BloodstreamSystem _bloodstream = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     private const string TourniquetContainerId = "Tourniquet";
 
@@ -298,30 +299,51 @@ public sealed partial class TourniquetSystem : EntitySystem
         if (!TryComp<TourniquetComponent>(args.Used, out var tourniquet))
             return;
 
+        if (!TakeOff(ent, args.Used.Value, tourniquet))
+            return;
+
+        _hands.TryPickupAnyHand(args.User, args.Used.Value);
+        args.Handled = true;
+    }
+
+    /// <summary>
+    /// Takes the tourniquet off the given organ right away and drops it next to the body.
+    /// </summary>
+    public bool TryTakeOffTourniquet(Entity<BodyComponent?> body, EntityUid organ)
+    {
+        if (!Resolve(body, ref body.Comp)
+            || !TryComp<TourniquetedComponent>(organ, out var tourniqueted)
+            || !TryComp<TourniquetComponent>(tourniqueted.TourniquetEntity, out var tourniquet)
+            || !TakeOff((body, body.Comp), tourniqueted.TourniquetEntity, tourniquet))
+            return false;
+
+        _transform.DropNextTo(tourniqueted.TourniquetEntity, body.Owner);
+        return true;
+    }
+
+    private bool TakeOff(Entity<BodyComponent> ent, EntityUid tourniquetEnt, TourniquetComponent tourniquet)
+    {
         var organ = tourniquet.OrganTourniqueted;
         if (organ == null)
-            return;
+            return false;
 
         if (!TryComp<OrganComponent>(organ.Value, out var primaryOrganComp) || primaryOrganComp.Category is not { } primaryCategory)
-            return;
+            return false;
 
         if (!_container.TryGetContainer(ent, GetContainerId(primaryCategory), out var container))
-            return;
+            return false;
 
-        RemoveTourniquetEffects(args.Used.Value, organ.Value);
+        RemoveTourniquetEffects(tourniquetEnt, organ.Value);
 
         foreach (var childCategory in LimbTargetMap.GetCascadeChildren(primaryCategory))
         {
             if (ent.Comp.Organs is not null && LimbTargetMap.TryGetOrganByCategory(EntityManager, ent.Comp, childCategory, out var childOrgan))
-                RemoveTourniquetEffects(args.Used.Value, childOrgan);
+                RemoveTourniquetEffects(tourniquetEnt, childOrgan);
         }
 
-        _container.Remove(args.Used.Value, container);
-
-        _hands.TryPickupAnyHand(args.User, args.Used.Value);
+        _container.Remove(tourniquetEnt, container);
         tourniquet.OrganTourniqueted = null;
-
-        args.Handled = true;
+        return true;
     }
 
     private void OnBodyGetVerbs(Entity<BodyComponent> ent, ref GetVerbsEvent<InnateVerb> args)

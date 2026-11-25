@@ -1,0 +1,16 @@
+# Out cold without being asleep: no snoring, no dreams, no waking up from a shove.
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectUnconscious
+  name: unconscious
+  components:
+  - type: StatusEffect
+    whitelist:
+      components:
+      - MobState
+      - Blindable
+      requireAll: true
+  - type: StunnedStatusEffect
+  - type: KnockdownStatusEffect
+  - type: BlindnessStatusEffect
+  - type: MutedStatusEffect

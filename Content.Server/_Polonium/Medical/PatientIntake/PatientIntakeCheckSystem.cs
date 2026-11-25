@@ -2,7 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Polonium.Medical.Surgery;
 using System.Linq;
+using Content.Shared._Polonium.Body;
 using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
@@ -38,6 +40,7 @@ public enum IntakeFailureKind : byte
     HarmfulReagent,
     Blind,
     RequestNotDone,
+    CavityItem,
 }
 
 /// <param name="Subject">Organ/part/reagent name for the receipt, if the failure is about one.</param>
@@ -53,6 +56,7 @@ public sealed partial class PatientIntakeCheckSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private TraumaSystem _trauma = default!;
     [Dependency] private SharedSurgerySystem _surgery = default!;
+    [Dependency] private SurgicalCavitySystem _cavity = default!;
     [Dependency] private BloodstreamSystem _bloodstream = default!;
     [Dependency] private SharedSolutionContainerSystem _solution = default!;
     [Dependency] private IPrototypeManager _proto = default!;
@@ -131,11 +135,16 @@ public sealed partial class PatientIntakeCheckSystem : EntitySystem
                     failures.Add(new(IntakeFailureKind.Trauma, name));
             }
 
-            if (TryComp<OrganIntegrityComponent>(organ, out var integrity) && integrity.OrganSeverity != OrganSeverity.Normal)
+            // Any missing integrity counts: an organ stays in the Normal severity down to 35% integrity.
+            if (TryComp<OrganIntegrityComponent>(organ, out var integrity) && integrity.OrganIntegrity < integrity.IntegrityCap
+                || HasComp<DeadOrganComponent>(organ))
                 failures.Add(new(IntakeFailureKind.OrganDamage, name));
 
             if (_surgery.HasUnfinishedSurgerySteps(organ))
                 failures.Add(new(IntakeFailureKind.UnfinishedSurgery, name));
+
+            if (_cavity.GetContents(organ) != null)
+                failures.Add(new(IntakeFailureKind.CavityItem, name));
         }
 
         foreach (var expected in body.ExpectedOrgans.Concat(expectedParts ?? []).Distinct())

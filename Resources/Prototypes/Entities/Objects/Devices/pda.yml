@@ -211,7 +211,7 @@
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
-        type: HealthAnalyzerBoundUserInterface
+        type: PatientScanBoundUserInterface # Polonium: our one-view analyzer
       enum.PlantAnalyzerUiKey.Key:
         type: PlantAnalyzerBoundUserInterface
   - type: RemoteStore # PDAs can access uplinks so they need this component.
@@ -1772,7 +1772,7 @@
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
-        type: HealthAnalyzerBoundUserInterface
+        type: PatientScanBoundUserInterface # Polonium: our one-view analyzer
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
 

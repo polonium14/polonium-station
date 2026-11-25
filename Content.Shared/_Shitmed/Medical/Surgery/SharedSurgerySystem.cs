@@ -130,7 +130,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
     private void OnMapInit(Entity<SurgeryTargetComponent> ent, ref MapInitEvent args)
     {
-        var data = new InterfaceData("SurgeryBui");
+        var data = new InterfaceData("OperationBui");
         _ui.SetUi(ent.Owner, SurgeryUIKey.Key, data);
     }
 
@@ -208,6 +208,12 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         if (!CanPerformStep(args.User, ent, part, step, tool, true, surgery))
         {
             Log.Warning($"{ToPrettyString(args.User)} tried to complete a surgery step without the right tool in hand.");
+            return;
+        }
+
+        if (TryBotchStep(args.User, ent, part, step, tool, surgery))
+        {
+            RaiseStepFailed(args.User, ent, args.Surgery, args.Step);
             return;
         }
 
@@ -337,6 +343,12 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         {
             if (!present)
                 args.Cancelled = true;
+            return;
+        }
+
+        if (Content.Shared._Polonium.Body.PairedOrgans.WrongForm(body.ExpectedOrgans, ent.Comp.Category))
+        {
+            args.Cancelled = true;
             return;
         }
 

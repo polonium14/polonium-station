@@ -104,7 +104,8 @@ public abstract partial class SharedIVDripSystem : EntitySystem
 
     private void OnIVVerbs(Entity<IVDripComponent> iv, ref GetVerbsEvent<InteractionVerb> args)
     {
-        if (!args.CanAccess || !args.CanInteract)
+        // Without a bag there is nothing to inject or draw into.
+        if (!args.CanAccess || !args.CanInteract || iv.Comp.Slot == null)
             return;
 
         var user = args.User;
@@ -119,23 +120,27 @@ public abstract partial class SharedIVDripSystem : EntitySystem
     {
         using (args.PushGroup(nameof(IVDripComponent)))
         {
-            var injectingMsg = ent.Comp.Injecting
-                ? "cm-iv-examine-injecting"
-                : "cm-iv-examine-drawing";
-            args.PushMarkup(Loc.GetString(injectingMsg, ("iv", ent.Owner)));
-
-            var chemicalsMsg = Loc.GetString("cm-iv-examine-chemicals-none");
-            if (_containers.TryGetContainer(ent, ent.Comp.Slot, out var container) &&
-                container.ContainedEntities.FirstOrDefault() is { Valid: true } packId &&
-                TryComp(packId, out IVBagComponent? pack) &&
-                _solutionContainer.TryGetSolution(packId, pack.Solution, out _, out var solution))
+            // Without a bag there is nothing to inject or draw into.
+            if (ent.Comp.Slot != null)
             {
-                chemicalsMsg = Loc.GetString("cm-iv-examine-chemicals",
-                    ("attached", packId),
-                    ("units", solution.Volume.Int()));
-            }
+                var injectingMsg = ent.Comp.Injecting
+                    ? "cm-iv-examine-injecting"
+                    : "cm-iv-examine-drawing";
+                args.PushMarkup(Loc.GetString(injectingMsg, ("iv", ent.Owner)));
 
-            args.PushMarkup(chemicalsMsg);
+                var chemicalsMsg = Loc.GetString("cm-iv-examine-chemicals-none");
+                if (_containers.TryGetContainer(ent, ent.Comp.Slot, out var container) &&
+                    container.ContainedEntities.FirstOrDefault() is { Valid: true } packId &&
+                    TryComp(packId, out IVBagComponent? pack) &&
+                    _solutionContainer.TryGetSolution(packId, pack.Solution, out _, out var solution))
+                {
+                    chemicalsMsg = Loc.GetString("cm-iv-examine-chemicals",
+                        ("attached", packId),
+                        ("units", solution.Volume.Int()));
+                }
+
+                args.PushMarkup(chemicalsMsg);
+            }
 
             var attachedMsg = ent.Comp.AttachedTo is { } attached
                 ? Loc.GetString("cm-iv-examine-attached", ("attached", attached))
@@ -352,8 +357,11 @@ public abstract partial class SharedIVDripSystem : EntitySystem
 
     protected void UpdateIVVisuals(Entity<IVDripComponent> iv)
     {
-        if (!_containers.TryGetContainer(iv, iv.Comp.Slot, out var container))
+        if (iv.Comp.Slot is not { } slot || !_containers.TryGetContainer(iv, slot, out var container))
+        {
+            UpdateIVAppearance(iv);
             return;
+        }
 
         var color = Color.White;
         var percentage = 0;

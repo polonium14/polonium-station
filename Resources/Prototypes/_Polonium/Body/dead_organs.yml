@@ -1,0 +1,109 @@
+- type: entity
+  abstract: true
+  parent: [ OrganBase, OrganBaseChildInternal ]
+  id: OrganDeadBase
+  # The name and the description do not give away that the organ is dead; the look and the analyzer do.
+  components:
+  - type: DeadOrgan
+  - type: GibbableOrgan
+  - type: OrganPrice
+    price: 0
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadHeart
+  name: heart
+  components:
+  - type: Organ
+    category: Heart
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: heart
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadLungs
+  name: lungs
+  components:
+  - type: Organ
+    category: Lungs
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: lungs
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadLiver
+  name: liver
+  components:
+  - type: Organ
+    category: Liver
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: liver
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadKidneys
+  name: kidneys
+  components:
+  - type: Organ
+    category: Kidneys
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: kidneys
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadStomach
+  name: stomach
+  components:
+  - type: Organ
+    category: Stomach
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: stomach
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadEyes
+  name: eyes
+  components:
+  - type: Organ
+    category: Eyes
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: eyes
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadTongue
+  name: tongue
+  components:
+  - type: Organ
+    category: Tongue
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    state: tongue
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadEars
+  name: ears
+  components:
+  - type: Organ
+    category: Ears
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    state: ears
+
+- type: entity
+  parent: OrganDeadBase
+  id: OrganDeadAppendix
+  name: appendix
+  components:
+  - type: Organ
+    category: Appendix
+  - type: Sprite
+    sprite: _Polonium/Mobs/Species/organs_dead.rsi
+    state: appendix

@@ -1,0 +1,55 @@
+<controls:OperationWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Polonium.Medical.Surgery"
+    xmlns:polonium="clr-namespace:Content.Client._Polonium.UserInterface.Controls"
+    MinSize="760 420" SetSize="820 480">
+    <BoxContainer Orientation="Horizontal" SeparationOverride="10" HorizontalExpand="True" VerticalExpand="True">
+        <!-- Patient: the analyzer's doll picks the body part -->
+        <BoxContainer Orientation="Vertical" MinWidth="130" SeparationOverride="4" VerticalAlignment="Center">
+            <PanelContainer HorizontalAlignment="Center">
+                <SpriteView Name="DollView" OverrideDirection="South" SetSize="96 96"/>
+                <PanelContainer Name="PartView" SetSize="57 96" Margin="18 0 0 0"
+                                VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <PanelContainer SetSize="15 33" Margin="4 0 0 0" HorizontalAlignment="Left">
+                        <TextureButton Name="RightArmButton" MinSize="15 33"
+                                       StyleClasses="TargetDollButtonRightArm" VerticalAlignment="Top"/>
+                    </PanelContainer>
+                    <PanelContainer SetSize="43 75" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextureButton Name="HeadButton" MinSize="28 23" VerticalAlignment="Top"
+                                       HorizontalAlignment="Center" StyleClasses="TargetDollButtonHead"/>
+                        <TextureButton Name="ChestButton" SetSize="28 37" Margin="0 18 0 0"
+                                       VerticalAlignment="Top" HorizontalAlignment="Center"
+                                       StyleClasses="TargetDollButtonChest"/>
+                        <PanelContainer MinSize="38 35" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                            <PanelContainer MinSize="20 30" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                <TextureButton Name="LeftLegButton" MinSize="20 30" VerticalAlignment="Top"
+                                               HorizontalAlignment="Left" StyleClasses="TargetDollButtonLeftLeg"/>
+                            </PanelContainer>
+                            <PanelContainer MinSize="20 30" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                <TextureButton Name="RightLegButton" MinSize="20 30" VerticalAlignment="Top"
+                                               HorizontalAlignment="Right" StyleClasses="TargetDollButtonRightLeg"/>
+                            </PanelContainer>
+                        </PanelContainer>
+                    </PanelContainer>
+                    <PanelContainer SetSize="15 33" Margin="0 0 4 0" HorizontalAlignment="Right">
+                        <TextureButton Name="LeftArmButton" MinSize="15 33"
+                                       StyleClasses="TargetDollButtonLeftArm" VerticalAlignment="Top"/>
+                    </PanelContainer>
+                </PanelContainer>
+            </PanelContainer>
+            <Label Name="PartName" Align="Center"/>
+            <Label Name="OpenIncision" Align="Center" Text="{Loc 'surgery-window-open-incision'}" StyleClasses="LabelSubText" Visible="False"/>
+        </BoxContainer>
+        <!-- Surgeries of the picked part, under group headings -->
+        <polonium:FadingScrollContainer Name="SurgeriesScroll" Access="Public" HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="1.2">
+            <BoxContainer Name="Surgeries" Access="Public" Orientation="Vertical" HorizontalExpand="True" Margin="0 0 10 0"/>
+        </polonium:FadingScrollContainer>
+        <!-- Steps of the picked surgery -->
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+            <RichTextLabel Name="SurgeryName" Access="Public" HorizontalExpand="True" Margin="0 0 0 4"/>
+            <polonium:FadingScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
+                <BoxContainer Name="Steps" Access="Public" Orientation="Vertical" HorizontalExpand="True" Margin="0 0 10 0"/>
+            </polonium:FadingScrollContainer>
+        </BoxContainer>
+    </BoxContainer>
+</controls:OperationWindow>

@@ -168,28 +168,6 @@
 
 - type: entity
   parent: SurgeryStepBase
-  id: SurgeryStepHealOrgans
-  name: Heal Organs
-  components:
-  - type: SurgeryStep
-    tool:
-    - type: Tending
-    duration: 7
-  - type: SurgeryAffixOrganStep
-  - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
-    state: hemostat
-  - type: SurgeryStepPainInflicter
-    amount: 24
-    painType: TraumaticPain
-    sleepModifier: 0
-  - type: SurgeryRepeatableStep
-  - type: SurgeryTraumaTreatmentStep
-    traumaType: OrganDamage
-    amount: 17
-
-- type: entity
-  parent: SurgeryStepBase
   id: SurgeryStepPriseOpenBones
   name: Prise the bones open
   components:
@@ -258,6 +236,7 @@
     - type: SkinRetracted
     - type: BleedersClamped
     - type: IncisionOpen
+    - type: IncisionClamped
     - type: BodyPartReattached
     - type: InternalBleedersClamped
     - type: SeveredSkinRemoved
@@ -389,6 +368,7 @@
     - type: SkinRetracted
     - type: BleedersClamped
     - type: IncisionOpen
+    - type: IncisionClamped
     - type: InternalBleedersClamped
     duration: 2
   - type: SurgeryAffixPartStep
@@ -464,6 +444,7 @@
     - type: BleedersClamped
     - type: InternalBleedersClamped
     - type: IncisionOpen
+    - type: IncisionClamped
     duration: 8
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
@@ -552,6 +533,7 @@
     - type: Cautery
     remove:
     - type: IncisionOpen
+    - type: IncisionClamped
     duration: 2
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
@@ -577,7 +559,10 @@
     - type: Stitches
     remove:
     - type: IncisionOpen
+    - type: IncisionClamped
     - type: SkinRetracted
+    - type: BleedersClamped
+    - type: InternalBleedersClamped
     - type: SeveredSkinRemoved
     - type: BoneLeftoversRemoved
     duration: 8

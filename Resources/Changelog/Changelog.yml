@@ -1,48 +1,4 @@
 ﻿Entries:
-- author: Princess-Cheeseballs
-  changes:
-  - message: Gas Canisters can now explode from overpressure.
-    type: Add
-  - message: Max Caps have been entirely reworked with different fuse lengths and
-      explosive strengths.
-    type: Tweak
-  - message: Max Cap intensity limits have been removed.
-    type: Tweak
-  - message: Tritium fire energy production has been divided by 10, returning to its
-      intended value.
-    type: Tweak
-  - message: The TEG now produces 25% more power.
-    type: Tweak
-  id: 9651
-  time: '2026-04-19T05:36:23.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43281
-- author: ArtisticRoomba
-  changes:
-  - message: Passive gates now have better equalization behavior and have less of
-      a tendency to over-equalize.
-    type: Fix
-  id: 9652
-  time: '2026-04-19T05:51:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43552
-- author: AffleWaffle
-  changes:
-  - message: Intercom Assembly is now breakable.
-    type: Fix
-  id: 9653
-  time: '2026-04-20T02:39:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43647
-- author: B_Kirill
-  changes:
-  - message: NPCs can now wield and activate melee weapons.
-    type: Add
-  - message: NPCs can now wield guns and close their bolts.
-    type: Add
-  - message: NPCs can now reload guns without a cartridge in the chamber, provided
-      there are cartridges in the clip.
-    type: Add
-  id: 9654
-  time: '2026-04-21T04:37:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40900
 - author: themias, jessicamaybe
   changes:
   - message: Added a traitor objective to break into letters and packages
@@ -5236,3 +5192,45 @@
   id: 10145
   time: '2026-11-22T14:07:29.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1293
+- author: Nikita
+  changes:
+  - message: "Przy rozszczelnieniu wida\u0107 teraz, kt\xF3r\u0119dy ucieka powietrze"
+    type: Add
+  id: 10146
+  time: '2026-11-23T10:50:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1295
+- author: Nikita
+  changes:
+  - message: "Posta\u0107, kt\xF3ra wr\xF3ci\u0142a do gry z kapsu\u0142y kriosnu,\
+      \ znika ju\u017C z listy w oknie kapsu\u0142y."
+    type: Fix
+  id: 10147
+  time: '2026-11-23T15:45:37.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1297
+- author: Nikita
+  changes:
+  - message: "Konsola skanera cia\u0142a i analizator zdrowia nie pokazuj\u0105 ju\u017C\
+      \ danych odci\u0119tej ko\u0144czyny ani ko\u0144czyny poprzedniego pacjenta."
+    type: Fix
+  id: 10148
+  time: '2026-11-23T18:32:08.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1304
+- author: Nikita
+  changes:
+  - message: "Blok utylizacyjny i blok pocztowy maj\u0105 nowe okna, kt\xF3re wygl\u0105\
+      daj\u0105 jak te urz\u0105dzenia. D\u017Awigni\u0119 mo\u017Cna poci\u0105gn\u0105\
+      \u0107 myszk\u0105."
+    type: Tweak
+  - message: "Klikni\u0119cie otworu w oknie bloku wk\u0142ada trzymany przedmiot.\
+      \ Pust\u0105 r\u0119k\u0105 wyjmuje si\u0119 w ten spos\xF3b ostatni\u0105 w\u0142\
+      o\u017Con\u0105 rzecz."
+    type: Add
+  - message: "W oknie bloku utylizacyjnego wida\u0107 ma\u0142e stworzenia wpadaj\u0105\
+      ce do \u015Brodka."
+    type: Add
+  - message: "Blok pocztowy nie wysy\u0142a ju\u017C poczty sam po wybraniu adresu,\
+      \ gdy wcze\u015Bniej poci\u0105gni\u0119to d\u017Awigni\u0119 bez adresu."
+    type: Fix
+  id: 10149
+  time: '2026-11-23T20:29:15.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1299

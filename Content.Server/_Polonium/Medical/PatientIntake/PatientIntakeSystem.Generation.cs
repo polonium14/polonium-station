@@ -4,6 +4,7 @@
 
 using System.Linq;
 using Content.Server._Polonium.Tutorial;
+using Content.Shared._Polonium.Body;
 using Content.Shared._Polonium.Medical.PatientIntake;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
@@ -22,6 +23,7 @@ using Content.Shared.Random.Helpers;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Polonium.Medical.PatientIntake;
 
@@ -245,6 +247,21 @@ public sealed partial class PatientIntakeSystem
                     comp.Prosthetic.Add(category);
                 return true;
             }
+
+            case PatientIntakeIssueKind.CavityItem:
+            {
+                if (issue.Items.Count == 0
+                    || !TryComp<BodyComponent>(patient, out var body)
+                    || !LimbTargetMap.TryGetOrganByCategory(EntityManager, body, Torso, out var torso))
+                    return false;
+
+                var item = Spawn(_random.Pick(issue.Items), Transform(patient).Coordinates);
+                if (_cavity.TryInsert(torso, item))
+                    return true;
+
+                Del(item);
+                return false;
+            }
         }
 
         return false;
@@ -302,7 +319,10 @@ public sealed partial class PatientIntakeSystem
             return false;
 
         var candidates = body.Organs.ContainedEntities
-            .Where(o => TryComp<OrganComponent>(o, out var c) && c.Category is { } cat && issue.Categories.Contains(cat) && filter(o))
+            .Where(o => TryComp<OrganComponent>(o, out var c)
+                && c.Category is { } cat
+                && issue.Categories.Any(wanted => PairedOrgans.Matches(cat, wanted))
+                && filter(o))
             .ToList();
 
         if (candidates.Count == 0)
@@ -313,7 +333,10 @@ public sealed partial class PatientIntakeSystem
         return true;
     }
 
-    private bool TryGetHousingLimb(EntityUid patient, ProtoId<OrganCategoryPrototype> organCategory, out Entity<WoundableComponent> limb)
+    /// <summary>
+    /// Finds the body part that houses organs of the given category.
+    /// </summary>
+    public bool TryGetHousingLimb(EntityUid patient, ProtoId<OrganCategoryPrototype> organCategory, out Entity<WoundableComponent> limb)
     {
         foreach (var (part, category) in WoundableParts(patient))
         {
@@ -329,12 +352,12 @@ public sealed partial class PatientIntakeSystem
     }
 
     /// <summary>
-    /// A small real wound on the limb to own the trauma. Made through actual damage, so the wound
-    /// has damage behind it and ordinary brute medicine heals it; an induced wound would not.
+    /// Wounds a body part with real blunt damage and returns the wound, so a trauma can be attached to it. Made through
+    /// actual damage, so the wound has damage behind it and ordinary brute medicine heals it; an induced wound would not.
     /// </summary>
-    private Entity<TraumaInflicterComponent>? InduceWound(Entity<WoundableComponent> limb)
+    public Entity<TraumaInflicterComponent>? InduceWound(Entity<WoundableComponent> limb, FixedPoint2? damage = null)
     {
-        _damageable.TryChangeDamage(limb.Owner, new DamageSpecifier(_proto.Index<DamageTypePrototype>(InducedWoundType), InducedWoundDamage),
+        _damageable.TryChangeDamage(limb.Owner, new DamageSpecifier(_proto.Index<DamageTypePrototype>(InducedWoundType), damage ?? InducedWoundDamage),
             ignoreResistances: true, interruptsDoAfters: false);
 
         foreach (var wound in _wound.GetWoundableWounds(limb, limb.Comp))
@@ -344,6 +367,25 @@ public sealed partial class PatientIntakeSystem
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// Damages the bone of a body part through a real trauma, so the mend-bones surgery can treat it.
+    /// </summary>
+    /// <param name="woundDamage">Blunt damage the body part takes with it; without it only the first hit wounds it.</param>
+    public bool DamageBone(Entity<WoundableComponent> limb, FixedPoint2 amount, FixedPoint2? woundDamage = null)
+    {
+        if (limb.Comp.Bone?.ContainedEntities.FirstOrNull() is not { } bone || !TryComp<BoneComponent>(bone, out var boneComp))
+            return false;
+
+        var inflicter = woundDamage is { } damage ? InduceWound(limb, damage) : null;
+
+        // Mend-bones surgery only treats a bone that has a trauma, so the first hit needs a wound to hang one on.
+        if (_trauma.HasWoundableTrauma(limb, TraumaType.BoneDamage, limb.Comp))
+            return _trauma.ApplyDamageToBone(bone, amount, boneComp);
+
+        inflicter ??= InduceWound(limb);
+        return inflicter is { } wound && _trauma.ApplyBoneTrauma(bone, limb, wound, amount, boneComp);
     }
 
     private void ConnectInternals(EntityUid patient)

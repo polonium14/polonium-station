@@ -108,6 +108,7 @@ patient-intake-failure-trauma = {$part}: uraz
 patient-intake-failure-bleeding = Krwawienie
 patient-intake-failure-missingpart = Brak: {$part}
 patient-intake-failure-unfinishedsurgery = {$part}: niedokończona operacja
+patient-intake-failure-cavityitem = {$part}: ciało obce w środku
 patient-intake-failure-lowblood = Zbyt niski poziom krwi
 patient-intake-failure-harmfulreagent = Szkodliwa substancja we krwi: {$part}
 patient-intake-failure-blind = Uszkodzenia oczu
@@ -133,6 +134,11 @@ patient-intake-part-heart = serce
 patient-intake-part-stomach = żołądek
 patient-intake-part-liver = wątroba
 patient-intake-part-kidneys = nerki
+patient-intake-part-lungleft = lewe płuco
+patient-intake-part-lungright = prawe płuco
+patient-intake-part-kidneyleft = lewa nerka
+patient-intake-part-kidneyright = prawa nerka
+patient-intake-part-spleen = śledziona
 patient-intake-part-beak = dziób
 
 ## Dolegliwości
@@ -157,6 +163,8 @@ patient-intake-issue-organ = Uszkodzenie narządu wewnętrznego
 patient-intake-symptom-organ = Ból brzucha po wypadku
 patient-intake-issue-eye-trauma = Uraz oka
 patient-intake-symptom-eye-trauma = Uderzenie w głowę
+patient-intake-issue-foreign-body = Ciało obce w klatce piersiowej
+patient-intake-symptom-foreign-body = Ucisk w klatce piersiowej, „coś tam jest”
 patient-intake-issue-poisoning = Zatrucie toksyną
 patient-intake-symptom-poisoning = Mdłości po zjedzeniu czegoś dziwnego
 patient-intake-issue-carp-poisoning = Zatrucie karpiotoksyną
@@ -174,6 +182,7 @@ patient-intake-symptom-missing-limb = Utrata kończyny w wypadku
 patient-intake-issue-replace-eyes = Prośba o nowe oczy (przeszczep)
 patient-intake-issue-replace-liver = Prośba o przeszczep wątroby
 patient-intake-issue-replace-lungs = Prośba o przeszczep płuc
+patient-intake-issue-replace-spleen = Prośba o przeszczep śledziony
 patient-intake-issue-prosthesis = Prośba o protezę: {$part}
 
 ## Łączenie urządzeń

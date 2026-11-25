@@ -4,6 +4,13 @@
   id: Wirecutter
   description: This kills the wire.
   components:
+  # Polonium: improvised surgery tool, slow and likely to botch the step
+  - type: SurgeryTool
+  - type: Hemostat
+    speed: 0.6
+  - type: Retractor
+    speed: 0.35
+  # Polonium end
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/wirecutter_drop.ogg
@@ -51,6 +58,11 @@
   id: Screwdriver
   description: Industrial grade torque in a small screwdriving package.
   components:
+  # Polonium: improvised surgery tool, slow and likely to botch the step
+  - type: SurgeryTool
+  - type: Retractor
+    speed: 0.44
+  # Polonium end
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/screwdriver_drop.ogg

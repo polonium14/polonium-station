@@ -102,7 +102,6 @@
   - RoleTypes
   - BanTypes
   - BanDurations
-  - Metashield
 
 - type: guideEntry
   id: RoleTypes
@@ -118,6 +117,7 @@
   priority: 30
   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC0.xml"
   children:
+  - RuleC00
   - RuleC1
   - RuleC2
   - RuleC3
@@ -128,7 +128,6 @@
   - RuleC8
   - RuleC9
   - RuleC10
-  - RuleC11
 
 - type: guideEntry
   id: RuleC00
@@ -198,14 +197,14 @@
   name: guide-entry-rules-c9
   ruleEntry: true
   priority: 9
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC9SecandCommand.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC9Antag.xml"
 
 - type: guideEntry
   id: RuleC10
   name: guide-entry-rules-c10
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC10Antag.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC10Validhunting.xml"
 
 # - type: guideEntry
 #   id: RuleC13
@@ -214,26 +213,12 @@
 #   priority: 13
 #   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC13NoEORG.xml"
 
-- type: guideEntry
-  id: RuleC11
-  name: guide-entry-rules-c11
-  ruleEntry: true
-  priority: 11
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC11LOOC.xml"
-
 # - type: guideEntry
 #   id: RuleC15
 #   name: guide-entry-rules-c15
 #   ruleEntry: true
 #   priority: 15
 #   text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC15Roles.xml"
-
-- type: guideEntry
-  id: Metashield
-  name: guide-entry-metashield
-  ruleEntry: false
-  priority: 4
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/Metashield.xml"
 
 - type: guideEntry
   id: NamingScheme

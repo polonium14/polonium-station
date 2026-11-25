@@ -131,6 +131,14 @@
           types:
             Poison:
               0.1
+      - !type:DamageOrgans # Polonium: breathing it burns the lungs; scale is the amount inhaled, so traces below the toxin alert do nothing
+        minScale: 1.5
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Thaven ]
+          inverted: true
+        categories: [ Lungs ]
+        amount: 0.02
       # We need a metabolism effect on reagent removal
       - !type:AdjustAlert
         alertType: Toxins
@@ -189,6 +197,14 @@
           types:
             Radiation:
               1
+      - !type:DamageOrgans # Polonium: breathing it burns the lungs; scale is the amount inhaled, so traces below the toxin alert do nothing
+        minScale: 1.5
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Thaven ]
+          inverted: true
+        categories: [ Lungs ]
+        amount: 0.02
       # We need a metabolism effect on reagent removal
       - !type:AdjustAlert
         alertType: Toxins

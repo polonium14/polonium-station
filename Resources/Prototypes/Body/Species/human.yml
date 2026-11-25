@@ -79,11 +79,14 @@
       Tongue: OrganHumanTongue
       Appendix: OrganHumanAppendix
       Ears: OrganHumanEars
-      Lungs: OrganHumanLungs
+      LungLeft: OrganHumanLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganHumanLungRight
       Heart: OrganHumanHeart
       Stomach: OrganHumanStomach
       Liver: OrganHumanLiver
-      Kidneys: OrganHumanKidneys
+      KidneyLeft: OrganHumanKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganHumanKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Human
 
@@ -280,26 +283,34 @@
   parent: [ OrganBaseBrain, OrganHumanInternal ]
   id: OrganHumanBrain
   components:
-  - type: OrganIntegrity
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
+  - type: Item # Polonium: these organ sprites have no in-hand states
+    sprite: Mobs/Species/Human/organs.rsi
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    integrityFloor: 6
 
 - type: entity
   parent: [ OrganBaseEyes, OrganHumanInternal, OrganHumanExternal ]
   id: OrganHumanEyes
   components:
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
   - type: VisualOrgan
     data:
       sprite: Mobs/Customization/eyes.rsi
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 24
     integrityThresholds:
-      Normal: 24
-      Damaged: 4
+      Normal: 8.4
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEyes
   - type: EyeBlinking
     eyelidsSprite: /Textures/Mobs/Species/Human/parts.rsi
   - type: Appearance
@@ -308,86 +319,108 @@
   parent: [ OrganBaseTongue, OrganHumanInternal ]
   id: OrganHumanTongue
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadTongue
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganHumanInternal ]
   id: OrganHumanAppendix
   components:
-  - type: OrganIntegrity
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadAppendix
 
 - type: entity
   parent: [ OrganBaseEars, OrganHumanInternal ]
   id: OrganHumanEars
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEars
 
 - type: entity
   parent: [ OrganBaseLungs, OrganHumanInternal, OrganHumanMetabolizer ]
   id: OrganHumanLungs
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganHumanInternal, OrganHumanMetabolizer ]
   id: OrganHumanHeart
   components:
-  - type: OrganIntegrity
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadHeart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganHumanInternal, OrganHumanMetabolizer ]
   id: OrganHumanStomach
   components:
-  - type: OrganIntegrity
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
+  - type: Item # Polonium: these organ sprites have no in-hand states
+    sprite: Mobs/Species/Human/organs.rsi
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 88 # consists of a lot of pieces, thus is incredibly hard to easily destroy
     integrityThresholds:
-      Normal: 88
-      Damaged: 17
+      Normal: 30.8
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadStomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganHumanInternal, OrganHumanMetabolizer ]
   id: OrganHumanLiver
   components:
-  - type: OrganIntegrity
+  - type: Sprite # Polonium: human organs use the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
+  - type: Item # Polonium: these organ sprites have no in-hand states
+    sprite: Mobs/Species/Human/organs.rsi
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLiver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganHumanInternal, OrganHumanMetabolizer ]
   id: OrganHumanKidneys
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadKidneys

@@ -3,6 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Polonium.Medical.HealthAnalyzer;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Reflection;
@@ -37,7 +38,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 /// exercises identically and untested, out of scope to add now).
 /// </summary>
 [TestFixture]
-[TestOf(typeof(ServerHealthAnalyzerSystem))]
+[TestOf(typeof(PatientScanSystem))]
 public sealed class HealthAnalyzerTourniquetTest : GameTest
 {
     private static readonly ProtoId<DamageTypePrototype> PiercingDamageType = "Piercing";
@@ -102,7 +103,7 @@ public sealed class HealthAnalyzerTourniquetTest : GameTest
 
         var sEntMan = server.ResolveDependency<IEntityManager>();
         var sDamageable = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<DamageableSystem>();
-        var sHealthAnalyzer = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<ServerHealthAnalyzerSystem>();
+        var sHealthAnalyzer = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<PatientScanSystem>();
         var sProtoMan = server.ResolveDependency<IPrototypeManager>();
         var map = await pair.CreateTestMap();
         var coords = new MapCoordinates(Vector2.Zero, map.MapId);
@@ -139,7 +140,7 @@ public sealed class HealthAnalyzerTourniquetTest : GameTest
 
         await pair.RunTicksSync(5);
 
-        var fetchMethod = typeof(ServerHealthAnalyzerSystem).GetMethod("FetchTourniquetData", BindingFlags.Instance | BindingFlags.NonPublic)!;
+        var fetchMethod = typeof(PatientScanSystem).GetMethod("FetchTourniquetData", BindingFlags.Instance | BindingFlags.NonPublic)!;
 
         await server.WaitAssertion(() =>
         {

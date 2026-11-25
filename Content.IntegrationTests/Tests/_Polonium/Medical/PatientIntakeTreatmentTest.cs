@@ -6,9 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
+using Content.Server._Polonium.Body;
 using Content.Server._Polonium.Medical.PatientIntake;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Server._Shitmed.Medical.Surgery;
+using Content.Shared._Polonium.Body;
 using Content.Shared._Polonium.Medical.PatientIntake;
+using Content.Shared._Polonium.Medical.Surgery;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
@@ -49,10 +53,13 @@ public sealed class PatientIntakeTreatmentTest : GameTest
         { "LegLeft", ("SurgeryAttachLeftLeg", "SurgeryStepInsertLegLeft") },
         { "LegRight", ("SurgeryAttachRightLeg", "SurgeryStepInsertLegRight") },
         { "Eyes", ("SurgeryInsertEyes", "SurgeryStepInsertEyes") },
-        { "Lungs", ("SurgeryInsertLungs", "SurgeryStepInsertLungs") },
+        { "LungLeft", ("SurgeryInsertLungLeft", "SurgeryStepInsertLungs") },
+        { "LungRight", ("SurgeryInsertLungRight", "SurgeryStepInsertLungs") },
         { "Liver", ("SurgeryInsertLiver", "SurgeryStepInsertLiver") },
         { "Stomach", ("SurgeryInsertStomach", "SurgeryStepInsertStomach") },
-        { "Kidneys", ("SurgeryInsertKidneys", "SurgeryStepInsertKidneys") },
+        { "KidneyLeft", ("SurgeryInsertKidneyLeft", "SurgeryStepInsertKidney") },
+        { "KidneyRight", ("SurgeryInsertKidneyRight", "SurgeryStepInsertKidney") },
+        { "Spleen", ("SurgeryInsertSpleen", "SurgeryStepInsertSpleen") },
         { "HandLeft", ("SurgeryAttachLeftHand", "SurgeryStepInsertHandLeft") },
         { "HandRight", ("SurgeryAttachRightHand", "SurgeryStepInsertHandRight") },
         { "FootLeft", ("SurgeryAttachLeftFoot", "SurgeryStepInsertFootLeft") },
@@ -117,7 +124,11 @@ public sealed class PatientIntakeTreatmentTest : GameTest
 
                 // Damage rolls its own traumas through the normal pipeline, like a real injury.
                 RunStepUntilTreated(entMan, patients[issue.ID], TraumaType.BoneDamage, "SurgeryMendBones", "SurgeryStepMendBones");
-                RunStepUntilTreated(entMan, patients[issue.ID], TraumaType.OrganDamage, "SurgeryHealOrgans", "SurgeryStepHealOrgans");
+                HealOrgans(entMan, patients[issue.ID]);
+
+                // A heavy injury can roll a trauma that kills an organ outright; only a transplant fixes that.
+                foreach (var dead in Organs(entMan, patients[issue.ID]).Where(entMan.HasComponent<DeadOrganComponent>))
+                    TransplantFromDonor(entMan, patients[issue.ID], donors[issue.ID], entMan.GetComponent<OrganComponent>(dead).Category!.Value, replace: true);
             }
         });
         await pair.RunTicksSync(5);
@@ -158,7 +169,7 @@ public sealed class PatientIntakeTreatmentTest : GameTest
                 break;
 
             case PatientIntakeIssueKind.Organ:
-                RunStepUntilTreated(entMan, patient, TraumaType.OrganDamage, "SurgeryHealOrgans", "SurgeryStepHealOrgans");
+                HealOrgans(entMan, patient);
                 break;
 
             case PatientIntakeIssueKind.Poison:
@@ -181,6 +192,14 @@ public sealed class PatientIntakeTreatmentTest : GameTest
                 foreach (var category in InsertSurgery.Keys)
                     TransplantFromDonor(entMan, patient, donor, category, replace: false);
                 break;
+
+            case PatientIntakeIssueKind.CavityItem:
+            {
+                // The removal step of the surgery ends in the same place: the item out of the torso.
+                var torso = Organs(entMan, patient).Single(o => entMan.GetComponent<OrganComponent>(o).Category == "Torso");
+                Assert.That(entMan.System<SurgicalCavitySystem>().DropContents(torso), issue.ID);
+                break;
+            }
 
             case PatientIntakeIssueKind.ReplacePart:
             {
@@ -355,20 +374,37 @@ public sealed class PatientIntakeTreatmentTest : GameTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(entMan.System<SurgerySystem>().GetSingleton("SurgeryRemoveKidneys"), Is.Not.Null);
+            Assert.That(entMan.System<SurgerySystem>().GetSingleton("SurgeryRemoveKidneyLeft"), Is.Not.Null);
 
             entMan.GetComponent<SurgeryTargetComponent>(patient).SepsisImmune = true;
             var comp = entMan.AddComponent<PatientIntakePatientComponent>(patient);
             comp.ExpectedParts = intake.PartCategories(patient);
             var body = entMan.GetComponent<BodyComponent>(patient);
-            Assert.That(LimbTargetMap.TryGetOrganByCategory(entMan, body, "Kidneys", out var kidneys), Is.True);
+            Assert.That(LimbTargetMap.TryGetOrganByCategory(entMan, body, "KidneyLeft", out var kidneys), Is.True);
             entMan.System<SharedContainerSystem>().Remove(kidneys, body.Organs!, force: true);
             Assert.That(intake.GetFailures((patient, comp)).Any(f => f.Kind == IntakeFailureKind.MissingPart), Is.True);
 
-            TransplantFromDonor(entMan, patient, donor, "Kidneys", replace: false);
+            TransplantFromDonor(entMan, patient, donor, "KidneyLeft", replace: false);
             Assert.That(intake.GetFailures((patient, comp)).Any(f => f.Kind == IntakeFailureKind.MissingPart), Is.False,
-                "The insert surgery puts the donor's kidneys in.");
+                "The insert surgery puts the donor's kidney in.");
         });
+    }
+
+    /// <summary>
+    /// Organ damage heals with organ medicine, which goes through the organ healing system; living organs only, a dead
+    /// one needs a transplant.
+    /// </summary>
+    private static void HealOrgans(IEntityManager entMan, EntityUid patient)
+    {
+        var healing = entMan.System<OrganHealingSystem>();
+        foreach (var organ in Organs(entMan, patient))
+        {
+            if (entMan.HasComponent<DeadOrganComponent>(organ)
+                || !entMan.TryGetComponent<OrganIntegrityComponent>(organ, out var integrity))
+                continue;
+
+            healing.HealOrgan((organ, integrity), integrity.IntegrityCap);
+        }
     }
 
     private static void RunStepUntilTreated(IEntityManager entMan, EntityUid patient, TraumaType trauma, string surgeryId, string stepId)

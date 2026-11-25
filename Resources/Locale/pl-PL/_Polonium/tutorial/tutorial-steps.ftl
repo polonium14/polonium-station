@@ -33,7 +33,7 @@ tutorial-step-r08-hands = Weź [color=#FFC83D][bold]klucz[/bold][/color] do jedn
 tutorial-step-r08-girder = Odkręć [color=#FFC83D][bold]belkę[/bold][/color] [color=#FFC83D][bold]kluczem[/bold][/color], potem rozbierz ją [color=#FFC83D][bold]śrubokrętem[/bold][/color]. Możesz też odciągnąć ją z drogi.
 tutorial-step-r09-exam = Przyjrzyj się [color=#FFC83D][bold]tabliczce[/bold][/color] na ścianie.
 tutorial-step-r09-lamp = Podnieś [color=#FFC83D][bold]latarnię[/bold][/color] z podłogi i włącz ją, trzymając w ręce.
-tutorial-step-r10 = Otwórz szafkę, weź [color=#FFC83D][bold]colę[/bold][/color] i umieść ją w [color=#FFC83D][bold]bloku utylizacyjnym[/bold][/color] - kliknięciem albo rzutem. Potem otwórz jego panel i naciśnij "[color=#FFC83D][bold]Wyślij[/bold][/color]".
+tutorial-step-r10 = Otwórz szafkę, weź [color=#FFC83D][bold]colę[/bold][/color] i umieść ją w [color=#FFC83D][bold]bloku utylizacyjnym[/bold][/color] - kliknięciem albo rzutem. Potem otwórz jego panel i pociągnij [color=#FFC83D][bold]czerwoną dźwignię[/bold][/color] w dół.
 tutorial-step-r11-pack = Podnieś [color=#FFC83D][bold]Weh[/bold][/color] i schowaj go [color=#FFC83D][bold]do plecaka[/bold][/color] ({ $smartBackpack }). W ręce się nie liczy. Plecak otworzysz też, najeżdżając kursorem na jego ikonę w ekwipunku i wciskając { $useWorld }.
 tutorial-step-r11-drag = Złap [color=#FFC83D][bold]skrzynię[/bold][/color] i przeciągnij ją na [color=#FFC83D][bold]znacznik na podłodze[/bold][/color].
 tutorial-step-r12-belt = Załóż [color=#FFC83D][bold]pas narzędziowy[/bold][/color], potem włóż do niego [color=#FFC83D][bold]łom[/bold][/color].
@@ -164,7 +164,7 @@ tutorial-bubble-finale-quit = Wyjdź z gry
 tutorial-bubble-finale-join = Przejdź na serwer główny
 tutorial-redial-message = Łączenie z serwerem głównym…
 tutorial-step-r12-internals = Weź [color=#FFC83D][bold]butlę tlenową[/bold][/color] i włącz [color=#FFC83D][bold]obieg wewnętrzny[/bold][/color].
-tutorial-hint-disposal = { $click } [color=#FFC83D][bold]puszką[/bold][/color] [color=#FFC83D][bold]w blok utylizacyjny[/bold][/color] - włóż ją do środka, { $throwItem } + { $click } - rzut. Potem { $click } w blok utylizacyjny pustą ręką - panel z przyciskiem "[color=#FFC83D][bold]Wyślij[/bold][/color]"
+tutorial-hint-disposal = { $click } [color=#FFC83D][bold]puszką[/bold][/color] [color=#FFC83D][bold]w blok utylizacyjny[/bold][/color] - włóż ją do środka, { $throwItem } + { $click } - rzut. Potem { $click } w blok utylizacyjny pustą ręką - panel z [color=#FFC83D][bold]czerwoną dźwignią[/bold][/color]. Pociągnij ją w dół albo kliknij.
 tutorial-hint-backpack = { $smartBackpack } - schowaj to, co trzymasz, [color=#FFC83D][bold]do plecaka[/bold][/color]. { $backpack } - otwórz plecak, kursor na plecaku + { $useWorld } - też otwórz, { $inventory } - ekwipunek
 tutorial-hint-internals = { $useWorld } na butlę - okno, przycisk "{ $gas-tank-toggle }". Albo [color=#FFC83D][bold]ikona obiegu[/bold][/color] przy wskaźnikach stanu, albo akcja "{ $internals-toggle }" na pasku akcji. [color=#FFC83D][bold]Butla w ręce, kieszeni albo schowku skafandra[/bold][/color]
 tutorial-hint-mix = { $click } [color=#FFC83D][bold]workiem mąki[/bold][/color] w zlewkę - 5 mąki na kliknięcie, potrzeba 45. [color=#FFC83D][bold]Zlewka musi leżeć na stole[/bold][/color], nie w drugiej ręce

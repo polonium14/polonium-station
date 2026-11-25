@@ -1,0 +1,4 @@
+- type: shader
+  id: PoloniumAirFlowHaze
+  kind: source
+  path: "/Textures/Shaders/_Polonium/air_flow_haze.swsl"

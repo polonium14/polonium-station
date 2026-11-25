@@ -269,15 +269,18 @@ public partial class TraumaSystem
 
     public FixedPoint2 GetArmourChanceDeduction(EntityUid body, Entity<TraumaInflicterComponent> inflicter, TraumaType traumaType, ProtoId<OrganCategoryPrototype> coverage)
     {
+        if (!TryComp<WoundComponent>(inflicter, out var wound))
+            return FixedPoint2.Zero;
+
         var ev = new CoefficientQueryEvent(SlotFlags.WITHOUT_POCKET);
         RaiseLocalEvent(body, ev);
 
-        if (ev.DamageModifiers.Coefficients.Count == 0)
+        // Only armor against the kind of damage that made the wound counts. An average of whatever the armor
+        // lists let a suit that only stops acid shield organs from a club better than heavy armor did.
+        if (!ev.DamageModifiers.Coefficients.TryGetValue(wound.DamageType, out var coefficient))
             return FixedPoint2.Zero;
 
-        var averageCoefficient = ev.DamageModifiers.Coefficients.Values.Average();
-
-        return FixedPoint2.Clamp(FixedPoint2.New((1f - averageCoefficient) * DeductionStrength), FixedPoint2.Zero, FixedPoint2.New(1));
+        return FixedPoint2.Clamp(FixedPoint2.New((1f - coefficient) * DeductionStrength), FixedPoint2.Zero, FixedPoint2.New(1));
     }
 
     public FixedPoint2 GetTraumaChanceDeduction(
@@ -286,16 +289,17 @@ public partial class TraumaSystem
         Entity<WoundableComponent> traumaTarget,
         FixedPoint2 severity,
         TraumaType traumaType,
-        ProtoId<OrganCategoryPrototype> coverage)
+        ProtoId<OrganCategoryPrototype> coverage,
+        out FixedPoint2 armour)
     {
-        var deduction = GetArmourChanceDeduction(body, inflicter, traumaType, coverage);
+        // Armor scales the final chance instead of being subtracted from it: subtracted, a plain vest
+        // zeroed the 8% piercing organ chance and heavy armor zeroed every physical trauma.
+        armour = GetArmourChanceDeduction(body, inflicter, traumaType, coverage);
 
         var traumaDeductionEvent = new TraumaChanceDeductionEvent(severity, traumaType, 0);
         RaiseLocalEvent(traumaTarget.Owner, ref traumaDeductionEvent);
 
-        deduction += traumaDeductionEvent.ChanceDeduction;
-
-        return deduction;
+        return traumaDeductionEvent.ChanceDeduction;
     }
 
     public void ApplyMangledTraumas(EntityUid woundable,
@@ -354,9 +358,10 @@ public partial class TraumaSystem
             target,
             Comp<WoundComponent>(woundInflicter).WoundSeverityPoint,
             TraumaType.BoneDamage,
-            category);
+            category,
+            out var armour);
 
-        if (deduction == 1)
+        if (deduction == 1 || armour >= 1)
             return false;
 
         // We do complete random to get the chance for trauma to happen,
@@ -368,7 +373,7 @@ public partial class TraumaSystem
              * _boneTraumaChanceMultipliers[target.Comp.WoundableSeverity]
              - deduction + woundInflicter.Comp.TraumasChances[TraumaType.BoneDamage],
             0,
-            1);
+            1) * (1 - armour);
 
         return _random.Prob((float) chance);
     }
@@ -394,9 +399,10 @@ public partial class TraumaSystem
             target,
             Comp<WoundComponent>(woundInflicter).WoundSeverityPoint,
             TraumaType.NerveDamage,
-            category);
+            category,
+            out var armour);
 
-        if (deduction == 1)
+        if (deduction == 1 || armour >= 1)
             return false;
         // literally dismemberment chance, but lower by default
         var chance =
@@ -404,7 +410,7 @@ public partial class TraumaSystem
                 (target.Comp.IntegrityCap - target.Comp.WoundableIntegrity) / target.Comp.IntegrityCap / 20
                 - deduction + woundInflicter.Comp.TraumasChances[TraumaType.NerveDamage],
                 0,
-                1);
+                1) * (1 - armour);
 
         return _random.Prob((float) chance);
     }
@@ -437,9 +443,10 @@ public partial class TraumaSystem
             target,
             Comp<WoundComponent>(woundInflicter).WoundSeverityPoint,
             TraumaType.OrganDamage,
-            category);
+            category,
+            out var armour);
 
-        if (deduction == 1)
+        if (deduction == 1 || armour >= 1)
             return false;
         // organ damage is like, very deadly, but not yet
         // so like, like, yeah, we don't want a disabler to induce some EVIL ASS organ damage with a 0,000001% chance and ruin your round
@@ -450,7 +457,7 @@ public partial class TraumaSystem
                 (target.Comp.IntegrityCap - target.Comp.WoundableIntegrity) / target.Comp.IntegrityCap / totalIntegrity
                 - deduction + woundInflicter.Comp.TraumasChances[TraumaType.OrganDamage],
                 0,
-                1);
+                1) * (1 - armour);
 
         return _random.Prob((float) chance);
     }
@@ -466,10 +473,7 @@ public partial class TraumaSystem
         if (category is null || !LimbTargetMap.TryGetParentCategory(category.Value, out var parentCategory))
             return false;
 
-        if (!TryComp<BodyComponent>(body, out var bodyComp)
-            || !LimbTargetMap.TryGetOrganByCategory(EntityManager, bodyComp, parentCategory, out var parentOrgan)
-            || !TryComp<WoundableComponent>(parentOrgan, out var parentWoundableComp)
-            || parentWoundableComp.WoundableSeverity != WoundableSeverity.Mangled)
+        if (!CanBeSevered(target, body, category.Value))
             return false;
 
         var deduction = GetTraumaChanceDeduction(
@@ -478,9 +482,10 @@ public partial class TraumaSystem
             target,
             Comp<WoundComponent>(woundInflicter).WoundSeverityPoint,
             TraumaType.Dismemberment,
-            category.Value);
+            category.Value,
+            out var armour);
 
-        if (deduction == 1)
+        if (deduction == 1 || armour >= 1)
             return false;
 
         var bonePenalty = FixedPoint2.New(1); // higher means less chance to delimb
@@ -517,9 +522,9 @@ public partial class TraumaSystem
                 (1f - (MathF.Pow(woundableIntegrity.Float(), 1.3f) / target.Comp.IntegrityCap - 1f) * bonePenalty) * multiplier
                 - deduction + woundInflicter.Comp.TraumasChances[TraumaType.Dismemberment],
                 0,
-                1);
+                1) * (1 - armour);
 
-        var result = _random.Prob((float) chance);
+        var result = _random.Prob(SeverChance(chance));
         return result;
     }
 
@@ -630,7 +635,12 @@ public partial class TraumaSystem
             return;
 
         if (!_consciousness.TryGetNerveSystem(body, out var nerveSys))
+        {
+            if (traumas.Contains(TraumaType.Dismemberment))
+                SeverWithoutNerves(target);
+
             return;
+        }
 
         foreach (var trauma in traumas)
         {
@@ -652,10 +662,7 @@ public partial class TraumaSystem
                                 && oc.Category is { } c
                                 && housedCategories.Contains(c))
                             .ToList();
-                        _random.Shuffle(organs);
-
-                        if (organs.Count > 0)
-                            targetChosen = organs[0];
+                        targetChosen = EntityManager.System<Content.Shared._Polonium.Body.OrganTraumaSystem>().PickOrgan(organs);
                     }
 
                     break;
@@ -698,12 +705,13 @@ public partial class TraumaSystem
                     break;
 
                 case TraumaType.OrganDamage:
-                    var traumaEnt = AddTrauma(targetChosen.Value, target, inflicter, TraumaType.OrganDamage, severity);
+                    var organDamage = OrganTraumaDamage(severity);
+                    var traumaEnt = AddTrauma(targetChosen.Value, target, inflicter, TraumaType.OrganDamage, organDamage);
 
                     if (traumaEnt != EntityUid.Invalid
-                        && !TryChangeOrganDamageModifier(targetChosen.Value, severity, traumaEnt, "WoundableDamage"))
+                        && !TryChangeOrganDamageModifier(targetChosen.Value, organDamage, traumaEnt, "WoundableDamage"))
                     {
-                        TryCreateOrganDamageModifier(targetChosen.Value, severity, traumaEnt, "WoundableDamage");
+                        TryCreateOrganDamageModifier(targetChosen.Value, organDamage, traumaEnt, "WoundableDamage");
                     }
 
                     break;
@@ -759,6 +767,7 @@ public partial class TraumaSystem
                             severity,
                             organComp.Category);
 
+                        HurtBySevering(body, target, targetChosen.Value);
                         _wound.AmputateWoundableSafely(target.Owner, target.Comp);
                     }
                     break;

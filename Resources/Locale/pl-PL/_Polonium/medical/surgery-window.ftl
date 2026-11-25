@@ -1,0 +1,9 @@
+surgery-group-access = Otwarcie i zamknięcie
+surgery-group-wounds = Rany
+surgery-group-organs = Narządy
+surgery-group-limbs = Kończyny
+surgery-group-other = Inne
+surgery-window-pick-surgery = Wybierz operację
+surgery-window-requires = wymaga: { $surgery }
+surgery-window-open-incision = otwarte nacięcie
+surgery-window-first = Najpierw: { $surgery }

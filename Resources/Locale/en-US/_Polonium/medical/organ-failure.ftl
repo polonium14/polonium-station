@@ -1,0 +1,13 @@
+organ-failure-pale = { $name } turns pale.
+organ-failure-shudder = { $name } shudders.
+organ-failure-groan = { $name } groans.
+organ-failure-twitch = { $name } twitches.
+organ-failure-abdomen = Your abdomen hurts!
+organ-failure-back = Your back aches terribly!
+organ-failure-flank = You feel a stabbing pain in your flank!
+organ-failure-upper-abdomen = You feel excruciating pain in your upper right abdomen!
+organ-failure-ribs = Your ribs hurt!
+organ-failure-breathing-hurts = It hurts to breathe!
+organ-failure-cant-breathe = The pain will not let you catch your breath!
+organ-failure-palpitations = Your heart is racing.
+organ-failure-breathless = You are short of breath.

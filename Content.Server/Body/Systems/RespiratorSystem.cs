@@ -41,6 +41,7 @@ public sealed partial class RespiratorSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedEntityConditionsSystem _entityConditions = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!; // Polonium: no gasp while out cold
 
     private static readonly ProtoId<MetabolismStagePrototype> RespirationStage = new("Respiration");
 
@@ -89,7 +90,12 @@ public sealed partial class RespiratorSystem : EntitySystem
 
             UpdateSaturation(uid, -(float)respirator.UpdateInterval.TotalSeconds, respirator);
 
-            if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
+            // Polonium: someone can breathe for a patient in crit (chest compressions)
+            var assisted = new Content.Server._Polonium.Body.AssistedBreathingEvent();
+            if (_mobState.IsIncapacitated(uid))
+                RaiseLocalEvent(uid, ref assisted);
+
+            if (!_mobState.IsIncapacitated(uid) || assisted.Assisted) // cannot breathe in crit. Polonium: unless assisted
             {
                 switch (respirator.Status)
                 {
@@ -106,7 +112,9 @@ public sealed partial class RespiratorSystem : EntitySystem
 
             if (respirator.Saturation < respirator.SuffocationThreshold)
             {
-                if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
+                if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown
+                    // Polonium: an unconscious body does not gasp; a blocked gasp would show "you can't gasp" to the player
+                    && !_statusEffects.HasStatusEffect(uid, Content.Server._Polonium.Body.CirculationSystem.Unconscious))
                 {
                     respirator.LastGaspEmoteTime = _gameTiming.CurTime;
                     _chat.TryEmoteWithChat(uid,

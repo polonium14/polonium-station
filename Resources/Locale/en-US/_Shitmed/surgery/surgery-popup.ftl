@@ -11,7 +11,6 @@ surgery-popup-step-SurgeryStepSealBones = {$user} is sealing the bones on {$targ
 surgery-popup-step-SurgeryStepSealSkull = {$user} is sealing the skull on {$target}'s {$part}.
 surgery-popup-step-SurgeryStepSealRibcage = {$user} is sealing the ribcage on {$target}'s {$part}.
 surgery-popup-step-SurgeryStepMendBones = {$user} is mending the bones on {$target}'s {$part}.
-surgery-popup-step-SurgeryStepHealOrgans = {$user} is healing the organs on {$target}'s {$part}.
 surgery-popup-step-SurgeryStepRemoveSeveredSkin = {$user} is removing the severed skin from {$target}'s {$part}.
 surgery-popup-step-SurgeryStepRemoveLeftoverBones = {$user} is removing the leftover bones from {$target}'s {$part}.
 surgery-popup-step-SurgeryStepSealDismembermentWound = {$user} is sealing the dismemberment wound on {$target}'s {$part}.

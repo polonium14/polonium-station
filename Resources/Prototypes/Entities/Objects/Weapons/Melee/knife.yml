@@ -3,6 +3,11 @@
   id: BaseKnife
   abstract: true
   components:
+  # Polonium: improvised surgery tool, slow and likely to botch the step
+  - type: SurgeryTool
+  - type: Scalpel
+    speed: 0.67
+  # Polonium end
   - type: Tag
     tags:
     - Knife
@@ -69,6 +74,10 @@
   id: ButchCleaver
   description: A huge blade used for chopping and chopping up meat. This includes clowns and clown-by-products.
   components:
+  # Polonium: improvised surgery tool, slow and likely to botch the step
+  - type: BoneSaw
+    speed: 0.35
+  # Polonium end
   - type: Tag
     tags:
     - Knife
