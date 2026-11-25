@@ -24,6 +24,12 @@ public sealed partial class PassengerVehicleComponent : Component
     public int MaxOccupants = 5;
 
     /// <summary>
+    /// Czy kierowca i pasażerowie mogą strzelać z wnętrza pojazdu.
+    /// </summary>
+    [DataField]
+    public bool CanShoot = true;
+
+    /// <summary>
     /// Dźwięk silnika odtwarzany podczas jazdy.
     /// </summary>
     [DataField]

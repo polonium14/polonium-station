@@ -15,6 +15,6 @@
     sprite: _Polonium/Objects/Vehicles/maluch.rsi
     state: icon
   product: VehicleMaluch
-  cost: 69000
+  cost: 47500
   category: cargoproduct-category-name-fun
   group: market
