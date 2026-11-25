@@ -1,19 +1,4 @@
 ﻿Entries:
-- author: themias, jessicamaybe
-  changes:
-  - message: Added a traitor objective to break into letters and packages
-    type: Add
-  id: 9655
-  time: '2026-04-22T00:58:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43560
-- author: themias
-  changes:
-  - message: Stunning with ninja gloves now causes the swirling stars effect on the
-      victim
-    type: Fix
-  id: 9656
-  time: '2026-04-22T04:58:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43279
 - author: jkwookee
   changes:
   - message: Both wizard rods & normal rods now destroy full sized grilles.
@@ -5234,3 +5219,21 @@
   id: 10149
   time: '2026-11-23T20:29:15.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1299
+- author: pinkscreen
+  changes:
+  - message: "Dodano aplikacje kt\xF3ra informuje o nadchodz\u0105cych paczkach i\
+      \ listach."
+    type: Add
+  id: 10150
+  time: '2026-11-25T09:09:17.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1310
+- author: Nikita
+  changes:
+  - message: "Dodano abduktor\xF3w, nowych antagonist\xF3w z r\xF3l duch\xF3w. Obcy\
+      \ naukowcy przylatuj\u0105 statkiem, porywaj\u0105 cz\u0142onk\xF3w za\u0142\
+      ogi, wszczepiaj\u0105 im gruczo\u0142y i odsy\u0142aj\u0105 ich na stacj\u0119\
+      ."
+    type: Add
+  id: 10151
+  time: '2026-11-25T07:36:44.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1298
