@@ -117,6 +117,7 @@
   priority: 30
   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC0.xml"
   children:
+  - RuleC00
   - RuleC1
   - RuleC2
   - RuleC3
@@ -203,7 +204,7 @@
   name: guide-entry-rules-c10
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC10SSD.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC10Validhunting.xml"
 
 # - type: guideEntry
 #   id: RuleC13
@@ -211,14 +212,6 @@
 #   ruleEntry: true
 #   priority: 13
 #   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC13NoEORG.xml"
-
-# Polonium: the rules on command and security and on immersion are now part of RuleC6
-# - type: guideEntry
-#   id: RuleC11
-#   name: guide-entry-rules-c11
-#   ruleEntry: true
-#   priority: 11
-#   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC11LOOC.xml"
 
 # - type: guideEntry
 #   id: RuleC15
