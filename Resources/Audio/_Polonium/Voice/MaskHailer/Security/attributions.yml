@@ -1,0 +1,4 @@
+- files: ["on_the_ground.ogg", "stop_resisting.ogg", "secure_area.ogg", "target_neutralized.ogg", "threat_removed.ogg", "elimination_confirmed.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Made for Polonium Station by pinkscreen and nikitosych (github)"
+  source: "https://github.com/polonium14/polonium-station"

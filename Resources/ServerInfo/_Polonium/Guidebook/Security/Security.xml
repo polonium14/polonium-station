@@ -38,6 +38,12 @@ Ochrona stosuje siłę według [textlink="Procedury stosowania siły" link="UseO
 
 [bold]Poziom I[/bold] — polecenia słowne i komunikacja.
 
+Maska gazowa Ochrony ma wbudowany głośnik z nagranymi komendami. Po użyciu akcji [bold]Komendy głosowe[/bold] otwiera się menu, z którego funkcjonariusz wybiera komendę. Głośnik odtwarza ją wtedy na głos, o ile maska jest naciągnięta na twarz.
+
+<Box>
+  <GuideEntityEmbed Entity="ClothingMaskGasSecurity"/>
+</Box>
+
 [bold]Poziom II[/bold] — sprzęt mniej śmiercionośny. Pałki służą do ograniczenia ruchu napastnika, a kajdanki do kontroli podejrzanego podczas zatrzymania lub aresztowania, blokując mu swobodę poruszania się i korzystania z dłoni.
 
 <Box>
