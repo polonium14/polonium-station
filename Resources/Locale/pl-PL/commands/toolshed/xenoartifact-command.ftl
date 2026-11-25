@@ -12,4 +12,4 @@ command-description-xenoartifact-addedge = Dodaje krawędź między dwoma węzł
 command-spawnartifactwithnode-spawn-artifact-item-hint = użyj ręcznego artefaktu
 command-spawnartifactwithnode-spawn-artifact-structure-hint = użyj stacjonarnego artefaktu w formie konstrukcji
 command-spawnartifactwithnode-spawn-artifact-type-hint = <id prototypu encji artefaktu>
-command-xenoartifact-common-node-hint = głębokość { $depth } węzeł { $nodeId } wyzwalacz { $nodeDetail }
+command-xenoartifact-common-node-hint = głębokość { $depth } węzeł { $nodeId } wyzwalacz: '{ $trigger }', efekt: '{ $effect }'
