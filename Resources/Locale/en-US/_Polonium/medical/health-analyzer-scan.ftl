@@ -101,4 +101,6 @@ health-analyzer-scan-organ-Appendix = Appendix
 
 health-analyzer-scan-damage = Damage
 health-analyzer-scan-damage-limb = Damage · {$limb}
+health-analyzer-scan-threshold-critical = Critical state from {$damage} damage
+health-analyzer-scan-threshold-dead = Death from {$damage} damage
 health-analyzer-scan-chemicals = In the blood

@@ -760,13 +760,15 @@ public sealed partial class PatientScanWindow : FancyWindow
             if (scan.CritThreshold is { } crit)
             {
                 DamageMarks.Marks.Add((crit.Float() / DamageChart.Capacity, Warning));
-                DamageIcons.Icons.Add((crit.Float() / DamageChart.Capacity, _entMan.System<SpriteSystem>().Frame0(CritIcon)));
+                DamageIcons.Icons.Add((crit.Float() / DamageChart.Capacity, _entMan.System<SpriteSystem>().Frame0(CritIcon),
+                    Loc.GetString("health-analyzer-scan-threshold-critical", ("damage", MathF.Round(crit.Float())))));
             }
 
             if (scan.DeadThreshold is { } deadAt)
             {
                 DamageMarks.Marks.Add((deadAt.Float() / DamageChart.Capacity, Critical));
-                DamageIcons.Icons.Add((deadAt.Float() / DamageChart.Capacity, _entMan.System<SpriteSystem>().Frame0(DeadIcon)));
+                DamageIcons.Icons.Add((deadAt.Float() / DamageChart.Capacity, _entMan.System<SpriteSystem>().Frame0(DeadIcon),
+                    Loc.GetString("health-analyzer-scan-threshold-dead", ("damage", MathF.Round(deadAt.Float())))));
             }
 
             DamageValue.Text = $"{MathF.Round(total.Float()):0}";

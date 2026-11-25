@@ -1,6 +1,8 @@
 using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.CustomControls;
+using Robust.Shared.Utility;
 
 namespace Content.Client._Polonium.Medical.HealthAnalyzer;
 
@@ -82,31 +84,59 @@ public sealed class ThresholdIcons : Control
 {
     private const float IconSize = 16f;
 
-    public List<(float Fraction, Texture Icon)> Icons { get; } = new();
+    /// <summary>
+    /// Icons with their place along the chart (0 to 1) and the text shown when hovered.
+    /// </summary>
+    public List<(float Fraction, Texture Icon, string Tooltip)> Icons { get; } = new();
 
     public ThresholdIcons()
     {
         HorizontalExpand = true;
         MinSize = new Vector2(0, IconSize);
-        MouseFilter = MouseFilterMode.Ignore;
+        MouseFilter = MouseFilterMode.Pass;
+        TooltipSupplier = SupplyTooltip;
     }
 
     protected override void Draw(DrawingHandleScreen handle)
     {
         var size = IconSize * UIScale;
-        var width = PixelSize.X;
+        foreach (var (index, left) in VisibleIcons(PixelSize.X, size))
+        {
+            handle.DrawTextureRect(Icons[index].Icon, UIBox2.FromDimensions(left, PixelSize.Y - size, size, size));
+        }
+    }
 
-        // From the last one back: when two thresholds sit too close for both icons, the later, graver one stays.
+    /// <summary>
+    /// The icons that get drawn and the left edge of each.
+    /// From the last one back: when two thresholds sit too close for both icons, the later, graver one stays.
+    /// </summary>
+    private IEnumerable<(int Index, float Left)> VisibleIcons(float width, float size)
+    {
         float? taken = null;
         for (var i = Icons.Count - 1; i >= 0; i--)
         {
-            var (fraction, icon) = Icons[i];
-            var left = Math.Clamp(Math.Clamp(fraction, 0f, 1f) * width - size / 2f, 0f, MathF.Max(width - size, 0f));
+            var left = Math.Clamp(Math.Clamp(Icons[i].Fraction, 0f, 1f) * width - size / 2f, 0f, MathF.Max(width - size, 0f));
             if (taken is { } next && left + size > next)
                 continue;
 
-            handle.DrawTextureRect(icon, UIBox2.FromDimensions(left, PixelSize.Y - size, size, size));
+            yield return (i, left);
             taken = left;
         }
+    }
+
+    private Control? SupplyTooltip(Control sender)
+    {
+        var mouse = UserInterfaceManager.MousePositionScaled.Position - GlobalPosition;
+        foreach (var (index, left) in VisibleIcons(Width, IconSize))
+        {
+            if (mouse.X < left || mouse.X > left + IconSize)
+                continue;
+
+            var tooltip = new Tooltip { Tracking = true };
+            tooltip.SetMessage(FormattedMessage.FromUnformatted(Icons[index].Tooltip));
+            return tooltip;
+        }
+
+        return null;
     }
 }
