@@ -56,6 +56,8 @@
   id: AppearanceApid
   name: apid appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking
+    legTop: 21
   - type: Inventory
     speciesId: apid
     templateId: apid

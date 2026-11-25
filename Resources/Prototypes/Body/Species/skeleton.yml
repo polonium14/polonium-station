@@ -45,6 +45,7 @@
   categories: [ HideSpawnMenu ]
   name: skeletonperson appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking, the body fits the limb regions
   - type: Inventory
     femaleDisplacements:
       jumpsuit:

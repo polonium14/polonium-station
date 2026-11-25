@@ -85,6 +85,7 @@
   categories: [ HideSpawnMenu ]
   name: vulpkanin appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking
   - type: InitialBody
     organs:
       Torso: OrganVulpkaninTorso

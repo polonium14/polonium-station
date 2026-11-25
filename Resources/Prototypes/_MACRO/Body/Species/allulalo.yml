@@ -57,6 +57,8 @@
   id: AppearanceAllulalo
   name: allulalo appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking
+    legTop: 20
   - type: Inventory
     displacements:
       jumpsuit:

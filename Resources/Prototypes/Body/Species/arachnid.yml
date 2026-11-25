@@ -39,6 +39,8 @@
   categories: [ HideSpawnMenu ]
   name: arachnid appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking
+    legTop: 21
   - type: Inventory
     templateId: arachnid
     speciesId: arachnid

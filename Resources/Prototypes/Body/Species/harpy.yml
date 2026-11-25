@@ -67,6 +67,7 @@
   categories: [ HideSpawnMenu ]
   name: harpy appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking
   - type: InitialBody
     organs:
       Torso: OrganHarpyTorso
