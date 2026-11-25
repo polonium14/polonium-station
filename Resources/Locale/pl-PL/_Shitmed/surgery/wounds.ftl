@@ -2,7 +2,6 @@ inspect-wound-severity-minor = lekkie
 inspect-wound-severity-moderate = umiarkowane
 inspect-wound-severity-severe = ciężkie
 inspect-wound-severity-critical = krytyczne
-
 inspect-wound-type-Blunt = stłuczenia
 inspect-wound-type-Slash = rany cięte
 inspect-wound-type-Piercing = rany kłute
