@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: themias
-  changes:
-  - message: Dropping or putting away an RCD now cancels the construction
-    type: Fix
-  id: 9658
-  time: '2026-04-24T06:37:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43655
 - author: psykana
   changes:
   - message: T-ray scanner now has dedicated wiring and piping modes.
@@ -5242,3 +5235,10 @@
   id: 10152
   time: '2026-11-25T09:16:47.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1308
+- author: pinkscreen
+  changes:
+  - message: "Dodano jednor\u0119kiego bandyte."
+    type: Add
+  id: 10153
+  time: '2026-11-25T10:40:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1311
