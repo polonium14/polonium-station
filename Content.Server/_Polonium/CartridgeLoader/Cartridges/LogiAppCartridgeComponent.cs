@@ -69,6 +69,12 @@ public sealed partial class LogiAppTrackedParcel
     public TimeSpan ArrivalTime;
 
     /// <summary>
+    /// Whether the parcel was opened before it was deleted, so it doesn't count as destroyed.
+    /// </summary>
+    [DataField]
+    public bool WasOpened;
+
+    /// <summary>
     /// Status last sent to the program's UI, used to send a new state only when a status changes.
     /// </summary>
     [ViewVariables]

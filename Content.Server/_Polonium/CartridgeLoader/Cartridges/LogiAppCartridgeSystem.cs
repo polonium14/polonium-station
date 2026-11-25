@@ -25,6 +25,7 @@ public sealed partial class LogiAppCartridgeSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<DeliveryComponent, DeliverySpawnedEvent>(OnDeliverySpawned);
+        SubscribeLocalEvent<DeliveryComponent, EntityTerminatingEvent>(OnDeliveryTerminating);
         SubscribeLocalEvent<LogiAppCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<LogiAppCartridgeComponent, CartridgeMessageEvent>(OnUiMessage);
     }
@@ -59,6 +60,26 @@ public sealed partial class LogiAppCartridgeSystem : EntitySystem
 
             if (TryComp<CartridgeLoaderComponent>(loader, out var loaderComp) && loaderComp.ActiveProgram == uid)
                 UpdateUiState((uid, app), loader);
+        }
+    }
+
+    /// <summary>
+    /// Opened parcels are trash and often get thrown away or recycled. Remember that they were opened,
+    /// so deleting them afterwards doesn't show them as destroyed.
+    /// </summary>
+    private void OnDeliveryTerminating(Entity<DeliveryComponent> ent, ref EntityTerminatingEvent args)
+    {
+        if (!ent.Comp.IsOpened)
+            return;
+
+        var query = EntityQueryEnumerator<LogiAppCartridgeComponent>();
+        while (query.MoveNext(out var app))
+        {
+            foreach (var parcel in app.Parcels)
+            {
+                if (parcel.Parcel == ent.Owner)
+                    parcel.WasOpened = true;
+            }
         }
     }
 
@@ -134,7 +155,8 @@ public sealed partial class LogiAppCartridgeSystem : EntitySystem
 
     private bool IsFinished(LogiAppTrackedParcel parcel)
     {
-        return !TryComp<DeliveryComponent>(parcel.Parcel, out var delivery)
+        return parcel.WasOpened
+               || !TryComp<DeliveryComponent>(parcel.Parcel, out var delivery)
                || TerminatingOrDeleted(parcel.Parcel)
                || delivery.IsOpened;
     }
@@ -146,6 +168,9 @@ public sealed partial class LogiAppCartridgeSystem : EntitySystem
     /// <param name="courierDistance">Distance in tiles from the teleporter beyond which the parcel is with a courier.</param>
     public LogiAppParcelStatus GetStatus(LogiAppTrackedParcel parcel, float courierDistance)
     {
+        if (parcel.WasOpened)
+            return LogiAppParcelStatus.Opened;
+
         if (!TryComp<DeliveryComponent>(parcel.Parcel, out var delivery) || TerminatingOrDeleted(parcel.Parcel))
             return LogiAppParcelStatus.Destroyed;
 
