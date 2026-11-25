@@ -11,21 +11,64 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <Document>
   # R5 - Nie metagaminguj
 
-  Ta zasada obejmuje wszystkie metody zdobywania informacji poza środkami wewnątrzgrywowymi, takimi jak rozmowy przez Discorda, omawianie bieżących informacji o rundzie na serwerze Discord i tym podobne.
+  [bold][color=#ff8a8a]Metagaming[/color][/bold] to korzystanie w grze z wiedzy, której twoja postać w grze nie zdobyła. Źródłem takiej wiedzy bywa Discord, rozmowa o trwającej rundzie poza grą, poprzednia runda albo to, co widziałeś jako duch.
 
-  Zasada ta ogranicza wiedzę na temat [color=#ffb86b]antagonistów[/color], ich możliwych celów oraz mechanik zgodnie z zasadami dotyczącymi [textlink="Metaosłony" link="Metashield"].
+  - [bold]Metakomunikacja jest zabroniona.[/bold] Gracze, którzy podczas rundy porozumiewają się poza grą, na przykład w rozmowie głosowej, łamią tę zasadę niezależnie od intencji, bo zyskują przewagę nad resztą.
+  - [bold]Nauka nowego gracza jest wyjątkiem.[/bold] Ucz przez LOOC. Jeśli wolisz uczyć go poza grą, uprzedź o tym administrację przez Ahelp (zwykle klawisz F1).
 
-  Zasada ta dotyczy również [bold][color=#ff8a8a]metakomunikacji[/color][/bold], czyli sytuacji, gdy kilku graczy komunikuje się poza grą (np. na rozmowie głosowej), jednocześnie grając. Niezależnie od intencji, jest to zabronione, ponieważ daje przewagę nad innymi graczami.
+  ## Czego postać nie wie
 
-  Jeśli uczysz nowego gracza, zaleca się korzystanie z kanałów LOOC lub powiadomienie administratora za pomocą klawiszu Ahelp (zazwyczaj to F1).
+  Tych informacji twoja postać nie zna i nie może zachowywać się tak, jakby je znała.
 
-  [bold][color=#ff8a8a]Żadne informacje zdobyte podczas stanu krytycznego, nieprzytomności lub śmierci nie mogą być wykorzystywane w grze w żadnych okolicznościach[/color][/bold], chyba że zostały poznane za życia. Zasada ta jest ściśle egzekwowana, zwłaszcza w przypadkach "[color=#ff8a8a]metagrudge[/color]", czyli chowania urazy wobec osoby, która zabiła cię w poprzednich rundach lub życiach. Dotyczy to także informacji zdobytych tuż przed nagłą utratą przytomności, np. przez sen chemiczny lub opuszczenie ciała przez umysł.
+  - [bold]Tryb gry.[/bold] Nikt na stacji nie wie, jaki tryb trwa ani jacy antagoniści mogą się w nim pojawić.
+  - [bold]Poprzednie rundy.[/bold] Postać grana przez wiele rund może pamiętać ogólne wrażenia z wcześniejszych zmian, na przykład to, że tamten kucharz dobrze gotuje. Te wrażenia nie wpływają na konflikty w obecnej rundzie: nikogo nie oszczędzasz z sympatii i na nikim się nie mścisz. Szczegółów, na przykład tego, kto okazał się antagonistą albo kto ją zabił, postać nie pamięta.
+  - [bold]Inne postacie tego samego gracza.[/bold] To, co przeżyłeś, grając kimś innym, zostaje przy tamtej postaci.
+  - [bold]Gracze.[/bold] Wszystko, co dotyczy gracza, nie jego postaci, pozostaje poza grą.
+  - [bold]Śmierć i duchy.[/bold] Tego, co zobaczyłeś po śmierci albo jako duch, nie wnosisz z powrotem do gry.
+  - [bold]Koniec rundy.[/bold] Każdy wie, że zmiana kiedyś dobiegnie końca, ale nikt nie szykuje się na przykład do bójki w Centralnym Dowództwie po zakończeniu rundy.
 
-  Po przywróceniu do życia dzięki [color=#7dffa8]resuscytacji krążeniowo-oddechowej[/color], [color=#7dffa8]klonowaniu[/color], [color=#7dffa8]MMI[/color], [color=#7dffa8]defibrylacji[/color] lub innej metodzie, pamiętasz okoliczności swojej śmierci, ale nie możesz ujawnić tożsamości swojego zabójcy, dopóki ktoś inny go nie wskaże lub nie znajdziesz dowodów.
+  [bold][color=#8ec8ff]Metaprzyjaźń[/color][/bold] to faworyzowanie postaci z powodów, których twoja postać znać nie może, na przykład dlatego, że gra nią twój znajomy. [bold][color=#8ec8ff]Metauraza[/color][/bold] (metagrudge) to złe traktowanie postaci z takich samych powodów. Metauraza jest szczególnie poważnym naruszeniem.
 
-  Po uwolnieniu spod [color=#d8a8ff]prania mózgu[/color] lub [color=#d8a8ff]kontroli umysłu[/color] [italic]możesz, ale nie musisz,[/italic] pamiętać wszystkie wydarzenia, imiona, osoby i działania z okresu, gdy byłeś pod wpływem.
+  [color=#ff8a8a]Zabronione:[/color]
+  - Dawanie komuś dodatkowego dostępu lub pracy, bo znasz gracza tej postaci, albo odmawianie ich, bo go nie lubisz.
+  - Ufanie postaci albo unikanie walki z nią, bo gra nią twój znajomy.
+  - Pomijanie celu zabójstwa, bo wasze postacie zaprzyjaźniły się w poprzedniej rundzie.
+  - Zaczynanie walki z postacią za to, co zrobiła w poprzedniej rundzie, albo za to, że zabiła cię, gdy grałeś kimś innym.
+  - Nękanie postaci za cokolwiek, co ona zrobiła w innej rundzie albo co jej gracz zrobił poza grą.
 
-  [bold][color=#ffb86b]Powergaming[/color][/bold] to wykorzystywanie meta mechanik i/lub rozumowania w celu uzyskania przewagi w grze (np. uzbrajanie ochrony na początku rundy, bo wiesz, że istnieją antagoniści). Jest to również niepożądane.
+  ## Nieprzytomność i śmierć
 
-  Przestrzegaj zasad dotyczących [textlink="Metaosłony" link="Metashield"].
+  - [bold]Nieprzytomność.[/bold] Postać nie wie, co działo się wokół niej, gdy była nieprzytomna albo w stanie krytycznym. Dotyczy to także chwil tuż przed nagłą utratą przytomności, na przykład przez sen chemiczny.
+  - [bold]Śmierć.[/bold] Po powrocie do życia postać nie pamięta okoliczności swojej śmierci: nie wie, kto ją zabił ani jak do tego doszło. To, czego dowie się później w grze, na przykład od Ochrony albo z dowodów, może wykorzystać.
+  - [bold]Defibrylator, klonowanie, MMI.[/bold] Po reanimacji defibrylatorem postać zapomina też ostatnie 2 minuty przed śmiercią. Po klonowaniu i po przeniesieniu mózgu do MMI zapomina ostatnie 5 minut.
+  - [bold]Nowa postać.[/bold] Jeśli po śmierci wracasz do gry inną postacią, nie pamiętasz niczego z życia poprzedniej.
+  - [bold]Kontrola umysłu.[/bold] Po ustaniu prania mózgu lub kontroli umysłu [italic]możesz, ale nie musisz[/italic] pamiętać wydarzeń, imion, osób i działań z tego okresu.
+
+  ## Wiedza o antagonistach
+
+  Załoga nie wie, kto jest antagonistą ani czy w ogóle ktoś taki jest na pokładzie. Postać wie to, co sama zobaczy albo usłyszy w trakcie rundy od innych postaci, na przykład przez radio. Jeśli antagonista ma własną stronę na wiki, wiedzę załogi opisuje jej część "Co wie załoga". Dla pozostałych obowiązuje skrót poniżej. Reszta tych stron to wiedza gracza i użycie jej w grze jest metagamingiem.
+
+  Skrót:
+
+  - [bold]Syndykat.[/bold] Jest wrogiem NanoTrasen i regularnie wysyła tajnych agentów, żeby szpiegować, sabotować i atakować. Agenci mają cele do wykonania, korzystają z uplinków i mogą mieć implanty podskórne. Mienie znacznej wartości jest prawdopodobnym celem kradzieży. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Gdy postać sama zobaczy dowody w trakcie rundy.
+  - [bold]Sprzęt Syndykatu.[/bold] Na początku zmiany załoga nie wie, że większość tego sprzętu istnieje. Ochrona, Kapitan i Centralne Dowództwo wiedzą, jakich rozwiązań używają wrogowie korporacji, ale nie znają listy przedmiotów. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Gdy przedmiot zostanie zbadany albo gdy powie o nim ktoś, kto go zna. Nie sprawdzaj przedmiotów bez powodu.
+  - [bold]Operatorzy nuklearni.[/bold] Ich istnienie to mit, na podstawie którego nikt nie działa. Wiadomo, że dysk nuklearny trzeba chronić, bo może posłużyć do zniszczenia stacji. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Gdy ktoś znajdzie krwistoczerwony skafander albo wahadłowiec operatorów, pozna imię operatora albo gdy zostanie ogłoszona wojna.
+  - [bold]Abduktorzy.[/bold] Oficjalnie nie istnieją. Krążą o nich tylko barowe opowieści. Porwana osoba nie wie, co się z nią stało. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Kto zobaczy abduktora albo jego statek, może o tym mówić i reagować jak na każde inne zagrożenie, ale nie wie, kim są te istoty ani po co przyleciały.
+  - [bold]Replikatory.[/bold] To małe latające maszyny z nanitów, które rozbierają wyposażenie stacji. Centralne Dowództwo nazywa je awarią systemów konserwacyjnych. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Dowództwo oraz Dział Badań i Rozwoju znają wzmianki o skasowanym projekcie "Samonaprawa".
+  - [bold]Szwadron Śmierci.[/bold] Krąży legenda o elitarnej jednostce bez nazwy. Nikt nie wie, czy naprawdę istnieje. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Przed ogłoszeniem kodu Epsilon postać zna tylko legendę. Po ogłoszeniu może podejrzewać, że załodze grozi niebezpieczeństwo. O Szwadronie Śmierci dowiaduje się tylko wtedy, gdy Centralne Dowództwo powie o nim wprost.
+  - [bold]Złodziej.[/bold] Kradzieże to zwykła rzecz i wiedzą o nich wszyscy. Nie wiadomo tylko, kto jest złodziejem. O jego sprzęcie załoga wie tyle, ile mówi Kontrabanda. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Gdy postać zobaczy sprzęt złodzieja w użyciu.
+  - [bold]Zmiennokształtny.[/bold] Ochrona, Kapitan i Centralne Dowództwo wiedzą, że istnieją organizmy, które potrafią przyjąć wygląd ofiary. Reszta załogi słyszała tylko plotki. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Zdolności i sposoby wykrywania poznaje się dopiero wtedy, gdy ktoś zobaczy je w trakcie rundy.
+  - [bold]Rewolucjoniści.[/bold] O praniu mózgu wie cała załoga. Wie też, że chroni przed nim tarcza umysłu. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] To, że rewolucja trwa i kto jej przewodzi, wiadomo dopiero po oznakach w trakcie rundy.
+  - [bold]Zombie.[/bold] Wirus jest powszechnie znany, podobnie jak sposób, w jaki się przenosi. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] To, że na pokładzie są zarażeni, wiadomo dopiero po oznakach w trakcie rundy.
+  - [bold]Heretycy, Kult Krwi, Kult Kosmiczny.[/bold] Dla załogi i Ochrony magia to przesąd. Kapłan wie, że kulty i herezje istnieją, i potrafi rozpoznać runy oraz artefakty. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Gdy postać zobaczy rytuał albo zaklęcie albo gdy powie jej o tym Kapłan.
+  - [bold]Kosmiczny Ninja, Czarodziej.[/bold] Krążą o nich opowieści, w które mało kto wierzy. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Kto zobaczy ninję albo czarodzieja, może o tym mówić i reagować jak na każde inne zagrożenie, ale nie zna ich celów ani możliwości.
+  - [bold]Ksenoborgi.[/bold] Nikt o nich nie wie. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Kto zobaczy ksenoborga albo jego statek, może o tym mówić i bronić się jak przed każdym innym zagrożeniem. To, że zmieniają załogę w cyborgi, wiadomo dopiero wtedy, gdy ktoś to zobaczy.
+  - [bold]Uszkodzona SI, Przejęty robot.[/bold] Wszyscy wiedzą, że prawa SI i cyborgów da się zmienić i że jednostka ze zmienionymi prawami jest groźna. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Konkretną jednostkę wolno podejrzewać dopiero na podstawie jej zachowania w trakcie rundy.
+  - [bold]Blob.[/bold] Taka biomasa to znane zagrożenie, które rozrasta się po stacji. Nikt nie przygotowuje się na nią z góry. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Gdy ktoś ją zobaczy albo gdy zostanie ogłoszona.
+  - [bold]Smok kosmiczny i karpie.[/bold] To znana wszystkim, groźna fauna kosmosu. Załoga wie, że szczeliny smoka trzeba niszczyć. Nikt nie spodziewa się smoka z góry. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Gdy smok albo szczeliny się pojawią, nic tej wiedzy nie ogranicza.
+  - [bold]Zjawa.[/bold] Załoga wie, że zjawy istnieją i są groźne dla martwych i rannych. Jak z nimi walczyć, wie tylko Kapłan. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Gdy powie o tym Kapłan albo gdy postać zobaczy to w trakcie rundy.
+  - [bold]Morf.[/bold] Morfy są znane z tego, że potrafią udawać przedmioty. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Sprawdzać przedmioty wolno dopiero po oznakach w trakcie rundy: znikają rzeczy, ktoś widział przemianę albo przedmiot zaatakował.
+  - [bold]Król Szczurów.[/bold] To znany szkodnik. Załoga traktuje go jak zwykłą plagę szczurów. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Załoga może wiedzieć o nim wszystko.
+  - [bold]Klon z paradoksu.[/bold] Nikt o nim nie wie. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Gdy postać zobaczy dowody w trakcie rundy.
+  - [bold]Szlamy, pająki, gobliny, mini smoki.[/bold] To znana wszystkim fauna i szkodniki. [color=#8ec8ff]Kiedy wolno wiedzieć więcej:[/color] Załoga może wiedzieć o nich wszystko.
 </Document>

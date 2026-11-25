@@ -10,18 +10,46 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <Document>
   # R6 - Graj swoją postacią
 
-  [italic]Nie ma głównych bohaterów.[/italic]
-  Bądź [italic]wiarygodną[/italic], jeśli nie zwyczajną osobą.
+  [italic]Nie ma głównych bohaterów. Twoja postać nie musi być zwyczajna, ale musi być wiarygodna.[/italic]
 
-  1. Trzymaj sprawy OOC z dala od czatów IC i odwrotnie podczas trwania rundy. Jeśli uczysz nowego gracza, postaraj się wpleść naukę w odgrywanie postaci lub używaj LOOC.
+  [bold]Odgrywaj postać.[/bold] Gra, która stale omija innych graczy i odgrywanie, na przykład traktowanie stacji jak areny, łamie tę zasadę. To samo dotyczy postaci stworzonych tylko po to, żeby wywoływać dramaty, dominować na scenie albo ściągać na siebie całą uwagę. Spokojna zmiana bez pracy i bez rozmów zasady nie łamie.
 
-  2. Style gry ignorujące wszelkie możliwości interakcji i odgrywania postaci mogą skutkować reakcją administracji.
+  [bold]Im dłużej twoja postać żyje, tym ciekawsze interakcje możesz nawiązać z innymi.[/bold] Nie bądź "Rambo". Rozsądny strach przed śmiercią postaci otwiera drogę do świetnego odgrywania z resztą załogi. Szukaj wsparcia, kombinuj i unikaj sytuacji, w których twój bohater stałby się bezużyteczny (albo... jadalny).
 
-  3. [bold][color=#ffb86b]Pozostań przy swojej roli[/color][/bold], z wyjątkiem sytuacji awaryjnych lub innych wyjątkowych okoliczności. Ochrona nie powinna wykonywać operacji chirurgicznych, a Technicy Odzysku nie powinni pełnić obowiązków ochrony. Załoga powinna być ostatnią linią obrony, jeśli wszystkie inne środki zawiodą. Dotyczy to również pasażerów, którzy celowo utrudniają życie ochronie bez żadnego powodu związanego z odgrywaniem postaci.
+  ## IC i OOC
 
-  4. [bold][color=#ff8a8a]Nie popełniaj samobójstwa po złapaniu lub przekonwertowaniu przez antagonistę[/color][/bold] (zombie, kontrola umysłu, rewolucjoniści itd.)
+  Każdy wczuwa się w świat gry i w swoją postać w innym stopniu. Uszanuj to i uważaj, żeby nie psuć innym immersji, także nieumyślnie.
 
-  5. [bold][color=#ff8a8a]Nie opuszczaj gry w kluczowych momentach.[/color][/bold] Jeśli pełnisz ważną rolę i musisz wyjść, powiadom o tym administrację poprzez ahelp, abyśmy mogli przekazać Twoje obowiązki innemu graczowi. Nie wychodź z serwera natychmiast po zatrzymaniu przez ochronę lub antagonistę – graj do końca! Nigdy nie wiesz, jak potoczy się historia w ciągu najbliższych kilku minut. W ten sposób inni budują imersję i ciekawą fabułę dla Ciebie.
+  - [bold]Dopóki trwa runda, sprawy OOC nie trafiają na czaty IC[/bold] i odwrotnie.
+  - [bold]LOOC służy do tego, czego nie da się powiedzieć w grze,[/bold] na przykład "Idę AFK na chwilę" albo "Domyślny skrót tej akcji to E". Kiedy klaun postrzeli się z broni ukradzionej oficerowi, zareaguj w grze i nie pisz "LOL".
 
-  [color=#8ec8ff]Im dłużej Twoja postać żyje, tym fajniejsze interakcje możesz nawiązać z innymi.[/color] Nie bądź "Rambo" – rozsądny strach przed śmiercią postaci otwiera drogę do świetnego RolePlayu z resztą załogi. Szukaj wsparcia, kombinuj i unikaj sytuacji, w których Twój bohater stałby się bezużyteczny (albo... jadalny). Wspólna gra polega na tym, żebyśmy jak najdłużej mogli cieszyć się swoim towarzystwem na stacji!
+  ## Zwykłe stanowiska
+
+  [bold]Na zwykłym stanowisku sam decydujesz, ile pracujesz.[/bold] Obowiązki służbowe opisuje SPO, nie Regulamin. Z ich wykonywania rozlicza cię przełożony, który może cię upomnieć, zdegradować albo zwolnić. Za zaniedbanie odpowiesz też przed Ochroną według Prawa Kosmicznego. Brak pracy na stanowisku sam w sobie nie łamie Regulaminu.
+
+  - [bold]Nie nabijaj czasu gry.[/bold] Nabija go ten, kto przez wiele rund bierze stanowisko tylko po to, żeby odblokować inne role, i całe rundy stoi bezczynnie, nie biorąc udziału w grze. Pojedyncza runda nabijaniem nie jest.
+  - [bold]Zostaw innym działom ich grę.[/bold] Ochrona nie przeprowadza operacji, Specjaliści ds. Odzysku nie pełnią obowiązków Ochrony. Wyręczając cudzy dział, zabierasz jego graczom zajęcie. Wyjątkiem są sytuacje awaryjne i dział, w którym nikt nie gra. Zatrzymywanie antagonistów opisuje zasada R10.
+
+  [color=#7dffa8]Sprawa postaci:[/color] Doktor Medyczny spędza zmianę w barze. Upomnieć albo zwolnić może go Ordynator.
+
+  [color=#ff8a8a]Naruszenie Regulaminu:[/color] Ktoś od wielu rund bierze stanowisko, stoi na nim bezczynnie i czeka, aż odblokuje mu się kolejna rola.
+
+  ## Role odpowiedzialne
+
+  Grając w [bold]Ochronie[/bold], w [bold]Dowództwie[/bold] albo w [bold]Centralnym Dowództwie[/bold], bierzesz odpowiedzialność za losy całej stacji. Od twoich decyzji zależy, jak potoczy się runda i jak długo potrwa, dlatego swoboda zwykłych stanowisk tych ról nie obejmuje.
+
+  - [bold]Wykonuj swoje obowiązki sumiennie.[/bold] Porzucenie albo uporczywe zaniedbywanie obowiązków łamie Regulamin.
+  - [bold]Trzymaj się SPO.[/bold] Drobne, pojedyncze odstępstwo od procedury pozostaje sprawą postaci. Regularne albo poważne łamanie SPO bez dobrego powodu łamie Regulamin.
+  - [bold]Poproś o pomoc,[/bold] kiedy nie czujesz się pewnie albo nie wiesz, co robić.
+
+  Rolę antagonisty (zasada R9) i rolę w wydarzeniu prowadzonym przez administrację też bierzesz po to, żeby ją grać.
+
+  [color=#ffb86b]Ciągłe nadużywanie uprawnień Ochrony lub Dowództwa grozi blokadą tych stanowisk.[/color]
+
+  ## Wyjście z gry
+
+  - [bold]Nie wychodź z gry, żeby uniknąć konsekwencji.[/bold] Wyjście tuż po tym, jak złapie cię Ochrona albo antagonista, urywa historię w połowie. Nigdy nie wiesz, jak potoczy się ona w ciągu kilku następnych minut. Grając dalej, budujesz immersję innym, tak jak oni budują ją tobie.
+  - [bold]Nie popełniaj samobójstwa po złapaniu ani po przemianie albo zwerbowaniu przez antagonistę[/bold] (zombie, kontrola umysłu, rewolucjoniści itd.).
+  - [bold]W Ochronie i w Dowództwie[/bold] powiedz przed wyjściem pozostałym członkom Ochrony albo Dowództwa, że kończysz, i umieść postać w kapsule snu kriogenicznego. Gdy brakuje na to czasu, zostaw krótką wiadomość w Ahelp (zwykle klawisz F1), żeby twoje obowiązki mogły trafić do innego gracza.
+  - [bold]Jako antagonista[/bold] napisz do administracji przez Ahelp, kiedy nie chcesz grać tej roli albo musisz wyjść. Dzięki temu rola może trafić do innego gracza. Antagonistów zespołowych (Operatorów nuklearnych, Głównych Rewolucjonistów itd.) dotyczy to szczególnie, bo na ich roli opiera się gra całej drużyny.
 </Document>
