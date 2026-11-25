@@ -1,0 +1,59 @@
+- type: horrorChemical
+  id: HorrorEpinephrine
+  reagent: Epinephrine
+  description: horror-chemical-epinephrine-desc
+
+- type: horrorChemical
+  id: HorrorMannitol
+  reagent: Mannitol
+  description: horror-chemical-mannitol-desc
+
+- type: horrorChemical
+  id: HorrorBicaridine
+  reagent: Bicaridine
+  description: horror-chemical-bicaridine-desc
+
+- type: horrorChemical
+  id: HorrorKelotane
+  reagent: Kelotane
+  description: horror-chemical-kelotane-desc
+
+- type: horrorChemical
+  id: HorrorCharcoal
+  reagent: Charcoal
+  description: horror-chemical-charcoal-desc
+
+# Advanced reagent synthesis. Aquila's adrenaline, rezadone, salicylic acid and oxandrolone have no direct
+# counterpart here, so the closest Polonium medicines take their place.
+- type: horrorChemical
+  id: HorrorEphedrine
+  reagent: Ephedrine
+  cost: 100
+  description: horror-chemical-ephedrine-desc
+  requiredUpgrade: HorrorUpgradeAdvancedChemicals
+
+- type: horrorChemical
+  id: HorrorOmnizine
+  reagent: Omnizine
+  cost: 50
+  description: horror-chemical-omnizine-desc
+  requiredUpgrade: HorrorUpgradeAdvancedChemicals
+
+- type: horrorChemical
+  id: HorrorPenteticAcid
+  reagent: PenteticAcid
+  cost: 50
+  description: horror-chemical-pentetic-desc
+  requiredUpgrade: HorrorUpgradeAdvancedChemicals
+
+- type: horrorChemical
+  id: HorrorTricordrazine
+  reagent: Tricordrazine
+  description: horror-chemical-tricordrazine-desc
+  requiredUpgrade: HorrorUpgradeAdvancedChemicals
+
+- type: horrorChemical
+  id: HorrorDermaline
+  reagent: Dermaline
+  description: horror-chemical-dermaline-desc
+  requiredUpgrade: HorrorUpgradeAdvancedChemicals

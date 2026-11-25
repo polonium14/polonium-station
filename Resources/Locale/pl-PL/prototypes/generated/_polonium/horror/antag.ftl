@@ -1,0 +1,16 @@
+ent-MindRoleEldritchHorror = Rola pradawnego horroru
+    .desc = { ent-BaseMindRoleAntag.desc }
+ent-SpawnPointGhostEldritchHorror = { ent-BaseAntagSpawner }
+    .desc = { ent-BaseAntagSpawner.desc }
+ent-EldritchHorrorSpawn = { ent-BaseAntagGhostRoleRule }
+    .desc = { ent-BaseAntagGhostRoleRule.desc }
+ent-BaseHorrorObjective = { ent-BaseObjective }
+    .desc = { ent-BaseObjective.desc }
+ent-HorrorDevourObjective = { ent-BaseHorrorObjective }
+    .desc = { ent-BaseHorrorObjective.desc }
+ent-HorrorSurviveObjective = Przetrwaj
+    .desc = Pozostań przy życiu do końca zmiany.
+ent-HorrorServeObjective = Służ swojemu przywoływaczowi
+    .desc = Pomóż temu, kto cię zbudził, w realizacji jego celów.
+ent-HorrorPetCarrier = podejrzany transporter dla zwierząt
+    .desc = W środku jest jakieś stworzenie. Widać wystające z niego macki.

@@ -1,0 +1,16 @@
+ent-MindRoleEldritchHorror = Eldritch Horror Role
+    .desc = { ent-BaseMindRoleAntag.desc }
+ent-SpawnPointGhostEldritchHorror = { ent-BaseAntagSpawner }
+    .desc = { ent-BaseAntagSpawner.desc }
+ent-EldritchHorrorSpawn = { ent-BaseAntagGhostRoleRule }
+    .desc = { ent-BaseAntagGhostRoleRule.desc }
+ent-BaseHorrorObjective = { ent-BaseObjective }
+    .desc = { ent-BaseObjective.desc }
+ent-HorrorDevourObjective = { ent-BaseHorrorObjective }
+    .desc = { ent-BaseHorrorObjective.desc }
+ent-HorrorSurviveObjective = Survive
+    .desc = Stay alive until the end of the shift.
+ent-HorrorServeObjective = Serve your summoner
+    .desc = Help the one who woke you with their goals.
+ent-HorrorPetCarrier = suspicious pet carrier
+    .desc = There is some kind of creature inside. You can see tentacles poking out of it.

@@ -1,0 +1,86 @@
+- type: alert
+  id: PoloniumHorrorChemicals
+  category: Chemicals
+  icons:
+  - sprite: /Textures/_Polonium/Interface/Alerts/horror_chemicals.rsi
+    state: base
+  alertViewEntity: AlertHorrorChemicalsSpriteView
+  name: alerts-horror-chemicals-name
+  description: alerts-horror-chemicals-desc
+
+- type: entity
+  id: AlertHorrorChemicalsSpriteView
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GenericCounterAlert
+    centerGlyph: false
+    hideLeadingZeroes: false
+  - type: Sprite
+    sprite: /Textures/Interface/Alerts/chemicals_counter.rsi
+    layers:
+    - map: [ "enum.AlertVisualLayers.Base" ]
+      sprite: /Textures/_Polonium/Interface/Alerts/horror_chemicals.rsi
+      state: base
+    - map: [ "1" ]
+      offset: 0.4375, 0.25
+    - map: [ "10" ]
+      offset: 0.3125, 0.25
+    - map: [ "100" ]
+      offset: 0.1875, 0.25
+
+# Pulling an eldritch horror out of the brain, through the opened skull like a brain removal.
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepRemoveEldritchHorror
+  name: Pull out the parasite
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Tweezers
+    duration: 8
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
+    state: hemostat
+  - type: HorrorRemovalStep
+  - type: SurgeryStepEmoteEffect
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveEldritchHorror
+  name: Remove Eldritch Horror
+  description: Pull the parasite out of the patient's brain.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveEldritchHorror
+  - type: SurgeryPartCondition
+    categories: [ Head ]
+  - type: SurgeryBodyComponentCondition
+    components:
+    - type: EldritchHorrorInfested
+
+- type: alert
+  id: PoloniumHorrorSoulLocator
+  icons:
+  - sprite: /Textures/Objects/Devices/pinpointer.rsi
+    state: pinonnull
+  alertViewEntity: AlertHorrorSoulLocatorSpriteView
+  name: alerts-horror-soul-locator-name
+  description: alerts-horror-soul-locator-desc
+
+- type: entity
+  id: AlertHorrorSoulLocatorSpriteView
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HorrorSoulLocatorAlert
+  - type: Sprite
+    sprite: /Textures/Objects/Devices/pinpointer.rsi
+    layers:
+    - state: pinpointer
+    - map: [ "enum.HorrorLocatorLayers.Arrow" ]
+      state: pinonnull

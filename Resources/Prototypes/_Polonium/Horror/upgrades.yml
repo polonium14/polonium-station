@@ -1,0 +1,55 @@
+- type: horrorUpgrade
+  id: HorrorUpgradeParalysis
+  name: horror-upgrade-paralysis-name
+  description: horror-upgrade-paralysis-desc
+  soulPrice: 3
+  paralyzingTrip: true
+
+- type: horrorUpgrade
+  id: HorrorUpgradeChemicalRegen
+  name: horror-upgrade-chemical-regen-name
+  description: horror-upgrade-chemical-regen-desc
+  chemicalRegenBonus: 3
+
+- type: horrorUpgrade
+  id: HorrorUpgradeNoHostRegen
+  name: horror-upgrade-no-host-regen-name
+  description: horror-upgrade-no-host-regen-desc
+  regenWithoutHost: true
+
+- type: horrorUpgrade
+  id: HorrorUpgradeRegeneration
+  name: horror-upgrade-regeneration-name
+  description: horror-upgrade-regeneration-desc
+  soulPrice: 1
+  regeneration: 5
+
+- type: horrorUpgrade
+  id: HorrorUpgradeHealth
+  name: horror-upgrade-health-name
+  description: horror-upgrade-health-desc
+  thresholdMultiplier: 2
+
+- type: horrorUpgrade
+  id: HorrorUpgradeDamage
+  name: horror-upgrade-damage-name
+  description: horror-upgrade-damage-desc
+  biteBonus: 5
+  siliconBiteBonus: 7.5
+
+- type: horrorUpgrade
+  id: HorrorUpgradeAdvancedChemicals
+  name: horror-upgrade-advanced-chemicals-name
+  description: horror-upgrade-advanced-chemicals-desc
+
+- type: horrorUpgrade
+  id: HorrorUpgradeFastControl
+  name: horror-upgrade-fast-control-name
+  description: horror-upgrade-fast-control-desc
+  bondTimeReduction: 12
+
+- type: horrorUpgrade
+  id: HorrorUpgradeDeepControl
+  name: horror-upgrade-deep-control-name
+  description: horror-upgrade-deep-control-desc
+  deepControl: true

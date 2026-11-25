@@ -1,0 +1,14 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="{Loc 'horror-chemicals-window-title'}"
+    MinSize="420 240"
+    SetSize="520 400">
+    <BoxContainer Orientation="Vertical" Margin="8">
+        <Label Name="StoredLabel" />
+        <Label Name="NoHostLabel" Text="{Loc 'horror-chemicals-window-no-host'}" FontColorOverride="#d14949" Visible="False" />
+        <ScrollContainer HScrollEnabled="False" VerticalExpand="True" Margin="0 6 0 0">
+            <GridContainer Name="ChemicalList" Columns="2" HorizontalExpand="True" />
+        </ScrollContainer>
+    </BoxContainer>
+</controls:FancyWindow>

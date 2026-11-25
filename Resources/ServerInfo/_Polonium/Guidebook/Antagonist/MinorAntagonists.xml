@@ -120,6 +120,23 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - [bold]Nie potrafisz mówić[/bold] w żadnej postaci.
   - Masz 150 punktów zdrowia, nie potrzebujesz powietrza, widzisz w ciemności i przechodzisz przez stoły. Po śmierci wypluwasz wszystko, co masz w brzuchu.
 
+  # Pradawny horror
+
+  <Box>
+    <GuideEntityEmbed Entity="MobEldritchHorror" Scale="2"/>
+  </Box>
+
+  Pradawne horrory to [color=#c58af9]pasożyty[/color], które wpełzają ludziom do głów, żywią się ich chemikaliami i [color=#ff8a8a]pożerają dusze[/color]. Pojawiają się przy wentylacji albo w transporterze dla zwierząt, który bibliotekarz-zdrajca może kupić w uplinku. Twoim celem jest pożreć kilka dusz i przetrwać do końca zmiany, a horror z transportera służy temu, kto go obudził.
+  - [color=#c58af9][italic]Zarażenie[/italic][/color] wpełza w [bold]3 sekundy[/bold] do głowy stworzenia obok. Nosiciel musi mieć głowę, mózg i gracza. W głowie leczysz się i zbierasz chemikalia: [bold]2 co 2 sekundy[/bold] w żywym nosicielu, 1 w martwym.
+  - W nosicielu mówisz tylko do niego, a on może myśleć do ciebie akcją [italic]Rozmawiaj z horrorem[/italic]. Rozmowę słyszą duchy.
+  - [italic]Wydziel chemikalia[/italic] wstrzykuje nosicielowi lekarstwa (epinefrynę, mannitol, bikarydynę, kelotan, węgiel), a [italic]Skan nosiciela[/italic] pokazuje jego stan.
+  - [color=#ff8a8a][italic]Szukaj duszy[/italic][/color] daje do wyboru kilka dusz, a strzałka w alertach prowadzi do wybranej. [italic]Pożryj duszę[/italic] trwa [bold]30 sekund[/bold] z wnętrza głowy ofiary i daje punkt mutacji.
+  - W menu [italic]Mutacja[/italic] wydajesz punkty na zdolności (macka z ręki nosiciela, przejście do innego nosiciela, wskrzeszenie nosiciela, czytanie wspomnień, kameleonowa skóra, rozlanie smaru) i ulepszenia. Na start masz [bold]4 punkty[/bold].
+  - [italic]Przejmij kontrolę[/italic] po [bold]20 sekundach[/bold] dostrajania daje ci ciało nosiciela, a jego umysł zostaje uwięziony. Może się opierać i po kilkudziesięciu sekundach odzyskać ciało, a mocniejsze trafienie nosiciela wyrzuca cię z kontroli od razu.
+  - Poza nosicielem masz [bold]50 punktów zdrowia[/bold], możesz się [italic]ukryć[/italic] pod przedmiotami, [italic]podciąć[/italic] wszystkich obok i przecisnąć się przez zamkniętą śluzę, atakując ją.
+
+  Jak się bronić: [color=#3cff00]mindshield[/color] i kult chronią umysł przed przejęciem, a lekarz może [color=#3cff00]wyciąć horror operacją[/color] na otwartej głowie (piła, zaciśnięcie krwawienia, pęseta).
+
   # Goblin
 
   <Box>
