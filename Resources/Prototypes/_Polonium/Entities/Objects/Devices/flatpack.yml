@@ -1,0 +1,8 @@
+- type: entity
+  parent: BaseFlatpack
+  id: SlotMachineFlatpack
+  name: slot machine flatpack
+  description: A flatpack used for constructing a slot machine.
+  components:
+  - type: Flatpack
+    entity: SlotMachine
