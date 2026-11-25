@@ -595,19 +595,13 @@ public sealed partial class PatientScanWindow : FancyWindow
 
             if (tags.Count > 0)
             {
-                var line = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, RectClipContent = true };
-                for (var i = 0; i < tags.Count; i++)
-                {
-                    var tag = new Label { Text = i == 0 ? tags[i] : $" · {tags[i]}", StyleClasses = { "LabelSubText" } };
-                    if (i == 0 && bleeding)
-                    {
-                        tag.FontOverride = _resources.GetFont("/Fonts/NotoSans/NotoSans-Bold.ttf", 12);
-                        tag.FontColorOverride = Critical;
-                    }
+                // Rich text wraps inside the narrow callout column instead of running past the frame.
+                var escaped = tags.Select(FormattedMessage.EscapeText).ToList();
+                if (bleeding)
+                    escaped[0] = $"[color={Critical.ToHex()}][bold]{escaped[0]}[/bold][/color]";
 
-                    line.AddChild(tag);
-                }
-
+                var line = new RichTextLabel { StyleClasses = { "LabelSubText" } };
+                line.SetMessage(FormattedMessage.FromMarkupOrThrow(string.Join(" · ", escaped)));
                 row.AddChild(line);
             }
 
