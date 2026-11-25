@@ -14,7 +14,7 @@
       - sweet
       - creamy
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Food/Baked/pie.rsi
+    sprite: _Polonium/Objects/Consumable/Food/Baked/pie.rsi
     layers:
     - state: kremowka
   - type: Tag

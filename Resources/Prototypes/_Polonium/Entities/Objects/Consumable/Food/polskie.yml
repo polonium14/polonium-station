@@ -12,7 +12,7 @@
       - rice
       - cabbage
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Food/polskie.rsi
+    sprite: _Polonium/Objects/Consumable/Food/polskie.rsi
     state: golabki
   - type: Solution
     solution:
@@ -37,7 +37,7 @@
       - meaty
       - egg
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Food/polskie.rsi
+    sprite: _Polonium/Objects/Consumable/Food/polskie.rsi
     state: zurek
   - type: Solution
     solution:
@@ -65,7 +65,7 @@
       - creamy
       - sweet
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Food/polskie.rsi
+    sprite: _Polonium/Objects/Consumable/Food/polskie.rsi
     state: ptasie_mleczko
   - type: Item
     size: Small

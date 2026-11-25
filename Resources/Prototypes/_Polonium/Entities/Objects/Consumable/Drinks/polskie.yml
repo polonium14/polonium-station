@@ -12,9 +12,9 @@
       - ReagentId: JuiceApple
         Quantity: 30
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Drinks/helenka.rsi
+    sprite: _Polonium/Objects/Consumable/Drinks/helenka.rsi
   - type: Item
-    sprite: _Polonium/Objects/Cosumable/Drinks/helenka.rsi
+    sprite: _Polonium/Objects/Consumable/Drinks/helenka.rsi
 
 - type: entity
   parent: DrinkBottleGlassSmallBaseFull
@@ -28,9 +28,9 @@
       - ReagentId: JuiceApple
         Quantity: 50
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Drinks/tymbark.rsi
+    sprite: _Polonium/Objects/Consumable/Drinks/tymbark.rsi
   - type: Item
-    sprite: _Polonium/Objects/Cosumable/Drinks/tymbark.rsi
+    sprite: _Polonium/Objects/Consumable/Drinks/tymbark.rsi
 
 - type: entity
   parent: DrinkBottleGlassBaseFull
@@ -45,9 +45,9 @@
       - ReagentId: Amarena
         Quantity: 70
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Drinks/amarena.rsi
+    sprite: _Polonium/Objects/Consumable/Drinks/amarena.rsi
   - type: Item
-    sprite: _Polonium/Objects/Cosumable/Drinks/amarena.rsi
+    sprite: _Polonium/Objects/Consumable/Drinks/amarena.rsi
   - type: Tag
     tags:
     - Wine

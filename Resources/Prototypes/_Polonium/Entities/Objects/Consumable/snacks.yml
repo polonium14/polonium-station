@@ -11,7 +11,7 @@
   description: Słone, cienkie paluszki mięsa, które były wędzone przez jakiś czas.
   components:
     - type: Sprite
-      sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+      sprite: _Polonium/Objects/Consumable/Food/snacks.rsi
       state: kabanosy
     - type: FlavorProfile
       flavors:
@@ -22,10 +22,10 @@
       inhandVisuals:
         left:
           - state: kabanosy-inhand-left
-            sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+            sprite: _Polonium/Objects/Consumable/Food/snacks.rsi
         right:
           - state: kabanosy-inhand-right
-            sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+            sprite: _Polonium/Objects/Consumable/Food/snacks.rsi
     - type: Edible
       trash:
         - FoodPacketKabanosyTrash
@@ -41,7 +41,7 @@
   description: Klasyczne polskie pierogi z kapustą i grzybami, liofilizowane na potrzeby misji kosmicznej. Smacznego!
   components:
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+    sprite: _Polonium/Objects/Consumable/Food/snacks.rsi
     state: dumplings
   - type: FlavorProfile
     flavors:
@@ -52,10 +52,10 @@
     inhandVisuals:
       left:
         - state: dumplings-inhand-left
-          sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+          sprite: _Polonium/Objects/Consumable/Food/snacks.rsi
       right:
         - state: dumplings-inhand-right
-          sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+          sprite: _Polonium/Objects/Consumable/Food/snacks.rsi
   - type: Edible
     trash:
     - FoodPacketDumplingsTrash
@@ -70,7 +70,7 @@
   name: pierogi liofilizowane
   components:
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+    sprite: _Polonium/Objects/Consumable/Food/snacks.rsi
     state: dumplings-trash
 
 - type: entity
@@ -80,5 +80,5 @@
   id: FoodPacketKabanosyTrash
   components:
     - type: Sprite
-      sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+      sprite: _Polonium/Objects/Consumable/Food/snacks.rsi
       state: kabanosy-trash
