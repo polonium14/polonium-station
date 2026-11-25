@@ -9,7 +9,7 @@
     - bun
     - meaty
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
     state: hotdog
   - type: Solution
     solution:
@@ -23,7 +23,7 @@
     tags:
     - Meat
   - type: Item
-    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
     inhandVisuals:
       left:
       - state: hotdog-inhand-left
@@ -41,7 +41,7 @@
     - bun
     - cotton
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
     state: mothdog
   - type: Edible
     requiresSpecialDigestion: true
@@ -57,7 +57,7 @@
     tags:
     - ClothMade
   - type: Item
-    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
     inhandVisuals:
       left:
       - state: mothdog-inhand-left
@@ -76,10 +76,10 @@
     - meaty
     - light
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
     state: hotmoth
   - type: Item
-    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
     inhandVisuals:
       left:
       - state: hotmoth-inhand-left

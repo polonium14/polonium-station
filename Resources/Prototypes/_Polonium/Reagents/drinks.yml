@@ -9,7 +9,7 @@
   color: "#800101"
   recognizable: true
   metamorphicSprite:
-    sprite: _Polonium/Objects/Cosumable/Drinks/amarenaglass.rsi
+    sprite: _Polonium/Objects/Consumable/Drinks/amarenaglass.rsi
     state: icon
 
 - type: reagent

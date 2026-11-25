@@ -11,7 +11,7 @@
       params:
         variation: 0.15
   - type: Sprite
-    sprite: _Polonium/Objects/Cosumable/Food/Drinks/MocnyFull.rsi
+    sprite: _Polonium/Objects/Consumable/Food/Drinks/MocnyFull.rsi
     layers:
     - state: icon
   - type: InstantAction
