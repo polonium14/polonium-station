@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseAction
+  id: ActionMaskHailer
+  name: Voice commands
+  description: Plays one of the recorded commands through the speaker of the mask.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+    layers:
+    - state: action
+  - type: InstantAction
+    event: !type:MaskHailerActionEvent

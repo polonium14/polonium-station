@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-4.0",
+  "copyright": "Made for Polonium Station by nikitosych",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "action"
+    },
+    {
+      "name": "target_neutralized"
+    },
+    {
+      "name": "elimination_confirmed"
+    },
+    {
+      "name": "stop_resisting"
+    },
+    {
+      "name": "secure_area"
+    },
+    {
+      "name": "on_the_ground"
+    },
+    {
+      "name": "no_signs_of_life"
+    },
+    {
+      "name": "worm"
+    },
+    {
+      "name": "who_is_next"
+    },
+    {
+      "name": "never_felt_it"
+    },
+    {
+      "name": "bite_the_dirt"
+    },
+    {
+      "name": "drop_weapon"
+    },
+    {
+      "name": "hands_up"
+    },
+    {
+      "name": "halt"
+    },
+    {
+      "name": "stop_or_shoot"
+    }
+  ]
+}

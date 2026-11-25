@@ -26,6 +26,11 @@
   name: security gas mask
   description: A standard issue Security gas mask.
   components:
+  - type: MaskHailer # Polonium
+    set: Security
+  - type: GuideHelp # Polonium
+    guides:
+    - Security
   - type: Item
     size: Tiny
   - type: Sprite
@@ -378,6 +383,8 @@
   name: swat gas mask
   description: A elite issue Security gas mask.
   components:
+  - type: MaskHailer # Polonium
+    set: Security
   - type: Sprite
     sprite: Clothing/Mask/swat.rsi
   - type: Clothing
@@ -424,6 +431,8 @@
   name: ert gas mask
   description: The gas mask of the elite squad of the ERT.
   components:
+  - type: MaskHailer # Polonium
+    set: Security
   - type: Sprite
     sprite: Clothing/Mask/ert.rsi
   - type: Clothing
@@ -452,6 +461,8 @@
   name: death squad gas mask
   description: A unique gas mask for the NT's most elite squad.
   components:
+  - type: MaskHailer # Polonium
+    set: DeathSquad
   - type: Sprite
     sprite: Clothing/Mask/squadron.rsi
   - type: Clothing

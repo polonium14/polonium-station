@@ -1,0 +1,142 @@
+- type: maskHailerSet
+  id: Security
+  phrases:
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: drop_weapon
+    variants:
+    - text: polonium-mask-hailer-phrase-drop-weapon
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/drop_weapon.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: hands_up
+    variants:
+    - text: polonium-mask-hailer-phrase-hands-up
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/hands_up.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: halt
+    variants:
+    - text: polonium-mask-hailer-phrase-stay-where-you-are
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/stay_where_you_are.ogg
+    - text: polonium-mask-hailer-phrase-dont-move
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/dont_move.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: stop_or_shoot
+    variants:
+    - text: polonium-mask-hailer-phrase-stop-or-shoot
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/stop_or_shoot.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: on_the_ground
+    variants:
+    - text: polonium-mask-hailer-phrase-on-the-ground
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/on_the_ground.ogg
+    - text: polonium-mask-hailer-phrase-get-down
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/get_down.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: stop_resisting
+    variants:
+    - text: polonium-mask-hailer-phrase-stop-resisting
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/stop_resisting.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: secure_area
+    variants:
+    - text: polonium-mask-hailer-phrase-secure-area
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/secure_area.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: target_neutralized
+    variants:
+    - text: polonium-mask-hailer-phrase-target-neutralized
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/target_neutralized.ogg
+    - text: polonium-mask-hailer-phrase-threat-removed
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/threat_removed.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: elimination_confirmed
+    variants:
+    - text: polonium-mask-hailer-phrase-elimination-confirmed
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/Security/elimination_confirmed.ogg
+
+- type: maskHailerSet
+  id: DeathSquad
+  phrases:
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: stop_resisting
+    variants:
+    - text: polonium-mask-hailer-phrase-stop-resisting
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/DeathSquad/stop_resisting.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: secure_area
+    variants:
+    - text: polonium-mask-hailer-phrase-secure-area
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/DeathSquad/secure_area.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: target_neutralized
+    variants:
+    - text: polonium-mask-hailer-phrase-target-neutralized
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/DeathSquad/target_neutralized.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: elimination_confirmed
+    variants:
+    - text: polonium-mask-hailer-phrase-elimination-confirmed
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/DeathSquad/elimination_confirmed.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: no_signs_of_life
+    variants:
+    - text: polonium-mask-hailer-phrase-no-signs-of-life
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/DeathSquad/no_signs_of_life.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: who_is_next
+    variants:
+    - text: polonium-mask-hailer-phrase-who-is-next
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/DeathSquad/who_is_next.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: worm
+    variants:
+    - text: polonium-mask-hailer-phrase-worm
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/DeathSquad/worm.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: never_felt_it
+    variants:
+    - text: polonium-mask-hailer-phrase-never-felt-it
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/DeathSquad/never_felt_it.ogg
+  - icon:
+      sprite: _Polonium/Interface/Actions/mask_hailer.rsi
+      state: bite_the_dirt
+    variants:
+    - text: polonium-mask-hailer-phrase-bite-the-dirt
+      sound:
+        path: /Audio/_Polonium/Voice/MaskHailer/DeathSquad/bite_the_dirt.ogg
