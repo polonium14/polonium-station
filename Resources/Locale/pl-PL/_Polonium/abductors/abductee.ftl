@@ -1,9 +1,9 @@
 objective-issuer-abductee = [color=#ff0099]Obsesja[/color]
 
-role-subtype-abductee = Ofiara abduktorów
+role-subtype-abductee = Ofiara abdukcji
 
-roles-antag-abductee-name = Ofiara abduktorów
-roles-antag-abductee-objective = Po powrocie ze statku abduktorów nie możesz pozbyć się jednej natrętnej myśli.
+roles-antag-abductee-name = Ofiara abdukcji
+roles-antag-abductee-objective = Po abdukcji nie możesz pozbyć się jednej natrętnej myśli.
 
 abductee-briefing-harmless = Budzisz się z bólem głowy i luką w pamięci. Nie wiesz, dokąd cię zabrano ani co tam z tobą robiono. Zostaje tylko myśl, której przedtem nie było. [bold]{ $title }.[/bold] { $description } To zwykłe natręctwo, nic więcej: nadal należysz do załogi, pracujesz jak dotąd i nikomu nie szkodzisz.
 abductee-briefing-annoying = Głowa pęka, z ostatnich minut nie zostało nic. Ktoś cię zabrał i odstawił z powrotem, tyle podpowiada ciało, bo pamięć milczy. Za to jedna myśl nie milknie ani na chwilę. [bold]{ $title }.[/bold] { $description } Możesz dla niej porzucić obowiązki i działać na własną rękę, byle bez przemocy wobec załogi.

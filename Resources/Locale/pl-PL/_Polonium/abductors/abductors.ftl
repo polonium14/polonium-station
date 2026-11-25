@@ -1,21 +1,21 @@
 chat-radio-abductor = Statek-matka
 
-role-subtype-abductor = Abduktor
+role-subtype-abductor = Porywacz
 
-roles-antag-abductor-lone-name = Samotny abduktor
-roles-antag-abductor-scientist-name = Abduktor naukowiec
-roles-antag-abductor-agent-name = Abduktor agent
+roles-antag-abductor-lone-name = Samotny porywacz
+roles-antag-abductor-scientist-name = Naukowiec porywaczy
+roles-antag-abductor-agent-name = Agent porywaczy
 roles-antag-abductor-objective = Porywaj członków załogi, badaj ich na swoim statku i odsyłaj z powrotem na stację.
-abductor-round-end-agent-name = abduktor
+abductor-round-end-agent-name = porywacz
 
-ghost-role-information-abductor-lone-name = Samotny abduktor
+ghost-role-information-abductor-lone-name = Samotny porywacz
 ghost-role-information-abductor-lone-description = Pracujesz dla Wydziału Sondowania. Porywasz członków załogi, badasz ich na swoim statku i odsyłasz z powrotem na stację.
 ghost-role-information-abductor-lone-rules = Jesteś [color={ role-type-solo-antagonist-color }][bold]{ role-type-solo-antagonist-name }[/bold][/color]. Liczą się dla ciebie okazy, więc nie niszcz stacji.
-ghost-role-information-abductor-scientist-name = Abduktor naukowiec
+ghost-role-information-abductor-scientist-name = Naukowiec porywaczy
 ghost-role-information-abductor-scientist-description = Prowadzisz badania Wydziału Sondowania na pokładzie statku i operujesz okazy dostarczone przez agenta.
-ghost-role-information-abductor-agent-name = Abduktor agent
+ghost-role-information-abductor-agent-name = Agent porywaczy
 ghost-role-information-abductor-agent-description = Zdobywasz okazy dla Wydziału Sondowania. Schodzisz na stację i dostarczasz członków załogi naukowcowi na statek.
-ghost-role-information-abductor-team-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color]. Współpracuj z drugim abduktorem. Liczą się dla was okazy, więc nie niszczcie stacji.
+ghost-role-information-abductor-team-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color]. Współpracuj z drugim porywaczem. Liczą się dla was okazy, więc nie niszczcie stacji.
 
 name-format-abductor-lone = Badacz { $part0 }
 name-format-abductor-scientist = Naukowiec { $part0 }
@@ -104,4 +104,4 @@ store-abductor-cow-desc = Żywa krowa i zapas pszenicy, dostarczone na telepad. 
 store-abductor-chem-kit-name = Zestaw do budowy dozownika środków chemicznych
 store-abductor-chem-kit-desc = Torba z płytką, materiałami i narzędziami. Złożenie maszyny należy do ciebie.
 
-guide-entry-abductors = Abduktorzy
+guide-entry-abductors = Porywacze

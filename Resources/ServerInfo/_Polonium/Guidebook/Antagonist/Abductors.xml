@@ -1,5 +1,5 @@
 <Document>
-  # Abduktorzy
+  # Porywacze
 
   <Box>
     <GuideEntityEmbed Entity="MobAbductor" Caption=""/>
@@ -7,27 +7,27 @@
 
   [color=#ff0099][italic]Statek-matka kataloguje każdy gatunek w układzie i źle znosi puste rubryki. Przy załodze tej stacji rejestr ma ich cały rząd, więc Wydział Sondowania wysłał kogoś, kto je wypełni.[/italic][/color]
 
-  Abduktorzy to obcy naukowcy, którzy przylatują małym statkiem i zatrzymują się tuż przy stacji. Nie chcą jej zniszczyć ani przejąć. Interesuje ich wyłącznie załoga, którą po jednej osobie porywają na pokład, badają i odsyłają z powrotem. Zależy im przy tym, żeby każdy porwany wrócił żywy, bo martwy okaz nie ma dla nich żadnej wartości. Wydział przysyła samotnego Badacza albo parę, w której Naukowiec operuje na statku, podczas gdy Agent schodzi po okazy na stację. Od pierwszej chwili odzywa się do nich Kurator Wydziału Sondowania, niewidoczny przełożony, który ocenia każdy ich krok i podpowiada, co robić dalej.
+  Porywacze to obcy naukowcy, którzy przylatują małym statkiem i zatrzymują się tuż przy stacji. Nie chcą jej zniszczyć ani przejąć. Interesuje ich wyłącznie załoga, którą po jednej osobie zabierają na pokład, badają i odsyłają z powrotem. Zależy im przy tym, żeby każdy porwany wrócił żywy, bo martwy okaz nie ma dla nich żadnej wartości. Wydział przysyła samotnego Badacza albo parę, w której Naukowiec operuje na statku, podczas gdy Agent schodzi po okazy na stację. Od pierwszej chwili odzywa się do nich Kurator Wydziału Sondowania, niewidoczny przełożony, który ocenia każdy ich krok i podpowiada, co robić dalej.
 
-  ## Przebieg badania
+  ## Przebieg abdukcji
   <Box>
     <GuideEntityEmbed Entity="AbductorHumanObservationConsole" Caption="konsola obserwacyjna"/>
     <GuideEntityEmbed Entity="AbductorAlienPad" Caption="telepad"/>
-    <GuideEntityEmbed Entity="Wonderprod" Caption="pałka abduktora"/>
+    <GuideEntityEmbed Entity="Wonderprod" Caption="pałka porywacza"/>
   </Box>
-  Wszystko zaczyna się przy [bold]konsoli obserwacyjnej[/bold], która pokazuje stację oczami jej własnych kamer. Abduktor wybiera przez nią miejsce lądowania i schodzi tam albo wysyła każdego, kto stoi na telepadzie. Z tej samej konsoli wyznacza też punkt, w którym pojawią się odesłane okazy. Lądowania nie da się ukryć, ponieważ w wybranym miejscu chwilę wcześniej widać ładujący się teleport.
+  Każda abdukcja zaczyna się przy [bold]konsoli obserwacyjnej[/bold], która pokazuje stację oczami jej własnych kamer. Porywacz wybiera przez nią miejsce lądowania i schodzi tam albo wysyła każdego, kto stoi na telepadzie. Z tej samej konsoli wyznacza też punkt, w którym pojawią się odesłane okazy. Lądowania nie da się ukryć, ponieważ w wybranym miejscu chwilę wcześniej widać ładujący się teleport.
 
-  [bold]Pałka abduktora[/bold] ma cztery tryby, które przełącza się, używając jej w ręce. Ogłuszanie odbiera ofierze siły, aż ta upadnie. Obezwładnioną można uśpić i skuć kajdankami, żeby nie uciekła po przebudzeniu. Czwarty tryb zakłada jej znacznik, dzięki któremu abduktor ściąga ją na telepad prosto z konsoli.
+  [bold]Pałka porywacza[/bold] ma cztery tryby, które przełącza się, używając jej w ręce. Ogłuszanie odbiera ofierze siły, aż ta upadnie. Obezwładnioną można uśpić i skuć kajdankami, żeby nie uciekła po przebudzeniu. Czwarty tryb zakłada jej znacznik, dzięki któremu porywacz ściąga ją na telepad prosto z konsoli.
 
   <Box>
     <GuideEntityEmbed Entity="AbductorOperatingTable" Caption="stół operacyjny"/>
     <GuideEntityEmbed Entity="AbductorGlandDispenser" Caption="dystrybutor gruczołów"/>
     <GuideEntityEmbed Entity="AbductorExperimentator" Caption="komora badawcza"/>
   </Box>
-  Na statku okaz trafia na [bold]stół operacyjny[/bold]. Obce narzędzia chirurgiczne zastępują po kilka zwykłych, dzięki czemu operacja idzie sprawnie. Abduktor wyjmuje okazowi serce, wstawia w jego miejsce gruczoł z dystrybutora i zamyka ciało. Na koniec przenosi okaz do [bold]komory badawczej[/bold], która odczytuje wyniki i odsyła go na stację, uśpionego i bez wspomnień z pokładu.
+  Na statku okaz trafia na [bold]stół operacyjny[/bold]. Obce narzędzia chirurgiczne zastępują po kilka zwykłych, dzięki czemu operacja idzie sprawnie. Porywacz wyjmuje okazowi serce, wstawia w jego miejsce gruczoł z dystrybutora i zamyka ciało. Na koniec przenosi okaz do [bold]komory badawczej[/bold], która odczytuje wyniki i odsyła go na stację, uśpionego i bez wspomnień z pokładu.
 
   ## Gruczoły
-  Dystrybutor wydaje gruczoły na ślepo. Wszystkie wyglądają tak samo i nawet abduktor nie wie, co wszczepia, dopóki komora nie skończy badania. Dopiero wtedy Kurator zdradza, co trafiło do okazu. Większość gruczołów to niegroźne dziwactwa, które nosicielowi ułatwią życie albo przynajmniej dadzą załodze temat do rozmów. Część potrafi porządnie uprzykrzyć zmianę wszystkim dookoła. Najrzadsze wyrządzają prawdziwe szkody, choć ich siła szybko się wyczerpuje.
+  Dystrybutor wydaje gruczoły na ślepo. Wszystkie wyglądają tak samo i nawet porywacz nie wie, co wszczepia, dopóki komora nie skończy badania. Dopiero wtedy Kurator zdradza, co trafiło do okazu. Większość gruczołów to niegroźne dziwactwa, które nosicielowi ułatwią życie albo przynajmniej dadzą załodze temat do rozmów. Część potrafi porządnie uprzykrzyć zmianę wszystkim dookoła. Najrzadsze wyrządzają prawdziwe szkody, choć ich siła szybko się wyczerpuje.
 
   ## Kredyty i katalog
   <Box>
@@ -36,9 +36,9 @@
   Za każdy zbadany okaz Wydział płaci kredytami. Dopłaca za czystą robotę, czyli za okaz, który opuszcza komorę bez otwartych ran i krwawienia. Drugą premię przynosi [bold]zamówienie statku-matki[/bold], które przychodzi, gdy na pokładzie zjawia się nowy okaz. Statek-matka życzy sobie wtedy wymiany któregoś narządu na nowy z biofabrykatora medycznego albo przeszczepu kończyny od innego okazu, który akurat leży na statku. Kredyty wydaje się w katalogu [bold]konsoli statku[/bold], gdzie czeka sprzęt, o którego przeznaczenie nikt w Wydziale nie pyta.
 
   ## Po powrocie na stację
-  Porwana osoba budzi się na stacji z bólem głowy i luką w pamięci. Nie pamięta statku ani tych, którzy ją zabrali, za to nie potrafi się pozbyć jednej natrętnej myśli, która od tej chwili jest jej celem. Najczęściej to niegroźna obsesja i ofiara pozostaje zwykłym członkiem załogi. Bywa, że myśl pozwala jej działać na własną rękę, w wyjątkowych przypadkach zwraca ją przeciwko stacji. Co dokładnie ją obowiązuje, zawsze widać w oknie postaci.
+  Ofiara abdukcji budzi się na stacji z bólem głowy i luką w pamięci. Nie pamięta statku ani tych, którzy ją zabrali, za to nie potrafi się pozbyć jednej natrętnej myśli, która od tej chwili jest jej celem. Najczęściej to niegroźna obsesja i ofiara pozostaje zwykłym członkiem załogi. Bywa, że myśl pozwala jej działać na własną rękę, w wyjątkowych przypadkach zwraca ją przeciwko stacji. Co dokładnie ją obowiązuje, zawsze widać w oknie postaci.
 
   Gruczoł pracuje w ciele jak serce i zostaje w nim, dopóki ktoś go nie wyjmie. Chirurg może zastąpić go zwykłym sercem i wtedy ustaje wszystko, co gruczoł robił.
 
-  [color=#ffa500]Uwaga.[/color] Statek abduktorów naprawdę stoi przy stacji i da się na niego dostać. Na radarze widać go do chwili, w której jego załoga postanowi się ukryć. Kto znajdzie drogę na pokład, może zakończyć badania na dobre.
+  [color=#ffa500]Uwaga.[/color] Statek porywaczy naprawdę stoi przy stacji i da się na niego dostać. Na radarze widać go do chwili, w której jego załoga postanowi się ukryć. Kto znajdzie drogę na pokład, może zakończyć badania na dobre.
 </Document>

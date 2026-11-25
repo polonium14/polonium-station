@@ -42,8 +42,8 @@ objective-issuer-centcom = [color=#2681a5]Centralne Dowództwo[/color]
 
 ## Nazwy na liście admina dla celów, których prototypy nie mają nazwy, bo prawdziwy tytuł dostają dopiero przy przypisaniu.
 
-admin-objectives-name-AbductorExperimentsObjectiveLone = Zbadaj okazy (samotny abduktor)
-admin-objectives-name-AbductorExperimentsObjectivePair = Zbadaj okazy (para abduktorów)
+admin-objectives-name-AbductorExperimentsObjectiveLone = Zbadaj okazy (samotny porywacz)
+admin-objectives-name-AbductorExperimentsObjectivePair = Zbadaj okazy (para porywaczy)
 admin-objectives-name-CarpRiftsObjective = Otwórz karpie wyrwy
 admin-objectives-name-ChangelingDevouredCountObjective = Pochłoń unikalnych humanoidów
 admin-objectives-name-ChangelingExtractedCountObjective = Wydobądź unikalne sekwencje DNA
