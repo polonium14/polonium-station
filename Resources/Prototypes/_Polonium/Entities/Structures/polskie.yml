@@ -125,7 +125,7 @@
       path: /Audio/_Polonium/Vehicles/carrev.ogg
   - type: Storage
     grid:
-    - 0,0,3,3
+    - 0,0,7,3
     maxItemSize: Huge
   - type: UserInterface
     interfaces:
