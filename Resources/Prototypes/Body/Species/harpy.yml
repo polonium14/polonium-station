@@ -425,8 +425,7 @@
   id: OrganHarpyLungs
   abstract: true
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Harpy/organs.rsi
+  # Polonium: no own sprite, every species uses the _Polonium organ sprites
   - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
