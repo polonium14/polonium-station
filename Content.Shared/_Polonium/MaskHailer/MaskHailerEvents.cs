@@ -6,9 +6,10 @@ namespace Content.Shared._Polonium.MaskHailer;
 public sealed partial class MaskHailerActionEvent : InstantActionEvent;
 
 [Serializable, NetSerializable]
-public sealed class MaskHailerPhraseMessage(int index) : BoundUserInterfaceMessage
+public sealed class MaskHailerPhraseMessage(int index, int variant) : BoundUserInterfaceMessage
 {
     public readonly int Index = index;
+    public readonly int Variant = variant;
 }
 
 [Serializable, NetSerializable]

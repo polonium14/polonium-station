@@ -17,6 +17,19 @@ public sealed partial class MaskHailerSetPrototype : IPrototype
 [DataDefinition]
 public sealed partial class MaskHailerPhrase
 {
+    [DataField(required: true)]
+    public SpriteSpecifier Icon = default!;
+
+    /// <summary>
+    /// Recordings that share the button. One of them is picked at random.
+    /// </summary>
+    [DataField(required: true)]
+    public List<MaskHailerVariant> Variants = new();
+}
+
+[DataDefinition]
+public sealed partial class MaskHailerVariant
+{
     /// <summary>
     /// What the wearer says in chat while the recording plays.
     /// </summary>
@@ -25,7 +38,4 @@ public sealed partial class MaskHailerPhrase
 
     [DataField(required: true)]
     public SoundSpecifier Sound = default!;
-
-    [DataField(required: true)]
-    public SpriteSpecifier Icon = default!;
 }

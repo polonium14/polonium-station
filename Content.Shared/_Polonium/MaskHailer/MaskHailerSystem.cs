@@ -73,13 +73,16 @@ public sealed partial class MaskHailerSystem : EntitySystem
         if (!_prototype.Resolve(ent.Comp.Set, out var set))
             return;
 
-        if (args.Index < 0 || args.Index >= set.Phrases.Count)
+        if (args.Index < 0
+            || args.Index >= set.Phrases.Count
+            || args.Variant < 0
+            || args.Variant >= set.Phrases[args.Index].Variants.Count)
         {
-            Log.Warning($"{ToPrettyString(user)} sent phrase index {args.Index} outside of mask hailer set {set.ID}.");
+            Log.Warning($"{ToPrettyString(user)} sent phrase {args.Index}/{args.Variant} outside of mask hailer set {set.ID}.");
             return;
         }
 
-        var phrase = set.Phrases[args.Index];
+        var phrase = set.Phrases[args.Index].Variants[args.Variant];
 
         _actions.SetCooldown(ent.Comp.ActionEntity, ent.Comp.Cooldown);
         _audio.PlayPredicted(phrase.Sound, user, user);

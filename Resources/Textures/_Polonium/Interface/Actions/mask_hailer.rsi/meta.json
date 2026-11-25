@@ -26,9 +26,6 @@
       "name": "on_the_ground"
     },
     {
-      "name": "threat_removed"
-    },
-    {
       "name": "no_signs_of_life"
     },
     {
@@ -42,6 +39,18 @@
     },
     {
       "name": "bite_the_dirt"
+    },
+    {
+      "name": "drop_weapon"
+    },
+    {
+      "name": "hands_up"
+    },
+    {
+      "name": "halt"
+    },
+    {
+      "name": "stop_or_shoot"
     }
   ]
 }
