@@ -111,7 +111,7 @@
   desc: reagent-desc-dr-gibb
   physicalDesc: reagent-physical-desc-fizzy
   flavor: drgibb
-  color: "#102000"
+  color: "#661414"
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/dr_gibb_glass.rsi
     state: icon_empty
