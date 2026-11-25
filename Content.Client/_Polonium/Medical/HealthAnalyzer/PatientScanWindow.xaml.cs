@@ -595,19 +595,13 @@ public sealed partial class PatientScanWindow : FancyWindow
 
             if (tags.Count > 0)
             {
-                var line = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, RectClipContent = true };
-                for (var i = 0; i < tags.Count; i++)
-                {
-                    var tag = new Label { Text = i == 0 ? tags[i] : $" · {tags[i]}", StyleClasses = { "LabelSubText" } };
-                    if (i == 0 && bleeding)
-                    {
-                        tag.FontOverride = _resources.GetFont("/Fonts/NotoSans/NotoSans-Bold.ttf", 12);
-                        tag.FontColorOverride = Critical;
-                    }
+                // Rich text wraps inside the narrow callout column instead of running past the frame.
+                var escaped = tags.Select(FormattedMessage.EscapeText).ToList();
+                if (bleeding)
+                    escaped[0] = $"[color={Critical.ToHex()}][bold]{escaped[0]}[/bold][/color]";
 
-                    line.AddChild(tag);
-                }
-
+                var line = new RichTextLabel { StyleClasses = { "LabelSubText" } };
+                line.SetMessage(FormattedMessage.FromMarkupOrThrow(string.Join(" · ", escaped)));
                 row.AddChild(line);
             }
 
@@ -766,13 +760,15 @@ public sealed partial class PatientScanWindow : FancyWindow
             if (scan.CritThreshold is { } crit)
             {
                 DamageMarks.Marks.Add((crit.Float() / DamageChart.Capacity, Warning));
-                DamageIcons.Icons.Add((crit.Float() / DamageChart.Capacity, _entMan.System<SpriteSystem>().Frame0(CritIcon)));
+                DamageIcons.Icons.Add((crit.Float() / DamageChart.Capacity, _entMan.System<SpriteSystem>().Frame0(CritIcon),
+                    Loc.GetString("health-analyzer-scan-threshold-critical", ("damage", MathF.Round(crit.Float())))));
             }
 
             if (scan.DeadThreshold is { } deadAt)
             {
                 DamageMarks.Marks.Add((deadAt.Float() / DamageChart.Capacity, Critical));
-                DamageIcons.Icons.Add((deadAt.Float() / DamageChart.Capacity, _entMan.System<SpriteSystem>().Frame0(DeadIcon)));
+                DamageIcons.Icons.Add((deadAt.Float() / DamageChart.Capacity, _entMan.System<SpriteSystem>().Frame0(DeadIcon),
+                    Loc.GetString("health-analyzer-scan-threshold-dead", ("damage", MathF.Round(deadAt.Float())))));
             }
 
             DamageValue.Text = $"{MathF.Round(total.Float()):0}";

@@ -101,4 +101,6 @@ health-analyzer-scan-organ-Appendix = Wyrostek
 
 health-analyzer-scan-damage = Obrażenia
 health-analyzer-scan-damage-limb = Obrażenia · {$limb}
+health-analyzer-scan-threshold-critical = Stan krytyczny od {$damage} obrażeń
+health-analyzer-scan-threshold-dead = Śmierć od {$damage} obrażeń
 health-analyzer-scan-chemicals = We krwi
