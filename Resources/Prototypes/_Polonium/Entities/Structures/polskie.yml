@@ -121,6 +121,7 @@
   - type: PassengerVehicle
     containerId: maluch_seats
     maxOccupants: 5
+    canShoot: false
     engineSound:
       path: /Audio/_Polonium/Vehicles/carrev.ogg
   - type: Storage
