@@ -23,3 +23,5 @@ smoker-withdrawal-3 = Nie możesz myśleć o niczym innym niż papieros.
 smoker-craving-1 = Masz ochotę zapalić.
 smoker-craving-2 = Klepiesz się po kieszeniach w poszukiwaniu papierosów.
 smoker-craving-3 = Myśl o papierosie nie daje ci spokoju.
+
+guide-entry-smoking = Palenie

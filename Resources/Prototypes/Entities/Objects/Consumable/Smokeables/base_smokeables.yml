@@ -22,6 +22,9 @@
   - type: InjectableSolution
     solution: smokable
   - type: SmokableExplosive # Polonium: plasma or welding fuel in it blows up when lit (tg rigged cigarettes)
+  - type: GuideHelp # Polonium: our smoking page
+    guides:
+    - Smoking
   - type: ActionGrant # Polonium: blow smoke while it is in the mouth
     actions:
     - ActionBlowSmoke

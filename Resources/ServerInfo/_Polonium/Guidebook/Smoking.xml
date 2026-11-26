@@ -1,0 +1,35 @@
+<Document>
+# Palenie
+Papierosy, cygara, jointy i fajki zapalisz wszystkim, co jest gorące: zapalniczką, zapałką, spawarką, innym zapalonym papierosem, a nawet płonącą osobą. Wkładasz je do ust (slot maski) i palą się same, dopóki się nie wypalą.
+
+<Box>
+  <GuideEntityEmbed Entity="Cigarette"/>
+  <GuideEntityEmbed Entity="Cigar"/>
+  <GuideEntityEmbed Entity="SmokingPipe"/>
+</Box>
+
+## Co daje nikotyna
+Nikotyna z dymu trafia do krwi. Uspokaja drżenie rąk, pomaga szybciej wstać po przewróceniu i trochę rozgrzewa. Każdy papieros zużywa jednak płuca, a przez pół minuty po ostatnim zaciągnięciu analizator pokazuje nieco niższe natlenienie. Przedawkowanie, powyżej 15 jednostek nikotyny we krwi, truje i dusi. Samym paleniem do niego nie dojdziesz, tylko strzykawką.
+
+## Ogień i powietrze
+- Papieros potrzebuje tlenu. W próżni albo w pomieszczeniu bez tlenu zgaśnie, chyba że masz hełm z włączonym zasilaniem powietrzem albo w papierosie jest tlen.
+- Papieros leżący w ogniu sam się zapali.
+- Zapalony papieros zgasisz, używając go w ręce, albo zdepczesz, gdy leży na podłodze (prawy przycisk myszy, „Zdepcz”).
+
+## Dodatki
+- Niezapalonym papierosem kliknij zlewkę, żeby nasączyć go jej zawartością. Wszystko, co w nim jest, wdychasz razem z dymem.
+- Papieros z plazmą albo paliwem spawalniczym wybucha przy zapaleniu. Uważaj, od kogo bierzesz papierosy.
+
+## Z innymi
+- Trzymając coś gorącego, kliknij prawym przyciskiem osobę z papierosem w ustach i wybierz „Przypal papierosa”.
+- Kliknij kogoś zapaloną zapalniczką albo zapalonym papierosem, żeby przypalić mu papierosa.
+- Z papierosem w ustach masz na pasku akcję „Puść dymka”, którą możesz przypisać do klawisza. Gdy ktoś stoi tuż przed tobą, dostaje dymem prosto w twarz. Dym w twarz potrafi wywołać kaszel, a zaskoczony kaszlem czasem upuszcza to, co trzyma.
+
+## Cecha: Palacz
+Palacz zaczyna rundę z trwale zniszczonymi płucami: każde ma losowo od 60% do 90% wytrzymałości. Leki ani operacja tego nie naprawią, pomoże tylko przeszczep płuc. Papierosy palacz musi zdobyć sam. Bez nikotyny we krwi zaczyna się głód:
+- po 10 minutach palacz ma ochotę zapalić,
+- po 20 minutach trzęsą mu się ręce i zaczyna kaszleć,
+- po 30 minutach trzęsie się mocniej i kaszle częściej.
+
+Jeden papieros od razu kończy głód.
+</Document>

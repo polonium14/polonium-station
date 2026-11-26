@@ -23,3 +23,5 @@ smoker-withdrawal-3 = You can't think of anything but a cigarette.
 smoker-craving-1 = You crave a cigarette.
 smoker-craving-2 = You pat your pockets for a smoke.
 smoker-craving-3 = The thought of a cigarette won't leave you alone.
+
+guide-entry-smoking = Smoking
