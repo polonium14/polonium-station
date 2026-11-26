@@ -12,6 +12,7 @@
   - type: Sprite
   - type: Appearance
   - type: BurnStateVisuals
+    unlitIcon: unlit-icon # Polonium: every smokable sprite names it so; the default "icon" broke relighting after going out
   - type: Tag
     tags:
     - Trash
