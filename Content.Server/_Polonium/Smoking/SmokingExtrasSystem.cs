@@ -50,6 +50,7 @@ public sealed partial class SmokingExtrasSystem : EntitySystem
     [Dependency] private SmokingSystem _smoking = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedPointLightSystem _light = default!;
 
     private static readonly ProtoId<ReagentPrototype> Oxygen = "Oxygen";
     private static readonly ProtoId<EmotePrototype> Cough = "Cough";
@@ -86,6 +87,7 @@ public sealed partial class SmokingExtrasSystem : EntitySystem
 
         SubscribeLocalEvent<SmokableComponent, TileFireEvent>(OnTileFire);
         SubscribeLocalEvent<SmokableComponent, IgnitedEvent>(OnIgnited);
+        SubscribeLocalEvent<SmokableComponent, ExtinguishedEvent>(OnExtinguished);
         SubscribeLocalEvent<SmokableComponent, GetVerbsEvent<Verb>>(OnSmokableVerbs);
         SubscribeLocalEvent<SmokableComponent, BlowSmokeActionEvent>(OnBlowSmokeAction);
         SubscribeLocalEvent<InventoryComponent, GetVerbsEvent<Verb>>(OnMobVerbs);
@@ -144,6 +146,8 @@ public sealed partial class SmokingExtrasSystem : EntitySystem
 
     private void OnIgnited(Entity<SmokableComponent> ent, ref IgnitedEvent args)
     {
+        SetEmberLight(ent, true);
+
         if (!TryComp<SmokableExplosiveComponent>(ent, out var explosive)
             || !_solution.TryGetSolution(ent.Owner, ent.Comp.Solution, out _, out var solution))
             return;
@@ -171,6 +175,20 @@ public sealed partial class SmokingExtrasSystem : EntitySystem
             canCreateVacuum: false,
             user: holder);
         QueueDel(ent);
+    }
+
+    private void OnExtinguished(Entity<SmokableComponent> ent, ref ExtinguishedEvent args)
+    {
+        SetEmberLight(ent, false);
+    }
+
+    /// <summary>
+    /// The faint glow of the ember, on while the smokable burns.
+    /// </summary>
+    private void SetEmberLight(EntityUid uid, bool enabled)
+    {
+        if (_light.TryGetLight(uid, out var light))
+            _light.SetEnabled(uid, enabled, light);
     }
 
     private void OnSmokableVerbs(Entity<SmokableComponent> ent, ref GetVerbsEvent<Verb> args)

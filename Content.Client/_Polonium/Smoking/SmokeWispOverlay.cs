@@ -3,16 +3,22 @@ using System.Runtime.InteropServices;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;
+using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
 
 namespace Content.Client._Polonium.Smoking;
 
 /// <summary>
-/// Draws every <see cref="SmokeRibbon"/> as one soft strip: thin and dense at the source, wider and fainter with age.
+/// Draws every <see cref="SmokeRibbon"/> as one soft strip: thin and dense at the source, wider and fainter with age,
+/// and the glowing ember where it shows.
 /// </summary>
 public sealed partial class SmokeWispOverlay : Overlay
 {
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IResourceCache _resources = default!;
 
     /// <summary>
@@ -21,6 +27,26 @@ public sealed partial class SmokeWispOverlay : Overlay
     private static readonly ResPath SoftTexture = new("/Textures/Effects/HeatBlur/soft_circle.png");
 
     private static readonly Color SmokeColor = Color.FromHex("#d8d8d8");
+
+    /// <summary>
+    /// The ember is drawn without lighting, so it glows in the dark like a lighter's flame: a hot core in a halo.
+    /// </summary>
+    private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
+
+    private static readonly Color EmberCore = Color.FromHex("#ffc46b");
+    private static readonly Color EmberHalo = Color.FromHex("#ff6a1a");
+
+    private const float EmberCoreSize = 0.05f;
+    private const float EmberHaloSize = 0.14f;
+    private const float EmberCoreAlpha = 0.6f;
+    private const float EmberHaloAlpha = 0.18f;
+
+    /// <summary>
+    /// The ember brightens and dims a little, a few times a second, each one out of step with the others.
+    /// </summary>
+    private const float FlickerDepth = 0.25f;
+
+    private const float FlickerSpeed = 7f;
 
     private const float Opacity = 0.5f;
     private const float WidthAtTip = 0.02f;
@@ -38,6 +64,7 @@ public sealed partial class SmokeWispOverlay : Overlay
 
     private readonly SmokeWispSystem _system;
     private readonly Texture _texture;
+    private readonly ShaderInstance _unshaded;
     private readonly List<DrawVertexUV2DColor> _vertices = new();
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceEntities;
@@ -48,6 +75,7 @@ public sealed partial class SmokeWispOverlay : Overlay
         ZIndex = (int) DrawDepth.Effects;
         _system = system;
         _texture = _resources.GetResource<TextureResource>(SoftTexture).Texture;
+        _unshaded = _proto.Index(UnshadedShader).Instance();
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -68,11 +96,35 @@ public sealed partial class SmokeWispOverlay : Overlay
             AddRibbon(ribbon, count);
         }
 
-        if (_vertices.Count == 0)
-            return;
+        var handle = args.WorldHandle;
+        if (_vertices.Count > 0)
+        {
+            handle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, _texture, CollectionsMarshal.AsSpan(_vertices));
+            _vertices.Clear();
+        }
 
-        args.WorldHandle.DrawPrimitives(DrawPrimitiveTopology.TriangleList, _texture, CollectionsMarshal.AsSpan(_vertices));
-        _vertices.Clear();
+        DrawEmbers(handle, args.MapId, args.WorldAABB);
+    }
+
+    private void DrawEmbers(DrawingHandleWorld handle, MapId map, Box2 bounds)
+    {
+        var time = (float) _timing.RealTime.TotalSeconds;
+        handle.UseShader(_unshaded);
+
+        foreach (var ribbon in _system.Ribbons)
+        {
+            if (!ribbon.EmberVisible || ribbon.MapId != map || !_system.TryGetEmber(ribbon, out var ember) || !bounds.Contains(ember))
+                continue;
+
+            // Two sines out of step, phased by position, so the embers do not pulse in unison.
+            var phase = ember.X * 3.7f + ember.Y * 5.1f;
+            var flicker = 1f - FlickerDepth * (0.5f + 0.25f * (MathF.Sin(time * FlickerSpeed + phase) + MathF.Sin(time * FlickerSpeed * 1.7f + phase)));
+
+            handle.DrawTextureRect(_texture, Box2.CenteredAround(ember, new Vector2(EmberHaloSize)), EmberHalo.WithAlpha(EmberHaloAlpha * flicker));
+            handle.DrawTextureRect(_texture, Box2.CenteredAround(ember, new Vector2(EmberCoreSize)), EmberCore.WithAlpha(EmberCoreAlpha * flicker));
+        }
+
+        handle.UseShader(null);
     }
 
     private void AddRibbon(SmokeRibbon ribbon, int count)

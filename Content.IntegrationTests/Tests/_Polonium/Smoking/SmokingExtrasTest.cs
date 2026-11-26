@@ -49,6 +49,11 @@ public sealed class SmokingExtrasTest : GameTest
         await Server.WaitPost(() => SEntMan.System<SmokingSystem>().SetSmokableState(cigarette, SmokableState.Lit));
     }
 
+    private bool LightOn(EntityUid cigarette)
+    {
+        return SEntMan.System<SharedPointLightSystem>().TryGetLight(cigarette, out var light) && light.Enabled;
+    }
+
     private SmokableState State(EntityUid cigarette)
     {
         return SEntMan.GetComponent<SmokableComponent>(cigarette).State;
@@ -62,6 +67,7 @@ public sealed class SmokingExtrasTest : GameTest
         await Pair.RunSeconds(2);
 
         Assert.That(State(cigarette), Is.EqualTo(SmokableState.Unlit), "A cigarette in vacuum should go out.");
+        Assert.That(LightOn(cigarette), Is.False, "A cigarette that went out should stop glowing.");
     }
 
     [Test]
@@ -72,6 +78,7 @@ public sealed class SmokingExtrasTest : GameTest
         await Pair.RunSeconds(2);
 
         Assert.That(State(cigarette), Is.EqualTo(SmokableState.Lit), "Oxygen in the cigarette should keep it lit in vacuum.");
+        Assert.That(LightOn(cigarette), "A lit cigarette should glow.");
     }
 
     [Test]

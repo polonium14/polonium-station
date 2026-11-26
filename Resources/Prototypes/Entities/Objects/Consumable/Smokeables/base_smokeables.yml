@@ -30,6 +30,11 @@
     - ActionBlowSmoke
   - type: ItemActionGrant
     activeIfWorn: true
+  - type: PointLight # Polonium: the ember glows faintly while it burns
+    enabled: false
+    radius: 1.1 # smallest possible, like a lighter
+    energy: 0.2
+    color: "#ff8a3d"
 
 # Base for all cigars and cigarettes.
 - type: entity
