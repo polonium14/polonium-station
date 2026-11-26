@@ -57,7 +57,7 @@ public sealed partial class CCVars
     /// A body whose saturation reads below this coughs now and then.
     /// </summary>
     public static readonly CVarDef<float> OrgansCoughSpO2 =
-        CVarDef.Create("organs.cough_spo2", 97f, CVar.SERVERONLY);
+        CVarDef.Create("organs.cough_spo2", 94f, CVar.SERVERONLY);
 
     /// <summary>
     /// A body whose saturation reads below this gasps instead of coughing.
