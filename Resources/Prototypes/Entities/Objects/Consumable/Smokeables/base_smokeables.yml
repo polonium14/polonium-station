@@ -21,6 +21,12 @@
     price: 5
   - type: InjectableSolution
     solution: smokable
+  - type: SmokableExplosive # Polonium: plasma or welding fuel in it blows up when lit (tg rigged cigarettes)
+  - type: ActionGrant # Polonium: blow smoke while it is in the mouth
+    actions:
+    - ActionBlowSmoke
+  - type: ItemActionGrant
+    activeIfWorn: true
 
 # Base for all cigars and cigarettes.
 - type: entity
@@ -31,6 +37,12 @@
   - type: Smokable
     exposeTemperature: 1173.15
   - type: Cigar
+  # Polonium: dipped in a beaker, it soaks the liquid up (tg)
+  - type: RefillableSolution
+    solution: smokable
+  - type: SolutionTransfer
+    canSend: false
+  # Polonium end
   - type: Tag
     tags:
     - Trash
