@@ -663,10 +663,10 @@ public sealed class OrganFailureTest : GameTest
     }
 
     /// <summary>
-    /// Smoking and a lost lung both read a little low, and a low reading brings a cough; a healthy body has neither.
+    /// Smoking and a lost lung both read a little low, but not low enough to cough (below 94); a healthy body reads full.
     /// </summary>
     [Test]
-    public async Task SmokingAndOneLungReadLowAndBringACough()
+    public async Task SmokingAndOneLungReadLowWithoutACough()
     {
         SetChances(0f, 0f, 0f);
         var map = await Pair.CreateTestMap();
@@ -693,8 +693,9 @@ public sealed class OrganFailureTest : GameTest
                 Assert.That(circulation.ReadSpO2(healthy), Is.InRange(98.5f, 99f));
                 Assert.That(circulation.ReadSpO2(smoker), Is.InRange(95.5f, 96f), "Three points below a healthy reading.");
                 Assert.That(symptoms.HasSymptoms(healthy, out _), Is.False);
-                Assert.That(symptoms.HasSymptoms(smoker, out var smokerSevere) && !smokerSevere, "A smoker coughs.");
-                Assert.That(symptoms.HasSymptoms(oneLung, out var lungSevere) && !lungSevere, "One lung coughs.");
+                Assert.That(circulation.ReadSpO2(oneLung), Is.InRange(96f, 96.5f));
+                Assert.That(symptoms.HasSymptoms(smoker, out _), Is.False, "Smoking alone should not bring a cough.");
+                Assert.That(symptoms.HasSymptoms(oneLung, out _), Is.False, "One lung alone reads above the cough threshold.");
             });
         });
     }

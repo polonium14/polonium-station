@@ -1,0 +1,7 @@
+- type: trait
+  id: Smoker
+  name: trait-smoker-name
+  description: trait-smoker-desc
+  category: Quirks
+  components:
+  - type: Smoker

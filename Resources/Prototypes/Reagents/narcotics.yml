@@ -293,6 +293,27 @@
         effectProto: StatusEffectSmokerBreath
         time: 30
         type: Update
+      # Polonium: a smoke calms the shakes and helps back up after a fall (tg), and warms a little (Goon)
+      - !type:GenericStatusEffect
+        key: Jitter
+        time: 2.0
+        type: Remove
+      - !type:ModifyKnockdown
+        time: 0.25
+        type: Remove
+      - !type:AdjustTemperature
+        amount: 500
+      # Polonium: an overdose (tg: above 15u) poisons and chokes; a cigarette alone never gets there
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Nicotine
+          min: 15
+        damage:
+          types:
+            Poison: 0.5
+            Asphyxiation: 1
+      # Polonium end
   plantMetabolism:
   - !type:PlantAdjustHealth
     amount: -5

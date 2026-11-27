@@ -1,0 +1,30 @@
+# A puff of smoke when a lit smokable comes out of the mouth.
+- type: particleEffect
+  id: PoloniumSmokeExhale
+  sprite:
+    sprite: Effects/chemsmoke.rsi
+    state: chemsmoke
+  startColor: "#D8D8D880"
+  endColor: "#D8D8D800"
+  sizeOverLifetime:
+    - time: 0.0
+      value: 0.3
+    - time: 0.3
+      value: 1.0
+    - time: 1.0
+      value: 1.6
+  lifetime: 1.5
+  lifetimeVariance: 0.4
+  speed: 0.6
+  speedVariance: 0.3
+  particleSize: 0.3
+  sizeVariance: 0.3
+  maxCount: 14
+  burst: true
+  gravity: -0.15
+  drag: 1.2
+  noiseStrength: 0.1
+  noiseFrequency: 0.6
+  spreadAngle: 360
+  startRotationVariance: 180
+  rotationSpeedVariance: 25

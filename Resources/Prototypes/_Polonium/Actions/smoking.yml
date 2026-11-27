@@ -1,0 +1,11 @@
+- type: entity
+  parent: BaseAction
+  id: ActionBlowSmoke
+  name: Blow smoke
+  description: Blow out a cloud of smoke, right into the face of whoever stands in front of you.
+  components:
+  - type: Action
+    useDelay: 3
+    itemIconStyle: BigItem
+  - type: InstantAction
+    event: !type:BlowSmokeActionEvent
