@@ -89,7 +89,13 @@ public sealed class LogiAppCartridgeTest : GameTest
             Assert.That(system.GetStatus(tracked, app.Comp.CourierDistance), Is.EqualTo(LogiAppParcelStatus.Opened));
 
             entMan.DeleteEntity(parcel);
-            Assert.That(system.GetStatus(tracked, app.Comp.CourierDistance), Is.EqualTo(LogiAppParcelStatus.Destroyed));
+            Assert.That(system.GetStatus(tracked, app.Comp.CourierDistance), Is.EqualTo(LogiAppParcelStatus.Opened),
+                "An opened parcel thrown away afterwards still counts as opened.");
+
+            var unopened = SpawnParcel(entMan, tracked.Spawner, new MapCoordinates(Vector2.Zero, map.MapId));
+            var unopenedTracked = app.Comp.Parcels.Single(p => p.Parcel == unopened);
+            entMan.DeleteEntity(unopened);
+            Assert.That(system.GetStatus(unopenedTracked, app.Comp.CourierDistance), Is.EqualTo(LogiAppParcelStatus.Destroyed));
         });
     }
 
