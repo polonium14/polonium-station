@@ -1,0 +1,10 @@
+test-chamber-window-title = Komora testowa
+test-chamber-window-search = Szukaj po nazwie albo PR...
+test-chamber-window-spawn = Zrzuć zestaw
+test-chamber-window-reset = Posprzątaj zestawy
+test-chamber-window-reset-confirm = Usunąć wszystko?
+test-chamber-window-pick = Wybierz zestaw. Zestawy lądują na wolnych polach wokół konsoli.
+test-chamber-window-contents = Zawartość: {$entities}
+test-chamber-no-space = Wokół konsoli nie ma wolnej podłogi.
+test-chamber-no-permission = Konsolą komory testowej sterują tylko admini z uprawnieniem Debug.
+test-chamber-reset-done = Usunięto rzeczy z zestawów: {$count}.
