@@ -66,6 +66,16 @@ public abstract partial class HealthAnalyzerSystem
         args.Accessible = true;
     }
 
+    /// <summary>
+    /// Starts scanning <paramref name="target"/> without a do-after and opens the window for <paramref name="user"/>.
+    /// Used by scanners built into mobs, like the eldritch horror reading its host.
+    /// </summary>
+    public void StartScan(Entity<HealthAnalyzerComponent> analyzer, EntityUid user, EntityUid target)
+    {
+        BeginAnalyzingEntity(analyzer, target);
+        OpenUserInterface(user, analyzer);
+    }
+
     private bool InHandOrScanningSlot(EntityUid item)
     {
         if (!_container.TryGetContainingContainer(item, out var container))

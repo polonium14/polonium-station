@@ -1,0 +1,117 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Yogstation (https://github.com/yogstation13/Yogstation/pull/13033), via Aquila Station (https://github.com/aq33/AquilaStation/pull/364)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "talk_to_host"
+        },
+        {
+            "name": "talk_to_horror"
+        },
+        {
+            "name": "talk_to_trapped_mind"
+        },
+        {
+            "name": "talk_to_possessing_horror"
+        },
+        {
+            "name": "infest"
+        },
+        {
+            "name": "horror_hiding_false",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "horror_hiding_true",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    1.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "horror_leave"
+        },
+        {
+            "name": "horror_brain"
+        },
+        {
+            "name": "mutate"
+        },
+        {
+            "name": "tentacle"
+        },
+        {
+            "name": "revive"
+        },
+        {
+            "name": "muscle"
+        },
+        {
+            "name": "locate_soul"
+        },
+        {
+            "name": "seek_soul"
+        },
+        {
+            "name": "consume_soul"
+        },
+        {
+            "name": "horror_sneak_false"
+        },
+        {
+            "name": "horror_sneak_true"
+        },
+        {
+            "name": "trip"
+        },
+        {
+            "name": "paralyze"
+        },
+        {
+            "name": "view_memory"
+        },
+        {
+            "name": "resist_control"
+        },
+        {
+            "name": "transfer_host"
+        },
+        {
+            "name": "lube_spill"
+        }
+    ]
+}

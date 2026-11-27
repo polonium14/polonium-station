@@ -1,0 +1,16 @@
+ent-BaseActionHorror = { ent-BaseAction }
+    .desc = { ent-BaseAction.desc }
+ent-ActionHorrorInfest = Zarażenie
+    .desc = Wpełznij do głowy stworzenia obok ciebie.
+ent-ActionHorrorLeaveHost = Opuść nosiciela
+    .desc = Wypełznij z nosiciela. Użyj ponownie, by przerwać.
+ent-ActionHorrorChemicals = Wydziel chemikalia
+    .desc = Wstrzyknij chemikalia do krwiobiegu nosiciela.
+ent-ActionHorrorScanHost = Skan nosiciela
+    .desc = Zbadaj ciało nosiciela i substancje w jego organizmie.
+ent-ActionHorrorTakeControl = Przejmij kontrolę
+    .desc = Połącz się w pełni z mózgiem nosiciela i przejmij jego ciało. Użyj ponownie, by przerwać.
+ent-ActionHorrorReleaseControl = Oddaj kontrolę
+    .desc = Oddaj ciało jego właścicielowi.
+ent-ActionHorrorResistControl = Opieraj się kontroli
+    .desc = Spróbuj odzyskać kontrolę nad własnym mózgiem. Silny impuls nerwowy powinien wystarczyć.

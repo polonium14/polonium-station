@@ -1,0 +1,118 @@
+- type: entity
+  abstract: true
+  parent: BaseAction
+  id: BaseActionHorror
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorInfest
+  name: Infest
+  description: Crawl into the head of a creature next to you.
+  components:
+  - type: Action
+    useDelay: 5
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: infest
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - Body
+    event: !type:HorrorInfestActionEvent
+  - type: HorrorAction
+    states: Free
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorLeaveHost
+  name: Leave Host
+  description: Slither out of your host. Use it again to stop.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: horror_leave
+  - type: InstantAction
+    event: !type:HorrorLeaveHostActionEvent
+  - type: HorrorAction
+    states: Infesting
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorChemicals
+  name: Secrete Chemicals
+  description: Pump chemicals into your host's bloodstream.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/hypospray.rsi
+    layers:
+    - state: hypo
+  - type: InstantAction
+    event: !type:HorrorChemicalsMenuActionEvent
+  - type: HorrorAction
+    states: Infesting
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorScanHost
+  name: Scan Host
+  description: Inspect your host's body and the substances in it.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/healthanalyzer.rsi
+    layers:
+    - state: icon
+  - type: InstantAction
+    event: !type:HorrorScanHostActionEvent
+  - type: HorrorAction
+    states: Infesting
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorTakeControl
+  name: Take Control
+  description: Fully bond with your host's brain and take its body. Use it again to stop.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: horror_brain
+  - type: InstantAction
+    event: !type:HorrorTakeControlActionEvent
+  - type: HorrorAction
+    states: Infesting
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorReleaseControl
+  name: Release Control
+  description: Give the body back to its owner.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: horror_leave
+  - type: InstantAction
+    event: !type:HorrorReleaseControlActionEvent
+  - type: HorrorAction
+    states: Controlling
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorResistControl
+  name: Resist Control
+  description: Try to take back your own brain. A strong enough nerve impulse should do.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: resist_control
+  - type: InstantAction
+    event: !type:HorrorResistControlActionEvent

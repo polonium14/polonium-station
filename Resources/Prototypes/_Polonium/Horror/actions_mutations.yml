@@ -1,0 +1,214 @@
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorMutate
+  name: Mutate
+  description: Use devoured souls to mutate your abilities.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: mutate
+  - type: InstantAction
+    event: !type:HorrorMutateActionEvent
+  - type: HorrorAction
+    states: Free
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorSeekSoul
+  name: Seek Soul
+  description: Search for a soul weak enough for you to devour.
+  components:
+  - type: Action
+    useDelay: 180
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: seek_soul
+  - type: InstantAction
+    event: !type:HorrorSeekSoulActionEvent
+  - type: HorrorAction
+    states: Free, Infesting
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorConsumeSoul
+  name: Devour Soul
+  description: Devour the soul of your target from inside its head. Use it again to stop.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: consume_soul
+  - type: InstantAction
+    event: !type:HorrorConsumeSoulActionEvent
+  - type: HorrorAction
+    states: Infesting
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorHide
+  name: Hide
+  description: Lie low under items and tables. Toggles.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: horror_hiding_false
+  - type: InstantAction
+    event: !type:HorrorHideActionEvent
+  - type: HorrorAction
+    states: Free
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorTrip
+  name: Trip Victim
+  description: Trip everyone next to you with a tentacle, knocking them down for a short while.
+  components:
+  - type: Action
+    useDelay: 15
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: trip
+  - type: InstantAction
+    event: !type:HorrorTripActionEvent
+  - type: HorrorAction
+    states: Free
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorTalkToCaptive
+  name: Talk to Trapped Mind
+  description: While you drive the body, speak to the mind you locked away instead of out loud. Toggles.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: talk_to_trapped_mind
+  - type: InstantAction
+    event: !type:HorrorMindLinkActionEvent
+  - type: HorrorAction
+    states: Controlling
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorTalkToHorror
+  name: Converse with Horror
+  description: Think at the thing in your head instead of speaking out loud. Toggles.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: talk_to_horror
+  - type: InstantAction
+    event: !type:HorrorMindLinkActionEvent
+
+# Mutations bought with souls
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorTentacle
+  name: Grow Tentacle
+  description: Twist your host's arm into a tentacle. Costs 50 chemicals. Use it again to turn it back.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: tentacle
+  - type: InstantAction
+    event: !type:HorrorTentacleActionEvent
+  - type: HorrorAction
+    states: Infesting, Controlling
+    soulPrice: 2
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorTransferHost
+  name: Transfer to Another Host
+  description: Move straight into someone next to your host. Pulling them makes it faster, but they will notice.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: transfer_host
+  - type: TargetAction
+    checkCanAccess: false
+    range: 1.5
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - Body
+    event: !type:HorrorTransferHostActionEvent
+  - type: HorrorAction
+    states: Infesting, Controlling
+    soulPrice: 1
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorJumpstart
+  name: Revive Host
+  description: Send a jolt through your dead host and bring it back to life. Costs 250 chemicals.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: revive
+  - type: InstantAction
+    event: !type:HorrorJumpstartActionEvent
+  - type: HorrorAction
+    states: Infesting
+    soulPrice: 2
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorViewMemory
+  name: View Memories
+  description: Read the fresh memories of your host.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: view_memory
+  - type: InstantAction
+    event: !type:HorrorViewMemoryActionEvent
+  - type: HorrorAction
+    states: Infesting
+    soulPrice: 1
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorChameleon
+  name: Chameleon Skin
+  description: Match your skin to the surroundings. Burns 5 chemicals a tick instead of regenerating them, attacking breaks it. Toggles.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: horror_sneak_false
+  - type: InstantAction
+    event: !type:HorrorChameleonActionEvent
+  - type: HorrorAction
+    states: Free
+    soulPrice: 1
+
+- type: entity
+  parent: BaseActionHorror
+  id: ActionHorrorLubeSpill
+  name: Lube Spill
+  description: Spin around and splash slippery lube around you. Costs 50 chemicals.
+  components:
+  - type: Action
+    useDelay: 10
+  - type: Sprite
+    sprite: _Polonium/Interface/Actions/horror.rsi
+    layers:
+    - state: lube_spill
+  - type: InstantAction
+    event: !type:HorrorLubeSpillActionEvent
+  - type: HorrorAction
+    states: Free
+    soulPrice: 2

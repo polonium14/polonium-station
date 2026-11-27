@@ -283,6 +283,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (string.IsNullOrEmpty(message))
             return;
 
+        // Polonium: some speakers talk privately instead, like an eldritch horror with its host
+        if (desiredType != InGameICChatType.Emote)
+        {
+            var redirect = new Content.Shared._Polonium.Chat.PoloniumSpeechRedirectEvent(message);
+            RaiseLocalEvent(source, ref redirect);
+            if (redirect.Handled)
+                return;
+        }
+        // Polonium end
+
         // This message may have a radio prefix, and should then be whispered to the resolved radio channel
         if (checkRadioPrefix)
         {

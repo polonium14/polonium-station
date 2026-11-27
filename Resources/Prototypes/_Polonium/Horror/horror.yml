@@ -1,0 +1,139 @@
+- type: entity
+  parent: [ BaseSimpleMob, MobCombat, MobAtmosExposed, MobFlammable, MobNightVision ]
+  id: MobEldritchHorror
+  name: eldritch horror
+  description: Your eyes can barely comprehend what they're looking at.
+  components:
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: _Polonium/Mobs/Horror/eldritch_horror.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: horror
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: horror_move
+    noMovementLayers:
+      movement:
+        state: horror
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: horror
+      Dead:
+        Base: dead
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4.5
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.25
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 10
+  - type: Speech
+    speechVerb: SmallMob
+  - type: CanEscapeInventory
+  - type: ShowHealthBars
+  - type: HealthAnalyzer
+    maxScanRange: null
+    silent: true
+  - type: UserInterface
+    interfaces:
+      enum.HorrorChemicalsUiKey.Key:
+        type: HorrorChemicalsBoundUserInterface
+      enum.HealthAnalyzerUiKey.Key:
+        type: HealthAnalyzerBoundUserInterface
+      enum.HorrorMutationsUiKey.Key:
+        type: HorrorMutationsBoundUserInterface
+      enum.HorrorSoulUiKey.Key:
+        type: HorrorSoulBoundUserInterface
+  - type: Stealth
+    enabled: false
+  - type: Tag
+    tags:
+    - VimPilot
+  - type: GuideHelp
+    guides:
+    - MinorAntagonists
+  - type: EldritchHorror
+    jumpstartDamage:
+      types:
+        Asphyxiation: 30
+    startingAbilities:
+    - ActionHorrorInfest
+    - ActionHorrorLeaveHost
+    - ActionHorrorChemicals
+    - ActionHorrorScanHost
+    - ActionHorrorTakeControl
+    - ActionHorrorReleaseControl
+    - ActionHorrorMutate
+    - ActionHorrorSeekSoul
+    - ActionHorrorConsumeSoul
+    - ActionHorrorHide
+    - ActionHorrorTrip
+    - ActionHorrorTalkToCaptive
+
+- type: entity
+  id: PoloniumHorrorCaptiveMind
+  name: trapped mind
+  description: The host's own mind, locked away while something else drives the body.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MindContainer
+  - type: Speech
+  - type: HorrorCaptiveMind
+  - type: ActionGrant
+    actions:
+    - ActionHorrorResistControl
+
+- type: entity
+  parent: BaseItem
+  id: HorrorTentacle
+  name: tentacle
+  description: A long, slimy, arm-like appendage.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Melee/horror_tentacle.rsi
+    state: icon
+  - type: Item
+    size: Huge
+    sprite: _Polonium/Objects/Weapons/Melee/horror_tentacle.rsi
+  - type: Unremoveable
+    deleteOnDrop: true
+  - type: MeleeWeapon
+    range: 2
+    soundHit:
+      path: /Audio/_Funkystation/Effects/Emotes/whip_crack.ogg
+    damage:
+      types:
+        Slash: 17
+  - type: HorrorTentacle

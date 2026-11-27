@@ -164,19 +164,20 @@
 
 # Łagodni antagoniści z ról duchów.
 # Używane przez: Low (z "prob"), Mid.
-# Suma wag: 22,5
+# Suma wag: 24,5
 - type: entityTable
   id: SecretPlusGhostAntagsSoftTable
   table: !type:AllSelector
     children:
     - id: AbductorSpawn      # waga 4    koszt 250   gracze 10  od 15 min   raz na rundę
+    - id: EldritchHorrorSpawn  # waga 2  koszt 250   gracze 15  od 20 min   do dwóch na rundę
     - id: KingRatMigration   # waga 6    koszt 25    gracze 30  od 15 min   ponownie po 30 min
     - id: ParadoxCloneSpawn  # waga 5    koszt 80    gracze 15  od 20 min   raz na rundę
     - id: RevenantSpawn      # waga 7.5  koszt 450   gracze 20  od 45 min   ponownie po 30 min
 
 # Wszyscy antagoniści z ról duchów, czyli łagodni plus ci poniżej.
 # Używane przez: MidHigh, High.
-# Suma wag: 24,1 bez tabeli łagodnej, razem z nią 46,6
+# Suma wag: 24,1 bez tabeli łagodnej, razem z nią 48,6
 - type: entityTable
   id: SecretPlusGhostAntagsTable
   table: !type:AllSelector

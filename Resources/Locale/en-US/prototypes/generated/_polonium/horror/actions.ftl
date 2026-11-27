@@ -1,0 +1,16 @@
+ent-BaseActionHorror = { ent-BaseAction }
+    .desc = { ent-BaseAction.desc }
+ent-ActionHorrorInfest = Infest
+    .desc = Crawl into the head of a creature next to you.
+ent-ActionHorrorLeaveHost = Leave Host
+    .desc = Slither out of your host. Use it again to stop.
+ent-ActionHorrorChemicals = Secrete Chemicals
+    .desc = Pump chemicals into your host's bloodstream.
+ent-ActionHorrorScanHost = Scan Host
+    .desc = Inspect your host's body and the substances in it.
+ent-ActionHorrorTakeControl = Take Control
+    .desc = Fully bond with your host's brain and take its body. Use it again to stop.
+ent-ActionHorrorReleaseControl = Release Control
+    .desc = Give the body back to its owner.
+ent-ActionHorrorResistControl = Resist Control
+    .desc = Try to take back your own brain. A strong enough nerve impulse should do.

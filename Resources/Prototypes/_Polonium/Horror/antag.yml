@@ -1,0 +1,175 @@
+- type: antag
+  id: EldritchHorror
+  name: roles-antag-horror-name
+  antagonist: true
+  objective: roles-antag-horror-objective
+  setPreference: false
+
+- type: antagSpecifier
+  parent: RestrictedAntag
+  id: EldritchHorror
+  spawnerPrototype: SpawnPointGhostEldritchHorror
+  pickPlayer: false
+  mindRoles:
+  - MindRoleEldritchHorror
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleEldritchHorror
+  name: Eldritch Horror Role
+  components:
+  - type: MindRole
+    antagPrototype: EldritchHorror
+    subtype: role-subtype-horror
+    exclusiveAntag: true
+  - type: HorrorRole
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostEldritchHorror
+  components:
+  - type: GhostRole
+    name: ghost-role-information-horror-name
+    description: ghost-role-information-horror-description
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+    - MindRoleEldritchHorror
+    raffle:
+      settings: default
+  - type: Sprite
+    layers:
+    - sprite: Markers/jobs.rsi
+      state: green
+    - sprite: _Polonium/Mobs/Horror/eldritch_horror.rsi
+      state: horror
+
+# Aquila's event: at most twice a round, from 15 players and 20 minutes in. Weight like the morph, not Aquila's 10,
+# because Polonium's ghost antag tables are much smaller than SS13's event pool.
+- type: entity
+  parent: BaseAntagGhostRoleRule
+  id: EldritchHorrorSpawn
+  components:
+  - type: StationEvent
+    weight: 2
+    duration: null
+    maxOccurrences: 2
+    occursDuringRoundEnd: false
+    earliestStart: 20
+    minimumPlayers: 15
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 250
+  - type: HorrorVentSpawn
+  - type: AntagSpawner
+    prototype: MobEldritchHorror
+  - type: AntagObjectives
+    objectives:
+    - HorrorDevourObjective
+    - HorrorSurviveObjective
+  - type: AntagSelection
+    agentName: horror-round-end-agent-name
+    antags:
+    - !type:FixedAntagCount
+      proto: EldritchHorror
+
+- type: objectiveIssuer
+  id: EldritchHorror
+  name: objective-issuer-horror
+
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseHorrorObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    issuer: EldritchHorror
+  - type: RoleRequirement
+    roles:
+    - HorrorRole
+
+- type: entity
+  parent: [ BaseHorrorObjective, BaseCounterObjective ]
+  id: HorrorDevourObjective
+  components:
+  - type: Objective
+    icon:
+      sprite: _Polonium/Interface/Actions/horror.rsi
+      state: consume_soul
+  - type: NumberObjective
+    min: 5
+    max: 8
+    title: objective-horror-devour-title
+    description: objective-horror-devour-description
+  - type: HorrorDevourCondition
+
+- type: entity
+  parent: [ BaseHorrorObjective, BaseSurviveObjective ]
+  id: HorrorSurviveObjective
+  name: Survive
+  description: Stay alive until the end of the shift.
+  components:
+  - type: Objective
+    icon:
+      sprite: _Polonium/Mobs/Horror/eldritch_horror.rsi
+      state: horror
+
+# Given to a horror woken from the pet carrier; serving can't be failed, like in Aquila.
+- type: entity
+  parent: BaseHorrorObjective
+  id: HorrorServeObjective
+  name: Serve your summoner
+  description: Help the one who woke you with their goals.
+  components:
+  - type: Objective
+    icon:
+      sprite: _Polonium/Mobs/Horror/eldritch_horror.rsi
+      state: horror
+  - type: FreeObjective
+
+# The smuggled pet carrier sold to librarians in the uplink.
+- type: entity
+  parent: [ BaseItem, BaseSyndicateContraband ]
+  id: HorrorPetCarrier
+  name: suspicious pet carrier
+  description: There is some kind of creature inside. You can see tentacles poking out of it.
+  components:
+  - type: Sprite
+    sprite: Objects/Storage/petcarrier.rsi
+    color: "#8269a0"
+    layers:
+    - state: pet_carrier_base
+    - state: pet_carrier_door
+  - type: Item
+    size: Large
+  - type: HorrorCarrier
+    # waking the creature up puts out the ghost role
+    wakeComponents:
+    - type: GhostRole
+      name: ghost-role-information-horror-servant-name
+      description: ghost-role-information-horror-servant-description
+      rules: ghost-role-information-antagonist-rules
+      mindRoles:
+      - MindRoleEldritchHorror
+      raffle:
+        settings: default
+    - type: GhostRoleMobSpawner
+      prototype: MobEldritchHorror
+
+- type: listing
+  id: UplinkHorrorPetCarrier
+  name: uplink-horror-carrier-name
+  description: uplink-horror-carrier-desc
+  productEntity: HorrorPetCarrier
+  icon: { sprite: Objects/Storage/petcarrier.rsi, state: icon }
+  cost:
+    Telecrystal: 14
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Librarian
+  - !type:ListingLimitedStockCondition
+    stock: 1
