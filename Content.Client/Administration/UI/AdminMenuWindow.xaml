@@ -6,9 +6,11 @@
     xmlns:tabs="clr-namespace:Content.Client.Administration.UI.Tabs"
     xmlns:playerTab="clr-namespace:Content.Client.Administration.UI.Tabs.PlayerTab"
     xmlns:objectsTab="clr-namespace:Content.Client.Administration.UI.Tabs.ObjectsTab"
-    xmlns:panic="clr-namespace:Content.Client.Administration.UI.Tabs.PanicBunkerTab">
+    xmlns:panic="clr-namespace:Content.Client.Administration.UI.Tabs.PanicBunkerTab"
+    xmlns:polonium="clr-namespace:Content.Client._Polonium.Administration.UI">
     <TabContainer Name="MasterTabContainer">
         <adminTab:AdminTab />
+        <polonium:PoloniumAdminTab /> <!-- Polonium - command buttons -->
         <adminbusTab:AdminbusTab />
         <atmosTab:AtmosTab />
         <tabs:RoundTab />
