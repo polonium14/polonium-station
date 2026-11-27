@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Nox38
-  changes:
-  - message: All military boots (jack, combat, merc) now have the 50% injury slowdown
-      resistance effect.
-    type: Tweak
-  id: 9660
-  time: '2026-04-24T09:01:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35653
 - author: Princess-Cheeseballs
   changes:
   - message: Dragons and other flying mobs no longer continue sliding while dead.
@@ -5244,3 +5236,10 @@
   id: 10154
   time: '2026-11-25T16:51:35.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1325
+- author: haze
+  changes:
+  - message: Zmieniono palenie jaranie kopcenie
+    type: Tweak
+  id: 10155
+  time: '2026-11-27T14:59:33.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1330
