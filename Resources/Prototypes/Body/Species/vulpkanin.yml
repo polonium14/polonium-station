@@ -102,11 +102,14 @@
       Tongue: OrganVulpkaninTongue
       Appendix: OrganVulpkaninAppendix
       Ears: OrganVulpkaninEars
-      Lungs: OrganVulpkaninLungs
+      LungLeft: OrganVulpkaninLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganVulpkaninLungRight
       Heart: OrganVulpkaninHeart
       Stomach: OrganVulpkaninStomach
       Liver: OrganVulpkaninLiver
-      Kidneys: OrganVulpkaninKidneys
+      KidneyLeft: OrganVulpkaninKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganVulpkaninKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Vulpkanin
   - type: Inventory
@@ -372,12 +375,13 @@
   parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganVulpkaninInternal ]
   id: OrganVulpkaninBrain
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    integrityFloor: 6
 
 - type: entity
   parent: [ OrganVulpkaninVisual, OrganBaseEyes, OrganVulpkaninInternal ]
@@ -387,12 +391,13 @@
     data:
       sprite: Mobs/Customization/eyes.rsi
       state: eyes
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 24
     integrityThresholds:
-      Normal: 24
-      Damaged: 4
+      Normal: 8.4
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEyes
   - type: EyeBlinking
     eyelidsSprite: /Textures/Mobs/Species/Human/parts.rsi # Polonium: our vulpkanin use the generic human eyes
   - type: Appearance
@@ -401,86 +406,96 @@
   parent: [ OrganBaseTongue, OrganVulpkaninInternal ]
   id: OrganVulpkaninTongue
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadTongue
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganVulpkaninInternal ]
   id: OrganVulpkaninAppendix
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadAppendix
 
 - type: entity
   parent: [ OrganBaseEars, OrganVulpkaninInternal ]
   id: OrganVulpkaninEars
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEars
 
 - type: entity
   parent: [ OrganBaseLungs, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninLungs
+  abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninHeart
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadHeart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninStomach
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 88
     integrityThresholds:
-      Normal: 88
-      Damaged: 17
+      Normal: 30.8
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadStomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninLiver
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLiver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninKidneys
+  abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadKidneys

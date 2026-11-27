@@ -78,7 +78,14 @@ public sealed partial class ChatSystem
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
             var entHideChat = entRange == MessageRangeCheckResult.HideChat;
-            _chatManager.ChatMessageToOne(channel, message, wrappedMessage, source, entHideChat, session.Channel, author: author);
+
+            // Polonium: let the listener's hearing change what they get
+            var heard = new Content.Shared._Polonium.Body.ListenerHearsMessageEvent(channel, data.Range, message, wrappedMessage);
+            if (session.AttachedEntity is { } hearer)
+                RaiseLocalEvent(hearer, ref heard);
+
+            _chatManager.ChatMessageToOne(channel, heard.Message, heard.WrappedMessage, source, entHideChat, session.Channel, author: author);
+            // Polonium end
         }
 
         _replay.RecordServerMessage(new ChatMessage(channel, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
@@ -138,9 +145,9 @@ public sealed partial class ChatSystem
         return newMessage;
     }
 
-    public string TransformSpeech(EntityUid sender, string message)
+    public string TransformSpeech(EntityUid sender, string message, bool typed = false) // Polonium: typed
     {
-        var ev = new TransformSpeechEvent(sender, message);
+        var ev = new TransformSpeechEvent(sender, message) { Typed = typed }; // Polonium: typed
         RaiseLocalEvent(sender, ev, true);
 
         return ev.Message;

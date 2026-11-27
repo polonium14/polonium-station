@@ -1,0 +1,86 @@
+# Headings of the surgery window. A surgery listed nowhere is shown under "other".
+- type: surgeryGroup
+  id: Access
+  name: surgery-group-access
+  order: 1
+  surgeries:
+  - SurgeryOpenIncision
+  - SurgeryOpenRibcage
+  - SurgeryCloseIncision
+  - SurgeryCloseIncisionHead
+  - SurgeryCloseIncisionChest
+  - SurgeryCloseIncisionField
+
+- type: surgeryGroup
+  id: Wounds
+  name: surgery-group-wounds
+  order: 2
+  surgeries:
+  - SurgeryTendWoundsBrute
+  - SurgeryTendWoundsBurn
+  - SurgeryStopBloodOutput
+  - SurgeryMendBones
+  - SurgeryMendBrainTissue
+
+- type: surgeryGroup
+  id: Organs
+  name: surgery-group-organs
+  order: 3
+  surgeries:
+  - SurgeryRepairHeart
+  - SurgeryRemoveHeart
+  - SurgeryInsertHeart
+  - SurgeryRepairLungs
+  - SurgeryRemoveLungs
+  - SurgeryInsertLungs
+  - SurgeryRepairLungLeft
+  - SurgeryRemoveLungLeft
+  - SurgeryInsertLungLeft
+  - SurgeryRepairLungRight
+  - SurgeryRemoveLungRight
+  - SurgeryInsertLungRight
+  - SurgeryRepairLiver
+  - SurgeryRemoveLiver
+  - SurgeryInsertLiver
+  - SurgeryRepairStomach
+  - SurgeryRemoveStomach
+  - SurgeryInsertStomach
+  - SurgeryRepairKidneys
+  - SurgeryRepairKidneyLeft
+  - SurgeryRemoveKidneyLeft
+  - SurgeryInsertKidneyLeft
+  - SurgeryRepairKidneyRight
+  - SurgeryRemoveKidneyRight
+  - SurgeryInsertKidneyRight
+  - SurgeryRepairSpleen
+  - SurgeryRemoveSpleen
+  - SurgeryInsertSpleen
+  - SurgeryRepairAppendix
+  - SurgeryRemoveBrain
+  - SurgeryInsertBrain
+  - SurgeryRepairEyes
+  - SurgeryRemoveEyes
+  - SurgeryInsertEyes
+  - SurgeryRepairEars
+  - SurgeryRemoveEars
+  - SurgeryInsertEars
+  - SurgeryRepairTongue
+  - SurgeryRemoveTongue
+  - SurgeryInsertTongue
+
+- type: surgeryGroup
+  id: Limbs
+  name: surgery-group-limbs
+  order: 4
+  surgeries:
+  - SurgeryRemovePart
+  - SurgeryFixDismemberment
+  - SurgeryAttachHead
+  - SurgeryAttachLeftArm
+  - SurgeryAttachRightArm
+  - SurgeryAttachLeftHand
+  - SurgeryAttachRightHand
+  - SurgeryAttachLeftLeg
+  - SurgeryAttachRightLeg
+  - SurgeryAttachLeftFoot
+  - SurgeryAttachRightFoot

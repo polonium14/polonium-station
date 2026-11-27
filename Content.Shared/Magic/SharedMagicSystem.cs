@@ -16,7 +16,7 @@ using Content.Shared.Magic.Events;
 using Content.Shared.Maps;
 using Content.Shared.Mind;
 using Content.Shared.Objectives.Systems;
-using Content.Shared.Physics;
+using Content.Shared._Polonium.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Stunnable;
@@ -68,6 +68,7 @@ public abstract partial class SharedMagicSystem : EntitySystem
     [Dependency] private SharedChargesSystem _charges = default!;
     [Dependency] private ExamineSystemShared _examine = default!;
     [Dependency] private AliveHumanoidTargetSystem _target = default!;
+    [Dependency] private PreventCollideTargetSystem _preventCollide = default!; // Polonium
 
     [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery;
 
@@ -341,8 +342,7 @@ public abstract partial class SharedMagicSystem : EntitySystem
 
         if (preventCollide)
         {
-            var comp = EnsureComp<PreventCollideComponent>(ent);
-            comp.Uid = performer;
+            _preventCollide.PreventCollide(ent, performer); // Polonium: drop the reference when the caster is deleted, PVS can't network a deleted entity
         }
     }
 

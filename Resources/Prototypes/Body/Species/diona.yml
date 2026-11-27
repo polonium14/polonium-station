@@ -348,12 +348,13 @@
   parent: [ OrganBaseBrain, OrganDionaInternal ]
   id: OrganDionaBrain
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
     integrityCap: 56
     integrityThresholds:
-      Normal: 56
-      Damaged: 16
+      Normal: 19.6
+      Damaged: 0.01
       Destroyed: 0
+    integrityFloor: 16
 
 - type: entity
   parent: [ OrganDionaVisual, OrganBaseEyes, OrganDionaInternal ]
@@ -363,12 +364,13 @@
     data:
       sprite: Mobs/Customization/eyes.rsi
       state: diona
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 8
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEyes
   - type: EyeBlinking
     eyelidsSprite: /Textures/Mobs/Species/Diona/parts.rsi
   - type: Appearance
@@ -377,15 +379,14 @@
   parent: [ OrganBaseLungs, OrganDionaInternal, OrganDionaMetabolizer ]
   id: OrganDionaLungs
   components:
-  - type: Sprite
-    layers:
-    - state: lungs
-  - type: OrganIntegrity
+  # Polonium: no own sprite, every species uses the _Polonium organ sprites
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   parent: [ OrganBaseStomach, OrganDionaInternal, OrganDionaMetabolizer ]
@@ -394,12 +395,13 @@
   - type: Metabolizer
     maxReagents: 6
     stages: [ Digestion, Bloodstream, Metabolites ]
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 70
     integrityThresholds:
-      Normal: 70
-      Damaged: 19
+      Normal: 24.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadStomach
 
 - type: entity
   abstract: true

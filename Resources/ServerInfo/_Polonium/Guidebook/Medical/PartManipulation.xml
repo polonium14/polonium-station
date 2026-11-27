@@ -13,22 +13,22 @@ W ten sposób zamienisz kotowatych w ludzi lub odwrotnie, jeśli masz ochotę na
 Zazwyczaj ciało składa się z 10 głównych części. Są to:
 
 <Box>
-<GuideEntityEmbed Entity="HeadHuman" Caption="głowa"/>
+<GuideEntityEmbed Entity="OrganHumanHead" Caption="głowa"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="RightArmHuman" Caption="prawe ramie"/>
-<GuideEntityEmbed Entity="TorsoHuman" Caption="tors"/>
-<GuideEntityEmbed Entity="LeftArmHuman" Caption="lewe ramie"/>
+<GuideEntityEmbed Entity="OrganHumanArmRight" Caption="prawe ramię"/>
+<GuideEntityEmbed Entity="OrganHumanTorso" Caption="klatka piersiowa"/>
+<GuideEntityEmbed Entity="OrganHumanArmLeft" Caption="lewe ramię"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="RightHandHuman" Caption="prawa dłoń"/>
-<GuideEntityEmbed Entity="RightLegHuman" Caption="prawa noga"/>
-<GuideEntityEmbed Entity="LeftLegHuman" Caption="lewa noga"/>
-<GuideEntityEmbed Entity="LeftHandHuman" Caption="lewa dłoń"/>
+<GuideEntityEmbed Entity="OrganHumanHandRight" Caption="prawa dłoń"/>
+<GuideEntityEmbed Entity="OrganHumanLegRight" Caption="prawa noga"/>
+<GuideEntityEmbed Entity="OrganHumanLegLeft" Caption="lewa noga"/>
+<GuideEntityEmbed Entity="OrganHumanHandLeft" Caption="lewa dłoń"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="RightFootHuman" Caption="prawa stopa"/>
-<GuideEntityEmbed Entity="LeftFootHuman" Caption="lewa stopa"/>
+<GuideEntityEmbed Entity="OrganHumanFootRight" Caption="prawa stopa"/>
+<GuideEntityEmbed Entity="OrganHumanFootLeft" Caption="lewa stopa"/>
 </Box>
 
 Niektóre gatunki mogą mieć więcej lub mniej części ciała, takich jak ogony, skrzydła czy dodatkowe kończyny, ale to jest ogólny zarys tego, co zobaczysz.
@@ -37,6 +37,14 @@ Aby odłączyć kończynę, musisz wykonać na niej zabieg „Usuń część cia
 Jeśli jednak chcesz ponownie przymocować kończynę, musisz wykonać zabieg „Przyszyj część” w miejscu, w którym chcesz ją przymocować.
 Ręce są przymocowane do ramion, stopy do nóg. Wszystko inne jest przymocowane do tułowia.
 
+
+## Jak traci się kończyny?
+
+Ostrze może odciąć rękę, nogę albo głowę, ale tylko wtedy, gdy ta część ciała jest już ciężko ranna albo ma złamaną kość. Im bardziej jest zniszczona, tym większa szansa. Słabe ostrza, takie jak nóż kuchenny, nie odcinają kończyn wcale, a pancerz zmniejsza ryzyko.
+Głowę można odciąć tylko komuś, kto jest w stanie krytycznym albo nie żyje. Klatki piersiowej odciąć się nie da.
+Silny wybuch może urwać jedną rękę albo nogę. Granat pod nogami urywa kończynę mniej więcej trzem ofiarom na dziesięć, a wybuch zbiornika paliwa prawie nigdy.
+Utrata kończyny w walce albo od wybuchu rani też klatkę piersiową (połową obrażeń, które miała kończyna, co najmniej 15 i najwyżej 50) i wywołuje krwawienie.
+Po odcięciu zostaje kikut, który trzeba opatrzyć, zanim przyszyje się kończynę z powrotem.
 
 ## Gdzie mogę zdobyć więcej części?
 

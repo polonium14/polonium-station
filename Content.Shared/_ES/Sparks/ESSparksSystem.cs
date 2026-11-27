@@ -1,6 +1,6 @@
 using Content.Shared._ES.Sparks.Components;
+using Content.Shared._Polonium.Physics;
 using Content.Shared.Damage.Systems;
-using Content.Shared.Physics;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Throwing;
@@ -22,6 +22,7 @@ public sealed partial class ESSparksSystem : EntitySystem
     [Dependency] private SharedPowerReceiverSystem _powerReceiver = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private PreventCollideTargetSystem _preventCollide = default!; // Polonium
 
     [Dependency] private EntityQuery<TransformComponent> _transformQuery = default!;
 
@@ -142,9 +143,7 @@ public sealed partial class ESSparksSystem : EntitySystem
 
             if (ignored is { } ignoredUid && !TerminatingOrDeleted(ignoredUid))
             {
-                var preventCollide = EnsureComp<PreventCollideComponent>(sparks);
-                preventCollide.Uid = ignoredUid;
-                Dirty(sparks, preventCollide);
+                _preventCollide.PreventCollide(sparks, ignoredUid); // Polonium: drop the reference when the source is deleted, PVS can't network a deleted entity
             }
         }
     }

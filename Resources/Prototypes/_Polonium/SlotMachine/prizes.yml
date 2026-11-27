@@ -1,0 +1,51 @@
+# Ported from Goob-Station (https://github.com/Goob-Station/Goob-Station/pull/4929)
+# Expected payout is about 64% of the spin cost, so the machine drains spesos over a round.
+- type: slotMachinePrize
+  id: SlotMachineLose
+  weight: 0.8
+  winSound: /Audio/Machines/buzz-two.ogg
+
+- type: slotMachinePrize
+  id: SlotMachineMinorWin
+  weight: 0.6
+  winSound: /Audio/Effects/Cargo/ping.ogg
+  prizeTable: !type:AllSelector
+    children:
+    - id: SpaceCash10
+  winMessage: slotmachine-win-minor
+
+- type: slotMachinePrize
+  id: SlotMachineSmallWin
+  weight: 0.2
+  winSound: /Audio/Effects/Cargo/ping.ogg
+  prizeTable: !type:AllSelector
+    children:
+    - id: SpaceCash100
+  winMessage: slotmachine-win-small
+
+- type: slotMachinePrize
+  id: SlotMachineMediumWin
+  weight: 0.1
+  winSound: /Audio/Effects/Arcade/win.ogg
+  prizeTable: !type:AllSelector
+    children:
+    - id: SpaceCash500
+  winMessage: slotmachine-win-medium
+
+- type: slotMachinePrize
+  id: SlotMachineLargeWin
+  weight: 0.01
+  winSound: /Audio/_Polonium/Machines/SlotMachine/slotmachine_bigwin.ogg
+  prizeTable: !type:AllSelector
+    children:
+    - id: SpaceCash5000
+  winMessage: slotmachine-win-large
+
+- type: slotMachinePrize
+  id: SlotMachineJackpot
+  weight: 0.005
+  winSound: /Audio/_Polonium/Machines/SlotMachine/slotmachine_jackpotwin.ogg
+  prizeTable: !type:AllSelector
+    children:
+    - id: SpaceCash30000
+  winMessage: slotmachine-win-jackpot

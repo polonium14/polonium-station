@@ -31,9 +31,11 @@ public sealed partial class IVDripSystem : SharedIVDripSystem
         if (!TryComp(iv, out SpriteComponent? sprite))
             return;
 
-        // check if slot has an item
-        bool hasBag = false;
-        if (_container.TryGetContainer(iv, iv.Comp.Slot, out var container) &&
+        // check if slot has an item; a machine without a bag slot always counts as ready
+        var needsBag = iv.Comp.Slot != null;
+        bool hasBag = !needsBag;
+        if (iv.Comp.Slot is { } slot &&
+            _container.TryGetContainer(iv, slot, out var container) &&
             container.ContainedEntities.Count > 0)
         {
             hasBag = true;
@@ -56,6 +58,10 @@ public sealed partial class IVDripSystem : SharedIVDripSystem
         }
 
         _sprite.LayerSetRsiState((iv.Owner, sprite), IVDripVisualLayers.Base, baseState);
+
+        // Only a bag has reagents to show.
+        if (!needsBag)
+            return;
 
         string? reagentState = null;
         for (var i = iv.Comp.ReagentStates.Count - 1; i >= 0; i--)

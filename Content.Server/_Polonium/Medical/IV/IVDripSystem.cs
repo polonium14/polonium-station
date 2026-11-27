@@ -103,7 +103,8 @@ public sealed partial class IVDripSystem : SharedIVDripSystem
             if (time < ivComp.TransferAt)
                 continue;
 
-            if (_itemSlots.GetItemOrNull(ivId, ivComp.Slot) is not { } pack ||
+            if (ivComp.Slot is not { } slot ||
+                _itemSlots.GetItemOrNull(ivId, slot) is not { } pack ||
                 !TryComp(pack, out IVBagComponent? packComp))
             {
                 continue;

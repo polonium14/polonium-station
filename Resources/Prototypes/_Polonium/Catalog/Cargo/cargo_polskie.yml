@@ -2,7 +2,7 @@
 - type: cargoProduct
   id: FoodKremowki
   icon:
-    sprite: _Polonium/Objects/Cosumable/Food/Baked/pie.rsi
+    sprite: _Polonium/Objects/Consumable/Food/Baked/pie.rsi
     state: kremowka
   product: CrateFoodKremowki
   cost: 3141 # tyle co nagroda BountyPie - mniej daje arbitraż (w NSV13 było 2137)
@@ -15,6 +15,6 @@
     sprite: _Polonium/Objects/Vehicles/maluch.rsi
     state: icon
   product: VehicleMaluch
-  cost: 69000
+  cost: 47500
   category: cargoproduct-category-name-fun
   group: market

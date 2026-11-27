@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: ServiceSlotMachine
+  icon:
+    sprite: _Polonium/Structures/Machines/slot_machine.rsi
+    state: slotmachine
+  product: CrateSlotMachine
+  cost: 4000
+  category: cargoproduct-category-name-service
+  group: market

@@ -425,7 +425,7 @@ public sealed partial class AdminLogManager : SharedAdminLogManager, IAdminLogMa
             switch (value)
             {
                 case EntityCoordinates entCords:
-                    if (transform != null)
+                    if (transform != null && EntityManager.HasComponent<TransformComponent>(entCords.EntityId))
                         coordList.Add(transform.ToMapCoordinates(entCords));
                     continue;
 

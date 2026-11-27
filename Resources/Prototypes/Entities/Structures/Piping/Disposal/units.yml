@@ -145,7 +145,7 @@
   - type: UserInterface
     interfaces:
       enum.DisposalUnitUiKey.Key:
-        type: DisposalUnitBoundUserInterface
+        type: DisposalDeviceBoundUserInterface # Polonium: device window
       enum.DisposalTaggerUiKey.Key:
         type: DisposalTaggerBoundUserInterface
   - type: Rummageable
@@ -241,6 +241,6 @@
   - type: UserInterface
     interfaces:
       enum.MailingUnitUiKey.Key:
-        type: MailingUnitBoundUserInterface
+        type: MailingDeviceBoundUserInterface # Polonium: device window
       enum.ConfigurationUiKey.Key:
         type: ConfigurationBoundUserInterface

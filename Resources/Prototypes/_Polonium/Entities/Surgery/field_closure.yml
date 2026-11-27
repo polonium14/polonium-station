@@ -1,0 +1,47 @@
+# Closing a sawed-open chest or skull without bone gel: the wound is
+# cauterized over the bones, which stay broken until a proper "Mend bones" surgery.
+- type: entity
+  parent: BasePartSurgery
+  id: SurgeryCloseIncisionField
+  categories: [ HideSpawnMenu ]
+  name: Close incision without bone gel
+  components:
+  - type: Surgery
+    priority: 2
+    steps:
+    - SurgeryStepCloseBones
+    - SurgeryStepCloseIncisionField
+  - type: SurgeryPartComponentCondition
+    components:
+    - type: BonesSawed
+  # Shown next to the ordinary close surgery, on the same row.
+  - type: SurgeryAlternative
+    of: [ SurgeryCloseIncisionChest, SurgeryCloseIncisionHead, SurgeryCloseIncision ]
+    label: surgery-alternative-no-bone-gel
+
+- type: entity
+  parent: SurgeryStepBase
+  id: SurgeryStepCloseIncisionField
+  categories: [ HideSpawnMenu ]
+  name: Cauterize over the bones
+  components:
+  - type: SurgeryStep
+    tool:
+    - type: Cautery
+    remove:
+    - type: SkinRetracted
+    - type: BleedersClamped
+    - type: IncisionOpen
+    - type: IncisionClamped
+    - type: BodyPartReattached
+    - type: InternalBleedersClamped
+    - type: SeveredSkinRemoved
+    - type: BoneLeftoversRemoved
+    - type: BonesSawed
+    - type: BodyPartSawed
+    duration: 4
+  - type: SurgeryFieldClosureStep
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
+    state: cautery
+  - type: SurgeryStepEmoteEffect

@@ -1,0 +1,87 @@
+- type: entity
+  name: Hot dog
+  parent: FoodBurgerBase
+  id: FoodHotDog
+  description: Hot dog, niczym z żabki.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - meaty
+  - type: Sprite
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
+    state: hotdog
+  - type: Solution
+    solution:
+      maxVol: 15
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Protein
+        Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+  - type: Item
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
+    inhandVisuals:
+      left:
+      - state: hotdog-inhand-left
+      right:
+      - state: hotdog-inhand-right
+
+- type: entity
+  name: ćmodog
+  parent: FoodBurgerBase
+  id: FoodMothDog
+  description: Mimo tej nazwy, ten hot dog nie jest zrobiony z ćmy.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - cotton
+  - type: Sprite
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
+    state: mothdog
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: Solution
+    solution:
+      maxVol: 15
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Protein
+        Quantity: 5
+  - type: Tag
+    tags:
+    - ClothMade
+  - type: Item
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
+    inhandVisuals:
+      left:
+      - state: mothdog-inhand-left
+      right:
+      - state: mothdog-inhand-right
+
+- type: entity
+  name: hotmot
+  parent: FoodHotDog
+  id: FoodHotMoth
+  description: Ten hotdog jest faktycznie zrobiony z ćmy... Morderca.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - meaty
+    - light
+  - type: Sprite
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
+    state: hotmoth
+  - type: Item
+    sprite: _Polonium/Objects/Consumable/Food/burger.rsi
+    inhandVisuals:
+      left:
+      - state: hotmoth-inhand-left
+      right:
+      - state: hotmoth-inhand-right

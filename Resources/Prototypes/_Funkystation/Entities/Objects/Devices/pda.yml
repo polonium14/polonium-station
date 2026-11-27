@@ -60,6 +60,7 @@
         - id: NanoTaskCartridge
         - id: NewsReaderCartridge
         - id: WantedListCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: [BasePDA, BaseCommandContraband]

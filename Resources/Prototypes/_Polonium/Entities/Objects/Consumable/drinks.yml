@@ -1,0 +1,35 @@
+- type: entity
+  parent: DrinkBottleGlassBaseFull
+  id: DrinkOranzadaFull
+  name: butelka oranżady
+  description: Ah, polski klasyk, teraz z ulepszoną formulą dla stacji koszmicznych.
+  components:
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Oranzada
+        Quantity: 30
+  - type: Sprite
+    sprite: _Polonium/Objects/Consumable/Food/Drinks/Oranzada.rsi
+  - type: Sealable
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkMocnyFull
+  name: Mocny Full
+  description: Mocny, pełny smak — taki jak u dziadka, tylko że w kosmosie.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: MocnyFull
+        Quantity: 40
+  - type: Sprite
+    sprite: _Polonium/Objects/Consumable/Food/Drinks/MocnyFull.rsi
+  - type: Item
+    sprite: _Polonium/Objects/Consumable/Food/Drinks/MocnyFull.rsi
+  - type: Tag
+    tags:
+    - Beer
+    - DrinkCan

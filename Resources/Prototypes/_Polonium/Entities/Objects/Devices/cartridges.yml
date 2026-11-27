@@ -1,0 +1,16 @@
+- type: entity
+  parent: BasePDACartridge
+  id: LogiAppCartridge
+  name: CargApp cartridge
+  description: A program that lets you know about parcels addressed to you and tracks their delivery.
+  components:
+  - type: Sprite
+    state: cart-y
+  - type: UIFragment
+    ui: !type:LogiAppUi
+  - type: Cartridge
+    programName: logiapp-program-name
+    icon:
+      sprite: _Polonium/Interface/Misc/program_icons.rsi
+      state: logiapp
+  - type: LogiAppCartridge

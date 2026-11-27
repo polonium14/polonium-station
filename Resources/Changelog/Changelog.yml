@@ -1,67 +1,4 @@
 ﻿Entries:
-- author: AffleWaffle
-  changes:
-  - message: Intercom Assembly is now breakable.
-    type: Fix
-  id: 9653
-  time: '2026-04-20T02:39:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43647
-- author: B_Kirill
-  changes:
-  - message: NPCs can now wield and activate melee weapons.
-    type: Add
-  - message: NPCs can now wield guns and close their bolts.
-    type: Add
-  - message: NPCs can now reload guns without a cartridge in the chamber, provided
-      there are cartridges in the clip.
-    type: Add
-  id: 9654
-  time: '2026-04-21T04:37:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40900
-- author: themias, jessicamaybe
-  changes:
-  - message: Added a traitor objective to break into letters and packages
-    type: Add
-  id: 9655
-  time: '2026-04-22T00:58:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43560
-- author: themias
-  changes:
-  - message: Stunning with ninja gloves now causes the swirling stars effect on the
-      victim
-    type: Fix
-  id: 9656
-  time: '2026-04-22T04:58:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43279
-- author: jkwookee
-  changes:
-  - message: Both wizard rods & normal rods now destroy full sized grilles.
-    type: Fix
-  id: 9657
-  time: '2026-04-23T03:07:21.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40714
-- author: themias
-  changes:
-  - message: Dropping or putting away an RCD now cancels the construction
-    type: Fix
-  id: 9658
-  time: '2026-04-24T06:37:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43655
-- author: psykana
-  changes:
-  - message: T-ray scanner now has dedicated wiring and piping modes.
-    type: Add
-  id: 9659
-  time: '2026-04-24T08:46:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/43161
-- author: Nox38
-  changes:
-  - message: All military boots (jack, combat, merc) now have the 50% injury slowdown
-      resistance effect.
-    type: Tweak
-  id: 9660
-  time: '2026-04-24T09:01:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35653
 - author: Princess-Cheeseballs
   changes:
   - message: Dragons and other flying mobs no longer continue sliding while dead.
@@ -5226,3 +5163,83 @@
   id: 10147
   time: '2026-11-23T15:45:37.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/1297
+- author: Nikita
+  changes:
+  - message: "Konsola skanera cia\u0142a i analizator zdrowia nie pokazuj\u0105 ju\u017C\
+      \ danych odci\u0119tej ko\u0144czyny ani ko\u0144czyny poprzedniego pacjenta."
+    type: Fix
+  id: 10148
+  time: '2026-11-23T18:32:08.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1304
+- author: Nikita
+  changes:
+  - message: "Blok utylizacyjny i blok pocztowy maj\u0105 nowe okna, kt\xF3re wygl\u0105\
+      daj\u0105 jak te urz\u0105dzenia. D\u017Awigni\u0119 mo\u017Cna poci\u0105gn\u0105\
+      \u0107 myszk\u0105."
+    type: Tweak
+  - message: "Klikni\u0119cie otworu w oknie bloku wk\u0142ada trzymany przedmiot.\
+      \ Pust\u0105 r\u0119k\u0105 wyjmuje si\u0119 w ten spos\xF3b ostatni\u0105 w\u0142\
+      o\u017Con\u0105 rzecz."
+    type: Add
+  - message: "W oknie bloku utylizacyjnego wida\u0107 ma\u0142e stworzenia wpadaj\u0105\
+      ce do \u015Brodka."
+    type: Add
+  - message: "Blok pocztowy nie wysy\u0142a ju\u017C poczty sam po wybraniu adresu,\
+      \ gdy wcze\u015Bniej poci\u0105gni\u0119to d\u017Awigni\u0119 bez adresu."
+    type: Fix
+  id: 10149
+  time: '2026-11-23T20:29:15.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1299
+- author: pinkscreen
+  changes:
+  - message: "Dodano aplikacje kt\xF3ra informuje o nadchodz\u0105cych paczkach i\
+      \ listach."
+    type: Add
+  id: 10150
+  time: '2026-11-25T09:09:17.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1310
+- author: Nikita
+  changes:
+  - message: "Dodano abduktor\xF3w, nowych antagonist\xF3w z r\xF3l duch\xF3w. Obcy\
+      \ naukowcy przylatuj\u0105 statkiem, porywaj\u0105 cz\u0142onk\xF3w za\u0142\
+      ogi, wszczepiaj\u0105 im gruczo\u0142y i odsy\u0142aj\u0105 ich na stacj\u0119\
+      ."
+    type: Add
+  id: 10151
+  time: '2026-11-25T07:36:44.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1298
+- author: Nikita
+  changes:
+  - message: "Maluch teraz posiada baga\u017Cnik 8x4"
+    type: Add
+  - message: Maluch teraz kosztuje 47500 spesos zamiast 69000
+    type: Tweak
+  - message: "Kierowca i pasa\u017Cerowie nie mog\u0105 teraz strzela\u0107, znajduj\u0105\
+      c si\u0119 w maluchu"
+    type: Remove
+  id: 10152
+  time: '2026-11-25T09:16:47.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1308
+- author: pinkscreen
+  changes:
+  - message: "Dodano jednor\u0119kiego bandyte."
+    type: Add
+  id: 10153
+  time: '2026-11-25T10:40:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1311
+- author: Pinkscreen, Nikita
+  changes:
+  - message: "Maski gazowe Ochrony, SWAT, JSR i Szwadronu \u015Amierci maj\u0105 akcj\u0119\
+      \ \"Komendy g\u0142osowe\", kt\xF3ra odtwarza wybran\u0105 komend\u0119 przez\
+      \ g\u0142o\u015Bnik maski."
+    type: Add
+  id: 10154
+  time: '2026-11-25T16:51:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1325
+- author: haze
+  changes:
+  - message: Zmieniono palenie jaranie kopcenie
+    type: Tweak
+  id: 10155
+  time: '2026-11-27T14:59:33.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/1330

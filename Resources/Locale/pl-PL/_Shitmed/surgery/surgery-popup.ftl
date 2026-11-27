@@ -11,7 +11,6 @@ surgery-popup-step-SurgeryStepSealBones = { $user } uszczelnia kości na { $part
 surgery-popup-step-SurgeryStepSealSkull = { $user } uszczelnia czaszkę na { $part } { $target }.
 surgery-popup-step-SurgeryStepSealRibcage = { $user } uszczelnia klatkę piersiową na { $part } { $target }.
 surgery-popup-step-SurgeryStepMendBones = { $user } naprawia kości na { $part } { $target }.
-surgery-popup-step-SurgeryStepHealOrgans = { $user } leczy narządy na { $part } { $target }.
 surgery-popup-step-SurgeryStepRemoveSeveredSkin = { $user } usuwa oderwaną skórę z { $part } { $target }.
 surgery-popup-step-SurgeryStepRemoveLeftoverBones = { $user } usuwa pozostałe kości z { $part } { $target }.
 surgery-popup-step-SurgeryStepSealDismembermentWound = { $user } uszczelnia ranę po amputacji na { $part } { $target }.

@@ -1,0 +1,42 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: WallShuttleDiagonal
+  id: WallAbductorDiagonal
+  name: shuttle wall
+  suffix: Diagonal, Abductor
+  description: Keeps the air in and the bloodthirsty salvagers out.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Structures/Walls/abductor_diagonal.rsi
+  - type: Icon
+    sprite: _Shitmed/Structures/Walls/abductor_diagonal.rsi
+    state: state0
+
+- type: entity
+  parent: WallShuttle
+  id: WallAbductor
+  name: shuttle wall
+  suffix: Abductor
+  description: Keeps the air in and the bloodthirsty salvagers out.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Structures/Walls/abductor.rsi
+  - type: Icon
+    sprite: _Shitmed/Structures/Walls/abductor.rsi
+    state: full
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:CornerSpriteSmoothing
+      mask:
+      - walls
+      - walls-shuttle
+      - windows
+      - windows-reinf
+      - windows-uranium
+      - windows-uranium-reinf
+      - windows-shuttle
+      - grilles
+      - doors
+      base: state

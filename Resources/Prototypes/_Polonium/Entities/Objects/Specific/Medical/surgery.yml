@@ -1,0 +1,30 @@
+# Admin surgery omnitool: counts as every surgery tool and does each step at once.
+- type: entity
+  parent: Scalpel
+  id: ScalpelAdmeme
+  name: omniscalpel
+  suffix: Admeme
+  description: A scalpel that does the job of every surgical tool, and does it instantly.
+  components:
+  - type: Scalpel
+    speed: 1000
+  - type: Retractor
+    speed: 1000
+  - type: Hemostat
+    speed: 1000
+  - type: Cautery
+    speed: 1000
+  - type: BoneSaw
+    speed: 1000
+  - type: Drill
+    speed: 1000
+  - type: BoneGel
+    speed: 1000
+  - type: BoneSetter
+    speed: 1000
+  - type: Stitches
+    speed: 1000
+  - type: Tweezers
+    speed: 1000
+  - type: Tending
+    speed: 1000

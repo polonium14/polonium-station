@@ -176,7 +176,7 @@
   - type: Sprite
     layers:
     - state: green
-    - sprite: Objects/Specific/Medical/firstaidkits.rsi
+    - sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi # Polonium: Funky medkit sprites
       state: brutekit
   - type: EntityTableSpawner
     table: !type:NestedSelector
@@ -192,7 +192,7 @@
   - type: Sprite
     layers:
     - state: green
-    - sprite: Objects/Specific/Medical/firstaidkits.rsi
+    - sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi # Polonium: Funky medkit sprites
       state: burnkit
   - type: EntityTableSpawner
     table: !type:NestedSelector

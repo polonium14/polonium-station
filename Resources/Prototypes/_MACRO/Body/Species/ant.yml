@@ -102,11 +102,14 @@
       Tongue: OrganAntTongue
       Appendix: OrganAntAppendix
       Ears: OrganAntEars
-      Lungs: OrganAntLungs
+      LungLeft: OrganAntLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganAntLungRight
       Heart: OrganAntHeart
       Stomach: OrganAntStomach
       Liver: OrganAntLiver
-      Kidneys: OrganAntKidneys
+      KidneyLeft: OrganAntKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganAntKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Ant
 
@@ -151,6 +154,8 @@
       0: Alive
       9: Critical
       10: Dead
+  - type: SoftCrit # Polonium: no soft crit, the human threshold does not fit these thresholds
+    hardCritThreshold: 9
   - type: Destructible
     thresholds:
     - trigger:
@@ -432,6 +437,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganAntInternal, OrganHumanMetabolizer ]
   id: OrganAntLungs
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
 
 - type: entity
   parent: [ OrganBaseHeart, OrganAntInternal, OrganHumanMetabolizer ]
@@ -448,3 +454,4 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganAntInternal, OrganHumanMetabolizer ]
   id: OrganAntKidneys
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml

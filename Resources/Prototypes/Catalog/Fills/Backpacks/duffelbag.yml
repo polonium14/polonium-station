@@ -38,6 +38,7 @@
         - id: ClothingHandsGlovesNitrile
         - id: EmergencyRollerBedSpawnFolded
         - id: BoneGel
+        - id: MedicalStitches # Polonium: needed to stop blood output and to fix dismemberment leftovers
         - id: ClothingMaskSterile
 
 - type: entity

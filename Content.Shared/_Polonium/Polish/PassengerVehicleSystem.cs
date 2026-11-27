@@ -5,6 +5,8 @@ using Content.Shared.Vehicle;
 using Content.Shared.Vehicle.Components;
 using Content.Shared.Vehicle.Systems;
 using Content.Shared.Verbs;
+using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
@@ -33,6 +35,18 @@ public sealed partial class PassengerVehicleSystem : EntitySystem
         SubscribeLocalEvent<PassengerVehicleComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
         SubscribeLocalEvent<PassengerVehicleComponent, VehicleOperatorSetEvent>(OnOperatorSet);
         SubscribeLocalEvent<PassengerVehicleComponent, MoveEvent>(OnMove);
+        SubscribeLocalEvent<GunComponent, ShotAttemptedEvent>(OnShotAttempt);
+    }
+
+    private void OnShotAttempt(Entity<GunComponent> ent, ref ShotAttemptedEvent args)
+    {
+        if (!_container.TryGetContainingContainer(args.User, out var container)
+            || !TryComp<PassengerVehicleComponent>(container.Owner, out var vehicle)
+            || vehicle.CanShoot
+            || container.ID != vehicle.ContainerId)
+            return;
+
+        args.Cancel();
     }
 
     private void OnInsertAttempt(Entity<PassengerVehicleComponent> ent, ref ContainerIsInsertingAttemptEvent args)

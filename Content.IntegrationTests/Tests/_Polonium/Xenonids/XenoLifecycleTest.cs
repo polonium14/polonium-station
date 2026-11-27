@@ -267,6 +267,7 @@ public sealed class XenoLifecycleTest : GameTest
         (string Surgery, string Step)[] steps =
         [
             ("SurgeryOpenIncision", "SurgeryStepOpenIncisionScalpel"),
+            ("SurgeryOpenIncision", "SurgeryStepClampIncision"),
             ("SurgeryOpenIncision", "SurgeryStepRetractSkin"),
             ("SurgeryOpenRibcage", "SurgeryStepSawBones"),
             ("SurgeryOpenRibcage", "SurgeryStepPriseOpenBones"),

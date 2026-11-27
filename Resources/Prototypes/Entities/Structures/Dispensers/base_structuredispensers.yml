@@ -55,7 +55,8 @@
     delay: 0
   - type: ReagentDispenser
     beakerSlot:
-      whitelistFailPopup: reagent-dispenser-component-cannot-put-entity-message
+      # Polonium: no refusal popup from the slot, what does not fit it goes on to the storage, which names its own reason when it refuses
+      # whitelistFailPopup: reagent-dispenser-component-cannot-put-entity-message
       whitelist:
         components:
         - FitsInDispenser

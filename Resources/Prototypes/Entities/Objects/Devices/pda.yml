@@ -197,6 +197,7 @@
         - id: NotekeeperCartridge
         - id: NanoTaskCartridge
         - id: NewsReaderCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
   - type: ActivatableUI
     key: enum.PdaUiKey.Key
     singleUser: true
@@ -211,7 +212,7 @@
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
-        type: HealthAnalyzerBoundUserInterface
+        type: PatientScanBoundUserInterface # Polonium: our one-view analyzer
       enum.PlantAnalyzerUiKey.Key:
         type: PlantAnalyzerBoundUserInterface
   - type: RemoteStore # PDAs can access uplinks so they need this component.
@@ -265,6 +266,7 @@
         - id: NanoTaskCartridge
         - id: NewsReaderCartridge
         - id: WantedListCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: BasePDA
@@ -280,6 +282,7 @@
         - id: NanoTaskCartridge
         - id: NewsReaderCartridge
         - id: MedTekCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: BasePDA
@@ -541,6 +544,7 @@
         children:
         - id: CrewManifestCartridge
         - id: NewsReaderCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
   - type: PermanentStatusEffects # for random sentience event
     statusEffects:
     - TraitStatusEffectMuted
@@ -607,6 +611,7 @@
         - id: NanoTaskCartridge
         - id: NewsReaderCartridge
         - id: AstroNavCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: BasePDA
@@ -653,6 +658,7 @@
         - id: NanoTaskCartridge
         - id: NewsReaderCartridge
         - id: AstroNavCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: BasePDA
@@ -1048,6 +1054,7 @@
         - id: NewsReaderCartridge
         - id: WantedListCartridge
         - id: LogProbeCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: BaseSecurityPDA
@@ -1122,6 +1129,7 @@
         - id: LogProbeCartridge
         - id: AstroNavCartridge
         - id: PlantScanCartridge # Mira Sector
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: CentcomPDA
@@ -1151,6 +1159,7 @@
         - id: MedTekCartridge
         - id: AstroNavCartridge
         - id: PlantScanCartridge # Mira Sector
+        - id: LogiAppCartridge # Polonium: parcel notifications
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
@@ -1279,6 +1288,7 @@
         children:
         - id: NotekeeperCartridge
         - id: NanoTaskCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: [ SyndiPDA, BaseSyndicateContraband ]
@@ -1318,6 +1328,7 @@
         - id: NotekeeperCartridge
         - id: NanoTaskCartridge
         - id: MedTekCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: [ SyndiOperativePDA, BaseSyndicateContraband ]
@@ -1368,6 +1379,7 @@
         - id: LogProbeCartridge
         - id: AstroNavCartridge
         - id: PlantScanCartridge # Mira Sector
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1558,6 +1570,7 @@
         - id: NewsReaderCartridge
         - id: WantedListCartridge
         - id: LogProbeCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1588,6 +1601,7 @@
         - id: NewsReaderCartridge
         - id: WantedListCartridge
         - id: MedTekCartridge
+        - id: LogiAppCartridge # Polonium: parcel notifications
 
 - type: entity
   parent: ClownPDA
@@ -1772,7 +1786,7 @@
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
-        type: HealthAnalyzerBoundUserInterface
+        type: PatientScanBoundUserInterface # Polonium: our one-view analyzer
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
 

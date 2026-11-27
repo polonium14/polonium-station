@@ -33,6 +33,7 @@ public sealed class TransformSpeechEvent : CancellableEntityEventArgs, IInventor
     public SlotFlags TargetSlots { get; } = SlotFlags.WITHOUT_POCKET;
     public EntityUid Sender;
     public string Message;
+    public bool Typed; // Polonium: written by a player, unlike scripted speech such as spells or battlecries
 
     public TransformSpeechEvent(EntityUid sender, string message)
     {

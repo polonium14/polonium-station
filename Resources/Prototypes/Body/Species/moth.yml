@@ -128,11 +128,14 @@
       Tongue: OrganMothTongue
       Appendix: OrganMothAppendix
       Ears: OrganMothEars
-      Lungs: OrganMothLungs
+      LungLeft: OrganMothLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganMothLungRight
       Heart: OrganMothHeart
       Stomach: OrganMothStomach
       Liver: OrganMothLiver
-      Kidneys: OrganMothKidneys
+      KidneyLeft: OrganMothKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganMothKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Moth
 
@@ -367,23 +370,25 @@
   parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganMothInternal ]
   id: OrganMothBrain
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0)
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    integrityFloor: 6
 
 - type: entity
   parent: [ OrganMothVisual, OrganBaseEyes, OrganMothInternal ]
   id: OrganMothEyes
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 24
     integrityThresholds:
-      Normal: 24
-      Damaged: 4
+      Normal: 8.4
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEyes
   - type: EyeBlinking
     eyelidsSprite: /Textures/Mobs/Species/Moth/parts.rsi
   - type: Appearance
@@ -392,56 +397,62 @@
   parent: [ OrganBaseTongue, OrganMothInternal ]
   id: OrganMothTongue
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadTongue
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganMothInternal ]
   id: OrganMothAppendix
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadAppendix
 
 - type: entity
   parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganMothInternal ]
   id: OrganMothEars
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 30
     integrityThresholds:
-      Normal: 30
-      Damaged: 6
+      Normal: 10.5
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadEars
 
 - type: entity
   parent: [ OrganBaseLungs, OrganMothInternal, OrganMothMetabolizer ]
   id: OrganMothLungs
+  abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 9
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganMothInternal, OrganMothMetabolizer ] # Polonium: moth should eat cloth!
   id: OrganMothHeart
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 28
     integrityThresholds:
-      Normal: 28
-      Damaged: 6
+      Normal: 9.8
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadHeart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganMothInternal, OrganMothMetabolizer ]
@@ -453,31 +464,35 @@
       - ClothMade
       - Paper
       - Pill
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 56
     integrityThresholds:
-      Normal: 56
-      Damaged: 16
+      Normal: 19.6
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadStomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganMothInternal, OrganMothMetabolizer ] # Polonium: moth should eat cloth!
   id: OrganMothLiver
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 34
     integrityThresholds:
-      Normal: 34
-      Damaged: 8
+      Normal: 11.9
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadLiver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganMothInternal, OrganMothMetabolizer ]
   id: OrganMothKidneys
+  abstract: true
   components:
-  - type: OrganIntegrity
+  - type: OrganIntegrity # Polonium: organ thresholds (healthy from 35% integrity, dead at 0), dead organ stays in the slot
     integrityCap: 42
     integrityThresholds:
-      Normal: 42
-      Damaged: 12
+      Normal: 14.7
+      Damaged: 0.01
       Destroyed: 0
+    deadOrgan: OrganDeadKidneys

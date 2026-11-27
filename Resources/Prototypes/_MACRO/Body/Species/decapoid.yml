@@ -162,11 +162,14 @@
       Tongue: OrganDecapoidTongue
       Appendix: OrganDecapoidAppendix
       Ears: OrganDecapoidEars
-      Lungs: OrganDecapoidLungs
+      LungLeft: OrganDecapoidLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganDecapoidLungRight
       Heart: OrganDecapoidHeart
       Stomach: OrganDecapoidStomach
       Liver: OrganDecapoidLiver
-      Kidneys: OrganDecapoidKidneys
+      KidneyLeft: OrganDecapoidKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganDecapoidKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Decapoid
 
@@ -514,6 +517,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganHumanInternal, OrganDecapoidMetabolizer ]
   id: OrganDecapoidLungs
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
 
 - type: entity
   parent: [ OrganBaseHeart, OrganHumanInternal, OrganHumanMetabolizer ]
@@ -530,3 +534,4 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganHumanInternal, OrganHumanMetabolizer ]
   id: OrganDecapoidKidneys
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml

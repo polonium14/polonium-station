@@ -6,13 +6,7 @@ microwave-component-interact-using-container-full = Pojemnik jest pełny!
 microwave-component-interact-using-transfer-success = Przeniesiono { $amount }u
 microwave-component-interact-using-transfer-fail = To nie zadziała!
 microwave-component-suicide-others-message = { CAPITALIZE($victim) } próbuje upiec swoją głowę!
-microwave-component-suicide-message =
-    { GENDER($victim) ->
-        [male] Upiekłeś
-        [female] Upiekłaś
-        [epicene] Upiekłuś
-       *[neuter] Upiekłoś
-    } swoją głowę!
+microwave-component-suicide-message = Pieczesz swoją głowę!
 microwave-component-interact-full = Jest pełna.
 microwave-component-interact-item-too-big = { CAPITALIZE($item) } jest zbyt duży aby być zmieszczonym w mikrofali!
 

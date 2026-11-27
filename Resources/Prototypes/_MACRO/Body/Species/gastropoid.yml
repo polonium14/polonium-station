@@ -108,11 +108,14 @@
       Tongue: OrganGastropoidTongue
       Appendix: OrganGastropoidAppendix
       Ears: OrganGastropoidEars
-      Lungs: OrganGastropoidLungs
+      LungLeft: OrganGastropoidLungLeft # Polonium: paired lungs and kidneys
+      LungRight: OrganGastropoidLungRight
       Heart: OrganGastropoidHeart
       Stomach: OrganGastropoidStomach
       Liver: OrganGastropoidLiver
-      Kidneys: OrganGastropoidKidneys
+      KidneyLeft: OrganGastropoidKidneyLeft # Polonium: paired lungs and kidneys
+      KidneyRight: OrganGastropoidKidneyRight
+      Spleen: OrganSpleen # Polonium: spleen keeps the blood topped up
   - type: HumanoidProfile
     species: Gastropoid
 
@@ -370,6 +373,7 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganGastropoidInternal, OrganHumanMetabolizer ]
   id: OrganGastropoidLungs
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml
 
 - type: entity
   parent: [ OrganBaseHeart, OrganGastropoidInternal, OrganGastropoidMetabolizer ]
@@ -386,3 +390,4 @@
 - type: entity
   parent: [ OrganBaseKidneys, OrganGastropoidInternal, OrganGastropoidMetabolizer ]
   id: OrganGastropoidKidneys
+  abstract: true # Polonium: split into left and right organs, see _Polonium/Body/paired_organs.yml

@@ -10,6 +10,7 @@ using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Pain.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
+using Content.Shared._Shitmed.Medical.Surgery.Tools;
 using Content.Shared.Body;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
@@ -37,12 +38,14 @@ public sealed class SurgeryStepCompletionPersistsTest : GameTest
         EntityUid head = default;
         EntityUid scalpel = default;
         EntityUid retractor = default;
+        EntityUid hemostat = default;
 
         await server.WaitPost(() =>
         {
             victim = sEntMan.SpawnEntity("MobHuman", coords);
             scalpel = sEntMan.SpawnEntity("Scalpel", coords);
             retractor = sEntMan.SpawnEntity("Retractor", coords);
+            hemostat = sEntMan.SpawnEntity("Hemostat", coords);
         });
 
         await pair.RunTicksSync(5);
@@ -96,7 +99,7 @@ public sealed class SurgeryStepCompletionPersistsTest : GameTest
             Assert.That(next, Is.Not.Null);
             Assert.That(next!.Value.Step,
                 Is.EqualTo(1),
-                "After the cut, the next incomplete step should be 'retract the skin' - the scalpel step must read as complete.");
+                "After the cut, the next incomplete step should be 'clamp the bleeders' - the scalpel step must read as complete.");
 
             Assert.That(sConsciousness.TryGetNerveSystem(victim, out var nerveSys),
                 Is.True,
@@ -127,6 +130,10 @@ public sealed class SurgeryStepCompletionPersistsTest : GameTest
 
         await server.WaitPost(() =>
         {
+            var clampStep = sSurgery.GetSingleton("SurgeryStepClampIncision")!.Value;
+            var clamp = new SurgeryStepEvent(victim, victim, head, hemostat, openIncision, clampStep);
+            sEntMan.EventBus.RaiseLocalEvent(clampStep, ref clamp);
+
             var retractStep = sSurgery.GetSingleton("SurgeryStepRetractSkin")!.Value;
             var ev = new SurgeryStepEvent(victim, victim, head, retractor, openIncision, retractStep);
             sEntMan.EventBus.RaiseLocalEvent(retractStep, ref ev);
@@ -138,7 +145,7 @@ public sealed class SurgeryStepCompletionPersistsTest : GameTest
         {
             Assert.That(sSurgery.GetNextStep(victim, head, openIncision, victim),
                 Is.Null,
-                "Both OpenIncision steps are done - the surgery should have no next step.");
+                "All OpenIncision steps are done - the surgery should have no next step.");
 
             var stopBloodOutput = sSurgery.GetSingleton("SurgeryStopBloodOutput")!.Value;
             var next = sSurgery.GetNextStep(victim, head, stopBloodOutput, victim);
@@ -151,6 +158,19 @@ public sealed class SurgeryStepCompletionPersistsTest : GameTest
             Assert.That(next.Value.Step,
                 Is.EqualTo(0),
                 "The next step should be SurgeryStopBloodOutput's own first step (clamp bleeders).");
+
+            // Stitching clamped wounds releases their clamp, not the incision's.
+            sEntMan.AddComponent<BleedersClampedComponent>(head);
+            var stitchStep = sSurgery.GetSingleton("SurgeryStepCloseBloodOutputs")!.Value;
+            var stitches = sEntMan.SpawnEntity(null, coords);
+            sEntMan.AddComponent<StitchesComponent>(stitches);
+            var stitch = new SurgeryStepEvent(victim, victim, head, stitches, stopBloodOutput, stitchStep);
+            sEntMan.EventBus.RaiseLocalEvent(stitchStep, ref stitch);
+            Assert.That(sEntMan.HasComponent<BleedersClampedComponent>(head), Is.False);
+            Assert.That(sEntMan.HasComponent<IncisionClampedComponent>(head), Is.True);
+            Assert.That(sSurgery.GetNextStep(victim, head, openIncision, victim),
+                Is.Null,
+                "The incision stays clamped and open for the next surgery.");
         });
     }
 }

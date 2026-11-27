@@ -452,7 +452,9 @@ public sealed partial class ExplosionSystem
                     continue;
 
                 // TODO EXPLOSIONS turn explosions into entities, and pass the the entity in as the damage origin.
-                _damageableSystem.ChangeDamage((entity, damageable), damage);
+                // Polonium: the damage dealt is reported, so an explosion can tear a limb off; see ExplosionDismembermentSystem
+                var explosionHit = new Content.Server._Polonium.Body.ExplosionHitEvent(_damageableSystem.ChangeDamage((entity, damageable), damage));
+                RaiseLocalEvent(entity, ref explosionHit);
 
                 if (_actorQuery.HasComp(entity))
                 {

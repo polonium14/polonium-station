@@ -1,0 +1,4 @@
+- type: guideEntry
+  id: Smoking
+  name: guide-entry-smoking
+  text: "/ServerInfo/_Polonium/Guidebook/Smoking.xml"

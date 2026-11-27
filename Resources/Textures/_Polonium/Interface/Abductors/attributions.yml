@@ -1,0 +1,9 @@
+- files: ["curator_dialog.png"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Made for Polonium Station by nikitosych"
+  source: "https://github.com/polonium14/polonium-station"
+
+- files: ["curator_portrait.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Black silhouette made for Polonium Station by nikitosych from the Gray species sprites by sageu111 and honeyed-lemons, the Gray displacement map by widgetbeck and mqole, the abductor uniform from tgstation and the abductor lab coat from tgstation modified by LuciferMkshelter"
+  source: "https://github.com/tgstation/tgstation/commit/2fea0a59470c476cf3f927833d3918d89cbe6af8"

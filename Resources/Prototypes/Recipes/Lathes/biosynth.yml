@@ -76,7 +76,7 @@
 
 - type: latheRecipe
   id: SynthArachnidLungs
-  result: OrganArachnidLungs
+  result: OrganArachnidLungLeft # Polonium: paired lungs, the right lung is in _Polonium/Recipes/Lathes/biosynth_paired_organs.yml
   categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
@@ -388,7 +388,7 @@
 
 - type: latheRecipe
   id: SynthFelinidLungs
-  result: OrganFelinidLungs
+  result: OrganFelinidLungLeft # Polonium: paired lungs, the right lung is in _Polonium/Recipes/Lathes/biosynth_paired_organs.yml
   categories: [ BiosynthFelinid ]
   completetime: 10
   materials:
@@ -572,7 +572,7 @@
 
 - type: latheRecipe
   id: SynthHarpyLungs
-  result: OrganHarpyLungs
+  result: OrganHarpyLungLeft # Polonium: paired lungs, the right lung is in _Polonium/Recipes/Lathes/biosynth_paired_organs.yml
   categories: [ BiosynthHarpy ]
   completetime: 10
   materials:
@@ -684,7 +684,7 @@
 
 - type: latheRecipe
   id: SynthHumanLungs
-  result: OrganHumanLungs
+  result: OrganHumanLungLeft # Polonium: paired lungs, the right lung is in _Polonium/Recipes/Lathes/biosynth_paired_organs.yml
   categories: [ BiosynthHuman ]
   completetime: 10
   materials:
@@ -796,7 +796,7 @@
 
 - type: latheRecipe
   id: SynthMothLungs
-  result: OrganMothLungs
+  result: OrganMothLungLeft # Polonium: paired lungs, the right lung is in _Polonium/Recipes/Lathes/biosynth_paired_organs.yml
   categories: [ BiosynthMoth ]
   completetime: 10
   materials:
@@ -908,7 +908,7 @@
 
 - type: latheRecipe
   id: SynthReptilianLungs
-  result: OrganReptilianLungs
+  result: OrganReptilianLungLeft # Polonium: paired lungs, the right lung is in _Polonium/Recipes/Lathes/biosynth_paired_organs.yml
   categories: [ BiosynthReptilian ]
   completetime: 10
   materials:
@@ -1020,7 +1020,7 @@
 
 - type: latheRecipe
   id: SynthRodentiaLungs
-  result: OrganRodentiaLungs
+  result: OrganRodentiaLungLeft # Polonium: paired lungs, the right lung is in _Polonium/Recipes/Lathes/biosynth_paired_organs.yml
   categories: [ BiosynthRodentia ]
   completetime: 10
   materials:
@@ -1220,7 +1220,7 @@
 
 - type: latheRecipe
   id: SynthThavenLungs
-  result: OrganThavenLungs
+  result: OrganThavenLungLeft # Polonium: paired lungs, the right lung is in _Polonium/Recipes/Lathes/biosynth_paired_organs.yml
   categories: [ BiosynthThaven ]
   completetime: 10
   materials:
@@ -1332,7 +1332,7 @@
 
 - type: latheRecipe
   id: SynthVoxLungs
-  result: OrganVoxLungs
+  result: OrganVoxLungLeft # Polonium: paired lungs, the right lung is in _Polonium/Recipes/Lathes/biosynth_paired_organs.yml
   categories: [ BiosynthVox ]
   completetime: 10
   materials:
@@ -1444,7 +1444,7 @@
 
 - type: latheRecipe
   id: SynthVulpkaninLungs
-  result: OrganVulpkaninLungs
+  result: OrganVulpkaninLungLeft # Polonium: paired lungs, the right lung is in _Polonium/Recipes/Lathes/biosynth_paired_organs.yml
   categories: [ BiosynthVulpkanin ]
   completetime: 10
   materials:

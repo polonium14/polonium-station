@@ -31,7 +31,7 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Specific/Medical/firstaidkits.rsi
+        - sprite: _Funkystation/Objects/Specific/Medical/firstaidkits.rsi # Polonium: Funky medkit sprites
           state: firstaid
     - type: RandomSpawner
       rarePrototypes:

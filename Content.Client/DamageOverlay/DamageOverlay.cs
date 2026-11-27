@@ -183,7 +183,11 @@ public sealed partial class DamageOverlay : Overlay
             _oldPainLevel = PainLevel;
         }
 
-        level = State != MobState.Critical ? _oldOxygenLevel : 1f;
+        // Polonium: soft crit is awake, so only hard crit shuts the view
+        level = State != MobState.Critical
+                || _entityManager.System<Content.Shared.Mobs.Systems.MobStateSystem>().IsSoftCritical(_playerManager.LocalEntity!.Value)
+            ? _oldOxygenLevel
+            : 1f;
 
         if (level > 0f)
         {

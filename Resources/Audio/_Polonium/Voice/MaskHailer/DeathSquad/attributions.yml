@@ -1,0 +1,4 @@
+- files: ["stop_resisting.ogg", "secure_area.ogg", "target_neutralized.ogg", "elimination_confirmed.ogg", "no_signs_of_life.ogg", "who_is_next.ogg", "worm.ogg", "never_felt_it.ogg", "bite_the_dirt.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Made for Polonium Station by pinkscreen and nikitosych (github)"
+  source: "https://github.com/polonium14/polonium-station"

@@ -1,0 +1,50 @@
+- type: soundCollection
+  id: BarDispenserPour
+  files:
+    - /Audio/_Polonium/Machines/BarDispenser/pour1.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/pour2.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/pour3.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/pour4.ogg
+
+- type: soundCollection
+  id: BarDispenserFizz
+  files:
+    - /Audio/_Polonium/Machines/BarDispenser/fizz1.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/fizz2.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/fizz3.ogg
+
+- type: soundCollection
+  id: BarDispenserIce
+  files:
+    - /Audio/_Polonium/Machines/BarDispenser/ice1.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/ice2.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/ice3.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/ice4.ogg
+
+- type: soundCollection
+  id: BarDispenserSugar
+  files:
+    - /Audio/_Polonium/Machines/BarDispenser/sugar1.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/sugar2.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/sugar3.ogg
+
+- type: soundCollection
+  id: BarDispenserVesselIn
+  files:
+    - /Audio/_Polonium/Machines/BarDispenser/vessel_in1.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/vessel_in2.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/vessel_in3.ogg
+
+- type: soundCollection
+  id: BarDispenserVesselOut
+  files:
+    - /Audio/_Polonium/Machines/BarDispenser/vessel_out1.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/vessel_out2.ogg
+
+- type: soundCollection
+  id: BarDispenserBottleOut
+  files:
+    - /Audio/_Polonium/Machines/BarDispenser/bottle_out1.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/bottle_out2.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/bottle_out3.ogg
+    - /Audio/_Polonium/Machines/BarDispenser/bottle_out4.ogg

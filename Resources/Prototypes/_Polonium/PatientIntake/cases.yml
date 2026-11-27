@@ -105,6 +105,18 @@
   - PatientIntakeReplaceLungs
 
 - type: patientIntakeCase
+  id: PatientIntakeRequestSpleen
+  name: patient-intake-case-request
+  minMedics: 2
+  weight: 1.5
+  payMin: 1200
+  payMax: 1800
+  fullIssueList: true
+  issues:
+  - PatientIntakeBloodLoss
+  - PatientIntakeReplaceSpleen
+
+- type: patientIntakeCase
   id: PatientIntakeRequestProsthesis
   name: patient-intake-case-request
   minMedics: 2

@@ -76,10 +76,12 @@
   - type: SpawnOnGib
     spawn:
     - id: OrganHumanHeart
-    - id: OrganHumanLungs
+    - id: OrganHumanLungLeft
+    - id: OrganHumanLungRight
     - id: OrganHumanLiver
     - id: OrganHumanStomach
-    - id: OrganHumanKidneys
+    - id: OrganHumanKidneyLeft
+    - id: OrganHumanKidneyRight
     - id: ClothingMaskClown
       prob: 0.5
 

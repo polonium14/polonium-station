@@ -357,13 +357,17 @@
   name: brain
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 3
   - type: GibbableOrgan
   - type: Organ
     category: Brain
-  - type: Sprite
+  - type: Sprite # Polonium: every species uses the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
     layers:
     - state: brain
   - type: Item
+    sprite: Mobs/Species/Human/organs.rsi # Polonium: the _Polonium organ sprites have no in-hand states
     heldPrefix: brain
   - type: Input
     context: "ghost"
@@ -399,7 +403,8 @@
   - type: GibbableOrgan
   - type: Organ
     category: Eyes
-  - type: Sprite
+  - type: Sprite # Polonium: every species uses the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
     layers:
     - state: eyeball-l
     - state: eyeball-r
@@ -440,7 +445,8 @@
   - type: GibbableOrgan
   - type: Organ
     category: Appendix
-  - type: Sprite
+  - type: Sprite # Polonium: every species uses the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
     layers:
     - state: appendix
 
@@ -467,20 +473,26 @@
   name: lungs
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 2
   - type: GibbableOrgan
   - type: Organ
     category: Lungs
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Lungs
   - type: Lung
   - type: Metabolizer
     stages: [ Respiration ]
   - type: SolutionManager
     solutions:
     - SolutionLungGas
-  - type: Sprite
+  - type: Sprite # Polonium: every species uses the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
     layers:
     - state: lung-l
     - state: lung-r
   - type: Item
+    sprite: Mobs/Species/Human/organs.rsi # Polonium: the _Polonium organ sprites have no in-hand states
     heldPrefix: lungs
 
 - type: entity
@@ -505,7 +517,10 @@
   - type: GibbableOrgan
   - type: Organ
     category: Heart
-  - type: Sprite
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Heart
+  - type: Sprite # Polonium: every species uses the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
     layers:
     - state: heart-on
   - type: Metabolizer
@@ -520,6 +535,8 @@
   name: stomach
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 3
   - type: GibbableOrgan
   - type: Organ
     category: Stomach
@@ -530,10 +547,12 @@
   - type: Metabolizer
     maxReagents: 3
     stages: [ Digestion ]
-  - type: Sprite
+  - type: Sprite # Polonium: every species uses the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
     layers:
     - state: stomach
   - type: Item
+    sprite: Mobs/Species/Human/organs.rsi # Polonium: the _Polonium organ sprites have no in-hand states
     heldPrefix: stomach
 
 - type: entity
@@ -554,13 +573,19 @@
   name: liver
   abstract: true
   components:
+  - type: OrganTraumaWeight # Polonium: big organs take more hits
+    weight: 3
   - type: GibbableOrgan
   - type: Organ
     category: Liver
-  - type: Sprite
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Liver
+  - type: Sprite # Polonium: every species uses the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
     layers:
     - state: liver
   - type: Item
+    sprite: Mobs/Species/Human/organs.rsi # Polonium: the _Polonium organ sprites have no in-hand states
     heldPrefix: liver
   - type: Metabolizer
     maxReagents: 1
@@ -577,11 +602,15 @@
   - type: GibbableOrgan
   - type: Organ
     category: Kidneys
-  - type: Sprite
+  - type: OrganFailure # Polonium: staged organ failure
+    failure: Kidneys
+  - type: Sprite # Polonium: every species uses the _Polonium organ sprites
+    sprite: _Polonium/Mobs/Species/Human/organs.rsi
     layers:
       - state: kidney-l
       - state: kidney-r
   - type: Item
+    sprite: Mobs/Species/Human/organs.rsi # Polonium: the _Polonium organ sprites have no in-hand states
     heldPrefix: kidneys
   - type: Metabolizer
     maxReagents: 5
@@ -633,6 +662,8 @@
   abstract: true
   id: OrganBaseChildExternal
   components:
+  - type: OrganPrice # Polonium: upstream's old limb price, only for limbs that came off a body
+    price: 100
   - type: ChildOrgan
   - type: DetachableOrgan
     detachedBody: DetachedBody
@@ -643,3 +674,6 @@
   components:
   - type: ChildOrgan
   - type: InternalChildOrgan
+  - type: OrganPrice # Polonium: random price scaled by integrity, only for organs that came out of a body
+    price: 1200
+    maxPrice: 3000

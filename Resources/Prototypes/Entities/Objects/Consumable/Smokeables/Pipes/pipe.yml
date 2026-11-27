@@ -4,6 +4,8 @@
   name: pipe
   description: Just like grandpappy used to smoke.
   components:
+  - type: SmokeOrigin # Polonium: smoke rises from the bowl
+    offset: -0.156, 0.016
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Pipes/pipe.rsi
     state: unlit-icon
