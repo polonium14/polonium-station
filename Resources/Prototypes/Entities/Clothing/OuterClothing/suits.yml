@@ -94,6 +94,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - AtmosFireSuit # Polonium: Fix wytwarzania atmosjańskiego stroju z metalicznego wodoru
 
 - type: entity
   parent: [ClothingOuterBaseLarge, GeigerCounterClothing, AllowSuitStorageClothing]
