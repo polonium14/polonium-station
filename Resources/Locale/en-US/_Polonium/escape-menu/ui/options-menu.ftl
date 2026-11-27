@@ -5,3 +5,5 @@ ui-options-crosshair-scale = Combat crosshair size
 ui-options-crosshair-color = Combat crosshair color:
 ui-options-classic-gun-recoil = Classic camera recoil when shooting
 ui-options-classic-gun-recoil-tooltip = Shots only push the camera back, as before, without rotating the screen.
+ui-options-walk-animation = Walk animation
+ui-options-walk-animation-tooltip = Characters swing their arms and legs while walking. Turning it off lightens the load in a crowd.

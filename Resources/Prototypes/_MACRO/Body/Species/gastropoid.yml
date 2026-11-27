@@ -50,6 +50,8 @@
   id: AppearanceGastropoid
   name: gastropoid appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking
+    legs: false
   - type: Inventory
     speciesId: gastropoid
     templateId: gastropoid

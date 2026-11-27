@@ -5,3 +5,5 @@ ui-options-crosshair-scale = Rozmiar celownika trybu walki
 ui-options-crosshair-color = Kolor celownika trybu walki:
 ui-options-classic-gun-recoil = Klasyczny odrzut kamery przy strzale
 ui-options-classic-gun-recoil-tooltip = Strzały tylko odpychają kamerę, tak jak wcześniej, bez obracania ekranu.
+ui-options-walk-animation = Animacja chodu
+ui-options-walk-animation-tooltip = Postacie ruszają rękami i nogami w czasie chodu. Wyłączenie odciąża komputer przy tłumie.

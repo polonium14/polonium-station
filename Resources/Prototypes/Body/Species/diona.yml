@@ -46,6 +46,8 @@
   categories: [ HideSpawnMenu ]
   name: diona appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking
+    legTop: 21
   - type: Inventory
     templateId: diona
     femaleDisplacements:

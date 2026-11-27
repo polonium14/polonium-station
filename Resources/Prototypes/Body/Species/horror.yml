@@ -58,6 +58,10 @@
   categories: [ HideSpawnMenu ]
   name: horror appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking
+    arms: false
+    legs: false
+    bob: true
   - type: Inventory
     templateId: horror
   - type: InitialBody

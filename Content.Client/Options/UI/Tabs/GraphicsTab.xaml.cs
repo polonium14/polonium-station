@@ -117,6 +117,7 @@ public sealed partial class GraphicsTab : Control
         Control.AddOptionCheckBox(CCVars.HudFpsCounterVisible, FpsCounterCheckBox);
         Control.AddOptionCheckBox(StarlightCCVars.HolesEnabled, HolesCheckBox); // Polonium
         Control.AddOptionCheckBox(StarlightCCVars.SparksEnabled, SparksCheckBox); // Polonium
+        Control.AddOptionCheckBox(CCVars.WalkAnimationEnabled, WalkAnimationCheckBox); // Polonium: walk animation toggle
         AddLightingOptions(); // Polonium
 
         Control.Initialize();

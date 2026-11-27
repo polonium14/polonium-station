@@ -57,6 +57,7 @@
   categories: [ HideSpawnMenu ]
   name: reptilian appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking, the body fits the limb regions
   - type: Inventory
     speciesId: reptilian
     femaleDisplacements:

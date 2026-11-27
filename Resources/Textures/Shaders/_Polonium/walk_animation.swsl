@@ -1,0 +1,105 @@
+// Walk animation: moves the arm and leg regions of the already drawn sprite (clothes included) by a whole sprite pixel.
+// Everything outside the regions stays in place, or moves with the body offset for bodies without limbs.
+// The sprite reaches the post-shader already lit, so this pass must not light it again.
+light_mode unshaded;
+
+// sprite centre in viewport pixels, y up (same space as SCREEN_UV * viewport_size)
+uniform highp vec2 origin;
+uniform highp vec2 viewport_size;
+// viewport pixels per sprite pixel
+uniform highp vec2 pixel_scale;
+// 0 south, 1 north, 2 east, 3 west (as drawn on screen)
+uniform highp float facing;
+// first sprite row of the legs, counted from the top of the 32x32 sprite
+uniform highp float leg_top;
+// 1 when the species swings its legs / arms
+uniform highp float legs;
+uniform highp float arms;
+// limb offsets in sprite pixels, y up
+uniform highp vec2 arm_a;
+uniform highp vec2 arm_b;
+uniform highp vec2 leg_a;
+uniform highp vec2 leg_b;
+// offset of the whole sprite, y up
+uniform highp vec2 body;
+
+bool in_rect(highp vec2 c, highp float x0, highp float x1, highp float y0, highp float y1) {
+    return c.x >= x0 && c.x <= x1 && c.y >= y0 && c.y <= y1;
+}
+
+// (column from the left, row from the top) of the 32x32 sprite cell under a point given relative to the sprite centre
+highp vec2 cell_at(highp vec2 sprite_pos) {
+    highp vec2 f = floor(sprite_pos);
+    return vec2(f.x + 16.0, 15.0 - f.y);
+}
+
+// Front and back: "a" is the screen-left arm and leg. Side: "arm_a" is the arm nearer to the viewer,
+// both legs share one region and "leg_b" is a second full copy of them shown only during a step.
+// The arm regions reach past the tile and below the shoulders so wide sleeves and gloves move with them.
+bool arm_a_region(highp vec2 c, bool side, bool east) {
+    if (arms < 0.5)
+        return false;
+    if (side) {
+        // above the legs, so a high leg_top does not give the top of the legs to the arm
+        highp float bottom = min(21.0, leg_top - 1.0);
+        return east ? in_rect(c, 11.0, 15.0, 12.0, bottom) : in_rect(c, 16.0, 20.0, 12.0, bottom);
+    }
+    return in_rect(c, -16.0, 9.0, 10.0, 15.0) || in_rect(c, -16.0, 10.0, 16.0, leg_top - 1.0)
+        || in_rect(c, -16.0, 7.0, leg_top, 31.0);
+}
+
+bool arm_b_region(highp vec2 c, bool side) {
+    if (arms < 0.5 || side)
+        return false;
+    return in_rect(c, 21.0, 47.0, 10.0, 15.0) || in_rect(c, 20.0, 47.0, 16.0, leg_top - 1.0)
+        || in_rect(c, 24.0, 47.0, leg_top, 31.0);
+}
+
+bool side_legs_region(highp vec2 c, bool east) {
+    return east ? in_rect(c, 6.0, 21.0, leg_top, 31.0) : in_rect(c, 10.0, 25.0, leg_top, 31.0);
+}
+
+bool leg_a_region(highp vec2 c, bool side, bool east) {
+    if (legs < 0.5)
+        return false;
+    return side ? side_legs_region(c, east) : in_rect(c, 8.0, 15.0, leg_top, 31.0);
+}
+
+bool leg_b_region(highp vec2 c, bool side, bool east) {
+    if (legs < 0.5)
+        return false;
+    return side ? side_legs_region(c, east) : in_rect(c, 16.0, 23.0, leg_top, 31.0);
+}
+
+// premultiplied alpha, as the sprite render target holds it
+highp vec4 over(highp vec4 top, highp vec4 bottom) {
+    return top + bottom * (1.0 - top.a);
+}
+
+void fragment() {
+    highp vec2 uv_per_pixel = pixel_scale * TEXTURE_PIXEL_SIZE;
+    // the body offset moves the whole sprite: work in the coordinates of the unmoved sprite
+    highp vec2 sprite_pos = (SCREEN_UV * viewport_size - origin) / pixel_scale - body;
+    highp vec2 uv = UV - body * uv_per_pixel;
+    bool side = facing > 1.5;
+    bool east = facing < 2.5;
+
+    highp vec2 c = cell_at(sprite_pos);
+    highp vec4 col = vec4(0.0);
+    if (!arm_a_region(c, side, east) && !arm_b_region(c, side) && !leg_a_region(c, side, east) && !leg_b_region(c, side, east))
+        col = zTexture(uv);
+
+    if (leg_a_region(cell_at(sprite_pos - leg_a), side, east))
+        col = over(zTexture(uv - leg_a * uv_per_pixel), col);
+
+    if ((!side || leg_b.x != 0.0) && leg_b_region(cell_at(sprite_pos - leg_b), side, east))
+        col = over(zTexture(uv - leg_b * uv_per_pixel), col);
+
+    if (arm_b_region(cell_at(sprite_pos - arm_b), side))
+        col = over(zTexture(uv - arm_b * uv_per_pixel), col);
+
+    if (arm_a_region(cell_at(sprite_pos - arm_a), side, east))
+        col = over(zTexture(uv - arm_a * uv_per_pixel), col);
+
+    COLOR = col;
+}

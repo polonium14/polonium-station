@@ -16,6 +16,9 @@
   id: AppearanceAnt
   name: ant appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking
+    legTop: 22
+    arms: false
   - type: Inventory
     speciesId: ant
     templateId: ant

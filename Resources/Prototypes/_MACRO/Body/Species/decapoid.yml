@@ -116,6 +116,8 @@
   id: AppearanceDecapoid
   name: decapoid appearance
   components:
+  - type: WalkAnimation # Polonium: arms and legs swing while walking
+    legs: false
   - type: Inventory
     templateId: decapoid
     speciesId: decapoid
