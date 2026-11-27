@@ -108,7 +108,7 @@ public sealed partial class SmokerSystem : EntitySystem
         if (smoker.JitterAmplitudes[index] > 0f)
             _jitter.DoJitter(ent, JitterTime, true, smoker.JitterAmplitudes[index]);
 
-        if (_random.Prob(smoker.CoughChances[Math.Min(index, smoker.CoughChances.Length - 1)]))
+        if (_random.Prob(smoker.CoughChances[Math.Min(stage, smoker.CoughChances.Length) - 1]))
             _chat.TryEmoteWithChat(ent, Cough);
     }
 }
