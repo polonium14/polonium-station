@@ -144,7 +144,12 @@ public sealed partial class SmokeWispSystem : EntitySystem
     /// <summary>
     /// Displacement maps read from disk once, by RSI path and state; null when the file is missing.
     /// </summary>
-    private readonly Dictionary<string, Image<Rgba32>?> _displacementImages = new();
+    private readonly Dictionary<(string Rsi, string State), Image<Rgba32>?> _displacementImages = new();
+
+    /// <summary>
+    /// Whether an RSI has a worn sprite of its own for a species, looked up once per pair.
+    /// </summary>
+    private readonly Dictionary<(RSI Rsi, string Species), bool> _speciesMaskStates = new();
 
     /// <summary>
     /// Size of a mob sprite in pixels, the key of the displacement map to use.
@@ -187,6 +192,7 @@ public sealed partial class SmokeWispSystem : EntitySystem
         }
 
         _displacementImages.Clear();
+        _speciesMaskStates.Clear();
     }
 
     private void OnAppearanceChange(Entity<SmokableComponent> ent, ref AppearanceChangeEvent args)
@@ -232,7 +238,17 @@ public sealed partial class SmokeWispSystem : EntitySystem
 
         if (!_enabled)
         {
-            _ribbons.Clear();
+            // Lit ones stay tracked, so their smoke comes back once particles are on again.
+            foreach (var (uid, ribbon) in _ribbons)
+            {
+                ribbon.Points.Clear();
+                ribbon.Head = null;
+                ribbon.EmberVisible = false;
+                if (!ribbon.Lit || TerminatingOrDeleted(uid))
+                    _removeBuffer.Add(uid);
+            }
+
+            RemoveQueued();
             return;
         }
 
@@ -270,6 +286,11 @@ public sealed partial class SmokeWispSystem : EntitySystem
                 _removeBuffer.Add(uid);
         }
 
+        RemoveQueued();
+    }
+
+    private void RemoveQueued()
+    {
         foreach (var uid in _removeBuffer)
         {
             _ribbons.Remove(uid);
@@ -330,7 +351,8 @@ public sealed partial class SmokeWispSystem : EntitySystem
     }
 
     /// <param name="emberVisible">Whether the ember shows at <paramref name="coords"/>: not behind the head of a
-    /// smoker facing away, and not in a middle hand, which has no in-hand sprite to aim at.</param>
+    /// smoker facing away, not in a middle hand, which has no in-hand sprite to aim at, and not in the hands of a mob
+    /// that draws no held items.</param>
     private bool TryGetSmokeOrigin(EntityUid uid, out MapCoordinates coords, out bool emberVisible)
     {
         emberVisible = false;
@@ -365,7 +387,7 @@ public sealed partial class SmokeWispSystem : EntitySystem
             coords = location == HandLocation.Left
                 ? OffsetCoordinates(holder, LeftHandOffsets, hands?.LeftHandDisplacement)
                 : OffsetCoordinates(holder, RightHandOffsets, hands?.RightHandDisplacement);
-            emberVisible = true;
+            emberVisible = hands?.ShowInHands != false;
             return true;
         }
 
@@ -415,8 +437,7 @@ public sealed partial class SmokeWispSystem : EntitySystem
 
     private Image<Rgba32>? DisplacementImage(string rsi, string state)
     {
-        var path = $"{rsi}/{state}";
-        if (_displacementImages.TryGetValue(path, out var cached))
+        if (_displacementImages.TryGetValue((rsi, state), out var cached))
             return cached;
 
         Image<Rgba32>? image = null;
@@ -429,7 +450,7 @@ public sealed partial class SmokeWispSystem : EntitySystem
             }
         }
 
-        _displacementImages[path] = image;
+        _displacementImages[(rsi, state)] = image;
         return image;
     }
 
@@ -451,10 +472,18 @@ public sealed partial class SmokeWispSystem : EntitySystem
         if (species != null
             && smokable != null
             && CompOrNull<SpriteComponent>(smokable.Value)?.BaseRSI is { } rsi
-            && rsi.TryGetState($"{LitMaskState}-{species}", out _))
+            && HasSpeciesMaskState(rsi, species))
             return OffsetCoordinates(mob, SpeciesMouthOffsets.GetValueOrDefault(species, MouthOffsets), null);
 
         return OffsetCoordinates(mob, MouthOffsets, MaskDisplacement(mob));
+    }
+
+    private bool HasSpeciesMaskState(RSI rsi, string species)
+    {
+        if (!_speciesMaskStates.TryGetValue((rsi, species), out var has))
+            _speciesMaskStates[(rsi, species)] = has = rsi.TryGetState($"{LitMaskState}-{species}", out _);
+
+        return has;
     }
 
     /// <summary>
