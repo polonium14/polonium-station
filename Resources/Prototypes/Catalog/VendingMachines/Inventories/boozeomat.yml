@@ -102,6 +102,7 @@
     DrinkMocnyFull: 6
     DrinkTymbarkBottle: 6
     DrinkHelenkaCan: 6
+    DrinkDrGibbBottleFull: 3
   contrabandInventory:
     ChemistryBottleEthanol: 3
     DrinkBottleOfNothingFull: 1

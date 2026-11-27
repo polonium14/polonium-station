@@ -12,6 +12,7 @@
     # 🇵🇱 Polonium
     DrinkOranzadaFull: 2
   contrabandInventory:
+    DrinkDrGibbBottleFull: 2
     ClothingNeckStethoscope: 2
     Saw: 2
     Tourniquet: 3

@@ -328,6 +328,7 @@
         - id: DrinkTeaJug
         - id: DrinkTonicWaterBottleFull
         - id: DrinkWaterMelonJuiceJug
+        - id: DrinkDrGibbBottleFull
 
 - type: entity
   parent: CrateFreezer

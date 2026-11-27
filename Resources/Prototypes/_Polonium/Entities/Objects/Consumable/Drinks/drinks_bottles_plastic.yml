@@ -1,0 +1,15 @@
+- type: entity
+  parent: [DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull]
+  id: DrinkDrGibbBottleFull
+  name: Dr. Gibb bottle
+  description: A delicious blend of 42 different flavours, now in a bottle!
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: DrGibb
+        Quantity: 120
+  - type: Sprite
+    sprite: _Polonium/Objects/Consumable/Drinks/dr_gibb_bottle.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
