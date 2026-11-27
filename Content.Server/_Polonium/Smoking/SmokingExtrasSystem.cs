@@ -140,8 +140,7 @@ public sealed partial class SmokingExtrasSystem : EntitySystem
 
     private void OnTileFire(Entity<SmokableComponent> ent, ref TileFireEvent args)
     {
-        if (ent.Comp.State == SmokableState.Unlit)
-            _smoking.SetSmokableState(ent, SmokableState.Lit, ent);
+        _smoking.TryLight(ent);
     }
 
     private void OnIgnited(Entity<SmokableComponent> ent, ref IgnitedEvent args)
@@ -172,8 +171,7 @@ public sealed partial class SmokingExtrasSystem : EntitySystem
             intensity,
             explosive.Slope,
             explosive.MaxTileIntensity,
-            canCreateVacuum: false,
-            user: holder);
+            canCreateVacuum: false);
         QueueDel(ent);
     }
 
@@ -261,8 +259,8 @@ public sealed partial class SmokingExtrasSystem : EntitySystem
         if (WornSmokable(target) is not { } smokable)
             return;
 
-        _smoking.SetSmokableState(smokable, SmokableState.Lit, smokable);
-        if (user != target)
+        _smoking.TryLight(smokable);
+        if (smokable.Comp.State == SmokableState.Lit && user != target)
             _popup.PopupEntity(Loc.GetString("smokable-light-other", ("user", user), ("target", target), ("lighter", lighter)), target);
     }
 
