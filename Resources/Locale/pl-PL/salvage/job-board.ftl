@@ -2,12 +2,12 @@ salvage-job-rank-title-0 = [color=gray]Zbieracz[/color]
 salvage-job-rank-title-1 = [color=white]Złomiarz[/color]
 salvage-job-rank-title-2 = [color=yellow]Specjalista[/color]
 salvage-job-rank-title-MAX = [color=gold]Naczelny specjalista ds. Odzysku[/color]
-job-board-radio-announce = Ranga specjalisty ds. odzysku wzrosła do [bold]{ $rank }[/bold]! Nowe zlecenia można kupić w Logistyce.
-job-board-ui-window-title = Tablica zadań
+job-board-radio-announce = Ranga specjalisty ds. odzysku wzrosła do [bold]{ $rank }[/bold]! W Logistyce można kupić nowe towary.
+job-board-ui-window-title = Tablica Zleceń
 job-board-ui-label-rank = [bold]Ranga:[/bold]
 job-board-ui-label-items = Cel: [color=red]{ $item }[/color]
-job-board-label-text = [head=2]Przesyłka w ramach akcji ratowniczej[/head]
-    { "[italic]Do stosowania wyłącznie w przypadku oficjalnych przesyłek ratowniczych poza stacją.[/italic]" }
+job-board-label-text = [head=2]Przesyłka zlecenia odzysku[/head]
+    { "[italic]Do stosowania wyłącznie przy oficjalnych przesyłkach z odzysku spoza stacji.[/italic]" }
     
     { "[bold]Cel:[/bold]" } { $target }
     { "[bold]Nagroda:[/bold]" } ${ $reward }

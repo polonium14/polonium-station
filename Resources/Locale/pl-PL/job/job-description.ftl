@@ -4,11 +4,11 @@ job-description-ce = Zarządzaj departamentem inżynieryjnym aby zapewnić zasil
 job-description-cmo = Zarządzaj zasobami i personelem departamentu medycznego aby utrzymać załogę przy życiu.
 job-description-hop = Zajmuj się uczciwym przypisywaniem dostępu przy pomocy swojej konsoli ID, zarządzaj departamentem serwisu i opiekuj się Ianem.
 job-description-hos = Zarządzaj siłami ochrony aby byly efektywni, tłum sprzeciwy, i dbaj o bezpieczeństwo innych szefów.
-job-description-qm = Zarządzaj dostawami stacji i całym departamentem logistyki, trzymaj oko na techników odzysku aby pracowali i upewniaj się że wszystkie zamówienia są wykonane, trzymaj pieniądze w obiegu.
+job-description-qm = Zarządzaj zasobami i personelem działu Logistyki, żeby stacja była dobrze zaopatrzona i żeby pieniądze wciąż płynęły.
 job-description-rd = Zarządzaj departamentem rozwoju, odblokowywuj technologie, pozyskuj i badaj artefakty oraz przeprowadzaj eksperymenty.
 # Cargo
-job-description-cargotech = Zajmuj się zamówieniami i dostawami, pilotuj statek dostawczy na stację handlową i z powrotem, pracuj z innymi aby zarobić śmieszną ilość pieniędzy a następnie stracić ją całą podczas hazardu.
-job-description-salvagespec = Używaj magnesu odzyskowego do zaciągania odczepionych szczątek, asteroid do odzysku wzbogacając stację. Zbuduj statek odzyskowy i podróżuj na inne planety, po drodze walcząc z nieprzyjazną fauną.
+job-description-cargotech = Doręczaj pocztę, realizuj zamówienia, pilotuj wahadłowiec logistyczny, kupując i sprzedając towary, oraz dbaj o to, żeby inne działy miały potrzebne zapasy.
+job-description-salvagespec = Przyciągaj magnesem odzysku asteroidy i szczątki, przerabiaj rudę i złom na przydatne materiały, szukaj cennych łupów i odpieraj po drodze niebezpieczną kosmiczną faunę.
 # Engineering
 job-description-atmostech = Optymalizuj układ atmosferyczny stacji, i syntezuj rzadkie gazy do użytku lub sprzedaży.
 job-description-engineer = Utrzymuj główny generator stacji i panele słoneczne działające, optymalizuj sieć energetyczną i przeprowadzaj naprawy w strefach pozbawionych atmosfery przy użyciu swojego skafandra. job-description-ertchaplain = Upewniaj się że ostatnie życzenia załogantów zostaną spełnione.
